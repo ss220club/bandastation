@@ -1,3 +1,6 @@
-#include "_example.dm"
+#include "_pixel_shift.dm"
 
-#include "code/example.dm"
+#include "code/layer_shift.dm"
+#include "code/pixel_shift_component.dm"
+#include "code/pixel_shift_keybind.dm"
+#include "code/pixel_shift_mob.dm"
