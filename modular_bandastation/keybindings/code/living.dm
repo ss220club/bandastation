@@ -18,6 +18,3 @@
 
 /datum/keybinding/living/disable_combat_mode
 	hotkey_keys = list("1")
-
-/datum/keybinding/living/combat_indicator
-	hotkey_keys = list("H")
