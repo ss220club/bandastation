@@ -7,12 +7,14 @@
 	var/obj/machinery/barsign_type = /obj/machinery/barsign
 	var/icon/barsign_icon = initial(barsign_type.icon)
 	var/list/barsign_icon_states = icon_states(barsign_icon)
+	var/icon/barsign_icon_ss220 = 'modular_ss220/barsigns/icons/barsigns.dmi' // SS220 EDIT Barsigns
+	var/list/barsign_icon_states_ss220 = icon_states(barsign_icon_ss220)
 
 	// Check every datum real bar sign
 	for(var/sign_type in (subtypesof(/datum/barsign) - /datum/barsign/hiddensigns))
 		var/datum/barsign/sign = new sign_type()
 
-		if(!(sign.icon in barsign_icon_states))
+		if(!(sign.icon in barsign_icon_states) && !(sign.icon in barsign_icon_states_ss220)) // SS220 EDIT Barsigns
 			TEST_FAIL("Icon state for [sign_type] does not exist in [barsign_icon].")
 
 /**
