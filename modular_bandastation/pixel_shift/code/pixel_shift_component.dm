@@ -17,7 +17,7 @@
 /datum/component/pixel_shift/RegisterWithParent()
 	RegisterSignal(parent, COMSIG_KB_MOB_PIXEL_SHIFT_DOWN, PROC_REF(pixel_shift_down))
 	RegisterSignal(parent, COMSIG_KB_MOB_PIXEL_SHIFT_UP, PROC_REF(pixel_shift_up))
-	RegisterSignals(parent, list(COMSIG_LIVING_RESET_PULL_OFFSETS, COMSIG_LIVING_SET_PULL_OFFSET, COMSIG_MOVABLE_MOVED), PROC_REF(unpixel_shift))
+	RegisterSignals(parent, list(COMSIG_LIVING_RESET_PULL_OFFSETS, COMSIG_LIVING_SET_PULL_OFFSET, COMSIG_MOVABLE_MOVED, SIGNAL_ADDTRAIT(TRAIT_FLOORED)), PROC_REF(unpixel_shift))
 	RegisterSignal(parent, COMSIG_MOB_CLIENT_PRE_LIVING_MOVE, PROC_REF(pre_move_check))
 	RegisterSignal(parent, COMSIG_LIVING_CAN_ALLOW_THROUGH, PROC_REF(check_passable))
 
@@ -26,6 +26,7 @@
 	UnregisterSignal(parent, COMSIG_KB_MOB_PIXEL_SHIFT_UP)
 	UnregisterSignal(parent, COMSIG_LIVING_RESET_PULL_OFFSETS)
 	UnregisterSignal(parent, COMSIG_LIVING_SET_PULL_OFFSET)
+	UnregisterSignal(parent, SIGNAL_ADDTRAIT(TRAIT_FLOORED))
 	UnregisterSignal(parent, COMSIG_MOVABLE_MOVED)
 	UnregisterSignal(parent, COMSIG_MOB_CLIENT_PRE_LIVING_MOVE)
 	UnregisterSignal(parent, COMSIG_LIVING_CAN_ALLOW_THROUGH)
@@ -61,8 +62,10 @@
 	qdel(src)
 
 /datum/component/pixel_shift/proc/pixel_shift(mob/source, direct)
-	passthroughable = NONE
 	var/mob/living/owner = parent
+	if(HAS_TRAIT(owner, TRAIT_RESTRAINED) || HAS_TRAIT(owner, TRAIT_IMMOBILIZED) || length(owner.pulledby) || owner.stat != CONSCIOUS)
+		return
+	passthroughable = NONE
 	switch(direct)
 		if(NORTH)
 			if(owner.pixel_y <= maximum_pixel_shift + owner.base_pixel_y)
