@@ -9,7 +9,7 @@
 /mob/living/basic/cockroach
 	tts_seed = "Villagerm"
 
-/mob/living/simple_animal/crab
+/mob/living/basic/crab
 	tts_seed = "Riki"
 
 /mob/living/basic/pet/dog
