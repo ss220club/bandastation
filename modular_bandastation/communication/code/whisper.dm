@@ -12,9 +12,8 @@
 	return TRUE
 
 /datum/tgui_say/alter_entry(payload)
-	var/entry = payload["entry"]
 	/// No OOC leaks
-	if(payload["channel"] == LOOC_CHANNEL)
+	if(payload["channel"] == WHIS_CHANNEL)
 		return pick(hurt_phrases)
 	. = ..()
 

@@ -1,3 +1,5 @@
+GLOBAL_VAR_INIT(looc_allowed, TRUE)
+
 /datum/keybinding/client/communication/looc
 	hotkey_keys = list("L")
 	name = LOOC_CHANNEL
@@ -12,7 +14,6 @@
 	return TRUE
 
 /datum/tgui_say/alter_entry(payload)
-	var/entry = payload["entry"]
 	/// No OOC leaks
 	if(payload["channel"] == LOOC_CHANNEL)
 		return pick(hurt_phrases)
@@ -69,12 +70,6 @@
 		if(is_banned_from(ckey, BAN_LOOC))
 			to_chat(src, span_warning("You are LOOC banned!"))
 			return
-		if(mob.stat)
-			to_chat(src, span_danger("You cannot use LOOC while unconscious or dead."))
-			return
-		if(istype(mob, /mob/dead))
-			to_chat(src, span_danger("You cannot use LOOC while ghosting."))
-			return
 
 	msg = emoji_parse(msg)
 
@@ -116,6 +111,18 @@
 		if (admin_seen[cli_client])
 			to_chat(cli_client, span_looc("[ADMIN_FLW(usr)] <span class='prefix'>LOOC[wall_pierce ? " (WALL PIERCE)" : ""]:</span> <EM>[src.key]/[src.mob.name]:</EM> <span class='message'>[msg]</span>"))
 		else if (cli_client.prefs.read_preference(/datum/preference/toggle/admin/see_looc))
-			to_chat(cli_client, span_rlooc("[ADMIN_FLW(usr)] <span class='prefix'>(R)LOOC[wall_pierce ? " (WALL PIERCE)" : ""]:</span> <EM>[src.key]/[src.mob.name]:</EM> <span class='message'>[msg]</span>"))
+			to_chat(cli_client, span_looc("[ADMIN_FLW(usr)] <span class='prefix'>(R)LOOC[wall_pierce ? " (WALL PIERCE)" : ""]:</span> <EM>[src.key]/[src.mob.name]:</EM> <span class='message'>[msg]</span>"))
 
 #undef LOOC_RANGE
+
+/mob/proc/get_top_level_mob()
+	if(ismob(loc) && (loc != src))
+		var/mob/M = loc
+		return M.get_top_level_mob()
+	return src
+
+/datum/preference/toggle/admin/see_looc
+	category = PREFERENCE_CATEGORY_GAME_PREFERENCES
+	default_value = TRUE
+	savefile_key = "looc_admin_pref"
+	savefile_identifier = PREFERENCE_PLAYER
