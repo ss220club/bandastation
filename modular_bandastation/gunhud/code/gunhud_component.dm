@@ -27,7 +27,7 @@
 	SIGNAL_HANDLER
 
 	RegisterSignals(parent, list(COMSIG_PREQDELETED, COMSIG_ITEM_DROPPED), PROC_REF(turn_off))
-	RegisterSignals(parent, list(COMSIG_UPDATE_gunhud, COMSIG_GUN_CHAMBER_PROCESSED), PROC_REF(update_hud))
+	RegisterSignals(parent, list(COMSIG_UPDATE_GUNHUD, COMSIG_GUN_CHAMBER_PROCESSED), PROC_REF(update_hud))
 
 	hud.turn_on()
 	update_hud()
@@ -35,7 +35,7 @@
 /datum/component/gunhud/proc/turn_off()
 	SIGNAL_HANDLER
 
-	UnregisterSignal(parent, list(COMSIG_PREQDELETED, COMSIG_ITEM_DROPPED, COMSIG_UPDATE_gunhud, COMSIG_GUN_CHAMBER_PROCESSED))
+	UnregisterSignal(parent, list(COMSIG_PREQDELETED, COMSIG_ITEM_DROPPED, COMSIG_UPDATE_GUNHUD, COMSIG_GUN_CHAMBER_PROCESSED))
 
 	if(hud)
 		hud.turn_off()
@@ -79,7 +79,7 @@
 
 	else if(istype(parent, /obj/item/gun/energy))
 		var/obj/item/gun/energy/pew = parent
-		hud.icon_state = "egunhud_screen"
+		hud.icon_state = "eammo_counter"
 		hud.cut_overlays()
 		hud.maptext_x = -12
 		var/obj/item/ammo_casing/energy/shot = pew.ammo_type[pew.select]
@@ -90,7 +90,7 @@
 		else
 			hud.maptext_x = -8
 		if(!pew.can_shoot())
-			hud.icon_state = "egunhud_screen_empty"
+			hud.icon_state = "eammo_counter_empty"
 			hud.maptext = span_maptext("<div align='center' valign='middle' style='position:relative'><font color='[COLOR_RED]'><b>[batt_percent]%</b></font><br><font color='[COLOR_CYAN]'>[shot_cost_percent]%</font></div>")
 			return
 		if(batt_percent <= 25)

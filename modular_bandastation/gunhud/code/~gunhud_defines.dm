@@ -1,2 +1,5 @@
 // Ammo counter
-#define ui_ammocounter "RIGHT-1:28,CENTER-5:9"
+#undef ui_gunhud
+
+///The gun needs to update the gun hud!
+#undef COMSIG_UPDATE_GUNHUD

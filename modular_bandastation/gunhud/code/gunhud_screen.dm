@@ -14,9 +14,9 @@
 
 /atom/movable/screen/gunhud_screen
 	name = "gunhud"
-	icon = 'modular_skyrat/modules/gunhud/icons/gun_hud.dmi'
+	icon = 'modular_bandastation/gunhud/icons/gun_hud.dmi'
 	icon_state = "backing"
-	screen_loc = ui_ammocounter
+	screen_loc = ui_gunhud
 	invisibility = INVISIBILITY_ABSTRACT
 
 	///This is the color assigned to the OTH backing, numbers and indicator.
