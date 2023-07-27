@@ -110,7 +110,7 @@ GLOBAL_VAR_INIT(looc_allowed, TRUE)
 		var/client/cli_client = cli
 		if (admin_seen[cli_client])
 			to_chat(cli_client, span_looc("[ADMIN_FLW(usr)] <span class='prefix'>LOOC[wall_pierce ? " (WALL PIERCE)" : ""]:</span> <EM>[src.key]/[src.mob.name]:</EM> <span class='message'>[msg]</span>"))
-		else if (cli_client.prefs.read_preference(/datum/preference/toggle/admin/see_looc))
+		else if (cli_client.prefs.read_preference(/datum/preference/toggle/see_looc))
 			to_chat(cli_client, span_looc("[ADMIN_FLW(usr)] <span class='prefix'>(R)LOOC[wall_pierce ? " (WALL PIERCE)" : ""]:</span> <EM>[src.key]/[src.mob.name]:</EM> <span class='message'>[msg]</span>"))
 
 #undef LOOC_RANGE
@@ -121,7 +121,7 @@ GLOBAL_VAR_INIT(looc_allowed, TRUE)
 		return M.get_top_level_mob()
 	return src
 
-/datum/preference/toggle/admin/see_looc
+/datum/preference/toggle/see_looc
 	category = PREFERENCE_CATEGORY_GAME_PREFERENCES
 	default_value = TRUE
 	savefile_key = "looc_admin_pref"
