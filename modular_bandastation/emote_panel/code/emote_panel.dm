@@ -19,7 +19,7 @@
 			continue
 
 		emotes += list(list(
-			"key" = emote.key,
+			"key" = emote.name,
 			"emote_path" = emote.type,
 			"hands" = emote.hands_use_check,
 			"visible" = emote.emote_type & EMOTE_VISIBLE,

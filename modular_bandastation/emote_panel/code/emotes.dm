@@ -1,79 +1,73 @@
+/datum/emote
+	var/name
+
+/datum/emote/New()
+	. = ..()
+	if(!name)
+		name = key
+
 // Imaginary Friend
 
 /datum/emote/imaginary_friend/point
-	key = "point"
-	key_third_person = "points"
-	message = "points."
-	message_param = "points at %t."
+	name = "указать"
+	message = "указывает."
+	message_param = "указывает на %t."
 
 // Emote Living
 
 /datum/emote/flip
-	key = "flip"
-	key_third_person = "flips"
+	name = "кувырок"
 
 /datum/emote/spin
-	key = "spin"
-	key_third_person = "spins"
+	name = "крутиться"
 
 /datum/emote/living/blush
-	key = "blush"
-	key_third_person = "blushes"
-	message = "blushes."
+	name = "покраснеть"
+	message = "краснеет."
 
 /datum/emote/living/sing_tune
-	key = "tunesing"
-	key_third_person = "sings a tune"
+	name = "tunesing"
 	message = "sings a tune."
 
 /datum/emote/living/bow
-	key = "bow"
-	key_third_person = "bows"
-	message = "bows."
-	message_param = "bows to %t."
+	name = "кивнуть"
+	message = "кивает."
+	message_param = "кивает в сторону %t."
 
 /datum/emote/living/burp
-	key = "burp"
-	key_third_person = "burps"
-	message = "burps."
-	message_mime = "acts out a burp."
+	name = "рыгать"
+	message = "рыгает."
+	message_mime = "изображает отрыжку."
 
 /datum/emote/living/choke
-	key = "choke"
-	key_third_person = "chokes"
-	message = "chokes!"
-	message_mime = "chokes silently!"
+	name = "подавиться"
+	message = "давится!"
+	message_mime = "бесшумно давится!"
 
 /datum/emote/living/cross
-	key = "cross"
-	key_third_person = "crosses"
-	message = "crosses their arms."
+	name = "скрестить руки"
+	message = "скрещивает свои руки."
 
 /datum/emote/living/chuckle
-	key = "chuckle"
-	key_third_person = "chuckles"
-	message = "chuckles."
-	message_mime = "acts out chuckling."
+	name = "усмехнуться"
+	message = "усмехается."
+	message_mime = "изображает смешок."
 
 /datum/emote/living/collapse
-	key = "collapse"
-	key_third_person = "collapses"
-	message = "collapses!"
+	name = "упасть"
+	message = "падает!"
 
 /datum/emote/living/cough
-	key = "cough"
-	key_third_person = "coughs"
-	message = "coughs!"
-	message_mime = "acts out an exaggerated cough!"
+	name = "кашлять"
+	message = "кашляет!"
+	message_mime = "изображает преувеличенный кашель!"
 
 /datum/emote/living/dance
-	key = "dance"
-	key_third_person = "dances"
-	message = "dances around happily."
+	name = "танцевать"
+	message = "радостно танцует."
 
 /datum/emote/living/deathgasp
-	key = "deathgasp"
-	key_third_person = "deathgasps"
+	name = "deathgasp"
 	message = "seizes up and falls limp, their eyes dead and lifeless..."
 	message_robot = "shudders violently for a moment before falling still, its eyes slowly darkening."
 	message_AI = "screeches, its screen flickering as its systems slowly halt."
@@ -83,665 +77,569 @@
 	message_animal_or_basic = "stops moving..."
 
 /datum/emote/living/drool
-	key = "drool"
-	key_third_person = "drools"
+	name = "drool"
 	message = "drools."
 
 /datum/emote/living/faint
-	key = "faint"
-	key_third_person = "faints"
+	name = "faint"
 	message = "faints."
 
 /datum/emote/living/flap
-	key = "flap"
-	key_third_person = "flaps"
+	name = "flap"
 	message = "flaps their wings."
 
 /datum/emote/living/flap/aflap
-	key = "aflap"
-	key_third_person = "aflaps"
+	name = "aflap"
 	message = "flaps their wings ANGRILY!"
 
 /datum/emote/living/frown
-	key = "frown"
-	key_third_person = "frowns"
+	name = "frown"
 	message = "frowns."
 
 /datum/emote/living/gag
-	key = "gag"
-	key_third_person = "gags"
+	name = "gag"
 	message = "gags."
 	message_mime = "gags silently."
 
 /datum/emote/living/gasp
-	key = "gasp"
-	key_third_person = "gasps"
+	name = "gasp"
 	message = "gasps!"
 	message_mime = "gasps silently!"
 
 /datum/emote/living/gasp_shock
-	key = "gaspshock"
-	key_third_person = "gaspsshock"
+	name = "gaspshock"
 	message = "gasps in shock!"
 	message_mime = "gasps in silent shock!"
 
 /datum/emote/living/giggle
-	key = "giggle"
-	key_third_person = "giggles"
+	name = "giggle"
 	message = "giggles."
 	message_mime = "giggles silently!"
 
 /datum/emote/living/glare
-	key = "glare"
-	key_third_person = "glares"
+	name = "glare"
 	message = "glares."
 	message_param = "glares at %t."
 
 /datum/emote/living/grin
-	key = "grin"
-	key_third_person = "grins"
+	name = "grin"
 	message = "grins."
 
 /datum/emote/living/groan
-	key = "groan"
-	key_third_person = "groans"
+	name = "groan"
 	message = "groans!"
 	message_mime = "appears to groan!"
 
 /datum/emote/living/grimace
-	key = "grimace"
-	key_third_person = "grimaces"
+	name = "grimace"
 	message = "grimaces."
 
 /datum/emote/living/jump
-	key = "jump"
-	key_third_person = "jumps"
+	name = "jump"
 	message = "jumps!"
 
 /datum/emote/living/kiss
-	key = "kiss"
-	key_third_person = "kisses"
+	name = "kiss"
 
 /datum/emote/living/laugh
-	key = "laugh"
-	key_third_person = "laughs"
+	name = "laugh"
 	message = "laughs."
 	message_mime = "laughs silently!"
 
 /datum/emote/living/look
-	key = "look"
-	key_third_person = "looks"
+	name = "look"
 	message = "looks."
 	message_param = "looks at %t."
 
 /datum/emote/living/nod
-	key = "nod"
-	key_third_person = "nods"
+	name = "nod"
 	message = "nods."
 	message_param = "nods at %t."
 
 /datum/emote/living/point
-	key = "point"
-	key_third_person = "points"
+	name = "point"
 	message = "points."
 	message_param = "points at %t."
 
 /datum/emote/living/pout
-	key = "pout"
-	key_third_person = "pouts"
+	name = "pout"
 	message = "pouts."
 	message_mime = "pouts silently."
 
 /datum/emote/living/scream
-	key = "scream"
-	key_third_person = "screams"
+	name = "scream"
 	message = "screams!"
 	message_mime = "acts out a scream!"
 
 /datum/emote/living/scowl
-	key = "scowl"
-	key_third_person = "scowls"
+	name = "scowl"
 	message = "scowls."
 
 /datum/emote/living/shake
-	key = "shake"
-	key_third_person = "shakes"
+	name = "shake"
 	message = "shakes their head."
 
 /datum/emote/living/shiver
-	key = "shiver"
-	key_third_person = "shiver"
+	name = "shiver"
 	message = "shivers."
 
 /datum/emote/living/sigh
-	key = "sigh"
-	key_third_person = "sighs"
+	name = "sigh"
 	message = "sighs."
 	message_mime = "acts out an exaggerated silent sigh."
 
 /datum/emote/living/sit
-	key = "sit"
-	key_third_person = "sits"
+	name = "sit"
 	message = "sits down."
 
 /datum/emote/living/smile
-	key = "smile"
-	key_third_person = "smiles"
+	name = "smile"
 	message = "smiles."
 
 /datum/emote/living/sneeze
-	key = "sneeze"
-	key_third_person = "sneezes"
+	name = "sneeze"
 	message = "sneezes."
 	message_mime = "acts out an exaggerated silent sneeze."
 
 /datum/emote/living/smug
-	key = "smug"
-	key_third_person = "smugs"
+	name = "smug"
 	message = "grins smugly."
 
 /datum/emote/living/sniff
-	key = "sniff"
-	key_third_person = "sniffs"
+	name = "sniff"
 	message = "sniffs."
 	message_mime = "sniffs silently."
 
 /datum/emote/living/snore
-	key = "snore"
-	key_third_person = "snores"
+	name = "snore"
 	message = "snores."
 	message_mime = "sleeps soundly."
 
 /datum/emote/living/stare
-	key = "stare"
-	key_third_person = "stares"
+	name = "stare"
 	message = "stares."
 	message_param = "stares at %t."
 
 /datum/emote/living/strech
-	key = "stretch"
-	key_third_person = "stretches"
+	name = "stretch"
 	message = "stretches their arms."
 
 /datum/emote/living/sulk
-	key = "sulk"
-	key_third_person = "sulks"
+	name = "sulk"
 	message = "sulks down sadly."
 
 /datum/emote/living/surrender
-	key = "surrender"
-	key_third_person = "surrenders"
+	name = "surrender"
 	message = "puts their hands on their head and falls to the ground, they surrender%s!"
 
 /datum/emote/living/sway
-	key = "sway"
-	key_third_person = "sways"
+	name = "sway"
 	message = "sways around dizzily."
 
 /datum/emote/living/tilt
-	key = "tilt"
-	key_third_person = "tilts"
+	name = "tilt"
 	message = "tilts their head to the side."
 
 /datum/emote/living/tremble
-	key = "tremble"
-	key_third_person = "trembles"
+	name = "tremble"
 	message = "trembles in fear!"
 
 /datum/emote/living/twitch
-	key = "twitch"
-	key_third_person = "twitches"
+	name = "twitch"
 	message = "twitches violently."
 
 /datum/emote/living/twitch_s
-	key = "twitch_s"
+	name = "twitch_s"
 	message = "twitches."
 
 /datum/emote/living/wave
-	key = "wave"
-	key_third_person = "waves"
+	name = "wave"
 	message = "waves."
 
 /datum/emote/living/whimper
-	key = "whimper"
-	key_third_person = "whimpers"
+	name = "whimper"
 	message = "whimpers."
 	message_mime = "appears hurt."
 
 /datum/emote/living/wsmile
-	key = "wsmile"
-	key_third_person = "wsmiles"
+	name = "wsmile"
 	message = "smiles weakly."
 
 /datum/emote/living/yawn
-	key = "yawn"
-	key_third_person = "yawns"
+	name = "yawn"
 	message = "yawns."
 	message_mime = "acts out an exaggerated silent yawn."
 
 /datum/emote/living/gurgle
-	key = "gurgle"
-	key_third_person = "gurgles"
+	name = "gurgle"
 	message = "makes an uncomfortable gurgle."
 	message_mime = "gurgles silently and uncomfortably."
 
 /datum/emote/living/beep
-	key = "beep"
-	key_third_person = "beeps"
+	name = "beep"
 	message = "beeps."
 	message_param = "beeps at %t."
 
 /datum/emote/living/inhale
-	key = "inhale"
-	key_third_person = "inhales"
+	name = "inhale"
 	message = "breathes in."
 
 /datum/emote/living/exhale
-	key = "exhale"
-	key_third_person = "exhales"
+	name = "exhale"
 	message = "breathes out."
 
 /datum/emote/living/swear
-	key = "swear"
-	key_third_person = "swears"
+	name = "swear"
 	message = "says a swear word!"
 	message_mime = "makes a rude gesture!"
 
 // Emote Brain
 
 /datum/emote/brain/alarm
-	key = "alarm"
+	name = "alarm"
 	message = "sounds an alarm."
 
 /datum/emote/brain/alert
-	key = "alert"
+	name = "alert"
 	message = "lets out a distressed noise."
 
 /datum/emote/brain/flash
-	key = "flash"
+	name = "flash"
 	message = "blinks their lights."
 
 /datum/emote/brain/notice
-	key = "notice"
+	name = "notice"
 	message = "plays a loud tone."
 
 /datum/emote/brain/whistle
-	key = "whistle"
-	key_third_person = "whistles"
+	name = "whistle"
 	message = "whistles."
 
 // Emote Carbon
 
 /datum/emote/living/carbon/airguitar
-	key = "airguitar"
+	name = "airguitar"
 	message = "is strumming the air and headbanging like a safari chimp."
 
 /datum/emote/living/carbon/blink
-	key = "blink"
-	key_third_person = "blinks"
+	name = "blink"
 	message = "blinks."
 
 /datum/emote/living/carbon/blink_r
-	key = "blink_r"
+	name = "blink_r"
 	message = "blinks rapidly."
 
 /datum/emote/living/carbon/clap
-	key = "clap"
-	key_third_person = "claps"
+	name = "clap"
 	message = "claps."
 
 /datum/emote/living/carbon/crack
-	key = "crack"
-	key_third_person = "cracks"
+	name = "crack"
 	message = "cracks their knuckles."
 
 /datum/emote/living/carbon/circle
-	key = "circle"
-	key_third_person = "circles"
+	name = "circle"
 
 /datum/emote/living/carbon/moan
-	key = "moan"
-	key_third_person = "moans"
+	name = "moan"
 	message = "moans!"
 	message_mime = "appears to moan!"
 
 /datum/emote/living/carbon/noogie
-	key = "noogie"
-	key_third_person = "noogies"
+	name = "noogie"
 
 /datum/emote/living/carbon/roll
-	key = "roll"
-	key_third_person = "rolls"
+	name = "roll"
 	message = "rolls."
 
 /datum/emote/living/carbon/scratch
-	key = "scratch"
-	key_third_person = "scratches"
+	name = "scratch"
 	message = "scratches."
 
 /datum/emote/living/carbon/sign
-	key = "sign"
-	key_third_person = "signs"
+	name = "sign"
 	message_param = "signs the number %t."
 
 /datum/emote/living/carbon/sign/signal
-	key = "signal"
-	key_third_person = "signals"
+	name = "signal"
 	message_param = "raises %t fingers."
 
 /datum/emote/living/carbon/slap
-	key = "slap"
-	key_third_person = "slaps"
+	name = "slap"
 
 /datum/emote/living/carbon/hand
-	key = "hand"
-	key_third_person = "hands"
+	name = "hand"
 
 /datum/emote/living/carbon/snap
-	key = "snap"
-	key_third_person = "snaps"
+	name = "snap"
 	message = "snaps their fingers."
 
 /datum/emote/living/carbon/shoesteal
-	key = "shoesteal"
-	key_third_person = "shoesteals"
+	name = "shoesteal"
 
 /datum/emote/living/carbon/tail
-	key = "tail"
+	name = "tail"
 	message = "waves their tail."
 
 /datum/emote/living/carbon/wink
-	key = "wink"
-	key_third_person = "winks"
+	name = "wink"
 	message = "winks."
 
 // Emote Alien
 
 /datum/emote/living/alien/gnarl
-	key = "gnarl"
-	key_third_person = "gnarls"
+	name = "gnarl"
 	message = "gnarls and shows its teeth..."
 
 /datum/emote/living/alien/hiss
-	key = "hiss"
-	key_third_person = "hisses"
+	name = "hiss"
 	message_alien = "hisses."
 	message_larva = "hisses softly."
 
 /datum/emote/living/alien/roar
-	key = "roar"
-	key_third_person = "roars"
+	name = "roar"
 	message_alien = "roars."
 	message_larva = "softly roars."
 
 // Emote Human
 
 /datum/emote/living/carbon/human/cry
-	key = "cry"
-	key_third_person = "cries"
+	name = "cry"
 	message = "cries."
 	message_mime = "sobs silently."
 
 /datum/emote/living/carbon/human/dap
-	key = "dap"
-	key_third_person = "daps"
+	name = "dap"
 	message = "sadly can't find anybody to give daps to, and daps themself. Shameful."
 	message_param = "give daps to %t."
 
 /datum/emote/living/carbon/human/eyebrow
-	key = "eyebrow"
+	name = "eyebrow"
 	message = "raises an eyebrow."
 
 /datum/emote/living/carbon/human/grumble
-	key = "grumble"
-	key_third_person = "grumbles"
+	name = "grumble"
 	message = "grumbles!"
 	message_mime = "grumbles silently!"
 
 /datum/emote/living/carbon/human/handshake
-	key = "handshake"
+	name = "handshake"
 	message = "shakes their own hands."
 	message_param = "shakes hands with %t."
 
 /datum/emote/living/carbon/human/hug
-	key = "hug"
-	key_third_person = "hugs"
+	name = "hug"
 	message = "hugs themself."
 	message_param = "hugs %t."
 
 /datum/emote/living/carbon/human/mumble
-	key = "mumble"
-	key_third_person = "mumbles"
+	name = "mumble"
 	message = "mumbles!"
 	message_mime = "mumbles silently!"
 
 /datum/emote/living/carbon/human/scream
-	key = "scream"
-	key_third_person = "screams"
+	name = "scream"
 	message = "screams!"
 	message_mime = "acts out a scream!"
 
 /datum/emote/living/carbon/human/scream/screech
-	key = "screech"
-	key_third_person = "screeches"
+	name = "screech"
 	message = "screeches!"
 	message_mime = "screeches silently."
 
 /datum/emote/living/carbon/human/pale
-	key = "pale"
+	name = "pale"
 	message = "goes pale for a second."
 
 /datum/emote/living/carbon/human/raise
-	key = "raise"
-	key_third_person = "raises"
+	name = "raise"
 	message = "raises a hand."
 
 /datum/emote/living/carbon/human/salute
-	key = "salute"
-	key_third_person = "salutes"
+	name = "salute"
 	message = "salutes."
 	message_param = "salutes to %t."
 
 /datum/emote/living/carbon/human/shrug
-	key = "shrug"
-	key_third_person = "shrugs"
+	name = "shrug"
 	message = "shrugs."
 
 /datum/emote/living/carbon/human/wag
-	key = "wag"
-	key_third_person = "wags"
+	name = "wag"
 	message = "their tail."
 
 /datum/emote/living/carbon/human/wing
-	key = "wing"
-	key_third_person = "wings"
+	name = "wing"
 	message = "their wings."
 
 /datum/emote/living/carbon/human/clear_throat
-	key = "clear"
-	key_third_person = "clears throat"
+	name = "clear"
 	message = "clears their throat."
 
 /datum/emote/living/carbon/human/monkey/gnarl
-	key = "gnarl"
-	key_third_person = "gnarls"
+	name = "gnarl"
 	message = "gnarls and shows its teeth..."
 	message_mime = "gnarls silently, baring its teeth..."
 
 /datum/emote/living/carbon/human/monkey/roll
-	key = "roll"
-	key_third_person = "rolls"
+	name = "roll"
 	message = "rolls."
 
 /datum/emote/living/carbon/human/monkey/scratch
-	key = "scratch"
-	key_third_person = "scratches"
+	name = "scratch"
 	message = "scratches."
 
 /datum/emote/living/carbon/human/monkey/screech/roar
-	key = "roar"
-	key_third_person = "roars"
+	name = "roar"
 	message = "roars!"
 	message_mime = "acts out a roar."
 
 /datum/emote/living/carbon/human/monkey/tail
-	key = "tail"
+	name = "tail"
 	message = "waves their tail."
 
 /datum/emote/living/carbon/human/monkey/sign
-	key = "sign"
-	key_third_person = "signs"
+	name = "sign"
 	message_param = "signs the number %t."
 
 // Emote AI
 
 /datum/emote/ai/emotion_display
-	key = "blank"
+	name = "blank"
 
 /datum/emote/ai/emotion_display/very_happy
-	key = "veryhappy"
+	name = "veryhappy"
 
 /datum/emote/ai/emotion_display/happy
-	key = "happy"
+	name = "happy"
 
 /datum/emote/ai/emotion_display/neutral
-	key = "neutral"
+	name = "neutral"
 
 /datum/emote/ai/emotion_display/unsure
-	key = "unsure"
+	name = "unsure"
 
 /datum/emote/ai/emotion_display/confused
-	key = "confused"
+	name = "confused"
 
 /datum/emote/ai/emotion_display/sad
-	key = "sad"
+	name = "sad"
 
 /datum/emote/ai/emotion_display/bsod
-	key = "bsod"
+	name = "bsod"
 
 /datum/emote/ai/emotion_display/trollface
-	key = "trollface"
+	name = "trollface"
 
 /datum/emote/ai/emotion_display/awesome
-	key = "awesome"
+	name = "awesome"
 
 /datum/emote/ai/emotion_display/dorfy
-	key = "dorfy"
+	name = "dorfy"
 
 /datum/emote/ai/emotion_display/thinking
-	key = "thinking"
+	name = "thinking"
 
 /datum/emote/ai/emotion_display/facepalm
-	key = "facepalm"
-	key_third_person = "facepalms"
+	name = "facepalm"
 
 /datum/emote/ai/emotion_display/friend_computer
-	key = "friendcomputer"
+	name = "friendcomputer"
 
 /datum/emote/ai/emotion_display/blue_glow
-	key = "blueglow"
+	name = "blueglow"
 
 /datum/emote/ai/emotion_display/red_glow
-	key = "redglow"
+	name = "redglow"
 
 // Emote Silicon
 
 /datum/emote/silicon/boop
-	key = "boop"
-	key_third_person = "boops"
+	name = "boop"
 	message = "boops."
 
 /datum/emote/silicon/buzz
-	key = "buzz"
-	key_third_person = "buzzes"
+	name = "buzz"
 	message = "buzzes."
 	message_param = "buzzes at %t."
 
 /datum/emote/silicon/buzz2
-	key = "buzz2"
+	name = "buzz2"
 	message = "buzzes twice."
 
 /datum/emote/silicon/chime
-	key = "chime"
-	key_third_person = "chimes"
+	name = "chime"
 	message = "chimes."
 
 /datum/emote/silicon/honk
-	key = "honk"
-	key_third_person = "honks"
+	name = "honk"
 	message = "honks."
 
 /datum/emote/silicon/ping
-	key = "ping"
-	key_third_person = "pings"
+	name = "ping"
 	message = "pings."
 	message_param = "pings at %t."
 
 /datum/emote/silicon/sad
-	key = "sad"
+	name = "sad"
 	message = "plays a sad trombone..."
 
 /datum/emote/silicon/warn
-	key = "warn"
+	name = "warn"
 	message = "blares an alarm!"
 
 /datum/emote/silicon/slowclap
-	key = "slowclap"
+	name = "slowclap"
 	message = "activates their slow clap processor."
 
 // Emote Slime
 
 /datum/emote/slime/bounce
-	key = "bounce"
-	key_third_person = "bounces"
+	name = "bounce"
 	message = "bounces in place."
 
 /datum/emote/slime/jiggle
-	key = "jiggle"
-	key_third_person = "jiggles"
+	name = "jiggle"
 	message = "jiggles!"
 
 /datum/emote/slime/light
-	key = "light"
-	key_third_person = "lights"
+	name = "light"
 	message = "lights up for a bit, then stops."
 
 /datum/emote/slime/vibrate
-	key = "vibrate"
-	key_third_person = "vibrates"
+	name = "vibrate"
 	message = "vibrates!"
 
 /datum/emote/slime/mood
-	key = "moodnone"
+	name = "moodnone"
 
 /datum/emote/slime/mood/sneaky
-	key = "moodsneaky"
+	name = "moodsneaky"
 	mood_key = "mischievous"
 
 /datum/emote/slime/mood/smile
-	key = "moodsmile"
+	name = "moodsmile"
 	mood_key = ":3"
 
 /datum/emote/slime/mood/cat
-	key = "moodcat"
+	name = "moodcat"
 	mood_key = ":33"
 
 /datum/emote/slime/mood/pout
-	key = "moodpout"
+	name = "moodpout"
 	mood_key = "pout"
 
 /datum/emote/slime/mood/sad
-	key = "moodsad"
+	name = "moodsad"
 	mood_key = "sad"
 
 /datum/emote/slime/mood/angry
-	key = "moodangry"
+	name = "moodangry"
 	mood_key = "angry"
 
 // Emote Other
 
 /datum/emote/gorilla/ooga
-	key = "ooga"
-	key_third_person = "oogas"
+	name = "ooga"
 	message = "oogas."
 	message_param = "oogas at %t."
