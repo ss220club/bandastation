@@ -1,3 +1,6 @@
+/datum/emote_panel
+	var/list/blacklisted_emotes = list("me", "help")
+
 /datum/emote_panel/ui_static_data(mob/user)
 	var/list/data = list()
 
@@ -6,6 +9,10 @@
 	for(var/emote_path as anything in subtypesof(/datum/emote))
 		var/datum/emote/emote = new emote_path()
 
+		if(emote.key in blacklisted_emotes)
+			continue
+		if(isnull(emote.key))
+			continue
 		if(!is_type_in_typecache(user, emote.mob_type_allowed_typecache))
 			continue
 		if(is_type_in_typecache(user, emote.mob_type_blacklist_typecache))
@@ -14,6 +21,10 @@
 		emotes += list(list(
 			"key" = emote.key,
 			"emote_path" = emote.type,
+			"hands" = emote.hands_use_check,
+			"visible" = emote.emote_type & EMOTE_VISIBLE,
+			"audible" = emote.emote_type & EMOTE_AUDIBLE,
+			"sound" = !isnull(emote.sound),
 		))
 
 	data["emotes"] = emotes

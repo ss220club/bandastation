@@ -1,6 +1,7 @@
-import { useBackend } from '../backend';
+import { useBackend, useSharedState } from '../backend';
 import { Window } from '../layouts';
-import { Button, Section } from '../components';
+import { Button, Section, Stack } from '../components';
+import { SearchBar } from './Fabrication/SearchBar';
 
 type Emote = {
   key: string;
@@ -14,19 +15,63 @@ type EmotePanelData = {
 export const EmotePanelContent = (props, context) => {
   const { act, data } = useBackend<EmotePanelData>(context);
   const { emotes } = data;
+
+  const [searchText, setSearchText] = useSharedState(
+    context,
+    'search_text',
+    ''
+  );
+
   return (
-    <Section title="Emote Panel">
-      {emotes.map((emote) => (
-        <Button
-          key={emote.key}
-          onClick={() =>
-            act('play_emote', {
-              emote_path: emote.emote_path,
-            })
-          }>
-          {emote.key}
-        </Button>
-      ))}
+    <Section
+      title={
+        searchText.length > 0 ? `Results for "${searchText}"` : `All Emotes`
+      }
+      fill>
+      <Stack vertical fill>
+        <Stack.Item>
+          <Section>
+            <SearchBar
+              searchText={searchText}
+              onSearchTextChanged={setSearchText}
+              hint={'Search all emotes...'}
+            />
+          </Section>
+        </Stack.Item>
+        <Stack.Item>
+          {emotes.map((emote) =>
+            emote.key ? (
+              searchText.length > 0 ? (
+                emote.key.toLowerCase().includes(searchText.toLowerCase()) ? (
+                  <Button
+                    key={emote.key}
+                    onClick={() =>
+                      act('play_emote', {
+                        emote_path: emote.emote_path,
+                      })
+                    }>
+                    {emote.key.toUpperCase()}
+                  </Button>
+                ) : (
+                  ''
+                )
+              ) : (
+                <Button
+                  key={emote.key}
+                  onClick={() =>
+                    act('play_emote', {
+                      emote_path: emote.emote_path,
+                    })
+                  }>
+                  {emote.key.toUpperCase()}
+                </Button>
+              )
+            ) : (
+              ''
+            )
+          )}
+        </Stack.Item>
+      </Stack>
     </Section>
   );
 };
