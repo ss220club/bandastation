@@ -2,10 +2,15 @@ import { useBackend, useSharedState } from '../backend';
 import { Window } from '../layouts';
 import { Button, Section, Stack } from '../components';
 import { SearchBar } from './Fabrication/SearchBar';
+import { BooleanLike } from '../../common/react';
 
 type Emote = {
   key: string;
   emote_path: string;
+  hands: BooleanLike;
+  visible: BooleanLike;
+  audible: BooleanLike;
+  sound: BooleanLike;
 };
 
 type EmotePanelData = {
