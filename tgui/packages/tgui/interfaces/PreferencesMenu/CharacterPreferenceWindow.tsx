@@ -79,6 +79,7 @@ export const CharacterPreferenceWindow = (props, context) => {
     case Page.Quirks:
       pageContents = <QuirksPage />;
       break;
+    // BANDASTATION EDIT ADD - TTS
     case Page.Voice:
       pageContents = <VoicePage />;
       break;
