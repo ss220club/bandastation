@@ -30,7 +30,9 @@ export const EmotePanelContent = (props, context) => {
   return (
     <Section
       title={
-        searchText.length > 0 ? `Results for "${searchText}"` : `All Emotes`
+        searchText.length > 0
+          ? `Результаты поиска "${searchText}"`
+          : `Все эмоции`
       }
       fill>
       <Stack vertical fill>
@@ -39,7 +41,7 @@ export const EmotePanelContent = (props, context) => {
             <SearchBar
               searchText={searchText}
               onSearchTextChanged={setSearchText}
-              hint={'Search all emotes...'}
+              hint={'Искать эмоцию...'}
             />
           </Section>
         </Stack.Item>
