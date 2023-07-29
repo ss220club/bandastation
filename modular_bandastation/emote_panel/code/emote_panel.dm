@@ -5,27 +5,24 @@
 	var/list/data = list()
 
 	var/list/emotes = list()
+	var/list/keys = list()
 
-	for(var/emote_path as anything in subtypesof(/datum/emote))
-		var/datum/emote/emote = new emote_path()
-
-		if(emote.key in blacklisted_emotes)
-			continue
-		if(isnull(emote.key))
-			continue
-		if(!is_type_in_typecache(user, emote.mob_type_allowed_typecache))
-			continue
-		if(is_type_in_typecache(user, emote.mob_type_blacklist_typecache))
-			continue
-
-		emotes += list(list(
-			"key" = emote.name,
-			"emote_path" = emote.type,
-			"hands" = emote.hands_use_check,
-			"visible" = emote.emote_type & EMOTE_VISIBLE,
-			"audible" = emote.emote_type & EMOTE_AUDIBLE,
-			"sound" = !isnull(emote.sound),
-		))
+	for(var/key in GLOB.emote_list)
+		for(var/datum/emote/emote in GLOB.emote_list[key])
+			if(emote.key in keys)
+				continue
+			if(emote.key in blacklisted_emotes)
+				continue
+			if(emote.can_run_emote(user, status_check = FALSE, intentional = TRUE))
+				keys += emote.key
+				emotes += list(list(
+					"key" = emote.name,
+					"emote_path" = emote.type,
+					"hands" = emote.hands_use_check,
+					"visible" = emote.emote_type & EMOTE_VISIBLE,
+					"audible" = emote.emote_type & EMOTE_AUDIBLE,
+					"sound" = !isnull(emote.sound),
+				))
 
 	data["emotes"] = emotes
 
@@ -39,8 +36,12 @@
 		if("play_emote")
 			var/emote_path = params["emote_path"]
 			var/datum/emote/emote = new emote_path()
-			usr.emote(emote.key, intentional = TRUE)
-			//emote.run_emote(usr, intentional = TRUE)
+			var/emote_act = emote.key
+			if(emote.message_param)
+				var/emote_param = tgui_input_text(usr, "Дополните эмоцию", emote.message_param)
+				if(!isnull(emote_param))
+					emote_act = "[emote_act] [emote_param]"
+			usr.emote(emote_act, intentional = TRUE)
 
 /datum/emote_panel/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
