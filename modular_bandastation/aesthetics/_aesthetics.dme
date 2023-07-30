@@ -39,5 +39,5 @@
 #include "walls\code\walls.dm"
 #include "windoor\code\windoor.dm"
 // #include "windows\code\windows.dm" // Need more sprites and fixes
-#include "windowtint\code\windowtint.dm"
+// #include "windowtint\code\windowtint.dm" // Unused?
 #include "zippo\code\zippo.dm"
