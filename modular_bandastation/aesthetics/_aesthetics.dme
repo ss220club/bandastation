@@ -16,7 +16,7 @@
 // #include "extinguisher\code\extinguisher.dm" // Need more sprites
 // #include "firealarm\code\firealarm.dm" // Need more sprites
 #include "floors\code\floors.dm"
-#include "hydroponics\code\hydroponics.dm"
+// #include "hydroponics\code\hydroponics.dm" // TG already uses these
 #include "keycard\code\keycard.dm"
 #include "labeler\code\labeler.dm"
 #include "library\code\library.dm"
