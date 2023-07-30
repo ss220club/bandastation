@@ -27,7 +27,7 @@
 // #include "library\code\library.dm" // TG already uses these
 #include "light_switch\code\light_switch.dm"
 #include "newscaster\code\newscaster.dm"
-#include "piano\code\piano.dm"
+// #include "piano\code\piano.dm" // Unused
 #include "racks\code\racks.dm"
 #include "requests_console\code\requests_console.dm"
 #include "safe\code\safe.dm"
