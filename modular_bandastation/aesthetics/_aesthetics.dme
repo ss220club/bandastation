@@ -30,7 +30,7 @@
 // #include "piano\code\piano.dm" // Unused
 #include "racks\code\racks.dm"
 #include "requests_console\code\requests_console.dm"
-#include "safe\code\safe.dm"
+// #include "safe\code\safe.dm" // TG already uses these
 #include "shutters\code\shutters.dm"
 #include "soap\code\soap.dm"
 #include "surgery_table\code\surgery_table.dm"
