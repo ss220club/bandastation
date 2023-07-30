@@ -32,7 +32,7 @@
 #include "requests_console\code\requests_console.dm"
 // #include "safe\code\safe.dm" // TG already uses these
 #include "shutters\code\shutters.dm"
-#include "soap\code\soap.dm"
+// #include "soap\code\soap.dm" // Unused
 #include "surgery_table\code\surgery_table.dm"
 #include "toolboxes\code\toolboxes.dm"
 #include "wallcloset\code\wallcloset.dm"
