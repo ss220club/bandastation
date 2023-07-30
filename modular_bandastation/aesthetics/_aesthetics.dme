@@ -9,7 +9,7 @@
 // #include "atmospherics\code\atmospherics.dm" // Need more sprites
 // #include "better_ids\code\better_ids.dm" // Need to change a lot
 #include "blastdoor\code\blastdoor.dm"
-#include "boxes\code\boxes.dm"
+// #include "boxes\code\boxes.dm" // Need to change a lot
 #include "cameras\code\cameras.dm"
 // #include "chairs\code\chairs.dm" // TG already uses these
 // #include "decals\code\decals.dm" // Didn't check this new one
