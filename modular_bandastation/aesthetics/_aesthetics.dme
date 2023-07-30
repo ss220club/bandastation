@@ -12,7 +12,7 @@
 // include "decals\code\decals.dm" // Didn't check this new one
 // #include "defib\code\defib.dm" // TG already uses these
 #include "dirwindows\code\dirwindows.dm"
-#include "door_control\code\door_control.dm"
+// #include "door_control\code\door_control.dm" // Unused
 #include "extinguisher\code\extinguisher.dm"
 #include "firealarm\code\firealarm.dm"
 #include "floors\code\floors.dm"
