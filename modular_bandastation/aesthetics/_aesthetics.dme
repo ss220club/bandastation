@@ -4,7 +4,7 @@
 #include "apc\code\apc.dm"
 // #include "atm\code\atm.dm" // Unused
 // #include "atmospherics\code\atmospherics.dm" // Need more sprites
-#include "better_ids\code\better_ids.dm"
+// #include "better_ids\code\better_ids.dm" // Need to change a lot
 #include "blastdoor\code\blastdoor.dm"
 #include "boxes\code\boxes.dm"
 #include "cameras\code\cameras.dm"
