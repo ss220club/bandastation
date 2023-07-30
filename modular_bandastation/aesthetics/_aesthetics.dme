@@ -38,6 +38,6 @@
 // #include "wallcloset\code\wallcloset.dm" // Unused
 #include "walls\code\walls.dm"
 #include "windoor\code\windoor.dm"
-#include "windows\code\windows.dm"
+// #include "windows\code\windows.dm" // Need more sprites and fixes
 #include "windowtint\code\windowtint.dm"
 #include "zippo\code\zippo.dm"
