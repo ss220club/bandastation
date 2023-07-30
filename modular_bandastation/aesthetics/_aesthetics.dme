@@ -35,7 +35,7 @@
 // #include "soap\code\soap.dm" // Unused
 #include "surgery_table\code\surgery_table.dm"
 // #include "toolboxes\code\toolboxes.dm" // TG already uses these
-#include "wallcloset\code\wallcloset.dm"
+// #include "wallcloset\code\wallcloset.dm" // Unused
 #include "walls\code\walls.dm"
 #include "windoor\code\windoor.dm"
 #include "windows\code\windows.dm"
