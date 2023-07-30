@@ -18,8 +18,8 @@
 // #include "door_control\code\door_control.dm" // Unused
 // #include "extinguisher\code\extinguisher.dm" // Need more sprites
 // #include "firealarm\code\firealarm.dm" // Need more sprites
-#include "floors\code\floors.dm"
-#include "floors\code\tile_types.dm"
+// #include "floors\code\floors.dm" // Need to change a lot
+// #include "floors\code\tile_types.dm" // Need to change a lot
 // #include "hydroponics\code\hydroponics.dm" // TG already uses these
 // #include "intercom\code\intercom.dm" // TG already uses these
 #include "keycard\code\keycard.dm"
