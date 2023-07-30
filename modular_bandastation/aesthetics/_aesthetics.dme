@@ -14,7 +14,7 @@
 #include "dirwindows\code\dirwindows.dm"
 // #include "door_control\code\door_control.dm" // Unused
 // #include "extinguisher\code\extinguisher.dm" // Need more sprites
-#include "firealarm\code\firealarm.dm"
+// #include "firealarm\code\firealarm.dm" // Need more sprites
 #include "floors\code\floors.dm"
 #include "hydroponics\code\hydroponics.dm"
 #include "keycard\code\keycard.dm"
