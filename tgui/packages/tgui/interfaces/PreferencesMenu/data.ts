@@ -142,6 +142,7 @@ export type PreferencesMenuData = {
       gender: Gender;
       joblessrole: JoblessRole;
       species: string;
+      tts_seed: string; // BANDASTATION EDIT ADD - TTS
     };
 
     randomization: Record<string, RandomSetting>;
@@ -170,6 +171,23 @@ export type PreferencesMenuData = {
 
   active_slot: number;
   name_to_use: string;
+
+  // BANDASTATION EDIT START - TTS
+  tts_enabled: BooleanLike;
+  providers: Array<{
+    name: string;
+    is_enabled: BooleanLike;
+  }>;
+  seeds: Array<{
+    name: string;
+    value: string;
+    category: string;
+    gender: string;
+    provider: string;
+    donator_level: number;
+  }>;
+  phrases: string[];
+  // BANDASTATION EDIT END
 
   window: Window;
 };
