@@ -13,6 +13,10 @@
 	icon_state = "r_window"
 	color = "#5A6E82"
 
+/obj/structure/window/reinforced/tinted/frosted
+	icon_state = "r_window"
+	color = "#5A6E82"
+
 /obj/structure/window/plasma
 	icon = 'modular_bandastation/aesthetics/windows/icons/directional.dmi'
 	icon_state = "window"
