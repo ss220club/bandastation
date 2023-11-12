@@ -18,7 +18,7 @@
 	edge_overlay_file = 'modular_bandastation/aesthetics/windows/icons/window_edges.dmi'
 	icon_state = "window-0"
 	base_icon_state = "window"
-	canSmoothWith = SMOOTH_GROUP_WALLS + SMOOTH_GROUP_WINDOW_FULLTILE + SMOOTH_GROUP_AIRLOCK
+	canSmoothWith = SMOOTH_GROUP_AIRLOCK + SMOOTH_GROUP_WINDOW_FULLTILE + SMOOTH_GROUP_WALLS
 	color = "#99BBFF"
 
 /obj/structure/window/reinforced/fulltile
@@ -26,7 +26,7 @@
 	edge_overlay_file = 'modular_bandastation/aesthetics/windows/icons/reinforced_window_edges.dmi'
 	icon_state = "reinforced_window-0"
 	base_icon_state = "reinforced_window"
-	canSmoothWith = SMOOTH_GROUP_WALLS + SMOOTH_GROUP_WINDOW_FULLTILE + SMOOTH_GROUP_AIRLOCK
+	canSmoothWith = SMOOTH_GROUP_AIRLOCK + SMOOTH_GROUP_WINDOW_FULLTILE + SMOOTH_GROUP_WALLS
 	color = "#99BBFF"
 
 /obj/structure/window/reinforced/tinted/fulltile
@@ -34,7 +34,7 @@
 	edge_overlay_file = 'modular_bandastation/aesthetics/windows/icons/reinforced_window_edges.dmi'
 	icon_state = "reinforced_window-0"
 	base_icon_state = "reinforced_window"
-	canSmoothWith = SMOOTH_GROUP_WALLS + SMOOTH_GROUP_WINDOW_FULLTILE + SMOOTH_GROUP_AIRLOCK
+	canSmoothWith = SMOOTH_GROUP_AIRLOCK + SMOOTH_GROUP_WINDOW_FULLTILE + SMOOTH_GROUP_WALLS
 	color = "#5A6E82"
 
 /obj/structure/window/plasma/fulltile
@@ -42,7 +42,7 @@
 	edge_overlay_file = 'modular_bandastation/aesthetics/windows/icons/window_edges.dmi'
 	icon_state = "window-0"
 	base_icon_state = "window"
-	canSmoothWith = SMOOTH_GROUP_WALLS + SMOOTH_GROUP_WINDOW_FULLTILE + SMOOTH_GROUP_AIRLOCK
+	canSmoothWith = SMOOTH_GROUP_AIRLOCK + SMOOTH_GROUP_WINDOW_FULLTILE + SMOOTH_GROUP_WALLS
 	color = "#C800FF"
 
 /obj/structure/window/reinforced/plasma/fulltile
@@ -50,11 +50,11 @@
 	edge_overlay_file = 'modular_bandastation/aesthetics/windows/icons/reinforced_window_edges.dmi'
 	icon_state = "reinforced_window-0"
 	base_icon_state = "reinforced_window"
-	canSmoothWith = SMOOTH_GROUP_WALLS + SMOOTH_GROUP_WINDOW_FULLTILE + SMOOTH_GROUP_AIRLOCK
+	canSmoothWith = SMOOTH_GROUP_AIRLOCK + SMOOTH_GROUP_WINDOW_FULLTILE + SMOOTH_GROUP_WALLS
 	color = "#C800FF"
 
 /obj/structure/window/reinforced/shuttle
-	canSmoothWith = SMOOTH_GROUP_TITANIUM_WALLS + SMOOTH_GROUP_WINDOW_FULLTILE_SHUTTLE + SMOOTH_GROUP_AIRLOCK + SMOOTH_GROUP_SHUTTLE_PARTS
+	canSmoothWith = SMOOTH_GROUP_SHUTTLE_PARTS + SMOOTH_GROUP_AIRLOCK + SMOOTH_GROUP_WINDOW_FULLTILE_SHUTTLE + SMOOTH_GROUP_TITANIUM_WALLS
 
 // Spawners
 /* Доделать если всё таки соберёмся маппить...
