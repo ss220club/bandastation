@@ -2,3 +2,5 @@
 
 #include "walls/code/walls.dm"
 #include "windows/code/full_tile_windows.dm"
+#include "windows/code/directional_windows.dm"
+#include "windoors/code/windoors.dm"
