@@ -39,29 +39,18 @@
 	icon = 'modular_bandastation/aesthetics/airlocks/icons/station/botany.dmi'
 	assemblytype = /obj/structure/door_assembly/door_assembly_hydro
 
-/obj/machinery/door/airlock/eva
-	icon = 'modular_bandastation/aesthetics/airlocks/icons/station/eva.dmi'
-	assemblytype = /obj/structure/door_assembly/door_assembly_eva
-
 /obj/machinery/door/airlock/service
 	icon = 'modular_bandastation/aesthetics/airlocks/icons/station/service.dmi'
 	assemblytype = /obj/structure/door_assembly/door_assembly_service
-
-/obj/machinery/door/airlock/psych
-	icon = 'modular_bandastation/aesthetics/airlocks/icons/station/psych.dmi'
-	assemblytype = /obj/structure/door_assembly/door_assembly_psych
 
 /obj/machinery/door/airlock/bathroom
 	icon = 'modular_bandastation/aesthetics/airlocks/icons/station/bathroom.dmi'
 	assemblytype = /obj/structure/door_assembly/door_assembly_bathroom
 
-/obj/machinery/door/airlock/lawyer
-	icon = 'modular_bandastation/aesthetics/airlocks/icons/station/corporate.dmi'
-	assemblytype = /obj/structure/door_assembly/door_assembly_lawyer
-
 /obj/machinery/door/airlock/grunge
-	icon = 'modular_bandastation/aesthetics/airlocks/icons/station/corporate.dmi'
-	assemblytype = /obj/structure/door_assembly/door_assembly_lawyer
+	icon = 'modular_bandastation/aesthetics/airlocks/icons/centcom/centcom.dmi'
+	overlays_file = 'modular_bandastation/aesthetics/airlocks/icons/centcom/overlays.dmi'
+	assemblytype = /obj/structure/door_assembly/door_assembly_grunge
 
 // Station airlocks glass
 /obj/machinery/door/airlock/command/cap/glass

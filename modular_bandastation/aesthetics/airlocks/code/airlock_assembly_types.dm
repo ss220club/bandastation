@@ -82,29 +82,11 @@
 	airlock_type = /obj/machinery/door/airlock/hydroponics
 	glass_type = /obj/machinery/door/airlock/hydroponics/glass
 
-/obj/structure/door_assembly/door_assembly_eva
-	icon = 'modular_bandastation/aesthetics/airlocks/icons/station/eva.dmi'
-	base_name = "eva airlock"
-	airlock_type = /obj/machinery/door/airlock/eva
-	glass_type = /obj/machinery/door/airlock/eva/glass
-
 /obj/structure/door_assembly/door_assembly_service
 	icon = 'modular_bandastation/aesthetics/airlocks/icons/station/service.dmi'
 	base_name = "service airlock"
 	airlock_type = /obj/machinery/door/airlock/service
 	glass_type = /obj/machinery/door/airlock/service/glass
-
-/obj/structure/door_assembly/door_assembly_psych
-	icon = 'modular_bandastation/aesthetics/airlocks/icons/station/psych.dmi'
-	base_name = "psychiatrist airlock"
-	airlock_type = /obj/machinery/door/airlock/psych
-	glass_type = /obj/machinery/door/airlock/psych/glass
-
-/obj/structure/door_assembly/door_assembly_lawyer
-	icon = 'modular_bandastation/aesthetics/airlocks/icons/station/corporate.dmi'
-	base_name = "lawyer airlock"
-	airlock_type = /obj/machinery/door/airlock/lawyer
-	glass_type = /obj/machinery/door/airlock/lawyer/glass
 
 /obj/structure/door_assembly/door_assembly_bathroom
 	icon = 'modular_bandastation/aesthetics/airlocks/icons/station/bathroom.dmi'
@@ -139,7 +121,10 @@
 
 /obj/structure/door_assembly/door_assembly_centcom
 	icon = 'modular_bandastation/aesthetics/airlocks/icons/centcom/centcom.dmi'
-	base_name = "centcom airlock"
+	overlays_file = 'modular_bandastation/aesthetics/airlocks/icons/centcom/overlays.dmi'
+
+/obj/structure/door_assembly/door_assembly_grunge
+	icon = 'modular_bandastation/aesthetics/airlocks/icons/centcom/centcom.dmi'
 	overlays_file = 'modular_bandastation/aesthetics/airlocks/icons/centcom/overlays.dmi'
 
 // Mineral airlocks
