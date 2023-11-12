@@ -14,3 +14,6 @@
 
 // WinDoors
 #include "windoors/code/windoors.dm"
+
+// Floors
+#include "floors/code/floors.dm"
