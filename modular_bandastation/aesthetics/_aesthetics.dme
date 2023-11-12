@@ -1,6 +1,16 @@
 #include "_aesthetics.dm"
 
+// Airlocks
+#include "airlocks/code/airlock.dm"
+#include "airlocks/code/airlock_types.dm"
+#include "airlocks/code/airlock_assembly_types.dm"
+
+// Walls
 #include "walls/code/walls.dm"
+
+// Windows
 #include "windows/code/full_tile_windows.dm"
 #include "windows/code/directional_windows.dm"
+
+// WinDoors
 #include "windoors/code/windoors.dm"
