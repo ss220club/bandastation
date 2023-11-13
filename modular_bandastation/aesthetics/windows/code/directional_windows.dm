@@ -11,6 +11,7 @@
 /obj/structure/window/reinforced/tinted
 	icon = 'modular_bandastation/aesthetics/windows/icons/directional.dmi'
 	icon_state = "r_window"
+	flags_1 = UNPAINTABLE_1
 	color = "#5A6E82"
 
 /obj/structure/window/reinforced/tinted/frosted
@@ -20,11 +21,13 @@
 /obj/structure/window/plasma
 	icon = 'modular_bandastation/aesthetics/windows/icons/directional.dmi'
 	icon_state = "window"
+	flags_1 = UNPAINTABLE_1
 	color = "#C800FF"
 
 /obj/structure/window/reinforced/plasma
 	icon = 'modular_bandastation/aesthetics/windows/icons/directional.dmi'
 	icon_state = "r_window"
+	flags_1 = UNPAINTABLE_1
 	color = "#C800FF"
 
 // Delete colors

@@ -35,6 +35,7 @@
 	icon_state = "reinforced_window-0"
 	base_icon_state = "reinforced_window"
 	canSmoothWith = SMOOTH_GROUP_AIRLOCK + SMOOTH_GROUP_WINDOW_FULLTILE + SMOOTH_GROUP_WALLS
+	flags_1 = UNPAINTABLE_1
 	color = "#5A6E82"
 
 /obj/structure/window/plasma/fulltile
@@ -43,6 +44,7 @@
 	icon_state = "window-0"
 	base_icon_state = "window"
 	canSmoothWith = SMOOTH_GROUP_AIRLOCK + SMOOTH_GROUP_WINDOW_FULLTILE + SMOOTH_GROUP_WALLS
+	flags_1 = UNPAINTABLE_1
 	color = "#C800FF"
 
 /obj/structure/window/reinforced/plasma/fulltile
@@ -51,6 +53,7 @@
 	icon_state = "reinforced_window-0"
 	base_icon_state = "reinforced_window"
 	canSmoothWith = SMOOTH_GROUP_AIRLOCK + SMOOTH_GROUP_WINDOW_FULLTILE + SMOOTH_GROUP_WALLS
+	flags_1 = UNPAINTABLE_1
 	color = "#C800FF"
 
 /obj/structure/window/reinforced/shuttle
