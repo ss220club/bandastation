@@ -1,6 +1,8 @@
-#define TTS_TRAIT_PITCH_WHISPER SHIFTL(1, 1)
-#define TTS_TRAIT_RATE_FASTER SHIFTL(1, 2)
-#define TTS_TRAIT_RATE_MEDIUM SHIFTL(1, 3)
+#define VV_HK_SELECT_TTS_VOICE "select_tts_voice"
+
+#define TTS_TRAIT_PITCH_WHISPER (1<<1)
+#define TTS_TRAIT_RATE_FASTER (1<<2)
+#define TTS_TRAIT_RATE_MEDIUM (1<<3)
 
 #define TTS_TRAIT_ROBOTIZE "tts_trait_robotize"
 
@@ -72,4 +74,7 @@
 #define LITTLE_WORKER_TTS_LEVEL 1
 #define DONATOR_LEVEL_MAX 5
 
-#define VV_HK_SELECT_TTS_VOICE "select_tts_voice"
+#define LOCAL_TTS_VOLUME(mob) mob.client.prefs.read_preference(/datum/preference/numeric/sound_tts_local)
+#define RADIO_TTS_VOLUME(mob) mob.client.prefs.read_preference(/datum/preference/numeric/sound_tts_radio)
+#define LOCAL_TTS_ENABLED(mob) LOCAL_TTS_VOLUME(mob)
+#define RADIO_TTS_ENABLED(mob) RADIO_TTS_VOLUME(mob)
