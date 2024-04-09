@@ -25,6 +25,11 @@
 	data["phrases"] = TTS_PHRASES
 	return data
 
+/datum/preferences/ui_data(mob/user)
+	var/list/data = ..()
+	data["tts_seed"] = read_preference(/datum/preference/text/tts_seed)
+	return data
+
 /datum/preferences/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
 	. = ..()
 	if(.)
