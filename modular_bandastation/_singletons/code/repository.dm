@@ -25,34 +25,34 @@ GLOBAL_DATUM_INIT(Singletons, /repository/singletons, new)
 
 /repository/singletons
 	/// A cache of individual singletons as (/singleton/path = Instance, ...)
-	var/static/list/instances = list()
+	var/list/instances = list()
 
 	/// A map of (/singleton/path = TRUE, ...). Indicates whether a path has been tried for instances.
-	var/static/list/resolved_instances = list()
+	var/list/resolved_instances = list()
 
 	/// A cache of singleton types according to a parent type as (/singleton/path = list(/singleton/path = Instance, /singleton/path/foo = Instance, ...))
-	var/static/list/type_maps = list()
+	var/list/type_maps = list()
 
 	/// A map of (/singleton/path = TRUE, ...). Indicates whether a path has been tried for type_maps.
-	var/static/list/resolved_type_maps = list()
+	var/list/resolved_type_maps = list()
 
 	/// A cache of singleton subtypes according to a parent type as (/singleton/path = list(/singleton/path/foo = Instance, ...))
-	var/static/list/subtype_maps = list()
+	var/list/subtype_maps = list()
 
 	/// A map of (/singleton/path = TRUE, ...). Indicates whether a path has been tried for subtype_maps.
-	var/static/list/resolved_subtype_maps = list()
+	var/list/resolved_subtype_maps = list()
 
 	/// A cache of singleton types according to a parent type as (/singleton/path = list(Parent Instance, Subtype Instance, ...))
-	var/static/list/type_lists = list()
+	var/list/type_lists = list()
 
 	/// A map of (/singleton/path = TRUE, ...). Indicates whether a path has been tried for type_lists.
-	var/static/list/resolved_type_lists = list()
+	var/list/resolved_type_lists = list()
 
 	/// A cache of singleton subtypes according to a parent type as (/singleton/path = list(Subtype Instance, Subtype Instance, ...))
-	var/static/list/subtype_lists = list()
+	var/list/subtype_lists = list()
 
 	/// A map of (/singleton/path = TRUE, ...). Indicates whether a path has been tried for subtype_lists.
-	var/static/list/resolved_subtype_lists = list()
+	var/list/resolved_subtype_lists = list()
 
 
 /**
