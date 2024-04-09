@@ -48,7 +48,6 @@
 			return TRUE
 
 /datum/preference/text/tts_seed
-	category = PREFERENCE_CATEGORY_NON_CONTEXTUAL
 	savefile_key = "tts_seed"
 	savefile_identifier = PREFERENCE_CHARACTER
 
