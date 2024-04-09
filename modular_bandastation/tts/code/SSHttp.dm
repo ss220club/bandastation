@@ -13,7 +13,7 @@ SUBSYSTEM_DEF(http)
 
 /datum/controller/subsystem/http/PreInit()
 	. = ..()
-	rustg_create_async_http_client() // Open the door
+	rustgss220_create_async_http_client() // Open the door
 
 /datum/controller/subsystem/http/fire(resumed)
 	for(var/r in active_async_requests)
