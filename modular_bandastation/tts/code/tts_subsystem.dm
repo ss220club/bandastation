@@ -119,7 +119,7 @@ SUBSYSTEM_DEF(tts220)
 /datum/controller/subsystem/tts220/Initialize(start_timeofday)
 	if(!CONFIG_GET(flag/tts_enabled))
 		is_enabled = FALSE
-		return
+		return SS_INIT_NO_NEED
 
 	load_replacements()
 
