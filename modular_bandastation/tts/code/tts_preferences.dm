@@ -1,5 +1,5 @@
 /datum/preferences/ui_static_data(mob/user)
-	var/list/data = list()
+	var/list/data = ..()
 	data["tts_enabled"] = CONFIG_GET(flag/tts_enabled)
 	var/list/providers = list()
 	for(var/_provider in SStts220.tts_providers)
@@ -33,7 +33,6 @@
 		if("listen")
 			var/phrase = params["phrase"]
 			var/seed_name = params["seed"]
-
 			if((phrase in TTS_PHRASES) && (seed_name in SStts220.tts_seeds))
 				INVOKE_ASYNC(SStts220, TYPE_PROC_REF(/datum/controller/subsystem/tts220, get_tts), null, usr, phrase, SStts220.tts_seeds[seed_name], FALSE)
 			return FALSE
@@ -46,10 +45,7 @@
 /datum/preference/text/tts_seed
 	category = PREFERENCE_CATEGORY_NON_CONTEXTUAL
 	savefile_key = "tts_seed"
-	savefile_identifier = PREFERENCE_PLAYER
-
-/datum/preference/text/tts_seed/should_show_on_page(preference_tab)
-	return FALSE
+	savefile_identifier = PREFERENCE_CHARACTER
 
 /datum/preference/text/tts_seed/apply_to_human(mob/living/carbon/human/target, value)
 	target.AddComponent(/datum/component/tts_component, SStts220.tts_seeds[value])

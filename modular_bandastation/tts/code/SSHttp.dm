@@ -26,7 +26,7 @@ SUBSYSTEM_DEF(http)
 
 			// If the request has a callback, invoke it.Async of course to avoid choking the SS
 			if(req.cb)
-				INVOKE_ASYNC(req.cb, res)
+				req.cb.InvokeAsync(res)
 
 			// And log the result
 			if(logging_enabled)
