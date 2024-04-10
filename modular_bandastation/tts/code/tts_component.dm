@@ -106,13 +106,13 @@
 	switch(.)
 		if(null)
 			if(TTS_TRAIT_ROBOTIZE in traits)
-				return /singleton/sound_effect/robot
-		if(/singleton/sound_effect/radio)
+				return /datum/singleton/sound_effect/robot
+		if(/datum/singleton/sound_effect/radio)
 			if(TTS_TRAIT_ROBOTIZE in traits)
-				return /singleton/sound_effect/radio_robot
-		if(/singleton/sound_effect/megaphone)
+				return /datum/singleton/sound_effect/radio_robot
+		if(/datum/singleton/sound_effect/megaphone)
 			if(TTS_TRAIT_ROBOTIZE in traits)
-				return /singleton/sound_effect/megaphone_robot
+				return /datum/singleton/sound_effect/megaphone_robot
 	return .
 
 /datum/component/tts_component/proc/cast_tts(atom/speaker, mob/listener, message, atom/location, is_local = TRUE, effect = null, traits = TTS_TRAIT_RATE_FASTER, preSFX, postSFX)
@@ -129,7 +129,7 @@
 		speaker = parent
 	if(!location)
 		location = parent
-	if(effect == /singleton/sound_effect/radio)
+	if(effect == /datum/singleton/sound_effect/radio)
 		if(listener == speaker && !issilicon(parent)) // don't hear both radio and whisper from yourself
 			return
 

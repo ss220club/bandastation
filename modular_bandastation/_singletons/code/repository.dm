@@ -59,25 +59,25 @@ GLOBAL_DATUM_INIT(Singletons, /repository/singletons, new)
 * Get a singleton instance according to path. Creates it if necessary. Null if abstract or not a singleton.
 * Prefer the GET_SINGLETON macro to minimize proc calls.
 */
-/repository/singletons/proc/GetInstance(singleton/path)
-	if(!ispath(path, /singleton))
+/repository/singletons/proc/GetInstance(datum/singleton/path)
+	if(!ispath(path, /datum/singleton))
 		return
 	if(resolved_instances[path])
 		return instances[path]
 	resolved_instances[path] = TRUE
 	if(path == initial(path.abstract_type))
 		return
-	var/singleton/result = new path
+	var/datum/singleton/result = new path
 	instances[path] = result
 	result.Initialize()
 	return result
 
 
 /// Get a (path = instance) map of valid singletons according to paths.
-/repository/singletons/proc/GetMap(list/singleton/paths)
+/repository/singletons/proc/GetMap(list/datum/singleton/paths)
 	var/list/result = list()
 	for(var/path in paths)
-		var/singleton/instance = GetInstance(path)
+		var/datum/singleton/instance = GetInstance(path)
 		if (!instance)
 			continue
 		result[path] = instance
@@ -85,10 +85,10 @@ GLOBAL_DATUM_INIT(Singletons, /repository/singletons, new)
 
 
 /// Get a list of valid singletons according to paths.
-/repository/singletons/proc/GetList(list/singleton/paths)
+/repository/singletons/proc/GetList(list/datum/singleton/paths)
 	var/list/result = list()
 	for(var/path in paths)
-		var/singleton/instance = GetInstance(path)
+		var/datum/singleton/instance = GetInstance(path)
 		if(!instance)
 			continue
 		result += instance
@@ -99,7 +99,7 @@ GLOBAL_DATUM_INIT(Singletons, /repository/singletons, new)
 * Get a (path = instance) map of valid singletons according to typesof(path).
 * Prefer the GET_SINGLETON_TYPE_MAP macro to minimize proc calls.
 */
-/repository/singletons/proc/GetTypeMap(singleton/path)
+/repository/singletons/proc/GetTypeMap(datum/singleton/path)
 	if(resolved_type_maps[path])
 		return type_maps[path] || list()
 	resolved_type_maps[path] = TRUE
@@ -112,7 +112,7 @@ GLOBAL_DATUM_INIT(Singletons, /repository/singletons, new)
 * Get a (path = instance) map of valid singletons according to subtypesof(path).
 * Prefer the GET_SINGLETON_TYPE_MAP macro to minimize proc calls.
 */
-/repository/singletons/proc/GetSubtypeMap(singleton/path)
+/repository/singletons/proc/GetSubtypeMap(datum/singleton/path)
 	if(resolved_subtype_maps[path])
 		return subtype_maps[path] || list()
 	resolved_subtype_maps[path] = TRUE
@@ -125,7 +125,7 @@ GLOBAL_DATUM_INIT(Singletons, /repository/singletons, new)
 * Get a list of valid singletons according to typesof(path).
 * Prefer the GET_SINGLETON_TYPE_LIST macro to minimize proc calls.
 */
-/repository/singletons/proc/GetTypeList(singleton/path)
+/repository/singletons/proc/GetTypeList(datum/singleton/path)
 	if(resolved_type_lists[path])
 		return type_lists[path] || list()
 	resolved_type_lists[path] = TRUE
@@ -138,7 +138,7 @@ GLOBAL_DATUM_INIT(Singletons, /repository/singletons, new)
 * Get a list of valid singletons according to subtypesof(path).
 * Prefer the GET_SINGLETON_SUBTYPE_LIST macro to minimize proc calls.
 */
-/repository/singletons/proc/GetSubtypeList(singleton/path)
+/repository/singletons/proc/GetSubtypeList(datum/singleton/path)
 	if(resolved_subtype_lists[path])
 		return subtype_lists[path] || list()
 	resolved_subtype_lists[path] = TRUE

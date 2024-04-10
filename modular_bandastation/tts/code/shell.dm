@@ -6,7 +6,7 @@
 #define SHELLEO_ERR ".err"
 #define SHELLEO_OUT ".out"
 
-/proc/apply_sound_effect(singleton/sound_effect/effect, filename_input, filename_output)
+/proc/apply_sound_effect(datum/singleton/sound_effect/effect, filename_input, filename_output)
 	if(!effect)
 		CRASH("Invalid sound effect chosen.")
 
@@ -28,27 +28,27 @@
 		return FALSE
 	return TRUE
 
-/singleton/sound_effect
+/datum/singleton/sound_effect
 	var/suffix
 	var/ffmpeg_arguments
 
-/singleton/sound_effect/radio
+/datum/singleton/sound_effect/radio
 	suffix = "_radio"
 	ffmpeg_arguments = "highpass=f=1000, lowpass=f=3000, acrusher=1:1:50:0:log"
 
-/singleton/sound_effect/robot
+/datum/singleton/sound_effect/robot
 	suffix = "_robot"
 	ffmpeg_arguments = "afftfilt=real='hypot(re,im)*sin(0)':imag='hypot(re,im)*cos(0)':win_size=1024:overlap=0.5, deesser=i=0.4, volume=volume=1.5"
 
-/singleton/sound_effect/radio_robot
+/datum/singleton/sound_effect/radio_robot
 	suffix = "_radio_robot"
 	ffmpeg_arguments = "afftfilt=real='hypot(re,im)*sin(0)':imag='hypot(re,im)*cos(0)':win_size=1024:overlap=0.5, deesser=i=0.4, volume=volume=1.5, highpass=f=1000, lowpass=f=3000, acrusher=1:1:50:0:log"
 
-/singleton/sound_effect/megaphone
+/datum/singleton/sound_effect/megaphone
 	suffix = "_megaphone"
 	ffmpeg_arguments = "highpass=f=500, lowpass=f=4000, volume=volume=10, acrusher=1:1:45:0:log"
 
-/singleton/sound_effect/megaphone_robot
+/datum/singleton/sound_effect/megaphone_robot
 	suffix = "_megaphone_robot"
 	ffmpeg_arguments = "afftfilt=real='hypot(re,im)*sin(0)':imag='hypot(re,im)*cos(0)':win_size=1024:overlap=0.5, deesser=i=0.4, highpass=f=500, lowpass=f=4000, volume=volume=10, acrusher=1:1:45:0:log"
 
