@@ -34,18 +34,18 @@ cd ..
 
 # update rust-g-tg s220
 if [ ! -d "rust-g-tg" ]; then
-	echo "Cloning rust-g..."
+	echo "Cloning rust-g ss220..."
 	git clone https://github.com/ss220club/rust-g-tg
 	cd rust-g-tg
 	~/.cargo/bin/rustup target add i686-unknown-linux-gnu
 else
-	echo "Fetching rust-g..."
+	echo "Fetching rust-g ss220..."
 	cd rust-g-tg
 	git fetch
 	~/.cargo/bin/rustup target add i686-unknown-linux-gnu
 fi
 
-echo "Deploying rust-g..."
+echo "Deploying rust-g ss220..."
 git checkout master
 env PKG_CONFIG_ALLOW_CROSS=1 ~/.cargo/bin/cargo build --ignore-rust-version --release --target=i686-unknown-linux-gnu
 mv target/i686-unknown-linux-gnu/release/librust_g.so "$1/librust_g_ss220.so"
