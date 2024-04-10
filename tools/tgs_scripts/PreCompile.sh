@@ -33,7 +33,7 @@ mv target/i686-unknown-linux-gnu/release/librust_g.so "$1/librust_g.so"
 cd ..
 
 # update rust-g-tg s220
-if [ ! -d "rust-g" ]; then
+if [ ! -d "rust-g-tg" ]; then
 	echo "Cloning rust-g..."
 	git clone https://github.com/ss220club/rust-g-tg
 	cd rust-g-tg
