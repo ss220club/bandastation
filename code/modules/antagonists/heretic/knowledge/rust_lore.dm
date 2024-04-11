@@ -218,7 +218,7 @@
 		Кроме того, вы станете чрезвычайно стойкими на ржавчине, исцеляясь втрое быстрее \
 		и приобретая иммунитет ко многим эффектам и опасностям."
 	gain_text = "Чемпион ржавчины. Разлагатель стали. Бойся темноты, ибо пришел ПОВЕЛИТЕЛЬ РЖАВЧИНЫ! \
-		Работа Кузнеца продолжается! Ржавые Холмы, УСЛЫШЬТЕ МОЕ ИМЯ! БУДЬТЕ СВИДЕТЕЛЯМИ МОЕГО ВОЗНЕСЕНИЯ!"
+		Работа Кузнеца продолжается! Ржавые Холмы, УСЛЫШЬТЕ МОЕ ИМЯ! УЗРИТЕ МОЕ ВОЗНЕСЕНИЕ!"
 	route = PATH_RUST
 	/// If TRUE, then immunities are currently active.
 	var/immunities_active = FALSE
@@ -260,7 +260,7 @@
 /datum/heretic_knowledge/ultimate/rust_final/on_finished_recipe(mob/living/user, list/selected_atoms, turf/loc)
 	. = ..()
 	priority_announce(
-		text = "[generate_heretic_text()] Бойтесь разложения, ведь Повелитель ржавчины, [user.real_name] возвысился! Никто не избежит коррозии! [generate_heretic_text()]",
+		text = "[generate_heretic_text()] Бойтесь разложения, ведь Повелитель ржавчины, [user.real_name] вознесся! Никто не избежит коррозии! [generate_heretic_text()]",
 		title = "[generate_heretic_text()]",
 		sound = ANNOUNCER_SPANOMALIES,
 		color_override = "pink",

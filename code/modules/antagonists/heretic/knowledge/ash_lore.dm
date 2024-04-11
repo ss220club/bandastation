@@ -42,7 +42,7 @@
 
 /datum/heretic_knowledge/ashen_grasp
 	name = "Grasp of Ash"
-	desc = "Ваша хватка Мансуса обожжет глаза жертвы, нанося глазам урон и затуманивания их зрение."
+	desc = "Ваша Хватка Мансуса обожжет глаза жертвы, нанося глазам урон и затуманивания их зрение."
 	gain_text = "Первым из них был Ночной дозорный, с его измены все и началось. \
 		Их фонарь, истлевший до пепла, их дозор, отсутствовавший."
 	next_knowledge = list(/datum/heretic_knowledge/spell/ash_passage)
@@ -212,7 +212,7 @@
 /datum/heretic_knowledge/ultimate/ash_final/on_finished_recipe(mob/living/user, list/selected_atoms, turf/loc)
 	. = ..()
 	priority_announce(
-		text = "[generate_heretic_text()] Бойтесь пламени, ибо Пепельный лорд, [user.real_name], возвысился! Пламя поглотит всех! [generate_heretic_text()]",
+		text = "[generate_heretic_text()] Бойтесь пламени, ибо Пепельный лорд, [user.real_name], вознесся! Пламя поглотит всех! [generate_heretic_text()]",
 		title = "[generate_heretic_text()]",
 		sound = ANNOUNCER_SPANOMALIES,
 		color_override = "pink",

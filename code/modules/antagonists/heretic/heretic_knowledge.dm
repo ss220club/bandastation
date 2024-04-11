@@ -726,9 +726,9 @@
 	SSblackbox.record_feedback("tally", "heretic_ascended", 1, route)
 	log_heretic_knowledge("[key_name(user)] completed their final ritual at [worldtime2text()].")
 	notify_ghosts(
-		"[user] завершил ритуал возвышения!",
+		"[user] завершил ритуал вознесения!",
 		source = user,
-		header = "Еретик возвышается!",
+		header = "Еретик вознесся!",
 	)
 	return TRUE
 
