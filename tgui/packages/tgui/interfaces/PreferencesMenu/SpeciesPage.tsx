@@ -259,11 +259,7 @@ const SpeciesPageInner = (props: {
   return (
     <Stack vertical fill>
       <Stack.Item>
-        <Button
-          icon="arrow-left"
-          onClick={props.handleClose}
-          content="Возврат"
-        />
+        <Button icon="arrow-left" onClick={props.handleClose} content="Назад" />
       </Stack.Item>
 
       <Stack.Item grow>
