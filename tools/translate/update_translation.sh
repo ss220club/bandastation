@@ -9,14 +9,6 @@ git checkout -b translate_tmp
 git reset --hard origin/master
 
 git checkout translate -- ./tools/translate/ss220replace.json
-git commit -m "Move old translation"
-
-git cherry-pick translate
-
-python ./tools/translate/converter.py
-git add ./tools/translate/ss220replace.json
-git commit -m "Generate translation file"
-git reset .
 
 ./tools/translate/ss220_replacer_linux
 git commit -m "Apply translation"

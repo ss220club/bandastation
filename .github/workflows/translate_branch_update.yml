@@ -23,17 +23,6 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: 'Git config'
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "SS220Manager"
-
-      - name: 'Update translate branch'
-        run: |
-          git fetch origin translate
-          git checkout translate
-          git merge master
-
-      - name: 'Push'
-        run: |
-          git push origin translate:translate
+      - name: Run script
+        run: ./tools/translate/update_translation.sh
+          

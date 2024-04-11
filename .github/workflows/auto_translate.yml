@@ -29,4 +29,4 @@ jobs:
           python-version: '3.11'
 
       - name: Run script
-        run: ./tools/translator/add_new_translation.sh
+        run: ./tools/translate/add_new_translation.sh
