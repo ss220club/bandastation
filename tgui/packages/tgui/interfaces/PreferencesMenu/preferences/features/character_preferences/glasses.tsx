@@ -1,6 +1,6 @@
 import { FeatureIconnedDropdownInput, FeatureWithIcons } from '../base';
 
 export const glasses: FeatureWithIcons<string> = {
-  name: 'Glasses',
+  name: 'Очки',
   component: FeatureIconnedDropdownInput,
 };

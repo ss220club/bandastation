@@ -4,11 +4,11 @@ import { Antagonist, Category } from '../base';
 
 const Xenomorph: Antagonist = {
   key: 'xenomorph',
-  name: 'Xenomorph',
+  name: 'Ксеноморф',
   description: [
     multiline`
-      Become the extraterrestrial xenomorph. Start as a larva, and progress
-      your way up the caste, including even the Queen!
+      Станьте внеземным ксеноморфом. Начните как ларва и продвигайтесь
+      по касте, вплоть до Королевы!
     `,
   ],
   category: Category.Midround,
