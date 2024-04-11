@@ -1,6 +1,6 @@
 /datum/action/cooldown/spell/pointed/projectile/star_blast
 	name = "Star Blast"
-	desc = "Выстрел диском космической энергии, который распространяет звездную метку."
+	desc = "Выстрел диском космической энергии, который распространяет Метку звезды."
 	background_icon_state = "bg_heretic"
 	overlay_icon_state = "bg_heretic_border"
 	button_icon = 'icons/mob/actions/actions_ecult.dmi'
