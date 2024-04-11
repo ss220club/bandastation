@@ -80,14 +80,14 @@ const IntroductionSection = (props) => {
                   fill
                   titleMessage={
                     can_change_objective
-                      ? 'Для возвышения вам нужно выполнить следующие задачи'
+                      ? 'Для вознесения вам нужно выполнить следующие задачи'
                       : 'Используйте свои темные знания, чтобы выполнить персональные цели'
                   }
                   objectives={objectives}
                   objectiveFollowup={
                     <ReplaceObjectivesButton
                       can_change_objective={can_change_objective}
-                      button_title={'Отвергнуть возвышение'}
+                      button_title={'Отвергнуть вознесение'}
                       button_colour={'red'}
                       button_tooltip={
                         'Отвернитесь от Мансуса, чтобы выполнить задание по своему выбору. Выбрав эту опцию, вы не сможете возвыситься!'
