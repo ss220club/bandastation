@@ -17,7 +17,7 @@
 	spell_requirements = NONE
 	cast_range = 6
 
-	active_msg = "Вы готовитесь показать им истинное лицо..."
+	active_msg = "Вы готовитесь показать им лицо правды..."
 
 /datum/action/cooldown/spell/pointed/moon_smile/can_cast_spell(feedback = TRUE)
 	return ..() && isliving(owner)
