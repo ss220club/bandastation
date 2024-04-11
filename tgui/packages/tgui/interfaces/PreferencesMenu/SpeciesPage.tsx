@@ -310,9 +310,7 @@ const SpeciesPageInner = (props: {
                         )
                       }
                     >
-                      <Section title="Description">
-                        {currentSpecies.desc}
-                      </Section>
+                      <Section title="Описание">{currentSpecies.desc}</Section>
 
                       <Section title="Черты">
                         <SpeciesPerks perks={currentSpecies.perks} />
