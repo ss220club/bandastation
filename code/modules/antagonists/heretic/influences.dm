@@ -305,7 +305,7 @@
 		to_chat(user, span_warning("[src] начинает проясняться в реальность!"))
 
 	var/obj/effect/visible_heretic_influence/illusion = new /obj/effect/visible_heretic_influence(drop_location())
-	illusion.name = "\improper" + pick(strings(HERETIC_INFLUENCE_FILE, "добытое")) + " " + format_text(name)
+	illusion.name = "\improper" + pick(strings(HERETIC_INFLUENCE_FILE, "drained")) + " " + format_text(name)
 
 	GLOB.reality_smash_track.num_drained++
 	qdel(src)
