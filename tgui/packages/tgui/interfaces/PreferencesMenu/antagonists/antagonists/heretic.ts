@@ -9,12 +9,12 @@ export const HERETIC_MECHANICAL_DESCRIPTION = multiline`
 
 const Heretic: Antagonist = {
   key: 'heretic',
-  name: 'Heretic',
+  name: 'Еретик',
   description: [
     multiline`
-      Forgotten, devoured, gutted. Humanity has forgotten the eldritch forces
-      of decay, but the mansus veil has weakened. We will make them taste fear
-      again...
+      Забытые, поглощенные, выпотрошенные. Человечество забыло об эльдрических силах
+      разложения, но завеса мансуса ослабла. Мы заставим их почувствовать вкус страха
+      снова...
     `,
     HERETIC_MECHANICAL_DESCRIPTION,
   ],
