@@ -59,8 +59,8 @@ GLOBAL_DATUM_INIT(steal_item_handler, /datum/objective_item_handler, new())
 		objectives_by_path[typepath] -= source
 
 /datum/traitor_objective/steal_item
-	name = "Steal %ITEM% and place a schematics scanner on it."
-	description = "Use the button below to materialize the schematic scanner within your hand, where you'll then be able to place it on the item. Additionally, you can keep it near you and let it scan for %TIME% minutes, and you will be rewarded with %PROGRESSION% reputation and %TC% telecrystals."
+	name = "Украдите %ITEM% и разместите специальное сканирующее устройство на него."
+	description = "Используйте кнопку ниже, чтобы материализовать сканер в вашей руке, чтобы в будущем установить его на %ITEM%. Кроме того, вы можете удерживать предмет рядом, позволяя сканеру работать в течение %TIME% минут, тогда дополнительное вознаграждение составит: репутации - %PROGRESSION%, телекристаллов - %TC%."
 
 	progression_minimum = 20 MINUTES
 

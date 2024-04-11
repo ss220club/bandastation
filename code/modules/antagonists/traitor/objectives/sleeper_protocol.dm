@@ -6,8 +6,8 @@
 	)
 
 /datum/traitor_objective/sleeper_protocol
-	name = "Perform the sleeper protocol on a crewmember"
-	description = "Use the button below to materialize a surgery disk in your hand, where you'll then be able to perform the sleeper protocol on a crewmember. If the disk gets destroyed, the objective will fail. This will only work on living and sentient crewmembers."
+	name = "Выполните процедуру внедрения спящего агента над одним из членов экипажа."
+	description = "Используйте кнопку ниже, чтобы материализовать в руке хирургический диск, с помощью которого вы сможете сделать члена экипажа спящим агентом Синдиката. Если диск будет уничтожен, цель будет провалена. Это сработает только на живых и разумных членах экипажа."
 
 	progression_minimum = 0 MINUTES
 
@@ -31,7 +31,7 @@
 /datum/traitor_objective/sleeper_protocol/generate_ui_buttons(mob/user)
 	var/list/buttons = list()
 	if(!disk)
-		buttons += add_ui_button("", "Clicking this will materialize the sleeper protocol surgery in your hand", "save", "summon_disk")
+		buttons += add_ui_button("", "Нажмите, чтобы материализовать процедуру внедрения спящего агента", "save", "summon_disk")
 	return buttons
 
 /datum/traitor_objective/sleeper_protocol/ui_perform_action(mob/living/user, action)

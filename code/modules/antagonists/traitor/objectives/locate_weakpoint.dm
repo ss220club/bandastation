@@ -6,8 +6,8 @@
 	weight = OBJECTIVE_WEIGHT_UNLIKELY
 
 /datum/traitor_objective/locate_weakpoint
-	name = "Triangulate station's structural weakpoint and detonate an explosive charge nearby."
-	description = "You will be given a handheld device that you'll need to use in %AREA1% and %AREA2% in order to triangulate the station's structural weakpoint and detonate an explosive charge there. Warning: Once you start scanning either one of the areas, station's AI will be alerted."
+	name = "Триангулируйте слабое место в структуре станции и взорвите заряд взрывчатки поблизости."
+	description = "Вы получите портативное устройство, которое нужно будет использовать в %AREA1% и %AREA2%, чтобы триангулировать слабое место в конструкции станции и устроить там взрыв. Внимание: Как только вы начнете сканировать одну из областей, ИИ станции будет предупрежден."
 
 	progression_minimum = 45 MINUTES
 	progression_reward = list(15 MINUTES, 20 MINUTES)
@@ -89,9 +89,9 @@
 /datum/traitor_objective/locate_weakpoint/generate_ui_buttons(mob/user)
 	var/list/buttons = list()
 	if(!locator_sent)
-		buttons += add_ui_button("", "Pressing this will materialize a weakpoint locator in your hand.", "globe", "locator")
+		buttons += add_ui_button("", "Нажмите, чтобы материализовать локатор слабых мест станции.", "globe", "locator")
 	if(weakpoint_found && !bomb_sent)
-		buttons += add_ui_button("", "Pressing this will materialize an ES8 explosive charge in your hand.", "bomb", "shatter_charge")
+		buttons += add_ui_button("", "Нажмите, чтобы материализовать взрывчатый заряд ES8.", "bomb", "shatter_charge")
 	return buttons
 
 /datum/traitor_objective/locate_weakpoint/ui_perform_action(mob/living/user, action)
@@ -103,7 +103,7 @@
 			locator_sent = TRUE
 			var/obj/item/weakpoint_locator/locator = new(user.drop_location(), src)
 			user.put_in_hands(locator)
-			locator.balloon_alert(user, "the weakpoint locator materializes in your hand")
+			locator.balloon_alert(user, "локатор слабых мест материализуется в руке")
 
 		if("shatter_charge")
 			if(bomb_sent)
@@ -111,10 +111,10 @@
 			bomb_sent = TRUE
 			var/obj/item/grenade/c4/es8/bomb = new(user.drop_location(), src)
 			user.put_in_hands(bomb)
-			bomb.balloon_alert(user, "the ES8 charge materializes in your hand")
+			bomb.balloon_alert(user, "заряд ES8 материализуется в руке")
 
 /datum/traitor_objective/locate_weakpoint/proc/weakpoint_located()
-	description = "Structural weakpoint has been located in %AREA%. Detonate an ES8 explosive charge there to create a shockwave that will severely damage the station."
+	description = "Слабое место обнаружено в %AREA%. Взорвите заряд ES8 в обнаруженной зоне, чтобы вызвать взрывную волну, значительно повреждающую станцию."
 	replace_in_name("%AREA%", initial(weakpoint_area.name))
 	weakpoint_found = TRUE
 
