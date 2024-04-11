@@ -16,6 +16,15 @@
           "replace": "снова..."
         }
       ]
+    },
+    {
+      "path": "tgui/packages/tgui/interfaces/PreferencesMenu/antagonists/antagonists/heretic.ts",
+      "replaces": [
+        {
+          "original": "name: 'Heretic',",
+          "replace": "name: 'Еретик',"
+        }
+      ]
     }
   ]
 }
