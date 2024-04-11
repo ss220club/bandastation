@@ -1,3 +1,21 @@
 {
-  "files": []
+  "files": [
+    {
+      "path": "tgui/packages/tgui/interfaces/PreferencesMenu/antagonists/antagonists/heretic.ts",
+      "replaces": [
+        {
+          "original": "Forgotten, devoured, gutted. Humanity has forgotten the eldritch forces",
+          "replace": "Забытые, поглощенные, выпотрошенные. Человечество забыло об эльдрических силах"
+        },
+        {
+          "original": "of decay, but the mansus veil has weakened. We will make them taste fear",
+          "replace": "разложения, но завеса мансуса ослабла. Мы заставим их почувствовать вкус страха"
+        },
+        {
+          "original": "again...",
+          "replace": "снова..."
+        }
+      ]
+    }
+  ]
 }
