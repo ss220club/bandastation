@@ -2071,16 +2071,16 @@ GLOBAL_LIST_EMPTY(features_by_species)
 		to_add += list(list(
 			SPECIES_PERK_TYPE = SPECIES_POSITIVE_PERK,
 			SPECIES_PERK_ICON = "comment",
-			SPECIES_PERK_NAME = "Native Speaker",
-			SPECIES_PERK_DESC = "Alongside [initial(common_language.name)], [plural_form] gain the ability to speak [english_list(bonus_languages)].",
+			SPECIES_PERK_NAME = "Родной язык",
+			SPECIES_PERK_DESC = "Вместе с [initial(common_language.name)], вы так же можете говорить на [english_list(bonus_languages)].",
 		))
 
 	else
 		to_add += list(list(
 			SPECIES_PERK_TYPE = SPECIES_NEUTRAL_PERK,
 			SPECIES_PERK_ICON = "comment",
-			SPECIES_PERK_NAME = "Foreign Speaker",
-			SPECIES_PERK_DESC = "[plural_form] may not speak [initial(common_language.name)], but they can speak [english_list(bonus_languages)].",
+			SPECIES_PERK_NAME = "Иностраннец",
+			SPECIES_PERK_DESC = "Вы не можете говорить на [initial(common_language.name)], но зато знаете [english_list(bonus_languages)].",
 		))
 
 	return to_add
