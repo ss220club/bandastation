@@ -52,7 +52,7 @@
 /// A rune that allows you to teleport to the location of a linked rune.
 /obj/effect/cosmic_rune
 	name = "cosmic rune"
-	desc = "A strange rune, that can instantly transport people to another location."
+	desc = "Странная руна, которая может мгновенно переносить людей в другое место."
 	anchored = TRUE
 	icon = 'icons/obj/service/hand_of_god_structures.dmi'
 	icon_state = "cosmic_rune"
@@ -77,15 +77,15 @@
 	if(.)
 		return
 	if(!linked_rune)
-		balloon_alert(user, "no linked rune!")
+		balloon_alert(user, "нет соединенной руны!")
 		fail_invoke()
 		return
 	if(!(user in get_turf(src)))
-		balloon_alert(user, "not close enough!")
+		balloon_alert(user, "недостаточно близко!")
 		fail_invoke()
 		return
 	if(user.has_status_effect(/datum/status_effect/star_mark))
-		balloon_alert(user, "blocked by star mark!")
+		balloon_alert(user, "заблокировано звездной меткой!")
 		fail_invoke()
 		return
 	invoke(user)
@@ -109,7 +109,7 @@
 
 /// For if someone failed to invoke the rune
 /obj/effect/cosmic_rune/proc/fail_invoke()
-	visible_message(span_warning("The rune pulses with a small flash of purple light, then returns to normal."))
+	visible_message(span_warning("Руна пульсирует небольшой вспышкой фиолетового света, затем возвращается в нормальное состояние."))
 	var/oldcolor = rgb(255, 255, 255)
 	color = rgb(150, 50, 200)
 	animate(src, color = oldcolor, time = 5)
