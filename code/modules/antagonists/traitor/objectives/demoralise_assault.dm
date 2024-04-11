@@ -7,11 +7,11 @@
 	weight = OBJECTIVE_WEIGHT_UNLIKELY
 
 /datum/traitor_objective/target_player/assault
-	name = "Assault %TARGET% the %JOB TITLE%"
-	description = "%TARGET% has been identified as a potential future agent. \
-		Pick a fight and give them a good beating. \
-		%COUNT% hits should reduce their morale and have them questioning their loyalties. \
-		Try not to kill them just yet, we may want to recruit them in the future."
+	name = "Нападите на %TARGET%, %JOB TITLE%"
+	description = "Цель %TARGET% была определена как потенциальный будущий агент. \
+		Устройте драку и хорошенько побейте цель. \
+		%COUNT% ударов должны снизить их мораль и заставить их усомниться в своей лояльности. \
+		Постарайтесь пока не убивать цель, так как мы рассматриваем их для найма в будущем."
 
 	abstract_type = /datum/traitor_objective/target_player
 	duplicate_type = /datum/traitor_objective/target_player
@@ -114,7 +114,7 @@
 /datum/traitor_objective/target_player/assault/generate_ui_buttons(mob/user)
 	var/list/buttons = list()
 	if(attacks_required > attacks_inflicted)
-		buttons += add_ui_button("[attacks_required - attacks_inflicted]", "This tells you how many more times you have to attack the target player to succeed.", "hand-rock-o", "none")
+		buttons += add_ui_button("[attacks_required - attacks_inflicted]", "Нажмите, чтобы узнать сколько еще раз нужно атаковать цель для выполнения задачи.", "hand-rock-o", "none")
 	return buttons
 
 /datum/traitor_objective/target_player/assault/target_deleted()

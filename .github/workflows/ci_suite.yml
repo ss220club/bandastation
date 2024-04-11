@@ -10,6 +10,7 @@ on:
     branches:
     - master
     - 'project/**'
+    - translate # BANDASTATION EDIT ADDITION - check translate branch
   merge_group:
     branches:
     - master

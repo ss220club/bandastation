@@ -7,8 +7,8 @@
 	weight = OBJECTIVE_WEIGHT_UNLIKELY
 
 /datum/traitor_objective/target_player/eyesnatching
-	name = "Steal the eyes of %TARGET% the %JOB TITLE%"
-	description = "%TARGET% messed with the wrong people. Steal their eyes to teach them a lesson. You will be provided an experimental eyesnatcher device to aid you in your mission."
+	name = "Украдите глаза %TARGET%, %JOB TITLE%."
+	description = "Ваша цель, %TARGET%, связалась не с теми людьми и за это вы должны забрать у неё глаза. Вам будет предоставлено прототип новейшей разработки Синдиката именно для этих целей."
 
 	progression_minimum = 10 MINUTES
 
@@ -121,7 +121,7 @@
 /datum/traitor_objective/target_player/eyesnatching/generate_ui_buttons(mob/user)
 	var/list/buttons = list()
 	if(!spawned_eyesnatcher)
-		buttons += add_ui_button("", "Pressing this will materialize an eyesnatcher, which can be used on incapacitaded or restrained targets to forcefully remove their eyes.", "syringe", "eyesnatcher")
+		buttons += add_ui_button("", "Нажмите, чтобы материализовать Eyesnatcher, который может быть использован на оглушенные или связанные цели, чтобы насильно вытащить их глаза.", "syringe", "eyesnatcher")
 	return buttons
 
 /datum/traitor_objective/target_player/eyesnatching/ui_perform_action(mob/living/user, action)
@@ -133,7 +133,7 @@
 			spawned_eyesnatcher = TRUE
 			var/obj/item/eyesnatcher/eyesnatcher = new(user.drop_location())
 			user.put_in_hands(eyesnatcher)
-			eyesnatcher.balloon_alert(user, "the snatcher materializes in your hand")
+			eyesnatcher.balloon_alert(user, "eyesnatcher материализуется в руке")
 
 /obj/item/eyesnatcher
 	name = "portable eyeball extractor"

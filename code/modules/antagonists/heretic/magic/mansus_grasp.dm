@@ -1,6 +1,6 @@
 /datum/action/cooldown/spell/touch/mansus_grasp
 	name = "Mansus Grasp"
-	desc = "A touch spell that lets you channel the power of the Old Gods through your grip."
+	desc = "Заклинание прикосновения, позволяющее вам направить силу Старых богов через вашу хватку."
 	background_icon_state = "bg_heretic"
 	overlay_icon_state = "bg_heretic_border"
 	button_icon = 'icons/mob/actions/actions_ecult.dmi'
@@ -25,8 +25,8 @@
 
 /datum/action/cooldown/spell/touch/mansus_grasp/on_antimagic_triggered(obj/item/melee/touch_attack/hand, atom/victim, mob/living/carbon/caster)
 	victim.visible_message(
-		span_danger("The spell bounces off of [victim]!"),
-		span_danger("The spell bounces off of you!"),
+		span_danger("Заклинание отскакивает от [victim]!"),
+		span_danger("Заклинание отскакивает от вас!"),
 	)
 
 /datum/action/cooldown/spell/touch/mansus_grasp/cast_on_hand_hit(obj/item/melee/touch_attack/hand, atom/victim, mob/living/carbon/caster)
@@ -57,9 +57,9 @@
 
 /obj/item/melee/touch_attack/mansus_fist
 	name = "Mansus Grasp"
-	desc = "A sinister looking aura that distorts the flow of reality around it. \
-		Causes knockdown, minor bruises, and major stamina damage. \
-		It gains additional beneficial effects as you expand your knowledge of the Mansus."
+	desc = "Зловещая аура, искажающая течение реальности вокруг себя. \
+		Вызывает сбивание с ног, незначительные ушибы и большой урон стамине. \
+		Он приобретает дополнительные полезные эффекты по мере того, как вы расширяете свои знания Мансуса."
 	icon_state = "mansus"
 	inhand_icon_state = "mansus"
 
@@ -83,11 +83,11 @@
 	remove_hand_with_no_refund(user)
 
 /obj/item/melee/touch_attack/mansus_fist/ignition_effect(atom/to_light, mob/user)
-	. = span_notice("[user] effortlessly snaps [user.p_their()] fingers near [to_light], igniting it with eldritch energies. Fucking badass!")
+	. = span_notice("[user] без труда щелкает своими пальцами возле [to_light], зажигая его мистической энергией. Чертовски круто!")
 	remove_hand_with_no_refund(user)
 
 /obj/item/melee/touch_attack/mansus_fist/suicide_act(mob/living/user)
-	user.visible_message(span_suicide("[user] covers [user.p_their()] face with [user.p_their()] sickly-looking hand! It looks like [user.p_theyre()] trying to commit suicide!"))
+	user.visible_message(span_suicide("[user] накрывает своё лицо своей болезненно выглядящей рукой! Похоже, что они пытаются совершить самоубийство!"))
 	var/mob/living/carbon/carbon_user = user //iscarbon already used in spell's parent
 	var/datum/action/cooldown/spell/touch/mansus_grasp/source = spell_which_made_us?.resolve()
 	if(QDELETED(source) || !IS_HERETIC(user))

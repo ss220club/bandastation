@@ -40,7 +40,7 @@ export const GenericUplink = (props: GenericUplinkProps) => {
       title={<Box inline>{currency}</Box>}
       buttons={
         <>
-          Search
+          Поиск
           <Input
             autoFocus
             value={searchText}
@@ -51,7 +51,7 @@ export const GenericUplink = (props: GenericUplinkProps) => {
             icon={compactMode ? 'list' : 'info'}
             onClick={() => setCompactMode(!compactMode)}
           >
-            {compactMode ? 'Compact' : 'Detailed'}
+            {compactMode ? 'Компактный' : 'Подробный'}
           </Button>
         </>
       }
@@ -76,8 +76,8 @@ export const GenericUplink = (props: GenericUplinkProps) => {
           {items.length === 0 && (
             <NoticeBox>
               {searchText.length === 0
-                ? 'No items in this category.'
-                : 'No results found.'}
+                ? 'В этой категории пусто.'
+                : 'Нет результатов поиска.'}
             </NoticeBox>
           )}
           <ItemList

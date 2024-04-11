@@ -2,10 +2,10 @@
 
 /datum/heretic_knowledge/essence
 	name = "Priest's Ritual"
-	desc = "Allows you to transmute a tank of water and a glass shard into a Flask of Eldritch Essence. \
-		Eldritch water can be consumed for potent healing, or given to heathens for deadly poisoning."
-	gain_text = "This is an old recipe. The Owl whispered it to me. \
-		Created by the Priest - the Liquid that both was and is not."
+	desc = "Позволяет трансмутировать емкость с водой и осколок стекла в Колбу с мистической эссенцией. \
+		Мистическую воду можно употреблять для мощного исцеления или давать язычникам для смертельного отравления."
+	gain_text = "Это старый рецепт. Сова шепнула мне его. \
+		Созданная Жрецом - Жидкость, которая есть, и которой нет."
 	next_knowledge = list(
 		/datum/heretic_knowledge/rust_regen,
 		/datum/heretic_knowledge/spell/cosmic_runes,
@@ -20,8 +20,8 @@
 
 /datum/heretic_knowledge/entropy_pulse
 	name = "Pulse of Entropy"
-	desc = "Allows you to transmute 20 irons and 2 garbage items to fill the surrounding vicinity of the rune with rust."
-	gain_text = "Reality begins to whisper to me. To give it its entropic end."
+	desc = "Позволяет трансмутировать 20 железа и 2 мусорных предмета, чтобы заполнить ржавчиной окружение вокруг руны."
+	gain_text = "Реальность начинает нашептывать мне, чтобы дать ей энтропийный конец."
 	required_atoms = list(
 		/obj/item/stack/sheet/iron = 20,
 		/obj/item/trash = 2
@@ -42,10 +42,10 @@
 
 /datum/heretic_knowledge/curse/corrosion
 	name = "Curse of Corrosion"
-	desc = "Allows you to transmute wirecutters, a pool of vomit, and a heart to cast a curse of sickness on a crew member. \
-		While cursed, the victim will repeatedly vomit while their organs will take constant damage. You can additionally supply an item \
-		that a victim has touched or is covered in the victim's blood to make the curse last longer."
-	gain_text = "The body of humanity is temporary. Their weaknesses cannot be stopped, like iron falling to rust. Show them all."
+	desc = "Позволяет трансмутировать кусачки, лужу рвоты и сердце, чтобы наложить проклятие болезни на члена экипажа. \
+		При проклятии жертву будет постоянно рвать, а ее органы будут получать постоянный урон. Вы можете дополнительно снабдить предмет \
+		к которому прикоснулась жертва или который покрыт кровью жертвы, чтобы придать увеличить длительность проклятия."
+	gain_text = "Тело человечества временно. Их слабости невозможно остановить, как поддающееся ржавчине железо. Покажите им всем."
 	next_knowledge = list(
 		/datum/heretic_knowledge/spell/area_conversion,
 		/datum/heretic_knowledge/spell/star_blast,
@@ -62,7 +62,7 @@
 	route = PATH_SIDE
 
 /datum/heretic_knowledge/curse/corrosion/curse(mob/living/carbon/human/chosen_mob, boosted = FALSE)
-	to_chat(chosen_mob, span_danger("You feel very ill..."))
+	to_chat(chosen_mob, span_danger("Вы чувствуете себя очень плохо..."))
 	chosen_mob.apply_status_effect(/datum/status_effect/corrosion_curse)
 	return ..()
 
@@ -71,14 +71,14 @@
 		return
 
 	chosen_mob.remove_status_effect(/datum/status_effect/corrosion_curse)
-	to_chat(chosen_mob, span_green("You start to feel better."))
+	to_chat(chosen_mob, span_green("Вы начинаете чувствовать себя лучше."))
 	return ..()
 
 /datum/heretic_knowledge/summon/rusty
 	name = "Rusted Ritual"
-	desc = "Allows you to transmute a pool of vomit, a book, and a head into a Rust Walker. \
-		Rust Walkers excel at spreading rust and are moderately strong in combat."
-	gain_text = "I combined my knowledge of creation with my desire for corruption. The Marshal knew my name, and the Rusted Hills echoed out."
+	desc = "Позволяет трансмутировать лужу рвоты, книгу и голову в Ржавого ходока. \
+		Ржавые ходоки превосходно распространяют ржавчину и умеренно сильны в бою."
+	gain_text = "Я объединил свои знания о созидании с жаждой коррозии. Маршал знал мое имя, и Ржавые Холмы отозвались эхом."
 	next_knowledge = list(
 		/datum/heretic_knowledge/spell/entropic_plume,
 		/datum/heretic_knowledge/spell/cosmic_expansion,
