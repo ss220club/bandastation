@@ -5,8 +5,6 @@ import os
 import hashlib
 BUILD_PATH = os.path.join(os.path.dirname(os.path.realpath(__file__)), "..", "..")
 
-allowPathsRegexp = re.compile('^code/.*')
-
 repo = git.Repo(BUILD_PATH)
 tree = repo.head.commit.tree
 if not tree:
@@ -26,21 +24,14 @@ diff = [line for line in diff.split("\n") if line[0] in "+-" and not line.starts
 #   "origin": ["Test", "Test2"],
 #   "replace": ["Тест", "Тест2"]
 # }
-prepare = []
+files = []
 for line in diff:
     if line.startswith("---"):
-        prepare.append({"file": line[6:], "origin": [], "replace": []})
+        files.append({"file": line[6:], "origin": [], "replace": []})
     elif line.startswith("-"):
-        prepare[-1]['origin'].append(line[1:].strip())
+        files[-1]['origin'].append(line[1:].strip())
     elif line.startswith("+"):
-        prepare[-1]['replace'].append(line[1:].strip())
-
-# Фильтруем структуру: Оставляем только разрешенные файлы
-filtered = []
-for item in prepare:
-    if not allowPathsRegexp.match(item['file']):
-        continue
-    filtered.append(item)
+        files[-1]['replace'].append(line[1:].strip())
 
 # Собираем в структуру для хранения в файле:
 # {
@@ -55,7 +46,7 @@ for item in prepare:
 #   ]
 # }
 jsonStructure = {"files": []}
-for item in filtered:
+for item in files:
     originLen = len(item["origin"])
     replaceLen = len(item["replace"])
 
