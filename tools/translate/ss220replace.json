@@ -1,17 +1,3 @@
 {
-  "files": [
-    {
-      "path": "tgui/packages/tgui/interfaces/PreferencesMenu/antagonists/antagonists/heretic.ts",
-      "replaces": [
-        {
-          "original": "of decay, but the mansus veil has weakened. We will make them taste fear",
-          "replace": "of decay, but the mansus veil has weakened. Мы заставим их почувствовать страх"
-        },
-        {
-          "original": "again...",
-          "replace": "снова..."
-        }
-      ]
-    }
-  ]
+  "files": []
 }
