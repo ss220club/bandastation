@@ -24,7 +24,4 @@ jobs:
           fetch-depth: 0
 
       - name: Merge with their incoming
-        run: |
-        git merge origin/master --strategy-option theirs
-
-          
+        run: git merge origin/master --strategy-option theirs  
