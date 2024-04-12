@@ -1,6 +1,6 @@
 /datum/keybinding/mob/stop_pulling
 	full_name = "Перестать тащить"
-	hotkey_keys = list("C", "Delete")
+	hotkey_keys = list("H", "Delete")
 
 /datum/keybinding/mob/swap_hands
 	full_name = "Поменять руки"
@@ -67,5 +67,5 @@
 
 /datum/keybinding/mob/prevent_movement
 	full_name = "Остановиться (зажать)"
-	hotkey_keys = list("Ctrl")
+	hotkey_keys = list("Alt")
 	description = "При удержании, не дает вам самостоятельно двигаться."
