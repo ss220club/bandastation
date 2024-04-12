@@ -5,11 +5,11 @@ import { REVOLUTIONARY_MECHANICAL_DESCRIPTION } from './headrevolutionary';
 
 const Provocateur: Antagonist = {
   key: 'provocateur',
-  name: 'Provocateur',
+  name: 'Провокатор',
   description: [
     multiline`
-      A form of head revolutionary that can activate when joining an ongoing
-      shift.
+      Вариант главы революции, который можно получить при прибытии на уже теущую
+      смену.
     `,
 
     REVOLUTIONARY_MECHANICAL_DESCRIPTION,

@@ -3,8 +3,8 @@ import { multiline } from 'common/string';
 import { Antagonist, Category } from '../base';
 
 export const HERETIC_MECHANICAL_DESCRIPTION = multiline`
-      Find hidden influences and sacrifice crew members to gain magical
-      powers and ascend as one of several paths.
+      Найдите скрытые влияния и принесите в жертву членов экипажа,
+      чтобы получить магические силы и возвыситься по одному из нескольких путей.
    `;
 
 const Heretic: Antagonist = {
@@ -12,9 +12,9 @@ const Heretic: Antagonist = {
   name: 'Еретик',
   description: [
     multiline`
-      Забытые, поглощенные, выпотрошенные. Человечество забыло об эльдрических силах
-      разложения, но завеса мансуса ослабла. Мы заставим их почувствовать вкус страха
-      снова...
+      Забытые, поглощенные, выпотрошенные. Человечество забыло о мистических силах
+      разложения, но завеса Мансуса ослабла. Мы заставим их снова
+      почувствовать вкус страха...
     `,
     HERETIC_MECHANICAL_DESCRIPTION,
   ],

@@ -78,16 +78,16 @@
 
 
 // Heretic path defines.
-#define PATH_START "Start Path"
-#define PATH_SIDE "Side Path"
-#define PATH_ASH "Ash Path"
-#define PATH_RUST "Rust Path"
-#define PATH_FLESH "Flesh Path"
-#define PATH_VOID "Void Path"
-#define PATH_BLADE "Blade Path"
-#define PATH_COSMIC "Cosmic Path"
-#define PATH_LOCK "Lock Path"
-#define PATH_MOON "Moon Path"
+#define PATH_START "Стартовый путь"
+#define PATH_SIDE "Вторичный путь"
+#define PATH_ASH "Путь пепла"
+#define PATH_RUST "Путь ржавчины"
+#define PATH_FLESH "Путь плоти"
+#define PATH_VOID "Путь пустоты"
+#define PATH_BLADE "Путь клинка"
+#define PATH_COSMIC "Путь космоса"
+#define PATH_LOCK "Путь замка"
+#define PATH_MOON "Путь луны"
 
 /// Defines are used in /proc/has_living_heart() to report if the heretic has no heart period, no living heart, or has a living heart.
 #define HERETIC_NO_HEART_ORGAN -1
