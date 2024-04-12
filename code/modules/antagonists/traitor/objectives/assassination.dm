@@ -17,8 +17,8 @@
 	)
 
 /datum/traitor_objective/target_player/assassinate
-	name = "Assassinate %TARGET% the %JOB TITLE%"
-	description = "Simply kill your target to accomplish this objective."
+	name = "Убейте %TARGET%, %JOB TITLE%."
+	description = "Чтобы выполнить эту задачу, просто убейте свою цель."
 
 	abstract_type = /datum/traitor_objective/target_player/assassinate
 
@@ -39,8 +39,8 @@
 	. += NAMEOF(src, maximum_objectives_in_period)
 
 /datum/traitor_objective/target_player/assassinate/calling_card
-	name = "Assassinate %TARGET% the %JOB TITLE%, and plant a calling card"
-	description = "Kill your target and plant a calling card in the pockets of your victim. If your calling card gets destroyed before you are able to plant it, this objective will fail."
+	name = "Убейте %TARGET%, %JOB TITLE%, и подбросьте предоставленную визитную карточку."
+	description = "Убейте свою цель и подбросьте визитную карточку в карман своей жертвы. Если визитная карточка будет уничтожена до того, как вы успеете её подложить, эта цель будет провалена."
 	progression_reward = 2 MINUTES
 	telecrystal_reward = list(1, 2)
 
@@ -55,7 +55,7 @@
 /datum/traitor_objective/target_player/assassinate/calling_card/generate_ui_buttons(mob/user)
 	var/list/buttons = list()
 	if(!card)
-		buttons += add_ui_button("", "Pressing this will materialize a calling card, which you must plant to succeed.", "paper-plane", "summon_card")
+		buttons += add_ui_button("", "Нажмите, чтобы создать свою визитную карточку, которую нужно будет подложить.", "paper-plane", "summon_card")
 	return buttons
 
 /datum/traitor_objective/target_player/assassinate/calling_card/ui_perform_action(mob/living/user, action)
@@ -66,7 +66,7 @@
 				return
 			card = new(user.drop_location())
 			user.put_in_hands(card)
-			card.balloon_alert(user, "the card materializes in your hand")
+			card.balloon_alert(user, "карточка материализуется в руке")
 			RegisterSignal(card, COMSIG_ITEM_EQUIPPED, PROC_REF(on_card_planted))
 			AddComponent(/datum/component/traitor_objective_register, card, \
 				succeed_signals = null, \

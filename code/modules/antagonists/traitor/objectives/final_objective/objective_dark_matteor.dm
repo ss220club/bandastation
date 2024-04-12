@@ -1,7 +1,7 @@
 /datum/traitor_objective/ultimate/dark_matteor
-	name = "Summon a dark matter singularity to consume the station."
-	description = "Go to %AREA%, and receive the smuggled satellites + emag. Set up and emag the satellites, \
-	after enough have been recalibrated by the emag, IT COMES. Warning: The dark matter singularity will hunt all creatures, you included."
+	name = "Вызовите сингулярность из темной материи, чтобы поглотить станцию."
+	description = "Пройдите в %AREA% и получите контрабандные спутники и emag. Установите спутники и используйте на них emag, \
+	и когда достаточно спутников будет перекалибровано с помощью emag, ОНО ПРИДЕТ. Внимание: Сингулярность из темной материи будет охотиться на всех существ, включая вас."
 
 	//this is a prototype so this progression is for all basic level kill objectives
 
@@ -32,7 +32,7 @@
 /datum/traitor_objective/ultimate/dark_matteor/generate_ui_buttons(mob/user)
 	var/list/buttons = list()
 	if(!sent_satellites)
-		buttons += add_ui_button("", "Pressing this will call down a pod with the smuggled satellites.", "satellite", "satellite")
+		buttons += add_ui_button("", "Нажмите, чтобы призвать под с контрабандными спутниками.", "satellite", "satellite")
 	return buttons
 
 /datum/traitor_objective/ultimate/dark_matteor/ui_perform_action(mob/living/user, action)

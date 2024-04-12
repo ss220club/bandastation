@@ -1,7 +1,7 @@
 /datum/traitor_objective/ultimate/romerol
-	name = "Spread the experimental bioterror agent Romerol by calling a droppod down at %AREA%"
-	description = "Go to %AREA%, and receive the bioterror agent. Spread it to the crew, \
-	and watch then raise from the dead as mindless killing machines. Warning: The undead will attack you too."
+	name = "Распространите экспериментальный вирус биотеррора Romerol, призвав под в %AREA%"
+	description = "Пройдите в %AREA%, и получите вирус биотеррора. Распространите его среди экипажа, \
+	и наслаждайтесь поднятыми из мертвых безмозглыми машинами для убийства. Внимание: мертвецы будут атаковать и вас."
 
 	//this is a prototype so this progression is for all basic level kill objectives
 
@@ -25,7 +25,7 @@
 /datum/traitor_objective/ultimate/romerol/generate_ui_buttons(mob/user)
 	var/list/buttons = list()
 	if(!sent_romerol)
-		buttons += add_ui_button("", "Pressing this will call down a pod with the biohazard kit.", "biohazard", "romerol")
+		buttons += add_ui_button("", "Нажмите, чтобы призвать под с набором биоугрозы.", "biohazard", "romerol")
 	return buttons
 
 /datum/traitor_objective/ultimate/romerol/ui_perform_action(mob/living/user, action)

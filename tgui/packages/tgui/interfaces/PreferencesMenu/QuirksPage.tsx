@@ -352,9 +352,9 @@ export function QuirksPage(props) {
               maxPositiveQuirks !== -1 &&
               positiveQuirks >= maxPositiveQuirks
             ) {
-              return "You can't have any more positive quirks!";
+              return 'Нельзя иметь больше положительных черт!';
             } else if (pointsEnabled && balance + quirk.value > 0) {
-              return 'You need a negative quirk to balance this out!';
+              return 'Необходим баланс с отрицательными чертами!';
             }
           }
 
@@ -372,7 +372,7 @@ export function QuirksPage(props) {
                 incompatibleQuirk !== quirk.name &&
                 selectedQuirkNames.indexOf(incompatibleQuirk) !== -1
               ) {
-                return `This is incompatible with ${incompatibleQuirk}!`;
+                return `Черта несовместима с ${incompatibleQuirk}!`;
               }
             }
           }
@@ -384,7 +384,7 @@ export function QuirksPage(props) {
           const quirk = quirkInfo[quirkName];
 
           if (pointsEnabled && balance - quirk.value > 0) {
-            return 'You need to remove a positive quirk first!';
+            return 'Сначала вам нужно убрать позитивную черту!';
           }
 
           return undefined;
@@ -396,7 +396,7 @@ export function QuirksPage(props) {
               <Stack vertical fill align="center">
                 <Stack.Item>
                   {maxPositiveQuirks > 0 ? (
-                    <Box fontSize="1.3em">Positive Quirks</Box>
+                    <Box fontSize="1.3em">Положительные черты</Box>
                   ) : (
                     <Box mt={pointsEnabled ? 3.4 : 0} />
                   )}
@@ -414,7 +414,7 @@ export function QuirksPage(props) {
 
                 <Stack.Item>
                   <Box as="b" fontSize="1.6em">
-                    Available Quirks
+                    Доступные черты
                   </Box>
                 </Stack.Item>
 
@@ -458,7 +458,7 @@ export function QuirksPage(props) {
               <Stack vertical fill align="center">
                 <Stack.Item>
                   {pointsEnabled ? (
-                    <Box fontSize="1.3em">Quirk Balance</Box>
+                    <Box fontSize="1.3em">Баланс черт</Box>
                   ) : (
                     <Box mt={maxPositiveQuirks > 0 ? 3.4 : 0} />
                   )}
@@ -474,7 +474,7 @@ export function QuirksPage(props) {
 
                 <Stack.Item>
                   <Box as="b" fontSize="1.6em">
-                    Current Quirks
+                    Текущие черты
                   </Box>
                 </Stack.Item>
 
