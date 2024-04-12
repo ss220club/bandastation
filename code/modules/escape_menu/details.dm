@@ -33,9 +33,9 @@ GLOBAL_DATUM(escape_menu_details, /atom/movable/screen/escape_menu/details)
 /atom/movable/screen/escape_menu/details/proc/update_text()
 	var/new_maptext = {"
 		<span style='text-align: right; line-height: 0.7'>
-			Round ID: [GLOB.round_id || "Unset"]<br />
-			Round Time: [ROUND_TIME()]<br />
-			Map: [SSmapping.config?.map_name || "Loading..."]<br />
+			Номер раунда: [GLOB.round_id || "Unset"]<br />
+			Продолжительность раунда: [ROUND_TIME()]<br />
+			Карта: [SSmapping.config?.map_name || "Загрузка..."]<br />
 			Time Dilation: [round(SStime_track.time_dilation_current,1)]%<br />
 		</span>
 	"}
