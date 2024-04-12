@@ -1,5 +1,5 @@
 /datum/quirk/item_quirk/blindness
-	name = "Sleposhara"
+	name = "Blind"
 	desc = "Вы полностью слепы, это необратимо"
 	icon = FA_ICON_EYE_SLASH
 	value = -16

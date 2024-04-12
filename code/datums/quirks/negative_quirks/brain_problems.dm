@@ -4,8 +4,8 @@
 	 * - 5u mannitol will heal 12.5% (25 organ damage) brain damage
 	 */
 /datum/quirk/item_quirk/brainproblems
-	name = "Bedi s boshkoi"
-	desc = "You have a little friend in your brain that is slowly destroying it. Better bring some mannitol!"
+	name = "Brain Tumor"
+	desc = "У вас в мозгу есть маленький друг, который медленно разрушает его. Лучше взять с собой немного маннитола!"
 	icon = FA_ICON_BRAIN
 	value = -12
 	gain_text = span_danger("Вы ощущаете спокойствие.")

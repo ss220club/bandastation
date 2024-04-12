@@ -1,5 +1,5 @@
 /datum/quirk/item_quirk/chronic_illness
-	name = "Chronicheskaya boleznya"
+	name = "Chronic Illness"
 	desc = "У вас хроническое заболевание, которое требует постоянное медицинское наблюдение."
 	icon = FA_ICON_DISEASE
 	value = -12
