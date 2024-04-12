@@ -141,17 +141,17 @@
 		return
 
 	if(IS_HERETIC(user))
-		to_chat(user, span_boldwarning("You know better than to tempt forces out of your control!"))
+		to_chat(user, span_boldwarning("Вам лучше не искушать неподвластные вам силы!"))
 		return TRUE
 
 	var/mob/living/carbon/human/human_user = user
 	var/obj/item/bodypart/their_poor_arm = human_user.get_active_hand()
 	if(prob(25))
-		to_chat(human_user, span_userdanger("An otherwordly presence tears and atomizes your [their_poor_arm.name] as you try to touch the hole in the very fabric of reality!"))
+		to_chat(human_user, span_userdanger("Потустороннее присутствие разрывает и распыляет вашу [their_poor_arm.name], когда вы пытаетесь коснуться дыры в самой ткани реальности!"))
 		their_poor_arm.dismember()
 		qdel(their_poor_arm)
 	else
-		to_chat(human_user,span_danger("You pull your hand away from the hole as the eldritch energy flails, trying to latch onto existance itself!"))
+		to_chat(human_user,span_danger("Вы отдергиваете руку от отверстия, когда мистическая энергия бьется, пытаясь зацепиться за этот мир!"))
 	return TRUE
 
 /obj/effect/visible_heretic_influence/attack_tk(mob/user)
@@ -161,13 +161,13 @@
 	. = COMPONENT_CANCEL_ATTACK_CHAIN
 
 	if(IS_HERETIC(user))
-		to_chat(user, span_boldwarning("You know better than to tempt forces out of your control!"))
+		to_chat(user, span_boldwarning("Вам лучше не искушать неподвластные вам силы!"))
 		return
 
 	var/mob/living/carbon/human/human_user = user
 
 	// A very elaborate way to suicide
-	to_chat(human_user, span_userdanger("Eldritch energy lashes out, piercing your fragile mind, tearing it to pieces!"))
+	to_chat(human_user, span_userdanger("Миситческая энергия пронзает ваш хрупкий разум, разрывая его на куски!"))
 	human_user.ghostize()
 	var/obj/item/bodypart/head/head = locate() in human_user.bodyparts
 	if(head)
@@ -186,7 +186,7 @@
 		return
 
 	var/mob/living/carbon/human/human_user = user
-	to_chat(human_user, span_userdanger("Your mind burns as you stare at the tear!"))
+	to_chat(human_user, span_userdanger("Ваш разум горит, когда вы смотрите на разрыв!"))
 	human_user.adjustOrganLoss(ORGAN_SLOT_BRAIN, 10, 190)
 	human_user.add_mood_event("gates_of_mansus", /datum/mood_event/gates_of_mansus)
 
@@ -248,7 +248,7 @@
 		return SECONDARY_ATTACK_CALL_NORMAL
 
 	if(being_drained)
-		balloon_alert(user, "already being drained!")
+		balloon_alert(user, "уже добывается!")
 	else
 		INVOKE_ASYNC(src, PROC_REF(drain_influence), user, 1)
 
@@ -280,15 +280,15 @@
 /obj/effect/heretic_influence/proc/drain_influence(mob/living/user, knowledge_to_gain)
 
 	being_drained = TRUE
-	balloon_alert(user, "draining influence...")
+	balloon_alert(user, "добыча влияния...")
 
 	if(!do_after(user, 10 SECONDS, src, hidden = TRUE))
 		being_drained = FALSE
-		balloon_alert(user, "interrupted!")
+		balloon_alert(user, "прервано!")
 		return
 
 	// We don't need to set being_drained back since we delete after anyways
-	balloon_alert(user, "influence drained")
+	balloon_alert(user, "влияние добыто")
 
 	var/datum/antagonist/heretic/heretic_datum = IS_HERETIC(user)
 	heretic_datum.knowledge_points += knowledge_to_gain
@@ -302,7 +302,7 @@
 /obj/effect/heretic_influence/proc/after_drain(mob/living/user)
 	if(user)
 		to_chat(user, span_hypnophrase(pick(strings(HERETIC_INFLUENCE_FILE, "drain_message"))))
-		to_chat(user, span_warning("[src] begins to fade into reality!"))
+		to_chat(user, span_warning("[src] начинает проясняться в реальность!"))
 
 	var/obj/effect/visible_heretic_influence/illusion = new /obj/effect/visible_heretic_influence(drop_location())
 	illusion.name = "\improper" + pick(strings(HERETIC_INFLUENCE_FILE, "drained")) + " " + format_text(name)

@@ -87,7 +87,7 @@ export const CharacterPreferenceWindow = (props) => {
   }
 
   return (
-    <Window title="Character Preferences" width={920} height={770}>
+    <Window title="Настройки персонажа" width={920} height={770}>
       <Window.Content scrollable>
         <Stack vertical fill>
           <Stack.Item>
@@ -104,7 +104,7 @@ export const CharacterPreferenceWindow = (props) => {
 
           {!data.content_unlocked && (
             <Stack.Item align="center">
-              Buy BYOND premium for more slots!
+              Купите BYOND premium для увеличения слотов!
             </Stack.Item>
           )}
 
@@ -119,7 +119,7 @@ export const CharacterPreferenceWindow = (props) => {
                   setPage={setCurrentPage}
                   otherActivePages={[Page.Species]}
                 >
-                  Character
+                  Персонаж
                 </PageButton>
               </Stack.Item>
 
@@ -133,7 +133,7 @@ export const CharacterPreferenceWindow = (props) => {
                     Fun fact: This isn't "Jobs" so that it intentionally
                     catches your eyes, because it's really important!
                   */}
-                  Occupations
+                  Профессии
                 </PageButton>
               </Stack.Item>
 
@@ -143,7 +143,7 @@ export const CharacterPreferenceWindow = (props) => {
                   page={Page.Antags}
                   setPage={setCurrentPage}
                 >
-                  Antagonists
+                  Антагонисты
                 </PageButton>
               </Stack.Item>
 
@@ -153,7 +153,7 @@ export const CharacterPreferenceWindow = (props) => {
                   page={Page.Quirks}
                   setPage={setCurrentPage}
                 >
-                  Quirks
+                  Черты
                 </PageButton>
               </Stack.Item>
 
@@ -164,7 +164,7 @@ export const CharacterPreferenceWindow = (props) => {
                     page={Page.Voice}
                     setPage={setCurrentPage}
                   >
-                    Voice
+                    Голос
                   </PageButton>
                 </Stack.Item>
               )}
