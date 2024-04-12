@@ -1,6 +1,6 @@
 /datum/quirk/no_taste
 	name = "Ageusia"
-	desc = "Вы не сможете ничего попробовать! Токсичная пища все равно отравит вас."
+	desc = "Вы не сможете ничего попробовать! Токсичная пища все равно настигнет вас."
 	icon = FA_ICON_MEH_BLANK
 	value = 0
 	mob_trait = TRAIT_AGEUSIA
