@@ -43,7 +43,7 @@ export const GamePreferenceWindow = (props: {
                   page={GamePreferencesSelectedPage.Settings}
                   setPage={setCurrentPage}
                 >
-                  Settings
+                  Настройки
                 </PageButton>
               </Stack.Item>
 
@@ -53,7 +53,7 @@ export const GamePreferenceWindow = (props: {
                   page={GamePreferencesSelectedPage.Keybindings}
                   setPage={setCurrentPage}
                 >
-                  Keybindings
+                  Назначения клавиш
                 </PageButton>
               </Stack.Item>
             </Stack>
