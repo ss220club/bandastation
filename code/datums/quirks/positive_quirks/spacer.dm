@@ -66,7 +66,7 @@
 	var/obj/item/storage/pill_bottle/ondansetron/disgust_killers = new()
 	disgust_killers.desc += " Лучше всего брать его с собой в путешествие по поверхности планеты."
 	if(quirk_holder.equip_to_slot_if_possible(disgust_killers, ITEM_SLOT_BACKPACK, qdel_on_fail = TRUE, initial = TRUE, indirect_action = TRUE))
-		to_chat(quirk_holder, span_info("Благодаря [isnull(spacer_account) ? " " : " also "] были выданы противорвотные пластыри, чтобы помочь адаптироваться к планетарной гравитации."))
+		to_chat(quirk_holder, span_info("Вам [isnull(spacer_account) ? " " : " также "] были выданы противорвотные пластыри, чтобы помочь адаптироваться к планетарной гравитации."))
 
 /datum/quirk/spacer_born/remove()
 	UnregisterSignal(quirk_holder, COMSIG_MOVABLE_Z_CHANGED)
