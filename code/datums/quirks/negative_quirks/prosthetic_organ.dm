@@ -57,7 +57,7 @@
 		if(ORGAN_SLOT_STOMACH)
 			prosthetic = new /obj/item/organ/internal/stomach/cybernetic/surplus
 			slot_string = "желудок"
-	medical_record_text = "При физическом осмотре у пациента был обнаружен бюджетный протез [slot_string]. \
+	medical_record_text = "При физическом осмотре орган пациента, [slot_string], был заменен бюджетным протезом. \
 		Известно, что удаление этих органов опасно как для пациента, так и для врача."
 	old_organ = human_holder.get_organ_slot(organ_slot)
 	if(prosthetic.Insert(human_holder, special = TRUE))
