@@ -118,7 +118,7 @@
 	accessory_type = /obj/item/lighter/greyscale
 	mob_trait = TRAIT_SMOKER
 	hardcore_value = 1
-	drug_flavour_text = "Убедитесь, что вы получили свои любимые, когда они закончатся..."
+	drug_flavour_text = "Убедитесь, что вы получите свои любимые, до того, как они закончатся."
 	mail_goodies = list(
 		/obj/effect/spawner/random/entertainment/cigarette_pack,
 		/obj/effect/spawner/random/entertainment/cigar,
