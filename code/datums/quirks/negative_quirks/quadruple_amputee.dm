@@ -3,7 +3,7 @@
 	desc = "Ой! Всё в протезах! В результате поистине жестокого космического наказания все ваши конечности были заменены на дешевые протезы."
 	icon = "tg-prosthetic-full"
 	value = -6
-	medical_record_text = "При физическом осмотре у пациента были обнаружены все недорогие протезы."
+	medical_record_text = "При физическом осмотре у пациента были обнаружены все бюджетные протезы."
 	hardcore_value = 6
 	quirk_flags = QUIRK_HUMAN_ONLY|QUIRK_CHANGES_APPEARANCE
 	mail_goodies = list(/obj/item/weldingtool/mini, /obj/item/stack/cable_coil/five)
