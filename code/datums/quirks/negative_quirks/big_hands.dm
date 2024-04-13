@@ -1,6 +1,6 @@
 /datum/quirk/bighands
 	name = "Big Hands"
-	desc = "У вас большие руки, это, конечно, затрудняет использование многих вещей.."
+	desc = "У вас большие руки, и это затрудняет использование многих вещей."
 	icon = FA_ICON_HAND_DOTS
 	value = -6
 	mob_trait = TRAIT_CHUNKYFINGERS
