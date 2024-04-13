@@ -1,6 +1,6 @@
 /datum/quirk/item_quirk/mime_fan
 	name = "Mime Fan"
-	desc = "Вы поклонник выходок мимов и получаете заряд бодрости от ношения значка Мим."
+	desc = "Вы поклонник выходок мимов и получаете заряд бодрости от ношения их значков."
 	icon = FA_ICON_THUMBTACK
 	value = 2
 	mob_trait = TRAIT_MIME_FAN
