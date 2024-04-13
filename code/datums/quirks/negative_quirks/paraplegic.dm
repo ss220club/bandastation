@@ -1,6 +1,6 @@
 /datum/quirk/paraplegic
 	name = "Paraplegic"
-	desc = "У вас отказали ноги и вы больше никогда не сможете ходить, зато у вас есть бесплатная коляска!"
+	desc = "У вас отказали ноги, и вы больше никогда не сможете ходить, зато у вас есть бесплатная коляска!"
 	icon = FA_ICON_WHEELCHAIR
 	value = -12
 	gain_text = null // Handled by trauma.
