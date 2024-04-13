@@ -114,7 +114,7 @@
 
 /datum/quirk/transhumanist/post_add()
 	if(slot_string)
-		to_chat(quirk_holder, span_boldannounce("Ваша [slot_string] была заменена на руку робота. Чтобы починить ее, вместо швов и регенеративных сеток нужно использовать сварочный инструмент и кабели.."))
+		to_chat(quirk_holder, span_boldannounce("Ваша конечность, [slot_string], была заменена на руку робота. Чтобы починить ее, вместо швов и регенеративных сеток нужно использовать сварочный инструмент и кабели."))
 
 /datum/quirk/transhumanist/remove()
 	if(old_limb)
