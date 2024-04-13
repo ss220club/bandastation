@@ -14,7 +14,7 @@
 	var/obj/item/storage/photo_album/personal/photo_album = new(get_turf(human_holder))
 	photo_album.persistence_id = "personal_[human_holder.last_mind?.key]" // this is a persistent album, the ID is tied to the account's key to avoid tampering
 	photo_album.persistence_load()
-	photo_album.name = "[human_holder.real_name]'s фото альбом"
+	photo_album.name = "Фотоальбом [human_holder.real_name]"
 
 	give_item_to_holder(photo_album, list(LOCATION_BACKPACK = ITEM_SLOT_BACKPACK, LOCATION_HANDS = ITEM_SLOT_HANDS))
 	give_item_to_holder(
