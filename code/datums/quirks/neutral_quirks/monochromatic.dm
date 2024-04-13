@@ -3,7 +3,7 @@
 	desc = "Вы страдаете полным дальтонизмом и воспринимаете весь мир в черно-белых тонах."
 	icon = FA_ICON_ADJUST
 	value = 0
-	medical_record_text = "Пациент страдает почти полной дальтонизмом."
+	medical_record_text = "Пациент страдает почти полным дальтонизмом."
 	mail_goodies = list( // Noir detective wannabe
 		/obj/item/clothing/suit/jacket/det_suit/noir,
 		/obj/item/clothing/suit/jacket/det_suit/dark,

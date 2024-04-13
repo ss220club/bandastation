@@ -6,7 +6,7 @@
 	mob_trait = TRAIT_TAGGER
 	gain_text = span_notice("Вы знаете, как эффективно и быстро размечать стены.")
 	lose_text = span_danger("Вы забыли, как правильно размечать стены.")
-	medical_record_text = "Пациент недавно был замечен в связи с возможным инцидентом, связанным с использованием краски."
+	medical_record_text = "Пациент недавно был замечен в связи с возможным инцидентом ненадлежащего распыления краски."
 	mail_goodies = list(
 		/obj/item/toy/crayon/spraycan,
 		/obj/item/canvas/nineteen_nineteen,

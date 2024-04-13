@@ -1,6 +1,6 @@
 /datum/quirk/item_quirk/addict
 	name = "Addict"
-	desc = "Вы зависимы от того, чего не существует. Страдай."
+	desc = "Вы зависимы от того, чего не существует. Страдайте."
 	gain_text = span_danger("Вы вдруг почувствовали тягу к... чему-то? Вы не уверены, к чему конкретно.")
 	medical_record_text = "У пациента есть зависимость к чему-то, но он отказывается говорить к чему конкретно."
 	abstract_parent_type = /datum/quirk/item_quirk/addict
@@ -108,7 +108,7 @@
 
 /datum/quirk/item_quirk/addict/smoker
 	name = "Smoker"
-	desc = "Иногда очень хочется покурить. Возможно, это не очень полезно для ваших легких."
+	desc = "Иногда вам очень хочется закурить. Возможно, это не очень полезно для ваших легких."
 	icon = FA_ICON_SMOKING
 	value = -4
 	gain_text = span_danger("Вам бы сейчас не помешало покурить.")

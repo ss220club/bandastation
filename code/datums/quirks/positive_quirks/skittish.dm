@@ -4,5 +4,5 @@
 	icon = FA_ICON_TRASH
 	value = 8
 	mob_trait = TRAIT_SKITTISH
-	medical_record_text = "Пациент демонстрирует сильное отторжение к опасности и рассказывает, что прятался в контейнерах от страха."
+	medical_record_text = "Пациент демонстрирует крайне сильное стремление избежать опасности и рассказывает как прятался в контейнерах от страха."
 	mail_goodies = list(/obj/structure/closet/cardboard)

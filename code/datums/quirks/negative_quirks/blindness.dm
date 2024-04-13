@@ -4,7 +4,7 @@
 	icon = FA_ICON_EYE_SLASH
 	value = -16
 	gain_text = span_danger("Вы ослепли и ничего не видите.")
-	lose_text = span_notice("Чудным образом к вам вернулось зрение.")
+	lose_text = span_notice("Чудесным образом к вам вернулось зрение.")
 	medical_record_text = "У пациента необратимая слепота."
 	hardcore_value = 15
 	quirk_flags = QUIRK_HUMAN_ONLY|QUIRK_CHANGES_APPEARANCE

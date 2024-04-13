@@ -1,6 +1,6 @@
 /datum/quirk/apathetic
 	name = "Apathetic"
-	desc = "В целом вам все-равно на все, в отличии от других людей. В таком месте, как это, довольно спокойно."
+	desc = "В целом вам все-равно на все, в отличии от других людей. Тут прикольно... наверное..."
 	icon = FA_ICON_MEH
 	value = 4
 	quirk_flags = QUIRK_HUMAN_ONLY|QUIRK_MOODLET_BASED

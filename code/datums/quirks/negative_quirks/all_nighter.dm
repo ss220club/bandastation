@@ -6,7 +6,7 @@
 	icon = FA_ICON_BED
 	value = -4
 	mob_trait = TRAIT_HEAVY_SLEEPER
-	gain_text = span_danger("Вы чувствуете усталость.")
+	gain_text = span_danger("Вы чувствуете себя уставшим.")
 	lose_text = span_notice("Вы чувствуете себя отдохнувшим.")
 	medical_record_text = "Пациент, похоже, страдает от недостатка сна."
 	hardcore_value = 2
