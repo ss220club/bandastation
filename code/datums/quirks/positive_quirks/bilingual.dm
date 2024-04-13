@@ -3,7 +3,7 @@
 	desc = "За эти годы вы освоили еще один язык!"
 	icon = FA_ICON_GLOBE
 	value = 4
-	gain_text = span_notice("Некоторые из слов ваших собеседников, конечно же, не являются общепринятыми. Хорошо, что вы учились для того чтобы понимать их.")
+	gain_text = span_notice("Некоторые из слов ваших собеседников точно не являются обычными. Хорошо, что вы научились их понимать")
 	lose_text = span_notice("Кажется, вы забыли свой второй язык.")
 	medical_record_text = "Пациент говорит на нескольких языках."
 	mail_goodies = list(/obj/item/taperecorder, /obj/item/clothing/head/frenchberet, /obj/item/clothing/mask/fakemoustache/italian)
