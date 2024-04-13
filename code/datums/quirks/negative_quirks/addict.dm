@@ -181,7 +181,7 @@
 	drug_container_type = /obj/item/reagent_containers/cup/glass/bottle/whiskey
 	mob_trait = TRAIT_HEAVY_DRINKER
 	hardcore_value = 1
-	drug_flavour_text = "Убедитесь, что у вас есть любимый напиток, когда он закончится."
+	drug_flavour_text = "Убедитесь, чтобы запасы вашего любимого напитка не закончатся."
 	mail_goodies = list(
 		/obj/effect/spawner/random/food_or_drink/booze,
 		/obj/item/book/bible/booze,
