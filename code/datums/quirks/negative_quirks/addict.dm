@@ -88,7 +88,7 @@
 	hardcore_value = 4
 	quirk_flags = QUIRK_HUMAN_ONLY|QUIRK_PROCESSES
 	mail_goodies = list(/obj/effect/spawner/random/contraband/narcotics)
-	drug_flavour_text = "Лучше надеяться, что у вас они не закончится..."
+	drug_flavour_text = "Лучше надеяться, что у вас они не закончатся..."
 
 /datum/quirk_constant_data/junkie
 	associated_typepath = /datum/quirk/item_quirk/addict/junkie
