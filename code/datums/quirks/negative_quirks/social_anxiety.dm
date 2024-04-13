@@ -62,14 +62,14 @@
 
 	if(prob(min(50, (0.50 * moodmod)))) //Max 50% chance of not talking
 		if(dumb_thing)
-			to_chat(quirk_holder, span_userdanger("Вы вспоминаете глупость, которую сказали давным-давно, и внутренне кричите.."))
+			to_chat(quirk_holder, span_userdanger("Вы вспоминаете глупость, которую сказали давным-давно, и внутренне кричите."))
 			dumb_thing = FALSE //only once per life
 			if(prob(1))
 				new/obj/item/food/spaghetti/pastatomato(get_turf(quirk_holder)) //now that's what I call spaghetti code
 		else
-			to_chat(quirk_holder, span_warning("Вы думаете, что это не добавит ничего нового к разговору, и решаете не говорить об этом.."))
+			to_chat(quirk_holder, span_warning("Вы думаете, что это не добавит ничего нового к разговору, и решаете не говорить об этом."))
 			if(prob(min(25, (0.25 * moodmod)))) //Max 25% chance of silence stacks after successful not talking roll
-				to_chat(quirk_holder, span_danger("Вы уходите в себя. Вы <i>действительно<i> не настроены на разговор.."))
+				to_chat(quirk_holder, span_danger("Вы уходите в себя. Вы <i>действительно<i> не настроены на разговор."))
 				quirk_holder.set_silence_if_lower(10 SECONDS)
 
 		speech_args[SPEECH_MESSAGE] = pick("Ээ.","Эмм.","Ам.")
@@ -113,6 +113,6 @@
 	return COMSIG_BLOCK_EYECONTACT
 
 /datum/mood_event/anxiety_eyecontact
-	description = "Иногда взгляд в глаза заставляет меня нервничать...."
+	description = "Иногда взгляд в глаза заставляет меня нервничать..."
 	mood_change = -5
 	timeout = 3 MINUTES
