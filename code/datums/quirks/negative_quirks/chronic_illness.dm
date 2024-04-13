@@ -12,5 +12,5 @@
 /datum/quirk/item_quirk/chronic_illness/add_unique(client/client_source)
 	var/datum/disease/chronic_illness/hms = new /datum/disease/chronic_illness()
 	quirk_holder.ForceContractDisease(hms)
-	give_item_to_holder(/obj/item/storage/pill_bottle/sansufentanyl, list(LOCATION_BACKPACK = ITEM_SLOT_BACKPACK),flavour_text = "Вам назначили лекарства, которые помогут справиться с вашим заболеванием. Принимайте их регулярно, чтобы избежать осложнений")
+	give_item_to_holder(/obj/item/storage/pill_bottle/sansufentanyl, list(LOCATION_BACKPACK = ITEM_SLOT_BACKPACK),flavour_text = "Вам назначили лекарства, которые помогут справиться с вашим заболеванием. Принимайте их регулярно, чтобы избежать осложнений.")
 	give_item_to_holder(/obj/item/healthanalyzer/simple/disease, list(LOCATION_BACKPACK = ITEM_SLOT_BACKPACK))
