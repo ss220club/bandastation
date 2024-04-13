@@ -5,7 +5,7 @@
 		ЭТО НЕ ДАЕТ РАЗРЕШЕНИЯ ГРИФЕРИТЬ."
 	icon = FA_ICON_GRIN_TONGUE_WINK
 	value = -8
-	gain_text = span_userdanger("А? Что? Где? Только не ...")
+	gain_text = span_userdanger("А? Что? Где? Только не...")
 	lose_text = span_notice("Вы снова чувствуете единение с миром.")
 	medical_record_text = "Пациент страдает от острого синдрома диссоциации реальности и испытывает яркие галлюцинации."
 	hardcore_value = 6
