@@ -1,20 +1,20 @@
 /mob/living/basic/festivus
-	name = "festivus pole"
-	desc = "Serenity now... SERENITY NOW!"
+	name = "\proper праздничный шест"
+	desc = "Спокойствие... ТОЛЬКО СПОКОЙСТВИЕ!"
 	icon = 'icons/obj/fluff/flora/pinetrees.dmi'
 	icon_state = "festivus_pole"
 	icon_living = "festivus_pole"
 	icon_dead = "festivus_pole"
 	icon_gib = "festivus_pole"
 	health_doll_icon = "festivus_pole"
-	gender = NEUTER
+	gender = MALE
 	gold_core_spawnable = HOSTILE_SPAWN
 	basic_mob_flags = DEL_ON_DEATH
 
-	response_help_continuous = "rubs"
-	response_help_simple = "rub"
-	response_disarm_continuous = "pushes"
-	response_disarm_simple = "push"
+	response_help_continuous = "потирает"
+	response_help_simple = "потирает"
+	response_disarm_continuous = "толкает"
+	response_disarm_simple = "толкает"
 
 	mob_size = MOB_SIZE_LARGE
 	pixel_x = -16
@@ -25,15 +25,15 @@
 	health = 200
 	melee_damage_lower = 8
 	melee_damage_upper = 12
-	attack_verb_continuous = "bites"
-	attack_verb_simple = "bite"
+	attack_verb_continuous = "кусает"
+	attack_verb_simple = "кусает"
 	attack_sound = 'sound/weapons/bite.ogg'
 	attack_vis_effect = ATTACK_EFFECT_BITE
 
 	faction = list(FACTION_HOSTILE)
 	speak_emote = list("polls")
 
-	death_message = "is hacked into pieces!"
+	death_message = "разрублен на части!"
 
 	ai_controller = /datum/ai_controller/basic_controller/festivus_pole
 
@@ -46,7 +46,7 @@
 	AddComponent(/datum/component/seethrough_mob)
 	var/static/list/death_loot = list(/obj/item/stack/rods)
 	AddElement(/datum/element/death_drops, death_loot)
-	AddComponent(/datum/component/aggro_emote, emote_list = string_list(list("growls")), emote_chance = 20)
+	AddComponent(/datum/component/aggro_emote, emote_list = string_list(list("рычит")), emote_chance = 20)
 	grant_actions_by_list(list(/datum/action/cooldown/mob_cooldown/charge_apc = BB_FESTIVE_APC))
 
 /datum/ai_controller/basic_controller/festivus_pole
@@ -67,7 +67,7 @@
 	. = ..()
 	if(user.combat_mode)
 		return
-	visible_message(span_warning("[src] crackles with static electricity!"))
+	visible_message(span_warning("[src] потрескивает от статического электричества!"))
 	for(var/atom/affected in range(2, get_turf(src)))
 		if(istype(affected, /obj/item/stock_parts/cell))
 			var/obj/item/stock_parts/cell/cell = affected

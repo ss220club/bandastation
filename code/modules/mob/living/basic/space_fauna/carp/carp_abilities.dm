@@ -83,7 +83,7 @@
 
 /// If you touch the entrance you are teleported to the exit, exit doesn't do anything
 /obj/effect/temp_visual/lesser_carp_rift
-	name = "lesser carp rift"
+	name = "\proper малый разлом карпов"
 	icon_state = "rift"
 	duration = 5 SECONDS
 	/// Holds a reference to a timer until this gets deleted
@@ -144,7 +144,7 @@
 
 /// Just an animation
 /obj/effect/temp_visual/lesser_carp_rift_dissipating
-	name = "lesser carp rift"
+	name = "\proper малый разлом карпов"
 	icon_state = "rift"
 	duration = 1 SECONDS
 
