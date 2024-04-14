@@ -1,5 +1,5 @@
 /datum/antagonist/space_dragon
-	name = "Космический дракон"
+	name = "\improper Space Dragon"
 	roundend_category = "space dragons"
 	antagpanel_category = ANTAG_GROUP_LEVIATHANS
 	job_rank = ROLE_SPACE_DRAGON
