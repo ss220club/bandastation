@@ -9,7 +9,7 @@
  * The midround even version also creates rifts which summon carp, and heals when near them.
  */
 /mob/living/basic/space_dragon
-	name = "\proper космический дракон"
+	name = "Космический дракон"
 	desc = "Змеевидный левиафан, возможность полета которого противоречит всему, что мы знаем о физике. Говорят, что это высшая форма в цикле жизни космического карпа."
 	icon = 'icons/mob/nonhuman-player/spacedragon.dmi'
 	icon_state = "spacedragon"
