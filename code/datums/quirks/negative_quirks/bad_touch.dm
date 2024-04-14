@@ -6,7 +6,7 @@
 	value = -1
 	gain_text = span_danger("Вы просто хотите, чтобы люди оставили вас в покое.")
 	lose_text = span_notice("Вам бы не помешало немного объятий.")
-	medical_record_text = "Пациент с презрением относится к прикосновениям. Потенциально имеет недиагностированную гафефобию."
+	medical_record_text = "Пациент с отвращением относится к прикосновениям. Потенциально имеет недиагностированную гафефобию."
 	quirk_flags = QUIRK_HUMAN_ONLY|QUIRK_MOODLET_BASED
 	hardcore_value = 1
 	mail_goodies = list(/obj/item/reagent_containers/spray/pepper) // show me on the doll where the bad man touched you
