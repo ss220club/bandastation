@@ -33,7 +33,7 @@
 	quirk_holder.losebreath += 0.25 // miss a breath one in four times
 	if(SPT_PROB(25, seconds_per_tick))
 		if(nick_spotted)
-			to_chat(quirk_holder, span_warning("Санта Клаус здесь! Я должен выбираться отсюда!"))
+			to_chat(quirk_holder, span_warning("Дед Мороз пришел за мной! Надо сваливать!"))
 		else
 			to_chat(quirk_holder, span_warning("Вы оказались в ловушке! Нужно выбираться... не могу дышать..."))
 
