@@ -32,7 +32,7 @@
 		allergy_chem_names += initial(chem_type.name)
 
 	allergy_string = allergy_chem_names.Join(", ")
-	name = "Экстремальная аллергия на - [allergy_string]"
+	name = "Экстремальная аллергия на: [allergy_string]"
 	medical_record_text = "Иммунная система пациента бурно реагирует на [allergy_string]"
 
 	var/mob/living/carbon/human/human_holder = quirk_holder
