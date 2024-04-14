@@ -1,2 +1,2 @@
 /obj/structure/extinguisher_cabinet
-	icon = 'icons/obj/wallmounts.dmi'
+	icon = 'modular_bandastation/aesthetics/extinguisher/icons/extinguisher.dmi'
