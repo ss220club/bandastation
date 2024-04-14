@@ -5,7 +5,7 @@
 	mob_trait = TRAIT_BADTOUCH
 	value = -1
 	gain_text = span_danger("Вы просто хотите, чтобы люди оставили вас в покое.")
-	lose_text = span_notice("Тебе бы не помешало немного объятий.")
+	lose_text = span_notice("Вам бы не помешало немного объятий.")
 	medical_record_text = "Пациент с презрением относится к прикосновениям. Потенциально имеет недиагностированную гафефобию."
 	quirk_flags = QUIRK_HUMAN_ONLY|QUIRK_MOODLET_BASED
 	hardcore_value = 1
