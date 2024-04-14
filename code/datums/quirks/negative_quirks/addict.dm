@@ -111,7 +111,7 @@
 	desc = "Иногда вам очень хочется закурить. Возможно, это не очень полезно для ваших легких."
 	icon = FA_ICON_SMOKING
 	value = -4
-	gain_text = span_danger("Вам бы сейчас не помешало покурить.")
+	gain_text = span_danger("Эх, вот бы сейчас закурить.")
 	lose_text = span_notice("Вы больше не чувствуете такой сильной зависимости от никотина.")
 	medical_record_text = "Пациент - курильщик."
 	reagent_type = /datum/reagent/drug/nicotine
