@@ -5,7 +5,7 @@
 	value = -12
 	gain_text = span_danger("Сегодня вы чувствуете себя немного не в своей тарелке.")
 	lose_text = span_notice("Сегодня вы чувствуете себя немного лучше.")
-	medical_record_text = "Пациент страдает хроническим заболеванием, которое требует постоянный медицинский контроль."
+	medical_record_text = "Пациент страдает хроническим заболеванием, которое требует постоянное медикаментозное лечение."
 	hardcore_value = 12
 	mail_goodies = list(/obj/item/storage/pill_bottle/sansufentanyl)
 
