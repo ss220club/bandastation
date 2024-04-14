@@ -14,6 +14,12 @@
 // Blastdoor
 #include "blastdoor/code/blastdoor.dm"
 
+// Light Switch
+#include "lightswitch/code/lightswitch.dm"
+
+// Floors
+#include "floors/code/floors.dm"
+
 // Walls
 #include "walls/code/walls.dm"
 
@@ -23,6 +29,3 @@
 
 // WinDoors
 #include "windoors/code/windoors.dm"
-
-// Floors
-#include "floors/code/floors.dm"
