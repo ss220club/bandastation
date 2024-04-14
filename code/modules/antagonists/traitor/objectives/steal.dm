@@ -174,7 +174,7 @@ GLOBAL_DATUM_INIT(steal_item_handler, /datum/objective_item_handler, new())
 		buttons += add_ui_button("", "При нажатии на эту кнопку в вашей руке появится сканер, который вы сможете поместить на цель.", "wifi", "summon_bug")
 	else if(bug.planted_on)
 		buttons += add_ui_button("[DisplayTimeText(time_fulfilled)]", "Это показывает, сколько времени вы провели возле целевого предмета после установки сканера.", "clock", "none")
-		buttons += add_ui_button("Пропустить время", "Нажатие этой кнопки приведет к успеху миссии. Вы не получите дополнительных TC и прогресса.", "forward", "cash_out")
+		buttons += add_ui_button("Пропустить время", "Нажатие этой кнопки приведет к успеху миссии. Вы не получите дополнительных TК и прогресса.", "forward", "cash_out")
 	return buttons
 
 /datum/traitor_objective/steal_item/ui_perform_action(mob/living/user, action)

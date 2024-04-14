@@ -175,7 +175,7 @@
 			to_chat(victim, span_warning("Вы чувствуете себя странно..."))
 			time_until_next = 6 SECONDS
 		if(VICTIM_EXPERIENCE_FIRST_HIT)
-			to_chat(victim, span_warning("это капсула, что-то сделала с вами..."))
+			to_chat(victim, span_warning("Эта капсула что-то сделала с вами..."))
 			victim.adjust_dizzy(3.5 SECONDS)
 			time_until_next = 6.5 SECONDS
 		if(VICTIM_EXPERIENCE_SECOND_HIT)
