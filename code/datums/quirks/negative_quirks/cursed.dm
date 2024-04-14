@@ -1,6 +1,6 @@
 /datum/quirk/cursed
 	name = "Cursed"
-	desc = "Вы прокляты невезением. Вы гораздо чаще попадаете в аварии и казусы."
+	desc = "Вы прокляты невезением. Вы гораздо чаще попадаете в аварии и казусы. Беда не приходит одна."
 	icon = FA_ICON_CLOUD_SHOWERS_HEAVY
 	value = -8
 	mob_trait = TRAIT_CURSED

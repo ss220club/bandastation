@@ -8,8 +8,8 @@
 	desc = "У вас в мозгу есть маленький друг, который медленно разрушает его. Лучше взять с собой немного маннитола!"
 	icon = FA_ICON_BRAIN
 	value = -12
-	gain_text = span_danger("Вы ощущаете спокойствие.")
-	lose_text = span_notice("Вы снова чувствуете себя изнеможденно.")
+	gain_text = span_danger("Вы ощущаете тяжесть мышления.")
+	lose_text = span_notice("Вы снова здраво мыслите.")
 	medical_record_text = "У пациента опухоль в мозгу, которая медленно ведет его к смерти."
 	hardcore_value = 12
 	quirk_flags = QUIRK_HUMAN_ONLY|QUIRK_PROCESSES
