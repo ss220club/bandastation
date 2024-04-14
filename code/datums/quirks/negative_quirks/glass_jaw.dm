@@ -5,7 +5,7 @@
 	value = -4
 	gain_text = span_danger("Ваша челюсть кажется расшатанной.")
 	lose_text = span_notice("Ваша челюсть, кажется, вновь встала на место.")
-	medical_record_text = "Пациента абсурдно легко вырубить. Не подпускайте их к боксерскому рингу."
+	medical_record_text = "Пациента абсурдно легко вырубить. Не подпускайте его к боксерскому рингу."
 	hardcore_value = 4
 	mail_goodies = list(
 		/obj/item/clothing/gloves/boxing,
