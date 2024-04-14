@@ -6,7 +6,7 @@
 	quirk_flags = QUIRK_HUMAN_ONLY|QUIRK_MOODLET_BASED
 	gain_text = span_danger("Теперь вам начинает не нравиться идея установки каких-либо имплантатов.")
 	lose_text = span_notice("Может быть, импланты - это не так уж и плохо. Теперь вы нормально относитесь ко всем видам изменения тела.")
-	medical_record_text = "Пациент проявляет негативную реакцию к неестественным частям тела и аугментациям."
+	medical_record_text = "Пациент проявляет негативную реакцию на неестественные части тела и аугментации."
 	hardcore_value = 3
 	mail_goodies = list(/obj/item/paper/pamphlet/cybernetics)
 	var/cybernetics_level = 0
