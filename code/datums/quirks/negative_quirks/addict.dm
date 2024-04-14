@@ -74,7 +74,7 @@
 		if(deleted || missing_addiction)
 			if(deleted)
 				reagent_instance = new reagent_type()
-			to_chat(quirk_holder, span_danger("Вы думали, что покончили с этим, но чувствуете, что возвращаетесь к вредным привычкам..."))
+			to_chat(quirk_holder, span_danger("Вы думали, что завязали, но чувствуете, что возвращаетесь к вредным привычкам..."))
 			for(var/addiction in reagent_instance.addiction_types)
 				human_holder.last_mind?.add_addiction_points(addiction, 1000) ///Max that shit out
 
