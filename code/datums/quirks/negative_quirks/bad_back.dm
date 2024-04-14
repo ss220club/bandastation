@@ -6,7 +6,7 @@
 	quirk_flags = QUIRK_HUMAN_ONLY|QUIRK_MOODLET_BASED
 	gain_text = span_danger("Ваша спина действительно болит!")
 	lose_text = span_notice("Ваша спина чувствует себя лучше.")
-	medical_record_text = "Сканирование пациента показывает сильную и хроническую боль в спине."
+	medical_record_text = "Сканирование пациента показывает сильную хроническую боль в спине."
 	hardcore_value = 4
 	mail_goodies = list(/obj/item/cane)
 	var/datum/weakref/backpack
