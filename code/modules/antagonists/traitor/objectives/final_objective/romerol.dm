@@ -36,7 +36,7 @@
 				return
 			var/area/delivery_area = get_area(user)
 			if(delivery_area.type != romerol_spawnarea_type)
-				to_chat(user, span_warning("You must be in [initial(romerol_spawnarea_type.name)] to receive the bioterror agent."))
+				to_chat(user, span_warning("Вы должны быть в [initial(romerol_spawnarea_type.name)] чтобы получить набор с вирусом биотеррора."))
 				return
 			sent_romerol = TRUE
 			podspawn(list(
