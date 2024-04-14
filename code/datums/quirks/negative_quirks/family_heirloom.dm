@@ -48,7 +48,7 @@
 
 	var/obj/family_heirloom = heirloom?.resolve()
 	if(!family_heirloom)
-		to_chat(quirk_holder, span_boldnotice("Волна экзистенциального ужаса накатывает на вас, когда вы осознаете, что пропала ваша драгоценная семейная реликвия. Может быть, боги смилостивятся над вашей проклятой душой?"))
+		to_chat(quirk_holder, span_boldnotice("Волна экзистенциального ужаса окатывает вас, когда вы осознаете, что пропала ваша драгоценная семейная реликвия. Может быть, боги смилостивятся над вашей проклятой душой?"))
 		return
 	family_heirloom.AddComponent(/datum/component/heirloom, quirk_holder.mind, family_name)
 
