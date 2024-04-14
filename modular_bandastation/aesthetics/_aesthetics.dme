@@ -8,6 +8,9 @@
 #include "airlocks/code/airlock_types.dm"
 #include "airlocks/code/airlock_assembly_types.dm"
 
+// APC
+#include "apc/code/apc.dm"
+
 // Blastdoor
 #include "blastdoor/code/blastdoor.dm"
 
