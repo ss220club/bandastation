@@ -43,7 +43,7 @@
 				return
 			var/area/delivery_area = get_area(user)
 			if(delivery_area.type != satellites_spawnarea_type)
-				to_chat(user, span_warning("You must be in [initial(satellites_spawnarea_type.name)] to receive the smuggled satellites."))
+				to_chat(user, span_warning("Вы должны быть в [initial(satellites_spawnarea_type.name)] чтобы получить контрабандные спутники."))
 				return
 			sent_satellites = TRUE
 			podspawn(list(
@@ -64,20 +64,20 @@
 /obj/item/paper/dark_matteor_summoning
 	name = "notes - dark matter meteor summoning"
 	default_raw_text = {"
-		Summoning a dark matter meteor.<br>
+		Призыв метеорита тёмной материи<br>
 		<br>
 		<br>
-		Operative, this crate contains 10+1 spare meteor shield satellites stolen from NT’s supply lines. Your mission is to
-		deploy them in space near the station and recalibrate them with the provided emag. Be careful: you need a 30 second
-		cooldown between each hack, and NT will detect your interference after seven recalibrations. That means you
-		have at least 5 minutes of work and 1 minute of resistance.<br>
+		Оперативник, в этом ящике находятся 10 и плюс один дополнительный метеорный щит украденный с линий снабжения НТ. Ваша миссия состоит
+		в установке их в космосе рядом со станцией и перекалибровка их с помощью предоставленного Емага.  Будьте осторожны: вам нужно 30 секунд
+		для восстановления между каждым взломом, и NT обнаружит ваше вмешательство после семи повторных калибровок. Это значит что вы
+		будете иметь не менее 5 минут для работы и 1 минуту для защиты.<br>
 		<br>
-		This is a high-risk operation. You’ll need backup, fortification, and determination. The reward?
-		A spectacular dark matter singularity that will wipe out the station.<br>
+		Это очень рискованная операция. Вам потребуется поддержка, укрепление и решимость. Награда?
+		Впечатляющая сингулярность темной материи, которая уничтожит станцию!<br>
 		<br>
-		<b>**Death to Nanotrasen.**</b>
+		<b>**Смерть Nanotrasen**</b>
 "}
 
 /obj/item/card/emag/meteor_shield_recalibrator
 	name = "cryptographic satellite recalibrator"
-	desc = "It's a cryptographic sequencer that has been tuned to recalibrate meteor shields quicker and with less risk of frying them."
+	desc = "Этот криптографический сиквенсор был настроен чтобы рекалибровать метеорные щиты быстрее и с меньшим риском их поломки."
