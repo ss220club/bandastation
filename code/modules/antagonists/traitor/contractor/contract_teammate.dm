@@ -9,7 +9,7 @@
 
 /datum/antagonist/traitor/contractor_support/forge_traitor_objectives()
 	var/datum/objective/generic_objective = new
-	generic_objective.name = "Следуйте приказам контрактора"
+	generic_objective.name = "Следуйте приказам Контрактника"
 	generic_objective.explanation_text = "Следуйте вашим приказам. Помогайте агентам в зоне вашей миссии."
 	generic_objective.completed = TRUE
 	objectives += generic_objective
