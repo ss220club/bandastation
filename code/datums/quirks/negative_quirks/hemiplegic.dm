@@ -5,7 +5,7 @@
 	value = -10 // slightly more bearable than paraplegic but not by much
 	gain_text = null // Handled by trauma.
 	lose_text = null
-	medical_record_text = "Пациент имеет не поддающееся лечению нарушение двигательной функции на половине своего тела."
+	medical_record_text = "Пациент имеет не поддающееся лечению нарушение двигательной функции половины своего тела."
 	hardcore_value = 10
 	mail_goodies = list(
 		/obj/item/stack/sheet/mineral/uranium/half, //half a stack of a material that has a half life
