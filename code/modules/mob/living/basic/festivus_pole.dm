@@ -1,13 +1,13 @@
 /mob/living/basic/festivus
 	name = "festivus pole"
-	desc = "Serenity now... SERENITY NOW!"
+	desc = "Спокойствие... ТОЛЬКО СПОКОЙСТВИЕ!"
 	icon = 'icons/obj/fluff/flora/pinetrees.dmi'
 	icon_state = "festivus_pole"
 	icon_living = "festivus_pole"
 	icon_dead = "festivus_pole"
 	icon_gib = "festivus_pole"
 	health_doll_icon = "festivus_pole"
-	gender = NEUTER
+	gender = MALE
 	gold_core_spawnable = HOSTILE_SPAWN
 	basic_mob_flags = DEL_ON_DEATH
 
@@ -46,7 +46,7 @@
 	AddComponent(/datum/component/seethrough_mob)
 	var/static/list/death_loot = list(/obj/item/stack/rods)
 	AddElement(/datum/element/death_drops, death_loot)
-	AddComponent(/datum/component/aggro_emote, emote_list = string_list(list("growls")), emote_chance = 20)
+	AddComponent(/datum/component/aggro_emote, emote_list = string_list(list("рычит")), emote_chance = 20)
 	grant_actions_by_list(list(/datum/action/cooldown/mob_cooldown/charge_apc = BB_FESTIVE_APC))
 
 /datum/ai_controller/basic_controller/festivus_pole
@@ -67,7 +67,7 @@
 	. = ..()
 	if(user.combat_mode)
 		return
-	visible_message(span_warning("[src] crackles with static electricity!"))
+	visible_message(span_warning("[src] потрескивает от статического электричества!"))
 	for(var/atom/affected in range(2, get_turf(src)))
 		if(istype(affected, /obj/item/stock_parts/cell))
 			var/obj/item/stock_parts/cell/cell = affected

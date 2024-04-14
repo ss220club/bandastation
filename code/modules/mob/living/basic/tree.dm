@@ -1,6 +1,6 @@
 /mob/living/basic/tree
 	name = "pine tree"
-	desc = "A pissed off tree-like alien. It seems annoyed with the festivities..."
+	desc = "Разозленное древоподобное существо. Кажется, оно не любит праздники..."
 	icon = 'icons/obj/fluff/flora/pinetrees.dmi'
 	icon_state = "pine_1"
 	icon_living = "pine_1"
@@ -8,7 +8,7 @@
 	icon_gib = "pine_1"
 	health_doll_icon = "pine_1"
 	mob_biotypes = MOB_ORGANIC | MOB_PLANT
-	gender = NEUTER
+	gender = FEMALE
 	gold_core_spawnable = HOSTILE_SPAWN
 	basic_mob_flags = DEL_ON_DEATH
 
@@ -58,7 +58,7 @@
 	AddElement(/datum/element/swabable, CELL_LINE_TABLE_PINE, CELL_VIRUS_TABLE_GENERIC_MOB, 1, 5)
 	var/list/death_loot = string_list(list(/obj/item/stack/sheet/mineral/wood))
 	AddElement(/datum/element/death_drops, death_loot)
-	AddComponent(/datum/component/aggro_emote, emote_list = string_list(list("growls")), emote_chance = 20)
+	AddComponent(/datum/component/aggro_emote, emote_list = string_list(list("рычит")), emote_chance = 20)
 
 /mob/living/basic/tree/Life(seconds_per_tick = SSMOBS_DT, times_fired)
 	..()
@@ -94,8 +94,8 @@
 	if(prob(paralyze_prob + boost))
 		victim.Paralyze(paralyze_value + boost)
 		victim.visible_message(
-			span_danger("[src] knocks down [victim]!"),
-			span_userdanger("[src] knocks you down!"),
+			span_danger("[src] сбивает с ног [victim]!"),
+			span_userdanger("[src] сбивает вас с ног!"),
 		)
 
 /datum/ai_controller/basic_controller/tree
