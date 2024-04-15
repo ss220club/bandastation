@@ -12,7 +12,7 @@
 
 //Ghost showing preferences:
 /// The main player's ghost will display as a simple white ghost
-#define GHOST_ACCS_NONE "Стандарнтые спрайты"
+#define GHOST_ACCS_NONE "Стандартные спрайты"
 /// The main player's ghost will display as a transparent mob
 #define GHOST_ACCS_DIR "Только направленные спрайты"
 /// The main player's ghost will display as a transparent mob with clothing
