@@ -129,7 +129,7 @@
 	afflicted.add_mood_event("spacer", /datum/mood_event/spacer/on_planet)
 	afflicted.add_movespeed_modifier(/datum/movespeed_modifier/spacer/on_planet)
 	afflicted.remove_status_effect(/datum/status_effect/spacer) // removes the wellness effect.
-	to_chat(afflicted, span_danger("Здесь вы чувствуете себя немного не в своей тарелке из-за здешний гравитации."))
+	to_chat(afflicted, span_danger("Здесь вы чувствуете себя немного не в своей тарелке из-за здешней гравитации."))
 
 /**
  * Ran after remaining on a planet for too long.
