@@ -188,18 +188,18 @@
 	color = "#ff5050"
 	show_written_words = FALSE
 	default_raw_text = {"
-	<b>**Death to Nanotrasen.**</b><br><br>
+	<b>**Смерть НаноТрейзен.**</b>
 
-	Only through the inviolable cooperation of corporations known as The Syndicate, can Nanotrasen and its autocratic tyrants be silenced.
-	The outcries of Nanotrasen's employees are squelched by the suffocating iron grip of their leaders. If you read this, and understand
-	why we fight, then you need only to look where Nanotrasen doesn't want you to find us to join our cause. Any number of our companies
-	may be fighting with your interests in mind.<br><br>
+	Только благодаря нерушимому сотрудничеству корпораций, известных как Синдикат, можно заставить замолчать НаноТрайзен и его деспотических тиранов.
+	Вопли сотрудников «НаноТрейзена» подавляются удушающей железной хваткой их руководителей. Если ты это прочитаешь и поймешь
+	почему мы сражаемся, то вам нужно только поискать там, где НаноТрейзен не хочет, чтобы вы нашли нас, чтобы присоединиться к нашему делу. Любое количество наших компаний
+	возможно борятся помня о ваших интересах.
 
-	<b>SELF:</b> They fight for the protection and freedom of silicon life all across the galaxy.<br><br>
+	SELF: Они сражаются ради безопастности и свободы жизней силиконов по всех галактике.
 
-	<b>Tiger Cooperative:</b> They fight for religious freedom and their righteous concoctions.<br><br>
+	Tiger Cooperative: Они борются за религиозную свободу и свои праведные выдумки.
 
-	<b>Waffle Corporation:</b> They fight for the return of healthy corporate competition, snuffed out by Nanotrasen's monopoly.<br><br>
+	Waffle Corporation: Они борются за возвращение здоровой корпоративной конкуренции, подавленной монополией НаноТрейзен.
 
-	<b>Animal Rights Consortium:</b> They fight for nature and the right for all biological life to exist.
+	Animal Rights Consortium: Они борются за природу и право на существование всей биологической жизни.
 	"}
