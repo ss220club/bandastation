@@ -131,7 +131,7 @@
 
 	if(isliving(source))
 		var/mob/living/owner = source
-		to_chat(owner, span_boldwarning("Ваша связь, [network_name], сломалась!"))
+		to_chat(owner, span_boldwarning("Ваша [network_name] сломалась!"))
 
 	qdel(src)
 
