@@ -126,7 +126,7 @@
 
 /datum/demoralise_moods/graffiti
 	mood_category = "evil graffiti"
-	antag_notification = "Трехглавая змея. Круто."
+	antag_notification = "Трехглавая змея. Заебись."
 	antag_mood = /datum/mood_event/traitor_graffiti_antag
 	crew_notification = "Это... трёхголовая змея?"
 	crew_mood = /datum/mood_event/traitor_graffiti_crew
