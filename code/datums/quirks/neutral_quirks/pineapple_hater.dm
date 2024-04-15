@@ -5,7 +5,7 @@
 	value = 0
 	gain_text = span_notice("Вы размышляете о том, каким извращенцам нравятся ананасы...")
 	lose_text = span_notice("Ваше отношение к ананасам, похоже, вернулось к нейтральному состоянию.")
-	medical_record_text = "Пациент считает, что ананасы отвратителены."
+	medical_record_text = "Пациент считает, что ананасы отвратительны."
 	mail_goodies = list( // basic pizza slices
 		/obj/item/food/pizzaslice/margherita,
 		/obj/item/food/pizzaslice/meat,

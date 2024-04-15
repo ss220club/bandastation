@@ -4,7 +4,7 @@
 	icon = FA_ICON_EGG
 	value = 0
 	mob_trait = TRAIT_BALD
-	gain_text = span_notice("Ваша голова настолько гладкая, насколько это возможно, что это ужасно.")
+	gain_text = span_notice("Ваша голова настолько гладкая, насколько это возможно, это ужасно.")
 	lose_text = span_notice("У вас чешется голова, может, это... растут волосы?!")
 	medical_record_text = "Пациент категорически отказался снять головной убор во время осмотра."
 	mail_goodies = list(/obj/item/clothing/head/wig/random)

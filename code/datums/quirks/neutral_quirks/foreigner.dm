@@ -1,11 +1,11 @@
 /datum/quirk/foreigner
 	name = "Foreigner"
-	desc = "Вы не местный. Вы не знаете Галактического Общего!"
+	desc = "Вы не местный. Вы не знаете общегалактический!"
 	icon = FA_ICON_LANGUAGE
 	value = 0
 	gain_text = span_notice("Слова, которые произносятся вокруг вас, не имеют никакого смысла.")
-	lose_text = span_notice("Вы свободно владеете Галактическим Общим.")
-	medical_record_text = "Пациент не владеет Галактическим Общим, и ему требуется переводчик."
+	lose_text = span_notice("Вы свободно владеете общегалактическим.")
+	medical_record_text = "Пациент не владеет общегалактическим, и ему требуется переводчик."
 	mail_goodies = list(/obj/item/taperecorder) // for translation
 
 /datum/quirk/foreigner/add(client/client_source)

@@ -54,7 +54,7 @@
 				new_message += pick("ээ,","эмм,","ам,")
 				if(prob(min(5, moodmod))) //Max 1 in 20 chance of cutoff after a successful filler roll, for 50% odds in a 15 word sentence
 					quirk_holder.set_silence_if_lower(6 SECONDS)
-					to_chat(quirk_holder, span_danger("Вы чувствуете себя неловко и перестаете говорить. Вам нужно время, чтобы прийти в себя.!"))
+					to_chat(quirk_holder, span_danger("Вы чувствуете себя неловко и перестаете говорить. Вам нужно время, чтобы прийти в себя!"))
 					break
 			new_message += word
 
@@ -100,13 +100,13 @@
 	switch(rand(1,3))
 		if(1)
 			quirk_holder.set_jitter_if_lower(20 SECONDS)
-			msg += "заставляя вас нервничать!"
+			msg += "что заставляет вас нервничать!"
 		if(2)
 			quirk_holder.set_stutter_if_lower(6 SECONDS)
-			msg += "заставляя вас заикаться!"
+			msg += "что заставляет вас заикаться!"
 		if(3)
 			quirk_holder.Stun(2 SECONDS)
-			msg += "заставляя вас застыть на месте!"
+			msg += "что заставляет вас застыть на месте!"
 
 	quirk_holder.add_mood_event("anxiety_eyecontact", /datum/mood_event/anxiety_eyecontact)
 	addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(to_chat), quirk_holder, span_userdanger("[msg]")), 3) // so the examine signal has time to fire and this will print after

@@ -4,8 +4,8 @@
 	icon = FA_ICON_THUMBTACK
 	value = 2
 	mob_trait = TRAIT_MIME_FAN
-	gain_text = span_notice("Вы большой поклонник мимов.")
-	lose_text = span_danger("Похоже мимы не такие и крутые, как казалось раньше.")
+	gain_text = span_notice("Вы большой поклонник пантомимы.")
+	lose_text = span_danger("Похоже, мимы не такие и крутые, как казалось раньше.")
 	medical_record_text = "Пациент сообщает, что очень любит мимов."
 	mail_goodies = list(
 		/obj/item/toy/crayon/mime,
