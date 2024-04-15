@@ -12,7 +12,7 @@
  */
 /mob/living/basic/carp
 	name = "space carp"
-	desc = "Свирепое, клыкастое существо, внешне схожее на рыбу."
+	desc = "Свирепое, клыкастое существо, внешне схожее с рыбой."
 	icon = 'icons/mob/simple/carp.dmi'
 	icon_state = "base"
 	icon_living = "base"
