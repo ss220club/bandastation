@@ -72,7 +72,8 @@ export const disable_arrivalrattle: FeatureToggle = {
 export const disable_deathrattle: FeatureToggle = {
   name: 'Оповещать о смертях',
   category: 'ПРИЗРАК',
-  description: 'Оповещать, когда вы призрак, о прибытии.',
+  description:
+    'Оповещать, когда вы призрак, когда умирают другие игроки от чего-либо.',
   component: CheckboxInputInverse,
 };
 
