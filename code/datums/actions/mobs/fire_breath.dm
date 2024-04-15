@@ -72,7 +72,7 @@
 
 /// Do something unpleasant to someone we set on fire
 /datum/action/cooldown/mob_cooldown/fire_breath/proc/on_burn_mob(mob/living/barbecued, mob/living/source)
-	to_chat(barbecued, span_userdanger("Вас подожгло огненное дыхание от - [source]!"))
+	to_chat(barbecued, span_userdanger("Вас подожгло огненное дыхание [source]!"))
 	barbecued.adjustFireLoss(fire_damage)
 
 /// Shoot three lines of fire in a sort of fork pattern approximating a cone
