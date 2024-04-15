@@ -6,5 +6,5 @@
 	mob_trait = TRAIT_THROWINGARM
 	gain_text = span_notice("Ваши руки полны энергии!")
 	lose_text = span_danger("У вас немного устали руки.")
-	medical_record_text = "Пациент демонстрирует мастерство по бросанию мячиков."
+	medical_record_text = "Пациент демонстрирует мастерство в бросании мячиков."
 	mail_goodies = list(/obj/item/toy/beach_ball/baseball, /obj/item/toy/basketball, /obj/item/toy/dodgeball)
