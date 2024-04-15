@@ -1,6 +1,6 @@
 /datum/quirk/item_quirk/poster_boy
 	name = "Poster Boy"
-	desc = "У вас есть замечательные плакаты! Повесьте их и пусть все отлично проводят время."
+	desc = "У вас есть замечательные плакаты! Повесьте их, и пусть все отлично проводят время."
 	icon = FA_ICON_TAPE
 	value = 4
 	mob_trait = TRAIT_POSTERBOY
