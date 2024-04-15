@@ -230,7 +230,7 @@
 
 	var/datum/component/mind_linker/linker = Target
 	name = "[linker.network_name] Speech"
-	desc = "Отправьте мысленное сообщение всем, кто соединен с помощью [linker.network_name]."
+	desc = "Отправьте мысленное сообщение всем, кто соединен с вашей [linker.network_name]."
 	button_icon = linker.speech_action_icon
 	button_icon_state = linker.speech_action_icon_state
 	background_icon_state = linker.speech_action_background_icon_state
