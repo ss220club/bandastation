@@ -64,56 +64,56 @@ export const SyndicateContractorContent = (props) => {
   const { error, logged_in, first_load, info_screen } = data;
 
   const terminalMessages = [
-    'Recording biometric data...',
-    'Analyzing embedded syndicate info...',
-    'STATUS CONFIRMED',
-    'Contacting syndicate database...',
-    'Awaiting response...',
-    'Awaiting response...',
-    'Awaiting response...',
-    'Awaiting response...',
-    'Awaiting response...',
-    'Awaiting response...',
-    'Response received, ack 4851234...',
-    'CONFIRM ACC ' + Math.round(Math.random() * 20000),
-    'Setting up private accounts...',
-    'CONTRACTOR ACCOUNT CREATED',
-    'Searching for available contracts...',
-    'Searching for available contracts...',
-    'Searching for available contracts...',
-    'Searching for available contracts...',
-    'CONTRACTS FOUND',
-    'WELCOME, AGENT',
+    'Запись биометрических данных...',
+    'Анализ встроенной информации о синдикате...',
+    'СТАТУС ПОДТВЕРЖДЕН',
+    'Обращение к базе данных синдиката...',
+    'Ожидание ответа...',
+    'Ожидание ответа...',
+    'Ожидание ответа...',
+    'Ожидание ответа...',
+    'Ожидание ответа...',
+    'Ожидание ответа...',
+    'Ответ получен, аккаунт 4851234...',
+    'ПОДТВЕРДИТЬ АККАУНТ ' + Math.round(Math.random() * 20000),
+    'Настройка личных аккаунтов...',
+    'АККАУНТ КОНТРАТНИКА СОЗДАН',
+    'Поиск доступных контрактов...',
+    'Поиск доступных контрактов...',
+    'Поиск доступных контрактов...',
+    'Поиск доступных контрактов...',
+    'КОНТРАКТЫ НАЙДЕНЫ',
+    'ДОБРО ПОЖАЛОВАТЬ, АГЕНТ',
   ];
 
   const infoEntries = [
     'SyndTract v2.0',
     '',
-    "We've identified potentional high-value targets that are",
-    'currently assigned to your mission area. They are believed',
-    'to hold valuable information which could be of immediate',
-    'importance to our organisation.',
+    "Мы определили потенциально ценные цели, которые",
+    'в настоящее время находятся в районе вашей миссии. Они могут',
+    'хранить ценную информацию, которая может иметь важное',
+    'значение для нашей организации.',
     '',
-    'Listed below are all of the contracts available to you. You',
-    'are to bring the specified target to the designated',
-    'drop-off, and contact us via this uplink. We will send',
-    'a specialised extraction unit to put the body into.',
+    'Ниже перечислены все доступные вам контракты. Вы',
+    'должны довести заданную цель до назначенной',
+    'зоны отправки, и связаться с нами через аплинк. Мы отправим',
+    'специализированную капсулу для транспортировки, куда нужно поместить тело.',
     '',
-    'We want targets alive - but we will sometimes pay slight',
-    "amounts if they're not, you just won't receive the shown",
-    'bonus. You can redeem your payment through this uplink in',
-    'the form of raw telecrystals, which can be put into your',
-    'regular Syndicate uplink to purchase whatever you may need.',
-    'We provide you with these crystals the moment you send the',
-    'target up to us, which can be collected at anytime through',
-    'this system.',
+    'Мы хотим, чтобы цели были живыми, мы платим меньшие',
+    "суммы если цель будет мертва, вы просто не получите показанный",
+    'бонус. Вы можете получить свою оплату через этот аплинк в',
+    'форме телекристаллов, которые могут быть вложены в',
+    'обычный аплинк Синдиката чтобы приобрести необходимое вам снаряжение.',
+    'Мы предоставим вам эти кристаллы в тот момент, когда вы отправите',
+    'цель к нам, телекристаллы можно получить в любое время через',
+    'эту систему.',
     '',
-    'Targets extracted will be ransomed back to the station once',
-    'their use to us is fulfilled, with us providing you a small',
-    'percentage cut. You may want to be mindful of them',
-    'identifying you when they come back. We provide you with',
-    'a standard contractor loadout, which will help cover your',
-    'identity.',
+    'Похищенные цели будут выкуплены обратно на станцию после того',
+    'как их знания будут извлечены, мы предоставим вам',
+    'часть выкупа. Вам следует помнить что они могут',
+    'идентифицировать вас, когда они вернутся. Мы предоставляем вам',
+    'стандартное снаряжение контрактника, которое поможет скрыть вашу',
+    'личность.',
   ];
 
   const errorPane = !!error && (
@@ -137,7 +137,7 @@ export const SyndicateContractorContent = (props) => {
       <Section minHeight="525px">
         <Box width="100%" textAlign="center">
           <Button
-            content="REGISTER USER"
+            content="ЗАРЕГИСТРИРОВАННЫЙ ПОЛЬЗОВАТЕЛЬ"
             color="transparent"
             onClick={() => act('PRG_login')}
           />
@@ -167,7 +167,7 @@ export const SyndicateContractorContent = (props) => {
         </Box>
         <Button
           fluid
-          content="CONTINUE"
+          content="ПРОДОЛЖИТЬ"
           color="transparent"
           textAlign="center"
           onClick={() => act('PRG_toggle_info')}
@@ -195,7 +195,7 @@ export const StatusPane = (props) => {
         <>
           Contractor Status
           <Button
-            content="View Information Again"
+            content="Посмотреть информацию еще раз"
             color="transparent"
             mb={0}
             ml={1}
@@ -208,7 +208,7 @@ export const StatusPane = (props) => {
         <Grid.Column size={0.85}>
           <LabeledList>
             <LabeledList.Item
-              label="TC Available"
+              label="Доступные ТК"
               buttons={
                 <Button
                   content="Claim"
@@ -219,17 +219,17 @@ export const StatusPane = (props) => {
             >
               {String(redeemable_tc)}
             </LabeledList.Item>
-            <LabeledList.Item label="TC Earned">
+            <LabeledList.Item label="Заработанные ТК">
               {String(earned_tc)}
             </LabeledList.Item>
           </LabeledList>
         </Grid.Column>
         <Grid.Column>
           <LabeledList>
-            <LabeledList.Item label="Contracts Completed">
+            <LabeledList.Item label="Выполненные контракты">
               {String(contracts_completed)}
             </LabeledList.Item>
-            <LabeledList.Item label="Current Status">ACTIVE</LabeledList.Item>
+            <LabeledList.Item label="Текущий статус">ACTIVE</LabeledList.Item>
           </LabeledList>
         </Grid.Column>
       </Grid>
@@ -245,10 +245,10 @@ const ContractsTab = (props) => {
   return (
     <>
       <Section
-        title="Available Contracts"
+        title="Доступные контракты"
         buttons={
           <Button
-            content="Call Extraction"
+            content="Вызвать траспортировочный под"
             disabled={!ongoing_contract || extraction_enroute}
             onClick={() => act('PRG_call_extraction')}
           />
@@ -268,15 +268,15 @@ const ContractsTab = (props) => {
               title={
                 contract.target
                   ? `${contract.target} (${contract.target_rank})`
-                  : 'Invalid Target'
+                  : 'Неверная Цель'
               }
               buttons={
                 <>
                   <Box inline bold mr={1}>
-                    {`${contract.payout} (+${contract.payout_bonus}) TC`}
+                    {`${contract.payout} (+${contract.payout_bonus}) ТК`}
                   </Box>
                   <Button
-                    content={active ? 'Abort' : 'Accept'}
+                    content={active ? 'Отменить' : 'Принять'}
                     disabled={contract.extraction_enroute}
                     color={active && 'bad'}
                     onClick={() =>
@@ -302,7 +302,7 @@ const ContractsTab = (props) => {
         })}
       </Section>
       <Section
-        title="Dropoff Locator"
+        title="Локатор зоны отправки"
         textAlign="center"
         opacity={ongoing_contract ? 100 : 0}
       >
