@@ -4,7 +4,7 @@
 	icon = FA_ICON_PEACE
 	value = -8
 	mob_trait = TRAIT_PACIFISM
-	gain_text = span_danger("Вы чувствуте, как любая мысль о насилии отвращает вас!")
+	gain_text = span_danger("Вы чувствуете, как любая мысль о насилии отвращает вас!")
 	lose_text = span_notice("Кажется вы уже и не такой беззащитный и можете дать отпор, как раньше.")
 	medical_record_text = "Пациент необычайно пацифичен и не может заставить себя причинить физический вред кому-либо."
 	hardcore_value = 6
