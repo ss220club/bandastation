@@ -152,13 +152,13 @@
 	possible_material_types = list(/datum/material/silver, /datum/material/gold, /datum/material/plastic, /datum/material/titanium)
 
 /datum/experiment/scanning/random/material/medium/one
-	name = "Первый эксперимент по сканированию материалов среднего класса"
+	name = "Эксперимент по сканированию материалов среднего класса(1)"
 
 /datum/experiment/scanning/random/material/medium/two
-	name = "Второй эксперимент по сканированию материалов среднего класса"
+	name = "Эксперимент по сканированию материалов среднего класса(2)"
 
 /datum/experiment/scanning/random/material/medium/three
-	name = "Третий эксперимент по сканированию материалов среднего класса"
+	name = "Эксперимент по сканированию материалов среднего класса(3)"
 
 /datum/experiment/scanning/random/material/hard
 	name = "Эксперимент по сканированию материалов высокого класса"
@@ -166,13 +166,13 @@
 	possible_material_types = list(/datum/material/diamond, /datum/material/plasma, /datum/material/uranium)
 
 /datum/experiment/scanning/random/material/hard/one
-	name = "Первый эксперимент по сканированию высококлассных материалов"
+	name = "Эксперимент по сканированию высококлассных материалов(1)"
 
 /datum/experiment/scanning/random/material/hard/two
-	name = "Второй эксперимент по сканированию высококлассных материалов"
+	name = "Эксперимент по сканированию высококлассных материалов(2)"
 
 /datum/experiment/scanning/random/material/hard/three
-	name = "Третий эксперимент по сканированию высококлассных материалов"
+	name = "Эксперимент по сканированию высококлассных материалов(3)"
 
 /datum/experiment/scanning/random/plants/wild
 	name = "Образец мутации дикой биоматерии"
