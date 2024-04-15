@@ -22,7 +22,7 @@ export const tgui_input_large: FeatureToggle = {
 };
 
 export const tgui_input_swapped: FeatureToggle = {
-  name: 'Ввод - поменять местами подвердить/отменить',
+  name: 'Ввод - инвентировать ввод/отмена',
   category: 'ИНТЕРФЕЙС',
   description: 'Менее традиционные, но более функциональные кнопки TGUI.',
   component: CheckboxInput,
