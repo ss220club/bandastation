@@ -100,7 +100,7 @@ export const NtosNetDownloader = (props) => {
         <Section>
           <LabeledList>
             <LabeledList.Item
-              label="Hard drive"
+              label="Жесткий диск"
               buttons={
                 (!!downloading && (
                   <Button
@@ -118,7 +118,7 @@ export const NtosNetDownloader = (props) => {
                     color="good"
                     icon="download"
                     tooltipPosition="left"
-                    tooltip={`${downloadname}.prg downloaded`}
+                    tooltip={`${downloadname}.prg Загружен`}
                   />
                 ))
               }
@@ -140,7 +140,7 @@ export const NtosNetDownloader = (props) => {
             autoFocus
             height="23px"
             width="100%"
-            placeholder="Search program name..."
+            placeholder="Найти программу..."
             fluid
             value={searchItem}
             onInput={(e, value) => {
@@ -219,7 +219,7 @@ const Program = (props) => {
                 <Button
                   bold
                   icon="download"
-                  content="Download"
+                  content="Загрузить"
                   disabled={downloading}
                   tooltipPosition="left"
                   tooltip={!!downloading && 'Awaiting download completion...'}
@@ -242,12 +242,12 @@ const Program = (props) => {
                 }
                 content={
                   program.installed
-                    ? 'Installed'
+                    ? 'Установлено'
                     : !program.compatible
-                      ? 'Incompatible'
+                      ? 'Несовместимо'
                       : !program.access
-                        ? 'No Access'
-                        : 'No Space'
+                        ? 'Нет доступа'
+                        : 'Нет места'
                 }
               />
             )}
@@ -258,8 +258,9 @@ const Program = (props) => {
       </Box>
       {!program.verifiedsource && (
         <NoticeBox mt={1} mb={0} danger fontSize="12px">
-          Unverified source. Please note that Nanotrasen does not recommend
-          download and usage of software from non-official servers.
+          Непроверенный источник. Обратите внимание, что Nanotrasen не
+          рекомендует скачивать и использовать программное обеспечение с
+          неофициальных серверов.
         </NoticeBox>
       )}
     </Section>
