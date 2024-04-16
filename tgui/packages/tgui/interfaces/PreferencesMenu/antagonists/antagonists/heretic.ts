@@ -9,7 +9,7 @@ export const HERETIC_MECHANICAL_DESCRIPTION = multiline`
 
 const Heretic: Antagonist = {
   key: 'heretic',
-  name: 'Heretic',
+  name: 'Еретик',
   description: [
     multiline`
       Забытые, поглощенные, выпотрошенные. Человечество забыло о мистических силах
