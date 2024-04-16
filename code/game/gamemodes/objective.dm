@@ -378,7 +378,7 @@ GLOBAL_LIST(admin_objective_list) //Prefilled admin assignable objective list
 /datum/objective/jailbreak/update_explanation_text()
 	..()
 	if(target?.current)
-		explanation_text = "Удостоверьтесь, что [target.name], [!target_role_type ? target.assigned_role.title : target.special_role] сбежит живым и вне заключения."
+		explanation_text = "Удостоверьтесь, что [target.name], [!target_role_type ? target.assigned_role.title : target.special_role], сбежит живым и вне заключения."
 	else
 		explanation_text = "Свободная задача."
 
@@ -394,14 +394,14 @@ GLOBAL_LIST(admin_objective_list) //Prefilled admin assignable objective list
 /datum/objective/jailbreak/detain/update_explanation_text()
 	..()
 	if(target?.current)
-		explanation_text = "Удостоверьтесь, что [target.name], [!target_role_type ? target.assigned_role.title : target.special_role] доставлен на ЦК живым и в заключении."
+		explanation_text = "Удостоверьтесь, что [target.name], [!target_role_type ? target.assigned_role.title : target.special_role], доставлен на ЦК живым и в заключении."
 	else
 		explanation_text = "Свободная задача."
 
 /datum/objective/hijack
 	name = "hijack"
-	explanation_text = "Угоните эвакуационный шаттл, взломав его навигационные протоколы через консоль управления (Alt-Клик по консоли аварийного шаттла)."
-	team_explanation_text = "Угоните аварийный шаттл, взломав его навигационные протоколы через консоль управления (Alt-Клик по консоли аварийного шаттла). Все члены вашей команды должны выжить."
+	explanation_text = "Угоните эвакуационный шаттл, взломав его навигационные протоколы через консоль управления (Alt-Клик по консоли эвакуационного шаттла)."
+	team_explanation_text = "Угоните эвакуационный шаттл, взломав его навигационные протоколы через консоль управления (Alt-Клик по консоли эвакуационного шаттла). Все члены вашей команды должны выжить."
 	martyr_compatible = FALSE //Technically you won't get both anyway.
 	/// Overrides the hijack speed of any antagonist datum it is on ONLY, no other datums are impacted.
 	admin_grantable = TRUE
