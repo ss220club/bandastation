@@ -12,7 +12,7 @@
 	antag_hud_name = "traitor"
 	hijack_speed = 0.5 //10 seconds per hijack stage by default
 	ui_name = "AntagInfoTraitor"
-	suicide_cry = "ЗА СИНДИКАТ!!!!!"
+	suicide_cry = "ЗА СИНДИКАТ!!"
 	preview_outfit = /datum/outfit/traitor
 	can_assign_self_objectives = TRUE
 	default_custom_objective = "Perform an overcomplicated heist on valuable Nanotrasen assets."
@@ -341,7 +341,7 @@
 			objectives_text += "<br><B>Задача #[count]</B>: [objective.explanation_text] [objective.get_roundend_success_suffix()]"
 			count++
 		if(uplink_handler.final_objective)
-			objectives_text += "<br>[span_greentext("[traitor_won ? "Дополнительно" : "Однако"], финальная задача \"[uplink_handler.final_objective]\" была выполнена!")]"
+			objectives_text += "<br>[span_greentext("[traitor_won ? "К тому же" : "Однако"], финальная задача \"[uplink_handler.final_objective]\" была выполнена!")]"
 			traitor_won = TRUE
 
 	result += "<br>[owner.name] <B>[traitor_flavor["roundend_report"]]</B>"
@@ -391,7 +391,7 @@
 	var/phrases = jointext(GLOB.syndicate_code_phrase, ", ")
 	var/responses = jointext(GLOB.syndicate_code_response, ", ")
 
-	var/message = "<br><b>Кодовыми словами были:</b> <span class='bluetext'>[phrases]</span><br>\
+	var/message = "<br><b>Кодовыми фразами были:</b> <span class='bluetext'>[phrases]</span><br>\
 					<b>Кодовыми ответами были:</b> [span_redtext("[responses]")]<br>"
 
 	return message

@@ -283,7 +283,7 @@ GLOBAL_DATUM_INIT(steal_item_handler, /datum/objective_item_handler, new())
 	var/result = SEND_SIGNAL(src, COMSIG_TRAITOR_BUG_PRE_PLANTED_OBJECT, target)
 	if(!(result & COMPONENT_FORCE_PLACEMENT))
 		if(result & COMPONENT_FORCE_FAIL_PLACEMENT || !istype(target, target_object_type))
-			balloon_alert(user, "Вы не можете прикрепить это сюда!")
+			balloon_alert(user, "вы не можете прикрепить это сюда!")
 			return
 	if(!do_after(user, deploy_time, src, hidden = TRUE))
 		return

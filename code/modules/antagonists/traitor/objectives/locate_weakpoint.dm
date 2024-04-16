@@ -259,7 +259,7 @@
 
 	var/area/target_area = get_area(target)
 	if (target_area.type != objective.weakpoint_area)
-		to_chat(user, span_warning("[src] можно взорвать только [initial(objective.weakpoint_area.name)]."))
+		to_chat(user, span_warning("[src] можно взорвать только в [initial(objective.weakpoint_area.name)]."))
 		return
 
 	if(!isfloorturf(target) && !iswallturf(target))

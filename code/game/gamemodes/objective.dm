@@ -298,7 +298,7 @@ GLOBAL_LIST(admin_objective_list) //Prefilled admin assignable objective list
 
 /datum/objective/maroon/update_explanation_text()
 	if(target?.current)
-		explanation_text = "Не дайте [target.name], эвакуироватся живым со станции [!target_role_type ? target.assigned_role.title : target.special_role]."
+		explanation_text = "Не дайте [target.name], [!target_role_type ? target.assigned_role.title : target.special_role], эвакуироватся живым со станции."
 	else
 		explanation_text = "Свободная задача."
 
@@ -353,7 +353,7 @@ GLOBAL_LIST(admin_objective_list) //Prefilled admin assignable objective list
 /datum/objective/protect/update_explanation_text()
 	..()
 	if(target?.current)
-		explanation_text = "Защитить [target.name], [!target_role_type ? target.assigned_role.title : target.special_role]."
+		explanation_text = "Защитите [target.name], [!target_role_type ? target.assigned_role.title : target.special_role]."
 	else
 		explanation_text = "Свободная задача."
 
@@ -378,7 +378,7 @@ GLOBAL_LIST(admin_objective_list) //Prefilled admin assignable objective list
 /datum/objective/jailbreak/update_explanation_text()
 	..()
 	if(target?.current)
-		explanation_text = "Удостоверьтесь что [target.name], [!target_role_type ? target.assigned_role.title : target.special_role] сбежит живым и вне заключения."
+		explanation_text = "Удостоверьтесь, что [target.name], [!target_role_type ? target.assigned_role.title : target.special_role] сбежит живым и вне заключения."
 	else
 		explanation_text = "Свободная задача."
 
@@ -394,14 +394,14 @@ GLOBAL_LIST(admin_objective_list) //Prefilled admin assignable objective list
 /datum/objective/jailbreak/detain/update_explanation_text()
 	..()
 	if(target?.current)
-		explanation_text = "Удостоверьтесь что [target.name], [!target_role_type ? target.assigned_role.title : target.special_role] доставлен на ЦК живым и в заключении."
+		explanation_text = "Удостоверьтесь, что [target.name], [!target_role_type ? target.assigned_role.title : target.special_role] доставлен на ЦК живым и в заключении."
 	else
 		explanation_text = "Свободная задача."
 
 /datum/objective/hijack
 	name = "hijack"
-	explanation_text = "Угоните аварийный шаттл, взломав его навигационные протоколы через консоль управления (нажмите Alt на консоли аварийного шаттла)."
-	team_explanation_text = "Угоните аварийный шаттл, взломав его навигационные протоколы через консоль управления (нажмите Alt на консоли аварийного шаттла). Не оставляйте ни одного члена вашей команды позади."
+	explanation_text = "Угоните эвакуационный шаттл, взломав его навигационные протоколы через консоль управления (Alt-Клик по консоли аварийного шаттла)."
+	team_explanation_text = "Угоните аварийный шаттл, взломав его навигационные протоколы через консоль управления (Alt-Клик по консоли аварийного шаттла). Все члены вашей команды должны выжить."
 	martyr_compatible = FALSE //Technically you won't get both anyway.
 	/// Overrides the hijack speed of any antagonist datum it is on ONLY, no other datums are impacted.
 	admin_grantable = TRUE
@@ -418,8 +418,8 @@ GLOBAL_LIST(admin_objective_list) //Prefilled admin assignable objective list
 
 /datum/objective/elimination
 	name = "elimination"
-	explanation_text = "Уничтожьте всю команду лоялистов на борту шаттла. Вы и любые единомышленники, должно быть, единственные оставшиеся люди на шаттле."
-	team_explanation_text = "Уничтожьте всю команду лоялистов на борту шаттла. Вы и любые единомышленники, должно быть, единственные оставшиеся люди на шаттле. Не оставляйте ни одного члена вашей команды позади."
+	explanation_text = "Убейте всех лоялистов на борту шаттла. Вы и любые единомышленники, должно быть единственными живыми на шаттле."
+	team_explanation_text = "Уничтожьте всех лоялистов на борту шаттла. Вы и любые единомышленники должны быть единственными живыми на шаттле. Все члены вашей команды должны выжить."
 	martyr_compatible = FALSE
 
 /datum/objective/elimination/check_completion()
@@ -460,7 +460,7 @@ GLOBAL_LIST(admin_objective_list) //Prefilled admin assignable objective list
 
 /datum/objective/purge
 	name = "no mutants on shuttle"
-	explanation_text = "Убедитесь, что на борту спасательного шаттла нет разумных видов гуманоидов, не являющихся людьми."
+	explanation_text = "Убедитесь, что на борту эвакуационного шаттла нет разумных видов гуманоидов, не являющихся людьми."
 	martyr_compatible = TRUE
 
 /datum/objective/purge/check_completion()
@@ -521,14 +521,14 @@ GLOBAL_LIST(admin_objective_list) //Prefilled admin assignable objective list
 /datum/objective/escape/escape_with_identity/update_explanation_text()
 	if(target?.current)
 		target_real_name = target.current.real_name
-		explanation_text = "Сбегите на эвакуационном шаттле или спасательной капсуле под личиной [target_real_name], [target.assigned_role.title]"
+		explanation_text = "Сбегите на эвакуационном шаттле или челноке под личиной [target_real_name], [target.assigned_role.title]"
 		var/mob/living/carbon/human/H
 		if(ishuman(target.current))
 			H = target.current
 		if(H && H.get_id_name() != target_real_name)
 			target_missing_id = 1
 		else
-			explanation_text += " при этом нося ID карту цели"
+			explanation_text += ", при этом нося ID карту цели"
 		explanation_text += "." //Proper punctuation is important!
 
 	else
@@ -551,7 +551,7 @@ GLOBAL_LIST(admin_objective_list) //Prefilled admin assignable objective list
 
 /datum/objective/survive
 	name = "survive"
-	explanation_text = "Оставайтесь живы до конца."
+	explanation_text = "Оставайтесь в живых до самого конца."
 	admin_grantable = TRUE
 
 /datum/objective/survive/check_completion()
@@ -753,7 +753,7 @@ GLOBAL_LIST_EMPTY(possible_items)
 /datum/objective/protect_object/update_explanation_text()
 	. = ..()
 	if(protect_target)
-		explanation_text = "Защитить \the [protect_target] любой ценой."
+		explanation_text = "Защитите любой ценой - \the [protect_target]."
 	else
 		explanation_text = "Свободная задача."
 
@@ -812,7 +812,7 @@ GLOBAL_LIST_EMPTY(possible_items)
 
 /datum/objective/absorb_most
 	name = "absorb most"
-	explanation_text = "Извлеките больше совместимых геномов, чем любой другой генокрад."
+	explanation_text = "Извлеките больше совместимых генов, чем любой другой генокрад."
 
 /datum/objective/absorb_most/check_completion()
 	var/list/datum/mind/owners = get_owners()
@@ -952,7 +952,7 @@ GLOBAL_LIST_EMPTY(possible_items)
 
 /datum/objective/steal_n_of_type/organs
 	name = "steal organs"
-	explanation_text = "Украдите как минимум 5 органических органов! Их необходимо поддерживать свежими"
+	explanation_text = "Украдите как минимум 5 органических органов! Их необходимо поддерживать свежими."
 	wanted_items = list(/obj/item/organ)
 	amount = 5 //i want this to be higher, but the organs must be fresh at roundend
 

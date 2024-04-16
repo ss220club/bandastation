@@ -184,7 +184,7 @@
 
 	target.apply_damage(20, BRUTE, BODY_ZONE_HEAD, wound_bonus = rand(min_wound, max_wound + 10), attacking_item = src)
 	target.visible_message(
-		span_danger("[src] пробивает череп [target], пиздец как калеча глаза!"),
+		span_danger("[src] пробивает череп [target], ужасно калеча глаза!"),
 		span_userdanger("Что-то проникает тебе в череп, ужасно калеча твои глаза! Пиздец!"),
 		span_hear("Вы слышите тошнотворный звук пронзения плоти металлом!")
 	)
@@ -209,7 +209,7 @@
 	eyeballies.Remove(target)
 	eyeballies.forceMove(get_turf(target))
 	notify_ghosts(
-		"[target] только что вырвали глаза!",
+		"У [target] только что вырвали глаза!",
 		source = target,
 		header = "Ай бля!",
 	)

@@ -343,7 +343,7 @@
 	if(!(check_usability(user)))
 		return
 
-	to_chat(user, span_notice("Вы активируете [src] и ждете подтвержения."))
+	to_chat(user, span_notice("Вы активируете [src] и ждете подтверждения."))
 	var/mob/chosen_one = SSpolling.poll_ghost_candidates(
 		check_jobban = poll_role_check,
 		role = poll_role_check,
@@ -404,7 +404,7 @@
 	role_to_play = ROLE_CONTRACTOR_SUPPORT
 
 /obj/item/antag_spawner/loadout/contractor/do_special_things(mob/living/carbon/human/contractor_support, mob/user)
-	to_chat(contractor_support, "\n[span_alertwarning("[user.real_name] твой начальник. Выполняйте любые их приказы. Вы здесь только для того, чтобы поддержать их миссию.")]")
+	to_chat(contractor_support, "\n[span_alertwarning("[user.real_name] - ваш начальник. Выполняйте любые их приказы. Вы здесь только для того, чтобы поддержать их миссию.")]")
 	to_chat(contractor_support, "[span_alertwarning("Если они погибнут или станут недоступны по какой-либо причине, вы должны помочь другим активным агентам в этой зоне миссии, насколько это возможно.")]")
 
 /obj/item/antag_spawner/loadout/monkey_man
