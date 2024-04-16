@@ -84,7 +84,7 @@
 		. += span_infoplain("Вместимость охладителя уменьшает время задержки на [(1 - capacitor_coefficient) * 100]%.")
 
 	if(servo_bonus > 0.2)
-		. += span_infoplain("Потенциал манипуляторов увеличивает награду [servo_bonus]x.")
+		. += span_infoplain("Потенциал манипуляторов увеличивает награду на [servo_bonus]x.")
 		. += span_infoplain("Повреждения, получаемые при небезопасном выходе, уменьшены на [servo_bonus * 100]%.")
 
 	if(!is_ready)
