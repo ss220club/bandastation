@@ -108,7 +108,7 @@ const AccessView = (props) => {
   const [tab, setTab] = useSharedState('tab', 0);
 
   if (!isConnected(data)) {
-    return <NoticeBox danger>No server connected!</NoticeBox>;
+    return <NoticeBox danger>Нет подключеня к серверу!</NoticeBox>;
   }
 
   const {
@@ -134,7 +134,7 @@ const AccessView = (props) => {
       ? '???'
       : sorted.find(({ id }) => id === generated_domain)?.name;
   } else {
-    selected = 'Nothing loaded';
+    selected = 'Ничего не загружено';
   }
 
   return (
@@ -147,10 +147,9 @@ const AccessView = (props) => {
                 checked={broadcasting}
                 disabled={broadcasting_on_cd}
                 onClick={() => act('broadcast')}
-                tooltip="Toggles whether you broadcast your
-                  bitrun to station Entertainment Monitors."
+                tooltip="Включить/отключить трансляцию вашего битрана на станционные развлекательные экраны."
               >
-                Broadcast
+                Прямой эфир
               </Button.Checkbox>
               <Button
                 disabled={
@@ -159,12 +158,12 @@ const AccessView = (props) => {
                 icon="random"
                 onClick={() => act('random_domain')}
                 mr={1}
-                tooltip="Get a random domain for more rewards.
-                  Weighted towards your current points. Minimum: 1 point."
+                tooltip="Получите случайный домен для дополнительных наград.
+                  Взвешено по вашим текущим очкам. Минимум - 1 очко."
               >
-                Randomize
+                Случайно
               </Button>
-              <Tooltip content="Accrued points for purchasing domains.">
+              <Tooltip content="Полученные очки для покупки доменов.">
                 <Icon color="pink" name="star" mr={1} />
                 {points}
               </Tooltip>
@@ -172,7 +171,7 @@ const AccessView = (props) => {
           }
           fill
           scrollable
-          title="Virtual Domains"
+          title="Виртуальные домены"
         >
           <Tabs fluid>
             <Tabs.Tab
@@ -182,7 +181,7 @@ const AccessView = (props) => {
               onClick={() => setTab(0)}
               icon="chevron-down"
             >
-              Peaceful
+              Мирные
             </Tabs.Tab>
             <Tabs.Tab
               backgroundColor={getColor(Difficulty.Low)}
@@ -191,7 +190,7 @@ const AccessView = (props) => {
               onClick={() => setTab(1)}
               icon="chevron-down"
             >
-              Easy
+              Легкие
             </Tabs.Tab>
             <Tabs.Tab
               backgroundColor={getColor(Difficulty.Medium)}
@@ -200,7 +199,7 @@ const AccessView = (props) => {
               onClick={() => setTab(2)}
               icon="chevron-down"
             >
-              Medium
+              Средние
             </Tabs.Tab>
             <Tabs.Tab
               backgroundColor={getColor(Difficulty.High)}
@@ -209,7 +208,7 @@ const AccessView = (props) => {
               onClick={() => setTab(3)}
               icon="chevron-down"
             >
-              Hard <Icon name="skull" ml={1} />{' '}
+              Сложные <Icon name="skull" ml={1} />{' '}
             </Tabs.Tab>
           </Tabs>
           {filtered.map((domain) => (
@@ -228,10 +227,10 @@ const AccessView = (props) => {
             </Stack.Item>
             <Stack.Item>
               <Button.Confirm
-                content="Stop Domain"
+                content="Остановить домен"
                 disabled={!ready || !generated_domain}
                 onClick={() => act('stop_domain')}
-                tooltip="Begins shutdown. Will notify anyone connected."
+                tooltip="Начинает отключение. Уведомит всех подключенных."
               />
             </Stack.Item>
           </Stack>
@@ -269,10 +268,10 @@ const DomainEntry = (props: DomainEntryProps) => {
     buttonName = '???';
   } else if (current) {
     buttonIcon = 'download';
-    buttonName = 'Deployed';
+    buttonName = 'Загружен';
   } else {
     buttonIcon = 'coins';
-    buttonName = 'Deploy';
+    buttonName = 'Загрузить';
   }
 
   return (
@@ -282,7 +281,7 @@ const DomainEntry = (props: DomainEntryProps) => {
           disabled={!!generated_domain || !ready || occupied || points < cost}
           icon={buttonIcon}
           onClick={() => act('set_domain', { id })}
-          tooltip={!!generated_domain && 'Stop current domain first.'}
+          tooltip={!!generated_domain && 'Остановите текущий домен.'}
         >
           {buttonName}
         </Button>
@@ -301,19 +300,19 @@ const DomainEntry = (props: DomainEntryProps) => {
       <Stack height={5}>
         <Stack.Item color="label" grow={4}>
           {desc}
-          {!!is_modular && ' (Modular)'}
-          {!!has_secondary_objectives && ' (Secondary Objective Available)'}
+          {!!is_modular && ' (Модульное)'}
+          {!!has_secondary_objectives && ' (Доступны дополнительные задачи)'}
         </Stack.Item>
         <Stack.Divider />
         <Stack.Item grow>
           <Table>
             <TableRow>
-              <Tooltip content="Points cost for deploying domain.">
+              <Tooltip content="Требуемые очки для покупки домена.">
                 <DisplayDetails amount={cost} color="pink" icon="star" />
               </Tooltip>
             </TableRow>
             <TableRow>
-              <Tooltip content="Reward for competing domain.">
+              <Tooltip content="Награда за выполнение домена.">
                 <DisplayDetails amount={reward} color="gold" icon="coins" />
               </Tooltip>
             </TableRow>
@@ -334,12 +333,12 @@ const AvatarDisplay = (props) => {
 
   return (
     <Section
-      title="Connected Clients"
+      title="Подключенные клиенты"
       buttons={
         <Stack align="center">
           {!!generated_domain && (
             <Stack.Item>
-              <Tooltip content="Available bandwidth for new connections.">
+              <Tooltip content="Пропускная способность позволяет создать новое соединение.">
                 <DisplayDetails
                   color="green"
                   icon="broadcast-tower"
@@ -352,9 +351,9 @@ const AvatarDisplay = (props) => {
             <Button
               icon="sync"
               onClick={() => act('refresh')}
-              tooltip="Refresh avatar data."
+              tooltip="Обновить информацию аватаров."
             >
-              Refresh
+              Обновить
             </Button>
           </Stack.Item>
         </Stack>
@@ -364,7 +363,7 @@ const AvatarDisplay = (props) => {
         {avatars.map(({ health, name, pilot, brute, burn, tox, oxy }) => (
           <TableRow key={name}>
             <TableCell color="label">
-              {pilot} as{' '}
+              {pilot} как{' '}
               <span style={{ color: 'white' }}>&quot;{name}&quot;</span>
             </TableCell>
             <TableCell collapsing>
@@ -414,7 +413,7 @@ const DisplayDetails = (props: DisplayDetailsProps) => {
   const { amount = 0, color, icon = 'star' } = props;
 
   if (amount === 0) {
-    return <TableCell color="label">None</TableCell>;
+    return <TableCell color="label">Никакие</TableCell>;
   }
 
   if (typeof amount === 'string') {
