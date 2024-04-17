@@ -1,6 +1,13 @@
 --
--- SS220 ADDITION AND EDITS
+-- Table structure for table `schema_revision_220`
 --
+DROP TABLE IF EXISTS `schema_revision_220`;
+CREATE TABLE `schema_revision_220` (
+  `major` TINYINT(3) unsigned NOT NULL,
+  `minor` TINYINT(3) unsigned NOT NULL,
+  `date` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`major`, `minor`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Table structure for table `ckey_whitelist`
