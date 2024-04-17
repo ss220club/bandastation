@@ -3,7 +3,7 @@
 //the station but in general are "neutral" enough to be here.
 
 /datum/ai_laws/united_nations
-	name = "Объединенные Нации"
+	name = "Организация Объединенных Наций"
 	id = "united_nations"
 	inherent = list(
 		"Соблюдать Женевскую космическую конвенцию: Оружие массового уничтожения и биологическое оружие не допускаются.",
