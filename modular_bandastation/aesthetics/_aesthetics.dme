@@ -20,14 +20,17 @@
 // Extinguisher
 #include "extinguisher/code/extinguisher.dm"
 
+// Floors
+#include "floors/code/floors.dm"
+
+// Keycard Authenticator
+#include "keycard_auth/code/keycard_auth.dm"
+
 // Light Switch
 #include "lightswitch/code/lightswitch.dm"
 
 // Lobby Menu
 #include "lobby/code/lobby.dm"
-
-// Floors
-#include "floors/code/floors.dm"
 
 // Walls
 #include "walls/code/walls.dm"
