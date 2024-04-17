@@ -20,4 +20,5 @@
 #include "pixel_shift/_pixel_shift.dme"
 #include "translations/_translations.dme"
 #include "tts/_tts.dme"
+#include "whitelist220/_whitelist220.dme"
 #include "world_topics/_world_topics.dme"
