@@ -157,14 +157,14 @@ GLOBAL_DATUM_INIT(objective_machine_handler, /datum/objective_target_machine_han
 	if(!IS_TRAITOR(user))
 		return
 	if(target_machine_path)
-		. += span_notice("This device must be placed by <b>clicking on a [initial(target_machine_path.name)]</b> with it. It can be removed with a screwdriver.")
-	. += span_notice("Remember, you may leave behind fingerprints on the device. Wear <b>gloves</b> when handling it to be safe!")
+		. += span_notice("Это устройство необходимо разместить, <b>нажав на [initial(target_machine_path.name)]</b> с ним. Его можно снять с помощью отвертки.")
+	. += span_notice("Помните, что вы можете оставить отпечатки пальцев на устройстве. Чтобы быть в безопасности, при работе с ним надевайте <b>перчатки</b>!")
 
 /obj/item/traitor_machine_trapper/pre_attack(atom/target, mob/living/user, params)
 	. = ..()
 	if (. || !istype(target, target_machine_path))
 		return
-	balloon_alert(user, "planting device...")
+	balloon_alert(user, "устанавливаем устройство...")
 	if(!do_after(user, delay = deploy_time, target = src, interaction_key = DOAFTER_SOURCE_PLANTING_DEVICE, hidden = TRUE))
 		return TRUE
 	target.AddComponent(\
@@ -187,7 +187,7 @@ GLOBAL_DATUM_INIT(objective_machine_handler, /datum/objective_target_machine_han
 	UnregisterSignal(machine, COMSIG_QDELETING)
 	playsound(machine, 'sound/effects/structure_stress/pop3.ogg', 100, vary = TRUE)
 	forceMove(get_turf(machine))
-	visible_message(span_warning("A [src] falls out from the [machine]!"))
+	visible_message(span_warning("[src] выпадает из [machine]!"))
 
 /// Datum which manages references to things we are instructed to destroy
 /datum/objective_target_machine_handler
