@@ -215,7 +215,7 @@
 // Used in mind linker to talk to everyone in the network.
 /datum/action/innate/linked_speech
 	name = "Mind Link Speech"
-	desc = "Отправьте мысленное сообщение всем, кто соединен вашей связью."
+	desc = "Отправьте мысленное сообщение всем, кто соединен вашей Связью."
 	button_icon_state = "link_speech"
 	button_icon = 'icons/mob/actions/actions_slime.dmi'
 	background_icon_state = "bg_alien"
