@@ -147,8 +147,7 @@ const AccessView = (props) => {
                 checked={broadcasting}
                 disabled={broadcasting_on_cd}
                 onClick={() => act('broadcast')}
-                tooltip="Переключает включение прямого эфира на станционные
-                  Развлекательные экраны, когда вы проходите битран."
+                tooltip="Включить/отключить трансляцию вашего битрана на станционные развлекательные экраны."
               >
                 Прямой эфир
               </Button.Checkbox>
