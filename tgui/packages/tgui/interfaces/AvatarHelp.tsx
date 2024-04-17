@@ -6,7 +6,7 @@ type Data = {
   help_text: string;
 };
 
-const DEFAULT_HELP = `Информация отсутствует! Просите помощи при нужде.`;
+const DEFAULT_HELP = `Информация отсутствует! Обратитесь за помощью при нужде.`;
 
 const boxHelp = [
   {
