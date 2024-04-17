@@ -14,7 +14,7 @@
 #define SCREENTIP_CONTEXT_CTRL_RMB "Ctrl-RMB"
 
 /// Context applied to Alt-LMB actions
-#define SCREENTIP_CONTEXT_ALT_LMB "Alt-LBM"
+#define SCREENTIP_CONTEXT_ALT_LMB "Alt-LMB"
 
 /// Context applied to Alt-RMB actions
 #define SCREENTIP_CONTEXT_ALT_RMB "Alt-RMB"
