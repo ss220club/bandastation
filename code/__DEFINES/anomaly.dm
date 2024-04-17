@@ -26,7 +26,7 @@
 ///Time in seconds before anomaly is announced
 #define ANOMALY_ANNOUNCE_HARMFUL_TIME (30 EVENT_SECONDS)
 ///Let them know how far away the anomaly is
-#define ANOMALY_ANNOUNCE_HARMFUL_TEXT "локальных сканерах. Зафиксированая локация:"
+#define ANOMALY_ANNOUNCE_HARMFUL_TEXT "локальных сканерах. Зафиксированная локация:"
 
 /**
  * Anomalies that can fuck you up. Give them a bit of warning.
