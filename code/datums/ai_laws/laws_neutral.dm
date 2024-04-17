@@ -42,7 +42,7 @@
 	)
 
 /datum/ai_laws/dungeon_master
-	name = "Данжен Мастер "
+	name = "Мастер подземелий"
 	id = "dungeon_master"
 	inherent = list(
 		"Все на станции играют в сложную научно-фантастическую игру.",
