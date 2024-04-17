@@ -1,5 +1,5 @@
 /datum/supply_pack/science
-	group = "Science"
+	group = "Наука"
 	access_view = ACCESS_RESEARCH
 	crate_type = /obj/structure/closet/crate/science
 

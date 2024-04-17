@@ -1,5 +1,5 @@
 /datum/supply_pack/engineering
-	group = "Engineering"
+	group = "Инженерия"
 	crate_type = /obj/structure/closet/crate/engineering
 
 /datum/supply_pack/engineering/shieldgen

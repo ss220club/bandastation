@@ -7,7 +7,7 @@
  */
 
 /datum/supply_pack/imports
-	group = "Imports"
+	group = "Импорты"
 	crate_name = "emergency crate"
 	crate_type = /obj/structure/closet/crate/internals
 

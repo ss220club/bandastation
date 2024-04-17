@@ -13,10 +13,10 @@
 	var/can_approve_requests = TRUE
 	var/contraband = FALSE
 	var/self_paid = FALSE
-	var/safety_warning = "For safety and ethical reasons, the automated supply shuttle cannot transport live organisms, \
-		human remains, classified nuclear weaponry, mail, undelivered departmental order crates, syndicate bombs, \
-		homing beacons, unstable eigenstates, fax machines, or machinery housing any form of artificial intelligence."
-	var/blockade_warning = "Bluespace instability detected. Shuttle movement impossible."
+	var/safety_warning = "Для безопасности и по причинам этики, автоматический шаттл поставок не может транспортировать живые организмы, \
+		человеческие останки, класифицированное ядерное оружие, почту, не доставленные ящики с заказами департаментов, бомбы синдиката, \
+		маяки, нестабильные собственные состояния, факс машины или любую машинерию, содержащую любые виды искусственного интелекта."
+	var/blockade_warning = "Блюспейс нестабильность обнаружена. Движение шаттла невозможно."
 	/// radio used by the console to send messages on supply channel
 	var/obj/item/radio/headset/radio
 	/// var that tracks message cooldown
@@ -35,7 +35,7 @@
 	///The account this console processes and displays. Independent from the account the shuttle processes.
 	var/cargo_account = ACCOUNT_CAR
 	///Interface name for the ui_interact call for different subtypes.
-	var/interface_type = "Cargo"
+	var/interface_type = "Карго"
 
 /obj/machinery/computer/cargo/request
 	name = "supply request console"
@@ -67,8 +67,8 @@
 		return FALSE
 	if(user)
 		if (emag_card)
-			user.visible_message(span_warning("[user] swipes [emag_card] through [src]!"))
-		to_chat(user, span_notice("You adjust [src]'s routing and receiver spectrum, unlocking special supplies and contraband."))
+			user.visible_message(span_warning("[user] проводит [emag_card] по [src]!"))
+		to_chat(user, span_notice("Вы настраиваете спектр маршрутизации и приёма на [src], разблокируя специальные припасы и контрабанду."))
 
 	obj_flags |= EMAGGED
 	contraband = TRUE
@@ -106,7 +106,7 @@
 	data["loan_dispatched"] = SSshuttle.shuttle_loan && SSshuttle.shuttle_loan.dispatched
 	data["can_send"] = can_send
 	data["can_approve_requests"] = can_approve_requests
-	var/message = "Remember to stamp and send back the supply manifests."
+	var/message = "Не забывайте ставить печати на манифесты грузоперевозок и отправлять их обратно."
 	if(SSshuttle.centcom_message)
 		message = SSshuttle.centcom_message
 	if(SSshuttle.supply_blocked)
@@ -215,18 +215,18 @@
 		var/mob/living/living_user = user
 		var/obj/item/card/id/id_card = living_user.get_idcard(TRUE)
 		if(!istype(id_card))
-			say("No ID card detected.")
+			say("ID карта не обнаружена.")
 			return
 		if(IS_DEPARTMENTAL_CARD(id_card))
-			say("The [src] rejects [id_card].")
+			say("[src] отклоняет [id_card].")
 			return
 		account = id_card.registered_account
 		if(!istype(account))
-			say("Invalid bank account.")
+			say("Банковский аккаунт недействителен.")
 			return
 		var/list/access = id_card.GetAccess()
 		if(pack.access_view && !(pack.access_view in access))
-			say("[id_card] lacks the requisite access for this purchase.")
+			say("На [id_card] недостаточно доступа для этой покупки.")
 			return
 
 	// The list we are operating on right now
@@ -240,13 +240,13 @@
 
 	if(pack.goody && !self_paid)
 		playsound(src, 'sound/machines/buzz-sigh.ogg', 50, FALSE)
-		say("ERROR: Small crates may only be purchased by private accounts.")
+		say("ОШИБКА: Маленькие ящики могут куплены только приватными аккаунтами.")
 		return
 
 	var/similar_count = SSshuttle.supply.get_order_count(pack)
 	if(similar_count == OVER_ORDER_LIMIT)
 		playsound(src, 'sound/machines/buzz-sigh.ogg', 50, FALSE)
-		say("ERROR: No more then [CARGO_MAX_ORDER] of any pack may be ordered at once")
+		say("ОШИБКА: За раз может быть заказано не более [CARGO_MAX_ORDER] наборов.")
 		return
 
 	amount = clamp(amount, 1, CARGO_MAX_ORDER - similar_count)
@@ -254,7 +254,7 @@
 		var/obj/item/coupon/applied_coupon
 		for(var/obj/item/coupon/coupon_check in loaded_coupons)
 			if(pack.type == coupon_check.discounted_pack)
-				say("Coupon found! [round(coupon_check.discount_pct_off * 100)]% off applied!")
+				say("Купон обнаружен! [round(coupon_check.discount_pct_off * 100)]% скидка активирована!")
 				coupon_check.moveToNullspace()
 				applied_coupon = coupon_check
 				break
@@ -271,9 +271,9 @@
 		working_list += order
 
 	if(self_paid)
-		say("Order processed. The price will be charged to [account.account_holder]'s bank account on delivery.")
+		say("Заказ обработан. Стоимость заказа будет списана с банковского аккаунта [account.account_holder] при доставке.")
 	if(requestonly && message_cooldown < world.time)
-		var/message = amount == 1 ? "A new order has been requested." : "[amount] order has been requested."
+		var/message = amount == 1 ? "Новый заказ был запрошен." : "[amount] заказов было запрошено."
 		radio.talk_into(src, message, RADIO_CHANNEL_SUPPLY)
 		message_cooldown = world.time + 30 SECONDS
 	. = TRUE
@@ -287,10 +287,10 @@
 		if(order.id != id)
 			continue
 		if(order.department_destination)
-			say("Only the department that ordered this item may cancel it.")
+			say("Только департамент, что заказал этот предмет может отменить заказ.")
 			return FALSE
 		if(order.applied_coupon)
-			say("Coupon refunded.")
+			say("Купон возвращён.")
 			order.applied_coupon.forceMove(get_turf(src))
 		SSshuttle.shopping_list -= order
 		qdel(order)
@@ -323,36 +323,36 @@
 
 			if(SSshuttle.supply.getDockedId() == docking_home)
 				SSshuttle.moveShuttle(cargo_shuttle, docking_away, TRUE)
-				say("The supply shuttle is departing.")
+				say("Шаттл поставок отстыковывается.")
 				ui.user.investigate_log("sent the supply shuttle away.", INVESTIGATE_CARGO)
 			else
 				//create the paper from the SSshuttle.shopping_list
 				if(length(SSshuttle.shopping_list))
 					var/obj/item/paper/requisition_paper = new(get_turf(src))
 					requisition_paper.name = "requisition form - [station_time_timestamp()]"
-					var/requisition_text = "<h2>[station_name()] Supply Requisition</h2>"
+					var/requisition_text = "<h2>[station_name()] Заявка на поставку</h2>"
 					requisition_text += "<hr/>"
-					requisition_text += "Time of Order: [station_time_timestamp()]<br/><br/>"
+					requisition_text += "Время заказа: [station_time_timestamp()]<br/><br/>"
 					for(var/datum/supply_order/order as anything in SSshuttle.shopping_list)
 						requisition_text += "<b>[order.pack.name]</b></br>"
-						requisition_text += "- Order ID: [order.id]</br>"
+						requisition_text += "- ID заказа: [order.id]</br>"
 						var/restrictions = SSid_access.get_access_desc(order.pack.access)
 						if(restrictions)
-							requisition_text += "- Access Restrictions: [restrictions]</br>"
-						requisition_text += "- Ordered by: [order.orderer] ([order.orderer_rank])</br>"
+							requisition_text += "- Ограничения доступа: [restrictions]</br>"
+						requisition_text += "- Заказан: [order.orderer] ([order.orderer_rank])</br>"
 						var/paying_account = order.paying_account
 						if(paying_account)
-							requisition_text += "- Paid Privately by: [order.paying_account.account_holder]<br/>"
+							requisition_text += "- Оплачен лично: [order.paying_account.account_holder]<br/>"
 						var/reason = order.reason
 						if(reason)
-							requisition_text += "- Reason Given: [reason]</br>"
+							requisition_text += "- Указанная причина: [reason]</br>"
 						requisition_text += "</br></br>"
 					requisition_paper.add_raw_text(requisition_text)
 					requisition_paper.color = "#9ef5ff"
 					requisition_paper.update_appearance()
 
 				ui.user.investigate_log("called the supply shuttle.", INVESTIGATE_CARGO)
-				say("The supply shuttle has been called and will arrive in [SSshuttle.supply.timeLeft(600)] minutes.")
+				say("Шаттл поставок был вызван и прибудет через [SSshuttle.supply.timeLeft(600)] минут.")
 				SSshuttle.moveShuttle(cargo_shuttle, docking_home, TRUE)
 
 			. = TRUE
@@ -370,7 +370,7 @@
 				return
 			else
 				SSshuttle.shuttle_loan.loan_shuttle()
-				say("The supply shuttle has been loaned to CentCom.")
+				say("Шаттл поставок был отдан в займ Центральному Командованию.")
 				ui.user.investigate_log("accepted a shuttle loan event.", INVESTIGATE_CARGO)
 				ui.user.log_message("accepted a shuttle loan event.", LOG_GAME)
 				. = TRUE

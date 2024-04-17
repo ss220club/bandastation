@@ -1,5 +1,5 @@
 /datum/supply_pack/critter
-	group = "Livestock"
+	group = "Животные"
 	crate_type = /obj/structure/closet/crate/critter
 
 /datum/supply_pack/critter/parrot

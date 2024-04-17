@@ -46,7 +46,7 @@ export const CargoContent = (props) => {
             selected={tab === 'catalog'}
             onClick={() => setTab('catalog')}
           >
-            Catalog
+            Каталог
           </Tabs.Tab>
           <Tabs.Tab
             icon="envelope"
@@ -54,7 +54,7 @@ export const CargoContent = (props) => {
             selected={tab === 'requests'}
             onClick={() => setTab('requests')}
           >
-            Requests ({requests.length})
+            Запросы ({requests.length})
           </Tabs.Tab>
           {!requestonly && (
             <>
@@ -64,14 +64,14 @@ export const CargoContent = (props) => {
                 selected={tab === 'cart'}
                 onClick={() => setTab('cart')}
               >
-                Checkout ({cart_length})
+                Расчёт ({cart_length})
               </Tabs.Tab>
               <Tabs.Tab
                 icon="question"
                 selected={tab === 'help'}
                 onClick={() => setTab('help')}
               >
-                Help
+                Помощь
               </Tabs.Tab>
             </>
           )}
@@ -110,19 +110,19 @@ const CargoStatus = (props) => {
             value={points}
             format={(value) => formatMoney(value)}
           />
-          {' credits'}
+          {' кредитов'}
         </Box>
       }
     >
       <LabeledList>
-        <LabeledList.Item label="Shuttle">
+        <LabeledList.Item label="Шаттл">
           {(docked && !requestonly && can_send && (
             <Button
               color={(grocery && 'orange') || 'green'}
               content={location}
               tooltip={
                 (grocery &&
-                  'The kitchen is waiting for their grocery supply delivery!') ||
+                  'Кухня ожидает доставки продуктов!') ||
                 ''
               }
               tooltipPosition="right"
@@ -131,16 +131,16 @@ const CargoStatus = (props) => {
           )) ||
             location}
         </LabeledList.Item>
-        <LabeledList.Item label="CentCom Message">{message}</LabeledList.Item>
+        <LabeledList.Item label="Сообщение от Центрального Командования">{message}</LabeledList.Item>
         {!!loan && !requestonly && (
-          <LabeledList.Item label="Loan">
+          <LabeledList.Item label="Займ">
             {(!loan_dispatched && (
               <Button
-                content="Loan Shuttle"
+                content="Отдать шаттл в займ"
                 disabled={!(away && docked)}
                 onClick={() => act('loan')}
               />
-            )) || <Box color="bad">Loaned to Centcom</Box>}
+            )) || <Box color="bad">Отдан в займ Центральному Командованию</Box>}
           </LabeledList.Item>
         )}
       </LabeledList>
@@ -194,14 +194,14 @@ export const CargoCatalog = (props) => {
 
   return (
     <Section
-      title="Catalog"
+      title="Каталог"
       buttons={
         !express && (
           <>
             <CargoCartButtons />
             <Button.Checkbox
               ml={2}
-              content="Buy Privately"
+              content="Купить приватно"
               checked={self_paid}
               onClick={() => act('toggleprivate')}
             />
@@ -223,7 +223,7 @@ export const CargoCatalog = (props) => {
                 <Stack.Item grow>
                   <Input
                     fluid
-                    placeholder="Search..."
+                    placeholder="Поиск..."
                     value={searchText}
                     onInput={(e, value) => {
                       if (value === searchText) {
@@ -310,19 +310,19 @@ const CargoRequests = (props) => {
   // Labeled list reimplementation to squeeze extra columns out of it
   return (
     <Section
-      title="Active Requests"
+      title="Активные запросы"
       buttons={
         !requestonly && (
           <Button
             icon="times"
-            content="Clear"
+            content="Очистить"
             color="transparent"
             onClick={() => act('denyall')}
           />
         )
       }
     >
-      {requests.length === 0 && <Box color="good">No Requests</Box>}
+      {requests.length === 0 && <Box color="good">Нет запросов</Box>}
       {requests.length > 0 && (
         <Table>
           {requests.map((request) => (
@@ -378,16 +378,16 @@ const CargoCartButtons = (props) => {
   return (
     <>
       <Box inline mx={1}>
-        {cart.length === 0 && 'Cart is empty'}
-        {cart.length === 1 && '1 item'}
-        {cart.length >= 2 && cart.length + ' items'}{' '}
+        {cart.length === 0 && 'Корзина пуста'}
+        {cart.length === 1 && '1 предмет'}
+        {cart.length >= 2 && cart.length + ' предметов'}{' '}
         {total > 0 && `(${formatMoney(total)} cr)`}
       </Box>
       {!requestonly && !!can_send && !!can_approve_requests && (
         <Button
           icon="times"
           color="transparent"
-          content="Clear"
+          content="Очистить"
           onClick={() => act('clear')}
         />
       )}
@@ -400,9 +400,9 @@ const CartHeader = (props) => {
   return (
     <Section>
       <Stack>
-        <Stack.Item mt="4px">Current-Cart</Stack.Item>
+        <Stack.Item mt="4px">Текущая корзина</Stack.Item>
         <Stack.Item ml="200px" mt="3px">
-          Quantity
+          Количество
         </Stack.Item>
         <Stack.Item ml="72px">
           <CargoCartButtons />
@@ -427,7 +427,7 @@ const CargoCart = (props) => {
   return (
     <Section fill>
       <CartHeader />
-      {cart.length === 0 && <Box color="label">Nothing in cart</Box>}
+      {cart.length === 0 && <Box color="label">Корзина пуста</Box>}
       {cart.length > 0 && (
         <Table>
           {cart.map((entry) => (
@@ -471,9 +471,9 @@ const CargoCart = (props) => {
                 )}
               </Table.Cell>
               <Table.Cell collapsing textAlign="right" inline ml="50px">
-                {entry.paid > 0 && <b>[Paid Privately x {entry.paid}]</b>}
+                {entry.paid > 0 && <b>[Оплачено приватно x {entry.paid}]</b>}
                 {formatMoney(entry.cost)} {entry.cost_type}
-                {entry.dep_order > 0 && <b>[Department x {entry.dep_order}]</b>}
+                {entry.dep_order > 0 && <b>[Департамент x {entry.dep_order}]</b>}
               </Table.Cell>
               <Table.Cell inline mt="20px" />
             </Table.Row>
@@ -489,10 +489,10 @@ const CargoCart = (props) => {
                 lineHeight: '28px',
                 padding: '0 12px',
               }}
-              content="Confirm the order"
+              content="Подтвердить заказ"
               onClick={() => act('send')}
             />
-          )) || <Box opacity={0.5}>Shuttle in {location}.</Box>}
+          )) || <Box opacity={0.5}>Шаттл находится в {location}.</Box>}
         </Box>
       )}
     </Section>
@@ -502,42 +502,42 @@ const CargoCart = (props) => {
 const CargoHelp = (props) => {
   return (
     <>
-      <Section title="Department Orders">
-        Each department on the station will order crates from their own personal
-        consoles. These orders are ENTIRELY FREE! They do not come out of
-        cargo&apos;s budget, and rather put the consoles on cooldown. So
-        here&apos;s where you come in: The ordered crates will show up on your
-        supply console, and you need to deliver the crates to the orderers.
-        You&apos;ll actually be paid the full value of the department crate on
-        delivery if the crate was not tampered with, making the system a good
-        source of income.
+      <Section title="Заказы департаментов">
+        Каждый Департамент на станции может заказать ящики с их собственных
+        консолей. Эти заказы абсолютно БЕСПЛАТНЫ! Они не оплачиваются через 
+        бюджет карго, и также уводят консоли на перезарядку. Всё 
+        это работает следующим образом: Заказанные ящики появятся на вашей
+        консоли поставок, и вам нужно будет доставить ящики заказчикам.
+        Вы даже получите полную стоимость ящика при
+        доставке, если ящик не был поддельным, что делает эту систему хорошим
+        источником доходов.
         <br />
         <b>
-          Examine a department order crate to get specific details about where
-          the crate needs to go.
+          Осмотрите ящик, чтобы узнать детали о том
+          куда ящик должен быть доставлен.
         </b>
       </Section>
-      <Section title="MULEbots">
-        MULEbots are slow but loyal delivery bots that will get crates delivered
-        with minimal technician effort required. It is slow, though, and can be
-        tampered with while en route.
+      <Section title="MULEботы">
+        MULEботы - медленные, но лояльные роботы доставщики, что доставят все ящики
+        с минимальным вмешательством техника. Это медленно, однако, в операцию могут 
+        вмешаться во время пути.
         <br />
-        <b>Setting up a MULEbot is easy:</b>
+        <b>Настроить MULEбота довольно просто:</b>
         <br />
-        <b>1.</b> Drag the crate you want to deliver next to the MULEbot.
+        <b>1.</b> Поставьте ящик, что вы хотите доставить рядом с МУЛботом.
         <br />
-        <b>2.</b> Drag the crate on top of MULEbot. It should load on.
+        <b>2.</b> Перетащите ящик на верх МУЛбота. Он должен погрузиться.
         <br />
-        <b>3.</b> Open your PDA.
+        <b>3.</b> Включите ваш КПК.
         <br />
-        <b>4.</b> Click <i>Delivery Bot Control</i>.<br />
-        <b>5.</b> Click <i>Scan for Active Bots</i>.<br />
-        <b>6.</b> Choose your MULE.
+        <b>4.</b> Нажмите на <i>Delivery Bot Control</i>.<br />
+        <b>5.</b> Нажмите на <i>Scan for Active Bots</i>.<br />
+        <b>6.</b> Выберите своего MULEбота.
         <br />
-        <b>7.</b> Click on <i>Destination: (set)</i>.<br />
-        <b>8.</b> Choose a destination and click OK.
+        <b>7.</b> Нажмите на <i>Destination: (set)</i>.<br />
+        <b>8.</b> Выберите пункт назначения и нажмите ОК.
         <br />
-        <b>9.</b> Click <i>Proceed</i>.
+        <b>9.</b> Нажмите на <i>Proceed</i>.
       </Section>
       <Section title="Disposals Delivery System">
         In addition to MULEs and hand-deliveries, you can also make use of the

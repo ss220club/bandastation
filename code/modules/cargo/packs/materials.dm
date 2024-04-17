@@ -1,5 +1,5 @@
 /datum/supply_pack/materials
-	group = "Canisters & Materials"
+	group = "Канистры и материалы"
 
 /datum/supply_pack/materials/cardboard50
 	name = "50 Cardboard Sheets"

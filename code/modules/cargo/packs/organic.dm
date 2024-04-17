@@ -1,5 +1,5 @@
 /datum/supply_pack/organic
-	group = "Food & Hydroponics"
+	group = "Еда и гидропоника"
 	crate_type = /obj/structure/closet/crate/freezer
 
 /datum/supply_pack/organic/hydroponics

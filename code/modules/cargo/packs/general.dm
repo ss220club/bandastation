@@ -1,5 +1,5 @@
 /datum/supply_pack/misc
-	group = "Miscellaneous Supplies"
+	group = "Разнообразные припасы"
 
 /datum/supply_pack/misc/artsupply
 	name = "Art Supplies"

@@ -1,5 +1,5 @@
 /datum/supply_pack/service
-	group = "Service"
+	group = "Сервис"
 
 /datum/supply_pack/service/cargo_supples
 	name = "Cargo Supplies Crate"

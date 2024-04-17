@@ -6,7 +6,7 @@
 	desc = "Going market price for this kind of sheet, by Australicus Industrial Mining."
 	cost = CARGO_CRATE_VALUE * 2
 	crate_name = "mineral stock sheet crate"
-	group = "Canisters & Materials"
+	group = "Канистры и материалы"
 	/// What material we are trying to buy sheets of?
 	var/datum/material/material
 	/// How many sheets of the material we are trying to buy at once?

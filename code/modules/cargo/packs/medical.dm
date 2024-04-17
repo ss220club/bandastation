@@ -1,5 +1,5 @@
 /datum/supply_pack/medical
-	group = "Medical"
+	group = "Медицина"
 	access_view = ACCESS_MEDICAL
 	crate_type = /obj/structure/closet/crate/medical/department
 

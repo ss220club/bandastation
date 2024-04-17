@@ -1,5 +1,5 @@
 /datum/supply_pack/costumes_toys
-	group = "Costumes & Toys"
+	group = "Костюмы и игрушки"
 
 /datum/supply_pack/costumes_toys/randomised
 	name = "Collectable Hats Crate"

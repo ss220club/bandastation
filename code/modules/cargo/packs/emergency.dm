@@ -1,5 +1,5 @@
 /datum/supply_pack/emergency
-	group = "Emergency"
+	group = "Экстренный"
 	discountable = SUPPLY_PACK_UNCOMMON_DISCOUNTABLE
 
 /datum/supply_pack/emergency/bio

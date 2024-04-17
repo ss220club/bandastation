@@ -1,5 +1,5 @@
 /datum/supply_pack/security
-	group = "Security"
+	group = "Безопасность"
 	access = ACCESS_SECURITY
 	crate_type = /obj/structure/closet/crate/secure/gear
 
@@ -174,7 +174,7 @@
 /// Armory packs
 
 /datum/supply_pack/security/armory
-	group = "Armory"
+	group = "Оружейная"
 	access = ACCESS_ARMORY
 	access_view = ACCESS_ARMORY
 	crate_type = /obj/structure/closet/crate/secure/weapon
