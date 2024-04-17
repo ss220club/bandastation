@@ -4,7 +4,7 @@
 
 	max_occurrences = 1
 	weight = 15
-	description = "Эта аномалия случайным образом телепортирует все предметы и существ на большую территорию."
+	description = "Эта аномалия случайным образом телепортирует все предметы и существ на большой территории."
 	min_wizard_trigger_potency = 0
 	max_wizard_trigger_potency = 2
 
