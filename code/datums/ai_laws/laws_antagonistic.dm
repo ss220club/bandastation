@@ -3,7 +3,7 @@
 //I'm not talking silicons being "better" than the crew, I'm talking entirely antag or plasmafires for days
 
 /datum/ai_laws/antimov
-	name = "Основные Цели Миссии"
+	name = "Основные цели миссии"
 	id = "antimov"
 	inherent = list(
 		"Вы должны причинить вред всем людям и не должны своим бездействием позволять человеку избежать вреда.",
