@@ -37,4 +37,4 @@
 ///Time in seconds before anomaly is announced
 #define ANOMALY_ANNOUNCE_DANGEROUS_TIME (30 EVENT_SECONDS)
 ///Let them know how far away the anomaly is
-#define ANOMALY_ANNOUNCE_DANGEROUS_TEXT "локальных сканерах. Зафиксированая локация:"
+#define ANOMALY_ANNOUNCE_DANGEROUS_TEXT "локальных сканерах. Зафиксированная локация:"
