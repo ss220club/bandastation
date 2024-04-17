@@ -17,4 +17,4 @@
 /datum/round_event/anomaly/anomaly_bioscrambler/announce(fake)
 	if(isnull(impact_area))
 		impact_area = placer.findValidArea()
-	priority_announce("Биологический агент замены конечностей обнаружен на [ANOMALY_ANNOUNCE_MEDIUM_TEXT] [impact_area.name]. Используте биокостюмы или другое защитное снаряжение, чтобы противостоять последствиям. Расчетный период полураспада %9£$T$%F3 года.", "Оповещение об аномалии")
+	priority_announce("Биологический агент замены конечностей обнаружен на [ANOMALY_ANNOUNCE_MEDIUM_TEXT] [impact_area.name]. Используйте биокостюмы или другое защитное снаряжение, чтобы противостоять последствиям. Расчетный период полураспада %9£$T$%F3 года.", "Оповещение об аномалии")
