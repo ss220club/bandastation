@@ -30,7 +30,7 @@
 
 	var/obj/item/paper/certificate = new()
 	certificate.add_raw_text(get_completion_certificate())
-	certificate.name = "certificate of domain completion"
+	certificate.name = "сертификат о прохождении домена"
 	certificate.update_appearance()
 
 	var/obj/structure/closet/crate/secure/bitrunning/decrypted/reward_cache = new(src, generated_domain, bonus)
@@ -61,37 +61,37 @@
 
 	var/time_difference = world.time - generated_domain.start_time
 
-	var/completion_time = "### Completion Time: [DisplayTimeText(time_difference)]\n"
+	var/completion_time = "### Время завершения: [DisplayTimeText(time_difference)]\n"
 
-	var/grade = "\n---\n\n# Rating: [grade_completion(time_difference)]"
+	var/grade = "\n---\n\n# Рейтинг: [grade_completion(time_difference)]"
 
-	var/text = "# Certificate of Domain Completion\n\n---\n\n"
+	var/text = "# Сертификат о прохождении домена\n\n---\n\n"
 
-	text += "### [generated_domain.name][domain_randomized ? " (Randomized)" : ""]\n"
-	text += "- **Difficulty:** [generated_domain.difficulty]\n"
-	text += "- **Threats:** [domain_threats]\n"
-	text += "- **Base Reward:** [base_points][domain_randomized ? " +1" : ""]\n\n"
-	text += "- **Total Bonus:** [bonuses]x\n\n"
+	text += "### [generated_domain.name][domain_randomized ? " (Случайно)" : ""]\n"
+	text += "- **Сложность:** [generated_domain.difficulty]\n"
+	text += "- **Угрозы:** [domain_threats]\n"
+	text += "- **Начальная награда:** [base_points][domain_randomized ? " +1" : ""]\n\n"
+	text += "- **Общий бонус:** [bonuses]x\n\n"
 
 	if(bonuses <= 1)
 		text += completion_time
 		text += grade
 		return text
 
-	text += "### Bonuses\n"
+	text += "### Бонусы\n"
 	if(domain_randomized)
-		text += "- **Randomized:** + 0.2\n"
+		text += "- **Случайно:** + 0.2\n"
 
 	if(length(avatar_connection_refs) > 1)
-		text += "- **Multiplayer:** + [(length(avatar_connection_refs) - 1) * multiplayer_bonus]\n"
+		text += "- **Множитель:** + [(length(avatar_connection_refs) - 1) * multiplayer_bonus]\n"
 
 	if(domain_threats > 0)
-		text += "- **Threats:** + [domain_threats * 2]\n"
+		text += "- **Угрозы:** + [domain_threats * 2]\n"
 
 	var/servo_rating = servo_bonus
 
 	if(servo_rating > 0.2)
-		text += "- **Components:** + [servo_rating]\n"
+		text += "- **Компоненты:** + [servo_rating]\n"
 
 	text += completion_time
 	text += grade
