@@ -17,6 +17,9 @@
 // Camera
 #include "cameras/code/cameras.dm"
 
+// Disposal
+#include "disposal/code/disposal.dm"
+
 // Extinguisher
 #include "extinguisher/code/extinguisher.dm"
 
