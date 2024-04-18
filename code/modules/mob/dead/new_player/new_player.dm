@@ -175,7 +175,7 @@
 	var/datum/job/job = SSjob.GetJob(rank)
 
 	if(!SSjob.AssignRole(src, job, TRUE))
-		tgui_alert(usr, "Возникла непредвиденная ошибка при выдаче роли выбранную вами. Если вы не можете зайти обратитесь к администрации.")
+		tgui_alert(usr, "Возникла непредвиденная ошибка при выдаче роли, выбранной вами. Если вы не можете зайти, обратитесь к администрации.")
 		return FALSE
 
 	mind.late_joiner = TRUE
