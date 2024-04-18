@@ -28,14 +28,14 @@
 		/obj/item/slime_extract/rainbow = 10)
 
 /datum/experiment/scanning/random/cytology/easy
-	name = "Эксперимент по сканированию цитологии"
+	name = "Эксперимент по скану цитологии"
 	description = "Ученым нужны паразиты для опытов, используйте цитологическое оборудование, чтобы вырастить этих простых тварей!"
 	total_requirement = 3
 	max_requirement_per_type = 2
 	possible_types = list(/mob/living/basic/cockroach, /mob/living/basic/mouse)
 
 /datum/experiment/scanning/random/cytology/medium
-	name = "Усовершенствованный эксперимент по сканированию цитологии"
+	name = "Усовершенствованный эксперимент по скану цитологии"
 	description = "Нам нужно увидеть, как функционирует организм с самых ранних моментов. Некоторые цитологические эксперименты помогут нам понять это."
 	total_requirement = 3
 	max_requirement_per_type = 2
@@ -135,44 +135,44 @@
 	required_gas = /datum/gas/hypernoblium
 
 /datum/experiment/scanning/random/material/meat
-	name = "Эксперимент по сканированию биологических материалов"
+	name = "Эксперимент по скану биологических материалов"
 	description = "Нам говорили, что нельзя сделать стулья из любого материала в мире. Вы здесь, чтобы доказать, что эти скептики ошибались."
 	possible_material_types = list(/datum/material/meat)
 
 /datum/experiment/scanning/random/material/easy
-	name = "Эксперимент по сканированию низкосортных материалов"
+	name = "Эксперимент по скану низкосортных материалов"
 	description = "Материаловедение - это базовое понимание Вселенной и того, как она устроена. Чтобы объяснить это, постройте что-нибудь элементарное, и мы покажем вам, как это сломать."
 	total_requirement = 6
 	possible_types = list(/obj/structure/chair, /obj/structure/toilet, /obj/structure/table)
 	possible_material_types = list(/datum/material/iron, /datum/material/glass)
 
 /datum/experiment/scanning/random/material/medium
-	name = "Эксперимент по сканированию материалов среднего класса"
+	name = "Эксперимент по скану материалов среднего класса"
 	description = "Не все материалы достаточно прочны, чтобы удержать космическую станцию. Посмотрите, например, на эти материалы и определите, что делает их полезными для нашей электроники и оборудования."
 	possible_material_types = list(/datum/material/silver, /datum/material/gold, /datum/material/plastic, /datum/material/titanium)
 
 /datum/experiment/scanning/random/material/medium/one
-	name = "Эксперимент по сканированию материалов среднего класса(1)"
+	name = "Эксперимент по скану материалов среднего класса(1)"
 
 /datum/experiment/scanning/random/material/medium/two
-	name = "Эксперимент по сканированию материалов среднего класса(2)"
+	name = "Эксперимент по скану материалов среднего класса(2)"
 
 /datum/experiment/scanning/random/material/medium/three
-	name = "Эксперимент по сканированию материалов среднего класса(3)"
+	name = "Эксперимент по скану материалов среднего класса(3)"
 
 /datum/experiment/scanning/random/material/hard
-	name = "Эксперимент по сканированию материалов высокого класса"
+	name = "Эксперимент по скану материалов высокого класса"
 	description = "НТ не жалеет средств, чтобы проверить даже самые ценные материалы на их строительные качества. Постройте нам несколько таких экзотических творений и соберите данные."
 	possible_material_types = list(/datum/material/diamond, /datum/material/plasma, /datum/material/uranium)
 
 /datum/experiment/scanning/random/material/hard/one
-	name = "Эксперимент по сканированию высококлассных материалов(1)"
+	name = "Эксперимент по скану высококлассных материалов(1)"
 
 /datum/experiment/scanning/random/material/hard/two
-	name = "Эксперимент по сканированию высококлассных материалов(2)"
+	name = "Эксперимент по скану высококлассных материалов(2)"
 
 /datum/experiment/scanning/random/material/hard/three
-	name = "Эксперимент по сканированию высококлассных материалов(3)"
+	name = "Эксперимент по скану высококлассных материалов(3)"
 
 /datum/experiment/scanning/random/plants/wild
 	name = "Образец мутации дикой биоматерии"
@@ -331,11 +331,11 @@
 
 /// Scan for organs you didn't start the round with
 /datum/experiment/scanning/people/novel_organs
-	name = "Исследование человеческого поля: Дивергентная биология"
+	name = "Исследование людского поля: Дивергентная биология"
 	description = "Нам нужны данные об органической совместимости между видами. Отсканируйте несколько образцов гуманоидных организмов с органами, которых у них обычно нет. \
 		Данные о механических органах нам ни к чему."
 	performance_hint = "Необычные органы могут быть введены вручную путем пересадки, генетической инфузии или очень быстро с помощью эффекта аномалии Биоскрамлер."
-	required_traits_desc = "non-synthetic organs not typical for their species"
+	required_traits_desc = "несинтетические органы, не характерные для их вида"
 	/// Disallow prosthetic organs
 	var/organic_only = TRUE
 
