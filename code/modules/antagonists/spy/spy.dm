@@ -97,7 +97,7 @@
 		if(give_backup)
 			var/datum/action/backup_uplink/backup = new(src)
 			backup.Grant(spy)
-			to_chat(spy, span_boldnotice("Вам не удалось предоставить аплинк, поэтому вам была предоставлена возможность создать его самостоятельно."))
+			to_chat(spy, span_boldnotice("Нам не удалось предоставить вам аплинк, поэтому вам была предоставлена возможность создать его самостоятельно."))
 		return FALSE
 
 	return TRUE
