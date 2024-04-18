@@ -29,6 +29,9 @@
 // Light Switch
 #include "lightswitch/code/lightswitch.dm"
 
+// Lights
+#include "lights/code/lights.dm"
+
 // Lobby Menu
 #include "lobby/code/lobby.dm"
 
