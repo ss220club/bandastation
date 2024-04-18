@@ -5,7 +5,7 @@
 	faction = FACTION_STATION
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "вашими законы"
+	supervisors = "вашими законами"
 	spawn_type = /mob/living/silicon/ai
 	req_admin_notify = TRUE
 	minimal_player_age = 30
