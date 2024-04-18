@@ -8,7 +8,7 @@
 	faction = FACTION_STATION
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "Официальными лицами Нанотрейзен"
+	supervisors = "официальными лицами Нанотрейзен"
 	req_admin_notify = 1
 	minimal_player_age = 14
 	exp_requirements = 180
