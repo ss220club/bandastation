@@ -9,7 +9,7 @@ GLOBAL_LIST_EMPTY(scanned_fish_by_techweb)
 /datum/experiment/scanning/fish
 	name = "Эксперимент по скану рыбы (1)"
 	description = "Эксперимент, требующий сканирования различных видов рыб, чтобы разблокировать настройку "Пляж" для генератора рыболовного портала."
-	performance_hint = "Сканируйте рыбу. Изучите сканер, чтобы просмотреть прогресс. Разблокируйте новые порталы для рыбалки."
+	performance_hint = "Сканируйте рыбу. Осмотрите сканер, чтобы просмотреть прогресс. Разблокируйте новые порталы для рыбалки."
 	allowed_experimentors = list(/obj/item/experi_scanner, /obj/machinery/destructive_scanner, /obj/item/fishing_rod/tech, /obj/item/fish_analyzer)
 	traits = EXPERIMENT_TRAIT_TYPECACHE
 	points_reward = list(TECHWEB_POINT_TYPE_GENERIC = 750)
