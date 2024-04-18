@@ -109,7 +109,7 @@ GLOBAL_LIST_EMPTY(scanned_fish_by_techweb)
 
 /datum/experiment/scanning/fish/fourth
 	name = "Эксперимент по скану рыбы (4)"
-	description = "Эксперимент, требующий много видов рыб, чтобы разблокировать настройку "Гиперпространство" для рыболовного портала."
+	description = "Эксперимент, требующий много видов рыб, чтобы разблокировать настройку \"Гиперпространство\" для рыболовного портала."
 	points_reward = list(TECHWEB_POINT_TYPE_GENERIC = 3250)
 	required_atoms = list(/obj/item/fish = 21)
 	next_experiments = null
