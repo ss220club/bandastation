@@ -38,6 +38,9 @@
 // Lobby Menu
 #include "lobby/code/lobby.dm"
 
+// Radio
+#include "radio/code/radio.dm"
+
 // Walls
 #include "walls/code/walls.dm"
 
