@@ -135,7 +135,7 @@
 		to_chat(user, span_notice("You scan [target]."))
 	else if(!(config_flags & EXPERIMENT_CONFIG_SILENT_FAIL))
 		playsound(user, 'sound/machines/buzz-sigh.ogg', 25)
-		to_chat(user, span_notice("[target] не имеет отношения к выбранному эксперименту."))
+		to_chat(user, span_notice("[target.name] не имеет отношения к выбранному эксперименту."))
 
 /**
  * Hooks on destructive scans to try and run an experiment (When using a handheld handler)
