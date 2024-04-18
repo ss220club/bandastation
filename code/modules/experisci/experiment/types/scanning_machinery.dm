@@ -31,7 +31,7 @@
 
 //This experiment type will turn up TRUE if there is a specific part in the scanned machine
 /datum/experiment/scanning/points/machinery_pinpoint_scan
-	name = "Эксперимент по скану запчастей машинерии"
+	name = "Эксперимент по скану деталей машинерии"
 	description = "Базовый эксперимент для сканирования машин с определенными деталями"
 	exp_tag = "Скан"
 	///Which stock part are we looking for in the machine.
