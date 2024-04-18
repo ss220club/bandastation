@@ -539,27 +539,27 @@ const CargoHelp = (props) => {
         <br />
         <b>9.</b> Нажмите на <i>Proceed</i>.
       </Section>
-      <Section title="Disposals Delivery System">
-        In addition to MULEs and hand-deliveries, you can also make use of the
-        disposals mailing system. Note that a break in the disposal piping could
-        cause your package to be lost (this hardly ever happens), so this is not
-        always the most secure ways to deliver something. You can wrap up a
-        piece of paper and mail it the same way if you (or someone at the desk)
-        wants to mail a letter.
+      <Section title="Система доставки по трубам">
+        В дополнение к MULEам и ручной доставке, вы можете использовать
+        систему доставки по трубам. Обратите внимание, что отправка в трубе
+        может привести к потере посылки (такое происходит нечасто), но это всё ещё не 
+        самый безопасный способ, чтобы что-то доставить. Вы можете упаковать
+        листок бумаги в письмо если вы хотите (или кто-то на стойке)
+        хочеть отправить письмо.
         <br />
-        <b>Using the Disposals Delivery System is even easier:</b>
+        <b>Использование системы доставки по трубам даже проще:</b>
         <br />
-        <b>1.</b> Wrap your item/crate in packaging paper.
+        <b>1.</b> Обмотайте свой предмет/ящик обёрточной бумагой.
         <br />
-        <b>2.</b> Use the destinations tagger to choose where to send it.
+        <b>2.</b> Используйте теггер назначения чтобы выбрать куда доставить его.
         <br />
-        <b>3.</b> Tag the package.
+        <b>3.</b> Пометьте посылку.
         <br />
-        <b>4.</b> Stick it on the conveyor and let the system handle it.
+        <b>4.</b> Положите его на конвейор и дайте системе заняться доставкой.
         <br />
       </Section>
       <NoticeBox textAlign="center" info mb={0}>
-        Pondering something not included here? When in doubt, ask the QM!
+        Нашли что-то, что не указано здесь? В случае сомнений, Спросите квартирмейстера!
       </NoticeBox>
     </>
   );
