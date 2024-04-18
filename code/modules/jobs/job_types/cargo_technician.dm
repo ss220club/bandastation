@@ -2,7 +2,7 @@
 	title = JOB_CARGO_TECHNICIAN
 	description = "Распределяйте заказы между отделами, которые их оформили, \
 		собирайте пустые ящики, загружайте и разгружайте шаттл с заказами, \
-		а также кубы с наградами за поручения."
+		а также кубы с наградами за заказы."
 	department_head = list(JOB_QUARTERMASTER)
 	faction = FACTION_STATION
 	total_positions = 5
