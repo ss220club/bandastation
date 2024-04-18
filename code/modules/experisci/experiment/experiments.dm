@@ -315,7 +315,7 @@
 	required_stock_part = /obj/item/stock_parts/micro_laser/ultra
 
 /datum/experiment/scanning/random/mecha_damage_scan
-	name = "Материалы для Мехов 1: Стресс-тест"
+	name = "Материалы для экзокостюмов 1: стресс-тест"
 	description = "Ваши устройства для изготовления экзокостюмов позволяют быстро производить их в небольших масштабах, но структурная целостность созданных деталей уступает более традиционным средствам."
 	exp_tag = "Scan"
 	possible_types = list(/obj/vehicle/sealed/mecha)
