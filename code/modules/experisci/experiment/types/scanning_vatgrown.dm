@@ -10,5 +10,5 @@
 	return ..() && HAS_TRAIT(target, TRAIT_VATGROWN)
 
 /datum/experiment/scanning/random/cytology/serialize_progress_stage(atom/target, list/seen_instances)
-	return EXPERIMENT_PROG_INT("Скан образцов \a vat-grown [initial(target.name)]", \
+	return EXPERIMENT_PROG_INT("Скан образцов [initial(target.name)], выращенных в лаборатории", \
 		traits & EXPERIMENT_TRAIT_DESTRUCTIVE ? scanned[target] : seen_instances.len, required_atoms[target])
