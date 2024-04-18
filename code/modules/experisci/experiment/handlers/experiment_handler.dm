@@ -97,7 +97,7 @@
 	if ((selected_experiment == null && !(config_flags & EXPERIMENT_CONFIG_ALWAYS_ACTIVE)) || config_flags & EXPERIMENT_CONFIG_SILENT_FAIL)
 		return .
 	playsound(user, 'sound/machines/buzz-sigh.ogg', 25)
-	to_chat(user, span_notice("[target] не имеет отношения к выбранному эксперименту."))
+	to_chat(user, span_notice("[target.name] не имеет отношения к выбранному эксперименту."))
 	return .
 
 /**
