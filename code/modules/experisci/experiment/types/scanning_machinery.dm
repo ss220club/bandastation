@@ -3,7 +3,7 @@
 ///Note that a stock part in a machine can either be an object, or a datum.
 /datum/experiment/scanning/points/machinery_tiered_scan
 	name = "Улучш. эксперимент по скану машинерии"
-	description = "Базовый эксперимент для сканирования техники с обновленными деталями"
+	description = "Базовый эксперимент для сканирования техники с улучшенными деталями"
 	exp_tag = "Скан"
 	///What tier of parts is required for the experiment
 	var/required_tier = 1
