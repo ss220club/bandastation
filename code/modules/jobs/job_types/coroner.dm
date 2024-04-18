@@ -6,7 +6,7 @@
 	faction = FACTION_STATION
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "Главой Персонала, Главным врачом"
+	supervisors = "Главой Персонала, Главным Врачом"
 	exp_granted_type = EXP_TYPE_CREW
 	config_tag = "CORONER"
 
