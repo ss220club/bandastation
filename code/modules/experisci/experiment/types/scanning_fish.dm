@@ -50,7 +50,7 @@ GLOBAL_LIST_EMPTY(scanned_fish_by_techweb)
 
 /datum/experiment/scanning/fish/proc/on_handler_examine(datum/source, mob/user, list/examine_list)
 	SIGNAL_HANDLER
-	examine_list += span_notice("Изучите еще раз, чтобы просмотреть все виды рыб, отсканированные на данный момент.")
+	examine_list += span_notice("Осмотрите еще раз, чтобы просмотреть все виды рыб, отсканированные на данный момент.")
 
 /datum/experiment/scanning/fish/proc/on_handler_examine_more(datum/source, mob/user, list/examine_list)
 	SIGNAL_HANDLER
