@@ -79,7 +79,7 @@ GLOBAL_LIST_EMPTY(scanned_fish_by_techweb)
 
 /datum/experiment/scanning/fish/second
 	name = "Эксперимент по скану рыбы (2)"
-	description = "Эксперимент, требующий отсканировать больше видов рыб, чтобы разблокировать настройку "Бездна" для рыболовного портала."
+	description = "Эксперимент, требующий отсканировать больше видов рыб, чтобы разблокировать настройку \"Бездна\" для рыболовного портала."
 	points_reward = list(TECHWEB_POINT_TYPE_GENERIC = 1500)
 	required_atoms = list(/obj/item/fish = 8)
 	next_experiments = list(/datum/experiment/scanning/fish/third)
