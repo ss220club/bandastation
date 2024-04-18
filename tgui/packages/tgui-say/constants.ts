@@ -33,7 +33,7 @@ export const RADIO_PREFIXES = {
   // BANDASTATION ADDITION START
   ':ф ': 'Рой',
   ':и ': 'вв',
-  ':с ': 'Комм',
+  ':с ': 'Ком',
   ':у ': 'Инж',
   ':п ': 'Ген',
   ':ь ': 'Мед',
