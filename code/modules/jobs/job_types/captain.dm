@@ -1,6 +1,6 @@
 /datum/job/captain
 	title = JOB_CAPTAIN
-	description = "Вы ответственны за станцию, руководите главами, \
+	description = "Будьте ответственны за станцию, руководите главами, \
 		сохраните жизнь экипажу, будьте готовы сделать всё возможное или умрите \
 		в муках, пытаясь это сделать."
 	auto_deadmin_role_flags = DEADMIN_POSITION_HEAD|DEADMIN_POSITION_SECURITY
