@@ -1,7 +1,7 @@
 /datum/job/station_engineer
 	title = JOB_STATION_ENGINEER
-	description = "Start the Supermatter, wire the solars, repair station hull \
-		and wiring damage."
+	description = "Запускайте двигатель Суперматерии, чините солнечные панели, чините обшивку станции \
+		и поврежденную технику."
 	department_head = list(JOB_CHIEF_ENGINEER)
 	faction = FACTION_STATION
 	total_positions = 5
