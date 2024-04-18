@@ -120,7 +120,7 @@
 		if(JOB_UNAVAILABLE_SLOTFULL)
 			return "[jobtitle] уже заполнена до максимума."
 		if(JOB_UNAVAILABLE_ANTAG_INCOMPAT)
-			return "[jobtitle] не совместима с некоторыми ролями антагонистов выбранные вами."
+			return "[jobtitle] несовместим с некоторыми выбранными вами ролями антагонистов.
 		if(JOB_UNAVAILABLE_AGE)
 			return "Ваш персонаж недостаточно стар для игры за [jobtitle]."
 
