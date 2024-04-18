@@ -52,7 +52,7 @@
 	name = "Продвинутое цитологическое сканирование - эксперимент первый"
 
 /datum/experiment/scanning/random/cytology/medium/two
-	name = "Продвинутое цитологическое сканирование - Эксперимент второй"
+	name = "Продвинутое цитологическое сканирование - эксперимент второй"
 
 /datum/experiment/scanning/random/janitor_trash
 	name = "Гигиеническая проверка станции"
