@@ -1,6 +1,6 @@
 /datum/job/botanist
 	title = JOB_BOTANIST
-	description = "Выращивайте растения для повара, медицины, и отдыха."
+	description = "Выращивайте растения для повара, медицины и отдыха."
 	department_head = list(JOB_HEAD_OF_PERSONNEL)
 	faction = FACTION_STATION
 	total_positions = 3
