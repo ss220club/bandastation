@@ -1,6 +1,6 @@
 /datum/job/bridge_assistant
 	title = JOB_BRIDGE_ASSISTANT
-	description = "Наблюдайте за мостиком, управляйте консолями на нем и проводите дни, варя кофе для вышестоящих лиц."
+	description = "Следите за мостиком, управляйте консолями на нем и проводите дни, варя кофе для вышестоящих лиц."
 	auto_deadmin_role_flags = DEADMIN_POSITION_HEAD //not really a head but close enough
 	department_head = list(JOB_CAPTAIN)
 	faction = FACTION_STATION
