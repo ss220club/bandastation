@@ -49,7 +49,7 @@
 	)
 
 /datum/experiment/scanning/random/cytology/medium/one
-	name = "Продвинутое цитологическое сканирование - Эксперимент первый"
+	name = "Продвинутое цитологическое сканирование - эксперимент первый"
 
 /datum/experiment/scanning/random/cytology/medium/two
 	name = "Продвинутое цитологическое сканирование - Эксперимент второй"
