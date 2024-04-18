@@ -19,9 +19,6 @@
 /obj/item/nuclear_challenge
     icon = 'modular_bandastation/aesthetics/radio/icons/radio.dmi'
 
-/obj/item/assault_pod
-    icon = 'modular_bandastation/aesthetics/radio/icons/radio.dmi'
-
 /obj/item/beacon
     icon = 'modular_bandastation/aesthetics/radio/icons/radio.dmi'
 
