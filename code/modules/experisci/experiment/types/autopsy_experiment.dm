@@ -1,7 +1,7 @@
 /datum/experiment/autopsy
 	name = "Эксперимент по вскрытию"
 	description = "Эксперимент, для продолжения которого требуется операция вскрытия."
-	exp_tag = "Аутопсия"
+	exp_tag = "Вскрытие"
 	performance_hint = "Проведите операцию вскрытия, подключившись к операционному компьютеру."
 
 /datum/experiment/autopsy/is_complete()
