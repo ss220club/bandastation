@@ -56,7 +56,7 @@
 
 /datum/experiment/scanning/random/janitor_trash
 	name = "Гигиеническая проверка станции"
-	description = "Чтобы научиться чистить, мы должны сначала узнать, что такое грязь. Нам нужно, чтобы вы просканировали некоторые загрязнения на станции."
+	description = "Чтобы научиться чистить, мы должны сначала узнать, что такое грязь. Нам нужно, чтобы вы просканировали несколько загрязнений на станции."
 	possible_types = list(/obj/effect/decal/cleanable/vomit,
 	/obj/effect/decal/cleanable/blood)
 	total_requirement = 3
