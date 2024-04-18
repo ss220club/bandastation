@@ -6,7 +6,7 @@
 	faction = FACTION_STATION
 	total_positions = 0
 	spawn_positions = 0
-	supervisors = "Капитаном, Директором Исследований и вашим сводом законов "
+	supervisors = "Капитаном, Директором Исследований и вашим сводом законов"
 	minimal_player_age = 7
 	exp_requirements = 180
 	exp_required_type = EXP_TYPE_CREW
