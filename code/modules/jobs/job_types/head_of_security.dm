@@ -1,6 +1,6 @@
 /datum/job/head_of_security
 	title = JOB_HEAD_OF_SECURITY
-	description = "Руководите отделом службы безопасности, убедитесь, что они неподкупны, \
+	description = "Руководите отделом службы безопасности, убедитесь в их неподкупности, \
 		следите за тем, чтобы все отделы охраняются."
 	auto_deadmin_role_flags = DEADMIN_POSITION_HEAD|DEADMIN_POSITION_SECURITY
 	department_head = list(JOB_CAPTAIN)
