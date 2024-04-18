@@ -33,7 +33,7 @@
 
 /datum/experiment/autopsy/xenomorph
 	name = "Эксперимент по вскрытию ксеноморфа"
-	description = "Наше представление о ксеноморфе лишь поверхностное. Пришлите нам исследования, полученные при препарировании ксеноморфа."
+	description = "Наше представление о ксеноморфах лишь поверхностное. Пришлите нам исследования, полученные при препарировании ксеноморфа."
 
 /datum/experiment/autopsy/xenomorph/is_valid_autopsy(mob/target)
 	return isalien(target)
