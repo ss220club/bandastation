@@ -95,7 +95,7 @@ GLOBAL_LIST_EMPTY(scanned_fish_by_techweb)
 
 /datum/experiment/scanning/fish/holographic
 	name = "Эксперимент по скану голорыбы"
-	description = "Чтобы разблокировать настройку "Рандомизатор" для рыболовного портала, потребуется голографическая рыба."
+	description = "Чтобы разблокировать настройку \"Рандомизатор\" для рыболовного портала, потребуется голографическая рыба."
 	performance_hint = "Загрузите шаблон "Пляж" на Голодэке, чтобы половить голорыбу."
 	points_reward = list(TECHWEB_POINT_TYPE_GENERIC = 500)
 	required_atoms = list(/obj/item/fish/holo = 4)
