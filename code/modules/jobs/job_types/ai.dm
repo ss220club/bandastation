@@ -83,4 +83,4 @@
 	return CONFIG_GET(flag/allow_ai)
 
 /datum/job/ai/get_radio_information()
-	return "<b>Для коммуникации используйте префикс :b, чтобы общаться с киборагми и другими ИИ.</b>"
+	return "<b>Для коммуникации с киборгами и другими ИИ используйте префикс :b.</b>"
