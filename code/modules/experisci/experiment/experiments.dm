@@ -119,7 +119,7 @@
 	required_gas = /datum/gas/nitrous_oxide
 
 /datum/experiment/ordnance/gaseous/bz
-	name = "BZ-газовые гильзы"
+	name = "BZ-снаряды"
 	description = "Доставка газа BZ в район проведения операции может оказаться полезной. Упакуйте указанный газ в резервуар и взорвите его с помощью компрессора для резервуаров. Опубликуйте данные в отчёте."
 	gain = list(10,30,60)
 	target_amount = list(50,125,400)
@@ -127,8 +127,8 @@
 	required_gas = /datum/gas/bz
 
 /datum/experiment/ordnance/gaseous/noblium
-	name = "Гиперноблиевые гильзы"
-	description = "Доставка Гиперноблиума в район проведения операции может оказаться полезной. Упакуйте указанный газ в баллон и взорвите его с помощью компрессора для баллонов. Опубликуйте данные в отчёте."
+	name = "Гиперноблиевые снаряды"
+	description = "Доставка гиперноблиума в район проведения операции может оказаться полезной. Упакуйте указанный газ в баллон и взорвите его с помощью компрессора для баллонов. Опубликуйте данные в отчёте."
 	gain = list(10,40,80)
 	target_amount = list(15,55,250)
 	experiment_proper = TRUE
@@ -152,13 +152,13 @@
 	possible_material_types = list(/datum/material/silver, /datum/material/gold, /datum/material/plastic, /datum/material/titanium)
 
 /datum/experiment/scanning/random/material/medium/one
-	name = "Эксперимент по скану материалов среднего класса(1)"
+	name = "Эксперимент по скану материалов среднего класса (1)"
 
 /datum/experiment/scanning/random/material/medium/two
-	name = "Эксперимент по скану материалов среднего класса(2)"
+	name = "Эксперимент по скану материалов среднего класса (2)"
 
 /datum/experiment/scanning/random/material/medium/three
-	name = "Эксперимент по скану материалов среднего класса(3)"
+	name = "Эксперимент по скану материалов среднего класса (3)"
 
 /datum/experiment/scanning/random/material/hard
 	name = "Эксперимент по скану материалов высокого класса"
@@ -166,13 +166,13 @@
 	possible_material_types = list(/datum/material/diamond, /datum/material/plasma, /datum/material/uranium)
 
 /datum/experiment/scanning/random/material/hard/one
-	name = "Эксперимент по скану высококлассных материалов(1)"
+	name = "Эксперимент по скану высококлассных материалов (1)"
 
 /datum/experiment/scanning/random/material/hard/two
-	name = "Эксперимент по скану высококлассных материалов(2)"
+	name = "Эксперимент по скану высококлассных материалов (2)"
 
 /datum/experiment/scanning/random/material/hard/three
-	name = "Эксперимент по скану высококлассных материалов(3)"
+	name = "Эксперимент по скану высококлассных материалов (3)"
 
 /datum/experiment/scanning/random/plants/wild
 	name = "Образец мутации дикой биоматерии"
