@@ -306,7 +306,7 @@
 /// Returns information pertaining to this job's radio.
 /datum/job/proc/get_radio_information()
 	if(job_flags & JOB_CREW_MEMBER)
-		return "<b>Для общения в радиоканале вашего департамента используйте префикс :h. Чтобы узнать все доступные каналы осмотрите наушник.</b>"
+		return "<b>Для общения в радиоканале вашего отдела используйте префикс :h. Чтобы узнать все доступные каналы осмотрите наушник.</b>"
 
 /datum/outfit/job
 	name = "Standard Gear"
