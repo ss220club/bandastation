@@ -22,7 +22,7 @@
 	return completed 
 		
 /datum/experiment/ordnance/check_progress()
-	var/status_message = "Вы должны опубликовать отчёт о [name] с помощью приложения NT Frontier"
+	var/status_message = "Вы должны опубликовать отчёт по \"[name]\" с помощью приложения NT Frontier"
 	. += EXPERIMENT_PROG_BOOL(status_message, is_complete())
 
 /datum/experiment/ordnance/actionable(datum/component/experiment_handler/experiment_handler)
