@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import { useBackend } from '../../backend';
 import {
+  BlockQuote,
   Button,
   Dropdown,
   Icon,
@@ -14,7 +15,7 @@ import {
 import { PreferencesMenuData } from './data';
 
 const donatorTiers = {
-  0: 'Бесплатные',
+  0: 'Free',
   1: 'Tier I',
   2: 'Tier II',
   3: 'Tier III',
@@ -126,7 +127,6 @@ export const VoicePage = (props) => {
     <Dropdown
       options={phrases}
       selected={selectedPhrase.replace(/(.{60})..+/, '$1...')}
-      width="445px"
       onSelected={(value) => setSelectedPhrase(value)}
     />
   );
@@ -192,6 +192,7 @@ export const VoicePage = (props) => {
         </Table.Cell>
         <Table.Cell
           bold
+          collapsing
           textColor={
             seed.donator_level > 0 && tts_seed !== seed.name
               ? 'orange'
@@ -201,7 +202,6 @@ export const VoicePage = (props) => {
           {seed.name}
         </Table.Cell>
         <Table.Cell
-          collapsing
           opacity={tts_seed === seed.name ? 0.5 : 0.25}
           textAlign="left"
         >
@@ -235,57 +235,77 @@ export const VoicePage = (props) => {
   });
 
   return (
-    <Stack fill vertical>
-      <Stack.Item>
-        <Section fill title="Фильтры">
-          <LabeledList>
-            <LabeledList.Item label="Провайдеры">
-              {providerCheckboxes}
-            </LabeledList.Item>
-            <LabeledList.Item label="Пол">
-              {genderesCheckboxes}
-            </LabeledList.Item>
-            <LabeledList.Item label="Уровень подписки">
-              {donatorLevelsCheckboxes}
-            </LabeledList.Item>
-            <LabeledList.Item label="Фраза">{phrasesSelect}</LabeledList.Item>
-            <LabeledList.Item label="Поиск">{searchBar}</LabeledList.Item>
-          </LabeledList>
-        </Section>
+    <Stack fill>
+      <Stack.Item basis={'40%'}>
+        <Stack fill vertical>
+          <Stack.Item>
+            <Section title="Фильтры">
+              <LabeledList>
+                <LabeledList.Item label="Провайдеры">
+                  {providerCheckboxes}
+                </LabeledList.Item>
+                <LabeledList.Item label="Пол">
+                  {genderesCheckboxes}
+                </LabeledList.Item>
+                <LabeledList.Item label="Тир">
+                  {donatorLevelsCheckboxes}
+                </LabeledList.Item>
+                <LabeledList.Item label="Фраза">
+                  {phrasesSelect}
+                </LabeledList.Item>
+                <LabeledList.Item label="Поиск">{searchBar}</LabeledList.Item>
+              </LabeledList>
+            </Section>
+          </Stack.Item>
+          <Stack.Item grow>
+            <Section
+              fill
+              scrollable
+              title="Категории"
+              buttons={
+                <>
+                  <Button
+                    icon="times"
+                    content="Убрать всё"
+                    disabled={selectedCategories.length === 0}
+                    onClick={() => setSelectedCategories([])}
+                  />
+                  <Button
+                    icon="check"
+                    content="Выбрать всё"
+                    disabled={selectedCategories.length === categories.length}
+                    onClick={() => setSelectedCategories(categories)}
+                  />
+                </>
+              }
+            >
+              {categoriesCheckboxes}
+            </Section>
+          </Stack.Item>
+          <Stack.Item>
+            <Section>
+              <BlockQuote>
+                <Stack.Item>
+                  {`Для поддержания и развития сообщества в условиях растущих расходов часть голосов пришлось сделать доступными только за материальную поддержку сообщества.`}
+                </Stack.Item>
+                <Stack.Item mt={1} italic>
+                  {`Подробнее об этом можно узнать в нашем Discord-сообществе.`}
+                </Stack.Item>
+              </BlockQuote>
+            </Section>
+          </Stack.Item>
+        </Stack>
       </Stack.Item>
-      <Stack.Item height={'150px'}>
-        <Section
-          fill
-          scrollable
-          title="Категории"
-          buttons={
-            <>
-              <Button
-                icon="times"
-                content="Убрать всё"
-                disabled={selectedCategories.length === 0}
-                onClick={() => setSelectedCategories([])}
-              />
-              <Button
-                icon="check"
-                content="Выбрать всё"
-                disabled={selectedCategories.length === categories.length}
-                onClick={() => setSelectedCategories(categories)}
-              />
-            </>
-          }
-        >
-          {categoriesCheckboxes}
-        </Section>
-      </Stack.Item>
-      <Stack.Item height={'295px'}>
-        <Section
-          fill
-          scrollable
-          title={`Голоса (${availableSeeds.length}/${seeds.length})`}
-        >
-          <Table>{seedsRow}</Table>
-        </Section>
+      <Stack.Item grow>
+        <Stack fill vertical>
+          <Section
+            fill
+            scrollable
+            title={`Голоса (${availableSeeds.length}/${seeds.length})`}
+          >
+            <Table>{seedsRow}</Table>
+          </Section>
+        </Stack>
       </Stack.Item>
     </Stack>
   );
