@@ -76,7 +76,7 @@
 /datum/job/ai/announce_job(mob/living/joining_mob)
 	. = ..()
 	if(SSticker.HasRoundStarted())
-		minor_announce("[joining_mob] был загружен в пустое ядро ИИ с блюспейс сетью по адресу [AREACOORD(joining_mob)].")
+		minor_announce("[joining_mob] был загружен в пустое ядро ИИ с блюспейс сетью в [AREACOORD(joining_mob)].")
 
 
 /datum/job/ai/config_check()
