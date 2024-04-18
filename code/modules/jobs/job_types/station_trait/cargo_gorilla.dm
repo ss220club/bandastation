@@ -46,5 +46,5 @@
 	spawned.put_in_hands(gorilla_id, del_on_fail = TRUE)
 
 	to_chat(spawned, span_boldnotice("Вы Каргорила, дружелюбный член станции и грузоперевозчик."))
-	to_chat(spawned, span_notice("Вы можете поднимать ящики кликая на них, и класть их на пол кликая по нему."))
+	to_chat(spawned, span_notice("Вы можете поднимать ящики, кликая на них, и класть их на пол, кликая по нему."))
 	spawned.mind.special_role = "Cargorilla"
