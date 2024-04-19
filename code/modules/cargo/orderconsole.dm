@@ -35,7 +35,7 @@
 	///The account this console processes and displays. Independent from the account the shuttle processes.
 	var/cargo_account = ACCOUNT_CAR
 	///Interface name for the ui_interact call for different subtypes.
-	var/interface_type = "Карго"
+	var/interface_type = "Cargo"
 
 /obj/machinery/computer/cargo/request
 	name = "supply request console"

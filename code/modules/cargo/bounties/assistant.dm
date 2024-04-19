@@ -21,54 +21,54 @@
 	)
 
 /datum/bounty/item/assistant/stunprod
-	name = "Stunprod"
-	description = "CentCom demands a stunprod to use against dissidents. Craft one, then ship it."
+	name = "Оглущающая палка"
+	description = "ЦентКому требуется оглущающая палка против диссидентов. Создайте одну, затем отправьте."
 	reward = CARGO_CRATE_VALUE * 2.6
 	wanted_types = list(/obj/item/melee/baton/security/cattleprod = TRUE)
 
 /datum/bounty/item/assistant/soap
-	name = "Soap"
-	description = "Soap has gone missing from CentCom's bathrooms and nobody knows who took it. Replace it and be the hero CentCom needs."
+	name = "Мыло"
+	description = "Мыло пропало из всех ванных на ЦентКоме и никто не знает кто его взял. Замените его и станьте героем, что нужен ЦентКому."
 	reward = CARGO_CRATE_VALUE * 4
 	required_count = 3
 	wanted_types = list(/obj/item/soap = TRUE)
 
 /datum/bounty/item/assistant/spear
-	name = "Spears"
-	description = "CentCom's security forces are going through budget cuts. You will be paid if you ship a set of spears."
+	name = "Копья"
+	description = "Силы безопасности на ЦентКоме проходят сокращение бюджета. Вам заплатят, если вы отправите набор копей."
 	reward = CARGO_CRATE_VALUE * 4
 	required_count = 5
 	wanted_types = list(/obj/item/spear = TRUE)
 
 /datum/bounty/item/assistant/toolbox
-	name = "Toolboxes"
-	description = "There's an absence of robustness at Central Command. Hurry up and ship some toolboxes as a solution."
+	name = "Тулбоксы"
+	description = "На ЦентКоме отсутствует робаст. Поторопитесь и отправьте несколько тулбоксов для решения проблемы."
 	reward = CARGO_CRATE_VALUE * 4
 	required_count = 6
 	wanted_types = list(/obj/item/storage/toolbox = TRUE)
 
 /datum/bounty/item/assistant/statue
-	name = "Statue"
-	description = "Central Command would like to commision an artsy statue for the lobby. Ship one out, when possible."
+	name = "Статуя"
+	description = "Центральное Командование хотело бы вычурную статую для лобби. Отправьте одну, когда это будет возможно."
 	reward = CARGO_CRATE_VALUE * 4
 	wanted_types = list(/obj/structure/statue = TRUE)
 
 /datum/bounty/item/assistant/clown_box
-	name = "Clown Box"
-	description = "The universe needs laughter. Stamp cardboard with a clown stamp and ship it out."
+	name = "Коробка клоуна"
+	description = "Вселенная нуждается в смехе. Поставьте штамп на картонке при помощи печати клоуна и отправьте."
 	reward = CARGO_CRATE_VALUE * 3
 	wanted_types = list(/obj/item/storage/box/clown = TRUE)
 
 /datum/bounty/item/assistant/cheesiehonkers
-	name = "Cheesie Honkers"
-	description = "Apparently the company that makes Cheesie Honkers is going out of business soon. CentCom wants to stock up before it happens!"
+	name = "Сырные хонкеры"
+	description = "Видимо, компания, что производит сырные хонкеры скоро разорится. ЦентКом хочет запастись ими, пока это не случилось!"
 	reward = CARGO_CRATE_VALUE * 2.4
 	required_count = 3
 	wanted_types = list(/obj/item/food/cheesiehonkers = TRUE)
 
 /datum/bounty/item/assistant/baseball_bat
-	name = "Baseball Bat"
-	description = "Baseball fever is going on at CentCom! Be a dear and ship them some baseball bats, so that management can live out their childhood dream."
+	name = "Бейсбольная бита"
+	description = "Бейсбольная лихорадка происходит на ЦентКоме! Будьте добры отправить нам несколько бесйбольных бит, чтобы начальство смогло осуществить их детскую мечту."
 	reward = CARGO_CRATE_VALUE * 4
 	required_count = 5
 	wanted_types = list(/obj/item/melee/baseball_bat = TRUE)

@@ -13,8 +13,8 @@ export const CivCargoHoldTerminal = (props) => {
   const { act, data } = useBackend();
   const { pad, sending, status_report, id_inserted, id_bounty_info, picking } =
     data;
-  const in_text = 'Welcome valued employee.';
-  const out_text = 'To begin, insert your ID into the console.';
+  const in_text = 'Приветствуем, многоуважаемый сотрудник.';
+  const out_text = 'Чтобы начать, вставьте ID карту в консоль.';
   return (
     <Window width={580} height={375}>
       <Window.Content scrollable>
@@ -29,13 +29,13 @@ export const CivCargoHoldTerminal = (props) => {
                 <>
                   <Button
                     icon={'sync'}
-                    tooltip={'Check Contents'}
+                    tooltip={'Проверить содержимое'}
                     disabled={!pad || !id_inserted}
                     onClick={() => act('recalc')}
                   />
                   <Button
                     icon={sending ? 'times' : 'arrow-up'}
-                    tooltip={sending ? 'Stop Sending' : 'Send Goods'}
+                    tooltip={sending ? 'Остановить отправку' : 'Отправить товары'}
                     selected={sending}
                     disabled={!pad || !id_inserted}
                     onClick={() => act(sending ? 'stop' : 'send')}
@@ -43,13 +43,13 @@ export const CivCargoHoldTerminal = (props) => {
                   <Button
                     icon={id_bounty_info ? 'recycle' : 'pen'}
                     color={id_bounty_info ? 'green' : 'default'}
-                    tooltip={id_bounty_info ? 'Replace Bounty' : 'New Bounty'}
+                    tooltip={id_bounty_info ? 'Заменить баунти' : 'Новый баунти'}
                     disabled={!id_inserted}
                     onClick={() => act('bounty')}
                   />
                   <Button
                     icon={'download'}
-                    content={'Eject ID'}
+                    content={'Извлечь ID карту'}
                     disabled={!id_inserted}
                     onClick={() => act('eject')}
                   />
@@ -57,10 +57,10 @@ export const CivCargoHoldTerminal = (props) => {
               }
             >
               <LabeledList>
-                <LabeledList.Item label="Status" color={pad ? 'good' : 'bad'}>
-                  {pad ? 'Online' : 'Not Found'}
+                <LabeledList.Item label="Статус" color={pad ? 'good' : 'bad'}>
+                  {pad ? 'Онлайн' : 'Не обнаружен'}
                 </LabeledList.Item>
-                <LabeledList.Item label="Cargo Report">
+                <LabeledList.Item label="Грузовой отчёт">
                   {status_report}
                 </LabeledList.Item>
               </LabeledList>
@@ -76,17 +76,17 @@ export const CivCargoHoldTerminal = (props) => {
 const BountyTextBox = (props) => {
   const { data } = useBackend();
   const { id_bounty_info, id_bounty_value, id_bounty_num } = data;
-  const na_text = 'N/A, please add a new bounty.';
+  const na_text = 'N/A, пожалуйста добавьте новый баунти.';
   return (
-    <Section title="Bounty Info">
+    <Section title="Информация о баунти">
       <LabeledList>
-        <LabeledList.Item label="Description">
+        <LabeledList.Item label="Описание">
           {id_bounty_info ? id_bounty_info : na_text}
         </LabeledList.Item>
-        <LabeledList.Item label="Quantity">
+        <LabeledList.Item label="Количество">
           {id_bounty_info ? id_bounty_num : 'N/A'}
         </LabeledList.Item>
-        <LabeledList.Item label="Value">
+        <LabeledList.Item label="Стоимость">
           {id_bounty_info ? id_bounty_value : 'N/A'}
         </LabeledList.Item>
       </LabeledList>
@@ -98,7 +98,7 @@ const BountyPickBox = (props) => {
   const { act, data } = useBackend();
   const { id_bounty_names, id_bounty_values } = data;
   return (
-    <Section title="Please Select a Bounty:" textAlign="center">
+    <Section title="Пожалуйста выберите баунти:" textAlign="center">
       <Flex width="100%" wrap>
         <Flex.Item shrink={0} grow={0.5}>
           <Button
@@ -107,7 +107,7 @@ const BountyPickBox = (props) => {
             content={id_bounty_names[0]}
             onClick={() => act('pick', { value: 1 })}
           >
-            <Box fontSize="14px">Payout: {id_bounty_values[0]} cr</Box>
+            <Box fontSize="14px">Оплата: {id_bounty_values[0]} cr</Box>
           </Button>
         </Flex.Item>
         <Flex.Item shrink={0} grow={0.5} px={1}>
@@ -117,7 +117,7 @@ const BountyPickBox = (props) => {
             content={id_bounty_names[1]}
             onClick={() => act('pick', { value: 2 })}
           >
-            <Box fontSize="14px">Payout: {id_bounty_values[1]} cr</Box>
+            <Box fontSize="14px">Оплата: {id_bounty_values[1]} cr</Box>
           </Button>
         </Flex.Item>
         <Flex.Item shrink={0} grow={0.5}>
@@ -127,7 +127,7 @@ const BountyPickBox = (props) => {
             content={id_bounty_names[2]}
             onClick={() => act('pick', { value: 3 })}
           >
-            <Box fontSize="14px">Payout: {id_bounty_values[2]} cr</Box>
+            <Box fontSize="14px">Оплата: {id_bounty_values[2]} cr</Box>
           </Button>
         </Flex.Item>
       </Flex>
