@@ -25,7 +25,7 @@
 /datum/computer_file/program/records/security
 	filedesc = "Security Records"
 	filename = "secrecords"
-	extended_desc = "Позволяет пользователю просмотреть журнал службы безопасности"
+	extended_desc = "Позволяет пользователю просмотреть некоторые основные охранные записи экипажа"
 	download_access = list(ACCESS_SECURITY, ACCESS_FLAG_COMMAND)
 	program_flags = PROGRAM_ON_NTNET_STORE
 	mode = "security"
