@@ -33,7 +33,7 @@
 		return FALSE
 
 	priority_announce("Hostile runtimes detected in all station systems, please deactivate your AI to prevent possible damage to its morality core.", \
-		"Оповещение об аномалии", ANNOUNCER_AIMALF, players = list(hallucinator))
+		"ВНИМАНИЕ: Обнаружена аномалия", ANNOUNCER_AIMALF, players = list(hallucinator))
 	return ..()
 
 /datum/hallucination/station_message/heretic
