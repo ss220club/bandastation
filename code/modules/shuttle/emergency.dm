@@ -484,8 +484,8 @@
 				setTimer(SSshuttle.emergency_dock_time)
 				send2adminchat("Server", "The Emergency Shuttle has docked with the station.")
 				priority_announce(
-					text = "[SSshuttle.emergency] has docked with the station. You have [DisplayTimeText(SSshuttle.emergency_dock_time)] to board the emergency shuttle.",
-					title = "Emergency Shuttle Arrival",
+					text = "[SSshuttle.emergency] совершил стыковку со станцией. У вас есть [DisplayTimeText(SSshuttle.emergency_dock_time)], чтобы добраться до эвакуационного шаттла.",
+					title = "Прибытие эвакуационного шаттла",
 					sound = ANNOUNCER_SHUTTLEDOCK,
 					sender_override = "Система оповещения эвакуационного шаттла",
 					color_override = "orange",
