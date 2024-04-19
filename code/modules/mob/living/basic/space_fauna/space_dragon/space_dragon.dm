@@ -45,7 +45,7 @@
 	maptext_width = 64
 	mouse_opacity = MOUSE_OPACITY_ICON
 	death_sound = 'sound/creatures/space_dragon_roar.ogg'
-	death_message = "визжит в агонии, рухнув на пол, его жизнь угасла."
+	death_message = "вопя в агонии, он рушится на пол, теперь его жизнь угасла."
 	butcher_results = list(/obj/item/stack/ore/diamond = 5, /obj/item/stack/sheet/sinew = 5, /obj/item/stack/sheet/bone = 30)
 	can_buckle_to = FALSE
 
@@ -160,7 +160,7 @@
 
 /// Try putting something inside us
 /mob/living/basic/space_dragon/proc/try_eat(mob/living/food)
-	balloon_alert(src, "проглатываем...")
+	balloon_alert(src, "пожираем...")
 	if (do_after(src, 3 SECONDS, target = food))
 		eat(food)
 
@@ -170,7 +170,7 @@
 	if (QDELETED(food) || food.loc == src)
 		return FALSE
 	playsound(src, 'sound/magic/demon_attack1.ogg', 60, TRUE)
-	visible_message(span_boldwarning("[src] проглатывает [food] целиком!"))
+	visible_message(span_boldwarning("[src] поглощает [food] целиком!"))
 	food.extinguish_mob() // It's wet in there, and our food is likely to be on fire. Let's be decent and not husk them.
 	food.forceMove(src)
 	return TRUE
@@ -192,7 +192,7 @@
 		return
 	new /obj/effect/decal/cleanable/vomit(loc)
 	playsound(src, 'sound/effects/splat.ogg', vol = 50, vary = TRUE)
-	visible_message(span_danger("[src] выблевывает [eaten]!"))
+	visible_message(span_danger("[src] срыгивает [eaten]!"))
 	eaten.forceMove(loc)
 	eaten.Paralyze(5 SECONDS)
 

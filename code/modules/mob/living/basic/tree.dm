@@ -1,6 +1,6 @@
 /mob/living/basic/tree
 	name = "pine tree"
-	desc = "Разозленное древоподобное существо. Кажется, оно не любит праздники..."
+	desc = "Обозленное древоподобное существо. Кажется, оно не любит праздники..."
 	icon = 'icons/obj/fluff/flora/pinetrees.dmi'
 	icon_state = "pine_1"
 	icon_living = "pine_1"

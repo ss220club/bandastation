@@ -180,8 +180,8 @@
 	permanant_empower()
 	var/datum/objective/summon_carp/main_objective = locate() in objectives
 	main_objective?.completed = TRUE
-	priority_announce("Огромное количество форм жизни надвигается в сторону [station_name()] с огромной скоростью. \
-		Живому экипажу необходимо эвакуироваться как можно скорее.", "[command_name()]: Отдел Изучения Дикой Природы", has_important_message = TRUE)
+	priority_announce("Огромное количество форм жизни надвигается в сторону [station_name()] с невероятной скоростью. \
+		Оставшемуся экипажу необходимо эвакуироваться как можно скорее.", "[command_name()]: Отдел Изучения Дикой Природы", has_important_message = TRUE)
 	sound_to_playing_players('sound/creatures/space_dragon_roar.ogg', volume = 75)
 	for(var/obj/structure/carp_rift/rift as anything in rift_list)
 		rift.carp_stored = 999999

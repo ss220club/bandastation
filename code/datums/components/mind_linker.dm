@@ -131,7 +131,7 @@
 
 	if(isliving(source))
 		var/mob/living/owner = source
-		to_chat(owner, span_boldwarning("Ваша связь, [network_name], сломалась!"))
+		to_chat(owner, span_boldwarning("Ваша [network_name] сломалась!"))
 
 	qdel(src)
 
@@ -215,7 +215,7 @@
 // Used in mind linker to talk to everyone in the network.
 /datum/action/innate/linked_speech
 	name = "Mind Link Speech"
-	desc = "Отправьте мысленное сообщение всем, кто соединен вашей связью."
+	desc = "Отправьте мысленное сообщение всем, кто с вами связан."
 	button_icon_state = "link_speech"
 	button_icon = 'icons/mob/actions/actions_slime.dmi'
 	background_icon_state = "bg_alien"
@@ -230,7 +230,7 @@
 
 	var/datum/component/mind_linker/linker = Target
 	name = "[linker.network_name] Speech"
-	desc = "Отправьте мысленное сообщение всем, кто соединен с помощью [linker.network_name]."
+	desc = "Отправьте мысленное сообщение всем, кто соединен с вашей [linker.network_name]."
 	button_icon = linker.speech_action_icon
 	button_icon_state = linker.speech_action_icon_state
 	background_icon_state = linker.speech_action_background_icon_state
@@ -248,7 +248,7 @@
 		return
 
 	if(QDELETED(linker))
-		to_chat(owner, span_warning("Связь, видимо, была уничтожена."))
+		to_chat(owner, span_warning("Связь, видимо, была разорвана."))
 		return
 
 	var/formatted_message = "<i><font color=[linker.chat_color]>\[[linker_parent.real_name]'s [linker.network_name]\] <b>[owner]:</b> [message]</font></i>"

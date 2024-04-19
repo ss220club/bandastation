@@ -12,7 +12,7 @@
  */
 /mob/living/basic/carp
 	name = "space carp"
-	desc = "Свирепое, клыкастое существо, внешне схожее на рыбу."
+	desc = "Свирепое, клыкастое существо, внешне схожее с рыбой."
 	icon = 'icons/mob/simple/carp.dmi'
 	icon_state = "base"
 	icon_living = "base"
@@ -92,7 +92,7 @@
 	AddElement(/datum/element/ai_flee_while_injured)
 	setup_eating()
 
-	AddComponent(/datum/component/aggro_emote, emote_list = string_list(list("оскаливается")))
+	AddComponent(/datum/component/aggro_emote, emote_list = string_list(list("скалится")))
 	AddComponent(/datum/component/regenerator, outline_colour = regenerate_colour)
 	if (tamer)
 		tamed(tamer, feedback = FALSE)
@@ -190,7 +190,7 @@
 /mob/living/basic/carp/pet/lia
 	name = "Лия"
 	real_name = "Лия"
-	desc = "Провальный эксперимент Nanotrasen по созданию военных технологий на основе карпов. Этот менее устрашающий карп теперь служит питомцем для главы службы безопасности."
+	desc = "Провальный эксперимент Nanotrasen по созданию оружия из космокарпа. Этот менее устрашающий карп теперь служит питомцем для главы службы безопасности."
 	faction = list(FACTION_NEUTRAL)
 	maxHealth = 200
 	health = 200
@@ -211,7 +211,7 @@
 /mob/living/basic/carp/pet/cayenne
 	name = "Кайенна"
 	real_name = "Кайенна"
-	desc = "Провальный эксперимент Синдиката по созданию военных технологий на основе карпов, ныне милый талисман."
+	desc = "Провальный эксперимент Синдиката по созданию оружия из обычного космокарпа, ныне милый талисман."
 	faction = list(ROLE_SYNDICATE)
 	/// Overlay to apply to display the disk
 	var/mutable_appearance/disk_overlay
@@ -257,7 +257,7 @@
 /mob/living/basic/carp/ella
 	name = "Элла"
 	real_name = "Элла"
-	desc = "Она вышла из кого-то."
+	desc = "Карп-паразит, который живет в своём носителе до созревания и кажется он уже \"вылупился\"."
 	gold_core_spawnable = NO_SPAWN
 
 /mob/living/basic/carp/ella/Initialize(mapload)
@@ -267,7 +267,7 @@
 ///Wild carp that just vibe ya know
 /mob/living/basic/carp/passive
 	name = "passive carp"
-	desc = "Покорное и с присоской вместо рта существо, внешне схожее на рыбу. "
+	desc = "На первый взгляд робкая и не опасная рыбина, однако не дайте ей поставить вам засос в неожиданном месте. "
 
 	icon_state = "base_friend"
 	icon_living = "base_friend"

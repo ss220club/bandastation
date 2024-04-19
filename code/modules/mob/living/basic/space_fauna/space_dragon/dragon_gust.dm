@@ -4,7 +4,7 @@
 /// Rise into the air and slam down, knocking people away. No real cooldown but has escalating endlag if used in quick succession.
 /datum/action/cooldown/mob_cooldown/wing_buffet
 	name = "Wing Buffet"
-	desc = "Вздымитесь в воздух, чтобы вызвать сильный порыв воздуха со своих крыльев, отталкивающий врагов. Значительно утомляет, если делать его без перерыва."
+	desc = "Вздымитесь в воздух дабы сдуть нападающих на вас врагов резким порывом ветра от ваших крыльев. Учтите, что это достаточно сильно вас утомляет."
 	button_icon = 'icons/effects/magic.dmi'
 	button_icon_state = "tornado"
 	cooldown_time = 1 SECONDS
