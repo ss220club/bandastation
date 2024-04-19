@@ -10,7 +10,7 @@
 
 /datum/hallucination/station_message/blob_alert/start()
 	priority_announce("Confirmed outbreak of level 5 biohazard aboard [station_name()]. All personnel must contain the outbreak.", \
-		"Biohazard Alert", ANNOUNCER_OUTBREAK5, players = list(hallucinator))
+		"Оповещение о биологической опасности", ANNOUNCER_OUTBREAK5, players = list(hallucinator))
 	return ..()
 
 /datum/hallucination/station_message/shuttle_dock
@@ -20,7 +20,7 @@
 					text = "[SSshuttle.emergency] has docked with the station. You have [DisplayTimeText(SSshuttle.emergency_dock_time)] to board the emergency shuttle.",
 					title = "Emergency Shuttle Arrival",
 					sound = ANNOUNCER_SHUTTLEDOCK,
-					sender_override = "Emergency Shuttle Uplink Alert",
+					sender_override = "Система оповещения эвакуационного шаттла",
 					players = list(hallucinator),
 					color_override = "orange",
 				)
@@ -33,7 +33,7 @@
 		return FALSE
 
 	priority_announce("Hostile runtimes detected in all station systems, please deactivate your AI to prevent possible damage to its morality core.", \
-		"Anomaly Alert", ANNOUNCER_AIMALF, players = list(hallucinator))
+		"Оповещение об аномалии", ANNOUNCER_AIMALF, players = list(hallucinator))
 	return ..()
 
 /datum/hallucination/station_message/heretic
@@ -79,7 +79,7 @@
 
 	priority_announce(
 		text = "Figments from an eldritch god are being summoned by [totally_real_cult_leader.real_name] into [fake_summon_area] from an unknown dimension. Disrupt the ritual at all costs!",
-		title = "[command_name()] Higher Dimensional Affairs",
+		title = "[command_name()] Отдел паранормальных явлений",
 		sound = 'sound/ambience/antag/bloodcult/bloodcult_scribe.ogg',
 		has_important_message = TRUE,
 		players = list(hallucinator),

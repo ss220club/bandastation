@@ -225,10 +225,10 @@
 	SSshuttle.emergency.setTimer(0)
 	SSshuttle.emergency.mode = SHUTTLE_DISABLED
 	priority_announce(
-		text = "Emergency Shuttle uplink failure, shuttle disabled until further notice.",
-		title = "Uplink Failure",
+		text = "Ошибка системы связи эвакуационного шаттла. Шаттл будет недоступен до дальнейших указаний.",
+		title = "Сбой связи эвакуационного шаттла",
 		sound = 'sound/misc/announce_dig.ogg',
-		sender_override = "Emergency Shuttle Uplink Alert",
+		sender_override = "Система оповещения эвакуационного шаттла",
 		color_override = "grey",
 	)
 
@@ -257,10 +257,10 @@
 		SSshuttle.last_call_time = 10 SECONDS //Make sure no insta departures.
 	SSshuttle.emergency.setTimer(SSshuttle.last_call_time)
 	priority_announce(
-		text = "Emergency Shuttle uplink reestablished, shuttle enabled.",
-		title = "Uplink Restored",
+		text = "Система связи эвакуационного шаттла работает в штатном режиме. Шаттл снова доступен.",
+		title = "Связь с шаттлом восстановлена",
 		sound = 'sound/misc/announce_dig.ogg',
-		sender_override = "Emergency Shuttle Uplink Alert",
+		sender_override = "Система оповещения эвакуационного шаттла",
 		color_override = "green",
 	)
 
