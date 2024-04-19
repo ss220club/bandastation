@@ -135,9 +135,7 @@ export const NtosNetChat = (props) => {
                     <Button
                       fluid
                       bold
-                      content={
-                        'АДМИНИСТРИРОВАНИЕ: ' + (adminmode ? 'ON' : 'OFF')
-                      }
+                      content={'АДМИНКА: ' + (adminmode ? 'ВКЛ' : 'ВЫКЛ')}
                       color={adminmode ? 'bad' : 'good'}
                       onClick={() => act('PRG_toggleadmin')}
                     />
