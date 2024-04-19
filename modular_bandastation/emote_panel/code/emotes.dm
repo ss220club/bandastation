@@ -77,11 +77,11 @@
 	message = "теряет сознание."
 
 /datum/emote/living/flap
-	name = "хлопнуть крыльями"
+	name = "крылья (хлопать)"
 	message = "хлопает крыльями."
 
 /datum/emote/living/flap/aflap
-	name = "сердито хлопнуть крыльями"
+	name = "крылья (сердито хлопать)"
 	message = "сердито хлопает крыльями!"
 
 /datum/emote/living/frown
@@ -99,9 +99,9 @@
 	message_mime = "бесшумно задыхается!"
 
 /datum/emote/living/gasp_shock
-	name = "вздох в шоке"
-	message = "gasps in shock!"
-	message_mime = "gasps in silent shock!"
+	name = "вздох (шок)"
+	message = "вздыхает в шоке!"
+	message_mime = "вздыхает в молчаливом шоке!"
 
 /datum/emote/living/giggle
 	name = "похихикать"
@@ -273,11 +273,11 @@
 	message_param = "издает сигнал в сторону %t."
 
 /datum/emote/living/inhale
-	name = "вдохнуть"
+	name = "вдох"
 	message = "делает вдох."
 
 /datum/emote/living/exhale
-	name = "выдохнуть"
+	name = "выдох"
 	message = "выдыхает."
 
 /datum/emote/living/swear
@@ -416,7 +416,7 @@
 	message_mime = "бесшумно ворчит!"
 
 /datum/emote/living/carbon/human/handshake
-	name = "дать рукопожатие"
+	name = "рукопожатие"
 	message = "дает рукопожатие себе."
 	message_param = "дает рукопожатие %t."
 
@@ -462,8 +462,8 @@
 	message = "хвостом."
 
 /datum/emote/living/carbon/human/wing
-	name = "махать крыльями"
-	message = "крыльями."
+	name = "крылья"
+	message = "their wings."
 
 /datum/emote/living/carbon/human/clear_throat
 	name = "прочистить горло"
