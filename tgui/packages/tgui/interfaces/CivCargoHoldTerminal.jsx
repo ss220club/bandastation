@@ -24,7 +24,7 @@ export const CivCargoHoldTerminal = (props) => {
               {id_inserted ? in_text : out_text}
             </NoticeBox>
             <Section
-              title="Cargo Pad"
+              title="Платформа снабжения"
               buttons={
                 <>
                   <Button
