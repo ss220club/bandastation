@@ -127,7 +127,7 @@ export const NtosMain = (props) => {
           </Table>
         </Section>
         {!!pai && (
-          <Section title="pAI">
+          <Section title="пИИ">
             <Table>
               <Table.Row>
                 <Table.Cell>
@@ -135,7 +135,7 @@ export const NtosMain = (props) => {
                     fluid
                     icon="eject"
                     color="transparent"
-                    content="Вытащить pAI"
+                    content="Вытащить пИИ"
                     onClick={() =>
                       act('PC_Pai_Interact', {
                         option: 'eject',
@@ -150,7 +150,7 @@ export const NtosMain = (props) => {
                     fluid
                     icon="cat"
                     color="transparent"
-                    content="Настроить pAI"
+                    content="Настроить пИИ"
                     onClick={() =>
                       act('PC_Pai_Interact', {
                         option: 'interact',

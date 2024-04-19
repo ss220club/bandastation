@@ -76,7 +76,7 @@ const ObjectDisplay = (props) => {
           disabled={scanning}
           onClick={() => act('scan')}
         />
-        {!object.length && !scanning && (<div>Не обнаружены сигналы</div>)}
+        {!object.length && !scanning && <div>Не обнаружены сигналы</div>}
         {!scanning &&
           object.map((object) => (
             <div
@@ -104,7 +104,7 @@ const ObjectDisplay = (props) => {
 };
 
 /** Returns target information */
-const TargetDisplay = (props) => {
+function TargetDisplay(props) {
   const { data } = useBackend<Data>();
   const { selected, target } = data;
 
@@ -145,4 +145,4 @@ const TargetDisplay = (props) => {
       left={target.locx * 10 + 16 + 'px'}
     />
   );
-};
+}
