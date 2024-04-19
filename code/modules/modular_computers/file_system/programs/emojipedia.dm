@@ -4,7 +4,7 @@
 	filedesc = "EmojiPedia"
 	downloader_category = PROGRAM_CATEGORY_DEVICE // we want everyone to be able to access this application, since everyone can send emoji via PDA messages
 	program_open_overlay = "generic"
-	extended_desc = "Эта программа позволяет просматривать все эмодзи, которые вы можете отправлять через сообщения."
+	extended_desc = "Эта программа позволяет просматривать все эмодзи, доступные для отправки через сообщения."
 	size = 3
 	tgui_id = "NtosEmojipedia"
 	program_icon = "icons"
