@@ -36,7 +36,7 @@ export const NtosEmojipedia = (props) => {
                 onInput={(_, value) => setFilter(value)}
               />
               <Button
-                tooltip={'Кликните по эмодзи что бы скопировать его тэг!'}
+                tooltip={'Кликните по эмодзи, чтобы скопировать его тэг!'}
                 tooltipPosition="bottom"
                 icon="circle-question"
               />
