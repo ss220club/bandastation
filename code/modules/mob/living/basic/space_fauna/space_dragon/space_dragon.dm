@@ -45,7 +45,7 @@
 	maptext_width = 64
 	mouse_opacity = MOUSE_OPACITY_ICON
 	death_sound = 'sound/creatures/space_dragon_roar.ogg'
-	death_message = "визжит в агонии, рухнув на пол, его жизнь угасла."
+	death_message = "вопя в агонии, он рушится на пол, теперь его жизнь угасла."
 	butcher_results = list(/obj/item/stack/ore/diamond = 5, /obj/item/stack/sheet/sinew = 5, /obj/item/stack/sheet/bone = 30)
 	can_buckle_to = FALSE
 
