@@ -121,8 +121,7 @@ const CooldownDimmer = () => {
             width="300px"
             lineHeight={2}
             tooltip={
-              (!!can_override &&
-                'Это действие требует доступа главы!') ||
+              (!!can_override && 'Это действие требует доступа главы!') ||
               'Ящик уже отправлен! Теперь отмена невозможна!'
             }
             fontSize="14px"
@@ -154,7 +153,7 @@ const NoLinkDimmer = () => {
         </Stack.Item>
         <Stack.Item textAlign="center" fontSize="14px" color="red">
           <Button disabled={!id_inside} onClick={() => act('link')}>
-            Пожалуйста, вставьте серебряный ID руководителя и нажмите кнопку.
+            Пожалуйста, вставьте серебряный ID главы.
           </Button>
         </Stack.Item>
       </Stack>

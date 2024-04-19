@@ -181,7 +181,7 @@ const NtosNotepadMenuBar = (props: MenuBarProps) => {
         {...itemProps}
       >
         <MenuBar.Dropdown.MenuItem
-          {...getMenuItemProps('aboutNotepad', 'Просмотреть справку')}
+          {...getMenuItemProps('aboutNotepad', 'О программе')}
         />
       </MenuBar.Dropdown>
     </MenuBar>
