@@ -325,7 +325,7 @@
 	filename = "fission360"
 	filedesc = "Fission360"
 	program_open_overlay = "radarsyndicate"
-	extended_desc = "Эта программа позволяет отслеживать диски с ядерными разрешениями и боеголовки."
+	extended_desc = "Эта программа позволяет отслеживать диски аутентификации ядерной боеголовки и сами боеголовки."
 	program_flags = PROGRAM_ON_SYNDINET_STORE
 	tgui_id = "NtosRadarSyndicate"
 	program_icon = "bomb"
