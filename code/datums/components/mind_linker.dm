@@ -248,7 +248,7 @@
 		return
 
 	if(QDELETED(linker))
-		to_chat(owner, span_warning("Связь, видимо, была уничтожена."))
+		to_chat(owner, span_warning("Связь, видимо, была разорвана."))
 		return
 
 	var/formatted_message = "<i><font color=[linker.chat_color]>\[[linker_parent.real_name]'s [linker.network_name]\] <b>[owner]:</b> [message]</font></i>"
