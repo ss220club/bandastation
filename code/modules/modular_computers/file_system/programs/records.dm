@@ -1,7 +1,7 @@
 /datum/computer_file/program/records
 	filename = "ntrecords"
 	filedesc = "Records"
-	extended_desc = "Позволяет пользователю просмотреть некоторые основные данные экипажа."
+	extended_desc = "Позволяет пользователю просмотреть некоторые основные записи экипажа."
 	downloader_category = PROGRAM_CATEGORY_SECURITY
 	program_icon = "clipboard"
 	program_open_overlay = "crew"
