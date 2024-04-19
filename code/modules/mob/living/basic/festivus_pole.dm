@@ -7,7 +7,7 @@
 	icon_dead = "festivus_pole"
 	icon_gib = "festivus_pole"
 	health_doll_icon = "festivus_pole"
-	gender = MALE
+	gender = NEUTER
 	gold_core_spawnable = HOSTILE_SPAWN
 	basic_mob_flags = DEL_ON_DEATH
 

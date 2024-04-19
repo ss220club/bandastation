@@ -8,7 +8,7 @@
 	icon_gib = "pine_1"
 	health_doll_icon = "pine_1"
 	mob_biotypes = MOB_ORGANIC | MOB_PLANT
-	gender = FEMALE
+	gender = NEUTER
 	gold_core_spawnable = HOSTILE_SPAWN
 	basic_mob_flags = DEL_ON_DEATH
 
