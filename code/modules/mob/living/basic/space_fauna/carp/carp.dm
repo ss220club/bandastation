@@ -267,7 +267,7 @@
 ///Wild carp that just vibe ya know
 /mob/living/basic/carp/passive
 	name = "passive carp"
-	desc = "Покорное и с присоской вместо рта существо, внешне схожее на рыбу. "
+	desc = "На первый взгляд робкая и не опасная рыбина, однако не дайте ей поставить вам засос в неожиданном месте. "
 
 	icon_state = "base_friend"
 	icon_living = "base_friend"
