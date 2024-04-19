@@ -76,9 +76,7 @@ const ObjectDisplay = (props) => {
           disabled={scanning}
           onClick={() => act('scan')}
         />
-        {!object.length && !scanning && (
-          <div>Не обнаружено отслеживаемых сигналов</div>
-        )}
+        {!object.length && !scanning && (<div>Не обнаружены сигналы</div>)}
         {!scanning &&
           object.map((object) => (
             <div
