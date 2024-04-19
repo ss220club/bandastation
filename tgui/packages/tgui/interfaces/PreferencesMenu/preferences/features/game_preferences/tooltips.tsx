@@ -8,19 +8,19 @@ import {
 } from '../base';
 
 export const enable_tips: FeatureToggle = {
-  name: 'Enable tooltips',
-  category: 'TOOLTIPS',
+  name: 'Подсказки - включить',
+  category: 'ПОДСКАЗКИ',
   description: multiline`
-    Do you want to see tooltips when hovering over items?
+    Показывать подсказки при наведении на объект.
   `,
   component: CheckboxInput,
 };
 
 export const tip_delay: Feature<number> = {
-  name: 'Tooltip delay (in milliseconds)',
-  category: 'TOOLTIPS',
+  name: 'Подсказки - задержка (в миллисекундах)',
+  category: 'ПОДСКАЗКИ',
   description: multiline`
-    How long should it take to see a tooltip when hovering over items?
+    Задержка перед тем, как показать подсказку при наведении на объект?
   `,
   component: FeatureNumberInput,
 };

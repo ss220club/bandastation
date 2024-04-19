@@ -42,9 +42,9 @@ export const ObjectivePrintout = (props: ObjectivePrintoutProps) => {
 
   return (
     <Stack fill={fill} vertical>
-      <Stack.Item bold>{titleMessage || `Your current objectives`}:</Stack.Item>
+      <Stack.Item bold>{titleMessage || `Ваши текущие задачи`}:</Stack.Item>
       <Stack.Item>
-        {(objectives.length === 0 && 'None!') ||
+        {(objectives.length === 0 && 'Ни одной!') ||
           objectives.map((objective) => (
             <Stack.Item fontSize={objectiveTextSize} key={objective.count}>
               {objectivePrefix || '#'}

@@ -190,7 +190,7 @@
 	else if(chambered) // if you don't have a magazine, is there something chambered?
 		return "\n[chambered.add_notes_ammo()]"
 	else // we have a very expensive mechanical paperweight.
-		return "\nThe lack of magazine and usable cartridge in chamber makes its usefulness questionable, at best."
+		return "\nОтсутствие магазина и пригодного для стрельбы патрона в патроннике заставляет задуматься о полезности оружия."
 
 /obj/item/gun/ballistic/vv_edit_var(vname, vval)
 	. = ..()
