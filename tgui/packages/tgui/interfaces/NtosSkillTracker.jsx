@@ -26,7 +26,7 @@ export const NtosSkillTracker = (props) => {
                       Уровень
                     </Table.Cell>
                     <Table.Cell textAlign="center">Прогресс уровня</Table.Cell>
-                    <Table.Cell textAlign="center">Общий Прогресс</Table.Cell>
+                    <Table.Cell textAlign="center">Общий прогресс</Table.Cell>
                   </Table.Row>
                   <Table.Row className="candystripe">
                     <Table.Cell textAlign="center" collapsing>
