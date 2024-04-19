@@ -215,7 +215,7 @@ export const NtosNetChat = (props) => {
                                     icon="bullhorn"
                                     tooltip={
                                       (!this_client?.muted && 'Пингануть') ||
-                                      'Ты в муте!'
+                                      'Вы в муте!'
                                     }
                                     tooltipPosition="left"
                                     onClick={() =>
