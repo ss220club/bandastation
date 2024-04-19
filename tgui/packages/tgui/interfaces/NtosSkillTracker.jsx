@@ -77,7 +77,7 @@ export const NtosSkillTracker = (props) => {
                             act('PRG_reward', { skill: skill.name })
                           }
                         >
-                          Свяжитесь с профессионалом {skill.title} ассоциации
+                          Связаться с профессиональной ассоциацией {skill.title}
                         </Button>
                       </Table.Cell>
                     </Table.Row>
