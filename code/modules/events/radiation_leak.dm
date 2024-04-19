@@ -58,9 +58,9 @@
 	else if(the_source_of_our_problems)
 		location_descriptor = get_area(the_source_of_our_problems)
 
-	priority_announce("A radiation leak has been detected in [location_descriptor || "an unknown area"]. \
-		All crew are to evacuate the affected area. Our [pick("mechanics", "engineers", "scientists", "interns", "sensors", "readings")] \
-		report that a machine within is causing it - repair it quickly to stop the leak.", "[command_name()] Engineering Division")
+	priority_announce("Утечка радиации обнаружена в [location_descriptor || "an unknown area"]. \
+		Все члены экипажа должны эвакуироваться из поражённой зоны. Наши [pick("механики", "инженеры", "ученые", "интерны", "сенсоры", "показатели")] \
+		указывают, что машинерия в этой локации является причиной проблемы - отремонтируйте её как можно быстрее, чтобы остановить утечку", "[command_name()]: Инженерный отдел")
 
 /datum/round_event/radiation_leak/start()
 	var/obj/machinery/the_source_of_our_problems = picked_machine_ref?.resolve()
