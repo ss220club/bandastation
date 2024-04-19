@@ -33,7 +33,7 @@ const NoChannelDimmer = (props) => {
           </Stack>
         </Stack.Item>
         <Stack.Item fontSize="18px">
-          Нажмите на канал что бы начать общаться!
+          Нажмите на канал, чтобы начать общаться!
         </Stack.Item>
         <Stack.Item fontSize="15px">
           (Если вы новенький, вы можете изменить имя внизу слева!)
