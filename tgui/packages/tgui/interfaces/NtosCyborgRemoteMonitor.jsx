@@ -74,9 +74,7 @@ export const NtosCyborgRemoteMonitorContent = (props) => {
         <>
           {!card && (
             <Stack.Item>
-              <NoticeBox>
-                Некоторые функции требуют входа в систему с помощью ID-карты.
-              </NoticeBox>
+              <NoticeBox>Некоторые функции требуют ввод ID-карты.</NoticeBox>
             </Stack.Item>
           )}
           <Stack.Item grow={1}>
