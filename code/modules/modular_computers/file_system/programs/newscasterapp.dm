@@ -4,7 +4,7 @@
 	download_access = list(ACCESS_LIBRARY)
 	downloader_category = PROGRAM_CATEGORY_GAMES
 	program_open_overlay = "bountyboard"
-	extended_desc = "Эта программа позволяет любому пользователю получить доступ к сети Newscaster из любого места."
+	extended_desc = "Эта программа позволяет любому пользователю получить доступ к сети новостей из любого места."
 	size = 2
 	program_flags = PROGRAM_ON_NTNET_STORE | PROGRAM_REQUIRES_NTNET
 	tgui_id = "NtosNewscaster"
