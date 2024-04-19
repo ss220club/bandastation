@@ -130,7 +130,7 @@ const CooldownDimmer = () => {
             disabled={!can_override}
             onClick={() => act('override_order')}
           >
-            <Box fontSize="22px">Ускорить</Box>
+            <Box fontSize="22px">Отменить</Box>
           </Button>
         </Stack.Item>
       </Stack>
