@@ -1,19 +1,19 @@
 /datum/bounty/item/assistant/strange_object
-	name = "Strange Object"
-	description = "Nanotrasen has taken an interest in strange objects. Find one in maintenance, and ship it off to CentCom right away."
+	name = "Странный объект"
+	description = "Нанотрейзен интересуется странными объектами. Найдите один в технических туннелях и отправьте сразу же на ЦентКом."
 	reward = CARGO_CRATE_VALUE * 2.4
 	wanted_types = list(/obj/item/relic = TRUE)
 
 /datum/bounty/item/assistant/scooter
 	name = "Scooter"
-	description = "Nanotrasen has determined walking to be wasteful. Ship a scooter to CentCom to speed operations up."
+	description = "Нанотрейзен установило что ходьба расточительна. Отправьте скутер на ЦентКом для ускорения операций."
 	reward = CARGO_CRATE_VALUE * 2.16 // the mat hoffman
 	wanted_types = list(/obj/vehicle/ridden/scooter = TRUE)
 	include_subtypes = FALSE
 
 /datum/bounty/item/assistant/skateboard
 	name = "Skateboard"
-	description = "Nanotrasen has determined walking to be wasteful. Ship a skateboard to CentCom to speed operations up."
+	description = "Нанотрейзен установило что ходьба расточительна. Отправьте скейтборд на ЦентКом для ускорения операций."
 	reward = CARGO_CRATE_VALUE * 1.8 // the tony hawk
 	wanted_types = list(
 		/obj/vehicle/ridden/scooter/skateboard = TRUE,
@@ -74,7 +74,7 @@
 	wanted_types = list(/obj/item/melee/baseball_bat = TRUE)
 
 /datum/bounty/item/assistant/extendohand
-	name = "Перчатка на пружине"
+	name = "Extendo-Hand"
 	description = "Коммандор Бетси уже стара и теперь не может дотянуться пульта телевизора. Командование запросило перчатку на пружине для помощи ей."
 	reward = CARGO_CRATE_VALUE * 5
 	wanted_types = list(/obj/item/extendohand = TRUE)
@@ -107,7 +107,7 @@
 	wanted_types = list(/obj/item/food/deadmouse = TRUE)
 
 /datum/bounty/item/assistant/comfy_chair
-	name = "Удобный стулья"
+	name = "Удобные стулья"
 	description = "Коммандор Пат недоволен своим стулом. Он утверждает, что стул приносит боль его спине. Отправьте несколько альтернатив чтобы угодить ему."
 	reward = CARGO_CRATE_VALUE * 3
 	required_count = 5
@@ -130,7 +130,7 @@
 	include_subtypes = FALSE
 
 /datum/bounty/item/assistant/potted_plants
-	name = "Посаженные растения"
+	name = "Комнатные растения"
 	description = "Центральное Командование Central Command is looking to commission a new BirdBoat-class station. You've been ordered to supply the potted plants."
 	reward = CARGO_CRATE_VALUE * 4
 	required_count = 8
@@ -152,7 +152,7 @@
 
 /datum/bounty/item/assistant/corgimeat
 	name = "Сырое мясо корги"
-	description = "The Syndicate recently stole all of CentCom's corgi meat. Ship out a replacement immediately."
+	description = "Синдикат недавно украл всё ЦентКомовское мясо корги. Отправьте замену немедленно."
 	reward = CARGO_CRATE_VALUE * 6
 	wanted_types = list(/obj/item/food/meat/slab/corgi = TRUE)
 
