@@ -19,7 +19,7 @@
 	UnregisterSignal(currently_scanned_atom, COMSIG_ATOM_BULLET_ACT)
 
 /datum/experiment/physical/meat_wall_explosion/check_progress()
-	. += EXPERIMENT_PROG_BOOL("Выстрелите эмиттером в отслеживаемую мясную стену", is_complete())
+	. += EXPERIMENT_PROG_BOOL("Выстрелите в отслеживаемую мясную стену", is_complete())
 
 /datum/experiment/physical/meat_wall_explosion/proc/check_experiment(datum/source, obj/projectile/Proj)
 	SIGNAL_HANDLER

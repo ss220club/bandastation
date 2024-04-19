@@ -35,8 +35,8 @@
 	possible_types = list(/mob/living/basic/cockroach, /mob/living/basic/mouse)
 
 /datum/experiment/scanning/random/cytology/medium
-	name = "Усовершенствованный эксперимент по скану цитологии"
-	description = "Нам нужно увидеть, как функционирует организм с самых ранних моментов. Некоторые цитологические эксперименты помогут нам понять это."
+	name = "Усоверш. эксперимент по изучению цитологии"
+	description = "Нам нужно увидеть, как функционирует организм с самых ранних моментов. Несколько цитологических экспериментов помогут нам понять это."
 	total_requirement = 3
 	max_requirement_per_type = 2
 	possible_types = list(
@@ -49,10 +49,10 @@
 	)
 
 /datum/experiment/scanning/random/cytology/medium/one
-	name = "Продвинутое цитологическое сканирование - эксперимент первый"
+	name = "Продв. цитологическое изучение (1)"
 
 /datum/experiment/scanning/random/cytology/medium/two
-	name = "Продвинутое цитологическое сканирование - эксперимент второй"
+	name = "Продв. цитологическое изучение (2)"
 
 /datum/experiment/scanning/random/janitor_trash
 	name = "Гигиеническая проверка станции"
