@@ -56,7 +56,7 @@
 
 /obj/machinery/computer/piratepad_control/multitool_act(mob/living/user, obj/item/multitool/I)
 	if(istype(I) && istype(I.buffer,/obj/machinery/piratepad/civilian))
-		to_chat(user, span_notice("Вы привязываете [src] к [I.buffer] при помощи [I] буффера."))
+		to_chat(user, span_notice("Вы привязываете [src.name] к [I.buffer] при помощи [I] буффера."))
 		pad_ref = WEAKREF(I.buffer)
 		return TRUE
 
@@ -237,8 +237,8 @@
 		else
 			id_eject(user, target)
 
-	user.visible_message(span_notice("[user] вставляет [card_to_insert] в [src]."),
-						span_notice("Вы вставляете [card_to_insert] в [src]."))
+	user.visible_message(span_notice("[user] вставляет [card_to_insert] в [src.name]."),
+						span_notice("Вы вставляете [card_to_insert] в [src.name]."))
 	playsound(src, 'sound/machines/terminal_insert_disc.ogg', 50, FALSE)
 	ui_interact(user)
 	return TRUE
@@ -252,8 +252,8 @@
 		target.forceMove(drop_location())
 		if(!issilicon(user) && Adjacent(user))
 			user.put_in_hands(target)
-		user.visible_message(span_notice("[user] получает [target] из [src]."), \
-							span_notice("Вы получаете [target] из [src]."))
+		user.visible_message(span_notice("[user] получает [target] из [src.name]."), \
+							span_notice("Вы получаете [target] из [src.name]."))
 		playsound(src, 'sound/machines/terminal_insert_disc.ogg', 50, FALSE)
 		inserted_scan_id = null
 		return TRUE
@@ -333,7 +333,7 @@
 	//if our nag cooldown has finished and we aren't on Centcom or in transit, then nag
 	if(COOLDOWN_FINISHED(src, next_nag_time) && !is_centcom_level(z) && !is_reserved_level(z))
 		//set up our nag message
-		var/nag_message = "[src] не доставлен в [get_area(src)]."
+		var/nag_message = "[src.name] не доставлен в [get_area(src)]."
 
 		//nag on Supply channel and reduce the speed bonus multiplier to nothing
 		var/speed_bonus_lost = "[speed_bonus ? " Бонус за быструю доставку [bounty_value * speed_bonus] кредитов потерян." : ""]"
@@ -357,7 +357,7 @@
 	bounty_holder_job = holder_id.assignment
 	bounty_holder_account = holder_id.registered_account
 	name = "\improper [bounty_value] cr [name]"
-	desc += " The sales tag indicates it was <i>[bounty_holder] ([bounty_holder_job])</i>'s reward for completing the <i>[bounty_name]</i> bounty."
+	desc += " Торговая бирка показывает, что она принадлежала пользователю <i>[bounty_holder] ([bounty_holder_job])</i> и давала награду за выполнение <i>[bounty_name]</i> баунти."
 	AddComponent(/datum/component/pricetag, holder_id.registered_account, holder_cut, FALSE)
 	AddComponent(/datum/component/gps, "[src]")
 	START_PROCESSING(SSobj, src)
@@ -395,7 +395,7 @@
 	var/uses = 2
 
 /obj/item/civ_bounty_beacon/attack_self()
-	loc.visible_message(span_warning("[src] начинает гудеть громко!"))
+	loc.visible_message(span_warning("[src.name] начинает гудеть громко!"))
 	addtimer(CALLBACK(src, PROC_REF(launch_payload)), 1 SECONDS)
 
 /obj/item/civ_bounty_beacon/proc/launch_payload()

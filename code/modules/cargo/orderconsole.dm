@@ -67,8 +67,8 @@
 		return FALSE
 	if(user)
 		if (emag_card)
-			user.visible_message(span_warning("[user] проводит [emag_card] по [src]!"))
-		to_chat(user, span_notice("Вы настраиваете спектр маршрутизации и приёма на [src], разблокируя специальные припасы и контрабанду."))
+			user.visible_message(span_warning("[user] проводит [emag_card] по [src.name]!"))
+		to_chat(user, span_notice("Вы настраиваете спектр маршрутизации и приёма на [src.name], разблокируя специальные припасы и контрабанду."))
 
 	obj_flags |= EMAGGED
 	contraband = TRUE
@@ -218,7 +218,7 @@
 			say("ID карта не обнаружена.")
 			return
 		if(IS_DEPARTMENTAL_CARD(id_card))
-			say("[src] отклоняет [id_card].")
+			say("[src.name] отклоняет [id_card].")
 			return
 		account = id_card.registered_account
 		if(!istype(account))
