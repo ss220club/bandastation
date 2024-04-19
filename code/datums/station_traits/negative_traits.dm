@@ -654,7 +654,7 @@
 	//How long do we have untill the first shielding unit needs to be up?
 	var/deadline = "[(initial(innate_shielding.radioactive_nebula_shielding) * intensity_increment_time) / (1 MINUTES)] минут"
 	//For how long each shielding unit will protect for
-	var/shielder_time = "[(initial(shielder.shielding_strength) * intensity_increment_time) / (1 MINUTES)] минут
+	var/shielder_time = "[(initial(shielder.shielding_strength) * intensity_increment_time) / (1 MINUTES)] минут"
 	//Max shielders, excluding the grav-gen to avoid confusion when that goes down
 	var/max_shielders = ((maximum_nebula_intensity / intensity_increment_time)) / initial(shielder.shielding_strength)
 
