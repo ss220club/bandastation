@@ -199,7 +199,7 @@ const ProgramsTable = (props) => {
                 <Button
                   color="transparent"
                   icon="times"
-                  tooltip="Close program"
+                  tooltip="Закрыть программу"
                   tooltipPosition="left"
                   onClick={() =>
                     act('PC_killprogram', {
