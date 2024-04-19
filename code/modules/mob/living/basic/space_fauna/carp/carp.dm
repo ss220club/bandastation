@@ -211,7 +211,7 @@
 /mob/living/basic/carp/pet/cayenne
 	name = "Кайенна"
 	real_name = "Кайенна"
-	desc = "Провальный эксперимент Синдиката по созданию военных технологий на основе карпов, ныне милый талисман."
+	desc = "Провальный эксперимент Синдиката по созданию оружия из обычного космокарпа, ныне милый талисман."
 	faction = list(ROLE_SYNDICATE)
 	/// Overlay to apply to display the disk
 	var/mutable_appearance/disk_overlay
