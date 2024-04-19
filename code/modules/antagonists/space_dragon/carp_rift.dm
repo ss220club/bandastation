@@ -268,7 +268,7 @@
 	var/datum/antagonist/space_carp/carp_antag = new(src)
 	newcarp.mind.add_antag_datum(carp_antag)
 	dragon.carp += newcarp.mind
-	to_chat(newcarp, span_boldwarning("Вы прибыли, чтобы помочь космическому дракону защищать разломы. Следуйте поставленной миссии и защитите разлом любой ценой!"))
+	to_chat(newcarp, span_boldwarning("Вы прибыли, чтобы помочь Космическому дракону защищать разломы. Следуйте поставленной миссии и защитите разлом любой ценой!"))
 	carp_stored--
 	if(carp_stored <= 0 && charge_state < CHARGE_COMPLETED)
 		icon_state = "carp_rift"
