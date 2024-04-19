@@ -16,7 +16,7 @@ export const NtosRecords = (props) => {
     <NtosWindow width={600} height={800}>
       <NtosWindow.Content scrollable>
         <Section textAlign="center">
-          КАДРОВЫЕ ДОКУМЕНТЫ NANOTRASEN (СЕКРЕТНЫЕ)
+          КАДРОВЫЕ ДОКУМЕНТЫ NANOTRASEN (СЕКРЕТНО)
         </Section>
         <Section>
           <Input
