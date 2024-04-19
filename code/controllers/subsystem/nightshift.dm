@@ -27,7 +27,7 @@ SUBSYSTEM_DEF(nightshift)
 	priority_announce(
 		text = message,
 		sound = 'sound/misc/notice2.ogg',
-		sender_override = "Оповещение от автомаческой системы освещения",
+		sender_override = "Система освещения.",
 		color_override = "grey",
 	)
 

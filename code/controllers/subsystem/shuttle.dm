@@ -522,7 +522,7 @@ SUBSYSTEM_DEF(shuttle)
 		emergency.sound_played = FALSE
 		priority_announce(
 			text = "Отправка была отложена на неопределенный срок до разрешения конфликта.",
-			title = "Обнаружено опасное окружение",
+			title = "Обнаружено враждебное окружение",
 			sound = 'sound/misc/notice1.ogg',
 			sender_override = "Система оповещения эвакуационного шаттла",
 			color_override = "grey",
@@ -531,8 +531,8 @@ SUBSYSTEM_DEF(shuttle)
 		emergency.mode = SHUTTLE_DOCKED
 		emergency.setTimer(emergency_dock_time)
 		priority_announce(
-			text = "У вас есть [DisplayTimeText(emergency_dock_time)] чтобы добрать до эвакуационного шаттла.",
-			title = "Опасность в окружении устранена",
+			text = "У вас есть [DisplayTimeText(emergency_dock_time)], чтобы добраться до эвакуационного шаттла.",
+			title = "Враждебное окружение устранено",
 			sound = 'sound/misc/announce_dig.ogg',
 			sender_override = "Система оповещения эвакуационного шаттла",
 			color_override = "green",

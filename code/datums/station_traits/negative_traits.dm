@@ -654,7 +654,7 @@
 	//How long do we have untill the first shielding unit needs to be up?
 	var/deadline = "[(initial(innate_shielding.radioactive_nebula_shielding) * intensity_increment_time) / (1 MINUTES)] минут"
 	//For how long each shielding unit will protect for
-	var/shielder_time = "[(initial(shielder.shielding_strength) * intensity_increment_time) / (1 MINUTES)] минут
+	var/shielder_time = "[(initial(shielder.shielding_strength) * intensity_increment_time) / (1 MINUTES)] минут"
 	//Max shielders, excluding the grav-gen to avoid confusion when that goes down
 	var/max_shielders = ((maximum_nebula_intensity / intensity_increment_time)) / initial(shielder.shielding_strength)
 
@@ -663,9 +663,9 @@
 
 		ИНФОРМАЦИЯ ПОВЫШЕННОЙ ВАЖНОСТИ: Станция все глубже погружается в туманность, а встроенная в гравитационный генератор защита от радиации \
 		долго не продержится. Ваш инженерный отдел получил все необходимые материалы для создания \
-		защиты от туманности. Дополнительное снаряжение может заказано в отделе снабжения \n\n\
+		защиты от туманности. Дополнительное снаряжение может заказано в отделе снабжения. \n\n\
 		У вас [deadline] до проявления особенностей туманности на станции. \
-		Каждый защитный блок обеспечивает дополнительные [shielder_time] защиты, установите [max_shielders] блоков защиты чтобы полностью решить проблему радиации.
+		Каждый защитный блок обеспечивает дополнительные [shielder_time] защиты, установите [max_shielders] блоков защиты, чтобы полностью решить проблему радиации.
 	"}
 
 	priority_announce(announcement, sound = 'sound/misc/notice1.ogg')

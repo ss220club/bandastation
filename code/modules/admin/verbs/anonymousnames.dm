@@ -78,7 +78,7 @@ GLOBAL_DATUM(current_anonymous_theme, /datum/anonymous_theme)
  * it's in a proc so it can be a non-constant expression.
  */
 /datum/anonymous_theme/proc/announce_to_all_players()
-	priority_announce("Недавняя бюрократическая ошибка в Департаменте органических ресурсов привела к необходимости полного отзыва всех личностей и имен до дальнейшего уведомления.", "Потеря личности", SSstation.announcer.get_rand_alert_sound())
+	priority_announce("Недавняя бюрократическая ошибка в отделе органических ресурсов привела к необходимости полного отзыва всех личностей и имен до дальнейшего уведомления.", "Потеря личности", SSstation.announcer.get_rand_alert_sound())
 
 /**
  * anonymous_all_players: sets all crewmembers on station anonymous.
@@ -152,7 +152,7 @@ GLOBAL_DATUM(current_anonymous_theme, /datum/anonymous_theme)
 	name = "Employees"
 
 /datum/anonymous_theme/employees/announce_to_all_players()
-	priority_announce("В качестве наказания за низкую производительность этой станции по сравнению с соседними станциями, имена и личности будут ограничены до дальнейшего уведомления.", "Финансовый отчёт", SSstation.announcer.get_rand_alert_sound())
+	priority_announce("В качестве наказания за низкую производительность этой станции по сравнению с соседствующими, имена и личности будут ограничены до дальнейшего уведомления.", "Финансовый отчёт", SSstation.announcer.get_rand_alert_sound())
 
 /datum/anonymous_theme/employees/anonymous_name(mob/target)
 	var/is_head_of_staff = target.mind.assigned_role.job_flags & JOB_HEAD_OF_STAFF
@@ -185,7 +185,7 @@ GLOBAL_DATUM(current_anonymous_theme, /datum/anonymous_theme)
 	player.put_in_hands(new random_path())
 
 /datum/anonymous_theme/wizards/announce_to_all_players()
-	priority_announce("Ваша станция попала в зону действия Меметической Угрозы Федерации Волшебниковя . Ты не туыыы, и ти.. ниеее--- Добро пожаловать в Академию, ученики!", "Меметическая угроза", SSstation.announcer.get_rand_alert_sound())
+	priority_announce("Ваша станция попала в зону действия Меметической Угрозы Федерации Волшебников. Ты не туыыы, и ти.. ниеее--- Добро пожаловать в Академию, ученики!", "Меметическая угроза", SSstation.announcer.get_rand_alert_sound())
 
 /datum/anonymous_theme/wizards/anonymous_name(mob/target)
 	var/wizard_name_first = pick(GLOB.wizard_first)

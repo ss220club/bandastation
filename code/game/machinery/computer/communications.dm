@@ -299,7 +299,7 @@
 			nuke_request(reason, usr)
 			to_chat(usr, span_notice("Request sent."))
 			usr.log_message("has requested the nuclear codes from CentCom with reason \"[reason]\"", LOG_SAY)
-			priority_announce("Коды для устройства самоуничтожения станции были запрошены [usr]. Запрос будет обработан в ближайшее время.", "Запрошены коды для системы самоуничтожения станции", SSstation.announcer.get_rand_report_sound())
+			priority_announce("[usr] запросил коды для запуска механизма ядерного самоуничтожения станции. В ближайшее время будет отправлено уведомление о подтверждении или отклонении данного запроса.", "ВНИМАНИЕ: Запрос кода самоуничтожения станции", SSstation.announcer.get_rand_report_sound())
 			playsound(src, 'sound/machines/terminal_prompt.ogg', 50, FALSE)
 			COOLDOWN_START(src, important_action_cooldown, IMPORTANT_ACTION_COOLDOWN)
 		if ("restoreBackupRoutingData")
@@ -867,7 +867,7 @@
 			)
 			priority_announce(
 				"Внимание экипажу, система секторного мониторинга сообщает о массивном прыжковом следе вражеского космического судна, направляющегося в вашу систему. Приготовьтесь к неминуемому контакту с врагом.",
-				"[command_name()]Высокоприоритетное оповещение [command_name()]",
+				"[command_name()]: Высокоприоритетное оповещение",
 			)
 			SSdynamic.picking_specific_rule(pick(pirate_rulesets), forced = TRUE, ignore_cost = TRUE)
 
@@ -882,7 +882,7 @@
 		if(HACK_THREAT) // Force an unfavorable situation on the crew
 			priority_announce(
 				"Внимание экипажу, департамент разведки Нанотрейзен получил сведения, свидетельствующие о повышении вражеской активности в вашем секторе.",
-				"[command_name()]Высокоприоритетное оповещение [command_name()]",
+				"[command_name()]: Высокоприоритетное оповещение",
 			)
 
 			for(var/mob/crew_member as anything in GLOB.player_list)
@@ -909,7 +909,7 @@
 				// We spawned some sleeper agents, nice - give them a report to kickstart the paranoia
 				priority_announce(
 					"Внимание экипажу, похоже, зафиксирован взлом системы телекоммуникаций с последующей передачей неизвестного сигнала.",
-					"[command_name()]Высокоприоритетное оповещение [command_name()]",
+					"[command_name()]: Высокоприоритетное оповещение",
 				)
 
 #undef HACK_PIRATE
