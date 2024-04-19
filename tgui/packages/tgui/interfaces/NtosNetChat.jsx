@@ -174,9 +174,7 @@ export const NtosNetChat = (props) => {
                   backgroundColor={this_client && this_client.muted && 'red'}
                   height="22px"
                   placeholder={
-                    (this_client &&
-                      this_client.muted &&
-                      'Ты в муте, дурачек!') ||
+                    (this_client && this_client.muted && 'Вы в муте!') ||
                     'Написать в ' + title
                   }
                   fluid
