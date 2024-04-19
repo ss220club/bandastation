@@ -59,7 +59,7 @@ export const NtosRecords = (props) => {
               <br />
               Вид: {record.species}
               <br />
-              Гендер: {record.gender}
+              Пол: {record.gender}
               <br />
               Возвраст: {record.age}
               <br />
