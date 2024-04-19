@@ -3,7 +3,7 @@
 	filedesc = "Plexagon Access Management"
 	downloader_category = PROGRAM_CATEGORY_EQUIPMENT
 	program_open_overlay = "id"
-	extended_desc = "Программа для программирования идентификационных карт сотрудников для доступа к частям станции."
+	extended_desc = "Программа для изменения доступов у ID-карт сотрудников."
 	download_access = list(ACCESS_COMMAND)
 	size = 8
 	tgui_id = "NtosCard"
