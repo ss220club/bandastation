@@ -38,8 +38,8 @@ export const AntagInfoSpy = () => {
             </Stack.Item>
             <Stack.Item>
               <span style={greenText}>
-                <b>Используйте в руке</b> чтобы включить аплинк, и{' '}
-                <b>ПКМ</b> по вещам-целям, чтобы их украсть.
+                <b>Используйте в руке</b> чтобы включить аплинк, и <b>ПКМ</b> по
+                вещам-целям, чтобы их украсть.
               </span>
             </Stack.Item>
             <Stack.Divider />
