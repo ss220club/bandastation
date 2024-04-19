@@ -522,7 +522,7 @@ SUBSYSTEM_DEF(shuttle)
 		emergency.sound_played = FALSE
 		priority_announce(
 			text = "Отправка была отложена на неопределенный срок до разрешения конфликта.",
-			title = "Обнаружено опасное окружение",
+			title = "Обнаружено враждебное окружение",
 			sound = 'sound/misc/notice1.ogg',
 			sender_override = "Система оповещения эвакуационного шаттла",
 			color_override = "grey",
