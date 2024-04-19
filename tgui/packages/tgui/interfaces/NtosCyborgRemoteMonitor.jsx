@@ -114,7 +114,7 @@ export const NtosCyborgRemoteMonitorContent = (props) => {
                             ? 'Заблокирован'
                             : cyborg.shell_discon
                               ? 'В норме/отключен'
-                              : 'Номинальный'}
+                              : 'В норме'}
                       </Box>
                     </LabeledList.Item>
                     <LabeledList.Item label="Состояние">
