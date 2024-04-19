@@ -96,7 +96,7 @@ export const DepartmentOrderContent = (props) => {
 
 export const NtosDeptOrder = () => {
   return (
-    <NtosWindow title="Заказы департамента" width={620} height={580}>
+    <NtosWindow title="Заказы отдела" width={620} height={580}>
       <NtosWindow.Content>
         <DepartmentOrderContent />
       </NtosWindow.Content>
