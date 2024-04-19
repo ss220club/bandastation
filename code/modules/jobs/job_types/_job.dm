@@ -300,7 +300,7 @@
 		info += span_boldnotice("Поскольку эта станция изначально была укомплектована \
 			[CONFIG_GET(flag/jobs_have_minimal_access) ? "полным составом, вы будете снабжены только самым необходимым для работы" : "частично, то к вашей ID-карте может быть добавлен дополнительный доступ"]\
 			.")
-			
+
 	return info
 
 /// Returns information pertaining to this job's radio.
