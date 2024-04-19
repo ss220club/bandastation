@@ -2,7 +2,7 @@
 	name = "Fire Breath"
 	button_icon = 'icons/effects/magic.dmi'
 	button_icon_state = "fireball"
-	desc = "Выдохните линию пламени в сторону цели."
+	desc = "Извергните огонь в сторону цели."
 	cooldown_time = 3 SECONDS
 	/// The range of the fire
 	var/fire_range = 15
