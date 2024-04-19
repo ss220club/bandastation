@@ -53,7 +53,7 @@ const CooldownEstimate = (props) => {
     'Короткое';
   return (
     <Box as="span" textColor={cooldownColor}>
-      {cooldownText} Ожидание.
+      {cooldownText} ожидание.
     </Box>
   );
 };
