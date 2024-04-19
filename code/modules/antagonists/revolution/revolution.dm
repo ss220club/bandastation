@@ -541,7 +541,7 @@
 			add_memory_in_range(head_of_staff, 5, /datum/memory/revolution_heads_victory, protagonist = head_of_staff)
 
 	priority_announce("Похоже, мятеж подавлен. Пожалуйста, верните себя и своих недееспособных коллег к работе. \
-        Мы дистанционно внесли глав революции в черный список системы медицинской помощи, чтобы предотвратить случайное возрождение.", null, null, null, "[command_name()]: отдел мониторинга лояльности")
+		Мы дистанционно внесли глав революции в черный список системы медицинской помощи, чтобы предотвратить случайное возрождение.", null, null, null, "[command_name()]: отдел мониторинга лояльности")
 
 /// Mutates the ticker to report that the revs have won
 /datum/team/revolution/proc/round_result(finished)
