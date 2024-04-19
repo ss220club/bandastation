@@ -257,7 +257,7 @@
 /mob/living/basic/carp/ella
 	name = "Элла"
 	real_name = "Элла"
-	desc = "Она вышла из кого-то."
+	desc = "Карп-паразит, который живет в своём носителе до созревания и кажется он уже \"вылупился\"."
 	gold_core_spawnable = NO_SPAWN
 
 /mob/living/basic/carp/ella/Initialize(mapload)
