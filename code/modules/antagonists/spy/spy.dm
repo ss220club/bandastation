@@ -1,5 +1,5 @@
 /datum/antagonist/spy
-	name = "\improper Шпион"
+	name = "\proper Шпион"
 	roundend_category = "Шпионами"
 	antagpanel_category = "Spy"
 	antag_hud_name = "spy"
@@ -111,11 +111,11 @@
 	uplink_created = TRUE
 
 	if(istype(spy_uplink, /obj/item/modular_computer/pda))
-		uplink_location = "ваш ПДА"
+		uplink_location = "ваш КПК"
 
 	else if(istype(spy_uplink, /obj/item/pen))
 		if(istype(spy_uplink.loc, /obj/item/modular_computer/pda))
-			uplink_location = "ручка вашего ПДА"
+			uplink_location = "ручка вашего КПК"
 		else
 			uplink_location = "ручка"
 
@@ -154,7 +154,7 @@
 	report += printplayer(owner)
 	report += " - Количество совершенных краж <b>[bounties_claimed]</b>."
 	if(bounties_claimed > 0)
-		report += " - Они получили следующие награды: [english_list(all_loot)]"
+		report += " - Получены следующие награды: [english_list(all_loot)]"
 	report += printobjectives(objectives)
 	return report.Join("<br>")
 

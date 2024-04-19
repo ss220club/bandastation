@@ -257,7 +257,7 @@
 	var/list/obj/item/existing_items = GLOB.steal_item_handler.objectives_by_path[desired_item.targetitem]
 	var/obj/item/the_item = length(existing_items) ? pick(existing_items) : desired_item.targetitem
 	var/the_item_name = istype(the_item) ? the_item.name : initial(the_item.name)
-	name = "[difficulty == SPY_DIFFICULTY_HARD ? "Грандиозная ":""] Кража [the_item_name]"
+	name = "[difficulty == SPY_DIFFICULTY_HARD ? "Грандиозная кража":""] Кража [the_item_name]"
 	help = "Украдите любой [the_item_name][desired_item.steal_hint ? ": [desired_item.steal_hint]" : "."]"
 	return TRUE
 
@@ -359,7 +359,7 @@
 
 	location_type = machine_area.type
 	name ||= "Кража [machine.name]"
-	help ||= "Украдите - \a [machine] находящаяся в [machine_area]."
+	help ||= "Украдите - [machine.name] находящаяся в [machine_area]."
 	return TRUE
 
 /datum/spy_bounty/machine/is_stealable(atom/movable/stealing)
@@ -545,15 +545,15 @@
 	var/mob/living/carbon/human/stolen_from = stealing
 	var/obj/item/real_stolen_item = find_desired_thing(stealing)
 	stolen_from.Unconscious(10 SECONDS)
-	to_chat(stolen_from, span_warning("Вы чувствуете, что чего-то не хватает там, где ваш [real_stolen_item.name] когда-то был."))
+	to_chat(stolen_from, span_warning("Вы чувствуете, что чего-то не хватает там, где ранее находился ваш - [real_stolen_item.name]."))
 	return ..(real_stolen_item, spy)
 
 /datum/spy_bounty/targets_person/some_item/target_found(mob/crewmember)
 	var/obj/item/desired_thing = find_desired_thing(crewmember)
 	target_original_desired_ref = WEAKREF(desired_thing)
-	name = "[desired_thing.name] [crewmember.real_name]"
+	name = "[desired_thing.name] у [crewmember.real_name]"
 	help = "Украдите [desired_thing] у [crewmember.real_name]. \
-		Вы можете сделать это с помощью грубой силы или просканировав их с помощью аплинком, пока они недееспособны."
+		Вы можете сделать это с помощью грубой силы или просканировав их с помощью аплинка, пока они недееспособны."
 	return TRUE
 
 /// Finds the desired item type in the target crewmember.
@@ -588,7 +588,7 @@
 
 /datum/spy_bounty/targets_person/some_item/pda/target_found(mob/crewmember)
 	. = ..()
-	name = "ПДА [crewmember.real_name]"
+	name = "КПК [crewmember.real_name]"
 
 // Steal someone's heirloom
 /datum/spy_bounty/targets_person/some_item/heirloom
@@ -667,7 +667,7 @@
 	var/mob/living/picked = pick(possible_bots)
 	target_bot_ref = WEAKREF(picked)
 	name ||= "Похищение [picked.name]"
-	help ||= "Похитите [picked.name] - робота-помощника станции."
+	help ||= "Похитьте [picked.name] - робота-помощника станции."
 	return TRUE
 
 /datum/spy_bounty/some_bot/is_stealable(atom/movable/stealing)
@@ -676,28 +676,28 @@
 /datum/spy_bounty/some_bot/beepsky
 	difficulty = SPY_DIFFICULTY_MEDIUM // gotta get him to stand still
 	bot_type = /mob/living/simple_animal/bot/secbot/beepsky/officer
-	help = "Похитите офицера Бипски - обычно встречается при патрулировании станции. \
+	help = "Похитьте офицера Бипски - обычно встречается при патрулировании станции. \
 		Будьте осторожны, им может не понравиться сканирование."
 
 /datum/spy_bounty/some_bot/ofitser
 	difficulty = SPY_DIFFICULTY_EASY
 	bot_type = /mob/living/simple_animal/bot/secbot/beepsky/ofitser
-	help = "Похитите тюремного Офитсера - обычно охраняет ГУЛАГ."
+	help = "Похитьте тюремного Офитсера - обычно охраняет ГУЛАГ."
 
 /datum/spy_bounty/some_bot/armsky
 	difficulty = SPY_DIFFICULTY_HARD
 	bot_type = /mob/living/simple_animal/bot/secbot/beepsky/armsky
-	help = "Похитите Сержанта Армски - обычно охраняет оружейную станции."
+	help = "Похитьте Сержанта Армски - обычно охраняет оружейную станции."
 
 /datum/spy_bounty/some_bot/pingsky
 	difficulty = SPY_DIFFICULTY_HARD
 	bot_type = /mob/living/simple_animal/bot/secbot/pingsky
-	help = "Похитите офицера Пингски - обычно защищает ИИ станции."
+	help = "Похитьте офицера Пингски - обычно защищает ИИ станции."
 
 /datum/spy_bounty/some_bot/scrubbs
 	difficulty = SPY_DIFFICULTY_EASY
 	bot_type = /mob/living/basic/bot/cleanbot/medbay
-	help = "Похитите доктора Scrubbs - обычно убирает кровь в медотсеке."
+	help = "Похитьте доктора Scrubbs - обычно убирает кровь в медотсеке."
 
 /datum/spy_bounty/some_bot/scrubbs/can_claim(mob/user)
 	return !(user.mind?.assigned_role.departments_bitflags & DEPARTMENT_BITFLAG_MEDICAL)

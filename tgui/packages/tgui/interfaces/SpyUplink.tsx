@@ -98,7 +98,7 @@ export const SpyUplink = () => {
       >
         <Section
           fill
-          title="Шпионские цели на кражу"
+          title="Шпионские заказы"
           scrollable
           buttons={
             <Box mt={0.4}>
