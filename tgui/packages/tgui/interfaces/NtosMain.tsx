@@ -107,7 +107,7 @@ export const NtosMain = (props) => {
         >
           <Table>
             <Table.Row>
-              ID Имя:{' '}
+              Имя на ID:{' '}
               {show_imprint
                 ? login.IDName +
                   ' ' +
