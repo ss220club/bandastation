@@ -97,7 +97,7 @@
 		if(give_backup)
 			var/datum/action/backup_uplink/backup = new(src)
 			backup.Grant(spy)
-			to_chat(spy, span_boldnotice("Нам не удалось предоставить вам аплинк, поэтому вам была предоставлена возможность создать его самостоятельно."))
+			to_chat(spy, span_boldnotice("Нам не удалось предоставить вам аплинк, поэтому вам была дана возможность создать его самостоятельно."))
 		return FALSE
 
 	return TRUE
@@ -115,9 +115,9 @@
 
 	else if(istype(spy_uplink, /obj/item/pen))
 		if(istype(spy_uplink.loc, /obj/item/modular_computer/pda))
-			uplink_location = "ручка вашего КПК"
+			uplink_location = "ручку вашего КПК"
 		else
-			uplink_location = "ручка"
+			uplink_location = "ручку"
 
 	else if(istype(spy_uplink, /obj/item/radio))
 		uplink_location = "ваш наушник"

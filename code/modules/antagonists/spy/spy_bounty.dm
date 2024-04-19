@@ -553,7 +553,7 @@
 	target_original_desired_ref = WEAKREF(desired_thing)
 	name = "[desired_thing.name] у [crewmember.real_name]"
 	help = "Украдите [desired_thing] у [crewmember.real_name]. \
-		Вы можете сделать это с помощью грубой силы или просканировав их с помощью аплинка, пока они недееспособны."
+		Вы можете сделать это с помощью грубой силы или просканировав их с помощью аплинка, пока они без сознания."
 	return TRUE
 
 /// Finds the desired item type in the target crewmember.
