@@ -118,7 +118,7 @@ export const NtosNetDownloader = (props) => {
                     color="good"
                     icon="download"
                     tooltipPosition="left"
-                    tooltip={`${downloadname}.prg Загружен`}
+                    tooltip={`${downloadname}.prg загружен`}
                   />
                 ))
               }
