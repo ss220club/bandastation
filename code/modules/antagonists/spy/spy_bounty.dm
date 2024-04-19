@@ -257,7 +257,7 @@
 	var/list/obj/item/existing_items = GLOB.steal_item_handler.objectives_by_path[desired_item.targetitem]
 	var/obj/item/the_item = length(existing_items) ? pick(existing_items) : desired_item.targetitem
 	var/the_item_name = istype(the_item) ? the_item.name : initial(the_item.name)
-	name = "[difficulty == SPY_DIFFICULTY_HARD ? "Грандиозная кража":""] Кража [the_item_name]"
+	name = "[difficulty == SPY_DIFFICULTY_HARD ? "Грандиозная кража":"Кража"][the_item_name]"
 	help = "Украдите любой [the_item_name][desired_item.steal_hint ? ": [desired_item.steal_hint]" : "."]"
 	return TRUE
 
