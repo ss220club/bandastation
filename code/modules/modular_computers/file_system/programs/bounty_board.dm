@@ -3,7 +3,7 @@
 	filedesc = "Bounty Board Request Network"
 	downloader_category = PROGRAM_CATEGORY_SUPPLY
 	program_open_overlay = "bountyboard"
-	extended_desc = "Мультиплатформенная сеть для размещения заявок по всей станции, с возможностью оплаты по всей сети..."
+	extended_desc = "Мультиплатформенная сеть для размещения заявок по всей станции, с возможностью удаленной оплаты."
 	program_flags = PROGRAM_ON_NTNET_STORE | PROGRAM_REQUIRES_NTNET
 	size = 10
 	tgui_id = "NtosBountyBoard"
