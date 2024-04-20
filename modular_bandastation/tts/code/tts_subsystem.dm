@@ -384,7 +384,7 @@ SUBSYSTEM_DEF(tts220)
 		if(speaking_mob.client)
 			output.channel = get_local_channel_by_owner(speaker)
 			output.wait = TRUE
-	output = listener.playsound_local(turf_source, output, volume)
+	output = listener.playsound_local(turf_source, output, volume, wait = TRUE)
 
 	if(!output || output.volume <= 0)
 		return
