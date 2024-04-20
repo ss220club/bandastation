@@ -1,6 +1,6 @@
 /datum/bounty/item/medical/heart
-	name = "Heart"
-	description = "Commander Johnson is in critical condition after suffering yet another heart attack. Doctors say he needs a new heart fast. Ship one, pronto! We'll take a cybernetic one if need be, but only if it's upgraded."
+	name = "Сердце"
+	description = "Коммандор Джонсон в критическом состоянии после ещё одного пережитого сердечного приступа. Доктора говорят, что им нужно новое сердце как можно быстрее. Отправьте одно, быстро! Мы возьмём и кибернитическое, если оно понадобится, но только если оно будет улучшенное."
 	reward = CARGO_CRATE_VALUE * 5
 	wanted_types = list(
 		/obj/item/organ/internal/heart = TRUE,
@@ -10,8 +10,8 @@
 	)
 
 /datum/bounty/item/medical/lung
-	name = "Lungs"
-	description = "A recent explosion at Central Command has left multiple staff with punctured lungs. Ship spare lungs to be rewarded. We'll take cybernetic ones if need be, but only if they're upgraded."
+	name = "Лёгкие"
+	description = "Недавний взрыв на Центральном Командовании оставил многих сотрудников с пробитыми лёгкими. Запасные лёгкие должны быть выданы. Мы возьмём кибернитические, если они понадобятся, но только если они будут улучшенные."
 	reward = CARGO_CRATE_VALUE * 10
 	required_count = 3
 	wanted_types = list(
@@ -22,14 +22,14 @@
 	)
 
 /datum/bounty/item/medical/appendix
-	name = "Appendix"
-	description = "Chef Gibb of Central Command wants to prepare a meal using a very special delicacy: an appendix. If you ship one, he'll pay."
+	name = "Аппендикс"
+	description = "Повар Центрального Командования Гибб хочет приготовить блюдо, используя, особый деликатес: аппендикс. Если вы отправите один, он вам заплатит."
 	reward = CARGO_CRATE_VALUE * 5 //there are no synthetic appendixes
 	wanted_types = list(/obj/item/organ/internal/appendix = TRUE)
 
 /datum/bounty/item/medical/ears
-	name = "Ears"
-	description = "Multiple staff at Station 12 have been left deaf due to unauthorized clowning. Ship them new ears. We'll take cybernetic ones if need be, but only if they're upgraded."
+	name = "Уши"
+	description = "Множество сотрудников станции 12 остались глухими в следствие неавторизованной клоунады. Отправьте им новые уши. Мы возьмём и кибернетические, если они нам понадобятся, но только если они буду улучшенные."
 	reward = CARGO_CRATE_VALUE * 10
 	required_count = 3
 	wanted_types = list(
@@ -41,8 +41,8 @@
 	)
 
 /datum/bounty/item/medical/liver
-	name = "Livers"
-	description = "Multiple high-ranking CentCom diplomats have been hospitalized with liver failure after a recent meeting with Third Soviet Union ambassadors. Help us out, will you? We'll take cybernetic ones if need be, but only if they're upgraded."
+	name = "Печень"
+	description = "Множество высокопоставленных дипломатов ЦентКома были госпитализированы с отказом печени после встречи с тремя послами Советского Союза. Помогите нам, ладно? Мы возьмём и кибернетические, если они нам понадобятся, но только если они буду улучшенные."
 	reward = CARGO_CRATE_VALUE * 10
 	required_count = 3
 	wanted_types = list(

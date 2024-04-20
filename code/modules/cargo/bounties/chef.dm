@@ -113,54 +113,54 @@
 
 /datum/bounty/item/chef/muffin
 	name = "Кексы"
-	description = "The Muffin Man is visiting CentCom, but he's forgotten his muffins! Your order is to rectify this."
+	description = "Любитель кексов посещает ЦентКОм, но он забыл свои кексы! Ваша задача - исправить это."
 	reward = CARGO_CRATE_VALUE * 6
 	required_count = 3
 	wanted_types = list(/obj/item/food/muffin = TRUE)
 
 /datum/bounty/item/chef/chawanmushi
 	name = "Chawanmushi"
-	description = "Nanotrasen wants to improve relations with its sister company, Japanotrasen. Ship Chawanmushi immediately."
+	description = "Нанотрейзен хочет улучшить отношения с её дочерней компанией, Японотрейзен. Отправьте Тяван-муси немедленно."
 	reward = CARGO_CRATE_VALUE * 16
 	wanted_types = list(/obj/item/food/chawanmushi = TRUE)
 
 /datum/bounty/item/chef/kebab
-	name = "Kebabs"
-	description = "Remove all kebab from station you are best food. Ship to CentCom to remove from the premises."
+	name = "Шашлык"
+	description = "Убери весь шашлык со станции, и ты станешь едою. Отправьте на ЦентКом для удаления из помещения."
 	reward = CARGO_CRATE_VALUE * 7
 	required_count = 3
 	wanted_types = list(/obj/item/food/kebab = TRUE)
 
 /datum/bounty/item/chef/soylentgreen
 	name = "Soylent Green"
-	description = "CentCom has heard wonderful things about the product 'Soylent Green', and would love to try some. If you indulge them, expect a pleasant bonus."
+	description = "ЦентКом услышал замечательные вещи о 'Зелёном сойленте' и хочет попробовать его. Если вы оправдаете их ожидания, ожидайте приятный бонус."
 	reward = CARGO_CRATE_VALUE * 10
 	wanted_types = list(/obj/item/food/soylentgreen = TRUE)
 
 /datum/bounty/item/chef/pancakes
 	name = "Pancakes"
-	description = "Here at Nanotrasen we consider employees to be family. And you know what families love? Pancakes. Ship a baker's dozen."
+	description = "Здесь, в Нанотрейзен, сотрудников считают семьёй. Вы знаете что семьи любят? Оладьи. Отправьте чёртову дюжину."
 	reward = CARGO_CRATE_VALUE * 10
 	required_count = 13
 	wanted_types = list(/obj/item/food/pancakes = TRUE)
 
 /datum/bounty/item/chef/nuggies
-	name = "Chicken Nuggets"
-	description = "The vice president's son won't shut up about chicken nuggies. Would you mind shipping some?"
+	name = "Куриные котлеты"
+	description = "Сын вице-президента не можете перестать говорить о куриных котлетках. Не могли бы вы отрпавить несколько?"
 	reward = CARGO_CRATE_VALUE * 8
 	required_count = 6
 	wanted_types = list(/obj/item/food/nugget = TRUE)
 
 /datum/bounty/item/chef/corgifarming //Butchering is a chef's job.
-	name = "Corgi Hides"
-	description = "Admiral Weinstein's space yacht needs new upholstery. A dozen Corgi furs should do just fine."
+	name = "Шкура корги"
+	description = "Космическая яхта адмирала Вейнштейна нуждается в новой обивке. Дюжина меха корги должна с этим справиться."
 	reward = CARGO_CRATE_VALUE * 60 //that's a lot of dead dogs
 	required_count = 12
 	wanted_types = list(/obj/item/stack/sheet/animalhide/corgi = TRUE)
 
 /datum/bounty/item/chef/pickles
-	name = "Pickles"
-	description = "The food control department lacks enough pickles to properly evaluate some of the different types of hard liquor."
+	name = "Огурцы"
+	description = "В отделе контроля питания не хватает огурцов для правильной дегустации разных типов крепкого ликёра."
 	reward = CARGO_CRATE_VALUE * 10
 	required_count = 7
 	wanted_types = list(/obj/item/food/pickle = TRUE)
