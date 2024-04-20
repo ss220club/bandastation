@@ -53,8 +53,8 @@
 			var/hand_name = hand_to_watch % 2 == 0 ? "правую" : "левую"
 			show_instruction(keybinding_message(
 				/datum/keybinding/mob/swap_hands,
-				"Нажмите '%KEY%', чтобы использовать [hand_name] руку",
-				"Кликните по '<b>SWAP</b>', чтобы использовать [hand_name] руку",
+				"Нажмите '%KEY%', чтобы сменить активную руку",
+				"Кликните по '<b>SWAP</b>', чтобы сменить активную руку",
 			))
 		if (STAGE_PICK_UP_ITEM)
 			show_instruction("Возьмите что-нибудь!")
