@@ -137,7 +137,7 @@
 	wanted_types = list(/obj/item/kirbyplants = TRUE)
 
 /datum/bounty/item/assistant/monkey_cubes
-	name = "Куба обезьян"
+	name = "Кубы обезьян"
 	description = "В связи с недавним генетическим инцидентом, Центральное Командование остро нуждается в обезьянах. Ваша задача отправить куба обезьян."
 	reward = CARGO_CRATE_VALUE * 4
 	required_count = 3

@@ -1,7 +1,7 @@
 
 /datum/supply_pack/goody
 	access = NONE
-	group = "Goodies"
+	group = "Полезности"
 	goody = TRUE
 	discountable = SUPPLY_PACK_STD_DISCOUNTABLE
 

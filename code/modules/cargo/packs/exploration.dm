@@ -2,7 +2,7 @@
 
 /datum/supply_pack/exploration
 	special = TRUE
-	group = "Outsourced" //Не смог найти нормальный перевод
+	group = "Аутсорсинг"
 
 /datum/supply_pack/exploration/scrapyard
 	name = "Scrapyard Crate"
