@@ -21,7 +21,7 @@
 
 /datum/bounty/item/security/plates
 	name = "License Plates"
-	description = "В результате ДТП с машиной с клоунской машины, нам бы пригодились автомобильные номера, созданные вашими заключёнными."
+	description = "В результате ДТП с участием клоунской машины, нам бы пригодились автомобильные номера, созданные вашими заключёнными."
 	reward = CARGO_CRATE_VALUE * 2
 	required_count = 10
 	wanted_types = list(/obj/item/stack/license_plates/filled = TRUE)

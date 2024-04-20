@@ -330,7 +330,7 @@
 				if(length(SSshuttle.shopping_list))
 					var/obj/item/paper/requisition_paper = new(get_turf(src))
 					requisition_paper.name = "requisition form - [station_time_timestamp()]"
-					var/requisition_text = "<h2>[station_name()]: Заявка на поставку</h2>"
+					var/requisition_text = "<h2>[station_name()]: заявка на поставку</h2>"
 					requisition_text += "<hr/>"
 					requisition_text += "Время заказа: [station_time_timestamp()]<br/><br/>"
 					for(var/datum/supply_order/order as anything in SSshuttle.shopping_list)
