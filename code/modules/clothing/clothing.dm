@@ -347,13 +347,13 @@
 		. += how_cool_are_your_threads.Join()
 
 	if(get_armor().has_any_armor() || (flags_cover & (HEADCOVERSMOUTH|PEPPERPROOF)))
-		. += span_notice("It has a <a href='?src=[REF(src)];list_armor=1'>tag</a> listing its protection classes.")
+		. += span_notice("Имеется <a href='?src=[REF(src)];list_armor=1'>бирка</a>, указывающая классы защиты.")
 
 /obj/item/clothing/Topic(href, href_list)
 	. = ..()
 
 	if(href_list["list_armor"])
-		var/list/readout = list("<span class='notice'><u><b>PROTECTION CLASSES</u></b>")
+		var/list/readout = list("<span class='notice'><u><b>КЛАССЫ ЗАЩИТЫ</u></b>")
 
 		var/datum/armor/armor = get_armor()
 		var/added_damage_header = FALSE
@@ -362,7 +362,7 @@
 			if(!rating)
 				continue
 			if(!added_damage_header)
-				readout += "\n<b>ARMOR (I-X)</b>"
+				readout += "\n<b>БРОНЯ (I-X)</b>"
 				added_damage_header = TRUE
 			readout += "\n[armor_to_protection_name(damage_key)] [armor_to_protection_class(rating)]"
 
@@ -372,7 +372,7 @@
 			if(!rating)
 				continue
 			if(!added_durability_header)
-				readout += "\n<b>DURABILITY (I-X)</b>"
+				readout += "\n<b>ПРОЧНОСТЬ (I-X)</b>"
 				added_damage_header = TRUE
 			readout += "\n[armor_to_protection_name(durability_key)] [armor_to_protection_class(rating)]"
 
@@ -516,7 +516,7 @@ BLIND     // can't see anything
 		return ..()
 	if(damage_flag == BOMB)
 		//so the shred survives potential turf change from the explosion.
-		addtimer(CALLBACK(src, PROC_REF(_spawn_shreds)), 1)
+		addtimer(CALLBACK(src, PROC_REF(_spawn_shreds)), 0.1 SECONDS)
 		deconstruct(FALSE)
 	if(damage_flag == CONSUME) //This allows for moths to fully consume clothing, rather than damaging it like other sources like brute
 		var/turf/current_position = get_turf(src)

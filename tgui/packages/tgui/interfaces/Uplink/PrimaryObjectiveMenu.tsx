@@ -15,13 +15,11 @@ export const PrimaryObjectiveMenu = (props: PrimaryObjectiveMenuProps) => {
     <Section fill>
       <Section>
         <Box mt={3} mb={3} bold fontSize={1.2} align="center" color="white">
-          {
-            'Agent, your Primary Objectives are as follows. Complete these at all costs.'
-          }
+          {'Агент, это ваши основные задачи. Выполните их любой ценой.'}
         </Box>
         <Box mt={3} mb={5} bold fontSize={1.2} align="center" color="white">
           {
-            'Completing Secondary Objectives may allow you to aquire additional equipment.'
+            'Завершение второстепенных задач позволяет получить дополнительное оборудование.'
           }
         </Box>
       </Section>
@@ -34,18 +32,18 @@ export const PrimaryObjectiveMenu = (props: PrimaryObjectiveMenuProps) => {
             align={'top'}
             as="span"
           >
-            PRIORITY MESSAGE
+            ПРИОРИТЕТНОЕ СООБЩЕНИЕ
             <br />
-            SOURCE: xxx.xxx.xxx.224:41394
-            <br />
-            <br />
-            \\Debrief in progress.
-            <br />
-            \\Final Objective confirmed complete. <br />
-            \\Your work is done here, agent.
+            ИСТОЧНИК: xxx.xxx.xxx.224:41394
             <br />
             <br />
-            CONNECTION CLOSED_
+            \\Проводится подведение итогов.
+            <br />
+            \\Выполнение финальной задачи подверждено <br />
+            \\Ваша работа здесь готова, агент.
+            <br />
+            <br />
+            СОЕДИНЕНИЕ ЗАКРЫТО_
           </Box>
         </Dimmer>
       )}
@@ -81,9 +79,9 @@ export const PrimaryObjectiveMenu = (props: PrimaryObjectiveMenuProps) => {
       {!!can_renegotiate && (
         <Box mt={3} mb={5} bold fontSize={1.2} align="center" color="white">
           <Button
-            content={'Renegotiate Contract'}
+            content={'Перезаключить контракт'}
             tooltip={
-              'Replace your existing primary objectives with a custom one. This action can only be performed once.'
+              'Замените свои текущие основные задачи на пользовательские. Это действие можно совершить лишь единожды.'
             }
             onClick={() => act('renegotiate_objectives')}
           />

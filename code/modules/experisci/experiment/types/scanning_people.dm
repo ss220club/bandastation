@@ -26,9 +26,9 @@
 	if(!mind_required || !isnull(check.mind))
 		return TRUE
 	if(isliving(usr))
-		check.balloon_alert(usr, "subject is mindless!")
+		check.balloon_alert(usr, "субъект без разума!")
 	return FALSE
 
 /datum/experiment/scanning/people/serialize_progress_stage(atom/target, list/seen_instances)
-	return EXPERIMENT_PROG_INT("Scan unique individuals with [required_traits_desc].", \
+	return EXPERIMENT_PROG_INT("Сканируйте уникальные личности с [required_traits_desc].", \
 		seen_instances.len, required_atoms[target])

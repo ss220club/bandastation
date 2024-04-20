@@ -41,9 +41,9 @@ const selectRemappedStaticData = (data) => {
       ...node,
       id: remapId(id),
       costs,
-      prereq_ids: map(remapId)(node.prereq_ids || []),
-      design_ids: map(remapId)(node.design_ids || []),
-      unlock_ids: map(remapId)(node.unlock_ids || []),
+      prereq_ids: map(node.prereq_ids || [], remapId),
+      design_ids: map(node.design_ids || [], remapId),
+      unlock_ids: map(node.unlock_ids || [], remapId),
       required_experiments: node.required_experiments || [],
       discount_experiments: node.discount_experiments || [],
     };
@@ -105,10 +105,10 @@ const TechwebStart = (props) => {
     return (
       <Modal width="15em" align="center" className="Techweb__LockedModal">
         <div>
-          <b>Console Locked</b>
+          <b>Консоль заблокирована</b>
         </div>
         <Button icon="unlock" onClick={() => act('toggleLock')}>
-          Unlock
+          Разблокировать
         </Button>
       </Modal>
     );
@@ -117,7 +117,7 @@ const TechwebStart = (props) => {
     return (
       <Modal width="25em" align="center" className="Techweb__LockedModal">
         <div>
-          <b>No research techweb found, please synchronize the console.</b>
+          <b>Не обнаружена техсеть. Пожалуйста, синхронизируйте консоль.</b>
         </div>
       </Modal>
     );
@@ -157,7 +157,7 @@ export const TechwebContent = (props) => {
         <Flex className="Techweb__HeaderContent">
           <Flex.Item>
             <Box>
-              Available points:
+              Доступные очки:
               <ul className="Techweb__PointSummary">
                 {Object.keys(points).map((k) => (
                   <li key={k}>
@@ -168,20 +168,20 @@ export const TechwebContent = (props) => {
               </ul>
             </Box>
             <Box>
-              Security protocols:
+              Протоколы защиты:
               <span
                 className={`Techweb__SecProtocol ${
                   !!sec_protocols && 'engaged'
                 }`}
               >
-                {sec_protocols ? 'Engaged' : 'Disengaged'}
+                {sec_protocols ? 'включены' : 'отключены'}
               </span>
             </Box>
           </Flex.Item>
           <Flex.Item grow={1} />
           <Flex.Item>
             <Button fluid onClick={() => act('toggleLock')} icon="lock">
-              Lock Console
+              Заблокировать консоль
             </Button>
             {d_disk && (
               <Flex.Item>
@@ -191,7 +191,7 @@ export const TechwebContent = (props) => {
                     setTechwebRoute({ route: 'disk', diskType: 'design' })
                   }
                 >
-                  Design Disk Inserted
+                  Диск дизайнов вставлен
                 </Button>
               </Flex.Item>
             )}
@@ -203,7 +203,7 @@ export const TechwebContent = (props) => {
                     setTechwebRoute({ route: 'disk', diskType: 'tech' })
                   }
                 >
-                  Tech Disk Inserted
+                  Диск технологий вставлен
                 </Button>
               </Flex.Item>
             )}
@@ -251,10 +251,11 @@ const TechwebOverview = (props) => {
       );
     });
   } else {
-    displayedNodes = sortBy((x) => node_cache[x.id].name)(
+    displayedNodes = sortBy(
       tabIndex < 2
         ? nodes.filter((x) => x.tier === tabIndex)
         : nodes.filter((x) => x.tier >= tabIndex),
+      (x) => node_cache[x.id].name,
     );
   }
 
@@ -268,7 +269,7 @@ const TechwebOverview = (props) => {
       <Flex.Item>
         <Flex justify="space-between" className="Techweb__HeaderSectionTabs">
           <Flex.Item align="center" className="Techweb__HeaderTabTitle">
-            Web View
+            Просмотр техсети
           </Flex.Item>
           <Flex.Item grow={1}>
             <Tabs>
@@ -276,19 +277,19 @@ const TechwebOverview = (props) => {
                 selected={!searching && tabIndex === 0}
                 onClick={() => switchTab(0)}
               >
-                Researched
+                Изученные
               </Tabs.Tab>
               <Tabs.Tab
                 selected={!searching && tabIndex === 1}
                 onClick={() => switchTab(1)}
               >
-                Available
+                Доступные
               </Tabs.Tab>
               <Tabs.Tab
                 selected={!searching && tabIndex === 2}
                 onClick={() => switchTab(2)}
               >
-                Future
+                Будущие
               </Tabs.Tab>
               {!!searching && <Tabs.Tab selected>Search Results</Tabs.Tab>}
             </Tabs>
@@ -345,20 +346,20 @@ const TechwebDiskMenu = (props) => {
           </Flex.Item>
           <Flex.Item grow={1}>
             <Tabs>
-              <Tabs.Tab selected>Stored Data</Tabs.Tab>
+              <Tabs.Tab selected>Записанная информация</Tabs.Tab>
             </Tabs>
           </Flex.Item>
           <Flex.Item align="center">
             {diskType === 'tech' && (
               <Button icon="save" onClick={() => act('loadTech')}>
-                Web &rarr; Disk
+                Сеть &rarr; Диск
               </Button>
             )}
             <Button
               icon="upload"
               onClick={() => act('uploadDisk', { type: diskType })}
             >
-              Disk &rarr; Web
+              Диск &rarr; Сеть
             </Button>
             <Button
               icon="eject"
@@ -390,10 +391,10 @@ const TechwebDesignDisk = (props) => {
   return (
     <>
       {blueprints.map((x, i) => (
-        <Section key={i} title={`Slot ${i + 1}`}>
-          {(x === null && 'Empty') || (
+        <Section key={i} title={`Слот ${i + 1}`}>
+          {(x === null && 'Пусто') || (
             <>
-              Contains the design for <b>{design_cache[x].name}</b>:<br />
+              Содержит дизайн для <b>{design_cache[x].name}</b>:<br />
               <span
                 className={`${design_cache[x].class} Techweb__DesignIcon`}
               />
@@ -435,7 +436,7 @@ const TechNodeDetail = (props) => {
       <Flex.Item shrink={1}>
         <Flex justify="space-between" className="Techweb__HeaderSectionTabs">
           <Flex.Item align="center" className="Techweb__HeaderTabTitle">
-            Node
+            Узел
           </Flex.Item>
           <Flex.Item grow={1}>
             <Tabs>
@@ -443,20 +444,20 @@ const TechNodeDetail = (props) => {
                 selected={tabIndex === 0}
                 onClick={() => setTabIndex(0)}
               >
-                Required ({complPrereq}/{prereqNodes.length})
+                Требования ({complPrereq}/{prereqNodes.length})
               </Tabs.Tab>
               <Tabs.Tab
                 selected={tabIndex === 1}
                 disabled={unlockedNodes.length === 0}
                 onClick={() => setTabIndex(1)}
               >
-                Unlocks ({unlockedNodes.length})
+                Разблокирует ({unlockedNodes.length})
               </Tabs.Tab>
             </Tabs>
           </Flex.Item>
           <Flex.Item align="center">
             <Button icon="home" onClick={() => setTechwebRoute(null)}>
-              Home
+              Домой
             </Button>
           </Flex.Item>
         </Flex>
@@ -519,7 +520,7 @@ const TechNode = (props) => {
       }}
       value={expcompl / required_experiments.length}
     >
-      Experiments ({expcompl}/{required_experiments.length})
+      Эксперименты ({expcompl}/{required_experiments.length})
     </ProgressBar>
   );
 
@@ -535,7 +536,7 @@ const TechNode = (props) => {
       }}
       value={techcompl / prereq_ids.length}
     >
-      Tech ({techcompl}/{prereq_ids.length})
+      Технологии ({techcompl}/{prereq_ids.length})
     </ProgressBar>
   );
 
@@ -562,7 +563,7 @@ const TechNode = (props) => {
                   setTabIndex(0);
                 }}
               >
-                Details
+                Детали
               </Button>
             )}
             {tier > 0 && (
@@ -571,7 +572,7 @@ const TechNode = (props) => {
                 disabled={!can_unlock || tier > 1}
                 onClick={() => act('researchNode', { node_id: id })}
               >
-                Research
+                Изучить
               </Button>
             )}
           </>
@@ -630,7 +631,7 @@ const TechNode = (props) => {
       {required_experiments.length > 0 && (
         <Collapsible
           className="Techweb__NodeExperimentsRequired"
-          title="Required Experiments"
+          title="Необходимые эксперименты"
         >
           {required_experiments.map((k, index) => {
             const thisExp = experiments[k];
@@ -644,7 +645,7 @@ const TechNode = (props) => {
       {Object.keys(discount_experiments).length > 0 && (
         <Collapsible
           className="TechwebNodeExperimentsRequired"
-          title="Discount-Eligible Experiments"
+          title="Эксперименты для скидки"
         >
           {Object.keys(discount_experiments).map((k, index) => {
             const thisExp = experiments[k];
@@ -654,8 +655,8 @@ const TechNode = (props) => {
             return (
               <Experiment key={thisExp} exp={thisExp}>
                 <Box className="Techweb__ExperimentDiscount">
-                  Provides a discount of {discount_experiments[k]} points to all
-                  required point pools.
+                  Предоставляет скидку в виде {discount_experiments[k]} очков
+                  подходящим технологиям.
                 </Box>
               </Experiment>
             );
@@ -678,14 +679,14 @@ const LockedExperiment = (props) => {
         <Flex align="center" justify="space-between">
           <Flex.Item color="rgba(0, 0, 0, 0.6)">
             <Icon name="lock" />
-            Undiscovered Experiment
+            Неизвестный эксперимент
           </Flex.Item>
           <Flex.Item color="rgba(0, 0, 0, 0.5)">???</Flex.Item>
         </Flex>
       </Button>
       <Box className={'ExperimentConfigure__ExperimentContent'}>
-        This experiment has not been discovered yet, continue researching nodes
-        in the tree to discover the contents of this experiment.
+        Этот эксперимент еще не известен. Продолжайте изучать технологии, чтобы
+        распознать его.
       </Box>
     </Box>
   );

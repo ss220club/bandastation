@@ -4,7 +4,7 @@
 	can_run_on_flags = PROGRAM_CONSOLE
 	downloader_category = PROGRAM_CATEGORY_SUPPLY
 	program_open_overlay = "request"
-	extended_desc = "Allows for departments to order supplied from Cargo for free, with a cooldown between orders."
+	extended_desc = "Позволяет отделам бесплатно заказывать товары из отдела снабжения с периодом ожидания между заказами."
 	size = 10
 	tgui_id = "NtosDeptOrder"
 	program_icon = FA_ICON_CART_FLATBED

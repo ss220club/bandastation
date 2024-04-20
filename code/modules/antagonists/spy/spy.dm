@@ -1,6 +1,6 @@
 /datum/antagonist/spy
-	name = "\improper Spy"
-	roundend_category = "spies"
+	name = "\proper Шпион"
+	roundend_category = "Шпионами"
 	antagpanel_category = "Spy"
 	antag_hud_name = "spy"
 	job_rank = ROLE_SPY
@@ -97,7 +97,7 @@
 		if(give_backup)
 			var/datum/action/backup_uplink/backup = new(src)
 			backup.Grant(spy)
-			to_chat(spy, span_boldnotice("You were unable to be supplied with an uplink, so you have been given the ability to create one yourself."))
+			to_chat(spy, span_boldnotice("Нам не удалось предоставить вам аплинк, поэтому вам была дана возможность создать его самостоятельно."))
 		return FALSE
 
 	return TRUE
@@ -111,16 +111,16 @@
 	uplink_created = TRUE
 
 	if(istype(spy_uplink, /obj/item/modular_computer/pda))
-		uplink_location = "your PDA"
+		uplink_location = "ваш КПК"
 
 	else if(istype(spy_uplink, /obj/item/pen))
 		if(istype(spy_uplink.loc, /obj/item/modular_computer/pda))
-			uplink_location = "your PDA's pen"
+			uplink_location = "ручку вашего КПК"
 		else
-			uplink_location = "a pen"
+			uplink_location = "ручку"
 
 	else if(istype(spy_uplink, /obj/item/radio))
-		uplink_location = "your radio headset"
+		uplink_location = "ваш наушник"
 
 	return TRUE
 
@@ -130,7 +130,30 @@
 		your_mission.owner = owner
 		your_mission.explanation_text = pick_list_replacements(SPY_OBJECTIVE_FILE, "objective_body")
 		objectives += your_mission
-
+	
+	if((length(objectives) < 3) && prob(25))
+		switch(rand(1, 4))
+			if(1)
+				var/datum/objective/protect/save_the_person = new()
+				save_the_person.owner = owner
+				save_the_person.no_failure = TRUE
+				objectives += save_the_person
+			if(2)
+				var/datum/objective/protect/nonhuman/save_the_entity = new()
+				save_the_entity.owner = owner
+				save_the_entity.no_failure = TRUE
+				objectives += save_the_entity
+			if(3)
+				var/datum/objective/jailbreak/save_the_jailbird = new()
+				save_the_jailbird.owner = owner
+				save_the_jailbird.no_failure = TRUE
+				objectives += save_the_jailbird
+			if(4)
+				var/datum/objective/jailbreak/detain/cage_the_jailbird = new()
+				cage_the_jailbird.owner = owner
+				cage_the_jailbird.no_failure = TRUE
+				objectives += cage_the_jailbird
+	
 	if(prob(10))
 		var/datum/objective/martyr/leave_no_trace = new()
 		leave_no_trace.owner = owner
@@ -140,6 +163,11 @@
 		var/datum/objective/hijack/steal_the_shuttle = new()
 		steal_the_shuttle.owner = owner
 		objectives += steal_the_shuttle
+
+	else if(prob(10)) //10% chance on 87.3% chance
+		var/datum/objective/exile/hit_the_bricks = new()
+		hit_the_bricks.owner = owner
+		objectives += hit_the_bricks
 
 	else
 		var/datum/objective/escape/gtfo = new()
@@ -152,9 +180,9 @@
 /datum/antagonist/spy/roundend_report()
 	var/list/report = list()
 	report += printplayer(owner)
-	report += " - They completed <b>[bounties_claimed]</b> bounties."
+	report += " - Количество совершенных краж <b>[bounties_claimed]</b>."
 	if(bounties_claimed > 0)
-		report += " - They received the following rewards: [english_list(all_loot)]"
+		report += " - Получены следующие награды: [english_list(all_loot)]"
 	report += printobjectives(objectives)
 	return report.Join("<br>")
 
@@ -177,7 +205,7 @@
 
 /datum/action/backup_uplink
 	name = "Create Uplink"
-	desc = "Fashion a PDA, Pen or Radio Headset into a swanky Spy Uplink."
+	desc = "Превратите КПК, ручку или наушник в шикарный шпионский аплинк."
 	var/list/valid_types = list(
 		/obj/item/modular_computer/pda,
 		/obj/item/pen,
@@ -198,15 +226,15 @@
 	var/mob/living/spy = usr
 	var/obj/item/held_thing = spy.get_active_held_item()
 	if(isnull(held_thing))
-		spy.balloon_alert(spy, "you need to hold something!")
+		spy.balloon_alert(spy, "вам нужно что-то держать!")
 		return
 
 	if(!is_type_in_list(held_thing, valid_types))
-		held_thing.balloon_alert(spy, "invalid item!")
+		held_thing.balloon_alert(spy, "неверный предмет!")
 		return
 
 	var/datum/antagonist/spy/spy_datum = target
 	spy_datum.create_spy_uplink(spy, held_thing)
-	held_thing.balloon_alert(spy, "uplink created")
+	held_thing.balloon_alert(spy, "аплинк создан")
 
 	qdel(src)

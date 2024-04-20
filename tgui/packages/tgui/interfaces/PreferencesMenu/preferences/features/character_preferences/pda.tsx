@@ -1,17 +1,13 @@
-import {
-  Feature,
-  FeatureChoiced,
-  FeatureDropdownInput,
-  FeatureShortTextInput,
-} from '../base';
+import { Feature, FeatureChoiced, FeatureShortTextInput } from '../base';
+import { FeatureDropdownInput } from '../dropdowns';
 
 export const pda_theme: FeatureChoiced = {
-  name: 'PDA Theme',
+  name: 'КПК - тема',
   category: 'GAMEPLAY',
   component: FeatureDropdownInput,
 };
 
 export const pda_ringtone: Feature<string> = {
-  name: 'PDA Ringtone',
+  name: 'КПК - рингтон',
   component: FeatureShortTextInput,
 };

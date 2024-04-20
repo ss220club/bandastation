@@ -47,12 +47,12 @@
 	to_chat(viewer, span_notice(text_to_display))
 	viewer.gain_trauma(applied_trauma, TRAUMA_RESILIENCE_SURGERY)
 	INVOKE_ASYNC(viewer, TYPE_PROC_REF(/mob, emote), "scream")
-	to_chat(viewer, span_hypnophrase("As you gaze upon the painting, your mind rends to its truth!"))
+	to_chat(viewer, span_hypnophrase("Когда вы смотрите на картину, вам разум постигает ее правду!"))
 
 /obj/structure/sign/painting/eldritch/wirecutter_act(mob/living/user, obj/item/I)
 	if(!user.can_block_magic(MAGIC_RESISTANCE))
 		user.add_mood_event("ripped_eldritch_painting", /datum/mood_event/eldritch_painting)
-		to_chat(user, span_hypnophrase("Laughter echoes through your mind...."))
+		to_chat(user, span_hypnophrase("Смех отдается эхом в вашем разуме..."))
 	qdel(src)
 	return ITEM_INTERACT_SUCCESS
 
@@ -70,57 +70,57 @@
 
 /obj/structure/sign/painting/eldritch/proc/examine_effects(mob/living/carbon/examiner)
 	if(IS_HERETIC(examiner))
-		to_chat(examiner, span_notice("Oh, what arts!"))
+		to_chat(examiner, span_notice("О, какое искусство!"))
 	else
-		to_chat(examiner, span_notice("Kinda strange painting."))
+		to_chat(examiner, span_notice("Странноватая картина."))
 
 // The sister and He Who Wept eldritch painting
 /obj/item/wallframe/painting/eldritch/weeping
 	name = "The sister and He Who Wept"
-	desc = "A beautiful artwork depicting a fair lady and HIM, HE WEEPS, I WILL SEE HIM AGAIN."
+	desc = "Прекрасное произведение искусства, изображающее прекрасную даму и ЕГО, ОН ПЛАЧЕТ, Я УВИЖУ ЕГО СНОВА."
 	icon_state = "eldritch_painting_weeping"
 	result_path = /obj/structure/sign/painting/eldritch/weeping
 
 /obj/structure/sign/painting/eldritch/weeping
 	name = "The sister and He Who Wept"
-	desc = "A beautiful artwork depicting a fair lady and HIM, HE WEEPS, I WILL SEE HIM AGAIN. Destroyable with wirecutters."
+	desc = "Прекрасное произведение искусства, изображающее прекрасную даму и ЕГО, ОН ПЛАЧЕТ, Я УВИЖУ ЕГО СНОВА. Можно уничтожить кусачками."
 	icon_state = "eldritch_painting_weeping"
 	applied_trauma = /datum/brain_trauma/severe/weeping
-	text_to_display = "Oh what arts! She is so fair, and he...HE WEEPS!!!"
+	text_to_display = "О, какое искусство! Она такая прекрасная, а он... ОН ПЛАЧЕТ!!!"
 
 /obj/structure/sign/painting/eldritch/weeping/examine_effects(mob/living/carbon/examiner)
 	if(!IS_HERETIC(examiner))
-		to_chat(examiner, span_hypnophrase("Respite, for now...."))
+		to_chat(examiner, span_hypnophrase("Передохни, пока что..."))
 		examiner.mob_mood.mood_events.Remove("eldritch_weeping")
 		examiner.add_mood_event("weeping_withdrawal", /datum/mood_event/eldritch_painting/weeping_withdrawal)
 		return
 
-	to_chat(examiner, span_notice("Oh, what arts! Just gazing upon it clears your mind."))
+	to_chat(examiner, span_notice("О, какое искусство! Один только взгляд на него проясняет ваши мысли."))
 	examiner.remove_status_effect(/datum/status_effect/hallucination)
 	examiner.add_mood_event("heretic_eldritch_painting", /datum/mood_event/eldritch_painting/weeping_heretic)
 
 // The First Desire painting, using a lot of the painting/eldritch framework
 /obj/item/wallframe/painting/eldritch/desire
 	name = "The First Desire"
-	desc = "A painting depicting a platter of flesh, just looking at it makes your stomach knot and mouth froth."
+	desc = "Картина, изображающая блюдо с плотью, от одного только взгляда на нее сводит желудок и пенится рот."
 	icon_state = "eldritch_painting_desire"
 	result_path = /obj/structure/sign/painting/eldritch/desire
 
 /obj/structure/sign/painting/eldritch/desire
 	name = "The First Desire"
-	desc = "A painting depicting a platter of flesh, just looking at it makes your stomach knot and mouth froth. Destroyable with wirecutters."
+	desc = "Картина, изображающая блюдо с плотью, от одного только взгляда на нее сводит желудок и пенится рот. Можно уничтожить кусачками."
 	icon_state = "eldritch_painting_desire"
 	applied_trauma = /datum/brain_trauma/severe/flesh_desire
-	text_to_display = "What an artwork, just looking at it makes me hunger...."
+	text_to_display = "Какое произведение, от одного взгляда на него хочется есть..."
 
 // The special examine interaction for this painting
 /obj/structure/sign/painting/eldritch/desire/examine_effects(mob/living/carbon/examiner)
 	if(!IS_HERETIC(examiner))
 		// Gives them some nutrition
 		examiner.adjust_nutrition(50)
-		to_chat(examiner, span_warning("You feel a searing pain in your stomach!"))
+		to_chat(examiner, span_warning("Вы чувствуете жгучую боль в животе!"))
 		examiner.adjustOrganLoss(ORGAN_SLOT_STOMACH, 5)
-		to_chat(examiner, span_notice("You feel less hungry, but more empty somehow?"))
+		to_chat(examiner, span_notice("Вы чувствуете себя менее голодным, но, каким-то образом, более пустым?"))
 		examiner.add_mood_event("respite_eldritch_hunger", /datum/mood_event/eldritch_painting/desire_examine)
 		return
 
@@ -141,20 +141,20 @@
 	)
 	var/organ_or_bodypart_to_spawn = pick(random_bodypart_or_organ)
 	new organ_or_bodypart_to_spawn(drop_location())
-	to_chat(examiner, span_notice("A piece of flesh crawls out of the painting and flops onto the floor."))
+	to_chat(examiner, span_notice("Кусок плоти выползает из картины и падает на пол."))
 	// Adds a negative mood event to our heretic
 	examiner.add_mood_event("heretic_eldritch_hunger", /datum/mood_event/eldritch_painting/desire_heretic)
 
 // Great chaparral over rolling hills, this one doesn't have the sensor type
 /obj/item/wallframe/painting/eldritch/vines
 	name = "Great chaparral over rolling hills"
-	desc = "A painting depicting a massive thicket, it seems to be attempting to crawl through the frame."
+	desc = "Картина, изображающая массивные заросли, которые, кажется, пытаются пролезть сковзь рамку."
 	icon_state = "eldritch_painting_vines"
 	result_path = /obj/structure/sign/painting/eldritch/vines
 
 /obj/structure/sign/painting/eldritch/vines
 	name = "Great chaparral over rolling hills"
-	desc = "A painting depicting a massive thicket, it seems to be attempting to crawl through the frame. Destroyable with wirecutters."
+	desc = "Картина, изображающая массивные заросли, которые, кажется, пытаются пролезть сковзь рамку. Можно уничтожить кусачками."
 	icon_state = "eldritch_painting_vines"
 	applied_trauma = null
 	// A static list of 5 pretty strong mutations, simple to expand for any admins
@@ -179,11 +179,11 @@
 	. = ..()
 	if(!IS_HERETIC(examiner))
 		new /datum/spacevine_controller(get_turf(examiner), mutations, 0, 10)
-		to_chat(examiner, span_hypnophrase("The thicket crawls through the frame, and you suddenly find vines beneath you..."))
+		to_chat(examiner, span_hypnophrase("Заросли пролезают сквозь рамку, и вы вдруг обнаруживаете под собой лианы..."))
 		return
 
 	var/item_to_spawn = pick(items_to_spawn)
-	to_chat(examiner, span_notice("You picture yourself in the thicket picking flowers.."))
+	to_chat(examiner, span_notice("Вы преставляете, как вы собираете цветы в зарослях..."))
 	new item_to_spawn(examiner.drop_location())
 	examiner.add_mood_event("heretic_vines", /datum/mood_event/eldritch_painting/heretic_vines)
 
@@ -191,16 +191,16 @@
 // Lady out of gates, gives a brain trauma causing the person to scratch themselves
 /obj/item/wallframe/painting/eldritch/beauty
 	name = "Lady out of gates"
-	desc = "A painting depicting a perfect lady, and I must be perfect like her..."
+	desc = "Картина, на которой изображена идеальная леди, и я должен быть таким же идаельным, как она..."
 	icon_state = "eldritch_painting_beauty"
 	result_path = /obj/structure/sign/painting/eldritch/beauty
 
 /obj/structure/sign/painting/eldritch/beauty
 	name = "Lady out of gates"
-	desc = "A painting depicting a perfect lady, and I must be perfect like her. Destroyable with wirecutters."
+	desc = "Картина, на которой изображена идеальная леди, и я должен быть таким же идаельным, как она. Можно уничтожить кусачками."
 	icon_state = "eldritch_painting_beauty"
 	applied_trauma = /datum/brain_trauma/severe/eldritch_beauty
-	text_to_display = "Her flesh glows in the pale light, and mine can too...If it wasnt for these imperfections...."
+	text_to_display = "Ее плоть сияет в бледном свете, и моя тоже бы могла... Если бы не все эти недостатки..."
 	/// List of reagents to add to heretics on examine, set to mutadone by default to remove mutations
 	var/list/reagents_to_add = list(/datum/reagent/medicine/mutadone = 5)
 
@@ -211,35 +211,35 @@
 		return
 
 	if(!IS_HERETIC(examiner))
-		to_chat(examiner, span_hypnophrase("You feel changed, more perfect...."))
+		to_chat(examiner, span_hypnophrase("Вы чувствуете себя изменившимся, более совершенным..."))
 		examiner.easy_random_mutate(NEGATIVE + MINOR_NEGATIVE)
 		return
 
-	to_chat(examiner, span_notice("Your imperfections shed and you are restored."))
+	to_chat(examiner, span_notice("Ваши недостатки исчезают, и вы восстанавливаетесь."))
 	examiner.reagents.add_reagent_list(reagents_to_add)
 
 // Climb over the rusted mountain, gives a brain trauma causing the person to randomly rust tiles beneath them
 /obj/item/wallframe/painting/eldritch/rust
 	name = "Climb over the rusted mountain"
-	desc = "A painting depicting something climbing a mountain of rust, it gives you an eerie feeling."
+	desc = "Картина, изображающая нечто, взбирающееся на гору ржавчины. Жутко."
 	icon_state = "eldritch_painting_rust"
 	result_path = /obj/structure/sign/painting/eldritch/rust
 
 /obj/structure/sign/painting/eldritch/rust
 	name = "Climb over the rusted mountain"
-	desc = "A painting depicting something climbing a mountain of rust, it gives you an eerie feeling. Destroyable with wirecutters."
+	desc = "Картина, изображающая нечто, взбирающееся на гору ржавчины. Жутко. Можно уничтожить кусачками."
 	icon_state = "eldritch_painting_rust"
 	applied_trauma = /datum/brain_trauma/severe/rusting
-	text_to_display = "It climbs, and I will aid it...The rust calls and I shall answer..."
+	text_to_display = "Оно взбирается, и я помогу ему... Ржавчина зовет, и я отвечу."
 
 // The special examine interaction for this painting
 /obj/structure/sign/painting/eldritch/rust/examine_effects(mob/living/carbon/examiner)
 	. = ..()
 
 	if(!IS_HERETIC(examiner))
-		to_chat(examiner, span_hypnophrase("It can wait..."))
+		to_chat(examiner, span_hypnophrase("Оно может подождать..."))
 		examiner.add_mood_event("rusted_examine", /datum/mood_event/eldritch_painting/rust_examine)
 		return
 
-	to_chat(examiner, span_notice("You see the climber, and are inspired by it!"))
+	to_chat(examiner, span_notice("Вы вдохновлены этим альпинистом!"))
 	examiner.add_mood_event("rusted_examine", /datum/mood_event/eldritch_painting/rust_heretic_examine)

@@ -5,8 +5,8 @@
 	)
 
 /datum/traitor_objective/target_player/infect
-	name = "Infect %TARGET% the %JOB TITLE%"
-	description = "Infect your target with the experimental Hereditary Manifold Sickness."
+	name = "Заразите %TARGET%, %JOB TITLE%."
+	description = "Заразите свою цель с помощью EHMS."
 
 	progression_minimum = 30 MINUTES
 
@@ -34,7 +34,7 @@
 /datum/traitor_objective/target_player/infect/generate_ui_buttons(mob/user)
 	var/list/buttons = list()
 	if(!injector_given)
-		buttons += add_ui_button("", "Pressing this will materialize a EHMS autoinjector into your hand, which you must inject into the target to succeed.", "syringe", "summon_pen")
+		buttons += add_ui_button("", "Нажмите, чтобы материализовать инжектор с EHMS, который вы должны использовать на своей цели.", "syringe", "summon_pen")
 	return buttons
 
 /datum/traitor_objective/target_player/infect/ui_perform_action(mob/living/user, action)
@@ -46,7 +46,7 @@
 			injector_given = TRUE
 			var/obj/item/reagent_containers/hypospray/medipen/manifoldinjector/ehms = new(user.drop_location())
 			user.put_in_hands(ehms)
-			ehms.balloon_alert(user, "the injector materializes in your hand")
+			ehms.balloon_alert(user, "инжектор материализуется в руке")
 			RegisterSignal(ehms, COMSIG_EHMS_INJECTOR_INJECTED, PROC_REF(on_injected))
 			AddComponent(/datum/component/traitor_objective_register, ehms, \
 				succeed_signals = null, \
@@ -149,7 +149,7 @@
 
 /obj/item/reagent_containers/hypospray/medipen/manifoldinjector
 	name = "EHMS autoinjector"
-	desc = "Experimental Hereditary Manifold Sickness autoinjector."
+	desc = "Экспериментальный автоинжектор наследственной многообразной болезни."
 	icon_state = "tbpen"
 	inhand_icon_state = "tbpen"
 	base_icon_state = "tbpen"
@@ -163,11 +163,11 @@
 /obj/item/reagent_containers/hypospray/medipen/manifoldinjector/attack(mob/living/affected_mob, mob/living/carbon/human/user)
 	if(used)
 		return ..()
-	to_chat(affected_mob, span_warning("You feel someone try to inject you with something."))
-	balloon_alert(user, "injecting...")
+	to_chat(affected_mob, span_warning("Вы чувствуете, что кто-то пытается ввести вам что-то."))
+	balloon_alert(user, "вкалываем...")
 	log_combat(user, affected_mob, "attempted to inject", src)
 	if(!do_after(user, 1.5 SECONDS, hidden = TRUE))
-		balloon_alert(user, "interrupted!")
+		balloon_alert(user, "прервано!")
 		return
 	var/datum/disease/chronic_illness/hms = new /datum/disease/chronic_illness()
 	affected_mob.ForceContractDisease(hms)

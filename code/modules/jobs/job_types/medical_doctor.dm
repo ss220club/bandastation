@@ -1,11 +1,11 @@
 /datum/job/doctor
 	title = JOB_MEDICAL_DOCTOR
-	description = "Save lives, run around the station looking for victims, \
-		scan everyone in sight"
+	description = "Спасайте жизни, помогайте пострадавшим, где бы они ни были, \
+		проводите сканирование каждого встречного."
 	department_head = list(JOB_CHIEF_MEDICAL_OFFICER)
 	faction = FACTION_STATION
-	total_positions = 5
-	spawn_positions = 3
+	total_positions = 6
+	spawn_positions = 4
 	supervisors = SUPERVISOR_CMO
 	exp_granted_type = EXP_TYPE_CREW
 	config_tag = "MEDICAL_DOCTOR"

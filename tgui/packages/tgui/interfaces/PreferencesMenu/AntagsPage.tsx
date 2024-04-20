@@ -25,9 +25,10 @@ const antagsByCategory = new Map<Category, Antagonist[]>();
 
 // This will break at priorities higher than 10, but that almost definitely
 // will not happen.
-const binaryInsertAntag = binaryInsertWith((antag: Antagonist) => {
-  return `${antag.priority}_${antag.name}`;
-});
+const binaryInsertAntag = (collection: Antagonist[], value: Antagonist) =>
+  binaryInsertWith(collection, value, (antag) => {
+    return `${antag.priority}_${antag.name}`;
+  });
 
 for (const antagKey of requireAntag.keys()) {
   const antag = requireAntag<{
@@ -90,11 +91,11 @@ const AntagSelection = (props: { antagonists: Antagonist[]; name: string }) => {
       buttons={
         <>
           <Button color="good" onClick={() => enableAntags(antagonistKeys)}>
-            Enable All
+            Включить всё
           </Button>
 
           <Button color="bad" onClick={() => disableAntags(antagonistKeys)}>
-            Disable All
+            Отключить всё
           </Button>
         </>
       }
@@ -197,17 +198,17 @@ export const AntagsPage = () => {
   return (
     <Box className="PreferencesMenu__Antags">
       <AntagSelection
-        name="Roundstart"
+        name="Начало раунда"
         antagonists={antagsByCategory.get(Category.Roundstart)!}
       />
 
       <AntagSelection
-        name="Midround"
+        name="Во время раунда"
         antagonists={antagsByCategory.get(Category.Midround)!}
       />
 
       <AntagSelection
-        name="Latejoin"
+        name="Позднее прибытие"
         antagonists={antagsByCategory.get(Category.Latejoin)!}
       />
     </Box>

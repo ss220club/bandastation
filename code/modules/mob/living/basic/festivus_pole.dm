@@ -1,6 +1,9 @@
+///how much charge we give off to cells around us when rubbed
+#define FESTIVUS_RECHARGE_VALUE (0.075 * STANDARD_CELL_CHARGE)
+
 /mob/living/basic/festivus
 	name = "festivus pole"
-	desc = "Serenity now... SERENITY NOW!"
+	desc = "Спокойствие... ТОЛЬКО СПОКОЙСТВИЕ!"
 	icon = 'icons/obj/fluff/flora/pinetrees.dmi'
 	icon_state = "festivus_pole"
 	icon_living = "festivus_pole"
@@ -37,16 +40,12 @@
 
 	ai_controller = /datum/ai_controller/basic_controller/festivus_pole
 
-	///how much charge we give off to cells around us when rubbed
-	var/recharge_value = 75 KILO JOULES
-
-
 /mob/living/basic/festivus/Initialize(mapload)
 	. = ..()
 	AddComponent(/datum/component/seethrough_mob)
 	var/static/list/death_loot = list(/obj/item/stack/rods)
 	AddElement(/datum/element/death_drops, death_loot)
-	AddComponent(/datum/component/aggro_emote, emote_list = string_list(list("growls")), emote_chance = 20)
+	AddComponent(/datum/component/aggro_emote, emote_list = string_list(list("рычит")), emote_chance = 20)
 	grant_actions_by_list(list(/datum/action/cooldown/mob_cooldown/charge_apc = BB_FESTIVE_APC))
 
 /datum/ai_controller/basic_controller/festivus_pole
@@ -67,20 +66,20 @@
 	. = ..()
 	if(user.combat_mode)
 		return
-	visible_message(span_warning("[src] crackles with static electricity!"))
+	visible_message(span_warning("[src] потрескивает от статического электричества!"))
 	for(var/atom/affected in range(2, get_turf(src)))
 		if(istype(affected, /obj/item/stock_parts/cell))
 			var/obj/item/stock_parts/cell/cell = affected
-			cell.give(recharge_value)
+			cell.give(FESTIVUS_RECHARGE_VALUE)
 			cell.update_appearance()
 		if(istype(affected, /mob/living/silicon/robot))
 			var/mob/living/silicon/robot/robot = affected
 			if(robot.cell)
-				robot.cell.give(recharge_value)
+				robot.cell.give(FESTIVUS_RECHARGE_VALUE)
 		if(istype(affected, /obj/machinery/power/apc))
 			var/obj/machinery/power/apc/apc_target = affected
 			if(apc_target.cell)
-				apc_target.cell.give(recharge_value)
+				apc_target.cell.give(FESTIVUS_RECHARGE_VALUE)
 
 /datum/ai_planning_subtree/find_and_hunt_target/look_for_apcs
 	hunting_behavior = /datum/ai_behavior/hunt_target/apcs
@@ -118,3 +117,5 @@
 			return FALSE
 
 	return can_see(source, dinner, radius)
+
+#undef FESTIVUS_RECHARGE_VALUE

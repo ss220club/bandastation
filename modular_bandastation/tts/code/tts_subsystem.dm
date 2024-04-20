@@ -56,7 +56,7 @@ SUBSYSTEM_DEF(tts220)
 	/// Lazy list of request that need to performed to TTS provider API
 	VAR_PRIVATE/list/tts_requests_queue
 
-	/// List of currently existing binding of atom and sound channel: `atom` => `sound_channel`. SS220 TODO: free channel when atom is detroyed and may be on some other circumstances
+	/// List of currently existing binding of atom and sound channel: `atom` => `sound_channel`.
 	VAR_PRIVATE/list/tts_local_channels_by_owner = list()
 
 	/// Mapping of BYOND gender to TTS gender
@@ -124,10 +124,6 @@ SUBSYSTEM_DEF(tts220)
 	load_replacements()
 
 	return SS_INIT_SUCCESS
-
-/datum/controller/subsystem/tts220/pause()
-	. = ..()
-	is_enabled = FALSE
 
 /datum/controller/subsystem/tts220/fire()
 	if(last_network_fire + 1 SECONDS <= world.time)
@@ -369,6 +365,7 @@ SUBSYSTEM_DEF(tts220)
 		output.wait = TRUE
 		output.volume = volume
 		output.environment = SOUND_ENVIRONMENT_NONE
+		output.channel = CHANNEL_TTS_RADIO
 
 		if(output.volume <= 0)
 			return
@@ -381,7 +378,13 @@ SUBSYSTEM_DEF(tts220)
 
 	play_sfx_if_exists(listener, preSFX, output)
 
-	output = listener.playsound_local(turf_source, output, volume)
+	// Reserve channel only for players
+	if(ismob(speaker))
+		var/mob/speaking_mob = speaker
+		if(speaking_mob.client)
+			output.channel = get_local_channel_by_owner(speaker)
+			output.wait = TRUE
+	output = listener.playsound_local(turf_source, output, volume, wait = TRUE)
 
 	if(!output || output.volume <= 0)
 		return
@@ -399,6 +402,13 @@ SUBSYSTEM_DEF(tts220)
 	output.volume = volume
 	output.environment = environment
 	SEND_SOUND(listener, output)
+
+/datum/controller/subsystem/tts220/proc/get_local_channel_by_owner(owner)
+	var/channel = tts_local_channels_by_owner[owner]
+	if(isnull(channel))
+		channel = SSsounds.reserve_sound_channel()
+		tts_local_channels_by_owner[owner] = channel
+	return channel
 
 /datum/controller/subsystem/tts220/proc/cleanup_tts_file(filename)
 	fdel(filename)
@@ -468,6 +478,7 @@ SUBSYSTEM_DEF(tts220)
 /datum/controller/subsystem/tts220/proc/pick_tts_seed_by_gender(gender)
 	var/tts_gender = SStts220.get_tts_gender(gender)
 	var/tts_by_gender = LAZYACCESS(SStts220.tts_seeds_by_gender, tts_gender)
+	tts_by_gender |= LAZYACCESS(SStts220.tts_seeds_by_gender, TTS_GENDER_ANY)
 	if(!length(tts_by_gender))
 		logger.Log(LOG_CATEGORY_DEBUG, "No tts for gender `[gender]`, tts_gender: `[tts_gender]`")
 		return null

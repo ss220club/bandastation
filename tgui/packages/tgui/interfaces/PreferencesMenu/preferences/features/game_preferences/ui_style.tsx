@@ -46,7 +46,6 @@ const UIStyleInput = (
     <Dropdown
       selected={value}
       clipSelectedText={false}
-      displayText={choices[value]}
       onSelected={props.handleSetValue}
       width="100%"
       options={sortChoices(Object.entries(choices)).map(
@@ -62,7 +61,7 @@ const UIStyleInput = (
 };
 
 export const UI_style: FeatureChoiced = {
-  name: 'UI Style',
-  category: 'UI',
+  name: 'Стиль UI',
+  category: 'ИНТЕРФЕЙС',
   component: UIStyleInput,
 };

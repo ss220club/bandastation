@@ -21,9 +21,11 @@ type NameWithKey = {
   name: Name;
 };
 
-const binaryInsertName = binaryInsertWith<NameWithKey>(({ key }) => key);
+const binaryInsertName = (collection: NameWithKey[], value: NameWithKey) =>
+  binaryInsertWith(collection, value, ({ key }) => key);
 
-const sortNameWithKeyEntries = sortBy<[string, NameWithKey[]]>(([key]) => key);
+const sortNameWithKeyEntries = (array: [string, NameWithKey[]][]) =>
+  sortBy(array, ([key]) => key);
 
 export const MultiNameInput = (props: {
   handleClose: () => void;
@@ -68,7 +70,7 @@ export const MultiNameInput = (props: {
                     Close
                   </Button>
                 }
-                title="Alternate names"
+                title="Альтернативные имена"
               >
                 <LabeledList>
                   {sortNameWithKeyEntries(Object.entries(namesIntoGroups)).map(
@@ -124,7 +126,7 @@ export const MultiNameInput = (props: {
                                   <Stack.Item>
                                     <Button
                                       icon="dice"
-                                      tooltip="Randomize"
+                                      tooltip="Случайное имя"
                                       tooltipPosition="right"
                                       onClick={() => {
                                         props.handleRandomizeName(key);
@@ -225,7 +227,7 @@ export const NameInput = (props: {
               <Stack.Item>
                 <Button
                   as="span"
-                  tooltip="Alternate Names"
+                  tooltip="Альтернативные имена"
                   tooltipPosition="bottom"
                   style={{
                     background: 'rgba(0, 0, 0, 0.7)',
