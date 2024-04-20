@@ -183,7 +183,7 @@
 		add_memory(/datum/memory/key/traitor_uplink, uplink_loc = "PDA", uplink_code = new_uplink.unlock_code)
 
 	else if(istype(uplink_loc, /obj/item/radio))
-		unlock_text += "Просто скажите \"[new_uplink.unlock_code]\" в частоту [RADIO_TOKEN_UPLINK] чтобы открыть скрытые возможности."
+		unlock_text += "Просто скажите \"[new_uplink.unlock_code]\" в частоту [RADIO_TOKEN_UPLINK], чтобы открыть скрытые возможности."
 		add_memory(/datum/memory/key/traitor_uplink, uplink_loc = uplink_loc.name, uplink_code = new_uplink.unlock_code)
 
 	else if(istype(uplink_loc, /obj/item/pen))
