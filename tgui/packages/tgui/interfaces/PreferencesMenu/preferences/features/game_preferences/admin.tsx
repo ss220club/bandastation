@@ -4,9 +4,9 @@ import {
   CheckboxInput,
   Feature,
   FeatureColorInput,
-  FeatureDropdownInput,
   FeatureToggle,
 } from '../base';
+import { FeatureDropdownInput } from '../dropdowns';
 
 export const asaycolor: Feature<string> = {
   name: 'Цвет админских сообщений',
