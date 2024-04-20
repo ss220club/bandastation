@@ -341,7 +341,7 @@ GLOBAL_LIST_EMPTY(antagonists)
  */
 /datum/antagonist/proc/greet()
 	if(!silent)
-		to_chat(owner.current, span_big("You are \the [src]."))
+		to_chat(owner.current, span_big("Вы - \the [src]."))
 
 /**
  * Proc that sends fluff or instructional messages to the player when they lose this antag datum.
@@ -349,7 +349,7 @@ GLOBAL_LIST_EMPTY(antagonists)
  */
 /datum/antagonist/proc/farewell()
 	if(!silent)
-		to_chat(owner.current, span_userdanger("You are no longer \the [src]!"))
+		to_chat(owner.current, span_userdanger("Вы больше не \the [src]!"))
 
 /**
  * Proc that assigns this antagonist's ascribed moodlet to the player.

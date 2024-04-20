@@ -4,8 +4,8 @@
 #define FLAVOR_FACTION_NANOTRASEN "nanotrasen"
 
 /datum/antagonist/traitor
-	name = "\improper Traitor"
-	roundend_category = "traitors"
+	name = "\proper Предатель"
+	roundend_category = "Предатели"
 	antagpanel_category = "Traitor"
 	job_rank = ROLE_TRAITOR
 	antag_moodlet = /datum/mood_event/focused
@@ -55,12 +55,12 @@
 	// Used to denote traitors who have joined midround and therefore have no access to secondary objectives.
 	// Progression elements are best left to the roundstart antagonists
 	// There will still be a timelock on uplink items
-	name = "\improper Infiltrator"
+	name = "\proper Инфильтратор"
 	give_secondary_objectives = FALSE
 	uplink_flag_given = UPLINK_INFILTRATORS
 
 /datum/antagonist/traitor/infiltrator/sleeper_agent
-	name = "\improper Syndicate Sleeper Agent"
+	name = "\proper Спящий агент Синдиката"
 
 /datum/antagonist/traitor/New(give_objectives = TRUE)
 	. = ..()
