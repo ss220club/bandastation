@@ -53,8 +53,8 @@
 	)
 
 /datum/bounty/item/medical/eye
-	name = "Organic Eyes"
-	description = "Station 5's Research Director Willem is requesting a few pairs of non-robotic eyes. Don't ask questions, just ship them."
+	name = "Органические глаза"
+	description = "Директор исследований Виллем на станции 5 запрашивает пару органических глаз. Не спрашивайте зачем, просто отправьте ему."
 	reward = CARGO_CRATE_VALUE * 10
 	required_count = 3
 	wanted_types = list(
@@ -63,44 +63,44 @@
 	)
 
 /datum/bounty/item/medical/tongue
-	name = "Tongues"
-	description = "A recent attack by Mime extremists has left staff at Station 23 speechless. Ship some spare tongues."
+	name = "Языки"
+	description = "Недавняя атака мимов экстремистов оставила экипаж станции 23 немыми. Отправьте несколько запасных языков."
 	reward = CARGO_CRATE_VALUE * 10
 	required_count = 3
 	wanted_types = list(/obj/item/organ/internal/tongue = TRUE)
 
 /datum/bounty/item/medical/lizard_tail
-	name = "Lizard Tail"
-	description = "The Wizard Federation has made off with Nanotrasen's supply of lizard tails. While CentCom is dealing with the wizards, can the station spare a tail of their own?"
+	name = "Хвост ящерицы"
+	description = "Федерация магов похитила у Нанотрейзен хвосты ящериц. В то время как ЦентКом разбирается с магами, не может ли станция припасти один из их хвостов?"
 	reward = CARGO_CRATE_VALUE * 6
 	wanted_types = list(/obj/item/organ/external/tail/lizard = TRUE)
 
 /datum/bounty/item/medical/cat_tail
-	name = "Cat Tail"
-	description = "Central Command has run out of heavy duty pipe cleaners. Can you ship over a cat tail to help us out?"
+	name = "Хвост кошки"
+	description = "На Центральном Командовании кончились мощные очистители для труб. Не могли бы вы отправить кошачий хвост помощи нам?"
 	reward = CARGO_CRATE_VALUE * 6
 	wanted_types = list(/obj/item/organ/external/tail/cat = TRUE)
 
 /datum/bounty/item/medical/chainsaw
-	name = "Chainsaw"
-	description = "A CMO at CentCom is having trouble operating on golems. She requests one chainsaw, please."
+	name = "Бензопила"
+	description = "У СМО на ЦентКоме имеются проблемы с операциями на големах. Она просит одну бензопилу, пожалуйста."
 	reward = CARGO_CRATE_VALUE * 5
 	wanted_types = list(/obj/item/chainsaw = TRUE)
 
 /datum/bounty/item/medical/tail_whip //Like the cat tail bounties, with more processing.
 	name = "Nine Tails whip"
-	description = "Commander Jackson is looking for a fine addition to her exotic weapons collection. She will reward you handsomely for either a Cat or Liz o' Nine Tails."
+	description = "Коммандор Джексон ищет отличное дополнение для её коллекции экзотического оружия. Она вас наградит также за девятихвостого кота или девятихвостую ящерицу."
 	reward = CARGO_CRATE_VALUE * 8
 	wanted_types = list(/obj/item/melee/chainofcommand/tailwhip = TRUE)
 
 /datum/bounty/item/medical/surgerycomp
-	name = "Surgery Computer"
-	description = "After another freak bombing incident at our annual cheesefest at CentCom, we have a massive stack of injured crew on our end. Please send us a fresh surgery computer, if at all possible."
+	name = "Хирургический компьютер"
+	description = "После очередного взрывного инцидента на нашем ежегодном сырфесте на ЦентКоме, у нас лежит оргромная куча раненного экипажа. Пожалуйста отправьте нам свежий хирургический компьютер, если это конечно возможно."
 	reward = CARGO_CRATE_VALUE * 12
 	wanted_types = list(/obj/machinery/computer/operating = TRUE)
 
 /datum/bounty/item/medical/surgerytable
-	name = "Operating Table"
-	description = "After a recent influx of infected crew members, we've seen that masks just aren't cutting it alone. Silver operating tables might just do the trick though, send us one to use."
+	name = "Хирургический стол"
+	description = "После недавнего притока инфицированного экипажа, мы видим, что маски не справляются в одиночку. Серебрянные операционный столы, к слову, могут сработать, отправьте нам один для использования."
 	reward = CARGO_CRATE_VALUE * 6
 	wanted_types = list(/obj/structure/table/optable = TRUE)

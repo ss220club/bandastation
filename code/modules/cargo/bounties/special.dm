@@ -1,6 +1,6 @@
 /datum/bounty/item/alien_organs
-	name = "Alien Organs"
-	description = "Nanotrasen is interested in studying Xenomorph biology. Ship a set of organs to be thoroughly compensated."
+	name = "Инопланетные органы"
+	description = "Нанотрейзен заинтересовано в изучении биологии ксеноморфов. Отправьте набор органов для хорошей компенсации."
 	reward = CARGO_CRATE_VALUE * 50
 	required_count = 3
 	wanted_types = list(
@@ -13,8 +13,8 @@
 	)
 
 /datum/bounty/item/syndicate_documents
-	name = "Syndicate Documents"
-	description = "Intel regarding the syndicate is highly prized at CentCom. If you find syndicate documents, ship them. You could save lives."
+	name = "Документы синдиката"
+	description = "Информация о синдикате высоко ценится на ЦентКоме. Если вы найдёте документы синдиката, отправьте их. Вы может спасёте жизни."
 	reward = CARGO_CRATE_VALUE * 30
 	wanted_types = list(
 		/obj/item/documents/syndicate = TRUE,
@@ -30,15 +30,15 @@
 	return TRUE
 
 /datum/bounty/item/adamantine
-	name = "Adamantine"
-	description = "Nanotrasen's anomalous materials division is in desparate need of adamantine. Send them a large shipment and we'll make it worth your while."
+	name = "Адамантит"
+	description = "Отдел аномальных материалов Нанотрейзен отчаянно нуждается в адамантие. Отправьте большую партию и мы сделаем так, что вы не пожалеете."
 	reward = CARGO_CRATE_VALUE * 70
 	required_count = 10
 	wanted_types = list(/obj/item/stack/sheet/mineral/adamantine = TRUE)
 
 /datum/bounty/item/trash
-	name = "Trash"
-	description = "Recently a group of janitors have run out of trash to clean up, and CentCom wants to fire them to cut costs. Send a shipment of trash to keep them employed, and they'll give you a small compensation."
+	name = "Мусор"
+	description = "Недавно, у группы уборщиков кончился мусор для уборки и ЦентКом решил уволить их для уменьшения расходов. Отправьте поставку мусора, чтобы оставить их работать, и они вам дадут вам маленькую компенсацию."
 	reward = CARGO_CRATE_VALUE * 2
 	required_count = 10
 	wanted_types = list(/obj/item/trash = TRUE)
