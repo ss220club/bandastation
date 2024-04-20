@@ -154,8 +154,8 @@ const UplinkSection = (props) => {
       <br />
       {(has_uplink && (
         <Section textAlign="Center">
-          Если вы потеряете свой аплинк, создайте Синдикатовский маячок аплинка
-          и скажите{' '}
+          Если вы потеряете свой аплинк, создайте Syndicate Uplink Beacon и
+          скажите{' '}
           <span style={goalstyle}>
             <b>{replacement_code}</b>
           </span>{' '}
