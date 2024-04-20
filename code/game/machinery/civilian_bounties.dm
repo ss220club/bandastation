@@ -252,8 +252,8 @@
 		target.forceMove(drop_location())
 		if(!issilicon(user) && Adjacent(user))
 			user.put_in_hands(target)
-		user.visible_message(span_notice("[user] получает [target] из [src.name]."), \
-							span_notice("Вы получаете [target] из [src.name]."))
+		user.visible_message(span_notice("[user] получает [target.name] из [src.name]."), \
+							span_notice("Вы получаете [target.name] из [src.name]."))
 		playsound(src, 'sound/machines/terminal_insert_disc.ogg', 50, FALSE)
 		inserted_scan_id = null
 		return TRUE

@@ -14,21 +14,21 @@
 
 /datum/bounty/item/security/prison_clothes
 	name = "Униформа для заключённых"
-	description = "Транс-солнечная федерация не может TerraGov не смогла получить новую униформу для заключённых, так что если у вас есть запасная, то мы её возьмём с ваших рук."
+	description = "TerraGov не смог получить новую униформу для заключённых, так что если у вас есть запасная, то мы её возьмём с ваших рук."
 	reward = CARGO_CRATE_VALUE * 4
 	required_count = 4
 	wanted_types = list(/obj/item/clothing/under/rank/prisoner = TRUE)
 
 /datum/bounty/item/security/plates
 	name = "License Plates"
-	description = "В результате ДТП с машиной с машиной клоуна, нам бы не помешало переправить автомобильные номера, созданные вашими заключёнными."
+	description = "В результате ДТП с машиной с клоунской машины, нам бы пригодились автомобильные номера, созданные вашими заключёнными."
 	reward = CARGO_CRATE_VALUE * 2
 	required_count = 10
 	wanted_types = list(/obj/item/stack/license_plates/filled = TRUE)
 
 /datum/bounty/item/security/earmuffs
-	name = "Наушники"
-	description = "Центральное Командование устало от сообщений с вашей станции. Они запросила вас отправить несколько наушников для уменьшения раздражения."
+	name = "Противошумные Наушники"
+	description = "Центральное Командование устало от сообщений с вашей станции. Они запросила вас отправить несколько противошумных наушников для уменьшения раздражения."
 	reward = CARGO_CRATE_VALUE * 2
 	wanted_types = list(/obj/item/clothing/ears/earmuffs = TRUE)
 
@@ -43,7 +43,7 @@
 ///Bounties that require you to perform documentation and inspection of your department to send to centcom.
 /datum/bounty/item/security/paperwork
 	name = "Routine Security Inspection"
-	description = "Проведите рутинную инспекцию безопасности, используя N-спектральный сканнер в следующей зоне на станции:"
+	description = "Проведите рутинную инспекцию безопасности, используя сканнер N-spect в следующей зоне на станции:"
 	required_count = 1
 	wanted_types = list(/obj/item/paper/report = TRUE)
 	reward = CARGO_CRATE_VALUE * 5

@@ -47,7 +47,7 @@
 	multiplier = 2
 
 /datum/bounty/item/botany/berries_death
-	name = "Смерто ягоды"
+	name = "Смертоягоды"
 	wanted_types = list(/obj/item/food/grown/berries/death = TRUE)
 	multiplier = 2
 	bonus_desc = "Он наставивает на том, что \"он знает что делает\"."

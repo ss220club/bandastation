@@ -1,19 +1,19 @@
 /datum/bounty/item/assistant/strange_object
 	name = "Странный объект"
-	description = "Нанотрейзен интересуется странными объектами. Найдите один в технических туннелях и отправьте сразу же на ЦентКом."
+	description = "Нанотрейзен интересуется странными объектами. Найдите один в технических туннелях и отправьте сразу же на ЦК."
 	reward = CARGO_CRATE_VALUE * 2.4
 	wanted_types = list(/obj/item/relic = TRUE)
 
 /datum/bounty/item/assistant/scooter
 	name = "Scooter"
-	description = "Нанотрейзен установило что ходьба расточительна. Отправьте скутер на ЦентКом для ускорения операций."
+	description = "Нанотрейзен установило, что ходьба расточительна. Отправьте скутер на ЦК для ускорения операций."
 	reward = CARGO_CRATE_VALUE * 2.16 // the mat hoffman
 	wanted_types = list(/obj/vehicle/ridden/scooter = TRUE)
 	include_subtypes = FALSE
 
 /datum/bounty/item/assistant/skateboard
 	name = "Skateboard"
-	description = "Нанотрейзен установило что ходьба расточительна. Отправьте скейтборд на ЦентКом для ускорения операций."
+	description = "Нанотрейзен установило, что ходьба расточительна. Отправьте скейтборд на ЦК для ускорения операций."
 	reward = CARGO_CRATE_VALUE * 1.8 // the tony hawk
 	wanted_types = list(
 		/obj/vehicle/ridden/scooter/skateboard = TRUE,
@@ -22,27 +22,27 @@
 
 /datum/bounty/item/assistant/stunprod
 	name = "Оглущающая палка"
-	description = "ЦентКому требуется оглущающая палка против диссидентов. Создайте одну, затем отправьте."
+	description = "ЦКу требуется оглущающая палка против диссидентов. Создайте одну, затем отправьте."
 	reward = CARGO_CRATE_VALUE * 2.6
 	wanted_types = list(/obj/item/melee/baton/security/cattleprod = TRUE)
 
 /datum/bounty/item/assistant/soap
 	name = "Мыло"
-	description = "Мыло пропало из всех ванных на ЦентКоме и никто не знает кто его взял. Замените его и станьте героем, что нужен ЦентКому."
+	description = "Мыло пропало из всех ванных на ЦКе и никто не знает кто его взял. Замените его и станьте героем, что нужен ЦКу."
 	reward = CARGO_CRATE_VALUE * 4
 	required_count = 3
 	wanted_types = list(/obj/item/soap = TRUE)
 
 /datum/bounty/item/assistant/spear
 	name = "Копья"
-	description = "Силы безопасности на ЦентКоме проходят сокращение бюджета. Вам заплатят, если вы отправите набор копей."
+	description = "Силы безопасности на ЦКе проходят сокращение бюджета. Вам заплатят, если вы отправите набор копей."
 	reward = CARGO_CRATE_VALUE * 4
 	required_count = 5
 	wanted_types = list(/obj/item/spear = TRUE)
 
 /datum/bounty/item/assistant/toolbox
 	name = "Тулбоксы"
-	description = "На ЦентКоме отсутствует робаст. Поторопитесь и отправьте несколько тулбоксов для решения проблемы."
+	description = "На ЦКе отсутствует робаст. Поторопитесь и отправьте несколько тулбоксов для решения проблемы."
 	reward = CARGO_CRATE_VALUE * 4
 	required_count = 6
 	wanted_types = list(/obj/item/storage/toolbox = TRUE)
@@ -61,14 +61,14 @@
 
 /datum/bounty/item/assistant/cheesiehonkers
 	name = "Сырные хонкеры"
-	description = "Видимо, компания, что производит сырные хонкеры скоро разорится. ЦентКом хочет запастись ими, пока это не случилось!"
+	description = "Видимо, компания, что производит сырные хонкеры скоро разорится. ЦК хочет запастись ими, пока это не случилось!"
 	reward = CARGO_CRATE_VALUE * 2.4
 	required_count = 3
 	wanted_types = list(/obj/item/food/cheesiehonkers = TRUE)
 
 /datum/bounty/item/assistant/baseball_bat
 	name = "Бейсбольная бита"
-	description = "Бейсбольная лихорадка происходит на ЦентКоме! Будьте добры отправить нам несколько бесйбольных бит, чтобы начальство смогло осуществить их детскую мечту."
+	description = "Бейсбольная лихорадка происходит на ЦКе! Будьте добры отправить нам несколько бесйбольных бит, чтобы начальство смогло осуществить их детскую мечту."
 	reward = CARGO_CRATE_VALUE * 4
 	required_count = 5
 	wanted_types = list(/obj/item/melee/baseball_bat = TRUE)
@@ -81,21 +81,21 @@
 
 /datum/bounty/item/assistant/donut
 	name = "Пончики"
-	description = "Служба безопасности на ЦентКоме терпит сильные потери от синдиката. Отправьте пончики, чтобы поднять мораль."
+	description = "Служба безопасности на ЦКе терпит сильные потери от синдиката. Отправьте пончики, чтобы поднять мораль."
 	reward = CARGO_CRATE_VALUE * 6
 	required_count = 6
 	wanted_types = list(/obj/item/food/donut = TRUE)
 
 /datum/bounty/item/assistant/donkpocket
 	name = "Донк-покеты"
-	description = "Consumer safety recall: Warning. Донк-покеты, созданный в прошлом году, содержат опасную биоматерию ящериц. Верните вещество на ЦентКом немедленно."
+	description = "Consumer safety recall: Warning. Донк-покеты, созданный в прошлом году, содержат опасную биоматерию ящериц. Верните вещество на ЦК немедленно."
 	reward = CARGO_CRATE_VALUE * 6
 	required_count = 10
 	wanted_types = list(/obj/item/food/donkpocket = TRUE)
 
 /datum/bounty/item/assistant/monkey_hide
 	name = "Шкура обезьяны"
-	description = "Один из учёных на ЦентКоме заинтересован в тестировании продуктов на коже обезьян. Ваша задача состоит в том чтобы получить шкуру и отправить её."
+	description = "Один из учёных на ЦКе заинтересован в тестировании продуктов на коже обезьян. Ваша задача состоит в том чтобы получить шкуру и отправить её."
 	reward = CARGO_CRATE_VALUE * 3
 	wanted_types = list(/obj/item/stack/sheet/animalhide/monkey = TRUE)
 
@@ -145,14 +145,14 @@
 
 /datum/bounty/item/assistant/ied
 	name = "СВУ"
-	description = "В тюрьме строго режима Нанотрейзен, находящейся на ЦентКоме, проходит обучение персонала. Отправьте несколько СВУ для обучения."
+	description = "В тюрьме строго режима Нанотрейзен, находящейся на ЦКе, проходит обучение персонала. Отправьте несколько СВУ для обучения."
 	reward = CARGO_CRATE_VALUE * 4
 	required_count = 3
 	wanted_types = list(/obj/item/grenade/iedcasing = TRUE)
 
 /datum/bounty/item/assistant/corgimeat
 	name = "Сырое мясо корги"
-	description = "Синдикат недавно украл всё ЦентКомовское мясо корги. Отправьте замену немедленно."
+	description = "Синдикат недавно украл всё ЦКовское мясо корги. Отправьте замену немедленно."
 	reward = CARGO_CRATE_VALUE * 6
 	wanted_types = list(/obj/item/food/meat/slab/corgi = TRUE)
 

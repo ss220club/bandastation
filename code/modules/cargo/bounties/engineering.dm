@@ -41,13 +41,13 @@
 	wanted_types = list(/obj/machinery/power/energy_accumulator/tesla_coil = TRUE)
 
 /datum/bounty/item/engineering/welding_tank
-	name = "Канистра сварочного топлива"
-	description = "Нам нужно больше сварочного топлива для инженерной команды, отправьте нам канистру."
+	name = "Бак со сварочным топливом"
+	description = "Нам нужно больше сварочного топлива для инженерной команды, отправьте нам целый бак."
 	reward = CARGO_CRATE_VALUE * 5
 	wanted_types = list(/obj/structure/reagent_dispensers/fueltank = TRUE)
 
 /datum/bounty/item/engineering/reflector
 	name = "Рефлектор"
-	description = "Мы хотим сделать для наших эмиттеров более длинный маршрут, доставьте нам рефлектор, чтобы это произошло."
+	description = "Мы хотим сделать для наших эмиттеров более длинный маршрут, доставьте нам рефлектор. Займитесь этим."
 	reward = CARGO_CRATE_VALUE * 7
 	wanted_types = list(/obj/structure/reflector = TRUE)

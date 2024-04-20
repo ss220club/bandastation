@@ -1,7 +1,7 @@
 
 /datum/bounty/item/science/relic
 	name = "Обнаруженные E.X.P.E.R.I-MENTORом девайсы"
-	description = "Пссс, слушай. Не рассказывайте ассистентам, но мы урезаем им стоимость тех 'странных объектов', что они находят. Найдите одно такое устройство и обследуйте его с помощью E.X.P.E.R.I-MENTORа, после отправьте его нам."
+	description = "Пссс, слушайте. Не рассказывайте ассистентам, но мы урезаем им стоимость тех 'странных объектов', что они находят. Найдите одно такое устройство и обследуйте его с помощью E.X.P.E.R.I-MENTORа, после отправьте его нам."
 	reward = CARGO_CRATE_VALUE * 8
 	wanted_types = list(/obj/item/relic = TRUE)
 
@@ -15,7 +15,7 @@
 
 /datum/bounty/item/science/bepis_disc
 	name = "Переформатированный технологический диск"
-	description = "Оказывается, что дискеты из BEPIS машины содержат экспериментальные узлы, занимающие мало места. Отправьте нам несколько, когда вы разберётесь с ними."
+	description = "Оказывается, что дискеты на которых BEPIS печатает экспериментальные узлы, занимают очень мало места. Отправьте нам несколько дискет, когда они будут готовы."
 	reward = CARGO_CRATE_VALUE * 8
 	wanted_types = list(
 		/obj/item/disk/design_disk/bepis/remove_tech = TRUE,
@@ -79,7 +79,7 @@
 
 /datum/bounty/item/science/ntnet/console
 	name = "Модульные компьютерные консоли"
-	description = "Наш отдел больших данных нуждается в более мощном оборудовании для игры в 'Разбомби Кубан Пи-', кхм, для тщательного мониторинга угроз в вашем секторе. Отправьте нам работающаю модульную компьютерную консоль."
+	description = "Наш отдел больших данных нуждается в более мощном оборудовании для игры в 'Разбомби Кубан Пи-', кхм, для тщательного мониторинга угроз в вашем секторе. Отправьте нам работающую модульную компьютерную консоль."
 	reward = CARGO_CRATE_VALUE * 6
 	required_count = 1
 	wanted_types = list(/obj/machinery/modular_computer = TRUE)
@@ -97,7 +97,7 @@
 //******Anomaly Cores******
 /datum/bounty/item/science/ref_anomaly
 	name = "Переработанное блюспейс ядро"
-	description = "Нам нужно блюспейс ядро для помещения в Фазона. Отправьте одно нам, пожалуйста."
+	description = "Нам нужно блюспейс ядро для помещения в Фазона. Пожалуйста, отправьте нам одно."
 	reward = CARGO_CRATE_VALUE * 20
 	wanted_types = list(/obj/item/assembly/signaler/anomaly/bluespace = TRUE)
 
@@ -109,7 +109,7 @@
 
 /datum/bounty/item/science/ref_anomaly/flux
 	name = "Переработанное флюкс ядро"
-	description = "Мы пытаемся создать теслу пушку чтобы разобраться с молями. Отправьте нам флюкс ядро, пожалуйста."
+	description = "Мы пытаемся создать тесла пушку, чтобы разобраться с молями. Отправьте нам флюкс ядро, пожалуйста."
 	wanted_types = list(/obj/item/assembly/signaler/anomaly/flux = TRUE)
 
 /datum/bounty/item/science/ref_anomaly/pyro
@@ -119,25 +119,25 @@
 
 /datum/bounty/item/science/ref_anomaly/grav
 	name = "Перерабтанное гравитационное ядро"
-	description = "Центральное РнД пытается обнаружить способ заставить мехов парить, отправьте гравитационное ядро."
+	description = "Центральный НИО пытается обнаружить способ заставить мехов парить, отправьте гравитационное ядро."
 	wanted_types = list(/obj/item/assembly/signaler/anomaly/grav = TRUE)
 
 /datum/bounty/item/science/ref_anomaly/vortex
 	name = "Переработанное вортекс ядро"
-	description = "Мы собираемся бросить ворктес ядро в червоточину и посмотреть что произойдёт. Отправьте одно."
+	description = "Мы собираемся бросить ворктес ядро в червоточину и посмотреть, что произойдёт. Отправьте одно."
 	wanted_types = list(/obj/item/assembly/signaler/anomaly/vortex = TRUE)
 
 /datum/bounty/item/science/ref_anomaly/hallucination
-	name = "Переработанное галюцинагенное ядро"
+	name = "Переработанное галюциногенное ядро"
 	description = "Мы создаём лучшую версию космических наркотиков, отправьте нам ядро для воспроизведения его эффектов."
 	wanted_types = list(/obj/item/assembly/signaler/anomaly/hallucination = TRUE)
 
 /datum/bounty/item/science/ref_anomaly/bioscrambler
-	name = "Переработанное биоскрамблер ядро"
-	description = "Наш ящер уборщик потерял все свои конечности , отправьте нам биоскрамблер ядро для их замены."
+	name = "Переработанное биоскрэмблер ядро"
+	description = "Наш ящер уборщик потерял все свои конечности , отправьте нам биоскрэмблер ядро для их замены."
 	wanted_types = list(/obj/item/assembly/signaler/anomaly/bioscrambler = TRUE)
 
 /datum/bounty/item/science/ref_anomaly/dimensional
 	name = "Переработанное пространственное ядро"
-	description = "Мы пытаемся сохранить деньги на наших ежегодных реновациях ЦентКома. Отправьте нам пространственное ядро."
+	description = "Мы пытаемся сохранить деньги на наших ежегодных реновациях ЦК. Отправьте нам пространственное ядро."
 	wanted_types = list(/obj/item/assembly/signaler/anomaly/dimensional = TRUE)

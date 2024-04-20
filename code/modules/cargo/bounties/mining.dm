@@ -7,38 +7,38 @@
 
 /datum/bounty/item/mining/goliath_boat
 	name = "Goliath Hide Boat"
-	description = "Коммандор Менков хочет поучавствовать в ежегодной Лавалендской регате. Он просит ваши корабли для самой быстрой лодки известной человеку."
+	description = "Коммандор Менков хочет поучавствовать в ежегодной Лавалендской регате. Он просит ваши корабли для самой быстрой лодки, известной человеку."
 	reward = CARGO_CRATE_VALUE * 20
 	wanted_types = list(/obj/vehicle/ridden/lavaboat = TRUE)
 
 /datum/bounty/item/mining/bone_oar
 	name = "Bone Oars"
-	description = "Коммандор Менков хочет поучавствовать в ежегодной Лавалендской регате. Отправьте одну пару."
+	description = "Коммандор Менков хочет поучавствовать в ежегодной Лавалендской регате. Для этого ему нужна пара вёсел."
 	reward = CARGO_CRATE_VALUE * 8
 	required_count = 2
 	wanted_types = list(/obj/item/oar = TRUE)
 
 /datum/bounty/item/mining/bone_axe
 	name = "Костяной топор"
-	description = "Клоуны-марадёры украли все пожарные топоры со станции 12. Отправьте им костяной топор в качестве замены."
+	description = "Клоуны-мародёры украли все пожарные топоры со станции 12. Отправьте им костяной топор в качестве замены."
 	reward = CARGO_CRATE_VALUE * 15
 	wanted_types = list(/obj/item/fireaxe/boneaxe = TRUE)
 
 /datum/bounty/item/mining/bone_armor
 	name = "Костяная броня"
-	description = "Станция 14 в добровольном порядке призвала свой экипаж ящериц для для тестирования баллистической брони. Отправьте один комплект костяной брони."
+	description = "Станция 14 в добровольном порядке призвала своих ящеров из экипажа для тестирования баллистической брони. Отправьте один комплект костяной брони."
 	reward = CARGO_CRATE_VALUE * 10
 	wanted_types = list(/obj/item/clothing/suit/armor/bone = TRUE)
 
 /datum/bounty/item/mining/skull_helmet
 	name = "Костяной шлем"
-	description = "Глава службы безопасности на станции 42 отметила свой день рождения вчера! Мы хотим подарить ей модный костяной шлем."
+	description = "Глава службы безопасности на станции 42 завтра отмечает свой день рождения! Мы хотим подарить ей модный костяной шлем."
 	reward = CARGO_CRATE_VALUE * 8
 	wanted_types = list(/obj/item/clothing/head/helmet/skull = TRUE)
 
 /datum/bounty/item/mining/bone_talisman
 	name = "Костяные талисманы"
-	description = "Директор исследований на станции 14 утверждает, что языческий костяной защищает его владельца. Отправьте им несколько для начала тестов."
+	description = "Директор исследований на станции 14 утверждает, что языческие костяные талисманы защищают своих владельцев. Отправьте им несколько для начала тестов."
 	reward = CARGO_CRATE_VALUE * 15
 	required_count = 3
 	wanted_types = list(/obj/item/clothing/accessory/talisman = TRUE)

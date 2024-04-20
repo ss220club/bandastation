@@ -62,13 +62,13 @@
 
 /datum/bounty/item/chef/pie
 	name = "ПИрог"
-	description = "3.14159? Нет! Руководство ЦентКома хочет съедобный пирог! Отправьте целый один."
+	description = "3.14159? Нет! Руководство ЦК хочет съедобный пирог! Отправьте целый один."
 	reward = 3142 //Screw it I'll do this one by hand
 	wanted_types = list(/obj/item/food/pie = TRUE)
 
 /datum/bounty/item/chef/salad
 	name = "Салат или миски риса"
-	description = "Руководство ЦентКома переходит на здоровую пищу. Ваш заказ - это отправить салад или миски риса."
+	description = "Руководство ЦК переходит на здоровую пищу. Ваш заказ - это отправить салад или миски риса."
 	reward = CARGO_CRATE_VALUE * 6
 	required_count = 3
 	wanted_types = list(/obj/item/food/salad = TRUE)
@@ -94,7 +94,7 @@
 
 /datum/bounty/item/chef/cubancarp
 	name = "Cuban Carp"
-	description = "Чтобы отпраздновать рождение Кастро XXVII, отправьте кубинского карпа на ЦентКом."
+	description = "Чтобы отпраздновать рождение Кастро XXVII, отправьте кубинского карпа на ЦК."
 	reward = CARGO_CRATE_VALUE * 16
 	wanted_types = list(/obj/item/food/cubancarp = TRUE)
 
@@ -106,14 +106,14 @@
 
 /datum/bounty/item/chef/eggplantparm
 	name = "Eggplant Parmigianas"
-	description = "Популярный певец прибудет на ЦентКом и в его контракте прописано, что на стол должна подаваться только баклажановый пармезан. Отправьте немного, пожалуйста!"
+	description = "Популярный певец прибудет на ЦК и в его контракте прописано, что на стол должен подаваться только баклажановый пармезан. Отправьте немного, пожалуйста!"
 	reward = CARGO_CRATE_VALUE * 7
 	required_count = 3
 	wanted_types = list(/obj/item/food/eggplantparm = TRUE)
 
 /datum/bounty/item/chef/muffin
 	name = "Кексы"
-	description = "Любитель кексов посещает ЦентКОм, но он забыл свои кексы! Ваша задача - исправить это."
+	description = "Любитель кексов посещает ЦК, но он забыл свои кексы! Ваша задача - исправить это."
 	reward = CARGO_CRATE_VALUE * 6
 	required_count = 3
 	wanted_types = list(/obj/item/food/muffin = TRUE)
@@ -126,14 +126,14 @@
 
 /datum/bounty/item/chef/kebab
 	name = "Шашлык"
-	description = "Убери весь шашлык со станции, и ты станешь едою. Отправьте на ЦентКом для удаления из помещения."
+	description = "Убери весь шашлык со станции, и ты станешь едою. Отправьте его ЦК для удаления из помещения."
 	reward = CARGO_CRATE_VALUE * 7
 	required_count = 3
 	wanted_types = list(/obj/item/food/kebab = TRUE)
 
 /datum/bounty/item/chef/soylentgreen
 	name = "Soylent Green"
-	description = "ЦентКом услышал замечательные вещи о 'Зелёном сойленте' и хочет попробовать его. Если вы оправдаете их ожидания, ожидайте приятный бонус."
+	description = "ЦК услышало замечательные вещи о 'Зелёном сойленте' и хочет попробовать его. Если вы оправдаете их ожидания, ожидайте приятный бонус."
 	reward = CARGO_CRATE_VALUE * 10
 	wanted_types = list(/obj/item/food/soylentgreen = TRUE)
 

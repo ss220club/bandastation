@@ -14,7 +14,7 @@
 	var/contraband = FALSE
 	var/self_paid = FALSE
 	var/safety_warning = "Для безопасности и по причинам этики, автоматический шаттл поставок не может транспортировать живые организмы, \
-		человеческие останки, класифицированное ядерное оружие, почту, не доставленные ящики с заказами департаментов, бомбы синдиката, \
+		человеческие останки, засекреченное ядерное оружие, почту, недоставленные ящики с заказами отделов, бомбы синдиката, \
 		маяки, нестабильные собственные состояния, факс машины или любую машинерию, содержащую любые виды искусственного интелекта."
 	var/blockade_warning = "Блюспейс нестабильность обнаружена. Движение шаттла невозможно."
 	/// radio used by the console to send messages on supply channel
@@ -67,7 +67,7 @@
 		return FALSE
 	if(user)
 		if (emag_card)
-			user.visible_message(span_warning("[user] проводит [emag_card] по [src.name]!"))
+			user.visible_message(span_warning("[user] проводит [emag_card.name] по [src.name]!"))
 		to_chat(user, span_notice("Вы настраиваете спектр маршрутизации и приёма на [src.name], разблокируя специальные припасы и контрабанду."))
 
 	obj_flags |= EMAGGED
@@ -218,7 +218,7 @@
 			say("ID карта не обнаружена.")
 			return
 		if(IS_DEPARTMENTAL_CARD(id_card))
-			say("[src.name] отклоняет [id_card].")
+			say("[src.name] отклоняет [id_card.name].")
 			return
 		account = id_card.registered_account
 		if(!istype(account))
@@ -226,7 +226,7 @@
 			return
 		var/list/access = id_card.GetAccess()
 		if(pack.access_view && !(pack.access_view in access))
-			say("На [id_card] недостаточно доступа для этой покупки.")
+			say("На [id_card.name] недостаточно доступа для этой покупки.")
 			return
 
 	// The list we are operating on right now
@@ -287,7 +287,7 @@
 		if(order.id != id)
 			continue
 		if(order.department_destination)
-			say("Только департамент, что заказал этот предмет может отменить заказ.")
+			say("Только отдел, заказавший этот предмет, может отменить заказ.")
 			return FALSE
 		if(order.applied_coupon)
 			say("Купон возвращён.")
@@ -330,7 +330,7 @@
 				if(length(SSshuttle.shopping_list))
 					var/obj/item/paper/requisition_paper = new(get_turf(src))
 					requisition_paper.name = "requisition form - [station_time_timestamp()]"
-					var/requisition_text = "<h2>[station_name()] Заявка на поставку</h2>"
+					var/requisition_text = "<h2>[station_name()]: Заявка на поставку</h2>"
 					requisition_text += "<hr/>"
 					requisition_text += "Время заказа: [station_time_timestamp()]<br/><br/>"
 					for(var/datum/supply_order/order as anything in SSshuttle.shopping_list)
