@@ -10,32 +10,32 @@
 	if(SEND_SIGNAL(src, COMSIG_MOB_ALTCLICKON, target) & COMSIG_MOB_CANCEL_CLICKON)
 		return
 
-	// Is it visible (and we're not wearing it (our clothes are invisible))?
-	if(!(src in viewers(7, target)) && !CanReach(target))
-		return
-
 	var/turf/tile = get_turf(target)
 
-	// Ghosties just see loot
 	if(isobserver(src) || isrevenant(src))
-		client.loot_panel.open(tile)
+		open_lootpanel(tile)
 		return
 
-	// Turfs don't have a click_alt currently, so this saves some time.
 	if(!isturf(target) && can_perform_action(target, (target.interaction_flags_click | SILENT_ADJACENCY)))
-		// If it has a signal handler that returns a click action, done.
 		if(SEND_SIGNAL(target, COMSIG_CLICK_ALT, src) & CLICK_ACTION_ANY)
 			return
 
-		// If it has a custom click_alt that returns success/block, done.
 		if(target.click_alt(src) & CLICK_ACTION_ANY)
 			return
 
-	// No alt clicking to view turf from beneath
+	open_lootpanel(tile)
+
+
+/// Helper for opening the lootpanel
+/mob/proc/open_lootpanel(turf/target)
 	if(HAS_TRAIT(src, TRAIT_MOVE_VENTCRAWLING))
 		return
 
-	client.loot_panel.open(tile)
+	var/datum/lootpanel/panel = client?.loot_panel
+	if(isnull(panel))
+		return
+
+	panel.open(target)
 
 
 /**

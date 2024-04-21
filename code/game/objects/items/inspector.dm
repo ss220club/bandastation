@@ -373,7 +373,7 @@
  */
 /obj/item/paper/fake_report/water
 	grind_results = list(/datum/reagent/water = 5)
-	interaction_flags_click = NEED_DEXTERITY|NEED_HANDS|ALLOW_RESTING
+	interaction_flags_click = NEED_DEXTERITY|NEED_HANDS
 
 /obj/item/paper/fake_report/water/click_alt(mob/living/user)
 	var/datum/action/innate/origami/origami_action = locate() in user.actions
