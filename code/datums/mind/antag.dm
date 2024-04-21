@@ -151,7 +151,7 @@
 	var/cant_speak = (HAS_TRAIT(traitor_mob, TRAIT_MUTE) || is_mime_job(assigned_role))
 	if(uplink_spawn_location == UPLINK_RADIO && cant_speak)
 		if(!silent)
-			to_chat(traitor_mob, span_warning("Вы были признаны неподходящими для радио аплинка.  Вместо этого предоставляется стандартный."))
+			to_chat(traitor_mob, span_warning("Вы были признаны неподходящими для радио аплинка. Вместо этого предоставляется стандартный."))
 		uplink_spawn_location = UPLINK_PDA
 
 	if(uplink_spawn_location != UPLINK_IMPLANT)
