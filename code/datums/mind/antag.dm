@@ -151,7 +151,7 @@
 	var/cant_speak = (HAS_TRAIT(traitor_mob, TRAIT_MUTE) || is_mime_job(assigned_role))
 	if(uplink_spawn_location == UPLINK_RADIO && cant_speak)
 		if(!silent)
-			to_chat(traitor_mob, span_warning("Вы были признаны неподходящими для радио аплинка.  Вместо этого предоставляется стандартный аплинк."))
+			to_chat(traitor_mob, span_warning("Вы были признаны неподходящими для радио аплинка.  Вместо этого предоставляется стандартный."))
 		uplink_spawn_location = UPLINK_PDA
 
 	if(uplink_spawn_location != UPLINK_IMPLANT)
@@ -163,7 +163,7 @@
 		var/obj/item/implant/uplink/starting/new_implant = new(traitor_mob)
 		new_implant.implant(traitor_mob, null, silent = TRUE)
 		if(!silent)
-			to_chat(traitor_mob, span_boldnotice("Ваш Аплинк Синдиката был хитроумно вживлен в вас за небольшую плату в ТК. Просто включите аплинк, чтобы получить к нему доступ."))
+			to_chat(traitor_mob, span_boldnotice("Ваш аплинк cиндиката был хитроумно вживлен в вас за небольшую плату в ТК. Просто включите аплинк, чтобы получить к нему доступ."))
 		add_memory(/datum/memory/key/traitor_uplink/implant, uplink_loc = "implant")
 		return new_implant
 
@@ -177,13 +177,13 @@
 	new_uplink.uplink_handler.assigned_role = traitor_mob.mind.assigned_role.title
 	new_uplink.uplink_handler.assigned_species = traitor_mob.dna.species.id
 
-	unlock_text = "Ваш Аплинк хитро замаскирован под ваш [uplink_loc.name]. "
+	unlock_text = "Ваш аплинк хитро замаскирован под ваш [uplink_loc.name]. "
 	if(istype(uplink_loc, /obj/item/modular_computer/pda))
 		unlock_text += "Просто введите код \"[new_uplink.unlock_code]\" в настройках рингтона, чтобы открыть скрытые возможности."
 		add_memory(/datum/memory/key/traitor_uplink, uplink_loc = "PDA", uplink_code = new_uplink.unlock_code)
 
 	else if(istype(uplink_loc, /obj/item/radio))
-		unlock_text += "Просто скажите \"[new_uplink.unlock_code]\" в частоту [RADIO_TOKEN_UPLINK], чтобы открыть скрытые возможности."
+		unlock_text += "Просто скажите \"[new_uplink.unlock_code]\" на частоте [RADIO_TOKEN_UPLINK], чтобы открыть скрытые возможности."
 		add_memory(/datum/memory/key/traitor_uplink, uplink_loc = uplink_loc.name, uplink_code = new_uplink.unlock_code)
 
 	else if(istype(uplink_loc, /obj/item/pen))
