@@ -274,7 +274,7 @@ DEFINE_BITFIELD(janitor_mode_flags, list(
 #define BEEPSKY_VOICED_FREEZE "Замри, подонок!"
 #define BEEPSKY_VOICED_JUSTICE "Готовься к правосудию!"
 #define BEEPSKY_VOICED_YOUR_MOVE "Твой ход, уродец."
-#define BEEPSKY_VOICED_I_AM_THE_LAW "Я закон!"
+#define BEEPSKY_VOICED_I_AM_THE_LAW "Я - закон!"
 #define BEEPSKY_VOICED_SECURE_DAY "Безопасного дня вам! ."
 
 #define FIREBOT_VOICED_FIRE_DETECTED "Обнаружен пожар!"
