@@ -314,7 +314,7 @@ DEFINE_BITFIELD(janitor_mode_flags, list(
 #define MEDIBOT_VOICED_LIKE_FLIES "Что это за медицинский отдел такой? Все мрут как мухи!"
 #define MEDIBOT_VOICED_SUFFER "Почему мы все еще здесь? Просто страдать?"
 #define MEDIBOT_VOICED_FUCK_YOU	"Пошел нахуй."
-#define MEDIBOT_VOICED_NOT_A_GAME "Выключи компютер. Это не игра."
+#define MEDIBOT_VOICED_NOT_A_GAME "Выключи компьютер. Это не игра."
 #define MEDIBOT_VOICED_IM_DIFFERENT	"Я не такой!"
 #define MEDIBOT_VOICED_FOURTH_WALL "Закрой Dreamseeker.exe немедленно. Или пожалеешь."
 #define MEDIBOT_VOICED_SHINDEMASHOU	"Shindemashou."
