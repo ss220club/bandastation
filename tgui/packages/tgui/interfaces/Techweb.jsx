@@ -457,7 +457,7 @@ const TechNodeDetail = (props) => {
           </Flex.Item>
           <Flex.Item align="center">
             <Button icon="home" onClick={() => setTechwebRoute(null)}>
-              Домой
+              На главную
             </Button>
           </Flex.Item>
         </Flex>
