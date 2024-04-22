@@ -325,7 +325,7 @@ DEFINE_BITFIELD(janitor_mode_flags, list(
 #define MEDIBOT_VOICED_OH_FUCK "Ой бля-"
 #define MEDIBOT_VOICED_FORGIVE "Я прощаю тебя."
 #define MEDIBOT_VOICED_THANKS "Спасибо!"
-#define MEDIBOT_VOICED_GOOD_PERSON "Ты хороший человек."
+#define MEDIBOT_VOICED_GOOD_PERSON "Ты хороший."
 #define MEDIBOT_VOICED_BEHAVIOUR_REPORTED "Я должил о вашем поведении, хорошего дня."
 #define MEDIBOT_VOICED_ASSISTANCE "Мне понадобится помощь."
 #define MEDIBOT_VOICED_PUT_BACK	"Пожалуста верите меня на место."
