@@ -291,7 +291,7 @@ DEFINE_BITFIELD(janitor_mode_flags, list(
 #define HYGIENEBOT_VOICED_FOUL_SMELL "Вернись сюда, вонючий уебок."
 #define HYGIENEBOT_VOICED_TROGLODYTE "Я просто, блять, хочу тебя почистить, троглодит."
 #define HYGIENEBOT_VOICED_GREEN_CLOUD "Если ты не вернешься сюда, я развею над тобой зеленое облако, уродец."
-#define HYGIENEBOT_VOICED_ARSEHOLE "Дай, блядь, я тебя почищу!"
+#define HYGIENEBOT_VOICED_ARSEHOLE "Просто, блядь, позволь мне вымыть тебя, засранец!"
 #define HYGIENEBOT_VOICED_THREAT_ARTERIES "ХВАТИТ БЕГАТЬ, ИЛИ Я ПЕРЕРЕЖУ ТЕБЕ АРТЕРИИ!"
 #define HYGIENEBOT_VOICED_STOP_RUNNING "ХВАТИТ. БЕГАТЬ."
 #define HYGIENEBOT_VOICED_FUCKING_FINALLY "Блять наконец-то."
