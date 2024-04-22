@@ -145,7 +145,7 @@
 	. = ..()
 	AddComponent(/datum/component/gunhud)
 
-/obj/item/gun/energy/recharge_newshot()
+/obj/item/gun/energy/recharge_newshot(no_cyborg_drain)
 	. = ..()
 	SEND_SIGNAL(src, COMSIG_UPDATE_GUNHUD)
 
