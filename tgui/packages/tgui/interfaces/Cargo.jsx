@@ -130,7 +130,7 @@ const CargoStatus = (props) => {
           )) ||
             location}
         </LabeledList.Item>
-        <LabeledList.Item label="Сообщение от Центрального Командования">{message}</LabeledList.Item>
+        <LabeledList.Item label="Сообщение от ЦК">{message}</LabeledList.Item>
         {!!loan && !requestonly && (
           <LabeledList.Item label="Займ">
             {(!loan_dispatched && (
