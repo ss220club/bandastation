@@ -573,7 +573,7 @@ GLOBAL_LIST_EMPTY_TYPED(air_alarms, /obj/machinery/airalarm)
 			warning_message = "Тревога! Низкое давление и высокая температура."
 			return
 		if(pressure >= WARNING_HIGH_PRESSURE && temp >= BODYTEMP_HEAT_WARNING_1-27)
-			warning_message = "Тревога! Высокие давление и температура."
+			warning_message = "Тревога! Высокое давление и температура."
 			return
 		if(pressure >= WARNING_HIGH_PRESSURE && temp <= BODYTEMP_COLD_WARNING_1+10)
 			warning_message = "Тревога! Высокое давление и низкая температура."
