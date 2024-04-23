@@ -139,7 +139,7 @@ const CargoStatus = (props) => {
                 disabled={!(away && docked)}
                 onClick={() => act('loan')}
               />
-            )) || <Box color="bad">Отдан в займ Центральному Командованию</Box>}
+            )) || <Box color="bad">Отдан в займ для ЦК</Box>}
           </LabeledList.Item>
         )}
       </LabeledList>
