@@ -278,7 +278,7 @@ DEFINE_BITFIELD(janitor_mode_flags, list(
 #define BEEPSKY_VOICED_SECURE_DAY "Желаю вам безопасного дня!"
 
 #define FIREBOT_VOICED_FIRE_DETECTED "Обнаружен пожар!"
-#define FIREBOT_VOICED_STOP_DROP "Остановитесь, упадите и катитесь!"
+#define FIREBOT_VOICED_STOP_DROP "Остановитесь, упадите и катайтесь на месте!"
 #define FIREBOT_VOICED_EXTINGUISHING "Тушение!"
 #define FIREBOT_VOICED_NO_FIRES "Пожаров не обнаружено."
 #define FIREBOT_VOICED_ONLY_YOU "Только вы можете предотвратить пожары на станциях."
