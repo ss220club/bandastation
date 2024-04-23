@@ -95,7 +95,7 @@
 
 /datum/bounty/item/assistant/monkey_hide
 	name = "Шкура обезьяны"
-	description = "Один из учёных на ЦК заинтересован в тестировании продуктов на шкуре обезьян. Ваша задача состоит в том чтобы получить шкуру и отправить её."
+	description = "Один из учёных на ЦК заинтересован в тестировании продуктов на шкуре обезьян. Ваша задача состоит в том, чтобы получить шкуру и отправить её."
 	reward = CARGO_CRATE_VALUE * 3
 	wanted_types = list(/obj/item/stack/sheet/animalhide/monkey = TRUE)
 
