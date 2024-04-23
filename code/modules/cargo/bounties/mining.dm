@@ -45,14 +45,14 @@
 
 /datum/bounty/item/mining/watcher_wreath
 	name = "Watcher Wreaths"
-	description = "Station 14's Research Director thinks they're onto a break-through on the cultural icons of some pagan beliefs. Ship them a few watcher wreaths for analysis."
+	description = "Директор исследований станции 14 думает, что они на пороге прорыва в изучении культурных символов некоторых языческих верований. Отправьте им несколько ожерелей смотрителей для анализа."
 	reward = CARGO_CRATE_VALUE * 15
 	required_count = 3
 	wanted_types = list(/obj/item/clothing/neck/wreath = FALSE)
 
 /datum/bounty/item/mining/icewing_wreath
 	name = "Icewing Wreath"
-	description = "We're getting some....weird messages from Station 14's Research Director. And most of what they said was incoherent. But they apparently want an icewing wreath. Could you send them one?"
+	description = "Мы получаем некоторые....странные сообщения от директора исследований станции 14. И большая часть из всего сказанного была неразборчива. Видимо им нужно ожерелье ледяного смотрителя. Не могли бы вы отправить им одно?"
 	reward = CARGO_CRATE_VALUE * 30
 	required_count = 1
 	wanted_types = list(/obj/item/clothing/neck/wreath/icewing = FALSE)
