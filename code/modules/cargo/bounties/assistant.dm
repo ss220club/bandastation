@@ -186,7 +186,7 @@
 	wanted_types = list(/obj/item/pen = TRUE)
 
 /datum/bounty/item/assistant/water_tank
-	name = "Канистра воды"
+	name = "Бак с водой"
 	description = "Нам нужно больше воды для нашей гидропоники. Найдите бак с водой и отправьте его нам."
 	reward = CARGO_CRATE_VALUE * 5
 	wanted_types = list(/obj/structure/reagent_dispensers/watertank = TRUE)
