@@ -1,5 +1,5 @@
 /datum/supply_pack/vending
-	group = "Пополненители вендоматов"
+	group = "Пополнители вендоматов"
 
 /datum/supply_pack/vending/bartending
 	name = "Booze-o-mat and Coffee Supply Crate"

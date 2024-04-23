@@ -43,7 +43,7 @@ export const CivCargoHoldTerminal = (props) => {
                   <Button
                     icon={id_bounty_info ? 'recycle' : 'pen'}
                     color={id_bounty_info ? 'green' : 'default'}
-                    tooltip={id_bounty_info ? 'Заменить баунти' : 'Новый баунти'}
+                    tooltip={id_bounty_info ? 'Заменить заказ' : 'Новый заказ'}
                     disabled={!id_inserted}
                     onClick={() => act('bounty')}
                   />
@@ -58,7 +58,7 @@ export const CivCargoHoldTerminal = (props) => {
             >
               <LabeledList>
                 <LabeledList.Item label="Статус" color={pad ? 'good' : 'bad'}>
-                  {pad ? 'Онлайн' : 'Не обнаружен'}
+                  {pad ? 'Функционирует' : 'Не обнаружен'}
                 </LabeledList.Item>
                 <LabeledList.Item label="Грузовой отчёт">
                   {status_report}
@@ -76,9 +76,9 @@ export const CivCargoHoldTerminal = (props) => {
 const BountyTextBox = (props) => {
   const { data } = useBackend();
   const { id_bounty_info, id_bounty_value, id_bounty_num } = data;
-  const na_text = 'N/A, пожалуйста добавьте новый баунти.';
+  const na_text = 'N/A, пожалуйста добавьте новый заказ.';
   return (
-    <Section title="Информация о баунти">
+    <Section title="Информация о заказе">
       <LabeledList>
         <LabeledList.Item label="Описание">
           {id_bounty_info ? id_bounty_info : na_text}
@@ -98,7 +98,7 @@ const BountyPickBox = (props) => {
   const { act, data } = useBackend();
   const { id_bounty_names, id_bounty_values } = data;
   return (
-    <Section title="Пожалуйста выберите баунти:" textAlign="center">
+    <Section title="Пожалуйста выберите заказ:" textAlign="center">
       <Flex width="100%" wrap>
         <Flex.Item shrink={0} grow={0.5}>
           <Button

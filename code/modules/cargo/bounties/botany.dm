@@ -79,7 +79,7 @@
 	foodtype = "\"блюдо\""
 
 /datum/bounty/item/botany/cannabis_death
-	name = "Листься конопли смерти"
+	name = "Листья конопли смерти"
 	wanted_types = list(/obj/item/food/grown/cannabis/death = TRUE)
 	multiplier = 6
 	bonus_desc = "Do not mention this shipment to security."
@@ -89,7 +89,7 @@
 	name = "Листья омега конопли"
 	wanted_types = list(/obj/item/food/grown/cannabis/ultimate = TRUE)
 	multiplier = 6
-	bonus_desc = "Ни под каким предлогом ничего не говорите об доставке службе безопасности."
+	bonus_desc = "Ни под каким предлогом ничего не говорите о доставке службе безопасности."
 	foodtype = "пачку \"пирожных\""
 
 /datum/bounty/item/botany/wheat
@@ -101,16 +101,16 @@
 	wanted_types = list(/obj/item/food/grown/rice = TRUE)
 
 /datum/bounty/item/botany/chili
-	name = "Чили перец"
+	name = "Перец чили"
 	wanted_types = list(/obj/item/food/grown/chili = TRUE)
 
 /datum/bounty/item/botany/ice_chili
-	name = "Чилли перец"
+	name = "Морозный перец"
 	wanted_types = list(/obj/item/food/grown/icepepper = TRUE)
 	multiplier = 2
 
 /datum/bounty/item/botany/ghost_chili
-	name = "Перец призрачного чили"
+	name = "Призрачный чили"
 	wanted_types = list(/obj/item/food/grown/ghost_chili = TRUE)
 	multiplier = 2
 
@@ -168,7 +168,7 @@
 	foodtype = "омлет"
 
 /datum/bounty/item/botany/glowshroom_cap
-	name = "Глоукэпы"
+	name = "Светокэп"
 	wanted_types = list(/obj/item/food/grown/mushroom/glowshroom/glowcap = TRUE)
 	multiplier = 2
 	foodtype = "омлет"
@@ -213,7 +213,7 @@
 
 /datum/bounty/item/botany/bonfire
 	name = "Зажжённый костёр"
-	description = "Наши космические нагреватели сбоят и персонал отдела поставок Центрального Командования начал замерзать. Вырастите немного брёвен и разожгите костёр чтобы согреть их."
+	description = "Наши космические нагреватели сбоят и персонал отдела поставок Центрального Командования начал замерзать. Вырастите немного брёвен и разожгите костёр, чтобы согреть их."
 	wanted_types = list(/obj/structure/bonfire = TRUE)
 
 /datum/bounty/item/botany/bonfire/applies_to(obj/O)

@@ -35,15 +35,15 @@
 	wanted_types = list(/obj/item/food/onionrings = TRUE)
 
 /datum/bounty/item/chef/icecreamsandwich
-	name = "Бутерброды с мороженым"
-	description = "Высшее руководство орало не переставая о бутербродах с мороженым. Пожалуйста отправьте несколько."
+	name = "Мороженые сэндвичи"
+	description = "Высшее руководство не переставая кричало о мороженых сэндвичах. Пожалуйста, отправьте несколько."
 	reward = CARGO_CRATE_VALUE * 8
 	required_count = 3
 	wanted_types = list(/obj/item/food/icecreamsandwich = TRUE)
 
 /datum/bounty/item/chef/strawberryicecreamsandwich
-	name = "Бутерброды с клубничным мороженым"
-	description = "Высшее руководство орало не переставая о более вкусных бутербродах с мороженым. Пожалуйста отправьте несколько."
+	name = "Клубничные мороженые сэндвичи"
+	description = "Высшее руководство не переставая кричало о более вкусных мороженых сэндвичах. Пожалуйста, отправьте несколько."
 	reward = CARGO_CRATE_VALUE * 10
 	required_count = 3
 	wanted_types = list(/obj/item/food/strawberryicecreamsandwich = TRUE)
@@ -62,7 +62,7 @@
 
 /datum/bounty/item/chef/pie
 	name = "ПИрог"
-	description = "3.14159? Нет! Руководство ЦК хочет съедобный пирог! Отправьте целый один."
+	description = "3.14159? Нет! Руководство ЦК хочет съедобный пирог! Отправьте целый пирог."
 	reward = 3142 //Screw it I'll do this one by hand
 	wanted_types = list(/obj/item/food/pie = TRUE)
 
@@ -75,20 +75,20 @@
 
 /datum/bounty/item/chef/carrotfries
 	name = "Морковный картофель фри"
-	description = "Ночное зрение может означать жизнь или смерть! Доставка морковного картофеля фри - заказ."
+	description = "Ночное зрение может означать жизнь или смерть! Доставка морковного картофеля фри - приказ."
 	reward = CARGO_CRATE_VALUE * 7
 	required_count = 3
 	wanted_types = list(/obj/item/food/carrotfries = TRUE)
 
 /datum/bounty/item/chef/superbite
-	name = "Супер бургер"
-	description = "Коммандор Табс думает, что он сможет установить мировой рекорд по поеданию. Всё что ему нужно, так это супер бургер, отправленный ему."
+	name = "Super Bite Burger"
+	description = "Коммандор Табс думает, что он сможет установить мировой рекорд по поеданию. Всё что ему нужно, так это Super Bite Burger, отправленный ему."
 	reward = CARGO_CRATE_VALUE * 24
 	wanted_types = list(/obj/item/food/burger/superbite = TRUE)
 
 /datum/bounty/item/chef/poppypretzel
 	name = "Poppy Pretzel"
-	description = "Центральному Командованию нужна причина для увольнения главы отдела кадров. Отправьте маковый крендель чтобы завалить тест на наркотики."
+	description = "Центральному Командованию нужна причина для увольнения главы отдела кадров. Отправьте маковый крендель чтобы, он завалил тест на наркотики."
 	reward = CARGO_CRATE_VALUE * 6
 	wanted_types = list(/obj/item/food/poppypretzel = TRUE)
 
@@ -100,13 +100,13 @@
 
 /datum/bounty/item/chef/hotdog
 	name = "Хот-дог"
-	description = "Нанотрейзен проводит дегустацию чтобы определить лучший рецепт хот-дога. Отправьте версию своей станции для участия."
+	description = "Нанотрейзен проводит дегустацию, чтобы определить лучший рецепт хот-дога. Отправьте версию своей станции для участия."
 	reward = CARGO_CRATE_VALUE * 16
 	wanted_types = list(/obj/item/food/hotdog = TRUE)
 
 /datum/bounty/item/chef/eggplantparm
 	name = "Eggplant Parmigianas"
-	description = "Популярный певец прибудет на ЦК и в его контракте прописано, что на стол должен подаваться только баклажановый пармезан. Отправьте немного, пожалуйста!"
+	description = "Популярный певец прибудет на ЦК и в его контракте прописано, что на стол должен подаваться только баклажановый пармезан. Пожалуйста, отправьте нам немного!"
 	reward = CARGO_CRATE_VALUE * 7
 	required_count = 3
 	wanted_types = list(/obj/item/food/eggplantparm = TRUE)
@@ -126,7 +126,7 @@
 
 /datum/bounty/item/chef/kebab
 	name = "Шашлык"
-	description = "Убери весь шашлык со станции, и ты станешь едою. Отправьте его ЦК для удаления из помещения."
+	description = "Убери весь шашлык со станции - ты сам станешь едой. Отправь на ЦК - теория не подтвердится."
 	reward = CARGO_CRATE_VALUE * 7
 	required_count = 3
 	wanted_types = list(/obj/item/food/kebab = TRUE)
@@ -139,21 +139,21 @@
 
 /datum/bounty/item/chef/pancakes
 	name = "Pancakes"
-	description = "Здесь, в Нанотрейзен, сотрудников считают семьёй. Вы знаете что семьи любят? Оладьи. Отправьте чёртову дюжину."
+	description = "Здесь, в Нанотрейзен, сотрудников считают семьёй. Вы знаете, что семьи любят? Оладьи. Отправьте чёртову дюжину."
 	reward = CARGO_CRATE_VALUE * 10
 	required_count = 13
 	wanted_types = list(/obj/item/food/pancakes = TRUE)
 
 /datum/bounty/item/chef/nuggies
 	name = "Куриные котлеты"
-	description = "Сын вице-президента не можете перестать говорить о куриных котлетках. Не могли бы вы отрпавить несколько?"
+	description = "Сын вице-президента не может перестать говорить о куриных котлетках. Не могли бы вы отправить немного?"
 	reward = CARGO_CRATE_VALUE * 8
 	required_count = 6
 	wanted_types = list(/obj/item/food/nugget = TRUE)
 
 /datum/bounty/item/chef/corgifarming //Butchering is a chef's job.
 	name = "Шкура корги"
-	description = "Космическая яхта адмирала Вейнштейна нуждается в новой обивке. Дюжина меха корги должна с этим справиться."
+	description = "Космическая яхта адмирала Вейнштейна нуждается в новой обивке. Должно хватить дюжины меха корги."
 	reward = CARGO_CRATE_VALUE * 60 //that's a lot of dead dogs
 	required_count = 12
 	wanted_types = list(/obj/item/stack/sheet/animalhide/corgi = TRUE)

@@ -56,7 +56,7 @@
 
 /obj/machinery/computer/piratepad_control/multitool_act(mob/living/user, obj/item/multitool/I)
 	if(istype(I) && istype(I.buffer,/obj/machinery/piratepad/civilian))
-		to_chat(user, span_notice("Вы привязываете [src.name] к [I.buffer] при помощи [I] буффера."))
+		to_chat(user, span_notice("Вы привязываете [src.name] к [I.buffer] при помощи буффера [I.name]."))
 		pad_ref = WEAKREF(I.buffer)
 		return TRUE
 
@@ -75,14 +75,14 @@
 	if(sending)
 		return FALSE
 	if(!inserted_scan_id)
-		status_report = "Пожалуйста вставьте сначала ID карту."
+		status_report = "Пожалуйста, вставьте сначала ID карту."
 		playsound(loc, 'sound/machines/synth_no.ogg', 30 , TRUE)
 		return FALSE
 	if(!inserted_scan_id.registered_account.civilian_bounty)
-		status_report = "Пожалуйста возьмите новый баунти сначала."
+		status_report = "Пожалуйста, сначала возьмите новый гражданский заказ."
 		playsound(loc, 'sound/machines/synth_no.ogg', 30 , TRUE)
 		return FALSE
-	status_report = "Гражданское баунти: "
+	status_report = "Гражданское заказ: "
 	var/obj/machinery/piratepad/civilian/pad = pad_ref?.resolve()
 	for(var/atom/movable/AM in get_turf(pad))
 		if(AM == pad)
@@ -118,20 +118,20 @@
 			curr_bounty.ship(AM)
 			qdel(AM)
 	if(active_stack >= 1)
-		status_report += "Цель баунти найдена x[active_stack]. "
+		status_report += "Цель заказа найдена x[active_stack]. "
 	else
 		status_report = "Применимых целей не обнаружено. Отказ."
 		stop_sending()
 	if(curr_bounty.can_claim())
 		//Pay for the bounty with the ID's department funds.
-		status_report += "Баунти выполнено! Передайте ваш баунти куб в карго для вашего автоматического перевода вскоре."
+		status_report += "Заказ выполнен! Передайте ваш баунти куб-награду в отдел снабжения, чтобы получить денежную выплату."
 		inserted_scan_id.registered_account.reset_bounty()
 		SSeconomy.civ_bounty_tracker++
 
 		var/obj/item/bounty_cube/reward = new /obj/item/bounty_cube(drop_location())
 		reward.set_up(curr_bounty, inserted_scan_id)
 
-	pad.visible_message(span_notice("[pad] активируется!"))
+	pad.visible_message(span_notice("[pad.name] активируется!"))
 	flick(pad.sending_state,pad)
 	pad.icon_state = pad.idle_state
 	playsound(loc, 'sound/machines/synth_yes.ogg', 30 , TRUE)
@@ -147,7 +147,7 @@
 		say("Internal ID network spools coiling, try again in [curr_time] minutes!")
 		return FALSE
 	if(!pot_acc.account_job)
-		say("Запрашиваемая ID карта не имеет зарегистированной работы!")
+		say("Запрашиваемая ID карта не имеет зарегистированной должности!")
 		return FALSE
 	var/list/datum/bounty/crumbs = list(random_bounty(pot_acc.account_job.bounty_types), // We want to offer 2 bounties from their appropriate job catagories
 										random_bounty(pot_acc.account_job.bounty_types), // and 1 guarenteed assistant bounty if the other 2 suck.
@@ -235,8 +235,8 @@
 		else
 			id_eject(user, target)
 
-	user.visible_message(span_notice("[user] вставляет [card_to_insert] в [src.name]."),
-						span_notice("Вы вставляете [card_to_insert] в [src.name]."))
+	user.visible_message(span_notice("[user] вставляет [card_to_insert.name] в [src.name]."),
+						span_notice("Вы вставляете [card_to_insert.name] в [src.name]."))
 	playsound(src, 'sound/machines/terminal_insert_disc.ogg', 50, FALSE)
 	ui_interact(user)
 	return TRUE
@@ -309,7 +309,7 @@
 /obj/item/bounty_cube/examine()
 	. = ..()
 	if(speed_bonus)
-		. += span_notice("<b>[time2text(next_nag_time - world.time,"mm:ss")]</b> остаётся до конца <b>[bounty_value * speed_bonus]</b> кредитного бонуса за быструю доставку.")
+		. += span_notice("Остаётся <b>[time2text(next_nag_time - world.time,"mm:ss")]</b>, пока не истечёт срок бонусных <b>[bounty_value * speed_bonus]</b> кредитов за быструю доставку.")
 	if(handler_tip && !bounty_handler_account)
 		. += span_notice("Scan this in the cargo shuttle with an export scanner to register your bank account for the <b>[bounty_value * handler_tip]</b> credit handling tip.")
 
@@ -334,7 +334,7 @@
 		var/nag_message = "[src.name] не доставлен в [get_area(src)]."
 
 		//nag on Supply channel and reduce the speed bonus multiplier to nothing
-		var/speed_bonus_lost = "[speed_bonus ? " Бонус за быструю доставку [bounty_value * speed_bonus] кредитов потерян." : ""]"
+		var/speed_bonus_lost = "[speed_bonus ? " Бонус в виде [bounty_value * speed_bonus] кредитов за быструю доставку потерян." : ""]"
 		radio.talk_into(src, "[nag_message][speed_bonus_lost]", RADIO_CHANNEL_SUPPLY)
 		speed_bonus = 0
 
@@ -355,7 +355,7 @@
 	bounty_holder_job = holder_id.assignment
 	bounty_holder_account = holder_id.registered_account
 	name = "\improper [bounty_value] cr [name]"
-	desc += " Торговая бирка показывает, что она принадлежала пользователю <i>[bounty_holder] ([bounty_holder_job])</i> и давала награду за выполнение <i>[bounty_name]</i> баунти."
+	desc += " Торговая бирка показывает, что это награда для <i>[bounty_holder] ([bounty_holder_job])</i> за выполнение заказа <i>[bounty_name]</i>."
 	AddComponent(/datum/component/pricetag, holder_id.registered_account, holder_cut, FALSE)
 	AddComponent(/datum/component/gps, "[src]")
 	START_PROCESSING(SSobj, src)
@@ -393,7 +393,7 @@
 	var/uses = 2
 
 /obj/item/civ_bounty_beacon/attack_self()
-	loc.visible_message(span_warning("[src.name] начинает гудеть громко!"))
+	loc.visible_message(span_warning("[src.name] начинает громко гудеть!"))
 	addtimer(CALLBACK(src, PROC_REF(launch_payload)), 1 SECONDS)
 
 /obj/item/civ_bounty_beacon/proc/launch_payload()

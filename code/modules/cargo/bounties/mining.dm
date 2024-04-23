@@ -65,21 +65,21 @@
 	wanted_types = list(/obj/item/knife/combat/bone = TRUE)
 
 /datum/bounty/item/mining/polypore_mushroom
-	name = "Миска грибов"
-	description = "Лейтенант Джеб уронил свою любимую миску грибов. Подбодрите его, отправив новую, хорошо?"
+	name = "Грибная миска"
+	description = "Лейтенант Джеб уронил свою любимую грибную миску. Подбодрите его, отправив новую, хорошо?"
 	reward = CARGO_CRATE_VALUE * 15 //5x mushroom shavings
 	wanted_types = list(/obj/item/reagent_containers/cup/bowl/mushroom_bowl = TRUE)
 
 /datum/bounty/item/mining/inocybe_mushroom
 	name = "Шляпки грибов"
-	description = "Наш ботаник утверждает, что он может перегнать вкусный ликёр из абсолютно любого растения. Давайте посмотрим, что будет делать с шляпами грибов из семьи Иноцибе."
+	description = "Наш ботаник утверждает, что он может перегнать вкусный ликёр из абсолютно любого растения. Давайте посмотрим, что он будет делать с шляпками грибов из семьи Иноцибе."
 	reward = CARGO_CRATE_VALUE * 9
 	required_count = 3
 	wanted_types = list(/obj/item/food/grown/ash_flora/mushroom_cap = TRUE)
 
 /datum/bounty/item/mining/porcini_mushroom
 	name = "Грибные листья"
-	description = "Листья гриба Порчини по слухам имеют целебные свойства. Наши исследователи хотят заполучить их для эксперимента."
+	description = "Листья гриба Порчини, если верить слухам, имеют целебные свойства. Наши исследователи хотят заполучить их для эксперимента."
 	reward = CARGO_CRATE_VALUE * 9
 	required_count = 3
 	wanted_types = list(/obj/item/food/grown/ash_flora/mushroom_leaf = TRUE)
