@@ -172,7 +172,7 @@
 
 /datum/bounty/item/assistant/crayons
 	name = "Мелки"
-	description = "Дети доктора Джонса снова съели все наши мелки. Пожалуйста отправьте нам свои."
+	description = "Дети доктора Джонса снова съели все наши мелки. Пожалуйста, отправьте нам свои."
 	reward = CARGO_CRATE_VALUE * 4
 	required_count = 24
 	wanted_types = list(/obj/item/toy/crayon = TRUE)
