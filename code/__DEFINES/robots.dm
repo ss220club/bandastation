@@ -283,7 +283,7 @@ DEFINE_BITFIELD(janitor_mode_flags, list(
 #define FIREBOT_VOICED_NO_FIRES "Пожаров не обнаружено."
 #define FIREBOT_VOICED_ONLY_YOU "Только вы можете предотвратить пожары на станциях."
 #define FIREBOT_VOICED_TEMPERATURE_NOMINAL "Номинальная температура."
-#define FIREBOT_VOICED_KEEP_COOL "Незапаривайтесь."
+#define FIREBOT_VOICED_KEEP_COOL "Не парьтесь."
 
 #define HYGIENEBOT_VOICED_UNHYGIENIC "Обнаружен антисанитарный элемент. Пожалуйста, стойте спокойно, чтобы я мог почистить вас."
 #define HYGIENEBOT_VOICED_ENJOY_DAY "Наслаждайтесь чистым и опрятным днем!"
