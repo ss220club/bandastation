@@ -124,7 +124,7 @@
 		stop_sending()
 	if(curr_bounty.can_claim())
 		//Pay for the bounty with the ID's department funds.
-		status_report += "Заказ выполнен! Передайте ваш баунти куб-награду в отдел снабжения, чтобы получить денежную выплату."
+		status_report += "Заказ выполнен! Передайте ваш куб-награду в отдел снабжения, чтобы получить денежную выплату."
 		inserted_scan_id.registered_account.reset_bounty()
 		SSeconomy.civ_bounty_tracker++
 
