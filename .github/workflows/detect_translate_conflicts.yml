@@ -1,0 +1,35 @@
+on:
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  comment:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "SS220Manager"
+
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            const execa = require('execa')
+
+            await execa('git', ['merge', 'translate'])
+            const { merge_conflicts } = execa ('git', 'diff', '--diff-filter=U')
+            console.log(merge_conflicts)
+
+            if(!merge_conflicts) {
+              return
+            }
+
+            await github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `This pr causes following conflicts on translate branch: \`\`\`${merge_conflicts}\`\`\` `
+            })
