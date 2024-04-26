@@ -17,7 +17,7 @@ jobs:
           git config --local user.name "SS220Manager"
       - name: Try merging
         run: |
-          git merge translate
+          git merge origin/translate
           export MERGE_CONFLICTS=$(git diff --diff-filter=U)
       - name: Run script
         uses: actions/github-script@v7
