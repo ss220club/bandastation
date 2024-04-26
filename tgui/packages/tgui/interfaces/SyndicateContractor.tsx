@@ -5,32 +5,21 @@ import {
   Box,
   Button,
   Flex,
-  Grid,
   Icon,
   LabeledList,
   Modal,
   NoticeBox,
   Section,
+  Stack,
 } from '../components';
 import { FakeTerminal } from '../components/FakeTerminal';
 import { NtosWindow } from '../layouts';
 
-const CONTRACT_STATUS_INACTIVE = 1;
-const CONTRACT_STATUS_ACTIVE = 2;
-const CONTRACT_STATUS_BOUNTY_CONSOLE_ACTIVE = 3;
-const CONTRACT_STATUS_EXTRACTING = 4;
-const CONTRACT_STATUS_COMPLETE = 5;
-const CONTRACT_STATUS_ABORTED = 6;
-
-export const SyndicateContractor = (props) => {
-  return (
-    <NtosWindow width={500} height={600}>
-      <NtosWindow.Content scrollable>
-        <SyndicateContractorContent />
-      </NtosWindow.Content>
-    </NtosWindow>
-  );
-};
+enum CONTRACT {
+  Inactive = 1,
+  Active = 2,
+  Complete = 5,
+}
 
 type Data = {
   contracts_completed: number;
@@ -59,7 +48,47 @@ type ContractData = {
   target: string;
 };
 
-export const SyndicateContractorContent = (props) => {
+const infoEntries = [
+  'SyndTract v2.0',
+  '',
+  'Мы определили потенциально ценные цели, которые',
+  'в настоящее время находятся в районе вашей миссии. Они могут',
+  'хранить ценную информацию, которая может иметь важное',
+  'значение для нашей организации.',
+  '',
+  'Ниже перечислены все доступные вам контракты. Вы',
+  'должны довести заданную цель до назначенной',
+  'зоны отправки, и связаться с нами через аплинк. Мы отправим',
+  'специализированную капсулу для транспортировки, куда нужно поместить тело.',
+  '',
+  'Мы хотим, чтобы цели были живыми; мы платим меньшие',
+  'суммы если цель будет мертва, так как вы просто не получите указанный',
+  'бонус. Вы можете получить свою оплату через этот аплинк в',
+  'форме телекристаллов, которые могут быть вложены в',
+  'обычный аплинк Синдиката для приобретения необходимого вам снаряжения.',
+  'Мы предоставим вам эти кристаллы в тот момент, когда вы отправите',
+  'цель к нам, телекристаллы можно получить в любое время через',
+  'эту систему.',
+  '',
+  'Похищенные цели будут выкуплены обратно на станцию после того,',
+  'как их знания будут извлечены, и вам будет предоставлена',
+  'часть выкупа. Вам следует помнить, что они могут',
+  'идентифицировать вас, когда они вернутся. Мы предоставляем вам',
+  'стандартное снаряжение контрактника, которое поможет скрыть вашу',
+  'личность.',
+] as const;
+
+export function SyndicateContractor(props) {
+  return (
+    <NtosWindow width={500} height={600}>
+      <NtosWindow.Content scrollable>
+        <SyndicateContractorContent />
+      </NtosWindow.Content>
+    </NtosWindow>
+  );
+}
+
+function SyndicateContractorContent(props) {
   const { data, act } = useBackend<Data>();
   const { error, logged_in, first_load, info_screen } = data;
 
@@ -84,37 +113,7 @@ export const SyndicateContractorContent = (props) => {
     'Поиск доступных контрактов...',
     'КОНТРАКТЫ НАЙДЕНЫ',
     'ДОБРО ПОЖАЛОВАТЬ, АГЕНТ',
-  ];
-
-  const infoEntries = [
-    'SyndTract v2.0',
-    '',
-    'Мы определили потенциально ценные цели, которые',
-    'в настоящее время находятся в районе вашей миссии. Они могут',
-    'хранить ценную информацию, которая может иметь важное',
-    'значение для нашей организации.',
-    '',
-    'Ниже перечислены все доступные вам контракты. Вы',
-    'должны довести заданную цель до назначенной',
-    'зоны отправки, и связаться с нами через аплинк. Мы отправим',
-    'специализированную капсулу для транспортировки, куда нужно поместить тело.',
-    '',
-    'Мы хотим, чтобы цели были живыми; мы платим меньшие',
-    'суммы если цель будет мертва, так как вы просто не получите указанный',
-    'бонус. Вы можете получить свою оплату через этот аплинк в',
-    'форме телекристаллов, которые могут быть вложены в',
-    'обычный аплинк Синдиката для приобретения необходимого вам снаряжения.',
-    'Мы предоставим вам эти кристаллы в тот момент, когда вы отправите',
-    'цель к нам, телекристаллы можно получить в любое время через',
-    'эту систему.',
-    '',
-    'Похищенные цели будут выкуплены обратно на станцию после того,',
-    'как их знания будут извлечены, и вам будет предоставлена',
-    'часть выкупа. Вам следует помнить, что они могут',
-    'идентифицировать вас, когда они вернутся. Мы предоставляем вам',
-    'стандартное снаряжение контрактника, которое поможет скрыть вашу',
-    'личность.',
-  ];
+  ] as const;
 
   const errorPane = !!error && (
     <Modal backgroundColor="red">
@@ -126,7 +125,7 @@ export const SyndicateContractorContent = (props) => {
           <Box width="260px" textAlign="left" minHeight="80px">
             {error}
           </Box>
-          <Button content="Dismiss" onClick={() => act('PRG_clear_error')} />
+          <Button onClick={() => act('PRG_clear_error')}>Dismiss</Button>
         </Flex.Item>
       </Flex>
     </Modal>
@@ -136,11 +135,9 @@ export const SyndicateContractorContent = (props) => {
     return (
       <Section minHeight="525px">
         <Box width="100%" textAlign="center">
-          <Button
-            content="ЗАРЕГИСТРИРОВАННЫЙ ПОЛЬЗОВАТЕЛЬ"
-            color="transparent"
-            onClick={() => act('PRG_login')}
-          />
+          <Button color="transparent" onClick={() => act('PRG_login')}>
+            ЗАРЕГИСТРИРОВАННЫЙ ПОЛЬЗОВАТЕЛЬ
+          </Button>
         </Box>
         {!!error && <NoticeBox>{error}</NoticeBox>}
       </Section>
@@ -167,11 +164,12 @@ export const SyndicateContractorContent = (props) => {
         </Box>
         <Button
           fluid
-          content="ПРОДОЛЖИТЬ"
           color="transparent"
           textAlign="center"
           onClick={() => act('PRG_toggle_info')}
-        />
+        >
+          ПРОДОЛЖИТЬ
+        </Button>
       </>
     );
   }
@@ -183,38 +181,38 @@ export const SyndicateContractorContent = (props) => {
       <ContractsTab />
     </>
   );
-};
+}
 
-export const StatusPane = (props) => {
+function StatusPane(props) {
   const { act, data } = useBackend<Data>();
   const { redeemable_tc, earned_tc, contracts_completed } = data;
 
   return (
     <Section
-      title={
-        <>
-          Статус контрактника
-          <Button
-            content="Посмотреть информацию еще раз"
-            color="transparent"
-            mb={0}
-            ml={1}
-            onClick={() => act('PRG_toggle_info')}
-          />
-        </>
+      buttons={
+        <Button
+          color="transparent"
+          mb={0}
+          ml={1}
+          onClick={() => act('PRG_toggle_info')}
+        >
+          Посмотреть информацию еще раз
+        </Button>
       }
+      title="Статус контрактника"
     >
-      <Grid>
-        <Grid.Column size={0.85}>
+      <Stack>
+        <Stack.Item grow>
           <LabeledList>
             <LabeledList.Item
               label="Доступные ТК"
               buttons={
                 <Button
-                  content="Забрать"
                   disabled={redeemable_tc <= 0}
                   onClick={() => act('PRG_redeem_TC')}
-                />
+                >
+                  Забрать
+                </Button>
               }
             >
               {String(redeemable_tc)}
@@ -223,24 +221,28 @@ export const StatusPane = (props) => {
               {String(earned_tc)}
             </LabeledList.Item>
           </LabeledList>
-        </Grid.Column>
-        <Grid.Column>
+        </Stack.Item>
+        <Stack.Item grow>
           <LabeledList>
             <LabeledList.Item label="Выполненные контракты">
               {String(contracts_completed)}
             </LabeledList.Item>
             <LabeledList.Item label="Текущий статус">АКТИВНЫЙ</LabeledList.Item>
           </LabeledList>
-        </Grid.Column>
-      </Grid>
+        </Stack.Item>
+      </Stack>
     </Section>
   );
-};
+}
 
-const ContractsTab = (props) => {
+function ContractsTab(props) {
   const { act, data } = useBackend<Data>();
-  const { contracts, ongoing_contract, extraction_enroute, dropoff_direction } =
-    data;
+  const {
+    contracts = [],
+    ongoing_contract,
+    extraction_enroute,
+    dropoff_direction,
+  } = data;
 
   return (
     <>
@@ -248,18 +250,19 @@ const ContractsTab = (props) => {
         title="Доступные контракты"
         buttons={
           <Button
-            content="Вызвать траспортировочный под"
-            disabled={!ongoing_contract || extraction_enroute}
+            disabled={!ongoing_contract || !!extraction_enroute}
             onClick={() => act('PRG_call_extraction')}
-          />
+          >
+            Call Extraction
+          </Button>
         }
       >
         {contracts.map((contract) => {
-          if (ongoing_contract && contract.status !== CONTRACT_STATUS_ACTIVE) {
+          if (ongoing_contract && contract.status !== CONTRACT.Active) {
             return;
           }
-          const active = contract.status > CONTRACT_STATUS_INACTIVE;
-          if (contract.status >= CONTRACT_STATUS_COMPLETE) {
+          const active = contract.status > CONTRACT.Inactive;
+          if (contract.status >= CONTRACT.Complete) {
             return;
           }
           return (
@@ -276,27 +279,28 @@ const ContractsTab = (props) => {
                     {`${contract.payout} (+${contract.payout_bonus}) ТК`}
                   </Box>
                   <Button
-                    content={active ? 'Отменить' : 'Принять'}
-                    disabled={contract.extraction_enroute}
+                    disabled={!!contract.extraction_enroute}
                     color={active && 'bad'}
                     onClick={() =>
                       act('PRG_contract' + (active ? '_abort' : '-accept'), {
                         contract_id: contract.id,
                       })
                     }
-                  />
+                  >
+                    {active ? 'Abort' : 'Accept'}
+                  </Button>
                 </>
               }
             >
-              <Grid>
-                <Grid.Column>{contract.message}</Grid.Column>
-                <Grid.Column size={0.5}>
+              <Stack>
+                <Stack.Item grow>{contract.message}</Stack.Item>
+                <Stack.Item>
                   <Box bold mb={1}>
                     Dropoff Location:
                   </Box>
                   <Box>{contract.dropoff}</Box>
-                </Grid.Column>
-              </Grid>
+                </Stack.Item>
+              </Stack>
             </Section>
           );
         })}
@@ -310,4 +314,4 @@ const ContractsTab = (props) => {
       </Section>
     </>
   );
-};
+}

@@ -1,5 +1,4 @@
 import { filter, sortBy } from 'common/collections';
-import { flow } from 'common/fp';
 import { scale, toFixed } from 'common/math';
 import { BooleanLike } from 'common/react';
 import { createSearch } from 'common/string';
@@ -70,20 +69,22 @@ export const NtosNetDownloader = (props) => {
     searchItem,
     (program) => program.filedesc,
   );
-  const items = flow([
+  let items =
     searchItem.length > 0
       ? // If we have a query, search everything for it.
-        filter(search)
+        filter(programs, search)
       : // Otherwise, show respective programs for the category.
-        filter((program: ProgramData) => program.category === selectedCategory),
-    // This sorts all programs in the lists by name and compatibility
-    sortBy(
-      (program: ProgramData) => !program.compatible,
-      (program: ProgramData) => program.filedesc,
-    ),
+        filter(programs, (program) => program.category === selectedCategory);
+  // This sorts all programs in the lists by name and compatibility
+  items = sortBy(
+    items,
+    (program: ProgramData) => !program.compatible,
+    (program: ProgramData) => program.filedesc,
+  );
+  if (!emagged) {
     // This filters the list to only contain verified programs
-    !emagged && filter((program: ProgramData) => program.verifiedsource === 1),
-  ])(programs);
+    items = filter(items, (program) => program.verifiedsource === 1);
+  }
   const disk_free_space = downloading
     ? disk_size - Number(toFixed(disk_used + downloadcompletion))
     : disk_size - disk_used;
@@ -100,7 +101,7 @@ export const NtosNetDownloader = (props) => {
         <Section>
           <LabeledList>
             <LabeledList.Item
-              label="Hard drive"
+              label="Жесткий диск"
               buttons={
                 (!!downloading && (
                   <Button
@@ -118,7 +119,7 @@ export const NtosNetDownloader = (props) => {
                     color="good"
                     icon="download"
                     tooltipPosition="left"
-                    tooltip={`${downloadname}.prg downloaded`}
+                    tooltip={`${downloadname}.prg загружен`}
                   />
                 ))
               }
@@ -140,7 +141,7 @@ export const NtosNetDownloader = (props) => {
             autoFocus
             height="23px"
             width="100%"
-            placeholder="Search program name..."
+            placeholder="Найти программу..."
             fluid
             value={searchItem}
             onInput={(e, value) => {
@@ -219,7 +220,7 @@ const Program = (props) => {
                 <Button
                   bold
                   icon="download"
-                  content="Download"
+                  content="Загрузить"
                   disabled={downloading}
                   tooltipPosition="left"
                   tooltip={!!downloading && 'Awaiting download completion...'}
@@ -242,12 +243,12 @@ const Program = (props) => {
                 }
                 content={
                   program.installed
-                    ? 'Installed'
+                    ? 'Установлено'
                     : !program.compatible
-                      ? 'Incompatible'
+                      ? 'Несовместимо'
                       : !program.access
-                        ? 'No Access'
-                        : 'No Space'
+                        ? 'Нет доступа'
+                        : 'Нет места'
                 }
               />
             )}
@@ -258,8 +259,8 @@ const Program = (props) => {
       </Box>
       {!program.verifiedsource && (
         <NoticeBox mt={1} mb={0} danger fontSize="12px">
-          Unverified source. Please note that Nanotrasen does not recommend
-          download and usage of software from non-official servers.
+          Непроверенный источник. Обратите внимание, что Nanotrasen не
+          рекомендует скачивать и использовать ПО с неофициальных серверов.
         </NoticeBox>
       )}
     </Section>

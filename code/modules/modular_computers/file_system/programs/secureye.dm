@@ -6,7 +6,7 @@
 	downloader_category = PROGRAM_CATEGORY_SECURITY
 	ui_header = "borg_mon.gif"
 	program_open_overlay = "generic"
-	extended_desc = "This program allows access to standard security camera networks."
+	extended_desc = "Эта программа позволяет получить доступ к стандартным сетям камер безопасности."
 	program_flags = PROGRAM_ON_NTNET_STORE | PROGRAM_REQUIRES_NTNET
 	download_access = list(ACCESS_SECURITY)
 	can_run_on_flags = PROGRAM_CONSOLE | PROGRAM_LAPTOP
@@ -70,7 +70,7 @@
 	// Convert networks to lowercase
 	for(var/i in network)
 		network -= i
-		network += lowertext(i)
+		network += LOWER_TEXT(i)
 	// Initialize map objects
 	cam_screen = new
 	cam_screen.generate_view(map_name)

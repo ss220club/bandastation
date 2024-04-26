@@ -251,7 +251,8 @@
 				span_notice("[user] установил [tool] в [target] [parse_zone(target_zone)]!"),
 				span_notice("[user] установил что-то в [target] [parse_zone(target_zone)]!"),
 			)
-			display_pain(target, "Ваша [parse_zone(target_zone)] болит, когда ваш новый [tool.name] приживается!")
+			display_pain(target, "Your [parse_zone(target_zone)] throbs with pain as your new [tool.name] comes to life!")
+			target_organ.on_surgical_insertion(user, target, target_zone, tool)
 		else
 			target_organ.forceMove(target.loc)
 

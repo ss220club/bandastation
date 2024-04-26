@@ -11,16 +11,16 @@ export const NtosCrewManifest = (props) => {
     <NtosWindow width={400} height={480}>
       <NtosWindow.Content scrollable>
         <Section
-          title="Crew Manifest"
+          title="Список экипажа"
           buttons={
             <Button
               icon="print"
-              content="Print"
+              content="Распечатать"
               onClick={() => act('PRG_print')}
             />
           }
         >
-          {map((entries, department) => (
+          {map(manifest, (entries, department) => (
             <Section key={department} level={2} title={department}>
               <Table>
                 {entries.map((entry) => (
@@ -31,7 +31,7 @@ export const NtosCrewManifest = (props) => {
                 ))}
               </Table>
             </Section>
-          ))(manifest)}
+          ))}
         </Section>
       </NtosWindow.Content>
     </NtosWindow>

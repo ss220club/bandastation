@@ -144,7 +144,7 @@ GLOBAL_LIST_EMPTY(req_console_ckey_departments)
 		ui.set_autoupdate(FALSE)
 		ui.open()
 
-/obj/machinery/requests_console/ui_act(action, params)
+/obj/machinery/requests_console/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
 	. = ..()
 	if(.)
 		return
@@ -201,7 +201,7 @@ GLOBAL_LIST_EMPTY(req_console_ckey_departments)
 				message = L.treat_message(message)["message"]
 
 			minor_announce(message, "[department] Announcement:", html_encode = FALSE, sound_override = 'sound/misc/announce_dig.ogg')
-			GLOB.news_network.submit_article(message, department, "Station Announcements", null)
+			GLOB.news_network.submit_article(message, department, "Станционные оповещения", null)
 			usr.log_talk(message, LOG_SAY, tag="station announcement from [src]")
 			message_admins("[ADMIN_LOOKUPFLW(usr)] has made a station announcement from [src] at [AREACOORD(usr)].")
 			deadchat_broadcast(" made a station announcement from [span_name("[get_area_name(usr, TRUE)]")].", span_name("[usr.real_name]"), usr, message_type=DEADCHAT_ANNOUNCEMENT)
@@ -213,7 +213,8 @@ GLOBAL_LIST_EMPTY(req_console_ckey_departments)
 			var/recipient = params["reply_recipient"]
 
 			var/reply_message = reject_bad_text(tgui_input_text(usr, "Write a quick reply to [recipient]", "Awaiting Input"), ascii_only = FALSE)
-
+			if(QDELETED(ui) || ui.status != UI_INTERACTIVE)
+				return
 			if(!reply_message)
 				has_mail_send_error = TRUE
 				playsound(src, 'sound/machines/buzz-two.ogg', 50, TRUE)

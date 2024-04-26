@@ -543,8 +543,8 @@ Striking a noncultist, however, will tear their flesh."}
 
 		var/curse_message = pick_n_take(remaining_curses) || "Something has gone horrendously wrong..."
 
-		curse_message += " The shuttle will be delayed by three minutes."
-		priority_announce("[curse_message]", "System Failure", 'sound/misc/notice1.ogg')
+		curse_message += " Эвакуационный шаттл задерживается на три минуты."
+		priority_announce("[curse_message]", "ВНИМАНИЕ: Обнаружена неисправность в системе", 'sound/misc/notice1.ogg')
 		if(MAX_SHUTTLE_CURSES-totalcurses <= 0)
 			to_chat(user, span_danger(span_big("You sense that the emergency escape shuttle can no longer be cursed. It would be unwise to create more cursed orbs.")))
 		else if(MAX_SHUTTLE_CURSES-totalcurses == 1)
@@ -989,7 +989,7 @@ Striking a noncultist, however, will tear their flesh."}
 		if(.)
 			if(illusions > 0)
 				illusions--
-				addtimer(CALLBACK(src, TYPE_PROC_REF(/obj/item/shield/mirror, readd)), 450)
+				addtimer(CALLBACK(src, TYPE_PROC_REF(/obj/item/shield/mirror, readd)), 45 SECONDS)
 				if(prob(60))
 					var/mob/living/simple_animal/hostile/illusion/M = new(owner.loc)
 					M.faction = list(FACTION_CULT)

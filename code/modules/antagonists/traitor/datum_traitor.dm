@@ -360,7 +360,7 @@
 			result += contractor_round_end()
 		result += "<br>Предатель имел [DISPLAY_PROGRESSION(uplink_handler.progression_points)] репутации и [uplink_handler.telecrystals] неиспользованных телекристаллов."
 
-	var/special_role_text = lowertext(name)
+	var/special_role_text = LOWER_TEXT(name)
 
 	if(traitor_won)
 		result += span_greentext("[special_role_text] был успешен!")

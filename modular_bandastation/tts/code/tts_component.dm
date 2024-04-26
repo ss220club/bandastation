@@ -60,8 +60,9 @@
 
 	var/tts_seeds
 	var/list/tts_seeds_by_gender = SStts220.get_tts_by_gender(being_changed.gender)
+	tts_seeds_by_gender |= SStts220.get_tts_by_gender(NEUTER)
 	if(!length(tts_seeds_by_gender))
-		to_chat(chooser, span_warning("Не удалось найти пол для голоса! Текущий голос - [tts_seed.name]"))
+		to_chat(chooser, span_warning("Не удалось найти голоса для пола! Текущий голос - [tts_seed.name]"))
 		return null
 	if(check_rights(R_ADMIN, FALSE, chooser) || override || !ismob(being_changed))
 		tts_seeds = tts_seeds_by_gender
@@ -130,6 +131,7 @@
 	if(!location)
 		location = parent
 	if(effect == /datum/singleton/sound_effect/radio)
+		is_local = FALSE
 		if(listener == speaker && !issilicon(parent)) // don't hear both radio and whisper from yourself
 			return
 

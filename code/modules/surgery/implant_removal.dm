@@ -56,6 +56,9 @@
 		display_pain(target, "Вы чувствуете, как [implant.name] извлекли из вас!")
 		implant.removed(target)
 
+		if (QDELETED(implant))
+			return ..()
+
 		var/obj/item/implantcase/case
 		for(var/obj/item/implantcase/implant_case in user.held_items)
 			case = implant_case
