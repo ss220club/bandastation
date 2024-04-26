@@ -22,6 +22,7 @@ jobs:
         run: |
           git merge origin/translate
           echo "MERGE_CONFLICTS=$(git diff --diff-filter=U)" >> $GITHUB_ENV
+          echo conflicts: $MERGE_CONFLICTS
 
       - run: echo $MERGE_CONFLICTS
 
@@ -30,7 +31,6 @@ jobs:
         with:
           script: |
             const { MERGE_CONFLICTS } = process.env
-            console.log(MERGE_CONFLICTS)
 
             if(!MERGE_CONFLICTS) {
               return
