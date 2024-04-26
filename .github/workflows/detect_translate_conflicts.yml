@@ -19,7 +19,7 @@ jobs:
         continue-on-error: true
         run: |
           git merge origin/translate
-          export MERGE_CONFLICTS=$(git diff --diff-filter=U)
+          echo "MERGE_CONFLICTS=$(git diff --diff-filter=U)" >> "$GITHUB_ENV"
       - name: Run script
         uses: actions/github-script@v7
         with:
