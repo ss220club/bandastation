@@ -106,7 +106,7 @@
 /obj/item/organ/internal/cyberimp/brain/linked_surgery/perfect
 	name = "hacked surgical serverlink brain implant"
 	desc = "A brain implant with a bluespace technology that lets you perform any advanced surgery through hacked Nanotrasen servers."
-	organ_flags = ORGAN_SYNTHETIC | ORGAN_HIDDEN
+	organ_flags = ORGAN_ROBOTIC | ORGAN_HIDDEN
 	organ_traits = list(TRAIT_PERFECT_SURGEON)
 	actions_types = null
 	var/list/blocked_surgeries = list(

@@ -3,7 +3,7 @@
 	desc = "you shouldn't see this"
 	organ_flags = ORGAN_UNREMOVABLE
 	icon_state = "floran_leaves"
-	icon = 'modular_bandastation/icons/obj/medical/organs/organs.dmi'
+	icon = 'modular_bandastation/icons/obj/organs/organs.dmi'
 
 	preference = "feature_floran_leaves"
 	zone = BODY_ZONE_CHEST

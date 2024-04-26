@@ -2,7 +2,7 @@
 	name = "goblin ears"
 	desc = "They don't actually let you hear better."
 	icon_state = "goblin_ears"
-	icon = 'modular_bandastation/icons/obj/medical/organs/organs.dmi'
+	icon = 'modular_bandastation/icons/obj/organs/organs.dmi'
 
 	preference = "feature_goblin_ears"
 	zone = BODY_ZONE_HEAD

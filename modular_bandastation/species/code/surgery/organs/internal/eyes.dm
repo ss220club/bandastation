@@ -1,13 +1,13 @@
 /obj/item/organ/internal/eyes/robotic/clockwork
 	name = "biometallic receptors"
 	desc = "A fragile set of small, mechanical cameras."
-	icon = 'modular_bandastation/icons/obj/medical/organs/organs.dmi'
+	icon = 'modular_bandastation/icons/obj/organs/organs.dmi'
 	icon_state = "clockwork_eyeballs"
 
 /obj/item/organ/internal/eyes/night_vision/arachnid
 	name = "arachnid eyes"
 	desc = "So many eyes!"
-	icon = 'modular_bandastation/icons/obj/medical/organs/organs.dmi'
+	icon = 'modular_bandastation/icons/obj/organs/organs.dmi'
 	eye_icon_state = "arachnideyes"
 	icon_state = "arachnid_eyeballs"
 	overlay_ignore_lighting = TRUE
@@ -39,6 +39,6 @@
 /obj/item/organ/internal/eyes/floran
 	name = "phytoid eyes"
 	desc = "They look like big berries..."
-	icon = 'modular_bandastation/icons/obj/medical/organs/organs.dmi'
+	icon = 'modular_bandastation/icons/obj/organs/organs.dmi'
 	eye_icon_state = "floraneyes"
 	icon_state = "floran_eyeballs"

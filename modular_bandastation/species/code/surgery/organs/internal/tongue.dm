@@ -1,7 +1,7 @@
 /obj/item/organ/internal/tongue/robot/clockwork
 	name = "dynamic micro-phonograph"
 	desc = "An old-timey looking device connected to an odd, shifting cylinder."
-	icon = 'modular_bandastation/icons/obj/medical/organs/organs.dmi'
+	icon = 'modular_bandastation/icons/obj/organs/organs.dmi'
 	icon_state = "tongueclock"
 
 /obj/item/organ/internal/tongue/robot/clockwork/better
@@ -34,7 +34,7 @@
 /obj/item/organ/internal/tongue/oozeling
 	name = "oozeling tongue"
 	desc = "A goopy organ that mimics the tongues of other carbon beings."
-	icon = 'modular_bandastation/icons/obj/medical/organs/organs.dmi'
+	icon = 'modular_bandastation/icons/obj/organs/organs.dmi'
 	icon_state = "tongue_oozeling"
 	say_mod = "blurbles"
 	alpha = 200

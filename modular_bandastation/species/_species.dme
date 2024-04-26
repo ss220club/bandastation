@@ -39,7 +39,6 @@
 #include "code\human\custom_bodytype.dm"
 #include "code\human\carbon.dm"
 #include "code\human\human.dm"
-#include "code\human\mob.dm"
 #include "code\human\lizard_gags.dm"
 #include "code\human\simian_gags.dm"
 #include "code\human\species.dm"
