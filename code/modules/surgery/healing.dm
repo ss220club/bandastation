@@ -34,7 +34,7 @@
 		)
 
 /datum/surgery_step/heal
-	name = "repair body (hemostat)"
+	name = "восстановите тело (гемостат)"
 	implements = list(
 		TOOL_HEMOSTAT = 100,
 		TOOL_SCREWDRIVER = 65,
@@ -56,22 +56,22 @@
 /datum/surgery_step/heal/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	var/woundtype
 	if(brutehealing && burnhealing)
-		woundtype = "wounds"
+		woundtype = "раны"
 	else if(brutehealing)
-		woundtype = "bruises"
+		woundtype = "ушибы"
 	else //why are you trying to 0,0...?
-		woundtype = "burns"
+		woundtype = "ожоги"
 	if(istype(surgery,/datum/surgery/healing))
 		var/datum/surgery/healing/the_surgery = surgery
 		if(!the_surgery.antispam)
 			display_results(
 				user,
 				target,
-				span_notice("You attempt to patch some of [target]'s [woundtype]."),
-				span_notice("[user] attempts to patch some of [target]'s [woundtype]."),
-				span_notice("[user] attempts to patch some of [target]'s [woundtype]."),
+				span_notice("Вы пытаетесь наложить швы на [target]'s [woundtype]."),
+				span_notice("[user] пытается наложить швы на [target]'s [woundtype]."),
+				span_notice("[user] пытается наложить швы на [target]'s [woundtype]."),
 			)
-		display_pain(target, "Your [woundtype] sting like hell!")
+		display_pain(target, "Ваша [woundtype] чертовски болит!")
 
 /datum/surgery_step/heal/initiate(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, try_to_fail = FALSE)
 	if(!..())
@@ -81,8 +81,8 @@
 			break
 
 /datum/surgery_step/heal/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
-	var/user_msg = "You succeed in fixing some of [target]'s wounds" //no period, add initial space to "addons"
-	var/target_msg = "[user] fixes some of [target]'s wounds" //see above
+	var/user_msg = "Вы успешно зашиваете некоторые раны у [target]" //no period, add initial space to "addons"
+	var/target_msg = "[user] успешно зашивает некоторые раны у [target]" //see above
 	var/brute_healed = brutehealing
 	var/burn_healed = burnhealing
 	var/dead_patient = FALSE
@@ -123,9 +123,9 @@
 	display_results(
 		user,
 		target,
-		span_warning("You screwed up!"),
-		span_warning("[user] screws up!"),
-		span_notice("[user] fixes some of [target]'s wounds."),
+		span_warning("Вы облажались!"),
+		span_warning("[user] облажался!"),
+		span_notice("[user] зашивает некоторые раны у [target]."),
 		target_detailed = TRUE,
 	)
 	var/brute_dealt = brutehealing * 0.8
@@ -137,27 +137,27 @@
 
 /***************************BRUTE***************************/
 /datum/surgery/healing/brute
-	name = "Tend Wounds (Bruises)"
+	name = "Залечить раны (Ушибы)"
 
 /datum/surgery/healing/brute/basic
-	name = "Tend Wounds (Bruises, Basic)"
+	name = "Залечить раны (Ушибы, Базово)"
 	replaced_by = /datum/surgery/healing/brute/upgraded
 	healing_step_type = /datum/surgery_step/heal/brute/basic
-	desc = "A surgical procedure that provides basic treatment for a patient's brute traumas. Heals slightly more when the patient is severely injured."
+	desc = "Хирургическая процедура, обеспечивающая базовое лечение грубых травм пациента. При тяжелых травмах заживление происходит немного быстрее."
 
 /datum/surgery/healing/brute/upgraded
-	name = "Tend Wounds (Bruises, Adv.)"
+	name = "Залечить раны (Ушибы, Продв.)"
 	replaced_by = /datum/surgery/healing/brute/upgraded/femto
 	requires_tech = TRUE
 	healing_step_type = /datum/surgery_step/heal/brute/upgraded
-	desc = "A surgical procedure that provides advanced treatment for a patient's brute traumas. Heals more when the patient is severely injured."
+	desc = "Хирургическая процедура, обеспечивающая продвинутое лечение грубых травм пациента. При тяжелых травмах заживление происходит быстрее."
 
 /datum/surgery/healing/brute/upgraded/femto
-	name = "Tend Wounds (Bruises, Exp.)"
+	name = "Залечить раны (Ушибы, Экспер.)"
 	replaced_by = /datum/surgery/healing/combo/upgraded/femto
 	requires_tech = TRUE
 	healing_step_type = /datum/surgery_step/heal/brute/upgraded/femto
-	desc = "A surgical procedure that provides experimental treatment for a patient's brute traumas. Heals considerably more when the patient is severely injured."
+	desc = "Хирургическая процедура, которая обеспечивает экспериментальное лечение грубых травм пациента. При тяжелых травмах заживление происходит значительно быстрее."
 
 /********************BRUTE STEPS********************/
 /datum/surgery_step/heal/brute/get_progress(mob/user, mob/living/carbon/target, brute_healed, burn_healed)
@@ -189,7 +189,7 @@
 	return progress_text
 
 /datum/surgery_step/heal/brute/basic
-	name = "tend bruises (hemostat)"
+	name = "обработайте ушибы (гемостат)"
 	brutehealing = 5
 	brute_multiplier = 0.07
 
@@ -203,27 +203,27 @@
 
 /***************************BURN***************************/
 /datum/surgery/healing/burn
-	name = "Tend Wounds (Burn)"
+	name = "Залечить раны (Ожоги)"
 
 /datum/surgery/healing/burn/basic
-	name = "Tend Wounds (Burn, Basic)"
+	name = "Залечить раны (Ожоги, Базово)"
 	replaced_by = /datum/surgery/healing/burn/upgraded
 	healing_step_type = /datum/surgery_step/heal/burn/basic
-	desc = "A surgical procedure that provides basic treatment for a patient's burns. Heals slightly more when the patient is severely injured."
+	desc = "Хирургическая процедура, обеспечивающая базовое лечение ожогов пациента. При тяжелых ранениях заживление происходит несколько быстрее."
 
 /datum/surgery/healing/burn/upgraded
-	name = "Tend Wounds (Burn, Adv.)"
+	name = "Залечить раны (Ожоги, Продв.)"
 	replaced_by = /datum/surgery/healing/burn/upgraded/femto
 	requires_tech = TRUE
 	healing_step_type = /datum/surgery_step/heal/burn/upgraded
-	desc = "A surgical procedure that provides advanced treatment for a patient's burns. Heals more when the patient is severely injured."
+	desc = "Хирургическая процедура, обеспечивающая продвинутое лечение ожогов пациента. При тяжелых травмах заживление происходит быстрее."
 
 /datum/surgery/healing/burn/upgraded/femto
-	name = "Tend Wounds (Burn, Exp.)"
+	name = "Залечить раны (Ожоги, Экспер.)"
 	replaced_by = /datum/surgery/healing/combo/upgraded/femto
 	requires_tech = TRUE
 	healing_step_type = /datum/surgery_step/heal/burn/upgraded/femto
-	desc = "A surgical procedure that provides experimental treatment for a patient's burns. Heals considerably more when the patient is severely injured."
+	desc = "Хирургическое вмешательство, в ходе которого проводится экспериментальное лечение ожогов пациента. Заживление происходит значительно быстрее, если пациент сильно ранен."
 
 /********************BURN STEPS********************/
 /datum/surgery_step/heal/burn/get_progress(mob/user, mob/living/carbon/target, brute_healed, burn_healed)
@@ -254,7 +254,7 @@
 	return progress_text
 
 /datum/surgery_step/heal/burn/basic
-	name = "tend burn wounds (hemostat)"
+	name = "обработайте ожоги (гемостат)"
 	burnhealing = 5
 	burn_multiplier = 0.07
 
@@ -271,24 +271,24 @@
 
 
 /datum/surgery/healing/combo
-	name = "Tend Wounds (Mixture, Basic)"
+	name = "Обработайте раны (Смесь, Базово)"
 	replaced_by = /datum/surgery/healing/combo/upgraded
 	requires_tech = TRUE
 	healing_step_type = /datum/surgery_step/heal/combo
-	desc = "A surgical procedure that provides basic treatment for a patient's burns and brute traumas. Heals slightly more when the patient is severely injured."
+	desc = "Хирургическая процедура, обеспечивающая базовое лечение ожогов и тяжелых травм пациента. При тяжелых ранениях заживает немного быстрее."
 
 /datum/surgery/healing/combo/upgraded
-	name = "Tend Wounds (Mixture, Adv.)"
+	name = "Обработайте раны (Смесь, Продв.)"
 	replaced_by = /datum/surgery/healing/combo/upgraded/femto
 	healing_step_type = /datum/surgery_step/heal/combo/upgraded
-	desc = "A surgical procedure that provides advanced treatment for a patient's burns and brute traumas. Heals more when the patient is severely injured."
+	desc = "Хирургическая процедура, обеспечивающая продвинутое лечение ожогов и тяжелых травм пациента. При тяжелых травмах заживление происходит быстрее."
 
 
 /datum/surgery/healing/combo/upgraded/femto //no real reason to type it like this except consistency, don't worry you're not missing anything
-	name = "Tend Wounds (Mixture, Exp.)"
+	name = "Обработайте раны (Смесь, Экспер.)"
 	replaced_by = null
 	healing_step_type = /datum/surgery_step/heal/combo/upgraded/femto
-	desc = "A surgical procedure that provides experimental treatment for a patient's burns and brute traumas. Heals considerably more when the patient is severely injured."
+	desc = "Хирургическая процедура, которая обеспечивает экспериментальное лечение ожогов и тяжелых травм пациента. При тяжелых травмах заживление происходит значительно быстрее."
 
 /********************COMBO STEPS********************/
 /datum/surgery_step/heal/combo/get_progress(mob/user, mob/living/carbon/target, brute_healed, burn_healed)
@@ -325,7 +325,7 @@
 	return progress_text
 
 /datum/surgery_step/heal/combo
-	name = "tend physical wounds (hemostat)"
+	name = "обработайте телесные раны (гемостат)"
 	brutehealing = 3
 	burnhealing = 3
 	brute_multiplier = 0.07
@@ -348,9 +348,9 @@
 	display_results(
 		user,
 		target,
-		span_warning("You screwed up!"),
-		span_warning("[user] screws up!"),
-		span_notice("[user] fixes some of [target]'s wounds."),
+		span_warning("Вы облажались!"),
+		span_warning("[user] облажался!"),
+		span_notice("[user] обрабатывает некоторые раны у [target]."),
 		target_detailed = TRUE,
 	)
 	target.take_bodypart_damage(5,5)
