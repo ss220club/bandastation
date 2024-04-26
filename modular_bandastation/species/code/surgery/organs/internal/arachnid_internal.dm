@@ -1,9 +1,3 @@
-/obj/item/organ/internal/eyes/robotic/clockwork
-	name = "biometallic receptors"
-	desc = "A fragile set of small, mechanical cameras."
-	icon = 'modular_bandastation/icons/obj/organs/organs.dmi'
-	icon_state = "clockwork_eyeballs"
-
 /obj/item/organ/internal/eyes/night_vision/arachnid
 	name = "arachnid eyes"
 	desc = "So many eyes!"
@@ -36,9 +30,24 @@
 	var/datum/species/rec_species = human_receiver.dna.species
 	rec_species.update_no_equip_flags(tongue_owner, initial(rec_species.no_equip_flags))
 
-/obj/item/organ/internal/eyes/floran
-	name = "phytoid eyes"
-	desc = "They look like big berries..."
-	icon = 'modular_bandastation/icons/obj/organs/organs.dmi'
-	eye_icon_state = "floraneyes"
-	icon_state = "floran_eyeballs"
+/obj/item/organ/internal/tongue/arachnid
+	name = "arachnid tongue"
+	desc = "The tongue of an Arachnid. Mostly used for lying."
+	say_mod = "chitters"
+	modifies_speech = TRUE
+
+/obj/item/organ/internal/tongue/arachnid/modify_speech(datum/source, list/speech_args) //This is flypeople speech
+	var/static/regex/fly_buzz = new("z+", "g")
+	var/static/regex/fly_buZZ = new("Z+", "g")
+	var/message = speech_args[SPEECH_MESSAGE]
+	if(message[1] != "*")
+		message = fly_buzz.Replace(message, "zzz")
+		message = fly_buZZ.Replace(message, "ZZZ")
+		message = replacetext(message, "s", "z")
+		message = replacetext(message, "S", "Z")
+	speech_args[SPEECH_MESSAGE] = message
+	disliked_foodtypes = NONE // Okay listen, i don't actually know what irl spiders don't like to eat and i'm pretty tired of looking for answers.
+	liked_foodtypes = GORE | MEAT | BUGS | GROSS
+
+/obj/item/organ/internal/tongue/arachnid/get_possible_languages()
+	return ..() + /datum/language/buzzwords

@@ -4,6 +4,7 @@
 	limb_id = SPECIES_SIMIAN
 	is_dimorphic = FALSE
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ORGANIC | BODYTYPE_CUSTOM
+	head_flags = HEAD_LIPS|HEAD_EYECOLOR
 
 	dmg_overlay_type = "monkey"
 
@@ -37,11 +38,13 @@
 	husk_type = "simian"
 	limb_id = SPECIES_SIMIAN
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ORGANIC | BODYTYPE_CUSTOM
+	speed_modifier = 1.25
 
 /obj/item/bodypart/leg/right/simian
 	icon_greyscale =  'modular_bandastation/icons/mob/species/simian/bodyparts.dmi'
 	husk_type = "simian"
 	limb_id = SPECIES_SIMIAN
 	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ORGANIC | BODYTYPE_CUSTOM
+	speed_modifier = 1.25
 
 	dmg_overlay_type = "monkey"

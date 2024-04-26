@@ -70,3 +70,12 @@
 #include "code\surgery\organs\autosurgeon.dm"
 #include "code\emote.dm"
 #include "code\mob.dm"
+// BEGIN_INTERNALS
+// END_INTERNALS
+// BEGIN_FILE_DIR
+#define FILE_DIR .
+// END_FILE_DIR
+// BEGIN_PREFERENCES
+// END_PREFERENCES
+// BEGIN_INCLUDE
+// END_INCLUDE

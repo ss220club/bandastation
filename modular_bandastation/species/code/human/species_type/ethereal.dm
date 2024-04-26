@@ -1,17 +1,7 @@
 /datum/species/ethereal/get_laugh_sound(mob/living/carbon/human/ethereal)
 	return 'modular_bandastation/sounds/sound/voice/laugh/ethereal/ethereal_laugh_1.ogg'
 
-/datum/species/ethereal
-	payday_modifier = 1
-	sexes = TRUE
-	species_traits = list(
-		DYNCOLORS,
-		NO_UNDERWEAR,
-		HAIR,
-		FACEHAIR,
-	)
-
-/datum/species/ethereal/on_species_gain(mob/living/carbon/new_ethereal, datum/species/old_species, pref_load)
+/datum/species/ethereal/on_species_gain(mob/living/carbon/human/new_ethereal, datum/species/old_species, pref_load)
 	. = ..()
 	RegisterSignal(new_ethereal, COMSIG_ATOM_AFTER_ATTACKEDBY, PROC_REF(on_after_attackedby))
 
@@ -25,5 +15,5 @@
 	if(!proximity_flag || !istype(cig) || !istype(user) || cig.lit)
 		return
 	cig.light()
-	user.visible_message(span_notice("[user] quickly strikes [item] across [lightbulb]'s skin, [lightbulb.p_their()] warmth lighting it!"))
+	user.visible_message(span_notice("[user] зажигает [item] проведя по коже [lightbulb], одаряя теплом!"))
 	return COMPONENT_NO_AFTERATTACK

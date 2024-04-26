@@ -2,6 +2,7 @@
 	icon_greyscale = 'modular_bandastation/icons/mob/species/arachnid/bodyparts.dmi'
 	limb_id = SPECIES_ARACHNIDS
 	is_dimorphic = FALSE
+	head_flags = TRAIT_EYECOLOR|TRAIT_LIPS
 
 /obj/item/bodypart/chest/arachnid
 	icon_greyscale = 'modular_bandastation/icons/mob/species/arachnid/bodyparts.dmi'
@@ -27,7 +28,9 @@
 /obj/item/bodypart/leg/left/arachnid
 	icon_greyscale = 'modular_bandastation/icons/mob/species/arachnid/bodyparts.dmi'
 	limb_id = SPECIES_ARACHNIDS
+	speed_modifier = 1.1
 
 /obj/item/bodypart/leg/right/arachnid
 	icon_greyscale = 'modular_bandastation/icons/mob/species/arachnid/bodyparts.dmi'
 	limb_id = SPECIES_ARACHNIDS
+	speed_modifier = 1.1

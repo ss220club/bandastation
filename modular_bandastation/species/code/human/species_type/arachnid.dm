@@ -4,22 +4,19 @@
 	id = SPECIES_ARACHNIDS
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC | RACE_SWAP | ERT_SPAWN
 	visual_gender = FALSE
-	species_traits = list(
-		MUTCOLORS,
-		EYECOLOR,
-		LIPS,
+
+	inherent_traits = list(
+		TRAIT_MUTANT_COLORS,
 	)
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID|MOB_BUG
+
 	external_organs = list(
 		/obj/item/organ/external/arachnid_appendages = "long",
 		/obj/item/organ/external/chelicerae = "basic")
 	meat = /obj/item/food/meat/slab/spider
-	disliked_food = NONE // Okay listen, i don't actually know what irl spiders don't like to eat and i'm pretty tired of looking for answers.
-	liked_food = GORE | MEAT | BUGS | GROSS
 	species_language_holder = /datum/language_holder/fly
 	mutanttongue = /obj/item/organ/internal/tongue/arachnid
 	mutanteyes = /obj/item/organ/internal/eyes/night_vision/arachnid
-	speedmod = -0.1
 	inherent_factions = list(FACTION_SPIDER)
 	bodypart_overrides = list(
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/arachnid,
@@ -29,13 +26,13 @@
 		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/arachnid,
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/arachnid,
 	)
-
-/datum/species/arachnid/handle_chemicals(datum/reagent/chem, mob/living/carbon/human/H, seconds_per_tick, times_fired)
+/datum/species/arachnid/handle_chemical(datum/reagent/chem, mob/living/carbon/human/affected, seconds_per_tick, times_fired)
+	. = ..()
+	if(. & COMSIG_MOB_STOP_REAGENT_CHECK)
+		return
 	if(chem.type == /datum/reagent/toxin/pestkiller)
-		H.adjustToxLoss(3 * REM * seconds_per_tick)
-		H.reagents.remove_reagent(chem.type, REAGENTS_METABOLISM * seconds_per_tick)
-		return TRUE
-	return ..()
+		affected.adjustToxLoss(3 * REM * seconds_per_tick)
+		affected.reagents.remove_reagent(chem.type, REAGENTS_METABOLISM * seconds_per_tick)
 
 /datum/species/arachnid/on_species_gain(mob/living/carbon/human/human_who_gained_species, datum/species/old_species, pref_load)
 	. = ..()

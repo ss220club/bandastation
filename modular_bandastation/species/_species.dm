@@ -12,5 +12,13 @@
 /datum/modpack/species/initialize()
 	. = ..()
 
+	GLOB.phobia_species["aliens"] |= typecacheof(list(
+		/datum/species/oozeling
+		))
+	GLOB.phobia_species["robots"] |= typecacheof(list(
+		/datum/species/ipc
+		))
+
 /datum/modpack/species/post_initialize()
 	. = ..()
+

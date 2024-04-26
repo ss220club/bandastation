@@ -3,27 +3,26 @@
 	plural_form = "Florans"
 	id = SPECIES_FLORAN
 	sexes = TRUE
-	species_traits = list(
-		MUTCOLORS,
-		MUTCOLORS_SECONDARY,
-		NO_UNDERWEAR,
-	)
+
 	inherent_traits = list(
+		TRAIT_MUTANT_COLORS,
+		TRAIT_MUTANT_COLORS_SECONDARY,
+		TRAIT_NO_UNDERWEAR,
 		TRAIT_PLANT_SAFE,
 		TRAIT_NO_JUMPSUIT,
 		TRAIT_LIMBATTACHMENT,
 		TRAIT_EASYDISMEMBER
 	)
+	inherent_factions = list(FACTION_PLANTS, FACTION_VINES)
+
 	external_organs = list(
 		/obj/item/organ/external/pod_hair = "None",
 		/obj/item/organ/external/floran_leaves = "Furnivour",
 	)
 	inherent_biotypes = MOB_ORGANIC | MOB_HUMANOID | MOB_PLANT
-	inherent_factions = list(FACTION_PLANTS, FACTION_VINES)
 	burnmod = 1.8
 	heatmod = 0.67 //Same as lizard people
 	coldmod = 1.5 //Same as lizard people
-	speedmod = -0.1 //Same as arachnids
 	meat = /obj/item/food/meat/slab/human/mutant/plant
 	exotic_blood = /datum/reagent/water
 	// disliked_food = VEGETABLES | FRUIT | GRAIN

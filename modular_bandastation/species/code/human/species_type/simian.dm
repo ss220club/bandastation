@@ -5,15 +5,10 @@
 
 	bodytype = BODYTYPE_CUSTOM
 
-	species_traits = list(
-		EYECOLOR,
-		LIPS,
-		NO_UNDERWEAR,
-		SPECIES_FUR,
-		)
 	inherent_traits = list(
+		TRAIT_NO_UNDERWEAR,
+		TRAIT_MUTANT_COLORS
 		TRAIT_VAULTING,
-		TRAIT_KLEPTOMANIAC,
 		TRAIT_MONKEYFRIEND
 		)
 
@@ -32,7 +27,6 @@
 	species_language_holder = /datum/language_holder/monkey
 	maxhealthmod = 0.85 //small = weak
 	stunmod = 1.3
-	speedmod = -0.1 //lil bit faster
 
 	custom_worn_icons = list(
 		LOADOUT_ITEM_SUIT = SIMIAN_SUIT_ICON,

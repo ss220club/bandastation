@@ -31,7 +31,9 @@
 /obj/item/bodypart/leg/left/floran
 	icon_greyscale = 'modular_bandastation/icons/mob/species/floran/bodyparts.dmi'
 	limb_id = SPECIES_FLORAN
+	speed_modifier = 1.1
 
 /obj/item/bodypart/leg/right/floran
 	icon_greyscale = 'modular_bandastation/icons/mob/species/floran/bodyparts.dmi'
 	limb_id = SPECIES_FLORAN
+	speed_modifier = 1.1
