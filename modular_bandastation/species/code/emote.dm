@@ -1,3 +1,21 @@
+/datum/emote
+    /// Message displayed if the user is an IPC.
+	var/message_ipc = ""
+	/// Message displayed if the user is an insect.
+	var/message_insect = ""
+
+
+/datum/emote/select_message_type(mob/user, msg, intentional)
+	. = ..()
+	if((ismoth(user) || isflyperson(user) || isarachnid(user) || istype(user, /mob/living/basic/mothroach)) && message_insect)
+		. = message_insect
+	else if(isipc(user) && message_ipc)
+		. = message_ipc
+	return .
+
+// ===================
+// Emotes
+// ===================
 /datum/emote/living/click
 	key = "click"
 	key_third_person = "clicks their tongue"
@@ -7,7 +25,7 @@
 
 /datum/emote/living/click/get_sound(mob/living/user)
 	if(ismoth(user) || isflyperson(user) || isarachnid(user) || istype(user, /mob/living/basic/mothroach))
-		return 'modular_bandastation/sound/creatures/rattle.ogg'
+		return 'modular_bandastation/sounds/sound/creatures/rattle.ogg'
 	else if(isipc(user))
 		return 'sound/machines/click.ogg'
 	else
@@ -52,8 +70,17 @@
 /datum/emote/living/hiss/get_sound(mob/living/user)
 	if(islizard(user) || isipc(user) || isAI(user) || iscyborg(user))
 		return pick('sound/voice/hiss1.ogg', 'sound/voice/hiss2.ogg', 'sound/voice/hiss3.ogg', 'sound/voice/hiss4.ogg', 'sound/voice/hiss5.ogg', 'sound/voice/hiss6.ogg')
-	else if(is_cat_enough(user, include_all_anime = TRUE))
-		return pick('modular_bandastation/sound/voice/feline/hiss1.ogg', 'modular_bandastation/sound/voice/feline/hiss2.ogg', 'modular_bandastation/sound/voice/feline/hiss3.ogg')
+	else if(is_cat_enough(user))
+		return pick('modular_bandastation/sounds/sound/voice/feline/hiss1.ogg', 'modular_bandastation/sounds/sound/voice/feline/hiss2.ogg', 'modular_bandastation/sounds/sound/voice/feline/hiss3.ogg')
+
+/proc/is_cat_enough(mob/living/user)
+	. = FALSE
+	if(iscat(user)) // there's nothing more cat than a cat
+		return TRUE
+	if(HAS_TRAIT(user, TRAIT_CATLIKE_GRACE))
+		return TRUE
+	if(istype(user.get_item_by_slot(ITEM_SLOT_HEAD), /obj/item/clothing/head/costume/kitty)) // combine with glue for hilarity
+		return TRUE
 
 /datum/emote/living/thumbs_up
 	key = "thumbsup"
@@ -97,18 +124,16 @@
 /datum/emote/living/scream/get_sound(mob/living/user)
 	if(issilicon(user))
 		return pick(
-			'modular_bandastation/sound/voice/screams/silicon/robotAUGH1.ogg',
-			'modular_bandastation/sound/voice/screams/silicon/robotAUGH2.ogg',
-			'modular_bandastation/sound/voice/screams/silicon/robotAUGH3.ogg',
-			'modular_bandastation/sound/voice/screams/silicon/robotAUGH4.ogg',
-			'modular_bandastation/sound/voice/screams/silicon/robotAUGH5.ogg')
+			'modular_bandastation/sounds/sound/voice/screams/silicon/robotAUGH1.ogg',
+			'modular_bandastation/sounds/sound/voice/screams/silicon/robotAUGH2.ogg',
+			'modular_bandastation/sounds/sound/voice/screams/silicon/robotAUGH3.ogg',
+			'modular_bandastation/sounds/sound/voice/screams/silicon/robotAUGH4.ogg',
+			'modular_bandastation/sounds/sound/voice/screams/silicon/robotAUGH5.ogg')
 	if(ishuman(user))
 		var/mob/living/carbon/human/human_user = user
-		if(length(human_user.alternative_screams))
-			return pick(human_user.alternative_screams)
 		. = human_user.dna.species.get_scream_sound(user)
 	if(is_cat_enough(user))
-		return pick('modular_bandastation/sound/voice/feline/scream1.ogg', 'modular_bandastation/sound/voice/feline/scream2.ogg', 'modular_bandastation/sound/voice/feline/scream3.ogg')
+		return pick('modular_bandastation/sounds/sound/voice/feline/scream1.ogg', 'modular_bandastation/sounds/sound/voice/feline/scream2.ogg', 'modular_bandastation/sounds/sound/voice/feline/scream3.ogg')
 
 /datum/emote/living/scream/should_vary(mob/living/user)
 	if(ishuman(user) && !is_cat_enough(user))
@@ -140,27 +165,8 @@
 	return ..() && is_cat_enough(user, include_all_anime = TRUE)
 
 /datum/emote/living/meow/get_sound(mob/living/user)
-	return pick('modular_bandastation/sound/voice/feline/meow1.ogg', 'modular_bandastation/sound/voice/feline/meow2.ogg', 'modular_bandastation/sound/voice/feline/meow3.ogg', 'modular_bandastation/sound/voice/feline/meow4.ogg')
+	return pick('modular_bandastation/sounds/sound/voice/feline/meow1.ogg', 'modular_bandastation/sounds/sound/voice/feline/meow2.ogg', 'modular_bandastation/sounds/sound/voice/feline/meow3.ogg', 'modular_bandastation/sounds/sound/voice/feline/meow4.ogg')
 
-/datum/emote/living/bark/can_run_emote(mob/user, status_check = TRUE, intentional = FALSE)
-	. = ..()
-	if(HAS_TRAIT(user, TRAIT_ANIME))
-	 return TRUE
-	else
-	 return FALSE
-/datum/emote/living/bark
-	key = "bark"
-	key_third_person = "barks"
-	message = "barks!"
-	message_mime = "barks out silence!"
-	message_ipc = "makes a synthetic bark!"
-	message_param = "barks at %t!"
-	emote_type = EMOTE_VISIBLE | EMOTE_AUDIBLE
-/datum/emote/living/bark/get_sound(mob/living/user)
-	if(HAS_TRAIT(user, TRAIT_CLUMSY))
-		return 'modular_bandastation/sound/voice/feline/bark.ogg'
-	else
-		return pick('modular_bandastation/sound/voice/feline/bark.ogg','modular_bandastation/sound/voice/feline/bark2.ogg') // Yes, bark trait in feline folder [Bad To The Bone]
 
 /datum/emote/living/weh
 	key = "weh"
@@ -173,7 +179,7 @@
 
 /datum/emote/living/weh/get_sound(mob/living/user)
 	if(islizard(user))
-		return 'modular_bandastation/sound/voice/weh.ogg'
+		return 'modular_bandastation/sounds/sound/voice/weh.ogg'
 	else
 		return FALSE
 
@@ -194,7 +200,7 @@
 
 /datum/emote/living/squeal/get_sound(mob/living/user)
 	if(islizard(user))
-		return 'modular_bandastation/sound/voice/lizard/squeal.ogg' //This is from Bay
+		return 'modular_bandastation/sounds/sound/voice/lizard/squeal.ogg' //This is from Bay
 	else
 		return FALSE
 
@@ -213,7 +219,7 @@
 
 /datum/emote/living/tailthump/get_sound(mob/living/user)
 	if(islizard(user))
-		return 'modular_bandastation/sound/voice/lizard/tailthump.ogg' //https://freesound.org/people/TylerAM/sounds/389665/
+		return 'modular_bandastation/sounds/sound/voice/lizard/tailthump.ogg' //https://freesound.org/people/TylerAM/sounds/389665/
 	else
 		return FALSE
 

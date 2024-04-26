@@ -20,7 +20,7 @@
 /datum/preference/choiced/simian_tail/init_possible_values()
 	var/list/values = list()
 
-	var/icon/simian_chest = icon('monkestation/icons/mob/species/simian/bodyparts.dmi', "simian_chest")
+	var/icon/simian_chest = icon('modular_bandastation/species/icons/mob/species/simian/bodyparts.dmi', "simian_chest")
 
 	for (var/tail_name in GLOB.tails_list_monkey)
 		var/datum/sprite_accessory/tail = GLOB.tails_list_monkey[tail_name]

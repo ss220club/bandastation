@@ -1,7 +1,7 @@
 /obj/item/organ/internal/eyes/night_vision/arachnid
 	name = "arachnid eyes"
 	desc = "So many eyes!"
-	icon = 'modular_bandastation/icons/obj/organs/organs.dmi'
+	icon = 'modular_bandastation/species/icons/obj/organs/organs.dmi'
 	eye_icon_state = "arachnideyes"
 	icon_state = "arachnid_eyeballs"
 	overlay_ignore_lighting = TRUE

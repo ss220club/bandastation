@@ -2,7 +2,7 @@
 	savefile_key = "feature_mcolor_secondary"
 	savefile_identifier = PREFERENCE_CHARACTER
 	category = PREFERENCE_CATEGORY_SECONDARY_FEATURES
-	relevant_species_trait = MUTCOLORS_SECONDARY
+	relevant_species_trait = TRAIT_MUTANT_COLORS_SECONDARY
 
 /datum/preference/color/mutant_color_secondary/create_default_value()
 	return sanitize_hexcolor("[pick("7F", "FF")][pick("7F", "FF")][pick("7F", "FF")]")

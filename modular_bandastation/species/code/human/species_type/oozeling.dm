@@ -8,7 +8,7 @@
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC | RACE_SWAP | ERT_SPAWN | SLIME_EXTRACT
 
 	species_traits = list(
-		MUTCOLORS,
+		TRAIT_MUTANT_COLORS,
 		EYECOLOR,
 		HAIR,FACEHAIR,
 		)
@@ -24,7 +24,6 @@
 	//mutanttongue = /obj/item/organ/interal/tongue/oozeling
 
 	inherent_traits = list(
-		TRAIT_CAN_USE_FLIGHT_POTION,
 		TRAIT_TOXINLOVER,
 		TRAIT_NOBLOOD,
 		TRAIT_EASYDISMEMBER,
@@ -38,7 +37,7 @@
 	heatmod = 0.5 // = 1/4x heat damage
 	inherent_factions = list(FACTION_SLIME) //an oozeling wont be eaten by their brethren
 	species_language_holder = /datum/language_holder/oozeling
-	ass_image = 'icons/ass/assslime.png'
+	ass_image = 'modular_bandastation/species/icons/ass/assslime.png'
 	//swimming_component = /datum/component/swimming/dissolve
 	toxic_food = NONE
 	disliked_food = NONE

@@ -5,7 +5,7 @@
 	organ_flags = ORGAN_ROBOTIC | ORGAN_SYNTHETIC_FROM_SPECIES
 	maxHealth = 2 * STANDARD_ORGAN_THRESHOLD
 	desc = "A cube of shining metal, four inches to a side and covered in shallow grooves. It has an IPC serial number engraved on the top. It is usually slotted into the chest of synthetic crewmembers."
-	icon = 'monkestation/code/modules/smithing/icons/ipc_organ.dmi'
+	icon = 'modular_bandastation/species/icons/obj/organs/ipc_organ.dmi'
 	icon_state = "posibrain-ipc"
 	/// The last time (in ticks) a message about brain damage was sent. Don't touch.
 	var/last_message_time = 0
@@ -32,12 +32,12 @@
 	switch(severity)
 		if(EMP_HEAVY)
 			to_chat(owner, span_warning("01001001 00100111 01101101 00100000 01100110 01110101 01100011 01101011 01100101 01100100 00101110"))
-			apply_organ_damage(SYNTH_ORGAN_HEAVY_EMP_DAMAGE, SYNTH_EMP_BRAIN_DAMAGE_MAXIMUM, required_organtype = ORGAN_ROBOTIC)
+			apply_organ_damage(SYNTH_ORGAN_HEAVY_EMP_DAMAGE, SYNTH_EMP_BRAIN_DAMAGE_MAXIMUM, required_organ_flag = ORGAN_ROBOTIC)
 		if(EMP_LIGHT)
 			to_chat(owner, span_warning("Alert: Electromagnetic damage taken in central processing unit. Error Code: 401-YT"))
-			apply_organ_damage(SYNTH_ORGAN_LIGHT_EMP_DAMAGE, SYNTH_EMP_BRAIN_DAMAGE_MAXIMUM, required_organtype = ORGAN_ROBOTIC)
+			apply_organ_damage(SYNTH_ORGAN_LIGHT_EMP_DAMAGE, SYNTH_EMP_BRAIN_DAMAGE_MAXIMUM, required_organ_flag = ORGAN_ROBOTIC)
 
-/obj/item/organ/internal/brain/synth/apply_organ_damage(damage_amount, maximumm, required_organtype)
+/obj/item/organ/internal/brain/synth/apply_organ_damage(damage_amount, maximumm, required_organ_flag)
 	. = ..()
 
 	if(owner && damage > 0 && (world.time - last_message_time) > SYNTH_BRAIN_DAMAGE_MESSAGE_INTERVAL)
@@ -54,7 +54,7 @@
 /obj/item/organ/internal/brain/synth/circuit
 	name = "compact AI circuit"
 	desc = "A compact and extremely complex circuit, perfectly dimensioned to fit in the same slot as a synthetic-compatible positronic brain. It is usually slotted into the chest of synthetic crewmembers."
-	icon = 'monkestation/code/modules/smithing/icons/ipc_organ.dmi'
+	icon = 'modular_bandastation/species/icons/obj/organs/ipc_organ.dmi'
 	icon_state = "circuit-occupied"
 	inhand_icon_state = "electronic"
 	lefthand_file = 'icons/mob/inhands/items/devices_lefthand.dmi'
@@ -64,12 +64,12 @@
 /obj/item/organ/internal/brain/synth/mmi
 	name = "compact man-machine interface"
 	desc = "A compact man-machine interface, perfectly dimensioned to fit in the same slot as a synthetic-compatible positronic brain. Unfortunately, the brain seems to be permanently attached to the circuitry, and it seems relatively sensitive to it's environment. It is usually slotted into the chest of synthetic crewmembers."
-	icon = 'monkestation/code/modules/smithing/icons/ipc_organ.dmi'
+	icon = 'modular_bandastation/species/icons/obj/organs/ipc_organ.dmi'
 	icon_state = "mmi-ipc"
 
 /obj/item/organ/internal/ears/synth
 	name = "auditory sensors"
-	icon = 'monkestation/code/modules/smithing/icons/ipc_organ.dmi'
+	icon = 'modular_bandastation/species/icons/obj/organs/ipc_organ.dmi'
 	icon_state = "ears-ipc"
 	desc = "A pair of microphones intended to be installed in an IPC or Synthetics head, that grant the ability to hear."
 	zone = BODY_ZONE_HEAD
@@ -133,10 +133,10 @@
 	switch(severity)
 		if(EMP_HEAVY)
 			to_chat(owner, span_warning("Alert:Severe electromagnetic interference clouds your optics with static. Error Code: I-CS6"))
-			apply_organ_damage(SYNTH_ORGAN_HEAVY_EMP_DAMAGE, maxHealth, required_organtype = ORGAN_ROBOTIC)
+			apply_organ_damage(SYNTH_ORGAN_HEAVY_EMP_DAMAGE, maxHealth, required_organ_flag = ORGAN_ROBOTIC)
 		if(EMP_LIGHT)
 			to_chat(owner, span_warning("Alert: Mild interference clouds your optics with static. Error Code: I-CS0"))
-			apply_organ_damage(SYNTH_ORGAN_LIGHT_EMP_DAMAGE, maxHealth, required_organtype = ORGAN_ROBOTIC)
+			apply_organ_damage(SYNTH_ORGAN_LIGHT_EMP_DAMAGE, maxHealth, required_organ_flag = ORGAN_ROBOTIC)
 
 /datum/design/synth_eyes
 	name = "Optical Sensors"
@@ -158,7 +158,7 @@
 	name = "hydraulic pump engine"
 	desc = "An electronic device that handles the hydraulic pumps, powering one's robotic limbs. Without this, synthetics are unable to move."
 	organ_flags = ORGAN_ROBOTIC | ORGAN_SYNTHETIC_FROM_SPECIES
-	icon = 'monkestation/code/modules/smithing/icons/ipc_organ.dmi'
+	icon = 'modular_bandastation/species/icons/obj/organs/ipc_organ.dmi'
 	icon_state = "heart-ipc-on"
 	base_icon_state = "heart-ipc"
 	maxHealth = 1.5 * STANDARD_ORGAN_THRESHOLD // 1.5x due to synthcode.tm being weird
@@ -178,10 +178,10 @@
 	switch(severity)
 		if(EMP_HEAVY)
 			to_chat(owner, span_warning("Alert: Main hydraulic pump control has taken severe damage, seek maintenance immediately. Error code: HP300-10."))
-			apply_organ_damage(SYNTH_ORGAN_HEAVY_EMP_DAMAGE, maxHealth, required_organtype = ORGAN_ROBOTIC)
+			apply_organ_damage(SYNTH_ORGAN_HEAVY_EMP_DAMAGE, maxHealth, required_organ_flag = ORGAN_ROBOTIC)
 		if(EMP_LIGHT)
 			to_chat(owner, span_warning("Alert: Main hydraulic pump control has taken light damage, seek maintenance immediately. Error code: HP300-05."))
-			apply_organ_damage(SYNTH_ORGAN_LIGHT_EMP_DAMAGE, maxHealth, required_organtype = ORGAN_ROBOTIC)
+			apply_organ_damage(SYNTH_ORGAN_LIGHT_EMP_DAMAGE, maxHealth, required_organ_flag = ORGAN_ROBOTIC)
 
 /datum/design/synth_heart
 	name = "Hydraulic Pump Engine"
@@ -202,7 +202,7 @@
 /obj/item/organ/internal/liver/synth
 	name = "reagent processing unit"
 	desc = "An electronic device that processes the beneficial chemicals for the synthetic user."
-	icon = 'monkestation/code/modules/smithing/icons/ipc_organ.dmi'
+	icon = 'modular_bandastation/species/icons/obj/organs/ipc_organ.dmi'
 	icon_state = "liver-ipc"
 	filterToxins = FALSE //We dont filter them, we're immune to them
 	zone = BODY_ZONE_CHEST
@@ -222,11 +222,11 @@
 	switch(severity)
 		if(EMP_HEAVY)
 			to_chat(owner, span_warning("Alert: Critical! Reagent processing unit failure, seek maintenance immediately. Error Code: DR-1k"))
-			apply_organ_damage(SYNTH_ORGAN_HEAVY_EMP_DAMAGE, maxHealth, required_organtype = ORGAN_ROBOTIC)
+			apply_organ_damage(SYNTH_ORGAN_HEAVY_EMP_DAMAGE, maxHealth, required_organ_flag = ORGAN_ROBOTIC)
 
 		if(EMP_LIGHT)
 			to_chat(owner, span_warning("Alert: Reagent processing unit failure, seek maintenance for diagnostic. Error Code: DR-0k"))
-			apply_organ_damage(SYNTH_ORGAN_LIGHT_EMP_DAMAGE, maxHealth, required_organtype = ORGAN_ROBOTIC)
+			apply_organ_damage(SYNTH_ORGAN_LIGHT_EMP_DAMAGE, maxHealth, required_organ_flag = ORGAN_ROBOTIC)
 
 /datum/design/synth_liver
 	name = "Reagent Processing Unit"
@@ -247,7 +247,7 @@
 /obj/item/organ/internal/lungs/synth
 	name = "heatsink"
 	desc = "A device that transfers generated heat to a fluid medium to cool it down. Required to keep your synthetics cool-headed. It's shape resembles lungs." //Purposefully left the 'fluid medium' ambigious for interpretation of the character, whether it be air or fluid cooling
-	icon = 'monkestation/code/modules/smithing/icons/ipc_organ.dmi'
+	icon = 'modular_bandastation/species/icons/obj/organs/ipc_organ.dmi'
 	icon_state = "lungs-ipc"
 	safe_nitro_min = 0
 	safe_co2_max = 0
@@ -297,7 +297,7 @@
 ///IPCS NO LONGER ARE PURE ELECTRICAL BEINGS, any attempts to change this outside of Borbop will be denied. Thanks.
 /obj/item/organ/internal/stomach/synth
 	name = "synthetic bio-reactor"
-	icon = 'monkestation/code/modules/smithing/icons/ipc_organ.dmi'
+	icon = 'modular_bandastation/species/icons/obj/organs/ipc_organ.dmi'
 	icon_state = "stomach-ipc"
 	w_class = WEIGHT_CLASS_NORMAL
 	zone = BODY_ZONE_CHEST
@@ -320,12 +320,12 @@
 	switch(severity)
 		if(EMP_HEAVY)
 			owner.nutrition = max(0, owner.nutrition - SYNTH_STOMACH_HEAVY_EMP_CHARGE_LOSS)
-			apply_organ_damage(SYNTH_ORGAN_HEAVY_EMP_DAMAGE, maxHealth, required_organtype = ORGAN_ROBOTIC)
+			apply_organ_damage(SYNTH_ORGAN_HEAVY_EMP_DAMAGE, maxHealth, required_organ_flag = ORGAN_ROBOTIC)
 			to_chat(owner, span_warning("Alert: Severe battery discharge!"))
 
 		if(EMP_LIGHT)
 			owner.nutrition = max(0, owner.nutrition - SYNTH_STOMACH_LIGHT_EMP_CHARGE_LOSS)
-			apply_organ_damage(SYNTH_ORGAN_LIGHT_EMP_DAMAGE, maxHealth, required_organtype = ORGAN_ROBOTIC)
+			apply_organ_damage(SYNTH_ORGAN_LIGHT_EMP_DAMAGE, maxHealth, required_organ_flag = ORGAN_ROBOTIC)
 			to_chat(owner, span_warning("Alert: Minor battery discharge!"))
 
 /datum/design/synth_stomach
@@ -365,7 +365,7 @@
 /obj/item/organ/internal/tongue/synth
 	name = "synthetic voicebox"
 	desc = "A fully-functional synthetic tongue, encased in soft silicone. Features include high-resolution vocals and taste receptors."
-	icon = 'monkestation/code/modules/smithing/icons/ipc_organ.dmi'
+	icon = 'modular_bandastation/species/icons/obj/organs/ipc_organ.dmi'
 	icon_state = "cybertongue"
 	say_mod = "beeps"
 	attack_verb_continuous = list("beeps", "boops")

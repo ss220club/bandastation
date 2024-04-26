@@ -5,7 +5,7 @@
 
 /datum/sprite_accessory/ipc_chassis/mcgreyscale
 	name = "Morpheus Cyberkinetics (Custom)"
-	color_src = MUTCOLORS
+	color_src = TRAIT_MUTANT_COLORS
 	icon_state = "mcgipc"
 
 /datum/sprite_accessory/ipc_chassis/bishop_cyberkinetics

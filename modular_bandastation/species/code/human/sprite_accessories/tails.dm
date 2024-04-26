@@ -1,6 +1,6 @@
 /datum/sprite_accessory/tails/monkey
 	icon = 'modular_bandastation/species/icons/mob/species/simian/tails.dmi'
-	color_src = SKINTONES
+	color_src = TRAIT_MUTANT_COLORS_SECONDARY //SKINTONES
 
 /datum/sprite_accessory/tails/monkey/none
 	name = "None"

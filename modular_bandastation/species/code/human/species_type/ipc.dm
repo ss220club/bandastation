@@ -86,13 +86,13 @@
 	var/blending
 
 /datum/species/ipc/get_scream_sound(mob/living/carbon/human/human)
-	return 'monkestation/sound/voice/screams/silicon/scream_silicon.ogg'
+	return 'modular_bandastation/sounds/sound/voice/screams/silicon/scream_silicon.ogg'
 
 /datum/species/ipc/get_laugh_sound(mob/living/carbon/human/human)
 	return pick(
-		'monkestation/sound/voice/laugh/silicon/laugh_siliconE1M0.ogg',
-		'monkestation/sound/voice/laugh/silicon/laugh_siliconE1M1.ogg',
-		'monkestation/sound/voice/laugh/silicon/laugh_siliconM2.ogg',
+		'modular_bandastation/sounds/sound/voice/laugh/silicon/laugh_siliconE1M0.ogg',
+		'modular_bandastation/sounds/sound/voice/laugh/silicon/laugh_siliconE1M1.ogg',
+		'modular_bandastation/sounds/sound/voice/laugh/silicon/laugh_siliconM2.ogg',
 	)
 
 /datum/species/ipc/get_species_description()
@@ -134,7 +134,7 @@
 /datum/species/ipc/proc/start_blending(mob/living/carbon/carbon)
 	blending = TRUE
 	carbon.Shake(2, 2, 10 SECONDS)
-	playsound(carbon, 'monkestation/code/modules/smithing/sounds/blend.ogg', 50, TRUE, mixer_channel = CHANNEL_MOB_SOUNDS)
+	playsound(carbon, 'modular_bandastation/sounds/sound/misc/blend.ogg', 50, TRUE, mixer_channel = CHANNEL_MOB_SOUNDS)
 	addtimer(CALLBACK(src, PROC_REF(finish_blending), carbon), 10 SECONDS, TIMER_UNIQUE | TIMER_STOPPABLE)
 
 /datum/species/ipc/proc/finish_blending(mob/living/carbon/human/carbon)
@@ -187,7 +187,7 @@
 	H.grab_ghost()
 	H.dna.features["ipc_screen"] = "BSOD"
 	H.update_body()
-	playsound(H, 'monkestation/sound/voice/dialup.ogg', 25)
+	playsound(H, 'modular_bandastation/sounds/sound/misc/dialup.ogg', 25)
 	H.say("Reactivating [pick("core systems", "central subroutines", "key functions")]...")
 	sleep(3 SECONDS)
 	if(H.stat == DEAD)
@@ -220,7 +220,7 @@
 		BP.limb_id = chassis_of_choice.icon_state
 		BP.name = "\improper[chassis_of_choice.name] [parse_zone(BP.body_zone)]"
 		BP.update_limb()
-		if(chassis_of_choice.color_src == MUTCOLORS)
+		if(chassis_of_choice.color_src == TRAIT_MUTANT_COLORS)
 			BP.should_draw_greyscale = TRUE
 
 /**

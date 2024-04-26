@@ -8,7 +8,7 @@
 /datum/preference/choiced/ipc_antenna/init_possible_values()
 	var/list/values = list()
 
-	var/icon/ipc_head = icon('monkestation/icons/mob/species/ipc/bodyparts.dmi', "synth_head")
+	var/icon/ipc_head = icon('modular_bandastation/species/icons/mob/species/ipc/bodyparts.dmi', "synth_head")
 
 	for (var/antennae_name in GLOB.ipc_antennas_list)
 		var/datum/sprite_accessory/antennae = GLOB.ipc_antennas_list[antennae_name]
@@ -39,14 +39,14 @@
 /datum/preference/choiced/ipc_chassis/init_possible_values()
 	var/list/values = list()
 
-	var/icon/ipc = icon('monkestation/icons/mob/species/ipc/bodyparts.dmi', "blank")
+	var/icon/ipc = icon('modular_bandastation/species/icons/mob/species/ipc/bodyparts.dmi', "blank")
 	for (var/chassis_name in GLOB.ipc_chassis_list)
 		var/datum/sprite_accessory/chassis = GLOB.ipc_chassis_list[chassis_name]
 		if(chassis.locked)
 			continue
 
 		var/icon/chassis_icon = icon(
-			'monkestation/icons/mob/species/ipc/ipc_chassis.dmi',
+			'modular_bandastation/species/icons/mob/species/ipc/ipc_chassis.dmi',
 			"m_ipc_chassis_[chassis.icon_state]_FRONT")
 
 		var/icon/final_icon = icon(ipc)
@@ -75,7 +75,7 @@
 /datum/preference/choiced/ipc_screen/init_possible_values()
 	var/list/values = list()
 
-	var/icon/ipc_head = icon('monkestation/icons/mob/species/ipc/bodyparts.dmi', "synth_head")
+	var/icon/ipc_head = icon('modular_bandastation/species/icons/mob/species/ipc/bodyparts.dmi', "synth_head")
 
 	for (var/screen_name in GLOB.ipc_screens_list)
 		var/datum/sprite_accessory/screen = GLOB.ipc_screens_list[screen_name]

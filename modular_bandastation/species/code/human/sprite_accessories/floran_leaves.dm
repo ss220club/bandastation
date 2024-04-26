@@ -1,7 +1,7 @@
 /datum/sprite_accessory/floran_leaves
 	icon = 'modular_bandastation/species/icons/mob/species/floran/floran_leaves.dmi'
-	color_src = MUTCOLORS_SECONDARY
-	//Should be MUTCOLORS_SECONDARY, but while its not working it will be the inverse of MUTCOLORS
+	color_src = TRAIT_MUTANT_COLORS_SECONDARY
+	//Should be TRAIT_MUTANT_COLORS_SECONDARY, but while its not working it will be the inverse of TRAIT_MUTANT_COLORS
 
 /datum/sprite_accessory/floran_leaves/furnivour
 	name = "Furnivour"

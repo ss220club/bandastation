@@ -1,6 +1,6 @@
 /datum/sprite_accessory/arachnid_appendages
 	icon = 'modular_bandastation/species/icons/mob/species/arachnid/arachnid_appendages.dmi'
-	color_src = MUTCOLORS
+	color_src = TRAIT_MUTANT_COLORS
 
 /datum/sprite_accessory/arachnid_appendages/long
 	name = "Long"

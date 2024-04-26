@@ -25,8 +25,6 @@
 	coldmod = 1.5 //Same as lizard people
 	meat = /obj/item/food/meat/slab/human/mutant/plant
 	exotic_blood = /datum/reagent/water
-	// disliked_food = VEGETABLES | FRUIT | GRAIN
-	liked_food = MEAT | BUGS | GORE
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | RACE_SWAP | ERT_SPAWN | SLIME_EXTRACT
 	species_language_holder = /datum/language_holder/plant
 
@@ -41,7 +39,7 @@
 	mutanttongue = /obj/item/organ/internal/tongue/lizard
 	mutanteyes = /obj/item/organ/internal/eyes/floran
 
-	ass_image = 'icons/ass/asspodperson.png'
+	ass_image = 'modular_bandastation/species/icons/ass/asspodperson.png'
 
 /datum/species/floran/spec_life(mob/living/carbon/human/H, seconds_per_tick, times_fired)
 	if(H.stat == DEAD)
@@ -136,9 +134,6 @@
 	organ_flags = ORGAN_UNREMOVABLE | ORGAN_HIDDEN
 	icon_state = "floran_leaves"
 	icon = 'modular_bandastation/species/icons/obj/organs/organs.dmi'
-
-	D:\GitHub\BandaStation\modular_bandastation\species\icons\obj\organs\organs.dmi
-
 	preference = "feature_floran_leaves"
 	zone = BODY_ZONE_CHEST
 	slot = ORGAN_SLOT_EXTERNAL_FLORAN_LEAVES

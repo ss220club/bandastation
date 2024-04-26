@@ -3,11 +3,9 @@
 	name = "Simian"
 	id = SPECIES_SIMIAN
 
-	bodytype = BODYTYPE_CUSTOM
-
 	inherent_traits = list(
 		TRAIT_NO_UNDERWEAR,
-		TRAIT_MUTANT_COLORS
+		TRAIT_MUTANT_COLORS,
 		TRAIT_VAULTING,
 		TRAIT_MONKEYFRIEND
 		)
@@ -20,8 +18,6 @@
 	changesource_flags = MIRROR_BADMIN | MIRROR_PRIDE | MIRROR_MAGIC | RACE_SWAP | ERT_SPAWN
 	meat = /obj/item/food/meat/slab/monkey
 	skinned_type = /obj/item/stack/sheet/animalhide/monkey
-	disliked_food = GROSS
-	liked_food = FRUIT | MEAT
 	uses_fur = TRUE
 	//deathsound = 'modular_bandastation/sounds/sound/voice/simian/deathsound.ogg'
 	species_language_holder = /datum/language_holder/monkey
@@ -54,6 +50,8 @@
 	external_organs = list(
 		/obj/item/organ/external/tail/simian = "Chimp"
 	)
+
+	mutanttongue = /obj/item/organ/internal/tongue/simian
 
 /datum/species/simian/get_scream_sound(mob/living/carbon/human/human)
 	return pick(

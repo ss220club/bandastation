@@ -3,7 +3,7 @@
 	desc = "you shouldn't see this"
 	organ_flags = ORGAN_UNREMOVABLE
 	icon_state = "floran_leaves"
-	icon = 'modular_bandastation/icons/obj/organs/organs.dmi'
+	icon = 'modular_bandastation/species/icons/obj/organs/organs.dmi'
 
 	preference = "feature_floran_leaves"
 	zone = BODY_ZONE_CHEST
@@ -17,13 +17,13 @@
 	feature_key = "floran_leaves"
 	// color_source = ORGAN_COLOR_MUTSECONDARY
 
-	var/color_swapped_layer = EXTERNAL_ADJACENT//Remove when MUTCOLORS_SECONDARY works
-	var/color_inverse_base = 255//Remove when MUTCOLORS_SECONDARY works
+	var/color_swapped_layer = EXTERNAL_ADJACENT//Remove when TRAIT_MUTANT_COLORS_SECONDARY works
+	var/color_inverse_base = 255//Remove when TRAIT_MUTANT_COLORS_SECONDARY works
 
 /datum/bodypart_overlay/mutant/floran_leaves/get_global_feature_list()
 	return GLOB.floran_leaves_list
 
-/datum/bodypart_overlay/mutant/floran_leaves/color_image(image/overlay, draw_layer, obj/item/bodypart/limb)//Remove when MUTCOLORS_SECONDARY works
+/datum/bodypart_overlay/mutant/floran_leaves/color_image(image/overlay, draw_layer, obj/item/bodypart/limb)//Remove when TRAIT_MUTANT_COLORS_SECONDARY works
 	if(draw_layer != bitflag_to_layer(color_swapped_layer))
 		return ..()
 

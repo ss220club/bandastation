@@ -1,6 +1,6 @@
 /datum/sprite_accessory/ipc_antennas
 	icon = 'modular_bandastation/species/icons/mob/species/ipc/ipc_antennas.dmi'
-	color_src = MUTCOLORS
+	color_src = TRAIT_MUTANT_COLORS
 
 /datum/sprite_accessory/ipc_antennas/none
 	name = "None"

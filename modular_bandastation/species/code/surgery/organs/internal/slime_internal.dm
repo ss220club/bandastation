@@ -50,7 +50,7 @@
 	zone = BODY_ZONE_CHEST
 	var/obj/effect/death_melt_type = /obj/effect/temp_visual/wizard/out
 	var/core_color = COLOR_WHITE
-	icon = 'monkestation/code/modules/smithing/icons/oozeling.dmi'
+	icon = 'modular_bandastation/species/icons/obj/organs/organs.dmi'
 	icon_state = "slime_core"
 	var/core_ejected = FALSE
 	var/gps_active = TRUE
@@ -160,19 +160,19 @@
 	if(gps_active) // adding the gps signal if they have activated the ability
 		AddComponent(/datum/component/gps, "[victim]'s Core")
 
-	if(brainmob)
-		var/datum/antagonist/changeling/target_ling = brainmob.mind?.has_antag_datum(/datum/antagonist/changeling)
+	// if(brainmob)
+	// 	var/datum/antagonist/changeling/target_ling = brainmob.mind?.has_antag_datum(/datum/antagonist/changeling)
 
-		if(target_ling)
-			if(target_ling.oozeling_revives > 0)
-				target_ling.oozeling_revives--
-				addtimer(CALLBACK(src, PROC_REF(rebuild_body)), 30 SECONDS)
+	// 	if(target_ling)
+	// 		if(target_ling.oozeling_revives > 0)
+	// 			target_ling.oozeling_revives--
+	// 			addtimer(CALLBACK(src, PROC_REF(rebuild_body)), 30 SECONDS)
 
-		if(IS_BLOODSUCKER(brainmob))
-			var/datum/antagonist/bloodsucker/target_bloodsucker = brainmob.mind.has_antag_datum(/datum/antagonist/bloodsucker)
-			if(target_bloodsucker.bloodsucker_blood_volume >= target_bloodsucker.max_blood_volume * 0.4)
-				addtimer(CALLBACK(src, PROC_REF(rebuild_body)), 30 SECONDS)
-				target_bloodsucker.bloodsucker_blood_volume -= target_bloodsucker.max_blood_volume * 0.15
+	// 	if(IS_BLOODSUCKER(brainmob))
+	// 		var/datum/antagonist/bloodsucker/target_bloodsucker = brainmob.mind.has_antag_datum(/datum/antagonist/bloodsucker)
+	// 		if(target_bloodsucker.bloodsucker_blood_volume >= target_bloodsucker.max_blood_volume * 0.4)
+	// 			addtimer(CALLBACK(src, PROC_REF(rebuild_body)), 30 SECONDS)
+	// 			target_bloodsucker.bloodsucker_blood_volume -= target_bloodsucker.max_blood_volume * 0.15
 
 	rebuilt = FALSE
 	Remove(victim)

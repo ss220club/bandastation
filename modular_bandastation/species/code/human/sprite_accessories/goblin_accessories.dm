@@ -1,6 +1,6 @@
 /datum/sprite_accessory/goblin_ears
 	icon = 'modular_bandastation/species/icons/mob/species/goblin/goblin_ears.dmi'
-	color_src = MUTCOLORS
+	color_src = TRAIT_MUTANT_COLORS
 
 /datum/sprite_accessory/goblin_ears/normal
 	name = "Normal"

@@ -12,4 +12,7 @@
 #include "code/signals_mob/signals_mob_main.dm"
 #include "code/signals_mob/signals_mob_silicon.dm"
 #include "code/signals_mob/signals_mob_simple.dm"
-#include "code/mobs.dm"
+
+#include "code/defines/mobs/species/ipcs.dm"
+#include "code/defines/mobs/flavor_misc.dm"
+#include "code/defines/mobs/mobs.dm"
