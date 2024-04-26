@@ -37,9 +37,9 @@
 	display_results(
 		user,
 		target,
-		span_notice("Вы начинаете вырезать поврежденную часть печени [target]..."),
-		span_notice("[user] начинает делать надрез на [target]."),
-		span_notice("[user] начинает делать надрез на [target]."),
+		span_notice("Вы начинаете вырезать поврежденную часть печени у [target]..."),
+		span_notice("[user] начинает делать надрез у [target]."),
+		span_notice("[user] начинает делать надрез у [target]."),
 	)
 	display_pain(target, "Ваша брюшная полость горит от ужасной колющей боли!")
 
@@ -52,9 +52,9 @@
 	display_results(
 		user,
 		target,
-		span_notice("Вы успешно удаляете поврежденную часть печени [target]."),
-		span_notice("[user] успешно удаляет поврежденную часть печени [target]."),
-		span_notice("[user] успешно удаляет поврежденную часть печени [target]."),
+		span_notice("Вы успешно удаляете поврежденную часть печени у [target]."),
+		span_notice("[user] успешно удаляет поврежденную часть печени у [target]."),
+		span_notice("[user] успешно удаляет поврежденную часть печени у [target]."),
 	)
 	display_pain(target, "Боль немного стихает.")
 	return ..()
@@ -65,8 +65,8 @@
 	display_results(
 		user,
 		target,
-		span_warning("Вы удалили не ту часть печени [target]!"),
-		span_warning("[user] удалил не ту часть печени [target]!"),
-		span_warning("[user] удалил не ту часть печени [target]!"),
+		span_warning("Вы удалили не ту часть печени у [target]!"),
+		span_warning("[user] удалил не ту часть печени у [target]!"),
+		span_warning("[user] удалил не ту часть печени у [target]!"),
 	)
 	display_pain(target, "Вы чувствуете острую боль в брюшной полости!")

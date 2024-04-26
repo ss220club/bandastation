@@ -81,8 +81,8 @@
 			break
 
 /datum/surgery_step/heal/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
-	var/user_msg = "Вы успешно зашиваете некоторые раны у [target]" //no period, add initial space to "addons"
-	var/target_msg = "[user] успешно зашивает некоторые раны у [target]" //see above
+	var/user_msg = "Вы успешно обрабатываете раны у [target]" //no period, add initial space to "addons"
+	var/target_msg = "[user] успешно обрабатываете раны у [target]" //see above
 	var/brute_healed = brutehealing
 	var/burn_healed = burnhealing
 	var/dead_patient = FALSE
@@ -174,17 +174,17 @@
 			if(-INFINITY to 1)
 				return
 			if(1 to 3)
-				progress_text = ", stitching up the last few scrapes"
+				progress_text = ", осталось зашить пару царапин и все"
 			if(3 to 6)
-				progress_text = ", counting down the last few bruises left to treat"
+				progress_text = ", осталось залатать всего-лишь пару ушибов"
 			if(6 to 9)
-				progress_text = ", continuing to plug away at [target.p_their()] extensive rupturing"
+				progress_text = ", продолжайте лечить разрывы тканей"
 			if(9 to 12)
-				progress_text = ", steadying yourself for the long surgery ahead"
+				progress_text = ", надо подсобраться, ведь операция будет ещё долго идти"
 			if(12 to 15)
-				progress_text = ", though [target.p_they()] still look[target.p_s()] more like ground beef than a person"
+				progress_text = ", судя по внешнему виду, тело больше напоминает отбивную, нежели на человеческое тело"
 			if(15 to INFINITY)
-				progress_text = ", though you feel like you're barely making a dent in treating [target.p_their()] pulped body"
+				progress_text = ", вам кажется, что вы ещё долго будете лечить это обезображенное тело"
 
 	return progress_text
 
@@ -239,17 +239,17 @@
 			if(-INFINITY to 1)
 				return
 			if(1 to 3)
-				progress_text = ", finishing up the last few singe marks"
+				progress_text = ", осталось обработать пару царапин и все"
 			if(3 to 6)
-				progress_text = ", counting down the last few blisters left to treat"
+				progress_text = ", осталось обработать всего-лишь пару ожогов"
 			if(6 to 9)
-				progress_text = ", continuing to plug away at [target.p_their()] thorough roasting"
+				progress_text = ", продолжайте работать над обработкой ожогов"
 			if(9 to 12)
-				progress_text = ", steadying yourself for the long surgery ahead"
+				progress_text = ", надо подсобраться, ведь операция будет ещё долго идти"
 			if(12 to 15)
-				progress_text = ", though [target.p_they()] still look[target.p_s()] more like burnt steak than a person"
+				progress_text = ", судя по внешнему виду, тело больше напоминает подгоревший стейк, нежели на человеческое тело"
 			if(15 to INFINITY)
-				progress_text = ", though you feel like you're barely making a dent in treating [target.p_their()] charred body"
+				progress_text = ", вам кажется, что вы ещё долго будете лечить это обгоревшее тело"
 
 	return progress_text
 
@@ -310,17 +310,17 @@
 			if(-INFINITY to 1)
 				return
 			if(1 to 3)
-				progress_text = ", finishing up the last few signs of damage"
+				progress_text = ", осталось обработать пару последние следы повреждений"
 			if(3 to 6)
-				progress_text = ", counting down the last few patches of trauma"
+				progress_text = ", осталось обработать всего-лишь пару травм"
 			if(6 to 9)
-				progress_text = ", continuing to plug away at [target.p_their()] extensive injuries"
+				progress_text = ", продолжайте работать над обработкой ран"
 			if(9 to 12)
-				progress_text = ", steadying yourself for the long surgery ahead"
+				progress_text = ", надо подсобраться, ведь операция будет ещё долго идти"
 			if(12 to 15)
-				progress_text = ", though [target.p_they()] still look[target.p_s()] more like smooshed baby food than a person"
+				progress_text = ", судя по внешнему виду, тело больше напоминает еду для карапузов, нежели на человеческое тело"
 			if(15 to INFINITY)
-				progress_text = ", though you feel like you're barely making a dent in treating [target.p_their()] broken body"
+				progress_text = ", вам кажется, что вы ещё долго будете лечить это обезображенное тело"
 
 	return progress_text
 
