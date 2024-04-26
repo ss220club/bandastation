@@ -21,11 +21,10 @@ jobs:
         continue-on-error: true
         run: |
           git merge origin/translate
+      - name: Save merge results
+      - run: |
           echo "MERGE_CONFLICTS=$(git diff --diff-filter=U)" >> $GITHUB_ENV
           echo conflicts: $MERGE_CONFLICTS
-
-      - run: echo $MERGE_CONFLICTS
-
       - name: Run script
         uses: actions/github-script@v7
         with:
