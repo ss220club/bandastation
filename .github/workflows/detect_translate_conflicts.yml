@@ -22,6 +22,9 @@ jobs:
         run: |
           git merge origin/translate
           echo "MERGE_CONFLICTS=$(git diff --diff-filter=U)" >> $GITHUB_ENV
+
+      - run: echo $MERGE_CONFLICTS
+
       - name: Run script
         uses: actions/github-script@v7
         with:
