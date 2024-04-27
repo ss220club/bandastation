@@ -19,7 +19,7 @@
 	return TRUE
 
 /datum/surgery_step/autopsy
-	name = "Исследуйте труп (сканер для аутопсии)"
+	name = "Проведите вскрытие (сканер аутопсии)"
 	implements = list(/obj/item/autopsy_scanner = 100)
 	time = 10 SECONDS
 	success_sound = 'sound/machines/printer.ogg'
