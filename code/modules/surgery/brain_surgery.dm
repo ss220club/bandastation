@@ -42,7 +42,7 @@
 		target,
 		span_notice("Вы успешно восстановили функции мозга у [target]."),
 		span_notice("[user] успешно восстановили функции мозга у [target]!"),
-		span_notice("[user] завершает операцию на мозг у [target]."),
+		span_notice("[user] завершает операцию на мозге у [target]."),
 	)
 	display_pain(target, "Боль в голове утихает, мыслить становится немного легче!")
 	if(target.mind?.has_antag_datum(/datum/antagonist/brainwashed))
