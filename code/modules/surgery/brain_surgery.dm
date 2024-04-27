@@ -32,7 +32,7 @@
 		target,
 		span_notice("Вы начинаете восстанавливать мозг у [target]..."),
 		span_notice("[user] начинает восстанавливать мозг у [target]."),
-		span_notice("[user] начинает проводить операцию на мозг у [target]."),
+		span_notice("[user] начинает проводить операцию на мозге у [target]."),
 	)
 	display_pain(target, "Голова раскалывается от невыразимой боли!")
 
