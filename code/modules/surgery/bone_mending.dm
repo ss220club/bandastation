@@ -150,7 +150,7 @@
 
 ///// Repair Compound Fracture (Crticial)
 /datum/surgery_step/repair_bone_compound
-	name = "Устраните открытый перелом кости (костоправ/костный гель)"
+	name = "Устраните открытый перелом кости (костный гель/хирургическая лента)"
 	implements = IMPLEMENTS_THAT_FIX_BONES
 	time = 40
 
