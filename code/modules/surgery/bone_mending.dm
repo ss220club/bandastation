@@ -22,7 +22,7 @@
 
 ///// Repair Compound Fracture (Critical)
 /datum/surgery/repair_bone_compound
-	name = "Устранение перелома кости (открытый)"
+	name = "Сращивание открытого перелома кости"
 	surgery_flags = SURGERY_REQUIRE_RESTING | SURGERY_REQUIRE_LIMB | SURGERY_REQUIRES_REAL_LIMB
 	targetable_wound = /datum/wound/blunt/bone/critical
 	possible_locs = list(
