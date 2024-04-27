@@ -180,7 +180,7 @@ export const HypertorusSecondaryControls = (props) => {
             help="Регулирует плотность реакции синтеза. Более плотные реакции выделяют больше энергии, но могут дестабилизировать реакцию, если в ней участвует слишком много массы."
           />
         </LabeledControls.Item>
-        <LabeledControls.Item label="Текущий ограничитель">
+        <LabeledControls.Item label="Текущий демпфер">
           <ComboKnob
             color={current_damper && 'yellow'}
             value={current_damper}
