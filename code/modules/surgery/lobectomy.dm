@@ -51,7 +51,7 @@
 			user,
 			target,
 			span_notice("Вы успешно вырезаете самую поврежденную долю [human_target]."),
-			span_notice("Успешно отрезал часть легких [human_target]'s."),
+			span_notice("Успешно отрезал часть легких [human_target]."),
 			"",
 		)
 		display_pain(target, "Грудь адски болит, но дышать становится немного легче.")
