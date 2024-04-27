@@ -60,7 +60,7 @@
 			target,
 			span_warning("Вы облажались, нанеся ещё больше повреждений!"),
 			span_warning("[user] облажался, нанеся повреждения мозгу!"),
-			span_notice("[user] завершает операцию на мозг у [target]."),
+			span_notice("[user] завершает операцию на мозге у [target]."),
 		)
 		display_pain(target, "Голова раскалывается от ужасной боли; от одной мысли об этом уже начинает болеть голова!")
 		target.adjustOrganLoss(ORGAN_SLOT_BRAIN, 60)
