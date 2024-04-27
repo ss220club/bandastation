@@ -35,9 +35,9 @@
 			display_results(
 				user,
 				target,
-				span_notice("Вокруг [human_target]'s [parse_zone(target_zone)] образуется лужа крови."),
-				span_notice("Вокруг [human_target]'s [parse_zone(target_zone)] образуется лужа крови."),
-				span_notice("Вокруг [human_target]'s [parse_zone(target_zone)] образуется лужа крови."),
+				span_notice("Вокруг [parse_zone(target_zone)] [human_target] образуется лужа крови."),
+				span_notice("Вокруг [parse_zone(target_zone)] [human_target] образуется лужа крови."),
+				span_notice("Вокруг [parse_zone(target_zone)] [human_target] образуется лужа крови."),
 			)
 			var/obj/item/bodypart/target_bodypart = target.get_bodypart(target_zone)
 			if(target_bodypart)
@@ -52,7 +52,7 @@
 		span_notice("[user] начинает <i>осторожно</i> делать надрез у [target] в [parse_zone(target_zone)]."),
 		span_notice("[user] начинает <i>осторожно</i> делать надрез у [target] в [parse_zone(target_zone)]."),
 	)
-	display_pain(target, "Вы чувствуете, как вас <i>осторожный</i> колющий удар в [parse_zone(target_zone)].")
+	display_pain(target, "Вы чувствуете, как <i>осторожный</i> колющий удар в [parse_zone(target_zone)].")
 
 //clamp bleeders
 /datum/surgery_step/clamp_bleeders
@@ -105,7 +105,7 @@
 		span_notice("[user] начинаете раздвигать кожу у [target] в [parse_zone(target_zone)]."),
 		span_notice("[user] начинаете раздвигать кожу у [target] в [parse_zone(target_zone)]."),
 	)
-	display_pain(target, "Вы чувствуете сильную жгучую боль, распространяющуюся по всей [parse_zone(target_zone)], когда кожа возвращается в прежнее состояние!")
+	display_pain(target, "Вы чувствуете сильную жгучую боль, распространяющуюся по всей [parse_zone(target_zone)], по мере того, как кожа возвращается в прежнее состояние!")
 
 //close incision
 /datum/surgery_step/close

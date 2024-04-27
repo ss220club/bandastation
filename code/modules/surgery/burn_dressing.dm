@@ -3,7 +3,7 @@
 
 ///// Debride burnt flesh
 /datum/surgery/debride
-	name = "Очистить обгоревшую плоть"
+	name = "Удаление обгоревшей плоти"
 	surgery_flags = SURGERY_REQUIRE_RESTING | SURGERY_REQUIRE_LIMB | SURGERY_REQUIRES_REAL_LIMB
 	targetable_wound = /datum/wound/burn/flesh
 	possible_locs = list(
@@ -60,11 +60,11 @@
 		if(-INFINITY to 1)
 			return
 		if(1 to 2)
-			progress_text = ", подготовка к удалению последних остатков инфекции"
+			progress_text = ", подготавливаетесь к удалению последних остатков инфекции"
 		if(2 to 4)
-			progress_text = ", постепенно сокращая оставшиеся очаги инфекции"
+			progress_text = ", постепенно сокращаете оставшиеся очаги инфекции"
 		if(5 to INFINITY)
-			progress_text = ", впрочем, многое еще предстоит удалить"
+			progress_text = ", вы понимаете, что многое еще предстоит удалить"
 
 	return progress_text
 
@@ -85,7 +85,7 @@
 		)
 		display_pain(target, "Инфекция в вашей [parse_zone(user.zone_selected)] адски зудит! Такое ощущение, что тебя режут ножом!")
 	else
-		user.visible_message(span_notice("[user] ищет у [target] в [parse_zone(user.zone_selected)]."), span_notice("Вы ищите у [target] в [parse_zone(user.zone_selected)]..."))
+		user.visible_message(span_notice("[user] ищет [parse_zone(user.zone_selected)] у [target]."), span_notice("Вы ищете [parse_zone(user.zone_selected)] у [target]..."))
 
 /datum/surgery_step/debride/success(mob/living/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
 	var/datum/wound/burn/flesh/burn_wound = surgery.operated_wound
@@ -129,7 +129,7 @@
 
 ///// Dressing burns
 /datum/surgery_step/dress
-	name = "прикройте ожоги бинтами (марля/хирургическая лента)"
+	name = "перебинтуйте ожоги (марля/хирургическая лента)"
 	implements = list(
 		/obj/item/stack/medical/gauze = 100,
 		/obj/item/stack/sticky_tape/surgical = 100)
@@ -152,7 +152,7 @@
 		)
 		display_pain(target, "Ожоги в [parse_zone(user.zone_selected)] адски зудят!")
 	else
-		user.visible_message(span_notice("[user] ищет у [target] [parse_zone(user.zone_selected)]."), span_notice("Вы ищите у [target] [parse_zone(user.zone_selected)]..."))
+		user.visible_message(span_notice("[user] ищет у [target] [parse_zone(user.zone_selected)]."), span_notice("Вы ищете [parse_zone(user.zone_selected)] у [target] ..."))
 
 /datum/surgery_step/dress/success(mob/living/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
 	var/datum/wound/burn/flesh/burn_wound = surgery.operated_wound

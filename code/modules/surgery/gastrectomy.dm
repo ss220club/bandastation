@@ -38,7 +38,7 @@
 	display_results(
 		user,
 		target,
-		span_notice("Вы начинаете вырезать поврежденную часть живота у [target]..."),
+		span_notice("Вы начинаете вырезать поврежденную часть желудка у [target]..."),
 		span_notice("[user] начинает делать надрез у [target]."),
 		span_notice("[user] начинает делать надрез у [target]."),
 	)
@@ -53,9 +53,9 @@
 	display_results(
 		user,
 		target,
-		span_notice("Вы успешно удаляете поврежденную часть живота у [target]."),
-		span_notice("[user] успешно удаляет поврежденную часть живота у [target]."),
-		span_notice("[user] успешно удаляет поврежденную часть живота у [target]."),
+		span_notice("Вы успешно удаляете поврежденную часть желудка у [target]."),
+		span_notice("[user] успешно удаляет поврежденную часть желудка у [target]."),
+		span_notice("[user] успешно удаляет поврежденную часть желудка у [target]."),
 	)
 	display_pain(target, "Боль в вашем животе утихает и проходит.")
 	return ..()
@@ -66,8 +66,8 @@
 	display_results(
 		user,
 		target,
-		span_warning("Вы удалили не ту часть живота у [target]!"),
-		span_warning("[user] удалил не ту часть живота у [target]!"),
-		span_warning("[user] удалил не ту часть живота у [target]!"),
+		span_warning("Вы удалили не ту часть желудка у [target]!"),
+		span_warning("[user] удалил не ту часть желудка у [target]!"),
+		span_warning("[user] удалил не ту часть желудка у [target]!"),
 	)
 	display_pain(target, "У вас болит живот, и от этого не становится легче!")

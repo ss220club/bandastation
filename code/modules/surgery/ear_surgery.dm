@@ -1,6 +1,6 @@
 //Head surgery to fix the ears organ
 /datum/surgery/ear_surgery
-	name = "Операция на уши"
+	name = "Операция на ушах"
 	requires_bodypart_type = NONE
 	organ_to_manipulate = ORGAN_SLOT_EARS
 	possible_locs = list(BODY_ZONE_HEAD)
@@ -31,7 +31,7 @@
 		target,
 		span_notice("Вы начинаете лечить уши [target]..."),
 		span_notice("[user] начинает лечить уши [target]."),
-		span_notice("[user] начинает проводить операцию на уши [target]."),
+		span_notice("[user] начинает проводить операцию на ушах [target]."),
 	)
 	display_pain(target, "Вы чувствуете острую боль в голове!")
 
@@ -42,7 +42,7 @@
 		target,
 		span_notice("Вы успешно вылечили уши [target]."),
 		span_notice("[user] успешно вылечил уши [target]!"),
-		span_notice("[user] завершает операцию на уши у [target]."),
+		span_notice("[user] завершает операцию на ушах у [target]."),
 	)
 	display_pain(target, "Голова кружится, но кажется, что к вам возвращается слух!")
 	target_ears.deaf = (20) //deafness works off ticks, so this should work out to about 30-40s
@@ -64,8 +64,8 @@
 		display_results(
 			user,
 			target,
-			span_warning("Вы отвлеклись, случайно задев мозг [target]! Либо, задели бы его, если бы у [target] был бы мозг."),
-			span_warning("[user] отвлеклся, случайно задев мозг [target]! Либо, задел бы его, если бы у [target] был бы мозг."),
+			span_warning("Вы отвлеклись, случайно задев мозг [target]! Либо, задели бы его, был бы у [target] мозг."),
+			span_warning("[user] отвлеклся, случайно задев мозг [target]! Либо, задел бы его, был бы у [target] мозг."),
 			span_warning("[user] отвлеклся, случайно задев мозг [target]!"),
 		)
 		display_pain(target, "Вы чувствуете сильную колющую боль в голове!") // dunno who can feel pain w/o a brain but may as well be consistent.

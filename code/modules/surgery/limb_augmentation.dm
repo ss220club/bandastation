@@ -31,9 +31,9 @@
 		display_results(
 			user,
 			target,
-			span_notice("Вы начинаете аугментировать [target]'s [parse_zone(user.zone_selected)]..."),
-			span_notice("[user] начинает аугментировать [target]'s [parse_zone(user.zone_selected)] with [aug]."),
-			span_notice("[user] начинает аугментировать [target]'s [parse_zone(user.zone_selected)]."),
+			span_notice("Вы начинаете аугментировать [parse_zone(user.zone_selected)] у [target] ..."),
+			span_notice("[user] начинает аугментировать [parse_zone(user.zone_selected)] у [target] with [aug]."),
+			span_notice("[user] начинает аугментировать [parse_zone(user.zone_selected)] у [target] ."),
 		)
 		display_pain(target, "Вы чувствуете ужасную боль в [parse_zone(user.zone_selected)]!")
 	else
@@ -74,9 +74,9 @@
 				display_results(
 					user,
 					target,
-					span_warning("Вы не смогли заменить [target] [parse_zone(target_zone)]! Тело отвергает [tool.name]!"),
-					span_warning("[user] не смог заменить [target] [parse_zone(target_zone)]!"),
-					span_warning("[user] не смог заменить [target] [parse_zone(target_zone)]!"),
+					span_warning("Вы не смогли заменить [parse_zone(target_zone)] у [target] ! Тело отвергает [tool.name]!"),
+					span_warning("[user] не смог заменить [parse_zone(target_zone)] у [target] !"),
+					span_warning("[user] не смог заменить [parse_zone(target_zone)] у [target] !"),
 				)
 				tool.forceMove(target.loc)
 				return
@@ -85,9 +85,9 @@
 		display_results(
 			user,
 			target,
-			span_notice("Вы успешно заменили [target]'s [parse_zone(target_zone)]."),
-			span_notice("[user] успешно заменил [target]'s [parse_zone(target_zone)] на [tool.name]!"),
-			span_notice("[user] успешно заменил [target]'s [parse_zone(target_zone)]!"),
+			span_notice("Вы успешно заменили [parse_zone(target_zone)] у [target]."),
+			span_notice("[user] успешно заменил [parse_zone(target_zone)] у [target] на [tool.name]!"),
+			span_notice("[user] успешно заменил [parse_zone(target_zone)] у [target]!"),
 		)
 		display_pain(target, "Ваш [parse_zone(target_zone)] наполняется синтетическими ощущениями!", mechanical_surgery = TRUE)
 		log_combat(user, target, "проаугментирован", addition="дав ему новую [parse_zone(target_zone)] COMBAT MODE: [uppertext(user.combat_mode)]")

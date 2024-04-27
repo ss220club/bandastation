@@ -30,7 +30,7 @@
 	)
 
 /datum/surgery_step/cut_fat/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	user.visible_message(span_notice("[user] начинает отрезать лишний жир у [target]."), span_notice("Вы начинает отрезать лишний жир у [target]..."))
+	user.visible_message(span_notice("[user] начинает отрезать лишний жир у [target]."), span_notice("Вы начинаете отрезать лишний жир у [target]..."))
 	display_results(
 		user,
 		target,
@@ -46,7 +46,7 @@
 		target,
 		span_notice("Вы отрезали лишний жир у [target]."),
 		span_notice("[user] отрезал лишний жир у [target]!"),
-		span_notice("[user] заканчивает разрезание на [target] [target_zone]."),
+		span_notice("[user] заканчивает разрез на [target] [target_zone]."),
 	)
 	display_pain(target, "Жир в вашей  [target_zone] ослабевает, свисает и болит как черт знает что!")
 	return TRUE
@@ -94,7 +94,7 @@
 
 	if(typeofmeat)
 		var/obj/item/food/meat/slab/human/newmeat = new typeofmeat
-		newmeat.name = "толстое мясо"
+		newmeat.name = "жирное мясо"
 		newmeat.desc = "Очень толстая жировая ткань, взятая у пациента."
 		newmeat.subjectname = human.real_name
 		newmeat.subjectjob = human.job

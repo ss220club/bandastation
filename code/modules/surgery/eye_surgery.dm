@@ -1,5 +1,5 @@
 /datum/surgery/eye_surgery
-	name = "Операция на глаза"
+	name = "Операция на глазах"
 	requires_bodypart_type = NONE
 	organ_to_manipulate = ORGAN_SLOT_EYES
 	possible_locs = list(BODY_ZONE_PRECISE_EYES)
@@ -29,7 +29,7 @@
 		target,
 		span_notice("Вы начинаете лечить глаза [target]..."),
 		span_notice("[user] начинает лечить глаза [target]."),
-		span_notice("[user] начинает проводить операцию на глаза [target]."),
+		span_notice("[user] начинает проводить операцию на глазах [target]."),
 	)
 	display_pain(target, "Вы чувствуете колющую боль в глазах!")
 
@@ -41,7 +41,7 @@
 		target,
 		span_notice("Вы успешно вылечили глаза [target]."),
 		span_notice("[user] успешно вылечил глаза [target]!"),
-		span_notice("[user] завершает операцию на глаза у [target]."),
+		span_notice("[user] завершает операцию на глазах [target]."),
 	)
 	display_pain(target, "Ваше зрение размыто, но кажется, что теперь вы видите немного лучше!")
 	target.remove_status_effect(/datum/status_effect/temporary_blindness)
@@ -64,8 +64,8 @@
 		display_results(
 			user,
 			target,
-			span_warning("Вы отвлеклись, случайно задев мозг [target]! Либо, задели бы его, если бы у [target] был бы мозг."),
-			span_warning("[user] отвлеклся, случайно задев мозг [target]! Либо, задел бы его, если бы у [target] был бы мозг."),
+			span_warning("Вы отвлеклись, случайно задев мозг [target]! Либо, задели бы его, был бы у [target] мозг."),
+			span_warning("[user] отвлеклся, случайно задев мозг [target]! Либо, задел бы его, был бы у [target] мозг."),
 			span_warning("[user] отвлеклся, случайно задев мозг [target]!"),
 		)
 		display_pain(target, "Вы чувствуете сильную колющую боль в голове!") // dunno who can feel pain w/o a brain but may as well be consistent.

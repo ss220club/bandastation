@@ -67,7 +67,7 @@
 			span_warning("[user] облажался!"),
 			span_warning("[user] облажался!"),
 		)
-		display_pain(target, "Вы чувствуете резкий удар в грудь; ветер выбивает из вас все силы, и вам больно дышать!")
+		display_pain(target, "Вы чувствуете резкий удар в грудь; последний вздох выбивает из вас все силы, и вам больно дышать!")
 		human_target.losebreath += 4
 		human_target.adjustOrganLoss(ORGAN_SLOT_LUNGS, 10)
 	return FALSE

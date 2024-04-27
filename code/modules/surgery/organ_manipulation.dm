@@ -130,7 +130,7 @@
 
 ///Organ manipulation base class. Do not use, it wont work. Use it's subtypes
 /datum/surgery_step/manipulate_organs
-	name = "манипуляция с органами"
+	name = "проведите манипуляцию с органами"
 	repeatable = TRUE
 	implements = list(
 		/obj/item/organ = 100,
@@ -171,7 +171,7 @@
 			return SURGERY_STEP_FAIL
 		var/obj/item/organ/meatslab = tool
 		if(!meatslab.useable)
-			to_chat(user, span_warning("[target_organ] кажется, что поврежден, вы не сможете использовать это!"))
+			to_chat(user, span_warning("Кажется, что [target_organ] поврежден, вы не сможете использовать это!"))
 			return SURGERY_STEP_FAIL
 
 		if(!can_use_organ(user, meatslab))
