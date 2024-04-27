@@ -113,9 +113,9 @@
 	display_results(
 		user,
 		target,
-		span_notice("Вы удаляете часть здоровой плоти из [parse_zone(target_zone)] у [target]."),
-		span_notice("[user] удаляет часть здоровой плоти из [parse_zone(target_zone)] у [target] при помощи [tool.name]!"),
-		span_notice("[user] удаляет часть здоровой плоти из [parse_zone(target_zone)] у [target]!"),
+		span_notice("Вы срезаете часть здоровой плоти из [parse_zone(target_zone)] у [target]."),
+		span_notice("[user] срезает часть здоровой плоти из [parse_zone(target_zone)] у [target] при помощи [tool.name]!"),
+		span_notice("[user] срезает часть здоровой плоти из [parse_zone(target_zone)] у [target]!"),
 	)
 	surgery.operated_bodypart.receive_damage(brute=rand(4,8), sharpness=TRUE)
 
