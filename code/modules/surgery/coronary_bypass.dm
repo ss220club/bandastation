@@ -64,9 +64,9 @@
 		display_results(
 			user,
 			target,
-			span_warning("Вы облажались, совершив слишком глубокий надрез сердца!"),
-			span_warning("[user] облажался, в результате чего из груди [target_human] выплескивается кровь!"),
-			span_warning("[user] облажался, в результате чего из груди [target_human] выплескивается кровь!"),
+			span_warning("Вы ошибаетесь, совершив слишком глубокий надрез сердца!"),
+			span_warning("[user] ошибается, в результате чего из груди [target_human] выплескивается кровь!"),
+			span_warning("[user] ошибается, в результате чего из груди [target_human] выплескивается кровь!"),
 		)
 		var/obj/item/bodypart/target_bodypart = target_human.get_bodypart(target_zone)
 		target_bodypart.adjustBleedStacks(10)
@@ -117,9 +117,9 @@
 		display_results(
 			user,
 			target,
-			span_warning("Вы облажались при шунтирование сердца и повредили часть сердца!"),
-			span_warning("[user] облажался, в результате чего из груди [target_human] обильно хлещет кровь!"),
-			span_warning("[user] облажался, в результате чего из груди [target_human] обильно хлещет кровь!"),
+			span_warning("Вы ошибаетесь при шунтирование сердца и повредили часть сердца!"),
+			span_warning("[user] ошибается, в результате чего из груди [target_human] обильно хлещет кровь!"),
+			span_warning("[user] ошибается, в результате чего из груди [target_human] обильно хлещет кровь!"),
 		)
 		display_pain(target, "В груди все горит; вам кажется, что вы сходите с ума!")
 		target_human.adjustOrganLoss(ORGAN_SLOT_HEART, 20)

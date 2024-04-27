@@ -123,8 +123,8 @@
 	display_results(
 		user,
 		target,
-		span_warning("Вы облажались!"),
-		span_warning("[user] облажался!"),
+		span_warning("Вы ошибаетесь!"),
+		span_warning("[user] ошибается!"),
 		span_notice("[user] зашивает некоторые раны у [target]."),
 		target_detailed = TRUE,
 	)
@@ -348,8 +348,8 @@
 	display_results(
 		user,
 		target,
-		span_warning("Вы облажались!"),
-		span_warning("[user] облажался!"),
+		span_warning("Вы ошибаетесь!"),
+		span_warning("[user] ошибается!"),
 		span_notice("[user] обрабатывает некоторые раны у [target]."),
 		target_detailed = TRUE,
 	)

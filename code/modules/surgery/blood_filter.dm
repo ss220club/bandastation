@@ -84,8 +84,8 @@
 	display_results(
 		user,
 		target,
-		span_warning("Вы облажались, оставив ушиб на груди у [target]!"),
-		span_warning("[user] облажался, оставив ушиб на груди у [target]!"),
-		span_warning("[user] облажался!"),
+		span_warning("Вы ошибаетесь, оставив ушиб на груди у [target]!"),
+		span_warning("[user] ошибается, оставив ушиб на груди у [target]!"),
+		span_warning("[user] ошибается!"),
 	)
 	target.adjustBruteLoss(5)

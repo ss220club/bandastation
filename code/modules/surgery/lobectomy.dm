@@ -63,9 +63,9 @@
 		display_results(
 			user,
 			target,
-			span_warning("Вы облажались, не сумев вырезать поврежденную долю [human_target]'s!"),
-			span_warning("[user] облажался!"),
-			span_warning("[user] облажался!"),
+			span_warning("Вы ошибаетесь, не сумев вырезать поврежденную долю [human_target]'s!"),
+			span_warning("[user] ошибается!"),
+			span_warning("[user] ошибается!"),
 		)
 		display_pain(target, "Вы чувствуете резкий удар в грудь; последний вздох выбивает из вас все силы, и вам больно дышать!")
 		human_target.losebreath += 4
