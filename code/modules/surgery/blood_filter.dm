@@ -72,7 +72,7 @@
 		target,
 		span_notice("[tool.name] сигнализирует, что фильтрация крови у [target] завершена."),
 		span_notice("[tool.name] сигнализирует, что закончил перекачивать кровь у [target]."),
-		span_notice("[tool.name] сигнализирует, когда прекращает перекачивать кровь."),
+		span_notice("[tool.name] сигнализирует, что закончил перекачивать кровь."),
 	)
 
 	if(locate(/obj/item/healthanalyzer) in user.held_items)
