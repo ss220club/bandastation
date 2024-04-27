@@ -66,5 +66,5 @@
 		target.adjustOrganLoss(ORGAN_SLOT_BRAIN, 60)
 		target.gain_trauma_type(BRAIN_TRAUMA_SEVERE, TRAUMA_RESILIENCE_LOBOTOMY)
 	else
-		user.visible_message(span_warning("[user] внезапно замечает, что мозг [user.p_they()] [user.p_were()] над которым работали, более не здесь."), span_warning("Вы вдруг замечаете, что мозг, над которым вы работали, более не здесь."))
+		user.visible_message(span_warning("[user] внезапно замечает, что мозг над котором велась операция, более не здесь."), span_warning("Вы вдруг замечаете, что мозг, над которым вы работали, более не здесь."))
 	return FALSE
