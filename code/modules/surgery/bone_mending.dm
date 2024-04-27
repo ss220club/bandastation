@@ -64,7 +64,7 @@
 			span_notice("[user] приступает к устранению перелома [target]'s [parse_zone(user.zone_selected)] при помощи [tool]."),
 			span_notice("[user] приступает к устранению перелома [target]'s [parse_zone(user.zone_selected)]."),
 		)
-		display_pain(target, "Ваша [parse_zone(user.zone_selected)] испытывает сильную боль!")
+		display_pain(target, "Ваш [parse_zone(user.zone_selected)] испытывает сильную боль!")
 	else
 		user.visible_message(span_notice("[user] ищет у [target] в [parse_zone(user.zone_selected)]."), span_notice("Вы ищете у [target] в [parse_zone(user.zone_selected)]..."))
 

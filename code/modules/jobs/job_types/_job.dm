@@ -117,7 +117,7 @@
 	/// RPG job names, for the memes
 	var/rpg_title
 
-	/// Alternate titles to register as pointing to this job. 
+	/// Alternate titles to register as pointing to this job.
 	var/list/alternate_titles
 
 	/// Does this job ignore human authority?

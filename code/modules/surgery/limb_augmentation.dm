@@ -89,7 +89,7 @@
 			span_notice("[user] успешно заменил [target]'s [parse_zone(target_zone)] на [tool.name]!"),
 			span_notice("[user] успешно заменил [target]'s [parse_zone(target_zone)]!"),
 		)
-		display_pain(target, "Ваша [parse_zone(target_zone)] наполняется синтетическими ощущениями!", mechanical_surgery = TRUE)
+		display_pain(target, "Ваш [parse_zone(target_zone)] наполняется синтетическими ощущениями!", mechanical_surgery = TRUE)
 		log_combat(user, target, "проаугментирован", addition="дав ему новую [parse_zone(target_zone)] COMBAT MODE: [uppertext(user.combat_mode)]")
 	else
 		to_chat(user, span_warning("У [target] нет органической [parse_zone(target_zone)] здесь!"))
