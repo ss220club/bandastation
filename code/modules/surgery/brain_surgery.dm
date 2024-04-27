@@ -1,5 +1,5 @@
 /datum/surgery/brain_surgery
-	name = "Операция на мозг"
+	name = "Операция на мозге"
 	possible_locs = list(BODY_ZONE_HEAD)
 	requires_bodypart_type = NONE
 	steps = list(
