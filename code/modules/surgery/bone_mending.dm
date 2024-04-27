@@ -3,7 +3,7 @@
 
 ///// Repair Hairline Fracture (Severe)
 /datum/surgery/repair_bone_hairline
-	name = "Устранение перелома кости (закрытый)"
+	name = "Сращивание перелома (трещины) кости"
 	surgery_flags = SURGERY_REQUIRE_RESTING | SURGERY_REQUIRE_LIMB | SURGERY_REQUIRES_REAL_LIMB
 	targetable_wound = /datum/wound/blunt/bone/severe
 	possible_locs = list(
