@@ -34,7 +34,7 @@
 		span_notice("[user] начинает восстанавливать мозг у [target]."),
 		span_notice("[user] начинает проводить операцию на мозге у [target]."),
 	)
-	display_pain(target, "Голова раскалывается от невыразимой боли!")
+	display_pain(target, "Ваша голова раскалывается от невыразимой боли!")
 
 /datum/surgery_step/fix_brain/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
 	display_results(
