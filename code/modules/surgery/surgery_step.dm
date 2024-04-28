@@ -246,7 +246,7 @@
 /datum/surgery_step/proc/display_results(mob/user, mob/living/target, self_message, detailed_message, vague_message, target_detailed = FALSE)
 	user.visible_message(detailed_message, self_message, vision_distance = 1, ignored_mobs = target_detailed ? null : target)
 	if(!target_detailed)
-		var/you_feel = pick("легкая боль", "ваше тело напрягается", "тревожное ощущение")
+		var/you_feel = pick("легкую боль", ", как ваше тело напрягается", "тревожное ощущение")
 		if(!vague_message)
 			if(detailed_message)
 				stack_trace("DIDN'T GET PASSED A VAGUE MESSAGE.")
