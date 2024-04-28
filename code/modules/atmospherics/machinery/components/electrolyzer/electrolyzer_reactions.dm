@@ -42,9 +42,9 @@ GLOBAL_LIST_INIT(electrolyzer_reactions, electrolyzer_reactions_list())
 		/datum/gas/water_vapor = MINIMUM_MOLE_COUNT
 	)
 	factor = list(
-		/datum/gas/water_vapor = "2 moles of H2O get consumed",
-		/datum/gas/oxygen = "1 mole of O2 gets produced",
-		/datum/gas/hydrogen = "2 moles of H2 get produced",
+		/datum/gas/water_vapor = "2 моль H2O будет затрачено в ходе реакции",
+		/datum/gas/oxygen = "1 моль O2 будет образовано в ходе реакции",
+		/datum/gas/hydrogen = "2 моль H2 будет образовано в ходе реакции",
 		"Местонахождение" = "Может произойти только в месте с активным электролизером.",
 	)
 
@@ -69,8 +69,8 @@ GLOBAL_LIST_INIT(electrolyzer_reactions, electrolyzer_reactions_list())
 		"MAX_TEMP" = 150
 	)
 	factor = list(
-		/datum/gas/hypernoblium = "1 mole of Hypernoblium gets consumed",
-		/datum/gas/antinoblium = "0.5 moles of Antinoblium get produced",
+		/datum/gas/hypernoblium = "1 моль Гиперноблиума будет затрачено в ходе реакции",
+		/datum/gas/antinoblium = "0.5 моль Антиноблиума будет образовано в ходе реакции",
 		"Температура" = "Может произойти только при температуре ниже 150 Кельвинов..",
 		"Местонахождение" = "Может произойти только в месте с активным электролизером.",
 	)
@@ -94,9 +94,9 @@ GLOBAL_LIST_INIT(electrolyzer_reactions, electrolyzer_reactions_list())
 		/datum/gas/bz = MINIMUM_MOLE_COUNT,
 	)
 	factor = list(
-		/datum/gas/bz = "Consumed during reaction.",
-		/datum/gas/oxygen = "0.2 moles of oxygen gets produced per mole of BZ consumed.",
-		/datum/gas/halon = "2 moles of Halon gets produced per mole of BZ consumed.",
+		/datum/gas/bz = "Расходуется во время реакции.",
+		/datum/gas/oxygen = "На один моль потребленного БЗ образуется 0,2 моль кислорода.",
+		/datum/gas/halon = "На каждый моль потребленного BZ образуется 2 моль галона.",
 		"Энергия" = "91.2321 kJ тепловой энергии выделяется на моль потребленного BZ.",
 		"Температура" = "Эффективность реакции пропорциональна температуре.",
 		"Местонахождение" = "Может произойти только в месте с активным электролизером.",
