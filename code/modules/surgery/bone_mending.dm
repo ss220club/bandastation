@@ -125,9 +125,9 @@
 		display_results(
 			user,
 			target,
-			span_notice("Вы успешно восстанавили кость в [parse_zone(target_zone)] у [target]."),
-			span_notice("[user] успешно восстанавил кость в [parse_zone(target_zone)] у [target] при помощи [tool.name]!"),
-			span_notice("[user] успешно восстанавил кость в [parse_zone(target_zone)] у [target]!"),
+			span_notice("Вы успешно восстановили кость в [parse_zone(target_zone)] у [target]."),
+			span_notice("[user] успешно восстановил кость в [parse_zone(target_zone)] у [target] при помощи [tool.name]!"),
+			span_notice("[user] успешно восстановил кость в [parse_zone(target_zone)] у [target]!"),
 		)
 		log_combat(user, target, "успешно восстанавил кость в", addition="COMBAT MODE: [uppertext(user.combat_mode)]")
 	else
