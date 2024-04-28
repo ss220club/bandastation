@@ -144,7 +144,7 @@
 		span_notice("[user] начинает открывать держатели люка в [parse_zone(target_zone)] у [target]."),
 		span_notice("[user] начинает открывать держатели люка в [parse_zone(target_zone)] у [target]."),
 	)
-	display_pain(target, "Вы получаете последние показания датчиков из вашей [parse_zone(target_zone)], когда открывается люк.", TRUE)
+	display_pain(target, "Вы перестаёте получать показания датчиков из вашей [parse_zone(target_zone)], по мере того как открывается люк.", TRUE)
 
 /datum/surgery_step/open_hatch/tool_check(mob/user, obj/item/tool)
 	if(tool.usesound)
