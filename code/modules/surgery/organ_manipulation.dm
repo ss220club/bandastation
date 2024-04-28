@@ -182,9 +182,9 @@
 		display_results(
 			user,
 			target,
-			span_notice("Вы вставляете [tool.name] в [target] [parse_zone(target_zone)]..."),
-			span_notice("[user] вставляет [tool.name] в [target] [parse_zone(target_zone)]."),
-			span_notice("[user] вставляет что-то в [target]'[parse_zone(target_zone)]."),
+			span_notice("Вы вставляете [tool.name] в [parse_zone(target_zone)] у [target]..."),
+			span_notice("[user] вставляет [tool.name] в [parse_zone(target_zone)] у [target]."),
+			span_notice("[user] вставляет что-то в [parse_zone(target_zone)] у [target]."),
 		)
 		display_pain(target, "Вы чувствуете, как что-то вставили в вашу [parse_zone(target_zone)]!")
 
@@ -199,7 +199,7 @@
 		if (target_zone == BODY_ZONE_PRECISE_EYES)
 			target_zone = check_zone(target_zone)
 		if(!length(organs))
-			to_chat(user, span_warning("Здесь нет органов, которые можно удалить у [target] [parse_zone(target_zone)]!"))
+			to_chat(user, span_warning("В [parse_zone(target_zone)] нет органов, которые можно удалить у [target]!"))
 			return SURGERY_STEP_FAIL
 		else
 			for(var/obj/item/organ/organ in organs)
@@ -221,9 +221,9 @@
 				display_results(
 					user,
 					target,
-					span_notice("Вы начинаете извлекать [target_organ] из [target] [parse_zone(target_zone)]..."),
-					span_notice("[user] начинает извлекать [target_organ] из [target] [parse_zone(target_zone)]."),
-					span_notice("[user] начинает извлекать что-то из [target] [parse_zone(target_zone)]."),
+					span_notice("Вы начинаете извлекать [target_organ] из [parse_zone(target_zone)] у [target]..."),
+					span_notice("[user] начинает извлекать [target_organ] из [parse_zone(target_zone)] у [target]."),
+					span_notice("[user] начинает извлекать что-то из [parse_zone(target_zone)] у [target]."),
 				)
 				display_pain(target, "Вы чувствуете, как [target_organ.name] извлекли из вашей [parse_zone(target_zone)]!")
 			else
@@ -247,9 +247,9 @@
 			display_results(
 				user,
 				target,
-				span_notice("Вы установили [tool.name] в [target] [parse_zone(target_zone)]."),
-				span_notice("[user] установил [tool] в [target] [parse_zone(target_zone)]!"),
-				span_notice("[user] установил что-то в [target] [parse_zone(target_zone)]!"),
+				span_notice("Вы установили [tool.name] в [parse_zone(target_zone)] у [target]."),
+				span_notice("[user] установил [tool.name] в [parse_zone(target_zone)] у [target]!"),
+				span_notice("[user] установил что-то в [parse_zone(target_zone)] у [target]!"),
 			)
 			display_pain(target, "Ваш [parse_zone(target_zone)] болит, пока [tool.name] приживается к телу!")
 			target_organ.on_surgical_insertion(user, target, target_zone, tool)
@@ -261,9 +261,9 @@
 			display_results(
 				user,
 				target,
-				span_notice("Вы успешно извлекате [target_organ] из [target] [parse_zone(target_zone)]."),
-				span_notice("[user] успешно извлек [target_organ] из [target] [parse_zone(target_zone)]!"),
-				span_notice("[user] успешно извлек что-то из [target] [parse_zone(target_zone)]!"),
+				span_notice("Вы успешно извлекате [target_organ] из [parse_zone(target_zone)] у [target]."),
+				span_notice("[user] успешно извлек [target_organ] из [parse_zone(target_zone)] у [target]!"),
+				span_notice("[user] успешно извлек что-то из [parse_zone(target_zone)] у [target]!"),
 			)
 			display_pain(target, "Ваш [parse_zone(target_zone)] болит, вы больше не чувствуете [target_organ.name]!")
 			log_combat(user, target, "хирургически удалил [target_organ.name] из", addition="COMBAT MODE: [uppertext(user.combat_mode)]")
@@ -274,9 +274,9 @@
 			display_results(
 				user,
 				target,
-				span_warning("Вы не можете ничего извлечь из [target] [parse_zone(target_zone)]!"),
-				span_notice("[user] похоже не может ничего извлечь из [target] [parse_zone(target_zone)]!"),
-				span_notice("[user] похоже не может ничего извлечь из [target] [parse_zone(target_zone)]!"),
+				span_warning("Вы не можете ничего извлечь из [parse_zone(target_zone)] у [target]!"),
+				span_notice("[user] похоже не может ничего извлечь из [parse_zone(target_zone)] у [target]!"),
+				span_notice("[user] похоже не может ничего извлечь из [parse_zone(target_zone)] у [target]!"),
 			)
 	if(HAS_MIND_TRAIT(user, TRAIT_MORBID) && ishuman(user))
 		var/mob/living/carbon/human/morbid_weirdo = user

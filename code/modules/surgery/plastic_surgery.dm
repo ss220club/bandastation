@@ -42,9 +42,9 @@
 	display_results(
 		user,
 		target,
-		span_notice("Вы начинаете вставлять [tool.name] в разрез на [parse_zone(target_zone)] у [target] ..."),
-		span_notice("[user] начинает вставлять [tool.name] в разрез на [parse_zone(target_zone)] у [target]]."),
-		span_notice("[user] начинает вставлять [tool.name] в разрез на [parse_zone(target_zone)] у [target]]."),
+		span_notice("Вы начинаете вставлять [tool.name] в разрезе на [parse_zone(target_zone)] у [target] ..."),
+		span_notice("[user] начинает вставлять [tool.name] в разрезе на [parse_zone(target_zone)] у [target]]."),
+		span_notice("[user] начинает вставлять [tool.name] в разрезе на [parse_zone(target_zone)] у [target]]."),
 	)
 	display_pain(target, "Вы чувствуете, как что-то вставили вам под кожу в [parse_zone(target_zone)].")
 
@@ -108,8 +108,8 @@
 		display_results(
 			user,
 			target,
-			span_notice("Вы полностью изменили внешность [oldname], [target.p_they()] теперь это [newname]."),
-			span_notice("[user] полностью изменил внешность [oldname], [target.p_they()] теперь это [newname]!"),
+			span_notice("Вы полностью изменили внешность у [oldname], [target.p_they()] теперь это [newname]."),
+			span_notice("[user] полностью изменил внешность у [oldname], [target.p_they()] теперь это [newname]!"),
 			span_notice("[user] заканчивает проводить операцию на лице у [target]."),
 		)
 		display_pain(target, "Боль проходит, а ваше лицо кажется новым и непривычным!")

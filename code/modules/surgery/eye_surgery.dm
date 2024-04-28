@@ -27,21 +27,21 @@
 	display_results(
 		user,
 		target,
-		span_notice("Вы начинаете лечить глаза [target]..."),
-		span_notice("[user] начинает лечить глаза [target]."),
-		span_notice("[user] начинает проводить операцию на глазах [target]."),
+		span_notice("Вы начинаете лечить глаза у [target]..."),
+		span_notice("[user] начинает лечить глаза у [target]."),
+		span_notice("[user] начинает проводить операцию на глазах у [target]."),
 	)
 	display_pain(target, "Вы чувствуете колющую боль в глазах!")
 
 /datum/surgery_step/fix_eyes/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
 	var/obj/item/organ/internal/eyes/target_eyes = target.get_organ_slot(ORGAN_SLOT_EYES)
-	user.visible_message(span_notice("[user] успешно вылечил глаза [target]!"), span_notice("Вы успешно вылечили глаза [target]."))
+	user.visible_message(span_notice("[user] успешно вылечил глаза у [target]!"), span_notice("Вы успешно вылечили глаза у [target]."))
 	display_results(
 		user,
 		target,
-		span_notice("Вы успешно вылечили глаза [target]."),
-		span_notice("[user] успешно вылечил глаза [target]!"),
-		span_notice("[user] завершает операцию на глазах [target]."),
+		span_notice("Вы успешно вылечили глаза у [target]."),
+		span_notice("[user] успешно вылечил глаза у [target]!"),
+		span_notice("[user] завершает операцию на глазах у [target]."),
 	)
 	display_pain(target, "Ваше зрение размыто, но кажется, что теперь вы видите немного лучше!")
 	target.remove_status_effect(/datum/status_effect/temporary_blindness)
@@ -54,9 +54,9 @@
 		display_results(
 			user,
 			target,
-			span_warning("Вы отвлеклись, случайно задев мозг [target]!"),
-			span_warning("[user] отвлеклся, случайно задев мозг [target]!"),
-			span_warning("[user] отвлеклся, случайно задев мозг [target]!"),
+			span_warning("Вы отвлеклись, случайно задев мозг у [target]!"),
+			span_warning("[user] отвлеклся, случайно задев мозг у [target]!"),
+			span_warning("[user] отвлеклся, случайно задев мозг у [target]!"),
 		)
 		display_pain(target, "Вы чувствуете сильную колющую боль в голове, прямо в мозгу!")
 		target.adjustOrganLoss(ORGAN_SLOT_BRAIN, 70)
@@ -64,9 +64,9 @@
 		display_results(
 			user,
 			target,
-			span_warning("Вы отвлеклись, случайно задев мозг [target]! Либо, задели бы его, был бы у [target] мозг."),
-			span_warning("[user] отвлеклся, случайно задев мозг [target]! Либо, задел бы его, был бы у [target] мозг."),
-			span_warning("[user] отвлеклся, случайно задев мозг [target]!"),
+			span_warning("Вы отвлеклись, случайно задев мозг у [target]! Либо, задели бы его, был бы у [target] мозг."),
+			span_warning("[user] отвлеклся, случайно задев мозг у [target]! Либо, задел бы его, был бы у [target] мозг."),
+			span_warning("[user] отвлеклся, случайно задев мозг у [target]!"),
 		)
 		display_pain(target, "Вы чувствуете сильную колющую боль в голове!") // dunno who can feel pain w/o a brain but may as well be consistent.
 	return FALSE

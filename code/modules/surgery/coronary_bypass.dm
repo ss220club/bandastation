@@ -49,9 +49,9 @@
 			display_results(
 				user,
 				target,
-				span_notice("Вокруг сердца [target_human] образуется лужа крови."),
-				span_notice("Вокруг сердца [target_human] образуется лужа крови."),
-				span_notice("Вокруг сердца [target_human] образуется лужа крови."),
+				span_notice("Вокруг сердца у [target_human] образуется лужа крови."),
+				span_notice("Вокруг сердца у [target_human] образуется лужа крови."),
+				span_notice("Вокруг сердца у [target_human] образуется лужа крови."),
 			)
 			var/obj/item/bodypart/target_bodypart = target_human.get_bodypart(target_zone)
 			target_bodypart.adjustBleedStacks(10)

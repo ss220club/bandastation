@@ -15,9 +15,9 @@
 	display_results(
 		user,
 		target,
-		span_notice("Вы начинаете вставлять [tool.name] в [target] [parse_zone(target_zone)]..."),
-		span_notice("[user] начинает вставлять [tool.name] в [target] [parse_zone(target_zone)]."),
-		span_notice("[user] начинает вставлять что-то в [target] [parse_zone(target_zone)]."),
+		span_notice("Вы начинаете вставлять [tool.name] в [parse_zone(target_zone)] у [target]..."),
+		span_notice("[user] начинает вставлять [tool.name] в [parse_zone(target_zone)] у [target]."),
+		span_notice("[user] начинает вставлять что-то в [parse_zone(target_zone)] у [target]."),
 	)
 	display_pain(target, "Что-то засовывают вам в [parse_zone(target_zone)]!")
 
@@ -36,9 +36,9 @@
 	display_results(
 		user,
 		target,
-		span_notice("Вы вставили [tool.name] в [target] [parse_zone(target_zone)]."),
-		span_notice("[user] вставил [tool.name] в [target] [parse_zone(target_zone)]!"),
-		span_notice("[user] вставил что-то в [target] [parse_zone(target_zone)]!"),
+		span_notice("Вы вставили [tool.name] в [parse_zone(target_zone)] у [target]."),
+		span_notice("[user] вставил [tool.name] в [parse_zone(target_zone)] у [target]!"),
+		span_notice("[user] вставил что-то в [parse_zone(target_zone)] у [target]!"),
 	)
 	return ..()
 

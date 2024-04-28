@@ -60,9 +60,9 @@
 		display_results(
 			user,
 			target,
-			span_notice("Вы приступаете к устранению перелома [target] [parse_zone(user.zone_selected)]..."),
-			span_notice("[user] приступает к устранению перелома [target] [parse_zone(user.zone_selected)] при помощи [tool.name]."),
-			span_notice("[user] приступает к устранению перелома [target] [parse_zone(user.zone_selected)]."),
+			span_notice("Вы приступаете к устранению перелома в [parse_zone(user.zone_selected)] у [target]..."),
+			span_notice("[user] приступает к устранению перелома в [parse_zone(user.zone_selected)] у [target] при помощи [tool.name]."),
+			span_notice("[user] приступает к устранению перелома в [parse_zone(user.zone_selected)] у [target]."),
 		)
 		display_pain(target, "Ваш [parse_zone(user.zone_selected)] испытывает сильную боль!")
 	else
@@ -76,9 +76,9 @@
 		display_results(
 			user,
 			target,
-			span_notice("Вы успешно устранили перелом [parse_zone(target_zone)] у [target]."),
-			span_notice("[user] успешно устранил перелом [parse_zone(target_zone)] у [target] при помощи [tool]!"),
-			span_notice("[user] успешно устранил перелом [parse_zone(target_zone)] у [target]!"),
+			span_notice("Вы успешно устранили перелом в [parse_zone(target_zone)] у [target]."),
+			span_notice("[user] успешно устранил перелом в [parse_zone(target_zone)] у [target] при помощи [tool]!"),
+			span_notice("[user] успешно устранил перелом в [parse_zone(target_zone)] у [target]!"),
 		)
 		log_combat(user, target, "успешно устранил закрытый перелом в", addition="COMBAT_MODE: [uppertext(user.combat_mode)]")
 		qdel(surgery.operated_wound)
@@ -236,9 +236,9 @@
 	display_results(
 		user,
 		target,
-		span_notice("Вы приступаете к восстановлению черепа [target], как только можете..."),
-		span_notice("[user] приступает к восстановлению черепа [target] при помощи [tool]."),
-		span_notice("[user] приступает к восстановлению черепа [target]."),
+		span_notice("Вы приступаете к восстановлению черепа у [target], как только можете..."),
+		span_notice("[user] приступает к восстановлению черепа у [target] при помощи [tool.name]."),
+		span_notice("[user] приступает к восстановлению черепа у [target]."),
 	)
 
 	display_pain(target, "Вы чувствуете, как части черепа трутся о ваш мозг.!")
@@ -257,7 +257,7 @@
 		user,
 		target,
 		span_notice("Вы успешно восстановили череп у [target]."),
-		span_notice("[user] успешно восстановил череп у [target] при помощи [tool]."),
+		span_notice("[user] успешно восстановил череп у [target] при помощи [tool.name]."),
 		span_notice("[user] успешно восстановил череп у [target].")
 	)
 

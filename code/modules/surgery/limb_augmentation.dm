@@ -37,7 +37,7 @@
 		)
 		display_pain(target, "Вы чувствуете ужасную боль в [parse_zone(user.zone_selected)]!")
 	else
-		user.visible_message(span_notice("[user] ищет у [target] в [parse_zone(user.zone_selected)]."), span_notice("Вы ищите у [target] в [parse_zone(user.zone_selected)]..."))
+		user.visible_message(span_notice("[user] ищет у [target] в [parse_zone(user.zone_selected)]."), span_notice("Вы ищете у [target] в [parse_zone(user.zone_selected)]..."))
 
 
 //ACTUAL SURGERIES

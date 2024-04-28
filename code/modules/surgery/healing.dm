@@ -67,9 +67,9 @@
 			display_results(
 				user,
 				target,
-				span_notice("Вы пытаетесь наложить швы на [target] [woundtype]."),
-				span_notice("[user] пытается наложить швы на [target] [woundtype]."),
-				span_notice("[user] пытается наложить швы на [target] [woundtype]."),
+				span_notice("Вы пытаетесь наложить швы на [woundtype] у [target]."),
+				span_notice("[user] пытается наложить швы на [woundtype] у [target]."),
+				span_notice("[user] пытается наложить швы на [woundtype] у [target]."),
 			)
 		display_pain(target, "Ваша [woundtype] чертовски болит!")
 

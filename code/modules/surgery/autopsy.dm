@@ -30,7 +30,7 @@
 		target,
 		span_notice("Вы приступаете к вскрытию [target]..."),
 		span_notice("[user] использует [tool.name] для вскрытия [target]."),
-		span_notice("[user] использует [tool.name] на груди [target]."),
+		span_notice("[user] использует [tool.name] на груди у [target]."),
 	)
 	display_pain(target, "Вы чувствуете жжение в груди!")
 
@@ -51,8 +51,8 @@
 	display_results(
 		user,
 		target,
-		span_warning("Вы ошибаетесь, оставив ушиб на груди [target]!"),
-		span_warning("[user] ошибается, оставив ушиб на груди [target]!"),
+		span_warning("Вы ошибаетесь, оставив ушиб на груди у [target]!"),
+		span_warning("[user] ошибается, оставив ушиб на груди у [target]!"),
 		span_warning("[user] ошибается!"),
 	)
 	target.adjustBruteLoss(5)

@@ -16,9 +16,9 @@
 	display_results(
 		user,
 		target,
-		span_notice("Вы начинаете делать надрез у [target] в [parse_zone(target_zone)]..."),
-		span_notice("[user] начинает делать надрез у [target] в [parse_zone(target_zone)]."),
-		span_notice("[user] начинает делать надрез у [target] в [parse_zone(target_zone)]."),
+		span_notice("Вы начинаете делать надрез в [parse_zone(target_zone)] у [target]..."),
+		span_notice("[user] начинает делать надрез в [parse_zone(target_zone)] у [target]."),
+		span_notice("[user] начинает делать надрез в [parse_zone(target_zone)] у [target]."),
 	)
 	display_pain(target, "Вы чувствуете колющую боль в [parse_zone(target_zone)].")
 
@@ -35,9 +35,9 @@
 			display_results(
 				user,
 				target,
-				span_notice("Вокруг [parse_zone(target_zone)] [human_target] образуется лужа крови."),
-				span_notice("Вокруг [parse_zone(target_zone)] [human_target] образуется лужа крови."),
-				span_notice("Вокруг [parse_zone(target_zone)] [human_target] образуется лужа крови."),
+				span_notice("Вокруг [parse_zone(target_zone)] у [human_target] образуется лужа крови."),
+				span_notice("Вокруг [parse_zone(target_zone)] у [human_target] образуется лужа крови."),
+				span_notice("Вокруг [parse_zone(target_zone)] у [human_target] образуется лужа крови."),
 			)
 			var/obj/item/bodypart/target_bodypart = target.get_bodypart(target_zone)
 			if(target_bodypart)
@@ -48,9 +48,9 @@
 	display_results(
 		user,
 		target,
-		span_notice("Вы начинаете <i>осторожно</i> делать надрез у [target] в [parse_zone(target_zone)]..."),
-		span_notice("[user] начинает <i>осторожно</i> делать надрез у [target] в [parse_zone(target_zone)]."),
-		span_notice("[user] начинает <i>осторожно</i> делать надрез у [target] в [parse_zone(target_zone)]."),
+		span_notice("Вы начинаете <i>осторожно</i> делать надрез в [parse_zone(target_zone)] у [target]..."),
+		span_notice("[user] начинает <i>осторожно</i> делать надрез в [parse_zone(target_zone)] у [target]."),
+		span_notice("[user] начинает <i>осторожно</i> делать надрез в [parse_zone(target_zone)] у [target]."),
 	)
 	display_pain(target, "Вы чувствуете, как <i>осторожный</i> колющий удар в [parse_zone(target_zone)].")
 
@@ -69,9 +69,9 @@
 	display_results(
 		user,
 		target,
-		span_notice("Вы начинаете зажимать кровеносные сосуды у [target] в [parse_zone(target_zone)]..."),
-		span_notice("[user] начинает зажимать кровеносные сосуды у [target] в [parse_zone(target_zone)]."),
-		span_notice("[user] начинает зажимать кровеносные сосуды у [target] в [parse_zone(target_zone)]."),
+		span_notice("Вы начинаете зажимать кровеносные сосуды в [parse_zone(target_zone)] у [target]..."),
+		span_notice("[user] начинает зажимать кровеносные сосуды в [parse_zone(target_zone)] у [target]."),
+		span_notice("[user] начинает зажимать кровеносные сосуды в [parse_zone(target_zone)] у [target]."),
 	)
 	display_pain(target, "Вы чувствуете укол, послче чего кровотечение в вашей [parse_zone(target_zone)] замедляется.")
 
@@ -101,9 +101,9 @@
 	display_results(
 		user,
 		target,
-		span_notice("Вы начинаете раздвигать кожу у [target] в [parse_zone(target_zone)]..."),
-		span_notice("[user] начинаете раздвигать кожу у [target] в [parse_zone(target_zone)]."),
-		span_notice("[user] начинаете раздвигать кожу у [target] в [parse_zone(target_zone)]."),
+		span_notice("Вы начинаете раздвигать кожу в [parse_zone(target_zone)] у [target]..."),
+		span_notice("[user] начинаете раздвигать кожу в [parse_zone(target_zone)] у [target]."),
+		span_notice("[user] начинаете раздвигать кожу в [parse_zone(target_zone)] у [target]."),
 	)
 	display_pain(target, "Вы чувствуете сильную жгучую боль, распространяющуюся по всей [parse_zone(target_zone)], по мере того, как кожа возвращается в прежнее состояние!")
 
@@ -123,9 +123,9 @@
 	display_results(
 		user,
 		target,
-		span_notice("Вы начинаете обрабатывать разрез у [target] в [parse_zone(target_zone)]..."),
-		span_notice("[user] начинает обрабатывать разрез у [target] в [parse_zone(target_zone)]."),
-		span_notice("[user] начинает обрабатывать разрез у [target] в [parse_zone(target_zone)]."),
+		span_notice("Вы начинаете обрабатывать разрез в [parse_zone(target_zone)] у [target]..."),
+		span_notice("[user] начинает обрабатывать разрез в [parse_zone(target_zone)] у [target]."),
+		span_notice("[user] начинает обрабатывать разрез в [parse_zone(target_zone)] у [target]."),
 	)
 	display_pain(target, "Ваш [parse_zone(target_zone)] прижигается!")
 
@@ -173,9 +173,9 @@
 	display_results(
 		user,
 		target,
-		span_notice("Вы начинаете распиливать кость у [target] в [parse_zone(target_zone)]..."),
-		span_notice("[user] начинает распиливать кость у [target] в [parse_zone(target_zone)]."),
-		span_notice("[user] начинает распиливать кость у [target] в [parse_zone(target_zone)]."),
+		span_notice("Вы начинаете распиливать кость в [parse_zone(target_zone)] у [target]..."),
+		span_notice("[user] начинает распиливать кость в [parse_zone(target_zone)] у [target]."),
+		span_notice("[user] начинает распиливать кость в [parse_zone(target_zone)] у [target]."),
 	)
 	display_pain(target, "Вы чувствуете ужасную боль внутри [parse_zone(target_zone)]!")
 
@@ -211,9 +211,9 @@
 	display_results(
 		user,
 		target,
-		span_notice("Вы начинаете сверлить прямо в кости у [target] в [parse_zone(target_zone)]..."),
-		span_notice("[user] начинает сверлить прямо в кости у [target] в [parse_zone(target_zone)]."),
-		span_notice("[user] начинает сверлить прямо в кости у [target] в [parse_zone(target_zone)]."),
+		span_notice("Вы начинаете сверлить прямо в кости в [parse_zone(target_zone)] у [target]..."),
+		span_notice("[user] начинает сверлить прямо в кости в [parse_zone(target_zone)] у [target]."),
+		span_notice("[user] начинает сверлить прямо в кости в [parse_zone(target_zone)] у [target]."),
 	)
 	display_pain(target, "Вы чувствуете ужасную пронзительную боль в [parse_zone(target_zone)]!")
 

@@ -32,33 +32,33 @@
 		display_results(
 			user,
 			target,
-			span_notice("Вы начинаете вставлять [tool.name] в [target]'s [target_zone]..."),
-			span_notice("[user] начинает вставлять [tool.name] в [target]'s [target_zone]."),
-			span_notice("[user] начинает вставлять [tool.w_class > WEIGHT_CLASS_SMALL ? tool : "что-то"] в [target]'s [target_zone]."),
+			span_notice("Вы начинаете вставлять [tool.name] в [target_zone] у [target]..."),
+			span_notice("[user] начинает вставлять [tool.name] в [target_zone] у [target]."),
+			span_notice("[user] начинает вставлять [tool.w_class > WEIGHT_CLASS_SMALL ? tool : "что-то"] в [target_zone] у [target]."),
 		)
 		display_pain(target, "Вы чувствуете, как что-то вставляют в ваш [target_zone], это чертовски больно!")
 	else
 		display_results(
 			user,
 			target,
-			span_notice("Вы проверяете на наличие предметов в [target]'s [target_zone]..."),
-			span_notice("[user] проверяет на наличие предметов в [target]'s [target_zone]."),
-			span_notice("[user] ищет что-то в [target] [target_zone]."),
+			span_notice("Вы проверяете на наличие предметов в [target_zone] у [target]..."),
+			span_notice("[user] проверяет на наличие предметов в [target_zone] у [target]."),
+			span_notice("[user] ищет что-то в [target_zone] [target]."),
 		)
 
 /datum/surgery_step/handle_cavity/success(mob/user, mob/living/carbon/human/target, target_zone, obj/item/tool, datum/surgery/surgery = FALSE)
 	var/obj/item/bodypart/chest/target_chest = target.get_bodypart(BODY_ZONE_CHEST)
 	if(tool)
 		if(item_for_cavity || tool.w_class > WEIGHT_CLASS_NORMAL || HAS_TRAIT(tool, TRAIT_NODROP) || isorgan(tool))
-			to_chat(user, span_warning("Кажется, вы не можете поместить [tool.name] в [target] [target_zone]!"))
+			to_chat(user, span_warning("Кажется, вы не можете поместить [tool.name] в [target_zone] у [target]!"))
 			return FALSE
 		else
 			display_results(
 				user,
 				target,
-				span_notice("Вы помещаете [tool.name] в [target] [target_zone]."),
-				span_notice("[user] помещает [tool.name] в [target] [target_zone]!"),
-				span_notice("[user] помещает [tool.w_class > WEIGHT_CLASS_SMALL ? tool : "что-то"] в [target] [target_zone]."),
+				span_notice("Вы помещаете [tool.name] в [target_zone] у [target]."),
+				span_notice("[user] помещает [tool.name] в [target_zone] у [target]!"),
+				span_notice("[user] помещает [tool.w_class > WEIGHT_CLASS_SMALL ? tool : "что-то"] в [target_zone] у [target]."),
 			)
 			user.transferItemToLoc(tool, target, TRUE)
 			target_chest.cavity_item = tool
@@ -68,9 +68,9 @@
 			display_results(
 				user,
 				target,
-				span_notice("Вы вытягиваете [item_for_cavity] из [target] [target_zone]."),
-				span_notice("[user] вытягивает [item_for_cavity] из [target] [target_zone]!"),
-				span_notice("[user] вытягивает [item_for_cavity.w_class > WEIGHT_CLASS_SMALL ? item_for_cavity : "что-то"] из [target] [target_zone]."),
+				span_notice("Вы вытягиваете [item_for_cavity] из [target_zone] у [target]."),
+				span_notice("[user] вытягивает [item_for_cavity] из [target_zone] у [target]!"),
+				span_notice("[user] вытягивает [item_for_cavity.w_class > WEIGHT_CLASS_SMALL ? item_for_cavity : "что-то"] из [target_zone] у [target]."),
 			)
 			display_pain(target, "Что-то вытащили из вашего [target_zone]! это чертовски больно!")
 			user.put_in_hands(item_for_cavity)

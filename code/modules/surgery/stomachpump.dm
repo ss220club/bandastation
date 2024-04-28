@@ -1,5 +1,5 @@
 /datum/surgery/stomach_pump
-	name = "Stomach Pump"
+	name = "Очистка желудка"
 	possible_locs = list(BODY_ZONE_CHEST)
 	steps = list(
 		/datum/surgery_step/incise,
@@ -30,8 +30,8 @@
 	display_results(
 		user,
 		target,
-		span_notice("Вы начинаете промывать желудок [target]..."),
-		span_notice("[user] начинает промывать желудок [target]."),
+		span_notice("Вы начинаете промывать желудок у [target]..."),
+		span_notice("[user] начинает промывать желудок у [target]."),
 		span_notice("[user] начинает нажимать на грудь [target]."),
 	)
 	display_pain(target, "Вы чувствуете жуткое бурление в желудке! Вас сейчас вырвет!")
