@@ -184,7 +184,7 @@
 	var/screwedmessage = ""
 	switch(fail_prob)
 		if(0 to 24)
-			screwedmessage = " У вас почти получилось."
+			screwedmessage = "А ведь у вас почти получилось."
 		if(50 to 74)//25 to 49 = no extra text
 			screwedmessage = " В таких условиях трудно сделать все правильно...."
 		if(75 to 99)
