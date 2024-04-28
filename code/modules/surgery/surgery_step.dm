@@ -253,8 +253,8 @@
 				vague_message = detailed_message
 			else
 				stack_trace("NO MESSAGES TO SEND TO TARGET!")
-				vague_message = span_notice("Вы чувствуете [you_feel], как вас оперируют.")
-		target.show_message(vague_message, MSG_VISUAL, span_notice("Вы чувствуете [you_feel], как вас оперируют."))
+				vague_message = span_notice("Вы чувствуете [you_feel], по мере того как вас оперируют.")
+		target.show_message(vague_message, MSG_VISUAL, span_notice("Вы чувствуете [you_feel], по мере того как вас оперируют."))
 /**
  * Sends a pain message to the target, including a chance of screaming.
  *
