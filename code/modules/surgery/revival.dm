@@ -101,7 +101,7 @@
 		on_revived(user, target)
 		return TRUE
 
-	target.visible_message(span_warning("...[target.p_they()] бьется в конвульсиях [target.p_s()], то замирает."))
+	target.visible_message(span_warning("...[target.p_they()] бьется в конвульсиях [target.p_s()], после чего замирает."))
 	return FALSE
 
 /// Called when you have been successfully raised from the dead
