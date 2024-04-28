@@ -75,7 +75,7 @@
 	rarity = 900
 	purchaseable = TRUE
 	base_value = 0.2
-	desc = "The gas most life forms need to be able to survive. Also an oxidizer."
+	desc = "Газ, необходимый большинству форм жизни для выживания. Также является окислителем."
 	primary_color = "#0000ff"
 
 /datum/gas/nitrogen
@@ -85,7 +85,7 @@
 	rarity = 1000
 	purchaseable = TRUE
 	base_value = 0.1
-	desc = "A very common gas that used to pad artifical atmospheres to habitable pressure."
+	desc = "Широко распространенный газ, который используют для создания искусственной атмосферы до пригодного для жизни давления."
 	primary_color = "#ffff00"
 
 /datum/gas/carbon_dioxide //what the fuck is this?
@@ -96,7 +96,7 @@
 	rarity = 700
 	purchaseable = TRUE
 	base_value = 0.2
-	desc = "What the fuck is carbon dioxide?"
+	desc = "Что за хрень такое углекислый газ?"
 	primary_color = COLOR_GRAY
 
 /datum/gas/plasma
@@ -108,7 +108,7 @@
 	dangerous = TRUE
 	rarity = 800
 	base_value = 1.5
-	desc = "A flammable gas with many other curious properties. It's research is one of NT's primary objective."
+	desc = "Горючий газ со многими другими любопытными свойствами. Его исследование является одной из основных задач NT."
 	primary_color = "#ffc0cb"
 
 /datum/gas/water_vapor
@@ -121,7 +121,7 @@
 	rarity = 500
 	purchaseable = TRUE
 	base_value = 0.5
-	desc = "Water, in gas form. Makes things slippery."
+	desc = "Вода в газообразном состоянии. Делает вещи скользкими."
 	primary_color = "#b0c4de"
 
 /datum/gas/hypernoblium
@@ -133,7 +133,7 @@
 	fusion_power = 10
 	rarity = 50
 	base_value = 2.5
-	desc = "The most noble gas of them all. High quantities of hyper-noblium actively prevents reactions from occuring."
+	desc = "Самый благородный газ из всех. Большое количество гиперноблиума активно предотвращает возникновение реакций.."
 	primary_color = COLOR_TEAL
 
 /datum/gas/nitrous_oxide
@@ -147,7 +147,7 @@
 	rarity = 600
 	purchaseable = TRUE
 	base_value = 1.5
-	desc = "Causes drowsiness, euphoria, and eventually unconsciousness."
+	desc = "Вызывает сонливость, эйфорию и, в конечном итоге, потерю сознания."
 	primary_color = "#ffe4c4"
 
 /datum/gas/nitrium
@@ -160,7 +160,7 @@
 	dangerous = TRUE
 	rarity = 1
 	base_value = 6
-	desc = "An experimental performance enhancing gas. Nitrium can have amplified effects as more of it gets into your bloodstream."
+	desc = "Экспериментальный газ, повышающий производительность живого существа. Эффект нитрия может усиливаться по мере того, как больше его попадает в кровоток."
 	primary_color = "#a52a2a"
 
 /datum/gas/tritium
@@ -173,7 +173,7 @@
 	fusion_power = 5
 	rarity = 300
 	base_value = 2.5
-	desc = "A highly flammable and radioctive gas."
+	desc = "Легковоспламеняющийся и радиоактивный газ."
 	primary_color = "#32cd32"
 
 /datum/gas/bz
@@ -185,7 +185,7 @@
 	rarity = 400
 	purchaseable = TRUE
 	base_value = 1.5
-	desc = "A powerful hallucinogenic nerve agent able to induce cognitive damage."
+	desc = "Мощный галлюциногенный агент нервно-паралитического действия, способный вызывать когнитивные нарушения вашего мозга."
 	primary_color = "#9370db"
 
 /datum/gas/pluoxium
@@ -195,7 +195,7 @@
 	fusion_power = -10
 	rarity = 200
 	base_value = 2.5
-	desc = "A gas that could supply even more oxygen to the bloodstream when inhaled, without being an oxidizer."
+	desc = "Газ, который при вдыхании может связывать в крови еще больше кислорода. При этом не является окислителем."
 	primary_color = "#7b68ee"
 
 /datum/gas/miasma
@@ -207,7 +207,7 @@
 	moles_visible = MOLES_GAS_VISIBLE * 60
 	rarity = 250
 	base_value = 1
-	desc = "Not necessarily a gas, miasma refers to biological pollutants found in the atmosphere."
+	desc = "Это не обязательно газ, миазмы относятся к биологическим загрязнителям, обнаруженным в атмосфере."
 	primary_color = COLOR_OLIVE
 
 /datum/gas/freon
@@ -220,7 +220,7 @@
 	fusion_power = -5
 	rarity = 10
 	base_value = 5
-	desc = "A coolant gas. Mainly used for it's endothermic reaction with oxygen."
+	desc = "Газ являющийся хладогентом. В основном используется в эндотермической реакции с кислородом."
 	primary_color = "#afeeee"
 
 /datum/gas/hydrogen
@@ -231,7 +231,7 @@
 	fusion_power = 2
 	rarity = 600
 	base_value = 1
-	desc = "A highly flammable gas."
+	desc = "Легковоспламеняющийся газ."
 	primary_color = "#ffffff"
 
 /datum/gas/healium
@@ -243,7 +243,7 @@
 	moles_visible = MOLES_GAS_VISIBLE
 	rarity = 300
 	base_value = 5.5
-	desc = "Causes deep, regenerative sleep."
+	desc = "Вызывает глубокий и восстанавливающий сон."
 	primary_color = "#fa8072"
 
 /datum/gas/proto_nitrate
@@ -255,7 +255,7 @@
 	moles_visible = MOLES_GAS_VISIBLE
 	rarity = 200
 	base_value = 2.5
-	desc = "A very volatile gas that reacts differently with various gases."
+	desc = "Очень летучий газ, который по-разному реагирует с различными газами."
 	primary_color = "#adff2f"
 
 /datum/gas/zauker
@@ -267,7 +267,7 @@
 	moles_visible = MOLES_GAS_VISIBLE
 	rarity = 1
 	base_value = 7
-	desc = "A highly toxic gas, it's production is highly regulated on top of being difficult. It also breaks down when in contact with nitrogen."
+	desc = "Это высокотоксичный газ, его производство строго регулируется НТ, но это не всегда выполнимо. Разрушается при контакте с азотом."
 	primary_color = "#006400"
 
 /datum/gas/halon
@@ -279,7 +279,7 @@
 	moles_visible = MOLES_GAS_VISIBLE
 	rarity = 300
 	base_value = 4
-	desc = "A potent fire supressant. Removes oxygen from high temperature fires and cools down the area"
+	desc = "Мощное средство для тушения пожара. Удаляет кислород из очага высокотемпературного пожара и охлаждает помещение."
 	primary_color = COLOR_PURPLE
 
 /datum/gas/helium
@@ -289,7 +289,7 @@
 	fusion_power = 7
 	rarity = 50
 	base_value = 3.5
-	desc = "A very inert gas produced by the fusion of hydrogen and it's derivatives."
+	desc = "Высоко-инертный газ, образующийся при синтезе водорода и его производных."
 	primary_color = "#f0f8ff"
 
 /datum/gas/antinoblium
@@ -302,7 +302,7 @@
 	fusion_power = 20
 	rarity = 1
 	base_value = 10
-	desc = "We still don't know what it does, but it sells for a lot."
+	desc = "Мы до сих пор не знаем, что он делает, но он продается очень задорого."
 	primary_color = COLOR_MAROON
 
 /obj/effect/overlay/gas

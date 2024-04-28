@@ -89,7 +89,7 @@ const GasHandbook = (props) => {
     <Section
       title={
         <GasSearchBar
-          title={relevantGas ? 'Gas: ' + relevantGas.name : 'Gas Lookup'}
+          title={relevantGas ? 'Газ: ' + relevantGas.name : 'Поиск газов'}
           onChange={(keyword) =>
             setActiveGasId(
               gasInfo.find((gas) =>
@@ -106,9 +106,9 @@ const GasHandbook = (props) => {
         <>
           <Box mb="0.5em">{relevantGas.description}</Box>
           <Box mb="0.5em">
-            {'Specific heat: ' + relevantGas.specific_heat + ' Joule/KelvinMol'}
+            {'Теплоёмкость: ' + relevantGas.specific_heat + ' Joule/KelvinMol'}
           </Box>
-          <Box mb="0.5em">{'Relevant Reactions:'}</Box>
+          <Box mb="0.5em">{'Возможные реакции:'}</Box>
           {Object.entries(relevantGas.reactions).map(
             ([reaction_id, reaction_name]) => (
               <Box key={reaction_id} mb="0.5em">
@@ -143,8 +143,8 @@ const ReactionHandbook = (props) => {
         <GasSearchBar
           title={
             relevantReaction
-              ? 'Reaction: ' + relevantReaction.name
-              : 'Reaction Lookup'
+              ? 'Вид реакции: ' + relevantReaction.name
+              : 'Поиск реакций'
           }
           onChange={(keyword) =>
             setActiveReactionId(
@@ -161,7 +161,7 @@ const ReactionHandbook = (props) => {
       {relevantReaction && (
         <>
           <Box mb="0.5em">{relevantReaction.description}</Box>
-          <Box mb="0.5em">{'Relevant Factors:'}</Box>
+          <Box mb="0.5em">{'Ход реакции:'}</Box>
           <LabeledList>
             {relevantReaction.factors.map((factor) => (
               <LabeledList.Item

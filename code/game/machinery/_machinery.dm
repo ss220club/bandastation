@@ -87,7 +87,7 @@
 /obj/machinery
 	name = "machinery"
 	icon = 'icons/obj/machines/fax.dmi'
-	desc = "Some kind of machine."
+	desc = "Какой-то механизм."
 	verb_say = "beeps"
 	verb_yell = "blares"
 	pressure_resistance = 15

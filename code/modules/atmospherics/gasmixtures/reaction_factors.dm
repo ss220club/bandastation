@@ -1,208 +1,208 @@
 /datum/gas_reaction/water_vapor/init_factors()
 	factor = list(
-		/datum/gas/water_vapor = "Condensation will consume [MOLES_GAS_VISIBLE] moles, freezing will not consume any. Both needs a minimum of [MOLES_GAS_VISIBLE] moles to occur.",
-		"Temperature" = "Freezes a turf at [WATER_VAPOR_DEPOSITION_POINT] Kelvins or below, wets it at [WATER_VAPOR_CONDENSATION_POINT] Kelvins or below.",
-		"Location" = "Can only happen on turfs.",
+		/datum/gas/water_vapor = "Реакция конденсации потребит [MOLES_GAS_VISIBLE] моль, замерзания произойдёт беззатратно. Для обоих реакций необходимо количество в [MOLES_GAS_VISIBLE] молей чтобы реакция произошла.",
+		"Температура" = "Замораживает пол при температуре [WATER_VAPOR_DEPOSITION_POINT] Кельвинов или ниже, делает мокрым при температуре [WATER_VAPOR_CONDENSATION_POINT] Кельвинов или ниже.",
+		"Местонахождение" = "Может произойти только на плитках пола.",
 	)
 
 /datum/gas_reaction/miaster/init_factors()
 	factor = list(
-		/datum/gas/miasma = "Miasma is sterilized at a rate that scales with the difference between the temperature and [MIASTER_STERILIZATION_TEMP]K.",
-		/datum/gas/oxygen = "One mole of oxygen is released per mole of miasma consumed.",
-		"Temperature" = "Higher temperature increases the speed of miasma sterilization.",
-		"Energy" = "[MIASTER_STERILIZATION_ENERGY] joules of energy is released per mole of miasma sterilized.",
+		/datum/gas/miasma = "Миазмы стерилизуются со скоростью, которая зависит от разницы между температурой и [MIASTER_STERILIZATION_TEMP]K.",
+		/datum/gas/oxygen = "На один моль потребленной миазмы выделяется один моль кислорода.",
+		"Температура" = "Более высокая температура увеличивает скорость стерилизации миазмами.",
+		"Энергия" = "[MIASTER_STERILIZATION_ENERGY] Дж энергии выделяется на моль стерилизованных миазмов.",
 	)
 
 /datum/gas_reaction/plasmafire/init_factors()
 	factor = list(
-		/datum/gas/oxygen = "Oxygen consumption is determined by the temperature, ranging from [OXYGEN_BURN_RATIO_BASE] moles per mole of plasma consumed at [PLASMA_MINIMUM_BURN_TEMPERATURE] Kelvins to [OXYGEN_BURN_RATIO_BASE-1] moles per mole of plasma consumed at [PLASMA_UPPER_TEMPERATURE] Kelvins. Higher oxygen concentration up to [PLASMA_OXYGEN_FULLBURN] times the plasma increases the speed of plasma consumption.",
-		/datum/gas/plasma = "Plasma is consumed at a rate that scales with the difference between the temperature and [PLASMA_MINIMUM_BURN_TEMPERATURE]K, with maximum scaling at [PLASMA_UPPER_TEMPERATURE]K.",
-		/datum/gas/tritium = "Tritium is formed at 1 mole per mole of plasma consumed if there are at least 97 times more oxygen than plasma.",
-		/datum/gas/water_vapor = "Water vapor is formed at 0.25 moles per mole of plasma consumed if tritium isn't being formed.",
-		/datum/gas/carbon_dioxide = "Carbon Dioxide is formed at 0.75 moles per mole of plasma consumed if tritium isn't being formed.",
-		"Temperature" = "Minimum temperature of [PLASMA_MINIMUM_BURN_TEMPERATURE] kelvin to occur. Higher temperature up to [PLASMA_UPPER_TEMPERATURE]K increases the oxygen efficiency and also the plasma consumption rate.",
-		"Energy" = "[FIRE_PLASMA_ENERGY_RELEASED] joules of energy is released per mole of plasma consumed.",
+		/datum/gas/oxygen = "Потребление кислорода определяется температурой и зависит от [OXYGEN_BURN_RATIO_BASE] молей на моль плазмы, потребленной при температуре  [PLASMA_MINIMUM_BURN_TEMPERATURE] Кельвинов к [OXYGEN_BURN_RATIO_BASE-1] молей на моль плазмы, затраченной при температуре в [PLASMA_UPPER_TEMPERATURE] Кельвинов. Более высокая концентрация кислорода в [PLASMA_OXYGEN_FULLBURN] раз в плазме увеличивает скорость потребления плазмы.",
+		/datum/gas/plasma = "Плазма потребляется со скоростью, которая зависит от разницы между температурой и  [PLASMA_MINIMUM_BURN_TEMPERATURE]K, с максимальной скоростью при [PLASMA_UPPER_TEMPERATURE]K.",
+		/datum/gas/tritium = "Тритий образуется из расчета 1 моль на моль потребленной плазмы, если кислорода как минимум в 97 раз больше, чем плазмы.",
+		/datum/gas/water_vapor = "Водяной пар образуется из расчета 0,25 моль на моль израсходованной плазмы, при условии что тритий не образуется.",
+		/datum/gas/carbon_dioxide = "Углекислый газ образуется в количестве 0,75 моль на моль потребляемой плазмы, при условии что тритий не образуется.",
+		"Температура" = "Минимальная температура должна быть [PLASMA_MINIMUM_BURN_TEMPERATURE] Кельвинов чтобы реакция произошла. Более высокая температура, до [PLASMA_UPPER_TEMPERATURE]K увеличивает эффективность потребления кислорода, а также скорость потребления плазмы.",
+		"Энергия" = "На моль потребленной плазмы выделяется [FIRE_PLASMA_ENERGY_RELEASED] джоулей энергии.",
 	)
 
 /datum/gas_reaction/h2fire/init_factors()
 	factor = list(
-		/datum/gas/oxygen = "Oxygen is consumed at 0.5 moles per mole of hydrogen consumed. Higher oxygen concentration up to [HYDROGEN_OXYGEN_FULLBURN] times the hydrogen increases the hydrogen consumption rate.",
-		/datum/gas/hydrogen = "Hydrogen is consumed rapidly fast as long as there's enough oxygen to allow combustion.",
-		/datum/gas/water_vapor = "Water vapor is produced at 1 mole per mole of hydrogen combusted.",
-		"Temperature" = "Minimum temperature of [FIRE_MINIMUM_TEMPERATURE_TO_EXIST] kelvin to occur",
-		"Energy" = "[FIRE_HYDROGEN_ENERGY_RELEASED] joules of energy is released per mol of hydrogen consumed.",
+		/datum/gas/oxygen = "Кислород расходуется из расчета 0,5 моль на моль израсходованного водорода. Более высокая концентрация кислорода в [HYDROGEN_OXYGEN_FULLBURN] раз превышает концентрацию водорода, увеличивает скорость потребления водорода.",
+		/datum/gas/hydrogen = "Водород быстро расходуется, пока в нем достаточно кислорода для горения.",
+		/datum/gas/water_vapor = "Водяной пар образуется из расчета 1 моль на моль сгоревшего водорода.",
+		"Температура" = "Минимальная температура составляет [FIRE_MINIMUM_TEMPERATURE_TO_EXIST] Кельвинов чтобы реакция произошла",
+		"Энергия" = "На моль потребленного водорода выделяется [FIRE_HYDROGEN_ENERGY_RELEASED] джоулей энергии.",
 	)
 
 /datum/gas_reaction/tritfire/init_factors()
 	factor = list(
-		/datum/gas/oxygen = "Oxygen is consumed at 0.5 moles per mole of tritium consumed. Higher oxygen concentration up to [TRITIUM_OXYGEN_FULLBURN] times the tritium increases the tritium consumption rate.",
-		/datum/gas/tritium = "Tritium is consumed at rapidly fast as long as there's enough oxygen to allow combustion.",
-		/datum/gas/water_vapor = "Water vapor is produced at 1 mole per mole of tritium combusted.",
-		"Temperature" = "Minimum temperature of [FIRE_MINIMUM_TEMPERATURE_TO_EXIST] kelvin to occur",
-		"Energy" = "[FIRE_TRITIUM_ENERGY_RELEASED] joules of energy is released per mol of tritium consumed.",
-		"Radiation" = "This reaction emits radiation proportional to the amount of energy released.",
+		/datum/gas/oxygen = "Кислород расходуется из расчета 0,5 моля на моль потребленного трития. Более высокая концентрация кислорода в [TRITIUM_OXYGEN_FULLBURN] раз превышающая тритий, увеличивает скорость потребления трития.",
+		/datum/gas/tritium = "Тритий потребляется очень быстро, пока есть достаточно кислорода для горения.",
+		/datum/gas/water_vapor = "Водяной пар образуется из расчета 1 моль на моль сгоревшего трития.",
+		"Температура" = "Минимальная температура должна быть [FIRE_MINIMUM_TEMPERATURE_TO_EXIST] Кельвинов чтобы реакция произошла",
+		"Энергия" = "На моль потребленного трития выделяется [FIRE_TRITIUM_ENERGY_RELEASED] джоулей энергии.",
+		"Радиоактивность" = "В результате этой реакции создаётся радиоактивное излучение, пропорциональное количеству выделившейся энергии.",
 	)
 
 /datum/gas_reaction/freonfire/init_factors()
 	factor = list(
-		/datum/gas/oxygen = "Oxygen consumption is determined by the temperature, ranging from [OXYGEN_BURN_RATIO_BASE] moles per mole of freon consumed at [FREON_LOWER_TEMPERATURE] Kelvins to [OXYGEN_BURN_RATIO_BASE-1] moles per mole of freon consumed at [FREON_MAXIMUM_BURN_TEMPERATURE] Kelvins. Higher oxygen concentration up to [FREON_OXYGEN_FULLBURN] times the freon increases freon consumption rate.",
-		/datum/gas/freon = "Freon is consumed at a rate that scales with the distance of the temperature from [FREON_MAXIMUM_BURN_TEMPERATURE]K. Its relationship with oxygen also determines consumption rate.",
-		/datum/gas/carbon_dioxide = "Carbon Dioxide is formed at 1 mole per mole of freon consumed.",
-		"Temperature" = "Can only occur between [FREON_LOWER_TEMPERATURE] - [FREON_MAXIMUM_BURN_TEMPERATURE] Kelvin",
-		"Energy" = "[FIRE_FREON_ENERGY_CONSUMED] joules of energy is absorbed per mole of freon consumed.",
-		"Hot Ice" = "This reaction produces hot ice when occuring between [HOT_ICE_FORMATION_MINIMUM_TEMPERATURE]-[HOT_ICE_FORMATION_MAXIMUM_TEMPERATURE] kelvins",
+		/datum/gas/oxygen = "Потребление кислорода зависит температурой в диапазоне от [OXYGEN_BURN_RATIO_BASE] моль на моль фреона, израсходованного при температуре в [FREON_LOWER_TEMPERATURE]  Кельвинов, к [OXYGEN_BURN_RATIO_BASE-1] моль на моль фреона, израсходованного при температуре  [FREON_MAXIMUM_BURN_TEMPERATURE] Кельвинов. Более высокая концентрация кислорода в [FREON_OXYGEN_FULLBURN] раз увеличивает скорость потребления фреона.",
+		/datum/gas/freon = "Фреон расходуется со скоростью, которая зависит от разницы температуры от [FREON_MAXIMUM_BURN_TEMPERATURE]K. Его взаимодействие с кислородом также определяет скорость потребления.",
+		/datum/gas/carbon_dioxide = "Углекислый газ образуется в количестве 1 моль на моль израсходованного фреона..",
+		"Температура" = "Может произойти только в диапазоне от [FREON_LOWER_TEMPERATURE] до [FREON_MAXIMUM_BURN_TEMPERATURE] Кельвинов",
+		"Энергия" = "[FIRE_FREON_ENERGY_CONSUMED] джоулей энергии расходуется на моль израсходованного фреона.",
+		"Горячий лёд" = "Эта реакция приводит к образованию горячего льда при протекании в диапазоне температур от [HOT_ICE_FORMATION_MINIMUM_TEMPERATURE] до [HOT_ICE_FORMATION_MAXIMUM_TEMPERATURE] Кельвинов",
 	)
 
 
 /datum/gas_reaction/nitrousformation/init_factors()
 	factor = list(
-		/datum/gas/oxygen = "10 moles of Oxygen needs to be present for the reaction to occur. Oxygen is consumed at 0.5 moles per mole of nitrous oxide formed.",
-		/datum/gas/nitrogen = " 20 moles of Nitrogen needs to be present for the reaction to occur. Nitrogen is consumed at 1 mole per mole of nitrous oxife formed.",
-		/datum/gas/bz = "5 moles of BZ needs to be present for the reaction to occur. Not consumed.",
-		/datum/gas/nitrous_oxide = "Nitrous oxide gets produced rapidly.",
-		"Temperature" = "Can only occur between [N2O_FORMATION_MIN_TEMPERATURE] - [N2O_FORMATION_MAX_TEMPERATURE] Kelvin",
-		"Energy" = "[N2O_FORMATION_ENERGY] joules of energy is released per mole of nitrous oxide formed.",
+		/datum/gas/oxygen = "Для того чтобы произошла реакция, необходимо наличие 10 моль кислорода. Кислород расходуется из расчета 0,5 моль на моль образующейся закиси азота.",
+		/datum/gas/nitrogen = " Для того, чтобы реакция произошла, необходимо наличие 20 моль азота. Азот расходуется из расчета 1 моль на моль образующейся закиси азота.",
+		/datum/gas/bz = "Для того чтобы реакция произошла, необходимо наличие 5 молей BZ. Не потребляется.",
+		/datum/gas/nitrous_oxide = "Закись азота вырабатывается быстро.",
+		"Температура" = "Может произойти только в диапазоне от [N2O_FORMATION_MIN_TEMPERATURE] до [N2O_FORMATION_MAX_TEMPERATURE] Кельвинов",
+		"Энергия" = "[N2O_FORMATION_ENERGY] джоулей энергии выделяется на моль образовавшейся закиси азота.",
 	)
 
 /datum/gas_reaction/nitrous_decomp/init_factors()
 	factor = list(
-		/datum/gas/nitrous_oxide = "Nitrous Oxide is decomposed at a rate that scales negatively with the distance between the temperature and average of the minimum and maximum temperature of the reaction. Minimum of [MINIMUM_MOLE_COUNT * 2] to occur.", //okay this one isn't made into a define yet.
-		/datum/gas/oxygen = "Oxygen is formed at 0.5 moles per mole of nitrous oxide decomposed.",
-		/datum/gas/nitrogen = "Nitrogen is formed at 1 mole per mole of nitrous oxide decomposed.",
-		"Temperature" = "The decomposition rate scales with the product of the distances between temperature and minimum and maximum temperature. Can only happen between [N2O_DECOMPOSITION_MIN_TEMPERATURE] - [N2O_DECOMPOSITION_MAX_TEMPERATURE] kelvin.",
-		"Energy" = "[N2O_DECOMPOSITION_ENERGY] joules of energy is released per mole of nitrous oxide decomposed.",
+		/datum/gas/nitrous_oxide = "Закись азота разлагается со скоростью, которая пропорционально обратно зависит от расстояния между температурой и средним значением минимальной и максимальной температуры реакции. Minimum of [MINIMUM_MOLE_COUNT * 2] to occur.", //okay this one isn't made into a define yet.
+		/datum/gas/oxygen = "Кислород образуется прв количестве 0,5 моль на моль разложившейся закиси азота.",
+		/datum/gas/nitrogen = "Азот образуется из расчета 1 моль на моль разложившейся закиси азота.",
+		"Температура" = "Скорость разложения зависит от произведения разниц между температурой газа, минимальной и максимальной температурами. Может произойти только в диапазоне от [N2O_DECOMPOSITION_MIN_TEMPERATURE] до [N2O_DECOMPOSITION_MAX_TEMPERATURE] Кельвинов.",
+		"Энергия" = "[N2O_DECOMPOSITION_ENERGY] джоулей энергии выделяется на моль разложившейся закиси азота.",
 	)
 
 /datum/gas_reaction/bzformation/init_factors()
 	factor = list(
-		/datum/gas/plasma = "Each mole of BZ made consumes 0.8 moles of plasma. If there is more plasma than nitrous oxide, bz formation rate gets slowed down.",
-		/datum/gas/nitrous_oxide = "Each mole of bz made consumes 0.4 moles of Nitrous oxide. If there is less nitrous oxide than plasma the reaction rate is slowed down. At three times the amount of plasma to Nitrous oxide it will start breaking down into Nitrogen and Oxygen, the lower the ratio the more Nitrous oxide decomposes.",
-		/datum/gas/bz = "The lower the pressure and larger the volume the more bz gets made. Less nitrous oxide than plasma will slow down the reaction.",
-		/datum/gas/nitrogen = "Each mole Nitrous oxide decomposed makes 1 mol Nitrogen. Lower ratio of Nitrous oxide to Plasma means a higher ratio of decomposition to BZ production.",
-		/datum/gas/oxygen = "Each mole Nitrous oxide decomposed makes 0.5 moles Oxygen. Lower ratio of Nitrous oxide to Plasma means a higher ratio of decomposition to BZ production.",
-		"Energy" = "[BZ_FORMATION_ENERGY] joules of energy is released per mol of BZ made. Nitrous oxide decomposition releases [N2O_DECOMPOSITION_ENERGY] per mol decomposed",
+		/datum/gas/plasma = "На каждый моль изготовленного BZ расходуется 0,8 моля плазмы. Если плазмы больше, чем закиси азота, скорость образования BZ замедляется.",
+		/datum/gas/nitrous_oxide = "На каждый моль изготовленного бз расходуется 0,4 моля закиси азота. Если закиси азота меньше, чем плазмы, скорость реакции замедляется. Если количество плазмы в три раза превышает количество закиси азота, она начнет распадаться на азот и кислород. Чем ниже соотношение, тем больше закись азота разлагается.",
+		/datum/gas/bz = "Чем ниже давление и больше объем, тем больше получается. Меньшее количество закиси азота чем плазмы замедлит реакцию.",
+		/datum/gas/nitrogen = "Каждый моль разложившейся закиси азота составляет 1 моль азота. Более низкое соотношение закиси азота к плазме означает более высокое соотношение разложения к образованию BZ.",
+		/datum/gas/oxygen = "На каждый моль разложившейся закиси азота приходится 0,5 моля кислорода. Более низкое соотношение закиси азота к плазме означает более высокое соотношение разложения к образованию BZ.",
+		"Энергия" = "На моль произведенного BZ выделяется [BZ_FORMATION_ENERGY] джоулей энергии. При разложении закиси азота выделяется [N2O_DECOMPOSITION_ENERGY] на моль разложившегося вещества.",
 	)
 
 /datum/gas_reaction/pluox_formation/init_factors()
 	factor = list(
-		/datum/gas/carbon_dioxide = "1 mole of carbon dioxide gets consumed per mole of pluoxium formed.",
-		/datum/gas/oxygen = "Oxygen is consumed at 0.5 moles per mole of pluoxium formed.",
-		/datum/gas/tritium = "Tritium is converted into hydrogen at 0.01 moles per mole of pluoxium formed.",
-		/datum/gas/pluoxium = "Pluoxium is produced at a constant rate in any given mixture.",
-		/datum/gas/hydrogen = "Hydrogen is formed from the tritium losing their neutrons.",
-		"Energy" = "[PLUOXIUM_FORMATION_ENERGY] joules of energy is released per mole of pluoxium formed.",
-		"Temperature" = "Can only occur between [PLUOXIUM_FORMATION_MIN_TEMP] - [PLUOXIUM_FORMATION_MAX_TEMP] Kelvin",
+		/datum/gas/carbon_dioxide = "На один моль образовавшегося плюоксия расходуется 1 моль углекислого газа..",
+		/datum/gas/oxygen = "Кислород расходуется из расчета 0,5 моля на моль образующегося плюоксия.",
+		/datum/gas/tritium = "Тритий превращается в водород в количестве 0,01 моля на моль образовавшегося плюоксия.",
+		/datum/gas/pluoxium = "Плюоксий образуется с постоянной скоростью в любом соотношении смеси.",
+		/datum/gas/hydrogen = "Водород образуется из трития, теряющего свои нейтроны.",
+		"Энергия" = "[PLUOXIUM_FORMATION_ENERGY] джоулей энергии выделяется на моль образовавшегося плуоксия.",
+		"Температура" = "Может произойти только в диапазоне от [PLUOXIUM_FORMATION_MIN_TEMP] до [PLUOXIUM_FORMATION_MAX_TEMP] Кельвинов",
 	)
 
 /datum/gas_reaction/nitrium_formation/init_factors()
 	factor = list(
-		/datum/gas/bz = "5 moles of BZ needs to be present for the reaction to occur. BZ is consumed at 0.05 moles per mole of nitrium formed.",
-		/datum/gas/tritium = "20 moles of tritium needs to be present for the reaction to occur. Tritium is consumed at 1 mole per mole of nitroum formed.",
-		/datum/gas/nitrogen = "10 moles of nitrogen needs to be present for the reaction to occur. Nitrogen is consumed at 1 mole per mole of nitrium formed.",
-		/datum/gas/nitrium = "Nitrium is produced at a rate that scales with the temperature.",
-		"Temperature" = "Can only occur above [NITRIUM_FORMATION_MIN_TEMP] kelvins",
-		"Energy" = "[NITRIUM_FORMATION_ENERGY] joules of energy is absorbed per mole of nitrium formed.",
+		/datum/gas/bz = "Для того чтобы реакция произошла, необходимо наличие 5 молей BZ. BZ расходуется из расчета 0,05 моля на моль образовавшегося нитрия.",
+		/datum/gas/tritium = "Для того чтобы реакция произошла, необходимо наличие 20 молей трития. Тритий расходуется из расчета 1 моль на моль образующегося нитрия.",
+		/datum/gas/nitrogen = "Для того чтобы реакция произошла, необходимо наличие 10 молей азота. Азот расходуется из расчета 1 моль на моль образовавшегося нитрия.",
+		/datum/gas/nitrium = "Нитриум производится со скоростью, которая зависит от температуры.",
+		"Температура" = "Может произойти только при температуре выше [NITRIUM_FORMATION_MIN_TEMP] Кельвинов",
+		"Энергия" = "[NITRIUM_FORMATION_ENERGY] джоулей энергии поглощается на моль образовавшегося нитрия.",
 	)
 
 /datum/gas_reaction/nitrium_decomposition/init_factors()
 	factor = list(
-		/datum/gas/oxygen = "[MINIMUM_MOLE_COUNT] moles of oxygen need to be present for the reaction to occur. Not consumed.",
-		/datum/gas/nitrium = "Nitrium is consumed at a rate that scales with the temperature.",
-		/datum/gas/hydrogen = "Hydrogen is produced at 1 mole per mole of nitrium decomposed.",
-		/datum/gas/nitrogen = "Nitrogen is produced at 1 mole per mole of nitrium decomposed.",
-		"Temperature" = "Can only occur below [NITRIUM_DECOMPOSITION_MAX_TEMP]. Higher temperature increases the nitrium decomposition rate.",
-		"Energy" = "[NITRIUM_DECOMPOSITION_ENERGY] joules of energy is released per mole of nitrium decomposed.",
+		/datum/gas/oxygen = "Для того чтобы реакция произошла, необходимо присутствие [MINIMUM_MOLE_COUNT]  молей кислорода. Не потребляется.",
+		/datum/gas/nitrium = "Нитриум расходуется со скоростью, которая зависит от температуры.",
+		/datum/gas/hydrogen = "Водород образуется из расчета 1 моль на моль разложившегося нитрия.",
+		/datum/gas/nitrogen = "Азот образуется из расчета 1 моль на моль разложившегося нитрия.",
+		"Температура" = "Может произойти только при температуре ниже  [NITRIUM_DECOMPOSITION_MAX_TEMP]. Более высокая температура увеличивает скорость разложения нитрия.",
+		"Энергия" = "На моль разложившегося нитрия выделяется [NITRIUM_DECOMPOSITION_ENERGY] джоулей энергии.",
 	)
 
 /datum/gas_reaction/freonformation/init_factors()
 	factor = list(
-		/datum/gas/plasma = "At least 0.06 moles of plasma needs to be present. Plasma is consumed at 0.6 moles per mole of freon formed.",
-		/datum/gas/carbon_dioxide = "At least 0.03 moles of CO2 needs to be present. CO2 is consumed at 0.3 moles per mole of freon formed.",
-		/datum/gas/bz = "At least 0.01 moles of BZ needs to be present. BZ is consumed at 0.1 moles per mole of freon formed.",
-		/datum/gas/freon = "Freon is produced at a rate that scales with the sum of a quadratic exponential and sigmoidal function, with the quadratic exponential peaking at 800 Kelvin, but the sigmoidal function takes dominance at over 5,500K being up to 3 times more efficient.",
-		"Energy" = "Between 100 and 800 joules of energy is absorbed per mole of freon produced", // I don't know why the energy release is also a sigmoidal function, but it should really just be constant to be honest.
-		"Temperature" = "Minimum temperature of [FIRE_MINIMUM_TEMPERATURE_TO_EXIST + 100] Kelvin to occur, with production peak at 800 K. However at temperatures above 5500 K higher rates are possible maxing out at three times the low temperature rate at over 8500 K.",
+		/datum/gas/plasma = "Должно присутствовать не менее 0,06 моля плазмы. Плазма расходуется из расчета 0,6 моля на моль образовавшегося фреона.",
+		/datum/gas/carbon_dioxide = "Должно присутствовать не менее 0,03 моля CO2. CO2 расходуется из расчета 0,3 моля на моль образовавшегося фреона.",
+		/datum/gas/bz = "Должно присутствовать не менее 0,01 моля BZ. BZ расходуется из расчета 0,1 моля на моль образовавшегося фреона.",
+		/datum/gas/freon = "Фреон производится со скоростью, которая зависит от суммы квадратичной экспоненты и сигмоидальной функции, причем квадратичная экспонента достигает максимума при температуре 800 Кельвинов, но сигмоидальная функция начинает доминировать при температуре более 5500 К, будучи в 3 раза более эффективными.",
+		"Энергия" = "На моль произведенного фреона поглощается от 100 до 800 джоулей энергии.", // I don't know why the energy release is also a sigmoidal function, but it should really just be constant to be honest.
+		"Температура" = "Минимальная температура составит  [FIRE_MINIMUM_TEMPERATURE_TO_EXIST + 100] Кельвинов, с пиком производства при 800 К. Однако при температурах выше 5500 К возможны более высокие скорости, достигающие максимума в три раза по сравнению с низкой температурой при температуре более 8500 К.",
 	)
 
 /datum/gas_reaction/nobliumformation/init_factors()
 	factor = list(
-		/datum/gas/nitrogen = "10 moles of nitrogen needs to be present for the reaction to occur. Nitrogen is consumed at 10 moles per mole of hypernoblium formed.",
-		/datum/gas/tritium = "5 moles of tritium needs to be present for the reaction to occur. Tritium is consumed at 5 moles per mole of hypernoblium formed. The relative consumption rate of tritium decreases in the exposure of BZ.",
-		/datum/gas/hypernoblium = "Hyper-Noblium production scales based on the sum of the nitrogen and tritium moles.",
-		"Energy" = "[NOBLIUM_FORMATION_ENERGY] joules of energy is released per mole of hypernoblium produced.",
-		/datum/gas/bz = "BZ is not consumed in the reaction but will lower the amount of energy released. It also reduces amount of tritium consumed by a ratio between tritium and bz, greater bz than tritium will reduce more.",
-		"Temperature" = "Can only occur between [NOBLIUM_FORMATION_MIN_TEMP] - [NOBLIUM_FORMATION_MAX_TEMP] kelvin",
+		/datum/gas/nitrogen = "Для того чтобы реакция произошла, необходимо присутствие 10 молей азота. Азот расходуется из расчета 10 моль на моль образовавшегося гиперноблия.",
+		/datum/gas/tritium = "Для того чтобы реакция произошла, необходимо присутствие 5 молей трития. Тритий расходуется из расчета 5 молей на моль образовавшегося гиперноблия. Расход трития снижается при воздействии БЗ.",
+		/datum/gas/hypernoblium = "Масштабы производства ГиперНоблиума основаны на сумме молей азота и трития.",
+		"Энергия" = "[NOBLIUM_FORMATION_ENERGY] джоулей энергии выделяется на моль произведенного гиперноблия.",
+		/datum/gas/bz = "BZ не расходуется в реакции, но снижает количество выделяемой энергии. Это также снижает количество потребляемого трития за счет соотношения между тритием и bz, большее bz, чем тритий, снижает больше.",
+		"Температура" = "Может произойти только в диапазоне от [NOBLIUM_FORMATION_MIN_TEMP] до [NOBLIUM_FORMATION_MAX_TEMP] Кельвинов",
 	)
 
 /datum/gas_reaction/halon_o2removal/init_factors()
 	factor = list(
-		/datum/gas/halon = "Halon is consumed at a rate that scales with temperature.",
-		/datum/gas/oxygen = "20 moles of oxygen is consumed per mole of halon combusted.",
-		/datum/gas/carbon_dioxide = "Carbon dioxide is produced at 5 moles per mole of halon consumed.",
-		"Energy" = "[HALON_COMBUSTION_ENERGY] joules of energy is absorbed per mole of halon consumed.",
-		"Temperature" = "Can only occur above [FIRE_MINIMUM_TEMPERATURE_TO_EXIST] kelvin. Higher temperature increases halon consumption rate.",
+		/datum/gas/halon = "Галон расходуется со скоростью, зависящей от температуры.",
+		/datum/gas/oxygen = "На один моль сгоревшего галона расходуется 20 молей кислорода.",
+		/datum/gas/carbon_dioxide = "Углекислый газ производится в количестве 5 молей на моль потребляемого галона.",
+		"Энергия" = "[HALON_COMBUSTION_ENERGY] джоулей энергии поглощается на моль потребленного галона.",
+		"Температура" = "Может произойти только при температуре выше  [FIRE_MINIMUM_TEMPERATURE_TO_EXIST] Кельвинов. Более высокая температура увеличивает скорость потребления галонов.",
 	)
 
 /datum/gas_reaction/healium_formation/init_factors()
 	factor = list(
-		/datum/gas/bz = "BZ is consumed at 1/12th of a mole per mole of healium formed.",
-		/datum/gas/freon = "Freon is consumed at 11/12th of a mole per mole of healium formed.",
-		/datum/gas/healium = "Healium is formed at a rate that scales with the temperature.",
-		"Temperature" = "Can only occur between [HEALIUM_FORMATION_MIN_TEMP] - [HEALIUM_FORMATION_MAX_TEMP]. Higher temperature increases healium formation rate.",
-		"Energy" = "[HEALIUM_FORMATION_ENERGY/3] joules of energy is released per mole of healium formed.",
+		/datum/gas/bz = "BZ расходуется из расчета 1/12 моля на моль образовавшегося гелиума.",
+		/datum/gas/freon = "Фреон расходуется из расчета 11/12 моля на моль образовавшегося геалиума.",
+		/datum/gas/healium = "Гелиум образуется со скоростью, которая зависит от температуры.",
+		"Температура" = "Может произойти только в диапазоне от [HEALIUM_FORMATION_MIN_TEMP] до [HEALIUM_FORMATION_MAX_TEMP]. Более высокая температура увеличивает скорость образования геалиума.",
+		"Энергия" = "[HEALIUM_FORMATION_ENERGY/3] джоулей энергии выделяется на моль образовавшегося геалиума.",
 	)
 
 /datum/gas_reaction/zauker_formation/init_factors()
 	factor = list(
-		/datum/gas/hypernoblium = "Hyper-Noblium is consumed at 0.02 moles per mole of zauker formed.",
-		/datum/gas/nitrium = "Nitrium is consumed at 1 mole per mole of zauker formed.",
-		/datum/gas/zauker = "Zauker is produced at a rate that scales with the temperature.",
-		"Temperature" = "Can only occur between [ZAUKER_FORMATION_MIN_TEMPERATURE] - [ZAUKER_FORMATION_MAX_TEMPERATURE] kelvin. Zauker formation rate is proportional to the temperature.",
-		"Energy" = "[2 * ZAUKER_FORMATION_ENERGY] joules of energy is absorbed per mole of zauker formed.",
+		/datum/gas/hypernoblium = "Гиперноблиум расходуется из расчета 0,02 моля на моль образовавшегося заукера.",
+		/datum/gas/nitrium = "Нитриум расходуется из расчета 1 моль на моль образовавшегося заукера.",
+		/datum/gas/zauker = "Заукер производится со скоростью, зависящей от температуры.",
+		"Температура" = "Может произойти только в диапазоне от  [ZAUKER_FORMATION_MIN_TEMPERATURE] до [ZAUKER_FORMATION_MAX_TEMPERATURE] Кельвинов. Скорость образования Заукера пропорциональна температуре.",
+		"Энергия" = "[2 * ZAUKER_FORMATION_ENERGY] джоулей энергии поглощается на моль образовавшегося заукера.",
 	)
 
 /datum/gas_reaction/zauker_decomp/init_factors() //Fixed reaction rate
 	factor = list(
-		/datum/gas/zauker = "Zauker is consumed at [ZAUKER_DECOMPOSITION_MAX_RATE SECONDS / SSair.wait] moles per second in any unique gas mixture.",
-		/datum/gas/nitrogen = "At least [MINIMUM_MOLE_COUNT] moles of Nitrogen needs to be present for this reaction to occur. Nitrogen is produced at 0.7 moles per mole of Zauker decomposed.",
-		/datum/gas/oxygen = "Oxygen is produced at 0.3 moles per mole of zauker decomposed.",
-		"Energy" = "[ZAUKER_DECOMPOSITION_ENERGY] joules of energy is released per mole of zauker decomposed.",
+		/datum/gas/zauker = "Заукер расходуется со скоростью [ZAUKER_DECOMPOSITION_MAX_RATE SECONDS / SSair.wait] молей в секунду в любой уникальной газовой смеси.",
+		/datum/gas/nitrogen = "Для того чтобы произошла эта реакция, необходимо присутствие не менее [MINIMUM_MOLE_COUNT] моль азота. Азот образуется при концентрации 0,7 моля на моль разложившегося Заукера.",
+		/datum/gas/oxygen = "Кислород образуется из расчета 0,3 моля на моль разложившегося заукера.",
+		"Энергия" = "[ZAUKER_DECOMPOSITION_ENERGY] джоулей энергии выделяется на моль разложившегося заукера.",
 	)
 
 /datum/gas_reaction/proto_nitrate_formation/init_factors()
 	factor = list(
-		/datum/gas/pluoxium = "Pluoxium is consumed at 1/11th of a mole per mole of proto-nitrate formed.",
-		/datum/gas/hydrogen = "Hydrogen is consumed at 10/11th of a mole per mole of proto-nitrate formed.",
-		/datum/gas/proto_nitrate = "Proto-Nitrate is produced at a rate that scales with the temperature.",
-		"Energy" = "[PN_FORMATION_ENERGY / 2.2] joules of energy is released per mole of proto-nitrate formed.",
-		"Temperature" = "Can only occur between [PN_FORMATION_MIN_TEMPERATURE] - [PN_FORMATION_MAX_TEMPERATURE] kelvin. Higher temperature increases proto-nitrate formation rate.",
+		/datum/gas/pluoxium = "Плуоксий расходуется из расчета 1/11 моля на моль образовавшегося протонитрата.",
+		/datum/gas/hydrogen = "Водород расходуется в количестве 10/11 моля на моль образовавшегося протонитрата.",
+		/datum/gas/proto_nitrate = "Протонитрат производится со скоростью, которая зависит от температуры.",
+		"Энергия" = "[PN_FORMATION_ENERGY / 2.2] джоулей энергии выделяется на моль образовавшегося протонитрата.",
+		"Температура" = "Может произойти только в диапазоне от [PN_FORMATION_MIN_TEMPERATURE] до [PN_FORMATION_MAX_TEMPERATURE] Кельвинов. Более высокая температура увеличивает скорость образования протонитрата.",
 	)
 
 /datum/gas_reaction/proto_nitrate_hydrogen_response/init_factors() // Fixed reaction rate
 	factor = list(
-		/datum/gas/hydrogen = "[PN_HYDROGEN_CONVERSION_THRESHOLD] moles of hydrogen needs to be present for the reaction to occur. Hydrogen is consumed at 2 moles per mole of proto-nitrate formed.",
-		/datum/gas/proto_nitrate = "[MINIMUM_MOLE_COUNT] moles of proto-nitrate needs to be present for the reaction to occur. Proto nitrate is produced a rate that scales with its mole count, up to a max of [PN_HYDROGEN_CONVERSION_MAX_RATE * 0.5 SECONDS / SSair.wait] moles per second.",
-		"Energy" = "[PN_HYDROGEN_CONVERSION_ENERGY * 2] joules of energy is absorbed per mole of proto-nitrate formed.",
+		/datum/gas/hydrogen = "Для того чтобы реакция произошла, необходимо присутствие [PN_HYDROGEN_CONVERSION_THRESHOLD] молей водорода. Водород расходуется из расчета 2 моля на моль образовавшегося протонитрата.",
+		/datum/gas/proto_nitrate = "Для того чтобы реакция произошла, необходимо присутствие [MINIMUM_MOLE_COUNT] молей протонитрата. Протонитрат производится со скоростью, которая зависит от количества молей, вплоть до максимального значения [PN_HYDROGEN_CONVERSION_MAX_RATE * 0.5 SECONDS / SSair.wait] молей в секунду.",
+		"Энергия" = "[PN_HYDROGEN_CONVERSION_ENERGY * 2] джоулей энергии поглощается на моль образовавшегося протонитрата.",
 	)
 
 /datum/gas_reaction/proto_nitrate_tritium_response/init_factors()
 	factor = list(
-		/datum/gas/tritium = "Tritium radiates its neutrons at a rate that scales with the temperature and proto-nitrate mole count.",
-		/datum/gas/proto_nitrate = "Proto nitrate is consumed at 0.005 moles per mole of neutrons released.",
-		/datum/gas/hydrogen = "Hydrogen remains after the neutrons escape.",
-		"Energy" = "[PN_TRITIUM_CONVERSION_ENERGY / 2] joules of energy is released per mole of neutron released.",
-		"Radiation" = "Neutrons get released as ionising radiation.",
+		/datum/gas/tritium = "Тритий излучает нейтроны со скоростью, которая зависит от температуры и количества молей протонитрата.",
+		/datum/gas/proto_nitrate = "Протонитрат расходуется из расчета 0,005 моля на моль высвободившихся нейтронов.",
+		/datum/gas/hydrogen = "Водород остается после выхода нейтронов.",
+		"Энергия" = "[PN_TRITIUM_CONVERSION_ENERGY / 2] джоулей энергии выделяется на моль выпущенного нейтрона.",
+		"Радиоактивность" = "Нейтроны высвобождаются в виде ионизирующего излучения.",
 	)
 
 /datum/gas_reaction/proto_nitrate_bz_response/init_factors()
 	factor = list(
-		/datum/gas/proto_nitrate = "[MINIMUM_MOLE_COUNT] moles of proto-nitrate needs to be present for the reaction to occur. Proto-nitrate accelerates the BZ decomposition.",
-		/datum/gas/bz = "BZ gets decomposed into plasma and nitrous oxide. The nitrous oxide then decomposes into nitrogen and oxygen, with the oxygen then decaying into helium.",
-		/datum/gas/nitrogen = "Nitrogen is produced at 0.4 moles per mole of BZ decomposed.",
-		/datum/gas/helium = "Helium is produced at 1.6 moles per mole of BZ decomposed.",
-		/datum/gas/plasma = "Plasma is produced at 0.8 moles per mole of BZ decomposed.",
-		"Energy" = "[PN_BZASE_ENERGY] joules of energy is released per mole of BZ decomposed.",
-		"Radiation" = "Radiation gets released during this decomposition process.",
-		"Hallucinations" = "This reaction can cause various carbon based lifeforms in the vicinity to hallucinate.",
-		"Nuclear Particles" = "This reaction emits extremely high energy nuclear particles, up to [2 * PN_BZASE_NUCLEAR_PARTICLE_MAXIMUM] per second per unique gas mixture.",
+		/datum/gas/proto_nitrate = "Для того чтобы реакция произошла, необходимо присутствие [MINIMUM_MOLE_COUNT] молей протонитрата. Протонитрат ускоряет разложение БЗ.",
+		/datum/gas/bz = "БЗ разлагается на плазму и закись азота. Затем закись азота разлагается на азот и кислород, а кислород затем распадается на гелий.",
+		/datum/gas/nitrogen = "Азот образуется из расчета 0,4 моля на моль разложившегося BZ.",
+		/datum/gas/helium = "Гелий получается из расчета 1,6 моль на моль разложившегося BZ.",
+		/datum/gas/plasma = "Плазма образуется при 0,8 моль на моль разложившегося BZ.",
+		"Энергия" = "[PN_BZASE_ENERGY] джоулей энергии выделяется на моль разложившегося BZ.",
+		"Радиоактивность" = "Во время этого процесса разложения выделяется радиация.",
+		"Галюциногенность" = "Эта реакция может привести к галлюцинациям различных форм жизни на основе углерода, находящихся поблизости.",
+		"Ядерные частицы" = "Эта реакция испускает ядерные частицы чрезвычайно высокой энергии, до [2 * PN_BZASE_NUCLEAR_PARTICLE_MAXIMUM] в секунду на уникальную газовую смесь.",
 	)

@@ -3,7 +3,7 @@
  */
 /obj/machinery/atmospherics/components/unary/hypertorus/core
 	name = "HFR core"
-	desc = "This is the Hypertorus Fusion Reactor core, an advanced piece of technology to finely tune the reaction inside of the machine. It has I/O for cooling gases."
+	desc = "Это ядро термоядерного реактора, передовая технология для точной настройки реакции внутри самого реактора. Имеет входы/выходы для охлаждения газов."
 	icon = 'icons/obj/machines/atmospherics/hypertorus.dmi'
 	icon_state = "core_off"
 	circuit = /obj/item/circuitboard/machine/HFR_core
@@ -123,7 +123,7 @@
 	///The point at which we start sending messages to the common channel
 	var/emergency_point = 700
 	///The alert we send when we've reached emergency_point
-	var/emergency_alert = "РАЗРУШЕНИЕ ГИПЕРТОРУСА НЕИЗБЕЖНО."
+	var/emergency_alert = "РАЗРУШЕНИЕ ТЕРМОЯДЕРНОГО РЕАКТОРА НЕИЗБЕЖНО."
 	///The point at which we melt
 	var/melting_point = 900
 	///Boolean used for logging if we've passed the emergency point

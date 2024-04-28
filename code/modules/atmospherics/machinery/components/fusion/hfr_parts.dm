@@ -7,7 +7,7 @@
 	icon_state = "core_off"
 
 	name = "thermomachine"
-	desc = "Heats or cools gas in connected pipes."
+	desc = "Нагревает или же охлаждает газы в подключенных трубах."
 	anchored = TRUE
 	density = TRUE
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | FREEZE_PROOF
@@ -400,29 +400,29 @@
 	icon_state_active = "corner_active"
 
 /obj/item/paper/guides/jobs/atmos/hypertorus
-	name = "paper- 'Quick guide to safe handling of the HFR'"
-	default_raw_text = "<B>How to safely(TM) operate the Hypertorus</B><BR>\
-	-Build the machine as it�s shown in the main guide.<BR>\
-	-Make a 50/50 gasmix of tritium and hydrogen totalling around 2000 moles.<BR>\
-	-Start the machine, fill up the cooling loop with plasma/hypernoblium and use space or freezers to cool it.<BR>\
-	-Connect the fuel mix into the fuel injector port, allow only 1000 moles into the machine to ease the kickstart of the reaction<BR>\
-	-Set the Heat conductor to 500 when starting the reaction, reset it to 100 when power level is higher than 1<BR>\
-	-In the event of a meltdown, set the heat conductor to max and set the current damper to max. Set the fuel injection to min. \
-	If the heat output doesn�t go negative, try changing the magnetic costrictors untill heat output goes negative. \
-	Make the cooling stronger, put high heat capacity gases inside the moderator (hypernoblium will help dealing with the problem)<BR><BR>\
-	<B>Warnings:</B><BR>\
-	-You cannot dismantle the machine if the power level is over 0<BR>\
-	-You cannot power of the machine if the power level is over 0<BR>\
-	-You cannot dispose of waste gases if power level is over 5<BR>\
-	-You cannot remove gases from the fusion mix if they are not helium and antinoblium<BR>\
-	-Hypernoblium will decrease the power of the mix by a lot<BR>\
-	-Antinoblium will INCREASE the power of the mix by a lot more<BR>\
-	-High heat capacity gases are harder to heat/cool<BR>\
-	-Low heat capacity gases are easier to heat/cool<BR>\
-	-The machine consumes 50 KW per power level, reaching 350 KW at power level 6 so prepare the SM accordingly<BR>\
-	-In case of a power shortage, the fusion reaction will CONTINUE but the cooling will STOP<BR><BR>\
-	The writer of the quick guide will not be held responsible for misuses and meltdown caused by the use of the guide, \
-	use more advanced guides to understando how the various gases will act as moderators."
+	name = "paper- 'Краткое руководство по безопасному обращению с Термоядерным реактором'"
+	default_raw_text = "<B>Как безопасно работать с Термоядерным реактором</B><BR>\
+	-Соберите механизм, как показано в основном руководстве.<BR>\
+	-Приготовьте газовую смесь, состоящую из трития и водорода в соотношении 50/50, общим объемом около 2000 моль.<BR>\
+	-Запустите реактор, заполните контур охлаждения плазмой/гиперноблием и используйте космос или термомашины для ее охлаждения.<BR>\
+	-Подсоедините топливную газовую смесь к порту топливного входа, загрузите в реактор только 1000 молей, чтобы облегчить начало реакции.<BR>\
+	-Установите значение Heat Conductor на 500 при запуске реакции, сбросьте его на 100, когда уровень мощности будет выше 1.<BR>\
+	-В случае распада реактора установите heat conductor  на максимум и current damper на максимум. Установите подачу топлива на минимум. \
+	Если heat output не уменьшается, попробуйте менять magnetic costrictors до тех пор, пока heat output не станет падать. \
+	Сделайте ваше охлаждение, поместите внутрь замедлителя газы с высокой теплоёмкостью (гиперноблиум поможет справиться с этой проблемой)<BR><BR>\
+	<B>Предостережения:</B><BR>\
+	-Вы не можете разобрать реактор, если уровень мощности превышает 0.<BR>\
+	-Вы не можете запустить реактор, если уровень мощности превышает 0.<BR>\
+	-Вы не можете утилизировать полученные на выходе газы, если уровень мощности превышает 5<BR>\
+	-Из термоядерной смеси нельзя удалить газы, за исключением Геалия и Антиноблия.<BR>\
+	-Гиперноблиум значительно уменьшит мощность вашей смеси.<BR>\
+	-Антиноблиум значительно УВЕЛИЧИТ мощность вашей смеси.<BR>\
+	-Газы имеющие высокую теплоемкость труднее нагревать/охлаждать.<BR>\
+	-Газы с низкой теплоемкостью легче нагревать/охлаждать.<BR>\
+	-Реактор потребляет 50 кВт на каждый уровень мощности, достигая 350 кВт на уровне мощности 6, поэтому подготовьте питание сети соответствующим образом.<BR>\
+	-В случае нехватки электроэнергии реакция термоядерного синтеза ПРОДОЛЖИТСЯ, но охлаждение ПРЕКРАТИТСЯ.<BR><BR>\
+	Автор сжатого руководства не несет ответственности за неправильное использование и сбои, вызванные использованием руководства. \
+	используйте более продвинутые руководства, чтобы понять, как различные газы будут действовать в качестве замедлителя."
 
 /obj/item/hfr_box
 	name = "HFR box"
