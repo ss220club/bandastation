@@ -129,7 +129,7 @@
 			span_notice("[user] успешно восстановил кость в [parse_zone(target_zone)] у [target] при помощи [tool.name]!"),
 			span_notice("[user] успешно восстановил кость в [parse_zone(target_zone)] у [target]!"),
 		)
-		log_combat(user, target, "успешно восстанавил кость в", addition="COMBAT MODE: [uppertext(user.combat_mode)]")
+		log_combat(user, target, "успешно восстановил кость в", addition="COMBAT MODE: [uppertext(user.combat_mode)]")
 	else
 		to_chat(user, span_warning("У [target] нет открытого перелома здесь!"))
 	return ..()
