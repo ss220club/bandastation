@@ -16,7 +16,7 @@
 /datum/surgery_step/proc/try_op(mob/user, mob/living/target, target_zone, obj/item/tool, datum/surgery/surgery, try_to_fail = FALSE)
 	var/success = FALSE
 	if(surgery.organ_to_manipulate && !target.get_organ_slot(surgery.organ_to_manipulate))
-		to_chat(user, span_warning("[target] seems to be missing the organ necessary to complete this surgery!"))
+		to_chat(user, span_warning("Кажется, у [target] не хватает необходимого органа, для завершения этой операции!"))
 		return FALSE
 
 	if(accept_hand)
@@ -51,7 +51,7 @@
 			if(get_location_accessible(target, target_zone) || (surgery.surgery_flags & SURGERY_IGNORE_CLOTHES))
 				initiate(user, target, target_zone, tool, surgery, try_to_fail)
 			else
-				to_chat(user, span_warning("You need to expose [target]'s [parse_zone(target_zone)] to perform surgery on it!"))
+				to_chat(user, span_warning("Вам надо снять все, что может закрывать [parse_zone(target_zone)] у [target], для того чтобы начать операцию!"))
 			return TRUE //returns TRUE so we don't stab the guy in the dick or wherever.
 
 	if(repeatable)
@@ -145,9 +145,9 @@
 	display_results(
 		user,
 		target,
-		span_notice("You begin to perform surgery on [target]..."),
-		span_notice("[user] begins to perform surgery on [target]."),
-		span_notice("[user] begins to perform surgery on [target]."),
+		span_notice("Вы начинаете проводить операцию на [target]..."),
+		span_notice("[user] начинает проводить операцию на [target]."),
+		span_notice("[user] начинает проводить операцию на [target]."),
 	)
 
 /datum/surgery_step/proc/play_preop_sound(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
@@ -169,9 +169,9 @@
 		display_results(
 			user,
 			target,
-			span_notice("You succeed."),
-			span_notice("[user] succeeds!"),
-			span_notice("[user] finishes."),
+			span_notice("Вам удалось."),
+			span_notice("[user] удалось!"),
+			span_notice("[user] заканчивает."),
 		)
 	return TRUE
 
@@ -184,18 +184,18 @@
 	var/screwedmessage = ""
 	switch(fail_prob)
 		if(0 to 24)
-			screwedmessage = " You almost had it, though."
+			screwedmessage = " У вас почти получилось."
 		if(50 to 74)//25 to 49 = no extra text
-			screwedmessage = " This is hard to get right in these conditions..."
+			screwedmessage = " В таких условиях трудно сделать все правильно...."
 		if(75 to 99)
-			screwedmessage = " This is practically impossible in these conditions..."
+			screwedmessage = " В таких условиях это практически невозможно..."
 
 	display_results(
 		user,
 		target,
-		span_warning("You screw up![screwedmessage]"),
-		span_warning("[user] screws up!"),
-		span_notice("[user] finishes."), TRUE) //By default the patient will notice if the wrong thing has been cut
+		span_warning("ошибается![screwedmessage]"),
+		span_warning("[user] ошибается!"),
+		span_notice("[user] ошибается."), TRUE) //By default the patient will notice if the wrong thing has been cut
 	return FALSE
 
 /datum/surgery_step/proc/play_failure_sound(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
@@ -246,15 +246,15 @@
 /datum/surgery_step/proc/display_results(mob/user, mob/living/target, self_message, detailed_message, vague_message, target_detailed = FALSE)
 	user.visible_message(detailed_message, self_message, vision_distance = 1, ignored_mobs = target_detailed ? null : target)
 	if(!target_detailed)
-		var/you_feel = pick("a brief pain", "your body tense up", "an unnerving sensation")
+		var/you_feel = pick("легкая боль", "ваше тело напрягается", "тревожное ощущение")
 		if(!vague_message)
 			if(detailed_message)
 				stack_trace("DIDN'T GET PASSED A VAGUE MESSAGE.")
 				vague_message = detailed_message
 			else
 				stack_trace("NO MESSAGES TO SEND TO TARGET!")
-				vague_message = span_notice("You feel [you_feel] as you are operated on.")
-		target.show_message(vague_message, MSG_VISUAL, span_notice("You feel [you_feel] as you are operated on."))
+				vague_message = span_notice("Вы чувствуете [you_feel], как вас оперируют.")
+		target.show_message(vague_message, MSG_VISUAL, span_notice("Вы чувствуете [you_feel], как вас оперируют."))
 /**
  * Sends a pain message to the target, including a chance of screaming.
  *
@@ -266,7 +266,7 @@
 /datum/surgery_step/proc/display_pain(mob/living/target, pain_message, mechanical_surgery = FALSE)
 	if(target.stat < UNCONSCIOUS)
 		if(HAS_TRAIT(target, TRAIT_ANALGESIA))
-			to_chat(target, span_notice("You feel a dull, numb sensation as your body is surgically operated on."))
+			to_chat(target, span_notice("Вы чувствуете онемение, пока ваше тело оперируют."))
 		else
 			to_chat(target, span_userdanger(pain_message))
 			if(prob(30) && !mechanical_surgery)
