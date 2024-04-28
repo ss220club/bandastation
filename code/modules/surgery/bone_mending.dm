@@ -60,9 +60,9 @@
 		display_results(
 			user,
 			target,
-			span_notice("Вы приступаете к устранению перелома [target]'s [parse_zone(user.zone_selected)]..."),
-			span_notice("[user] приступает к устранению перелома [target]'s [parse_zone(user.zone_selected)] при помощи [tool]."),
-			span_notice("[user] приступает к устранению перелома [target]'s [parse_zone(user.zone_selected)]."),
+			span_notice("Вы приступаете к устранению перелома [target] [parse_zone(user.zone_selected)]..."),
+			span_notice("[user] приступает к устранению перелома [target] [parse_zone(user.zone_selected)] при помощи [tool.name]."),
+			span_notice("[user] приступает к устранению перелома [target] [parse_zone(user.zone_selected)]."),
 		)
 		display_pain(target, "Ваш [parse_zone(user.zone_selected)] испытывает сильную боль!")
 	else

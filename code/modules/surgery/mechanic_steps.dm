@@ -48,7 +48,7 @@
 		span_notice("[user] начинает закручивать корпус в [parse_zone(target_zone)] у [target]."),
 		span_notice("[user] начинает закручивать корпус в [parse_zone(target_zone)] у [target]."),
 	)
-	display_pain(target, "Вы ощущаете как начинаете получать показания датчиков из [parse_zone(target_zone)], после того, как панель закрутили обратно.", TRUE)
+	display_pain(target, "Вы ощущаете, как начинаете получать показания датчиков из [parse_zone(target_zone)], после того, как панель закрутили обратно.", TRUE)
 
 /datum/surgery_step/mechanic_close/tool_check(mob/user, obj/item/tool)
 	if(implement_type == /obj/item && !tool.get_sharpness())
@@ -130,7 +130,7 @@
 
 //open hatch
 /datum/surgery_step/open_hatch
-	name = "откройте люк (рука)"
+	name = "открытойте люк (рука)"
 	accept_hand = TRUE
 	time = 10
 	preop_sound = 'sound/items/ratchet.ogg'
@@ -144,7 +144,7 @@
 		span_notice("[user] начинает открывать держатели люка в [parse_zone(target_zone)] у [target]."),
 		span_notice("[user] начинает открывать держатели люка в [parse_zone(target_zone)] у [target]."),
 	)
-	display_pain(target, "Вы перестаёте получать показания датчиков из вашей [parse_zone(target_zone)], по мере того как открывается люк.", TRUE)
+	display_pain(target, "Вы получаете последние показания датчиков из вашей [parse_zone(target_zone)], когда открывается люк.", TRUE)
 
 /datum/surgery_step/open_hatch/tool_check(mob/user, obj/item/tool)
 	if(tool.usesound)
