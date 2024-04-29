@@ -281,7 +281,7 @@ DEFINE_BITFIELD(janitor_mode_flags, list(
 #define FIREBOT_VOICED_STOP_DROP "Остановитесь, упадите и катайтесь на месте!"
 #define FIREBOT_VOICED_EXTINGUISHING "Тушение!"
 #define FIREBOT_VOICED_NO_FIRES "Пожаров не обнаружено."
-#define FIREBOT_VOICED_ONLY_YOU "Только вы можете предотвратить пожары на станциях."
+#define FIREBOT_VOICED_ONLY_YOU "Только вы можете предотвратить пожары на станции."
 #define FIREBOT_VOICED_TEMPERATURE_NOMINAL "Температура в норме."
 #define FIREBOT_VOICED_KEEP_COOL "Не парьтесь."
 
