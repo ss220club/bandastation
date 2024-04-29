@@ -407,7 +407,7 @@ GLOBAL_LIST_EMPTY(antagonists)
  * Appears at start of roundend_catagory section.
  */
 /datum/antagonist/proc/roundend_report_header()
-	return "<span class='header'> [roundend_category] были:</span><br>"
+	return "<span class='header'>[roundend_category] были:</span><br>"
 
 /**
  * Proc that sends string data for the round-end report.

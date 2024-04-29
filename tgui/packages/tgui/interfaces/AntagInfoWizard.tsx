@@ -65,7 +65,7 @@ export const AntagInfoWizard = (props) => {
             <Section scrollable fill>
               <Stack vertical>
                 <Stack.Item textColor="red" fontSize="20px">
-                  Вы - Космический Маг!
+                  Вы - Космический Волшебник!
                 </Stack.Item>
                 <Stack.Item>
                   <ObjectivePrintout
