@@ -9,7 +9,7 @@ export const WIZARD_MECHANICAL_DESCRIPTION = multiline`
 
 const Wizard: Antagonist = {
   key: 'wizard',
-  name: 'Маг',
+  name: 'Волшебник',
   description: [
     `"GREETINGS. WE'RE THE WIZARDS OF THE WIZARD'S FEDERATION."`,
     WIZARD_MECHANICAL_DESCRIPTION,
