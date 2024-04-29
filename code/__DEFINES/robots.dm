@@ -305,7 +305,7 @@ DEFINE_BITFIELD(janitor_mode_flags, list(
 #define MEDIBOT_VOICED_APPLE_A_DAY "Яблочко на ужин, и врач не нужен!"
 #define MEDIBOT_VOICED_FEEL_BETTER "Поправляйтесь!"
 #define MEDIBOT_VOICED_STAY_WITH_ME	"Нет! Не бросай меня!"
-#define MEDIBOT_VOICED_LIVE	"Живи, черт возьми, ЖИВИ"
+#define MEDIBOT_VOICED_LIVE	"Живи, черт возьми, ЖИВИ!"
 #define MEDIBOT_VOICED_NEVER_LOST "Я... я никогда раньше не терял пациентов. Сегодня, то есть."
 #define MEDIBOT_VOICED_DELICIOUS "Восхитительно!"
 #define MEDIBOT_VOICED_PLASTIC_SURGEON "Я так и знал! Нужно было учиться на пластического хирурга."
