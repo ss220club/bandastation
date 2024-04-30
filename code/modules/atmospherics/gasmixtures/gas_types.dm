@@ -255,7 +255,7 @@
 	moles_visible = MOLES_GAS_VISIBLE
 	rarity = 200
 	base_value = 2.5
-	desc = "Очень летучий газ, который по-разному реагирует с различными газами."
+	desc = "Очень летучий газ, который по-разному реагирует с другими газами."
 	primary_color = "#adff2f"
 
 /datum/gas/zauker
