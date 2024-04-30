@@ -107,5 +107,5 @@
 		кончатся, после длительного периода времени они восстановятся."
 	item_path = /obj/item/runic_vendor_scepter
 	category = SPELLBOOK_CATEGORY_ASSISTANCE
-  
+
 #undef SPELLBOOK_CATEGORY_ASSISTANCE
