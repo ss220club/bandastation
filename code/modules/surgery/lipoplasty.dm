@@ -1,5 +1,5 @@
 /datum/surgery/lipoplasty
-	name = "Lipoplasty"
+	name = "Липосакция"
 	possible_locs = list(BODY_ZONE_CHEST)
 	steps = list(
 		/datum/surgery_step/incise,
@@ -17,7 +17,7 @@
 
 //cut fat
 /datum/surgery_step/cut_fat
-	name = "cut excess fat (circular saw)"
+	name = "срежьте лишний жир (циркулярная пила)"
 	implements = list(
 		TOOL_SAW = 100,
 		/obj/item/shovel/serrated = 75,
@@ -30,30 +30,30 @@
 	)
 
 /datum/surgery_step/cut_fat/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	user.visible_message(span_notice("[user] begins to cut away [target]'s excess fat."), span_notice("You begin to cut away [target]'s excess fat..."))
+	user.visible_message(span_notice("[user] начинает отрезать лишний жир у [target]."), span_notice("Вы начинаете отрезать лишний жир у [target]..."))
 	display_results(
 		user,
 		target,
-		span_notice("You begin to cut away [target]'s excess fat..."),
-		span_notice("[user] begins to cut away [target]'s excess fat."),
-		span_notice("[user] begins to cut [target]'s [target_zone] with [tool]."),
+		span_notice("Вы начинаете отрезать лишний жир у [target]..."),
+		span_notice("[user] начинает отрезать лишний жир у [target]"),
+		span_notice("[user] начинает отрезать у [target] [target_zone] при помощи [tool.name]."),
 	)
-	display_pain(target, "You feel a stabbing in your [target_zone]!")
+	display_pain(target, "Вы чувствуете резкую боль в вашей [target_zone]!")
 
 /datum/surgery_step/cut_fat/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results)
 	display_results(
 		user,
 		target,
-		span_notice("You cut [target]'s excess fat loose."),
-		span_notice("[user] cuts [target]'s excess fat loose!"),
-		span_notice("[user] finishes the cut on [target]'s [target_zone]."),
+		span_notice("Вы отрезали лишний жир у [target]."),
+		span_notice("[user] отрезал лишний жир у [target]!"),
+		span_notice("[user] заканчивает разрез на [target] [target_zone]."),
 	)
-	display_pain(target, "The fat in your [target_zone] comes loose, dangling and hurting like hell!")
+	display_pain(target, "Жир в вашей  [target_zone] ослабевает, свисает и болит как черт знает что!")
 	return TRUE
 
 //remove fat
 /datum/surgery_step/remove_fat
-	name = "remove loose fat (retractor)"
+	name = "удалите жировые отложения (ретрактор)"
 	implements = list(
 		TOOL_RETRACTOR = 100,
 		TOOL_SCREWDRIVER = 45,
@@ -66,19 +66,19 @@
 	display_results(
 		user,
 		target,
-		span_notice("You begin to extract [target]'s loose fat..."),
-		span_notice("[user] begins to extract [target]'s loose fat!"),
-		span_notice("[user] begins to extract something from [target]'s [target_zone]."),
+		span_notice("Вы начинаете извлекать лишний жир у [target]..."),
+		span_notice("[user] начинает извлекать лишний жир у [target]!"),
+		span_notice("[user] начинает извлекать что-то у [target] в [target_zone]."),
 	)
-	display_pain(target, "You feel an oddly painless tugging on your loose fat!")
+	display_pain(target, "Вы чувствуете странное безболезненное потягивание за лишний жир!")
 
 /datum/surgery_step/remove_fat/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
 	display_results(
 		user,
 		target,
-		span_notice("You extract [target]'s fat."),
-		span_notice("[user] extracts [target]'s fat!"),
-		span_notice("[user] extracts [target]'s fat!"),
+		span_notice("Вы извлекли жир у [target]."),
+		span_notice("[user] извлек жир у [target]!"),
+		span_notice("[user] извлек жир у [target]!"),
 	)
 	target.overeatduration = 0 //patient is unfatted
 	var/removednutriment = target.nutrition
@@ -94,8 +94,8 @@
 
 	if(typeofmeat)
 		var/obj/item/food/meat/slab/human/newmeat = new typeofmeat
-		newmeat.name = "fatty meat"
-		newmeat.desc = "Extremely fatty tissue taken from a patient."
+		newmeat.name = "жирное мясо"
+		newmeat.desc = "Очень толстая жировая ткань, взятая у пациента."
 		newmeat.subjectname = human.real_name
 		newmeat.subjectjob = human.job
 		newmeat.reagents.add_reagent (/datum/reagent/consumable/nutriment, (removednutriment / 15)) //To balance with nutriment_factor of nutriment

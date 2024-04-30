@@ -5,7 +5,7 @@
 			/* hud_owner = */ src,
 			src,
 			"Продолжить",
-			/* offset = */ 0,
+			/* offset = */ 1,
 			CALLBACK(src, PROC_REF(home_resume)),
 		)
 	)
@@ -15,8 +15,8 @@
 			null,
 			/* hud_owner = */ null,
 			src,
-			"Настройки",
-			/* offset = */ 1,
+			"Настройки персонажа",
+			/* offset = */ 2,
 			CALLBACK(src, PROC_REF(home_open_settings)),
 		)
 	)
@@ -27,7 +27,7 @@
 			/* hud_owner = */ src,
 			src,
 			"Админхелп",
-			/* offset = */ 2,
+			/* offset = */ 3,
 		)
 	)
 
@@ -37,7 +37,7 @@
 			/* hud_owner = */ src,
 			src,
 			"Покинуть тело",
-			/* offset = */ 3,
+			/* offset = */ 4,
 			CALLBACK(src, PROC_REF(open_leave_body)),
 		)
 	)

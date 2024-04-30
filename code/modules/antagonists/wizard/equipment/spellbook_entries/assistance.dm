@@ -1,44 +1,45 @@
+#define SPELLBOOK_CATEGORY_ASSISTANCE "Assistance"
 // Wizard spells that assist the caster in some way
 /datum/spellbook_entry/summonitem
 	name = "Summon Item"
 	desc = "Возвращает в вашу руку ранее отмеченный предмет из любой точки вселенной."
 	spell_type = /datum/action/cooldown/spell/summonitem
-	category = "Поддержка"
+	category = SPELLBOOK_CATEGORY_ASSISTANCE
 	cost = 1
 
 /datum/spellbook_entry/charge
 	name = "Charge"
 	desc = "Это заклинание можно использовать для подзарядки самых разных предметов в ваших руках, от магических артефактов до электрических компонентов. Креативный волшебник может даже использовать его, чтобы наделить магической силой своего товарища."
 	spell_type = /datum/action/cooldown/spell/charge
-	category = "Поддержка"
+	category = SPELLBOOK_CATEGORY_ASSISTANCE
 	cost = 1
 
 /datum/spellbook_entry/shapeshift
 	name = "Wild Shapeshift"
 	desc = "Примите на время облик другого существа, чтобы использовать его способности. После того как вы сделали свой выбор, его нельзя изменить."
 	spell_type = /datum/action/cooldown/spell/shapeshift/wizard
-	category = "Поддержка"
+	category = SPELLBOOK_CATEGORY_ASSISTANCE
 	cost = 1
 
 /datum/spellbook_entry/tap
 	name = "Soul Tap"
 	desc = "Заряжайте свои заклинания, используя собственную душу!"
 	spell_type = /datum/action/cooldown/spell/tap
-	category = "Поддержка"
+	category = SPELLBOOK_CATEGORY_ASSISTANCE
 	cost = 1
 
 /datum/spellbook_entry/item/staffanimation
 	name = "Staff of Animation"
 	desc = "Арканный посох, способный стрелять зарядами эльдрической энергии, которые заставляют оживать неодушевленные предметы. Эта магия не действует на машины.."
 	item_path = /obj/item/gun/magic/staff/animate
-	category = "Поддержка"
+	category = SPELLBOOK_CATEGORY_ASSISTANCE
 
 /datum/spellbook_entry/item/soulstones
 	name = "Soulstone Shard Kit"
 	desc = "Осколки камней душ - древние инструменты, способные захватить и использовать души мертвых и умирающих. \
 		Заклинание Artificer позволяет создавать арканные машины для пойманных душ, которыми они могут управлять."
 	item_path = /obj/item/storage/belt/soulstone/full
-	category = "Поддержка"
+	category = SPELLBOOK_CATEGORY_ASSISTANCE
 
 /datum/spellbook_entry/item/soulstones/try_equip_item(mob/living/carbon/human/user, obj/item/to_equip)
 	var/was_equipped = user.equip_to_slot_if_possible(to_equip, ITEM_SLOT_BELT, disable_warning = TRUE)
@@ -56,13 +57,13 @@
 	name = "A Necromantic Stone"
 	desc = "Камень некроманта способен воскресить трех мертвецов в виде рабов скелетов, которыми вы можете командовать."
 	item_path = /obj/item/necromantic_stone
-	category = "Поддержка"
+	category = SPELLBOOK_CATEGORY_ASSISTANCE
 
 /datum/spellbook_entry/item/contract
 	name = "Contract of Apprenticeship"
 	desc = "Магический контракт, привязывающий ученика волшебника к вашей службе, при использовании вызовет его на вашу сторону."
 	item_path = /obj/item/antag_spawner/contract
-	category = "Поддержка"
+	category = SPELLBOOK_CATEGORY_ASSISTANCE
 	refundable = TRUE
 
 /datum/spellbook_entry/item/guardian
@@ -70,7 +71,7 @@
 	desc = "Колода карт хранителей Таро, способная привязать к вашему телу личного хранителя. Существует несколько типов хранителей, но они все будут переносить на вас определенный урон. \
 	Разумно будет избегать покупки их с чем-то, что может заставить вас поменяться телами с другими."
 	item_path = /obj/item/guardian_creator/wizard
-	category = "Поддержка"
+	category = SPELLBOOK_CATEGORY_ASSISTANCE
 
 /datum/spellbook_entry/item/bloodbottle
 	name = "Bottle of Blood"
@@ -80,7 +81,7 @@
 		в своих убийствах, и вы сами можете стать жертвой."
 	item_path = /obj/item/antag_spawner/slaughter_demon
 	limit = 3
-	category = "Поддержка"
+	category = SPELLBOOK_CATEGORY_ASSISTANCE
 	refundable = TRUE
 
 /datum/spellbook_entry/item/hugbottle
@@ -95,7 +96,7 @@
 	item_path = /obj/item/antag_spawner/slaughter_demon/laughter
 	cost = 1 //non-destructive; it's just a jape, sibling!
 	limit = 3
-	category = "Поддержка"
+	category = SPELLBOOK_CATEGORY_ASSISTANCE
 	refundable = TRUE
 
 /datum/spellbook_entry/item/vendormancer
@@ -105,4 +106,6 @@
 		брошены в противников или непосредственно взорваны. Если заряды \
 		кончатся, после длительного периода времени они восстановятся."
 	item_path = /obj/item/runic_vendor_scepter
-	category = "Поддержка"
+	category = SPELLBOOK_CATEGORY_ASSISTANCE
+  
+#undef SPELLBOOK_CATEGORY_ASSISTANCE

@@ -1,49 +1,50 @@
+#define SPELLBOOK_CATEGORY_DEFENSIVE "Defensive"
 // Defensive wizard spells
 /datum/spellbook_entry/magicm
 	name = "Magic Missile"
 	desc = "Выпускает несколько медленно движущихся магических снарядов по ближайшим целям."
 	spell_type = /datum/action/cooldown/spell/aoe/magic_missile
-	category = "Защита"
+	category = SPELLBOOK_CATEGORY_DEFENSIVE
 
 /datum/spellbook_entry/disabletech
 	name = "Disable Tech"
 	desc = "Отключает все оружие, камеры и большинство других устройств в радиусе действия."
 	spell_type = /datum/action/cooldown/spell/emp/disable_tech
-	category = "Защита"
+	category = SPELLBOOK_CATEGORY_DEFENSIVE
 	cost = 1
 
 /datum/spellbook_entry/repulse
 	name = "Repulse"
 	desc = "Отбрасывает все вокруг пользователя."
 	spell_type = /datum/action/cooldown/spell/aoe/repulse/wizard
-	category = "Защита"
+	category = SPELLBOOK_CATEGORY_DEFENSIVE
 
 /datum/spellbook_entry/lightning_packet
 	name = "Thrown Lightning"
 	desc = "Выкованный из эльдрической энергии, пакетик чистой силы, \
 		известный как пакет заклинаний, появится в вашей руке и при броске оглушит цель."
 	spell_type = /datum/action/cooldown/spell/conjure_item/spellpacket
-	category = "Защита"
+	category = SPELLBOOK_CATEGORY_DEFENSIVE
 
 /datum/spellbook_entry/timestop
 	name = "Time Stop"
 	desc = "Останавливает время для всех, кроме вас, позволяя вам свободно двигаться, \
 		в то время как ваши враги и даже снаряды заморожены."
 	spell_type = /datum/action/cooldown/spell/timestop
-	category = "Защита"
+	category = SPELLBOOK_CATEGORY_DEFENSIVE
 
 /datum/spellbook_entry/smoke
 	name = "Smoke"
 	desc = "Порождает облако удушливого дыма на вашем месте."
 	spell_type = /datum/action/cooldown/spell/smoke
-	category = "Защита"
+	category = SPELLBOOK_CATEGORY_DEFENSIVE
 	cost = 1
 
 /datum/spellbook_entry/forcewall
 	name = "Force Wall"
 	desc = "Создайте магический барьер, через который сможете пройти только вы."
 	spell_type = /datum/action/cooldown/spell/forcewall
-	category = "Защита"
+	category = SPELLBOOK_CATEGORY_DEFENSIVE
 	cost = 1
 
 /datum/spellbook_entry/lichdom
@@ -53,28 +54,28 @@
 		независимо от обстоятельств. Будьте осторожны - с каждым возрождением ваше тело будет слабеть, и \
 		другим станет проще найти ваш предмет силы."
 	spell_type =  /datum/action/cooldown/spell/lichdom
-	category = "Защита"
+	category = SPELLBOOK_CATEGORY_DEFENSIVE
 	no_coexistance_typecache = list(/datum/action/cooldown/spell/splattercasting)
 
 /datum/spellbook_entry/chuunibyou
 	name = "Chuuni Invocations"
 	desc = "Заставляет все ваши заклинания выкрикивать призывы, а сами призывы становятся... глупыми. Вы немного исцеляетесь после произнесения заклинания."
 	spell_type =  /datum/action/cooldown/spell/chuuni_invocations
-	category = "Защита"
+	category = SPELLBOOK_CATEGORY_DEFENSIVE
 
 /datum/spellbook_entry/spacetime_dist
 	name = "Spacetime Distortion"
 	desc = "Запутывает нити пространства-времени в области вокруг вас, \
 		случайным образом изменяя расположение и делая невозможным правильное перемещение. Нити колеблются..."
 	spell_type = /datum/action/cooldown/spell/spacetime_dist
-	category = "Защита"
+	category = SPELLBOOK_CATEGORY_DEFENSIVE
 	cost = 1
 
 /datum/spellbook_entry/the_traps
 	name = "The Traps!"
 	desc = "Вызовите вокруг себя несколько ловушек. Они нанесут урон и разозлят любых врагов, которые на них наступят."
 	spell_type = /datum/action/cooldown/spell/conjure/the_traps
-	category = "Защита"
+	category = SPELLBOOK_CATEGORY_DEFENSIVE
 	cost = 1
 
 /datum/spellbook_entry/bees
@@ -82,7 +83,7 @@
 	desc = "Это заклинание магически бьет по транспространственному улью, \
 		мгновенно вызывая рой пчел в ваше местоположение. Эти пчелы НЕ дружелюбны ко всем."
 	spell_type = /datum/action/cooldown/spell/conjure/bee
-	category = "Защита"
+	category = SPELLBOOK_CATEGORY_DEFENSIVE
 
 /datum/spellbook_entry/duffelbag
 	name = "Bestow Cursed Duffel Bag"
@@ -91,7 +92,7 @@
 		если ее не кормить регулярно, и независимо от того, кормили ее или нет, \
 		она будет значительно замедлять передвижение того, кто ее носит."
 	spell_type = /datum/action/cooldown/spell/touch/duffelbag
-	category = "Защита"
+	category = SPELLBOOK_CATEGORY_DEFENSIVE
 	cost = 1
 
 /datum/spellbook_entry/item/staffhealing
@@ -99,26 +100,26 @@
 	desc = "Альтруистический посох, способный исцелять хромых и воскрешать мертвых."
 	item_path = /obj/item/gun/magic/staff/healing
 	cost = 1
-	category = "Защита"
+	category = SPELLBOOK_CATEGORY_DEFENSIVE
 
 /datum/spellbook_entry/item/lockerstaff
 	name = "Staff of the Locker"
 	desc = "Посох, стреляющий шкафчиками. Он съедает всех, в кого попадает на своем пути, оставляя после себя заваренный шкафчик с вашими жертвами."
 	item_path = /obj/item/gun/magic/staff/locker
-	category = "Защита"
+	category = SPELLBOOK_CATEGORY_DEFENSIVE
 
 /datum/spellbook_entry/item/scryingorb
 	name = "Scrying Orb"
 	desc = "Накаленная сфера с потрескивающей энергией. Используя его, вы сможете выпустить свой дух при сохранении жизни, что позволит вам шпионить за станцией и разговаривать с умершими. Кроме того, купив его, вы навсегда получите рентгеновское зрение."
 	item_path = /obj/item/scrying
-	category = "Защита"
+	category = SPELLBOOK_CATEGORY_DEFENSIVE
 
 /datum/spellbook_entry/item/wands
 	name = "Wand Assortment"
 	desc = "Коллекция палочек, позволяющих использовать их в самых разных целях. \
 		У палочек ограниченное количество зарядов, поэтому будьте осторожны при их использовании. Поставляется в удобном поясе."
 	item_path = /obj/item/storage/belt/wands/full
-	category = "Защита"
+	category = SPELLBOOK_CATEGORY_DEFENSIVE
 
 /datum/spellbook_entry/item/wands/try_equip_item(mob/living/carbon/human/user, obj/item/to_equip)
 	var/was_equipped = user.equip_to_slot_if_possible(to_equip, ITEM_SLOT_BELT, disable_warning = TRUE)
@@ -130,7 +131,7 @@
 		и обеспечивающий дополнительную защиту от атак и пустоты космоса. \
 		Также дает силовой щит боевого мага."
 	item_path = /obj/item/mod/control/pre_equipped/enchanted
-	category = "Защита"
+	category = SPELLBOOK_CATEGORY_DEFENSIVE
 
 /datum/spellbook_entry/item/armor/try_equip_item(mob/living/carbon/human/user, obj/item/to_equip)
 	var/obj/item/mod/control/mod = to_equip
@@ -151,5 +152,7 @@
 	name = "Battlemage Armour Charges"
 	desc = "Мощная защитная руна, она дает восемь дополнительных зарядов к силовому щиту боевого мага."
 	item_path = /obj/item/wizard_armour_charge
-	category = "Защита"
+	category = SPELLBOOK_CATEGORY_DEFENSIVE
 	cost = 1
+
+#undef SPELLBOOK_CATEGORY_DEFENSIVE

@@ -1,5 +1,5 @@
 /datum/surgery/implant_removal
-	name = "Implant Removal"
+	name = "Извлечение имплантов"
 	target_mobtypes = list(/mob/living)
 	possible_locs = list(BODY_ZONE_CHEST)
 	surgery_flags = SURGERY_REQUIRE_RESTING
@@ -13,7 +13,7 @@
 
 //extract implant
 /datum/surgery_step/extract_implant
-	name = "extract implant (hemostat)"
+	name = "извлеките имплант (гемостат)"
 	implements = list(
 		TOOL_HEMOSTAT = 100,
 		TOOL_CROWBAR = 65,
@@ -30,18 +30,18 @@
 		display_results(
 			user,
 			target,
-			span_notice("You begin to extract [implant] from [target]'s [target_zone]..."),
-			span_notice("[user] begins to extract [implant] from [target]'s [target_zone]."),
-			span_notice("[user] begins to extract something from [target]'s [target_zone]."),
+			span_notice("Вы начинаете извлекать [implant] из [target_zone] у [target]..."),
+			span_notice("[user] начинает извлекать [implant] из [target_zone] у [target]."),
+			span_notice("[user] начинает что-то извлекать из [target_zone] у [target]."),
 		)
-		display_pain(target, "You feel a serious pain in your [target_zone]!")
+		display_pain(target, "Вы чуствуете острую боль в [target_zone]!")
 	else
 		display_results(
 			user,
 			target,
-			span_notice("You look for an implant in [target]'s [target_zone]..."),
-			span_notice("[user] looks for an implant in [target]'s [target_zone]."),
-			span_notice("[user] looks for something in [target]'s [target_zone]."),
+			span_notice("Вы ищете имплант в [target_zone] у [target]..."),
+			span_notice("[user] ищет имплант в [target_zone] у [target]."),
+			span_notice("[user] ищет что-то в [target_zone] у [target]."),
 		)
 
 /datum/surgery_step/extract_implant/success(mob/user, mob/living/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
@@ -49,11 +49,11 @@
 		display_results(
 			user,
 			target,
-			span_notice("You successfully remove [implant] from [target]'s [target_zone]."),
-			span_notice("[user] successfully removes [implant] from [target]'s [target_zone]!"),
-			span_notice("[user] successfully removes something from [target]'s [target_zone]!"),
+			span_notice("Вы успешно извлекли [implant] из [target_zone] у [target]."),
+			span_notice("[user] успешно извлек [implant] из [target_zone] у [target]!"),
+			span_notice("[user] успешно извлек что-то из [target_zone] у [target]!"),
 		)
-		display_pain(target, "You can feel your [implant.name] pulled out of you!")
+		display_pain(target, "Вы чувствуете, как [implant.name] извлекли из вас!")
 		implant.removed(target)
 
 		if (QDELETED(implant))
@@ -72,19 +72,19 @@
 			display_results(
 				user,
 				target,
-				span_notice("You place [implant] into [case]."),
-				span_notice("[user] places [implant] into [case]!"),
-				span_notice("[user] places it into [case]!"),
+				span_notice("Вы помещаете [implant] в [case]."),
+				span_notice("[user] помещает [implant] в [case]!"),
+				span_notice("[user] помещает что-то в [case]!"),
 			)
 		else
 			qdel(implant)
 
 	else
-		to_chat(user, span_warning("You can't find anything in [target]'s [target_zone]!"))
+		to_chat(user, span_warning("Вы не можете найти ничего в [target_zone] у [target]!"))
 	return ..()
 
 /datum/surgery/implant_removal/mechanic
-	name = "Implant Removal"
+	name = "Удаление имплантов"
 	requires_bodypart_type = BODYTYPE_ROBOTIC
 	target_mobtypes = list(/mob/living/carbon/human) // Simpler mobs don't have bodypart types
 	surgery_flags = parent_type::surgery_flags | SURGERY_REQUIRE_LIMB
