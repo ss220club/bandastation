@@ -63,7 +63,7 @@ GLOBAL_LIST_INIT(electrolyzer_reactions, electrolyzer_reactions_list())
 /datum/electrolyzer_reaction/nob_conversion
 	name = "Электролиз Гиперноблиума"
 	id = "nob_conversion"
-	desc = "Превращение Гиперноблиума в Антиноблиум"
+	desc = "Превращение гипер-ноблиума в анти-ноблиум"
 	requirements = list(
 		/datum/gas/hypernoblium = MINIMUM_MOLE_COUNT,
 		"MAX_TEMP" = 150
