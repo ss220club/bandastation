@@ -1,9 +1,9 @@
 /datum/mutation/human/antenna
-	name = "Antenna"
-	desc = "The affected person sprouts an antenna. This is known to allow them to access common radio channels passively."
+	name = "Антенна"
+	desc = "У лица подверженной данной мутации вырастает антенна. Известно, что она позволяет им получать доступ к общим радиоканалам."
 	quality = POSITIVE
-	text_gain_indication = "<span class='notice'>You feel an antenna sprout from your forehead.</span>"
-	text_lose_indication = "<span class='notice'>Your antenna shrinks back down.</span>"
+	text_gain_indication = "<span class='notice'>Ты чувствуешь, что на твоём лбу вырастает антенна.</span>"
+	text_lose_indication = "<span class='notice'>Твоя антенна убавляется и пропадает окончательно.</span>"
 	instability = 5
 	difficulty = 8
 	var/datum/weakref/radio_weakref
@@ -41,11 +41,11 @@
 	return visual_indicators[type][1]
 
 /datum/mutation/human/mindreader
-	name = "Mind Reader"
-	desc = "The affected person can look into the recent memories of others."
+	name = "Чтение разума"
+	desc = "Лицо подверженное данной мутации может заглянуть в недавние воспоминания других."
 	quality = POSITIVE
-	text_gain_indication = "<span class='notice'>You hear distant voices at the corners of your mind.</span>"
-	text_lose_indication = "<span class='notice'>The distant voices fade.</span>"
+	text_gain_indication = "<span class='notice'>Ты слышишь голоса вдали в закромах своего разума.</span>"
+	text_lose_indication = "<span class='notice'>Голоса вдали затихают.</span>"
 	power_path = /datum/action/cooldown/spell/pointed/mindread
 	instability = 40
 	difficulty = 8
