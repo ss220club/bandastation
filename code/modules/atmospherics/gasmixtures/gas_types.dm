@@ -96,7 +96,7 @@
 	rarity = 700
 	purchaseable = TRUE
 	base_value = 0.2
-	desc = "Что за хрень такое углекислый газ?"
+	desc = "Что за хрень такая - углекислый газ?"
 	primary_color = COLOR_GRAY
 
 /datum/gas/plasma
