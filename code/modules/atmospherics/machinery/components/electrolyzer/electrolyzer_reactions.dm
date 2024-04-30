@@ -61,7 +61,7 @@ GLOBAL_LIST_INIT(electrolyzer_reactions, electrolyzer_reactions_list())
 		air_mixture.temperature = max(air_mixture.temperature * old_heat_capacity / new_heat_capacity, TCMB)
 
 /datum/electrolyzer_reaction/nob_conversion
-	name = "Электролиз Гиперноблиума"
+	name = "Электролиз гипер-ноблиума"
 	id = "nob_conversion"
 	desc = "Превращение гипер-ноблиума в анти-ноблиум"
 	requirements = list(
