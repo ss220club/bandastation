@@ -1,5 +1,5 @@
 /datum/mutation/human/self_amputation
-	name = "Автотомия"
+	name = "Autotomy"
 	desc = "Позволяет существу добровольно отказаться от случайной конечности."
 	quality = POSITIVE
 	text_gain_indication = span_notice("Ты чувствуешь слабость в суставах.")

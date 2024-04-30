@@ -1,5 +1,5 @@
 /datum/mutation/human/antenna
-	name = "Антенна"
+	name = "Antenna"
 	desc = "У лица подверженной данной мутации вырастает антенна. Известно, что она позволяет им получать доступ к общим радиоканалам."
 	quality = POSITIVE
 	text_gain_indication = "<span class='notice'>Ты чувствуешь, что на твоём лбу вырастает антенна.</span>"
@@ -41,7 +41,7 @@
 	return visual_indicators[type][1]
 
 /datum/mutation/human/mindreader
-	name = "Чтение разума"
+	name = "Mind Reader"
 	desc = "Лицо подверженное данной мутации может заглянуть в недавние воспоминания других."
 	quality = POSITIVE
 	text_gain_indication = "<span class='notice'>Ты слышишь голоса вдали в закромах своего разума.</span>"

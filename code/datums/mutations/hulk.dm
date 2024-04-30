@@ -1,6 +1,6 @@
 //Hulk turns your skin green, makes you strong, and allows you to shrug off stun effect.
 /datum/mutation/human/hulk
-	name = "Халк"
+	name = "Hulk"
 	desc = "Слабо изученный геном известно, что он заставляет мышцы его носителя увеличиваться, подавляет речь и придаёт коже носителя плохое состояние."
 	quality = POSITIVE
 	locked = TRUE

@@ -1,6 +1,6 @@
 //Nearsightedness restricts your vision by several tiles.
 /datum/mutation/human/nearsight
-	name = "Близорукость"
+	name = "Near Sightness"
 	desc = "Обладатель данной мутации имеет проблемы со зрением."
 	quality = MINOR_NEGATIVE
 	text_gain_indication = "<span class='danger'>Ты плоховато видишь.</span>"
@@ -17,7 +17,7 @@
 
 ///Blind makes you blind. Who knew?
 /datum/mutation/human/blind
-	name = "Слепота"
+	name = "Blindness"
 	desc = "Субъект становится полностью слепым."
 	quality = NEGATIVE
 	text_gain_indication = "<span class='danger'>Ты не можешь ничего увидеть.</span>"
@@ -34,7 +34,7 @@
 
 ///Thermal Vision lets you see mobs through walls
 /datum/mutation/human/thermal
-	name = "Термальное зрение"
+	name = "Thermal Vision"
 	desc = "Обладатель данного генома может визуально заметить уникальную тепловую сигнатуру человека."
 	quality = POSITIVE
 	difficulty = 18
@@ -107,7 +107,7 @@
 
 ///X-ray Vision lets you see through walls.
 /datum/mutation/human/xray
-	name = "X Ray зрение"
+	name = "X Ray Vision"
 	desc = "Странный геном, который позволяет его обладателю видеть пространство между стенами." //actual x-ray would mean you'd constantly be blasting rads, wich might be fun for later //hmb
 	text_gain_indication = "<span class='notice'>Стены вдруг исчезли!</span>"
 	instability = 35
@@ -128,7 +128,7 @@
 
 ///Laser Eyes lets you shoot lasers from your eyes!
 /datum/mutation/human/laser_eyes
-	name = "Лазерные глаза"
+	name = "Laser Eyes"
 	desc = "Отражает сконцентрированный свет от глаз."
 	quality = POSITIVE
 	locked = TRUE
@@ -180,7 +180,7 @@
 	icon_state = "eyelasers"
 
 /datum/mutation/human/illiterate
-	name = "Неграмотность"
+	name = "Illiterate"
 	desc = "Является причиной тяжёлого случая Афазии, которая мешает чтению или письму."
 	quality = NEGATIVE
 	text_gain_indication = "<span class='danger'>Ты чувствуешь себя неспособным читать или писать.</span>"

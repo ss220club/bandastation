@@ -1,5 +1,5 @@
 /datum/mutation/human/void
-	name = "Магнит пустоты"
+	name = "Void Magnet"
 	desc = "Редкий геном, который притягивает странные силы, обычно не наблюдаемые."
 	quality = MINOR_NEGATIVE //upsides and downsides
 	text_gain_indication = span_notice("Ты ощущаешь тяжёлую, мрачную силу, которая наблюдает за тобой через стену.")

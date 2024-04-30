@@ -1,5 +1,5 @@
 /datum/mutation/human/biotechcompat
-	name = "Совместимость с биотехнологиями"
+	name = "Biotech Compatibility"
 	desc = "Субъект становится более совместимым с биотехнологиями например чипы навыка."
 	quality = POSITIVE
 	instability = 5
@@ -13,7 +13,7 @@
 	return ..()
 
 /datum/mutation/human/clever
-	name = "Мудрость"
+	name = "Clever"
 	desc = "Заставляет субъекта чувствовать себя немного умнее. Наиболее эффективен с особями обладающими низким уровнем интеллекта."
 	quality = POSITIVE
 	instability = 20

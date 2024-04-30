@@ -2,7 +2,7 @@
 //Individual ones aren't commented since their functions should be evident at a glance
 
 /datum/mutation/human/nervousness
-	name = "Нервозность"
+	name = "Nervousness"
 	desc = "Обладатель данного генома заикается."
 	quality = MINOR_NEGATIVE
 	text_gain_indication = "<span class='danger'>Ты нервничаешь.</span>"
@@ -12,7 +12,7 @@
 		owner.set_stutter_if_lower(20 SECONDS)
 
 /datum/mutation/human/wacky
-	name = "Чокнутый"
+	name = "Wacky"
 	desc = "Ты не клоун. Ты целый цирк."
 	quality = MINOR_NEGATIVE
 	text_gain_indication = "<span class='sans'><span class='infoplain'>Ты чувствуешь странности в своих голосовых связках.</span></span>"
@@ -34,7 +34,7 @@
 	speech_args[SPEECH_SPANS] |= SPAN_SANS
 
 /datum/mutation/human/mute
-	name = "Немота"
+	name = "Mute"
 	desc = "Геном полностью подавляет отдел головного мозга отвечающий за речевой аппарат."
 	quality = NEGATIVE
 	text_gain_indication = "<span class='danger'>Ты чувствуешь себя неспособным выражать свои мысли.</span>"
@@ -51,7 +51,7 @@
 	REMOVE_TRAIT(owner, TRAIT_MUTE, GENETIC_MUTATION)
 
 /datum/mutation/human/unintelligible
-	name = "Невнятность"
+	name = "Unintelligible"
 	desc = "Геном частично подавляет отдел головного мозга отвечающий за речевой аппарат, сильно искажает речь."
 	quality = NEGATIVE
 	text_gain_indication = "<span class='danger'>Ты чувствуешь себя неспособным сформировать предложение!</span>"
@@ -68,7 +68,7 @@
 	REMOVE_TRAIT(owner, TRAIT_UNINTELLIGIBLE_SPEECH, GENETIC_MUTATION)
 
 /datum/mutation/human/swedish
-	name = "Шведский акцент"
+	name = "Swedish"
 	desc = "Ужасающая мутация, котороя происходит из далёкого прошлого. Считается, что она была полностью искоренена после 2037."
 	quality = MINOR_NEGATIVE
 	text_gain_indication = "<span class='notice'>Ты ощущаешь себя шведом, что бы это ни значило.</span>"
@@ -99,7 +99,7 @@
 		speech_args[SPEECH_MESSAGE] = trim(message)
 
 /datum/mutation/human/chav
-	name = "Гопник"
+	name = "Chav"
 	desc = "Неизвестно."
 	quality = MINOR_NEGATIVE
 	text_gain_indication = "<span class='notice'>Ты ощущаешь себя мудаком, не так ли?</span>"
@@ -136,7 +136,7 @@
 		speech_args[SPEECH_MESSAGE] = trim(message)
 
 /datum/mutation/human/elvis
-	name = "Элвис"
+	name = "Elvis"
 	desc = "Ужасающая мутация, названванная в честь нулевого пациента."
 	quality = MINOR_NEGATIVE
 	locked = TRUE
@@ -183,8 +183,8 @@
 
 
 /datum/mutation/human/stoner
-	name = "Обкурыш"
-	desc = "A common mutation that severely decreases intelligence."
+	name = "Stoner"
+	desc = "Обычная мутация, которая сильно понижает интеллект."
 	quality = NEGATIVE
 	locked = TRUE
 	text_gain_indication = "<span class='notice'>Ты чувствуешь себя...максимально расслабленным, чувак!</span>"
@@ -201,7 +201,7 @@
 	owner.remove_blocked_language(subtypesof(/datum/language) - /datum/language/beachbum, LANGUAGE_STONER)
 
 /datum/mutation/human/medieval
-	name = "Средневековый"
+	name = "Medieval"
 	desc = "Ужасная мутация, происходящая из далёкого прошлого, считается что был распространённым геномом во всей старой Европе."
 	quality = MINOR_NEGATIVE
 	text_gain_indication = "<span class='notice'>Ты чувствуешь себя стремящимся к Святому Граали!</span>"
@@ -241,7 +241,7 @@
 		speech_args[SPEECH_MESSAGE] = message
 
 /datum/mutation/human/piglatin
-	name = "Свиная латынь"
+	name = "Pig Latin"
 	desc = "Историки говорят, что в 2020 году человечество полностью говорило на этом мистическом языке."
 	quality = MINOR_NEGATIVE
 	text_gain_indication = span_notice("Ты ощущаешь себя мамонтом.")

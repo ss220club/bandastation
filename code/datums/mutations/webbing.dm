@@ -1,6 +1,6 @@
 //spider webs
 /datum/mutation/human/webbing
-	name = "Производство паутины"
+	name = "Webbing Production"
 	desc = "Позволяет обладателю генома плести паутину и перемещаться по ней."
 	quality = POSITIVE
 	text_gain_indication = "<span class='notice'>Твоя кожа кажется паутиной.</span>"

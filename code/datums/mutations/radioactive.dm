@@ -1,5 +1,5 @@
 /datum/mutation/human/radioactive
-	name = "Радиоактивность"
+	name = "Radioactivity"
 	desc = "Нестабильная мутация, которая заставляет носителя излучать смертельные бета-частицы. Мутация влияет на носителя и его окружение."
 	quality = NEGATIVE
 	text_gain_indication = "<span class='warning'>Ты можешь почувствовать это в своих костях!</span>"

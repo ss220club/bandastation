@@ -1,6 +1,6 @@
 ///Telekinesis lets you interact with objects from range, and gives you a light blue halo around your head.
 /datum/mutation/human/telekinesis
-	name = "Телекинез"
+	name = "Telekinesis"
 	desc = "Странная мутация, которая позволяет её обладателю взаимодействовать с объектами при помощи силы мыслей."
 	quality = POSITIVE
 	difficulty = 18

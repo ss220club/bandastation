@@ -1,6 +1,6 @@
 //Chameleon causes the owner to slowly become transparent when not moving.
 /datum/mutation/human/chameleon
-	name = "Хамелеон"
+	name = "Chameleon"
 	desc = "Геном, благодоря которому кожа носителя со временем становится прозрачной."
 	quality = POSITIVE
 	difficulty = 16

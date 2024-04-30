@@ -2,7 +2,7 @@
 
 //Epilepsy gives a very small chance to have a seizure every life tick, knocking you unconscious.
 /datum/mutation/human/epilepsy
-	name = "Эпилепсия"
+	name = "Epilepsy"
 	desc = "Генетический дефект из-за которого случаются приступы эпилепсии."
 	quality = NEGATIVE
 	text_gain_indication = "<span class='danger'>Ты ощущаешь головную боль.</span>"
@@ -48,7 +48,7 @@
 
 //Unstable DNA induces random mutations!
 /datum/mutation/human/bad_dna
-	name = "Нестабильное ДНК"
+	name = "Unstable DNA"
 	desc = "Странная мутация, которая приводит к случайным мутациям у её обладателя."
 	quality = NEGATIVE
 	text_gain_indication = "<span class='danger'>Ты чувствуешь себя как-то старнно.</span>"
@@ -77,7 +77,7 @@
 
 //Cough gives you a chronic cough that causes you to drop items.
 /datum/mutation/human/cough
-	name = "Кашель"
+	name = "Cough"
 	desc = "Хронический кашель."
 	quality = MINOR_NEGATIVE
 	text_gain_indication = "<span class='danger'>Ты начинаешь кашлять.</span>"
@@ -94,7 +94,7 @@
 			owner.throw_at(target, cough_range, GET_MUTATION_POWER(src))
 
 /datum/mutation/human/paranoia
-	name = "Паранойя"
+	name = "Paranoia"
 	desc = "Субъект обладающий данной мутацией слегка напуган и может испытывать галлюцинации."
 	quality = NEGATIVE
 	text_gain_indication = "<span class='danger'>Ты слышишь эхо криков в закромах своего разума ..</span>"
@@ -108,7 +108,7 @@
 
 //Dwarfism shrinks your body and lets you pass tables.
 /datum/mutation/human/dwarfism
-	name = "Карликовость"
+	name = "Dwarfism"
 	desc = "Считается, что данная мутация является причиной карликовости."
 	quality = POSITIVE
 	difficulty = 16
@@ -130,7 +130,7 @@
 
 //Clumsiness has a very large amount of small drawbacks depending on item.
 /datum/mutation/human/clumsy
-	name = "Неуклюжесть"
+	name = "Clumsiness"
 	desc = "Данный геном подавляет определённые функции мозга, из-за чего его обладатель выглядит неуклюжим."
 	quality = MINOR_NEGATIVE
 	text_gain_indication = "<span class='danger'>Тебя охватывает легкомыслие</span>"
@@ -148,7 +148,7 @@
 
 //Tourettes causes you to randomly stand in place and shout.
 /datum/mutation/human/tourettes
-	name = "Синдром Туретта"
+	name = "Tourette's Syndrome"
 	desc = "Хроническое расстройство, которое вызывает непроизвольные сокращения мышц носителя. Заставляя его выкрикивать нецензурные слова." //definitely needs rewriting
 	quality = NEGATIVE
 	text_gain_indication = "<span class='danger'>Ты немного дергаешься.</span>"
@@ -171,7 +171,7 @@
 
 //Deafness makes you deaf.
 /datum/mutation/human/deaf
-	name = "Глухота"
+	name = "Deafness"
 	desc = "Обладатель данного генома полностью глухой."
 	quality = NEGATIVE
 	text_gain_indication = "<span class='danger'>Ты ничего не слышишь.</span>"
@@ -214,7 +214,7 @@
 		. = owner.humanize(original_species)
 
 /datum/mutation/human/glow
-	name = "Светящийся"
+	name = "Glowy"
 	desc = "Вы будете излучать свет случайного цвета и интенсивности."
 	quality = POSITIVE
 	text_gain_indication = "<span class='notice'>Твоя кожа начинает немного светиться.</span>"
@@ -252,7 +252,7 @@
 	return pick(COLOR_RED, COLOR_BLUE, COLOR_YELLOW, COLOR_GREEN, COLOR_PURPLE, COLOR_ORANGE)
 
 /datum/mutation/human/glow/anti
-	name = "Поглотитель света"
+	name = "Anti-Glow"
 	desc = "Ваша кожа начинает притягивать и поглащать окружащющий вас свет, создавая темноту вокруг вас."
 	text_gain_indication = "<span class='notice'>Свет вокруг тебя понемногу пропадает.</span>"
 	conflicts = list(/datum/mutation/human/glow)
@@ -263,7 +263,7 @@
 	return COLOR_BLACK
 
 /datum/mutation/human/strong
-	name = "Сила"
+	name = "Strength"
 	desc = "У обладателя данного гена мышцы слегка увеличиваются."
 	quality = POSITIVE
 	text_gain_indication = "<span class='notice'>Ты чувствуешь себя сильнее.</span>"
@@ -284,7 +284,7 @@
 
 
 /datum/mutation/human/stimmed
-	name = "Стимулятор"
+	name = "Stimmed"
 	desc = "Химический баланс обладателя данного генома становится более надёжным."
 	quality = POSITIVE
 	text_gain_indication = "<span class='notice'>Ты ощущаешь странное чувство... Это баланс?</span>"
@@ -304,7 +304,7 @@
 	REMOVE_TRAIT(owner, TRAIT_STIMMED, GENETIC_MUTATION)
 
 /datum/mutation/human/insulated
-	name = "Шоковый иммунитет"
+	name = "Insulated"
 	desc = "Субъект подверженный данной мутации не позволяет провести электрический ток через себя."
 	quality = POSITIVE
 	text_gain_indication = "<span class='notice'>Кончики твоих пальцев немеют.</span>"
@@ -323,7 +323,7 @@
 	REMOVE_TRAIT(owner, TRAIT_SHOCKIMMUNE, GENETIC_MUTATION)
 
 /datum/mutation/human/fire
-	name = "Огненый пот"
+	name = "Fiery Sweat"
 	desc = "Кожный покров субъекта будет случайно воспламеняться, но он становится более устойчивым к огню."
 	quality = NEGATIVE
 	text_gain_indication = "<span class='warning'>Твое тело окутывает жар.</span>"
@@ -348,7 +348,7 @@
 	owner.physiology.burn_mod *= 2
 
 /datum/mutation/human/badblink
-	name = "Пространственная нестабильность"
+	name = "Spatial Instability"
 	desc = "Жертва данной мутации имеет очень слабую связь с пространственной реальностью и может быть перемещена. Часто является причиной тошноты."
 	quality = NEGATIVE
 	text_gain_indication = "<span class='warning'>Пространство вокруг тебя тошнотворно искажается.</span>"
@@ -378,7 +378,7 @@
 		warpchance += 0.0625 * seconds_per_tick / GET_MUTATION_ENERGY(src)
 
 /datum/mutation/human/acidflesh
-	name = "Кислотная плоть"
+	name = "Acidic Flesh"
 	desc = "Под кожными покровами субъекта накапливаются кислотные реагенты. Зачастую это смертельно."
 	quality = NEGATIVE
 	text_gain_indication = "<span class='userdanger'>Ужасное ощущение жжения охватывает тебя, когда твоя плоть превращается в кислоту!</span>"
@@ -398,7 +398,7 @@
 			playsound(owner,'sound/weapons/sear.ogg', 50, TRUE)
 
 /datum/mutation/human/gigantism
-	name = "Гигантизм"//negative version of dwarfism
+	name = "Gigantism"//negative version of dwarfism
 	desc = "Клетки субъекта распространяются, чтобы охватить больше площади. Кажется, что субъект выглядит огромным."
 	quality = MINOR_NEGATIVE
 	difficulty = 12
@@ -419,7 +419,7 @@
 	owner.visible_message(span_danger("[owner] неожиданно уменьшается!"), span_notice("Всё вокруг тебя увеличивается..."))
 
 /datum/mutation/human/spastic
-	name = "Спазматический"
+	name = "Spastic"
 	desc = "Субъект страдает от спазма в мышцах."
 	quality = NEGATIVE
 	text_gain_indication = "<span class='warning'>Ты начинаешь дрожать.</span>"
@@ -437,7 +437,7 @@
 	owner.remove_status_effect(/datum/status_effect/spasms)
 
 /datum/mutation/human/extrastun
-	name = "Две Левых Ноги"
+	name = "Two Left Feet"
 	desc = "Мутация заменяет правую ногу другой левой ногой. Симптомы включают в себя поцелуй пола при каждом шаге."
 	quality = NEGATIVE
 	text_gain_indication = "<span class='warning'>Твоя правая нога ощущается... левой</span>"
@@ -468,7 +468,7 @@
 	owner.Knockdown(30)
 
 /datum/mutation/human/martyrdom
-	name = "Внутренняя мученическая смерть"
+	name = "Internal Martyrdom"
 	desc = "Мутация разрушающая тело вблизи смерти. Не причиняет вреда, но ОЧЕНЬ дезориентирует."
 	locked = TRUE
 	quality = POSITIVE //not that cloning will be an option a lot but generally lets keep this around i guess?
@@ -515,7 +515,7 @@
 	owner.gib(DROP_ALL_REMAINS)
 
 /datum/mutation/human/headless
-	name = "С.А.О.Г."
+	name = "H.A.R.S."
 	desc = "Мутация заставляет тело отторгать голову, мозг субъекта с данной мутацией переносится в грудь. Расшифровывается как Синдром Аллергического Отторжения Головы. Внимание: удаление данной мутации очень опасно, хоть и она регенерирует не жизненно важные органы головы."
 	difficulty = 12 //pretty good for traitors
 	quality = NEGATIVE //holy shit no eyes or tongue or ears

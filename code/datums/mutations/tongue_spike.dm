@@ -1,5 +1,5 @@
 /datum/mutation/human/tongue_spike
-	name = "Языковой шип"
+	name = "Tongue Spike"
 	desc = "Позволяет существу добровольно выстрелить своим языком, как смертельным оружием."
 	quality = POSITIVE
 	text_gain_indication = span_notice("Ты чувствуешь, что можешь выкинуть свой голос.")
@@ -85,7 +85,7 @@
 	qdel(src)
 
 /datum/mutation/human/tongue_spike/chem
-	name = "Химический шип"
+	name = "Chem Spike"
 	desc = "Позволяет существу добровольно выстрелить своим языком из биомассы, позволяет передавать химические вещества на большое расстояние."
 	quality = POSITIVE
 	text_gain_indication = span_notice("Ты чувствуешь, что можешь соединиться с людьми бросив свой голос.")

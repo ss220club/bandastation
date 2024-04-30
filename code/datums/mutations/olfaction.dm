@@ -1,5 +1,5 @@
 /datum/mutation/human/olfaction
-	name = "Запредельное обоняние"
+	name = "Transcendent Olfaction"
 	desc = "Ваше обоняние сравнимо с собачьим."
 	quality = POSITIVE
 	difficulty = 12

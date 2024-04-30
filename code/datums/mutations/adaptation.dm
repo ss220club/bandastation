@@ -1,5 +1,5 @@
 /datum/mutation/human/temperature_adaptation
-	name = "Адаптация к температуре"
+	name = "Temperature Adaptation"
 	desc = "Странная мутация, которая адаптирует иммунную систему организма к экстремальным температурам. Не защищает от вакуума."
 	quality = POSITIVE
 	difficulty = 16
@@ -26,7 +26,7 @@
 	owner.remove_traits(list(TRAIT_RESISTCOLD, TRAIT_RESISTHEAT), GENETIC_MUTATION)
 
 /datum/mutation/human/pressure_adaptation
-	name = "Адаптация к давлению"
+	name = "Pressure Adaptation"
 	desc = "Странная мутация, которая адаптирует иммунную систему организма к низкому и высокому давлению. Не защищает от температуры включая холодный космос."
 	quality = POSITIVE
 	difficulty = 16

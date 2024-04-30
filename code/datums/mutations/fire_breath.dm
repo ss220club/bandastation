@@ -1,5 +1,5 @@
 /datum/mutation/human/firebreath
-	name = "Огненное дыхание"
+	name = "Fire Breath"
 	desc = "Древняя мутация, позволяющая ящерицам дышать огнём."
 	quality = POSITIVE
 	difficulty = 12
