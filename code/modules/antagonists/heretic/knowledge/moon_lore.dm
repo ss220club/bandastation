@@ -190,8 +190,8 @@
 	. = ..()
 	var/datum/antagonist/heretic/heretic_datum = IS_HERETIC(user)
 	priority_announce(
-		text = "[generate_heretic_text()] Laugh, for the ringleader [user.real_name] has ascended! \
-				The truth shall finally devour the lie! [generate_heretic_text()]",
+		text = "[generate_heretic_text()] Смейтесь, ибо Шпрехшталмейстер [user.real_name] вознесся! \
+				Правда наконец поглотит ложь! [generate_heretic_text()]",
 		title = "[generate_heretic_text()]",
 		sound = 'sound/ambience/antag/heretic/ascend_moon.ogg',
 		color_override = "pink",
