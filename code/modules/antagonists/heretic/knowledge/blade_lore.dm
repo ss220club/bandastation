@@ -406,7 +406,7 @@
 	priority_announce(
 		text = "[generate_heretic_text()] Мастер клинков, ученик разорванного чемпиона, [user.real_name] вознесся! Их сталь - это сталь, которая разрежет реальность в вихре серебра! [generate_heretic_text()]",
 		title = "[generate_heretic_text()]",
-		sound = ANNOUNCER_SPANOMALIES,
+		sound = 'sound/ambience/antag/heretic/ascend_blade.ogg',
 		color_override = "pink",
 	)
 	user.client?.give_award(/datum/award/achievement/misc/blade_ascension, user)

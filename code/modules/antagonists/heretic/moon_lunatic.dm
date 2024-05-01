@@ -26,10 +26,6 @@
 
 	to_chat(owner, span_boldnotice("Разрушьте ложь, спасите правду, повинуясь вашему Шпрехшталмейстеру - [heretic_master]!"))
 
-/datum/antagonist/lunatic/greet()
-	owner.current.playsound_local(get_turf(owner.current), 'sound/effects/moon_parade.ogg', 100, FALSE, pressure_affected = FALSE, use_reverb = FALSE)
-	return ..()
-
 /datum/antagonist/lunatic/apply_innate_effects(mob/living/mob_override)
 	var/mob/living/our_mob = mob_override || owner.current
 	handle_clown_mutation(our_mob, "Древнее знание, данное вам луной, позволило преодолеть свою клоунскую натуру, позволяя вам владеть оружием без вреда для себя.")

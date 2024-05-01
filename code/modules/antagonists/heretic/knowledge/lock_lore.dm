@@ -224,7 +224,7 @@
 	priority_announce(
 		text = "Пространственная аномалия Дельта-класса обнар[generate_heretic_text()] Реальность разрушена, разорвана. Врата открыты, двери открыты, [user.real_name] вознесся! Бойтесь нашествия! [generate_heretic_text()]",
 		title = "[generate_heretic_text()]",
-		sound = ANNOUNCER_SPANOMALIES,
+		sound = 'sound/ambience/antag/heretic/ascend_knock.ogg',
 		color_override = "pink",
 	)
 	user.client?.give_award(/datum/award/achievement/misc/lock_ascension, user)

@@ -202,7 +202,7 @@
 	priority_announce(
 		text = "[generate_heretic_text()] Дворянин пустоты [user.real_name] прибыл, танцуя Вальс, уничтожающий миры! [generate_heretic_text()]",
 		title = "[generate_heretic_text()]",
-		sound = ANNOUNCER_SPANOMALIES,
+		sound = 'sound/ambience/antag/heretic/ascend_void.ogg',
 		color_override = "pink",
 	)
 	user.client?.give_award(/datum/award/achievement/misc/void_ascension, user)

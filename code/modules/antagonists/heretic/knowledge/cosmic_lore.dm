@@ -271,7 +271,7 @@
 	priority_announce(
 		text = "[generate_heretic_text()] Звездочет прибыл на станцию, [user.real_name] вознесся! Эта станция - владения Космоса! [generate_heretic_text()]",
 		title = "[generate_heretic_text()]",
-		sound = ANNOUNCER_SPANOMALIES,
+		sound = 'sound/ambience/antag/heretic/ascend_cosmic.ogg',
 		color_override = "pink",
 	)
 	var/mob/living/basic/heretic_summon/star_gazer/star_gazer_mob = new /mob/living/basic/heretic_summon/star_gazer(loc)
