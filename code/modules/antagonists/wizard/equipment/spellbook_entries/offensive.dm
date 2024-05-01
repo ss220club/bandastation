@@ -1,4 +1,4 @@
-#define SPELLBOOK_CATEGORY_OFFENSIVE "Offensive"
+#define SPELLBOOK_CATEGORY_OFFENSIVE "Наступление"
 // Offensive wizard spells
 /datum/spellbook_entry/fireball
 	name = "Fireball"

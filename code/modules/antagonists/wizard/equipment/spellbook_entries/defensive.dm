@@ -1,4 +1,4 @@
-#define SPELLBOOK_CATEGORY_DEFENSIVE "Defensive"
+#define SPELLBOOK_CATEGORY_DEFENSIVE "Защита"
 // Defensive wizard spells
 /datum/spellbook_entry/magicm
 	name = "Magic Missile"

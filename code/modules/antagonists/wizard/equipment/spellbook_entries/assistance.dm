@@ -1,4 +1,4 @@
-#define SPELLBOOK_CATEGORY_ASSISTANCE "Assistance"
+#define SPELLBOOK_CATEGORY_ASSISTANCE "Поддержка"
 // Wizard spells that assist the caster in some way
 /datum/spellbook_entry/summonitem
 	name = "Summon Item"

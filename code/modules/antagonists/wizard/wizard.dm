@@ -2,8 +2,8 @@
 GLOBAL_LIST_EMPTY(wizard_spellbook_purchases_by_key)
 
 /datum/antagonist/wizard
-	name = "\proper Космический Маг"
-	roundend_category = "Магами/Ведьмами"
+	name = "\proper Космический Волшебник"
+	roundend_category = "Волшебниками/Ведьмами"
 	antagpanel_category = ANTAG_GROUP_WIZARDS
 	job_rank = ROLE_WIZARD
 	antag_hud_name = "wizard"
@@ -27,7 +27,7 @@ GLOBAL_LIST_EMPTY(wizard_spellbook_purchases_by_key)
 	var/datum/action/cooldown/grand_ritual/ritual
 
 /datum/antagonist/wizard_minion
-	name = "Помощник мага"
+	name = "Помощник волшебника"
 	antagpanel_category = ANTAG_GROUP_WIZARDS
 	antag_hud_name = "apprentice"
 	show_in_roundend = FALSE

@@ -1,4 +1,4 @@
-#define SPELLBOOK_CATEGORY_MOBILITY "Mobility"
+#define SPELLBOOK_CATEGORY_MOBILITY "Мобильность"
 // Wizard spells that aid mobiilty(or stealth?)
 /datum/spellbook_entry/mindswap
 	name = "Mindswap"
