@@ -123,7 +123,7 @@ GLOBAL_LIST_EMPTY(wizard_spellbook_purchases_by_key)
 		return
 	if(!GLOB.wizardstart.len)
 		SSjob.SendToLateJoin(owner.current)
-		to_chat(owner, "ГОРЯЧАЯ ВСТАВКА, ПОШЕЛ ПОШЕЛ ПОШЕЛ")
+		to_chat(owner, "ПРЯМО СЕЙЧАС, ПОШЕЛ ПОШЕЛ ПОШЕЛ")
 	owner.current.forceMove(pick(GLOB.wizardstart))
 
 /datum/antagonist/wizard/proc/create_objectives()
@@ -264,7 +264,7 @@ GLOBAL_LIST_EMPTY(wizard_spellbook_purchases_by_key)
 	wiz_age = APPRENTICE_AGE_MIN
 
 /datum/antagonist/wizard/apprentice/greet()
-	to_chat(owner, "<B>Вы ученик [master.current.real_name]! Вы связаны магическим контрактом, чтобы следовать приказам [master.p_their()] и помогать [master.p_them()] в выполнении [master.p_their()] целей.")
+	to_chat(owner, "<B>Вы ученик [master.current.real_name]! Вы связаны магическим контрактом, чтобы следовать приказам и помогать в выполнении целей своего учителя.")
 	owner.announce_objectives()
 
 /datum/antagonist/wizard/apprentice/assign_ritual()
@@ -286,7 +286,7 @@ GLOBAL_LIST_EMPTY(wizard_spellbook_purchases_by_key)
 			)
 			to_chat(owner, span_bold("Однако ваша служба не прошла даром. \
 				Учась у [master.current.real_name], вы выучили мощные, \
-				разрушительные заклинания. Вы можете использовать заклинания «Магические снаряды» и «Огненный шар»."))
+				разрушительные заклинания. Вы можете использовать заклинания «Magic Missile» и «Fireball»."))
 
 		if(APPRENTICE_BLUESPACE)
 			spells_to_grant = list(
@@ -295,7 +295,7 @@ GLOBAL_LIST_EMPTY(wizard_spellbook_purchases_by_key)
 			)
 			to_chat(owner, span_bold("Однако ваша служба не прошла даром. \
 				Учась у [master.current.real_name], вы изучили заклинания перемещения, \
-				изменяющие реальность. Вы можете использовать заклинания «Телепортация» и «Эфирный полет»."))
+				изменяющие реальность. Вы можете использовать заклинания «Teleport» и «Ethereal Jaunt»."))
 
 		if(APPRENTICE_HEALING)
 			spells_to_grant = list(
@@ -307,7 +307,7 @@ GLOBAL_LIST_EMPTY(wizard_spellbook_purchases_by_key)
 			)
 			to_chat(owner, span_bold("Однако ваша служба не прошла даром. \
 				Учась у [master.current.real_name], вы изучили жизненно-спасительные \
-				заклинания выживания. Вы можете использовать заклинания «Заряд» и «Магическая стена», а также владеете посохом исцеления."))
+				заклинания выживания. Вы можете использовать заклинания «Charge» и «Forcewall», а также владеете посохом исцеления."))
 		if(APPRENTICE_ROBELESS)
 			spells_to_grant = list(
 				/datum/action/cooldown/spell/aoe/knock,
@@ -315,7 +315,7 @@ GLOBAL_LIST_EMPTY(wizard_spellbook_purchases_by_key)
 			)
 			to_chat(owner, span_bold("Однако ваша служба не прошла даром. \
 				Учась у [master.current.real_name], Вы выучили скрытные заклинания, \
-				не нуждающиеся в магических одеяниях. Вы можете использовать заклинания «Стук» и «Обмен разумом»."))
+				не нуждающиеся в магических одеяниях. Вы можете использовать заклинания «Knock» и «Mindswap»."))
 
 	for(var/spell_type in spells_to_grant)
 		var/datum/action/cooldown/spell/new_spell = new spell_type(owner)
@@ -329,7 +329,7 @@ GLOBAL_LIST_EMPTY(wizard_spellbook_purchases_by_key)
 	var/datum/objective/protect/new_objective = new /datum/objective/protect
 	new_objective.owner = owner
 	new_objective.target = master
-	new_objective.explanation_text = "Защищайте мага - [master.current.real_name]."
+	new_objective.explanation_text = "Защищайте волшебника - [master.current.real_name]."
 	objectives += new_objective
 
 //Random event wizard
@@ -418,9 +418,9 @@ GLOBAL_LIST_EMPTY(wizard_spellbook_purchases_by_key)
 		count++
 
 	if(wizardwin)
-		parts += span_greentext("Маг был успешен!")
+		parts += span_greentext("Волшебник был успешен!")
 	else
-		parts += span_redtext("Маг провалился!")
+		parts += span_redtext("Волшебник провалился!")
 
 	var/list/purchases = list()
 	for(var/list/log as anything in GLOB.wizard_spellbook_purchases_by_key[owner.key])
@@ -441,10 +441,10 @@ GLOBAL_LIST_EMPTY(wizard_spellbook_purchases_by_key)
 /datum/team/wizard/roundend_report()
 	var/list/parts = list()
 
-	parts += "<span class='header'>Маги/ведьмы из команды [master_wizard.owner.name] были:</span>"
+	parts += "<span class='header'>Волшебниками/ведьмами из команды [master_wizard.owner.name] были:</span>"
 	parts += master_wizard.roundend_report()
 	parts += " "
-	parts += "<span class='header'>[master_wizard.owner.name] ученик и помощники были:</span>"
+	parts += "<span class='header'>[master_wizard.owner.name] - учениками и помощниками были:</span>"
 	parts += printplayerlist(members - master_wizard.owner)
 
 	return "<div class='panel redborder'>[parts.Join("<br>")]</div>"

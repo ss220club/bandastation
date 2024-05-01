@@ -74,7 +74,7 @@
 
 /datum/spellbook_entry/arcane_barrage
 	name = "Arcane Barrage"
-	desc = "Выпустите в противников поток арканной энергии с помощью этого (мощного) заклинания. Наносит гораздо больше урона, чем Lesser Summon Guns, но не сбивает цели с ног. Для использования требуются обе свободные руки. Изучив это заклинание, вы не сможете выучить Lesser Summon Gun.."
+	desc = "Выпустите в противников поток магической энергии с помощью этого (мощного) заклинания. Наносит гораздо больше урона, чем Lesser Summon Guns, но не сбивает цели с ног. Для использования требуются обе свободные руки. Изучив это заклинание, вы не сможете выучить Lesser Summon Gun."
 	spell_type = /datum/action/cooldown/spell/conjure_item/infinite_guns/arcane_barrage
 	category = SPELLBOOK_CATEGORY_OFFENSIVE
 	cost = 3
@@ -102,7 +102,7 @@
 
 /datum/spellbook_entry/scream_for_me
 	name = "Scream For Me"
-	desc = "Садистское заклинание сангвиника, наносящее многочисленные тяжелые кровоточащие раны по всему телу жертвы."
+	desc = "Садистско-кровожадное заклинание, наносящее многочисленные тяжелые кровоточащие раны по всему телу жертвы."
 	spell_type =  /datum/action/cooldown/spell/touch/scream_for_me
 	cost = 1
 	category = SPELLBOOK_CATEGORY_OFFENSIVE
@@ -133,7 +133,7 @@
 
 /datum/spellbook_entry/item/spellblade
 	name = "Spellblade"
-	desc = "Меч, способный стрелять вспышками энергии, которые отрывают конечности у цели."
+	desc = "Меч, способный стрелять вспышками энергии, отрывающими конечности у цели."
 	item_path = /obj/item/gun/magic/staff/spellblade
 	category = SPELLBOOK_CATEGORY_OFFENSIVE
 

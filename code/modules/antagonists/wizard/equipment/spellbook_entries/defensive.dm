@@ -21,8 +21,8 @@
 
 /datum/spellbook_entry/lightning_packet
 	name = "Thrown Lightning"
-	desc = "Выкованный из эльдрической энергии, пакетик чистой силы, \
-		известный как пакет заклинаний, появится в вашей руке и при броске оглушит цель."
+	desc = "Выкованный из мистической энергии, мешочек чистой силы, \
+		известный как мешочек заклинаний, появится в вашей руке и при броске оглушит цель."
 	spell_type = /datum/action/cooldown/spell/conjure_item/spellpacket
 	category = SPELLBOOK_CATEGORY_DEFENSIVE
 
@@ -81,7 +81,7 @@
 /datum/spellbook_entry/bees
 	name = "Lesser Summon Bees"
 	desc = "Это заклинание магически бьет по транспространственному улью, \
-		мгновенно вызывая рой пчел в ваше местоположение. Эти пчелы НЕ дружелюбны ко всем."
+		мгновенно вызывая рой пчел в ваше местоположение. Эти пчелы НЕ дружелюбны ко кому-либо."
 	spell_type = /datum/action/cooldown/spell/conjure/bee
 	category = SPELLBOOK_CATEGORY_DEFENSIVE
 
@@ -150,7 +150,7 @@
 
 /datum/spellbook_entry/item/battlemage_charge
 	name = "Battlemage Armour Charges"
-	desc = "Мощная защитная руна, она дает восемь дополнительных зарядов к силовому щиту боевого мага."
+	desc = "Мощная защитная руна, предоставляющая восемь дополнительных зарядов к силовому щиту боевого мага."
 	item_path = /obj/item/wizard_armour_charge
 	category = SPELLBOOK_CATEGORY_DEFENSIVE
 	cost = 1

@@ -162,7 +162,7 @@
 /datum/action/cooldown/grand_ritual/proc/draw_rune(turf/target_turf)
 	drawing_rune = TRUE
 	var/next_rune_typepath = get_appropriate_rune_typepath()
-	target_turf.balloon_alert(owner, "вызываем руна...")
+	target_turf.balloon_alert(owner, "вызываем руну...")
 	var/draw_effect_typepath = /obj/effect/temp_visual/wizard_rune/drawing
 	if(next_rune_typepath == /obj/effect/grand_rune/finale/cheesy)
 		draw_effect_typepath = /obj/effect/temp_visual/wizard_rune/drawing/cheese
@@ -220,11 +220,11 @@
 	if(total_cheese_sacrificed >= CHEESE_SACRIFICE_GOAL)
 		if(!total_cheese_goal_met)
 			total_cheese_goal_met = TRUE
-			to_chat(owner, span_revenbignotice("ДА! СЫР! СЫР ДЛЯ ВСЕХ! ТАКОЙ ГРАНДИОЗНЫЙ ПРАЗДНИК! ТЫ ПОЛУЧИШЬ СВОЙ ПРИЗ, МОЙ ЧЕМПИОН!!!"))
+			to_chat(owner, span_revenbignotice("ДА! СЫР! СЫР ДЛЯ ВСЕХ! ТАКОЙ ГРАНДИОЗНЫЙ ПРАЗДНИК! ТЫ ПОЛУЧИШЬ СВОЙ ПРИЗ, МОЙ ЧЕМПИОН!!"))
 		else
 			to_chat(owner, span_revennotice("Вы слышите безумный смех, когда на вас обрушивается непреодолимый запах прекрасного чеддера..."))
 	else if (total_cheese_sacrificed)
-		to_chat(owner, span_revendanger("Ты радуешь меня, смертный. Продолжай присылать сыр, мой пир все еще нуждается в <b>[CHEESE_SACRIFICE_GOAL - total_cheese_sacrificed]</b> еще больше, чтобы быть великолепным..."))
+		to_chat(owner, span_revendanger("Ты радуешь меня, смертный. Продолжай присылать сыр, мой пир все еще нуждается в еще <b>[CHEESE_SACRIFICE_GOAL - total_cheese_sacrificed]</b>, чтобы быть великолепным..."))
 	rune = null
 	times_completed++
 	set_new_area()

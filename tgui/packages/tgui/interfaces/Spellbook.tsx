@@ -229,14 +229,14 @@ const TableOfContents = (props) => {
         lineHeight={lineHeightToc}
         fluid
         icon="thumbs-up"
-        content="Наборы снаряжения одобренные волшебниками"
+        content="Наборы снаряжения, одобренные волшебниками"
         onClick={() => setTabIndex(9)}
       />
       <Button
         lineHeight={lineHeightToc}
         fluid
         icon="dice"
-        content="Арканный рандомайзер"
+        content="Магический рандомайзер"
         onClick={() => setTabIndex(9)}
       />
     </Box>
@@ -381,7 +381,7 @@ const Loadouts = (props) => {
             icon="skull"
             loadoutId="loadout_tap"
             loadoutColor="white"
-            author="Том Пустота"
+            author="Том Пустотный"
             blurb={multiline`
                 Примите темноту и откройте свою душу.
                 Вы можете перезаряжать очень длинные заклинания
@@ -528,7 +528,7 @@ const SpellTabDisplay = (props: {
               {getTimeOrCat(entry)}
             </Stack.Item>
             <Stack.Item width="60px" ml={PointOffset}>
-              {entry.cost} очко
+              {entry.cost} очков
             </Stack.Item>
             {entry.buyword === Buywords.Learn && (
               <Stack.Item>
@@ -656,7 +656,7 @@ export const Spellbook = (props) => {
       return 'Разгадывание';
     }
     if (found <= 0.24) {
-      return 'Вглядываем';
+      return 'Вглядывание';
     }
     if (found <= 0.27) {
       return 'Изучение';
