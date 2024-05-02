@@ -1,14 +1,16 @@
 /obj/machinery/vending/hydroseeds
 	name = "\improper MegaSeed Servitor"
-	desc = "When you need seeds fast!"
-	product_slogans = "THIS'S WHERE TH' SEEDS LIVE! GIT YOU SOME!;Hands down the best seed selection on the station!;Also certain mushroom varieties available, more for experts! Get certified today!"
-	product_ads = "We like plants!;Grow some crops!;Grow, baby, growww!;Aw h'yeah son!"
+	desc = "Когда семена нужны срочно!"
+// product_slogans = "THIS'S WHERE TH' SEEDS LIVE! GIT YOU SOME!;Hands down the best seed selection on the station!;Also certain mushroom varieties available, more for experts! Get certified today!"
+	product_slogans = "ВОТ ОТКУДА БЕРЕТСЯ ТРАВА! ВОЗЬМИ СЕБЕ НЕМНОГО!;Предоставляем лучший выбор семеян на станции!;Доступны некоторые виды грибов, больше для специалистов! Получите сертификат уже сегодня!"
+// product_ads = "We like plants!;Grow some crops!;Grow, baby, growww!;Aw h'yeah son!"
+	product_ads = "Мы любим растения!;Выращивайте урожай!;Расти, малыш, расти!;О, черт побери, да!"
 	icon_state = "seeds"
 	panel_type = "panel2"
 	light_mask = "seeds-light-mask"
 	product_categories = list(
 		list(
-			"name" = "Fruits",
+			"name" = "Фрукты",
 			"icon" = "apple-whole",
 			"products" = list (
 				/obj/item/seeds/apple = 3,
@@ -35,7 +37,7 @@
 		),
 
 		list(
-			"name" = "Vegetables",
+			"name" = "Овощи",
 			"icon" = "carrot",
 			"products" = list(
 				/obj/item/seeds/cabbage = 3,
@@ -56,7 +58,7 @@
 		),
 
 		list(
-			"name" = "Flowers",
+			"name" = "Цветы",
 			"icon" = "leaf",
 			"products" = list(
 				/obj/item/seeds/aloe = 3,
@@ -68,7 +70,7 @@
 		),
 
 		list(
-			"name" = "Miscellaneous",
+			"name" = "Прочее",
 			"icon" = "question",
 			"products" = list(
 				/obj/item/seeds/chanter = 3,
