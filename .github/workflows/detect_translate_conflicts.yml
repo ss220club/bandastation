@@ -30,8 +30,6 @@ jobs:
             git diff --diff-filter=U
             echo EOF
           } >> $GITHUB_ENV
-
-          echo conflicts: $MERGE_CONFLICTS
       - name: Run script
         uses: actions/github-script@v7
         with:
