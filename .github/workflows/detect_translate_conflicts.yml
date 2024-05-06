@@ -49,5 +49,5 @@ jobs:
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: `This pr causes following conflicts on translate branch:\n`
+              body: `This pr causes following conflicts on translate branch:\n ${MERGE_CONFLICTS} `
             })
