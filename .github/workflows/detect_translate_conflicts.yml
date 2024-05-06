@@ -27,7 +27,12 @@ jobs:
         run: |
           {
             echo "MERGE_CONFLICTS<<EOF"
-            git diff --diff-filter=U
+            git diff --name-only --diff-filter=U | while read file; do
+              echo "- $file"
+              echo -e "\n```"
+              git diff --diff-filter=U "$file" | sed -n '/<<<<<<</,/>>>>>>>/p'
+              echo -e "\n```"
+            done
             echo EOF
           } >> $GITHUB_ENV
       - name: Run script
@@ -44,5 +49,5 @@ jobs:
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: `This pr causes following conflicts on translate branch:\n \`\`\`\n${MERGE_CONFLICTS}\n\`\`\` `
+              body: `This pr causes following conflicts on translate branch:\n`
             })
