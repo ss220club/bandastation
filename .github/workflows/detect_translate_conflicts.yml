@@ -29,9 +29,9 @@ jobs:
             echo "MERGE_CONFLICTS<<EOF"
             git diff --name-only --diff-filter=U | while read file; do
               echo "- $file"
-              echo -e "\n```"
+              echo -e "\n\`\`\`"
               git diff --diff-filter=U "$file" | sed -n '/<<<<<<</,/>>>>>>>/p'
-              echo -e "\n```"
+              echo -e "\n\`\`\`"
             done
             echo EOF
           } >> $GITHUB_ENV
