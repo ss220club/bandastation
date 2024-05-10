@@ -3,9 +3,9 @@
 //Epilepsy gives a very small chance to have a seizure every life tick, knocking you unconscious.
 /datum/mutation/human/epilepsy
 	name = "Epilepsy"
-	desc = "Генетический дефект из-за которого случаются приступы эпилепсии."
+	desc = "A genetic defect that sporadically causes seizures."
 	quality = NEGATIVE
-	text_gain_indication = "<span class='danger'>Ты ощущаешь головную боль.</span>"
+	text_gain_indication = "<span class='danger'>You get a headache.</span>"
 	synchronizer_coeff = 1
 	power_coeff = 1
 
@@ -49,9 +49,9 @@
 //Unstable DNA induces random mutations!
 /datum/mutation/human/bad_dna
 	name = "Unstable DNA"
-	desc = "Странная мутация, которая приводит к случайным мутациям у её обладателя."
+	desc = "Strange mutation that causes the holder to randomly mutate."
 	quality = NEGATIVE
-	text_gain_indication = "<span class='danger'>Ты чувствуешь себя как-то старнно.</span>"
+	text_gain_indication = "<span class='danger'>You feel strange.</span>"
 	locked = TRUE
 
 /datum/mutation/human/bad_dna/on_acquiring(mob/living/carbon/human/owner)
@@ -78,9 +78,9 @@
 //Cough gives you a chronic cough that causes you to drop items.
 /datum/mutation/human/cough
 	name = "Cough"
-	desc = "Хронический кашель."
+	desc = "A chronic cough."
 	quality = MINOR_NEGATIVE
-	text_gain_indication = "<span class='danger'>Ты начинаешь кашлять.</span>"
+	text_gain_indication = "<span class='danger'>You start coughing.</span>"
 	synchronizer_coeff = 1
 	power_coeff = 1
 
@@ -95,10 +95,10 @@
 
 /datum/mutation/human/paranoia
 	name = "Paranoia"
-	desc = "Субъект обладающий данной мутацией слегка напуган и может испытывать галлюцинации."
+	desc = "Subject is easily terrified, and may suffer from hallucinations."
 	quality = NEGATIVE
-	text_gain_indication = "<span class='danger'>Ты слышишь эхо криков в закромах своего разума ..</span>"
-	text_lose_indication = "<span class='notice'>Крики в твоей голове затихают.</span>"
+	text_gain_indication = "<span class='danger'>You feel screams echo through your mind...</span>"
+	text_lose_indication = "<span class='notice'>The screaming in your mind fades.</span>"
 
 /datum/mutation/human/paranoia/on_life(seconds_per_tick, times_fired)
 	if(SPT_PROB(2.5, seconds_per_tick) && owner.stat == CONSCIOUS)
@@ -109,7 +109,7 @@
 //Dwarfism shrinks your body and lets you pass tables.
 /datum/mutation/human/dwarfism
 	name = "Dwarfism"
-	desc = "Считается, что данная мутация является причиной карликовости."
+	desc = "A mutation believed to be the cause of dwarfism."
 	quality = POSITIVE
 	difficulty = 16
 	instability = 5
@@ -131,9 +131,9 @@
 //Clumsiness has a very large amount of small drawbacks depending on item.
 /datum/mutation/human/clumsy
 	name = "Clumsiness"
-	desc = "Данный геном подавляет определённые функции мозга, из-за чего его обладатель выглядит неуклюжим."
+	desc = "A genome that inhibits certain brain functions, causing the holder to appear clumsy. Honk!"
 	quality = MINOR_NEGATIVE
-	text_gain_indication = "<span class='danger'>Тебя охватывает легкомыслие</span>"
+	text_gain_indication = "<span class='danger'>You feel lightheaded.</span>"
 
 /datum/mutation/human/clumsy/on_acquiring(mob/living/carbon/human/owner)
 	if(..())
@@ -149,9 +149,9 @@
 //Tourettes causes you to randomly stand in place and shout.
 /datum/mutation/human/tourettes
 	name = "Tourette's Syndrome"
-	desc = "Хроническое расстройство, которое вызывает непроизвольные сокращения мышц носителя. Заставляя его выкрикивать нецензурные слова." //definitely needs rewriting
+	desc = "A chronic twitch that forces the user to scream bad words." //definitely needs rewriting
 	quality = NEGATIVE
-	text_gain_indication = "<span class='danger'>Ты немного дергаешься.</span>"
+	text_gain_indication = "<span class='danger'>You twitch.</span>"
 	synchronizer_coeff = 1
 
 /datum/mutation/human/tourettes/on_life(seconds_per_tick, times_fired)
@@ -160,7 +160,7 @@
 			if(1)
 				owner.emote("twitch")
 			if(2 to 3)
-				owner.say("[prob(50) ? ";" : ""][pick("ДЕРЬМО", "МОЧА", "БЛЯТЬ", "ПИЗДА", "ХУЕСОС", "УБЛЮДОК", "СИСЬКИ", "ХУЙ", "ЖОПА", "КОКПИТАН", "ХОС ХУЕСОС", "РД УЁБОК", "ПОШЁЛ НАХУЙ", "ВЫБЛЯДОК", "ОТСОСИ", "ДОЛБОЁБ", "КУКУРУЗА", "УБЛЮДОК", "МАТЬ ТВОЮ", "ГОВНО СОБАЧЬЕ", "ЕБАТЬ ТЕБЯ", "ОНАНИСТ ЧЕРТОВ", "ЕБАТЬ", "МРАЗЬ", "ХУЙНЯ", "КУДЛАТАЯ ХУЙНЯ", "ШЛЮХА", "ПРОФУРСЕТКА", "ШАЛАВА", "ПОХУЙ", "ИДИ НА ХУЙ", "ПАСКУДА", "СВОЛОЧЬ", "МУДАК", "ПОТАСКУХА", "УЕБАН", "МАНДАВОШКА", "БЛЭТ", "ПРИДУРОК", "ДУРАК", "ИДИОТ", "ОХУЕТЬ", "ХУЕТА", "ХУЕВО", "ЁБ ТВОЮ МАТЬ", "ГОВНЮК", "НАЕБЩИК")]", forced=name)
+				owner.say("[prob(50) ? ";" : ""][pick("SHIT", "PISS", "FUCK", "CUNT", "COCKSUCKER", "MOTHERFUCKER", "TITS")]", forced=name)
 		var/x_offset_old = owner.pixel_x
 		var/y_offset_old = owner.pixel_y
 		var/x_offset = owner.pixel_x + rand(-2,2)
@@ -172,9 +172,9 @@
 //Deafness makes you deaf.
 /datum/mutation/human/deaf
 	name = "Deafness"
-	desc = "Обладатель данного генома полностью глухой."
+	desc = "The holder of this genome is completely deaf."
 	quality = NEGATIVE
-	text_gain_indication = "<span class='danger'>Ты ничего не слышишь.</span>"
+	text_gain_indication = "<span class='danger'>You can't seem to hear anything.</span>"
 
 /datum/mutation/human/deaf/on_acquiring(mob/living/carbon/human/owner)
 	if(..())
@@ -190,9 +190,9 @@
 //Monified turns you into a monkey.
 /datum/mutation/human/race
 	name = "Monkified"
-	desc = "Странный геном считается, что он отличает обезьяну от человека."
-	text_gain_indication = "Ты чувствуешь себя как обезьна."
-	text_lose_indication = "Ты чувствуешь себя как раньше."
+	desc = "A strange genome, believing to be what differentiates monkeys from humans."
+	text_gain_indication = "You feel unusually monkey-like."
+	text_lose_indication = "You feel like your old self."
 	quality = NEGATIVE
 	remove_on_aheal = FALSE
 	locked = TRUE //Species specific, keep out of actual gene pool
@@ -215,9 +215,9 @@
 
 /datum/mutation/human/glow
 	name = "Glowy"
-	desc = "Вы будете излучать свет случайного цвета и интенсивности."
+	desc = "You permanently emit a light with a random color and intensity."
 	quality = POSITIVE
-	text_gain_indication = "<span class='notice'>Твоя кожа начинает немного светиться.</span>"
+	text_gain_indication = "<span class='notice'>Your skin begins to glow softly.</span>"
 	instability = 5
 	power_coeff = 1
 	conflicts = list(/datum/mutation/human/glow/anti)
@@ -253,8 +253,8 @@
 
 /datum/mutation/human/glow/anti
 	name = "Anti-Glow"
-	desc = "Ваша кожа начинает притягивать и поглащать окружащющий вас свет, создавая темноту вокруг вас."
-	text_gain_indication = "<span class='notice'>Свет вокруг тебя понемногу пропадает.</span>"
+	desc = "Your skin seems to attract and absorb nearby light creating 'darkness' around you."
+	text_gain_indication = "<span class='notice'>The light around you seems to disappear.</span>"
 	conflicts = list(/datum/mutation/human/glow)
 	locked = TRUE
 	glow_power = -1.5
@@ -264,9 +264,9 @@
 
 /datum/mutation/human/strong
 	name = "Strength"
-	desc = "У обладателя данного гена мышцы слегка увеличиваются."
+	desc = "The user's muscles slightly expand."
 	quality = POSITIVE
-	text_gain_indication = "<span class='notice'>Ты чувствуешь себя сильнее.</span>"
+	text_gain_indication = "<span class='notice'>You feel strong.</span>"
 	instability = 5
 	difficulty = 16
 
@@ -285,9 +285,9 @@
 
 /datum/mutation/human/stimmed
 	name = "Stimmed"
-	desc = "Химический баланс обладателя данного генома становится более надёжным."
+	desc = "The user's chemical balance is more robust."
 	quality = POSITIVE
-	text_gain_indication = "<span class='notice'>Ты ощущаешь странное чувство... Это баланс?</span>"
+	text_gain_indication = "<span class='notice'>You feel stimmed.</span>"
 	instability = 5
 	difficulty = 16
 
@@ -305,10 +305,10 @@
 
 /datum/mutation/human/insulated
 	name = "Insulated"
-	desc = "Субъект подверженный данной мутации не позволяет провести электрический ток через себя."
+	desc = "The affected person does not conduct electricity."
 	quality = POSITIVE
-	text_gain_indication = "<span class='notice'>Кончики твоих пальцев немеют.</span>"
-	text_lose_indication = "<span class='notice'>Ты снова чувствуешь кончики своих пальцев.</span>"
+	text_gain_indication = "<span class='notice'>Your fingertips go numb.</span>"
+	text_lose_indication = "<span class='notice'>Your fingertips regain feeling.</span>"
 	difficulty = 16
 	instability = 25
 
@@ -324,10 +324,10 @@
 
 /datum/mutation/human/fire
 	name = "Fiery Sweat"
-	desc = "Кожный покров субъекта будет случайно воспламеняться, но он становится более устойчивым к огню."
+	desc = "The user's skin will randomly combust, but is generally a lot more resilient to burning."
 	quality = NEGATIVE
-	text_gain_indication = "<span class='warning'>Твое тело окутывает жар.</span>"
-	text_lose_indication = "<span class='notice'>Ты чувствуешь, что жар проходит и становится намного прохладнее.</span>"
+	text_gain_indication = "<span class='warning'>You feel hot.</span>"
+	text_lose_indication = "<span class='notice'>You feel a lot cooler.</span>"
 	difficulty = 14
 	synchronizer_coeff = 1
 	power_coeff = 1
@@ -349,10 +349,10 @@
 
 /datum/mutation/human/badblink
 	name = "Spatial Instability"
-	desc = "Жертва данной мутации имеет очень слабую связь с пространственной реальностью и может быть перемещена. Часто является причиной тошноты."
+	desc = "The victim of the mutation has a very weak link to spatial reality, and may be displaced. Often causes extreme nausea."
 	quality = NEGATIVE
-	text_gain_indication = "<span class='warning'>Пространство вокруг тебя тошнотворно искажается.</span>"
-	text_lose_indication = "<span class='notice'>Пространство вокруг тебя возвращается в норму.</span>"
+	text_gain_indication = "<span class='warning'>The space around you twists sickeningly.</span>"
+	text_lose_indication = "<span class='notice'>The space around you settles back to normal.</span>"
 	difficulty = 18//high so it's hard to unlock and abuse
 	instability = 10
 	synchronizer_coeff = 1
@@ -379,10 +379,10 @@
 
 /datum/mutation/human/acidflesh
 	name = "Acidic Flesh"
-	desc = "Под кожными покровами субъекта накапливаются кислотные реагенты. Зачастую это смертельно."
+	desc = "Subject has acidic chemicals building up underneath the skin. This is often lethal."
 	quality = NEGATIVE
-	text_gain_indication = "<span class='userdanger'>Ужасное ощущение жжения охватывает тебя, когда твоя плоть превращается в кислоту!</span>"
-	text_lose_indication = "<span class='notice'>Тебя окутывает чувство облегчения, когда плоть возвращается в нормальное состояние.</span>"
+	text_gain_indication = "<span class='userdanger'>A horrible burning sensation envelops you as your flesh turns to acid!</span>"
+	text_lose_indication = "<span class='notice'>A feeling of relief fills you as your flesh goes back to normal.</span>"
 	difficulty = 18//high so it's hard to unlock and use on others
 	/// The cooldown for the warning message
 	COOLDOWN_DECLARE(msgcooldown)
@@ -390,7 +390,7 @@
 /datum/mutation/human/acidflesh/on_life(seconds_per_tick, times_fired)
 	if(SPT_PROB(13, seconds_per_tick))
 		if(COOLDOWN_FINISHED(src, msgcooldown))
-			to_chat(owner, span_danger("Твоя кислотная плоть пузырится..."))
+			to_chat(owner, span_danger("Your acid flesh bubbles..."))
 			COOLDOWN_START(src, msgcooldown, 20 SECONDS)
 		if(prob(15))
 			owner.acid_act(rand(30, 50), 10)
@@ -399,7 +399,7 @@
 
 /datum/mutation/human/gigantism
 	name = "Gigantism"//negative version of dwarfism
-	desc = "Клетки субъекта распространяются, чтобы охватить больше площади. Кажется, что субъект выглядит огромным."
+	desc = "The cells within the subject spread out to cover more area, making the subject appear larger."
 	quality = MINOR_NEGATIVE
 	difficulty = 12
 	conflicts = list(/datum/mutation/human/dwarfism)
@@ -409,21 +409,21 @@
 		return
 	ADD_TRAIT(owner, TRAIT_GIANT, GENETIC_MUTATION)
 	owner.update_transform(1.25)
-	owner.visible_message(span_danger("[owner] неожиданно увеличивается!"), span_notice("Всё вокруг тебя уменьшается.."))
+	owner.visible_message(span_danger("[owner] suddenly grows!"), span_notice("Everything around you seems to shrink.."))
 
 /datum/mutation/human/gigantism/on_losing(mob/living/carbon/human/owner)
 	if(..())
 		return
 	REMOVE_TRAIT(owner, TRAIT_GIANT, GENETIC_MUTATION)
 	owner.update_transform(0.8)
-	owner.visible_message(span_danger("[owner] неожиданно уменьшается!"), span_notice("Всё вокруг тебя увеличивается..."))
+	owner.visible_message(span_danger("[owner] suddenly shrinks!"), span_notice("Everything around you seems to grow.."))
 
 /datum/mutation/human/spastic
 	name = "Spastic"
-	desc = "Субъект страдает от спазма в мышцах."
+	desc = "Subject suffers from muscle spasms."
 	quality = NEGATIVE
-	text_gain_indication = "<span class='warning'>Ты начинаешь дрожать.</span>"
-	text_lose_indication = "<span class='notice'>Твое дрожание проходит.</span>"
+	text_gain_indication = "<span class='warning'>You flinch.</span>"
+	text_lose_indication = "<span class='notice'>Your flinching subsides.</span>"
 	difficulty = 16
 
 /datum/mutation/human/spastic/on_acquiring()
@@ -438,10 +438,10 @@
 
 /datum/mutation/human/extrastun
 	name = "Two Left Feet"
-	desc = "Мутация заменяет правую ногу другой левой ногой. Симптомы включают в себя поцелуй пола при каждом шаге."
+	desc = "A mutation that replaces the right foot with another left foot. Symptoms include kissing the floor when taking a step."
 	quality = NEGATIVE
-	text_gain_indication = "<span class='warning'>Твоя правая нога ощущается... левой</span>"
-	text_lose_indication = "<span class='notice'>Твоя правая нога кажется привычной.</span>"
+	text_gain_indication = "<span class='warning'>Your right foot feels... left.</span>"
+	text_lose_indication = "<span class='notice'>Your right foot feels alright.</span>"
 	difficulty = 16
 
 /datum/mutation/human/extrastun/on_acquiring()
@@ -464,16 +464,16 @@
 		return
 	if(owner.buckled || owner.body_position == LYING_DOWN || HAS_TRAIT(owner, TRAIT_IMMOBILIZED) || owner.throwing || owner.movement_type & (VENTCRAWLING | FLYING | FLOATING))
 		return //remove the 'edge' cases
-	to_chat(owner, span_danger("Ты спотыкаешься об свои ноги."))
+	to_chat(owner, span_danger("You trip over your own feet."))
 	owner.Knockdown(30)
 
 /datum/mutation/human/martyrdom
 	name = "Internal Martyrdom"
-	desc = "Мутация разрушающая тело вблизи смерти. Не причиняет вреда, но ОЧЕНЬ дезориентирует."
+	desc = "A mutation that makes the body destruct when near death. Not damaging, but very, VERY disorienting."
 	locked = TRUE
 	quality = POSITIVE //not that cloning will be an option a lot but generally lets keep this around i guess?
-	text_gain_indication = "<span class='warning'>Ты ощущаешь невыносимую изжогу.</span>"
-	text_lose_indication = "<span class='notice'>Ты ощущаешь облегчение внутренних органов.</span>"
+	text_gain_indication = "<span class='warning'>You get an intense feeling of heartburn.</span>"
+	text_lose_indication = "<span class='notice'>Your internal organs feel at ease.</span>"
 
 /datum/mutation/human/martyrdom/on_acquiring()
 	. = ..()
@@ -516,10 +516,10 @@
 
 /datum/mutation/human/headless
 	name = "H.A.R.S."
-	desc = "Мутация заставляет тело отторгать голову, мозг субъекта с данной мутацией переносится в грудь. Расшифровывается как Синдром Аллергического Отторжения Головы. Внимание: удаление данной мутации очень опасно, хоть и она регенерирует не жизненно важные органы головы."
+	desc = "A mutation that makes the body reject the head, the brain receding into the chest. Stands for Head Allergic Rejection Syndrome. Warning: Removing this mutation is very dangerous, though it will regenerate non-vital head organs."
 	difficulty = 12 //pretty good for traitors
 	quality = NEGATIVE //holy shit no eyes or tongue or ears
-	text_gain_indication = "<span class='warning'>Что-то здесь не так.</span>"
+	text_gain_indication = "<span class='warning'>Something feels off.</span>"
 
 /datum/mutation/human/headless/on_acquiring()
 	. = ..()

@@ -1,11 +1,11 @@
 /datum/mutation/human/shock
 	name = "Shock Touch"
-	desc = "Подверженные данной мутации могут направить избыточное электричество через свои руки без вреда себе, но позволяя им ударить током других."
+	desc = "The affected can channel excess electricity through their hands without shocking themselves, allowing them to shock others."
 	quality = POSITIVE
 	locked = TRUE
 	difficulty = 16
-	text_gain_indication = "<span class='notice'>Ты чувствуешь, как ток протекает через твои руки.</span>"
-	text_lose_indication = "<span class='notice'>Электричество в твоих руках ослабевает.</span>"
+	text_gain_indication = "<span class='notice'>You feel power flow through your hands.</span>"
+	text_lose_indication = "<span class='notice'>The energy in your hands subsides.</span>"
 	power_path = /datum/action/cooldown/spell/touch/shock
 	instability = 35
 	energy_coeff = 1

@@ -1,8 +1,8 @@
 /datum/mutation/human/geladikinesis
 	name = "Geladikinesis"
-	desc = "Позволяет обладателю генома сконцентрировать влагу и холод в снег."
+	desc = "Allows the user to concentrate moisture and sub-zero forces into snow."
 	quality = POSITIVE
-	text_gain_indication = "<span class='notice'>Ты ощущаешь холод в руках.</span>"
+	text_gain_indication = "<span class='notice'>Your hand feels cold.</span>"
 	instability = 10
 	difficulty = 10
 	synchronizer_coeff = 1
@@ -22,9 +22,9 @@
 
 /datum/mutation/human/cryokinesis
 	name = "Cryokinesis"
-	desc = "Притягивает отрицательную энергию из отрицательной пустоты, чтобы заморозить окружающею температуру у субъекта."
+	desc = "Draws negative energy from the sub-zero void to freeze surrounding temperatures at subject's will."
 	quality = POSITIVE //upsides and downsides
-	text_gain_indication = "<span class='notice'>Ты ощущаешь холод в руках.</span>"
+	text_gain_indication = "<span class='notice'>Your hand feels cold.</span>"
 	instability = 30
 	difficulty = 12
 	synchronizer_coeff = 1

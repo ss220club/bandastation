@@ -1,8 +1,8 @@
 /datum/mutation/human/self_amputation
 	name = "Autotomy"
-	desc = "Позволяет существу добровольно отказаться от случайной конечности."
+	desc = "Allows a creature to voluntary discard a random appendage."
 	quality = POSITIVE
-	text_gain_indication = span_notice("Ты чувствуешь слабость в суставах.")
+	text_gain_indication = span_notice("Your joints feel loose.")
 	instability = 30
 	power_path = /datum/action/cooldown/spell/self_amputation
 

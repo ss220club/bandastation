@@ -1,8 +1,8 @@
 /datum/mutation/human/void
 	name = "Void Magnet"
-	desc = "Редкий геном, который притягивает странные силы, обычно не наблюдаемые."
+	desc = "A rare genome that attracts odd forces not usually observed."
 	quality = MINOR_NEGATIVE //upsides and downsides
-	text_gain_indication = span_notice("Ты ощущаешь тяжёлую, мрачную силу, которая наблюдает за тобой через стену.")
+	text_gain_indication = span_notice("You feel a heavy, dull force just beyond the walls watching you.")
 	instability = 30
 	power_path = /datum/action/cooldown/spell/void/cursed
 	energy_coeff = 1

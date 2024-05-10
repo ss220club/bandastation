@@ -1,9 +1,9 @@
 /datum/mutation/human/telepathy
 	name = "Telepathy"
-	desc = "Редкая мутация, позволяющая её обладателю телепатически общаться с другими."
+	desc = "A rare mutation that allows the user to telepathically communicate to others."
 	quality = POSITIVE
-	text_gain_indication = "<span class='notice'>Ты слышишь эхо собственного голоса в своём разуме!</span>"
-	text_lose_indication = "<span class='notice'>Ты перестаешь слышать эхо внутри своего разума.</span>"
+	text_gain_indication = "<span class='notice'>You can hear your own voice echoing in your mind!</span>"
+	text_lose_indication = "<span class='notice'>You don't hear your mind echo anymore.</span>"
 	difficulty = 12
 	power_path = /datum/action/cooldown/spell/list_target/telepathy
 	instability = 10

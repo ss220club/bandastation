@@ -1,9 +1,9 @@
 //spider webs
 /datum/mutation/human/webbing
 	name = "Webbing Production"
-	desc = "Позволяет обладателю генома плести паутину и перемещаться по ней."
+	desc = "Allows the user to lay webbing, and travel through it."
 	quality = POSITIVE
-	text_gain_indication = "<span class='notice'>Твоя кожа кажется паутиной.</span>"
+	text_gain_indication = "<span class='notice'>Your skin feels webby.</span>"
 	instability = 15
 	power_path = /datum/action/cooldown/mob_cooldown/lay_web/genetic
 	energy_coeff = 1
