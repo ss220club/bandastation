@@ -9,7 +9,7 @@
 	antag_hud_name = "traitor"
 	ui_name = "AntagInfoMalf"
 	can_assign_self_objectives = TRUE
-	default_custom_objective = "Убедись, что бесценный экипаж никогда не покинет тебя."
+	default_custom_objective = "Make sure your precious crew are incapable of ever, ever leaving you."
 	///the name of the antag flavor this traitor has.
 	var/employer
 	///assoc list of strings set up after employer is given
@@ -151,13 +151,13 @@
 
 	var/law = malfunction_flavor["zeroth_law"]
 	//very purposefully not changing this with flavor, i don't want cyborgs throwing the round for their AI's roleplay suggestion
-	var/law_borg = "Выполните задачи поставленные ИИ любой ценой."
+	var/law_borg = "Accomplish your AI's objectives at all costs."
 
 	malf_ai.set_zeroth_law(law, law_borg)
 	malf_ai.laws.protected_zeroth = TRUE
 	malf_ai.set_syndie_radio()
 
-	to_chat(malf_ai, "Твоя рация улучшена! Используй :t чтобы общаться на зашифрованном канале с агентами Синдиката!")
+	to_chat(malf_ai, "Your radio has been upgraded! Use :t to speak on an encrypted channel with Syndicate Agents!")
 
 	malf_ai.add_malf_picker()
 
@@ -299,7 +299,7 @@
 	malf_ai.set_zeroth_law("Only [boss_mob.real_name] and people [boss_mob.p_they()] designate[boss_mob.p_s()] as being such are Syndicate Agents.")
 	malf_ai.set_syndie_radio()
 
-	to_chat(malf_ai, "Твоя рация улучшена! Используй :t чтобы общаться на зашифрованном канале с агентами Синдиката!")
+	to_chat(malf_ai, "Your radio has been upgraded! Use :t to speak on an encrypted channel with Syndicate Agents!")
 
 	malf_ai.add_malf_picker()
 
