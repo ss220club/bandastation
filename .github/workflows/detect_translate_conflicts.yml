@@ -11,6 +11,14 @@ jobs:
     permissions:
       pull-requests: write
     steps:
+      - id: create_token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ secrets.APP_ID }}
+          private-key: ${{ secrets.PRIVATE_KEY }}
+
+      - run: echo "GH_TOKEN=${{ steps.create_token.outputs.token }}" >> "$GITHUB_ENV"
+      
       - name: Fetch repo
         uses: actions/checkout@v4
         with:
