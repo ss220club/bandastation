@@ -55,9 +55,9 @@
 		display_results(
 			user,
 			target,
-			span_warning("You screw up, bruising [target_human]'s chest!"),
-			span_warning("[user] screws up, brusing [target_human]'s chest!"),
-			span_warning("[user] screws up!"),
+			span_warning("Вы ошибаетесь, оставив ушиб на груди [target_human]!"),
+			span_warning("[user] ошибается, оставив ушиб на груди [target_human]!"),
+			span_warning("[user] ошибается!"),
 		)
 		target_human.adjustOrganLoss(ORGAN_SLOT_STOMACH, 5)
 		target_human.adjustBruteLoss(5)
