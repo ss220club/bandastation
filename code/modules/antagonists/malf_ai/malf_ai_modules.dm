@@ -825,7 +825,7 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/ai_module))
 	//This used to have motion sensing as well, but testing quickly revealed that giving it to the whole cameranet is PURE HORROR.
 	cost = 35 //Decent price for omniscience!
 	upgrade = TRUE
-	unlock_text = span_notice("Распространения прошивки через OTA завершено! Камеры улучшены: CAMSUPGRADED. Система усиления света активна.")
+	unlock_text = span_notice("Распространения прошивки через OTA завершено! Камеры улучшены: CAMSUPGRADED. Система усиления освещения активна.")
 	unlock_sound = 'sound/items/rped.ogg'
 
 /datum/ai_module/upgrade/upgrade_cameras/upgrade(mob/living/silicon/ai/AI)
