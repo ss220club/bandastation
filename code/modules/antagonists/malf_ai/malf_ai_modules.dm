@@ -670,7 +670,7 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/ai_module))
 		return
 	var/turf/middle = get_turf(eyeobj)
 	var/list/turfs = list(middle, locate(middle.x - 1, middle.y, middle.z), locate(middle.x + 1, middle.y, middle.z))
-	var/alert_msg = "Недостаточно места! Убедитесь, что вы размещаете машину в свободном пространстве и чистом полу."
+	var/alert_msg = "Недостаточно места! Убедитесь, что вы размещаете машину в свободном пространстве и на полу."
 	var/success = TRUE
 	for(var/n in 1 to 3) //We have to do this instead of iterating normally because of how overlay images are handled
 		var/turf/T = turfs[n]
