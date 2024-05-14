@@ -697,7 +697,7 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/ai_module))
 /datum/ai_module/utility/break_air_alarms
 	name = "Air Alarm Safety Override"
 	description = "Даёт вам возможность отключить предохранители на атмосферных датчиках. Это позволит вам использовать чрезвычайно опасные режимы окружающей среды. \
-			Кто угодно может проверить интерфейс атмосферных датчиков и может быть удивлён его функционалу."
+			Кто угодно может проверить интерфейс атмосферных датчиков и быть озадаченным отсутствием функциональности."
 	one_purchase = TRUE
 	cost = 50
 	power_type = /datum/action/innate/ai/break_air_alarms
