@@ -157,7 +157,7 @@
 	malf_ai.laws.protected_zeroth = TRUE
 	malf_ai.set_syndie_radio()
 
-	to_chat(malf_ai, "Твоя рация улучшена! Используй :t чтобы общаться на зашифрованном канале с агентами Синдиката!")
+	to_chat(malf_ai, "Ваша рация улучшена! Используйте :t для общения на зашифрованном канале с агентами Синдиката!")
 
 	malf_ai.add_malf_picker()
 
