@@ -556,7 +556,7 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/ai_module))
 /// Blackout: Overloads a random number of lights across the station. Three uses.
 /datum/ai_module/destructive/blackout
 	name = "Blackout"
-	description = "Попытка перегрузить микросхемы освещения станции, повреждая некоторые лампочки. Три использования за покупку."
+	description = "Попытка перегрузить микросхемы освещения станции, повреждая несколько ламп. Три использования за покупку."
 	cost = 15
 	power_type = /datum/action/innate/ai/blackout
 	unlock_text = span_notice("You hook into the powernet and route bonus power towards the station's lighting.")
