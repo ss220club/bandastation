@@ -405,7 +405,7 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/ai_module))
 	var/obj/machinery/computer/communications/random_comms_console = locate() in GLOB.shuttle_caller_list
 	random_comms_console?.post_status("alert", "lockdown")
 
-	minor_announce("Вредоносное программное обеспечение обнаружено в системе контроля шлюзов. Задействованы протоколы изоляции. Пожалуйста, сохраняйте спокойствие.", "Network Alert:", TRUE)
+	minor_announce("Вредоносное программное обеспечение обнаружено в системе контроля шлюзов. Задействованы протоколы изоляции. Пожалуйста, сохраняйте спокойствие.", "Тревога сети:", TRUE)
 	to_chat(owner, span_danger("Инициирована блокировка. Система перезагрузится через 90 секунд."))
 	addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(minor_announce),
 		"Автоматическая перезагрузка системы завершена. Безопасного вам дня.",
