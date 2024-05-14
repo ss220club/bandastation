@@ -151,7 +151,7 @@
 
 	var/law = malfunction_flavor["zeroth_law"]
 	//very purposefully not changing this with flavor, i don't want cyborgs throwing the round for their AI's roleplay suggestion
-	var/law_borg = "Выполните задачи поставленные ИИ любой ценой."
+	var/law_borg = "Выполните задачи, поставленные ИИ, любой ценой."
 
 	malf_ai.set_zeroth_law(law, law_borg)
 	malf_ai.laws.protected_zeroth = TRUE
