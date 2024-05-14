@@ -1250,7 +1250,7 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/ai_module))
 	uses = VENDOR_TIPPING_USES
 	var/time_to_tilt = MALF_VENDOR_TIPPING_TIME
 	enable_text = span_notice("Вы подготавливаетесь опрокинуть торговый автомат.")
-	disable_text = span_notice("Ты перестаешь фокусироваться на наклоне торговых автоматов.")
+	disable_text = span_notice("Вы перестаете фокусироваться на опрокидовании торговых автоматов.")
 
 /datum/action/innate/ai/ranged/remote_vendor_tilt/New()
 	. = ..()
