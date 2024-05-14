@@ -859,7 +859,7 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/ai_module))
 /// AI Turret Upgrade: Increases the health and damage of all turrets.
 /datum/ai_module/upgrade/upgrade_turrets
 	name = "AI Turret Upgrade"
-	description = "Улучшает мощность и здоровье турелей. Данный эффект постоянен. Улучшение происходит сразу после покупки."
+	description = "Улучшает мощность и здоровье турелей ИИ. Данный эффект постоянен. Улучшение происходит сразу после покупки."
 	cost = 30
 	upgrade = TRUE
 	unlock_text = span_notice("Вы перенаправляете часть энергии на турели, усиливая их живучесть и урон.")
