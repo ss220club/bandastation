@@ -598,7 +598,7 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/ai_module))
 
 /datum/action/innate/ai/honk
 	name = "Percussive Intercomm Interference"
-	desc = "Раскачать станционные интеркомы ужасающим ХОНКОМ!"
+	desc = "Раскачать станционные интеркомы отвратительным ХОНКОМ!"
 	button_icon = 'icons/obj/machines/wallmounts.dmi'
 	button_icon_state = "intercom"
 	uses = 2
