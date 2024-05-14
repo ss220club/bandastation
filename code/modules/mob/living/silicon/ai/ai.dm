@@ -1031,7 +1031,7 @@
 	apc.flicker_hacked_icon()
 	apc.set_hacked_hud()
 	playsound(get_turf(src), 'sound/machines/ding.ogg', 50, TRUE, ignore_walls = FALSE)
-	to_chat(src, "Взлом завершен. [apc] теперь под вашим контролем.")
+	to_chat(src, "Взлом завершен. Теперь [apc.name] под вашим контролем.")
 
 /mob/living/silicon/ai/verb/deploy_to_shell(mob/living/silicon/robot/target)
 	set category = "AI Commands"
