@@ -645,7 +645,7 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/ai_module))
 	if(!owner_AI.can_place_transformer(src))
 		return
 	active = TRUE
-	if(tgui_alert(owner, "Вы уверены, что хотите разместить машину здесь?", "Вы уверены?", list("Да", "Нет")) == "No")
+	if(tgui_alert(owner, "Вы уверены, что хотите разместить машину здесь?", "Вы уверены?", list("Да", "Нет")) == "Нет")
 		active = FALSE
 		return
 	if(!owner_AI.can_place_transformer(src))
