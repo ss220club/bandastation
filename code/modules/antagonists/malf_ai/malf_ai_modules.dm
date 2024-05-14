@@ -1151,7 +1151,7 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/ai_module))
 	ranged_mousepointer = 'icons/effects/mouse_pointers/supplypod_target.dmi'
 	uses = 20
 	COOLDOWN_DECLARE(time_til_next_tilt)
-	enable_text = span_notice("Сервоприводы внутри вас перемещаются когда вы готовитесь к перекатыванию. Нажмите на соседние клетки, чтобы повернуть на них.")
+	enable_text = span_notice("Сервоприводы внутри вас перемещаются, когда вы готовитесь к перекатыванию. Нажмите на соседние клетки, чтобы перекатиться на них.")
 	disable_text = span_notice("Вы отключаете протоколы перекатывания.")
 
 	/// How long does it take for us to roll?
