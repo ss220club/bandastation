@@ -621,7 +621,7 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/ai_module))
 /// Robotic Factory: Places a large machine that converts humans that go through it into cyborgs. Unlocking this ability removes shunting.
 /datum/ai_module/utility/place_cyborg_transformer
 	name = "Robotic Factory (Removes Shunting)"
-	description = "Строит машину где угодно, используя дорогие наномашины, которая превращает живое существо в лояльного раба-киборга."
+	description = "Строит машину где угодно из дорогих наномашин, превращающую живое существо в лояльного раба-киборга."
 	cost = 100
 	power_type = /datum/action/innate/ai/place_transformer
 	unlock_text = span_notice("Вы связались с космическим Амазоном и заказали фабрику роботов доставкой.")
