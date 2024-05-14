@@ -548,7 +548,7 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/ai_module))
 		desc = "[initial(desc)] It has [uses] use\s remaining."
 		build_all_button_icons()
 
-	clicked_machine.audible_message(span_userdanger("Ты слышишь громкое электрическое жужжание исходящие из [clicked_machine]!"))
+	clicked_machine.audible_message(span_userdanger("Вы слышите громкое электрическое жужжание исходящие из [clicked_machine.name]!"))
 	addtimer(CALLBACK(src, PROC_REF(detonate_machine), caller, clicked_machine), 5 SECONDS) //kaboom!
 	unset_ranged_ability(caller, span_danger("Перегрузка машины..."))
 	return TRUE
