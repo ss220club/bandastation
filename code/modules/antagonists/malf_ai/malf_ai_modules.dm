@@ -200,7 +200,7 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/ai_module))
 		return
 	owner.playsound_local(owner, 'sound/misc/bloblarm.ogg', 50, 0, use_reverb = FALSE)
 	to_chat(owner, span_userdanger("!!! НЕСАНКЦИОНИРОВАННЫЙ ДОСТУП К СИСТЕМЕ САМОУНИЧТОЖЕНИЯ !!!"))
-	to_chat(owner, span_boldannounce("Это нарушение безопасности 3 класса. Об данном инциденте будет сообщено на центральное командование."))
+	to_chat(owner, span_boldannounce("Это нарушение безопасности 3-го класса. Об данном инциденте будет сообщено на Центральное Командование."))
 	for(var/i in 1 to 3)
 		sleep(2 SECONDS)
 		if(QDELETED(owner) || !isturf(owner_AI.loc))
