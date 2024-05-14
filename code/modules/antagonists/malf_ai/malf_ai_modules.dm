@@ -456,7 +456,7 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/ai_module))
 
 	caller.playsound_local(caller, 'sound/misc/interference.ogg', 50, FALSE, use_reverb = FALSE)
 
-	clicked_machine.audible_message(span_userdanger("Ты слышишь громкое электрическое жужжание исходящие из [clicked_machine]!"))
+	clicked_machine.audible_message(span_userdanger("Вы слышите громкое электрическое жужжание исходящие из [clicked_machine.name]!"))
 	addtimer(CALLBACK(src, PROC_REF(animate_machine), caller, clicked_machine), 5 SECONDS) //kabeep!
 	unset_ranged_ability(caller, span_danger("Отправка сигнала перезаписи..."))
 	adjust_uses(-1) //adjust after we unset the active ability since we may run out of charges, thus deleting the ability
