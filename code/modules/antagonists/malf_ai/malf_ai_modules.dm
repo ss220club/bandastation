@@ -1055,7 +1055,7 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/ai_module))
 	button_icon_state = "emag"
 	uses = 7
 	auto_use_uses = FALSE
-	enable_text = span_notice("Ты загружаешь программу синдиката в последний слот памяти.")
+	enable_text = span_notice("Вы загружаете программу синдиката в последний слот памяти.")
 	disable_text = span_notice("Вы выгружаете программу синдиката из памяти.")
 	ranged_mousepointer = 'icons/effects/mouse_pointers/supplypod_target.dmi'
 
