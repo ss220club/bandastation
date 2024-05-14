@@ -484,7 +484,7 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/ai_module))
 
 /datum/action/innate/ai/destroy_rcds
 	name = "Destroy RCDs"
-	desc = "Взрывает все неподконтрольные киборгам RCD на станции"
+	desc = "Взрывает все неподконтрольные киборгам RCD на станции."
 	button_icon_state = "detonate_rcds"
 	uses = 1
 	cooldown_period = 10 SECONDS
