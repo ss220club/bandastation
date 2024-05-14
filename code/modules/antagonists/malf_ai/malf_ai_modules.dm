@@ -1042,7 +1042,7 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/ai_module))
 
 /datum/ai_module/utility/emag
 	name = "Targeted Safeties Override"
-	description = "Позволяет отключить системы безопасности любой техники на станции при условии, что вы можете получить к ней доступ."
+	description = "Позволяет отключить системы безопасности любой машинерии на станции при условии, что вы можете получить к ней доступ."
 	cost = 20
 	power_type = /datum/action/innate/ai/ranged/emag
 	unlock_text = span_notice("Вы загрузили нелегальный пакет программного обеспечения из базы данных синдиката и интегрируете его в свою прошивку, предотвращая несколько вторжений в ваше ядро.")
