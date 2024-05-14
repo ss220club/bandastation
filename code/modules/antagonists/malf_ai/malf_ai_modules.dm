@@ -451,7 +451,7 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/ai_module))
 		return FALSE
 	var/obj/machinery/clicked_machine = clicked_on
 	if(!clicked_machine.can_be_overridden() || is_type_in_typecache(clicked_machine, GLOB.blacklisted_malf_machines))
-		to_chat(caller, span_warning("Эта машина не может быть оживлена!"))
+		to_chat(caller, span_warning("Эта машина не может быть перезаписана!"))
 		return FALSE
 
 	caller.playsound_local(caller, 'sound/misc/interference.ogg', 50, FALSE, use_reverb = FALSE)
