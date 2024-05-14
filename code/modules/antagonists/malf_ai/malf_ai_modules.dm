@@ -512,7 +512,7 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/ai_module))
 	button_icon_state = "overload_machine"
 	uses = 2
 	ranged_mousepointer = 'icons/effects/mouse_pointers/overload_machine_target.dmi'
-	enable_text = span_notice("Вы подключаетесь к энергосети.  Кликните на машину для её подрыва или используйте способность повторно для отмены..")
+	enable_text = span_notice("Вы подключаетесь к энергосети. Кликните на машину для её подрыва или используйте способность повторно для отмены.")
 	disable_text = span_notice("Вы отключаетесь от энергосети.")
 
 /datum/action/innate/ai/ranged/overload_machine/New()
