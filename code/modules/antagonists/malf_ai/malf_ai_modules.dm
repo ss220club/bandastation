@@ -1136,7 +1136,7 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/ai_module))
 
 /datum/ai_module/utility/core_tilt
 	name = "Rolling Servos"
-	description = "Позволяет вам медленно перекатываться, уничтожая всё на вашем пути, благодаря вашей массе."
+	description = "Позволяет вам медленно перекатываться, уничтожая всё на вашем пути своей массой."
 	cost = 10
 	one_purchase = FALSE
 	power_type = /datum/action/innate/ai/ranged/core_tilt
