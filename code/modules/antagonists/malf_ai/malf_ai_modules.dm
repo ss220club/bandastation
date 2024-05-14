@@ -1056,7 +1056,7 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/ai_module))
 	uses = 7
 	auto_use_uses = FALSE
 	enable_text = span_notice("Ты загружаешь программу синдиката в последний слот памяти.")
-	disable_text = span_notice("Ты выгружаешь программу синдиката из памяти.")
+	disable_text = span_notice("Вы выгружаете программу синдиката из памяти.")
 	ranged_mousepointer = 'icons/effects/mouse_pointers/supplypod_target.dmi'
 
 /datum/action/innate/ai/ranged/emag/Destroy()
