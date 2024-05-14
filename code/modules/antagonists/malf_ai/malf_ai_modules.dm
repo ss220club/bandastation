@@ -409,7 +409,7 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/ai_module))
 	to_chat(owner, span_danger("Инициирована блокировка. Система перезагрузится через 90 секунд."))
 	addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(minor_announce),
 		"Автоматическая перезагрузка системы завершена. Безопасного вам дня.",
-		"Network reset:"), 90 SECONDS)
+		"Сеть перезапущена:"), 90 SECONDS)
 	hack_in_progress = FALSE
 
 /// For Lockdown malf AI ability. Opens all doors on the station.
