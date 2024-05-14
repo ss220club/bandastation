@@ -608,7 +608,7 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/ai_module))
 	for(var/obj/item/radio/intercom/found_intercom as anything in GLOB.intercoms_list)
 		if(!found_intercom.is_on() || !found_intercom.get_listening() || found_intercom.wires.is_cut(WIRE_RX)) //Only operating intercoms play the honk
 			continue
-		found_intercom.audible_message(message = "[found_intercom] трещит несколько секунд.", hearing_distance = 3)
+		found_intercom.audible_message(message = "Из [found_intercom.name] на мгновение издается треск.", hearing_distance = 3)
 		playsound(found_intercom, 'sound/items/airhorn.ogg', 100, TRUE)
 		for(var/mob/living/carbon/honk_victim in ohearers(6, found_intercom))
 			var/turf/victim_turf = get_turf(honk_victim)
