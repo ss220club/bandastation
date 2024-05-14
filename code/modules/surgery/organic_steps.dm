@@ -52,7 +52,7 @@
 		span_notice("[user] начинает <i>осторожно</i> делать надрез в [parse_zone(target_zone)] у [target]."),
 		span_notice("[user] начинает <i>осторожно</i> делать надрез в [parse_zone(target_zone)] у [target]."),
 	)
-	display_pain(target, "Вы чувствуете, как <i>осторожный</i> колющий удар в [parse_zone(target_zone)].")
+	display_pain(target, "Вы чувствуете <i>осторожный</i> колющий удар в [parse_zone(target_zone)].")
 
 //clamp bleeders
 /datum/surgery_step/clamp_bleeders
