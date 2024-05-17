@@ -1,7 +1,7 @@
 /datum/action/changeling/adrenaline
 	name = "Adrenaline Sacs"
-	desc = "We evolve additional sacs of adrenaline throughout our body. Costs 30 chemicals."
-	helptext = "Removes all stuns instantly and adds a short-term reduction in further stuns. Can be used while unconscious. Continued use poisons the body."
+	desc = "Мы развиваем дополнительные адреналиновые мешочки по всему телу. Стоит 30 химикатов."
+	helptext = "Мгновенно снимает все оглушения и добавляет кратковременное снижение последующих оглушений. Можно использовать, находясь без сознания. Продолжение использования отравляет тело."
 	button_icon_state = "adrenaline"
 	chemical_cost = 30
 	dna_cost = 2
@@ -11,7 +11,7 @@
 //Recover from stuns.
 /datum/action/changeling/adrenaline/sting_action(mob/living/user)
 	..()
-	to_chat(user, span_notice("Energy rushes through us."))
+	to_chat(user, span_notice("Энергия проносится сквозь нас."))
 	user.SetKnockdown(0)
 	user.set_resting(FALSE)
 	user.reagents.add_reagent(/datum/reagent/medicine/changelingadrenaline, 4) //20 seconds

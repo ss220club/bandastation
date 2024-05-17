@@ -157,7 +157,7 @@
 
 /atom/movable/screen/alert/status_effect/fleshmend
 	name = "Fleshmend"
-	desc = "Our wounds are rapidly healing. <i>This effect is prevented if we are on fire.</i>"
+	desc = "Наши раны быстро заживают. <i>Этот эффект предотвращается, если мы горим.</i>"
 	icon_state = "fleshmend"
 
 /datum/status_effect/exercised
