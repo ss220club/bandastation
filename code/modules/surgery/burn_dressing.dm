@@ -80,8 +80,8 @@
 			user,
 			target,
  			span_notice("Вы начинаете удалять зараженную плоть из [target.parse_zone_with_bodypart(user.zone_selected)] у [target]..."),
- 			span_notice("[user] начинает удалять зараженную плоть из [target.parse_zone_with_bodypart(user.zone_selected)] у [target] при помощи [tool.name]."),
- 			span_notice("[user] начинает удалять зараженную плоть из [target.parse_zone_with_bodypart(user.zone_selected)] у [target]."),
+			span_notice("[user] начинает удалять зараженную плоть из [target.parse_zone_with_bodypart(user.zone_selected)] у [target] при помощи [tool.name]."),
+			span_notice("[user] начинает удалять зараженную плоть из [target.parse_zone_with_bodypart(user.zone_selected)] у [target]."),
 		)
 		display_pain(target, "Инфекция в вашей [target.parse_zone_with_bodypart(user.zone_selected)] адски зудит! Такое ощущение, что тебя режут ножом!")
 	else
@@ -95,8 +95,8 @@
 			user,
 			target,
 			span_notice("Вы успешно удалили часть зараженной плоти из [target.parse_zone_with_bodypart(target_zone)] у [target][progress_text]."),
- 			span_notice("[user] успешно удалил часть зараженной плоти из [target.parse_zone_with_bodypart(target_zone)] у [target] при помощи [tool.name]!"),
- 			span_notice("[user] успешно удалил часть зараженной плоти из [target.parse_zone_with_bodypart(target_zone)] у [target]!"),
+			span_notice("[user] успешно удалил часть зараженной плоти из [target.parse_zone_with_bodypart(target_zone)] у [target] при помощи [tool.name]!"),
+			span_notice("[user] успешно удалил часть зараженной плоти из [target.parse_zone_with_bodypart(target_zone)] у [target]!"),
 		)
 		log_combat(user, target, "вырезает зараженную плоть в", addition="COMBAT MODE: [uppertext(user.combat_mode)]")
 		surgery.operated_bodypart.receive_damage(brute=3, wound_bonus=CANT_WOUND)
@@ -114,8 +114,8 @@
 		user,
 		target,
 		span_notice("Вы срезаете часть здоровой плоти из [target.parse_zone_with_bodypart(target_zone)] у [target]."),
- 		span_notice("[user] срезает часть здоровой плоти из [target.parse_zone_with_bodypart(target_zone)] у [target] при помощи [tool.name]!"),
- 		span_notice("[user] срезает часть здоровой плоти из [target.parse_zone_with_bodypart(target_zone)] у [target]!"),
+		span_notice("[user] срезает часть здоровой плоти из [target.parse_zone_with_bodypart(target_zone)] у [target] при помощи [tool.name]!"),
+		span_notice("[user] срезает часть здоровой плоти из [target.parse_zone_with_bodypart(target_zone)] у [target]!"),
 	)
 	surgery.operated_bodypart.receive_damage(brute=rand(4,8), sharpness=TRUE)
 
@@ -147,8 +147,8 @@
 			user,
 			target,
 			span_notice("Вы начинаете обрабатывать ожоги на [target.parse_zone_with_bodypart(user.zone_selected)] у [target]..."),
- 			span_notice("[user] начинает обрабатывать ожоги на [target.parse_zone_with_bodypart(user.zone_selected)] у [target] при помощи [tool.name]."),
- 			span_notice("[user] начинает обрабатывать ожоги на [target.parse_zone_with_bodypart(user.zone_selected)] у [target]."),
+			span_notice("[user] начинает обрабатывать ожоги на [target.parse_zone_with_bodypart(user.zone_selected)] у [target] при помощи [tool.name]."),
+			span_notice("[user] начинает обрабатывать ожоги на [target.parse_zone_with_bodypart(user.zone_selected)] у [target]."),
 		)
 		display_pain(target, "Ожоги в [target.parse_zone_with_bodypart(user.zone_selected)] адски зудят!")
 	else
@@ -161,8 +161,8 @@
 			user,
 			target,
 			span_notice("Вы успешно перевязываете [target.parse_zone_with_bodypart(target_zone)] у [target] при помощи [tool.name]."),
- 			span_notice("[user] успешно перевязывает [target.parse_zone_with_bodypart(target_zone)] у [target] при помощи [tool.name]!"),
- 			span_notice("[user] успешно перевязывает [target.parse_zone_with_bodypart(target_zone)] у [target]!"),
+			span_notice("[user] успешно перевязывает [target.parse_zone_with_bodypart(target_zone)] у [target] при помощи [tool.name]!"),
+			span_notice("[user] успешно перевязывает [target.parse_zone_with_bodypart(target_zone)] у [target]!"),
 		)
 		log_combat(user, target, "обрабатывает ожоги в", addition="COMBAT MODE: [uppertext(user.combat_mode)]")
 		burn_wound.sanitization += sanitization_added

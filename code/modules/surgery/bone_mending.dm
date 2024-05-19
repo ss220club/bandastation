@@ -110,8 +110,8 @@
 			user,
 			target,
 			span_notice("Вы начинаете восстанавливать кость в [target.parse_zone_with_bodypart(user.zone_selected)] у [target]..."),
- 			span_notice("[user] начинает восстанавливать кость в [target.parse_zone_with_bodypart(user.zone_selected)] у [target] при помощи [tool.name]."),
- 			span_notice("[user] начинает восстанавливать кость в [target.parse_zone_with_bodypart(user.zone_selected)] у [target]."),
+			span_notice("[user] начинает восстанавливать кость в [target.parse_zone_with_bodypart(user.zone_selected)] у [target] при помощи [tool.name]."),
+			span_notice("[user] начинает восстанавливать кость в [target.parse_zone_with_bodypart(user.zone_selected)] у [target]."),
 		)
 		display_pain(target, "Острая боль в [target.parse_zone_with_bodypart(user.zone_selected)] просто невыносима!")
 	else
@@ -126,8 +126,8 @@
 			user,
 			target,
 			span_notice("Вы успешно восстановили кость в [target.parse_zone_with_bodypart(target_zone)] у [target]."),
- 			span_notice("[user] успешно восстановил кость в [target.parse_zone_with_bodypart(target_zone)] у [target] при помощи [tool.name]!"),
- 			span_notice("[user] успешно восстановил кость в [target.parse_zone_with_bodypart(target_zone)] у [target]!"),
+			span_notice("[user] успешно восстановил кость в [target.parse_zone_with_bodypart(target_zone)] у [target] при помощи [tool.name]!"),
+			span_notice("[user] успешно восстановил кость в [target.parse_zone_with_bodypart(target_zone)] у [target]!"),
 		)
 		log_combat(user, target, "успешно восстановил кость в", addition="COMBAT MODE: [uppertext(user.combat_mode)]")
 	else
@@ -160,8 +160,8 @@
 			user,
 			target,
 			span_notice("Вы приступаете к устранению перелома в [target.parse_zone_with_bodypart(user.zone_selected)] у [target]..."),
- 			span_notice("[user] приступает к устранению перелома в [target.parse_zone_with_bodypart(user.zone_selected)] у [target] при помощи [tool.name]."),
- 			span_notice("[user] приступает к устранению перелома в [target.parse_zone_with_bodypart(user.zone_selected)] у [target]."),
+			span_notice("[user] приступает к устранению перелома в [target.parse_zone_with_bodypart(user.zone_selected)] у [target] при помощи [tool.name]."),
+			span_notice("[user] приступает к устранению перелома в [target.parse_zone_with_bodypart(user.zone_selected)] у [target]."),
 		)
 		display_pain(target, "Острая боль в [target.parse_zone_with_bodypart(user.zone_selected)] просто невыносима!")
 	else
@@ -176,8 +176,8 @@
 			user,
 			target,
 			span_notice("Вы успешно устранили перелом в [target.parse_zone_with_bodypart(target_zone)] у [target]."),
- 			span_notice("[user] успешно устранил перелом в [target.parse_zone_with_bodypart(target_zone)] у [target] при помощи [tool]!"),
- 			span_notice("[user] успешно устранил перелом в [target.parse_zone_with_bodypart(target_zone)] у [target]!"),
+			span_notice("[user] успешно устранил перелом в [target.parse_zone_with_bodypart(target_zone)] у [target] при помощи [tool]!"),
+			span_notice("[user] успешно устранил перелом в [target.parse_zone_with_bodypart(target_zone)] у [target]!"),
 		)
 		log_combat(user, target, "успешно устранил закрытый перелом в", addition="COMBAT_MODE: [uppertext(user.combat_mode)]")
 		qdel(surgery.operated_wound)
@@ -219,8 +219,8 @@
 		user,
 		target,
 		span_notice("Вы начинаете избавляться от мелких обломков черепа в [target.parse_zone_with_bodypart(target_zone)] у [target]..."),
- 		span_notice("[user] начинает избавляться от мелких обломков черепа в [target.parse_zone_with_bodypart(target_zone)] у [target]..."),
- 		span_notice("[user] начинает копошиться в [target.parse_zone_with_bodypart(target_zone)] у [target]..."),
+		span_notice("[user] начинает избавляться от мелких обломков черепа в [target.parse_zone_with_bodypart(target_zone)] у [target]..."),
+		span_notice("[user] начинает копошиться в [target.parse_zone_with_bodypart(target_zone)] у [target]..."),
 	)
 
 	display_pain(target, "Ваш мозг словно пронзают мелкие осколки стекла!")

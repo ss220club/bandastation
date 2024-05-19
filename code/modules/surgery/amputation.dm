@@ -44,8 +44,8 @@
 		user,
 		target,
 		span_notice("Вы начинаете отрезать [target.parse_zone_with_bodypart(target_zone)] у [target]..."),
- 		span_notice("[user] начинает отрезать [target.parse_zone_with_bodypart(target_zone)] у [target]!"),
- 		span_notice("[user] начинает отрезать [target.parse_zone_with_bodypart(target_zone)] у [target]!"),
+		span_notice("[user] начинает отрезать [target.parse_zone_with_bodypart(target_zone)] у [target]!"),
+		span_notice("[user] начинает отрезать [target.parse_zone_with_bodypart(target_zone)] у [target]!"),
 	)
 	display_pain(target, "Вы чувствуете жуткую боль в [parse_zone(target_zone)]!")
 
@@ -55,8 +55,8 @@
 		user,
 		target,
 		span_notice("Вы отрезали [target.parse_zone_with_bodypart(target_zone)] у [target]."),
- 		span_notice("[user] отрезал [target.parse_zone_with_bodypart(target_zone)] у [target]!"),
- 		span_notice("[user] отрезал [target.parse_zone_with_bodypart(target_zone)] у [target]!"),
+		span_notice("[user] отрезал [target.parse_zone_with_bodypart(target_zone)] у [target]!"),
+		span_notice("[user] отрезал [target.parse_zone_with_bodypart(target_zone)] у [target]!"),
 	)
 	display_pain(target, "Вы больше не чувствуете вашу [target.parse_zone_with_bodypart(target_zone)]!")
 

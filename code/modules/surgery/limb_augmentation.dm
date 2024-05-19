@@ -32,8 +32,8 @@
 			user,
 			target,
 			span_notice("Вы начинаете аугментировать [target.parse_zone_with_bodypart(user.zone_selected)] у [target] ..."),
- 			span_notice("[user] начинает аугментировать [target.parse_zone_with_bodypart(user.zone_selected)] у [target] with [aug]."),
- 			span_notice("[user] начинает аугментировать [target.parse_zone_with_bodypart(user.zone_selected)] у [target] ."),
+			span_notice("[user] начинает аугментировать [target.parse_zone_with_bodypart(user.zone_selected)] у [target] with [aug]."),
+			span_notice("[user] начинает аугментировать [target.parse_zone_with_bodypart(user.zone_selected)] у [target] ."),
 		)
 		display_pain(target, "Вы чувствуете ужасную боль в [target.parse_zone_with_bodypart(user.zone_selected)]!")
 	else
@@ -75,8 +75,8 @@
 					user,
 					target,
 					span_warning("Вы не смогли заменить [target.parse_zone_with_bodypart(target_zone)] у [target] ! Тело отвергает [tool.name]!"),
- 					span_warning("[user] не смог заменить [target.parse_zone_with_bodypart(target_zone)] у [target] !"),
- 					span_warning("[user] не смог заменить [target.parse_zone_with_bodypart(target_zone)] у [target] !"),
+					span_warning("[user] не смог заменить [target.parse_zone_with_bodypart(target_zone)] у [target] !"),
+					span_warning("[user] не смог заменить [target.parse_zone_with_bodypart(target_zone)] у [target] !"),
 				)
 				tool.forceMove(target.loc)
 				return
@@ -86,8 +86,8 @@
 			user,
 			target,
 			span_notice("Вы успешно заменили [target.parse_zone_with_bodypart(target_zone)] у [target]."),
- 			span_notice("[user] успешно заменил [target.parse_zone_with_bodypart(target_zone)] у [target] на [tool.name]!"),
- 			span_notice("[user] успешно заменил [target.parse_zone_with_bodypart(target_zone)] у [target]!"),
+			span_notice("[user] успешно заменил [target.parse_zone_with_bodypart(target_zone)] у [target] на [tool.name]!"),
+			span_notice("[user] успешно заменил [target.parse_zone_with_bodypart(target_zone)] у [target]!"),
 		)
 		display_pain(target, "Ваш [target.parse_zone_with_bodypart(target_zone)] наполняется синтетическими ощущениями!", mechanical_surgery = TRUE)
 		log_combat(user, target, "проаугментирован", addition="дав ему новую [target.parse_zone_with_bodypart(target_zone)] COMBAT MODE: [uppertext(user.combat_mode)]")

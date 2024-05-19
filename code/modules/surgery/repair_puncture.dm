@@ -62,8 +62,8 @@
 		user,
 		target,
 		span_notice("Вы начинаете приводить в порядок поврежденные кровеносные сосуды в [target.parse_zone_with_bodypart(user.zone_selected)] у [target]..."),
- 		span_notice("[user] начинает приводить в порядок поврежденные кровеносные сосуды в [target.parse_zone_with_bodypart(user.zone_selected)] у [target] при помощи [tool.name]."),
- 		span_notice("[user] начинает приводить в порядок поврежденные кровеносные сосуды в [target.parse_zone_with_bodypart(user.zone_selected)] у [target]."),
+		span_notice("[user] начинает приводить в порядок поврежденные кровеносные сосуды в [target.parse_zone_with_bodypart(user.zone_selected)] у [target] при помощи [tool.name]."),
+		span_notice("[user] начинает приводить в порядок поврежденные кровеносные сосуды в [target.parse_zone_with_bodypart(user.zone_selected)] у [target]."),
 	)
 	display_pain(target, "Вы чувствуете ужасную колющую боль в [target.parse_zone_with_bodypart(user.zone_selected)]!")
 
@@ -77,8 +77,8 @@
 		user,
 		target,
 		span_notice("Вы успешно восстанавливаете некоторые кровеносные сосуды в [target.parse_zone_with_bodypart(target_zone)] у [target]."),
- 		span_notice("[user] успешно восстанавливает некоторые кровеносные сосуды в [target.parse_zone_with_bodypart(target_zone)] у [target] при помощи [tool.name]!"),
- 		span_notice("[user] успешно восстанавливает некоторые кровеносные сосуды в [target.parse_zone_with_bodypart(target_zone)] у [target]!"),
+		span_notice("[user] успешно восстанавливает некоторые кровеносные сосуды в [target.parse_zone_with_bodypart(target_zone)] у [target] при помощи [tool.name]!"),
+		span_notice("[user] успешно восстанавливает некоторые кровеносные сосуды в [target.parse_zone_with_bodypart(target_zone)] у [target]!"),
 	)
 	log_combat(user, target, "удалил зараженную плоть в", addition="COMBAT MODE: [uppertext(user.combat_mode)]")
 	surgery.operated_bodypart.receive_damage(brute=3, wound_bonus=CANT_WOUND)
@@ -91,8 +91,8 @@
 		user,
 		target,
 		span_notice("Вы повреждаете некоторые кровеносные сосуды в [target.parse_zone_with_bodypart(target_zone)] у [target]."),
- 		span_notice("[user] повреждает некоторые кровеносные сосуды в [target.parse_zone_with_bodypart(target_zone)] у [target] при помощи [tool.name]!"),
- 		span_notice("[user] повреждает некоторые кровеносные сосуды в [target.parse_zone_with_bodypart(target_zone)] у [target]!"),
+		span_notice("[user] повреждает некоторые кровеносные сосуды в [target.parse_zone_with_bodypart(target_zone)] у [target] при помощи [tool.name]!"),
+		span_notice("[user] повреждает некоторые кровеносные сосуды в [target.parse_zone_with_bodypart(target_zone)] у [target]!"),
 	)
 	surgery.operated_bodypart.receive_damage(brute=rand(4,8), sharpness=SHARP_EDGED, wound_bonus = 10)
 
@@ -123,8 +123,8 @@
 		user,
 		target,
 		span_notice("Вы начинаете восстанавливать некоторые из поврежденных кровеносных сосудов в [target.parse_zone_with_bodypart(user.zone_selected)] у [target]..."),
- 		span_notice("[user] начинает восстанавливать некоторые из поврежденных кровеносных сосудов в [target.parse_zone_with_bodypart(user.zone_selected)] у [target] при помощи [tool.name]."),
- 		span_notice("[user] начинает восстанавливать некоторые из поврежденных кровеносных сосудов в [target.parse_zone_with_bodypart(user.zone_selected)] у [target]."),
+		span_notice("[user] начинает восстанавливать некоторые из поврежденных кровеносных сосудов в [target.parse_zone_with_bodypart(user.zone_selected)] у [target] при помощи [tool.name]."),
+		span_notice("[user] начинает восстанавливать некоторые из поврежденных кровеносных сосудов в [target.parse_zone_with_bodypart(user.zone_selected)] у [target]."),
 	)
 	display_pain(target, "В [target.parse_zone_with_bodypart(user.zone_selected)] все горит!")
 
@@ -138,8 +138,8 @@
 		user,
 		target,
 		span_notice("Вы успешно восстановили некоторые из поврежденных кровеносных сосудов в [target.parse_zone_with_bodypart(target_zone)] у [target] при помощи [tool.name]."),
- 		span_notice("[user] успешно восстановил некоторые из поврежденных кровеносных сосудов в [target.parse_zone_with_bodypart(target_zone)] у [target] при помощи [tool.name]!"),
- 		span_notice("[user] успешно восстановил некоторые из поврежденных кровеносных сосудов в [target.parse_zone_with_bodypart(target_zone)] у [target]!"),
+		span_notice("[user] успешно восстановил некоторые из поврежденных кровеносных сосудов в [target.parse_zone_with_bodypart(target_zone)] у [target] при помощи [tool.name]!"),
+		span_notice("[user] успешно восстановил некоторые из поврежденных кровеносных сосудов в [target.parse_zone_with_bodypart(target_zone)] у [target]!"),
 	)
 	log_combat(user, target, "обрабатывате ожоги в", addition="COMBAT MODE: [uppertext(user.combat_mode)]")
 	pierce_wound.adjust_blood_flow(-0.5)

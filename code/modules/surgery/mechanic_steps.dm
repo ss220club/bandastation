@@ -15,8 +15,8 @@
 		user,
 		target,
 		span_notice("Вы начинаете откручивать корпус в [target.parse_zone_with_bodypart(target_zone)] у [target]..."),
- 		span_notice("[user] начинает откручивать корпус в [target.parse_zone_with_bodypart(target_zone)] у [target]."),
- 		span_notice("[user] начинает откручивать корпус в [target.parse_zone_with_bodypart(target_zone)] у [target]."),
+		span_notice("[user] начинает откручивать корпус в [target.parse_zone_with_bodypart(target_zone)] у [target]."),
+		span_notice("[user] начинает откручивать корпус в [target.parse_zone_with_bodypart(target_zone)] у [target]."),
 	)
 	display_pain(target, "Вы ощущаете, как [target.parse_zone_with_bodypart(target_zone)] немеет по мере откручивания сенсорной панели.", TRUE)
 
@@ -45,8 +45,8 @@
 		user,
 		target,
 		span_notice("Вы начинаете закручивать корпус в [target.parse_zone_with_bodypart(target_zone)] у [target]..."),
- 		span_notice("[user] начинает закручивать корпус в [target.parse_zone_with_bodypart(target_zone)] у [target]."),
- 		span_notice("[user] начинает закручивать корпус в [target.parse_zone_with_bodypart(target_zone)] у [target]."),
+		span_notice("[user] начинает закручивать корпус в [target.parse_zone_with_bodypart(target_zone)] у [target]."),
+		span_notice("[user] начинает закручивать корпус в [target.parse_zone_with_bodypart(target_zone)] у [target]."),
 	)
 	display_pain(target, "Вы ощущаете, как начинаете получать показания датчиков из [target.parse_zone_with_bodypart(target_zone)], после того, как панель закрутили обратно.", TRUE)
 
@@ -73,8 +73,8 @@
 		user,
 		target,
 		span_notice("Вы начинаете подготовку электроники в [target.parse_zone_with_bodypart(target_zone)] у [target]..."),
- 		span_notice("[user] начинает подготовку электроники в [target.parse_zone_with_bodypart(target_zone)] у [target]."),
- 		span_notice("[user] начинает подготовку электроники в [target.parse_zone_with_bodypart(target_zone)] у [target]."),
+		span_notice("[user] начинает подготовку электроники в [target.parse_zone_with_bodypart(target_zone)] у [target]."),
+		span_notice("[user] начинает подготовку электроники в [target.parse_zone_with_bodypart(target_zone)] у [target]."),
 	)
 	display_pain(target, "Вы чувствуете слабое жужжание в [target.parse_zone_with_bodypart(target_zone)], когда электроника перезагружается.", TRUE)
 
@@ -92,8 +92,8 @@
 		user,
 		target,
 		span_notice("Вы начинаете откручивать болты в [target.parse_zone_with_bodypart(target_zone)] у [target]..."),
- 		span_notice("[user] начинает откручивать болты в [target.parse_zone_with_bodypart(target_zone)] у [target]."),
- 		span_notice("[user] начинает откручивать болты в [target.parse_zone_with_bodypart(target_zone)] у [target]."),
+		span_notice("[user] начинает откручивать болты в [target.parse_zone_with_bodypart(target_zone)] у [target]."),
+		span_notice("[user] начинает откручивать болты в [target.parse_zone_with_bodypart(target_zone)] у [target]."),
 	)
 	display_pain(target, "Вы чувствуете вибрацию в [target.parse_zone_with_bodypart(target_zone)], когда болты начинают ослабевать.", TRUE)
 
@@ -117,8 +117,8 @@
 		user,
 		target,
 		span_notice("Вы начинаете закручивать болты в [target.parse_zone_with_bodypart(target_zone)] у [target]..."),
- 		span_notice("[user] начинает закручивать болты в [target.parse_zone_with_bodypart(target_zone)] у [target]."),
- 		span_notice("[user] начинает закручивать болты в [target.parse_zone_with_bodypart(target_zone)] у [target]."),
+		span_notice("[user] начинает закручивать болты в [target.parse_zone_with_bodypart(target_zone)] у [target]."),
+		span_notice("[user] начинает закручивать болты в [target.parse_zone_with_bodypart(target_zone)] у [target]."),
 	)
 	display_pain(target, "Вы чувствуете вибрацию в [target.parse_zone_with_bodypart(target_zone)], когда болты начинают затягиваться.", TRUE)
 
@@ -141,8 +141,8 @@
 		user,
 		target,
 		span_notice("Вы начинаете открывать держатели люка в [target.parse_zone_with_bodypart(target_zone)] у [target]..."),
- 		span_notice("[user] начинает открывать держатели люка в [target.parse_zone_with_bodypart(target_zone)] у [target]."),
- 		span_notice("[user] начинает открывать держатели люка в [target.parse_zone_with_bodypart(target_zone)] у [target]."),
+		span_notice("[user] начинает открывать держатели люка в [target.parse_zone_with_bodypart(target_zone)] у [target]."),
+		span_notice("[user] начинает открывать держатели люка в [target.parse_zone_with_bodypart(target_zone)] у [target]."),
 	)
 	display_pain(target, "Вы получаете последние показания датчиков из вашей [target.parse_zone_with_bodypart(target_zone)], когда открывается люк.", TRUE)
 

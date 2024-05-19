@@ -70,8 +70,8 @@
 				user,
 				target,
 				span_notice("Вы начинаете заменять [target.parse_zone_with_bodypart(target_zone)] у [target] на [tool.name]..."),
- 				span_notice("[user] начинает заменять [target.parse_zone_with_bodypart(target_zone)] у [target.parse_zone_with_bodypart(target_zone)] на [tool.name]."),
- 				span_notice("[user] начинает заменять [target.parse_zone_with_bodypart(target_zone)] у [target]."),
+				span_notice("[user] начинает заменять [target.parse_zone_with_bodypart(target_zone)] у [target.parse_zone_with_bodypart(target_zone)] на [tool.name]."),
+				span_notice("[user] начинает заменять [target.parse_zone_with_bodypart(target_zone)] у [target]."),
 			)
 		else
 			to_chat(user, span_warning("[tool.name] не подходит для [target.parse_zone_with_bodypart(target_zone)]."))
@@ -81,8 +81,8 @@
 			user,
 			target,
 			span_notice("Вы начинаете прикреплять [tool.name] к [target]..."),
- 			span_notice("[user] начинает прикреплять [tool.name] к [target.parse_zone_with_bodypart(target_zone)] у [target]."),
- 			span_notice("[user] начинает прикреплять что-то к [target.parse_zone_with_bodypart(target_zone)] у [target]."),
+			span_notice("[user] начинает прикреплять [tool.name] к [target.parse_zone_with_bodypart(target_zone)] у [target]."),
+			span_notice("[user] начинает прикреплять что-то к [target.parse_zone_with_bodypart(target_zone)] у [target]."),
 		)
 	else
 		to_chat(user, span_warning("[tool.name] должен быть установлен в руку."))
@@ -106,8 +106,8 @@
 			user,
 			target,
 			span_notice("Вы успешно заменили [target.parse_zone_with_bodypart(target_zone)] у [target]."),
- 			span_notice("[user] успешно заменил [target.parse_zone_with_bodypart(target_zone)] у [target] на [tool.name]!"),
- 			span_notice("[user] успешно заменил [target.parse_zone_with_bodypart(target_zone)] у [target]!"),
+			span_notice("[user] успешно заменил [target.parse_zone_with_bodypart(target_zone)] у [target] на [tool.name]!"),
+			span_notice("[user] успешно заменил [target.parse_zone_with_bodypart(target_zone)] у [target]!"),
 		)
 		display_pain(target, "Вы наполняетесь позитивными ощущениями, потому что вы снова чувствуете ваш [target.parse_zone_with_bodypart(target_zone)]!", TRUE)
 		return

@@ -43,8 +43,8 @@
 		user,
 		target,
 		span_notice("Вы начинаете вставлять [tool.name] в разрезе на [target.parse_zone_with_bodypart(target_zone)] у [target] ..."),
- 		span_notice("[user] начинает вставлять [tool.name] в разрезе на [target.parse_zone_with_bodypart(target_zone)] у [target]]."),
- 		span_notice("[user] начинает вставлять [tool.name] в разрезе на [target.parse_zone_with_bodypart(target_zone)] у [target]]."),
+		span_notice("[user] начинает вставлять [tool.name] в разрезе на [target.parse_zone_with_bodypart(target_zone)] у [target]]."),
+		span_notice("[user] начинает вставлять [tool.name] в разрезе на [target.parse_zone_with_bodypart(target_zone)] у [target]]."),
 	)
 	display_pain(target, "Вы чувствуете, как что-то вставили вам под кожу в [target.parse_zone_with_bodypart(target_zone)].")
 

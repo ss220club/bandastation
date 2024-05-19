@@ -183,8 +183,8 @@
 			user,
 			target,
 			span_notice("Вы вставляете [tool.name] в [target.parse_zone_with_bodypart(target_zone)] у [target]..."),
- 			span_notice("[user] вставляет [tool.name] в [target.parse_zone_with_bodypart(target_zone)] у [target]."),
- 			span_notice("[user] вставляет что-то в [target.parse_zone_with_bodypart(target_zone)] у [target]."),
+			span_notice("[user] вставляет [tool.name] в [target.parse_zone_with_bodypart(target_zone)] у [target]."),
+			span_notice("[user] вставляет что-то в [target.parse_zone_with_bodypart(target_zone)] у [target]."),
 		)
 		display_pain(target, "Вы чувствуете, как что-то вставили в вашу [target.parse_zone_with_bodypart(target_zone)]!")
 
@@ -222,8 +222,8 @@
 					user,
 					target,
 					span_notice("Вы начинаете извлекать [target_organ] из [target.parse_zone_with_bodypart(target_zone)] у [target]..."),
- 					span_notice("[user] начинает извлекать [target_organ] из [target.parse_zone_with_bodypart(target_zone)] у [target]."),
- 					span_notice("[user] начинает извлекать что-то из [target.parse_zone_with_bodypart(target_zone)] у [target]."),
+					span_notice("[user] начинает извлекать [target_organ] из [target.parse_zone_with_bodypart(target_zone)] у [target]."),
+					span_notice("[user] начинает извлекать что-то из [target.parse_zone_with_bodypart(target_zone)] у [target]."),
 				)
 				display_pain(target, "Вы чувствуете, как [target_organ.name] извлекли из вашей [target.parse_zone_with_bodypart(target_zone)]!")
 			else
@@ -248,8 +248,8 @@
 				user,
 				target,
 				span_notice("Вы установили [tool.name] в [target.parse_zone_with_bodypart(target_zone)] у [target]."),
- 				span_notice("[user] установил [tool.name] в [target.parse_zone_with_bodypart(target_zone)] у [target]!"),
- 				span_notice("[user] установил что-то в [target.parse_zone_with_bodypart(target_zone)] у [target]!"),
+				span_notice("[user] установил [tool.name] в [target.parse_zone_with_bodypart(target_zone)] у [target]!"),
+				span_notice("[user] установил что-то в [target.parse_zone_with_bodypart(target_zone)] у [target]!"),
 			)
 			display_pain(target, "Ваш [target.parse_zone_with_bodypart(target_zone)] болит, пока [tool.name] приживается к телу!")
 			target_organ.on_surgical_insertion(user, target, target_zone, tool)
@@ -262,8 +262,8 @@
 				user,
 				target,
 				span_notice("Вы успешно извлекате [target_organ] из [target.parse_zone_with_bodypart(target_zone)] у [target]."),
- 				span_notice("[user] успешно извлек [target_organ] из [target.parse_zone_with_bodypart(target_zone)] у [target]!"),
- 				span_notice("[user] успешно извлек что-то из [target.parse_zone_with_bodypart(target_zone)] у [target]!"),
+				span_notice("[user] успешно извлек [target_organ] из [target.parse_zone_with_bodypart(target_zone)] у [target]!"),
+				span_notice("[user] успешно извлек что-то из [target.parse_zone_with_bodypart(target_zone)] у [target]!"),
 			)
 			display_pain(target, "Ваш [target.parse_zone_with_bodypart(target_zone)] болит, вы больше не чувствуете [target_organ.name]!")
 			log_combat(user, target, "хирургически удалил [target_organ.name] из", addition="COMBAT MODE: [uppertext(user.combat_mode)]")
