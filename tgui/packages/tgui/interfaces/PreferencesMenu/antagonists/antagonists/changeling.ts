@@ -10,8 +10,8 @@ const Changeling: Antagonist = {
   name: 'Генокрад',
   description: [
     `
-      A highly intelligent alien predator that is capable of altering their
-      shape to flawlessly resemble a human.
+      Разумный инопланетный хищник, способный изменять свою форму,
+      чтобы безупречно походить на человека.
     `,
     CHANGELING_MECHANICAL_DESCRIPTION,
   ],

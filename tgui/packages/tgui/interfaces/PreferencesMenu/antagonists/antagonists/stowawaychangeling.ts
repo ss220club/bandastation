@@ -6,8 +6,7 @@ const Stowaway_Changeling: Antagonist = {
   name: 'Генокрад-безбилетник',
   description: [
     `
-      A Changeling that found its way onto the shuttle
-      unbeknownst to the crewmembers on board.
+      Генокрад, который попал на шаттл без ведома членов экипажа.
     `,
     CHANGELING_MECHANICAL_DESCRIPTION,
   ],

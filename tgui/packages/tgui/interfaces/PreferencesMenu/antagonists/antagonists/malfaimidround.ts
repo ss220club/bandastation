@@ -6,8 +6,8 @@ const MalfAIMidround: Antagonist = {
   name: 'Засбоивший ИИ',
   description: [
     `
-      A form of malfunctioning AI that is given to existing AIs in the middle
-      of the shift.
+      Вариант сбойного ИИ, которого могут получить существующие ИИ
+      в любой момент во время смены.
     `,
     MALF_AI_MECHANICAL_DESCRIPTION,
   ],

@@ -5,8 +5,8 @@ const Fugitive: Antagonist = {
   name: 'Беглец',
   description: [
     `
-    Wherever you come from, you're being hunted. You have 10 minutes to prepare
-    before fugitive hunters arrive and start hunting you and your friends down!
+    Откуда бы вы ни прибыли, за вами охотятся. У вас есть 10 минут на подготовку,
+    пока не появились охотники за беглецами и не начали охоту на вас и ваших друзей!
     `,
   ],
   category: Category.Midround,

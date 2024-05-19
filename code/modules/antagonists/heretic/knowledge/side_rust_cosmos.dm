@@ -20,8 +20,8 @@
 
 /datum/heretic_knowledge/entropy_pulse
 	name = "Pulse of Entropy"
-	desc = "Allows you to transmute 10 iron sheets to fill the surrounding vicinity of the rune with rust."
-	gain_text = "Reality begins to whisper to me. To give it its entropic end."
+	desc = "Позволяет трансмутировать 10 железа, чтобы заполнить ржавчиной окружение вокруг руны."
+	gain_text = "Реальность начинает нашептывать мне, чтобы дать ей энтропийный конец."
 	required_atoms = list(
 		/obj/item/stack/sheet/iron = 10,
 		/obj/item/trash = 1,
@@ -76,9 +76,9 @@
 
 /datum/heretic_knowledge/summon/rusty
 	name = "Rusted Ritual"
-	desc = "Allows you to transmute a pool of vomit, some cable coil, and 5 sheets of iron into a Rust Walker. \
-		Rust Walkers excel at spreading rust and are moderately strong in combat."
-	gain_text = "I combined my knowledge of creation with my desire for corruption. The Marshal knew my name, and the Rusted Hills echoed out."
+	desc = "Позволяет трансмутировать лужу рвоты, провода и 5 железа в Ржавого ходока. \
+		Ржавые ходоки превосходно распространяют ржавчину и умеренно сильны в бою."
+	gain_text = "Я объединил свои знания о созидании с жаждой коррозии. Маршал знал мое имя, и Ржавые холмы отозвались эхом."
 	next_knowledge = list(
 		/datum/heretic_knowledge/spell/area_conversion,
 		/datum/heretic_knowledge/spell/star_blast,

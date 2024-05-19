@@ -45,10 +45,10 @@
 
 /datum/heretic_knowledge/rust_fist
 	name = "Grasp of Rust"
-	desc = "Your Mansus Grasp will deal 500 damage to non-living matter and rust any surface it touches. \
-		Already rusted surfaces are destroyed. Surfaces and structures can only be rusted by using Right-Click. \
-		Allows you to rust basic iron walls and floors."
-	gain_text = "On the ceiling of the Mansus, rust grows as moss does on a stone."
+	desc = "Ваша Хватка Мансуса наносит 500 единиц урона неживой материи и ржавеет любая поверхность, которой она коснется. \
+		Уже заржавевшие поверхности разрушаются. Поверхности и структуры можно заставить ржаветь с помощью ПКМ. \
+		Позволяет заставить ржаветь обычные железные стены и пол."
+	gain_text = "На потолке Мансуса ржавчина растет, как мох на камне."
 	next_knowledge = list(/datum/heretic_knowledge/rust_regen)
 	cost = 1
 	route = PATH_RUST
@@ -148,10 +148,10 @@
 
 /datum/heretic_knowledge/mark/rust_mark
 	name = "Mark of Rust"
-	desc = "Your Mansus Grasp now applies the Mark of Rust. The mark is triggered from an attack with your Rusty Blade. \
-		When triggered, your victim will suffer heavy disgust and confusion. \
-		Allows you to rust reinforced walls and floors as well as plasteel."
-	gain_text = "The Blacksmith looks away. To a place lost long ago. \"Rusted Hills help those in dire need... at a cost.\""
+	desc = "Ваша Хватка Мансуса теперь накладывает Метку ржавчины. Метка срабатывает при атаке вашим Ржавым клинком. \
+		При срабатывании, жертва получит сильное отвращение и будет контужена. \
+		Позволяет заставить ржаветь укрепленные стены и пол, а также пласталь."
+	gain_text = "Кузнец смотрит вдаль. В давно потерянное место. \"Ржавые холмы помогают остро нуждающимся... за определенную плату.\""
 	next_knowledge = list(/datum/heretic_knowledge/knowledge_ritual/rust)
 	route = PATH_RUST
 	mark_type = /datum/status_effect/eldritch/rust
@@ -177,9 +177,9 @@
 
 /datum/heretic_knowledge/spell/area_conversion
 	name = "Aggressive Spread"
-	desc = "Grants you Aggressive Spread, a spell that spreads rust to nearby surfaces. \
-		Already rusted surfaces are destroyed \ Also improves the rusting abilities of non rust-heretics."
-	gain_text = "All wise men know well not to visit the Rusted Hills... Yet the Blacksmith's tale was inspiring."
+	desc = "Дает вам заклинание Aggressive Spread, которое распространяет ржавчину на близлежащие поверхности. \
+		Уже заржавевшие поверхности разрушаются. \ Также улучшает способности ржавчины еретиков не Пути ржавчины."
+	gain_text = "Мудрецы знают, что не стоит посещать Ржавые холмы... Но рассказ Кузнеца был вдохновляющим."
 	next_knowledge = list(
 		/datum/heretic_knowledge/blade_upgrade/rust,
 		/datum/heretic_knowledge/reroll_targets,
@@ -198,9 +198,9 @@
 
 /datum/heretic_knowledge/blade_upgrade/rust
 	name = "Toxic Blade"
-	desc = "Your Rusty Blade now disgusts enemies on attack \ Allows you to rust Titanium and Plastitanium.."
-	gain_text = "The Blacksmith hands you their blade. \"The Blade will guide you through the flesh, should you let it.\" \
-		The heavy rust weights it down. You stare deeply into it. The Rusted Hills call for you, now."
+	desc = "Ваш Ржавый клинок теперь отвращает врагов при атаке. \ Позволяет заставить ржаветь титаниум и пластитаниум."
+	gain_text = "Кузнец протягивает вам свой клинок. \"Клинок проведет тебя через плоть, если ты позволишь ему.\" \
+		Тяжелая ржавчина утяжеляет клинок. Вы пристально вглядываетесь в него. Ржавые холмы зовут тебя."
 	next_knowledge = list(/datum/heretic_knowledge/spell/entropic_plume)
 	route = PATH_RUST
 
@@ -215,11 +215,11 @@
 	. = ..()
 /datum/heretic_knowledge/spell/entropic_plume
 	name = "Entropic Plume"
-	desc = "Grants you Entropic Plume, a spell that releases a vexing wave of Rust. \
-		Blinds, poisons, and inflicts Amok on any heathen it hits, causing them to strike \
-		at friend or foe wildly. Also rusts and destroys and surfaces it hits and improves the rusting abilities of non-rust heretics."
-	gain_text = "The corrosion was unstoppable. The rust was unpleasable. \
-		The Blacksmith was gone, and you hold their blade. Champions of hope, the Rustbringer is nigh!"
+	desc = "Дарует вам Entropic Plume, заклинание, выпускающее досаждающую волну ржавчины. \
+		Ослепляет, отравляет и накладывает Amok на всех попавших язычников, заставляя их дико нападать \
+		на друзей или врагов. Также ржавеет и разрушает поверхности, на которые попадает. Улучшает способности ржавчины еретиков не Пути ржавчины."
+	gain_text = "Коррозия была неостановима. Ржавчина была неприятной. \
+		Кузнец ушел, ты держишь его клинок. Чемпионы надежды, Повелитель ржавчины близок!"
 	next_knowledge = list(
 		/datum/heretic_knowledge/ultimate/rust_final,
 		/datum/heretic_knowledge/spell/rust_charge,
@@ -235,13 +235,13 @@
 
 /datum/heretic_knowledge/ultimate/rust_final
 	name = "Rustbringer's Oath"
-	desc = "The ascension ritual of the Path of Rust. \
-		Bring 3 corpses to a transmutation rune on the bridge of the station to complete the ritual. \
-		When completed, the ritual site will endlessly spread rust onto any surface, stopping for nothing. \
-		Additionally, you will become extremely resilient on rust, healing at triple the rate \
-		and becoming immune to many effects and dangers \ You will be able to rust almost anything upon ascending."
-	gain_text = "Champion of rust. Corruptor of steel. Fear the dark, for the RUSTBRINGER has come! \
-		The Blacksmith forges ahead! Rusted Hills, CALL MY NAME! WITNESS MY ASCENSION!"
+	desc = "Ритуал вознесения Пути ржавчины. \
+		Принесите 3 трупа к руне трансмутации на мостик станции, чтобы завершить ритуал. \
+		После завершения, ритуальное место будет бесконечно распространять ржавчину на любую поверхность, не останавливаясь ни перед чем. \
+		Кроме того, вы станете чрезвычайно стойкими на ржавчине, исцеляясь втрое быстрее \
+		и приобретая иммунитет ко многим эффектам и опасностям. Вы сможете заставлять ржаветь почти всё."
+	gain_text = "Чемпион ржавчины. Разлагатель стали. Бойся темноты, ибо пришел ПОВЕЛИТЕЛЬ РЖАВЧИНЫ! \
+		Работа Кузнеца продолжается! Ржавые холмы, УСЛЫШЬТЕ МОЕ ИМЯ! УЗРИТЕ МОЕ ВОЗНЕСЕНИЕ!"
 	route = PATH_RUST
 	/// If TRUE, then immunities are currently active.
 	var/immunities_active = FALSE

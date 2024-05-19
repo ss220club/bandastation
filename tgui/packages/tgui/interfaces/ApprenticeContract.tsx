@@ -22,8 +22,8 @@ export const ApprenticeContract = (props) => {
               schoolTitle="destruction"
               assetName="destruction.png"
               blurb={`
-                Your apprentice is skilled in offensive magic.
-                They know Magic Missile and Fireball.
+                Ваш ученик владеет наступательной магией.
+                Они владеют «Magic Missile» и «Fireball».
               `}
             />
             <ApprenticeSelection
@@ -32,9 +32,9 @@ export const ApprenticeContract = (props) => {
               schoolTitle="bluespace"
               assetName="bluespace.png"
               blurb={`
-              Your apprentice is able to defy physics, melting through
-              solid objects and travelling great distances in the
-              blink of an eye. They know Teleport and Ethereal Jaunt.
+              Ваш ученик способен бросить вызов физике, проникая
+              сквозь твердые предметы и преодолевая огромные
+              расстояния в мгновение ока. Они владеют «Teleport» и «Ethereal Jaunt».
               `}
             />
             <ApprenticeSelection
@@ -43,9 +43,9 @@ export const ApprenticeContract = (props) => {
               schoolTitle="healing"
               assetName="healing.png"
               blurb={`
-              Your apprentice is training to cast spells that will
-              aid your survival. They know Forcewall and Charge and
-              come with a Staff of Healing.
+              Ваш ученик обучается заклинаниям, которые
+              помогут вам в выживании. Они знают «Forcewall» и «Charge» и
+              имеют при себе Посох исцеления.
               `}
             />
             <ApprenticeSelection
@@ -54,8 +54,8 @@ export const ApprenticeContract = (props) => {
               schoolTitle="robeless"
               assetName="robeless.png"
               blurb={`
-              Your apprentice is training to cast spells without
-              their robes. They know Knock and Mindswap.
+              Ваш ученик учится применять заклинания
+              без одеяний. Они владеют «Knock» и «Mindswap».
               `}
             />
           </Stack.Item>

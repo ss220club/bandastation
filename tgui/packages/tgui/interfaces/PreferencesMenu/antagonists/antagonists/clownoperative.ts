@@ -6,10 +6,10 @@ const ClownOperative: Antagonist = {
   name: 'Клоунский оперативник',
   description: [
     `
-      Honk! You have been chosen, for better or worse to join the Syndicate
-      Clown Operative strike team. Your mission, whether or not you choose
-      to tickle it, is to honk Nanotrasen's most advanced research facility!
-      That's right, you're going to Clown Station 13.
+      Хонк! Вы были выбраны, к лучшему или худшему, в Синдикатовскую ударную группу
+      клоунов. Ваша миссия, вне зависимости от ваших щекоток,
+      заключается в отхонкивании самого передового исследовательского центра Нанотрейзен!
+      Правильно, вы отправитесь на клоунскую станцию 13.
     `,
 
     OPERATIVE_MECHANICAL_DESCRIPTION,

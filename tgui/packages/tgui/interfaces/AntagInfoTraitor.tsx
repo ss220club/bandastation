@@ -66,9 +66,9 @@ const EmployerSection = (props) => {
         <Button
           icon="hammer"
           tooltip={`
-            This is a gameplay suggestion for bored traitors.
-            You don't have to follow it, unless you want some
-            ideas for how to spend the round.`}
+            Это внутриигровое предложение для заскучавших предателей.
+            Вы не обязаны следовать ему, если только вы не хотите
+            использовать это для генерации идей для раунда.`}
           tooltipPosition="bottom-start"
         >
           Политика

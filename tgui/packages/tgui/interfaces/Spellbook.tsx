@@ -338,12 +338,12 @@ const Loadouts = (props) => {
             loadoutColor="purple"
             name="Классический маг"
             icon="fire"
-            author="Archchancellor Gray"
+            author="Архиканцлер Грей"
             blurb={`
-                This is the classic wizard, crazy popular in
-                the 2550's. Comes with Fireball, Magic Missile,
-                Ei Nath, and Ethereal Jaunt. The key here is that
-                every part of this kit is very easy to pick up and use.
+                Это классический маг, был безумно популярным в
+                2550-е годы. Поставляется с Fireball, Magic Missile,
+                Ei Nath, и Ethereal Jaunt. Ключевой момент тут в том, что
+                каждый элемент этого набора очень легко освоить и использовать.
               `}
           />
           <SingleLoadout
@@ -351,12 +351,12 @@ const Loadouts = (props) => {
             icon="hammer"
             loadoutId="loadout_hammer"
             loadoutColor="green"
-            author="Jegudiel Worldshaker"
+            author="Джегудиэль Ворлдшейкер"
             blurb={`
-                The power of the mighty Mjolnir! Best not to lose it.
-                This loadout has Summon Item, Mutate, Blink, Force Wall,
-                Tesla Blast, and Mjolnir. Mutate is your utility in this case:
-                Use it for limited ranged fire and getting out of bad blinks.
+                Сила могучего Мьёльнира! Лучше не терять его.
+                Этот набор содержит Summon Item, Mutate, Blink, Force Wall,
+                Tesla Blast, и Мьёлнир. Mutate это ваша поддержка в данном случае:
+                Используйте его для стрельбы с ограниченным радиусом действия и выхода из плохих блинков.
               `}
           />
         </Stack>
@@ -368,11 +368,11 @@ const Loadouts = (props) => {
             icon="pastafarianism"
             loadoutId="loadout_army"
             loadoutColor="yellow"
-            author="Prospero Spellstone"
+            author="Просперо Спеллстоун"
             blurb={`
-                Why kill when others will gladly do it for you?
-                Embrace chaos with your kit: Soulshards, Staff of Change,
-                Necro Stone, Teleport, and Jaunt! Remember, no offense spells!
+                Зачем убивать, если другие с радостью сделают это за вас?
+                Устройте хаос с помощью своего набора: Soulshards, Staff of Change,
+                Necro Stone, Teleport, and Jaunt! Помните, у вас нет атакующих заклинаний!
               `}
           />
           <SingleLoadout
@@ -380,12 +380,12 @@ const Loadouts = (props) => {
             icon="skull"
             loadoutId="loadout_tap"
             loadoutColor="white"
-            author="Tom the Empty"
+            author="Том Пустотный"
             blurb={`
-                Embrace the dark, and tap into your soul.
-                You can recharge very long recharge spells
-                like Ei Nath by jumping into new bodies with
-                Mind Swap and starting Soul Tap anew.
+                Примите темноту и откройте свою душу.
+                Вы можете перезаряжать очень длинные заклинания
+                как Ei Nath перемещаясь в новые тела с помощью
+                Mind Swap и начинать ловить души заного.
               `}
           />
         </Stack>

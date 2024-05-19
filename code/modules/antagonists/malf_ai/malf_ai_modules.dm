@@ -459,7 +459,7 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/ai_module))
 		clicked_machine = clicked_turret.parent_turret
 
 	if((clicked_machine.resistance_flags & INDESTRUCTIBLE) || is_type_in_typecache(clicked_machine, GLOB.blacklisted_malf_machines))
-		to_chat(caller, span_warning("That machine can't be overridden!"))
+		to_chat(caller, span_warning("Эта машина не может быть перезаписана!"))
 		return FALSE
 
 	caller.playsound_local(caller, 'sound/misc/interference.ogg', 50, FALSE, use_reverb = FALSE)
@@ -552,7 +552,7 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/ai_module))
 		clicked_machine = clicked_turret.parent_turret
 
 	if((clicked_machine.resistance_flags & INDESTRUCTIBLE) || is_type_in_typecache(clicked_machine, GLOB.blacklisted_malf_machines))
-		to_chat(caller, span_warning("You cannot overload that device!"))
+		to_chat(caller, span_warning("Эта машина не может быть перегружена!"))
 		return FALSE
 
 	caller.playsound_local(caller, SFX_SPARKS, 50, 0)
