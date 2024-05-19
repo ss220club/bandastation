@@ -6,8 +6,7 @@ const SyndicateSleeperAgent: Antagonist = {
   name: 'Спящий агент Синдиката',
   description: [
     `
-      A form of traitor that can activate at any point in the middle
-      of the shift.
+      Вариант предателя, который можно получить в любой момент во время смены.
     `,
     TRAITOR_MECHANICAL_DESCRIPTION,
   ],

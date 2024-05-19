@@ -5,8 +5,8 @@ const SentientDisease: Antagonist = {
   name: 'Разумная болезнь',
   description: [
     `
-      Mutate and spread yourself and infect as much of the crew as possible
-      with a deadly plague of your own creation.
+      Мутируйте, распространяйтесь и заразите как можно больше членов экипажа
+      смертельно опасной чумой собственного создания.
     `,
   ],
   category: Category.Midround,

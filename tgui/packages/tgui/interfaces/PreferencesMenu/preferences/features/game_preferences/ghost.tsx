@@ -106,11 +106,11 @@ export const ghost_hud: FeatureToggle = {
 };
 
 export const ghost_orbit: FeatureChoiced = {
-  name: 'Ghost orbit',
-  category: 'GHOST',
+  name: 'Призрак - орбитирование',
+  category: 'ПРИЗРАК',
   description: `
-    The shape in which your ghost will orbit.
-    Requires BYOND membership.
+    Форма, по которой ваш призрак будет орбитировать.
+    Необходима подписка BYOND.
   `,
   component: (
     props: FeatureValueProps<string, string, FeatureChoicedServerData>,
@@ -124,11 +124,11 @@ export const ghost_orbit: FeatureChoiced = {
 };
 
 export const ghost_others: FeatureChoiced = {
-  name: 'Ghosts of others',
-  category: 'GHOST',
+  name: 'Призрак - окружающие',
+  category: 'ПРИЗРАК',
   description: `
-    Do you want the ghosts of others to show up as their own setting, as
-    their default sprites, or always as the default white ghost?
+    Должны ли призраки других показываться с их настройками, только с их
+    стандартным спрайтом, или только показывать их стандартным белым призраком?
   `,
   component: FeatureDropdownInput,
 };
@@ -141,13 +141,13 @@ export const inquisitive_ghost: FeatureToggle = {
 };
 
 export const ghost_roles: FeatureToggle = {
-  name: 'Get ghost roles',
-  category: 'GHOST',
+  name: 'Получать гост-роли',
+  category: 'ПРИЗРАК',
   description: `
-    If you de-select this, you will not get any ghost role pop-ups what-so-ever!
-    Every single type of these pop-ups WILL be muted for you when you are
-    ghosted. Very useful for those who find ghost roles or the
-    pop-ups annoying, use at your own peril.
+    Если вы отключите это, вы не будете получать оповещения о гост-ролях, вообще!
+    Каждое оповещение БУДЕТ заглушено для вас, когда вы являетесь призраком.
+    Полезная опция для тех, кто не хочет играть на гост-ролях или не любит их
+    оповещения, используйте на свой страх и риск.
 `,
   component: CheckboxInput,
 };

@@ -42,11 +42,11 @@ export const sound_instruments: FeatureToggle = {
 };
 
 export const sound_tts: FeatureChoiced = {
-  name: 'Enable TTS',
-  category: 'SOUND',
+  name: 'TTS - включить',
+  category: 'ЗВУК',
   description: `
-    When enabled, be able to hear text-to-speech sounds in game.
-    When set to "Blips", text to speech will be replaced with blip sounds based on the voice.
+    Играть звук text-to-speech.
+    Функция "Blips" не работает.
   `,
   component: FeatureDropdownInput,
 };
@@ -91,11 +91,11 @@ export const sound_elevator: FeatureToggle = {
 };
 
 export const sound_achievement: FeatureChoiced = {
-  name: 'Achievement unlock sound',
-  category: 'SOUND',
+  name: 'Звук при получении достижений',
+  category: 'ЗВУК',
   description: `
-    The sound that's played when unlocking an achievement.
-    If disabled, no sound will be played.
+    Выбор звука, который будет играть при получении достижения.
+    При отключении звука не будет.
   `,
   component: FeatureDropdownInput,
 };

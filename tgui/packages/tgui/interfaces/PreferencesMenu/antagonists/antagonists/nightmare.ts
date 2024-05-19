@@ -5,8 +5,9 @@ const Nightmare: Antagonist = {
   name: 'Кошмар',
   description: [
     `
-      Use your light eater to break sources of light to survive and thrive.
-      Jaunt through the darkness and seek your prey with night vision.
+      Используйте свой клинок для уничтожения источников света,
+      чтобы жить и процветать во тьме. Пробирайтесь сквозь тьму и
+      ищите добычу с помощью ночного зрения.
     `,
   ],
   category: Category.Midround,

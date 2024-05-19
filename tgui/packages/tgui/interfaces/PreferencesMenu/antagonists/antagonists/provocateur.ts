@@ -6,8 +6,8 @@ const Provocateur: Antagonist = {
   name: 'Провокатор',
   description: [
     `
-      A form of head revolutionary that can activate when joining an ongoing
-      shift.
+      Вариант главы революции, который можно получить при
+      прибытии смену.
     `,
 
     REVOLUTIONARY_MECHANICAL_DESCRIPTION,

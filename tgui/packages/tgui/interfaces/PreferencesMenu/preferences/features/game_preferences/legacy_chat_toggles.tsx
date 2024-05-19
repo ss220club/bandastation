@@ -14,11 +14,11 @@ export const chat_dead: FeatureToggle = {
 };
 
 export const chat_ghostears: FeatureToggle = {
-  name: 'Hear all messages',
-  category: 'GHOST',
+  name: 'Слышать все сообщения',
+  category: 'ПРИЗРАК',
   description: `
-    When enabled, you will be able to hear all speech as a ghost.
-    When disabled, you will only be able to hear nearby speech.
+    Если включено, вы будете слышать всех мобов.
+    Если отключено, вы будете слышать только мобов на экране.
   `,
   component: CheckboxInput,
 };
@@ -52,11 +52,11 @@ export const chat_ghostsight: FeatureToggle = {
 };
 
 export const chat_ghostwhisper: FeatureToggle = {
-  name: 'See all whispers',
-  category: 'GHOST',
+  name: 'Слышать все шепоты',
+  category: 'ПРИЗРАК',
   description: `
-    When enabled, you will be able to hear all whispers as a ghost.
-    When disabled, you will only be able to hear nearby whispers.
+    Если включено, вы будете слышать шепоты всех мобов.
+    Если выключено, вы будете слышать шепоты только мобов на экране.
   `,
   component: CheckboxInput,
 };

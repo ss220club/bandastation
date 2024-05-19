@@ -37,13 +37,13 @@ export const fast_mc_refresh: FeatureToggle = {
 };
 
 export const ghost_roles_as_admin: FeatureToggle = {
-  name: 'Get ghost roles while adminned',
-  category: 'ADMIN',
+  name: 'Получать гост-роли будучи админом',
+  category: 'АДМИН',
   description: `
-    If you de-select this, you will not get any ghost role pop-ups while
-    adminned! Every single pop-up WILL never show up for you in an adminned
-    state. However, this does not suppress notifications when you are
-    a regular player (deadminned).
+    Если вы отключите это, то вы не будете получать предложения о гост-ролях,
+    когда вы с правами администратора. НИКАКОЕ оповещение не будет повляться для вас.
+    Но эта опция ничего не делает, если вы являетесь обычным игроком
+    (deadmin).
 `,
   component: CheckboxInput,
 };
