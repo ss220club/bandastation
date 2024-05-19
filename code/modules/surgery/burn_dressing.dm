@@ -79,7 +79,7 @@
 		display_results(
 			user,
 			target,
- 			span_notice("Вы начинаете удалять зараженную плоть из [target.parse_zone_with_bodypart(user.zone_selected)] у [target]..."),
+			span_notice("Вы начинаете удалять зараженную плоть из [target.parse_zone_with_bodypart(user.zone_selected)] у [target]..."),
 			span_notice("[user] начинает удалять зараженную плоть из [target.parse_zone_with_bodypart(user.zone_selected)] у [target] при помощи [tool.name]."),
 			span_notice("[user] начинает удалять зараженную плоть из [target.parse_zone_with_bodypart(user.zone_selected)] у [target]."),
 		)
