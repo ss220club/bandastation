@@ -18,7 +18,7 @@
  		span_notice("[user] начинает откручивать корпус в [target.parse_zone_with_bodypart(target_zone)] у [target]."),
  		span_notice("[user] начинает откручивать корпус в [target.parse_zone_with_bodypart(target_zone)] у [target]."),
 	)
-	display_pain(target, "Вы ощущаете, как перестаете получать показания датчиков из [target.parse_zone_with_bodypart(target_zone)], после того, как панель раскрутили.", TRUE)
+	display_pain(target, "Вы ощущаете, как [target.parse_zone_with_bodypart(target_zone)] немеет по мере откручивания сенсорной панели.", TRUE)
 
 /datum/surgery_step/mechanic_open/tool_check(mob/user, obj/item/tool)
 	if(implement_type == /obj/item && !tool.get_sharpness())

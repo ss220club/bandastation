@@ -81,7 +81,7 @@
 			target,
  			span_notice("Вы начинаете удалять зараженную плоть из [target.parse_zone_with_bodypart(user.zone_selected)] у [target]..."),
  			span_notice("[user] начинает удалять зараженную плоть из [target.parse_zone_with_bodypart(user.zone_selected)] у [target] при помощи [tool.name]."),
- 			span_notice("[user] начинает удалять зараженную плоть из [target.parse_zone_with_bodypart(user.zone_selected)] у [target]."),,
+ 			span_notice("[user] начинает удалять зараженную плоть из [target.parse_zone_with_bodypart(user.zone_selected)] у [target]."),
 		)
 		display_pain(target, "Инфекция в вашей [target.parse_zone_with_bodypart(user.zone_selected)] адски зудит! Такое ощущение, что тебя режут ножом!")
 	else
