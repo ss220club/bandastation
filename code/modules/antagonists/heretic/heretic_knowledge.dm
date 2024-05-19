@@ -245,7 +245,7 @@
 		if(valid_blades)
 			return TRUE
 		else
-			loc.balloon_alert(user, "ritual failed, at limit!")
+			loc.balloon_alert(user, "ритуал провален, уже лимит!")
 			return FALSE
 
 	return TRUE
