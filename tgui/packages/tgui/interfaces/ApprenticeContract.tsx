@@ -1,5 +1,3 @@
-import { multiline } from 'common/string';
-
 import { resolveAsset } from '../assets';
 import { useBackend } from '../backend';
 import { BlockQuote, Box, Button, Icon, Section, Stack } from '../components';
@@ -23,9 +21,9 @@ export const ApprenticeContract = (props) => {
               fluffName="Ученик Разрушения"
               schoolTitle="destruction"
               assetName="destruction.png"
-              blurb={multiline`
-                Ваш ученик владеет наступательной магией.
-                Они владеют «Magic Missile» и «Fireball».
+              blurb={`
+                Your apprentice is skilled in offensive magic.
+                They know Magic Missile and Fireball.
               `}
             />
             <ApprenticeSelection
@@ -33,10 +31,10 @@ export const ApprenticeContract = (props) => {
               fluffName="Студент Транслокации"
               schoolTitle="bluespace"
               assetName="bluespace.png"
-              blurb={multiline`
-              Ваш ученик способен бросить вызов физике, проникая
-              сквозь твердые предметы и преодолевая огромные
-              расстояния в мгновение ока. Они владеют «Teleport» и «Ethereal Jaunt».
+              blurb={`
+              Your apprentice is able to defy physics, melting through
+              solid objects and travelling great distances in the
+              blink of an eye. They know Teleport and Ethereal Jaunt.
               `}
             />
             <ApprenticeSelection
@@ -44,10 +42,10 @@ export const ApprenticeContract = (props) => {
               fluffName="Неофит Восстановления"
               schoolTitle="healing"
               assetName="healing.png"
-              blurb={multiline`
-              Ваш ученик обучается заклинаниям, которые
-              помогут вам в выживании. Они знают «Forcewall» и «Charge» и
-              имеют при себе Посох исцеления.
+              blurb={`
+              Your apprentice is training to cast spells that will
+              aid your survival. They know Forcewall and Charge and
+              come with a Staff of Healing.
               `}
             />
             <ApprenticeSelection
@@ -55,9 +53,9 @@ export const ApprenticeContract = (props) => {
               fluffName="Безробный Ученик"
               schoolTitle="robeless"
               assetName="robeless.png"
-              blurb={multiline`
-              Ваш ученик учится применять заклинания
-              без одеяний. Они владеют «Knock» и «Mindswap».
+              blurb={`
+              Your apprentice is training to cast spells without
+              their robes. They know Knock and Mindswap.
               `}
             />
           </Stack.Item>

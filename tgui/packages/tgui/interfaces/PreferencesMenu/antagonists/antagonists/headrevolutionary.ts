@@ -1,10 +1,8 @@
-import { multiline } from 'common/string';
-
 import { Antagonist, Category } from '../base';
 
-export const REVOLUTIONARY_MECHANICAL_DESCRIPTION = multiline`
-      Вооружившись флэшем, обратите в революцию как можно больше людей.
-      Убейте или изгоните всех глав станции.
+export const REVOLUTIONARY_MECHANICAL_DESCRIPTION = `
+      Armed with a flash, convert as many people to the revolution as you can.
+      Kill or exile all heads of staff on the station.
    `;
 
 const HeadRevolutionary: Antagonist = {

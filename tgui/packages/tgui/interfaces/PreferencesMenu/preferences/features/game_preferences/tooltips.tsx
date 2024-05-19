@@ -1,5 +1,3 @@
-import { multiline } from 'common/string';
-
 import {
   CheckboxInput,
   Feature,
@@ -8,19 +6,19 @@ import {
 } from '../base';
 
 export const enable_tips: FeatureToggle = {
-  name: 'Подсказки - включить',
-  category: 'ПОДСКАЗКИ',
-  description: multiline`
-    Показывать подсказки при наведении на объект.
+  name: 'Enable tooltips',
+  category: 'TOOLTIPS',
+  description: `
+    Do you want to see tooltips when hovering over items?
   `,
   component: CheckboxInput,
 };
 
 export const tip_delay: Feature<number> = {
-  name: 'Подсказки - задержка (в миллисекундах)',
-  category: 'ПОДСКАЗКИ',
-  description: multiline`
-    Задержка перед тем, как показать подсказку при наведении на объект?
+  name: 'Tooltip delay (in milliseconds)',
+  category: 'TOOLTIPS',
+  description: `
+    How long should it take to see a tooltip when hovering over items?
   `,
   component: FeatureNumberInput,
 };

@@ -1,5 +1,3 @@
-import { multiline } from 'common/string';
-
 import { CheckboxInput, FeatureToggle } from '../base';
 
 export const chat_bankcard: FeatureToggle = {
@@ -16,11 +14,11 @@ export const chat_dead: FeatureToggle = {
 };
 
 export const chat_ghostears: FeatureToggle = {
-  name: 'Слышать все сообщения',
-  category: 'ПРИЗРАК',
-  description: multiline`
-    Если включено, вы будете слышать всех мобов.
-    Если отключено, вы будете слышать только мобов на экране.
+  name: 'Hear all messages',
+  category: 'GHOST',
+  description: `
+    When enabled, you will be able to hear all speech as a ghost.
+    When disabled, you will only be able to hear nearby speech.
   `,
   component: CheckboxInput,
 };
@@ -54,11 +52,11 @@ export const chat_ghostsight: FeatureToggle = {
 };
 
 export const chat_ghostwhisper: FeatureToggle = {
-  name: 'Слышать все шепоты',
-  category: 'ПРИЗРАК',
-  description: multiline`
-    Если включено, вы будете слышать шепоты всех мобов.
-    Если выключено, вы будете слышать шепоты только мобов на экране.
+  name: 'See all whispers',
+  category: 'GHOST',
+  description: `
+    When enabled, you will be able to hear all whispers as a ghost.
+    When disabled, you will only be able to hear nearby whispers.
   `,
   component: CheckboxInput,
 };

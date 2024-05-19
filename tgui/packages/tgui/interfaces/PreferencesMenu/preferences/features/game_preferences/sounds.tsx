@@ -1,5 +1,3 @@
-import { multiline } from 'common/string';
-
 import {
   CheckboxInput,
   Feature,
@@ -44,11 +42,11 @@ export const sound_instruments: FeatureToggle = {
 };
 
 export const sound_tts: FeatureChoiced = {
-  name: 'TTS - включить',
-  category: 'ЗВУК',
-  description: multiline`
-    Играть звук text-to-speech.
-    Функция "Blips" не работает.
+  name: 'Enable TTS',
+  category: 'SOUND',
+  description: `
+    When enabled, be able to hear text-to-speech sounds in game.
+    When set to "Blips", text to speech will be replaced with blip sounds based on the voice.
   `,
   component: FeatureDropdownInput,
 };
@@ -93,11 +91,11 @@ export const sound_elevator: FeatureToggle = {
 };
 
 export const sound_achievement: FeatureChoiced = {
-  name: 'Звук при получении достижений',
-  category: 'ЗВУК',
-  description: multiline`
-    Выбор звука, который будет играть при получении достижения.
-    При отключении звука не будет.
+  name: 'Achievement unlock sound',
+  category: 'SOUND',
+  description: `
+    The sound that's played when unlocking an achievement.
+    If disabled, no sound will be played.
   `,
   component: FeatureDropdownInput,
 };

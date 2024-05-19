@@ -1,12 +1,10 @@
-import { multiline } from 'common/string';
-
 import { CheckboxInput, FeatureToggle } from '../base';
 
 export const broadcast_login_logout: FeatureToggle = {
-  name: 'Оповещать остальных о входе/выходе',
-  category: 'ГЕЙМПЛЕЙ',
-  description: multiline`
-    Оповещать в чате призраков остальных, когда вы входите или выходите из сервера.
+  name: 'Broadcast login/logout',
+  category: 'GAMEPLAY',
+  description: `
+    When enabled, disconnecting and reconnecting will announce to deadchat.
   `,
   component: CheckboxInput,
 };

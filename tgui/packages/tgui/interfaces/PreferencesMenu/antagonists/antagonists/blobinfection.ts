@@ -1,5 +1,3 @@
-import { multiline } from 'common/string';
-
 import { Antagonist, Category } from '../base';
 import { BLOB_MECHANICAL_DESCRIPTION } from './blob';
 
@@ -7,9 +5,9 @@ const BlobInfection: Antagonist = {
   key: 'blobinfection',
   name: 'Блоб инфекция',
   description: [
-    multiline`
-      В любой момент посреди смены вас поразит инфекция,
-      которая превратит вас в ужасающего блоба.
+    `
+      At any point in the middle of the shift, be strucken with an infection
+      that will turn you into the terrifying blob.
     `,
     BLOB_MECHANICAL_DESCRIPTION,
   ],

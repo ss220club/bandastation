@@ -1,10 +1,8 @@
-import { multiline } from 'common/string';
-
 import { Antagonist, Category } from '../base';
 
-export const WIZARD_MECHANICAL_DESCRIPTION = multiline`
-      Выбирайте из множества мощных заклинаний, чтобы вызвать хаос
-      на космической станции 13.
+export const WIZARD_MECHANICAL_DESCRIPTION = `
+      Choose between a variety of powerful spells in order to cause chaos
+      among Space Station 13.
     `;
 
 const Wizard: Antagonist = {

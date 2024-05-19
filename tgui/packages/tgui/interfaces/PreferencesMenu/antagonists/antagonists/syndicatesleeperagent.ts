@@ -1,5 +1,3 @@
-import { multiline } from 'common/string';
-
 import { Antagonist, Category } from '../base';
 import { TRAITOR_MECHANICAL_DESCRIPTION } from './traitor';
 
@@ -7,8 +5,9 @@ const SyndicateSleeperAgent: Antagonist = {
   key: 'syndicatesleeperagent',
   name: 'Спящий агент Синдиката',
   description: [
-    multiline`
-      Вариант предателя, который можно получить в любой момент во время смены.
+    `
+      A form of traitor that can activate at any point in the middle
+      of the shift.
     `,
     TRAITOR_MECHANICAL_DESCRIPTION,
   ],
