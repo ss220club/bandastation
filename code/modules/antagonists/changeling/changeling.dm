@@ -410,7 +410,7 @@
 	var/datum/action/changeling/new_action = new power_path()
 
 	if(!new_action)
-		to_chat(owner.current, "Упс. Приобретение силы генокрада не удалась, пожалуйста, сообщите об этой ошибке кодеру!")
+		to_chat(owner.current, "Упс. Приобретение силы генокрада не удалось, пожалуйста, сообщите об этой ошибке кодеру!")
 		CRASH("Changeling give_power was unable to grant a new changeling action for path [power_path]!")
 
 	purchased_powers[power_path] = new_action
