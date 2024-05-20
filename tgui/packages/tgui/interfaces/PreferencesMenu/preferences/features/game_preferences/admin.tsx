@@ -1,5 +1,3 @@
-import { multiline } from 'common/string';
-
 import {
   CheckboxInput,
   Feature,
@@ -41,7 +39,7 @@ export const fast_mc_refresh: FeatureToggle = {
 export const ghost_roles_as_admin: FeatureToggle = {
   name: 'Получать гост-роли будучи админом',
   category: 'АДМИН',
-  description: multiline`
+  description: `
     Если вы отключите это, то вы не будете получать предложения о гост-ролях,
     когда вы с правами администратора. НИКАКОЕ оповещение не будет повляться для вас.
     Но эта опция ничего не делает, если вы являетесь обычным игроком

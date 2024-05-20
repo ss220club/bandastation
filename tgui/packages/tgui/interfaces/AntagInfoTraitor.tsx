@@ -1,5 +1,4 @@
 import { BooleanLike } from 'common/react';
-import { multiline } from 'common/string';
 
 import { useBackend } from '../backend';
 import { BlockQuote, Button, Dimmer, Section, Stack } from '../components';
@@ -66,7 +65,7 @@ const EmployerSection = (props) => {
       buttons={
         <Button
           icon="hammer"
-          tooltip={multiline`
+          tooltip={`
             Это внутриигровое предложение для заскучавших предателей.
             Вы не обязаны следовать ему, если только вы не хотите
             использовать это для генерации идей для раунда.`}

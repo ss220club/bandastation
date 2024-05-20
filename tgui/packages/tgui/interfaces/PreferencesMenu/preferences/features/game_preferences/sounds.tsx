@@ -1,5 +1,3 @@
-import { multiline } from 'common/string';
-
 import {
   CheckboxInput,
   Feature,
@@ -46,7 +44,7 @@ export const sound_instruments: FeatureToggle = {
 export const sound_tts: FeatureChoiced = {
   name: 'TTS - включить',
   category: 'ЗВУК',
-  description: multiline`
+  description: `
     Играть звук text-to-speech.
     Функция "Blips" не работает.
   `,
@@ -95,7 +93,7 @@ export const sound_elevator: FeatureToggle = {
 export const sound_achievement: FeatureChoiced = {
   name: 'Звук при получении достижений',
   category: 'ЗВУК',
-  description: multiline`
+  description: `
     Выбор звука, который будет играть при получении достижения.
     При отключении звука не будет.
   `,
