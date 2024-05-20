@@ -1,6 +1,5 @@
 import { binaryInsertWith } from 'common/collections';
 import { classes } from 'common/react';
-import { multiline } from 'common/string';
 import { ReactNode } from 'react';
 
 import { useBackend } from '../../../../../backend';
@@ -109,7 +108,7 @@ export const ghost_hud: FeatureToggle = {
 export const ghost_orbit: FeatureChoiced = {
   name: 'Призрак - орбитирование',
   category: 'ПРИЗРАК',
-  description: multiline`
+  description: `
     Форма, по которой ваш призрак будет орбитировать.
     Необходима подписка BYOND.
   `,
@@ -127,7 +126,7 @@ export const ghost_orbit: FeatureChoiced = {
 export const ghost_others: FeatureChoiced = {
   name: 'Призрак - окружающие',
   category: 'ПРИЗРАК',
-  description: multiline`
+  description: `
     Должны ли призраки других показываться с их настройками, только с их
     стандартным спрайтом, или только показывать их стандартным белым призраком?
   `,
@@ -144,7 +143,7 @@ export const inquisitive_ghost: FeatureToggle = {
 export const ghost_roles: FeatureToggle = {
   name: 'Получать гост-роли',
   category: 'ПРИЗРАК',
-  description: multiline`
+  description: `
     Если вы отключите это, вы не будете получать оповещения о гост-ролях, вообще!
     Каждое оповещение БУДЕТ заглушено для вас, когда вы являетесь призраком.
     Полезная опция для тех, кто не хочет играть на гост-ролях или не любит их

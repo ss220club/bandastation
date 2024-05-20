@@ -1,17 +1,15 @@
-import { multiline } from 'common/string';
-
 import { Antagonist, Category } from '../base';
 
-export const CHANGELING_MECHANICAL_DESCRIPTION = multiline`
-Превращайтесь или превращайте в другие личностей и покупайте арсенал
-биологического оружия с помощью собранной ДНК.
+export const CHANGELING_MECHANICAL_DESCRIPTION = `
+Transform yourself or others into different identities, and buy from an
+arsenal of biological weaponry with the DNA you collect.
 `;
 
 const Changeling: Antagonist = {
   key: 'changeling',
   name: 'Генокрад',
   description: [
-    multiline`
+    `
       Разумный инопланетный хищник, способный изменять свою форму,
       чтобы безупречно походить на человека.
     `,

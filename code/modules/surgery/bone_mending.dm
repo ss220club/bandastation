@@ -60,13 +60,13 @@
 		display_results(
 			user,
 			target,
-			span_notice("Вы приступаете к устранению перелома в [parse_zone(user.zone_selected)] у [target]..."),
-			span_notice("[user] приступает к устранению перелома в [parse_zone(user.zone_selected)] у [target] при помощи [tool.name]."),
-			span_notice("[user] приступает к устранению перелома в [parse_zone(user.zone_selected)] у [target]."),
+			span_notice("You begin to repair the fracture in [target]'s [target.parse_zone_with_bodypart(user.zone_selected)]..."),
+			span_notice("[user] begins to repair the fracture in [target]'s [target.parse_zone_with_bodypart(user.zone_selected)] with [tool]."),
+			span_notice("[user] begins to repair the fracture in [target]'s [target.parse_zone_with_bodypart(user.zone_selected)]."),
 		)
-		display_pain(target, "Ваш [parse_zone(user.zone_selected)] испытывает сильную боль!")
+		display_pain(target, "Your [target.parse_zone_with_bodypart(user.zone_selected)] aches with pain!")
 	else
-		user.visible_message(span_notice("[user] ищет у [target] в [parse_zone(user.zone_selected)]."), span_notice("Вы ищете у [target] в [parse_zone(user.zone_selected)]..."))
+		user.visible_message(span_notice("[user] looks for [target]'s [target.parse_zone_with_bodypart(user.zone_selected)]."), span_notice("You look for [target]'s [target.parse_zone_with_bodypart(user.zone_selected)]..."))
 
 /datum/surgery_step/repair_bone_hairline/success(mob/living/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
 	if(surgery.operated_wound)
@@ -76,9 +76,9 @@
 		display_results(
 			user,
 			target,
-			span_notice("Вы успешно устранили перелом в [parse_zone(target_zone)] у [target]."),
-			span_notice("[user] успешно устранил перелом в [parse_zone(target_zone)] у [target] при помощи [tool]!"),
-			span_notice("[user] успешно устранил перелом в [parse_zone(target_zone)] у [target]!"),
+			span_notice("You successfully repair the fracture in [target]'s [target.parse_zone_with_bodypart(target_zone)]."),
+			span_notice("[user] successfully repairs the fracture in [target]'s [target.parse_zone_with_bodypart(target_zone)] with [tool]!"),
+			span_notice("[user] successfully repairs the fracture in [target]'s [target.parse_zone_with_bodypart(target_zone)]!"),
 		)
 		log_combat(user, target, "успешно устранил закрытый перелом в", addition="COMBAT_MODE: [uppertext(user.combat_mode)]")
 		qdel(surgery.operated_wound)
@@ -109,13 +109,13 @@
 		display_results(
 			user,
 			target,
-			span_notice("Вы начинаете восстанавливать кость в [parse_zone(user.zone_selected)] у [target]..."),
-			span_notice("[user] начинает восстанавливать кость в [parse_zone(user.zone_selected)] у [target] при помощи [tool.name]."),
-			span_notice("[user] начинает восстанавливать кость в [parse_zone(user.zone_selected)] у [target]."),
+			span_notice("You begin to reset the bone in [target]'s [target.parse_zone_with_bodypart(user.zone_selected)]..."),
+			span_notice("[user] begins to reset the bone in [target]'s [target.parse_zone_with_bodypart(user.zone_selected)] with [tool]."),
+			span_notice("[user] begins to reset the bone in [target]'s [target.parse_zone_with_bodypart(user.zone_selected)]."),
 		)
-		display_pain(target, "Острая боль в [parse_zone(user.zone_selected)] просто невыносима!")
+		display_pain(target, "The aching pain in your [target.parse_zone_with_bodypart(user.zone_selected)] is overwhelming!")
 	else
-		user.visible_message(span_notice("[user] ищет у [target] в [parse_zone(user.zone_selected)]."), span_notice("Вы ищете у [target] в [parse_zone(user.zone_selected)]..."))
+		user.visible_message(span_notice("[user] looks for [target]'s [target.parse_zone_with_bodypart(user.zone_selected)]."), span_notice("You look for [target]'s [target.parse_zone_with_bodypart(user.zone_selected)]..."))
 
 /datum/surgery_step/reset_compound_fracture/success(mob/living/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
 	if(surgery.operated_wound)
@@ -125,9 +125,9 @@
 		display_results(
 			user,
 			target,
-			span_notice("Вы успешно восстановили кость в [parse_zone(target_zone)] у [target]."),
-			span_notice("[user] успешно восстановил кость в [parse_zone(target_zone)] у [target] при помощи [tool.name]!"),
-			span_notice("[user] успешно восстановил кость в [parse_zone(target_zone)] у [target]!"),
+			span_notice("You successfully reset the bone in [target]'s [target.parse_zone_with_bodypart(target_zone)]."),
+			span_notice("[user] successfully resets the bone in [target]'s [target.parse_zone_with_bodypart(target_zone)] with [tool]!"),
+			span_notice("[user] successfully resets the bone in [target]'s [target.parse_zone_with_bodypart(target_zone)]!"),
 		)
 		log_combat(user, target, "успешно восстановил кость в", addition="COMBAT MODE: [uppertext(user.combat_mode)]")
 	else
@@ -159,13 +159,13 @@
 		display_results(
 			user,
 			target,
-			span_notice("Вы приступаете к устранению перелома в [parse_zone(user.zone_selected)] у [target]..."),
-			span_notice("[user] приступает к устранению перелома в [parse_zone(user.zone_selected)] у [target] при помощи [tool.name]."),
-			span_notice("[user] приступает к устранению перелома в [parse_zone(user.zone_selected)] у [target]."),
+			span_notice("You begin to repair the fracture in [target]'s [target.parse_zone_with_bodypart(user.zone_selected)]..."),
+			span_notice("[user] begins to repair the fracture in [target]'s [target.parse_zone_with_bodypart(user.zone_selected)] with [tool]."),
+			span_notice("[user] begins to repair the fracture in [target]'s [target.parse_zone_with_bodypart(user.zone_selected)]."),
 		)
-		display_pain(target, "Острая боль в [parse_zone(user.zone_selected)] просто невыносима!")
+		display_pain(target, "The aching pain in your [target.parse_zone_with_bodypart(user.zone_selected)] is overwhelming!")
 	else
-		user.visible_message(span_notice("[user] ищет у [target] в [parse_zone(user.zone_selected)]."), span_notice("Вы ищете у [target] в [parse_zone(user.zone_selected)]..."))
+		user.visible_message(span_notice("[user] looks for [target]'s [target.parse_zone_with_bodypart(user.zone_selected)]."), span_notice("You look for [target]'s [target.parse_zone_with_bodypart(user.zone_selected)]..."))
 
 /datum/surgery_step/repair_bone_compound/success(mob/living/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
 	if(surgery.operated_wound)
@@ -175,9 +175,9 @@
 		display_results(
 			user,
 			target,
-			span_notice("Вы успешно устранили перелом в [parse_zone(target_zone)] у [target]."),
-			span_notice("[user] успешно устранил перелом в [parse_zone(target_zone)] у [target] при помощи [tool]!"),
-			span_notice("[user] успешно устранил перелом в [parse_zone(target_zone)] у [target]!"),
+			span_notice("You successfully repair the fracture in [target]'s [target.parse_zone_with_bodypart(target_zone)]."),
+			span_notice("[user] successfully repairs the fracture in [target]'s [target.parse_zone_with_bodypart(target_zone)] with [tool]!"),
+			span_notice("[user] successfully repairs the fracture in [target]'s [target.parse_zone_with_bodypart(target_zone)]!"),
 		)
 		log_combat(user, target, "успешно устранил закрытый перелом в", addition="COMBAT_MODE: [uppertext(user.combat_mode)]")
 		qdel(surgery.operated_wound)
@@ -218,9 +218,9 @@
 	display_results(
 		user,
 		target,
-		span_notice("Вы начинаете избавляться от мелких обломков черепа в [parse_zone(target_zone)] у [target]..."),
-		span_notice("[user] начинает избавляться от мелких обломков черепа в [parse_zone(target_zone)] у [target]..."),
-		span_notice("[user] начинает копошиться в [parse_zone(target_zone)] у [target]..."),
+		span_notice("You begin to discard the smaller skull debris in [target]'s [target.parse_zone_with_bodypart(target_zone)]..."),
+		span_notice("[user] begins to discard the smaller skull debris in [target]'s [target.parse_zone_with_bodypart(target_zone)]..."),
+		span_notice("[user] begins to poke around in [target]'s [target.parse_zone_with_bodypart(target_zone)]..."),
 	)
 
 	display_pain(target, "Ваш мозг словно пронзают мелкие осколки стекла!")

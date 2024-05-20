@@ -20,22 +20,22 @@
 
 /datum/heretic_knowledge/entropy_pulse
 	name = "Pulse of Entropy"
-	desc = "Позволяет трансмутировать 20 железа и 2 мусорных предмета, чтобы заполнить ржавчиной окружение вокруг руны."
+	desc = "Позволяет трансмутировать 10 железа, чтобы заполнить ржавчиной окружение вокруг руны."
 	gain_text = "Реальность начинает нашептывать мне, чтобы дать ей энтропийный конец."
 	required_atoms = list(
-		/obj/item/stack/sheet/iron = 20,
-		/obj/item/trash = 2
+		/obj/item/stack/sheet/iron = 10,
+		/obj/item/trash = 1,
 	)
 	cost = 0
 	route = PATH_SIDE
-	var/rusting_range = 4
+	var/rusting_range = 8
 
 /datum/heretic_knowledge/entropy_pulse/on_finished_recipe(mob/living/user, list/selected_atoms, turf/loc)
 	for(var/turf/nearby_turf in view(rusting_range, loc))
 		if(get_dist(nearby_turf, loc) <= 1) //tiles on rune should always be rusted
 			nearby_turf.rust_heretic_act()
 		//we exclude closed turf to avoid exposing cultist bases
-		if(prob(20) || isclosedturf(nearby_turf))
+		if(prob(10) || isclosedturf(nearby_turf))
 			continue
 		nearby_turf.rust_heretic_act()
 	return TRUE
@@ -76,17 +76,17 @@
 
 /datum/heretic_knowledge/summon/rusty
 	name = "Rusted Ritual"
-	desc = "Позволяет трансмутировать лужу рвоты, книгу и голову в Ржавого ходока. \
+	desc = "Позволяет трансмутировать лужу рвоты, провода и 5 железа в Ржавого ходока. \
 		Ржавые ходоки превосходно распространяют ржавчину и умеренно сильны в бою."
-	gain_text = "Я объединил свои знания о созидании с жаждой коррозии. Маршал знал мое имя, и Ржавые Холмы отозвались эхом."
+	gain_text = "Я объединил свои знания о созидании с жаждой коррозии. Маршал знал мое имя, и Ржавые холмы отозвались эхом."
 	next_knowledge = list(
-		/datum/heretic_knowledge/spell/entropic_plume,
-		/datum/heretic_knowledge/spell/cosmic_expansion,
+		/datum/heretic_knowledge/spell/area_conversion,
+		/datum/heretic_knowledge/spell/star_blast,
 	)
 	required_atoms = list(
 		/obj/effect/decal/cleanable/vomit = 1,
-		/obj/item/book = 1,
-		/obj/item/bodypart/head = 1,
+		/obj/item/stack/sheet/iron = 5,
+		/obj/item/stack/cable_coil = 15,
 	)
 	mob_to_summon = /mob/living/basic/heretic_summon/rust_walker
 	cost = 1

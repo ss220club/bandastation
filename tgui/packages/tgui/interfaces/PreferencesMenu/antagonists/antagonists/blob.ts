@@ -1,8 +1,6 @@
-import { multiline } from 'common/string';
-
 import { Antagonist, Category } from '../base';
 
-export const BLOB_MECHANICAL_DESCRIPTION = multiline`
+export const BLOB_MECHANICAL_DESCRIPTION = `
   Блоб заражает станцию и уничтожает все на своем пути, включая корпус,
   основание станции и существ. Распространяйте свою массу, собирайте ресурсы
   и поглотите всю станцию. Не забудьте подготовить оборону, потому что экипаж
