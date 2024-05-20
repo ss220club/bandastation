@@ -92,10 +92,10 @@ the same goes for Remove(). if you override Remove(), call parent or else your p
 		user.balloon_alert(user, "требуется [req_absorbs] поглощений!")
 		return FALSE
 	if(req_stat < user.stat)
-		user.balloon_alert(user, "недееспособный!")
+		user.balloon_alert(user, "недееспособны!")
 		return FALSE
 	if(HAS_TRAIT(user, TRAIT_DEATHCOMA) && !ignores_fakedeath)
-		user.balloon_alert(user, "притворяеться мёртвым!")
+		user.balloon_alert(user, "притворяемся мёртвым!")
 		return FALSE
 	return TRUE
 
@@ -105,6 +105,6 @@ the same goes for Remove(). if you override Remove(), call parent or else your p
 	if(!ishuman(user))
 		return FALSE
 	if(req_human && ismonkey(user))
-		user.balloon_alert(user, "стань гуманоидом!")
+		user.balloon_alert(user, "станьте гуманоидом!")
 		return FALSE
 	return TRUE

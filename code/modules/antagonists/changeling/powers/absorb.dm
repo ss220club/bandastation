@@ -1,6 +1,6 @@
 /datum/action/changeling/absorb_dna
 	name = "Absorb DNA"
-	desc = "Поглотить ДНК нашей жертвы. Необходимо, чтобы мы душили их."
+	desc = "Поглотить ДНК нашей жертвы. Для поглощения нужно душить их."
 	button_icon_state = "absorb_dna"
 	chemical_cost = 0
 	dna_cost = CHANGELING_POWER_INNATE
@@ -92,7 +92,7 @@
 				continue
 			for(var/datum/mind/conspirator as anything in other_owners)
 				changeling.antag_memory += " Objective Conspirator: [conspirator.name]."
-	changeling.antag_memory += " Это все что имел [target]. "
+	changeling.antag_memory += " Это все, что имел [target]. "
 
 	//Some of target's recent speech, so the changeling can attempt to imitate them better.
 	//Recent as opposed to all because rounds tend to have a LOT of text.
@@ -138,9 +138,9 @@
 			if(1)
 				to_chat(owner, span_notice("Это существо совместимо. Мы должны стоять неподвижно..."))
 			if(2)
-				owner.visible_message(span_warning("[owner] вытягивает пробоцис!"), span_notice("Мы вытягиваем пробоцис."))
+				owner.visible_message(span_warning("[owner] вытягивает жало-хоботок!"), span_notice("Мы вытягиваем жало-хоботок."))
 			if(3)
-				owner.visible_message(span_danger("[owner] пронзает [target] пробоцисом!"), span_notice("Мы пронзаем [target] пробоцисом."))
+				owner.visible_message(span_danger("[owner] пронзает [target] жалом-хоботком!"), span_notice("Мы пронзаем [target] жалом-хоботком."))
 				to_chat(target, span_userdanger("Вы чувствуете острую колющую боль!"))
 				target.take_overall_damage(40)
 

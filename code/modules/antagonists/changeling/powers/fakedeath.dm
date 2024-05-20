@@ -28,9 +28,9 @@
 	if(!enable_fakedeath(user, duration_modifier = death_duration_mod))
 		CRASH("Changeling revive failed to enter fakedeath when it should have been in a valid state to.")
 
-	to_chat(user, span_changeling("Мы начинаем стазис, подготавливая энергию чтобы востать вновь."))
+	to_chat(user, span_changeling("Мы начинаем стазис, подготавливая энергию, чтобы восстать вновь."))
 	if(death_duration_mod > 1)
-		to_chat(user, span_changeling(span_bold("Наше тело получило серьезные повреждения, и ему потребуется [death_duration_mod >= 5 ? "дольше ":""]восстанавливаться.")))
+		to_chat(user, span_changeling(span_bold("Наше тело получило серьезные повреждения, и ему потребуется [death_duration_mod >= 5 ? "намного ":""]больше времени на восстановление.")))
 	return TRUE
 
 /// Used to enable fakedeath and register relevant signals / start timers

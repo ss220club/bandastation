@@ -12,7 +12,7 @@
 		var/obj/O = user.get_item_by_slot(ITEM_SLOT_HANDCUFFED)
 		if(!istype(O))
 			return FALSE
-		user.visible_message(span_warning("[user] извергает сгустки кислоты на [user.p_their()] [O]!"), \
+		user.visible_message(span_warning("[user] извергает сгустки кислоты на свои [O.name]!"), \
 			span_warning("Мы извергаем кислотную жижу на наши наручники!"))
 
 		addtimer(CALLBACK(src, PROC_REF(dissolve_handcuffs), user, O), 3 SECONDS)
@@ -24,7 +24,7 @@
 		var/obj/O = user.get_item_by_slot(ITEM_SLOT_LEGCUFFED)
 		if(!istype(O))
 			return FALSE
-		user.visible_message(span_warning("[user] извергает сгустки кислоты на [user.p_their()] [O]!"), \
+		user.visible_message(span_warning("[user] извергает сгустки кислоты на [O.name]!"), \
 			span_warning("Мы извергаем кислотную жижу на наши наручники!"))
 
 		addtimer(CALLBACK(src, PROC_REF(dissolve_legcuffs), user, O), 3 SECONDS)
@@ -36,7 +36,7 @@
 		var/obj/item/clothing/suit/S = user.get_item_by_slot(ITEM_SLOT_OCLOTHING)
 		if(!istype(S))
 			return FALSE
-		user.visible_message(span_warning("[user] извергает сгустки кислоты на переднюю часть [user.p_their()] [S]!"), \
+		user.visible_message(span_warning("[user] извергает сгустки кислоты на переднюю часть [S.name]!"), \
 			span_warning("Мы извергаем кислотную жижу на наш [user.wear_suit.name]!"))
 		addtimer(CALLBACK(src, PROC_REF(dissolve_straightjacket), user, S), 3 SECONDS)
 		log_combat(user, user.wear_suit, "melted [user.wear_suit]", addition = "(biodegrade)")
@@ -47,8 +47,8 @@
 		var/obj/structure/closet/C = user.loc
 		if(!istype(C))
 			return FALSE
-		C.visible_message(span_warning("[C]'s петли внезапно начинают плавиться и разлетаться!"))
-		to_chat(user, span_warning("Мы извергаем кислотную жижу на внутреннюю поверхность [C]!"))
+		C.visible_message(span_warning("Петли [C.name] внезапно начинают плавиться и разлетаться!"))
+		to_chat(user, span_warning("Мы извергаем кислотную жижу на внутреннюю поверхность [C.name]!"))
 		addtimer(CALLBACK(src, PROC_REF(open_closet), user, C), 7 SECONDS)
 		log_combat(user, user.loc, "melted locker", addition = "(biodegrade)")
 		..()
@@ -69,8 +69,8 @@
 	if(istype(shoes) && shoes.tied == SHOES_KNOTTED && !(shoes.resistance_flags & (INDESTRUCTIBLE|UNACIDABLE|ACID_PROOF)))
 		new /obj/effect/decal/cleanable/greenglow(shoes.drop_location())
 		user.visible_message(
-			span_warning("[user] извергает сгустки кислоты на [user.p_their()] связанные [shoes.name], растапливая [shoes.p_them()] в лужу слизи!"),
-			span_warning("Мы извергаем кислотную жижу на наши связанные [shoes.name], растапливая [shoes.p_them()] в лужу слизи!"),
+			span_warning("[user] извергает сгустки кислоты на связанные [shoes.name], растапливая их в лужу слизи!"),
+			span_warning("Мы извергаем кислотную жижу на наши связанные [shoes.name], растапливая их в лужу слизи!"),
 		)
 		log_combat(user, shoes, "melted own shoes", addition = "(biodegrade)")
 		qdel(shoes)
@@ -82,25 +82,25 @@
 
 /datum/action/changeling/biodegrade/proc/dissolve_handcuffs(mob/living/carbon/human/user, obj/O)
 	if(O && user.handcuffed == O)
-		user.visible_message(span_warning("[O] растворяется в лужу шипящей жижи."))
+		user.visible_message(span_warning("Шипя, [O.name] растворяется в лужу жижи."))
 		new /obj/effect/decal/cleanable/greenglow(O.drop_location())
 		qdel(O)
 
 /datum/action/changeling/biodegrade/proc/dissolve_legcuffs(mob/living/carbon/human/user, obj/O)
 	if(O && user.legcuffed == O)
-		user.visible_message(span_warning("[O] растворяется в лужу шипящей жижи.."))
+		user.visible_message(span_warning("Шипя, [O.name] растворяется в лужу жижи."))
 		new /obj/effect/decal/cleanable/greenglow(O.drop_location())
 		qdel(O)
 
 /datum/action/changeling/biodegrade/proc/dissolve_straightjacket(mob/living/carbon/human/user, obj/S)
 	if(S && user.wear_suit == S)
-		user.visible_message(span_warning("[S] растворяется в лужу шипящей жижи."))
+		user.visible_message(span_warning("Шипя, [S.name] растворяется в лужу жижи."))
 		new /obj/effect/decal/cleanable/greenglow(S.drop_location())
 		qdel(S)
 
 /datum/action/changeling/biodegrade/proc/open_closet(mob/living/carbon/human/user, obj/structure/closet/C)
 	if(C && user.loc == C)
-		C.visible_message(span_warning("[C]'s дверь ломается и открывается!"))
+		C.visible_message(span_warning("Дверь [C.name] ломается и открывается!"))
 		new /obj/effect/decal/cleanable/greenglow(C.drop_location())
 		C.welded = FALSE
 		C.locked = FALSE

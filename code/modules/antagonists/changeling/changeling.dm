@@ -388,7 +388,7 @@
 
 	//To avoid potential exploits by buying new powers while in stasis, which clears your verblist. // Probably not a problem anymore, but whatever.
 	if(HAS_TRAIT(owner.current, TRAIT_DEATHCOMA))
-		to_chat(owner.current, span_warning("Нам не хватает энергии для развития новых способностей прямо сейчас!"))
+		to_chat(owner.current, span_warning("Сейчас нам не хватает энергии для развития новых способностей!"))
 		return FALSE
 
 	var/success = give_power(sting_path)
@@ -410,7 +410,7 @@
 	var/datum/action/changeling/new_action = new power_path()
 
 	if(!new_action)
-		to_chat(owner.current, "Это неловко. Приобретение силы генокрада не удалась, пожалуйста, сообщите об этой ошибке кодеру!")
+		to_chat(owner.current, "Упс. Приобретение силы генокрада не удалась, пожалуйста, сообщите об этой ошибке кодеру!")
 		CRASH("Changeling give_power was unable to grant a new changeling action for path [power_path]!")
 
 	purchased_powers[power_path] = new_action
@@ -1019,7 +1019,7 @@
 
 // Changelings spawned from non-changeling headslugs (IE, due to being transformed into a headslug as a non-ling). Weaker than a normal changeling.
 /datum/antagonist/changeling/headslug
-	name = "\proper Генокрад-Червь"
+	name = "\proper Генокрад-червь"
 	show_in_antagpanel = FALSE
 	give_objectives = FALSE
 	count_against_dynamic_roll_chance = FALSE

@@ -16,7 +16,7 @@
 	return
 
 /datum/action/changeling/sting/proc/set_sting(mob/user)
-	to_chat(user, span_notice("Готовим жало. Alt+клик или нажмите СКМ по цели, чтобы ужалить ее."))
+	to_chat(user, span_notice("Готовим жало. Используйте Alt+Клик или СКМ по цели, чтобы ужалить ее."))
 	var/datum/antagonist/changeling/changeling = IS_CHANGELING(user)
 	changeling.chosen_sting = src
 
@@ -66,8 +66,8 @@
 /datum/action/changeling/sting/transformation
 	name = "Transformation Sting"
 	desc = "Мы тихо жалим организм, вводя в него ретровирус, который заставляет его трансформироваться."
-	helptext = "Жертва превращается так же, как генокрад. \
-		Для сложных гуманоидов трансформация происходит временно, но ее продолжительность приостанавливается, пока жертва мертва или находится в стазисе. \
+	helptext = "Жертва трансформируется так же, как генокрад. \
+		Для сложных гуманоидов трансформация происходит на время, но ее таймер приостанавливается, пока жертва мертва или находится в стазисе. \
 		У более простых гуманоидов, таких как обезьяны, трансформация происходит навсегда. \
 		Не предупреждает других. Мутации не передаются."
 	button_icon_state = "sting_transform"
@@ -84,7 +84,7 @@
 
 /datum/action/changeling/sting/transformation/update_button_name(atom/movable/screen/movable/action_button/button, force)
 	. = ..()
-	button.desc += " Длительность [DisplayTimeText(sting_duration)] для людей, но длительность приостанавливается, пока они мертвы или находятся в стазисе."
+	button.desc += " Длительность [DisplayTimeText(sting_duration)] для людей, но таймер приостанавливается, пока они мертвы или находятся в стазисе."
 	button.desc += " Стоимость [chemical_cost] химикатов."
 
 /datum/action/changeling/sting/transformation/Destroy()
@@ -137,7 +137,7 @@
 /datum/action/changeling/sting/false_armblade
 	name = "False Armblade Sting"
 	desc = "Мы бесшумно жалим человека, впрыскивая ретровирус, который мутирует его руку, временно превращая ее в армблейд. Стоит 20 химикатов."
-	helptext = "Жертва формирует клинок, подобно тому, как это делает генокрад, только этот клинок тупой и бесполезный."
+	helptext = "Жертва формирует армблейд, подобно тому, как это делает генокрад, только этот клинок тупой и бесполезный."
 	button_icon_state = "sting_armblade"
 	chemical_cost = 20
 	dna_cost = 1
@@ -161,7 +161,7 @@
 
 	var/obj/item/held = target.get_active_held_item()
 	if(held && !target.dropItemToGround(held))
-		to_chat(user, span_warning("[held] прилип к [target.p_their()] руке, вы не можете наложить на него ложный армблейд!"))
+		to_chat(user, span_warning("К руке цели прилип [held.name], вы не можете наложить на него ложный армблейд!"))
 		return
 
 	..()
@@ -180,8 +180,8 @@
 /datum/action/changeling/sting/false_armblade/proc/remove_fake(mob/target, obj/item/melee/arm_blade/false/blade)
 	playsound(target, 'sound/effects/blobattack.ogg', 30, TRUE)
 	target.visible_message("<span class='warning'>С болезненным хрустом, \
-	[target] превращается [target.p_their()] [blade.name] в руку!</span>",
-	span_warning("[blade] возвращается в нормальное состояние."),
+	[target] превращает свой [blade.name] в руку!</span>",
+	span_warning("[blade.name] возвращается в нормальное состояние."),
 	"<span class='italics>Вы слышите, как рвется и разрывается органическая масса!</span>")
 
 	qdel(blade)
@@ -190,7 +190,7 @@
 /datum/action/changeling/sting/extract_dna
 	name = "Extract DNA Sting"
 	desc = "Мы незаметно жалим цель и извлекаем ее ДНК. Стоит 25 химикатов."
-	helptext = "Даст вам ДНК вашей цели, позволяя превращаться в нее."
+	helptext = "Даст вам ДНК вашей цели, позволяя трансформироваться в нее."
 	button_icon_state = "sting_extract"
 	chemical_cost = 25
 	dna_cost = 0
