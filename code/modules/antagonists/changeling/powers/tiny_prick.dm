@@ -116,16 +116,16 @@
 		user.balloon_alert(user, "несовместимое ДНК!")
 		return FALSE
 	if(target.has_status_effect(/datum/status_effect/temporary_transformation/trans_sting))
-		user.balloon_alert(user, "уже преобразован!")
+		user.balloon_alert(user, "уже трансформирован!")
 		return FALSE
 	return TRUE
 
 /datum/action/changeling/sting/transformation/sting_action(mob/living/user, mob/living/target)
 	var/final_duration = sting_duration
-	var/final_message = span_notice("Мы превращаем [target] в [selected_dna.dna.real_name].")
+	var/final_message = span_notice("Мы трансформируем [target] в [selected_dna.dna.real_name].")
 	if(ismonkey(target))
 		final_duration = INFINITY
-		final_message = span_warning("Наши гены вопят, когда мы превращаемся в низшую форму [target] в [selected_dna.dna.real_name] навсегда!")
+		final_message = span_warning("Наши гены вопят, когда мы трансформируемся в низшую форму [target] в [selected_dna.dna.real_name] навсегда!")
 
 	if(target.apply_status_effect(/datum/status_effect/temporary_transformation/trans_sting, final_duration, selected_dna.dna))
 		..()
