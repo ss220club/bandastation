@@ -1,5 +1,4 @@
 import { BooleanLike } from 'common/react';
-import { multiline } from 'common/string';
 import { useState } from 'react';
 
 import { useBackend } from '../backend';
@@ -228,7 +227,7 @@ const MemoriesSection = (props) => {
         <Button
           icon="info"
           tooltipPosition="left"
-          tooltip={multiline`
+          tooltip={`
             Поглощая цели, вы можете
             получить их воспоминания. Они должны
             помочь вам выдать себя за свою цель!
