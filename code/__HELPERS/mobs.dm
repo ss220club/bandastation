@@ -588,7 +588,7 @@ GLOBAL_LIST_INIT(skin_tone_names, list(
 /proc/parse_zone(zone)
 	switch(zone)
 		if(BODY_ZONE_CHEST)
-			return "><i>грудь</i>"
+			return "<i>грудь</i>"
 		if(BODY_ZONE_HEAD)
 			return "<i>голова</i>"
 		if(BODY_ZONE_PRECISE_R_HAND)
