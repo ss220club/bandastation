@@ -80,7 +80,7 @@
 		span_notice("[user] успешно восстанавливает некоторые кровеносные сосуды в [target.parse_zone_with_bodypart(target_zone)] у [target] при помощи [tool.name]!"),
 		span_notice("[user] успешно восстанавливает некоторые кровеносные сосуды в [target.parse_zone_with_bodypart(target_zone)] у [target]!"),
 	)
-	log_combat(user, target, "удалил зараженную плоть в", addition="COMBAT MODE: [uppertext(user.combat_mode)]")
+	log_combat(user, target, "excised infected flesh in", addition="COMBAT MODE: [uppertext(user.combat_mode)]")
 	surgery.operated_bodypart.receive_damage(brute=3, wound_bonus=CANT_WOUND)
 	pierce_wound.adjust_blood_flow(-0.25)
 	return ..()
@@ -141,7 +141,7 @@
 		span_notice("[user] успешно восстановил некоторые из поврежденных кровеносных сосудов в [target.parse_zone_with_bodypart(target_zone)] у [target] при помощи [tool.name]!"),
 		span_notice("[user] успешно восстановил некоторые из поврежденных кровеносных сосудов в [target.parse_zone_with_bodypart(target_zone)] у [target]!"),
 	)
-	log_combat(user, target, "обрабатывате ожоги в", addition="COMBAT MODE: [uppertext(user.combat_mode)]")
+	log_combat(user, target, "dressed burns in", addition="COMBAT MODE: [uppertext(user.combat_mode)]")
 	pierce_wound.adjust_blood_flow(-0.5)
 	if(pierce_wound.blood_flow > 0)
 		surgery.status = REALIGN_INNARDS

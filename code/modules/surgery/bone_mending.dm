@@ -62,9 +62,9 @@
 			target,
 			span_notice("Вы приступаете к устранению перелома в [target.parse_zone_with_bodypart(user.zone_selected)] у [target] ..."),
 			span_notice("[user] приступает к устранению перелома в [target.parse_zone_with_bodypart(user.zone_selected)] у [target] при помощи [tool.name]."),
-			span_notice("[user] приступает к устранению перелома в [target.parse_zone_with_bodypart(user.zone_selected)] у [target] ."),
+			span_notice("[user] приступает к устранению перелома в [target.parse_zone_with_bodypart(user.zone_selected)] у [target]."),
 		)
-		display_pain(target, "Ваш [target.parse_zone_with_bodypart(user.zone_selected)] испытывает сильную боль!")
+		display_pain(target, "Ваша [target.parse_zone_with_bodypart(user.zone_selected)] испытывает сильную боль!")
 	else
 		user.visible_message(span_notice("[user] ищет у [target] в [target.parse_zone_with_bodypart(user.zone_selected)]."), span_notice("Вы ищете у [target] в [target.parse_zone_with_bodypart(user.zone_selected)]..."))
 
@@ -80,7 +80,7 @@
 			span_notice("[user] успешно устранил перелом в [target.parse_zone_with_bodypart(target_zone)] у [target] при помощи [tool.name]!"),
 			span_notice("[user] успешно устранил перелом в [target.parse_zone_with_bodypart(target_zone)] у [target]!"),
 		)
-		log_combat(user, target, "успешно устранил закрытый перелом в", addition="COMBAT_MODE: [uppertext(user.combat_mode)]")
+		log_combat(user, target, "repaired a hairline fracture in", addition="COMBAT_MODE: [uppertext(user.combat_mode)]")
 		qdel(surgery.operated_wound)
 	else
 		to_chat(user, span_warning("У [target] нет закрытого перелома здесь!"))
@@ -129,7 +129,7 @@
 			span_notice("[user] успешно восстановил кость в [target.parse_zone_with_bodypart(target_zone)] у [target] при помощи [tool.name]!"),
 			span_notice("[user] успешно восстановил кость в [target.parse_zone_with_bodypart(target_zone)] у [target]!"),
 		)
-		log_combat(user, target, "успешно восстановил кость в", addition="COMBAT MODE: [uppertext(user.combat_mode)]")
+		log_combat(user, target, "reset a compound fracture in", addition="COMBAT MODE: [uppertext(user.combat_mode)]")
 	else
 		to_chat(user, span_warning("У [target] нет открытого перелома здесь!"))
 	return ..()
@@ -179,7 +179,7 @@
 			span_notice("[user] успешно устранил перелом в [target.parse_zone_with_bodypart(target_zone)] у [target] при помощи [tool]!"),
 			span_notice("[user] успешно устранил перелом в [target.parse_zone_with_bodypart(target_zone)] у [target]!"),
 		)
-		log_combat(user, target, "успешно устранил закрытый перелом в", addition="COMBAT_MODE: [uppertext(user.combat_mode)]")
+		log_combat(user, target, "repaired a compound fracture in", addition="COMBAT_MODE: [uppertext(user.combat_mode)]")
 		qdel(surgery.operated_wound)
 	else
 		to_chat(user, span_warning("У [target] нет открытого перелома здесь!"))

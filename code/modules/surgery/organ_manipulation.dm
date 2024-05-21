@@ -251,7 +251,7 @@
 				span_notice("[user] установил [tool.name] в [target.parse_zone_with_bodypart(target_zone)] у [target]!"),
 				span_notice("[user] установил что-то в [target.parse_zone_with_bodypart(target_zone)] у [target]!"),
 			)
-			display_pain(target, "Ваш [target.parse_zone_with_bodypart(target_zone)] болит, пока [tool.name] приживается к телу!")
+			display_pain(target, "Ваша [target.parse_zone_with_bodypart(target_zone)] болит, пока [tool.name] приживается к телу!")
 			target_organ.on_surgical_insertion(user, target, target_zone, tool)
 		else
 			target_organ.forceMove(target.loc)
@@ -266,7 +266,7 @@
 				span_notice("[user] успешно извлек что-то из [target.parse_zone_with_bodypart(target_zone)] у [target]!"),
 			)
 			display_pain(target, "Ваш [target.parse_zone_with_bodypart(target_zone)] болит, вы больше не чувствуете [target_organ.name]!")
-			log_combat(user, target, "хирургически удалил [target_organ.name] из", addition="COMBAT MODE: [uppertext(user.combat_mode)]")
+			log_combat(user, target, "surgically removed [target_organ.name] from", addition="COMBAT MODE: [uppertext(user.combat_mode)]")
 			target_organ.Remove(target)
 			target_organ.forceMove(get_turf(target))
 			target_organ.on_surgical_removal(user, target, target_zone, tool)

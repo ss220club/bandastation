@@ -127,7 +127,7 @@
 		span_notice("[user] начинает обрабатывать разрез в [target.parse_zone_with_bodypart(target_zone)] у [target]."),
 		span_notice("[user] начинает обрабатывать разрез в [target.parse_zone_with_bodypart(target_zone)] у [target]."),
 	)
-	display_pain(target, "Ваш [target.parse_zone_with_bodypart(target_zone)] прижигается!")
+	display_pain(target, "Ваша [target.parse_zone_with_bodypart(target_zone)] прижигается!")
 
 /datum/surgery_step/close/tool_check(mob/user, obj/item/tool)
 	if(implement_type == TOOL_WELDER || implement_type == /obj/item)
