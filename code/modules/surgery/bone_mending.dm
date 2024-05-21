@@ -60,7 +60,7 @@
 		display_results(
 			user,
 			target,
-			span_notice("Вы приступаете к устранению перелома в [target.parse_zone_with_bodypart(user.zone_selected)] у [target] ..."),
+			span_notice("Вы приступаете к устранению перелома в [target.parse_zone_with_bodypart(user.zone_selected)] у [target]..."),
 			span_notice("[user] приступает к устранению перелома в [target.parse_zone_with_bodypart(user.zone_selected)] у [target] при помощи [tool.name]."),
 			span_notice("[user] приступает к устранению перелома в [target.parse_zone_with_bodypart(user.zone_selected)] у [target]."),
 		)
