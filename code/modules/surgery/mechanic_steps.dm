@@ -14,11 +14,11 @@
 	display_results(
 		user,
 		target,
-		span_notice("You begin to unscrew the shell of [target]'s [target.parse_zone_with_bodypart(target_zone)]..."),
-		span_notice("[user] begins to unscrew the shell of [target]'s [target.parse_zone_with_bodypart(target_zone)]."),
-		span_notice("[user] begins to unscrew the shell of [target]'s [target.parse_zone_with_bodypart(target_zone)]."),
+		span_notice("Вы начинаете откручивать корпус в [target.parse_zone_with_bodypart(target_zone)] у [target]..."),
+		span_notice("[user] начинает откручивать корпус в [target.parse_zone_with_bodypart(target_zone)] у [target]."),
+		span_notice("[user] начинает откручивать корпус в [target.parse_zone_with_bodypart(target_zone)] у [target]."),
 	)
-	display_pain(target, "You can feel your [target.parse_zone_with_bodypart(target_zone)] grow numb as the sensory panel is unscrewed.", TRUE)
+	display_pain(target, "Вы ощущаете, как [target.parse_zone_with_bodypart(target_zone)] немеет по мере откручивания сенсорной панели.", TRUE)
 
 /datum/surgery_step/mechanic_open/tool_check(mob/user, obj/item/tool)
 	if(implement_type == /obj/item && !tool.get_sharpness())
@@ -44,11 +44,11 @@
 	display_results(
 		user,
 		target,
-		span_notice("You begin to screw the shell of [target]'s [target.parse_zone_with_bodypart(target_zone)]..."),
-		span_notice("[user] begins to screw the shell of [target]'s [target.parse_zone_with_bodypart(target_zone)]."),
-		span_notice("[user] begins to screw the shell of [target]'s [target.parse_zone_with_bodypart(target_zone)]."),
+		span_notice("Вы начинаете закручивать корпус в [target.parse_zone_with_bodypart(target_zone)] у [target]..."),
+		span_notice("[user] начинает закручивать корпус в [target.parse_zone_with_bodypart(target_zone)] у [target]."),
+		span_notice("[user] начинает закручивать корпус в [target.parse_zone_with_bodypart(target_zone)] у [target]."),
 	)
-	display_pain(target, "You feel the faint pricks of sensation return as your [target.parse_zone_with_bodypart(target_zone)]'s panel is screwed in.", TRUE)
+	display_pain(target, "Вы ощущаете, как начинаете получать показания датчиков из [target.parse_zone_with_bodypart(target_zone)], после того, как панель закрутили обратно.", TRUE)
 
 /datum/surgery_step/mechanic_close/tool_check(mob/user, obj/item/tool)
 	if(implement_type == /obj/item && !tool.get_sharpness())
@@ -72,11 +72,11 @@
 	display_results(
 		user,
 		target,
-		span_notice("You begin to prepare electronics in [target]'s [target.parse_zone_with_bodypart(target_zone)]..."),
-		span_notice("[user] begins to prepare electronics in [target]'s [target.parse_zone_with_bodypart(target_zone)]."),
-		span_notice("[user] begins to prepare electronics in [target]'s [target.parse_zone_with_bodypart(target_zone)]."),
+		span_notice("Вы начинаете подготовку электроники в [target.parse_zone_with_bodypart(target_zone)] у [target]..."),
+		span_notice("[user] начинает подготовку электроники в [target.parse_zone_with_bodypart(target_zone)] у [target]."),
+		span_notice("[user] начинает подготовку электроники в [target.parse_zone_with_bodypart(target_zone)] у [target]."),
 	)
-	display_pain(target, "You can feel a faint buzz in your [target.parse_zone_with_bodypart(target_zone)] as the electronics reboot.", TRUE)
+	display_pain(target, "Вы чувствуете слабое жужжание в [target.parse_zone_with_bodypart(target_zone)], когда электроника перезагружается.", TRUE)
 
 //unwrench
 /datum/surgery_step/mechanic_unwrench
@@ -91,11 +91,11 @@
 	display_results(
 		user,
 		target,
-		span_notice("You begin to unwrench some bolts in [target]'s [target.parse_zone_with_bodypart(target_zone)]..."),
-		span_notice("[user] begins to unwrench some bolts in [target]'s [target.parse_zone_with_bodypart(target_zone)]."),
-		span_notice("[user] begins to unwrench some bolts in [target]'s [target.parse_zone_with_bodypart(target_zone)]."),
+		span_notice("Вы начинаете откручивать болты в [target.parse_zone_with_bodypart(target_zone)] у [target]..."),
+		span_notice("[user] начинает откручивать болты в [target.parse_zone_with_bodypart(target_zone)] у [target]."),
+		span_notice("[user] начинает откручивать болты в [target.parse_zone_with_bodypart(target_zone)] у [target]."),
 	)
-	display_pain(target, "You feel a jostle in your [target.parse_zone_with_bodypart(target_zone)] as the bolts begin to loosen.", TRUE)
+	display_pain(target, "Вы чувствуете вибрацию в [target.parse_zone_with_bodypart(target_zone)], когда болты начинают ослабевать.", TRUE)
 
 /datum/surgery_step/mechanic_unwrench/tool_check(mob/user, obj/item/tool)
 	if(tool.usesound)
@@ -116,11 +116,11 @@
 	display_results(
 		user,
 		target,
-		span_notice("You begin to wrench some bolts in [target]'s [target.parse_zone_with_bodypart(target_zone)]..."),
-		span_notice("[user] begins to wrench some bolts in [target]'s [target.parse_zone_with_bodypart(target_zone)]."),
-		span_notice("[user] begins to wrench some bolts in [target]'s [target.parse_zone_with_bodypart(target_zone)]."),
+		span_notice("Вы начинаете закручивать болты в [target.parse_zone_with_bodypart(target_zone)] у [target]..."),
+		span_notice("[user] начинает закручивать болты в [target.parse_zone_with_bodypart(target_zone)] у [target]."),
+		span_notice("[user] начинает закручивать болты в [target.parse_zone_with_bodypart(target_zone)] у [target]."),
 	)
-	display_pain(target, "You feel a jostle in your [target.parse_zone_with_bodypart(target_zone)] as the bolts begin to tighten.", TRUE)
+	display_pain(target, "Вы чувствуете вибрацию в [target.parse_zone_with_bodypart(target_zone)], когда болты начинают затягиваться.", TRUE)
 
 /datum/surgery_step/mechanic_wrench/tool_check(mob/user, obj/item/tool)
 	if(tool.usesound)
@@ -140,11 +140,11 @@
 	display_results(
 		user,
 		target,
-		span_notice("You begin to open the hatch holders in [target]'s [target.parse_zone_with_bodypart(target_zone)]..."),
-		span_notice("[user] begins to open the hatch holders in [target]'s [target.parse_zone_with_bodypart(target_zone)]."),
-		span_notice("[user] begins to open the hatch holders in [target]'s [target.parse_zone_with_bodypart(target_zone)]."),
+		span_notice("Вы начинаете открывать держатели люка в [target.parse_zone_with_bodypart(target_zone)] у [target]..."),
+		span_notice("[user] начинает открывать держатели люка в [target.parse_zone_with_bodypart(target_zone)] у [target]."),
+		span_notice("[user] начинает открывать держатели люка в [target.parse_zone_with_bodypart(target_zone)] у [target]."),
 	)
-	display_pain(target, "The last faint pricks of tactile sensation fade from your [target.parse_zone_with_bodypart(target_zone)] as the hatch is opened.", TRUE)
+	display_pain(target, "Вы получаете последние показания датчиков из вашей [target.parse_zone_with_bodypart(target_zone)], когда открывается люк.", TRUE)
 
 /datum/surgery_step/open_hatch/tool_check(mob/user, obj/item/tool)
 	if(tool.usesound)

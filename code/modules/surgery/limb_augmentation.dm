@@ -24,20 +24,20 @@
 		to_chat(user, span_warning("Это не аугментат, дурак!"))
 		return SURGERY_STEP_FAIL
 	if(aug.body_zone != target_zone)
-		to_chat(user, span_warning("[tool] isn't the right type for [target.parse_zone_with_bodypart(target_zone)]."))
+		to_chat(user, span_warning("Для [target.parse_zone_with_bodypart(target_zone)] не подходит [tool.name]."))
 		return SURGERY_STEP_FAIL
 	target_limb = surgery.operated_bodypart
 	if(target_limb)
 		display_results(
 			user,
 			target,
-			span_notice("You begin to augment [target]'s [target.parse_zone_with_bodypart(user.zone_selected)]..."),
-			span_notice("[user] begins to augment [target]'s [target.parse_zone_with_bodypart(user.zone_selected)] with [aug]."),
-			span_notice("[user] begins to augment [target]'s [target.parse_zone_with_bodypart(user.zone_selected)]."),
+			span_notice("Вы начинаете аугментировать [target.parse_zone_with_bodypart(user.zone_selected)] у [target]..."),
+			span_notice("[user] начинает аугментировать [target.parse_zone_with_bodypart(user.zone_selected)] у [target] с помощью [aug.name]."),
+			span_notice("[user] начинает аугментировать [target.parse_zone_with_bodypart(user.zone_selected)] у [target]."),
 		)
-		display_pain(target, "You feel a horrible pain in your [target.parse_zone_with_bodypart(user.zone_selected)]!")
+		display_pain(target, "Вы чувствуете ужасную боль в [target.parse_zone_with_bodypart(user.zone_selected)]!")
 	else
-		user.visible_message(span_notice("[user] looks for [target]'s [target.parse_zone_with_bodypart(user.zone_selected)]."), span_notice("You look for [target]'s [target.parse_zone_with_bodypart(user.zone_selected)]..."))
+		user.visible_message(span_notice("[user] ищет у [target] в [target.parse_zone_with_bodypart(user.zone_selected)]."), span_notice("Вы ищете у [target] в [target.parse_zone_with_bodypart(user.zone_selected)]..."))
 
 
 //ACTUAL SURGERIES
@@ -74,9 +74,9 @@
 				display_results(
 					user,
 					target,
-					span_warning("You fail in replacing [target]'s [target.parse_zone_with_bodypart(target_zone)]! Their body has rejected [tool]!"),
-					span_warning("[user] fails to replace [target]'s [target.parse_zone_with_bodypart(target_zone)]!"),
-					span_warning("[user] fails to replaces [target]'s [target.parse_zone_with_bodypart(target_zone)]!"),
+					span_warning("Вы не смогли заменить [target.parse_zone_with_bodypart(target_zone)] у [target]! Тело отвергает [tool.name]!"),
+					span_warning("[user] не смог заменить [target.parse_zone_with_bodypart(target_zone)] у [target]!"),
+					span_warning("[user] не смог заменить [target.parse_zone_with_bodypart(target_zone)] у [target]!"),
 				)
 				tool.forceMove(target.loc)
 				return
@@ -85,12 +85,12 @@
 		display_results(
 			user,
 			target,
-			span_notice("You successfully augment [target]'s [target.parse_zone_with_bodypart(target_zone)]."),
-			span_notice("[user] successfully augments [target]'s [target.parse_zone_with_bodypart(target_zone)] with [tool]!"),
-			span_notice("[user] successfully augments [target]'s [target.parse_zone_with_bodypart(target_zone)]!"),
+			span_notice("Вы успешно заменили [target.parse_zone_with_bodypart(target_zone)] у [target]."),
+			span_notice("[user] успешно заменил [target.parse_zone_with_bodypart(target_zone)] у [target] на [tool.name]!"),
+			span_notice("[user] успешно заменил [target.parse_zone_with_bodypart(target_zone)] у [target]!"),
 		)
-		display_pain(target, "Your [target.parse_zone_with_bodypart(target_zone)] comes awash with synthetic sensation!", mechanical_surgery = TRUE)
+		display_pain(target, "Ваш [target.parse_zone_with_bodypart(target_zone)] наполняется синтетическими ощущениями!", mechanical_surgery = TRUE)
 		log_combat(user, target, "augmented", addition="by giving him new [target.parse_zone_with_bodypart(target_zone)] COMBAT MODE: [uppertext(user.combat_mode)]")
 	else
-		to_chat(user, span_warning("[target] has no organic [target.parse_zone_with_bodypart(target_zone)] there!"))
+		to_chat(user, span_warning("У [target] нет органической [target.parse_zone_with_bodypart(target_zone)] здесь!"))
 	return ..()
