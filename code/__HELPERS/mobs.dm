@@ -588,27 +588,27 @@ GLOBAL_LIST_INIT(skin_tone_names, list(
 /proc/parse_zone(zone)
 	switch(zone)
 		if(BODY_ZONE_CHEST)
-			return "chest"
+			return "><i>грудь</i>"
 		if(BODY_ZONE_HEAD)
-			return "head"
+			return "<i>голова</i>"
 		if(BODY_ZONE_PRECISE_R_HAND)
-			return "right hand"
+			return "<i>правая кисть</i>"
 		if(BODY_ZONE_PRECISE_L_HAND)
-			return "left hand"
+			return "<i>левая кисть</i>"
 		if(BODY_ZONE_L_ARM)
-			return "left arm"
+			return "<i>левая рука</i>"
 		if(BODY_ZONE_R_ARM)
-			return "right arm"
+			return "<i>правая рука</i>"
 		if(BODY_ZONE_L_LEG)
-			return "left leg"
+			return "<i>левая нога</i>"
 		if(BODY_ZONE_R_LEG)
-			return "right leg"
+			return "<i>правая нога</i>"
 		if(BODY_ZONE_PRECISE_L_FOOT)
-			return "left foot"
+			return "<i>левая ступня</i>"
 		if(BODY_ZONE_PRECISE_R_FOOT)
-			return "right foot"
+			return "<i>правая ступня</i>"
 		if(BODY_ZONE_PRECISE_GROIN)
-			return "groin"
+			return "<i>паховая область</i>"
 		else
 			return zone
 
