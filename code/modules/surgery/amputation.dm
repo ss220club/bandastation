@@ -58,7 +58,7 @@
 		span_notice("[user] отрезал [target.parse_zone_with_bodypart(target_zone)] у [target]!"),
 		span_notice("[user] отрезал [target.parse_zone_with_bodypart(target_zone)] у [target]!"),
 	)
-	display_pain(target, "Вы больше не чувствуете вашу [target.parse_zone_with_bodypart(target_zone)]!")
+	display_pain(target, "Вы больше не чувствуете свою отрезанную конечность - [target.parse_zone_with_bodypart(target_zone)]!")
 
 	if(HAS_MIND_TRAIT(user, TRAIT_MORBID) && ishuman(user))
 		var/mob/living/carbon/human/morbid_weirdo = user
