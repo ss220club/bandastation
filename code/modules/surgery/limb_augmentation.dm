@@ -24,7 +24,7 @@
 		to_chat(user, span_warning("Это не аугментат, дурак!"))
 		return SURGERY_STEP_FAIL
 	if(aug.body_zone != target_zone)
-		to_chat(user, span_warning("[tool] не подходит для [target.parse_zone_with_bodypart(target_zone)]."))
+		to_chat(user, span_warning("Для [target.parse_zone_with_bodypart(target_zone)] не подходит [tool.name]."))
 		return SURGERY_STEP_FAIL
 	target_limb = surgery.operated_bodypart
 	if(target_limb)
