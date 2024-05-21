@@ -191,7 +191,7 @@
 		target,
 		span_notice("Вы вскрываете [target.parse_zone_with_bodypart(target_zone)] у [target]."),
 		span_notice("[user] вскрывает [target.parse_zone_with_bodypart(target_zone)] у [target]!"),
-		span_notice("[user] вскрывает [target.parse_zone_with_bodypart(target_zone)] у [target] !"),
+		span_notice("[user] вскрывает [target.parse_zone_with_bodypart(target_zone)] у [target]!"),
 	)
 	display_pain(target, "Такое ощущение, что в [target.parse_zone_with_bodypart(target_zone)] что-то сломано!")
 	return ..()
