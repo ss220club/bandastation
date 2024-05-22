@@ -1,5 +1,5 @@
 /datum/uplink_category/device_tools
-	name = "Misc. Gadgets"
+	name = "Разные гаджеты"
 	weight = 3
 
 /datum/uplink_item/device_tools
@@ -7,8 +7,8 @@
 
 /datum/uplink_item/device_tools/soap
 	name = "Syndicate Soap"
-	desc = "A sinister-looking surfactant used to clean blood stains to hide murders and prevent DNA analysis. \
-			You can also drop it underfoot to slip people."
+	desc = "Зловещее выглядящий сурфактант, используемый для очистки пятен крови, чтобы скрыть убийство и предотвратить анализ по ДНК. \
+			Вы также можете бросить его кому-нибудь под ноги, чтобы он подскользнулся."
 	item = /obj/item/soap/syndie
 	cost = 1
 	surplus = 50

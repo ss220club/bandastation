@@ -1,15 +1,15 @@
 /datum/uplink_category/contractor
-	name = "Contractor"
+	name = "Контрактник"
 	weight = 10
 
 /datum/uplink_item/bundles_tc/contract_kit
 	name = "Contract Kit"
-	desc = "The Syndicate have offered you the chance to become a contractor, take on kidnapping contracts for TC \
-		and cash payouts. Upon purchase, you'll be granted your own contract uplink embedded within the supplied \
-		tablet computer. Additionally, you'll be granted standard contractor gear to help with your mission - \
-		comes supplied with the tablet, specialised space suit, chameleon jumpsuit and mask, agent card, \
-		specialised contractor baton, and three randomly selected low cost items. \
-		Can include otherwise unobtainable items."
+	desc = "Синдикат предложил вм стать контрактником, выполняя заказы на похищение за телекристаллы \
+		и денежное вознаграждение. После покупки вы получите собственный контрактный аплинк встроенный в \
+		планшет. Кроме того, вам также будет предоставлено стандартное снаряжения контрактника, чтобы помочь с вашей миссией - \
+		планшет, специализированный космический костюм, комбинезон и маску хамелеон, карта агента, \
+		специализированная дубинка контрактника и три случайных недорогих предмета. \
+		Может включать недоступные предметы."
 	item = /obj/item/storage/box/syndicate/contract_kit
 	category = /datum/uplink_category/contractor
 	cost = 20
@@ -34,8 +34,8 @@
 
 /datum/uplink_item/contractor/reroll
 	name = "Contract Reroll"
-	desc = "Request a reroll of your current contract list. Will generate a new target, \
-		payment, and dropoff for the contracts you currently have available."
+	desc = "Запросите смену текущего списка контрактов. Сгенерирует новую цель, \
+		оплату и место сдачи текущих активных контрактов."
 	item = ABSTRACT_UPLINK_ITEM
 	limited_stock = 2
 	cost = 0
@@ -63,28 +63,28 @@
 
 /datum/uplink_item/contractor/pinpointer
 	name = "Contractor Pinpointer"
-	desc = "A pinpointer that finds targets even without active suit sensors. \
-		Due to taking advantage of an exploit within the system, it can't pinpoint \
-		to the same accuracy as the traditional models. \
-		Becomes permanently locked to the user that first activates it."
+	desc = "Пинпойнтер, который позволяет найти цель без активных датчиков костюма. \
+		Из-за использования уязвимости он не может \
+		определить точное местоположение в отличие от традиционных моделей. \
+		Становится навсегда привязанным к пользователю, который впервые активировал его."
 	item = /obj/item/pinpointer/crew/contractor
 	limited_stock = 2
 	cost = 1
 
 /datum/uplink_item/contractor/extraction_kit
 	name = "Fulton Extraction Kit"
-	desc = "For getting your target across the station to those difficult dropoffs. \
-		Place the beacon somewhere secure, and link the pack. \
-		Activating the pack on your target will send them over to the beacon - \
-		make sure they're not just going to run away though!"
+	desc = "Для доставки вашей цели через труднодоступные места станции к точке сдачи. \
+		Разместите где-нибудь в безопасном месте маяк и свяжите его с ранцом. \
+		Активация данного ранца отправит вашу цель к маяку - \
+		убедитесь, что она не сбежит!"
 	item = /obj/item/storage/box/contractor/fulton_extraction
 	limited_stock = 1
 	cost = 1
 
 /datum/uplink_item/contractor/partner
 	name = "Contractor Reinforcement"
-	desc = "A reinforecment operative will be sent to aid you in your goals, \
-		they are paid separately, and will not take a cut from your profits."
+	desc = "Оперативник прибудет к вам в качестве подкрепления, чтобы помочь в выполнении ваших целей, \
+		Он получает оплату отдельно и не будет претендовать на ваш доход."
 	item = /obj/item/antag_spawner/loadout/contractor
 	limited_stock = 1
 	cost = 2

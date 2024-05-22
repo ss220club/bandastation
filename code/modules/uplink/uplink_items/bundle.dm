@@ -1,6 +1,6 @@
 //All bundles and telecrystals
 /datum/uplink_category/bundle
-	name = "Bundles"
+	name = "Наборы"
 	weight = 10
 
 /datum/uplink_item/bundles_tc
@@ -11,7 +11,7 @@
 
 /datum/uplink_item/bundles_tc/random
 	name = "Random Item"
-	desc = "Picking this will purchase a random item. Useful if you have some TC to spare or if you haven't decided on a strategy yet."
+	desc = "Выбор этого пункта покупает случайный предмет. Полезно, если у вас есть лишние TC или если вы не определились со стратегией."
 	item = ABSTRACT_UPLINK_ITEM
 	cost = 0
 	cost_override_string = "Varies"
@@ -34,7 +34,7 @@
 
 /datum/uplink_item/bundles_tc/telecrystal
 	name = "1 Raw Telecrystal"
-	desc = "A telecrystal in its rawest and purest form; can be utilized on active uplinks to increase their telecrystal count."
+	desc = "Телекристалл в его редком и чистейшем виде; Может быть использован на активном аплинке для увеличения количества телекристаллов."
 	item = /obj/item/stack/telecrystal
 	cost = 1
 	// Don't add telecrystals to the purchase_log since
@@ -43,22 +43,22 @@
 
 /datum/uplink_item/bundles_tc/telecrystal/five
 	name = "5 Raw Telecrystals"
-	desc = "Five telecrystals in their rawest and purest form; can be utilized on active uplinks to increase their telecrystal count."
+	desc = "Пять телекристаллов в их сыром и чистом виде; могут быть использованы на активном аплинке для увеличения количества телекристаллов."
 	item = /obj/item/stack/telecrystal/five
 	cost = 5
 
 /datum/uplink_item/bundles_tc/telecrystal/twenty
 	name = "20 Raw Telecrystals"
-	desc = "Twenty telecrystals in their rawest and purest form; can be utilized on active uplinks to increase their telecrystal count."
+	desc = "Двадцать телекристаллов в их сыром и чистом виде; могут быть использованы на активном аплинке для увеличения количества телекристаллов."
 	item = /obj/item/stack/telecrystal/twenty
 	cost = 20
 
 /datum/uplink_item/bundles_tc/bundle_a
 	name = "Syndi-kit Tactical"
-	desc = "Syndicate Bundles, also known as Syndi-Kits, are specialized groups of items that arrive in a plain box. \
-			These items are collectively worth more than 25 telecrystals, but you do not know which specialization \
-			you will receive. May contain discontinued and/or exotic items. \
-			The Syndicate will only provide one Syndi-Kit per agent."
+	desc = "Набор Синдиката, также известный как Синди-набор, это специализированная группа предметов, которая прибывает в обычной коробке. \
+			Эти предметы стоят более 25 телекристаллов, но вы не знаете специализацию предметов, \
+			которую вы получите. Может содержать снятые с производства и/или экзотические предметы. \
+			Синдикат предоставляет только один Синди-набор на агента."
 	item = /obj/item/storage/box/syndicate/bundle_a
 	cost = 20
 	stock_key = UPLINK_SHARED_STOCK_KITS
@@ -66,10 +66,10 @@
 
 /datum/uplink_item/bundles_tc/bundle_b
 	name = "Syndi-kit Special"
-	desc = "Syndicate Bundles, also known as Syndi-Kits, are specialized groups of items that arrive in a plain box. \
-			In Syndi-kit Special, you will receive items used by famous syndicate agents of the past. \
-			Collectively worth more than 25 telecrystals, the syndicate loves a good throwback. \
-			The Syndicate will only provide one Syndi-Kit per agent."
+	desc = "Набор Синдиката, также известный как Синди-набор, это специализированная группа предметов, которая прибывает в обычной коробке. \
+			В особом Синди-наборе, вы получите предметы известных агентов Синдиката в прошлом. \
+			Эти предметы стоят более 25 телекристаллов, синдикат любит хорошее возвращение. \
+			Синдикат предоставляет только один Синди-набор на агента."
 	item = /obj/item/storage/box/syndicate/bundle_b
 	cost = 20
 	stock_key = UPLINK_SHARED_STOCK_KITS
@@ -77,9 +77,9 @@
 
 /datum/uplink_item/bundles_tc/surplus
 	name = "Syndicate Surplus Crate"
-	desc = "A dusty crate from the back of the Syndicate warehouse delivered directly to you via Supply Pod. \
-			If the rumors are true, it will fill it's contents based on your current reputation. Get on that grind. \
-			Contents are sorted to always be worth 30 TC. The Syndicate will only provide one surplus item per agent."
+	desc = "Пыльный ящик Синдиката с дальних полок склада, доставляется к вам путем капсулы снабжения. \
+			Если слухи правдивы, то содержимое ящика зависит от вашей репутации. Начинайте её зарабатывать. \
+			Содержимое ящика отсортировано и всегда стоит 30 TC. Синдикат предоставляет только один лишний предмет на агента."
 	item = /obj/structure/closet/crate // will be replaced in purchase()
 	cost = 20
 	purchasable_from = ~(UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS | UPLINK_SPY)
@@ -142,10 +142,10 @@
 
 /datum/uplink_item/bundles_tc/surplus/united
 	name = "United Surplus Crate"
-	desc = "A shiny and large crate to be delivered directly to you via Supply Pod. It has an advanced locking mechanism with an anti-tampering protocol. \
-			It is recommended that you only attempt to open it by having another agent purchase a Surplus Crate Key. Unite and fight. \
-			Rumored to contain a valuable assortment of items based on your current reputation, but you never know. Contents are sorted to always be worth 80 TC. \
-			The Syndicate will only provide one surplus item per agent."
+	desc = "Блестящий и большой ящик, который доставляется к вам путем капсулы снабжения. Оснащён продвинутым механизмом замка с протоколом защиты от взлома. \
+			Рекомендуется открывать его при наличии другого агента купившего ключ от ящика. Объединяйтесь и сражайтесь. \
+			По слухам содержит ценный ассортимент предметов зависящих от вашей репутации, но никогда не знаешь точно. Содержимое ящика отсортировано и всегда стоит 80 TC. \
+			Синдикат предоставляет только один лишний предмет на агента."
 	cost = 20
 	item = /obj/structure/closet/crate/secure/syndicrate
 	stock_key = UPLINK_SHARED_STOCK_SURPLUS
@@ -166,9 +166,9 @@
 
 /datum/uplink_item/bundles_tc/surplus_key
 	name = "United Surplus Crate Key"
-	desc = "This inconscpicous device is actually a key that can open any United Surplus Crate. It can only be used once. \
-			Though initially designed to encourage cooperation, agents quickly discovered that you can turn the key to the crate by yourself.  \
-			The Syndicate will only provide one surplus item per agent."
+	desc = "Это неприметное устройство на самом деле является ключом открывающим United Surplus Crate. Может быть использован один раз. \
+			Изначально был разработан для повышения сотрудничества, но агенты быстро обнаружили, что могут открыть ящик самостоятельно.  \
+			Синдикат предоставляет только один лишний предмет на агента."
 	cost = 20
 	item = /obj/item/syndicrate_key
 	purchasable_from = ~(UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS | UPLINK_SPY)

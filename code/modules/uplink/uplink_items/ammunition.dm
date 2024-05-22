@@ -1,5 +1,5 @@
 /datum/uplink_category/ammo
-	name = "Ammunition"
+	name = "Боеприпасы"
 	weight = 7
 
 /datum/uplink_item/ammo
@@ -8,7 +8,7 @@
 
 /datum/uplink_item/ammo/toydarts
 	name = "Box of Riot Darts"
-	desc = "A box of 40 Donksoft riot darts, for reloading any compatible foam dart magazine. Don't forget to share!"
+	desc = "Коробка с 40-мя дротиками \"Donksoft\", для перезарядки любого совместимого магазина для паралоновых дротиков. Не забудь поделиться!"
 	item = /obj/item/ammo_box/foambox/riot
 	cost = 2
 	surplus = 0
@@ -17,7 +17,7 @@
 
 /datum/uplink_item/ammo/pistol
 	name = "9mm Handgun Magazine"
-	desc = "An additional 8-round 9mm magazine, compatible with the Makarov pistol."
+	desc = "Дополнительный 8-ми зарядный магазин с патронами 9мм, совместим с пистолетом Макарова."
 	item = /obj/item/ammo_box/magazine/m9mm
 	cost = 1
 	purchasable_from = ~(UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS)
@@ -25,32 +25,32 @@
 
 /datum/uplink_item/ammo/pistolap
 	name = "9mm Armour Piercing Magazine"
-	desc = "An additional 8-round 9mm magazine, compatible with the Makarov pistol. \
-			These rounds are less effective at injuring the target but penetrate protective gear."
+	desc = "Дополнительный 8-ми зарядный магазин с патронами 9мм, совместим с пистолетом Макарова. \
+			Эти пули менее эффективны для ранения цели, но лучше пробивают защитную экипировку."
 	item = /obj/item/ammo_box/magazine/m9mm/ap
 	cost = 2
 	purchasable_from = ~(UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS)
 
 /datum/uplink_item/ammo/pistolhp
 	name = "9mm Hollow Point Magazine"
-	desc = "An additional 8-round 9mm magazine, compatible with the Makarov pistol. \
-			These rounds are more damaging but ineffective against armour."
+	desc = "Дополнительный 8-ми зарядный магазин с патронами 9мм, совместим с пистолетом Макарова. \
+			Эти пули наносят больше повреждений, но неэффективны при пробитии брони."
 	item = /obj/item/ammo_box/magazine/m9mm/hp
 	cost = 3
 	purchasable_from = ~(UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS)
 
 /datum/uplink_item/ammo/pistolfire
 	name = "9mm Incendiary Magazine"
-	desc = "An additional 8-round 9mm magazine, compatible with the Makarov pistol. \
-			Loaded with incendiary rounds which inflict little damage, but ignite the target."
+	desc = "Дополнительный 8-ми зарядный магазин с патронами 9мм, совместим с пистолетом Макарова. \
+			Заряжен зажигательными патронами, которые наносят незначительный урон, но поджигают цель."
 	item = /obj/item/ammo_box/magazine/m9mm/fire
 	cost = 2
 	purchasable_from = ~(UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS)
 
 /datum/uplink_item/ammo/revolver
 	name = ".357 Speed Loader"
-	desc = "A speed loader that contains seven additional .357 Magnum rounds; usable with the Syndicate revolver. \
-			For when you really need a lot of things dead."
+	desc = "Быстрозарядный магазин, который содержит 7 дополнительных патрон .357 Магнума; подходит к револьверу Синдиката. \
+			Для тех, кому действительно нужны смертоносные вещи."
 	item = /obj/item/ammo_box/a357
 	cost = 4
 	purchasable_from = ~(UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS | UPLINK_SPY) //nukies get their own version
