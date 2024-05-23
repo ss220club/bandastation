@@ -52,9 +52,9 @@
 	w_class = WEIGHT_CLASS_SMALL
 
 
-// The amulette conversion tool used by moon heretics
-/obj/item/clothing/neck/heretic_focus/moon_amulette
-	name = "Moonlight Amulette"
+// The amulet conversion tool used by moon heretics
+/obj/item/clothing/neck/heretic_focus/moon_amulet
+	name = "Moonlight Amulet"
 	desc = "Кусочек разума, души и луны. От взгляда внутрь голова идет кругом, и можно услышать шепотки смеха и радости."
 	icon = 'icons/obj/antags/eldritch.dmi'
 	icon_state = "moon_amulette"
@@ -62,11 +62,11 @@
 	// How much damage does this item do to the targets sanity?
 	var/sanity_damage = 20
 
-/obj/item/clothing/neck/heretic_focus/moon_amulette/attack(mob/living/target, mob/living/user, params)
+/obj/item/clothing/neck/heretic_focus/moon_amulet/attack(mob/living/target, mob/living/user, params)
 	var/mob/living/carbon/human/hit = target
 	if(!IS_HERETIC_OR_MONSTER(user))
 		user.balloon_alert(user, "вы чувствуете, как за вами наблюдают")
-		user.add_mood_event("Moon Amulette Insanity", /datum/mood_event/amulette_insanity)
+		user.add_mood_event("Moon Amulet Insanity", /datum/mood_event/amulet_insanity)
 		user.mob_mood.set_sanity(user.mob_mood.sanity - 50)
 		return
 	if(hit.can_block_magic())
@@ -75,7 +75,7 @@
 		return
 	if(hit.mob_mood.sanity_level < SANITY_LEVEL_UNSTABLE)
 		user.balloon_alert(user, "их разум слишком крепок!")
-		hit.add_mood_event("Moon Amulette Insanity", /datum/mood_event/amulette_insanity)
+		hit.add_mood_event("Moon Amulet Insanity", /datum/mood_event/amulet_insanity)
 		hit.mob_mood.set_sanity(hit.mob_mood.sanity - sanity_damage)
 	else
 		user.balloon_alert(user, "их разум поддается и открывается правде!")
