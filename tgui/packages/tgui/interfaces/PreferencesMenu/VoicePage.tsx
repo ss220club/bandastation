@@ -239,9 +239,9 @@ export const VoicePage = (props) => {
                     <SeedRow
                       key={seed.name}
                       seed={seed}
-                      tts_seed={tts_seed}
-                      donator_level={donator_level}
+                      selected_seed={tts_seed}
                       selected_phrase={selectedPhrase}
+                      donator_level={donator_level}
                     />
                   );
                 })}
