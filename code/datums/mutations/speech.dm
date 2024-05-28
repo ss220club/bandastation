@@ -52,7 +52,7 @@
 
 /datum/mutation/human/unintelligible
 	name = "Unintelligible"
-	desc = "Геном частично подавляет отдел головного мозга отвечающий за речевой аппарат, сильно искажает речь."
+	desc = "Геном частично подавляет отдел головного мозга, отвечающий за речевой аппарат, сильно искажая речь."
 	quality = NEGATIVE
 	text_gain_indication = "<span class='danger'>Ты чувствуешь себя неспособным сформировать предложение!</span>"
 	text_lose_indication = "<span class='danger'>Твой ум, кажется более ясным.</span>"
