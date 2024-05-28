@@ -22,7 +22,7 @@
 
 /datum/mutation/human/cryokinesis
 	name = "Cryokinesis"
-	desc = "Притягивает отрицательную энергию из отрицательной пустоты, чтобы заморозить окружающею температуру у субъекта."
+	desc = "Даёт возможность в любой момент притянуть негативную энергию из морозной пустоты, чтобы заморозить окружение вокруг субъекта."
 	quality = POSITIVE //upsides and downsides
 	text_gain_indication = "<span class='notice'>Ты ощущаешь холод в руках.</span>"
 	instability = 30
