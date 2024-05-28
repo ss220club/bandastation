@@ -464,7 +464,7 @@
 		return
 	if(owner.buckled || owner.body_position == LYING_DOWN || HAS_TRAIT(owner, TRAIT_IMMOBILIZED) || owner.throwing || owner.movement_type & (VENTCRAWLING | FLYING | FLOATING))
 		return //remove the 'edge' cases
-	to_chat(owner, span_danger("Ты спотыкаешься об свои ноги."))
+	to_chat(owner, span_danger("Ты спотыкаешься об свои же ноги."))
 	owner.Knockdown(30)
 
 /datum/mutation/human/martyrdom
