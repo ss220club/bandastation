@@ -1,6 +1,6 @@
 /datum/mutation/human/biotechcompat
 	name = "Biotech Compatibility"
-	desc = "Субъект становится более совместимым с биотехнологиями например чипы навыка."
+	desc = "Субъект становится более совместимым с биотехнологиями, такими как скилл-чипы."
 	quality = POSITIVE
 	instability = 5
 
