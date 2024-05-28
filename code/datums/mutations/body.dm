@@ -190,7 +190,7 @@
 //Monified turns you into a monkey.
 /datum/mutation/human/race
 	name = "Monkified"
-	desc = "Странный геном считается, что он отличает обезьяну от человека."
+	desc = "Странный геном который, по мнению общества, отличает обезьяну от человека."
 	text_gain_indication = "Ты чувствуешь необычно по-обезьяни."
 	text_lose_indication = "Ты чувствуешь себя как раньше."
 	quality = NEGATIVE
