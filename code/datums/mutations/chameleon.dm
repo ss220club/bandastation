@@ -5,7 +5,7 @@
 	quality = POSITIVE
 	difficulty = 16
 	text_gain_indication = "<span class='notice'>Ты чувствуешь себя единым с окружением.</span>"
-	text_lose_indication = "<span class='notice'>Ты чувствуешь себя необычно открытым.</span>"
+	text_lose_indication = "<span class='notice'>Ты чувствуешь себя необычно заметным.</span>"
 	instability = 25
 	power_coeff = 1
 
