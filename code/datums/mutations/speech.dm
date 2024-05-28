@@ -35,7 +35,7 @@
 
 /datum/mutation/human/mute
 	name = "Mute"
-	desc = "Геном полностью подавляет отдел головного мозга отвечающий за речевой аппарат."
+	desc = "Геном полностью подавляет отдел головного мозга, отвечающий за речевой аппарат."
 	quality = NEGATIVE
 	text_gain_indication = "<span class='danger'>Ты чувствуешь себя неспособным выражать свои мысли.</span>"
 	text_lose_indication = "<span class='danger'>Ты чувствуешь, что снова можешь говорить.</span>"
