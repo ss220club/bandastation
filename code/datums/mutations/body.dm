@@ -253,7 +253,7 @@
 
 /datum/mutation/human/glow/anti
 	name = "Anti-Glow"
-	desc = "Ваша кожа начинает притягивать и поглащать окружащющий вас свет, создавая темноту вокруг вас."
+	desc = "Ваша кожа начинает притягивать и поглащать окружающий вас свет, создавая темноту вокруг вас."
 	text_gain_indication = "<span class='notice'>Свет вокруг тебя понемногу пропадает.</span>"
 	conflicts = list(/datum/mutation/human/glow)
 	locked = TRUE
