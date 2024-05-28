@@ -149,7 +149,7 @@
 //Tourettes causes you to randomly stand in place and shout.
 /datum/mutation/human/tourettes
 	name = "Tourette's Syndrome"
-	desc = "Хроническое расстройство, которое вызывает непроизвольные сокращения мышц носителя. Заставляя его выкрикивать нецензурные слова." //definitely needs rewriting
+	desc = "Хроническое расстройство, которое вызывает непроизвольные сокращения мышц носителя, заставляя его выкрикивать нецензурные слова." //definitely needs rewriting
 	quality = NEGATIVE
 	text_gain_indication = "<span class='danger'>Ты немного дергаешься.</span>"
 	synchronizer_coeff = 1
