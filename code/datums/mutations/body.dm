@@ -440,7 +440,7 @@
 	name = "Two Left Feet"
 	desc = "Мутация заменяет правую ногу еще одной левой ногой. Симптомы включают в себя поцелуй пола при каждом шаге."
 	quality = NEGATIVE
-	text_gain_indication = "<span class='warning'>Твоя правая нога ощущается как... будто бы пошла на лево</span>"
+	text_gain_indication = "<span class='warning'>Твоя правая нога, кажется, стала леветь.</span>"
 	text_lose_indication = "<span class='notice'>Твоя правая нога кажется привычно правой.</span>"
 	difficulty = 16
 
