@@ -137,7 +137,7 @@
 
 /datum/mutation/human/elvis
 	name = "Elvis"
-	desc = "Ужасающая мутация, названванная в честь нулевого пациента."
+	desc = "Ужасающая мутация, названная в честь нулевого пациента."
 	quality = MINOR_NEGATIVE
 	locked = TRUE
 	text_gain_indication = "<span class='notice'>Ты хорошо себя чувствуешь, куколка.</span>"
