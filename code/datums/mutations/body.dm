@@ -3,7 +3,7 @@
 //Epilepsy gives a very small chance to have a seizure every life tick, knocking you unconscious.
 /datum/mutation/human/epilepsy
 	name = "Epilepsy"
-	desc = "Генетический дефект из-за которого случаются приступы эпилепсии."
+	desc = "Генетический дефект, из-за которого случаются приступы эпилепсии."
 	quality = NEGATIVE
 	text_gain_indication = "<span class='danger'>Ты ощущаешь головную боль.</span>"
 	synchronizer_coeff = 1
