@@ -2,10 +2,10 @@
 
 /datum/heretic_knowledge/spell/mind_gate
 	name = "Mind Gate"
-	desc = "Дает вам заклинание Mind Gate, которое \
-		наносит вам 20 урона мозгу, и накладывает галлюцинации на цель, \
-		замешательство на 10 секунд, потерю дыхания и урон мозгу."
-	gain_text = "Мой разум распахивается, словно врата, и его озарение позволяет мне постичь правду."
+	desc = "Grants you Mind Gate, a spell \
+		which deals you 20 brain damage but the target suffers a hallucination,\
+		is left confused for 10 seconds, suffers oxygen loss and brain damage."
+	gain_text = "My mind swings open like a gate, and its insight will let me perceive the truth."
 	next_knowledge = list(
 		/datum/heretic_knowledge/key_ring,
 		/datum/heretic_knowledge/spell/moon_smile,
