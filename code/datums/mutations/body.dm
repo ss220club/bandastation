@@ -95,7 +95,7 @@
 
 /datum/mutation/human/paranoia
 	name = "Paranoia"
-	desc = "Субъект обладающий данной мутацией слегка напуган и может испытывать галлюцинации."
+	desc = "Субъект, обладающий данной мутацией, слегка напуган и может испытывать галлюцинации."
 	quality = NEGATIVE
 	text_gain_indication = "<span class='danger'>Ты слышишь эхо криков в закромах своего разума ..</span>"
 	text_lose_indication = "<span class='notice'>Крики в твоей голове затихают.</span>"
