@@ -181,7 +181,7 @@
 
 /datum/mutation/human/illiterate
 	name = "Illiterate"
-	desc = "Является причиной тяжёлого случая Афазии, которая мешает чтению или письму."
+	desc = "Является причиной тяжёлого случая афазии, которая мешает чтению или письму."
 	quality = NEGATIVE
 	text_gain_indication = "<span class='danger'>Ты чувствуешь себя неспособным читать или писать.</span>"
 	text_lose_indication = "<span class='danger'>Ты чувствуешь, что снова можешь читать или писать.</span>"
