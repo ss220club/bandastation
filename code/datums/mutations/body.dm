@@ -191,7 +191,7 @@
 /datum/mutation/human/race
 	name = "Monkified"
 	desc = "Странный геном считается, что он отличает обезьяну от человека."
-	text_gain_indication = "Ты чувствуешь себя как обезьна."
+	text_gain_indication = "Ты чувствуешь необычно по-обезьяни."
 	text_lose_indication = "Ты чувствуешь себя как раньше."
 	quality = NEGATIVE
 	remove_on_aheal = FALSE
