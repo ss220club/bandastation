@@ -305,7 +305,7 @@
 
 /datum/mutation/human/insulated
 	name = "Insulated"
-	desc = "Субъект подверженный данной мутации не позволяет провести электрический ток через себя."
+	desc = "Субъект, подверженный данной мутации, не позволяет провести электрический ток через себя."
 	quality = POSITIVE
 	text_gain_indication = "<span class='notice'>Кончики твоих пальцев немеют.</span>"
 	text_lose_indication = "<span class='notice'>Ты снова чувствуешь кончики своих пальцев.</span>"
