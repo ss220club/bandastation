@@ -438,7 +438,7 @@
 
 /datum/mutation/human/extrastun
 	name = "Two Left Feet"
-	desc = "Мутация заменяет правую ногу другой левой ногой. Симптомы включают в себя поцелуй пола при каждом шаге."
+	desc = "Мутация заменяет правую ногу еще одной левой ногой. Симптомы включают в себя поцелуй пола при каждом шаге."
 	quality = NEGATIVE
 	text_gain_indication = "<span class='warning'>Твоя правая нога ощущается... левой</span>"
 	text_lose_indication = "<span class='notice'>Твоя правая нога кажется привычной.</span>"
