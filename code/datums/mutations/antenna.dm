@@ -42,7 +42,7 @@
 
 /datum/mutation/human/mindreader
 	name = "Mind Reader"
-	desc = "Лицо подверженное данной мутации может заглянуть в недавние воспоминания других."
+	desc = "Лицо, подверженное данной мутации, может заглянуть в недавние воспоминания других."
 	quality = POSITIVE
 	text_gain_indication = "<span class='notice'>Ты слышишь голоса вдали в закромах своего разума.</span>"
 	text_lose_indication = "<span class='notice'>Голоса вдали затихают.</span>"
