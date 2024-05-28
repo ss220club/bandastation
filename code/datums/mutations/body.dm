@@ -399,7 +399,7 @@
 
 /datum/mutation/human/gigantism
 	name = "Gigantism"//negative version of dwarfism
-	desc = "Клетки субъекта распространяются, чтобы охватить больше площади. Кажется, что субъект выглядит огромным."
+	desc = "Клетки субъекта распространяются для охвата большей площади, визуально увеличивая носителя."
 	quality = MINOR_NEGATIVE
 	difficulty = 12
 	conflicts = list(/datum/mutation/human/dwarfism)
