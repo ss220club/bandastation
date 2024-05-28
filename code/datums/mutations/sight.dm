@@ -129,7 +129,7 @@
 ///Laser Eyes lets you shoot lasers from your eyes!
 /datum/mutation/human/laser_eyes
 	name = "Laser Eyes"
-	desc = "Отражает сконцентрированный свет от глаз."
+	desc = "Отражает сконцентрированный свет из глаз."
 	quality = POSITIVE
 	locked = TRUE
 	difficulty = 16
