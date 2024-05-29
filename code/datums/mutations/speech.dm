@@ -3,9 +3,9 @@
 
 /datum/mutation/human/nervousness
 	name = "Nervousness"
-	desc = "Causes the holder to stutter."
+	desc = "Обладатель данного генома заикается."
 	quality = MINOR_NEGATIVE
-	text_gain_indication = "<span class='danger'>You feel nervous.</span>"
+	text_gain_indication = "<span class='danger'>Ты нервничаешь.</span>"
 
 /datum/mutation/human/nervousness/on_life(seconds_per_tick, times_fired)
 	if(SPT_PROB(5, seconds_per_tick))
@@ -13,10 +13,10 @@
 
 /datum/mutation/human/wacky
 	name = "Wacky"
-	desc = "You are not a clown. You are the entire circus."
+	desc = "Ты не клоун. Ты целый цирк."
 	quality = MINOR_NEGATIVE
-	text_gain_indication = "<span class='sans'><span class='infoplain'>You feel an off sensation in your voicebox.</span></span>"
-	text_lose_indication = "<span class='notice'>The off sensation passes.</span>"
+	text_gain_indication = "<span class='sans'><span class='infoplain'>Ты чувствуешь странности в своих голосовых связках.</span></span>"
+	text_lose_indication = "<span class='notice'>Странное ощущение проходит.</span>"
 
 /datum/mutation/human/wacky/on_acquiring(mob/living/carbon/human/owner)
 	if(..())
@@ -35,10 +35,10 @@
 
 /datum/mutation/human/mute
 	name = "Mute"
-	desc = "Completely inhibits the vocal section of the brain."
+	desc = "Геном полностью подавляет отдел головного мозга, отвечающий за речевой аппарат."
 	quality = NEGATIVE
-	text_gain_indication = "<span class='danger'>You feel unable to express yourself at all.</span>"
-	text_lose_indication = "<span class='danger'>You feel able to speak freely again.</span>"
+	text_gain_indication = "<span class='danger'>Ты чувствуешь себя неспособным выражать свои мысли.</span>"
+	text_lose_indication = "<span class='danger'>Ты чувствуешь, что снова можешь говорить.</span>"
 
 /datum/mutation/human/mute/on_acquiring(mob/living/carbon/human/owner)
 	if(..())
@@ -52,10 +52,10 @@
 
 /datum/mutation/human/unintelligible
 	name = "Unintelligible"
-	desc = "Partially inhibits the vocal center of the brain, severely distorting speech."
+	desc = "Геном частично подавляет отдел головного мозга, отвечающий за речевой аппарат, сильно искажая речь."
 	quality = NEGATIVE
-	text_gain_indication = "<span class='danger'>You can't seem to form any coherent thoughts!</span>"
-	text_lose_indication = "<span class='danger'>Your mind feels more clear.</span>"
+	text_gain_indication = "<span class='danger'>Ты чувствуешь себя неспособным сформировать предложение!</span>"
+	text_lose_indication = "<span class='danger'>Твой ум, кажется более ясным.</span>"
 
 /datum/mutation/human/unintelligible/on_acquiring(mob/living/carbon/human/owner)
 	if(..())
@@ -69,10 +69,10 @@
 
 /datum/mutation/human/swedish
 	name = "Swedish"
-	desc = "A horrible mutation originating from the distant past. Thought to be eradicated after the incident in 2037."
+	desc = "Ужасающая мутация, котороя происходит из далёкого прошлого. Считается, что она была полностью искоренена после 2037."
 	quality = MINOR_NEGATIVE
-	text_gain_indication = "<span class='notice'>You feel Swedish, however that works.</span>"
-	text_lose_indication = "<span class='notice'>The feeling of Swedishness passes.</span>"
+	text_gain_indication = "<span class='notice'>Ты ощущаешь себя шведом, что бы это ни значило.</span>"
+	text_lose_indication = "<span class='notice'>Ты перестаешь ощущать себя шведом.</span>"
 
 /datum/mutation/human/swedish/on_acquiring(mob/living/carbon/human/owner)
 	if(..())
@@ -100,10 +100,10 @@
 
 /datum/mutation/human/chav
 	name = "Chav"
-	desc = "Unknown"
+	desc = "Неизвестно."
 	quality = MINOR_NEGATIVE
-	text_gain_indication = "<span class='notice'>Ye feel like a reet prat like, innit?</span>"
-	text_lose_indication = "<span class='notice'>You no longer feel like being rude and sassy.</span>"
+	text_gain_indication = "<span class='notice'>Ты ощущаешь себя мудаком, не так ли?</span>"
+	text_lose_indication = "<span class='notice'>Ты перестаешь ощущать себя грубым и нахальным.</span>"
 
 /datum/mutation/human/chav/on_acquiring(mob/living/carbon/human/owner)
 	if(..())
@@ -137,11 +137,11 @@
 
 /datum/mutation/human/elvis
 	name = "Elvis"
-	desc = "A terrifying mutation named after its 'patient-zero'."
+	desc = "Ужасающая мутация, названная в честь нулевого пациента."
 	quality = MINOR_NEGATIVE
 	locked = TRUE
-	text_gain_indication = "<span class='notice'>You feel pretty good, honeydoll.</span>"
-	text_lose_indication = "<span class='notice'>You feel a little less conversation would be great.</span>"
+	text_gain_indication = "<span class='notice'>Ты хорошо себя чувствуешь, куколка.</span>"
+	text_lose_indication = "<span class='notice'>Ты чувствуешь, что немного меньше разговоров не помешало бы.</span>"
 
 /datum/mutation/human/elvis/on_life(seconds_per_tick, times_fired)
 	switch(pick(1,2))
@@ -184,11 +184,11 @@
 
 /datum/mutation/human/stoner
 	name = "Stoner"
-	desc = "A common mutation that severely decreases intelligence."
+	desc = "Обычная мутация, которая сильно понижает интеллект."
 	quality = NEGATIVE
 	locked = TRUE
-	text_gain_indication = "<span class='notice'>You feel...totally chill, man!</span>"
-	text_lose_indication = "<span class='notice'>You feel like you have a better sense of time.</span>"
+	text_gain_indication = "<span class='notice'>Ты чувствуешь себя...максимально расслабленным, чувак!</span>"
+	text_lose_indication = "<span class='notice'>Ты чувствуешь, что твоё восприятие времени стало лучше.</span>"
 
 /datum/mutation/human/stoner/on_acquiring(mob/living/carbon/human/owner)
 	..()
@@ -202,10 +202,10 @@
 
 /datum/mutation/human/medieval
 	name = "Medieval"
-	desc = "A horrible mutation originating from the distant past, thought to have once been a common gene in all of old world Europe."
+	desc = "Ужасная мутация, происходящая из далёкого прошлого, считается, что была распространённым геномом во всей старой Европе."
 	quality = MINOR_NEGATIVE
-	text_gain_indication = "<span class='notice'>You feel like seeking the holy grail!</span>"
-	text_lose_indication = "<span class='notice'>You no longer feel like seeking anything.</span>"
+	text_gain_indication = "<span class='notice'>Ты чувствуешь себя стремящимся к Святому Граали!</span>"
+	text_lose_indication = "<span class='notice'>Ты больше не стремишься к чему-либо.</span>"
 
 /datum/mutation/human/medieval/on_acquiring(mob/living/carbon/human/owner)
 	if(..())
@@ -242,10 +242,10 @@
 
 /datum/mutation/human/piglatin
 	name = "Pig Latin"
-	desc = "Historians say back in the 2020's humanity spoke entirely in this mystical language."
+	desc = "Историки говорят, что в 2020 году человечество полностью говорило на этом мистическом языке."
 	quality = MINOR_NEGATIVE
-	text_gain_indication = span_notice("Omethingsay eelsfay offyay.")
-	text_lose_indication = span_notice("The off sensation passes.")
+	text_gain_indication = span_notice("Ты ощущаешь себя мамонтом.")
+	text_lose_indication = span_notice("Кажется, это прошло.")
 
 /datum/mutation/human/piglatin/on_acquiring(mob/living/carbon/human/owner)
 	if(..())
