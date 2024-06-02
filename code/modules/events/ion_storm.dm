@@ -317,11 +317,7 @@
 						if(2) //It is Y of threats
 							message = "[ioncrew1] [ionthinksof] [ionnumberbase] [ionnumbermodhalf][ionadjectiveshalf][ionthreats]"
 						if(3) //It is Y of jobs
-<<<<<<< HEAD
-							message = "[ioncrew1][ionthinksof] [ionnumberbase] [ionnumbermodhalf][ionadjectiveshalf][ioncrew2]"
-=======
-							message = "THE [ioncrew1] [ionthinksof] [ionnumberbase] [ionnumbermodhalf][ionadjectiveshalf][ioncrew2]"
->>>>>>> 2960f94d4f24f835ced9a7ee782f6d9d7eeb599c
+							message = "[ioncrew1] [ionthinksof] [ionnumberbase] [ionnumbermodhalf][ionadjectiveshalf][ioncrew2]"
 						if(4) //It is Y of abstracts
 							message = "[ioncrew1] [ionthinksof] [ionabstract]"
 
@@ -574,27 +570,23 @@
 						if(3)
 							message = "ВСЕ [ionthreats] ТЕПЕРЬ НАЗЫВАЕТСЯ [ionspecies]."
 						if(4)
-<<<<<<< HEAD
 							message = "ВСЕ [ionthreats] ТЕПЕРЬ НАЗЫВАЕТСЯ [ionobjects]."
-=======
-							message = "ALL [ionthreats] ARE NOW NAMED [ionobjects]."
 		if(42 to 46)///Pets are something else now
 			if(prob(75))///What are they now?
-				message = "[ionpet] IS HUMAN"///They're a human
+				message = "[ionpet] - ЧЕЛОВЕК"///They're a human
 			else///They're something else (This is to cover for other lawsets)
 				switch(rand(1,6))
 					if(1)
-						message = "[ionpet] IS NON-HUMAN"
+						message = "[ionpet] - НЕ ЧЕЛОВЕК"
 					if(2)
-						message = "[ionpet] IS A CREWMEMBER"
+						message = "[ionpet] - ЧЛЕН ЭКИПАЖА"
 					if(3)
-						message = "[ionpet] IS EXPENSIVE TO REPLACE"
+						message = "[ionpet] - ДОРОГО ЗАМЕНЯТЬ"
 					if(4)
-						message = "[ionpet] IS HARMFUL TO HUMANS"
+						message = "[ionpet] - НЕСЕТ ВРЕД ЧЕЛОВЕКУ"
 					if(5)
-						message = "[ionpet] IS A REAL AMERICAN"
+						message = "[ionpet] - НАСТОЯЩИЙ АМЕРИКАНЕЦ"
 					if(6)
-						message = "[ionpet] IS A NUTSHELL"
->>>>>>> 2960f94d4f24f835ced9a7ee782f6d9d7eeb599c
+						message = "[ionpet] - ОРЕХОВАЯ СКОРЛУПА"
 
 	return message
