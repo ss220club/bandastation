@@ -118,7 +118,7 @@
 	if(!validate_action_target(game, new_target))
 		return FALSE
 
-	var/feedback_text = "Вы будете %WILL_PERFORM% [ability_action]%SELF%"
+	var/feedback_text = "Вы%WILL_PERFORM% готовитесь [ability_action]%SELF%"
 	if(use_flags & CAN_USE_ON_SELF)
 		feedback_text = replacetext(feedback_text, "%SELF%", ".")
 	else
