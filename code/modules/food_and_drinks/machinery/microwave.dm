@@ -478,6 +478,7 @@
 	if(HAS_SILICON_ACCESS(user))
 		visible_message(span_notice("[user] поставил [src] на [vampire_charging_enabled ? "зарядку" : "готовку"]."), blind_message = span_notice("Вы слышите информативный звук от [src]!"))
 	return CLICK_ACTION_SUCCESS
+
 /obj/machinery/microwave/CtrlClick(mob/user)
 	. = ..()
 	if(user.can_perform_action(src) && cell_powered && !isnull(cell) && anchored)
