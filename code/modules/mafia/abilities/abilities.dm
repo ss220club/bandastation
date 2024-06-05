@@ -127,7 +127,7 @@
 	if(target_role == new_target)
 		using_ability = FALSE
 		target_role = null
-		feedback_text = replacetext(feedback_text, "%WILL_PERFORM%", "не")
+		feedback_text = replacetext(feedback_text, "%WILL_PERFORM%", " более не")
 	else
 		using_ability = TRUE
 		target_role = new_target
