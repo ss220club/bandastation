@@ -965,7 +965,7 @@
 		changeling_win = FALSE
 
 	parts += printplayer(owner)
-	parts += "<b>Извлеченных генов - </b> [absorbed_count]<br>"
+	parts += "<b>Извлеченных генов: </b> [absorbed_count]<br>"
 
 	if(objectives.len)
 		var/count = 1

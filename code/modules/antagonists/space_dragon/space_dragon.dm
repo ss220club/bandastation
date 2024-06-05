@@ -263,7 +263,7 @@
 			players_to_carp_taken[carpy.key] += 1
 		var/list = ""
 		for(var/carp_user in players_to_carp_taken)
-			list += "<li><b>[carp_user]</b>, был космическим карпом - <b>[players_to_carp_taken[carp_user]]</b> раз.</li>"
+			list += "<li><b>[carp_user]</b>, был космическим карпом <b>[players_to_carp_taken[carp_user]]</b> раз.</li>"
 		parts += list
 		parts += "</ul>"
 

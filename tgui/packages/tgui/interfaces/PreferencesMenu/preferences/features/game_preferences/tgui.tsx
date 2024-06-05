@@ -8,21 +8,21 @@ export const tgui_fancy: FeatureToggle = {
 };
 
 export const tgui_input: FeatureToggle = {
-  name: 'Ввод - включить TGUI',
+  name: 'Ввод: включить TGUI',
   category: 'ИНТЕРФЕЙС',
   description: 'Окна ввода будут иметь TGUI.',
   component: CheckboxInput,
 };
 
 export const tgui_input_large: FeatureToggle = {
-  name: 'Ввод - большие кнопки',
+  name: 'Ввод: большие кнопки',
   category: 'ИНТЕРФЕЙС',
   description: 'Менее традиционные, но более функциональные кнопки TGUI.',
   component: CheckboxInput,
 };
 
 export const tgui_input_swapped: FeatureToggle = {
-  name: 'Ввод - инвентировать ввод/отмена',
+  name: 'Ввод: инвентировать ввод/отмена',
   category: 'ИНТЕРФЕЙС',
   description: 'Менее традиционные, но более функциональные кнопки TGUI.',
   component: CheckboxInput,
@@ -36,7 +36,7 @@ export const tgui_lock: FeatureToggle = {
 };
 
 export const tgui_say_light_mode: FeatureToggle = {
-  name: 'Говорить - светлая тема',
+  name: 'Говорить: светлая тема',
   category: 'ИНТЕРФЕЙС',
   description: 'TGUI поле ввода для разговора будет в светлой теме.',
   component: CheckboxInput,

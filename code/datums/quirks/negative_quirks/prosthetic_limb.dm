@@ -24,7 +24,7 @@
 	var/obj/item/bodypart/surplus = new limb_type()
 	slot_string = "[surplus.plaintext_zone]"
 
-	medical_record_text = "Пациент использует бюджетный протез вместо - [slot_string]."
+	medical_record_text = "Пациент имеет бюджетный протез вместо \"[slot_string]\"."
 	old_limb = human_holder.return_and_replace_bodypart(surplus, special = TRUE)
 
 /datum/quirk/prosthetic_limb/post_add()

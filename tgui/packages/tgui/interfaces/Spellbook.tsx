@@ -510,7 +510,7 @@ const SpellTabDisplay = (props: {
       }
     } else {
       if (entry.cooldown) {
-        return `Перезарядка - ${entry.cooldown} сек.`;
+        return `Перезарядка: ${entry.cooldown} сек.`;
       } else {
         return '';
       }

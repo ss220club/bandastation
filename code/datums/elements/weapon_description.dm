@@ -75,12 +75,12 @@
 	if(!source.override_notes)
 		// Make sure not to divide by 0 on accident
 		if(source.force > 0)
-			readout += "Примерно нужно ударов, чтобы обезвредить врага - [span_warning("[HITS_TO_CRIT(source.force)]")]"
+			readout += "Примерно нужно ударов, чтобы обезвредить врага: [span_warning("[HITS_TO_CRIT(source.force)]")]"
 		else
 			readout += "Не наносит значимого урона ударами."
 
 		if(source.throwforce > 0)
-			readout += "Примерно нужно бросков, чтобы обезвредить врага - [span_warning("[HITS_TO_CRIT(source.throwforce)]")]"
+			readout += "Примерно нужно бросков, чтобы обезвредить врага: [span_warning("[HITS_TO_CRIT(source.throwforce)]")]"
 		else
 			readout += "Не наносит значимого урона бросками."
 		if(source.armour_penetration > 0 || source.block_chance > 0)

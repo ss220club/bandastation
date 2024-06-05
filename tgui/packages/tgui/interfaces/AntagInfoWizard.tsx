@@ -65,12 +65,12 @@ export const AntagInfoWizard = (props) => {
             <Section scrollable fill>
               <Stack vertical>
                 <Stack.Item textColor="red" fontSize="20px">
-                  Вы - Космический Волшебник!
+                  Вы Космический волшебник!
                 </Stack.Item>
                 <Stack.Item>
                   <ObjectivePrintout
                     objectives={objectives}
-                    titleMessage="Федерация Космических Волшебников выдала вам следующие задачи:"
+                    titleMessage="Федерация космических волшебников выдала вам следующие задачи:"
                     objectiveFollowup={
                       <ReplaceObjectivesButton
                         can_change_objective={can_change_objective}

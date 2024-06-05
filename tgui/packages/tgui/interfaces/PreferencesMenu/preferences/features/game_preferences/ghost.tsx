@@ -15,7 +15,7 @@ import {
 import { FeatureDropdownInput } from '../dropdowns';
 
 export const ghost_accs: FeatureChoiced = {
-  name: 'Призрак - аксессуары',
+  name: 'Призрак: аксессуары',
   category: 'ПРИЗРАК',
   description: 'Влияет на то, какие изменения будет иметь ваш призрак.',
   component: FeatureDropdownInput,
@@ -92,21 +92,21 @@ const GhostFormInput = (
 };
 
 export const ghost_form: FeatureChoiced = {
-  name: 'Призрак - форма',
+  name: 'Призрак: форма',
   category: 'ПРИЗРАК',
   description: 'Внешний вид вашего призрака. Нужна подписка BYOND.',
   component: GhostFormInput,
 };
 
 export const ghost_hud: FeatureToggle = {
-  name: 'Призрак - HUD',
+  name: 'Призрак: HUD',
   category: 'ПРИЗРАК',
   description: 'Переключает наличие кнопок на HUD призрака.',
   component: CheckboxInput,
 };
 
 export const ghost_orbit: FeatureChoiced = {
-  name: 'Призрак - орбитирование',
+  name: 'Призрак: орбитирование',
   category: 'ПРИЗРАК',
   description: `
     Форма, по которой ваш призрак будет орбитировать.
@@ -124,7 +124,7 @@ export const ghost_orbit: FeatureChoiced = {
 };
 
 export const ghost_others: FeatureChoiced = {
-  name: 'Призрак - окружающие',
+  name: 'Призрак: окружающие',
   category: 'ПРИЗРАК',
   description: `
     Должны ли призраки других показываться с их настройками, только с их
@@ -134,7 +134,7 @@ export const ghost_others: FeatureChoiced = {
 };
 
 export const inquisitive_ghost: FeatureToggle = {
-  name: 'Призрак - осмотр',
+  name: 'Призрак: осмотр',
   category: 'ПРИЗРАК',
   description: 'Нажатие по чему-то будет вызывать осмотр.',
   component: CheckboxInput,

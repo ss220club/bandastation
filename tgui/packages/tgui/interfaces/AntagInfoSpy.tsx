@@ -29,7 +29,7 @@ export const AntagInfoSpy = () => {
           backgroundImage: 'none',
         }}
       >
-        <Section title={`Вы - ${antag_name || 'Шпион'}.`}>
+        <Section title={`Вы ${antag_name || 'Шпион'}.`}>
           <Stack vertical fill ml={1} mr={1}>
             <Stack.Item fontSize={1.2}>
               Вы были оснащены специальным аплинком, замаскированным под{' '}
