@@ -1,6 +1,6 @@
 /datum/mafia_ability
 	var/name = "Способности мафии"
-	var/ability_action = "жестокое убийство"
+	var/ability_action = "жестоко убить"
 
 	///The priority level this action must be sent at. Setting this to null will prevent it from being triggered automatically.
 	///(COMSIG_MAFIA_NIGHT_PRE_ACTION_PHASE|COMSIG_MAFIA_NIGHT_ACTION_PHASE|COMSIG_MAFIA_NIGHT_KILL_PHASE)
