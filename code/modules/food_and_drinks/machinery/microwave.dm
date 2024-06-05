@@ -472,12 +472,12 @@
 	if(!vampire_charging_capable)
 		return NONE
 
-		vampire_charging_enabled = !vampire_charging_enabled
-		balloon_alert(user, "установлен на [vampire_charging_enabled ? "зарядку" : "готовку"]")
-		playsound(src, 'sound/machines/twobeep_high.ogg', 50, FALSE)
-		if(HAS_SILICON_ACCESS(user))
-			visible_message(span_notice("[user] поставил [src] на [vampire_charging_enabled ? "зарядку" : "готовку"]."), blind_message = span_notice("Вы слышите информативный звук от [src]!"))
-		return CLICK_ACTION_SUCCESS
+	vampire_charging_enabled = !vampire_charging_enabled
+	balloon_alert(user, "установлен на [vampire_charging_enabled ? "зарядку" : "готовку"]")
+	playsound(src, 'sound/machines/twobeep_high.ogg', 50, FALSE)
+	if(HAS_SILICON_ACCESS(user))
+		visible_message(span_notice("[user] поставил [src] на [vampire_charging_enabled ? "зарядку" : "готовку"]."), blind_message = span_notice("Вы слышите информативный звук от [src]!"))
+	return CLICK_ACTION_SUCCESS
 /obj/machinery/microwave/CtrlClick(mob/user)
 	. = ..()
 	if(user.can_perform_action(src) && cell_powered && !isnull(cell) && anchored)
@@ -858,7 +858,7 @@
 /// Type of microwave that automatically turns it self on erratically. Probably don't use this outside of the holodeck program "Microwave Paradise".
 /// You could also live your life with a microwave that will continously run in the background of everything while also not having any power draw. I think the former makes more sense.
 /obj/machinery/microwave/hell
-	desc = "Cooks and boils stuff. This one appears to be a bit... off."
+	desc = "Нагревает всякие штуки. Эта кажется... выключена."
 	use_power = NO_POWER_USE
 	idle_power_usage = 0
 	active_power_usage = 0
@@ -871,7 +871,7 @@
 		addtimer(CALLBACK(src, PROC_REF(wzhzhzh)), rand(0.5 SECONDS, 3 SECONDS))
 
 /obj/machinery/microwave/engineering
-	name = "беспроводная микроволновая печь"
+	name = "беспроводная микроволновка"
 	desc = "Для трудолюбивого работника, который находится в глуши и просто хочет разогреть кондитерское изделие из автомата с завышенной ценой.."
 	base_icon_state = "engi_"
 	icon_state = "engi_mw_complete"
