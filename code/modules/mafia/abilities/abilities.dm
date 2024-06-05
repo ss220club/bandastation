@@ -131,7 +131,7 @@
 	else
 		using_ability = TRUE
 		target_role = new_target
-		feedback_text = replacetext(feedback_text, "%WILL_PERFORM%", "сейчас")
+		feedback_text = replacetext(feedback_text, "%WILL_PERFORM%", "")
 
 	host_role.send_message_to_player(span_notice(feedback_text))
 	return TRUE
