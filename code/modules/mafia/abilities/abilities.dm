@@ -66,7 +66,7 @@
 		if(use_flags & CAN_USE_ON_DEAD)
 			if(potential_target.game_status != MAFIA_DEAD)
 				if(!silent)
-					host_role.send_message_to_player(span_notice("Это можно использовать только для мертвых игроков."))
+					host_role.send_message_to_player(span_notice("Это можно использовать только на мертвых игроках."))
 				return FALSE
 		else if(potential_target.game_status == MAFIA_DEAD)
 			if(!silent)
