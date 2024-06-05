@@ -341,7 +341,7 @@ GLOBAL_LIST_EMPTY(antagonists)
  */
 /datum/antagonist/proc/greet()
 	if(!silent)
-		to_chat(owner.current, span_big("Вы - [src.name]."))
+		to_chat(owner.current, span_big("Вы [src.name]."))
 
 /**
  * Proc that sends fluff or instructional messages to the player when they lose this antag datum.

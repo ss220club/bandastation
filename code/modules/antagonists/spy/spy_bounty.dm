@@ -359,7 +359,7 @@
 
 	location_type = machine_area.type
 	name ||= "Кража [machine.name]"
-	help ||= "Украдите - [machine.name] находящаяся в [machine_area]."
+	help ||= "Украдите - [machine.name], находящаяся в [machine_area]."
 	return TRUE
 
 /datum/spy_bounty/machine/is_stealable(atom/movable/stealing)

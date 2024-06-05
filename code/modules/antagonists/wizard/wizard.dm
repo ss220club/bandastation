@@ -216,7 +216,7 @@ GLOBAL_LIST_EMPTY(wizard_spellbook_purchases_by_key)
 	var/wizard_name_second = pick(GLOB.wizard_second)
 	var/randomname = "[wizard_name_first] [wizard_name_second]"
 	var/mob/living/wiz_mob = owner.current
-	var/newname = sanitize_name(reject_bad_text(tgui_input_text(wiz_mob, "Вы - [name]. Вы хотите изменить свое имя на другое?", "Смена имени", randomname, MAX_NAME_LEN)))
+	var/newname = sanitize_name(reject_bad_text(tgui_input_text(wiz_mob, "Ваше имя - [name]. Вы хотите изменить его на другое?", "Смена имени", randomname, MAX_NAME_LEN)))
 
 	if (!newname)
 		newname = randomname

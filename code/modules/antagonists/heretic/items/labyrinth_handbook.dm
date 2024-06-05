@@ -39,7 +39,7 @@
 	if(!IS_HERETIC_OR_MONSTER(user))
 		return
 	. += span_hypnophrase("Материализует барьер, который пропускает только вас. Действует 8 секунд.")
-	. += span_hypnophrase("Осталось использований - <b>[uses]</b>.")
+	. += span_hypnophrase("Осталось использований: <b>[uses]</b>.")
 
 /obj/item/heretic_labyrinth_handbook/afterattack(atom/target, mob/user, proximity_flag)
 	. = ..()

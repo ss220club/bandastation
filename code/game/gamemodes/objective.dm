@@ -759,7 +759,7 @@ GLOBAL_LIST_EMPTY(possible_items)
 /datum/objective/protect_object/update_explanation_text()
 	. = ..()
 	if(protect_target)
-		explanation_text = "Защитите любой ценой - \the [protect_target]."
+		explanation_text = "Защитите любой ценой - [protect_target]."
 	else
 		explanation_text = "Свободная задача."
 
