@@ -1,0 +1,4 @@
+#include "_components.dm"
+
+// Largetransparency
+#include "code/largetransparency.dm"

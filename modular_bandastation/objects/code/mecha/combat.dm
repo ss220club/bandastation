@@ -5,51 +5,81 @@
 // GYGAX
 
 /// NT Special Gygax
-/obj/mecha/combat/gygax/nt
+/obj/vehicle/sealed/mecha/gygax/nt
 	name = "Специальный Гигакс НТ"
 	desc = "Козырь Nanotrasen при решении проблем, легкий мех окрашенный в победоносные цвета НТ. Если вы видите этот мех, вероятно все проблемы уже решены."
 	icon = 'modular_bandastation/objects/icons/mecha.dmi'
 	icon_state = "ntgygax"
-	initial_icon = "ntgygax"
+	base_icon_state = "ntgygax"
 	max_integrity = 300
-	deflect_chance = 20
-	leg_overload_coeff = 100
 	max_temperature = 35000
-	armor = list(melee = 40, bullet = 40, laser = 50, energy = 35, bomb = 20, rad = 20, fire = 100, acid = 100)
-	operation_req_access = list(ERT_TYPE_AMBER)
-	max_equip = 5
+	armor_type = /datum/armor/mecha_gygax_nt
+	accesses = list(ERT_TYPE_AMBER)
 	wreckage = /obj/structure/mecha_wreckage/gygax/gygax_nt
-	starting_voice = /obj/item/mecha_modkit/voice/nanotrasen
 	destruction_sleep_duration = 2 SECONDS
+	max_equip_by_category = list(
+		MECHA_L_ARM = 1,
+		MECHA_R_ARM = 1,
+		MECHA_UTILITY = 4,
+		MECHA_POWER = 1,
+		MECHA_ARMOR = 3,
+	)
+	equip_by_category = list(
+		MECHA_L_ARM = /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/scattershot,
+		MECHA_R_ARM = null,
+		MECHA_UTILITY = list(/obj/item/mecha_parts/mecha_equipment/radio, /obj/item/mecha_parts/mecha_equipment/air_tank/full, /obj/item/mecha_parts/mecha_equipment/thrusters/ion),
+		MECHA_POWER = list(),
+		MECHA_ARMOR = list(/obj/item/mecha_parts/mecha_equipment/armor/anticcw_armor_booster, /obj/item/mecha_parts/mecha_equipment/armor/antiproj_armor_booster),
+		)
 
-/obj/mecha/combat/gygax/nt/loaded_red/Initialize(mapload)
+/obj/vehicle/sealed/mecha/gygax/nt/red
+	max_equip_by_category = list(
+		MECHA_L_ARM = 1,
+		MECHA_R_ARM = 1,
+		MECHA_UTILITY = 4,
+		MECHA_POWER = 1,
+		MECHA_ARMOR = 3,
+	)
+	equip_by_category = list(
+		MECHA_L_ARM = /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/scattershot,
+		MECHA_R_ARM = null,
+		MECHA_UTILITY = list(/obj/item/mecha_parts/mecha_equipment/radio, /obj/item/mecha_parts/mecha_equipment/air_tank/full, /obj/item/mecha_parts/mecha_equipment/thrusters/ion),
+		MECHA_POWER = list(),
+		MECHA_ARMOR = list(/obj/item/mecha_parts/mecha_equipment/armor/anticcw_armor_booster, /obj/item/mecha_parts/mecha_equipment/armor/antiproj_armor_booster),
+		)
+
+/obj/vehicle/sealed/mecha/gygax/nt/epsilon
+	max_equip_by_category = list(
+		MECHA_L_ARM = 1,
+		MECHA_R_ARM = 1,
+		MECHA_UTILITY = 4,
+		MECHA_POWER = 1,
+		MECHA_ARMOR = 3,
+	)
+	equip_by_category = list(
+		MECHA_L_ARM = /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/scattershot,
+		MECHA_R_ARM = null,
+		MECHA_UTILITY = list(/obj/item/mecha_parts/mecha_equipment/radio, /obj/item/mecha_parts/mecha_equipment/air_tank/full, /obj/item/mecha_parts/mecha_equipment/thrusters/ion),
+		MECHA_POWER = list(),
+		MECHA_ARMOR = list(/obj/item/mecha_parts/mecha_equipment/armor/anticcw_armor_booster, /obj/item/mecha_parts/mecha_equipment/armor/antiproj_armor_booster),
+		)
+
+/datum/armor/mecha_gygax_nt
+	melee = 40
+	bullet = 40
+	laser = 50
+	energy = 35
+	bomb = 20
+	fire = 100
+	acid = 100
+
+/obj/vehicle/sealed/mecha/gygax/nt/populate_parts()
 	. = ..()
-	var/obj/item/mecha_parts/mecha_equipment/ME = new /obj/item/mecha_parts/mecha_equipment/weapon/energy/laser
-	ME.attach(src)
-	ME = new /obj/item/mecha_parts/mecha_equipment/weapon/energy/disabler
-	ME.attach(src)
-	ME = new /obj/item/mecha_parts/mecha_equipment/anticcw_armor_booster
-	ME.attach(src)
-	ME = new /obj/item/mecha_parts/mecha_equipment/antiproj_armor_booster
-	ME.attach(src)
-	ME = new /obj/item/mecha_parts/mecha_equipment/thrusters
-	ME.attach(src)
-
-/obj/mecha/combat/gygax/nt/loaded_epsilon/Initialize(mapload)
-	. = ..()
-	var/obj/item/mecha_parts/mecha_equipment/ME = new /obj/item/mecha_parts/mecha_equipment/weapon/energy/xray/triple
-	ME.attach(src)
-	ME = new /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/missile_rack/heavy
-	ME.attach(src)
-	ME = new /obj/item/mecha_parts/mecha_equipment/anticcw_armor_booster
-	ME.attach(src)
-	ME = new /obj/item/mecha_parts/mecha_equipment/tesla_energy_relay
-	ME.attach(src)
-	ME = new /obj/item/mecha_parts/mecha_equipment/thrusters
-	ME.attach(src)
-
-/obj/mecha/combat/gygax/nt/add_cell()
-	cell = new /obj/item/stock_parts/cell/high/slime(src)
+	cell = new /obj/item/stock_parts/cell/bluespace
+	scanmod = new /obj/item/stock_parts/scanning_module/triphasic(src)
+	capacitor = new /obj/item/stock_parts/capacitor/quadratic(src)
+	servo = new /obj/item/stock_parts/servo/femto(src)
+	update_part_values()
 
 // NT Special Gygax wreckage
 /obj/structure/mecha_wreckage/gygax/gygax_nt
@@ -61,41 +91,48 @@
 // DURAND
 
 /// Rover
-/obj/mecha/combat/durand/rover
+/obj/vehicle/sealed/mecha/durand/rover
 	name = "Ровер"
 	desc = "Боевой мех, разработанный Синдикатом на основе Durand Mk. II путем удаления ненужных вещей и добавления некоторых своих технологий. Гораздо лучше защищен от любых опасностей, связанных с Нанотрейзен."
 	icon = 'modular_bandastation/objects/icons/mecha.dmi'
 	icon_state = "darkdurand"
-	initial_icon = "darkdurand"
-	armor = list(melee = 30, bullet = 40, laser = 50, energy = 50, bomb = 20, rad = 50, fire = 100, acid = 100)
-	operation_req_access = list(ACCESS_SYNDICATE)
-	max_equip = 4
+	base_icon_state = "darkdurand"
+	armor_type = /datum/armor/mecha_durand_rover
+	accesses = list(ACCESS_SYNDICATE)
 	internal_damage_threshold = 35
 	wreckage = /obj/structure/mecha_wreckage/durand/rover
-	starting_voice = /obj/item/mecha_modkit/voice/syndicate
 	destruction_sleep_duration = 2 SECONDS
+	max_equip_by_category = list(
+		MECHA_L_ARM = 1,
+		MECHA_R_ARM = 1,
+		MECHA_UTILITY = 4,
+		MECHA_POWER = 1,
+		MECHA_ARMOR = 3,
+	)
+	equip_by_category = list(
+		MECHA_L_ARM = /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/scattershot,
+		MECHA_R_ARM = null,
+		MECHA_UTILITY = list(/obj/item/mecha_parts/mecha_equipment/radio, /obj/item/mecha_parts/mecha_equipment/air_tank/full, /obj/item/mecha_parts/mecha_equipment/thrusters/ion),
+		MECHA_POWER = list(),
+		MECHA_ARMOR = list(/obj/item/mecha_parts/mecha_equipment/armor/anticcw_armor_booster, /obj/item/mecha_parts/mecha_equipment/armor/antiproj_armor_booster),
+		)
 
-/obj/mecha/combat/durand/rover/GrantActions(mob/living/user, human_occupant = 0)
-	..()
-	thrusters_action.Grant(user, src)
+/datum/armor/mecha_durand_rover
+	melee = 30
+	bullet = 40
+	laser = 50
+	energy = 50
+	bomb = 20
+	fire = 100
+	acid = 100
 
-/obj/mecha/combat/durand/rover/RemoveActions(mob/living/user, human_occupant = 0)
-	..()
-	thrusters_action.Remove(user)
-
-/obj/mecha/combat/durand/rover/loaded/Initialize(mapload)
+/obj/vehicle/sealed/mecha/durand/rover/populate_parts()
 	. = ..()
-	var/obj/item/mecha_parts/mecha_equipment/ME = new /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/lmg/syndi
-	ME.attach(src)
-	ME = new /obj/item/mecha_parts/mecha_equipment/repair_droid
-	ME.attach(src)
-	ME = new /obj/item/mecha_parts/mecha_equipment/antiproj_armor_booster
-	ME.attach(src)
-	ME = new /obj/item/mecha_parts/mecha_equipment/weapon/energy/ion
-	ME.attach(src)
-
-/obj/mecha/combat/durand/rover/loaded/add_cell()
-	cell = new /obj/item/stock_parts/cell/bluespace(src)
+	cell = new /obj/item/stock_parts/cell/bluespace
+	scanmod = new /obj/item/stock_parts/scanning_module/triphasic(src)
+	capacitor = new /obj/item/stock_parts/capacitor/quadratic(src)
+	servo = new /obj/item/stock_parts/servo/femto(src)
+	update_part_values()
 
 // Rover's wreckage
 /obj/structure/mecha_wreckage/durand/rover

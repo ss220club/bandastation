@@ -1,46 +1,30 @@
-/obj/item/melee/baton/electrostaff
+/obj/item/melee/baton/security/electrostaff
 	name = "электропосох"
 	desc = "Шоковая палка, только более мощная, двуручная и доступная наиболее авторитетным членам силовых структур Nanotrasen. А еще у неё нет тупого конца."
 	lefthand_file = 'modular_bandastation/objects/icons/inhands/melee_lefthand.dmi'
 	righthand_file = 'modular_bandastation/objects/icons/inhands/melee_righthand.dmi'
 	icon = 'modular_bandastation/objects/icons/melee.dmi'
-	base_icon = "electrostaff"
 	icon_state = "electrostaff_orange"
-	slot_flags = SLOT_FLAG_BELT
+	slot_flags = ITEM_SLOT_BELT
 	w_class = WEIGHT_CLASS_HUGE
 	force = 10
 	throwforce = 7
-	origin_tech = "combat=5"
-	attack_verb = list("attacked", "beaten")
 	/// What sound plays when its opening
-	var/sound_on = 'modular_bandastation/objects/sound/weapons/melee/electrostaff/on.ogg'
-	armor = list(MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 50, RAD = 0, FIRE = 80, ACID = 80)
-
-	stam_damage = 80
+	var/sound_on = 'modular_bandastation/objects/sounds/weapons/melee/electrostaff/on.ogg'
 	/// How much burn damage it does when turned on
 	var/burn_damage = 5
-
 	turned_on = FALSE
 	knockdown_duration = 15 SECONDS
 	hitcost = 1600 // 6 hits to 0 power
 	cooldown = 3.5 SECONDS
 	knockdown_delay = 2.5 SECONDS
-
 	/// allows one-time reskinning
-	var/unique_reskin = TRUE
-	/// the skin choice
-	var/current_skin = null
-	var/list/options = list()
-
-/obj/item/melee/baton/electrostaff/Initialize(mapload)
-	current_skin = "_orange"
-	AddComponent(/datum/component/parry, _stamina_constant = 2, _stamina_coefficient = 0.5, _parryable_attack_types = NON_PROJECTILE_ATTACKS)
-	AddComponent(/datum/component/two_handed, force_unwielded = force / 2, force_wielded = force, wield_callback = CALLBACK(src, PROC_REF(on_wield)), unwield_callback = CALLBACK(src, PROC_REF(on_unwield)))
-	options["Оранжевое свечение"] = "_orange"
-	options["Красное свечение"] = "_red"
-	options["Фиолетовое свечение"] = "_purple"
-	options["Синее свечение"] = "_blue"
-	. = ..()
+	unique_reskin = list(
+		"Оранжевое свечение" = "_orange"
+		"Красное свечение" = "_red"
+		"Фиолетовое свечение" = "_purple"
+		"Синее свечение" = "_blue"
+	)
 
 /obj/item/melee/baton/electrostaff/loaded/Initialize(mapload) //this one starts with a cell pre-installed.
 	link_new_cell()
@@ -65,8 +49,6 @@
 	. = ..()
 	. -= span_notice("This item can be recharged in a recharger. Using a screwdriver on this item will allow you to access its power cell, which can be replaced.")
 	. += span_notice("Данный предмет не имеет внешних разъемов для зарядки. Используйте <b>отвертку</b> для доступа к внутренней батарее, чтобы заменить или зарядить её.")
-	if(unique_reskin)
-		. += span_notice("Alt-клик, чтобы изменить свечение.")
 
 /obj/item/melee/baton/electrostaff/attack_self(mob/user)
 	var/signal_ret = SEND_SIGNAL(src, COMSIG_ITEM_ATTACK_SELF, user)

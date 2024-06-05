@@ -26,8 +26,9 @@
 	if(skin_applied)
 		. += span_notice("Нажмите <b>Alt-Click</b> на карту, чтобы снять наклейку.")
 
-/obj/item/card/id/AltClick(mob/user)
-	if(user.stat || HAS_TRAIT(user, TRAIT_HANDS_BLOCKED) || user.restrained())
+/obj/item/card/id/click_alt(mob/living/user)
+	. = ..()
+	if(user.stat || HAS_TRAIT(user, TRAIT_HANDS_BLOCKED) || HAS_TRAIT(user, TRAIT_RESTRAINED))
 		to_chat(user, span_warning("У вас нет возможности снять наклейку!"))
 		return
 
@@ -35,7 +36,7 @@
 		to_chat(user, span_warning("На карте нет наклейки!"))
 		return
 
-	if(user.a_intent == INTENT_HARM)
+	if(user.combat_mode)
 		to_chat(user, span_warning("Вы срываете наклейку с карты!"))
 		playsound(user.loc, 'sound/items/poster_ripped.ogg', 50, TRUE)
 		remove_skin(delete = TRUE)
@@ -62,14 +63,14 @@
 		return FALSE
 
 	to_chat(user, span_notice("Вы начинаете наносить наклейку на карту."))
-	if(!do_after(user, 2 SECONDS, target = src, progress = TRUE, allow_moving = TRUE))
+	if(!do_after(user, 2 SECONDS, target = src, progress = TRUE, timed_action_flags = IGNORE_USER_LOC_CHANGE))
 		return FALSE
 
 	var/mutable_appearance/card_skin = mutable_appearance(skin.icon, skin.icon_state)
 	card_skin.color = skin.color
 	to_chat(user, span_notice("Вы наклеили [skin.pronoun_name] на [src]."))
 	desc += "<br>[skin.info]"
-	user.drop_item()
+	user.dropItemToGround()
 	skin.forceMove(src)
 	skin_applied = skin
 	add_overlay(card_skin)
@@ -102,9 +103,9 @@
 	pronoun_name = "голо-наклейку"
 	info = "На ней голо-наклейка."
 	var/static/list/color_list = list(
-		"Красный" = LIGHT_COLOR_RED,
+		"Красный" = LIGHT_COLOR_INTENSE_RED,
 		"Зелёный" = LIGHT_COLOR_GREEN,
-		"Синий" = LIGHT_COLOR_LIGHTBLUE,
+		"Синий" = LIGHT_COLOR_CYAN,
 		"Жёлтый" = LIGHT_COLOR_HOLY_MAGIC,
 		"Оранжевый" = LIGHT_COLOR_ORANGE,
 		"Фиолетовый" = LIGHT_COLOR_LAVENDER,

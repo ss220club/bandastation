@@ -1,23 +1,25 @@
-// Supply Crate
-/datum/supply_packs/misc/randomised/id_skins
-	name = "Наклейки на карточку"
-	containertype = /obj/structure/closet/crate/plastic
-	num_contained = 10
-	contains = list()
-	cost = 2000
-	containername = "ящик с наклейками"
+// When you need an empty space
+/datum/nothing
 
-/datum/supply_packs/misc/randomised/id_skins/New()
+// Supply Crate
+/datum/supply_pack/misc/id_skins
+	name = "Наклейки на карточку"
+	crate_type = /obj/structure/closet/crate/wooden
+	contains = list()
+	cost = CARGO_CRATE_VALUE * 10
+	crate_name = "ящик с наклейками"
+
+/datum/supply_pack/misc/id_skins/New()
 	for(var/i in 1 to 10)
 		contains += pick(subtypesof(/obj/item/id_skin))
 	. = ..()
 
 // Spawner
-/obj/effect/spawner/random_spawners/id_skins
+/obj/effect/spawner/random/id_skins
 	name = "Случайная наклейка на карту"
 	icon = 'modular_bandastation/maps220/icons/spawner_icons.dmi'
 	icon_state = "ID_Random"
-	result = list(
+	loot = list(
 		/obj/item/id_skin/colored = 10,
 		/obj/item/id_skin/donut = 5,
 		/obj/item/id_skin/business = 5,
@@ -44,8 +46,8 @@
 		/obj/item/id_skin/boykisser = 1
 	)
 
-/obj/effect/spawner/random_spawners/id_skins/no_chance
-	result = list(
+/obj/effect/spawner/random/id_skins/no_chance
+	loot = list(
 		/datum/nothing = 80,
 		/obj/item/id_skin/colored = 10,
 		/obj/item/id_skin/donut = 5,
@@ -74,19 +76,13 @@
 	)
 
 // Prize Counter
-/datum/prize_item/id_skin
-	name = "Наклейки на карту"
-	desc = "Коробочка с тремя многоразовыми наклейками на ID карту."
-	typepath = /obj/item/storage/box/id_skins
-	cost = 200
-
 /obj/item/storage/box/id_skins
 	name = "наклейки на карту"
 	desc = "Коробка с кучкой наклеек на ID карту."
 	icon = 'modular_bandastation/objects/icons/id_skins.dmi'
 	icon_state = "id_skins_box"
 
-/obj/item/storage/box/id_skins/populate_contents()
+/obj/item/storage/box/id_skins/PopulateContents()
 	for(var/I in 1 to 3)
 		var/skin = pick(subtypesof(/obj/item/id_skin))
 		new skin(src)
