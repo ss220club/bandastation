@@ -34,7 +34,7 @@
 		return
 	paperamount += paper_result
 	qdel(item)
-	playsound(loc, 'modular_bandastation/objects/sound/pshred.ogg', 75, 1)
+	playsound(loc, 'modular_bandastation/objects/sounds/pshred.ogg', 75, 1)
 	if(paperamount > max_paper)
 		to_chat(user, span_danger("[src] was too full, and shredded paper goes everywhere!"))
 		for(var/i in 1 to paperamount-max_paper)
@@ -47,7 +47,7 @@
 
 /obj/machinery/papershredder/wrench_act(mob/user, obj/item/tool)
 	. = TRUE
-	if(!tool.use_tool(src, user, 0, volume = tool.tool_volume))
+	if(!tool.use_tool(src, user, 0))
 		return
 	anchored = !anchored
 	if(anchored)
@@ -59,11 +59,12 @@
 	. = ..()
 	. += span_notice("<b>Alt-Click</b> to empty [src].")
 
-/obj/machinery/papershredder/AltClick(mob/user)
+/obj/machinery/papershredder/click_alt(mob/user)
+	. = ..()
 	empty_contents(user)
 
 /obj/machinery/papershredder/proc/empty_contents(mob/user)
-	if(user.stat || user.restrained())
+	if(user.stat || HAS_TRAIT(user, TRAIT_RESTRAINED))
 		to_chat(user, span_notice("You need your hands and legs free for this."))
 		return
 
@@ -109,6 +110,7 @@
 
 /obj/machinery/papershredder/update_icon_state()
 	icon_state = "papershredder[clamp(round(paperamount/3), 0, 5)]"
+	return ..()
 
 /obj/item/shredded_paper/attackby(obj/item/shredp as obj, mob/user)
 	if(resistance_flags & ON_FIRE)

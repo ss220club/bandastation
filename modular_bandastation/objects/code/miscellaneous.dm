@@ -39,10 +39,12 @@
 	update_icon(UPDATE_ICON_STATE)
 
 /obj/structure/marker_beacon/spotlight/yellow/update_icon_state()
-	set_light(light_range, light_power, LIGHT_COLOR_YELLOW)
+	set_light(light_range, light_power, COLOR_LIGHT_YELLOW)
+	return ..()
 
 /obj/structure/marker_beacon/spotlight/jade/update_icon_state()
-	set_light(light_range, light_power, LIGHT_COLOR_BLUEGREEN)
+	set_light(light_range, light_power, COLOR_CARP_LIGHT_BLUE)
+	return ..()
 
 // Pamphlets
 /obj/item/paper/pamphlet
@@ -56,7 +58,7 @@
 	icon_state = "pamphlet-ds"
 
 /obj/item/paper/pamphlet/gateway
-	info = "<b>Welcome to the Nanotrasen Gateway project...</b><br>\
+	default_raw_text = "<b>Welcome to the Nanotrasen Gateway project...</b><br>\
 			Congratulations! If you're reading this, you and your superiors have decided that you're \
 			ready to commit to a life spent colonising the rolling hills of far away worlds. You \
 			must be ready for a lifetime of adventure, a little bit of hard work, and an award \
@@ -91,7 +93,7 @@
 // TODO: Rewrite text (update info and add map)
 /obj/item/paper/pamphlet/deltainfo
 	name = "информационный буклет ИСН «Керберос»"
-	info = "<font face=\"Verdana\" color=black><center><H1>Буклет нового сотрудника \
+	default_raw_text = "<font face=\"Verdana\" color=black><center><H1>Буклет нового сотрудника \
 			на борту НСС &#34;Керберос&#34;</H1></center>\
 			<BR><HR><B></B><BR><center><H2>Цель</H2></center>\
 			<BR><font size=\"4\">Данное руководство было создано с целью \
@@ -118,15 +120,7 @@
 			новых проектов.</font>"
 
 /obj/item/paper/pamphlet/update_icon_state()
-	return
-
-// Wallets
-// Adding more items that wallet can hold
-/obj/item/storage/wallet/Initialize(mapload)
-	. = ..()
-	can_hold += list(
-		/obj/item/encryptionkey,
-		/obj/item/clothing/gloves/ring)
+	return ..()
 
 // These objects are deleted by Offs, i returned them
 // Archive structure
@@ -140,5 +134,5 @@
 // Display Cases
 /obj/structure/displaycase/hos
 	alert = TRUE
-	start_showpiece_type = /obj/item/food/snacks/donut/sprinkles
+	start_showpiece_type = /obj/item/food/donut/choco
 	req_access = list(ACCESS_HOS)

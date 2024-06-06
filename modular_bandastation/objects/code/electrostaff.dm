@@ -9,142 +9,89 @@
 	w_class = WEIGHT_CLASS_HUGE
 	force = 10
 	throwforce = 7
-	/// What sound plays when its opening
-	var/sound_on = 'modular_bandastation/objects/sounds/weapons/melee/electrostaff/on.ogg'
-	/// How much burn damage it does when turned on
-	var/burn_damage = 5
-	turned_on = FALSE
-	knockdown_duration = 15 SECONDS
-	hitcost = 1600 // 6 hits to 0 power
+	attack_verb_simple = list("бьёт", "ударяет")
+	attack_verb_continuous = list("бьёт", "ударяет")
 	cooldown = 3.5 SECONDS
-	knockdown_delay = 2.5 SECONDS
-	/// allows one-time reskinning
 	unique_reskin = list(
-		"Оранжевое свечение" = "_orange"
-		"Красное свечение" = "_red"
-		"Фиолетовое свечение" = "_purple"
-		"Синее свечение" = "_blue"
+		"Оранжевое свечение" = "electrostaff_orange",
+		"Красное свечение" = "electrostaff_red",
+		"Фиолетовое свечение" = "electrostaff_purple",
+		"Синее свечение" = "electrostaff_blue",
+	)
+	preload_cell_type = /obj/item/stock_parts/cell/high
+	block_chance = 50
+
+/obj/item/melee/baton/security/electrostaff/Initialize(mapload)
+	. = ..()
+	AddComponent(/datum/component/two_handed, \
+		wieldsound = 'modular_bandastation/objects/sounds/weapons/melee/electrostaff/on.ogg', \
+		unwieldsound = 'sound/weapons/saberoff.ogg', \
 	)
 
-/obj/item/melee/baton/electrostaff/loaded/Initialize(mapload) //this one starts with a cell pre-installed.
-	link_new_cell()
-	. = ..()
-
-/obj/item/melee/baton/electrostaff/update_icon_state()
+/obj/item/melee/baton/security/electrostaff/update_icon_state()
+	if(active || HAS_TRAIT(src, TRAIT_WIELDED))
+		icon_state = "[initial(icon_state)]_active"
+		return ..()
 	if(HAS_TRAIT(src, TRAIT_WIELDED))
-		if(cell?.charge >= hitcost)
-			icon_state = "[base_icon][current_skin]_active"
-		else
-			if(cell != null)
-				icon_state = "[base_icon][current_skin]_wield"
-			else
-				icon_state = "[base_icon][current_skin]_nocell_wield"
-	else
-		if(cell != null)
-			icon_state = "[base_icon][current_skin]"
-		else
-			icon_state = "[base_icon][current_skin]_nocell"
+		icon_state = "[initial(icon_state)]_wield"
+		return ..()
+	if(!cell)
+		icon_state = "[initial(icon_state)]_nocell"
+		return ..()
+	if(!cell || HAS_TRAIT(src, TRAIT_WIELDED))
+		icon_state = "[initial(icon_state)]_nocell_wield"
+		return ..()
+	icon_state = "[initial(icon_state)]"
+	return ..()
 
 /obj/item/melee/baton/electrostaff/examine(mob/user)
 	. = ..()
 	. -= span_notice("This item can be recharged in a recharger. Using a screwdriver on this item will allow you to access its power cell, which can be replaced.")
 	. += span_notice("Данный предмет не имеет внешних разъемов для зарядки. Используйте <b>отвертку</b> для доступа к внутренней батарее, чтобы заменить или зарядить её.")
 
-/obj/item/melee/baton/electrostaff/attack_self(mob/user)
-	var/signal_ret = SEND_SIGNAL(src, COMSIG_ITEM_ATTACK_SELF, user)
-	if(signal_ret & COMPONENT_NO_INTERACT)
-		return
-	if(signal_ret & COMPONENT_CANCEL_ATTACK_CHAIN)
-		return TRUE
-
-/obj/item/melee/baton/electrostaff/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
-	if(!HAS_TRAIT(src, TRAIT_WIELDED))
-		return FALSE
+/obj/item/melee/baton/electrostaff/reskin_obj(mob/user)
 	. = ..()
-
-/obj/item/melee/baton/electrostaff/proc/on_wield(obj/item/source, mob/living/carbon/user)
-	after_turn(TRUE, user)
-
-/obj/item/melee/baton/electrostaff/proc/on_unwield(obj/item/source, mob/living/carbon/user)
-	turned_on = FALSE
-	after_turn(FALSE, user)
-
-/obj/item/melee/baton/electrostaff/proc/after_turn(to_turn_on, mob/living/carbon/user)
-	if(cell?.charge >= hitcost)
-		if(to_turn_on)
-			turned_on = TRUE
-		to_chat(user, span_notice("[src] [turned_on ? "включен" : "выключен"]."))
-		playsound(src, turned_on ? sound_on : "sparks", 75, TRUE, -1)
-	else
-		if(!cell)
-			to_chat(user, span_warning("[src] не имеет источников питания!"))
-		else
-			to_chat(user, span_warning("[src] обесточен."))
-	update_icon()
-	add_fingerprint(user)
-
-/// returning false results in no baton attack animation, returning true results in an animation.
-/obj/item/melee/baton/electrostaff/baton_stun(mob/living/L, mob/user, skip_cooldown = FALSE)
-	. = ..(L, user, skip_cooldown)
-	if(. == TRUE)
-		if(user.a_intent == INTENT_HARM)
-			L.apply_damage(burn_damage, BURN)
-
-/obj/item/melee/baton/electrostaff/AltClick(mob/user)
-	. = ..()
-	if(user.incapacitated())
-		to_chat(user, span_warning("Вы не можете этого сделать прямо сейчас!"))
-		return
-	if(unique_reskin && loc == user)
-		reskin_staff(user)
-
-/obj/item/melee/baton/electrostaff/proc/reskin_staff(mob/M)
-	var/list/skins = list()
-	for(var/I in options)
-		skins[I] = image(icon, icon_state = "[base_icon][options[I]]")
-	var/choice = show_radial_menu(M, src, skins, radius = 40, custom_check = CALLBACK(src, PROC_REF(reskin_radial_check), M), require_near = TRUE)
-
-	if(choice && reskin_radial_check(M))
-		current_skin = options[choice]
-		to_chat(M, "[choice] идеально подходит вашему посоху.")
-		unique_reskin = FALSE
-		update_icon()
-		M.update_inv_r_hand()
-		M.update_inv_l_hand()
-
-/obj/item/melee/baton/electrostaff/proc/reskin_radial_check(mob/user)
-	if(!ishuman(user))
-		return FALSE
-	var/mob/living/carbon/human/H = user
-	if(!src || !H.is_in_hands(src) || HAS_TRAIT(H, TRAIT_HANDS_BLOCKED))
-		return FALSE
-	return TRUE
+	switch(icon_state)
+		if("Оранжевое свечение")
+			icon_state = "electrostaff_orange"
+		if("Красное свечение")
+			icon_state = "electrostaff_red"
+		if("Фиолетовое свечение")
+			icon_state = "electrostaff_purple"
+		if("Синее свечение")
+			icon_state = "electrostaff_blue"
+	user.update_held_items()
 
 /obj/item/weaponcrafting/gunkit/electrostaff
 	name = "\improper electrostaff parts kit"
 	desc = "Возьмите 2 оглушающие дубинки. Соедините их вместе, поместив внутрь батарею. Используйте остальные инструменты (лишних винтиков быть не должно)."
-	origin_tech = "combat=6;materials=4"
-	outcome = /obj/item/melee/baton/electrostaff/loaded
 
 /datum/design/electrostaff
 	name = "Electrostaff Parts Kit"
 	desc = "Оперативный ответ."
 	id = "electrostaff"
-	req_tech = list("combat" = 7, "magnets" = 5, "powerstorage" = 5)
-	build_type = PROTOLATHE
-	materials = list(MAT_METAL = 4000, MAT_GLASS = 1000, MAT_GOLD = 3000, MAT_SILVER = 1500)
+	build_type = PROTOLATHE | AWAY_LATHE
+	materials = list(
+		/datum/material/iron = SHEET_MATERIAL_AMOUNT * 2,
+		/datum/material/glass = SHEET_MATERIAL_AMOUNT * 0.5,
+		/datum/material/gold = SHEET_MATERIAL_AMOUNT * 1.5,
+		/datum/material/silver = SHEET_MATERIAL_AMOUNT * 1.5,
+	)
 	build_path = /obj/item/weaponcrafting/gunkit/electrostaff
-	category = list("Weapons")
+	category = list(
+		RND_CATEGORY_INITIAL,
+		RND_CATEGORY_WEAPONS + RND_SUBCATEGORY_WEAPONS_KITS,
+	)
+	departmental_flags = DEPARTMENT_SECURITY
 
 /datum/crafting_recipe/electrostaff
 	name = "Electrostaff"
-	tools = list(TOOL_SCREWDRIVER, TOOL_WIRECUTTER)
-	result = list(/obj/item/melee/baton/electrostaff/loaded)
-	reqs = list(/obj/item/melee/baton = 2,
+	tool_behaviors = list(TOOL_SCREWDRIVER, TOOL_WIRECUTTER)
+	result = list(/obj/item/melee/baton/security/electrostaff)
+	reqs = list(/obj/item/melee/baton/security = 2,
 				/obj/item/stock_parts/cell/high = 1,
 				/obj/item/stack/cable_coil = 5,
 				/obj/item/assembly/signaler/anomaly/flux = 1,
 				/obj/item/weaponcrafting/gunkit/electrostaff = 1)
 	time = 10 SECONDS
-	category = CAT_WEAPONRY
-	subcategory = CAT_WEAPON
+	category = CAT_WEAPON_MELEE

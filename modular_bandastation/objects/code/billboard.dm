@@ -1,19 +1,3 @@
-/obj/structure/billboard
-	name = "\improper Пустой билборд"
-	desc = "Пустой рекламный щит, на котором есть место для любой рекламы."
-	icon = 'modular_bandastation/objects/icons/billboard.dmi'
-	icon_state = "billboard_blank"
-	layer = ABOVE_ALL_MOB_LAYER
-	max_integrity = 1000
-	bound_width = 96
-	bound_height = 32
-	density = TRUE
-	anchored = TRUE
-
-/obj/structure/billboard/Initialize(mapload)
-	. = ..()
-	AddComponent(/datum/component/largetransparency, 0, 1, 2, 0)
-
 /obj/structure/billboard/donk_n_go
 	name = "\improper Билборд Donk-n-Go"
 	desc = "Рекламный щит, рекламирующий Donk-n-Go, вечно актуальное и вечно нездоровое предприятие быстрого питания Donk Co: ЗАШЕЛ, НАЕЛСЯ, УШЕЛ!"
