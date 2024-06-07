@@ -24,5 +24,6 @@
 	)
 
 	GLOB.arcade_prize_pool += list(
-		/obj/item/storage/box/id_skins = 1
+		/obj/item/storage/box/id_skins = 1,
+		/obj/item/storage/wallet/wallet_USSP_1 = 1,
 	)

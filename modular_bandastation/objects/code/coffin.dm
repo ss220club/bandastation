@@ -5,7 +5,7 @@
 	icon_state = "coffin_corn"
 	resistance_flags = FLAMMABLE
 	max_integrity = 300
-	material_drop = /obj/item/food/snacks/grown/corn
+	material_drop = /obj/item/food/grown/corn
 	material_drop_amount = 10
 
 // Выращивание кукурузогроба

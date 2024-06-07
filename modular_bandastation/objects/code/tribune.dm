@@ -7,7 +7,7 @@
 	anchored = FALSE
 	max_integrity = 100
 	resistance_flags = FLAMMABLE
-	var/buildstacktype = /obj/item/stack/sheet/wood
+	var/buildstacktype = /obj/item/stack/sheet/mineral/wood
 	var/buildstackamount = 5
 	var/mover_dir = null
 	var/ini_dir = null
@@ -18,18 +18,12 @@
 
 /obj/structure/tribune/screwdriver_act(mob/user, obj/item/tool)
 	. = TRUE
-	if(flags & NODECONSTRUCT)
+	if(flags_1 & INDESTRUCTIBLE)
 		to_chat(user, span_warning("Try as you might, you can't figure out how to deconstruct [src]."))
 		return
-	if(!tool.use_tool(src, user, 30, volume = tool.tool_volume))
+	if(!tool.use_tool(src, user, 30))
 		return
 	deconstruct(TRUE)
-
-/obj/structure/tribune/deconstruct()
-	// If we have materials, and don't have the NOCONSTRUCT flag
-	if(buildstacktype && (!(flags & NODECONSTRUCT)))
-		new buildstacktype(loc, buildstackamount)
-	..()
 
 /obj/structure/tribune/proc/after_rotation(mob/user)
 	add_fingerprint(user)
@@ -52,7 +46,8 @@
 	else
 		layer = ABOVE_MOB_LAYER
 
-/obj/structure/tribune/AltClick(mob/user)
+/obj/structure/tribune/click_alt(mob/user)
+	. = ..()
 	if(!Adjacent(user))
 		return
 	if(anchored)
@@ -60,20 +55,6 @@
 		return
 	setDir(turn(dir, 90))
 	after_rotation(user)
-
-/obj/structure/tribune/CanPass(atom/movable/mover, turf/target, height=0)
-	if(istype(mover) && mover.checkpass(PASSGLASS))
-		return TRUE
-	if(get_dir(loc, target) == dir)
-		return !density
-	return TRUE
-
-/obj/structure/tribune/CheckExit(atom/movable/object, target)
-	if(istype(object) && object.checkpass(PASSGLASS))
-		return TRUE
-	if(get_dir(object.loc, target) == dir)
-		return FALSE
-	return TRUE
 
 /obj/structure/tribune/centcom
 	name = "CentCom tribune"

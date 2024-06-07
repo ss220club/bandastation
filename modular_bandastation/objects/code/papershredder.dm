@@ -13,7 +13,6 @@
 		/obj/item/paper = 1,
 		/obj/item/newspaper = 3,
 		/obj/item/card/id = 3,
-		/obj/item/paper_bundle = 3,
 		/obj/item/folder = 4,
 		/obj/item/book = 5
 		)
@@ -45,15 +44,10 @@
 	update_icon()
 	add_fingerprint(user)
 
-/obj/machinery/papershredder/wrench_act(mob/user, obj/item/tool)
-	. = TRUE
-	if(!tool.use_tool(src, user, 0))
-		return
-	anchored = !anchored
-	if(anchored)
-		WRENCH_ANCHOR_MESSAGE
-	else
-		WRENCH_UNANCHOR_MESSAGE
+/obj/machinery/papershredder/wrench_act(mob/living/user, obj/item/tool)
+	. = ..()
+	default_unfasten_wrench(user, tool)
+	return ITEM_INTERACT_SUCCESS
 
 /obj/machinery/papershredder/examine(mob/user)
 	. = ..()
@@ -64,8 +58,8 @@
 	empty_contents(user)
 
 /obj/machinery/papershredder/proc/empty_contents(mob/user)
-	if(user.stat || HAS_TRAIT(user, TRAIT_RESTRAINED))
-		to_chat(user, span_notice("You need your hands and legs free for this."))
+	if(HAS_TRAIT(user, TRAIT_RESTRAINED))
+		to_chat(user, span_notice("You need your hands free for this."))
 		return
 
 	if(!paperamount)
@@ -74,14 +68,14 @@
 
 	empty_bin(user)
 
-/obj/machinery/papershredder/proc/empty_bin(mob/living/user, obj/item/storage/empty_into)
+/obj/machinery/papershredder/proc/empty_bin(mob/living/user, obj/item/storage/empty_into, /datum/storage/content)
 
 	// Sanity.
 	if(empty_into && !istype(empty_into))
 		empty_into = null
 
-	if(empty_into && length(empty_into.contents) >= empty_into.storage_slots)
-		to_chat(user, span_notice("[empty_into] is full."))
+	if(empty_into.contents >= empty_into.atom_storage.max_total_storage)
+		user.balloon_alert(user, "[empty_into] is full.")
 		return
 
 	while(paperamount)
@@ -89,9 +83,7 @@
 		if(!SP)
 			break
 		if(empty_into)
-			empty_into.handle_item_insertion(SP)
-			if(length(empty_into.contents) >= empty_into.storage_slots)
-				break
+			empty_into.atom_storage.dump_content_at(empty_into)
 	if(empty_into)
 		if(paperamount)
 			to_chat(user, span_notice("You fill [empty_into] with as much shredded paper as it will carry."))
@@ -113,14 +105,11 @@
 	return ..()
 
 /obj/item/shredded_paper/attackby(obj/item/shredp as obj, mob/user)
-	if(resistance_flags & ON_FIRE)
-		add_fingerprint(user)
-		return
-	if(shredp.get_heat())
+	if(HAS_TRAIT(shredp, ON_FIRE))
 		add_fingerprint(user)
 		user.visible_message(
-			span_danger("\The [user] burns right through [src], turning it to ash. It flutters through the air before settling on the floor in a heap."),
-			span_danger("You burn right through [src], turning it to ash. It flutters through the air before settling on the floor in a heap."))
+			span_danger("\The [user] burns right through [src.name], turning it to ash. It flutters through the air before settling on the floor in a heap."),
+			span_danger("You burn right through [src.name], turning it to ash. It flutters through the air before settling on the floor in a heap."))
 		fire_act()
 	else
 		..()
