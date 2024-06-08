@@ -46,7 +46,6 @@
 
 // item cooldowns
 #define COOLDOWN_SIGNALLER_SEND "cooldown_signaller_send"
-#define COOLDOWN_TOOL_SOUND "cooldown_tool_sound"
 
 //circuit cooldowns
 #define COOLDOWN_CIRCUIT_SOUNDEMITTER "circuit_soundemitter"

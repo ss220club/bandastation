@@ -4,7 +4,7 @@
  * @license MIT
  */
 
-import { isEscape, KEY } from 'common/keys';
+import { KEY } from 'common/keys';
 import { classes } from 'common/react';
 import { debounce } from 'common/timer';
 import { KeyboardEvent, SyntheticEvent, useEffect, useRef } from 'react';
@@ -127,7 +127,7 @@ export function Input(props: Props) {
       return;
     }
 
-    if (isEscape(event.key)) {
+    if (event.key === KEY.Escape) {
       onEscape?.(event);
 
       event.currentTarget.value = toInputValue(value);

@@ -79,9 +79,6 @@
 	name = "Chemistry"
 	icon_state = "chem"
 
-/area/station/medical/chemistry/minisat
-	name = "Chemistry Mini-Satellite"
-
 /area/station/medical/pharmacy
 	name = "\improper Pharmacy"
 	icon_state = "pharmacy"

@@ -491,10 +491,12 @@
 				return TRUE
 			var/datum/deathmatch_modifier/chosen_modifier = GLOB.deathmatch_game.modifiers[modpath]
 			if(modpath in modifiers)
-				unselect_modifier(chosen_modifier)
+				chosen_modifier.unselect(src)
+				modifiers -= modpath
 				return TRUE
 			if(chosen_modifier.selectable(src))
-				select_modifier(chosen_modifier)
+				chosen_modifier.on_select(src)
+				modifiers += modpath
 				return TRUE
 
 		if ("admin") // Admin functions
@@ -509,15 +511,6 @@
 
 	return FALSE
 
-/// Selects the passed modifier.
-/datum/deathmatch_lobby/proc/select_modifier(datum/deathmatch_modifier/modifier)
-	modifier.on_select(src)
-	modifiers += modifier.type
-
-/// Deselects the passed modifier.
-/datum/deathmatch_lobby/proc/unselect_modifier(datum/deathmatch_modifier/modifier)
-	modifier.unselect(src)
-	modifiers -= modifier.type
 
 /datum/deathmatch_lobby/ui_close(mob/user)
 	. = ..()

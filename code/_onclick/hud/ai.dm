@@ -10,7 +10,7 @@
 	icon_state = "ai_core"
 
 /atom/movable/screen/ai/aicore/Click()
-	if(isobserver(usr))
+	if(..())
 		return
 	var/mob/living/silicon/ai/AI = usr
 	AI.view_core()

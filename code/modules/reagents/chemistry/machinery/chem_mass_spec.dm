@@ -434,10 +434,13 @@
 	replace_beaker(user, TRUE)
 	return CLICK_ACTION_SUCCESS
 
-/obj/machinery/chem_mass_spec/click_alt_secondary(mob/living/user)
+/obj/machinery/chem_mass_spec/alt_click_secondary(mob/living/user)
+	. = ..()
+	if(!can_interact(user))
+		return
 	if(processing_reagents)
 		balloon_alert(user, "still processing!")
-		return
+		return ..()
 	replace_beaker(user, FALSE)
 
 /obj/machinery/chem_mass_spec/process(seconds_per_tick)

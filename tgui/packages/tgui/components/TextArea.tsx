@@ -5,7 +5,7 @@
  * @license MIT
  */
 
-import { isEscape, KEY } from 'common/keys';
+import { KEY } from 'common/keys';
 import { classes } from 'common/react';
 import {
   forwardRef,
@@ -82,7 +82,7 @@ export const TextArea = forwardRef(
         return;
       }
 
-      if (isEscape(event.key)) {
+      if (event.key === KEY.Escape) {
         onEscape?.(event);
         if (selfClear) {
           event.currentTarget.value = '';

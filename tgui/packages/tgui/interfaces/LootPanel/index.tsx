@@ -1,4 +1,4 @@
-import { isEscape } from 'common/keys';
+import { KEY } from 'common/keys';
 import { BooleanLike } from 'common/react';
 import { useState } from 'react';
 
@@ -27,7 +27,7 @@ export function LootPanel(props) {
     <Window height={275} width={190} title={`Contents: ${total}`}>
       <Window.Content
         onKeyDown={(event) => {
-          if (isEscape(event.key)) {
+          if (event.key === KEY.Escape) {
             Byond.sendMessage('close');
           }
         }}

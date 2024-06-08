@@ -1,4 +1,4 @@
-import { isEscape, KEY } from 'common/keys';
+import { KEY } from 'common/keys';
 import { BooleanLike } from 'common/react';
 import { KeyboardEvent, useState } from 'react';
 
@@ -55,6 +55,9 @@ export function AlertModal(props) {
       case KEY.Enter:
         act('choose', { choice: buttons[selected] });
         return;
+      case KEY.Escape:
+        act('cancel');
+        return;
       case KEY.Left:
         event.preventDefault();
         onKey(DIRECTION.Decrement);
@@ -64,12 +67,6 @@ export function AlertModal(props) {
         event.preventDefault();
         onKey(DIRECTION.Increment);
         return;
-
-      default:
-        if (isEscape(event.key)) {
-          act('cancel');
-          return;
-        }
     }
   }
 

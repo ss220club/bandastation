@@ -1,4 +1,4 @@
-import { isEscape, KEY } from 'common/keys';
+import { KEY } from 'common/keys';
 import { KeyboardEvent, useState } from 'react';
 
 import { useBackend } from '../backend';
@@ -67,7 +67,7 @@ export const TextInputModal = (props) => {
           ) {
             act('submit', { entry: input });
           }
-          if (isEscape(event.key)) {
+          if (event.key === KEY.Escape) {
             act('cancel');
           }
         }}

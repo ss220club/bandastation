@@ -17,7 +17,7 @@
 	interaction_flags_machine = INTERACT_MACHINE_OPEN
 	circuit = /obj/item/circuitboard/machine/crossing_signal
 	// pointless if it only takes 2 seconds to cross but updates every 2 seconds
-	subsystem_type = /datum/controller/subsystem/processing/transport
+	subsystem_type = /datum/controller/subsystem/processing/fastprocess
 	light_color = LIGHT_COLOR_BABY_BLUE
 	/// green, amber, or red for tram, blue if it's emag, tram missing, etc.
 	var/signal_state = XING_STATE_MALF
@@ -40,8 +40,8 @@
 	* Red: decent chance of getting hit, but if you're quick it's a decent gamble.
 	* Amber: slow people may be in danger.
 	*/
-	var/amber_distance_threshold = XING_THRESHOLD_AMBER
-	var/red_distance_threshold = XING_THRESHOLD_RED
+	var/amber_distance_threshold = AMBER_THRESHOLD_NORMAL
+	var/red_distance_threshold = RED_THRESHOLD_NORMAL
 
 /** Crossing signal subtypes
  *
@@ -203,18 +203,34 @@
 	sensor_ref = null
 	if(operating_status < TRANSPORT_REMOTE_WARNING)
 		operating_status = TRANSPORT_REMOTE_WARNING
+		degraded_response()
 	update_appearance()
 
 /obj/machinery/transport/crossing_signal/proc/wake_sensor()
+	if(operating_status > TRANSPORT_REMOTE_WARNING)
+		degraded_response()
+		return
+
 	var/obj/machinery/transport/guideway_sensor/linked_sensor = sensor_ref?.resolve()
 	if(isnull(linked_sensor))
 		operating_status = TRANSPORT_REMOTE_WARNING
+		degraded_response()
 
 	else if(linked_sensor.trigger_sensor())
 		operating_status = TRANSPORT_SYSTEM_NORMAL
+		normal_response()
 
 	else
 		operating_status = TRANSPORT_REMOTE_WARNING
+		degraded_response()
+
+/obj/machinery/transport/crossing_signal/proc/normal_response()
+	amber_distance_threshold = AMBER_THRESHOLD_NORMAL
+	red_distance_threshold = RED_THRESHOLD_NORMAL
+
+/obj/machinery/transport/crossing_signal/proc/degraded_response()
+	amber_distance_threshold = AMBER_THRESHOLD_DEGRADED
+	red_distance_threshold = RED_THRESHOLD_DEGRADED
 
 /obj/machinery/transport/crossing_signal/proc/clear_uplink()
 	inbound = null
@@ -300,23 +316,20 @@
 	end_processing()
 
 /obj/machinery/transport/crossing_signal/process()
-	// idle aspect is green or blue depending on the signal status
-	// degraded signal operating conditions of any type show blue
-	var/idle_aspect = operating_status == TRANSPORT_SYSTEM_NORMAL ? XING_STATE_GREEN : XING_STATE_MALF
+
 	var/datum/transport_controller/linear/tram/tram = transport_ref?.resolve()
 
-	// Check for stopped states. Will kill the process since tram starting up will restart process.
-	if(!tram || !tram.controller_operational || !tram.controller_active || !is_operational || !inbound || !outbound)
+	// Check for stopped states.
+	if(!tram || !tram.controller_operational || !is_operational || !inbound || !outbound)
 		// Tram missing, we lost power, or something isn't right
-		// Set idle and stop processing, since the tram won't be moving
-		set_signal_state(idle_aspect, force = !is_operational)
+		// Throw the error message (blue)
+		set_signal_state(XING_STATE_MALF, force = !is_operational)
 		return PROCESS_KILL
 
 	var/obj/structure/transport/linear/tram_part = tram.return_closest_platform_to(src)
 
-	// The structure is gone, so we're done here.
 	if(QDELETED(tram_part))
-		set_signal_state(idle_aspect, force = !is_operational)
+		set_signal_state(XING_STATE_MALF, force = !is_operational)
 		return PROCESS_KILL
 
 	// Everything will be based on position and travel direction
@@ -334,32 +347,41 @@
 		tram_velocity_sign = tram.travel_direction & EAST ? 1 : -1
 
 	// How far away are we? negative if already passed.
-	var/approach_distance = tram_velocity_sign * (signal_pos - (tram_pos + DEFAULT_TRAM_MIDPOINT))
+	var/approach_distance = tram_velocity_sign * (signal_pos - (tram_pos + (DEFAULT_TRAM_LENGTH * 0.5)))
+
+	// Check for stopped state.
+	// Will kill the process since tram starting up will restart process.
+	if(!tram.controller_active)
+		set_signal_state(XING_STATE_GREEN)
+		return PROCESS_KILL
 
 	// Check if tram is driving away from us.
-	if(approach_distance < -abs(DEFAULT_TRAM_MIDPOINT))
+	if(approach_distance < 0)
 		// driving away. Green. In fact, in order to reverse, it'll have to stop, so let's go ahead and kill.
-		set_signal_state(idle_aspect)
+		set_signal_state(XING_STATE_GREEN)
 		return PROCESS_KILL
 
 	// Check the tram's terminus station.
 	// INBOUND 1 < 2 < 3
 	// OUTBOUND 1 > 2 > 3
 	if(tram.travel_direction & WEST && inbound < tram.destination_platform.platform_code)
-		set_signal_state(idle_aspect)
+		set_signal_state(XING_STATE_GREEN)
 		return PROCESS_KILL
 	if(tram.travel_direction & EAST && outbound > tram.destination_platform.platform_code)
-		set_signal_state(idle_aspect)
+		set_signal_state(XING_STATE_GREEN)
 		return PROCESS_KILL
 
 	// Finally the interesting part where it's ACTUALLY approaching
 	if(approach_distance <= red_distance_threshold)
-		set_signal_state(XING_STATE_RED)
+		if(operating_status != TRANSPORT_SYSTEM_NORMAL)
+			set_signal_state(XING_STATE_MALF)
+		else
+			set_signal_state(XING_STATE_RED)
 		return
-	if(approach_distance <= amber_distance_threshold && operating_status == TRANSPORT_SYSTEM_NORMAL)
+	if(approach_distance <= amber_distance_threshold)
 		set_signal_state(XING_STATE_AMBER)
 		return
-	set_signal_state(idle_aspect)
+	set_signal_state(XING_STATE_GREEN)
 
 /**
  * Set the signal state and update appearance.

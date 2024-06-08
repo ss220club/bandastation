@@ -52,9 +52,9 @@
 	if(!do_after(living_parent, 10 SECONDS, target = target))
 		qdel(lure)
 		return
-	var/reward_loot = fish_spot.roll_reward(our_rod, parent)
+	var/reward_loot = pick_weight(fish_spot.fish_table)
 	if(ispath(reward_loot))
-		fish_spot.dispense_reward(reward_loot, parent, target)
+		new reward_loot(get_turf(living_parent))
 	qdel(lure)
 
 /obj/item/fishing_rod/mob_fisher

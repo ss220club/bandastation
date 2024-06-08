@@ -775,10 +775,7 @@
 					span_userdanger(pick("Your lungs hurt!", "It hurts to breathe!")),
 					span_warning(pick("You feel nauseated.", "You feel like you're going to throw up!")))
 				else
-					if(prob(40))
-						fake_emote = "cough"
-					else
-						owner.sneeze()
+					fake_emote = pick("cough", "sniff", "sneeze")
 
 	if(fake_emote)
 		owner.emote(fake_emote)

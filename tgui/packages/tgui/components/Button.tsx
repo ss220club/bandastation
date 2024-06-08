@@ -5,7 +5,7 @@
  */
 
 import { Placement } from '@popperjs/core';
-import { isEscape, KEY } from 'common/keys';
+import { KEY } from 'common/keys';
 import { BooleanLike, classes } from 'common/react';
 import {
   ChangeEvent,
@@ -131,7 +131,7 @@ export const Button = (props: Props) => {
         }
 
         // Refocus layout on pressing escape.
-        if (isEscape(event.key)) {
+        if (event.key === KEY.Escape) {
           event.preventDefault();
         }
       }}
@@ -343,7 +343,7 @@ const ButtonInput = (props: InputProps) => {
             commitResult(event);
             return;
           }
-          if (isEscape(event.key)) {
+          if (event.key === KEY.Escape) {
             setInInput(false);
           }
         }}
