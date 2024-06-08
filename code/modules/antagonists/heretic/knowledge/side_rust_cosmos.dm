@@ -76,16 +76,16 @@
 
 /datum/heretic_knowledge/summon/rusty
 	name = "Rusted Ritual"
-	desc = "Позволяет трансмутировать лужу рвоты, провода и 5 железа в Ржавого ходока. \
-		Ржавые ходоки превосходно распространяют ржавчину и умеренно сильны в бою."
-	gain_text = "Я объединил свои знания о созидании с жаждой коррозии. Маршал знал мое имя, и Ржавые холмы отозвались эхом."
+	desc = "Allows you to transmute a pool of vomit, some cable coil, and 5 sheets of titanium into a Rust Walker. \
+		Rust Walkers excel at spreading rust and are moderately strong in combat."
+	gain_text = "I combined my knowledge of creation with my desire for corruption. The Marshal knew my name, and the Rusted Hills echoed out."
 	next_knowledge = list(
 		/datum/heretic_knowledge/spell/area_conversion,
 		/datum/heretic_knowledge/spell/star_blast,
 	)
 	required_atoms = list(
 		/obj/effect/decal/cleanable/vomit = 1,
-		/obj/item/stack/sheet/iron = 5,
+		/obj/item/stack/sheet/mineral/titanium = 5,
 		/obj/item/stack/cable_coil = 15,
 	)
 	mob_to_summon = /mob/living/basic/heretic_summon/rust_walker
