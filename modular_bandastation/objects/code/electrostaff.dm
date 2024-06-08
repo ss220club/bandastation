@@ -19,13 +19,14 @@
 		"Синее свечение" = "electrostaff_blue",
 	)
 	preload_cell_type = /obj/item/stock_parts/cell/high
-	block_chance = 50
+	block_chance = 30
 
 /obj/item/melee/baton/security/electrostaff/Initialize(mapload)
 	. = ..()
 	AddComponent(/datum/component/two_handed, \
 		wieldsound = 'modular_bandastation/objects/sounds/weapons/melee/electrostaff/on.ogg', \
 		unwieldsound = 'sound/weapons/saberoff.ogg', \
+		require_twohands = TRUE, \
 	)
 
 /obj/item/melee/baton/security/electrostaff/update_icon_state()

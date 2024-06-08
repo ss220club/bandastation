@@ -126,16 +126,6 @@
 	damage = 75
 	hitsound_wall = "ricochet"
 
-/obj/item/projectile/bullet/mm127/on_hit(atom/target, blocked, hit_zone)
-	. = ..()
-	if(!isliving(target))
-		return
-	var/mob/living/L = target
-	if(L.move_resist == INFINITY)
-		return
-	var/atom/throw_target = get_edge_target_turf(L, get_dir(src, get_step_away(L, starting)))
-	L.throw_at(throw_target, 2, 2)
-
 /obj/item/ammo_box/speed_loader_mm127
 	name = "speed loader (12.7mm)"
 	desc = "Designed to quickly reload... is it a revolver speedloader with rifle cartidges in it?"
@@ -165,11 +155,11 @@
 	fire_sound = 'modular_bandastation/objects/sounds/weapons/gunshots/peas_shooter_gunshot.ogg'
 	drop_sound = 'modular_bandastation/objects/sounds/weapons/drop/peas_shooter_drop.ogg'
 	w_class = WEIGHT_CLASS_NORMAL
-	accepted_magazine_type = /obj/item/ammo_box/magazine/peas_shooter
+	accepted_magazine_type = /obj/item/ammo_box/magazine/internal/peas_shooter
 
-/obj/item/ammo_box/magazine/peas_shooter
+/obj/item/ammo_box/magazine/internal/peas_shooter
 	name = "peacock shooter magazine"
-	desc = "хранилище горошин для горохострела, вмещает до 6 горошин за раз."
+	desc = "Хранилище горошин для горохострела, вмещает до 6 горошин за раз."
 	ammo_type = /obj/item/ammo_casing/peas_shooter
 	max_ammo = 6
 	caliber = CALIBER_PEA
@@ -184,13 +174,8 @@
 // Пуля горохострела
 /obj/projectile/bullet/midbullet_r/peas_shooter
 	icon = 'modular_bandastation/objects/icons/ammo.dmi'
-	item_state = "peashooter_bullet"
+	icon_state = "peashooter_bullet"
 	stamina = 5
-
-/obj/item/projectile/bullet/midbullet_r/peas_shooter/on_hit(mob/H)
-	. = ..()
-	if(prob(15))
-		H.emote("moan")
 
 // Тактическая бита Флота Nanotrasen
 /obj/item/melee/baseball_bat/homerun/central_command
@@ -273,30 +258,36 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	accepted_magazine_type = /obj/item/ammo_box/magazine/pneuma
 	fire_sound = 'modular_bandastation/objects/sounds/weapons/gunshots/gunshot_pneumatic.ogg'
-	magin_sound = 'sounds/weapons/gun_interactions/batrifle_magin.ogg'
 	fire_delay = 2
 	can_suppress = FALSE
 	burst_size = 1
 	actions_types = list()
 
-/obj/item/gun/projectile/automatic/pneumaticgun/process_chamber(eject_casing = 0, empty_chamber = 1)
+/obj/item/gun/ballistic/automatic/pneumaticgun/process_chamber(eject_casing = 0, empty_chamber = 1)
 	..(eject_casing, empty_chamber)
-
-/obj/item/gun/projectile/automatic/pneumaticgun/update_icon_state(/obj/item/ammo_box/magazine/pneuma/M)
-	icon_state = "pneumagun[M ? "[M.stored_ammo]" : ""]"
-	return ..()
 
 // Базовые боеприпасы для пневморужья
 /obj/item/ammo_box/magazine/pneuma
 	name = "магазин пневморужья"
 	desc = "Наполняется шариками с реагентом."
 	caliber = CALIBER_PNEUMA
-	var/col = "_g"  // Цвет магазина (необходим для выбора скина)
 	icon = 'modular_bandastation/objects/icons/ammo.dmi'
 	icon_state = "pneumamag_g"
 	ammo_type = /obj/item/ammo_casing/pneuma
 	max_ammo = 12
 	multiload = 0
+	unique_reskin = list(
+		"Красная обойма" = "pneumaball_r",
+		"Зелёная обойма" = "pneumaball_g",
+	)
+
+/obj/item/ammo_box/magazine/pneuma/reskin_obj(mob/user)
+	. = ..()
+	switch(icon_state)
+		if("Красная обойма")
+			icon_state = "pneumaball_r"
+		if("Зелёная обойма")
+			icon_state = "pneumaball_g"
 
 /obj/item/ammo_casing/pneuma
 	name = "пневматический шарик"
@@ -304,9 +295,7 @@
 	icon = 'modular_bandastation/objects/icons/ammo.dmi'
 	icon_state = "pneumaball_g"
 	caliber = CALIBER_PNEUMA
-	casing_drop_sound = null
 	projectile_type = /obj/projectile/bullet/pneumaball
-	muzzle_flash_strength = null
 	harmful = FALSE
 
 /obj/projectile/bullet/pneumaball
@@ -316,42 +305,27 @@
 	stamina = 7
 	damage = 1
 
-/obj/item/projectile/bullet/pneumaball/New()
-	..()
-	create_reagents(15)
-	reagents.set_reacting(FALSE)
-
-/obj/item/projectile/bullet/pneumaball/on_hit(atom/target, blocked = 0)
-	..(target, blocked)
-	if(!iscarbon(target))
-		return
-	var/mob/living/carbon/H = target
-	reagents.reaction(H)
-	reagents.set_reacting(TRUE)
-	reagents.handle_reactions()
-
 // Боеприпасы для перцового типа пневморужья
 /obj/item/ammo_box/magazine/pneuma/pepper
 	ammo_type = /obj/item/ammo_casing/pneuma/pepper
-	col = "_r"
 	icon_state = "pneumamag_r"
 
 /obj/item/ammo_casing/pneuma/pepper
 	desc = "Шарик с капсаицином. Эффективно подходит для задержания преступников, не носящих очки."
-	projectile_type = /obj/item/projectile/bullet/pneumaball/pepper
+	projectile_type = /obj/projectile/bullet/pneumaball/pepper
 	icon_state = "pneumaball_r"
 
-/obj/item/projectile/bullet/pneumaball/pepper
+/obj/projectile/bullet/pneumaball/pepper
 	icon_state = "pneumaball_r"
 
-/obj/item/projectile/bullet/pneumaball/pepper/New()
+/obj/projectile/bullet/pneumaball/pepper/New()
 	..()
 	reagents.add_reagent("condensedcapsaicin", 15)
 
 /datum/supply_pack/security/armory/pneumagun
 	name = "Pneumatic Pepper Rifles Crate"
 	contains = list(
-		/obj/item/gun/projectile/automatic/pneumaticgun = 2,
+		/obj/item/gun/ballistic/automatic/pneumaticgun = 2,
 		/obj/item/ammo_box/magazine/pneuma/pepper = 2,
 	)
 	cost = CARGO_CRATE_VALUE * 2.5
@@ -385,7 +359,6 @@
 	var/icon_state_on = "stylet_1"
 	var/extend_sound = 'modular_bandastation/objects/sounds/weapons/styletext.ogg'
 	attack_verb_simple = list("hit", "poked")
-	sharp = TRUE
 	var/list/attack_verb_simple_on = list("slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 
 /obj/item/melee/stylet/update_icon_state()
@@ -417,6 +390,7 @@
 	playsound(loc, extend_sound, 50, TRUE)
 	add_fingerprint(user)
 
-/obj/effect/spawner/lootdrop/maintenance/Initialize(mapload)
-	loot += list(/obj/item/melee/stylet = 5)
-	return ..()
+#undef CALIBER_44
+#undef CALIBER_127
+#undef CALIBER_PEA
+#undef CALIBER_PNEUMA
