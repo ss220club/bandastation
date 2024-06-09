@@ -9,6 +9,11 @@
 	selfcharge = TRUE // Selfcharge is enabled and disabled, and used as the away mission tracker
 	can_charge = 0
 
+// Проверка чтобы не было зарядки на станции
+/obj/item/gun/energy/laser/awaymission_aeg/Initialize(mapload, /obj/item/M)
+	. = ..()
+	on_changed_z_level()
+
 /obj/item/gun/energy/laser/awaymission_aeg/on_changed_z_level(turf/old_turf, turf/new_turf, same_z_layer, notify_contents)
 	. = ..()
 	if(is_away_level(new_turf) || (!is_station_level(new_turf)))
@@ -81,6 +86,7 @@
 		RND_CATEGORY_INITIAL,
 		RND_CATEGORY_WEAPONS + RND_SUBCATEGORY_WEAPONS_RANGED,
 	)
+	departmental_flags = DEPARTMENT_CARGO
 
 /datum/design/gate_gun_mk2
 	name = "Gate Energy Gun MK2"

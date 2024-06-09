@@ -4,12 +4,12 @@
 #define CALIBER_PNEUMA "pneuma"
 
 // Base heavy revolver
-/obj/item/gun/projectile/revolver/reclinable
+/obj/item/gun/ballistic/revolver/reclinable
 	var/snapback_sound = 'modular_bandastation/objects/sounds/weapons/cylinder/snapback_rsh12.ogg'
 	var/reclined_sound = 'modular_bandastation/objects/sounds/weapons/cylinder/reclined_rsh12.ogg'
 	var/reclined = FALSE
 
-/obj/item/gun/projectile/revolver/reclinable/attack_self(mob/living/user)
+/obj/item/gun/ballistic/revolver/reclinable/attack_self(mob/living/user)
 	reclined = !reclined
 	playsound(user, reclined ? reclined_sound : snapback_sound, 50, 1)
 	update_icon()
@@ -17,16 +17,16 @@
 	if(reclined)
 		return ..()
 
-/obj/item/gun/projectile/revolver/reclinable/update_icon_state()
+/obj/item/gun/ballistic/revolver/reclinable/update_icon_state()
 	icon_state = initial(icon_state) + (reclined ? "_reclined" : "")
 	return ..()
 
-/obj/item/gun/projectile/revolver/reclinable/attackby(obj/item/A, mob/user, params)
+/obj/item/gun/ballistic/revolver/reclinable/attackby(obj/item/A, mob/user, params)
 	if(!reclined)
 		return
 	return ..()
 
-/obj/item/gun/projectile/revolver/reclinable/process_fire(atom/target, mob/living/user, message, params, zone_override, bonus_spread)
+/obj/item/gun/ballistic/revolver/reclinable/process_fire(atom/target, mob/living/user, message, params, zone_override, bonus_spread)
 	if(!reclined)
 		return ..()
 
@@ -44,7 +44,7 @@
 	icon_state = "anaconda"
 	fire_sound = 'modular_bandastation/objects/sounds/weapons/gunshots/gunshot_anaconda.ogg'
 
-/obj/item/gun/projectile/revolver/reclinable/anaconda/attackby(obj/item/A, mob/user, params)
+/obj/item/gun/ballistic/revolver/reclinable/anaconda/attackby(obj/item/A, mob/user, params)
 	if(istype(A, /obj/item/ammo_box/box_d44))
 		return
 	return ..()
@@ -102,7 +102,7 @@
 	icon_state = "rsh12"
 	fire_sound = 'modular_bandastation/objects/sounds/weapons/gunshots/gunshot_rsh12.ogg'
 
-/obj/item/gun/projectile/revolver/reclinable/rsh12/attackby(obj/item/A, mob/user, params)
+/obj/item/gun/ballistic/revolver/reclinable/rsh12/attackby(obj/item/A, mob/user, params)
 	if(istype(A, /obj/item/ammo_box/box_mm127))
 		return
 	return ..()

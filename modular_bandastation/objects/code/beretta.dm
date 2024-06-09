@@ -20,7 +20,7 @@
 	accepted_magazine_type = /obj/item/ammo_box/magazine/beretta
 	fire_sound = 'modular_bandastation/objects/sounds/weapons/gunshots/beretta_shot.ogg'
 
-/obj/item/gun/projectile/automatic/pistol/beretta/reskin_obj(mob/user)
+/obj/item/gun/ballistic/automatic/pistol/beretta/reskin_obj(mob/user)
 	. = ..()
 	switch(icon_state)
 		if("Modified grip")
@@ -31,7 +31,7 @@
 			icon_state = "beretta_desert"
 	user.update_held_items()
 
-/obj/item/gun/projectile/automatic/pistol/beretta/add_seclight_point()
+/obj/item/gun/ballistic/automatic/pistol/beretta/add_seclight_point()
 	. = ..()
 	AddComponent(/datum/component/seclite_attachable, \
 		light_overlay_icon = 'modular_bandastation/objects/icons/guns.dmi', \

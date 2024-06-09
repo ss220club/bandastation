@@ -25,8 +25,6 @@
 	. = ..()
 	AddComponent(/datum/component/two_handed, \
 		wieldsound = 'modular_bandastation/objects/sounds/weapons/melee/electrostaff/on.ogg', \
-		unwieldsound = 'sound/weapons/saberoff.ogg', \
-		require_twohands = TRUE, \
 	)
 
 /obj/item/melee/baton/security/electrostaff/update_icon_state()
@@ -45,12 +43,12 @@
 	icon_state = "[initial(icon_state)]"
 	return ..()
 
-/obj/item/melee/baton/electrostaff/examine(mob/user)
+/obj/item/melee/baton/security/electrostaff/examine(mob/user)
 	. = ..()
 	. -= span_notice("This item can be recharged in a recharger. Using a screwdriver on this item will allow you to access its power cell, which can be replaced.")
 	. += span_notice("Данный предмет не имеет внешних разъемов для зарядки. Используйте <b>отвертку</b> для доступа к внутренней батарее, чтобы заменить или зарядить её.")
 
-/obj/item/melee/baton/electrostaff/reskin_obj(mob/user)
+/obj/item/melee/baton/security/electrostaff/reskin_obj(mob/user)
 	. = ..()
 	switch(icon_state)
 		if("Оранжевое свечение")

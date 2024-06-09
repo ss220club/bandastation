@@ -10,7 +10,7 @@
 /obj/item/storage/bag/material_pouch/Initialize(mapload)
 	. = ..()
 	atom_storage.max_specific_storage = WEIGHT_CLASS_NORMAL
-	atom_storage.max_total_storage = 2
+	atom_storage.max_total_storage = 100
 	atom_storage.max_slots = 2
 	atom_storage.set_holdable(/obj/item/stack/sheet/iron, /obj/item/stack/sheet/glass,\
 	/obj/item/stack/sheet/rglass, /obj/item/stack/sheet/plasmaglass,\

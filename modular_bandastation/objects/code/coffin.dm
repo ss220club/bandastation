@@ -1,4 +1,4 @@
-/obj/structure/closet/coffin/corn
+/obj/structure/closet/crate/coffin/corn
 	name = "cornffin"
 	desc = "Мы потеряли его. Он скукурузился."
 	icon = 'modular_bandastation/objects/icons/closets.dmi'
