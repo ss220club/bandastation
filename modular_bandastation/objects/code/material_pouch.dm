@@ -10,11 +10,7 @@
 /obj/item/storage/bag/material_pouch/Initialize(mapload)
 	. = ..()
 	atom_storage.max_specific_storage = WEIGHT_CLASS_NORMAL
-	atom_storage.max_total_storage = 100
+	atom_storage.max_total_storage = INFINITY
 	atom_storage.max_slots = 2
-	atom_storage.set_holdable(/obj/item/stack/sheet/iron, /obj/item/stack/sheet/glass,\
-	/obj/item/stack/sheet/rglass, /obj/item/stack/sheet/plasmaglass,\
-	/obj/item/stack/sheet/plasmarglass, /obj/item/stack/sheet/plasteel,\
-	/obj/item/stack/sheet/bluespace_crystal,/obj/item/stack/sheet/bronze,\
-	/obj/item/stack/sheet/titaniumglass,/obj/item/stack/sheet/plastitaniumglass,\
-	/obj/item/stack/sheet/mineral,/obj/item/stack/sheet/plastic)
+	atom_storage.numerical_stacking = TRUE
+	atom_storage.can_hold = typecacheof(list(/obj/item/rcd_ammo, /obj/item/stack/sheet))

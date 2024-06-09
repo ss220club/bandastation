@@ -15,7 +15,7 @@
 	icon_state = "seed-corn"
 	species = "corn"
 	plantname = "Cornffin Stalks"
-	product = /obj/structure/closet/coffin/corn
+	product = /obj/structure/closet/crate/coffin/corn
 
 
 /obj/item/seeds/corn/Initialize(mapload)

@@ -5,7 +5,7 @@
 	righthand_file = 'modular_bandastation/objects/icons/inhands/melee_righthand.dmi'
 	icon = 'modular_bandastation/objects/icons/melee.dmi'
 	icon_state = "electrostaff_orange"
-	inhand_icon_state = icon_state
+	inhand_icon_state = "electrostaff_orange"
 	slot_flags = ITEM_SLOT_BELT
 	w_class = WEIGHT_CLASS_HUGE
 	force = 10

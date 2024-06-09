@@ -280,17 +280,17 @@
 	max_ammo = 12
 	multiload = 0
 	unique_reskin = list(
-		"Красная обойма" = "pneumaball_r",
-		"Зелёная обойма" = "pneumaball_g",
+		"Красная обойма" = "pneumamag_r",
+		"Зелёная обойма" = "pneumamag_g",
 	)
 
 /obj/item/ammo_box/magazine/pneuma/reskin_obj(mob/user)
 	. = ..()
 	switch(icon_state)
 		if("Красная обойма")
-			icon_state = "pneumaball_r"
+			icon_state = "pneumamag_r"
 		if("Зелёная обойма")
-			icon_state = "pneumaball_g"
+			icon_state = "pneumamag_g"
 
 /obj/item/ammo_casing/pneuma
 	name = "пневматический шарик"

@@ -33,7 +33,7 @@
 	if(user.combat_mode == TRUE)
 		AddComponent(
 		/datum/component/blood_walk,\
-		blood_type = blood_decal_type,\
+		blood_type = /obj/effect/decal/cleanable/blood,\
 		blood_spawn_chance = 60,\
 		)
 		AddComponent(
