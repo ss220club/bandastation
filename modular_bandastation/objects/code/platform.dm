@@ -14,10 +14,6 @@
 	var/material_type = /obj/item/stack/sheet/iron
 	var/material_amount = 4
 	var/decon_speed
-	plane = ABOVE_GAME_PLANE
-	layer = ABOVE_TREE_LAYER
-	pass_flags_self = LETPASSTHROW | PASSSTRUCTURE
-	obj_flags = CAN_BE_HIT | BLOCKS_CONSTRUCTION_DIR
 
 /datum/armor/structure_platform
 	melee = 10
@@ -32,6 +28,12 @@
 	. = ..()
 	if(climbable)
 		AddElement(/datum/element/climbable)
+
+/obj/structure/platform/CanPass(atom/movable/mover, border_dir)
+	. = ..()
+	if(border_dir & dir)
+		return . || mover.throwing || (mover.movement_type & MOVETYPES_NOT_TOUCHING_GROUND)
+	return TRUE
 
 /obj/structure/platform/proc/CheckLayer()
 	if(dir == SOUTH)
@@ -76,6 +78,27 @@
 	air_update_turf(1)
 	add_fingerprint(user)
 	return TRUE
+
+/obj/structure/platform/CanPass(atom/movable/mover, border_dir)
+	. = ..()
+	if(!anchored)
+		CheckLayer()
+	if(istype(mover, /obj/structure/platform))
+		return FALSE
+	if(istype(mover, /obj/projectile))
+		return TRUE
+	if(corner)
+		return !density
+	if(mover && mover.throwing)
+		return TRUE
+	var/obj/structure/S = locate(/obj/structure) in get_turf(mover)
+	if(S && S.climbable && !(S.flags_1 & ON_BORDER_1) && climbable && isliving(mover))// Climbable objects allow you to universally climb over others
+		return TRUE
+	if(!(flags_1 & ON_BORDER_1) || get_dir(loc, target) == dir)
+		return FALSE
+	else
+		return TRUE
+
 
 /obj/structure/platform/click_alt(mob/user)
 	. = ..()

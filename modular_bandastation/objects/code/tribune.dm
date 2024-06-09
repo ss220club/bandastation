@@ -7,6 +7,7 @@
 	anchored = FALSE
 	max_integrity = 100
 	resistance_flags = FLAMMABLE
+	can_buckle = TRUE
 	var/buildstacktype = /obj/item/stack/sheet/mineral/wood
 	var/buildstackamount = 5
 	var/mover_dir = null
@@ -55,13 +56,6 @@
 		return
 	setDir(turn(dir, 90))
 	after_rotation(user)
-
-/obj/structure/tribune/CanPass(atom/movable/mover, border_dir)
-	. = ..()
-	if(mover.dir == src.dir)
-		return TRUE
-	else
-		return FALSE
 
 /obj/structure/tribune/centcom
 	name = "CentCom tribune"
