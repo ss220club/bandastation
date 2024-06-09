@@ -100,3 +100,16 @@
 		RND_SUBCATEGORY_WEAPONS_RANGED + RND_SUBCATEGORY_WEAPONS_RANGED,
 	)
 	departmental_flags = DEPARTMENT_CARGO
+
+/datum/techweb_node/awaymission_aeg
+	id = "awaymission_aeg"
+	display_name = "Awamission Laser Weaponary Research"
+	description = "Изучение лазерного оружия для гейтвея."
+	prereq_ids = list(
+		"adv_weaponry",
+	)
+	design_ids = list(
+		"gategun_energy_gun_mk2",
+		"gategun_energy_gun_mk1",
+	)
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)

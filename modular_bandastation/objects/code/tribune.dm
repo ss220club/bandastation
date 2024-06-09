@@ -21,7 +21,7 @@
 	if(flags_1 & INDESTRUCTIBLE)
 		to_chat(user, span_warning("Try as you might, you can't figure out how to deconstruct [src]."))
 		return
-	if(!tool.use_tool(src, user, 30))
+	if(!tool.use_tool(src, user, 30, volume = 50))
 		return
 	deconstruct(TRUE)
 
@@ -55,6 +55,13 @@
 		return
 	setDir(turn(dir, 90))
 	after_rotation(user)
+
+/obj/structure/tribune/CanPass(atom/movable/mover, border_dir)
+	. = ..()
+	if(mover.dir == src.dir)
+		return TRUE
+	else
+		return FALSE
 
 /obj/structure/tribune/centcom
 	name = "CentCom tribune"

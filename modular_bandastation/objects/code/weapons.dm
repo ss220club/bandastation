@@ -43,6 +43,7 @@
 	icon = 'modular_bandastation/objects/icons/guns.dmi'
 	icon_state = "anaconda"
 	fire_sound = 'modular_bandastation/objects/sounds/weapons/gunshots/gunshot_anaconda.ogg'
+	inhand_icon_state = "anaconda"
 
 /obj/item/gun/ballistic/revolver/reclinable/anaconda/attackby(obj/item/A, mob/user, params)
 	if(istype(A, /obj/item/ammo_box/box_d44))
@@ -100,6 +101,7 @@
 	righthand_file = 'modular_bandastation/objects/icons/inhands/guns_righthand.dmi'
 	icon = 'modular_bandastation/objects/icons/guns.dmi'
 	icon_state = "rsh12"
+	inhand_icon_state = "rsh12"
 	fire_sound = 'modular_bandastation/objects/sounds/weapons/gunshots/gunshot_rsh12.ogg'
 
 /obj/item/gun/ballistic/revolver/reclinable/rsh12/attackby(obj/item/A, mob/user, params)
@@ -145,8 +147,8 @@
 	icon_state = "mm127_box"
 
 // Горохострел
-/obj/item/gun/ballistic/revolver/peas_shooter
-	name = "Peas shooter"
+/obj/item/gun/ballistic/revolver/pea_shooter
+	name = "Горохострел"
 	desc = "Живой горох! Может стрелять горошинами, которые наносят слабый урон самооценке."
 	icon = 'modular_bandastation/objects/icons/guns.dmi'
 	icon_state = "peas_shooter"
@@ -156,6 +158,7 @@
 	drop_sound = 'modular_bandastation/objects/sounds/weapons/drop/peas_shooter_drop.ogg'
 	w_class = WEIGHT_CLASS_NORMAL
 	accepted_magazine_type = /obj/item/ammo_box/magazine/internal/peas_shooter
+	inhand_icon_state = "peas_shooter"
 
 /obj/item/ammo_box/magazine/internal/peas_shooter
 	name = "peacock shooter magazine"
@@ -198,8 +201,10 @@
 	icon = 'modular_bandastation/objects/icons/melee.dmi'
 	/// Icon state when concealed
 	icon_state = "centcom_bat_0"
+	inhand_icon_state = "centcom_bat_0"
 	/// Icon state when extended
 	var/icon_state_on = "centcom_bat_1"
+	var/inhand_icon_state_on = "centcom_bat_1"
 	/// Sound to play when concealing or extending
 	var/extend_sound = 'sound/weapons/batonextend.ogg'
 	/// Attack verbs when concealed (created on Initialize)
@@ -225,12 +230,14 @@
 	if(on)
 		to_chat(user, span_userdanger("Вы активировали [src.name] - время для правосудия!"))
 		icon_state = icon_state_on
+		inhand_icon_state = inhand_icon_state_on
 		w_class = WEIGHT_CLASS_HUGE
 		force = force_on
 		attack_verb_simple = attack_verb_simple_on
 	else
 		user.balloon_alert(user, "Вы деактивировали [src.name].")
 		icon_state = initial(icon_state)
+		inhand_icon_state = initial(inhand_icon_state)
 		w_class = initial(w_class)
 		force = initial(force)
 		attack_verb_simple = initial(attack_verb_simple)
@@ -261,10 +268,6 @@
 	fire_delay = 2
 	can_suppress = FALSE
 	burst_size = 1
-	actions_types = list()
-
-/obj/item/gun/ballistic/automatic/pneumaticgun/process_chamber(eject_casing = 0, empty_chamber = 1)
-	..(eject_casing, empty_chamber)
 
 // Базовые боеприпасы для пневморужья
 /obj/item/ammo_box/magazine/pneuma
@@ -356,7 +359,9 @@
 	icon = 'modular_bandastation/objects/icons/melee.dmi'
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	icon_state = "stylet_0"
+	inhand_icon_state = "stylet_0"
 	var/icon_state_on = "stylet_1"
+	var/inhand_icon_state_on = "stylet_1"
 	var/extend_sound = 'modular_bandastation/objects/sounds/weapons/styletext.ogg'
 	attack_verb_simple = list("hit", "poked")
 	var/list/attack_verb_simple_on = list("slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
@@ -365,8 +370,10 @@
 	. = ..()
 	if(on)
 		icon_state = "stylet_1"
+		inhand_icon_state = "stylet_1"
 	else
 		icon_state = "stylet_0"
+		inhand_icon_state = "stylet_1"
 
 /obj/item/melee/stylet/attack_self(mob/user)
 	on = !on

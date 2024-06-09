@@ -17,7 +17,12 @@
 		/obj/item/book = 5
 		)
 
+/obj/machinery/papershredder/attack_hand_secondary(mob/user, list/modifiers)
+	. = ..()
+	empty_contents(user)
+
 /obj/machinery/papershredder/attackby(obj/item/item, mob/user, params)
+	. = ..()
 	if(istype(item, /obj/item/storage))
 		add_fingerprint(user)
 		empty_bin(user, item)
@@ -51,11 +56,7 @@
 
 /obj/machinery/papershredder/examine(mob/user)
 	. = ..()
-	. += span_notice("<b>Alt-Click</b> to empty [src].")
-
-/obj/machinery/papershredder/click_alt(mob/user)
-	. = ..()
-	empty_contents(user)
+	. += span_notice("<b>Right-Click</b> to empty [src].")
 
 /obj/machinery/papershredder/proc/empty_contents(mob/user)
 	if(HAS_TRAIT(user, TRAIT_RESTRAINED))

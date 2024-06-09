@@ -12,7 +12,6 @@
 // Miscellaneous
 #include "code/beach_umbrella.dm"
 #include "code/beretta.dm"
-#include "code/billboard.dm"
 #include "code/closets.dm"
 #include "code/coffin.dm"
 #include "code/hampters.dm"

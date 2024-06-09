@@ -5,14 +5,29 @@
 	icon = 'modular_bandastation/objects/icons/mecha.dmi'
 	icon_state = "lockermech"
 	base_icon_state = "lockermech"
-	// It's made of scraps
 	max_integrity = 100
 	lights_power = 5
 	armor_type = /datum/armor/ripley/lockermech
 	internal_damage_threshold = 30
 	wreckage = /obj/structure/mecha_wreckage/lockermech
-	/// You can fit a few things in this locker but not much.
-	var/emagged = FALSE
+	max_equip_by_category = list(
+		MECHA_L_ARM = 1,
+		MECHA_R_ARM = 1,
+		MECHA_UTILITY = 3,
+		MECHA_POWER = 1,
+		MECHA_ARMOR = 0,
+	)
+	equip_by_category = list(
+		MECHA_L_ARM = null,
+		MECHA_R_ARM = null,
+		MECHA_UTILITY = list(/obj/item/mecha_parts/mecha_equipment/ejector/lockermech),
+		MECHA_POWER = list(),
+		MECHA_ARMOR = list(),
+	)
+
+
+/obj/item/mecha_parts/mecha_equipment/ejector/lockermech
+	cargo_capacity = 4
 
 /datum/armor/ripley/lockermech
 	melee = 20
@@ -33,27 +48,23 @@
 	else
 		. = ..()
 
-/obj/vehicle/sealed/mecha/ripley/lockermech/emag_act(mob/user)
-	if(!emagged)
-		emagged = TRUE
-		desc += span_danger("</br>The mech's equipment slots spark dangerously!")
-	return ..()
-
 // Crafting
 /datum/crafting_recipe/lockermech
 	name = "Locker Mech"
 	result = list(/obj/vehicle/sealed/mecha/ripley/lockermech)
-	reqs = list(/obj/item/stack/cable_coil = 20,
-				/obj/item/stack/sheet/iron = 10,
-				/obj/item/storage/toolbox = 2, // For feet
-				/obj/item/tank/internals/oxygen = 1, // For air
-				/obj/item/electronics/airlock = 1, // You are stealing the motors from airlocks
-				/obj/item/extinguisher = 1, // For bastard pnumatics
-				/obj/item/c_tube = 1, // To make it airtight
-				/obj/item/flashlight = 1, // For the mech light
-				/obj/item/stack/sticky_tape = 25, // ¯\_(ツ)_/¯
-				/obj/item/stock_parts/cell/high = 1,
-				/obj/item/stack/rods = 4) // To mount the equipment
+	reqs = list(
+		/obj/item/stack/cable_coil = 20,
+		/obj/item/stack/sheet/iron = 10,
+		/obj/item/storage/toolbox = 2, // For feet
+		/obj/item/tank/internals/oxygen = 1, // For air
+		/obj/item/electronics/airlock = 1, // You are stealing the motors from airlocks
+		/obj/item/extinguisher = 1, // For bastard pnumatics
+		/obj/item/c_tube = 1, // To make it airtight
+		/obj/item/flashlight = 1, // For the mech light
+		/obj/item/stack/sticky_tape = 25, // ¯\_(ツ)_/¯
+		/obj/item/stock_parts/cell/high = 1,
+		/obj/item/stack/rods = 4 // To mount the equipment
+	)
 	tool_behaviors = list(TOOL_WELDER, TOOL_SCREWDRIVER)
 	time = 200
 	category = CAT_ROBOT
@@ -61,9 +72,11 @@
 /datum/crafting_recipe/lockermech_drill
 	name = "Locker Mech Exosuit Drill"
 	result = list(/obj/item/mecha_parts/mecha_equipment/drill/lockermech)
-	reqs = list(/obj/item/stack/cable_coil = 5,
-				/obj/item/stack/sheet/iron = 2,
-				/obj/item/surgicaldrill = 1)
+	reqs = list(
+		/obj/item/stack/cable_coil = 5,
+		/obj/item/stack/sheet/iron = 2,
+		/obj/item/surgicaldrill = 1
+	)
 	tool_behaviors = list(TOOL_SCREWDRIVER)
 	time = 50
 	category = CAT_ROBOT
@@ -71,9 +84,11 @@
 /datum/crafting_recipe/lockermech_clamp
 	name = "Locker Mech Exosuit Clamp"
 	result = list(/obj/item/mecha_parts/mecha_equipment/hydraulic_clamp/lockermech)
-	reqs = list(/obj/item/stack/cable_coil = 5,
-				/obj/item/stack/sheet/iron = 2,
-				/obj/item/wirecutters = 1) // Don't ask, its just for the grabby grabby thing
+	reqs = list(
+		/obj/item/stack/cable_coil = 5,
+		/obj/item/stack/sheet/iron = 2,
+		/obj/item/wirecutters = 1,
+	)
 	tool_behaviors = list(TOOL_SCREWDRIVER)
 	time = 50
 	category = CAT_ROBOT
@@ -89,8 +104,8 @@
 /obj/item/mecha_parts/mecha_equipment/drill/lockermech
 	name = "locker mech exosuit drill"
 	desc = "Собранная из, скорее всего, краденых деталей, эта дрель не сравнится по эффективности с настоящей."
-	equip_cooldown = 60 // Its slow as shit
-	force = 10 // Its not very strong
+	equip_cooldown = 60
+	force = 10
 	drill_delay = 15
 
 /obj/item/mecha_parts/mecha_equipment/hydraulic_clamp/lockermech

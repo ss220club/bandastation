@@ -5,7 +5,8 @@
 	icon_state = "metal"
 	desc = "A metal platform."
 	flags_1 = ON_BORDER_1
-	anchored = FALSE
+	density = TRUE
+	anchored = TRUE
 	var/climbable = TRUE
 	max_integrity = 200
 	armor_type = /datum/armor/structure_platform
@@ -13,7 +14,10 @@
 	var/material_type = /obj/item/stack/sheet/iron
 	var/material_amount = 4
 	var/decon_speed
-	pass_flags_self = LETPASSTHROW | PASSITEM
+	plane = ABOVE_GAME_PLANE
+	layer = ABOVE_TREE_LAYER
+	pass_flags_self = LETPASSTHROW | PASSSTRUCTURE
+	obj_flags = CAN_BE_HIT | BLOCKS_CONSTRUCTION_DIR
 
 /datum/armor/structure_platform
 	melee = 10

@@ -5,6 +5,7 @@
 	righthand_file = 'modular_bandastation/objects/icons/inhands/melee_righthand.dmi'
 	icon = 'modular_bandastation/objects/icons/melee.dmi'
 	icon_state = "electrostaff_orange"
+	inhand_icon_state = icon_state
 	slot_flags = ITEM_SLOT_BELT
 	w_class = WEIGHT_CLASS_HUGE
 	force = 10
@@ -94,3 +95,13 @@
 				/obj/item/weaponcrafting/gunkit/electrostaff = 1)
 	time = 10 SECONDS
 	category = CAT_WEAPON_MELEE
+
+/datum/techweb_node/electrostaff
+	id = "electrostaff"
+	display_name = "Advanced Security Baton Technology"
+	description = "Настоящая двуручная дубинка службы безопасности."
+	prereq_ids = list("weaponry")
+	design_ids = list(
+		"electrostaff"
+	)
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)

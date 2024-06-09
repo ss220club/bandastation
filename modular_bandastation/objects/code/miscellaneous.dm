@@ -24,11 +24,6 @@
 	desc = "A pamphlet that promotes something."
 	icon_state = "pamphlet"
 
-// TODO: Write something
-/obj/item/paper/pamphlet/deathsquad
-	name = "deathsquad pamphlet"
-	icon_state = "pamphlet-ds"
-
 /obj/item/paper/pamphlet/gateway
 	default_raw_text = "<b>Welcome to the Nanotrasen Gateway project...</b><br>\
 			Congratulations! If you're reading this, you and your superiors have decided that you're \
@@ -96,7 +91,7 @@
 
 // These objects are deleted by Offs, i returned them
 // Archive structure
-/obj/structure/cult/archives
+/obj/structure/archives
 	name = "Desk"
 	desc = "A desk covered in arcane manuscripts and tomes in unknown languages. Looking at the text makes your skin crawl."
 	icon_state = "archives"

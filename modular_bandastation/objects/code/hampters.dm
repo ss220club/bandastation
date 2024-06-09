@@ -32,8 +32,13 @@
 	. = ..()
 	if(user.combat_mode == TRUE)
 		AddComponent(
+		/datum/component/blood_walk,\
+		blood_type = blood_decal_type,\
+		blood_spawn_chance = 60,\
+		)
+		AddComponent(
 			/datum/component/bloody_spreader,\
-			blood_left = custom_materials[custom_materials[1]],\
+			blood_left = 20,\
 			blood_dna = list("meaty DNA" = "MT-"),\
 			diseases = null,\
 		)

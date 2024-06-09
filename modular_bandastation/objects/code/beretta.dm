@@ -234,5 +234,17 @@
 		RND_CATEGORY_WEAPONS + RND_SUBCATEGORY_WEAPONS_AMMO,
 	)
 
+/datum/techweb_node/beretta_ammo
+	id = "beretta_ammo"
+	display_name = "Beretta Ammo Research"
+	description = "Наши учёные смогли разработать боеприпасы к пистолету беретта и даже несколько... специфичных."
+	prereq_ids = "weaponry"
+	design_ids = list(
+		"box_beretta_bsp",
+		"box_beretta_ap",
+		"box_beretta",
+	)
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+
 #undef CALIBER_9X19MM
 #undef CALIBER_9X19BMM
