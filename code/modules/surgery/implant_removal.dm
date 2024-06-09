@@ -30,18 +30,18 @@
 		display_results(
 			user,
 			target,
-			span_notice("Вы начинаете извлекать [implant] из [target_zone] у [target]..."),
-			span_notice("[user] начинает извлекать [implant] из [target_zone] у [target]."),
-			span_notice("[user] начинает что-то извлекать из [target_zone] у [target]."),
+			span_notice("Вы начинаете извлекать [implant] из <i>[target_zone]</i> у [target]..."),
+			span_notice("[user] начинает извлекать [implant] из <i>[target_zone]</i> у [target]."),
+			span_notice("[user] начинает что-то извлекать из <i>[target_zone]</i> у [target]."),
 		)
-		display_pain(target, "Вы чуствуете острую боль в [target_zone]!")
+		display_pain(target, "Вы чуствуете острую боль в <i>[target_zone]</i>!")
 	else
 		display_results(
 			user,
 			target,
-			span_notice("Вы ищете имплант в [target_zone] у [target]..."),
-			span_notice("[user] ищет имплант в [target_zone] у [target]."),
-			span_notice("[user] ищет что-то в [target_zone] у [target]."),
+			span_notice("Вы ищете имплант в <i>[target_zone]</i> у [target]..."),
+			span_notice("[user] ищет имплант в <i>[target_zone]</i> у [target]."),
+			span_notice("[user] ищет что-то в <i>[target_zone]</i> у [target]."),
 		)
 
 /datum/surgery_step/extract_implant/success(mob/user, mob/living/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
@@ -49,9 +49,9 @@
 		display_results(
 			user,
 			target,
-			span_notice("Вы успешно извлекли [implant] из [target_zone] у [target]."),
-			span_notice("[user] успешно извлек [implant] из [target_zone] у [target]!"),
-			span_notice("[user] успешно извлек что-то из [target_zone] у [target]!"),
+			span_notice("Вы успешно извлекли [implant] из <i>[target_zone]</i> у [target]."),
+			span_notice("[user] успешно извлек [implant] из <i>[target_zone]</i> у [target]!"),
+			span_notice("[user] успешно извлек что-то из <i>[target_zone]</i> у [target]!"),
 		)
 		display_pain(target, "Вы чувствуете, как [implant.name] извлекли из вас!")
 		implant.removed(target)
@@ -80,7 +80,7 @@
 			qdel(implant)
 
 	else
-		to_chat(user, span_warning("Вы не можете найти ничего в [target_zone] у [target]!"))
+		to_chat(user, span_warning("Вы не можете найти ничего в <i>[target_zone]</i> у [target]!"))
 	return ..()
 
 /datum/surgery/implant_removal/mechanic

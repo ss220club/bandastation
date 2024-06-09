@@ -36,9 +36,9 @@
 		target,
 		span_notice("Вы начинаете отрезать лишний жир у [target]..."),
 		span_notice("[user] начинает отрезать лишний жир у [target]"),
-		span_notice("[user] начинает отрезать у [target] [target_zone] при помощи [tool.name]."),
+		span_notice("[user] начинает отрезать у [target] <i>[target_zone]</i> при помощи [tool.name]."),
 	)
-	display_pain(target, "Вы чувствуете резкую боль в вашей [target_zone]!")
+	display_pain(target, "Вы чувствуете резкую боль в вашей <i>[target_zone]</i>!")
 
 /datum/surgery_step/cut_fat/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results)
 	display_results(
@@ -46,9 +46,9 @@
 		target,
 		span_notice("Вы отрезали лишний жир у [target]."),
 		span_notice("[user] отрезал лишний жир у [target]!"),
-		span_notice("[user] заканчивает разрез на [target] [target_zone]."),
+		span_notice("[user] заканчивает разрез на [target] <i>[target_zone]</i>."),
 	)
-	display_pain(target, "Жир в вашей  [target_zone] ослабевает, свисает и болит как черт знает что!")
+	display_pain(target, "Жир в вашей  <i>[target_zone]</i> ослабевает, свисает и болит как черт знает что!")
 	return TRUE
 
 //remove fat
@@ -68,7 +68,7 @@
 		target,
 		span_notice("Вы начинаете извлекать лишний жир у [target]..."),
 		span_notice("[user] начинает извлекать лишний жир у [target]!"),
-		span_notice("[user] начинает извлекать что-то у [target] в [target_zone]."),
+		span_notice("[user] начинает извлекать что-то у [target] в <i>[target_zone]</i>."),
 	)
 	display_pain(target, "Вы чувствуете странное безболезненное потягивание за лишний жир!")
 

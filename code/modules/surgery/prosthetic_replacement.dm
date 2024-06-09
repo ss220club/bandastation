@@ -62,27 +62,27 @@
 					organ_rejection_dam = 30
 
 			if(!bodypart_to_attach.can_attach_limb(target))
-				target.balloon_alert(user, "это не подходит к [target.parse_zone_with_bodypart(target_zone)]!")
+				target.balloon_alert(user, "это не подходит к <i>[target.parse_zone_with_bodypart(target_zone)]</i>!")
 				return SURGERY_STEP_FAIL
 
 		if(target_zone == bodypart_to_attach.body_zone) //so we can't replace a leg with an arm, or a human arm with a monkey arm.
 			display_results(
 				user,
 				target,
-				span_notice("Вы начинаете заменять [target.parse_zone_with_bodypart(target_zone)] у [target] на [tool.name]..."),
-				span_notice("[user] начинает заменять [target.parse_zone_with_bodypart(target_zone)] у [target.parse_zone_with_bodypart(target_zone)] на [tool.name]."),
-				span_notice("[user] начинает заменять [target.parse_zone_with_bodypart(target_zone)] у [target]."),
+				span_notice("Вы начинаете заменять <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target] на [tool.name]..."),
+				span_notice("[user] начинает заменять <i>[target.parse_zone_with_bodypart(target_zone)]</i> у <i>[target.parse_zone_with_bodypart(target_zone)]</i> на [tool.name]."),
+				span_notice("[user] начинает заменять <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
 			)
 		else
-			to_chat(user, span_warning("[tool.name] не подходит для [target.parse_zone_with_bodypart(target_zone)]."))
+			to_chat(user, span_warning("[tool.name] не подходит для <i>[target.parse_zone_with_bodypart(target_zone)]</i>."))
 			return SURGERY_STEP_FAIL
 	else if(target_zone == BODY_ZONE_L_ARM || target_zone == BODY_ZONE_R_ARM)
 		display_results(
 			user,
 			target,
 			span_notice("Вы начинаете прикреплять [tool.name] к [target]..."),
-			span_notice("[user] начинает прикреплять [tool.name] к [target.parse_zone_with_bodypart(target_zone)] у [target]."),
-			span_notice("[user] начинает прикреплять что-то к [target.parse_zone_with_bodypart(target_zone)] у [target]."),
+			span_notice("[user] начинает прикреплять [tool.name] к <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
+			span_notice("[user] начинает прикреплять что-то к <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
 		)
 	else
 		to_chat(user, span_warning("[tool.name] должен быть установлен в руку."))
@@ -105,11 +105,11 @@
 		display_results(
 			user,
 			target,
-			span_notice("Вы успешно заменили [target.parse_zone_with_bodypart(target_zone)] у [target]."),
-			span_notice("[user] успешно заменил [target.parse_zone_with_bodypart(target_zone)] у [target] на [tool.name]!"),
-			span_notice("[user] успешно заменил [target.parse_zone_with_bodypart(target_zone)] у [target]!"),
+			span_notice("Вы успешно заменили <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
+			span_notice("[user] успешно заменил <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target] на [tool.name]!"),
+			span_notice("[user] успешно заменил <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]!"),
 		)
-		display_pain(target, "Вы наполняетесь позитивными ощущениями, потому что вы снова чувствуете ваш [target.parse_zone_with_bodypart(target_zone)]!", TRUE)
+		display_pain(target, "Вы наполняетесь позитивными ощущениями, потому что вы снова чувствуете ваш <i>[target.parse_zone_with_bodypart(target_zone)]</i>!", TRUE)
 		return
 	else
 		var/obj/item/bodypart/bodypart_to_attach = target.newBodyPart(target_zone, FALSE, FALSE)
@@ -123,7 +123,7 @@
 			span_notice("[user] заканчивает прикреплять [tool.name]!"),
 			span_notice("[user] завершает операцию по прикреплению!"),
 		)
-		display_pain(target, "Вы испытываете странные ощущения от своего нового [target.parse_zone_with_bodypart(target_zone)].", TRUE)
+		display_pain(target, "Вы испытываете странные ощущения от своего нового <i>[target.parse_zone_with_bodypart(target_zone)]</i>.", TRUE)
 		if(istype(tool, /obj/item/chainsaw))
 			qdel(tool)
 			var/obj/item/chainsaw/mounted_chainsaw/new_arm = new(target)

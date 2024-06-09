@@ -42,11 +42,11 @@
 	display_results(
 		user,
 		target,
-		span_notice("Вы начинаете вставлять [tool.name] в разрезе на [target.parse_zone_with_bodypart(target_zone)] у [target] ..."),
-		span_notice("[user] начинает вставлять [tool.name] в разрезе на [target.parse_zone_with_bodypart(target_zone)] у [target]]."),
-		span_notice("[user] начинает вставлять [tool.name] в разрезе на [target.parse_zone_with_bodypart(target_zone)] у [target]]."),
+		span_notice("Вы начинаете вставлять [tool.name] в разрезе на <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target] ..."),
+		span_notice("[user] начинает вставлять [tool.name] в разрезе на <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]]."),
+		span_notice("[user] начинает вставлять [tool.name] в разрезе на <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]]."),
 	)
-	display_pain(target, "Вы чувствуете, как что-то вставили вам под кожу в [target.parse_zone_with_bodypart(target_zone)].")
+	display_pain(target, "Вы чувствуете, как что-то вставили вам под кожу в <i>[target.parse_zone_with_bodypart(target_zone)]</i>.")
 
 /datum/surgery_step/insert_plastic/success(mob/user, mob/living/target, target_zone, obj/item/stack/tool, datum/surgery/surgery, default_display_results)
 	. = ..()

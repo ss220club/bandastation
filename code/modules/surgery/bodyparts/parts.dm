@@ -6,7 +6,7 @@
 	max_damage = LIMB_MAX_HP_CORE
 	body_zone = BODY_ZONE_CHEST
 	body_part = CHEST
-	plaintext_zone = "<i>грудь</i>"
+	plaintext_zone = "грудь"
 	is_dimorphic = TRUE
 	px_x = 0
 	px_y = 0
@@ -191,7 +191,7 @@
 	icon_state = "default_human_l_arm"
 	body_zone = BODY_ZONE_L_ARM
 	body_part = ARM_LEFT
-	plaintext_zone = "<i>левая рука</i>"
+	plaintext_zone = "левая рука"
 	aux_zone = BODY_ZONE_PRECISE_L_HAND
 	held_index = 1
 	px_x = -6
@@ -288,7 +288,7 @@
 	body_zone = BODY_ZONE_R_ARM
 	body_part = ARM_RIGHT
 	icon_state = "default_human_r_arm"
-	plaintext_zone = "<i>правая рука</i>"
+	plaintext_zone = "правая рука"
 	aux_zone = BODY_ZONE_PRECISE_R_HAND
 	aux_layer = BODYPARTS_HIGH_LAYER
 	held_index = 2
@@ -411,7 +411,7 @@
 	icon_state = "default_human_l_leg"
 	body_zone = BODY_ZONE_L_LEG
 	body_part = LEG_LEFT
-	plaintext_zone = "<i>левая нога</i>"
+	plaintext_zone = "левая нога"
 	px_x = -2
 	px_y = 12
 	can_be_disabled = TRUE
@@ -501,7 +501,7 @@
 	icon_state = "default_human_r_leg"
 	body_zone = BODY_ZONE_R_LEG
 	body_part = LEG_RIGHT
-	plaintext_zone = "<i>правая нога</i>"
+	plaintext_zone = "правая нога"
 	px_x = 2
 	px_y = 12
 	bodypart_trait_source = RIGHT_LEG_TRAIT
