@@ -24,20 +24,20 @@
 		to_chat(user, span_warning("Это не аугментат, дурак!"))
 		return SURGERY_STEP_FAIL
 	if(aug.body_zone != target_zone)
-		to_chat(user, span_warning("Для [target.parse_zone_with_bodypart(target_zone)] не подходит [tool.name]."))
+		to_chat(user, span_warning("Для <i>[target.parse_zone_with_bodypart(target_zone)]</i> не подходит [tool.name]."))
 		return SURGERY_STEP_FAIL
 	target_limb = surgery.operated_bodypart
 	if(target_limb)
 		display_results(
 			user,
 			target,
-			span_notice("Вы начинаете аугментировать [target.parse_zone_with_bodypart(user.zone_selected)] у [target]..."),
-			span_notice("[user] начинает аугментировать [target.parse_zone_with_bodypart(user.zone_selected)] у [target] с помощью [aug.name]."),
-			span_notice("[user] начинает аугментировать [target.parse_zone_with_bodypart(user.zone_selected)] у [target]."),
+			span_notice("Вы начинаете аугментировать <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i> у [target]..."),
+			span_notice("[user] начинает аугментировать <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i> у [target] с помощью [aug.name]."),
+			span_notice("[user] начинает аугментировать <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i> у [target]."),
 		)
-		display_pain(target, "Вы чувствуете ужасную боль в [target.parse_zone_with_bodypart(user.zone_selected)]!")
+		display_pain(target, "Вы чувствуете ужасную боль в <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i>!")
 	else
-		user.visible_message(span_notice("[user] ищет у [target] в [target.parse_zone_with_bodypart(user.zone_selected)]."), span_notice("Вы ищете у [target] в [target.parse_zone_with_bodypart(user.zone_selected)]..."))
+		user.visible_message(span_notice("[user] ищет у [target] в <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i>."), span_notice("Вы ищете у [target] в <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i>..."))
 
 
 //ACTUAL SURGERIES
@@ -74,9 +74,9 @@
 				display_results(
 					user,
 					target,
-					span_warning("Вы не смогли заменить [target.parse_zone_with_bodypart(target_zone)] у [target]! Тело отвергает [tool.name]!"),
-					span_warning("[user] не смог заменить [target.parse_zone_with_bodypart(target_zone)] у [target]!"),
-					span_warning("[user] не смог заменить [target.parse_zone_with_bodypart(target_zone)] у [target]!"),
+					span_warning("Вы не смогли заменить <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]! Тело отвергает [tool.name]!"),
+					span_warning("[user] не смог заменить <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]!"),
+					span_warning("[user] не смог заменить <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]!"),
 				)
 				tool.forceMove(target.loc)
 				return
@@ -85,12 +85,12 @@
 		display_results(
 			user,
 			target,
-			span_notice("Вы успешно заменили [target.parse_zone_with_bodypart(target_zone)] у [target]."),
-			span_notice("[user] успешно заменил [target.parse_zone_with_bodypart(target_zone)] у [target] на [tool.name]!"),
-			span_notice("[user] успешно заменил [target.parse_zone_with_bodypart(target_zone)] у [target]!"),
+			span_notice("Вы успешно заменили <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
+			span_notice("[user] успешно заменил <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target] на [tool.name]!"),
+			span_notice("[user] успешно заменил <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]!"),
 		)
-		display_pain(target, "Ваш [target.parse_zone_with_bodypart(target_zone)] наполняется синтетическими ощущениями!", mechanical_surgery = TRUE)
+		display_pain(target, "Ваш <i>[target.parse_zone_with_bodypart(target_zone)]</i> наполняется синтетическими ощущениями!", mechanical_surgery = TRUE)
 		log_combat(user, target, "augmented", addition="by giving him new [target.parse_zone_with_bodypart(target_zone)] COMBAT MODE: [uppertext(user.combat_mode)]")
 	else
-		to_chat(user, span_warning("У [target] нет органической [target.parse_zone_with_bodypart(target_zone)] здесь!"))
+		to_chat(user, span_warning("У [target] нет органической <i>[target.parse_zone_with_bodypart(target_zone)]</i> здесь!"))
 	return ..()
