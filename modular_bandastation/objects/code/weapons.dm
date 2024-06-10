@@ -193,8 +193,9 @@
 /obj/projectile/bullet/peas_shooter/on_hit(atom/target, blocked, pierce_hit)
 	. = ..()
 	if(istype(target, /mob/living/carbon))
+		var/mob/living/carbon/M = target
 		if(prob(15))
-			target.emote("moan")
+			M.emote("moan")
 	else
 		return
 
@@ -345,9 +346,8 @@
 	. = ..()
 	if(isliving(target))
 		var/mob/living/carbon/M = target
-		if(M.can_inject)
-			var/datum/reagent/R = new pneuma_reagent
-			R.expose_mob(M, VAPOR, reagent_volume)
+		var/datum/reagent/R = new pneuma_reagent
+		R.expose_mob(M, VAPOR, reagent_volume)
 
 /datum/supply_pack/security/armory/pneumagun
 	name = "Pneumatic Pepper Rifles Crate"

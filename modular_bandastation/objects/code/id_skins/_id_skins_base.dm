@@ -24,9 +24,9 @@
 /obj/item/card/id/examine(mob/user)
 	. = ..()
 	if(skin_applied)
-		. += span_notice("Нажмите <b>Alt-Click</b> на карту, чтобы снять наклейку.")
+		. += span_notice("Нажмите <b>Right-Click</b> на карту, чтобы снять наклейку.")
 
-/obj/item/card/id/click_alt(mob/living/user)
+/obj/item/card/id/attack_hand_secondary(mob/living/user, list/modifiers)
 	. = ..()
 	if(user.stat || HAS_TRAIT(user, TRAIT_HANDS_BLOCKED) || HAS_TRAIT(user, TRAIT_RESTRAINED))
 		to_chat(user, span_warning("У вас нет возможности снять наклейку!"))
@@ -63,7 +63,7 @@
 		return FALSE
 
 	to_chat(user, span_notice("Вы начинаете наносить наклейку на карту."))
-	if(!do_after(user, 2 SECONDS, target = src, progress = TRUE, timed_action_flags = IGNORE_USER_LOC_CHANGE))
+	if(!do_after(user, 2 SECONDS, target = src, progress = TRUE))
 		return FALSE
 
 	var/mutable_appearance/card_skin = mutable_appearance(skin.icon, skin.icon_state)
@@ -81,7 +81,7 @@
 		qdel(skin_applied)
 	skin_applied = null
 	desc = initial(desc)
-	overlays.Cut()
+	overlays.Remove()
 
 /obj/item/id_skin
 	name = "\improper наклейка на карту"
@@ -90,11 +90,6 @@
 	icon_state = ""
 	var/pronoun_name = "наклейку"
 	var/info = "На ней наклейка."
-
-/obj/item/id_skin/Initialize(mapload)
-	. = ..()
-	pixel_y = rand(-5, 5)
-	pixel_x = rand(-5, 5)
 
 /obj/item/id_skin/colored
 	name = "\improper голо-наклейка на карту"

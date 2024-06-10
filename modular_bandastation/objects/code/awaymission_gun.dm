@@ -109,7 +109,7 @@
 		"adv_weaponry",
 	)
 	design_ids = list(
-		"gategun_energy_gun_mk2",
-		"gategun_energy_gun_mk1",
+		"gate_energy_gun_mk2",
+		"gate_energy_gun_mk1",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
