@@ -57,6 +57,11 @@
 	setDir(turn(dir, 90))
 	after_rotation(user)
 
+/obj/structure/tribune/CanAStarPass(to_dir, datum/can_pass_info/pass_info)
+	if(!(to_dir & dir))
+		return TRUE
+	return ..()
+
 /obj/structure/tribune/centcom
 	name = "CentCom tribune"
 	icon = 'modular_bandastation/objects/icons/tribune.dmi'

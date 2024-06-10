@@ -6,5 +6,5 @@
 /datum/modpack/spawners/initialize()
 	. = ..()
 	GLOB.uncommon_loot += list(
-		/obj/item/melee/stylet = 1,
+		/obj/item/knife/stylet = 1,
 	)

@@ -10,11 +10,10 @@
 	var/reclined = FALSE
 
 /obj/item/gun/ballistic/revolver/reclinable/attack_self(mob/living/user)
-	reclined = !reclined
-	playsound(user, reclined ? reclined_sound : snapback_sound, 50, 1)
-	update_icon()
-
 	if(reclined)
+		playsound(user, reclined ? reclined_sound : snapback_sound, 50, 1)
+		update_icon_state()
+	if(!reclined)
 		return ..()
 
 /obj/item/gun/ballistic/revolver/reclinable/update_icon_state()
@@ -23,15 +22,16 @@
 
 /obj/item/gun/ballistic/revolver/reclinable/attackby(obj/item/A, mob/user, params)
 	if(!reclined)
-		return
-	return ..()
+		return ..()
+	else
+		return ..()
 
 /obj/item/gun/ballistic/revolver/reclinable/process_fire(atom/target, mob/living/user, message, params, zone_override, bonus_spread)
 	if(!reclined)
 		return ..()
-
-	to_chat(user, span_danger("*click*"))
-	playsound(user, dry_fire_sound, 100, 1)
+	else
+		to_chat(user, span_danger("*click*"))
+		playsound(user, dry_fire_sound, 100, 1)
 
 // Colt Anaconda .44
 /obj/item/gun/ballistic/revolver/reclinable/anaconda
@@ -146,6 +146,16 @@
 	icon = 'modular_bandastation/objects/icons/ammo.dmi'
 	icon_state = "mm127_box"
 
+/obj/projectile/bullet/mm127/on_hit(atom/target, blocked, pierce_hit)
+	. = ..()
+	if(!isliving(target))
+		return
+	var/mob/living/carbon/M = target
+	if(M.move_resist == INFINITY)
+		return
+	var/atom/target_throw = get_edge_target_turf(M, get_dir(src, get_step_away(M, starting)))
+	M.throw_at(target_throw, 2, 2)
+
 // Горохострел
 /obj/item/gun/ballistic/revolver/pea_shooter
 	name = "Горохострел"
@@ -170,15 +180,23 @@
 /obj/item/ammo_casing/peas_shooter
 	name = "pea bullet"
 	desc = "Пуля из гороха, не может нанести какого-либо ощутимого урона."
-	projectile_type = /obj/projectile/bullet/midbullet_r/peas_shooter
+	projectile_type = /obj/projectile/bullet/peas_shooter
 	icon_state = "peashooter_bullet"
 	caliber = CALIBER_PEA
 
 // Пуля горохострела
-/obj/projectile/bullet/midbullet_r/peas_shooter
+/obj/projectile/bullet/peas_shooter
 	icon = 'modular_bandastation/objects/icons/ammo.dmi'
 	icon_state = "peashooter_bullet"
 	stamina = 5
+
+/obj/projectile/bullet/peas_shooter/on_hit(atom/target, blocked, pierce_hit)
+	. = ..()
+	if(istype(target, /mob/living/carbon))
+		if(prob(15))
+			target.emote("moan")
+	else
+		return
 
 // Тактическая бита Флота Nanotrasen
 /obj/item/melee/baseball_bat/homerun/central_command
@@ -214,7 +232,7 @@
 
 /obj/item/melee/baseball_bat/homerun/central_command/pickup(mob/living/user)
 	. = ..()
-	if(user.faction == FACTION_STATION)
+	if(user.job != JOB_CENTCOM)
 		user.AdjustParalyzed(10 SECONDS)
 		user.drop_all_held_items(src, force)
 		to_chat(user, span_userdanger("Это - оружие истинного правосудия. Тебе не дано обуздать его мощь."))
@@ -320,10 +338,16 @@
 
 /obj/projectile/bullet/pneumaball/pepper
 	icon_state = "pneumaball_r"
+	var/pneuma_reagent = /datum/reagent/consumable/condensedcapsaicin
+	var/reagent_volume = 5
 
-/obj/projectile/bullet/pneumaball/pepper/New()
-	..()
-	reagents.add_reagent("condensedcapsaicin", 15)
+/obj/projectile/bullet/pneumaball/pepper/on_hit(atom/target, blocked, pierce_hit)
+	. = ..()
+	if(isliving(target))
+		var/mob/living/carbon/M = target
+		if(M.can_inject)
+			var/datum/reagent/R = new pneuma_reagent
+			R.expose_mob(M, VAPOR, reagent_volume)
 
 /datum/supply_pack/security/armory/pneumagun
 	name = "Pneumatic Pepper Rifles Crate"
@@ -342,7 +366,7 @@
 	cost = CARGO_CRATE_VALUE * 1.25
 	crate_name = "pneumatic pepper ammunition pack"
 
-/obj/item/melee/stylet
+/obj/item/knife/stylet
 	name = "выкидной нож"
 	desc = "Маленький складной нож скрытого ношения. \
 	Нож в итальянском стиле, который исторически стал предметом споров и даже запретов \
@@ -366,27 +390,25 @@
 	attack_verb_simple = list("hit", "poked")
 	var/list/attack_verb_simple_on = list("slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 
-/obj/item/melee/stylet/update_icon_state()
+/obj/item/knife/stylet/update_icon()
 	. = ..()
 	if(on)
-		icon_state = "stylet_1"
-		inhand_icon_state = "stylet_1"
+		icon_state = inhand_icon_state = "stylet_1"
 	else
-		icon_state = "stylet_0"
-		inhand_icon_state = "stylet_1"
+		icon_state = inhand_icon_state = "stylet_0"
 
-/obj/item/melee/stylet/attack_self(mob/user)
+/obj/item/knife/stylet/attack_self(mob/user)
 	on = !on
 
 	if(on)
-		user.balloon_alert(user, "Вы разложили [src]")
-		update_icon(UPDATE_ICON_STATE)
+		to_chat(user, span_notice("Вы разложили [src.name]."))
+		update_icon()
 		w_class = WEIGHT_CLASS_SMALL
 		force = force_on
 		attack_verb_simple = attack_verb_simple_on
 	else
-		user.balloon_alert(user, "Вы сложили [src].")
-		update_icon(UPDATE_ICON_STATE)
+		to_chat(user, span_notice("Вы сложили [src.name]."))
+		update_icon()
 		w_class = initial(w_class)
 		force = initial(force)
 		attack_verb_simple = initial(attack_verb_simple)

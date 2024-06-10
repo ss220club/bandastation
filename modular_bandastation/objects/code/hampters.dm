@@ -31,17 +31,7 @@
 /obj/item/toy/plush/hampter/attack_self(mob/living/carbon/human/user)
 	. = ..()
 	if(user.combat_mode == TRUE)
-		AddComponent(
-		/datum/component/blood_walk,\
-		blood_type = /obj/effect/decal/cleanable/blood,\
-		blood_spawn_chance = 60,\
-		)
-		AddComponent(
-			/datum/component/bloody_spreader,\
-			blood_left = 20,\
-			blood_dna = list("meaty DNA" = "MT-"),\
-			diseases = null,\
-		)
+		new /obj/effect/decal/cleanable/blood(get_turf(user))
 
 // Подвиды
 /obj/item/toy/plush/hampter/assistant

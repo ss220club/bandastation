@@ -79,27 +79,6 @@
 	add_fingerprint(user)
 	return TRUE
 
-/obj/structure/platform/CanPass(atom/movable/mover, border_dir)
-	. = ..()
-	if(!anchored)
-		CheckLayer()
-	if(istype(mover, /obj/structure/platform))
-		return FALSE
-	if(istype(mover, /obj/projectile))
-		return TRUE
-	if(corner)
-		return !density
-	if(mover && mover.throwing)
-		return TRUE
-	var/obj/structure/S = locate(/obj/structure) in get_turf(mover)
-	if(S && S.climbable && !(S.flags_1 & ON_BORDER_1) && climbable && isliving(mover))// Climbable objects allow you to universally climb over others
-		return TRUE
-	if(!(flags_1 & ON_BORDER_1) || get_dir(loc, target) == dir)
-		return FALSE
-	else
-		return TRUE
-
-
 /obj/structure/platform/click_alt(mob/user)
 	. = ..()
 	rotate(user)
@@ -122,6 +101,12 @@
 		playsound(src, 'sound/items/deconstruct.ogg', 50, 1)
 		new material_type(user.loc, material_amount)
 		qdel(src)
+
+/obj/structure/platform/CanAStarPass(to_dir, datum/can_pass_info/pass_info)
+	. = ..()
+	if(!(to_dir & dir))
+		return TRUE
+	return ..()
 
 // Platform types
 /obj/structure/platform/reinforced

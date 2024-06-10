@@ -26,22 +26,29 @@
 	. = ..()
 	AddComponent(/datum/component/two_handed, \
 		wieldsound = 'modular_bandastation/objects/sounds/weapons/melee/electrostaff/on.ogg', \
+		wield_callback = CALLBACK(src, PROC_REF(on_wield)), \
+		unwield_callback = CALLBACK(src, PROC_REF(on_unwield)), \
 	)
 
-/obj/item/melee/baton/security/electrostaff/update_icon_state()
+/obj/item/melee/baton/security/electrostaff/proc/on_wield()
+	active = TRUE
+	update_icon()
+
+/obj/item/melee/baton/security/electrostaff/proc/on_unwield()
+	active = FALSE
+	update_icon()
+
+/obj/item/melee/baton/security/electrostaff/update_icon(updates)
+	. = ..()
 	if(active || HAS_TRAIT(src, TRAIT_WIELDED))
-		icon_state = "[initial(icon_state)]_active"
-		return ..()
+		icon_state = inhand_icon_state = "[initial(icon_state)]_active"
 	if(HAS_TRAIT(src, TRAIT_WIELDED))
-		icon_state = "[initial(icon_state)]_wield"
-		return ..()
+		icon_state = inhand_icon_state = "[initial(icon_state)]_wield"
 	if(!cell)
-		icon_state = "[initial(icon_state)]_nocell"
-		return ..()
+		icon_state = inhand_icon_state = "[initial(icon_state)]_nocell"
 	if(!cell || HAS_TRAIT(src, TRAIT_WIELDED))
-		icon_state = "[initial(icon_state)]_nocell_wield"
-		return ..()
-	icon_state = "[initial(icon_state)]"
+		icon_state = inhand_icon_state = "[initial(icon_state)]_nocell_wield"
+	icon_state = inhand_icon_state = "[initial(icon_state)]"
 	return ..()
 
 /obj/item/melee/baton/security/electrostaff/examine(mob/user)

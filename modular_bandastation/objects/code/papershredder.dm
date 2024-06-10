@@ -39,13 +39,6 @@
 	paperamount += paper_result
 	qdel(item)
 	playsound(loc, 'modular_bandastation/objects/sounds/pshred.ogg', 75, 1)
-	if(paperamount > max_paper)
-		to_chat(user, span_danger("[src] was too full, and shredded paper goes everywhere!"))
-		for(var/i in 1 to paperamount-max_paper)
-			var/obj/item/shredded_paper/shredp = get_shredded_paper()
-			shredp.loc = get_turf(src)
-			shredp.throw_at(get_edge_target_turf(src, pick(GLOB.alldirs)), 1, 1)
-		paperamount = max_paper
 	update_icon()
 	add_fingerprint(user)
 
@@ -76,7 +69,7 @@
 		empty_into = null
 
 	if(empty_into.contents >= empty_into.atom_storage.max_total_storage)
-		user.balloon_alert(user, "[empty_into] is full.")
+		to_chat(user, span_warning("[empty_into.name] is full."))
 		return
 
 	while(paperamount)

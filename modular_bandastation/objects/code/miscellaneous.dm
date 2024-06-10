@@ -93,8 +93,9 @@
 // Archive structure
 /obj/structure/archives
 	name = "Desk"
+	icon = 'icons/obj/antags/cult/structures.dmi'
 	desc = "A desk covered in arcane manuscripts and tomes in unknown languages. Looking at the text makes your skin crawl."
-	icon_state = "archives"
+	icon_state = "tomealtar"
 	light_range = 1.5
 	light_color = LIGHT_COLOR_FIRE
 
