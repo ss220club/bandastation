@@ -77,7 +77,7 @@
 	throwforce = 0
 	w_class = WEIGHT_CLASS_TINY
 	resistance_flags = FLAMMABLE
-	layer = 4
+	layer = BELOW_MOB_LAYER
 	max_integrity = 25
 	throw_range = 3
 	throw_speed = 2

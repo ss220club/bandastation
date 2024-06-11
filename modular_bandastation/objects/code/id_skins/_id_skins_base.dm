@@ -24,45 +24,38 @@
 /obj/item/card/id/examine(mob/user)
 	. = ..()
 	if(skin_applied)
-		. += span_notice("Нажмите <b>Right-Click</b> на карту, чтобы снять наклейку.")
+		. += span_notice("Нажмите <b>Ctrl-Click</b> на карту, чтобы попытаться снять наклейку.")
 
 /obj/item/card/id/attack_hand_secondary(mob/living/user, list/modifiers)
-	. = ..()
-	if(user.stat || HAS_TRAIT(user, TRAIT_HANDS_BLOCKED) || HAS_TRAIT(user, TRAIT_RESTRAINED))
-		to_chat(user, span_warning("У вас нет возможности снять наклейку!"))
-		return
-
+	if(HAS_TRAIT(user, TRAIT_RESTRAINED))
+		to_chat(user, span_warning("Ваши руки должны быть свободны, чтобы сделать это!"))
 	if(!skin_applied)
 		to_chat(user, span_warning("На карте нет наклейки!"))
-		return
-
-	if(user.combat_mode)
-		to_chat(user, span_warning("Вы срываете наклейку с карты!"))
+	if(user.combat_mode == TRUE)
+		to_chat(user, span_notice("Вы срываете наклейку с карты."))
 		playsound(user.loc, 'sound/items/poster_ripped.ogg', 50, TRUE)
 		remove_skin(delete = TRUE)
 	else
-		to_chat(user, span_notice("Вы начинаете аккуратно снимать наклейку с карты."))
+		to_chat(user, span_notice("Вы начинаете аккуратно снимать наклейку с карты..."))
 		if(!do_after(user, 5 SECONDS, target = src, progress = TRUE))
 			return FALSE
 
-		to_chat(user, span_notice("Вы сняли наклейку с карты."))
+		to_chat(user, span_notice("Вы аккуратно сняли наклейку с карты."))
 
-		if(!user.get_active_hand() && Adjacent(user))
-			user.put_in_hands(skin_applied)
+		if(!user.get_active_hand() || Adjacent(user))
+			user.put_in_active_hand(skin_applied)
 		else
 			skin_applied.forceMove(get_turf(user))
 		remove_skin()
 
 /obj/item/card/id/update_overlays(obj/item/id_skin/skin)
-	var/mutable_appearance/card_skin = mutable_appearance(skin.icon, skin.icon_state)
-	card_skin.color = skin.color
 	if(skin_applied == null)
-		cut_overlay(card_skin)
-		return ..()
-	if(istype(skin, /obj/item/id_skin))
-		add_overlay(card_skin)
-		return ..()
-
+		return
+	else
+		var/mutable_appearance/card_skin = mutable_appearance(skin.icon, skin.icon_state)
+		card_skin.color = skin.color
+		. += card_skin
+		return . = ..()
 
 /obj/item/card/id/proc/apply_skin(obj/item/id_skin/skin, mob/user)
 	if(skin_applied)
@@ -77,21 +70,20 @@
 	if(!do_after(user, 2 SECONDS, target = src, progress = TRUE))
 		return FALSE
 
-	skin_applied = skin
-	update_overlays(UPDATE_OVERLAYS)
 	to_chat(user, span_notice("Вы наклеили [skin.pronoun_name] на [src]."))
 	desc += "<br>[skin.info]"
-	user.dropItemToGround()
+	user.dropItemToGround(skin)
 	skin.forceMove(src)
 	skin_applied = skin
+	update_overlays(skin)
 	return TRUE
 
 /obj/item/card/id/proc/remove_skin(delete = FALSE)
 	if(delete)
 		qdel(skin_applied)
 	skin_applied = null
-	update_overlays(UPDATE_OVERLAYS)
 	desc = initial(desc)
+	update_overlays()
 
 /obj/item/id_skin
 	name = "\improper наклейка на карту"

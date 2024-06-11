@@ -30,14 +30,6 @@
 		require_twohands = TRUE, \
 	)
 
-/obj/item/melee/baton/security/electrostaff/update_icon(updates)
-	if(active)
-		icon_state = inhand_icon_state = "[base_icon_state]_active"
-		return ..()
-	if(HAS_TRAIT(src, TRAIT_WIELDED))
-		icon_state = inhand_icon_state = "[base_icon_state]"
-		return ..()
-
 /obj/item/melee/baton/security/electrostaff/examine(mob/user)
 	. = ..()
 	. -= span_notice("This item can be recharged in a recharger. Using a screwdriver on this item will allow you to access its power cell, which can be replaced.")

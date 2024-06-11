@@ -19,7 +19,7 @@
 	)
 	accepted_magazine_type = /obj/item/ammo_box/magazine/beretta
 	fire_sound = 'modular_bandastation/objects/sounds/weapons/gunshots/beretta_shot.ogg'
-	fire_sound_volume = 20
+	fire_sound_volume = 30
 
 /obj/item/gun/ballistic/automatic/pistol/beretta/reskin_obj(mob/user)
 	. = ..()

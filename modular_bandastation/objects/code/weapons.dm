@@ -10,26 +10,26 @@
 	var/reclined = FALSE
 
 /obj/item/gun/ballistic/revolver/reclinable/attack_hand_secondary(mob/user, list/modifiers)
-	. = ..()
 	reclined = !reclined
-
-	if(reclined)
-		playsound(user, reclined ? reclined_sound : snapback_sound, 50, 1)
-		update_icon()
+	playsound(user, reclined ? reclined_sound : snapback_sound, 50, 1)
+	update_icon_state()
 
 /obj/item/gun/ballistic/revolver/reclinable/attack_self(mob/living/user)
 	if(reclined)
-		return
+		return ..()
 
 /obj/item/gun/ballistic/revolver/reclinable/update_icon_state()
-	icon_state = initial(icon_state) + (reclined ? "_reclined" : "")
+	if(reclined)
+		icon_state = "[icon_state]_reclined"
+	if(!reclined)
+		icon_state = initial(icon_state)
 	return ..()
 
 /obj/item/gun/ballistic/revolver/reclinable/attackby(obj/item/A, mob/user, params)
 	if(!reclined)
-		return ..()
-	else
 		return
+	else
+		return ..()
 
 /obj/item/gun/ballistic/revolver/reclinable/process_fire(atom/target, mob/living/user, message, params, zone_override, bonus_spread)
 	if(!reclined)
@@ -109,6 +109,7 @@
 	icon_state = "rsh12"
 	inhand_icon_state = "rsh12"
 	fire_sound = 'modular_bandastation/objects/sounds/weapons/gunshots/gunshot_rsh12.ogg'
+	fire_sound_volume = 30
 
 /obj/item/gun/ballistic/revolver/reclinable/rsh12/attackby(obj/item/A, mob/user, params)
 	if(istype(A, /obj/item/ammo_box/box_mm127))
