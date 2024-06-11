@@ -6,13 +6,13 @@
 	righthand_file = 'modular_bandastation/objects/icons/inhands/guns_righthand.dmi'
 	icon_state = "laser_gate"
 	force = 10
-	selfcharge = TRUE // Selfcharge is enabled and disabled, and used as the away mission tracker
+	selfcharge = FALSE // Selfcharge is enabled and disabled, and used as the away mission tracker
 	can_charge = 0
 
 // Проверка чтобы не было зарядки на станции
 /obj/item/gun/energy/laser/awaymission_aeg/Initialize(mapload, /obj/item/M)
 	. = ..()
-	on_changed_z_level()
+	cell.charge = 0
 
 /obj/item/gun/energy/laser/awaymission_aeg/on_changed_z_level(turf/old_turf, turf/new_turf, same_z_layer, notify_contents)
 	. = ..()
@@ -26,10 +26,6 @@
 	cell.charge = 0
 	selfcharge = FALSE
 	update_icon()
-
-/obj/item/gun/energy/laser/awaymission_aeg/proc/update_mob(mob/user)
-	if(ismob(loc))
-		user.update_held_items()
 
 // GUNS
 /obj/item/gun/energy/laser/awaymission_aeg/rnd

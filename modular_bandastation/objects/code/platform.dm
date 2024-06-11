@@ -29,12 +29,6 @@
 	if(climbable)
 		AddElement(/datum/element/climbable)
 
-/obj/structure/platform/CanPass(atom/movable/mover, border_dir)
-	. = ..()
-	if(border_dir & dir)
-		return . || mover.throwing || (mover.movement_type & MOVETYPES_NOT_TOUCHING_GROUND)
-	return TRUE
-
 /obj/structure/platform/proc/CheckLayer()
 	if(dir == SOUTH)
 		layer = ABOVE_MOB_LAYER
@@ -86,10 +80,10 @@
 // Construction
 /obj/structure/platform/screwdriver_act(mob/user, obj/item/I)
 	. = TRUE
-	user.balloon_alert(user, "You begin [anchored == TRUE ? "unscrewing" : "screwing"] [src.name] [anchored == TRUE ? "from" : "to"] to the floor.")
+	to_chat(user, span_notice("You begin [anchored == TRUE ? "unscrewing" : "screwing"] [src.name] [anchored == TRUE ? "from" : "to"] to the floor..."))
 	if(!I.use_tool(src, user, decon_speed))
 		return
-	user.balloon_alert(user, span_notice("You [anchored == TRUE ? "unscrew" : "screw"] [src.name] [anchored == TRUE ? "from" : "to"] the floor."))
+	to_chat(user, span_notice("You [anchored == TRUE ? "unscrew" : "screw"] [src.name] [anchored == TRUE ? "from" : "to"] the floor."))
 	anchored = !anchored
 
 /obj/structure/platform/wrench_act(mob/living/user, obj/item/tool)
@@ -102,11 +96,40 @@
 		new material_type(user.loc, material_amount)
 		qdel(src)
 
-/obj/structure/platform/CanAStarPass(to_dir, datum/can_pass_info/pass_info)
+/obj/structure/platform/CanPass(atom/movable/mover, border_dir)
 	. = ..()
+	if(border_dir & dir)
+		return . || mover.throwing || (mover.movement_type & MOVETYPES_NOT_TOUCHING_GROUND)
+	return TRUE
+
+/obj/structure/platform/CanAStarPass(to_dir, datum/can_pass_info/pass_info)
 	if(!(to_dir & dir))
 		return TRUE
 	return ..()
+
+/obj/structure/platform/proc/on_exit(datum/source, atom/movable/leaving, direction)
+	SIGNAL_HANDLER
+
+	if(leaving == src)
+		return // Let's not block ourselves.
+
+	if(!(direction & dir))
+		return
+
+	if (!density)
+		return
+
+	if (leaving.throwing)
+		return
+
+	if (leaving.movement_type & (PHASING|MOVETYPES_NOT_TOUCHING_GROUND))
+		return
+
+	if (leaving.move_force >= MOVE_FORCE_EXTREMELY_STRONG)
+		return
+
+	leaving.Bump(src)
+	return COMPONENT_ATOM_BLOCK_EXIT
 
 // Platform types
 /obj/structure/platform/reinforced

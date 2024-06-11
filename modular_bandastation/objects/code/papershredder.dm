@@ -23,23 +23,18 @@
 
 /obj/machinery/papershredder/attackby(obj/item/item, mob/user, params)
 	. = ..()
-	if(istype(item, /obj/item/storage))
-		add_fingerprint(user)
-		empty_bin(user, item)
-		return
 	var/paper_result
 	if(item.type in shred_amounts)
 		paper_result = shred_amounts[item.type]
 	if(!paper_result)
-		. = ..()
 		return
 	if(paperamount == max_paper)
-		to_chat(user, span_warning("[src] is full; please empty it before you continue."))
+		to_chat(user, span_warning("[src] is full. Please empty it before you continue."))
 		return
 	paperamount += paper_result
 	qdel(item)
 	playsound(loc, 'modular_bandastation/objects/sounds/pshred.ogg', 75, 1)
-	update_icon()
+	update_icon_state()
 	add_fingerprint(user)
 
 /obj/machinery/papershredder/wrench_act(mob/living/user, obj/item/tool)
@@ -51,7 +46,7 @@
 	. = ..()
 	. += span_notice("<b>Right-Click</b> to empty [src].")
 
-/obj/machinery/papershredder/proc/empty_contents(mob/user)
+/obj/machinery/papershredder/proc/empty_contents(mob/living/user)
 	if(HAS_TRAIT(user, TRAIT_RESTRAINED))
 		to_chat(user, span_notice("You need your hands free for this."))
 		return
@@ -60,33 +55,10 @@
 		to_chat(user, span_notice("[src] is empty."))
 		return
 
-	empty_bin(user)
+	get_shredded_paper()
+	update_icon_state()
 
-/obj/machinery/papershredder/proc/empty_bin(mob/living/user, obj/item/storage/empty_into, /datum/storage/content)
 
-	// Sanity.
-	if(empty_into && !istype(empty_into))
-		empty_into = null
-
-	if(empty_into.contents >= empty_into.atom_storage.max_total_storage)
-		to_chat(user, span_warning("[empty_into.name] is full."))
-		return
-
-	while(paperamount)
-		var/obj/item/shredded_paper/SP = get_shredded_paper()
-		if(!SP)
-			break
-		if(empty_into)
-			empty_into.atom_storage.dump_content_at(empty_into)
-	if(empty_into)
-		if(paperamount)
-			to_chat(user, span_notice("You fill [empty_into] with as much shredded paper as it will carry."))
-		else
-			to_chat(user, span_notice("You empty [src] into [empty_into]."))
-
-	else
-		to_chat(user, span_notice("You empty [src]."))
-	update_icon()
 
 /obj/machinery/papershredder/proc/get_shredded_paper()
 	if(!paperamount)
@@ -97,16 +69,6 @@
 /obj/machinery/papershredder/update_icon_state()
 	icon_state = "papershredder[clamp(round(paperamount/3), 0, 5)]"
 	return ..()
-
-/obj/item/shredded_paper/attackby(obj/item/shredp as obj, mob/user)
-	if(HAS_TRAIT(shredp, ON_FIRE))
-		add_fingerprint(user)
-		user.visible_message(
-			span_danger("\The [user] burns right through [src.name], turning it to ash. It flutters through the air before settling on the floor in a heap."),
-			span_danger("You burn right through [src.name], turning it to ash. It flutters through the air before settling on the floor in a heap."))
-		fire_act()
-	else
-		..()
 
 /obj/item/shredded_paper
 	name = "shredded paper"

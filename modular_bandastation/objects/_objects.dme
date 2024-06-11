@@ -22,7 +22,6 @@
 #include "code/posters.dm"
 #include "code/tribune.dm"
 #include "code/weapons.dm"
-#include "code/musician.dm"
 #include "code/flag.dm"
 #include "code/wallets.dm"
 #include "code/electrostaff.dm"

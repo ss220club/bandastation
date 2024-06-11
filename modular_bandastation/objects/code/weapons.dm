@@ -9,12 +9,17 @@
 	var/reclined_sound = 'modular_bandastation/objects/sounds/weapons/cylinder/reclined_rsh12.ogg'
 	var/reclined = FALSE
 
-/obj/item/gun/ballistic/revolver/reclinable/attack_self(mob/living/user)
+/obj/item/gun/ballistic/revolver/reclinable/attack_hand_secondary(mob/user, list/modifiers)
+	. = ..()
+	reclined = !reclined
+
 	if(reclined)
 		playsound(user, reclined ? reclined_sound : snapback_sound, 50, 1)
-		update_icon_state()
-	if(!reclined)
-		return ..()
+		update_icon()
+
+/obj/item/gun/ballistic/revolver/reclinable/attack_self(mob/living/user)
+	if(reclined)
+		return
 
 /obj/item/gun/ballistic/revolver/reclinable/update_icon_state()
 	icon_state = initial(icon_state) + (reclined ? "_reclined" : "")
@@ -24,7 +29,7 @@
 	if(!reclined)
 		return ..()
 	else
-		return ..()
+		return
 
 /obj/item/gun/ballistic/revolver/reclinable/process_fire(atom/target, mob/living/user, message, params, zone_override, bonus_spread)
 	if(!reclined)
@@ -32,6 +37,7 @@
 	else
 		to_chat(user, span_danger("*click*"))
 		playsound(user, dry_fire_sound, 100, 1)
+		return FALSE
 
 // Colt Anaconda .44
 /obj/item/gun/ballistic/revolver/reclinable/anaconda
@@ -233,7 +239,7 @@
 
 /obj/item/melee/baseball_bat/homerun/central_command/pickup(mob/living/user)
 	. = ..()
-	if(user.job != JOB_CENTCOM)
+	if(user.job != JOB_CENTCOM || JOB_CENTCOM_ADMIRAL || JOB_CENTCOM_COMMANDER || JOB_CENTCOM_OFFICIAL)
 		user.AdjustParalyzed(10 SECONDS)
 		user.drop_all_held_items(src, force)
 		to_chat(user, span_userdanger("Это - оружие истинного правосудия. Тебе не дано обуздать его мощь."))

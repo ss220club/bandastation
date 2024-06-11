@@ -19,7 +19,7 @@
 	)
 	accepted_magazine_type = /obj/item/ammo_box/magazine/beretta
 	fire_sound = 'modular_bandastation/objects/sounds/weapons/gunshots/beretta_shot.ogg'
-	fire_sound_volume = 50
+	fire_sound_volume = 20
 
 /obj/item/gun/ballistic/automatic/pistol/beretta/reskin_obj(mob/user)
 	. = ..()
@@ -45,6 +45,7 @@
 	desc = "Магазин резиновых патронов калибра 9x19mm."
 	icon = 'modular_bandastation/objects/icons/ammo.dmi'
 	icon_state = "berettar"
+	base_icon_state = "berettar"
 	ammo_type = /obj/item/ammo_casing/beretta/mmrub919
 	max_ammo = 10
 	multiload = 0
@@ -56,6 +57,7 @@
 	name = "beretta lethal 9x19mm magazine"
 	desc = "Магазин летальных патронов калибра 9x19mm."
 	icon_state = "berettal"
+	base_icon_state = "berettal"
 	ammo_type = /obj/item/ammo_casing/beretta/mm919
 
 /obj/item/ammo_box/magazine/beretta/mmbsp919

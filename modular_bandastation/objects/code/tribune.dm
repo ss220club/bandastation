@@ -57,10 +57,40 @@
 	setDir(turn(dir, 90))
 	after_rotation(user)
 
+/obj/structure/tribune/CanPass(atom/movable/mover, border_dir)
+	. = ..()
+	if(border_dir & dir)
+		return . || mover.throwing || (mover.movement_type & MOVETYPES_NOT_TOUCHING_GROUND)
+	return TRUE
+
 /obj/structure/tribune/CanAStarPass(to_dir, datum/can_pass_info/pass_info)
 	if(!(to_dir & dir))
 		return TRUE
 	return ..()
+
+/obj/structure/tribune/proc/on_exit(datum/source, atom/movable/leaving, direction)
+	SIGNAL_HANDLER
+
+	if(leaving == src)
+		return // Let's not block ourselves.
+
+	if(!(direction & dir))
+		return
+
+	if (!density)
+		return
+
+	if (leaving.throwing)
+		return
+
+	if (leaving.movement_type & (PHASING|MOVETYPES_NOT_TOUCHING_GROUND))
+		return
+
+	if (leaving.move_force >= MOVE_FORCE_EXTREMELY_STRONG)
+		return
+
+	leaving.Bump(src)
+	return COMPONENT_ATOM_BLOCK_EXIT
 
 /obj/structure/tribune/centcom
 	name = "CentCom tribune"

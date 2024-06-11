@@ -53,6 +53,17 @@
 			skin_applied.forceMove(get_turf(user))
 		remove_skin()
 
+/obj/item/card/id/update_overlays(obj/item/id_skin/skin)
+	var/mutable_appearance/card_skin = mutable_appearance(skin.icon, skin.icon_state)
+	card_skin.color = skin.color
+	if(skin_applied == null)
+		cut_overlay(card_skin)
+		return ..()
+	if(istype(skin, /obj/item/id_skin))
+		add_overlay(card_skin)
+		return ..()
+
+
 /obj/item/card/id/proc/apply_skin(obj/item/id_skin/skin, mob/user)
 	if(skin_applied)
 		to_chat(usr, span_warning("На карте уже есть наклейка, сначала соскребите её!"))
@@ -66,22 +77,21 @@
 	if(!do_after(user, 2 SECONDS, target = src, progress = TRUE))
 		return FALSE
 
-	var/mutable_appearance/card_skin = mutable_appearance(skin.icon, skin.icon_state)
-	card_skin.color = skin.color
+	skin_applied = skin
+	update_overlays(UPDATE_OVERLAYS)
 	to_chat(user, span_notice("Вы наклеили [skin.pronoun_name] на [src]."))
 	desc += "<br>[skin.info]"
 	user.dropItemToGround()
 	skin.forceMove(src)
 	skin_applied = skin
-	add_overlay(card_skin)
 	return TRUE
 
 /obj/item/card/id/proc/remove_skin(delete = FALSE)
 	if(delete)
 		qdel(skin_applied)
 	skin_applied = null
+	update_overlays(UPDATE_OVERLAYS)
 	desc = initial(desc)
-	overlays.Remove()
 
 /obj/item/id_skin
 	name = "\improper наклейка на карту"

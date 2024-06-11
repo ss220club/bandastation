@@ -6,6 +6,7 @@
 	icon = 'modular_bandastation/objects/icons/melee.dmi'
 	icon_state = "electrostaff_orange"
 	inhand_icon_state = "electrostaff_orange"
+	base_icon_state = "electrostaff_orange"
 	slot_flags = ITEM_SLOT_BELT
 	w_class = WEIGHT_CLASS_HUGE
 	force = 10
@@ -26,30 +27,16 @@
 	. = ..()
 	AddComponent(/datum/component/two_handed, \
 		wieldsound = 'modular_bandastation/objects/sounds/weapons/melee/electrostaff/on.ogg', \
-		wield_callback = CALLBACK(src, PROC_REF(on_wield)), \
-		unwield_callback = CALLBACK(src, PROC_REF(on_unwield)), \
+		require_twohands = TRUE, \
 	)
 
-/obj/item/melee/baton/security/electrostaff/proc/on_wield()
-	active = TRUE
-	update_icon()
-
-/obj/item/melee/baton/security/electrostaff/proc/on_unwield()
-	active = FALSE
-	update_icon()
-
 /obj/item/melee/baton/security/electrostaff/update_icon(updates)
-	. = ..()
-	if(active || HAS_TRAIT(src, TRAIT_WIELDED))
-		icon_state = inhand_icon_state = "[initial(icon_state)]_active"
+	if(active)
+		icon_state = inhand_icon_state = "[base_icon_state]_active"
+		return ..()
 	if(HAS_TRAIT(src, TRAIT_WIELDED))
-		icon_state = inhand_icon_state = "[initial(icon_state)]_wield"
-	if(!cell)
-		icon_state = inhand_icon_state = "[initial(icon_state)]_nocell"
-	if(!cell || HAS_TRAIT(src, TRAIT_WIELDED))
-		icon_state = inhand_icon_state = "[initial(icon_state)]_nocell_wield"
-	icon_state = inhand_icon_state = "[initial(icon_state)]"
-	return ..()
+		icon_state = inhand_icon_state = "[base_icon_state]"
+		return ..()
 
 /obj/item/melee/baton/security/electrostaff/examine(mob/user)
 	. = ..()
@@ -67,6 +54,8 @@
 			icon_state = "electrostaff_purple"
 		if("Синее свечение")
 			icon_state = "electrostaff_blue"
+	inhand_icon_state = icon_state
+	base_icon_state = icon_state
 	user.update_held_items()
 
 /obj/item/weaponcrafting/gunkit/electrostaff

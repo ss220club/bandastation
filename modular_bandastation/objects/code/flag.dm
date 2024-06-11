@@ -1,4 +1,4 @@
-/obj/item/flag/soundhand
+/obj/item/flag_soundhand
 	name = "флаг группы Саундхэнд"
 	desc = "Флаг легендарной группы Саундхэнд. Вероятно были созданы исключительно для сжигания и эффекта восхищения от крутости."
 	icon = 'modular_bandastation/objects/icons/flag.dmi'
