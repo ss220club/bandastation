@@ -42,6 +42,11 @@
 /obj/structure/platform/Initialize()
 	. = ..()
 	CheckLayer()
+	if(density && flags_1 & ON_BORDER_1) // blocks normal movement from and to the direction it's facing.
+		var/static/list/loc_connections = list(
+			COMSIG_ATOM_EXIT = PROC_REF(on_exit),
+		)
+		AddElement(/datum/element/connect_loc, loc_connections)
 
 /obj/structure/platform/New()
 	..()
@@ -95,6 +100,17 @@
 		playsound(src, 'sound/items/deconstruct.ogg', 50, 1)
 		new material_type(user.loc, material_amount)
 		qdel(src)
+
+
+/obj/structure/platform/proc/can_be_reached(mob/user)
+	var/checking_dir = get_dir(user, src)
+	if(!(checking_dir & dir))
+		return TRUE
+	checking_dir = REVERSE_DIR(checking_dir)
+	for(var/obj/blocker in loc)
+		if(!blocker.CanPass(user, checking_dir))
+			return FALSE
+	return TRUE
 
 /obj/structure/platform/CanPass(atom/movable/mover, border_dir)
 	. = ..()

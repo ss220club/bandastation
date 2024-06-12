@@ -8,6 +8,7 @@
 	max_integrity = 100
 	resistance_flags = FLAMMABLE
 	can_buckle = TRUE
+	flags_1 = ON_BORDER_1
 	var/buildstacktype = /obj/item/stack/sheet/mineral/wood
 	var/buildstackamount = 5
 	var/mover_dir = null
@@ -32,6 +33,12 @@
 /obj/structure/tribune/Initialize(mapload) //Only for mappers
 	..()
 	handle_layer()
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_EXIT = PROC_REF(on_exit),
+	)
+
+	if(flags_1 & ON_BORDER_1)
+		AddElement(/datum/element/connect_loc, loc_connections)
 
 /obj/structure/tribune/setDir(newdir)
 	..()
@@ -43,7 +50,7 @@
 
 /obj/structure/tribune/proc/handle_layer()
 	if(dir == NORTH)
-		layer = LOW_ITEM_LAYER
+		layer = LOW_OBJ_LAYER
 	else
 		layer = ABOVE_MOB_LAYER
 
@@ -56,6 +63,16 @@
 		return
 	setDir(turn(dir, 90))
 	after_rotation(user)
+
+/obj/structure/tribune/proc/can_be_reached(mob/user)
+	var/checking_dir = get_dir(user, src)
+	if(!(checking_dir & dir))
+		return TRUE
+	checking_dir = REVERSE_DIR(checking_dir)
+	for(var/obj/blocker in loc)
+		if(!blocker.CanPass(user, checking_dir))
+			return FALSE
+	return TRUE
 
 /obj/structure/tribune/CanPass(atom/movable/mover, border_dir)
 	. = ..()
@@ -71,26 +88,18 @@
 /obj/structure/tribune/proc/on_exit(datum/source, atom/movable/leaving, direction)
 	SIGNAL_HANDLER
 
+	if(leaving.movement_type & PHASING)
+		return
+
 	if(leaving == src)
 		return // Let's not block ourselves.
 
-	if(!(direction & dir))
+	if (leaving.pass_flags & pass_flags_self)
 		return
 
-	if (!density)
-		return
-
-	if (leaving.throwing)
-		return
-
-	if (leaving.movement_type & (PHASING|MOVETYPES_NOT_TOUCHING_GROUND))
-		return
-
-	if (leaving.move_force >= MOVE_FORCE_EXTREMELY_STRONG)
-		return
-
-	leaving.Bump(src)
-	return COMPONENT_ATOM_BLOCK_EXIT
+	if(direction == dir && density)
+		leaving.Bump(src)
+		return COMPONENT_ATOM_BLOCK_EXIT
 
 /obj/structure/tribune/centcom
 	name = "CentCom tribune"

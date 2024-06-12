@@ -1,19 +1,18 @@
-//Beretta M9//
-
 #define CALIBER_9X19MM "9x19mm"
 #define CALIBER_9X19BMM "9x19bmm"
 
+// Beretta M9
 /obj/item/gun/ballistic/automatic/pistol/beretta
 	name = "Беретта M9"
 	desc = "Один из самых распространенных и узнаваемых пистолетов во вселенной. К сожалению, из-за особенности ствола, на пистолет нельзя приделать глушитель. Старая добрая классика."
 	icon = 'modular_bandastation/objects/icons/guns.dmi'
 	lefthand_file = 'modular_bandastation/objects/icons/inhands/guns_lefthand.dmi'
 	righthand_file = 'modular_bandastation/objects/icons/inhands/guns_righthand.dmi'
-	icon_state = "beretta_modified"
+	icon_state = "beretta"
 	w_class = WEIGHT_CLASS_NORMAL
 	can_suppress = FALSE
 	unique_reskin = list(
-		"Modified grip" = "beretta_modified",
+		"Modified grip" = "beretta",
 		"Black skin" = "beretta_black",
 		"Desert skin" = "beretta_desert",
 	)
@@ -25,20 +24,16 @@
 	. = ..()
 	switch(icon_state)
 		if("Modified grip")
-			icon_state = "beretta_modified"
+			icon_state = inhand_icon_state = "beretta"
 		if("Black skin")
-			icon_state = "beretta_black"
+			icon_state = inhand_icon_state = "beretta_black"
 		if("Desert skin")
-			icon_state = "beretta_desert"
+			icon_state = inhand_icon_state = "beretta_desert"
 	user.update_held_items()
 
 /obj/item/gun/ballistic/automatic/pistol/beretta/add_seclight_point()
 	. = ..()
-	AddComponent(/datum/component/seclite_attachable, \
-		light_overlay_icon = 'modular_bandastation/objects/icons/guns.dmi', \
-		light_overlay = "beretta_light", \
-		overlay_x = 0, \
-		overlay_y = 0)
+	AddComponent(/datum/component/seclite_attachable, light_icon_state = "beretta_light")
 
 /obj/item/ammo_box/magazine/beretta
 	name = "beretta rubber 9x19mm magazine"
@@ -50,8 +45,6 @@
 	max_ammo = 10
 	multiload = 0
 	caliber = CALIBER_9X19MM
-	multiple_sprites = AMMO_BOX_FULL_EMPTY
-	multiple_sprite_use_base = FALSE
 
 /obj/item/ammo_box/magazine/beretta/mm919
 	name = "beretta lethal 9x19mm magazine"

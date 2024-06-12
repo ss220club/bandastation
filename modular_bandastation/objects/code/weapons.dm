@@ -11,31 +11,30 @@
 
 /obj/item/gun/ballistic/revolver/reclinable/attack_hand_secondary(mob/user, list/modifiers)
 	reclined = !reclined
-	playsound(user, reclined ? reclined_sound : snapback_sound, 50, 1)
-	update_icon_state()
 
-/obj/item/gun/ballistic/revolver/reclinable/attack_self(mob/living/user)
-	if(reclined)
-		return ..()
-
-/obj/item/gun/ballistic/revolver/reclinable/update_icon_state()
 	if(reclined)
 		icon_state = "[icon_state]_reclined"
 	if(!reclined)
 		icon_state = initial(icon_state)
-	return ..()
+	playsound(user, reclined ? reclined_sound : snapback_sound, 50, 1)
+
+/obj/item/gun/ballistic/revolver/reclinable/attack_self(mob/living/user)
+	if(reclined)
+		return ..()
+		icon_state = "[icon_state]_reclined"
 
 /obj/item/gun/ballistic/revolver/reclinable/attackby(obj/item/A, mob/user, params)
 	if(!reclined)
 		return
 	else
 		return ..()
+		icon_state = "[icon_state]_reclined"
 
 /obj/item/gun/ballistic/revolver/reclinable/process_fire(atom/target, mob/living/user, message, params, zone_override, bonus_spread)
 	if(!reclined)
 		return ..()
 	else
-		to_chat(user, span_danger("*click*"))
+		user.balloon_alert(user, "*click*")
 		playsound(user, dry_fire_sound, 100, 1)
 		return FALSE
 

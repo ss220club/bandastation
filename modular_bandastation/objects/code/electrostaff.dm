@@ -6,7 +6,6 @@
 	icon = 'modular_bandastation/objects/icons/melee.dmi'
 	icon_state = "electrostaff_orange"
 	inhand_icon_state = "electrostaff_orange"
-	base_icon_state = "electrostaff_orange"
 	slot_flags = ITEM_SLOT_BELT
 	w_class = WEIGHT_CLASS_HUGE
 	force = 10
@@ -39,15 +38,13 @@
 	. = ..()
 	switch(icon_state)
 		if("Оранжевое свечение")
-			icon_state = "electrostaff_orange"
+			icon_state = base_icon_state = inhand_icon_state = "electrostaff_orange"
 		if("Красное свечение")
-			icon_state = "electrostaff_red"
+			icon_state = base_icon_state = inhand_icon_state = "electrostaff_red"
 		if("Фиолетовое свечение")
-			icon_state = "electrostaff_purple"
+			icon_state = base_icon_state = inhand_icon_state = "electrostaff_purple"
 		if("Синее свечение")
-			icon_state = "electrostaff_blue"
-	inhand_icon_state = icon_state
-	base_icon_state = icon_state
+			icon_state = base_icon_state = inhand_icon_state = "electrostaff_blue"
 	user.update_held_items()
 
 /obj/item/weaponcrafting/gunkit/electrostaff

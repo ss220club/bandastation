@@ -89,7 +89,6 @@
 /obj/item/paper/pamphlet/update_icon_state()
 	return ..()
 
-// These objects are deleted by Offs, i returned them
 // Archive structure
 /obj/structure/archives
 	name = "Desk"
@@ -98,6 +97,13 @@
 	icon_state = "tomealtar"
 	light_range = 1.5
 	light_color = LIGHT_COLOR_FIRE
+	density = TRUE
+	anchored = TRUE
+
+/obj/structure/archives/wrench_act(mob/living/user, obj/item/tool)
+	. = ..()
+	default_unfasten_wrench(user, tool, 10 SECONDS)
+	return ITEM_INTERACT_SUCCESS
 
 // Display Cases
 /obj/structure/displaycase/hos
