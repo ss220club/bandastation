@@ -688,6 +688,9 @@ GLOBAL_LIST_EMPTY(possible_items)
 		var/list/all_items = M.current.get_all_contents() //this should get things in cheesewheels, books, etc.
 
 		for(var/obj/I in all_items) //Check for items
+			if(HAS_TRAIT(I, TRAIT_ITEM_OBJECTIVE_BLOCKED))
+				continue
+
 			if(istype(I, steal_target))
 				if(!targetinfo) //If there's no targetinfo, then that means it was a custom objective. At this point, we know you have the item, so return 1.
 					return TRUE

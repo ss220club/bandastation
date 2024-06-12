@@ -47,7 +47,7 @@
 		span_notice("[user] начинает отрезать <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]!"),
 		span_notice("[user] начинает отрезать <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]!"),
 	)
-	display_pain(target, "Вы чувствуете жуткую боль в <i>[parse_zone(target_zone)]</i>!")
+	display_pain(target, "You feel a gruesome pain in your [parse_zone(target_zone)]'s joint!", mood_event_type = /datum/mood_event/surgery)
 
 
 /datum/surgery_step/sever_limb/success(mob/user, mob/living/carbon/human/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
@@ -58,7 +58,7 @@
 		span_notice("[user] отрезал <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]!"),
 		span_notice("[user] отрезал <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]!"),
 	)
-	display_pain(target, "Вы больше не чувствуете свою отрезанную <i>[target.parse_zone_with_bodypart(target_zone)]</i>!")
+	display_pain(target, "You can no longer feel your severed [target.parse_zone_with_bodypart(target_zone)]!", mood_event_type = /datum/mood_event/surgery/success)
 
 	if(HAS_MIND_TRAIT(user, TRAIT_MORBID) && ishuman(user))
 		var/mob/living/carbon/human/morbid_weirdo = user
@@ -67,4 +67,8 @@
 	if(surgery.operated_bodypart)
 		var/obj/item/bodypart/target_limb = surgery.operated_bodypart
 		target_limb.drop_limb()
+	return ..()
+
+/datum/surgery_step/sever_limb/failure(mob/user, mob/living/target, target_zone, obj/item/tool, datum/surgery/surgery, fail_prob)
+	display_pain(target, mood_event_type = /datum/mood_event/surgery/failure)
 	return ..()

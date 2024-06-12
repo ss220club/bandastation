@@ -83,7 +83,7 @@
 			span_notice("[user] начинает удалять зараженную плоть из <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i> у [target] при помощи [tool.name]."),
 			span_notice("[user] начинает удалять зараженную плоть из <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i> у [target]."),
 		)
-		display_pain(target, "Инфекция в вашей <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i> адски зудит! Такое ощущение, что тебя режут ножом!")
+		display_pain(target, "The infection in your [target.parse_zone_with_bodypart(user.zone_selected)] stings like hell! It feels like you're being stabbed!", mood_event_type = /datum/mood_event/surgery)
 	else
 		user.visible_message(span_notice("[user] ищет <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i> у [target]."), span_notice("Вы ищете <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i> у [target]..."))
 
@@ -98,6 +98,7 @@
 			span_notice("[user] успешно удалил часть зараженной плоти из <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target] при помощи [tool.name]!"),
 			span_notice("[user] успешно удалил часть зараженной плоти из <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]!"),
 		)
+		display_pain(target, mood_event_type = /datum/mood_event/surgery/success)
 		log_combat(user, target, "excised infected flesh in", addition="COMBAT MODE: [uppertext(user.combat_mode)]")
 		surgery.operated_bodypart.receive_damage(brute=3, wound_bonus=CANT_WOUND)
 		burn_wound.infestation -= infestation_removed
@@ -117,6 +118,7 @@
 		span_notice("[user] срезает часть здоровой плоти из <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target] при помощи [tool.name]!"),
 		span_notice("[user] срезает часть здоровой плоти из <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]!"),
 	)
+	display_pain(target, mood_event_type = /datum/mood_event/surgery/failure)
 	surgery.operated_bodypart.receive_damage(brute=rand(4,8), sharpness=TRUE)
 
 /datum/surgery_step/debride/initiate(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, try_to_fail = FALSE)
