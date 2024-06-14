@@ -1,35 +1,28 @@
-#define CALIBER_9X19MM "9x19mm"
+#define CALIBER_9X19RMM "9x19rmm"
 #define CALIBER_9X19BMM "9x19bmm"
+#define CALIBER_9X19MM "9x19mm"
+#define CALIBER_9X19AMM "9x19amm"
 
 // Beretta M9
 /obj/item/gun/ballistic/automatic/pistol/beretta
-	name = "Беретта M9"
+	name = "беретта M9"
 	desc = "Один из самых распространенных и узнаваемых пистолетов во вселенной. К сожалению, из-за особенности ствола, на пистолет нельзя приделать глушитель. Старая добрая классика."
 	icon = 'modular_bandastation/objects/icons/guns.dmi'
 	lefthand_file = 'modular_bandastation/objects/icons/inhands/guns_lefthand.dmi'
 	righthand_file = 'modular_bandastation/objects/icons/inhands/guns_righthand.dmi'
 	icon_state = "beretta"
+	inhand_icon_state = "beretta"
 	w_class = WEIGHT_CLASS_NORMAL
 	can_suppress = FALSE
-	unique_reskin = list(
-		"Modified grip" = "beretta",
-		"Black skin" = "beretta_black",
-		"Desert skin" = "beretta_desert",
-	)
 	accepted_magazine_type = /obj/item/ammo_box/magazine/beretta
 	fire_sound = 'modular_bandastation/objects/sounds/weapons/gunshots/beretta_shot.ogg'
 	fire_sound_volume = 30
 
-/obj/item/gun/ballistic/automatic/pistol/beretta/reskin_obj(mob/user)
-	. = ..()
-	switch(icon_state)
-		if("Modified grip")
-			icon_state = inhand_icon_state = "beretta"
-		if("Black skin")
-			icon_state = inhand_icon_state = "beretta_black"
-		if("Desert skin")
-			icon_state = inhand_icon_state = "beretta_desert"
-	user.update_held_items()
+/obj/item/gun/ballistic/automatic/pistol/beretta/desert
+	icon_state = "beretta_desert"
+
+/obj/item/gun/ballistic/automatic/pistol/beretta/black
+	icon_state = "beretta_black"
 
 /obj/item/gun/ballistic/automatic/pistol/beretta/add_seclight_point()
 	. = ..()
@@ -39,32 +32,56 @@
 	name = "beretta rubber 9x19mm magazine"
 	desc = "Магазин резиновых патронов калибра 9x19mm."
 	icon = 'modular_bandastation/objects/icons/ammo.dmi'
-	icon_state = "berettar"
+	icon_state = "berettar-10"
 	base_icon_state = "berettar"
 	ammo_type = /obj/item/ammo_casing/beretta/mmrub919
 	max_ammo = 10
 	multiload = 0
-	caliber = CALIBER_9X19MM
+	caliber = CALIBER_9X19RMM
+	multiple_sprites = AMMO_BOX_PER_BULLET
+
+/obj/item/ammo_box/magazine/beretta/update_icon_state()
+	. = ..()
+	icon_state = "[base_icon_state]-[round(ammo_count(), 2)]"
 
 /obj/item/ammo_box/magazine/beretta/mm919
 	name = "beretta lethal 9x19mm magazine"
 	desc = "Магазин летальных патронов калибра 9x19mm."
-	icon_state = "berettal"
+	icon_state = "berettal-10"
 	base_icon_state = "berettal"
 	ammo_type = /obj/item/ammo_casing/beretta/mm919
+	multiple_sprites = AMMO_BOX_PER_BULLET
+	caliber = CALIBER_9X19MM
+
+/obj/item/ammo_box/magazine/beretta/mm919/update_icon_state()
+	. = ..()
+	icon_state = "[base_icon_state]-[round(ammo_count(), 2)]"
 
 /obj/item/ammo_box/magazine/beretta/mmbsp919
 	name = "beretta bluespace 9x19mm magazine"
 	desc = "Магазин экспериментальных блюспейс патронов калибра 9x19mm. Из-за особенности корпуса вмещает только блюспейс патроны."
-	icon_state = "berettab"
+	icon_state = "berettab-10"
+	base_icon_state = "berettab"
 	ammo_type = /obj/item/ammo_casing/beretta/mmbsp919
+	multiple_sprites = AMMO_BOX_PER_BULLET
 	caliber = CALIBER_9X19BMM
+
+/obj/item/ammo_box/magazine/beretta/mmbsp919/update_icon_state()
+	. = ..()
+	icon_state = "[base_icon_state]-[round(ammo_count(), 2)]"
 
 /obj/item/ammo_box/magazine/beretta/mmap919
 	name = "beretta armor-piercing 9x19mm magazine"
 	desc = "Магазин бронебойных патронов калибра 9x19mm."
-	icon_state = "berettaap"
+	icon_state = "berettaap-10"
+	base_icon_state = "berettaap"
+	caliber = CALIBER_9X19AMM
 	ammo_type = /obj/item/ammo_casing/beretta/mmap919
+	multiple_sprites = AMMO_BOX_PER_BULLET
+
+/obj/item/ammo_box/magazine/beretta/mmap919/update_icon_state()
+	. = ..()
+	icon_state = "[base_icon_state]-[round(ammo_count(), 2)]"
 
 /obj/item/ammo_casing/beretta/mmbsp919
 	caliber = CALIBER_9X19BMM
@@ -78,7 +95,7 @@
 	speed = 0.2
 
 /obj/item/ammo_casing/beretta/mmap919
-	caliber = CALIBER_9X19MM
+	caliber = CALIBER_9X19AMM
 	name = "9x19mm armor-piercing bullet casing"
 	desc = "A 9x19 armor-piercing bullet casing."
 	projectile_type = /obj/projectile/bullet/mmap919
@@ -90,7 +107,7 @@
 
 /obj/item/ammo_casing/beretta/mmrub919
 	name = "9x19mm rubber bullet casing"
-	caliber = CALIBER_9X19MM
+	caliber = CALIBER_9X19RMM
 	icon = 'modular_bandastation/objects/icons/ammo.dmi'
 	icon_state = "casingmm919"
 	desc = "A 9x19 rubber bullet casing."
@@ -103,11 +120,11 @@
 
 /obj/item/ammo_casing/beretta/mm919
 	name = "9x19mm lethal bullet casing"
-	caliber = "919mm"
 	icon = 'modular_bandastation/objects/icons/ammo.dmi'
 	icon_state = "casingmm919"
 	desc = "A 9x19 lethal bullet casing."
 	projectile_type = /obj/projectile/bullet/mm919
+	caliber = CALIBER_9X19MM
 
 /obj/projectile/bullet/mm919
 	name = "beretta lethal bullet"
@@ -234,7 +251,7 @@
 	id = "beretta_ammo"
 	display_name = "Beretta Ammo Research"
 	description = "Наши учёные смогли разработать боеприпасы к пистолету беретта и даже несколько... специфичных."
-	prereq_ids = "weaponry"
+	prereq_ids = list("weaponry")
 	design_ids = list(
 		"box_beretta_bsp",
 		"box_beretta_ap",
@@ -242,5 +259,7 @@
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 
-#undef CALIBER_9X19MM
+#undef CALIBER_9X19RMM
 #undef CALIBER_9X19BMM
+#undef CALIBER_9X19MM
+#undef CALIBER_9X19AMM

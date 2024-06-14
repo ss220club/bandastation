@@ -99,7 +99,7 @@
 
 /datum/techweb_node/awaymission_aeg
 	id = "awaymission_aeg"
-	display_name = "Awamission Laser Weaponary Research"
+	display_name = "Awaymission Laser Weaponary Research"
 	description = "Изучение лазерного оружия для гейтвея."
 	prereq_ids = list(
 		"adv_weaponry",

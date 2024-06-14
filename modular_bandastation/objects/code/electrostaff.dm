@@ -13,14 +13,20 @@
 	attack_verb_simple = list("бьёт", "ударяет")
 	attack_verb_continuous = list("бьёт", "ударяет")
 	cooldown = 3.5 SECONDS
-	unique_reskin = list(
-		"Оранжевое свечение" = "electrostaff_orange",
-		"Красное свечение" = "electrostaff_red",
-		"Фиолетовое свечение" = "electrostaff_purple",
-		"Синее свечение" = "electrostaff_blue",
-	)
 	preload_cell_type = /obj/item/stock_parts/cell/high
 	block_chance = 30
+
+/obj/item/melee/baton/security/electrostaff/purple
+	icon_state = "electrostaff_purple"
+	inhand_icon_state = "electrostaff_purple"
+
+/obj/item/melee/baton/security/electrostaff/red
+	icon_state = "electrostaff_red"
+	inhand_icon_state = "electrostaff_red"
+
+/obj/item/melee/baton/security/electrostaff/blue
+	icon_state = "electrostaff_blue"
+	inhand_icon_state = "electrostaff_blue"
 
 /obj/item/melee/baton/security/electrostaff/Initialize(mapload)
 	. = ..()
@@ -34,19 +40,6 @@
 	. -= span_notice("This item can be recharged in a recharger. Using a screwdriver on this item will allow you to access its power cell, which can be replaced.")
 	. += span_notice("Данный предмет не имеет внешних разъемов для зарядки. Используйте <b>отвертку</b> для доступа к внутренней батарее, чтобы заменить или зарядить её.")
 
-/obj/item/melee/baton/security/electrostaff/reskin_obj(mob/user)
-	. = ..()
-	switch(icon_state)
-		if("Оранжевое свечение")
-			icon_state = base_icon_state = inhand_icon_state = "electrostaff_orange"
-		if("Красное свечение")
-			icon_state = base_icon_state = inhand_icon_state = "electrostaff_red"
-		if("Фиолетовое свечение")
-			icon_state = base_icon_state = inhand_icon_state = "electrostaff_purple"
-		if("Синее свечение")
-			icon_state = base_icon_state = inhand_icon_state = "electrostaff_blue"
-	user.update_held_items()
-
 /obj/item/weaponcrafting/gunkit/electrostaff
 	name = "\improper electrostaff parts kit"
 	desc = "Возьмите 2 оглушающие дубинки. Соедините их вместе, поместив внутрь батарею. Используйте остальные инструменты (лишних винтиков быть не должно)."
@@ -54,7 +47,7 @@
 /datum/design/electrostaff
 	name = "Electrostaff Parts Kit"
 	desc = "Оперативный ответ."
-	id = "electrostaff"
+	id = "electrostaff_kit"
 	build_type = PROTOLATHE | AWAY_LATHE
 	materials = list(
 		/datum/material/iron = SHEET_MATERIAL_AMOUNT * 2,
@@ -72,7 +65,7 @@
 /datum/crafting_recipe/electrostaff
 	name = "Electrostaff"
 	tool_behaviors = list(TOOL_SCREWDRIVER, TOOL_WIRECUTTER)
-	result = list(/obj/item/melee/baton/security/electrostaff)
+	result = /obj/item/melee/baton/security/electrostaff
 	reqs = list(/obj/item/melee/baton/security = 2,
 				/obj/item/stock_parts/cell/high = 1,
 				/obj/item/stack/cable_coil = 5,
@@ -87,6 +80,6 @@
 	description = "Настоящая двуручная дубинка службы безопасности."
 	prereq_ids = list("weaponry")
 	design_ids = list(
-		"electrostaff"
+		"electrostaff_kit"
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)

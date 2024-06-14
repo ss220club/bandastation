@@ -9,34 +9,29 @@
 	var/reclined_sound = 'modular_bandastation/objects/sounds/weapons/cylinder/reclined_rsh12.ogg'
 	var/reclined = FALSE
 
-/obj/item/gun/ballistic/revolver/reclinable/attack_hand_secondary(mob/user, list/modifiers)
-	reclined = !reclined
-
-	if(reclined)
-		icon_state = "[icon_state]_reclined"
-	if(!reclined)
-		icon_state = initial(icon_state)
-	playsound(user, reclined ? reclined_sound : snapback_sound, 50, 1)
-
 /obj/item/gun/ballistic/revolver/reclinable/attack_self(mob/living/user)
+	reclined = !reclined
+	playsound(user, reclined ? reclined_sound : snapback_sound, 50, 1)
+	update_icon()
+
 	if(reclined)
 		return ..()
-		icon_state = "[icon_state]_reclined"
+
+/obj/item/gun/ballistic/revolver/reclinable/update_icon_state()
+	. = ..()
+	icon_state = (initial(icon_state)) + (reclined ? "_reclined" : "")
 
 /obj/item/gun/ballistic/revolver/reclinable/attackby(obj/item/A, mob/user, params)
 	if(!reclined)
 		return
-	else
-		return ..()
-		icon_state = "[icon_state]_reclined"
+	return ..()
 
 /obj/item/gun/ballistic/revolver/reclinable/process_fire(atom/target, mob/living/user, message, params, zone_override, bonus_spread)
 	if(!reclined)
 		return ..()
-	else
-		user.balloon_alert(user, "*click*")
-		playsound(user, dry_fire_sound, 100, 1)
-		return FALSE
+
+	user.balloon_alert(user, "*click*")
+	playsound(user, dry_fire_sound, 100, 1)
 
 // Colt Anaconda .44
 /obj/item/gun/ballistic/revolver/reclinable/anaconda
@@ -164,17 +159,17 @@
 
 // Горохострел
 /obj/item/gun/ballistic/revolver/pea_shooter
-	name = "Горохострел"
+	name = "горохострел"
 	desc = "Живой горох! Может стрелять горошинами, которые наносят слабый урон самооценке."
 	icon = 'modular_bandastation/objects/icons/guns.dmi'
-	icon_state = "peas_shooter"
+	icon_state = "pea_shooter"
 	lefthand_file = 'modular_bandastation/objects/icons/inhands/guns_lefthand.dmi'
 	righthand_file = 'modular_bandastation/objects/icons/inhands/guns_righthand.dmi'
 	fire_sound = 'modular_bandastation/objects/sounds/weapons/gunshots/peas_shooter_gunshot.ogg'
 	drop_sound = 'modular_bandastation/objects/sounds/weapons/drop/peas_shooter_drop.ogg'
 	w_class = WEIGHT_CLASS_NORMAL
 	accepted_magazine_type = /obj/item/ammo_box/magazine/internal/peas_shooter
-	inhand_icon_state = "peas_shooter"
+	inhand_icon_state = "pea_shooter"
 
 /obj/item/ammo_box/magazine/internal/peas_shooter
 	name = "peacock shooter magazine"
@@ -187,18 +182,18 @@
 	name = "pea bullet"
 	desc = "Пуля из гороха, не может нанести какого-либо ощутимого урона."
 	projectile_type = /obj/projectile/bullet/peas_shooter
-	icon_state = "peashooter_bullet"
+	icon_state = "pea_shooter_bullet"
 	caliber = CALIBER_PEA
 
 // Пуля горохострела
 /obj/projectile/bullet/peas_shooter
 	icon = 'modular_bandastation/objects/icons/ammo.dmi'
-	icon_state = "peashooter_bullet"
+	icon_state = "pea_shooter_bullet"
 	stamina = 5
 
 /obj/projectile/bullet/peas_shooter/on_hit(atom/target, blocked, pierce_hit)
 	. = ..()
-	if(istype(target, /mob/living/carbon))
+	if(istype(target, /mob/living/carbon) | isliving(target))
 		var/mob/living/carbon/M = target
 		if(prob(15))
 			M.emote("moan")
@@ -239,7 +234,7 @@
 
 /obj/item/melee/baseball_bat/homerun/central_command/pickup(mob/living/user)
 	. = ..()
-	if(user.job != JOB_CENTCOM || JOB_CENTCOM_ADMIRAL || JOB_CENTCOM_COMMANDER || JOB_CENTCOM_OFFICIAL)
+	if(HAS_TRAIT(user, R_NONE))
 		user.AdjustParalyzed(10 SECONDS)
 		user.drop_all_held_items(src, force)
 		to_chat(user, span_userdanger("Это - оружие истинного правосудия. Тебе не дано обуздать его мощь."))
@@ -260,7 +255,7 @@
 		force = force_on
 		attack_verb_simple = attack_verb_simple_on
 	else
-		user.balloon_alert(user, "Вы деактивировали [src.name].")
+		to_chat(user, span_userdanger("Вы деактивировали [src.name]."))
 		icon_state = initial(icon_state)
 		inhand_icon_state = initial(inhand_icon_state)
 		w_class = initial(w_class)
@@ -287,12 +282,22 @@
 	righthand_file = 'modular_bandastation/objects/icons/inhands/guns_righthand.dmi'
 	icon = 'modular_bandastation/objects/icons/guns.dmi'
 	icon_state = "pneumagun"
+	inhand_icon_state = "pneumagun"
 	w_class = WEIGHT_CLASS_NORMAL
 	accepted_magazine_type = /obj/item/ammo_box/magazine/pneuma
 	fire_sound = 'modular_bandastation/objects/sounds/weapons/gunshots/gunshot_pneumatic.ogg'
 	fire_delay = 2
 	can_suppress = FALSE
 	burst_size = 1
+	special_mags = TRUE
+	spawnwithmagazine = FALSE
+
+/obj/item/gun/ballistic/automatic/pneumaticgun/loaded
+	spawnwithmagazine = TRUE
+	spawn_magazine_type = /obj/item/ammo_box/magazine/pneuma
+
+/obj/item/gun/ballistic/automatic/pneumaticgun/loaded/pepper
+	spawn_magazine_type = /obj/item/ammo_box/magazine/pneuma/pepper
 
 // Базовые боеприпасы для пневморужья
 /obj/item/ammo_box/magazine/pneuma
@@ -300,22 +305,11 @@
 	desc = "Наполняется шариками с реагентом."
 	caliber = CALIBER_PNEUMA
 	icon = 'modular_bandastation/objects/icons/ammo.dmi'
-	icon_state = "pneumamag_g"
+	icon_state = "pneumag"
+	base_icon_state = "pneumag"
 	ammo_type = /obj/item/ammo_casing/pneuma
 	max_ammo = 12
 	multiload = 0
-	unique_reskin = list(
-		"Красная обойма" = "pneumamag_r",
-		"Зелёная обойма" = "pneumamag_g",
-	)
-
-/obj/item/ammo_box/magazine/pneuma/reskin_obj(mob/user)
-	. = ..()
-	switch(icon_state)
-		if("Красная обойма")
-			icon_state = "pneumamag_r"
-		if("Зелёная обойма")
-			icon_state = "pneumamag_g"
 
 /obj/item/ammo_casing/pneuma
 	name = "пневматический шарик"
@@ -336,7 +330,8 @@
 // Боеприпасы для перцового типа пневморужья
 /obj/item/ammo_box/magazine/pneuma/pepper
 	ammo_type = /obj/item/ammo_casing/pneuma/pepper
-	icon_state = "pneumamag_r"
+	icon_state = "pneumar"
+	base_icon_state = "pneumar"
 
 /obj/item/ammo_casing/pneuma/pepper
 	desc = "Шарик с капсаицином. Эффективно подходит для задержания преступников, не носящих очки."
