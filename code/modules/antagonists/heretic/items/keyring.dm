@@ -122,7 +122,7 @@
 	if(!IS_HERETIC(user))
 		return CLICK_ACTION_BLOCKING
 	inverted = !inverted
-	balloon_alert(user, "[inverted ? "now" : "no longer"] creating inverted rifts")
+	balloon_alert(user, "[inverted ? "теперь" : "более не"] создает инвертированные порталы")
 	return CLICK_ACTION_SUCCESS
 
 ///Changes our appearance to the passed ID card
@@ -190,7 +190,7 @@
 		balloon_alert(user, "соединено 2/2")
 	else
 		link = WEAKREF(target)
-		balloon_alert(user, "link 1/2")
+		balloon_alert(user, "соединено 1/2")
 	return ITEM_INTERACT_SUCCESS
 
 /obj/item/card/id/advanced/heretic/Destroy()

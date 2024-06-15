@@ -48,7 +48,7 @@
 		span_notice("[user] начинает отрезать <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]!"),
 		span_notice("[user] начинает отрезать <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]!"),
 	)
-	display_pain(target, "You feel a gruesome pain in your [parse_zone(target_zone)]'s joint!")
+	display_pain(target, "Вы чувствуете жуткую боль в <i>[parse_zone(target_zone)]</i>!")
 
 
 /datum/surgery_step/sever_limb/success(mob/user, mob/living/carbon/human/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
@@ -59,7 +59,7 @@
 		span_notice("[user] отрезал <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]!"),
 		span_notice("[user] отрезал <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]!"),
 	)
-	display_pain(target, "You can no longer feel your severed [target.parse_zone_with_bodypart(target_zone)]!")
+	display_pain(target, "Вы больше не чувствуете свою отрезанную <i>[target.parse_zone_with_bodypart(target_zone)]</i>!")
 
 	if(HAS_MIND_TRAIT(user, TRAIT_MORBID) && ishuman(user))
 		var/mob/living/carbon/human/morbid_weirdo = user

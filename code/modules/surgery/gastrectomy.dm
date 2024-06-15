@@ -43,7 +43,7 @@
 		span_notice("[user] начинает делать надрез у [target]."),
 		span_notice("[user] начинает делать надрез у [target]."),
 	)
-	display_pain(target, "You feel a horrible stab in your gut!")
+	display_pain(target, "Вы чувствуете колющую боль в животе!")
 
 /datum/surgery_step/gastrectomy/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
 	var/mob/living/carbon/human/target_human = target
@@ -58,7 +58,7 @@
 		span_notice("[user] успешно удаляет поврежденную часть желудка у [target]."),
 		span_notice("[user] успешно удаляет поврежденную часть желудка у [target]."),
 	)
-	display_pain(target, "The pain in your gut ebbs and fades somewhat.")
+	display_pain(target, "Боль в вашем животе утихает и проходит.")
 	return ..()
 
 /datum/surgery_step/gastrectomy/failure(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery)
@@ -71,4 +71,4 @@
 		span_warning("[user] удалил не ту часть желудка у [target]!"),
 		span_warning("[user] удалил не ту часть желудка у [target]!"),
 	)
-	display_pain(target, "Your stomach throbs with pain; it's not getting any better!")
+	display_pain(target, "У вас болит живот, и от этого не становится легче!")

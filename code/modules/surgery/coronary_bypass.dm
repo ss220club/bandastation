@@ -41,7 +41,7 @@
 		span_notice("[user] начинает делать надрез сердца у [target]."),
 		span_notice("[user] начинает делать надрез сердца у [target]."),
 	)
-	display_pain(target, "You feel a horrendous pain in your heart, it's almost enough to make you pass out!")
+	display_pain(target, "Вы чувствуете ужасную боль в сердце. Вы близки к тому, чтобы потерять сознание!")
 
 /datum/surgery_step/incise_heart/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
 	if(ishuman(target))

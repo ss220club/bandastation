@@ -66,7 +66,7 @@
 		span_notice("[user] начинает приводить в порядок поврежденные кровеносные сосуды в <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i> у [target] при помощи [tool.name]."),
 		span_notice("[user] начинает приводить в порядок поврежденные кровеносные сосуды в <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i> у [target]."),
 	)
-	display_pain(target, "You feel a horrible stabbing pain in your [target.parse_zone_with_bodypart(user.zone_selected)]!")
+	display_pain(target, "Вы чувствуете ужасную колющую боль в <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i>!")
 
 /datum/surgery_step/repair_innards/success(mob/living/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
 	var/datum/wound/pierce/bleed/pierce_wound = surgery.operated_wound

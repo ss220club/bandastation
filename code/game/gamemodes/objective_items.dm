@@ -415,7 +415,7 @@
 	return !N.fake
 
 /datum/objective_item/steal/ablative
-	name = "an ablative trenchcoat"
+	name = "ablative trenchcoat"
 	targetitem = /obj/item/clothing/suit/hooded/ablative
 	excludefromjob = list(JOB_HEAD_OF_SECURITY, JOB_WARDEN)
 	item_owner = list(JOB_HEAD_OF_SECURITY)
@@ -679,7 +679,7 @@
 	objective_type = OBJECTIVE_ITEM_TYPE_SPY
 
 /datum/objective_item/steal/spy/lamarr
-	name = "the Research Director's pet headcrab"
+	name = "Research Director's pet headcrab"
 	targetitem = /obj/item/clothing/mask/facehugger/lamarr
 	excludefromjob = list(JOB_RESEARCH_DIRECTOR)
 	exists_on_map = TRUE
@@ -828,7 +828,7 @@
 		You can also obtain a pair from dissassembling hudglasses."
 
 /datum/objective_item/steal/spy/ce_modsuit
-	name = "the chief engineer's advanced MOD control unit"
+	name = "chief engineer's advanced MOD control unit"
 	targetitem = /obj/item/mod/control/pre_equipped/advanced
 	excludefromjob = list(JOB_CHIEF_ENGINEER)
 	exists_on_map = TRUE

@@ -94,7 +94,7 @@
 	if ((isnull(selected_experiment) && !(config_flags & EXPERIMENT_CONFIG_ALWAYS_ACTIVE)) || (config_flags & EXPERIMENT_CONFIG_SILENT_FAIL))
 		return
 	playsound(user, 'sound/machines/buzz-sigh.ogg', 25)
-	to_chat(user, span_notice("[target] is not related to your currently selected experiment."))
+	to_chat(user, span_notice("[target] не имеет отношения к выбранному эксперименту."))
 
 /**
  * Checks that an experiment can be run using the provided target, used for preventing the cancellation of the attack chain inappropriately
