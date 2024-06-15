@@ -3,7 +3,7 @@
 	description = "Напиток, приготовленный путем брожения хлеба, ржи или ячменя, который обладает освежающим и слегка кисловатым вкусом."
 	color = "#351300"
 	nutriment_factor = 1
-	taste_description = "приятную кислинку с легкой сладостью и хлебным послевкусием."
+	taste_description = "a pleasant tartness with a hint of sweetness and a bread-like aftertaste."
 
 /datum/glass_style/drinking_glass/kvass
 	required_drink_type = /datum/reagent/consumable/kvass
