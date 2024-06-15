@@ -7,7 +7,7 @@
 
 /datum/glass_style/drinking_glass/kvass
 	required_drink_type = /datum/reagent/consumable/kvass
-	name = "Стакан кваса"
+	name = "стакан кваса"
 	desc = "Стакан с квасом."
 	icon = 'modular_bandastation/drinks/icons/drinks.dmi'
 	icon_state = "kvass"
