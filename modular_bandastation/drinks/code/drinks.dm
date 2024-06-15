@@ -8,7 +8,7 @@
 /datum/glass_style/drinking_glass/kvass
 	required_drink_type = /datum/reagent/consumable/kvass
 	name = "стакан кваса"
-	desc = "Стакан с квасом."
+	desc = "В стакане кристально чистая жидкость насыщенного темно-коричневого цвета, которая кажется почти янтарной при определенном угле освещения."
 	icon = 'modular_bandastation/drinks/icons/drinks.dmi'
 	icon_state = "kvass"
 
