@@ -14,5 +14,5 @@
 	if(!.)
 		return FALSE
 
-	host_role.send_message_to_player(span_warning("Вы вызывали дух [target_role.body.real_name] и узнали, что его роль была <b>[target_role.name]<b>."))
+	host_role.send_message_to_player(span_warning("Вы призвали дух [target_role.body.real_name] и узнали, что его роль была <b>[target_role.name]<b>."))
 	return TRUE
