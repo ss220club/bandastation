@@ -42,7 +42,7 @@
 		span_notice("[user] начинает делать надрез у [target]."),
 		span_notice("[user] начинает делать надрез у [target]."),
 	)
-	display_pain(target, "Your abdomen burns in horrific stabbing pain!")
+	display_pain(target, "Ваша брюшная полость горит от ужасной колющей боли!")
 
 /datum/surgery_step/hepatectomy/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
 	var/mob/living/carbon/human/human_target = target
@@ -57,7 +57,7 @@
 		span_notice("[user] успешно удаляет поврежденную часть печени у [target]."),
 		span_notice("[user] успешно удаляет поврежденную часть печени у [target]."),
 	)
-	display_pain(target, "The pain receeds slightly.")
+	display_pain(target, "Боль немного стихает.")
 	return ..()
 
 /datum/surgery_step/hepatectomy/failure(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery)
@@ -70,4 +70,4 @@
 		span_warning("[user] удалил не ту часть печени у [target]!"),
 		span_warning("[user] удалил не ту часть печени у [target]!"),
 	)
-	display_pain(target, "You feel a sharp stab inside your abdomen!")
+	display_pain(target, "Вы чувствуете острую боль в брюшной полости!")

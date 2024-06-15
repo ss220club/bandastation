@@ -255,8 +255,8 @@
 		return FALSE
 
 	desired_item = pick(valid_possible_items)
-	name = "[desired_item.name] [difficulty == SPY_DIFFICULTY_HARD ? "Grand ":""]Theft"
-	help = "Steal [desired_item.name][desired_item.steal_hint ? ": [desired_item.steal_hint]" : "."]"
+	name = "[desired_item.name] [difficulty == SPY_DIFFICULTY_HARD ? "Грандиозная ":""]Кража"
+	help = "Украдите любой [desired_item.name][desired_item.steal_hint ? ": [desired_item.steal_hint]" : "."]"
 	return TRUE
 
 /datum/spy_bounty/objective_item/is_stealable(atom/movable/stealing)

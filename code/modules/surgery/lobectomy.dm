@@ -40,7 +40,7 @@
 		span_notice("[user] начинает делать надрез на [target]."),
 		span_notice("[user] начинает делать надрез на [target]."),
 	)
-	display_pain(target, "You feel a stabbing pain in your chest!")
+	display_pain(target, "Вы чувствуете колющую боль в груди!")
 
 /datum/surgery_step/lobectomy/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
 	if(ishuman(target))
@@ -55,7 +55,7 @@
 			span_notice("Успешно отрезал часть легких [human_target]."),
 			"",
 		)
-		display_pain(target, "Your chest hurts like hell, but breathing becomes slightly easier.")
+		display_pain(target, "Грудь адски болит, но дышать становится немного легче.")
 	return ..()
 
 /datum/surgery_step/lobectomy/failure(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
@@ -68,7 +68,7 @@
 			span_warning("[user] ошибается!"),
 			span_warning("[user] ошибается!"),
 		)
-		display_pain(target, "You feel a sharp stab in your chest; the wind is knocked out of you and it hurts to catch your breath!")
+		display_pain(target, "Вы чувствуете резкий удар в грудь; последний вздох выбивает из вас все силы, и вам больно дышать!")
 		human_target.losebreath += 4
 		human_target.adjustOrganLoss(ORGAN_SLOT_LUNGS, 10)
 	return FALSE

@@ -284,7 +284,7 @@ GLOBAL_DATUM_INIT(steal_item_handler, /datum/objective_item_handler, new())
 	var/result = SEND_SIGNAL(src, COMSIG_TRAITOR_BUG_PRE_PLANTED_OBJECT, target)
 	if(!(result & COMPONENT_FORCE_PLACEMENT))
 		if(result & COMPONENT_FORCE_FAIL_PLACEMENT || !istype(target, target_object_type))
-			balloon_alert(user, "you can't attach this onto here!")
+			balloon_alert(user, "вы не можете прикрепить это сюда!")
 			return ITEM_INTERACT_BLOCKING
 	if(!do_after(user, deploy_time, src, hidden = TRUE))
 		return ITEM_INTERACT_BLOCKING

@@ -1,7 +1,7 @@
 /datum/action/cooldown/spell/pointed/moon_smile
 	name = "Smile of the moon"
-	desc = "Lets you turn the gaze of the moon on someone \
-			temporarily blinding, muting, deafening and knocking down a single target if their sanity is low enough."
+	desc = "Позволяет обратить взгляд луны на кого-то, временно \
+			заглушая, ослепляя, оглушая и сбивая с ног одну цель."
 	background_icon_state = "bg_heretic"
 	overlay_icon_state = "bg_heretic_border"
 	button_icon = 'icons/mob/actions/actions_ecult.dmi'
@@ -36,7 +36,7 @@
 		return FALSE
 
 	playsound(cast_on, 'sound/hallucinations/i_see_you1.ogg', 50, 1)
-	to_chat(cast_on, span_warning("Your eyes cry out in pain, your ears bleed and your lips seal! THE MOON SMILES UPON YOU!"))
+	to_chat(cast_on, span_warning("Ваши глаза горят от боли, из ушей течет кровь, а губы запечатаны. ЛУНА УЛЫБАЕТСЯ ТЕБЕ!"))
 	cast_on.adjust_temp_blindness(moon_smile_duration + 1 SECONDS)
 	cast_on.set_eye_blur_if_lower(moon_smile_duration + 2 SECONDS)
 

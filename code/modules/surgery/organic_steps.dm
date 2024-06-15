@@ -21,7 +21,7 @@
 		span_notice("[user] начинает делать надрез в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
 		span_notice("[user] начинает делать надрез в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
 	)
-	display_pain(target, "You feel a stabbing in your [target.parse_zone_with_bodypart(target_zone)].")
+	display_pain(target, "Вы чувствуете колющую боль в <i>[target.parse_zone_with_bodypart(target_zone)]</i>.")
 
 /datum/surgery_step/incise/tool_check(mob/user, obj/item/tool)
 	if(implement_type == /obj/item && !tool.get_sharpness())
@@ -53,7 +53,7 @@
 		span_notice("[user] начинает <i>осторожно</i> делать надрез в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
 		span_notice("[user] начинает <i>осторожно</i> делать надрез в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
 	)
-	display_pain(target, "You feel a <i>careful</i> stabbing in your [target.parse_zone_with_bodypart(target_zone)].")
+	display_pain(target, "Вы чувствуете <i>осторожный</i> колющий удар в <i>[target.parse_zone_with_bodypart(target_zone)]</i>.")
 
 //clamp bleeders
 /datum/surgery_step/clamp_bleeders
@@ -179,7 +179,7 @@
 		span_notice("[user] начинает распиливать кость в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
 		span_notice("[user] начинает распиливать кость в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
 	)
-	display_pain(target, "You feel a horrid ache spread through the inside of your [target.parse_zone_with_bodypart(target_zone)]!")
+	display_pain(target, "Вы чувствуете ужасную боль внутри <i>[target.parse_zone_with_bodypart(target_zone)]</i>!")
 
 /datum/surgery_step/saw/tool_check(mob/user, obj/item/tool)
 	if(implement_type == /obj/item && !(tool.get_sharpness() && (tool.force >= 10)))
@@ -195,7 +195,7 @@
 		span_notice("[user] вскрывает <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]!"),
 		span_notice("[user] вскрывает <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]!"),
 	)
-	display_pain(target, "It feels like something just broke in your [target.parse_zone_with_bodypart(target_zone)]!")
+	display_pain(target, "Такое ощущение, что в <i>[target.parse_zone_with_bodypart(target_zone)]</i> что-то сломано!")
 	return ..()
 
 //drill bone

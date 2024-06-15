@@ -620,7 +620,7 @@
 	log_transport("TC: [specific_transport_id] ending Tram Malfunction event.")
 
 /datum/transport_controller/linear/tram/proc/announce_malf_event()
-	priority_announce("Our automated control system has lost contact with the tram's onboard computer. Please stand by, engineering has been dispatched to the tram to perform a reset.", "[command_name()] Engineering Division")
+	priority_announce("Our automated control system has lost contact with the tram's onboard computer. Please stand by, engineering has been dispatched to the tram to perform a reset.", "[command_name()] Инженерный отдел")
 
 /datum/transport_controller/linear/tram/proc/register_collision(points = 1)
 	tram_registration.collisions += points

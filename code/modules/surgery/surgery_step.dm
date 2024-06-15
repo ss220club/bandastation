@@ -317,7 +317,7 @@
 		if(HAS_TRAIT(target, TRAIT_ANALGESIA))
 			if(!pain_message)
 				return
-			to_chat(target, span_notice("You feel a dull, numb sensation as your body is surgically operated on."))
+			to_chat(target, span_notice("Вы чувствуете онемение, пока ваше тело оперируют."))
 		else
 			if(!pain_message)
 				return

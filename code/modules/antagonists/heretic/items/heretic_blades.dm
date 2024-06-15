@@ -29,7 +29,7 @@
 	if(.)
 		return .
 	if(!IS_HERETIC_OR_MONSTER(user))
-		to_chat(user, span_danger("You feel a pulse of alien intellect lash out at your mind!"))
+		to_chat(user, span_danger("Вы чувствуете, как импульс чужого интеллекта бьет по вашему разуму!"))
 		user.AdjustParalyzed(5 SECONDS)
 		return TRUE
 	return .
