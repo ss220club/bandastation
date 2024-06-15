@@ -1,5 +1,3 @@
-import { multiline } from 'common/string';
-
 import { resolveAsset } from '../assets';
 import { useBackend } from '../backend';
 import { BlockQuote, Box, Button, Icon, Section, Stack } from '../components';
@@ -23,7 +21,7 @@ export const ApprenticeContract = (props) => {
               fluffName="Ученик Разрушения"
               schoolTitle="destruction"
               assetName="destruction.png"
-              blurb={multiline`
+              blurb={`
                 Ваш ученик владеет наступательной магией.
                 Они владеют «Magic Missile» и «Fireball».
               `}
@@ -33,7 +31,7 @@ export const ApprenticeContract = (props) => {
               fluffName="Студент Транслокации"
               schoolTitle="bluespace"
               assetName="bluespace.png"
-              blurb={multiline`
+              blurb={`
               Ваш ученик способен бросить вызов физике, проникая
               сквозь твердые предметы и преодолевая огромные
               расстояния в мгновение ока. Они владеют «Teleport» и «Ethereal Jaunt».
@@ -44,7 +42,7 @@ export const ApprenticeContract = (props) => {
               fluffName="Неофит Восстановления"
               schoolTitle="healing"
               assetName="healing.png"
-              blurb={multiline`
+              blurb={`
               Ваш ученик обучается заклинаниям, которые
               помогут вам в выживании. Они знают «Forcewall» и «Charge» и
               имеют при себе Посох исцеления.
@@ -55,7 +53,7 @@ export const ApprenticeContract = (props) => {
               fluffName="Безробный Ученик"
               schoolTitle="robeless"
               assetName="robeless.png"
-              blurb={multiline`
+              blurb={`
               Ваш ученик учится применять заклинания
               без одеяний. Они владеют «Knock» и «Mindswap».
               `}

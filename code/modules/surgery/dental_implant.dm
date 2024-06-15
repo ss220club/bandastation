@@ -15,11 +15,11 @@
 	display_results(
 		user,
 		target,
-		span_notice("Вы начинаете вставлять [tool.name] в [parse_zone(target_zone)] у [target]..."),
-		span_notice("[user] начинает вставлять [tool.name] в [parse_zone(target_zone)] у [target]."),
-		span_notice("[user] начинает вставлять что-то в [parse_zone(target_zone)] у [target]."),
+		span_notice("Вы начинаете вставлять [tool.name] в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]..."),
+		span_notice("[user] начинает вставлять [tool.name] в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
+		span_notice("[user] начинает вставлять что-то в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
 	)
-	display_pain(target, "Что-то засовывают вам в [parse_zone(target_zone)]!")
+	display_pain(target, "Что-то засовывают вам в <i>[target.parse_zone_with_bodypart(target_zone)]</i>!")
 
 /datum/surgery_step/insert_pill/success(mob/user, mob/living/carbon/target, target_zone, obj/item/reagent_containers/pill/tool, datum/surgery/surgery, default_display_results = FALSE)
 	if(!istype(tool))
@@ -36,9 +36,9 @@
 	display_results(
 		user,
 		target,
-		span_notice("Вы вставили [tool.name] в [parse_zone(target_zone)] у [target]."),
-		span_notice("[user] вставил [tool.name] в [parse_zone(target_zone)] у [target]!"),
-		span_notice("[user] вставил что-то в [parse_zone(target_zone)] у [target]!"),
+		span_notice("Вы вставили [tool.name] в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
+		span_notice("[user] вставил [tool.name] в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]!"),
+		span_notice("[user] вставил что-то в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]!"),
 	)
 	return ..()
 

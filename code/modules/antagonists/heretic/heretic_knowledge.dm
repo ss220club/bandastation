@@ -237,7 +237,7 @@
 			LAZYREMOVE(created_items, ref)
 
 	if(LAZYLEN(created_items) >= limit)
-		loc.balloon_alert(user, "ритуал провален, уже лимит!")
+		loc.balloon_alert(user, "ritual failed, at limit!")
 		return FALSE
 
 	return TRUE
@@ -730,6 +730,7 @@
 		source = user,
 		header = "Еретик вознесся!",
 	)
+	heretic_datum.increase_rust_strength()
 	return TRUE
 
 /datum/heretic_knowledge/ultimate/cleanup_atoms(list/selected_atoms)

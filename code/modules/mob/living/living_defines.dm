@@ -214,6 +214,9 @@
 	///what multiplicative slowdown we get from turfs currently.
 	var/current_turf_slowdown = 0
 
+	/// Is the mob looking vertically
+	var/looking_vertically = FALSE
+
 	/// Living mob's mood datum
 	var/datum/mood/mob_mood
 
@@ -223,3 +226,6 @@
 
 	/// What our current gravity state is. Used to avoid duplicate animates and such
 	var/gravity_state = null
+
+	/// How long it takes to return to 0 stam
+	var/stamina_regen_time = 10 SECONDS

@@ -71,7 +71,7 @@
 				span_notice("[user] пытается наложить швы на [woundtype] у [target]."),
 				span_notice("[user] пытается наложить швы на [woundtype] у [target]."),
 			)
-		display_pain(target, "Ваша [woundtype] чертовски болит!")
+		display_pain(target, "Ваши [woundtype] чертовски болят!")
 
 /datum/surgery_step/heal/initiate(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, try_to_fail = FALSE)
 	if(!..())

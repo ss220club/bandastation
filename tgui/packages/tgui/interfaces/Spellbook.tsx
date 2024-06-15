@@ -1,5 +1,4 @@
 import { BooleanLike } from 'common/react';
-import { multiline } from 'common/string';
 import { ReactNode } from 'react';
 
 import { useBackend, useLocalState } from '../backend';
@@ -340,7 +339,7 @@ const Loadouts = (props) => {
             name="Классический маг"
             icon="fire"
             author="Архиканцлер Грей"
-            blurb={multiline`
+            blurb={`
                 Это классический маг, был безумно популярным в
                 2550-е годы. Поставляется с Fireball, Magic Missile,
                 Ei Nath, и Ethereal Jaunt. Ключевой момент тут в том, что
@@ -353,7 +352,7 @@ const Loadouts = (props) => {
             loadoutId="loadout_hammer"
             loadoutColor="green"
             author="Джегудиэль Ворлдшейкер"
-            blurb={multiline`
+            blurb={`
                 Сила могучего Мьёльнира! Лучше не терять его.
                 Этот набор содержит Summon Item, Mutate, Blink, Force Wall,
                 Tesla Blast, и Мьёлнир. Mutate это ваша поддержка в данном случае:
@@ -369,8 +368,8 @@ const Loadouts = (props) => {
             icon="pastafarianism"
             loadoutId="loadout_army"
             loadoutColor="yellow"
-            author="Заклинатель Просперо"
-            blurb={multiline`
+            author="Просперо Спеллстоун"
+            blurb={`
                 Зачем убивать, если другие с радостью сделают это за вас?
                 Устройте хаос с помощью своего набора: Soulshards, Staff of Change,
                 Necro Stone, Teleport, and Jaunt! Помните, у вас нет атакующих заклинаний!
@@ -382,7 +381,7 @@ const Loadouts = (props) => {
             loadoutId="loadout_tap"
             loadoutColor="white"
             author="Том Пустотный"
-            blurb={multiline`
+            blurb={`
                 Примите темноту и откройте свою душу.
                 Вы можете перезаряжать очень длинные заклинания
                 как Ei Nath перемещаясь в новые тела с помощью
@@ -511,7 +510,7 @@ const SpellTabDisplay = (props: {
       }
     } else {
       if (entry.cooldown) {
-        return `Перезарядка - ${entry.cooldown} сек.`;
+        return `Перезарядка: ${entry.cooldown} сек.`;
       } else {
         return '';
       }

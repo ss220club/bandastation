@@ -46,7 +46,7 @@
 			span_notice("[user] вызывает рвоту у [target_human], избавляя желудок от некоторых химикатов!"),
 			span_notice("[user] вызывает рвоту у [target_human]!"),
 		)
-		target_human.vomit(20, FALSE, TRUE, 1, TRUE, FALSE, purge_ratio = 0.67) //higher purge ratio than regular vomiting
+		target_human.vomit((MOB_VOMIT_MESSAGE | MOB_VOMIT_STUN), lost_nutrition = 20, purge_ratio = 0.67) //higher purge ratio than regular vomiting
 	return ..()
 
 /datum/surgery_step/stomach_pump/failure(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)

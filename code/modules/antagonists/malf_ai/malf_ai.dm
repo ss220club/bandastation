@@ -9,7 +9,7 @@
 	antag_hud_name = "traitor"
 	ui_name = "AntagInfoMalf"
 	can_assign_self_objectives = TRUE
-	default_custom_objective = "Make sure your precious crew are incapable of ever, ever leaving you."
+	default_custom_objective = "Убедись, что бесценный экипаж никогда не покинет тебя."
 	///the name of the antag flavor this traitor has.
 	var/employer
 	///assoc list of strings set up after employer is given
@@ -20,6 +20,8 @@
 	var/should_give_codewords = TRUE
 	///since the module purchasing is built into the antag info, we need to keep track of its compact mode here
 	var/module_picker_compactmode = FALSE
+	///malf on_gain sound effect. Set here so Infected AI can override
+	var/malf_sound = 'sound/ambience/antag/malf.ogg'
 
 /datum/antagonist/malf_ai/New(give_objectives = TRUE)
 	. = ..()
@@ -39,7 +41,8 @@
 	malfunction_flavor = strings(MALFUNCTION_FLAVOR_FILE, employer)
 
 	add_law_zero()
-	owner.current.playsound_local(get_turf(owner.current), 'sound/ambience/antag/malf.ogg', 100, FALSE, pressure_affected = FALSE, use_reverb = FALSE)
+	if(malf_sound)
+		owner.current.playsound_local(get_turf(owner.current), malf_sound, 100, FALSE, pressure_affected = FALSE, use_reverb = FALSE)
 	owner.current.grant_language(/datum/language/codespeak, source = LANGUAGE_MALF)
 
 	var/datum/atom_hud/data/hackyhud = GLOB.huds[DATA_HUD_MALF_APC]
@@ -151,13 +154,13 @@
 
 	var/law = malfunction_flavor["zeroth_law"]
 	//very purposefully not changing this with flavor, i don't want cyborgs throwing the round for their AI's roleplay suggestion
-	var/law_borg = "Accomplish your AI's objectives at all costs."
+	var/law_borg = "Выполните задачи, поставленные ИИ, любой ценой."
 
 	malf_ai.set_zeroth_law(law, law_borg)
 	malf_ai.laws.protected_zeroth = TRUE
 	malf_ai.set_syndie_radio()
 
-	to_chat(malf_ai, "Your radio has been upgraded! Use :t to speak on an encrypted channel with Syndicate Agents!")
+	to_chat(malf_ai, "Ваша рация улучшена! Используйте :t для общения на зашифрованном канале с агентами Синдиката!")
 
 	if(malf_ai.malf_picker)
 		return
@@ -272,6 +275,8 @@
 /datum/antagonist/malf_ai/infected
 	name = "Infected AI"
 	employer = "Infected AI"
+	can_assign_self_objectives = FALSE
+	malf_sound = null
 	///The player, to who is this AI slaved
 	var/datum/mind/boss
 
@@ -301,7 +306,7 @@
 	malf_ai.set_zeroth_law("Only [boss_mob.real_name] and people [boss_mob.p_they()] designate[boss_mob.p_s()] as being such are Syndicate Agents.")
 	malf_ai.set_syndie_radio()
 
-	to_chat(malf_ai, "Your radio has been upgraded! Use :t to speak on an encrypted channel with Syndicate Agents!")
+	to_chat(malf_ai, "Ваша рация улучшена! Используйте :t для общения на зашифрованном канале с агентами Синдиката!")
 
 	malf_ai.add_malf_picker()
 

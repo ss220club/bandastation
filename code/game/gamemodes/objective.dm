@@ -649,7 +649,7 @@ GLOBAL_LIST_EMPTY(possible_items)
 	if(item)
 		targetinfo = item
 		steal_target = targetinfo.targetitem
-		explanation_text = "Украдите - [targetinfo.name]"
+		explanation_text = "Украдите [targetinfo.name]"
 		give_special_equipment(targetinfo.special_equipment)
 		return steal_target
 	else
@@ -688,6 +688,9 @@ GLOBAL_LIST_EMPTY(possible_items)
 		var/list/all_items = M.current.get_all_contents() //this should get things in cheesewheels, books, etc.
 
 		for(var/obj/I in all_items) //Check for items
+			if(HAS_TRAIT(I, TRAIT_ITEM_OBJECTIVE_BLOCKED))
+				continue
+
 			if(istype(I, steal_target))
 				if(!targetinfo) //If there's no targetinfo, then that means it was a custom objective. At this point, we know you have the item, so return 1.
 					return TRUE
@@ -759,7 +762,7 @@ GLOBAL_LIST_EMPTY(possible_items)
 /datum/objective/protect_object/update_explanation_text()
 	. = ..()
 	if(protect_target)
-		explanation_text = "Защитите любой ценой - \the [protect_target]."
+		explanation_text = "Защитите любой ценой - [protect_target]."
 	else
 		explanation_text = "Свободная задача."
 

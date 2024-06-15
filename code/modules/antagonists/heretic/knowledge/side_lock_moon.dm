@@ -23,7 +23,7 @@
 	gain_text = "В Мансусе хранится множество диковинок, но некоторые из них не предназначены для глаза смертных."
 	next_knowledge = list(
 		/datum/heretic_knowledge/spell/burglar_finesse,
-		/datum/heretic_knowledge/moon_amulette,
+		/datum/heretic_knowledge/moon_amulet,
 	)
 	required_atoms = list(
 		/obj/item/organ/internal/lungs = 1,
@@ -48,7 +48,7 @@
 				Они снова жаждут взгляда смертных, и я исполню это желание."
 	next_knowledge = list(
 		/datum/heretic_knowledge/spell/burglar_finesse,
-		/datum/heretic_knowledge/moon_amulette,
+		/datum/heretic_knowledge/moon_amulet,
 	)
 	required_atoms = list(/obj/item/canvas = 1)
 	result_atoms = list(/obj/item/canvas)

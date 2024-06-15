@@ -1,5 +1,3 @@
-import { multiline } from 'common/string';
-
 import { CheckboxInput, FeatureToggle } from '../base';
 
 export const chat_bankcard: FeatureToggle = {
@@ -18,7 +16,7 @@ export const chat_dead: FeatureToggle = {
 export const chat_ghostears: FeatureToggle = {
   name: 'Слышать все сообщения',
   category: 'ПРИЗРАК',
-  description: multiline`
+  description: `
     Если включено, вы будете слышать всех мобов.
     Если отключено, вы будете слышать только мобов на экране.
   `,
@@ -56,7 +54,7 @@ export const chat_ghostsight: FeatureToggle = {
 export const chat_ghostwhisper: FeatureToggle = {
   name: 'Слышать все шепоты',
   category: 'ПРИЗРАК',
-  description: multiline`
+  description: `
     Если включено, вы будете слышать шепоты всех мобов.
     Если выключено, вы будете слышать шепоты только мобов на экране.
   `,

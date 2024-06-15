@@ -1,6 +1,5 @@
 import { BooleanLike, classes } from 'common/react';
 import { decodeHtmlEntities } from 'common/string';
-import { multiline } from 'common/string';
 import { useState } from 'react';
 
 import { useBackend } from '../backend';
@@ -124,7 +123,7 @@ export const MafiaPanelData = (props) => {
                             color="transparent"
                             icon="address-book"
                             tooltipPosition="bottom-start"
-                            tooltip={multiline`
+                            tooltip={`
                             Это список ролей в игре.
                             Вы можетенажать на знак вопроса,
                             чтобы получить краткую информациюо самой роли.`}
@@ -140,7 +139,7 @@ export const MafiaPanelData = (props) => {
                             color="transparent"
                             icon="pencil"
                             tooltipPosition="bottom-start"
-                            tooltip={multiline`
+                            tooltip={`
                             Это ваши заметки, все, что вы хотите написать
                             можно сохранить для дальнейшего использования. Вы можете
                             также отправить их в чат с помощью кнопки.`}
@@ -234,7 +233,7 @@ const MafiaLobby = (props) => {
           <Button
             icon="clipboard-check"
             tooltipPosition="bottom-start"
-            tooltip={multiline`
+            tooltip={`
             Записывает вас на следующую игру. Если
             игра продолжается, вы будете записаны
             на следующую.
@@ -245,7 +244,7 @@ const MafiaLobby = (props) => {
           <Button
             icon="arrow-right"
             tooltipPosition="bottom-start"
-            tooltip={multiline`
+            tooltip={`
             Отправьте голос, чтобы начать игру раньше.
             Начинается, когда за начало проголосует половина из текущего списка участников.
             Требуется минимум шесть игроков.

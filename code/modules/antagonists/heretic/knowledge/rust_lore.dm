@@ -46,7 +46,8 @@
 /datum/heretic_knowledge/rust_fist
 	name = "Grasp of Rust"
 	desc = "Ваша Хватка Мансуса наносит 500 единиц урона неживой материи и ржавеет любая поверхность, которой она коснется. \
-		Уже заржавевшие поверхности разрушаются. Поверхности и структуры можно заставить ржаветь с помощью ПКМ."
+		Уже заржавевшие поверхности разрушаются. Поверхности и структуры можно заставить ржаветь с помощью ПКМ. \
+		Позволяет заставить ржаветь обычные железные стены и пол."
 	gain_text = "На потолке Мансуса ржавчина растет, как мох на камне."
 	next_knowledge = list(/datum/heretic_knowledge/rust_regen)
 	cost = 1
@@ -55,6 +56,7 @@
 /datum/heretic_knowledge/rust_fist/on_gain(mob/user, datum/antagonist/heretic/our_heretic)
 	RegisterSignal(user, COMSIG_HERETIC_MANSUS_GRASP_ATTACK, PROC_REF(on_mansus_grasp))
 	RegisterSignal(user, COMSIG_HERETIC_MANSUS_GRASP_ATTACK_SECONDARY, PROC_REF(on_secondary_mansus_grasp))
+	our_heretic.increase_rust_strength()
 
 /datum/heretic_knowledge/rust_fist/on_lose(mob/user, datum/antagonist/heretic/our_heretic)
 	UnregisterSignal(user, list(COMSIG_HERETIC_MANSUS_GRASP_ATTACK, COMSIG_HERETIC_MANSUS_GRASP_ATTACK_SECONDARY))
@@ -65,7 +67,7 @@
 	if(!issilicon(target) && !(target.mob_biotypes & MOB_ROBOTIC))
 		return
 
-	target.rust_heretic_act()
+	source.do_rust_heretic_act(target)
 
 /datum/heretic_knowledge/rust_fist/proc/on_secondary_mansus_grasp(mob/living/source, atom/target)
 	SIGNAL_HANDLER
@@ -76,7 +78,7 @@
 		var/obj/machinery/door/airlock/airlock = target
 		airlock.loseMainPower()
 
-	target.rust_heretic_act()
+	source.do_rust_heretic_act(target)
 	return COMPONENT_USE_HAND
 
 /datum/heretic_knowledge/rust_regen
@@ -129,11 +131,11 @@
 
 	// Heals all damage + Stamina
 	var/need_mob_update = FALSE
-	need_mob_update += source.adjustBruteLoss(-2, updating_health = FALSE)
-	need_mob_update += source.adjustFireLoss(-2, updating_health = FALSE)
-	need_mob_update += source.adjustToxLoss(-2, updating_health = FALSE, forced = TRUE) // Slimes are people too
-	need_mob_update += source.adjustOxyLoss(-0.5, updating_health = FALSE)
-	need_mob_update += source.adjustStaminaLoss(-2, updating_stamina = FALSE)
+	need_mob_update += source.adjustBruteLoss(-3, updating_health = FALSE)
+	need_mob_update += source.adjustFireLoss(-3, updating_health = FALSE)
+	need_mob_update += source.adjustToxLoss(-3, updating_health = FALSE, forced = TRUE) // Slimes are people too
+	need_mob_update += source.adjustOxyLoss(-1.5, updating_health = FALSE)
+	need_mob_update += source.adjustStaminaLoss(-10, updating_stamina = FALSE)
 	if(need_mob_update)
 		source.updatehealth()
 	// Reduces duration of stuns/etc
@@ -141,15 +143,22 @@
 	// Heals blood loss
 	if(source.blood_volume < BLOOD_VOLUME_NORMAL)
 		source.blood_volume += 2.5 * seconds_per_tick
+	// Slowly regulates your body temp
+	source.adjust_bodytemperature((source.get_body_temp_normal() - source.bodytemperature)/5)
 
 /datum/heretic_knowledge/mark/rust_mark
 	name = "Mark of Rust"
 	desc = "Ваша Хватка Мансуса теперь накладывает Метку ржавчины. Метка срабатывает при атаке вашим Ржавым клинком. \
-		При срабатывании органы и оборудование жертвы с вероятностью 75% получат повреждения и могут быть уничтожены."
-	gain_text = "Кузнец смотрит вдаль. В давно потерянное место. \"Ржавые Холмы помогают остро нуждающимся... за определенную плату.\""
+		При срабатывании, жертва получит сильное отвращение и будет контужена. \
+		Позволяет заставить ржаветь укрепленные стены и пол, а также пласталь."
+	gain_text = "Кузнец смотрит вдаль. В давно потерянное место. \"Ржавые холмы помогают остро нуждающимся... за определенную плату.\""
 	next_knowledge = list(/datum/heretic_knowledge/knowledge_ritual/rust)
 	route = PATH_RUST
 	mark_type = /datum/status_effect/eldritch/rust
+
+/datum/heretic_knowledge/mark/rust_mark/on_gain(mob/user, datum/antagonist/heretic/our_heretic)
+	. = ..()
+	our_heretic.increase_rust_strength()
 
 /datum/heretic_knowledge/knowledge_ritual/rust
 	next_knowledge = list(/datum/heretic_knowledge/spell/rust_construction)
@@ -169,12 +178,13 @@
 /datum/heretic_knowledge/spell/area_conversion
 	name = "Aggressive Spread"
 	desc = "Дает вам заклинание Aggressive Spread, которое распространяет ржавчину на близлежащие поверхности. \
-		Уже заржавевшие поверхности разрушаются."
-	gain_text = "Все разумные люди хорошо знают, что не стоит посещать Ржавые Холмы... Но рассказ Кузнеца был вдохновляющим."
+		Уже заржавевшие поверхности разрушаются. \ Также улучшает способности ржавчины еретиков не Пути ржавчины."
+	gain_text = "Мудрецы знают, что не стоит посещать Ржавые холмы... Но рассказ Кузнеца был вдохновляющим."
 	next_knowledge = list(
 		/datum/heretic_knowledge/blade_upgrade/rust,
 		/datum/heretic_knowledge/reroll_targets,
 		/datum/heretic_knowledge/curse/corrosion,
+		/datum/heretic_knowledge/summon/rusty,
 		/datum/heretic_knowledge/crucible,
 		/datum/heretic_knowledge/rifle,
 	)
@@ -182,33 +192,46 @@
 	cost = 1
 	route = PATH_RUST
 
+/datum/heretic_knowledge/spell/area_conversion/on_gain(mob/user, datum/antagonist/heretic/our_heretic)
+	. = ..()
+	our_heretic.increase_rust_strength(TRUE)
+
 /datum/heretic_knowledge/blade_upgrade/rust
 	name = "Toxic Blade"
-	desc = "Ваш Ржавый клинок теперь отравляет врагов при атаке."
+	desc = "Ваш Ржавый клинок теперь отвращает врагов при атаке. \ Позволяет заставить ржаветь титаниум и пластитаниум."
 	gain_text = "Кузнец протягивает вам свой клинок. \"Клинок проведет тебя через плоть, если ты позволишь ему.\" \
-		Тяжелая ржавчина утяжеляет клинок. Вы пристально вглядываетесь в него. Ржавые Холмы зовут тебя."
+		Тяжелая ржавчина утяжеляет клинок. Вы пристально вглядываетесь в него. Ржавые холмы зовут тебя."
 	next_knowledge = list(/datum/heretic_knowledge/spell/entropic_plume)
 	route = PATH_RUST
 
-/datum/heretic_knowledge/blade_upgrade/rust/do_melee_effects(mob/living/source, mob/living/target, obj/item/melee/sickly_blade/blade)
-	// No user == target check here, cause it's technically good for the heretic?
-	target.reagents?.add_reagent(/datum/reagent/eldritch, 5)
+/datum/heretic_knowledge/blade_upgrade/rust/on_gain(mob/user, datum/antagonist/heretic/our_heretic)
+	. = ..()
+	our_heretic.increase_rust_strength()
 
+/datum/heretic_knowledge/blade_upgrade/rust/do_melee_effects(mob/living/source, mob/living/target, obj/item/melee/sickly_blade/blade)
+	target.adjust_disgust(50)
+
+/datum/heretic_knowledge/spell/area_conversion/on_gain(mob/user, datum/antagonist/heretic/our_heretic)
+	. = ..()
 /datum/heretic_knowledge/spell/entropic_plume
 	name = "Entropic Plume"
 	desc = "Дарует вам Entropic Plume, заклинание, выпускающее досаждающую волну ржавчины. \
 		Ослепляет, отравляет и накладывает Amok на всех попавших язычников, заставляя их дико нападать \
-		на друзей или врагов. Также ржавеет и разрушает поверхности, на которые попадает."
+		на друзей или врагов. Также ржавеет и разрушает поверхности, на которые попадает. Улучшает способности ржавчины еретиков не Пути ржавчины."
 	gain_text = "Коррозия была неостановима. Ржавчина была неприятной. \
 		Кузнец ушел, ты держишь его клинок. Чемпионы надежды, Повелитель ржавчины близок!"
 	next_knowledge = list(
 		/datum/heretic_knowledge/ultimate/rust_final,
-		/datum/heretic_knowledge/summon/rusty,
 		/datum/heretic_knowledge/spell/rust_charge,
 	)
 	spell_to_add = /datum/action/cooldown/spell/cone/staggered/entropic_plume
 	cost = 1
 	route = PATH_RUST
+
+/datum/heretic_knowledge/spell/entropic_plume/on_gain(mob/user)
+	. = ..()
+	var/datum/antagonist/heretic/our_heretic = IS_HERETIC(user)
+	our_heretic.increase_rust_strength(TRUE)
 
 /datum/heretic_knowledge/ultimate/rust_final
 	name = "Rustbringer's Oath"
@@ -216,9 +239,9 @@
 		Принесите 3 трупа к руне трансмутации на мостик станции, чтобы завершить ритуал. \
 		После завершения, ритуальное место будет бесконечно распространять ржавчину на любую поверхность, не останавливаясь ни перед чем. \
 		Кроме того, вы станете чрезвычайно стойкими на ржавчине, исцеляясь втрое быстрее \
-		и приобретая иммунитет ко многим эффектам и опасностям."
+		и приобретая иммунитет ко многим эффектам и опасностям. Вы сможете заставлять ржаветь почти всё."
 	gain_text = "Чемпион ржавчины. Разлагатель стали. Бойся темноты, ибо пришел ПОВЕЛИТЕЛЬ РЖАВЧИНЫ! \
-		Работа Кузнеца продолжается! Ржавые Холмы, УСЛЫШЬТЕ МОЕ ИМЯ! УЗРИТЕ МОЕ ВОЗНЕСЕНИЕ!"
+		Работа Кузнеца продолжается! Ржавые холмы, УСЛЫШЬТЕ МОЕ ИМЯ! УЗРИТЕ МОЕ ВОЗНЕСЕНИЕ!"
 	route = PATH_RUST
 	/// If TRUE, then immunities are currently active.
 	var/immunities_active = FALSE
@@ -227,6 +250,8 @@
 	/// A static list of traits we give to the heretic when on rust.
 	var/static/list/conditional_immunities = list(
 		TRAIT_BOMBIMMUNE,
+		TRAIT_IGNOREDAMAGESLOWDOWN,
+		TRAIT_IGNORESLOWDOWN,
 		TRAIT_NO_SLIP_ALL,
 		TRAIT_NOBREATH,
 		TRAIT_PIERCEIMMUNE,
@@ -265,10 +290,46 @@
 		sound = 'sound/ambience/antag/heretic/ascend_rust.ogg',
 		color_override = "pink",
 	)
-	new /datum/rust_spread(loc)
+	trigger(loc)
 	RegisterSignal(user, COMSIG_MOVABLE_MOVED, PROC_REF(on_move))
 	RegisterSignal(user, COMSIG_LIVING_LIFE, PROC_REF(on_life))
 	user.client?.give_award(/datum/award/achievement/misc/rust_ascension, user)
+	var/datum/action/cooldown/spell/aoe/rust_conversion/rust_spread_spell = locate() in user.actions
+	rust_spread_spell?.cooldown_time /= 2
+
+// I sure hope this doesn't have performance implications
+/datum/heretic_knowledge/ultimate/rust_final/proc/trigger(turf/center)
+	var/greatest_dist = 0
+	var/list/turfs_to_transform = list()
+	for (var/turf/transform_turf as anything in GLOB.station_turfs)
+		if (transform_turf.turf_flags & NO_RUST)
+			continue
+		var/dist = get_dist(center, transform_turf)
+		if (dist > greatest_dist)
+			greatest_dist = dist
+		if (!turfs_to_transform["[dist]"])
+			turfs_to_transform["[dist]"] = list()
+		turfs_to_transform["[dist]"] += transform_turf
+
+	for (var/iterator in 1 to greatest_dist)
+		if(!turfs_to_transform["[iterator]"])
+			continue
+		addtimer(CALLBACK(src, PROC_REF(transform_area), turfs_to_transform["[iterator]"]), (5 SECONDS) * iterator)
+
+/datum/heretic_knowledge/ultimate/rust_final/proc/transform_area(list/turfs)
+	turfs = shuffle(turfs)
+	var/numturfs = length(turfs)
+	var/first_third = turfs.Copy(1, round(numturfs * 0.33))
+	var/second_third = turfs.Copy(round(numturfs * 0.33), round(numturfs * 0.66))
+	var/third_third = turfs.Copy(round(numturfs * 0.66), numturfs)
+	addtimer(CALLBACK(src, PROC_REF(delay_transform_turfs), first_third), 5 SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(delay_transform_turfs), second_third), 5 SECONDS * 0.33)
+	addtimer(CALLBACK(src, PROC_REF(delay_transform_turfs), third_third), 5 SECONDS * 0.66)
+
+/datum/heretic_knowledge/ultimate/rust_final/proc/delay_transform_turfs(list/turfs)
+	for(var/turf/turf as anything in turfs)
+		turf.rust_heretic_act(5)
+		CHECK_TICK
 
 /**
  * Signal proc for [COMSIG_MOVABLE_MOVED].
@@ -304,85 +365,12 @@
 		return
 
 	var/need_mob_update = FALSE
-	need_mob_update += source.adjustBruteLoss(-4, updating_health = FALSE)
-	need_mob_update += source.adjustFireLoss(-4, updating_health = FALSE)
-	need_mob_update += source.adjustToxLoss(-4, updating_health = FALSE, forced = TRUE)
-	need_mob_update += source.adjustOxyLoss(-4, updating_health = FALSE)
+	need_mob_update += source.adjustBruteLoss(-5, updating_health = FALSE)
+	need_mob_update += source.adjustFireLoss(-5, updating_health = FALSE)
+	need_mob_update += source.adjustToxLoss(-5, updating_health = FALSE, forced = TRUE)
+	need_mob_update += source.adjustOxyLoss(-5, updating_health = FALSE)
 	need_mob_update += source.adjustStaminaLoss(-20, updating_stamina = FALSE)
+	if(source.blood_volume < BLOOD_VOLUME_NORMAL)
+		source.blood_volume += 5 * seconds_per_tick
 	if(need_mob_update)
 		source.updatehealth()
-
-/**
- * #Rust spread datum
- *
- * Simple datum that automatically spreads rust around it.
- *
- * Simple implementation of automatically growing entity.
- */
-/datum/rust_spread
-	/// The rate of spread every tick.
-	var/spread_per_sec = 6
-	/// The very center of the spread.
-	var/turf/centre
-	/// List of turfs at the edge of our rust (but not yet rusted).
-	var/list/edge_turfs = list()
-	/// List of all turfs we've afflicted.
-	var/list/rusted_turfs = list()
-	/// Static blacklist of turfs we can't spread to.
-	var/static/list/blacklisted_turfs = typecacheof(list(
-		/turf/open/indestructible,
-		/turf/closed/indestructible,
-		/turf/open/space,
-		/turf/open/lava,
-		/turf/open/chasm
-	))
-
-/datum/rust_spread/New(loc)
-	centre = get_turf(loc)
-	centre.rust_heretic_act()
-	rusted_turfs += centre
-	START_PROCESSING(SSprocessing, src)
-
-/datum/rust_spread/Destroy(force)
-	centre = null
-	edge_turfs.Cut()
-	rusted_turfs.Cut()
-	STOP_PROCESSING(SSprocessing, src)
-	return ..()
-
-/datum/rust_spread/process(seconds_per_tick)
-	var/spread_amount = round(spread_per_sec * seconds_per_tick)
-
-	if(length(edge_turfs) < spread_amount)
-		compile_turfs()
-
-	for(var/i in 0 to spread_amount)
-		if(!length(edge_turfs))
-			break
-		var/turf/afflicted_turf = pick_n_take(edge_turfs)
-		afflicted_turf.rust_heretic_act()
-		rusted_turfs |= afflicted_turf
-
-/**
- * Compile turfs
- *
- * Recreates the edge_turfs list.
- * Updates the rusted_turfs list, in case any turfs within were un-rusted.
- */
-/datum/rust_spread/proc/compile_turfs()
-	edge_turfs.Cut()
-
-	var/max_dist = 1
-	for(var/turf/found_turf as anything in rusted_turfs)
-		if(!HAS_TRAIT(found_turf, TRAIT_RUSTY))
-			rusted_turfs -= found_turf
-		max_dist = max(max_dist, get_dist(found_turf, centre) + 1)
-
-	for(var/turf/nearby_turf as anything in spiral_range_turfs(max_dist, centre, FALSE))
-		if(nearby_turf in rusted_turfs || is_type_in_typecache(nearby_turf, blacklisted_turfs))
-			continue
-
-		for(var/turf/line_turf as anything in get_line(nearby_turf, centre))
-			if(get_dist(nearby_turf, line_turf) <= 1)
-				edge_turfs |= nearby_turf
-		CHECK_TICK

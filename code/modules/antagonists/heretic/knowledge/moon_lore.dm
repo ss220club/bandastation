@@ -13,7 +13,7 @@
  * Mark of Moon
  * Ritual of Knowledge
  * Lunar Parade
- * Moonlight Amulette
+ * Moonlight Amulet
  * > Sidepaths:
  *   Curse of Paralasys
  *   Unfathomable Curio
@@ -103,15 +103,15 @@
 	desc = "Дает вам заклинание Lunar Parade, которое через короткую задержку посылает вперед карнавал. \
 		Те, в кого попал карнавал, вынуждены присоединиться к параду и страдать от галлюцинаций."
 	gain_text = "Музыка, как отражение души, побуждала их, и они, словно мотыльки на пламя, следовали за ней."
-	next_knowledge = list(/datum/heretic_knowledge/moon_amulette)
+	next_knowledge = list(/datum/heretic_knowledge/moon_amulet)
 	spell_to_add = /datum/action/cooldown/spell/pointed/projectile/moon_parade
 	cost = 1
 	route = PATH_MOON
 
 
-/datum/heretic_knowledge/moon_amulette
-	name = "Moonlight Amulette"
-	desc = "Позволяет трансмутировать 2 листа стекла, сердце и галстук, чтобы создать Moonlight Amulette. \
+/datum/heretic_knowledge/moon_amulet
+	name = "Moonlight Amulet"
+	desc = "Позволяет трансмутировать 2 листа стекла, сердце и галстук, чтобы создать Moonlight Amulet. \
 			Если предмет использован на том, у кого слабый рассудок, они становятся берсерком, нападая на всех подряд; \
 			если рассудок не достаточно низок, то уменьшается их настроение."
 	gain_text = "Во главе парада стоял он, луна сгустилась в единную массу, отражение души."
@@ -127,7 +127,7 @@
 		/obj/item/stack/sheet/glass = 2,
 		/obj/item/clothing/neck/tie = 1,
 	)
-	result_atoms = list(/obj/item/clothing/neck/heretic_focus/moon_amulette)
+	result_atoms = list(/obj/item/clothing/neck/heretic_focus/moon_amulet)
 	cost = 1
 	route = PATH_MOON
 
@@ -171,7 +171,7 @@
 		Принесите 3 трупа с более чем 50 урона мозгу на руну трансмутации, чтобы завершить ритуал \
 		При завершении, вы становитесь предвестником безумия и получаете ауру пассивного снижения рассудка, \
 		увеличения замешательства, и, если их рассудок достаточно низкий, урона мозгу и ослепления. \
-		Одна пятая экипажа превратится в аколитов и будет следовать вашим приказам, также они получат Moonlight Amulette"
+		Одна пятая экипажа превратится в аколитов и будет следовать вашим приказам, также они получат Moonlight Amulet"
 	gain_text = "Мы нырнули вниз, к толпе, его душа отделилась в поисках более великой авантюры, \
 		туда, откуда Шпрехшталмейстер начал парад, и я продолжу его до самой кончины солнца \
 		УЗРИТЕ МОЕ ВОЗНЕСЕНИЕ, ЛУНА УЛЫБНЕТСЯ РАЗ И НАВСЕГДА!"
@@ -229,7 +229,7 @@
 			continue
 		var/datum/antagonist/lunatic/lunatic = crewmate.mind.add_antag_datum(/datum/antagonist/lunatic)
 		lunatic.set_master(user.mind, user)
-		var/obj/item/clothing/neck/heretic_focus/moon_amulette/amulet = new(crewmate_turf)
+		var/obj/item/clothing/neck/heretic_focus/moon_amulet/amulet = new(crewmate_turf)
 		var/static/list/slots = list(
 			"neck" = ITEM_SLOT_NECK,
 			"hands" = ITEM_SLOT_HANDS,

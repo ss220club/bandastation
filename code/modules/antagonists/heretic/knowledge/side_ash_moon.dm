@@ -25,7 +25,7 @@
 	gain_text = "Плоть человечества слаба. Заставьте их истечь кровью. Покажите им их хрупкость."
 	next_knowledge = list(
 		/datum/heretic_knowledge/mad_mask,
-		/datum/heretic_knowledge/moon_amulette,
+		/datum/heretic_knowledge/moon_amulet,
 	)
 	required_atoms = list(
 		/obj/item/bodypart/leg/left = 1,

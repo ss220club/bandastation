@@ -36,7 +36,7 @@
 	. = ..()
 
 	if(master_mind)
-		linked_alert.desc += " Вы - мистический монстр, возрожденный, чтобы служить своему хозяину, [master_mind]."
+		linked_alert.desc += " Вы мистический монстр, возрожденный, чтобы служить своему хозяину, [master_mind]."
 	if(isnum(new_max_health))
 		if(new_max_health > initial(new_owner.maxHealth))
 			linked_alert.desc += " В этой форме вы сильнее."
@@ -99,5 +99,5 @@
 
 /atom/movable/screen/alert/status_effect/ghoul
 	name = "Flesh Servant"
-	desc = "Вы - гуль!"
+	desc = "Вы гуль!"
 	icon_state = ALERT_MIND_CONTROL

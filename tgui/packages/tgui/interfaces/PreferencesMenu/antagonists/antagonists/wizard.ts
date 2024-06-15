@@ -1,8 +1,6 @@
-import { multiline } from 'common/string';
-
 import { Antagonist, Category } from '../base';
 
-export const WIZARD_MECHANICAL_DESCRIPTION = multiline`
+export const WIZARD_MECHANICAL_DESCRIPTION = `
       Выбирайте из множества мощных заклинаний, чтобы вызвать хаос
       на космической станции 13.
     `;

@@ -1,8 +1,8 @@
 /datum/mutation/human/tongue_spike
 	name = "Tongue Spike"
-	desc = "Allows a creature to voluntary shoot their tongue out as a deadly weapon."
+	desc = "Позволяет существу добровольно выстрелить своим языком, как смертельным оружием."
 	quality = POSITIVE
-	text_gain_indication = span_notice("Your feel like you can throw your voice.")
+	text_gain_indication = span_notice("Ты чувствуешь, что можешь выкинуть свой голос.")
 	instability = 15
 	power_path = /datum/action/cooldown/spell/tongue_spike
 
@@ -86,9 +86,9 @@
 
 /datum/mutation/human/tongue_spike/chem
 	name = "Chem Spike"
-	desc = "Allows a creature to voluntary shoot their tongue out as biomass, allowing a long range transfer of chemicals."
+	desc = "Позволяет существу добровольно выстрелить своим языком из биомассы, позволяет передавать химические вещества на большое расстояние."
 	quality = POSITIVE
-	text_gain_indication = span_notice("Your feel like you can really connect with people by throwing your voice.")
+	text_gain_indication = span_notice("Ты чувствуешь, что можешь соединиться с людьми бросив свой голос.")
 	instability = 15
 	locked = TRUE
 	power_path = /datum/action/cooldown/spell/tongue_spike/chem

@@ -2,17 +2,17 @@
 #define FORMAT_CHEM_CHARGES_TEXT(charges) MAPTEXT("<div align='center' valign='middle' style='position:relative; top:0px; left:6px'><font color='#dd66dd'>[round(charges)]</font></div>")
 
 /datum/antagonist/changeling
-	name = "\improper Changeling"
-	roundend_category = "changelings"
+	name = "\proper Генокрад"
+	roundend_category = "Генокрадами"
 	antagpanel_category = "Changeling"
 	job_rank = ROLE_CHANGELING
 	antag_moodlet = /datum/mood_event/focused
 	antag_hud_name = "changeling"
 	hijack_speed = 0.5
 	ui_name = "AntagInfoChangeling"
-	suicide_cry = "FOR THE HIVE!!"
+	suicide_cry = "ЗА УЛЕЙ!!"
 	can_assign_self_objectives = TRUE
-	default_custom_objective = "Consume the station's most valuable genomes."
+	default_custom_objective = "Поглотить самые ценные гены станции."
 	hardcore_random_bonus = TRUE
 	/// Whether to give this changeling objectives or not
 	var/give_objectives = TRUE
@@ -136,7 +136,7 @@
 		return
 
 	var/mob/living/living_mob = mob_to_tweak
-	handle_clown_mutation(living_mob, "You have evolved beyond your clownish nature, allowing you to wield weapons without harming yourself.")
+	handle_clown_mutation(living_mob, "Вы развились за пределы своей клоунской натуры, что позволяет вам владеть оружием без вреда для себя.")
 	RegisterSignal(living_mob, COMSIG_MOB_LOGIN, PROC_REF(on_login))
 	RegisterSignal(living_mob, COMSIG_LIVING_LIFE, PROC_REF(on_life))
 	RegisterSignal(living_mob, COMSIG_LIVING_POST_FULLY_HEAL, PROC_REF(on_fullhealed))
@@ -216,7 +216,7 @@
 	return ..()
 
 /datum/antagonist/changeling/farewell()
-	to_chat(owner.current, span_userdanger("You grow weak and lose your powers! You are no longer a changeling and are stuck in your current form!"))
+	to_chat(owner.current, span_userdanger("Вы становитесь слабым и теряете свои силы! Вы больше не генокрад и застряли в своей нынешней форме!"))
 
 /*
  * Instantiate the cellular emporium for the changeling.
@@ -308,8 +308,8 @@
 
 /datum/antagonist/changeling/proc/get_status_tab_item(mob/living/source, list/items)
 	SIGNAL_HANDLER
-	items += "Chemical Storage: [chem_charges]/[total_chem_storage]"
-	items += "Absorbed DNA: [absorbed_count]"
+	items += "Количество химикатов: [chem_charges]/[total_chem_storage]"
+	items += "Поглощенные ДНК: [absorbed_count]"
 
 /*
  * Adjust the chem charges of the ling by [amount]
@@ -367,28 +367,28 @@
 		CRASH("Changeling purchase_power attempted to purchase an invalid typepath! (got: [sting_path])")
 
 	if(purchased_powers[sting_path])
-		to_chat(owner.current, span_warning("We have already evolved this ability!"))
+		to_chat(owner.current, span_warning("Мы уже развили эту способность!"))
 		return FALSE
 
 	if(genetic_points < initial(sting_path.dna_cost))
-		to_chat(owner.current, span_warning("We have reached our capacity for abilities!"))
+		to_chat(owner.current, span_warning("Мы достигли предела своих возможностей!"))
 		return FALSE
 
 	if(absorbed_count < initial(sting_path.req_dna))
-		to_chat(owner.current, span_warning("We lack the DNA to evolve this ability!"))
+		to_chat(owner.current, span_warning("У нас недостаточно ДНК, чтобы развить эту способность!"))
 		return FALSE
 
 	if(true_absorbs < initial(sting_path.req_absorbs))
-		to_chat(owner.current, span_warning("We lack the absorbed DNA to evolve this ability!"))
+		to_chat(owner.current, span_warning("Нам недостаточно поглощенных ДНК, чтобы развить эту способность!"))
 		return FALSE
 
 	if(initial(sting_path.dna_cost) < 0)
-		to_chat(owner.current, span_warning("We cannot evolve this ability!"))
+		to_chat(owner.current, span_warning("Мы не можем развить эту способность!"))
 		return FALSE
 
 	//To avoid potential exploits by buying new powers while in stasis, which clears your verblist. // Probably not a problem anymore, but whatever.
 	if(HAS_TRAIT(owner.current, TRAIT_DEATHCOMA))
-		to_chat(owner.current, span_warning("We lack the energy to evolve new abilities right now!"))
+		to_chat(owner.current, span_warning("Сейчас нам не хватает энергии для развития новых способностей!"))
 		return FALSE
 
 	var/success = give_power(sting_path)
@@ -410,7 +410,7 @@
 	var/datum/action/changeling/new_action = new power_path()
 
 	if(!new_action)
-		to_chat(owner.current, "This is awkward. Changeling power purchase failed, please report this bug to a coder!")
+		to_chat(owner.current, "Упс. Приобретение силы генокрада не удалось, пожалуйста, сообщите об этой ошибке кодеру!")
 		CRASH("Changeling give_power was unable to grant a new changeling action for path [power_path]!")
 
 	purchased_powers[power_path] = new_action
@@ -425,18 +425,18 @@
  */
 /datum/antagonist/changeling/proc/readapt()
 	if(!ishuman(owner.current) || ismonkey(owner.current))
-		to_chat(owner.current, span_warning("We can't remove our evolutions in this form!"))
+		to_chat(owner.current, span_warning("Мы не можем избавиться от нашего развития в такой форме!"))
 		return FALSE
 
 	if(HAS_TRAIT_FROM(owner.current, TRAIT_DEATHCOMA, CHANGELING_TRAIT))
-		to_chat(owner.current, span_warning("We are too busy reforming ourselves to readapt right now!"))
+		to_chat(owner.current, span_warning("Мы слишком заняты реформированием себя, чтобы переадаптироваться прямо сейчас!"))
 		return FALSE
 
 	if(!can_respec)
-		to_chat(owner.current, span_warning("You lack the power to readapt your evolutions!"))
+		to_chat(owner.current, span_warning("Вам не хватает силы, чтобы переадаптировать ваше развитие!"))
 		return FALSE
 
-	to_chat(owner.current, span_notice("We have removed our evolutions from this form, and are now ready to readapt."))
+	to_chat(owner.current, span_notice("Мы избавились от нашего развития в этой форме и теперь готовы к повторной адаптации."))
 	remove_changeling_powers()
 	can_respec = FALSE
 	SSblackbox.record_feedback("tally", "changeling_power_purchase", 1, "Readapt")
@@ -476,32 +476,32 @@
 		var/datum/changeling_profile/top_profile = stored_profiles[1]
 		if(top_profile.dna.is_same_as(user.dna) && stored_profiles.len > dna_max)
 			if(verbose)
-				to_chat(user, span_warning("We have reached our capacity to store genetic information! We must transform before absorbing more."))
+				to_chat(user, span_warning("Мы достигли предела своей способности хранить генетическую информацию! Мы должны трансформироваться, прежде чем поглощать больше."))
 			return FALSE
 
 	if(!target.has_dna())
 		if(verbose)
-			to_chat(user, span_warning("[target] is not compatible with our biology."))
+			to_chat(user, span_warning("ДНК [target] несовместимо с нашей биологией."))
 		return FALSE
 	if(has_profile_with_dna(target.dna))
 		if(verbose)
-			to_chat(user, span_warning("We already have this DNA in storage!"))
+			to_chat(user, span_warning("Мы уже имеем это ДНК в нашем хранилище!"))
 		return FALSE
 	if(HAS_TRAIT(target, TRAIT_NO_DNA_COPY))
 		if(verbose)
-			to_chat(user, span_warning("[target] is not compatible with our biology."))
+			to_chat(user, span_warning("ДНК [target] несовместимо с нашей биологией."))
 		return FALSE
 	if(HAS_TRAIT(target, TRAIT_BADDNA))
 		if(verbose)
-			to_chat(user, span_warning("[target]'s DNA is ruined beyond usability!"))
+			to_chat(user, span_warning("ДНК [target] разрушено до неузнаваемости!"))
 		return FALSE
 	if(HAS_TRAIT(target, TRAIT_HUSK))
 		if(verbose)
-			to_chat(user, span_warning("[target]'s body is ruined beyond usability!"))
+			to_chat(user, span_warning("Тело [target] разрушено до непригодности!"))
 		return FALSE
 	if(!ishuman(target) || ismonkey(target))//Absorbing monkeys is entirely possible, but it can cause issues with transforming. That's what lesser form is for anyway!
 		if(verbose)
-			to_chat(user, span_warning("We could gain no benefit from absorbing a lesser creature."))
+			to_chat(user, span_warning("Мы не получим никакой выгоды от поглощения низшего существа."))
 		return FALSE
 
 	return TRUE
@@ -526,6 +526,7 @@
 
 	new_profile.age = target.age
 	new_profile.physique = target.physique
+	new_profile.athletics_level = target.mind?.get_skill_level(/datum/skill/athletics) || SKILL_LEVEL_NONE
 
 	// Grab the target's quirks.
 	for(var/datum/quirk/target_quirk as anything in target.quirks)
@@ -536,10 +537,6 @@
 	new_profile.underwear_color = target.underwear_color
 	new_profile.undershirt = target.undershirt
 	new_profile.socks = target.socks
-
-	// Hair and facial hair gradients, alongside their colours.
-	new_profile.grad_style = LAZYLISTDUPLICATE(target.grad_style)
-	new_profile.grad_color = LAZYLISTDUPLICATE(target.grad_color)
 
 	// Grab skillchips they have
 	new_profile.skillchips = target.clone_skillchip_list(TRUE)
@@ -766,8 +763,7 @@
 	user.socks = chosen_profile.socks
 	user.age = chosen_profile.age
 	user.physique = chosen_profile.physique
-	user.grad_style = LAZYLISTDUPLICATE(chosen_profile.grad_style)
-	user.grad_color = LAZYLISTDUPLICATE(chosen_profile.grad_color)
+	user.mind?.set_level(/datum/skill/athletics, chosen_profile.athletics_level, silent = TRUE)
 	user.voice = chosen_profile.voice
 	user.voice_filter = chosen_profile.voice_filter
 
@@ -913,12 +909,10 @@
 	var/age
 	/// The body type of the profile source.
 	var/physique
+	/// The athleticism of the profile source.
+	var/athletics_level
 	/// The quirks of the profile source.
 	var/list/quirks = list()
-	/// The hair and facial hair gradient styles of the profile source.
-	var/list/grad_style = list("None", "None")
-	/// The hair and facial hair gradient colours of the profile source.
-	var/list/grad_color = list(null, null)
 	/// The TTS voice of the profile source
 	var/voice
 	/// The TTS filter of the profile filter
@@ -958,9 +952,8 @@
 	new_profile.id_icon = id_icon
 	new_profile.age = age
 	new_profile.physique = physique
+	new_profile.athletics_level = athletics_level
 	new_profile.quirks = quirks.Copy()
-	new_profile.grad_style = LAZYLISTDUPLICATE(grad_style)
-	new_profile.grad_color = LAZYLISTDUPLICATE(grad_color)
 	new_profile.voice = voice
 	new_profile.voice_filter = voice_filter
 
@@ -972,20 +965,20 @@
 		changeling_win = FALSE
 
 	parts += printplayer(owner)
-	parts += "<b>Genomes Extracted:</b> [absorbed_count]<br>"
+	parts += "<b>Извлеченных генов: </b> [absorbed_count]<br>"
 
 	if(objectives.len)
 		var/count = 1
 		for(var/datum/objective/objective in objectives)
 			if(!objective.check_completion())
 				changeling_win = FALSE
-			parts += "<b>Objective #[count]</b>: [objective.explanation_text] [objective.get_roundend_success_suffix()]"
+			parts += "<b>Задача #[count]</b>: [objective.explanation_text] [objective.get_roundend_success_suffix()]"
 			count++
 
 	if(changeling_win)
-		parts += span_greentext("The changeling was successful!")
+		parts += span_greentext("Генокрад был успешен!")
 	else
-		parts += span_redtext("The changeling has failed.")
+		parts += span_redtext("Генокрад провалился.")
 
 	return parts.Join("<br>")
 
@@ -1019,7 +1012,7 @@
 
 // Changelings spawned from non-changeling headslugs (IE, due to being transformed into a headslug as a non-ling). Weaker than a normal changeling.
 /datum/antagonist/changeling/headslug
-	name = "\improper Headslug Changeling"
+	name = "\proper Генокрад-червь"
 	show_in_antagpanel = FALSE
 	give_objectives = FALSE
 	count_against_dynamic_roll_chance = FALSE
@@ -1030,19 +1023,19 @@
 	total_chem_storage = 50
 
 /datum/antagonist/changeling/headslug/greet()
-	to_chat(owner, span_boldannounce("You are a fresh changeling birthed from a headslug! \
-		You aren't as strong as a normal changeling, as you are newly born."))
+	to_chat(owner, span_boldannounce("Вы новый генокрад, только что родившийся из червя! \
+		Вы не так сильны, как обычные генокрады, так как вы только что родились."))
 
 
 /datum/antagonist/changeling/space
-	name = "\improper Space Changeling"
+	name = "\proper Генокрад из космоса"
 
 /datum/antagonist/changeling/space/get_preview_icon()
 	var/icon/final_icon = render_preview_outfit(/datum/outfit/changeling_space)
 	return finish_preview_icon(final_icon)
 
 /datum/antagonist/changeling/space/greet()
-	to_chat(src, span_changeling("Our mind stirs to life, from the depths of an endless slumber..."))
+	to_chat(src, span_changeling("Наш разум пробуждается к жизни из глубин бесконечной дремоты..."))
 
 /datum/outfit/changeling
 	name = "Changeling"

@@ -51,7 +51,7 @@
 			if(get_location_accessible(target, target_zone) || (surgery.surgery_flags & SURGERY_IGNORE_CLOTHES))
 				initiate(user, target, target_zone, tool, surgery, try_to_fail)
 			else
-				to_chat(user, span_warning("Вам надо снять все, что может закрывать [parse_zone(target_zone)] у [target], для того чтобы начать операцию!"))
+				to_chat(user, span_warning("Вам надо снять все, что может закрывать <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target], для того чтобы начать операцию!"))
 			return TRUE //returns TRUE so we don't stab the guy in the dick or wherever.
 
 	if(repeatable)
@@ -262,12 +262,19 @@
  * * target - Who the message will be sent to
  * * pain_message - The message to be displayed
  * * mechanical_surgery - Boolean flag that represents if a surgery step is done on a mechanical limb (therefore does not force scream)
+ * * mood_event_type - What type of mood event the step applies if they're still conscious (ie "THEY'RE CUTTING ME OPEN!!" when being sliced open with a scalpel/saw/ect)
  */
-/datum/surgery_step/proc/display_pain(mob/living/target, pain_message, mechanical_surgery = FALSE)
+/datum/surgery_step/proc/display_pain(mob/living/target, pain_message, mechanical_surgery = FALSE, datum/mood_event/mood_event_type)
 	if(target.stat < UNCONSCIOUS)
 		if(HAS_TRAIT(target, TRAIT_ANALGESIA))
-			to_chat(target, span_notice("Вы чувствуете онемение, пока ваше тело оперируют."))
+			if(!pain_message)
+				return
+			to_chat(target, span_notice("You feel a dull, numb sensation as your body is surgically operated on."))
 		else
+			if(mood_event_type)
+				target.add_mood_event("surgery", mood_event_type)
+			if(!pain_message)
+				return
 			to_chat(target, span_userdanger(pain_message))
 			if(prob(30) && !mechanical_surgery)
 				target.emote("scream")

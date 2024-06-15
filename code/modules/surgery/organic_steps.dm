@@ -16,11 +16,11 @@
 	display_results(
 		user,
 		target,
-		span_notice("Вы начинаете делать надрез в [parse_zone(target_zone)] у [target]..."),
-		span_notice("[user] начинает делать надрез в [parse_zone(target_zone)] у [target]."),
-		span_notice("[user] начинает делать надрез в [parse_zone(target_zone)] у [target]."),
+		span_notice("Вы начинаете делать надрез в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]..."),
+		span_notice("[user] начинает делать надрез в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
+		span_notice("[user] начинает делать надрез в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
 	)
-	display_pain(target, "Вы чувствуете колющую боль в [parse_zone(target_zone)].")
+	display_pain(target, "You feel a stabbing in your [target.parse_zone_with_bodypart(target_zone)].", mood_event_type = /datum/mood_event/surgery)
 
 /datum/surgery_step/incise/tool_check(mob/user, obj/item/tool)
 	if(implement_type == /obj/item && !tool.get_sharpness())
@@ -35,24 +35,29 @@
 			display_results(
 				user,
 				target,
-				span_notice("Вокруг [parse_zone(target_zone)] у [human_target] образуется лужа крови."),
-				span_notice("Вокруг [parse_zone(target_zone)] у [human_target] образуется лужа крови."),
-				span_notice("Вокруг [parse_zone(target_zone)] у [human_target] образуется лужа крови."),
+				span_notice("Вокруг <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [human_target] образуется лужа крови."),
+				span_notice("Вокруг <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [human_target] образуется лужа крови."),
+				span_notice("Вокруг <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [human_target] образуется лужа крови."),
 			)
+			display_pain(target, mood_event_type = /datum/mood_event/surgery/success)
 			var/obj/item/bodypart/target_bodypart = target.get_bodypart(target_zone)
 			if(target_bodypart)
 				target_bodypart.adjustBleedStacks(10)
+	return ..()
+
+/datum/surgery_step/incise/failure(mob/user, mob/living/target, target_zone, obj/item/tool, datum/surgery/surgery, fail_prob)
+	display_pain(target, mood_event_type = /datum/mood_event/surgery/failure)
 	return ..()
 
 /datum/surgery_step/incise/nobleed/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	display_results(
 		user,
 		target,
-		span_notice("Вы начинаете <i>осторожно</i> делать надрез в [parse_zone(target_zone)] у [target]..."),
-		span_notice("[user] начинает <i>осторожно</i> делать надрез в [parse_zone(target_zone)] у [target]."),
-		span_notice("[user] начинает <i>осторожно</i> делать надрез в [parse_zone(target_zone)] у [target]."),
+		span_notice("Вы начинаете <i>осторожно</i> делать надрез в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]..."),
+		span_notice("[user] начинает <i>осторожно</i> делать надрез в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
+		span_notice("[user] начинает <i>осторожно</i> делать надрез в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
 	)
-	display_pain(target, "Вы чувствуете, как <i>осторожный</i> колющий удар в [parse_zone(target_zone)].")
+	display_pain(target, "You feel a <i>careful</i> stabbing in your [target.parse_zone_with_bodypart(target_zone)].", mood_event_type = /datum/mood_event/surgery)
 
 //clamp bleeders
 /datum/surgery_step/clamp_bleeders
@@ -69,11 +74,11 @@
 	display_results(
 		user,
 		target,
-		span_notice("Вы начинаете зажимать кровеносные сосуды в [parse_zone(target_zone)] у [target]..."),
-		span_notice("[user] начинает зажимать кровеносные сосуды в [parse_zone(target_zone)] у [target]."),
-		span_notice("[user] начинает зажимать кровеносные сосуды в [parse_zone(target_zone)] у [target]."),
+		span_notice("Вы начинаете зажимать кровеносные сосуды в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]..."),
+		span_notice("[user] начинает зажимать кровеносные сосуды в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
+		span_notice("[user] начинает зажимать кровеносные сосуды в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
 	)
-	display_pain(target, "Вы чувствуете укол, послче чего кровотечение в вашей [parse_zone(target_zone)] замедляется.")
+	display_pain(target, "Вы чувствуете укол, послче чего кровотечение в вашей <i>[target.parse_zone_with_bodypart(target_zone)]</i> замедляется.")
 
 /datum/surgery_step/clamp_bleeders/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results)
 	if(locate(/datum/surgery_step/saw) in surgery.steps)
@@ -101,11 +106,11 @@
 	display_results(
 		user,
 		target,
-		span_notice("Вы начинаете раздвигать кожу в [parse_zone(target_zone)] у [target]..."),
-		span_notice("[user] начинаете раздвигать кожу в [parse_zone(target_zone)] у [target]."),
-		span_notice("[user] начинаете раздвигать кожу в [parse_zone(target_zone)] у [target]."),
+		span_notice("Вы начинаете раздвигать кожу в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]..."),
+		span_notice("[user] начинаете раздвигать кожу в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
+		span_notice("[user] начинаете раздвигать кожу в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
 	)
-	display_pain(target, "Вы чувствуете сильную жгучую боль, распространяющуюся по всей [parse_zone(target_zone)], по мере того, как кожа возвращается в прежнее состояние!")
+	display_pain(target, "Вы чувствуете сильную жгучую боль, распространяющуюся по всей <i>[target.parse_zone_with_bodypart(target_zone)]</i>, по мере того, как кожа возвращается в прежнее состояние!")
 
 //close incision
 /datum/surgery_step/close
@@ -123,11 +128,11 @@
 	display_results(
 		user,
 		target,
-		span_notice("Вы начинаете обрабатывать разрез в [parse_zone(target_zone)] у [target]..."),
-		span_notice("[user] начинает обрабатывать разрез в [parse_zone(target_zone)] у [target]."),
-		span_notice("[user] начинает обрабатывать разрез в [parse_zone(target_zone)] у [target]."),
+		span_notice("Вы начинаете обрабатывать разрез в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]..."),
+		span_notice("[user] начинает обрабатывать разрез в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
+		span_notice("[user] начинает обрабатывать разрез в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
 	)
-	display_pain(target, "Ваш [parse_zone(target_zone)] прижигается!")
+	display_pain(target, "Ваша <i>[target.parse_zone_with_bodypart(target_zone)]</i> прижигается!")
 
 /datum/surgery_step/close/tool_check(mob/user, obj/item/tool)
 	if(implement_type == TOOL_WELDER || implement_type == /obj/item)
@@ -173,11 +178,11 @@
 	display_results(
 		user,
 		target,
-		span_notice("Вы начинаете распиливать кость в [parse_zone(target_zone)] у [target]..."),
-		span_notice("[user] начинает распиливать кость в [parse_zone(target_zone)] у [target]."),
-		span_notice("[user] начинает распиливать кость в [parse_zone(target_zone)] у [target]."),
+		span_notice("Вы начинаете распиливать кость в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]..."),
+		span_notice("[user] начинает распиливать кость в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
+		span_notice("[user] начинает распиливать кость в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
 	)
-	display_pain(target, "Вы чувствуете ужасную боль внутри [parse_zone(target_zone)]!")
+	display_pain(target, "You feel a horrid ache spread through the inside of your [target.parse_zone_with_bodypart(target_zone)]!", mood_event_type = /datum/mood_event/surgery)
 
 /datum/surgery_step/saw/tool_check(mob/user, obj/item/tool)
 	if(implement_type == /obj/item && !(tool.get_sharpness() && (tool.force >= 10)))
@@ -189,11 +194,15 @@
 	display_results(
 		user,
 		target,
-		span_notice("Вы вскрываете [parse_zone(target_zone)] у [target]."),
-		span_notice("[user] вскрывает [parse_zone(target_zone)] у [target] !"),
-		span_notice("[user] вскрывает [parse_zone(target_zone)] у [target] !"),
+		span_notice("Вы вскрываете <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
+		span_notice("[user] вскрывает <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]!"),
+		span_notice("[user] вскрывает <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]!"),
 	)
-	display_pain(target, "Такое ощущение, что в [parse_zone(target_zone)] что-то сломано!")
+	display_pain(target, "It feels like something just broke in your [target.parse_zone_with_bodypart(target_zone)]!", mood_event_type = /datum/mood_event/surgery/success)
+	return ..()
+
+/datum/surgery_step/saw/failure(mob/user, mob/living/target, target_zone, obj/item/tool, datum/surgery/surgery, fail_prob)
+	display_pain(target, mood_event_type = /datum/mood_event/surgery/failure)
 	return ..()
 
 //drill bone
@@ -211,18 +220,18 @@
 	display_results(
 		user,
 		target,
-		span_notice("Вы начинаете сверлить прямо в кости в [parse_zone(target_zone)] у [target]..."),
-		span_notice("[user] начинает сверлить прямо в кости в [parse_zone(target_zone)] у [target]."),
-		span_notice("[user] начинает сверлить прямо в кости в [parse_zone(target_zone)] у [target]."),
+		span_notice("Вы начинаете сверлить прямо в кости в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]..."),
+		span_notice("[user] начинает сверлить прямо в кости в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
+		span_notice("[user] начинает сверлить прямо в кости в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
 	)
-	display_pain(target, "Вы чувствуете ужасную пронзительную боль в [parse_zone(target_zone)]!")
+	display_pain(target, "Вы чувствуете ужасную пронзительную боль в <i>[target.parse_zone_with_bodypart(target_zone)]</i>!")
 
 /datum/surgery_step/drill/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
 	display_results(
 		user,
 		target,
-		span_notice("Вы просверлили [parse_zone(target_zone)] у [target]."),
-		span_notice("[user] просверливает [parse_zone(target_zone)] у [target]!"),
-		span_notice("[user] просверливает [parse_zone(target_zone)] у [target]!"),
+		span_notice("Вы просверлили <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
+		span_notice("[user] просверливает <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]!"),
+		span_notice("[user] просверливает <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]!"),
 	)
 	return ..()

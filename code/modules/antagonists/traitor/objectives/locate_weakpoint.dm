@@ -243,28 +243,24 @@
 	objective_weakref = null
 	return ..()
 
-/obj/item/grenade/c4/es8/afterattack(atom/movable/target, mob/user, flag)
-	if(!user.mind)
-		return
-
+/obj/item/grenade/c4/es8/plant_c4(atom/bomb_target, mob/living/user)
 	if(!IS_TRAITOR(user))
-		to_chat(user, span_warning("Похоже, вы не можете найти способ взорвать заряд."))
-		return
+		to_chat(user, span_warning("You can't seem to find a way to detonate the charge."))
+		return FALSE
 
 	var/datum/traitor_objective/locate_weakpoint/objective = objective_weakref.resolve()
-
 	if(!objective || objective.objective_state == OBJECTIVE_STATE_INACTIVE || objective.handler.owner != user.mind)
-		to_chat(user, span_warning("Вы не думаете, что было бы разумно использовать [src]."))
-		return
+		to_chat(user, span_warning("You don't think it would be wise to use [src]."))
+		return FALSE
 
-	var/area/target_area = get_area(target)
+	var/area/target_area = get_area(bomb_target)
 	if (target_area.type != objective.weakpoint_area)
-		to_chat(user, span_warning("[src] можно взорвать только в [initial(objective.weakpoint_area.name)]."))
-		return
+		to_chat(user, span_warning("[src] can only be detonated in [initial(objective.weakpoint_area.name)]."))
+		return FALSE
 
-	if(!isfloorturf(target) && !iswallturf(target))
-		to_chat(user, span_warning("[src] можно ставить только на стену или пол!"))
-		return
+	if(!isfloorturf(bomb_target) && !iswallturf(bomb_target))
+		to_chat(user, span_warning("[src] can only be planted on a wall or the floor!"))
+		return FALSE
 
 	return ..()
 

@@ -1,11 +1,11 @@
 /datum/mutation/human/firebreath
 	name = "Fire Breath"
-	desc = "An ancient mutation that gives lizards breath of fire."
+	desc = "Древняя мутация, позволяющая ящерицам дышать огнём."
 	quality = POSITIVE
 	difficulty = 12
 	locked = TRUE
-	text_gain_indication = "<span class='notice'>Your throat is burning!</span>"
-	text_lose_indication = "<span class='notice'>Your throat is cooling down.</span>"
+	text_gain_indication = "<span class='notice'>Ты ощущаешь жжение в горле!</span>"
+	text_lose_indication = "<span class='notice'>Жжение в горле проходит.</span>"
 	power_path = /datum/action/cooldown/spell/cone/staggered/fire_breath
 	instability = 30
 	energy_coeff = 1
