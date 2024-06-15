@@ -6,7 +6,7 @@
  */
 /datum/mafia_ability/reaveal_role
 	name = "Откровения"
-	ability_action = "психологическая оценка"
+	ability_action = "психологически оценить"
 
 /datum/mafia_ability/reaveal_role/perform_action_target(datum/mafia_controller/game, datum/mafia_role/day_target)
 	. = ..()
