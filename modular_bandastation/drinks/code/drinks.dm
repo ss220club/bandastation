@@ -18,7 +18,7 @@
 
 /obj/structure/reagent_dispensers/kvasstank
 	name = "бочка кваса"
-	desc = "Желтая бочка с напитком богов."
+	desc = "Ярко-желтая бочка с квасом, которая сразу привлекает внимание своим насыщенным цветом. Она выполнена в классическом стиле, из толстого, прочного металла с гладкой, блестящей поверхностью. Бочка имеет цилиндрическую форму, слегка расширяясь к середине и снова сужаясь к краям."
 	icon = 'modular_bandastation/drinks/icons/chemical_tanks.dmi'
 	icon_state = "kvass"
 	reagent_id = /datum/reagent/consumable/kvass
