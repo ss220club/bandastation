@@ -33,6 +33,7 @@
 	preop_sound = 'sound/surgery/scalpel1.ogg'
 	success_sound = 'sound/surgery/organ1.ogg'
 	failure_sound = 'sound/surgery/organ2.ogg'
+	surgery_effects_mood = TRUE
 
 /datum/surgery_step/gastrectomy/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	display_results(
@@ -42,7 +43,7 @@
 		span_notice("[user] начинает делать надрез у [target]."),
 		span_notice("[user] начинает делать надрез у [target]."),
 	)
-	display_pain(target, "You feel a horrible stab in your gut!", mood_event_type = /datum/mood_event/surgery)
+	display_pain(target, "You feel a horrible stab in your gut!")
 
 /datum/surgery_step/gastrectomy/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
 	var/mob/living/carbon/human/target_human = target
@@ -57,7 +58,7 @@
 		span_notice("[user] успешно удаляет поврежденную часть желудка у [target]."),
 		span_notice("[user] успешно удаляет поврежденную часть желудка у [target]."),
 	)
-	display_pain(target, "The pain in your gut ebbs and fades somewhat.", mood_event_type = /datum/mood_event/surgery/success)
+	display_pain(target, "The pain in your gut ebbs and fades somewhat.")
 	return ..()
 
 /datum/surgery_step/gastrectomy/failure(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery)
@@ -70,4 +71,4 @@
 		span_warning("[user] удалил не ту часть желудка у [target]!"),
 		span_warning("[user] удалил не ту часть желудка у [target]!"),
 	)
-	display_pain(target, "Your stomach throbs with pain; it's not getting any better!", mood_event_type = /datum/mood_event/surgery/failure)
+	display_pain(target, "Your stomach throbs with pain; it's not getting any better!")

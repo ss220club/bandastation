@@ -24,6 +24,7 @@
 		/obj/item/hatchet = 35,
 		/obj/item/knife/butcher = 25)
 	time = 64
+	surgery_effects_mood = TRUE
 	preop_sound = list(
 		/obj/item/circular_saw = 'sound/surgery/saw.ogg',
 		/obj/item = 'sound/surgery/scalpel1.ogg',
@@ -38,7 +39,7 @@
 		span_notice("[user] начинает отрезать лишний жир у [target]"),
 		span_notice("[user] начинает отрезать у [target] <i>[target_zone]</i> при помощи [tool.name]."),
 	)
-	display_pain(target, "You feel a stabbing in your [target_zone]!", mood_event_type = /datum/mood_event/surgery)
+	display_pain(target, "You feel a stabbing in your [target_zone]!")
 
 /datum/surgery_step/cut_fat/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results)
 	display_results(
@@ -48,12 +49,8 @@
 		span_notice("[user] отрезал лишний жир у [target]!"),
 		span_notice("[user] заканчивает разрез на [target] <i>[target_zone]</i>."),
 	)
-	display_pain(target, "The fat in your [target_zone] comes loose, dangling and hurting like hell!", mood_event_type = /datum/mood_event/surgery/success)
+	display_pain(target, "The fat in your [target_zone] comes loose, dangling and hurting like hell!")
 	return TRUE
-
-/datum/surgery_step/cut_fat/failure(mob/user, mob/living/target, target_zone, obj/item/tool, datum/surgery/surgery, fail_prob)
-	display_pain(target, mood_event_type = /datum/mood_event/surgery/failure)
-	return ..()
 
 //remove fat
 /datum/surgery_step/remove_fat
