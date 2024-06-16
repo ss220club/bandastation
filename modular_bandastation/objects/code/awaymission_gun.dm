@@ -5,23 +5,24 @@
 	lefthand_file = 'modular_bandastation/objects/icons/inhands/guns_lefthand.dmi'
 	righthand_file = 'modular_bandastation/objects/icons/inhands/guns_righthand.dmi'
 	icon_state = "laser_gate"
+	inhand_icon_state = "laser_gate"
 	force = 10
-	selfcharge = FALSE // Selfcharge is enabled and disabled, and used as the away mission tracker
+	selfcharge = TRUE // Selfcharge is enabled and disabled, and used as the away mission tracker
 	can_charge = 0
 
 // Проверка чтобы не было зарядки на станции
 /obj/item/gun/energy/laser/awaymission_aeg/Initialize(mapload, /obj/item/M)
 	. = ..()
-	cell.charge = 0
+	on_changed_z_level()
 
 /obj/item/gun/energy/laser/awaymission_aeg/on_changed_z_level(turf/old_turf, turf/new_turf, same_z_layer, notify_contents)
 	. = ..()
-	if(is_away_level(new_turf) || (!is_station_level(new_turf)))
+	if(is_away_level(loc.z) || is_secret_level(loc.z))
 		if(ismob(loc))
 			to_chat(loc, span_notice("Ваш [src.name] активируется, начиная аккумулировать энергию из материи сущего."))
 		selfcharge = TRUE
 		return
-	if(!is_away_level(new_turf) || is_station_level(new_turf))
+	if(is_station_level(loc.z))
 		to_chat(loc, span_danger("Ваш [src.name] деактивируется, так как он подавляется системами станции.</span>"))
 	cell.charge = 0
 	selfcharge = FALSE
@@ -47,7 +48,7 @@
 	var/msg_recharge_all = span_notice("[user.name] усердно давит на рычаг зарядки [src]...")
 	var/msg_recharge_user = span_notice("Вы со всей силы давите на рычаг зарядки [src], пытаясь зарядить её...")
 
-	if(!is_away_level(loc.z))
+	if(!is_away_level(loc.z) || !is_secret_level(loc.z))
 		user.visible_message(msg_for_all, msg_for_user)
 		return FALSE
 

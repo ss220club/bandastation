@@ -182,14 +182,16 @@
 	name = "pea bullet"
 	desc = "Пуля из гороха, не может нанести какого-либо ощутимого урона."
 	projectile_type = /obj/projectile/bullet/peas_shooter
-	icon_state = "pea_shooter_bullet"
+	icon = 'modular_bandastation/objects/icons/ammo.dmi'
+	icon_state = "pea_bullet"
 	caliber = CALIBER_PEA
 
 // Пуля горохострела
 /obj/projectile/bullet/peas_shooter
 	icon = 'modular_bandastation/objects/icons/ammo.dmi'
-	icon_state = "pea_shooter_bullet"
-	stamina = 5
+	icon_state = "pea_bullet"
+	damage = 5
+	damage_type = STAMINA
 
 /obj/projectile/bullet/peas_shooter/on_hit(atom/target, blocked, pierce_hit)
 	. = ..()
@@ -197,8 +199,7 @@
 		var/mob/living/carbon/M = target
 		if(prob(15))
 			M.emote("moan")
-	else
-		return
+	return
 
 // Тактическая бита Флота Nanotrasen
 /obj/item/melee/baseball_bat/homerun/central_command
@@ -209,13 +210,11 @@
 	и инструментом высшего правосудия."
 	slot_flags = ITEM_SLOT_BELT
 	w_class = WEIGHT_CLASS_SMALL
-
 	var/on = FALSE
 	/// Force when concealed
 	force = 5
 	/// Force when extended
 	var/force_on = 20
-
 	lefthand_file = 'modular_bandastation/objects/icons/inhands/melee_lefthand.dmi'
 	righthand_file = 'modular_bandastation/objects/icons/inhands/melee_righthand.dmi'
 	icon = 'modular_bandastation/objects/icons/melee.dmi'
@@ -234,7 +233,7 @@
 
 /obj/item/melee/baseball_bat/homerun/central_command/pickup(mob/living/user)
 	. = ..()
-	if(HAS_TRAIT(user, R_NONE))
+	if(!HAS_TRAIT(user, R_ADMIN))
 		user.AdjustParalyzed(10 SECONDS)
 		user.drop_all_held_items(src, force)
 		to_chat(user, span_userdanger("Это - оружие истинного правосудия. Тебе не дано обуздать его мощь."))
@@ -248,14 +247,14 @@
 	on = !on
 
 	if(on)
-		to_chat(user, span_userdanger("Вы активировали [src.name] - время для правосудия!"))
+		to_chat(user, span_userdanger("Вы разложили [src.name] - время для правосудия!"))
 		icon_state = icon_state_on
 		inhand_icon_state = inhand_icon_state_on
 		w_class = WEIGHT_CLASS_HUGE
 		force = force_on
 		attack_verb_simple = attack_verb_simple_on
 	else
-		to_chat(user, span_userdanger("Вы деактивировали [src.name]."))
+		to_chat(user, span_userdanger("Вы сложили [src.name]."))
 		icon_state = initial(icon_state)
 		inhand_icon_state = initial(inhand_icon_state)
 		w_class = initial(w_class)

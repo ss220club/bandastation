@@ -11,8 +11,6 @@
 	flags_1 = ON_BORDER_1
 	var/buildstacktype = /obj/item/stack/sheet/mineral/wood
 	var/buildstackamount = 5
-	var/mover_dir = null
-	var/ini_dir = null
 
 /obj/structure/tribune/wrench_act(mob/user, obj/item/tool)
 	. = TRUE
@@ -20,12 +18,19 @@
 
 /obj/structure/tribune/screwdriver_act(mob/user, obj/item/tool)
 	. = TRUE
-	if(flags_1 & INDESTRUCTIBLE)
+	if(obj_flags & INDESTRUCTIBLE)
 		to_chat(user, span_warning("Try as you might, you can't figure out how to deconstruct [src]."))
 		return
-	if(!tool.use_tool(src, user, 30, volume = 50))
-		return
-	deconstruct(TRUE)
+	to_chat(user, span_notice("You start disassembling [src]..."))
+	if(tool.use_tool(src, user, 2 SECONDS, volume=50))
+		deconstruct(TRUE)
+	return ITEM_INTERACT_SUCCESS
+
+/obj/structure/tribune/atom_deconstruct(disassembled = TRUE)
+	. = ..()
+	var/turf/target_turf = get_turf(src)
+	if(buildstacktype)
+		new buildstacktype(target_turf, buildstackamount)
 
 /obj/structure/tribune/proc/after_rotation(mob/user)
 	add_fingerprint(user)
@@ -103,6 +108,6 @@
 
 /obj/structure/tribune/centcom
 	name = "CentCom tribune"
-	icon = 'modular_bandastation/objects/icons/tribune.dmi'
 	icon_state = "nt_tribune_cc"
 	desc = "A richly decorated tribune. Just looking at her makes your heart skip a beat."
+	obj_flags = INDESTRUCTIBLE

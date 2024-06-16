@@ -26,7 +26,12 @@
 
 /obj/item/gun/ballistic/automatic/pistol/beretta/add_seclight_point()
 	. = ..()
-	AddComponent(/datum/component/seclite_attachable, light_icon_state = "beretta_light")
+	AddComponent(/datum/component/seclite_attachable, \
+		light_overlay_icon = 'icons/obj/weapons/guns/flashlights.dmi', \
+		light_overlay = "flight", \
+		overlay_y = 12, \
+		overlay_x = 17, \
+	)
 
 /obj/item/ammo_box/magazine/beretta
 	name = "beretta rubber 9x19mm magazine"

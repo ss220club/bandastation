@@ -10,8 +10,6 @@
 	w_class = WEIGHT_CLASS_HUGE
 	force = 10
 	throwforce = 7
-	attack_verb_simple = list("бьёт", "ударяет")
-	attack_verb_continuous = list("бьёт", "ударяет")
 	cooldown = 3.5 SECONDS
 	preload_cell_type = /obj/item/stock_parts/cell/high
 	block_chance = 30

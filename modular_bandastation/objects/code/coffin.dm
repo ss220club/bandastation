@@ -1,7 +1,7 @@
 /obj/structure/closet/crate/coffin/corn
 	name = "cornffin"
 	desc = "Мы потеряли его. Он скукурузился."
-	icon = 'modular_bandastation/objects/icons/closets.dmi'
+	icon = 'modular_bandastation/objects/icons/coffin.dmi'
 	icon_state = "coffin_corn"
 	base_icon_state = "coffin_corn"
 	resistance_flags = FLAMMABLE
@@ -17,7 +17,6 @@
 	species = "corn"
 	plantname = "Cornffin Stalks"
 	product = /obj/structure/closet/crate/coffin/corn
-
 
 /obj/item/seeds/corn/Initialize(mapload)
 	. = ..()
