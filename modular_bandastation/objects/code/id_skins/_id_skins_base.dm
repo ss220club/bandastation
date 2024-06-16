@@ -26,7 +26,6 @@
 	. += span_notice("Вы можете попытаться отодрать наклейку, используя <b>Ctrl-Shift-Click</b>.")
 
 /obj/item/card/id/CtrlShiftClick(mob/living/user)
-	. = ..()
 	if(HAS_TRAIT(user, TRAIT_RESTRAINED))
 		to_chat(user, span_warning("Ваши руки должны быть свободны, чтобы сделать это!"))
 	if(!skin_applied)
