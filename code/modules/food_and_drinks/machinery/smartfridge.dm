@@ -288,22 +288,22 @@
 
 			if(loaded)
 				if(shown_contents_length >= max_n_of_items)
-					user.visible_message(span_notice("[user] loads \the [src] with \the [weapon]."), \
-						span_notice("You fill \the [src] with \the [weapon]."))
+					user.visible_message(span_notice("[user] перекладывает предметы из [weapon] в [src]."), \
+						span_notice("Вы заполняете [src] предметами из [weapon]."))
 				else
-					user.visible_message(span_notice("[user] loads \the [src] with \the [weapon]."), \
-						span_notice("You load \the [src] with \the [weapon]."))
+					user.visible_message(span_notice("[user] перекладывает предметы из [weapon] в [src]."), \
+						span_notice("Вы загружаете [src] предметами из [weapon]."))
 				if(weapon.contents.len)
-					to_chat(user, span_warning("Some items are refused."))
+					to_chat(user, span_warning("Некоторые предметы не влазят."))
 				if (visible_contents)
 					update_appearance()
 				return TRUE
 			else
-				to_chat(user, span_warning("There is nothing in [weapon] to put in [src]!"))
+				to_chat(user, span_warning("В [weapon] нет ничего, что можно положить в [src]!"))
 				return FALSE
 
 	if(!user.combat_mode)
-		to_chat(user, span_warning("\The [src] smartly refuses [weapon]."))
+		to_chat(user, span_warning("[src] умно отказывает в [weapon]."))
 		return FALSE
 
 	else
@@ -332,7 +332,7 @@
 	if(ismob(weapon.loc))
 		var/mob/owner = weapon.loc
 		if(!owner.transferItemToLoc(weapon, src))
-			to_chat(usr, span_warning("\the [weapon] is stuck to your hand, you cannot put it in \the [src]!"))
+			to_chat(usr, span_warning("[weapon] прилип к вашей руке, вы не можете положить [weapon] в [src]!"))
 			return FALSE
 		return TRUE
 	else
@@ -388,7 +388,7 @@
 			var/desired = 0
 
 			if(isAI(living_mob))
-				to_chat(living_mob, span_warning("[src] does not respect your authority!"))
+				to_chat(living_mob, span_warning("[src] вне зоны вашего контроля!"))
 				return
 
 			if (params["amount"])
@@ -424,8 +424,8 @@
 //  Drying Rack 'smartfridge'
 // ----------------------------
 /obj/machinery/smartfridge/drying_rack
-	name = "drying rack"
-	desc = "A wooden contraption, used to dry plant products, food and hide."
+	name = "сушилка"
+	desc = "Деревянное сооружение, используемое для сушки растительных продуктов, еды и шкур."
 	icon = 'icons/obj/service/hydroponics/equipment.dmi'
 	icon_state = "drying_rack"
 	resistance_flags = FLAMMABLE
@@ -463,10 +463,10 @@
 
 	var/tool_tip_set = FALSE
 	if(held_item.tool_behaviour == TOOL_CROWBAR)
-		context[SCREENTIP_CONTEXT_LMB] = "Deconstruct"
+		context[SCREENTIP_CONTEXT_LMB] = "Разобрать"
 		tool_tip_set = TRUE
 	else if(held_item.tool_behaviour == TOOL_WRENCH)
-		context[SCREENTIP_CONTEXT_LMB] = "[anchored ? "Un" : ""]anchore"
+		context[SCREENTIP_CONTEXT_LMB] = "[anchored ? "От" : "При"]крутить"
 		tool_tip_set = TRUE
 
 	return tool_tip_set ? CONTEXTUAL_SCREENTIP_SET : NONE
@@ -581,8 +581,8 @@
 //  Bar drink smartfridge
 // ----------------------------
 /obj/machinery/smartfridge/drinks
-	name = "drink showcase"
-	desc = "A refrigerated storage unit for tasty tasty alcohol."
+	name = "витрина напитков"
+	desc = "Холодильник для хранения вкусного алкоголя."
 	base_build_path = /obj/machinery/smartfridge/drinks
 	base_icon_state = "drink"
 
@@ -602,7 +602,7 @@
 //  Food smartfridge
 // ----------------------------
 /obj/machinery/smartfridge/food
-	desc = "A refrigerated storage unit for food."
+	desc = "Холодильник для хранения продуктов."
 	base_build_path = /obj/machinery/smartfridge/food
 	base_icon_state = "food"
 
@@ -619,8 +619,8 @@
 // Xenobiology Slime-Extract Smartfridge
 // -------------------------------------
 /obj/machinery/smartfridge/extract
-	name = "smart slime extract storage"
-	desc = "A refrigerated storage unit for slime extracts."
+	name = "умное хранилище экстракта слаймов"
+	desc = "Холодильник для хранения экстракта слаймов."
 	base_build_path = /obj/machinery/smartfridge/extract
 	base_icon_state = "slime"
 
@@ -634,8 +634,8 @@
 // Cytology Petri Dish Smartfridge
 // -------------------------------------
 /obj/machinery/smartfridge/petri
-	name = "smart petri dish storage"
-	desc = "A refrigerated storage unit for petri dishes."
+	name = "умное хранилище чашек Петри"
+	desc = "Холодильник для хранения чашек Петри."
 	base_build_path = /obj/machinery/smartfridge/petri
 	base_icon_state = "petri"
 
@@ -649,8 +649,8 @@
 // Organ Surgery Smartfridge
 // -------------------------
 /obj/machinery/smartfridge/organ
-	name = "smart organ storage"
-	desc = "A refrigerated storage unit for organ storage."
+	name = "умное хранилище органов"
+	desc = "Холодильник для хранения органов."
 	max_n_of_items = 20 //vastly lower to prevent processing too long
 	base_build_path = /obj/machinery/smartfridge/organ
 	base_icon_state = "organ"
@@ -703,8 +703,8 @@
 // Chemistry Medical Smartfridge
 // -----------------------------
 /obj/machinery/smartfridge/chemistry
-	name = "smart chemical storage"
-	desc = "A refrigerated storage unit for medicine storage."
+	name = "умное хранилище химикатов"
+	desc = "Холодильник для хранения лекарств."
 	base_build_path = /obj/machinery/smartfridge/chemistry
 	base_icon_state = "chem"
 
@@ -753,8 +753,8 @@
 // Virology Medical Smartfridge
 // ----------------------------
 /obj/machinery/smartfridge/chemistry/virology
-	name = "smart virus storage"
-	desc = "A refrigerated storage unit for volatile sample storage."
+	name = "умное хранилище вирусов"
+	desc = "Холодильник для хранения летучих образцов."
 	base_build_path = /obj/machinery/smartfridge/chemistry/virology
 	base_icon_state = "viro"
 
@@ -774,8 +774,8 @@
 // Disk """fridge"""
 // ----------------------------
 /obj/machinery/smartfridge/disks
-	name = "disk compartmentalizer"
-	desc = "A machine capable of storing a variety of disks. Denoted by most as the DSU (disk storage unit)."
+	name = "устройство для сортировки дисков"
+	desc = "Машина, способная хранить множество дисков. В большинстве случаев обозначается как DSU (disk storage unit)."
 	icon_state = "disktoaster"
 	icon = 'icons/obj/machines/vending.dmi'
 	pass_flags = PASSTABLE
