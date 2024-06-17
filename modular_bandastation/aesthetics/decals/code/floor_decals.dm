@@ -120,3 +120,5 @@ LINE_DECAL_SUBTYPE_HELPER(/obj/effect/turf_decal/line/neutral)
 	color = "#0e0f0f"
 
 LINE_DECAL_SUBTYPE_HELPER(/obj/effect/turf_decal/line/dark)
+
+#undef LINE_DECAL_SUBTYPE_HELPER
