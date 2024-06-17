@@ -2,8 +2,8 @@
 //  SmartFridge.  Much todo
 // -------------------------
 /obj/machinery/smartfridge
-	name = "smartfridge"
-	desc = "Keeps cold things cold and hot things cold."
+	name = "смарт-холодильник"
+	desc = "Сохраняет холодные вещи холодными, а горячие - горячими."
 	icon = 'icons/obj/machines/smartfridge.dmi'
 	icon_state = "smartfridge"
 	base_icon_state = "plant"
@@ -54,56 +54,56 @@
 			return ITEM_INTERACT_BLOCKING
 
 		user.visible_message(
-			span_notice("[user.name] starts to cut the [name] free from the floor."),
-			span_notice("You start to cut [src] free from the floor..."),
-			span_hear("You hear welding."),
+			span_notice("[user.name] начинает срезать [name] от пола."),
+			span_notice("Вы начинаете срезать [src] от пола..."),
+			span_hear("Вы слышите сварку."),
 		)
 
 		if(!tool.use_tool(src, user, delay=100, volume=100))
 			return ITEM_INTERACT_BLOCKING
 
 		welded_down = FALSE
-		to_chat(user, span_notice("You cut [src] free from the floor."))
+		to_chat(user, span_notice("Вы отрезали [src] от пола."))
 		return ITEM_INTERACT_SUCCESS
 
 	if(!anchored)
-		balloon_alert(user, "wrench it first!")
+		balloon_alert(user, "сначала прикрути!")
 		return ITEM_INTERACT_BLOCKING
 
 	if(!tool.tool_start_check(user, amount=2))
 		return ITEM_INTERACT_BLOCKING
 
 	user.visible_message(
-		span_notice("[user.name] starts to weld the [name] to the floor."),
-		span_notice("You start to weld [src] to the floor..."),
-		span_hear("You hear welding."),
+		span_notice("[user.name] начинает приваривать [name] к полу."),
+		span_notice("Вы начинаете приваривать [src] к полу..."),
+		span_hear("Вы слышите сварку."),
 	)
 
 	if(!tool.use_tool(src, user, delay = 100, volume = 100))
 		return ITEM_INTERACT_BLOCKING
 
 	welded_down = TRUE
-	to_chat(user, span_notice("You weld [src] to the floor."))
+	to_chat(user, span_notice("Вы приварили [src] к полу."))
 	return ITEM_INTERACT_SUCCESS
 
 /obj/machinery/smartfridge/welder_act_secondary(mob/living/user, obj/item/tool)
 	if(!(machine_stat & BROKEN))
-		balloon_alert(user, "no repair needed!")
+		balloon_alert(user, "ремонт не требуется!")
 		return ITEM_INTERACT_BLOCKING
 
 	if(!tool.tool_start_check(user, amount=1))
 		return ITEM_INTERACT_BLOCKING
 
 	user.visible_message(
-		span_notice("[user] is repairing [src]."),
-		span_notice("You begin repairing [src]..."),
-		span_hear("You hear welding."),
+		span_notice("[user] чинит [src]."),
+		span_notice("Вы начинаете чинить [src]..."),
+		span_hear("Вы слышите сварку."),
 	)
 
 	if(tool.use_tool(src, user, delay = 40, volume = 50))
 		if(!(machine_stat & BROKEN))
 			return ITEM_INTERACT_BLOCKING
-		to_chat(user, span_notice("You repair [src]"))
+		to_chat(user, span_notice("Вы починили [src]"))
 		atom_integrity = max_integrity
 		set_machine_stat(machine_stat & ~BROKEN)
 		update_icon()
@@ -121,7 +121,7 @@
 
 /obj/machinery/smartfridge/can_be_unfasten_wrench(mob/user, silent)
 	if(welded_down)
-		balloon_alert(user, "unweld first!")
+		balloon_alert(user, "сперва развари!")
 		return FAILED_UNFASTEN
 	return ..()
 
@@ -142,7 +142,7 @@
 		return ITEM_INTERACT_SUCCESS
 
 	if(welded_down)
-		balloon_alert(user, "unweld first!")
+		balloon_alert(user, "сперва развари!")
 	else
 		default_deconstruction_crowbar(tool)
 	return ITEM_INTERACT_SUCCESS
@@ -154,26 +154,26 @@
 	var/tool_tip_set = FALSE
 	if(held_item.tool_behaviour == TOOL_WELDER)
 		if(welded_down)
-			context[SCREENTIP_CONTEXT_LMB] = "Unweld"
+			context[SCREENTIP_CONTEXT_LMB] = "Разварить"
 			tool_tip_set = TRUE
 		else if (!welded_down && anchored)
-			context[SCREENTIP_CONTEXT_LMB] = "Weld down"
+			context[SCREENTIP_CONTEXT_LMB] = "Приварить"
 			tool_tip_set = TRUE
 		if(machine_stat & BROKEN)
-			context[SCREENTIP_CONTEXT_RMB] = "Repair"
+			context[SCREENTIP_CONTEXT_RMB] = "Починить"
 			tool_tip_set = TRUE
 
 	else if(held_item.tool_behaviour == TOOL_SCREWDRIVER)
-		context[SCREENTIP_CONTEXT_LMB] = "[panel_open ? "close" : "open"] panel"
+		context[SCREENTIP_CONTEXT_LMB] = "[panel_open ? "Закрыть" : "Открыть"] панель"
 		tool_tip_set = TRUE
 
 	else if(held_item.tool_behaviour == TOOL_CROWBAR)
 		if(panel_open)
-			context[SCREENTIP_CONTEXT_LMB] = "Deconstruct"
+			context[SCREENTIP_CONTEXT_LMB] = "Разобрать"
 			tool_tip_set = TRUE
 
 	else if(held_item.tool_behaviour == TOOL_WRENCH)
-		context[SCREENTIP_CONTEXT_LMB] = "[anchored ? "Un" : ""]anchore"
+		context[SCREENTIP_CONTEXT_LMB] = "[anchored ? "От" : "При"]крутить"
 		tool_tip_set = TRUE
 
 	return tool_tip_set ? CONTEXTUAL_SCREENTIP_SET : NONE
@@ -187,7 +187,7 @@
 	. = ..()
 
 	if(in_range(user, src) || isobserver(user))
-		. += span_notice("The status display reads: This unit can hold a maximum of <b>[max_n_of_items]</b> items.")
+		. += span_notice("На дисплее состояния отображается: Это устройство может вмещать максимум <b>[max_n_of_items]</b> предметов.")
 
 	. += structure_examine()
 
@@ -258,7 +258,7 @@
 	if(!machine_stat)
 		var/shown_contents_length = visible_items()
 		if(shown_contents_length >= max_n_of_items)
-			balloon_alert(user, "no space!")
+			balloon_alert(user, "нет места!")
 			return FALSE
 
 		if(!(weapon.item_flags & ABSTRACT) && \
@@ -266,7 +266,7 @@
 			accept_check(weapon) \
 		)
 			load(weapon, user)
-			user.visible_message(span_notice("[user] adds \the [weapon] to \the [src]."), span_notice("You add \the [weapon] to \the [src]."))
+			user.visible_message(span_notice("[user] кладет [weapon] в [src]."), span_notice("Вы положили [weapon] в [src]."))
 			SStgui.update_uis(src)
 			if(visible_contents)
 				update_appearance()
