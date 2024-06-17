@@ -3,7 +3,7 @@
 	filedesc = "Plexagon Crew List"
 	downloader_category = PROGRAM_CATEGORY_SECURITY
 	program_open_overlay = "id"
-	extended_desc = "Program for viewing and printing the current crew manifest"
+	extended_desc = "Программа для просмотра и печати списка членов экипажа."
 	download_access = list(ACCESS_SECURITY, ACCESS_COMMAND)
 	program_flags = PROGRAM_ON_NTNET_STORE | PROGRAM_REQUIRES_NTNET
 	size = 4

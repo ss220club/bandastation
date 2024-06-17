@@ -1,10 +1,10 @@
 // Sidepaths for knowledge between Knock and Flesh.
 /datum/heretic_knowledge/spell/opening_blast
 	name = "Wave Of Desperation"
-	desc = "Grants you Wave Of Desparation, a spell which can only be cast while restrained. \
-		It removes your restraints, repels and knocks down adjacent people, and applies the Mansus Grasp to everything nearby. \
-		However, you will fall unconscious a short time after casting this spell."
-	gain_text = "My shackles undone in dark fury, their feeble bindings crumble before my power."
+	desc = "Дает заклинание Wave Of Desparation, которое можно использовать только связанным. \
+		Снимает связки, отталкивает и сбивает с ног находящихся рядом людей, а также накладывает на них некоторые эффекты Хватки Мансуса. \
+		Однако, вы потеряете сознание на короткий срок после использования"
+	gain_text = "Мои оковы разрываются в темной ярости, их слабые цепи рассыпаются перед моей силой"
 	next_knowledge = list(
 		/datum/heretic_knowledge/summon/raw_prophet,
 		/datum/heretic_knowledge/spell/burglar_finesse,
@@ -15,10 +15,10 @@
 
 /datum/heretic_knowledge/spell/apetra_vulnera
 	name = "Apetra Vulnera"
-	desc = "Grants you Apetra Vulnera, a spell \
-		which causes heavy bleeding on all bodyparts of the victim that have more than 15 brute damage. \
-		Wounds a random limb if no limb is sufficiently damaged."
-	gain_text = "Flesh opens, and blood spills. My master seeks sacrifice, and I shall appease."
+	desc = "Дает заклинание Apetra Vulnera, которое \
+		вызывает обильное кровотечение из каждой части тела, которое имеет более, чем 15 физического урона. \
+		Накладывает травму на случайную часть тела, если не найдены подходящие части тела."
+	gain_text = "Плоть открывается, кровь проливается. Мой хозяин ищет жертвоприношения, и я умиротворю его."
 	next_knowledge = list(
 		/datum/heretic_knowledge/summon/stalker,
 		/datum/heretic_knowledge/spell/caretaker_refuge,

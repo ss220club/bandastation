@@ -1,6 +1,6 @@
 
 /datum/surgery/amputation
-	name = "Amputation"
+	name = "Ампутация"
 	requires_bodypart_type = NONE
 	surgery_flags = SURGERY_REQUIRE_RESTING | SURGERY_REQUIRE_LIMB | SURGERY_MORBID_CURIOSITY
 	possible_locs = list(
@@ -25,7 +25,7 @@
 	return ..()
 
 /datum/surgery_step/sever_limb
-	name = "sever limb (circular saw)"
+	name = "отрежьте конечность (циркулярная пила)"
 	implements = list(
 		/obj/item/shears = 300,
 		TOOL_SCALPEL = 100,
@@ -38,27 +38,28 @@
 	time = 64
 	preop_sound = 'sound/surgery/scalpel1.ogg'
 	success_sound = 'sound/surgery/organ2.ogg'
+	surgery_effects_mood = TRUE
 
 /datum/surgery_step/sever_limb/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	display_results(
 		user,
 		target,
-		span_notice("You begin to sever [target]'s [target.parse_zone_with_bodypart(target_zone)]..."),
-		span_notice("[user] begins to sever [target]'s [target.parse_zone_with_bodypart(target_zone)]!"),
-		span_notice("[user] begins to sever [target]'s [target.parse_zone_with_bodypart(target_zone)]!"),
+		span_notice("Вы начинаете отрезать <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]..."),
+		span_notice("[user] начинает отрезать <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]!"),
+		span_notice("[user] начинает отрезать <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]!"),
 	)
-	display_pain(target, "You feel a gruesome pain in your [parse_zone(target_zone)]'s joint!")
+	display_pain(target, "Вы чувствуете жуткую боль в <i>[parse_zone(target_zone)]</i>!")
 
 
 /datum/surgery_step/sever_limb/success(mob/user, mob/living/carbon/human/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
 	display_results(
 		user,
 		target,
-		span_notice("You sever [target]'s [target.parse_zone_with_bodypart(target_zone)]."),
-		span_notice("[user] severs [target]'s [target.parse_zone_with_bodypart(target_zone)]!"),
-		span_notice("[user] severs [target]'s [target.parse_zone_with_bodypart(target_zone)]!"),
+		span_notice("Вы отрезали <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
+		span_notice("[user] отрезал <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]!"),
+		span_notice("[user] отрезал <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]!"),
 	)
-	display_pain(target, "You can no longer feel your severed [target.parse_zone_with_bodypart(target_zone)]!")
+	display_pain(target, "Вы больше не чувствуете свою отрезанную <i>[target.parse_zone_with_bodypart(target_zone)]</i>!")
 
 	if(HAS_MIND_TRAIT(user, TRAIT_MORBID) && ishuman(user))
 		var/mob/living/carbon/human/morbid_weirdo = user

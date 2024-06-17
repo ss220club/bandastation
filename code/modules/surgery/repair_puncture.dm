@@ -7,7 +7,7 @@
 
 ///// Repair puncture wounds
 /datum/surgery/repair_puncture
-	name = "Repair puncture"
+	name = "Обработка сквозного ранения"
 	surgery_flags = SURGERY_REQUIRE_RESTING | SURGERY_REQUIRE_LIMB | SURGERY_REQUIRES_REAL_LIMB
 	targetable_wound = /datum/wound/pierce/bleed
 	target_mobtypes = list(/mob/living/carbon)
@@ -39,46 +39,47 @@
 
 ///// realign the blood vessels so we can reweld them
 /datum/surgery_step/repair_innards
-	name = "realign blood vessels (hemostat)"
+	name = "восстановление кровеносных сосудов (гемостат)"
 	implements = list(
 		TOOL_HEMOSTAT = 100,
 		TOOL_SCALPEL = 85,
 		TOOL_WIRECUTTER = 40)
 	time = 3 SECONDS
 	preop_sound = 'sound/surgery/hemostat1.ogg'
+	surgery_effects_mood = TRUE
 
 /datum/surgery_step/repair_innards/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	var/datum/wound/pierce/bleed/pierce_wound = surgery.operated_wound
 	if(!pierce_wound)
-		user.visible_message(span_notice("[user] looks for [target]'s [target.parse_zone_with_bodypart(user.zone_selected)]."), span_notice("You look for [target]'s [target.parse_zone_with_bodypart(user.zone_selected)]..."))
+		user.visible_message(span_notice("[user] ищет у [target] в <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i>."), span_notice("Вы ищете у [target] в <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i>..."))
 		return
 
 	if(pierce_wound.blood_flow <= 0)
-		to_chat(user, span_notice("[target]'s [target.parse_zone_with_bodypart(user.zone_selected)] has no puncture to repair!"))
+		to_chat(user, span_notice("У [target] в <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i> нет сквозного ранения, которое нуждается в обработке!"))
 		surgery.status++
 		return
 
 	display_results(
 		user,
 		target,
-		span_notice("You begin to realign the torn blood vessels in [target]'s [target.parse_zone_with_bodypart(user.zone_selected)]..."),
-		span_notice("[user] begins to realign the torn blood vessels in [target]'s [target.parse_zone_with_bodypart(user.zone_selected)] with [tool]."),
-		span_notice("[user] begins to realign the torn blood vessels in [target]'s [target.parse_zone_with_bodypart(user.zone_selected)]."),
+		span_notice("Вы начинаете приводить в порядок поврежденные кровеносные сосуды в <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i> у [target]..."),
+		span_notice("[user] начинает приводить в порядок поврежденные кровеносные сосуды в <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i> у [target] при помощи [tool.name]."),
+		span_notice("[user] начинает приводить в порядок поврежденные кровеносные сосуды в <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i> у [target]."),
 	)
-	display_pain(target, "You feel a horrible stabbing pain in your [target.parse_zone_with_bodypart(user.zone_selected)]!")
+	display_pain(target, "Вы чувствуете ужасную колющую боль в <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i>!")
 
 /datum/surgery_step/repair_innards/success(mob/living/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
 	var/datum/wound/pierce/bleed/pierce_wound = surgery.operated_wound
 	if(!pierce_wound)
-		to_chat(user, span_warning("[target] has no puncture wound there!"))
+		to_chat(user, span_warning("У [target] нет сквозного ранения, которое нуждается в обработке!"))
 		return ..()
 
 	display_results(
 		user,
 		target,
-		span_notice("You successfully realign some of the blood vessels in [target]'s [target.parse_zone_with_bodypart(target_zone)]."),
-		span_notice("[user] successfully realigns some of the blood vessels in [target]'s [target.parse_zone_with_bodypart(target_zone)] with [tool]!"),
-		span_notice("[user] successfully realigns some of the blood vessels in  [target]'s [target.parse_zone_with_bodypart(target_zone)]!"),
+		span_notice("Вы успешно восстанавливаете некоторые кровеносные сосуды в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
+		span_notice("[user] успешно восстанавливает некоторые кровеносные сосуды в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target] при помощи [tool.name]!"),
+		span_notice("[user] успешно восстанавливает некоторые кровеносные сосуды в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]!"),
 	)
 	log_combat(user, target, "excised infected flesh in", addition="COMBAT MODE: [uppertext(user.combat_mode)]")
 	surgery.operated_bodypart.receive_damage(brute=3, wound_bonus=CANT_WOUND)
@@ -90,15 +91,15 @@
 	display_results(
 		user,
 		target,
-		span_notice("You jerk apart some of the blood vessels in [target]'s [target.parse_zone_with_bodypart(target_zone)]."),
-		span_notice("[user] jerks apart some of the blood vessels in [target]'s [target.parse_zone_with_bodypart(target_zone)] with [tool]!"),
-		span_notice("[user] jerk apart some of the blood vessels in [target]'s [target.parse_zone_with_bodypart(target_zone)]!"),
+		span_notice("Вы повреждаете некоторые кровеносные сосуды в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
+		span_notice("[user] повреждает некоторые кровеносные сосуды в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target] при помощи [tool.name]!"),
+		span_notice("[user] повреждает некоторые кровеносные сосуды в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]!"),
 	)
 	surgery.operated_bodypart.receive_damage(brute=rand(4,8), sharpness=SHARP_EDGED, wound_bonus = 10)
 
 ///// Sealing the vessels back together
 /datum/surgery_step/seal_veins
-	name = "weld veins (cautery)" // if your doctor says they're going to weld your blood vessels back together, you're either A) on SS13, or B) in grave mortal peril
+	name = "проведите венозное сваривание (каутеризатор)" // if your doctor says they're going to weld your blood vessels back together, you're either A) on SS13, or B) in grave mortal peril
 	implements = list(
 		TOOL_CAUTERY = 100,
 		/obj/item/gun/energy/laser = 90,
@@ -117,37 +118,37 @@
 /datum/surgery_step/seal_veins/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	var/datum/wound/pierce/bleed/pierce_wound = surgery.operated_wound
 	if(!pierce_wound)
-		user.visible_message(span_notice("[user] looks for [target]'s [target.parse_zone_with_bodypart(user.zone_selected)]."), span_notice("You look for [target]'s [target.parse_zone_with_bodypart(user.zone_selected)]..."))
+		user.visible_message(span_notice("[user] ищет у [target] в <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i>."), span_notice("Вы ищете у [target] в <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i>..."))
 		return
 	display_results(
 		user,
 		target,
-		span_notice("You begin to meld some of the split blood vessels in [target]'s [target.parse_zone_with_bodypart(user.zone_selected)]..."),
-		span_notice("[user] begins to meld some of the split blood vessels in [target]'s [target.parse_zone_with_bodypart(user.zone_selected)] with [tool]."),
-		span_notice("[user] begins to meld some of the split blood vessels in [target]'s [target.parse_zone_with_bodypart(user.zone_selected)]."),
+		span_notice("Вы начинаете восстанавливать некоторые из поврежденных кровеносных сосудов в <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i> у [target]..."),
+		span_notice("[user] начинает восстанавливать некоторые из поврежденных кровеносных сосудов в <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i> у [target] при помощи [tool.name]."),
+		span_notice("[user] начинает восстанавливать некоторые из поврежденных кровеносных сосудов в <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i> у [target]."),
 	)
-	display_pain(target, "You're being burned inside your [target.parse_zone_with_bodypart(user.zone_selected)]!")
+	display_pain(target, "В <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i> все горит!")
 
 /datum/surgery_step/seal_veins/success(mob/living/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
 	var/datum/wound/pierce/bleed/pierce_wound = surgery.operated_wound
 	if(!pierce_wound)
-		to_chat(user, span_warning("[target] has no puncture there!"))
+		to_chat(user, span_warning("У [target] нет сквозного ранения!"))
 		return ..()
 
 	display_results(
 		user,
 		target,
-		span_notice("You successfully meld some of the split blood vessels in [target]'s [target.parse_zone_with_bodypart(target_zone)] with [tool]."),
-		span_notice("[user] successfully melds some of the split blood vessels in [target]'s [target.parse_zone_with_bodypart(target_zone)] with [tool]!"),
-		span_notice("[user] successfully melds some of the split blood vessels in [target]'s [target.parse_zone_with_bodypart(target_zone)]!"),
+		span_notice("Вы успешно восстановили некоторые из поврежденных кровеносных сосудов в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target] при помощи [tool.name]."),
+		span_notice("[user] успешно восстановил некоторые из поврежденных кровеносных сосудов в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target] при помощи [tool.name]!"),
+		span_notice("[user] успешно восстановил некоторые из поврежденных кровеносных сосудов в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]!"),
 	)
 	log_combat(user, target, "dressed burns in", addition="COMBAT MODE: [uppertext(user.combat_mode)]")
 	pierce_wound.adjust_blood_flow(-0.5)
 	if(pierce_wound.blood_flow > 0)
 		surgery.status = REALIGN_INNARDS
-		to_chat(user, span_notice("<i>There still seems to be misaligned blood vessels to finish...</i>"))
+		to_chat(user, span_notice("<i>Кажется, что кровеносные сосуды все еще смещены...</i>"))
 	else
-		to_chat(user, span_green("You've repaired all the internal damage in [target]'s [target.parse_zone_with_bodypart(target_zone)]!"))
+		to_chat(user, span_green("Вы восстановили все внутренние повреждения в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]!"))
 	return ..()
 
 #undef REALIGN_INNARDS

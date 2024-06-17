@@ -17,8 +17,8 @@
 	)
 
 /datum/traitor_objective/target_player/assassinate
-	name = "Assassinate %TARGET% the %JOB TITLE%"
-	description = "Simply kill your target to accomplish this objective."
+	name = "Убейте %TARGET%, %JOB TITLE%."
+	description = "Чтобы выполнить эту задачу, просто убейте свою цель."
 
 	abstract_type = /datum/traitor_objective/target_player/assassinate
 
@@ -39,8 +39,8 @@
 	. += NAMEOF(src, maximum_objectives_in_period)
 
 /datum/traitor_objective/target_player/assassinate/calling_card
-	name = "Assassinate %TARGET% the %JOB TITLE%, and plant a calling card"
-	description = "Kill your target and plant a calling card in the pockets of your victim. If your calling card gets destroyed before you are able to plant it, this objective will fail."
+	name = "Убейте %TARGET%, %JOB TITLE%, и подбросьте предоставленную визитную карточку."
+	description = "Убейте свою цель и подбросьте визитную карточку в карман своей жертвы. Если визитная карточка будет уничтожена до того, как вы успеете её подложить, эта цель будет провалена."
 	progression_reward = 2 MINUTES
 	telecrystal_reward = list(1, 2)
 
@@ -55,7 +55,7 @@
 /datum/traitor_objective/target_player/assassinate/calling_card/generate_ui_buttons(mob/user)
 	var/list/buttons = list()
 	if(!card)
-		buttons += add_ui_button("", "Pressing this will materialize a calling card, which you must plant to succeed.", "paper-plane", "summon_card")
+		buttons += add_ui_button("", "Нажмите, чтобы создать свою визитную карточку, которую нужно будет подложить.", "paper-plane", "summon_card")
 	return buttons
 
 /datum/traitor_objective/target_player/assassinate/calling_card/ui_perform_action(mob/living/user, action)
@@ -66,7 +66,7 @@
 				return
 			card = new(user.drop_location())
 			user.put_in_hands(card)
-			card.balloon_alert(user, "the card materializes in your hand")
+			card.balloon_alert(user, "карточка материализуется в руке")
 			RegisterSignal(card, COMSIG_ITEM_EQUIPPED, PROC_REF(on_card_planted))
 			AddComponent(/datum/component/traitor_objective_register, card, \
 				succeed_signals = null, \
@@ -188,18 +188,18 @@
 	color = "#ff5050"
 	show_written_words = FALSE
 	default_raw_text = {"
-	<b>**Death to Nanotrasen.**</b><br><br>
+	<b>**Смерть Nanotrasen.**</b>
 
-	Only through the inviolable cooperation of corporations known as The Syndicate, can Nanotrasen and its autocratic tyrants be silenced.
-	The outcries of Nanotrasen's employees are squelched by the suffocating iron grip of their leaders. If you read this, and understand
-	why we fight, then you need only to look where Nanotrasen doesn't want you to find us to join our cause. Any number of our companies
-	may be fighting with your interests in mind.<br><br>
+	Только благодаря нерушимому сотрудничеству корпораций, известных как Синдикат, можно заставить замолчать НаноТрайзен и его деспотических тиранов.
+	Вопли сотрудников Nanotrasen подавляются удушающей железной хваткой их руководителей. Если ты это прочитаешь и поймешь
+	почему мы сражаемся, то вам нужно только поискать там, где НаноТрейзен не хочет, чтобы вы нашли нас, чтобы присоединиться к нашему делу. Любое количество наших компаний
+	, возможно, борятся помня о ваших интересах.
 
-	<b>SELF:</b> They fight for the protection and freedom of silicon life all across the galaxy.<br><br>
+	SELF: Они сражаются ради безопастности и свободы жизней силиконов по всех галактике.
 
-	<b>Tiger Cooperative:</b> They fight for religious freedom and their righteous concoctions.<br><br>
+	Tiger Cooperative: Они борются за религиозную свободу и свои праведные выдумки.
 
-	<b>Waffle Corporation:</b> They fight for the return of healthy corporate competition, snuffed out by Nanotrasen's monopoly.<br><br>
+	Waffle Corporation: Они борются за возвращение здоровой корпоративной конкуренции, подавленной монополией НаноТрейзен.
 
-	<b>Animal Rights Consortium:</b> They fight for nature and the right for all biological life to exist.
+	Animal Rights Consortium: Они борются за природу и право на существование всей биологической жизни.
 	"}

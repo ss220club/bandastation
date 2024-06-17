@@ -7,6 +7,7 @@ import { Window } from '../../layouts';
 import { AntagsPage } from './AntagsPage';
 import { PreferencesMenuData } from './data';
 import { JobsPage } from './JobsPage';
+import { LoadoutPage } from './loadout/index';
 import { MainPage } from './MainPage';
 import { PageButton } from './PageButton';
 import { QuirksPage } from './QuirksPage';
@@ -19,6 +20,7 @@ enum Page {
   Jobs,
   Species,
   Quirks,
+  Loadout,
   // BANDASTATION EDIT ADD - TTS
   Voice,
 }
@@ -78,6 +80,9 @@ export const CharacterPreferenceWindow = (props) => {
     case Page.Quirks:
       pageContents = <QuirksPage />;
       break;
+    case Page.Loadout:
+      pageContents = <LoadoutPage />;
+      break;
     // BANDASTATION EDIT ADD - TTS
     case Page.Voice:
       pageContents = <VoicePage />;
@@ -104,7 +109,7 @@ export const CharacterPreferenceWindow = (props) => {
 
           {!data.content_unlocked && (
             <Stack.Item align="center">
-              Buy BYOND premium for more slots!
+              Купите BYOND premium для увеличения слотов!
             </Stack.Item>
           )}
 
@@ -119,7 +124,17 @@ export const CharacterPreferenceWindow = (props) => {
                   setPage={setCurrentPage}
                   otherActivePages={[Page.Species]}
                 >
-                  Character
+                  Персонаж
+                </PageButton>
+              </Stack.Item>
+
+              <Stack.Item grow>
+                <PageButton
+                  currentPage={currentPage}
+                  page={Page.Loadout}
+                  setPage={setCurrentPage}
+                >
+                  Loadout
                 </PageButton>
               </Stack.Item>
 
@@ -133,7 +148,7 @@ export const CharacterPreferenceWindow = (props) => {
                     Fun fact: This isn't "Jobs" so that it intentionally
                     catches your eyes, because it's really important!
                   */}
-                  Occupations
+                  Профессии
                 </PageButton>
               </Stack.Item>
 
@@ -143,7 +158,7 @@ export const CharacterPreferenceWindow = (props) => {
                   page={Page.Antags}
                   setPage={setCurrentPage}
                 >
-                  Antagonists
+                  Антагонисты
                 </PageButton>
               </Stack.Item>
 
@@ -153,7 +168,7 @@ export const CharacterPreferenceWindow = (props) => {
                   page={Page.Quirks}
                   setPage={setCurrentPage}
                 >
-                  Quirks
+                  Черты
                 </PageButton>
               </Stack.Item>
 
@@ -164,7 +179,7 @@ export const CharacterPreferenceWindow = (props) => {
                     page={Page.Voice}
                     setPage={setCurrentPage}
                   >
-                    Voice
+                    Голос
                   </PageButton>
                 </Stack.Item>
               )}

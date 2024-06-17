@@ -60,7 +60,7 @@
 	)
 
 /datum/species/lizard/get_cough_sound(mob/living/carbon/human/lizard)
-	if(lizard.gender == FEMALE)
+	if(lizard.physique == FEMALE)
 		return pick(
 			'sound/voice/human/female_cough1.ogg',
 			'sound/voice/human/female_cough2.ogg',
@@ -80,7 +80,7 @@
 
 
 /datum/species/lizard/get_cry_sound(mob/living/carbon/human/lizard)
-	if(lizard.gender == FEMALE)
+	if(lizard.physique == FEMALE)
 		return pick(
 			'sound/voice/human/female_cry1.ogg',
 			'sound/voice/human/female_cry2.ogg',
@@ -93,13 +93,11 @@
 
 
 /datum/species/lizard/get_sneeze_sound(mob/living/carbon/human/lizard)
-	if(lizard.gender == FEMALE)
+	if(lizard.physique == FEMALE)
 		return 'sound/voice/human/female_sneeze1.ogg'
 	return 'sound/voice/human/male_sneeze1.ogg'
 
-/datum/species/lizard/get_laugh_sound(mob/living/carbon/human)
-	if(!istype(human))
-		return
+/datum/species/lizard/get_laugh_sound(mob/living/carbon/human/lizard)
 	return 'sound/voice/lizard/lizard_laugh1.ogg'
 
 /datum/species/lizard/get_physical_attributes()
@@ -138,10 +136,10 @@
 	to_add += list(list(
 		SPECIES_PERK_TYPE = SPECIES_NEUTRAL_PERK,
 		SPECIES_PERK_ICON = "thermometer-empty",
-		SPECIES_PERK_NAME = "Cold-blooded",
-		SPECIES_PERK_DESC = "Lizardpeople have higher tolerance for hot temperatures, but lower \
-			tolerance for cold temperatures. Additionally, they cannot self-regulate their body temperature - \
-			they are as cold or as warm as the environment around them is. Stay warm!",
+		SPECIES_PERK_NAME = "Хладнокровный",
+		SPECIES_PERK_DESC = "[plural_form] лучше переносят высокие температуры, но хуже \
+			низкие. Кроме того, они не могут самостоятельно регулировать температуру своего тела - \
+			они имеют такую же температуру, что и окружающая среда. Держитесь в тепле!",
 	))
 
 	return to_add

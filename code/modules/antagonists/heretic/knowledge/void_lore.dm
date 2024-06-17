@@ -28,11 +28,11 @@
  */
 /datum/heretic_knowledge/limited_amount/starting/base_void
 	name = "Glimmer of Winter"
-	desc = "Opens up the Path of Void to you. \
-		Allows you to transmute a knife in sub-zero temperatures into a Void Blade. \
-		You can only create two at a time."
-	gain_text = "I feel a shimmer in the air, the air around me gets colder. \
-		I start to realize the emptiness of existence. Something's watching me."
+	desc = "Открывает перед вами Путь пустоты. \
+		Позволяет трансмутировать нож при отрицательных температурах в Пустотный клинок. \
+		дновременно можно иметь только два."
+	gain_text = "Я чувствую мерцание в воздухе, воздух вокруг меня становится холоднее. \
+		Я начинаю осознавать пустоту существования. Что-то наблюдает за мной."
 	next_knowledge = list(/datum/heretic_knowledge/void_grasp)
 	required_atoms = list(/obj/item/knife = 1)
 	result_atoms = list(/obj/item/melee/sickly_blade/void)
@@ -40,21 +40,21 @@
 
 /datum/heretic_knowledge/limited_amount/starting/base_void/recipe_snowflake_check(mob/living/user, list/atoms, list/selected_atoms, turf/loc)
 	if(!isopenturf(loc))
-		loc.balloon_alert(user, "ritual failed, invalid location!")
+		loc.balloon_alert(user, "ритуал провален, неподходящая локация!")
 		return FALSE
 
 	var/turf/open/our_turf = loc
 	if(our_turf.GetTemperature() > T0C)
-		loc.balloon_alert(user, "ritual failed, not cold enough!")
+		loc.balloon_alert(user, "ритуал провален, не достаточно холодно!")
 		return FALSE
 
 	return ..()
 
 /datum/heretic_knowledge/void_grasp
 	name = "Grasp of Void"
-	desc = "Your Mansus Grasp will temporarily mute and chill the victim."
-	gain_text = "I saw the cold watcher who observes me. The chill mounts within me. \
-		They are quiet. This isn't the end of the mystery."
+	desc = "Ваша Хватка Мансуса на время заглушает и охлаждает жертву."
+	gain_text = "Я увидел холодного наблюдателя, который наблюдает за мной. Во мне поселился холод. \
+		Он молчит. Это еще не конец таинства."
 	next_knowledge = list(/datum/heretic_knowledge/cold_snap)
 	cost = 1
 	route = PATH_VOID
@@ -77,10 +77,10 @@
 
 /datum/heretic_knowledge/cold_snap
 	name = "Aristocrat's Way"
-	desc = "Grants you immunity to cold temperatures, and removes your need to breathe. \
-		You can still take damage due to a lack of pressure."
-	gain_text = "I found a thread of cold breath. It lead me to a strange shrine, all made of crystals. \
-		Translucent and white, a depiction of a nobleman stood before me."
+	desc = "Дает иммунитет к низким температурам и устраняет потребность в дыхании. \
+		Вы все еще можете получить повреждения из-за отсутствия давления."
+	gain_text = "Я нашел нить холодного дыхания. Она привела меня в странное святилище, сплошь состоящее из кристаллов. \
+		Полупрозрачное и белое изображение дворянина стояло передо мной."
 	next_knowledge = list(
 		/datum/heretic_knowledge/mark/void_mark,
 		/datum/heretic_knowledge/void_cloak,
@@ -97,10 +97,10 @@
 
 /datum/heretic_knowledge/mark/void_mark
 	name = "Mark of Void"
-	desc = "Your Mansus Grasp now applies the Mark of Void. The mark is triggered from an attack with your Void Blade. \
-		When triggered, further silences the victim and swiftly lowers the temperature of their body and the air around them."
-	gain_text = "A gust of wind? A shimmer in the air? The presence is overwhelming, \
-		my senses began to betray me. My mind is my own enemy."
+	desc = "Ваша Хватка Мансуса теперь накладывает Метку пустоты. Метка срабатывает при атаке Пустотным клинком. \
+		При срабатывании он заставляет жертву замолчать и быстро понижает температуру ее тела и окружающего воздуха."
+	gain_text = "Порыв ветра? Мерцание в воздухе? Присутствие переполняет, \
+		мои чувства начали предавать меня. Мой разум - мой собственный враг."
 	next_knowledge = list(/datum/heretic_knowledge/knowledge_ritual/void)
 	route = PATH_VOID
 	mark_type = /datum/status_effect/eldritch/void
@@ -111,10 +111,10 @@
 
 /datum/heretic_knowledge/spell/void_cone
 	name = "Void Blast"
-	desc = "Grants you Void Blast, a spell that shoots out a freezing blast in a cone in front of you, \
-		freezing the ground and any victims within."
-	gain_text = "Every door I open racks my body. I am afraid of what is behind them. Someone is expecting me, \
-		and my legs start to drag. Is that... snow?"
+	desc = "Дарует вам Void Blast - заклинание, которое выстреливает перед вами конусом замораживающего взрыва, \
+		замораживая землю и всех находящихся в ней жертв."
+	gain_text = "Каждая дверь, которую я открываю, сковывает мое тело. Я боюсь того, что находится за ними. Кто-то ждет меня, \
+		и мои ноги начинают волочиться. Это... снег?"
 	next_knowledge = list(/datum/heretic_knowledge/spell/void_phase)
 	spell_to_add = /datum/action/cooldown/spell/cone/staggered/cone_of_cold/void
 	cost = 1
@@ -122,10 +122,10 @@
 
 /datum/heretic_knowledge/spell/void_phase
 	name = "Void Phase"
-	desc = "Grants you Void Phase, a long range targeted teleport spell. \
-		Additionally causes damage to heathens around your original and target destination."
-	gain_text = "The entity calls themself the Aristocrat. They effortlessly walk through air like \
-		nothing - leaving a harsh, cold breeze in their wake. They disappear, and I am left in the blizzard."
+	desc = "Дарует вам Void Phase, заклинание телепортации дальнего действия. \
+		Дополнительно наносит урон язычникам вокруг вашей первоначальной и целевой цели."
+	gain_text = "Сущность называет себя Аристократом. Он легко проходит сквозь воздух, \
+		оставляя за собой резкий холодный ветер. Он исчезает, а я остаюсь в метели."
 	next_knowledge = list(
 		/datum/heretic_knowledge/blade_upgrade/void,
 		/datum/heretic_knowledge/reroll_targets,
@@ -138,8 +138,8 @@
 
 /datum/heretic_knowledge/blade_upgrade/void
 	name = "Seeking Blade"
-	desc = "You can now attack distant marked targets with your Void Blade, teleporting directly next to them."
-	gain_text = "Fleeting memories, fleeting feet. I mark my way with frozen blood upon the snow. Covered and forgotten."
+	desc = "Теперь вы можете атаковать отмеченные цели на расстоянии Пустотным клинком, телепортируясь прямо к ним."
+	gain_text = "Мимолетные воспоминания, мимолетные ноги. Я отмечаю свой путь застывшей кровью на снегу. Покрытый и забытый."
 	next_knowledge = list(/datum/heretic_knowledge/spell/void_pull)
 	route = PATH_VOID
 
@@ -157,9 +157,9 @@
 
 /datum/heretic_knowledge/spell/void_pull
 	name = "Void Pull"
-	desc = "Grants you Void Pull, a spell that pulls all nearby heathens towards you, stunning them briefly."
-	gain_text = "All is fleeting, but what else stays? I'm close to ending what was started. \
-		The Aristocrat reveals themselves to me again. They tell me I am late. Their pull is immense, I cannot turn back."
+	desc = "Наделяет вас заклинанием Void Pull, которое притягивает всех ближайших язычников к вам, ненадолго оглушая их."
+	gain_text = "Все мимолетно, но разве что-то остается? Я близок к завершению начатого. \
+		Аристократ снова предстает передо мной. Он говорит мне, что я опоздал. Его притяжение огромно, я не могу повернуть назад."
 	next_knowledge = list(
 		/datum/heretic_knowledge/ultimate/void_final,
 		/datum/heretic_knowledge/spell/cleave,
@@ -171,14 +171,14 @@
 
 /datum/heretic_knowledge/ultimate/void_final
 	name = "Waltz at the End of Time"
-	desc = "The ascension ritual of the Path of Void. \
-		Bring 3 corpses to a transmutation rune in sub-zero temperatures to complete the ritual. \
-		When completed, causes a violent storm of void snow \
-		to assault the station, freezing and damaging heathens. Those nearby will be silenced and frozen even quicker. \
-		Additionally, you will become immune to the effects of space."
-	gain_text = "The world falls into darkness. I stand in an empty plane, small flakes of ice fall from the sky. \
-		The Aristocrat stands before me, beckoning. We will play a waltz to the whispers of dying reality, \
-		as the world is destroyed before our eyes. The void will return all to nothing, WITNESS MY ASCENSION!"
+	desc = "Ритуал вознесения Пути пустоты. \
+		Принесите 3 трупа к руне трансмутации при отрицательных температурах, чтобы завершить риAdditionally, you will become immune to the effects of space.туал. \
+		После завершения вызывает сильный шторм пустотного снега, \
+		который обрушивается на станцию, замораживая и повреждая язычников. Те, кто находится поблизости, замолчат и замерзнут еще быстрее. \
+		Кроме того, у вас появится иммунитет к воздействию космоса."
+	gain_text = "Мир погружается во тьму. Я стою в пустом мире, с неба падают мелкие хлопья льда. \
+		Аристократ стоит передо мной, призывая. Мы будем играть вальс под шепот умирающей реальности, \
+		пока мир разрушается на наших глазах. Пустота вернет все в ничто, УЗРИТЕ МОЕ ВОЗНЕСЕНИЕ!"
 	route = PATH_VOID
 	///soundloop for the void theme
 	var/datum/looping_sound/void_loop/sound_loop
@@ -187,12 +187,12 @@
 
 /datum/heretic_knowledge/ultimate/void_final/recipe_snowflake_check(mob/living/user, list/atoms, list/selected_atoms, turf/loc)
 	if(!isopenturf(loc))
-		loc.balloon_alert(user, "ritual failed, invalid location!")
+		loc.balloon_alert(user, "ритуал провален, неподходящая локация!")
 		return FALSE
 
 	var/turf/open/our_turf = loc
 	if(our_turf.GetTemperature() > T0C)
-		loc.balloon_alert(user, "ritual failed, not cold enough!")
+		loc.balloon_alert(user, "ритуал провален, не достаточно холодно!")
 		return FALSE
 
 	return ..()
@@ -200,7 +200,7 @@
 /datum/heretic_knowledge/ultimate/void_final/on_finished_recipe(mob/living/user, list/selected_atoms, turf/loc)
 	. = ..()
 	priority_announce(
-		text = "[generate_heretic_text()] The nobleman of void [user.real_name] has arrived, stepping along the Waltz that ends worlds! [generate_heretic_text()]",
+		text = "[generate_heretic_text()] Дворянин пустоты [user.real_name] прибыл, танцуя Вальс, уничтожающий миры! [generate_heretic_text()]",
 		title = "[generate_heretic_text()]",
 		sound = 'sound/ambience/antag/heretic/ascend_void.ogg',
 		color_override = "pink",

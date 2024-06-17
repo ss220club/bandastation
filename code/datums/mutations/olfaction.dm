@@ -1,10 +1,10 @@
 /datum/mutation/human/olfaction
 	name = "Transcendent Olfaction"
-	desc = "Your sense of smell is comparable to that of a canine."
+	desc = "Ваше обоняние сравнимо с собачьим."
 	quality = POSITIVE
 	difficulty = 12
-	text_gain_indication = "<span class='notice'>Smells begin to make more sense...</span>"
-	text_lose_indication = "<span class='notice'>Your sense of smell goes back to normal.</span>"
+	text_gain_indication = "<span class='notice'>Запахи приобретают новый смысл...</span>"
+	text_lose_indication = "<span class='notice'>Твоё обоняние возвращается в норму.</span>"
 	power_path = /datum/action/cooldown/spell/olfaction
 	instability = 30
 	synchronizer_coeff = 1

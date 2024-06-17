@@ -1,6 +1,6 @@
 /datum/job/cargo_gorilla
 	title = JOB_CARGO_GORILLA
-	description = "Assist the supply department by moving freight and disposing of unwanted fruits."
+	description = "Помогайте отделу поставок в перемещении грузов и утилизации ненужных фруктов."
 	department_head = list(JOB_QUARTERMASTER)
 	faction = FACTION_STATION
 	total_positions = 0
@@ -45,6 +45,6 @@
 	bank_account.bank_cards += gorilla_id
 	spawned.put_in_hands(gorilla_id, del_on_fail = TRUE)
 
-	to_chat(spawned, span_boldnotice("You are Cargorilla, a pacifist friend of the station and carrier of freight."))
-	to_chat(spawned, span_notice("You can pick up crates by clicking on them, and drop them by clicking on the ground."))
+	to_chat(spawned, span_boldnotice("Вы Каргорила, дружелюбный член станции и грузоперевозчик."))
+	to_chat(spawned, span_notice("Вы можете поднимать ящики, кликая на них, и класть их на пол, кликая по нему."))
 	spawned.mind.special_role = "Cargorilla"

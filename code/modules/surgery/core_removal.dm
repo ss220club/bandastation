@@ -1,5 +1,5 @@
 /datum/surgery/core_removal
-	name = "Core removal"
+	name = "Извлечение ядра"
 	target_mobtypes = list(/mob/living/basic/slime)
 	surgery_flags = SURGERY_IGNORE_CLOTHES
 	possible_locs = list(
@@ -20,7 +20,7 @@
 
 //extract brain
 /datum/surgery_step/extract_core
-	name = "extract core (hemostat/crowbar)"
+	name = "извлеките ядро (гемостат/лом)"
 	implements = list(
 		TOOL_HEMOSTAT = 100,
 		TOOL_CROWBAR = 100)
@@ -30,9 +30,9 @@
 	display_results(
 		user,
 		target,
-		span_notice("You begin to extract a core from [target]..."),
-		span_notice("[user] begins to extract a core from [target]."),
-		span_notice("[user] begins to extract a core from [target]."),
+		span_notice("Вы начинаете извлекать ядро из [target]..."),
+		span_notice("[user] начинает извлекать ядро из [target]."),
+		span_notice("[user] начинает извлекать ядро из [target]."),
 	)
 
 /datum/surgery_step/extract_core/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
@@ -42,9 +42,9 @@
 		display_results(
 			user,
 			target,
-			span_notice("You successfully extract a core from [target]. [target_slime.cores] core\s remaining."),
-			span_notice("[user] successfully extracts a core from [target]!"),
-			span_notice("[user] successfully extracts a core from [target]!"),
+			span_notice("Вы успешно извлекли ядро из [target]. [target_slime.cores] ядер осталось."),
+			span_notice("[user] успешно извлек ядро из [target]!"),
+			span_notice("[user] успешно извлек ядро из [target]!"),
 		)
 
 		new target_slime.slime_type.core_type(target_slime.loc)
@@ -55,5 +55,5 @@
 		else
 			return FALSE
 	else
-		to_chat(user, span_warning("There aren't any cores left in [target]!"))
+		to_chat(user, span_warning("В [target] больше не осталось ядер!"))
 		return ..()

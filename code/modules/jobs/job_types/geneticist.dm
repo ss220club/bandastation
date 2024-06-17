@@ -1,6 +1,6 @@
 /datum/job/geneticist
 	title = JOB_GENETICIST
-	description = "Alter genomes, turn monkeys into humans (and vice-versa), and make DNA backups."
+	description = "Модифицируйте гены, отвергните человечество и станьте обезьяной (и наоборот), и создавайте резервные копии ДНК."
 	department_head = list(JOB_RESEARCH_DIRECTOR)
 	faction = FACTION_STATION
 	total_positions = 2

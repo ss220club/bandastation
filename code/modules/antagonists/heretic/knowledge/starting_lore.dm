@@ -18,9 +18,9 @@ GLOBAL_LIST_INIT(heretic_start_knowledge, initialize_starting_knowledge())
  */
 /datum/heretic_knowledge/spell/basic
 	name = "Break of Dawn"
-	desc = "Starts your journey into the Mansus. \
-		Grants you the Mansus Grasp, a powerful and upgradable \
-		disabling spell that can be cast regardless of having a focus."
+	desc = "Начните свое путешествие в Мансус. \
+		Дарует вам Хватку Мансуса, мощное и улучшаемое обездвиживающее заклинание, \
+		которое может быть применено независимо от наличия фокусировки."
 	spell_to_add = /datum/action/cooldown/spell/touch/mansus_grasp
 	cost = 0
 	route = PATH_START
@@ -37,10 +37,10 @@ GLOBAL_LIST_INIT(heretic_start_knowledge, initialize_starting_knowledge())
  */
 /datum/heretic_knowledge/living_heart
 	name = "The Living Heart"
-	desc = "Grants you a Living Heart, allowing you to track sacrifice targets. \
-		Should you lose your heart, you can transmute a poppy and a pool of blood \
-		to awaken your heart into a Living Heart. If your heart is cybernetic, \
-		you will additionally require a usable organic heart in the transmutation."
+	desc = "Дарует вам Живое сердце, позволяющее отслеживать жертвенные цели. \
+		Если вы потеряете сердце, вы можете трансмутировать мак и лужу крови, \
+		чтобы пробудить свое сердце в Живое сердце. Если ваше сердце кибернетическое, \
+		то для трансмутации вам дополнительно потребуется пригодное для использования органическое сердце."
 	required_atoms = list(
 		/obj/effect/decal/cleanable/blood = 1,
 		/obj/item/food/grown/poppy = 1,
@@ -77,20 +77,20 @@ GLOBAL_LIST_INIT(heretic_start_knowledge, initialize_starting_knowledge())
 			where_to_put_our_heart = look_for_backup
 			our_heretic.living_heart_organ_slot = backup_slot
 			required_organ_type = backup_organs[backup_slot]
-			to_chat(user, span_boldnotice("As your species does not have a heart, your Living Heart is located in your [look_for_backup.name]."))
+			to_chat(user, span_boldnotice("Поскольку у вашего вида нет сердца, ваше Живое сердце находится в вашем [look_for_backup.name]."))
 			break
 
 	if(where_to_put_our_heart)
 		where_to_put_our_heart.AddComponent(/datum/component/living_heart)
-		desc = "Grants you a Living Heart, tied to your [where_to_put_our_heart.name], \
-			allowing you to track sacrifice targets. \
-			Should you lose your [where_to_put_our_heart.name], you can transmute a poppy and a pool of blood \
-			to awaken your replacement [where_to_put_our_heart.name] into a Living Heart. \
-			If your [where_to_put_our_heart.name] is cybernetic, \
-			you will additionally require a usable organic [where_to_put_our_heart.name] in the transmutation."
+		desc = "Дарует вам Живое сердце, привязанное к вашему [where_to_put_our_heart.name], \
+			позволяя отслеживать жертвенные цели. \
+			Если вы потеряете свое [where_to_put_our_heart.name], вы можете трансмутировать мак и лужу крови, \
+			чтобы пробудить ваше [where_to_put_our_heart.name] в Живое сердце. \
+			Если ваше [where_to_put_our_heart.name] кибернетическое, \
+			вам дополнительно потребуется пригодное для использования органическое [where_to_put_our_heart.name] при трансмутации."
 
 	else
-		to_chat(user, span_boldnotice("You don't have a heart, or any chest organs for that matter. You didn't get a Living Heart because of it."))
+		to_chat(user, span_boldnotice("У вас нет сердца или каких-либо органов грудной клетки, если на то пошло. Вы не получили Живое сердце из-за этого."))
 
 /datum/heretic_knowledge/living_heart/on_lose(mob/user, datum/antagonist/heretic/our_heretic)
 	var/obj/item/organ/our_living_heart = user.get_organ_slot(our_heretic.living_heart_organ_slot)
@@ -108,13 +108,13 @@ GLOBAL_LIST_INIT(heretic_start_knowledge, initialize_starting_knowledge())
 	var/obj/item/organ/our_living_heart = user.get_organ_slot(our_heretic.living_heart_organ_slot)
 	// Obviously you need a heart in your chest to do a ritual on your... heart
 	if(!our_living_heart)
-		loc.balloon_alert(user, "ritual failed, you have no [our_heretic.living_heart_organ_slot]!") // "you have no heart!"
+		loc.balloon_alert(user, "ритуал провален, у вас нет [our_heretic.living_heart_organ_slot]!") // "you have no heart!"
 		return FALSE
 	// For sanity's sake, check if they've got a heart -
 	// even though it's not invokable if you already have one,
 	// they may have gained one unexpectantly in between now and then
 	if(HAS_TRAIT(our_living_heart, TRAIT_LIVING_HEART))
-		loc.balloon_alert(user, "ritual failed, already have a living heart!")
+		loc.balloon_alert(user, "ритуал провален, у вас уже есть Живое сердце!")
 		return FALSE
 
 	// By this point they are making a new heart
@@ -125,7 +125,7 @@ GLOBAL_LIST_INIT(heretic_start_knowledge, initialize_starting_knowledge())
 	// If their current heart is not organic / is synthetic, they need an organic replacement
 	// ...But if our organ-to-be-replaced is unremovable, we're screwed
 	if(our_living_heart.organ_flags & ORGAN_UNREMOVABLE)
-		loc.balloon_alert(user, "ritual failed, [our_heretic.living_heart_organ_slot] unremovable!") // "heart unremovable!"
+		loc.balloon_alert(user, "ритуал провален, [our_heretic.living_heart_organ_slot] неубираем!") // "heart unremovable!"
 		return FALSE
 
 	// Otherwise, seek out a replacement in our atoms
@@ -138,7 +138,7 @@ GLOBAL_LIST_INIT(heretic_start_knowledge, initialize_starting_knowledge())
 		selected_atoms += nearby_organ
 		return TRUE
 
-	loc.balloon_alert(user, "ritual failed, need a replacement [our_heretic.living_heart_organ_slot]!") // "need a replacement heart!"
+	loc.balloon_alert(user, "ритуал провален, нужен заменяемый [our_heretic.living_heart_organ_slot]!") // "need a replacement heart!"
 	return FALSE
 
 /datum/heretic_knowledge/living_heart/on_finished_recipe(mob/living/user, list/selected_atoms, turf/loc)
@@ -150,7 +150,7 @@ GLOBAL_LIST_INIT(heretic_start_knowledge, initialize_starting_knowledge())
 		var/obj/item/organ/our_replacement_heart = locate(required_organ_type) in selected_atoms
 		if(our_replacement_heart)
 			// Throw our current heart out of our chest, violently
-			user.visible_message(span_boldwarning("[user]'s [our_new_heart.name] bursts suddenly out of [user.p_their()] chest!"))
+			user.visible_message(span_boldwarning("[our_new_heart.name] [user] внезапно вырывается из груди!"))
 			INVOKE_ASYNC(user, TYPE_PROC_REF(/mob, emote), "scream")
 			user.apply_damage(20, BRUTE, BODY_ZONE_CHEST)
 			// And put our organic heart in its place
@@ -173,7 +173,7 @@ GLOBAL_LIST_INIT(heretic_start_knowledge, initialize_starting_knowledge())
 	selected_atoms -= our_new_heart
 	// Make it the living heart
 	our_new_heart.AddComponent(/datum/component/living_heart)
-	to_chat(user, span_warning("You feel your [our_new_heart.name] begin pulse faster and faster as it awakens!"))
+	to_chat(user, span_warning("Вы чувствуете, как ваше [our_new_heart.name] начинает пульсировать все быстрее и быстрее по мере того, как оно пробуждается!"))
 	playsound(user, 'sound/magic/demon_consume.ogg', 50, TRUE)
 	return TRUE
 
@@ -194,8 +194,8 @@ GLOBAL_LIST_INIT(heretic_start_knowledge, initialize_starting_knowledge())
  */
 /datum/heretic_knowledge/amber_focus
 	name = "Amber Focus"
-	desc = "Allows you to transmute a sheet of glass and a pair of eyes to create an Amber Focus. \
-		A focus must be worn in order to cast more advanced spells."
+	desc = "Позволяет трансмутировать лист стекла и пару глаз, чтобы создать Янтарную фокусировку. \
+		Для того чтобы произносить более сложные заклинания, необходимо носить фокусировку."
 	required_atoms = list(
 		/obj/item/organ/internal/eyes = 1,
 		/obj/item/stack/sheet/glass = 1,
@@ -207,8 +207,8 @@ GLOBAL_LIST_INIT(heretic_start_knowledge, initialize_starting_knowledge())
 
 /datum/heretic_knowledge/spell/cloak_of_shadows
 	name = "Cloak of Shadow"
-	desc = "Grants you the spell Cloak of Shadow. This spell will completely conceal your identity in a purple smoke \
-		for three minutes, assisting you in keeping secrecy. Requires a focus to cast."
+	desc = "Дарует вам заклинание Cloak of Shadow. Это заклинание полностью скрывает вашу личность в фиолетовой дымке \
+		на три минуты, помогая вам сохранять секретность. Для наложения заклинания требуется фокусировка."
 	spell_to_add = /datum/action/cooldown/spell/shadow_cloak
 	cost = 0
 	route = PATH_START
@@ -222,11 +222,11 @@ GLOBAL_LIST_INIT(heretic_start_knowledge, initialize_starting_knowledge())
  */
 /datum/heretic_knowledge/codex_cicatrix
 	name = "Codex Cicatrix"
-	desc = "Allows you to transmute a book, any unique pen (anything but generic pens), and your pick from any carcass (animal or human), leather, or hide to create a Codex Cicatrix. \
-		The Codex Cicatrix can be used when draining influences to gain additional knowledge, but comes at greater risk of being noticed. \
-		It can also be used to draw and remove transmutation runes easier, and as a spell focus in a pinch."
-	gain_text = "The occult leaves fragments of knowledge and power anywhere and everywhere. The Codex Cicatrix is one such example. \
-		Within the leather-bound faces and age old pages, a path into the Mansus is revealed."
+	desc = "Позволяет трансмутировать книгу, любую уникальную ручку (что угодно, кроме обычных), любое тело (животного или человека) и шкуру или кожу, чтобы создать Codex Cicatrix. \
+		Codex Cicatrix можно использовать при истощении влияний для получения дополнительных знаний, но при этом возрастает риск быть замеченным. \
+		Его также можно использовать для того, чтобы легче рисовать и удалять руны трансмутации, и использоваться в качестве фокусировки"
+	gain_text = "Оккультизм оставляет фрагменты знаний и силы везде и всюду. Codex Cicatrix - один из таких примеров. \
+		В кожаном переплете и на старых страницах открывается путь к Мансусу."
 	required_atoms = list(
 		/obj/item/book = 1,
 		/obj/item/pen = 1,
@@ -293,4 +293,3 @@ GLOBAL_LIST_INIT(heretic_start_knowledge, initialize_starting_knowledge())
 	body.do_jitter_animation()
 	body.visible_message(span_danger("An awful ripping sound is heard as [ripped_thing]'s [exterior_text] is ripped straight out, wrapping around [le_book || "the book"], turning into an eldritch shade of blue!"))
 	return ..()
-

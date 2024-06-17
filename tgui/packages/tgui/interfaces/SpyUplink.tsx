@@ -44,11 +44,11 @@ const BountyDisplay = (props: { bounty: Bounty }) => {
 
   return (
     <Section>
-      {!!bounty.claimed && <BountyDimmer color="bad" text="Claimed!" />}
+      {!!bounty.claimed && <BountyDimmer color="bad" text="Украдено!" />}
       {!bounty.can_claim && !bounty.claimed && (
         <BountyDimmer
           color="average"
-          text="Your benefactors see you unfit to complete this."
+          text="Ваши наниматели считают, что вы неспособны завершить это."
         />
       )}
       <Stack vertical ml={1}>
@@ -65,7 +65,7 @@ const BountyDisplay = (props: { bounty: Bounty }) => {
         <Stack.Item>
           <BlockQuote italic>{bounty.help}</BlockQuote>
         </Stack.Item>
-        <Stack.Item italic>Reward: {bounty.reward}</Stack.Item>
+        <Stack.Item italic>Награда: {bounty.reward}</Stack.Item>
       </Stack>
     </Section>
   );
@@ -98,11 +98,11 @@ export const SpyUplink = () => {
       >
         <Section
           fill
-          title="Spy Bounties"
+          title="Шпионские заказы"
           scrollable
           buttons={
             <Box mt={0.4}>
-              Time until refresh: {format_deciseconds(time_left)}
+              Время до обновления: {format_deciseconds(time_left)}
             </Box>
           }
         >

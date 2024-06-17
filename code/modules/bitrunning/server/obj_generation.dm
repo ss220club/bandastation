@@ -160,7 +160,7 @@
 		disk_ban += "powers"
 
 	if(length(import_ban))
-		to_chat(neo, span_warning("This domain forbids the use of [english_list(import_ban)], your disk [english_list(disk_ban)] will not be granted!"))
+		to_chat(neo, span_warning("Этот домен запрещает использование [english_list(import_ban)], ваш диск [english_list(disk_ban)] не загружен!"))
 
 	var/failed = FALSE
 
@@ -194,7 +194,7 @@
 			avatar.put_in_hands(new item_disk.granted_item())
 
 	if(failed)
-		to_chat(neo, span_warning("One of your disks failed to load. Check for duplicate or inactive disks."))
+		to_chat(neo, span_warning("Один из ваших дисков не смог загрузиться. Проверьте дубликаты или неактивные диски."))
 
 	var/obj/item/organ/internal/brain/neo_brain = neo.get_organ_slot(ORGAN_SLOT_BRAIN)
 	for(var/obj/item/skillchip/skill_chip as anything in neo_brain?.skillchips)

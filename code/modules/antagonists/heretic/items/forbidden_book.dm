@@ -1,7 +1,7 @@
 // Ye old forbidden book, the Codex Cicatrix.
 /obj/item/codex_cicatrix
 	name = "Codex Cicatrix"
-	desc = "This book describes the secrets of the veil between worlds."
+	desc = "В этой книге описаны секреты завесы между мирами."
 	icon = 'icons/obj/antags/eldritch.dmi'
 	base_icon_state = "book"
 	icon_state = "book"
@@ -13,8 +13,8 @@
 /obj/item/codex_cicatrix/Initialize(mapload)
 	. = ..()
 	AddComponent(/datum/component/effect_remover, \
-		success_feedback = "You remove %THEEFFECT.", \
-		tip_text = "Clear rune", \
+		success_feedback = "Вы убираете %THEEFFECT.", \
+		tip_text = "Очистить руну", \
 		on_clear_callback = CALLBACK(src, PROC_REF(after_clear_rune)), \
 		effects_we_clear = list(/obj/effect/heretic_rune))
 
@@ -27,9 +27,9 @@
 	if(!IS_HERETIC(user))
 		return
 
-	. += span_notice("Can be used to tap influences for additional knowledge points.")
-	. += span_notice("Can also be used to draw or remove transmutation runes with ease.")
-	. += span_notice("Additionally, it can work as a focus for your spells in a pinch, though a more specialized relic is recommended, as this may get dropped in combat.")
+	. += span_notice("Может быть использован на влияниях для получения дополнительных очков знаний.")
+	. += span_notice("Упрощает начертание или удаление рун трансмутации.")
+	. += span_notice("Также, может быть использован как фокусировка, но рекомендуется более специализированный для этого предмет, так как этот может выпасть во время боя.")
 
 /obj/item/codex_cicatrix/attack_self(mob/user, modifiers)
 	. = ..()
@@ -45,20 +45,16 @@
 		AddElement(/datum/element/heretic_focus)
 		update_weight_class(WEIGHT_CLASS_NORMAL)
 
-/obj/item/codex_cicatrix/afterattack(atom/target, mob/user, proximity_flag, click_parameters)
-	. = ..()
-	if(!proximity_flag)
-		return
-
+/obj/item/codex_cicatrix/interact_with_atom(atom/interacting_with, mob/living/user, list/modifiers)
 	var/datum/antagonist/heretic/heretic_datum = IS_HERETIC(user)
 	if(!heretic_datum)
-		return
-
-	if(isopenturf(target))
-		var/obj/effect/heretic_influence/influence = locate(/obj/effect/heretic_influence) in target
+		return NONE
+	if(isopenturf(interacting_with))
+		var/obj/effect/heretic_influence/influence = locate(/obj/effect/heretic_influence) in interacting_with
 		if(!influence?.drain_influence_with_codex(user, src))
-			heretic_datum.try_draw_rune(user, target, drawing_time = 8 SECONDS)
-		return TRUE
+			heretic_datum.try_draw_rune(user, interacting_with, drawing_time = 8 SECONDS)
+		return ITEM_INTERACT_BLOCKING
+	return NONE
 
 /// Plays a little animation that shows the book opening and closing.
 /obj/item/codex_cicatrix/proc/open_animation()

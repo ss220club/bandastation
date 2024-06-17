@@ -9,8 +9,8 @@
 	)
 
 /datum/traitor_objective/kill_pet
-	name = "Kill the %DEPARTMENT HEAD%'s beloved %PET%"
-	description = "The %DEPARTMENT HEAD% has particularly annoyed us by sending us spam emails and we want their %PET% dead to show them what happens when they cross us. "
+	name = "Убейте любимого %PET% принадлежащего %DEPARTMENT HEAD%."
+	description = "%DEPARTMENT HEAD% особенно досаждал нам, рассылая спам по электронной почте и мы хотим убить его %PET%, чтобы показать, что бывает, когда нам переходят дорогу."
 
 	progression_minimum = 0 MINUTES
 	telecrystal_reward = list(1, 2)
@@ -55,6 +55,7 @@
 		JOB_HEAD_OF_SECURITY = list(
 			/mob/living/basic/carp/pet/lia,
 			/mob/living/basic/spider/giant/sgt_araneus,
+			/mob/living/basic/bear/snow/misha,
 		),
 		JOB_WARDEN = list(
 			/mob/living/basic/pet/dog/pug/mcgriff

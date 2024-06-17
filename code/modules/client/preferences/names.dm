@@ -34,7 +34,7 @@
 
 /// A character's real name
 /datum/preference/name/real_name
-	explanation = "Name"
+	explanation = "Имя"
 	// The `_` makes it first in ABC order.
 	group = "_real_name"
 	savefile_key = "real_name"
@@ -67,7 +67,7 @@
 
 /// The name for a backup human, when nonhumans are made into head of staff
 /datum/preference/name/backup_human
-	explanation = "Backup human name"
+	explanation = "Запасное имя для человека"
 	group = "backup_human"
 	savefile_key = "human_name"
 
@@ -77,7 +77,7 @@
 /datum/preference/name/clown
 	savefile_key = "clown_name"
 
-	explanation = "Clown name"
+	explanation = "Имя для Клоуна"
 	group = "fun"
 	relevant_job = /datum/job/clown
 
@@ -87,7 +87,7 @@
 /datum/preference/name/mime
 	savefile_key = "mime_name"
 
-	explanation = "Mime name"
+	explanation = "Имя для Мима"
 	group = "fun"
 	relevant_job = /datum/job/mime
 
@@ -100,7 +100,7 @@
 	allow_numbers = TRUE
 	can_randomize = FALSE
 
-	explanation = "Cyborg name"
+	explanation = "Имя для Киборга"
 	group = "silicons"
 	relevant_job = /datum/job/cyborg
 
@@ -111,7 +111,7 @@
 	savefile_key = "ai_name"
 
 	allow_numbers = TRUE
-	explanation = "AI name"
+	explanation = "Имя для ИИ"
 	group = "silicons"
 	relevant_job = /datum/job/ai
 
@@ -123,7 +123,7 @@
 
 	allow_numbers = TRUE
 
-	explanation = "Religion name"
+	explanation = "Название религии"
 	group = "religion"
 
 /datum/preference/name/religion/create_default_value()
@@ -135,7 +135,7 @@
 	allow_numbers = TRUE
 	can_randomize = FALSE
 
-	explanation = "Deity name"
+	explanation = "Имя божества"
 	group = "religion"
 
 /datum/preference/name/deity/create_default_value()
@@ -147,7 +147,7 @@
 	allow_numbers = TRUE
 	can_randomize = FALSE
 
-	explanation = "Bible name"
+	explanation = "Название библии"
 	group = "religion"
 
 /datum/preference/name/bible/create_default_value()
@@ -157,7 +157,7 @@
 /datum/preference/name/operative_alias
 	savefile_key = "operative_alias"
 	allow_numbers = TRUE //You can get a little wacky with your alias nobody will judge you
-	explanation = "Operative Alias"
+	explanation = "Имя для Оперативника"
 	group = "antagonists"
 
 /datum/preference/name/operative_alias/create_default_value()

@@ -1,5 +1,5 @@
 /datum/surgery/lobectomy
-	name = "Lobectomy" //not to be confused with lobotomy
+	name = "Лобэктомия" //not to be confused with lobotomy
 	organ_to_manipulate = ORGAN_SLOT_LUNGS
 	possible_locs = list(BODY_ZONE_CHEST)
 	steps = list(
@@ -20,7 +20,7 @@
 
 //lobectomy, removes the most damaged lung lobe with a 95% base success chance
 /datum/surgery_step/lobectomy
-	name = "excise damaged lung node (scalpel)"
+	name = "удалите поврежденный участок легкого (скальпель)"
 	implements = list(
 		TOOL_SCALPEL = 95,
 		/obj/item/melee/energy/sword = 65,
@@ -30,16 +30,17 @@
 	preop_sound = 'sound/surgery/scalpel1.ogg'
 	success_sound = 'sound/surgery/organ1.ogg'
 	failure_sound = 'sound/surgery/organ2.ogg'
+	surgery_effects_mood = TRUE
 
 /datum/surgery_step/lobectomy/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	display_results(
 		user,
 		target,
-		span_notice("You begin to make an incision in [target]'s lungs..."),
-		span_notice("[user] begins to make an incision in [target]."),
-		span_notice("[user] begins to make an incision in [target]."),
+		span_notice("Вы начинаете делать надрез на легких у [target]..."),
+		span_notice("[user] начинает делать надрез на [target]."),
+		span_notice("[user] начинает делать надрез на [target]."),
 	)
-	display_pain(target, "You feel a stabbing pain in your chest!")
+	display_pain(target, "Вы чувствуете колющую боль в груди!")
 
 /datum/surgery_step/lobectomy/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
 	if(ishuman(target))
@@ -50,11 +51,11 @@
 		display_results(
 			user,
 			target,
-			span_notice("You successfully excise [human_target]'s most damaged lobe."),
-			span_notice("Successfully removes a piece of [human_target]'s lungs."),
+			span_notice("Вы успешно вырезаете самую поврежденную долю [human_target]."),
+			span_notice("Успешно отрезал часть легких [human_target]."),
 			"",
 		)
-		display_pain(target, "Your chest hurts like hell, but breathing becomes slightly easier.")
+		display_pain(target, "Грудь адски болит, но дышать становится немного легче.")
 	return ..()
 
 /datum/surgery_step/lobectomy/failure(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
@@ -63,11 +64,11 @@
 		display_results(
 			user,
 			target,
-			span_warning("You screw up, failing to excise [human_target]'s damaged lobe!"),
-			span_warning("[user] screws up!"),
-			span_warning("[user] screws up!"),
+			span_warning("Вы ошибаетесь, не сумев вырезать поврежденную долю [human_target]'s!"),
+			span_warning("[user] ошибается!"),
+			span_warning("[user] ошибается!"),
 		)
-		display_pain(target, "You feel a sharp stab in your chest; the wind is knocked out of you and it hurts to catch your breath!")
+		display_pain(target, "Вы чувствуете резкий удар в грудь; последний вздох выбивает из вас все силы, и вам больно дышать!")
 		human_target.losebreath += 4
 		human_target.adjustOrganLoss(ORGAN_SLOT_LUNGS, 10)
 	return FALSE

@@ -10,8 +10,8 @@
 
 	page_holder.give_screen_object(new /atom/movable/screen/escape_menu/leave_body_button(
 		src,
-		"Suicide",
-		"Perform a dramatic suicide in game",
+		"Откиснуть",
+		"Выйти из тела драматичным образом",
 		/* pixel_offset = */ -105,
 		CALLBACK(src, PROC_REF(leave_suicide)),
 		/* button_overlay = */ dead_clown,
@@ -20,8 +20,8 @@
 	page_holder.give_screen_object(
 		new /atom/movable/screen/escape_menu/leave_body_button(
 			src,
-			"Ghost",
-			"Exit quietly, leaving your body",
+			"Призрак",
+			"Тихо выйти из тела в призраки",
 			/* pixel_offset = */ 0,
 			CALLBACK(src, PROC_REF(leave_ghost)),
 			/* button_overlay = */ "ghost",
@@ -31,7 +31,7 @@
 	page_holder.give_screen_object(
 		new /atom/movable/screen/escape_menu/leave_body_button(
 			src,
-			"Back",
+			"Назад",
 			/* tooltip_text = */ null,
 			/* pixel_offset = */ 105,
 			CALLBACK(src, PROC_REF(open_home_page)),

@@ -1,11 +1,11 @@
 /obj/item/disk/surgery/sleeper_protocol
 	name = "Suspicious Surgery Disk"
-	desc = "The disk provides instructions on how to turn someone into a sleeper agent for the Syndicate."
+	desc = "На диске содержатся инструкции о том, как превратить кого-либо в спящего агента Синдиката."
 	surgeries = list(/datum/surgery/advanced/brainwashing_sleeper)
 
 /datum/surgery/advanced/brainwashing_sleeper
 	name = "Sleeper Agent Surgery"
-	desc = "A surgical procedure which implants the sleeper protocol into the patient's brain, making it their absolute priority. It can be cleared using a mindshield implant."
+	desc = "Хирургическая процедура, которая имплантирует протокол сна в мозг пациента, что делает его абсолютным приоритетом. Его можно очистить с помощью импланта защиты разума."
 	possible_locs = list(BODY_ZONE_HEAD)
 	steps = list(
 		/datum/surgery_step/incise,
@@ -28,18 +28,18 @@
 /datum/surgery_step/brainwash/sleeper_agent
 	time = 25 SECONDS
 	var/static/list/possible_objectives = list(
-		"You love the Syndicate.",
-		"Do not trust Nanotrasen.",
-		"The Captain is a lizardperson.",
-		"Nanotrasen isn't real.",
-		"They put something in the food to make you forget.",
-		"You are the only real person on the station.",
-		"Things would be a lot better on the station if more people were screaming, someone should do something about that.",
-		"The people in charge around here have only ill intentions for the crew.",
-		"Help the crew? What have they ever done for you anyways?",
-		"Does your bag feel lighter? I bet those guys in Security stole something from it. Go get it back.",
-		"Command is incompetent, someone with some REAL authority should take over around here.",
-		"The cyborgs and the AI are stalking you. What are they planning?",
+		"Ты любишь Синдикат.",
+		"Недоверяй Nanotrasen.",
+		"Капитан - ящер.",
+		"Nanotrasen не существует.",
+		"Они подложили что-то в твою еду, чтобы ты забыл.",
+		"Ты единственный реальный член экипажа на этой станции.",
+		"На станции было бы намного лучше, если бы больше людей кричало, кто-то должен с этим что-то сделать.",
+		"Люди, ответственные здесь, имеют только злые намерения в отношении команды.",
+		"Помочь экипажу? Что они вообще для тебя сделали?",
+		"Ваша сумка кажется легче? Могу поспорить, что те ребята из службы безопасности что-то оттуда украли. Иди и верни это!",
+		"Командование некомпетентно, кто-то, обладающий РЕАЛЬНОЙ властью, должен взять на себя управление здесь.",
+		"Киборги и искусственный интеллект преследуют вас. Что они планируют?",
 	)
 
 /datum/surgery_step/brainwash/sleeper_agent/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
@@ -47,15 +47,15 @@
 	display_results(
 		user,
 		target,
-		span_notice("You begin to brainwash [target]..."),
-		span_notice("[user] begins to fix [target]'s brain."),
-		span_notice("[user] begins to perform surgery on [target]'s brain."),
+		span_notice("Вы начинаете промывать мозги [target]..."),
+		span_notice("[user] начинает исправлять мозги [target]."),
+		span_notice("[user] начинает делать операцию на мозге [target]."),
 	)
-	display_pain(target, "Your head pounds with unimaginable pain!") // Same message as other brain surgeries
+	display_pain(target, "Голова раскалывается от невообразимой боли!") // Same message as other brain surgeries
 
 /datum/surgery_step/brainwash/sleeper_agent/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
 	if(target.stat == DEAD)
-		to_chat(user, span_warning("They need to be alive to perform this surgery!"))
+		to_chat(user, span_warning("Они должны быть живы, чтобы провести эту операцию!"))
 		return FALSE
 	. = ..()
 	if(!.)

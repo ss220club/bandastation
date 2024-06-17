@@ -1,6 +1,6 @@
 /datum/experiment/scanning/points
-	name = "Point Scanning Experiment"
-	description = "Base experiment for scanning experiments tracked by points"
+	name = "Эксперимент по скану очков"
+	description = "Базовый эксперимент для скана экспериментов, отслеживаемых по очкам."
 	/// The current points gained on this experiment
 	var/points = 0
 	/// The total required points for this experiment
@@ -10,7 +10,7 @@
 	return points >= required_points
 
 /datum/experiment/scanning/points/check_progress()
-	. = EXPERIMENT_PROG_INT("Scan samples of the following objects to accumulate enough points to complete this experiment.", points, required_points)
+	. = EXPERIMENT_PROG_INT("Сканируйте образцы следующих объектов для набора достаточного кол-ва очков и завершения эксперимента.", points, required_points)
 	var/complete = is_complete()
 	var/point_val_cache = list()
 	for (var/a_type in required_atoms)

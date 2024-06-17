@@ -1,5 +1,5 @@
 /datum/surgery/stomach_pump
-	name = "Stomach Pump"
+	name = "Очистка желудка"
 	possible_locs = list(BODY_ZONE_CHEST)
 	steps = list(
 		/datum/surgery_step/incise,
@@ -20,7 +20,7 @@
 
 //Working the stomach by hand in such a way that you induce vomiting.
 /datum/surgery_step/stomach_pump
-	name = "pump stomach (hand)"
+	name = "промойте желудок (рука)"
 	accept_hand = TRUE
 	repeatable = TRUE
 	time = 20
@@ -30,11 +30,11 @@
 	display_results(
 		user,
 		target,
-		span_notice("You begin pumping [target]'s stomach..."),
-		span_notice("[user] begins to pump [target]'s stomach."),
-		span_notice("[user] begins to press on [target]'s chest."),
+		span_notice("Вы начинаете промывать желудок у [target]..."),
+		span_notice("[user] начинает промывать желудок у [target]."),
+		span_notice("[user] начинает нажимать на грудь [target]."),
 	)
-	display_pain(target, "You feel a horrible sloshing feeling in your gut! You're going to be sick!")
+	display_pain(target, "Вы чувствуете жуткое бурление в желудке! Вас сейчас вырвет!")
 
 /datum/surgery_step/stomach_pump/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
 	if(ishuman(target))
@@ -42,9 +42,9 @@
 		display_results(
 			user,
 			target,
-			span_notice("[user] forces [target_human] to vomit, cleansing their stomach of some chemicals!"),
-			span_notice("[user] forces [target_human] to vomit, cleansing their stomach of some chemicals!"),
-			span_notice("[user] forces [target_human] to vomit!"),
+			span_notice("[user] вызывает рвоту у [target_human], избавляя желудок от некоторых химикатов!"),
+			span_notice("[user] вызывает рвоту у [target_human], избавляя желудок от некоторых химикатов!"),
+			span_notice("[user] вызывает рвоту у [target_human]!"),
 		)
 		target_human.vomit((MOB_VOMIT_MESSAGE | MOB_VOMIT_STUN), lost_nutrition = 20, purge_ratio = 0.67) //higher purge ratio than regular vomiting
 	return ..()
@@ -55,9 +55,9 @@
 		display_results(
 			user,
 			target,
-			span_warning("You screw up, bruising [target_human]'s chest!"),
-			span_warning("[user] screws up, brusing [target_human]'s chest!"),
-			span_warning("[user] screws up!"),
+			span_warning("Вы ошибаетесь, оставив ушиб на груди [target_human]!"),
+			span_warning("[user] ошибается, оставив ушиб на груди [target_human]!"),
+			span_warning("[user] ошибается!"),
 		)
 		target_human.adjustOrganLoss(ORGAN_SLOT_STOMACH, 5)
 		target_human.adjustBruteLoss(5)

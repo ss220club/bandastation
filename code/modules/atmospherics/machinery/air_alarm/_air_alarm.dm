@@ -491,6 +491,10 @@ GLOBAL_LIST_EMPTY_TYPED(air_alarms, /obj/machinery/airalarm)
 			if(allow_link_change)
 				disconnect_sensor()
 
+		if ("lock")
+			togglelock(usr)
+			return TRUE
+
 	update_appearance()
 
 	return TRUE
@@ -567,28 +571,28 @@ GLOBAL_LIST_EMPTY_TYPED(air_alarms, /obj/machinery/airalarm)
 	if(danger_level)
 		alarm_manager.send_alarm(ALARM_ATMOS)
 		if(pressure <= WARNING_LOW_PRESSURE && temp <= BODYTEMP_COLD_WARNING_1+10)
-			warning_message = "Danger! Low pressure and temperature detected."
+			warning_message = "Тревога! Низкое давление и температура."
 			return
 		if(pressure <= WARNING_LOW_PRESSURE && temp >= BODYTEMP_HEAT_WARNING_1-27)
-			warning_message = "Danger! Low pressure and high temperature detected."
+			warning_message = "Тревога! Низкое давление и высокая температура."
 			return
 		if(pressure >= WARNING_HIGH_PRESSURE && temp >= BODYTEMP_HEAT_WARNING_1-27)
-			warning_message = "Danger! High pressure and temperature detected."
+			warning_message = "Тревога! Высокое давление и температура."
 			return
 		if(pressure >= WARNING_HIGH_PRESSURE && temp <= BODYTEMP_COLD_WARNING_1+10)
-			warning_message = "Danger! High pressure and low temperature detected."
+			warning_message = "Тревога! Высокое давление и низкая температура."
 			return
 		if(pressure <= WARNING_LOW_PRESSURE)
-			warning_message = "Danger! Low pressure detected."
+			warning_message = "Тревога! Низкое давление."
 			return
 		if(pressure >= WARNING_HIGH_PRESSURE)
-			warning_message = "Danger! High pressure detected."
+			warning_message = "Тревога! Высокое давление."
 			return
 		if(temp <= BODYTEMP_COLD_WARNING_1+10)
-			warning_message = "Danger! Low temperature detected."
+			warning_message = "Тревога! Низкая температура."
 			return
 		if(temp >= BODYTEMP_HEAT_WARNING_1-27)
-			warning_message = "Danger! High temperature detected."
+			warning_message = "Тревога! Высокая температура."
 			return
 		else
 			warning_message = null

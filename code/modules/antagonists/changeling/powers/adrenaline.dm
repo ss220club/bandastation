@@ -1,7 +1,7 @@
 /datum/action/changeling/adrenaline
 	name = "Repurposed Glands"
-	desc = "We shift almost all available muscle mass from the arms to the legs, disabling the former but making us unable to be downed for 15 seconds. Costs 10 chemicals."
-	helptext = "Disables your arms and retracts bioweaponry, but regenerates your legs, grants you speed, and wakes you up from any stun."
+	desc = "Мы переносим почти всю доступную массу из рук в ноги, тем самым делая невозможным использование рук, но позволяет нам игнорировать оглушенияи на 15 секунд. Стоит 10 химикатов."
+	helptext = "Отключает ваши руки и убирает био-оружие, но восстанавливает ваши ноги, ускоряя их и снимая все оглушения."
 	button_icon_state = "adrenaline"
 	chemical_cost = 25 // similar cost to biodegrade, as they serve similar purposes
 	dna_cost = 2
@@ -14,7 +14,7 @@
 		return FALSE
 
 	if(HAS_TRAIT_FROM(user, TRAIT_IGNOREDAMAGESLOWDOWN, CHANGELING_TRAIT))
-		user.balloon_alert(user, "already boosted!")
+		user.balloon_alert(user, "уже усилены!")
 		return FALSE
 
 	return .
@@ -22,7 +22,7 @@
 //Recover from stuns.
 /datum/action/changeling/adrenaline/sting_action(mob/living/carbon/user)
 	..()
-	to_chat(user, span_changeling("Our arms feel weak, but our legs become unstoppable!"))
+	to_chat(user, span_changeling("Наши руки слабы, но ноги - неостановимы!"))
 
 	for(var/datum/action/changeling/weapon/weapon_ability in user.actions)
 		weapon_ability.unequip_held(user)
@@ -30,8 +30,8 @@
 	// Destroy legcuffs with our IMMENSE LEG STRENGTH.
 	if(istype(user.legcuffed))
 		user.visible_message(
-			span_warning("[user]'s legs suddenly rip [user.legcuffed] apart!"),
-			span_warning("We rip apart our leg restraints!"),
+			span_warning("Ноги [user] неожиданно разрывают [user.legcuffed]!"),
+			span_warning("Мы разрываем связывание на ногах!"),
 		)
 		qdel(user.legcuffed)
 
@@ -55,5 +55,5 @@
 	return TRUE
 
 /datum/action/changeling/adrenaline/proc/unsting_action(mob/living/user)
-	to_chat(user, span_changeling("The muscles in our limbs shift back to their usual places."))
+	to_chat(user, span_changeling("Мускулы в наших конечностях возвращаются в норму."))
 	user.remove_traits(list(TRAIT_IGNOREDAMAGESLOWDOWN, TRAIT_PARALYSIS_L_ARM, TRAIT_PARALYSIS_R_ARM), CHANGELING_TRAIT)

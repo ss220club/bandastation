@@ -1,9 +1,9 @@
 //Nearsightedness restricts your vision by several tiles.
 /datum/mutation/human/nearsight
 	name = "Near Sightness"
-	desc = "The holder of this mutation has poor eyesight."
+	desc = "Обладатель данной мутации имеет проблемы со зрением."
 	quality = MINOR_NEGATIVE
-	text_gain_indication = "<span class='danger'>You can't see very well.</span>"
+	text_gain_indication = "<span class='danger'>Ты плоховато видишь.</span>"
 
 /datum/mutation/human/nearsight/on_acquiring(mob/living/carbon/human/owner)
 	if(..())
@@ -18,9 +18,9 @@
 ///Blind makes you blind. Who knew?
 /datum/mutation/human/blind
 	name = "Blindness"
-	desc = "Renders the subject completely blind."
+	desc = "Субъект становится полностью слепым."
 	quality = NEGATIVE
-	text_gain_indication = "<span class='danger'>You can't seem to see anything.</span>"
+	text_gain_indication = "<span class='danger'>Ты не можешь ничего увидеть.</span>"
 
 /datum/mutation/human/blind/on_acquiring(mob/living/carbon/human/owner)
 	if(..())
@@ -35,11 +35,11 @@
 ///Thermal Vision lets you see mobs through walls
 /datum/mutation/human/thermal
 	name = "Thermal Vision"
-	desc = "The user of this genome can visually perceive the unique human thermal signature."
+	desc = "Обладатель данного генома может визуально заметить уникальную тепловую сигнатуру человека."
 	quality = POSITIVE
 	difficulty = 18
-	text_gain_indication = "<span class='notice'>You can see the heat rising off of your skin...</span>"
-	text_lose_indication = "<span class='notice'>You can no longer see the heat rising off of your skin...</span>"
+	text_gain_indication = "<span class='notice'>Ты замечаешь тепло, исходящее из твоей кожи...</span>"
+	text_lose_indication = "<span class='notice'>Ты больше не видишь тепло, исходящее из твоей кожи...</span>"
 	instability = 25
 	synchronizer_coeff = 1
 	power_coeff = 1
@@ -108,8 +108,8 @@
 ///X-ray Vision lets you see through walls.
 /datum/mutation/human/xray
 	name = "X Ray Vision"
-	desc = "A strange genome that allows the user to see between the spaces of walls." //actual x-ray would mean you'd constantly be blasting rads, wich might be fun for later //hmb
-	text_gain_indication = "<span class='notice'>The walls suddenly disappear!</span>"
+	desc = "Странный геном, который позволяет его обладателю видеть пространство между стенами." //actual x-ray would mean you'd constantly be blasting rads, wich might be fun for later //hmb
+	text_gain_indication = "<span class='notice'>Стены вдруг исчезли!</span>"
 	instability = 35
 	locked = TRUE
 
@@ -129,11 +129,11 @@
 ///Laser Eyes lets you shoot lasers from your eyes!
 /datum/mutation/human/laser_eyes
 	name = "Laser Eyes"
-	desc = "Reflects concentrated light back from the eyes."
+	desc = "Отражает сконцентрированный свет из глаз."
 	quality = POSITIVE
 	locked = TRUE
 	difficulty = 16
-	text_gain_indication = "<span class='notice'>You feel pressure building up behind your eyes.</span>"
+	text_gain_indication = "<span class='notice'>Ты ощущаешь давление позади глаз.</span>"
 	layer_used = FRONT_MUTATIONS_LAYER
 	limb_req = BODY_ZONE_HEAD
 
@@ -181,10 +181,10 @@
 
 /datum/mutation/human/illiterate
 	name = "Illiterate"
-	desc = "Causes a severe case of Aphasia that prevents reading or writing."
+	desc = "Является причиной тяжёлого случая афазии, которая мешает чтению или письму."
 	quality = NEGATIVE
-	text_gain_indication = "<span class='danger'>You feel unable to read or write.</span>"
-	text_lose_indication = "<span class='danger'>You feel able to read and write again.</span>"
+	text_gain_indication = "<span class='danger'>Ты чувствуешь себя неспособным читать или писать.</span>"
+	text_lose_indication = "<span class='danger'>Ты чувствуешь, что снова можешь читать или писать.</span>"
 
 /datum/mutation/human/illiterate/on_acquiring(mob/living/carbon/human/owner)
 	if(..())

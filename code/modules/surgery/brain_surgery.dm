@@ -1,5 +1,5 @@
 /datum/surgery/brain_surgery
-	name = "Brain surgery"
+	name = "Операция на мозге"
 	possible_locs = list(BODY_ZONE_HEAD)
 	requires_bodypart_type = NONE
 	steps = list(
@@ -12,7 +12,7 @@
 	)
 
 /datum/surgery_step/fix_brain
-	name = "fix brain (hemostat)"
+	name = "Проведите коррекцию мозговой функции (гемостат)"
 	implements = list(
 		TOOL_HEMOSTAT = 85,
 		TOOL_SCREWDRIVER = 35,
@@ -30,27 +30,27 @@
 	display_results(
 		user,
 		target,
-		span_notice("You begin to fix [target]'s brain..."),
-		span_notice("[user] begins to fix [target]'s brain."),
-		span_notice("[user] begins to perform surgery on [target]'s brain."),
+		span_notice("Вы начинаете восстанавливать мозг у [target]..."),
+		span_notice("[user] начинает восстанавливать мозг у [target]."),
+		span_notice("[user] начинает проводить операцию на мозге у [target]."),
 	)
-	display_pain(target, "Your head pounds with unimaginable pain!")
+	display_pain(target, "Ваша голова раскалывается от невыразимой боли!")
 
 /datum/surgery_step/fix_brain/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
 	display_results(
 		user,
 		target,
-		span_notice("You succeed in fixing [target]'s brain."),
-		span_notice("[user] successfully fixes [target]'s brain!"),
-		span_notice("[user] completes the surgery on [target]'s brain."),
+		span_notice("Вы успешно восстановили функции мозга у [target]."),
+		span_notice("[user] успешно восстановили функции мозга у [target]!"),
+		span_notice("[user] завершает операцию на мозге у [target]."),
 	)
-	display_pain(target, "The pain in your head receeds, thinking becomes a bit easier!")
+	display_pain(target, "Боль в голове утихает, мыслить становится немного легче!")
 	if(target.mind?.has_antag_datum(/datum/antagonist/brainwashed))
 		target.mind.remove_antag_datum(/datum/antagonist/brainwashed)
 	target.setOrganLoss(ORGAN_SLOT_BRAIN, target.get_organ_loss(ORGAN_SLOT_BRAIN) - 50) //we set damage in this case in order to clear the "failing" flag
 	target.cure_all_traumas(TRAUMA_RESILIENCE_SURGERY)
 	if(target.get_organ_loss(ORGAN_SLOT_BRAIN) > 0)
-		to_chat(user, "[target]'s brain looks like it could be fixed further.")
+		to_chat(user, "Мозг у [target] выглядит так, будто его дальнейшее восстановление возможно.")
 	return ..()
 
 /datum/surgery_step/fix_brain/failure(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
@@ -58,13 +58,13 @@
 		display_results(
 			user,
 			target,
-			span_warning("You screw up, causing more damage!"),
-			span_warning("[user] screws up, causing brain damage!"),
-			span_notice("[user] completes the surgery on [target]'s brain."),
+			span_warning("Вы ошибаетесь, нанеся ещё больше повреждений!"),
+			span_warning("[user] ошибается, нанеся повреждения мозгу!"),
+			span_notice("[user] завершает операцию на мозге у [target]."),
 		)
-		display_pain(target, "Your head throbs with horrible pain; thinking hurts!")
+		display_pain(target, "Голова раскалывается от ужасной боли; от одной мысли об этом уже начинает болеть голова!")
 		target.adjustOrganLoss(ORGAN_SLOT_BRAIN, 60)
 		target.gain_trauma_type(BRAIN_TRAUMA_SEVERE, TRAUMA_RESILIENCE_LOBOTOMY)
 	else
-		user.visible_message(span_warning("[user] suddenly notices that the brain [user.p_they()] [user.p_were()] working on is not there anymore."), span_warning("You suddenly notice that the brain you were working on is not there anymore."))
+		user.visible_message(span_warning("[user] внезапно замечает, что мозг над которым велась операция, более не здесь."), span_warning("Вы вдруг замечаете, что мозг, над которым вы работали, более не здесь."))
 	return FALSE

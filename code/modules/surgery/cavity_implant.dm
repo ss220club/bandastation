@@ -1,5 +1,5 @@
 /datum/surgery/cavity_implant
-	name = "Cavity implant"
+	name = "Полостное имплантирование"
 	possible_locs = list(BODY_ZONE_CHEST)
 	steps = list(
 		/datum/surgery_step/incise,
@@ -11,7 +11,7 @@
 
 //handle cavity
 /datum/surgery_step/handle_cavity
-	name = "implant item"
+	name = "вставьте предмет"
 	accept_hand = 1
 	implements = list(/obj/item = 100)
 	repeatable = TRUE
@@ -32,33 +32,33 @@
 		display_results(
 			user,
 			target,
-			span_notice("You begin to insert [tool] into [target]'s [target_zone]..."),
-			span_notice("[user] begins to insert [tool] into [target]'s [target_zone]."),
-			span_notice("[user] begins to insert [tool.w_class > WEIGHT_CLASS_SMALL ? tool : "something"] into [target]'s [target_zone]."),
+			span_notice("Вы начинаете вставлять [tool.name] в <i>[target_zone]</i> у [target]..."),
+			span_notice("[user] начинает вставлять [tool.name] в <i>[target_zone]</i> у [target]."),
+			span_notice("[user] начинает вставлять [tool.w_class > WEIGHT_CLASS_SMALL ? tool : "что-то"] в <i>[target_zone]</i> у [target]."),
 		)
-		display_pain(target, "You can feel something being inserted into your [target_zone], it hurts like hell!")
+		display_pain(target, "Вы чувствуете, как что-то вставляют в ваш <i>[target_zone]</i>, это чертовски больно!")
 	else
 		display_results(
 			user,
 			target,
-			span_notice("You check for items in [target]'s [target_zone]..."),
-			span_notice("[user] checks for items in [target]'s [target_zone]."),
-			span_notice("[user] looks for something in [target]'s [target_zone]."),
+			span_notice("Вы проверяете на наличие предметов в <i>[target_zone]</i> у [target]..."),
+			span_notice("[user] проверяет на наличие предметов в <i>[target_zone]</i> у [target]."),
+			span_notice("[user] ищет что-то в <i>[target_zone]</i> [target]."),
 		)
 
 /datum/surgery_step/handle_cavity/success(mob/user, mob/living/carbon/human/target, target_zone, obj/item/tool, datum/surgery/surgery = FALSE)
 	var/obj/item/bodypart/chest/target_chest = target.get_bodypart(BODY_ZONE_CHEST)
 	if(tool)
 		if(item_for_cavity || tool.w_class > WEIGHT_CLASS_NORMAL || HAS_TRAIT(tool, TRAIT_NODROP) || isorgan(tool))
-			to_chat(user, span_warning("You can't seem to fit [tool] in [target]'s [target_zone]!"))
+			to_chat(user, span_warning("Кажется, вы не можете поместить [tool.name] в <i>[target_zone]</i> у [target]!"))
 			return FALSE
 		else
 			display_results(
 				user,
 				target,
-				span_notice("You stuff [tool] into [target]'s [target_zone]."),
-				span_notice("[user] stuffs [tool] into [target]'s [target_zone]!"),
-				span_notice("[user] stuffs [tool.w_class > WEIGHT_CLASS_SMALL ? tool : "something"] into [target]'s [target_zone]."),
+				span_notice("Вы помещаете [tool.name] в <i>[target_zone]</i> у [target]."),
+				span_notice("[user] помещает [tool.name] в <i>[target_zone]</i> у [target]!"),
+				span_notice("[user] помещает [tool.w_class > WEIGHT_CLASS_SMALL ? tool : "что-то"] в <i>[target_zone]</i> у [target]."),
 			)
 			user.transferItemToLoc(tool, target, TRUE)
 			target_chest.cavity_item = tool
@@ -68,14 +68,14 @@
 			display_results(
 				user,
 				target,
-				span_notice("You pull [item_for_cavity] out of [target]'s [target_zone]."),
-				span_notice("[user] pulls [item_for_cavity] out of [target]'s [target_zone]!"),
-				span_notice("[user] pulls [item_for_cavity.w_class > WEIGHT_CLASS_SMALL ? item_for_cavity : "something"] out of [target]'s [target_zone]."),
+				span_notice("Вы вытягиваете [item_for_cavity] из <i>[target_zone]</i> у [target]."),
+				span_notice("[user] вытягивает [item_for_cavity] из <i>[target_zone]</i> у [target]!"),
+				span_notice("[user] вытягивает [item_for_cavity.w_class > WEIGHT_CLASS_SMALL ? item_for_cavity : "что-то"] из <i>[target_zone]</i> у [target]."),
 			)
-			display_pain(target, "Something is pulled out of your [target_zone]! It hurts like hell!")
+			display_pain(target, "Что-то вытащили из вашего <i>[target_zone]</i>! это чертовски больно!")
 			user.put_in_hands(item_for_cavity)
 			target_chest.cavity_item = null
 			return ..()
 		else
-			to_chat(user, span_warning("You don't find anything in [target]'s [target_zone]."))
+			to_chat(user, span_warning("Вы не нашли ничего в <i>[target_zone]</i> у [target]."))
 			return FALSE

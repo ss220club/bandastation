@@ -2,10 +2,10 @@
 
 /datum/heretic_knowledge/spell/mind_gate
 	name = "Mind Gate"
-	desc = "Grants you Mind Gate, a spell \
-		which deals you 20 brain damage but the target suffers a hallucination,\
-		is left confused for 10 seconds, suffers oxygen loss and brain damage."
-	gain_text = "My mind swings open like a gate, and its insight will let me perceive the truth."
+	desc = "Дает вам заклинание Mind Gate, которое \
+		наносит вам 20 урона мозгу, и накладывает галлюцинации на цель, \
+		замешательство на 10 секунд, потерю дыхания и урон мозгу."
+	gain_text = "Мой разум распахивается, словно врата, и его озарение позволяет мне постичь правду."
 	next_knowledge = list(
 		/datum/heretic_knowledge/key_ring,
 		/datum/heretic_knowledge/spell/moon_smile,
@@ -16,11 +16,11 @@
 
 /datum/heretic_knowledge/unfathomable_curio
 	name = "Unfathomable Curio"
-	desc = "Allows you to transmute 3 rods, lungs and any belt into an Unfathomable Curio\
-			, a belt that can hold blades and items for rituals. Whilst worn it will also \
-			veil you, allowing you to take 5 hits without suffering damage, this veil will recharge very slowly \
-			outside of combat."
-	gain_text = "The mansus holds many a curio, some are not meant for the mortal eye."
+	desc = "Позволяет трансмутировать 3 железных стержня, легкие и любой пояс в Непостижимую диковинку\
+			, пояс, который может хранить клинки и предметы для ритуалов. Пока вы его носите, \
+			он также будет покрывать вас вуалью, позволяющей последующим 5 ударам не наносить по вам урон. \
+			Вуаль очень медленно перезаряжается вне боя."
+	gain_text = "В Мансусе хранится множество диковинок, но некоторые из них не предназначены для глаза смертных."
 	next_knowledge = list(
 		/datum/heretic_knowledge/spell/burglar_finesse,
 		/datum/heretic_knowledge/moon_amulet,
@@ -36,16 +36,16 @@
 
 /datum/heretic_knowledge/painting
 	name = "Unsealed Arts"
-	desc = "Allows you to transmute a canvas and an additional item to create a piece of art, these paintings \
-			have different effects depending on the additional item added. Possible paintings: \
-			The sister and He Who Wept: Eyes. Clears your own mind, but curses non-heretics with hallucinations. \
-			The First Desire: Any bodypart. Supplies you with random organs, but curses non-heretics with a hunger for flesh. \
-			Great chaparral over rolling hills: Any grown food. Spreads kudzu when placed and examined by non-heretics. Also supplies you with poppies and harebells. \
-			Lady out of gates: Gloves. Clears your mutations, but mutates non-heretics and curses them with scratching. \
-			Climb over the rusted mountain: Trash. Curses non-heretics to rust the floor they walk on. \
-			Non-heretics can counter most of these effects by examining one of these paintings."
-	gain_text = "A wind of inspiration blows through me, past the walls and past the gate inspirations lie, yet to be depicted. \
-				They yearn for mortal eyes again, and I shall grant that wish."
+	desc = "Позволяет трансмутировать холст и дополнительный предмет, чтобы создать произведение искусства. \
+			Эти картины имеют разные эффекты в зависимости от добавленного предмета. Можно создать следующие картины: \
+			Сестра и Тот, Кто Плакал: Глаза. Очищает ваш разум, но проклинает не-еретиков галлюцинациями. \
+			Первое Желание: Любая часть тела. Предоставляет вам случайные органы, но проклинает не-еретиков жаждой плоти. \
+			Великий чапараль над холмами: Любая выращенная еда. Распространяет кудзу при установке и осмотре не-еретиками. Также дает вам маки и колокольчики. \
+			Дама за воротами: Перчатки. Очищает ваши мутации, но мутирует всех не-еретиков и проклинает их чесоткой. \
+			Подъем на ржавые горы: Мусло. Проклинает всех не-еретиков, заставляя их оставлять ржавчину на своем пути. \
+			Не-еретики могут избавиться от этих эффектов, осматривая эти картины."
+	gain_text = "Ветер вдохновения дует через меня; за стенами и за вратами лежит вдохновение, которое еще предстоит изобразить \
+				Они снова жаждут взгляда смертных, и я исполню это желание."
 	next_knowledge = list(
 		/datum/heretic_knowledge/spell/burglar_finesse,
 		/datum/heretic_knowledge/moon_amulet,

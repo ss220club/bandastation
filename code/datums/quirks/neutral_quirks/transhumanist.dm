@@ -15,13 +15,13 @@
 
 /datum/quirk/transhumanist
 	name = "Transhumanist"
-	desc = "You see silicon life as the perfect lifeform and despise organic flesh. You are happier around silicons, but get frustrated when around organics. You seek to replace your failing flesh with perfect silicon. You start with a robotic augmentation."
+	desc = "Вы считаете синтетическую форму жизни идеальной и презираете органическую плоть. Вы радуетесь рядом с синтетиками и расстраиваетесь, когда рядом с вами органические формы жизни и нет никого хоть как-то смахивающего на киборга. Вы стремитесь заменить свои мясистые конечности на их хромированные аналоги. Вы начинаете с роботизированной конечностью."
 	icon = FA_ICON_ROBOT
 	quirk_flags = QUIRK_HUMAN_ONLY|QUIRK_PROCESSES|QUIRK_MOODLET_BASED
 	value = 0
-	gain_text = span_notice("You have a desire to ditch your feeble organic flesh and surround yourself with robots.")
-	lose_text = span_danger("Robots don't seem all that great anymore.")
-	medical_record_text = "Patient reports hating pathetic creatures of meat and bone."
+	gain_text = span_notice("У вас есть желание избавиться от своей немощной органической плоти и окружить себя роботами.")
+	lose_text = span_danger("Роботы уже не кажутся такими замечательными.")
+	medical_record_text = "Пациент сообщает о ненависти к жалким существам из мяса и костей."
 	mail_goodies = list(
 		/obj/item/stock_parts/cell/potato,
 		/obj/item/stack/cable_coil,
@@ -128,11 +128,11 @@
 	if(!slot_string)
 		return
 	if(isbodypart(old_part))
-		to_chat(quirk_holder, span_boldannounce("Your [slot_string] has been replaced with a robotic limb. You need to use a welding tool and cables to repair it, instead of sutures and regenerative meshes."))
+		to_chat(quirk_holder, span_boldannounce("Ваша конечность, [slot_string], была заменена на руку робота. Чтобы починить ее, вместо швов и регенеративных сеток нужно использовать сварочный инструмент и кабели."))
 	else if (old_part.name == "eyes")
-		to_chat(quirk_holder, span_boldannounce("You replaced your eyes with flashlights, not cameras. You can't see a thing!"))
+		to_chat(quirk_holder, span_boldannounce("Вы заменили свои глаза на фонарики, а не камеры. Вы ни черта не видите!"))
 	else if (isorgan(old_part))
-		to_chat(quirk_holder, span_boldannounce("Your [slot_string] brings you one step closer to silicon perfection, but you feel you're not quite there yet."))
+		to_chat(quirk_holder, span_boldannounce("Ваша замена [slot_string] делает вас на шаг ближе к идеалу синтетики, но вам не хватает совсем чуть-чуть."))
 
 /datum/quirk/transhumanist/remove()
 	if(isnull(old_part))

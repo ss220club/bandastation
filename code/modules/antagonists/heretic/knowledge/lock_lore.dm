@@ -26,11 +26,11 @@
  */
 /datum/heretic_knowledge/limited_amount/starting/base_knock
 	name = "A Steward's Secret"
-	desc = "Opens up the Path of Lock to you. \
-		Allows you to transmute a knife and a crowbar into a Key Blade. \
-		You can only create two at a time and they function as fast crowbars. \
-		In addition, they can fit into utility belts."
-	gain_text = "The Locked Labyrinth leads to freedom. But only the trapped Stewards know the correct path."
+	desc = "Открывает перед вами Путь замка. \
+		Позволяет трансмутировать нож и монтировку в Ключ-клинок. \
+		Одновременно можно иметь только два, а также он действует как быстрая монтировка. \
+		К тому же, они помещаются в пояса для инструментов."
+	gain_text = "Запертный лабиринт ведет к свободе. Но только пойманные Управляющие знают верный путь."
 	next_knowledge = list(/datum/heretic_knowledge/lock_grasp)
 	required_atoms = list(
 		/obj/item/knife = 1,
@@ -42,10 +42,10 @@
 
 /datum/heretic_knowledge/lock_grasp
 	name = "Grasp of Lock"
-	desc = "Your mansus grasp allows you to access anything! Right click on an airlock or a locker to force it open. \
-		DNA locks on mechs will be removed, and any pilot will be ejected. Works on consoles. \
-		Makes a distinctive knocking sound on use."
-	gain_text = "Nothing may remain closed from my touch."
+	desc = "Ваша Хватка Мансуса позволяет получить доступ ко всему! ПКМ на шлюзу или шкафу отопрет их. \
+		ДНК замки мехов будут очищены, а пилот извлечен. Также работает на консолях. \
+		Издает характерный звук стучка при использовании."
+	gain_text = "Ничто не останется закрытым от моего прикосновения."
 	next_knowledge = list(/datum/heretic_knowledge/key_ring)
 	cost = 1
 	route = PATH_LOCK
@@ -91,14 +91,14 @@
 
 /datum/heretic_knowledge/key_ring
 	name = "Key Keeper’s Burden"
-	desc = "Allows you to transmute a wallet, an iron rod, and an ID card to create an Eldritch Card. \
-		Hit a pair of airlocks with it to create a pair of portals, which will teleport you between them, but teleport non-heretics randomly. \
-		You can ctrl-click the card to invert this behavior for created portals. \
-		Each card may only sustain a single pair of portals at the same time. \
-		It also functions and appears the same as a regular ID Card. \
-		Attacking it with a normal ID card consumes it and gains its access, and you can use it in-hand to change its appearance to a card you fused. \
-		Does not preserve the card originally used in the ritual."
-	gain_text = "The Keeper sneered. \"These plastic rectangles are a mockery of keys, and I curse every door that desires them.\""
+	desc = "Позволяет трансмутировать кошелек, железный прут и ИД-карта, чтобы создать Мистическую карту. \
+		Ударьте ею по двум шлюзам, чтобы создать спаренный портал, который будет телепортировать вас между ними, а не-еретиков случайно. \
+		С помощью Ctrl-Click по карте, вы можете инвертировать поведение созданных порталов. \
+		Каждая такая карта может иметь только одну пару порталов. \
+		Также, она выглядит и работает как обычная ИД-карта. \
+		Атаки по карте обычными ИД-картами поглощает их и получает их доступ. При использовании в руке, она может изменить свой внешний вид на любую поглощенную. \
+		Оригинальная ИД-карта, использованная в ритуале, также поглощается."
+	gain_text = "Хранитель усмехнулся. \"Эти пластиковые прямоугольники - насмешка над ключами, и я проклинаю каждую дверь, которая их требует.\""
 	required_atoms = list(
 		/obj/item/storage/wallet = 1,
 		/obj/item/stack/rods = 1,
@@ -114,10 +114,10 @@
 
 /datum/heretic_knowledge/mark/lock_mark
 	name = "Mark of Lock"
-	desc = "Your Mansus Grasp now applies the Mark of Lock. \
-		Attack a marked person to bar them from all passages for the duration of the mark. \
-		This will make it so that they have no access whatsoever, even public access doors will reject them."
-	gain_text = "The Gatekeeper was a corrupt Steward. She hindered her fellows for her own twisted amusement."
+	desc = "Ваша Хватка Мансуса теперь накладывает Метку замка. \
+		Активация метки закроет доступ ко всем проходам на время действие метки. \
+		У них не будет доступа к чему либо, даже публичные шлюзы будут отклонять их."
+	gain_text = "Привратница была коррумпированным Управляющим. Она мешала своим собратьям ради собственного извращенного развлечения."
 	next_knowledge = list(/datum/heretic_knowledge/knowledge_ritual/lock)
 	route = PATH_LOCK
 	mark_type = /datum/status_effect/eldritch/lock
@@ -128,9 +128,9 @@
 
 /datum/heretic_knowledge/limited_amount/concierge_rite // item that creates 3 max at a time heretic only barriers, probably should limit to 1 only, holy people can also pass
 	name = "Concierge's Rite"
-	desc = "Allows you to transmute a white crayon, a wooden plank, and a multitool to create a Labyrinth Handbook. \
-		It can materialize a barricade at range that only you and people resistant to magic can pass. 3 uses."
-	gain_text = "The Concierge scribbled my name into the Handbook. \"Welcome to your new home, fellow Steward.\""
+	desc = "Позволяет трансмутировать белый карандаш, деревянную доску и мультитул, чтобы создать Справочник лабиринта. \
+		Оно может материализовать на расстоянии баррикаду, через которую могут пройти только вы и люди с сопротивлением против магии. 3 использования."
+	gain_text = "Консьерж записал мое имя в Справочник. \"Добро пожаловать в ваш новый дом, коллега Управляющий.\""
 	required_atoms = list(
 		/obj/item/toy/crayon/white = 1,
 		/obj/item/stack/sheet/mineral/wood = 1,
@@ -143,9 +143,9 @@
 
 /datum/heretic_knowledge/spell/burglar_finesse
 	name = "Burglar's Finesse"
-	desc = "Grants you Burglar's Finesse, a single-target spell \
-		that puts a random item from the victims backpack into your hand."
-	gain_text = "Consorting with Burglar spirits is frowned upon, but a Steward will always want to learn about new doors."
+	desc = "Дарует вам заклинание, Burglar's Finesse, которое \
+		кладет случайный предмет из сумки жертвы в вашу руку."
+	gain_text = "Общение с духами Взломщиками не одобряется, но Управляющий всегда хочет узнавать о новых дверях."
 	next_knowledge = list(
 		/datum/heretic_knowledge/spell/opening_blast,
 		/datum/heretic_knowledge/reroll_targets,
@@ -159,8 +159,8 @@
 
 /datum/heretic_knowledge/blade_upgrade/flesh/lock //basically a chance-based weeping avulsion version of the former
 	name = "Opening Blade"
-	desc = "Your blade has a chance to cause a weeping avulsion on attack."
-	gain_text = "The Pilgrim-Surgeon was not an Steward. Nonetheless, its blades and sutures proved a match for their keys."
+	desc = "Ваш клинок теперь может накладывать сильное кровотечение при атаке."
+	gain_text = "Пилигрим-Хирург не был Управляющим. Тем не менее, его клинки и швы оказались достойны их ключей."
 	next_knowledge = list(/datum/heretic_knowledge/spell/caretaker_refuge)
 	route = PATH_LOCK
 	wound_type = /datum/wound/slash/flesh/critical
@@ -172,10 +172,10 @@
 
 /datum/heretic_knowledge/spell/caretaker_refuge
 	name = "Caretaker’s Last Refuge"
-	desc = "Gives you a spell that makes you transparent and not dense. Cannot be used near living sentient beings. \
-		While in refuge, you cannot use your hands or spells, and you are immune to slowdown. \
-		You are invincible but unable to harm anything. Cancelled by being hit with an anti-magic item."
-	gain_text = "Jealously, the Guard and the Hound hunted me. But I unlocked my form, and was but a haze, untouchable."
+	desc = "Заклинание, позволяющее становиться прозрачным и безтелесным. Невозможно использовать рядом с живыми разумными существами. \
+		Пока вы находитесь в убежище, вы не можете использовать руки и заклинания, и вы имеете иммунитет к замедлению. \
+		Вы неуязвимы, но также не можете ничему вредить. При попадании анти-магией, эффект прерывается."
+	gain_text = "Страж и Гончая охотились за мной из ревности. Но я раскрыл свою форму, став лишь неприкосаемой дымкой."
 	next_knowledge = list(
 		/datum/heretic_knowledge/ultimate/lock_final,
 		/datum/heretic_knowledge/spell/apetra_vulnera,
@@ -186,17 +186,17 @@
 
 /datum/heretic_knowledge/ultimate/lock_final
 	name = "Unlock the Labyrinth"
-	desc = "The ascension ritual of the Path of Knock. \
-		Bring 3 corpses without organs in their torso to a transmutation rune to complete the ritual. \
-		When completed, you gain the ability to transform into empowered eldritch creatures \
-		and your keyblades will become even deadlier. \
-		In addition, you will create a tear to the Labyrinth's heart; \
-		a tear in reality located at the site of this ritual. \
-		Eldritch creatures will endlessly pour from this rift \
-		who are bound to obey your instructions."
-	gain_text = "The Stewards guided me, and I guided them. \
-		My foes were the Locks and my blades were the Key! \
-		The Labyrinth will be Locked no more, and freedom will be ours! WITNESS US!"
+	desc = "Ритуал вознесения Пути замка. \
+		Принесите 3 трупа без органов в их торсе к руне трансмутации, чтобы завершить ритуал. \
+		При завершении, вы сможете превращаться в усиленных мистических существ, \
+		а ваши ключ-клинки становятся еще смертоноснее. \
+		Также, вы откроете разрыв к сердцу Лабиринта; \
+		разрыв в реальности, который будет находиться на месте ритуала. \
+		Мистические существа будут беспрерывно выходить из разлома, \
+		и они будут подчиненны вам."
+	gain_text = "Управляющие направляли меня, и я направил их. \
+		Мои враги были Замками, а мои клинки - Ключами! \
+		Лабиринт теперь не будет Заперт, свобода будет нашей! УЗРИТЕ НАС!"
 	required_atoms = list(/mob/living/carbon/human = 3)
 	route = PATH_LOCK
 
@@ -209,20 +209,20 @@
 		if(body.stat != DEAD)
 			continue
 		if(LAZYLEN(body.get_organs_for_zone(BODY_ZONE_CHEST)))
-			to_chat(user, span_hierophant_warning("[body] has organs in their chest."))
+			to_chat(user, span_hierophant_warning("[body] имеет органы внутри их торса."))
 			continue
 
 		selected_atoms += body
 
 	if(!LAZYLEN(selected_atoms))
-		loc.balloon_alert(user, "ritual failed, not enough valid bodies!")
+		loc.balloon_alert(user, "ритуал провален, недостаточно подходящих тел!")
 		return FALSE
 	return TRUE
 
 /datum/heretic_knowledge/ultimate/lock_final/on_finished_recipe(mob/living/user, list/selected_atoms, turf/loc)
 	. = ..()
 	priority_announce(
-		text = "Delta-class dimensional anomaly detec[generate_heretic_text()] Reality rended, torn. Gates open, doors open, [user.real_name] has ascended! Fear the tide! [generate_heretic_text()]",
+		text = "Пространственная аномалия Дельта-класса обнар[generate_heretic_text()] Реальность разрушена, разорвана. Врата открыты, двери открыты, [user.real_name] вознесся! Бойтесь нашествия! [generate_heretic_text()]",
 		title = "[generate_heretic_text()]",
 		sound = 'sound/ambience/antag/heretic/ascend_knock.ogg',
 		color_override = "pink",

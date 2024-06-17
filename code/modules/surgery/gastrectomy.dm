@@ -1,5 +1,5 @@
 /datum/surgery/gastrectomy
-	name = "Gastrectomy"
+	name = "Гастрэктомия"
 	surgery_flags = SURGERY_REQUIRE_RESTING | SURGERY_REQUIRE_LIMB | SURGERY_REQUIRES_REAL_LIMB
 	organ_to_manipulate = ORGAN_SLOT_STOMACH
 	possible_locs = list(BODY_ZONE_CHEST)
@@ -23,7 +23,7 @@
 ////Gastrectomy, because we truly needed a way to repair stomachs.
 //95% chance of success to be consistent with most organ-repairing surgeries.
 /datum/surgery_step/gastrectomy
-	name = "remove lower duodenum (scalpel)"
+	name = "удалите часть желудочной стенки (скальпель)"
 	implements = list(
 		TOOL_SCALPEL = 95,
 		/obj/item/melee/energy/sword = 65,
@@ -33,16 +33,17 @@
 	preop_sound = 'sound/surgery/scalpel1.ogg'
 	success_sound = 'sound/surgery/organ1.ogg'
 	failure_sound = 'sound/surgery/organ2.ogg'
+	surgery_effects_mood = TRUE
 
 /datum/surgery_step/gastrectomy/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	display_results(
 		user,
 		target,
-		span_notice("You begin to cut out a damaged piece of [target]'s stomach..."),
-		span_notice("[user] begins to make an incision in [target]."),
-		span_notice("[user] begins to make an incision in [target]."),
+		span_notice("Вы начинаете вырезать поврежденную часть желудка у [target]..."),
+		span_notice("[user] начинает делать надрез у [target]."),
+		span_notice("[user] начинает делать надрез у [target]."),
 	)
-	display_pain(target, "You feel a horrible stab in your gut!")
+	display_pain(target, "Вы чувствуете колющую боль в животе!")
 
 /datum/surgery_step/gastrectomy/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
 	var/mob/living/carbon/human/target_human = target
@@ -53,11 +54,11 @@
 	display_results(
 		user,
 		target,
-		span_notice("You successfully remove the damaged part of [target]'s stomach."),
-		span_notice("[user] successfully removes the damaged part of [target]'s stomach."),
-		span_notice("[user] successfully removes the damaged part of [target]'s stomach."),
+		span_notice("Вы успешно удаляете поврежденную часть желудка у [target]."),
+		span_notice("[user] успешно удаляет поврежденную часть желудка у [target]."),
+		span_notice("[user] успешно удаляет поврежденную часть желудка у [target]."),
 	)
-	display_pain(target, "The pain in your gut ebbs and fades somewhat.")
+	display_pain(target, "Боль в вашем животе утихает и проходит.")
 	return ..()
 
 /datum/surgery_step/gastrectomy/failure(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery)
@@ -66,8 +67,8 @@
 	display_results(
 		user,
 		target,
-		span_warning("You cut the wrong part of [target]'s stomach!"),
-		span_warning("[user] cuts the wrong part of [target]'s stomach!"),
-		span_warning("[user] cuts the wrong part of [target]'s stomach!"),
+		span_warning("Вы удалили не ту часть желудка у [target]!"),
+		span_warning("[user] удалил не ту часть желудка у [target]!"),
+		span_warning("[user] удалил не ту часть желудка у [target]!"),
 	)
-	display_pain(target, "Your stomach throbs with pain; it's not getting any better!")
+	display_pain(target, "У вас болит живот, и от этого не становится легче!")

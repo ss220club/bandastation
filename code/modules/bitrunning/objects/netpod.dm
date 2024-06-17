@@ -5,12 +5,14 @@
 
 	base_icon_state = "netpod"
 	circuit = /obj/item/circuitboard/machine/netpod
-	desc = "A link to the netverse. It has an assortment of cables to connect yourself to a virtual domain."
+	desc = "Связущее звено с сетевым миром. Здесь есть множество кабелей для подключения себя к виртуальному домену."
 	icon = 'icons/obj/machines/bitrunning.dmi'
 	icon_state = "netpod"
 	max_integrity = 300
 	obj_flags = BLOCKS_CONSTRUCTION
 	state_open = TRUE
+	interaction_flags_mouse_drop = NEED_HANDS | NEED_DEXTERITY
+
 	/// Whether we have an ongoing connection
 	var/connected = FALSE
 	/// A player selected outfit by clicking the netpod
@@ -46,30 +48,30 @@
 	. = ..()
 
 	if(isnull(server_ref?.resolve()))
-		. += span_infoplain("It's not connected to anything.")
-		. += span_infoplain("Netpods must be built within 4 tiles of a server.")
+		. += span_infoplain("Оно ни к чему не подключено.")
+		. += span_infoplain("Нетподы должны быть построены на расстоянии 4-х тайлов от сервера.")
 		return
 
-	. += span_infoplain("Drag yourself into the pod to engage the link.")
-	. += span_infoplain("It has limited resuscitation capabilities. Remaining in the pod can heal some injuries.")
-	. += span_infoplain("It has a security system that will alert the occupant if it is tampered with.")
+	. += span_infoplain("Перетащите себя на под, чтобы начать подключение.")
+	. += span_infoplain("Под имеет ограниченные возможности реанимации. Нахождение в поде может вылечить некоторые ранения.")
+	. += span_infoplain("Имеется система безопасности, оповещающая пользователя, если начнется вмешательство с подом.")
 
 	if(isnull(occupant))
-		. += span_notice("It is currently unoccupied.")
+		. += span_notice("Сейчас внутри пусто.")
 		return
 
-	. += span_notice("It is currently occupied by [occupant].")
-	. += span_notice("It can be pried open with a crowbar, but its safety mechanisms will alert the occupant.")
+	. += span_notice("Сейчас внутри находится - [occupant].")
+	. += span_notice("Оно может быть насильно открыто монтировкой, но системы безопасности оповестят пользователя.")
 
 /obj/machinery/netpod/add_context(atom/source, list/context, obj/item/held_item, mob/user)
 	. = ..()
 
 	if(isnull(held_item))
-		context[SCREENTIP_CONTEXT_LMB] = "Select Outfit"
+		context[SCREENTIP_CONTEXT_LMB] = "Выбрать одежду"
 		return CONTEXTUAL_SCREENTIP_SET
 
 	if(istype(held_item, /obj/item/crowbar) && occupant)
-		context[SCREENTIP_CONTEXT_LMB] = "Pry Open"
+		context[SCREENTIP_CONTEXT_LMB] = "Насильно открыть"
 		return CONTEXTUAL_SCREENTIP_SET
 
 	return CONTEXTUAL_SCREENTIP_SET
@@ -93,12 +95,10 @@
 
 	return ..()
 
-/obj/machinery/netpod/MouseDrop_T(mob/target, mob/user)
+/obj/machinery/netpod/mouse_drop_receive(mob/target, mob/user, params)
 	var/mob/living/carbon/player = user
-	if(!iscarbon(player) || !Adjacent(player) || !ISADVANCEDTOOLUSER(player) || !is_operational || !state_open)
-		return
 
-	if(player.buckled || HAS_TRAIT(player, TRAIT_HANDS_BLOCKED))
+	if(!iscarbon(player) || !is_operational || !state_open || player.buckled)
 		return
 
 	close_machine(target)
@@ -263,7 +263,7 @@
 		open_machine()
 		return
 
-	mob_occupant.playsound_local(src, "sound/magic/blink.ogg", 25, TRUE)
+	mob_occupant.playsound_local(src, 'sound/magic/blink.ogg', 25, TRUE)
 	mob_occupant.set_static_vision(2 SECONDS)
 	mob_occupant.set_temp_blindness(1 SECONDS)
 	mob_occupant.Paralyze(2 SECONDS)
@@ -296,24 +296,24 @@
 /obj/machinery/netpod/proc/enter_matrix()
 	var/mob/living/carbon/human/neo = occupant
 	if(!ishuman(neo) || neo.stat == DEAD || isnull(neo.mind))
-		balloon_alert(neo, "invalid occupant.")
+		balloon_alert(neo, "неверный пользователь.")
 		return
 
 	var/obj/machinery/quantum_server/server = find_server()
 	if(isnull(server))
-		balloon_alert(neo, "no server connected!")
+		balloon_alert(neo, "нет подключения к серверу!")
 		return
 
 	var/datum/lazy_template/virtual_domain/generated_domain = server.generated_domain
 	if(isnull(generated_domain) || !server.is_ready)
-		balloon_alert(neo, "nothing loaded!")
+		balloon_alert(neo, "ничего не загружено!")
 		return
 
 	var/mob/living/carbon/current_avatar = avatar_ref?.resolve()
 	if(isnull(current_avatar) || current_avatar.stat != CONSCIOUS) // We need a viable avatar
 		var/obj/structure/hololadder/wayout = server.generate_hololadder()
 		if(isnull(wayout))
-			balloon_alert(neo, "out of bandwidth!")
+			balloon_alert(neo, "кончилась пропускная способность!")
 			return
 		current_avatar = server.generate_avatar(wayout, netsuit)
 		avatar_ref = WEAKREF(current_avatar)

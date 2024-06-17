@@ -1,7 +1,7 @@
 /datum/traitor_objective/target_player/kidnapping
-	name = "Kidnap %TARGET% the %JOB TITLE% and deliver them to %AREA%"
-	description = "%TARGET% holds extremely important information regarding secret NT projects - and you'll need to kidnap and deliver them to %AREA%, where our transport pod will be waiting. \
-		If %TARGET% is delivered alive, you will be rewarded with an additional %TC% telecrystals."
+	name = "Похитьте %TARGET%, %JOB TITLE%, и доставьте в %AREA%"
+	description = "%TARGET% содержит чрезвычайно важную информацию о секретных проектах НТ — и вам нужно будет похитить ее и доставить в %AREA%, где будет ждать наша транспортировочный под. \
+		Если %TARGET% будет доставлен живым, вам дополнительно будет выдано %TC% телекристаллов."
 
 	abstract_type = /datum/traitor_objective/target_player/kidnapping
 
@@ -190,7 +190,7 @@
 /datum/traitor_objective/target_player/kidnapping/generate_ui_buttons(mob/user)
 	var/list/buttons = list()
 	if(!pod_called)
-		buttons += add_ui_button("Call Extraction Pod", "Pressing this will call down an extraction pod.", "rocket", "call_pod")
+		buttons += add_ui_button("Вызвать транспортировочный под", "Нажатие этой кнопки вызовет под для транспортировки цели.", "rocket", "call_pod")
 	return buttons
 
 /datum/traitor_objective/target_player/kidnapping/ui_perform_action(mob/living/user, action)
@@ -203,11 +203,11 @@
 			var/area/target_area = get_area(target)
 
 			if(user_area.type != dropoff_area)
-				to_chat(user, span_warning("You must be in [initial(dropoff_area.name)] to call the extraction pod."))
+				to_chat(user, span_warning("Вы должны быть в [initial(dropoff_area.name)], чтобы вызвать транспортировочный под."))
 				return
 
 			if(target_area.type != dropoff_area)
-				to_chat(user, span_warning("[target.real_name] must be in [initial(dropoff_area.name)] for you to call the extraction pod."))
+				to_chat(user, span_warning("[target.real_name] должна быть в [initial(dropoff_area.name)], чтобы вы могли вызвать транспортировочный под."))
 				return
 
 			call_pod(user)
@@ -263,9 +263,9 @@
 	sent_mob.adjust_dizzy(10 SECONDS)
 	sent_mob.set_eye_blur_if_lower(100 SECONDS)
 	sent_mob.dna.species.give_important_for_life(sent_mob) // so plasmamen do not get left for dead
-	to_chat(sent_mob, span_hypnophrase("A million voices echo in your head... <i>\"Your mind held many valuable secrets - \
-		we thank you for providing them. Your value is expended, and you will be ransomed back to your station. We always get paid, \
-		so it's only a matter of time before we ship you back...\"</i>"))
+	to_chat(sent_mob, span_hypnophrase("Множество голосов отдаются эхом в вашей голове... <i>\"Вам разум хранил множество важных секретов - \
+		мы благодарим вас за предоставления их нам. Ваша ценность упала, и вы будете выкуплены обратно на свою станцию. Мы всегда получаем свое, \
+		поэтому это только дело времени, когда вы вернетесь обратно на ваш корабль...\"</i>"))
 
 /datum/traitor_objective/target_player/kidnapping/proc/return_target(mob/living/carbon/human/sent_mob)
 	if(!sent_mob || QDELETED(sent_mob)) //suicided and qdeleted themselves

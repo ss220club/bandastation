@@ -1,9 +1,9 @@
 /datum/lazy_template/virtual_domain/starfront_saloon
-	name = "Starfront Saloon"
+	name = "Салун \"Звездный фронт\""
 	cost = BITRUNNER_COST_MEDIUM
-	desc = "Looks like you stepped onto the wrong street, partner. Hope you brought your gunslinging skills."
+	desc = "Видимо, ты забрел не на ту улицу, партнер. Надеемся, что ты умеешь стрелять."
 	difficulty = BITRUNNER_DIFFICULTY_HIGH
-	help_text = "One of these rooms has the cache we're looking for. Find it and get out."
+	help_text = "Одна из комнат имеет нужный нам ящик. Найдите его и выбирайтесь."
 	is_modular = TRUE
 	key = "starfront_saloon"
 	map_name = "starfront_saloon"

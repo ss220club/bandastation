@@ -1,8 +1,8 @@
 // The mawed crucible, a heretic structure that can create potions from bodyparts and organs.
 /obj/structure/destructible/eldritch_crucible
 	name = "mawed crucible"
-	desc = "A deep basin made of cast iron, immortalized by steel-like teeth holding it in place. \
-		Staring at the vile extract within fills your mind with terrible ideas."
+	desc = "Глубокий бассейн из чугуна, увековеченный стальными зубцами, удерживающими его на месте. \
+		Когда вы смотрите на мерзкий экстракт внутри, у вас в голове рождаются ужасные мысли."
 	icon = 'icons/obj/antags/eldritch.dmi'
 	icon_state = "crucible"
 	base_icon_state = "crucible"
@@ -19,12 +19,12 @@
 
 /obj/structure/destructible/eldritch_crucible/Initialize(mapload)
 	. = ..()
-	break_message = span_warning("[src] falls apart with a thud!")
+	break_message = span_warning("[src] разваливается с грохотом!")
 
 /obj/structure/destructible/eldritch_crucible/atom_deconstruct(disassembled = TRUE)
 	// Create a spillage if we were destroyed with leftover mass
 	if(current_mass)
-		break_message = span_warning("[src] falls apart with a thud, spilling shining extract everywhere!")
+		break_message = span_warning("[src] разваливается с грохотом, рассыпая сияющий экстракт повсюду!")
 		var/turf/our_turf = get_turf(src)
 
 		new /obj/effect/decal/cleanable/greenglow(our_turf)
@@ -42,19 +42,19 @@
 
 	if(current_mass < max_mass)
 		var/to_fill = max_mass - current_mass
-		. += span_notice("[src] requires <b>[to_fill]</b> more organ[to_fill == 1 ? "":"s"] or bodypart[to_fill == 1 ? "":"s"].")
+		. += span_notice("Для [src] необходимо больше органов или частей тела: <b>[to_fill]</b>.")
 	else
-		. += span_boldnotice("[src] is bubbling to the brim with viscous liquid, and is ready to use.")
+		. += span_boldnotice("[src] пузырится вязкой жидкостью до краев и готов к использованию.")
 
-	. += span_notice("You can <b>[anchored ? "unanchor and move":"anchor in place"]</b> [src] with a <b>Codex Cicatrix</b> or <b>Mansus Grasp</b>.")
-	. += span_info("The following potions can be brewed:")
+	. += span_notice("Вы можете <b>[anchored ? "открепить и переместить":"закрепить на месте"]</b> [src] с помощью <b>Codex Cicatrix</b> или <b>хваткой Мансуса</b>.")
+	. += span_info("Можно сварить следующие зелья:")
 	for(var/obj/item/eldritch_potion/potion as anything in subtypesof(/obj/item/eldritch_potion))
-		var/potion_string = span_info("\tThe " + initial(potion.name) + " - " + initial(potion.crucible_tip))
+		var/potion_string = span_info(initial(potion.name) + " - " + initial(potion.crucible_tip))
 		. += potion_string
 
 /obj/structure/destructible/eldritch_crucible/examine_status(mob/user)
 	if(IS_HERETIC_OR_MONSTER(user) || isobserver(user))
-		return span_notice("It's at <b>[round(atom_integrity * 100 / max_integrity)]%</b> stability.")
+		return span_notice("Стабильность: <b>[round(atom_integrity * 100 / max_integrity)]%</b>.")
 	return ..()
 
 /obj/structure/destructible/eldritch_crucible/attacked_by(obj/item/weapon, mob/living/user)
@@ -68,14 +68,14 @@
 	if(istype(weapon, /obj/item/codex_cicatrix) || istype(weapon, /obj/item/melee/touch_attack/mansus_fist))
 		playsound(src, 'sound/items/deconstruct.ogg', 30, TRUE, ignore_walls = FALSE)
 		set_anchored(!anchored)
-		balloon_alert(user, "[anchored ? "":"un"]anchored")
+		balloon_alert(user, "[anchored ? "закреплен":"откреплен"]")
 		return TRUE
 
 	if(isbodypart(weapon))
 
 		var/obj/item/bodypart/consumed = weapon
 		if(!IS_ORGANIC_LIMB(consumed))
-			balloon_alert(user, "not organic!")
+			balloon_alert(user, "не органика!")
 			return
 
 		consume_fuel(user, consumed)
@@ -84,10 +84,10 @@
 	if(isorgan(weapon))
 		var/obj/item/organ/consumed = weapon
 		if(!IS_ORGANIC_ORGAN(consumed))
-			balloon_alert(user, "not organic!")
+			balloon_alert(user, "не органика!")
 			return
 		if(consumed.organ_flags & ORGAN_VITAL) // Basically, don't eat organs like brains
-			balloon_alert(user, "invalid organ!")
+			balloon_alert(user, "неподходящий орган!")
 			return
 
 		consume_fuel(user, consumed)
@@ -109,11 +109,11 @@
 		return TRUE
 
 	if(in_use)
-		balloon_alert(user, "in use!")
+		balloon_alert(user, "используется!")
 		return TRUE
 
 	if(current_mass < max_mass)
-		balloon_alert(user, "not full enough!")
+		balloon_alert(user, "не достаточно полный!")
 		return TRUE
 
 	INVOKE_ASYNC(src, PROC_REF(show_radial), user)
@@ -160,8 +160,8 @@
 	var/obj/item/spawned_pot = new spawned_type(drop_location())
 
 	playsound(src, 'sound/misc/desecration-02.ogg', 75, TRUE)
-	visible_message(span_notice("[src]'s shining liquid drains into a flask, creating a [spawned_pot.name]!"))
-	balloon_alert(user, "potion created")
+	visible_message(span_notice("Сияющая жидкость из [src] стекает в колбу, создавая [spawned_pot.name]!"))
+	balloon_alert(user, "зелье готово")
 
 	current_mass = 0
 	update_appearance(UPDATE_ICON_STATE)
@@ -179,7 +179,7 @@
 	if(QDELETED(arm))
 		return
 
-	to_chat(user, span_userdanger("[src] grabs your [arm.name]!"))
+	to_chat(user, span_userdanger("[src] хватает вашу [arm.name]!"))
 	arm.dismember()
 	consume_fuel(consumed = arm)
 
@@ -190,15 +190,15 @@
 /obj/structure/destructible/eldritch_crucible/proc/consume_fuel(mob/living/feeder, obj/item/consumed)
 	if(current_mass >= max_mass)
 		if(feeder)
-			balloon_alert(feeder, "crucible full!")
+			balloon_alert(feeder, "уже полон!")
 		return
 
 	current_mass++
 	playsound(src, 'sound/items/eatfood.ogg', 100, TRUE)
-	visible_message(span_notice("[src] devours [consumed] and fills itself with a little bit of liquid!"))
+	visible_message(span_notice("[src] пожирает [consumed] и наполняет себя жидкостью!"))
 
 	if(feeder)
-		balloon_alert(feeder, "crubile fed ([current_mass] / [max_mass])")
+		balloon_alert(feeder, "накормлен ([current_mass] / [max_mass])")
 
 	qdel(consumed)
 	update_appearance(UPDATE_ICON_STATE)
@@ -236,13 +236,13 @@
 	playsound(src, 'sound/effects/bubbles.ogg', 50, TRUE)
 
 	if(!IS_HERETIC_OR_MONSTER(user))
-		to_chat(user, span_danger("You down some of the liquid from [src]. The taste causes you to retch, and the glass vanishes."))
+		to_chat(user, span_danger("Вы выпиваете немного жидкости из [src]. Вкус вызывает у вас отвращение, и стакан исчезает."))
 		user.reagents?.add_reagent(/datum/reagent/eldritch, 10)
 		user.adjust_disgust(50)
 		qdel(src)
 		return TRUE
 
-	to_chat(user, span_notice("You drink the viscous liquid from [src], causing the glass to dematerialize."))
+	to_chat(user, span_notice("Вы выпиваете вязкую жидкость из [src], стакан дематериализовался."))
 	potion_effect(user)
 	qdel(src)
 	return TRUE
@@ -258,23 +258,23 @@
 
 /obj/item/eldritch_potion/crucible_soul
 	name = "brew of the crucible soul"
-	desc = "A glass bottle contianing a bright orange, translucent liquid."
+	desc = "Стеклянная бутылка, содержащая ярко-оранжевую, полупрозрачную жидкость."
 	icon_state = "crucible_soul"
 	status_effect = /datum/status_effect/crucible_soul
-	crucible_tip = "Allows you to walk through walls. After expiring, you are teleported to your original location. Lasts 15 seconds."
+	crucible_tip = "Позволяет проходить сквозь стены. После истечения срока действия вы телепортируетесь в исходное место. Действует 15 секунд."
 
 /obj/item/eldritch_potion/duskndawn
 	name = "brew of dusk and dawn"
-	desc = "A glass bottle contianing a dull yellow liquid. It seems to fade in and out with regularity."
+	desc = "Стеклянная бутылка, содержащая тусклую желтую жидкость. Кажется, что она регулярно мерцает, исчезая и появляясь."
 	icon_state = "clarity"
 	status_effect = /datum/status_effect/duskndawn
-	crucible_tip = "Allows you to see through walls and objects. Lasts 60 seconds."
+	crucible_tip = "Позволяет видеть сквозь стены и предметы. Действует 60 секунд."
 
 /obj/item/eldritch_potion/wounded
 	name = "brew of the wounded soldier"
-	desc = "A glass bottle contianing a colorless, dark liquid."
+	desc = "Стеклянная бутылка, содержащая бесцветную темную жидкость."
 	icon_state = "marshal"
 	status_effect = /datum/status_effect/marshal
-	crucible_tip = "Causes all wounds you are experiencing to begin to heal you. Fractures, sprains, cuts, and punctures will heal bruises, \
-		and flesh damage will heal burns. The more severe the wounds, the stronger the healing. Additionally, prevents slowdown from damage. \
-		Lasts 60 seconds. "
+	crucible_tip = "Приводит к тому, что все ранения начинают лечить вас. Переломы, растяжения, порезы и проколы исцеляют ушибы \
+		а повреждения плоти исцеляют ожоги. Чем серьезнее раны, тем сильнее исцеление. Кроме того, предотвращает замедление от повреждений. \
+		Действует 60 секунд. "

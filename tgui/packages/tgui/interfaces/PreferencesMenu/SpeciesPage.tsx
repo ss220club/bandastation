@@ -136,7 +136,7 @@ const Diet = (props: { diet: Species['diet'] }) => {
         <FoodList
           food={liked_food}
           icon="heart"
-          name="Liked food"
+          name="Любимая пища"
           className="color-pink"
         />
       </Stack.Item>
@@ -145,7 +145,7 @@ const Diet = (props: { diet: Species['diet'] }) => {
         <FoodList
           food={disliked_food.filter(notIn(IGNORE_UNLESS_LIKED))}
           icon="thumbs-down"
-          name="Disliked food"
+          name="Нелюбимая пища"
           className="color-red"
         />
       </Stack.Item>
@@ -154,7 +154,7 @@ const Diet = (props: { diet: Species['diet'] }) => {
         <FoodList
           food={toxic_food.filter(notIn(IGNORE_UNLESS_LIKED))}
           icon="biohazard"
-          name="Toxic food"
+          name="Токсичная пища"
           className="color-olive"
         />
       </Stack.Item>
@@ -259,11 +259,7 @@ const SpeciesPageInner = (props: {
   return (
     <Stack vertical fill>
       <Stack.Item>
-        <Button
-          icon="arrow-left"
-          onClick={props.handleClose}
-          content="Go Back"
-        />
+        <Button icon="arrow-left" onClick={props.handleClose} content="Назад" />
       </Stack.Item>
 
       <Stack.Item grow>
@@ -310,11 +306,9 @@ const SpeciesPageInner = (props: {
                         )
                       }
                     >
-                      <Section title="Description">
-                        {currentSpecies.desc}
-                      </Section>
+                      <Section title="Описание">{currentSpecies.desc}</Section>
 
-                      <Section title="Features">
+                      <Section title="Черты">
                         <SpeciesPerks perks={currentSpecies.perks} />
                       </Section>
                     </Section>
@@ -330,7 +324,7 @@ const SpeciesPageInner = (props: {
               </Box>
 
               <Box mt={1}>
-                <Section title="Lore">
+                <Section title="История">
                   <BlockQuote>
                     {currentSpecies.lore.map((text, index) => (
                       <Box key={index} maxWidth="100%">
@@ -366,7 +360,7 @@ export const SpeciesPage = (props: { closeSpecies: () => void }) => {
             />
           );
         } else {
-          return <Box>Loading species...</Box>;
+          return <Box>Загрузка видов...</Box>;
         }
       }}
     />

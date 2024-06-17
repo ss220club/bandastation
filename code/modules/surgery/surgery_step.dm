@@ -1,3 +1,8 @@
+#define SURGERY_STATE_STARTED "surgery_started"
+#define SURGERY_STATE_FAILURE "surgery_failed"
+#define SURGERY_STATE_SUCCESS "surgery_success"
+#define SURGERY_MOOD_CATEGORY "surgery"
+
 /datum/surgery_step
 	var/name
 	var/list/implements = list() //format is path = probability of success. alternatively
@@ -12,11 +17,20 @@
 	var/preop_sound //Sound played when the step is started
 	var/success_sound //Sound played if the step succeeded
 	var/failure_sound //Sound played if the step fails
+	///If the surgery causes mood changes if the patient is conscious.
+	var/surgery_effects_mood = FALSE
+	///Which mood event to give the patient when surgery is starting while they're conscious. This should be permanent/not have a timer until the surgery either succeeds or fails, as those states will immediately replace it. Mostly just flavor text.
+	var/datum/mood_event/surgery/surgery_started_mood_event = /datum/mood_event/surgery
+	///Which mood event to give the conscious patient when surgery succeeds. Lasts far shorter than if it failed.
+	var/datum/mood_event/surgery/surgery_success_mood_event = /datum/mood_event/surgery/success
+	///Which mood event to give the consious patient when surgery fails. Lasts muuuuuch longer.
+	var/datum/mood_event/surgery/surgery_failure_mood_event = /datum/mood_event/surgery/failure
+
 
 /datum/surgery_step/proc/try_op(mob/user, mob/living/target, target_zone, obj/item/tool, datum/surgery/surgery, try_to_fail = FALSE)
 	var/success = FALSE
 	if(surgery.organ_to_manipulate && !target.get_organ_slot(surgery.organ_to_manipulate))
-		to_chat(user, span_warning("[target] seems to be missing the organ necessary to complete this surgery!"))
+		to_chat(user, span_warning("Кажется, у [target] не хватает необходимого органа, для завершения этой операции!"))
 		return FALSE
 
 	if(accept_hand)
@@ -51,7 +65,7 @@
 			if(get_location_accessible(target, target_zone) || (surgery.surgery_flags & SURGERY_IGNORE_CLOTHES))
 				initiate(user, target, target_zone, tool, surgery, try_to_fail)
 			else
-				to_chat(user, span_warning("You need to expose [target]'s [target.parse_zone_with_bodypart(target_zone)] to perform surgery on it!"))
+				to_chat(user, span_warning("Вам надо снять все, что может закрывать <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target], для того чтобы начать операцию!"))
 			return TRUE //returns TRUE so we don't stab the guy in the dick or wherever.
 
 	if(repeatable)
@@ -83,9 +97,11 @@
 	var/advance = FALSE
 
 	if(preop(user, target, target_zone, tool, surgery) == SURGERY_STEP_FAIL)
+		update_surgery_mood(target, SURGERY_STATE_FAILURE)
 		surgery.step_in_progress = FALSE
 		return FALSE
 
+	update_surgery_mood(target, SURGERY_STATE_STARTED)
 	play_preop_sound(user, target, target_zone, tool, surgery) // Here because most steps overwrite preop
 
 	if(tool)
@@ -122,11 +138,13 @@
 		if((prob(100-fail_prob) || (iscyborg(user) && !silicons_obey_prob)) && chem_check_result && !try_to_fail)
 
 			if(success(user, target, target_zone, tool, surgery))
+				update_surgery_mood(target, SURGERY_STATE_SUCCESS)
 				play_success_sound(user, target, target_zone, tool, surgery)
 				advance = TRUE
 		else
 			if(failure(user, target, target_zone, tool, surgery, fail_prob))
 				play_failure_sound(user, target, target_zone, tool, surgery)
+				update_surgery_mood(target, SURGERY_STATE_FAILURE)
 				advance = TRUE
 			if(chem_check_result)
 				return .(user, target, target_zone, tool, surgery, try_to_fail) //automatically re-attempt if failed for reason other than lack of required chemical
@@ -135,19 +153,50 @@
 			if(surgery.status > surgery.steps.len)
 				surgery.complete(user)
 
+	else if(!QDELETED(target))
+		update_surgery_mood(target, SURGERY_STATE_FAILURE)
+
 	if(target.stat == DEAD && was_sleeping && user.client)
 		user.client.give_award(/datum/award/achievement/jobs/sandman, user)
 
 	surgery.step_in_progress = FALSE
 	return advance
 
+/**
+ * Handles updating the mob's mood depending on the surgery states.
+ * * surgery_state = SURGERY_STATE_STARTED, SURGERY_STATE_FAILURE, SURGERY_STATE_SUCCESS
+ * * To prevent typos, the event category is defined as SURGERY_MOOD_CATEGORY ("surgery")
+*/
+/datum/surgery_step/proc/update_surgery_mood(mob/living/target, surgery_state)
+	if(!target)
+		CRASH("Not passed a target, how did we get here?")
+	if(!surgery_effects_mood)
+		return
+	if(HAS_TRAIT(target, TRAIT_ANALGESIA))
+		target.clear_mood_event(SURGERY_MOOD_CATEGORY) //incase they gained the trait mid-surgery. has the added side effect that if someone has a bad surgical memory/mood and gets drunk & goes back to surgery, they'll forget they hated it, which is kinda funny imo.
+		return
+	if(target.stat >= UNCONSCIOUS)
+		var/datum/mood_event/surgery/target_mood_event = target.mob_mood.mood_events[SURGERY_MOOD_CATEGORY]
+		if(target_mood_event?.surgery_completed) //don't give sleeping mobs trauma. that said, if they fell asleep mid-surgery after already getting the bad mood, lets make sure they wake up to a (hopefully) happy memory.
+			return
+	switch(surgery_state)
+		if(SURGERY_STATE_STARTED)
+			target.add_mood_event(SURGERY_MOOD_CATEGORY, surgery_started_mood_event)
+		if(SURGERY_STATE_SUCCESS)
+			target.add_mood_event(SURGERY_MOOD_CATEGORY, surgery_success_mood_event)
+		if(SURGERY_STATE_FAILURE)
+			target.add_mood_event(SURGERY_MOOD_CATEGORY, surgery_failure_mood_event)
+		else
+			CRASH("passed invalid surgery_state, \"[surgery_state]\".")
+
+
 /datum/surgery_step/proc/preop(mob/user, mob/living/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	display_results(
 		user,
 		target,
-		span_notice("You begin to perform surgery on [target]..."),
-		span_notice("[user] begins to perform surgery on [target]."),
-		span_notice("[user] begins to perform surgery on [target]."),
+		span_notice("Вы начинаете проводить операцию на [target]..."),
+		span_notice("[user] начинает проводить операцию на [target]."),
+		span_notice("[user] начинает проводить операцию на [target]."),
 	)
 
 /datum/surgery_step/proc/play_preop_sound(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
@@ -169,9 +218,9 @@
 		display_results(
 			user,
 			target,
-			span_notice("You succeed."),
-			span_notice("[user] succeeds!"),
-			span_notice("[user] finishes."),
+			span_notice("Вам удалось."),
+			span_notice("[user] удалось!"),
+			span_notice("[user] заканчивает."),
 		)
 	return TRUE
 
@@ -184,18 +233,18 @@
 	var/screwedmessage = ""
 	switch(fail_prob)
 		if(0 to 24)
-			screwedmessage = " You almost had it, though."
+			screwedmessage = "А ведь у вас почти получилось."
 		if(50 to 74)//25 to 49 = no extra text
-			screwedmessage = " This is hard to get right in these conditions..."
+			screwedmessage = " В таких условиях трудно сделать все правильно...."
 		if(75 to 99)
-			screwedmessage = " This is practically impossible in these conditions..."
+			screwedmessage = " В таких условиях это практически невозможно..."
 
 	display_results(
 		user,
 		target,
-		span_warning("You screw up![screwedmessage]"),
-		span_warning("[user] screws up!"),
-		span_notice("[user] finishes."), TRUE) //By default the patient will notice if the wrong thing has been cut
+		span_warning("ошибается![screwedmessage]"),
+		span_warning("[user] ошибается!"),
+		span_notice("[user] ошибается."), TRUE) //By default the patient will notice if the wrong thing has been cut
 	return FALSE
 
 /datum/surgery_step/proc/play_failure_sound(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
@@ -246,15 +295,15 @@
 /datum/surgery_step/proc/display_results(mob/user, mob/living/target, self_message, detailed_message, vague_message, target_detailed = FALSE)
 	user.visible_message(detailed_message, self_message, vision_distance = 1, ignored_mobs = target_detailed ? null : target)
 	if(!target_detailed)
-		var/you_feel = pick("a brief pain", "your body tense up", "an unnerving sensation")
+		var/you_feel = pick("легкую боль", ", как ваше тело напрягается", "тревожное ощущение")
 		if(!vague_message)
 			if(detailed_message)
 				stack_trace("DIDN'T GET PASSED A VAGUE MESSAGE.")
 				vague_message = detailed_message
 			else
 				stack_trace("NO MESSAGES TO SEND TO TARGET!")
-				vague_message = span_notice("You feel [you_feel] as you are operated on.")
-		target.show_message(vague_message, MSG_VISUAL, span_notice("You feel [you_feel] as you are operated on."))
+				vague_message = span_notice("Вы чувствуете [you_feel], по мере того как вас оперируют.")
+		target.show_message(vague_message, MSG_VISUAL, span_notice("Вы чувствуете [you_feel], по мере того как вас оперируют."))
 /**
  * Sends a pain message to the target, including a chance of screaming.
  *
@@ -266,8 +315,12 @@
 /datum/surgery_step/proc/display_pain(mob/living/target, pain_message, mechanical_surgery = FALSE)
 	if(target.stat < UNCONSCIOUS)
 		if(HAS_TRAIT(target, TRAIT_ANALGESIA))
-			to_chat(target, span_notice("You feel a dull, numb sensation as your body is surgically operated on."))
+			if(!pain_message)
+				return
+			to_chat(target, span_notice("Вы чувствуете онемение, пока ваше тело оперируют."))
 		else
+			if(!pain_message)
+				return
 			to_chat(target, span_userdanger(pain_message))
 			if(prob(30) && !mechanical_surgery)
 				target.emote("scream")
@@ -276,3 +329,7 @@
 #undef SURGERY_SPEED_DISSECTION_MODIFIER
 #undef SURGERY_SPEED_MORBID_CURIOSITY
 #undef SURGERY_SLOWDOWN_CAP_MULTIPLIER
+#undef SURGERY_STATE_STARTED
+#undef SURGERY_STATE_FAILURE
+#undef SURGERY_STATE_SUCCESS
+#undef SURGERY_MOOD_CATEGORY

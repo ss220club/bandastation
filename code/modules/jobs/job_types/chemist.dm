@@ -1,7 +1,7 @@
 /datum/job/chemist
 	title = JOB_CHEMIST
-	description = "Supply the doctors with chemicals, make medicine, as well as \
-		less likable substances in the comfort of a fully reinforced room."
+	description = "Варите все необходимые химикаты для врачей, делайте препараты, а также \
+		менее приятные вещества в комфортной и полностью укрепленной комнате."
 	department_head = list(JOB_CHIEF_MEDICAL_OFFICER)
 	faction = FACTION_STATION
 	total_positions = 2

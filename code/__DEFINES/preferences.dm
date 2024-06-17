@@ -37,11 +37,11 @@
 
 #define TOGGLES_DEFAULT_CHAT (CHAT_OOC|CHAT_DEAD|CHAT_PRAYER|CHAT_PULLR|CHAT_GHOSTPDA|CHAT_GHOSTRADIO|CHAT_BANKCARD|CHAT_GHOSTLAWS|CHAT_LOGIN_LOGOUT)
 
-#define PARALLAX_INSANE "Insane"
-#define PARALLAX_HIGH "High"
-#define PARALLAX_MED "Medium"
-#define PARALLAX_LOW "Low"
-#define PARALLAX_DISABLE "Disabled"
+#define PARALLAX_INSANE "Безумный"
+#define PARALLAX_HIGH "Высокий"
+#define PARALLAX_MED "Средний"
+#define PARALLAX_LOW "Низкий"
+#define PARALLAX_DISABLE "Отключен"
 
 #define SCALING_METHOD_NORMAL "normal"
 #define SCALING_METHOD_DISTORT "distort"
@@ -142,3 +142,17 @@
 
 /// The key used for sprite accessories that should never actually be applied to the player.
 #define SPRITE_ACCESSORY_NONE "None"
+
+// Loadout
+/// Used to make something not recolorable even if it's capable
+#define DONT_GREYSCALE -1
+// Loadout item info keys
+// Changing these will break existing loadouts
+/// Tracks GAGS color information
+#define INFO_GREYSCALE "greyscale"
+/// Used to set custom names
+#define INFO_NAMED "name"
+/// Used for specific alt-reskins, like the pride pin
+#define INFO_RESKIN "reskin"
+/// Handles which layer the item will be on, for accessories
+#define INFO_LAYER "layer"

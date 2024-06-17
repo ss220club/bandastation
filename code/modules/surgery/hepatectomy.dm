@@ -1,5 +1,5 @@
 /datum/surgery/hepatectomy
-	name = "Hepatectomy"
+	name = "Гепатэктомия"
 	surgery_flags = SURGERY_REQUIRE_RESTING | SURGERY_REQUIRE_LIMB | SURGERY_REQUIRES_REAL_LIMB
 	organ_to_manipulate = ORGAN_SLOT_LIVER
 	possible_locs = list(BODY_ZONE_CHEST)
@@ -22,7 +22,7 @@
 ////hepatectomy, removes damaged parts of the liver so that the liver may regenerate properly
 //95% chance of success, not 100 because organs are delicate
 /datum/surgery_step/hepatectomy
-	name = "remove damaged liver section (scalpel)"
+	name = "удалите поврежденный участок печени (скальпель)"
 	implements = list(
 		TOOL_SCALPEL = 95,
 		/obj/item/melee/energy/sword = 65,
@@ -32,16 +32,17 @@
 	preop_sound = 'sound/surgery/scalpel1.ogg'
 	success_sound = 'sound/surgery/organ1.ogg'
 	failure_sound = 'sound/surgery/organ2.ogg'
+	surgery_effects_mood = TRUE
 
 /datum/surgery_step/hepatectomy/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	display_results(
 		user,
 		target,
-		span_notice("You begin to cut out a damaged piece of [target]'s liver..."),
-		span_notice("[user] begins to make an incision in [target]."),
-		span_notice("[user] begins to make an incision in [target]."),
+		span_notice("Вы начинаете вырезать поврежденную часть печени у [target]..."),
+		span_notice("[user] начинает делать надрез у [target]."),
+		span_notice("[user] начинает делать надрез у [target]."),
 	)
-	display_pain(target, "Your abdomen burns in horrific stabbing pain!")
+	display_pain(target, "Ваша брюшная полость горит от ужасной колющей боли!")
 
 /datum/surgery_step/hepatectomy/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
 	var/mob/living/carbon/human/human_target = target
@@ -52,11 +53,11 @@
 	display_results(
 		user,
 		target,
-		span_notice("You successfully remove the damaged part of [target]'s liver."),
-		span_notice("[user] successfully removes the damaged part of [target]'s liver."),
-		span_notice("[user] successfully removes the damaged part of [target]'s liver."),
+		span_notice("Вы успешно удаляете поврежденную часть печени у [target]."),
+		span_notice("[user] успешно удаляет поврежденную часть печени у [target]."),
+		span_notice("[user] успешно удаляет поврежденную часть печени у [target]."),
 	)
-	display_pain(target, "The pain receeds slightly.")
+	display_pain(target, "Боль немного стихает.")
 	return ..()
 
 /datum/surgery_step/hepatectomy/failure(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery)
@@ -65,8 +66,8 @@
 	display_results(
 		user,
 		target,
-		span_warning("You cut the wrong part of [target]'s liver!"),
-		span_warning("[user] cuts the wrong part of [target]'s liver!"),
-		span_warning("[user] cuts the wrong part of [target]'s liver!"),
+		span_warning("Вы удалили не ту часть печени у [target]!"),
+		span_warning("[user] удалил не ту часть печени у [target]!"),
+		span_warning("[user] удалил не ту часть печени у [target]!"),
 	)
-	display_pain(target, "You feel a sharp stab inside your abdomen!")
+	display_pain(target, "Вы чувствуете острую боль в брюшной полости!")

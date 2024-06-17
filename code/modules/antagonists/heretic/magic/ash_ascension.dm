@@ -1,7 +1,7 @@
 /// Creates a constant Ring of Fire around the caster for a set duration of time, which follows them.
 /datum/action/cooldown/spell/fire_sworn
 	name = "Oath of Flame"
-	desc = "For a minute, you will passively create a ring of fire around you."
+	desc = "В течение минуты вы будете пассивно создавать вокруг себя огненное кольцо."
 	background_icon_state = "bg_heretic"
 	overlay_icon_state = "bg_heretic_border"
 	button_icon = 'icons/mob/actions/actions_ecult.dmi'
@@ -53,7 +53,8 @@
 		return
 
 	for(var/turf/nearby_turf as anything in RANGE_TURFS(1, owner))
-		new /obj/effect/hotspot(nearby_turf)
+		var/obj/effect/hotspot/flame_tile = locate(nearby_turf) || new(nearby_turf)
+		flame_tile.alpha = 125
 		nearby_turf.hotspot_expose(750, 25 * seconds_between_ticks, 1)
 		for(var/mob/living/fried_living in nearby_turf.contents - owner)
 			fried_living.apply_damage(2.5 * seconds_between_ticks, BURN)
@@ -61,7 +62,7 @@
 /// Creates one, large, expanding ring of fire around the caster, which does not follow them.
 /datum/action/cooldown/spell/fire_cascade
 	name = "Lesser Fire Cascade"
-	desc = "Heats the air around you."
+	desc = "Нагревает воздух вокруг вас."
 	background_icon_state = "bg_heretic"
 	overlay_icon_state = "bg_heretic_border"
 	button_icon = 'icons/mob/actions/actions_ecult.dmi'
@@ -86,7 +87,8 @@
 /datum/action/cooldown/spell/fire_cascade/proc/fire_cascade(atom/centre, flame_radius = 1)
 	for(var/i in 0 to flame_radius)
 		for(var/turf/nearby_turf as anything in spiral_range_turfs(i + 1, centre))
-			new /obj/effect/hotspot(nearby_turf)
+			var/obj/effect/hotspot/flame_tile = locate(nearby_turf) || new(nearby_turf)
+			flame_tile.alpha = 125
 			nearby_turf.hotspot_expose(750, 50, 1)
 			for(var/mob/living/fried_living in nearby_turf.contents - owner)
 				fried_living.apply_damage(5, BURN)
@@ -100,7 +102,7 @@
 // Currently unused - releases streams of fire around the caster.
 /datum/action/cooldown/spell/pointed/ash_beams
 	name = "Nightwatcher's Rite"
-	desc = "A powerful spell that releases five streams of eldritch fire towards the target."
+	desc = "Мощное заклинание, выпускающее в цель пять потоков мистического пламени."
 	background_icon_state = "bg_heretic"
 	overlay_icon_state = "bg_heretic_border"
 	button_icon = 'icons/mob/actions/actions_ecult.dmi'
@@ -146,13 +148,13 @@
 
 		for(var/mob/living/L in T.contents)
 			if(L.can_block_magic())
-				L.visible_message(span_danger("The spell bounces off of [L]!"), span_danger("The spell bounces off of you!"))
+				L.visible_message(span_danger("Заклинание отскакивает от [L]!"), span_danger("Заклинание отскакивает от вас!"))
 				continue
 			if(L in hit_list || L == source)
 				continue
 			hit_list += L
 			L.adjustFireLoss(20)
-			to_chat(L, span_userdanger("You're hit by [source]'s eldritch flames!"))
+			to_chat(L, span_userdanger("Вы поражены мистическим пламенем от [source]!"))
 
 		new /obj/effect/hotspot(T)
 		T.hotspot_expose(700,50,1)

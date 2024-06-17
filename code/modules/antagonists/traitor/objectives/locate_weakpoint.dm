@@ -6,8 +6,8 @@
 	weight = OBJECTIVE_WEIGHT_UNLIKELY
 
 /datum/traitor_objective/locate_weakpoint
-	name = "Triangulate station's structural weakpoint and detonate an explosive charge nearby."
-	description = "You will be given a handheld device that you'll need to use in %AREA1% and %AREA2% in order to triangulate the station's structural weakpoint and detonate an explosive charge there. Warning: Once you start scanning either one of the areas, station's AI will be alerted."
+	name = "Триангулируйте слабое место в структуре станции и взорвите заряд взрывчатки поблизости."
+	description = "Вы получите портативное устройство, которое нужно будет использовать в %AREA1% и %AREA2%, чтобы триангулировать слабое место в конструкции станции и устроить там взрыв. Внимание: Как только вы начнете сканировать одну из областей, ИИ станции будет предупрежден."
 
 	progression_minimum = 45 MINUTES
 	progression_reward = list(15 MINUTES, 20 MINUTES)
@@ -89,9 +89,9 @@
 /datum/traitor_objective/locate_weakpoint/generate_ui_buttons(mob/user)
 	var/list/buttons = list()
 	if(!locator_sent)
-		buttons += add_ui_button("", "Pressing this will materialize a weakpoint locator in your hand.", "globe", "locator")
+		buttons += add_ui_button("", "Нажмите, чтобы материализовать локатор слабых мест станции.", "globe", "locator")
 	if(weakpoint_found && !bomb_sent)
-		buttons += add_ui_button("", "Pressing this will materialize an ES8 explosive charge in your hand.", "bomb", "shatter_charge")
+		buttons += add_ui_button("", "Нажмите, чтобы материализовать взрывчатый заряд ES8.", "bomb", "shatter_charge")
 	return buttons
 
 /datum/traitor_objective/locate_weakpoint/ui_perform_action(mob/living/user, action)
@@ -103,7 +103,7 @@
 			locator_sent = TRUE
 			var/obj/item/weakpoint_locator/locator = new(user.drop_location(), src)
 			user.put_in_hands(locator)
-			locator.balloon_alert(user, "the weakpoint locator materializes in your hand")
+			locator.balloon_alert(user, "локатор слабых мест материализуется в руке")
 
 		if("shatter_charge")
 			if(bomb_sent)
@@ -111,10 +111,10 @@
 			bomb_sent = TRUE
 			var/obj/item/grenade/c4/es8/bomb = new(user.drop_location(), src)
 			user.put_in_hands(bomb)
-			bomb.balloon_alert(user, "the ES8 charge materializes in your hand")
+			bomb.balloon_alert(user, "заряд ES8 материализуется в руке")
 
 /datum/traitor_objective/locate_weakpoint/proc/weakpoint_located()
-	description = "Structural weakpoint has been located in %AREA%. Detonate an ES8 explosive charge there to create a shockwave that will severely damage the station."
+	description = "Слабое место обнаружено в %AREA%. Взорвите заряд ES8 в обнаруженной зоне, чтобы вызвать взрывную волну, значительно повреждающую станцию."
 	replace_in_name("%AREA%", initial(weakpoint_area.name))
 	weakpoint_found = TRUE
 
@@ -126,15 +126,15 @@
 	else
 		explosion(epicenter, devastation_range = 3, heavy_impact_range = 6, light_impact_range = 9, explosion_cause = src)
 	priority_announce(
-				"Attention crew, it appears that a high-power explosive charge has been detonated in your station's weakpoint, causing severe structural damage.",
-				"[command_name()] High-Priority Update"
+				"Внимание экипаж, похоже, что в слабом месте вашей станции взорвался мощный взрывной заряд, вызвавший серьезные структурные повреждения.",
+				"[command_name()] Высокоприоритетное оповещение"
 				)
 
 	succeed_objective()
 
 /obj/item/weakpoint_locator
 	name = "structural weakpoint locator"
-	desc = "A device that can triangulate station's structural weakpoint. It has to be used in %AREA1% and %AREA2% in order to triangulate the weakpoint. Warning: station's AI will be notified as soon as the process starts!"
+	desc = "Устройство, которое может определить структурное слабое место станции. Его необходимо использовать в %AREA1% и %AREA2% для триангуляции слабого места. Внимание: ИИ станции будет уведомлен, как только процесс начнется!"
 	icon = 'icons/obj/antags/syndicate_tools.dmi'
 	icon_state = "weakpoint_locator"
 	inhand_icon_state = "weakpoint_locator"
@@ -168,27 +168,27 @@
 	var/datum/traitor_objective/locate_weakpoint/objective = objective_weakref.resolve()
 
 	if(!objective || objective.objective_state == OBJECTIVE_STATE_INACTIVE)
-		to_chat(user, span_warning("Your time to use [src] has not come yet."))
+		to_chat(user, span_warning("Ваше время использовать [src] еще не пришло."))
 		return
 
 	if(objective.handler.owner != user.mind)
-		to_chat(user, span_warning("You have zero clue how to use [src]."))
+		to_chat(user, span_warning("Вы понятия не имеете, как использовать [src]."))
 		return
 
 	var/area/user_area = get_area(user)
 	if(!(user_area.type in objective.scan_areas))
-		balloon_alert(user, "invalid area!")
+		balloon_alert(user, "неверная область!")
 		playsound(user, 'sound/machines/buzz-sigh.ogg', 30, TRUE)
 		return
 
 	if(!objective.scan_areas[user_area.type])
-		balloon_alert(user, "already scanned here!")
+		balloon_alert(user, "место уже отсканированно!")
 		playsound(user, 'sound/machines/buzz-sigh.ogg', 30, TRUE)
 		return
 
-	user.visible_message(span_danger("[user] presses a few buttons on [src] and it starts ominously beeping!"), span_notice("You activate [src] and start scanning the area. Do not exit [get_area_name(user, TRUE)] until the scan finishes!"))
+	user.visible_message(span_danger("[user] нажимает несколько кнопок на [src], и предмет начинает зловеще пищать!"), span_notice("Вы активируете [src] и начинаете сканировать местность. Не выходите [get_area_name(user, TRUE)], пока сканирование не завершится!"))
 	playsound(user, 'sound/machines/triple_beep.ogg', 30, TRUE)
-	var/alertstr = span_userdanger("Network Alert: Station network probing attempt detected[user_area?" in [get_area_name(user, TRUE)]":". Unable to pinpoint location"].")
+	var/alertstr = span_userdanger("Сетевое оповещение: обнаружена попытка анализирование сети станции[user_area?" в [get_area_name(user, TRUE)]":". Невозможно определить местоположение"].")
 	for(var/mob/living/silicon/ai/ai_player in GLOB.player_list)
 		to_chat(ai_player, alertstr)
 
@@ -200,10 +200,10 @@
 	objective.scan_areas[user_area.type] = FALSE
 	for(var/area/scan_area as anything in objective.scan_areas)
 		if(objective.scan_areas[scan_area])
-			say("Next scanning location is [initial(scan_area.name)]")
+			say("Следующее место сканирования: [initial(scan_area.name)]")
 			return
 
-	to_chat(user, span_notice("Scan finished. Structural weakpoint located in [initial(objective.weakpoint_area.name)]."))
+	to_chat(user, span_notice("Сканирование завершено. Слабое место конструкции расположено в [initial(objective.weakpoint_area.name)]."))
 	objective.weakpoint_located()
 
 /obj/item/weakpoint_locator/proc/scan_checks(mob/living/user, area/user_area, datum/traitor_objective/locate_weakpoint/parent_objective)
@@ -224,7 +224,7 @@
 
 /obj/item/grenade/c4/es8
 	name = "ES8 explosive charge"
-	desc = "A high-power explosive charge designed to create a shockwave in a structural weakpoint of the station."
+	desc = "Мощный заряд взрывчатого вещества, предназначенный для создания ударной волны в слабом месте конструкции станции."
 
 	icon_state = "plasticx40"
 	inhand_icon_state = "plasticx4"
@@ -243,28 +243,24 @@
 	objective_weakref = null
 	return ..()
 
-/obj/item/grenade/c4/es8/afterattack(atom/movable/target, mob/user, flag)
-	if(!user.mind)
-		return
-
+/obj/item/grenade/c4/es8/plant_c4(atom/bomb_target, mob/living/user)
 	if(!IS_TRAITOR(user))
-		to_chat(user, span_warning("You can't seem to find a way to detonate the charge."))
-		return
+		to_chat(user, span_warning("Похоже, вы не можете найти способ взорвать заряд."))
+		return FALSE
 
 	var/datum/traitor_objective/locate_weakpoint/objective = objective_weakref.resolve()
-
 	if(!objective || objective.objective_state == OBJECTIVE_STATE_INACTIVE || objective.handler.owner != user.mind)
-		to_chat(user, span_warning("You don't think it would be wise to use [src]."))
-		return
+		to_chat(user, span_warning("Вы не думаете, что было бы разумно использовать [src]."))
+		return FALSE
 
-	var/area/target_area = get_area(target)
+	var/area/target_area = get_area(bomb_target)
 	if (target_area.type != objective.weakpoint_area)
-		to_chat(user, span_warning("[src] can only be detonated in [initial(objective.weakpoint_area.name)]."))
-		return
+		to_chat(user, span_warning("[src] можно взорвать только в [initial(objective.weakpoint_area.name)]."))
+		return FALSE
 
-	if(!isfloorturf(target) && !iswallturf(target))
-		to_chat(user, span_warning("[src] can only be planted on a wall or the floor!"))
-		return
+	if(!isfloorturf(bomb_target) && !iswallturf(bomb_target))
+		to_chat(user, span_warning("[src] можно ставить только на стену или пол"))
+		return FALSE
 
 	return ..()
 
@@ -277,7 +273,7 @@
 
 	if (target_area.type != objective.weakpoint_area)
 		var/obj/item/grenade/c4/es8/new_bomb = new(target.drop_location())
-		new_bomb.balloon_alert_to_viewers("invalid location!")
+		new_bomb.balloon_alert_to_viewers("неверная локация!")
 		target.cut_overlay(plastic_overlay, TRUE)
 		qdel(src)
 		return

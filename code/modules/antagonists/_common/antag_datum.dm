@@ -341,7 +341,7 @@ GLOBAL_LIST_EMPTY(antagonists)
  */
 /datum/antagonist/proc/greet()
 	if(!silent)
-		to_chat(owner.current, span_big("You are \the [src]."))
+		to_chat(owner.current, span_big("Вы [src.name]."))
 
 /**
  * Proc that sends fluff or instructional messages to the player when they lose this antag datum.
@@ -349,7 +349,7 @@ GLOBAL_LIST_EMPTY(antagonists)
  */
 /datum/antagonist/proc/farewell()
 	if(!silent)
-		to_chat(owner.current, span_userdanger("You are no longer \the [src]!"))
+		to_chat(owner.current, span_userdanger("Вы больше не [src.name]!"))
 
 /**
  * Proc that assigns this antagonist's ascribed moodlet to the player.
@@ -407,7 +407,7 @@ GLOBAL_LIST_EMPTY(antagonists)
  * Appears at start of roundend_catagory section.
  */
 /datum/antagonist/proc/roundend_report_header()
-	return "<span class='header'>The [roundend_category] were:</span><br>"
+	return "<span class='header'>[roundend_category] были:</span><br>"
 
 /**
  * Proc that sends string data for the round-end report.

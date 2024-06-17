@@ -50,14 +50,14 @@
 
 	switch (stage)
 		if (STAGE_SHOULD_SWAP_HAND)
-			var/hand_name = hand_to_watch % 2 == 0 ? "right" : "left"
+			var/hand_name = hand_to_watch % 2 == 0 ? "правую" : "левую"
 			show_instruction(keybinding_message(
 				/datum/keybinding/mob/swap_hands,
-				"Press '%KEY%' to use your [hand_name] hand",
-				"Click '<b>SWAP</b>' to use your [hand_name] hand",
+				"Нажмите '%KEY%', чтобы сделать [hand_name] руку активной",
+				"Кликните по '<b>SWAP</b>', чтобы сделать [hand_name] руку активной",
 			))
 		if (STAGE_PICK_UP_ITEM)
-			show_instruction("Pick something up!")
+			show_instruction("Возьмите что-нибудь!")
 
 /datum/tutorial/switch_hands/proc/on_swap_hands()
 	SIGNAL_HANDLER
