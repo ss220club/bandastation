@@ -6,7 +6,7 @@
 	alpha = 110
 
 /// Automatically generates all subtypes for a decal with the given path.
-#define LINE_DECAL_SUBTYPE_HELPER_BANDA(path)\
+#define LINE_DECAL_SUBTYPE_HELPER(path)\
 ##path/line {\
 	icon_state = "line";\
 }\
@@ -40,49 +40,49 @@
 	name = "blue line decal"
 	color = "#52B4E9"
 
-LINE_DECAL_SUBTYPE_HELPER_BANDA(/obj/effect/turf_decal/line/blue)
+LINE_DECAL_SUBTYPE_HELPER(/obj/effect/turf_decal/line/blue)
 
 /// Dark blue lines
 /obj/effect/turf_decal/line/dark_blue
 	name = "dark blue line decal"
 	color = "#486091"
 
-LINE_DECAL_SUBTYPE_HELPER_BANDA(/obj/effect/turf_decal/line/dark_blue)
+LINE_DECAL_SUBTYPE_HELPER(/obj/effect/turf_decal/line/dark_blue)
 
 /// Green lines
 /obj/effect/turf_decal/line/green
 	name = "green line decal"
 	color = "#9FED58"
 
-LINE_DECAL_SUBTYPE_HELPER_BANDA(/obj/effect/turf_decal/line/green)
+LINE_DECAL_SUBTYPE_HELPER(/obj/effect/turf_decal/line/green)
 
 /// Dark green lines
 /obj/effect/turf_decal/line/dark_green
 	name = "dark green line decal"
 	color = "#439C1E"
 
-LINE_DECAL_SUBTYPE_HELPER_BANDA(/obj/effect/turf_decal/line/dark_green)
+LINE_DECAL_SUBTYPE_HELPER(/obj/effect/turf_decal/line/dark_green)
 
 /// Yellow lines
 /obj/effect/turf_decal/line/yellow
 	name = "yellow line decal"
 	color = "#EFB341"
 
-LINE_DECAL_SUBTYPE_HELPER_BANDA(/obj/effect/turf_decal/line/yellow)
+LINE_DECAL_SUBTYPE_HELPER(/obj/effect/turf_decal/line/yellow)
 
 /// Red lines
 /obj/effect/turf_decal/line/red
 	name = "red line decal"
 	color = "#DE3A3A"
 
-LINE_DECAL_SUBTYPE_HELPER_BANDA(/obj/effect/turf_decal/line/red)
+LINE_DECAL_SUBTYPE_HELPER(/obj/effect/turf_decal/line/red)
 
 /// Dark red lines
 /obj/effect/turf_decal/line/dark_red
 	name = "dark red line decal"
 	color = "#B11111"
 
-LINE_DECAL_SUBTYPE_HELPER_BANDA(/obj/effect/turf_decal/line/dark_red)
+LINE_DECAL_SUBTYPE_HELPER(/obj/effect/turf_decal/line/dark_red)
 
 /// Bar lines
 /obj/effect/turf_decal/line/bar
@@ -90,21 +90,21 @@ LINE_DECAL_SUBTYPE_HELPER_BANDA(/obj/effect/turf_decal/line/dark_red)
 	color = "#791500"
 	alpha = 130
 
-LINE_DECAL_SUBTYPE_HELPER_BANDA(/obj/effect/turf_decal/line/bar)
+LINE_DECAL_SUBTYPE_HELPER(/obj/effect/turf_decal/line/bar)
 
 /// Purple lines
 /obj/effect/turf_decal/line/purple
 	name = "purple line decal"
 	color = "#D381C9"
 
-LINE_DECAL_SUBTYPE_HELPER_BANDA(/obj/effect/turf_decal/line/purple)
+LINE_DECAL_SUBTYPE_HELPER(/obj/effect/turf_decal/line/purple)
 
 /// Brown lines
 /obj/effect/turf_decal/line/brown
 	name = "brown line decal"
 	color = "#A46106"
 
-LINE_DECAL_SUBTYPE_HELPER_BANDA(/obj/effect/turf_decal/line/brown)
+LINE_DECAL_SUBTYPE_HELPER(/obj/effect/turf_decal/line/brown)
 
 /// Neutral lines
 /obj/effect/turf_decal/line/neutral
@@ -112,11 +112,11 @@ LINE_DECAL_SUBTYPE_HELPER_BANDA(/obj/effect/turf_decal/line/brown)
 	color = "#D4D4D4"
 	alpha = 50
 
-LINE_DECAL_SUBTYPE_HELPER_BANDA(/obj/effect/turf_decal/line/neutral)
+LINE_DECAL_SUBTYPE_HELPER(/obj/effect/turf_decal/line/neutral)
 
 /// Dark lines
 /obj/effect/turf_decal/line/dark
 	name = "dark line decal"
 	color = "#0e0f0f"
 
-LINE_DECAL_SUBTYPE_HELPER_BANDA(/obj/effect/turf_decal/line/dark)
+LINE_DECAL_SUBTYPE_HELPER(/obj/effect/turf_decal/line/dark)
