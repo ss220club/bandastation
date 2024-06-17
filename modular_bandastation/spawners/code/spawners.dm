@@ -90,6 +90,8 @@
 	)
 
 /obj/effect/spawner/random/food_or_drink/CCfood/alcohol
+	icon = 'modular_bandastation/spawners/icons/spawners.dmi'
+	icon_state = "drinks"
 	spawn_loot_count = 1
 	loot = list(
 		/obj/item/reagent_containers/cup/glass/bottle/whiskey = 10,
@@ -102,6 +104,7 @@
 /// Maint loot spawners
 /obj/effect/spawner/random/maintenance
 	icon = 'modular_bandastation/spawners/icons/spawners.dmi'
+	icon_state = "loot"
 
 /obj/effect/spawner/random/maintenance/three
 	icon_state = "trippleloot"
@@ -112,46 +115,32 @@
 	spawn_loot_count = 5
 
 /// Random spawners
-/obj/effect/spawner/random/mod
+/obj/effect/spawner/random/mod/maint
 	icon = 'modular_bandastation/spawners/icons/spawners.dmi'
 	icon_state = "mod"
 
-/obj/effect/spawner/random/syndicate/loot
-	icon = 'modular_bandastation/spawners/icons/spawners.dmi'
-	icon_state = "common"
-
-/obj/effect/spawner/random/syndicate/loot/level2
-	icon_state = "rare"
-
-/obj/effect/spawner/random/syndicate/loot/level3
-	icon_state = "officer"
-
-/obj/effect/spawner/random/syndicate/loot/level4
-	icon_state = "armory"
-
-/obj/effect/spawner/random/syndicate/loot/stetchkin
-	icon_state = "stetchkin"
-
-/obj/item/reagent_containers/pill/random_drugs
-	icon = 'modular_bandastation/spawners/icons/spawners.dmi'
-	icon_state = "pills"
-
 /// Space battle spawners
-/datum/outfit/corpse_spacebattle
+/obj/effect/mob_spawn/corpse/spacebattle
+	mob_type = /mob/living/carbon/human
+
+/datum/outfit/spacebattle
+	id = /obj/item/card/id/advanced
+
+/datum/outfit/spacebattle/corpse_assistant
 	uniform = /obj/item/clothing/under/color/random
-	id = /obj/item/card/id/away/old
+	id_trim = /datum/id_trim/job/assistant
 	shoes = /obj/item/clothing/shoes/sneakers/black
 
 /obj/effect/mob_spawn/corpse/spacebattle/assistant
 	name = "Dead Civilian"
 	mob_name = "Ship Personnel"
-	outfit = /datum/outfit/corpse_spacebattle
+	outfit = /datum/outfit/spacebattle/corpse_assistant
 
-/datum/outfit/corpse_spacebattle_sec
-	id = /obj/item/card/id/away/old/sec
-	uniform = /obj/item/clothing/under/rank/security
+/datum/outfit/spacebattle/corpse_sec
+	id_trim = /datum/id_trim/job/security_officer
+	uniform = /obj/item/clothing/under/rank/security/officer
 	belt = /obj/item/storage/belt/holster
-	suit = /obj/item/clothing/suit/armor/vest
+	suit = /obj/item/clothing/suit/armor/vest/secjacket
 	shoes = /obj/item/clothing/shoes/jackboots
 	head = /obj/item/clothing/head/helmet
 	gloves = /obj/item/clothing/gloves/fingerless
@@ -165,11 +154,11 @@
 /obj/effect/mob_spawn/corpse/spacebattle/security
 	name = "Dead Officer"
 	mob_name = "Ship Officer"
-	outfit = /datum/outfit/corpse_spacebattle_sec
+	outfit = /datum/outfit/spacebattle/corpse_sec
 
-/datum/outfit/corpse_spacebattle_engi
-	id = /obj/item/card/id/away/old/eng
-	uniform = /obj/item/clothing/under/rank/engineering
+/datum/outfit/spacebattle/corpse_engi
+	id_trim = /datum/id_trim/job/station_engineer
+	uniform = /obj/item/clothing/under/rank/engineering/engineer
 	belt = /obj/item/storage/belt/utility/full
 	suit = /obj/item/clothing/suit/hazardvest
 	shoes = /obj/item/clothing/shoes/workboots
@@ -188,19 +177,19 @@
 /obj/effect/mob_spawn/corpse/spacebattle/engineer
 	name = "Dead Engineer"
 	mob_name = "Engineer"
-	outfit = /datum/outfit/corpse_spacebattle_engi
+	outfit = /datum/outfit/spacebattle/corpse_engi
 
-/datum/outfit/corpse_spacebattle_engi/space
-	suit = /obj/item/clothing/suit/space/eva
-	head = /obj/item/clothing/head/helmet/space/eva
-	shoes = /obj/item/clothing/shoes/magboots
+/datum/outfit/spacebattle/corpse_engi/space
+	back = /obj/item/mod/control/pre_equipped/engineering
+	suit = null
+	head = null
 
 /obj/effect/mob_spawn/corpse/spacebattle/engineer/space
-	outfit = /datum/outfit/corpse_spacebattle_engi/space
+	outfit = /datum/outfit/spacebattle/corpse_engi/space
 
-/datum/outfit/corpse_spacebattle_medic
+/datum/outfit/spacebattle/corpse_medic
 	id_trim = /datum/id_trim/job/medical_doctor
-	uniform = /obj/item/clothing/under/rank/medical
+	uniform = /obj/item/clothing/under/rank/medical/doctor
 	suit = /obj/item/clothing/suit/toggle/labcoat
 	shoes = /obj/item/clothing/shoes/sneakers/white
 	back = /obj/item/storage/backpack/satchel/med
@@ -212,16 +201,17 @@
 /obj/effect/mob_spawn/corpse/spacebattle/medic
 	name = "Dead Medic"
 	mob_name = "Medic"
+	outfit = /datum/outfit/spacebattle/corpse_medic
 
-/datum/outfit/corpse_spacebattle_bridgeofficer
-	id = /obj/item/card/id/away/old/sec
+/datum/outfit/spacebattle/corpse_bridgeofficer
+	id_trim = /datum/id_trim/job/captain
 	uniform = /obj/item/clothing/under/rank/captain
 	belt = /obj/item/storage/belt/holster
-	suit = /obj/item/clothing/suit/armor/vest
+	suit = /obj/item/clothing/suit/armor/vest/blueshirt
 	shoes = /obj/item/clothing/shoes/jackboots
-	head = /obj/item/clothing/head/helmet/military
+	head = /obj/item/clothing/head/helmet/marine
 	gloves = /obj/item/clothing/gloves/fingerless
-	back = /obj/item/storage/backpack/satchel/sec
+	back = /obj/item/storage/backpack/satchel/cap
 	backpack_contents = list(
 		/obj/item/reagent_containers/pill/patch/aiuri = 1,
 		/obj/item/reagent_containers/pill/patch/libital = 1,
@@ -232,15 +222,15 @@
 /obj/effect/mob_spawn/corpse/spacebattle/bridgeofficer
 	name = "Bridge Officer"
 	mob_name = "Bridge Officer"
-	outfit = /datum/outfit/corpse_spacebattle_bridgeofficer
+	outfit = /datum/outfit/spacebattle/corpse_bridgeofficer
 
-/datum/outfit/corpse_spacebattle_sci
-	id = /obj/item/card/id/away/old/sci
-	uniform = /obj/item/clothing/under/rank/rnd
+/datum/outfit/spacebattle/corpse_sci
+	id_trim = /datum/id_trim/job/scientist
+	uniform = /obj/item/clothing/under/rank/rnd/scientist
 	shoes = /obj/item/clothing/shoes/sneakers/black
 	suit = /obj/item/clothing/suit/toggle/labcoat/science
 
 /obj/effect/mob_spawn/corpse/spacebattle/scientist
 	name = "Dead Scientist"
 	mob_name = "Scientist"
-	outfit = /datum/outfit/corpse_spacebattle_sci
+	outfit = /datum/outfit/spacebattle/corpse_sci
