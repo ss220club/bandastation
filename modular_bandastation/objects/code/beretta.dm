@@ -215,7 +215,6 @@
 	materials = list(/datum/material/iron = SHEET_MATERIAL_AMOUNT, /datum/material/silver = SHEET_MATERIAL_AMOUNT * 0.3)
 	build_path = /obj/item/ammo_box/beretta/mm919
 	category = list(
-		RND_CATEGORY_INITIAL,
 		RND_CATEGORY_WEAPONS + RND_SUBCATEGORY_WEAPONS_AMMO,
 	)
 	departmental_flags = DEPARTMENT_BITFLAG_SECURITY
@@ -232,9 +231,9 @@
 	)
 	build_path = /obj/item/ammo_box/beretta/mmap919
 	category = list(
-		RND_CATEGORY_INITIAL,
 		RND_CATEGORY_WEAPONS + RND_SUBCATEGORY_WEAPONS_AMMO,
 	)
+	departmental_flags = DEPARTMENT_BITFLAG_SECURITY
 
 /datum/design/box_beretta/bluespace
 	name = "Beretta M9 Bluespace Ammo Box (9mm)"
@@ -248,9 +247,9 @@
 	)
 	build_path = /obj/item/ammo_box/beretta/mmbsp919
 	category = list(
-		RND_CATEGORY_INITIAL,
 		RND_CATEGORY_WEAPONS + RND_SUBCATEGORY_WEAPONS_AMMO,
 	)
+	departmental_flags = DEPARTMENT_BITFLAG_SECURITY
 
 /datum/techweb_node/beretta_ammo
 	id = "beretta_ammo"

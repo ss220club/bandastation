@@ -55,10 +55,9 @@
 	)
 	build_path = /obj/item/weaponcrafting/gunkit/electrostaff
 	category = list(
-		RND_CATEGORY_INITIAL,
 		RND_CATEGORY_WEAPONS + RND_SUBCATEGORY_WEAPONS_KITS,
 	)
-	departmental_flags = DEPARTMENT_SECURITY
+	departmental_flags = DEPARTMENT_BITFLAG_SECURITY
 
 /datum/crafting_recipe/electrostaff
 	name = "Electrostaff"
@@ -76,8 +75,8 @@
 	id = "electrostaff"
 	display_name = "Advanced Security Baton Technology"
 	description = "Настоящая двуручная дубинка службы безопасности."
-	prereq_ids = list("weaponry")
+	prereq_ids = list("weaponry",)
 	design_ids = list(
-		"electrostaff_kit"
+		"electrostaff_kit",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)

@@ -192,6 +192,7 @@
 	icon_state = "pea_bullet"
 	damage = 5
 	damage_type = STAMINA
+	wound_bonus = -100
 
 /obj/projectile/bullet/peas_shooter/on_hit(atom/target, blocked, pierce_hit)
 	. = ..()

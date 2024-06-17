@@ -68,45 +68,43 @@
 
 	if(!do_after(user, 3 SECONDS, target = src))
 		return
-	cell.give(166)
+	cell.give(100000)
 	user.adjust_nutrition(-25)
 	. = ..()
 
 /datum/design/gate_gun_mk1
 	name = "Gate Energy Gun MK1"
 	desc = "An energy gun with an experimental miniaturized reactor. Only works in the gate" //не отображаемое описание, т.к. печатается без кейса
-	id = "gate_energy_gun"
+	id = "gate_gun"
 	build_type = PROTOLATHE | AWAY_LATHE
 	materials = list(/datum/material/iron = SHEET_MATERIAL_AMOUNT * 3, /datum/material/glass = SHEET_MATERIAL_AMOUNT * 0.75, /datum/material/uranium = SHEET_MATERIAL_AMOUNT * 0.75, /datum/material/titanium = SHEET_MATERIAL_AMOUNT * 0.25)
 	build_path = /obj/item/gun/energy/laser/awaymission_aeg/rnd
 	category = list(
-		RND_CATEGORY_INITIAL,
 		RND_CATEGORY_WEAPONS + RND_SUBCATEGORY_WEAPONS_RANGED,
 	)
-	departmental_flags = DEPARTMENT_CARGO
+	departmental_flags = DEPARTMENT_BITFLAG_CARGO
 
 /datum/design/gate_gun_mk2
 	name = "Gate Energy Gun MK2"
 	desc = "An energy gun with an experimental miniaturized reactor. Only works in the gate" //не отображаемое описание, т.к. печатается без кейса
-	id = "gate_energy_gun_mk2"
+	id = "gate_gun_mk2"
 	build_type = PROTOLATHE | AWAY_LATHE
 	materials = list(/datum/material/iron = SHEET_MATERIAL_AMOUNT * 4, /datum/material/glass = SHEET_MATERIAL_AMOUNT, /datum/material/uranium = SHEET_MATERIAL_AMOUNT, /datum/material/titanium = SHEET_MATERIAL_AMOUNT * 0.25, /datum/material/silver = SHEET_MATERIAL_AMOUNT * 0.5)
 	build_path = /obj/item/gun/energy/laser/awaymission_aeg/rnd/mk2
 	category = list(
-		RND_CATEGORY_INITIAL,
-		RND_SUBCATEGORY_WEAPONS_RANGED + RND_SUBCATEGORY_WEAPONS_RANGED,
+		RND_CATEGORY_WEAPONS + RND_SUBCATEGORY_WEAPONS_RANGED,
 	)
-	departmental_flags = DEPARTMENT_CARGO
+	departmental_flags = DEPARTMENT_BITFLAG_CARGO
 
 /datum/techweb_node/awaymission_aeg
-	id = "awaymission_aeg"
+	id = "gate_gun"
 	display_name = "Awaymission Laser Weaponary Research"
 	description = "Изучение лазерного оружия для гейтвея."
 	prereq_ids = list(
 		"adv_weaponry",
 	)
 	design_ids = list(
-		"gate_energy_gun_mk2",
-		"gate_energy_gun_mk1",
+		"gate_gun_mk2",
+		"gate_gun",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
