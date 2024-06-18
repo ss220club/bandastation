@@ -121,22 +121,20 @@
 
 /// Space battle spawners
 /obj/effect/mob_spawn/corpse/spacebattle
+	name = "Dead Civilian"
+	mob_name = "Ship Personnel"
 	mob_type = /mob/living/carbon/human
+	outfit = /datum/outfit/spacebattle
 
 /datum/outfit/spacebattle
+	name = "Dead spacebattle assistant"
 	id = /obj/item/card/id/advanced
-
-/datum/outfit/spacebattle/corpse_assistant
 	uniform = /obj/item/clothing/under/color/random
 	id_trim = /datum/id_trim/job/assistant
 	shoes = /obj/item/clothing/shoes/sneakers/black
 
-/obj/effect/mob_spawn/corpse/spacebattle/assistant
-	name = "Dead Civilian"
-	mob_name = "Ship Personnel"
-	outfit = /datum/outfit/spacebattle/corpse_assistant
-
 /datum/outfit/spacebattle/corpse_sec
+	name = "Dead spacebattle sec officer"
 	id_trim = /datum/id_trim/job/security_officer
 	uniform = /obj/item/clothing/under/rank/security/officer
 	belt = /obj/item/storage/belt/holster
@@ -157,6 +155,7 @@
 	outfit = /datum/outfit/spacebattle/corpse_sec
 
 /datum/outfit/spacebattle/corpse_engi
+	name = "Dead spacebattle engineer"
 	id_trim = /datum/id_trim/job/station_engineer
 	uniform = /obj/item/clothing/under/rank/engineering/engineer
 	belt = /obj/item/storage/belt/utility/full
@@ -174,20 +173,36 @@
 		/obj/item/stack/sheet/iron = 10,
 		/obj/item/stock_parts/cell/high = 1,
 	)
+
 /obj/effect/mob_spawn/corpse/spacebattle/engineer
 	name = "Dead Engineer"
 	mob_name = "Engineer"
 	outfit = /datum/outfit/spacebattle/corpse_engi
 
-/datum/outfit/spacebattle/corpse_engi/space
+/datum/outfit/spacebattle/corpse_engi_space
+	name = "Dead spacebattle space engineer"
 	back = /obj/item/mod/control/pre_equipped/engineering
-	suit = null
-	head = null
+	id_trim = /datum/id_trim/job/station_engineer
+	uniform = /obj/item/clothing/under/rank/engineering/engineer
+	belt = /obj/item/storage/belt/utility/full
+	shoes = /obj/item/clothing/shoes/workboots
+	mask = /obj/item/clothing/mask/gas
+	glasses = /obj/item/clothing/glasses/meson
+	suit_store = /obj/item/tank/internals/emergency_oxygen/engi
+	gloves = /obj/item/clothing/gloves/color/yellow
+	backpack_contents = list(
+		/obj/item/storage/box/emergencytank = 1,
+		/obj/item/clothing/head/utility/welding = 1,
+		/obj/item/stack/sheet/iron = 10,
+		/obj/item/stock_parts/cell/high = 1,
+	)
 
 /obj/effect/mob_spawn/corpse/spacebattle/engineer/space
-	outfit = /datum/outfit/spacebattle/corpse_engi/space
+	name = "Dead space engineer"
+	outfit = /datum/outfit/spacebattle/corpse_engi_space
 
 /datum/outfit/spacebattle/corpse_medic
+	name = "Dead spacebattle medic"
 	id_trim = /datum/id_trim/job/medical_doctor
 	uniform = /obj/item/clothing/under/rank/medical/doctor
 	suit = /obj/item/clothing/suit/toggle/labcoat
@@ -204,6 +219,7 @@
 	outfit = /datum/outfit/spacebattle/corpse_medic
 
 /datum/outfit/spacebattle/corpse_bridgeofficer
+	name = "Dead spacebattle bridgeofficer"
 	id_trim = /datum/id_trim/job/captain
 	uniform = /obj/item/clothing/under/rank/captain
 	belt = /obj/item/storage/belt/holster
@@ -225,6 +241,7 @@
 	outfit = /datum/outfit/spacebattle/corpse_bridgeofficer
 
 /datum/outfit/spacebattle/corpse_sci
+	name = "Dead spacebattle scientist"
 	id_trim = /datum/id_trim/job/scientist
 	uniform = /obj/item/clothing/under/rank/rnd/scientist
 	shoes = /obj/item/clothing/shoes/sneakers/black

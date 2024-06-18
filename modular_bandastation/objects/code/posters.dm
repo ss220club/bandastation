@@ -1,6 +1,3 @@
-/obj/structure/sign/poster
-	icon = 'modular_bandastation/objects/icons/posters.dmi'
-
 // Contraband
 /obj/structure/sign/poster/contraband/lady
 	name = "Соблазнительная Красотка"

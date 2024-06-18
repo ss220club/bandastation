@@ -2,22 +2,6 @@
 * Use that for creating non-varedited objects,
 * or that you don't want to specify because they're insignificant for personal DM file
 */
-// Fountain
-/obj/structure/statue/fountain
-	name = "фонтан"
-	desc = "Фонтан, собранный из настоящего, тёсанного камня."
-	icon = 'modular_bandastation/objects/icons/fountain.dmi'
-	icon_state = "fountain_g"
-	layer = ABOVE_ALL_MOB_LAYER
-	anchored = TRUE
-	pixel_x = -16
-
-/obj/structure/statue/fountain/aged
-	name = "старый фонтан"
-	desc = "Фонтан, собранный из настоящего, тёсанного камня. Его помотало временем."
-	icon = 'modular_bandastation/objects/icons/fountain.dmi'
-	icon_state = "fountain"
-
 // Pamphlets
 /obj/item/paper/pamphlet
 	name = "pamphlet"
@@ -88,25 +72,3 @@
 
 /obj/item/paper/pamphlet/update_icon_state()
 	return ..()
-
-// Archive structure
-/obj/structure/archives
-	name = "Desk"
-	icon = 'icons/obj/antags/cult/structures.dmi'
-	desc = "A desk covered in arcane manuscripts and tomes in unknown languages. Looking at the text makes your skin crawl."
-	icon_state = "tomealtar"
-	light_range = 1.5
-	light_color = LIGHT_COLOR_FIRE
-	density = TRUE
-	anchored = TRUE
-
-/obj/structure/archives/wrench_act(mob/living/user, obj/item/tool)
-	. = ..()
-	default_unfasten_wrench(user, tool, 10 SECONDS)
-	return ITEM_INTERACT_SUCCESS
-
-// Display Cases
-/obj/structure/displaycase/hos
-	alert = TRUE
-	start_showpiece_type = /obj/item/food/donut/choco
-	req_access = list(ACCESS_HOS)
