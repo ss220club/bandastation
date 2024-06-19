@@ -2,7 +2,7 @@
 
 /obj/machinery/coffeemaker
 	name = "кофеварка"
-	desc = "Кофеварка Modello 3, которая варит кофе и поддерживает его идеальную температуру 176 градусов по Фаренгейту. Произведено компанией Piccionaia Home Appliances."
+	desc = "Кофеварка Modello 3, которая варит кофе и поддерживает его идеальную температуру 80 градусов по Цельсию. Произведено компанией Piccionaia Home Appliances."
 	icon = 'icons/obj/medical/chemical.dmi'
 	icon_state = "coffeemaker_nopot_nocart"
 	base_icon_state = "coffeemaker"
