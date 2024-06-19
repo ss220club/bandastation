@@ -125,7 +125,7 @@
 
 	if(positive_result)
 		if(current_bake_time <= required_bake_time * 0.75)
-			examine_list += span_notice("[parent] Наверное, нужно выпекать немного дольше!")
+			examine_list += span_notice("Наверное, [parent] нужно выпекать немного дольше!")
 		else if(current_bake_time <= required_bake_time)
 			examine_list += span_notice("[parent] кажется что выпечка почти готова!")
 	else
