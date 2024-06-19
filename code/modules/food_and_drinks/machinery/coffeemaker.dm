@@ -265,7 +265,7 @@
 
 /obj/machinery/coffeemaker/proc/try_brew()
 	if(!cartridge)
-		balloon_alert(usr, "картридж для кофе не вставлен!")
+		balloon_alert(usr, "не вставлен картридж для кофе!")
 		return FALSE
 	if(cartridge.charges < 1)
 		balloon_alert(usr, "кофейный картридж пуст!")
