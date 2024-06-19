@@ -274,7 +274,7 @@
 		balloon_alert(usr, "нет кофейника внутри!")
 		return FALSE
 	if(machine_stat & (NOPOWER|BROKEN))
-		balloon_alert(usr, "кофеварка без питания!")
+		balloon_alert(usr, "кофеварка обесточена!")
 		return FALSE
 	if(coffeepot.reagents.total_volume >= coffeepot.reagents.maximum_volume)
 		balloon_alert(usr, "кофейник уже полон!")
