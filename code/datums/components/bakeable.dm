@@ -118,7 +118,7 @@
 	if(!current_bake_time) //Not baked yet
 		if(positive_result)
 			if(initial(bake_result.gender) == PLURAL)
-				examine_list += span_notice("[parent] может быть [span_bold("запечен")] в какой-то [initial(bake_result.name)].")
+				examine_list += span_notice("[parent] может быть [span_bold("запечен")] в несколько [initial(bake_result.name)].")
 			else
 				examine_list += span_notice("[parent] может быть [span_bold("запечен")] в [initial(bake_result.name)].")
 		return
