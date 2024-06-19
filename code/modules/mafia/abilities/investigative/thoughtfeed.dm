@@ -5,7 +5,7 @@
  */
 /datum/mafia_ability/thoughtfeeder
 	name = "Поглотить мысли"
-	ability_action = "насладится воспоминаниями"
+	ability_action = "насладиться воспоминаниями"
 
 /datum/mafia_ability/thoughtfeeder/perform_action_target(datum/mafia_controller/game, datum/mafia_role/day_target)
 	. = ..()
