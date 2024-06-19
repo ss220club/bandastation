@@ -39,11 +39,10 @@
 /obj/structure/tribune/Initialize(mapload) //Only for mappers
 	..()
 	handle_layer()
-	var/static/list/loc_connections = list(
-		COMSIG_ATOM_EXIT = PROC_REF(on_exit),
-	)
-
-	if(flags_1 & ON_BORDER_1)
+	if(density && flags_1 & ON_BORDER_1) // blocks normal movement from and to the direction it's facing.
+		var/static/list/loc_connections = list(
+			COMSIG_ATOM_EXIT = PROC_REF(on_exit),
+		)
 		AddElement(/datum/element/connect_loc, loc_connections)
 
 /obj/structure/tribune/setDir(newdir)
@@ -57,8 +56,8 @@
 /obj/structure/tribune/proc/handle_layer()
 	if(dir == NORTH)
 		layer = LOW_OBJ_LAYER
-	else
-		layer = ABOVE_MOB_LAYER
+		return
+	layer = ABOVE_MOB_LAYER
 
 /obj/structure/tribune/click_alt(mob/user)
 	. = ..()

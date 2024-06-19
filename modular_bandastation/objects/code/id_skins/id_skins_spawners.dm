@@ -16,6 +16,7 @@
 	desc = "Коробка с кучкой наклеек на ID карту."
 	icon = 'modular_bandastation/objects/icons/id_skins.dmi'
 	icon_state = "id_skins_box"
+	illustration = "id_skins_box_label"
 
 /obj/item/storage/box/id_skins/PopulateContents()
 	for(var/I in 1 to 3)

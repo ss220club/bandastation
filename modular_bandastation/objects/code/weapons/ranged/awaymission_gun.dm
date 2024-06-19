@@ -8,22 +8,22 @@
 	icon_state = "laser_gate"
 	inhand_icon_state = "laser_gate"
 	force = 10
-	selfcharge = TRUE // Selfcharge is enabled and disabled, and used as the away mission tracker
+	selfcharge = FALSE // Selfcharge is enabled and disabled, and used as the away mission tracker
 	can_charge = 0
 
 // Проверка чтобы не было зарядки на станции
-/obj/item/gun/energy/laser/awaymission_aeg/Initialize(mapload, /obj/item/M)
+/obj/item/gun/energy/laser/awaymission_aeg/Initialize(mapload)
 	. = ..()
-	on_changed_z_level()
+	on_changed_z_level(new_turf = get_turf(src))
 
 /obj/item/gun/energy/laser/awaymission_aeg/on_changed_z_level(turf/old_turf, turf/new_turf, same_z_layer, notify_contents)
 	. = ..()
-	if(is_away_level(loc.z) || is_secret_level(loc.z))
+	if(is_away_level(new_turf) || is_secret_level(new_turf.z))
 		if(ismob(loc))
 			to_chat(loc, span_notice("Ваш [src.name] активируется, начиная аккумулировать энергию из материи сущего."))
 		selfcharge = TRUE
 		return
-	if(is_station_level(loc.z))
+	if(is_station_level(new_turf.z))
 		to_chat(loc, span_danger("Ваш [src.name] деактивируется, так как он подавляется системами станции.</span>"))
 	cell.charge = 0
 	selfcharge = FALSE

@@ -32,7 +32,6 @@
 #include "code/hampters.dm"
 #include "code/miscellaneous.dm"
 #include "code/papershredder.dm"
-#include "code/posters.dm"
 #include "code/flag.dm"
 #include "code/wallets.dm"
 #include "code/material_pouch.dm"

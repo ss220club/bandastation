@@ -8,7 +8,11 @@
 
 /obj/item/storage/wallet/wallet_NT/update_overlays()
 	. = ..()
-	. -= mutable_appearance(icon, "wallet_overlay")
+	cached_flat_icon = null
+	if(!front_id)
+		return
+	. += mutable_appearance(front_id.icon, front_id.icon_state)
+	. += front_id.overlays
 	. += mutable_appearance(icon, "wallet_NT_overlay")
 
 /obj/item/storage/wallet/wallet_USSP_1
@@ -21,7 +25,11 @@
 
 /obj/item/storage/wallet/wallet_USSP_1/update_overlays()
 	. = ..()
-	. -= mutable_appearance(icon, "wallet_overlay")
+	cached_flat_icon = null
+	if(!front_id)
+		return
+	. += mutable_appearance(front_id.icon, front_id.icon_state)
+	. += front_id.overlays
 	. += mutable_appearance(icon, "wallet_USSP_1_overlay")
 
 /obj/item/storage/wallet/wallet_USSP_2
@@ -34,7 +42,11 @@
 
 /obj/item/storage/wallet/wallet_USSP_2/update_overlays()
 	. = ..()
-	. -= mutable_appearance(icon, "wallet_overlay")
+	cached_flat_icon = null
+	if(!front_id)
+		return
+	. += mutable_appearance(front_id.icon, front_id.icon_state)
+	. += front_id.overlays
 	. += mutable_appearance(icon, "wallet_USSP_2_overlay")
 
 /obj/item/storage/wallet/wallet_wyci
@@ -49,5 +61,9 @@
 
 /obj/item/storage/wallet/wallet_wyci/update_overlays()
 	. = ..()
-	. -= mutable_appearance(icon, "wallet_overlay")
+	cached_flat_icon = null
+	if(!front_id)
+		return
+	. += mutable_appearance(front_id.icon, front_id.icon_state)
+	. += front_id.overlays
 	. += mutable_appearance(icon, "wallet_wyci_overlay")
