@@ -837,7 +837,7 @@ GLOBAL_LIST_INIT(mafia_role_by_alignment, setup_mafia_role_by_alignment())
 
 /datum/action/innate/mafia_panel
 	name = "Панель мафии"
-	desc = "Используйте что бы играть."
+	desc = "Используйте, чтобы играть."
 	button_icon = 'icons/obj/mafia.dmi'
 	button_icon_state = "board"
 	///The mafia controller that the button will use the UI of.
