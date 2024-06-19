@@ -1,7 +1,7 @@
 /datum/mafia_role
-	var/name = JOB_ASSISTANT
-	var/desc = "Вы - член экипажа без особых способностей.."
-	var/win_condition = "убить всех мафиози и одиночных убийц."
+	var/name = "Ассистент"
+	var/desc = "Вы - член экипажа без особых способностей."
+	var/win_condition = "убьет всех мафиози и одиночных убийц."
 	var/team = MAFIA_TEAM_TOWN
 	///how the random setup chooses which roles get put in
 	var/role_type = TOWN_OVERFLOW
@@ -150,7 +150,7 @@
 	to_chat(body, span_danger("[desc]"))
 	switch(team)
 		if(MAFIA_TEAM_MAFIA)
-			to_chat(body,span_danger("Вы и ваши сообщники победите, если вас будет больше, чем членов экипажа.."))
+			to_chat(body,span_danger("Вы и ваши сообщники победите, если вас будет больше, чем членов экипажа."))
 		if(MAFIA_TEAM_TOWN)
 			to_chat(body,span_danger("Вы - член экипажа. Выясните кто генокрад и линчуйте!"))
 		if(MAFIA_TEAM_SOLO)
@@ -185,7 +185,7 @@
 			team_desc = "Мафия"
 			team_span = "red"
 		if(MAFIA_TEAM_SOLO)
-			team_desc = "Никто"
+			team_desc = "Одиночка"
 			team_span = "comradio"
 			the = FALSE
 	result += span_notice("The [span_bold("[name]")] is aligned with [the ? "the " : ""]<span class='[team_span]'>[team_desc]</span>")
