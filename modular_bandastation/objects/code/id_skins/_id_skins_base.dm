@@ -25,18 +25,22 @@
 	. = ..()
 	. += span_notice("Вы можете попытаться отодрать наклейку, используя <b>Ctrl-Shift-Click</b>.")
 
-/obj/item/card/id/click_ctrl_shift(mob/user)
+/obj/item/card/id/click_ctrl_shift(mob/living/carbon/user)
 	. = ..()
 	if(HAS_TRAIT(user, TRAIT_RESTRAINED))
 		to_chat(user, span_warning("Ваши руки должны быть свободны, чтобы сделать это!"))
 	if(!skin_applied)
 		to_chat(user, span_warning("На карте нет наклейки!"))
+	if(user.combat_mode == TRUE)
+		to_chat(user, span_notice("Вы начинаете пытаться отодрать наклейку от карты..."))
+		if(!do_after(user, 5 SECONDS, src, timed_action_flags = IGNORE_USER_LOC_CHANGE, progress = TRUE))
+			return FALSE
 
 	to_chat(user, span_notice("Вы начинаете пытаться снять наклейку с ID карты..."))
-	if(!do_after(user, 20 SECONDS, src, timed_action_flags = IGNORE_USER_LOC_CHANGE ,progress = TRUE))
+	if(!do_after(user, 20 SECONDS, src, timed_action_flags = IGNORE_USER_LOC_CHANGE, progress = TRUE))
 		return FALSE
 
-	to_chat(user, span_notice("Вы пытаетесь отодрать наклейку от карты, но у вас ничего не получается."))
+	to_chat(user, span_notice("Вы пытаетесь снять наклейку с карты, но у вас ничего не получается."))
 	desc += "<br>На карте можно заметить различные царапины по краям."
 
 /obj/item/card/id/proc/apply_skin(obj/item/id_skin/skin, mob/user)

@@ -9,6 +9,23 @@
 #include "code/id_skins/id_skins.dm"
 #include "code/id_skins/id_skins_spawners.dm"
 
+// Weapons
+#include "code/weapons/ranged/beretta.dm"
+#include "code/weapons/ranged/reclinable_revolver.dm"
+#include "code/weapons/ranged/pea_shooter.dm"
+#include "code/weapons/ranged/pneumagun.dm"
+#include "code/weapons/ranged/awaymission_gun.dm"
+#include "code/weapons/melee/stylet.dm"
+#include "code/weapons/melee/centcom_bat.dm"
+#include "code/weapons/melee/electrostaff.dm"
+
+// Structures
+#include "code/structures/beach_umbrella.dm"
+#include "code/structures/platform.dm"
+#include "code/structures/posters.dm"
+#include "code/structures/tribune.dm"
+#include "code/structures/misc.dm"
+
 // Miscellaneous
 #include "code/closets.dm"
 #include "code/coffin.dm"
@@ -16,8 +33,6 @@
 #include "code/miscellaneous.dm"
 #include "code/papershredder.dm"
 #include "code/posters.dm"
-#include "code/weapons.dm"
 #include "code/flag.dm"
 #include "code/wallets.dm"
 #include "code/material_pouch.dm"
-#include "code/structures.dm"
