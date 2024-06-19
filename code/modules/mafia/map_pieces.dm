@@ -79,7 +79,7 @@
 
 /datum/map_template/mafia/snowy
 	name = "Snowdin"
-	description = "Основанная на одноименной карте ice moon. парень который переделал её очень постарался. Круто!"
+	description = "Основанная на одноименной карте Ice Moon. Парень, который переделал её, очень постарался. Круто!"
 	map_suffix = "mafia_snow.dmm"
 	custom_outfit = /datum/outfit/mafia/snowy
 
