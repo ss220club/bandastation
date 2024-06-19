@@ -265,7 +265,7 @@
 
 /obj/machinery/coffeemaker/proc/try_brew()
 	if(!cartridge)
-		balloon_alert(usr, "картридж для кофе не вставлен!")
+		balloon_alert(usr, "не вставлен картридж для кофе!")
 		return FALSE
 	if(cartridge.charges < 1)
 		balloon_alert(usr, "кофейный картридж пуст!")
@@ -274,7 +274,7 @@
 		balloon_alert(usr, "нет кофейника внутри!")
 		return FALSE
 	if(machine_stat & (NOPOWER|BROKEN))
-		balloon_alert(usr, "кофеварка без питания!")
+		balloon_alert(usr, "кофеварка обесточена!")
 		return FALSE
 	if(coffeepot.reagents.total_volume >= coffeepot.reagents.maximum_volume)
 		balloon_alert(usr, "кофейник уже полон!")
@@ -364,7 +364,7 @@
 
 /obj/machinery/coffeemaker/proc/take_sugar(mob/user)
 	if(!sugar_packs)
-		balloon_alert(user, "нет сахара!")
+		balloon_alert(user, "сахар закончился!")
 		return
 	var/obj/item/reagent_containers/condiment/pack/sugar/new_pack = new(get_turf(src))
 	user.put_in_hands(new_pack)
@@ -373,7 +373,7 @@
 
 /obj/machinery/coffeemaker/proc/take_sweetener(mob/user)
 	if(!sweetener_packs)
-		balloon_alert(user, "нет подсластителя!")
+		balloon_alert(user, "подсластитель закончился!")
 		return
 	var/obj/item/reagent_containers/condiment/pack/astrotame/new_pack = new(get_turf(src))
 	user.put_in_hands(new_pack)
@@ -382,7 +382,7 @@
 
 /obj/machinery/coffeemaker/proc/take_creamer(mob/user)
 	if(!creamer_packs)
-		balloon_alert(user, "нет сливок!")
+		balloon_alert(user, "сливки закончились!")
 		return
 	var/obj/item/reagent_containers/condiment/creamer/new_pack = new(drop_location())
 	user.put_in_hands(new_pack)
