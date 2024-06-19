@@ -98,7 +98,7 @@
 	if(positive_result)
 		used_oven.visible_message(
 			span_notice("Вы чувствуете приятный запах, исходящий от [used_oven]."),
-			blind_message = span_notice("Вы ощущаете какой то прекрасный запах..."),
+			blind_message = span_notice("Вы чувствуете какой-то приятный запах..."),
 			ignored_mobs = asomnia_hadders,
 		)
 		BLACKBOX_LOG_FOOD_MADE(baked_result.type)
