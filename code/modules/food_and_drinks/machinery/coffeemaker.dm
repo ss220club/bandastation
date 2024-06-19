@@ -204,7 +204,7 @@
 			balloon_alert(user, "чашка должна быть пустой!")
 			return
 		if(coffee_cups >= max_coffee_cups)
-			balloon_alert(user, "чашка заполнена!")
+			balloon_alert(user, "отделение для чашек заполнено!")
 			return
 		if(!user.transferItemToLoc(attack_item, src))
 			return
