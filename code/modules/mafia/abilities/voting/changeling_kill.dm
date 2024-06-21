@@ -6,7 +6,7 @@
  */
 /datum/mafia_ability/changeling_kill
 	name = "Голос за убийство"
-	ability_action = "попытаться поглотить"
+	ability_action = "попробовать поглотить"
 	action_priority = COMSIG_MAFIA_NIGHT_KILL_PHASE
 	///Boolean on whether a Changeling has been sent to attack someone yet.
 	var/static/ling_sent = FALSE
