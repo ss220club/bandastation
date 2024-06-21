@@ -5,7 +5,7 @@
  */
 /datum/mafia_ability/attack_player
 	name = "Нападение"
-	ability_action = "попытаться напасть"
+	ability_action = "попробовать напасть"
 	action_priority = COMSIG_MAFIA_NIGHT_KILL_PHASE
 	///The message told to the player when they are killed.
 	var/attack_action = "убит"
