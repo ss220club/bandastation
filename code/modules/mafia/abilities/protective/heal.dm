@@ -6,7 +6,7 @@
  */
 /datum/mafia_ability/heal
 	name = "Исцеление"
-	ability_action = "исцеление"
+	ability_action = "исцелить"
 	action_priority = COMSIG_MAFIA_NIGHT_ACTION_PHASE
 	use_flags = CAN_USE_ON_OTHERS | CAN_USE_ON_SELF
 
