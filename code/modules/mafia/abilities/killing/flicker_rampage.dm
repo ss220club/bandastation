@@ -6,7 +6,7 @@
  */
 /datum/mafia_ability/flicker_rampage
 	name = "Мерцание/Буйство"
-	ability_action = "попытаться напасть или омрачить"
+	ability_action = "попробовать напасть или омрачить"
 	action_priority = COMSIG_MAFIA_NIGHT_KILL_PHASE
 
 	///List of all players in the dark, which we can rampage.
