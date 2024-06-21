@@ -34,6 +34,6 @@
 
 /datum/mafia_ability/attack_player/execution
 	name = "Казнь"
-	ability_action = "попытка казни"
+	ability_action = "попробовать казнить"
 	attack_action = "казнен"
 	honorable = TRUE
