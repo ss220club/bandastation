@@ -1,12 +1,13 @@
 /datum/action/changeling/adrenaline
 	name = "Repurposed Glands"
-	desc = "Мы переносим почти всю доступную массу из рук в ноги, тем самым делая невозможным использование рук, но позволяет нам игнорировать оглушенияи на 15 секунд. Стоит 10 химикатов."
+	desc = "Мы переносим почти всю доступную массу из рук в ноги, тем самым делая невозможным использование рук, но позволяет нам игнорировать оглушенияи на 20 секунд. Стоит 25 химикатов."
 	helptext = "Отключает ваши руки и убирает био-оружие, но восстанавливает ваши ноги, ускоряя их и снимая все оглушения."
 	button_icon_state = "adrenaline"
 	chemical_cost = 25 // similar cost to biodegrade, as they serve similar purposes
 	dna_cost = 2
 	req_human = FALSE
 	req_stat = CONSCIOUS
+	disabled_by_fire = FALSE
 
 /datum/action/changeling/adrenaline/can_sting(mob/living/user, mob/living/target)
 	. = ..()

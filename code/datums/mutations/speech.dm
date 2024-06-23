@@ -4,6 +4,7 @@
 /datum/mutation/human/nervousness
 	name = "Nervousness"
 	desc = "Обладатель данного генома заикается."
+	instability = NEGATIVE_STABILITY_MINI
 	quality = MINOR_NEGATIVE
 	text_gain_indication = "<span class='danger'>Ты нервничаешь.</span>"
 
@@ -14,6 +15,7 @@
 /datum/mutation/human/wacky
 	name = "Wacky"
 	desc = "Ты не клоун. Ты целый цирк."
+	instability = NEGATIVE_STABILITY_MINI
 	quality = MINOR_NEGATIVE
 	text_gain_indication = "<span class='sans'><span class='infoplain'>Ты чувствуешь странности в своих голосовых связках.</span></span>"
 	text_lose_indication = "<span class='notice'>Странное ощущение проходит.</span>"
@@ -36,6 +38,7 @@
 /datum/mutation/human/mute
 	name = "Mute"
 	desc = "Геном полностью подавляет отдел головного мозга, отвечающий за речевой аппарат."
+	instability = NEGATIVE_STABILITY_MAJOR
 	quality = NEGATIVE
 	text_gain_indication = "<span class='danger'>Ты чувствуешь себя неспособным выражать свои мысли.</span>"
 	text_lose_indication = "<span class='danger'>Ты чувствуешь, что снова можешь говорить.</span>"
@@ -53,6 +56,7 @@
 /datum/mutation/human/unintelligible
 	name = "Unintelligible"
 	desc = "Геном частично подавляет отдел головного мозга, отвечающий за речевой аппарат, сильно искажая речь."
+	instability = NEGATIVE_STABILITY_MODERATE
 	quality = NEGATIVE
 	text_gain_indication = "<span class='danger'>Ты чувствуешь себя неспособным сформировать предложение!</span>"
 	text_lose_indication = "<span class='danger'>Твой ум, кажется более ясным.</span>"
@@ -70,6 +74,7 @@
 /datum/mutation/human/swedish
 	name = "Swedish"
 	desc = "Ужасающая мутация, котороя происходит из далёкого прошлого. Считается, что она была полностью искоренена после 2037."
+	instability = NEGATIVE_STABILITY_MINI
 	quality = MINOR_NEGATIVE
 	text_gain_indication = "<span class='notice'>Ты ощущаешь себя шведом, что бы это ни значило.</span>"
 	text_lose_indication = "<span class='notice'>Ты перестаешь ощущать себя шведом.</span>"
@@ -101,6 +106,7 @@
 /datum/mutation/human/chav
 	name = "Chav"
 	desc = "Неизвестно."
+	instability = NEGATIVE_STABILITY_MINI
 	quality = MINOR_NEGATIVE
 	text_gain_indication = "<span class='notice'>Ты ощущаешь себя мудаком, не так ли?</span>"
 	text_lose_indication = "<span class='notice'>Ты перестаешь ощущать себя грубым и нахальным.</span>"
@@ -138,6 +144,7 @@
 /datum/mutation/human/elvis
 	name = "Elvis"
 	desc = "Ужасающая мутация, названная в честь нулевого пациента."
+	instability = NEGATIVE_STABILITY_MINI
 	quality = MINOR_NEGATIVE
 	locked = TRUE
 	text_gain_indication = "<span class='notice'>Ты хорошо себя чувствуешь, куколка.</span>"
@@ -203,6 +210,7 @@
 /datum/mutation/human/medieval
 	name = "Medieval"
 	desc = "Ужасная мутация, происходящая из далёкого прошлого, считается, что была распространённым геномом во всей старой Европе."
+	instability = NEGATIVE_STABILITY_MINI
 	quality = MINOR_NEGATIVE
 	text_gain_indication = "<span class='notice'>Ты чувствуешь себя стремящимся к Святому Граали!</span>"
 	text_lose_indication = "<span class='notice'>Ты больше не стремишься к чему-либо.</span>"
@@ -243,6 +251,7 @@
 /datum/mutation/human/piglatin
 	name = "Pig Latin"
 	desc = "Историки говорят, что в 2020 году человечество полностью говорило на этом мистическом языке."
+	instability = NEGATIVE_STABILITY_MINI
 	quality = MINOR_NEGATIVE
 	text_gain_indication = span_notice("Ты ощущаешь себя мамонтом.")
 	text_lose_indication = span_notice("Кажется, это прошло.")

@@ -4,7 +4,7 @@
 	quality = POSITIVE
 	text_gain_indication = "<span class='notice'>Ты чувствуешь, что на твоём лбу вырастает антенна.</span>"
 	text_lose_indication = "<span class='notice'>Твоя антенна убавляется и пропадает окончательно.</span>"
-	instability = 5
+	instability = POSITIVE_INSTABILITY_MINOR
 	difficulty = 8
 	var/datum/weakref/radio_weakref
 
@@ -47,7 +47,7 @@
 	text_gain_indication = "<span class='notice'>Ты слышишь голоса вдали в закромах своего разума.</span>"
 	text_lose_indication = "<span class='notice'>Голоса вдали затихают.</span>"
 	power_path = /datum/action/cooldown/spell/pointed/mindread
-	instability = 40
+	instability = POSITIVE_INSTABILITY_MINOR
 	difficulty = 8
 	locked = TRUE
 
