@@ -3,7 +3,7 @@
 	description = "Базовый эксперимент для сканирования атомов, выращенных в чашке петри."
 	exp_tag = "Скан цитологии"
 	total_requirement = 1
-	possible_types = list(/mob/living/basic/cockroach)
+	possible_types = list(/mob/living/basic/slime)
 	traits = EXPERIMENT_TRAIT_DESTRUCTIVE
 
 /datum/experiment/scanning/random/cytology/final_contributing_index_checks(datum/component/experiment_handler/experiment_handler, atom/target, typepath)

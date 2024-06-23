@@ -3,7 +3,7 @@
 	desc = "Позволяет существу добровольно выстрелить своим языком, как смертельным оружием."
 	quality = POSITIVE
 	text_gain_indication = span_notice("Ты чувствуешь, что можешь выкинуть свой голос.")
-	instability = 15
+	instability = POSITIVE_INSTABILITY_MINI // worthless. also serves as a bit of a hint that it's not good
 	power_path = /datum/action/cooldown/spell/tongue_spike
 
 	energy_coeff = 1
@@ -89,7 +89,7 @@
 	desc = "Позволяет существу добровольно выстрелить своим языком из биомассы, позволяет передавать химические вещества на большое расстояние."
 	quality = POSITIVE
 	text_gain_indication = span_notice("Ты чувствуешь, что можешь соединиться с людьми бросив свой голос.")
-	instability = 15
+	instability = POSITIVE_INSTABILITY_MINOR // slightly less worthless. slightly.
 	locked = TRUE
 	power_path = /datum/action/cooldown/spell/tongue_spike/chem
 	energy_coeff = 1

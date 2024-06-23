@@ -10,6 +10,7 @@ import { FeatureDropdownInput } from '../dropdowns';
 export const sound_ambience: FeatureToggle = {
   name: 'Включить звук окружения',
   category: 'ЗВУК',
+  description: `Различные звуки оружения, играющие по ситуации.`,
   component: CheckboxInput,
 };
 
@@ -81,6 +82,7 @@ export const sound_midi: FeatureToggle = {
 export const sound_ship_ambience: FeatureToggle = {
   name: 'Включить звук корабля',
   category: 'ЗВУК',
+  description: `Звук окружения корабля (низкий гул).`,
   component: CheckboxInput,
 };
 

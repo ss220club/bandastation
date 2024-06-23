@@ -3,7 +3,7 @@
 	desc = "Позволяет существу добровольно отказаться от случайной конечности."
 	quality = POSITIVE
 	text_gain_indication = span_notice("Ты чувствуешь слабость в суставах.")
-	instability = 30
+	instability = POSITIVE_INSTABILITY_MINOR
 	power_path = /datum/action/cooldown/spell/self_amputation
 
 	energy_coeff = 1

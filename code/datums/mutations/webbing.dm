@@ -4,7 +4,7 @@
 	desc = "Позволяет обладателю генома плести паутину и перемещаться по ней."
 	quality = POSITIVE
 	text_gain_indication = "<span class='notice'>Твоя кожа кажется паутиной.</span>"
-	instability = 15
+	instability = POSITIVE_INSTABILITY_MODERATE // useful until you're lynched
 	power_path = /datum/action/cooldown/mob_cooldown/lay_web/genetic
 	energy_coeff = 1
 
