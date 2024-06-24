@@ -36,5 +36,5 @@
 				target.adjustOxyLoss(-min(target.getOxyLoss(), 7))
 				to_chat(target, span_unconscious("You feel a mechanical force performing compressions... It feels good..."))
 
-		sleep 50
+		sleep (50)
 	while (istype(target))
