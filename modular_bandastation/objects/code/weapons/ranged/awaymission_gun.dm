@@ -18,13 +18,12 @@
 
 /obj/item/gun/energy/laser/awaymission_aeg/on_changed_z_level(turf/old_turf, turf/new_turf, same_z_layer, notify_contents)
 	. = ..()
-	var/turf/current_turf = get_turf(src)
-	if(is_away_level(current_turf.z) || is_secret_level(current_turf.z))
+	if(onAwayMission())
 		if(ismob(loc))
 			to_chat(loc, span_notice("Ваш [src.name] активируется, начиная аккумулировать энергию из материи сущего."))
 		selfcharge = TRUE
 		return
-	if(!is_away_level(current_turf.z) || !is_secret_level(current_turf.z))
+	if(!onAwayMission())
 		if(ismob(loc))
 			to_chat(loc, span_danger("Ваш [src.name] деактивируется, так как он подавляется системами станции.</span>"))
 	cell.charge = 0
@@ -49,9 +48,8 @@
 	var/msg_for_user = span_notice("Вы пытаетесь надавить на рычаг зарядки [src], но он заблокирован.")
 	var/msg_recharge_all = span_notice("[user.name] усердно давит на рычаг зарядки [src]...")
 	var/msg_recharge_user = span_notice("Вы со всей силы давите на рычаг зарядки [src], пытаясь зарядить её...")
-	var/turf/current_turf = get_turf(src)
 
-	if(!is_away_level(current_turf.z) || !is_secret_level(current_turf.z))
+	if(!onAwayMission())
 		user.visible_message(msg_for_all, msg_for_user)
 		return FALSE
 

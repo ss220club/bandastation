@@ -21,6 +21,7 @@
 			COMSIG_ATOM_EXIT = PROC_REF(on_exit),
 		)
 		AddElement(/datum/element/connect_loc, loc_connections)
+	return INITIALIZE_HINT_NORMAL
 
 /obj/structure/tribune/CanPass(atom/movable/mover, border_dir)
 	. = ..()
