@@ -14,14 +14,14 @@
 /datum/reagent/medicine/omnidrite/on_mob_life(mob/living/carbon/affected_mob, seconds_per_tick, times_fired)
 	. = ..()
 	var/need_mob_update
-	need_mob_update = affected_mob.adjustOrganLoss(ORGAN_SLOT_BRAIN, -0.25 * REM * seconds_per_tick * normalise_creation_purity())
-	need_mob_update += affected_mob.adjustOrganLoss(ORGAN_SLOT_EYES, -0.25 * REM * seconds_per_tick * normalise_creation_purity())
-	need_mob_update += affected_mob.adjustOrganLoss(ORGAN_SLOT_EARS, -0.25 * REM * seconds_per_tick * normalise_creation_purity())
-	need_mob_update += affected_mob.adjustOrganLoss(ORGAN_SLOT_TONGUE, -0.25 * REM * seconds_per_tick * normalise_creation_purity())
-	need_mob_update += affected_mob.adjustOrganLoss(ORGAN_SLOT_HEART, -0.25 * REM * seconds_per_tick * normalise_creation_purity())
-	need_mob_update += affected_mob.adjustOrganLoss(ORGAN_SLOT_LIVER, -0.25 * REM * seconds_per_tick * normalise_creation_purity())
-	need_mob_update += affected_mob.adjustOrganLoss(ORGAN_SLOT_LUNGS, -0.25 * REM * seconds_per_tick * normalise_creation_purity())
-	need_mob_update += affected_mob.adjustOrganLoss(ORGAN_SLOT_EYES, -0.25 * REM * seconds_per_tick * normalise_creation_purity())
+	need_mob_update = affected_mob.adjustOrganLoss(ORGAN_SLOT_BRAIN, -0.1 * REM * seconds_per_tick * normalise_creation_purity())
+	need_mob_update += affected_mob.adjustOrganLoss(ORGAN_SLOT_EYES, -0.1 * REM * seconds_per_tick * normalise_creation_purity())
+	need_mob_update += affected_mob.adjustOrganLoss(ORGAN_SLOT_EARS, -0.1 * REM * seconds_per_tick * normalise_creation_purity())
+	need_mob_update += affected_mob.adjustOrganLoss(ORGAN_SLOT_TONGUE, -0.1 * REM * seconds_per_tick * normalise_creation_purity())
+	need_mob_update += affected_mob.adjustOrganLoss(ORGAN_SLOT_HEART, -0.1 * REM * seconds_per_tick * normalise_creation_purity())
+	need_mob_update += affected_mob.adjustOrganLoss(ORGAN_SLOT_LIVER, -0.1 * REM * seconds_per_tick * normalise_creation_purity())
+	need_mob_update += affected_mob.adjustOrganLoss(ORGAN_SLOT_LUNGS, -0.1 * REM * seconds_per_tick * normalise_creation_purity())
+	need_mob_update += affected_mob.adjustOrganLoss(ORGAN_SLOT_EYES, -0.1 * REM * seconds_per_tick * normalise_creation_purity())
 	if(need_mob_update)
 		return UPDATE_MOB_HEALTH
 
