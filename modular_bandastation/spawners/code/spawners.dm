@@ -1,6 +1,3 @@
-// Placeholder object, used for ispath checks. Has to be defined to prevent errors, but shouldn't ever be created.
-/datum/nothing
-
 /// ID skins spawners
 /obj/effect/spawner/random/id_skins
 	name = "Случайная наклейка на карту"
@@ -34,8 +31,8 @@
 	)
 
 /obj/effect/spawner/random/id_skins/no_chance
+	spawn_loot_chance = 20
 	loot = list(
-		/datum/nothing = 80,
 		/obj/item/id_skin/colored = 10,
 		/obj/item/id_skin/donut = 5,
 		/obj/item/id_skin/business = 5,

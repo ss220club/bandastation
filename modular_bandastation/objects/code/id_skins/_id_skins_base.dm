@@ -23,25 +23,27 @@
 
 /obj/item/card/id/examine(mob/user)
 	. = ..()
-	. += span_notice("Вы можете попытаться отодрать наклейку, используя <b>Ctrl-Shift-Click</b>.")
+	. += span_notice("Вы можете попытаться снять наклейку, используя <b>Ctrl-Shift-Click</b>.")
 
-/obj/item/card/id/click_ctrl_shift(mob/living/carbon/user)
+/obj/item/card/id/item_ctrl_click(mob/living/carbon/user)
 	. = ..()
 	if(HAS_TRAIT(user, TRAIT_RESTRAINED))
 		to_chat(user, span_warning("Ваши руки должны быть свободны, чтобы сделать это!"))
+		return
 	if(!skin_applied)
 		to_chat(user, span_warning("На карте нет наклейки!"))
+		return
 	if(user.combat_mode == TRUE)
-		to_chat(user, span_notice("Вы начинаете пытаться отодрать наклейку от карты..."))
+		to_chat(user, span_notice("Вы начинаете пытаться отодрать наклейку..."))
 		if(!do_after(user, 5 SECONDS, src, timed_action_flags = IGNORE_USER_LOC_CHANGE, progress = TRUE))
 			return FALSE
+		to_chat(user, span_notice("Вам не удаётся отодрать наклейку от карты."))
+		return
 
 	to_chat(user, span_notice("Вы начинаете пытаться снять наклейку с ID карты..."))
 	if(!do_after(user, 20 SECONDS, src, timed_action_flags = IGNORE_USER_LOC_CHANGE, progress = TRUE))
 		return FALSE
-
-	to_chat(user, span_notice("Вы пытаетесь снять наклейку с карты, но у вас ничего не получается."))
-	desc += "<br>На карте можно заметить различные царапины по краям."
+	to_chat(user, span_notice("Вам не удаётся снять наклейку с карты."))
 
 /obj/item/card/id/proc/apply_skin(obj/item/id_skin/skin, mob/user)
 	if(skin_applied)
@@ -49,16 +51,16 @@
 		return FALSE
 
 	if(!skinable)
-		to_chat(usr, span_warning("Наклейка не подходит для [src]!"))
+		to_chat(usr, span_warning("Наклейка не подходит для [src.name]!"))
 		return FALSE
 
 	to_chat(user, span_notice("Вы начинаете наносить наклейку на карту."))
-	if(!do_after(user, 2 SECONDS, target = src, progress = TRUE))
+	if(!do_after(user, 2 SECONDS, src, progress = TRUE))
 		return FALSE
 
 	var/mutable_appearance/card_skin = mutable_appearance(skin.icon, skin.icon_state)
 	card_skin.color = skin.color
-	to_chat(user, span_notice("Вы наклеили [skin.pronoun_name] на [src]."))
+	to_chat(user, span_notice("Вы наклеили [skin.pronoun_name] на [src.name]."))
 	desc += "<br>[skin.info]"
 	user.dropItemToGround()
 	skin.forceMove(src)

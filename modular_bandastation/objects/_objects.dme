@@ -25,10 +25,10 @@
 #include "code/structures/posters.dm"
 #include "code/structures/tribune.dm"
 #include "code/structures/misc.dm"
+#include "code/structures/closets.dm"
+#include "code/structures/coffin.dm"
 
 // Miscellaneous
-#include "code/closets.dm"
-#include "code/coffin.dm"
 #include "code/hampters.dm"
 #include "code/miscellaneous.dm"
 #include "code/papershredder.dm"

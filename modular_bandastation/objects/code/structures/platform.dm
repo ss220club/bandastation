@@ -6,7 +6,7 @@
 	desc = "A metal platform."
 	flags_1 = ON_BORDER_1
 	density = TRUE
-	anchored = TRUE
+	anchored = FALSE
 	var/climbable = TRUE
 	max_integrity = 200
 	armor_type = /datum/armor/structure_platform
@@ -28,19 +28,6 @@
 	. = ..()
 	if(climbable)
 		AddElement(/datum/element/climbable)
-
-/obj/structure/platform/proc/CheckLayer()
-	if(dir == SOUTH)
-		layer = ABOVE_MOB_LAYER
-	else if(corner || dir == NORTH)
-		layer = BELOW_MOB_LAYER
-
-/obj/structure/platform/setDir(newdir)
-	. = ..()
-	CheckLayer()
-
-/obj/structure/platform/Initialize()
-	. = ..()
 	CheckLayer()
 	if(density && flags_1 & ON_BORDER_1) // blocks normal movement from and to the direction it's facing.
 		var/static/list/loc_connections = list(
@@ -48,59 +35,11 @@
 		)
 		AddElement(/datum/element/connect_loc, loc_connections)
 
-/obj/structure/platform/New()
-	..()
-	if(corner)
-		decon_speed = 20
-		density = FALSE
-		climbable = FALSE
-	else
-		decon_speed = 30
-	CheckLayer()
-
-/obj/structure/platform/examine(mob/user)
-	. = ..()
-	. += span_notice("[src] is [anchored == TRUE ? "screwed" : "unscrewed"] [anchored == TRUE ? "to" : "from"] the floor.")
-	. += span_notice("<b>Alt-Click</b> to rotate.")
-
-/obj/structure/platform/proc/rotate(mob/user)
-	if(user.incapacitated())
-		return
-
-	if(anchored)
-		to_chat(user, span_warning("[src] cannot be rotated while it is screwed to the floor!"))
-		return FALSE
-
-	var/target_dir = turn(dir, 90)
-
-	setDir(target_dir)
-	air_update_turf(1)
-	add_fingerprint(user)
-	return TRUE
-
-/obj/structure/platform/click_alt(mob/user)
-	. = ..()
-	rotate(user)
-
-// Construction
-/obj/structure/platform/screwdriver_act(mob/user, obj/item/I)
-	. = TRUE
-	to_chat(user, span_notice("You begin [anchored == TRUE ? "unscrewing" : "screwing"] [src.name] [anchored == TRUE ? "from" : "to"] to the floor..."))
-	if(!I.use_tool(src, user, decon_speed))
-		return
-	to_chat(user, span_notice("You [anchored == TRUE ? "unscrew" : "screw"] [src.name] [anchored == TRUE ? "from" : "to"] the floor."))
-	anchored = !anchored
-
-/obj/structure/platform/wrench_act(mob/living/user, obj/item/tool)
-	if(anchored)
-		user.balloon_alert(user, "Unscrew it first.")
-		return
-	if(!anchored)
-		user.balloon_alert(user, "Deconstructed.")
-		playsound(src, 'sound/items/deconstruct.ogg', 50, 1)
-		new material_type(user.loc, material_amount)
-		qdel(src)
-
+/obj/structure/platform/proc/CheckLayer()
+	if(dir == SOUTH)
+		layer = ABOVE_MOB_LAYER
+	else if(corner || dir == NORTH)
+		layer = BELOW_MOB_LAYER
 
 /obj/structure/platform/proc/can_be_reached(mob/user)
 	var/checking_dir = get_dir(user, src)
@@ -146,6 +85,64 @@
 
 	leaving.Bump(src)
 	return COMPONENT_ATOM_BLOCK_EXIT
+
+/obj/structure/platform/setDir(newdir)
+	. = ..()
+	CheckLayer()
+
+/obj/structure/platform/New()
+	..()
+	if(corner)
+		decon_speed = 20
+		density = FALSE
+		climbable = FALSE
+	else
+		decon_speed = 30
+	CheckLayer()
+
+/obj/structure/platform/examine(mob/user)
+	. = ..()
+	. += span_notice("[src] is [anchored == TRUE ? "screwed" : "unscrewed"] [anchored == TRUE ? "to" : "from"] the floor.")
+	. += span_notice("<b>Alt-Click</b> to rotate.")
+
+/obj/structure/platform/proc/rotate(mob/user)
+	if(user.incapacitated())
+		return
+
+	if(anchored)
+		to_chat(user, span_warning("[src] cannot be rotated while it is screwed to the floor!"))
+		return FALSE
+
+	var/target_dir = turn(dir, 90)
+
+	setDir(target_dir)
+	air_update_turf(1)
+	add_fingerprint(user)
+	return TRUE
+
+/obj/structure/platform/click_alt(mob/user)
+	. = ..()
+	rotate(user)
+
+// Construction
+/obj/structure/platform/screwdriver_act(mob/user, obj/item/I)
+	. = ..()
+	user.balloon_alert(user, "[anchored ? "unsecuring..." : "securing..."]")
+	if(I.use_tool(src, user, decon_speed, volume = 50))
+		user.balloon_alert(user, "[anchored ? "unsecured" : "secured"]")
+		anchored = !anchored
+		return ITEM_INTERACT_SUCCESS
+
+/obj/structure/platform/wrench_act(mob/living/user, obj/item/tool)
+	if(anchored)
+		to_chat(user, "Unscrew it first.")
+		return
+	if(!anchored)
+		user.balloon_alert(user, "Deconstructed.")
+		if(tool.use_tool(src, user, volume = 50))
+			playsound(src, 'sound/items/deconstruct.ogg', 50, 1)
+			new material_type(user.loc, material_amount)
+			qdel(src)
 
 // Platform types
 /obj/structure/platform/reinforced
