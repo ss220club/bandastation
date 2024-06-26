@@ -11,3 +11,11 @@
 	id = "medium_ib"
 /datum/status_effect/wound/internal_bleed/critical
 	id = "heavy_ib"
+
+// necrosis
+/datum/status_effect/wound/necrosis/moderate
+	id = "light_necrosis"
+/datum/status_effect/wound/necrosis/severe
+	id = "medium_necrosis"
+/datum/status_effect/wound/necrosis/critical
+	id = "heavy_necrosis"
