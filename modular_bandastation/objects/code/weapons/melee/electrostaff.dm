@@ -76,8 +76,8 @@
 	id = "electrostaff"
 	display_name = "Advanced Security Baton Technology"
 	description = "Настоящая двуручная дубинка службы безопасности."
-	prereq_ids = list("weaponry",)
+	prereq_ids = list("riot_supression")
 	design_ids = list(
 		"electrostaff_kit",
 	)
-	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = TECHWEB_TIER_4_POINTS)

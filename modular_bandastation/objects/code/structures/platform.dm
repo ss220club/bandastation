@@ -136,13 +136,14 @@
 /obj/structure/platform/wrench_act(mob/living/user, obj/item/tool)
 	if(anchored)
 		to_chat(user, "Unscrew it first.")
-		return
+		return ITEM_INTERACT_FAILURE
 	if(!anchored)
-		user.balloon_alert(user, "Deconstructed.")
+		user.balloon_alert(user, "deconstructed")
 		if(tool.use_tool(src, user, volume = 50))
 			playsound(src, 'sound/items/deconstruct.ogg', 50, 1)
 			new material_type(user.loc, material_amount)
 			qdel(src)
+			return ITEM_INTERACT_SUCCESS
 
 // Platform types
 /obj/structure/platform/reinforced

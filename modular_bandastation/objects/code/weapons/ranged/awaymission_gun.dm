@@ -104,10 +104,10 @@
 	display_name = "Awaymission Laser Weaponary Research"
 	description = "Изучение лазерного оружия для гейтвея."
 	prereq_ids = list(
-		"adv_weaponry",
+		"electric_weapons",
 	)
 	design_ids = list(
 		"gate_gun_mk2",
 		"gate_gun",
 	)
-	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = TECHWEB_TIER_2_POINTS)

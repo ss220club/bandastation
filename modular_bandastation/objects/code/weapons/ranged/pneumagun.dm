@@ -50,6 +50,7 @@
 	name = "пневматический шарик"
 	icon = 'modular_bandastation/objects/icons/ammo.dmi'
 	icon_state = "pneumaball_g"
+	wound_bonus = -100
 	stamina = 7
 	damage = 1
 

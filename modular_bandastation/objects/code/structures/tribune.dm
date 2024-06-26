@@ -65,11 +65,12 @@
 	. = ..()
 	if(obj_flags & INDESTRUCTIBLE)
 		to_chat(user, span_warning("Try as you might, you can't figure out how to deconstruct [src]."))
-		return
+		return ITEM_INTERACT_FAILURE
 	to_chat(user, span_notice("You start disassembling [src]..."))
 	if(tool.use_tool(src, user, 2 SECONDS, volume = 50))
 		user.balloon_alert(user, "disassembled")
 		deconstruct(TRUE)
+		return ITEM_INTERACT_SUCCESS
 
 /obj/structure/tribune/atom_deconstruct(disassembled = TRUE)
 	. = ..()

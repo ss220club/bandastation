@@ -255,13 +255,13 @@
 	id = "beretta_ammo"
 	display_name = "Beretta Ammo Research"
 	description = "Наши учёные смогли разработать боеприпасы к пистолету беретта и даже несколько... специфичных."
-	prereq_ids = list("weaponry")
+	prereq_ids = list("exotic_ammo")
 	design_ids = list(
 		"box_beretta_bsp",
 		"box_beretta_ap",
 		"box_beretta",
 	)
-	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = TECHWEB_TIER_3_POINTS)
 
 #undef CALIBER_9X19MM
 #undef CALIBER_9X19BMM
