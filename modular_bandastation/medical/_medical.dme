@@ -13,3 +13,6 @@
 
 #include "code/new_wounds/internal_bleed.dm"
 #include "code/new_wounds/necrosis.dm"
+#include "code/new_wounds/wounds_remake.dm"
+
+#include "code/new_surgery/steps_remake.dm"

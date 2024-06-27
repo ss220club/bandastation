@@ -107,7 +107,13 @@
 /// Полевое лечение
 /datum/wound/necrosis/basic_necro/proc/tool_clearing(obj/item/I, mob/user)
 
-	if (necrosing_progress >= 200)
+	var/datum/wound/necro_wound
+	for(var/limb_wound in limb.wounds)
+		var/datum/wound/current_wound = limb_wound
+		if(istype(current_wound, /datum/wound/necrosis/basic_necro/))
+			necro_wound = current_wound
+
+	if (istype(necro_wound, /datum/wound/necrosis/basic_necro/critical))
 		return
 
 	var/improv_penalty_mult = (I.tool_behaviour == TOOL_HEMOSTAT ? 1 : 1.25) // 25% longer and less effective if you don't use a real hemostat
