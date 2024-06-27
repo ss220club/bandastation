@@ -42,3 +42,27 @@
 	else
 		to_chat(user, span_warning("[target] has no infected flesh there!"))
 	return ..()
+
+/datum/surgery_step/failure(mob/user, mob/living/target, target_zone, obj/item/tool, datum/surgery/surgery, fail_prob = 0)
+	var/screwedmessage = ""
+	switch(fail_prob)
+		if(0 to 24)
+			screwedmessage = " You almost had it, though."
+		if(50 to 74)//25 to 49 = no extra text
+			screwedmessage = " This is hard to get right in these conditions..."
+		if(75 to 99)
+			screwedmessage = " This is practically impossible in these conditions..."
+
+	display_results(
+		user,
+		target,
+		span_warning("You screw up![screwedmessage]"),
+		span_warning("[user] screws up!"),
+		span_notice("[user] finishes."), TRUE) //By default the patient will notice if the wrong thing has been cut
+
+	if (rand(1,100) > 20)
+		var/wound_type = /datum/wound/necrosis/basic_necro/moderate
+		var/datum/wound/necrosis/basic_necro/moderate_wound = new wound_type()
+		moderate_wound.apply_wound(surgery.operated_bodypart,silent = TRUE)
+
+	return FALSE

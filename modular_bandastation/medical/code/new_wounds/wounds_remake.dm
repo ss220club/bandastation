@@ -62,6 +62,7 @@
 						var/wound_type = /datum/wound/necrosis/basic_necro/moderate
 						var/datum/wound/necrosis/basic_necro/moderate_wound = new wound_type()
 						moderate_wound.apply_wound(limb,silent = TRUE,wound_source = "Burning infection progress")
+						moderate_wound.necrosing_progress = 5
 					return
 			else if(SPT_PROB(4, seconds_per_tick))
 				to_chat(victim, span_notice("You regain sensation in your [limb.plaintext_zone], but it's still in terrible shape!"))
@@ -80,6 +81,7 @@
 						var/wound_type = /datum/wound/necrosis/basic_necro/moderate
 						var/datum/wound/necrosis/basic_necro/moderate_wound = new wound_type()
 						moderate_wound.apply_wound(limb,silent = TRUE,wound_source = "Burning infection progress")
+						moderate_wound.necrosing_progress = 5
 					return
 			else if(SPT_PROB(1.5, seconds_per_tick))
 				to_chat(victim, span_notice("You can barely feel your [limb.plaintext_zone] again, and you have to strain to retain motor control!"))
@@ -91,6 +93,7 @@
 					var/wound_type = /datum/wound/necrosis/basic_necro/moderate
 					var/datum/wound/necrosis/basic_necro/moderate_wound = new wound_type()
 					moderate_wound.apply_wound(limb,silent = TRUE,wound_source = "Burning infection progress")
+					moderate_wound.necrosing_progress = 5
 					to_chat(victim, span_warning("You contemplate life without your [limb.plaintext_zone]..."))
 					victim.adjustToxLoss(0.75)
 				else

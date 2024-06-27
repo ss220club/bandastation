@@ -69,7 +69,7 @@
 				if (organ_damage > 0 && !isnull(selected_organ))
 					selected_organ.apply_organ_damage(organ_damage)
 
-	if (necrosing_progress < 5 && rand(1, 100) >= 80)
+	if (necrosing_progress < 5 && rand(1, 100) >= 20)
 		necrosing_progress = 0
 
 	if(necrosing_progress <= 0)
@@ -97,6 +97,7 @@
 			moderate_wound.apply_wound(limb,silent = TRUE,old_wound = necro_wound,wound_source = "Curing infection",replacing = TRUE)
 			moderate_wound.necrosing_progress = 99
 			necro_wound.remove_wound()
+
 		if (istype(necro_wound, /datum/wound/necrosis/basic_necro/moderate))
 			qdel(src)
 
