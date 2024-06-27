@@ -8,6 +8,7 @@
 	icon_state = "laser_gate"
 	inhand_icon_state = "laser_gate"
 	force = 10
+	ammo_type = list(/obj/item/ammo_casing/energy/lasergun)
 	selfcharge = TRUE // Selfcharge is enabled and disabled, and used as the away mission tracker
 	can_charge = 0
 
