@@ -16,6 +16,13 @@
 	. = ..()
 	on_changed_z_level()
 
+/obj/item/gun/energy/laser/awaymission_aeg/proc/instant_discharge()
+	if(!cell)
+		return
+	cell.charge = 0
+	recharge_newshot(no_cyborg_drain = TRUE)
+	update_appearance()
+
 /obj/item/gun/energy/laser/awaymission_aeg/on_changed_z_level(turf/old_turf, turf/new_turf, same_z_layer, notify_contents)
 	. = ..()
 	if(onAwayMission())
@@ -26,7 +33,7 @@
 	if(!onAwayMission())
 		if(ismob(loc))
 			to_chat(loc, span_danger("Ваш [src.name] деактивируется, так как он подавляется системами станции.</span>"))
-	cell.charge = 0
+	instant_discharge()
 	selfcharge = FALSE
 	update_icon()
 
