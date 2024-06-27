@@ -32,7 +32,7 @@
 	if(!(victim.has_status_effect(/datum/status_effect/necroinversite)))
 	//Если некроз на груди, голове или пахе - не более 2 уровня
 		if(victim.bodytemperature > (BODYTEMP_NORMAL - 10) && necrosing_progress <= (necrosing_max + 10))
-			necrosing_progress += necrosing_coefficient * times_fired + 10
+			necrosing_progress += necrosing_coefficient * times_fired
 	else
 		if (!(istype(necro_wound, /datum/wound/necrosis/basic_necro/critical)))
 			necrosing_progress -= 3
@@ -49,7 +49,7 @@
 			crit_wound.apply_wound(limb,silent = TRUE,old_wound = necro_wound,wound_source = "Progressing infection",replacing = TRUE)
 			necro_wound.remove_wound()
 
-	if (necrosing_progress >= 300)
+	if (istype(necro_wound, /datum/wound/necrosis/basic_necro/critical))
 		var/datum/gas_mixture/corpseGas = new
 		corpseGas.assert_gas(/datum/gas/miasma)
 
@@ -145,7 +145,7 @@
 	abstract = TRUE
 
 	required_limb_biostate = (BIO_FLESH)
-	required_wounding_types = list(WOUND_PIERCE,WOUND_SLASH,WOUND_BURN)
+	required_wounding_types = list(WOUND_PIERCE,WOUND_SLASH)
 
 	wound_series = WOUND_SERIES_NECROSIS
 
