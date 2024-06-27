@@ -3,8 +3,9 @@
 	name = "Auto Compressor Suit"
 	desc = "A suit equipped with an auto compressor to perform automatic chest compressions during CPR."
 	icon = 'modular_bandastation/medical/icons/medical_suits.dmi'
+	worn_icon = 'modular_bandastation/medical/icons/medical_suits.dmi'
 	icon_state = "pumper"
-
+	inhand_icon_state = "pumper"
 	var/mob/living/carbon/human/target
 	var/active = FALSE
 

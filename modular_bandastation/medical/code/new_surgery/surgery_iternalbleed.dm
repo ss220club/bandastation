@@ -26,7 +26,7 @@
 	var/datum/wound/internal_bleed/bleed/ib_wound = target.get_bodypart(user.zone_selected).get_wound_type(targetable_wound)
 	// Should be guaranteed to have the wound by this point
 	ASSERT(ib_wound, "[type] on [target] has no internal bleeding and operation can not be started")
-	return ib_wound.infestation > 0
+	return ib_wound.blood_flow > 0
 
 //SURGERY STEPS
 
@@ -46,6 +46,25 @@
 	surgery_effects_mood = TRUE
 	/// How much infestation is removed per step (positive number)
 	var/blood_flow_removed = 4
+
+/// To give the surgeon a heads up how much work they have ahead of them
+/datum/surgery_step/fix_ib/proc/get_progress(mob/user, mob/living/carbon/target, datum/wound/internal_bleed/bleed/ib_wound)
+	if(!ib_wound?.blood_flow || !blood_flow_removed)
+		return
+	var/estimated_remaining_steps = ib_wound.blood_flow / blood_flow_removed
+	var/progress_text
+
+	switch(estimated_remaining_steps)
+		if(-INFINITY to 1)
+			return
+		if(1 to 2)
+			progress_text = ", preparing to remove the last remaining bits of infection"
+		if(2 to 4)
+			progress_text = ", steadily narrowing the remaining bits of infection"
+		if(5 to INFINITY)
+			progress_text = ", though there's still quite a lot to excise"
+
+	return progress_text
 
 /datum/surgery_step/fix_ib/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	if(surgery.operated_wound)
@@ -88,6 +107,7 @@
 
 /datum/surgery_step/fix_ib/failure(mob/user, mob/living/target, target_zone, obj/item/tool, datum/surgery/surgery, fail_prob = 0)
 	..()
+	var/datum/wound/internal_bleed/bleed/IB_wound = surgery.operated_wound
 	display_results(
 		user,
 		target,
