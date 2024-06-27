@@ -1,3 +1,39 @@
+/datum/surgery/debride
+	name = "Debride burnt flesh"
+	surgery_flags = SURGERY_REQUIRE_RESTING | SURGERY_REQUIRE_LIMB | SURGERY_REQUIRES_REAL_LIMB
+	targetable_wound = list(/datum/wound/burn/flesh,/datum/wound/necrosis/basic_necro)
+	possible_locs = list(
+		BODY_ZONE_R_ARM,
+		BODY_ZONE_L_ARM,
+		BODY_ZONE_R_LEG,
+		BODY_ZONE_L_LEG,
+		BODY_ZONE_CHEST,
+		BODY_ZONE_HEAD,
+	)
+	steps = list(
+		/datum/surgery_step/debride,
+		/datum/surgery_step/dress,
+	)
+
+/datum/surgery/debride/can_start(mob/living/user, mob/living/carbon/target)
+	. = ..()
+	if(!.)
+		return .
+
+/datum/surgery/debride/can_start(mob/living/user, mob/living/carbon/target)
+	. = ..()
+	if(!.)
+		return .
+
+	var/datum/wound/burn/flesh/burn_wound = target.get_bodypart(user.zone_selected).get_wound_type(/datum/wound/burn/flesh)
+	var/datum/wound/necrosis/basic_necro/necro_wound = target.get_bodypart(user.zone_selected).get_wound_type(/datum/wound/necrosis/basic_necro)
+	// Should be guaranteed to have the wound by this point
+	ASSERT(burn_wound, "[type] on [target] has no burn or infected wound when it should have been guaranteed to have one by can_start")
+	if (!isnull(burn_wound))
+		return burn_wound.infestation > 0
+	if (!isnull(necro_wound))
+		return necro_wound.necrosing_progress > 0
+
 /datum/surgery_step/debride
 	name = "excise infection (hemostat)"
 	implements = list(
