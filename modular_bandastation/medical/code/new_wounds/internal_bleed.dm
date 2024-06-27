@@ -18,9 +18,9 @@
 	var/internal_bleeding_chance
 	/// If we let off blood when hit, the max blood lost is this * the incoming damage
 	var/internal_bleeding_coefficient
-	/// When hit on this bodypart, we have this chance of losing some blood + the incoming damage
+	/// Chance of heart attack due damage calculated by each tick
 	var/heart_attack_chance
-	/// If we let off blood when hit, the max blood lost is this * the incoming damage
+	/// Chance of lungs damage dealt by each tick
 	var/lungs_damage
 
 /datum/wound/internal_bleed/bleed/wound_injury(datum/wound/old_wound = null, attack_direction = null)
@@ -94,7 +94,7 @@
 
 /datum/wound/internal_bleed/bleed/treat(obj/item/I, mob/user)
 	if(I.tool_behaviour == TOOL_HEMOSTAT || I.get_temperature())
-		return tool_cauterize(I, user)
+		return tool_clamping(I, user)
 
 /datum/wound/internal_bleed/bleed/on_xadone(power)
 	. = ..()
@@ -103,7 +103,7 @@
 		adjust_blood_flow(-0.03 * power) // i think it's like a minimum of 3 power, so .09 blood_flow reduction per tick is pretty good for 0 effort
 
 /// Полевое лечение
-/datum/wound/internal_bleed/bleed/proc/tool_cauterize(obj/item/I, mob/user)
+/datum/wound/internal_bleed/bleed/proc/tool_clamping(obj/item/I, mob/user)
 
 	var/improv_penalty_mult = (I.tool_behaviour == TOOL_HEMOSTAT ? 1 : 1.25) // 25% longer and less effective if you don't use a real hemostat
 	var/self_penalty_mult = (user == victim ? 1.5 : 1) // 50% longer and less effective if you do it to yourself
@@ -129,7 +129,6 @@
 
 	var/bleeding_wording = (!limb.can_bleed() ? "holes" : "bleeding")
 	user.visible_message(span_green("[user] restore internals in [victim]."), span_green("You restore internals with reducing some of the [bleeding_wording] on [victim]."))
-	limb.receive_damage(burn = 2 + severity, wound_bonus = CANT_WOUND)
 	if(prob(30))
 		victim.emote("scream")
 	var/blood_cauterized = (0.6 / (self_penalty_mult * improv_penalty_mult))
@@ -164,12 +163,11 @@
 	heart_attack_chance = 0
 	lungs_damage = 0
 	status_effect_type = /datum/status_effect/wound/internal_bleed/moderate
-	scar_keyword = "internal_bleedmoderate"
 
 	simple_treat_text = "<b>Internal bleeding operation</b> the wound will remove blood loss, help the wound close by itself quicker, and speed up the blood recovery period."
 	homemade_treat_text = "<b>Cauterizing</b> can help to close wounds inside, but you need some small hole to get there."
 
-/datum/wound_pregen_data/flesh_internal_bleed/breakage
+/datum/wound_pregen_data/flesh_internal_bleed/light_ib
 	abstract = FALSE
 
 	wound_path_to_generate = /datum/wound/internal_bleed/bleed/moderate
@@ -195,12 +193,11 @@
 	heart_attack_chance = 100
 	lungs_damage = 1
 	status_effect_type = /datum/status_effect/wound/internal_bleed/severe
-	scar_keyword = "internal_bleedsevere"
 
 	simple_treat_text = "<b>Internal bleeding operation</b> the wound will remove blood loss, help the wound close by itself quicker, and speed up the blood recovery period."
 	homemade_treat_text = "<b>Cauterizing</b> can help to close wounds inside, but you need some small hole to get there."
 
-/datum/wound_pregen_data/flesh_internal_bleed/open_puncture
+/datum/wound_pregen_data/flesh_internal_bleed/medium_ib
 	abstract = FALSE
 
 	wound_path_to_generate = /datum/wound/internal_bleed/bleed/severe
@@ -225,12 +222,11 @@
 	heart_attack_chance = 2
 	lungs_damage = 5
 	status_effect_type = /datum/status_effect/wound/internal_bleed/critical
-	scar_keyword = "internal_bleedcritical"
 
 	simple_treat_text = "<b>Internal bleeding operation</b> the wound will remove blood loss, help the wound close by itself quicker, and speed up the blood recovery period."
 	homemade_treat_text = "<b>Cauterizing</b> can help to close wounds inside, but you need some small hole to get there."
 
-/datum/wound_pregen_data/flesh_internal_bleed/cavity
+/datum/wound_pregen_data/flesh_internal_bleed/heavy_ib
 	abstract = FALSE
 
 	wound_path_to_generate = /datum/wound/internal_bleed/bleed/critical

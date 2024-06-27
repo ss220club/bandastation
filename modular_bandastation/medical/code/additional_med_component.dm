@@ -4,7 +4,6 @@
 
 /datum/component/additional_med/Initialize(...)
 	. = ..()
-	RegisterSignal(parent, COMSIG_MOB_ADDMED_CPR_STARTED, PROC_REF(set_e_cpr))
 	if(!isliving(parent))
 		return COMPONENT_INCOMPATIBLE
 

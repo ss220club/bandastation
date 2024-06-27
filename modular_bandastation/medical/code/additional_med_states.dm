@@ -4,6 +4,13 @@
 	alert_type = null
 	duration = 50
 
+/datum/status_effect/necroinversite
+	id = "necroinversite_reagent"
+	status_type = STATUS_EFFECT_UNIQUE
+	alert_type = null
+	duration = 50
+
+
 // internal bleeding
 /datum/status_effect/wound/internal_bleed/moderate
 	id = "light_ib"

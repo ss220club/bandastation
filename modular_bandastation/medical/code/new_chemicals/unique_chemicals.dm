@@ -62,6 +62,7 @@
 
 /datum/reagent/medicine/necroinversite/on_mob_life(mob/living/carbon/affected_mob, seconds_per_tick, times_fired)
 	. = ..()
+	affected_mob.apply_status_effect(/datum/status_effect/necroinversite)
 	var/need_mob_update
 	if(affected_mob.getToxLoss() <= 15)
 		need_mob_update = affected_mob.adjustToxLoss(-0.3, updating_health = FALSE, required_biotype = affected_biotype)
