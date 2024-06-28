@@ -20,3 +20,5 @@
 
 #include "code/new_technologies/medical_designs.dm"
 
+#include "code/medical_items/iv_bags.dm"
+#include "code/medical_items/medical_pen.dm"

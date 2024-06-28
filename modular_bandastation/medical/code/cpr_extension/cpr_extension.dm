@@ -1,4 +1,4 @@
-#define CPR_PANIC_SPEED (0.8 SECONDS)
+#define CPR_PANIC_SPEED (2 SECONDS)
 
 /// Убрана проверка на смерть, идет посыл сигнала проведение СЛР
 /mob/living/carbon/human/do_cpr(mob/living/carbon/target)
