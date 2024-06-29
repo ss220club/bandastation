@@ -25,7 +25,7 @@
 #include "code/structures/posters.dm"
 #include "code/structures/tribune.dm"
 #include "code/structures/misc.dm"
-#include "code/structures/closets.dm"
+//#include "code/structures/closets.dm"
 #include "code/structures/coffin.dm"
 
 // Miscellaneous
