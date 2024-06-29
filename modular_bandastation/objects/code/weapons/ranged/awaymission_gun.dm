@@ -8,13 +8,23 @@
 	icon_state = "laser_gate"
 	inhand_icon_state = "laser_gate"
 	force = 10
-	ammo_type = list(/obj/item/ammo_casing/energy/lasergun)
+	ammo_type = list(/obj/item/ammo_casing/energy/lasergun/awaymission_aeg)
 	can_select = FALSE
 	modifystate = FALSE
 	selfcharge = TRUE
 	shaded_charge = TRUE
 	ammo_x_offset = 0
 	can_charge = 0
+
+/obj/item/ammo_casing/energy/lasergun/awaymission_aeg
+	projectile_type = /obj/projectile/beam/laser/awaymission_aeg
+	e_cost = LASER_SHOTS(20, STANDARD_CELL_CHARGE)
+
+/obj/projectile/beam/laser/awaymission_aeg
+	damage = 20
+	impact_effect_type = /obj/effect/temp_visual/impact_effect/red_laser
+	light_color = COLOR_SOFT_RED
+	wound_falloff_tile = 1
 
 /obj/item/gun/energy/awaymission_aeg/Initialize(mapload)
 	. = ..()
