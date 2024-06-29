@@ -8,8 +8,6 @@
 	if(BODY_ZONE_CHEST)
 		if(prob(amount))
 			adjustOrganLoss(ORGAN_SLOT_LUNGS, fireloss * 0.2,required_organ_flag = ORGAN_ORGANIC)
-		else
-			adjustOrganLoss(ORGAN_SLOT_LUNGS, fireloss * 0.05,required_organ_flag = ORGAN_ORGANIC)
 
 	if(. == 0) // no change, no need to update
 		return
