@@ -15,7 +15,7 @@
 			null,
 			/* hud_owner = */ null,
 			src,
-			"Настройки персонажа",
+			"Персонаж",
 			/* offset = */ 2,
 			CALLBACK(src, PROC_REF(home_open_character_settings)),
 		)
@@ -26,7 +26,7 @@
 			null,
 			/* hud_owner = */ null,
 			src,
-			"Настройки игры",
+			"Настройки",
 			/* offset = */ 3,
 			CALLBACK(src, PROC_REF(home_open_game_settings)),
 		)

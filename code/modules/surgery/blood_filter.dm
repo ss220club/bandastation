@@ -61,7 +61,7 @@
 	success_sound = 'sound/machines/fan_loop.ogg'
 
 /datum/surgery_step/filter_blood/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	display_pain(target, "You feel a throbbing pain in your chest!")
+	display_pain(target, "Ты чувствуешь ужасную боль в груди!")
 
 /datum/surgery_step/filter_blood/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
 	var/obj/item/blood_filter/bloodfilter = tool
@@ -72,9 +72,9 @@
 	display_results(
 		user,
 		target,
-		span_notice("\The [tool] completes a cycle filtering [target]'s blood."),
-		span_notice("\The [tool] whirrs as it filters [target]'s blood."),
-		span_notice("\The [tool] whirrs as it pumps."),
+		span_notice("[tool.name] сигнализирует, что фильтрация крови у [target] завершена."),
+		span_notice("[tool.name] сигнализирует, что закончил перекачивать кровь у [target]."),
+		span_notice("[tool.name] сигнализирует, что закончил перекачивать кровь."),
 	)
 
 	if(locate(/obj/item/healthanalyzer) in user.held_items)

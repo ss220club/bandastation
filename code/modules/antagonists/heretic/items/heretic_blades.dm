@@ -29,7 +29,7 @@
 	if(!check_usability(user))
 		return
 
-	. += span_notice("You can shatter the blade to teleport to a random, (mostly) safe location by <b>activating it in-hand</b>.")
+	. += span_notice("Ты можешь разбить клинок, чтобы телепортироваться в случайное (в основном) безопасное место, <b>активировав его в руке</b>.")
 
 /// Checks if the passed mob can use this blade without being stunned
 /obj/item/melee/sickly_blade/proc/check_usability(mob/living/user)
@@ -40,7 +40,7 @@
 	if(.)
 		return .
 	if(!check_usability(user))
-		to_chat(user, span_danger("You feel a pulse of alien intellect lash out at your mind!"))
+		to_chat(user, span_danger("Ты чувствуешь, как импульс чужого интеллекта бьет по твоему разуму!"))
 		var/mob/living/carbon/human/human_user = user
 		human_user.AdjustParalyzed(5 SECONDS)
 		return TRUE
@@ -164,7 +164,7 @@
 		Труппе приносящей радость, вырезающая улыбки на их лицах, хотят они того или нет."
 	icon_state = "moon_blade"
 	inhand_icon_state = "moon_blade"
-	after_use_message = "The Moon hears your call..."
+	after_use_message = "Луна слышит твой зов..."
 
 // Path of Nar'Sie's blade
 // What!? This blade is given to cultists as an altar item when they sacrifice a heretic.
