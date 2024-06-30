@@ -4,7 +4,7 @@
 	desc = "Обладатель данной мутации имеет проблемы со зрением."
 	instability = NEGATIVE_STABILITY_MODERATE
 	quality = MINOR_NEGATIVE
-	text_gain_indication = "<span class='danger'>Ты плоховато видишь.</span>"
+	text_gain_indication = span_danger("Ты плоховато видишь.")
 
 /datum/mutation/human/nearsight/on_acquiring(mob/living/carbon/human/owner)
 	if(..())
@@ -22,7 +22,7 @@
 	desc = "Субъект становится полностью слепым."
 	instability = NEGATIVE_STABILITY_MAJOR
 	quality = NEGATIVE
-	text_gain_indication = "<span class='danger'>Ты не можешь ничего увидеть.</span>"
+	text_gain_indication = span_danger("Ты не можешь ничего увидеть.")
 
 /datum/mutation/human/blind/on_acquiring(mob/living/carbon/human/owner)
 	if(..())
@@ -40,8 +40,8 @@
 	desc = "Обладатель данного генома может визуально заметить уникальную тепловую сигнатуру человека."
 	quality = POSITIVE
 	difficulty = 18
-	text_gain_indication = "<span class='notice'>Ты замечаешь тепло, исходящее из твоей кожи...</span>"
-	text_lose_indication = "<span class='notice'>Ты больше не видишь тепло, исходящее из твоей кожи...</span>"
+	text_gain_indication = span_notice("Ты замечаешь тепло, исходящее из твоей кожи...")
+	text_lose_indication = span_notice("Ты больше не видишь тепло, исходящее из твоей кожи...")
 	instability = POSITIVE_INSTABILITY_MAJOR // thermals aren't station equipment
 	synchronizer_coeff = 1
 	power_coeff = 1
@@ -111,7 +111,7 @@
 /datum/mutation/human/xray
 	name = "X Ray Vision"
 	desc = "Странный геном, который позволяет его обладателю видеть пространство между стенами." //actual x-ray would mean you'd constantly be blasting rads, wich might be fun for later //hmb
-	text_gain_indication = "<span class='notice'>Стены вдруг исчезли!</span>"
+	text_gain_indication = span_notice("Стены вдруг исчезли!")
 	instability = POSITIVE_INSTABILITY_MAJOR
 	locked = TRUE
 
@@ -135,7 +135,7 @@
 	quality = POSITIVE
 	locked = TRUE
 	difficulty = 16
-	text_gain_indication = "<span class='notice'>Ты ощущаешь давление позади глаз.</span>"
+	text_gain_indication = span_notice("Ты ощущаешь давление позади глаз.")
 	layer_used = FRONT_MUTATIONS_LAYER
 	limb_req = BODY_ZONE_HEAD
 
@@ -186,8 +186,8 @@
 	desc = "Является причиной тяжёлого случая афазии, которая мешает чтению или письму."
 	instability = NEGATIVE_STABILITY_MAJOR
 	quality = NEGATIVE
-	text_gain_indication = "<span class='danger'>Ты чувствуешь себя неспособным читать или писать.</span>"
-	text_lose_indication = "<span class='danger'>Ты чувствуешь, что снова можешь читать или писать.</span>"
+	text_gain_indication = span_danger("Ты чувствуешь себя неспособным читать или писать.")
+	text_lose_indication = span_danger("Ты чувствуешь, что снова можешь читать или писать.")
 
 /datum/mutation/human/illiterate/on_acquiring(mob/living/carbon/human/owner)
 	if(..())
@@ -198,3 +198,4 @@
 	if(..())
 		return
 	REMOVE_TRAIT(owner, TRAIT_ILLITERATE, GENETIC_MUTATION)
+
