@@ -28,7 +28,7 @@
 
 /datum/action/cooldown/spell/pointed/rust_construction/is_valid_target(atom/cast_on)
 	if(!isturf(cast_on))
-		cast_on.balloon_alert(owner, "not a wall or floor!")
+		cast_on.balloon_alert(owner, "не стена и не пол!!")
 		return FALSE
 
 	if(!HAS_TRAIT(cast_on, TRAIT_RUSTY))
@@ -49,7 +49,7 @@
 
 /datum/action/cooldown/spell/pointed/rust_construction/cast(turf/cast_on)
 	. = ..()
-	var/rises_message = "rises out of [cast_on]"
+	var/rises_message = "поднимается из [cast_on]"
 
 	// If we casted at a wall we'll try to rust it. In the case of an enchanted wall it'll deconstruct it
 	if(isclosedturf(cast_on))

@@ -202,7 +202,7 @@
 	heretic_datum.remove_sacrifice_target(sacrifice)
 
 
-	var/feedback = "Your patrons accept your offer"
+	var/feedback = "Твои покровители принимают твоё подношение"
 	var/sac_job_flag = sacrifice.mind?.assigned_role?.job_flags | sacrifice.last_mind?.assigned_role?.job_flags
 	var/datum/antagonist/cult/cultist_datum = IS_CULTIST(sacrifice)
 	// Heads give 3 points, cultists give 1 point (and a special reward), normal sacrifices give 2 points.
@@ -210,7 +210,7 @@
 	if((sac_job_flag & JOB_HEAD_OF_STAFF))
 		heretic_datum.knowledge_points += 3
 		heretic_datum.high_value_sacrifices++
-		feedback += " <i>graciously</i>"
+		feedback += " <i>с великодушием</i>"
 	else if(cultist_datum)
 		heretic_datum.knowledge_points += 1
 		grant_reward(user, sacrifice, loc)
