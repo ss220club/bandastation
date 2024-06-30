@@ -36,5 +36,9 @@
 
 	objectives += master_obj
 	owner.announce_objectives()
-	to_chat(owner, span_boldnotice("Вы - [ishuman(owner.current) ? "возвращенный труп":"ужасное создание, принесенное"] в этот мир через врата Мансуса."))
-	to_chat(owner, span_notice("Ваш хозяин - [master]. Помогайте им во всех делах."))
+	to_chat(owner, span_boldnotice("You are a [ishuman(owner.current) ? "shambling corpse returned":"horrible creation brought"] to this plane through the Gates of the Mansus."))
+	to_chat(owner, span_notice("Your master is [master]. Assist them to all ends."))
+
+	if(istype(owner.current, /mob/living/basic/construct/harvester/heretic))
+		var/mob/living/basic/construct/harvester/heretic/shitcode = owner.current
+		shitcode.master = master

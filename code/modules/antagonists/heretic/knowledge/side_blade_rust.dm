@@ -19,10 +19,10 @@
 
 /datum/heretic_knowledge/crucible
 	name = "Mawed Crucible"
-	desc = "Позволяет трансмутировать переносной ватер танк и стол для создания Голодного горнила. \
-		Голодное горнило может варить мощные боевые и полезные зелья, но между их употреблениями его нужно кормить частями тела и органами."
-	gain_text = "Это чистая агония. Мне не удалось вызвать образ Аристократа, \
-		но благодаря вниманию Жреца я наткнулся на другой рецепт..."
+	desc = "Allows you to transmute a portable water tank and a table to create a Mawed Crucible. \
+		The Mawed Crucible can brew powerful potions for combat and utility, but must be fed bodyparts and organs between uses."
+	gain_text = "This is pure agony. I wasn't able to summon the figure of the Aristocrat, \
+		but with the Priest's attention I stumbled upon a different recipe..."
 	next_knowledge = list(
 		/datum/heretic_knowledge/duel_stance,
 		/datum/heretic_knowledge/spell/area_conversion,
@@ -37,14 +37,14 @@
 
 /datum/heretic_knowledge/rifle
 	name = "Lionhunter's Rifle"
-	desc = "Позволяет трансмутировать любое баллистическое оружие, например, трубное ружье, с помощью шкуры \
-		любого животного, доски дерева и камеры в винтовку Lionhunter. \
-		Lionhunter - это дальнобойное баллистическое оружие с тремя выстрелами. \
-		При стрельбе с близкого расстояния или по неодушевленным предметам эти выстрелы \
-		действуют как обычные, хотя и слабые высококалиберные боеприпасы. Вы можете направить винтовку на далеких противников,\
-		в результате чего выстрел нанесет значительно больший урон и нацелится на них."
-	gain_text = "В антикварном магазине я встретил старика, который владел очень необычным оружием. \
-		В то время я не мог его приобрести, но они показали мне, как они делали его много лет назад."
+	desc = "Allows you to transmute any ballistic weapon, such as a pipegun, with hide \
+		from any animal, a plank of wood, and a camera to create the Lionhunter's rifle. \
+		The Lionhunter's Rifle is a long ranged ballistic weapon with three shots. \
+		These shots function as normal, albeit weak high caliber mutitions when fired from \
+		close range or at inanimate objects. You can aim the rifle at distant foes, \
+		causing the shot to deal massively increased damage and hone in on them."
+	gain_text = "I met an old man in an antique shop who wielded a very unusual weapon. \
+		I could not purchase it at the time, but they showed me how they made it ages ago."
 	next_knowledge = list(
 		/datum/heretic_knowledge/duel_stance,
 		/datum/heretic_knowledge/spell/area_conversion,
