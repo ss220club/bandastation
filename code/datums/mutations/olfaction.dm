@@ -3,8 +3,8 @@
 	desc = "Ваше обоняние сравнимо с собачьим."
 	quality = POSITIVE
 	difficulty = 12
-	text_gain_indication = "<span class='notice'>Запахи приобретают новый смысл...</span>"
-	text_lose_indication = "<span class='notice'>Твоё обоняние возвращается в норму.</span>"
+	text_gain_indication = span_notice("Запахи приобретают новый смысл...")
+	text_lose_indication = span_notice("Твоё обоняние возвращается в норму.")
 	power_path = /datum/action/cooldown/spell/olfaction
 	instability = POSITIVE_INSTABILITY_MODERATE
 	synchronizer_coeff = 1

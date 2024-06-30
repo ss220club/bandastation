@@ -4,8 +4,8 @@
 	desc = "Геном, благодаря которому кожа носителя со временем становится прозрачной."
 	quality = POSITIVE
 	difficulty = 16
-	text_gain_indication = "<span class='notice'>Ты чувствуешь себя единым с окружением.</span>"
-	text_lose_indication = "<span class='notice'>Ты чувствуешь себя необычно заметным.</span>"
+	text_gain_indication = span_notice("Ты чувствуешь себя единым с окружением.")
+	text_lose_indication = span_notice("Ты чувствуешь себя необычно заметным.")
 	instability = POSITIVE_INSTABILITY_MAJOR
 	power_coeff = 1
 

@@ -4,8 +4,8 @@
 	quality = POSITIVE
 	difficulty = 12
 	locked = TRUE
-	text_gain_indication = "<span class='notice'>Ты ощущаешь жжение в горле!</span>"
-	text_lose_indication = "<span class='notice'>Жжение в горле проходит.</span>"
+	text_gain_indication = span_notice("Ты ощущаешь жжение в горле!")
+	text_lose_indication = span_notice("Жжение в горле проходит.")
 	power_path = /datum/action/cooldown/spell/cone/staggered/fire_breath
 	instability = POSITIVE_INSTABILITY_MODERATE
 	energy_coeff = 1
