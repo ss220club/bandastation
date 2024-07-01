@@ -55,7 +55,7 @@
 	color = "#813d8f"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	overdose_threshold = 30
-	ph = 5.4
+	ph = 4.1
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 	inverse_chem_val = 0.5
 	inverse_chem = /datum/reagent/medicine/spaceacillin

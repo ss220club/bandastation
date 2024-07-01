@@ -67,39 +67,3 @@
 	results = list(/datum/reagent/medicine/cryodrit_base/ = 5)
 	required_reagents = list(/datum/reagent/medicine/omnidrite = 3, /datum/reagent/medicine/cryoxadone = 2, /datum/reagent/acetone = 1, /datum/reagent/water = 1, /datum/reagent/medicine/calomel = 1)
 	reaction_tags = REACTION_TAG_EASY | REACTION_TAG_HEALING | REACTION_TAG_PLANT | REACTION_TAG_BRUTE |REACTION_TAG_BURN | REACTION_TAG_TOXIN | REACTION_TAG_OXY
-
-//Окуликcадонорит - глаза
-
-/datum/reagent/medicine/cryodrit_base/oculixadonorit
-	name = "Oculixadonorit"
-	description = "Used to heal eyes in cold enviroment. Optimal temperature for best result is 103K"
-	organ = ORGAN_SLOT_EYES
-
-/datum/chemical_reaction/medicine/oculixadonorit
-	results = list(/datum/reagent/medicine/cryodrit_base/ = 5)
-	required_reagents = list(/datum/reagent/medicine/omnidrite = 3, /datum/reagent/medicine/cryoxadone = 2, /datum/reagent/acetone = 1, /datum/reagent/water = 1, /datum/reagent/medicine/oculine = 1)
-	reaction_tags = REACTION_TAG_EASY | REACTION_TAG_HEALING | REACTION_TAG_PLANT | REACTION_TAG_BRUTE |REACTION_TAG_BURN | REACTION_TAG_TOXIN | REACTION_TAG_OXY
-
-//Инакуcадонорит - уши
-
-/datum/reagent/medicine/cryodrit_base/inacuxadonorit
-	name = "Inacuxadonorit"
-	description = "Used to heal ears in cold enviroment. Optimal temperature for best result is 103K"
-	organ = ORGAN_SLOT_EARS
-
-/datum/chemical_reaction/medicine/inacuxadonorit
-	results = list(/datum/reagent/medicine/cryodrit_base/ = 5)
-	required_reagents = list(/datum/reagent/medicine/omnidrite = 3, /datum/reagent/medicine/cryoxadone = 2, /datum/reagent/acetone = 1, /datum/reagent/water = 1, /datum/reagent/medicine/inacusiate = 1)
-	reaction_tags = REACTION_TAG_EASY | REACTION_TAG_HEALING | REACTION_TAG_PLANT | REACTION_TAG_BRUTE |REACTION_TAG_BURN | REACTION_TAG_TOXIN | REACTION_TAG_OXY
-
-//Манникcадонорит - мозг
-
-/datum/reagent/medicine/cryodrit_base/mannixadonorit
-	name = "Mannixadonorit"
-	description = "Used to heal mannitol in cold enviroment. Optimal temperature for best result is 103K"
-	organ = ORGAN_SLOT_BRAIN
-
-/datum/chemical_reaction/medicine/mannixadonorit
-	results = list(/datum/reagent/medicine/cryodrit_base/ = 5)
-	required_reagents = list(/datum/reagent/medicine/omnidrite = 3, /datum/reagent/medicine/cryoxadone = 2, /datum/reagent/acetone = 1, /datum/reagent/water = 1, /datum/reagent/medicine/mannitol = 1)
-	reaction_tags = REACTION_TAG_EASY | REACTION_TAG_HEALING | REACTION_TAG_PLANT | REACTION_TAG_BRUTE |REACTION_TAG_BURN | REACTION_TAG_TOXIN | REACTION_TAG_OXY
