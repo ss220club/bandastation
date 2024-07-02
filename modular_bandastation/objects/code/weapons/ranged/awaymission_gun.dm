@@ -77,8 +77,8 @@
 
 	if(!do_after(user, 3 SECONDS, target = src))
 		return
-	cell.give(50000)
-	user.adjust_nutrition(-15)
+	cell.give(500)
+	user.adjust_nutrition(-10)
 	. = ..()
 
 /datum/design/gate_gun_mk1
