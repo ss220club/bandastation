@@ -1,4 +1,5 @@
 #include "code/additional_med_defines.dm"
+#include "code/additional_med_functions.dm"
 #include "code/additional_med_mob.dm"
 #include "code/additional_med_component.dm"
 #include "code/additional_med_states.dm"
@@ -11,10 +12,10 @@
 
 #include "code/organ_damage/remake_organ_decay.dm"
 #include "code/organ_damage/organ_damage_ondamage.dm"
-//#include "code/organ_damage/organ_damage_brute.dm"
-//#include "code/organ_damage/organ_damage_burn.dm"
-//#include "code/organ_damage/organ_damage_toxin.dm"
-//#include "code/organ_damage/organ_damage_oxygen.dm"
+#include "code/organ_damage/organ_damage_brute.dm"
+#include "code/organ_damage/organ_damage_burn.dm"
+#include "code/organ_damage/organ_damage_toxin.dm"
+#include "code/organ_damage/organ_damage_oxygen.dm"
 
 #include "code/new_wounds/internal_bleed.dm"
 #include "code/new_wounds/necrosis.dm"

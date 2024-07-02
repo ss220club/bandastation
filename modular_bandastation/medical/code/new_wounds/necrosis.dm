@@ -28,7 +28,6 @@
 		if(istype(current_wound, /datum/wound/necrosis/basic_necro/))
 			necro_wound = current_wound
 
-
 	if(!(victim.has_status_effect(/datum/status_effect/necroinversite)))
 	//Если некроз на груди, голове или пахе - не более 2 уровня
 		if(victim.bodytemperature > (BODYTEMP_NORMAL - 10) && necrosing_progress <= (necrosing_max + 10))
@@ -42,12 +41,21 @@
 		var/datum/wound/necrosis/basic_necro/severe_wound = new wound_type()
 		severe_wound.apply_wound(limb,silent = TRUE,old_wound = necro_wound,wound_source = "Progressing infection",replacing = TRUE)
 		necro_wound.remove_wound()
+		if (prob(100) >= 50)
+			if (!disabling)
+				to_chat(victim, span_warning("<b>Your [limb.plaintext_zone] completely locks up, as you struggle for control against the infection!</b>"))
+				set_disabling(TRUE)
+			else
+				to_chat(victim, span_notice("You regain sensation in your [limb.plaintext_zone], but it's still in terrible shape!"))
+				set_disabling(FALSE)
 	if (necrosing_progress >= (necrosing_max) && (istype(necro_wound, /datum/wound/necrosis/basic_necro/severe)))
 		if(limb != victim.get_bodypart(BODY_ZONE_CHEST) && limb != victim.get_bodypart(BODY_ZONE_HEAD) && limb != victim.get_bodypart(BODY_ZONE_PRECISE_GROIN))
 			var/wound_type = /datum/wound/necrosis/basic_necro/critical
 			var/datum/wound/necrosis/basic_necro/critical/crit_wound = new wound_type()
 			crit_wound.apply_wound(limb,silent = TRUE,old_wound = necro_wound,wound_source = "Progressing infection",replacing = TRUE)
 			necro_wound.remove_wound()
+			to_chat(victim, span_warning("<b>Your [limb.plaintext_zone] completely locks up, as you struggle for control against the infection!</b>"))
+			set_disabling(TRUE)
 
 	if (istype(necro_wound, /datum/wound/necrosis/basic_necro/critical))
 		var/datum/gas_mixture/corpseGas = new
