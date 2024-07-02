@@ -397,9 +397,11 @@
 	var/organ_list = get_organs_for_zone(user.zone_selected)
 	if(user.grab_state == GRAB_AGGRESSIVE && HAS_TRAIT(user, TRAIT_PROFESSIONAL_DOCTOR))
 		for (var/obj/item/organ/internal/i_organ in organ_list)
-			if (src.get_organ_loss(i_organ) > 25)
-				msg += "[span_notice("[t_He] appears have mailfunction [i_organ.name] <b><i>for now.</i></b>")]\n"
-			else if (src.get_organ_loss(i_organ) > 100)
+			if (src.get_organ_loss(i_organ) >= 5)
+				msg += "[span_notice("[t_He] appears have a little mailfunction in [i_organ.name] <b><i>for now.</i></b>")]\n"
+			if (src.get_organ_loss(i_organ) >= 60)
+				msg += "[span_notice("[t_He] appears have a bad condition of [i_organ.name] <b><i>for now.</i></b>")]\n"
+			else if (src.get_organ_loss(i_organ) >= 100)
 				msg += "[span_notice("[t_He] appears have non-functional [i_organ.name] <b><i>for now.</i></b>")]\n"
 
 
