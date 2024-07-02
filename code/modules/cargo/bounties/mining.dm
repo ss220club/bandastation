@@ -46,16 +46,17 @@
 /datum/bounty/item/mining/watcher_wreath
 	name = "Watcher Wreaths"
 	description = "Директор исследований станции 14 думает, что они на пороге прорыва в изучении культурных символов некоторых языческих верований. Отправьте им несколько ожерелей смотрителей для анализа."
+	include_subtypes = FALSE
 	reward = CARGO_CRATE_VALUE * 15
 	required_count = 3
-	wanted_types = list(/obj/item/clothing/neck/wreath = FALSE)
+	wanted_types = list(/obj/item/clothing/neck/wreath = TRUE)
 
 /datum/bounty/item/mining/icewing_wreath
 	name = "Icewing Wreath"
 	description = "Мы получаем некоторые....странные сообщения от директора исследований станции 14. И большая часть из всего сказанного была неразборчива. Видимо им нужно ожерелье ледяного смотрителя. Не могли бы вы отправить им одно?"
 	reward = CARGO_CRATE_VALUE * 30
 	required_count = 1
-	wanted_types = list(/obj/item/clothing/neck/wreath/icewing = FALSE)
+	wanted_types = list(/obj/item/clothing/neck/wreath/icewing = TRUE)
 
 /datum/bounty/item/mining/bone_dagger
 	name = "Костяные клинки"

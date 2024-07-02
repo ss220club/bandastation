@@ -202,7 +202,7 @@
 	description = "Сокращение бюджета бьёт очень сильно по службе безопасности. Отправьте несколько самодельных патрон для дробовика как сможете."
 	reward = CARGO_CRATE_VALUE * 4
 	required_count = 5
-	wanted_types = list(/obj/item/ammo_casing/shotgun/improvised = TRUE)
+	wanted_types = list(/obj/item/ammo_casing/junk = TRUE)
 
 /datum/bounty/item/assistant/flamethrower
 	name = "Огнемёт"

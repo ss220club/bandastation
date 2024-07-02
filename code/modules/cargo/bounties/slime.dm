@@ -35,5 +35,5 @@
 	wanted_types = list(/obj/item/slime_extract/adamantine = TRUE)
 
 /datum/bounty/item/slime/rainbow
-	name = "Радужным экстрактом слайма"
+	name = "радужным экстрактом слайма"
 	wanted_types = list(/obj/item/slime_extract/rainbow = TRUE)
