@@ -62,7 +62,7 @@
 		/obj/item/c_tube = 1, // To make it airtight
 		/obj/item/flashlight = 1, // For the mech light
 		/obj/item/stack/sticky_tape = 25, // ¯\_(ツ)_/¯
-		/obj/item/stock_parts/cell/high = 1,
+		/obj/item/stock_parts/power_store/cell/high = 1,
 		/obj/item/stack/rods = 4 // To mount the equipment
 	)
 	tool_behaviors = list(TOOL_WELDER, TOOL_SCREWDRIVER)

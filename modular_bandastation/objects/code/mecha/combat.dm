@@ -75,7 +75,7 @@
 
 /obj/vehicle/sealed/mecha/gygax/nt/populate_parts()
 	. = ..()
-	cell = new /obj/item/stock_parts/cell/high/slime_hypercharged
+	cell = new /obj/item/stock_parts/power_store/cell/high/slime_hypercharged
 	scanmod = new /obj/item/stock_parts/scanning_module/triphasic(src)
 	capacitor = new /obj/item/stock_parts/capacitor/quadratic(src)
 	servo = new /obj/item/stock_parts/servo/femto(src)
@@ -128,7 +128,7 @@
 
 /obj/vehicle/sealed/mecha/durand/rover/populate_parts()
 	. = ..()
-	cell = new /obj/item/stock_parts/cell/bluespace
+	cell = new /obj/item/stock_parts/power_store/cell/bluespace
 	scanmod = new /obj/item/stock_parts/scanning_module/triphasic(src)
 	capacitor = new /obj/item/stock_parts/capacitor/quadratic(src)
 	servo = new /obj/item/stock_parts/servo/femto(src)

@@ -168,7 +168,7 @@
 		/obj/item/storage/box/emergencytank = 1,
 		/obj/item/clothing/head/utility/welding = 1,
 		/obj/item/stack/sheet/iron = 10,
-		/obj/item/stock_parts/cell/high = 1,
+		/obj/item/stock_parts/power_store/cell/high = 1,
 	)
 
 /obj/effect/mob_spawn/corpse/spacebattle/engineer
@@ -191,7 +191,7 @@
 		/obj/item/storage/box/emergencytank = 1,
 		/obj/item/clothing/head/utility/welding = 1,
 		/obj/item/stack/sheet/iron = 10,
-		/obj/item/stock_parts/cell/high = 1,
+		/obj/item/stock_parts/power_store/cell/high = 1,
 	)
 
 /obj/effect/mob_spawn/corpse/spacebattle/engineer/space
@@ -228,7 +228,7 @@
 	backpack_contents = list(
 		/obj/item/reagent_containers/pill/patch/aiuri = 1,
 		/obj/item/reagent_containers/pill/patch/libital = 1,
-		/obj/item/stock_parts/cell/high = 1,
+		/obj/item/stock_parts/power_store/cell/high = 1,
 		/obj/item/storage/box/breacherslug = 1,
 	)
 

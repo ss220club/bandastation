@@ -12,7 +12,7 @@
 	force = 10
 	throwforce = 7
 	cooldown = 3.5 SECONDS
-	preload_cell_type = /obj/item/stock_parts/cell/high
+	preload_cell_type = /obj/item/stock_parts/power_store/cell/high
 	block_chance = 30
 
 /obj/item/melee/baton/security/electrostaff/purple
@@ -65,7 +65,7 @@
 	tool_behaviors = list(TOOL_SCREWDRIVER, TOOL_WIRECUTTER)
 	result = /obj/item/melee/baton/security/electrostaff
 	reqs = list(/obj/item/melee/baton/security = 2,
-				/obj/item/stock_parts/cell/high = 1,
+				/obj/item/stock_parts/power_store/cell/high = 1,
 				/obj/item/stack/cable_coil = 5,
 				/obj/item/assembly/signaler/anomaly/flux = 1,
 				/obj/item/weaponcrafting/gunkit/electrostaff = 1)
