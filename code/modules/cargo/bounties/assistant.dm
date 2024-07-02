@@ -259,7 +259,6 @@
 	name = "[fluid_type] Рыба"
 	description = "Нам нужна [LOWER_TEXT(fluid_type)] рыба для заселения наших аквариумов. Мёртвые или купленные в отделе снабжения рыбы будут оплачены лишь наполовину."
 
-
 /datum/bounty/item/assistant/fish/fluid/can_ship_fish(obj/item/fish/fishie)
 	return compatible_fluid_type(fishie.required_fluid_type, fluid_type)
 
