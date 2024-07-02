@@ -31,7 +31,7 @@
 	if(!(victim.has_status_effect(/datum/status_effect/necroinversite)))
 	//Если некроз на груди, голове или пахе - не более 2 уровня
 		if(victim.bodytemperature > (BODYTEMP_NORMAL - 10) && necrosing_progress <= (necrosing_max + 10))
-			necrosing_progress += necrosing_coefficient * times_fired
+			necrosing_progress += necrosing_coefficient * times_fired * 0.15
 	else
 		if (!(istype(necro_wound, /datum/wound/necrosis/basic_necro/critical)))
 			necrosing_progress -= 3
@@ -41,19 +41,23 @@
 		var/datum/wound/necrosis/basic_necro/severe_wound = new wound_type()
 		severe_wound.apply_wound(limb,silent = TRUE,old_wound = necro_wound,wound_source = "Progressing infection",replacing = TRUE)
 		necro_wound.remove_wound()
-		if (prob(100) >= 50)
-			if (!disabling)
-				to_chat(victim, span_warning("<b>Your [limb.plaintext_zone] completely locks up, as you struggle for control against the infection!</b>"))
-				set_disabling(TRUE)
-			else
-				to_chat(victim, span_notice("You regain sensation in your [limb.plaintext_zone], but it's still in terrible shape!"))
-				set_disabling(FALSE)
 	if (necrosing_progress >= (necrosing_max) && (istype(necro_wound, /datum/wound/necrosis/basic_necro/severe)))
 		if(limb != victim.get_bodypart(BODY_ZONE_CHEST) && limb != victim.get_bodypart(BODY_ZONE_HEAD) && limb != victim.get_bodypart(BODY_ZONE_PRECISE_GROIN))
 			var/wound_type = /datum/wound/necrosis/basic_necro/critical
 			var/datum/wound/necrosis/basic_necro/critical/crit_wound = new wound_type()
 			crit_wound.apply_wound(limb,silent = TRUE,old_wound = necro_wound,wound_source = "Progressing infection",replacing = TRUE)
 			necro_wound.remove_wound()
+
+	if (prob(100) >= 50 && (istype(necro_wound, /datum/wound/necrosis/basic_necro/severe)))
+		if (!disabling)
+			to_chat(victim, span_warning("<b>Your [limb.plaintext_zone] completely locks up, as you struggle for control against the infection!</b>"))
+			set_disabling(TRUE)
+		else
+			to_chat(victim, span_notice("You regain sensation in your [limb.plaintext_zone], but it's still in terrible shape!"))
+			set_disabling(FALSE)
+
+	if (istype(necro_wound, /datum/wound/necrosis/basic_necro/severe))
+		if (!disabling)
 			to_chat(victim, span_warning("<b>Your [limb.plaintext_zone] completely locks up, as you struggle for control against the infection!</b>"))
 			set_disabling(TRUE)
 
@@ -87,7 +91,11 @@
 			moderate_wound.apply_wound(limb,silent = TRUE,old_wound = necro_wound,wound_source = "Curing infection",replacing = TRUE)
 			moderate_wound.necrosing_progress = 99
 			necro_wound.remove_wound()
+			to_chat(victim, span_notice("You regain sensation in your [limb.plaintext_zone], but it's still in terrible shape!"))
+			set_disabling(FALSE)
 		if (istype(necro_wound, /datum/wound/necrosis/basic_necro/moderate))
+			to_chat(victim, span_notice("You regain sensation in your [limb.plaintext_zone], but it's still in terrible shape!"))
+			set_disabling(FALSE)
 			qdel(src)
 
 /datum/wound/necrosis/basic_necro/on_stasis(seconds_per_tick, times_fired)
@@ -196,7 +204,7 @@
 	examine_desc = "is a noticable flesh wound with falling skin"
 	occur_text = "looses a patch of their skin"
 	severity = WOUND_SEVERITY_SEVERE
-	necrosing_coefficient = 0.15
+	necrosing_coefficient = 0.1
 	necrosing_max = 150
 	toxin_damage_basic = 0.25
 	organ_damage_basic = 0.1

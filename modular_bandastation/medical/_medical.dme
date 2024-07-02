@@ -28,3 +28,6 @@
 
 #include "code/medical_items/iv_bags.dm"
 #include "code/medical_items/medical_pen.dm"
+
+#include "code/new_quirks/professional_doctor.dm"
+#include "code/new_quirks/professional_surgeon.dm"

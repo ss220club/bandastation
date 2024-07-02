@@ -6,3 +6,6 @@
 
 /// T1-T3 Bleeding puncture wounds. Requires flesh. Can cause organ damage. From: necrosis.dm
 #define WOUND_SERIES_NECROSIS "wound_series_necrosis"
+
+#define TRAIT_PROFESSIONAL_DOCTOR "professional_doctor"
+#define TRAIT_PROFESSIONAL_SURGEON "professional_surgeon"

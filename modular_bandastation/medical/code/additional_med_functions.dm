@@ -122,11 +122,14 @@
 		if(!just_sleeping)
 			if(HAS_TRAIT(src, TRAIT_SUICIDED))
 				. += span_warning("[t_He] appear[p_s()] to have committed suicide... there is no hope of recovery.")
-
-			. += generate_death_examine_text()
+			if(HAS_TRAIT(user, TRAIT_PROFESSIONAL_DOCTOR))
+				. += span_deadsay("[t_He] appear[p_s()] to be dead... but you still feel it some kind of alive.")
+			else
+				. += generate_death_examine_text()
 
 	if(get_bodypart(BODY_ZONE_HEAD) && !get_organ_by_type(/obj/item/organ/internal/brain))
-		. += span_deadsay("It appears that [t_his] brain is missing...")
+		if(HAS_TRAIT(user, TRAIT_PROFESSIONAL_DOCTOR))
+			. += span_deadsay("It appears that [t_his] brain is missing...")
 
 	var/list/msg = list()
 
@@ -145,7 +148,11 @@
 
 		for(var/i in body_part.wounds)
 			var/datum/wound/iter_wound = i
-			msg += "[iter_wound.get_examine_description(user)]\n"
+			if(HAS_TRAIT(user, TRAIT_PROFESSIONAL_DOCTOR))
+				msg += "[iter_wound.get_examine_description(user)]\n"
+			else
+				msg += "It appears that [t_his] [iter_wound.limb] is in not normal condition\n"
+
 
 	for(var/X in disabled)
 		var/obj/item/bodypart/body_part = X
@@ -185,23 +192,35 @@
 			temp = 50
 		else
 			temp = getBruteLoss()
+
+
 		var/list/damage_desc = get_majority_bodypart_damage_desc()
-		if(temp)
-			if(temp < 25)
-				msg += "[t_He] [t_has] minor [damage_desc[BRUTE]].\n"
-			else if(temp < 50)
-				msg += "[t_He] [t_has] <b>moderate</b> [damage_desc[BRUTE]]!\n"
-			else
-				msg += "<B>[t_He] [t_has] severe [damage_desc[BRUTE]]!</B>\n"
+		if(HAS_TRAIT(user, TRAIT_PROFESSIONAL_DOCTOR))
+			if(temp)
+				if(temp < 25)
+					msg += "[t_He] [t_has] minor [damage_desc[BRUTE]].\n"
+				else if(temp < 50)
+					msg += "[t_He] [t_has] <b>moderate</b> [damage_desc[BRUTE]]!\n"
+				else
+					msg += "<B>[t_He] [t_has] severe [damage_desc[BRUTE]]!</B>\n"
+		else
+			if(temp)
+				if(temp > 0)
+					msg += "<B>[t_He] [t_has] [damage_desc[BRUTE]]!</B>\n"
 
 		temp = getFireLoss()
-		if(temp)
-			if(temp < 25)
-				msg += "[t_He] [t_has] minor [damage_desc[BURN]].\n"
-			else if (temp < 50)
-				msg += "[t_He] [t_has] <b>moderate</b> [damage_desc[BURN]]!\n"
-			else
-				msg += "<B>[t_He] [t_has] severe [damage_desc[BURN]]!</B>\n"
+		if(HAS_TRAIT(user, TRAIT_PROFESSIONAL_DOCTOR))
+			if(temp)
+				if(temp < 25)
+					msg += "[t_He] [t_has] minor [damage_desc[BURN]].\n"
+				else if (temp < 50)
+					msg += "[t_He] [t_has] <b>moderate</b> [damage_desc[BURN]]!\n"
+				else
+					msg += "<B>[t_He] [t_has] severe [damage_desc[BURN]]!</B>\n"
+		else
+			if(temp)
+				if(temp > 0)
+					msg += "<B>[t_He] [t_has] [damage_desc[BURN]]!</B>\n"
 
 	if(has_status_effect(/datum/status_effect/fire_handler/fire_stacks))
 		msg += "[t_He] [t_is] covered in something flammable.\n"
@@ -232,9 +251,16 @@
 		apparent_blood_volume -= 150 // enough to knock you down one tier
 	switch(apparent_blood_volume)
 		if(BLOOD_VOLUME_OKAY to BLOOD_VOLUME_SAFE)
-			msg += "[t_He] [t_has] pale skin.\n"
+			if(HAS_TRAIT(user, TRAIT_PROFESSIONAL_DOCTOR))
+				msg += "[t_He] [t_has] pale skin.\n"
+			else
+				msg += "<b>[t_He] look[p_s()] like pretty pale than normal.</b>\n"
+
 		if(BLOOD_VOLUME_BAD to BLOOD_VOLUME_OKAY)
-			msg += "<b>[t_He] look[p_s()] like pale death.</b>\n"
+			if(HAS_TRAIT(user, TRAIT_PROFESSIONAL_DOCTOR))
+				msg += "<b>[t_He] look[p_s()] like pale death.</b>\n"
+			else
+				msg += "<b>[t_He] look[p_s()] like pretty pale than normal.</b>\n"
 		if(-INFINITY to BLOOD_VOLUME_BAD)
 			msg += "[span_deadsay("<b>[t_He] resemble[p_s()] a crushed, empty juice pouch.</b>")]\n"
 
@@ -298,10 +324,11 @@
 				if(mob_mood.sanity <= SANITY_DISTURBED)
 					msg += "[t_He] seem[p_s()] distressed.\n"
 					living_user.add_mood_event("empath", /datum/mood_event/sad_empath, src)
-				if(is_blind())
-					msg += "[t_He] appear[p_s()] to be staring off into space.\n"
-				if (HAS_TRAIT(src, TRAIT_DEAF))
-					msg += "[t_He] appear[p_s()] to not be responding to noises.\n"
+				if(HAS_TRAIT(user, TRAIT_PROFESSIONAL_DOCTOR))
+					if(is_blind())
+						msg += "[t_He] appear[p_s()] to be staring off into space.\n"
+					if (HAS_TRAIT(src, TRAIT_DEAF))
+						msg += "[t_He] appear[p_s()] to not be responding to noises.\n"
 				if (bodytemperature > dna.species.bodytemp_heat_damage_limit)
 					msg += "[t_He] [t_is] flushed and wheezing.\n"
 				if (bodytemperature < dna.species.bodytemp_cold_damage_limit)
@@ -315,7 +342,13 @@
 
 		switch(stat)
 			if(UNCONSCIOUS, HARD_CRIT)
-				msg += "[t_He] [t_is]n't responding to anything around [t_him] and seem[p_s()] to be asleep.\n"
+				if(HAS_TRAIT(user, TRAIT_PROFESSIONAL_DOCTOR))
+					if(stat == HARD_CRIT)
+						msg += "[t_He] [t_is] near death.\n"
+					if(stat == UNCONSCIOUS)
+						msg += "[t_He] [t_is] looking like sleeping.\n"
+				else
+					msg += "[t_He] [t_is]n't responding to anything around [t_him] and seem[p_s()] to be asleep.\n"
 			if(SOFT_CRIT)
 				msg += "[t_He] [t_is] barely conscious.\n"
 			if(CONSCIOUS)
@@ -360,6 +393,32 @@
 				msg += "[span_notice("A skilled hand has mapped this one's internal intricacies. It will be far easier to perform future experimentations upon [t_him]. <b><i>Exquisite.</i></b>")]\n"
 		if(HAS_MIND_TRAIT(privacy_invader, TRAIT_EXAMINE_FITNESS))
 			. += compare_fitness(user)
+
+	var/organ_list = get_organs_for_zone(user.zone_selected)
+	if(user.grab_state == GRAB_AGGRESSIVE && HAS_TRAIT(user, TRAIT_PROFESSIONAL_DOCTOR))
+		for (var/obj/item/organ/internal/i_organ in organ_list)
+			if (src.get_organ_loss(i_organ) > 25)
+				msg += "[span_notice("[t_He] appears have mailfunction [i_organ.name] <b><i>for now.</i></b>")]\n"
+			else if (src.get_organ_loss(i_organ) > 100)
+				msg += "[span_notice("[t_He] appears have non-functional [i_organ.name] <b><i>for now.</i></b>")]\n"
+
+
+	if(user.grab_state == GRAB_AGGRESSIVE && HAS_TRAIT(user, TRAIT_PROFESSIONAL_DOCTOR) && user.zone_selected == BODY_ZONE_CHEST)
+		if (getToxLoss() > 10)
+			msg += "[span_notice("[t_He] appears have a little big liver. Maybe he have some toxins? <b><i>for now.</i></b>")]\n"
+		else if (getToxLoss() > 33)
+			msg += "[span_notice("[t_He] livers is little bigger than usual, is can be modarate toxin intoxication <b><i>for now.</i></b>")]\n"
+		else if (getToxLoss() > 66)
+			msg += "[span_notice("[t_He] livers is noticable bigger than usual, is can be severe toxin intoxication <b><i>for now.</i></b>")]\n"
+		else if (getToxLoss() > 100)
+			msg += "[span_notice("[t_He] livers is too big than usual, is can be critical toxin intoxication <b><i>for now.</i></b>")]\n"
+	if(user.grab_state == GRAB_AGGRESSIVE && HAS_TRAIT(user, TRAIT_PROFESSIONAL_DOCTOR) && user.zone_selected == BODY_ZONE_PRECISE_GROIN)
+		if (getOxyLoss() > 25)
+			msg += "[span_notice("[t_He] appears have a little unstable breath <b><i>for now.</i></b>")]\n"
+		else if (getOxyLoss() > 60)
+			msg += "[span_notice("[t_He] appears have noticable unstable breath<b><i>for now.</i></b>")]\n"
+		else if (getOxyLoss() > 100)
+			msg += "[span_notice("[t_He] appears have very unstable breath<b><i>for now.</i></b>")]\n"
 
 	var/perpname = get_face_name(get_id_name(""))
 	if(perpname && (HAS_TRAIT(user, TRAIT_SECURITY_HUD) || HAS_TRAIT(user, TRAIT_MEDICAL_HUD)))
