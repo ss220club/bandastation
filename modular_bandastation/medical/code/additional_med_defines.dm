@@ -9,3 +9,4 @@
 
 #define TRAIT_PROFESSIONAL_DOCTOR "professional_doctor"
 #define TRAIT_PROFESSIONAL_SURGEON "professional_surgeon"
+#define TRAIT_SURGEON_SKILL "surgeon_skill"
