@@ -136,7 +136,9 @@
 			return
 	else
 		injecting = TRUE
-	if (target == user || target.body_position != LYING_DOWN)
+
+	var/mob/living/victim = target
+	if (target == user || victim.body_position != LYING_DOWN)
 		injecting = FALSE
 	else
 		injecting = TRUE
