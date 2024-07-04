@@ -3,7 +3,7 @@
 	desc = "Редкий геном, который притягивает странные силы, обычно не наблюдаемые."
 	quality = MINOR_NEGATIVE //upsides and downsides
 	text_gain_indication = span_notice("Ты ощущаешь тяжёлую, мрачную силу, которая наблюдает за тобой через стену.")
-	instability = 30
+	instability = POSITIVE_INSTABILITY_MODERATE // useful, but has large drawbacks
 	power_path = /datum/action/cooldown/spell/void/cursed
 	energy_coeff = 1
 	synchronizer_coeff = 1

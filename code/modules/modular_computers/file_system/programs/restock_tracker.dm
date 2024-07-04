@@ -5,7 +5,7 @@
 	program_open_overlay = "restock"
 	extended_desc = "Сеть Nanotrasen IoT, в которой перечислены все торговые автоматы, находящиеся на станции, и насколько хорошо укомплектован каждый из них. Прибыльно!"
 	program_flags = PROGRAM_ON_NTNET_STORE | PROGRAM_REQUIRES_NTNET
-	can_run_on_flags = PROGRAM_LAPTOP | PROGRAM_PDA
+	can_run_on_flags = PROGRAM_ALL
 	size = 4
 	program_icon = "cash-register"
 	tgui_id = "NtosRestock"

@@ -5,6 +5,7 @@
 	icon_state = "grinder"
 	density = TRUE
 	circuit = /obj/item/circuitboard/machine/gibber
+	anchored_tabletop_offset = 8
 
 	var/operating = FALSE //Is it on?
 	var/dirty = FALSE // Does it need cleaning?
@@ -15,13 +16,15 @@
 
 /obj/machinery/gibber/Initialize(mapload)
 	. = ..()
+	RegisterSignal(src, COMSIG_COMPONENT_CLEAN_ACT, PROC_REF(on_cleaned))
 	if(prob(5))
 		name = "мясорубка"
 		desc = "Ладно, если я... если я измельчу тебя в мясорубке, и единственное, что от тебя останется, - это глазное яблоко, \
 			то ты... ты ТОЧНО УМРЕШЬ! Ты, наверное, - не ты, я просто говорю, что если бы ты... если бы кто-то, типа, \
 			если тебя заталкивают в мясорубку, и, к примеру, одна из косточек твоего пальца все еще цела, они не станут ее поднимать и уходить, \
 			видите ли, да, это не было смертельно опасно, это не было мгновенным убийством! У тебя еще осталась часть пальца!"
-	add_overlay("grjam")
+		dirty = TRUE
+		update_appearance(UPDATE_OVERLAYS)
 
 /obj/machinery/gibber/RefreshParts()
 	. = ..()
@@ -45,16 +48,23 @@
 /obj/machinery/gibber/update_overlays()
 	. = ..()
 	if(dirty)
-		. +="grbloody"
-	if(machine_stat & (NOPOWER|BROKEN))
+		. += "grinder_bloody"
+	if(machine_stat & (NOPOWER|BROKEN) || panel_open)
 		return
 	if(!occupant)
-		. += "grjam"
+		. += "grinder_empty"
+		. += emissive_appearance(icon, "grinder_empty", src, alpha = src.alpha)
 		return
 	if(operating)
-		. += "gruse"
+		. += "grinder_active"
+		. += emissive_appearance(icon, "grinder_active", src, alpha = src.alpha)
+		. += "grinder_jaws_active"
 		return
-	. += "gridle"
+	. += "grinder_loaded"
+	. += emissive_appearance(icon, "grinder_loaded", src, alpha = src.alpha)
+
+/obj/machinery/gibber/on_set_panel_open(old_value)
+	update_appearance(UPDATE_OVERLAYS)
 
 /obj/machinery/gibber/attack_paw(mob/user, list/modifiers)
 	return attack_hand(user, modifiers)
@@ -160,8 +170,7 @@
 	operating = TRUE
 	update_appearance()
 
-	var/offset = prob(50) ? -2 : 2
-	animate(src, pixel_x = pixel_x + offset, time = 0.2, loop = 200) //start shaking
+	Shake(pixelshiftx = 1, pixelshifty = 0, duration = gibtime)
 	var/mob/living/mob_occupant = occupant
 	var/sourcename = mob_occupant.real_name
 	var/sourcejob
@@ -223,6 +232,8 @@
 /obj/machinery/gibber/proc/make_meat(obj/item/stack/sheet/animalhide/skin, list/obj/item/food/meat/slab/allmeat, meat_produced, gibtype, list/datum/disease/diseases)
 	playsound(src.loc, 'sound/effects/splat.ogg', 50, TRUE)
 	operating = FALSE
+	if (!dirty && prob(50))
+		dirty = TRUE
 	var/turf/T = get_turf(src)
 	var/list/turf/nearby_turfs = RANGE_TURFS(3,T) - T
 	if(skin)
@@ -265,3 +276,7 @@
 		if(victim.loc == input)
 			victim.forceMove(src)
 			victim.gib(DROP_ALL_REMAINS)
+
+/obj/machinery/gibber/proc/on_cleaned(obj/source_component, obj/source)
+	dirty = FALSE
+	update_appearance(UPDATE_OVERLAYS)

@@ -7,7 +7,7 @@
 	text_gain_indication = "<span class='notice'>Ты чувствуешь, как ток протекает через твои руки.</span>"
 	text_lose_indication = "<span class='notice'>Электричество в твоих руках ослабевает.</span>"
 	power_path = /datum/action/cooldown/spell/touch/shock
-	instability = 35
+	instability = POSITIVE_INSTABILITY_MODERATE // bad stun baton
 	energy_coeff = 1
 	power_coeff = 1
 

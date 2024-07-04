@@ -52,16 +52,25 @@
 		. += span_infoplain("Нетподы должны быть построены на расстоянии 4-х тайлов от сервера.")
 		return
 
-	. += span_infoplain("Перетащите себя на под, чтобы начать подключение.")
-	. += span_infoplain("Под имеет ограниченные возможности реанимации. Нахождение в поде может вылечить некоторые ранения.")
-	. += span_infoplain("Имеется система безопасности, оповещающая пользователя, если начнется вмешательство с подом.")
+	if(!isobserver(user))
+		. += span_infoplain("Перетащите себя на под, чтобы начать подключение.")
+		. += span_infoplain("Под имеет ограниченные возможности реанимации. Нахождение в поде может вылечить некоторые ранения.")
+		. += span_infoplain("Имеется система безопасности, оповещающая пользователя, если начнется вмешательство с подом.")
 
 	if(isnull(occupant))
-		. += span_notice("Сейчас внутри пусто.")
+		. += span_infoplain("Сейчас внутри пусто.")
+		return
+
+	. += span_infoplain("Сейчас внутри находится - [occupant].")
+
+	if(isobserver(user))
+		. += span_notice("Как наблюдатель, вы можете щелкнуть по этому нетподу, чтобы перейти к его аватару.")
 		return
 
 	. += span_notice("Сейчас внутри находится - [occupant].")
 	. += span_notice("Оно может быть насильно открыто монтировкой, но системы безопасности оповестят пользователя.")
+
+
 
 /obj/machinery/netpod/add_context(atom/source, list/context, obj/item/held_item, mob/user)
 	. = ..()
@@ -74,7 +83,6 @@
 		context[SCREENTIP_CONTEXT_LMB] = "Насильно открыть"
 		return CONTEXTUAL_SCREENTIP_SET
 
-	return CONTEXTUAL_SCREENTIP_SET
 
 /obj/machinery/netpod/update_icon_state()
 	if(!is_operational)
