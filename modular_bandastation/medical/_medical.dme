@@ -29,9 +29,8 @@
 #include "code/medical_items/iv_bags.dm"
 #include "code/medical_items/medical_pen.dm"
 #include "code/medical_items/chem_bag.dm"
-#include "code/medical_items/field_kit.dm"
-#include "code/medical_items/patchbox.dm"
 #include "code/medical_items/pillbottle.dm"
+#include "code/medical_items/field_kit.dm"
 
 #include "code/new_quirks/professional_doctor.dm"
 #include "code/new_quirks/professional_surgeon.dm"

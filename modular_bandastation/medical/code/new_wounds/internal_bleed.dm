@@ -156,7 +156,7 @@
 	examine_desc = "has a small bulge"
 	occur_text = "spurts out a thin stream of blood"
 	severity = WOUND_SEVERITY_MODERATE
-	initial_flow = 6.0
+	initial_flow = 3.0
 	internal_bleeding_chance = 50
 	internal_bleeding_coefficient = 3.75
 	threshold_penalty = 5
@@ -186,7 +186,7 @@
 	examine_desc = "is a noticable buldge under skin on their limb"
 	occur_text = "looses a violent spray of blood"
 	severity = WOUND_SEVERITY_SEVERE
-	initial_flow = 8
+	initial_flow = 4.5
 	internal_bleeding_chance = 100
 	internal_bleeding_coefficient = 4.25
 	threshold_penalty = 15
@@ -215,7 +215,7 @@
 	examine_desc = "is forming big buldge under their skin and you hear some sorts of hoarseness"
 	occur_text = "blasts apart, sending chunks of viscera flying in all directions"
 	severity = WOUND_SEVERITY_CRITICAL
-	initial_flow = 10
+	initial_flow = 6
 	internal_bleeding_chance = 150
 	internal_bleeding_coefficient = 4.75
 	threshold_penalty = 25

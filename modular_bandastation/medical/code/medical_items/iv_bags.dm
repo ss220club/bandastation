@@ -136,7 +136,7 @@
 			return
 	else
 		injecting = TRUE
-	if (target == user)
+	if (target == user || target.body_position != LYING_DOWN)
 		injecting = FALSE
 	else
 		injecting = TRUE
