@@ -1,8 +1,8 @@
 /obj/item/storage/field_kit
 	name = "Field kit"
 	desc = "Small container for storing medical supplies."
-	icon_state = "pill_canister"
-	icon = 'icons/obj/medical/chemical.dmi'
+	icon_state = "bluekit"
+	icon = 'modular_bandastation/medical/icons/kits.dmi'
 	inhand_icon_state = "contsolid"
 	worn_icon_state = "nothing"
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'

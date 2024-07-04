@@ -35,3 +35,17 @@
 #include "code/new_quirks/professional_doctor.dm"
 #include "code/new_quirks/professional_surgeon.dm"
 #include "code/new_skillchips/surgery_chip_chance.dm"
+
+#include "code/machines/surgery_tables.dm"
+#include "code/machines/surgery_table_v1.dm"
+#include "code/machines/surgery_table_v2.dm"
+#include "code/machines/surgery_table_v3.dm"
+// BEGIN_INTERNALS
+// END_INTERNALS
+// BEGIN_FILE_DIR
+#define FILE_DIR .
+// END_FILE_DIR
+// BEGIN_PREFERENCES
+// END_PREFERENCES
+// BEGIN_INCLUDE
+// END_INCLUDE

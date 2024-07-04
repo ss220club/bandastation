@@ -88,31 +88,81 @@
 	)
 	departmental_flags = DEPARTMENT_BITFLAG_MEDICAL
 
+/datum/techweb_node/surgery_adv
+	id = "surgery_adv"
+	display_name = "Advanced Surgery"
+	description = "When simple medicine doesn't cut it."
+	prereq_ids = list("surgery")
+	design_ids = list(
+		"harvester",
+		"surgery_heal_brute_upgrade_femto",
+		"surgery_heal_burn_upgrade_femto",
+		"surgery_heal_combo",
+		"surgery_lobotomy",
+		"surgery_wing_reconstruction",
+		"surgerytablev2",
+	)
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = TECHWEB_TIER_2_POINTS)
+	required_experiments = list(/datum/experiment/autopsy/human)
 
-
-
-
-
-
-
-/datum/design/surgery_v2_circuit
-	name = "Pill Bottle"
-	id = "surgery_v2_circuit"
+/datum/design/surgerytablev2
+	name = "Advanced surgery table"
+	id = "surgerytablev2"
 	build_type = AUTOLATHE | PROTOLATHE | AWAY_LATHE
-	materials = list(/datum/material/plastic =SMALL_MATERIAL_AMOUNT*0.2, /datum/material/glass =SMALL_MATERIAL_AMOUNT)
-	build_path = /obj/item/storage/pill_bottle
+	materials = list(/datum/material/plastic =SMALL_MATERIAL_AMOUNT*0.4, /datum/material/glass =SMALL_MATERIAL_AMOUNT*0.1)
+	build_path = /obj/item/circuitboard/machine/surgerytablev2
 	category = list(
 		RND_CATEGORY_INITIAL,
 		RND_CATEGORY_EQUIPMENT + RND_SUBCATEGORY_EQUIPMENT_CHEMISTRY,
 	)
 	departmental_flags = DEPARTMENT_BITFLAG_MEDICAL
 
-/datum/design/surgery_v3_circuit
-	name = "Pill Bottle"
-	id = "surgery_v3_circuit"
+/datum/techweb_node/alien_surgery
+	id = "alien_surgery"
+	display_name = "Alien Surgery"
+	description = "Abductors did nothing wrong."
+	prereq_ids = list("alientech", "surgery_tools")
+	design_ids = list(
+		"alien_cautery",
+		"alien_drill",
+		"alien_hemostat",
+		"alien_retractor",
+		"alien_saw",
+		"alien_scalpel",
+		"surgery_brainwashing",
+		"surgery_heal_combo_upgrade_femto",
+		"surgery_zombie",
+		"surgerytablev3",
+	)
+	required_items_to_unlock = list(
+		/obj/item/abductor,
+		/obj/item/cautery/alien,
+		/obj/item/circuitboard/machine/abductor,
+		/obj/item/circular_saw/alien,
+		/obj/item/crowbar/abductor,
+		/obj/item/gun/energy/alien,
+		/obj/item/gun/energy/shrink_ray,
+		/obj/item/hemostat/alien,
+		/obj/item/melee/baton/abductor,
+		/obj/item/multitool/abductor,
+		/obj/item/retractor/alien,
+		/obj/item/scalpel/alien,
+		/obj/item/screwdriver/abductor,
+		/obj/item/surgicaldrill/alien,
+		/obj/item/weldingtool/abductor,
+		/obj/item/wirecutters/abductor,
+		/obj/item/wrench/abductor,
+	)
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = TECHWEB_TIER_5_POINTS)
+	discount_experiments = list(/datum/experiment/scanning/points/slime/hard = TECHWEB_TIER_5_POINTS)
+	hidden = TRUE
+
+/datum/design/surgerytablev3
+	name = "Surgery table NERV"
+	id = "surgerytablev3"
 	build_type = AUTOLATHE | PROTOLATHE | AWAY_LATHE
-	materials = list(/datum/material/plastic =SMALL_MATERIAL_AMOUNT*0.2, /datum/material/glass =SMALL_MATERIAL_AMOUNT)
-	build_path = /obj/item/storage/pill_bottle
+	materials = list(/datum/material/plastic =SMALL_MATERIAL_AMOUNT*0.4, /datum/material/glass =SMALL_MATERIAL_AMOUNT*0.1)
+	build_path = /obj/item/circuitboard/machine/surgerytablev3
 	category = list(
 		RND_CATEGORY_INITIAL,
 		RND_CATEGORY_EQUIPMENT + RND_SUBCATEGORY_EQUIPMENT_CHEMISTRY,
