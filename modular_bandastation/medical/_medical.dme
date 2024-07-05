@@ -1,19 +1,22 @@
+#include "code/additional_med_component.dm"
+#include "code/additional_med_mob.dm"
+
+#include "code/pain/overrides.dm"
+
 #include "code/additional_med_defines.dm"
 #include "code/additional_med_functions.dm"
-#include "code/additional_med_mob.dm"
-#include "code/additional_med_component.dm"
 #include "code/additional_med_states.dm"
 
 #include "code/new_chemicals/unique_chemicals.dm"
 #include "code/new_chemicals/organ_chemicals.dm"
+#include "code/new_chemicals/painkillers.dm"
 
 #include "code/cpr_extension/autocompressor.dm"
 #include "code/cpr_extension/cpr_extension.dm"
 
 #include "code/organ_damage/remake_organ_decay.dm"
 #include "code/organ_damage/organ_damage_ondamage.dm"
-#include "code/organ_damage/organ_damage_brute.dm"
-#include "code/organ_damage/organ_damage_burn.dm"
+#include "code/organ_damage/on_limb_damage.dm"
 #include "code/organ_damage/organ_damage_toxin.dm"
 #include "code/organ_damage/organ_damage_oxygen.dm"
 
@@ -40,12 +43,4 @@
 #include "code/machines/surgery_table_v1.dm"
 #include "code/machines/surgery_table_v2.dm"
 #include "code/machines/surgery_table_v3.dm"
-// BEGIN_INTERNALS
-// END_INTERNALS
-// BEGIN_FILE_DIR
-#define FILE_DIR .
-// END_FILE_DIR
-// BEGIN_PREFERENCES
-// END_PREFERENCES
-// BEGIN_INCLUDE
-// END_INCLUDE
+

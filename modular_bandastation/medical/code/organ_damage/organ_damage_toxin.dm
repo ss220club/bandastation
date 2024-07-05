@@ -18,8 +18,8 @@
 	. = toxloss
 	toxloss = clamp((toxloss + (amount * CONFIG_GET(number/damage_multiplier))), 0, maxHealth * 2)
 	if(prob(amount))
-		adjustOrganLoss(ORGAN_SLOT_LIVER, toxloss * 0.2,required_organ_flag = ORGAN_ORGANIC)
-		toxloss -= toxloss * 0.2
+		adjustOrganLoss(ORGAN_SLOT_LIVER, amount * 0.2, 200,required_organ_flag = ORGAN_ORGANIC)
+		toxloss -= amount * 0.2
 	. -= toxloss
 
 	if(!.) // no change, no need to update

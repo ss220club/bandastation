@@ -3,4 +3,4 @@
 
 /mob/living/carbon/Initialize(mapload)
 	. = ..()
-	AddComponent(/datum/component/additional_med)
+	AddComponent(/datum/component/additional_med, src)

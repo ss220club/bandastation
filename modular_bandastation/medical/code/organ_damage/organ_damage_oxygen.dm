@@ -6,7 +6,7 @@
 	oxyloss = clamp((oxyloss + (amount * CONFIG_GET(number/damage_multiplier))), 0, maxHealth * 2)
 	. -= oxyloss
 
-	adjustOrganLoss(ORGAN_SLOT_BRAIN, amount * 0.15)
+	adjustOrganLoss(ORGAN_SLOT_BRAIN, amount * 0.15, 200,required_organ_flag = ORGAN_ORGANIC)
 
 	if(!.) // no change, no need to update
 		return FALSE

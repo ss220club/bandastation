@@ -77,9 +77,6 @@
 			for(var/obj/item/organ/internal/selected_organ as anything in victim.get_organs_for_zone(BODY_ZONE_HEAD,include_children = TRUE))
 				if (organ_damage > 0 && !isnull(selected_organ))
 					selected_organ.apply_organ_damage(organ_damage)
-			for(var/obj/item/organ/internal/selected_organ as anything in victim.get_organs_for_zone(BODY_ZONE_PRECISE_GROIN,include_children = TRUE))
-				if (organ_damage > 0 && !isnull(selected_organ))
-					selected_organ.apply_organ_damage(organ_damage)
 
 	if (necrosing_progress < 5 && rand(1, 100) >= 20)
 		necrosing_progress = 0

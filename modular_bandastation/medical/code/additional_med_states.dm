@@ -4,6 +4,24 @@
 	alert_type = null
 	duration = 50
 
+/datum/status_effect/painkiller/low
+	id = "lowpk"
+	status_type = STATUS_EFFECT_UNIQUE
+	alert_type = null
+	duration = 50
+
+/datum/status_effect/painkiller/medium
+	id = "lowpk"
+	status_type = STATUS_EFFECT_UNIQUE
+	alert_type = null
+	duration = 50
+
+/datum/status_effect/painkiller/high
+	id = "lowpk"
+	status_type = STATUS_EFFECT_UNIQUE
+	alert_type = null
+	duration = 50
+
 /datum/status_effect/necroinversite
 	id = "necroinversite_reagent"
 	status_type = STATUS_EFFECT_UNIQUE
@@ -26,3 +44,33 @@
 	id = "medium_necrosis"
 /datum/status_effect/wound/necrosis/critical
 	id = "heavy_necrosis"
+
+/datum/movespeed_modifier/status_effect/pain/low
+	multiplicative_slowdown = 0.15
+
+/datum/movespeed_modifier/status_effect/pain/midlow
+	multiplicative_slowdown = 0.25
+
+/datum/movespeed_modifier/status_effect/pain/mid
+	multiplicative_slowdown = 0.45
+
+/datum/movespeed_modifier/status_effect/pain/midhigh
+	multiplicative_slowdown = 0.85
+
+/datum/movespeed_modifier/status_effect/pain/high
+	multiplicative_slowdown = 0.99
+
+/datum/actionspeed_modifier/status_effect/pain/low
+	multiplicative_slowdown = 0.5
+
+/datum/actionspeed_modifier/status_effect/pain/midlow
+	multiplicative_slowdown = 1
+
+/datum/actionspeed_modifier/status_effect/pain/mid
+	multiplicative_slowdown = 2
+
+/datum/actionspeed_modifier/status_effect/pain/midhigh
+	multiplicative_slowdown = 3.5
+
+/datum/actionspeed_modifier/status_effect/pain/high
+	multiplicative_slowdown = 5
