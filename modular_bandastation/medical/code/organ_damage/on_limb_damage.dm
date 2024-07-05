@@ -28,7 +28,6 @@
 					damage = brute * 0.2
 					afflicted.adjustOrganLoss(ORGAN_SLOT_BRAIN, damage, 200)
 		if(BODY_ZONE_CHEST)
-
 			if(prob(brute))
 				damage =  brute * 0.3
 				afflicted.adjustOrganLoss(ORGAN_SLOT_STOMACH, damage, 200)
