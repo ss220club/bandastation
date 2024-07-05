@@ -47,7 +47,7 @@
 			add_pain = 0
 		all_pain += add_pain
 
-		if (prob(10))
+		if (prob(0.1))
 			switch(add_pain)
 				if(0.01 to ADVMED_PAIN_CHAT_LIMBS_LOW)
 					to_chat(assigned_mob, span_danger("You feel small pain in your [part.name]"))
@@ -113,7 +113,6 @@
 			add_pain = 0
 		all_pain += add_pain
 
-	to_chat(assigned_mob, span_danger("Current pain of [assigned_mob.name] is [all_pain]"))
 	if (all_pain >= ADVMED_PAIN_THRESHOLD_MAX)
 		if (all_pain >= (ADVMED_PAIN_THRESHOLD_MAX * ADVMED_PAIN_HEART_ATTACK_MODIFIER))
 			if (prob((all_pain - ADVMED_PAIN_THRESHOLD_MAX * ADVMED_PAIN_HEART_ATTACK_MODIFIER) / 3))
