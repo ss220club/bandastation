@@ -1,12 +1,18 @@
-/// From /datum/surgery/New(): (datum/surgery/surgery, surgery_location (body zone), obj/item/bodypart/targeted_limb)
 #define COMSIG_MOB_ADDMED_NECROINVERT 1
-
-/// T1-T3 Iternal bleeding wounds. Can cause bleeding, but doesn't require it. From: internal_bleed.dm
 #define WOUND_SERIES_INTERNAL_BLEED "wound_series_internal_bleed"
-
-/// T1-T3 Bleeding puncture wounds. Requires flesh. Can cause organ damage. From: necrosis.dm
 #define WOUND_SERIES_NECROSIS "wound_series_necrosis"
 
 #define TRAIT_PROFESSIONAL_DOCTOR "professional_doctor"
 #define TRAIT_PROFESSIONAL_SURGEON "professional_surgeon"
 #define TRAIT_SURGEON_SKILL "surgeon_skill"
+
+#define ADVMED_PAIN_THRESHOLD_MAX 200
+#define ADVMED_PAIN_PART_MAX 200
+#define ADVMED_PAIN_EFFECT_MODIFIER 2
+#define ADVMED_PAIN_EFFECT_LIMBS 50
+#define ADVMED_PAIN_EFFECT_CHEST 75
+#define ADVMED_PAIN_EFFECT_HEAD 25
+#define ADVMED_PAIN_MIN_MODIFIER 0.5
+#define ADVMED_PAIN_FADE 0.5
+#define ADVMED_PAIN_APPLICATION_MODIFIER 1.5
+#define ADVMED_PAIN_HEART_ATTACK_MODIFIER 2
