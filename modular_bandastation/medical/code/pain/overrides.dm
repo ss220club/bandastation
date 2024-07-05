@@ -1,4 +1,3 @@
-
 /obj/item/organ/apply_organ_damage(damage_amount, maximum = maxHealth, required_organ_flag = NONE) //use for damaging effects
 	if(!damage_amount) //Micro-optimization.
 		return FALSE
@@ -25,3 +24,11 @@
 
 /obj/item/organ/internal
 	var/pain = 0
+
+/obj/item/organ/adjustOrganScarring(slot)
+	var/obj/item/organ/affected_organ = get_organ_slot(slot)
+	if(!affected_organ || (status_flags & GODMODE))
+		return FALSE
+	if(required_organ_flag && !(affected_organ.organ_flags & required_organ_flag))
+		return FALSE
+	affected_organ.maxHealth = affected_organ.maxHealth - affected_organ.maxHealth * 0.1

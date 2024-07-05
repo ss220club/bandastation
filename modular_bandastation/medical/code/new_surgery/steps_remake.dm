@@ -20,11 +20,6 @@
 	if(!.)
 		return .
 
-/datum/surgery/debride/can_start(mob/living/user, mob/living/carbon/target)
-	. = ..()
-	if(!.)
-		return .
-
 	var/datum/wound/burn/flesh/burn_wound = target.get_bodypart(user.zone_selected).get_wound_type(/datum/wound/burn/flesh)
 	var/datum/wound/necrosis/basic_necro/necro_wound = target.get_bodypart(user.zone_selected).get_wound_type(/datum/wound/necrosis/basic_necro)
 	// Should be guaranteed to have the wound by this point

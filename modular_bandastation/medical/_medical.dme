@@ -26,6 +26,8 @@
 
 #include "code/new_surgery/steps_remake.dm"
 #include "code/new_surgery/surgery_iternalbleed.dm"
+#include "code/new_surgery/organ_surgery_fails.dm"
+#include "code/new_surgery/organ_surgery_repeats.dm"
 
 #include "code/new_technologies/medical_designs.dm"
 
