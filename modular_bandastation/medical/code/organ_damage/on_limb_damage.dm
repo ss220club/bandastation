@@ -4,7 +4,7 @@
 	if(brute)
 		src.pain += brute * ADVMED_PAIN_APPLICATION_MODIFIER
 	if(burn)
-		src.pain += burn * ADVMED_PAIN_APPLICATION_MODIFIER * 1.5
+		src.pain += burn * (ADVMED_PAIN_APPLICATION_MODIFIER * 2)
 
 	var/mob/living/carbon/human/afflicted = src.loc
 	var/damage = 0

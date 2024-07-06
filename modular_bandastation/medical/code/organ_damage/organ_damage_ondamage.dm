@@ -81,5 +81,6 @@
 			else
 				var/pressure_damage = LOW_PRESSURE_DAMAGE * H.physiology.pressure_mod * H.physiology.brute_mod * seconds_per_tick
 				H.adjustBruteLoss(pressure_damage, required_bodytype = BODYTYPE_ORGANIC)
-				H.adjustOrganLoss(ORGAN_SLOT_LUNGS, pressure_damage, required_organ_flag = ORGAN_ORGANIC)
+				if(!H.invalid_internals())
+					H.adjustOrganLoss(ORGAN_SLOT_LUNGS, pressure_damage, required_organ_flag = ORGAN_ORGANIC)
 				H.throw_alert(ALERT_PRESSURE, /atom/movable/screen/alert/lowpressure, 2)

@@ -102,6 +102,7 @@
 	tank.loc = src
 	tank.after_internals_closed(patient)
 	patient.internal = null
+	patient = null
 
 /obj/structure/table/optable/v2/click_alt(mob/living/user)
 	if(!ishuman(user))
@@ -120,14 +121,15 @@
 		mask = null
 	return TRUE
 
-/obj/structure/table/optable/v2/item_interaction(mob/living/user, obj/item/I, list/modifiers)
+/obj/structure/table/optable/v2/attacked_by(obj/item/I, mob/living/user)
+	. = ..()
 	if(!user.combat_mode)
 		if(!tank)
 			if(istype(I, /obj/item/tank/internals))
 				if(user.transferItemToLoc(I, src))
 					user.visible_message("[user] fixes [I] from side of table.", span_notice("You fix [I] from side of table."))
 					tank = I
-					return
+					return ITEM_INTERACT_SUCCESS
 		if(!mask)
 			if(istype(I, /obj/item/clothing/mask))
 				var/obj/item/clothing/mask/potential_mask = I
@@ -135,8 +137,8 @@
 					if(user.transferItemToLoc(I, src))
 						user.visible_message("[user] fixes [I] on mask stand.", span_notice("You fix [I] on mask stand."))
 						mask = I
-						return
-	. = ..()
+						return ITEM_INTERACT_SUCCESS
+
 
 /obj/structure/table/optable/v2/Destroy()
 	if(tank)

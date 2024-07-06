@@ -42,7 +42,7 @@
 		severe_wound.apply_wound(limb,silent = TRUE,old_wound = necro_wound,wound_source = "Progressing infection",replacing = TRUE)
 		necro_wound.remove_wound()
 	if (necrosing_progress >= (necrosing_max) && (istype(necro_wound, /datum/wound/necrosis/basic_necro/severe)))
-		if(limb != victim.get_bodypart(BODY_ZONE_CHEST) && limb != victim.get_bodypart(BODY_ZONE_HEAD) && limb != victim.get_bodypart(BODY_ZONE_PRECISE_GROIN))
+		if(limb != victim.get_bodypart(BODY_ZONE_CHEST) && limb != victim.get_bodypart(BODY_ZONE_HEAD))
 			var/wound_type = /datum/wound/necrosis/basic_necro/critical
 			var/datum/wound/necrosis/basic_necro/critical/crit_wound = new wound_type()
 			crit_wound.apply_wound(limb,silent = TRUE,old_wound = necro_wound,wound_source = "Progressing infection",replacing = TRUE)

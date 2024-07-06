@@ -1,9 +1,7 @@
 
 /*
-	Piercing wounds
+	Internal wound bleed
 */
-/datum/wound/internal_bleed
-
 /datum/wound/internal_bleed/bleed
 	name = "Internal Bleeding"
 	sound_effect = 'sound/weapons/slice.ogg'
@@ -190,7 +188,7 @@
 	internal_bleeding_chance = 100
 	internal_bleeding_coefficient = 4.25
 	threshold_penalty = 15
-	heart_attack_chance = 100
+	heart_attack_chance = 0
 	lungs_damage = 1
 	status_effect_type = /datum/status_effect/wound/internal_bleed/severe
 

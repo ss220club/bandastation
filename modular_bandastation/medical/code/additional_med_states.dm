@@ -2,7 +2,7 @@
 	id = "cpred"
 	status_type = STATUS_EFFECT_UNIQUE
 	alert_type = null
-	duration = 50
+	duration = 15
 
 /datum/status_effect/painkiller/low
 	id = "lowpk"

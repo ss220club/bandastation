@@ -46,8 +46,8 @@
 
 //Гигакcадонорит - печень
 
-/datum/reagent/medicine/cryodrit_base/pulmeoxadonorit
-	name = "Pulmeoxadonorit"
+/datum/reagent/medicine/cryodrit_base/higaxadonorit
+	name = "Higaxadonorit"
 	description = "Used to heal liver in cold enviroment. Optimal temperature for best result is 103K"
 	organ = ORGAN_SLOT_LIVER
 

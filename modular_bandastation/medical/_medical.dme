@@ -27,14 +27,13 @@
 #include "code/new_surgery/steps_remake.dm"
 #include "code/new_surgery/surgery_iternalbleed.dm"
 #include "code/new_surgery/organ_surgery_fails.dm"
-#include "code/new_surgery/organ_surgery_repeats.dm"
+#include "code/new_surgery/surgery_fail_chance.dm"
 
 #include "code/new_technologies/medical_designs.dm"
 
 #include "code/medical_items/iv_bags.dm"
 #include "code/medical_items/medical_pen.dm"
 #include "code/medical_items/chem_bag.dm"
-#include "code/medical_items/pillbottle.dm"
 #include "code/medical_items/field_kit.dm"
 
 #include "code/new_quirks/professional_doctor.dm"
@@ -46,3 +45,12 @@
 #include "code/machines/surgery_table_v2.dm"
 #include "code/machines/surgery_table_v3.dm"
 
+// BEGIN_INTERNALS
+// END_INTERNALS
+// BEGIN_FILE_DIR
+#define FILE_DIR .
+// END_FILE_DIR
+// BEGIN_PREFERENCES
+// END_PREFERENCES
+// BEGIN_INCLUDE
+// END_INCLUDE

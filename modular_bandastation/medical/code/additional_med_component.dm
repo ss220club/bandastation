@@ -27,7 +27,7 @@
 	var/damaged_parts_list = assigned_mob.get_damaged_bodyparts(TRUE, TRUE, ALL)
 	var/min_pain = 0
 	var/all_pain = 0
-	var/add_pain
+	var/add_pain = 0
 	for(var/obj/item/bodypart/part in damaged_parts_list)
 		min_pain = (part.burn_dam + part.brute_dam) * ADVMED_PAIN_MIN_MODIFIER
 		if (part.pain >= ADVMED_PAIN_PART_MAX)
@@ -54,14 +54,19 @@
 				if(ADVMED_PAIN_CHAT_LIMBS_LOW to ADVMED_PAIN_CHAT_LIMBS_MIDDLE)
 					to_chat(assigned_mob, span_danger("You feel pain in your [part.name] and looks like it's time to threat your wounds"))
 				if(ADVMED_PAIN_CHAT_LIMBS_MIDDLE to ADVMED_PAIN_CHAT_LIMBS_HIGH)
-					to_chat(assigned_mob, span_danger("You feel sever pain in your [part.name] and it's almost unverable"))
+					to_chat(assigned_mob, span_danger("You feel sever pain in your [part.name] and it's almost unberable"))
 				if(ADVMED_PAIN_CHAT_LIMBS_HIGH to INFINITY)
 					to_chat(assigned_mob, span_danger("You [part.name] is burning like hell from pain!"))
 
-		if (part != BODY_ZONE_HEAD && part != BODY_ZONE_CHEST)
-			if (add_pain >= ADVMED_PAIN_EFFECT_LIMBS / ADVMED_PAIN_EFFECT_MODIFIER && (part == BODY_ZONE_L_ARM || part == BODY_ZONE_R_ARM ))
+		if (part.body_zone != BODY_ZONE_HEAD && part.body_zone != BODY_ZONE_CHEST)
+			if ((add_pain >= (ADVMED_PAIN_EFFECT_LIMBS / ADVMED_PAIN_EFFECT_MODIFIER)) && (part.body_zone == BODY_ZONE_L_ARM || part.body_zone == BODY_ZONE_R_ARM ))
 				if (prob(add_pain - ADVMED_PAIN_EFFECT_LIMBS))
-					assigned_mob.drop_all_held_items()
+					var/obj/item/item
+					if (part == BODY_ZONE_L_ARM)
+						item = assigned_mob.get_held_items_for_side(LEFT_HANDS)
+					else
+						item = assigned_mob.get_held_items_for_side(RIGHT_HANDS)
+					assigned_mob.dropItemToGround(item, TRUE)
 				switch(add_pain)
 					if(ADVMED_PAIN_EFFECT_LIMBS / ADVMED_PAIN_EFFECT_MODIFIER to ADVMED_PAIN_EFFECT_LIMBS / (ADVMED_PAIN_EFFECT_MODIFIER / 2))
 						assigned_mob.add_actionspeed_modifier(/datum/actionspeed_modifier/status_effect/pain/low)
@@ -73,7 +78,7 @@
 						assigned_mob.add_actionspeed_modifier(/datum/actionspeed_modifier/status_effect/pain/midhigh)
 					if(ADVMED_PAIN_EFFECT_LIMBS * ADVMED_PAIN_EFFECT_MODIFIER to INFINITY)
 						assigned_mob.add_actionspeed_modifier(/datum/actionspeed_modifier/status_effect/pain/high)
-			if (add_pain >= ADVMED_PAIN_EFFECT_LIMBS / ADVMED_PAIN_EFFECT_MODIFIER && (part == BODY_ZONE_L_LEG || part == BODY_ZONE_R_LEG ))
+			if ((add_pain >= (ADVMED_PAIN_EFFECT_LIMBS / ADVMED_PAIN_EFFECT_MODIFIER)) && (part.body_zone == BODY_ZONE_L_LEG || part.body_zone == BODY_ZONE_R_LEG ))
 				if (prob(add_pain - ADVMED_PAIN_EFFECT_LIMBS))
 					assigned_mob.Knockdown(1 SECONDS)
 				switch(add_pain)
@@ -87,9 +92,9 @@
 						assigned_mob.add_movespeed_modifier(/datum/movespeed_modifier/status_effect/pain/midhigh)
 					if(ADVMED_PAIN_EFFECT_LIMBS * ADVMED_PAIN_EFFECT_MODIFIER to INFINITY)
 						assigned_mob.add_movespeed_modifier(/datum/movespeed_modifier/status_effect/pain/high)
-		if (part == BODY_ZONE_HEAD)
-			if (add_pain >= ADVMED_PAIN_EFFECT_HEAD / ADVMED_PAIN_EFFECT_MODIFIER)
-				//при уровне боли от 0 до 90 накладывает визуальный эффект пульсирующего белого экрана по краям.
+		if (part.body_zone == BODY_ZONE_HEAD)
+			if (add_pain >= (ADVMED_PAIN_EFFECT_HEAD / ADVMED_PAIN_EFFECT_MODIFIER))
+				//при уровне боли от 0 до 90 накладывает визуальный эффект пульсирующего белого экрана по краям. КТГ (BLIND)
 				if (add_pain >= ADVMED_PAIN_EFFECT_HEAD && prob(add_pain - ADVMED_PAIN_EFFECT_HEAD))
 					assigned_mob.Unconscious(40)
 					assigned_mob.Stun(100)
@@ -113,13 +118,11 @@
 			add_pain = 0
 		all_pain += add_pain
 
-	if (all_pain >= ADVMED_PAIN_THRESHOLD_MAX)
-		if (all_pain >= (ADVMED_PAIN_THRESHOLD_MAX * ADVMED_PAIN_HEART_ATTACK_MODIFIER))
-			if (prob((all_pain - ADVMED_PAIN_THRESHOLD_MAX * ADVMED_PAIN_HEART_ATTACK_MODIFIER) / 3))
-				var/datum/disease/heart_failure/heart_attack = new(src)
-				to_chat(assigned_mob, span_danger("Your chest is bursting and hurts a lot"))
-				heart_attack.stage_prob = 5
-				assigned_mob.ForceContractDisease(heart_attack)
-				assigned_mob.Unconscious(100)
-				assigned_mob.Stun(200)
+	if (all_pain >= ADVMED_PAIN_THRESHOLD_MAX * ADVMED_PAIN_HEART_ATTACK_MODIFIER && prob((all_pain - ADVMED_PAIN_THRESHOLD_MAX * ADVMED_PAIN_HEART_ATTACK_MODIFIER) / 3))
+		var/datum/disease/heart_failure/heart_attack = new(src)
+		to_chat(assigned_mob, span_danger("Your chest is bursting and hurts a lot"))
+		heart_attack.stage_prob = 5
+		assigned_mob.ForceContractDisease(heart_attack)
+		assigned_mob.Unconscious(100)
+		assigned_mob.Stun(200)
 

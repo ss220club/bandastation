@@ -1,6 +1,6 @@
 // Определяем новый объект автокомпрессора
 /obj/item/clothing/suit/autocompressor
-	name = "Auto Compressor Suit"
+	name = "auto compressor"
 	desc = "A suit equipped with an auto compressor to perform automatic chest compressions during CPR."
 	icon = 'modular_bandastation/medical/icons/medical_suits.dmi'
 	worn_icon = 'modular_bandastation/medical/icons/medical_suits.dmi'
@@ -8,9 +8,6 @@
 	inhand_icon_state = "pumper"
 	var/mob/living/carbon/human/target
 	var/active = FALSE
-
-/obj/item/clothing/suit/autocompressor/Initialize()
-	. = ..()
 
 /obj/item/clothing/suit/autocompressor/equipped(mob/living/user, slot)
 	. = ..()
@@ -37,5 +34,5 @@
 				target.adjustOxyLoss(-min(target.getOxyLoss(), 7))
 				to_chat(target, span_unconscious("You feel a mechanical force performing compressions... It feels good..."))
 
-		sleep (50)
+		sleep (30)
 	while (istype(target))
