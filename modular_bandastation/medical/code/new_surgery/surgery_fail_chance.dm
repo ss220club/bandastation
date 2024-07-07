@@ -68,6 +68,7 @@
 
 	var/necro_prob = 0
 	var/obj/item/clothing/gloves/gloves = user.get_item_by_slot(ITEM_SLOT_HANDS)
+	var/obj/item/clothing/mask/mask = user.get_item_by_slot(ITEM_SLOT_MASK)
 	if(GET_ATOM_BLOOD_DNA_LENGTH(target.loc))
 		necro_prob += 10
 	if(isnull(gloves))
@@ -75,11 +76,14 @@
 	else
 		if(GET_ATOM_BLOOD_DNA_LENGTH(gloves))
 			necro_prob += 30
-		if(gloves == /obj/item/clothing/gloves/latex || gloves == /obj/item/clothing/gloves/latex/nitrile)
-			necro_prob = gloves == /obj/item/clothing/gloves/latex ? 10 : 15
+	if(isnull(mask))
+		necro_prob += 5
+	else
+		if(GET_ATOM_BLOOD_DNA_LENGTH(mask))
+			necro_prob += 10
 	if(GET_ATOM_BLOOD_DNA_LENGTH(tool))
 		necro_prob += 30
-	if(user.get_item_by_slot(ITEM_SLOT_MASK) == /obj/item/clothing/mask/surgical)
+	if(user.get_item_by_slot() == /obj/item/clothing/mask/surgical)
 		necro_prob -= 5
 	else
 		necro_prob += 5
@@ -89,6 +93,8 @@
 		necro_prob -= 5
 	if(HAS_TRAIT(target, TRAIT_ANALGESIA))
 		necro_prob -= 10
+	necro_prob += (gloves.armor_type.bio / 10)
+	necro_prob += (mask.armor_type.bio / 10)
 
 	fail_prob = fail_prob + min(max(0, modded_time - (time * SURGERY_SLOWDOWN_CAP_MULTIPLIER)),99)//if modded_time > time * modifier, then fail_prob = modded_time - time*modifier. starts at 0, caps at 99
 	modded_time = min(modded_time, time * SURGERY_SLOWDOWN_CAP_MULTIPLIER)//also if that, then cap modded_time at time*modifier
