@@ -1,12 +1,12 @@
-/obj/structure/table/optable/v2
+/obj/machinery/optable/v2
 	name = "advanced operating table"
 	desc = "Used for advanced medical procedures. This one have build in mask and slot for anestetic tanks"
-	icon = 'icons/obj/medical/surgery_table.dmi'
-	icon_state = "surgery_table"
+	icon = 'modular_bandastation/medical/icons/surgery_table.dmi'
+	icon_state = "optable"
 	var/obj/item/tank/internals/tank = null
 	var/obj/item/clothing/mask/mask = null
 
-/obj/structure/table/optable/v2/Initialize(mapload)
+/obj/machinery/optable/v2/Initialize(mapload)
 	. = ..()
 	for(var/direction in GLOB.alldirs)
 		computer = locate(/obj/machinery/computer/operating) in get_step(src, direction)
@@ -18,7 +18,7 @@
 	RegisterSignal(loc, COMSIG_ATOM_EXITED, PROC_REF(unmark_patient))
 	START_PROCESSING(SSobj, src)
 
-/obj/structure/table/optable/v2/examine(mob/user)
+/obj/machinery/optable/v2/examine(mob/user)
 	. = ..()
 	. += "<hr>"
 
@@ -32,12 +32,12 @@
 	else
 		. += span_warning("There is an empty place for mask")
 
-/obj/structure/table/optable/v2/examine_more(mob/user)
+/obj/machinery/optable/v2/examine_more(mob/user)
 	. = ..()
 	. += span_notice("You can remove tank by pressing Alt.")
 	if(tank && mask) . += span_info("<br>You can turn on anestesia when someone lying on it.")
 
-/obj/structure/table/optable/v2/attack_hand(mob/user, act_intent, attackchain_flags)
+/obj/machinery/optable/v2/attack_hand(mob/user, act_intent, attackchain_flags)
 	recheck_patient(patient)
 	if (isnull(patient))
 		return
@@ -71,6 +71,7 @@
 			tank.loc = patient
 			user.visible_message("[user] switch on anestesia on [patient].", span_notice("You open a vent for anestesia."))
 			patient.open_internals(patient.internal)
+			update_overlays()
 			return
 		else
 			if(patient.internal != tank)
@@ -82,15 +83,14 @@
 			stop_breath()
 	else
 		to_chat(user, span_warning("[src] don't have a tank or mask!"))
-	. = ..()
 
-/obj/structure/table/optable/v2/process()
+/obj/machinery/optable/v2/process()
 	if (!isnull(patient))
 		recheck_patient(patient)
 		if(mask?.loc != patient || isnull(tank) || patient?.loc != loc)
 			stop_breath()
 
-/obj/structure/table/optable/v2/proc/stop_breath()
+/obj/machinery/optable/v2/proc/stop_breath()
 	recheck_patient(patient)
 	if(!patient)
 		if(mask)
@@ -102,9 +102,11 @@
 	tank.loc = src
 	tank.after_internals_closed(patient)
 	patient.internal = null
-	patient = null
+	if (patient.body_position != LYING_DOWN)
+		patient = null
+	update_overlays()
 
-/obj/structure/table/optable/v2/click_alt(mob/living/user)
+/obj/machinery/optable/v2/click_alt(mob/living/user)
 	if(!ishuman(user))
 		to_chat(user, span_warning("it's to difficult for you!"))
 		return
@@ -113,22 +115,62 @@
 		return
 	if(tank && !patient?.internal)
 		to_chat(user, span_notice("You remove [tank] from side of table."))
+		update_overlays()
 		user.put_in_hands(tank)
 		tank = null
 	else if(mask && !patient?.internal)
 		to_chat(user, span_notice("You remove [mask] from side of table."))
 		user.put_in_hands(mask)
+		update_overlays()
 		mask = null
 	return TRUE
 
-/obj/structure/table/optable/v2/attacked_by(obj/item/I, mob/living/user)
-	. = ..()
+/obj/machinery/optable/v2/update_overlays()
+	SHOULD_CALL_PARENT(TRUE)
+	.=..()
+	var/static/mask_is
+	var/static/tank_is
+	var/static/bad_state
+	var/static/good_state
+	var/static/mid_state
+	var/static/maskwork
+	if(isnull(mask_is)) //static vars initialize with global variables, meaning src is null and this won't pass integration tests unless you check.
+		tank_is = iconstate2appearance(icon, "balon_2")
+		mask_is  = iconstate2appearance(icon, "mask")
+		bad_state = iconstate2appearance(icon, "over_green")
+		good_state = iconstate2appearance(icon, "over_yello")
+		mid_state = iconstate2appearance(icon, "over_red")
+		maskwork = iconstate2appearance(icon, "mask_equip")
+	if (mask)
+		add_overlay(mask_is)
+	else
+		cut_overlay(mask_is)
+	if (tank)
+		add_overlay(tank_is)
+	else
+		cut_overlay(tank_is)
+	if (tank && mask)
+		add_overlay(bad_state)
+	else if (tank || mask)
+		add_overlay(good_state)
+	else
+		add_overlay(mid_state)
+	if (patient)
+		add_overlay(maskwork)
+		cut_overlay(mask_is)
+	else
+		if (mask)
+			add_overlay(mask_is)
+		cut_overlay(maskwork)
+
+/obj/machinery/optable/v2/attacked_by(obj/item/I, mob/living/user)
 	if(!user.combat_mode)
 		if(!tank)
 			if(istype(I, /obj/item/tank/internals))
 				if(user.transferItemToLoc(I, src))
 					user.visible_message("[user] fixes [I] from side of table.", span_notice("You fix [I] from side of table."))
 					tank = I
+					update_overlays()
 					return ITEM_INTERACT_SUCCESS
 		if(!mask)
 			if(istype(I, /obj/item/clothing/mask))
@@ -137,10 +179,12 @@
 					if(user.transferItemToLoc(I, src))
 						user.visible_message("[user] fixes [I] on mask stand.", span_notice("You fix [I] on mask stand."))
 						mask = I
+						update_overlays()
 						return ITEM_INTERACT_SUCCESS
+	else
+		. = ..()
 
-
-/obj/structure/table/optable/v2/Destroy()
+/obj/machinery/optable/v2/Destroy()
 	if(tank)
 		tank.forceMove(loc)
 		tank = null
