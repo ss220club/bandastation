@@ -16,7 +16,9 @@
 		return
 	var/power = -0.25 * ((-(affected_mob.bodytemperature - 103)^2 / 2450) + 2)
 	var/need_mob_update
-	need_mob_update = affected_mob.adjustOrganLoss(organ, power * REM * seconds_per_tick)
+	var/obj/item/organ/internal/precode_organ = affected_mob.get_organ_slot(organ)
+	if  (precode_organ && IS_ORGANIC_ORGAN(precode_organ) && !(precode_organ.organ_flags & ORGAN_FAILING))
+		need_mob_update = affected_mob.adjustOrganLoss(organ, power * REM * seconds_per_tick, )
 	if(need_mob_update)
 		return UPDATE_MOB_HEALTH
 

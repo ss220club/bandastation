@@ -10,20 +10,6 @@
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 	inverse_chem_val = 0.3
 	inverse_chem = /datum/reagent/medicine/higadrite
-
-/datum/reagent/medicine/omnidrite/on_mob_life(mob/living/carbon/affected_mob, seconds_per_tick, times_fired)
-	. = ..()
-	affected_mob.adjustOrganLoss(ORGAN_SLOT_BRAIN, -0.1 * REM * seconds_per_tick * normalise_creation_purity())
-	affected_mob.adjustOrganLoss(ORGAN_SLOT_EYES, -0.1 * REM * seconds_per_tick * normalise_creation_purity())
-	affected_mob.adjustOrganLoss(ORGAN_SLOT_EARS, -0.1 * REM * seconds_per_tick * normalise_creation_purity())
-	affected_mob.adjustOrganLoss(ORGAN_SLOT_TONGUE, -0.1 * REM * seconds_per_tick * normalise_creation_purity())
-	affected_mob.adjustOrganLoss(ORGAN_SLOT_HEART, -0.1 * REM * seconds_per_tick * normalise_creation_purity())
-	affected_mob.adjustOrganLoss(ORGAN_SLOT_LIVER, -0.1 * REM * seconds_per_tick * normalise_creation_purity())
-	affected_mob.adjustOrganLoss(ORGAN_SLOT_LUNGS, -0.1 * REM * seconds_per_tick * normalise_creation_purity())
-	affected_mob.adjustOrganLoss(ORGAN_SLOT_EYES, -0.1 * REM * seconds_per_tick * normalise_creation_purity())
-
-/datum/reagent/medicine/omnidrite/overdose_process(mob/living/affected_mob, seconds_per_tick, times_fired)
-	. = ..()
 	var/static/list/possible_organs = list(
 		ORGAN_SLOT_HEART,
 		ORGAN_SLOT_LIVER,
@@ -35,7 +21,20 @@
 		ORGAN_SLOT_APPENDIX,
 		ORGAN_SLOT_TONGUE,
 	)
-	affected_mob.adjustOrganLoss(pick(possible_organs) ,5 * seconds_per_tick)
+
+/datum/reagent/medicine/omnidrite/on_mob_life(mob/living/carbon/affected_mob, seconds_per_tick, times_fired)
+	. = ..()
+	var/selected = pick(possible_organs)
+	var/obj/item/organ/internal/organ = affected_mob.get_organ_slot(selected)
+	if(organ && IS_ORGANIC_ORGAN(organ) && !(organ.organ_flags & ORGAN_FAILING))
+		affected_mob.adjustOrganLoss(selected, -0.5 * REM * seconds_per_tick * normalise_creation_purity())
+
+/datum/reagent/medicine/omnidrite/overdose_process(mob/living/affected_mob, seconds_per_tick, times_fired)
+	. = ..()
+	var/selected = pick(possible_organs)
+	var/obj/item/organ/internal/organ = affected_mob.get_organ_slot(selected)
+	if(organ && IS_ORGANIC_ORGAN(organ))
+		affected_mob.adjustOrganLoss(selected, 3 * REM * seconds_per_tick * normalise_creation_purity())
 	affected_mob.reagents.remove_reagent(type, 1 * REM * seconds_per_tick)
 
 /datum/chemical_reaction/medicine/omnidrite
