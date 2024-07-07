@@ -154,12 +154,12 @@
 		cut_overlay(good_state)
 		cut_overlay(mid_state)
 	else if (tank || mask)
-		add_overlay(good_state)
-		cut_overlay(mid_state)
-		cut_overlay(bad_state)
-	else
 		add_overlay(mid_state)
 		cut_overlay(good_state)
+		cut_overlay(bad_state)
+	else
+		add_overlay(good_state)
+		cut_overlay(mid_state)
 		cut_overlay(bad_state)
 	if (patient)
 		add_overlay(maskwork)
