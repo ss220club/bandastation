@@ -134,7 +134,7 @@
 
 /datum/bounty/item/science/ref_anomaly/bioscrambler
 	name = "Переработанное биоскрэмблер ядро"
-	description = "Наш ящер уборщик потерял все свои конечности , отправьте нам биоскрэмблер ядро для их замены."
+	description = "Наш ящер уборщик потерял все свои конечности, отправьте нам биоскрэмблер ядро для их замены."
 	wanted_types = list(/obj/item/assembly/signaler/anomaly/bioscrambler = TRUE)
 
 /datum/bounty/item/science/ref_anomaly/dimensional

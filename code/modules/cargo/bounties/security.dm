@@ -27,14 +27,14 @@
 	wanted_types = list(/obj/item/stack/license_plates/filled = TRUE)
 
 /datum/bounty/item/security/earmuffs
-	name = "Противошумные Наушники"
+	name = "Противошумные наушники"
 	description = "Центральное Командование устало от сообщений с вашей станции. Они запросила вас отправить несколько противошумных наушников для уменьшения раздражения."
 	reward = CARGO_CRATE_VALUE * 2
 	wanted_types = list(/obj/item/clothing/ears/earmuffs = TRUE)
 
 /datum/bounty/item/security/handcuffs
 	name = "Наручники"
-	description = "Большой поток сбежавших заключённых прибыл на Центральное Командование. Сейчас идеальное время для отправки запасных наручников или стяжек."
+	description = "Большой поток сбежавших заключённых прибыл на Центральное Командование. Сейчас идеальное время для отправки запасных наручников (или стяжек.)"
 	reward = CARGO_CRATE_VALUE * 2
 	required_count = 5
 	wanted_types = list(/obj/item/restraints/handcuffs = TRUE)

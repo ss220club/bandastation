@@ -6,7 +6,7 @@
 
 /datum/bounty/item/botany/New()
 	..()
-	description = "Шеф повар Центрального Командования хочет приготовить [foodtype] с названием \"[name]\". [bonus_desc]"
+	description = "Шеф повар Центрального Командования хочет приготовить [foodtype], добавив \"[name]\". [bonus_desc]"
 	reward += multiplier * (CARGO_CRATE_VALUE * 2)
 	required_count = rand(5, 10)
 

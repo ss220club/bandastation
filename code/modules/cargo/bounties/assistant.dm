@@ -21,8 +21,8 @@
 	)
 
 /datum/bounty/item/assistant/stunprod
-	name = "Оглущающая палка"
-	description = "ЦК требуется оглушающая палка против диссидентов. Создайте одну, затем отправьте."
+	name = "Оглущающий прут"
+	description = "ЦК требуется оглушающий прут против диссидентов. Создайте одну, затем отправьте."
 	reward = CARGO_CRATE_VALUE * 2.6
 	wanted_types = list(/obj/item/melee/baton/security/cattleprod = TRUE)
 
@@ -256,8 +256,8 @@
 /datum/bounty/item/assistant/fish/fluid/New()
 	..()
 	fluid_type = pick(AQUARIUM_FLUID_FRESHWATER, AQUARIUM_FLUID_SALTWATER, AQUARIUM_FLUID_SULPHWATEVER)
-	name = "[fluid_type] Рыба"
-	description = "Нам нужна [LOWER_TEXT(fluid_type)] рыба для заселения наших аквариумов. Мёртвые или купленные в отделе снабжения рыбы будут оплачены лишь наполовину."
+	name = "Рыба из [fluid_type]"
+	description = "Нам нужна рыба из [LOWER_TEXT(fluid_type)] для заселения наших аквариумов. Мёртвые или купленные в отделе снабжения рыбы будут оплачены лишь наполовину."
 
 /datum/bounty/item/assistant/fish/fluid/can_ship_fish(obj/item/fish/fishie)
 	return compatible_fluid_type(fishie.required_fluid_type, fluid_type)
