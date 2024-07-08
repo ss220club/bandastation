@@ -29,7 +29,7 @@
 		else if (!target.get_organ_slot(ORGAN_SLOT_LUNGS))
 			to_chat(target, span_unconscious("You feel a mechanical force performing compressions... but you don't feel any better..."))
 		else
-			target.apply_status_effect(/datum/status_effect/cpred)
+			target.apply_status_effect(/datum/status_effect/autocpred)
 			if (target.health <= target.crit_threshold && exposed_air && !(target.stat == DEAD || HAS_TRAIT(target, TRAIT_FAKEDEATH)))
 				target.adjustOxyLoss(-min(target.getOxyLoss(), 7))
 				to_chat(target, span_unconscious("You feel a mechanical force performing compressions... It feels good..."))

@@ -4,6 +4,12 @@
 	alert_type = null
 	duration = 15
 
+/datum/status_effect/autocpred
+	id = "autocpred"
+	status_type = STATUS_EFFECT_UNIQUE
+	alert_type = null
+	duration = 25
+
 /datum/status_effect/painkiller/low
 	id = "lowpk"
 	status_type = STATUS_EFFECT_UNIQUE
