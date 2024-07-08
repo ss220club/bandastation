@@ -306,10 +306,10 @@ GLOBAL_LIST_INIT(all_loadout_categories, init_loadout_categories())
 	displayed_text += (additional_displayed_text || list())
 
 	if(can_be_greyscale)
-		displayed_text += "Перекрасить"
+		displayed_text += "Смена цвета"
 
 	if(can_be_named)
-		displayed_text += "Переименовать"
+		displayed_text += "Смена имени"
 
 	if(can_be_reskinned)
 		displayed_text += "Смена стиля"
