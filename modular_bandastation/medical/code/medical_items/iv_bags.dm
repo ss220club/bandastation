@@ -134,8 +134,6 @@
 		user.visible_message(span_warning("[usr] begins attaching [src] to [target]..."), span_warning("You begin attaching [src] to [target]."))
 		if(!do_after(usr, 3 SECONDS, target))
 			return
-	else
-		injecting = TRUE
 
 	var/mob/living/victim = target
 	if (target == user || victim.body_position != LYING_DOWN)
