@@ -96,9 +96,9 @@
 	else
 		. += span_notice("The bag is open. Alt-click to seal it.")
 	if(injecting)
-		. += span_notice("The bag is in inject mode and will transfer to patient.")
+		. += span_notice("The bag is in inject mode and will transfer to patient. Alt-second-click to change it")
 	else
-		. += span_notice("The bag is in draw mode and will transfer from patient.")
+		. += span_notice("The bag is in draw mode and will transfer from patient. Alt-second-click to change it")
 
 /obj/item/reagent_containers/blood/interact_with_atom(atom/target, mob/user, proximity)
 
@@ -136,8 +136,6 @@
 			return
 
 	var/mob/living/victim = target
-	if (target == user  && victim.body_position != LYING_DOWN)
-		injecting = FALSE
 	if (victim.body_position != LYING_DOWN)
 		injecting = FALSE
 
@@ -178,8 +176,6 @@
 
 	var/mob/check_mob = recursive_loc_check(src, injection_target)
 	var/mob/living/target_mob = check_mob
-	if (check_mob.loc == injection_target && target_mob.body_position != LYING_DOWN)
-		injecting = FALSE
 	if (target_mob.body_position != LYING_DOWN)
 		injecting = FALSE
 
