@@ -21,7 +21,7 @@
 	)
 
 /datum/bounty/item/assistant/stunprod
-	name = "Оглущающий прут"
+	name = "Оглушающий прут"
 	description = "ЦК требуется оглушающий прут против диссидентов. Создайте одну, затем отправьте."
 	reward = CARGO_CRATE_VALUE * 2.6
 	wanted_types = list(/obj/item/melee/baton/security/cattleprod = TRUE)
