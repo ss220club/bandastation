@@ -11,13 +11,13 @@
 	duration = 50
 
 /datum/status_effect/painkiller/medium
-	id = "lowpk"
+	id = "midpk"
 	status_type = STATUS_EFFECT_UNIQUE
 	alert_type = null
 	duration = 50
 
 /datum/status_effect/painkiller/high
-	id = "lowpk"
+	id = "hihgpk"
 	status_type = STATUS_EFFECT_UNIQUE
 	alert_type = null
 	duration = 50
