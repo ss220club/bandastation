@@ -5,6 +5,7 @@
 	icon_state = "optable"
 	var/obj/item/tank/internals/tank = null
 	var/obj/item/clothing/mask/mask = null
+	var/current_breathing = FALSE
 
 /obj/machinery/optable/v2/Initialize(mapload)
 	. = ..()
@@ -71,6 +72,7 @@
 			tank.loc = patient
 			user.visible_message("[user] switch on anestesia on [patient].", span_notice("You open a vent for anestesia."))
 			patient.open_internals(patient.internal)
+			current_breathing = TRUE
 			update_overlays()
 			return
 		else
@@ -102,6 +104,7 @@
 	tank.loc = src
 	tank.after_internals_closed(patient)
 	patient.internal = null
+	current_breathing = FALSE
 	if (patient.body_position != LYING_DOWN)
 		patient = null
 	update_overlays()
@@ -115,14 +118,15 @@
 		return
 	if(tank && !patient?.internal)
 		to_chat(user, span_notice("You remove [tank] from side of table."))
-		update_overlays()
 		user.put_in_hands(tank)
 		tank = null
+		update_overlays()
+
 	else if(mask && !patient?.internal)
 		to_chat(user, span_notice("You remove [mask] from side of table."))
 		user.put_in_hands(mask)
-		update_overlays()
 		mask = null
+		update_overlays()
 	return TRUE
 
 /obj/machinery/optable/v2/update_overlays()
@@ -137,23 +141,23 @@
 	if(isnull(mask_is)) //static vars initialize with global variables, meaning src is null and this won't pass integration tests unless you check.
 		tank_is = iconstate2appearance(icon, "balon_2")
 		mask_is  = iconstate2appearance(icon, "mask")
-		bad_state = iconstate2appearance(icon, "over_green")
-		good_state = iconstate2appearance(icon, "over_yello")
-		mid_state = iconstate2appearance(icon, "over_red")
+		good_state = iconstate2appearance(icon, "over_green")
+		mid_state = iconstate2appearance(icon, "over_yello")
+		bad_state = iconstate2appearance(icon, "over_red")
 		maskwork = iconstate2appearance(icon, "mask_equip")
-	if (mask)
-		add_overlay(mask_is)
-	else
+	if (isnull(mask))
 		cut_overlay(mask_is)
-	if (tank)
-		add_overlay(tank_is)
 	else
+		add_overlay(mask_is)
+	if (isnull(tank))
 		cut_overlay(tank_is)
-	if (tank && mask)
+	else
+		add_overlay(tank_is)
+	if (isnull(mask) && isnull(tank))
 		add_overlay(bad_state)
 		cut_overlay(good_state)
 		cut_overlay(mid_state)
-	else if (tank || mask)
+	else if (isnull(mask) || isnull(tank))
 		add_overlay(mid_state)
 		cut_overlay(good_state)
 		cut_overlay(bad_state)
@@ -161,11 +165,13 @@
 		add_overlay(good_state)
 		cut_overlay(mid_state)
 		cut_overlay(bad_state)
-	if (patient)
+	if (current_breathing)
 		add_overlay(maskwork)
 		cut_overlay(mask_is)
 	else
-		if (mask)
+		if (isnull(mask))
+			cut_overlay(mask_is)
+		else
 			add_overlay(mask_is)
 		cut_overlay(maskwork)
 

@@ -136,11 +136,10 @@
 			return
 
 	var/mob/living/victim = target
-	if (target == user  || victim.body_position != LYING_DOWN)
+	if (target == user  && victim.body_position != LYING_DOWN)
 		injecting = FALSE
-	else
-		injecting = TRUE
-
+	if (victim.body_position != LYING_DOWN)
+		injecting = FALSE
 
 	usr.visible_message(span_warning("[usr] attaches [src] to [target]."), span_notice("You attach [src] to [target]."))
 	var/datum/reagents/container = get_reagents()
@@ -175,17 +174,25 @@
 
 /obj/item/reagent_containers/blood/process(seconds_per_tick)
 	if(!injection_target)
-		STOP_PROCESSING
 		return PROCESS_KILL
 
 	var/mob/check_mob = recursive_loc_check(src, injection_target)
-	if (check_mob.loc == injection_target || injection_target.body_position != LYING_DOWN)
+	var/mob/living/target_mob = check_mob
+	if (check_mob.loc == injection_target && target_mob.body_position != LYING_DOWN)
 		injecting = FALSE
-
+	if (target_mob.body_position != LYING_DOWN)
+		injecting = FALSE
 
 	if(amount_per_transfer_from_this > 10) // Prevents people from switching to illegal transfer values while the IV is already in someone, i.e. anything over 10
 		visible_message("<span class='danger'>The IV bag's needle pops out of [injection_target]'s arm. The transfer amount is too high!</span>")
-		STOP_PROCESSING
+		if(injection_target)
+			visible_message(span_notice("[injection_target] is detached from [src]."))
+			if(isliving(injection_target))
+				var/mob/living/attached_mob = injection_target
+				attached_mob.clear_alert(ALERT_IV_CONNECTED, /atom/movable/screen/alert/iv_connected)
+		SEND_SIGNAL(src, COMSIG_IV_DETACH, injection_target)
+		injection_target = null
+		update_appearance(UPDATE_ICON)
 		return PROCESS_KILL
 
 	if (istype(injection_target, /mob/living))
