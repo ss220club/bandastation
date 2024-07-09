@@ -1,14 +1,17 @@
-/datum/experiment/scanning/random/cytology
+/datum/experiment/scanning/cytology
 	name = "Эксперемент по скану цитологии"
-	description = "Базовый эксперимент для сканирования атомов, выращенных в чашке петри."
 	exp_tag = "Скан цитологии"
-	total_requirement = 1
-	possible_types = list(/mob/living/basic/slime)
-	traits = EXPERIMENT_TRAIT_DESTRUCTIVE
 
-/datum/experiment/scanning/random/cytology/final_contributing_index_checks(datum/component/experiment_handler/experiment_handler, atom/target, typepath)
+/datum/experiment/scanning/cytology/final_contributing_index_checks(datum/component/experiment_handler/experiment_handler, atom/target, typepath)
 	return ..() && HAS_TRAIT(target, TRAIT_VATGROWN)
 
-/datum/experiment/scanning/random/cytology/serialize_progress_stage(atom/target, list/seen_instances)
-	return EXPERIMENT_PROG_INT("Скан образцов [initial(target.name)], выращенных в лаборатории", \
-		traits & EXPERIMENT_TRAIT_DESTRUCTIVE ? scanned[target] : seen_instances.len, required_atoms[target])
+/datum/experiment/scanning/cytology/serialize_progress_stage(atom/target, list/seen_instances)
+	return EXPERIMENT_PROG_INT("Скан образцов [initial(target.name)], выращенных в лаборатории", seen_instances.len, required_atoms[target])
+
+/datum/experiment/scanning/cytology/slime
+	name = "Сканирование слаймов выращенных в лаборатории"
+	description = "Видели слаймов в ксенобиологическом загоне? Они появились, когда наши исследователи бросили в резервуар заплесневелый кусок хлеба. Вырастите еще одного и сообщите о результатах."
+	performance_hint = "Соберите клеточные линии слаймов из заплесневелого хлеба или возьмите биопсийный образец существующих слаймов. И выращивайте их в загоне."
+	required_atoms = list(/mob/living/basic/slime = 1)
+
+
