@@ -36,12 +36,16 @@
 
 /obj/item/melee/baton/security/electrostaff/examine(mob/user)
 	. = ..()
-	. -= span_notice("This item can be recharged in a recharger. Using a screwdriver on this item will allow you to access its power cell, which can be replaced.")
 	. += span_notice("Данный предмет не имеет внешних разъемов для зарядки. Используйте <b>отвертку</b> для доступа к внутренней батарее, чтобы заменить или зарядить её.")
 
 /obj/item/weaponcrafting/gunkit/electrostaff
 	name = "\improper electrostaff parts kit"
 	desc = "Возьмите 2 оглушающие дубинки. Соедините их вместе, поместив внутрь батарею. Используйте остальные инструменты (лишних винтиков быть не должно)."
+
+/obj/machinery/recharger/attacked_by(obj/item/attacking_item, mob/living/user)
+	if(is_type_in_list(/obj/item/melee/baton/security/electrostaff, allowed_devices))
+		return
+	. = ..()
 
 /datum/design/electrostaff
 	name = "Electrostaff Parts Kit"

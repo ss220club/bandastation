@@ -36,6 +36,7 @@
 	playsound(loc, 'modular_bandastation/objects/sounds/pshred.ogg', 75, 1)
 	update_icon_state()
 	add_fingerprint(user)
+	return ITEM_INTERACT_SUCCESS
 
 /obj/machinery/papershredder/wrench_act(mob/living/user, obj/item/tool)
 	. = ..()
@@ -57,8 +58,6 @@
 
 	get_shredded_paper()
 	update_icon_state()
-
-
 
 /obj/machinery/papershredder/proc/get_shredded_paper()
 	if(!paperamount)
@@ -86,3 +85,9 @@
 	. = ..()
 	if(prob(65))
 		color = pick("#8b8b8b","#e7e4e4", "#c9c9c9")
+
+/obj/item/shredded_paper/attackby(obj/item/attacking_item, mob/user, params)
+	. = ..()
+	if(burn_paper_product_attackby_check(attacking_item, user))
+		return
+

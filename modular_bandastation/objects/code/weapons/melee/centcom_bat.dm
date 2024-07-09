@@ -30,9 +30,9 @@
 	/// Attack verbs when extended (created on Initialize)
 	var/list/attack_verb_simple_on = list("smacked", "struck", "cracked", "beaten")
 
-/obj/item/melee/baseball_bat/homerun/central_command/pickup(mob/living/user)
+/obj/item/melee/baseball_bat/homerun/central_command/pickup(mob/living/carbon/human/user)
 	. = ..()
-	if(!HAS_TRAIT(user, R_ADMIN))
+	if(!istype(user.get_item_by_slot(ITEM_SLOT_ID), /obj/item/card/id/advanced/centcom))
 		user.AdjustParalyzed(10 SECONDS)
 		user.drop_all_held_items(src, force)
 		to_chat(user, span_userdanger("Это - оружие истинного правосудия. Тебе не дано обуздать его мощь."))

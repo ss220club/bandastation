@@ -23,7 +23,7 @@
 
 /obj/item/card/id/examine(mob/user)
 	. = ..()
-	. += span_notice("Вы можете попытаться снять наклейку, используя <b>Ctrl-Shift-Click</b>.")
+	. += span_notice("Вы можете попытаться снять наклейку, используя <b>Ctrl-Click</b>.")
 
 /obj/item/card/id/item_ctrl_click(mob/living/carbon/user)
 	. = ..()

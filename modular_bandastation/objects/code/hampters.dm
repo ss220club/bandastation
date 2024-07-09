@@ -26,9 +26,14 @@
 	righthand_file = 'modular_bandastation/objects/icons/inhands/hampter_righthand.dmi'
 	slot_flags = ITEM_SLOT_HEAD
 	w_class = WEIGHT_CLASS_TINY
+	//var/cooldown = 0
+	//var/cooldown_time = 10
 
 // Действия при взаимодействии с включенным комбат модом
 /obj/item/toy/plush/hampter/attack_self(mob/living/carbon/human/user)
+	/*if(cooldown > world.time)
+		return
+	cooldown = world.time + cooldown_time*/
 	. = ..()
 	if(user.combat_mode == TRUE)
 		new /obj/effect/decal/cleanable/blood(get_turf(user))

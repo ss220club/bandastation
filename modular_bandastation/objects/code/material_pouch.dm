@@ -36,7 +36,3 @@
 	atom_storage.max_slots = 2
 	atom_storage.numerical_stacking = TRUE
 	atom_storage.set_holdable(matpouch_holdables)
-
-/obj/structure/closet/secure_closet/engineering_personal/PopulateContents()
-	. = ..()
-	new /obj/item/storage/bag/material_pouch(src)
