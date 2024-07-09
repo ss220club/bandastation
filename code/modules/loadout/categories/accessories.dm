@@ -84,7 +84,7 @@
 /datum/loadout_item/accessory/full_pocket_protector
 	name = "Pocket Protector (Filled)"
 	item_path = /obj/item/clothing/accessory/pocketprotector/full
-	additional_displayed_text = list("Имеет ручки")
+	additional_displayed_text = list("Внутри - ручки")
 
 /datum/loadout_item/accessory/pride
 	name = "Pride Pin"
