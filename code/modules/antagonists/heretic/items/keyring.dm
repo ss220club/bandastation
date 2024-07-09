@@ -185,7 +185,7 @@
 
 	if(reference_resolved)
 		make_portal(user, reference_resolved, target)
-		to_chat(user, span_notice("Используя [src], вы соединяете [link] с [target]."))
+		to_chat(user, span_notice("Используя [src], вы соединяете [reference_resolved] с [target]."))
 		link = null
 		balloon_alert(user, "соединено 2/2")
 	else
