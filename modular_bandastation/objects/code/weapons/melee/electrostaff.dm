@@ -42,7 +42,7 @@
 	name = "\improper electrostaff parts kit"
 	desc = "Возьмите 2 оглушающие дубинки. Соедините их вместе, поместив внутрь батарею. Используйте остальные инструменты (лишних винтиков быть не должно)."
 
-/obj/machinery/recharger/attacked_by(obj/item/attacking_item, mob/living/user)
+/obj/machinery/recharger/attackby(obj/item/attacking_item, mob/user, params)
 	if(istype(attacking_item, /obj/item/melee/baton/security/electrostaff))
 		return
 	. = ..()
