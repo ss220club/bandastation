@@ -43,7 +43,7 @@
 	desc = "Возьмите 2 оглушающие дубинки. Соедините их вместе, поместив внутрь батарею. Используйте остальные инструменты (лишних винтиков быть не должно)."
 
 /obj/machinery/recharger/attacked_by(obj/item/attacking_item, mob/living/user)
-	if(is_type_in_list(/obj/item/melee/baton/security/electrostaff, allowed_devices))
+	if(istype(attacking_item, /obj/item/melee/baton/security/electrostaff))
 		return
 	. = ..()
 
