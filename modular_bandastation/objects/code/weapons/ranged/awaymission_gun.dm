@@ -18,6 +18,15 @@
 /obj/item/ammo_casing/energy/lasergun/awaymission_aeg
 	e_cost = LASER_SHOTS(20, STANDARD_CELL_CHARGE)
 
+/obj/item/gun/energy/can_shoot()
+    // Проверка, что ammo_type - это список и что он не пустой
+    if (!istype(ammo_type, /list) || !ammo_type.len)
+        return FALSE
+
+    var/obj/item/ammo_casing/energy/shot = ammo_type[select]
+
+    return !QDELETED(cell) ? (cell.charge >= shot.e_cost) : FALSE
+
 /obj/item/gun/energy/laser/awaymission_aeg/Initialize(mapload)
 	. = ..()
 	on_changed_z_level()
