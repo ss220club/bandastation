@@ -21,7 +21,7 @@ import { Window } from '../layouts';
 import { Food } from './PreferencesMenu/data';
 
 const TYPE_ICONS = {
-  'Можно сделать': 'utensils',
+  'Can Make': 'utensils',
   [Food.Alcohol]: 'wine-glass',
   [Food.Breakfast]: 'sun',
   [Food.Bugs]: 'bug',
@@ -46,49 +46,49 @@ const TYPE_ICONS = {
 } as const;
 
 const CATEGORY_ICONS_CRAFTING = {
-  'Можно сделать': 'hammer',
-  'Оружие: холодное': 'hand-fist',
-  'Оружие: дальнобойное': 'gun',
-  'Оружие: патроны': 'box',
-  Робототехника: 'robot',
-  Прочее: 'shapes',
+  'Can Make': 'hammer',
+  'Weapons Melee': 'hand-fist',
+  'Weapons Ranged': 'gun',
+  'Weapon Ammo': 'box',
+  Robotics: 'robot',
+  Misc: 'shapes',
   Tribal: 'campground',
-  Одежда: 'shirt',
-  Напитки: 'wine-bottle',
-  Химия: 'microscope',
-  Атмосферика: 'fan',
-  Структуры: 'cube',
-  Полы: 'border-all',
-  Окна: 'person-through-window',
-  Двери: 'door-open',
-  Мебель: 'chair',
-  Снаряжение: 'calculator',
-  Контейнеры: 'briefcase',
-  Инструменты: 'screwdriver-wrench',
-  Развлечение: 'masks-theater',
-  'Кровавый культ': 'users',
+  Clothing: 'shirt',
+  Drinks: 'wine-bottle',
+  Chemistry: 'microscope',
+  Atmospherics: 'fan',
+  Structures: 'cube',
+  Tiles: 'border-all',
+  Windows: 'person-through-window',
+  Doors: 'door-open',
+  Furniture: 'chair',
+  Equipment: 'calculator',
+  Containers: 'briefcase',
+  Tools: 'screwdriver-wrench',
+  Entertainment: 'masks-theater',
+  'Blood Cult': 'users',
 } as const;
 
 const CATEGORY_ICONS_COOKING = {
-  'Можно сделать': 'utensils',
-  Хлебобулочное: 'bread-slice',
-  Бургеры: 'burger',
-  Торты: 'cake-candles',
-  Яица: 'egg',
-  Замороженные: 'ice-cream',
-  Ящерское: 'dragon',
-  Мясное: 'bacon',
-  Мексиканское: 'pepper-hot',
-  Прочее: 'shapes',
-  Молиное: 'shirt',
-  Кондитерское: 'cookie',
-  Пироги: 'chart-pie',
-  Пиццы: 'pizza-slice',
-  Салаты: 'leaf',
-  Сэндвичи: 'hotdog',
-  Морепродукты: 'fish',
-  Супы: 'mug-hot',
-  Спагетти: 'wheat-awn',
+  'Can Make': 'utensils',
+  Breads: 'bread-slice',
+  Burgers: 'burger',
+  Cakes: 'cake-candles',
+  'Egg-Based Food': 'egg',
+  Frozen: 'ice-cream',
+  'Lizard Food': 'dragon',
+  Meats: 'bacon',
+  'Mexican Food': 'pepper-hot',
+  'Misc. Food': 'shapes',
+  'Mothic Food': 'shirt',
+  Pastries: 'cookie',
+  Pies: 'chart-pie',
+  Pizzas: 'pizza-slice',
+  Salads: 'leaf',
+  Sandwiches: 'hotdog',
+  Seafood: 'fish',
+  Soups: 'mug-hot',
+  Spaghettis: 'wheat-awn',
 } as const;
 
 enum MODE {
@@ -175,13 +175,13 @@ export const PersonalCrafting = (props) => {
   const DEFAULT_CAT_COOKING = Object.keys(CATEGORY_ICONS_COOKING)[1];
   const [activeCategory, setCategory] = useState(
     Object.keys(craftability).length
-      ? 'Можно сделать'
+      ? 'Can Make'
       : mode === MODE.cooking
         ? DEFAULT_CAT_COOKING
         : DEFAULT_CAT_CRAFTING,
   );
   const [activeType, setFoodType] = useState(
-    Object.keys(craftability).length ? 'Можно сделать' : data.foodtypes[0],
+    Object.keys(craftability).length ? 'Can Make' : data.foodtypes[0],
   );
   const material_occurences = sortBy(
     data.material_occurences,
@@ -202,20 +202,19 @@ export const PersonalCrafting = (props) => {
         // Is foodtype mode and the active type matches
         (tabMode === TABS.foodtype &&
           mode === MODE.cooking &&
-          ((activeType === 'Можно сделать' &&
-            Boolean(craftability[recipe.ref])) ||
+          ((activeType === 'Can Make' && Boolean(craftability[recipe.ref])) ||
             recipe.foodtypes?.includes(activeType))) ||
         // Is material mode and the active material or catalysts match
         (tabMode === TABS.material &&
           Object.keys(recipe.reqs).includes(activeMaterial)) ||
         // Is category mode and the active categroy matches
         (tabMode === TABS.category &&
-          ((activeCategory === 'Можно сделать' &&
+          ((activeCategory === 'Can Make' &&
             Boolean(craftability[recipe.ref])) ||
             recipe.category === activeCategory))),
   );
   recipes = sortBy(recipes, (recipe) => [
-    activeCategory === 'Можно сделать'
+    activeCategory === 'Can Make'
       ? 99 - Object.keys(recipe.reqs).length
       : Number(craftability[recipe.ref]),
     recipe.name.toLowerCase(),
@@ -223,7 +222,7 @@ export const PersonalCrafting = (props) => {
   if (searchText.length > 0) {
     recipes = filter(recipes, searchName);
   }
-  const canMake = ['Можно сделать'];
+  const canMake = ['Can Make'];
   const categories = canMake
     .concat(data.categories.sort())
     .filter((i) => (i === 'Weaponry' ? true : i));
@@ -275,7 +274,7 @@ export const PersonalCrafting = (props) => {
                         setPages(1);
                         setCategory(
                           Object.keys(craftability).length
-                            ? 'Можно сделать'
+                            ? 'Can Make'
                             : data.categories[0],
                         );
                       }}
@@ -293,7 +292,7 @@ export const PersonalCrafting = (props) => {
                           setPages(1);
                           setFoodType(
                             Object.keys(craftability).length
-                              ? 'Можно сделать'
+                              ? 'Can Make'
                               : data.foodtypes[0],
                           );
                         }}
@@ -393,7 +392,7 @@ export const PersonalCrafting = (props) => {
                               <Stack.Item width="14px" textAlign="center">
                                 <Icon
                                   color={
-                                    category === 'Кровавый культ'
+                                    category === 'Blood Cult'
                                       ? 'red'
                                       : 'default'
                                   }
@@ -403,14 +402,12 @@ export const PersonalCrafting = (props) => {
                               <Stack.Item
                                 grow
                                 color={
-                                  category === 'Кровавый культ'
-                                    ? 'red'
-                                    : 'default'
+                                  category === 'Blood Cult' ? 'red' : 'default'
                                 }
                               >
-                                {category}
+                                {CATEGORY_NAMES[category]}
                               </Stack.Item>
-                              {category === 'Можно сделать' && (
+                              {category === 'Can Make' && (
                                 <Stack.Item>
                                   {Object.keys(craftability).length}
                                 </Stack.Item>
@@ -599,7 +596,7 @@ const FoodtypeContent = (props) => {
     iconColor = '';
 
   // We use iconName in the return to see if this went through.
-  if (type !== 'Можно сделать' && diet) {
+  if (type !== 'Can Make' && diet) {
     if (diet.liked_food.includes(type)) {
       iconName = 'face-laugh-beam';
       iconColor = 'good';
@@ -621,7 +618,7 @@ const FoodtypeContent = (props) => {
         {TYPE_NAMES[type]}
       </Stack.Item>
       <Stack.Item>
-        {type === 'Можно сделать'
+        {type === 'Can Make'
           ? craftableCount
           : iconName && <Icon name={iconName} color={iconColor} />}
       </Stack.Item>
@@ -705,7 +702,7 @@ const RecipeContentCompact = ({ item, craftable, busy, mode }) => {
                     my={0.3}
                     lineHeight={2.5}
                     align="center"
-                    content="Изготовить"
+                    content="Создать"
                     disabled={!craftable || busy}
                     icon={
                       busy
@@ -991,7 +988,7 @@ const GroupTitle = ({ title }) => {
 
 // BANDASTATION EDIT START
 const TYPE_NAMES = {
-  'Можно сделать': 'utensils',
+  'Can Make': 'utensils',
   [Food.Alcohol]: 'Алкоголь',
   [Food.Breakfast]: 'Завтраки',
   [Food.Bugs]: 'Из жуков',
@@ -1014,3 +1011,46 @@ const TYPE_NAMES = {
   [Food.Toxic]: 'Токсичное',
   [Food.Vegetables]: 'Овощи',
 } as const;
+
+const CATEGORY_NAMES = {
+  'Can Make': 'Можно сделать',
+  'Weapons Melee': 'Оружие: холодное',
+  'Weapons Ranged': 'Оружие: дальнобойное',
+  'Weapon Ammo': 'Оружие: патроны',
+  Robotics: 'Робототехника',
+  Misc: 'Прочее',
+  Tribal: 'Племенное',
+  Clothing: 'Одежда',
+  Drinks: 'Напитки',
+  Chemistry: 'Химия',
+  Atmospherics: 'Атмосферика',
+  Structures: 'Структуры',
+  Tiles: 'Полы',
+  Windows: 'Окна',
+  Doors: 'Двери',
+  Furniture: 'Мебель',
+  Equipment: 'Снаряжение',
+  Containers: 'Контейнеры',
+  Tools: 'Инструменты',
+  Entertainment: 'Развлечение',
+  'Blood Cult': 'Кровавый культ',
+  Breads: 'Хлебобулочное',
+  Burgers: 'Бургеры',
+  Cakes: 'Торты',
+  'Egg-Based Food': 'Яица',
+  Frozen: 'Замороженное',
+  'Lizard Food': 'Ящерское',
+  Meats: 'Мясное',
+  'Mexican Food': 'Мексиканское',
+  'Misc. Food': 'Прочее',
+  'Mothic Food': 'Молиное',
+  Pastries: 'Кондитерское',
+  Pies: 'Пироги',
+  Pizzas: 'Пиццы',
+  Salads: 'Салаты',
+  Sandwiches: 'Сэндвичи',
+  Seafood: 'Морепродукты',
+  Soups: 'Супы',
+  Spaghettis: 'Спагетти',
+  'Martian food': 'Марсианское',
+};
