@@ -115,6 +115,7 @@ GLOBAL_LIST_INIT(job_titles_ru, list(
 
 // Use it ONLY for display!!
 /proc/job_title_ru(title)
-	if(GLOB.job_titles_ru[title])
-		return GLOB.job_titles_ru[title]
+	var/job_ru_title = GLOB.job_titles_ru[title]
+	if(job_ru_title)
+		return job_ru_title
 	return title
