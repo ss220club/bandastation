@@ -285,9 +285,7 @@
 #include "code\__DEFINES\atmospherics\atmos_mapping_helpers.dm"
 #include "code\__DEFINES\atmospherics\atmos_mob_interaction.dm"
 #include "code\__DEFINES\atmospherics\atmos_piping.dm"
-// BANDASTATION EDIT START
 #include "code\__DEFINES\bandastation\ru_jobs.dm"
-// BANDASTATION EDIT END
 #include "code\__DEFINES\construction\actions.dm"
 #include "code\__DEFINES\construction\material.dm"
 #include "code\__DEFINES\construction\rcd.dm"
