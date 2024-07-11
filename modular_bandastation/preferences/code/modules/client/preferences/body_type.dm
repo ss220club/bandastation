@@ -2,4 +2,7 @@
 	target.physique = target.gender
 
 /datum/preference/choiced/body_type/is_accessible(datum/preferences/preferences)
+	if (!..(preferences))
+		return FALSE
+
 	return FALSE
