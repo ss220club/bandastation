@@ -105,7 +105,7 @@
 	set_target(target_mind.current)
 
 	replace_in_name("%TARGET%", target_mind.name)
-	replace_in_name("%JOB TITLE%", target_mind.assigned_role.title)
+	replace_in_name("%JOB TITLE%", job_title_ru(target_mind.assigned_role.title))
 	RegisterSignal(target, COMSIG_CARBON_LOSE_ORGAN, PROC_REF(check_eye_removal))
 	AddComponent(/datum/component/traitor_objective_register, target, fail_signals = list(COMSIG_QDELETING))
 	return TRUE
