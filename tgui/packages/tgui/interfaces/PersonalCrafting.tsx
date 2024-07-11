@@ -724,7 +724,9 @@ const RecipeContentCompact = ({ item, craftable, busy, mode }) => {
                       lineHeight={2.5}
                       width={'32px'}
                       align="center"
-                      tooltip={'Повторять изготовку, пока не кончатся ресурсы.'}
+                      tooltip={
+                        'Продолжать создание, пока не закончатся ингредиенты.'
+                      }
                       tooltipPosition={'top'}
                       disabled={!craftable || busy}
                       icon={'repeat'}
@@ -885,7 +887,7 @@ const RecipeContent = ({ item, craftable, busy, mode, diet }) => {
                             lineHeight={2.5}
                             align="center"
                             tooltip={
-                              'Продолжать создание, пока не кончатся ингредиенты.'
+                              'Продолжать создание, пока не закончатся ингредиенты.'
                             }
                             tooltipPosition={'top'}
                             disabled={!craftable || busy}
