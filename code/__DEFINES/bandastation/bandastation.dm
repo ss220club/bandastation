@@ -1,4 +1,4 @@
-// Keep this in sync with JOBS_RU from tgui\packages\tgui\interfaces\PreferencesMenu\JobsPage.tsx
+// Keep this in sync with JOBS_RU from tgui\packages\tgui\bandastation\ru_jobs.tsx
 //No department
 #define JOB_ASSISTANT_RU "Гражданский"
 #define JOB_PRISONER_RU "Заключенный"
@@ -20,10 +20,10 @@
 #define JOB_WARDEN_RU "Смотритель"
 #define JOB_DETECTIVE_RU "Детектив"
 #define JOB_SECURITY_OFFICER_RU "Офицер"
-#define JOB_SECURITY_OFFICER_MEDICAL_RU "Офицер (Медицинский)"
-#define JOB_SECURITY_OFFICER_ENGINEERING_RU "Офицер (Инженерный)"
-#define JOB_SECURITY_OFFICER_SCIENCE_RU "Офицер (Исследований)"
-#define JOB_SECURITY_OFFICER_SUPPLY_RU "Офицер (Снабжения)"
+#define JOB_SECURITY_OFFICER_MEDICAL_RU "Офицер (Медицинский отдел)"
+#define JOB_SECURITY_OFFICER_ENGINEERING_RU "Офицер (Инженерный отдел)"
+#define JOB_SECURITY_OFFICER_SCIENCE_RU "Офицер (Отдел исследований)"
+#define JOB_SECURITY_OFFICER_SUPPLY_RU "Офицер (Отдел снабжения)"
 //Engineering
 #define JOB_STATION_ENGINEER_RU "Станционный инженер"
 #define JOB_ATMOSPHERIC_TECHNICIAN_RU "Атмосферный техник"
