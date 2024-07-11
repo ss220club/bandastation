@@ -75,13 +75,13 @@
 	if(isnull(gloves))
 		necro_prob += 20
 	else
-		necro_prob -= surgeon.gloves.get_armor_rating(BIO)
+		necro_prob -= surgeon.gloves.get_armor_rating(BIO) / 5
 		if(GET_ATOM_BLOOD_DNA_LENGTH(gloves))
 			necro_prob += 30
 	if(isnull(mask))
 		necro_prob += 5
 	else
-		necro_prob -= surgeon.head.get_armor_rating(BIO)
+		necro_prob -= surgeon.head.get_armor_rating(BIO) / 5
 		if(GET_ATOM_BLOOD_DNA_LENGTH(mask))
 			necro_prob += 10
 	if(GET_ATOM_BLOOD_DNA_LENGTH(tool))
