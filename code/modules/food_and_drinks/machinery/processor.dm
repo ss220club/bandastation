@@ -236,7 +236,7 @@
 
 	if(processed_slime.stat != DEAD)
 		processed_slime.forceMove(drop_location())
-		processed_slime.balloon_alert_to_viewers("crawls free")
+		processed_slime.balloon_alert_to_viewers("ползет")
 		return
 	var/core_count = processed_slime.cores
 	for(var/i in 1 to (core_count+rating_amount-1))

@@ -409,7 +409,7 @@
 
 	if(dirty >= MAX_MICROWAVE_DIRTINESS) // The microwave is all dirty so can't be used!
 		if(IS_EDIBLE(item))
-			balloon_alert(user, "Слишком грязно!")
+			balloon_alert(user, "cлишком грязно!")
 			return TRUE
 		return ..()
 

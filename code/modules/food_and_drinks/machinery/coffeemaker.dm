@@ -696,7 +696,7 @@
 
 /obj/machinery/coffeemaker/impressa/take_cup(mob/user)
 	if(!coffee_cups) //shouldn't happen, but we all know how stuff manages to break
-		balloon_alert(user, "Чашек не осталось!")
+		balloon_alert(user, "чашек не осталось!")
 		return
 	balloon_alert_to_viewers("взял чашку")
 	var/obj/item/reagent_containers/cup/glass/coffee/no_lid/new_cup = new(get_turf(src))

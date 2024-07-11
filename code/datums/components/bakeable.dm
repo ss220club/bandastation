@@ -97,14 +97,14 @@
 
 	if(positive_result)
 		used_oven.visible_message(
-			span_notice("Вы чувствуете приятный запах, исходящий от [used_oven]."),
-			blind_message = span_notice("Вы чувствуете какой-то приятный запах..."),
+			span_notice("[used_oven] источает приятный запах."),
+			blind_message = span_notice("Вы чувствуете приятный запах..."),
 			ignored_mobs = asomnia_hadders,
 		)
 		BLACKBOX_LOG_FOOD_MADE(baked_result.type)
 	else
 		used_oven.visible_message(
-			span_warning("Вы чувствуете запах горелого, исходящий от [used_oven]."),
+			span_warning("[used_oven] испускает горелое зловоние."),
 			blind_message = span_warning("Вы чувствуете запах горелого..."),
 			ignored_mobs = asomnia_hadders,
 		)
@@ -118,9 +118,9 @@
 	if(!current_bake_time) //Not baked yet
 		if(positive_result)
 			if(initial(bake_result.gender) == PLURAL)
-				examine_list += span_notice("[parent] может быть [span_bold("запечен")] в несколько [initial(bake_result.name)].")
+				examine_list += span_notice("Это [parent]. [initial(bake_result.name)] могут [span_bold("готовиться")] из нее.")
 			else
-				examine_list += span_notice("[parent] может быть [span_bold("запечен")] в [initial(bake_result.name)].")
+				examine_list += span_notice("Это[parent]. [span_bold("Готовится")] в [initial(bake_result.name)].")
 		return
 
 	if(positive_result)
