@@ -1052,5 +1052,5 @@ const CATEGORY_NAMES = {
   Seafood: 'Морепродукты',
   Soups: 'Супы',
   Spaghettis: 'Спагетти',
-  'Martian food': 'Марсианское',
+  'Martian Food': 'Марсианское',
 };
