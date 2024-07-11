@@ -8,7 +8,7 @@
 	can_randomize = FALSE
 
 /datum/preference/choiced/body_type/init_possible_values()
-	return list(USE_GENDER) // BANDASTATION REMOVE. Was `return list(USE_GENDER, MALE, FEMALE)`
+	return list(USE_GENDER, MALE, FEMALE)
 
 /datum/preference/choiced/body_type/create_default_value()
 	return USE_GENDER
