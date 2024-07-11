@@ -19,10 +19,6 @@
 		new /datum/stack_recipe("tribune", /obj/structure/tribune, 5, time = 5 SECONDS, crafting_flags = CRAFT_ONE_PER_TURF)
 	)
 
-	GLOB.plastic_recipes += list(
-		new /datum/stack_recipe("пластиковый стул", /obj/structure/chair/plastic, time = 2 SECONDS, crafting_flags = CRAFT_ONE_PER_TURF),
-	)
-
 	GLOB.arcade_prize_pool += list(
 		/obj/item/storage/box/id_skins = 1,
 		/obj/item/storage/wallet/wallet_USSP_1 = 1,
