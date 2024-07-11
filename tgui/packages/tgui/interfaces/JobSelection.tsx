@@ -3,7 +3,7 @@ import { Color } from 'common/color';
 import { BooleanLike } from 'common/react';
 
 import { useBackend } from '../backend';
-import { JOBS_RU } from '../bandastation/ru_jobs'; // BANDASTATION EDIT
+import { DEPARTMENTS_RU, JOBS_RU } from '../bandastation/ru_jobs'; // BANDASTATION EDIT
 import {
   Box,
   Button,
@@ -150,7 +150,9 @@ export const JobSelection = (props) => {
                   <StyleableSection
                     title={
                       <>
-                        {departmentName}
+                        {DEPARTMENTS_RU[departmentName]
+                          ? DEPARTMENTS_RU[departmentName]
+                          : departmentName}
                         <span
                           style={{
                             fontSize: '1rem',

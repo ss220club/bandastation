@@ -39,3 +39,15 @@ export const JOBS_RU = {
   Chaplain: 'Священник',
   Psychologist: 'Психолог',
 };
+
+export const DEPARTMENTS_RU = {
+  Command: 'Командование',
+  Security: 'Безопасность',
+  Service: 'Обслуживание',
+  Cargo: 'Снабжение',
+  Science: 'Исследование',
+  Medical: 'Медицина',
+  Silicon: 'Синтетики',
+  Engineering: 'Инженерия',
+  'No Department': 'Без отдела',
+};
