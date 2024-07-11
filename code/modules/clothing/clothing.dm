@@ -354,7 +354,7 @@
 		. += how_cool_are_your_threads.Join()
 
 	if(get_armor().has_any_armor() || (flags_cover & (HEADCOVERSMOUTH|PEPPERPROOF)) || (clothing_flags & STOPSPRESSUREDAMAGE) || (visor_flags & STOPSPRESSUREDAMAGE))
-		. += span_notice("It has a <a href='?src=[REF(src)];list_armor=1'>tag</a> listing its protection classes.")
+		. += span_notice("Имеется <a href='?src=[REF(src)];list_armor=1'>бирка</a>, указывающая классы защиты.")
 
 /obj/item/clothing/Topic(href, href_list)
 	. = ..()
