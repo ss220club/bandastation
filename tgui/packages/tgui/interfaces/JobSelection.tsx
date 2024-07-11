@@ -3,6 +3,7 @@ import { Color } from 'common/color';
 import { BooleanLike } from 'common/react';
 
 import { useBackend } from '../backend';
+import { JOBS_RU } from '../bandastation/ru_jobs'; // BANDASTATION EDIT
 import {
   Box,
   Button,
@@ -13,7 +14,6 @@ import {
 } from '../components';
 import { Window } from '../layouts';
 import { JOB2ICON } from './common/JobToIcon';
-import { JOBS_RU } from './PreferencesMenu/JobsPage'; // BANDASTATION EDIT
 
 type Job = {
   unavailable_reason: string | null;
