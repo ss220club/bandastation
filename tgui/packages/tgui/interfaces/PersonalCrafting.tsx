@@ -618,7 +618,7 @@ const FoodtypeContent = (props) => {
         <Icon name={TYPE_ICONS[type] || 'circle'} />
       </Stack.Item>
       <Stack.Item grow style={{ textTransform: 'capitalize' }}>
-        {type.toLowerCase()}
+        {TYPE_NAMES[type]}
       </Stack.Item>
       <Stack.Item>
         {type === 'Можно сделать'
@@ -988,3 +988,29 @@ const GroupTitle = ({ title }) => {
     </Stack>
   ) as any;
 };
+
+// BANDASTATION EDIT START
+const TYPE_NAMES = {
+  'Можно сделать': 'utensils',
+  [Food.Alcohol]: 'Алкоголь',
+  [Food.Breakfast]: 'Завтраки',
+  [Food.Bugs]: 'Из жуков',
+  [Food.Cloth]: 'Из одежды',
+  [Food.Dairy]: 'Молочное',
+  [Food.Fried]: 'Жареное',
+  [Food.Fruit]: 'Фрукты',
+  [Food.Gore]: 'Месиво',
+  [Food.Grain]: 'Зерновое',
+  [Food.Gross]: 'Ужасное',
+  [Food.Junkfood]: 'Фастфуд',
+  [Food.Meat]: 'Мясное',
+  [Food.Nuts]: 'Орехи',
+  [Food.Oranges]: 'Апельсины',
+  [Food.Pineapple]: 'Ананасы',
+  [Food.Raw]: 'Сырое',
+  [Food.Seafood]: 'Морепродукты',
+  [Food.Stone]: 'Каменное',
+  [Food.Sugar]: 'Сахарное',
+  [Food.Toxic]: 'Токсичное',
+  [Food.Vegetables]: 'Овощи',
+} as const;
