@@ -13,6 +13,7 @@ import {
 } from '../components';
 import { Window } from '../layouts';
 import { JOB2ICON } from './common/JobToIcon';
+import { JOBS_RU } from './PreferencesMenu/JobsPage'; // BANDASTATION EDIT
 
 type Job = {
   unavailable_reason: string | null;
@@ -84,7 +85,13 @@ export const JobEntry = (data: {
     >
       <>
         {jobIcon && <Icon name={jobIcon} />}
-        {job.command ? <b>{jobName}</b> : jobName}
+        {job.command ? (
+          <b>{JOBS_RU[jobName] ? JOBS_RU[jobName] : jobName}</b>
+        ) : JOBS_RU[jobName] ? (
+          JOBS_RU[jobName]
+        ) : (
+          jobName
+        )}
         <span
           style={{
             whiteSpace: 'nowrap',
