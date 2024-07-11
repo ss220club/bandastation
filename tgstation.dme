@@ -285,6 +285,7 @@
 #include "code\__DEFINES\atmospherics\atmos_mapping_helpers.dm"
 #include "code\__DEFINES\atmospherics\atmos_mob_interaction.dm"
 #include "code\__DEFINES\atmospherics\atmos_piping.dm"
+#include "code\__DEFINES\bandastation\ru_jobs.dm" // BANDASTATION EDIT
 #include "code\__DEFINES\construction\actions.dm"
 #include "code\__DEFINES\construction\material.dm"
 #include "code\__DEFINES\construction\rcd.dm"
@@ -6311,8 +6312,5 @@
 #include "interface\fonts\spess_font.dm"
 #include "interface\fonts\tiny_unicode.dm"
 #include "interface\fonts\vcr_osd_mono.dm"
-// BANDASTATION EDIT START
-#include "code\__DEFINES\bandastation\ru_jobs.dm"
-#include "modular_bandastation\modular_bandastation.dme"
-// BANDASTATION EDIT END
+#include "modular_bandastation\modular_bandastation.dme" // BANDASTATION EDIT
 // END_INCLUDE
