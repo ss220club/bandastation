@@ -64,7 +64,7 @@
 	. = ..()
 	// Adding an extra break for the sake of presentation
 	if(stamina_damage != 0)
-		offensive_notes = "Для оглушения необходимо оглушающих ударов: [span_warning("[CEILING(100 / stamina_damage, 1)]")]."
+		offensive_notes = "Количество ударов, требуемого для оглушения: [span_warning("[CEILING(100 / stamina_damage, 1)]")]."
 
 	register_item_context()
 
