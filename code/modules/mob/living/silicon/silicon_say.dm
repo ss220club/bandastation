@@ -9,7 +9,7 @@
 		designation = trim_left(player.designation + " " + player.job)
 
 	if(HAS_TRAIT(mind, TRAIT_DISPLAY_JOB_IN_BINARY))
-		designation = mind.assigned_role.title
+		designation = job_title_ru(mind.assigned_role.title)
 
 	if(isAI(src))
 		// AIs are loud and ugly
@@ -70,6 +70,9 @@
 			)
 
 /mob/living/silicon/binarycheck()
+	var/area/our_area = get_area(src)
+	if(our_area.area_flags & BINARY_JAMMING)
+		return FALSE
 	return TRUE
 
 /mob/living/silicon/radio(message, list/message_mods = list(), list/spans, language)

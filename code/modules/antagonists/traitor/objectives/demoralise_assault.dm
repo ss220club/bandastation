@@ -102,7 +102,7 @@
 
 	set_target(target_mind.current)
 	replace_in_name("%TARGET%", target.real_name)
-	replace_in_name("%JOB TITLE%", target_mind.assigned_role.title)
+	replace_in_name("%JOB TITLE%", job_title_ru(target_mind.assigned_role.title))
 
 	attacks_required = rand(min_attacks_required, max_attacks_required)
 	replace_in_name("%COUNT%", attacks_required)

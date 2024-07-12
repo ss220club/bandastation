@@ -1,9 +1,16 @@
-import { BooleanLike } from 'common/react';
 import { useState } from 'react';
+import {
+  Box,
+  Button,
+  DmIcon,
+  Flex,
+  Section,
+  Stack,
+  Tabs,
+} from 'tgui-core/components';
+import { BooleanLike } from 'tgui-core/react';
 
 import { useBackend } from '../backend';
-import { BlockQuote, Box, Button, Section, Stack, Tabs } from '../components';
-import { CssColor } from '../constants';
 import { Window } from '../layouts';
 import {
   Objective,
@@ -35,20 +42,33 @@ const hereticYellow = {
   color: 'yellow',
 };
 
+type IconParams = {
+  icon: string;
+  state: string;
+  frame: number;
+  dir: number;
+  moving: BooleanLike;
+};
+
 type Knowledge = {
   path: string;
+  icon_params: IconParams;
   name: string;
   desc: string;
   gainFlavor: string;
   cost: number;
-  disabled: boolean;
-  hereticPath: string;
-  color: CssColor;
+  bgr: string;
+  disabled: BooleanLike;
+  finished: BooleanLike;
+  ascension: BooleanLike;
 };
 
 type KnowledgeInfo = {
-  learnableKnowledge: Knowledge[];
-  learnedKnowledge: Knowledge[];
+  knowledge_tiers: KnowledgeTier[];
+};
+
+type KnowledgeTier = {
+  nodes: Knowledge[];
 };
 
 type Info = {
@@ -215,63 +235,96 @@ const InformationSection = (props) => {
   );
 };
 
-const ResearchedKnowledge = (props) => {
-  const { data } = useBackend<KnowledgeInfo>();
-  const { learnedKnowledge } = data;
+const KnowledgeTree = (props) => {
+  const { data, act } = useBackend<KnowledgeInfo>();
+  const { knowledge_tiers } = data;
 
   return (
-    <Stack.Item grow>
-      <Section title="Изученные знания" fill scrollable>
-        <Stack vertical>
-          {(!learnedKnowledge.length && 'Пусто!') ||
-            learnedKnowledge.map((learned) => (
-              <Stack.Item key={learned.name}>
-                <Button
-                  width="100%"
-                  color={learned.color}
-                  content={`${learned.hereticPath} - ${learned.name}`}
-                  tooltip={learned.desc}
-                />
+    <Section title="Древо знаний" fill scrollable>
+      <Box textAlign="center" fontSize="32px">
+        <span style={hereticYellow}>DAWN</span>
+      </Box>
+      <Stack vertical>
+        {knowledge_tiers.length === 0
+          ? 'None!'
+          : knowledge_tiers.map((tier, i) => (
+              <Stack.Item key={i}>
+                <Flex
+                  justify="center"
+                  align="center"
+                  backgroundColor="transparent"
+                  wrap="wrap"
+                >
+                  {tier.nodes.map((node) => (
+                    <Flex.Item key={node.name}>
+                      <Button
+                        color="transparent"
+                        tooltip={`${node.name}:
+                          ${node.desc}`}
+                        onClick={
+                          node.disabled || node.finished
+                            ? undefined
+                            : () => act('research', { path: node.path })
+                        }
+                        width={node.ascension ? '192px' : '64px'}
+                        height={node.ascension ? '192px' : '64px'}
+                        m="8px"
+                        style={{
+                          borderRadius: '50%',
+                        }}
+                      >
+                        <DmIcon
+                          icon="icons/ui_icons/antags/heretic/knowledge.dmi"
+                          icon_state={
+                            node.disabled
+                              ? 'node_locked'
+                              : node.finished
+                                ? 'node_finished'
+                                : node.bgr
+                          }
+                          height={node.ascension ? '192px' : '64px'}
+                          width={node.ascension ? '192px' : '64px'}
+                          top="0px"
+                          left="0px"
+                          position="absolute"
+                        />
+                        <DmIcon
+                          icon={node.icon_params.icon}
+                          icon_state={node.icon_params.state}
+                          frame={node.icon_params.frame}
+                          direction={node.icon_params.dir}
+                          movement={node.icon_params.moving}
+                          height={node.ascension ? '152px' : '64px'}
+                          width={node.ascension ? '152px' : '64px'}
+                          top={node.ascension ? '20px' : '0px'}
+                          left={node.ascension ? '20px' : '0px'}
+                          position="absolute"
+                        />
+                        <Box
+                          position="absolute"
+                          top="0px"
+                          left="0px"
+                          backgroundColor="black"
+                          textColor="white"
+                          bold
+                        >
+                          {!node.finished &&
+                            (node.cost > 0 ? node.cost : 'FREE')}
+                        </Box>
+                      </Button>
+                      {!!node.ascension && (
+                        <Box textAlign="center" fontSize="32px">
+                          <span style={hereticPurple}>DUSK</span>
+                        </Box>
+                      )}
+                    </Flex.Item>
+                  ))}
+                </Flex>
+                <hr />
               </Stack.Item>
             ))}
-        </Stack>
-      </Section>
-    </Stack.Item>
-  );
-};
-
-const KnowledgeShop = (props) => {
-  const { data, act } = useBackend<KnowledgeInfo>();
-  const { learnableKnowledge } = data;
-
-  return (
-    <Stack.Item grow>
-      <Section title="Возможные знания" fill scrollable>
-        {(!learnableKnowledge.length && 'Пусто!') ||
-          learnableKnowledge.map((toLearn) => (
-            <Stack.Item key={toLearn.name} mb={1}>
-              <Button
-                width="100%"
-                color={toLearn.color}
-                disabled={toLearn.disabled}
-                content={`${toLearn.hereticPath} - ${
-                  toLearn.cost > 0
-                    ? `${toLearn.name}: ${toLearn.cost}
-                  очко${toLearn.cost !== 1 ? 'в' : ''}`
-                    : toLearn.name
-                }`}
-                tooltip={toLearn.desc}
-                onClick={() => act('research', { path: toLearn.path })}
-              />
-              {!!toLearn.gainFlavor && (
-                <BlockQuote>
-                  <i>{toLearn.gainFlavor}</i>
-                </BlockQuote>
-              )}
-            </Stack.Item>
-          ))}
-      </Section>
-    </Stack.Item>
+      </Stack>
+    </Section>
   );
 };
 
@@ -280,20 +333,13 @@ const ResearchInfo = (props) => {
   const { charges } = data;
 
   return (
-    <Stack justify="space-evenly" height="100%" width="100%">
+    <Stack vertical fill>
+      <Stack.Item fontSize="20px" textAlign="center">
+        Доступные <span style={hereticBlue}>очки знаний</span> :{' '}
+        <b>{charges || 0}</b>&nbsp;.
+      </Stack.Item>
       <Stack.Item grow>
-        <Stack vertical height="100%">
-          <Stack.Item fontSize="20px" textAlign="center">
-            Доступные <span style={hereticBlue}>очки знаний</span> :{' '}
-            <b>{charges || 0}</b>&nbsp;.
-          </Stack.Item>
-          <Stack.Item grow>
-            <Stack height="100%">
-              <ResearchedKnowledge />
-              <KnowledgeShop />
-            </Stack>
-          </Stack.Item>
-        </Stack>
+        <KnowledgeTree />
       </Stack.Item>
     </Stack>
   );
