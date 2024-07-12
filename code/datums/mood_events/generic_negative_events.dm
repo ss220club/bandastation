@@ -277,7 +277,7 @@
 	timeout = 60 SECONDS
 
 /datum/mood_event/gates_of_mansus
-	description = "Я УВИДЕЛ УЖАС ЗА ПРЕДЕЛАМИ ЭТОГО МИРА. РЕАЛЬНО РАЗВЕРНУЛАСЬ НА МОИХ ГЛАЗАХ!"
+	description = "Я УВИДЕЛ УЖАС ЗА ПРЕДЕЛАМИ ЭТОГО МИРА. РЕАЛЬНОСТЬ РАЗВЕРНУЛАСЬ НА МОИХ ГЛАЗАХ!"
 	mood_change = -25
 	timeout = 4 MINUTES
 
