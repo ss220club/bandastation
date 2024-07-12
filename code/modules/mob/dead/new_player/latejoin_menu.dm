@@ -197,7 +197,7 @@ GLOBAL_DATUM_INIT(latejoin_menu, /datum/latejoin_menu, new)
 			dept_data += job_datum.title
 
 	if(dept_data.len <= 0) //Congratufuckinglations
-		tgui_alert(owner, "Для вас вообще нет никаких доступных случайных профессий на этом сервере, напишите ахелп.", "О нет!")
+		tgui_alert(owner, "В данный момент для вас нет случайной профессии. Обратитесь в ahelp за помощью.", "О нет!")
 		return
 
 	var/random_job
