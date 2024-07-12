@@ -71,27 +71,27 @@ DEFINE_BITFIELD(foodtypes, list(
 
 /// IC meaning (more or less) for food flags
 #define FOOD_FLAGS_IC list( \
-	"Meat", \
-	"Vegetables", \
-	"Raw food", \
-	"Junk food", \
-	"Grain", \
-	"Fruits", \
-	"Dairy products", \
-	"Fried food", \
-	"Alcohol", \
-	"Sugary food", \
-	"Gross food", \
-	"Toxic food", \
-	"Pineapples", \
-	"Breakfast food", \
-	"Clothing", \
-	"Nuts", \
-	"Seafood", \
-	"Oranges", \
-	"Bugs", \
-	"Gore", \
-	"Rocks", \
+	"Мясное", \
+	"Овощи", \
+	"Сырое", \
+	"Фастфуд", \
+	"Зерновое", \
+	"Фрукты", \
+	"Молочное", \
+	"Жареное", \
+	"Алкоголь", \
+	"Сахарное", \
+	"Ужасное", \
+	"Токсичное", \
+	"Ананасы", \
+	"Завтраки", \
+	"Из одежды", \
+	"Орехи", \
+	"Морепродукты", \
+	"Апельсины", \
+	"Из жуков", \
+	"Месиво", \
+	"Каменное", \
 )
 
 #define DRINK_REVOLTING 1
