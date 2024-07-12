@@ -112,7 +112,7 @@
 			loaded++
 			AddToGrill(tray_item, user)
 	if(loaded)
-		to_chat(user, span_notice("Вы вываливаете [loaded.name] на [src.name]."))
+		to_chat(user, span_notice("Вы вываливаете [loaded] на [src.name]."))
 		update_appearance()
 		return ITEM_INTERACT_SUCCESS
 	return ITEM_INTERACT_BLOCKING

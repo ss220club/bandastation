@@ -383,8 +383,8 @@
 		return NONE
 
 	if(broken > NOT_BROKEN)
-			balloon_alert(user, "он сломан!")
-		  return ITEM_INTERACT_BLOCKING
+		balloon_alert(user, "он сломан!")
+		return ITEM_INTERACT_BLOCKING
 
 	if(istype(item, /obj/item/stock_parts/power_store/cell) && cell_powered)
 		var/swapped = FALSE
@@ -403,12 +403,12 @@
 		return ITEM_INTERACT_SUCCESS
 
 	if(!anchored)
-    balloon_alert(user, "не прикручено!")
-    return ITEM_INTERACT_BLOCKING
+		balloon_alert(user, "не прикручено!")
+		return ITEM_INTERACT_BLOCKING
 
 	if(dirty >= MAX_MICROWAVE_DIRTINESS) // The microwave is all dirty so can't be used!
-    balloon_alert(user, "cлишком грязно!")
-    return TRUE
+		balloon_alert(user, "cлишком грязно!")
+		return TRUE
 
 	if(vampire_charging_capable && istype(item, /obj/item/modular_computer) && ingredients.len > 0)
 		balloon_alert(user, "максимум 1 устройство!")
@@ -435,7 +435,7 @@
 				ingredients += tray_item
 		if(loaded)
 			open(autoclose = 0.6 SECONDS)
-			to_chat(user, span_notice("Вы вставляете [loaded.name] в [src.name]."))
+			to_chat(user, span_notice("Вы вставляете [loaded] в [src.name]."))
 			update_appearance()
 		return ITEM_INTERACT_SUCCESS
 

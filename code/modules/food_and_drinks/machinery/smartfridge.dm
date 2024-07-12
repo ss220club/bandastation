@@ -54,7 +54,7 @@
 			return ITEM_INTERACT_BLOCKING
 
 		user.visible_message(
-			span_notice("[user.name] начинает срезать [name.name] от пола."),
+			span_notice("[user] начинает срезать [name] от пола."),
 			span_notice("Вы начинаете срезать [src.name] от пола..."),
 			span_hear("Вы слышите сварку."),
 		)

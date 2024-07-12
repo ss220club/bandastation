@@ -284,7 +284,7 @@
 			loaded++
 			AddToPlate(tray_item, user)
 	if(loaded)
-		to_chat(user, span_notice("Вы вставляете [loaded.name] в [src.name]."))
+		to_chat(user, span_notice("Вы вставляете [loaded] в [src.name]."))
 		update_appearance()
 		return ITEM_INTERACT_SUCCESS
 	return ITEM_INTERACT_BLOCKING

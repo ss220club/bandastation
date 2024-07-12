@@ -268,7 +268,7 @@
 	if(flavor.add_flavour(source, should_use_custom_ingredients ? custom_ice_cream_beaker.reagents : null))
 		for(var/reagents_used in flavor.ingredients)
 			reagents.remove_reagent(reagents_used, CONE_REAGENET_NEEDED)
-		balloon_alert_to_viewers("делается шарик [selected_flavour.name]", "делает шарик [selected_flavour.name]")
+		balloon_alert_to_viewers("набирает шарик, где содержится[selected_flavour]", "набирает шарик, где содержится [selected_flavour]")
 
 	if(istype(cone))
 		if(isnull(cone.crafted_food_buff))

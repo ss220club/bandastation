@@ -108,7 +108,7 @@
 					loaded++
 
 		if(loaded)
-			to_chat(user, span_notice("Вы вставляете [loaded.name] в [src.name]."))
+			to_chat(user, span_notice("Вы вставляете [loaded] в [src.name]."))
 		return
 
 	var/datum/food_processor_process/recipe = PROCESSOR_SELECT_RECIPE(attacking_item)
