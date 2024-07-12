@@ -86,11 +86,11 @@
 	mood_change = 8
 
 /datum/mood_event/around_many_silicon
-	description = "Так много силиконов вокруг меня!"
+	description = "Так много синтетиков вокруг меня!"
 	mood_change = 4
 
 /datum/mood_event/around_silicon
-	description = "Эти силиконы абсолютно совершенны."
+	description = "Эти синтетики абсолютно совершенны."
 	mood_change = 2
 
 /datum/mood_event/around_organic
