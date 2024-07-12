@@ -295,7 +295,7 @@
 	if(related_policy)
 		info += related_policy
 	if(supervisors)
-		info += "Вы отвечаете непосредственно перед: [supervisors]. Особые обстоятельства могут изменить это."
+		info += "Вы отвечаете непосредственно перед [supervisors]. Особые обстоятельства могут изменить это."
 	if(radio_info)
 		info += radio_info
 	if(req_admin_notify)
