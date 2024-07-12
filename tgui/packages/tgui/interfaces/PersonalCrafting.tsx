@@ -430,7 +430,7 @@ export const PersonalCrafting = (props) => {
                   />
                   <Button.Checkbox
                     fluid
-                    content="Компактный лист"
+                    content="Компактный список"
                     checked={display_compact}
                     onClick={() => act('toggle_compact')}
                   />
@@ -1034,19 +1034,19 @@ const CATEGORY_NAMES = {
   Equipment: 'Снаряжение',
   Containers: 'Контейнеры',
   Tools: 'Инструменты',
-  Entertainment: 'Развлечение',
-  'Blood Cult': 'Кровавый культ',
+  Entertainment: 'Развлечения',
+  'Blood Cult': 'Культ крови',
   Breads: 'Хлебобулочное',
   Burgers: 'Бургеры',
   Cakes: 'Торты',
-  'Egg-Based Food': 'Яица',
+  'Egg-Based Food': 'На основе яиц',
   Frozen: 'Замороженное',
   'Lizard Food': 'Ящерское',
   Meats: 'Мясное',
   'Mexican Food': 'Мексиканское',
   'Misc. Food': 'Прочее',
   'Mothic Food': 'Молиное',
-  Pastries: 'Кондитерское',
+  Pastries: 'Кондитерские изделия',
   Pies: 'Пироги',
   Pizzas: 'Пиццы',
   Salads: 'Салаты',
