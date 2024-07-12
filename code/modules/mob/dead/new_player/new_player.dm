@@ -118,7 +118,7 @@
 		if(JOB_UNAVAILABLE_ACCOUNTAGE)
 			return "Ваш аккаунт недостаточно стар для игры за [job_title_ru(jobtitle)]."
 		if(JOB_UNAVAILABLE_SLOTFULL)
-			return "[job_title_ru(jobtitle)] уже заполнена до максимума."
+			return "Роль [job_title_ru(jobtitle)] уже заполнена до максимума."
 		if(JOB_UNAVAILABLE_ANTAG_INCOMPAT)
 			return "[job_title_ru(jobtitle)] несовместим с некоторыми выбранными вами ролями антагонистов."
 		if(JOB_UNAVAILABLE_AGE)
