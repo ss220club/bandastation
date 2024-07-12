@@ -990,7 +990,7 @@ const GroupTitle = ({ title }) => {
 
 // BANDASTATION EDIT START
 const TYPE_NAMES = {
-  'Can Make': 'utensils',
+  'Can Make': 'Можно сделать',
   [Food.Alcohol]: 'Алкоголь',
   [Food.Breakfast]: 'Завтраки',
   [Food.Bugs]: 'Из жуков',
