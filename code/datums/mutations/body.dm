@@ -6,7 +6,7 @@
 	desc = "Генетический дефект, из-за которого случаются приступы эпилепсии."
 	instability = NEGATIVE_STABILITY_MODERATE
 	quality = NEGATIVE
-	text_gain_indication = "<span class='danger'>Ты ощущаешь головную боль.</span>"
+	text_gain_indication = span_danger("Ты ощущаешь головную боль.")
 	synchronizer_coeff = 1
 	power_coeff = 1
 
@@ -53,7 +53,7 @@
 	desc = "Странная мутация, которая приводит к случайным мутациям у её обладателя."
 	instability = NEGATIVE_STABILITY_MAJOR
 	quality = NEGATIVE
-	text_gain_indication = "<span class='danger'>Ты чувствуешь себя как-то старнно.</span>"
+	text_gain_indication = span_danger("Ты чувствуешь себя как-то старнно.")
 	locked = TRUE
 
 /datum/mutation/human/bad_dna/on_acquiring(mob/living/carbon/human/owner)
@@ -83,7 +83,7 @@
 	desc = "Хронический кашель."
 	instability = NEGATIVE_STABILITY_MODERATE
 	quality = MINOR_NEGATIVE
-	text_gain_indication = "<span class='danger'>Ты начинаешь кашлять.</span>"
+	text_gain_indication = span_danger("Ты начинаешь кашлять.")
 	synchronizer_coeff = 1
 	power_coeff = 1
 
@@ -101,8 +101,8 @@
 	desc = "Субъект, обладающий данной мутацией, слегка напуган и может испытывать галлюцинации."
 	instability = NEGATIVE_STABILITY_MODERATE
 	quality = NEGATIVE
-	text_gain_indication = "<span class='danger'>Ты слышишь эхо криков в закромах своего разума ..</span>"
-	text_lose_indication = "<span class='notice'>Крики в твоей голове затихают.</span>"
+	text_gain_indication = span_danger("Ты слышишь эхо криков в закромах своего разума ..")
+	text_lose_indication = span_notice("Крики в твоей голове затихают.")
 
 /datum/mutation/human/paranoia/on_life(seconds_per_tick, times_fired)
 	if(SPT_PROB(2.5, seconds_per_tick) && owner.stat == CONSCIOUS)
@@ -198,7 +198,7 @@
 	desc = "Данный геном подавляет определённые функции мозга, из-за чего его обладатель выглядит неуклюжим."
 	instability = NEGATIVE_STABILITY_MAJOR
 	quality = MINOR_NEGATIVE
-	text_gain_indication = "<span class='danger'>Тебя охватывает легкомыслие</span>"
+	text_gain_indication = span_danger("Тебя охватывает легкомыслие")
 
 /datum/mutation/human/clumsy/on_acquiring(mob/living/carbon/human/owner)
 	if(..())
@@ -217,7 +217,7 @@
 	desc = "Хроническое расстройство, которое вызывает непроизвольные сокращения мышц носителя, заставляя его выкрикивать нецензурные слова." //definitely needs rewriting
 	quality = NEGATIVE
 	instability = 0
-	text_gain_indication = "<span class='danger'>Ты немного дергаешься.</span>"
+	text_gain_indication = span_danger("Ты немного дергаешься.")
 	synchronizer_coeff = 1
 
 /datum/mutation/human/tourettes/on_life(seconds_per_tick, times_fired)
@@ -241,7 +241,7 @@
 	desc = "Обладатель данного генома полностью глухой."
 	instability = NEGATIVE_STABILITY_MAJOR
 	quality = NEGATIVE
-	text_gain_indication = "<span class='danger'>Ты ничего не слышишь.</span>"
+	text_gain_indication = span_danger("Ты ничего не слышишь.")
 
 /datum/mutation/human/deaf/on_acquiring(mob/living/carbon/human/owner)
 	if(..())
@@ -286,7 +286,7 @@
 	name = "Glowy"
 	desc = "Вы будете излучать свет случайного цвета и интенсивности."
 	quality = POSITIVE
-	text_gain_indication = "<span class='notice'>Твоя кожа начинает немного светиться.</span>"
+	text_gain_indication = span_notice("Твоя кожа начинает немного светиться.")
 	instability = POSITIVE_INSTABILITY_MINI
 	power_coeff = 1
 	conflicts = list(/datum/mutation/human/glow/anti)
@@ -323,7 +323,7 @@
 /datum/mutation/human/glow/anti
 	name = "Anti-Glow"
 	desc = "Ваша кожа начинает притягивать и поглащать окружающий вас свет, создавая темноту вокруг вас."
-	text_gain_indication = "<span class='notice'>Свет вокруг тебя понемногу пропадает.</span>"
+	text_gain_indication = span_notice("Свет вокруг тебя понемногу пропадает.")
 	conflicts = list(/datum/mutation/human/glow)
 	instability = POSITIVE_INSTABILITY_MINOR
 	locked = TRUE
@@ -336,7 +336,7 @@
 	name = "Strength"
 	desc = "У обладателя данного гена мышцы слегка увеличиваются. Commonly seen in top-ranking boxers."
 	quality = POSITIVE
-	text_gain_indication = "<span class='notice'>Ты чувствуешь себя сильнее.</span>"
+	text_gain_indication = span_notice("Ты чувствуешь себя сильнее.")
 	instability = POSITIVE_INSTABILITY_MINI
 	difficulty = 16
 
@@ -358,8 +358,7 @@
 	desc = "Химический баланс обладателя данного генома становится более надёжным."
 	quality = POSITIVE
 	instability = POSITIVE_INSTABILITY_MINI
-	text_gain_indication = "<span class='notice'>Ты ощущаешь странное чувство... Это баланс?</span>"
-	instability = 15
+	text_gain_indication = span_notice("Ты ощущаешь странное чувство... Это баланс?")
 	difficulty = 16
 
 /datum/mutation/human/stimmed/on_acquiring(mob/living/carbon/human/owner)
@@ -378,8 +377,8 @@
 	name = "Insulated"
 	desc = "Субъект, подверженный данной мутации, не позволяет провести электрический ток через себя."
 	quality = POSITIVE
-	text_gain_indication = "<span class='notice'>Кончики твоих пальцев немеют.</span>"
-	text_lose_indication = "<span class='notice'>Ты снова чувствуешь кончики своих пальцев.</span>"
+	text_gain_indication = span_notice("Кончики твоих пальцев немеют.")
+	text_lose_indication = span_notice("Ты снова чувствуешь кончики своих пальцев.")
 	difficulty = 16
 	instability = POSITIVE_INSTABILITY_MODERATE
 
@@ -397,8 +396,9 @@
 	name = "Fiery Sweat"
 	desc = "Кожный покров субъекта будет случайно воспламеняться, но он становится более устойчивым к огню."
 	quality = NEGATIVE
-	text_gain_indication = "<span class='warning'>Твое тело окутывает жар.</span>"
-	text_lose_indication = "<span class='notice'>Ты чувствуешь, что жар проходит и становится намного прохладнее.</span>"
+	text_gain_indication = span_warning("Твое тело окутывает жар.")
+	text_lose_indication = span_notice("Ты чувствуешь, что жар проходит и становится намного прохладнее.")
+	conflicts = list(/datum/mutation/human/adaptation/heat)
 	difficulty = 14
 	synchronizer_coeff = 1
 	power_coeff = 1
@@ -422,8 +422,8 @@
 	name = "Spatial Instability"
 	desc = "Жертва данной мутации имеет очень слабую связь с пространственной реальностью и может быть перемещена. Часто является причиной тошноты."
 	quality = NEGATIVE
-	text_gain_indication = "<span class='warning'>Пространство вокруг тебя тошнотворно искажается.</span>"
-	text_lose_indication = "<span class='notice'>Пространство вокруг тебя возвращается в норму.</span>"
+	text_gain_indication = span_warning("Пространство вокруг тебя тошнотворно искажается.")
+	text_lose_indication = span_notice("Пространство вокруг тебя возвращается в норму.")
 	difficulty = 18//high so it's hard to unlock and abuse
 	instability = NEGATIVE_STABILITY_MODERATE
 	synchronizer_coeff = 1
@@ -453,8 +453,8 @@
 	desc = "Под кожными покровами субъекта накапливаются кислотные реагенты. Зачастую это смертельно."
 	instability = NEGATIVE_STABILITY_MAJOR
 	quality = NEGATIVE
-	text_gain_indication = "<span class='userdanger'>Ужасное ощущение жжения охватывает тебя, когда твоя плоть превращается в кислоту!</span>"
-	text_lose_indication = "<span class='notice'>Тебя окутывает чувство облегчения, когда плоть возвращается в нормальное состояние.</span>"
+	text_gain_indication = span_userdanger("Ужасное ощущение жжения охватывает тебя, когда твоя плоть превращается в кислоту!")
+	text_lose_indication = span_notice("Тебя окутывает чувство облегчения, когда плоть возвращается в нормальное состояние.")
 	difficulty = 18//high so it's hard to unlock and use on others
 	/// The cooldown for the warning message
 	COOLDOWN_DECLARE(msgcooldown)
@@ -495,8 +495,8 @@
 	desc = "Субъект страдает от спазма в мышцах."
 	instability = NEGATIVE_STABILITY_MODERATE
 	quality = NEGATIVE
-	text_gain_indication = "<span class='warning'>Ты начинаешь дрожать.</span>"
-	text_lose_indication = "<span class='notice'>Твое дрожание проходит.</span>"
+	text_gain_indication = span_warning("Ты начинаешь дрожать.")
+	text_lose_indication = span_notice("Твое дрожание проходит.")
 	difficulty = 16
 
 /datum/mutation/human/spastic/on_acquiring()
@@ -514,8 +514,8 @@
 	desc = "Мутация заменяет правую ногу еще одной левой ногой. Симптомы включают в себя поцелуй пола при каждом шаге."
 	instability = NEGATIVE_STABILITY_MODERATE
 	quality = NEGATIVE
-	text_gain_indication = "<span class='warning'>Твоя правая нога, кажется, стала леветь.</span>"
-	text_lose_indication = "<span class='notice'>Твоя правая нога, кажется, снова права.</span>"
+	text_gain_indication = span_warning("Твоя правая нога, кажется, стала леветь.")
+	text_lose_indication = span_notice("Твоя правая нога, кажется, снова права.")
 	difficulty = 16
 
 /datum/mutation/human/extrastun/on_acquiring()
@@ -547,8 +547,8 @@
 	instability = NEGATIVE_STABILITY_MAJOR // free stability >:)
 	locked = TRUE
 	quality = POSITIVE //not that cloning will be an option a lot but generally lets keep this around i guess?
-	text_gain_indication = "<span class='warning'>Ты ощущаешь невыносимую изжогу.</span>"
-	text_lose_indication = "<span class='notice'>Ты ощущаешь облегчение внутренних органов.</span>"
+	text_gain_indication = span_warning("Ты ощущаешь невыносимую изжогу.")
+	text_lose_indication = span_notice("Ты ощущаешь облегчение внутренних органов.")
 
 /datum/mutation/human/martyrdom/on_acquiring()
 	. = ..()
@@ -595,7 +595,7 @@
 	instability = NEGATIVE_STABILITY_MAJOR
 	difficulty = 12 //pretty good for traitors
 	quality = NEGATIVE //holy shit no eyes or tongue or ears
-	text_gain_indication = "<span class='warning'>Что-то здесь не так.</span>"
+	text_gain_indication = span_warning("Что-то здесь не так.")
 
 /datum/mutation/human/headless/on_acquiring()
 	. = ..()

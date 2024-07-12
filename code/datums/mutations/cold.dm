@@ -2,7 +2,7 @@
 	name = "Geladikinesis"
 	desc = "Позволяет обладателю генома сконцентрировать влагу и холод в снег."
 	quality = POSITIVE
-	text_gain_indication = "<span class='notice'>Ты ощущаешь холод в руках.</span>"
+	text_gain_indication = span_notice("Ты ощущаешь холод в руках.")
 	instability = POSITIVE_INSTABILITY_MINOR
 	difficulty = 10
 	synchronizer_coeff = 1
@@ -24,7 +24,7 @@
 	name = "Cryokinesis"
 	desc = "Даёт возможность в любой момент притянуть негативную энергию из морозной пустоты, чтобы заморозить окружение вокруг субъекта."
 	quality = POSITIVE //upsides and downsides
-	text_gain_indication = "<span class='notice'>Ты ощущаешь холод в руках.</span>"
+	text_gain_indication = span_notice("Ты ощущаешь холод в руках.")
 	instability = POSITIVE_INSTABILITY_MODERATE
 	difficulty = 12
 	synchronizer_coeff = 1

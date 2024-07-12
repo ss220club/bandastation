@@ -4,5 +4,5 @@
 	name = "flask of eldritch essence"
 	desc = "Токсичный для недалеких умов, но освежающий для тех, кто имеет знания о потустороннем."
 	icon = 'icons/obj/antags/eldritch.dmi'
-	icon_state = "eldrich_flask"
+	icon_state = "eldritch_flask"
 	list_reagents = list(/datum/reagent/eldritch = 50)
