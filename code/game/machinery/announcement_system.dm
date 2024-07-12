@@ -75,7 +75,7 @@ GLOBAL_LIST_EMPTY(announcement_systems)
 
 /obj/machinery/announcement_system/proc/CompileText(str, user, rank) //replaces user-given variables with actual thingies.
 	str = replacetext(str, "%PERSON", "[user]")
-	str = replacetext(str, "%RANK", "[rank]")
+	str = replacetext(str, "%RANK", "[job_title_ru(rank)]")
 	return str
 
 /obj/machinery/announcement_system/proc/announce(message_type, user, rank, list/channels)
@@ -98,7 +98,7 @@ GLOBAL_LIST_EMPTY(announcement_systems)
 	if (!is_operational)
 		return
 
-	broadcast("Officer [officer.real_name] has been assigned to [department].", list(RADIO_CHANNEL_SECURITY))
+	broadcast("Офицер [officer.real_name] был назначен к отделу: [department].", list(RADIO_CHANNEL_SECURITY))
 
 /// Sends a message to the appropriate channels.
 /obj/machinery/announcement_system/proc/broadcast(message, list/channels)
