@@ -97,14 +97,14 @@
 
 	if(positive_result)
 		used_oven.visible_message(
-			span_notice("Вы чувствует как [used_oven] источает приятный запах."),
+			span_notice("Вы чувствует как [used_oven.name] источает приятный запах."),
 			blind_message = span_notice("Вы чувствуете приятный запах..."),
 			ignored_mobs = asomnia_hadders,
 		)
 		BLACKBOX_LOG_FOOD_MADE(baked_result.type)
 	else
 		used_oven.visible_message(
-			span_warning("Вы чувствует как [used_oven] испускает горелое зловоние."),
+			span_warning("Вы чувствует как [used_oven.name] испускает горелое зловоние."),
 			blind_message = span_warning("Вы чувствуете запах горелого..."),
 			ignored_mobs = asomnia_hadders,
 		)
@@ -118,15 +118,15 @@
 	if(!current_bake_time) //Not baked yet
 		if(positive_result)
 			if(initial(bake_result.gender) == PLURAL)
-				examine_list += span_notice("Это [parent]. [initial(bake_result.name)] могут [span_bold("готовиться")] из нее.")
+				examine_list += span_notice("Это [parent.name]. [initial(bake_result.name)] могут [span_bold("готовиться")] из нее.")
 			else
-				examine_list += span_notice("Это [parent]. [span_bold("Готовится")] в [initial(bake_result.name)].")
+				examine_list += span_notice("Это [parent.name]. [span_bold("Готовится")] в [initial(bake_result.name)].")
 		return
 
 	if(positive_result)
 		if(current_bake_time <= required_bake_time * 0.75)
-			examine_list += span_notice("Наверное, [parent] нужно выпекать немного дольше!")
+			examine_list += span_notice("Наверное, [parent.name] нужно выпекать немного дольше!")
 		else if(current_bake_time <= required_bake_time)
-			examine_list += span_notice("Кажется, что [parent] почти готов!")
+			examine_list += span_notice("Кажется, что [parent.name] почти готов!")
 	else
-		examine_list += span_danger("[parent] не стоит засовывать в духовку.")
+		examine_list += span_danger("[parent.name] не стоит засовывать в духовку.")
