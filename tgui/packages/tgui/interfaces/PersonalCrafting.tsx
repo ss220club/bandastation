@@ -405,7 +405,7 @@ export const PersonalCrafting = (props) => {
                                   category === 'Blood Cult' ? 'red' : 'default'
                                 }
                               >
-                                {CATEGORY_NAMES[category]}
+                                {CATEGORY_NAMES[category] || category}
                               </Stack.Item>
                               {category === 'Can Make' && (
                                 <Stack.Item>
@@ -615,7 +615,7 @@ const FoodtypeContent = (props) => {
         <Icon name={TYPE_ICONS[type] || 'circle'} />
       </Stack.Item>
       <Stack.Item grow style={{ textTransform: 'capitalize' }}>
-        {TYPE_NAMES[type]}
+        {TYPE_NAMES[type] || type.toLowerCase()}
       </Stack.Item>
       <Stack.Item>
         {type === 'Can Make'
