@@ -203,13 +203,13 @@
 	timeout = 4 MINUTES
 
 /datum/mood_event/notcreeping
-	description = "The voices are not happy, and they painfully contort my thoughts into getting back on task."
+	description = "Голоса недовольны и болезненно заставляют мои мысли вернуться к выполнению задачи."
 	mood_change = -6
 	timeout = 3 SECONDS
 	hidden = TRUE
 
 /datum/mood_event/notcreepingsevere//not hidden since it's so severe
-	description = "THEY NEEEEEEED OBSESSIONNNN!!"
+	description = "ИМ НУЖНАААА ОДЕРЖИМООООСТЬ!!"
 	mood_change = -30
 	timeout = 3 SECONDS
 
@@ -218,7 +218,7 @@
 	for(var/i in 1 to rand(3,5))
 		unstable += copytext_char(name, -1)
 	var/unhinged = uppertext(unstable.Join(""))//example Tinea Luxor > TINEA LUXORRRR (with randomness in how long that slur is)
-	description = "THEY NEEEEEEED [unhinged]!!"
+	description = "ИМ НУЖНАААА [unhinged]!!"
 
 /datum/mood_event/tower_of_babel
 	description = "My ability to communicate is an incoherent babel..."
@@ -226,7 +226,7 @@
 	timeout = 15 SECONDS
 
 /datum/mood_event/back_pain
-	description = "Bags never sit right on my back, this hurts like hell!"
+	description = "Сумки никогда не сидят хорошо на моей спине, черт, как же больно!"
 	mood_change = -15
 
 /datum/mood_event/back_pain/New(mob/M, ...)
@@ -236,58 +236,58 @@
 	return ..()
 
 /datum/mood_event/sad_empath
-	description = "Someone seems upset..."
+	description = "Кому-то выглядит грустно..."
 	mood_change = -1
 	timeout = 60 SECONDS
 
 /datum/mood_event/sad_empath/add_effects(mob/sadtarget)
-	description = "[sadtarget.name] seems upset..."
+	description = "[sadtarget.name] выглядит грустно..."
 
 /datum/mood_event/sacrifice_bad
-	description = "Those darn savages!"
+	description = "Эти чертовы дикари!"
 	mood_change = -5
 	timeout = 2 MINUTES
 
 /datum/mood_event/artbad
-	description = "I've produced better art than that from my ass."
+	description = "У меня из задницы выходят произведения получше, чем это."
 	mood_change = -2
 	timeout = 2 MINUTES
 
 /datum/mood_event/graverobbing
-	description = "I just desecrated someone's grave... I can't believe I did that..."
+	description = "Я только что осквернил чью-то могилу... Не могу поверить себе..."
 	mood_change = -8
 	timeout = 3 MINUTES
 
 /datum/mood_event/deaths_door
-	description = "This is it... I'm really going to die."
+	description = "Это такой конец..."
 	mood_change = -20
 
 /datum/mood_event/gunpoint
-	description = "This guy is insane! I better be careful..."
+	description = "Он сошел с ума! Мне нужно быть осторожным..."
 	mood_change = -10
 
 /datum/mood_event/tripped
-	description = "I can't believe I fell for the oldest trick in the book!"
+	description = "Не могу поверить, что я попался на самый старый трюк!"
 	mood_change = -5
 	timeout = 2 MINUTES
 
 /datum/mood_event/untied
-	description = "I hate when my shoes come untied!"
+	description = "Ненавижу, когда у меня развязываются шнурки!"
 	mood_change = -3
 	timeout = 60 SECONDS
 
 /datum/mood_event/gates_of_mansus
-	description = "I HAD A GLIMPSE OF THE HORROR BEYOND THIS WORLD. REALITY UNCOILED BEFORE MY EYES!"
+	description = "Я УВИДЕЛ УЖАС ЗА ПРЕДЕЛАМИ ЭТОГО МИРА. РЕАЛЬНО РАЗВЕРНУЛАСЬ НА МОИХ ГЛАЗАХ!"
 	mood_change = -25
 	timeout = 4 MINUTES
 
 /datum/mood_event/high_five_full_hand
-	description = "Oh god, I don't even know how to high-five correctly..."
+	description = "О боже, я даже не умею правильно давать пятюню..."
 	mood_change = -1
 	timeout = 45 SECONDS
 
 /datum/mood_event/too_slow
-	description = "NO! HOW COULD I BE... TOO SLOW???"
+	description = "НЕТ! КАК Я МОГ... НЕ УСПЕТЬ???"
 	mood_change = -2 // multiplied by how many people saw it happen, up to 8, so potentially massive. the ULTIMATE prank carries a lot of weight
 	timeout = 2 MINUTES
 
@@ -303,185 +303,185 @@
 	return ..()
 
 /datum/mood_event/surgery
-	description = "THEY'RE CUTTING ME OPEN!!"
+	description = "ОНИ РЕЖУТ МЕНЯ ВЖИВУЮ!!"
 	mood_change = -8
 	var/surgery_completed = FALSE
 
 /datum/mood_event/surgery/success
-	description = "That surgery really hurt... Glad it worked, I guess..."
+	description = "Эта операция была болезненной... Хорошо, что всё получилось, наверное..."
 	timeout = 3 MINUTES
 	surgery_completed = TRUE
 
 /datum/mood_event/surgery/failure
-	description = "AHHHHHGH! THEY FILLETED ME ALIVE!"
+	description = "АХХХХХГХ! ОНИ РАЗДЕЛАЛИ МЕНЯ ЗАЖИВО!"
 	timeout = 10 MINUTES
 	surgery_completed = TRUE
 
 /datum/mood_event/bald
-	description = "I need something to cover my head..."
+	description = "Мне бы прикрыть чем-нибудь мою голову..."
 	mood_change = -3
 
 /datum/mood_event/bald_reminder
-	description = "I was reminded that I can't grow my hair back at all! This is awful!"
+	description = "Мне напомнили, что я вообще не смогу отрастить волосы обратно! Это ужасно!"
 	mood_change = -5
 	timeout = 4 MINUTES
 
 /datum/mood_event/bad_touch
-	description = "I don't like when people touch me."
+	description = "Я не люблю, когда меня трогают."
 	mood_change = -3
 	timeout = 4 MINUTES
 
 /datum/mood_event/very_bad_touch
-	description = "I really don't like when people touch me."
+	description = "Я очень не люблю, когда меня трогают."
 	mood_change = -5
 	timeout = 4 MINUTES
 
 /datum/mood_event/noogie
-	description = "Ow! This is like space high school all over again..."
+	description = "Ай! Как будто вернулся в космошколу..."
 	mood_change = -2
 	timeout = 60 SECONDS
 
 /datum/mood_event/noogie_harsh
-	description = "OW!! That was even worse than a regular noogie!"
+	description = "АЙ!! Это было даже хуже обычной терки!"
 	mood_change = -4
 	timeout = 60 SECONDS
 
 /datum/mood_event/aquarium_negative
-	description = "All the fish are dead..."
+	description = "Все рыбки погибли..."
 	mood_change = -3
 	timeout = 90 SECONDS
 
 /datum/mood_event/tail_lost
-	description = "My tail!! Why?!"
+	description = "Мой хвост!! Почему?!"
 	mood_change = -8
 	timeout = 10 MINUTES
 
 /datum/mood_event/tail_balance_lost
-	description = "I feel off-balance without my tail."
+	description = "Без хвоста сложно держать баланс."
 	mood_change = -2
 
 /datum/mood_event/tail_regained_wrong
-	description = "Is this some kind of sick joke?! This is NOT the right tail."
+	description = "Это какая-то извращенная шутка?! Это НЕ МОЙ хвост."
 	mood_change = -12 // -8 for tail still missing + -4 bonus for being frakenstein's monster
 	timeout = 5 MINUTES
 
 /datum/mood_event/tail_regained_species
-	description = "This tail is not mine, but at least it balances me out..."
+	description = "Это не мой хвост, но теперь хотя бы могу держать баланс..."
 	mood_change = -5
 	timeout = 5 MINUTES
 
 /datum/mood_event/tail_regained_right
-	description = "My tail is back, but that was traumatic..."
+	description = "Мой хвост на месте, но это было травматично..."
 	mood_change = -2
 	timeout = 5 MINUTES
 
 /datum/mood_event/burnt_wings
-	description = "MY PRECIOUS WINGS!!"
+	description = "МОИ ПРЕЛЕСТНЫЕ КРЫЛЬЯ!!"
 	mood_change = -10
 	timeout = 10 MINUTES
 
 /datum/mood_event/holy_smite //punished
-	description = "I have been punished by my deity!"
+	description = "Я был наказан свои божеством!"
 	mood_change = -5
 	timeout = 5 MINUTES
 
 /datum/mood_event/banished //when the chaplain is sus! (and gets forcably de-holy'd)
-	description = "I have been excommunicated!"
+	description = "Меня отлучили от церкви!"
 	mood_change = -10
 	timeout = 10 MINUTES
 
 /datum/mood_event/heresy
-	description = "I can hardly breathe with all this HERESY going on!"
+	description = "Я едва могу дышать из-за всей это ЕРЕСИ вокруг!"
 	mood_change = -5
 	timeout = 5 MINUTES
 
 /datum/mood_event/soda_spill
-	description = "Cool! That's fine, I wanted to wear that soda, not drink it..."
+	description = "Класс! Всё в порядке, я так и хотел освежить тело газировкой, а не выпить её..."
 	mood_change = -2
 	timeout = 1 MINUTES
 
 /datum/mood_event/watersprayed
-	description = "I hate being sprayed with water!"
+	description = "Я ненавижу, когда брызгают водой!"
 	mood_change = -1
 	timeout = 30 SECONDS
 
 /datum/mood_event/gamer_withdrawal
-	description = "I wish I was gaming right now..."
+	description = "Вот бы сейчас поиграть во что-нибудь..."
 	mood_change = -5
 
 /datum/mood_event/gamer_lost
-	description = "If I'm not good at video games, can I truly call myself a gamer?"
+	description = "Если я так плох в видеоиграх, могу ли я называть себя геймером?"
 	mood_change = -10
 	timeout = 10 MINUTES
 
 /datum/mood_event/lost_52_card_pickup
-	description = "This is really embarrassing! I'm ashamed to pick up all these cards off the floor..."
+	description = "Как же стыдно! Придется с позором поднимать все эти карты с пола..."
 	mood_change = -3
 	timeout = 3 MINUTES
 
 /datum/mood_event/russian_roulette_lose
-	description = "I gambled my life and lost! I guess this is the end..."
+	description = "Я сыграл на свою жизнь и проиграл! Это такой конец..."
 	mood_change = -20
 	timeout = 10 MINUTES
 
 /datum/mood_event/bad_touch_bear_hug
-	description = "I just got squeezed way too hard."
+	description = "Мне слишком сильно обняли."
 	mood_change = -1
 	timeout = 2 MINUTES
 
 /datum/mood_event/rippedtail
-	description = "I ripped their tail right off, what have I done!"
+	description = "Я оторвал их хвост, что же я наделал!"
 	mood_change = -5
 	timeout = 30 SECONDS
 
 /datum/mood_event/sabrage_fail
-	description = "Blast it! That stunt didn't go as planned!"
+	description = "Черт побери! Трюк пошел не по плану!"
 	mood_change = -2
 	timeout = 4 MINUTES
 
 /datum/mood_event/body_purist
-	description = "I feel cybernetics attached to me, and I HATE IT!"
+	description = "Я чувствую кибернетику в своем теле, и Я ЭТО НЕНАВИЖУ!"
 
 /datum/mood_event/body_purist/add_effects(power)
 	mood_change = power
 
 /datum/mood_event/unsatisfied_nomad
-	description = "I've been here too long! I want to go out and explore space!"
+	description = "Я здесь слишком долго нахожусь! Я хочу выйти наружу и исследовать космос!"
 	mood_change = -3
 
 /datum/mood_event/moon_insanity
-	description = "THE MOON JUDGES AND FINDS ME WANTING!!!"
+	description = "ЛУНА СУДИТ И СЧИТАЕТ МЕНЯ ЖАЖДУЩИМ!!!"
 	mood_change = -3
 	timeout = 5 MINUTES
 
 /datum/mood_event/amulet_insanity
-	description = "I sEe THe LiGHt, It mUsT BE stOPPed"
+	description = "Я вИжУ сВеТ, и НуЖнО еГо ПоТуШиТь"
 	mood_change = -6
 	timeout = 5 MINUTES
 
 /datum/mood_event/mallet_humiliation
-	description = "Getting hit by such a stupid weapon feels rather humiliating..."
+	description = "Попасть под удар такого глупого оружия довольно унизительно..."
 	mood_change = -3
 	timeout = 10 SECONDS
 
 ///Wizard cheesy grand finale - what everyone but the wizard gets
 /datum/mood_event/madness_despair
-	description = "UNWORTHY, UNWORTHY, UNWORTHY!!!"
+	description = "НЕДОСТОЕН, НЕДОСТОЕН, НЕДОСТОЕН!!!"
 	mood_change = -200
 	special_screen_obj = "mood_despair"
 
 /datum/mood_event/all_nighter
-	description = "I didn't sleep at all last night. I'm exhausted."
+	description = "Я всю ночь не спал. Я обессилен."
 	mood_change = -5
 
 //Used by the Veteran Advisor trait job
 /datum/mood_event/desentized
-	description = "Nothing will ever rival with what I seen in the past..."
+	description = "Ничто и никогда не сравнится с тем, что я пережил..."
 	mood_change = -3
 	special_screen_obj = "mood_desentized"
 
 //Used for the psychotic brawling martial art, if the person is a pacifist.
 /datum/mood_event/pacifism_bypassed
-	description = "I DIDN'T MEAN TO HURT THEM!"
+	description = "Я НЕ ХОТЕЛ ИМ НАВРЕДИТЬ!"
 	mood_change = -20
 	timeout = 10 MINUTES
