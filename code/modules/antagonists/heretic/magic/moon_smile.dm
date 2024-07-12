@@ -31,7 +31,7 @@
 	var/maximum_duration = 15 SECONDS
 	var/moon_smile_duration = ((SANITY_MAXIMUM - cast_on.mob_mood.sanity) / (SANITY_MAXIMUM - SANITY_INSANE)) * maximum_duration
 	if(cast_on.can_block_magic(antimagic_flags))
-		to_chat(cast_on, span_notice("Луна отворачивается, её улыбка больше не смотрит на вас."))
+		to_chat(cast_on, span_notice("Луна отворачивается, её улыбка больше не обращена к вам."))
 		to_chat(owner, span_warning("Луна не улыбается им."))
 		return FALSE
 
