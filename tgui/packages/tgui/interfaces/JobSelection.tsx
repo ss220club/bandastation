@@ -127,13 +127,13 @@ export const JobSelection = (props) => {
                 <NoticeBox info>{data.shuttle_status}</NoticeBox>
               )}
               <span style={{ color: 'grey' }}>
-                It is currently {data.round_duration} into the shift.
+                Смена идёт уже: {data.round_duration}.
               </span>
               <Button
                 style={{ position: 'absolute', right: '1em' }}
                 onClick={() => act('select_job', { job: 'Random' })}
-                content="Random Job!"
-                tooltip="Roll target random job. You can re-roll or cancel your random job if you don't like it."
+                content="Случайная профессия!"
+                tooltip="Случайно выбрать профессию. Вы можете повторно выбирать случайную профессию или отказаться от этого."
               />
             </>
           }
@@ -160,9 +160,7 @@ export const JobSelection = (props) => {
                               .toString(),
                           }}
                         >
-                          {entry.open_slots +
-                            (entry.open_slots === 1 ? ' slot' : ' slots') +
-                            ' available'}
+                          {'позиций доступно: ' + entry.open_slots}
                         </span>
                       </>
                     }

@@ -108,21 +108,21 @@
 /proc/get_job_unavailable_error_message(retval, jobtitle)
 	switch(retval)
 		if(JOB_AVAILABLE)
-			return "[jobtitle] доступна для выбора."
+			return "[job_title_ru(jobtitle)] доступна для выбора."
 		if(JOB_UNAVAILABLE_GENERIC)
-			return "[jobtitle] недоступна для выбора."
+			return "[job_title_ru(jobtitle)] недоступна для выбора."
 		if(JOB_UNAVAILABLE_BANNED)
-			return "На данный момент вам выдан бан роли на [jobtitle]."
+			return "На данный момент вам выдан бан роли на [job_title_ru(jobtitle)]."
 		if(JOB_UNAVAILABLE_PLAYTIME)
-			return "У вас не наиграно достаточно часов для игры за [jobtitle]."
+			return "У вас не наиграно достаточно часов для игры за [job_title_ru(jobtitle)]."
 		if(JOB_UNAVAILABLE_ACCOUNTAGE)
-			return "Ваш аккаунт недостаточно стар для игры за [jobtitle]."
+			return "Ваш аккаунт недостаточно стар для игры за [job_title_ru(jobtitle)]."
 		if(JOB_UNAVAILABLE_SLOTFULL)
-			return "[jobtitle] уже заполнена до максимума."
+			return "[job_title_ru(jobtitle)] уже заполнена до максимума."
 		if(JOB_UNAVAILABLE_ANTAG_INCOMPAT)
-			return "[jobtitle] несовместим с некоторыми выбранными вами ролями антагонистов."
+			return "[job_title_ru(jobtitle)] несовместим с некоторыми выбранными вами ролями антагонистов."
 		if(JOB_UNAVAILABLE_AGE)
-			return "Ваш персонаж недостаточно стар для игры за [jobtitle]."
+			return "Ваш персонаж недостаточно стар для игры за [job_title_ru(jobtitle)]."
 
 	return GENERIC_JOB_UNAVAILABLE_ERROR
 
