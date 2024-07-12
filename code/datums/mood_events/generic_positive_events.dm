@@ -64,12 +64,12 @@
 	return ..()
 
 /datum/mood_event/pet_animal
-	description = "Животные такие милые! Не могу перестать их гладить!"
+	description = "Животные такие милые! Не могу перестать гладить!"
 	mood_change = 2
 	timeout = 5 MINUTES
 
 /datum/mood_event/pet_animal/add_effects(mob/animal)
-	description = "[capitalize(animal.name)] такой милый! Не могу перестать их гладить!"
+	description = "[capitalize(animal.name)] такой милый! Не могу перестать гладить!"
 
 /datum/mood_event/honk
 	description = "Меня захонкали!"
@@ -105,7 +105,7 @@
 	special_screen_replace = FALSE
 
 /datum/mood_event/creeping
-	description = "Голоса отпустили свою крючки с моего разума! Я снова свободен!" //creeps get it when they are around their obsession
+	description = "Голоса отпустили свои крючки с моего разума! Я снова свободен!" //creeps get it when they are around their obsession
 	mood_change = 18
 	timeout = 3 SECONDS
 	hidden = TRUE
@@ -242,7 +242,7 @@
 	mood_change = 6
 
 /datum/mood_event/kiss
-	description = "Воздушный поцелуй от кого-то, я та еще штучка!"
+	description = "Воздушный поцелуй от кого-то, я настоящая находка!"
 	mood_change = 1.5
 	timeout = 2 MINUTES
 
@@ -252,7 +252,7 @@
 	if(direct)
 		description = "Поцелуй от [beau.name], ахх!!"
 	else
-		description = "Воздушный поцелуй от [beau.name], я та еще штучка!"
+		description = "Воздушный поцелуй от [beau.name], я настоящая находка!"
 
 /datum/mood_event/honorbound
 	description = "Следование кодесу чести приносит удовлетворение!"

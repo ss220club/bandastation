@@ -18,7 +18,7 @@ Intended to push a creepy, mad scientist/doctor vibe, or someone who is downrigh
 	timeout = 2 MINUTES
 
 /datum/mood_event/morbid_abominable_surgery_success
-	description = "Даже сам Пикассо с трудом смог бы сравниться со мной со своей кисточкой с тем, как я управляюсь с ножом."
+	description = "Даже сам Пикассо с трудом мог бы сравниться со мной своей кисточкой с тем, как я управляюсь с ножом."
 	mood_change = 2
 	timeout = 2 MINUTES
 
@@ -28,7 +28,7 @@ Intended to push a creepy, mad scientist/doctor vibe, or someone who is downrigh
 	timeout = 8 MINUTES
 
 /datum/mood_event/morbid_graverobbing
-	description = "Мертвецы не нуждаются в своих вещах. Я же, напротив, очень даже жив и очень нуждаюсь в них."
+	description = "Мертвецам эти вещи не пригодятся. Я же, напротив, очень даже жив и очень даже нуждаюсь в них."
 	mood_change = 2
 	timeout = 2 MINUTES
 

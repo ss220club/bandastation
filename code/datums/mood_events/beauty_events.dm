@@ -3,11 +3,11 @@
 	mood_change = -5
 
 /datum/mood_event/badroom
-	description = "Эта комната выглядит противно."
+	description = "Эта комната выглядит плохо."
 	mood_change = -3
 
 /datum/mood_event/ehroom
-	description = "This room looks kinda bad."
+	description = "Эта комната выглядит не очень."
 	mood_change = -1
 
 /datum/mood_event/decentroom
@@ -15,7 +15,7 @@
 	mood_change = 1
 
 /datum/mood_event/goodroom
-	description = "Эта комната выглядит приятно!"
+	description = "Эта комната выглядит красиво!"
 	mood_change = 3
 
 /datum/mood_event/greatroom

@@ -109,7 +109,7 @@
 		mood_change = 2
 
 /datum/mood_event/table_limbsmash
-	description = "Этот грёбанный стол, чёрт, как же болит..."
+	description = "Этот грёбанный стол, чёрт, как же больно..."
 	mood_change = -3
 	timeout = 3 MINUTES
 
@@ -236,7 +236,7 @@
 	return ..()
 
 /datum/mood_event/sad_empath
-	description = "Кому-то выглядит грустно..."
+	description = "Кому-то грустно..."
 	mood_change = -1
 	timeout = 60 SECONDS
 
@@ -267,7 +267,7 @@
 	mood_change = -10
 
 /datum/mood_event/tripped
-	description = "Не могу поверить, что я попался на самый старый трюк!"
+	description = "Не могу поверить, что я попался на самый старый прикол!"
 	mood_change = -5
 	timeout = 2 MINUTES
 
@@ -303,7 +303,7 @@
 	return ..()
 
 /datum/mood_event/surgery
-	description = "ОНИ РЕЖУТ МЕНЯ ВЖИВУЮ!!"
+	description = "ОНИ РЕЖУТ МЕНЯ!!"
 	mood_change = -8
 	var/surgery_completed = FALSE
 
@@ -381,7 +381,7 @@
 	timeout = 10 MINUTES
 
 /datum/mood_event/holy_smite //punished
-	description = "Я был наказан свои божеством!"
+	description = "Я был наказан своим божеством!"
 	mood_change = -5
 	timeout = 5 MINUTES
 
@@ -391,7 +391,7 @@
 	timeout = 10 MINUTES
 
 /datum/mood_event/heresy
-	description = "Я едва могу дышать из-за всей это ЕРЕСИ вокруг!"
+	description = "Я едва могу дышать из-за всей этой ЕРЕСИ вокруг!"
 	mood_change = -5
 	timeout = 5 MINUTES
 
@@ -425,7 +425,7 @@
 	timeout = 10 MINUTES
 
 /datum/mood_event/bad_touch_bear_hug
-	description = "Мне слишком сильно обняли."
+	description = "Меня слишком сильно обняли."
 	mood_change = -1
 	timeout = 2 MINUTES
 
@@ -455,7 +455,7 @@
 	timeout = 5 MINUTES
 
 /datum/mood_event/amulet_insanity
-	description = "Я вИжУ сВеТ, и НуЖнО еГо ПоТуШиТь"
+	description = "Я вИжУ сВеТ, и ЕгО нУжНо ПоТуШиТь"
 	mood_change = -6
 	timeout = 5 MINUTES
 

@@ -91,14 +91,14 @@
 	timeout = 3 MINUTES
 
 /datum/mood_event/stimulant_heavy
-	description = "Эх ах ААААХ! ХА ХА ХА ХА ХАА! Аххх."
+	description = "ЕЕЕ-ХАААА! ХА ХА ХА ХА ХАА! Аххх."
 	mood_change = 6
 	timeout = 3 MINUTES
 
 #define EIGENTRIP_MOOD_RANGE 10
 
 /datum/mood_event/eigentrip
-	description = "Я обменялся местами с самим собой из альтернативной реальности!"
+	description = "Я поменялся местами с самим собой из альтернативной реальности!"
 	mood_change = 0
 	timeout = 10 MINUTES
 
@@ -106,9 +106,9 @@
 	var/value = rand(-EIGENTRIP_MOOD_RANGE,EIGENTRIP_MOOD_RANGE)
 	mood_change = value
 	if(value < 0)
-		description = "Я обменялся местами с самим собой из альтернативной реальности! Хочется домой!"
+		description = "Я поменялся местами с самим собой из альтернативной реальности! Хочется домой!"
 	else
-		description = "Я обменялся местами с самим собой из альтернативной реальности! Ну, здесь в разы лучше, чем в прошлой жизни."
+		description = "Я поменялся местами с самим собой из альтернативной реальности! Ну, здесь в разы лучше, чем в прошлой жизни."
 
 #undef EIGENTRIP_MOOD_RANGE
 
@@ -117,10 +117,10 @@
 	mood_change = -5
 
 /datum/mood_event/nicotine_withdrawal_severe
-	description = "Треск головы. Холодный пот. Тревожность. Нужно расслабиться и закурить!"
+	description = "Голова трещит. Холодный пот. Тревожность. Нужно расслабиться и закурить!"
 	mood_change = -8
 
 /datum/mood_event/hauntium_spirits
-	description = "Моя душа деградируется!"
+	description = "Моя душа деградирует!"
 	mood_change = -8
 	timeout = 8 MINUTES
