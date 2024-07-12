@@ -94,7 +94,7 @@
 			for(var/mob/smeller in get_hearers_in_view(DEFAULT_MESSAGE_RANGE, src))
 				if(HAS_TRAIT(smeller, TRAIT_ANOSMIA))
 					asomnia_hadders += smeller
-			visible_message(span_danger("Вы чувствуете запах гари, исходящий от [src]!"), ignored_mobs = asomnia_hadders)
+			visible_message(span_danger("Вы чувствуете запах гари, исходящий от [src.name]!"), ignored_mobs = asomnia_hadders)
 	set_smoke_state(worst_cooked_food_state)
 	update_appearance()
 	use_energy(active_power_usage)
@@ -270,7 +270,7 @@
 
 	if(!istype(item, /obj/item/storage/bag/tray))
 		// Non-tray dumping requires a do_after
-		to_chat(user, span_notice("Вы начинаете выгружать содержимое [item] в [src]..."))
+		to_chat(user, span_notice("Вы начинаете выгружать содержимое [item.name] в [src.name]..."))
 		if(!do_after(user, 2 SECONDS, target = item))
 			return ITEM_INTERACT_BLOCKING
 
@@ -284,7 +284,7 @@
 			loaded++
 			AddToPlate(tray_item, user)
 	if(loaded)
-		to_chat(user, span_notice("Вы вставляете [loaded] в [src]."))
+		to_chat(user, span_notice("Вы вставляете [loaded.name] в [src.name]."))
 		update_appearance()
 		return ITEM_INTERACT_SUCCESS
 	return ITEM_INTERACT_BLOCKING

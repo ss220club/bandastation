@@ -43,7 +43,7 @@
 		. += span_notice("на дисплее состояния отображается: Вывод <b>[meat_produced]</b> мясных кусков через <b>[gibtime*0.1]</b> секунд работы.")
 		for(var/datum/stock_part/servo/servo in component_parts)
 			if(servo.tier >= 2)
-				. += span_notice("[src] была модернизирована для обработки неорганических материалов.")
+				. += span_notice("[src.name] была модернизирована для обработки неорганических материалов.")
 
 /obj/machinery/gibber/update_overlays()
 	. = ..()
@@ -92,11 +92,11 @@
 	if(user.pulling && isliving(user.pulling))
 		var/mob/living/L = user.pulling
 		if(!iscarbon(L))
-			to_chat(user, span_warning("этот предмет не подходит для [src]!"))
+			to_chat(user, span_warning("этот предмет не подходит для [src.name]!"))
 			return
 		var/mob/living/carbon/C = L
 		if(C.buckled || C.has_buckled_mobs())
-			to_chat(user, span_warning("[C] к чему-то прикреплен!"))
+			to_chat(user, span_warning("[C.name] к чему-то прикреплен!"))
 			return
 
 		if(!ignore_clothing)
@@ -105,13 +105,13 @@
 					to_chat(user, span_warning("На объекте не должно быть абиотических предметов!"))
 					return
 
-		user.visible_message(span_danger("[user] начинает засовывать [C] в мясорубку!"))
+		user.visible_message(span_danger("[user] начинает засовывать [C.name] в мясорубку!"))
 
 		add_fingerprint(user)
 
 		if(do_after(user, gibtime, target = src))
 			if(C && user.pulling == C && !C.buckled && !C.has_buckled_mobs() && !occupant)
-				user.visible_message(span_danger("[user] набивает [C] в [src]!"))
+				user.visible_message(span_danger("[user] набивает [C.name] в [src.name]!"))
 				C.forceMove(src)
 				set_occupant(C)
 				update_appearance()
@@ -222,7 +222,7 @@
 		skin = new typeofskin
 
 	log_combat(user, occupant, "gibbed")
-	mob_occupant.investigate_log("has been gibbed by [src].", INVESTIGATE_DEATHS)
+	mob_occupant.investigate_log("has been gibbed by [src.name].", INVESTIGATE_DEATHS)
 	mob_occupant.death(TRUE)
 	mob_occupant.ghostize()
 	set_occupant(null)

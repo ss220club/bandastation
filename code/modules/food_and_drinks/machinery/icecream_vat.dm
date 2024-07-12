@@ -63,7 +63,7 @@
 			if(cone.ingredients)
 				cone_prototypes[cone_path] = cone
 			else
-				stack_trace("Рожок [cone] (TYPE: [cone_path]) оказался без ингридиентов, сделайте баг-репорт об этом.")
+				stack_trace("Рожок [cone.name] (TYPE: [cone_path]) оказался без ингридиентов, сделайте баг-репорт об этом.")
 				qdel(cone)
 	if(!ice_cream_icons)
 		ice_cream_icons = list()
@@ -110,7 +110,7 @@
 
 /obj/machinery/icecream_vat/examine(mob/user)
 	. = ..()
-	. += "You can use a [EXAMINE_HINT("spoon")] or [EXAMINE_HINT("soup ladle")] to spill reagents."
+	. += "Вы модете испольовать [EXAMINE_HINT("ложку")] или [EXAMINE_HINT("половник")] чтобы набрать содержимое."
 
 /obj/machinery/icecream_vat/attackby(obj/item/weapon, mob/user, params)
 	. = ..()
@@ -268,7 +268,7 @@
 	if(flavor.add_flavour(source, should_use_custom_ingredients ? custom_ice_cream_beaker.reagents : null))
 		for(var/reagents_used in flavor.ingredients)
 			reagents.remove_reagent(reagents_used, CONE_REAGENET_NEEDED)
-		balloon_alert_to_viewers("делается шарик [selected_flavour]", "делает шарик [selected_flavour]")
+		balloon_alert_to_viewers("делается шарик [selected_flavour.name]", "делает шарик [selected_flavour.name]")
 
 	if(istype(cone))
 		if(isnull(cone.crafted_food_buff))

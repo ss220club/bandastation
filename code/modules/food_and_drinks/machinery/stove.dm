@@ -139,7 +139,7 @@
 			loaded++
 			LAZYADD(added_ingredients, tray_item)
 	if(loaded)
-		to_chat(user, span_notice("Вы добавляете [loaded] в [src]."))
+		to_chat(user, span_notice("Вы добавляете [loaded.name] в [src.name]."))
 		update_appearance(UPDATE_OVERLAYS)
 	return TRUE
 

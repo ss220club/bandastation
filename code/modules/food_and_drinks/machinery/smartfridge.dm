@@ -54,8 +54,8 @@
 			return ITEM_INTERACT_BLOCKING
 
 		user.visible_message(
-			span_notice("[user.name] начинает срезать [name] от пола."),
-			span_notice("Вы начинаете срезать [src] от пола..."),
+			span_notice("[user.name] начинает срезать [name.name] от пола."),
+			span_notice("Вы начинаете срезать [src.name] от пола..."),
 			span_hear("Вы слышите сварку."),
 		)
 
@@ -63,7 +63,7 @@
 			return ITEM_INTERACT_BLOCKING
 
 		welded_down = FALSE
-		to_chat(user, span_notice("Вы отрезали [src] от пола."))
+		to_chat(user, span_notice("Вы отрезали [src.name] от пола."))
 		return ITEM_INTERACT_SUCCESS
 
 	if(!anchored)
@@ -75,7 +75,7 @@
 
 	user.visible_message(
 		span_notice("[user.name] начинает приваривать [name] к полу."),
-		span_notice("Вы начинаете приваривать [src] к полу..."),
+		span_notice("Вы начинаете приваривать [src.name] к полу..."),
 		span_hear("Вы слышите сварку."),
 	)
 
@@ -83,7 +83,7 @@
 		return ITEM_INTERACT_BLOCKING
 
 	welded_down = TRUE
-	to_chat(user, span_notice("Вы приварили [src] к полу."))
+	to_chat(user, span_notice("Вы приварили [src.name] к полу."))
 	return ITEM_INTERACT_SUCCESS
 
 /obj/machinery/smartfridge/welder_act_secondary(mob/living/user, obj/item/tool)
@@ -95,15 +95,15 @@
 		return ITEM_INTERACT_BLOCKING
 
 	user.visible_message(
-		span_notice("[user] чинит [src]."),
-		span_notice("Вы начинаете чинить [src]..."),
+		span_notice("[user] чинит [src.name]."),
+		span_notice("Вы начинаете чинить [src.name]..."),
 		span_hear("Вы слышите сварку."),
 	)
 
 	if(tool.use_tool(src, user, delay = 40, volume = 50))
 		if(!(machine_stat & BROKEN))
 			return ITEM_INTERACT_BLOCKING
-		to_chat(user, span_notice("Вы починили [src]"))
+		to_chat(user, span_notice("Вы починили [src.name]"))
 		atom_integrity = max_integrity
 		set_machine_stat(machine_stat & ~BROKEN)
 		update_icon()
@@ -196,14 +196,14 @@
 	. = ""
 
 	if(welded_down)
-		. += span_info("It's moorings are firmly [EXAMINE_HINT("welded")] to the floor.")
+		. += span_info("Крепежи накрепко [EXAMINE_HINT("приварены")] к полу.")
 	else
-		. += span_info("It's moorings are loose and can be [EXAMINE_HINT("welded")] down.")
+		. += span_info("Крепежи [EXAMINE_HINT("срезаны")].")
 
 	if(anchored)
-		. += span_info("It is [EXAMINE_HINT("wrenched")] down on the floor.")
+		. += span_info("Можно [EXAMINE_HINT("прикрутить")] болты.")
 	else
-		. += span_info("It could be [EXAMINE_HINT("wrenched")] down.")
+		. += span_info("Можно [EXAMINE_HINT("открутить")] болты.")
 
 /obj/machinery/smartfridge/update_appearance(updates=ALL)
 	. = ..()
@@ -266,7 +266,7 @@
 			accept_check(weapon) \
 		)
 			load(weapon, user)
-			user.visible_message(span_notice("[user] кладет [weapon] в [src]."), span_notice("Вы положили [weapon] в [src]."))
+			user.visible_message(span_notice("[user] кладет [weapon.name] в [src.name]."), span_notice("Вы положили [weapon.name] в [src.name]."))
 			SStgui.update_uis(src)
 			if(visible_contents)
 				update_appearance()
@@ -288,26 +288,26 @@
 
 			if(loaded)
 				if(shown_contents_length >= max_n_of_items)
-					user.visible_message(span_notice("[user] перекладывает предметы из [weapon] в [src]."), \
-						span_notice("Вы заполняете [src] предметами из [weapon]."))
+					user.visible_message(span_notice("[user] перекладывает предметы из [weapon.name] в [src.name]."), \
+						span_notice("Вы заполняете [src.name] предметами из [weapon.name]."))
 				else
-					user.visible_message(span_notice("[user] перекладывает предметы из [weapon] в [src]."), \
-						span_notice("Вы загружаете [src] предметами из [weapon]."))
+					user.visible_message(span_notice("[user] перекладывает предметы из [weapon.name] в [src.name]."), \
+						span_notice("Вы загружаете [src.name] предметами из [weapon.name]."))
 				if(weapon.contents.len)
 					to_chat(user, span_warning("Некоторые предметы не влазят."))
 				if (visible_contents)
 					update_appearance()
 				return TRUE
 			else
-				to_chat(user, span_warning("В [weapon] нет ничего, что можно положить в [src]!"))
+				to_chat(user, span_warning("В [weapon.name] нет ничего, что можно положить в [src.name]!"))
 				return FALSE
 
 	if(!powered())
-		to_chat(user, span_warning("\The [src]'s magnetic door won't open without power!"))
+		to_chat(user, span_warning("\The [src.name]'s magnetic door won't open without power!"))
 		return FALSE
 
 	if(!user.combat_mode)
-		to_chat(user, span_warning("[src] умно отказывает в [weapon]."))
+		to_chat(user, span_warning("[src.name] умно отказывает в [weapon.name]."))
 		return FALSE
 
 	else
@@ -336,7 +336,7 @@
 	if(ismob(weapon.loc))
 		var/mob/owner = weapon.loc
 		if(!owner.transferItemToLoc(weapon, src))
-			to_chat(usr, span_warning("[weapon] прилип к вашей руке, вы не можете положить [weapon] в [src]!"))
+			to_chat(usr, span_warning("[weapon.name] прилип к вашей руке, [weapon.name] нельза положить в [src.name]!"))
 			return FALSE
 		return TRUE
 	else
@@ -392,7 +392,7 @@
 			var/desired = 0
 
 			if(isAI(living_mob))
-				to_chat(living_mob, span_warning("[src] вне зоны вашего контроля!"))
+				to_chat(living_mob, span_warning("[src.name] вне зоны вашего контроля!"))
 				return
 
 			if (params["amount"])
@@ -478,10 +478,10 @@
 /obj/machinery/smartfridge/drying_rack/structure_examine()
 	. = ""
 	if(anchored)
-		. += span_info("It's currently anchored to the floor. It can be [EXAMINE_HINT("wrenched")] loose.")
+		. += span_info("Он сейчас [EXAMINE_HINT("прикручен")] к полу.")
 	else
-		. += span_info("It's not anchored to the floor. It can be [EXAMINE_HINT("wrenched")] down.")
-	. += span_info("The whole rack can be [EXAMINE_HINT("pried")] apart.")
+		. += span_info("Он не прикручен к полу, его можно [EXAMINE_HINT("прикрутить")] сейчас.")
+	. += span_info("Внутренни можно [EXAMINE_HINT("порвать")] на части.")
 
 /obj/machinery/smartfridge/drying_rack/welder_act(mob/living/user, obj/item/tool)
 	return NONE

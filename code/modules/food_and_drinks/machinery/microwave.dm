@@ -162,7 +162,7 @@
 	for(var/datum/stock_part/capacitor/capacitor in component_parts)
 		if(capacitor.tier >= 2)
 			vampire_charging_capable = TRUE
-			visible_message(span_notice("The [EXAMINE_HINT("Charge Ready")] light on \the [src] flickers to life."))
+			visible_message(span_notice("Индикатор [EXAMINE_HINT("заряд готов")] горит."))
 			break
 
 /obj/machinery/microwave/examine(mob/user)
@@ -181,7 +181,7 @@
 		. += span_notice("[EXAMINE_HINT("Right-click")] что бы начать [vampire_charging_enabled ? "зарядку" : "готовку"].")
 
 	if(!in_range(user, src) && !issilicon(user) && !isobserver(user))
-		. += span_warning("Вы слишком далеко, чтобы рассмотреть содержимое [src] и его дисплей!")
+		. += span_warning("Вы слишком далеко, чтобы рассмотреть содержимое [src.name] и его дисплей!")
 		return
 	if(operating)
 		. += span_notice("[src] работает.")
@@ -189,9 +189,9 @@
 
 	if(length(ingredients))
 		if(issilicon(user))
-			. += span_notice("\The [src] camera shows:")
+			. += span_notice("[src.name] имеет камеру, что показывает:")
 		else
-			. += span_notice("[src] содержит:")
+			. += span_notice("[src.name] содержит:")
 		var/list/items_counts = new
 		for(var/i in ingredients)
 			if(isstack(i))
@@ -331,16 +331,16 @@
 		return NONE
 
 	user.visible_message(
-		span_notice("[user] начинает ремонтировать [src]."),
-		span_notice("Вы начинаете чинить [src]..."),
+		span_notice("[user] начинает ремонтировать [src.name]."),
+		span_notice("Вы начинаете чинить [src.name]..."),
 	)
 
 	if(!tool.use_tool(src, user, 2 SECONDS, volume = 50))
 		return ITEM_INTERACT_BLOCKING
 
 	user.visible_message(
-		span_notice("[user] чинит [src]."),
-		span_notice("Вы починили [src]."),
+		span_notice("[user] чинит [src.name]."),
+		span_notice("Вы починили [src.name]."),
 	)
 	broken = KINDA_BROKEN // Fix it a bit
 	update_appearance()
@@ -351,16 +351,16 @@
 		return NONE
 
 	user.visible_message(
-		span_notice("[user] начинает ремонтировать [src]."),
-		span_notice("Вы начинаете чинить [src]..."),
+		span_notice("[user] начинает ремонтировать [src.name]."),
+		span_notice("Вы начинаете чинить [src.name]..."),
 	)
 
 	if(!tool.use_tool(src, user, 2 SECONDS, amount = 1, volume = 50))
 		return ITEM_INTERACT_BLOCKING
 
 	user.visible_message(
-		span_notice("[user] чинит [src]."),
-		span_notice("Вы починили [src]."),
+		span_notice("[user] чинит [src.name]."),
+		span_notice("Вы починили [src.name]."),
 	)
 	broken = NOT_BROKEN
 	update_appearance()
@@ -420,7 +420,7 @@
 
 		if(!istype(item, /obj/item/storage/bag/tray))
 			// Non-tray dumping requires a do_after
-			to_chat(user, span_notice("Вы начинаете выгружать содержимое [item] в [src]..."))
+			to_chat(user, span_notice("Вы начинаете выгружать содержимое [item.name] в [src.name]..."))
 			if(!do_after(user, 2 SECONDS, target = tray))
 				return ITEM_INTERACT_BLOCKING
 
@@ -435,7 +435,7 @@
 				ingredients += tray_item
 		if(loaded)
 			open(autoclose = 0.6 SECONDS)
-			to_chat(user, span_notice("Вы вставляете [loaded] в [src]."))
+			to_chat(user, span_notice("Вы вставляете [loaded.name] в [src.name]."))
 			update_appearance()
 		return ITEM_INTERACT_SUCCESS
 
@@ -449,7 +449,7 @@
 
 		ingredients += item
 		open(autoclose = 0.6 SECONDS)
-		user.visible_message(span_notice("[user] добавил [item] в [src]."), span_notice("Вы добавили [item] в [src]."))
+		user.visible_message(span_notice("[user] добавил [item.name] в [src.name]."), span_notice("Вы добавили [item.name] в [src.name]."))
 		update_appearance()
 		return ITEM_INTERACT_SUCCESS
 
@@ -611,14 +611,14 @@
 			playsound(src, 'sound/machines/buzz-sigh.ogg', 50, FALSE)
 			return
 
-	visible_message(span_notice("[src] включилась."), null, span_hear("Вы слышите как гудит микроволновка."))
+	visible_message(span_notice("[src.name] включилась."), null, span_hear("Вы слышите как гудит микроволновка."))
 	operating = TRUE
 	set_light(l_range = 1.5, l_power = 1.2, l_on = TRUE)
 	soundloop.start()
 	update_appearance()
 
 /obj/machinery/microwave/proc/spark()
-	visible_message(span_warning("Искры разлетаются вокруг [src]!"))
+	visible_message(span_warning("Искры разлетаются вокруг [src.name]!"))
 	var/datum/effect_system/spark_spread/sparks = new
 	sparks.set_up(2, 1, src)
 	sparks.start()
@@ -686,7 +686,7 @@
 			for(var/mob/smeller in get_hearers_in_view(DEFAULT_MESSAGE_RANGE, src))
 				if(HAS_TRAIT(smeller, TRAIT_ANOSMIA))
 					cant_smell += smeller
-			visible_message(span_danger("You smell a burnt smell coming from [src]!"), ignored_mobs = cant_smell)
+			visible_message(span_danger("You smell a burnt smell coming from [src.name]!"), ignored_mobs = cant_smell)
 			particles = new /particles/smoke()
 			addtimer(CALLBACK(src, PROC_REF(remove_smoke)), 10 SECONDS)
 			Shake(duration = 1 SECONDS)
@@ -756,7 +756,7 @@
 	cook_loop(type = MICROWAVE_NORMAL, cycles = 10, cooker = cooker)
 
 /obj/machinery/microwave/proc/muck_finish()
-	visible_message(span_warning("[src] покрывается грязью!"))
+	visible_message(span_warning("[src.name] покрывается грязью!"))
 
 	dirty = MAX_MICROWAVE_DIRTINESS
 	dirty_anim_playing = FALSE
