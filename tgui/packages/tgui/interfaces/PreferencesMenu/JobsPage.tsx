@@ -238,7 +238,7 @@ const JobRow = (props: { className?: string; job: Job; name: string }) => {
               paddingLeft: '0.3em',
             }}
           >
-            {JOBS_RU[name] ? JOBS_RU[name] : name}
+            {JOBS_RU[name] || name}
           </Stack.Item>
         </Tooltip>
 
@@ -318,7 +318,7 @@ const JoblessRoleDropdown = (props) => {
 
   const options = [
     {
-      displayText: `Присоединиться за ${JOBS_RU[data.overflow_role] ? JOBS_RU[data.overflow_role] : data.overflow_role} если не удалось войти`,
+      displayText: `Присоединиться за ${JOBS_RU[data.overflow_role] || data.overflow_role} если не удалось войти`,
       value: JoblessRole.BeOverflow,
     },
     {
