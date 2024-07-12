@@ -331,16 +331,16 @@
 		return NONE
 
 	user.visible_message(
-		span_notice("[user] начинает ремонтировать [src.name]."),
-		span_notice("Вы начинаете чинить [src.name]..."),
+		span_notice("[user] начинает ремонт, [src.name] скоро снова заработает!"),
+		span_notice("Вы начинаете ремона, [src.name] скоро снова заработает!"),
 	)
 
 	if(!tool.use_tool(src, user, 2 SECONDS, volume = 50))
 		return ITEM_INTERACT_BLOCKING
 
 	user.visible_message(
-		span_notice("[user] чинит [src.name]."),
-		span_notice("Вы починили [src.name]."),
+		span_notice("[user] заканчивает ремонт, [src.name] снова работает."),
+		span_notice("Вы заканчиваете ремонт, [src.name] снова работает."),
 	)
 	broken = KINDA_BROKEN // Fix it a bit
 	update_appearance()
@@ -351,16 +351,16 @@
 		return NONE
 
 	user.visible_message(
-		span_notice("[user] начинает ремонтировать [src.name]."),
-		span_notice("Вы начинаете чинить [src.name]..."),
+		span_notice("[user] начинает ремонт, [src.name] скоро снова заработает!"),
+		span_notice("ВВы начинаете ремона, [src.name] скоро снова заработает!"),
 	)
 
 	if(!tool.use_tool(src, user, 2 SECONDS, amount = 1, volume = 50))
 		return ITEM_INTERACT_BLOCKING
 
 	user.visible_message(
-		span_notice("[user] чинит [src.name]."),
-		span_notice("Вы починили [src.name]."),
+		span_notice("[user] заканчивает ремонт, [src.name] снова работает."),
+		span_notice("Вы заканчиваете ремонт, [src.name] снова работает."),
 	)
 	broken = NOT_BROKEN
 	update_appearance()
@@ -420,7 +420,7 @@
 
 		if(!istype(item, /obj/item/storage/bag/tray))
 			// Non-tray dumping requires a do_after
-			to_chat(user, span_notice("Вы начинаете выгружать содержимое [item.name] в [src.name]..."))
+			to_chat(user, span_notice("[item.name] выгружается прямо на [src.name]..."))
 			if(!do_after(user, 2 SECONDS, target = tray))
 				return ITEM_INTERACT_BLOCKING
 
@@ -428,20 +428,20 @@
 			if(!IS_EDIBLE(tray_item))
 				continue
 			if(ingredients.len >= max_n_of_items)
-				balloon_alert(user, "он полон!")
+				balloon_alert(user, "заполнено!")
 				return ITEM_INTERACT_BLOCKING
 			if(tray.atom_storage.attempt_remove(tray_item, src))
 				loaded++
 				ingredients += tray_item
 		if(loaded)
 			open(autoclose = 0.6 SECONDS)
-			to_chat(user, span_notice("Вы вставляете [loaded] в [src.name]."))
+			to_chat(user, span_notice("[loaded] вставлен. Цель - [src.name]."))
 			update_appearance()
 		return ITEM_INTERACT_SUCCESS
 
 	if(item.w_class <= WEIGHT_CLASS_NORMAL && !user.combat_mode)
 		if(ingredients.len >= max_n_of_items)
-			balloon_alert(user, "он полон!")
+			balloon_alert(user, "заполнено!")
 			return ITEM_INTERACT_BLOCKING
 		if(!user.transferItemToLoc(item, src))
 			balloon_alert(user, "он застрял на твоей руке!")
@@ -449,7 +449,7 @@
 
 		ingredients += item
 		open(autoclose = 0.6 SECONDS)
-		user.visible_message(span_notice("[user] добавил [item.name] в [src.name]."), span_notice("Вы добавили [item.name] в [src.name]."))
+		user.visible_message(span_notice("[user] добавил [item.name]. Цель - [src.name]."), span_notice("Вы добавили [item.name]. Цель - [src.name]."))
 		update_appearance()
 		return ITEM_INTERACT_SUCCESS
 
@@ -471,7 +471,7 @@
 	balloon_alert(user, "установлен на [vampire_charging_enabled ? "зарядку" : "готовку"]")
 	playsound(src, 'sound/machines/twobeep_high.ogg', 50, FALSE)
 	if(HAS_SILICON_ACCESS(user))
-		visible_message(span_notice("[user] поставил [src] на [vampire_charging_enabled ? "зарядку" : "готовку"]."), blind_message = span_notice("Вы слышите информативный звук от [src]!"))
+		visible_message(span_notice("[user] поставил [src] на [vampire_charging_enabled ? "зарядку" : "готовку"]."), blind_message = span_notice("[src] издает информативный звук!"))
 	return CLICK_ACTION_SUCCESS
 
 /obj/machinery/microwave/click_ctrl(mob/user)

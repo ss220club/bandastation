@@ -112,7 +112,7 @@
 			loaded++
 			AddToGrill(tray_item, user)
 	if(loaded)
-		to_chat(user, span_notice("Вы вываливаете [loaded] на [src.name]."))
+		to_chat(user, span_notice("[loaded] вываливается прямо на [src.name]."))
 		update_appearance()
 		return ITEM_INTERACT_SUCCESS
 	return ITEM_INTERACT_BLOCKING
@@ -210,7 +210,7 @@
 			continue
 		griddled_item.fire_act(1000) //Hot hot hot!
 		if(prob(10))
-			visible_message(span_danger("[griddled_item.name] не выглядит хорошей идеей на гридле!"))
+			visible_message(span_danger("[griddled_item.name] не выглядит хорошей идеей для готовки на гридле!"))
 
 		use_energy(active_power_usage)
 

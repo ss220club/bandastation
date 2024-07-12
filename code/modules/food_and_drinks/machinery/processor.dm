@@ -108,7 +108,7 @@
 					loaded++
 
 		if(loaded)
-			to_chat(user, span_notice("Вы вставляете [loaded] в [src.name]."))
+			to_chat(user, span_notice("[loaded] вставлен. Цель - [src.name].."))
 		return
 
 	var/datum/food_processor_process/recipe = PROCESSOR_SELECT_RECIPE(attacking_item)
@@ -135,7 +135,7 @@
 			to_chat(user, span_warning("Для этого вам нужен хват получше!"))
 			return
 		var/mob/living/pushed_mob = user.pulling
-		visible_message(span_warning("[user] пихает [pushed_mob.name] в [src.name]!"))
+		visible_message(span_warning("[user] пихает [pushed_mob.name]. [src.name] на пути!"))
 		pushed_mob.forceMove(src)
 		LAZYADD(processor_contents, pushed_mob)
 		user.stop_pulling()
