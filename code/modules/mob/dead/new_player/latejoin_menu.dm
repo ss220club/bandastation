@@ -204,7 +204,7 @@ GLOBAL_DATUM_INIT(latejoin_menu, /datum/latejoin_menu, new)
 
 	while(random_job != JOB_CHOICE_YES)
 		if(dept_data.len <= 0)
-			tgui_alert(owner, "Похоже, что нет больше доступных для вас случайных профессий!", "О нет!")
+			tgui_alert(owner, "В данный момент нет доступных для вас случайных профессий!", "О нет!")
 			return
 
 		var/random = pick_n_take(dept_data)
