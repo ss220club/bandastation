@@ -30,7 +30,7 @@
 /datum/mood_event/food/New(mob/M, ...)
 	. = ..()
 	mood_change = 2 + 2 * quality
-	description = "Эта еда была [GLOB.food_quality_description[quality]]."
+	description = "Эта была [GLOB.food_quality_description[quality]] еда."
 
 /datum/mood_event/food/nice
 	quality = FOOD_QUALITY_NICE

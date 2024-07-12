@@ -119,13 +119,13 @@ DEFINE_BITFIELD(foodtypes, list(
 
 /// Labels for food quality
 GLOBAL_LIST_INIT(food_quality_description, list(
-	FOOD_QUALITY_NORMAL = "неплохой",
-	FOOD_QUALITY_NICE = "хорошей",
-	FOOD_QUALITY_GOOD = "вкусной",
-	FOOD_QUALITY_VERYGOOD = "очень вкусной",
-	FOOD_QUALITY_FANTASTIC = "фантастической",
-	FOOD_QUALITY_AMAZING = "превосходной",
-	FOOD_QUALITY_TOP = "богоподобной",
+	FOOD_QUALITY_NORMAL = "неплохая",
+	FOOD_QUALITY_NICE = "хорошая",
+	FOOD_QUALITY_GOOD = "вкусная",
+	FOOD_QUALITY_VERYGOOD = "очень вкусная",
+	FOOD_QUALITY_FANTASTIC = "фантастическая",
+	FOOD_QUALITY_AMAZING = "превосходная",
+	FOOD_QUALITY_TOP = "богоподобная",
 ))
 
 /// Mood events for food quality
