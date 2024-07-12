@@ -144,7 +144,7 @@
 	target_item = quirk.heirloom.resolve()
 	AddComponent(/datum/component/traitor_objective_register, target_item, succeed_signals = list(COMSIG_QDELETING))
 	replace_in_name("%TARGET%", target_mind.name)
-	replace_in_name("%JOB TITLE%", target_mind.assigned_role.title)
+	replace_in_name("%JOB TITLE%", job_title_ru(target_mind.assigned_role.title))
 	replace_in_name("%ITEM%", target_item.name)
 	return TRUE
 

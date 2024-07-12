@@ -230,7 +230,7 @@ GLOBAL_LIST(admin_objective_list) //Prefilled admin assignable objective list
 /datum/objective/assassinate/update_explanation_text()
 	..()
 	if(target?.current)
-		explanation_text = "Убейте [target.name], [!target_role_type ? target.assigned_role.title : target.special_role]."
+		explanation_text = "Убейте [target.name], [!target_role_type ? job_title_ru(target.assigned_role.title) : target.special_role]."
 	else
 		explanation_text = "Свободная задача."
 
@@ -280,7 +280,7 @@ GLOBAL_LIST(admin_objective_list) //Prefilled admin assignable objective list
 /datum/objective/mutiny/update_explanation_text()
 	..()
 	if(target?.current)
-		explanation_text = "Убейте или отправьте в изгнание [target.name], [!target_role_type ? target.assigned_role.title : target.special_role]."
+		explanation_text = "Убейте или отправьте в изгнание [target.name], [!target_role_type ? job_title_ru(target.assigned_role.title) : target.special_role]."
 	else
 		explanation_text = "Свободная задача."
 
@@ -302,7 +302,7 @@ GLOBAL_LIST(admin_objective_list) //Prefilled admin assignable objective list
 
 /datum/objective/maroon/update_explanation_text()
 	if(target?.current)
-		explanation_text = "Не дайте [target.name], [!target_role_type ? target.assigned_role.title : target.special_role], эвакуироватся живым со станции."
+		explanation_text = "Не дайте [target.name], [!target_role_type ? job_title_ru(target.assigned_role.title) : target.special_role], эвакуироватся живым со станции."
 	else
 		explanation_text = "Свободная задача."
 
@@ -333,7 +333,7 @@ GLOBAL_LIST(admin_objective_list) //Prefilled admin assignable objective list
 /datum/objective/debrain/update_explanation_text()
 	..()
 	if(target?.current)
-		explanation_text = "Украдите мозг [target.name], [!target_role_type ? target.assigned_role.title : target.special_role]."
+		explanation_text = "Украдите мозг [target.name], [!target_role_type ? job_title_ru(target.assigned_role.title) : target.special_role]."
 	else
 		explanation_text = "Свободная задача."
 
@@ -359,7 +359,7 @@ GLOBAL_LIST(admin_objective_list) //Prefilled admin assignable objective list
 /datum/objective/protect/update_explanation_text()
 	..()
 	if(target?.current)
-		explanation_text = "Защитите [target.name], [!target_role_type ? target.assigned_role.title : target.special_role]."
+		explanation_text = "Защитите [target.name], [!target_role_type ? job_title_ru(target.assigned_role.title) : target.special_role]."
 	else
 		explanation_text = "Свободная задача."
 
@@ -384,7 +384,7 @@ GLOBAL_LIST(admin_objective_list) //Prefilled admin assignable objective list
 /datum/objective/jailbreak/update_explanation_text()
 	..()
 	if(target?.current)
-		explanation_text = "Удостоверьтесь, что [target.name], [!target_role_type ? target.assigned_role.title : target.special_role], сбежит живым и вне заключения."
+		explanation_text = "Удостоверьтесь, что [target.name], [!target_role_type ? job_title_ru(target.assigned_role.title) : target.special_role], сбежит живым и вне заключения."
 	else
 		explanation_text = "Свободная задача."
 
@@ -400,7 +400,7 @@ GLOBAL_LIST(admin_objective_list) //Prefilled admin assignable objective list
 /datum/objective/jailbreak/detain/update_explanation_text()
 	..()
 	if(target?.current)
-		explanation_text = "Удостоверьтесь, что [target.name], [!target_role_type ? target.assigned_role.title : target.special_role], доставлен на ЦК живым и в заключении."
+		explanation_text = "Удостоверьтесь, что [target.name], [!target_role_type ? job_title_ru(target.assigned_role.title) : target.special_role], доставлен на ЦК живым и в заключении."
 	else
 		explanation_text = "Свободная задача."
 
@@ -527,7 +527,7 @@ GLOBAL_LIST(admin_objective_list) //Prefilled admin assignable objective list
 /datum/objective/escape/escape_with_identity/update_explanation_text()
 	if(target?.current)
 		target_real_name = target.current.real_name
-		explanation_text = "Сбегите на эвакуационном шаттле или челноке под личиной [target_real_name], [target.assigned_role.title]"
+		explanation_text = "Сбегите на эвакуационном шаттле или челноке под личиной [target_real_name], [job_title_ru(target.assigned_role.title)]"
 		var/mob/living/carbon/human/H
 		if(ishuman(target.current))
 			H = target.current
