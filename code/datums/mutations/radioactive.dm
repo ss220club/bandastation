@@ -2,7 +2,7 @@
 	name = "Radioactivity"
 	desc = "Нестабильная мутация, которая заставляет носителя излучать смертельные бета-частицы. Мутация влияет на носителя и его окружение."
 	quality = NEGATIVE
-	text_gain_indication = "<span class='warning'>Ты ощущаешь, как что-то проходит через твои клетки и кости!</span>"
+	text_gain_indication = span_warning("Ты ощущаешь, как что-то проходит через твои клетки и кости!")
 	instability = NEGATIVE_STABILITY_MAJOR
 	difficulty = 8
 	power_coeff = 1

@@ -8,12 +8,9 @@
 	antag_hud_name = "heretic_beast"
 	suicide_cry = "МОЙ ХОЗЯИН УЛЫБАЕТСЯ МНЕ!!"
 	show_in_antagpanel = FALSE
+	stinger_sound = 'sound/ambience/antag/heretic/heretic_gain.ogg'
 	/// Our master (a heretic)'s mind.
 	var/datum/mind/master
-
-/datum/antagonist/heretic_monster/on_gain()
-	. = ..()
-	owner.current.playsound_local(get_turf(owner.current), 'sound/ambience/antag/heretic/heretic_gain.ogg', 100, FALSE, pressure_affected = FALSE, use_reverb = FALSE)
 
 /datum/antagonist/heretic_monster/on_removal()
 	if(!silent)
@@ -39,5 +36,9 @@
 
 	objectives += master_obj
 	owner.announce_objectives()
-	to_chat(owner, span_boldnotice("Вы - [ishuman(owner.current) ? "возвращенный труп":"ужасное создание, принесенное"] в этот мир через врата Мансуса."))
-	to_chat(owner, span_notice("Ваш хозяин - [master]. Помогайте им во всех делах."))
+	to_chat(owner, span_boldnotice("Ты - [ishuman(owner.current) ? "возвращенный труп":"ужасное создание, принесенное"] в этот мир через врата Мансуса"))
+	to_chat(owner, span_notice("Твой хозяин - [master]. Помогай ему во всех деяниях."))
+
+	if(istype(owner.current, /mob/living/basic/construct/harvester/heretic))
+		var/mob/living/basic/construct/harvester/heretic/shitcode = owner.current
+		shitcode.master = master

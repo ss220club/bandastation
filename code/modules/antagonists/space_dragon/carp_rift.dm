@@ -19,7 +19,7 @@
 		return
 	var/area/rift_location = get_area(owner)
 	if(!(rift_location in dragon.chosen_rift_areas))
-		owner.balloon_alert(owner, "здесь нельзя открыть разлом!")
+		owner.balloon_alert(owner, "здесь нельзя открыть разлом! check your objectives!")
 		return
 	for(var/obj/structure/carp_rift/rift as anything in dragon.rift_list)
 		var/area/used_location = get_area(rift)

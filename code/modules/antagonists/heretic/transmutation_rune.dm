@@ -2,7 +2,8 @@
 /obj/effect/heretic_rune
 	name = "transmutation rune"
 	desc = "В полу выгравирован плавный круг из фигур и рун, заполненный густой черной жидкостью, похожей на смолу."
-	icon_state = ""
+	icon = 'icons/obj/antags/cult/rune.dmi'
+	icon_state = "main1"
 	anchored = TRUE
 	interaction_flags_atom = INTERACT_ATOM_ATTACK_HAND
 	resistance_flags = FIRE_PROOF | UNACIDABLE | ACID_PROOF

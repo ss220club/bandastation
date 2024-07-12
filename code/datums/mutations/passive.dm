@@ -17,8 +17,8 @@
 	desc = "Заставляет субъекта чувствовать себя немного умнее. Наиболее эффективен с особями, обладающими низким уровнем интеллекта."
 	quality = POSITIVE
 	instability = POSITIVE_INSTABILITY_MODERATE // literally makes you on par with station equipment
-	text_gain_indication = "<span class='danger'>Ты чувствуешь себя немного умнее.</span>"
-	text_lose_indication = "<span class='danger'>Твоё сознание немного затуманивается.</span>"
+	text_gain_indication = span_danger("Ты чувствуешь себя немного умнее.")
+	text_lose_indication = span_danger("Твоё сознание немного затуманивается.")
 
 /datum/mutation/human/clever/on_acquiring(mob/living/carbon/human/owner)
 	if(..())

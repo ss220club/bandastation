@@ -2,8 +2,8 @@
 	name = "Antenna"
 	desc = "У лица, подверженного данной мутации, вырастает антенна. Известно, что она позволяет получать доступ к общим радиоканалам."
 	quality = POSITIVE
-	text_gain_indication = "<span class='notice'>Ты чувствуешь, что на твоём лбу вырастает антенна.</span>"
-	text_lose_indication = "<span class='notice'>Твоя антенна убавляется и пропадает окончательно.</span>"
+	text_gain_indication = span_notice("Ты чувствуешь, что на твоём лбу вырастает антенна.")
+	text_lose_indication = span_notice("Твоя антенна убавляется и пропадает окончательно.")
 	instability = POSITIVE_INSTABILITY_MINOR
 	difficulty = 8
 	var/datum/weakref/radio_weakref
@@ -44,8 +44,8 @@
 	name = "Mind Reader"
 	desc = "Лицо, подверженное данной мутации, может заглянуть в недавние воспоминания других."
 	quality = POSITIVE
-	text_gain_indication = "<span class='notice'>Ты слышишь голоса вдали в закромах своего разума.</span>"
-	text_lose_indication = "<span class='notice'>Голоса вдали затихают.</span>"
+	text_gain_indication = span_notice("Ты слышишь голоса вдали в закромах своего разума.")
+	text_lose_indication = span_notice("Голоса вдали затихают.")
 	power_path = /datum/action/cooldown/spell/pointed/mindread
 	instability = POSITIVE_INSTABILITY_MINOR
 	difficulty = 8
@@ -61,6 +61,16 @@
 	antimagic_flags = MAGIC_RESISTANCE_MIND
 
 	ranged_mousepointer = 'icons/effects/mouse_pointers/mindswap_target.dmi'
+
+/datum/action/cooldown/spell/pointed/mindread/Grant(mob/grant_to)
+	. = ..()
+	if (!owner)
+		return
+	ADD_TRAIT(grant_to, TRAIT_MIND_READER, GENETIC_MUTATION)
+
+/datum/action/cooldown/spell/pointed/mindread/Remove(mob/remove_from)
+	. = ..()
+	REMOVE_TRAIT(remove_from, TRAIT_MIND_READER, GENETIC_MUTATION)
 
 /datum/action/cooldown/spell/pointed/mindread/is_valid_target(atom/cast_on)
 	if(!isliving(cast_on))
