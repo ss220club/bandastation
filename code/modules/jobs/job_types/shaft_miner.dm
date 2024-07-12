@@ -6,7 +6,7 @@
 	faction = FACTION_STATION
 	total_positions = 3
 	spawn_positions = 3
-	supervisors = SUPERVISOR_QM
+	supervisors = JOB_QUARTERMASTER_RU
 	exp_granted_type = EXP_TYPE_CREW
 	config_tag = "SHAFT_MINER"
 

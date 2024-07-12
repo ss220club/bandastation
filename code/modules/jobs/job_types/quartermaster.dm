@@ -9,7 +9,7 @@
 	total_positions = 1
 	spawn_positions = 1
 	minimal_player_age = 7
-	supervisors = SUPERVISOR_CAPTAIN
+	supervisors = JOB_CAPTAIN_RU
 	exp_required_type_department = EXP_TYPE_SUPPLY
 	exp_granted_type = EXP_TYPE_CREW
 	config_tag = "QUARTERMASTER"

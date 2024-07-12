@@ -5,7 +5,7 @@
 	faction = FACTION_STATION
 	total_positions = 0
 	spawn_positions = 0
-	supervisors = SUPERVISOR_QM
+	supervisors = JOB_QUARTERMASTER_RU
 	spawn_type = /mob/living/basic/gorilla/cargorilla
 	config_tag = "CARGO_GORILLA"
 	random_spawns_possible = FALSE
