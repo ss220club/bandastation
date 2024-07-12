@@ -20,7 +20,7 @@
   - all: ['code/**', modular_bandastation/**]
 
 'Перевод':
-  branches:
+  - branches:
     - 'translate'
 
 'Инструменты':
