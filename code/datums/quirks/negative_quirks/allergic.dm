@@ -32,8 +32,8 @@
 		allergy_chem_names += initial(chem_type.name)
 
 	allergy_string = allergy_chem_names.Join(", ")
-	name = "Экстремальная аллергия на: [allergy_string]"
-	medical_record_text = "Иммунная система пациента бурно реагирует на [allergy_string]"
+	name = "Экстремальная аллергия на: <b>[lowertext(allergy_string)]</b>"
+	medical_record_text = "Иммунная система пациента бурно реагирует на: <b>[lowertext(allergy_string)]</b>"
 
 	var/mob/living/carbon/human/human_holder = quirk_holder
 	var/obj/item/clothing/accessory/dogtag/allergy/dogtag = new(get_turf(human_holder), allergy_string)
@@ -42,7 +42,7 @@
 
 /datum/quirk/item_quirk/allergic/post_add()
 	quirk_holder.add_mob_memory(/datum/memory/key/quirk_allergy, allergy_string = allergy_string)
-	to_chat(quirk_holder, span_boldnotice("У вас аллергия на [allergy_string], убедитесь, что вы не употребляете ничего из этого!"))
+	to_chat(quirk_holder, span_boldnotice("У вас аллергия на: <b>[lowertext(allergy_string)]</b>. Убедитесь, что вы не употребляете ничего из этого!"))
 
 /datum/quirk/item_quirk/allergic/process(seconds_per_tick)
 	if(!iscarbon(quirk_holder))
