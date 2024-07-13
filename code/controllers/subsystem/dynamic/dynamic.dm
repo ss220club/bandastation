@@ -699,6 +699,15 @@ SUBSYSTEM_DEF(dynamic)
 	if (GLOB.dynamic_forced_extended)
 		log_dynamic("Starting a round of forced extended.")
 		return TRUE
+	// BANDASTATION EDIT START - Force players to play sec
+	var/security
+	for(var/mob/checked_mob in GLOB.alive_player_list)
+		if(checked_mob.mind.assigned_role?.departments_list.Find(/datum/job_department/security))
+			security++
+	if(security < 4)
+		log_dynamic("Starting a round of forced extended; Not enough security.")
+		return TRUE
+	// BANDASTATION EDIT END - Force players to play sec
 	var/list/drafted_rules = list()
 	for (var/datum/dynamic_ruleset/roundstart/rule in roundstart_rules)
 		if (!rule.weight)
