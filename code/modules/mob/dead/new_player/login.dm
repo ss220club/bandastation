@@ -21,6 +21,8 @@
 		if (required_living_minutes >= living_minutes)
 			client.interviewee = TRUE
 
+	check_whitelist_or_make_interviewee()
+
 	. = ..()
 	if(!. || !client)
 		return FALSE
@@ -55,5 +57,4 @@
 	if(SSticker.current_state < GAME_STATE_SETTING_UP)
 		var/tl = SSticker.GetTimeLeft()
 		to_chat(src, "Please set up your character and select \"Ready\". The game will start [tl > 0 ? "in about [DisplayTimeText(tl)]" : "soon"].")
-
 
