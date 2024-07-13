@@ -530,6 +530,8 @@ SUBSYSTEM_DEF(dynamic)
 	//To new_player and such, and we want the datums to just free when the roundstart work is done
 	var/list/roundstart_rules = init_rulesets(/datum/dynamic_ruleset/roundstart)
 
+	var/security // BANDASTATION EDIT - Force players to play Sec
+
 	SSjob.DivideOccupations(pure = TRUE, allow_all = TRUE)
 	for(var/i in GLOB.new_player_list)
 		var/mob/dead/new_player/player = i
@@ -545,11 +547,23 @@ SUBSYSTEM_DEF(dynamic)
 			else
 				roundstart_pop_ready++
 				candidates.Add(player)
+		// BANDASTATION EDIT START - Force players to play Sec
+		if(player.mind.assigned_role?.departments_list.Find(/datum/job_department/security))
+			security++
+		// BANDASTATION EDIT END
 	SSjob.ResetOccupations()
 	log_dynamic("Listing [roundstart_rules.len] round start rulesets, and [candidates.len] players ready.")
 	if (candidates.len <= 0)
 		log_dynamic("[candidates.len] candidates.")
 		return TRUE
+
+	// BANDASTATION EDIT START - Force players to play Sec
+	if(security < 5)
+		mid_round_budget += round_start_budget
+		round_start_budget = 0
+		initial_round_start_budget = 0
+		log_dynamic("Not enough security; forcing roundstart budget to 0")
+	// BANDASTATION EDIT END
 
 	if(GLOB.dynamic_forced_roundstart_ruleset.len > 0)
 		rigged_roundstart()
@@ -699,15 +713,7 @@ SUBSYSTEM_DEF(dynamic)
 	if (GLOB.dynamic_forced_extended)
 		log_dynamic("Starting a round of forced extended.")
 		return TRUE
-	// BANDASTATION EDIT START - Force players to play sec
-	var/security
-	for(var/mob/checked_mob in GLOB.alive_player_list)
-		if(checked_mob.mind.assigned_role?.departments_list.Find(/datum/job_department/security))
-			security++
-	if(security < 4)
-		log_dynamic("Starting a round of forced extended; Not enough security.")
-		return TRUE
-	// BANDASTATION EDIT END - Force players to play sec
+
 	var/list/drafted_rules = list()
 	for (var/datum/dynamic_ruleset/roundstart/rule in roundstart_rules)
 		if (!rule.weight)
