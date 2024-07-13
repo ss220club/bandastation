@@ -7,9 +7,6 @@
 	if(.)
 		return .
 
-	if(!CONFIG_GET(flag/whitelist220))
-		return null
-
 	/// If interviews are enabled, the player will be processed in `/mob/dead/new_player/Login()`
 	/// as `client` is not created on this stage
 	if(CONFIG_GET(flag/panic_bunker_interview))
@@ -35,6 +32,9 @@
 	client.interviewee = TRUE
 
 /proc/is_ckey_whitelisted(ckey_to_check)
+	if(!CONFIG_GET(flag/whitelist220))
+		return TRUE
+
 	if(!ckey || !SSdbcore.IsConnected())
 		return FALSE
 
