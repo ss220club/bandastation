@@ -2,6 +2,7 @@ import { Icon, Section, Table, Tooltip } from 'tgui-core/components';
 import { classes } from 'tgui-core/react';
 
 import { useBackend } from '../backend';
+import { DEPARTMENTS_RU } from '../bandastation/ru_jobs';
 import { Window } from '../layouts';
 
 const commandJobs = [
@@ -26,9 +27,9 @@ export const CrewManifest = (props) => {
             className={'CrewManifest--' + dept}
             key={dept}
             title={
-              dept +
+              (DEPARTMENTS_RU[dept] || dept) +
               (dept !== 'Misc'
-                ? ` (${positions[dept].open} positions open)`
+                ? ` (позиций открыто: ${positions[dept].open})`
                 : '')
             }
           >
