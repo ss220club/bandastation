@@ -82,7 +82,7 @@
 
 /datum/surgery_step/heal/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
 	var/user_msg = "Вы успешно обрабатываете раны у [target]" //no period, add initial space to "addons"
-	var/target_msg = "[user] успешно обрабатываете раны у [target]" //see above
+	var/target_msg = "[user] успешно обрабатывает раны у [target]" //see above
 	var/brute_healed = brutehealing
 	var/burn_healed = burnhealing
 	var/dead_patient = FALSE
