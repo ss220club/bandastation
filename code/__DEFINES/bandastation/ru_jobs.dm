@@ -119,3 +119,10 @@ GLOBAL_LIST_INIT(job_titles_ru, list(
 	if(job_ru_title)
 		return job_ru_title
 	return title
+
+/proc/job_title_ru_to_en(title)
+	GLOB.job_titles_ru.Find("")
+	for(var/en_title in GLOB.job_titles_ru)
+		if(GLOB.job_titles_ru[en_title] == title)
+			return en_title
+	return title
