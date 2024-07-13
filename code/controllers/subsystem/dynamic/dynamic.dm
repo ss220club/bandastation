@@ -559,10 +559,12 @@ SUBSYSTEM_DEF(dynamic)
 
 	// BANDASTATION EDIT START - Force players to play Sec
 	if(security < 5)
-		mid_round_budget += round_start_budget
-		round_start_budget = 0
-		initial_round_start_budget = 0
-		log_dynamic("Not enough security; forcing roundstart budget to 0")
+		var/roundstart_budget_low_sec = security / 5 * round_start_budget
+		var/transfer_to_midround = round_start_budget - roundstart_budget_low_sec
+		mid_round_budget += transfer_to_midround
+		round_start_budget = roundstart_budget_low_sec
+		initial_round_start_budget = roundstart_budget_low_sec
+		log_dynamic("Not enough security; forcing roundstart budget to [roundstart_budget_low_sec]")
 	// BANDASTATION EDIT END
 
 	if(GLOB.dynamic_forced_roundstart_ruleset.len > 0)
