@@ -42,10 +42,10 @@
 		display_results(
 			user,
 			target,
-			span_notice("You successfully extract [core_count] core\s from [target]."),
-			span_notice("[user] successfully extracts [core_count] core\s from [target]!"),
-			span_notice("[user] successfully extracts [core_count] core\s from [target]!"),
+			span_notice("Вы успешно извлекли из [target.name] ядер: [core_count]."),
+			span_notice("[user.name] успешно извлекает из [target.name] ядер: [core_count]!"),
+			span_notice("[user.name] успешно извлекает из [target.name] ядер: [core_count]!"),
 		)
 		return TRUE
-	to_chat(user, span_warning("There aren't any cores left in [target]!"))
+	to_chat(user, span_warning("В [target.name] больше не осталось ядер!"))
 	return ..()
