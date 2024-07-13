@@ -547,10 +547,10 @@ SUBSYSTEM_DEF(dynamic)
 			else
 				roundstart_pop_ready++
 				candidates.Add(player)
-		// BANDASTATION EDIT START - Force players to play Sec
-		if(player.mind.assigned_role?.departments_list.Find(/datum/job_department/security))
-			security++
-		// BANDASTATION EDIT END
+				// BANDASTATION EDIT START - Force players to play Sec
+				if(player.mind.assigned_role?.departments_list.Find(/datum/job_department/security))
+					security++
+				// BANDASTATION EDIT END
 	SSjob.ResetOccupations()
 	log_dynamic("Listing [roundstart_rules.len] round start rulesets, and [candidates.len] players ready.")
 	if (candidates.len <= 0)
