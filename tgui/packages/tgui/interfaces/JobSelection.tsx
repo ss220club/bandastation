@@ -3,6 +3,7 @@ import { Color } from 'common/color';
 import { BooleanLike } from 'common/react';
 
 import { useBackend } from '../backend';
+import { DEPARTMENTS_RU, JOBS_RU } from '../bandastation/ru_jobs'; // BANDASTATION EDIT
 import {
   Box,
   Button,
@@ -84,7 +85,11 @@ export const JobEntry = (data: {
     >
       <>
         {jobIcon && <Icon name={jobIcon} />}
-        {job.command ? <b>{jobName}</b> : jobName}
+        {job.command ? (
+          <b>{JOBS_RU[jobName] || jobName}</b>
+        ) : (
+          JOBS_RU[jobName] || jobName
+        )}
         <span
           style={{
             whiteSpace: 'nowrap',
@@ -122,13 +127,13 @@ export const JobSelection = (props) => {
                 <NoticeBox info>{data.shuttle_status}</NoticeBox>
               )}
               <span style={{ color: 'grey' }}>
-                It is currently {data.round_duration} into the shift.
+                Смена идёт уже: {data.round_duration}.
               </span>
               <Button
                 style={{ position: 'absolute', right: '1em' }}
                 onClick={() => act('select_job', { job: 'Random' })}
-                content="Random Job!"
-                tooltip="Roll target random job. You can re-roll or cancel your random job if you don't like it."
+                content="Случайная профессия!"
+                tooltip="Случайно выбрать профессию. Вы можете повторно выбирать случайную профессию или отказаться от этого."
               />
             </>
           }
@@ -143,7 +148,7 @@ export const JobSelection = (props) => {
                   <StyleableSection
                     title={
                       <>
-                        {departmentName}
+                        {DEPARTMENTS_RU[departmentName] || departmentName}
                         <span
                           style={{
                             fontSize: '1rem',
@@ -155,9 +160,7 @@ export const JobSelection = (props) => {
                               .toString(),
                           }}
                         >
-                          {entry.open_slots +
-                            (entry.open_slots === 1 ? ' slot' : ' slots') +
-                            ' available'}
+                          {'позиций доступно: ' + entry.open_slots}
                         </span>
                       </>
                     }

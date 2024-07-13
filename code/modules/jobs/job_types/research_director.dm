@@ -9,7 +9,7 @@
 	faction = FACTION_STATION
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = SUPERVISOR_CAPTAIN
+	supervisors = JOB_CAPTAIN_RU
 	req_admin_notify = 1
 	minimal_player_age = 7
 	exp_required_type_department = EXP_TYPE_SCIENCE
@@ -58,7 +58,7 @@
 	id = /obj/item/card/id/advanced/silver
 	id_trim = /datum/id_trim/job/research_director
 	uniform = /obj/item/clothing/under/rank/rnd/research_director/turtleneck
-	suit = /obj/item/clothing/suit/jacket/research_director
+	suit = /obj/item/clothing/suit/toggle/labcoat/research_director
 	backpack_contents = list(
 		/obj/item/melee/baton/telescopic = 1,
 		)

@@ -64,7 +64,7 @@
 	. = ..()
 	// Adding an extra break for the sake of presentation
 	if(stamina_damage != 0)
-		offensive_notes = "It takes [span_warning("[CEILING(100 / stamina_damage, 1)] stunning hit\s")] to stun an enemy."
+		offensive_notes = "Количество ударов, требуемого для оглушения: [span_warning("[CEILING(100 / stamina_damage, 1)]")]."
 
 	register_item_context()
 
@@ -339,6 +339,9 @@
 	)
 	RegisterSignal(src, COMSIG_TRANSFORMING_ON_TRANSFORM, PROC_REF(on_transform))
 
+/obj/item/melee/baton/telescopic/additional_effects_non_cyborg(mob/living/target, mob/living/user)
+	target.apply_status_effect(/datum/status_effect/next_shove_stuns)
+
 /obj/item/melee/baton/telescopic/suicide_act(mob/living/user)
 	var/mob/living/carbon/human/human_user = user
 	var/obj/item/organ/internal/brain/our_brain = human_user.get_organ_by_type(/obj/item/organ/internal/brain)
@@ -401,6 +404,7 @@
 	return span_danger("The baton is still charging!")
 
 /obj/item/melee/baton/telescopic/contractor_baton/additional_effects_non_cyborg(mob/living/target, mob/living/user)
+	. = ..()
 	target.set_jitter_if_lower(40 SECONDS)
 	target.set_stutter_if_lower(40 SECONDS)
 

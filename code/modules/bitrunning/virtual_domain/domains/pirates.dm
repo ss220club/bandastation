@@ -1,5 +1,6 @@
 /datum/lazy_template/virtual_domain/pirates
 	name = "Бухта корсаров"
+	announce_to_ghosts = TRUE
 	cost = BITRUNNER_COST_MEDIUM
 	desc = "Пробейтесь с боем к спрятанным сокровищам, захватите добычу и поспешите сбежать, прежде чем пираты переломят ситуацию."
 	difficulty = BITRUNNER_DIFFICULTY_MEDIUM

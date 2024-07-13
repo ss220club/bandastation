@@ -7,7 +7,7 @@
 	faction = FACTION_STATION
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = SUPERVISOR_HOS
+	supervisors = JOB_HEAD_OF_SECURITY_RU
 	minimal_player_age = 7
 	exp_requirements = 300
 	exp_required_type = EXP_TYPE_CREW
@@ -72,6 +72,8 @@
 		/obj/item/gun/ballistic/revolver/c38/detective,
 		)
 	implants = list(/obj/item/implant/mindshield)
+
+	skillchips = list(/obj/item/skillchip/job/detectives_taste)
 
 /datum/outfit/job/detective/pre_equip(mob/living/carbon/human/human, visualsOnly = FALSE)
 	. = ..()

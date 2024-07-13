@@ -105,10 +105,15 @@ enum TABS {
 type AtomData = {
   name: string;
   is_reagent: BooleanLike;
+  icon: string;
 };
 
 type Atoms = {
   [key: number]: number;
+};
+
+type Icons = {
+  [key: number]: string;
 };
 
 type Material = {
@@ -118,7 +123,7 @@ type Material = {
 
 type Recipe = {
   ref: string;
-  icon: string;
+  id: number;
   name: string;
   desc: string;
   category: string;
@@ -151,11 +156,20 @@ type Data = {
   // Static
   diet: Diet;
   atom_data: AtomData[];
+  icon_data: Icons;
   recipes: Recipe[];
   categories: string[];
   material_occurences: Material[];
   foodtypes: string[];
   complexity: number;
+};
+
+const findIcon = (atom_id: number, data: Data): string => {
+  let icon: string = data.icon_data[atom_id];
+  if (!icon) {
+    icon = (data.mode ? 'cooking32x32' : 'crafting32x32') + ' a' + atom_id;
+  }
+  return icon;
 };
 
 export const PersonalCrafting = (props) => {
@@ -240,19 +254,19 @@ export const PersonalCrafting = (props) => {
   const CATEGORY_ICONS =
     mode === MODE.cooking ? CATEGORY_ICONS_COOKING : CATEGORY_ICONS_CRAFTING;
   return (
-    <Window width={700} height={720}>
+    <Window width={750} height={720}>
       <Window.Content>
         <Stack fill>
-          <Stack.Item width={'200px'}>
+          <Stack.Item width={'210px'}>
             <Section fill>
               <Stack fill vertical justify={'space-between'}>
                 <Stack.Item>
                   <Input
                     autoFocus
                     placeholder={
-                      'Search in ' +
+                      'Поиск в ' +
                       data.recipes.length +
-                      (mode === MODE.cooking ? ' recipes...' : ' designs...')
+                      (mode === MODE.cooking ? ' рецептах...' : ' чертежах...')
                     }
                     value={searchText}
                     onInput={(e, value) => {
@@ -279,7 +293,7 @@ export const PersonalCrafting = (props) => {
                         );
                       }}
                     >
-                      Category
+                      Категория
                     </Tabs.Tab>
                     {mode === MODE.cooking && (
                       <Tabs.Tab
@@ -297,7 +311,7 @@ export const PersonalCrafting = (props) => {
                           );
                         }}
                       >
-                        Type
+                        Тип
                       </Tabs.Tab>
                     )}
                     <Tabs.Tab
@@ -311,7 +325,7 @@ export const PersonalCrafting = (props) => {
                         setMaterial(material_occurences[0].atom_id);
                       }}
                     >
-                      {mode === MODE.cooking ? 'Ingredient' : 'Material'}
+                      {mode === MODE.cooking ? 'Ингредиент' : 'Материал'}
                     </Tabs.Tab>
                   </Tabs>
                 </Stack.Item>
@@ -405,7 +419,7 @@ export const PersonalCrafting = (props) => {
                                   category === 'Blood Cult' ? 'red' : 'default'
                                 }
                               >
-                                {category}
+                                {CATEGORY_NAMES[category] || category}
                               </Stack.Item>
                               {category === 'Can Make' && (
                                 <Stack.Item>
@@ -422,7 +436,7 @@ export const PersonalCrafting = (props) => {
                   <Divider />
                   <Button.Checkbox
                     fluid
-                    content="Can make only"
+                    content="Можно сделать сейчас"
                     checked={display_craftable_only}
                     onClick={() => {
                       act('toggle_recipes');
@@ -430,7 +444,7 @@ export const PersonalCrafting = (props) => {
                   />
                   <Button.Checkbox
                     fluid
-                    content="Compact list"
+                    content="Компактный список"
                     checked={display_compact}
                     onClick={() => act('toggle_compact')}
                   />
@@ -442,7 +456,7 @@ export const PersonalCrafting = (props) => {
                         <Button.Checkbox
                           fluid
                           lineHeight={2}
-                          content="Craft"
+                          content="Создание"
                           checked={mode === MODE.crafting}
                           icon="hammer"
                           style={{
@@ -464,7 +478,7 @@ export const PersonalCrafting = (props) => {
                         <Button.Checkbox
                           fluid
                           lineHeight={2}
-                          content="Cook"
+                          content="Готовка"
                           checked={mode === MODE.cooking}
                           icon="utensils"
                           style={{
@@ -529,7 +543,7 @@ export const PersonalCrafting = (props) => {
                 </VirtualList>
               ) : (
                 <NoticeBox m={1} p={1}>
-                  No recipes found.
+                  Не найдены рецепты.
                 </NoticeBox>
               )}
               {recipes.length > displayLimit && (
@@ -539,8 +553,8 @@ export const PersonalCrafting = (props) => {
                   style={{ cursor: 'pointer' }}
                   onClick={() => setPages(pages + 1)}
                 >
-                  Load {Math.min(pageSize, recipes.length - displayLimit)}{' '}
-                  more...
+                  Загрузить ещё{' '}
+                  {Math.min(pageSize, recipes.length - displayLimit)}
                 </Section>
               )}
             </Box>
@@ -552,10 +566,12 @@ export const PersonalCrafting = (props) => {
 };
 
 const MaterialContent = (props) => {
-  const { atom_id, occurences } = props;
   const { data } = useBackend<Data>();
+
+  const { atom_id, occurences } = props;
   const name = data.atom_data[atom_id - 1].name;
-  const mode = data.mode;
+  const icon = findIcon(atom_id, data);
+
   return (
     <Stack>
       <Stack.Item>
@@ -564,10 +580,7 @@ const MaterialContent = (props) => {
           inline
           ml={-1.5}
           mr={-0.5}
-          className={classes([
-            mode ? 'cooking32x32' : 'crafting32x32',
-            'a' + atom_id,
-          ])}
+          className={icon}
         />
       </Stack.Item>
       <Stack.Item
@@ -615,7 +628,7 @@ const FoodtypeContent = (props) => {
         <Icon name={TYPE_ICONS[type] || 'circle'} />
       </Stack.Item>
       <Stack.Item grow style={{ textTransform: 'capitalize' }}>
-        {type.toLowerCase()}
+        {TYPE_NAMES[type] || type.toLowerCase()}
       </Stack.Item>
       <Stack.Item>
         {type === 'Can Make'
@@ -632,7 +645,7 @@ const RecipeContentCompact = ({ item, craftable, busy, mode }) => {
     <Section>
       <Stack my={-0.75}>
         <Stack.Item>
-          <Box className={item.icon} />
+          <Box className={findIcon(item.id, data)} />
         </Stack.Item>
         <Stack.Item grow>
           <Stack>
@@ -693,7 +706,7 @@ const RecipeContentCompact = ({ item, craftable, busy, mode }) => {
                 <Box>
                   {!!item.tool_behaviors && (
                     <Tooltip
-                      content={'Tools: ' + item.tool_behaviors.join(', ')}
+                      content={'Инструменты: ' + item.tool_behaviors.join(', ')}
                     >
                       <Icon p={1} name="screwdriver-wrench" />
                     </Tooltip>
@@ -702,7 +715,7 @@ const RecipeContentCompact = ({ item, craftable, busy, mode }) => {
                     my={0.3}
                     lineHeight={2.5}
                     align="center"
-                    content="Make"
+                    content="Создать"
                     disabled={!craftable || busy}
                     icon={
                       busy
@@ -725,7 +738,7 @@ const RecipeContentCompact = ({ item, craftable, busy, mode }) => {
                       width={'32px'}
                       align="center"
                       tooltip={
-                        'Repeat this craft until you run out of ingredients.'
+                        'Продолжать создание, пока не закончатся ингредиенты.'
                       }
                       tooltipPosition={'top'}
                       disabled={!craftable || busy}
@@ -761,7 +774,7 @@ const RecipeContentCompact = ({ item, craftable, busy, mode }) => {
 };
 
 const RecipeContent = ({ item, craftable, busy, mode, diet }) => {
-  const { act } = useBackend<Data>();
+  const { act, data } = useBackend<Data>();
   return (
     <Section>
       <Stack>
@@ -772,7 +785,7 @@ const RecipeContent = ({ item, craftable, busy, mode, diet }) => {
                 transform: 'scale(1.5)',
               }}
               m={'16px'}
-              className={item.icon}
+              className={findIcon(item.id, data)}
             />
           </Box>
         </Stack.Item>
@@ -788,7 +801,7 @@ const RecipeContent = ({ item, craftable, busy, mode, diet }) => {
                   <Box>
                     <GroupTitle
                       title={
-                        mode === MODE.cooking ? 'Ingredients' : 'Materials'
+                        mode === MODE.cooking ? 'Ингредиенты' : 'Материалы'
                       }
                     />
                     {Object.keys(item.reqs).map((atom_id) => (
@@ -814,7 +827,7 @@ const RecipeContent = ({ item, craftable, busy, mode, diet }) => {
                 )}
                 {(item.tool_paths || item.tool_behaviors) && (
                   <Box>
-                    <GroupTitle title="Tools" />
+                    <GroupTitle title="Инструменты" />
                     {item.tool_paths &&
                       item.tool_paths.map((tool) => (
                         <AtomContent key={tool} atom_id={tool} amount={1} />
@@ -827,7 +840,7 @@ const RecipeContent = ({ item, craftable, busy, mode, diet }) => {
                 )}
                 {item.machinery && (
                   <Box>
-                    <GroupTitle title="Machinery" />
+                    <GroupTitle title="Машинерия" />
                     {item.machinery.map((atom_id) => (
                       <AtomContent key={atom_id} atom_id={atom_id} amount={1} />
                     ))}
@@ -835,7 +848,7 @@ const RecipeContent = ({ item, craftable, busy, mode, diet }) => {
                 )}
                 {item.structures && (
                   <Box>
-                    <GroupTitle title="Structures" />
+                    <GroupTitle title="Структуры" />
                     {item.structures.map((atom_id) => (
                       <AtomContent key={atom_id} atom_id={atom_id} amount={1} />
                     ))}
@@ -844,7 +857,7 @@ const RecipeContent = ({ item, craftable, busy, mode, diet }) => {
               </Box>
               {!!item.steps?.length && (
                 <Box>
-                  <GroupTitle title="Steps" />
+                  <GroupTitle title="Шаги" />
                   <ul style={{ paddingLeft: '20px' }}>
                     {item.steps.map((step) => (
                       <li key={step}>{step}</li>
@@ -862,7 +875,7 @@ const RecipeContent = ({ item, craftable, busy, mode, diet }) => {
                         <Button
                           lineHeight={2.5}
                           align="center"
-                          content="Make"
+                          content="Создать"
                           fluid
                           disabled={!craftable || busy}
                           icon={
@@ -887,7 +900,7 @@ const RecipeContent = ({ item, craftable, busy, mode, diet }) => {
                             lineHeight={2.5}
                             align="center"
                             tooltip={
-                              'Repeat this craft until you run out of ingredients.'
+                              'Продолжать создание, пока не закончатся ингредиенты.'
                             }
                             tooltipPosition={'top'}
                             disabled={!craftable || busy}
@@ -907,7 +920,7 @@ const RecipeContent = ({ item, craftable, busy, mode, diet }) => {
                 <Stack.Item>
                   {!!item.complexity && (
                     <Box color={'gray'} width={'104px'} lineHeight={1.5} mt={1}>
-                      Complexity: {item.complexity}
+                      Сложность: {item.complexity}
                     </Box>
                   )}
                   {item.foodtypes?.length > 0 && (
@@ -934,9 +947,8 @@ const RecipeContent = ({ item, craftable, busy, mode, diet }) => {
 
 const AtomContent = ({ atom_id, amount }) => {
   const { data } = useBackend<Data>();
-  const name = data.atom_data[atom_id - 1]?.name;
-  const is_reagent = data.atom_data[atom_id - 1]?.is_reagent;
-  const mode = data.mode;
+  const atom: AtomData = data.atom_data[atom_id - 1];
+
   return (
     <Box my={1}>
       <Box
@@ -944,14 +956,11 @@ const AtomContent = ({ atom_id, amount }) => {
         inline
         my={-1}
         mr={0.5}
-        className={classes([
-          mode ? 'cooking32x32' : 'crafting32x32',
-          'a' + atom_id,
-        ])}
+        className={findIcon(atom_id, data)}
       />
       <Box inline verticalAlign="middle">
-        {name}
-        {is_reagent ? `\xa0${amount}u` : amount > 1 && `\xa0${amount}x`}
+        {atom.name}
+        {atom.is_reagent ? `\xa0${amount}u` : amount > 1 && `\xa0${amount}x`}
       </Box>
     </Box>
   ) as any;
@@ -986,4 +995,73 @@ const GroupTitle = ({ title }) => {
       </Stack.Item>
     </Stack>
   ) as any;
+};
+
+// BANDASTATION EDIT START
+const TYPE_NAMES = {
+  'Can Make': 'Можно сделать',
+  [Food.Alcohol]: 'Алкоголь',
+  [Food.Breakfast]: 'Завтраки',
+  [Food.Bugs]: 'Из жуков',
+  [Food.Cloth]: 'Из одежды',
+  [Food.Dairy]: 'Молочное',
+  [Food.Fried]: 'Жареное',
+  [Food.Fruit]: 'Фрукты',
+  [Food.Gore]: 'Месиво',
+  [Food.Grain]: 'Зерновое',
+  [Food.Gross]: 'Ужасное',
+  [Food.Junkfood]: 'Фастфуд',
+  [Food.Meat]: 'Мясное',
+  [Food.Nuts]: 'Орехи',
+  [Food.Oranges]: 'Апельсины',
+  [Food.Pineapple]: 'Ананасы',
+  [Food.Raw]: 'Сырое',
+  [Food.Seafood]: 'Морепродукты',
+  [Food.Stone]: 'Каменное',
+  [Food.Sugar]: 'Сахарное',
+  [Food.Toxic]: 'Токсичное',
+  [Food.Vegetables]: 'Овощи',
+} as const;
+
+const CATEGORY_NAMES = {
+  'Can Make': 'Можно сделать',
+  'Weapons Melee': 'Оружие: холодное',
+  'Weapons Ranged': 'Оружие: дальнобойное',
+  'Weapon Ammo': 'Оружие: патроны',
+  Robotics: 'Робототехника',
+  Misc: 'Прочее',
+  Tribal: 'Племенное',
+  Clothing: 'Одежда',
+  Drinks: 'Напитки',
+  Chemistry: 'Химия',
+  Atmospherics: 'Атмосферика',
+  Structures: 'Структуры',
+  Tiles: 'Полы',
+  Windows: 'Окна',
+  Doors: 'Двери',
+  Furniture: 'Мебель',
+  Equipment: 'Снаряжение',
+  Containers: 'Контейнеры',
+  Tools: 'Инструменты',
+  Entertainment: 'Развлечения',
+  'Blood Cult': 'Культ крови',
+  Breads: 'Хлебобулочное',
+  Burgers: 'Бургеры',
+  Cakes: 'Торты',
+  'Egg-Based Food': 'На основе яиц',
+  Frozen: 'Замороженное',
+  'Lizard Food': 'Ящерская кухня',
+  Meats: 'Мясное',
+  'Mexican Food': 'Мексиканская кухня',
+  'Misc. Food': 'Прочее',
+  'Mothic Food': 'Молиная кухня',
+  Pastries: 'Кондитерские изделия',
+  Pies: 'Пироги',
+  Pizzas: 'Пиццы',
+  Salads: 'Салаты',
+  Sandwiches: 'Сэндвичи',
+  Seafood: 'Морепродукты',
+  Soups: 'Супы',
+  Spaghettis: 'Спагетти',
+  'Martian Food': 'Марсианская кухня',
 };

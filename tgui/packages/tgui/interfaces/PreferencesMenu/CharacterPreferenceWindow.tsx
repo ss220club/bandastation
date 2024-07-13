@@ -131,7 +131,7 @@ export const CharacterPreferenceWindow = (props) => {
                   page={Page.Loadout}
                   setPage={setCurrentPage}
                 >
-                  Loadout
+                  Снаряжение
                 </PageButton>
               </Stack.Item>
 

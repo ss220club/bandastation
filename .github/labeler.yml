@@ -1,0 +1,40 @@
+'TGUI':
+  - changed-files:
+    - any-glob-to-any-file: 'tgui/**'
+
+'Звук':
+  - changed-files:
+    - any-glob-to-any-file: '**/*.ogg'
+
+'Спрайты':
+  - changed-files:
+    - any-glob-to-any-file: ['**/*.dmi', '**/*.png']
+
+'Изменение Карты':
+  - changed-files:
+    - any-glob-to-any-file: '**/*.dmm'
+
+'НЕ МОДУЛЬНО':
+  - all:
+    - changed-files:
+      - any-glob-to-any-file: 'code/**'
+    - base-branch: 'master'
+
+'Перевод':
+  - base-branch: 'translate'
+
+'Инструменты':
+  - changed-files:
+    - any-glob-to-any-file: ['.gihub/workflows/**', 'tools/**']
+
+'Изменение конфига':
+  - changed-files:
+    - any-glob-to-any-file: 'config/**'
+
+'Документация':
+  - changed-files:
+    - any-glob-to-any-file: '**/*.md'
+
+'SQL':
+  - changed-files:
+    - any-glob-to-any-file: 'SQL/**'

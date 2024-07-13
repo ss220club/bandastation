@@ -16,6 +16,10 @@
 	result_atoms = list(/obj/item/clothing/suit/hooded/cultrobes/eldritch)
 	cost = 1
 	route = PATH_SIDE
+	research_tree_icon_path = 'icons/obj/clothing/suits/armor.dmi'
+	research_tree_icon_state = "eldritch_armor"
+	research_tree_icon_frame = 12
+	depth = 4
 
 /datum/heretic_knowledge/crucible
 	name = "Mawed Crucible"
@@ -34,6 +38,9 @@
 	result_atoms = list(/obj/structure/destructible/eldritch_crucible)
 	cost = 1
 	route = PATH_SIDE
+	research_tree_icon_path = 'icons/obj/antags/eldritch.dmi'
+	research_tree_icon_state = "crucible"
+	depth = 8
 
 /datum/heretic_knowledge/rifle
 	name = "Lionhunter's Rifle"
@@ -59,9 +66,12 @@
 	result_atoms = list(/obj/item/gun/ballistic/rifle/lionhunter)
 	cost = 1
 	route = PATH_SIDE
+	depth = 8
+	research_tree_icon_path = 'icons/obj/weapons/guns/ballistic.dmi'
+	research_tree_icon_state = "goldrevolver"
 
 /datum/heretic_knowledge/rifle_ammo
-	name = "Lionhunter Rifle Ammunition (free)"
+	name = "Lionhunter Rifle Ammunition"
 	desc = "Позволяет трансмутировать 3 баллистические гильзы (использованные или неиспользованные) любого калибра, \
 		включая дробь, со шкурой любого животного, чтобы создать дополнительную обойму боеприпасов для винтовки Lionhunter."
 	gain_text = "К оружию прилагались три грубых железных шара, предназначенных для использования в качестве боеприпасов. \
@@ -74,6 +84,9 @@
 	result_atoms = list(/obj/item/ammo_box/strilka310/lionhunter)
 	cost = 0
 	route = PATH_SIDE
+	research_tree_icon_path = 'icons/obj/weapons/guns/ammo.dmi'
+	research_tree_icon_state = "310_strip"
+	depth = 8
 	/// A list of calibers that the ritual will deny. Only ballistic calibers are allowed.
 	var/static/list/caliber_blacklist = list(
 		CALIBER_LASER,
@@ -107,3 +120,4 @@
 	spell_to_add = /datum/action/cooldown/mob_cooldown/charge/rust
 	cost = 1
 	route = PATH_SIDE
+	depth = 10

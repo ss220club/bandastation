@@ -6,7 +6,7 @@
 	faction = FACTION_STATION
 	total_positions = 5
 	spawn_positions = 5
-	supervisors = SUPERVISOR_CE
+	supervisors = JOB_CHIEF_ENGINEER_RU
 	exp_requirements = 60
 	exp_required_type = EXP_TYPE_CREW
 	exp_granted_type = EXP_TYPE_CREW
@@ -48,7 +48,7 @@
 	uniform = /obj/item/clothing/under/rank/engineering/engineer
 	belt = /obj/item/storage/belt/utility/full/engi
 	ears = /obj/item/radio/headset/headset_eng
-	head = /obj/item/clothing/head/utility/hardhat
+	head = /obj/item/clothing/head/utility/hardhat/welding/up
 	shoes = /obj/item/clothing/shoes/workboots
 	l_pocket = /obj/item/modular_computer/pda/engineering
 	r_pocket = /obj/item/t_scanner
