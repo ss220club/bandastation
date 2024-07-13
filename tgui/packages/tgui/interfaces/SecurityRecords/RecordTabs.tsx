@@ -12,6 +12,7 @@ import {
   Tabs,
 } from 'tgui/components';
 
+import { ReverseJobsRu } from '../../bandastation/ru_jobs'; // BANDASTATION EDIT
 import { JOB2ICON } from '../common/JobToIcon';
 import { CRIMESTATUS2COLOR } from './constants';
 import { isRecordMatch } from './helpers';
@@ -111,7 +112,7 @@ const CrewTab = (props: { record: SecurityRecord }) => {
       selected={isSelected}
     >
       <Box bold={isSelected} color={CRIMESTATUS2COLOR[wanted_status]}>
-        <Icon name={JOB2ICON[trim] || 'question'} /> {name}
+        <Icon name={JOB2ICON[ReverseJobsRu(trim)] || 'question'} /> {name}
       </Box>
     </Tabs.Tab>
   );

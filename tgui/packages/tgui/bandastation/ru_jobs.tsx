@@ -40,6 +40,11 @@ export const JOBS_RU = {
   Psychologist: 'Психолог',
 };
 
+export function ReverseJobsRu(value: string) {
+  let keys = Object.keys(JOBS_RU).filter((x) => JOBS_RU[x] === value);
+  return keys[0] || value;
+}
+
 export const DEPARTMENTS_RU = {
   Command: 'Командование',
   Security: 'Безопасность',
