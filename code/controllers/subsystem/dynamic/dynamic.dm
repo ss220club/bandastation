@@ -548,7 +548,7 @@ SUBSYSTEM_DEF(dynamic)
 				roundstart_pop_ready++
 				candidates.Add(player)
 				// BANDASTATION EDIT START - Force players to play Sec
-				if(player.mind.assigned_role?.departments_list.Find(/datum/job_department/security))
+				if(player.mind?.assigned_role?.departments_list?.Find(/datum/job_department/security))
 					security++
 				// BANDASTATION EDIT END
 	SSjob.ResetOccupations()
