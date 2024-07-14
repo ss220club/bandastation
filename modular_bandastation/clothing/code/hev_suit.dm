@@ -152,12 +152,11 @@
 
 /obj/item/clothing/head/helmet/hev_helmet/equipped(mob/living/carbon/human/user, slot)
 	..()
-	if(ishuman(user))
+	if(ishuman(user) && slot_flags & slot)
 		for(var/new_hud in hud_types)
 			var/datum/atom_hud/H = GLOB.huds[new_hud]
 			if(H)
-				var/datum/atom_hud/our_hud = GLOB.huds[H]
-				our_hud.show_to(user)
+				H.show_to(user)
 
 /obj/item/clothing/head/helmet/hev_helmet/dropped(mob/living/carbon/human/user)
 	..()
@@ -165,8 +164,7 @@
 		for(var/new_hud in hud_types)
 			var/datum/atom_hud/H = GLOB.huds[new_hud]
 			if(H)
-				var/datum/atom_hud/our_hud = GLOB.huds[H]
-				our_hud.hide_from(user)
+				H.hide_from(user)
 
 /obj/item/clothing/head/helmet/hev_helmet/ui_action_click(mob/user, toggle_helmet_light)
 	light_toggle(user)
