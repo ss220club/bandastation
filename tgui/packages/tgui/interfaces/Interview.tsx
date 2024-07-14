@@ -90,7 +90,7 @@ export const Interview = (props) => {
                 icon="envelope"
                 tooltip={
                   !allAnswered &&
-                  `Пожалуйста, ответье на все вопросы.
+                  `Пожалуйста, ответьте на все вопросы.
                      ${numAnswered} / ${questions.length}`
                 }
               >
@@ -115,7 +115,7 @@ export const Interview = (props) => {
           {!read_only && (
             <>
               <Box as="p" color="label">
-                Пожалуйтса, ответье на следующие вопросы.
+                Пожалуйста, ответьте на вопросы ниже.
                 <ul>
                   <li>
                     Чтобы сохранить ответ, вы можете нажать Enter, или кнопку
