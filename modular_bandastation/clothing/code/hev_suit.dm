@@ -1,14 +1,15 @@
 #define SOUND_BEEP(sound) add_queue(##sound, 20)
 #define MORPHINE_INJECTION_DELAY (30 SECONDS)
-
 //Suit
 /obj/item/clothing/suit/space/hev
 	name = "\improper hazardous environment suit"
 	desc = "The Mark IV HEV suit protects the user from a number of hazardous environments and has in build ballistic protection."
 	icon = 'modular_bandastation/clothing/icons/object/suits.dmi'
-	icon_state = "hev"
+	worn_icon = 'modular_bandastation/clothing/icons/mob/suits.dmi'
 	lefthand_file = 'modular_bandastation/clothing/icons/inhands/left_hand.dmi'
 	righthand_file = 'modular_bandastation/clothing/icons/inhands/right_hand.dmi'
+	icon_state = "hev"
+	inhand_icon_state = "hev"
 	resistance_flags = FIRE_PROOF | ACID_PROOF | FREEZE_PROOF
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS|FEET
 	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT
@@ -133,54 +134,46 @@
 	name = "hazardous environment suit helmet"
 	desc = "The Mark IV HEV suit helmet."
 	icon = 'modular_bandastation/clothing/icons/object/helmet.dmi'
-	worn_icon_state = "hev_helmet"
-	icon_state = "hev0"
+	worn_icon = 'modular_bandastation/clothing/icons/mob/helmet.dmi'
 	lefthand_file = 'modular_bandastation/clothing/icons/inhands/left_hand.dmi'
 	righthand_file = 'modular_bandastation/clothing/icons/inhands/right_hand.dmi'
+	icon_state = "hev_helmet0"
+	inhand_icon_state = "hev_helmet"
 	armor_type = /datum/armor/armor_heavy
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
-	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR
 	visor_flags = BLOCK_GAS_SMOKE_EFFECT | MASKINTERNALS
 	flash_protect = FLASH_PROTECTION_WELDER
 	dog_fashion = null
 	var/on = FALSE
 	var/brightness_on = 4
 	actions_types = list(/datum/action/item_action/toggle_helmet_light)
-	var/hud_types = DATA_HUD_MEDICAL_ADVANCED
-
-/obj/item/clothing/head/helmet/hev_helmet/Initialize(mapload)
-	. = ..()
-	if(!islist(hud_types) && hud_types)
-		hud_types = list(hud_types)
-
-/obj/item/clothing/head/helmet/hev_helmet/proc/add_hud_to(mob/living/carbon/human/user, var/hud_type)
-	if(hud_type)
-		var/datum/atom_hud/our_hud = GLOB.huds[hud_type]
-		our_hud.show_to(user)
-
-/obj/item/clothing/head/helmet/hev_helmet/proc/remove_hud_from(mob/living/carbon/human/user, var/hud_type)
-	if(hud_type)
-		var/datum/atom_hud/our_hud = GLOB.huds[hud_type]
-		our_hud.hide_from(user)
+	var/hud_types = list(DATA_HUD_MEDICAL_ADVANCED)
 
 /obj/item/clothing/head/helmet/hev_helmet/equipped(mob/living/carbon/human/user, slot)
 	..()
-	for(var/new_hud in hud_types)
-		var/datum/atom_hud/H = GLOB.huds[new_hud]
-		add_hud_to(user, H)
+	if(ishuman(user))
+		for(var/new_hud in hud_types)
+			var/datum/atom_hud/H = GLOB.huds[new_hud]
+			if(H)
+				var/datum/atom_hud/our_hud = GLOB.huds[H]
+				our_hud.show_to(user)
 
 /obj/item/clothing/head/helmet/hev_helmet/dropped(mob/living/carbon/human/user)
 	..()
-	for(var/new_hud in hud_types)
-		var/datum/atom_hud/H = GLOB.huds[new_hud]
-		remove_hud_from(user, H)
+	if(ishuman(user))
+		for(var/new_hud in hud_types)
+			var/datum/atom_hud/H = GLOB.huds[new_hud]
+			if(H)
+				var/datum/atom_hud/our_hud = GLOB.huds[H]
+				our_hud.hide_from(user)
 
 /obj/item/clothing/head/helmet/hev_helmet/ui_action_click(mob/user, toggle_helmet_light)
 	light_toggle(user)
 
 /obj/item/clothing/head/helmet/hev_helmet/proc/light_toggle(mob/user)
 	on = !on
-	icon_state = "hev[on]"
+	icon_state = "hev_helmet[on]"
 
 	if(on)
 		set_light(brightness_on)
