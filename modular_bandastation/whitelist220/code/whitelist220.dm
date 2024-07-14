@@ -1,3 +1,9 @@
+#define CKEY_HAS_VALID_WHITELIST_QUERY {"
+			SELECT ckey FROM ckey_whitelist WHERE ckey=:ckey AND
+			is_valid=1 AND port=:port AND date_start<=NOW() AND
+			(date_end IS NULL OR NOW()<date_end)
+	"}
+
 /datum/config_entry/flag/whitelist220
 	default = FALSE
 	protection = CONFIG_ENTRY_LOCKED
@@ -37,16 +43,36 @@
 
 	client.interviewee = TRUE
 
+/datum/interview/approve(client/approved_by)
+	add_owner_to_whitelist(approved_by)
+	. = ..()
+
+/datum/interview/proc/add_owner_to_whitelist(client/added_by)
+	PRIVATE_PROC(TRUE)
+
+	ASSERT(!isnull(added_by), "added_by should not be `null`")
+
+	if(!owner_ckey || !SSdbcore.IsConnected())
+		return
+
+	var/datum/db_query/whitelist_query = SSdbcore.NewQuery(
+		{"
+			INSERT INTO ckey_whitelist (ckey, adminwho, port)
+			SELECT :ckey, :adminwho, :port
+			WHERE NOT EXISTS ([CKEY_HAS_VALID_WHITELIST_QUERY])
+		"},
+		list("ckey" = owner_ckey, "adminwho" = added_by?.ckey, "port" = "[world.port]")
+	)
+
+	whitelist_query.warn_execute()
+	qdel(whitelist_query)
+
 /proc/is_ckey_whitelisted(ckey_to_check)
 	if(!ckey_to_check || !SSdbcore.IsConnected())
 		return FALSE
 
 	var/datum/db_query/whitelist_query = SSdbcore.NewQuery(
-		{"
-			SELECT ckey FROM ckey_whitelist WHERE ckey=:ckey AND
-			is_valid=1 AND port=:port AND date_start<=NOW() AND
-			(date_end IS NULL OR NOW()<date_end)
-		"},
+		CKEY_HAS_VALID_WHITELIST_QUERY,
 		list("ckey" = ckey_to_check, "port" = "[world.port]")
 	)
 
@@ -62,19 +88,4 @@
 	qdel(whitelist_query)
 	return FALSE
 
-/datum/interview/proc/approve(client/approved_by)
-	add_owner_to_whitelist()
-	. = ..()
-
-/datum/interview/proc/add_owner_to_whitelist()
-	if(!owner_ckey || !SSdbcore.IsConnected())
-		return
-
-	if(!is_ckey_whitelisted(owner_ckey))
-	var/datum/db_query/whitelist_query = SSdbcore.NewQuery(
-		{"
-			INSERT INTO ckey_whitelist (ckey, is_valid, port, date_start, date_end)
-			VALUES (:ckey, :is_valid, :port, :date_start, :date_end)
-		"},
-		list("ckey" = owner_ckey, "is_valid" =  "port" = "[world.port]")
-	)
+#undef CKEY_HAS_VALID_WHITELIST_QUERY
