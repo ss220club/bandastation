@@ -22,7 +22,6 @@
 			client.interviewee = TRUE
 
 	check_whitelist_or_make_interviewee() /// Bandastation Add
-
 	. = ..()
 	if(!. || !client)
 		return FALSE
