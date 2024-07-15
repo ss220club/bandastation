@@ -37,23 +37,15 @@
 
 /datum/surgery_step/extract_core/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
 	var/mob/living/basic/slime/target_slime = target
-	if(target_slime.cores > 0)
-		target_slime.cores--
+	var/core_count = target_slime.cores
+	if(core_count && target_slime.try_extract_cores(count = core_count))
 		display_results(
 			user,
 			target,
-			span_notice("Вы успешно извлекли ядро из [target]. [target_slime.cores] ядер осталось."),
-			span_notice("[user] успешно извлек ядро из [target]!"),
-			span_notice("[user] успешно извлек ядро из [target]!"),
+			span_notice("Вы успешно извлекли из [target.name] ядер: [core_count]."),
+			span_notice("[user.name] успешно извлекает из [target.name] ядер: [core_count]!"),
+			span_notice("[user.name] успешно извлекает из [target.name] ядер: [core_count]!"),
 		)
-
-		new target_slime.slime_type.core_type(target_slime.loc)
-
-		if(target_slime.cores <= 0)
-			target_slime.icon_state = "[target_slime.slime_type.colour] baby slime dead-nocore"
-			return ..()
-		else
-			return FALSE
-	else
-		to_chat(user, span_warning("В [target] больше не осталось ядер!"))
-		return ..()
+		return TRUE
+	to_chat(user, span_warning("В [target.name] больше не осталось ядер!"))
+	return ..()

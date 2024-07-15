@@ -54,9 +54,9 @@ export const deadmin_position_security: FeatureToggle = {
 };
 
 export const deadmin_position_silicon: FeatureToggle = {
-  name: 'Авто deadmin - силиконы',
+  name: 'Авто deadmin - синтетик',
   category: 'АДМИН',
-  description: 'Автоматический deadmin, если вы силикон.',
+  description: 'Автоматический deadmin, если вы синтетик.',
   component: CheckboxInput,
 };
 

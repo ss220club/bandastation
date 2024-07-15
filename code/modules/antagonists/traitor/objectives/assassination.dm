@@ -158,7 +158,7 @@
 	var/datum/mind/target_mind = pick(possible_targets)
 	set_target(target_mind.current)
 	replace_in_name("%TARGET%", target.real_name)
-	replace_in_name("%JOB TITLE%", target_mind.assigned_role.title)
+	replace_in_name("%JOB TITLE%", job_title_ru(target_mind.assigned_role.title))
 	RegisterSignal(target, COMSIG_LIVING_DEATH, PROC_REF(on_target_death))
 	return TRUE
 
@@ -195,7 +195,7 @@
 	почему мы сражаемся, то вам нужно только поискать там, где НаноТрейзен не хочет, чтобы вы нашли нас, чтобы присоединиться к нашему делу. Любое количество наших компаний
 	, возможно, борятся помня о ваших интересах.
 
-	SELF: Они сражаются ради безопастности и свободы жизней силиконов по всех галактике.
+	SELF: Они сражаются ради безопастности и свободы жизней синтетиков по всех галактике.
 
 	Tiger Cooperative: Они борются за религиозную свободу и свои праведные выдумки.
 

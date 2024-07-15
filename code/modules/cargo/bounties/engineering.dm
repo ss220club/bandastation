@@ -36,7 +36,7 @@
 
 /datum/bounty/item/engineering/tesla_coil
 	name = "Тесла катушка"
-	description = "Наши счета за электричество высоки, отправьте нам тесла катушка для компенсации."
+	description = "Наши счета за электричество высоки, отправьте нам тесла катушку для компенсации."
 	reward = CARGO_CRATE_VALUE * 5
 	wanted_types = list(/obj/machinery/power/energy_accumulator/tesla_coil = TRUE)
 

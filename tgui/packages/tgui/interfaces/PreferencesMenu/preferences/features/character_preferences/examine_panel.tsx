@@ -8,7 +8,7 @@ export const flavor_text: Feature<string> = {
 };
 
 export const silicon_flavor_text: Feature<string> = {
-  name: 'Описание внешности (Силикон)',
-  description: 'Опишите вашего силикона!',
+  name: 'Описание внешности (Синтетик)',
+  description: 'Опишите вашего синтетика!',
   component: FeatureTextInput,
 };
