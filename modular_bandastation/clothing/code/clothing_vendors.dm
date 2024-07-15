@@ -9,7 +9,6 @@
 		/obj/item/clothing/under/rank/civilian/chef/red = 2,
 		/obj/item/clothing/suit/chef/red = 2,
 		/obj/item/clothing/head/chefhat/red = 2,
-		/obj/item/storage/belt/chef/apron = 1,
-		/obj/item/storage/belt/chef/apron/red = 1,
+		/obj/item/clothing/suit/apron/chef/red = 1,
 		)
 	. = ..()

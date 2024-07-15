@@ -172,7 +172,7 @@
 /obj/item/clothing/head/helmet/hev_helmet/proc/light_toggle(mob/user)
 	on = !on
 	icon_state = "hev_helmet[on]"
-
+	//КТГ
 	if(on)
 		set_light(brightness_on)
 	else

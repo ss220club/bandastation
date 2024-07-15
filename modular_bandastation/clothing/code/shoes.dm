@@ -5,6 +5,7 @@
 	name = "неоновые кросовки"
 	desc = "Пара чёрных кросовок с светодиодными вставками."
 	icon = 'modular_bandastation/clothing/icons/object/shoes.dmi'
+	worn_icon = 'modular_bandastation/clothing/icons/mob/shoes.dmi'
 	icon_state = "neon"
 	lefthand_file = 'modular_bandastation/clothing/icons/inhands/left_hand.dmi'
 	righthand_file = 'modular_bandastation/clothing/icons/inhands/right_hand.dmi'
@@ -53,6 +54,7 @@
 	name = "акульи тапочки"
 	desc = "Эти тапочки сделаны из акульей кожи, или нет?"
 	icon = 'modular_bandastation/clothing/icons/object/shoes.dmi'
+	worn_icon = 'modular_bandastation/clothing/icons/mob/shoes.dmi'
 	icon_state = "shark"
 	lefthand_file = 'modular_bandastation/clothing/icons/inhands/left_hand.dmi'
 	righthand_file = 'modular_bandastation/clothing/icons/inhands/right_hand.dmi'

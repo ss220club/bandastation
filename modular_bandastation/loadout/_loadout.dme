@@ -1,0 +1,8 @@
+#include "_loadout.dm"
+
+#include "code/tier0.dm"
+#include "code/tier1.dm"
+#include "code/tier2.dm"
+#include "code/tier3.dm"
+#include "code/tier4.dm"
+#include "code/tier5.dm"
