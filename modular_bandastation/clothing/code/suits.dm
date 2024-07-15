@@ -67,11 +67,15 @@
 /obj/item/clothing/suit/hooded/shark_costume/light
 	name = "светло-голубой костюм акулы"
 	icon_state = "shark_casual_light"
+	icon = 'modular_bandastation/clothing/icons/object/hats.dmi'
+	worn_icon = 'modular_bandastation/clothing/icons/mob/hats.dmi'
 	hoodtype = /obj/item/clothing/head/hooded/shark_hood/light_par
 
 /obj/item/clothing/head/hooded/shark_hood/light_par
 	name = "светло-голубой акулий капюшон"
 	icon_state = "shark_casual_light"
+	icon = 'modular_bandastation/clothing/icons/object/hats.dmi'
+	worn_icon = 'modular_bandastation/clothing/icons/mob/hats.dmi'
 
 /obj/item/clothing/suit/space/deathsquad/officer/syndie
 	name = "куртка офицера синдиката"
@@ -98,6 +102,8 @@
 	name = "полевой плащ офицера флота Нанотрейзен"
 	desc = "Парадный плащ нового образца, внедряемый на объектах компании в последнее время. Отличительной чертой является стоячий воротник и резаный подол. Невысокие показатели защиты нивелируются пафосом, источаемым этим плащом."
 	icon_state = "ntsc_coat"
+	icon = 'modular_bandastation/clothing/icons/object/hats.dmi'
+	worn_icon = 'modular_bandastation/clothing/icons/mob/hats.dmi'
 
 /obj/item/clothing/suit/hooded/vi_arcane
 	name = "куртка Вай"
@@ -130,6 +136,8 @@
 /obj/item/clothing/head/hooded/vi_arcane
 	name = "капюшон Вай"
 	icon_state = "vi_arcane"
+	icon = 'modular_bandastation/clothing/icons/object/hats.dmi'
+	worn_icon = 'modular_bandastation/clothing/icons/mob/hats.dmi'
 
 /obj/item/clothing/suit/storage/soundhand_white_jacket
 	name = "серебристая куртка группы Саундхэнд"

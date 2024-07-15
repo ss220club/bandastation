@@ -25,7 +25,7 @@
 	song.allowed_instrument_ids = "drums"
 
 /obj/structure/musician/drumskit/Destroy()
-	// Пытаемся почистить треки
+	. = ..() // Пытаемся почистить треки
 	if (song)
 		qdel(song)
 	return ..()
