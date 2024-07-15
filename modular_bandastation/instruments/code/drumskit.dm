@@ -7,7 +7,7 @@
 	layer = 2.5
 	anchored = FALSE
 	var/active = FALSE
-	allowed_instrument_ids = "drums"
+	allowed_instrument_ids = list("drums")
 	//Использутся, чтобы отслеживать, персонаж должен лежать или "сидеть" (стоять)
 	buckle_lying = FALSE
 	//Задает состояния и флаги Атома (как я понял) - взято из машинерии, иначе в строчке 75 вышибается ошибка
@@ -25,8 +25,7 @@
 	song.allowed_instrument_ids = "drums"
 
 /obj/structure/musician/drumskit/Destroy()
-	QDEL_NULL(song)
-	UnregisterSignal(src, list(COMSIG_INSTRUMENT_START, COMSIG_INSTRUMENT_END, COMSIG_INSTRUMENT_SHOULD_STOP_PLAYING))
+	UnregisterSignal(src, list(COMSIG_INSTRUMENT_START, COMSIG_INSTRUMENT_END))
 	return ..()
 
 /obj/structure/musician/drumskit/proc/start_playing()
@@ -55,7 +54,7 @@
 		anchored = FALSE
 		can_buckle = FALSE
 		layer = 2.5
-		UnregisterSignal(src, list(COMSIG_INSTRUMENT_START, COMSIG_INSTRUMENT_END, COMSIG_INSTRUMENT_SHOULD_STOP_PLAYING))
+		UnregisterSignal(src, list(COMSIG_INSTRUMENT_START, COMSIG_INSTRUMENT_END))
 
 	update_icon()
 	icon_state = "[base_icon_state][anchored ? null : "_unanchored"]"
