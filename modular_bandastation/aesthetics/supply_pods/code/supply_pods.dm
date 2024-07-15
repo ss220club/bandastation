@@ -1,10 +1,3 @@
-/obj/item/choice_beacon/spawn_option(obj/choice_path, mob/living/user)
-	podspawn(list(
-		"target" = get_turf(src),
-		"spawn" = choice_path,
-		"path" = /obj/structure/closet/supplypod/teleporter
-	))
-
 /obj/structure/closet/supplypod/teleporter
 	style = STYLE_TELEPORTER
 	bluespace = TRUE
