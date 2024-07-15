@@ -27,6 +27,7 @@
 /obj/structure/musician/drumskit/Destroy()
 	if (song)
 		qdel(song)
+	UnregisterSignal(src, list(COMSIG_INSTRUMENT_START, COMSIG_INSTRUMENT_END, COMSIG_INSTRUMENT_SHOULD_STOP_PLAYING))
 	return ..()
 
 /obj/structure/musician/drumskit/proc/start_playing()
