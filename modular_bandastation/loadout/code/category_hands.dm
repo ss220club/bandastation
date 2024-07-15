@@ -13,12 +13,12 @@
 	outfit.gloves = item_path
 
 ///Т0
-/datum/loadout_item/gloves/gloves
+/datum/loadout_item/gloves/gloves_black
 	name = "Черные перчатки"
 	item_path = /obj/item/clothing/gloves/color/black
 
 ///Т0
-/datum/loadout_item/gloves/gloves
+/datum/loadout_item/gloves/gloves_maid
 	name = "Перчатки горничной"
 	item_path = /obj/item/clothing/gloves/maid
 
