@@ -5,7 +5,7 @@
 	if(. == COMPONENT_INCOMPATIBLE)
 		return
 	if(vehicle_move_delay == 0)
-		vehicle_move_delay = max(CONFIG_GET(number/movedelay/run_delay) - TG_SPEED, 0) * TG_SPEED
+		vehicle_move_delay = round(max(CONFIG_GET(number/movedelay/run_delay) - TG_SPEED, 0) * TG_SPEED, 0.01)
 		return
 	vehicle_move_delay = round(CONFIG_GET(number/movedelay/run_delay) / TG_SPEED * vehicle_move_delay, 0.01)
 
