@@ -102,8 +102,8 @@
 	name = "полевой плащ офицера флота Нанотрейзен"
 	desc = "Парадный плащ нового образца, внедряемый на объектах компании в последнее время. Отличительной чертой является стоячий воротник и резаный подол. Невысокие показатели защиты нивелируются пафосом, источаемым этим плащом."
 	icon_state = "ntsc_coat"
-	icon = 'modular_bandastation/clothing/icons/object/hats.dmi'
-	worn_icon = 'modular_bandastation/clothing/icons/mob/hats.dmi'
+	icon = 'modular_bandastation/clothing/icons/object/cloaks.dmi'
+	worn_icon = 'modular_bandastation/clothing/icons/mob/cloaks.dmi'
 
 /obj/item/clothing/suit/hooded/vi_arcane
 	name = "куртка Вай"
