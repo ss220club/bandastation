@@ -11,7 +11,7 @@
 /obj/structure/closet/supplypod/teleporter/setStyle(chosenStyle)
 	. = ..()
 	icon = 'icons/obj/anomaly.dmi'
-	icon_state = "portal1"
+	icon_state = "portal"
 
 /obj/effect/pod_landingzone/setupSmoke(rotation)
 	if(pod.style == STYLE_TELEPORTER)
