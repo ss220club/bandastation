@@ -25,8 +25,7 @@
 	song.allowed_instrument_ids = "drums"
 
 /obj/structure/musician/drumskit/Destroy()
-	if (song)
-		qdel(song)
+	QDEL_NULL(song)
 	UnregisterSignal(src, list(COMSIG_INSTRUMENT_START, COMSIG_INSTRUMENT_END, COMSIG_INSTRUMENT_SHOULD_STOP_PLAYING))
 	return ..()
 
