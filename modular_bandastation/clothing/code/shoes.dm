@@ -45,9 +45,9 @@
 	update_icon_state()
 
 /obj/item/clothing/shoes/black/neon/ui_action_click(mob/user, actiontype)
-	if(actiontype == /datum/action/item_action/change_color)
+	if(istype(actiontype, /datum/action/item_action/change_color))
 		change_color()
-	else if(actiontype == /datum/action/item_action/toggle_light)
+	else if(istype(actiontype, /datum/action/item_action/toggle_light))
 		turn_glow()
 
 /obj/item/clothing/shoes/shark
