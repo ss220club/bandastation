@@ -24,6 +24,12 @@
 	song.instrument_range = 15
 	song.allowed_instrument_ids = "drums"
 
+/obj/structure/musician/drumskit/Destroy()
+	// Пытаемся почистить треки
+	if (song)
+		qdel(song)
+	return ..()
+
 /obj/structure/musician/drumskit/proc/start_playing()
 	active = TRUE
 	update_icon(UPDATE_ICON_STATE)

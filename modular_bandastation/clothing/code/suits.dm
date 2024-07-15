@@ -50,12 +50,13 @@
 	cold_protection = CHEST|GROIN|ARMS
 	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
 	allowed = list(/obj/item/tank/internals/emergency_oxygen)
-	hoodtype = /obj/item/clothing/head/hooded/shark_hood
+	hoodtype = /obj/item/clothing/head/hooded/shark_hood_par
 
-/obj/item/clothing/head/hooded/shark_hood
+/obj/item/clothing/head/hooded/shark_hood_par
 	name = "акулий капюшон"
 	desc = "Капюшон, прикрепленный к костюму акулы."
 	icon = 'modular_bandastation/clothing/icons/object/hats.dmi'
+	worn_icon = 'modular_bandastation/clothing/icons/mob/hats.dmi'
 	icon_state = "shark_casual"
 
 	body_parts_covered = HEAD
@@ -66,9 +67,9 @@
 /obj/item/clothing/suit/hooded/shark_costume/light
 	name = "светло-голубой костюм акулы"
 	icon_state = "shark_casual_light"
-	hoodtype = /obj/item/clothing/head/hooded/shark_hood/light
+	hoodtype = /obj/item/clothing/head/hooded/shark_hood/light_par
 
-/obj/item/clothing/head/hooded/shark_hood/light
+/obj/item/clothing/head/hooded/shark_hood/light_par
 	name = "светло-голубой акулий капюшон"
 	icon_state = "shark_casual_light"
 
@@ -90,6 +91,7 @@
 	name = "армированная мантия офицера флота Нанотрейзен"
 	desc = "Один из вариантов торжественного одеяния сотрудников Верховного Командования Нанотрейзен, подойдет для официальной встречи или важного вылета. Сшита из лёгкой и сверхпрочной ткани."
 	icon = 'modular_bandastation/clothing/icons/object/cloaks.dmi'
+	worn_icon = 'modular_bandastation/clothing/icons/mob/cloaks.dmi'
 	icon_state = "ntsc_cloak"
 
 /obj/item/clothing/suit/space/deathsquad/officer/field/cloak_nt/coat_nt
@@ -112,6 +114,7 @@
 	name = "капюшон Вай"
 	desc = "Капюшон, прикреплённый к жакету Вай."
 	icon = 'modular_bandastation/clothing/icons/object/hats.dmi'
+	worn_icon = 'modular_bandastation/clothing/icons/mob/hats.dmi'
 	icon_state = "vi_arcane"
 
 	body_parts_covered = HEAD
@@ -234,8 +237,5 @@
 
 /obj/item/clothing/head/helmet/space/hardsuit/security
 	icon = 'modular_bandastation/clothing/icons/object/helmet.dmi'
+	worn_icon = 'modular_bandastation/clothing/icons/mob/helmet.dmi'
 	icon_state = "hardsuit0-sec"
-
-/* SOO jacket */
-/obj/item/clothing/suit/space/deathsquad/officer/soo_brown
-	icon_state = "brtrenchcoat_open"
