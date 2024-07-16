@@ -7,7 +7,6 @@
 	layer = 2.5
 	anchored = FALSE
 	var/active = FALSE
-	allowed_instrument_ids = list("drums")
 	//Использутся, чтобы отслеживать, персонаж должен лежать или "сидеть" (стоять)
 	buckle_lying = FALSE
 	//Задает состояния и флаги Атома (как я понял) - взято из машинерии, иначе в строчке 75 вышибается ошибка
@@ -22,7 +21,7 @@
 	//Выбирает инструмент по умолчанию
 	song = new(src, "drums")
 	song.instrument_range = 15
-	song.allowed_instrument_ids = "drums"
+	song.allowed_instrument_ids = list("drums")
 
 /obj/structure/musician/drumskit/Destroy()
 	UnregisterSignal(src, list(COMSIG_INSTRUMENT_START, COMSIG_INSTRUMENT_END))
