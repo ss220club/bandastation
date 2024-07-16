@@ -16,16 +16,7 @@
 	. = ..()
 	. += "<span class='notice'>Используйте гаечный ключ, чтобы разобрать для транспортировки и собрать для игры.</span>"
 
-/obj/structure/musician/drumskit/Initialize(mapload)
-	. = ..()
-	//Выбирает инструмент по умолчанию
-	song = new(src, allowed_instrument_ids, 15)
-	song.allowed_instrument_ids = null
-
 /obj/structure/musician/drumskit/Destroy()
-	song.allowed_instrument_ids = null
-	song.parent = null
-	forensics.parent = null
 	UnregisterSignal(src, list(COMSIG_INSTRUMENT_START, COMSIG_INSTRUMENT_END, COMSIG_COMPONENT_CLEAN_ACT))
 	return ..()
 
