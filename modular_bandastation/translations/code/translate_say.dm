@@ -28,7 +28,7 @@ GLOBAL_LIST_INIT(ru_say_verbs, list(
 	"squeaks" = "пищит",
 	"flutters" = "трепещет",
 	"hisses" = "шипит",
-	"echoes" = "резонируя произносит",
+	"echoes" = "резонирует",
 	"chants" = "воспевает",
 	"codes" = "шифрует",
 	// verb_ask
