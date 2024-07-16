@@ -1,4 +1,4 @@
-/obj/structure/musician/piano/drumskit
+/obj/structure/musician/drumskit
 	name = "\proper барабанная установка"
 	desc = "Складная барбанная установка с несколькими томами и тарелками."
 	icon = 'modular_bandastation/instruments/icons/samurai_guitar.dmi'
@@ -9,33 +9,44 @@
 	var/active = FALSE
 	//Использутся, чтобы отслеживать, персонаж должен лежать или "сидеть" (стоять)
 	buckle_lying = FALSE
-	broken_icon_state = "drum_red_broken"
+	var/broken_icon_state = "drum_red_broken"
+	allowed_instrument_ids = "drums"
 
-/obj/structure/musician/piano/drumskit/examine()
+/obj/structure/musician/drumskit/examine()
 	. = ..()
 	. += "<span class='notice'>Используйте гаечный ключ, чтобы разобрать для транспортировки и собрать для игры.</span>"
 
-/obj/structure/musician/piano/drumskit/Initialize(mapload)
+/obj/structure/musician/drumskit/Initialize(mapload)
 	. = ..()
-	//Выбирает инструмент по умолчанию
-	song = new(src, "drums", 15)
-	allowed_instrument_ids = null
 
-/obj/structure/musician/piano/drumskit/Destroy()
-	UnregisterSignal(src, list(COMSIG_INSTRUMENT_START, COMSIG_INSTRUMENT_END))
+	var/datum/song/song2 = song
+	//Выбирает инструмент по умолчанию
+	song = new(src, allowed_instrument_ids, 15)
+	song.allowed_instrument_ids = null
+	song2.parent = null
+	song2.allowed_instrument_ids = null
+	qdel(song2)
+
+/obj/structure/musician/drumskit/Destroy()
+	UnregisterSignal(src, list(COMSIG_INSTRUMENT_START, COMSIG_INSTRUMENT_END, COMSIG_COMPONENT_CLEAN_ACT))
+	song.allowed_instrument_ids = null
+	forensics.parent = null
+	song.parent = null
+	qdel(song)
+	song = null
 	return ..()
 
-/obj/structure/musician/piano/drumskit/proc/start_playing()
+/obj/structure/musician/drumskit/proc/start_playing()
 	SIGNAL_HANDLER
 	active = TRUE
 	update_icon(UPDATE_ICON_STATE)
 
-/obj/structure/musician/piano/drumskit/proc/stop_playing()
+/obj/structure/musician/drumskit/proc/stop_playing()
 	SIGNAL_HANDLER
 	active = FALSE
 	update_icon(UPDATE_ICON_STATE)
 
-/obj/structure/musician/piano/drumskit/wrench_act(mob/living/user, obj/item/I)
+/obj/structure/musician/drumskit/wrench_act(mob/living/user, obj/item/I)
 	if(active || (resistance_flags & INDESTRUCTIBLE))
 		return
 
@@ -60,7 +71,13 @@
 
 	return TRUE
 
-/obj/structure/musician/piano/drumskit/attack_hand(mob/user)
+/obj/structure/musician/piano/atom_break(damage_flag)
+	. = ..()
+	if(!broken)
+		broken = TRUE
+		icon_state = broken_icon_state
+
+/obj/structure/musician/drumskit/attack_hand(mob/user)
 	add_fingerprint(user)
 
 	if(!anchored)
@@ -68,7 +85,7 @@
 
 	ui_interact(user)
 
-/obj/structure/musician/piano/drumskit/update_icon_state()
+/obj/structure/musician/drumskit/update_icon_state()
 	.=..()
 	if(anchored)
 		icon_state = "[base_icon_state][active ? "_active" : null]"
