@@ -1,4 +1,4 @@
-/obj/structure/musician/drumskit
+/obj/structure/musician/piano/drumskit
 	name = "\proper барабанная установка"
 	desc = "Складная барбанная установка с несколькими томами и тарелками."
 	icon = 'modular_bandastation/instruments/icons/samurai_guitar.dmi'
@@ -9,34 +9,33 @@
 	var/active = FALSE
 	//Использутся, чтобы отслеживать, персонаж должен лежать или "сидеть" (стоять)
 	buckle_lying = FALSE
-	//Задает состояния и флаги Атома (как я понял) - взято из машинерии, иначе в строчке 75 вышибается ошибка
-	var/stat = 0
+	broken_icon_state = "drum_red_broken"
 
-/obj/structure/musician/drumskit/examine()
+/obj/structure/musician/piano/drumskit/examine()
 	. = ..()
 	. += "<span class='notice'>Используйте гаечный ключ, чтобы разобрать для транспортировки и собрать для игры.</span>"
 
-/obj/structure/musician/drumskit/Initialize(mapload)
+/obj/structure/musician/piano/drumskit/Initialize(mapload)
 	. = ..()
 	//Выбирает инструмент по умолчанию
 	song = new(src, "drums", 15)
 	allowed_instrument_ids = null
 
-/obj/structure/musician/drumskit/Destroy()
+/obj/structure/musician/piano/drumskit/Destroy()
 	UnregisterSignal(src, list(COMSIG_INSTRUMENT_START, COMSIG_INSTRUMENT_END))
 	return ..()
 
-/obj/structure/musician/drumskit/proc/start_playing()
+/obj/structure/musician/piano/drumskit/proc/start_playing()
 	SIGNAL_HANDLER
 	active = TRUE
 	update_icon(UPDATE_ICON_STATE)
 
-/obj/structure/musician/drumskit/proc/stop_playing()
+/obj/structure/musician/piano/drumskit/proc/stop_playing()
 	SIGNAL_HANDLER
 	active = FALSE
 	update_icon(UPDATE_ICON_STATE)
 
-/obj/structure/musician/drumskit/wrench_act(mob/living/user, obj/item/I)
+/obj/structure/musician/piano/drumskit/wrench_act(mob/living/user, obj/item/I)
 	if(active || (resistance_flags & INDESTRUCTIBLE))
 		return
 
@@ -61,7 +60,7 @@
 
 	return TRUE
 
-/obj/structure/musician/drumskit/attack_hand(mob/user)
+/obj/structure/musician/piano/drumskit/attack_hand(mob/user)
 	add_fingerprint(user)
 
 	if(!anchored)
@@ -69,11 +68,9 @@
 
 	ui_interact(user)
 
-/obj/structure/musician/drumskit/update_icon_state()
+/obj/structure/musician/piano/drumskit/update_icon_state()
 	.=..()
-	if(stat & (BROKEN))
-		icon_state = "[base_icon_state]_broken"
-	else if(anchored)
+	if(anchored)
 		icon_state = "[base_icon_state][active ? "_active" : null]"
 
 	setDir(SOUTH)
