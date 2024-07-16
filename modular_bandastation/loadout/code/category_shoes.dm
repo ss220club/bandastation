@@ -12,11 +12,40 @@
 		LAZYADD(outfit.backpack_contents, outfit.shoes)
 	outfit.shoes = item_path
 
-
 ///Т0
 /datum/loadout_item/shoes/sneakers
 	name = "Кросовки"
 	item_path = /obj/item/clothing/shoes/sneakers
+
+///Т0
+/datum/loadout_item/shoes/russian
+	name = "Русские ботинки"
+	item_path = /obj/item/clothing/shoes/russian
+
+///Т0
+/datum/loadout_item/shoes/discoshoes
+	name = "Дискоботы"
+	item_path = /obj/item/clothing/shoes/discoshoes
+
+///Т0
+/datum/loadout_item/shoes/roman
+	name = "Римские сандалии"
+	item_path = /obj/item/clothing/shoes/roman
+
+///Т0
+/datum/loadout_item/shoes/ducky_shoes
+	name = "Утинные тапки"
+	item_path = /obj/item/clothing/shoes/ducky_shoes
+
+///Т0
+/datum/loadout_item/shoes/laceup
+	name = "Туфли"
+	item_path = /obj/item/clothing/shoes/laceup
+
+///Т0
+/datum/loadout_item/shoes/sandal
+	name = "Сандалии"
+	item_path = /obj/item/clothing/shoes/sandal
 
 ///Т0
 /datum/loadout_item/shoes/cowboy

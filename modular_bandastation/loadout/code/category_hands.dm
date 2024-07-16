@@ -18,13 +18,63 @@
 	item_path = /obj/item/clothing/gloves/color/black
 
 ///Т0
+/datum/loadout_item/gloves/gloves_orange
+	name = "Оранжевые перчатки"
+	item_path = /obj/item/clothing/gloves/color/orange
+
+///Т0
+/datum/loadout_item/gloves/gloves_red
+	name = "Красные перчатки"
+	item_path = /obj/item/clothing/gloves/color/red
+
+///Т0
+/datum/loadout_item/gloves/gloves_rainbow
+	name = "Радужные перчатки"
+	item_path = /obj/item/clothing/gloves/color/rainbow
+
+///Т0
+/datum/loadout_item/gloves/gloves_blue
+	name = "Синие перчатки"
+	item_path = /obj/item/clothing/gloves/color/blue
+
+///Т0
+/datum/loadout_item/gloves/gloves_purple
+	name = "Фиолетовые перчатки"
+	item_path = /obj/item/clothing/gloves/color/purple
+
+///Т0
+/datum/loadout_item/gloves/gloves_green
+	name = "Зеленые перчатки"
+	item_path = /obj/item/clothing/gloves/color/green
+
+///Т0
+/datum/loadout_item/gloves/gloves_grey
+	name = "Серые перчатки"
+	item_path = /obj/item/clothing/gloves/color/grey
+
+///Т0
+/datum/loadout_item/gloves/gloves_light_brown
+	name = "Светло-коричневые перчатки"
+	item_path = /obj/item/clothing/gloves/color/light_brown
+
+///Т0
+/datum/loadout_item/gloves/gloves_brown
+	name = "Коричневые перчатки"
+	item_path = /obj/item/clothing/gloves/color/brown
+
+///Т0
+/datum/loadout_item/gloves/gloves_white
+	name = "Белые перчатки"
+	item_path = /obj/item/clothing/gloves/color/white
+
+///Т0
 /datum/loadout_item/gloves/gloves_maid
 	name = "Перчатки горничной"
 	item_path = /obj/item/clothing/gloves/maid
 
 ///Т0
-/datum/loadout_item/gloves/gloves
-	name = "Байкерские перчатки"
+/datum/loadout_item/gloves/gloves_fingerless
+	name = "Перчатки без пальцев"
 	item_path = /obj/item/clothing/gloves/fingerless
 
 ///Т1
