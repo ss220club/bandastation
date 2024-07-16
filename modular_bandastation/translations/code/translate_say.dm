@@ -25,7 +25,7 @@ GLOBAL_LIST_INIT(ru_say_verbs, list(
 	"warps" = "",
 	"chitters" = "щебетит",
 	"ribbits" = "квакает",
-	"squeaks" = "щипит",
+	"squeaks" = "пищит",
 	"flutters" = "трепещет",
 	"hisses" = "шипит",
 	"echoes" = "эхом повторяет",
