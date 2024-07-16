@@ -109,8 +109,8 @@
 	message_param = "сверлит взглядом %t."
 
 /datum/emote/living/grin
-	name = "ухмыльнуться"
-	message = "ухмыляется."
+	name = "оскалиться в улыбке"
+	message = "скалится в улыбке."
 
 /datum/emote/living/groan
 	name = "простонать от боли"
@@ -174,6 +174,18 @@
 	name = "вздох"
 	message = "вздыхает."
 	message_mime = "изображает преувеличенный бесшумный вздох."
+
+/datum/emote/living/sigh/happy
+	key = "hsigh"
+	key_third_person = "hsighs"
+	name = "удовлетворённый вздох"
+	message = "удовлетворённо вздыхает."
+	message_mime = "кажется, удовлетворённо вздыхает."
+
+/datum/emote/living/jump
+	name = "прыгнуть"
+	message = "прыгает!"
+
 
 /datum/emote/living/sit
 	name = "сесть"
@@ -244,9 +256,9 @@
 	message = "машет рукой."
 
 /datum/emote/living/whimper
-	name = "скулить"
-	message = "скулит."
-	message_mime = "изображает скуление."
+	name = "хныкать"
+	message = "хнычет."
+	message_mime = "кажется, задет."
 
 /datum/emote/living/wsmile
 	name = "улыбнуться (слабо)"
@@ -346,7 +358,8 @@
 
 /datum/emote/living/carbon/scratch
 	name = "чесаться"
-	message = "чешится."
+	message = "чешется."
+	mob_type_allowed_typecache = list(/mob/living/carbon/human, /mob/living/carbon/alien)
 
 /datum/emote/living/carbon/sign
 	name = "показать число"
@@ -408,7 +421,7 @@
 
 /datum/emote/living/carbon/human/eyebrow
 	name = "приподнять бровь"
-	message = "приподнимает брови."
+	message = "приподнимает бровь."
 
 /datum/emote/living/carbon/human/grumble
 	name = "ворчать"

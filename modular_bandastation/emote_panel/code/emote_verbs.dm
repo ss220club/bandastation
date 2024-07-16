@@ -90,6 +90,11 @@
 	set category = "Эмоции"
 	emote("collapse", intentional = TRUE)
 
+/mob/living/carbon/human/verb/emote_jump()
+	set name = "○ " + EMOTE_JUMP + " "
+	set category = "Эмоции"
+	emote("jump", intentional = TRUE)
+
 /mob/living/carbon/human/verb/emote_faint()
 	set name = "○ " + EMOTE_CARBON_FAINT + " "
 	set category = "Эмоции"
@@ -146,6 +151,11 @@
 	set category = "Эмоции"
 	emote("bow", intentional = TRUE)
 
+/mob/living/carbon/human/verb/emote_hsigh()
+	set name ="◦ " + EMOTE_SIGH_HAPPY + " "
+	set category = "Эмоции"
+	emote("hsigh", intentional = TRUE)
+
 /mob/living/carbon/human/verb/emote_chuckle()
 	set name = "◦ " + EMOTE_CARBON_CHUCKLE + " "
 	set category = "Эмоции"
@@ -181,6 +191,11 @@
 	set category = "Эмоции"
 	emote("shake", intentional = TRUE)
 
+/mob/living/carbon/human/verb/emote_tilt()
+	set name = "◦ " + EMOTE_TILT + " "
+	set category = "Эмоции"
+	emote("tilt", intentional = TRUE)
+
 /mob/living/carbon/human/verb/emote_smile()
 	set name = "◦ " + EMOTE_SMILE + " "
 	set category = "Эмоции"
@@ -190,11 +205,6 @@
 	set name = "◦ " + EMOTE_HUMAN_GRUMBLE + " "
 	set category = "Эмоции"
 	emote("grumble", intentional = TRUE)
-
-/mob/living/carbon/human/verb/emote_snuffle()
-	set name = "◦ " + EMOTE_HUMAN_SNUFFLE + " "
-	set category = "Эмоции"
-	emote("snuffle", intentional = TRUE)
 
 /mob/living/carbon/human/verb/emote_shrug()
 	set name = "◦ " + EMOTE_HUMAN_SHRUG + " "
