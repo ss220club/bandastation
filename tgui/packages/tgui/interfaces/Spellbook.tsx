@@ -17,11 +17,12 @@ import {
 import { Window } from '../layouts';
 
 enum SpellCategory {
-  Offensive = 'Наступление',
-  Defensive = 'Защита',
-  Mobility = 'Мобильность',
-  Assistance = 'Поддержка',
-  Rituals = 'Ритуалы',
+  Offensive = 'Offensive',
+  Defensive = 'Defensive',
+  Mobility = 'Mobility',
+  Assistance = 'Assistance',
+  Rituals = 'Rituals',
+  Perks = 'Perks',
 }
 
 type byondRef = string;
@@ -124,6 +125,16 @@ const TAB2NAME: TabType[] = [
       'Если вам не понравились предложенные варианты снаряжения, вы можете принять хаос. Не рекомендуется для начинающих волшебников.',
     component: () => <Randomize />,
   },
+  {
+    title: 'Perks',
+    blurb:
+      'Perks are useful (and not so useful) improvements to the soul and body collected from all corners of the universe.',
+    scrollable: true,
+  },
+  {
+    title: 'Table of Contents',
+    component: () => <TableOfContents />,
+  },
 ];
 
 enum Buywords {
@@ -158,7 +169,7 @@ const EnscribedName = (props) => {
   );
 };
 
-const lineHeightToc = '34.6px';
+const lineHeightToc = '30.6px';
 
 const TableOfContents = (props) => {
   const [tabIndex, setTabIndex] = useLocalState('tab-index', 1);
@@ -237,6 +248,14 @@ const TableOfContents = (props) => {
         icon="dice"
         content="Магический рандомайзер"
         onClick={() => setTabIndex(9)}
+      />
+      <Divider />
+      <Button
+        lineHeight={lineHeightToc}
+        fluid
+        icon="cog"
+        content="Perks"
+        onClick={() => setTabIndex(11)}
       />
     </Box>
   );
@@ -734,8 +753,8 @@ export const Spellbook = (props) => {
                           <Button
                             mr={0}
                             icon="arrow-right"
-                            disabled={tabIndex === 9}
-                            content="Следующая страница"
+                            disabled={tabIndex === 11}
+                            content="Next Page"
                             onClick={() => setTabIndex(tabIndex + 2)}
                           />
                           <Box textAlign="left" bold mt={-3.3} ml={-59.8}>
