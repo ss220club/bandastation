@@ -175,13 +175,6 @@
 	message = "вздыхает."
 	message_mime = "изображает преувеличенный бесшумный вздох."
 
-/datum/emote/living/sigh/happy
-	key = "hsigh"
-	key_third_person = "hsighs"
-	name = "удовлетворённый вздох"
-	message = "удовлетворённо вздыхает."
-	message_mime = "кажется, удовлетворённо вздыхает."
-
 /datum/emote/living/sit
 	name = "сесть"
 	message = "садится."
@@ -354,7 +347,7 @@
 /datum/emote/living/carbon/scratch
 	name = "чесаться"
 	message = "чешется."
-	mob_type_allowed_typecache = list(/mob/living/carbon/human, /mob/living/carbon/alien)
+	mob_type_allowed_typecache = list(/mob/living/carbon)
 
 /datum/emote/living/carbon/sign
 	name = "показать число"
@@ -417,8 +410,8 @@
 /datum/emote/living/carbon/human/snuffle
 	key = "snuffle"
 	key_third_person = "snuffles"
-	message = "нюхает"
-	message_param = "нюхает %t"
+	name = "шмыгать носом"
+	message = "шмыгает носом"
 
 /datum/emote/living/carbon/human/eyebrow
 	name = "приподнять бровь"
