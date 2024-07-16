@@ -109,8 +109,8 @@
 	message_param = "сверлит взглядом %t."
 
 /datum/emote/living/grin
-	name = "оскалиться в улыбке"
-	message = "скалится в улыбке."
+	name = "ухмыльнуться"
+	message = "ухмыляется."
 
 /datum/emote/living/groan
 	name = "простонать от боли"
