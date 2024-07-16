@@ -347,7 +347,7 @@
 /datum/emote/living/carbon/scratch
 	name = "чесаться"
 	message = "чешется."
-	mob_type_allowed_typecache = list(/mob/living/carbon)
+	//mob_type_allowed_typecache = list(/mob/living/carbon)
 
 /datum/emote/living/carbon/sign
 	name = "показать число"
@@ -410,7 +410,7 @@
 /datum/emote/living/carbon/human/snuffle
 	key = "snuffle"
 	key_third_person = "snuffles"
-	name = "шмыгать носом"
+	name = "шмыгнуть"
 	message = "шмыгает носом"
 
 /datum/emote/living/carbon/human/eyebrow
