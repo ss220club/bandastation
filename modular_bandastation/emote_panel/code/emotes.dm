@@ -419,6 +419,12 @@
 	message = "sadly can't find anybody to give daps to, and daps themself. Shameful."
 	message_param = "give daps to %t."
 
+/datum/emote/living/carbon/human/snuffle
+	key = "snuffle"
+	key_third_person = "snuffles"
+	message = "нюхает"
+	message_param = "нюхает %t"
+
 /datum/emote/living/carbon/human/eyebrow
 	name = "приподнять бровь"
 	message = "приподнимает бровь."
