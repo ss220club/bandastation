@@ -217,7 +217,7 @@
 
 /datum/outfit/spacebattle/corpse_bridgeofficer
 	name = "Dead spacebattle bridgeofficer"
-	id_trim = /datum/id_trim/job/captain
+	id_trim = /datum/id_trim/job/bridge_assistant
 	uniform = /obj/item/clothing/under/rank/captain
 	belt = /obj/item/storage/belt/holster
 	suit = /obj/item/clothing/suit/armor/vest/blueshirt
