@@ -160,17 +160,17 @@ export const TechwebContent = (props) => {
         <Flex className="Techweb__HeaderContent">
           <Flex.Item>
             <LabeledList>
-              <LabeledList.Item label="Протоколы защиты">
+              <LabeledList.Item label="Защита">
                 <span
                   className={`Techweb__SecProtocol ${
                     !!sec_protocols && 'engaged'
                   }`}
                 >
-                  {sec_protocols ? 'Включены' : 'Отключены'}
+                  {sec_protocols ? 'Включена' : 'Отключена'}
                 </span>
               </LabeledList.Item>
               {Object.keys(points).map((k) => (
-                <LabeledList.Item key={k} label="Доступные очки">
+                <LabeledList.Item key={k} label="Очки">
                   <b>{points[k]}</b>
                   {!!points_last_tick[k] && ` (+${points_last_tick[k]}/сек)`}
                 </LabeledList.Item>
@@ -302,7 +302,7 @@ const TechwebOverview = (props) => {
               >
                 В будущем
               </Tabs.Tab>
-              {!!searching && <Tabs.Tab selected>Результаты поиска</Tabs.Tab>}
+              {!!searching && <Tabs.Tab selected>Поиск</Tabs.Tab>}
             </Tabs>
           </Flex.Item>
           <Flex.Item align={'center'}>
