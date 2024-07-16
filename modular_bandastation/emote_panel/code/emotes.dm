@@ -182,11 +182,6 @@
 	message = "удовлетворённо вздыхает."
 	message_mime = "кажется, удовлетворённо вздыхает."
 
-/datum/emote/living/jump
-	name = "прыгнуть"
-	message = "прыгает!"
-
-
 /datum/emote/living/sit
 	name = "сесть"
 	message = "садится."
