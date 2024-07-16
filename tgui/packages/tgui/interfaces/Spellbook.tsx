@@ -17,12 +17,12 @@ import {
 import { Window } from '../layouts';
 
 enum SpellCategory {
-  Offensive = 'Offensive',
-  Defensive = 'Defensive',
-  Mobility = 'Mobility',
-  Assistance = 'Assistance',
-  Rituals = 'Rituals',
-  Perks = 'Perks',
+  Offensive = 'Наступление',
+  Defensive = 'Защита',
+  Mobility = 'Мобильность',
+  Assistance = 'Поддержка',
+  Rituals = 'Ритуалы',
+  Perks = 'Перки',
 }
 
 type byondRef = string;
@@ -126,7 +126,7 @@ const TAB2NAME: TabType[] = [
     component: () => <Randomize />,
   },
   {
-    title: 'Perks',
+    title: 'Перки',
     blurb:
       'Perks are useful (and not so useful) improvements to the soul and body collected from all corners of the universe.',
     scrollable: true,
@@ -254,7 +254,7 @@ const TableOfContents = (props) => {
         lineHeight={lineHeightToc}
         fluid
         icon="cog"
-        content="Perks"
+        content="Перки"
         onClick={() => setTabIndex(11)}
       />
     </Box>
@@ -754,7 +754,7 @@ export const Spellbook = (props) => {
                             mr={0}
                             icon="arrow-right"
                             disabled={tabIndex === 11}
-                            content="Next Page"
+                            content="Следующая страница"
                             onClick={() => setTabIndex(tabIndex + 2)}
                           />
                           <Box textAlign="left" bold mt={-3.3} ml={-59.8}>
