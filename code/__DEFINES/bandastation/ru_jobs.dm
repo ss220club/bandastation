@@ -122,5 +122,5 @@ GLOBAL_LIST_EMPTY(job_titles_ru_to_en)
 /proc/job_title_ru_to_en(ru_title)
 	if(!length(GLOB.job_titles_ru_to_en))
 		for(var/key in GLOB.job_titles_ru)
-			GLOB.job_titles_ru_to_en += list(GLOB.job_titles_ru[key] = key)
+			GLOB.job_titles_ru_to_en[GLOB.job_titles_ru[key]] = key
 	return GLOB.job_titles_ru_to_en[ru_title] || ru_title
