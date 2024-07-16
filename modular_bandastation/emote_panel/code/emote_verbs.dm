@@ -151,11 +151,6 @@
 	set category = "Эмоции"
 	emote("bow", intentional = TRUE)
 
-/mob/living/carbon/human/verb/emote_hsigh()
-	set name ="◦ " + EMOTE_SIGH_HAPPY + " "
-	set category = "Эмоции"
-	emote("hsigh", intentional = TRUE)
-
 /mob/living/carbon/human/verb/emote_chuckle()
 	set name = "◦ " + EMOTE_CARBON_CHUCKLE + " "
 	set category = "Эмоции"
