@@ -18,22 +18,18 @@
 
 /obj/structure/musician/drumskit/Initialize(mapload)
 	. = ..()
-
-	var/datum/song/song2 = song
 	//Выбирает инструмент по умолчанию
+	song.parent = null
+	qdel(song)
 	song = new(src, allowed_instrument_ids, 15)
 	song.allowed_instrument_ids = null
-	song2.parent = null
-	song2.allowed_instrument_ids = null
-	qdel(song2)
 
 /obj/structure/musician/drumskit/Destroy()
-	UnregisterSignal(src, list(COMSIG_INSTRUMENT_START, COMSIG_INSTRUMENT_END, COMSIG_COMPONENT_CLEAN_ACT))
 	song.allowed_instrument_ids = null
 	forensics.parent = null
 	song.parent = null
+	UnregisterSignal(src, list(COMSIG_INSTRUMENT_START, COMSIG_INSTRUMENT_END, COMSIG_COMPONENT_CLEAN_ACT))
 	qdel(song)
-	song = null
 	return ..()
 
 /obj/structure/musician/drumskit/proc/start_playing()
