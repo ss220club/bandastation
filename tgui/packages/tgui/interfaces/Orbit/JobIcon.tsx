@@ -1,3 +1,4 @@
+import { ReverseJobsRu } from '../../bandastation/ru_jobs'; // BANDASTATION EDIT
 import { DmIcon, Icon } from '../../components';
 import { JOB2ICON } from '../common/JobToIcon';
 import { Antagonist, Observable } from './types';
@@ -37,7 +38,12 @@ export function JobIcon(props: Props) {
   return (
     <div className="JobIcon">
       {icon === 'borg' ? (
-        <Icon color="lightblue" name={JOB2ICON[job]} ml={0.3} mt={0.4} />
+        <Icon
+          color="lightblue"
+          name={JOB2ICON[ReverseJobsRu(job)]}
+          ml={0.3}
+          mt={0.4}
+        />
       ) : (
         <DmIcon
           icon={iconSettings.dmi}
