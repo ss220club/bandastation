@@ -19,9 +19,8 @@
 /obj/structure/musician/drumskit/Initialize(mapload)
 	. = ..()
 	//Выбирает инструмент по умолчанию
-	song = new(src, "drums")
-	song.instrument_range = 15
-	song.allowed_instrument_ids = list("drums")
+	song = new(src, "drums", 15)
+	allowed_instrument_ids = null
 
 /obj/structure/musician/drumskit/Destroy()
 	UnregisterSignal(src, list(COMSIG_INSTRUMENT_START, COMSIG_INSTRUMENT_END))
