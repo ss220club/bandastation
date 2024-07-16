@@ -165,7 +165,6 @@
 	gloves = /obj/item/clothing/gloves/color/yellow
 	back = /obj/item/storage/backpack/duffelbag/engineering
 	backpack_contents = list(
-		/obj/item/storage/box/emergencytank = 1,
 		/obj/item/clothing/head/utility/welding = 1,
 		/obj/item/stack/sheet/iron = 10,
 		/obj/item/stock_parts/power_store/cell/high = 1,
@@ -188,7 +187,6 @@
 	suit_store = /obj/item/tank/internals/emergency_oxygen/engi
 	gloves = /obj/item/clothing/gloves/color/yellow
 	backpack_contents = list(
-		/obj/item/storage/box/emergencytank = 1,
 		/obj/item/clothing/head/utility/welding = 1,
 		/obj/item/stack/sheet/iron = 10,
 		/obj/item/stock_parts/power_store/cell/high = 1,

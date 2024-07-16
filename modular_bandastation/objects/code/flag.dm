@@ -6,6 +6,7 @@
 	inhand_icon_state = "ntflag"
 	lefthand_file = 'modular_bandastation/objects/icons/inhands/flags_lefthand.dmi'
 	righthand_file = 'modular_bandastation/objects/icons/inhands/flags_righthand.dmi'
+	custom_fire_overlay = "fire"
 	w_class = WEIGHT_CLASS_BULKY
 	max_integrity = 40
 	resistance_flags = FLAMMABLE
@@ -18,14 +19,16 @@
 	update_icon()
 
 /obj/item/flag/update_icon_state()
-	. = ..()
 	if(!rolled)
 		icon_state = initial(icon_state)
+		custom_fire_overlay = initial(custom_fire_overlay)
 	if(rolled)
-		icon_state = "[icon_state]_rolled"
+		icon_state = "[initial(icon_state)]_rolled"
+		custom_fire_overlay = "[initial(custom_fire_overlay)]_rolled"
 	if(ismob(loc))
 		var/mob/M = loc
 		M.update_held_items()
+	return ..()
 
 /obj/item/flag/attackby(obj/item/attacking_item, mob/user, params)
 	. = ..()
