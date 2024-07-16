@@ -160,32 +160,32 @@ export const TechwebContent = (props) => {
         <Flex className="Techweb__HeaderContent">
           <Flex.Item>
             <LabeledList>
-              <LabeledList.Item label="Security">
+              <LabeledList.Item label="Протоколы защиты">
                 <span
                   className={`Techweb__SecProtocol ${
                     !!sec_protocols && 'engaged'
                   }`}
                 >
-                  {sec_protocols ? 'Engaged' : 'Disengaged'}
+                  {sec_protocols ? 'Включены' : 'Отключены'}
                 </span>
               </LabeledList.Item>
               {Object.keys(points).map((k) => (
-                <LabeledList.Item key={k} label="Points">
+                <LabeledList.Item key={k} label="Доступные очки">
                   <b>{points[k]}</b>
-                  {!!points_last_tick[k] && ` (+${points_last_tick[k]}/sec)`}
+                  {!!points_last_tick[k] && ` (+${points_last_tick[k]}/сек)`}
                 </LabeledList.Item>
               ))}
-              <LabeledList.Item label="Queue">
+              <LabeledList.Item label="Очередь">
                 {queue_nodes.length !== 0
                   ? Object.keys(queue_nodes).map((node_id) => (
                       <Button
                         key={node_id}
-                        tooltip={`Added by: ${queue_nodes[node_id]}`}
+                        tooltip={`Добавлено: ${queue_nodes[node_id]}`}
                       >
                         {node_cache[node_id].name}
                       </Button>
                     ))
-                  : 'Empty'}
+                  : 'Пусто'}
               </LabeledList.Item>
             </LabeledList>
           </Flex.Item>
@@ -288,28 +288,28 @@ const TechwebOverview = (props) => {
                 selected={!searching && tabIndex === 0}
                 onClick={() => switchTab(0)}
               >
-                Изученные
+                Изучено
               </Tabs.Tab>
               <Tabs.Tab
                 selected={!searching && tabIndex === 1}
                 onClick={() => switchTab(1)}
               >
-                Доступные
+                Доступно
               </Tabs.Tab>
               <Tabs.Tab
                 selected={!searching && tabIndex === 2}
                 onClick={() => switchTab(2)}
               >
-                Будущие
+                В будущем
               </Tabs.Tab>
-              {!!searching && <Tabs.Tab selected>Search Results</Tabs.Tab>}
+              {!!searching && <Tabs.Tab selected>Результаты поиска</Tabs.Tab>}
             </Tabs>
           </Flex.Item>
           <Flex.Item align={'center'}>
             <Input
               value={searchText}
               onInput={(e, value) => setSearchText(value)}
-              placeholder={'Search...'}
+              placeholder={'Поиск...'}
             />
           </Flex.Item>
         </Flex>
@@ -581,7 +581,7 @@ const TechNode = (props) => {
                   disabled={!can_unlock || tier > 1 || queue_nodes.length > 0}
                   onClick={() => act('researchNode', { node_id: id })}
                 >
-                  Research
+                  Изучить
                 </Button>
               ) : enqueued_by_user ? (
                 <Button
@@ -589,11 +589,11 @@ const TechNode = (props) => {
                   color="bad"
                   onClick={() => act('dequeueNode', { node_id: id })}
                 >
-                  Dequeue
+                  Убрать из очереди
                 </Button>
               ) : id in queue_nodes && !enqueued_by_user ? (
                 <Button icon="check" color="good">
-                  Queued
+                  В очереди
                 </Button>
               ) : (
                 <Button
@@ -605,7 +605,7 @@ const TechNode = (props) => {
                   }
                   onClick={() => act('enqueueNode', { node_id: id })}
                 >
-                  Enqueue
+                  Добавить в очередь
                 </Button>
               ))}
             {!nodetails && (
