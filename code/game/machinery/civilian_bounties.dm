@@ -124,7 +124,7 @@
 		stop_sending()
 	if(curr_bounty.can_claim())
 		//Pay for the bounty with the ID's department funds.
-		status_report += "Заказ выполнен! Пожалуйста передайте свой куб-награду в отдел снабжения для перевода средств на ваш аккаунт."
+		status_report += "Заказ выполнен! Пожалуйста, передайте свой куб-награду в отдел снабжения для перевода средств на ваш аккаунт."
 		SSblackbox.record_feedback("tally", "bounties_completed", 1, curr_bounty.type)
 		inserted_scan_id.registered_account.reset_bounty()
 		SSeconomy.civ_bounty_tracker++
