@@ -27,10 +27,10 @@
 	if(item.type in shred_amounts)
 		paper_result = shred_amounts[item.type]
 	if(!paper_result)
-		return
+		return ITEM_INTERACT_FAILURE
 	if(paperamount == max_paper)
 		to_chat(user, span_warning("[src] is full. Please empty it before you continue."))
-		return
+		return ITEM_INTERACT_FAILURE
 	paperamount += paper_result
 	qdel(item)
 	playsound(loc, 'modular_bandastation/objects/sounds/pshred.ogg', 75, 1)
@@ -41,7 +41,6 @@
 /obj/machinery/papershredder/wrench_act(mob/living/user, obj/item/tool)
 	. = ..()
 	default_unfasten_wrench(user, tool)
-	return ITEM_INTERACT_SUCCESS
 
 /obj/machinery/papershredder/examine(mob/user)
 	. = ..()

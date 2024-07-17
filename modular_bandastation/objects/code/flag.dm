@@ -226,32 +226,3 @@
 	desc = "A flag proudly boasting the logo of the Spider Clan, a skillful ninjas of the universe."
 	icon_state = "ninjaflag"
 	inhand_icon_state = "ninjaflag"
-/*
-/obj/item/flag/chameleon
-	name = "chameleon flag"
-	desc = "A poor recreation of the official NT flag. It seems to shimmer a little."
-	icon_state = "ntflag"
-	inhand_icon_state = "ntflag"
-	var/used = FALSE
-	var/static/list/flag_types = list(
-		"Нанотрейзен" = /obj/item/flag,
-		"Саундхэнд" = /obj/item/flag/soundhand,
-		"Атмосия" = /obj/item/flag/atmos,
-	)
-
-/obj/item/flag/chameleon/attack_self(mob/user, modifiers,)
-	if(used)
-		return
-	var/choice = tgui_input_list(usr, "Выберите флаг", "Выбор флага", flag_types)
-	if(!choice)
-		return
-	var/flag_to_set = flag_types[choice]
-	if(!flag_to_set)
-		return
-
-	name = flag_to_set.name
-	desc = flag_to_set.desc
-	icon_state = flag_to_set.icon_state
-	inhand_icon_state = flag_to_set.inhand_icon_state
-	used = TRUE
-	*/

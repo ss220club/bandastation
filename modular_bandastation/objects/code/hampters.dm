@@ -11,14 +11,16 @@
 	worn_icon_state = "hampter"
 	slot_flags = ITEM_SLOT_HEAD
 	w_class = WEIGHT_CLASS_TINY
+	var/cooldown = 0
 
 // Действия при взаимодействии с включенным комбат модом
 /obj/item/toy/plush/hampter/attack_self(mob/living/carbon/human/user)
-	. = ..()
-	if(user.combat_mode == TRUE)
-		new /obj/effect/decal/cleanable/blood(get_turf(user))
-		user.visible_message(span_warning("[user] раздавливает хамптера в своей руке!"), span_warning("Вы раздавливаете хамптера в своей руке, и от него остаётся лужа крови!"))
-		qdel(src)
+	if(cooldown < world.time - 10)
+		. = ..()
+		if(user.combat_mode == TRUE)
+			new /obj/effect/decal/cleanable/blood(get_turf(user))
+			user.visible_message(span_warning("[user] раздавливает хамптера в своей руке!"), span_warning("Вы раздавливаете хамптера в своей руке, и от него остаётся лужа крови!"))
+			qdel(src)
 
 // Подвиды
 /obj/item/toy/plush/hampter/assistant

@@ -44,6 +44,7 @@
 
 /obj/machinery/recharger/attackby(obj/item/attacking_item, mob/user, params)
 	if(istype(attacking_item, /obj/item/melee/baton/security/electrostaff))
+		to_chat(user, span_warning("Этот предмет несовместим с зарядником!"))
 		return
 	. = ..()
 
