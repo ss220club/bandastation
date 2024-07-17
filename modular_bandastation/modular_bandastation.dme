@@ -6,6 +6,7 @@
 #include "_signals220/_signals220.dme"
 #include "_singletons/_singletons.dme"
 #include "aesthetics/_aesthetics.dme"
+#include "automapper/_automapper.dme"
 #include "ai_laws/_ai_laws.dme"
 #include "autohiss/_autohiss.dme"
 #include "barsigns/_barsigns.dme"
