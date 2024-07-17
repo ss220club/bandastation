@@ -232,23 +232,33 @@ export const Jukebox220 = () => {
                 </Button>
               }
             >
-              {songs_sorted.map((song) => (
-                <Stack.Item key={song.name} mb={0.5} textAlign="left">
-                  <Button
-                    fluid
-                    selected={song_selected?.name === song.name}
-                    color="transparent"
-                    onClick={() => {
-                      !active && act('select_track', { track: song.name });
-                    }}
-                  >
-                    <Stack fill>
-                      <Stack.Item grow>{song.name}</Stack.Item>
-                      <Stack.Item>{formatTime(song.length)}</Stack.Item>
-                    </Stack>
-                  </Button>
-                </Stack.Item>
-              ))}
+              {songs_sorted.map((song) => {
+                const selectedTrack = song_selected?.name === song.name;
+                return (
+                  <Stack.Item key={song.name} mb={0.5} textAlign="left">
+                    <Button
+                      fluid
+                      selected={selectedTrack}
+                      color="transparent"
+                      onClick={() => {
+                        !active && act('select_track', { track: song.name });
+                      }}
+                      style={{
+                        backgroundColor:
+                          active && !selectedTrack
+                            ? `rgba(255, 0, 0, 0.1)`
+                            : ``,
+                        color: active && !selectedTrack ? `gray` : ``,
+                      }}
+                    >
+                      <Stack fill>
+                        <Stack.Item grow>{song.name}</Stack.Item>
+                        <Stack.Item>{formatTime(song.length)}</Stack.Item>
+                      </Stack>
+                    </Button>
+                  </Stack.Item>
+                );
+              })}
             </Section>
           </Stack.Item>
           {uploadTrack && (
