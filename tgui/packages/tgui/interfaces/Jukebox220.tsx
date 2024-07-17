@@ -307,8 +307,8 @@ export const Jukebox220 = () => {
                           track_name: trackName,
                           track_length: trackLength * 10,
                           track_beat: trackBeat,
-                        }),
-                          setTrackName('');
+                        });
+                        setTrackName('');
                       }}
                     >
                       Загрузить новый трек
