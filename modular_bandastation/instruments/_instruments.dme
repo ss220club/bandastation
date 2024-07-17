@@ -1,3 +1,4 @@
+#include "_instruments.dm"
 #include "code/drums.dm"
 #include "code/guitar.dm"
 #include "code/merch_items.dm"
