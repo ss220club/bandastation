@@ -66,7 +66,7 @@
 	only_forced_audio = TRUE
 	vary = TRUE
 
-/datum/emote/carbon/human/scream/run_emote(mob/user, params, type_override, intentional = FALSE)
+/datum/emote/living/carbon/human/scream/run_emote(mob/user, params, type_override, intentional = FALSE)
 	if(!intentional && HAS_TRAIT(user, TRAIT_ANALGESIA))
 		return
 	return ..()
@@ -133,9 +133,9 @@
 	. = ..()
 	var/obj/item/organ/external/tail/oranges_accessory = user.get_organ_slot(ORGAN_SLOT_EXTERNAL_TAIL)
 	if(oranges_accessory.wag_flags & WAG_WAGGING)
-		. = "stops wagging " + message
+		. = "перестаёт вилять " + message
 	else
-		. = "wags " + message
+		. = "начинает вилять " + message
 
 /datum/emote/living/carbon/human/wag/can_run_emote(mob/user, status_check, intentional)
 	var/obj/item/organ/external/tail/tail = user.get_organ_slot(ORGAN_SLOT_EXTERNAL_TAIL)

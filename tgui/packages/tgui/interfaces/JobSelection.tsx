@@ -3,7 +3,11 @@ import { Color } from 'common/color';
 import { BooleanLike } from 'common/react';
 
 import { useBackend } from '../backend';
-import { DEPARTMENTS_RU, JOBS_RU } from '../bandastation/ru_jobs'; // BANDASTATION EDIT
+import {
+  DEPARTMENTS_RU,
+  JOBS_RU,
+  ReverseJobsRu,
+} from '../bandastation/ru_jobs'; // BANDASTATION EDIT
 import {
   Box,
   Button,
@@ -49,7 +53,7 @@ export const JobEntry = (data: {
   const jobName = data.jobName;
   const job = data.job;
   const department = data.department;
-  const jobIcon = JOB2ICON[jobName] || null;
+  const jobIcon = JOB2ICON[ReverseJobsRu(jobName)] || null;
   return (
     <Button
       fluid
