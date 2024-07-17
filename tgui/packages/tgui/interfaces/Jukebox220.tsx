@@ -1,20 +1,20 @@
-import React, { useState } from 'react';
 import { sortBy } from 'common/collections';
+import React, { useState } from 'react';
 
 import { BooleanLike } from '../../common/react';
 import { useBackend } from '../backend';
 import {
   Box,
   Button,
+  Dimmer,
+  Icon,
   Input,
-  NumberInput,
   Knob,
+  LabeledList,
+  NumberInput,
   ProgressBar,
   Section,
   Stack,
-  LabeledList,
-  Dimmer,
-  Icon,
 } from '../components';
 import { Window } from '../layouts';
 
