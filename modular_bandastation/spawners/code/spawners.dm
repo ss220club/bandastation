@@ -1,3 +1,21 @@
+/// Plush hampters spawners
+/obj/effect/spawner/random/hampter
+	name = "Random Hampter"
+	desc = "This is a random hampter spawner."
+	icon = 'modular_bandastation/objects/icons/hampter.dmi'
+	icon_state = "hampter"
+	loot = list(
+		/obj/item/toy/plush/hampter/assistant = 1,
+		/obj/item/toy/plush/hampter/captain = 1,
+		/obj/item/toy/plush/hampter/deadsquad = 1,
+		/obj/item/toy/plush/hampter/ert = 1,
+		/obj/item/toy/plush/hampter/janitor = 1,
+		/obj/item/toy/plush/hampter/medical = 1,
+		/obj/item/toy/plush/hampter/old_captain = 1,
+		/obj/item/toy/plush/hampter/security = 1,
+		/obj/item/toy/plush/hampter/syndicate = 1,
+	)
+
 /// ID skins spawners
 /obj/effect/spawner/random/id_skins
 	name = "Случайная наклейка на карту"
