@@ -183,7 +183,7 @@
 
 /// The name to use while bitrunning
 /datum/preference/name/hacker_alias
-	explanation = "Хакерский псевдоним"
+	explanation = "Никнейм битранера"
 	group = "bitrunning"
 	savefile_key = "hacker_alias"
 	relevant_job = /datum/job/bitrunner
