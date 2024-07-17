@@ -7,6 +7,7 @@ import {
   Box,
   Button,
   Input,
+  NumberInput,
   Knob,
   ProgressBar,
   Section,
@@ -24,6 +25,7 @@ type Song = {
 };
 
 type Data = {
+  admin: BooleanLike;
   active: BooleanLike;
   looping: BooleanLike;
   volume: number;
@@ -37,10 +39,11 @@ type Data = {
 export const Jukebox220 = () => {
   const { act, data } = useBackend<Data>();
   const [uploadTrack, setUploadTrack] = useState(false);
-  const [trackName, setTrackName] = useState('Common Song');
-  const [trackLength, setTrackLength] = useState('2200');
-  const [trackBeat, setTrackBeat] = useState('220');
+  const [trackName, setTrackName] = useState('');
+  const [trackLength, setTrackLength] = useState(220);
+  const [trackBeat, setTrackBeat] = useState(10);
   const {
+    admin,
     active,
     looping,
     track_selected,
@@ -51,7 +54,7 @@ export const Jukebox220 = () => {
     worldTime,
   } = data;
 
-  const MAX_NAME_LENGTH = 35;
+  const MAX_NAME_LENGTH = 30;
   const songs_sorted: Song[] = sortBy(songs, (song: Song) => song.name);
   const song_selected: Song | undefined = songs.find(
     (song) => song.name === track_selected,
@@ -61,10 +64,11 @@ export const Jukebox220 = () => {
     ? songs_sorted.findIndex((song) => song.name === song_selected.name) + 1
     : 0;
 
-  const formatTime = (seconds) => {
+  const formatTime = (deciseconds) => {
+    const seconds = Math.floor(deciseconds / 10);
     const minutes = Math.floor(seconds / 60);
     const remainingSeconds = seconds % 60;
-    const formattedTime = `${String(minutes).padStart(2, '0')}:${String(remainingSeconds).padStart(2, '0')}`;
+    const formattedTime = `${minutes}:${remainingSeconds > 9 ? remainingSeconds : '0' + remainingSeconds}`;
     return formattedTime;
   };
 
@@ -73,7 +77,7 @@ export const Jukebox220 = () => {
       {active
         ? looping
           ? '∞'
-          : formatTime(Math.round((worldTime - startTime) / 10))
+          : formatTime(Math.round(worldTime - startTime))
         : looping
           ? '∞'
           : formatTime(song_selected?.length)}{' '}
@@ -82,20 +86,26 @@ export const Jukebox220 = () => {
   );
 
   return (
-    <Window width={350} height={435} title="Музыкальный автомат">
+    <Window
+      width={350}
+      height={uploadTrack ? 582 : 435}
+      title="Музыкальный автомат"
+    >
       <Window.Content>
         <Stack fill vertical>
           <Stack>
             <Stack.Item grow textAlign="center">
               <Section fill title="Проигрыватель">
                 <Stack fill vertical>
-                  <Stack.Item bold maxWidth="240px">
-                    {song_selected.name.length > MAX_NAME_LENGTH ? (
-                      <marquee>{song_selected?.name}</marquee>
-                    ) : (
-                      song_selected?.name
-                    )}
-                  </Stack.Item>
+                  {song_selected && (
+                    <Stack.Item bold maxWidth="240px">
+                      {song_selected.name.length > MAX_NAME_LENGTH ? (
+                        <marquee>{song_selected.name}</marquee>
+                      ) : (
+                        song_selected.name
+                      )}
+                    </Stack.Item>
+                  )}
                   <Stack fill mt={1.5}>
                     <Stack.Item grow basis="0">
                       <Button
@@ -119,13 +129,16 @@ export const Jukebox220 = () => {
                         Повтор
                       </Button.Checkbox>
                     </Stack.Item>
-                    <Stack.Item>
-                      <Button.Checkbox
-                        icon={'download'}
-                        checked={uploadTrack}
-                        onClick={() => setUploadTrack(!uploadTrack)}
-                      />
-                    </Stack.Item>
+                    {!!admin && (
+                      <Stack.Item>
+                        <Button.Checkbox
+                          icon={'download'}
+                          tooltip="Загрузить новый трек"
+                          checked={uploadTrack}
+                          onClick={() => setUploadTrack(!uploadTrack)}
+                        />
+                      </Stack.Item>
+                    )}
                   </Stack>
                   <Stack.Item>
                     <ProgressBar
@@ -140,9 +153,9 @@ export const Jukebox220 = () => {
               </Section>
             </Stack.Item>
             <Stack.Item>
-              <Section>
+              <Section fill>
                 {active ? <OnMusic /> : null}
-                <Stack fill mb={1.5}>
+                <Stack mb={1.5}>
                   <Stack.Item grow m={0}>
                     <Button
                       color="transparent"
@@ -177,9 +190,9 @@ export const Jukebox220 = () => {
                     />
                   </Stack.Item>
                 </Stack>
-                <Stack.Item textAlign="center" textColor="label">
+                <Stack.Item pr={1} pl={1} textAlign="center" textColor="label">
                   <Knob
-                    size={2}
+                    size={1.75}
                     value={volume}
                     unit="%"
                     minValue={0}
@@ -192,63 +205,97 @@ export const Jukebox220 = () => {
                       })
                     }
                   />
-                  Volume
+                  <Box mt={0.75}>Громкость</Box>
                 </Stack.Item>
               </Section>
             </Stack.Item>
           </Stack>
           <Stack.Item grow textAlign="center">
-            {uploadTrack ? (
-              <Section fill scrollable title="Загрузить трек">
-                <Stack fill vertical>
-                  <Stack.Item grow>
+            <Section
+              fill
+              scrollable
+              title="Доступные треки"
+              buttons={
+                <Button
+                  bold
+                  icon="random"
+                  color="transparent"
+                  tooltip="Выбрать случайный трек"
+                  tooltipPosition="top-end"
+                  onClick={() => {
+                    const randomIndex = Math.floor(Math.random() * totalTracks);
+                    const randomTrack = songs_sorted[randomIndex];
+                    act('select_track', { track: randomTrack.name });
+                  }}
+                >
+                  {selectedTrackNumber}/{totalTracks}
+                </Button>
+              }
+            >
+              {songs_sorted.map((song) => (
+                <Stack.Item key={song.name} mb={0.5} textAlign="left">
+                  <Button
+                    fluid
+                    selected={song_selected?.name === song.name}
+                    color="transparent"
+                    onClick={() => {
+                      !active && act('select_track', { track: song.name });
+                    }}
+                  >
+                    <Stack fill>
+                      <Stack.Item grow>{song.name}</Stack.Item>
+                      <Stack.Item>{formatTime(song.length)}</Stack.Item>
+                    </Stack>
+                  </Button>
+                </Stack.Item>
+              ))}
+            </Section>
+          </Stack.Item>
+          {uploadTrack && (
+            <Stack.Item>
+              <Section fill title="Загрузить трек">
+                <Stack fill vertical textAlign="center">
+                  <Stack.Item>
                     <LabeledList>
                       <LabeledList.Item label="Название">
                         <Input
-                          fluid
+                          width="100%"
+                          placeholder="Название трека..."
                           value={trackName}
                           onChange={(e, value) => setTrackName(value)}
                         />
                       </LabeledList.Item>
-                      <LabeledList.Item label="Продолжительность">
-                        <Input
-                          fluid
+                      <LabeledList.Item label="Продолжительность (сек)">
+                        <NumberInput
+                          width="100%"
+                          step={10}
+                          minValue={0}
                           value={trackLength}
-                          onChange={(e, value) => setTrackLength(value)}
+                          maxValue={600}
+                          onChange={(value) => setTrackLength(value)}
                         />
                       </LabeledList.Item>
                       <LabeledList.Item label="BPS">
-                        <Input
-                          fluid
+                        <NumberInput
+                          width="100%"
+                          step={10}
+                          minValue={0}
                           value={trackBeat}
-                          onChange={(e, value) => setTrackBeat(value)}
+                          maxValue={100}
+                          onChange={(value) => setTrackBeat(value)}
                         />
                       </LabeledList.Item>
-                      {/*
-                      <LabeledList.Item label="Файл">
-                        <Button
-                          fluid
-                          icon="upload"
-                          onClick={() => act('upload_track')}
-                        >
-                          Загрузить файл...
-                        </Button>
-                      </LabeledList.Item>
-                      */}
                     </LabeledList>
-                  </Stack.Item>
-                  <Stack.Item>
-                    {trackName} {trackLength} {trackBeat}
                   </Stack.Item>
                   <Stack.Item>
                     <Button
                       fluid
-                      icon="check"
+                      icon="upload"
                       disabled={!trackName || !trackLength || !trackBeat}
                       onClick={() => {
                         act('add_song', {
                           track_name: trackName,
-                          track_length: trackLength,
+                          track_length: trackLength * 10,
                           track_beat: trackBeat,
                         }),
                           setUploadTrack(false);
@@ -259,50 +306,8 @@ export const Jukebox220 = () => {
                   </Stack.Item>
                 </Stack>
               </Section>
-            ) : (
-              <Section
-                fill
-                scrollable
-                title="Доступные треки"
-                buttons={
-                  <Button
-                    bold
-                    icon="random"
-                    color="transparent"
-                    tooltip="Выбрать случайный трек"
-                    tooltipPosition="top-end"
-                    onClick={() => {
-                      const randomIndex = Math.floor(
-                        Math.random() * totalTracks,
-                      );
-                      const randomTrack = songs_sorted[randomIndex];
-                      act('select_track', { track: randomTrack.name });
-                    }}
-                  >
-                    {selectedTrackNumber}/{totalTracks}
-                  </Button>
-                }
-              >
-                {songs_sorted.map((song) => (
-                  <Stack.Item key={song.name} mb={0.5} textAlign="left">
-                    <Button
-                      fluid
-                      selected={song_selected?.name === song.name}
-                      color="translucent"
-                      onClick={() => {
-                        act('select_track', { track: song.name });
-                      }}
-                    >
-                      <Stack fill>
-                        <Stack.Item grow>{song.name}</Stack.Item>
-                        <Stack.Item>{song.length}</Stack.Item>
-                      </Stack>
-                    </Button>
-                  </Stack.Item>
-                ))}
-              </Section>
-            )}
-          </Stack.Item>
+            </Stack.Item>
+          )}
         </Stack>
       </Window.Content>
     </Window>

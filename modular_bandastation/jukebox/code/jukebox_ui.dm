@@ -5,40 +5,31 @@
 	var/endTime = 0
 
 /datum/jukebox/start_music()
-	for(var/mob/nearby in hearers(sound_range, parent))
-		register_listener(nearby)
-
+	. = ..()
 	startTime = world.time
 	for(var/song_name in songs)
 		var/datum/track/one_song = songs[song_name]
 		endTime = startTime + one_song.song_length
 
-/datum/jukebox/get_ui_data()
-	var/list/data = list()
-	var/list/songs_data = list()
-	for(var/song_name in songs)
-		var/datum/track/one_song = songs[song_name]
-		UNTYPED_LIST_ADD(songs_data, list( \
-			"name" = song_name, \
-			"length" = DisplayTimeText(one_song.song_length), \
-			"beat" = one_song.song_beat, \
-		))
-
-	data["active"] = !!active_song_sound
-	data["songs"] = songs_data
-	data["track_selected"] = selection?.song_name
-	data["looping"] = sound_loops
-	data["volume"] = volume
-	data["startTime"] = startTime
-	data["endTime"] = endTime
-	data["worldTime"] = world.time
-	return data
+/datum/jukebox/unlisten_all()
+	. = ..()
+	startTime = 0
+	endTime = 0
 
 /obj/machinery/jukebox/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
 		ui = new(user, src, "Jukebox220", name)
 		ui.open()
+
+/obj/machinery/jukebox/ui_data(mob/user)
+	var/list/data = ..()
+	music_player.get_ui_data(data)
+	data["admin"] = check_rights_for(user.client, R_ADMIN)
+	data["startTime"] = music_player.startTime
+	data["endTime"] = music_player.endTime
+	data["worldTime"] = world.time
+	return data
 
 /obj/machinery/jukebox/ui_act(action, list/params)
 	. = ..()
@@ -65,5 +56,5 @@
 		new_track.song_path = file(track_file)
 
 		music_player.songs[track_name] = new_track
-		visible_message("Загружен новый трек.")
+		say("Загружен новый трек.")
 		return TRUE
