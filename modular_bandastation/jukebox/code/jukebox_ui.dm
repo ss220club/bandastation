@@ -41,7 +41,7 @@
 			to_chat(usr, span_warning("Ошибка: Имеются не заполненные поля."))
 			return
 
-		var/track_file = input(usr, "Загрузите файл, поддерживается только формат .ogg", "Загрузка файла") as null|file
+		var/track_file = input(usr, "Загрузите файл весом не более 5мб, поддерживается только формат .ogg", "Загрузка файла") as null|file
 		if(isnull(track_file))
 			to_chat(usr, span_warning("Ошибка: Необходимо выбрать файл."))
 			return

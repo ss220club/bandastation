@@ -278,7 +278,7 @@ export const Jukebox220 = () => {
                       <LabeledList.Item label="Продолжительность (сек)">
                         <NumberInput
                           width="100%"
-                          step={10}
+                          step={1}
                           minValue={0}
                           value={trackLength}
                           maxValue={600}
@@ -288,7 +288,7 @@ export const Jukebox220 = () => {
                       <LabeledList.Item label="BPS">
                         <NumberInput
                           width="100%"
-                          step={10}
+                          step={1}
                           minValue={0}
                           value={trackBeat}
                           maxValue={100}
@@ -308,7 +308,7 @@ export const Jukebox220 = () => {
                           track_length: trackLength * 10,
                           track_beat: trackBeat,
                         }),
-                          setUploadTrack(false);
+                          setTrackName('');
                       }}
                     >
                       Загрузить новый трек
