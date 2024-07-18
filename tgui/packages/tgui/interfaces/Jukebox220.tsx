@@ -91,7 +91,7 @@ export const Jukebox220 = () => {
   return (
     <Window
       width={350}
-      height={uploadTrack ? 582 : 435}
+      height={uploadTrack ? 585 : 435}
       title="Музыкальный автомат"
     >
       <Window.Content>
