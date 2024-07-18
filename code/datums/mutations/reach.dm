@@ -41,11 +41,11 @@
 
 /datum/mutation/human/elastic_arms
 	name = "Elastic Arms"
-	desc = "Subject's arms have become elastic, allowing them to stretch up to a meter away. However, this elasticity makes it difficult to wear gloves, handle complex tasks, or grab large objects."
+	desc = "Руки субъекта становятся эластичными, позволяя им растягиваться до метра. Однако, такая эластичность затрудняет ношение перчаток, выполнение сложных задач и взятие больших объектов."
 	quality = POSITIVE
 	instability = POSITIVE_INSTABILITY_MAJOR
-	text_gain_indication = span_warning("You feel armstrong!")
-	text_lose_indication = span_warning("Your arms stop feeling so saggy all the time.")
+	text_gain_indication = span_warning("Твои руки становятся, как у моряка Попая!")
+	text_lose_indication = span_warning("Твои руки перестают быть такими отвисшими всё время.")
 	difficulty = 32
 	mutation_traits = list(TRAIT_CHUNKYFINGERS, TRAIT_NO_TWOHANDING)
 

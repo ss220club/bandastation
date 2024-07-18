@@ -42,10 +42,10 @@
 
 /datum/mutation/human/heckacious
 	name = "heckacious larincks"
-	desc = "duge what is WISH your words man..........."
+	desc = "чел, что такое ЖЕЛАНИЕ, твои слова чувак..........."
 	quality = MINOR_NEGATIVE
-	text_gain_indication = span_sans("aw SHIT man. your throat feels like FUCKASS.")
-	text_lose_indication = span_notice("The demonic entity possessing your larynx has finally released its grasp.")
+	text_gain_indication = span_sans("ЧЁРТ, чувак. твоё горло как ДЕРЬМО.")
+	text_lose_indication = span_notice("Демоническое существо, овладевшее твоей гортанью, наконец-то ослабило свою хватку.")
 	locked = TRUE
 
 /datum/mutation/human/heckacious/on_acquiring(mob/living/carbon/human/owner)
