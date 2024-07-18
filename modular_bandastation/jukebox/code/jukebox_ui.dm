@@ -76,7 +76,7 @@
 		new_track.song_path = file(track_file)
 
 		music_player.songs[track_name] = new_track
-		say("Загружен новый трек - [track_name].")
+		say("Загружен новый трек: «[track_name]».")
 		return TRUE
 
 	if(action == "save_song")
