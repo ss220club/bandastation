@@ -41,7 +41,8 @@ export const Jukebox220 = () => {
   const { act, data } = useBackend<Data>();
   const [uploadTrack, setUploadTrack] = useState(false);
   const [trackName, setTrackName] = useState('');
-  const [trackLength, setTrackLength] = useState(220);
+  const [trackMinutes, setTrackMinutes] = useState(2);
+  const [trackSeconds, setTrackSeconds] = useState(20);
   const [trackBeat, setTrackBeat] = useState(10);
   const {
     admin,
@@ -277,15 +278,34 @@ export const Jukebox220 = () => {
                           onChange={(e, value) => setTrackName(value)}
                         />
                       </LabeledList.Item>
-                      <LabeledList.Item label="Продолжительность (сек)">
-                        <NumberInput
-                          width="100%"
-                          step={1}
-                          minValue={0}
-                          value={trackLength}
-                          maxValue={600}
-                          onChange={(value) => setTrackLength(value)}
-                        />
+                      <LabeledList.Item label="Продолжительность">
+                        <Stack fill align="center">
+                          <Stack.Item grow>
+                            <NumberInput
+                              width="100%"
+                              step={1}
+                              unit="мин"
+                              minValue={0}
+                              value={trackMinutes}
+                              maxValue={10}
+                              stepPixelSize={5}
+                              onChange={(value) => setTrackMinutes(value)}
+                            />
+                          </Stack.Item>
+                          <Stack.Item textAlign="center">:</Stack.Item>
+                          <Stack.Item grow>
+                            <NumberInput
+                              width="100%"
+                              step={1}
+                              unit="сек"
+                              minValue={1}
+                              value={trackSeconds}
+                              maxValue={59}
+                              stepPixelSize={3}
+                              onChange={(value) => setTrackSeconds(value)}
+                            />
+                          </Stack.Item>
+                        </Stack>
                       </LabeledList.Item>
                       <LabeledList.Item label="BPS">
                         <NumberInput
@@ -305,11 +325,16 @@ export const Jukebox220 = () => {
                         <Button
                           fluid
                           icon="upload"
-                          disabled={!trackName || !trackLength || !trackBeat}
+                          disabled={
+                            !trackName ||
+                            !(trackMinutes || trackSeconds) ||
+                            !trackBeat
+                          }
                           onClick={() => {
                             act('add_song', {
                               track_name: trackName,
-                              track_length: trackLength * 10,
+                              track_length:
+                                trackMinutes * 600 + trackSeconds * 10,
                               track_beat: trackBeat,
                             });
                             setTrackName('');
