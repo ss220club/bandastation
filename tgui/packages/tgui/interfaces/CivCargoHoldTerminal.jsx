@@ -36,7 +36,9 @@ export const CivCargoHoldTerminal = (props) => {
                   />
                   <Button
                     icon={sending ? 'times' : 'arrow-up'}
-                    tooltip={sending ? 'Остановить отправку' : 'Отправить товары'}
+                    tooltip={
+                      sending ? 'Остановить отправку' : 'Отправить товары'
+                    }
                     selected={sending}
                     disabled={!pad || !id_inserted}
                     onClick={() => act(sending ? 'stop' : 'send')}
