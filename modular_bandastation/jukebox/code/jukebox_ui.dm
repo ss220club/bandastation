@@ -39,6 +39,7 @@
 	var/mob/user = usr
 	if(action == "add_song")
 		if(!check_rights_for(user.client, R_ADMIN))
+			message_admins("[key_name(user)] попытался добавить трек, не имея прав администратора!")
 			log_admin("[key_name(user)] попытался добавить трек, не имея прав администратора!")
 			return
 		var/track_name = params["track_name"]
@@ -65,6 +66,7 @@
 				to_chat(user, span_warning("По какой-то причине, трек не был сохранён, попробуйте ещё раз. <br> Входной файл: [track_file] <br> Выходной файл: [track_to_config].ogg"))
 				return
 			to_chat(user, span_notice("Ваш трек успешно загружен на сервер под следующим названием: [track_to_config].ogg"))
+			message_admins("[key_name(user)] загрузил трек [track_to_config].ogg с изначальным названием [track_file] на сервер")
 			log_admin("[key_name(user)] загрузил трек [track_to_config].ogg с изначальным названием [track_file] на сервер")
 
 		var/datum/track/new_track = new()
@@ -79,7 +81,8 @@
 
 	if(action == "save_song")
 		if(!check_rights_for(user.client, R_ADMIN))
-			log_admin("[key_name(user)] включить сохранение трека, не имея прав администратора!")
+			message_admins("[key_name(user)] попытался включить сохранение трека, не имея прав администратора!")
+			log_admin("[key_name(user)] попытался включить сохранение трека, не имея прав администратора!")
 			return
 		if(music_player.save_track)
 			music_player.save_track = !music_player.save_track
