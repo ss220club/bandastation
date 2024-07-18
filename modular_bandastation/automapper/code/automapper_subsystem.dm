@@ -17,7 +17,7 @@ SUBSYSTEM_DEF(automapper)
 	flags = SS_NO_FIRE
 	init_order = INIT_ORDER_AUTOMAPPER
 	/// The path to our TOML file
-	var/config_file = "modular_bandastation/automapper/automapper_config.toml"
+	var/config_file = "modular_bandastation/automapper/automapper_cfgs/automapper_config.toml"
 	/// Our loaded TOML file
 	var/loaded_config
 	/// Our preloaded map templates
