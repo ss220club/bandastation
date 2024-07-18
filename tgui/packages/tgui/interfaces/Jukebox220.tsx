@@ -279,7 +279,7 @@ export const Jukebox220 = () => {
                         />
                       </LabeledList.Item>
                       <LabeledList.Item label="Продолжительность">
-                        <Stack fill align="center">
+                        <Stack>
                           <Stack.Item grow>
                             <NumberInput
                               width="100%"
