@@ -61,7 +61,7 @@ export const Jukebox220 = () => {
     (song) => song.name === track_selected,
   );
 
-  const trackTime = song_selected?.length || 0;
+  const trackDuration = song_selected?.length || 0;
   const totalTracks = songs_sorted.length;
   const selectedTrackNumber = song_selected
     ? songs_sorted.findIndex((song) => song.name === song_selected.name) + 1
@@ -79,7 +79,7 @@ export const Jukebox220 = () => {
     <Box textAlign="center">
       {looping
         ? '∞ / ∞'
-        : `${active ? formatTime(Math.round(worldTime - startTime)) : formatTime(0)} / ${formatTime(trackTime)}`}
+        : `${active ? formatTime(Math.round(worldTime - startTime)) : formatTime(0)} / ${formatTime(trackDuration)}`}
     </Box>
   );
 
@@ -143,12 +143,12 @@ export const Jukebox220 = () => {
                       minValue={0}
                       value={
                         looping
-                          ? trackTime
+                          ? trackDuration
                           : active
                             ? Math.round(worldTime - startTime)
                             : 0
                       }
-                      maxValue={trackTime}
+                      maxValue={trackDuration}
                     >
                       {trackTimer}
                     </ProgressBar>
