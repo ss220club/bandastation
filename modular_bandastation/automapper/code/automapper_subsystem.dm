@@ -5,7 +5,7 @@
  *
  * It does two things: Loads maps from an automapper config and loads area spawn datums for simpler items.
  *
- * The benefits? We no longer need to have _skyrat maps and can have a more unique feeling map experience as each time, it can be different.
+ * The benefits? We no longer need to have _nova maps and can have a more unique feeling map experience as each time, it can be different.
  *
  * Please note, this uses some black magic to interject the templates mid world load to prevent mass runtimes down the line.
  *
@@ -17,7 +17,7 @@ SUBSYSTEM_DEF(automapper)
 	flags = SS_NO_FIRE
 	init_order = INIT_ORDER_AUTOMAPPER
 	/// The path to our TOML file
-	var/config_file = "modular_bandastation/automapper/automapper_config.toml"
+	var/config_file = "_maps/nova/automapper/automapper_config.toml"
 	/// Our loaded TOML file
 	var/loaded_config
 	/// Our preloaded map templates
