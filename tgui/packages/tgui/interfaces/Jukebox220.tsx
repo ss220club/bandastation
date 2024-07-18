@@ -57,7 +57,7 @@ export const Jukebox220 = () => {
     worldTime,
   } = data;
 
-  const MAX_NAME_LENGTH = 30;
+  const MAX_NAME_LENGTH = 35;
   const songs_sorted: Song[] = sortBy(songs, (song: Song) => song.name);
   const song_selected: Song | undefined = songs.find(
     (song) => song.name === track_selected,
@@ -241,6 +241,10 @@ export const Jukebox220 = () => {
                   <Stack.Item key={song.name} mb={0.5} textAlign="left">
                     <Button
                       fluid
+                      tooltip={
+                        song.name.length > MAX_NAME_LENGTH ? song.name : null
+                      }
+                      tooltipPosition="bottom"
                       selected={selectedTrack}
                       color="transparent"
                       onClick={() => {
@@ -255,7 +259,13 @@ export const Jukebox220 = () => {
                       }}
                     >
                       <Stack fill>
-                        <Stack.Item grow>{song.name}</Stack.Item>
+                        <Stack.Item
+                          grow
+                          overflow="hidden"
+                          style={{ textOverflow: 'ellipsis' }}
+                        >
+                          {song.name}
+                        </Stack.Item>
                         <Stack.Item>{formatTime(song.length)}</Stack.Item>
                       </Stack>
                     </Button>
