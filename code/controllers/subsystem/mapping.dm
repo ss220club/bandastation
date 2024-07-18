@@ -372,6 +372,7 @@ Used by the AI doomsday and the self-destruct nuke.
 #define INIT_ANNOUNCE(X) to_chat(world, span_boldannounce("[X]")); log_world(X)
 /datum/controller/subsystem/mapping/proc/LoadGroup(list/errorList, name, path, files, list/traits, list/default_traits, silent = FALSE)
 	. = list()
+	var/start_time = REALTIMEOFDAY
 
 	if (!islist(files))  // handle single-level maps
 		files = list(files)
@@ -422,6 +423,8 @@ Used by the AI doomsday and the self-destruct nuke.
 	if(!LAZYLEN(errorList))
 		SSautomapper.load_templates_from_cache(files)
 	// NOVA EDIT ADDITION END
+	if(!silent)
+		INIT_ANNOUNCE("Loaded [name] in [(REALTIMEOFDAY - start_time)/10]s!") //NOVA EDIT CHANGE
 	return parsed_maps
 
 /datum/controller/subsystem/mapping/proc/loadWorld()
@@ -433,6 +436,7 @@ Used by the AI doomsday and the self-destruct nuke.
 
 	// load the station
 	station_start = world.maxz + 1
+	INIT_ANNOUNCE("Loading [config.map_name]...") // NOVA EDIT CHANGE
 	LoadGroup(FailedZs, "Station", config.map_path, config.map_file, config.traits, ZTRAITS_STATION)
 
 	if(SSdbcore.Connect())

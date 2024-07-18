@@ -68,6 +68,7 @@ SUBSYSTEM_DEF(automapper)
 /**
  * Assuming we have preloaded our templates, this will load them from the cache.
  */
+#define INIT_ANNOUNCE(X) to_chat(world, span_boldannounce("[X]")); log_world(X)
 /datum/controller/subsystem/automapper/proc/load_templates_from_cache(map_names)
 	if(!islist(map_names))
 		map_names = list(map_names)
@@ -79,7 +80,9 @@ SUBSYSTEM_DEF(automapper)
 		else if(!(iterating_template.required_map in map_names))
 			continue
 		if(iterating_template.load(iterating_template.load_turf, FALSE))
+			INIT_ANNOUNCE("Loaded [iterating_template.name] at [iterating_template.load_turf.x], [iterating_template.load_turf.y], [iterating_template.load_turf.z]!")
 			log_world("AUTOMAPPER: Successfully loaded map template [iterating_template.name] at [iterating_template.load_turf.x], [iterating_template.load_turf.y], [iterating_template.load_turf.z]!")
+#undef INIT_ANNOUNCE
 
 /**
  * CentCom atoms aren't initialized but already exist, so must be properly initialized and then qdel'd.
