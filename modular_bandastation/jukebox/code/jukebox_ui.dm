@@ -36,7 +36,10 @@
 
 /obj/machinery/jukebox/ui_act(action, list/params)
 	. = ..()
+	var/mob/user = usr
 	if(action == "add_song")
+		if(!check_rights_for(user.client, R_ADMIN))
+			return
 		var/track_name = params["track_name"]
 		var/track_length = params["track_length"]
 		var/track_beat = params["track_beat"]
@@ -74,6 +77,8 @@
 		return TRUE
 
 	if(action == "save_song")
+		if(!check_rights_for(user.client, R_ADMIN))
+			return
 		if(music_player.save_track)
 			music_player.save_track = !music_player.save_track
 			return
