@@ -1,22 +1,16 @@
 /datum/jukebox
 	/// Music start time.
 	var/startTime = 0
-	/// Music end time.
-	var/endTime = 0
 	/// Whether the uploaded track will be saved on the server.
 	var/save_track = FALSE
 
 /datum/jukebox/start_music()
 	. = ..()
 	startTime = world.time
-	for(var/song_name in songs)
-		var/datum/track/one_song = songs[song_name]
-		endTime = startTime + one_song.song_length
 
 /datum/jukebox/unlisten_all()
 	. = ..()
 	startTime = 0
-	endTime = 0
 
 /obj/machinery/jukebox/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
@@ -30,7 +24,6 @@
 	data["admin"] = check_rights_for(user.client, R_ADMIN)
 	data["saveTrack"] = music_player.save_track
 	data["startTime"] = music_player.startTime
-	data["endTime"] = music_player.endTime
 	data["worldTime"] = world.time
 	return data
 

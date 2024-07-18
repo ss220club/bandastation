@@ -31,7 +31,6 @@ type Data = {
   saveTrack: BooleanLike;
   volume: number;
   startTime: number;
-  endTime: number;
   worldTime: number;
   track_selected: string | null;
   songs: Song[];
@@ -53,7 +52,6 @@ export const Jukebox220 = () => {
     volume,
     songs,
     startTime,
-    endTime,
     worldTime,
   } = data;
 
@@ -62,6 +60,8 @@ export const Jukebox220 = () => {
   const song_selected: Song | undefined = songs.find(
     (song) => song.name === track_selected,
   );
+
+  const trackTime = song_selected?.length || 0;
   const totalTracks = songs_sorted.length;
   const selectedTrackNumber = song_selected
     ? songs_sorted.findIndex((song) => song.name === song_selected.name) + 1
@@ -77,14 +77,9 @@ export const Jukebox220 = () => {
 
   const trackTimer = (
     <Box textAlign="center">
-      {active
-        ? looping
-          ? '∞'
-          : formatTime(Math.round(worldTime - startTime))
-        : looping
-          ? '∞'
-          : formatTime(song_selected?.length)}{' '}
-      / {looping ? '∞' : formatTime(song_selected?.length)}
+      {looping
+        ? '∞ / ∞'
+        : `${active ? formatTime(Math.round(worldTime - startTime)) : formatTime(0)} / ${formatTime(trackTime)}`}
     </Box>
   );
 
@@ -145,9 +140,15 @@ export const Jukebox220 = () => {
                   </Stack>
                   <Stack.Item>
                     <ProgressBar
-                      minValue={startTime}
-                      value={!looping ? worldTime : endTime}
-                      maxValue={endTime}
+                      minValue={0}
+                      value={
+                        looping
+                          ? trackTime
+                          : active
+                            ? Math.round(worldTime - startTime)
+                            : 0
+                      }
+                      maxValue={trackTime}
                     >
                       {trackTimer}
                     </ProgressBar>
