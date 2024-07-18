@@ -92,11 +92,11 @@ SUBSYSTEM_DEF(area_spawn)
 
 	// Get highest priority items
 	for(var/list/zlevel_turfs as anything in area.get_zlevel_turf_lists())
-		for(var/turf/area_turf as anything in zlevel_turfs)
+		for(var/turf/iterating_turf as anything in zlevel_turfs)
 			// Only retain turfs of the highest priority
-			var/priority = process_turf(area_turf, mode)
+			var/priority = process_turf(iterating_turf, mode)
 			if(priority > 0)
-				LAZYADDASSOC(turf_list, "[priority]", list(area_turf))
+				LAZYADDASSOC(turf_list, "[priority]", list(iterating_turf))
 
 	// Sort the priorities descending
 	return sortTim(turf_list, GLOBAL_PROC_REF(cmp_num_string_asc))
@@ -260,10 +260,10 @@ SUBSYSTEM_DEF(area_spawn)
 	var/desired_atom
 	/// The amount we want to spawn
 	var/amount_to_spawn = 1
-	/// See code/__DEFINES/~skyrat_defines/automapper.dm
+	/// See code/__DEFINES/~nova_defines/automapper.dm
 	var/mode = AREA_SPAWN_MODE_OPEN
 	/// Map blacklist, this is used to determine what maps we should not spawn on.
-	var/list/blacklisted_stations = list("Void Raptor", "Runtime Station", "MultiZ Debug", "Gateway Test", "Blueshift")
+	var/list/blacklisted_stations = list("Void Raptor", "Ouroboros", "Runtime Station", "MultiZ Debug", "Gateway Test", "Blueshift", "SerenityStation")
 	/// If failing to find a suitable area is OK, then this should be TRUE or CI will fail.
 	/// Should probably be true if the target_areas are random, such as ruins.
 	var/optional = FALSE
@@ -280,7 +280,7 @@ SUBSYSTEM_DEF(area_spawn)
 
 	for(var/area_type in target_areas)
 		var/area/found_area = GLOB.areas_by_type[area_type]
-		if(!found_area)
+		if(isnull(found_area))
 			continue
 		available_turfs = SSarea_spawn.get_turf_candidates(found_area, mode)
 		if(LAZYLEN(available_turfs))
@@ -334,16 +334,16 @@ SUBSYSTEM_DEF(area_spawn)
 		if(!found_area)
 			continue
 
-		for (var/list/zlevel_turfs as anything in found_area.get_zlevel_turf_lists())
-			for(var/turf/area_turf as anything in zlevel_turfs)
+		for(var/list/zlevel_turfs as anything in found_area.get_zlevel_turf_lists())
+			for(var/turf/candidate_turf as anything in zlevel_turfs)
 				// Don't spawn if there's already a desired_atom here.
-				if(is_type_on_turf(area_turf, desired_atom))
+				if(is_type_on_turf(candidate_turf, desired_atom))
 					continue
 
 				for(var/over_atom_type in over_atoms)
 					// Spawn on the first one we find in the turf and stop.
-					if(is_type_on_turf(area_turf, over_atom_type))
-						new desired_atom(area_turf)
+					if(is_type_on_turf(candidate_turf, over_atom_type))
+						new desired_atom(candidate_turf)
 						// Break the over_atom_type loop.
 						break
 
@@ -359,8 +359,10 @@ SUBSYSTEM_DEF(area_spawn)
  * Show overlay over area of priorities. Wall priority over open priority.
  */
 ADMIN_VERB(test_area_spawner, R_DEBUG, "Test Area Spawner", "Show area spawner placement candidates as an overlay.", ADMIN_CATEGORY_DEBUG, area/area)
-	for(var/obj/effect/turf_test/old_test in area)
-		qdel(old_test)
+	for(var/list/zlevel_turfs as anything in area.get_zlevel_turf_lists())
+		for(var/turf/area_turf as anything in zlevel_turfs)
+			for(var/obj/effect/turf_test/old_test in area_turf)
+				qdel(old_test)
 
 	SSarea_spawn.clear_cache()
 	for(var/mode in 0 to AREA_SPAWN_MODE_COUNT - 1)
