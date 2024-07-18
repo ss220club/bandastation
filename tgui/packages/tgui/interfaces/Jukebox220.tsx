@@ -28,6 +28,7 @@ type Data = {
   admin: BooleanLike;
   active: BooleanLike;
   looping: BooleanLike;
+  saveTrack: BooleanLike;
   volume: number;
   startTime: number;
   endTime: number;
@@ -46,6 +47,7 @@ export const Jukebox220 = () => {
     admin,
     active,
     looping,
+    saveTrack,
     track_selected,
     volume,
     songs,
@@ -298,21 +300,33 @@ export const Jukebox220 = () => {
                     </LabeledList>
                   </Stack.Item>
                   <Stack.Item>
-                    <Button
-                      fluid
-                      icon="upload"
-                      disabled={!trackName || !trackLength || !trackBeat}
-                      onClick={() => {
-                        act('add_song', {
-                          track_name: trackName,
-                          track_length: trackLength * 10,
-                          track_beat: trackBeat,
-                        });
-                        setTrackName('');
-                      }}
-                    >
-                      Загрузить новый трек
-                    </Button>
+                    <Stack>
+                      <Stack.Item grow>
+                        <Button
+                          fluid
+                          icon="upload"
+                          disabled={!trackName || !trackLength || !trackBeat}
+                          onClick={() => {
+                            act('add_song', {
+                              track_name: trackName,
+                              track_length: trackLength * 10,
+                              track_beat: trackBeat,
+                            });
+                            setTrackName('');
+                          }}
+                        >
+                          Загрузить новый трек
+                        </Button>
+                      </Stack.Item>
+                      <Stack.Item>
+                        <Button
+                          icon="floppy-disk"
+                          selected={saveTrack}
+                          tooltip="Сохранить загружаемый трек на сервере"
+                          onClick={() => act('save_song')}
+                        />
+                      </Stack.Item>
+                    </Stack>
                   </Stack.Item>
                 </Stack>
               </Section>

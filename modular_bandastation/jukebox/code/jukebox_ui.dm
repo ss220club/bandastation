@@ -3,6 +3,8 @@
 	var/startTime = 0
 	/// Music end time.
 	var/endTime = 0
+	/// Whether the uploaded track will be saved on the server.
+	var/save_track = FALSE
 
 /datum/jukebox/start_music()
 	. = ..()
@@ -26,6 +28,7 @@
 	var/list/data = ..()
 	music_player.get_ui_data(data)
 	data["admin"] = check_rights_for(user.client, R_ADMIN)
+	data["saveTrack"] = music_player.save_track
 	data["startTime"] = music_player.startTime
 	data["endTime"] = music_player.endTime
 	data["worldTime"] = world.time
@@ -48,6 +51,17 @@
 		if(copytext("[track_file]", -4) != ".ogg")
 			to_chat(usr, span_warning("Формат файла должен быть '.ogg': [track_file]"))
 			return
+		if(music_player.save_track)
+			if(tgui_alert(usr, "ВНИМАНИЕ! Включено сохранение трека на сервере. Нажимая «Да» вы подтверждаете, что загружаемый трек не нарушает никаких авторских прав. Вы уверены, что хотите продолжить?", "Сохранение трека", list("Да", "Нет")) != "Да")
+				music_player.save_track = !music_player.save_track
+				to_chat(usr, span_warning("Сохранение трека было отключено."))
+				return
+			var/track_to_config = "[track_name]" + "+" + "[track_length]" + "+" + "[track_beat]"
+			if(!fcopy(track_file, "[global.config.directory]/jukebox_music/sounds/[track_to_config].ogg"))
+				to_chat(usr, span_warning("По какой-то причине, трек не был сохранён, попробуйте ещё раз. <br> Входной файл: [track_file] <br> Выходной файл: [track_to_config].ogg"))
+				return
+			to_chat(usr, span_notice("Ваш трек успешно загружен на сервер под следующим названием: [track_to_config].ogg"))
+			message_admins("[usr.key] загрузил трек [track_to_config].ogg с изначальным названием [track_file] на сервер")
 
 		var/datum/track/new_track = new()
 		new_track.song_name = track_name
@@ -58,3 +72,13 @@
 		music_player.songs[track_name] = new_track
 		say("Загружен новый трек.")
 		return TRUE
+
+	if(action == "save_song")
+		if(music_player.save_track)
+			music_player.save_track = !music_player.save_track
+			return
+		if(tgui_alert(usr, "Вы уверены, что хотите сохранить трек на сервере?", "Сохранение трека", list("Да", "Нет")) != "Да")
+			return
+		if(tgui_alert(usr, "Внимание! Сохранённый трек сможет удалить ТОЛЬКО хост! Подойдите максимально ответственно к заполнению полей!", "Сохранение трека", list("Ок", "Я передумал")) != "Ок")
+			return
+		music_player.save_track = !music_player.save_track
