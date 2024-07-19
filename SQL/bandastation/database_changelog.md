@@ -2,17 +2,31 @@ Any time you make a change to the schema files, remember to increment the databa
 
 Make sure to also update `DB_MAJOR_VERSION_220` and `DB_MINOR_VERSION_220`, which can be found in `code/modular_bandastation/_defines220/code/defines/subsystems.dm`.
 
-The latest database version is 1.1; The query to update the schema revision table is:
+The latest database version is 1.2; The query to update the schema revision table is:
 
 ```sql
-INSERT INTO `schema_revision_220` (`major`, `minor`) VALUES (1, 1);
+INSERT INTO `schema_revision_220` (`major`, `minor`) VALUES (1, 2);
 ```
 or
 
 ```sql
-INSERT INTO `SS13_schema_revision_220` (`major`, `minor`) VALUES (1, 1);
+INSERT INTO `SS13_schema_revision_220` (`major`, `minor`) VALUES (1, 2);
 ```
 
+-----------------------------------------------------
+Version 1.2, 17 July 2024, by larentoun
+Created the tables: player220
+
+```sql
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `player220` (
+  `ckey` varchar(32) NOT NULL,
+  `tier` int(2),
+  PRIMARY KEY (`ckey`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+```
 -----------------------------------------------------
 Version 1.1, 17 April 2024, by larentoun
 Created the tables: schema_revision220, ckey_whitelist, admin_wl

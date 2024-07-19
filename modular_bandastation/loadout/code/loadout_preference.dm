@@ -1,6 +1,3 @@
-/client
-	var/donator_level = 0
-
 // Removes donator_level items from the user if their donator_level is insufficient
 /datum/preference/loadout/sanitize_loadout_list(list/passed_list, mob/optional_loadout_owner)
 	. = ..()
