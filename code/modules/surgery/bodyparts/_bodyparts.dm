@@ -127,7 +127,7 @@
 
 	var/light_burn_msg = "онемела"
 	var/medium_burn_msg = "покрыта волдырями"
-	var/heavy_burn_msg = "отслаивается кожа"
+	var/heavy_burn_msg = "отслаивает кожу"
 
 	//Damage messages used by examine(). the desc that is most common accross all bodyparts gets shown
 	var/list/damage_examines = list(

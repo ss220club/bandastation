@@ -619,7 +619,7 @@
 			if(oxyloss > 10)
 				combined_msg += span_danger("Вы чувствуете головокружение.")
 			else if(oxyloss > 20)
-				combined_msg += span_danger("Ваши мысли затуманены и distant.")
+				combined_msg += span_danger("Ваши мысли затуманены и находятся где-то в далеке.")
 			else if(oxyloss > 30)
 				combined_msg += span_danger("Вы задыхаетесь!")
 
