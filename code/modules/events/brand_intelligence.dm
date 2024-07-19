@@ -52,7 +52,7 @@
 	if(fake)
 		var/obj/machinery/vending/prototype = pick(subtypesof(/obj/machinery/vending))
 		machine_name = initial(prototype.name)
-	priority_announce("На борту станции [station_name()] зафиксировано распространение цифрового торгового вируса. Проверьте все торговые автоматы типа [machine_name] на наличие агрессивной маркетинговой тактики и при необходимости перезагрузите их.", "ОВНИМАНИЕ: Обнаружен цифровой вирус")
+	priority_announce("На борту станции [station_name()] зафиксировано распространение цифрового торгового вируса. Проверьте все торговые автоматы типа [machine_name] на наличие агрессивной маркетинговой тактики и при необходимости перезагрузите их.", "ВНИМАНИЕ: Обнаружен цифровой вирус")
 
 /datum/round_event/brand_intelligence/start()
 	origin_machine.shut_up = FALSE

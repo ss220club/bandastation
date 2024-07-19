@@ -91,7 +91,7 @@
 	end_when = rand(SURGE_DURATION_MIN, SURGE_DURATION_MAX)
 
 /datum/round_event/supermatter_surge/announce(fake)
-	priority_announce("The Crystal Integrity Monitoring System has detected unusual atmospheric properties in the supermatter chamber, energy output from the supermatter crystal has increased significantly. Engineering intervention is required to stabilize the engine.", "Class [surge_class] Supermatter Surge Alert", 'sound/machines/engine_alert3.ogg')
+	priority_announce("Система мониторинга целостности кристала обнаружила необычные атмосферные параметры в камере суперматерии, выходная мощность кристалла суперматерии значительно увеличился Требуется инженерное вмешательство для стабилизации работы двигателя.", "Всплеск суперматерии класса [surge_class]", 'sound/machines/engine_alert3.ogg')
 
 /datum/round_event/supermatter_surge/start()
 	engine.bullet_energy = surge_class + SURGE_BULLET_ENERGY_ADDITION
@@ -126,7 +126,7 @@
 	fakeable = FALSE
 
 /datum/round_event/supermatter_surge/poly/announce(fake)
-	priority_announce("The Crystal Integrity Monitoring System has detected unusual parrot type resonance in the supermatter chamber, energy output from the supermatter crystal has increased significantly. Engineering intervention is required to stabilize the engine.", "Class P Supermatter Surge Alert", 'sound/machines/engine_alert3.ogg')
+	priority_announce("Система мониторинга целостности кристала обнаружила необычный резонанс типа «попугай» в камере суперматерии, выходная мощность кристалла суперматерии значительно увеличился. Требуется инженерное вмешательство для стабилизации работы двигателя.", "Всплеск суперматерии класса Пэ", 'sound/machines/engine_alert3.ogg')
 
 #undef SURGE_DURATION_MIN
 #undef SURGE_DURATION_MAX
