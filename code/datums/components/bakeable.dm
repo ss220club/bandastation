@@ -97,14 +97,14 @@
 
 	if(positive_result)
 		used_oven.visible_message(
-			span_notice("Вы чувствуете как [used_oven.name] источает приятный запах."),
+			span_notice("Вы чувствуете, как [used_oven.name] источает приятный запах."),
 			blind_message = span_notice("Вы чувствуете приятный запах..."),
 			ignored_mobs = asomnia_hadders,
 		)
 		BLACKBOX_LOG_FOOD_MADE(baked_result.type)
 	else
 		used_oven.visible_message(
-			span_warning("Вы чувствуете как [used_oven.name] испускает горелое зловоние."),
+			span_warning("Вы чувствуете, как [used_oven.name] испускает горелое зловоние."),
 			blind_message = span_warning("Вы чувствуете запах горелого..."),
 			ignored_mobs = asomnia_hadders,
 		)

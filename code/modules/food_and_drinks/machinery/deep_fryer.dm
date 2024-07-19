@@ -78,7 +78,7 @@ GLOBAL_LIST_INIT(oilfry_blacklisted_items, typecacheof(list(
 /obj/machinery/deepfryer/examine(mob/user)
 	. = ..()
 	if(frying)
-		. += "Вы сможете разглядеть [frying] в масле."
+		. += "Вы сможете разглядеть [frying.name] в масле."
 	if(in_range(user, src) || isobserver(user))
 		. += span_notice("На дисплее состояния отображается: Жарка на <b>[fry_speed*100]%</b> скорости.<br>Используется <b>[oil_use]</b> юнитов масла в секунду.")
 
@@ -91,7 +91,7 @@ GLOBAL_LIST_INIT(oilfry_blacklisted_items, typecacheof(list(
 	// Dissolving pills into the frier
 	if(istype(weapon, /obj/item/reagent_containers/pill))
 		if(!reagents.total_volume)
-			to_chat(user, span_warning("Не в чем растворять [weapon]!"))
+			to_chat(user, span_warning("Не в чем растворять [weapon.name]!"))
 			return
 		user.visible_message(span_notice("[user] бросает [weapon.name] в [src.name]."), span_notice("Ты растворяешь [weapon.name] в [src.name]."))
 		weapon.reagents.trans_to(src, weapon.reagents.total_volume, transferred_by = user)
@@ -107,7 +107,7 @@ GLOBAL_LIST_INIT(oilfry_blacklisted_items, typecacheof(list(
 		return
 	// No fractal frying
 	if(HAS_TRAIT(weapon, TRAIT_FOOD_FRIED))
-		to_chat(user, span_userdanger("Ваши кулинарные способности не дотягивают до легендарной техники Doublefry."))
+		to_chat(user, span_userdanger("Ваши кулинарные способности не дотягивают до легендарной техники Двойножарки."))
 		return
 	// Handle opening up the fryer with tools
 	if(default_deconstruction_screwdriver(user, "fryer_off", "fryer_off", weapon)) //where's the open maint panel icon?!
@@ -144,14 +144,14 @@ GLOBAL_LIST_INIT(oilfry_blacklisted_items, typecacheof(list(
 	if(cook_time >= DEEPFRYER_COOKTIME && !frying_fried)
 		frying_fried = TRUE //frying... frying... fried
 		playsound(src.loc, 'sound/machines/ding.ogg', 50, TRUE)
-		audible_message(span_notice("[src.name] звенит!"))
+		audible_message(span_notice("[capitalize(src.name)] звенит!"))
 	else if (cook_time >= DEEPFRYER_BURNTIME && !frying_burnt)
 		frying_burnt = TRUE
 		var/list/asomnia_hadders = list()
 		for(var/mob/smeller in get_hearers_in_view(DEFAULT_MESSAGE_RANGE, src))
 			if(HAS_TRAIT(smeller, TRAIT_ANOSMIA))
 				asomnia_hadders += smeller
-		visible_message(span_warning("[src.name] источает едкий запах!"), ignored_mobs = asomnia_hadders)
+		visible_message(span_warning("[capitalize(src.name)] источает едкий запах!"), ignored_mobs = asomnia_hadders)
 
 	use_energy(active_power_usage)
 
@@ -172,10 +172,10 @@ GLOBAL_LIST_INIT(oilfry_blacklisted_items, typecacheof(list(
 	icon_state = "fryer_off"
 
 /obj/machinery/deepfryer/proc/start_fry(obj/item/frying_item, mob/user)
-	to_chat(user, span_notice("Вы кладете [frying_item] в [src]."))
+	to_chat(user, span_notice("Вы кладете [frying_item.name] в [src.name]."))
 	if(istype(frying_item, /obj/item/freeze_cube))
 		log_bomber(user, "put a freeze cube in a", src)
-		visible_message(span_userdanger("[src.name] начинает пылать... О нет..."))
+		visible_message(span_userdanger("[capitalize(src.name)]  начинает пылать... О нет..."))
 		playsound(src, 'sound/effects/pray_chaplain.ogg', 100)
 		add_filter("entropic_ray", 10, list("type" = "rays", "size" = 35, "color" = COLOR_VIVID_YELLOW))
 		addtimer(CALLBACK(src, PROC_REF(blow_up)), 5 SECONDS)
@@ -192,7 +192,7 @@ GLOBAL_LIST_INIT(oilfry_blacklisted_items, typecacheof(list(
 	fry_loop.start()
 
 /obj/machinery/deepfryer/proc/blow_up()
-	visible_message(span_userdanger("[src.name] взрывается в результате энтропийной реакции!"))
+	visible_message(span_userdanger("[capitalize(src.name)] взрывается в результате энтропийной реакции!"))
 	explosion(src, devastation_range = 1, heavy_impact_range = 3, light_impact_range = 5, flame_range = 7)
 	deconstruct(FALSE)
 
@@ -219,10 +219,10 @@ GLOBAL_LIST_INIT(oilfry_blacklisted_items, typecacheof(list(
 		var/target_temp = dunking_target.bodytemperature
 		var/cold_multiplier = 1
 		if(target_temp < TCMB + 10) // a tiny bit of leeway
-			dunking_target.visible_message(span_userdanger("[dunking_target.name] взрывается от энтропийной разницы! Блять!"))
-			dunking_target.investigate_log("has been gibbed by entropic difference (being dunked into [src.name]).", INVESTIGATE_DEATHS)
+			dunking_target.visible_message(span_userdanger("[capitalize(dunking_target.name)] взрывается от энтропийной разницы! Блять!"))
+			dunking_target.investigate_log("has been gibbed by entropic difference (being dunked into [src]).", INVESTIGATE_DEATHS)
 			dunking_target.gib(DROP_ALL_REMAINS)
-			log_combat(user, dunking_target, "blew up", null, "by dunking them into [src.name]")
+			log_combat(user, dunking_target, "blew up", null, "by dunking them into [src]")
 			return
 
 		else if(target_temp < T0C)

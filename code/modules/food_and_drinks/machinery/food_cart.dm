@@ -53,7 +53,7 @@
 /obj/machinery/food_cart/proc/pack_up()
 	if(!unpacked)
 		return
-	visible_message(span_notice("[src.name] втягивает все свои распакованные части."))
+	visible_message(span_notice("[capitalize(src.name)] втягивает все свои распакованные части."))
 	for(var/o in packed_things)
 		var/obj/object = o
 		UnregisterSignal(object, COMSIG_MOVABLE_MOVED)
