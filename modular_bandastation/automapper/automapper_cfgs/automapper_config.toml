@@ -11,16 +11,8 @@
 
 # Metastation Cryo
 [templates.metastation_cryo]
-map_files = ["metastation_cryo_test.dmm"]
+map_files = ["metastation_cryo.dmm"]
 directory = "_maps/bandastation/automapper/templates/metastation/"
 required_map = "MetaStation.dmm"
 coordinates = [133, 182, 1]
-trait_name = "Station"
-
-# Metastation NTR Office
-[templates.metastation_ntrep_office]
-map_files = ["metastation_ntrep_office.dmm"]
-directory = "_maps/bandastation/automapper/templates/metastation/"
-required_map = "MetaStation.dmm"
-coordinates = [57, 119, 1]
 trait_name = "Station"
