@@ -331,10 +331,10 @@
 			status += light_burn_msg
 
 		if(status == "")
-			status = "ОК"
+			status = "в порядке"
 
 	var/no_damage
-	if(status == "ОК" || status == "нет повреждений")
+	if(status == "в порядке" || status == "нет повреждений")
 		no_damage = TRUE
 
 	var/is_disabled = ""
