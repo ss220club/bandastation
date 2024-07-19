@@ -1,4 +1,4 @@
 /datum/modpack/automapper
 	name = "Mapping"
-	desc = "Модульный маппинг."
+	desc = "Вещи, необходимые для модульного маппинга."
 	author = "Skyrat"
