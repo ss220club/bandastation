@@ -287,7 +287,7 @@
 
 /datum/round_event/vent_clog/strange/announce(fake)
 	var/area/event_area = fake ? pick(GLOB.teleportlocs) : get_area_name(vent)
-	priority_announce("Обнаружено значительное биологическое препятствие в вентиляции. Предполагается, что засор находится в [event_area].", "Оповещение о загрязнении", ANNOUNCER_ALIENS)
+	priority_announce("Обнаружены необычные формы жизни в вентиляции [event_area].", "Неопознанные формы жизни", ANNOUNCER_ALIENS)
 
 /datum/round_event/vent_clog/strange/get_mob()
 	var/static/list/mob_list = list(
