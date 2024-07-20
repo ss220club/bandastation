@@ -44,7 +44,7 @@
 	desc = "Руки субъекта становятся эластичными, позволяя им растягиваться до метра. Однако, такая эластичность затрудняет ношение перчаток, выполнение сложных задач и взятие больших объектов."
 	quality = POSITIVE
 	instability = POSITIVE_INSTABILITY_MAJOR
-	text_gain_indication = span_warning("Твои руки становятся, как у моряка Попая!")
+	text_gain_indication = span_warning("Твои руки становятся похожими на... на... НА СПАГЕТТИ!")
 	text_lose_indication = span_warning("Твои руки перестают быть такими отвисшими всё время.")
 	difficulty = 32
 	mutation_traits = list(TRAIT_CHUNKYFINGERS, TRAIT_NO_TWOHANDING)
