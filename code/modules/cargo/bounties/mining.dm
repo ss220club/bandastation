@@ -7,13 +7,13 @@
 
 /datum/bounty/item/mining/goliath_boat
 	name = "Goliath Hide Boat"
-	description = "Коммандор Менков хочет поучавствовать в ежегодной Лавалендской регате. Он просит ваши корабли для самой быстрой лодки, известной человеку."
+	description = "Командор Менков хочет поучавствовать в ежегодной Лавалендской регате. Он просит ваши корабли для самой быстрой лодки, известной человеку."
 	reward = CARGO_CRATE_VALUE * 20
 	wanted_types = list(/obj/vehicle/ridden/lavaboat = TRUE)
 
 /datum/bounty/item/mining/bone_oar
 	name = "Bone Oars"
-	description = "Коммандор Менков хочет поучавствовать в ежегодной Лавалендской регате. Для этого ему нужна пара вёсел."
+	description = "Командор Менков хочет поучавствовать в ежегодной Лавалендской регате. Для этого ему нужна пара вёсел."
 	reward = CARGO_CRATE_VALUE * 8
 	required_count = 2
 	wanted_types = list(/obj/item/oar = TRUE)
