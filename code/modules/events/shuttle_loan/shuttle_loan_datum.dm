@@ -1,7 +1,7 @@
 /// One of the potential shuttle loans you might receive.
 /datum/shuttle_loan_situation
 	/// Who sent the shuttle
-	var/sender = "Центральное Коммандование"
+	var/sender = "Центральное Командование"
 	/// What they said about it.
 	var/announcement_text = "Unset announcement text"
 	/// What the shuttle says about it.
@@ -26,7 +26,7 @@
 	CRASH("Unimplemented get_spawned_items() on [src.type].")
 
 /datum/shuttle_loan_situation/antidote
-	sender = "Центральное Коммандование: Научно-исследовательский центр"
+	sender = "Центральное Командование: Научно-исследовательский центр"
 	announcement_text = "Ваша станция была выбрана для проведения эпидемиологического исследования. Пришлите нам свой грузовой шаттл, чтобы получить образцы для исследования."
 	shuttle_transit_text = "Орбразцы вирусов в пути."
 	logging_desc = "Virus shuttle"
@@ -51,7 +51,7 @@
 	spawn_list.Add(/obj/item/reagent_containers/cup/bottle/magnitis)
 
 /datum/shuttle_loan_situation/department_resupply
-	sender = "Центральное Коммандование: Отдел снабжения"
+	sender = "Центральное Командование: Отдел снабжения"
 	announcement_text = "Кажется, в этом месяце мы заказали в два раза больше пакетов пополнения для нашего отдела. Мы можем отправить их вам?"
 	shuttle_transit_text = "Пополнение для департаментов в пути."
 	thanks_msg = "Грузовой шаттл должен вернуться через пять минут."
@@ -79,7 +79,7 @@
 		new decal(pick_n_take(empty_shuttle_turfs))
 
 /datum/shuttle_loan_situation/syndiehijacking
-	sender = "Центральное Коммандование: Контрразведка"
+	sender = "Центральное Командование: Контрразведка"
 	announcement_text = "Синдикат пытается проникнуть на вашу станцию. Если вы позволите им захватить ваш грузовой шаттл, вы избавите нас от головной боли."
 	shuttle_transit_text = "Команда захвата Синдиката в пути."
 	logging_desc = "Syndicate boarding party"
@@ -96,7 +96,7 @@
 		spawn_list.Add(/mob/living/basic/trooper/syndicate/ranged/infiltrator)
 
 /datum/shuttle_loan_situation/lots_of_bees
-	sender = "Центральное Коммандование: Отдел по уборке"
+	sender = "Центральное Командование: Отдел по уборке"
 	announcement_text = "Один из наших грузовых кораблей, перевозивший груз пчел, подвергся нападению экотеррористов. Вы можете навести порядок?"
 	shuttle_transit_text = "Зараженный шаттл в пути."
 	bonus_points = CARGO_CRATE_VALUE * 100 //Toxin bees can be unbeelievably lethal
@@ -146,7 +146,7 @@
 		spawn_list.Add(/obj/item/paper/fluff/cargo/bomb/allyourbase)
 
 /datum/shuttle_loan_situation/papers_please
-	sender = "Центральное Коммандование: Отдел бюрократии"
+	sender = "Центральное Командование: Отдел бюрократии"
 	announcement_text = "Соседней станции нужна помощь с документами. Не могли бы вы помочь нам с оформлением?"
 	shuttle_transit_text = "Документы в пути."
 	thanks_msg = "Грузовой шаттл должен вернуться через пять минут. Оплата будет произведена после оформления и возвращения документов."
@@ -157,7 +157,7 @@
 	spawn_list += subtypesof(/obj/item/paperwork) - typesof(/obj/item/paperwork/photocopy) - typesof(/obj/item/paperwork/ancient)
 
 /datum/shuttle_loan_situation/pizza_delivery
-	sender = "Центральное Коммандование: Отдел космопиццы"
+	sender = "Центральное Командование: Отдел космопиццы"
 	announcement_text = "Похоже, что соседняя станция случайно доставила вам свою пиццу."
 	shuttle_transit_text = "Доставка пиццы!"
 	thanks_msg = "Грузовой шаттл должен вернуться через пять минут."
@@ -171,7 +171,7 @@
 		spawn_list.Add(pick(prob(5) ? naughtypizza : nicepizza))
 
 /datum/shuttle_loan_situation/russian_party
-	sender = "Центральное Коммандование: Программа по работе с русскими"
+	sender = "Центральное Командование: Программа по работе с русскими"
 	announcement_text = "Группа злых русских хочет устроить вечеринку. Сможете ли вы отправить им свой грузовой шаттл, а затем избавиться от них?"
 	shuttle_transit_text = "Пьяные русские уже в пути."
 	logging_desc = "Russian party squad"
@@ -189,7 +189,7 @@
 		spawn_list.Add(/mob/living/basic/bear/russian)
 
 /datum/shuttle_loan_situation/spider_gift
-	sender = "Центральное Коммандование: Дипломатический корпус"
+	sender = "Центральное Командование: Дипломатический корпус"
 	announcement_text = "Клан Паука прислал нам таинственный подарок. Можем ли мы отправить его вам, чтобы вы посмотрели, что внутри?"
 	shuttle_transit_text = "Подарок от Клана Паука в пути."
 	logging_desc = "Shuttle full of spiders"
