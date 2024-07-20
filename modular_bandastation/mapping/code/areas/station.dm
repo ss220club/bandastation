@@ -1,8 +1,4 @@
-// Nova Sector specific station areas
-
-/*
- * Station bound areas
- */
+// MARK: Station Areas
 
 /area/station/common/cryopods
 	name = "Cryopods Room"
