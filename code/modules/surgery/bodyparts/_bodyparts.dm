@@ -341,16 +341,16 @@
 	if(bodypart_disabled)
 		is_disabled = " обездвижена"
 		if(no_damage)
-			is_disabled += ", но зато"
+			is_disabled += ", но в целом"
 		else
-			is_disabled += ", также"
+			is_disabled += " и"
 
 	check_list += "\t <span class='[no_damage ? "notice" : "warning"]'>Ваша [name][is_disabled][self_aware ? " имеет " : " "][status].</span>"
 
 	for(var/datum/wound/wound as anything in wounds)
 		switch(wound.severity)
 			if(WOUND_SEVERITY_TRIVIAL)
-				check_list += "\t [span_danger("Ваша [name] страдает от [wound.a_or_from] [LOWER_TEXT(wound.name)].")]"
+				check_list += "\t [span_danger("Ваша [name] страдает от: [LOWER_TEXT(wound.name)].")]"
 			if(WOUND_SEVERITY_MODERATE)
 				check_list += "\t [span_warning("Ваша [name] страдает от [wound.a_or_from] [LOWER_TEXT(wound.name)]!")]"
 			if(WOUND_SEVERITY_SEVERE)
@@ -394,11 +394,11 @@
 	if(weapon.get_sharpness())
 		add_fingerprint(user)
 		if(!contents.len)
-			to_chat(user, span_warning("Внутри [src] ничего не осталось!"))
+			to_chat(user, span_warning("Внутри [src.name] ничего не осталось!"))
 			return
 		playsound(loc, 'sound/weapons/slice.ogg', 50, TRUE, -1)
-		user.visible_message(span_warning("[user] начинает вскрывать [src]."),\
-			span_notice("Вы начинаете вскрывать [src]..."))
+		user.visible_message(span_warning("[user] начинает вскрывать: [src.name]."),\
+			span_notice("Вы начинаете вскрывать: [src.name]..."))
 		if(do_after(user, 5.4 SECONDS, target = src))
 			drop_organs(user, TRUE)
 	else

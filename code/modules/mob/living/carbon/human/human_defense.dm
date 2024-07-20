@@ -590,7 +590,7 @@
 				bleeding_limbs += part
 
 		var/num_bleeds = LAZYLEN(bleeding_limbs)
-		var/bleed_text = "<span class='danger'>Вы истекаете кровью из своей"
+		var/bleed_text = "<span class='danger'>Вы истекаете кровью из: "
 		switch(num_bleeds)
 			if(1 to 2)
 				bleed_text += " [bleeding_limbs[1].name][num_bleeds == 2 ? " и [bleeding_limbs[2].name]" : ""]"
