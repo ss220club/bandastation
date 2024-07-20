@@ -38,7 +38,7 @@
 
 /datum/round_event/vent_clog/announce(fake)
 	var/area/event_area = fake ? pick(GLOB.teleportlocs) : get_area_name(vent)
-	priority_announce("Обнаружено незначительное биологическое препятствие в вентиляции. Предполагается, что засор находится в [event_area].", "Внимание: Неопознанные формы жизни")
+	priority_announce("Обнаружено незначительное биологическое препятствие в вентиляции. Предполагается, что засор находится в [event_area].", "Неопознанные формы жизни")
 
 /datum/round_event/vent_clog/setup()
 	vent = get_vent()
@@ -230,7 +230,7 @@
 
 /datum/round_event/vent_clog/major/announce(fake)
 	var/area/event_area = fake ? pick(GLOB.teleportlocs) : get_area_name(vent)
-	priority_announce("Обнаружены крупные формы жизни в вентиляционной сети [event_area].", "Внимание: Заражение неопознанными формами жизни")
+	priority_announce("Обнаружены крупные формы жизни в вентиляционной сети [event_area].", "Заражение неопознанными формами жизни")
 
 /datum/round_event_control/vent_clog/critical
 	name = "Ventilation Clog: Critical"

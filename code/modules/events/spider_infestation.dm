@@ -18,7 +18,7 @@
 	announce_when = rand(announce_when, announce_when + 50)
 
 /datum/round_event/spider_infestation/announce(fake)
-	priority_announce("Обнаружены неопознанные формы жизни на борту [station_name()]. Обезопасьте все наружные входы и выходы, включая вентиляцию и вытяжки.", "Внимание: Неопознанные формы жизни", ANNOUNCER_ALIENS)
+	priority_announce("Обнаружены неопознанные формы жизни на борту [station_name()]. Обезопасьте все наружные входы и выходы, включая вентиляцию и вытяжки.", "Неопознанные формы жизни", ANNOUNCER_ALIENS)
 
 /datum/round_event/spider_infestation/start()
 	create_midwife_eggs(spawncount)
