@@ -567,9 +567,9 @@
 		return
 	var/list/combined_msg = list()
 
-	visible_message(span_notice("[src] examines [p_them()]self."))
+	visible_message(span_notice("[src] осматривает себя."))
 
-	combined_msg += span_notice("<b>You check yourself for injuries.</b>")
+	combined_msg += span_notice("<b>Вы осматриваете себя на предмет ранений.</b>")
 
 	var/list/missing = list(BODY_ZONE_HEAD, BODY_ZONE_CHEST, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
 
@@ -581,7 +581,7 @@
 		body_part.check_for_injuries(src, combined_msg)
 
 	for(var/t in missing)
-		combined_msg += span_boldannounce("Your [parse_zone(t)] is missing!")
+		combined_msg += span_boldannounce("У вас отсутствует [parse_zone(t)]!")
 
 	if(is_bleeding())
 		var/list/obj/item/bodypart/bleeding_limbs = list()
@@ -590,53 +590,53 @@
 				bleeding_limbs += part
 
 		var/num_bleeds = LAZYLEN(bleeding_limbs)
-		var/bleed_text = "<span class='danger'>You are bleeding from your"
+		var/bleed_text = "<span class='danger'>Вы истекаете кровью из: "
 		switch(num_bleeds)
 			if(1 to 2)
-				bleed_text += " [bleeding_limbs[1].name][num_bleeds == 2 ? " and [bleeding_limbs[2].name]" : ""]"
+				bleed_text += " [bleeding_limbs[1].name][num_bleeds == 2 ? " и [bleeding_limbs[2].name]" : ""]"
 			if(3 to INFINITY)
 				for(var/i in 1 to (num_bleeds - 1))
 					var/obj/item/bodypart/BP = bleeding_limbs[i]
 					bleed_text += " [BP.name],"
-				bleed_text += " and [bleeding_limbs[num_bleeds].name]"
+				bleed_text += " и [bleeding_limbs[num_bleeds].name]"
 		bleed_text += "!</span>"
 		combined_msg += bleed_text
 
 	if(getStaminaLoss())
 		if(getStaminaLoss() > 30)
-			combined_msg += span_info("You're completely exhausted.")
+			combined_msg += span_info("Вы абсолютно обессилены.")
 		else
-			combined_msg += span_info("You feel fatigued.")
+			combined_msg += span_info("Вы чувствуете усталость.")
 	if(HAS_TRAIT(src, TRAIT_SELF_AWARE))
 		if(toxloss)
 			if(toxloss > 10)
-				combined_msg += span_danger("You feel sick.")
+				combined_msg += span_danger("Вы чувствуете недомогание.")
 			else if(toxloss > 20)
-				combined_msg += span_danger("You feel nauseated.")
+				combined_msg += span_danger("Вас тошнит.")
 			else if(toxloss > 40)
-				combined_msg += span_danger("You feel very unwell!")
+				combined_msg += span_danger("Вы чувствуете себя очень плохо!")
 		if(oxyloss)
 			if(oxyloss > 10)
-				combined_msg += span_danger("You feel lightheaded.")
+				combined_msg += span_danger("У вас кружится голова.")
 			else if(oxyloss > 20)
-				combined_msg += span_danger("Your thinking is clouded and distant.")
+				combined_msg += span_danger("Ваши мысли затуманены и находятся где-то далеко.")
 			else if(oxyloss > 30)
-				combined_msg += span_danger("You're choking!")
+				combined_msg += span_danger("Вы задыхаетесь!")
 
 	if(!HAS_TRAIT(src, TRAIT_NOHUNGER))
 		switch(nutrition)
 			if(NUTRITION_LEVEL_FULL to INFINITY)
-				combined_msg += span_info("You're completely stuffed!")
+				combined_msg += span_info("Вы наелись до отказа!")
 			if(NUTRITION_LEVEL_WELL_FED to NUTRITION_LEVEL_FULL)
-				combined_msg += span_info("You're well fed!")
+				combined_msg += span_info("Вы наелись!")
 			if(NUTRITION_LEVEL_FED to NUTRITION_LEVEL_WELL_FED)
-				combined_msg += span_info("You're not hungry.")
+				combined_msg += span_info("Вы не голодны.")
 			if(NUTRITION_LEVEL_HUNGRY to NUTRITION_LEVEL_FED)
-				combined_msg += span_info("You could use a bite to eat.")
+				combined_msg += span_info("Вам не помешает перекусить.")
 			if(NUTRITION_LEVEL_STARVING to NUTRITION_LEVEL_HUNGRY)
-				combined_msg += span_info("You feel quite hungry.")
+				combined_msg += span_info("Вы чувствуете сильный голод.")
 			if(0 to NUTRITION_LEVEL_STARVING)
-				combined_msg += span_danger("You're starving!")
+				combined_msg += span_danger("Вы умираете с голоду!")
 
 	//Compiles then shows the list of damaged organs and broken organs
 	var/list/broken = list()
@@ -681,7 +681,7 @@
 		combined_msg += span_info("Your [damaged_message] [damaged_plural ? "are" : "is"] hurt.")
 
 	if(quirks.len)
-		combined_msg += span_notice("You have these quirks: [get_quirk_string(FALSE, CAT_QUIRK_ALL)].")
+		combined_msg += span_notice("У вас имеются следующий черты: [get_quirk_string(FALSE, CAT_QUIRK_ALL)].")
 
 	to_chat(src, examine_block(combined_msg.Join("\n")))
 
