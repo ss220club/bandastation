@@ -15,7 +15,7 @@
 		return FALSE
 
 	if(HAS_TRAIT_FROM(user, TRAIT_PARALYSIS_L_ARM, CHANGELING_TRAIT) || HAS_TRAIT_FROM(user, TRAIT_PARALYSIS_R_ARM, CHANGELING_TRAIT))
-		user.balloon_alert(user, "already boosted!")
+		user.balloon_alert(user, "уже усилены!")
 		return FALSE
 
 	return .
@@ -57,6 +57,6 @@
 	return TRUE
 
 /datum/action/changeling/adrenaline/proc/unsting_action(mob/living/user)
-	to_chat(user, span_changeling("The muscles in our limbs shift back to their usual places."))
+	to_chat(user, span_changeling("Мускулы в наших конечностях возвращаются в норму."))
 	user.remove_traits(list(TRAIT_PARALYSIS_L_ARM, TRAIT_PARALYSIS_R_ARM), CHANGELING_TRAIT)
 	user.remove_movespeed_mod_immunities(type, /datum/movespeed_modifier/damage_slowdown)

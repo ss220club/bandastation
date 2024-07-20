@@ -257,9 +257,9 @@
 //Monified turns you into a monkey.
 /datum/mutation/human/race
 	name = "Monkified"
-	desc = "A strange genome, believing to be what differentiates monkeys from humans."
-	text_gain_indication = span_green("You feel unusually monkey-like.")
-	text_lose_indication = span_notice("You feel like your old self.")
+	desc = "Странный геном который, по мнению общества, отличает обезьяну от человека."
+	text_gain_indication = span_green("Ты чувствуешь необычно по-обезьяни.")
+	text_lose_indication = span_notice("Ты чувствуешь себя как раньше.")
 	quality = NEGATIVE
 	instability = NEGATIVE_STABILITY_MAJOR // mmmonky
 	remove_on_aheal = FALSE
