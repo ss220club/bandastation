@@ -371,7 +371,7 @@
 	AddComponent(/datum/component/gps, "[src]")
 	START_PROCESSING(SSobj, src)
 	COOLDOWN_START(src, next_nag_time, nag_cooldown)
-	radio.talk_into(src,"Куб-награда был создан в [get_area(src)] пользователем [bounty_holder] ([bounty_holder_job]). Бонус за быструю доставку будете потерян через [time2text(next_nag_time - world.time,"mm:ss")].", RADIO_CHANNEL_SUPPLY)
+	radio.talk_into(src,"Куб-награда был создан в [get_area(src)] пользователем [bounty_holder] ([bounty_holder_job]). Бонус за быструю доставку будет потерян через [time2text(next_nag_time - world.time,"mm:ss")].", RADIO_CHANNEL_SUPPLY)
 
 //for when you need a REAL bounty cube to test with and don't want to do a bounty each time your code changes
 /obj/item/bounty_cube/debug_cube
