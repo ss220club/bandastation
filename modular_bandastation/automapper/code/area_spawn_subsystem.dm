@@ -263,7 +263,7 @@ SUBSYSTEM_DEF(area_spawn)
 	/// See code/__DEFINES/~nova_defines/automapper.dm
 	var/mode = AREA_SPAWN_MODE_OPEN
 	/// Map blacklist, this is used to determine what maps we should not spawn on.
-	var/list/blacklisted_stations = list("Void Raptor", "Ouroboros", "Runtime Station", "MultiZ Debug", "Gateway Test", "Blueshift", "SerenityStation")
+	var/list/blacklisted_stations = list("Runtime Station", "MultiZ Debug", "Gateway Test")
 	/// If failing to find a suitable area is OK, then this should be TRUE or CI will fail.
 	/// Should probably be true if the target_areas are random, such as ruins.
 	var/optional = FALSE
@@ -320,7 +320,7 @@ SUBSYSTEM_DEF(area_spawn)
 	/// The atom type that we want to spawn
 	var/desired_atom
 	/// Map blacklist, this is used to determine what maps we should not spawn on.
-	var/list/blacklisted_stations = list("Void Raptor", "Runtime Station", "MultiZ Debug", "Gateway Test")
+	var/list/blacklisted_stations = list("Runtime Station", "MultiZ Debug", "Gateway Test")
 
 /**
  * Spawn the atoms.
@@ -328,24 +328,24 @@ SUBSYSTEM_DEF(area_spawn)
 /datum/area_spawn_over/proc/try_spawn()
 	if(SSmapping.config.map_name in blacklisted_stations)
 		return
-
 	for(var/area_type in target_areas)
-		var/area/found_area = GLOB.areas_by_type[area_type]
-		if(!found_area)
-			continue
-
-		for(var/list/zlevel_turfs as anything in found_area.get_zlevel_turf_lists())
-			for(var/turf/candidate_turf as anything in zlevel_turfs)
-				// Don't spawn if there's already a desired_atom here.
-				if(is_type_on_turf(candidate_turf, desired_atom))
+		try_spawn_area(area_type)
+/datum/area_spawn_over/proc/try_spawn_area(area_type)
+	var/area/found_area = GLOB.areas_by_type[area_type]
+	if(!found_area)
+		return
+	for(var/list/zlevel_turfs as anything in found_area.get_zlevel_turf_lists())
+		for(var/turf/candidate_turf as anything in zlevel_turfs)
+			// Don't spawn if there's already a desired_atom here.
+			if(is_type_on_turf(candidate_turf, desired_atom))
+				continue
+			for(var/over_atom_type in over_atoms)
+				if(!is_type_on_turf(candidate_turf, over_atom_type))
 					continue
 
-				for(var/over_atom_type in over_atoms)
-					// Spawn on the first one we find in the turf and stop.
-					if(is_type_on_turf(candidate_turf, over_atom_type))
-						new desired_atom(candidate_turf)
-						// Break the over_atom_type loop.
-						break
+				// Spawn on the first one we find in the turf and stop.
+				new desired_atom(candidate_turf)
+				break
 
 /obj/effect/turf_test
 	name = "PASS"
