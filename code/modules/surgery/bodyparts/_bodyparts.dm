@@ -352,11 +352,11 @@
 			if(WOUND_SEVERITY_TRIVIAL)
 				check_list += "\t [span_danger("Ваша [name] страдает от: [LOWER_TEXT(wound.name)].")]"
 			if(WOUND_SEVERITY_MODERATE)
-				check_list += "\t [span_warning("Ваша [name] страдает от [wound.a_or_from] [LOWER_TEXT(wound.name)]!")]"
+				check_list += "\t [span_warning("Ваша [name] страдает от: [LOWER_TEXT(wound.name)]!")]"
 			if(WOUND_SEVERITY_SEVERE)
-				check_list += "\t [span_boldwarning("Ваша [name] страдает от [wound.a_or_from] [LOWER_TEXT(wound.name)]!!")]"
+				check_list += "\t [span_boldwarning("Ваша [name] страдает от: [LOWER_TEXT(wound.name)]!!")]"
 			if(WOUND_SEVERITY_CRITICAL)
-				check_list += "\t [span_boldwarning("Ваша [name] страдает от [wound.a_or_from] [LOWER_TEXT(wound.name)]!!!")]"
+				check_list += "\t [span_boldwarning("Ваша [name] страдает от: [LOWER_TEXT(wound.name)]!!!")]"
 
 	for(var/obj/item/embedded_thing in embedded_objects)
 		var/stuck_word = embedded_thing.is_embed_harmless() ? "проникает" : "впился"
