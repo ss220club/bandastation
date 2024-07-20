@@ -19,6 +19,7 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "SS220Manager"
+          git config --local merge.conflictStyle zdiff3
       - name: Try merging
         continue-on-error: true
         run: |
@@ -28,10 +29,12 @@ jobs:
           {
             echo "MERGE_CONFLICTS<<EOF"
             git diff --name-only --diff-filter=U | while read file; do
-              echo "- $file"
+              echo "<details>"
+              echo "<summary>$file</summary>"
               echo -e "\n\`\`\`diff"
               git diff --diff-filter=U "$file" | sed -n '/<<<<<<</,/>>>>>>>/p'
               echo -e "\n\`\`\`"
+              echo "</details>"
             done
             echo EOF
           } >> $GITHUB_ENV
@@ -39,15 +42,31 @@ jobs:
         uses: actions/github-script@v7
         with:
           script: |
-            const { MERGE_CONFLICTS } = process.env
+            const { MERGE_CONFLICTS } = process.env;
+            const { issue_number, owner, repo } = context.repo;
+            const conflict_message = `This PR causes following conflicts on translate branch:\n${MERGE_CONFLICTS}`;
 
-            if(!MERGE_CONFLICTS) {
-              return
+            const comments = await github.rest.issues.listComments({
+              owner,
+              repo,
+              issue_number,
+            });
+
+            const action_comment = comments.data.find(comment => comment.user.login === 'github-actions[bot]');
+            if (action_comment) {
+              const commentId = action_comment.id;
+
+              await github.rest.issues.updateComment({
+                owner,
+                repo,
+                comment_id: commentId,
+                body: conflict_message,
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner,
+                repo,
+                issue_number,
+                body: conflict_message,
+              });
             }
-
-            await github.rest.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: `This pr causes following conflicts on translate branch:\n ${MERGE_CONFLICTS} `
-            })
