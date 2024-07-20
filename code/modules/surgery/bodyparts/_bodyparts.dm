@@ -380,11 +380,11 @@
 				if(check_for_frankenstein(victim))
 					bodypart_flags |= BODYPART_IMPLANTED
 				if(human_victim == user)
-					human_victim.visible_message(span_warning("[human_victim] вклинивает [src] в пустой сокет на своём теле!"),\
-					span_notice("Вы вставляете [src] в свой пустой сокет, и [src] встаёт на место!"))
+					human_victim.visible_message(span_warning("[human_victim] вклинивает [src.name] в пустой сокет на своём теле!"),\
+					span_notice("Вы вставляете [src.name] в свой пустой сокет, и [src.name] встаёт на место!"))
 				else
-					human_victim.visible_message(span_warning("[user] вклинивает [src] в пустой сокет на теле [human_victim]!"),\
-					span_notice("[user] вставляет [src] в свой пустой сокет, и [src] встаёт на место!"))
+					human_victim.visible_message(span_warning("[user] вклинивает [src.name] в пустой сокет на теле [human_victim]!"),\
+					span_notice("[user] вставляет [src.name] в свой пустой сокет, и [src.name] встаёт на место!"))
 				return
 	return ..()
 
