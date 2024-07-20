@@ -42,7 +42,7 @@
 	name = "Thermal Adaptation"
 	desc = "Странная мутация, которая даёт невосприимчивость к урону от высокой и низкой температур. Не защищает от высокого и низкого давления."
 	difficulty = 32
-	text_gain_indication = span_notice("Твоё тело ощущает, комфортную комнатную температуру.")
+	text_gain_indication = span_notice("Твоё тело ощущает комфорто-комнатную температуру.")
 	instability = POSITIVE_INSTABILITY_MAJOR
 	mutation_traits = list(TRAIT_RESISTHEAT, TRAIT_RESISTCOLD)
 	adapt_icon = "thermal"
