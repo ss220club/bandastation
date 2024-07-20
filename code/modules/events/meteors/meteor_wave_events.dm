@@ -50,7 +50,7 @@
 			kill()
 
 /datum/round_event/meteor_wave/announce(fake)
-	priority_announce("Зафиксировано движение метеоритов на встречном со станцией курсе.", "Метеориты", ANNOUNCER_METEORS)
+	priority_announce("Зафиксировано движение метеоритов на встречном со станцией курсе.", "Метеоры", ANNOUNCER_METEORS)
 
 /datum/round_event/meteor_wave/tick()
 	if(ISMULTIPLE(activeFor, 3))
