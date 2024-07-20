@@ -235,7 +235,7 @@
 	if(!IS_ORGANIC_LIMB(src))
 		grind_results = null
 
-	name = "[limb_id] [parse_zone(body_zone)]"
+	name = "[parse_zone(body_zone)] ([limb_id])"
 	update_icon_dropped()
 	refresh_bleed_rate()
 
