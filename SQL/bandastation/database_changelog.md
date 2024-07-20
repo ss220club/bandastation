@@ -15,12 +15,12 @@ INSERT INTO `SS13_schema_revision_220` (`major`, `minor`) VALUES (1, 2);
 
 -----------------------------------------------------
 Version 1.2, 17 July 2024, by larentoun
-Created the table: player_donation220
+Created the table: player_donation
 
 ```sql
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `player_donation220` (
+CREATE TABLE `player_donation` (
   `ckey` varchar(32) NOT NULL,
   `tier` int(2),
   PRIMARY KEY (`ckey`)

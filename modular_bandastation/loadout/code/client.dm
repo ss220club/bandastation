@@ -4,7 +4,7 @@
 /datum/preferences/load_savefile()
 	. = ..()
 	var/datum/db_query/query_get_donator_level = SSdbcore.NewQuery(
-		"SELECT tier FROM [format_table_name("player_donation220")] WHERE ckey = :ckey",
+		"SELECT tier FROM [format_table_name("player_donation")] WHERE ckey = :ckey",
 		list("ckey" = parent.ckey)
 	)
 	if(query_get_donator_level.warn_execute() && length(query_get_donator_level.rows))
