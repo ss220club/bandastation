@@ -1,6 +1,6 @@
 /datum/quirk/strong_stomach
 	name = "Strong Stomach"
-	desc = "Вы можете есть еду находящиюся на земле без последствий ввиде болезни, а рвота влияет на вас меньше."
+	desc = "Вы можете есть еду находящуюся на земле без последствий в виде болезни, а рвота влияет на вас меньше."
 	icon = FA_ICON_FACE_GRIN_BEAM_SWEAT
 	value = 4
 	mob_trait = TRAIT_STRONG_STOMACH
