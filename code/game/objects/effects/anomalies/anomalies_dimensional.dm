@@ -76,7 +76,7 @@
 	var/area/new_area = placer.findValidArea()
 	var/turf/new_turf = placer.findValidTurf(new_area)
 
-	priority_announce("Пространственная аномалия переместилась. Предполагаемая локация: [new_area.name].", "ВНИМАНИЕ: Обнаружена аномалия")
+	priority_announce("Пространственная аномалия переместилась. Предполагаемая локация: [new_area.name].", "Обнаружена аномалия")
 	src.forceMove(new_turf)
 	prepare_area()
 

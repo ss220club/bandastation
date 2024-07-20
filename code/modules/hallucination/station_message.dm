@@ -10,7 +10,7 @@
 
 /datum/hallucination/station_message/blob_alert/start()
 	priority_announce("Вспышка биологической угрозы 5-го уровня зафиксирована на борту [station_name()]. Всему персоналу надлежит сдержать её распространение любой ценой!", \
-		"ВНИМАНИЕ: Биологическая угроза", ANNOUNCER_OUTBREAK5, players = list(hallucinator))
+		"Биологическая угроза", ANNOUNCER_OUTBREAK5, players = list(hallucinator))
 	return ..()
 
 /datum/hallucination/station_message/shuttle_dock
@@ -33,7 +33,7 @@
 		return FALSE
 
 	priority_announce("Во всех системах станций обнаружены вредоносные процессы. Пожалуйста, уничтожьте свой ИИ, чтобы предотвратить возможный ущерб его моральному ядру.", \
-		"ВНИМАНИЕ: Обнаружена аномалия", ANNOUNCER_AIMALF, players = list(hallucinator))
+		"Обнаружена аномалия", ANNOUNCER_AIMALF, players = list(hallucinator))
 	return ..()
 
 /datum/hallucination/station_message/heretic
@@ -105,7 +105,7 @@
 	random_hallucination_weight = 2
 
 /datum/hallucination/station_message/meteors/start()
-	priority_announce("Зафиксировано движение астероидов на встречном со станцией курсе.", "ВНИМАНИЕ: Астероиды", ANNOUNCER_METEORS, players = list(hallucinator))
+	priority_announce("Зафиксировано движение астероидов на встречном со станцией курсе.", "Астероиды", ANNOUNCER_METEORS, players = list(hallucinator))
 	return ..()
 
 /datum/hallucination/station_message/supermatter_delam

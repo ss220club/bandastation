@@ -23,7 +23,7 @@
 		to_chat(A, "<br>[span_warning("<b>[alert]</b>")]<br>")
 
 	if(prob(30) || fake) //most of the time, we don't want an announcement, so as to allow AIs to fake blackouts.
-		priority_announce(alert, "ВНИМАНИЕ: Обнаружена аномалия")
+		priority_announce(alert, "Обнаружена аномалия")
 
 
 /datum/round_event/communications_blackout/start()

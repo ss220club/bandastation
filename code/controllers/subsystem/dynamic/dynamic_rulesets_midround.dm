@@ -327,7 +327,7 @@
 	new_malf_ai.mind.special_role = antag_flag
 	new_malf_ai.mind.add_antag_datum(malf_antag_datum)
 	if(prob(MALF_ION_PROB))
-		priority_announce("Вблизи станции обнаружен ионный шторм. Пожалуйста, проверьте все оборудование, управляемое ИИ, на наличие ошибок.", "ВНИМАНИЕ: Обнаружена аномалия", ANNOUNCER_IONSTORM)
+		priority_announce("Вблизи станции обнаружен ионный шторм. Пожалуйста, проверьте все оборудование, управляемое ИИ, на наличие ошибок.", "Обнаружена аномалия", ANNOUNCER_IONSTORM)
 		if(prob(REPLACE_LAW_WITH_ION_PROB))
 			new_malf_ai.replace_random_law(generate_ion_law(), list(LAW_INHERENT, LAW_SUPPLIED, LAW_ION), LAW_ION)
 		else
@@ -615,7 +615,7 @@
 	playsound(S, 'sound/magic/ethereal_exit.ogg', 50, TRUE, -1)
 	message_admins("[ADMIN_LOOKUPFLW(S)] has been made into a Space Dragon by the midround ruleset.")
 	log_dynamic("[key_name(S)] was spawned as a Space Dragon by the midround ruleset.")
-	priority_announce("Зафиксирован большой поток органической энергии вблизи станции [station_name()]. Будьте наготове.", "Внимание: неопознанные формы жизни")
+	priority_announce("Зафиксирован большой поток органической энергии вблизи станции [station_name()]. Будьте наготове.", "Неопознанные формы жизни")
 	return S
 
 /datum/dynamic_ruleset/midround/from_ghosts/abductors
