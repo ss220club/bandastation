@@ -41,7 +41,12 @@ export function JobIcon(props: Props) {
   return (
     <div className="JobIcon">
       {icon === 'borg' ? (
-        <Icon color="lightblue" name={JOB2ICON[ReverseJobsRu(usedJob)]} ml={0.3} mt={0.4} />
+        <Icon
+          color="lightblue"
+          name={JOB2ICON[ReverseJobsRu(usedJob)]}
+          ml={0.3}
+          mt={0.4}
+        />
       ) : (
         <DmIcon
           icon={iconSettings.dmi}
