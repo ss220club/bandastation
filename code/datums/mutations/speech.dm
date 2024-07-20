@@ -42,7 +42,7 @@
 
 /datum/mutation/human/heckacious
 	name = "heckacious larincks"
-	desc = "чел, что такое ЖЕЛАНИЕ, твои слова чувак..........."
+	desc = "чел что ЖЕЛАЮТ твои слова чувак..........."
 	quality = MINOR_NEGATIVE
 	text_gain_indication = span_sans("ЧЁРТ, чувак. твоё горло как ДЕРЬМО.")
 	text_lose_indication = span_notice("Демоническое существо, овладевшее твоей гортанью, наконец-то ослабило свою хватку.")
