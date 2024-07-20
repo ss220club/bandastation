@@ -82,7 +82,7 @@
 
 /datum/bounty/item/chef/superbite
 	name = "Super Bite бургер"
-	description = "Коммандор Табс думает, что он сможет установить мировой рекорд по поеданию. Всё что ему нужно, так это Super Bite Burger, отправленный ему."
+	description = "Командор Табс думает, что он сможет установить мировой рекорд по поеданию. Всё что ему нужно, так это Super Bite Burger, отправленный ему."
 	reward = CARGO_CRATE_VALUE * 24
 	wanted_types = list(/obj/item/food/burger/superbite = TRUE)
 
