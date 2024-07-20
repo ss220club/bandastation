@@ -145,10 +145,10 @@ SUBSYSTEM_DEF(automapper)
  */
 /datum/controller/subsystem/automapper/proc/get_turf_blacklists(map_names)
 	if(!map_names)
-        return list()
+		return list()
 
-    if(!islist(map_names))
-        map_names = list(map_names)
+	if(!islist(map_names))
+		map_names = list(map_names)
 
 	var/list/blacklisted_turfs = list()
 	for(var/datum/map_template/automap_template/iterating_template as anything in preloaded_map_templates)
