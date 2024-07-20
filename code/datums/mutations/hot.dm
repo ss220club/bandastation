@@ -14,7 +14,7 @@
 
 /datum/mutation/human/cryokinesis/pyrokinesis
 	name = "Pyrokinesis"
-	desc = "Притягивает позитивную энергию  из окружения, чтобы повысить температуру вокруг субъекта."
+	desc = "Притягивает положительную энергию окружения для повышения температуры вокруг субъекта."
 	text_gain_indication = span_notice("Твоя рука кажется горячей!")
 	locked = TRUE
 	power_path = /datum/action/cooldown/spell/pointed/projectile/cryo/pyro
