@@ -254,7 +254,7 @@
 
 /datum/round_event/vent_clog/critical/announce(fake)
 	var/area/event_area = fake ? pick(GLOB.teleportlocs) : get_area_name(vent)
-	priority_announce("Потенциально опасные формы жизни обнаружены в вентиляции [event_area].", "Оповещение о загрязнении")
+	priority_announce("Потенциально опасные формы жизни обнаружены в вентиляции [event_area].", "Отчет о безопасности")
 
 /datum/round_event/vent_clog/critical/get_mob()
 	var/static/list/mob_list = list(
