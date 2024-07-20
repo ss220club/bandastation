@@ -134,7 +134,7 @@
 		for(var/turf/turf_to_quake in underbelly)
 			turf_to_quake.Shake(pixelshiftx = 0.5, pixelshifty = 0.5, duration = 1 SECONDS)
 			for(var/mob/living/carbon/quake_victim in turf_to_quake)
-				to_chat(quake_victim, span_warning("Что это за грохот?")) ///You're about to find out
+				to_chat(quake_victim, span_warning("Интересно, а что это за грохот?")) ///You're about to find out
 
 	// Step one of the destruction, which clears natural tiles out from the underbelly and does a bit of initial damage to the topside.
 	if(activeFor == end_when - 1)
