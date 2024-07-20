@@ -60,7 +60,7 @@
 /datum/weather/rad_storm/end()
 	if(..())
 		return
-	priority_announce("Радиационная угроза миновала. Пожалуйста, вернитесь на свои рабочие места.", "ВНИМАНИЕ: Обнаружена аномалия")
+	priority_announce("Радиационная угроза миновала. Пожалуйста, вернитесь на свои рабочие места.", "Обнаружена аномалия")
 	status_alarm(FALSE)
 
 /datum/weather/rad_storm/proc/do_mutate(mob/living/carbon/human/mutant)

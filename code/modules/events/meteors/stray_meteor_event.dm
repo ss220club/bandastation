@@ -30,7 +30,7 @@
 	if(GLOB.meteor_list)
 		var/obj/effect/meteor/detected_meteor = pick(GLOB.meteor_list) //If we accidentally pick a meteor not spawned by the event, we're still technically not wrong
 		var/sensor_name = detected_meteor.signature
-		priority_announce("Наши датчики [sensor_name] сенсоры have detected an incoming signature approaching [GLOB.station_name]. Приготовьтесь к столкновению.", "ВНИМАНИЕ: Метеоры")
+		priority_announce("Наши датчики [sensor_name] сенсоры have detected an incoming signature approaching [GLOB.station_name]. Приготовьтесь к столкновению.", "Метеоры")
 
 /datum/event_admin_setup/listed_options/stray_meteor
 	input_text = "Select a meteor type?"

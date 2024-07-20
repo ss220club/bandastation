@@ -327,7 +327,7 @@
 	new_malf_ai.mind.special_role = antag_flag
 	new_malf_ai.mind.add_antag_datum(malf_antag_datum)
 	if(prob(MALF_ION_PROB))
-		priority_announce("Вблизи станции обнаружен ионный шторм. Пожалуйста, проверьте все оборудование, управляемое ИИ, на наличие ошибок.", "ВНИМАНИЕ: Обнаружена аномалия", ANNOUNCER_IONSTORM)
+		priority_announce("Вблизи станции обнаружен ионный шторм. Пожалуйста, проверьте все оборудование, управляемое ИИ, на наличие ошибок.", "Обнаружена аномалия", ANNOUNCER_IONSTORM)
 		if(prob(REPLACE_LAW_WITH_ION_PROB))
 			new_malf_ai.replace_random_law(generate_ion_law(), list(LAW_INHERENT, LAW_SUPPLIED, LAW_ION), LAW_ION)
 		else

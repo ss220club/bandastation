@@ -26,7 +26,7 @@
 	// whether it's, say, a tesla zapping tcomms, or some selective
 	// modification of the tcomms bus
 	if(prob(80) || fake)
-		priority_announce(alert, "ВНИМАНИЕ: Обнаружена аномалия")
+		priority_announce(alert, "Обнаружена аномалия")
 
 
 /datum/round_event/processor_overload/start()

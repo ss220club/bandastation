@@ -91,7 +91,7 @@
 	wave_name = "meaty"
 
 /datum/round_event/meteor_wave/meaty/announce(fake)
-	priority_announce("Зафиксировано движение мясоритов на встречном со станцией курсе.", "ВНИМАНИЕ: Мясориты", ANNOUNCER_METEORS)
+	priority_announce("Зафиксировано движение мясоритов на встречном со станцией курсе.", "Мясориты", ANNOUNCER_METEORS)
 
 /datum/round_event_control/meteor_wave/dust_storm
 	name = "Major Space Dust"

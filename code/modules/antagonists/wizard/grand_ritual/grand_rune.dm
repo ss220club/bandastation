@@ -83,10 +83,10 @@
 /obj/effect/grand_rune/proc/announce_rune()
 	var/area/created_area = get_area(src)
 	if (potency >= GRAND_RITUAL_IMMINENT_FINALE_POTENCY)
-		priority_announce("Крупные аномальные флуктуации локального пространства-времени, обнаруженные в: [created_area.name].", "ВНИМАНИЕ: Обнаружена аномалия")
+		priority_announce("Крупные аномальные флуктуации локального пространства-времени, обнаруженные в: [created_area.name].", "Обнаружена аномалия")
 		return
 	if (potency >= GRAND_RITUAL_RUNES_WARNING_POTENCY)
-		priority_announce("Необычные аномальные флуктуации энергии, обнаруженные в: [created_area.name].", "ВНИМАНИЕ: Обнаружена аномалия")
+		priority_announce("Необычные аномальные флуктуации энергии, обнаруженные в: [created_area.name].", "Обнаружена аномалия")
 		return
 
 /obj/effect/grand_rune/examine(mob/user)
@@ -299,7 +299,7 @@
 		if (2)
 			announce = "Неминуемый провал локальной реальности в: [created_area.name]. Всем членам экипажа приготовиться к эвакуации."
 	if (announce)
-		priority_announce(announce, "ВНИМАНИЕ: Обнаружена аномалия")
+		priority_announce(announce, "Обнаружена аномалия")
 	dire_warnings_given++
 	return ..()
 
