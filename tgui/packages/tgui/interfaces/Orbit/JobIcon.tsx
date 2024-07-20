@@ -5,6 +5,7 @@ import { Antagonist, Observable } from './types';
 
 type Props = {
   item: Observable | Antagonist;
+  realNameDisplay: boolean;
 };
 
 type IconSettings = {
@@ -23,7 +24,7 @@ const antagIcon: IconSettings = {
 };
 
 export function JobIcon(props: Props) {
-  const { item } = props;
+  const { item, realNameDisplay } = props;
 
   let iconSettings: IconSettings;
   if ('antag' in item) {
@@ -33,21 +34,23 @@ export function JobIcon(props: Props) {
   }
 
   // We don't need to cast here but typescript isn't smart enough to know that
-  const { icon = '', job = '' } = item;
+  const { icon = '', job = '', mind_icon = '', mind_job = '' } = item;
+  const usedIcon = realNameDisplay ? mind_icon || icon : icon;
+  const usedJob = realNameDisplay ? mind_job || job : job;
 
   return (
     <div className="JobIcon">
       {icon === 'borg' ? (
         <Icon
           color="lightblue"
-          name={JOB2ICON[ReverseJobsRu(job)]}
+          name={JOB2ICON[ReverseJobsRu(usedJob)]}
           ml={0.3}
           mt={0.4}
         />
       ) : (
         <DmIcon
           icon={iconSettings.dmi}
-          icon_state={icon}
+          icon_state={usedIcon}
           style={{
             transform: iconSettings.transform,
           }}
