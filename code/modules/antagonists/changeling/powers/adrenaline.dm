@@ -14,8 +14,8 @@
 	if(!.)
 		return FALSE
 
-	if(HAS_TRAIT_FROM(user, TRAIT_IGNOREDAMAGESLOWDOWN, CHANGELING_TRAIT))
-		user.balloon_alert(user, "уже усилены!")
+	if(HAS_TRAIT_FROM(user, TRAIT_PARALYSIS_L_ARM, CHANGELING_TRAIT) || HAS_TRAIT_FROM(user, TRAIT_PARALYSIS_R_ARM, CHANGELING_TRAIT))
+		user.balloon_alert(user, "already boosted!")
 		return FALSE
 
 	return .
@@ -40,7 +40,8 @@
 	var/our_leg_zones = (GLOB.all_body_zones - GLOB.leg_zones)
 	user.regenerate_limbs(excluded_zones = our_leg_zones) // why is this exclusive rather than inclusive
 
-	user.add_traits(list(TRAIT_IGNOREDAMAGESLOWDOWN, TRAIT_PARALYSIS_L_ARM, TRAIT_PARALYSIS_R_ARM), CHANGELING_TRAIT)
+	user.add_traits(list(TRAIT_PARALYSIS_L_ARM, TRAIT_PARALYSIS_R_ARM), CHANGELING_TRAIT)
+	user.add_movespeed_mod_immunities(type, /datum/movespeed_modifier/damage_slowdown)
 
 	// Revert above mob changes.
 	addtimer(CALLBACK(src, PROC_REF(unsting_action), user), 20 SECONDS, TIMER_UNIQUE|TIMER_OVERRIDE)
@@ -56,5 +57,6 @@
 	return TRUE
 
 /datum/action/changeling/adrenaline/proc/unsting_action(mob/living/user)
-	to_chat(user, span_changeling("Мускулы в наших конечностях возвращаются в норму."))
-	user.remove_traits(list(TRAIT_IGNOREDAMAGESLOWDOWN, TRAIT_PARALYSIS_L_ARM, TRAIT_PARALYSIS_R_ARM), CHANGELING_TRAIT)
+	to_chat(user, span_changeling("The muscles in our limbs shift back to their usual places."))
+	user.remove_traits(list(TRAIT_PARALYSIS_L_ARM, TRAIT_PARALYSIS_R_ARM), CHANGELING_TRAIT)
+	user.remove_movespeed_mod_immunities(type, /datum/movespeed_modifier/damage_slowdown)
