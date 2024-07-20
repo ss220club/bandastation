@@ -5,7 +5,7 @@
 	value = 4
 	mob_trait = TRAIT_STRONG_STOMACH
 	gain_text = span_notice("Ты чувствуешь, что можешь съесть всё, что угодно!")
-	lose_text = span_danger("Смотря на еду на земле, тебя начинает немного подташнивать ")
+	lose_text = span_danger("Смотря на еду на земле, тебя начинает немного подташнивать.")
 	medical_record_text = "У пациента иммунная система организма сильнее, чем среднестатическая...  К пищевому отравлению, по крайней мере."
 	mail_goodies = list(
 		/obj/item/reagent_containers/pill/ondansetron,
