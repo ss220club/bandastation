@@ -4,8 +4,8 @@
 	desc = "A softdrink vendor provided by Robust Industries, LLC."
 	icon_state = "Cola_Machine"
 	panel_type = "panel2"
-	product_slogans = "Robust Softdrinks: More robust than a toolbox to the head!"
-	product_ads = "Refreshing!;Hope you're thirsty!;Over 1 million drinks sold!;Thirsty? Why not cola?;Please, have a drink!;Drink up!;The best drinks in space."
+	product_slogans = "Робаст Софтдринкс: крепче, чем тулбоксом по голове!"
+	product_ads = "Освежает!;Надеюсь, вас одолела жажда!;Продано больше миллиона бутылок!;Хотите пить? Почему бы не взять колы?;Пей на здоровье!;Освежись!;Лучшие напитки в космосе."
 	products = list(
 		/obj/item/reagent_containers/cup/soda_cans/cola = 10,
 		/obj/item/reagent_containers/cup/soda_cans/space_mountain_wind = 10,
@@ -106,7 +106,7 @@
 		/obj/item/reagent_containers/cup/soda_cans/wellcheers = 5,
 		)
 	product_slogans = "~Shake me up some of that Shambler's Juice!~"
-	product_ads = "Refreshing!;Thirsty for DNA? Satiate your craving!;Over 1 trillion souls drank!;Made with real DNA!;The hivemind demands your thirst!;Drink up!;Absorb your thirst."
+	product_ads = "Освежает!;Жажда ДНК? Утолите свою жажду!;Выпито более триллиона душ!;Сделано с использованием настоящей ДНК!;Коллективный разум требует вашей жажды!;Пей на здоровье!;Поглотите свою жажду."
 	light_mask = "shamblers-light-mask"
 	light_color = COLOR_MOSTLY_PURE_PINK
 
