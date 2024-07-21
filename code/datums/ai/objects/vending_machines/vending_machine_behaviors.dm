@@ -23,7 +23,7 @@
 /datum/ai_behavior/vendor_crush/proc/tiltonmob(datum/ai_controller/controller, turf/target_turf)
 	var/obj/machinery/vending/vendor_pawn = controller.pawn
 	if(vendor_pawn.tilt(target_turf, 0) & SUCCESSFULLY_CRUSHED_MOB) //We hit something
-		vendor_pawn.say(pick("Увеличьте это!", "Поцелуй мой блестящий зад!", "Хочешь попробовать мои товары?", "В ЛЕПЁШКУ!", "Разве вам не нравятся эти сногсшибательные цены!"))
+		vendor_pawn.say(pick("Как тебе размерчик?!", "Поцелуй мой блестящий металлический зад!", "Хочешь попробовать мои товары?", "В ЛЕПЁШКУ!", "Разве вам не нравятся эти сногсшибательные цены!"))
 		controller.set_blackboard_key(BB_VENDING_LAST_HIT_SUCCESFUL, TRUE)
 	else
 		vendor_pawn.say(pick("А ну вернись!", "Разве тебе не хочется моей хорошо оценённой любви?"))
