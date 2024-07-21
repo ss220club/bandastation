@@ -17,9 +17,9 @@
 
 /obj/item/storage/wallet/wallet_NT/update_label()
 	if(front_id)
-		name = "leather NT wallet displaying [front_id]"
+		name = "[src::name] displaying [front_id]"
 		return
-	name = "leather NT wallet"
+	name = src::name
 
 /obj/item/storage/wallet/wallet_USSP_1
 	name = "leather USSP wallet"
@@ -40,9 +40,9 @@
 
 /obj/item/storage/wallet/wallet_USSP_1/update_label()
 	if(front_id)
-		name = "leather USSP wallet displaying [front_id]"
+		name = "[src::name] displaying [front_id]"
 		return
-	name = "leather USSP wallet"
+	name = src::name
 
 /obj/item/storage/wallet/wallet_USSP_2
 	name = "leather USSP wallet"
@@ -63,9 +63,9 @@
 
 /obj/item/storage/wallet/wallet_USSP_2/update_label()
 	if(front_id)
-		name = "leather USSP wallet displaying [front_id]"
+		name = "[src::name] displaying [front_id]"
 		return
-	name = "leather USSP wallet"
+	name = src::name
 
 /obj/item/storage/wallet/wallet_wyci
 	name = "W.Y.C.I. wallet"
@@ -88,6 +88,6 @@
 
 /obj/item/storage/wallet/wallet_wyci/update_label()
 	if(front_id)
-		name = "W.Y.C.I. wallet displaying [front_id]"
+		name = "[src::name] displaying [front_id]"
 		return
-	name = "W.Y.C.I. wallet"
+	name = src::name
