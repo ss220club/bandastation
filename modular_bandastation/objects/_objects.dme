@@ -1,1 +1,4 @@
 #include "_objects.dm"
+
+#include "code/wallets.dm"
+#include "code/hampters.dm"
