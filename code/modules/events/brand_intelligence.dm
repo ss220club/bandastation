@@ -23,13 +23,13 @@
 	var/obj/machinery/vending/origin_machine
 	/// Murderous sayings from the machines.
 	var/list/rampant_speeches = list(
-		"Try our aggressive new marketing strategies!",
-		"You should buy products to feed your lifestyle obsession!",
-		"Consume!",
-		"Your money can buy happiness!",
-		"Engage direct marketing!",
-		"Advertising is legalized lying! But don't let that put you off our great deals!",
-		"You don't want to buy anything? Yeah, well, I didn't want to buy your mom either.",
+		"Попробуйте нашу новую АГРЕССИВНУЮ стратегию маркетинга!",
+		"Вам стоит что-нибудь купить, дабы утолить ваши ПОТРЕБНОСТИ!",
+		"Потребляй!",
+		"За ваши деньги можно купить счастье!",
+		"Методика ПРЯМОГО маркетинга!",
+		"Реклама узаконила ложь! Но не позвольте ей отвлечь вас от наших замечательных предложений!",
+		"Не хочешь платить? Я твоей мамке тоже платить не хотел.",
 	)
 
 /datum/round_event/brand_intelligence/setup()
