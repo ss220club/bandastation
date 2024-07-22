@@ -14,18 +14,22 @@ INSERT INTO `SS13_schema_revision_220` (`major`, `minor`) VALUES (1, 2);
 ```
 
 -----------------------------------------------------
-Version 1.2, 17 July 2024, by larentoun
-Created the table: player_donation
+Version 1.2, 22 July 2024, by larentoun
+Created the table: budget
 
 ```sql
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `player_donation` (
-  `ckey` varchar(32) NOT NULL,
-  `tier` int(2),
-  PRIMARY KEY (`ckey`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
+CREATE TABLE `budget` (
+    `id` INT(11) NOT NULL AUTO_INCREMENT,
+    `date` DATETIME NOT NULL DEFAULT current_timestamp(),
+    `ckey` VARCHAR(32) NULL DEFAULT NULL COLLATE 'utf8mb4_unicode_ci',
+    `amount` INT(10) UNSIGNED NOT NULL,
+    `source` VARCHAR(32) NOT NULL COLLATE 'utf8mb4_general_ci',
+    `date_start` DATETIME NOT NULL DEFAULT current_timestamp(),
+    `date_end` DATETIME NULL DEFAULT (current_timestamp() + interval 1 month),
+    `is_valid` TINYINT(1) NOT NULL DEFAULT '1',
+    `discord_id` bigint(20) DEFAULT NULL,
+    PRIMARY KEY (`id`) USING BTREE
+) COLLATE='utf8mb4_general_ci' ENGINE=InnoDB;
 ```
 -----------------------------------------------------
 Version 1.1, 17 April 2024, by larentoun
