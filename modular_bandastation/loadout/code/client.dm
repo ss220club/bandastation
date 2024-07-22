@@ -32,14 +32,13 @@
 		GROUP BY ckey
 	"}, list("ckey" = parent.ckey))
 
-	var/best_value = 0
+	var/amount = 0
 	if(query_get_donator_level.warn_execute() && length(query_get_donator_level.rows))
-		while(query_get_donator_level.NextRow())
-			var/amount = query_get_donator_level.item[1]
-			best_value = max(best_value, amount)
+		query_get_donator_level.NextRow()
+		amount = query_get_donator_level.item[1]
 	qdel(query_get_donator_level)
 
-	switch(best_value)
+	switch(amount)
 		if(TIER1 to (TIER2 - 1))
 			return 1
 		if(TIER2 to (TIER3 - 1))
