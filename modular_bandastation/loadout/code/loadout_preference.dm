@@ -2,9 +2,17 @@
 	. = ..()
 	parent.update_donator_level()
 
+// Handles selecting from the preferences UI
+/datum/preference_middleware/loadout/select_item(datum/loadout_item/selected_item)
+	var/donator_level = preferences.parent.update_donator_level()
+	if(donator_level >= selected_item.donator_level)
+		return ..()
+	to_chat(preferences.parent.mob, span_warning("У вас недостаточный уровень доната, чтобы взять [selected_item.name]!"))
+
 // Removes donator_level items from the user if their donator_level is insufficient
 /datum/preference/loadout/deserialize(input, datum/preferences/preferences)
 	. = ..()
+	// For loadout purposes, donator_level is updated in middleware on select
 	var/donator_level = preferences.parent.donator_level
 	var/removed_items = list()
 	for(var/path in .)

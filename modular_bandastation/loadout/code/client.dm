@@ -5,6 +5,7 @@
 #define TIER5 10000
 
 /client
+	/// Call `proc/update_donator_level()` instead to get a value when possible.
 	var/donator_level = 0
 	COOLDOWN_DECLARE(db_check_cooldown)
 
