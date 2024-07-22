@@ -5,24 +5,28 @@
 #define TIER5 10000
 
 /client
-	var/donator_level = 0
+	VAR_PRIVATE/donator_level = 0
+	COOLDOWN_DECLARE(db_check_cooldown)
 
-/client/add_admin_verbs()
-	. = ..()
-	donator_level = max(donator_level, holder?.get_donator_level_admin())
+/client/proc/get_donator_level()
+	donator_level = max(donator_level, get_donator_level_db(), get_donator_level_admin())
+	return donator_level
 
-/datum/preferences/load_savefile()
-	. = ..()
-	parent.donator_level = max(parent.donator_level, get_donator_level_db())
-
-/datum/admins/proc/get_donator_level_admin()
+/client/proc/get_donator_level_admin()
+	if(!holder)
+		return 0
 	var/best_level = 0
-	for(var/datum/admin_rank/rank as anything in ranks)
+	for(var/datum/admin_rank/rank as anything in holder.ranks)
 		if(rank.rights & R_ADMIN)
 			best_level = max(best_level, 3)
+		if(rank.rights & R_EVERYTHING)
+			return 5
 	return best_level
 
-/datum/preferences/proc/get_donator_level_db()
+/client/proc/get_donator_level_db()
+	if(!COOLDOWN_FINISHED(src, db_check_cooldown))
+		return 0
+	COOLDOWN_START(src, db_check_cooldown, 15 SECONDS)
 	var/datum/db_query/query_get_donator_level = SSdbcore.NewQuery({"
 		SELECT CAST(SUM(amount) as UNSIGNED INTEGER) FROM budget
 		WHERE ckey=:ckey
@@ -30,7 +34,7 @@
 			AND date_start <= NOW()
 			AND (NOW() < date_end OR date_end IS NULL)
 		GROUP BY ckey
-	"}, list("ckey" = parent.ckey))
+	"}, list("ckey" = ckey))
 
 	var/amount = 0
 	if(query_get_donator_level.warn_execute() && length(query_get_donator_level.rows))
