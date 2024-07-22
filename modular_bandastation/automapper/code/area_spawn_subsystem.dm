@@ -77,7 +77,7 @@ SUBSYSTEM_DEF(area_spawn)
 /datum/controller/subsystem/area_spawn/proc/get_turf_candidates(area/area, mode)
 	var/list/turfs_by_spawn_mode = area_turf_cache[area.type]
 	if(isnull(turfs_by_spawn_mode))
-		turfs_by_spawn_mode = area_turf_cache[area.type] = list(AREA_SPAWN_MODE_COUNT)
+		turfs_by_spawn_mode = area_turf_cache[area.type] = new/list(AREA_SPAWN_MODE_COUNT)
 
 	var/mode_index = mode + 1
 	var/list/turfs_by_priority = turfs_by_spawn_mode[mode_index]
@@ -250,8 +250,6 @@ SUBSYSTEM_DEF(area_spawn)
  * Use these to spawn atoms in areas instead of placing them on a map. It will select any available open and entering turf.
  */
 /datum/area_spawn
-	/// The target area for us to spawn the desired atom, the list is formatted, highest priority first.
-	var/list/target_areas
 	/// The atom that we want to spawn
 	var/desired_atom
 	/// The amount we want to spawn
@@ -261,6 +259,8 @@ SUBSYSTEM_DEF(area_spawn)
 	/// If failing to find a suitable area is OK, then this should be TRUE or CI will fail.
 	/// Should probably be true if the target_areas are random, such as ruins.
 	var/optional = FALSE
+	/// The target area for us to spawn the desired atom, the list is formatted, highest priority first.
+	var/list/target_areas
 	/// Map blacklist, this is used to determine what maps we should not spawn on.
 	var/list/blacklisted_stations = list("Runtime Station", "MultiZ Debug", "Gateway Test")
 
