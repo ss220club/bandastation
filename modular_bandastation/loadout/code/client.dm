@@ -5,10 +5,10 @@
 #define TIER5 10000
 
 /client
-	VAR_PRIVATE/donator_level = 0
+	var/donator_level = 0
 	COOLDOWN_DECLARE(db_check_cooldown)
 
-/client/proc/get_donator_level()
+/client/proc/update_donator_level()
 	donator_level = max(donator_level, get_donator_level_db(), get_donator_level_admin())
 	return donator_level
 
