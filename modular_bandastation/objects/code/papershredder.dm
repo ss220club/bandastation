@@ -19,17 +19,6 @@
 
 /obj/machinery/papershredder/Initialize(mapload)
 	. = ..()
-	var/static/list/hovering_item_typechecks = list(
-		/obj/item/paper = list(SCREENTIP_CONTEXT_LMB = "Shred item",),
-		/obj/item/photo = list(SCREENTIP_CONTEXT_LMB = "Shred item",),
-		/obj/item/shredded_paper = list(SCREENTIP_CONTEXT_LMB = "Shred item",),
-		/obj/item/newspaper = list(SCREENTIP_CONTEXT_LMB = "Shred item",),
-		/obj/item/card/id = list(SCREENTIP_CONTEXT_LMB = "Shred item",),
-		/obj/item/folder = list(SCREENTIP_CONTEXT_LMB = "Shred item",),
-		/obj/item/book = list(SCREENTIP_CONTEXT_LMB = "Shred item",),
-	)
-
-	AddElement(/datum/element/contextual_screentip_item_typechecks, hovering_item_typechecks)
 	AddElement(/datum/element/contextual_screentip_bare_hands, rmb_text = "Empty shredded paper bin")
 	register_context()
 
@@ -37,6 +26,9 @@
 	. = ..()
 	if(held_item.tool_behaviour == TOOL_WRENCH)
 		context[SCREENTIP_CONTEXT_LMB] = anchored ? "Unanchor" : "Anchor"
+		return CONTEXTUAL_SCREENTIP_SET
+	if(held_item.type in shred_amounts)
+		context[SCREENTIP_CONTEXT_LMB] = "Shred item"
 		return CONTEXTUAL_SCREENTIP_SET
 	return NONE
 
