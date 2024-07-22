@@ -36,15 +36,14 @@
 /obj/machinery/papershredder/add_context(atom/source, list/context, obj/item/held_item, mob/user)
 	. = ..()
 	if(held_item.tool_behaviour == TOOL_WRENCH)
-		if(anchored)
-			context[SCREENTIP_CONTEXT_LMB] = "Unanchor"
-		else
-			context[SCREENTIP_CONTEXT_LMB] = "Anchor"
+		context[SCREENTIP_CONTEXT_LMB] = anchored ? "Unanchor" : "Anchor"
 		return CONTEXTUAL_SCREENTIP_SET
 	return NONE
 
 /obj/machinery/papershredder/attack_hand_secondary(mob/user, list/modifiers)
 	. = ..()
+	if(. == SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN)
+		return
 	empty_contents(user)
 	return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
 
