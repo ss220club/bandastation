@@ -1,0 +1,4 @@
+#include "_objects.dm"
+
+#include "code/weapons/ranged/reclinable_revolver.dm"
+#include "code/weapons/melee/centcom_bat.dm"
