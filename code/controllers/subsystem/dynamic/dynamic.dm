@@ -558,8 +558,8 @@ SUBSYSTEM_DEF(dynamic)
 		return TRUE
 
 	// BANDASTATION EDIT START - Force players to play Sec
-	if(security < 5)
-		var/roundstart_budget_low_sec = security / 5 * round_start_budget
+	if(security < CONFIG_GET(number/roundstart_security_for_threat))
+		var/roundstart_budget_low_sec = security / CONFIG_GET(number/roundstart_security_for_threat) * round_start_budget
 		var/transfer_to_midround = round_start_budget - roundstart_budget_low_sec
 		mid_round_budget += transfer_to_midround
 		round_start_budget = roundstart_budget_low_sec
