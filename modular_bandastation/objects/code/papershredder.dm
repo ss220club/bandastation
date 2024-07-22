@@ -1,5 +1,5 @@
 /obj/machinery/papershredder
-	name = "paper shredder"
+	name = "\improper paper shredder"
 	desc = "For those documents you don't want seen."
 	icon = 'modular_bandastation/objects/icons/papershredder.dmi'
 	icon_state = "papershredder0"
@@ -15,7 +15,27 @@
 		/obj/item/card/id = 3,
 		/obj/item/folder = 4,
 		/obj/item/book = 5
-		)
+	)
+
+/obj/machinery/papershredder/Initialize(mapload)
+	. = ..()
+	var/static/list/hovering_item_typechecks = list(
+		/obj/item/paper = list(SCREENTIP_CONTEXT_LMB = "Shred item",),
+		/obj/item/photo = list(SCREENTIP_CONTEXT_LMB = "Shred item",),
+		/obj/item/shredded_paper = list(SCREENTIP_CONTEXT_LMB = "Shred item",),
+		/obj/item/newspaper = list(SCREENTIP_CONTEXT_LMB = "Shred item",),
+		/obj/item/card/id = list(SCREENTIP_CONTEXT_LMB = "Shred item",),
+		/obj/item/folder = list(SCREENTIP_CONTEXT_LMB = "Shred item",),
+		/obj/item/book = list(SCREENTIP_CONTEXT_LMB = "Shred item",),
+	)
+
+	var/static/list/tool_behaviors = list(
+		TOOL_WRENCH = list(SCREENTIP_CONTEXT_LMB = "Anchor/Unanchor",),
+	)
+
+	AddElement(/datum/element/contextual_screentip_item_typechecks, hovering_item_typechecks)
+	AddElement(/datum/element/contextual_screentip_tools, tool_behaviors)
+	AddElement(/datum/element/contextual_screentip_bare_hands, rmb_text = "Empty shredded paper bin")
 
 /obj/machinery/papershredder/attack_hand_secondary(mob/user, list/modifiers)
 	. = ..()
@@ -26,6 +46,9 @@
 	var/paper_result
 	if(item.type in shred_amounts)
 		paper_result = shred_amounts[item.type]
+	else
+		to_chat(user, span_warning("This item cannot be shredded."))
+		return
 	if(!paper_result)
 		return ITEM_INTERACT_FAILURE
 	if(paperamount == max_paper)
