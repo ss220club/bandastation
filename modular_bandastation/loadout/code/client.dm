@@ -19,8 +19,6 @@
 	for(var/datum/admin_rank/rank as anything in holder.ranks)
 		if(rank.rights & R_ADMIN)
 			best_level = max(best_level, 3)
-		if(rank.rights & R_EVERYTHING)
-			return 5
 	return best_level
 
 /client/proc/get_donator_level_db()
