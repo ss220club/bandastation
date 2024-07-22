@@ -530,7 +530,7 @@ SUBSYSTEM_DEF(dynamic)
 	//To new_player and such, and we want the datums to just free when the roundstart work is done
 	var/list/roundstart_rules = init_rulesets(/datum/dynamic_ruleset/roundstart)
 
-	var/security // BANDASTATION EDIT - Force players to play Sec
+	var/security = 0 // BANDASTATION EDIT - Force players to play Sec
 
 	SSjob.DivideOccupations(pure = TRUE, allow_all = TRUE)
 	for(var/i in GLOB.new_player_list)
