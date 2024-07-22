@@ -7,10 +7,20 @@
 /client
 	var/donator_level = 0
 
+/client/add_admin_verbs()
+	. = ..()
+	donator_level = max(donator_level, holder?.get_donator_level_admin())
+
 /datum/preferences/load_savefile()
 	. = ..()
-	var/donator_level = get_donator_level_db()
-	parent.donator_level = donator_level
+	parent.donator_level = max(parent.donator_level, get_donator_level_db())
+
+/datum/admins/proc/get_donator_level_admin()
+	var/best_level = 0
+	for(var/datum/admin_rank/rank as anything in ranks)
+		if(rank.rights & R_ADMIN)
+			best_level = max(best_level, 3)
+	return best_level
 
 /datum/preferences/proc/get_donator_level_db()
 	var/datum/db_query/query_get_donator_level = SSdbcore.NewQuery({"
