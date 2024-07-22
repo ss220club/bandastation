@@ -290,8 +290,8 @@
 
 /datum/mutation/human/hulk/ork
 	name = "Ork"
-	desc = "A mutation caused by a mixup of hulk genes which severely impacts speech centers in owners' brains."
-	text_gain_indication = span_notice("You feel significantly dumber!")
+	desc = "Данная мутация вызвана смешиванием генов халка. Она сильно влияет на речевые центры мозга обладателя мутации."
+	text_gain_indication = span_notice("Ты чувствуешь себя гораздно тупее!")
 	bodypart_color = COLOR_ASSISTANT_OLIVE
 	conflicts = list(/datum/mutation/human/hulk)
 
