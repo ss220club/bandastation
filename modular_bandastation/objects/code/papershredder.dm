@@ -6,7 +6,7 @@
 	density = TRUE
 	anchored = TRUE
 	var/max_paper = 15
-	var/paperamount = 0
+	var/paper_amount = 0
 	var/list/shred_amounts = list(
 		/obj/item/photo = 1,
 		/obj/item/shredded_paper = 1,
@@ -48,18 +48,13 @@
 	return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
 
 /obj/machinery/papershredder/attackby(obj/item/item, mob/user, params)
-	var/paper_result
-	if(item.type in shred_amounts)
-		paper_result = shred_amounts[item.type]
-	else
-		to_chat(user, span_warning("This item cannot be shredded."))
-		return . = ..()
-	if(!paper_result)
-		return . = ..()
-	if(paperamount == max_paper)
+	if(!(item.type in shred_amounts))
+		return ..()
+	if(paper_amount == max_paper)
 		to_chat(user, span_warning("[src] is full. Please empty it before you continue."))
-		return . = ..()
-	paperamount += paper_result
+		return
+	var/paper_result = shred_amounts[item.type]
+	paper_amount += paper_result
 	qdel(item)
 	playsound(loc, 'modular_bandastation/objects/sounds/pshred.ogg', 75, 1)
 	update_icon_state()
@@ -72,14 +67,14 @@
 
 /obj/machinery/papershredder/examine(mob/user)
 	. = ..()
-	. += span_notice("<b>Right-Click</b> to empty [src].")
+	. += span_info("<b>Right-Click</b> to empty [src].")
 
 /obj/machinery/papershredder/proc/empty_contents(mob/living/user)
 	if(HAS_TRAIT(user, TRAIT_RESTRAINED))
-		to_chat(user, span_notice("You need your hands free for this."))
+		to_chat(user, span_warning("You need your hands free for this."))
 		return
 
-	if(!paperamount)
+	if(!paper_amount)
 		to_chat(user, span_notice("[src] is empty."))
 		return
 
@@ -87,13 +82,13 @@
 	update_icon_state()
 
 /obj/machinery/papershredder/proc/get_shredded_paper()
-	if(!paperamount)
+	if(!paper_amount)
 		return
-	paperamount--
+	paper_amount--
 	return new /obj/item/shredded_paper(get_turf(src))
 
 /obj/machinery/papershredder/update_icon_state()
-	icon_state = "papershredder[clamp(round(paperamount/3), 0, 5)]"
+	icon_state = "papershredder[clamp(round(paper_amount/3), 0, 5)]"
 	return ..()
 
 /obj/item/shredded_paper
