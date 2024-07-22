@@ -12,7 +12,7 @@
 
 // Structures
 /datum/area_spawn/gbp_machine
-	target_areas = list(/area/station/cargo/lobby, /area/station/cargo/boutique, /area/station/construction/storage_wing, /area/station/hallway/primary/port /* for kilo */) // lmao imagine map standardization
+	target_areas = list(/area/station/cargo/lobby, /area/station/cargo/boutique, /area/station/construction/storage_wing, /area/station/hallway/primary/port)   // lmao imagine map standardization
 	desired_atom = /obj/machinery/gbp_redemption
 	mode = AREA_SPAWN_MODE_HUG_WALL
 
