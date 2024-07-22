@@ -40,8 +40,6 @@ CREATE TABLE `admin_wl` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 DROP TABLE IF EXISTS `player_donation`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `player_donation` (
   `ckey` varchar(32) NOT NULL,
   `tier` int(2),
