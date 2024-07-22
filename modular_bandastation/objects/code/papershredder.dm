@@ -29,37 +29,42 @@
 		/obj/item/book = list(SCREENTIP_CONTEXT_LMB = "Shred item",),
 	)
 
-	var/static/list/tool_behaviors = list(
-		TOOL_WRENCH = list(SCREENTIP_CONTEXT_LMB = "Anchor/Unanchor",),
-	)
-
 	AddElement(/datum/element/contextual_screentip_item_typechecks, hovering_item_typechecks)
-	AddElement(/datum/element/contextual_screentip_tools, tool_behaviors)
 	AddElement(/datum/element/contextual_screentip_bare_hands, rmb_text = "Empty shredded paper bin")
+	register_context()
+
+/obj/machinery/papershredder/add_context(atom/source, list/context, obj/item/held_item, mob/user)
+	. = ..()
+	if(held_item.tool_behaviour == TOOL_WRENCH)
+		if(anchored)
+			context[SCREENTIP_CONTEXT_LMB] = "Unanchor"
+		else
+			context[SCREENTIP_CONTEXT_LMB] = "Anchor"
+		return CONTEXTUAL_SCREENTIP_SET
+	return NONE
 
 /obj/machinery/papershredder/attack_hand_secondary(mob/user, list/modifiers)
 	. = ..()
 	empty_contents(user)
+	return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
 
 /obj/machinery/papershredder/attackby(obj/item/item, mob/user, params)
-	. = ..()
 	var/paper_result
 	if(item.type in shred_amounts)
 		paper_result = shred_amounts[item.type]
 	else
 		to_chat(user, span_warning("This item cannot be shredded."))
-		return
+		return . = ..()
 	if(!paper_result)
-		return ITEM_INTERACT_FAILURE
+		return . = ..()
 	if(paperamount == max_paper)
 		to_chat(user, span_warning("[src] is full. Please empty it before you continue."))
-		return ITEM_INTERACT_FAILURE
+		return . = ..()
 	paperamount += paper_result
 	qdel(item)
 	playsound(loc, 'modular_bandastation/objects/sounds/pshred.ogg', 75, 1)
 	update_icon_state()
 	add_fingerprint(user)
-	return ITEM_INTERACT_SUCCESS
 
 /obj/machinery/papershredder/wrench_act(mob/living/user, obj/item/tool)
 	. = ..()
@@ -110,7 +115,6 @@
 		color = pick("#8b8b8b","#e7e4e4", "#c9c9c9")
 
 /obj/item/shredded_paper/attackby(obj/item/attacking_item, mob/user, params)
-	. = ..()
 	if(burn_paper_product_attackby_check(attacking_item, user))
 		return
-
+	. = ..()
