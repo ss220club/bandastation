@@ -1,4 +1,3 @@
-// Хамптер
 /obj/item/toy/plush/hampter
 	name = "хамптер"
 	desc = "Просто плюшевый хамптер. Самый обычный."
@@ -11,18 +10,18 @@
 	worn_icon_state = "hampter"
 	slot_flags = ITEM_SLOT_HEAD
 	w_class = WEIGHT_CLASS_TINY
-	var/cooldown = 0
+	COOLDOWN_DECLARE(plush_cooldown)
 
-// Действия при взаимодействии с включенным комбат модом
 /obj/item/toy/plush/hampter/attack_self(mob/living/carbon/human/user)
-	if(cooldown < world.time - 10)
-		. = ..()
-		if(user.combat_mode == TRUE)
-			new /obj/effect/decal/cleanable/blood(get_turf(user))
-			user.visible_message(span_warning("[user] раздавливает хамптера в своей руке!"), span_warning("Вы раздавливаете хамптера в своей руке, и от него остаётся лужа крови!"))
-			qdel(src)
+	if(!COOLDOWN_FINISHED(src, plush_cooldown))
+		return
+	COOLDOWN_START(src, plush_cooldown, 2 SECONDS)
+	. = ..()
+	if(user.combat_mode == TRUE)
+		new /obj/effect/decal/cleanable/blood(get_turf(user))
+		user.visible_message(span_warning("[user] раздавил хамптера в своей руке!"), span_warning("Ты с особой жестокостью давишь хамптера в своей руке, оставляя от него лишь лужу крови!"))
+		qdel(src)
 
-// Подвиды
 /obj/item/toy/plush/hampter/assistant
 	name = "хамптер ассистент"
 	desc = "Плюшевый хамптер ассистент. Зачем ему изольки?"

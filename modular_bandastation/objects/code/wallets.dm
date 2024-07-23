@@ -1,4 +1,4 @@
-/obj/item/storage/wallet/wallet_NT
+/obj/item/storage/wallet/nt
 	name = "leather wallet NT"
 	desc = "Ваш кошелек настолько шикарен, что с ним вы выглядите просто потрясающе."
 	icon = 'modular_bandastation/objects/icons/wallets.dmi'
@@ -7,7 +7,7 @@
 	worn_icon_state = "wallet_NT"
 	overlay_icon_state = "wallet_NT_overlay"
 
-/obj/item/storage/wallet/wallet_USSP_1
+/obj/item/storage/wallet/ussp_1
 	name = "leather USSP wallet"
 	desc = "Говорят, такие кошельки в СССП носят исключительно для зажигалок."
 	icon = 'modular_bandastation/objects/icons/wallets.dmi'
@@ -16,7 +16,7 @@
 	worn_icon_state = "wallet_USSP_1"
 	overlay_icon_state = "wallet_USSP_1_overlay"
 
-/obj/item/storage/wallet/wallet_USSP_2
+/obj/item/storage/wallet/ussp_2
 	name = "leather USSP wallet"
 	desc = "Говорят, такие кошельки в СССП носят исключительно для зажигалок."
 	icon = 'modular_bandastation/objects/icons/wallets.dmi'
@@ -25,7 +25,7 @@
 	worn_icon_state = "wallet_USSP_2"
 	overlay_icon_state = "wallet_USSP_2_overlay"
 
-/obj/item/storage/wallet/wallet_wyci
+/obj/item/storage/wallet/wyci
 	name = "W.Y.C.I. wallet"
 	desc = "Кошелек, законодателя моды WYCI,\
 	украшен золотой пуговицей cшит позолочеными и платиновыми нитями, сверх прочный.\
