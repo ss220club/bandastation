@@ -10,12 +10,12 @@
 	worn_icon_state = "hampter"
 	slot_flags = ITEM_SLOT_HEAD
 	w_class = WEIGHT_CLASS_TINY
-	COOLDOWN_DECLARE(plush_cooldown)
+	COOLDOWN_DECLARE(squeeze_cooldown)
 
 /obj/item/toy/plush/hampter/attack_self(mob/living/carbon/human/user)
-	if(!COOLDOWN_FINISHED(src, plush_cooldown))
+	if(!COOLDOWN_FINISHED(src, squeeze_cooldown))
 		return
-	COOLDOWN_START(src, plush_cooldown, 2 SECONDS)
+	COOLDOWN_START(src, squeeze_cooldown, 2 SECONDS)
 	. = ..()
 	if(user.combat_mode == TRUE)
 		new /obj/effect/decal/cleanable/blood(get_turf(user))
