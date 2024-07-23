@@ -1,53 +1,60 @@
-
 /**
  * Enables an admin to upload a new titlescreen image.
  */
-ADMIN_VERB(admin_change_title_screen, R_FUN, "Title Screen: Change", "Upload a new titlescreen image.", ADMIN_CATEGORY_FUN)
-	log_admin("[key_name(user)] is changing the title screen.")
-	message_admins("[key_name_admin(user)] is changing the title screen.")
+ADMIN_VERB(change_title_screen, R_FUN, "Title Screen: Change", ADMIN_VERB_NO_DESCRIPTION, ADMIN_CATEGORY_EVENTS)
+	if(!check_rights(R_FUN))
+		return
 
-	switch(alert(usr, "Please select a new title screen.", "Title Screen", "Change", "Reset", "Cancel"))
+	log_admin("[key_name(usr)] is changing the title screen.")
+	message_admins("[key_name_admin(usr)] is changing the title screen.")
+
+	switch(tgui_alert(usr, "Please select a new title screen.", "Title Screen", list("Change", "Reset", "Cancel")))
 		if("Change")
-			var/file = input(user) as icon|null
-			if(!file)
+			var/file = input(usr) as icon|null
+			if(isnull(file))
 				return
-			SStitle.change_title_screen(file)
+
+			SStitle.set_title_image(file)
 		if("Reset")
-			SStitle.change_title_screen()
+			SStitle.set_title_image()
 		if("Cancel")
 			return
 
 /**
  * Sets a titlescreen notice, a big red text on the main screen.
  */
-ADMIN_VERB(change_title_screen_notice, R_FUN, "Title Screen: Set Notice", "Sets a titlescreen notice, a big red text on the main screen.", ADMIN_CATEGORY_FUN)
+ADMIN_VERB(change_title_screen_notice, R_FUN, "Title Screen: Set Notice", ADMIN_VERB_NO_DESCRIPTION, ADMIN_CATEGORY_EVENTS)
+	if(!check_rights(R_FUN))
+		return
+
 	log_admin("[key_name(usr)] is setting the title screen notice.")
 	message_admins("[key_name_admin(usr)] is setting the title screen notice.")
 
-	var/new_notice = input(usr, "Please input a notice to be displayed on the title screen:", "Titlescreen Notice") as text|null
-	SStitle.set_notice(new_notice)
-	if(!new_notice)
+	var/new_notice = tgui_input_text(usr, "Please input a notice to be displayed on the title screen:", "Titlescreen Notice")
+	if(isnull(new_notice))
 		return
-	for(var/mob/dead/new_player/new_player in GLOB.new_player_list)
+
+	SStitle.set_notice(new_notice)
+	for(var/mob/new_player in GLOB.player_list)
 		to_chat(new_player, span_boldannounce("TITLE NOTICE UPDATED: [new_notice]"))
 		SEND_SOUND(new_player,  sound('sound/items/bikehorn.ogg'))
 
 /**
  * An admin debug command that enables you to change the HTML on the go.
  */
-ADMIN_VERB(change_title_screen_html, R_DEBUG, "Title Screen: Set HTML", "Change lobby screen HTML on the go.", ADMIN_CATEGORY_FUN)
-	log_admin("[key_name(user)] is setting the title screen HTML.")
-	message_admins("[key_name_admin(user)] is setting the title screen HTML.")
-
-	var/new_html = input(usr, "Please enter your desired HTML(WARNING: YOU WILL BREAK SHIT)", "DANGER: TITLE HTML EDIT") as message|null
-
-	if(!new_html)
+ADMIN_VERB(change_title_screen_html, R_FUN, "Title Screen: Set HTML", ADMIN_VERB_NO_DESCRIPTION, ADMIN_CATEGORY_EVENTS)
+	if(!check_rights(R_DEBUG))
 		return
 
-	SStitle.title_html = new_html
-	SStitle.show_title_screen()
+	log_admin("[key_name(usr)] is setting the title screen HTML.")
+	message_admins("[key_name_admin(usr)] is setting the title screen HTML.")
 
-	message_admins("[key_name_admin(user)] has changed the title screen HTML.")
+	var/new_html = input(usr, "Please enter your desired HTML(WARNING: YOU WILL BREAK SHIT)", "DANGER: TITLE HTML EDIT") as message|null
+	if(isnull(new_html))
+		return
+
+	SStitle.set_title_html(new_html)
+	message_admins("[key_name_admin(usr)] has changed the title screen HTML.")
 
 /**
  * Reloads the titlescreen if it is bugged for someone.
@@ -57,9 +64,5 @@ ADMIN_VERB(change_title_screen_html, R_DEBUG, "Title Screen: Set HTML", "Change 
 	set desc = "Lobbyscreen broke? Press this."
 	set category = "OOC"
 
-	if(istype(mob, /mob/dead/new_player))
-		var/mob/dead/new_player/new_player = mob
-		new_player.show_title_screen()
-	else
-		winset(src, "title_browser", "is-disabled=true;is-visible=false")
-		winset(src, "status_bar", "is-visible=true")
+	SStitle.show_title_screen_to(src)
+
