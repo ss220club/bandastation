@@ -7,12 +7,6 @@
 	worn_icon_state = "wallet_NT"
 	overlay_icon_state = "wallet_NT_overlay"
 
-/obj/item/storage/wallet/wallet_NT/update_label()
-	if(front_id)
-		name = "[src::name] displaying [front_id]"
-		return
-	name = src::name
-
 /obj/item/storage/wallet/wallet_USSP_1
 	name = "leather USSP wallet"
 	desc = "Говорят, такие кошельки в СССП носят исключительно для зажигалок."
@@ -22,12 +16,6 @@
 	worn_icon_state = "wallet_USSP_1"
 	overlay_icon_state = "wallet_USSP_1_overlay"
 
-/obj/item/storage/wallet/wallet_USSP_1/update_label()
-	if(front_id)
-		name = "[src::name] displaying [front_id]"
-		return
-	name = src::name
-
 /obj/item/storage/wallet/wallet_USSP_2
 	name = "leather USSP wallet"
 	desc = "Говорят, такие кошельки в СССП носят исключительно для зажигалок."
@@ -36,12 +24,6 @@
 	worn_icon = 'modular_bandastation/objects/icons/onbody/id.dmi'
 	worn_icon_state = "wallet_USSP_2"
 	overlay_icon_state = "wallet_USSP_2_overlay"
-
-/obj/item/storage/wallet/wallet_USSP_2/update_label()
-	if(front_id)
-		name = "[src::name] displaying [front_id]"
-		return
-	name = src::name
 
 /obj/item/storage/wallet/wallet_wyci
 	name = "W.Y.C.I. wallet"
@@ -53,9 +35,3 @@
 	worn_icon = 'modular_bandastation/objects/icons/onbody/id.dmi'
 	worn_icon_state = "wallet_wyci"
 	overlay_icon_state = "wallet_wyci_overlay"
-
-/obj/item/storage/wallet/wallet_wyci/update_label()
-	if(front_id)
-		name = "[src::name] displaying [front_id]"
-		return
-	name = src::name
