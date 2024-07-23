@@ -19,7 +19,7 @@
 	. = ..()
 	if(user.combat_mode == TRUE)
 		new /obj/effect/decal/cleanable/blood(get_turf(user))
-		user.visible_message(span_warning("[user] раздавил хамптера в своей руке!"), span_warning("Ты с особой жестокостью давишь хамптера в своей руке, оставляя от него лишь лужу крови!"))
+		user.visible_message(span_warning("[user] раздавил хамптера своей рукой!"), span_warning("Ты с особой жестокостью давишь хамптера в своей руке, оставляя от него лишь лужу крови!"))
 		qdel(src)
 
 /obj/item/toy/plush/hampter/assistant
