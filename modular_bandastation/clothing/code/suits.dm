@@ -91,20 +91,6 @@
 	worn_icon = 'modular_bandastation/clothing/icons/mob/suits.dmi'
 	icon_state = "ntsc_uniform"
 
-/obj/item/clothing/suit/space/deathsquad/officer/field/cloak_nt
-	name = "армированная мантия офицера флота Нанотрейзен"
-	desc = "Один из вариантов торжественного одеяния сотрудников Верховного Командования Нанотрейзен, подойдет для официальной встречи или важного вылета. Сшита из лёгкой и сверхпрочной ткани."
-	icon = 'modular_bandastation/clothing/icons/object/cloaks.dmi'
-	worn_icon = 'modular_bandastation/clothing/icons/mob/cloaks.dmi'
-	icon_state = "ntsc_cloak"
-
-/obj/item/clothing/suit/space/deathsquad/officer/field/cloak_nt/coat_nt
-	name = "полевой плащ офицера флота Нанотрейзен"
-	desc = "Парадный плащ нового образца, внедряемый на объектах компании в последнее время. Отличительной чертой является стоячий воротник и резаный подол. Невысокие показатели защиты нивелируются пафосом, источаемым этим плащом."
-	icon_state = "ntsc_coat"
-	icon = 'modular_bandastation/clothing/icons/object/cloaks.dmi'
-	worn_icon = 'modular_bandastation/clothing/icons/mob/cloaks.dmi'
-
 /obj/item/clothing/suit/hooded/vi_arcane
 	name = "куртка Вай"
 	desc = "Слегка потрёпанный жакет боевой девчушки Вай."
@@ -242,8 +228,3 @@
 	icon = 'modular_bandastation/clothing/icons/object/suits.dmi'
 	worn_icon = 'modular_bandastation/clothing/icons/mob/suits.dmi'
 	icon_state = "hardsuit-sec-old"
-
-/obj/item/clothing/head/helmet/space/hardsuit/security
-	icon = 'modular_bandastation/clothing/icons/object/helmet.dmi'
-	worn_icon = 'modular_bandastation/clothing/icons/mob/helmet.dmi'
-	icon_state = "hardsuit0-sec"
