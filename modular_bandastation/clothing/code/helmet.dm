@@ -27,3 +27,8 @@
 	else
 		flags_cover |= HEADCOVERSEYES
 	update_appearance()
+
+/obj/item/clothing/head/helmet/space/hardsuit/security
+	icon = 'modular_bandastation/clothing/icons/object/helmet.dmi'
+	worn_icon = 'modular_bandastation/clothing/icons/mob/helmet.dmi'
+	icon_state = "hardsuit0-sec"
