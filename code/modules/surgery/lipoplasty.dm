@@ -45,7 +45,7 @@
 	)
 
 /datum/surgery_step/cut_fat/mechanic
-	name = "open fat containers (wrench or crowbar)"
+	name = "откройте ёмкости жира (ключ или монтировка)"
 	implements = list(
 		TOOL_WRENCH = 95,
 		TOOL_CROWBAR = 95,
@@ -92,7 +92,7 @@
 	success_sound = 'sound/surgery/retractor2.ogg'
 
 /datum/surgery_step/remove_fat/mechanic
-	name = "engage expulsion valve (screwdriver or wrench)" //gross
+	name = "включите клапан очистки (отвертка или ключ)" //gross
 	implements = list(
 		TOOL_SCREWDRIVER = 100,
 		TOOL_WRENCH = 100,

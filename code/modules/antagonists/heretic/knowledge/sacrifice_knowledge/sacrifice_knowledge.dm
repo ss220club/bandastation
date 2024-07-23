@@ -213,7 +213,7 @@
 	if((sac_job_flag & JOB_HEAD_OF_STAFF))
 		heretic_datum.knowledge_points += 3
 		heretic_datum.high_value_sacrifices++
-		feedback += " <i>graciously</i>"
+		feedback += " <i>с великодушием</i>"
 	if(cultist_datum)
 		heretic_datum.knowledge_points += 1
 		grant_reward(user, sacrifice, loc)

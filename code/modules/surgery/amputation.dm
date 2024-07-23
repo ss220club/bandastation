@@ -1,6 +1,6 @@
 
 /datum/surgery/amputation
-	name = "Amputation"
+	name = "Ампутация"
 	surgery_flags = SURGERY_REQUIRE_RESTING | SURGERY_REQUIRE_LIMB | SURGERY_MORBID_CURIOSITY
 	possible_locs = list(
 		BODY_ZONE_R_ARM,
@@ -19,7 +19,7 @@
 	)
 
 /datum/surgery/amputation/mechanic
-	name = "Disassemble"
+	name = "Разбор"
 	requires_bodypart_type = BODYTYPE_ROBOTIC
 	steps = list(
 		/datum/surgery_step/mechanic_open,
@@ -50,7 +50,7 @@
 	surgery_effects_mood = TRUE
 
 /datum/surgery_step/sever_limb/mechanic
-	name = "detach limb (wrench or crowbar)"
+	name = "отсоединить конечность (ключ или монтировка)"
 	implements = list(
 		/obj/item/shovel/giant_wrench = 300,
 		TOOL_WRENCH = 100,
