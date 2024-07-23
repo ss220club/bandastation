@@ -81,8 +81,8 @@
 	sanitized_reactions = FALSE
 
 /datum/experiment/ordnance/explosive/hydrogenbomb
-	name = "Водородная взрывчатка"
-	description = "Горение водорода и его производных может быть очень мощным. Зафиксируйте любой взрыв канистры с помощью доплеровской матрицы и опубликуйте данные в отчёте. Разрешены только водородные или тритиевые взрывы."
+	name = "Hydrogen Explosives"
+	description = "Combustion of Hydrogen and its derivatives can be very powerful. Capture any tank explosion with a Doppler Array and publish the data in a paper. Only Hydrogen or Tritium Fires are allowed."
 	gain = list(15,40,60)
 	target_amount = list(50,75,150)
 	experiment_proper = TRUE
