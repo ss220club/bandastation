@@ -13,7 +13,6 @@
 #include "communication/_communication.dme"
 //#include "crawl_speed/_crawl_speed.dme" // Fixing floored melee brawl, or first steps to remove RP speed
 #include "cyrillic_fixes/_cyrillic_fixes.dme"
-#include "clothing/_clothing.dme"
 #include "database220/_database220.dme"
 #include "discord/_discord.dme"
 #include "emote_panel/_emote_panel.dme" // Waiting for upstream merge
@@ -21,7 +20,6 @@
 #include "examine_panel/_examine_panel.dme"
 #include "gunhud/_gunhud.dme"
 #include "keybinding/_keybinding.dme"
-#include "instruments/_instruments.dme"
 #include "loadout/_loadout.dme"
 #include "pixel_shift/_pixel_shift.dme"
 #include "ru_jobs/_ru_jobs.dme"
