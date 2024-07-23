@@ -1,6 +1,6 @@
 /obj/item/disk/surgery/sleeper_protocol
 	name = "Suspicious Surgery Disk"
-	desc = "The disk provides instructions on how to turn someone into a sleeper agent for the Syndicate."
+	desc = "На диске содержатся инструкции о том, как превратить кого-либо в спящего агента Синдиката."
 	surgeries = list(
 		/datum/surgery/advanced/brainwashing_sleeper,
 		/datum/surgery/advanced/brainwashing_sleeper/mechanic,
@@ -8,7 +8,7 @@
 
 /datum/surgery/advanced/brainwashing_sleeper
 	name = "Sleeper Agent Surgery"
-	desc = "A surgical procedure which implants the sleeper protocol into the patient's brain, making it their absolute priority. It can be cleared using a mindshield implant."
+	desc = "Хирургическая процедура, которая имплантирует протокол сна в мозг пациента, что делает его абсолютным приоритетом. Его можно очистить с помощью импланта защиты разума."
 	requires_bodypart_type = NONE
 	possible_locs = list(BODY_ZONE_HEAD)
 	steps = list(

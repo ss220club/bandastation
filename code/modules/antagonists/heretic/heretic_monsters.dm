@@ -37,5 +37,5 @@
 
 	objectives += master_obj
 	owner.announce_objectives()
-	to_chat(owner, span_boldnotice("You are a [ishuman(owner.current) ? "shambling corpse returned":"horrible creation brought"] to this plane through the Gates of the Mansus."))
-	to_chat(owner, span_notice("Your master is [master]. Assist them to all ends."))
+	to_chat(owner, span_boldnotice("Ты - [ishuman(owner.current) ? "возвращенный труп":"ужасное создание, принесенное"] в этот мир через врата Мансуса"))
+	to_chat(owner, span_notice("Твой хозяин - [master]. Помогай ему во всех деяниях."))

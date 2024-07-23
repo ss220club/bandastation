@@ -1,6 +1,6 @@
 //open shell
 /datum/surgery_step/mechanic_open
-	name = "unscrew shell (screwdriver or scalpel)"
+	name = "открутить корпус (отвертка или скальпель)"
 	implements = list(
 		TOOL_SCREWDRIVER = 100,
 		TOOL_SCALPEL = 75, // med borgs could try to unscrew shell with scalpel
@@ -30,7 +30,7 @@
 
 //close shell
 /datum/surgery_step/mechanic_close
-	name = "screw shell (screwdriver or scalpel)"
+	name = "закрутите корпус (отвертка или скальпель)"
 	implements = list(
 		TOOL_SCREWDRIVER = 100,
 		TOOL_SCALPEL = 75,
@@ -60,7 +60,7 @@
 
 //prepare electronics
 /datum/surgery_step/prepare_electronics
-	name = "prepare electronics (multitool or hemostat)"
+	name = "подготовьте электронику (мультитул или гемостат)"
 	implements = list(
 		TOOL_MULTITOOL = 100,
 		TOOL_HEMOSTAT = 75)
@@ -80,7 +80,7 @@
 
 //unwrench
 /datum/surgery_step/mechanic_unwrench
-	name = "unwrench bolts (wrench or retractor)"
+	name = "выкрутите болты (ключ или ретрактор)"
 	implements = list(
 		TOOL_WRENCH = 100,
 		TOOL_RETRACTOR = 75)
@@ -105,7 +105,7 @@
 
 //wrench
 /datum/surgery_step/mechanic_wrench
-	name = "wrench bolts (wrench or retractor)"
+	name = "закрутите болты (ключ или ретрактор)"
 	implements = list(
 		TOOL_WRENCH = 100,
 		TOOL_RETRACTOR = 75)

@@ -1,7 +1,7 @@
 /datum/surgery/revival
-	name = "Revival"
-	desc = "An experimental surgical procedure which involves reconstruction and reactivation of the patient's brain even long after death. \
-		The body must still be able to sustain life."
+	name = "Воскрешение"
+	desc = "Экспериментальная хирургическая процедура, которая предусматривает восстановление и оживление мозга пациента даже спустя долгое время после смерти. \
+		Тело должно быть способно поддерживать жизнь."
 	possible_locs = list(BODY_ZONE_CHEST)
 	target_mobtypes = list(/mob/living)
 	surgery_flags = SURGERY_REQUIRE_RESTING | SURGERY_MORBID_CURIOSITY

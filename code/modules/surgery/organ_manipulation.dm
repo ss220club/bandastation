@@ -55,7 +55,7 @@
 	)
 
 /datum/surgery/organ_manipulation/mechanic
-	name = "Hardware Manipulation"
+	name = "Манипуляция с оборудованием"
 	requires_bodypart_type = BODYTYPE_ROBOTIC
 	surgery_flags = SURGERY_SELF_OPERABLE | SURGERY_REQUIRE_LIMB
 	possible_locs = list(BODY_ZONE_CHEST, BODY_ZONE_HEAD)
@@ -110,7 +110,7 @@
 	)
 
 /datum/surgery/organ_manipulation/mechanic/external
-	name = "Chassis Manipulation"
+	name = "Манипуляция с корпусом"
 	possible_locs = list(
 		BODY_ZONE_CHEST,
 		BODY_ZONE_HEAD,
