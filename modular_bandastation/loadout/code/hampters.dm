@@ -7,7 +7,7 @@
 	item_path = /obj/item/toy/plush/hampter/captain
 
 /datum/loadout_item/pocket_items/plush/hampter_ded
-	name = "Хамптер дедсквада"
+	name = "Хамптер Дедсквада"
 	item_path = /obj/item/toy/plush/hampter/deadsquad
 
 /datum/loadout_item/pocket_items/plush/hampter_ert
