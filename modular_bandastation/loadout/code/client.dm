@@ -9,6 +9,9 @@
 	var/donator_level = 0
 	COOLDOWN_DECLARE(db_check_cooldown)
 
+/datum/client_interface
+	var/donator_level = 0
+
 /client/proc/get_donator_level()
 	donator_level = max(donator_level, get_donator_level_from_db(), get_donator_level_from_admin())
 	return donator_level
