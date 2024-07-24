@@ -1,19 +1,19 @@
-#define TIER1 220
-#define TIER2 440
-#define TIER3 1000
-#define TIER4 2220
-#define TIER5 10000
+#define DONATION_TIER_1 220
+#define DONATION_TIER_2 440
+#define DONATION_TIER_3 1000
+#define DONATION_TIER_4 2220
+#define DONATION_TIER_5 10000
 
 /client
-	/// Call `proc/update_donator_level()` instead to get a value when possible.
+	/// Call `proc/get_donator_level()` instead to get a value when possible.
 	var/donator_level = 0
 	COOLDOWN_DECLARE(db_check_cooldown)
 
-/client/proc/update_donator_level()
-	donator_level = max(donator_level, get_donator_level_db(), get_donator_level_admin())
+/client/proc/get_donator_level()
+	donator_level = max(donator_level, get_donator_level_from_db(), get_donator_level_from_admin())
 	return donator_level
 
-/client/proc/get_donator_level_admin()
+/client/proc/get_donator_level_from_admin()
 	if(!holder)
 		return 0
 	var/best_level = 0
@@ -22,7 +22,7 @@
 			best_level = max(best_level, 3)
 	return best_level
 
-/client/proc/get_donator_level_db()
+/client/proc/get_donator_level_from_db()
 	if(!COOLDOWN_FINISHED(src, db_check_cooldown))
 		return 0
 	COOLDOWN_START(src, db_check_cooldown, 15 SECONDS)
@@ -42,20 +42,20 @@
 	qdel(query_get_donator_level)
 
 	switch(amount)
-		if(TIER1 to (TIER2 - 1))
+		if(DONATION_TIER_1 to (DONATION_TIER_2 - 1))
 			return 1
-		if(TIER2 to (TIER3 - 1))
+		if(DONATION_TIER_2 to (DONATION_TIER_3 - 1))
 			return 2
-		if(TIER3 to (TIER4 - 1))
+		if(DONATION_TIER_3 to (DONATION_TIER_4 - 1))
 			return 3
-		if(TIER4 to (TIER5 - 1))
+		if(DONATION_TIER_4 to (DONATION_TIER_5 - 1))
 			return 4
-		if(TIER5 to INFINITY)
+		if(DONATION_TIER_5 to INFINITY)
 			return 5
 	return 0
 
-#undef TIER1
-#undef TIER2
-#undef TIER3
-#undef TIER4
-#undef TIER5
+#undef DONATION_TIER_1
+#undef DONATION_TIER_2
+#undef DONATION_TIER_3
+#undef DONATION_TIER_4
+#undef DONATION_TIER_5
