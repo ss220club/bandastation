@@ -715,7 +715,6 @@ SUBSYSTEM_DEF(dynamic)
 	if (GLOB.dynamic_forced_extended)
 		log_dynamic("Starting a round of forced extended.")
 		return TRUE
-
 	var/list/drafted_rules = list()
 	for (var/datum/dynamic_ruleset/roundstart/rule in roundstart_rules)
 		if (!rule.weight)
