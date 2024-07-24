@@ -23,11 +23,12 @@
 /client/proc/get_donator_level_from_admin()
 	if(!holder)
 		return 0
-	var/best_level = 0
-	for(var/datum/admin_rank/rank as anything in holder.ranks)
-		if(rank.rights & R_ADMIN)
-			best_level = max(best_level, 3)
-	return best_level
+	var/rank_flags = holder.rank_flags()
+	if(rank_flags & R_EVERYTHING)
+		return 5
+	if(rank_flags & R_ADMIN)
+		return 3
+	return 0
 
 /client/proc/get_donator_level_from_db()
 	if(!COOLDOWN_FINISHED(src, db_check_cooldown))
