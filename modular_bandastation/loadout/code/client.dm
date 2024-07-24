@@ -9,6 +9,7 @@
 	var/donator_level = 0
 	COOLDOWN_DECLARE(db_check_cooldown)
 
+// For unit-tests
 /datum/client_interface
 	var/donator_level = 0
 
