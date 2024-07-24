@@ -2,6 +2,7 @@
 /obj/machinery/vending/wardrobe/robo_wardrobe/Initialize(mapload)
 	icon = 'modular_bandastation/icons/obj/machines/vending.dmi'
 	icon_state = "robodrobe"
+	light_mask = null
 
 	var/list/new_products = list(
 		/obj/item/clothing/head/beret = 2,
