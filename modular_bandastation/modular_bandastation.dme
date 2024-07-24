@@ -31,3 +31,4 @@
 #include "drinks/_drinks.dme"
 #include "jukebox/_jukebox.dme"
 #include "objects/_objects.dme"
+#include "loadout/_loadout.dme"

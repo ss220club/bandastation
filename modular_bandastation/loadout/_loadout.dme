@@ -1,0 +1,3 @@
+#include "_loadout.dm"
+
+#include "code/hampters.dm"
