@@ -7,28 +7,37 @@
 	и инструментом высшего правосудия."
 	slot_flags = ITEM_SLOT_BELT
 	w_class = WEIGHT_CLASS_SMALL
-	var/on = FALSE
-	/// Force when concealed
 	force = 5
-	/// Force when extended
-	var/force_on = 20
 	lefthand_file = 'modular_bandastation/objects/icons/inhands/melee_lefthand.dmi'
 	righthand_file = 'modular_bandastation/objects/icons/inhands/melee_righthand.dmi'
 	icon = 'modular_bandastation/objects/icons/melee.dmi'
-	/// Icon state when concealed
-	icon_state = "centcom_bat_0"
-	inhand_icon_state = "centcom_bat_0"
+	icon_state = "centcom_bat"
+	inhand_icon_state = "centcom_bat"
 	worn_icon = 'icons/mob/clothing/belt.dmi'
 	worn_icon_state = "nothing"
-	/// Icon state when extended
-	var/icon_state_on = "centcom_bat_1"
-	var/inhand_icon_state_on = "centcom_bat_1"
-	/// Sound to play when concealing or extending
-	var/extend_sound = 'sound/weapons/batonextend.ogg'
-	/// Attack verbs when concealed (created on Initialize)
-	attack_verb_simple = list("hit", "poked")
-	/// Attack verbs when extended (created on Initialize)
-	var/list/attack_verb_simple_on = list("smacked", "struck", "cracked", "beaten")
+	homerun_able = FALSE
+
+/obj/item/melee/baseball_bat/homerun/central_command/Initialize(mapload)
+	. = ..()
+	AddComponent(/datum/component/transforming, \
+		force_on = 20, \
+		w_class_on = WEIGHT_CLASS_HUGE, \
+		attack_verb_simple_on = list("smacked", "struck", "crack", "beat"), \
+		attack_verb_simple_off = list("hit", "poked"), \
+	)
+	RegisterSignal(src, COMSIG_TRANSFORMING_ON_TRANSFORM, PROC_REF(on_transform))
+
+/obj/item/melee/baseball_bat/homerun/central_command/proc/on_transform(obj/item/source, mob/user, homerun_ready)
+	SIGNAL_HANDLER
+
+	src.homerun_ready = homerun_ready
+	if(user)
+		to_chat(user, homerun_able ? span_userdanger("Вы разложили [src.name] - время для правосудия!") : span_userdanger("Вы сложили [src.name]."))
+	playsound(src, 'sound/weapons/batonextend.ogg', 50, TRUE)
+	return COMPONENT_NO_DEFAULT_MESSAGE
+
+/obj/item/melee/baseball_bat/homerun/central_command/attack_self(mob/user)
+	homerun_able = !homerun_able
 
 /obj/item/melee/baseball_bat/homerun/central_command/pickup(mob/living/carbon/human/user)
 	. = ..()
@@ -42,32 +51,7 @@
 		else
 			user.adjustBruteLoss(rand(force/2, force))
 
-/obj/item/melee/baseball_bat/homerun/central_command/attack_self(mob/user)
-	on = !on
-
-	if(on)
-		to_chat(user, span_userdanger("Вы разложили [src.name] - время для правосудия!"))
-		icon_state = icon_state_on
-		inhand_icon_state = inhand_icon_state_on
-		w_class = WEIGHT_CLASS_HUGE
-		force = force_on
-		attack_verb_simple = attack_verb_simple_on
-	else
-		to_chat(user, span_userdanger("Вы сложили [src.name]."))
-		icon_state = initial(icon_state)
-		inhand_icon_state = initial(inhand_icon_state)
-		w_class = initial(w_class)
-		force = initial(force)
-		attack_verb_simple = initial(attack_verb_simple)
-
-	homerun_able = on
-	// Update mob hand visuals
-	if(ishuman(user))
-		user.update_held_items()
-	playsound(loc, extend_sound, 50, TRUE)
-	add_fingerprint(user)
-
 /obj/item/melee/baseball_bat/homerun/central_command/attack(mob/living/target, mob/living/user)
-	if(on)
+	if(homerun_able)
 		homerun_ready = TRUE
 	. = ..()
