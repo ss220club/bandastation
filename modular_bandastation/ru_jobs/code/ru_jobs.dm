@@ -7,6 +7,9 @@
 /datum/job/bartender
 	alternate_titles = list(JOB_BARTENDER_RU,)
 
+/datum/job/bitrunner
+	alternate_titles = list(JOB_BITRUNNER_RU,)
+
 /datum/job/botanist
 	alternate_titles = list(JOB_BOTANIST_RU,)
 
