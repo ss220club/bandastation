@@ -12,7 +12,7 @@
 
 	surgery.step_in_progress = TRUE
 	var/speed_mod = 1
-	var/fail_prob = 50//100 - fail_prob = success_prob
+	var/fail_prob = 70//100 - fail_prob = success_prob
 	var/advance = FALSE
 
 	if(preop(user, target, target_zone, tool, surgery) == SURGERY_STEP_FAIL)
@@ -47,7 +47,7 @@
 		fail_prob -= (1/tool.toolspeed) * 10
 	else
 		fail_prob += 10
-	fail_prob -= 3 * user_turf.luminosity()
+	fail_prob -= 100 * user_turf.get_lumcount()
 	if (HAS_TRAIT(target, TRAIT_ANALGESIA))
 		fail_prob -= 100
 
