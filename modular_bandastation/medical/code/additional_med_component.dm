@@ -126,3 +126,15 @@
 		assigned_mob.Unconscious(100)
 		assigned_mob.Stun(200)
 
+	switch(all_pain)
+		if(ADVMED_PAIN_THRESHOLD_MAX / 4 to ADVMED_PAIN_THRESHOLD_MAX / 2)
+			assigned_mob.add_mood_event("pain", /datum/mood_event/light_pain)
+		if(ADVMED_PAIN_THRESHOLD_MAX / 2 to ADVMED_PAIN_THRESHOLD_MAX)
+			assigned_mob.add_mood_event("pain", /datum/mood_event/moderate_pain)
+		if(ADVMED_PAIN_THRESHOLD_MAX to ADVMED_PAIN_THRESHOLD_MAX * 2)
+			assigned_mob.add_mood_event("pain", /datum/mood_event/severe_pain)
+		if(ADVMED_PAIN_THRESHOLD_MAX * 2 to ADVMED_PAIN_THRESHOLD_MAX * 4)
+			assigned_mob.add_mood_event("pain", /datum/mood_event/critical_pain)
+		if(ADVMED_PAIN_THRESHOLD_MAX * 4 to INFINITY)
+			assigned_mob.add_mood_event("pain", /datum/mood_event/psych_pain)
+

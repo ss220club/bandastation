@@ -3,6 +3,8 @@
 
 #include "code/pain/overrides.dm"
 
+#include "code/mood/moodlets.dm"
+
 #include "code/additional_med_defines.dm"
 #include "code/additional_med_functions.dm"
 #include "code/additional_med_states.dm"
