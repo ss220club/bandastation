@@ -46,7 +46,7 @@
 	. = ..()
 	alternate_titles += list(
 		JOB_COOK_RU,
-		JOB_CHEF_RU,
+		JOB_CHEF_RU
 	)
 
 /datum/job/coroner/New()
