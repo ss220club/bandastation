@@ -1,3 +1,3 @@
 /obj/item/modular_computer/pda/install_default_programs()
-	starting_programs += list(/datum/computer_file/program/crew_manifest)
+	starting_programs |= /datum/computer_file/program/crew_manifest
 	. = ..()
