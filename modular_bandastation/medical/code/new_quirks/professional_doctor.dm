@@ -1,7 +1,7 @@
 /datum/quirk/item_quirk/professional_doctor
 	name = "Professional doctor"
 	desc = "After years of practice you got a masterful skill of eximines limb of your pateins. Just grab him and carefully examine."
-	icon = FA_ICON_HEAD_SIDE_COUGH_SLASH
+	icon = FA_ICON_MEDKIT
 	value = 2
 	mob_trait = TRAIT_PROFESSIONAL_DOCTOR
 	gain_text = span_notice("You perfectly know, how to diagnose limbs!")
