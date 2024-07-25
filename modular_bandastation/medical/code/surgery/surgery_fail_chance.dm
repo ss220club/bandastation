@@ -47,7 +47,7 @@
 		fail_prob -= (1/tool.toolspeed) * 10
 	else
 		fail_prob += 10
-	fail_prob -= 100 * user_turf.get_lumcount()
+	fail_prob -= 10 * user_turf.get_lumcount()
 	if (HAS_TRAIT(target, TRAIT_ANALGESIA))
 		fail_prob -= 100
 
