@@ -1,6 +1,7 @@
 /obj/machinery/vending/wardrobe/robo_wardrobe/Initialize(mapload)
 	icon = 'modular_bandastation/objects/icons/obj/machines/vending.dmi'
 	icon_state = "robodrobe"
+	light_mask = null
 	. = ..()
 
 /obj/machinery/vending/wardrobe/robo_wardrobe/build_inventories(start_empty)
