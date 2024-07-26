@@ -37,7 +37,7 @@
 /obj/item/mod/module/stealth/proc/unstealth(datum/source)
 	SIGNAL_HANDLER
 
-	to_chat(mod.wearer, span_warning("[src] отключается от контакта!"))
+	to_chat(mod.wearer, span_warning("[capitalize(src.name)] отключается от контакта!"))
 	do_sparks(2, TRUE, src)
 	drain_power(use_energy_cost)
 	deactivate()
@@ -151,9 +151,9 @@
 
 /obj/item/mod/module/hacker/proc/charge_message(atom/drained_atom, drain_amount)
 	if(drain_amount)
-		to_chat(mod.wearer, span_notice("Получено <B>[drain_amount]</B> единиц энергии из [drained_atom]."))
+		to_chat(mod.wearer, span_notice("Получено <B>[drain_amount]</B> единиц энергии из [drained_atom.name]."))
 	else
-		to_chat(mod.wearer, span_warning("У [drained_atom] закончилась энергия, вы должны найти другой источник!"))
+		to_chat(mod.wearer, span_warning("У [drained_atom.name] закончилась энергия, вы должны найти другой источник!"))
 
 ///Weapon Recall - Teleports your katana to you, prevents gun use.
 /obj/item/mod/module/weapon_recall
@@ -202,7 +202,7 @@
 	linked_weapon.forceMove(linked_weapon.drop_location())
 	if(in_view)
 		do_sparks(5, FALSE, linked_weapon)
-		mod.wearer.visible_message(span_danger("[linked_weapon] летит в сторону [mod.wearer]!"),span_warning("Вы протягиваете руку и [linked_weapon] летит к вам!"))
+		mod.wearer.visible_message(span_danger("[capitalize(linked_weapon.name)] летит в сторону [mod.wearer]!"),span_warning("Вы протягиваете руку и [linked_weapon.name] летит к вам!"))
 		linked_weapon.throw_at(mod.wearer, distance+1, linked_weapon.throw_speed, mod.wearer)
 	else
 		recall_weapon()

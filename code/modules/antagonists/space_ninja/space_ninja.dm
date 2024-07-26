@@ -36,7 +36,7 @@
 	antag_memory += "Неожиданность - мое оружие. Тень - моя броня. Без них, Я - ничто.<br>"
 
 /datum/objective/cyborg_hijack
-	explanation_text = "Используйте свои перчатки, чтобы переделать хотя бы одного киборга, для оказания помощи вам в саботаже на станции."
+	explanation_text = "Используйте свои перчатки, чтобы конвертировать хотя бы одного киборга, для оказания помощи в ваших задачах."
 
 /datum/objective/door_jack
 	///How many doors that need to be opened using the gloves to pass the objective

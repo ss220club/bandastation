@@ -110,7 +110,7 @@
 	// If the traitor theft objective is still present, this will destroy it...
 	if(!source_code_hdd)
 		return ..()
-	to_chat(ninja, span_notice("Взлом [src]..."))
+	to_chat(ninja, span_notice("Взламываем [src.name]..."))
 	AI_notify_hack()
 	to_chat(ninja, span_notice("Обнаружен зашифрованный исходный код. Перегрузка устройства хранения данных..."))
 	INVOKE_ASYNC(src, PROC_REF(ninjadrain_charge), ninja, hacking_module)
@@ -131,7 +131,7 @@
 /obj/machinery/rnd/server/ninjadrain_act(mob/living/carbon/human/ninja, obj/item/mod/module/hacker/hacking_module)
 	if(!ninja || !hacking_module)
 		return NONE
-	to_chat(ninja, span_notice("Обнаружены исследовательские материалы. Повреждение данных..."))
+	to_chat(ninja, span_notice("Обнаружены исследовательские материалы. Повреждаем данные..."))
 	INVOKE_ASYNC(src, PROC_REF(ninjadrain_charge), ninja, hacking_module)
 	return COMPONENT_CANCEL_ATTACK_CHAIN
 
@@ -335,7 +335,7 @@
 //CAMERAS//
 /obj/machinery/camera/ninjadrain_act(mob/living/carbon/human/ninja, obj/item/mod/module/hacker/hacking_module)
 	if(isEmpProof(TRUE))
-		balloon_alert(ninja, "камера защищена!")
+		balloon_alert(ninja, "камера экранирована!")
 		return COMPONENT_CANCEL_ATTACK_CHAIN
 
 	if(!hacking_module.mod.subtract_charge(DEFAULT_CHARGE_DRAIN * 5))
@@ -380,7 +380,7 @@
 	hacking_module.charge_message(src, cell.charge)
 	cell.charge = 0
 	update_appearance()
-	visible_message(span_warning("[ninja] вытягивает энергию из [src]!"))
+	visible_message(span_warning("[ninja] вытягивает энергию из [src.name]!"))
 	do_sparks(number = 3, cardinal_only = FALSE, source = src)
 	return COMPONENT_CANCEL_ATTACK_CHAIN
 

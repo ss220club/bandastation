@@ -27,7 +27,7 @@
 	if (!IS_SPACE_NINJA(user))
 		return
 	if (isnull(detonation_area))
-		. += span_notice("Этот экземпляр был предоставлен без установленного места и не может быть использован.")
+		. += span_notice("Это устройство было предоставлено без заданного места и не может быть использовано.")
 	else
 		. += span_notice("Это устройство сработает только в [detonation_area].")
 
@@ -62,7 +62,7 @@
 	if(!check_loc(detonator.resolve())) // if its moved, deactivate the c4
 		var/obj/item/grenade/c4/ninja/new_c4 = new /obj/item/grenade/c4/ninja(target.loc)
 		new_c4.detonation_area = detonation_area
-		new_c4.say("неверное место!")
+		new_c4.say("недопустимая локация!")
 		target.cut_overlay(plastic_overlay, TRUE)
 		qdel(src)
 		return
