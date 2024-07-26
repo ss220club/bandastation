@@ -1,9 +1,9 @@
-// New sprite for robodrobe and new item list
 /obj/machinery/vending/wardrobe/robo_wardrobe/Initialize(mapload)
-	icon = 'modular_bandastation/icons/obj/machines/vending.dmi'
+	icon = 'modular_bandastation/objects/icons/obj/machines/vending.dmi'
 	icon_state = "robodrobe"
-	light_mask = null
+	. = ..()
 
+/obj/machinery/vending/wardrobe/robo_wardrobe/build_inventories(start_empty)
 	var/list/new_products = list(
 		/obj/item/clothing/head/beret = 2,
 		/obj/item/clothing/head/cowboy/roboticist_reborn = 2,
