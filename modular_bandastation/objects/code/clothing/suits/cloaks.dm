@@ -5,7 +5,7 @@
 	icon = 'modular_bandastation/objects/icons/obj/clothing/suits/rnd.dmi'
 	worn_icon = 'modular_bandastation/objects/icons/mob/clothing/suits/rnd.dmi'
 	inhand_icon_state = null
-	body_parts_covered = CHEST|GROIN|LEGS|ARMS
+	body_parts_covered = CHEST|GROIN|ARMS
 	hoodtype = /obj/item/clothing/head/hooded/roboticist_cloak
 
 /obj/item/clothing/head/hooded/roboticist_cloak

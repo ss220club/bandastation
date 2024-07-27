@@ -5,7 +5,6 @@
 
 #include "code/clothing/head/hat.dm"
 #include "code/clothing/head/soft_caps.dm"
-#include "code/job_outfits/roboticist.dm"
 #include "code/clothing/suits/cloaks.dm"
 #include "code/clothing/suits/jacket.dm"
 #include "code/clothing/suits/wintercoats.dm"
