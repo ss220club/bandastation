@@ -7,7 +7,7 @@
 SUBSYSTEM_DEF(tts220)
 	name = "Text-to-Speech 220"
 	init_order = INIT_ORDER_DEFAULT
-	wait = 0.5 SECONDS
+	wait = 1 SECONDS
 	runlevels = RUNLEVEL_LOBBY | RUNLEVELS_DEFAULT
 
 	/// All time tts uses
@@ -51,10 +51,8 @@ SUBSYSTEM_DEF(tts220)
 
 	/// General request queue
 	VAR_PRIVATE/list/tts_queue = list()
-	/// Ffmpeg queue. Is an assoc list. Each entry is a filename mapped to the list of sound processing requests which require it.
-	VAR_PRIVATE/list/tts_effects_queue = list()
 	/// Lazy list of request that need to performed to TTS provider API
-	VAR_PRIVATE/list/tts_requests_queue
+	VAR_PRIVATE/list/tts_requests_queue = list()
 
 	/// List of currently existing binding of atom and sound channel: `atom` => `sound_channel`.
 	VAR_PRIVATE/list/tts_local_channels_by_owner = list()
@@ -126,13 +124,20 @@ SUBSYSTEM_DEF(tts220)
 	return SS_INIT_SUCCESS
 
 /datum/controller/subsystem/tts220/fire()
-	if(last_network_fire + 1 SECONDS <= world.time)
-		fire_networking()
-	fire_sound_processing()
+	update_rps_stats()
 
-/datum/controller/subsystem/tts220/proc/fire_networking()
-	last_network_fire = world.time
+	var/free_rps = clamp(tts_rps_limit - tts_rps, 0, tts_rps_limit)
+	var/copy_until = min(length(tts_requests_queue), free_rps) + 1
+	for(var/datum/tts_process_request/request_to_process as anything in tts_requests_queue.Copy(1, copy_until))
+		var/datum/tts_provider/provider = request_to_process.seed.provider
+		provider.request(text, seed, proc_callback)
+		tts_rps_counter++
 
+	tts_requests_queue.Cut(1, copy_until)
+
+	log_cache_stats()
+
+/datum/controller/subsystem/tts220/proc/update_rps_stats()
 	tts_rps = tts_rps_counter
 	tts_rps_counter = 0
 	tts_trps = tts_trps_counter
@@ -149,44 +154,16 @@ SUBSYSTEM_DEF(tts220)
 		rps_sum += rps
 	tts_sma_rps = round(rps_sum / length(tts_rps_list), 0.1)
 
-	var/free_rps = clamp(tts_rps_limit - tts_rps, 0, tts_rps_limit)
-	var/requests = LAZYCOPY_RANGE(tts_requests_queue, 1, clamp(LAZYLEN(tts_requests_queue), 0, free_rps) + 1)
-	for(var/request in requests)
-		var/text = request[1]
-		var/datum/tts_seed/seed = request[2]
-		var/datum/callback/proc_callback = request[3]
-		var/datum/tts_provider/provider = seed.provider
-		provider.request(text, seed, proc_callback)
-		tts_rps_counter++
-	LAZYCUT(tts_requests_queue, 1, clamp(LAZYLEN(tts_requests_queue), 0, free_rps) + 1)
-
-	if(sanitized_messages_caching)
-		sanitized_messages_cache.Cut()
-		if(debug_mode_enabled)
-			logger.Log(LOG_CATEGORY_DEBUG, "sanitized_messages_cache: HIT=[sanitized_messages_cache_hit] / MISS=[sanitized_messages_cache_miss]")
-		sanitized_messages_cache_hit = 0
-		sanitized_messages_cache_miss = 0
-
-/datum/controller/subsystem/tts220/proc/fire_sound_processing()
-	var/queue_position = 1
-	while(LAZYLEN(tts_effects_queue) >= queue_position)
-		var/filename = tts_effects_queue[queue_position++]
-		INVOKE_ASYNC(src, PROC_REF(process_filename_sound_effect_requests), filename)
-
-		if(MC_TICK_CHECK)
-			break
-
-	LAZYCUT(tts_effects_queue, 1, queue_position)
-
-/datum/controller/subsystem/tts220/proc/process_filename_sound_effect_requests(filename)
-	var/list/filename_requests = tts_effects_queue[filename]
-	var/datum/sound_effect_request/request = filename_requests[1]
-
-	if(!apply_sound_effect(request.effect, request.original_filename, request.output_filename))
+/datum/controller/subsystem/tts220/proc/log_cache_stats()
+	if(!sanitized_messages_caching)
 		return
 
-	for(var/datum/sound_effect_request/adjacent_request as anything in filename_requests)
-		adjacent_request.cb.InvokeAsync()
+	sanitized_messages_cache.Cut()
+	if(debug_mode_enabled)
+		logger.Log(LOG_CATEGORY_DEBUG, "sanitized_messages_cache: HIT=[sanitized_messages_cache_hit] / MISS=[sanitized_messages_cache_miss]")
+
+	sanitized_messages_cache_hit = 0
+	sanitized_messages_cache_miss = 0
 
 /datum/controller/subsystem/tts220/Recover()
 	is_enabled = SStts220.is_enabled
@@ -211,30 +188,19 @@ SUBSYSTEM_DEF(tts220)
 	tts_acronym_replacements = replacements[TTS_ACRONYM_REPLACEMENTS]
 	tts_job_replacements = replacements[TTS_JOB_REPLACEMENTS]
 
-/datum/controller/subsystem/tts220/proc/queue_request(text, datum/tts_seed/seed, datum/callback/proc_callback)
-	if(LAZYLEN(tts_requests_queue) > tts_requests_queue_limit)
-		is_enabled = FALSE
-		to_chat(world, span_info("SERVER: очередь запросов превысила лимит, подсистема [src] принудительно отключена!"))
-		return FALSE
-
-	if(tts_rps_counter < tts_rps_limit)
-		var/datum/tts_provider/provider = seed.provider
-		provider.request(text, seed, proc_callback)
-		tts_rps_counter++
-		return TRUE
-
-	LAZYADD(tts_requests_queue, list(list(text, seed, proc_callback)))
-	return TRUE
-
-/datum/controller/subsystem/tts220/proc/get_tts(atom/speaker, mob/listener, message, datum/tts_seed/tts_seed, is_local = TRUE, datum/singleton/sound_effect/effect = null, traits = TTS_TRAIT_RATE_FASTER, preSFX = null, postSFX = null)
+/datum/controller/subsystem/tts220/proc/get_tts(atom/speaker, mob/listener, message, datum/tts_seed/tts_seed, is_local = TRUE, effect, traits = TTS_TRAIT_RATE_FASTER, preSFX = null, postSFX = null)
 	if(!is_enabled)
 		return
+
 	if(!message)
 		return
+
 	if(isnull(listener) || !listener.client)
 		return
-	if(ispath(tts_seed) && SStts220.tts_seeds[initial(tts_seed.name)])
-		tts_seed = SStts220.tts_seeds[initial(tts_seed.name)]
+
+	if(ispath(tts_seed))
+		tts_seed = SStts220.tts_seeds[lowertext(tts_seed::name)]
+
 	if(!istype(tts_seed))
 		return
 
@@ -244,51 +210,62 @@ SUBSYSTEM_DEF(tts220)
 	var/datum/tts_provider/provider = tts_seed.provider
 	if(!provider.is_enabled)
 		return
+
 	if(provider.throttle_check())
 		return
 
-	var/dirty_text = message
-	var/text = sanitize_tts_input(dirty_text)
-
-	if(!text || length_char(text) > MAX_MESSAGE_LEN)
+	var/sanitized_message = sanitize_tts_input(message)
+	if(!sanitized_message)
 		return
 
+	length_char(sanitized_message) > MAX_MESSAGE_LEN
+
 	if(traits & TTS_TRAIT_RATE_FASTER)
-		text = provider.rate_faster(text)
+		sanitized_message = provider.rate_faster(sanitized_message)
 
 	if(traits & TTS_TRAIT_RATE_MEDIUM)
-		text = provider.rate_medium(text)
+		sanitized_message = provider.rate_medium(sanitized_message)
 
 	if(traits & TTS_TRAIT_PITCH_WHISPER)
-		text = provider.pitch_whisper(text)
+		sanitized_message = provider.pitch_whisper(sanitized_message)
 
-	var/hash = md5(lowertext(text))
-
+	var/hash = md5(lowertext(sanitized_message))
 	var/filename = "data/tts_cache/[tts_seed.name]/[hash]"
-	var/datum/singleton/sound_effect/effect_singleton = GET_SINGLETON(effect)
-
 	if(fexists("[filename].ogg"))
 		tts_reused++
 		tts_rrps_counter++
 		play_tts(speaker, listener, filename, is_local, effect_singleton, preSFX, postSFX)
 		return
 
-	var/datum/callback/play_tts_cb = CALLBACK(src, PROC_REF(play_tts), speaker, listener, filename, is_local, effect_singleton, preSFX, postSFX)
+	var/datum/callback/play_tts_callback = CALLBACK(src, PROC_REF(play_tts), speaker, listener, filename, is_local, effect_singleton, preSFX, postSFX)
 
-	if(LAZYLEN(tts_queue[filename]))
+	if(length(tts_queue[filename]))
 		tts_reused++
 		tts_rrps_counter++
-		LAZYADD(tts_queue[filename], play_tts_cb)
-		return
+	else
+		enqueue_request(sanitized_message, tts_seed, CALLBACK(src, PROC_REF(get_tts_postprocess_callback), speaker, listener, filename, tts_seed, is_local, effect_singleton, preSFX, postSFX))
 
-	queue_request(text, tts_seed, CALLBACK(src, PROC_REF(get_tts_callback), speaker, listener, filename, tts_seed, is_local, effect_singleton, preSFX, postSFX))
+	LAZYADD(tts_queue[filename], play_tts_callback)
 
-	LAZYADD(tts_queue[filename], play_tts_cb)
+/datum/controller/subsystem/tts220/proc/enqueue_request(text, datum/tts_seed/seed, datum/callback/postprocess_callback)
+	PRIVATE_PROC(TRUE)
 
-/datum/controller/subsystem/tts220/proc/get_tts_callback(atom/speaker, mob/listener, filename, datum/tts_seed/seed, is_local, effect, preSFX, postSFX, datum/http_response/response)
+	if(length(tts_requests_queue) > tts_requests_queue_limit)
+		is_enabled = FALSE
+		to_chat(world, span_info("SERVER: очередь запросов превысила лимит, подсистема [src] принудительно отключена!"))
+		return FALSE
+
+	if(tts_rps_counter < tts_rps_limit)
+		var/datum/tts_provider/provider = seed.provider
+		provider.request(text, seed, postprocess_callback)
+		tts_rps_counter++
+		return TRUE
+
+	tts_requests_queue += new /datum/tts_process_request(text, seed, postprocess_callback)
+	return TRUE
+
+/datum/controller/subsystem/tts220/proc/get_tts_postprocess_callback(atom/speaker, mob/listener, filename, datum/tts_seed/seed, is_local, effect, preSFX, postSFX, datum/http_response/response)
 	var/datum/tts_provider/provider = seed.provider
-
-	// Bail if it errored
 	if(response.errored)
 		provider.timed_out_requests++
 		log_game(span_warning("Error connecting to [provider.name] TTS API. Please inform a maintainer or server host."))
@@ -300,6 +277,7 @@ SUBSYSTEM_DEF(tts220)
 		log_game(span_warning("Error performing [provider.name] TTS API request (Code: [response.status_code])"))
 		message_admins(span_warning("Error performing [provider.name] TTS API request (Code: [response.status_code])"))
 		tts_request_failed++
+
 		if(response.status_code)
 			if(tts_errors["[response.status_code]"])
 				tts_errors["[response.status_code]"]++
@@ -311,69 +289,61 @@ SUBSYSTEM_DEF(tts220)
 
 	tts_request_succeeded++
 
-	var/voice = provider.process_response(response)
-	if(!voice)
+	var/base64_encoded_speech = provider.process_response(response)
+	if(!base64_encoded_speech)
 		return
 
-	rustgss220_file_write_b64decode(voice, "[filename].ogg")
+	rustgss220_file_write_b64decode(base64_encoded_speech, "[filename].ogg")
 
 	if(!CONFIG_GET(flag/tts_cache_enabled))
 		addtimer(CALLBACK(src, PROC_REF(cleanup_tts_file), "[filename].ogg"), FILE_CLEANUP_DELAY)
 
-	for(var/datum/callback/cb in tts_queue[filename])
+	for(var/datum/callback/cb as anything in tts_queue[filename])
 		cb.InvokeAsync()
 		tts_queue[filename] -= cb
 
 	tts_queue -= filename
 
-/datum/controller/subsystem/tts220/proc/queue_sound_effect_processing(pure_filename, effect, processed_filename, datum/callback/output_tts_cb)
-	var/datum/sound_effect_request/request = new
-	request.original_filename = "[pure_filename].ogg"
-	request.output_filename = processed_filename
-	request.effect = effect
-	request.cb = output_tts_cb
-	LAZYADD(tts_effects_queue[processed_filename], request)
-
-/datum/controller/subsystem/tts220/proc/play_tts(atom/speaker, mob/listener, pure_filename, is_local = TRUE, datum/singleton/sound_effect/effect = null, preSFX = null, postSFX = null)
+/datum/controller/subsystem/tts220/proc/play_tts(atom/speaker, mob/listener, filename_to_play, is_local = TRUE, preSFX = null, postSFX = null)
 	if(isnull(listener) || !listener.client)
 		return
 
 	var/filename2play = "[pure_filename][effect?.suffix].ogg"
-
-	if(isnull(effect) || fexists(filename2play))
-		output_tts(speaker, listener, filename2play, is_local, preSFX, postSFX)
+	if(!fexists(filename2play))
 		return
 
-	var/datum/callback/output_tts_cb = CALLBACK(src, PROC_REF(output_tts), speaker, listener, filename2play, is_local, preSFX, postSFX)
-	queue_sound_effect_processing(pure_filename, effect, filename2play, output_tts_cb)
+	output_tts(speaker, listener, filename2play, is_local, preSFX, postSFX)
 
 /datum/controller/subsystem/tts220/proc/output_tts(atom/speaker, mob/listener, filename2play, is_local = TRUE, preSFX = null, postSFX = null)
-	var/volume
-	if(findtext(filename2play, "radio"))
-		volume = listener?.client?.prefs?.read_preference(/datum/preference/numeric/sound_tts_volume_radio)
-	else
-		volume = listener?.client?.prefs?.read_preference(/datum/preference/numeric/sound_tts_volume)
-
+	var/is_radio = !is_local || isnull(speaker)
+	var/volume = get_tts_volume(is_radio)
 	if(!volume)
 		return
-
-	var/turf/turf_source = get_turf(speaker)
 
 	var/sound/output = sound(filename2play)
 	output.status = SOUND_STREAM
 	output.volume = volume
-	if(!is_local || isnull(speaker))
-		output.wait = TRUE
-		output.environment = SOUND_ENVIRONMENT_NONE
-		output.channel = CHANNEL_TTS_RADIO
-
-		play_sfx_if_exists(listener, preSFX, output)
-		SEND_SOUND(listener, output)
-		play_sfx_if_exists(listener, postSFX, output)
-
-		return
 
 	play_sfx_if_exists(listener, preSFX, output)
+
+	if(is_radio)
+		output_tts_radio(listener, output)
+	else
+		output_tts_local(speaker, listener, output)
+
+	play_sfx_if_exists(listener, postSFX, output)
+
+/datum/controller/subsystem/tts220/proc/output_tts_radio(mob/listener, sound/output)
+	PRIVATE_PROC(TRUE)
+
+	output.wait = TRUE
+	output.environment = SOUND_ENVIRONMENT_NONE
+	output.channel = CHANNEL_TTS_RADIO
+
+	SEND_SOUND(listener, output)
+
+/datum/controller/subsystem/tts220/proc/output_tts_local(atom/speaker, mob/listener, sound/output)
+	PRIVATE_PROC(TRUE)
 
 	// Reserve channel only for players
 	if(ismob(speaker))
@@ -381,6 +351,8 @@ SUBSYSTEM_DEF(tts220)
 		if(speaking_mob.client)
 			output.channel = get_local_channel_by_owner(speaker)
 			output.wait = TRUE
+
+	var/turf/turf_source = get_turf(speaker)
 	listener.playsound_local(
 		turf_source,
 		vol = output.volume,
@@ -392,10 +364,12 @@ SUBSYSTEM_DEF(tts220)
 		falloff_distance = SOUND_DEFAULT_FALLOFF_DISTANCE,
 		distance_multiplier = 1,
 		use_reverb = TRUE,
-		wait = output.wait
 	)
 
-	play_sfx_if_exists(listener, postSFX, output)
+/datum/controller/subsystem/tts220/proc/get_tts_volume(is_radio)
+	return listener?.client?.prefs?.read_preference(
+		is_radio ? /datum/preference/numeric/sound_tts_volume_radio : /datum/preference/numeric/sound_tts_volume
+	)
 
 /datum/controller/subsystem/tts220/proc/play_sfx_if_exists(mob/listener, sfx, sound/output)
 	if(sfx)
@@ -505,11 +479,15 @@ SUBSYSTEM_DEF(tts220)
 	var/match = SStts220.tts_acronym_replacements[lowertext(word)]
 	return match || word
 
-/datum/sound_effect_request
-	var/original_filename
-	var/output_filename
-	var/datum/singleton/sound_effect/effect
-	var/datum/callback/cb
+/datum/tts_process_request
+	var/text
+	var/datum/tts_seed/seed
+	var/datum/callback/after_process_callback
+
+/datum/tts_process_request/New(text, datum/tts_seed/seed, datum/callback/after_process_callback)
+	src.text = text
+	src.seed = seed
+	src.after_process_callback = after_process_callback
 
 #undef TTS_REPLACEMENTS_FILE_PATH
 #undef TTS_ACRONYM_REPLACEMENTS
