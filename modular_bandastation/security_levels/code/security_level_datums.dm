@@ -24,7 +24,7 @@
 /datum/security_level/epsilon
 	name = "epsilon"
 	announcement_color = "purple"
-	sound = 'modular_bandastation/events/sound/purge_siren.ogg'
+	sound = 'modular_bandastation/events/sound/epsilon.ogg'
 	number_level = SEC_LEVEL_EPSILON
 	lowering_to_announcement = "Центральным командованием был установлен код ЭПСИЛОН. Все контракты расторгнуты."
 	elevating_to_announcement = "Центральным командованием был установлен код ЭПСИЛОН. Все контракты расторгнуты."
