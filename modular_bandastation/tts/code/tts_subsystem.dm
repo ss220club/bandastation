@@ -6,7 +6,6 @@
 
 SUBSYSTEM_DEF(tts220)
 	name = "Text-to-Speech 220"
-	init_order = INIT_ORDER_DEFAULT
 	wait = 1 SECONDS
 	runlevels = RUNLEVEL_LOBBY | RUNLEVELS_DEFAULT
 
@@ -82,10 +81,11 @@ SUBSYSTEM_DEF(tts220)
 
 	/// List of all tts seeds mapped by TTS gender: `tts gender` => `list of seeds`
 	VAR_PRIVATE/list/tts_seeds_by_gender
-	/// Replacement map for acronyms for proper TTS spelling. Not private because `replacetext` can use only global procs
-	var/list/tts_acronym_replacements
 	/// Replacement map for jobs for proper TTS spelling
 	VAR_PRIVATE/list/tts_job_replacements
+	/// Replacement map for acronyms for proper TTS spelling. Not private because `replacetext` can use only global procs
+	var/list/tts_acronym_replacements
+
 /datum/controller/subsystem/tts220/stat_entry(msg)
 	msg += "tRPS:[tts_trps] "
 	msg += "rRPS:[tts_rrps] "
@@ -424,31 +424,37 @@ SUBSYSTEM_DEF(tts220)
 			sanitized_messages_cache_hit++
 			return sanitized_messages_cache[hash]
 		sanitized_messages_cache_miss++
-	. = message
-	. = trim(.)
-	var/static/regex/punctuation_check = new(@"[.,?!]\Z")
-	if(!punctuation_check.Find(.))
-		. += "."
-	var/static/regex/html_tags = new(@"<[^>]*>", "g")
-	. = html_tags.Replace(., "")
-	. = html_decode(.)
-	var/static/regex/forbidden_symbols = new(@"[^a-zA-Z0-9а-яА-ЯёЁ,!?+./ \r\n\t:—()-]", "g")
-	. = forbidden_symbols.Replace(., "")
-	var/static/regex/acronyms = new(@"(?<![a-zA-Zа-яёА-ЯЁ])[a-zA-Zа-яёА-ЯЁ]+?(?![a-zA-Zа-яёА-ЯЁ])", "gm")
-	. = replacetext_char(., acronyms, /proc/tts_acronym_replacer)
 
-	if(LAZYLEN(tts_job_replacements))
-		for(var/job in tts_job_replacements)
-			. = replacetext_char(., job, tts_job_replacements[job])
-	. = rustgss220_latin_to_cyrillic(.)
+	var/sanitized_message = trim(sanitized_message)
+
+	var/static/regex/punctuation_check = new(@"[.,?!]\Z")
+	if(!punctuation_check.Find(sanitized_message))
+		sanitized_message += "."
+
+	var/static/regex/html_tags = new(@"<[^>]*>", "g")
+	sanitized_message = html_tags.Replace(sanitized_message, "")
+	sanitized_message = html_decode(sanitized_message)
+	
+	var/static/regex/forbidden_symbols = new(@"[^a-zA-Z0-9а-яА-ЯёЁ,!?+./ \r\n\t:—()-]", "g")
+	sanitized_message = forbidden_symbols.Replace(sanitized_message, "")
+	var/static/regex/acronyms = new(@"(?<![a-zA-Zа-яёА-ЯЁ])[a-zA-Zа-яёА-ЯЁ]+?(?![a-zA-Zа-яёА-ЯЁ])", "gm")
+	sanitized_message = replacetext_char(sanitized_message, acronyms, /proc/tts_acronym_replacer)
+
+	for(var/job in tts_job_replacements)
+		sanitized_message = replacetext_char(sanitized_message, job, tts_job_replacements[job])
+
+	sanitized_message = rustgss220_latin_to_cyrillic(sanitized_message)
 
 	var/static/regex/decimals = new(@"-?\d+\.\d+", "g")
-	. = replacetext_char(., decimals, GLOBAL_PROC_REF(dec_in_words))
+	sanitized_message = replacetext_char(sanitized_message, decimals, GLOBAL_PROC_REF(dec_in_words))
 
 	var/static/regex/numbers = new(@"-?\d+", "g")
-	. = replacetext_char(., numbers, GLOBAL_PROC_REF(num_in_words))
+	sanitized_message = replacetext_char(sanitized_message, numbers, GLOBAL_PROC_REF(num_in_words))
+
 	if(sanitized_messages_caching)
-		sanitized_messages_cache[hash] = .
+		sanitized_messages_cache[hash] = sanitized_message
+
+	return sanitized_message
 
 /datum/controller/subsystem/tts220/proc/get_tts_by_gender(gender)
 	return LAZYACCESS(tts_seeds_by_gender, get_tts_gender(gender))
