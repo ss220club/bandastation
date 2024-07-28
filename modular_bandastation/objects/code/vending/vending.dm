@@ -4,7 +4,7 @@
 	light_mask = null
 
 /obj/machinery/vending/wardrobe/robo_wardrobe/build_inventories(start_empty)
-	var/list/new_products = list(
+	products |= list(
 		/obj/item/clothing/head/beret = 2,
 		/obj/item/clothing/head/cowboy/roboticist = 2,
 		/obj/item/clothing/head/soft/roboticist_cap = 2,
@@ -17,6 +17,4 @@
 		/obj/item/clothing/under/rank/rnd/roboticist/alt/skirt = 2,
 		/obj/item/clothing/under/rank/rnd/roboticist/alt/skirt/red = 2,
 		)
-	new_products |= products
-	products = new_products
 	. = ..()

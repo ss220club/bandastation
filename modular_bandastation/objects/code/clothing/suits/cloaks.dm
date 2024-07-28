@@ -14,5 +14,5 @@
 	worn_icon = 'modular_bandastation/objects/icons/mob/clothing/head/rnd.dmi'
 	icon_state = "robotics_hood"
 	body_parts_covered = HEAD
-	flags_inv = HIDEHAIR|HIDEFACE|HIDEEARS
+	flags_inv = HIDEHAIR|HIDEEARS
 
