@@ -56,14 +56,33 @@
 		var/datum/preferences/prefs = chooser.client.prefs
 		var/prefs_tts_seed = prefs?.read_preference(/datum/preference/text/tts_seed)
 		if(being_changed.gender == prefs?.read_preference(/datum/preference/choiced/gender))
-			if(tgui_alert(chooser, "Оставляем голос вашего персонажа [prefs?.read_preference(/datum/preference/name/real_name)] - [prefs_tts_seed]?", "Выбор голоса", "Нет", "Да") ==  "Да")
+			var/tgui_alert_result = tgui_alert(
+				chooser,
+				"Оставляем голос вашего персонажа [prefs?.read_preference(/datum/preference/name/real_name)] - [prefs_tts_seed]?",
+				"Выбор голоса",
+				"Нет",
+				"Да"
+			)
+
+			if(tgui_alert_result == "Да")
 				if(!SStts220.tts_seeds[prefs_tts_seed])
 					to_chat(chooser, span_warning("Отсутствует tts_seed для значения \"[prefs_tts_seed]\". Текущий голос - [tts_seed]"))
 					return null
 				new_tts_seed = SStts220.tts_seeds[prefs_tts_seed]
+
 				if(new_effects)
 					effects = new_effects
-				INVOKE_ASYNC(SStts220, TYPE_PROC_REF(/datum/controller/subsystem/tts220, get_tts), null, chooser, tts_test_str, new_tts_seed, FALSE, get_all_effects())
+
+				INVOKE_ASYNC(
+					SStts220, \
+					TYPE_PROC_REF(/datum/controller/subsystem/tts220, get_tts), \
+					null, \
+					chooser, \
+					tts_test_str, \
+					new_tts_seed, \
+					FALSE, \
+					get_all_effects() \
+				)
 				return new_tts_seed
 
 	var/tts_seeds
@@ -88,10 +107,28 @@
 		effects = new_effects
 
 	if(!silent_target && being_changed != chooser && ismob(being_changed))
-		INVOKE_ASYNC(SStts220, TYPE_PROC_REF(/datum/controller/subsystem/tts220, get_tts), null, being_changed, tts_test_str, new_tts_seed, FALSE, get_all_effects())
+		INVOKE_ASYNC( \
+			SStts220, \
+			TYPE_PROC_REF(/datum/controller/subsystem/tts220, get_tts), \
+			null, \
+			being_changed, \
+			tts_test_str, \
+			new_tts_seed, \
+			FALSE, \
+			get_all_effects() \
+		)
 
 	if(chooser)
-		INVOKE_ASYNC(SStts220, TYPE_PROC_REF(/datum/controller/subsystem/tts220, get_tts), null, chooser, tts_test_str, new_tts_seed, FALSE, get_all_effects())
+		INVOKE_ASYNC( \
+			SStts220, \
+			TYPE_PROC_REF(/datum/controller/subsystem/tts220, get_tts), \
+			null, \
+			chooser, \
+			tts_test_str, \
+			new_tts_seed, \
+			FALSE, \
+			get_all_effects() \
+		)
 
 	return new_tts_seed
 
@@ -113,7 +150,18 @@
 		return null
 	return seed
 
-/datum/component/tts_component/proc/cast_tts(atom/speaker, mob/listener, message, atom/location, is_local = TRUE, is_radio = FALSE, traits = TTS_TRAIT_RATE_FASTER, preSFX, postSFX)
+/datum/component/tts_component/proc/cast_tts(
+	atom/speaker,
+	mob/listener,
+	message,
+	atom/location,
+	is_local = TRUE,
+	is_radio = FALSE,
+	traits = TTS_TRAIT_RATE_FASTER,
+	preSFX,
+	postSFX
+)
+
 	SIGNAL_HANDLER
 
 	if(!message)
@@ -139,7 +187,19 @@
 		additional_effects += TTS_SOUND_EFFECT_RADIO
 		is_local = FALSE
 
-	INVOKE_ASYNC(SStts220, TYPE_PROC_REF(/datum/controller/subsystem/tts220, get_tts), location, listener, message, tts_seed, is_local, get_all_effects(additional_effects), effects, preSFX, postSFX)
+	INVOKE_ASYNC(
+		SStts220, \
+		TYPE_PROC_REF(/datum/controller/subsystem/tts220, get_tts), \
+		location, \
+		listener, \
+		message, \
+		tts_seed, \
+		is_local, \
+		get_all_effects(additional_effects), \
+		traits, \
+		preSFX, \
+		postSFX \
+	)
 
 /datum/component/tts_component/proc/mob_tts_disabled(mob/mob_to_check)
 	var/datum/preferences/prefs = mob_to_check?.client?.prefs

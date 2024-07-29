@@ -146,7 +146,18 @@ SUBSYSTEM_DEF(tts220)
 	tts_acronym_replacements = SStts220.tts_acronym_replacements
 	tts_job_replacements = SStts220.tts_job_replacements
 
-/datum/controller/subsystem/tts220/proc/get_tts(atom/speaker, mob/listener, message, datum/tts_seed/tts_seed, is_local = TRUE, list/effects, traits = TTS_TRAIT_RATE_FASTER, preSFX = null, postSFX = null)
+/datum/controller/subsystem/tts220/proc/get_tts(
+	atom/speaker,
+	mob/listener,
+	message,
+	datum/tts_seed/tts_seed,
+	is_local = TRUE,
+	list/effects,
+	traits = TTS_TRAIT_RATE_FASTER,
+	preSFX = null,
+	postSFX = null
+)
+
 	if(!is_enabled)
 		return
 
@@ -179,7 +190,18 @@ SUBSYSTEM_DEF(tts220)
 	sanitized_message = apply_traits(sanitized_message, traits, provider)
 	process_message(sanitized_message, effects, tts_seed, speaker, listener, is_local, traits, preSFX, postSFX)
 
-/datum/controller/subsystem/tts220/proc/process_http_response(atom/speaker, mob/listener, pure_message_key, effects_key, datum/tts_seed/seed, is_local, preSFX, postSFX, datum/http_response/response)
+/datum/controller/subsystem/tts220/proc/process_http_response(
+	atom/speaker,
+	mob/listener,
+	pure_message_key,
+	effects_key,
+	datum/tts_seed/seed,
+	is_local,
+	preSFX,
+	postSFX,
+	datum/http_response/response
+)
+
 	var/datum/tts_provider/provider = seed.provider
 	if(check_response_for_errors(response, provider))
 		return
@@ -252,7 +274,18 @@ SUBSYSTEM_DEF(tts220)
 	tts_acronym_replacements = replacements[TTS_ACRONYM_REPLACEMENTS]
 	tts_job_replacements = replacements[TTS_JOB_REPLACEMENTS]
 
-/datum/controller/subsystem/tts220/proc/process_message(sanitized_message, list/effects, datum/tts_seed/tts_seed, atom/speaker, mob/listener, is_local = TRUE, traits = TTS_TRAIT_RATE_FASTER, preSFX = null, postSFX = null)
+/datum/controller/subsystem/tts220/proc/process_message(
+	sanitized_message,
+	list/effects,
+	datum/tts_seed/tts_seed,
+	atom/speaker,
+	mob/listener,
+	is_local = TRUE,
+	traits = TTS_TRAIT_RATE_FASTER,
+	preSFX = null,
+	postSFX = null
+)
+
 	PRIVATE_PROC(TRUE)
 
 	if(!isnull(effects) && !islist(effects))
@@ -276,7 +309,11 @@ SUBSYSTEM_DEF(tts220)
 		tts_reused++
 		tts_rrps_counter++
 	else
-		enqueue_request(sanitized_message, tts_seed, CALLBACK(src, PROC_REF(process_http_response), speaker, listener, pure_message_key, effects_key, tts_seed, is_local, preSFX, postSFX))
+		enqueue_request(
+			sanitized_message,
+			tts_seed,
+			CALLBACK(src, PROC_REF(process_http_response), speaker, listener, pure_message_key, effects_key, tts_seed, is_local, preSFX, postSFX)
+		)
 
 	if(length(effects))
 		LAZYINITLIST(messages_being_processed[pure_message_key])
