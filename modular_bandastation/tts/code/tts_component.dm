@@ -14,20 +14,26 @@
 	UnregisterSignal(parent, COMSIG_ATOM_TTS_TRAIT_ADD)
 	UnregisterSignal(parent, COMSIG_ATOM_TTS_TRAIT_REMOVE)
 
-/datum/component/tts_component/Initialize(datum/tts_seed/new_tts_seed, ...)
+/datum/component/tts_component/Initialize(datum/tts_seed/new_tts_seed, list/traits)
 	if(!isatom(parent))
 		return COMPONENT_INCOMPATIBLE
+
 	if(ispath(new_tts_seed) && SStts220.tts_seeds[initial(new_tts_seed.name)])
 		new_tts_seed = SStts220.tts_seeds[initial(new_tts_seed.name)]
+
 	if(istype(new_tts_seed))
 		tts_seed = new_tts_seed
+
 	if(!tts_seed)
 		tts_seed = get_random_tts_seed_by_gender()
+
 	if(!tts_seed) // Something went terribly wrong
 		return COMPONENT_INCOMPATIBLE
-	if(length(args) > 1)
-		for(var/trait in 2 to length(args))
-			traits += args[trait]
+
+	if(!isnull(traits) && !islist(traits))
+		traits = list(traits)
+
+	src.traits = traits
 
 /datum/component/tts_component/proc/return_tts_seed()
 	SIGNAL_HANDLER
@@ -105,54 +111,69 @@
 		return null
 	return seed
 
-/datum/component/tts_component/proc/get_effect(effect)
-	. = effect
-	switch(.)
-		if(null)
-			if(TTS_TRAIT_ROBOTIZE in traits)
-				return /datum/singleton/sound_effect/robot
-		if(/datum/singleton/sound_effect/radio)
-			if(TTS_TRAIT_ROBOTIZE in traits)
-				return /datum/singleton/sound_effect/radio_robot
-		if(/datum/singleton/sound_effect/megaphone)
-			if(TTS_TRAIT_ROBOTIZE in traits)
-				return /datum/singleton/sound_effect/megaphone_robot
-	return .
-
 /datum/component/tts_component/proc/cast_tts(atom/speaker, mob/listener, message, atom/location, is_local = TRUE, effect = null, traits = TTS_TRAIT_RATE_FASTER, preSFX, postSFX)
 	SIGNAL_HANDLER
 
 	if(!message)
 		return
-	var/datum/preferences/prefs = listener?.client?.prefs
-	if(prefs?.read_preference(/datum/preference/choiced/sound_tts) != TTS_SOUND_ENABLED || prefs?.read_preference(/datum/preference/numeric/sound_tts_volume) == 0)
+
+	if(mob_tts_disabled(listener))
 		return
+
 	if(HAS_TRAIT(listener, TRAIT_DEAF))
 		return
+
 	if(!speaker)
 		speaker = parent
+
 	if(!location)
 		location = parent
-	if(effect == /datum/singleton/sound_effect/radio)
-		is_local = FALSE
+
+	if(effect == TTS_SOUND_EFFECT_RADIO)
 		if(listener == speaker) // don't hear both radio and whisper from yourself
 			return
 
-	effect = get_effect(effect)
+		is_local = FALSE
 
-	INVOKE_ASYNC(SStts220, TYPE_PROC_REF(/datum/controller/subsystem/tts220, get_tts), location, listener, message, tts_seed, is_local, effect, traits, preSFX, postSFX)
+	INVOKE_ASYNC(SStts220, TYPE_PROC_REF(/datum/controller/subsystem/tts220, get_tts), location, listener, message, tts_seed, is_local, get_effect(effect), traits, preSFX, postSFX)
+
+/datum/component/tts_component/proc/mob_tts_disabled(mob/mob_to_check)
+	var/datum/preferences/prefs = listener?.client?.prefs
+	if(isnull(prefs))
+		return TRUE
+
+	return prefs.read_preference(/datum/preference/choiced/sound_tts) != TTS_SOUND_ENABLED ||
+		prefs.read_preference(/datum/preference/numeric/sound_tts_volume) == 0
 
 /datum/component/tts_component/proc/tts_trait_add(atom/user, trait)
 	SIGNAL_HANDLER
 
-	if(!isnull(trait) && !(trait in traits))
-		traits += trait
+	if(isnull(trait))
+		return
+
+	traits |= trait
 
 /datum/component/tts_component/proc/tts_trait_remove(atom/user, trait)
 	SIGNAL_HANDLER
 
-	if(!isnull(trait) && (trait in traits))
-		traits -= trait
+	if(isnull(trait))
+		return
+
+	traits -= trait
+
+/datum/component/tts_component/proc/get_effect(effect)
+	switch(effect)
+		if(null)
+			if(TTS_TRAIT_ROBOTIZE in traits)
+				return TTS_SOUND_EFFECT_RADIO
+		if(TTS_SOUND_EFFECT_RADIO)
+			if(TTS_TRAIT_ROBOTIZE in traits)
+				return list(TTS_SOUND_EFFECT_RADIO, TTS_SOUND_EFFECT_ROBOT)
+		if(TTS_SOUND_EFFECT_MEGAPHONE)
+			if(TTS_TRAIT_ROBOTIZE in traits)
+				return list(TTS_SOUND_EFFECT_MEGAPHONE, TTS_SOUND_EFFECT_ROBOT)
+
+	return effect
 
 // Component usage
 
