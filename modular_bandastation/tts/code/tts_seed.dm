@@ -35,8 +35,8 @@
 		AddComponent(/datum/component/tts_component, /datum/tts_seed/silero/angel)
 	SEND_SIGNAL(src, COMSIG_ATOM_TTS_SEED_CHANGE, chooser, override, new_effects)
 
-/atom/proc/tts_trait_add(trait)
-	SEND_SIGNAL(src, COMSIG_ATOM_TTS_TRAIT_ADD, trait)
+/atom/proc/tts_effect_add(trait)
+	SEND_SIGNAL(src, COMSIG_ATOM_TTS_EFFECT_ADD, trait)
 
-/atom/proc/tts_trait_remove(trait)
-	SEND_SIGNAL(src, COMSIG_ATOM_TTS_TRAIT_REMOVE, trait)
+/atom/proc/tts_effect_remove(trait)
+	SEND_SIGNAL(src, COMSIG_ATOM_TTS_EFFECT_REMOVE, trait)

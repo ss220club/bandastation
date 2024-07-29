@@ -7,14 +7,14 @@
 /datum/component/tts_component/RegisterWithParent()
 	RegisterSignal(parent, COMSIG_ATOM_TTS_SEED_CHANGE, PROC_REF(tts_seed_change))
 	RegisterSignal(parent, COMSIG_ATOM_TTS_CAST, PROC_REF(cast_tts))
-	RegisterSignal(parent, COMSIG_ATOM_TTS_TRAIT_ADD, PROC_REF(tts_trait_add))
-	RegisterSignal(parent, COMSIG_ATOM_TTS_TRAIT_REMOVE, PROC_REF(tts_trait_remove))
+	RegisterSignal(parent, COMSIG_ATOM_TTS_EFFECT_ADD, PROC_REF(tts_effect_add))
+	RegisterSignal(parent, COMSIG_ATOM_TTS_EFFECT_REMOVE, PROC_REF(tts_effect_remove))
 
 /datum/component/tts_component/UnregisterFromParent()
 	UnregisterSignal(parent, COMSIG_ATOM_TTS_SEED_CHANGE)
 	UnregisterSignal(parent, COMSIG_ATOM_TTS_CAST)
-	UnregisterSignal(parent, COMSIG_ATOM_TTS_TRAIT_ADD)
-	UnregisterSignal(parent, COMSIG_ATOM_TTS_TRAIT_REMOVE)
+	UnregisterSignal(parent, COMSIG_ATOM_TTS_EFFECT_ADD)
+	UnregisterSignal(parent, COMSIG_ATOM_TTS_EFFECT_REMOVE)
 
 /datum/component/tts_component/Initialize(datum/tts_seed/new_tts_seed, list/effects)
 	if(!isatom(parent))
@@ -149,21 +149,21 @@
 	return prefs.read_preference(/datum/preference/choiced/sound_tts) != TTS_SOUND_ENABLED \
 	 || prefs.read_preference(/datum/preference/numeric/sound_tts_volume) == 0
 
-/datum/component/tts_component/proc/tts_trait_add(atom/user, trait)
+/datum/component/tts_component/proc/tts_effect_add(atom/user, effect)
 	SIGNAL_HANDLER
 
-	if(isnull(trait))
+	if(isnull(effect))
 		return
 
-	effects |= trait
+	effects |= effect
 
-/datum/component/tts_component/proc/tts_trait_remove(atom/user, trait)
+/datum/component/tts_component/proc/tts_effect_remove(atom/user, effect)
 	SIGNAL_HANDLER
 
-	if(isnull(trait))
+	if(isnull(effect))
 		return
 
-	effects -= trait
+	effects -= effect
 
 /datum/component/tts_component/proc/get_all_effects(list/additional_effects)
 	var/list/resulting_effects = list()
