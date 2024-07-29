@@ -138,12 +138,12 @@
 	INVOKE_ASYNC(SStts220, TYPE_PROC_REF(/datum/controller/subsystem/tts220, get_tts), location, listener, message, tts_seed, is_local, get_effect(effect), traits, preSFX, postSFX)
 
 /datum/component/tts_component/proc/mob_tts_disabled(mob/mob_to_check)
-	var/datum/preferences/prefs = listener?.client?.prefs
+	var/datum/preferences/prefs = mob_to_check?.client?.prefs
 	if(isnull(prefs))
 		return TRUE
 
-	return prefs.read_preference(/datum/preference/choiced/sound_tts) != TTS_SOUND_ENABLED ||
-		prefs.read_preference(/datum/preference/numeric/sound_tts_volume) == 0
+	return prefs.read_preference(/datum/preference/choiced/sound_tts) != TTS_SOUND_ENABLED \
+	 || prefs.read_preference(/datum/preference/numeric/sound_tts_volume) == 0
 
 /datum/component/tts_component/proc/tts_trait_add(atom/user, trait)
 	SIGNAL_HANDLER
