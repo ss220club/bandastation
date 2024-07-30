@@ -40,7 +40,8 @@
 	command_desc = "Command your pet to accompany you."
 	radial_icon = 'icons/testing/turf_analysis.dmi'
 	radial_icon_state = "red_arrow"
-	speech_commands = list("heel", "follow", "за мной", "след", "охран", "к ноге", "ко мне")
+	speech_commands = list("heel", "follow")
+	callout_type = /datum/callout_option/move
 	///the behavior we use to follow
 	var/follow_behavior = /datum/ai_behavior/pet_follow_friend
 
@@ -124,7 +125,8 @@
 	radial_icon = 'icons/effects/effects.dmi'
 	radial_icon_state = "bite"
 
-	speech_commands = list("attack", "sic", "kill", "апорт", "фас", "бить", "атак")
+	callout_type = /datum/callout_option/attack
+	speech_commands = list("attack", "sic", "kill")
 	command_feedback = "growl"
 	pointed_reaction = "and growls"
 	/// Balloon alert to display if providing an invalid target
@@ -220,6 +222,7 @@
 	command_name = "Protect owner"
 	command_desc = "Your pet will run to your aid."
 	hidden = TRUE
+	callout_type = /datum/callout_option/guard
 	///the range our owner needs to be in for us to protect him
 	var/protect_range = 9
 	///the behavior we will use when he is attacked
@@ -249,6 +252,9 @@
 /datum/pet_command/protect_owner/set_command_active(mob/living/parent, mob/living/victim)
 	. = ..()
 	set_command_target(parent, victim)
+
+/datum/pet_command/protect_owner/valid_callout_target(mob/living/caller, datum/callout_option/callout, atom/target)
+	return target == caller || get_dist(caller, target) <= 1
 
 /datum/pet_command/protect_owner/proc/set_attacking_target(atom/source, mob/living/attacker)
 	SIGNAL_HANDLER

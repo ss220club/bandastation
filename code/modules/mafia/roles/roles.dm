@@ -186,7 +186,8 @@
 		if(MAFIA_TEAM_SOLO)
 			team_desc = "Одиночкой"
 			team_span = "comradio"
-	result += span_notice("[span_bold("[name]")] является <span class='[team_span]'>[team_desc]</span>")
-	result += "<span class='bold notice'>\"[desc]\"</span>"
-	result += span_notice("[name] выигрывает если [win_condition]")
+			the = FALSE
+	result += span_notice("The [span_bold("[name]")] is aligned with [the ? "the " : ""]<span class='[team_span]'>[team_desc]</span>")
+	result += "<span class='bold notice'>\"[initial(desc)]\"</span>"
+	result += span_notice("[name] wins when they [win_condition]")
 	to_chat(clueless, result.Join("</br>"))
