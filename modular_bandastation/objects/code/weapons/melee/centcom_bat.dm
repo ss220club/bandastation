@@ -16,7 +16,7 @@
 	inhand_icon_state = "centcom_bat"
 	worn_icon = 'icons/mob/clothing/belt.dmi'
 	worn_icon_state = "nothing"
-	attack_verb_simple = list("hit", "poked")
+	attack_verb_simple = list("бьёт")
 
 /obj/item/melee/baseball_bat/homerun/central_command/attack_self(mob/user)
 	active = !active
@@ -35,7 +35,6 @@
 	w_class = WEIGHT_CLASS_HUGE
 	inhand_icon_state = "[inhand_icon_state]_on"
 	icon_state = "[icon_state]_on"
-	attack_verb_simple = list("smacked", "struck", "crack", "beat")
 	user.update_held_items()
 
 /obj/item/melee/baseball_bat/homerun/central_command/proc/set_inactive(mob/user)
@@ -43,7 +42,6 @@
 	w_class = initial(w_class)
 	inhand_icon_state = initial(inhand_icon_state)
 	icon_state = initial(icon_state)
-	attack_verb_simple = initial(attack_verb_simple)
 	user.update_held_items()
 
 /obj/item/melee/baseball_bat/homerun/central_command/pickup(mob/living/carbon/human/user)
