@@ -176,6 +176,7 @@
 	var/list/result = list()
 	var/team_desc = ""
 	var/team_span = ""
+	var/the = TRUE
 	switch(team)
 		if(MAFIA_TEAM_TOWN)
 			team_desc = "Гражданином"
