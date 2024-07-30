@@ -16,6 +16,8 @@
 	color = "#351300"
 	nutriment_factor = 1
 	taste_description = "a pleasant tartness with a hint of sweetness and a bread-like aftertaste."
+	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
+	quality = DRINK_FANTASTIC
 
 /datum/glass_style/drinking_glass/kvass
 	required_drink_type = /datum/reagent/consumable/kvass
@@ -42,6 +44,7 @@
 	color = "#e0e0e0"
 	boozepwr = 45
 	taste_description = "twirly fire"
+	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
 /datum/glass_style/drinking_glass/sambuka
 	required_drink_type = /datum/reagent/consumable/ethanol/sambuka
@@ -56,6 +59,8 @@
 	color = "#746463"
 	boozepwr = 50
 	taste_description = "loss of flirtatiousness"
+	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
+	quality = DRINK_NICE
 
 /datum/glass_style/drinking_glass/innocent_erp
 	required_drink_type = /datum/reagent/consumable/ethanol/innocent_erp
@@ -78,6 +83,8 @@
 	color = "#C18A7B"
 	boozepwr = 50
 	taste_description = "дребезжащие в ритме металлические струны."
+	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
+	quality = DRINK_GOOD
 
 /datum/reagent/consumable/ethanol/soundhand/on_mob_life(mob/living/carbon/drinker, seconds_per_tick, times_fired)
 	. = ..()
@@ -106,6 +113,7 @@
 	color = "#200b0b"
 	boozepwr = 40
 	taste_description = "радость охоты"
+	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
 /datum/glass_style/drinking_glass/jagermeister
 	required_drink_type = /datum/reagent/consumable/ethanol/jagermeister
@@ -120,13 +128,14 @@
 	color = "#16c9ff"
 	boozepwr = 35
 	taste_description = "взрывная синева"
+	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
 /datum/glass_style/drinking_glass/bluecuracao
 	required_drink_type = /datum/reagent/consumable/ethanol/bluecuracao
 	name = "Стакан Блю Кюрасао"
 	desc = "Предохранитель готов, синева уже загорелась."
 	icon = 'modular_bandastation/food/icons/drinks.dmi'
-	icon_state = "bluecuracaoglass"
+	icon_state = "bluecuracao"
 
 /datum/reagent/consumable/ethanol/black_blood
 	name = "Black Blood"
@@ -134,6 +143,8 @@
 	color = "#252521"
 	boozepwr = 45
 	taste_description = "кровавая тьма"
+	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
+	quality = DRINK_NICE
 
 /datum/reagent/consumable/ethanol/black_blood/on_mob_life(mob/living/carbon/drinker, seconds_per_tick, times_fired)
 	. = ..()
@@ -162,6 +173,8 @@
 	color = "#a5702b"
 	boozepwr = 50
 	taste_description = "грузовой канал"
+	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
+	quality = DRINK_GOOD
 
 /datum/glass_style/drinking_glass/pegu_club
 	required_drink_type = /datum/reagent/consumable/ethanol/pegu_club
@@ -185,6 +198,8 @@
 	color = "#6b0059"
 	boozepwr = 75
 	taste_description = "диско амнезия"
+	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
+	quality = DRINK_GOOD
 
 /datum/glass_style/drinking_glass/amnesia
 	required_drink_type = /datum/reagent/consumable/ethanol/amnesia
@@ -206,6 +221,8 @@
 	color = "#c41414"
 	boozepwr = 60
 	taste_description = "superstar fading"
+	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
+	quality = DRINK_GOOD
 
 /datum/glass_style/drinking_glass/silverhand
 	required_drink_type = /datum/reagent/consumable/ethanol/silverhand
@@ -229,6 +246,8 @@
 	color = "#6b4017"
 	boozepwr = 60
 	taste_description = "старые времена"
+	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
+	quality = DRINK_VERYGOOD
 
 /datum/glass_style/drinking_glass/oldfashion
 	required_drink_type = /datum/reagent/consumable/ethanol/oldfashion
@@ -252,6 +271,8 @@
 	color = "#754609"
 	boozepwr = 40
 	taste_description = "солено-сладкий"
+	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
+	quality = DRINK_GOOD
 
 /datum/glass_style/drinking_glass/brandy_crusta
 	required_drink_type = /datum/reagent/consumable/ethanol/brandy_crusta
@@ -275,6 +296,8 @@
 	color = "#4218a3"
 	boozepwr = 50
 	taste_description = "четвертое измерение"
+	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
+	quality = DRINK_VERYGOOD
 
 /datum/glass_style/drinking_glass/telegol
 	required_drink_type = /datum/reagent/consumable/ethanol/telegol
@@ -297,6 +320,8 @@
 	color = "#c45d09"
 	boozepwr = 50
 	taste_description = "лошадиная сила"
+	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
+	quality = DRINK_GOOD
 
 /datum/reagent/consumable/ethanol/horse_neck/on_mob_metabolize(mob/living/affected_mob)
 	. = ..()
@@ -324,6 +349,8 @@
 	color = "#8d0000"
 	boozepwr = 45
 	taste_description = "истощение"
+	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
+	quality = DRINK_GOOD
 
 /datum/reagent/consumable/ethanol/vampiro/on_mob_life(mob/living/carbon/drinker, seconds_per_tick, times_fired)
 	. = ..()
@@ -351,6 +378,8 @@
 	color = "#5a3e0b"
 	boozepwr = 40
 	taste_description = "стелс"
+	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
+	quality = DRINK_NICE
 
 /datum/glass_style/drinking_glass/inabox
 	required_drink_type = /datum/reagent/consumable/ethanol/inabox
@@ -372,6 +401,8 @@
 	color = "#54dd1e"
 	boozepwr = 60
 	taste_description = "вера в фей"
+	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
+	quality = DRINK_GOOD
 
 /datum/reagent/consumable/ethanol/green_fairy/on_mob_life(mob/living/carbon/drinker, seconds_per_tick, times_fired)
 	. = ..()
@@ -400,6 +431,8 @@
 	color = "#e2a600"
 	boozepwr = 50
 	taste_description = "ужасная инфраструктура"
+	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
+	quality = DRINK_GOOD
 
 /datum/glass_style/drinking_glass/trans_siberian_express
 	required_drink_type = /datum/reagent/consumable/ethanol/trans_siberian_express
@@ -423,6 +456,8 @@
 	color = "#ffffff"
 	boozepwr = 80
 	taste_description = "радуга"
+	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
+	quality = DRINK_FANTASTIC
 
 /datum/reagent/consumable/ethanol/rainbow_sky/on_mob_life(mob/living/carbon/drinker, seconds_per_tick, times_fired)
 	. = ..()
