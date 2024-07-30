@@ -1,5 +1,7 @@
 #include "_objects.dm"
 
+#include "code/consumables/drinks.dm"
+
 #include "code/wallets.dm"
 #include "code/hampters.dm"
 #include "code/papershredder.dm"
