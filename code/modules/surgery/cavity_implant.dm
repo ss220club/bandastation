@@ -52,7 +52,7 @@ GLOBAL_LIST_INIT(heavy_cavity_implants, typecacheof(list(/obj/item/transfer_valv
 	var/obj/item/bodypart/chest/target_chest = target.get_bodypart(BODY_ZONE_CHEST)
 	if(tool)
 		if(item_for_cavity || ((tool.w_class > WEIGHT_CLASS_NORMAL) && !is_type_in_typecache(tool, GLOB.heavy_cavity_implants)) || HAS_TRAIT(tool, TRAIT_NODROP) || isorgan(tool))
-			to_chat(user, span_warning("You can't seem to fit [tool] in [target]'s [target_zone]!"))
+			to_chat(user, span_warning("Кажется, вы не можете поместить [tool.name] в <i>[target_zone]</i> у [target]!"))
 			return FALSE
 		else
 			display_results(
@@ -74,7 +74,7 @@ GLOBAL_LIST_INIT(heavy_cavity_implants, typecacheof(list(/obj/item/transfer_valv
 				span_notice("[user] вытягивает [item_for_cavity] из <i>[target_zone]</i> у [target]!"),
 				span_notice("[user] вытягивает [item_for_cavity.w_class > WEIGHT_CLASS_SMALL ? item_for_cavity : "что-то"] из <i>[target_zone]</i> у [target]."),
 			)
-			display_pain(target, "Что-то вытащили из вашего <i>[target_zone]</i>! это чертовски больно!")
+			display_pain(target, "Что-то вытащили из вашей <i>[target_zone]</i>! Это чертовски больно!")
 			user.put_in_hands(item_for_cavity)
 			target_chest.cavity_item = null
 			return ..()

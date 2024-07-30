@@ -211,8 +211,8 @@
 	wanted_types = list(/obj/item/flamethrower = TRUE)
 
 /datum/bounty/item/assistant/fish
-	name = "Fish"
-	description = "We need fish to populate our aquariums with. Fishes that are dead or bought from cargo will only be paid half as much."
+	name = "Рыба"
+	description = "Нам нужна рыба для заполнения наших аквариумов. Мёртвые или купленные из отдела поставок рыбы будут оплачены лишь наполовину."
 	reward = CARGO_CRATE_VALUE * 9.5
 	required_count = 4
 	wanted_types = list(/obj/item/fish = TRUE, /obj/item/storage/fish_case = TRUE)
