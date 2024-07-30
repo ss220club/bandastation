@@ -25,6 +25,7 @@
 	req_body["symbol_durs"] = list()
 	req_body["format"] = "ogg"
 	req_body["word_ts"] = FALSE
+	req_body["sfx"] = request.sfx
 
 	SShttp.create_async_request(RUSTG_HTTP_METHOD_POST, CONFIG_GET(string/tts_api_url_silero), json_encode(req_body), list("Content-Type" = "application/json"), request.after_process_callback)
 

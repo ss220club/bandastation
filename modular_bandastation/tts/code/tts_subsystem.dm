@@ -312,6 +312,7 @@ SUBSYSTEM_DEF(tts220)
 		enqueue_request(
 			sanitized_message,
 			tts_seed,
+			effects,
 			CALLBACK(src, PROC_REF(process_http_response), speaker, listener, pure_message_key, effects_key, tts_seed, is_local, preSFX, postSFX)
 		)
 
@@ -353,7 +354,7 @@ SUBSYSTEM_DEF(tts220)
 
 	return effects.Join("_")
 
-/datum/controller/subsystem/tts220/proc/enqueue_request(text, datum/tts_seed/seed, datum/callback/postprocess_callback)
+/datum/controller/subsystem/tts220/proc/enqueue_request(text, datum/tts_seed/seed, list/effects, datum/callback/postprocess_callback)
 	PRIVATE_PROC(TRUE)
 
 	if(length(tts_requests_queue) > tts_requests_queue_limit)
@@ -361,7 +362,7 @@ SUBSYSTEM_DEF(tts220)
 		to_chat(world, span_info("SERVER: очередь запросов превысила лимит, подсистема [src] принудительно отключена!"))
 		return FALSE
 
-	var/datum/tts_process_request/request = new(text, seed, postprocess_callback)
+	var/datum/tts_process_request/request = new(text, seed, postprocess_callback, effects)
 	if(tts_rps_counter < tts_rps_limit)
 		var/datum/tts_provider/provider = seed.provider
 		provider.request(request)
@@ -625,15 +626,22 @@ SUBSYSTEM_DEF(tts220)
 	var/datum/tts_seed/seed
 	/// Callback that will be called after request is processed
 	var/datum/callback/after_process_callback
+	/// List of special effects that should be applied to resulting speech
+	var/list/sfx = list()
 
-/datum/tts_process_request/New(text, datum/tts_seed/seed, datum/callback/after_process_callback)
+/datum/tts_process_request/New(text, datum/tts_seed/seed, datum/callback/after_process_callback, list/sfx = list())
 	ASSERT(text, "No `text` provided")
 	ASSERT(seed, "No `seed` provided")
-	ASSERT(after_process_callback, "No `after_process_callback` not provided")
+	ASSERT(after_process_callback, "No `after_process_callback` provided")
 
 	src.text = text
 	src.seed = seed
 	src.after_process_callback = after_process_callback
+
+	if(!isnull(sfx) && !islist(sfx))
+		sfx = list(sfx)
+
+	src.sfx = sfx
 
 #undef TTS_REPLACEMENTS_FILE_PATH
 #undef TTS_ACRONYM_REPLACEMENTS

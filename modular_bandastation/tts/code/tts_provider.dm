@@ -11,6 +11,7 @@
 	var/failed_requests_limit = 10
 
 /datum/tts_provider/proc/request(datum/tts_process_request/request)
+	SHOULD_CALL_PARENT(TRUE)
 	ASSERT(!isnull(request), "`request` should not be null")
 
 	return TRUE
