@@ -7,7 +7,7 @@
 	и инструментом высшего правосудия."
 	slot_flags = ITEM_SLOT_BELT
 	w_class = WEIGHT_CLASS_SMALL
-	var/on = FALSE
+	var/active = FALSE
 	force = 5
 	lefthand_file = 'modular_bandastation/objects/icons/inhands/melee_lefthand.dmi'
 	righthand_file = 'modular_bandastation/objects/icons/inhands/melee_righthand.dmi'
@@ -19,24 +19,24 @@
 	attack_verb_simple = list("hit", "poked")
 
 /obj/item/melee/baseball_bat/homerun/central_command/attack_self(mob/user)
-	on = !on
+	active = !active
 
-	if(on)
+	if(active)
 		set_active(user)
 	else
 		set_inactive(user)
 
-	homerun_able = on
+	to_chat(user, active ? span_userdanger("Вы активировали [src.name] - время для правосудия!") : span_notice("Вы деактивировали [src.name]."))
+	playsound(src, 'sound/weapons/batonextend.ogg', 50, TRUE)
+	homerun_able = active
 
 /obj/item/melee/baseball_bat/homerun/central_command/proc/set_active(mob/user)
 	force = 20
 	w_class = WEIGHT_CLASS_HUGE
-	inhand_icon_state = "[icon_state]_on"
+	inhand_icon_state = "[inhand_icon_state]_on"
 	icon_state = "[icon_state]_on"
 	attack_verb_simple = list("smacked", "struck", "crack", "beat")
 	user.update_held_items()
-	playsound(src, 'sound/weapons/batonextend.ogg', 50, TRUE)
-	to_chat(user, span_userdanger("Вы активировали [src.name] - время для правосудия!"))
 
 /obj/item/melee/baseball_bat/homerun/central_command/proc/set_inactive(mob/user)
 	force = initial(force)
@@ -45,8 +45,6 @@
 	icon_state = initial(icon_state)
 	attack_verb_simple = initial(attack_verb_simple)
 	user.update_held_items()
-	playsound(src, 'sound/weapons/batonextend.ogg', 50, TRUE)
-	to_chat(user, span_notice("Вы деактивировали [src.name]."))
 
 /obj/item/melee/baseball_bat/homerun/central_command/pickup(mob/living/carbon/human/user)
 	. = ..()
