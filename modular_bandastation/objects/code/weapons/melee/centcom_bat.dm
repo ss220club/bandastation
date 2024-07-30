@@ -7,6 +7,7 @@
 	и инструментом высшего правосудия."
 	slot_flags = ITEM_SLOT_BELT
 	w_class = WEIGHT_CLASS_SMALL
+	var/on = FALSE
 	force = 5
 	lefthand_file = 'modular_bandastation/objects/icons/inhands/melee_lefthand.dmi'
 	righthand_file = 'modular_bandastation/objects/icons/inhands/melee_righthand.dmi'
@@ -15,29 +16,37 @@
 	inhand_icon_state = "centcom_bat"
 	worn_icon = 'icons/mob/clothing/belt.dmi'
 	worn_icon_state = "nothing"
-	homerun_able = FALSE
-
-/obj/item/melee/baseball_bat/homerun/central_command/Initialize(mapload)
-	. = ..()
-	AddComponent(/datum/component/transforming, \
-		force_on = 20, \
-		w_class_on = WEIGHT_CLASS_HUGE, \
-		attack_verb_simple_on = list("smacked", "struck", "crack", "beat"), \
-		attack_verb_simple_off = list("hit", "poked"), \
-	)
-	RegisterSignal(src, COMSIG_TRANSFORMING_ON_TRANSFORM, PROC_REF(on_transform))
-
-/obj/item/melee/baseball_bat/homerun/central_command/proc/on_transform(obj/item/source, mob/user, homerun_ready)
-	SIGNAL_HANDLER
-
-	src.homerun_ready = homerun_ready
-	if(user)
-		to_chat(user, homerun_able ? span_userdanger("Вы разложили [src.name] - время для правосудия!") : span_userdanger("Вы сложили [src.name]."))
-	playsound(src, 'sound/weapons/batonextend.ogg', 50, TRUE)
-	return COMPONENT_NO_DEFAULT_MESSAGE
+	attack_verb_simple = list("hit", "poked")
 
 /obj/item/melee/baseball_bat/homerun/central_command/attack_self(mob/user)
-	homerun_able = !homerun_able
+	on = !on
+
+	if(on)
+		set_active(user)
+	else
+		set_inactive(user)
+
+	homerun_able = on
+
+/obj/item/melee/baseball_bat/homerun/central_command/proc/set_active(mob/user)
+	force = 20
+	w_class = WEIGHT_CLASS_HUGE
+	inhand_icon_state = "[icon_state]_on"
+	icon_state = "[icon_state]_on"
+	attack_verb_simple = list("smacked", "struck", "crack", "beat")
+	user.update_held_items()
+	playsound(src, 'sound/weapons/batonextend.ogg', 50, TRUE)
+	to_chat(user, span_userdanger("Вы активировали [src.name] - время для правосудия!"))
+
+/obj/item/melee/baseball_bat/homerun/central_command/proc/set_inactive(mob/user)
+	force = initial(force)
+	w_class = initial(w_class)
+	inhand_icon_state = initial(inhand_icon_state)
+	icon_state = initial(icon_state)
+	attack_verb_simple = initial(attack_verb_simple)
+	user.update_held_items()
+	playsound(src, 'sound/weapons/batonextend.ogg', 50, TRUE)
+	to_chat(user, span_notice("Вы деактивировали [src.name]."))
 
 /obj/item/melee/baseball_bat/homerun/central_command/pickup(mob/living/carbon/human/user)
 	. = ..()
