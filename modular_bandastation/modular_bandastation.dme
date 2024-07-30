@@ -29,7 +29,7 @@
 #include "whitelist220/_whitelist220.dme"
 #include "world_topics/_world_topics.dme"
 #include "preferences/_preferences.dme"
-#include "drinks/_drinks.dme"
+#include "food/_food.dme"
 #include "jukebox/_jukebox.dme"
 #include "objects/_objects.dme"
 #include "hair/_hair.dme"
