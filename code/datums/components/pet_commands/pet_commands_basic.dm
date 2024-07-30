@@ -40,7 +40,7 @@
 	command_desc = "Command your pet to accompany you."
 	radial_icon = 'icons/testing/turf_analysis.dmi'
 	radial_icon_state = "red_arrow"
-	speech_commands = list("heel", "follow")
+	speech_commands = list("heel", "follow", "за мной", "след", "охран", "к ноге", "ко мне")
 	callout_type = /datum/callout_option/move
 	///the behavior we use to follow
 	var/follow_behavior = /datum/ai_behavior/pet_follow_friend
@@ -126,7 +126,7 @@
 	radial_icon_state = "bite"
 
 	callout_type = /datum/callout_option/attack
-	speech_commands = list("attack", "sic", "kill")
+	speech_commands = list("attack", "sic", "kill", "апорт", "фас", "бить", "атак")
 	command_feedback = "growl"
 	pointed_reaction = "and growls"
 	/// Balloon alert to display if providing an invalid target
