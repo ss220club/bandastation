@@ -104,32 +104,38 @@ export const CameraConsole = (props) => {
     }
   };
   return (
-    <Window width={850} height={708}>
+    <Window width={1170} height={755}>
       <Window.Content>
-        <Box fillPositionedParent>
-          <Stack.Item
-            width={tabIndex === 1 ? '222px' : '475px'}
-            textAlign="center"
-          >
-            <Tabs fluid ml={tabIndex === 1 ? 1 : 0} mt={tabIndex === 1 ? 1 : 0}>
-              <Tabs.Tab
-                key="Map"
-                selected={tabIndex === 0}
-                onClick={() => setTabIndex(0)}
+        <Stack>
+          <Box fillPositionedParent>
+            <Stack.Item
+              width={tabIndex === 1 ? '222px' : '475px'}
+              textAlign="center"
+            >
+              <Tabs
+                fluid
+                ml={tabIndex === 1 ? 1 : 0}
+                mt={tabIndex === 1 ? 1 : 0}
               >
-                <Icon name="map-marked-alt" /> Карта
-              </Tabs.Tab>
-              <Tabs.Tab
-                key="List"
-                selected={tabIndex === 1}
-                onClick={() => setTabIndex(1)}
-              >
-                <Icon name="table" /> Список
-              </Tabs.Tab>
-            </Tabs>
-          </Stack.Item>
-          {decideTab(tabIndex)}
-        </Box>
+                <Tabs.Tab
+                  key="Map"
+                  selected={tabIndex === 0}
+                  onClick={() => setTabIndex(0)}
+                >
+                  <Icon name="map-marked-alt" /> Карта
+                </Tabs.Tab>
+                <Tabs.Tab
+                  key="List"
+                  selected={tabIndex === 1}
+                  onClick={() => setTabIndex(1)}
+                >
+                  <Icon name="table" /> Список
+                </Tabs.Tab>
+              </Tabs>
+            </Stack.Item>
+            {decideTab(tabIndex)}
+          </Box>
+        </Stack>
       </Window.Content>
     </Window>
   );
@@ -140,10 +146,6 @@ export const CameraConsoleMapContent = (props) => {
   const cameras = selectCameras(data.cameras, '');
   const [zoom, setZoom] = useState(1);
   const { mapRef, activeCamera, mapUrl, selected_z_level } = data;
-  const [prevCameraName, nextCameraName] = prevNextCamera(
-    cameras,
-    activeCamera,
-  );
   return (
     <Stack fill>
       <Stack.Item
@@ -168,6 +170,7 @@ export const CameraConsoleMapContent = (props) => {
                 name={cm.name}
                 color={'blue'}
                 status={cm.status}
+                cam_ref={cm.ref}
               />
             ))}
         </NanoMap>
@@ -175,28 +178,11 @@ export const CameraConsoleMapContent = (props) => {
       <Stack.Item height="100%" m={0.1} className="CameraConsole__right_map">
         <div className="CameraConsole__header">
           <div className="CameraConsole__toolbar">
-            <b>Камера: </b>
-            {(activeCamera && activeCamera.name) || '—'}
-          </div>
-          <div className="CameraConsole__toolbarRight">
-            <Button
-              icon="chevron-left"
-              disabled={!prevCameraName}
-              onClick={() =>
-                act('switch_camera', {
-                  name: prevCameraName,
-                })
-              }
-            />
-            <Button
-              icon="chevron-right"
-              disabled={!nextCameraName}
-              onClick={() =>
-                act('switch_camera', {
-                  name: nextCameraName,
-                })
-              }
-            />
+            {activeCamera?.status ? (
+              <NoticeBox info>{activeCamera.name}</NoticeBox>
+            ) : (
+              <NoticeBox danger>No input signal</NoticeBox>
+            )}
           </div>
         </div>
         <ByondUi

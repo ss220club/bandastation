@@ -36,10 +36,10 @@
 		current_z_level_index = clamp(current_z_level_index + z_dir, 1, length(z_levels))
 		return TRUE
 
-/obj/machinery/computer/security/ui_static_data()
+/obj/machinery/computer/security/ui_data()
 	var/list/data = ..()
-	// Sort it by z levels
-	z_levels = sort_list(z_levels)
+	if(!length(z_levels))
+		return data
 	if(isnull(current_z_level_index))
 		current_z_level_index = clamp(z_levels.Find("[z]"), 1, length(z_levels))
 	else
@@ -48,4 +48,10 @@
 	data["mapUrl"] = z_levels["[z_levels[current_z_level_index]]"] || null
 	// On null, it uses station's z level
 	data["selected_z_level"] = z_levels[current_z_level_index] || null
+	return data
+
+/obj/machinery/computer/security/ui_static_data()
+	var/list/data = ..()
+	// Sort it by z levels
+	z_levels = sort_list(z_levels)
 	return data
