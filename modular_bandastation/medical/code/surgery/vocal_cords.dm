@@ -1,7 +1,6 @@
 // Surgery to change TTS voice
 /datum/surgery/vocal_cords
 	name = "Vocal cords surgery"
-
 	possible_locs = list(BODY_ZONE_PRECISE_MOUTH)
 	steps = list(
 		/datum/surgery_step/incise,
