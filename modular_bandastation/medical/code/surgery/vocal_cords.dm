@@ -8,11 +8,6 @@
 		/datum/surgery_step/tune_vocal_cords,
 		/datum/surgery_step/close,
 	)
-
-/datum/surgery/vocal_cords/can_start(mob/user, mob/living/carbon/target)
-	// not sure about tts restrictions
-	return ..()
-
 // tune vocal cords
 /datum/surgery_step/tune_vocal_cords
 	name = "tune vocal cords (scalpel)"
