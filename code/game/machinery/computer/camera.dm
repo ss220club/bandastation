@@ -73,7 +73,7 @@
 		cam_screen.display_to(user)
 		user.client.register_map_obj(cam_background)
 		// Open UI
-		ui = new(user, src, "CameraConsole", name)
+		ui = new(user, src, "CameraConsole220", name) // BANDASTATION EDIT - Nanomap
 		ui.open()
 
 /obj/machinery/computer/security/ui_status(mob/user, datum/ui_state/state)
@@ -104,8 +104,16 @@
 		data["cameras"] += list(list(
 			name = C.c_tag,
 			ref = REF(C),
+		// BANDASTATION EDIT START - Nanomap
+			x = C.x,
+			y = C.y,
+			z = C.z,
+			status = C.camera_enabled,
 		))
-
+		if("[C.z]" in z_levels || !C.nanomap_png)
+			continue
+		z_levels += list("[C.z]" = C.nanomap_png)
+		// BANDASTATION EDIT END - Nanomap
 	return data
 
 /obj/machinery/computer/security/ui_act(action, params)
