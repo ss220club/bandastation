@@ -24,6 +24,7 @@
 #include "mapping/_mapping.dme"
 #include "pixel_shift/_pixel_shift.dme"
 #include "ru_jobs/_ru_jobs.dme"
+#include "security_levels/_security_levels.dme"
 #include "translations/_translations.dme"
 #include "tts/_tts.dme"
 #include "whitelist220/_whitelist220.dme"
@@ -32,4 +33,4 @@
 #include "drinks/_drinks.dme"
 #include "jukebox/_jukebox.dme"
 #include "objects/_objects.dme"
-#include "security_levels/_security_levels.dme"
+
