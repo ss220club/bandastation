@@ -13,7 +13,7 @@
 	name = "tune vocal cords (scalpel)"
 	implements = list(
 		TOOL_SCALPEL = 100,
-		/obj/item/kitchen/knife = 50,
+		/obj/item/knife = 50,
 		/obj/item/wirecutters = 35
 	)
 	time = 6.4 SECONDS
