@@ -148,12 +148,7 @@ export const CameraConsoleMapContent = (props) => {
   const { mapRef, activeCamera, mapUrl, selected_z_level } = data;
   return (
     <Stack fill>
-      <Stack.Item
-        height="100%"
-        style={{
-          flex: '0 0 474px',
-        }}
-      >
+      <Stack.Item height="100%" width="475px">
         <NanoMap onZoom={(v) => setZoom(v)} mapUrl={mapUrl}>
           {cameras
             .filter((cam) => cam.z === Number(selected_z_level))
@@ -165,7 +160,7 @@ export const CameraConsoleMapContent = (props) => {
                 x={cm.x}
                 y={cm.y}
                 zoom={zoom}
-                icon="circle"
+                icon={null}
                 tooltip={cm.name}
                 name={cm.name}
                 color={'blue'}
@@ -175,24 +170,8 @@ export const CameraConsoleMapContent = (props) => {
             ))}
         </NanoMap>
       </Stack.Item>
-      <Stack.Item height="100%" m={0.1} className="CameraConsole__right_map">
-        <div className="CameraConsole__header">
-          <div className="CameraConsole__toolbar">
-            {activeCamera?.status ? (
-              <NoticeBox info>{activeCamera.name}</NoticeBox>
-            ) : (
-              <NoticeBox danger>No input signal</NoticeBox>
-            )}
-          </div>
-        </div>
-        <ByondUi
-          className="CameraConsole__map"
-          overflow="hidden"
-          params={{
-            id: mapRef,
-            type: 'map',
-          }}
-        />
+      <Stack.Item className="CameraConsole__right_map">
+        <CameraControls searchText={''} />
       </Stack.Item>
     </Stack>
   );

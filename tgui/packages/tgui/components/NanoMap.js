@@ -22,13 +22,9 @@ export class NanoMap extends Component {
   constructor(props) {
     super(props);
 
-    // Auto center based on window size
-    const Xcenter = window.innerWidth / 2 - 256;
-    const Ycenter = window.innerHeight / 2 - 256;
-
     this.state = {
-      offsetX: 128,
-      offsetY: 48,
+      offsetX: -48,
+      offsetY: 96,
       transform: 'none',
       dragging: false,
       originX: null,
@@ -209,7 +205,7 @@ class NanoButton extends Component {
     return (
       <Button
         key={this.props.key}
-        // icon={this.props.icon}
+        icon={this.props.icon}
         onClick={this.handleClick}
         position="absolute"
         className="NanoMap__button"
@@ -217,9 +213,8 @@ class NanoButton extends Component {
         color={this.props.status ? this.state.color : 'red'}
         bottom={ry + 'px'}
         left={rx + 'px'}
-      >
-        <Tooltip content={this.props.tooltip} />
-      </Button>
+        tooltip={this.props.tooltip}
+      />
     );
   }
 }

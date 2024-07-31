@@ -14,8 +14,9 @@ $background-color: rgba(0, 0, 0, 0.33) !default;
 
 .NanoMap__button {
   padding: 3px 3px;
-  font-size: 12px;
+  font-size: 6px;
   border: 2px solid black;
+  height: 10px;
 }
 
 .NanoMap__button:hover {
