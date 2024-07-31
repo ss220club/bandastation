@@ -39,7 +39,7 @@
 /obj/machinery/computer/security/ui_static_data()
 	var/list/data = ..()
 	// Sort it by z levels
-	z_levels = sort_list(z_levels, GLOBAL_PROC_REF(cmp_numeric_dsc))
+	z_levels = sort_list(z_levels)
 	if(isnull(current_z_level_index))
 		current_z_level_index = clamp(z_levels.Find("[z]"), 1, length(z_levels))
 	else
