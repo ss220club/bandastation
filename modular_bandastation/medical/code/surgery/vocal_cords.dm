@@ -21,7 +21,7 @@
 		TOOL_SCALPEL = 100,
 		/obj/item/kitchen/knife = 50,
 		/obj/item/wirecutters = 35)
-	time = 64
+	time = 6.4 SECONDS
 
 
 /datum/surgery_step/tune_vocal_cords/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
