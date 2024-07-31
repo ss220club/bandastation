@@ -1,17 +1,21 @@
 import { filter, sort } from 'common/collections';
 import { useState } from 'react';
 import {
+  Box,
   Button,
   ByondUi,
+  Icon,
   Input,
   NoticeBox,
   Section,
   Stack,
+  Tabs,
 } from 'tgui-core/components';
 import { BooleanLike, classes } from 'tgui-core/react';
 import { createSearch } from 'tgui-core/string';
 
 import { useBackend } from '../backend';
+import { NanoMap } from '../components/NanoMap';
 import { Window } from '../layouts';
 
 type Data = {
@@ -20,11 +24,17 @@ type Data = {
   can_spy: BooleanLike;
   mapRef: string;
   network: string[];
+  mapUrl: string;
+  selected_z_level: number;
 };
 
 type Camera = {
   name: string;
   ref: string;
+  x: number;
+  y: number;
+  z: number;
+  status: BooleanLike;
 };
 
 /**
@@ -80,15 +90,128 @@ const selectCameras = (cameras: Camera[], searchText = ''): Camera[] => {
   return queriedCameras;
 };
 
+// BANDASTATION EDIT START - Nanomap
 export const CameraConsole = (props) => {
+  const [tabIndex, setTabIndex] = useState(0);
+  const decideTab = (index) => {
+    switch (index) {
+      case 0:
+        return <CameraConsoleMapContent />;
+      case 1:
+        return <CameraContent />;
+      default:
+        return "WE SHOULDN'T BE HERE!";
+    }
+  };
   return (
     <Window width={850} height={708}>
       <Window.Content>
-        <CameraContent />
+        <Box fillPositionedParent>
+          <Stack.Item
+            width={tabIndex === 1 ? '222px' : '475px'}
+            textAlign="center"
+          >
+            <Tabs fluid ml={tabIndex === 1 ? 1 : 0} mt={tabIndex === 1 ? 1 : 0}>
+              <Tabs.Tab
+                key="Map"
+                selected={tabIndex === 0}
+                onClick={() => setTabIndex(0)}
+              >
+                <Icon name="map-marked-alt" /> Карта
+              </Tabs.Tab>
+              <Tabs.Tab
+                key="List"
+                selected={tabIndex === 1}
+                onClick={() => setTabIndex(1)}
+              >
+                <Icon name="table" /> Список
+              </Tabs.Tab>
+            </Tabs>
+          </Stack.Item>
+          {decideTab(tabIndex)}
+        </Box>
       </Window.Content>
     </Window>
   );
 };
+
+export const CameraConsoleMapContent = (props) => {
+  const { act, data } = useBackend<Data>();
+  const cameras = selectCameras(data.cameras, '');
+  const [zoom, setZoom] = useState(1);
+  const { mapRef, activeCamera, mapUrl, selected_z_level } = data;
+  const [prevCameraName, nextCameraName] = prevNextCamera(
+    cameras,
+    activeCamera,
+  );
+  return (
+    <Stack fill>
+      <Stack.Item
+        height="100%"
+        style={{
+          flex: '0 0 474px',
+        }}
+      >
+        <NanoMap onZoom={(v) => setZoom(v)} mapUrl={mapUrl}>
+          {cameras
+            .filter((cam) => cam.z === Number(selected_z_level))
+            .map((cm) => (
+              <NanoMap.NanoButton
+                props={props}
+                activeCamera={activeCamera}
+                key={cm.ref}
+                x={cm.x}
+                y={cm.y}
+                zoom={zoom}
+                icon="circle"
+                tooltip={cm.name}
+                name={cm.name}
+                color={'blue'}
+                status={cm.status}
+              />
+            ))}
+        </NanoMap>
+      </Stack.Item>
+      <Stack.Item height="100%" m={0.1} className="CameraConsole__right_map">
+        <div className="CameraConsole__header">
+          <div className="CameraConsole__toolbar">
+            <b>Камера: </b>
+            {(activeCamera && activeCamera.name) || '—'}
+          </div>
+          <div className="CameraConsole__toolbarRight">
+            <Button
+              icon="chevron-left"
+              disabled={!prevCameraName}
+              onClick={() =>
+                act('switch_camera', {
+                  name: prevCameraName,
+                })
+              }
+            />
+            <Button
+              icon="chevron-right"
+              disabled={!nextCameraName}
+              onClick={() =>
+                act('switch_camera', {
+                  name: nextCameraName,
+                })
+              }
+            />
+          </div>
+        </div>
+        <ByondUi
+          className="CameraConsole__map"
+          overflow="hidden"
+          params={{
+            id: mapRef,
+            type: 'map',
+          }}
+        />
+      </Stack.Item>
+    </Stack>
+  );
+};
+// BANDASTATION EDIT END - Nanomap
 
 export const CameraContent = (props) => {
   const [searchText, setSearchText] = useState('');
