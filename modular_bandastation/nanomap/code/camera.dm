@@ -3,6 +3,8 @@
 
 /obj/machinery/camera/Initialize(mapload, should_add_to_cameranet)
 	. = ..()
+	if(!length(SSmapping.z_list)) // It should happen only in unit-tests.
+		return
 	var/datum/space_level/z_level = SSmapping.z_list[z]
 	if(!z_level)
 		return
