@@ -55,7 +55,7 @@
 	)
 
 /datum/surgery/organ_manipulation/mechanic
-	name = "Манипуляции с органами протезирования"
+	name = "Манипуляция с оборудованием"
 	requires_bodypart_type = BODYTYPE_ROBOTIC
 	surgery_flags = SURGERY_SELF_OPERABLE | SURGERY_REQUIRE_LIMB
 	possible_locs = list(BODY_ZONE_CHEST, BODY_ZONE_HEAD)
@@ -110,7 +110,7 @@
 	)
 
 /datum/surgery/organ_manipulation/mechanic/external
-	name = "Модификация характеристик протеза"
+	name = "Манипуляция с корпусом"
 	possible_locs = list(
 		BODY_ZONE_CHEST,
 		BODY_ZONE_HEAD,
@@ -128,7 +128,7 @@
 		/datum/surgery_step/mechanic_close,
 	)
 
-///Organ manipulation base class. Do not use, it wont work. Use it's subtypes
+///Organ manipulation base class. Do not use, it wont work. Use its subtypes
 /datum/surgery_step/manipulate_organs
 	name = "проведите манипуляцию с органами"
 	repeatable = TRUE

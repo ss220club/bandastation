@@ -23,13 +23,13 @@
 	var/obj/machinery/vending/origin_machine
 	/// Murderous sayings from the machines.
 	var/list/rampant_speeches = list(
-		"Try our aggressive new marketing strategies!",
-		"You should buy products to feed your lifestyle obsession!",
-		"Consume!",
-		"Your money can buy happiness!",
-		"Engage direct marketing!",
-		"Advertising is legalized lying! But don't let that put you off our great deals!",
-		"You don't want to buy anything? Yeah, well, I didn't want to buy your mom either.",
+		"Попробуйте нашу новую АГРЕССИВНУЮ стратегию маркетинга!",
+		"Вам стоит что-нибудь купить, дабы утолить ваши ПОТРЕБНОСТИ!",
+		"Потребляй!",
+		"За ваши деньги можно купить счастье!",
+		"Методика ПРЯМОГО маркетинга!",
+		"Реклама узаконила ложь! Но не позвольте ей отвлечь вас от наших замечательных предложений!",
+		"Не хочешь платить? Я твоей мамке тоже платить не хотел.",
 	)
 
 /datum/round_event/brand_intelligence/setup()
@@ -52,7 +52,7 @@
 	if(fake)
 		var/obj/machinery/vending/prototype = pick(subtypesof(/obj/machinery/vending))
 		machine_name = initial(prototype.name)
-	priority_announce("На борту станции [station_name()] зафиксировано распространение цифрового торгового вируса. Проверьте все торговые автоматы типа [machine_name] на наличие агрессивной маркетинговой тактики и при необходимости перезагрузите их.", "ОВНИМАНИЕ: Обнаружен цифровой вирус")
+	priority_announce("На борту станции [station_name()] зафиксировано распространение цифрового торгового вируса. Проверьте все торговые автоматы типа [machine_name] на наличие агрессивной маркетинговой тактики и при необходимости перезагрузите их.", "Обнаружен цифровой вирус")
 
 /datum/round_event/brand_intelligence/start()
 	origin_machine.shut_up = FALSE
@@ -60,7 +60,7 @@
 	announce_to_ghosts(origin_machine)
 
 /datum/round_event/brand_intelligence/tick()
-	if(!origin_machine || QDELETED(origin_machine) || origin_machine.shut_up || origin_machine.wires.is_all_cut()) //if the original vending machine is missing or has it's voice switch flipped
+	if(!origin_machine || QDELETED(origin_machine) || origin_machine.shut_up || origin_machine.wires.is_all_cut()) //if the original vending machine is missing or has its voice switch flipped
 		for(var/obj/machinery/vending/saved in infected_machines)
 			saved.shoot_inventory = FALSE
 		if(origin_machine)

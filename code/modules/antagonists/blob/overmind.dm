@@ -149,7 +149,7 @@ GLOBAL_LIST_EMPTY(blob_nodes)
 			qdel(src)
 	else if(!victory_in_progress && (blobs_legit.len >= blobwincount))
 		victory_in_progress = TRUE
-		priority_announce("Биоугроза достигла критической массы. Потеря станции неминуема.", "ВНИМАНИЕ: Биологическая угроза")
+		priority_announce("Биоугроза достигла критической массы. Потеря станции неминуема.", "Биологическая угроза")
 		SSsecurity_level.set_level(SEC_LEVEL_DELTA)
 		max_blob_points = INFINITY
 		blob_points = INFINITY
@@ -162,7 +162,7 @@ GLOBAL_LIST_EMPTY(blob_nodes)
 		max_count = blobs_legit.len
 
 	if(announcement_time && (world.time >= announcement_time || blobs_legit.len >= announcement_size) && !has_announced)
-		priority_announce("Вспышка биологической угрозы 5-го уровня зафиксирована на борту [station_name()]. Всему персоналу надлежит сдержать её распространение любой ценой!", "ВНИМАНИЕ: Биологическая угроза", ANNOUNCER_OUTBREAK5)
+		priority_announce("Вспышка биологической угрозы 5-го уровня зафиксирована на борту [station_name()]. Всему персоналу надлежит сдержать её распространение любой ценой!", "Биологическая угроза", ANNOUNCER_OUTBREAK5)
 		has_announced = TRUE
 
 /// Create a blob spore and link it to us
@@ -206,7 +206,7 @@ GLOBAL_LIST_EMPTY(blob_nodes)
 			if(live_guy.stat != DEAD)
 				live_guy.investigate_log("has died from blob takeover.", INVESTIGATE_DEATHS)
 			live_guy.death()
-			create_spore(guy_turf)
+			create_spore(guy_turf, spore_type = /mob/living/basic/blob_minion/spore)
 		else
 			live_guy.fully_heal()
 

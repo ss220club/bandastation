@@ -211,6 +211,7 @@ Striking a noncultist, however, will tear their flesh."}
 			awakener = awakener,\
 			allow_renaming = FALSE,\
 			allow_channeling = FALSE,\
+			allow_exorcism = FALSE,\
 		)
 
 	// Get the heretic's new body and antag datum.
@@ -724,7 +725,7 @@ Striking a noncultist, however, will tear their flesh."}
 		var/curse_message = pick_n_take(remaining_curses) || "Something has gone horrendously wrong..."
 
 		curse_message += " Эвакуационный шаттл задерживается на три минуты."
-		priority_announce("[curse_message]", "ВНИМАНИЕ: Обнаружена неисправность в системе", 'sound/misc/notice1.ogg')
+		priority_announce("[curse_message]", "Обнаружена неисправность в системе", 'sound/misc/notice1.ogg')
 		if(MAX_SHUTTLE_CURSES-totalcurses <= 0)
 			to_chat(user, span_danger(span_big("You sense that the emergency escape shuttle can no longer be cursed. It would be unwise to create more cursed orbs.")))
 		else if(MAX_SHUTTLE_CURSES-totalcurses == 1)

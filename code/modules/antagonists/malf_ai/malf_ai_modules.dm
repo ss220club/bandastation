@@ -266,7 +266,7 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/ai_module))
 		active = FALSE
 		return
 	if (owner_AI.stat != DEAD)
-		priority_announce("Во всех системах станций обнаружены вредоносные процессы. Пожалуйста, уничтожьте свой ИИ, чтобы предотвратить возможный ущерб его моральному ядру.", "ВНИМАНИЕ: Обнаружена аномалия", ANNOUNCER_AIMALF)
+		priority_announce("Во всех системах станций обнаружены вредоносные процессы. Пожалуйста, уничтожьте свой ИИ, чтобы предотвратить возможный ущерб его моральному ядру.", "Обнаружена аномалия", ANNOUNCER_AIMALF)
 		SSsecurity_level.set_level(SEC_LEVEL_DELTA)
 		var/obj/machinery/doomsday_device/DOOM = new(owner_AI)
 		owner_AI.nuking = TRUE
@@ -1044,14 +1044,14 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/ai_module))
 				owner.speech_span = say_span
 			to_chat(usr, span_notice("Голос установлен на [selection]."))
 		if("verb")
-			say_verb = params["verb"]
+			say_verb = strip_html(params["verb"], MAX_NAME_LEN)
 			if(changing_voice)
 				owner.verb_say = say_verb
 				owner.verb_ask = say_verb
 				owner.verb_exclaim = say_verb
 				owner.verb_yell = say_verb
 		if("name")
-			say_name = params["name"]
+			say_name = strip_html(params["name"], MAX_NAME_LEN)
 
 /datum/ai_module/utility/emag
 	name = "Targeted Safeties Override"

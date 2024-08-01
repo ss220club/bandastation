@@ -161,11 +161,14 @@
 	desc = "A disk that contains advanced surgery procedures, must be loaded into an Operating Console."
 	surgeries = list(
 		/datum/surgery/advanced/lobotomy,
+		/datum/surgery/advanced/lobotomy/mechanic,
 		/datum/surgery/advanced/bioware/vein_threading,
+		/datum/surgery/advanced/bioware/vein_threading/mechanic,
 		/datum/surgery/advanced/bioware/nerve_splicing,
+		/datum/surgery/advanced/bioware/nerve_splicing/mechanic,
 		/datum/surgery_step/heal/combo/upgraded,
 		/datum/surgery_step/pacify,
-		/datum/surgery_step/revive,
+		/datum/surgery_step/pacify/mechanic,
 	)
 
 //Pad & Pad Terminal
@@ -186,7 +189,7 @@
 	. = ..()
 	if (istype(I))
 		I.set_buffer(src)
-		balloon_alert(user, "saved to multitool buffer")
+		balloon_alert(user, "сохранён в буффер мультитула")
 		return TRUE
 
 /obj/machinery/piratepad/screwdriver_act_secondary(mob/living/user, obj/item/screwdriver/screw)
@@ -202,7 +205,7 @@
 /obj/machinery/computer/piratepad_control
 	name = "cargo hold control terminal"
 	///Message to display on the TGUI window.
-	var/status_report = "Ready for delivery."
+	var/status_report = "Готов к доставке."
 	///Reference to the specific pad that the control computer is linked up to.
 	var/datum/weakref/pad_ref
 	///How long does it take to warmup the pad to teleport?
@@ -231,7 +234,7 @@
 /obj/machinery/computer/piratepad_control/multitool_act(mob/living/user, obj/item/multitool/I)
 	. = ..()
 	if (istype(I) && istype(I.buffer,/obj/machinery/piratepad))
-		to_chat(user, span_notice("You link [src] with [I.buffer] in [I] buffer."))
+		to_chat(user, span_notice("Вы привязываете [src.name] к [I.buffer] с помощью буффера [I.name]."))
 		pad_ref = WEAKREF(I.buffer)
 		return TRUE
 
@@ -288,7 +291,7 @@
 	if(sending)
 		return
 
-	status_report = "Predicted value: "
+	status_report = "Ожидаемая стоимость: "
 	var/value = 0
 
 	var/obj/machinery/piratepad/pad = pad_ref?.resolve()
@@ -310,7 +313,7 @@
 	var/obj/machinery/piratepad/pad = pad_ref?.resolve()
 	var/datum/export_report/report = pirate_export_loop(pad, dry_run = FALSE)
 
-	status_report = "Sold: "
+	status_report = "Получено: "
 	var/value = 0
 	for(var/datum/export/exported_datum in report.total_amount)
 		var/export_text = exported_datum.total_printout(report,notes = FALSE) //Don't want nanotrasen messages, makes no sense here.
@@ -333,9 +336,9 @@
 	points += value
 
 	if(!value)
-		status_report += "Nothing"
+		status_report += "Ничего"
 
-	pad.visible_message(span_notice("[pad] activates!"))
+	pad.visible_message(span_notice("[pad.name] активируется!"))
 	flick(pad.sending_state,pad)
 	pad.icon_state = pad.idle_state
 	sending = FALSE
@@ -381,8 +384,8 @@
 	if(sending)
 		return
 	sending = TRUE
-	status_report = "Sending... "
-	pad.visible_message(span_notice("[pad] starts charging up."))
+	status_report = "Отправка... "
+	pad.visible_message(span_notice("[pad.name] начинает заряжаться."))
 	pad.icon_state = pad.warmup_state
 	sending_timer = addtimer(CALLBACK(src, PROC_REF(send)),warmup_time, TIMER_STOPPABLE)
 
@@ -391,7 +394,7 @@
 	if(!sending)
 		return
 	sending = FALSE
-	status_report = "Ready for delivery."
+	status_report = "Готов к доставке."
 	if(custom_report)
 		status_report = custom_report
 	var/obj/machinery/piratepad/pad = pad_ref?.resolve()

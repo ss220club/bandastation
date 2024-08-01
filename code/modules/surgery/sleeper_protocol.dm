@@ -1,11 +1,15 @@
 /obj/item/disk/surgery/sleeper_protocol
 	name = "Suspicious Surgery Disk"
 	desc = "На диске содержатся инструкции о том, как превратить кого-либо в спящего агента Синдиката."
-	surgeries = list(/datum/surgery/advanced/brainwashing_sleeper)
+	surgeries = list(
+		/datum/surgery/advanced/brainwashing_sleeper,
+		/datum/surgery/advanced/brainwashing_sleeper/mechanic,
+		)
 
 /datum/surgery/advanced/brainwashing_sleeper
 	name = "Sleeper Agent Surgery"
 	desc = "Хирургическая процедура, которая имплантирует протокол сна в мозг пациента, что делает его абсолютным приоритетом. Его можно очистить с помощью импланта защиты разума."
+	requires_bodypart_type = NONE
 	possible_locs = list(BODY_ZONE_HEAD)
 	steps = list(
 		/datum/surgery_step/incise,
@@ -14,6 +18,19 @@
 		/datum/surgery_step/clamp_bleeders,
 		/datum/surgery_step/brainwash/sleeper_agent,
 		/datum/surgery_step/close,
+	)
+
+/datum/surgery/advanced/brainwashing_sleeper/mechanic
+	name = "Sleeper Agent Reprogramming"
+	desc = "Malware which directly implants the sleeper protocol directive into the robotic patient's operating system, making it their absolute priority. It can be cleared using a mindshield implant."
+	requires_bodypart_type = BODYTYPE_ROBOTIC
+	steps = list(
+		/datum/surgery_step/mechanic_open,
+		/datum/surgery_step/open_hatch,
+		/datum/surgery_step/mechanic_unwrench,
+		/datum/surgery_step/brainwash/sleeper_agent/mechanic,
+		/datum/surgery_step/mechanic_wrench,
+		/datum/surgery_step/mechanic_close,
 	)
 
 /datum/surgery/advanced/brainwashing_sleeper/can_start(mob/user, mob/living/carbon/target)
@@ -41,6 +58,17 @@
 		"Командование некомпетентно, кто-то, обладающий РЕАЛЬНОЙ властью, должен взять на себя управление здесь.",
 		"Киборги и искусственный интеллект преследуют вас. Что они планируют?",
 	)
+
+/datum/surgery_step/brainwash/sleeper_agent/mechanic
+	name = "reprogram (multitool)"
+	implements = list(
+		TOOL_MULTITOOL = 85,
+		TOOL_HEMOSTAT = 50,
+		TOOL_WIRECUTTER = 50,
+		/obj/item/stack/package_wrap = 35,
+		/obj/item/stack/cable_coil = 15)
+	preop_sound = 'sound/surgery/hemostat1.ogg'
+	success_sound = 'sound/surgery/hemostat1.ogg'
 
 /datum/surgery_step/brainwash/sleeper_agent/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	objective = pick(possible_objectives)

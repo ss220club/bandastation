@@ -1,7 +1,7 @@
 /datum/traitor_objective/ultimate/romerol
 	name = "Распространите экспериментальный вирус биотеррора Romerol, призвав под в %AREA%"
 	description = "Пройдите в %AREA%, и получите вирус биотеррора. Распространите его среди экипажа, \
-	и наслаждайтесь поднятыми из мертвых безмозглыми машинами для убийства. Внимание: мертвецы будут атаковать и вас."
+	и наслаждайтесь поднятыми из мертвых безмозглыми машинами для убийства. Будьте осторожны - мертвецы будут атаковать и вас."
 
 	//this is a prototype so this progression is for all basic level kill objectives
 
@@ -41,6 +41,6 @@
 			sent_romerol = TRUE
 			podspawn(list(
 				"target" = get_turf(user),
-				"style" = STYLE_SYNDICATE,
+				"style" = /datum/pod_style/syndicate,
 				"spawn" = /obj/item/storage/box/syndie_kit/romerol,
 			))

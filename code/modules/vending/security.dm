@@ -1,7 +1,7 @@
 /obj/machinery/vending/security
 	name = "\improper SecTech"
 	desc = "A security equipment vendor."
-	product_ads = "Crack communist skulls!;Beat some heads in!;Don't forget - harm is good!;Your weapons are right here.;Handcuffs!;Freeze, scumbag!;Don't tase me bro!;Tase them, bro.;Why not have a donut?"
+	product_ads = "Круши черепа капиталистов!;Отбей несколько голов!;Не забывай, вредительство - полезно!;Твое оружие здесь.;Наручники!;Стоять, подонок!;Не бей меня, брат!;Убей их, брат.;Почему бы не съесть пончик?"
 	icon_state = "sec"
 	icon_deny = "sec-deny"
 	panel_type = "panel6"
@@ -17,6 +17,7 @@
 		/obj/item/flashlight/seclite = 4,
 		/obj/item/restraints/legcuffs/bola/energy = 7,
 		/obj/item/clothing/gloves/tackler = 5,
+		/obj/item/holosign_creator/security = 2,
 	)
 	contraband = list(
 		/obj/item/clothing/glasses/sunglasses = 2,
@@ -26,6 +27,7 @@
 		/obj/item/storage/belt/security/webbing = 5,
 		/obj/item/coin/antagtoken = 1,
 		/obj/item/clothing/head/helmet/blueshirt = 1,
+		/obj/item/clothing/gloves/color/black/security/blu = 1,
 		/obj/item/clothing/suit/armor/vest/blueshirt = 1,
 		/obj/item/grenade/stingbang = 1,
 		/obj/item/watertank/pepperspray = 2,

@@ -669,7 +669,7 @@ export const MainPage = (props: { openSpecies: () => void }) => {
                         } // check if existing chars more than one
                         onClick={() => setDeleteCharacterPopupOpen(true)}
                       >
-                        Delete Character
+                        Удалить персонажа
                       </Button>
                     </Box>
                   </PreferenceList>

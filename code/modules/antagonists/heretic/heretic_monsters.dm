@@ -28,6 +28,7 @@
  */
 /datum/antagonist/heretic_monster/proc/set_owner(datum/mind/master)
 	src.master = master
+	owner.enslave_mind_to_creator(master.current)
 
 	var/datum/objective/master_obj = new()
 	master_obj.owner = owner
@@ -38,7 +39,3 @@
 	owner.announce_objectives()
 	to_chat(owner, span_boldnotice("Ты - [ishuman(owner.current) ? "возвращенный труп":"ужасное создание, принесенное"] в этот мир через врата Мансуса"))
 	to_chat(owner, span_notice("Твой хозяин - [master]. Помогай ему во всех деяниях."))
-
-	if(istype(owner.current, /mob/living/basic/construct/harvester/heretic))
-		var/mob/living/basic/construct/harvester/heretic/shitcode = owner.current
-		shitcode.master = master

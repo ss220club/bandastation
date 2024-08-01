@@ -1,5 +1,5 @@
 export const JOBS_RU = {
-  Assistant: 'Гражданский',
+  Assistant: 'Ассистент',
   Prisoner: 'Заключенный',
   Captain: 'Капитан',
   'Head of Personnel': 'Глава персонала',
@@ -14,6 +14,10 @@ export const JOBS_RU = {
   Warden: 'Смотритель',
   Detective: 'Детектив',
   'Security Officer': 'Офицер',
+  'Security Officer (Cargo)': 'Офицер (Снабжение)',
+  'Security Officer (Engineering)': 'Офицер (Инженерия)',
+  'Security Officer (Medical)': 'Офицер (Медицина)',
+  'Security Officer (Science)': 'Офицер (Исследование)',
   'Station Engineer': 'Станционный инженер',
   'Atmospheric Technician': 'Атмосферный техник',
   Coroner: 'Коронер',
@@ -40,9 +44,16 @@ export const JOBS_RU = {
   Psychologist: 'Психолог',
 };
 
+const REVERSED_JOBS_RU = Object.entries(JOBS_RU).reduce(
+  (reversed_jobs, [key, value]) => {
+    reversed_jobs[value] = key;
+    return reversed_jobs;
+  },
+  {},
+);
+
 export function ReverseJobsRu(value: string) {
-  let keys = Object.keys(JOBS_RU).filter((x) => JOBS_RU[x] === value);
-  return keys[0] || value;
+  return REVERSED_JOBS_RU[value] || value;
 }
 
 export const DEPARTMENTS_RU = {

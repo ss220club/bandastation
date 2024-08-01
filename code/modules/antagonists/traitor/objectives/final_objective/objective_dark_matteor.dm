@@ -1,7 +1,7 @@
 /datum/traitor_objective/ultimate/dark_matteor
 	name = "Вызовите сингулярность из темной материи, чтобы поглотить станцию."
 	description = "Пройдите в %AREA% и получите контрабандные спутники и emag. Установите спутники и используйте на них emag, \
-	и когда достаточно спутников будет перекалибровано с помощью emag, ОНО ПРИДЕТ. Внимание: Сингулярность из темной материи будет охотиться на всех существ, включая вас."
+	и когда достаточно спутников будет перекалибровано с помощью emag, ОНО ПРИДЕТ. Не забывайте, что сингулярность будет охотиться на всех существ, включая ВАС."
 
 	//this is a prototype so this progression is for all basic level kill objectives
 
@@ -48,7 +48,7 @@
 			sent_satellites = TRUE
 			podspawn(list(
 				"target" = get_turf(user),
-				"style" = STYLE_SYNDICATE,
+				"style" = /datum/pod_style/syndicate,
 				"spawn" = /obj/structure/closet/crate/engineering/smuggled_meteor_shields,
 			))
 

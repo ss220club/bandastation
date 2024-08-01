@@ -115,17 +115,19 @@
 
 	///the type of damage overlay (if any) to use when this bodypart is bruised/burned.
 	var/dmg_overlay_type = "human"
+	///a color (optionally matrix) for the damage overlays to give the limb
+	var/damage_overlay_color
 	/// If we're bleeding, which icon are we displaying on this part
 	var/bleed_overlay_icon
 
 	//Damage messages used by help_shake_act()
-	var/light_brute_msg = "bruised"
-	var/medium_brute_msg = "battered"
-	var/heavy_brute_msg = "mangled"
+	var/light_brute_msg = "поцарапана"
+	var/medium_brute_msg = "помята"
+	var/heavy_brute_msg = "искалечена"
 
-	var/light_burn_msg = "numb"
-	var/medium_burn_msg = "blistered"
-	var/heavy_burn_msg = "peeling away"
+	var/light_burn_msg = "онемела"
+	var/medium_burn_msg = "покрыта волдырями"
+	var/heavy_burn_msg = "отслаивает кожу"
 
 	//Damage messages used by examine(). the desc that is most common accross all bodyparts gets shown
 	var/list/damage_examines = list(
@@ -199,6 +201,8 @@
 	var/any_existing_wound_can_mangle_our_interior
 	/// get_damage() / total_damage must surpass this to allow our limb to be disabled, even temporarily, by an EMP.
 	var/robotic_emp_paralyze_damage_percent_threshold = 0.3
+	/// A potential texturing overlay to put on the limb
+	var/datum/bodypart_overlay/texture/texture_bodypart_overlay
 
 /obj/item/bodypart/apply_fantasy_bonuses(bonus)
 	. = ..()
@@ -224,10 +228,14 @@
 
 	RegisterSignal(src, COMSIG_ATOM_RESTYLE, PROC_REF(on_attempt_feature_restyle))
 
+	if(texture_bodypart_overlay)
+		texture_bodypart_overlay = new texture_bodypart_overlay()
+		add_bodypart_overlay(texture_bodypart_overlay)
+
 	if(!IS_ORGANIC_LIMB(src))
 		grind_results = null
 
-	name = "[limb_id] [parse_zone(body_zone)]"
+	name = "[parse_zone(body_zone)] ([limb_id])"
 	update_icon_dropped()
 	refresh_bleed_rate()
 
@@ -272,9 +280,9 @@
 
 	. = ..()
 	if(brute_dam > DAMAGE_PRECISION)
-		. += span_warning("This limb has [brute_dam > 30 ? "severe" : "minor"] bruising.")
+		. += span_warning("У этой конечности [brute_dam > 30 ? "тяжёлые" : "лёгкие"] ушибы.")
 	if(burn_dam > DAMAGE_PRECISION)
-		. += span_warning("This limb has [burn_dam > 30 ? "severe" : "minor"] burns.")
+		. += span_warning("У этой конечности [burn_dam > 30 ? "тяжёлые" : "лёгкие"] ожоги.")
 
 	for(var/datum/wound/wound as anything in wounds)
 		var/wound_desc = wound.get_limb_examine_description()
@@ -300,9 +308,9 @@
 
 	if(self_aware)
 		if(!shown_brute && !shown_burn)
-			status = "no damage"
+			status = "нет повреждений"
 		else
-			status = "[shown_brute] brute damage and [shown_burn] burn damage"
+			status = "[shown_brute] урона от ушибов и [shown_burn] урона от ожогов"
 
 	else
 		if(shown_brute > (max_damage * 0.8))
@@ -313,7 +321,7 @@
 			status += light_brute_msg
 
 		if(shown_brute > DAMAGE_PRECISION && shown_burn > DAMAGE_PRECISION)
-			status += " and "
+			status += " и "
 
 		if(shown_burn > (max_damage * 0.8))
 			status += heavy_burn_msg
@@ -323,36 +331,36 @@
 			status += light_burn_msg
 
 		if(status == "")
-			status = "OK"
+			status = "в порядке"
 
 	var/no_damage
-	if(status == "OK" || status == "no damage")
+	if(status == "в порядке" || status == "нет повреждений")
 		no_damage = TRUE
 
 	var/is_disabled = ""
 	if(bodypart_disabled)
-		is_disabled = " is disabled"
+		is_disabled = " обездвижена"
 		if(no_damage)
-			is_disabled += " but otherwise"
+			is_disabled += ", но в целом"
 		else
-			is_disabled += " and"
+			is_disabled += " и"
 
-	check_list += "\t <span class='[no_damage ? "notice" : "warning"]'>Your [name][is_disabled][self_aware ? " has " : " is "][status].</span>"
+	check_list += "\t <span class='[no_damage ? "notice" : "warning"]'>Ваша [name][is_disabled][self_aware ? " имеет " : " "][status].</span>"
 
 	for(var/datum/wound/wound as anything in wounds)
 		switch(wound.severity)
 			if(WOUND_SEVERITY_TRIVIAL)
-				check_list += "\t [span_danger("Your [name] is suffering [wound.a_or_from] [LOWER_TEXT(wound.name)].")]"
+				check_list += "\t [span_danger("Ваша [name] страдает от: [LOWER_TEXT(wound.name)].")]"
 			if(WOUND_SEVERITY_MODERATE)
-				check_list += "\t [span_warning("Your [name] is suffering [wound.a_or_from] [LOWER_TEXT(wound.name)]!")]"
+				check_list += "\t [span_warning("Ваша [name] страдает от: [LOWER_TEXT(wound.name)]!")]"
 			if(WOUND_SEVERITY_SEVERE)
-				check_list += "\t [span_boldwarning("Your [name] is suffering [wound.a_or_from] [LOWER_TEXT(wound.name)]!!")]"
+				check_list += "\t [span_boldwarning("Ваша [name] страдает от: [LOWER_TEXT(wound.name)]!!")]"
 			if(WOUND_SEVERITY_CRITICAL)
-				check_list += "\t [span_boldwarning("Your [name] is suffering [wound.a_or_from] [LOWER_TEXT(wound.name)]!!!")]"
+				check_list += "\t [span_boldwarning("Ваша [name] страдает от: [LOWER_TEXT(wound.name)]!!!")]"
 
 	for(var/obj/item/embedded_thing in embedded_objects)
-		var/stuck_word = embedded_thing.is_embed_harmless() ? "stuck" : "embedded"
-		check_list += "\t <a href='?src=[REF(examiner)];embedded_object=[REF(embedded_thing)];embedded_limb=[REF(src)]' class='warning'>There is \a [embedded_thing] [stuck_word] in your [name]!</a>"
+		var/stuck_word = embedded_thing.is_embed_harmless() ? "прилип" : "застрял"
+		check_list += "\t <a href='?src=[REF(examiner)];embedded_object=[REF(embedded_thing)];embedded_limb=[REF(src)]' class='warning'>[capitalize(embedded_thing.name)] [stuck_word] [stuck_word == "застрял" ? "в" : "к"] вашей [name]!</a>"
 
 /obj/item/bodypart/blob_act()
 	receive_damage(max_damage, wound_bonus = CANT_WOUND)
@@ -366,17 +374,17 @@
 			if(!human_victim.get_bodypart(body_zone))
 				user.temporarilyRemoveItemFromInventory(src, TRUE)
 				if(!try_attach_limb(victim))
-					to_chat(user, span_warning("[human_victim]'s body rejects [src]!"))
+					to_chat(user, span_warning("Тело [human_victim] отвергает [src.name]!"))
 					forceMove(human_victim.loc)
 					return
 				if(check_for_frankenstein(victim))
 					bodypart_flags |= BODYPART_IMPLANTED
 				if(human_victim == user)
-					human_victim.visible_message(span_warning("[human_victim] jams [src] into [human_victim.p_their()] empty socket!"),\
-					span_notice("You force [src] into your empty socket, and it locks into place!"))
+					human_victim.visible_message(span_warning("[human_victim] вклинивает [src.name] в пустой сокет на своём теле!"),\
+					span_notice("Вы вставляете [src.name] в свой пустой сокет, и [src.name] встаёт на место!"))
 				else
-					human_victim.visible_message(span_warning("[user] jams [src] into [human_victim]'s empty socket!"),\
-					span_notice("[user] forces [src] into your empty socket, and it locks into place!"))
+					human_victim.visible_message(span_warning("[user] вклинивает [src.name] в пустой сокет на теле [human_victim]!"),\
+					span_notice("[user] вставляет [src.name] в свой пустой сокет, и [src.name] встаёт на место!"))
 				return
 	return ..()
 
@@ -386,11 +394,11 @@
 	if(weapon.get_sharpness())
 		add_fingerprint(user)
 		if(!contents.len)
-			to_chat(user, span_warning("There is nothing left inside [src]!"))
+			to_chat(user, span_warning("Внутри [src.name] ничего не осталось!"))
 			return
 		playsound(loc, 'sound/weapons/slice.ogg', 50, TRUE, -1)
-		user.visible_message(span_warning("[user] begins to cut open [src]."),\
-			span_notice("You begin to cut open [src]..."))
+		user.visible_message(span_warning("[user] начинает вскрывать: [src.name]."),\
+			span_notice("Вы начинаете вскрывать: [src.name]..."))
 		if(do_after(user, 5.4 SECONDS, target = src))
 			drop_organs(user, TRUE)
 	else
@@ -1059,7 +1067,8 @@
 			for(var/external_layer in overlay.all_layers)
 				if(overlay.layers & external_layer)
 					. += overlay.get_overlay(external_layer, src)
-
+			for(var/datum/layer in .)
+				overlay.modify_bodypart_appearance(layer)
 	return .
 
 /obj/item/bodypart/proc/huskify_image(image/thing_to_husk, draw_blood = TRUE)
@@ -1139,7 +1148,7 @@
 	refresh_bleed_rate()
 
 /// Refresh the cache of our rate of bleeding sans any modifiers
-/// ANYTHING ADDED TO THIS PROC NEEDS TO CALL IT WHEN IT'S EFFECT CHANGES
+/// ANYTHING ADDED TO THIS PROC NEEDS TO CALL IT WHEN ITS EFFECT CHANGES
 /obj/item/bodypart/proc/refresh_bleed_rate()
 	SHOULD_NOT_OVERRIDE(TRUE)
 

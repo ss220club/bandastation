@@ -88,12 +88,12 @@
 
 /datum/mutation/human/lay_on_hands
 	name = "Mending Touch"
-	desc = "The affected can lay their hands on other people to transfer a small amount of their injuries to themselves."
+	desc = "Подверженные данной мутации могут приложить свои руки на других людей, чтобы забрать себе часть их ранений."
 	quality = POSITIVE
 	locked = FALSE
 	difficulty = 16
-	text_gain_indication = span_notice("Your hand feels blessed!")
-	text_lose_indication = span_notice("Your hand feels secular once more.")
+	text_gain_indication = span_notice("Твоя рука, будто бы священна!")
+	text_lose_indication = span_notice("Твоя рука снова кажется обычной.")
 	power_path = /datum/action/cooldown/spell/touch/lay_on_hands
 	instability = POSITIVE_INSTABILITY_MAJOR
 	energy_coeff = 1

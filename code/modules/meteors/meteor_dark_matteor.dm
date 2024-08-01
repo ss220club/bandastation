@@ -10,7 +10,7 @@
 	meteordrop = list(/obj/singularity/dark_matter) //what the FUCK
 	dropamt = 1
 	threat = 100
-	signature = "dark matter"
+	signature = "темной материи"
 	/// distortion to really give you that sense of oh shit
 	var/atom/movable/warp_effect/warp
 	/// and another oh shit in the form of quantum sparks
@@ -32,7 +32,7 @@
 	START_PROCESSING(SSobj, src)
 
 /obj/effect/meteor/dark_matteor/process(seconds_per_tick)
-	//meteor's warp quickly contracts then slowly expands it's ring
+	//meteor's warp quickly contracts then slowly expands its ring
 	animate(warp, time = seconds_per_tick*3, transform = matrix().Scale(0.5,0.5))
 	animate(time = seconds_per_tick*7, transform = matrix())
 

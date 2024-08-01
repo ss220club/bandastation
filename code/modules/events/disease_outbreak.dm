@@ -102,7 +102,7 @@
 	var/list/afflicted = list()
 
 /datum/round_event/disease_outbreak/announce(fake)
-	if(isnull(illness_type))
+	if(!illness_type)
 		var/list/virus_candidates = list(
 			/datum/disease/anxiety,
 			/datum/disease/beesease,
@@ -119,7 +119,7 @@
 		)
 		var/datum/disease/fake_virus = pick(virus_candidates)
 		illness_type = initial(fake_virus.name)
-	priority_announce("Вспышка биологической угрозы 7-го уровня зафиксирована на борту [station_name()]. Всему персоналу надлежит сдержать её распространение.", "ВНИМАНИЕ: [illness_type]", ANNOUNCER_OUTBREAK7)
+	priority_announce("Вспышка биологической угрозы 7-го уровня зафиксирована на борту [station_name()]. Всему персоналу надлежит сдержать её распространение.", "[illness_type]", ANNOUNCER_OUTBREAK7)
 
 /datum/round_event/disease_outbreak/setup()
 	announce_when = ADV_ANNOUNCE_DELAY

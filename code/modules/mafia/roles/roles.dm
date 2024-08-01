@@ -176,6 +176,7 @@
 	var/list/result = list()
 	var/team_desc = ""
 	var/team_span = ""
+	//var/the = TRUE
 	switch(team)
 		if(MAFIA_TEAM_TOWN)
 			team_desc = "Гражданином"
@@ -186,7 +187,8 @@
 		if(MAFIA_TEAM_SOLO)
 			team_desc = "Одиночкой"
 			team_span = "comradio"
+			//the = FALSE
 	result += span_notice("[span_bold("[name]")] является <span class='[team_span]'>[team_desc]</span>")
-	result += "<span class='bold notice'>\"[desc]\"</span>"
-	result += span_notice("[name] выигрывает если [win_condition]")
+	result += "<span class='bold notice'>\"[initial(desc)]\"</span>"
+	result += span_notice("[name] выигрывает, если [win_condition]")
 	to_chat(clueless, result.Join("</br>"))

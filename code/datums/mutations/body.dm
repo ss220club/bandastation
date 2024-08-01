@@ -124,17 +124,17 @@
 	if(..())
 		return
 	ADD_TRAIT(owner, TRAIT_DWARF, GENETIC_MUTATION)
-	owner.visible_message(span_danger("[owner] suddenly shrinks!"), span_notice("Everything around you seems to grow.."))
+	owner.visible_message(span_danger("[owner] неожиданно уменьшается!"), span_notice("Всё вокруг тебя увеличивается.."))
 
 /datum/mutation/human/dwarfism/on_losing(mob/living/carbon/human/owner)
 	if(..())
 		return
 	REMOVE_TRAIT(owner, TRAIT_DWARF, GENETIC_MUTATION)
-	owner.visible_message(span_danger("[owner] suddenly grows!"), span_notice("Everything around you seems to shrink.."))
+	owner.visible_message(span_danger("[owner] неожиданно увеличивается!"), span_notice("Всё вокруг тебя уменьшается.."))
 
 /datum/mutation/human/acromegaly
 	name = "Acromegaly"
-	desc = "A mutation believed to be the cause of acromegaly, or 'being unusually tall'."
+	desc = "Считается, что данная мутация вызвана акромегалией или 'необычно высоким ростом'."
 	quality = MINOR_NEGATIVE
 	difficulty = 16
 	instability = NEGATIVE_STABILITY_MODERATE
@@ -145,7 +145,7 @@
 	if(..())
 		return
 	ADD_TRAIT(owner, TRAIT_TOO_TALL, GENETIC_MUTATION)
-	owner.visible_message(span_danger("[owner] suddenly grows tall!"), span_notice("You feel a small strange urge to fight small men with slingshots. Or maybe play some basketball."))
+	owner.visible_message(span_danger("[owner] неожиданно становится выше!"), span_notice("У тебя появляется странное желание бороться с маленькими людьми с рогатками. Или стоит сыграть в баскетбол?"))
 	RegisterSignal(owner, COMSIG_MOVABLE_MOVED, PROC_REF(head_bonk))
 	owner.regenerate_icons()
 
@@ -153,7 +153,7 @@
 	if(..())
 		return
 	REMOVE_TRAIT(owner, TRAIT_TOO_TALL, GENETIC_MUTATION)
-	owner.visible_message(span_danger("[owner] suddenly shrinks!"), span_notice("You return to your usual height."))
+	owner.visible_message(span_danger("[owner] неожиданно уменьшается!"), span_notice("Ты возвращаешься к своему обычному росту."))
 	UnregisterSignal(owner, COMSIG_MOVABLE_MOVED, PROC_REF(head_bonk))
 	owner.regenerate_icons()
 
@@ -173,7 +173,7 @@
 
 /datum/mutation/human/gigantism
 	name = "Gigantism" //negative version of dwarfism
-	desc = "The cells within the subject spread out to cover more area, making the subject appear larger."
+	desc = "Клетки субъекта распространяются для охвата большей площади, визуально увеличивая носителя."
 	quality = MINOR_NEGATIVE
 	difficulty = 12
 	conflicts = list(/datum/mutation/human/dwarfism)
@@ -183,15 +183,14 @@
 		return
 	ADD_TRAIT(owner, TRAIT_GIANT, GENETIC_MUTATION)
 	owner.update_transform(1.25)
-	owner.visible_message(span_danger("[owner] suddenly grows!"), span_notice("Everything around you seems to shrink.."))
+	owner.visible_message(span_danger("[owner] неожиданно увеличивается!"), span_notice("Всё вокруг тебя уменьшается.."))
 
 /datum/mutation/human/gigantism/on_losing(mob/living/carbon/human/owner)
 	if(..())
 		return
 	REMOVE_TRAIT(owner, TRAIT_GIANT, GENETIC_MUTATION)
 	owner.update_transform(0.8)
-	owner.visible_message(span_danger("[owner] suddenly shrinks!"), span_notice("Everything around you seems to grow.."))
-
+	owner.visible_message(span_danger("[owner] неожиданно уменьшается!"), span_notice("Всё вокруг тебя увеличивается..."))
 //Clumsiness has a very large amount of small drawbacks depending on item.
 /datum/mutation/human/clumsy
 	name = "Clumsiness"
@@ -258,8 +257,8 @@
 /datum/mutation/human/race
 	name = "Monkified"
 	desc = "Странный геном который, по мнению общества, отличает обезьяну от человека."
-	text_gain_indication = "Ты чувствуешь необычно по-обезьяни."
-	text_lose_indication = "Ты чувствуешь себя как раньше."
+	text_gain_indication = span_green("Ты чувствуешь необычно по-обезьяни.")
+	text_lose_indication = span_notice("Ты чувствуешь себя как раньше.")
 	quality = NEGATIVE
 	instability = NEGATIVE_STABILITY_MAJOR // mmmonky
 	remove_on_aheal = FALSE
@@ -269,18 +268,26 @@
 	var/original_name
 
 /datum/mutation/human/race/on_acquiring(mob/living/carbon/human/owner)
-	if(..())
+	. = ..()
+	if(.)
 		return
-	if(!ismonkey(owner))
-		original_species = owner.dna.species.type
-		original_name = owner.real_name
-		owner.fully_replace_character_name(null, "monkey ([rand(1,999)])")
-	. = owner.monkeyize()
+	if(ismonkey(owner))
+		return
+	original_species = owner.dna.species.type
+	original_name = owner.real_name
+	owner.monkeyize()
 
 /datum/mutation/human/race/on_losing(mob/living/carbon/human/owner)
-	if(!QDELETED(owner) && owner.stat != DEAD && (owner.dna.mutations.Remove(src)) && ismonkey(owner))
-		owner.fully_replace_character_name(null, original_name)
-		. = owner.humanize(original_species)
+	if(owner.stat == DEAD)
+		return
+	. = ..()
+	if(.)
+		return
+	if(QDELETED(owner))
+		return
+
+	owner.fully_replace_character_name(null, original_name)
+	owner.humanize(original_species)
 
 /datum/mutation/human/glow
 	name = "Glowy"
@@ -469,27 +476,6 @@
 			owner.visible_message(span_warning("[owner]'s skin bubbles and pops."), span_userdanger("Your bubbling flesh pops! It burns!"))
 			playsound(owner,'sound/weapons/sear.ogg', 50, TRUE)
 
-/datum/mutation/human/gigantism
-	name = "Gigantism"//negative version of dwarfism
-	desc = "Клетки субъекта распространяются для охвата большей площади, визуально увеличивая носителя."
-	quality = MINOR_NEGATIVE
-	difficulty = 12
-	conflicts = list(/datum/mutation/human/dwarfism)
-
-/datum/mutation/human/gigantism/on_acquiring(mob/living/carbon/human/owner)
-	if(..())
-		return
-	ADD_TRAIT(owner, TRAIT_GIANT, GENETIC_MUTATION)
-	owner.update_transform(1.25)
-	owner.visible_message(span_danger("[owner] неожиданно увеличивается!"), span_notice("Всё вокруг тебя уменьшается.."))
-
-/datum/mutation/human/gigantism/on_losing(mob/living/carbon/human/owner)
-	if(..())
-		return
-	REMOVE_TRAIT(owner, TRAIT_GIANT, GENETIC_MUTATION)
-	owner.update_transform(0.8)
-	owner.visible_message(span_danger("[owner] неожиданно уменьшается!"), span_notice("Всё вокруг тебя увеличивается..."))
-
 /datum/mutation/human/spastic
 	name = "Spastic"
 	desc = "Субъект страдает от спазма в мышцах."
@@ -591,7 +577,7 @@
 
 /datum/mutation/human/headless
 	name = "H.A.R.S."
-	desc = "Мутация заставляет тело отторгать голову, мозг субъекта с данной мутацией переносится в грудь. Расшифровывается как Синдром Аллергического Отторжения Головы. Внимание: удаление данной мутации очень опасно, хоть и она регенерирует не жизненно важные органы головы."
+	desc = "Мутация заставляет тело отторгать голову, мозг субъекта с данной мутацией переносится в грудь. Расшифровывается как Синдром Аллергического Отторжения Головы. Удаление данной мутации очень опасно, хоть она и регенерирует не жизненно важные органы головы."
 	instability = NEGATIVE_STABILITY_MAJOR
 	difficulty = 12 //pretty good for traitors
 	quality = NEGATIVE //holy shit no eyes or tongue or ears

@@ -268,7 +268,7 @@ GLOBAL_DATUM(current_anonymous_theme, /datum/anonymous_theme)
 	set_station_name("[pick(GLOB.first_names)] [pick(GLOB.last_names)]")
 
 /datum/anonymous_theme/station/announce_to_all_players()
-	priority_announce("Подтверджена ошибка реальности 9 уровня угрозы возле [station_name()]. Все сотрудники должны изо всех сил стараться продолжать работу, чтобы случайно не спровоцировать новые проблемы с реальностью.", "Отдел паранормальных явлений Центрального Коммандования", 'sound/misc/notice1.ogg')
+	priority_announce("Подтверджена ошибка реальности 9 уровня угрозы возле [station_name()]. Все сотрудники должны изо всех сил стараться продолжать работу, чтобы случайно не спровоцировать новые проблемы с реальностью.", "Отдел паранормальных явлений Центрального Командования", 'sound/misc/notice1.ogg')
 
 /datum/anonymous_theme/station/anonymous_name(mob/target)
 	return new_station_name()
