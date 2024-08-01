@@ -1,7 +1,5 @@
 /**
  * # The path of Lock.
- * Spell names are in this language: EGYPTIAN
- * Both are related: Egyptian-Mysteries-Secrets-Lock
  *
  * Goes as follows:
  *
@@ -243,7 +241,7 @@
 		text = "Пространственная аномалия Дельта-класса обнар[generate_heretic_text()] Реальность разрушена, разорвана. Врата открыты, двери открыты, [user.real_name] вознесся! Бойтесь нашествия! [generate_heretic_text()]",
 		title = "[generate_heretic_text()]",
 		sound = 'sound/ambience/antag/heretic/ascend_knock.ogg',
-		color_override = "yellow",
+		color_override = "pink",
 	)
 
 	// buffs
