@@ -145,7 +145,7 @@ export const CameraConsoleMapContent = (props) => {
   const { act, data } = useBackend<Data>();
   const cameras = selectCameras(data.cameras, '');
   const [zoom, setZoom] = useState(1);
-  const { mapRef, activeCamera, mapUrl, selected_z_level } = data;
+  const { activeCamera, mapUrl, selected_z_level } = data;
   return (
     <Stack fill>
       <Stack.Item height="100%" width="475px">

@@ -44,10 +44,10 @@
 		current_z_level_index = clamp(z_levels.Find("[z]"), 1, length(z_levels))
 	else
 		current_z_level_index = clamp(current_z_level_index, 1, length(z_levels))
-	// On null, it uses map datum value
+	// On null, it doesn't give runtime errors on tgui side
 	data["mapUrl"] = z_levels["[z_levels[current_z_level_index]]"] || null
-	// On null, it uses station's z level
-	data["selected_z_level"] = z_levels[current_z_level_index] || null
+	// On null, it uses camera's z level
+	data["selected_z_level"] = z_levels[current_z_level_index] || z
 	return data
 
 /obj/machinery/computer/security/ui_static_data()
