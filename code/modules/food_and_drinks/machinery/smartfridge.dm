@@ -439,9 +439,9 @@
 // ----------------------------
 //  Drying 'smartfridge'
 // ----------------------------
-/obj/machinery/smartfridge/drying_rack
+/obj/machinery/smartfridge/drying
 	name = "сушилка"
-	desc = "Деревянное сооружение, используемое для сушки растительных продуктов, еды и шкур."
+	desc = "Механизм, используемый для сушки растительных продуктов, еды и шкур."
 	icon_state = "dehydrator-icon"
 	base_icon_state = "dehydrator"
 	contents_overlay_icon = "contents"
