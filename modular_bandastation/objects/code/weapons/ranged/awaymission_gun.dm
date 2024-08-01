@@ -79,10 +79,10 @@
 	cell.give(1000)
 	user.adjust_nutrition(-10)
 
-/datum/design/gate_energy_gun_mk1
+/datum/design/exploreverse_mk1
 	name = "Gate Energy Gun MK1"
 	desc = "Энергетическое оружие с экспериментальным миниатюрным реактором. Работает только во вратах."
-	id = "gate_energy_gun_mk1"
+	id = "exploreverse_mk1"
 	build_type = PROTOLATHE | AWAY_LATHE
 	materials = list(
 		/datum/material/iron = SHEET_MATERIAL_AMOUNT * 3,
@@ -96,10 +96,10 @@
 	)
 	departmental_flags = DEPARTMENT_BITFLAG_CARGO
 
-/datum/design/gate_energy_gun_mk2
+/datum/design/exploreverse_mk2
 	name = "Gate Energy Gun MK2"
 	desc = "Энергетическое оружие с экспериментальным миниатюрным реактором и рычагом для ручной зарядки. Работает только во вратах."
-	id = "gate_energy_gun_mk2"
+	id = "exploreverse_mk2"
 	build_type = PROTOLATHE | AWAY_LATHE
 	materials = list(
 		/datum/material/iron = SHEET_MATERIAL_AMOUNT * 4,
@@ -116,8 +116,8 @@
 
 /datum/techweb_node/mining/New()
 	. = ..()
-	design_ids |= "gate_energy_gun_mk1"
+	design_ids |= "exploreverse_mk1"
 
 /datum/techweb_node/plasma_mining/New()
 	. = ..()
-	design_ids |= "gate_energy_gun_mk2"
+	design_ids |= "exploreverse_mk2"
