@@ -9,11 +9,11 @@
 	)
 	
 /datum/surgery_step/tune_vocal_cords
-	name = "настройка голосовых связок (скальпель)"
+	name = "настройка голосовых связок (гемостат)"
 	implements = list(
-		TOOL_SCALPEL = 100,
-		/obj/item/knife = 50,
-		/obj/item/wirecutters = 35
+		TOOL_HEMOSTAT = 100,
+		TOOL_WIRECUTTER = 50,
+		/obj/item/kitchen/fork = 35
 	)
 	time = 6.4 SECONDS
 
