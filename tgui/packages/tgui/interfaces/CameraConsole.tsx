@@ -15,7 +15,7 @@ import { BooleanLike, classes } from 'tgui-core/react';
 import { createSearch } from 'tgui-core/string';
 
 import { useBackend } from '../backend';
-import { NanoMap } from '../components/NanoMap';
+import { NanoMap } from '../components/NanoMap'; // BANDASTATION EDIT START - Nanomap
 import { Window } from '../layouts';
 
 type Data = {
@@ -24,17 +24,21 @@ type Data = {
   can_spy: BooleanLike;
   mapRef: string;
   network: string[];
+  // BANDASTATION EDIT START - Nanomap
   mapUrl: string;
   selected_z_level: number;
+  // BANDASTATION EDIT END - Nanomap
 };
 
 type Camera = {
   name: string;
   ref: string;
+  // BANDASTATION EDIT START - Nanomap
   x: number;
   y: number;
   z: number;
   status: BooleanLike;
+  // BANDASTATION EDIT END - Nanomap
 };
 
 /**
