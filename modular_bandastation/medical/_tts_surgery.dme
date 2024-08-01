@@ -1,1 +1,3 @@
+#include "_tts_surgery.dm"
+
 #include "code/surgery/vocal_cords.dm"
