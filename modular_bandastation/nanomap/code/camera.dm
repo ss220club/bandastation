@@ -44,10 +44,9 @@
 		current_z_level_index = clamp(z_levels.Find("[z]"), 1, length(z_levels))
 	else
 		current_z_level_index = clamp(current_z_level_index, 1, length(z_levels))
-	// On null, it doesn't give runtime errors on tgui side
-	data["mapUrl"] = z_levels["[z_levels[current_z_level_index]]"] || null
-	// On null, it uses camera's z level
-	data["selected_z_level"] = z_levels[current_z_level_index] || z
+	// On null, it doesn't give runtime errors on tgui side; empty map
+	data["mapUrl"] = LAZYACCESS(z_levels, "[z_levels[current_z_level_index]]")
+	data["selected_z_level"] = LAZYACCESS(z_levels, current_z_level_index)
 	return data
 
 /obj/machinery/computer/security/ui_static_data()
