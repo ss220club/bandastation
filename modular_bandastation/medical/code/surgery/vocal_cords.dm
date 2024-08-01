@@ -1,4 +1,3 @@
-// Surgery to change TTS voice
 /datum/surgery/vocal_cords
 	name = "Операция на голосовых связках"
 	possible_locs = list(BODY_ZONE_PRECISE_MOUTH)
@@ -8,7 +7,6 @@
 		/datum/surgery_step/tune_vocal_cords,
 		/datum/surgery_step/close,
 	)
-// tune vocal cords
 /datum/surgery_step/tune_vocal_cords
 	name = "настройка голосовых связок (скальпель)"
 	implements = list(
@@ -17,7 +15,6 @@
 		/obj/item/wirecutters = 35
 	)
 	time = 6.4 SECONDS
-
 
 /datum/surgery_step/tune_vocal_cords/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	display_results(
