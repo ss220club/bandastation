@@ -4,8 +4,6 @@ $COLOR_BLUE = [char]27 + '[36m'
 
 $script_dir = Split-Path -Parent $MyInvocation.MyCommand.Path
 $mod_name = ""
-$mod_name_upper = ""
-$mod_name_lower = ""
 
 while (-not $mod_name) {
 	Write-Host "${COLOR_GREEN}| ${COLOR_RESET}Название мода пишется заглавными буквами, а также с"
