@@ -7,6 +7,7 @@
 		/datum/surgery_step/tune_vocal_cords,
 		/datum/surgery_step/close,
 	)
+	
 /datum/surgery_step/tune_vocal_cords
 	name = "настройка голосовых связок (скальпель)"
 	implements = list(
