@@ -79,10 +79,10 @@
 	cell.give(1000)
 	user.adjust_nutrition(-10)
 
-/datum/design/gate_gun_mk1
+/datum/design/gate_energy_gun_mk1
 	name = "Gate Energy Gun MK1"
 	desc = "Энергетическое оружие с экспериментальным миниатюрным реактором. Работает только во вратах."
-	id = "gate_gun"
+	id = "gate_energy_gun_mk1"
 	build_type = PROTOLATHE | AWAY_LATHE
 	materials = list(
 		/datum/material/iron = SHEET_MATERIAL_AMOUNT * 3,
@@ -96,10 +96,10 @@
 	)
 	departmental_flags = DEPARTMENT_BITFLAG_CARGO
 
-/datum/design/gate_gun_mk2
+/datum/design/gate_energy_gun_mk2
 	name = "Gate Energy Gun MK2"
 	desc = "Энергетическое оружие с экспериментальным миниатюрным реактором и рычагом для ручной зарядки. Работает только во вратах."
-	id = "gate_gun_mk2"
+	id = "gate_energy_gun_mk2"
 	build_type = PROTOLATHE | AWAY_LATHE
 	materials = list(
 		/datum/material/iron = SHEET_MATERIAL_AMOUNT * 4,
@@ -114,13 +114,10 @@
 	)
 	departmental_flags = DEPARTMENT_BITFLAG_CARGO
 
-/datum/techweb_node/awaymission_aeg
-	id = "gate_gun"
-	display_name = "Awaymission Laser Weaponary Research"
-	description = "Изучайте врата ещё продуктивнее и безопаснее с этой технологией."
-	prereq_ids = list(TECHWEB_NODE_ELECTRIC_WEAPONS)
-	design_ids = list(
-		"gate_gun_mk2",
-		"gate_gun",
-	)
-	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = TECHWEB_TIER_2_POINTS)
+/datum/techweb_node/mining/New()
+	. = ..()
+	design_ids |= "gate_energy_gun_mk1"
+
+/datum/techweb_node/plasma_mining/New()
+	. = ..()
+	design_ids |= "gate_energy_gun_mk2"
