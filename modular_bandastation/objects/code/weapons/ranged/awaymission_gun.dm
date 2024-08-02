@@ -80,7 +80,7 @@
 	user.adjust_nutrition(-10)
 
 /datum/design/exploreverse_mk1
-	name = "Gate Energy Gun MK1"
+	name = "Exploreverse Mk.I"
 	desc = "Энергетическое оружие с экспериментальным миниатюрным реактором. Работает только во вратах."
 	id = "exploreverse_mk1"
 	build_type = PROTOLATHE | AWAY_LATHE
@@ -97,7 +97,7 @@
 	departmental_flags = DEPARTMENT_BITFLAG_CARGO
 
 /datum/design/exploreverse_mk2
-	name = "Gate Energy Gun MK2"
+	name = "Exploreverse Mk.II"
 	desc = "Энергетическое оружие с экспериментальным миниатюрным реактором и рычагом для ручной зарядки. Работает только во вратах."
 	id = "exploreverse_mk2"
 	build_type = PROTOLATHE | AWAY_LATHE
