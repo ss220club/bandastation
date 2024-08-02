@@ -49,11 +49,6 @@
 
 /obj/item/gun/energy/laser/awaymission_aeg/mk2/attack_self(mob/living/user)
 	. = ..()
-	var/msg_for_all = span_warning("[user] усердно давит на рычаг зарядки [src.name], но он не поддается!")
-	var/msg_for_user = span_notice("Вы пытаетесь надавить на рычаг зарядки [src.name], но он заблокирован.")
-	var/msg_recharge_all = span_notice("[user] усердно давит на рычаг зарядки [src.name]...")
-	var/msg_recharge_user = span_notice("Вы со всей силы давите на рычаг зарядки [src.name], пытаясь зарядить её...")
-
 	if(!onAwayMission())
 		user.balloon_alert(user, "не в гейте!")
 		return FALSE
