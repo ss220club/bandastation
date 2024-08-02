@@ -14,14 +14,14 @@ export const PrimaryObjectiveMenu = (props: PrimaryObjectiveMenuProps) => {
   return (
     <Section fill scrollable align="center">
       <Box my={4} bold fontSize={1.2} color="green">
-        WELCOME, AGENT.
+        ПРИВЕТСТВУЕМ, АГЕНТ.
       </Box>
       <Box my={4} bold fontSize={1.2}>
-        Your Primary Objectives are as follows. Complete these at all costs.
+        Агент, это ваши основные задачи. Выполните их любой ценой.
       </Box>
       <Box my={4} bold fontSize={1.2}>
-        Completing Secondary Objectives may allow you to aquire additional
-        equipment.
+        Завершение второстепенных задач позволяет получить дополнительное
+        оборудование.
       </Box>
       {final_objective && (
         <Dimmer>
@@ -40,7 +40,7 @@ export const PrimaryObjectiveMenu = (props: PrimaryObjectiveMenuProps) => {
             \\Проводится подведение итогов.
             <br />
             \\Выполнение финальной задачи подверждено <br />
-            \\Ваша работа здесь готова, агент.
+            \\Ваша работа здесь завершена, агент.
             <br />
             <br />
             СОЕДИНЕНИЕ ЗАКРЫТО_
@@ -87,7 +87,7 @@ export const PrimaryObjectiveMenu = (props: PrimaryObjectiveMenuProps) => {
       )}
       <Box my={4} fontSize={0.8}>
         <Box>SyndOS Version 3.17</Box>
-        <Box color="green">Connection Secure</Box>
+        <Box color="green">Безопасное соединение</Box>
       </Box>
     </Section>
   );

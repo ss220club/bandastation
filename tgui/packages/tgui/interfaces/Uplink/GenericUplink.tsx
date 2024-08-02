@@ -68,7 +68,7 @@ export const GenericUplink = (props: GenericUplinkProps) => {
                   lineHeight={2}
                   textAlign="center"
                   icon={compactMode ? 'maximize' : 'minimize'}
-                  tooltip={compactMode ? 'Detailed view' : 'Compact view'}
+                  tooltip={compactMode ? 'Подробный' : 'Компактный'}
                   onClick={() => setCompactMode(!compactMode)}
                 />
               </Stack.Item>
