@@ -7,12 +7,11 @@
 	righthand_file = 'modular_bandastation/objects/icons/inhands/guns_righthand.dmi'
 	icon_state = "laser_gate"
 	inhand_icon_state = "laser_gate"
-	force = 10
 	ammo_type = list(/obj/item/ammo_casing/energy/lasergun/awaymission_aeg)
 	can_select = FALSE
 	selfcharge = TRUE
 	ammo_x_offset = 0
-	can_charge = 0
+	can_charge = FALSE
 
 /obj/item/ammo_casing/energy/lasergun/awaymission_aeg
 	e_cost = LASER_SHOTS(20, STANDARD_CELL_CHARGE)
@@ -56,27 +55,24 @@
 	var/msg_recharge_user = span_notice("Вы со всей силы давите на рычаг зарядки [src.name], пытаясь зарядить её...")
 
 	if(!onAwayMission())
-		user.visible_message(msg_for_all, msg_for_user)
+		user.balloon_alert(user, "не в гейте!")
 		return FALSE
 
 	if(cell.charge >= cell.maxcharge)
-		user.visible_message(msg_for_all, msg_for_user)
+		user.balloon_alert(user, "полностью заряжен!")
 		return FALSE
 
 	if(user.nutrition <= NUTRITION_LEVEL_STARVING)
-		user.visible_message(
-			span_warning("[user] слабо давит на рычаг зарядки [src.name], но бесполезно: слишком мало сил!"),
-			span_notice("Вы пытаетесь надавить на рычаг зарядки [src.name], но не можете из-за голода и усталости!")
-		)
+		user.balloon_alert(user, "недостаточно сил!")
 		return FALSE
 
-	user.visible_message(msg_recharge_all, msg_recharge_user)
+	user.balloon_alert(user, "зарядка...")
 	playsound(src, 'sound/effects/sparks3.ogg', 10, 1)
 	do_sparks(1, 1, src)
 
 	if(!do_after(user, 3 SECONDS, target = src))
 		return
-	cell.give(1000)
+	cell.give(STANDARD_CELL_CHARGE * 0.1)
 	user.adjust_nutrition(-10)
 
 /datum/design/exploreverse_mk1
@@ -94,8 +90,7 @@
 	category = list(
 		RND_CATEGORY_WEAPONS + RND_SUBCATEGORY_WEAPONS_RANGED,
 	)
-	departmental_flags = DEPARTMENT_BITFLAG_CARGO
-
+	departmental_flags = DEPARTMENT_BITFLAG_CARGO | DEPARTMENT_BITFLAG_SCIENCE
 /datum/design/exploreverse_mk2
 	name = "Exploreverse Mk.II"
 	desc = "Энергетическое оружие с экспериментальным миниатюрным реактором и рычагом для ручной зарядки. Работает только во вратах."
@@ -112,7 +107,7 @@
 	category = list(
 		RND_CATEGORY_WEAPONS + RND_SUBCATEGORY_WEAPONS_RANGED,
 	)
-	departmental_flags = DEPARTMENT_BITFLAG_CARGO
+	departmental_flags = DEPARTMENT_BITFLAG_CARGO | DEPARTMENT_BITFLAG_SCIENCE
 
 /datum/techweb_node/mining/New()
 	. = ..()
