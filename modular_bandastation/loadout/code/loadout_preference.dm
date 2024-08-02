@@ -1,6 +1,9 @@
 /client
 	var/loadout_points = 0
 
+/datum/client_interface/
+	var/loadout_points = 0
+
 /datum/preferences/load_preferences()
 	. = ..()
 	var/donation_level = parent.get_donator_level()
