@@ -104,6 +104,12 @@
 /obj/effect/light_emitter/podbay,
 /turf/open/floor/stone,
 /area/centcom/central_command_areas/planetary_port/plaza)
+"bZ" = (
+/obj/machinery/door/airlock/highsecurity,
+/obj/effect/mapping_helpers/airlock/access/all/admin/general,
+/obj/effect/mapping_helpers/airlock/autoname,
+/turf/open/floor/iron,
+/area/centcom/central_command_areas/planetary_port)
 "cd" = (
 /obj/effect/light_emitter/podbay,
 /turf/open/floor/grass,
@@ -182,8 +188,7 @@
 	dir = 4
 	},
 /obj/structure/railing/corner{
-	dir = 4;
-	layer = 5.03
+	dir = 4
 	},
 /turf/open/floor/stone,
 /area/centcom/central_command_areas/planetary_port/plaza)
@@ -634,8 +639,7 @@
 	dir = 9
 	},
 /obj/structure/railing{
-	dir = 9;
-	layer = 5
+	dir = 9
 	},
 /obj/effect/light_emitter/podbay,
 /turf/open/floor/stone,
@@ -717,7 +721,6 @@
 "js" = (
 /obj/structure/railing{
 	dir = 6;
-	layer = 5.03;
 	pixel_x = 0;
 	pixel_y = 0
 	},
@@ -782,7 +785,6 @@
 	pixel_x = -3;
 	pixel_y = 12
 	},
-/obj/structure/table/reinforced/plastitaniumglass,
 /obj/effect/spawner/random/food_or_drink/salad,
 /turf/open/floor/carpet/royalblack,
 /area/centcom/central_command_areas/planetary_port/club)
@@ -860,12 +862,6 @@
 /obj/effect/spawner/random/food_or_drink/booze,
 /turf/open/floor/carpet,
 /area/centcom/central_command_areas/planetary_port/club)
-"kv" = (
-/obj/machinery/door/airlock/highsecurity,
-/obj/effect/mapping_helpers/airlock/access/all/admin/general,
-/obj/effect/mapping_helpers/airlock/autoname,
-/turf/open/floor/iron,
-/area/centcom/central_command_areas/planetary_port)
 "kw" = (
 /obj/effect/turf_decal/tile/red/half{
 	dir = 1
@@ -927,10 +923,6 @@
 /obj/machinery/newscaster/directional/west,
 /turf/open/floor/bronze/flat,
 /area/centcom/central_command_areas/planetary_port/library)
-"kR" = (
-/obj/effect/mapping_helpers/airlock/autoname,
-/turf/open/floor/stone,
-/area/centcom/central_command_areas/planetary_port)
 "kS" = (
 /obj/effect/turf_decal/trimline/yellow/filled/line,
 /obj/machinery/light/directional/south,
@@ -1222,8 +1214,7 @@
 	dir = 4
 	},
 /obj/structure/railing/corner{
-	dir = 4;
-	layer = 5.03
+	dir = 4
 	},
 /obj/effect/light_emitter/podbay,
 /turf/open/floor/stone,
@@ -1268,8 +1259,7 @@
 /area/centcom/central_command_areas/planetary_port)
 "pW" = (
 /obj/structure/railing{
-	dir = 4;
-	layer = 5.06
+	dir = 4
 	},
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 4;
@@ -1372,8 +1362,7 @@
 /obj/structure/table/wood/fancy/black,
 /obj/item/flashlight/lamp/green{
 	pixel_x = -4;
-	pixel_y = 9;
-	layer = 3.4
+	pixel_y = 9
 	},
 /turf/open/floor/carpet/green,
 /area/centcom/central_command_areas/planetary_port/library)
@@ -1509,8 +1498,7 @@
 /area/centcom/central_command_areas/planetary_port/plaza)
 "sS" = (
 /obj/structure/railing{
-	dir = 4;
-	layer = 5.05
+	dir = 4
 	},
 /obj/structure/railing{
 	dir = 5
@@ -1639,16 +1627,10 @@
 /turf/open/floor/grass,
 /area/centcom/central_command_areas/planetary_port/plaza)
 "uI" = (
-/obj/effect/turf_decal/siding/wood/corner{
-	dir = 1
-	},
-/obj/structure/railing/corner{
-	dir = 1;
-	layer = 5.03
-	},
-/obj/effect/light_emitter/podbay,
+/obj/item/kirbyplants/random,
+/obj/structure/sign/poster/official/enlist/directional/east,
 /turf/open/floor/stone,
-/area/centcom/central_command_areas/planetary_port/plaza)
+/area/centcom/central_command_areas/planetary_port)
 "uV" = (
 /obj/effect/turf_decal/trimline/brown/filled/line,
 /obj/effect/spawner/random/trash/bin,
@@ -2459,10 +2441,6 @@
 	},
 /turf/open/floor/iron,
 /area/centcom/central_command_areas/planetary_port)
-"Gu" = (
-/obj/effect/mapping_helpers/airlock/autoname,
-/turf/open/floor/wood/large,
-/area/centcom/central_command_areas/planetary_port/library)
 "Gv" = (
 /obj/effect/turf_decal/siding/wideplating/dark/corner{
 	dir = 1
@@ -2610,8 +2588,7 @@
 /area/centcom/central_command_areas/planetary_port)
 "Ig" = (
 /obj/structure/railing{
-	dir = 4;
-	layer = 5.06
+	dir = 4
 	},
 /turf/open/floor/stone,
 /area/centcom/central_command_areas/planetary_port/plaza)
@@ -2927,12 +2904,9 @@
 /turf/open/floor/iron,
 /area/centcom/central_command_areas/planetary_port)
 "MR" = (
-/obj/structure/sign/poster/official/here_for_your_safety{
-	pixel_x = 0;
-	pixel_y = 4
-	},
-/turf/closed/wall/r_wall,
-/area/centcom/central_command_areas/planetary_port)
+/obj/effect/mapping_helpers/airlock/autoname,
+/turf/open/floor/wood/large,
+/area/centcom/central_command_areas/planetary_port/library)
 "MV" = (
 /obj/effect/turf_decal/trimline/green/filled/line{
 	dir = 6
@@ -3389,11 +3363,8 @@
 /turf/open/floor/wood/parquet,
 /area/centcom/central_command_areas/planetary_port/club)
 "Su" = (
-/obj/structure/sign/poster/official/enlist{
-	pixel_x = 0;
-	pixel_y = 5
-	},
-/turf/closed/wall/r_wall,
+/obj/effect/mapping_helpers/airlock/autoname,
+/turf/open/floor/stone,
 /area/centcom/central_command_areas/planetary_port)
 "Sv" = (
 /obj/structure/toilet{
@@ -3425,8 +3396,7 @@
 	dir = 9
 	},
 /obj/structure/railing{
-	dir = 9;
-	layer = 5
+	dir = 9
 	},
 /turf/open/floor/stone,
 /area/centcom/central_command_areas/planetary_port/plaza)
@@ -3528,6 +3498,11 @@
 /obj/structure/flora/bush/large/style_random,
 /turf/open/floor/grass,
 /area/centcom/central_command_areas/planetary_port/plaza)
+"Uj" = (
+/obj/item/kirbyplants/random,
+/obj/structure/sign/poster/official/here_for_your_safety/directional/east,
+/turf/open/floor/stone,
+/area/centcom/central_command_areas/planetary_port)
 "Uq" = (
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/trimline/brown/filled/line{
@@ -5666,11 +5641,11 @@ xO
 va
 va
 va
-Gu
+MR
 LZ
 TP
 TP
-Gu
+MR
 LZ
 va
 va
@@ -5772,7 +5747,7 @@ Lb
 xS
 Jo
 Jo
-uI
+bX
 Lb
 Lb
 Qw
@@ -6123,7 +6098,7 @@ Lb
 Lb
 Lb
 ej
-Gu
+MR
 iZ
 iZ
 iZ
@@ -6408,7 +6383,7 @@ qz
 qz
 qz
 qz
-kR
+Su
 wN
 qz
 qz
@@ -6986,12 +6961,12 @@ rT
 bc
 zZ
 qz
-tN
+uI
 cg
 cg
 cg
 cg
-tN
+Uj
 qz
 oT
 kS
@@ -7044,12 +7019,12 @@ JW
 Oj
 zZ
 qz
-Su
+qz
 Nq
 Lz
 uW
 Nq
-MR
+qz
 qz
 oT
 dG
@@ -7159,14 +7134,14 @@ jt
 jt
 jt
 zZ
-kv
+bZ
 kw
 jt
 jt
 jt
 jt
 EM
-kv
+bZ
 Et
 jt
 jt
