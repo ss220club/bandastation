@@ -32,7 +32,10 @@
 	if(!tts_seed) // Something went terribly wrong
 		return COMPONENT_INCOMPATIBLE
 
-	if(!isnull(effects) && !islist(effects))
+	if(!effects)
+		return
+
+	if(!islist(effects))
 		effects = list(effects)
 
 	src.effects = effects
