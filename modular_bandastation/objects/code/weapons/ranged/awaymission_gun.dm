@@ -20,13 +20,6 @@
 	. = ..()
 	on_changed_z_level()
 
-/obj/item/gun/energy/proc/instant_discharge()
-	if(!cell)
-		return
-	cell.charge = 0
-	recharge_newshot(no_cyborg_drain = TRUE)
-	update_appearance()
-
 /obj/item/gun/energy/laser/awaymission_aeg/on_changed_z_level(turf/old_turf, turf/new_turf, same_z_layer, notify_contents)
 	. = ..()
 	if(onAwayMission())
@@ -35,9 +28,11 @@
 			to_chat(loc, span_notice("[src.name] активируется, начиная аккумулировать энергию из материи сущего."))
 	else
 		selfcharge = FALSE
-		instant_discharge()
+		cell.change(-STANDARD_BATTERY_CHARGE)
+		update_appearance()
 		if(ismob(loc))
 			to_chat(loc, span_danger("[src.name] деактивируется, так как он подавляется системами станции."))
+			recharge_newshot(no_cyborg_drain = TRUE)
 
 /obj/item/gun/energy/laser/awaymission_aeg/mk2
 	name = "Exploreverse Mk.II"
