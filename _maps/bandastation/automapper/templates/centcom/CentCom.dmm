@@ -888,6 +888,10 @@
 /obj/effect/turf_decal/trimline/blue/filled/line{
 	dir = 4
 	},
+/obj/machinery/iv_drip,
+/obj/machinery/iv_drip,
+/obj/machinery/iv_drip,
+/obj/machinery/iv_drip,
 /turf/open/floor/iron,
 /area/centcom/central_command_areas/planetary_port)
 "kJ" = (
@@ -976,6 +980,13 @@
 	dir = 10
 	},
 /obj/structure/window/reinforced/tinted/spawner/directional/west,
+/turf/open/floor/iron,
+/area/centcom/central_command_areas/planetary_port)
+"lB" = (
+/obj/machinery/door/airlock/highsecurity,
+/obj/effect/mapping_helpers/airlock/access/all/admin/general,
+/obj/effect/mapping_helpers/airlock/autoname,
+/obj/effect/baseturf_helper,
 /turf/open/floor/iron,
 /area/centcom/central_command_areas/planetary_port)
 "lF" = (
@@ -1172,6 +1183,10 @@
 /obj/structure/flora/rock/pile/jungle/style_random,
 /turf/open/floor/grass,
 /area/centcom/central_command_areas/planetary_port/plaza)
+"oO" = (
+/obj/effect/baseturf_helper,
+/turf/closed/wall/r_wall,
+/area/centcom/central_command_areas/planetary_port)
 "oQ" = (
 /obj/machinery/door/airlock/medical/glass{
 	name = "пункт первой медицинской помощи"
@@ -1336,6 +1351,12 @@
 	},
 /turf/open/floor/stone,
 /area/centcom/central_command_areas/planetary_port/plaza)
+"qF" = (
+/obj/effect/baseturf_helper{
+	baseturf = /turf/open/floor/grass
+	},
+/turf/open/floor/stone,
+/area/centcom/central_command_areas/planetary_port/plaza)
 "qK" = (
 /obj/machinery/light/floor,
 /obj/structure/sign/poster/official/random/directional/east,
@@ -1437,6 +1458,12 @@
 	dir = 8
 	},
 /turf/open/floor/wood/large,
+/area/centcom/central_command_areas/planetary_port/library)
+"sg" = (
+/obj/effect/baseturf_helper{
+	baseturf = /turf/open/floor/grass
+	},
+/turf/closed/wall,
 /area/centcom/central_command_areas/planetary_port/library)
 "sm" = (
 /obj/machinery/stasis{
@@ -2567,17 +2594,11 @@
 /turf/open/floor/grass,
 /area/centcom/central_command_areas/planetary_port/plaza)
 "Ie" = (
-/obj/docking_port/stationary{
-	dir = 4;
-	dwidth = 25;
-	height = 50;
-	json_key = "emergency";
-	name = "CentCom Emergency Shuttle Dock";
-	shuttle_id = "emergency_away";
-	width = 50
+/obj/effect/baseturf_helper{
+	baseturf = /turf/open/floor/grass
 	},
-/turf/open/floor/asphalt,
-/area/centcom/central_command_areas/planetary_port)
+/turf/closed/indestructible/wood,
+/area/centcom/central_command_areas/planetary_port/hotel)
 "Ig" = (
 /obj/structure/railing{
 	dir = 4
@@ -2675,10 +2696,28 @@
 "Jw" = (
 /turf/open/floor/bronze/filled,
 /area/centcom/central_command_areas/planetary_port/library)
+"Jz" = (
+/obj/effect/baseturf_helper{
+	baseturf = /turf/open/floor/grass
+	},
+/turf/closed/indestructible/wood,
+/area/centcom/central_command_areas/planetary_port/club)
+"JA" = (
+/obj/effect/baseturf_helper{
+	baseturf = /turf/open/floor/grass
+	},
+/turf/closed/indestructible/wood,
+/area/centcom/central_command_areas/planetary_port/restroom)
 "JE" = (
 /obj/item/banner/command,
 /turf/open/floor/carpet/blue,
 /area/centcom/central_command_areas/planetary_port/club)
+"JG" = (
+/obj/effect/baseturf_helper{
+	baseturf = /turf/open/floor/grass
+	},
+/turf/open/floor/stone,
+/area/centcom/central_command_areas/planetary_port)
 "JK" = (
 /obj/effect/turf_decal/siding/wideplating/dark,
 /obj/structure/flora/tree/jungle/small/style_random{
@@ -2767,6 +2806,19 @@
 "KS" = (
 /turf/open/water/beach,
 /area/centcom/central_command_areas/planetary_port/plaza)
+"KU" = (
+/obj/effect/light_emitter/podbay,
+/obj/docking_port/stationary{
+	dir = 4;
+	dwidth = 25;
+	height = 50;
+	json_key = "emergency";
+	name = "CentCom Emergency Shuttle Dock";
+	shuttle_id = "emergency_away";
+	width = 50
+	},
+/turf/open/floor/asphalt,
+/area/centcom/central_command_areas/planetary_port)
 "KW" = (
 /obj/effect/turf_decal/trimline/yellow/filled/arrow_ccw{
 	dir = 4
@@ -4892,7 +4944,7 @@ iC
 xk
 iC
 iC
-iC
+Ie
 iC
 WY
 iC
@@ -5273,7 +5325,7 @@ kE
 dj
 Uv
 Bi
-Bi
+Jz
 Bi
 Bi
 Bi
@@ -5399,7 +5451,7 @@ ej
 na
 RU
 ED
-Lb
+qF
 jL
 fa
 KS
@@ -5651,7 +5703,7 @@ rT
 LZ
 va
 va
-jd
+JA
 jd
 NY
 NY
@@ -5708,7 +5760,7 @@ Mf
 iZ
 iZ
 kA
-va
+sg
 va
 jd
 VD
@@ -6619,7 +6671,7 @@ cg
 cg
 cg
 cg
-cg
+JG
 cg
 Nq
 Hv
@@ -7085,7 +7137,7 @@ jI
 Kp
 qA
 Hb
-qz
+oO
 gW
 jt
 jt
@@ -7143,7 +7195,7 @@ jt
 jt
 jt
 EM
-gY
+lB
 Et
 jt
 jt
@@ -7378,7 +7430,7 @@ Di
 Di
 Di
 Di
-rr
+KU
 Di
 Di
 Di
@@ -7436,7 +7488,7 @@ Di
 Di
 Di
 Di
-Ie
+Di
 Di
 Di
 Di
