@@ -104,12 +104,6 @@
 /obj/effect/light_emitter/podbay,
 /turf/open/floor/stone,
 /area/centcom/central_command_areas/planetary_port/plaza)
-"bZ" = (
-/obj/machinery/door/airlock/highsecurity,
-/obj/effect/mapping_helpers/airlock/access/all/admin/general,
-/obj/effect/mapping_helpers/airlock/autoname,
-/turf/open/floor/iron,
-/area/centcom/central_command_areas/planetary_port)
 "cd" = (
 /obj/effect/light_emitter/podbay,
 /turf/open/floor/grass,
@@ -194,16 +188,18 @@
 /area/centcom/central_command_areas/planetary_port/plaza)
 "cP" = (
 /obj/structure/rack,
-/obj/item/storage/medkit/tactical/premium,
-/obj/item/storage/medkit/tactical/premium{
-	pixel_x = 2;
-	pixel_y = 2
-	},
-/obj/item/storage/medkit/tactical/premium{
-	pixel_x = 4;
-	pixel_y = 4
-	},
 /obj/structure/sign/poster/official/moth_piping/directional/west,
+/obj/item/storage/medkit/tactical_lite{
+	pixel_y = -7
+	},
+/obj/item/storage/medkit/tactical_lite{
+	pixel_y = -5;
+	pixel_x = 2
+	},
+/obj/item/storage/medkit/tactical_lite{
+	pixel_y = -3;
+	pixel_x = 4
+	},
 /turf/open/floor/wood/tile,
 /area/centcom/central_command_areas/planetary_port/hotel)
 "cQ" = (
@@ -558,11 +554,10 @@
 /turf/open/floor/iron,
 /area/centcom/central_command_areas/planetary_port)
 "gY" = (
-/obj/structure/sign/poster/official/moth_epi/directional/east{
-	pixel_x = 0;
-	pixel_y = 4
-	},
-/turf/closed/wall/r_wall,
+/obj/machinery/door/airlock/highsecurity,
+/obj/effect/mapping_helpers/airlock/access/all/admin/general,
+/obj/effect/mapping_helpers/airlock/autoname,
+/turf/open/floor/iron,
 /area/centcom/central_command_areas/planetary_port)
 "gZ" = (
 /obj/effect/turf_decal/siding/wideplating/dark,
@@ -725,8 +720,7 @@
 	pixel_y = 0
 	},
 /obj/structure/railing{
-	dir = 4;
-	layer = 5.02
+	dir = 4
 	},
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 6
@@ -1262,8 +1256,7 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/siding/wideplating/dark{
-	dir = 4;
-	layer = 10004
+	dir = 4
 	},
 /obj/effect/turf_decal/siding/wood,
 /turf/open/floor/grass,
@@ -1295,6 +1288,7 @@
 /obj/effect/turf_decal/trimline/yellow/filled/shrink_cw{
 	dir = 1
 	},
+/obj/structure/sign/poster/official/moth_epi/directional/west,
 /turf/open/floor/iron,
 /area/centcom/central_command_areas/planetary_port)
 "qx" = (
@@ -1415,12 +1409,9 @@
 /turf/open/floor/wood/tile,
 /area/centcom/central_command_areas/planetary_port/club)
 "rT" = (
-/obj/structure/sign/poster/official/moth_hardhat/directional/east{
-	pixel_x = 0;
-	pixel_y = 4
-	},
-/turf/closed/wall/r_wall,
-/area/centcom/central_command_areas/planetary_port)
+/obj/effect/mapping_helpers/airlock/autoname,
+/turf/open/floor/wood/large,
+/area/centcom/central_command_areas/planetary_port/library)
 "rV" = (
 /obj/machinery/vending/boozeomat,
 /obj/item/reagent_containers/cup/glass/bottle/coconut_rum{
@@ -1528,9 +1519,7 @@
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 8
 	},
-/obj/structure/flora/bush/large/style_random{
-	layer = 5.02
-	},
+/obj/structure/flora/bush/large/style_random,
 /turf/open/floor/grass,
 /area/centcom/central_command_areas/planetary_port/plaza)
 "sZ" = (
@@ -1628,7 +1617,7 @@
 /area/centcom/central_command_areas/planetary_port/plaza)
 "uI" = (
 /obj/item/kirbyplants/random,
-/obj/structure/sign/poster/official/enlist/directional/east,
+/obj/structure/sign/poster/official/here_for_your_safety/directional/east,
 /turf/open/floor/stone,
 /area/centcom/central_command_areas/planetary_port)
 "uV" = (
@@ -1990,7 +1979,6 @@
 	dir = 6
 	},
 /obj/structure/flora/tree/jungle/style_random{
-	layer = 5.1;
 	pixel_x = -50;
 	pixel_y = -13
 	},
@@ -2023,19 +2011,19 @@
 /area/centcom/central_command_areas/planetary_port/plaza)
 "Ay" = (
 /obj/structure/table/reinforced/titaniumglass,
-/obj/item/storage/medkit/tactical/premium{
-	pixel_y = 4
-	},
-/obj/item/storage/medkit/tactical/premium{
-	pixel_x = 2;
-	pixel_y = 6
-	},
-/obj/item/storage/medkit/tactical/premium{
-	pixel_x = 4;
-	pixel_y = 8
-	},
 /obj/effect/turf_decal/trimline/blue/filled/line{
 	dir = 6
+	},
+/obj/item/storage/medkit/tactical_lite{
+	pixel_y = -7
+	},
+/obj/item/storage/medkit/tactical_lite{
+	pixel_y = -5;
+	pixel_x = 2
+	},
+/obj/item/storage/medkit/tactical_lite{
+	pixel_y = -3;
+	pixel_x = 4
 	},
 /turf/open/floor/iron,
 /area/centcom/central_command_areas/planetary_port)
@@ -2150,6 +2138,10 @@
 /obj/machinery/scanner_gate/preset_guns,
 /obj/effect/mapping_helpers/airlock/autoname,
 /turf/open/floor/iron/stairs/right,
+/area/centcom/central_command_areas/planetary_port)
+"Ck" = (
+/obj/effect/mapping_helpers/airlock/autoname,
+/turf/open/floor/stone,
 /area/centcom/central_command_areas/planetary_port)
 "Cr" = (
 /obj/machinery/vending/cola/sodie,
@@ -2601,8 +2593,7 @@
 	},
 /obj/structure/flora/tree/jungle/small/style_random{
 	pixel_x = -19;
-	pixel_y = 4;
-	layer = 5.1
+	pixel_y = 4
 	},
 /turf/open/floor/grass,
 /area/centcom/central_command_areas/planetary_port/plaza)
@@ -2672,6 +2663,11 @@
 	},
 /turf/open/floor/stone,
 /area/centcom/central_command_areas/planetary_port/plaza)
+"Jp" = (
+/obj/item/kirbyplants/random,
+/obj/structure/sign/poster/official/enlist/directional/east,
+/turf/open/floor/stone,
+/area/centcom/central_command_areas/planetary_port)
 "Jr" = (
 /obj/machinery/washing_machine,
 /turf/open/floor/stone,
@@ -2718,6 +2714,7 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/trimline/green/filled/shrink_ccw,
+/obj/structure/sign/poster/official/moth_delam/directional/west,
 /turf/open/floor/iron,
 /area/centcom/central_command_areas/planetary_port)
 "Km" = (
@@ -2904,9 +2901,14 @@
 /turf/open/floor/iron,
 /area/centcom/central_command_areas/planetary_port)
 "MR" = (
-/obj/effect/mapping_helpers/airlock/autoname,
-/turf/open/floor/wood/large,
-/area/centcom/central_command_areas/planetary_port/library)
+/obj/item/kirbyplants/random,
+/obj/effect/turf_decal/trimline/yellow/filled/shrink_ccw,
+/obj/effect/turf_decal/trimline/yellow/filled/shrink_cw{
+	dir = 1
+	},
+/obj/structure/sign/poster/official/moth_delam/directional/west,
+/turf/open/floor/iron,
+/area/centcom/central_command_areas/planetary_port)
 "MV" = (
 /obj/effect/turf_decal/trimline/green/filled/line{
 	dir = 6
@@ -2944,13 +2946,6 @@
 /area/centcom/central_command_areas/planetary_port)
 "ND" = (
 /obj/structure/table/reinforced/titaniumglass,
-/obj/item/storage/medkit/tactical_lite{
-	pixel_y = -7
-	},
-/obj/item/storage/medkit/tactical_lite{
-	pixel_y = -5;
-	pixel_x = 2
-	},
 /obj/item/storage/box/gloves{
 	pixel_y = 14;
 	pixel_x = -7
@@ -2958,10 +2953,6 @@
 /obj/item/storage/box/masks{
 	pixel_y = 14;
 	pixel_x = 8
-	},
-/obj/item/storage/medkit/tactical_lite{
-	pixel_y = -3;
-	pixel_x = 4
 	},
 /obj/effect/turf_decal/trimline/blue/filled/line{
 	dir = 4
@@ -3363,8 +3354,13 @@
 /turf/open/floor/wood/parquet,
 /area/centcom/central_command_areas/planetary_port/club)
 "Su" = (
-/obj/effect/mapping_helpers/airlock/autoname,
-/turf/open/floor/stone,
+/obj/item/kirbyplants/random,
+/obj/effect/turf_decal/trimline/green/filled/shrink_cw{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/green/filled/shrink_ccw,
+/obj/structure/sign/poster/official/moth_epi/directional/west,
+/turf/open/floor/iron,
 /area/centcom/central_command_areas/planetary_port)
 "Sv" = (
 /obj/structure/toilet{
@@ -3498,10 +3494,14 @@
 /obj/structure/flora/bush/large/style_random,
 /turf/open/floor/grass,
 /area/centcom/central_command_areas/planetary_port/plaza)
-"Uj" = (
+"Up" = (
 /obj/item/kirbyplants/random,
-/obj/structure/sign/poster/official/here_for_your_safety/directional/east,
-/turf/open/floor/stone,
+/obj/effect/turf_decal/trimline/yellow/filled/shrink_ccw,
+/obj/effect/turf_decal/trimline/yellow/filled/shrink_cw{
+	dir = 1
+	},
+/obj/structure/sign/poster/official/moth_hardhat/directional/west,
+/turf/open/floor/iron,
 /area/centcom/central_command_areas/planetary_port)
 "Uq" = (
 /obj/structure/table/reinforced,
@@ -3856,11 +3856,13 @@
 /turf/open/floor/carpet/neon/simple/blue,
 /area/centcom/central_command_areas/planetary_port/club)
 "Zv" = (
-/obj/structure/sign/poster/official/moth_delam/directional/east{
-	pixel_x = 0;
-	pixel_y = 4
+/obj/item/kirbyplants/random,
+/obj/effect/turf_decal/trimline/green/filled/shrink_cw{
+	dir = 1
 	},
-/turf/closed/wall/r_wall,
+/obj/effect/turf_decal/trimline/green/filled/shrink_ccw,
+/obj/structure/sign/poster/official/moth_hardhat/directional/west,
+/turf/open/floor/iron,
 /area/centcom/central_command_areas/planetary_port)
 "ZB" = (
 /obj/structure/window/reinforced/spawner/directional/west,
@@ -5641,11 +5643,11 @@ xO
 va
 va
 va
-MR
+rT
 LZ
 TP
 TP
-MR
+rT
 LZ
 va
 va
@@ -6098,7 +6100,7 @@ Lb
 Lb
 Lb
 ej
-MR
+rT
 iZ
 iZ
 iZ
@@ -6383,7 +6385,7 @@ qz
 qz
 qz
 qz
-Su
+Ck
 wN
 qz
 qz
@@ -6941,7 +6943,7 @@ zS
 zS
 qz
 xU
-gY
+qz
 SY
 mV
 DR
@@ -6949,7 +6951,7 @@ mV
 Ce
 DR
 xU
-Zv
+qz
 SY
 mV
 DR
@@ -6957,20 +6959,20 @@ mV
 Ce
 DR
 xU
-rT
+qz
 bc
 zZ
 qz
+Jp
+cg
+cg
+cg
+cg
 uI
-cg
-cg
-cg
-cg
-Uj
 qz
 oT
 kS
-gY
+qz
 ET
 mV
 DR
@@ -6978,7 +6980,7 @@ mV
 Ce
 DR
 Rg
-Zv
+qz
 ET
 mV
 DR
@@ -6986,7 +6988,7 @@ mV
 Ce
 DR
 Rg
-rT
+qz
 ET
 qz
 zS
@@ -6999,7 +7001,7 @@ zS
 zS
 qz
 SX
-JW
+Su
 UC
 Va
 Zt
@@ -7015,7 +7017,7 @@ Zt
 Zt
 CW
 SX
-JW
+Zv
 Oj
 zZ
 qz
@@ -7036,7 +7038,7 @@ Zt
 Zt
 CW
 Yw
-qv
+MR
 Dm
 Va
 Zt
@@ -7044,7 +7046,7 @@ Zt
 Zt
 CW
 JV
-qv
+Up
 Dm
 qz
 zS
@@ -7134,14 +7136,14 @@ jt
 jt
 jt
 zZ
-bZ
+gY
 kw
 jt
 jt
 jt
 jt
 EM
-bZ
+gY
 Et
 jt
 jt
