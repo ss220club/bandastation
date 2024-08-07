@@ -18,20 +18,22 @@
 
 /obj/item/gun/energy/laser/awaymission_aeg/Initialize(mapload)
 	. = ..()
-	on_changed_z_level()
+	RegisterSignal(src, COMSIG_MOVABLE_Z_CHANGED, PROC_REF(check_z))
+	check_z()
 
-/obj/item/gun/energy/laser/awaymission_aeg/on_changed_z_level(turf/old_turf, turf/new_turf, same_z_layer, notify_contents)
-	. = ..()
+/obj/item/gun/energy/laser/awaymission_aeg/proc/check_z(mob/user)
+	SIGNAL_HANDLER
+
 	if(onAwayMission())
 		selfcharge = TRUE
-		if(ismob(loc))
-			to_chat(loc, span_notice("[src.name] активируется, начиная аккумулировать энергию из материи сущего."))
+		if(user)
+			to_chat(user, span_notice("[src.name] активируется, начиная аккумулировать энергию из материи сущего."))
 	else
 		selfcharge = FALSE
 		cell.change(-STANDARD_BATTERY_CHARGE)
 		update_appearance()
-		if(ismob(loc))
-			to_chat(loc, span_danger("[src.name] деактивируется, так как он подавляется системами станции."))
+		if(user)
+			to_chat(user, span_danger("[src.name] деактивируется, так как он подавляется системами станции."))
 			recharge_newshot(no_cyborg_drain = TRUE)
 
 /obj/item/gun/energy/laser/awaymission_aeg/mk2
