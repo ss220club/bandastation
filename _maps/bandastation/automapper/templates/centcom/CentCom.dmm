@@ -888,10 +888,6 @@
 /obj/effect/turf_decal/trimline/blue/filled/line{
 	dir = 4
 	},
-/obj/machinery/iv_drip,
-/obj/machinery/iv_drip,
-/obj/machinery/iv_drip,
-/obj/machinery/iv_drip,
 /turf/open/floor/iron,
 /area/centcom/central_command_areas/planetary_port)
 "kJ" = (
@@ -2852,6 +2848,7 @@
 /obj/effect/turf_decal/trimline/blue/filled/line{
 	dir = 4
 	},
+/obj/machinery/iv_drip,
 /turf/open/floor/iron,
 /area/centcom/central_command_areas/planetary_port)
 "LQ" = (
