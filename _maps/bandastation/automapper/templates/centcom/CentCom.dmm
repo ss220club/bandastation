@@ -6,65 +6,71 @@
 /obj/effect/light_emitter/podbay,
 /obj/effect/light_emitter/podbay,
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "ak" = (
 /obj/machinery/door/window/left/directional/east,
 /turf/open/floor/wood/tile,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/hotel)
 "ao" = (
 /obj/structure/chair/comfy/brown{
 	dir = 1
 	},
 /turf/open/floor/carpet/green,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/library)
+"at" = (
+/obj/effect/turf_decal/trimline/green/filled/line{
+	dir = 10
+	},
+/obj/structure/sign/poster/official/nanotrasen_logo/directional/south,
+/turf/open/floor/iron,
+/area/centcom/central_command_areas/planetary_port)
 "av" = (
-/obj/structure/sign/departments/security,
-/turf/closed/wall/r_wall,
-/area/centcom/central_command_areas/evacuation)
+/turf/open/floor/wood/parquet,
+/area/centcom/central_command_areas/planetary_port/hotel)
 "ax" = (
 /obj/structure/chair/sofa/corp/corner{
 	dir = 1
 	},
 /turf/open/floor/carpet/neon/simple/blue,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "aE" = (
 /obj/structure/bed/double,
 /obj/item/bedsheet/nanotrasen/double,
 /obj/machinery/light/directional/east,
 /turf/open/floor/carpet/royalblue,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/hotel)
 "aR" = (
 /obj/effect/turf_decal/siding/wideplating/dark/corner,
 /obj/effect/light_emitter/podbay,
 /turf/open/water/beach,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "aY" = (
 /obj/machinery/vending/cigarette,
 /turf/open/floor/wood/tile,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/hotel)
 "bc" = (
 /obj/effect/turf_decal/trimline/green/filled/line{
 	dir = 1
 	},
 /obj/machinery/light/directional/north,
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "bt" = (
 /obj/effect/turf_decal/siding/wideplating/dark/corner{
 	dir = 4
 	},
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "bA" = (
 /obj/structure/chair/sofa/corp,
 /turf/open/floor/carpet/blue,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "bF" = (
 /obj/effect/turf_decal/trimline/yellow/filled/arrow_cw{
 	dir = 8
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "bI" = (
 /obj/effect/turf_decal/trimline/green/filled/line{
 	dir = 5
@@ -74,20 +80,20 @@
 	pixel_y = 7
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "bK" = (
 /obj/effect/turf_decal/siding/wood/corner,
 /obj/structure/flora/bush/ferny/style_random,
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "bL" = (
 /obj/machinery/door/airlock/public,
 /turf/open/floor/wood/parquet,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/hotel)
 "bT" = (
 /obj/machinery/light/floor,
 /turf/open/floor/wood/tile,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/hotel)
 "bX" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 1
@@ -97,19 +103,19 @@
 	},
 /obj/effect/light_emitter/podbay,
 /turf/open/floor/stone,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "cd" = (
 /obj/effect/light_emitter/podbay,
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "ce" = (
 /obj/effect/turf_decal/siding/wood/corner,
 /obj/structure/railing/corner,
 /turf/open/floor/stone,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "cg" = (
-/turf/closed/wall/r_wall,
-/area/centcom/central_command_areas/evacuation)
+/turf/open/floor/stone,
+/area/centcom/central_command_areas/planetary_port)
 "cn" = (
 /obj/effect/turf_decal/tile/red/half{
 	dir = 4
@@ -120,13 +126,13 @@
 	pixel_y = 0
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "cp" = (
 /obj/structure/chair/sofa/corp/corner{
 	dir = 2
 	},
 /turf/open/floor/carpet/neon/simple/blue,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "cr" = (
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 6
@@ -135,21 +141,21 @@
 	pixel_y = 6
 	},
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "ct" = (
 /obj/effect/turf_decal/tile/dark_blue/anticorner{
 	dir = 4
 	},
 /obj/machinery/photocopier,
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "cw" = (
 /turf/open/floor/carpet/red,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "cz" = (
 /obj/effect/turf_decal/tile/dark_blue/anticorner,
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "cE" = (
 /obj/effect/turf_decal/tile/red/half{
 	dir = 4
@@ -161,7 +167,7 @@
 	pixel_y = 4
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "cG" = (
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 4
@@ -170,7 +176,7 @@
 	pixel_y = 6
 	},
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "cO" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 4
@@ -180,7 +186,7 @@
 	layer = 5.03
 	},
 /turf/open/floor/stone,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "cP" = (
 /obj/structure/rack,
 /obj/item/storage/medkit/tactical/premium,
@@ -192,58 +198,59 @@
 	pixel_x = 4;
 	pixel_y = 4
 	},
+/obj/structure/sign/poster/official/moth_piping/directional/west,
 /turf/open/floor/wood/tile,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/hotel)
 "cQ" = (
 /obj/item/kirbyplants/random,
 /obj/effect/turf_decal/trimline/brown/filled/line{
 	dir = 6
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "cR" = (
 /obj/structure/chair/sofa/corp{
 	dir = 8
 	},
 /obj/machinery/light/very_dim/directional/east,
 /turf/open/floor/carpet/neon/simple/blue,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "cS" = (
 /turf/open/floor/light/colour_cycle/dancefloor_a,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "cX" = (
 /obj/structure/table/reinforced/plastitaniumglass,
 /obj/effect/spawner/random/food_or_drink/dinner,
 /obj/effect/spawner/random/food_or_drink/dinner,
 /turf/open/floor/light/colour_cycle/dancefloor_b,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "cZ" = (
 /obj/structure/flora/rock/pile/jungle/large/style_random,
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "db" = (
 /obj/structure/chair/sofa/corp/left{
 	dir = 4
 	},
 /turf/open/floor/carpet/neon/simple/blue,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "dd" = (
 /obj/effect/turf_decal/trimline/blue/filled/warning{
 	dir = 8
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "de" = (
 /obj/effect/turf_decal/tile/dark_blue/half{
 	dir = 1
 	},
 /obj/machinery/papershredder,
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "dj" = (
 /obj/effect/turf_decal/siding/dark_blue,
 /turf/open/floor/bluespace,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "do" = (
 /obj/effect/turf_decal/tile/dark_blue/anticorner{
 	dir = 1
@@ -251,7 +258,7 @@
 /obj/structure/table/reinforced,
 /obj/item/clipboard,
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "dC" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 5
@@ -260,23 +267,23 @@
 	dir = 5
 	},
 /turf/open/floor/stone,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "dG" = (
 /obj/effect/turf_decal/trimline/yellow/filled/corner{
 	dir = 8
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "dJ" = (
 /obj/machinery/light/floor,
 /turf/open/floor/stone,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "dL" = (
 /obj/effect/turf_decal/delivery,
 /obj/machinery/door/poddoor/shuttledock,
 /obj/structure/fans/tiny,
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "dM" = (
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 1
@@ -286,7 +293,7 @@
 	pixel_y = 6
 	},
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "dP" = (
 /obj/effect/turf_decal/tile/dark_blue/anticorner{
 	dir = 8
@@ -294,7 +301,7 @@
 /obj/structure/table/reinforced,
 /obj/item/clipboard,
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "dS" = (
 /obj/structure/table/wood/fancy/royalblack,
 /obj/item/flashlight/lamp/green{
@@ -302,7 +309,7 @@
 	pixel_y = 9
 	},
 /turf/open/floor/carpet/royalblue,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/hotel)
 "dX" = (
 /obj/structure/table/reinforced/plastitaniumglass,
 /obj/effect/turf_decal/siding/wood{
@@ -310,7 +317,7 @@
 	},
 /obj/effect/spawner/random/food_or_drink/booze,
 /turf/open/floor/wood/tile,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "ea" = (
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 4
@@ -319,11 +326,11 @@
 	dir = 8
 	},
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "ej" = (
 /obj/effect/light_emitter/podbay,
 /turf/open/floor/stone,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "ex" = (
 /obj/machinery/vending/boozeomat,
 /obj/item/reagent_containers/cup/glass/bottle/champagne{
@@ -344,7 +351,7 @@
 	},
 /obj/machinery/barsign/all_access/directional/north,
 /turf/open/floor/carpet,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "eA" = (
 /obj/effect/turf_decal/trimline/green/filled/line{
 	dir = 1
@@ -354,40 +361,40 @@
 	pixel_y = 7
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "eB" = (
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 4
 	},
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "eE" = (
 /obj/structure/railing/corner/end/flip{
 	dir = 4
 	},
 /turf/closed/indestructible/wood,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/hotel)
 "eK" = (
 /obj/structure/sign/poster/official/random/directional/west,
 /turf/open/floor/wood/tile,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/hotel)
 "eN" = (
 /obj/effect/turf_decal/siding/dark_blue{
 	dir = 10
 	},
 /turf/open/floor/bluespace,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "eY" = (
 /obj/machinery/vending/cola/red,
 /turf/open/floor/wood/large,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "fa" = (
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 1
 	},
 /obj/structure/flora/bush/reed/style_random,
 /turf/open/water/beach,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "fh" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 6
@@ -397,52 +404,53 @@
 	},
 /obj/effect/light_emitter/podbay,
 /turf/open/floor/stone,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "fi" = (
 /obj/structure/table/bronze,
 /obj/effect/spawner/random/food_or_drink/booze,
 /turf/open/floor/carpet,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "fq" = (
 /obj/structure/bookcase/manuals/research_and_development,
 /turf/open/floor/wood/large,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/library)
 "fs" = (
 /obj/effect/turf_decal/trimline/green/filled/corner{
 	dir = 4
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "fC" = (
 /obj/effect/turf_decal/trimline/yellow/line{
 	dir = 1
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "fE" = (
 /obj/effect/turf_decal/siding/dark_blue{
 	dir = 1
 	},
 /turf/open/floor/bluespace,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "fK" = (
 /obj/structure/table/reinforced,
-/obj/machinery/door/window/right/directional/east,
-/obj/effect/mapping_helpers/airlock/access/all/admin/general,
+/obj/machinery/door/window/right/directional/east{
+	req_access = list("cent_captain")
+	},
 /obj/item/paper_bin{
 	pixel_x = -4;
 	pixel_y = 3
 	},
 /obj/item/pen/fountain,
 /turf/open/floor/plating,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "fL" = (
 /obj/effect/turf_decal/siding/wideplating/dark/corner{
 	dir = 8
 	},
 /obj/effect/light_emitter/podbay,
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "fS" = (
 /obj/effect/turf_decal/tile/dark_blue/anticorner{
 	dir = 8
@@ -453,57 +461,57 @@
 	pixel_y = 2
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "fY" = (
 /obj/structure/bookcase/random/adult,
 /turf/open/floor/wood/large,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/library)
 "fZ" = (
 /obj/structure/table/wood/fancy/royalblack,
 /obj/effect/spawner/random/entertainment/plushie_delux,
 /turf/open/floor/carpet/royalblue,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/hotel)
 "gd" = (
 /obj/effect/turf_decal/tile/red/anticorner,
 /obj/structure/table/reinforced,
 /obj/item/clipboard,
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "ge" = (
 /obj/effect/turf_decal/trimline/yellow/line{
 	dir = 10
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "gf" = (
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 4
 	},
 /obj/effect/light_emitter/podbay,
 /turf/open/water/beach,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "gl" = (
 /obj/structure/flora/bush/jungle/c/style_random,
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "gp" = (
 /obj/structure/table/reinforced/plastitaniumglass,
 /obj/item/kirbyplants/random{
 	pixel_y = 12
 	},
 /turf/open/floor/carpet/blue,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "gy" = (
 /obj/structure/table/reinforced/plastitaniumglass,
 /obj/item/kirbyplants/random{
 	pixel_y = 12
 	},
 /turf/open/floor/carpet/red,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "gC" = (
 /obj/structure/bookcase/manuals/engineering,
 /turf/open/floor/carpet,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/library)
 "gF" = (
 /obj/structure/railing{
 	dir = 1
@@ -516,37 +524,41 @@
 	pixel_y = 6
 	},
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "gK" = (
 /obj/effect/turf_decal/trimline/yellow/filled/line{
 	dir = 5
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "gO" = (
 /obj/effect/turf_decal/siding/wood,
 /turf/open/floor/wood/tile,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "gP" = (
 /obj/structure/flora/bush/ferny/style_random,
 /obj/structure/flora/bush/fullgrass/style_random,
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "gR" = (
 /obj/structure/table/reinforced/titaniumglass,
 /obj/effect/spawner/random/food_or_drink/salad,
 /turf/open/floor/carpet,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "gW" = (
 /obj/effect/turf_decal/trimline/yellow/filled/arrow_ccw{
 	dir = 1
 	},
+/obj/structure/sign/departments/security/directional/north,
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "gY" = (
-/obj/structure/sign/poster/official/moth_hardhat,
+/obj/structure/sign/poster/official/moth_epi/directional/east{
+	pixel_x = 0;
+	pixel_y = 4
+	},
 /turf/closed/wall/r_wall,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "gZ" = (
 /obj/effect/turf_decal/siding/wideplating/dark,
 /obj/structure/flora/bush/grassy/style_random,
@@ -554,14 +566,14 @@
 	pixel_y = 6
 	},
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "hk" = (
 /obj/effect/light_emitter/podbay,
 /turf/open/water/beach,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "hq" = (
 /turf/open/floor/carpet/royalblue,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/hotel)
 "hx" = (
 /obj/machinery/stasis,
 /obj/structure/curtain,
@@ -569,7 +581,7 @@
 	dir = 6
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "hH" = (
 /turf/open/floor/stone,
 /area/centcom/central_command_areas/evacuation)
@@ -586,18 +598,19 @@
 	},
 /obj/effect/spawner/random/food_or_drink/salad,
 /turf/open/floor/carpet/red,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "hJ" = (
 /obj/item/kirbyplants/random,
 /turf/open/floor/wood/tile,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/hotel)
 "hM" = (
 /obj/machinery/door/airlock/wood/glass,
+/obj/effect/mapping_helpers/airlock/autoname,
 /turf/open/floor/wood/large,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "hW" = (
 /turf/open/floor/carpet/blue,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "ia" = (
 /obj/item/kirbyplants/random,
 /obj/effect/turf_decal/siding/wood{
@@ -605,17 +618,17 @@
 	},
 /obj/machinery/light/directional/west,
 /turf/open/floor/wood/tile,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "ib" = (
 /obj/structure/bookcase/random/reference/wizard,
 /turf/open/floor/wood/large,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/library)
 "if" = (
 /obj/effect/turf_decal/trimline/yellow/filled/line{
 	dir = 6
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "ig" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 9
@@ -626,27 +639,28 @@
 	},
 /obj/effect/light_emitter/podbay,
 /turf/open/floor/stone,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "iw" = (
 /obj/structure/flora/bush/jungle/a/style_random,
 /obj/structure/flora/rock/pile/jungle/large/style_random,
 /obj/effect/light_emitter/podbay,
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "iz" = (
-/obj/machinery/door/airlock/service/glass,
+/obj/machinery/door/airlock/service/glass{
+	name = "кафе"
+	},
 /obj/effect/turf_decal/tile/green/full,
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "iC" = (
-/obj/structure/sign/poster/official/moth_piping,
 /turf/closed/indestructible/wood,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/hotel)
 "iI" = (
 /obj/structure/table/reinforced/plastitaniumglass,
 /obj/effect/spawner/random/food_or_drink/salad,
 /turf/open/floor/carpet/red,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "iS" = (
 /obj/structure/table/wood,
 /obj/structure/window/reinforced/spawner/directional/east,
@@ -659,21 +673,21 @@
 	pixel_y = 0
 	},
 /turf/open/floor/wood/tile,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/hotel)
 "iT" = (
 /turf/open/floor/carpet/lone,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "iZ" = (
 /turf/open/floor/wood/large,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/library)
 "jd" = (
 /turf/closed/indestructible/wood,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/restroom)
 "jh" = (
 /obj/structure/flora/rock/pile/jungle/style_random,
 /obj/effect/light_emitter/podbay,
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "jl" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 10
@@ -683,12 +697,12 @@
 	},
 /obj/effect/light_emitter/podbay,
 /turf/open/floor/stone,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "jm" = (
 /obj/machinery/shower/directional/west,
 /obj/structure/curtain,
 /turf/open/floor/iron/showroomfloor,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/restroom)
 "jq" = (
 /obj/effect/turf_decal/tile/red/half{
 	dir = 4
@@ -699,7 +713,7 @@
 	pixel_y = 0
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "js" = (
 /obj/structure/railing{
 	dir = 6;
@@ -718,50 +732,50 @@
 	pixel_y = 6
 	},
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "jt" = (
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "jv" = (
 /obj/structure/table/reinforced/titaniumglass,
 /obj/effect/spawner/random/food_or_drink/cake_ingredients,
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "jy" = (
 /obj/effect/turf_decal/siding/wideplating/dark/corner{
 	dir = 1
 	},
 /obj/effect/light_emitter/podbay,
 /turf/open/water/beach,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "jB" = (
 /obj/item/banner/command,
 /turf/open/floor/stone,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "jG" = (
 /obj/machinery/door/airlock/highsecurity,
 /obj/effect/mapping_helpers/airlock/access/all/admin/general,
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "jI" = (
 /obj/effect/turf_decal/tile/red/half{
 	dir = 8
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "jL" = (
 /obj/structure/statue/sandstone/venus{
 	pixel_y = 24
 	},
 /turf/open/floor/stone,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "jP" = (
 /obj/item/kirbyplants/random,
 /obj/effect/turf_decal/trimline/yellow/filled/line{
 	dir = 9
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "jT" = (
 /obj/structure/table/reinforced/plastitaniumglass,
 /obj/item/flashlight/flare/candle/infinite{
@@ -771,7 +785,7 @@
 /obj/structure/table/reinforced/plastitaniumglass,
 /obj/effect/spawner/random/food_or_drink/salad,
 /turf/open/floor/carpet/royalblack,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "kd" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
@@ -780,19 +794,19 @@
 	dir = 1
 	},
 /turf/open/floor/stone,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "ke" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 9
 	},
 /turf/open/floor/wood/parquet,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "kf" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 5
 	},
 /turf/open/floor/wood/parquet,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "kk" = (
 /obj/structure/table/bronze,
 /obj/item/cigarette/cigar/premium,
@@ -814,18 +828,19 @@
 	},
 /obj/effect/spawner/random/food_or_drink/booze,
 /turf/open/floor/carpet,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "kr" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 10
 	},
 /obj/effect/light_emitter/podbay,
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "ks" = (
 /obj/machinery/door/airlock/wood/glass,
+/obj/effect/mapping_helpers/airlock/autoname,
 /turf/open/floor/wood/parquet,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "ku" = (
 /obj/structure/table/bronze,
 /obj/item/cigarette/cigar/cohiba,
@@ -844,17 +859,23 @@
 	},
 /obj/effect/spawner/random/food_or_drink/booze,
 /turf/open/floor/carpet,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
+"kv" = (
+/obj/machinery/door/airlock/highsecurity,
+/obj/effect/mapping_helpers/airlock/access/all/admin/general,
+/obj/effect/mapping_helpers/airlock/autoname,
+/turf/open/floor/iron,
+/area/centcom/central_command_areas/planetary_port)
 "kw" = (
 /obj/effect/turf_decal/tile/red/half{
 	dir = 1
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "kA" = (
 /obj/structure/bookcase/random/adult,
 /turf/open/floor/carpet,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/library)
 "kD" = (
 /obj/structure/table/reinforced/plastitaniumglass,
 /obj/item/kirbyplants/random{
@@ -865,30 +886,30 @@
 	},
 /obj/machinery/light/dim/directional/east,
 /turf/open/floor/wood/tile,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "kE" = (
 /obj/structure/table/reinforced/plastitaniumglass,
 /obj/effect/spawner/random/food_or_drink/dinner,
 /obj/effect/spawner/random/food_or_drink/dinner,
 /turf/open/floor/mineral/abductor,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "kF" = (
 /obj/structure/closet/crate/freezer/blood,
 /obj/effect/turf_decal/trimline/blue/filled/line{
 	dir = 4
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "kJ" = (
 /obj/effect/turf_decal/trimline/yellow/filled/corner,
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "kN" = (
 /obj/effect/turf_decal/trimline/green/filled/corner{
 	dir = 8
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "kQ" = (
 /obj/structure/table/wood/fancy/black,
 /obj/item/paper_bin{
@@ -905,16 +926,20 @@
 	},
 /obj/machinery/newscaster/directional/west,
 /turf/open/floor/bronze/flat,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/library)
+"kR" = (
+/obj/effect/mapping_helpers/airlock/autoname,
+/turf/open/floor/stone,
+/area/centcom/central_command_areas/planetary_port)
 "kS" = (
 /obj/effect/turf_decal/trimline/yellow/filled/line,
 /obj/machinery/light/directional/south,
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "kT" = (
 /obj/structure/sign/flag/nanotrasen,
 /turf/closed/indestructible/wood,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "kX" = (
 /obj/structure/table/bronze,
 /obj/item/reagent_containers/cup/glass/waterbottle/large{
@@ -926,30 +951,30 @@
 	pixel_y = 20
 	},
 /turf/open/floor/carpet,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "le" = (
 /obj/structure/flora/bush/jungle/c/style_random,
 /obj/effect/light_emitter/podbay,
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "lg" = (
 /obj/effect/light_emitter/podbay,
 /obj/structure/flora/bush/sparsegrass/style_random,
 /turf/open/water/beach,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "ln" = (
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 1
 	},
 /obj/effect/light_emitter/podbay,
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "lr" = (
 /obj/structure/chair/comfy/brown{
 	dir = 1
 	},
 /turf/open/floor/wood/parquet,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/hotel)
 "lx" = (
 /obj/item/kirbyplants/random,
 /obj/effect/turf_decal/siding/wood{
@@ -957,7 +982,7 @@
 	},
 /obj/machinery/light/dim/directional/east,
 /turf/open/floor/wood/tile,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "lA" = (
 /obj/structure/table/reinforced/titaniumglass,
 /obj/item/surgery_tray/full/advanced,
@@ -966,51 +991,52 @@
 	},
 /obj/structure/window/reinforced/tinted/spawner/directional/west,
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "lF" = (
 /obj/effect/turf_decal/siding/wideplating/dark,
 /obj/structure/flora/bush/pointy/style_random{
 	pixel_y = 6
 	},
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "lK" = (
 /obj/effect/turf_decal/siding/dark_blue{
 	dir = 8
 	},
 /turf/open/floor/bluespace,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "lL" = (
 /obj/effect/turf_decal/trimline/blue/filled/line{
 	dir = 1
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "lN" = (
 /obj/structure/bookcase/random,
 /turf/open/floor/carpet,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/library)
 "lO" = (
 /obj/machinery/door/airlock/multi_tile/public/glass,
+/obj/effect/mapping_helpers/airlock/autoname,
 /turf/open/floor/wood/large,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/library)
 "lU" = (
 /obj/structure/chair/sofa/corp/left,
 /turf/open/floor/carpet/neon/simple/blue,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "lX" = (
 /obj/machinery/light/dim/directional/east,
 /turf/open/floor/carpet/red,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "mg" = (
 /obj/structure/flora/rock/pile/jungle/large/style_random,
 /obj/effect/light_emitter/podbay,
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "ml" = (
 /obj/structure/chair/sofa/corp,
 /turf/open/floor/carpet/red,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "mC" = (
 /obj/structure/table/reinforced/plastitaniumglass,
 /obj/effect/turf_decal/siding/wood{
@@ -1018,7 +1044,7 @@
 	},
 /obj/effect/spawner/random/food_or_drink/dinner,
 /turf/open/floor/wood/tile,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "mJ" = (
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 10
@@ -1027,34 +1053,34 @@
 	pixel_y = 6
 	},
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "mK" = (
 /obj/structure/chair/sofa/corp/left,
 /turf/open/floor/carpet/red,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "mV" = (
 /obj/structure/window/fulltile,
 /obj/structure/flora/bush/flowers_pp/style_random,
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "na" = (
 /obj/effect/turf_decal/siding/wood,
 /obj/structure/railing,
 /turf/open/floor/stone,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "nf" = (
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 5
 	},
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "ni" = (
 /obj/structure/table/bronze,
 /obj/machinery/chem_dispenser/drinks/beer/fullupgrade{
 	pixel_y = 7
 	},
 /turf/open/floor/carpet,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "nj" = (
 /obj/effect/turf_decal/siding/wideplating/dark/corner{
 	dir = 4
@@ -1064,23 +1090,24 @@
 	},
 /obj/effect/light_emitter/podbay,
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "nt" = (
 /obj/effect/turf_decal/trimline/yellow/filled/line,
 /obj/effect/turf_decal/trimline/yellow/filled/corner{
 	dir = 4
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "nw" = (
 /obj/structure/flora/bush/reed/style_random,
 /obj/effect/light_emitter/podbay,
 /turf/open/water/beach,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "ny" = (
 /obj/machinery/door/airlock/public,
+/obj/effect/mapping_helpers/airlock/autoname,
 /turf/open/floor/stone,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/restroom)
 "nC" = (
 /obj/structure/filingcabinet/security{
 	pixel_x = 0;
@@ -1095,11 +1122,11 @@
 	pixel_y = 0
 	},
 /turf/open/floor/wood/tile,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/hotel)
 "nF" = (
 /obj/structure/bookcase/manuals/research_and_development,
 /turf/open/floor/carpet,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/library)
 "nX" = (
 /obj/structure/table/reinforced/plastitaniumglass,
 /obj/item/kirbyplants/random{
@@ -1110,31 +1137,31 @@
 	},
 /obj/machinery/light/dim/directional/west,
 /turf/open/floor/wood/tile,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "nY" = (
 /obj/structure/table/reinforced/plastitaniumglass,
 /obj/effect/spawner/random/food_or_drink/dinner,
 /obj/effect/spawner/random/food_or_drink/dinner,
 /turf/open/floor/light/colour_cycle/dancefloor_a,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "oc" = (
 /obj/structure/chair/comfy/brown{
 	dir = 8
 	},
 /turf/open/floor/bronze,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/library)
 "oi" = (
 /obj/structure/chair/sofa/corp/right{
 	dir = 1
 	},
 /turf/open/floor/carpet/neon/simple/blue,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "oo" = (
 /obj/structure/chair/sofa/bench/left{
 	dir = 8
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "or" = (
 /obj/structure/sign/painting/large/library_private{
 	dir = 1;
@@ -1142,50 +1169,54 @@
 	},
 /obj/machinery/light/dim/directional/south,
 /turf/open/floor/bronze,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/library)
 "ov" = (
 /obj/structure/flora/bush/sparsegrass/style_random,
 /obj/effect/light_emitter/podbay,
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "oD" = (
 /obj/machinery/vending/coffee,
 /turf/open/floor/carpet/royalblack,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "oF" = (
 /obj/effect/turf_decal/siding/wideplating/dark/corner{
 	dir = 8
 	},
 /obj/structure/flora/rock/pile/jungle/style_random,
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "oQ" = (
-/obj/machinery/door/airlock/medical/glass,
+/obj/machinery/door/airlock/medical/glass{
+	name = "пункт первой медицинской помощи"
+	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "oS" = (
 /turf/open/floor/iron/stairs/right,
 /area/centcom/central_command_areas/evacuation)
 "oT" = (
-/obj/structure/sign/poster/official/moth_delam,
-/turf/closed/wall/r_wall,
-/area/centcom/central_command_areas/evacuation)
+/obj/effect/turf_decal/trimline/yellow/filled/arrow_ccw{
+	dir = 1
+	},
+/turf/open/floor/iron,
+/area/centcom/central_command_areas/planetary_port)
 "oW" = (
 /obj/structure/table/reinforced/plastitaniumglass,
 /obj/effect/spawner/random/food_or_drink/booze,
 /obj/effect/spawner/random/special_lighter,
 /turf/open/floor/carpet/blue,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "pf" = (
 /obj/item/banner/command,
 /obj/structure/sign/poster/official/random/directional/north,
 /obj/machinery/light/blacklight/directional/north,
 /turf/open/floor/carpet,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "pi" = (
 /obj/structure/flora/bush/reed/style_random,
 /turf/open/water/beach,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "po" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 4
@@ -1196,7 +1227,7 @@
 	},
 /obj/effect/light_emitter/podbay,
 /turf/open/floor/stone,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "pp" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 5
@@ -1206,7 +1237,7 @@
 	},
 /obj/effect/light_emitter/podbay,
 /turf/open/floor/stone,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "pB" = (
 /obj/machinery/defibrillator_mount/loaded{
 	pixel_x = -28;
@@ -1217,23 +1248,24 @@
 	dir = 8
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "pD" = (
 /obj/structure/window/reinforced/spawner/directional/north,
 /obj/structure/bookcase/random/adult,
 /turf/open/floor/wood/large,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/library)
 "pG" = (
 /obj/structure/sign/poster/official/high_class_martini,
 /turf/closed/indestructible/wood,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "pJ" = (
 /obj/machinery/door/airlock/multi_tile/public/glass,
 /obj/machinery/scanner_gate/preset_guns,
+/obj/effect/mapping_helpers/airlock/autoname,
 /turf/open/floor/iron/stairs/right{
 	dir = 1
 	},
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "pW" = (
 /obj/structure/railing{
 	dir = 4;
@@ -1245,27 +1277,28 @@
 	},
 /obj/effect/turf_decal/siding/wood,
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "pY" = (
 /obj/machinery/door/airlock/bathroom,
+/obj/effect/mapping_helpers/airlock/autoname,
 /turf/open/floor/stone,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/restroom)
 "qh" = (
 /obj/structure/table/reinforced/plastitaniumglass,
 /obj/effect/spawner/random/food_or_drink/salad,
 /turf/open/floor/carpet/blue,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "qi" = (
 /obj/effect/turf_decal/siding/wideplating/dark,
 /obj/structure/flora/bush/jungle/b/style_random,
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "qs" = (
 /obj/machinery/light/floor,
 /obj/structure/table/wood,
 /obj/effect/spawner/random/food_or_drink/snack,
 /turf/open/floor/wood/tile,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/hotel)
 "qv" = (
 /obj/item/kirbyplants/random,
 /obj/effect/turf_decal/trimline/yellow/filled/shrink_ccw,
@@ -1273,7 +1306,7 @@
 	dir = 1
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "qx" = (
 /obj/effect/turf_decal/trimline/green/filled/line{
 	dir = 9
@@ -1288,7 +1321,7 @@
 	pixel_y = 11
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "qy" = (
 /obj/structure/window/reinforced/spawner/directional/east,
 /obj/structure/table/wood,
@@ -1296,18 +1329,17 @@
 	pixel_y = 12
 	},
 /turf/open/floor/wood/tile,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/hotel)
 "qz" = (
-/obj/structure/sign/poster/official/corporate_perks_vacation,
 /turf/closed/wall/r_wall,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "qA" = (
 /obj/effect/turf_decal/tile/red/half{
 	dir = 8
 	},
 /obj/item/banner/security,
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "qB" = (
 /turf/open/floor/iron/stairs/left,
 /area/centcom/central_command_areas/evacuation)
@@ -1319,22 +1351,22 @@
 	dir = 1
 	},
 /turf/open/floor/stone,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "qK" = (
 /obj/machinery/light/floor,
 /obj/structure/sign/poster/official/random/directional/east,
 /turf/open/floor/wood/tile,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/hotel)
 "qN" = (
 /obj/structure/chair/sofa/corp{
 	dir = 1
 	},
 /turf/open/floor/carpet/neon/simple/blue,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "qQ" = (
 /obj/machinery/light/dim/directional/west,
 /turf/open/floor/carpet/blue,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "rb" = (
 /obj/structure/window/reinforced/spawner/directional/north,
 /obj/structure/table/wood/fancy/black,
@@ -1344,11 +1376,11 @@
 	layer = 3.4
 	},
 /turf/open/floor/carpet/green,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/library)
 "rd" = (
 /obj/machinery/vending/snack/teal,
 /turf/open/floor/wood/tile,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/hotel)
 "rl" = (
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 8
@@ -1358,16 +1390,16 @@
 	pixel_y = 0
 	},
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "rr" = (
 /obj/effect/light_emitter/podbay,
 /turf/open/floor/asphalt,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "rA" = (
 /obj/machinery/light/directional/west,
 /obj/structure/chair/stool/bar/directional/north,
 /turf/open/floor/wood/large,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "rC" = (
 /obj/structure/closet/crate/freezer/surplus_limbs,
 /obj/effect/turf_decal/trimline/blue/filled/line{
@@ -1375,7 +1407,7 @@
 	},
 /obj/machinery/light/directional/west,
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "rO" = (
 /obj/structure/window/reinforced/spawner/directional/west,
 /obj/structure/table/wood/fancy/black,
@@ -1389,18 +1421,17 @@
 	pixel_y = 0
 	},
 /turf/open/floor/carpet/green,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/library)
 "rS" = (
-/obj/structure/sign/departments/med_alt,
-/turf/closed/wall/r_wall,
-/area/centcom/central_command_areas/evacuation)
+/turf/open/floor/wood/tile,
+/area/centcom/central_command_areas/planetary_port/club)
 "rT" = (
-/obj/structure/sign/poster/official/moth_hardhat{
+/obj/structure/sign/poster/official/moth_hardhat/directional/east{
 	pixel_x = 0;
 	pixel_y = 4
 	},
 /turf/closed/wall/r_wall,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "rV" = (
 /obj/machinery/vending/boozeomat,
 /obj/item/reagent_containers/cup/glass/bottle/coconut_rum{
@@ -1420,13 +1451,13 @@
 	pixel_y = 21
 	},
 /turf/open/floor/carpet,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "rY" = (
 /obj/structure/chair/comfy/brown{
 	dir = 8
 	},
 /turf/open/floor/wood/large,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/library)
 "sm" = (
 /obj/machinery/stasis{
 	dir = 4
@@ -1436,15 +1467,15 @@
 	dir = 9
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "sy" = (
 /obj/structure/flora/bush/ferny/style_random,
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "sz" = (
 /obj/machinery/light/floor,
 /turf/open/floor/wood/parquet,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/hotel)
 "sG" = (
 /obj/machinery/light/dim/directional/west,
 /obj/structure/rack,
@@ -1458,7 +1489,7 @@
 	pixel_y = 4
 	},
 /turf/open/floor/wood/tile,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/hotel)
 "sM" = (
 /obj/structure/table/bronze,
 /obj/item/reagent_containers/cup/glass/waterbottle/large{
@@ -1470,12 +1501,12 @@
 	pixel_y = 17
 	},
 /turf/open/floor/carpet,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "sP" = (
 /obj/structure/flora/bush/ferny/style_random,
 /obj/structure/flora/bush/grassy/style_random,
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "sS" = (
 /obj/structure/railing{
 	dir = 4;
@@ -1492,13 +1523,13 @@
 	pixel_y = 6
 	},
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "sT" = (
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 9
 	},
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "sX" = (
 /obj/structure/railing{
 	dir = 1
@@ -1513,14 +1544,14 @@
 	layer = 5.02
 	},
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "sZ" = (
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 9
 	},
 /obj/structure/flora/bush/jungle/b/style_random,
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "ta" = (
 /obj/structure/railing{
 	dir = 1
@@ -1531,69 +1562,65 @@
 /obj/effect/turf_decal/siding/wood,
 /obj/structure/flora/bush/ferny/style_random,
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "tb" = (
 /obj/structure/chair/comfy/brown{
 	dir = 8
 	},
 /turf/open/floor/wood/tile,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "tg" = (
 /obj/structure/chair/comfy/black{
 	dir = 8
 	},
 /turf/open/floor/carpet/royalblack,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "tl" = (
 /obj/structure/table/wood/fancy/black,
 /obj/item/kirbyplants/random{
 	pixel_y = 12
 	},
 /turf/open/floor/wood/large,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/library)
 "tD" = (
-/obj/effect/turf_decal/trimline/green/filled/line{
+/obj/effect/turf_decal/trimline/green/filled/arrow_ccw{
 	dir = 6
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "tI" = (
 /obj/structure/chair/comfy/beige{
 	dir = 8
 	},
 /turf/open/floor/carpet,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "tN" = (
 /obj/item/kirbyplants/random,
 /turf/open/floor/stone,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "tO" = (
-/obj/structure/sign/poster/official/moth_epi{
-	pixel_x = 0;
-	pixel_y = 4
-	},
-/turf/closed/wall/r_wall,
-/area/centcom/central_command_areas/evacuation)
+/turf/open/floor/carpet,
+/area/centcom/central_command_areas/planetary_port/library)
 "tZ" = (
 /obj/effect/turf_decal/trimline/blue/filled/line{
 	dir = 8
 	},
 /obj/structure/window/reinforced/tinted/spawner/directional/west,
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "uj" = (
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 8
 	},
 /obj/structure/flora/bush/jungle/c/style_random,
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "uo" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
 	},
 /turf/open/floor/wood/parquet,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "us" = (
 /turf/open/floor/iron/stairs/medium,
 /area/centcom/central_command_areas/evacuation)
@@ -1603,14 +1630,14 @@
 	dir = 4
 	},
 /turf/open/floor/wood/tile,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "uB" = (
 /obj/effect/turf_decal/siding/wideplating/dark/corner{
 	dir = 4
 	},
 /obj/structure/flora/bush/fullgrass/style_random,
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "uI" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 1
@@ -1621,23 +1648,24 @@
 	},
 /obj/effect/light_emitter/podbay,
 /turf/open/floor/stone,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "uV" = (
 /obj/effect/turf_decal/trimline/brown/filled/line,
 /obj/effect/spawner/random/trash/bin,
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "uW" = (
 /obj/structure/table/reinforced,
-/obj/machinery/door/window/right/directional/west,
-/obj/effect/mapping_helpers/airlock/access/all/admin/general,
+/obj/machinery/door/window/right/directional/west{
+	req_access = list("cent_captain")
+	},
 /obj/item/paper_bin{
 	pixel_x = -4;
 	pixel_y = 3
 	},
 /obj/item/pen/fountain,
 /turf/open/floor/plating,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "uX" = (
 /obj/structure/window/reinforced/spawner/directional/west,
 /obj/structure/table/wood/fancy/black,
@@ -1647,25 +1675,29 @@
 	pixel_y = 7
 	},
 /turf/open/floor/carpet/green,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/library)
 "va" = (
 /turf/closed/wall,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/library)
+"vd" = (
+/obj/item/kirbyplants/random,
+/turf/open/floor/wood/large,
+/area/centcom/central_command_areas/planetary_port)
 "vg" = (
 /obj/effect/turf_decal/trimline/yellow/line{
 	dir = 4
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "vm" = (
 /obj/structure/bookcase/manuals/engineering,
 /turf/open/floor/wood/large,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/library)
 "vq" = (
 /obj/effect/turf_decal/tile/dark_blue/half,
 /obj/machinery/papershredder,
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "vt" = (
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 8
@@ -1674,17 +1706,17 @@
 	pixel_y = 6
 	},
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "vv" = (
 /obj/machinery/jukebox/disco/indestructible,
 /turf/open/floor/mineral/abductor,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "vx" = (
 /obj/effect/turf_decal/trimline/yellow/line{
 	dir = 6
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "vy" = (
 /obj/item/kirbyplants/random,
 /obj/effect/turf_decal/trimline/yellow/filled/shrink_cw,
@@ -1692,43 +1724,43 @@
 	dir = 1
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "vK" = (
 /obj/structure/flora/bush/jungle/b/style_random,
 /obj/effect/light_emitter/podbay,
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "vQ" = (
 /obj/item/kirbyplants/random,
 /obj/effect/turf_decal/trimline/brown/filled/line{
 	dir = 10
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "vV" = (
 /obj/structure/chair/comfy/beige{
 	dir = 4
 	},
 /turf/open/floor/carpet,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "wb" = (
 /obj/machinery/vending/cola/black,
 /turf/open/floor/wood/tile,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/hotel)
 "wk" = (
 /obj/effect/turf_decal/trimline/brown/filled/line{
 	dir = 8
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "ws" = (
 /obj/structure/flora/bush/sparsegrass/style_random,
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "wB" = (
 /obj/machinery/vending/wardrobe/curator_wardrobe,
 /turf/open/floor/bronze/flat,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/library)
 "wI" = (
 /obj/structure/table/wood,
 /obj/item/modular_computer/laptop/preset/civilian{
@@ -1736,59 +1768,61 @@
 	pixel_y = 4
 	},
 /turf/open/floor/wood/tile,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/hotel)
 "wN" = (
 /obj/machinery/door/airlock/multi_tile/public/glass{
 	dir = 4
 	},
+/obj/effect/mapping_helpers/airlock/autoname,
 /turf/open/floor/stone,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "wU" = (
 /obj/effect/turf_decal/tile/dark_blue/half,
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "xj" = (
 /obj/structure/chair/comfy/black{
 	dir = 4
 	},
 /turf/open/floor/carpet/royalblack,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "xk" = (
 /obj/machinery/door/airlock/public,
+/obj/effect/mapping_helpers/airlock/autoname,
 /turf/open/floor/carpet/green,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/hotel)
 "xn" = (
 /obj/structure/chair/sofa/corp/right,
 /turf/open/floor/carpet/neon/simple/blue,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "xo" = (
 /obj/effect/turf_decal/siding/wood/corner,
 /obj/structure/railing/corner,
 /obj/effect/light_emitter/podbay,
 /turf/open/floor/stone,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "xu" = (
 /obj/effect/turf_decal/trimline/yellow/line,
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "xv" = (
 /obj/effect/turf_decal/trimline/blue/filled/warning{
 	dir = 4
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "xC" = (
 /obj/machinery/shower/directional/east,
 /obj/structure/curtain,
 /turf/open/floor/iron/showroomfloor,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/restroom)
 "xE" = (
 /obj/effect/turf_decal/siding/wideplating/dark/corner{
 	dir = 1
 	},
 /obj/structure/flora/bush/jungle/a/style_random,
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "xJ" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
@@ -1797,18 +1831,18 @@
 	dir = 4
 	},
 /turf/open/floor/wood/parquet,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "xN" = (
 /obj/effect/turf_decal/trimline/green/filled/line{
 	dir = 1
 	},
 /obj/machinery/icecream_vat,
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "xO" = (
 /obj/structure/flora/tree/jungle/style_random,
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "xS" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 8
@@ -1818,7 +1852,7 @@
 	},
 /obj/effect/light_emitter/podbay,
 /turf/open/floor/stone,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "xU" = (
 /obj/effect/turf_decal/trimline/green/filled/line,
 /obj/machinery/light/directional/south,
@@ -1826,7 +1860,7 @@
 	dir = 1
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "xZ" = (
 /obj/structure/table/reinforced/titaniumglass,
 /obj/item/storage/medkit/advanced,
@@ -1840,63 +1874,59 @@
 	dir = 4
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "yc" = (
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 6
 	},
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "yh" = (
 /obj/effect/turf_decal/trimline/green/filled/line{
 	dir = 8
 	},
 /obj/machinery/light/directional/west,
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "yj" = (
-/obj/structure/sign/poster/official/nanotrasen_logo{
-	pixel_x = 0;
-	pixel_y = 4
-	},
-/turf/closed/wall/r_wall,
-/area/centcom/central_command_areas/evacuation)
+/turf/open/floor/wood/large,
+/area/centcom/central_command_areas/planetary_port)
 "yl" = (
 /obj/effect/turf_decal/trimline/blue/filled/line{
 	dir = 9
 	},
 /obj/structure/window/reinforced/tinted/spawner/directional/west,
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "yp" = (
 /turf/closed/indestructible/rock,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "yq" = (
 /obj/item/camera,
 /obj/item/taperecorder,
 /obj/item/storage/photo_album/library,
 /obj/structure/table/wood/fancy/black,
 /turf/open/floor/bronze/flat,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/library)
 "yC" = (
 /obj/structure/table/wood/fancy/black,
 /obj/machinery/door/window/left/directional/north,
 /turf/open/floor/carpet/green,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/library)
 "yH" = (
 /obj/structure/flora/bush/grassy/style_random,
 /obj/effect/light_emitter/podbay,
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "yL" = (
 /obj/structure/table/reinforced/titaniumglass,
 /obj/effect/spawner/random/food_or_drink/three_course_meal,
 /turf/open/floor/carpet,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "yQ" = (
 /obj/structure/flora/bush/jungle/a/style_random,
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "yT" = (
 /obj/machinery/stasis,
 /obj/effect/turf_decal/trimline/blue/filled/line{
@@ -1904,7 +1934,7 @@
 	},
 /obj/structure/curtain,
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "yU" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
@@ -1913,22 +1943,22 @@
 	dir = 1
 	},
 /turf/open/floor/wood/parquet,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "yZ" = (
 /obj/structure/table/reinforced/plastitaniumglass,
 /obj/effect/spawner/random/food_or_drink/dinner,
 /turf/open/floor/carpet/neon/simple/blue,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "za" = (
 /obj/item/kirbyplants/random,
 /obj/effect/turf_decal/siding/wood/end{
 	dir = 1
 	},
 /turf/open/floor/wood/parquet,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "zb" = (
 /turf/open/floor/carpet/royalblack,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "zt" = (
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/trimline/brown/filled/line{
@@ -1940,39 +1970,39 @@
 	},
 /obj/structure/sign/warning/yes_smoking/circle/directional/north,
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "zx" = (
 /obj/machinery/light/floor,
 /obj/structure/sign/poster/official/random/directional/west,
 /turf/open/floor/wood/tile,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/hotel)
 "zy" = (
 /obj/structure/table/wood,
 /turf/open/floor/wood/tile,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/hotel)
 "zC" = (
 /obj/effect/turf_decal/siding/wideplating/dark,
 /obj/structure/flora/bush/grassy/style_random,
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "zR" = (
 /obj/effect/turf_decal/siding/wideplating/dark/corner,
 /obj/structure/flora/bush/fullgrass/style_random,
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "zS" = (
 /turf/closed/indestructible/rock,
-/area/space)
+/area/space/nearstation)
 "zT" = (
 /obj/structure/flora/bush/jungle/b/style_random,
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "zU" = (
-/obj/effect/turf_decal/trimline/green/filled/line{
+/obj/effect/turf_decal/trimline/green/filled/arrow_cw{
 	dir = 5
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "zW" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 6
@@ -1984,27 +2014,31 @@
 	},
 /obj/effect/light_emitter/podbay,
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "zZ" = (
 /obj/effect/turf_decal/trimline/green/filled/arrow_ccw,
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "Aa" = (
 /obj/effect/turf_decal/trimline/yellow/filled/line{
 	dir = 1
 	},
 /obj/machinery/light/directional/north,
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "Aq" = (
 /obj/structure/flora/tree/jungle/small/style_random,
 /obj/effect/light_emitter/podbay,
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
+"Av" = (
+/obj/structure/sign/poster/official/cohiba_robusto_ad/directional/north,
+/turf/open/floor/wood/tile,
+/area/centcom/central_command_areas/planetary_port/club)
 "Ax" = (
 /obj/structure/flora/tree/jungle/small/style_random,
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "Ay" = (
 /obj/structure/table/reinforced/titaniumglass,
 /obj/item/storage/medkit/tactical/premium{
@@ -2022,14 +2056,14 @@
 	dir = 6
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "AF" = (
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 8
 	},
 /obj/effect/light_emitter/podbay,
 /turf/open/water/beach,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "AH" = (
 /obj/structure/railing{
 	dir = 1
@@ -2039,7 +2073,7 @@
 	},
 /obj/structure/flora/bush/jungle/a/style_random,
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "AL" = (
 /obj/structure/table/bronze,
 /obj/machinery/chem_dispenser/drinks/fullupgrade{
@@ -2047,48 +2081,47 @@
 	},
 /obj/machinery/barsign/all_access/directional/north,
 /turf/open/floor/carpet,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "AT" = (
 /turf/open/floor/iron/showroomfloor,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/restroom)
 "Bc" = (
 /obj/structure/flora/bush/fullgrass/style_random,
 /obj/effect/light_emitter/podbay,
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "Bi" = (
-/obj/structure/sign/poster/official/random,
 /turf/closed/indestructible/wood,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "Bj" = (
 /obj/structure/flora/bush/fullgrass/style_random,
 /obj/structure/flora/rock/pile/jungle/large/style_random,
 /obj/effect/light_emitter/podbay,
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "Bn" = (
 /obj/effect/turf_decal/tile/dark_blue/half,
 /obj/machinery/computer/records/security{
 	dir = 1
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "Bw" = (
 /obj/structure/flora/bush/large/style_random,
 /obj/effect/light_emitter/podbay,
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "Bx" = (
 /obj/effect/spawner/random/structure/closet_private,
 /turf/open/floor/wood/parquet,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/hotel)
 "BI" = (
 /obj/structure/table/glass,
 /obj/effect/turf_decal/trimline/yellow/filled/line{
 	dir = 8
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "BM" = (
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 1
@@ -2097,7 +2130,7 @@
 	pixel_y = 6
 	},
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "BS" = (
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 10
@@ -2107,7 +2140,7 @@
 	pixel_y = 8
 	},
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "BU" = (
 /obj/structure/table/reinforced/titaniumglass,
 /obj/effect/spawner/random/food_or_drink/donkpockets{
@@ -2115,30 +2148,31 @@
 	pixel_y = 6
 	},
 /turf/open/floor/wood/large,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "BW" = (
 /obj/effect/turf_decal/siding/wideplating/dark/corner,
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "Cc" = (
 /obj/structure/chair/sofa/corp/right{
 	dir = 8
 	},
 /turf/open/floor/carpet/neon/simple/blue,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "Ce" = (
 /obj/structure/window/fulltile,
 /obj/structure/flora/bush/flowers_yw/style_random,
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "Cj" = (
 /obj/machinery/scanner_gate/preset_guns,
+/obj/effect/mapping_helpers/airlock/autoname,
 /turf/open/floor/iron/stairs/right,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "Cr" = (
 /obj/machinery/vending/cola/sodie,
 /turf/open/floor/carpet/royalblack,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "Cw" = (
 /obj/structure/table/wood/fancy/black,
 /obj/structure/sign/painting/library_private{
@@ -2146,45 +2180,45 @@
 	},
 /obj/item/flashlight/lamp/green,
 /turf/open/floor/bronze/flat,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/library)
 "CD" = (
 /obj/item/kirbyplants/random,
 /turf/open/floor/wood/large,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/library)
 "CH" = (
 /obj/effect/turf_decal/tile/dark_blue/half{
 	dir = 1
 	},
 /obj/machinery/computer/records/medical,
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "CI" = (
 /obj/structure/bookcase/random/religion,
 /turf/open/floor/wood/large,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/library)
 "CL" = (
 /obj/effect/turf_decal/siding/dark_blue{
 	dir = 4
 	},
 /turf/open/floor/bluespace,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "CW" = (
 /obj/structure/chair/sofa/bench/right{
 	dir = 4
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "Db" = (
 /obj/effect/turf_decal/logo{
 	dir = 1;
 	color = "#f4cd82"
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "De" = (
 /obj/structure/reagent_dispensers/water_cooler,
 /turf/open/floor/wood/large,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "Dg" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 6
@@ -2193,7 +2227,7 @@
 	dir = 6
 	},
 /turf/open/floor/stone,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "Dh" = (
 /obj/structure/table/wood,
 /obj/machinery/door/window/right/directional/east,
@@ -2202,17 +2236,17 @@
 	pixel_y = 19
 	},
 /turf/open/floor/wood/tile,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/hotel)
 "Di" = (
 /turf/open/floor/asphalt,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "Dm" = (
 /obj/effect/turf_decal/trimline/yellow/filled/line,
 /obj/effect/turf_decal/trimline/yellow/filled/corner{
 	dir = 1
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "Dt" = (
 /obj/structure/table/wood/fancy/black,
 /obj/machinery/computer/libraryconsole{
@@ -2221,17 +2255,18 @@
 	pixel_y = 8
 	},
 /turf/open/floor/bronze/flat,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/library)
 "Du" = (
 /obj/machinery/scanner_gate/preset_guns,
+/obj/effect/mapping_helpers/airlock/autoname,
 /turf/open/floor/iron/stairs/left{
 	dir = 1
 	},
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "Dz" = (
 /obj/machinery/light/dim/directional/west,
 /turf/open/floor/wood/tile,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/hotel)
 "DE" = (
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 8
@@ -2239,7 +2274,7 @@
 /obj/structure/flora/bush/reed/style_random,
 /obj/effect/light_emitter/podbay,
 /turf/open/water/beach,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "DO" = (
 /obj/structure/table/wood,
 /obj/structure/window/reinforced/spawner/directional/east,
@@ -2256,32 +2291,32 @@
 	pixel_y = 5
 	},
 /turf/open/floor/wood/tile,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/hotel)
 "DP" = (
 /obj/structure/curtain/cloth/fancy,
 /turf/open/floor/wood/parquet,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "DR" = (
 /obj/structure/window/fulltile,
 /obj/structure/flora/bush/flowers_br/style_random,
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "DS" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
 	},
 /turf/open/floor/wood/parquet,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "Eb" = (
 /obj/machinery/light/dim/directional/west,
 /turf/open/floor/carpet/red,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "Ei" = (
 /obj/structure/chair/comfy/brown{
 	dir = 8
 	},
 /turf/open/floor/carpet,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/library)
 "Eq" = (
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/trimline/brown/filled/line{
@@ -2289,40 +2324,40 @@
 	},
 /obj/effect/spawner/random/special_lighter,
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "Et" = (
 /obj/effect/turf_decal/trimline/yellow/filled/warning{
 	dir = 1
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "Ew" = (
 /obj/structure/chair/sofa/corp/corner{
 	dir = 4
 	},
 /turf/open/floor/carpet/neon/simple/blue,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "Ez" = (
 /obj/structure/chair/sofa/corp/right,
 /turf/open/floor/carpet/red,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "EB" = (
 /obj/item/banner/command,
 /obj/machinery/light/blacklight/directional/north,
 /turf/open/floor/carpet,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "EC" = (
 /obj/structure/sign/poster/official/random/directional/south,
 /turf/open/floor/carpet/royalblue,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/hotel)
 "ED" = (
 /obj/effect/turf_decal/siding/wideplating/dark,
 /turf/open/water/beach,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "EM" = (
 /obj/effect/turf_decal/tile/red/half,
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "ET" = (
 /obj/effect/turf_decal/trimline/yellow/filled/line,
 /obj/effect/turf_decal/trimline/yellow/filled/line{
@@ -2330,75 +2365,84 @@
 	},
 /obj/machinery/light/directional/north,
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "EY" = (
 /obj/machinery/door/airlock/multi_tile/public/glass,
 /obj/machinery/scanner_gate/preset_guns,
+/obj/effect/mapping_helpers/airlock/autoname,
 /turf/open/floor/iron/stairs/left,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "Fa" = (
 /obj/effect/turf_decal/trimline/yellow/filled/arrow_cw{
 	dir = 9
 	},
+/obj/structure/sign/poster/official/nanotrasen_logo/directional/north,
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "Fi" = (
 /obj/structure/flora/bush/grassy/style_random,
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "Fm" = (
 /obj/effect/turf_decal/trimline/green/filled/corner,
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "Fr" = (
 /obj/structure/table/reinforced/plastitaniumglass,
 /obj/effect/spawner/random/food_or_drink/booze,
 /obj/effect/spawner/random/special_lighter,
 /turf/open/floor/carpet/red,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "Fv" = (
 /obj/effect/turf_decal/siding/dark_blue{
 	dir = 6
 	},
 /turf/open/floor/bluespace,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "Fx" = (
 /obj/structure/table/wood/fancy/black,
 /turf/open/floor/wood/large,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/library)
 "FD" = (
 /obj/machinery/light/directional/south,
 /turf/open/floor/stone,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/restroom)
 "FG" = (
 /obj/effect/turf_decal/trimline/yellow/filled/arrow_cw{
 	dir = 8
 	},
 /obj/structure/sign/warning/no_smoking/directional/west,
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
+"FU" = (
+/obj/effect/spawner/structure/window/reinforced/indestructible,
+/turf/open/floor/plating,
+/area/centcom/central_command_areas/planetary_port/club)
 "FV" = (
 /obj/structure/table/reinforced/titaniumglass,
 /obj/item/surgery_tray/full/advanced,
 /obj/machinery/light/directional/south,
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "FZ" = (
-/obj/machinery/door/airlock/public/glass,
+/obj/machinery/door/airlock/public/glass{
+	name = "зона для курения"
+	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "Ge" = (
 /obj/structure/chair/comfy/brown{
 	dir = 4
 	},
 /turf/open/floor/wood/tile,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "Gn" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
 	},
+/obj/structure/sign/poster/official/random/directional/east,
 /turf/open/floor/wood/tile,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "Go" = (
 /obj/structure/railing{
 	dir = 5
@@ -2407,25 +2451,29 @@
 	dir = 5
 	},
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "Gp" = (
 /obj/machinery/vending/cigarette,
 /obj/effect/turf_decal/trimline/brown/filled/line{
 	dir = 1
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
+"Gu" = (
+/obj/effect/mapping_helpers/airlock/autoname,
+/turf/open/floor/wood/large,
+/area/centcom/central_command_areas/planetary_port/library)
 "Gv" = (
 /obj/effect/turf_decal/siding/wideplating/dark/corner{
 	dir = 1
 	},
 /obj/structure/flora/bush/ferny/style_random,
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "Gw" = (
 /obj/effect/turf_decal/trimline/yellow/filled/line,
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "Gz" = (
 /obj/effect/turf_decal/siding/wideplating/dark/corner,
 /obj/effect/turf_decal/siding/wood/corner{
@@ -2433,19 +2481,19 @@
 	},
 /obj/structure/flora/bush/sparsegrass/style_random,
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "GC" = (
 /obj/effect/turf_decal/siding/dark_blue{
 	dir = 5
 	},
 /turf/open/floor/bluespace,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "GF" = (
 /obj/effect/turf_decal/trimline/green/filled/arrow_cw{
 	dir = 1
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "GH" = (
 /obj/structure/table/reinforced/plastitaniumglass,
 /obj/item/flashlight/flare/candle/infinite{
@@ -2454,44 +2502,44 @@
 	},
 /obj/effect/spawner/random/food_or_drink/salad,
 /turf/open/floor/carpet/royalblack,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "GU" = (
 /obj/structure/table/reinforced/titaniumglass,
 /obj/effect/spawner/random/food_or_drink/donuts,
 /obj/effect/spawner/random/food_or_drink/jelly_donuts,
 /obj/effect/spawner/random/food_or_drink/any_snack_or_beverage,
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "GV" = (
 /obj/effect/turf_decal/trimline/green/filled/line{
 	dir = 4
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "Hb" = (
 /obj/effect/turf_decal/tile/red/anticorner{
 	dir = 8
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "Hd" = (
 /obj/effect/turf_decal/tile/dark_blue/anticorner,
 /obj/machinery/photocopier,
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "Hi" = (
 /obj/structure/bookcase/random,
 /turf/open/floor/wood/large,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/library)
 "Hq" = (
 /turf/open/floor/carpet,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "Hv" = (
 /obj/effect/turf_decal/tile/dark_blue/half{
 	dir = 1
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "HA" = (
 /obj/structure/table/wood/fancy/royalblack,
 /obj/item/flashlight/lamp/green{
@@ -2499,21 +2547,21 @@
 	pixel_y = 9
 	},
 /turf/open/floor/carpet/royalblue,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/hotel)
 "HH" = (
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 1
 	},
 /obj/structure/flora/bush/jungle/a/style_random,
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "HJ" = (
 /obj/effect/turf_decal/siding/wideplating/dark/corner{
 	dir = 4
 	},
 /obj/effect/light_emitter/podbay,
 /turf/open/water/beach,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "HN" = (
 /obj/effect/turf_decal/tile/dark_blue/half{
 	dir = 8
@@ -2524,20 +2572,20 @@
 	pixel_y = 4
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "HP" = (
 /obj/structure/flora/bush/jungle/a/style_random,
 /obj/effect/light_emitter/podbay,
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "HR" = (
 /obj/item/kirbyplants/random,
 /obj/effect/turf_decal/siding/wood/end,
 /turf/open/floor/wood/parquet,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "Ia" = (
 /turf/open/floor/bronze,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/library)
 "Ib" = (
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 1
@@ -2547,7 +2595,7 @@
 	pixel_y = -5
 	},
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "Ie" = (
 /obj/docking_port/stationary{
 	dir = 4;
@@ -2559,17 +2607,17 @@
 	width = 50
 	},
 /turf/open/floor/asphalt,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "Ig" = (
 /obj/structure/railing{
 	dir = 4;
 	layer = 5.06
 	},
 /turf/open/floor/stone,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "Iu" = (
 /turf/closed/indestructible/fakedoor,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "IB" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 10
@@ -2580,36 +2628,36 @@
 	layer = 5.1
 	},
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "ID" = (
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 1
 	},
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "IE" = (
 /obj/structure/chair/sofa/left/brown{
 	dir = 8
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "IG" = (
 /obj/effect/turf_decal/logo{
 	color = "#f4cd82"
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "IK" = (
 /obj/structure/flora/bush/ferny/style_random,
 /obj/structure/flora/bush/sparsegrass/style_random,
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "IO" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 10
 	},
 /turf/open/floor/wood/parquet,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "IR" = (
 /obj/structure/flora/tree/jungle/small/style_random{
 	pixel_x = -36;
@@ -2617,47 +2665,47 @@
 	},
 /obj/effect/light_emitter/podbay,
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "IT" = (
 /obj/effect/turf_decal/trimline/green/filled/warning{
 	dir = 4
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "IX" = (
 /obj/structure/chair/sofa/corp{
 	dir = 4
 	},
 /turf/open/floor/carpet/neon/simple/blue,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "IZ" = (
 /obj/effect/turf_decal/trimline/yellow/line{
 	dir = 8
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "Jl" = (
 /obj/structure/flora/bush/ferny/style_random,
 /obj/effect/light_emitter/podbay,
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "Jo" = (
 /obj/structure/railing{
 	dir = 8
 	},
 /turf/open/floor/stone,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "Jr" = (
 /obj/machinery/washing_machine,
 /turf/open/floor/stone,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/restroom)
 "Jw" = (
 /turf/open/floor/bronze/filled,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/library)
 "JE" = (
 /obj/item/banner/command,
 /turf/open/floor/carpet/blue,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "JK" = (
 /obj/effect/turf_decal/siding/wideplating/dark,
 /obj/structure/flora/tree/jungle/small/style_random{
@@ -2665,28 +2713,28 @@
 	pixel_y = 4
 	},
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "JN" = (
 /obj/structure/destructible/cult/item_dispenser/archives/library,
 /obj/item/book/codex_gigas,
 /turf/open/floor/bronze/flat,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/library)
 "JT" = (
 /obj/effect/turf_decal/trimline/yellow/filled/line{
 	dir = 1
 	},
 /obj/effect/turf_decal/trimline/yellow/filled/corner,
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "JU" = (
 /turf/open/floor/mineral/abductor,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "JV" = (
 /obj/effect/turf_decal/trimline/yellow/filled/line{
 	dir = 1
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "JW" = (
 /obj/item/kirbyplants/random,
 /obj/effect/turf_decal/trimline/green/filled/shrink_cw{
@@ -2694,13 +2742,17 @@
 	},
 /obj/effect/turf_decal/trimline/green/filled/shrink_ccw,
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "Km" = (
 /obj/structure/chair/comfy/brown{
 	dir = 4
 	},
 /turf/open/floor/wood/parquet,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/hotel)
+"Kn" = (
+/obj/structure/sign/poster/official/corporate_perks_vacation/directional/west,
+/turf/open/floor/stone,
+/area/centcom/central_command_areas/planetary_port)
 "Kp" = (
 /obj/effect/turf_decal/tile/red/half{
 	dir = 8
@@ -2709,13 +2761,13 @@
 	dir = 8
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "Kq" = (
 /obj/effect/turf_decal/trimline/yellow/line{
 	dir = 5
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "KD" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
@@ -2724,11 +2776,11 @@
 	dir = 8
 	},
 /turf/open/floor/wood/parquet,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "KN" = (
 /obj/structure/chair/comfy/brown,
 /turf/open/floor/carpet,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/library)
 "KR" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
@@ -2737,59 +2789,59 @@
 	dir = 4
 	},
 /turf/open/floor/wood/parquet,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "KS" = (
 /turf/open/water/beach,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "KW" = (
 /obj/effect/turf_decal/trimline/yellow/filled/arrow_ccw{
 	dir = 4
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "KY" = (
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 6
 	},
 /obj/structure/flora/bush/ferny/style_random,
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "Lb" = (
-/obj/structure/sign/poster/official/moth_epi,
-/turf/closed/wall/r_wall,
-/area/centcom/central_command_areas/evacuation)
+/turf/open/floor/stone,
+/area/centcom/central_command_areas/planetary_port/plaza)
 "Lz" = (
 /obj/structure/table/reinforced,
-/obj/machinery/door/window/left/directional/west,
-/obj/effect/mapping_helpers/airlock/access/all/admin/general,
+/obj/machinery/door/window/left/directional/west{
+	req_access = list("cent_captain")
+	},
 /obj/item/banhammer,
 /turf/open/floor/plating,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "LJ" = (
 /obj/structure/table/reinforced/plastitaniumglass,
 /obj/structure/bedsheetbin,
 /turf/open/floor/stone,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/restroom)
 "LM" = (
 /obj/effect/turf_decal/trimline/blue/filled/line{
 	dir = 4
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "LQ" = (
 /obj/effect/turf_decal/logo{
 	dir = 8;
 	color = "#f4cd82"
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "LR" = (
 /obj/effect/turf_decal/siding/wideplating/dark/corner{
 	dir = 4
 	},
 /obj/structure/flora/bush/ferny/style_random,
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "LT" = (
 /obj/effect/turf_decal/siding/wideplating/dark/corner{
 	dir = 1
@@ -2797,36 +2849,37 @@
 /obj/structure/flora/bush/sparsegrass/style_random,
 /obj/effect/light_emitter/podbay,
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "LU" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
 /turf/open/floor/wood/parquet,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "LW" = (
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "LX" = (
 /obj/machinery/light/dim/directional/north,
 /turf/open/floor/bronze,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/library)
 "LZ" = (
 /obj/machinery/door/airlock/multi_tile/public/glass{
 	dir = 4
 	},
+/obj/effect/mapping_helpers/airlock/autoname,
 /turf/open/floor/wood/large,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/library)
 "Ma" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 6
 	},
 /turf/open/floor/wood/parquet,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "Mf" = (
 /obj/structure/table/wood/fancy/black,
 /turf/open/floor/carpet,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/library)
 "Mp" = (
 /obj/effect/turf_decal/tile/red/anticorner{
 	dir = 1
@@ -2840,14 +2893,14 @@
 	pixel_y = 0
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "Ms" = (
 /obj/effect/turf_decal/trimline/blue/filled/line{
 	dir = 1
 	},
 /obj/structure/sink/directional/south,
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "Mt" = (
 /obj/structure/chair/comfy/brown{
 	dir = 1
@@ -2856,10 +2909,10 @@
 	dir = 1
 	},
 /turf/open/floor/wood/parquet,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "Mz" = (
 /turf/open/floor/wood/parquet,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "MK" = (
 /obj/effect/turf_decal/tile/dark_blue/half{
 	dir = 8
@@ -2872,20 +2925,27 @@
 	pixel_y = 2
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "MR" = (
 /obj/structure/sign/poster/official/here_for_your_safety{
 	pixel_x = 0;
 	pixel_y = 4
 	},
 /turf/closed/wall/r_wall,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
+"MV" = (
+/obj/effect/turf_decal/trimline/green/filled/line{
+	dir = 6
+	},
+/turf/open/floor/iron,
+/area/centcom/central_command_areas/planetary_port)
 "MZ" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
 	},
+/obj/structure/sign/poster/official/random/directional/west,
 /turf/open/floor/wood/tile,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "Nk" = (
 /obj/structure/table/reinforced/plastitaniumglass,
 /obj/item/kirbyplants/random{
@@ -2893,21 +2953,21 @@
 	pixel_y = 12
 	},
 /turf/open/floor/carpet/blue,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "Nq" = (
 /obj/effect/spawner/structure/window/reinforced/indestructible,
 /turf/open/floor/plating,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "Nt" = (
 /obj/machinery/door/window/left/directional/north,
 /turf/open/floor/wood/large,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/library)
 "Nu" = (
 /obj/effect/turf_decal/trimline/yellow/filled/corner{
 	dir = 4
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "ND" = (
 /obj/structure/table/reinforced/titaniumglass,
 /obj/item/storage/medkit/tactical_lite{
@@ -2933,7 +2993,7 @@
 	dir = 4
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "NK" = (
 /obj/machinery/stasis{
 	dir = 4
@@ -2943,30 +3003,43 @@
 	dir = 10
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "NN" = (
 /obj/structure/flora/bush/ferny/style_random,
 /obj/structure/flora/rock/pile/jungle/large/style_random,
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
+"NP" = (
+/obj/effect/turf_decal/trimline/green/filled/arrow_ccw,
+/obj/structure/sign/departments/security/directional/south,
+/turf/open/floor/iron,
+/area/centcom/central_command_areas/planetary_port)
+"NS" = (
+/obj/effect/turf_decal/trimline/yellow/filled/line,
+/obj/structure/sign/departments/med_alt/directional/south,
+/turf/open/floor/iron,
+/area/centcom/central_command_areas/planetary_port)
 "NU" = (
 /obj/structure/chair/sofa/right/brown,
 /turf/open/floor/wood/tile,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/hotel)
 "NW" = (
 /obj/item/kirbyplants/random,
 /obj/effect/turf_decal/trimline/yellow/filled/line{
 	dir = 10
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
+"NY" = (
+/turf/open/floor/stone,
+/area/centcom/central_command_areas/planetary_port/restroom)
 "NZ" = (
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 10
 	},
 /obj/structure/flora/bush/grassy/style_random,
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "Oa" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 8
@@ -2975,7 +3048,7 @@
 	dir = 8
 	},
 /turf/open/floor/stone,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "Oh" = (
 /obj/structure/table/bronze,
 /obj/item/reagent_containers/cup/glass/shaker{
@@ -2991,13 +3064,13 @@
 	pixel_y = 2
 	},
 /turf/open/floor/carpet,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "Oj" = (
 /obj/effect/turf_decal/trimline/green/filled/corner{
 	dir = 1
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "On" = (
 /obj/effect/turf_decal/trimline/green/filled/line{
 	dir = 8
@@ -3009,46 +3082,46 @@
 	},
 /obj/item/reagent_containers/cup/beaker/large,
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "Oo" = (
 /obj/effect/turf_decal/tile/dark_blue/half,
 /obj/machinery/computer/records/medical{
 	dir = 1
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "OH" = (
 /obj/structure/table/reinforced/plastitaniumglass,
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
 	},
 /turf/open/floor/wood/tile,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "OQ" = (
 /obj/structure/curtain/cloth/fancy,
 /turf/open/floor/carpet/blue,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "OR" = (
 /obj/structure/chair/sofa/corp/corner{
 	dir = 8
 	},
 /turf/open/floor/carpet/neon/simple/blue,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "OT" = (
 /obj/structure/chair/office/light{
 	dir = 8
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "OV" = (
 /obj/effect/turf_decal/trimline/green/filled/line,
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "Pa" = (
 /obj/effect/turf_decal/trimline/blue/filled/line,
 /obj/structure/sink/directional/north,
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "Pb" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 6
@@ -3058,7 +3131,7 @@
 	pixel_y = 2
 	},
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "Pd" = (
 /obj/structure/rack,
 /obj/item/storage/toolbox/electrical{
@@ -3075,7 +3148,7 @@
 	pixel_y = -16
 	},
 /turf/open/floor/wood/tile,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/hotel)
 "Pi" = (
 /obj/effect/turf_decal/tile/red/half{
 	dir = 4
@@ -3089,7 +3162,7 @@
 	pixel_x = -7
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "Pk" = (
 /obj/item/kirbyplants/random,
 /obj/effect/turf_decal/siding/wood{
@@ -3097,28 +3170,28 @@
 	},
 /obj/structure/sign/poster/official/random/directional/north,
 /turf/open/floor/wood/parquet,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "Pm" = (
 /obj/effect/turf_decal/siding/dark_blue{
 	dir = 9
 	},
 /turf/open/floor/bluespace,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "Pq" = (
 /obj/structure/chair/sofa/bench/right{
 	dir = 8
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "Py" = (
 /obj/structure/chair/sofa/corp,
 /obj/structure/sign/poster/official/random/directional/north,
 /turf/open/floor/carpet/neon/simple/blue,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "PD" = (
 /obj/item/banner/command,
 /turf/open/floor/carpet/red,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "PG" = (
 /obj/effect/turf_decal/tile/red/anticorner{
 	dir = 4
@@ -3141,7 +3214,7 @@
 	pixel_y = 2
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "PH" = (
 /obj/structure/bed/double{
 	dir = 1
@@ -3151,25 +3224,25 @@
 	},
 /obj/machinery/light/directional/west,
 /turf/open/floor/carpet/royalblue,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/hotel)
 "PN" = (
 /obj/structure/chair/stool/bar/directional/north,
 /turf/open/floor/wood/large,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "Qc" = (
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 10
 	},
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "Ql" = (
 /obj/structure/chair/sofa/left/brown,
 /turf/open/floor/wood/tile,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/hotel)
 "Qr" = (
 /obj/structure/sign/poster/official/no_erp/directional/east,
 /turf/open/floor/wood/tile,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/hotel)
 "Qw" = (
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 9
@@ -3178,11 +3251,11 @@
 	pixel_y = 6
 	},
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "QC" = (
 /obj/effect/turf_decal/trimline/brown/filled/warning,
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "QG" = (
 /obj/structure/table/wood/fancy/royalblack,
 /obj/item/flashlight/lamp/green{
@@ -3190,7 +3263,7 @@
 	pixel_y = 8
 	},
 /turf/open/floor/carpet/royalblue,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/hotel)
 "QK" = (
 /obj/structure/table/reinforced/plastitaniumglass,
 /obj/effect/turf_decal/siding/wood/corner{
@@ -3198,7 +3271,7 @@
 	},
 /obj/effect/spawner/random/food_or_drink/dinner,
 /turf/open/floor/wood/tile,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "QP" = (
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 10
@@ -3208,14 +3281,17 @@
 	pixel_y = -10
 	},
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
+"Rd" = (
+/turf/open/floor/carpet/green,
+/area/centcom/central_command_areas/planetary_port/library)
 "Rf" = (
 /obj/effect/turf_decal/siding/wideplating/dark/corner{
 	dir = 8
 	},
 /obj/structure/flora/bush/jungle/b/style_random,
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "Rg" = (
 /obj/effect/turf_decal/trimline/yellow/filled/line{
 	dir = 1
@@ -3223,7 +3299,7 @@
 /obj/effect/turf_decal/trimline/yellow/filled/line,
 /obj/machinery/light/directional/south,
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "Rk" = (
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 4
@@ -3231,23 +3307,23 @@
 /obj/structure/flora/bush/reed/style_random,
 /obj/effect/light_emitter/podbay,
 /turf/open/water/beach,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "Rp" = (
 /obj/effect/turf_decal/trimline/yellow/filled/corner{
 	dir = 1
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "Rt" = (
 /obj/structure/flora/bush/fullgrass/style_random,
 /obj/structure/flora/bush/fullgrass/style_random,
 /obj/effect/light_emitter/podbay,
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "Rw" = (
 /obj/structure/curtain/cloth/fancy,
 /turf/open/floor/carpet/red,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "Rz" = (
 /obj/item/kirbyplants/random,
 /obj/effect/turf_decal/trimline/green/filled/shrink_cw,
@@ -3255,7 +3331,7 @@
 	dir = 1
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "RJ" = (
 /obj/effect/turf_decal/tile/dark_blue/half{
 	dir = 4
@@ -3264,7 +3340,7 @@
 	dir = 4
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "RK" = (
 /obj/structure/table/wood,
 /obj/item/paper_bin{
@@ -3280,27 +3356,27 @@
 	pixel_y = 5
 	},
 /turf/open/floor/wood/tile,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/hotel)
 "RO" = (
 /obj/machinery/vending/cola/starkist,
 /turf/open/floor/carpet/royalblack,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "RP" = (
 /obj/structure/chair/sofa/corp/right,
 /turf/open/floor/carpet/blue,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "RU" = (
 /obj/structure/flora/bush/sparsegrass/style_random,
 /turf/open/water/beach,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "Sa" = (
 /obj/effect/turf_decal/siding/wood,
 /obj/machinery/light/dim/directional/south,
 /turf/open/floor/wood/tile,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "Se" = (
 /turf/open/floor/light/colour_cycle/dancefloor_b,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "Sp" = (
 /obj/structure/table/reinforced/plastitaniumglass,
 /obj/item/kirbyplants/random{
@@ -3311,29 +3387,29 @@
 	},
 /obj/machinery/light/very_dim/directional/south,
 /turf/open/floor/wood/parquet,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "Su" = (
 /obj/structure/sign/poster/official/enlist{
 	pixel_x = 0;
 	pixel_y = 5
 	},
 /turf/closed/wall/r_wall,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "Sv" = (
 /obj/structure/toilet{
 	dir = 8
 	},
 /obj/machinery/light/small/directional/east,
 /turf/open/floor/iron/showroomfloor,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/restroom)
 "Sz" = (
 /obj/machinery/light/directional/west,
 /obj/machinery/vending/coffee,
 /turf/open/floor/wood/large,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "SB" = (
 /turf/open/floor/wood/tile,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/hotel)
 "SF" = (
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 10
@@ -3343,7 +3419,7 @@
 	pixel_y = 6
 	},
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "SS" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 9
@@ -3353,7 +3429,7 @@
 	layer = 5
 	},
 /turf/open/floor/stone,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "SX" = (
 /obj/effect/turf_decal/trimline/green/filled/corner{
 	dir = 8
@@ -3362,7 +3438,7 @@
 	dir = 1
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "SY" = (
 /obj/effect/turf_decal/trimline/green/filled/line{
 	dir = 1
@@ -3370,88 +3446,88 @@
 /obj/machinery/light/directional/north,
 /obj/effect/turf_decal/trimline/green/filled/arrow_ccw,
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "Tc" = (
 /obj/effect/turf_decal/trimline/green/filled/corner{
 	dir = 4
 	},
 /obj/effect/turf_decal/trimline/green/filled/arrow_ccw,
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "Th" = (
 /obj/machinery/medical_kiosk,
 /obj/effect/turf_decal/trimline/blue/filled/line{
 	dir = 5
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "Tj" = (
 /obj/structure/chair/comfy/brown{
 	dir = 1
 	},
 /turf/open/floor/carpet,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/library)
 "Tn" = (
 /obj/effect/turf_decal/trimline/green/filled/line{
 	dir = 10
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "To" = (
 /obj/effect/turf_decal/trimline/green/filled/corner,
 /obj/effect/turf_decal/trimline/green/filled/arrow_cw{
 	dir = 1
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "Tr" = (
 /obj/structure/table/wood,
 /obj/item/kirbyplants/random{
 	pixel_y = 12
 	},
 /turf/open/floor/carpet/green,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/hotel)
 "Tw" = (
 /obj/structure/flora/tree/jungle/style_random,
 /obj/effect/light_emitter/podbay,
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "TE" = (
 /obj/effect/turf_decal/siding/wideplating/dark/corner,
 /obj/structure/flora/bush/jungle/b/style_random,
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "TM" = (
 /obj/structure/flora/bush/fullgrass/style_random,
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "TP" = (
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/library)
 "TS" = (
 /obj/effect/turf_decal/trimline/yellow/filled/warning{
 	dir = 4
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "TW" = (
 /turf/open/floor/bluespace,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "TX" = (
 /obj/structure/chair/comfy/brown,
 /turf/open/floor/wood/tile,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/hotel)
 "Ub" = (
 /obj/structure/chair/sofa/right/brown{
 	dir = 8
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "Uc" = (
 /obj/structure/flora/bush/large/style_random,
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "Uq" = (
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/trimline/brown/filled/line{
@@ -3459,22 +3535,22 @@
 	},
 /obj/effect/spawner/random/special_lighter,
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "Uv" = (
 /obj/effect/turf_decal/siding/wood,
 /turf/open/floor/wood/parquet,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "UC" = (
 /obj/effect/turf_decal/trimline/green/filled/corner{
 	dir = 1
 	},
 /obj/effect/turf_decal/trimline/green/filled/arrow_ccw,
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "UF" = (
 /obj/effect/turf_decal/trimline/yellow/filled/warning,
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "UK" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 10
@@ -3483,67 +3559,68 @@
 	dir = 10
 	},
 /turf/open/floor/stone,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "UL" = (
 /obj/structure/table/wood/fancy/blue,
 /turf/open/floor/wood/parquet,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/hotel)
 "UO" = (
 /obj/effect/turf_decal/trimline/brown/filled/line{
 	dir = 4
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "UR" = (
 /obj/machinery/light/directional/south,
 /turf/open/floor/iron/showroomfloor,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/restroom)
 "US" = (
 /obj/effect/turf_decal/siding/wideplating/dark/corner{
 	dir = 8
 	},
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "UV" = (
 /obj/effect/turf_decal/trimline/green/filled/warning,
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "UX" = (
 /obj/machinery/light/small/directional/west,
 /turf/open/floor/stone,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/restroom)
 "Va" = (
 /obj/structure/chair/sofa/bench/left{
 	dir = 4
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "Vn" = (
 /obj/effect/spawner/structure/window/reinforced/indestructible,
 /obj/structure/curtain/cloth/fancy/mechanical/start_closed,
 /turf/open/floor/plating,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "Vs" = (
 /obj/structure/chair/sofa/middle/brown{
 	dir = 8
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "VD" = (
 /obj/machinery/door/airlock/bathroom,
+/obj/effect/mapping_helpers/airlock/autoname,
 /turf/open/floor/iron/showroomfloor,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/restroom)
 "VE" = (
 /obj/structure/chair/sofa/bench{
 	dir = 8
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "VM" = (
 /obj/structure/flora/bush/jungle/a/style_random,
 /obj/structure/flora/rock/pile/jungle/style_random,
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "VZ" = (
 /obj/structure/table/reinforced/plastitaniumglass,
 /obj/item/cigarette/cigar/premium{
@@ -3557,7 +3634,7 @@
 	},
 /obj/effect/spawner/random/food_or_drink/salad,
 /turf/open/floor/carpet/blue,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "Wa" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
@@ -3566,27 +3643,27 @@
 	dir = 8
 	},
 /turf/open/floor/wood/parquet,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "Wd" = (
 /obj/effect/turf_decal/tile/dark_blue/anticorner{
 	dir = 1
 	},
 /obj/structure/table/reinforced,
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "Wr" = (
 /obj/structure/chair/sofa/corp/right{
 	dir = 4
 	},
 /turf/open/floor/carpet/neon/simple/blue,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "Wv" = (
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 1
 	},
 /obj/structure/flora/bush/ferny/style_random,
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "Wx" = (
 /obj/structure/table/bronze,
 /obj/item/lighter/skull{
@@ -3599,11 +3676,11 @@
 	},
 /obj/effect/spawner/random/food_or_drink/booze,
 /turf/open/floor/carpet,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "WC" = (
 /obj/machinery/vending/snack,
 /turf/open/floor/wood/large,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "WF" = (
 /obj/structure/table/wood/fancy/royalblack,
 /obj/item/flashlight/lamp/green{
@@ -3611,7 +3688,7 @@
 	pixel_y = 15
 	},
 /turf/open/floor/carpet/royalblue,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/hotel)
 "WU" = (
 /obj/structure/table/wood/fancy/royalblack,
 /obj/item/flashlight/lamp/green{
@@ -3619,11 +3696,12 @@
 	pixel_y = 4
 	},
 /turf/open/floor/carpet/royalblue,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/hotel)
 "WV" = (
 /obj/machinery/door/airlock/public,
+/obj/effect/mapping_helpers/airlock/autoname,
 /turf/open/floor/wood/large,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/library)
 "WX" = (
 /obj/structure/table/reinforced/titaniumglass,
 /obj/machinery/microwave{
@@ -3631,11 +3709,11 @@
 	pixel_y = 6
 	},
 /turf/open/floor/wood/large,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "WY" = (
-/obj/structure/sign/poster/official/cohiba_robusto_ad,
-/turf/closed/indestructible/wood,
-/area/centcom/central_command_areas/evacuation)
+/obj/effect/spawner/structure/window/reinforced/indestructible,
+/turf/open/floor/plating,
+/area/centcom/central_command_areas/planetary_port/hotel)
 "Xd" = (
 /obj/effect/turf_decal/trimline/yellow/filled/arrow_cw{
 	dir = 8
@@ -3643,27 +3721,27 @@
 /obj/machinery/light/directional/west,
 /obj/structure/sign/warning/no_smoking/directional/west,
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "Xe" = (
 /obj/effect/turf_decal/tile/dark_blue/anticorner{
 	dir = 4
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "Xh" = (
 /obj/effect/turf_decal/siding/wideplating/dark/corner{
 	dir = 1
 	},
 /obj/structure/flora/bush/fullgrass/style_random,
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "Xk" = (
 /obj/effect/turf_decal/tile/dark_blue/half{
 	dir = 1
 	},
 /obj/machinery/computer/records/security,
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "Xq" = (
 /obj/structure/railing{
 	dir = 1
@@ -3673,13 +3751,13 @@
 	},
 /obj/effect/turf_decal/siding/wood/corner,
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "Xy" = (
 /obj/structure/table/reinforced/plastitaniumglass,
 /obj/effect/turf_decal/siding/wood/corner,
 /obj/effect/spawner/random/food_or_drink/booze,
 /turf/open/floor/wood/tile,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "XB" = (
 /obj/structure/table/reinforced/plastitaniumglass,
 /obj/item/kirbyplants/random{
@@ -3690,22 +3768,22 @@
 	},
 /obj/machinery/light/very_dim/directional/south,
 /turf/open/floor/wood/parquet,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "XD" = (
 /obj/effect/turf_decal/trimline/yellow/filled/arrow_cw{
 	dir = 8
 	},
 /obj/machinery/light/directional/west,
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "XE" = (
 /obj/structure/flora/rock/pile/jungle/style_random,
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "XI" = (
 /obj/effect/turf_decal/siding/wideplating/dark,
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "XN" = (
 /obj/structure/table/wood/fancy/royalblack,
 /obj/item/flashlight/lamp/green{
@@ -3713,24 +3791,24 @@
 	pixel_y = 10
 	},
 /turf/open/floor/carpet/royalblue,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/hotel)
 "Yj" = (
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 8
 	},
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "Ys" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
 	},
 /obj/effect/turf_decal/siding/wood/corner,
 /turf/open/floor/wood/parquet,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "Yt" = (
 /obj/machinery/vending/cigarette,
 /turf/open/floor/carpet/royalblack,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "Yw" = (
 /obj/effect/turf_decal/trimline/yellow/filled/line{
 	dir = 1
@@ -3739,14 +3817,14 @@
 	dir = 8
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "Yx" = (
 /obj/effect/turf_decal/siding/wideplating/dark/corner{
 	dir = 8
 	},
 /obj/effect/light_emitter/podbay,
 /turf/open/water/beach,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "YF" = (
 /obj/effect/turf_decal/trimline/green/filled/line{
 	dir = 8
@@ -3754,26 +3832,26 @@
 /obj/machinery/light/directional/west,
 /obj/structure/closet/secure_closet/freezer/kitchen/all_access,
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "YU" = (
 /turf/open/floor/carpet/green,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/hotel)
 "YY" = (
 /obj/structure/chair/sofa/corp/left,
 /turf/open/floor/carpet/blue,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "Zi" = (
 /obj/effect/turf_decal/trimline/green/filled/line{
 	dir = 9
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "Zm" = (
 /obj/effect/turf_decal/trimline/yellow/filled/line{
 	dir = 10
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "Zn" = (
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 5
@@ -3782,33 +3860,33 @@
 	pixel_y = 6
 	},
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "Zr" = (
 /obj/effect/turf_decal/logo{
 	dir = 4;
 	color = "#f4cd82"
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "Zt" = (
 /obj/structure/chair/sofa/bench{
 	dir = 4
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "Zu" = (
 /obj/structure/chair/sofa/corp/left{
 	dir = 1
 	},
 /turf/open/floor/carpet/neon/simple/blue,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "Zv" = (
-/obj/structure/sign/poster/official/moth_delam{
+/obj/structure/sign/poster/official/moth_delam/directional/east{
 	pixel_x = 0;
 	pixel_y = 4
 	},
 /turf/closed/wall/r_wall,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "ZB" = (
 /obj/structure/window/reinforced/spawner/directional/west,
 /obj/structure/table/wood/fancy/black,
@@ -3826,45 +3904,45 @@
 	pixel_y = 0
 	},
 /turf/open/floor/carpet/green,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/library)
 "ZH" = (
 /obj/structure/dresser,
 /turf/open/floor/carpet/royalblue,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/hotel)
 "ZM" = (
 /obj/effect/turf_decal/trimline/green/filled/line{
 	dir = 8
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "ZO" = (
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 1
 	},
 /obj/structure/flora/bush/jungle/c/style_random,
 /turf/open/floor/grass,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/plaza)
 "ZR" = (
 /obj/machinery/light/dim/directional/east,
 /turf/open/floor/carpet/blue,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 "ZS" = (
 /obj/effect/turf_decal/trimline/yellow/line{
 	dir = 9
 	},
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port)
 "ZU" = (
 /obj/structure/table/reinforced/plastitaniumglass,
 /obj/effect/spawner/random/trash/soap,
 /turf/open/floor/stone,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/restroom)
 "ZV" = (
 /obj/structure/chair/sofa/corp/left{
 	dir = 8
 	},
 /turf/open/floor/carpet/neon/simple/blue,
-/area/centcom/central_command_areas/evacuation)
+/area/centcom/central_command_areas/planetary_port/club)
 
 (1,1,1) = {"
 aa
@@ -4008,12 +4086,12 @@ aa
 aa
 aa
 aa
-yp
-yp
-yp
-yp
-yp
-yp
+zS
+zS
+zS
+zS
+zS
+zS
 zS
 zS
 zS
@@ -4072,27 +4150,27 @@ Iu
 Iu
 Iu
 yp
-yp
-yp
-yp
-yp
-yp
-yp
-yp
-yp
-yp
-yp
-yp
-yp
-yp
-yp
-yp
-yp
-yp
-yp
-yp
-yp
-yp
+zS
+zS
+zS
+zS
+zS
+zS
+zS
+zS
+zS
+zS
+zS
+zS
+zS
+zS
+zS
+zS
+zS
+zS
+zS
+zS
+zS
 zS
 aa
 aa
@@ -4114,43 +4192,43 @@ aa
 aa
 zS
 zS
-yp
-yp
-yp
-yp
-yp
-yp
-yp
 zS
 zS
 zS
+zS
+zS
+zS
+zS
+zS
+zS
+zS
 yp
-hH
-hH
-hH
-hH
+Lb
+Lb
+Lb
+Lb
 yp
 yp
-jd
-jd
-jd
-jd
-jd
-jd
-jd
-jd
-jd
 iC
-jd
-jd
-jd
-jd
-jd
-jd
-jd
-jd
-jd
-yp
+iC
+iC
+iC
+iC
+iC
+iC
+iC
+iC
+iC
+iC
+iC
+iC
+iC
+iC
+iC
+iC
+iC
+iC
+zS
 zS
 aa
 aa
@@ -4171,7 +4249,7 @@ zS
 zS
 zS
 zS
-yp
+zS
 yp
 LW
 gl
@@ -4183,32 +4261,32 @@ yp
 yp
 yp
 yp
-hH
-hH
-hH
-hH
+Lb
+Lb
+Lb
+Lb
 yp
 yp
-jd
+iC
 XN
 PH
 fZ
-jd
+iC
 RK
 Dz
 Pd
 sG
 cP
-jd
+iC
 dS
 PH
 fZ
-jd
+iC
 WF
 PH
 fZ
-jd
-yp
+iC
+zS
 zS
 aa
 aa
@@ -4226,7 +4304,7 @@ aa
 aa
 zS
 zS
-yp
+zS
 yp
 yp
 yp
@@ -4241,32 +4319,32 @@ gl
 LW
 yp
 yp
-hH
-hH
-hH
-hH
+Lb
+Lb
+Lb
+Lb
 yp
 yQ
-jd
+iC
 ZH
 hq
 EC
-jd
+iC
 wI
 lr
-Mz
-Mz
+av
+av
 SB
-jd
+iC
 ZH
 hq
 EC
-jd
+iC
 ZH
 hq
 EC
-jd
-yp
+iC
+zS
 zS
 aa
 aa
@@ -4283,7 +4361,7 @@ aa
 aa
 aa
 zS
-yp
+zS
 yp
 TM
 XE
@@ -4299,32 +4377,32 @@ xO
 zT
 Fi
 yp
-hH
-hH
-hH
-hH
+Lb
+Lb
+Lb
+Lb
 Ib
 VM
-jd
+iC
 Bx
-Mz
-Mz
-jd
+av
+av
+iC
 nC
-Mz
-Mz
+av
+av
 Km
 SB
-jd
+iC
 Bx
-Mz
-Mz
-jd
+av
+av
+iC
 Bx
-Mz
-Mz
-jd
-yp
+av
+av
+iC
+zS
 zS
 aa
 aa
@@ -4357,32 +4435,32 @@ cd
 LW
 sy
 XI
-hH
-hH
-hH
-hH
+Lb
+Lb
+Lb
+Lb
 Zn
-jd
-jd
-jd
+iC
+iC
+iC
 bL
-jd
-jd
+iC
+iC
 qy
 ak
 iS
 Dh
 DO
-jd
-jd
+iC
+iC
 bL
-jd
-jd
-jd
+iC
+iC
+iC
 bL
-jd
-jd
-jd
+iC
+iC
+iC
 zS
 aa
 aa
@@ -4398,7 +4476,7 @@ aa
 aa
 aa
 zS
-yp
+zS
 yp
 LW
 cd
@@ -4415,13 +4493,13 @@ ab
 Aq
 Fi
 lF
-hH
-hH
-hH
-hH
-hH
-hH
-jd
+Lb
+Lb
+Lb
+Lb
+Lb
+Lb
+iC
 bT
 YU
 bT
@@ -4440,7 +4518,7 @@ SB
 YU
 TX
 qs
-jd
+iC
 zS
 aa
 aa
@@ -4473,12 +4551,12 @@ cd
 XE
 TM
 XI
-hH
+Lb
 ej
 ej
-hH
-hH
-hH
+Lb
+Lb
+Lb
 xk
 YU
 YU
@@ -4498,7 +4576,7 @@ YU
 YU
 YU
 Tr
-jd
+iC
 zS
 aa
 aa
@@ -4512,8 +4590,8 @@ aa
 aa
 aa
 zS
-yp
-yp
+zS
+zS
 yp
 yQ
 TM
@@ -4531,13 +4609,13 @@ cd
 LW
 xO
 lF
-hH
+Lb
 ej
 ej
-hH
-hH
-hH
-jd
+Lb
+Lb
+Lb
+iC
 bT
 YU
 bT
@@ -4556,7 +4634,7 @@ SB
 YU
 TX
 qs
-jd
+iC
 zS
 aa
 aa
@@ -4570,17 +4648,17 @@ aa
 aa
 aa
 zS
-yp
-jd
-jd
-jd
-jd
-Nq
-Nq
-jd
-jd
-jd
-jd
+zS
+Bi
+Bi
+Bi
+Bi
+FU
+FU
+Bi
+Bi
+Bi
+Bi
 LW
 cd
 LW
@@ -4589,32 +4667,32 @@ cd
 LW
 sy
 zC
-hH
-hH
-hH
-hH
+Lb
+Lb
+Lb
+Lb
 sT
-jd
-jd
-jd
+iC
+iC
+iC
 bL
-jd
-jd
+iC
+iC
 hJ
 sz
 YU
 sz
 rd
-jd
-jd
+iC
+iC
 bL
-jd
-jd
-jd
+iC
+iC
+iC
 bL
-jd
-jd
-jd
+iC
+iC
+iC
 zS
 aa
 aa
@@ -4628,8 +4706,8 @@ zS
 zS
 zS
 zS
-yp
-jd
+zS
+Bi
 Ew
 IX
 Wr
@@ -4638,7 +4716,7 @@ IO
 db
 IX
 ax
-jd
+Bi
 LW
 ov
 sy
@@ -4647,32 +4725,32 @@ Rt
 LW
 yQ
 lF
-hH
-hH
-hH
-hH
+Lb
+Lb
+Lb
+Lb
 dM
 sy
-jd
+iC
 Bx
-Mz
-Mz
-jd
+av
+av
+iC
 NU
 UL
 YU
-Mz
+av
 zy
-jd
+iC
 Bx
-Mz
-Mz
-jd
+av
+av
+iC
 Bx
-Mz
-Mz
-jd
-yp
+av
+av
+iC
+zS
 zS
 aa
 aa
@@ -4682,12 +4760,12 @@ aa
 zS
 zS
 zS
-yp
-yp
-yp
-yp
-yp
-jd
+zS
+zS
+zS
+zS
+zS
+Bi
 Py
 yZ
 yZ
@@ -4706,31 +4784,31 @@ LW
 Ax
 XI
 ej
-hH
-hH
+Lb
+Lb
 ej
 ID
 IR
-jd
+iC
 ZH
 hq
 EC
-jd
+iC
 Ql
 UL
 YU
-Mz
+av
 wb
-jd
+iC
 ZH
 hq
 EC
-jd
+iC
 ZH
 hq
 EC
-jd
-yp
+iC
+zS
 zS
 aa
 aa
@@ -4738,14 +4816,14 @@ aa
 "}
 (16,1,1) = {"
 zS
-yp
-yp
-yp
-jd
-jd
-jd
-jd
-jd
+zS
+zS
+zS
+Bi
+Bi
+Bi
+Bi
+Bi
 lU
 yZ
 yZ
@@ -4764,31 +4842,31 @@ sy
 LW
 lF
 ej
-hH
-hH
+Lb
+Lb
 ej
 BM
 XE
-jd
+iC
 QG
 aE
 fZ
-jd
+iC
 hJ
 sz
 YU
 sz
 aY
-jd
+iC
 HA
 aE
 fZ
-jd
+iC
 WU
 aE
 fZ
-jd
-yp
+iC
+zS
 zS
 aa
 aa
@@ -4796,14 +4874,14 @@ aa
 "}
 (17,1,1) = {"
 zS
-yp
-jd
-jd
-jd
+zS
+Bi
+Bi
+Bi
 Yt
 oD
-jd
-jd
+Bi
+Bi
 za
 KD
 KD
@@ -4812,7 +4890,7 @@ Wa
 KD
 KD
 HR
-jd
+Bi
 LW
 TM
 ws
@@ -4822,66 +4900,66 @@ yQ
 sy
 XI
 ej
-hH
-hH
+Lb
+Lb
 ej
 ID
 Tw
-jd
-jd
-Nq
-jd
-jd
-jd
-jd
+iC
+iC
+WY
+iC
+iC
+iC
+iC
 xk
-jd
-jd
-jd
-jd
-Nq
-jd
-jd
-jd
-Nq
-jd
-jd
-yp
-yp
-yp
+iC
+iC
+iC
+iC
+WY
+iC
+iC
+iC
+WY
+iC
+iC
+zS
+zS
+zS
 aa
 aa
 "}
 (18,1,1) = {"
 zS
-yp
-jd
+zS
+Bi
 xj
 zb
 ke
 uo
 XB
-jd
-jd
-jd
+Bi
+Bi
+Bi
 Bi
 DP
 DP
 Bi
-jd
-jd
-jd
-jd
-jd
-jd
+Bi
+Bi
+Bi
+Bi
+Bi
+Bi
 LW
 cd
 xO
 BW
 cr
 ej
-hH
-hH
+Lb
+Lb
 ej
 Zn
 LR
@@ -4890,10 +4968,10 @@ Jl
 ws
 sy
 TM
-jd
-hH
-hH
-hH
+iC
+Lb
+Lb
+Lb
 eE
 bK
 Pb
@@ -4905,15 +4983,15 @@ KS
 KS
 pi
 yp
-yp
-yp
+zS
+zS
 aa
 aa
 "}
 (19,1,1) = {"
 zS
-yp
-jd
+zS
+Bi
 jT
 zb
 LU
@@ -4927,21 +5005,21 @@ uo
 uo
 MZ
 ia
-jd
+Bi
 PD
 Eb
 gy
-jd
+Bi
 LW
 LW
 zR
 yc
-hH
+Lb
 ej
-hH
-hH
+Lb
+Lb
 ej
-hH
+Lb
 nf
 bt
 LW
@@ -4949,9 +5027,9 @@ yQ
 xO
 HP
 XI
-hH
-hH
-hH
+Lb
+Lb
+Lb
 Xq
 zW
 KS
@@ -4964,26 +5042,26 @@ KS
 KS
 KS
 yp
-yp
+zS
 aa
 aa
 "}
 (20,1,1) = {"
-yp
-yp
-jd
+zS
+zS
+Bi
 tg
 zb
 LU
 Mz
-SB
+rS
 tb
 tb
-SB
-SB
+rS
+rS
 Mz
 Mz
-SB
+rS
 gO
 Rw
 cw
@@ -4993,14 +5071,14 @@ Vn
 TM
 TE
 cr
-hH
-hH
+Lb
+Lb
 xo
 Ig
 Ig
 po
-hH
-hH
+Lb
+Lb
 Zn
 uB
 cd
@@ -5008,7 +5086,7 @@ ws
 cZ
 lF
 ej
-hH
+Lb
 ej
 gF
 KS
@@ -5022,16 +5100,16 @@ hk
 hk
 RU
 yp
-yp
+zS
 aa
 aa
 "}
 (21,1,1) = {"
-yp
-jd
-jd
-jd
-jd
+zS
+Bi
+Bi
+Bi
+Bi
 Pk
 Mz
 Mz
@@ -5066,7 +5144,7 @@ sy
 LW
 JK
 ej
-hH
+Lb
 ej
 ta
 pi
@@ -5080,12 +5158,12 @@ KS
 KS
 KS
 yp
-yp
+zS
 aa
 aa
 "}
 (22,1,1) = {"
-yp
+zS
 pG
 EB
 Hq
@@ -5107,7 +5185,7 @@ mK
 iI
 Vn
 gZ
-hH
+Lb
 ej
 ce
 Dg
@@ -5118,13 +5196,13 @@ KS
 dC
 cO
 ej
-hH
+Lb
 BM
 LW
 vK
 lF
 ej
-hH
+Lb
 ej
 sX
 kr
@@ -5137,14 +5215,14 @@ hk
 RU
 KS
 yp
-yp
-yp
-yp
-yp
+zS
+zS
+zS
+zS
 "}
 (23,1,1) = {"
-yp
-jd
+zS
+Bi
 sM
 iT
 fi
@@ -5159,13 +5237,13 @@ kE
 cX
 dj
 Uv
-jd
+Bi
 PD
 lX
 gy
-jd
+Bi
 XI
-hH
+Lb
 ej
 na
 KS
@@ -5176,13 +5254,13 @@ KS
 pi
 kd
 ej
-hH
+Lb
 ID
 TM
 xO
 XI
 ej
-hH
+Lb
 ej
 AH
 Gz
@@ -5195,14 +5273,14 @@ hk
 pi
 KS
 yp
-yp
-yp
-yp
-yp
+zS
+zS
+zS
+zS
 "}
 (24,1,1) = {"
-yp
-jd
+zS
+Bi
 ex
 Hq
 fi
@@ -5217,13 +5295,13 @@ nY
 kE
 dj
 Uv
-jd
-jd
-jd
-jd
-jd
+Bi
+Bi
+Bi
+Bi
+Bi
 cr
-hH
+Lb
 ej
 na
 KS
@@ -5234,18 +5312,18 @@ RU
 KS
 kd
 ej
-hH
+Lb
 Zn
 eB
 cG
 KY
 ej
-hH
+Lb
 ej
 Go
 js
-hH
-hH
+Lb
+Lb
 sS
 pW
 jd
@@ -5256,11 +5334,11 @@ jd
 jd
 jd
 jd
-yp
+zS
 "}
 (25,1,1) = {"
-yp
-jd
+zS
+Bi
 ni
 Hq
 ku
@@ -5280,8 +5358,8 @@ Mz
 qB
 hH
 hH
-hH
-hH
+Lb
+Lb
 ej
 na
 KS
@@ -5298,14 +5376,14 @@ ej
 ej
 ej
 ej
-hH
+Lb
 ej
 ej
 ej
 ej
 ej
-hH
-hH
+Lb
+Lb
 jd
 ZU
 LJ
@@ -5314,10 +5392,10 @@ jd
 xC
 xC
 jd
-yp
+zS
 "}
 (26,1,1) = {"
-yp
+zS
 kT
 Oh
 iT
@@ -5333,50 +5411,50 @@ JU
 TW
 dj
 Sa
-WY
-SB
+Bi
+Av
 us
 hH
 hH
-hH
-hH
+Lb
+Lb
 ej
 na
 RU
 ED
-hH
+Lb
 jL
 fa
 KS
 kd
-hH
-hH
-hH
-hH
-hH
-hH
-hH
-hH
-hH
-hH
-hH
-hH
-hH
-hH
-hH
+Lb
+Lb
+Lb
+Lb
+Lb
+Lb
+Lb
+Lb
+Lb
+Lb
+Lb
+Lb
+Lb
+Lb
+Lb
 ny
-hH
-hH
-hH
+NY
+NY
+NY
 pY
 AT
 UR
 jd
-yp
+zS
 "}
 (27,1,1) = {"
-yp
-jd
+zS
+Bi
 AL
 Hq
 kk
@@ -5396,8 +5474,8 @@ Mz
 oS
 hH
 hH
-hH
-hH
+Lb
+Lb
 ej
 na
 KS
@@ -5414,27 +5492,27 @@ ej
 ej
 ej
 ej
-hH
-hH
+Lb
+Lb
 ej
 ej
 ej
 ej
-hH
-hH
+Lb
+Lb
 jd
-hH
-hH
-hH
+NY
+NY
+NY
 jd
 jm
 jm
 jd
-yp
+zS
 "}
 (28,1,1) = {"
-yp
-jd
+zS
+Bi
 rV
 Hq
 fi
@@ -5449,13 +5527,13 @@ cX
 kE
 dj
 Uv
-jd
-jd
-jd
-jd
-jd
+Bi
+Bi
+Bi
+Bi
+Bi
 SF
-hH
+Lb
 ej
 na
 KS
@@ -5466,33 +5544,33 @@ KS
 RU
 kd
 ej
-hH
+Lb
 sZ
 vt
 Yj
 rl
 NZ
-hH
-hH
+Lb
+Lb
 sT
 BS
-hH
-hH
+Lb
+Lb
 sT
 QP
 jd
-hH
+NY
 FD
 jd
 jd
 jd
 jd
 jd
-yp
+zS
 "}
 (29,1,1) = {"
-yp
-jd
+zS
+Bi
 kX
 iT
 fi
@@ -5507,13 +5585,13 @@ kE
 nY
 dj
 Uv
-jd
+Bi
 JE
 qQ
 Nk
-jd
+Bi
 XI
-hH
+Lb
 ej
 na
 pi
@@ -5524,7 +5602,7 @@ KS
 KS
 kd
 ej
-hH
+Lb
 ID
 sy
 Bc
@@ -5534,23 +5612,23 @@ ej
 ej
 HH
 zC
-hH
-hH
+Lb
+Lb
 Wv
 qi
 jd
-hH
-hH
-hH
-hH
+NY
+NY
+NY
+NY
 UX
 LJ
 jd
-yp
+zS
 "}
 (30,1,1) = {"
-yp
-jd
+zS
+Bi
 pf
 Hq
 hM
@@ -5571,7 +5649,7 @@ RP
 VZ
 Vn
 lF
-hH
+Lb
 ej
 Oa
 UK
@@ -5582,36 +5660,36 @@ pi
 SS
 qD
 ej
-hH
+Lb
 ID
 xO
 va
 va
 va
-iZ
+Gu
 LZ
 TP
 TP
-iZ
+Gu
 LZ
 va
 va
 jd
 jd
-hH
-hH
-hH
-hH
+NY
+NY
+NY
+NY
 Jr
 jd
-yp
+zS
 "}
 (31,1,1) = {"
-yp
-jd
-jd
-jd
-jd
+zS
+Bi
+Bi
+Bi
+Bi
 Pk
 Mz
 Mz
@@ -5662,24 +5740,24 @@ VD
 jd
 jd
 jd
-yp
+zS
 "}
 (32,1,1) = {"
-yp
-yp
-jd
+zS
+zS
+Bi
 xj
 zb
 LU
 Mz
-SB
+rS
 Ge
 Ge
-SB
-SB
+rS
+rS
 Mz
 Mz
-SB
+rS
 gO
 OQ
 hW
@@ -5689,14 +5767,14 @@ Vn
 TM
 Rf
 mJ
-hH
-hH
+Lb
+Lb
 xS
 Jo
 Jo
 uI
-hH
-hH
+Lb
+Lb
 Qw
 xE
 sy
@@ -5710,7 +5788,7 @@ Ei
 Ei
 iZ
 iZ
-Hq
+tO
 nF
 va
 jd
@@ -5718,14 +5796,14 @@ Sv
 jd
 Sv
 jd
-yp
-yp
-yp
+zS
+zS
+zS
 "}
 (33,1,1) = {"
 zS
-yp
-jd
+zS
+Bi
 GH
 zb
 LU
@@ -5739,21 +5817,21 @@ DS
 DS
 Gn
 lx
-jd
+Bi
 JE
 ZR
 gp
-jd
+Bi
 cd
 Jl
 fL
 Qc
-hH
+Lb
 ej
-hH
-hH
+Lb
+Lb
 ej
-hH
+Lb
 sT
 Gv
 Bc
@@ -5768,7 +5846,7 @@ iZ
 iZ
 iZ
 iZ
-Hq
+tO
 gC
 va
 jd
@@ -5776,40 +5854,40 @@ jd
 jd
 jd
 jd
-yp
-yp
-yp
+zS
+zS
+zS
 "}
 (34,1,1) = {"
 zS
-yp
-jd
+zS
+Bi
 tg
 zb
 kf
 DS
 Sp
-jd
-jd
-jd
+Bi
+Bi
+Bi
 Bi
 DP
 DP
 Bi
-jd
-jd
-jd
-jd
-jd
-jd
+Bi
+Bi
+Bi
+Bi
+Bi
+Bi
 LW
 cd
 xO
 US
 mJ
 ej
-hH
-hH
+Lb
+Lb
 ej
 Qw
 Xh
@@ -5832,22 +5910,22 @@ va
 va
 va
 va
-yp
-yp
-yp
-yp
+zS
+zS
+zS
+zS
 aa
 "}
 (35,1,1) = {"
 zS
-yp
-jd
-jd
-jd
+zS
+Bi
+Bi
+Bi
 Cr
 RO
-jd
-jd
+Bi
+Bi
 za
 KR
 KR
@@ -5856,7 +5934,7 @@ Ys
 KR
 KR
 HR
-jd
+Bi
 ws
 gl
 LW
@@ -5866,8 +5944,8 @@ yQ
 LW
 XI
 ej
-hH
-hH
+Lb
+Lb
 ej
 ID
 Aq
@@ -5877,11 +5955,11 @@ Fx
 iZ
 iZ
 fY
-Hq
+tO
 vm
-Hq
+tO
 Hi
-Hq
+tO
 ZB
 uX
 rO
@@ -5890,22 +5968,22 @@ Cw
 kQ
 Dt
 va
-yp
-yp
-yp
-yp
+zS
+zS
+zS
+zS
 aa
 "}
 (36,1,1) = {"
 zS
-yp
-yp
-yp
-jd
-jd
-jd
-jd
-jd
+zS
+zS
+zS
+Bi
+Bi
+Bi
+Bi
+Bi
 xn
 yZ
 yZ
@@ -5924,8 +6002,8 @@ LW
 TM
 lF
 ej
-hH
-hH
+Lb
+Lb
 ej
 Zn
 eB
@@ -5935,21 +6013,21 @@ rY
 iZ
 iZ
 Hi
-Hq
+tO
 fq
-Hq
+tO
 Hi
-Hq
+tO
 yC
 ao
-YU
+Rd
 va
 Jw
 oc
 Jw
 va
-yp
-yp
+zS
+zS
 aa
 aa
 aa
@@ -5958,12 +6036,12 @@ aa
 zS
 zS
 zS
-yp
-yp
-yp
-yp
-yp
-jd
+zS
+zS
+zS
+zS
+zS
+Bi
 Py
 yZ
 yZ
@@ -5982,10 +6060,10 @@ cd
 Ax
 XI
 ej
-hH
-hH
-hH
-hH
+Lb
+Lb
+Lb
+Lb
 ej
 lO
 iZ
@@ -5993,21 +6071,21 @@ iZ
 iZ
 iZ
 Hi
-Hq
+tO
 fY
-Hq
+tO
 Hi
-Hq
+tO
 rb
-YU
-YU
+Rd
+Rd
 va
 LX
 Ia
 or
 va
-yp
-yp
+zS
+zS
 aa
 aa
 aa
@@ -6020,8 +6098,8 @@ zS
 zS
 zS
 zS
-yp
-jd
+zS
+Bi
 cp
 cR
 ZV
@@ -6030,7 +6108,7 @@ Ma
 Cc
 cR
 OR
-jd
+Bi
 LW
 LW
 xO
@@ -6040,12 +6118,12 @@ LW
 LW
 lF
 ej
-hH
-hH
-hH
-hH
+Lb
+Lb
+Lb
+Lb
 ej
-iZ
+Gu
 iZ
 iZ
 iZ
@@ -6064,8 +6142,8 @@ Jw
 Ia
 Jw
 va
-yp
-yp
+zS
+zS
 aa
 aa
 aa
@@ -6078,17 +6156,17 @@ aa
 aa
 aa
 zS
-yp
-jd
-jd
-jd
-jd
-Nq
-Nq
-jd
-jd
-jd
-jd
+zS
+Bi
+Bi
+Bi
+Bi
+FU
+FU
+Bi
+Bi
+Bi
+Bi
 LW
 LW
 Uc
@@ -6098,8 +6176,8 @@ LW
 Uc
 XI
 ej
-hH
-hH
+Lb
+Lb
 ej
 Qw
 uj
@@ -6122,8 +6200,8 @@ JN
 yq
 wB
 va
-yp
-yp
+zS
+zS
 aa
 aa
 aa
@@ -6136,7 +6214,7 @@ aa
 aa
 aa
 zS
-yp
+zS
 yp
 LW
 xO
@@ -6156,8 +6234,8 @@ LW
 xO
 lF
 ej
-hH
-hH
+Lb
+Lb
 ej
 ID
 xO
@@ -6180,8 +6258,8 @@ va
 va
 va
 va
-yp
-yp
+zS
+zS
 aa
 aa
 aa
@@ -6189,12 +6267,12 @@ aa
 (41,1,1) = {"
 aa
 aa
-yp
-yp
-yp
-yp
-yp
-yp
+zS
+zS
+zS
+zS
+zS
+zS
 yp
 XE
 zT
@@ -6239,20 +6317,20 @@ zT
 Jl
 Bw
 yp
-yp
-yp
-yp
+zS
+zS
+zS
 aa
 "}
 (42,1,1) = {"
 aa
 aa
-yp
-yp
-yp
-yp
-yp
-yp
+zS
+zS
+zS
+zS
+zS
+zS
 yp
 TM
 sy
@@ -6292,80 +6370,80 @@ LW
 TM
 TM
 gP
-cg
-cg
-cg
-cg
-cg
-cg
-cg
-yp
-yp
+qz
+qz
+qz
+qz
+qz
+qz
+qz
+zS
+zS
 "}
 (43,1,1) = {"
 aa
 aa
-yp
-yp
-cg
-cg
-cg
-cg
-cg
-cg
-cg
-cg
-Nq
-Nq
-Nq
-Nq
-Nq
-Nq
-Nq
-cg
-cg
-cg
-cg
-cg
-cg
-cg
+zS
+zS
 qz
-hH
+qz
+qz
+qz
+qz
+qz
+qz
+qz
+Nq
+Nq
+Nq
+Nq
+Nq
+Nq
+Nq
+qz
+qz
+qz
+qz
+qz
+qz
+qz
+qz
+kR
 wN
 qz
-cg
-cg
-cg
-cg
-cg
-cg
-cg
+qz
+qz
+qz
+qz
+qz
+qz
+qz
 Nq
 Nq
-cg
-cg
-cg
+qz
+qz
+qz
 Nq
 Nq
 Nq
 Nq
-cg
-cg
+qz
+qz
 sm
 pB
 rC
 pB
 NK
-cg
-yp
-yp
+qz
+zS
+zS
 "}
 (44,1,1) = {"
 aa
 aa
-yp
-yp
-cg
+zS
+zS
+qz
 qx
 ZM
 On
@@ -6373,30 +6451,30 @@ YF
 Tn
 GU
 rA
-iZ
+yj
 vV
 vV
-iZ
+yj
 vV
 vV
-iZ
+yj
 Sz
-cg
+qz
 do
 HN
 fS
 Nq
 tN
-hH
-hH
-hH
-hH
+Kn
+cg
+cg
+Kn
 tN
 Nq
 Wd
 MK
 dP
-cg
+qz
 Eq
 wk
 wk
@@ -6408,22 +6486,22 @@ BI
 BI
 BI
 NW
-cg
+qz
 Ms
 jt
 jt
 jt
 Pa
-cg
-yp
-yp
+qz
+zS
+zS
 "}
 (45,1,1) = {"
 aa
 aa
-yp
-yp
-cg
+zS
+zS
+qz
 xN
 jt
 jv
@@ -6431,57 +6509,57 @@ jt
 OV
 GU
 PN
-iZ
+yj
 yL
 yL
-iZ
+yj
 gR
 gR
-iZ
+yj
 eY
-cg
+qz
 de
 OT
 wU
 Nq
-hH
-hH
-hH
-hH
-hH
-hH
+cg
+cg
+cg
+cg
+cg
+cg
 Nq
 Hv
 OT
 vq
-cg
+qz
 zt
 jt
 jt
 uV
-cg
+qz
 Aa
 Ub
 Vs
 Vs
 IE
 kS
-cg
+qz
 yT
 LM
 xv
 LM
 hx
-cg
-yp
-yp
+qz
+zS
+zS
 "}
 (46,1,1) = {"
 aa
 aa
-yp
-yp
-cg
+zS
+zS
+qz
 eA
 jt
 jt
@@ -6489,30 +6567,30 @@ jt
 OV
 GU
 PN
-iZ
+yj
 tI
 tI
-iZ
+yj
 tI
 tI
-iZ
+yj
 WC
-cg
+qz
 CH
 jt
 wU
 jG
-hH
+cg
 dJ
-hH
-hH
+cg
+cg
 dJ
-hH
+cg
 jG
 Hv
 jt
 Oo
-cg
+qz
 Gp
 jt
 jt
@@ -6523,59 +6601,59 @@ ZS
 IZ
 IZ
 ge
-Gw
-rS
+NS
+qz
 yl
 tZ
 dd
 tZ
 lA
-cg
-yp
-yp
+qz
+zS
+zS
 "}
 (47,1,1) = {"
 aa
 aa
-yp
-yp
-cg
+zS
+zS
+qz
 bI
 GV
 GV
 GV
-tD
+MV
 GU
 PN
-iZ
+yj
 vV
 vV
-iZ
+yj
 vV
 vV
-iZ
+yj
 BU
-cg
+qz
 Xk
 jt
 wU
 Nq
-hH
-hH
-hH
-hH
-hH
-hH
+cg
+cg
+cg
+cg
+cg
+cg
 Nq
 Hv
 jt
 Bn
-cg
+qz
 zt
 jt
 jt
 uV
-cg
+qz
 JV
 fC
 Db
@@ -6588,47 +6666,47 @@ jt
 jt
 jt
 FV
-cg
-yp
-yp
+qz
+zS
+zS
 "}
 (48,1,1) = {"
 aa
 aa
-yp
-cg
-cg
-cg
-cg
+zS
+qz
+qz
+qz
+qz
 iz
-cg
-cg
-cg
-CD
-iZ
+qz
+qz
+qz
+vd
+yj
 yL
 yL
-iZ
+yj
 gR
 gR
-iZ
+yj
 WX
-cg
+qz
 ct
 RJ
 cz
 Nq
-hH
-hH
-hH
-hH
-hH
-hH
+cg
+cg
+cg
+cg
+cg
+cg
 Nq
 Xe
 RJ
 Hd
-cg
+qz
 Uq
 UO
 UO
@@ -6639,22 +6717,22 @@ fC
 LQ
 Zr
 xu
-Gw
-rS
+NS
+qz
 Th
 kF
 xZ
 ND
 Ay
-cg
-yp
-yp
+qz
+zS
+zS
 "}
 (49,1,1) = {"
 aa
 aa
-yp
-cg
+zS
+qz
 Zi
 ZM
 yh
@@ -6663,56 +6741,56 @@ ZM
 ZM
 ZM
 Tn
-iZ
+yj
 tI
 tI
-iZ
+yj
 tI
 tI
-iZ
+yj
 De
-cg
+qz
 Nq
 fK
 Nq
-cg
+qz
 jB
 dJ
-hH
-hH
+cg
+cg
 dJ
 jB
-cg
+qz
 Nq
 fK
 Nq
-cg
-cg
+qz
+qz
 Nq
 Nq
-cg
-cg
+qz
+qz
 JV
 Kq
 vg
 vg
 vx
 Gw
-cg
+qz
 Nq
 Nq
 Nq
-cg
-cg
-cg
-yp
-yp
+qz
+qz
+qz
+zS
+zS
 "}
 (50,1,1) = {"
 aa
 aa
-yp
-cg
+zS
+qz
 GF
 jt
 jt
@@ -6732,15 +6810,15 @@ ZM
 yh
 ZM
 ZM
-Tn
-yj
-hH
-hH
-hH
-hH
-hH
-hH
-yj
+at
+qz
+cg
+cg
+cg
+cg
+cg
+cg
+qz
 Fa
 bF
 bF
@@ -6761,16 +6839,16 @@ bF
 bF
 bF
 Zm
-cg
-yp
-yp
-yp
+qz
+zS
+zS
+zS
 "}
 (51,1,1) = {"
 aa
 aa
-yp
-cg
+zS
+qz
 GF
 jt
 Fm
@@ -6792,12 +6870,12 @@ jt
 jt
 UV
 EY
-hH
-hH
-hH
-hH
-hH
-hH
+cg
+cg
+cg
+cg
+cg
+cg
 pJ
 Et
 jt
@@ -6819,16 +6897,16 @@ KW
 Nu
 jt
 Gw
-cg
-yp
-yp
+qz
+zS
+zS
 aa
 "}
 (52,1,1) = {"
 aa
 aa
-yp
-cg
+zS
+qz
 To
 Rz
 Tc
@@ -6850,12 +6928,12 @@ Rz
 fs
 UV
 Cj
-hH
+cg
 dJ
-hH
-hH
+cg
+cg
 dJ
-hH
+cg
 Du
 Et
 kJ
@@ -6877,16 +6955,16 @@ oo
 JT
 vy
 nt
-cg
-yp
-yp
+qz
+zS
+zS
 aa
 "}
 (53,1,1) = {"
 aa
-yp
-yp
-cg
+zS
+zS
+qz
 xU
 gY
 SY
@@ -6896,7 +6974,7 @@ mV
 Ce
 DR
 xU
-oT
+Zv
 SY
 mV
 DR
@@ -6904,20 +6982,20 @@ mV
 Ce
 DR
 xU
-Lb
+rT
 bc
 zZ
-cg
-tN
-hH
-hH
-hH
-hH
+qz
 tN
 cg
-gW
+cg
+cg
+cg
+tN
+qz
+oT
 kS
-tO
+gY
 ET
 mV
 DR
@@ -6935,16 +7013,16 @@ DR
 Rg
 rT
 ET
-cg
-yp
-yp
+qz
+zS
+zS
 aa
 "}
 (54,1,1) = {"
 aa
-yp
-yp
-cg
+zS
+zS
+qz
 SX
 JW
 UC
@@ -6965,15 +7043,15 @@ SX
 JW
 Oj
 zZ
-cg
+qz
 Su
 Nq
 Lz
 uW
 Nq
 MR
-cg
-gW
+qz
+oT
 dG
 qv
 Dm
@@ -6993,16 +7071,16 @@ CW
 JV
 qv
 Dm
-cg
-yp
-yp
+qz
+zS
+zS
 aa
 "}
 (55,1,1) = {"
 aa
-yp
-yp
-cg
+zS
+zS
+qz
 GF
 jt
 kN
@@ -7022,15 +7100,15 @@ ZM
 Oj
 jt
 jt
-zZ
-av
+NP
+qz
 Mp
 qA
 jI
 Kp
 qA
 Hb
-av
+qz
 gW
 jt
 jt
@@ -7051,16 +7129,16 @@ bF
 Rp
 jt
 Gw
-cg
-yp
-yp
+qz
+zS
+zS
 aa
 "}
 (56,1,1) = {"
 aa
-yp
-yp
-cg
+zS
+zS
+qz
 GF
 jt
 jt
@@ -7081,14 +7159,14 @@ jt
 jt
 jt
 zZ
-jG
+kv
 kw
 jt
 jt
 jt
 jt
 EM
-jG
+kv
 Et
 jt
 jt
@@ -7109,16 +7187,16 @@ jt
 jt
 jt
 Gw
-cg
-yp
-yp
-yp
+qz
+zS
+zS
+zS
 "}
 (57,1,1) = {"
-yp
-yp
-yp
-cg
+zS
+zS
+zS
+qz
 zU
 IT
 IT
@@ -7139,14 +7217,14 @@ IT
 IT
 IT
 tD
-cg
+qz
 PG
 cE
 jq
 cn
 Pi
 gd
-cg
+qz
 gK
 TS
 TS
@@ -7167,16 +7245,16 @@ TS
 TS
 TS
 if
-cg
-yp
-yp
-yp
+qz
+zS
+zS
+zS
 "}
 (58,1,1) = {"
-yp
-cg
-cg
-cg
+zS
+qz
+qz
+qz
 dL
 dL
 dL
@@ -7197,14 +7275,14 @@ dL
 dL
 dL
 dL
-cg
-cg
-cg
-cg
-cg
-cg
-cg
-cg
+qz
+qz
+qz
+qz
+qz
+qz
+qz
+qz
 dL
 dL
 dL
@@ -7225,14 +7303,14 @@ dL
 dL
 dL
 dL
-cg
-cg
-cg
-yp
+qz
+qz
+qz
+zS
 "}
 (59,1,1) = {"
-yp
-cg
+zS
+qz
 Di
 Di
 Di
@@ -7285,12 +7363,12 @@ Di
 Di
 Di
 Di
-cg
-yp
+qz
+zS
 "}
 (60,1,1) = {"
-yp
-cg
+zS
+qz
 Di
 rr
 Di
@@ -7343,12 +7421,12 @@ Di
 Di
 rr
 Di
-cg
-yp
+qz
+zS
 "}
 (61,1,1) = {"
-yp
-cg
+zS
+qz
 Di
 Di
 Di
@@ -7401,12 +7479,12 @@ Di
 Di
 Di
 Di
-cg
-yp
+qz
+zS
 "}
 (62,1,1) = {"
-yp
-cg
+zS
+qz
 Di
 Di
 Di
@@ -7459,12 +7537,12 @@ Di
 Di
 Di
 Di
-cg
-yp
+qz
+zS
 "}
 (63,1,1) = {"
-yp
-cg
+zS
+qz
 Di
 Di
 Di
@@ -7517,12 +7595,12 @@ Di
 Di
 Di
 Di
-cg
-yp
+qz
+zS
 "}
 (64,1,1) = {"
-yp
-cg
+zS
+qz
 Di
 Di
 Di
@@ -7575,12 +7653,12 @@ Di
 Di
 Di
 Di
-cg
-yp
+qz
+zS
 "}
 (65,1,1) = {"
-yp
-cg
+zS
+qz
 Di
 rr
 Di
@@ -7633,12 +7711,12 @@ Di
 Di
 rr
 Di
-cg
-yp
+qz
+zS
 "}
 (66,1,1) = {"
-yp
-cg
+zS
+qz
 Di
 Di
 Di
@@ -7691,12 +7769,12 @@ Di
 Di
 Di
 Di
-cg
-yp
+qz
+zS
 "}
 (67,1,1) = {"
-yp
-cg
+zS
+qz
 Di
 Di
 Di
@@ -7749,12 +7827,12 @@ Di
 Di
 Di
 Di
-cg
-yp
+qz
+zS
 "}
 (68,1,1) = {"
-yp
-cg
+zS
+qz
 Di
 Di
 Di
@@ -7807,12 +7885,12 @@ Di
 Di
 Di
 Di
-cg
-yp
+qz
+zS
 "}
 (69,1,1) = {"
-yp
-cg
+zS
+qz
 Di
 Di
 Di
@@ -7865,12 +7943,12 @@ Di
 Di
 Di
 Di
-cg
-yp
+qz
+zS
 "}
 (70,1,1) = {"
-yp
-cg
+zS
+qz
 Di
 Di
 Di
@@ -7923,12 +8001,12 @@ Di
 Di
 Di
 Di
-cg
-yp
+qz
+zS
 "}
 (71,1,1) = {"
-yp
-cg
+zS
+qz
 Di
 rr
 Di
@@ -7981,12 +8059,12 @@ Di
 Di
 rr
 Di
-cg
-yp
+qz
+zS
 "}
 (72,1,1) = {"
-yp
-cg
+zS
+qz
 Di
 Di
 Di
@@ -8039,12 +8117,12 @@ Di
 Di
 Di
 Di
-cg
-yp
+qz
+zS
 "}
 (73,1,1) = {"
-yp
-cg
+zS
+qz
 Di
 Di
 Di
@@ -8097,12 +8175,12 @@ Di
 Di
 Di
 Di
-cg
-yp
+qz
+zS
 "}
 (74,1,1) = {"
-yp
-cg
+zS
+qz
 Di
 Di
 Di
@@ -8155,12 +8233,12 @@ Di
 Di
 Di
 Di
-cg
-yp
+qz
+zS
 "}
 (75,1,1) = {"
-yp
-cg
+zS
+qz
 Di
 Di
 Di
@@ -8213,12 +8291,12 @@ Di
 Di
 Di
 Di
-cg
-yp
+qz
+zS
 "}
 (76,1,1) = {"
-yp
-cg
+zS
+qz
 Di
 rr
 Di
@@ -8271,12 +8349,12 @@ Di
 Di
 rr
 Di
-cg
-yp
+qz
+zS
 "}
 (77,1,1) = {"
-yp
-cg
+zS
+qz
 Di
 Di
 Di
@@ -8329,12 +8407,12 @@ Di
 Di
 Di
 Di
-cg
-yp
+qz
+zS
 "}
 (78,1,1) = {"
-yp
-cg
+zS
+qz
 Di
 Di
 Di
@@ -8387,122 +8465,122 @@ Di
 Di
 Di
 Di
-cg
-yp
+qz
+zS
 "}
 (79,1,1) = {"
-yp
-cg
-cg
-cg
-cg
-cg
-cg
-cg
-cg
-cg
-cg
-cg
-cg
-cg
-cg
-cg
-cg
-cg
-cg
-cg
-cg
-cg
-cg
-cg
-cg
-cg
-cg
-cg
-cg
-cg
-cg
-cg
-cg
-cg
-cg
-cg
-cg
-cg
-cg
-cg
-cg
-cg
-cg
-cg
-cg
-cg
-cg
-cg
-cg
-cg
-cg
-cg
-cg
-cg
-cg
-yp
+zS
+qz
+qz
+qz
+qz
+qz
+qz
+qz
+qz
+qz
+qz
+qz
+qz
+qz
+qz
+qz
+qz
+qz
+qz
+qz
+qz
+qz
+qz
+qz
+qz
+qz
+qz
+qz
+qz
+qz
+qz
+qz
+qz
+qz
+qz
+qz
+qz
+qz
+qz
+qz
+qz
+qz
+qz
+qz
+qz
+qz
+qz
+qz
+qz
+qz
+qz
+qz
+qz
+qz
+qz
+zS
 "}
 (80,1,1) = {"
-yp
-yp
-yp
-yp
-yp
-yp
-yp
-yp
-yp
-yp
-yp
-yp
-yp
-yp
-yp
-yp
-yp
-yp
-yp
-yp
-yp
-yp
-yp
-yp
-yp
-yp
-yp
-yp
-yp
-yp
-yp
-yp
-yp
-yp
-yp
-yp
-yp
-yp
-yp
-yp
-yp
-yp
-yp
-yp
-yp
-yp
-yp
-yp
-yp
-yp
-yp
-yp
-yp
-yp
-yp
-yp
+zS
+zS
+zS
+zS
+zS
+zS
+zS
+zS
+zS
+zS
+zS
+zS
+zS
+zS
+zS
+zS
+zS
+zS
+zS
+zS
+zS
+zS
+zS
+zS
+zS
+zS
+zS
+zS
+zS
+zS
+zS
+zS
+zS
+zS
+zS
+zS
+zS
+zS
+zS
+zS
+zS
+zS
+zS
+zS
+zS
+zS
+zS
+zS
+zS
+zS
+zS
+zS
+zS
+zS
+zS
+zS
 "}
