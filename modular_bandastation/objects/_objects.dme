@@ -18,3 +18,5 @@
 #include "code/structures/posters.dm"
 
 #include "code/vending/vending.dm"
+
+#include "code/weapons/ranged/awaymission_gun.dm"
