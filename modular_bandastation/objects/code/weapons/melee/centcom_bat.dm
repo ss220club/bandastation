@@ -38,10 +38,10 @@
 	user.update_held_items()
 
 /obj/item/melee/baseball_bat/homerun/central_command/proc/set_inactive(mob/user)
-	force = initial(force)
-	w_class = initial(w_class)
-	inhand_icon_state = initial(inhand_icon_state)
-	icon_state = initial(icon_state)
+	force = src::force
+	w_class = src::w_class
+	inhand_icon_state = src::inhand_icon_state
+	icon_state = src::icon_state
 	user.update_held_items()
 
 /obj/item/melee/baseball_bat/homerun/central_command/pickup(mob/living/carbon/human/user)
