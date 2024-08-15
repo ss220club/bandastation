@@ -43,6 +43,11 @@ jobs:
         with:
           script: |
                   const { MERGE_CONFLICTS } = process.env;
+
+                  if (!MERGE_CONFLICTS) {
+                    return;
+                  }
+
                   const conflict_message_header = "This PR causes following conflicts on translate branch:\n";
                   const issue_body = `${conflict_message_header}${MERGE_CONFLICTS}`;
 
