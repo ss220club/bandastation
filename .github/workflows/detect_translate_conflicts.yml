@@ -39,7 +39,7 @@ jobs:
             echo EOF
           } >> $GITHUB_ENV
       - name: Run script
-        uses: actions/github-script@v7.0.1
+        uses: actions/github-script@v7
         with:
           script: |
             const { MERGE_CONFLICTS } = process.env;
