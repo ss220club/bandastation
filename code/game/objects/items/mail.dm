@@ -1,6 +1,6 @@
 /// Mail is tamper-evident and unresealable, postmarked by CentCom for an individual recepient.
 /obj/item/mail
-	name = "конфликтное письмо"
+	name = "mail"
 	gender = NEUTER
 	desc = "An officially postmarked, tamper-evident parcel regulated by CentCom and made of high-quality materials."
 	icon = 'icons/obj/service/bureaucracy.dmi'
