@@ -44,7 +44,8 @@ jobs:
           script: |
             const { MERGE_CONFLICTS } = process.env;
             const { issue_number, owner, repo } = context.repo;
-            const conflict_message = `This PR causes following conflicts on translate branch:\n${MERGE_CONFLICTS}`;
+            const conflict_message_header = "This PR causes following conflicts on translate branch:\n"
+            const issue_body = `${conflict_message_header}${MERGE_CONFLICTS}`;
 
             const comments = await github.rest.issues.listComments({
               owner,
@@ -52,21 +53,21 @@ jobs:
               issue_number,
             });
 
-            const action_comment = comments.data.find(comment => comment.user.login === 'github-actions[bot]');
+            const action_comment = comments.data.find(comment => comment.body.includes(conflict_message_header)); // && comment.user.login === "github-actions[bot]");
             if (action_comment) {
-              const commentId = action_comment.id;
+              const comment_id = action_comment.id;
 
               await github.rest.issues.updateComment({
                 owner,
                 repo,
-                comment_id: commentId,
-                body: conflict_message,
+                comment_id: comment_id,
+                body: issue_body,
               });
             } else {
               await github.rest.issues.createComment({
                 owner,
                 repo,
                 issue_number,
-                body: conflict_message,
+                body: issue_body,
               });
             }
