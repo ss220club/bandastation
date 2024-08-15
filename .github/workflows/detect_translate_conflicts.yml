@@ -39,18 +39,17 @@ jobs:
             echo EOF
           } >> $GITHUB_ENV
       - name: Run script
-        uses: actions/github-script@v6
+        uses: actions/github-script@v7
         with:
           script: |
             const { MERGE_CONFLICTS } = process.env;
-            const { issue_number, owner, repo } = context.repo;
             const conflict_message_header = "This PR causes following conflicts on translate branch:\n"
             const issue_body = `${conflict_message_header}${MERGE_CONFLICTS}`;
 
             const comments = await github.rest.issues.listComments({
-              owner,
-              repo,
-              issue_number,
+              context.repo.owner,
+              context.repo.repo,
+              context.issue.number,
             });
 
             const action_comment = comments.data.find(comment => comment.body.includes(conflict_message_header) && comment.user.login === "github-actions[bot]");
@@ -58,15 +57,15 @@ jobs:
               const comment_id = action_comment.id;
 
               await github.rest.issues.updateComment({
-                owner,
-                repo,
+                context.repo.owner,
+                context.repo.repo,
                 comment_id: comment_id,
                 body: issue_body,
               });
             } else {
               await github.rest.issues.createComment({
-                owner,
-                repo,
+                context.repo.owner,
+                context.repo.repo,
                 issue_number,
                 body: issue_body,
               });
