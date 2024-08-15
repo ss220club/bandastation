@@ -44,10 +44,6 @@ jobs:
           script: |
                   const { MERGE_CONFLICTS } = process.env;
 
-                  if (!MERGE_CONFLICTS) {
-                    return;
-                  }
-
                   const conflict_message_header = "This PR causes following conflicts on translate branch:\n";
                   const issue_body = `${conflict_message_header}${MERGE_CONFLICTS}`;
 
@@ -58,8 +54,18 @@ jobs:
                   });
 
                   const action_comment = comments.data.find(comment => comment.body.startsWith(conflict_message_header) && comment.user.login === "github-actions[bot]");
+
                   if (action_comment) {
                     const comment_id = action_comment.id;
+
+                    if (!MERGE_CONFLICTS) {
+                      await github.rest.issues.deleteComment({
+                        owner: context.repo.owner,
+                        repo: context.repo.repo,
+                        comment_id: comment_id,
+                      });
+                      return;
+                    }
 
                     await github.rest.issues.updateComment({
                       owner: context.repo.owner,
@@ -67,7 +73,7 @@ jobs:
                       comment_id: comment_id,
                       body: issue_body,
                     });
-                  } else {
+                  } else if (MERGE_CONFLICTS) {
                     await github.rest.issues.createComment({
                       owner: context.repo.owner,
                       repo: context.repo.repo,
