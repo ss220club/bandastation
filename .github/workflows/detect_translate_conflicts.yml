@@ -43,7 +43,7 @@ jobs:
         with:
           script: |
             const { MERGE_CONFLICTS } = process.env;
-            const conflict_message_header = "This PR causes following conflicts on translate branch:\n"
+            const conflict_message_header = "This PR causes following conflicts on translate branch:\n";
             const issue_body = `${conflict_message_header}${MERGE_CONFLICTS}`;
 
             const comments = await github.rest.issues.listComments({
