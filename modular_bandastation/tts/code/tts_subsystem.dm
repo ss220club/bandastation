@@ -547,7 +547,7 @@ SUBSYSTEM_DEF(tts220)
 	if(!punctuation_check.Find(sanitized_message))
 		sanitized_message += "."
 
-	sanitized_message = html_decode(STRIP_HTML_FULL(sanitized_message))
+	sanitized_message = html_decode(STRIP_HTML_FULL(sanitized_message, length_char(sanitized_message)))
 
 	var/static/regex/forbidden_symbols = new(@"[^a-zA-Z0-9а-яА-ЯёЁ,!?+./ \r\n\t:—()-]", "g")
 	sanitized_message = forbidden_symbols.Replace(sanitized_message, "")
