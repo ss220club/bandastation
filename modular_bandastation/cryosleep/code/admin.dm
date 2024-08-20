@@ -10,8 +10,8 @@
 	//make a paper if need
 	if(with_paper)
 		var/obj/item/paper/cryo_paper = new /obj/item/paper(loc)
-		cryo_paper.name = "Notification - [name]"
-		cryo_paper.add_raw_text("Our sincerest apologies, [name][job ? ", [job]," : ""] had to be sent back in Cryogenic Storage for reasons that cannot be elaborated on at the moment.<br><br>Sincerely,<br><i>Nanotrasen Anti-Sudden Sleep Disorder Agency</i>")
+		cryo_paper.name = "Уведомление - [name]"
+		cryo_paper.add_raw_text("Приносим искренние извинения, персону \"[name][job ? ", [job]," : ""]\" пришлось отправить в криогенное хранилище по причинам, которые на данный момент не могут быть уточнены.<br><br>С уважением,<br><i>Агентство Нанотрейзен по борьбе с SSD</i>")
 		cryo_paper.update_appearance()
 	//find cryopod
 	for(var/obj/machinery/cryopod/cryo in GLOB.valid_cryopods)

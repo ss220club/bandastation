@@ -3,8 +3,6 @@
 	/// modifying the actual name during the game will cause issues with the GLOB.mob_spawners associative list
 	var/use_outfit_name
 
-#define AHELP_FIRST_MESSAGE "Please adminhelp before leaving the round, even if there are no administrators online!"
-
 /*
  * Cryogenic refrigeration unit. Basically a despawner.
  * Stealing a lot of concepts/code from sleepers due to massive laziness.
@@ -136,11 +134,11 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod, 32)
 			if (occupant_job_radio)
 				if (occupant_departments_bitflags & DEPARTMENT_BITFLAG_COMMAND)
 					if (occupant_job_radio != RADIO_CHANNEL_COMMAND)
-						radio.talk_into(src, "[user][rank ? ", [rank]" : ""] has been moved to cryo storage.", RADIO_CHANNEL_COMMAND)
+						radio.talk_into(src, "[user][rank ? ", [rank]" : ""] был перемещён в криогенное хранилище.", RADIO_CHANNEL_COMMAND)
 					radio.use_command = TRUE
-				radio.talk_into(src, "[user][rank ? ", [rank]" : ""] has been moved to cryo storage.", occupant_job_radio)
+				radio.talk_into(src, "[user][rank ? ", [rank]" : ""] был перемещён в криогенное хранилище.", occupant_job_radio)
 				radio.use_command = FALSE
-			radio.talk_into(src, "[user][rank ? ", [rank]" : ""] has been moved to cryo storage.", announcement_channel)
+			radio.talk_into(src, "[user][rank ? ", [rank]" : ""] был перемещён в криогенное хранилище.", announcement_channel)
 
 // Cryopods themselves.
 /obj/machinery/cryopod
@@ -391,7 +389,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod, 32)
 					return
 				else if(tgui_alert(user, "Would you like to place [target] into [src]?", "Place into Cryopod?", list("Yes", "No")) == "Yes")
 					if(target.mind.assigned_role.req_admin_notify)
-						tgui_alert(user, "They are an important role! [AHELP_FIRST_MESSAGE]")
+						tgui_alert(user, "Они играют на важной роли! Вы уверены что хотите переместить их в криохранилище?")
 					to_chat(user, span_danger("You put [target] into [src]. [target.p_Theyre()] in the cryopod."))
 					log_admin("[key_name(user)] has put [key_name(target)] into a stasis pod.")
 					message_admins("[key_name(user)] has put [key_name(target)] into a stasis pod. [ADMIN_JMP(src)]")
@@ -412,10 +410,10 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod, 32)
 
 	if(target == user)
 		if(target.mind.assigned_role.req_admin_notify)
-			tgui_alert(target, "You're an important role! [AHELP_FIRST_MESSAGE]")
+			tgui_alert(target, "Вы играете на важной роли! Вы уверены что хотите покинуть раунд?")
 		var/datum/antagonist/antag = target.mind.has_antag_datum(/datum/antagonist)
 		if(antag)
-			tgui_alert(target, "You're \a [antag.name]! [AHELP_FIRST_MESSAGE]")
+			tgui_alert(target, "Вы \a [antag.name]! Вы уверены что хотите покинуть раунд?")
 
 	if(LAZYLEN(target.buckled_mobs) > 0)
 		if(target == user)
@@ -517,5 +515,3 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/cryopod/prison, 18)
 	..()
 	set_ssd_state(FALSE)
 */
-
-#undef AHELP_FIRST_MESSAGE

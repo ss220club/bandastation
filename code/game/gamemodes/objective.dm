@@ -1,4 +1,5 @@
 GLOBAL_LIST(admin_objective_list) //Prefilled admin assignable objective list
+GLOBAL_LIST_EMPTY(objectives) // BANDASTATION EDIT ADDITION
 
 /datum/objective
 	var/datum/mind/owner //The primary owner of the objective. !!SOMEWHAT DEPRECATED!! Prefer using 'team' for new code.
@@ -18,11 +19,13 @@ GLOBAL_LIST(admin_objective_list) //Prefilled admin assignable objective list
 	var/admin_grantable = FALSE
 
 /datum/objective/New(text)
+	GLOB.objectives += src // BANDASTATION EDIT ADDITION
 	if(text)
 		explanation_text = text
 
 //Apparently objectives can be qdel'd. Learn a new thing every day
 /datum/objective/Destroy()
+	GLOB.objectives -= src // BANDASTATION EDIT ADDITION
 	return ..()
 
 /datum/objective/proc/get_owners() // Combine owner and team into a single list.
