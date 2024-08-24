@@ -1,3 +1,4 @@
 #include "_radio_job.dm"
 
 #include "code/say.dm"
+#include "code/ai_say.dm"
