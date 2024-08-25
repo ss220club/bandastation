@@ -1,4 +1,4 @@
 /datum/modpack/ru_jobs
 	name = "Radio jobs"
-	desc = "Отображение роли при разговоре по радио"
+	desc = "Отображение роли и цвета департамента при разговоре по рации."
 	author = "Ros_Sample"
