@@ -10,7 +10,7 @@
 #define JOB_CHIEF_ENGINEER_RU "Главный инженер"
 #define JOB_CHIEF_MEDICAL_OFFICER_RU "Главный врач"
 #define JOB_BRIDGE_ASSISTANT_RU "Ассистент мостика"
-#define JOB_VETERAN_ADVISOR_RU "Ветеран-консультант службы безопасности"
+#define JOB_VETERAN_ADVISOR_RU "Старший советник службы безопасности"
 //Silicon
 #define JOB_AI_RU "ИИ"
 #define JOB_CYBORG_RU "Киборг"
