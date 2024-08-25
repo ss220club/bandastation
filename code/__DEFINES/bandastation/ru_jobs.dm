@@ -9,8 +9,8 @@
 #define JOB_RESEARCH_DIRECTOR_RU "Директор исследований"
 #define JOB_CHIEF_ENGINEER_RU "Главный инженер"
 #define JOB_CHIEF_MEDICAL_OFFICER_RU "Главный врач"
-#define JOB_BRIDGE_ASSISTANT_RU "Bridge Assistant"
-#define JOB_VETERAN_ADVISOR_RU "Veteran Security Advisor"
+#define JOB_BRIDGE_ASSISTANT_RU "Ассистент мостика"
+#define JOB_VETERAN_ADVISOR_RU "Ветеран-консультант службы безопасности"
 //Silicon
 #define JOB_AI_RU "ИИ"
 #define JOB_CYBORG_RU "Киборг"
@@ -39,7 +39,7 @@
 //Supply
 #define JOB_QUARTERMASTER_RU "Квартирмейстер"
 #define JOB_CARGO_TECHNICIAN_RU "Грузчик"
-#define JOB_CARGO_GORILLA_RU "Cargo Gorilla"
+#define JOB_CARGO_GORILLA_RU "Карго горилла"
 #define JOB_SHAFT_MINER_RU "Шахтер"
 #define JOB_BITRUNNER_RU "Битраннер"
 //Service
