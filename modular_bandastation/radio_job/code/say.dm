@@ -88,13 +88,15 @@ GLOBAL_LIST_INIT(department_span_by_assignment, list(
 	return "radio"
 
 /atom/movable/compose_job(atom/movable/speaker, message_langs, raw_message, radio_freq)
-	var/mob/living/carbon/human/H = usr
-	if(!H?.get_assignment() || !radio_freq)
+	var/mob/living/carbon/human/user = usr
+	if(!ishuman(user))
 		return ""
-	var/assignment = H?.get_assignment(if_no_id = "Неизвестный", if_no_job = "Неизвестный", hand_first = FALSE)
+	var/assignment = user?.get_assignment(if_no_id = "Неизвестный", if_no_job = "Неизвестный", hand_first = FALSE)
+	if(!assignment || !radio_freq)
+		return ""
 	return "<span class='[get_department_span(assignment)]'><small>" + @"[" + assignment + @"]</small> "
 
-/atom/movable/proc/job_end_span()
-	if(compose_job() == "")
+/atom/movable/proc/job_end_span(atom/movable/speaker)
+	if(!ishuman(speaker))
 		return ""
 	return "</span>"
