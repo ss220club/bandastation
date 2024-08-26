@@ -80,6 +80,14 @@ GLOBAL_LIST_INIT(department_span_by_assignment, list(
 	*/
 ))
 
+/atom/movable/proc/message_order(atom/movable/speaker, spanpart1, spanpart2, freqpart, languageicon, namepart, message_language, raw_message, radio_freq, endspanpart, messagepart)
+	if(GLOB.job_display_style == "none" || !ishuman(speaker))
+		return "[spanpart1][spanpart2][freqpart][languageicon][compose_track_href(speaker, namepart)][namepart][compose_job(speaker, message_language, raw_message, radio_freq)][endspanpart][messagepart]"
+	if(GLOB.job_display_style == "default")
+		return "[spanpart1][spanpart2][freqpart][languageicon][compose_track_href(speaker, namepart)][job_start_span(speaker, radio_freq)][compose_job(speaker, message_language, raw_message, radio_freq)][namepart][job_end_span(speaker)][endspanpart][messagepart]"
+	if(GLOB.job_display_style == "alternative")
+		return "[spanpart1][spanpart2][freqpart][languageicon][compose_track_href(speaker, namepart)][job_start_span(speaker, radio_freq)][namepart][compose_job(speaker, message_language, raw_message, radio_freq)][job_end_span(speaker)][endspanpart][messagepart]"
+
 /proc/get_department_span(assignment)
 	for(var/dep_span in GLOB.department_span_by_assignment)
 		for(var/i in 1 to length(GLOB.department_span_by_assignment[dep_span]))
@@ -94,9 +102,30 @@ GLOBAL_LIST_INIT(department_span_by_assignment, list(
 	var/assignment = user?.get_assignment(if_no_id = "Неизвестный", if_no_job = "Неизвестный", hand_first = FALSE)
 	if(!assignment || !radio_freq)
 		return ""
-	return "<span class='[get_department_span(assignment)]'><small>" + @"[" + assignment + @"]</small> "
+	if(GLOB.job_display_style == "none")
+		return ""
+	if(GLOB.job_display_style == "default")
+		return @" [" + assignment + @"]</small>"
+	if(GLOB.job_display_style == "alternative")
+		return " (" + assignment + ")"
+	return ""
 
-/atom/movable/proc/job_end_span(atom/movable/speaker)
-	if(!ishuman(speaker))
+/atom/movable/proc/job_end_span(atom/movable/speaker, radio_freq)
+	if(!ishuman(speaker) || !radio_freq)
 		return ""
 	return "</span>"
+
+/atom/movable/proc/job_start_span(atom/movable/speaker, radio_freq)
+	var/mob/living/carbon/human/user = usr
+	if(!ishuman(user) || !radio_freq)
+		return ""
+	var/assignment = user?.get_assignment(if_no_id = "Неизвестный", if_no_job = "Неизвестный", hand_first = FALSE)
+	if(!assignment)
+		return ""
+	if(GLOB.job_display_style == "none")
+		return ""
+	if(GLOB.job_display_style == "default")
+		return "<span class='[get_department_span(assignment)]'><small>"
+	if(GLOB.job_display_style == "alternative")
+		return "<span class='[get_department_span(assignment)]'>"
+	return ""
