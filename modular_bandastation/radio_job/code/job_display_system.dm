@@ -1,5 +1,34 @@
 GLOBAL_VAR_INIT(job_display_style, "none")
 
+/datum/design/board/announcement_system
+	name = "Job Display System Board"
+	desc = "The circuit board for a job display system."
+	id = "job_display_system"
+	build_path = /obj/item/circuitboard/machine/job_display_system
+	category = list(
+		RND_CATEGORY_MACHINE + RND_SUBCATEGORY_MACHINE_TELECOMMS
+	)
+	departmental_flags = DEPARTMENT_BITFLAG_ENGINEERING
+
+/obj/item/circuitboard/machine/job_display_system
+	name = "Job Display System"
+	greyscale_colors = CIRCUIT_COLOR_ENGINEERING
+	build_path = /obj/machinery/job_display_system
+	req_components = list(
+		/obj/item/stack/cable_coil = 2,
+		/obj/item/stack/sheet/glass = 1)
+
+/datum/techweb_node/consoles/New()
+	design_ids += list(
+		"job_display_system",
+	)
+	return ..()
+
+/obj/effect/spawner/random/techstorage/tcomms_all/spawn_loot()
+	loot |= list(/obj/item/circuitboard/machine/job_display_system)
+	. = ..()
+
+
 /obj/machinery/job_display_system
 	density = TRUE
 	name = "\improper Job Display System"
@@ -11,7 +40,7 @@ GLOBAL_VAR_INIT(job_display_style, "none")
 
 	active_power_usage = BASE_MACHINE_ACTIVE_CONSUMPTION * 0.05
 
-	// circuit = /obj/item/circuitboard/machine/job_display_system
+	circuit = /obj/item/circuitboard/machine/job_display_system
 
 /obj/machinery/job_display_system/Initialize(mapload)
 	. = ..()

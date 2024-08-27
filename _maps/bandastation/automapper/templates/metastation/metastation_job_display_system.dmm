@@ -1,0 +1,5 @@
+"a" = (/obj/machinery/job_display_system,/turf/open/floor/circuit/green/telecomms/mainframe,/area/station/tcommsat/server)
+
+(1,1,1) = {"
+a
+"}

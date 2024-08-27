@@ -489,7 +489,7 @@ GLOBAL_LIST_INIT(message_modes_stat_limits, list(
 	var/obj/item/implant/radio/imp = locate() in src
 	if(imp?.radio.is_on())
 		if(message_mods[MODE_HEADSET])
-			imp.radio.talk_into(src, message, , spans, language, message_mods)
+			imp.radio.talk_into(src, message, message_mods[RADIO_EXTENSION], spans, language, message_mods)	// BANDASTATION EDIT CHANGE Original: imp.radio.talk_into(src, message, , spans, language, message_mods)
 			return ITALICS | REDUCE_RANGE
 		if(message_mods[RADIO_EXTENSION] == MODE_DEPARTMENT || (message_mods[RADIO_EXTENSION] in imp.radio.channels))
 			imp.radio.talk_into(src, message, message_mods[RADIO_EXTENSION], spans, language, message_mods)

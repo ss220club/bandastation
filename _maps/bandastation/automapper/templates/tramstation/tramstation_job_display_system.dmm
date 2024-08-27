@@ -1,0 +1,5 @@
+"a" = (/obj/effect/turf_decal/trimline/yellow/filled/line{dir = 8},/obj/machinery/light/directional/west,/obj/machinery/job_display_system,/turf/open/floor/iron,/area/station/tcommsat/computer)
+
+(1,1,1) = {"
+a
+"}

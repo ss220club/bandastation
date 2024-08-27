@@ -1,0 +1,12 @@
+"a" = (/obj/machinery/job_display_system,/turf/open/floor/circuit/telecomms/mainframe,/area/station/tcommsat/server)
+"h" = (/turf/open/space/basic,/area/space)
+
+(1,1,1) = {"
+a
+"}
+(1,1,2) = {"
+h
+"}
+(1,1,3) = {"
+h
+"}

@@ -81,12 +81,13 @@ GLOBAL_LIST_INIT(department_span_by_assignment, list(
 ))
 
 /atom/movable/proc/message_order(atom/movable/speaker, spanpart1, spanpart2, freqpart, languageicon, namepart, message_language, raw_message, radio_freq, endspanpart, messagepart)
-	if(GLOB.job_display_style == "none" || !ishuman(speaker))
+	if(GLOB.job_display_style == "none")
 		return "[spanpart1][spanpart2][freqpart][languageicon][compose_track_href(speaker, namepart)][namepart][compose_job(speaker, message_language, raw_message, radio_freq)][endspanpart][messagepart]"
-	if(GLOB.job_display_style == "default")
+	if(GLOB.job_display_style == "default" && speaker.GetJob() != "AI")
 		return "[spanpart1][spanpart2][freqpart][languageicon][compose_track_href(speaker, namepart)][job_start_span(speaker, radio_freq)][compose_job(speaker, message_language, raw_message, radio_freq)][namepart][job_end_span(speaker)][endspanpart][messagepart]"
-	if(GLOB.job_display_style == "alternative")
+	if(GLOB.job_display_style == "alternative" && speaker.GetJob() != "AI")
 		return "[spanpart1][spanpart2][freqpart][languageicon][compose_track_href(speaker, namepart)][job_start_span(speaker, radio_freq)][namepart][compose_job(speaker, message_language, raw_message, radio_freq)][job_end_span(speaker)][endspanpart][messagepart]"
+	return "[spanpart1][spanpart2][freqpart][languageicon][compose_track_href(speaker, namepart)][namepart][compose_job(speaker, message_language, raw_message, radio_freq)][endspanpart][messagepart]"
 
 /proc/get_department_span(assignment)
 	for(var/dep_span in GLOB.department_span_by_assignment)
@@ -97,17 +98,17 @@ GLOBAL_LIST_INIT(department_span_by_assignment, list(
 
 /atom/movable/compose_job(atom/movable/speaker, message_langs, raw_message, radio_freq)
 	var/mob/living/carbon/human/user = usr
-	if(!ishuman(user))
+	if(!ishuman(user) || !radio_freq)
 		return ""
 	var/assignment = user?.get_assignment(if_no_id = "Неизвестный", if_no_job = "Неизвестный", hand_first = FALSE)
-	if(!assignment || !radio_freq)
+	if(!assignment)
 		return ""
 	if(GLOB.job_display_style == "none")
 		return ""
 	if(GLOB.job_display_style == "default")
-		return @" [" + assignment + @"]</small>"
+		return "[ascii2text(91)][assignment][ascii2text(93)]</small> "	// i heard that this is faster than appending strings...
 	if(GLOB.job_display_style == "alternative")
-		return " (" + assignment + ")"
+		return " ([assignment])"
 	return ""
 
 /atom/movable/proc/job_end_span(atom/movable/speaker, radio_freq)
@@ -129,3 +130,11 @@ GLOBAL_LIST_INIT(department_span_by_assignment, list(
 	if(GLOB.job_display_style == "alternative")
 		return "<span class='[get_department_span(assignment)]'>"
 	return ""
+
+/mob/living/silicon/ai/compose_job(atom/movable/speaker, message_langs, raw_message, radio_freq)
+	if(GLOB.job_display_style == "default")
+		return "[radio_freq ? "(" + speaker.GetJob() + ")" : ""]" + "[speaker.GetSource() ? "</a> " : ""]"
+	if(radio_freq && GLOB.job_display_style == "alternative")
+		return "[radio_freq ? " (" + speaker.GetJob() + ")" : ""]" + "[speaker.GetSource() ? "</a>" : ""]"
+	if(GLOB.job_display_style == "none")
+		return "[radio_freq ? " (" + speaker.GetJob() + ")" : ""]" + "[speaker.GetSource() ? "</a>" : ""]"
