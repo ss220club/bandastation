@@ -147,7 +147,7 @@
 	taste_description = "кровавая тьма"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 	quality = DRINK_NICE
-	glass_price = DRINK_PRICE_MEDIUM
+	glass_price = DRINK_PRICE_EASY
 
 /datum/reagent/consumable/ethanol/black_blood/on_mob_life(mob/living/carbon/drinker, seconds_per_tick, times_fired)
 	. = ..()
