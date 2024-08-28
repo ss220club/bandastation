@@ -1,3 +1,4 @@
+// Department spans
 GLOBAL_LIST_INIT(department_span_by_assignment, list(
 	"servradio" = list(
 		JOB_HEAD_OF_PERSONNEL_RU,
@@ -80,25 +81,28 @@ GLOBAL_LIST_INIT(department_span_by_assignment, list(
 	*/
 ))
 
+// Returns message order
 /atom/movable/proc/message_order(atom/movable/speaker, spanpart1, spanpart2, freqpart, languageicon, namepart, message_language, raw_message, radio_freq, endspanpart, messagepart)
 	if(GLOB.job_display_style == "none")
 		return "[spanpart1][spanpart2][freqpart][languageicon][compose_track_href(speaker, namepart)][namepart][compose_job(speaker, message_language, raw_message, radio_freq)][endspanpart][messagepart]"
-	if(GLOB.job_display_style == "default" && speaker.GetJob() != "AI")
-		return "[spanpart1][spanpart2][freqpart][languageicon][compose_track_href(speaker, namepart)][job_start_span(speaker, radio_freq)][compose_job(speaker, message_language, raw_message, radio_freq)][namepart][job_end_span(speaker)][endspanpart][messagepart]"
-	if(GLOB.job_display_style == "alternative" && speaker.GetJob() != "AI")
-		return "[spanpart1][spanpart2][freqpart][languageicon][compose_track_href(speaker, namepart)][job_start_span(speaker, radio_freq)][namepart][compose_job(speaker, message_language, raw_message, radio_freq)][job_end_span(speaker)][endspanpart][messagepart]"
-	return "[spanpart1][spanpart2][freqpart][languageicon][compose_track_href(speaker, namepart)][namepart][compose_job(speaker, message_language, raw_message, radio_freq)][endspanpart][messagepart]"
+	if(GLOB.job_display_style == "default")
+		return "[spanpart1][spanpart2][freqpart][languageicon][compose_track_href(speaker, namepart)][job_start_span(speaker, radio_freq)][compose_job(speaker, message_language, raw_message, radio_freq)][namepart][job_end_span(speaker, radio_freq)][endspanpart][messagepart]"
+	if(GLOB.job_display_style == "alternative")
+		return "[spanpart1][spanpart2][freqpart][languageicon][compose_track_href(speaker, namepart)][job_start_span(speaker, radio_freq)][namepart][compose_job(speaker, message_language, raw_message, radio_freq)][job_end_span(speaker, radio_freq)][endspanpart][messagepart]"
+	if(GLOB.job_display_style == "alternative2")
+		return "[spanpart1][spanpart2][freqpart][languageicon][compose_track_href(speaker, namepart)][job_start_span(speaker, radio_freq)][namepart][compose_job(speaker, message_language, raw_message, radio_freq)][job_end_span(speaker, radio_freq)][endspanpart][messagepart]"
 
-/proc/get_department_span(assignment)
+
+/proc/get_department_span(assignment)	// Gets span by assignment
 	for(var/dep_span in GLOB.department_span_by_assignment)
 		for(var/i in 1 to length(GLOB.department_span_by_assignment[dep_span]))
 			if(assignment == GLOB.department_span_by_assignment[dep_span][i])
 				return dep_span
 	return "radio"
 
-/atom/movable/compose_job(atom/movable/speaker, message_langs, raw_message, radio_freq)
+/atom/movable/compose_job(atom/movable/speaker, message_langs, raw_message, radio_freq)	// Composes job for human speaker
 	var/mob/living/carbon/human/user = usr
-	if(!ishuman(user) || !radio_freq)
+	if(!radio_freq || !ishuman(user))
 		return ""
 	var/assignment = user?.get_assignment(if_no_id = "Неизвестный", if_no_job = "Неизвестный", hand_first = FALSE)
 	if(!assignment)
@@ -106,19 +110,22 @@ GLOBAL_LIST_INIT(department_span_by_assignment, list(
 	if(GLOB.job_display_style == "none")
 		return ""
 	if(GLOB.job_display_style == "default")
-		return "[ascii2text(91)][assignment][ascii2text(93)]</small> "	// i heard that this is faster than appending strings...
+		return @"[" + assignment + @"]</small> "
 	if(GLOB.job_display_style == "alternative")
 		return " ([assignment])"
+	if(GLOB.job_display_style == "alternative2")
+		return " - [assignment]"
 	return ""
 
-/atom/movable/proc/job_end_span(atom/movable/speaker, radio_freq)
-	if(!ishuman(speaker) || !radio_freq)
+/atom/movable/proc/job_end_span(atom/movable/speaker, radio_freq)	// Composes job end span for human speakers
+	var/mob/living/carbon/human/user = usr
+	if(!radio_freq || !ishuman(user))
 		return ""
 	return "</span>"
 
-/atom/movable/proc/job_start_span(atom/movable/speaker, radio_freq)
+/atom/movable/proc/job_start_span(atom/movable/speaker, radio_freq)	// Composes job start span for human speakers with get_department_span()
 	var/mob/living/carbon/human/user = usr
-	if(!ishuman(user) || !radio_freq)
+	if(!radio_freq || !ishuman(user))
 		return ""
 	var/assignment = user?.get_assignment(if_no_id = "Неизвестный", if_no_job = "Неизвестный", hand_first = FALSE)
 	if(!assignment)
@@ -129,12 +136,24 @@ GLOBAL_LIST_INIT(department_span_by_assignment, list(
 		return "<span class='[get_department_span(assignment)]'><small>"
 	if(GLOB.job_display_style == "alternative")
 		return "<span class='[get_department_span(assignment)]'>"
+	if(GLOB.job_display_style == "alternative2")
+		return "<span class='[get_department_span(assignment)]'>"
 	return ""
 
-/mob/living/silicon/ai/compose_job(atom/movable/speaker, message_langs, raw_message, radio_freq)
-	if(GLOB.job_display_style == "default")
-		return "[radio_freq ? "(" + speaker.GetJob() + ")" : ""]" + "[speaker.GetSource() ? "</a> " : ""]"
-	if(radio_freq && GLOB.job_display_style == "alternative")
-		return "[radio_freq ? " (" + speaker.GetJob() + ")" : ""]" + "[speaker.GetSource() ? "</a>" : ""]"
+/mob/living/silicon/ai/compose_job(atom/movable/speaker, message_langs, raw_message, radio_freq)	// Composes job for AI tracking
 	if(GLOB.job_display_style == "none")
 		return "[radio_freq ? " (" + speaker.GetJob() + ")" : ""]" + "[speaker.GetSource() ? "</a>" : ""]"
+	if(GLOB.job_display_style == "default")
+		return "[radio_freq ? @"[" + speaker.GetJob() + @"]" : ""]" + "[speaker.GetSource() ? " " : ""]"
+	if(radio_freq && GLOB.job_display_style == "alternative")
+		return "[radio_freq ? " (" + speaker.GetJob() + ")" : ""]" + "[speaker.GetSource() ? "</a>" : ""]"
+	if(radio_freq && GLOB.job_display_style == "alternative2")
+		return "[radio_freq ? " - " + speaker.GetJob() + "" : ""]" + "[speaker.GetSource() ? "</a>" : ""]"
+
+/mob/living/silicon/ai/job_end_span(atom/movable/speaker, radio_freq)	// Composes job end span for AI tracking
+	if(GLOB.job_display_style == "default")
+		return "</a>"
+	return ""
+
+/mob/living/silicon/ai/job_start_span(atom/movable/speaker, radio_freq)	// Composes job start span for AI tracking (no color needed, so return "")
+	return ""

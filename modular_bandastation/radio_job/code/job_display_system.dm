@@ -1,6 +1,7 @@
 GLOBAL_VAR_INIT(job_display_style, "none")
 
-/datum/design/board/announcement_system
+// Board and techweb
+/datum/design/board/job_display_system
 	name = "Job Display System Board"
 	desc = "The circuit board for a job display system."
 	id = "job_display_system"
@@ -19,16 +20,15 @@ GLOBAL_VAR_INIT(job_display_style, "none")
 		/obj/item/stack/sheet/glass = 1)
 
 /datum/techweb_node/consoles/New()
-	design_ids += list(
-		"job_display_system",
-	)
-	return ..()
+	. = ..()
+	design_ids += "job_display_system"
 
+// Tech storage spawn
 /obj/effect/spawner/random/techstorage/tcomms_all/spawn_loot()
 	loot |= list(/obj/item/circuitboard/machine/job_display_system)
 	. = ..()
 
-
+// machine
 /obj/machinery/job_display_system
 	density = TRUE
 	name = "\improper Job Display System"
@@ -46,14 +46,12 @@ GLOBAL_VAR_INIT(job_display_style, "none")
 	. = ..()
 	update_appearance()
 
-/obj/machinery/announcement_system/randomize_language_if_on_station()
-	return
-
-/obj/machinery/announcement_system/update_icon_state()
+/obj/machinery/job_display_system/update_icon_state()
 	icon_state = "[base_icon_state]_[is_operational ? "On" : "Off"][panel_open ? "_Open" : null]"
 	return ..()
 
 /obj/machinery/job_display_system/Destroy()
+	displayStyle = "Отсутствует (Имя)"
 	GLOB.job_display_style = "none"
 	return ..()
 
@@ -70,6 +68,7 @@ GLOBAL_VAR_INIT(job_display_style, "none")
 
 /obj/machinery/job_display_system/on_set_is_operational(old_value)
 	if(!is_operational)
+		displayStyle = "Отсутствует (Имя)"
 		GLOB.job_display_style = "none"
 
 /obj/machinery/job_display_system/ui_interact(mob/user, datum/tgui/ui)
@@ -102,8 +101,10 @@ GLOBAL_VAR_INIT(job_display_style, "none")
 				GLOB.job_display_style = "default"
 			else if(displayStyle == "Альтернативный (Имя (Работа))")
 				GLOB.job_display_style = "alternative"
+			else if(displayStyle == "Альтернативный 2 (Имя - Работа)")
+				GLOB.job_display_style = "alternative2"
 
-			usr.log_message("updated the job display style to: [param["displayStyle"]]", LOG_GAME)
+			usr.log_message("updated the job display style to: [displayStyle]", LOG_GAME)
 	add_fingerprint(usr)
 
 /obj/machinery/job_display_system/attack_robot(mob/living/silicon/user)
@@ -111,8 +112,5 @@ GLOBAL_VAR_INIT(job_display_style, "none")
 
 /obj/machinery/job_display_system/attack_ai(mob/user)
 	if(!user.can_perform_action(src, ALLOW_SILICON_REACH))
-		return
-	if(machine_stat & BROKEN)
-		to_chat(user, span_warning("[src]'s firmware appears to be malfunctioning!"))
 		return
 	interact(user)

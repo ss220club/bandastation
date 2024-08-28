@@ -14,9 +14,10 @@ export const JobDisplay = (props) => {
     'Отсутствует (Имя)',
     'По умолчанию ([Работа] Имя)',
     'Альтернативный (Имя (Работа))',
+    'Альтернативный 2 (Имя - Работа)',
   ];
   return (
-    <Window title="Система отображения назначения" width={300} height={200}>
+    <Window title="Система отображения назначения" width={400} height={200}>
       <Window.Content>
         <Section title="Стиль отображения" textAlign="left">
           <Dropdown
