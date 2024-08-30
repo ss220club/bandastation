@@ -4,7 +4,7 @@ import { useBackend } from '../backend';
 import { Window } from '../layouts';
 
 type Data = {
-  displayStyle: string
+  displayStyle: string;
 };
 
 export const JobDisplay = (props) => {
