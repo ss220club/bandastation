@@ -146,3 +146,11 @@
 /datum/job/chaplain/New()
 	. = ..()
 	alternate_titles += list(JOB_CHAPLAIN_RU)
+
+/datum/job/veteran_advisor/New()
+	. = ..()
+	alternate_titles += list(JOB_VETERAN_ADVISOR_RU)
+
+/datum/job/cargo_gorilla/New()
+	. = ..()
+	alternate_titles += list(JOB_CARGO_GORILLA_RU)

@@ -117,3 +117,9 @@
 
 /datum/id_trim/job/human_ai
 	assignment = JOB_HUMAN_AI_RU
+
+/datum/id_trim/job/veteran_advisor
+	assignment = JOB_VETERAN_ADVISOR_RU
+
+/datum/id_trim/job/cargo_gorilla
+	assignment = JOB_CARGO_GORILLA_RU
