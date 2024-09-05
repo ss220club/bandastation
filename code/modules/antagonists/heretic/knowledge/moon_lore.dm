@@ -234,8 +234,8 @@
 			to_chat(crewmate, span_boldwarning("Вознесение [user] влияет на слабовольных. Их разумы будут разрушены." ))
 			continue
 		// Mindshielded and anti-magic folks are immune against this effect because this is a magical mind effect
-		if(HAS_TRAIT(crewmate, TRAIT_MINDSHIELD) || crewmate.can_block_magic(MAGIC_RESISTANCE))
-			to_chat(crewmate, span_boldwarning("Вы чувствуете, что защитились от чего-то." ))
+		if(HAS_MIND_TRAIT(crewmate, TRAIT_UNCONVERTABLE) || crewmate.can_block_magic(MAGIC_RESISTANCE))
+			to_chat(crewmate, span_boldwarning("You feel shielded from something." ))
 			continue
 		if(amount_of_lunatics > length(GLOB.human_list) * 0.2)
 			to_chat(crewmate, span_boldwarning("Вы чувствуете неспокойство, как будто на мгновение что-то смотрело на вас." ))

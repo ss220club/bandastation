@@ -136,9 +136,9 @@
 
 /datum/heretic_knowledge/limited_amount/concierge_rite // item that creates 3 max at a time heretic only barriers, probably should limit to 1 only, holy people can also pass
 	name = "Concierge's Rite"
-	desc = "Позволяет трансмутировать белый карандаш, деревянную доску и мультитул, чтобы создать Справочник лабиринта. \
-		Оно может материализовать на расстоянии баррикаду, через которую могут пройти только вы и люди с сопротивлением против магии. 3 использования."
-	gain_text = "Консьерж записал мое имя в Справочник. \"Добро пожаловать в ваш новый дом, коллега Управляющий.\""
+	desc = "Allows you to transmute a stick of chalk, a wooden plank, and a multitool to create a Labyrinth Handbook. \
+		It can materialize a barricade at range that only you and people resistant to magic can pass. 3 uses."
+	gain_text = "The Concierge scribbled my name into the Handbook. \"Welcome to your new home, fellow Steward.\""
 	required_atoms = list(
 		/obj/item/toy/crayon/white = 1,
 		/obj/item/stack/sheet/mineral/wood = 1,
@@ -248,7 +248,7 @@
 	var/datum/action/cooldown/spell/shapeshift/eldritch/ascension/transform_spell = new(user.mind)
 	transform_spell.Grant(user)
 
-	var/datum/antagonist/heretic/heretic_datum = IS_HERETIC(user)
+	var/datum/antagonist/heretic/heretic_datum = GET_HERETIC(user)
 	var/datum/heretic_knowledge/blade_upgrade/flesh/lock/blade_upgrade = heretic_datum.get_knowledge(/datum/heretic_knowledge/blade_upgrade/flesh/lock)
 	blade_upgrade.chance += 30
 	new /obj/structure/lock_tear(loc, user.mind)
