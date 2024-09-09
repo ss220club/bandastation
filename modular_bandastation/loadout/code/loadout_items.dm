@@ -2,6 +2,10 @@
 	var/donator_level = 0
 	var/cost = 1
 
+/datum/loadout_item/to_ui_data()
+	. = ..()
+	.["cost"] = cost
+
 /datum/loadout_item/get_item_information()
 	. = ..()
 	if(donator_level)
