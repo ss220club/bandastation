@@ -70,11 +70,11 @@
 
 /datum/heretic_knowledge/spell/cosmic_runes
 	name = "Cosmic Runes"
-	desc = "Дает вам Cosmic Runes, заклинание, которое создает две руны, связанные друг с другом для легкой телепортации. \
-		Перемещаться будет только тот, кто активирует руну, а использовать ее может любой человек без Метки звезды. \
-		Однако люди с Меткой звезды будут переноситься вместе с тем, кто использует руну."
-	gain_text = "Далекие звезды закрались в мои сны, беспричинно ревя и крича. \
-		Я заговорил и услышал, как мои же слова отозвались эхом."
+	desc = "Grants you Cosmic Runes, a spell that creates two runes linked with each other for easy teleportation. \
+		Only the entity activating the rune will get transported, and it can be used by anyone without a star mark. \
+		However, people with a star mark will get transported along with another person using the rune."
+	gain_text = "The distant stars crept into my dreams, roaring and screaming without reason. \
+		I spoke, and heard my own words echoed back."
 	next_knowledge = list(
 		/datum/heretic_knowledge/summon/fire_shark,
 		/datum/heretic_knowledge/mark/cosmic_mark,

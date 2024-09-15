@@ -32,7 +32,7 @@
 	desc = "Этот диск содержит программу, которая позволяет превратиться в низшего пепельного дракона или белого медведя."
 
 /datum/orderable_item/bitrunning_tech/flip_skillchip
-	item_path = /obj/item/skillchip/matrix_flip
+	item_path = /obj/item/skillchip/matrix_taunt
 	cost_per_order = 2000
 
 /datum/orderable_item/bitrunning_tech/pka_mod

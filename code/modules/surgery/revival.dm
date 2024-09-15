@@ -104,8 +104,7 @@
 		span_notice("[user] посылает мощный удар в мозг [target] с помощью [tool.name]..."),
 	)
 	target.grab_ghost()
-	target.adjustOxyLoss(-50, 0)
-	target.updatehealth()
+	target.adjustOxyLoss(-50)
 	if(iscarbon(target))
 		var/mob/living/carbon/carbon_target = target
 		carbon_target.set_heartattack(FALSE)

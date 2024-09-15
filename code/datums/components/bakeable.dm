@@ -97,7 +97,7 @@
 
 	if(positive_result)
 		used_oven.visible_message(
-			span_notice("Вы чувствуете, как [used_oven.name] источает приятный запах."),
+			span_notice("Вы чувствуете, как [used_oven] источает приятный запах."),
 			blind_message = span_notice("Вы чувствуете приятный запах..."),
 			ignored_mobs = asomnia_hadders,
 		)

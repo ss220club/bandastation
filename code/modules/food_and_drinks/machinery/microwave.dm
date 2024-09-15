@@ -416,44 +416,56 @@
 		balloon_alert(user, "максимум 1 устройство!")
 		return ITEM_INTERACT_BLOCKING
 
-	if(istype(item, /obj/item/storage))
-		var/obj/item/storage/tray = item
-		var/loaded = 0
-
-		if(!istype(item, /obj/item/storage/bag/tray))
-			// Non-tray dumping requires a do_after
-			to_chat(user, span_notice("[item.name] выгружается прямо на [src.name]..."))
-			if(!do_after(user, 2 SECONDS, target = tray))
-				return ITEM_INTERACT_BLOCKING
-
-		for(var/obj/tray_item in tray.contents)
-			if(!IS_EDIBLE(tray_item))
-				continue
-			if(ingredients.len >= max_n_of_items)
-				balloon_alert(user, "заполнено!")
-				return ITEM_INTERACT_BLOCKING
-			if(tray.atom_storage.attempt_remove(tray_item, src))
-				loaded++
-				ingredients += tray_item
-		if(loaded)
-			open(autoclose = 0.6 SECONDS)
-			to_chat(user, span_notice("[loaded] вставлен. Цель - [src.name]."))
-			update_appearance()
-		return ITEM_INTERACT_SUCCESS
-
-	if(item.w_class <= WEIGHT_CLASS_NORMAL && !user.combat_mode)
+	if(item.w_class <= WEIGHT_CLASS_NORMAL && !user.combat_mode && isnull(item.atom_storage))
 		if(ingredients.len >= max_n_of_items)
-			balloon_alert(user, "заполнено!")
+			balloon_alert(user, "Заполнено!")
 			return ITEM_INTERACT_BLOCKING
 		if(!user.transferItemToLoc(item, src))
-			balloon_alert(user, "он застрял на твоей руке!")
+			balloon_alert(user, "приклеилось к вашей руке!")
 			return ITEM_INTERACT_BLOCKING
 
 		ingredients += item
 		open(autoclose = 0.6 SECONDS)
-		user.visible_message(span_notice("[user] добавил [item.name]. Цель - [src.name]."), span_notice("Вы добавили [item.name]. Цель - [src.name]."))
+		user.visible_message(span_notice("[user] добавляет [item] к [src]."), span_notice("[item] выгружается прямо в [src]..."))
 		update_appearance()
 		return ITEM_INTERACT_SUCCESS
+
+/obj/machinery/microwave/item_interaction_secondary(mob/living/user, obj/item/tool, list/modifiers)
+	if (isnull(tool.atom_storage))
+		return
+	handle_dumping(user, tool)
+	return ITEM_INTERACT_BLOCKING
+
+/obj/machinery/microwave/proc/handle_dumping(mob/living/user, obj/item/tool)
+	if(isnull(tool.atom_storage))
+		return
+
+	var/loaded = 0
+	if(!istype(tool, /obj/item/storage/bag/tray))
+		// Non-tray dumping requires a do_after
+		to_chat(user, span_notice("Вы начиаете опустошать содержимое [tool] в [src]..."))
+		if(!do_after(user, 2 SECONDS, target = tool))
+			return
+
+	for(var/obj/tray_item in tool.contents)
+		if(!IS_EDIBLE(tray_item))
+			continue
+		if(ingredients.len >= max_n_of_items)
+			balloon_alert(user, "Заполнено!")
+			return
+		if(tool.atom_storage.attempt_remove(tray_item, src))
+			loaded++
+			ingredients += tray_item
+
+	if(loaded)
+		open(autoclose = 0.6 SECONDS)
+		to_chat(user, span_notice("Вы вставляете [loaded] в [src]."))
+		update_appearance()
+
+/obj/machinery/microwave/mouse_drop_receive(obj/item/tool, mob/user, params)
+	if (!istype(tool) || isnull(tool.atom_storage))
+		return
+	handle_dumping(user, tool)
 
 /obj/machinery/microwave/attack_hand_secondary(mob/user, list/modifiers)
 	if(user.can_perform_action(src, ALLOW_SILICON_REACH))
