@@ -410,11 +410,6 @@
 				to_chat(living_mob, span_warning("[src] вне зоны вашего контроля!"))
 				return
 
-			if (amount > 1)
-				desired = tgui_input_number(living_mob, "Сколько предметов изъять?", "Получить", default = min(amount, 50), max_value = min(amount, 50))
-				if(!desired)
-					return
-
 			for(var/obj/item/dispensed_item in contents)
 				if(amount <= 0)
 					break
