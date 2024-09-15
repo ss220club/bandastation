@@ -1,13 +1,15 @@
 /datum/preferences
 	max_save_slots = 5
 	var/loadout_points = 0
+	// Костыль 1 - установка флага для костыля 2
+	var/can_save_donator_level = FALSE
 
 /datum/preferences/load_preferences()
 	. = ..()
 	get_loadout_points()
 
 /datum/preferences/proc/get_loadout_points()
-	var/donation_level = parent.get_donator_level()
+	var/donation_level = parent.donator_level
 	switch(donation_level)
 		if(0)
 			loadout_points = 5
@@ -22,3 +24,30 @@
 		if(5)
 			loadout_points = 20
 	return loadout_points
+
+/datum/preferences/load_preferences()
+	. = ..() // Вызов базовой загрузки
+
+	// Загрузка донаторского уровня из префов
+	var/donation_level = savefile.get_entry("donator_level", 0)
+	parent.donator_level = donation_level
+
+	return TRUE
+
+/datum/preferences/check_keybindings()
+	can_save_donator_level = FALSE
+	. = ..()
+	can_save_donator_level = TRUE
+
+/datum/preferences/save_preferences()
+	. = ..() // Вызов базового сохранения
+
+    // Костыль 2 - проверка что это не первый вызов (ибо первый приходится на проверку кейбиндов)
+	if(!can_save_donator_level)
+		return TRUE
+
+	// Сохранение донаторского уровня в префы
+	var/donation_level = parent.donator_level
+	savefile.set_entry("donator_level", donation_level)
+	savefile.save()
+	return TRUE

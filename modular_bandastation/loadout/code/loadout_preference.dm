@@ -15,6 +15,7 @@
 // Removes donator_level items from the user if their donator_level is insufficient
 /datum/preference/loadout/deserialize(input, datum/preferences/preferences)
 	. = ..()
+	// For loadout purposes, donator_level is updated in middleware on select
 	var/donator_level = preferences.parent.donator_level
 	var/total_cost = 0
 	var/removed_items = list()
