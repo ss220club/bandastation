@@ -7,6 +7,7 @@
 /client
 	/// Call `proc/get_donator_level()` instead to get a value when possible.
 	var/donator_level = 0
+	var/can_save_donator_level = FALSE
 	COOLDOWN_DECLARE(db_check_cooldown)
 
 // For unit-tests

@@ -1,8 +1,6 @@
 /datum/preferences
 	max_save_slots = 5
 	var/loadout_points = 0
-	// Костыль 1 - установка флага для костыля 2
-	var/can_save_donator_level = FALSE
 
 /datum/preferences/load_preferences()
 	. = ..()
@@ -38,7 +36,7 @@
 	. = ..() // Вызов базового сохранения
 
     // Костыль 2 - проверка что это не первый вызов (ибо первый приходится на проверку кейбиндов)
-	if(!can_save_donator_level)
+	if(!parent.can_save_donator_level)
 		return TRUE
 
 	// Сохранение донаторского уровня в префы
