@@ -34,11 +34,6 @@
 
 	return TRUE
 
-/datum/preferences/check_keybindings()
-	can_save_donator_level = FALSE
-	. = ..()
-	can_save_donator_level = TRUE
-
 /datum/preferences/save_preferences()
 	. = ..() // Вызов базового сохранения
 

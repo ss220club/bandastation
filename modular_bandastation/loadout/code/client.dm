@@ -47,6 +47,8 @@
 	if(query_get_donator_level.warn_execute() && length(query_get_donator_level.rows))
 		query_get_donator_level.NextRow()
 		amount = query_get_donator_level.item[1]
+		//Даем разрешение сохранять лодаут только после успешного запроса к СУБД
+		can_save_donator_level = TRUE
 	qdel(query_get_donator_level)
 
 	switch(amount)
