@@ -250,7 +250,7 @@ const LoadoutSelectedSection = (props: {
   const { act, data } = useBackend<LoadoutManagerData>();
   const { loadout_list } = data.character_preferences.misc;
   const { all_tabs, modifyItemDimmer, setModifyItemDimmer } = props;
-  const loadout_leftpoints = data.loadout_leftpoints || '0';
+  const loadout_leftpoints = data.loadout_leftpoints || '0'; // SS220 ADD - Lodout points
   return (
     <Section
       title="&nbsp;"
