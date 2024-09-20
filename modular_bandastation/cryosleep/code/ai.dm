@@ -3,7 +3,7 @@
 	set desc = "Перемещает текущий ИИ в криогенное хранилище, освобождая место для другого."
 	set category = "AI Commands"
 
-	if(incapacitated())
+	if(incapacitated)
 		return
 	if(tgui_alert(usr, "Войти в криогенный стазис? Вы станете призраком.", "Войти в криогенный стазис", list("Да", "Нет")) == "Да")
 		src.ghostize(FALSE)

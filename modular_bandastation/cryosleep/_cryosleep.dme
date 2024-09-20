@@ -7,5 +7,4 @@
 #include "code/cryopod.dm"
 #include "code/job.dm"
 #include "code/jobs.dm"
-#include "code/mind.dm"
 #include "code/mood.dm"

@@ -1,3 +1,14 @@
+GLOBAL_LIST_EMPTY(objectives)
+
+/datum/objective/New()
+	. = ..()
+	GLOB.objectives += src
+
+//Apparently objectives can be qdel'd. Learn a new thing every day
+/datum/objective/Destroy()
+	GLOB.objectives -= src
+	return ..()
+
 /obj/effect/mob_spawn/ghost_role
 	/// set this to make the spawner use the outfit.name instead of its name var for things like cryo announcements and ghost records
 	/// modifying the actual name during the game will cause issues with the GLOB.mob_spawners associative list
