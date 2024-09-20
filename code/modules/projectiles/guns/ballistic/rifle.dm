@@ -170,6 +170,27 @@
 	if(.)
 		name = "\improper Obrez Moderna" // wear it loud and proud
 
+/obj/item/gun/ballistic/rifle/boltaction/donkrifle
+	name = "\improper Donk Co. Jezail"
+	desc = "A mass-manufactured bolt-action sporting rifle with a distinctively long barrel. Powerful enough to take down a space bear from a thousand paces. The lengthened barrel gives it good accuracy and power, even at range."
+	w_class = WEIGHT_CLASS_HUGE
+	lefthand_file = 'icons/mob/inhands/weapons/64x_guns_left.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/64x_guns_right.dmi'
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	icon_state = "jezail"
+	inhand_icon_state = "jezail"
+	worn_icon_state = "jezail"
+	accepted_magazine_type = /obj/item/ammo_box/magazine/internal/boltaction/jezail
+	can_be_sawn_off = TRUE
+	sawn_desc = "A mass-manufactured bolt-action sporting rifle with a distinctively long barrel. Powerful enough to take down a space bear from a thousand paces. Its barrel has been cut off, so its power and accuracy have been impaired."
+
+/obj/item/gun/ballistic/rifle/boltaction/donkrifle/sawoff(mob/user) //the heavy price one pays for fitting this in a backpack
+	. = ..()
+	if(.)
+		projectile_damage_multiplier = 0.75
+		spread = 50
+
 /obj/item/gun/ballistic/rifle/rebarxbow
 	name = "Heated Rebar Crossbow"
 	desc = "Made from an inducer, iron rods, and some wire, this crossbow fires sharpened iron rods, made from the plentiful iron rods found stationwide. \
@@ -180,10 +201,9 @@
 	inhand_icon_state = "rebarxbow"
 	worn_icon_state = "rebarxbow"
 	rack_sound = 'sound/weapons/gun/sniper/rack.ogg'
-	must_hold_to_load = TRUE
 	mag_display = FALSE
 	empty_indicator = TRUE
-	bolt_type = BOLT_TYPE_LOCKING
+	bolt_type = BOLT_TYPE_OPEN
 	semi_auto = FALSE
 	internal_magazine = TRUE
 	can_modify_ammo = FALSE
@@ -229,9 +249,21 @@
 		return FALSE
 	return ..()
 
+/obj/item/gun/ballistic/rifle/rebarxbow/shoot_with_empty_chamber(mob/living/user)
+	if(chambered || !magazine || !length(magazine.contents))
+		return ..()
+	drop_bolt(user)
+
 /obj/item/gun/ballistic/rifle/rebarxbow/examine(mob/user)
 	. = ..()
 	. += "The crossbow is [bolt_locked ? "not ready" : "ready"] to fire."
+
+/obj/item/gun/ballistic/rifle/rebarxbow/update_overlays()
+	. = ..()
+	if(!magazine)
+		. += "[initial(icon_state)]" + "_empty"
+	if(!bolt_locked)
+		. += "[initial(icon_state)]" + "_bolt_locked"
 
 /obj/item/gun/ballistic/rifle/rebarxbow/forced
 	name = "Stressed Rebar Crossbow"

@@ -1,5 +1,5 @@
 export const JOBS_RU = {
-  Assistant: 'Гражданский',
+  Assistant: 'Ассистент',
   Prisoner: 'Заключенный',
   Captain: 'Капитан',
   'Head of Personnel': 'Глава персонала',
@@ -14,6 +14,10 @@ export const JOBS_RU = {
   Warden: 'Смотритель',
   Detective: 'Детектив',
   'Security Officer': 'Офицер',
+  'Security Officer (Cargo)': 'Офицер (Снабжение)',
+  'Security Officer (Engineering)': 'Офицер (Инженерия)',
+  'Security Officer (Medical)': 'Офицер (Медицина)',
+  'Security Officer (Science)': 'Офицер (Исследование)',
   'Station Engineer': 'Станционный инженер',
   'Atmospheric Technician': 'Атмосферный техник',
   Coroner: 'Коронер',

@@ -153,7 +153,7 @@
 				if(grab_state >= GRAB_NECK)
 					neckgrab_throw = TRUE
 				stop_pulling()
-				if(HAS_TRAIT(src, TRAIT_PACIFISM))
+				if(HAS_TRAIT(src, TRAIT_PACIFISM) || HAS_TRAIT(src, TRAIT_NO_THROWING))
 					to_chat(src, span_notice("You gently let go of [throwable_mob]."))
 					return FALSE
 	else
@@ -1206,7 +1206,7 @@
 	return bodyparts.len > 2 && ..()
 
 /mob/living/carbon/proc/hypnosis_vulnerable()
-	if(HAS_TRAIT(src, TRAIT_MINDSHIELD))
+	if(HAS_MIND_TRAIT(src, TRAIT_UNCONVERTABLE))
 		return FALSE
 	if(has_status_effect(/datum/status_effect/hallucination) || has_status_effect(/datum/status_effect/drugginess))
 		return TRUE

@@ -246,13 +246,13 @@
 		inhand_icon_state = "lantern-blue"
 		wisp.orbit(user, 20)
 		SSblackbox.record_feedback("tally", "wisp_lantern", 1, "Freed")
+		return
 
-	else
-		to_chat(user, span_notice("You return the wisp to the lantern."))
-		icon_state = "lantern-blue-on"
-		inhand_icon_state = "lantern-blue-on"
-		wisp.forceMove(src)
-		SSblackbox.record_feedback("tally", "wisp_lantern", 1, "Returned")
+	to_chat(user, span_notice("You return the wisp to the lantern."))
+	icon_state = "lantern-blue-on"
+	inhand_icon_state = "lantern-blue-on"
+	wisp.forceMove(src)
+	SSblackbox.record_feedback("tally", "wisp_lantern", 1, "Returned")
 
 /obj/item/wisp_lantern/Initialize(mapload)
 	. = ..()
@@ -278,26 +278,30 @@
 	light_flags = LIGHT_ATTACHED
 	layer = ABOVE_ALL_MOB_LAYER
 	plane = ABOVE_GAME_PLANE
-	var/sight_flags = SEE_MOBS
 	var/list/color_cutoffs = list(10, 25, 25)
 
 /obj/effect/wisp/orbit(atom/thing, radius, clockwise, rotation_speed, rotation_segments, pre_rotation, lockinorbit)
 	. = ..()
-	if(ismob(thing))
-		RegisterSignal(thing, COMSIG_MOB_UPDATE_SIGHT, PROC_REF(update_user_sight))
-		var/mob/being = thing
-		being.update_sight()
-		to_chat(thing, span_notice("The wisp enhances your vision."))
+	if(!ismob(thing))
+		return
+	var/mob/being = thing
+	RegisterSignal(being, COMSIG_MOB_UPDATE_SIGHT, PROC_REF(update_user_sight))
+	to_chat(being, span_notice("The wisp enhances your vision."))
+	ADD_TRAIT(being, TRAIT_THERMAL_VISION, REF(src))
+	being.update_sight()
 
 /obj/effect/wisp/stop_orbit(datum/component/orbiter/orbits)
-	. = ..()
-	if(ismob(orbits.parent))
-		UnregisterSignal(orbits.parent, COMSIG_MOB_UPDATE_SIGHT)
-		to_chat(orbits.parent, span_notice("Your vision returns to normal."))
+	if(!ismob(orbit_target))
+		return ..()
+	var/mob/being = orbit_target
+	UnregisterSignal(being, COMSIG_MOB_UPDATE_SIGHT)
+	to_chat(being, span_notice("Your vision returns to normal."))
+	REMOVE_TRAIT(being, TRAIT_THERMAL_VISION, REF(src))
+	being.update_sight()
+	return ..()
 
 /obj/effect/wisp/proc/update_user_sight(mob/user)
 	SIGNAL_HANDLER
-	user.add_sight(sight_flags)
 	if(!isnull(color_cutoffs))
 		user.lighting_color_cutoffs = blend_cutoff_colors(user.lighting_color_cutoffs, color_cutoffs)
 
@@ -553,7 +557,6 @@
 	var/obj/item/organ/external/wings/functional/wings = get_wing_choice(exposed_human, chest)
 	wings = new wings()
 	wings.Insert(exposed_human)
-	exposed_human.dna.species.handle_mutant_bodyparts(exposed_human)
 	playsound(exposed_human.loc, 'sound/items/poster_ripped.ogg', 50, TRUE, -1)
 	exposed_human.apply_damage(20, def_zone = BODY_ZONE_CHEST, forced = TRUE, wound_bonus = CANT_WOUND)
 	exposed_human.emote("scream")
@@ -618,6 +621,7 @@
 	min_cold_protection_temperature = GLOVES_MIN_TEMP_PROTECT
 	heat_protection = HANDS
 	max_heat_protection_temperature = GLOVES_MAX_TEMP_PROTECT
+	body_parts_covered = HANDS|ARMS
 	resistance_flags = LAVA_PROOF | FIRE_PROOF //they are from lavaland after all
 	armor_type = /datum/armor/gloves_gauntlets
 

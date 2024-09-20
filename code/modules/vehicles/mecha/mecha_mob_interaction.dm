@@ -20,7 +20,7 @@
 		moved_inside(M)
 
 /obj/vehicle/sealed/mecha/enter_checks(mob/M)
-	if(M.incapacitated())
+	if(M.incapacitated)
 		return FALSE
 	if(atom_integrity <= 0)
 		to_chat(M, span_warning("You cannot get in the [src], it has been destroyed!"))
@@ -41,7 +41,6 @@
 		return FALSE
 	if(ishuman(newoccupant) && !Adjacent(newoccupant))
 		return FALSE
-	add_occupant(newoccupant)
 	mecha_flags &= ~PANEL_OPEN //Close panel if open
 	newoccupant.forceMove(src)
 	newoccupant.update_mouse_pointer()

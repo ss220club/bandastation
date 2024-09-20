@@ -122,6 +122,8 @@
 	message = "строит гримасу."
 
 /datum/emote/living/jump
+	key = "jump"
+	key_third_person = "jumps"
 	name = "прыгнуть"
 	message = "прыгает!"
 
@@ -244,9 +246,9 @@
 	message = "машет рукой."
 
 /datum/emote/living/whimper
-	name = "скулить"
-	message = "скулит."
-	message_mime = "изображает скуление."
+	name = "хныкать"
+	message = "хнычет."
+	message_mime = "кажется, задет."
 
 /datum/emote/living/wsmile
 	name = "улыбнуться (слабо)"
@@ -346,7 +348,8 @@
 
 /datum/emote/living/carbon/scratch
 	name = "чесаться"
-	message = "чешится."
+	message = "чешется."
+	mob_type_allowed_typecache = list(/mob/living/carbon)
 
 /datum/emote/living/carbon/sign
 	name = "показать число"
@@ -406,9 +409,15 @@
 	message = "sadly can't find anybody to give daps to, and daps themself. Shameful."
 	message_param = "give daps to %t."
 
+/datum/emote/living/carbon/human/snuffle
+	key = "snuffle"
+	key_third_person = "snuffles"
+	name = "шмыгнуть"
+	message = "шмыгает носом"
+
 /datum/emote/living/carbon/human/eyebrow
 	name = "приподнять бровь"
-	message = "приподнимает брови."
+	message = "приподнимает бровь."
 
 /datum/emote/living/carbon/human/grumble
 	name = "ворчать"
