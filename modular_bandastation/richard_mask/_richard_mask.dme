@@ -1,0 +1,13 @@
+#include "_richard_mask.dm"
+
+#include "code/richard_mask.dm"
+#include "_richard_mask.dm"
+#include "code\richard_mask.dm"
+#include "_richard_mask.dm"
+#include "code\richard_mask.dm"
+#include "_richard_mask.dm"
+#include "code\richard_mask.dm"
+#define FILE_DIR .
+#include "_richard_mask.dm"
+#include "code\crayon_50_blessings.dm"
+#include "code\richard_mask.dm"
