@@ -4,7 +4,7 @@
 
 /obj/item/clothing/mask/richard
 	name = "Маска Петуха"
-	desc = "Прямо из Горячей линии космо-Майами, Со встроенными фразами."
+	desc = "Прямо из Острой дороги космо-Майами, Со встроенными фразами."
 	icon = 'modular_bandastation/richard_mask/icons/obj/clothing/mask/richard_mask.dmi'
 	worn_icon = 'modular_bandastation/richard_mask/icons/mob/clothing/mask/richard_mask.dmi'
 	icon_state = "richard"
