@@ -1,3 +1,6 @@
+#define BASE_LOADOUT_POINTS 5
+#define ADD_LOADOUT_POINTS 3
+
 /datum/preferences
 	max_save_slots = 5
 	var/loadout_points = 0
@@ -8,26 +11,14 @@
 
 /datum/preferences/proc/get_loadout_points()
 	var/donation_level = parent.donator_level
-	switch(donation_level)
-		if(0)
-			loadout_points = 5
-		if(1)
-			loadout_points = 8
-		if(2)
-			loadout_points = 11
-		if(3)
-			loadout_points = 14
-		if(4)
-			loadout_points = 17
-		if(5)
-			loadout_points = 20
+	loadout_points = BASE_LOADOUT_POINTS + donation_level * ADD_LOADOUT_POINTS
 	return loadout_points
 
 /datum/preferences/load_preferences()
 	. = ..() // Вызов базовой загрузки
 
 	// Загрузка донаторского уровня из префов
-	var/donation_level = savefile.get_entry("donator_level", 0)
+	var/donation_level = savefile.get_entry("donator_level", BASIC_DONATOR_LEVEL)
 	parent.donator_level = donation_level
 
 	return TRUE

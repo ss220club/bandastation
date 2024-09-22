@@ -3,10 +3,11 @@
 #define DONATION_TIER_3 1000
 #define DONATION_TIER_4 2220
 #define DONATION_TIER_5 10000
+#define BASIC_DONATOR_LEVEL 0
 
 /client
 	/// Call `proc/get_donator_level()` instead to get a value when possible.
-	var/donator_level = 0
+	var/donator_level = BASIC_DONATOR_LEVEL
 	var/can_save_donator_level = FALSE
 	COOLDOWN_DECLARE(db_check_cooldown)
 

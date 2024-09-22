@@ -1,5 +1,5 @@
 /datum/loadout_item
-	var/donator_level = 0
+	var/donator_level = BASIC_DONATOR_LEVEL
 	var/cost = 1
 
 /datum/loadout_item/to_ui_data()
