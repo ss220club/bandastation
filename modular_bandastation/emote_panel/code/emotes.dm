@@ -195,7 +195,7 @@
 	message = "самодовольно улыбается."
 
 /datum/emote/living/sniff
-	name = "шмыгнуть носом"
+	name = "шмыгнуть"
 	message = "шмыгает носом."
 	message_mime = "бесшумно шмыгает носом."
 
