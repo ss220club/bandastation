@@ -188,7 +188,7 @@
 		return SECONDARY_ATTACK_CALL_NORMAL
 
 	if(being_drained)
-		loc.balloon_alert(user, "already being drained!")
+		loc.balloon_alert(user, "уже добывается!")
 	else
 		INVOKE_ASYNC(src, PROC_REF(drain_influence), user, 1)
 
@@ -220,15 +220,15 @@
 /obj/effect/heretic_influence/proc/drain_influence(mob/living/user, knowledge_to_gain)
 
 	being_drained = TRUE
-	loc.balloon_alert(user, "draining influence...")
+	loc.balloon_alert(user, "добыча влияния...")
 
 	if(!do_after(user, 10 SECONDS, src, hidden = TRUE))
 		being_drained = FALSE
-		loc.balloon_alert(user, "interrupted!")
+		loc.balloon_alert(user, "прервано!")
 		return
 
 	// We don't need to set being_drained back since we delete after anyways
-	loc.balloon_alert(user, "influence drained")
+	loc.balloon_alert(user, "влияние добыто")
 
 	var/datum/antagonist/heretic/heretic_datum = GET_HERETIC(user)
 	heretic_datum.knowledge_points += knowledge_to_gain
@@ -242,7 +242,7 @@
 /obj/effect/heretic_influence/proc/after_drain(mob/living/user)
 	if(user)
 		to_chat(user, span_hypnophrase(pick_list(HERETIC_INFLUENCE_FILE, "drain_message")))
-		to_chat(user, span_warning("[src] begins to fade into reality!"))
+		to_chat(user, span_warning("[src] начинает проясняться в реальность!"))
 
 	var/obj/effect/visible_heretic_influence/illusion = new /obj/effect/visible_heretic_influence(drop_location())
 	illusion.name = "\improper" + pick_list(HERETIC_INFLUENCE_FILE, "drained") + " " + format_text(name)
