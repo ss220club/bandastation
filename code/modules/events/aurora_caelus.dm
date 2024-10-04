@@ -18,7 +18,7 @@
 	end_when = 80
 
 /datum/round_event/aurora_caelus/announce(fake)
-	priority_announce("[station_name()]: A harmless cloud of ions is approaching your station, and will exhaust their energy battering the hull. Nanotrasen has approved a short break for all employees to relax and observe this very rare event. During this time, starlight will be bright but gentle, shifting between quiet green and blue colors. Any staff who would like to view these lights for themselves may proceed to the area nearest to them with viewing ports to open space. We hope you enjoy the lights.",
+	priority_announce("[station_name()]: безобидное облако ионов приближается к вашей станции и истощает свою энергию, ударяя по корпусу. Компания Нанотрейзен одобрила небольшой перерыв для всех сотрудников, чтобы они могли расслабиться и понаблюдать за этим очень редким событием. В это время звездный свет будет ярким, но нежным, меняющимся между спокойными зелеными и синими цветами. Любой персонал, желающий увидеть эти огни самостоятельно, может пройти в ближайшую к ним зону со смотровыми иллюминаторами на космос. Мы надеемся, что вам понравится это явление.",
 	sound = 'sound/misc/notice2.ogg',
 	sender_override = "Nanotrasen Meteorology Division")
 	if (fake)
