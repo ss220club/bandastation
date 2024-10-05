@@ -256,7 +256,7 @@
 		parts += "<span class='redtext big'>[name] провалился!</span>"
 
 	if(length(carp))
-		parts += span_header("<br>Помощники [name.declent_ru(GENITIVE)]:")
+		parts += span_header("<br>Помощники [name]:")
 		parts += "<ul class='playerlist'>"
 		var/list/players_to_carp_taken = list()
 		for(var/datum/mind/carpy as anything in carp)
