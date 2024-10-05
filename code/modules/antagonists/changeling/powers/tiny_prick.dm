@@ -166,7 +166,7 @@
 
 	var/obj/item/held = target.get_active_held_item()
 	if(held && !target.dropItemToGround(held))
-		to_chat(user, span_warning("К руке цели прилип [held.name], вы не можете наложить на него ложный армблейд!"))
+		to_chat(user, span_warning("У цели нельзя снять [held.declent_ru(ACCUSATIVE)], вы не можете наложить на него ложный армблейд!"))
 		return
 
 	..()

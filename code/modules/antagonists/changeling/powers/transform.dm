@@ -14,7 +14,7 @@
 //ATTACK HAND IGNORING PARENT RETURN VALUE
 /obj/item/clothing/glasses/changeling/attack_hand(mob/user, list/modifiers)
 	if(loc == user && IS_CHANGELING(user))
-		to_chat(user, span_notice("Вы возвращаете [src.name] в свое тело."))
+		to_chat(user, span_notice("Вы возвращаете [declent_ru(ACCUSATIVE)] в свое тело."))
 		qdel(src)
 		return
 	. = ..()
@@ -29,7 +29,7 @@
 //ATTACK HAND IGNORING PARENT RETURN VALUE
 /obj/item/clothing/under/changeling/attack_hand(mob/user, list/modifiers)
 	if(loc == user && IS_CHANGELING(user))
-		to_chat(user, span_notice("Вы возвращаете [src.name] в свое тело."))
+		to_chat(user, span_notice("Вы возвращаете [declent_ru(ACCUSATIVE)] в свое тело."))
 		qdel(src)
 		return
 	. = ..()
@@ -45,7 +45,7 @@
 //ATTACK HAND IGNORING PARENT RETURN VALUE
 /obj/item/clothing/suit/changeling/attack_hand(mob/user, list/modifiers)
 	if(loc == user && IS_CHANGELING(user))
-		to_chat(user, span_notice("Вы возвращаете [src.name] в свое тело."))
+		to_chat(user, span_notice("Вы возвращаете [declent_ru(ACCUSATIVE)] в свое тело."))
 		qdel(src)
 		return
 	. = ..()
@@ -61,7 +61,7 @@
 //ATTACK HAND IGNORING PARENT RETURN VALUE
 /obj/item/clothing/head/changeling/attack_hand(mob/user, list/modifiers)
 	if(loc == user && IS_CHANGELING(user))
-		to_chat(user, span_notice("Вы возвращаете [src.name] в свое тело."))
+		to_chat(user, span_notice("Вы возвращаете [declent_ru(ACCUSATIVE)] в свое тело."))
 		qdel(src)
 		return
 	. = ..()
@@ -76,7 +76,7 @@
 //ATTACK HAND IGNORING PARENT RETURN VALUE
 /obj/item/clothing/shoes/changeling/attack_hand(mob/user, list/modifiers)
 	if(loc == user && IS_CHANGELING(user))
-		to_chat(user, span_notice("Вы возвращаете [src.name] в свое тело."))
+		to_chat(user, span_notice("Вы возвращаете [declent_ru(ACCUSATIVE)] в свое тело."))
 		qdel(src)
 		return
 	. = ..()
@@ -91,7 +91,7 @@
 //ATTACK HAND IGNORING PARENT RETURN VALUE
 /obj/item/clothing/gloves/changeling/attack_hand(mob/user, list/modifiers)
 	if(loc == user && IS_CHANGELING(user))
-		to_chat(user, span_notice("Вы возвращаете [src.name] в свое тело."))
+		to_chat(user, span_notice("Вы возвращаете [declent_ru(ACCUSATIVE)] в свое тело."))
 		qdel(src)
 		return
 	. = ..()
@@ -106,7 +106,7 @@
 //ATTACK HAND IGNORING PARENT RETURN VALUE
 /obj/item/clothing/mask/changeling/attack_hand(mob/user, list/modifiers)
 	if(loc == user && IS_CHANGELING(user))
-		to_chat(user, span_notice("Вы возвращаете [src.name] в свое тело."))
+		to_chat(user, span_notice("Вы возвращаете [declent_ru(ACCUSATIVE)] в свое тело."))
 		qdel(src)
 		return
 	. = ..()
@@ -122,7 +122,7 @@
 //ATTACK HAND IGNORING PARENT RETURN VALUE
 /obj/item/changeling/attack_hand(mob/user, list/modifiers)
 	if(loc == user && IS_CHANGELING(user))
-		to_chat(user, span_notice("Вы возвращаете [src.name] в свое тело."))
+		to_chat(user, span_notice("Вы возвращаете [declent_ru(ACCUSATIVE)] в свое тело."))
 		qdel(src)
 		return
 	. = ..()

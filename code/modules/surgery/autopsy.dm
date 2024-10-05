@@ -39,8 +39,8 @@
 		user,
 		target,
 		span_notice("Вы приступаете к вскрытию [target]..."),
-		span_notice("[user] использует [tool.name] для вскрытия [target]."),
-		span_notice("[user] использует [tool.name] на груди у [target]."),
+		span_notice("[user] использует [tool.declent_ru(ACCUSATIVE)] для вскрытия [target]."),
+		span_notice("[user] использует [tool.declent_ru(ACCUSATIVE)] на груди у [target]."),
 	)
 	display_pain(target, "Вы чувствуете жжение в груди!")
 

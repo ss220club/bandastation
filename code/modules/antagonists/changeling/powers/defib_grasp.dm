@@ -75,18 +75,18 @@
 				defibber.emote("scream")
 
 				changeling.visible_message(
-					span_bolddanger("[changeling] внезапно просыпается, выхватывает [defib.name] из рук [defibber] при этом отрывая [removed_arms >= 2 ? "их руки" : "одну из рук"][defibber.p_their()]!"),
+					span_bolddanger("[capitalize(changeling.declent_ru(NOMINATIVE))] внезапно просыпается, выхватывает [defib.declent_ru(ACCUSATIVE)] из рук [defibber.declent_ru(GENITIVE)] при этом отрывая [removed_arms >= 2 ? "их руки" : "одну из рук"][defibber.p_their()]!"),
 					vision_distance = COMBAT_MESSAGE_RANGE,
 					ignored_mobs = list(changeling, defibber),
 				)
-				to_chat(changeling, span_changeling("Сила [defib.name] проходит через нас, оживляя нас из стазиса! \
-					С этой вновь обретенной энергией мы отрываем [removed_arms >= 2 ? "руки " : "одну из рук "][defibber]!"))
-				to_chat(defibber, span_userdanger("[changeling] внезапно просыпается, отрывая [removed_arms >= 2 ? "ваши руки" : "одну из ваших рук"]!"))
+				to_chat(changeling, span_changeling("Сила [defib.declent_ru(GENITIVE)] проходит через нас, оживляя нас из стазиса! \
+					С этой вновь обретенной энергией мы отрываем [removed_arms >= 2 ? "руки " : "одну из рук "][defibber.declent_ru(GENITIVE)]!"))
+				to_chat(defibber, span_userdanger("[capitalize(changeling.declent_ru(NOMINATIVE))] внезапно просыпается, отрывая [removed_arms >= 2 ? "ваши руки" : "одну из ваших рук"]!"))
 				return // no default message if we got an arm
 
 	changeling.visible_message(
-		span_bolddanger("[changeling] внезапно просыпается!"),
+		span_bolddanger("[capitalize(changeling.declent_ru(NOMINATIVE))] внезапно просыпается!"),
 		vision_distance = COMBAT_MESSAGE_RANGE,
 		ignored_mobs = changeling,
 	)
-	to_chat(changeling, span_changeling("Сила [defib.name] проходит через нас, оживляя нас из стазиса!"))
+	to_chat(changeling, span_changeling("Сила [defib.declent_ru(GENITIVE)] проходит через нас, оживляя нас из стазиса!"))

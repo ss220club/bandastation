@@ -246,7 +246,7 @@
 	timeout = 60 SECONDS
 
 /datum/mood_event/sad_empath/add_effects(mob/sadtarget)
-	description = "[sadtarget.name] выглядит грустно..."
+	description = "[capitalize(sadtarget.declent_ru(NOMINATIVE))] выглядит грустно..."
 
 /datum/mood_event/sacrifice_bad
 	description = "Эти чертовы дикари!"

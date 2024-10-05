@@ -90,9 +90,9 @@
 	display_results(
 		user,
 		target,
-		span_notice("Вы готовитесь применить [tool.name] для воздействия на мозг [target]."),
-		span_notice("[user] готовится применить [tool.name] для воздействия на мозг."),
-		span_notice("[user] готовится применить [tool.name] для воздействия на мозг."),
+		span_notice("Вы готовитесь применить [tool.declent_ru(ACCUSATIVE)] для воздействия на мозг [target.declent_ru(GENITIVE)]."),
+		span_notice("[user] готовится применить [tool.declent_ru(ACCUSATIVE)] для воздействия на мозг."),
+		span_notice("[user] готовится применить [tool.declent_ru(ACCUSATIVE)] для воздействия на мозг."),
 	)
 	target.notify_revival("Кто-то пытается поразить ваш мозг.", source = target)
 
@@ -134,9 +134,9 @@
 	display_results(
 		user,
 		target,
-		span_notice("Вы успешно поразили мозг [target] при помощи [tool.name], но [target.p_they()] не реагирует."),
-		span_notice("[user] успешно поражает мозг [target] мощным ударом с помощью [tool.name], но [target.p_they()] не реагирует."),
-		span_notice("[user] успешно поражает мозг [target] мощным ударом с помощью [tool.name], но [target.p_they()] не реагирует."),
+		span_notice("Вы успешно поразили мозг [target.declent_ru(GENITIVE)] при помощи [tool.declent_ru(GENITIVE)], но [target.ru_p_they()] не реагирует."),
+		span_notice("[user] успешно поражает мозг [target.declent_ru(GENITIVE)] мощным ударом с помощью [tool.declent_ru(GENITIVE)], но [target.ru_p_they()] не реагирует."),
+		span_notice("[user] успешно поражает мозг [target.declent_ru(GENITIVE)] мощным ударом с помощью [tool.declent_ru(GENITIVE)], но [target.ru_p_they()] не реагирует."),
 	)
 	return FALSE
 

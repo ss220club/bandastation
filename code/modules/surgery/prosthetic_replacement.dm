@@ -41,11 +41,11 @@
 /datum/surgery_step/add_prosthetic/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	if(istype(tool, /obj/item/borg/apparatus/organ_storage))
 		if(!tool.contents.len)
-			to_chat(user, span_warning("Внутри [tool.name] ничего нет!"))
+			to_chat(user, span_warning("Внутри [tool.declent_ru(GENITIVE)] ничего нет!"))
 			return SURGERY_STEP_FAIL
 		var/obj/item/organ_storage_contents = tool.contents[1]
 		if(!isbodypart(organ_storage_contents))
-			to_chat(user, span_warning("[organ_storage_contents] не может быть прикреплен!"))
+			to_chat(user, span_warning("Нельзя прикрепить [organ_storage_contents.declent_ru(NOMINATIVE)]!"))
 			return SURGERY_STEP_FAIL
 		tool = organ_storage_contents
 	if(isbodypart(tool))
@@ -56,7 +56,7 @@
 				var/mob/living/carbon/human/human_target = target
 				var/obj/item/bodypart/chest/target_chest = human_target.get_bodypart(BODY_ZONE_CHEST)
 				if((!(bodypart_to_attach.bodyshape & target_chest.acceptable_bodyshape)) && (!(bodypart_to_attach.bodytype & target_chest.acceptable_bodytype)))
-					to_chat(user, span_warning("[bodypart_to_attach] не соответствует патологии пациента."))
+					to_chat(user, span_warning("[capitalize(bodypart_to_attach.declent_ru(NOMINATIVE))] не соответствует патологии пациента."))
 					return SURGERY_STEP_FAIL
 				if(bodypart_to_attach.check_for_frankenstein(target))
 					organ_rejection_dam = 30

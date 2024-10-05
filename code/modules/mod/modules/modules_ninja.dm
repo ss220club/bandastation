@@ -37,7 +37,7 @@
 /obj/item/mod/module/stealth/proc/unstealth(datum/source)
 	SIGNAL_HANDLER
 
-	to_chat(mod.wearer, span_warning("[capitalize(src.name)] отключается от контакта!"))
+	to_chat(mod.wearer, span_warning("[capitalize(src.declent_ru(NOMINATIVE))] отключается от контакта!"))
 	do_sparks(2, TRUE, src)
 	drain_power(use_energy_cost)
 	deactivate()
@@ -147,9 +147,9 @@
 
 /obj/item/mod/module/hacker/proc/charge_message(atom/drained_atom, drain_amount)
 	if(drain_amount)
-		to_chat(mod.wearer, span_notice("Получено <B>[drain_amount]</B> единиц энергии из [drained_atom.name]."))
+		to_chat(mod.wearer, span_notice("Получено <B>[drain_amount]</B> единиц энергии из [drained_atom.declent_ru(GENITIVE)]."))
 	else
-		to_chat(mod.wearer, span_warning("У [drained_atom.name] закончилась энергия, вы должны найти другой источник!"))
+		to_chat(mod.wearer, span_warning("У [drained_atom.declent_ru(GENITIVE)] закончилась энергия, вы должны найти другой источник!"))
 
 ///Weapon Recall - Teleports your katana to you, prevents gun use.
 /obj/item/mod/module/weapon_recall
@@ -185,7 +185,7 @@
 			balloon_alert(mod.wearer, "не удается найти оружие!")
 			return
 		set_weapon(weapon_to_link)
-		balloon_alert(mod.wearer, "[linked_weapon.name] связано")
+		balloon_alert(mod.wearer, "связь с [linked_weapon.declent_ru(INSTRUMENTAL)] установлена")
 		return
 	if(linked_weapon in mod.wearer.get_all_contents())
 		balloon_alert(mod.wearer, "уже у вас!")
@@ -198,7 +198,7 @@
 	linked_weapon.forceMove(linked_weapon.drop_location())
 	if(in_view)
 		do_sparks(5, FALSE, linked_weapon)
-		mod.wearer.visible_message(span_danger("[capitalize(linked_weapon.name)] летит в сторону [mod.wearer]!"),span_warning("Вы протягиваете руку и [linked_weapon.name] летит к вам!"))
+		mod.wearer.visible_message(span_danger("[capitalize(linked_weapon.declent_ru(NOMINATIVE))] летит в сторону [mod.wearer.declent_ru(GENITIVE)]!"), span_warning("Вы протягиваете руку, и [linked_weapon.declent_ru(NOMINATIVE)] летит к вам!"))
 		linked_weapon.throw_at(mod.wearer, distance+1, linked_weapon.throw_speed, mod.wearer)
 	else
 		recall_weapon()
@@ -212,16 +212,16 @@
 	linked_weapon.forceMove(get_turf(src))
 	var/alert = ""
 	if(mod.wearer.put_in_hands(linked_weapon))
-		alert = "[linked_weapon.name] телепортируется в вашу руку"
+		alert = "[linked_weapon.declent_ru(NOMINATIVE)] телепортируется в вашу руку"
 	else if(mod.wearer.equip_to_slot_if_possible(linked_weapon, ITEM_SLOT_BELT, disable_warning = TRUE))
-		alert = "[linked_weapon.name] закрепляется на вашем поясе"
+		alert = "[linked_weapon.declent_ru(NOMINATIVE)] закрепляется на вашем поясе"
 	else
-		alert = "[linked_weapon.name] телепортируется под вас"
+		alert = "[linked_weapon.declent_ru(NOMINATIVE)] телепортируется под вас"
 	if(caught)
 		if(mod.wearer.is_holding(linked_weapon))
-			alert = "вы ловите [linked_weapon.name]"
+			alert = "вы ловите [linked_weapon.declent_ru(ACCUSATIVE)]"
 		else
-			alert = "[linked_weapon.name] приземляется под вами"
+			alert = "[linked_weapon.declent_ru(NOMINATIVE)] приземляется под вами"
 	else
 		do_sparks(5, FALSE, linked_weapon)
 	if(alert)
