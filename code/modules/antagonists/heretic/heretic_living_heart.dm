@@ -44,7 +44,7 @@
 /datum/component/living_heart/proc/on_organ_removed(obj/item/organ/source, mob/living/carbon/old_owner)
 	SIGNAL_HANDLER
 
-	to_chat(old_owner, span_userdanger("Когда ваше живое [source.name] покидает ваше тело, вы чувствуете себя менее привязанным к Мансусу!"))
+	to_chat(old_owner, span_userdanger("Когда [source.declent_ru(NOMINATIVE)] у вас покидает ваше тело, вы чувствуете себя менее привязанным к Мансусу!"))
 	qdel(src)
 
 /**
@@ -146,7 +146,7 @@
 
 	// Let them know how to sacrifice people if they're able to be sac'd
 	if(tracked_mob.stat == DEAD)
-		to_chat(owner, span_hierophant("[tracked_mob] мертв. Принесите их к руне трансмутации \
+		to_chat(owner, span_hierophant("[capitalize(tracked_mob.declent_ru(NOMINATIVE))] в состоянии смерти. Принесите их к руне трансмутации \
 			и вызовите \"[sac_knowledge.name]\", чтобы принести их в жертву!"))
 
 	StartCooldown()

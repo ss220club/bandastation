@@ -134,8 +134,8 @@
 /// If successful, proceeds to complete the bounty.
 /datum/component/spy_uplink/proc/steal_process(atom/movable/stealing, mob/living/spy, datum/spy_bounty/bounty)
 	spy.visible_message(
-		span_warning("[spy] начинает сканирование [stealing.name] странным устройством..."),
-		span_notice("Вы начинаете сканировать [stealing.name], приготавливая его к отправке."),
+		span_warning("[capitalize(spy.declent_ru(NOMINATIVE))] начинает сканировать [stealing.declent_ru(ACCUSATIVE)] странным устройством..."),
+		span_notice("Вы начинаете сканировать [stealing.declent_ru(ACCUSATIVE)], приготавливая его к отправке."),
 	)
 
 	if(!do_after(spy, bounty.theft_time, stealing, interaction_key = REF(src), hidden = TRUE))
