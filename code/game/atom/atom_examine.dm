@@ -32,7 +32,7 @@
 		// Weird bit but ensures that if the final element has its own "and" we don't add another one
 		tag_string = english_list(tag_string, and_text = (findtext(tag_string[length(tag_string)], " и ")) ? ", " : " и ")
 		var/post_descriptor = examine_post_descriptor(user)
-		. += "[p_They()] [p_are()] a [tag_string] [examine_descriptor(user)][length(post_descriptor) ? " [jointext(post_descriptor, " ")]" : ""]."
+		. += "Это [tag_string] [examine_descriptor(user)][length(post_descriptor) ? " [jointext(post_descriptor, " ")]" : ""]."
 
 	if(reagents)
 		var/user_sees_reagents = user.can_see_reagents()
@@ -73,7 +73,7 @@
 
 /// What this atom should be called in examine tags
 /atom/proc/examine_descriptor(mob/user)
-	return "object"
+	return "объект"
 
 /// Returns a list of strings to be displayed after the descriptor
 /atom/proc/examine_post_descriptor(mob/user)
@@ -84,7 +84,7 @@
 	for(var/custom_material in custom_materials)
 		var/datum/material/current_material = GET_MATERIAL_REF(custom_material)
 		mats_list += span_tooltip("Объект сделан из [current_material.name].", current_material.name)
-	. += "сделан из: [english_list(mats_list)]"
+	. += ", сделанный из: [english_list(mats_list)]"
 
 /**
  * Called when a mob examines (shift click or verb) this atom twice (or more) within EXAMINE_MORE_WINDOW (default 1 second)
@@ -118,7 +118,7 @@
 	if(!isnull(override[EXAMINE_POSITION_BEFORE]))
 		override -= null // There is no article, don't try to join it
 		return "[jointext(override, " ")]"
-	return "[src.name]"
+	return "[src.declent_ru(ACCUSATIVE)]"
 
 /mob/living/get_examine_name(mob/user)
 	return get_visible_name()
@@ -153,4 +153,4 @@
 /// Used by mobs to determine the name for someone wearing a mask, or with a disfigured or missing face. By default just returns the atom's name. add_id_name will control whether or not we append "(as [id_name])".
 /// force_real_name will always return real_name and add (as face_name/id_name) if it doesn't match their appearance
 /atom/proc/get_visible_name(add_id_name, force_real_name)
-	return name
+	return declent_ru(ACCUSATIVE)
