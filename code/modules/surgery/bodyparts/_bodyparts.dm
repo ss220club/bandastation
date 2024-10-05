@@ -308,7 +308,7 @@
 
 	if(self_aware)
 		if(!shown_brute && !shown_burn)
-			status = "нет повреждений"
+			status = "никаких повреждений"
 		else
 			status = "[shown_brute] урона от ушибов и [shown_burn] урона от ожогов"
 

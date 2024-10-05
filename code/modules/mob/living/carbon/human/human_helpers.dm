@@ -23,7 +23,7 @@
 
 //gets name from ID or ID inside PDA or PDA itself
 //Useful when player do something with computers
-/mob/living/carbon/human/proc/get_authentification_name(if_no_id = "Unknown")
+/mob/living/carbon/human/proc/get_authentification_name(if_no_id = "Неизвестный")
 	var/obj/item/card/id/id = get_idcard(FALSE)
 	if(HAS_TRAIT(src, TRAIT_UNKNOWN))
 		return if_no_id
@@ -55,24 +55,24 @@
 			else
 				fake_name = id_name
 		if (HAS_TRAIT(src, TRAIT_UNKNOWN) || HAS_TRAIT(src, TRAIT_INVISIBLE_MAN) || (!face_name && !id_name))
-			fake_name = "Unknown"
-		return "[real_name][fake_name ? " (as [fake_name])" : ""]"
+			fake_name = "Неизвестный"
+		return "[real_name][fake_name ? " (как [fake_name])" : ""]"
 	if(HAS_TRAIT(src, TRAIT_UNKNOWN) || HAS_TRAIT(src, TRAIT_INVISIBLE_MAN))
-		return "Unknown"
+		return "Неизвестный"
 	if(face_name)
 		if(add_id_name && id_name && (id_name != face_name))
-			return "[face_name] (as [id_name])"
+			return "[face_name] (как [id_name])"
 		return face_name
 	if(id_name)
 		return id_name
-	return "Unknown"
+	return "Неизвестный"
 
 /// Returns "Unknown" if facially disfigured and real_name if not.
 /// Useful for setting name when Fluacided or when updating a human's name variable
-/mob/living/carbon/proc/get_face_name(if_no_face = "Unknown")
+/mob/living/carbon/proc/get_face_name(if_no_face = "Неизвестный")
 	return real_name
 
-/mob/living/carbon/human/get_face_name(if_no_face = "Unknown")
+/mob/living/carbon/human/get_face_name(if_no_face = "Неизвестный")
 	if(HAS_TRAIT(src, TRAIT_UNKNOWN))
 		return if_no_face //We're Unknown, no face information for you
 	for(var/obj/item/worn_item in get_equipped_items())
@@ -86,10 +86,10 @@
 
 //gets name from ID or PDA itself, ID inside PDA doesn't matter
 //Useful when player is being seen by other mobs
-/mob/living/carbon/proc/get_id_name(if_no_id = "Unknown")
+/mob/living/carbon/proc/get_id_name(if_no_id = "Неизвестный")
 	return
 
-/mob/living/carbon/human/get_id_name(if_no_id = "Unknown")
+/mob/living/carbon/human/get_id_name(if_no_id = "Неизвестный")
 	var/obj/item/storage/wallet/wallet = wear_id
 	var/obj/item/modular_computer/pda = wear_id
 	var/obj/item/card/id/id = wear_id

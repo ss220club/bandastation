@@ -2,13 +2,13 @@
 	/// If non-null, overrides a/an/some in all cases
 	var/article
 	/// Text that appears preceding the name in examine()
-	var/examine_thats = "That's"
+	var/examine_thats = "Это"
 
 /mob/living/carbon/human
-	examine_thats = "This is"
+	examine_thats = "Это"
 
 /mob/living/silicon/robot
-	examine_thats = "This is"
+	examine_thats = "Это"
 
 /**
  * Called when a mob examines (shift click or verb) this atom
@@ -30,7 +30,7 @@
 		for (var/atom_tag in tags_list)
 			tag_string += (isnull(tags_list[atom_tag]) ? atom_tag : span_tooltip(tags_list[atom_tag], atom_tag))
 		// Weird bit but ensures that if the final element has its own "and" we don't add another one
-		tag_string = english_list(tag_string, and_text = (findtext(tag_string[length(tag_string)], " and ")) ? ", " : " and ")
+		tag_string = english_list(tag_string, and_text = (findtext(tag_string[length(tag_string)], " и ")) ? ", " : " и ")
 		var/post_descriptor = examine_post_descriptor(user)
 		. += "[p_They()] [p_are()] a [tag_string] [examine_descriptor(user)][length(post_descriptor) ? " [jointext(post_descriptor, " ")]" : ""]."
 
@@ -40,21 +40,21 @@
 		if(!(reagent_sigreturn & STOP_GENERIC_REAGENT_EXAMINE))
 			if(reagents.flags & TRANSPARENT)
 				if(reagents.total_volume)
-					. += "It contains <b>[reagents.total_volume]</b> units of various reagents[user_sees_reagents ? ":" : "."]"
+					. += "Имеется <b>[reagents.total_volume]</b> юнитов различных химикатов[user_sees_reagents ? ":" : "."]"
 					if(user_sees_reagents || (reagent_sigreturn & ALLOW_GENERIC_REAGENT_EXAMINE)) //Show each individual reagent for detailed examination
 						for(var/datum/reagent/current_reagent as anything in reagents.reagent_list)
-							. += "&bull; [round(current_reagent.volume, CHEMICAL_VOLUME_ROUNDING)] units of [current_reagent.name]"
+							. += "&bull; [round(current_reagent.volume, CHEMICAL_VOLUME_ROUNDING)] юнитов [current_reagent.name]"
 						if(reagents.is_reacting)
-							. += span_warning("It is currently reacting!")
-						. += span_notice("The solution's pH is [round(reagents.ph, 0.01)] and has a temperature of [reagents.chem_temp]K.")
+							. += span_warning("Оно сейчас вступает в реакцию!")
+						. += span_notice("pH раствора равен [round(reagents.ph, 0.01)] и имеет температуру в [reagents.chem_temp]K.")
 
 				else
-					. += "It contains:<br>Nothing."
+					. += "Внутри:<br>Ничего."
 			else if(reagents.flags & AMOUNT_VISIBLE)
 				if(reagents.total_volume)
-					. += span_notice("It has [reagents.total_volume] unit\s left.")
+					. += span_notice("Имеется [reagents.total_volume] юнитов.")
 				else
-					. += span_danger("It's empty.")
+					. += span_danger("Пусто.")
 
 	SEND_SIGNAL(src, COMSIG_ATOM_EXAMINE, user, .)
 
@@ -83,8 +83,8 @@
 	var/mats_list = list()
 	for(var/custom_material in custom_materials)
 		var/datum/material/current_material = GET_MATERIAL_REF(custom_material)
-		mats_list += span_tooltip("It is made out of [current_material.name].", current_material.name)
-	. += "made of [english_list(mats_list)]"
+		mats_list += span_tooltip("Объект сделан из [current_material.name].", current_material.name)
+	. += "сделан из: [english_list(mats_list)]"
 
 /**
  * Called when a mob examines (shift click or verb) this atom twice (or more) within EXAMINE_MORE_WINDOW (default 1 second)
@@ -117,8 +117,8 @@
 		return jointext(override, " ")
 	if(!isnull(override[EXAMINE_POSITION_BEFORE]))
 		override -= null // There is no article, don't try to join it
-		return "\a [jointext(override, " ")]"
-	return "\a [src]"
+		return "[jointext(override, " ")]"
+	return "[src.name]"
 
 /mob/living/get_examine_name(mob/user)
 	return get_visible_name()
