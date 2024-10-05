@@ -118,15 +118,15 @@
 	if(!current_bake_time) //Not baked yet
 		if(positive_result)
 			if(initial(bake_result.gender) == PLURAL)
-				examine_list += span_notice("Это [source.name]. [capitalize(initial(bake_result.name))] могут быть [span_bold("приготовлены")] из нее.")
+				examine_list += span_notice("Это [source.name]. [capitalize(initial(bake_result.name))] могут быть [span_bold("приготовлены")] из [parent.declent_ru(GENITIVE)].")
 			else
 				examine_list += span_notice("Это [source.name]. [capitalize(span_bold("Готовится"))] в [initial(bake_result.name)].")
 		return
 
 	if(positive_result)
 		if(current_bake_time <= required_bake_time * 0.75)
-			examine_list += span_notice("Наверное, [source.name] нужно выпекать немного дольше!")
+			examine_list += span_notice("Наверное, [source.declent_ru(ACCUSATIVE)] нужно выпекать немного дольше!")
 		else if(current_bake_time <= required_bake_time)
-			examine_list += span_notice("Кажется, что [source.name] почти готов!")
+			examine_list += span_notice("Кажется, что блюдо '[source.name]' почти готово!")
 	else
 		examine_list += span_danger("[source.name] не стоит засовывать в духовку.")

@@ -99,9 +99,9 @@
 
 		if(reagents.total_volume > 0)
 			if(can_see_insides)
-				examine_list += span_notice("Содержимое [src] имеет температуру в [reagents.chem_temp]K.")
+				examine_list += span_notice("Содержимое [src.name] имеет температуру в [reagents.chem_temp]K.")
 			else if(reagents.chem_temp > WATER_BOILING_POINT) // boiling point
-				examine_list += span_notice("Содержимое [src] кипит.")
+				examine_list += span_notice("Содержимое [src.name] кипит.")
 
 	else
 		examine_list += "Ничего."
@@ -139,7 +139,7 @@
 			loaded++
 			LAZYADD(added_ingredients, tray_item)
 	if(loaded)
-		to_chat(user, span_notice("Вы добавляете [loaded] в [src.name]."))
+		to_chat(user, span_notice("Вы добавляете [loaded.name] в [src.name]."))
 		update_appearance(UPDATE_OVERLAYS)
 	return TRUE
 

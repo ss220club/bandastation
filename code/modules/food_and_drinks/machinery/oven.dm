@@ -104,7 +104,7 @@
 		return ..()
 
 	if(user.transferItemToLoc(item, src, silent = FALSE))
-		to_chat(user, span_notice("Вы положили [item] в [src]."))
+		to_chat(user, span_notice("Вы положили [item.name] в [src.name]."))
 		add_tray_to_oven(item, user)
 
 /obj/machinery/oven/item_interaction(mob/living/user, obj/item/item, list/modifiers)
@@ -154,13 +154,13 @@
 	if(open)
 		playsound(src, 'sound/machines/oven/oven_open.ogg', 75, TRUE)
 		set_smoke_state(OVEN_SMOKE_STATE_NONE)
-		to_chat(user, span_notice("Вы открыли [src]."))
+		to_chat(user, span_notice("Вы открыли [src.name]."))
 		end_processing()
 		if(used_tray)
 			used_tray.vis_flags &= ~VIS_HIDE
 	else
 		playsound(src, 'sound/machines/oven/oven_close.ogg', 75, TRUE)
-		to_chat(user, span_notice("Вы закрыли [src]."))
+		to_chat(user, span_notice("Вы закрыли [src.name]."))
 		if(used_tray)
 			begin_processing()
 			used_tray.vis_flags |= VIS_HIDE
@@ -179,13 +179,13 @@
 	if(open)
 		playsound(src, 'sound/machines/oven/oven_open.ogg', 75, TRUE)
 		set_smoke_state(OVEN_SMOKE_STATE_NONE)
-		to_chat(user, span_notice("Вы открыли [src]."))
+		to_chat(user, span_notice("Вы открыли [src.name]."))
 		end_processing()
 		if(used_tray)
 			used_tray.vis_flags &= ~VIS_HIDE
 	else
 		playsound(src, 'sound/machines/oven/oven_close.ogg', 75, TRUE)
-		to_chat(user, span_notice("Вы закрыли [src]."))
+		to_chat(user, span_notice("Вы закрыли [src.name]."))
 		if(used_tray)
 			begin_processing()
 			used_tray.vis_flags |= VIS_HIDE
@@ -284,7 +284,7 @@
 			loaded++
 			AddToPlate(tray_item, user)
 	if(loaded)
-		to_chat(user, span_notice("[loaded] вставлен. Цель - [src.name]."))
+		to_chat(user, span_notice("[loaded.name] вставлен. Цель - [src.name]."))
 		update_appearance()
 		return ITEM_INTERACT_SUCCESS
 	return ITEM_INTERACT_BLOCKING

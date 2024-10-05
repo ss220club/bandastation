@@ -222,7 +222,7 @@
 			balloon_alert(user, "нет топлива!")
 			return ITEM_INTERACT_BLOCKING
 		if(!user.transferItemToLoc(weapon, src))
-			balloon_alert(user, "[weapon] у тебя в руках!")
+			balloon_alert(user, "[weapon.name] у тебя в руках!")
 			return ITEM_INTERACT_BLOCKING
 
 		//add the item on the grill
