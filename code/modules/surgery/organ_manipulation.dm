@@ -247,11 +247,11 @@
 		display_results(
 			user,
 			target,
-			span_notice("You insert [tool] into [target]'s [target.parse_zone_with_bodypart(target_zone)]."),
-			span_notice("[user] inserts [tool] into [target]'s [target.parse_zone_with_bodypart(target_zone)]!"),
-			span_notice("[user] inserts something into [target]'s [target.parse_zone_with_bodypart(target_zone)]!"),
+			span_notice("Вы установили [tool.name] в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
+			span_notice("[user] установил [tool.name] в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]!"),
+			span_notice("[user] установил что-то в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]!"),
 		)
-		display_pain(target, "Your [target.parse_zone_with_bodypart(target_zone)] throbs with pain as your new [tool.name] comes to life!")
+		display_pain(target, "Ваша <i>[target.parse_zone_with_bodypart(target_zone)]</i> болит, пока [tool.name] приживается к телу!")
 		target_organ.on_surgical_insertion(user, target, target_zone, tool)
 
 	else if(current_type == "extract")

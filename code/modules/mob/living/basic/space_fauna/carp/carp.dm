@@ -271,7 +271,7 @@
 ///Wild carp that just vibe ya know
 /mob/living/basic/carp/passive
 	name = "false carp"
-	desc = "A close relative of the space carp which is entirely toothless and feeds by stealing its cousin's leftovers."
+	desc = "Беззубый близкий родственник космического карпа. Питается путем воровства остатков из добычи своего кузена."
 
 	icon_state = "base_friend"
 	icon_living = "base_friend"

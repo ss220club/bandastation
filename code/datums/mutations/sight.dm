@@ -110,8 +110,8 @@
 ///X-ray Vision lets you see through walls.
 /datum/mutation/human/xray
 	name = "X Ray Vision"
-	desc = "A strange genome that allows the user to see between the spaces of walls." //actual x-ray would mean you'd constantly be blasting rads, which might be fun for later //hmb
-	text_gain_indication = span_notice("The walls suddenly disappear!")
+	desc = "Странный геном, который позволяет его обладателю видеть пространство между стенами." //actual x-ray would mean you'd constantly be blasting rads, which might be fun for later //hmb
+	text_gain_indication = span_notice("Стены вдруг исчезли!")
 	instability = POSITIVE_INSTABILITY_MAJOR
 	locked = TRUE
 

@@ -40,10 +40,10 @@
 		"uplink": "Вам предоставлены инструменты для работы в виде стандартного аплинка синдиката."
 	},
 	"Donk Corporation": {
-		"allies": "Members of Waffle Corp. are to be killed on sight; they are not allowed to be on the station while we're around.",
-		"goal": "We do not approve of mindless killing of innocent workers; \"get in, get done, get out\" is our motto.",
-		"introduction": "You are the Donk Co. Traitor.",
-		"roundend_report": "was an employee from Donk Corporation.",
+		"allies": "Членов Waffle Corp. следует уничтожать на месте; им не разрешено находиться на станции, когда мы вокруг.",
+		"goal": "Мы не одобряем бессмысленного убийства невинных работников; \"зайти, сделать дело, уйти\" - наш девиз.",
+		"introduction": "Вы предатель из Donk Co.",
+		"roundend_report": "был сотрудником Donk Corporation.",
 		"ui_theme": "syndicate",
 		"uplink": "Вам был предоставлен стандартный аплинк для выполнения вашей задачи."
 	},
@@ -97,10 +97,10 @@
 		"uplink_name": "книга Хай-лургиксона"
 	},
 	"Waffle Corporation": {
-		"allies": "Members of Donk Co. are to be killed on sight; they are not allowed to be on the station while we're around. Do not trust fellow members of the Waffle.co (but try not to rat them out), as they might have been assigned opposing objectives.",
-		"goal": "You are not here for a station-wide demonstration. Again, other Waffle Corp. Traitors may be, so watch out. Your job is to only accomplish your objectives.",
-		"introduction": "You are the Waffle Corp. Traitor.",
-		"roundend_report": "was an employee from Waffle Corporation.",
+		"allies": "Членов Donk Co. следует уничтожать на месте; им не разрешено находиться на станции, когда мы тут. Не доверяйте своим соратникам из Waffle.co (но попробуйте не выдавать их), так как они могли получить противоположные задачи.",
+		"goal": "Вы здесь не для большой все-станционной демонстранции. Опять же, другие агенты Waffle Corp. могут присуствовать, так что будьте аккуратнее. Ваша задача – достичь своих целей.",
+		"introduction": "Вы предатель из Waffle Corp.",
+		"roundend_report": "был сотрудником Waffle Corporation.",
 		"ui_theme": "syndicate",
 		"uplink": "Вам был предоставлен стандартный аплинк для выполнения вашей задачи."
 	},

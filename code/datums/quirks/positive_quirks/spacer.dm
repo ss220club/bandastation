@@ -3,11 +3,11 @@
 
 /datum/quirk/spacer_born
 	name = "Spacer"
-	desc = "You were born in space, and have never known the comfort of a planet's gravity. Your body has adapted to this. \
-		You are more comfortable in zero and artificial gravity and are more resistant to the effects of space, \
-		but travelling to a planet's surface for an extended period of time will make you feel sick."
-	gain_text = span_notice("You feel at home in space.")
-	lose_text = span_danger("You feel homesick.")
+	desc = "Вы родились в космосе и никогда не знали, что такое планетарная гравитация. Ваше тело приспособилось к этому. \
+		Вы чувствуете себя более комфортно в условиях нулевой и искусственной гравитации и более устойчивы к воздействию космоса, \
+		но длительное пребывание на поверхности планеты приведет к тому, что вы почувствуете себя плохо."
+	gain_text = span_notice("В космосе вы чувствуете себя как рыба в воде.")
+	lose_text = span_danger("Кажется, в космосе уже не так комфортно, как раньше.")
 	icon = FA_ICON_USER_ASTRONAUT
 	value = 7
 	quirk_flags = QUIRK_HUMAN_ONLY|QUIRK_CHANGES_APPEARANCE
