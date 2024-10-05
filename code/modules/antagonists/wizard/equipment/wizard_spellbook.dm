@@ -69,7 +69,7 @@
 		if(user.mind?.special_role == ROLE_WIZARD_APPRENTICE)
 			to_chat(user, span_warning("Если бы вас поймают за подглядыванием в книгу заклинаний вашего учителя, то, скорее всего, вас отчислять из Академии волшебников. Лучше не стоит."))
 		else
-			to_chat(user, span_warning("Вы не признаетесь владельцем [declent_ru(GENITIVE)], и она не собирается открываться!"))
+			to_chat(user, span_warning("Вы не признаетесь владельцем [declent_ru(GENITIVE)], и не собирается открываться!"))
 		return
 
 	return ..()
