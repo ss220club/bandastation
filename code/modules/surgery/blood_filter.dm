@@ -85,8 +85,8 @@
 	display_results(
 		user,
 		target,
-		span_notice("[capitalize(tool.declent_ru(NOMINATIVE))] сигнализирует о завершении фильтрация крови у [target]."),
-		span_notice("[capitalize(tool.declent_ru(NOMINATIVE))] сигнализирует об окончании перекачивания крови у [target]."),
+		span_notice("[capitalize(tool.declent_ru(NOMINATIVE))] сигнализирует о завершении фильтрация крови у [target.declent_ru(GENITIVE)]."),
+		span_notice("[capitalize(tool.declent_ru(NOMINATIVE))] сигнализирует об окончании перекачивания крови у [target.declent_ru(GENITIVE)]."),
 		span_notice("[capitalize(tool.declent_ru(NOMINATIVE))] сигнализирует об окончании перекачивания крови."),
 	)
 

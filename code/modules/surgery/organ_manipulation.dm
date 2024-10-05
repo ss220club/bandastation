@@ -190,6 +190,7 @@
 		)
 		display_pain(target, "Вы чувствуете, как что-то вставили в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у вас!")
 
+
 	else if(implement_type in implements_extract)
 		current_type = "extract"
 		var/list/unfiltered_organs = target.get_organs_for_zone(target_zone)

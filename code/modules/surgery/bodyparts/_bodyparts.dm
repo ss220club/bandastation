@@ -374,17 +374,17 @@
 			if(!human_victim.get_bodypart(body_zone))
 				user.temporarilyRemoveItemFromInventory(src, TRUE)
 				if(!try_attach_limb(victim))
-					to_chat(user, span_warning("Тело [human_victim] отвергает [declent_ru(ACCUSATIVE)]!"))
+					to_chat(user, span_warning("Тело [human_victim.declent_ru(GENITIVE)] отвергает [declent_ru(ACCUSATIVE)]!"))
 					forceMove(human_victim.loc)
 					return
 				if(check_for_frankenstein(victim))
 					bodypart_flags |= BODYPART_IMPLANTED
 				if(human_victim == user)
-					human_victim.visible_message(span_warning("[human_victim] вклинивает [declent_ru(ACCUSATIVE)] в пустой сокет на своём теле!"),\
+					human_victim.visible_message(span_warning("[capitalize(human_victim.declent_ru(NOMINATIVE))] вклинивает [declent_ru(ACCUSATIVE)] в пустой сокет на своём теле!"),\
 					span_notice("Вы вставляете [declent_ru(GENITIVE)] в свой пустой сокет, и [declent_ru(NOMINATIVE)] встаёт на место!"))
 				else
-					human_victim.visible_message(span_warning("[user] вклинивает [declent_ru(ACCUSATIVE)] в пустой сокет на теле [human_victim]!"),\
-					span_notice("[user] вставляет [declent_ru(GENITIVE)] в свой пустой сокет, и [declent_ru(NOMINATIVE)] встаёт на место!"))
+					human_victim.visible_message(span_warning("[capitalize(user.declent_ru(NOMINATIVE))] вклинивает [declent_ru(ACCUSATIVE)] в пустой сокет на теле [human_victim.declent_ru(GENITIVE)]!"),\
+					span_notice("[capitalize(user.declent_ru(NOMINATIVE))] вставляет [declent_ru(GENITIVE)] в свой пустой сокет, и [declent_ru(NOMINATIVE)] встаёт на место!"))
 				return
 	return ..()
 

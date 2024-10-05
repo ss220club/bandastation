@@ -63,13 +63,13 @@
 	surgery_effects_mood = TRUE
 
 /datum/surgery_step/reshape_face/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	user.visible_message(span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает изменять внешний вид у [target]."), span_notice("Вы начинаете изменять внешний вид у [target]..."))
+	user.visible_message(span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает изменять внешний вид у [target.declent_ru(GENITIVE)]."), span_notice("Вы начинаете изменять внешний вид у [target.declent_ru(GENITIVE)]..."))
 	display_results(
 		user,
 		target,
-		span_notice("Вы начинаете изменять внешний вид у [target]..."),
-		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает изменять внешний вид у [target]."),
-		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает делать надрез на лице [target]."),
+		span_notice("Вы начинаете изменять внешний вид у [target.declent_ru(GENITIVE)]..."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает изменять внешний вид у [target.declent_ru(GENITIVE)]."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает делать надрез на лице у [target.declent_ru(GENITIVE)]."),
 	)
 	display_pain(target, "Вы чувствуете острую боль на лице!")
 
@@ -79,7 +79,7 @@
 		display_results(
 			user,
 			target,
-			span_notice("Вы успешно восстановили внешний вид лица у [target]."),
+			span_notice("Вы успешно восстановили внешний вид лица у [target.declent_ru(GENITIVE)]."),
 			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно восстанавливает внешний вид лица у [target.declent_ru(GENITIVE)]!"),
 			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] заканчивает проводить операцию на лице у [target.declent_ru(GENITIVE)]."),
 		)
