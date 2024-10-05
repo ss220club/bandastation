@@ -432,7 +432,7 @@
 			if(victim.dropItemToGround(stealing))
 				victim.visible_message(
 					span_danger("Из руки [victim.declent_ru(GENITIVE)] выдергивается [stealing.declent_ru(NOMINATIVE)] с помощью [declent_ru(GENITIVE)]!"),
-					span_userdanger("[capitalize(src.declent_ru(NOMINATIVE))] утягивается к [stealing.declent_ru(DATIVE)]!"),
+					span_userdanger("[capitalize(declent_ru(NOMINATIVE))] утягивается к [stealing.declent_ru(DATIVE)]!"),
 				)
 				return on_hit(stealing) //grab the item as if you had hit it directly with the tentacle
 

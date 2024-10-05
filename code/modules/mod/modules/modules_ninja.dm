@@ -37,7 +37,7 @@
 /obj/item/mod/module/stealth/proc/unstealth(datum/source)
 	SIGNAL_HANDLER
 
-	to_chat(mod.wearer, span_warning("[capitalize(src.declent_ru(NOMINATIVE))] отключается от контакта!"))
+	to_chat(mod.wearer, span_warning("[capitalize(declent_ru(NOMINATIVE))] отключается от контакта!"))
 	do_sparks(2, TRUE, src)
 	drain_power(use_energy_cost)
 	deactivate()
