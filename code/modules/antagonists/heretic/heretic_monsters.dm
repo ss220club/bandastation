@@ -8,7 +8,7 @@
 	antag_hud_name = "heretic_beast"
 	suicide_cry = "МОЙ ХОЗЯИН УЛЫБАЕТСЯ МНЕ!!"
 	show_in_antagpanel = FALSE
-	stinger_sound = 'sound/ambience/antag/heretic/heretic_gain.ogg'
+	stinger_sound = 'sound/music/antag/heretic/heretic_gain.ogg'
 	/// Our master (a heretic)'s mind.
 	var/datum/mind/master
 

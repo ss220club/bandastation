@@ -90,7 +90,7 @@
 
 	var/turf/target_turf = get_turf(target)
 	SEND_SIGNAL(target_turf, COMSIG_ATOM_MAGICALLY_UNLOCKED, src, source)
-	playsound(target, 'sound/magic/hereticknock.ogg', 100, TRUE, -1)
+	playsound(target, 'sound/effects/magic/hereticknock.ogg', 100, TRUE, -1)
 
 	return COMPONENT_USE_HAND
 
@@ -240,7 +240,7 @@
 	priority_announce(
 		text = "Пространственная аномалия Дельта-класса обнар[generate_heretic_text()] Реальность разрушена, разорвана. Врата открыты, двери открыты, [user.real_name] вознесся! Бойтесь нашествия! [generate_heretic_text()]",
 		title = "[generate_heretic_text()]",
-		sound = 'sound/ambience/antag/heretic/ascend_knock.ogg',
+		sound = 'sound/music/antag/heretic/ascend_knock.ogg',
 		color_override = "pink",
 	)
 

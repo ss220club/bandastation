@@ -178,22 +178,22 @@
 	var/area/user_area = get_area(user)
 	if(!(user_area.type in objective.scan_areas))
 		balloon_alert(user, "неверная область!")
-		playsound(user, 'sound/machines/buzz-sigh.ogg', 30, TRUE)
+		playsound(user, 'sound/machines/buzz/buzz-sigh.ogg', 30, TRUE)
 		return
 
 	if(!objective.scan_areas[user_area.type])
 		balloon_alert(user, "место уже отсканированно!")
-		playsound(user, 'sound/machines/buzz-sigh.ogg', 30, TRUE)
+		playsound(user, 'sound/machines/buzz/buzz-sigh.ogg', 30, TRUE)
 		return
 
-	user.visible_message(span_danger("[user] нажимает несколько кнопок на [src], и предмет начинает зловеще пищать!"), span_notice("Вы активируете [src] и начинаете сканировать местность. Не выходите [get_area_name(user, TRUE)], пока сканирование не завершится!"))
-	playsound(user, 'sound/machines/triple_beep.ogg', 30, TRUE)
+	user.visible_message(span_danger("[user.declent_ru(NOMINATIVE)] нажимает несколько кнопок на [src.declent_ru(PREPOSITIONAL)], и предмет начинает зловеще пищать!"), span_notice("Вы активируете [src.declent_ru(ACCUSATIVE)] и начинаете сканировать местность. Не выходите [get_area_name(user, TRUE)], пока сканирование не завершится!"))
+	playsound(user, 'sound/machines/beep/triple_beep.ogg', 30, TRUE)
 	var/alertstr = span_userdanger("Сетевое оповещение: обнаружена попытка анализирование сети станции[user_area?" в [get_area_name(user, TRUE)]":". Невозможно определить местоположение"].")
 	for(var/mob/living/silicon/ai/ai_player in GLOB.player_list)
 		to_chat(ai_player, alertstr)
 
 	if(!do_after(user, 30 SECONDS, src, IGNORE_USER_LOC_CHANGE | IGNORE_TARGET_LOC_CHANGE | IGNORE_HELD_ITEM | IGNORE_INCAPACITATED | IGNORE_SLOWDOWNS, extra_checks = CALLBACK(src, PROC_REF(scan_checks), user, user_area, objective), hidden = TRUE))
-		playsound(user, 'sound/machines/buzz-sigh.ogg', 30, TRUE)
+		playsound(user, 'sound/machines/buzz/buzz-sigh.ogg', 30, TRUE)
 		return
 
 	playsound(user, 'sound/machines/ding.ogg', 100, TRUE)

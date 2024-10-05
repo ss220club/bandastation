@@ -329,7 +329,7 @@
 	priority_announce(
 		text = "[generate_heretic_text()] Вечно закручивающийся вихрь. Реальность развернулась. С ВЫТЯНУТЫМИ РУКАМИ, ВЛАСТЕЛИН НОЧИ, [user.real_name] вознесся! Бойтесь вечно изгибающейся руки! [generate_heretic_text()]",
 		title = "[generate_heretic_text()]",
-		sound = 'sound/ambience/antag/heretic/ascend_flesh.ogg',
+		sound = 'sound/music/antag/heretic/ascend_flesh.ogg',
 		color_override = "pink",
 	)
 

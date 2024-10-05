@@ -40,8 +40,8 @@
 	time = 64
 	surgery_effects_mood = TRUE
 	preop_sound = list(
-		/obj/item/circular_saw = 'sound/surgery/saw.ogg',
-		/obj/item = 'sound/surgery/scalpel1.ogg',
+		/obj/item/circular_saw = 'sound/items/handling/surgery/saw.ogg',
+		/obj/item = 'sound/items/handling/surgery/scalpel1.ogg',
 	)
 
 /datum/surgery_step/cut_fat/mechanic
@@ -54,8 +54,8 @@
 		/obj/item/knife = 45,
 		/obj/item/shard = 35,
 	)
-	preop_sound = 'sound/items/ratchet.ogg'
-	success_sound = 'sound/machines/doorclick.ogg'
+	preop_sound = 'sound/items/tools/ratchet.ogg'
+	success_sound = 'sound/machines/airlock/doorclick.ogg'
 
 /datum/surgery_step/cut_fat/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	user.visible_message(span_notice("[user] начинает отрезать лишний жир у [target]."), span_notice("Вы начинаете отрезать лишний жир у [target]..."))
@@ -88,8 +88,8 @@
 		TOOL_WIRECUTTER = 35,
 	)
 	time = 32
-	preop_sound = 'sound/surgery/retractor1.ogg'
-	success_sound = 'sound/surgery/retractor2.ogg'
+	preop_sound = 'sound/items/handling/surgery/retractor1.ogg'
+	success_sound = 'sound/items/handling/surgery/retractor2.ogg'
 
 /datum/surgery_step/remove_fat/mechanic
 	name = "включите клапан очистки (отвертка или ключ)" //gross
@@ -99,8 +99,8 @@
 		TOOL_WIRECUTTER = 35,
 		TOOL_RETRACTOR = 35,
 	)
-	preop_sound = 'sound/items/ratchet.ogg'
-	success_sound = 'sound/surgery/organ2.ogg'
+	preop_sound = 'sound/items/tools/ratchet.ogg'
+	success_sound = 'sound/items/handling/surgery/organ2.ogg'
 
 /datum/surgery_step/remove_fat/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	display_results(

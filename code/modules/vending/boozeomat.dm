@@ -85,19 +85,13 @@
 
 	product_slogans = "Надеюсь, никто не попросит меня о чёртовой кружке чая...;Алкоголь - друг человека. Вы же не бросите друга?;Очень рад вас обслужить!;Никто на этой станции не хочет выпить?"
 	product_ads = "Выпьем!;Бухло пойдёт вам на пользу!;Алкоголь - друг человека.;Очень рад вас обслужить!;Хотите отличного холодного пива?;Ничто так не лечит, как бухло!;Пригубите!;Выпейте!;Возьмите пивка!;Пиво пойдёт вам на пользу!;Только лучший алкоголь!;Бухло лучшего качества с 2053 года!;Вино со множеством наград!;Максимум алкоголя!;Твоё любимое пиво.;Тост: «За прогресс!»"
-	req_access = list(ACCESS_BAR)
 	refill_canister = /obj/item/vending_refill/boozeomat
 	default_price = PAYCHECK_CREW * 0.9
 	extra_price = PAYCHECK_COMMAND
 	payment_department = ACCOUNT_SRV
 	light_mask = "boozeomat-light-mask"
 
-/obj/machinery/vending/boozeomat/all_access
-	desc = "A technological marvel, supposedly able to mix just the mixture you'd like to drink the moment you ask for one. This model appears to have no access restrictions."
-	req_access = null
-
-/obj/machinery/vending/boozeomat/syndicate_access
-	req_access = list(ACCESS_SYNDICATE)
+/obj/machinery/vending/boozeomat/syndicate
 	age_restrictions = FALSE
 	initial_language_holder = /datum/language_holder/syndicate
 

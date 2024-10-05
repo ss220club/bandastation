@@ -153,8 +153,9 @@
 	RemoveElement(/datum/element/heretic_focus)
 
 	if(isliving(loc))
+		REMOVE_TRAIT(loc, TRAIT_RESISTLOWPRESSURE, REF(src))
 		loc.balloon_alert(loc, "плащ скрыт")
-		loc.visible_message(span_notice("Свет смещается вокруг [loc], делая надетый плащ невидимым!"))
+		loc.visible_message(span_notice("Свет смещается вокруг [loc.declent_ru(GENITIVE)], делая надетый плащ невидимым!"))
 
 /// Makes our cloak "visible" again.
 /obj/item/clothing/suit/hooded/cultrobes/void/proc/make_visible()
@@ -163,5 +164,6 @@
 	AddElement(/datum/element/heretic_focus)
 
 	if(isliving(loc))
+		ADD_TRAIT(loc, TRAIT_RESISTLOWPRESSURE, REF(src))
 		loc.balloon_alert(loc, "плащ раскрыт")
-		loc.visible_message(span_notice("Калейдоскоп цветов рассыпается вокруг [loc], и внезапно появляется надетый плащ!"))
+		loc.visible_message(span_notice("Калейдоскоп цветов рассыпается вокруг [loc.declent_ru(GENITIVE)], и внезапно появляется надетый плащ!"))

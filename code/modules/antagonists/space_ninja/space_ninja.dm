@@ -101,7 +101,7 @@
 
 /datum/antagonist/ninja/greet()
 	. = ..()
-	SEND_SOUND(owner.current, sound('sound/effects/ninja_greeting.ogg'))
+	SEND_SOUND(owner.current, sound('sound/music/antag/ninja_greeting.ogg'))
 	to_chat(owner.current, span_danger("Я элитный наёмник из могущественного клана Паука!"))
 	to_chat(owner.current, span_warning("Неожиданность - мое оружие. Тень - моя броня. Без них, Я - ничто."))
 	to_chat(owner.current, span_notice("Станция находится в [dir2text(get_dir(owner.current, locate(world.maxx/2, world.maxy/2, owner.current.z)))]. Брошенный сюрикен станет отличным способом попасть туда."))
@@ -114,12 +114,12 @@
 	equip_space_ninja(owner.current)
 	owner.current.add_quirk(/datum/quirk/freerunning)
 	owner.current.add_quirk(/datum/quirk/light_step)
-	owner.current.mind.set_assigned_role(SSjob.GetJobType(/datum/job/space_ninja))
+	owner.current.mind.set_assigned_role(SSjob.get_job_type(/datum/job/space_ninja))
 	owner.current.mind.special_role = ROLE_NINJA
 	return ..()
 
 /datum/antagonist/ninja/admin_add(datum/mind/new_owner,mob/admin)
-	new_owner.set_assigned_role(SSjob.GetJobType(/datum/job/space_ninja))
+	new_owner.set_assigned_role(SSjob.get_job_type(/datum/job/space_ninja))
 	new_owner.special_role = ROLE_NINJA
 	new_owner.add_antag_datum(src)
 	message_admins("[key_name_admin(admin)] has ninja'ed [key_name_admin(new_owner)].")

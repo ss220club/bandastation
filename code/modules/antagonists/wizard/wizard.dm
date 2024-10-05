@@ -15,6 +15,7 @@ GLOBAL_LIST_EMPTY(wizard_spellbook_purchases_by_key)
 	can_assign_self_objectives = TRUE
 	default_custom_objective = "Продемонстрируйте свои невероятные и разрушительные магические способности."
 	hardcore_random_bonus = TRUE
+
 	var/give_objectives = TRUE
 	var/strip = TRUE //strip before equipping
 	var/allow_rename = TRUE
@@ -124,7 +125,7 @@ GLOBAL_LIST_EMPTY(wizard_spellbook_purchases_by_key)
 	if(!owner.current)
 		return
 	if(!GLOB.wizardstart.len)
-		SSjob.SendToLateJoin(owner.current)
+		SSjob.send_to_late_join(owner.current)
 		to_chat(owner, "ПРЯМО СЕЙЧАС, ПОШЕЛ ПОШЕЛ ПОШЕЛ")
 	owner.current.forceMove(pick(GLOB.wizardstart))
 
@@ -443,10 +444,10 @@ GLOBAL_LIST_EMPTY(wizard_spellbook_purchases_by_key)
 /datum/team/wizard/roundend_report()
 	var/list/parts = list()
 
-	parts += "<span class='header'>Волшебниками/ведьмами из команды [master_wizard.owner.name] были:</span>"
+	parts += span_header("Волшебниками/ведьмами из команды [master_wizard.owner.declent_ru(GENITIVE)] были:")
 	parts += master_wizard.roundend_report()
 	parts += " "
-	parts += "<span class='header'>[master_wizard.owner.name] - учениками и помощниками были:</span>"
+	parts += span_header("Учениками и помощниками [master_wizard.owner.declent_ru(GENITIVE)] были:")
 	parts += printplayerlist(members - master_wizard.owner)
 
 	return "<div class='panel redborder'>[parts.Join("<br>")]</div>"

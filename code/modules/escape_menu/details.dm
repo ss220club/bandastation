@@ -35,7 +35,7 @@ GLOBAL_DATUM(escape_menu_details, /atom/movable/screen/escape_menu/details)
 		<span style='text-align: right; line-height: 0.7'>
 			Номер раунда: [GLOB.round_id || "Unset"]<br />
 			Продолжительность раунда: [ROUND_TIME()]<br />
-			Карта: [SSmapping.config?.map_name || "Загрузка..."]<br />
+			Карта: [SSmapping.current_map.map_name || "Загрузка..."]<br />
 			Time Dilation: [round(SStime_track.time_dilation_current,1)]%<br />
 		</span>
 	"}
