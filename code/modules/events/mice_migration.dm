@@ -21,7 +21,7 @@
 
 	priority_announce("Из-за [cause], [plural] [name] [movement] \
 		в [location].", "Оповещение о миграции",
-		'sound/creatures/mousesqueek.ogg')
+		'sound/mobs/non-humanoids/mouse/mousesqueek.ogg')
 
 /datum/round_event/mice_migration/start()
 	SSminor_mapping.trigger_migration(rand(minimum_mice, maximum_mice))

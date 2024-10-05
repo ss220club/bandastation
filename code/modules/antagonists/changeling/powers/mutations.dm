@@ -53,8 +53,8 @@
 	if(istype(hand_item, weapon_type))
 		user.temporarilyRemoveItemFromInventory(hand_item, TRUE) //DROPDEL will delete the item
 		if(!silent)
-			playsound(user, 'sound/effects/blobattack.ogg', 30, TRUE)
-			user.visible_message(span_warning("С отвратительным хрустом, [user] превращает [weapon_name_simple] в руку!"), span_notice("Мы ассимилируем [weapon_name_simple] обратно в наше тело."), "<span class='italics>Вы слышите, как рвется и разрывается органическая масса!</span>")
+			playsound(user, 'sound/effects/blob/blobattack.ogg', 30, TRUE)
+			user.visible_message(span_warning("С отвратительным хрустом, [user] превращает [weapon_name_simple] в руку!"), span_notice("Мы ассимилируем [weapon_name_simple] обратно в наше тело."), span_italics("Вы слышите, как рвется и разрывается органическая масса!"))
 		user.update_held_items()
 		return TRUE
 
@@ -81,7 +81,7 @@
 	var/obj/item/W = new weapon_type(user, silent)
 	user.put_in_hands(W)
 	if(!silent)
-		playsound(user, 'sound/effects/blobattack.ogg', 30, TRUE)
+		playsound(user, 'sound/effects/blob/blobattack.ogg', 30, TRUE)
 	return W
 
 
@@ -196,7 +196,7 @@
 	throwforce = 0 //Just to be on the safe side
 	throw_range = 0
 	throw_speed = 0
-	hitsound = 'sound/weapons/bladeslice.ogg'
+	hitsound = 'sound/items/weapons/bladeslice.ogg'
 	attack_verb_continuous = list("attacks", "slashes", "stabs", "slices", "tears", "lacerates", "rips", "dices", "cuts")
 	attack_verb_simple = list("attack", "slash", "stab", "slice", "tear", "lacerate", "rip", "dice", "cut")
 	sharpness = SHARP_EDGED
@@ -236,9 +236,9 @@
 			return
 
 		if(opening.hasPower())
-			user.visible_message(span_warning("[user] втыкает [src.name] в шлюз и начинает его вскрывать!"), span_warning("Мы силой начинаем открывать [opening.name]."), \
+			user.visible_message(span_warning("[user] втыкает [src.declent_ru(ACCUSATIVE)] в шлюз и начинает его вскрывать!"), span_warning("Мы силой начинаем открывать [opening.declent_ru(ACCUSATIVE)]."), \
 			span_hear("Вы слышите металлический скрип."))
-			playsound(opening, 'sound/machines/airlock_alien_prying.ogg', 100, TRUE)
+			playsound(opening, 'sound/machines/airlock/airlock_alien_prying.ogg', 100, TRUE)
 			if(!do_after(user, 10 SECONDS, target = opening))
 				return
 		//user.say("Heeeeeeeeeerrre's Johnny!")
@@ -341,7 +341,7 @@
 	damage = 0
 	damage_type = BRUTE
 	range = 8
-	hitsound = 'sound/weapons/shove.ogg'
+	hitsound = 'sound/items/weapons/shove.ogg'
 	var/chain
 	var/obj/item/ammo_casing/magic/tentacle/source //the item that shot it
 	///Click params that were used to fire the tentacle shot
@@ -498,6 +498,7 @@
 	lefthand_file = 'icons/mob/inhands/antag/changeling_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/antag/changeling_righthand.dmi'
 	block_chance = 50
+	is_bashable = FALSE
 
 	var/remaining_uses //Set by the changeling ability.
 
@@ -511,7 +512,7 @@
 	if(remaining_uses < 1)
 		if(ishuman(loc))
 			var/mob/living/carbon/human/H = loc
-			H.visible_message(span_warning("С жутким хрустом [H] превращает свой щит в руку!"), span_notice("Мы ассимилируем наш щит в наше тело"), "<span class='italics>Вы слышите, как рвется и разрывается органическая масса!</span>")
+			H.visible_message(span_warning("С жутким хрустом [H] превращает свой щит в руку!"), span_notice("Мы ассимилируем наш щит в наше тело"), span_italics("Вы слышите, как рвется и разрывается органическая масса!"))
 		qdel(src)
 		return 0
 	else
@@ -635,7 +636,7 @@
 		return
 	visible_message(span_boldwarning("Когда в [src.name] [user] запихивает [attacking_item.name], [src.name] начинает мутировать."))
 	var/mob/living/carbon/wearer = loc
-	playsound(wearer, 'sound/effects/attackblob.ogg', 60, TRUE)
+	playsound(wearer, 'sound/effects/blob/attackblob.ogg', 60, TRUE)
 	wearer.temporarilyRemoveItemFromInventory(wearer.head, TRUE)
 	wearer.equip_to_slot_if_possible(new /obj/item/clothing/head/helmet/changeling_hivehead/legion(wearer), ITEM_SLOT_HEAD, 1, 1, 1)
 	qdel(attacking_item)
@@ -673,8 +674,8 @@
 
 ///Our tell that we're using this ability. Usually a sound and a visible message.area
 /datum/action/cooldown/hivehead_spawn_minions/proc/do_tell()
-	owner.visible_message(span_warning("Голова [owner] начинает гудеть, когда из нее начинают вылетать пчелы!"), span_warning("Мы выпускаем пчел."), span_hear("Вы слышите громкий жужжащий звук!"))
-	playsound(owner, 'sound/creatures/bee_swarm.ogg', 60, TRUE)
+	owner.visible_message(span_warning("Голова [owner.declent_ru(GENITIVE)] начинает гудеть, когда из нее начинают вылетать пчелы!"), span_warning("Мы выпускаем пчел."), span_hear("Вы слышите громкий жужжащий звук!"))
+	playsound(owner, 'sound/mobs/non-humanoids/bee/bee_swarm.ogg', 60, TRUE)
 
 ///Stuff we want to do to our minions. This is in its own proc so subtypes can override this behaviour.
 /datum/action/cooldown/hivehead_spawn_minions/proc/minion_additional_changes(mob/living/basic/minion)
@@ -700,8 +701,8 @@
 	spawn_count = 4
 
 /datum/action/cooldown/hivehead_spawn_minions/legion/do_tell()
-	owner.visible_message(span_warning("Голова [owner] начинает трястись, когда из нее начинает появлятся легион!"), span_warning("Мы выпускаем легион."), span_hear("Вы слышите громкий хлюпающий звук!"))
-	playsound(owner, 'sound/effects/attackblob.ogg', 60, TRUE)
+	owner.visible_message(span_warning("Голова [owner.declent_ru(GENITIVE)] начинает трястись, когда из нее начинает появлятся легион!"), span_warning("Мы выпускаем легион."), span_hear("Вы слышите громкий хлюпающий звук!"))
+	playsound(owner, 'sound/effects/blob/attackblob.ogg', 60, TRUE)
 
 /datum/action/cooldown/hivehead_spawn_minions/legion/minion_additional_changes(mob/living/basic/minion)
 	var/mob/living/basic/legion_brood/brood = minion

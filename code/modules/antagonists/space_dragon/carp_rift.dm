@@ -141,7 +141,7 @@
 		. += span_notice("В этом разломе находится [carp_stored] карпов для вселения призраков.")
 
 /obj/structure/carp_rift/play_attack_sound(damage_amount, damage_type = BRUTE, damage_flag = 0)
-	playsound(src, 'sound/magic/lightningshock.ogg', 50, TRUE)
+	playsound(src, 'sound/effects/magic/lightningshock.ogg', 50, TRUE)
 
 /obj/structure/carp_rift/Destroy()
 	STOP_PROCESSING(SSobj, src)

@@ -255,7 +255,7 @@
 	priority_announce(
 		text = "[generate_heretic_text()] Бойтесь разложения, ведь Повелитель ржавчины, [user.real_name] вознесся! Никто не избежит коррозии! [generate_heretic_text()]",
 		title = "[generate_heretic_text()]",
-		sound = 'sound/ambience/antag/heretic/ascend_rust.ogg',
+		sound = 'sound/music/antag/heretic/ascend_rust.ogg',
 		color_override = "pink",
 	)
 	trigger(loc)

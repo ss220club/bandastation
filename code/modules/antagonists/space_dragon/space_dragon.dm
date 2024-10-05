@@ -37,7 +37,7 @@
 					Сегодня, мы потушим один из этих огоньков.</b>")
 	to_chat(owner, span_boldwarning("У вас имеется пять минут, чтобы найти безопасное место для открытия первого разрыва. Если не успеете, вас вернет в бездну, из которой вы прибыли."))
 	owner.announce_objectives()
-	owner.current.playsound_local(get_turf(owner.current), 'sound/magic/demon_attack1.ogg', 80)
+	owner.current.playsound_local(get_turf(owner.current), 'sound/effects/magic/demon_attack1.ogg', 80)
 
 /datum/antagonist/space_dragon/forge_objectives()
 	var/static/list/area/allowed_areas
@@ -67,12 +67,12 @@
 	forge_objectives()
 	rift_ability = new()
 	owner.special_role = ROLE_SPACE_DRAGON
-	owner.set_assigned_role(SSjob.GetJobType(/datum/job/space_dragon))
+	owner.set_assigned_role(SSjob.get_job_type(/datum/job/space_dragon))
 	return ..()
 
 /datum/antagonist/space_dragon/on_removal()
 	owner.special_role = null
-	owner.set_assigned_role(SSjob.GetJobType(/datum/job/unassigned))
+	owner.set_assigned_role(SSjob.get_job_type(/datum/job/unassigned))
 	return ..()
 
 /datum/antagonist/space_dragon/apply_innate_effects(mob/living/mob_override)
@@ -142,7 +142,7 @@
 	if(riftTimer >= maxRiftTimer)
 		to_chat(owner.current, span_boldwarning("Вы не успели огкрыть разрыв! Бездна затягивает вас обратно!"))
 		destroy_rifts()
-		SEND_SOUND(owner.current, sound('sound/magic/demon_dies.ogg'))
+		SEND_SOUND(owner.current, sound('sound/effects/magic/demon_dies.ogg'))
 		owner.current.death(/* gibbed = */ TRUE)
 		QDEL_NULL(owner.current)
 
@@ -182,7 +182,7 @@
 	main_objective?.completed = TRUE
 	priority_announce("Огромное количество форм жизни надвигается в сторону [station_name()] с невероятной скоростью. \
 		Оставшемуся экипажу необходимо эвакуироваться как можно скорее.", "[command_name()]: Отдел Изучения Дикой Природы", has_important_message = TRUE)
-	sound_to_playing_players('sound/creatures/space_dragon_roar.ogg', volume = 75)
+	sound_to_playing_players('sound/mobs/non-humanoids/space_dragon/space_dragon_roar.ogg', volume = 75)
 	for(var/obj/structure/carp_rift/rift as anything in rift_list)
 		rift.carp_stored = 999999
 		rift.time_charged = rift.max_charge
@@ -256,7 +256,7 @@
 		parts += "<span class='redtext big'>[name] провалился!</span>"
 
 	if(length(carp))
-		parts += "<br><span class='header'>Помощники [name]:</span>"
+		parts += span_header("<br>Помощники [name]:")
 		parts += "<ul class='playerlist'>"
 		var/list/players_to_carp_taken = list()
 		for(var/datum/mind/carpy as anything in carp)

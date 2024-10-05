@@ -60,9 +60,9 @@
 	medical_record_text = "При физическом осмотре было обнаружено, что орган пациента, [slot_string], заменен бюджетным протезом. \
 		Известно, что удаление этих органов опасно как для пациента, так и для врача."
 	old_organ = human_holder.get_organ_slot(organ_slot)
-	if(prosthetic.Insert(human_holder, special = TRUE))
-		old_organ.moveToNullspace()
-		STOP_PROCESSING(SSobj, old_organ)
+	prosthetic.Insert(human_holder, special = TRUE)
+	old_organ.moveToNullspace()
+	STOP_PROCESSING(SSobj, old_organ)
 
 /datum/quirk/prosthetic_organ/post_add()
 	to_chat(quirk_holder, span_boldannounce("Ваш орган, [slot_string], был замен дешевым протезом. Он слаб и крайне нестабилен. \

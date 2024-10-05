@@ -76,11 +76,11 @@
 		return FALSE
 	if(!inserted_scan_id)
 		status_report = "Пожалуйста, вставьте сначала ID карту."
-		playsound(loc, 'sound/machines/synth_no.ogg', 30 , TRUE)
+		playsound(loc, 'sound/machines/synth/synth_no.ogg', 30 , TRUE)
 		return FALSE
 	if(!inserted_scan_id.registered_account.civilian_bounty)
 		status_report = "Пожалуйста, возьмите сначала новый заказ."
-		playsound(loc, 'sound/machines/synth_no.ogg', 30 , TRUE)
+		playsound(loc, 'sound/machines/synth/synth_no.ogg', 30 , TRUE)
 		return FALSE
 	status_report = "Гражданский заказ: "
 	var/obj/machinery/piratepad/civilian/pad = pad_ref?.resolve()
@@ -89,10 +89,10 @@
 			continue
 		if(inserted_scan_id.registered_account.civilian_bounty.applies_to(AM))
 			status_report += "Цель применима."
-			playsound(loc, 'sound/machines/synth_yes.ogg', 30 , TRUE)
+			playsound(loc, 'sound/machines/synth/synth_yes.ogg', 30 , TRUE)
 			return
 	status_report += "Цель неприменима."
-	playsound(loc, 'sound/machines/synth_no.ogg', 30 , TRUE)
+	playsound(loc, 'sound/machines/synth/synth_no.ogg', 30 , TRUE)
 
 /**
  * This fully rewrites base behavior in order to only check for bounty objects, and no other types of objects like pirate-pads do.
@@ -135,7 +135,7 @@
 	pad.visible_message(span_notice("[pad.name] активируется!"))
 	flick(pad.sending_state,pad)
 	pad.icon_state = pad.idle_state
-	playsound(loc, 'sound/machines/synth_yes.ogg', 30 , TRUE)
+	playsound(loc, 'sound/machines/synth/synth_yes.ogg', 30 , TRUE)
 	sending = FALSE
 
 ///Here is where cargo bounties are added to the player's bank accounts, then adjusted and scaled into a civilian bounty.
@@ -164,7 +164,7 @@
  */
 /obj/machinery/computer/piratepad_control/civilian/proc/pick_bounty(datum/bounty/choice)
 	if(!inserted_scan_id || !inserted_scan_id.registered_account || !inserted_scan_id.registered_account.bounties || !inserted_scan_id.registered_account.bounties[choice])
-		playsound(loc, 'sound/machines/synth_no.ogg', 40 , TRUE)
+		playsound(loc, 'sound/machines/synth/synth_no.ogg', 40 , TRUE)
 		return
 	inserted_scan_id.registered_account.civilian_bounty = inserted_scan_id.registered_account.bounties[choice]
 	inserted_scan_id.registered_account.bounties = null
@@ -242,13 +242,13 @@
 
 	if(target)
 		if(holder_item && inserting_item.InsertID(target))
-			playsound(src, 'sound/machines/terminal_insert_disc.ogg', 50, FALSE)
+			playsound(src, 'sound/machines/terminal/terminal_insert_disc.ogg', 50, FALSE)
 		else
 			id_eject(user, target)
 
-	user.visible_message(span_notice("[user] вставляет [card_to_insert.name] в [src.name]."),
-						span_notice("Вы вставляете [card_to_insert.name] в [src.name]."))
-	playsound(src, 'sound/machines/terminal_insert_disc.ogg', 50, FALSE)
+	user.visible_message(span_notice("[user] вставляет [card_to_insert.declent_ru(ACCUSATIVE)] в [src.declent_ru(ACCUSATIVE)]."),
+						span_notice("Вы вставляете [card_to_insert.declent_ru(ACCUSATIVE)] в [src.declent_ru(ACCUSATIVE)]."))
+	playsound(src, 'sound/machines/terminal/terminal_insert_disc.ogg', 50, FALSE)
 	ui_interact(user)
 	return TRUE
 
@@ -261,9 +261,9 @@
 		target.forceMove(drop_location())
 		if(!issilicon(user) && Adjacent(user))
 			user.put_in_hands(target)
-		user.visible_message(span_notice("[user] получает [target.name] из [src.name]."), \
-							span_notice("Вы получаете [target.name] из [src.name]."))
-		playsound(src, 'sound/machines/terminal_insert_disc.ogg', 50, FALSE)
+		user.visible_message(span_notice("[user] получает [target.declent_ru(ACCUSATIVE)] из [src.declent_ru(GENITIVE)]."), \
+							span_notice("Вы получаете [target.declent_ru(ACCUSATIVE)] из [src.declent_ru(GENITIVE)]."))
+		playsound(src, 'sound/machines/terminal/terminal_insert_disc.ogg', 50, FALSE)
 		inserted_scan_id = null
 		return TRUE
 
