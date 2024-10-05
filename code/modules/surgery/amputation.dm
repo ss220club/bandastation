@@ -86,9 +86,9 @@
 	display_results(
 		user,
 		target,
-		span_notice("Вы начинаете отрезать <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]..."),
-		span_notice("[user] начинает отрезать <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]!"),
-		span_notice("[user] начинает отрезать <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]!"),
+		span_notice("Вы начинаете отрезать <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]..."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает отрезать <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]!"),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает отрезать <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]!"),
 	)
 	display_pain(target, "Вы чувствуете жуткую боль в <i>[parse_zone(target_zone)]</i>!")
 
@@ -97,11 +97,11 @@
 	display_results(
 		user,
 		target,
-		span_notice("Вы отрезали <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
-		span_notice("[user] отрезал <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]!"),
-		span_notice("[user] отрезал <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]!"),
+		span_notice("Вы отрезали <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] отрезал <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]!"),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] отрезал <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]!"),
 	)
-	display_pain(target, "Вы больше не чувствуете свою отрезанную <i>[target.parse_zone_with_bodypart(target_zone)]</i>!")
+	display_pain(target, "Вы больше не чувствуете <i>[target.parse_zone_with_bodypart(target_zone)]</i> у себя!")
 
 	if(HAS_MIND_TRAIT(user, TRAIT_MORBID) && ishuman(user))
 		var/mob/living/carbon/human/morbid_weirdo = user

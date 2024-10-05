@@ -62,9 +62,9 @@
 	display_results(
 		user,
 		target,
-		span_notice("Вы начинаете вырезать поврежденную часть желудка у [target]..."),
-		span_notice("[user] начинает делать надрез у [target]."),
-		span_notice("[user] начинает делать надрез у [target]."),
+		span_notice("Вы начинаете вырезать поврежденную часть желудка у [target.declent_ru(GENITIVE)]..."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает делать надрез у [target.declent_ru(GENITIVE)]."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает делать надрез у [target.declent_ru(GENITIVE)]."),
 	)
 	display_pain(target, "Вы чувствуете колющую боль в животе!")
 
@@ -79,9 +79,9 @@
 	display_results(
 		user,
 		target,
-		span_notice("Вы успешно удаляете поврежденную часть желудка у [target]."),
-		span_notice("[user] успешно удаляет поврежденную часть желудка у [target]."),
-		span_notice("[user] успешно удаляет поврежденную часть желудка у [target]."),
+		span_notice("Вы успешно удаляете поврежденную часть желудка у [target.declent_ru(GENITIVE)]."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно удаляет поврежденную часть желудка у [target.declent_ru(GENITIVE)]."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно удаляет поврежденную часть желудка у [target.declent_ru(GENITIVE)]."),
 	)
 	display_pain(target, "Боль в вашем животе утихает и проходит.")
 	return ..()
@@ -92,8 +92,8 @@
 	display_results(
 		user,
 		target,
-		span_warning("Вы удалили не ту часть желудка у [target]!"),
-		span_warning("[user] удалил не ту часть желудка у [target]!"),
-		span_warning("[user] удалил не ту часть желудка у [target]!"),
+		span_warning("Вы удалили не ту часть желудка у [target.declent_ru(GENITIVE)]!"),
+		span_warning("[capitalize(user.declent_ru(NOMINATIVE))] удалил не ту часть желудка у [target.declent_ru(GENITIVE)]!"),
+		span_warning("[capitalize(user.declent_ru(NOMINATIVE))] удалил не ту часть желудка у [target.declent_ru(GENITIVE)]!"),
 	)
 	display_pain(target, "У вас болит живот, и от этого не становится легче!")

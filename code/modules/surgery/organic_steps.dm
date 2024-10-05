@@ -17,9 +17,9 @@
 	display_results(
 		user,
 		target,
-		span_notice("Вы начинаете делать надрез в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]..."),
-		span_notice("[user] начинает делать надрез в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
-		span_notice("[user] начинает делать надрез в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
+		span_notice("Вы начинаете делать надрез в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]..."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает делать надрез в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает делать надрез в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]."),
 	)
 	display_pain(target, "Вы чувствуете колющую боль в <i>[target.parse_zone_with_bodypart(target_zone)]</i>.")
 
@@ -36,9 +36,9 @@
 			display_results(
 				user,
 				target,
-				span_notice("Вокруг <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [human_target] образуется лужа крови."),
-				span_notice("Вокруг <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [human_target] образуется лужа крови."),
-				span_notice("Вокруг <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [human_target] образуется лужа крови."),
+				span_notice("Вокруг <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [human_target.declent_ru(GENITIVE)] образуется лужа крови."),
+				span_notice("Вокруг <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [human_target.declent_ru(GENITIVE)] образуется лужа крови."),
+				span_notice("Вокруг <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [human_target.declent_ru(GENITIVE)] образуется лужа крови."),
 			)
 			var/obj/item/bodypart/target_bodypart = target.get_bodypart(target_zone)
 			if(target_bodypart)
@@ -49,9 +49,9 @@
 	display_results(
 		user,
 		target,
-		span_notice("Вы начинаете <i>осторожно</i> делать надрез в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]..."),
-		span_notice("[user] начинает <i>осторожно</i> делать надрез в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
-		span_notice("[user] начинает <i>осторожно</i> делать надрез в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
+		span_notice("Вы начинаете <i>осторожно</i> делать надрез в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]..."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает <i>осторожно</i> делать надрез в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает <i>осторожно</i> делать надрез в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]."),
 	)
 	display_pain(target, "Вы чувствуете <i>осторожный</i> колющий удар в <i>[target.parse_zone_with_bodypart(target_zone)]</i>.")
 
@@ -70,9 +70,9 @@
 	display_results(
 		user,
 		target,
-		span_notice("Вы начинаете зажимать кровеносные сосуды в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]..."),
-		span_notice("[user] начинает зажимать кровеносные сосуды в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
-		span_notice("[user] начинает зажимать кровеносные сосуды в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
+		span_notice("Вы начинаете зажимать кровеносные сосуды в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]..."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает зажимать кровеносные сосуды в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает зажимать кровеносные сосуды в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]."),
 	)
 	display_pain(target, "Вы чувствуете укол, послче чего кровотечение в вашей <i>[target.parse_zone_with_bodypart(target_zone)]</i> замедляется.")
 
@@ -102,9 +102,9 @@
 	display_results(
 		user,
 		target,
-		span_notice("Вы начинаете раздвигать кожу в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]..."),
-		span_notice("[user] начинаете раздвигать кожу в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
-		span_notice("[user] начинаете раздвигать кожу в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
+		span_notice("Вы начинаете раздвигать кожу в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]..."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинаете раздвигать кожу в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинаете раздвигать кожу в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]."),
 	)
 	display_pain(target, "Вы чувствуете сильную жгучую боль, распространяющуюся по всей <i>[target.parse_zone_with_bodypart(target_zone)]</i>, по мере того, как кожа возвращается в прежнее состояние!")
 
@@ -124,9 +124,9 @@
 	display_results(
 		user,
 		target,
-		span_notice("Вы начинаете обрабатывать разрез в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]..."),
-		span_notice("[user] начинает обрабатывать разрез в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
-		span_notice("[user] начинает обрабатывать разрез в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
+		span_notice("Вы начинаете обрабатывать разрез в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]..."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает обрабатывать разрез в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает обрабатывать разрез в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]."),
 	)
 	display_pain(target, "Ваша <i>[target.parse_zone_with_bodypart(target_zone)]</i> прижигается!")
 
@@ -175,9 +175,9 @@
 	display_results(
 		user,
 		target,
-		span_notice("Вы начинаете распиливать кость в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]..."),
-		span_notice("[user] начинает распиливать кость в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
-		span_notice("[user] начинает распиливать кость в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
+		span_notice("Вы начинаете распиливать кость в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]..."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает распиливать кость в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает распиливать кость в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]."),
 	)
 	display_pain(target, "Вы чувствуете ужасную боль внутри <i>[target.parse_zone_with_bodypart(target_zone)]</i>!")
 
@@ -191,9 +191,9 @@
 	display_results(
 		user,
 		target,
-		span_notice("Вы вскрываете <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
-		span_notice("[user] вскрывает <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]!"),
-		span_notice("[user] вскрывает <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]!"),
+		span_notice("Вы вскрываете <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] вскрывает <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]!"),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] вскрывает <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]!"),
 	)
 	display_pain(target, "Такое ощущение, что в <i>[target.parse_zone_with_bodypart(target_zone)]</i> что-то сломано!")
 	return ..()
@@ -213,9 +213,9 @@
 	display_results(
 		user,
 		target,
-		span_notice("Вы начинаете сверлить прямо в кости в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]..."),
-		span_notice("[user] начинает сверлить прямо в кости в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
-		span_notice("[user] начинает сверлить прямо в кости в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
+		span_notice("Вы начинаете сверлить прямо в кости в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]..."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает сверлить прямо в кости в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает сверлить прямо в кости в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]."),
 	)
 	display_pain(target, "Вы чувствуете ужасную пронзительную боль в <i>[target.parse_zone_with_bodypart(target_zone)]</i>!")
 
@@ -223,8 +223,8 @@
 	display_results(
 		user,
 		target,
-		span_notice("Вы просверлили <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
-		span_notice("[user] просверливает <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]!"),
-		span_notice("[user] просверливает <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]!"),
+		span_notice("Вы просверлили <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] просверливает <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]!"),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] просверливает <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]!"),
 	)
 	return ..()

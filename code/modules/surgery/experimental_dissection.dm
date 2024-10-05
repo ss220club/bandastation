@@ -54,7 +54,7 @@
 /datum/surgery_step/experimental_dissection/failure(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	var/points_earned = round(check_value(target) * 0.01)
 	user.visible_message(
-		span_notice("[user.declent_ru(NOMINATIVE)] препариует [target.declent_ru(ACCUSATIVE)]!"),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] препариует [target.declent_ru(ACCUSATIVE)]!"),
 		span_notice("Вы препарируете [target.declent_ru(ACCUSATIVE)], но не находите ничего особо интересного."),
 	)
 
@@ -147,7 +147,7 @@
 	value = value + new_paper.value
 	if(origin_type != new_paper.origin_type && !mixed)
 		value += bonus * 0.3
-		origin_type = "[origin_type] and [new_paper.origin_type]"
+		origin_type = "[origin_type] и [new_paper.origin_type]"
 		mixed = TRUE
 	change_vol()
 	qdel(new_paper)

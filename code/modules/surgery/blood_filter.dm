@@ -31,9 +31,9 @@
 	display_results(
 		user,
 		target,
-		span_notice("You begin filtering [target]'s blood..."),
-		span_notice("[user] uses [tool] to filter [target]'s blood."),
-		span_notice("[user] uses [tool] on [target]'s chest."),
+		span_notice("Вы начинаете фильтровать кровь у [target.declent_ru(GENITIVE)]..."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] использует [tool.declent_ru(ACCUSATIVE)] для фильтрации крови у [target.declent_ru(GENITIVE)]."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] использует [tool.declent_ru(ACCUSATIVE)] на груди у [target.declent_ru(GENITIVE)]."),
 	)
 	if(!..())
 		return
@@ -53,7 +53,7 @@
  */
 /datum/surgery_step/filter_blood/proc/has_filterable_chems(mob/living/carbon/target, obj/item/blood_filter/bloodfilter)
 	if(!length(target.reagents?.reagent_list))
-		bloodfilter.audible_message(span_notice("[bloodfilter] pings as it reports no chemicals detected in [target]'s blood."))
+		bloodfilter.audible_message(span_notice("[capitalize(bloodfilter.declent_ru(NOMINATIVE))] сигнализирует об отсутствии химикатов в крови у [target.declent_ru(GENITIVE)]."))
 		playsound(get_turf(target), 'sound/machines/ping.ogg', 75, TRUE, falloff_exponent = 12, falloff_distance = 1)
 		return FALSE
 
@@ -99,8 +99,8 @@
 	display_results(
 		user,
 		target,
-		span_warning("Вы ошибаетесь, оставив ушиб на груди у [target]!"),
-		span_warning("[user] ошибается, оставив ушиб на груди у [target]!"),
-		span_warning("[user] ошибается!"),
+		span_warning("Вы ошибаетесь, оставив ушиб на груди у [target.declent_ru(GENITIVE)]!"),
+		span_warning("[capitalize(user.declent_ru(NOMINATIVE))] ошибается, оставив ушиб на груди у [target.declent_ru(GENITIVE)]!"),
+		span_warning("[capitalize(user.declent_ru(NOMINATIVE))] ошибается!"),
 	)
 	target.adjustBruteLoss(5)

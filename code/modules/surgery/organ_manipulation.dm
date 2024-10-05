@@ -227,7 +227,7 @@
 				if(!target_organ)
 					return SURGERY_STEP_FAIL
 				if(target_organ.organ_flags & ORGAN_UNREMOVABLE)
-					to_chat(user, span_warning("[target_organ] слишком хорошо закреплен, чтобы его вытащить!"))
+					to_chat(user, span_warning("[capitalize(target_organ.declent_ru(NOMINATIVE))] имеет слишком хорошее крепление - нельзя вытащить!"))
 					return SURGERY_STEP_FAIL
 
 				//start operation
