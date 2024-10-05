@@ -15,7 +15,7 @@
 
 /datum/surgery_step/replace_limb/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	if(HAS_TRAIT(target, TRAIT_NO_AUGMENTS))
-		to_chat(user, span_warning("[target] не может быть проаугментирован!"))
+		to_chat(user, span_warning("[capitalize(target.declent_ru(NOMINATIVE))] не может быть проаугментирован!"))
 		return SURGERY_STEP_FAIL
 	if(istype(tool, /obj/item/borg/apparatus/organ_storage) && istype(tool.contents[1], /obj/item/bodypart))
 		tool = tool.contents[1]
@@ -24,7 +24,7 @@
 		to_chat(user, span_warning("Это не аугментат, дурак!"))
 		return SURGERY_STEP_FAIL
 	if(aug.body_zone != target_zone)
-		to_chat(user, span_warning("Для <i>[target.parse_zone_with_bodypart(target_zone)]</i> не подходит [tool.name]."))
+		to_chat(user, span_warning("Для <i>[target.parse_zone_with_bodypart(target_zone)]</i> не подходит [tool.declent_ru(NOMINATIVE)]."))
 		return SURGERY_STEP_FAIL
 	target_limb = surgery.operated_bodypart
 	if(target_limb)
@@ -32,7 +32,7 @@
 			user,
 			target,
 			span_notice("Вы начинаете аугментировать <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i> у [target.declent_ru(GENITIVE)]..."),
-			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает аугментировать <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i> у [target.declent_ru(GENITIVE)] с помощью [aug.name]."),
+			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает аугментировать <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i> у [target.declent_ru(GENITIVE)] с помощью [aug.declent_ru(GENITIVE)]."),
 			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает аугментировать <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i> у [target.declent_ru(GENITIVE)]."),
 		)
 		display_pain(target, "Вы чувствуете ужасную боль в <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i>!")
