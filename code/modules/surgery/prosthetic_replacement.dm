@@ -69,23 +69,23 @@
 			display_results(
 				user,
 				target,
-				span_notice("Вы начинаете заменять <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target] на [tool.name]..."),
-				span_notice("[user] начинает заменять <i>[target.parse_zone_with_bodypart(target_zone)]</i> у <i>[target.parse_zone_with_bodypart(target_zone)]</i> на [tool.name]."),
-				span_notice("[user] начинает заменять <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
+				span_notice("Вы начинаете заменять <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)] на [tool.declent_ru(ACCUSATIVE)]..."),
+				span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает заменять <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)] на [tool.declent_ru(ACCUSATIVE)]."),
+				span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает заменять <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]."),
 			)
 		else
-			to_chat(user, span_warning("[tool.name] не подходит для <i>[target.parse_zone_with_bodypart(target_zone)]</i>."))
+			to_chat(user, span_warning("[capitalize(tool.declent_ru(NOMINATIVE))] не подходит для <i>[target.parse_zone_with_bodypart(target_zone)]</i>."))
 			return SURGERY_STEP_FAIL
 	else if(target_zone == BODY_ZONE_L_ARM || target_zone == BODY_ZONE_R_ARM)
 		display_results(
 			user,
 			target,
-			span_notice("Вы начинаете прикреплять [tool.name] к [target]..."),
-			span_notice("[user] начинает прикреплять [tool.name] к <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
-			span_notice("[user] начинает прикреплять что-то к <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
+			span_notice("Вы начинаете прикреплять [tool.declent_ru(ACCUSATIVE)] к [target.declent_ru(GENITIVE)]..."),
+			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает прикреплять [tool.declent_ru(ACCUSATIVE)] к <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]."),
+			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает прикреплять что-то к <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]."),
 		)
 	else
-		to_chat(user, span_warning("[tool.name] должен быть установлен в руку."))
+		to_chat(user, span_warning("[capitalize(tool.declent_ru(NOMINATIVE))] устанавливается только в руку."))
 		return SURGERY_STEP_FAIL
 
 /datum/surgery_step/add_prosthetic/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
@@ -105,9 +105,9 @@
 		display_results(
 			user,
 			target,
-			span_notice("Вы успешно заменили <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
-			span_notice("[user] успешно заменил <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target] на [tool.name]!"),
-			span_notice("[user] успешно заменил <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]!"),
+			span_notice("Вы успешно заменили <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]."),
+			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно заменил <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)] на [tool.declent_ru(ACCUSATIVE)]!"),
+			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно заменил <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]!"),
 		)
 		display_pain(target, "Вы наполняетесь позитивными ощущениями, потому что вы снова чувствуете ваш <i>[target.parse_zone_with_bodypart(target_zone)]</i>!", TRUE)
 		return
@@ -115,13 +115,13 @@
 		var/obj/item/bodypart/bodypart_to_attach = target.newBodyPart(target_zone, FALSE, FALSE)
 		bodypart_to_attach.try_attach_limb(target)
 		bodypart_to_attach.bodypart_flags |= BODYPART_PSEUDOPART | BODYPART_IMPLANTED
-		user.visible_message(span_notice("[user] заканчивает прикреплять [tool.name]!"), span_notice("Вы прикрепили [tool.name]."))
+		user.visible_message(span_notice("[capitalize(user.declent_ru(NOMINATIVE))] заканчивает прикреплять [tool.declent_ru(ACCUSATIVE)]!"), span_notice("Вы прикрепили [tool.declent_ru(ACCUSATIVE)]."))
 		display_results(
 			user,
 			target,
-			span_notice("Вы прикрепили [tool.name]."),
-			span_notice("[user] заканчивает прикреплять [tool.name]!"),
-			span_notice("[user] завершает операцию по прикреплению!"),
+			span_notice("Вы прикрепили [tool.declent_ru(ACCUSATIVE)]."),
+			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] заканчивает прикреплять [tool.declent_ru(ACCUSATIVE)]!"),
+			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] завершает операцию по прикреплению!"),
 		)
 		display_pain(target, "Вы испытываете странные ощущения от своего нового <i>[target.parse_zone_with_bodypart(target_zone)]</i>.", TRUE)
 		if(istype(tool, /obj/item/chainsaw))

@@ -42,9 +42,9 @@
 	display_results(
 		user,
 		target,
-		span_notice("Вы начинаете вставлять [tool.name] в разрезе на <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target] ..."),
-		span_notice("[user] начинает вставлять [tool.name] в разрезе на <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]]."),
-		span_notice("[user] начинает вставлять [tool.name] в разрезе на <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]]."),
+		span_notice("Вы начинаете вставлять [tool.declent_ru(ACCUSATIVE)] в разрезе на <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)] ..."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает вставлять [tool.declent_ru(ACCUSATIVE)] в разрезе на <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает вставлять [tool.declent_ru(ACCUSATIVE)] в разрезе на <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]."),
 	)
 	display_pain(target, "Вы чувствуете, как что-то вставили вам под кожу в <i>[target.parse_zone_with_bodypart(target_zone)]</i>.")
 
@@ -63,13 +63,13 @@
 	surgery_effects_mood = TRUE
 
 /datum/surgery_step/reshape_face/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	user.visible_message(span_notice("[user] начинает изменять внешний вид у [target]."), span_notice("Вы начинаете изменять внешний вид у [target]..."))
+	user.visible_message(span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает изменять внешний вид у [target]."), span_notice("Вы начинаете изменять внешний вид у [target]..."))
 	display_results(
 		user,
 		target,
 		span_notice("Вы начинаете изменять внешний вид у [target]..."),
-		span_notice("[user] начинает изменять внешний вид у [target]."),
-		span_notice("[user] начинает делать надрез на лице [target]."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает изменять внешний вид у [target]."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает делать надрез на лице [target]."),
 	)
 	display_pain(target, "Вы чувствуете острую боль на лице!")
 
@@ -80,8 +80,8 @@
 			user,
 			target,
 			span_notice("Вы успешно восстановили внешний вид лица у [target]."),
-			span_notice("[user] успешно восстановил внешний вид лица у [target]!"),
-			span_notice("[user] заканчивает проводить операцию на лице у [target]."),
+			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно восстанавливает внешний вид лица у [target.declent_ru(GENITIVE)]!"),
+			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] заканчивает проводить операцию на лице у [target.declent_ru(GENITIVE)]."),
 		)
 		display_pain(target, "Боль исчезает, лицо вновь становится нормальным!")
 	else
@@ -109,9 +109,9 @@
 		display_results(
 			user,
 			target,
-			span_notice("Вы полностью изменили внешность у [oldname], [target.p_they()] теперь это [newname]."),
-			span_notice("[user] полностью изменил внешность у [oldname], [target.p_they()] теперь это [newname]!"),
-			span_notice("[user] заканчивает проводить операцию на лице у [target]."),
+			span_notice("Вы полностью изменили внешность у [oldname], [target.ru_p_they()] теперь [newname]."),
+			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] полностью изменил внешность у [oldname], [target.ru_p_they()] теперь [newname]!"),
+			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] заканчивает проводить операцию на лице у [target.declent_ru(GENITIVE)]."),
 		)
 		display_pain(target, "Боль проходит, а ваше лицо кажется новым и непривычным!")
 	if(ishuman(target))
@@ -126,9 +126,9 @@
 	display_results(
 		user,
 		target,
-		span_warning("Вы ошибаетесь, сделав обезображенное лицо у [target]!"),
-		span_notice("[user] ошибается, сделав обезображенное лицо у [target]!"),
-		span_notice("[user] заканчивает проводить операцию на лице у [target]."),
+		span_warning("Вы ошибаетесь, сделав обезображенное лицо у [target.declent_ru(GENITIVE)]!"),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] ошибается, сделав обезображенное лицо у [target.declent_ru(GENITIVE)]!"),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] заканчивает проводить операцию на лице у [target.declent_ru(GENITIVE)]."),
 	)
 	display_pain(target, "Вы чувствуете, что теперь ваше лицо изуродовано и обезображено!")
 	ADD_TRAIT(target, TRAIT_DISFIGURED, TRAIT_GENERIC)

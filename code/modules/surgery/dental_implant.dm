@@ -38,9 +38,9 @@
 	display_results(
 		user,
 		target,
-		span_notice("Вы начинаете вставлять [tool.name] в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]..."),
-		span_notice("[user] начинает вставлять [tool.name] в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
-		span_notice("[user] начинает вставлять что-то в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
+		span_notice("Вы начинаете вставлять [tool.declent_ru(ACCUSATIVE)] в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]..."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает вставлять [tool.declent_ru(ACCUSATIVE)] в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает вставлять что-то в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]."),
 	)
 	display_pain(target, "Что-то засовывают вам в <i>[target.parse_zone_with_bodypart(target_zone)]</i>!")
 
@@ -52,7 +52,7 @@
 	user.transferItemToLoc(tool, target.get_bodypart(BODY_ZONE_HEAD), TRUE)
 
 	var/datum/action/item_action/activate_pill/pill_action = new(tool)
-	pill_action.name = "Активируйте [tool.name]"
+	pill_action.name = "Активировать [tool.declent_ru(ACCUSATIVE)]"
 	pill_action.build_all_button_icons()
 	pill_action.target = tool
 	pill_action.Grant(target) //The pill never actually goes in an inventory slot, so the owner doesn't inherit actions from it
@@ -60,9 +60,9 @@
 	display_results(
 		user,
 		target,
-		span_notice("Вы вставили [tool.name] в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
-		span_notice("[user] вставил [tool.name] в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]!"),
-		span_notice("[user] вставил что-то в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]!"),
+		span_notice("Вы вставили [tool.declent_ru(ACCUSATIVE)] в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] вставил [tool.declent_ru(ACCUSATIVE)] в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]!"),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] вставил что-то в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]!"),
 	)
 	return ..()
 
