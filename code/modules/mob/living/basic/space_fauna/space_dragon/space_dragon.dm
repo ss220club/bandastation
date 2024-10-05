@@ -177,7 +177,7 @@
 	if (QDELETED(food) || food.loc == src)
 		return FALSE
 	playsound(src, 'sound/effects/magic/demon_attack1.ogg', 60, TRUE)
-	visible_message(span_boldwarning("[src.declent_ru(NOMINATIVE)] поглощает [food.declent_ru(ACCUSATIVE)] целиком!"))
+	visible_message(span_boldwarning("[capitalize(declent_ru(NOMINATIVE))] поглощает [food.declent_ru(ACCUSATIVE)] целиком!"))
 	food.extinguish_mob() // It's wet in there, and our food is likely to be on fire. Let's be decent and not husk them.
 	food.forceMove(src)
 	return TRUE

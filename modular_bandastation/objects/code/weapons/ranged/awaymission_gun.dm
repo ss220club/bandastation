@@ -27,13 +27,13 @@
 	if(onAwayMission())
 		selfcharge = TRUE
 		if(ismob(loc))
-			to_chat(loc, span_notice("[src.name] активируется, начиная аккумулировать энергию из материи сущего."))
+			to_chat(loc, span_notice("[capitalize(declent_ru(NOMINATIVE))] активируется, начиная аккумулировать энергию из материи сущего."))
 	else
 		selfcharge = FALSE
 		cell.change(-STANDARD_BATTERY_CHARGE)
 		update_appearance()
 		if(ismob(loc))
-			to_chat(loc, span_danger("[src.name] деактивируется, так как он подавляется системами станции."))
+			to_chat(loc, span_danger("[capitalize(declent_ru(NOMINATIVE))] деактивируется, так как он подавляется системами станции."))
 			recharge_newshot(no_cyborg_drain = TRUE)
 
 /obj/item/gun/energy/laser/awaymission_aeg/mk2

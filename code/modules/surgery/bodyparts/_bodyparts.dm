@@ -345,22 +345,22 @@
 		else
 			is_disabled += " и"
 
-	check_list += "\t <span class='[no_damage ? "notice" : "warning"]'>Ваша [name][is_disabled][self_aware ? " имеет " : " "][status].</span>"
+	check_list += "\t <span class='[no_damage ? "notice" : "warning"]'>[declent_ru(NOMINATIVE)] у вас[is_disabled][self_aware ? " имеет " : " "][status].</span>"
 
 	for(var/datum/wound/wound as anything in wounds)
 		switch(wound.severity)
 			if(WOUND_SEVERITY_TRIVIAL)
-				check_list += "\t [span_danger("Ваша [name] страдает от: [LOWER_TEXT(wound.name)].")]"
+				check_list += "\t [span_danger("[capitalize(declent_ru(NOMINATIVE))] у вас страдает от: [LOWER_TEXT(wound.name)].")]"
 			if(WOUND_SEVERITY_MODERATE)
-				check_list += "\t [span_warning("Ваша [name] страдает от: [LOWER_TEXT(wound.name)]!")]"
+				check_list += "\t [span_warning("[capitalize(declent_ru(NOMINATIVE))] у вас страдает от: [LOWER_TEXT(wound.name)]!")]"
 			if(WOUND_SEVERITY_SEVERE)
-				check_list += "\t [span_boldwarning("Ваша [name] страдает от: [LOWER_TEXT(wound.name)]!!")]"
+				check_list += "\t [span_boldwarning("[capitalize(declent_ru(NOMINATIVE))] у вас страдает от: [LOWER_TEXT(wound.name)]!!")]"
 			if(WOUND_SEVERITY_CRITICAL)
-				check_list += "\t [span_boldwarning("Ваша [name] страдает от: [LOWER_TEXT(wound.name)]!!!")]"
+				check_list += "\t [span_boldwarning("[capitalize(declent_ru(NOMINATIVE))] у вас страдает от: [LOWER_TEXT(wound.name)]!!!")]"
 
 	for(var/obj/item/embedded_thing in embedded_objects)
 		var/stuck_word = embedded_thing.is_embed_harmless() ? "прилип" : "застрял"
-		check_list += "\t <a href='?src=[REF(examiner)];embedded_object=[REF(embedded_thing)];embedded_limb=[REF(src)]' class='warning'>[capitalize(embedded_thing.name)] [stuck_word] [stuck_word == "застрял" ? "в" : "к"] вашей [name]!</a>"
+		check_list += "\t <a href='?src=[REF(examiner)];embedded_object=[REF(embedded_thing)];embedded_limb=[REF(src)]' class='warning'>[capitalize(embedded_thing.declent_ru(NOMINATIVE))] [stuck_word] [stuck_word == "застрял" ? "в" : "к"] вашей [declent_ru(DATIVE)]!</a>"
 
 /obj/item/bodypart/blob_act()
 	receive_damage(max_damage, wound_bonus = CANT_WOUND)
@@ -374,17 +374,17 @@
 			if(!human_victim.get_bodypart(body_zone))
 				user.temporarilyRemoveItemFromInventory(src, TRUE)
 				if(!try_attach_limb(victim))
-					to_chat(user, span_warning("Тело [human_victim] отвергает [src.name]!"))
+					to_chat(user, span_warning("Тело [human_victim.declent_ru(GENITIVE)] отвергает [declent_ru(ACCUSATIVE)]!"))
 					forceMove(human_victim.loc)
 					return
 				if(check_for_frankenstein(victim))
 					bodypart_flags |= BODYPART_IMPLANTED
 				if(human_victim == user)
-					human_victim.visible_message(span_warning("[human_victim] вклинивает [src.name] в пустой сокет на своём теле!"),\
-					span_notice("Вы вставляете [src.name] в свой пустой сокет, и [src.name] встаёт на место!"))
+					human_victim.visible_message(span_warning("[capitalize(human_victim.declent_ru(NOMINATIVE))] вклинивает [declent_ru(ACCUSATIVE)] в пустой сокет на своём теле!"),\
+					span_notice("Вы вставляете [declent_ru(GENITIVE)] в свой пустой сокет, и [declent_ru(NOMINATIVE)] встаёт на место!"))
 				else
-					human_victim.visible_message(span_warning("[user] вклинивает [src.name] в пустой сокет на теле [human_victim]!"),\
-					span_notice("[user] вставляет [src.name] в свой пустой сокет, и [src.name] встаёт на место!"))
+					human_victim.visible_message(span_warning("[capitalize(user.declent_ru(NOMINATIVE))] вклинивает [declent_ru(ACCUSATIVE)] в пустой сокет на теле [human_victim.declent_ru(GENITIVE)]!"),\
+					span_notice("[capitalize(user.declent_ru(NOMINATIVE))] вставляет [declent_ru(GENITIVE)] в свой пустой сокет, и [declent_ru(NOMINATIVE)] встаёт на место!"))
 				return
 	return ..()
 
@@ -394,11 +394,11 @@
 	if(weapon.get_sharpness())
 		add_fingerprint(user)
 		if(!contents.len)
-			to_chat(user, span_warning("Внутри [src.name] ничего не осталось!"))
+			to_chat(user, span_warning("Внутри [declent_ru(GENITIVE)] ничего не осталось!"))
 			return
 		playsound(loc, 'sound/items/weapons/slice.ogg', 50, TRUE, -1)
-		user.visible_message(span_warning("[capitalize(user.declent_ru(NOMINATIVE))] начинает вскрывать [src.declent_ru(ACCUSATIVE)]."),\
-			span_notice("Вы начинаете вскрывать [src.declent_ru(ACCUSATIVE)]..."))
+		user.visible_message(span_warning("[capitalize(user.declent_ru(NOMINATIVE))] начинает вскрывать [declent_ru(ACCUSATIVE)]."),\
+			span_notice("Вы начинаете вскрывать [declent_ru(ACCUSATIVE)]..."))
 		if(do_after(user, 5.4 SECONDS, target = src))
 			drop_organs(user, TRUE)
 	else

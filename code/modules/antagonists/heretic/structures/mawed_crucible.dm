@@ -165,7 +165,7 @@
 	var/obj/item/spawned_pot = new spawned_type(drop_location())
 
 	playsound(src, 'sound/effects/desecration/desecration-02.ogg', 75, TRUE)
-	visible_message(span_notice("Сияющая жидкость из [src.declent_ru(GENITIVE)] стекает в колбу, создавая [spawned_pot.declent_ru(ACCUSATIVE)]!"))
+	visible_message(span_notice("Сияющая жидкость из [declent_ru(GENITIVE)] стекает в колбу, создавая [spawned_pot.declent_ru(ACCUSATIVE)]!"))
 	balloon_alert(user, "зелье готово")
 
 	current_mass = 0

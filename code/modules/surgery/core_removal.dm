@@ -30,9 +30,9 @@
 	display_results(
 		user,
 		target,
-		span_notice("Вы начинаете извлекать ядро из [target]..."),
-		span_notice("[user] начинает извлекать ядро из [target]."),
-		span_notice("[user] начинает извлекать ядро из [target]."),
+		span_notice("Вы начинаете извлекать ядро из [target.declent_ru(GENITIVE)]..."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает извлекать ядро из [target.declent_ru(GENITIVE)]."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает извлекать ядро из [target.declent_ru(GENITIVE)]."),
 	)
 
 /datum/surgery_step/extract_core/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
@@ -42,10 +42,10 @@
 		display_results(
 			user,
 			target,
-			span_notice("Вы успешно извлекли из [target.name] ядер: [core_count]."),
-			span_notice("[user.name] успешно извлекает из [target.name] ядер: [core_count]!"),
-			span_notice("[user.name] успешно извлекает из [target.name] ядер: [core_count]!"),
+			span_notice("Вы успешно извлекли из [target.declent_ru(GENITIVE)] ядер: [core_count]."),
+			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно извлекает из [target.declent_ru(GENITIVE)] ядер: [core_count]!"),
+			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно извлекает из [target.declent_ru(GENITIVE)] ядер: [core_count]!"),
 		)
 		return TRUE
-	to_chat(user, span_warning("В [target.name] больше не осталось ядер!"))
+	to_chat(user, span_warning("В [target.declent_ru(PREPOSITIONAL)] больше не осталось ядер!"))
 	return ..()

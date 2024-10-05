@@ -48,8 +48,8 @@
 		var/obj/structure/closet/C = user.loc
 		if(!istype(C))
 			return FALSE
-		C.visible_message(span_warning("Петли [C.name] внезапно начинают плавиться и разлетаться!"))
-		to_chat(user, span_warning("Мы извергаем кислотную жижу на внутреннюю поверхность [C.name]!"))
+		C.visible_message(span_warning("Петли [C.declent_ru(GENITIVE)] внезапно начинают плавиться и разлетаться!"))
+		to_chat(user, span_warning("Мы извергаем кислотную жижу на внутреннюю поверхность [C.declent_ru(GENITIVE)]!"))
 		addtimer(CALLBACK(src, PROC_REF(open_closet), user, C), 7 SECONDS)
 		log_combat(user, user.loc, "melted locker", addition = "(biodegrade)")
 		..()
@@ -59,7 +59,7 @@
 		var/obj/structure/spider/cocoon/C = user.loc
 		if(!istype(C))
 			return FALSE
-		C.visible_message(span_warning("[src] двигается и начинает разваливаться на части!"))
+		C.visible_message(span_warning("[capitalize(declent_ru(NOMINATIVE))] двигается и начинает разваливаться на части!"))
 		to_chat(user, span_warning("Мы выделяем кислотные ферменты из кожи и начинаем плавить наш кокон..."))
 		addtimer(CALLBACK(src, PROC_REF(dissolve_cocoon), user, C), 25) //Very short because it's just webs
 		log_combat(user, user.loc, "melted cocoon", addition = "(biodegrade)")
@@ -70,8 +70,8 @@
 	if(istype(shoes) && shoes.tied == SHOES_KNOTTED && !(shoes.resistance_flags & (INDESTRUCTIBLE|UNACIDABLE|ACID_PROOF)))
 		new /obj/effect/decal/cleanable/greenglow(shoes.drop_location())
 		user.visible_message(
-			span_warning("[user] извергает сгустки кислоты на связанные [shoes.name], растапливая их в лужу слизи!"),
-			span_warning("Мы извергаем кислотную жижу на наши связанные [shoes.name], растапливая их в лужу слизи!"),
+			span_warning("[capitalize(user.declent_ru(NOMINATIVE))] извергает сгустки кислоты на [shoes.declent_ru(ACCUSATIVE)], растапливая их в лужу слизи!"),
+			span_warning("Мы извергаем кислотную жижу на [shoes.declent_ru(ACCUSATIVE)], растапливая их в лужу слизи!"),
 		)
 		log_combat(user, shoes, "melted own shoes", addition = "(biodegrade)")
 		qdel(shoes)
@@ -83,25 +83,25 @@
 
 /datum/action/changeling/biodegrade/proc/dissolve_handcuffs(mob/living/carbon/human/user, obj/O)
 	if(O && user.handcuffed == O)
-		user.visible_message(span_warning("Шипя, [O.name] растворяется в лужу жижи."))
+		user.visible_message(span_warning("Шипя, [O.declent_ru(NOMINATIVE)] растворяется в лужу жижи."))
 		new /obj/effect/decal/cleanable/greenglow(O.drop_location())
 		qdel(O)
 
 /datum/action/changeling/biodegrade/proc/dissolve_legcuffs(mob/living/carbon/human/user, obj/O)
 	if(O && user.legcuffed == O)
-		user.visible_message(span_warning("Шипя, [O.name] растворяется в лужу жижи."))
+		user.visible_message(span_warning("Шипя, [O.declent_ru(NOMINATIVE)] растворяется в лужу жижи."))
 		new /obj/effect/decal/cleanable/greenglow(O.drop_location())
 		qdel(O)
 
 /datum/action/changeling/biodegrade/proc/dissolve_straightjacket(mob/living/carbon/human/user, obj/S)
 	if(S && user.wear_suit == S)
-		user.visible_message(span_warning("Шипя, [S.name] растворяется в лужу жижи."))
+		user.visible_message(span_warning("Шипя, [S.declent_ru(NOMINATIVE)] растворяется в лужу жижи."))
 		new /obj/effect/decal/cleanable/greenglow(S.drop_location())
 		qdel(S)
 
 /datum/action/changeling/biodegrade/proc/open_closet(mob/living/carbon/human/user, obj/structure/closet/C)
 	if(C && user.loc == C)
-		C.visible_message(span_warning("Дверь [C.name] ломается и открывается!"))
+		C.visible_message(span_warning("Дверь [C.declent_ru(NOMINATIVE)] ломается и открывается!"))
 		new /obj/effect/decal/cleanable/greenglow(C.drop_location())
 		C.welded = FALSE
 		C.locked = FALSE

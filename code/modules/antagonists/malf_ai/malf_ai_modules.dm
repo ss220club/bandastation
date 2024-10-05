@@ -366,7 +366,7 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/ai_module/malf))
 	if(issilicon(victim))
 		return FALSE
 
-	to_chat(victim, span_userdanger("Взрывная волна от [source.name] разрывает тебя на атомы!"))
+	to_chat(victim, span_userdanger("Взрывная волна от [source.declent_ru(GENITIVE)] разрывает тебя на атомы!"))
 	victim.investigate_log("has been dusted by a doomsday device.", INVESTIGATE_DEATHS)
 	victim.dust()
 	return TRUE

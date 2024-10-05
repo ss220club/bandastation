@@ -38,9 +38,9 @@
 	display_results(
 		user,
 		target,
-		span_notice("Вы приступаете к вскрытию [target]..."),
-		span_notice("[user] использует [tool.name] для вскрытия [target]."),
-		span_notice("[user] использует [tool.name] на груди у [target]."),
+		span_notice("Вы приступаете к вскрытию [target.declent_ru(GENITIVE)]..."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] использует [tool.declent_ru(ACCUSATIVE)] для вскрытия [target.declent_ru(GENITIVE)]."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] использует [tool.declent_ru(ACCUSATIVE)] на груди у [target.declent_ru(GENITIVE)]."),
 	)
 	display_pain(target, "Вы чувствуете жжение в груди!")
 

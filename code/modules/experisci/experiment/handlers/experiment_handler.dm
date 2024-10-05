@@ -315,7 +315,7 @@
 	ui = SStgui.try_update_ui(user, src, ui)
 	if (!ui)
 		var/atom/parent_atom = parent
-		ui = new(user, src, "ExperimentConfigure", "[parent_atom ? "[parent_atom.name] | " : ""]Конфигурация Экспериментов")
+		ui = new(user, src, "ExperimentConfigure", "[parent_atom ? "[parent_atom.declent_ru(NOMINATIVE)] | " : ""]Конфигурация Экспериментов")
 		ui.open()
 
 /datum/component/experiment_handler/ui_data(mob/user)

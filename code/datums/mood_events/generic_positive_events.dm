@@ -14,7 +14,7 @@
 	timeout = 4 MINUTES
 
 /datum/mood_event/betterhug/add_effects(mob/friend)
-	description = "[friend.name] был очень добр ко мне."
+	description = "[capitalize(friend.declent_ru(NOMINATIVE))] был очень добр ко мне."
 
 /datum/mood_event/besthug
 	description = "Весело находиться рядом с кем-то, не могу нарадоваться!"
@@ -22,7 +22,7 @@
 	timeout = 4 MINUTES
 
 /datum/mood_event/besthug/add_effects(mob/friend)
-	description = "Весело находиться рядом с [friend.name], не могу нарадоваться!"
+	description = "Весело находиться рядом с [friend.declent_ru(INSTRUMENTAL)], не могу нарадоваться!"
 
 /datum/mood_event/warmhug
 	description = "Теплые и уютные обнимашки самые лучшие!"
@@ -69,7 +69,7 @@
 	timeout = 5 MINUTES
 
 /datum/mood_event/pet_animal/add_effects(mob/animal)
-	description = "[capitalize(animal.name)] такой милый! Не могу перестать гладить!"
+	description = "[capitalize(animal.declent_ru(NOMINATIVE))] такой милый! Не могу перестать гладить!"
 
 /datum/mood_event/honk
 	description = "Меня захонкали!"
@@ -250,9 +250,9 @@
 	if(!beau)
 		return
 	if(direct)
-		description = "Поцелуй от [beau.name], ахх!!"
+		description = "Поцелуй от [beau.declent_ru(GENITIVE)], ахх!!"
 	else
-		description = "Воздушный поцелуй от [beau.name], я настоящая находка!"
+		description = "Воздушный поцелуй от [beau.declent_ru(GENITIVE)], я настоящая находка!"
 
 /datum/mood_event/honorbound
 	description = "Следование кодесу чести приносит удовлетворение!"

@@ -85,9 +85,9 @@
 	display_results(
 		user,
 		target,
-		span_notice("[tool.name] сигнализирует, что фильтрация крови у [target] завершена."),
-		span_notice("[tool.name] сигнализирует, что закончил перекачивать кровь у [target]."),
-		span_notice("[tool.name] сигнализирует, что закончил перекачивать кровь."),
+		span_notice("[capitalize(tool.declent_ru(NOMINATIVE))] сигнализирует о завершении фильтрация крови у [target.declent_ru(GENITIVE)]."),
+		span_notice("[capitalize(tool.declent_ru(NOMINATIVE))] сигнализирует об окончании перекачивания крови у [target.declent_ru(GENITIVE)]."),
+		span_notice("[capitalize(tool.declent_ru(NOMINATIVE))] сигнализирует об окончании перекачивания крови."),
 	)
 
 	if(locate(/obj/item/healthanalyzer) in user.held_items)

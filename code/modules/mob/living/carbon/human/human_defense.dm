@@ -593,12 +593,12 @@
 		var/bleed_text = "<span class='danger'>Вы истекаете кровью из: "
 		switch(num_bleeds)
 			if(1 to 2)
-				bleed_text += " [bleeding_limbs[1].name][num_bleeds == 2 ? " и [bleeding_limbs[2].name]" : ""]"
+				bleed_text += " [bleeding_limbs[1].declent_ru(GENITIVE)][num_bleeds == 2 ? " и [bleeding_limbs[2].declent_ru(GENITIVE)]" : ""]"
 			if(3 to INFINITY)
 				for(var/i in 1 to (num_bleeds - 1))
 					var/obj/item/bodypart/BP = bleeding_limbs[i]
-					bleed_text += " [BP.name],"
-				bleed_text += " и [bleeding_limbs[num_bleeds].name]"
+					bleed_text += " [BP.declent_ru(GENITIVE)],"
+				bleed_text += " и [bleeding_limbs[num_bleeds].declent_ru(GENITIVE)]"
 		bleed_text += "!</span>"
 		combined_msg += bleed_text
 

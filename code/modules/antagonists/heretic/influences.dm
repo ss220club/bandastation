@@ -110,7 +110,7 @@
 	var/mob/living/carbon/human/human_user = user
 	var/obj/item/bodypart/their_poor_arm = human_user.get_active_hand()
 	if(prob(25))
-		to_chat(human_user, span_userdanger("Потустороннее присутствие разрывает и распыляет вашу [their_poor_arm.name], когда вы пытаетесь коснуться дыры в самой ткани реальности!"))
+		to_chat(human_user, span_userdanger("Потустороннее присутствие разрывает и распыляет у вас [their_poor_arm.declent_ru(ACCUSATIVE)], когда вы пытаетесь коснуться дыры в самой ткани реальности!"))
 		their_poor_arm.dismember()
 		qdel(their_poor_arm)
 	else

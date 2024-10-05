@@ -87,10 +87,10 @@ GLOBAL_LIST_INIT(heretic_start_knowledge, initialize_starting_knowledge())
 		where_to_put_our_heart.AddComponent(/datum/component/living_heart)
 		desc = "Дарует вам Живое сердце, привязанное к вашему [where_to_put_our_heart.name], \
 			позволяя отслеживать жертвенные цели. \
-			Если вы потеряете свое [where_to_put_our_heart.name], вы можете трансмутировать мак и лужу крови, \
-			чтобы пробудить ваше [where_to_put_our_heart.name] в Живое сердце. \
-			Если ваше [where_to_put_our_heart.name] кибернетическое, \
-			вам дополнительно потребуется пригодное для использования органическое [where_to_put_our_heart.name] при трансмутации."
+			Если вы потеряете [where_to_put_our_heart.declent_ru(GENITIVE)] у вас, вы можете трансмутировать мак и лужу крови, \
+			чтобы пробудить [where_to_put_our_heart.declent_ru(ACCUSATIVE)] у вас в Живое сердце. \
+			Если [where_to_put_our_heart.declent_ru(NOMINATIVE)] у вас кибернетическое, \
+			вам дополнительно потребуется [where_to_put_our_heart.declent_ru(NOMINATIVE)] из органики и без повреждений при трансмутации."
 
 	else
 		to_chat(user, span_boldnotice("У вас нет сердца или каких-либо органов грудной клетки, если на то пошло. Вы не получили Живое сердце из-за этого."))
@@ -157,7 +157,7 @@ GLOBAL_LIST_INIT(heretic_start_knowledge, initialize_starting_knowledge())
 		our_replacement_heart.Insert(user, TRUE, TRUE)
 		if(our_new_heart)
 			// Throw our current heart out of our chest, violently
-			user.visible_message(span_boldwarning("[our_new_heart.name] [user] внезапно вырывается из груди!"))
+			user.visible_message(span_boldwarning("[capitalize(our_new_heart.declent_ru(NOMINATIVE))] у [user.declent_ru(GENITIVE)] внезапно вырывается из груди!"))
 			INVOKE_ASYNC(user, TYPE_PROC_REF(/mob, emote), "scream")
 			user.apply_damage(20, BRUTE, BODY_ZONE_CHEST)
 			selected_atoms -= our_new_heart // so we don't delete our old heart while we dramatically toss is out
