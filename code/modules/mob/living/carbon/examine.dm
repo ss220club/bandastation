@@ -172,7 +172,7 @@
 				bleed_text += "<span class='warning'>"
 				bleed_text += "[t_He] кровоточит из [t_his] "
 
-			bleed_text += english_list(bleeding_limbs, and_text = " и ")
+			bleed_text += english_list(bleeding_limbs)
 
 			if(appears_dead)
 				bleed_text += ", но она скопилась и не течет."
