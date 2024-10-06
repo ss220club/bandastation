@@ -38,11 +38,11 @@
 	display_results(
 		user,
 		target,
-		span_notice("Вы начинаете вставлять [tool.declent_ru(ACCUSATIVE)] в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]..."),
-		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает вставлять [tool.declent_ru(ACCUSATIVE)] в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]."),
-		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает вставлять что-то в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]."),
+		span_notice("Вы начинаете вставлять [tool.declent_ru(ACCUSATIVE)] в [target.parse_zone_with_bodypart(target_zone, declent = ACCUSATIVE)] у [target.declent_ru(GENITIVE)]..."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает вставлять [tool.declent_ru(ACCUSATIVE)] в [target.parse_zone_with_bodypart(target_zone, declent = ACCUSATIVE)] у [target.declent_ru(GENITIVE)]."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает вставлять что-то в [target.parse_zone_with_bodypart(target_zone, declent = ACCUSATIVE)] у [target.declent_ru(GENITIVE)]."),
 	)
-	display_pain(target, "Что-то засовывают вам в <i>[target.parse_zone_with_bodypart(target_zone)]</i>!")
+	display_pain(target, "Что-то засовывают вам в [target.parse_zone_with_bodypart(target_zone, declent = ACCUSATIVE)]!")
 
 /datum/surgery_step/insert_pill/success(mob/user, mob/living/carbon/target, target_zone, obj/item/reagent_containers/pill/tool, datum/surgery/surgery, default_display_results = FALSE)
 	if(!istype(tool))
@@ -60,9 +60,9 @@
 	display_results(
 		user,
 		target,
-		span_notice("Вы вставили [tool.declent_ru(ACCUSATIVE)] в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]."),
-		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] вставил [tool.declent_ru(ACCUSATIVE)] в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]!"),
-		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] вставил что-то в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]!"),
+		span_notice("Вы вставили [tool.declent_ru(ACCUSATIVE)] в [target.parse_zone_with_bodypart(target_zone, declent = ACCUSATIVE)] у [target.declent_ru(GENITIVE)]."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] вставил [tool.declent_ru(ACCUSATIVE)] в [target.parse_zone_with_bodypart(target_zone, declent = ACCUSATIVE)] у [target.declent_ru(GENITIVE)]!"),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] вставил что-то в [target.parse_zone_with_bodypart(target_zone, declent = ACCUSATIVE)] у [target.declent_ru(GENITIVE)]!"),
 	)
 	return ..()
 

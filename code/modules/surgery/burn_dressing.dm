@@ -73,20 +73,20 @@
 	if(surgery.operated_wound)
 		var/datum/wound/burn/flesh/burn_wound = surgery.operated_wound
 		if(burn_wound.infestation <= 0)
-			to_chat(user, span_notice("У [target] в <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i> нет зараженной плоти, которую нужно удалить!"))
+			to_chat(user, span_notice("У [target] в [target.parse_zone_with_bodypart(user.zone_selected, declent = PREPOSITIONAL)] нет зараженной плоти, которую нужно удалить!"))
 			surgery.status++
 			repeatable = FALSE
 			return
 		display_results(
 			user,
 			target,
-			span_notice("Вы начинаете удалять зараженную плоть из <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i> у [target.declent_ru(GENITIVE)]..."),
-			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает удалять зараженную плоть из <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i> у [target.declent_ru(GENITIVE)] при помощи [tool.declent_ru(GENITIVE)]."),
-			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает удалять зараженную плоть из <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i> у [target.declent_ru(GENITIVE)]."),
+			span_notice("Вы начинаете удалять зараженную плоть из [target.parse_zone_with_bodypart(user.zone_selected, declent = GENITIVE)] у [target.declent_ru(GENITIVE)]..."),
+			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает удалять зараженную плоть из [target.parse_zone_with_bodypart(user.zone_selected, declent = GENITIVE)] у [target.declent_ru(GENITIVE)] при помощи [tool.declent_ru(GENITIVE)]."),
+			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает удалять зараженную плоть из [target.parse_zone_with_bodypart(user.zone_selected, declent = GENITIVE)] у [target.declent_ru(GENITIVE)]."),
 		)
-		display_pain(target, "Инфекция в вашей <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i> адски зудит! Такое ощущение, что тебя режут ножом!")
+		display_pain(target, "Инфекция в [target.parse_zone_with_bodypart(user.zone_selected, declent = PREPOSITIONAL)] у вас адски зудит! Такое ощущение, что тебя режут ножом!")
 	else
-		user.visible_message(span_notice("[capitalize(user.declent_ru(NOMINATIVE))] ищет <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i> у [target.declent_ru(GENITIVE)]."), span_notice("Вы ищете <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i> у [target.declent_ru(GENITIVE)]..."))
+		user.visible_message(span_notice("[capitalize(user.declent_ru(NOMINATIVE))] ищет [target.parse_zone_with_bodypart(user.zone_selected, declent = ACCUSATIVE)] у [target.declent_ru(GENITIVE)]."), span_notice("Вы ищете [target.parse_zone_with_bodypart(user.zone_selected, declent = ACCUSATIVE)] у [target.declent_ru(GENITIVE)]..."))
 
 /datum/surgery_step/debride/success(mob/living/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
 	var/datum/wound/burn/flesh/burn_wound = surgery.operated_wound
@@ -95,9 +95,9 @@
 		display_results(
 			user,
 			target,
-			span_notice("Вы успешно удалили часть зараженной плоти из <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)][progress_text]."),
-			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно удалил часть зараженной плоти из <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)] при помощи [tool.declent_ru(GENITIVE)]!"),
-			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно удалил часть зараженной плоти из <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]!"),
+			span_notice("Вы успешно удалили часть зараженной плоти из [target.parse_zone_with_bodypart(target_zone, declent = GENITIVE)] у [target.declent_ru(GENITIVE)][progress_text]."),
+			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно удалил часть зараженной плоти из [target.parse_zone_with_bodypart(target_zone, declent = GENITIVE)] у [target.declent_ru(GENITIVE)] при помощи [tool.declent_ru(GENITIVE)]!"),
+			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно удалил часть зараженной плоти из [target.parse_zone_with_bodypart(target_zone, declent = GENITIVE)] у [target.declent_ru(GENITIVE)]!"),
 		)
 		log_combat(user, target, "excised infected flesh in", addition="COMBAT MODE: [uppertext(user.combat_mode)]")
 		surgery.operated_bodypart.receive_damage(brute=3, wound_bonus=CANT_WOUND)
@@ -114,9 +114,9 @@
 	display_results(
 		user,
 		target,
-		span_notice("Вы срезаете часть здоровой плоти из <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]."),
-		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] срезает часть здоровой плоти из <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)] при помощи [tool.declent_ru(GENITIVE)]!"),
-		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] срезает часть здоровой плоти из <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]!"),
+		span_notice("Вы срезаете часть здоровой плоти из [target.parse_zone_with_bodypart(target_zone, declent = GENITIVE)] у [target.declent_ru(GENITIVE)]."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] срезает часть здоровой плоти из [target.parse_zone_with_bodypart(target_zone, declent = GENITIVE)] у [target.declent_ru(GENITIVE)] при помощи [tool.declent_ru(GENITIVE)]!"),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] срезает часть здоровой плоти из [target.parse_zone_with_bodypart(target_zone, declent = GENITIVE)] у [target.declent_ru(GENITIVE)]!"),
 	)
 	surgery.operated_bodypart.receive_damage(brute=rand(4,8), sharpness=TRUE)
 
@@ -147,13 +147,13 @@
 		display_results(
 			user,
 			target,
-			span_notice("Вы начинаете обрабатывать ожоги на <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i> у [target.declent_ru(GENITIVE)]..."),
-			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает обрабатывать ожоги на <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i> у [target.declent_ru(GENITIVE)] при помощи [tool.declent_ru(GENITIVE)]."),
-			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает обрабатывать ожоги на <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i> у [target.declent_ru(GENITIVE)]."),
+			span_notice("Вы начинаете обрабатывать ожоги на [target.parse_zone_with_bodypart(user.zone_selected, declent = PREPOSITIONAL)] у [target.declent_ru(GENITIVE)]..."),
+			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает обрабатывать ожоги на [target.parse_zone_with_bodypart(user.zone_selected, declent = PREPOSITIONAL)] у [target.declent_ru(GENITIVE)] при помощи [tool.declent_ru(GENITIVE)]."),
+			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает обрабатывать ожоги на [target.parse_zone_with_bodypart(user.zone_selected, declent = PREPOSITIONAL)] у [target.declent_ru(GENITIVE)]."),
 		)
-		display_pain(target, "Ожоги в <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i> адски зудят!")
+		display_pain(target, "Ожоги в [target.parse_zone_with_bodypart(user.zone_selected, declent = PREPOSITIONAL)] адски зудят!")
 	else
-		user.visible_message(span_notice("[capitalize(user.declent_ru(NOMINATIVE))] ищет у [target.declent_ru(GENITIVE)] <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i>."), span_notice("Вы ищете <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i> у [target.declent_ru(GENITIVE)] ..."))
+		user.visible_message(span_notice("[capitalize(user.declent_ru(NOMINATIVE))] ищет у [target.declent_ru(GENITIVE)] [target.parse_zone_with_bodypart(user.zone_selected, declent = ACCUSATIVE)]."), span_notice("Вы ищете [target.parse_zone_with_bodypart(user.zone_selected, declent = ACCUSATIVE)] у [target.declent_ru(GENITIVE)] ..."))
 
 /datum/surgery_step/dress/success(mob/living/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
 	var/datum/wound/burn/flesh/burn_wound = surgery.operated_wound
@@ -161,9 +161,9 @@
 		display_results(
 			user,
 			target,
-			span_notice("Вы успешно перевязываете <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)] при помощи [tool.declent_ru(GENITIVE)]."),
-			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно перевязывает <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)] при помощи [tool.declent_ru(GENITIVE)]!"),
-			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно перевязывает <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]!"),
+			span_notice("Вы успешно перевязываете [target.parse_zone_with_bodypart(target_zone, declent = ACCUSATIVE)] у [target.declent_ru(GENITIVE)] при помощи [tool.declent_ru(GENITIVE)]."),
+			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно перевязывает [target.parse_zone_with_bodypart(target_zone, declent = ACCUSATIVE)] у [target.declent_ru(GENITIVE)] при помощи [tool.declent_ru(GENITIVE)]!"),
+			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно перевязывает [target.parse_zone_with_bodypart(target_zone, declent = ACCUSATIVE)] у [target.declent_ru(GENITIVE)]!"),
 		)
 		log_combat(user, target, "dressed burns in", addition="COMBAT MODE: [uppertext(user.combat_mode)]")
 		burn_wound.sanitization += sanitization_added

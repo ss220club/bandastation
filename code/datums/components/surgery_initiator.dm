@@ -119,11 +119,11 @@
 		patient.surgeries -= the_surgery
 		REMOVE_TRAIT(patient, TRAIT_ALLOWED_HONORBOUND_ATTACK, type)
 		user.visible_message(
-			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] снимает [parent.declent_ru(ACCUSATIVE)] с <i>[patient.parse_zone_with_bodypart(selected_zone)]</i> у [patient.declent_ru(GENITIVE)]."),
-			span_notice("Вы снимаете [parent.declent_ru(ACCUSATIVE)] с <i>[patient.parse_zone_with_bodypart(selected_zone)]</i> у [patient.declent_ru(GENITIVE)]."),
+			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] снимает [parent.declent_ru(ACCUSATIVE)] с [patient.parse_zone_with_bodypart(selected_zone, declent = GENITIVE)] у [patient.declent_ru(GENITIVE)]."),
+			span_notice("Вы снимаете [parent.declent_ru(ACCUSATIVE)] с [patient.parse_zone_with_bodypart(selected_zone, declent = GENITIVE)] у [patient.declent_ru(GENITIVE)]."),
 		)
 
-		patient.balloon_alert(user, "прекращение работы над <i>[patient.parse_zone_with_bodypart(selected_zone)]</i>")
+		patient.balloon_alert(user, "прекращение работы над [patient.parse_zone_with_bodypart(selected_zone, declent = INSTRUMENTAL)]")
 
 		qdel(the_surgery)
 		return
@@ -145,11 +145,11 @@
 	REMOVE_TRAIT(patient, TRAIT_ALLOWED_HONORBOUND_ATTACK, ELEMENT_TRAIT(type))
 
 	user.visible_message(
-		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] закрывает <i>[patient.parse_zone_with_bodypart(selected_zone)]</i> у [patient.declent_ru(GENITIVE)], используя [close_tool.declent_ru(ACCUSATIVE)] и снимая [parent.declent_ru(ACCUSATIVE)]."),
-		span_notice("Вы закрываете <i>[patient.parse_zone_with_bodypart(selected_zone)]</i> у [patient.declent_ru(GENITIVE)], используя [close_tool.declent_ru(ACCUSATIVE)] и снимая [parent.declent_ru(ACCUSATIVE)]."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] закрывает [patient.parse_zone_with_bodypart(selected_zone)] у [patient.declent_ru(GENITIVE)], используя [close_tool.declent_ru(ACCUSATIVE)] и снимая [parent.declent_ru(ACCUSATIVE)]."),
+		span_notice("Вы закрываете [patient.parse_zone_with_bodypart(selected_zone)] у [patient.declent_ru(GENITIVE)], используя [close_tool.declent_ru(ACCUSATIVE)] и снимая [parent.declent_ru(ACCUSATIVE)]."),
 	)
 
-	patient.balloon_alert(user, "закрытие [patient.parse_zone_with_bodypart(selected_zone)]")
+	patient.balloon_alert(user, "закрытие [patient.parse_zone_with_bodypart(selected_zone, declent = GENITIVE)]")
 
 	qdel(the_surgery)
 
@@ -281,7 +281,7 @@
 	var/obj/item/bodypart/affecting_limb = target.get_bodypart(check_zone(selected_zone))
 
 	if ((surgery.surgery_flags & SURGERY_REQUIRE_LIMB) && isnull(affecting_limb))
-		target.balloon_alert(user, "у пациента нет <i>[parse_zone(selected_zone)]</i>!")
+		target.balloon_alert(user, "у пациента нет [ru_parse_zone(selected_zone, declent = GENITIVE)]!")
 		return
 
 	if (!isnull(affecting_limb))
@@ -301,7 +301,7 @@
 		return
 
 	if (surgery_needs_exposure(surgery, target))
-		target.balloon_alert(user, "раскройте у них <i>[target.parse_zone_with_bodypart(selected_zone)]</i>!")
+		target.balloon_alert(user, "раскройте у них [target.parse_zone_with_bodypart(selected_zone, declent = ACCUSATIVE)]!")
 		return
 
 	ui_close()
@@ -312,8 +312,8 @@
 	target.balloon_alert(user, "начинается \"[LOWER_TEXT(procedure.name)]\"")
 
 	user.visible_message(
-		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] накидывает [parent.declent_ru(ACCUSATIVE)] на [target.parse_zone_with_bodypart(selected_zone)] у [target.declent_ru(GENITIVE)] для подготовки к операции."),
-		span_notice("Вы накидываете [parent.declent_ru(ACCUSATIVE)] на [target.parse_zone_with_bodypart(selected_zone)] у [target.declent_ru(GENITIVE)] для подготовки к [procedure.name]."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] накидывает [parent.declent_ru(ACCUSATIVE)] на [target.parse_zone_with_bodypart(selected_zone, declent = ACCUSATIVE)] у [target.declent_ru(GENITIVE)] для подготовки к операции."),
+		span_notice("Вы накидываете [parent.declent_ru(ACCUSATIVE)] на [target.parse_zone_with_bodypart(selected_zone, declent = ACCUSATIVE)] у [target.declent_ru(GENITIVE)] для подготовки к [procedure.name]."),
 	)
 
 	log_combat(user, target, "operated on", null, "(OPERATION TYPE: [procedure.name]) (TARGET AREA: [selected_zone])")

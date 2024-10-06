@@ -65,7 +65,7 @@
 			if(get_location_accessible(target, target_zone) || (surgery.surgery_flags & SURGERY_IGNORE_CLOTHES))
 				initiate(user, target, target_zone, tool, surgery, try_to_fail)
 			else
-				to_chat(user, span_warning("Вам надо снять все, что может закрывать <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)], для того чтобы начать операцию!"))
+				to_chat(user, span_warning("Вам надо снять все, что может закрывать [target.parse_zone_with_bodypart(target_zone, declent = ACCUSATIVE)] у [target.declent_ru(GENITIVE)], для того чтобы начать операцию!"))
 			return TRUE //returns TRUE so we don't stab the guy in the dick or wherever.
 
 	if(repeatable)

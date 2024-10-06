@@ -24,20 +24,20 @@
 		to_chat(user, span_warning("Это не аугментат, дурак!"))
 		return SURGERY_STEP_FAIL
 	if(aug.body_zone != target_zone)
-		to_chat(user, span_warning("Для <i>[target.parse_zone_with_bodypart(target_zone)]</i> не подходит [tool.declent_ru(NOMINATIVE)]."))
+		to_chat(user, span_warning("Для [target.parse_zone_with_bodypart(target_zone, declent = GENITIVE)] не подходит [tool.declent_ru(NOMINATIVE)]."))
 		return SURGERY_STEP_FAIL
 	target_limb = surgery.operated_bodypart
 	if(target_limb)
 		display_results(
 			user,
 			target,
-			span_notice("Вы начинаете аугментировать <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i> у [target.declent_ru(GENITIVE)]..."),
-			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает аугментировать <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i> у [target.declent_ru(GENITIVE)] с помощью [aug.declent_ru(GENITIVE)]."),
-			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает аугментировать <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i> у [target.declent_ru(GENITIVE)]."),
+			span_notice("Вы начинаете аугментировать [target.parse_zone_with_bodypart(user.zone_selected, declent = ACCUSATIVE)] у [target.declent_ru(GENITIVE)]..."),
+			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает аугментировать [target.parse_zone_with_bodypart(user.zone_selected, declent = ACCUSATIVE)] у [target.declent_ru(GENITIVE)] с помощью [aug.declent_ru(GENITIVE)]."),
+			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает аугментировать [target.parse_zone_with_bodypart(user.zone_selected, declent = ACCUSATIVE)] у [target.declent_ru(GENITIVE)]."),
 		)
-		display_pain(target, "Вы чувствуете ужасную боль в <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i>!")
+		display_pain(target, "Вы чувствуете ужасную боль в [target.parse_zone_with_bodypart(user.zone_selected, declent = PREPOSITIONAL)]!")
 	else
-		user.visible_message(span_notice("[capitalize(user.declent_ru(NOMINATIVE))] ищет у [target.declent_ru(GENITIVE)] в <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i>."), span_notice("Вы ищете у [target.declent_ru(GENITIVE)] в <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i>..."))
+		user.visible_message(span_notice("[capitalize(user.declent_ru(NOMINATIVE))] ищет у [target.declent_ru(GENITIVE)] в [target.parse_zone_with_bodypart(user.zone_selected, declent = PREPOSITIONAL)]."), span_notice("Вы ищете у [target.declent_ru(GENITIVE)] в [target.parse_zone_with_bodypart(user.zone_selected, declent = PREPOSITIONAL)]..."))
 
 
 //ACTUAL SURGERIES
@@ -74,9 +74,9 @@
 				display_results(
 					user,
 					target,
-					span_warning("Вы не смогли заменить <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]! Тело отвергает [tool.declent_ru(ACCUSATIVE)]!"),
-					span_warning("[capitalize(user.declent_ru(NOMINATIVE))] не смог заменить <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]!"),
-					span_warning("[capitalize(user.declent_ru(NOMINATIVE))] не смог заменить <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]!"),
+					span_warning("Вы не смогли заменить [target.parse_zone_with_bodypart(target_zone, declent = ACCUSATIVE)] у [target.declent_ru(GENITIVE)]! Тело отвергает [tool.declent_ru(ACCUSATIVE)]!"),
+					span_warning("[capitalize(user.declent_ru(NOMINATIVE))] не смог заменить [target.parse_zone_with_bodypart(target_zone, declent = ACCUSATIVE)] у [target.declent_ru(GENITIVE)]!"),
+					span_warning("[capitalize(user.declent_ru(NOMINATIVE))] не смог заменить [target.parse_zone_with_bodypart(target_zone, declent = ACCUSATIVE)] у [target.declent_ru(GENITIVE)]!"),
 				)
 				tool.forceMove(target.loc)
 				return
@@ -85,12 +85,12 @@
 		display_results(
 			user,
 			target,
-			span_notice("Вы успешно заменили <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]."),
-			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно заменил <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)] на [tool.declent_ru(ACCUSATIVE)]!"),
-			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно заменил <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]!"),
+			span_notice("Вы успешно заменили [target.parse_zone_with_bodypart(target_zone, declent = ACCUSATIVE)] у [target.declent_ru(GENITIVE)]."),
+			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно заменил [target.parse_zone_with_bodypart(target_zone, declent = ACCUSATIVE)] у [target.declent_ru(GENITIVE)] на [tool.declent_ru(ACCUSATIVE)]!"),
+			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно заменил [target.parse_zone_with_bodypart(target_zone, declent = ACCUSATIVE)] у [target.declent_ru(GENITIVE)]!"),
 		)
-		display_pain(target, "Ваш <i>[target.parse_zone_with_bodypart(target_zone)]</i> наполняется синтетическими ощущениями!", mechanical_surgery = TRUE)
+		display_pain(target, "[capitalize(target.parse_zone_with_bodypart(target_zone))] у вас наполняется синтетическими ощущениями!", mechanical_surgery = TRUE)
 		log_combat(user, target, "augmented", addition="by giving him new [target.parse_zone_with_bodypart(target_zone)] COMBAT MODE: [uppertext(user.combat_mode)]")
 	else
-		to_chat(user, span_warning("У [target.declent_ru(GENITIVE)] нет органической <i>[target.parse_zone_with_bodypart(target_zone)]</i> здесь!"))
+		to_chat(user, span_warning("У [target.declent_ru(GENITIVE)] нет здесь [target.parse_zone_with_bodypart(target_zone, declent = GENITIVE)] из органики!"))
 	return ..()

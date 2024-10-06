@@ -86,22 +86,22 @@
 	display_results(
 		user,
 		target,
-		span_notice("Вы начинаете отрезать <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]..."),
-		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает отрезать <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]!"),
-		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает отрезать <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]!"),
+		span_notice("Вы начинаете отрезать [target.parse_zone_with_bodypart(target_zone, declent = ACCUSATIVE)] у [target.declent_ru(GENITIVE)]..."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает отрезать [target.parse_zone_with_bodypart(target_zone, declent = ACCUSATIVE)] у [target.declent_ru(GENITIVE)]!"),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает отрезать [target.parse_zone_with_bodypart(target_zone, declent = ACCUSATIVE)] у [target.declent_ru(GENITIVE)]!"),
 	)
-	display_pain(target, "Вы чувствуете жуткую боль в <i>[parse_zone(target_zone)]</i>!")
+	display_pain(target, "Вы чувствуете жуткую боль в [ru_parse_zone(target_zone, declent = PREPOSITIONAL)]!")
 
 
 /datum/surgery_step/sever_limb/success(mob/user, mob/living/carbon/human/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
 	display_results(
 		user,
 		target,
-		span_notice("Вы отрезали <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]."),
-		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] отрезал <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]!"),
-		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] отрезал <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]!"),
+		span_notice("Вы отрезали [target.parse_zone_with_bodypart(target_zone, declent = ACCUSATIVE)] у [target.declent_ru(GENITIVE)]."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] отрезал [target.parse_zone_with_bodypart(target_zone, declent = ACCUSATIVE)] у [target.declent_ru(GENITIVE)]!"),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] отрезал [target.parse_zone_with_bodypart(target_zone, declent = ACCUSATIVE)] у [target.declent_ru(GENITIVE)]!"),
 	)
-	display_pain(target, "Вы больше не чувствуете <i>[target.parse_zone_with_bodypart(target_zone)]</i> у себя!")
+	display_pain(target, "Вы больше не чувствуете [target.parse_zone_with_bodypart(target_zone, declent = ACCUSATIVE)] у себя!")
 
 	if(HAS_MIND_TRAIT(user, TRAIT_MORBID) && ishuman(user))
 		var/mob/living/carbon/human/morbid_weirdo = user
