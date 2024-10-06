@@ -35,7 +35,7 @@
 		if(ismob(loc))
 			var/turf/our_turf = get_turf(src)
 			if(is_station_level(our_turf.z))
-				to_chat(loc, span_danger("[src.name] деактивируется, так как он подавляется системами станции."))
+				to_chat(loc, span_danger("[src.name] деактивируется, так как подавляется системами станции."))
 				recharge_newshot(no_cyborg_drain = TRUE)
 
 /obj/item/gun/energy/laser/awaymission_aeg/mk2
