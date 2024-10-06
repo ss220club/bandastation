@@ -49,7 +49,7 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 
 	if(item_flags & IN_INVENTORY && loc == user)
 		// construction of frequency description
-		var/list/avail_chans = list("Используйте [RADIO_KEY_COMMON] для текущий настроенной частоты")
+		var/list/avail_chans = list("Используйте [RADIO_KEY_COMMON] для текущей настроенной частоты")
 		if(special_channels & RADIO_SPECIAL_BINARY)
 			avail_chans += "используйте [MODE_TOKEN_BINARY] для канала \"[MODE_BINARY]\""
 		if(length(channels))
