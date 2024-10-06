@@ -404,7 +404,7 @@
 			var/obj/item/clothing/under/undershirt = w_uniform
 			var/list/accessories = undershirt.list_accessories_with_icon(user)
 			if(length(accessories))
-				accessory_message = " с присоединенными: [english_list(accessories)]"
+				accessory_message = " с прикрепленными: [english_list(accessories)]"
 
 		. += "[t_He] носит [w_uniform.examine_title(user, declent = ACCUSATIVE)][accessory_message]."
 	//head
@@ -566,6 +566,6 @@
 	if(istype(w_uniform, /obj/item/clothing/under))
 		var/obj/item/clothing/under/undershirt = w_uniform
 		if(undershirt.has_sensor == BROKEN_SENSORS)
-			. += list(span_notice("[capitalize(undershirt.declent_ru(NOMINATIVE))] имеет коротящие медицинские сенсоры."))
+			. += list(span_notice("[capitalize(undershirt.declent_ru(NOMINATIVE))] имеет коротящие медицинские датчики."))
 
 #undef ADD_NEWLINE_IF_NECESSARY
