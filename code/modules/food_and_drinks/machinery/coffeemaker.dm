@@ -2,6 +2,7 @@
 
 /obj/machinery/coffeemaker
 	name = "coffeemaker"
+	ru_names = RU_NAMES_LIST_INIT("coffeemaker", "кофемашина", "кофемашины", "кофемашине", "кофемашину", "кофемашиной", "кофемашине")
 	desc = "A Modello 3 Coffeemaker that brews coffee and holds it at the perfect temperature of 176 fahrenheit. Made by Piccionaia Home Appliances."
 	icon = 'icons/obj/medical/chemical.dmi'
 	icon_state = "coffeemaker_nopot_nocart"
@@ -731,7 +732,7 @@
 	coffeepot.reagents.add_reagent_list(reagent_delta)
 
 	qdel(reference_bean)
-	
+
 	// remove the coffee beans from the machine
 	coffee.Cut(1,2)
 	coffee_amount--
