@@ -517,13 +517,13 @@
 				. = TRUE
 
 /obj/item/radio/examine(mob/user)
-	. = ..()
+	. = ..() // translate
 	if (frequency && in_range(src, user))
-		. += span_notice("It is set to broadcast over the [frequency/10] frequency.")
+		. += span_notice("Передача настроена на частоту [frequency/10].")
 	if (unscrewed)
-		. += span_notice("It can be attached and modified.")
+		. += span_notice("Можно подсоединить или модифицировать.")
 	else
-		. += span_notice("It cannot be modified or attached.")
+		. += span_notice("Нельзя модифицировать или подсоединить.")
 
 /obj/item/radio/update_overlays()
 	. = ..()
