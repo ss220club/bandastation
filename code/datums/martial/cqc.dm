@@ -56,14 +56,14 @@
 	var/mob/living/attacker = GET_ASSAILANT(hitby)
 	if(istype(attacker) && cqc_user.Adjacent(attacker))
 		cqc_user.visible_message(
-			span_danger("[cqc_user] blocks [attack_text] and twists [attacker]'s arm behind [attacker.p_their()] back!"),
-			span_userdanger("You block [attack_text]!"),
+			span_danger("[capitalize(cqc_user.declent_ru(NOMINATIVE))] блокирует [attack_text] и выкручивает руку [attacker.declent_ru(GENITIVE)] за [attacker.ru_p_them()] спиной!"),
+			span_userdanger("Вы блокируете [attack_text]!"),
 		)
 		attacker.Stun(4 SECONDS)
 	else
 		cqc_user.visible_message(
-			span_danger("[cqc_user] blocks [attack_text]!"),
-			span_userdanger("You block [attack_text]!"),
+			span_danger("[capitalize(cqc_user.declent_ru(NOMINATIVE))] блокирует [attack_text]!"),
+			span_userdanger("Вы блокируете [attack_text]!"),
 		)
 	return SUCCESSFUL_BLOCK
 

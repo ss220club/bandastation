@@ -292,15 +292,15 @@
 		if(body_position == LYING_DOWN)
 			zone_hit_chance += 10
 		targeting = get_random_valid_zone(targeting, zone_hit_chance)
-	var/targeting_human_readable = parse_zone_with_bodypart(targeting)
+	var/targeting_human_readable = parse_zone_with_bodypart(targeting, declent = ACCUSATIVE)
 
 	send_item_attack_message(attacking_item, user, targeting_human_readable, targeting)
 
 	var/armor_block = min(run_armor_check(
 			def_zone = targeting,
 			attack_flag = MELEE,
-			absorb_text = span_notice("Your armor has protected your [targeting_human_readable]!"),
-			soften_text = span_warning("Your armor has softened a hit to your [targeting_human_readable]!"),
+			absorb_text = span_notice("Ваша броня защитила вашу [targeting_human_readable]!"),
+			soften_text = span_warning("Ваша броня смягчила удар, нанесенный в вашу [targeting_human_readable]!"),
 			armour_penetration = attacking_item.armour_penetration,
 			weak_against_armour = attacking_item.weak_against_armour,
 		), ARMOR_MAX_BLOCK)
@@ -315,7 +315,7 @@
 
 	if(user != src)
 		// This doesn't factor in armor, or most damage modifiers (physiology). Your mileage may vary
-		if(check_block(attacking_item, damage, "the [attacking_item.name]", MELEE_ATTACK, attacking_item.armour_penetration, attacking_item.damtype))
+		if(check_block(attacking_item, damage, "[attacking_item.declent_ru(ACCUSATIVE)]", MELEE_ATTACK, attacking_item.armour_penetration, attacking_item.damtype)) // TODO220 - сделать блок везде
 			return FALSE
 
 	SEND_SIGNAL(attacking_item, COMSIG_ITEM_ATTACK_ZONE, src, user, targeting)
@@ -459,29 +459,29 @@
 /mob/living/proc/send_item_attack_message(obj/item/I, mob/living/user, hit_area, def_zone)
 	if(!I.force && !length(I.attack_verb_simple) && !length(I.attack_verb_continuous))
 		return
-	var/message_verb_continuous = length(I.attack_verb_continuous) ? "[pick(I.attack_verb_continuous)]" : "attacks"
-	var/message_verb_simple = length(I.attack_verb_simple) ? "[pick(I.attack_verb_simple)]" : "attack"
+	var/message_verb_continuous = length(I.attack_verb_continuous) ? "[pick(I.attack_verb_continuous)]" : "атакует"
+	var/message_verb_simple = length(I.attack_verb_simple) ? "[pick(I.attack_verb_simple)]" : "атакуете"
 	var/message_hit_area = get_hit_area_message(hit_area)
 
-	var/attack_message_spectator = "[src] [message_verb_continuous][message_hit_area] with [I]!"
-	var/attack_message_victim = "Something [message_verb_continuous] you[message_hit_area] with [I]!"
-	var/attack_message_attacker = "You [message_verb_simple] [src][message_hit_area] with [I]!"
+	var/attack_message_spectator = "[capitalize(declent_ru(NOMINATIVE))] [message_verb_continuous][message_hit_area] с помощью [I.declent_ru(GENITIVE)]!"
+	var/attack_message_victim = "Кто-то [message_verb_continuous] вас[message_hit_area] с помощью [I.declent_ru(GENITIVE)]!"
+	var/attack_message_attacker = "Вы [message_verb_simple] [declent_ru(ACCUSATIVE)][message_hit_area] с помощью [I.declent_ru(GENITIVE)]!"
 	if(user in viewers(src, null))
-		attack_message_spectator = "[user] [message_verb_continuous] [src][message_hit_area] with [I]!"
-		attack_message_victim = "[user] [message_verb_continuous] you[message_hit_area] with [I]!"
+		attack_message_spectator = "[capitalize(user.declent_ru(NOMINATIVE))] [message_verb_continuous] [declent_ru(ACCUSATIVE)][message_hit_area] с помощью [I.declent_ru(GENITIVE)]!"
+		attack_message_victim = "[capitalize(user.declent_ru(NOMINATIVE))] [message_verb_continuous] вас[message_hit_area] с помощью [I.declent_ru(GENITIVE)]!"
 	if(user == src)
-		attack_message_victim = "You [message_verb_simple] yourself[message_hit_area] with [I]."
+		attack_message_victim = "Вы [message_verb_simple] себя[message_hit_area] с помощью [I.declent_ru(GENITIVE)]."
 	visible_message(span_danger("[attack_message_spectator]"),\
 		span_userdanger("[attack_message_victim]"), null, COMBAT_MESSAGE_RANGE, user)
 	if(is_blind())
-		to_chat(src, span_danger("Someone hits you[message_hit_area]!"))
+		to_chat(src, span_danger("Кто-то ударяет вас[message_hit_area]!"))
 	to_chat(user, span_danger("[attack_message_attacker]"))
 	return 1
 
 /// Overridable proc so subtypes can have unique targetted strike zone messages, return a string.
 /mob/living/proc/get_hit_area_message(input_area)
 	if(input_area)
-		return " in the [input_area]"
+		return " в [input_area]"
 
 	return ""
 

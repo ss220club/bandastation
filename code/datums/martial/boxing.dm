@@ -247,7 +247,7 @@
 
 	var/block_chance = base_unarmed_effectiveness + athletics_skill_rands
 
-	var/block_text = pick("block", "evade")
+	var/block_text = pick("блокирует", "избегает")
 
 	var/mob/living/attacker = GET_ASSAILANT(hitby)
 
@@ -271,10 +271,10 @@
 		perform_extra_effect(boxer, attacker)
 
 	boxer.visible_message(
-		span_danger("[boxer] [block_text]s [attack_text]!"),
-		span_userdanger("You [block_text] [attack_text]!"),
+		span_danger("[capitalize(boxer.declent_ru(NOMINATIVE))] [block_text] [attack_text]!"),
+		span_userdanger("Вы [block_text]е [attack_text]!"),
 	)
-	if(block_text == "evade")
+	if(block_text == "избегает")
 		playsound(boxer.loc, active_arm.unarmed_miss_sound, 25, TRUE, -1)
 
 	return SUCCESSFUL_BLOCK
