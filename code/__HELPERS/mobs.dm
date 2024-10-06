@@ -606,7 +606,7 @@ GLOBAL_LIST_INIT(skin_tone_names, list(
 	if(part?.ru_plaintext_zone[declent])
 		return part.ru_plaintext_zone[declent]
 	return ru_parse_zone(zone, declent)
-	 // BANDASTATION EDIT END
+	// BANDASTATION EDIT END
 
 ///Return a string for the specified body zone. Should be used for parsing non-instantiated bodyparts, otherwise use [/obj/item/bodypart/var/plaintext_zone]
 /proc/parse_zone(zone)
