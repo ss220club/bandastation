@@ -20,7 +20,7 @@
 	SIGNAL_HANDLER
 	if(!isliving(target) || !can_disarm_attack(source, target, user, FALSE))
 		return NONE
-	context[SCREENTIP_CONTEXT_RMB] = "Shove"
+	context[SCREENTIP_CONTEXT_RMB] = "Толкнуть"
 	return CONTEXTUAL_SCREENTIP_SET
 
 /datum/element/disarm_attack/proc/secondary_attack(obj/item/source, mob/living/victim, mob/living/user, params)
@@ -42,4 +42,4 @@
 /datum/element/disarm_attack/proc/examine(obj/item/source, mob/user, list/examine_list)
 	SIGNAL_HANDLER
 	if(can_disarm_attack(source, user, user, FALSE))
-		examine_list += span_notice("You can use it to <b>shove</b> people with <b>right-click</b>.")
+		examine_list += span_notice("Вы можете использовать это для <b>толкания</b>, нажимая <b>ПКМ</b>.")
