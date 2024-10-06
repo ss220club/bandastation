@@ -60,13 +60,13 @@
 		display_results(
 			user,
 			target,
-			span_notice("Вы приступаете к устранению перелома в <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i> у [target]..."),
-			span_notice("[user] приступает к устранению перелома в <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i> у [target] при помощи [tool.name]."),
-			span_notice("[user] приступает к устранению перелома в <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i> у [target]."),
+			span_notice("Вы приступаете к устранению перелома в <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i> у [target.declent_ru(GENITIVE)]..."),
+			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] приступает к устранению перелома в <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i> у [target.declent_ru(GENITIVE)] при помощи [tool.declent_ru(GENITIVE)]."),
+			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] приступает к устранению перелома в <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i> у [target.declent_ru(GENITIVE)]."),
 		)
-		display_pain(target, "Ваша <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i> испытывает сильную боль!")
+		display_pain(target, "<i>[capitalize(target.parse_zone_with_bodypart(user.zone_selected))]</i> у вас испытывает сильную боль!")
 	else
-		user.visible_message(span_notice("[user] ищет у [target] в <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i>."), span_notice("Вы ищете у [target] в <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i>..."))
+		user.visible_message(span_notice("[capitalize(user.declent_ru(NOMINATIVE))] ищет у [target.declent_ru(GENITIVE)] в <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i>."), span_notice("Вы ищете у [target.declent_ru(GENITIVE)] в <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i>..."))
 
 /datum/surgery_step/repair_bone_hairline/success(mob/living/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
 	if(surgery.operated_wound)
@@ -76,14 +76,14 @@
 		display_results(
 			user,
 			target,
-			span_notice("Вы успешно устранили перелом в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
-			span_notice("[user] успешно устранил перелом в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target] при помощи [tool.name]!"),
-			span_notice("[user] успешно устранил перелом в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]!"),
+			span_notice("Вы успешно устранили перелом в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]."),
+			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно устранил перелом в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)] при помощи [tool.declent_ru(GENITIVE)]!"),
+			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно устранил перелом в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]!"),
 		)
 		log_combat(user, target, "repaired a hairline fracture in", addition="COMBAT_MODE: [uppertext(user.combat_mode)]")
 		qdel(surgery.operated_wound)
 	else
-		to_chat(user, span_warning("У [target] нет закрытого перелома здесь!"))
+		to_chat(user, span_warning("[capitalize(target.declent_ru(NOMINATIVE))] не имеет здесь перелома!"))
 	return ..()
 
 /datum/surgery_step/repair_bone_hairline/failure(mob/user, mob/living/target, target_zone, obj/item/tool, datum/surgery/surgery, fail_prob = 0)
@@ -109,13 +109,13 @@
 		display_results(
 			user,
 			target,
-			span_notice("Вы начинаете восстанавливать кость в <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i> у [target]..."),
-			span_notice("[user] начинает восстанавливать кость в <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i> у [target] при помощи [tool.name]."),
-			span_notice("[user] начинает восстанавливать кость в <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i> у [target]."),
+			span_notice("Вы начинаете восстанавливать кость в <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i> у [target.declent_ru(GENITIVE)]..."),
+			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает восстанавливать кость в <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i> у [target.declent_ru(GENITIVE)] при помощи [tool.declent_ru(GENITIVE)]."),
+			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает восстанавливать кость в <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i> у [target.declent_ru(GENITIVE)]."),
 		)
 		display_pain(target, "Острая боль в <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i> просто невыносима!")
 	else
-		user.visible_message(span_notice("[user] ищет у [target] в <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i>."), span_notice("Вы ищете у [target] в <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i>..."))
+		user.visible_message(span_notice("[capitalize(user.declent_ru(NOMINATIVE))] ищет у [target.declent_ru(GENITIVE)] в <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i>."), span_notice("Вы ищете у [target.declent_ru(GENITIVE)] в <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i>..."))
 
 /datum/surgery_step/reset_compound_fracture/success(mob/living/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
 	if(surgery.operated_wound)
@@ -125,13 +125,13 @@
 		display_results(
 			user,
 			target,
-			span_notice("Вы успешно восстановили кость в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
-			span_notice("[user] успешно восстановил кость в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target] при помощи [tool.name]!"),
-			span_notice("[user] успешно восстановил кость в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]!"),
+			span_notice("Вы успешно восстановили кость в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]."),
+			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно восстановил кость в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)] при помощи [tool.declent_ru(GENITIVE)]!"),
+			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно восстановил кость в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]!"),
 		)
 		log_combat(user, target, "reset a compound fracture in", addition="COMBAT MODE: [uppertext(user.combat_mode)]")
 	else
-		to_chat(user, span_warning("У [target] нет открытого перелома здесь!"))
+		to_chat(user, span_warning("[capitalize(target.declent_ru(NOMINATIVE))] не имеет здесь открытого перелома!"))
 	return ..()
 
 /datum/surgery_step/reset_compound_fracture/failure(mob/user, mob/living/target, target_zone, obj/item/tool, datum/surgery/surgery, fail_prob = 0)
@@ -159,13 +159,13 @@
 		display_results(
 			user,
 			target,
-			span_notice("Вы приступаете к устранению перелома в <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i> у [target]..."),
-			span_notice("[user] приступает к устранению перелома в <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i> у [target] при помощи [tool.name]."),
-			span_notice("[user] приступает к устранению перелома в <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i> у [target]."),
+			span_notice("Вы приступаете к устранению перелома в <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i> у [target.declent_ru(GENITIVE)]..."),
+			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] приступает к устранению перелома в <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i> у [target.declent_ru(GENITIVE)] при помощи [tool.declent_ru(GENITIVE)]."),
+			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] приступает к устранению перелома в <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i> у [target.declent_ru(GENITIVE)]."),
 		)
 		display_pain(target, "Острая боль в <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i> просто невыносима!")
 	else
-		user.visible_message(span_notice("[user] ищет у [target] в <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i>."), span_notice("Вы ищете у [target] в <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i>..."))
+		user.visible_message(span_notice("[capitalize(user.declent_ru(NOMINATIVE))] ищет у [target.declent_ru(GENITIVE)] в <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i>."), span_notice("Вы ищете у [target.declent_ru(GENITIVE)] в <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i>..."))
 
 /datum/surgery_step/repair_bone_compound/success(mob/living/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
 	if(surgery.operated_wound)
@@ -175,14 +175,14 @@
 		display_results(
 			user,
 			target,
-			span_notice("Вы успешно устранили перелом в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
-			span_notice("[user] успешно устранил перелом в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target] при помощи [tool]!"),
-			span_notice("[user] успешно устранил перелом в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]!"),
+			span_notice("Вы успешно устранили перелом в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]."),
+			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно устранил перелом в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)] при помощи [tool]!"),
+			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно устранил перелом в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]!"),
 		)
 		log_combat(user, target, "repaired a compound fracture in", addition="COMBAT_MODE: [uppertext(user.combat_mode)]")
 		qdel(surgery.operated_wound)
 	else
-		to_chat(user, span_warning("У [target] нет открытого перелома здесь!"))
+		to_chat(user, span_warning("[capitalize(target.declent_ru(NOMINATIVE))] не имеет здесь открытого перелома!"))
 	return ..()
 
 /datum/surgery_step/repair_bone_compound/failure(mob/user, mob/living/target, target_zone, obj/item/tool, datum/surgery/surgery, fail_prob = 0)
@@ -218,9 +218,9 @@
 	display_results(
 		user,
 		target,
-		span_notice("Вы начинаете избавляться от мелких обломков черепа в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]..."),
-		span_notice("[user] начинает избавляться от мелких обломков черепа в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]..."),
-		span_notice("[user] начинает копошиться в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]..."),
+		span_notice("Вы начинаете избавляться от мелких обломков черепа в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]..."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает избавляться от мелких обломков черепа в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]..."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает копошиться в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]..."),
 	)
 
 	display_pain(target, "Ваш мозг словно пронзают мелкие осколки стекла!")
@@ -236,16 +236,16 @@
 	display_results(
 		user,
 		target,
-		span_notice("Вы приступаете к восстановлению черепа у [target], как только можете..."),
-		span_notice("[user] приступает к восстановлению черепа у [target] при помощи [tool.name]."),
-		span_notice("[user] приступает к восстановлению черепа у [target]."),
+		span_notice("Вы приступаете к восстановлению черепа у [target.declent_ru(GENITIVE)], как только можете..."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] приступает к восстановлению черепа у [target.declent_ru(GENITIVE)] при помощи [tool.declent_ru(GENITIVE)]."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] приступает к восстановлению черепа у [target.declent_ru(GENITIVE)]."),
 	)
 
 	display_pain(target, "Вы чувствуете, как части черепа трутся о ваш мозг.!")
 
 /datum/surgery_step/repair_skull/success(mob/user, mob/living/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results)
 	if (isnull(surgery.operated_wound))
-		to_chat(user, span_warning("Череп [target] в порядке!"))
+		to_chat(user, span_warning("Череп [target.declent_ru(GENITIVE)] в порядке!"))
 		return ..()
 
 
@@ -256,9 +256,9 @@
 	display_results(
 		user,
 		target,
-		span_notice("Вы успешно восстановили череп у [target]."),
-		span_notice("[user] успешно восстановил череп у [target] при помощи [tool.name]."),
-		span_notice("[user] успешно восстановил череп у [target].")
+		span_notice("Вы успешно восстановили череп у [target.declent_ru(GENITIVE)]."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно восстановил череп у [target.declent_ru(GENITIVE)] при помощи [tool.declent_ru(GENITIVE)]."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно восстановил череп у [target.declent_ru(GENITIVE)].")
 	)
 
 	qdel(surgery.operated_wound)

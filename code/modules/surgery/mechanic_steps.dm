@@ -14,9 +14,9 @@
 	display_results(
 		user,
 		target,
-		span_notice("Вы начинаете откручивать корпус в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]..."),
-		span_notice("[user] начинает откручивать корпус в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
-		span_notice("[user] начинает откручивать корпус в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
+		span_notice("Вы начинаете откручивать корпус в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]..."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает откручивать корпус в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает откручивать корпус в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]."),
 	)
 	display_pain(target, "Вы ощущаете, как <i>[target.parse_zone_with_bodypart(target_zone)]</i> немеет по мере откручивания сенсорной панели.", TRUE)
 
@@ -44,9 +44,9 @@
 	display_results(
 		user,
 		target,
-		span_notice("Вы начинаете закручивать корпус в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]..."),
-		span_notice("[user] начинает закручивать корпус в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
-		span_notice("[user] начинает закручивать корпус в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
+		span_notice("Вы начинаете закручивать корпус в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]..."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает закручивать корпус в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает закручивать корпус в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]."),
 	)
 	display_pain(target, "Вы ощущаете, как начинаете получать показания датчиков из <i>[target.parse_zone_with_bodypart(target_zone)]</i>, после того, как панель закрутили обратно.", TRUE)
 
@@ -72,9 +72,9 @@
 	display_results(
 		user,
 		target,
-		span_notice("Вы начинаете подготовку электроники в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]..."),
-		span_notice("[user] начинает подготовку электроники в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
-		span_notice("[user] начинает подготовку электроники в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
+		span_notice("Вы начинаете подготовку электроники в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]..."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает подготовку электроники в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает подготовку электроники в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]."),
 	)
 	display_pain(target, "Вы чувствуете слабое жужжание в <i>[target.parse_zone_with_bodypart(target_zone)]</i>, когда электроника перезагружается.", TRUE)
 
@@ -91,9 +91,9 @@
 	display_results(
 		user,
 		target,
-		span_notice("Вы начинаете откручивать болты в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]..."),
-		span_notice("[user] начинает откручивать болты в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
-		span_notice("[user] начинает откручивать болты в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
+		span_notice("Вы начинаете откручивать болты в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]..."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает откручивать болты в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает откручивать болты в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]."),
 	)
 	display_pain(target, "Вы чувствуете вибрацию в <i>[target.parse_zone_with_bodypart(target_zone)]</i>, когда болты начинают ослабевать.", TRUE)
 
@@ -116,9 +116,9 @@
 	display_results(
 		user,
 		target,
-		span_notice("Вы начинаете закручивать болты в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]..."),
-		span_notice("[user] начинает закручивать болты в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
-		span_notice("[user] начинает закручивать болты в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
+		span_notice("Вы начинаете закручивать болты в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]..."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает закручивать болты в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает закручивать болты в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]."),
 	)
 	display_pain(target, "Вы чувствуете вибрацию в <i>[target.parse_zone_with_bodypart(target_zone)]</i>, когда болты начинают затягиваться.", TRUE)
 
@@ -140,9 +140,9 @@
 	display_results(
 		user,
 		target,
-		span_notice("Вы начинаете открывать держатели люка в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]..."),
-		span_notice("[user] начинает открывать держатели люка в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
-		span_notice("[user] начинает открывать держатели люка в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
+		span_notice("Вы начинаете открывать держатели люка в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]..."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает открывать держатели люка в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает открывать держатели люка в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]."),
 	)
 	display_pain(target, "Вы получаете последние показания датчиков из вашей <i>[target.parse_zone_with_bodypart(target_zone)]</i>, когда открывается люк.", TRUE)
 

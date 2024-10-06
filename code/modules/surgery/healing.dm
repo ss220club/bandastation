@@ -67,9 +67,9 @@
 			display_results(
 				user,
 				target,
-				span_notice("Вы пытаетесь наложить швы на [woundtype] у [target]."),
-				span_notice("[user] пытается наложить швы на [woundtype] у [target]."),
-				span_notice("[user] пытается наложить швы на [woundtype] у [target]."),
+				span_notice("Вы пытаетесь наложить швы на [woundtype] у [target.declent_ru(GENITIVE)]."),
+				span_notice("[capitalize(user.declent_ru(NOMINATIVE))] пытается наложить швы на [woundtype] у [target.declent_ru(GENITIVE)]."),
+				span_notice("[capitalize(user.declent_ru(NOMINATIVE))] пытается наложить швы на [woundtype] у [target.declent_ru(GENITIVE)]."),
 			)
 		display_pain(target, "Ваши [woundtype] чертовски болят!")
 
@@ -81,8 +81,8 @@
 			break
 
 /datum/surgery_step/heal/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
-	var/user_msg = "Вы успешно обрабатываете раны у [target]" //no period, add initial space to "addons"
-	var/target_msg = "[user] успешно обрабатывает раны у [target]" //see above
+	var/user_msg = "Вы успешно обрабатываете раны у [target.declent_ru(GENITIVE)]" //no period, add initial space to "addons"
+	var/target_msg = "[capitalize(user.declent_ru(NOMINATIVE))] успешно обрабатывает раны у [target.declent_ru(GENITIVE)]" //see above
 	var/brute_healed = brutehealing
 	var/burn_healed = burnhealing
 	var/dead_patient = FALSE
@@ -97,8 +97,8 @@
 	if(!get_location_accessible(target, target_zone))
 		brute_healed *= 0.55
 		burn_healed *= 0.55
-		user_msg += " as best as you can while [target.p_they()] [target.p_have()] clothing on"
-		target_msg += " as best as [user.p_they()] can while [target.p_they()] [target.p_have()] clothing on"
+		user_msg += " по силе возможностей, пока на них надета одежда"
+		target_msg += " по силе их возможностей, пока на них надета одежда"
 	target.heal_bodypart_damage(brute_healed,burn_healed)
 
 	user_msg += get_progress(user, target, brute_healed, burn_healed)
@@ -124,8 +124,8 @@
 		user,
 		target,
 		span_warning("Вы ошибаетесь!"),
-		span_warning("[user] ошибается!"),
-		span_notice("[user] зашивает некоторые раны у [target]."),
+		span_warning("[capitalize(user.declent_ru(NOMINATIVE))] ошибается!"),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] зашивает некоторые раны у [target.declent_ru(GENITIVE)]."),
 		target_detailed = TRUE,
 	)
 	var/brute_dealt = brutehealing * 0.8
@@ -168,7 +168,7 @@
 	var/progress_text
 
 	if(locate(/obj/item/healthanalyzer) in user.held_items)
-		progress_text = ". Remaining brute: <font color='#ff3333'>[target.getBruteLoss()]</font>"
+		progress_text = ". Оставшиеся физические повреждения: <font color='#ff3333'>[target.getBruteLoss()]</font>"
 	else
 		switch(estimated_remaining_steps)
 			if(-INFINITY to 1)
@@ -233,7 +233,7 @@
 	var/progress_text
 
 	if(locate(/obj/item/healthanalyzer) in user.held_items)
-		progress_text = ". Remaining burn: <font color='#ff9933'>[target.getFireLoss()]</font>"
+		progress_text = ". Оставшиеся ожоговые повреждения: <font color='#ff9933'>[target.getFireLoss()]</font>"
 	else
 		switch(estimated_remaining_steps)
 			if(-INFINITY to 1)
@@ -302,9 +302,9 @@
 
 	if(locate(/obj/item/healthanalyzer) in user.held_items)
 		if(target.getBruteLoss())
-			progress_text = ". Remaining brute: <font color='#ff3333'>[target.getBruteLoss()]</font>"
+			progress_text = ". Оставшиеся физические повреждения: <font color='#ff3333'>[target.getBruteLoss()]</font>"
 		if(target.getFireLoss())
-			progress_text += ". Remaining burn: <font color='#ff9933'>[target.getFireLoss()]</font>"
+			progress_text += ". Оставшиеся ожоговые повреждения: <font color='#ff9933'>[target.getFireLoss()]</font>"
 	else
 		switch(estimated_remaining_steps)
 			if(-INFINITY to 1)
@@ -349,8 +349,8 @@
 		user,
 		target,
 		span_warning("Вы ошибаетесь!"),
-		span_warning("[user] ошибается!"),
-		span_notice("[user] обрабатывает некоторые раны у [target]."),
+		span_warning("[capitalize(user.declent_ru(NOMINATIVE))] ошибается!"),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] обрабатывает некоторые раны у [target.declent_ru(GENITIVE)]."),
 		target_detailed = TRUE,
 	)
 	target.take_bodypart_damage(5,5)

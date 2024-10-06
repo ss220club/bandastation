@@ -21,11 +21,11 @@
 		count++
 
 	if(teeth_receptangle.teeth_count == 0)
-		to_chat(user, span_notice("[user] has no teeth, doofus!"))
+		to_chat(user, span_notice("[capitalize(user.declent_ru(NOMINATIVE))] has no teeth, doofus!"))
 		return SURGERY_STEP_FAIL
 
 	if(count >= teeth_receptangle.teeth_count)
-		to_chat(user, span_notice("[user]'s teeth have all been replaced with pills already!"))
+		to_chat(user, span_notice("[capitalize(user.declent_ru(NOMINATIVE))]'s teeth have all been replaced with pills already!"))
 		return SURGERY_STEP_FAIL
 
 /datum/surgery_step/insert_pill
@@ -100,8 +100,8 @@
 		user,
 		target,
 		span_notice("You begin looking in [target]'s mouth for implantable teeth..."),
-		span_notice("[user] begins to look in [target]'s mouth."),
-		span_notice("[user] begins to examine [target]'s teeth."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] begins to look in [target]'s mouth."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] begins to examine [target]'s teeth."),
 	)
 	display_pain(target, "You feel fingers poke around at your teeth.")
 
@@ -109,9 +109,9 @@
 	display_results(
 		user,
 		target,
-		span_notice("[user] marks a tooth in [target]'s mouth."),
-		span_notice("[user] marks a tooth in [target]'s mouth."),
-		span_notice("[user] prods a tooth in [target]'s mouth."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] marks a tooth in [target]'s mouth."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] marks a tooth in [target]'s mouth."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] prods a tooth in [target]'s mouth."),
 	)
 	surgery.status = MARK_TOOTH
 	return ..()

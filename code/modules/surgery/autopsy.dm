@@ -61,8 +61,8 @@
 	display_results(
 		user,
 		target,
-		span_warning("Вы ошибаетесь, оставив ушиб на груди у [target]!"),
-		span_warning("[user] ошибается, оставив ушиб на груди у [target]!"),
-		span_warning("[user] ошибается!"),
+		span_warning("Вы ошибаетесь, оставив ушиб на груди у [target.declent_ru(GENITIVE)]!"),
+		span_warning("[capitalize(user.declent_ru(NOMINATIVE))] ошибается, оставив ушиб на груди у [target.declent_ru(GENITIVE)]!"),
+		span_warning("[capitalize(user.declent_ru(NOMINATIVE))] ошибается!"),
 	)
 	target.adjustBruteLoss(5)
