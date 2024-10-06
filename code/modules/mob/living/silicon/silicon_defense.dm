@@ -131,7 +131,7 @@
 
 	if(prob(prob_of_knocking_dudes_off))
 		for(var/mob/living/buckled in buckled_mobs)
-			buckled.visible_message(span_boldwarning("[buckled] is knocked off of [src] by [hitting_projectile]!"))
+			buckled.visible_message(span_boldwarning("[capitalize(buckled.declent_ru(NOMINATIVE))] падает с [declent_ru(GENITIVE)] от попадания [hitting_projectile.declent_ru(GENITIVE)]!"))
 			unbuckle_mob(buckled)
 			buckled.Paralyze(4 SECONDS)
 

@@ -212,7 +212,7 @@
 /datum/martial_art/cqc/grab_act(mob/living/attacker, mob/living/defender)
 	if(attacker == defender)
 		return MARTIAL_ATTACK_INVALID
-	if(defender.check_block(attacker, 0, attacker.name, UNARMED_ATTACK))
+	if(defender.check_block(attacker, 0, attacker.declent_ru(ACCUSATIVE), UNARMED_ATTACK))
 		return MARTIAL_ATTACK_FAIL
 
 	add_to_streak("G", defender)
@@ -260,7 +260,7 @@
 				defender.investigate_log("has had [defender.p_their()] neck snapped by [attacker].", INVESTIGATE_DEATHS)
 			return MARTIAL_ATTACK_SUCCESS
 
-	if(defender.check_block(attacker, 10, attacker.name, UNARMED_ATTACK))
+	if(defender.check_block(attacker, 10, attacker.declent_ru(ACCUSATIVE), UNARMED_ATTACK))
 		return MARTIAL_ATTACK_FAIL
 
 	if(attacker.resting && defender.stat != DEAD && defender.body_position == STANDING_UP)
@@ -305,7 +305,7 @@
 	return MARTIAL_ATTACK_SUCCESS
 
 /datum/martial_art/cqc/disarm_act(mob/living/attacker, mob/living/defender)
-	if(defender.check_block(attacker, 0, attacker.name, UNARMED_ATTACK))
+	if(defender.check_block(attacker, 0, attacker.declent_ru(ACCUSATIVE), UNARMED_ATTACK))
 		return MARTIAL_ATTACK_FAIL
 
 	add_to_streak("D", defender)

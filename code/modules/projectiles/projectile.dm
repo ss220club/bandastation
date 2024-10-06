@@ -351,20 +351,20 @@
 
 		var/organ_hit_text = ""
 		if(hit_limb_zone)
-			organ_hit_text = " in \the [living_target.parse_zone_with_bodypart(hit_limb_zone)]"
+			organ_hit_text = " в [living_target.parse_zone_with_bodypart(hit_limb_zone, declent = ACCUSATIVE)]"
 		if(suppressed == SUPPRESSED_VERY)
 			playsound(loc, hitsound, 5, TRUE, -1)
 		else if(suppressed)
 			playsound(loc, hitsound, 5, TRUE, -1)
-			to_chat(living_target, span_userdanger("You're shot by \a [src][organ_hit_text]!"))
+			to_chat(living_target, span_userdanger("В вас попадает [declent_ru(NOMINATIVE)][organ_hit_text]!"))
 		else
 			if(hitsound)
 				var/volume = vol_by_damage()
 				playsound(src, hitsound, volume, TRUE, -1)
-			living_target.visible_message(span_danger("[living_target] is hit by \a [src][organ_hit_text]!"), \
-					span_userdanger("You're hit by \a [src][organ_hit_text]!"), null, COMBAT_MESSAGE_RANGE)
+			living_target.visible_message(span_danger("В [living_target.declent_ru(ACCUSATIVE)] попадает [declent_ru(NOMINATIVE)][organ_hit_text]!"), \
+					span_userdanger("В вас попадает [declent_ru(NOMINATIVE)][organ_hit_text]!"), null, COMBAT_MESSAGE_RANGE)
 			if(living_target.is_blind())
-				to_chat(living_target, span_userdanger("You feel something hit you[organ_hit_text]!"))
+				to_chat(living_target, span_userdanger("Вы чувствуете, как что-то попадает в вас[organ_hit_text]!"))
 
 	var/reagent_note
 	if(reagents?.reagent_list)
