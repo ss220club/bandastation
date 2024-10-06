@@ -6,7 +6,7 @@
 	var/list/shipping
 
 	// Automatic vars, do not touch these.
-	/// Items available from this market, populated by SSblackmarket on initialization. Automatically assigned, so don't manually adjust.
+	/// Items available from this market, populated by SSmarket on initialization. Automatically assigned, so don't manually adjust.
 	var/list/available_items = list()
 	/// Item categories available from this market, only items which are in these categories can be gotten from this market. Automatically assigned, so don't manually adjust.
 	var/list/categories = list()
@@ -68,10 +68,24 @@
 		uplink.current_user.adjust_money(-price, "Other: Third Party Transaction")
 		if(ismob(user))
 			var/mob/m_user = user
-			m_user.playsound_local(get_turf(m_user), 'sound/machines/twobeep_high.ogg', 50, TRUE)
+			m_user.playsound_local(get_turf(m_user), 'sound/machines/beep/twobeep_high.ogg', 50, TRUE)
 		return TRUE
 
 	return FALSE
+
+/**
+ * A proc that restocks only the EXISTING items of this market.
+ * If you want to selectively restock markets, call SSmarket.restock(market_or_list_of_markets) instead.
+ */
+/datum/market/proc/restock(list/existing_items)
+	for(var/category in available_items)
+		var/category_list = available_items[category]
+		for(var/identifier in category_list)
+			var/datum/market_item/item = category_list[identifier]
+			existing_items |= item.type
+			if(!item.restockable || item.stock >= item.stock_max || !prob(item.availability_prob))
+				continue
+			item.stock += rand(1, item.stock_max - item.stock)
 
 /datum/market/blackmarket
 	name = "Black Market"

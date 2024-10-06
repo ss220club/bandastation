@@ -59,8 +59,8 @@
 	///Keeps track of if we're playing the alarm sound loop (as only one firelock per group should be). Used during power changes.
 	var/is_playing_alarm = FALSE
 
-	var/knock_sound = 'sound/effects/glassknock.ogg'
-	var/bash_sound = 'sound/effects/glassbash.ogg'
+	var/knock_sound = 'sound/effects/glass/glassknock.ogg'
+	var/bash_sound = 'sound/effects/glass/glassbash.ogg'
 
 
 /datum/armor/door_firedoor
@@ -431,6 +431,10 @@
 	ignore_alarms = FALSE
 	if(!alarm_type || active) // If we have no alarm type, or are already active, go away
 		return
+	// Do we even care about temperature?
+	for(var/area/place in affecting_areas)
+		if(!place.fire_detect) // If any area is set to disable detection
+			return
 	// Otherwise, reactivate ourselves
 	start_activation_process(alarm_type)
 
@@ -540,7 +544,7 @@
 		correct_state()
 
 /// We check for adjacency when using the primary attack.
-/obj/machinery/door/firedoor/try_to_crowbar(obj/item/acting_object, mob/user)
+/obj/machinery/door/firedoor/try_to_crowbar(obj/item/acting_object, mob/user, forced = FALSE)
 	if(welded || operating)
 		return
 

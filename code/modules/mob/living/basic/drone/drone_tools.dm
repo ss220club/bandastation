@@ -17,14 +17,15 @@
 		/obj/item/weldingtool/drone,
 		/obj/item/wirecutters/drone,
 		/obj/item/multitool/drone,
-		/obj/item/pipe_dispenser,
-		/obj/item/t_scanner,
-		/obj/item/analyzer,
+		/obj/item/pipe_dispenser/drone,
+		/obj/item/t_scanner/drone,
+		/obj/item/analyzer/drone,
+		/obj/item/soap/drone,
 	)
 	atom_storage.max_total_storage = 40
 	atom_storage.max_specific_storage = WEIGHT_CLASS_NORMAL
-	atom_storage.max_slots = 9
-	atom_storage.rustle_sound = FALSE
+	atom_storage.max_slots = 10
+	atom_storage.do_rustle = FALSE
 	atom_storage.set_holdable(drone_builtins)
 
 
@@ -36,10 +37,10 @@
 	builtintools += new /obj/item/weldingtool/drone(src)
 	builtintools += new /obj/item/wirecutters/drone(src)
 	builtintools += new /obj/item/multitool/drone(src)
-	builtintools += new /obj/item/pipe_dispenser(src)
-	builtintools += new /obj/item/t_scanner(src)
-	builtintools += new /obj/item/analyzer(src)
-
+	builtintools += new /obj/item/pipe_dispenser/drone(src)
+	builtintools += new /obj/item/t_scanner/drone(src)
+	builtintools += new /obj/item/analyzer/drone(src)
+	builtintools += new /obj/item/soap/drone(src)
 	for(var/obj/item/tool as anything in builtintools)
 		tool.AddComponent(/datum/component/holderloving, src, TRUE)
 
@@ -102,3 +103,18 @@
 	icon_state = "toolkit_engiborg_multitool"
 	item_flags = NO_MAT_REDEMPTION
 	toolspeed = 0.5
+
+/obj/item/analyzer/drone
+	name = "digital gas analyzer"
+	desc = "A gas analyzer built into your chassis."
+	item_flags = NO_MAT_REDEMPTION
+
+/obj/item/t_scanner/drone
+	name = "digital T-ray scanner"
+	desc = "A T-ray scanner built into your chassis."
+	item_flags = NO_MAT_REDEMPTION
+
+/obj/item/pipe_dispenser/drone
+	name = "built-in rapid pipe dispenser"
+	desc = "A rapid pipe dispenser built into your chassis."
+	item_flags = NO_MAT_REDEMPTION

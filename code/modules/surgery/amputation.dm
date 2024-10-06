@@ -27,6 +27,13 @@
 		/datum/surgery_step/sever_limb/mechanic, //The benefit of being robotic; people can pull you apart in an instant! Wait, that's not a benefit...
 	)
 
+/datum/surgery/amputation/peg
+	name = "Detach"
+	requires_bodypart_type = BODYTYPE_PEG
+	steps = list(
+		/datum/surgery_step/sever_limb/peg,	//Easy come, easy go
+	)
+
 /datum/surgery/amputation/can_start(mob/user, mob/living/patient)
 	if(HAS_TRAIT(patient, TRAIT_NODISMEMBER))
 		return FALSE
@@ -45,8 +52,8 @@
 		/obj/item/knife/butcher = 25,
 	)
 	time = 64
-	preop_sound = 'sound/surgery/scalpel1.ogg'
-	success_sound = 'sound/surgery/organ2.ogg'
+	preop_sound = 'sound/items/handling/surgery/scalpel1.ogg'
+	success_sound = 'sound/items/handling/surgery/organ2.ogg'
 	surgery_effects_mood = TRUE
 
 /datum/surgery_step/sever_limb/mechanic
@@ -59,8 +66,21 @@
 		TOOL_SAW = 50,
 	)
 	time = 20 //WAIT I NEED THAT!!
-	preop_sound = 'sound/items/ratchet.ogg'
-	preop_sound = 'sound/machines/doorclick.ogg'
+	preop_sound = 'sound/items/tools/ratchet.ogg'
+	preop_sound = 'sound/machines/airlock/doorclick.ogg'
+
+/datum/surgery_step/sever_limb/peg
+	name = "detach limb (circular saw)"
+	implements = list(
+		TOOL_SAW = 100,
+		/obj/item/shovel/serrated = 100,
+		/obj/item/fireaxe = 90,
+		/obj/item/hatchet = 75,
+		TOOL_SCALPEL = 25,
+	)
+	time = 30
+	preop_sound = 'sound/items/handling/surgery/saw.ogg'
+	success_sound = 'sound/items/handling/materials/wood_drop.ogg'
 
 /datum/surgery_step/sever_limb/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	display_results(

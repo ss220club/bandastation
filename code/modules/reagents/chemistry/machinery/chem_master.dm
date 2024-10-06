@@ -247,11 +247,6 @@
 /obj/machinery/chem_master/attack_ai_secondary(mob/user, list/modifiers)
 	return attack_hand_secondary(user, modifiers)
 
-/obj/machinery/chem_master/ui_assets(mob/user)
-	return list(
-		get_asset_datum(/datum/asset/spritesheet/chemmaster)
-	)
-
 /obj/machinery/chem_master/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
@@ -273,9 +268,10 @@
 		//add containers to this category
 		for(var/obj/item/reagent_containers/container as anything in printable_containers[category])
 			category_list["containers"] += list(list(
-				"icon" = sanitize_css_class_name("[container]"),
 				"ref" = REF(container),
 				"name" = initial(container.name),
+				"icon" = initial(container.icon),
+				"icon_state" = initial(container.icon_state),
 				"volume" = initial(container.volume),
 			))
 
@@ -478,11 +474,13 @@
 				item_name_default = "[master_reagent.name] [item_name_default]"
 			if(!(initial(selected_container.reagent_flags) & OPENCONTAINER)) // Closed containers get both reagent name and units in the name
 				item_name_default = "[master_reagent.name] [item_name_default] ([volume_in_each]u)"
-			var/item_name = tgui_input_text(usr,
+			var/item_name = tgui_input_text(
+				usr,
 				"Container name",
 				"Name",
 				item_name_default,
-				MAX_NAME_LEN)
+				max_length = MAX_NAME_LEN,
+			)
 			if(!item_name)
 				return FALSE
 
