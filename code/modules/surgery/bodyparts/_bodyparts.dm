@@ -1364,17 +1364,17 @@
 /// Returns the generic description of our BIO_EXTERNAL feature(s), prioritizing certain ones over others. Returns error on failure.
 /obj/item/bodypart/proc/get_external_description()
 	if (biological_state & BIO_FLESH)
-		return "flesh"
+		return "плоть"
 	if (biological_state & BIO_WIRED)
-		return "wiring"
+		return "проводку"
 
 	return "error"
 
 /// Returns the generic description of our BIO_INTERNAL feature(s), prioritizing certain ones over others. Returns error on failure.
 /obj/item/bodypart/proc/get_internal_description()
 	if (biological_state & BIO_BONE)
-		return "bone"
+		return "кость"
 	if (biological_state & BIO_METAL)
-		return "metal"
+		return "метал"
 
 	return "error"

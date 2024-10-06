@@ -91,8 +91,8 @@
 	if(isnull(hit_bodypart)) // ??
 		return ..()
 
-	var/message_verb_continuous = length(I.attack_verb_continuous) ? "[pick(I.attack_verb_continuous)]" : "attacks"
-	var/message_verb_simple = length(I.attack_verb_simple) ? "[pick(I.attack_verb_simple)]" : "attack"
+	var/message_verb_continuous = length(I.attack_verb_continuous) ? "[pick(I.attack_verb_continuous)]" : "атакует"
+	var/message_verb_simple = length(I.attack_verb_simple) ? "[pick(I.attack_verb_simple)]" : "атакуете"
 
 	var/extra_wound_details = ""
 
@@ -110,25 +110,25 @@
 
 		var/dismemberable = ((hit_bodypart.dismemberable_by_wound()) || hit_bodypart.dismemberable_by_total_damage())
 		if (dismemberable)
-			extra_wound_details = ", threatening to sever it entirely"
+			extra_wound_details = ", угрожая оторвать конечность!"
 		else if((has_interior && (has_exterior && exterior_ready_to_dismember) && I.get_sharpness()))
 			var/bone_text = hit_bodypart.get_internal_description()
-			extra_wound_details = ", [I.get_sharpness() == SHARP_EDGED ? "slicing" : "piercing"] through to the [bone_text]"
+			extra_wound_details = ", [I.get_sharpness() == SHARP_EDGED ? "прорезая" : "пронзая"] [bone_text]"
 		else if(has_exterior && ((has_interior && interior_ready_to_dismember) && I.get_sharpness()))
 			var/tissue_text = hit_bodypart.get_external_description()
-			extra_wound_details = ", [I.get_sharpness() == SHARP_EDGED ? "slicing" : "piercing"] at the remaining [tissue_text]"
+			extra_wound_details = ", [I.get_sharpness() == SHARP_EDGED ? "прорезая" : "пронзая"] оставшуюся [tissue_text]"
 
 	var/message_hit_area = ""
 	if(hit_area)
-		message_hit_area = " in the [hit_area]"
-	var/attack_message_spectator = "[src] [message_verb_continuous][message_hit_area] with [I][extra_wound_details]!"
-	var/attack_message_victim = "You're [message_verb_continuous][message_hit_area] with [I][extra_wound_details]!"
-	var/attack_message_attacker = "You [message_verb_simple] [src][message_hit_area] with [I][extra_wound_details]!"
+		message_hit_area = " в [hit_area]"
+	var/attack_message_spectator = "[capitalize(declent_ru(NOMINATIVE))] [message_verb_continuous][message_hit_area] с помощью [I.declent_ru(GENITIVE)][extra_wound_details]!"
+	var/attack_message_victim = "Вас [message_verb_continuous][message_hit_area] с помощью [I.declent_ru(GENITIVE)][extra_wound_details]!"
+	var/attack_message_attacker = "Вы [message_verb_simple] [declent_ru(ACCUSATIVE)][message_hit_area] с помощью [I.declent_ru(GENITIVE)][extra_wound_details]!"
 	if(user in viewers(src, null))
-		attack_message_spectator = "[user] [message_verb_continuous] [src][message_hit_area] with [I][extra_wound_details]!"
-		attack_message_victim = "[user] [message_verb_continuous] you[message_hit_area] with [I][extra_wound_details]!"
+		attack_message_spectator = "[capitalize(user.declent_ru(NOMINATIVE))] [message_verb_continuous] [declent_ru(ACCUSATIVE)][message_hit_area] с помощью [I.declent_ru(GENITIVE)][extra_wound_details]!"
+		attack_message_victim = "[capitalize(user.declent_ru(NOMINATIVE))] [message_verb_continuous] вас[message_hit_area] с помощью [I.declent_ru(GENITIVE)][extra_wound_details]!"
 	if(user == src)
-		attack_message_victim = "You [message_verb_simple] yourself[message_hit_area] with [I][extra_wound_details]!"
+		attack_message_victim = "Вы [message_verb_simple] себя[message_hit_area] с помощью [I.declent_ru(GENITIVE)][extra_wound_details]!"
 	visible_message(span_danger("[attack_message_spectator]"),\
 		span_userdanger("[attack_message_victim]"), null, COMBAT_MESSAGE_RANGE, user)
 	if(user != src)
@@ -233,7 +233,7 @@
 	if (stat == DEAD)
 		return
 	else
-		show_message(span_userdanger("The blob attacks!"))
+		show_message(span_userdanger("Блоб атакует!"))
 		adjustBruteLoss(10)
 
 ///Adds to the parent by also adding functionality to propagate shocks through pulling and doing some fluff effects.
@@ -285,7 +285,7 @@
 
 /mob/living/carbon/proc/help_shake_act(mob/living/carbon/helper, force_friendly)
 	if(on_fire)
-		to_chat(helper, span_warning("You can't put [p_them()] out with just your bare hands!"))
+		to_chat(helper, span_warning("Вы не можете потушить [ru_p_them()] просто вашими голыми руками!"))
 		return
 
 	if(SEND_SIGNAL(src, COMSIG_CARBON_PRE_MISC_HELP, helper) & COMPONENT_BLOCK_MISC_HELP)
@@ -643,7 +643,7 @@
 	RegisterSignals(grasped_part, list(COMSIG_CARBON_REMOVE_LIMB, COMSIG_QDELETING), PROC_REF(qdel_void))
 
 	var/bleed_rate = grasped_part.get_modified_bleed_rate()
-	var/bleeding_text = (bleed_rate ? ", trying to stop the bleeding" : "")
+	var/bleeding_text = (bleed_rate ? ", пытаясь остановить кровотечение" : "")
 	user.visible_message(span_danger("[user] grasps at [user.p_their()] [grasped_part.name][bleeding_text]."), span_notice("You grab hold of your [grasped_part.name] tightly."), vision_distance=COMBAT_MESSAGE_RANGE)
 	playsound(get_turf(src), 'sound/items/weapons/thudswoosh.ogg', 50, TRUE, -1)
 	return TRUE
@@ -656,7 +656,7 @@
 	if (HAS_TRAIT(src, TRAIT_GENELESS))
 		return FALSE
 
-	if (run_armor_check(attack_flag = BIO, absorb_text = "Your armor protects you from [scramble_source]!") >= 100)
+	if (run_armor_check(attack_flag = BIO, absorb_text = "Ваша броня защищает вас от: [scramble_source]!") >= 100)
 		return FALSE
 
 	if (!length(GLOB.bioscrambler_valid_organs) || !length(GLOB.bioscrambler_valid_parts))
@@ -680,10 +680,10 @@
 			qdel(picked_user_part)
 
 	if (!changed_something)
-		to_chat(src, span_notice("Your augmented body protects you from [scramble_source]!"))
+		to_chat(src, span_notice("Ваше аугментированное тело защищает вас от: [scramble_source]!"))
 		return FALSE
 	update_body(TRUE)
-	balloon_alert(src, "something has changed about you")
+	balloon_alert(src, "в вас что-то изменилось")
 	return TRUE
 
 /// Fill in the lists of things we can bioscramble into people

@@ -221,7 +221,7 @@
 			log_combat(user, src, "shoved")
 			visible_message(span_danger("[capitalize(user.declent_ru(NOMINATIVE))] сбивает с ног [declent_ru(ACCUSATIVE)]!"), \
 							span_userdanger("[capitalize(user.declent_ru(NOMINATIVE))] толкает вас с огромной силой"), span_hear("Вы слышите агрессивное шарканье с последующим громким стуком!"), null, user)
-			to_chat(user, span_danger("Вы толкаете [.declent_ru(ACCUSATIVE)] с огромной силой!"))
+			to_chat(user, span_danger("Вы толкаете [declent_ru(ACCUSATIVE)] с огромной силой!"))
 		else
 			Paralyze(5 SECONDS)
 			playsound(loc, 'sound/items/weapons/punch3.ogg', 25, TRUE, -1)
@@ -667,7 +667,7 @@
 		//Put the items in that list into a string of text
 		for(var/B in broken)
 			broken_message += B
-		combined_msg += span_warning("У вас не функционируют: [broken_message]")
+		combined_msg += span_warning("У вас не функционируют: [broken_plural ? broken_message : broken_message]")
 	if(damaged.len)
 		if(damaged.len > 1)
 			damaged.Insert(damaged.len, "и ")
@@ -678,7 +678,7 @@
 				damaged_plural = TRUE
 		for(var/D in damaged)
 			damaged_message += D
-		combined_msg += span_info("У вас болят: [damaged_message].")
+		combined_msg += span_info("У вас болят: [damaged_plural ? damaged_message : damaged_message].")
 
 	if(quirks.len)
 		combined_msg += span_notice("У вас имеются следующий черты: [get_quirk_string(FALSE, CAT_QUIRK_ALL)].")
