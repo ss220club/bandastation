@@ -378,7 +378,7 @@
 		.["thermally insulated"] = "Protects the wearer from [jointext(list(heat_desc, cold_desc), " and ")] temperatures."
 
 /obj/item/clothing/examine_descriptor(mob/user)
-	return "clothing"
+	return "одежда"
 
 /obj/item/clothing/Topic(href, href_list)
 	. = ..()

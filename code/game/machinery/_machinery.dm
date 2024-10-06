@@ -1148,7 +1148,7 @@
 				. += span_warning("It's falling apart!")
 
 /obj/machinery/examine_descriptor(mob/user)
-	return "machine"
+	return "машина"
 
 /obj/machinery/examine_more(mob/user)
 	. = ..()
