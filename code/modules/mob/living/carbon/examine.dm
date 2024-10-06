@@ -15,8 +15,8 @@
 		return list(span_warning("Вам сложно разглядеть какие либо детали..."))
 
 	var/t_He = ru_p_they(TRUE)
-	var/t_His = ru_p_them(TRUE) // TODO220 - add ru_p_their
-	var/t_his = ru_p_them() // TODO220 - add ru_p_their
+	var/t_His = ru_p_them(TRUE)
+	var/t_his = ru_p_them()
 	var/t_him = ru_p_them()
 	var/t_has = ru_p_have()
 	// var/t_is = ru_p_are()
@@ -306,8 +306,8 @@
 /// Returns death message for mob examine text
 /mob/living/carbon/proc/generate_death_examine_text()
 	var/mob/dead/observer/ghost = get_ghost(TRUE, TRUE)
-	var/t_He = p_They()
-	var/t_his = p_their()
+	var/t_He = ru_p_they(TRUE)
+	var/t_his = ru_p_them()
 	// var/t_is = p_are()
 	//This checks to see if the body is revivable
 	if(get_organ_by_type(/obj/item/organ/internal/brain) && (client || HAS_TRAIT(src, TRAIT_MIND_TEMPORARILY_GONE) || (ghost?.can_reenter_corpse && ghost?.client)))
@@ -340,8 +340,8 @@
 /mob/living/carbon/proc/get_clothing_examine_info(mob/living/user)
 	. = list()
 	var/obscured = check_obscured_slots()
-	var/t_He = p_They()
-	var/t_His = p_Their()
+	var/t_He = ru_p_they(TRUE)
+	var/t_His = ru_p_them(TRUE)
 	// var/t_his = p_their()
 	var/t_has = p_have()
 	// var/t_is = p_are()
