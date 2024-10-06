@@ -41,9 +41,9 @@
 		/obj/item/knife = 45,
 		/obj/item/shard = 25)
 	time = 16
-	preop_sound = 'sound/surgery/scalpel1.ogg'
-	success_sound = 'sound/surgery/scalpel2.ogg'
-	failure_sound = 'sound/surgery/organ2.ogg'
+	preop_sound = 'sound/items/handling/surgery/scalpel1.ogg'
+	success_sound = 'sound/items/handling/surgery/scalpel2.ogg'
+	failure_sound = 'sound/items/handling/surgery/organ2.ogg'
 	surgery_effects_mood = TRUE
 
 /datum/surgery_step/incise_heart/mechanic
@@ -54,16 +54,16 @@
 		/obj/item/melee/energy/sword = 65,
 		/obj/item/knife = 45,
 		/obj/item/shard = 35)
-	preop_sound = 'sound/items/ratchet.ogg'
-	success_sound = 'sound/machines/doorclick.ogg'
+	preop_sound = 'sound/items/tools/ratchet.ogg'
+	success_sound = 'sound/machines/airlock/doorclick.ogg'
 
 /datum/surgery_step/incise_heart/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	display_results(
 		user,
 		target,
-		span_notice("Вы начинаете делать надрез сердца у [target]..."),
-		span_notice("[user] начинает делать надрез сердца у [target]."),
-		span_notice("[user] начинает делать надрез сердца у [target]."),
+		span_notice("Вы начинаете делать надрез сердца у [target.declent_ru(GENITIVE)]..."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает делать надрез сердца у [target.declent_ru(GENITIVE)]."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает делать надрез сердца у [target.declent_ru(GENITIVE)]."),
 	)
 	display_pain(target, "Вы чувствуете ужасную боль в сердце. Вы близки к тому, чтобы потерять сознание!")
 
@@ -74,9 +74,9 @@
 			display_results(
 				user,
 				target,
-				span_notice("Вокруг сердца у [target_human] образуется лужа крови."),
-				span_notice("Вокруг сердца у [target_human] образуется лужа крови."),
-				span_notice("Вокруг сердца у [target_human] образуется лужа крови."),
+				span_notice("Вокруг сердца у [target_human.declent_ru(GENITIVE)] образуется лужа крови."),
+				span_notice("Вокруг сердца у [target_human.declent_ru(GENITIVE)] образуется лужа крови."),
+				span_notice("Вокруг сердца у [target_human.declent_ru(GENITIVE)] образуется лужа крови."),
 			)
 			var/obj/item/bodypart/target_bodypart = target_human.get_bodypart(target_zone)
 			target_bodypart.adjustBleedStacks(10)
@@ -90,8 +90,8 @@
 			user,
 			target,
 			span_warning("Вы ошибаетесь, совершив слишком глубокий надрез сердца!"),
-			span_warning("[user] ошибается, в результате чего из груди [target_human] выплескивается кровь!"),
-			span_warning("[user] ошибается, в результате чего из груди [target_human] выплескивается кровь!"),
+			span_warning("[capitalize(user.declent_ru(NOMINATIVE))] ошибается, в результате чего из груди [target_human.declent_ru(GENITIVE)] выплескивается кровь!"),
+			span_warning("[capitalize(user.declent_ru(NOMINATIVE))] ошибается, в результате чего из груди [target_human.declent_ru(GENITIVE)] выплескивается кровь!"),
 		)
 		var/obj/item/bodypart/target_bodypart = target_human.get_bodypart(target_zone)
 		target_bodypart.adjustBleedStacks(10)
@@ -107,9 +107,9 @@
 		/obj/item/stack/package_wrap = 15,
 		/obj/item/stack/cable_coil = 5)
 	time = 90
-	preop_sound = 'sound/surgery/hemostat1.ogg'
-	success_sound = 'sound/surgery/hemostat1.ogg'
-	failure_sound = 'sound/surgery/organ2.ogg'
+	preop_sound = 'sound/items/handling/surgery/hemostat1.ogg'
+	success_sound = 'sound/items/handling/surgery/hemostat1.ogg'
+	failure_sound = 'sound/items/handling/surgery/organ2.ogg'
 
 /datum/surgery_step/coronary_bypass/mechanic
 	name = "perform maintenance (hemostat or wrench)"
@@ -119,16 +119,16 @@
 		TOOL_WIRECUTTER = 35,
 		/obj/item/stack/package_wrap = 15,
 		/obj/item/stack/cable_coil = 5)
-	preop_sound = 'sound/items/ratchet.ogg'
-	success_sound = 'sound/machines/doorclick.ogg'
+	preop_sound = 'sound/items/tools/ratchet.ogg'
+	success_sound = 'sound/machines/airlock/doorclick.ogg'
 
 /datum/surgery_step/coronary_bypass/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	display_results(
 		user,
 		target,
-		span_notice("Вы начинаете шунтирование сердца у [target]..."),
-		span_notice("[user] начинает шунтирование сердца у [target]!"),
-		span_notice("[user] начинает шунтирование сердца у [target]!"),
+		span_notice("Вы начинаете шунтирование сердца у [target.declent_ru(GENITIVE)]..."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает шунтирование сердца у [target.declent_ru(GENITIVE)]!"),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает шунтирование сердца у [target.declent_ru(GENITIVE)]!"),
 	)
 	display_pain(target, "Боль в груди невыносима! Вы едва можете это вытерпеть!")
 
@@ -142,9 +142,9 @@
 	display_results(
 		user,
 		target,
-		span_notice("Вы успешно провели шунтирование сердца у [target]."),
-		span_notice("[user] успешно провел шунтирование сердца у [target]."),
-		span_notice("[user] успешно провел шунтирование сердца у [target]."),
+		span_notice("Вы успешно провели шунтирование сердца у [target.declent_ru(GENITIVE)]."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно провел шунтирование сердца у [target.declent_ru(GENITIVE)]."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно провел шунтирование сердца у [target.declent_ru(GENITIVE)]."),
 	)
 	display_pain(target, "Боль в груди не отступает, но сердце чувствует себя как никогда хорошо!")
 	return ..()
@@ -156,8 +156,8 @@
 			user,
 			target,
 			span_warning("Вы ошибаетесь при шунтирование сердца и повредили часть сердца!"),
-			span_warning("[user] ошибается, в результате чего из груди [target_human] обильно хлещет кровь!"),
-			span_warning("[user] ошибается, в результате чего из груди [target_human] обильно хлещет кровь!"),
+			span_warning("[capitalize(user.declent_ru(NOMINATIVE))] ошибается, в результате чего из груди [target_human.declent_ru(GENITIVE)] обильно хлещет кровь!"),
+			span_warning("[capitalize(user.declent_ru(NOMINATIVE))] ошибается, в результате чего из груди [target_human.declent_ru(GENITIVE)] обильно хлещет кровь!"),
 		)
 		display_pain(target, "В груди все горит; вам кажется, что вы сходите с ума!")
 		target_human.adjustOrganLoss(ORGAN_SLOT_HEART, 20)

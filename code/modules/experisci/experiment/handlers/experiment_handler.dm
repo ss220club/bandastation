@@ -93,8 +93,8 @@
 	SIGNAL_HANDLER
 	if ((isnull(selected_experiment) && !(config_flags & EXPERIMENT_CONFIG_ALWAYS_ACTIVE)) || (config_flags & EXPERIMENT_CONFIG_SILENT_FAIL))
 		return
-	playsound(user, 'sound/machines/buzz-sigh.ogg', 25)
-	to_chat(user, span_notice("[target] не имеет отношения к выбранному эксперименту."))
+	playsound(user, 'sound/machines/buzz/buzz-sigh.ogg', 25)
+	to_chat(user, span_notice("[target.declent_ru(NOMINATIVE)] не имеет отношения к выбранному эксперименту."))
 
 /**
  * Checks that an experiment can be run using the provided target, used for preventing the cancellation of the attack chain inappropriately
@@ -130,8 +130,8 @@
 		playsound(user, 'sound/machines/ping.ogg', 25)
 		to_chat(user, span_notice("You scan [target]."))
 	else if(!(config_flags & EXPERIMENT_CONFIG_SILENT_FAIL))
-		playsound(user, 'sound/machines/buzz-sigh.ogg', 25)
-		to_chat(user, span_notice("[target.name] не имеет отношения к выбранному эксперименту."))
+		playsound(user, 'sound/machines/buzz/buzz-sigh.ogg', 25)
+		to_chat(user, span_notice("[target.declent_ru(NOMINATIVE)] не имеет отношения к выбранному эксперименту."))
 
 /**
  * Hooks on destructive scans to try and run an experiment (When using a handheld handler)
@@ -141,7 +141,7 @@
 	var/atom/movable/our_scanner = parent
 	if (selected_experiment == null)
 		if(!(config_flags & EXPERIMENT_CONFIG_SILENT_FAIL))
-			playsound(our_scanner, 'sound/machines/buzz-sigh.ogg', 25)
+			playsound(our_scanner, 'sound/machines/buzz/buzz-sigh.ogg', 25)
 			to_chat(our_scanner, span_notice("Эксперимент не выбран!"))
 		return
 	var/successful_scan
@@ -153,7 +153,7 @@
 		playsound(our_scanner, 'sound/machines/ping.ogg', 25)
 		to_chat(our_scanner, span_notice("Сканирование успешно."))
 	else if(!(config_flags & EXPERIMENT_CONFIG_SILENT_FAIL))
-		playsound(src, 'sound/machines/buzz-sigh.ogg', 25)
+		playsound(src, 'sound/machines/buzz/buzz-sigh.ogg', 25)
 		our_scanner.say("Сканирование ничего не дало.")
 
 /// Hooks on a successful autopsy experiment
@@ -315,7 +315,7 @@
 	ui = SStgui.try_update_ui(user, src, ui)
 	if (!ui)
 		var/atom/parent_atom = parent
-		ui = new(user, src, "ExperimentConfigure", "[parent_atom ? "[parent_atom.name] | " : ""]Конфигурация Экспериментов")
+		ui = new(user, src, "ExperimentConfigure", "[parent_atom ? "[parent_atom.declent_ru(NOMINATIVE)] | " : ""]Конфигурация Экспериментов")
 		ui.open()
 
 /datum/component/experiment_handler/ui_data(mob/user)

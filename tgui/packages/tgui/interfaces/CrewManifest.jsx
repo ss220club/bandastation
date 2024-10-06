@@ -1,5 +1,5 @@
 import { Icon, Section, Table, Tooltip } from 'tgui-core/components';
-import { classes } from 'tgui-core/react';
+import { classes } from '../../common/react';
 
 import { useBackend } from '../backend';
 import { DEPARTMENTS_RU, JOBS_RU } from '../bandastation/ru_jobs';

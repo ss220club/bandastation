@@ -24,8 +24,8 @@
 		icon = I.icon
 		icon_state = I.icon_state
 	var/icon/icon_for_size = icon(icon, icon_state)
-	var/scale_factor_x = icon_for_size.Width()/world.icon_size
-	var/scale_factor_y = icon_for_size.Height()/world.icon_size
+	var/scale_factor_x = icon_for_size.Width()/ICON_SIZE_X
+	var/scale_factor_y = icon_for_size.Height()/ICON_SIZE_Y
 	var/mutable_appearance/blood_splatter = mutable_appearance('icons/effects/blood.dmi', "itemblood", appearance_flags = RESET_COLOR) //MA of the blood that we apply
 	blood_splatter.transform = blood_splatter.transform.Scale(scale_factor_x, scale_factor_y)
 	blood_splatter.blend_mode = BLEND_INSET_OVERLAY
@@ -36,4 +36,4 @@
 /datum/element/decal/blood/proc/get_examine_name(atom/source, mob/user, list/override)
 	SIGNAL_HANDLER
 
-	override[EXAMINE_POSITION_BEFORE] = "blood-stained"
+	override[EXAMINE_POSITION_BEFORE] = "в крови"

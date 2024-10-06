@@ -44,6 +44,10 @@
 #define VENTCRAWLER_NUDE 1
 #define VENTCRAWLER_ALWAYS 2
 
+// Flags for the mob_flags var on /mob
+/// May override the names used in screentips of OTHER OBJECTS hovered over.
+#define MOB_HAS_SCREENTIPS_NAME_OVERRIDE (1 << 0)
+
 //Mob bio-types flags
 ///The mob is organic, can heal from medical sutures.
 #define MOB_ORGANIC (1 << 0)
@@ -466,11 +470,11 @@
 #define MAX_REVIVE_FIRE_DAMAGE 180
 #define MAX_REVIVE_BRUTE_DAMAGE 180
 
-#define DEFAULT_BRUTE_EXAMINE_TEXT "bruising"
-#define DEFAULT_BURN_EXAMINE_TEXT "burns"
+#define DEFAULT_BRUTE_EXAMINE_TEXT "ушибы"
+#define DEFAULT_BURN_EXAMINE_TEXT "ожоги"
 
-#define ROBOTIC_BRUTE_EXAMINE_TEXT "denting"
-#define ROBOTIC_BURN_EXAMINE_TEXT "charring"
+#define ROBOTIC_BRUTE_EXAMINE_TEXT "вмятины"
+#define ROBOTIC_BURN_EXAMINE_TEXT "обугления"
 
 #define GLASSY_BRUTE_EXAMINE_TEXT "cracking"
 #define GLASSY_BURN_EXAMINE_TEXT "deformation"
@@ -995,3 +999,7 @@ GLOBAL_LIST_INIT(layers_to_offset, list(
 #define BUTT_SPRITE_PLASMA "plasma"
 #define BUTT_SPRITE_FUZZY "fuzzy"
 #define BUTT_SPRITE_SLIME "slime"
+
+/// Distance which you can see someone's ID card
+/// Short enough that you can inspect over tables (bartender checking age)
+#define ID_EXAMINE_DISTANCE 3

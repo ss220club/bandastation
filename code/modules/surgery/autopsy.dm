@@ -38,9 +38,9 @@
 	display_results(
 		user,
 		target,
-		span_notice("Вы приступаете к вскрытию [target]..."),
-		span_notice("[user] использует [tool.name] для вскрытия [target]."),
-		span_notice("[user] использует [tool.name] на груди у [target]."),
+		span_notice("Вы приступаете к вскрытию [target.declent_ru(GENITIVE)]..."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] использует [tool.declent_ru(ACCUSATIVE)] для вскрытия [target.declent_ru(GENITIVE)]."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] использует [tool.declent_ru(ACCUSATIVE)] на груди у [target.declent_ru(GENITIVE)]."),
 	)
 	display_pain(target, "Вы чувствуете жжение в груди!")
 
@@ -61,8 +61,8 @@
 	display_results(
 		user,
 		target,
-		span_warning("Вы ошибаетесь, оставив ушиб на груди у [target]!"),
-		span_warning("[user] ошибается, оставив ушиб на груди у [target]!"),
-		span_warning("[user] ошибается!"),
+		span_warning("Вы ошибаетесь, оставив ушиб на груди у [target.declent_ru(GENITIVE)]!"),
+		span_warning("[capitalize(user.declent_ru(NOMINATIVE))] ошибается, оставив ушиб на груди у [target.declent_ru(GENITIVE)]!"),
+		span_warning("[capitalize(user.declent_ru(NOMINATIVE))] ошибается!"),
 	)
 	target.adjustBruteLoss(5)

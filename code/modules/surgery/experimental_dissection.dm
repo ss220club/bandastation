@@ -36,11 +36,11 @@
 	silicons_obey_prob = TRUE
 
 /datum/surgery_step/experimental_dissection/preop(mob/user, mob/living/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	user.visible_message("<span class='notice'>[user] начинает препарировать [target].</span>", "<span class='notice'>Вы начинаете препарировать [target].</span>")
+	user.visible_message(span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает препарировать [target.declent_ru(ACCUSATIVE)]."), span_notice("Вы начинаете препарировать [target.declent_ru(ACCUSATIVE)]."))
 
 /datum/surgery_step/experimental_dissection/success(mob/user, mob/living/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
 	var/points_earned = check_value(target)
-	user.visible_message("<span class='notice'>[user] препарирует [target], обнаруживая [points_earned] очков исследований!</span>", "<span class='notice'>Вы препарируете [target], обнаруживая [points_earned] очков исследований, вы также пишете несколько заметок.</span>")
+	user.visible_message(span_notice("[capitalize(user.declent_ru(NOMINATIVE))] препарирует [target.declent_ru(ACCUSATIVE)], обнаруживая [points_earned] очков исследований!"), span_notice("Вы препарируете [target.declent_ru(ACCUSATIVE)], обнаруживая [points_earned] очков исследований, вы также пишете несколько заметок."))
 
 	var/obj/item/research_notes/the_dossier = new /obj/item/research_notes(user.loc, points_earned, "biology")
 	if(!user.put_in_hands(the_dossier) && istype(user.get_inactive_held_item(), /obj/item/research_notes))
@@ -54,8 +54,8 @@
 /datum/surgery_step/experimental_dissection/failure(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	var/points_earned = round(check_value(target) * 0.01)
 	user.visible_message(
-		"<span class='notice'>[user] препариует [target]!</span>",
-		"<span class='notice'>Вы препарируете [target], но не находите ничего особо интересного.</span>",
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] препариует [target.declent_ru(ACCUSATIVE)]!"),
+		span_notice("Вы препарируете [target.declent_ru(ACCUSATIVE)], но не находите ничего особо интересного."),
 	)
 
 	var/obj/item/research_notes/the_dossier = new /obj/item/research_notes(user.loc, points_earned, "biology")
@@ -147,7 +147,7 @@
 	value = value + new_paper.value
 	if(origin_type != new_paper.origin_type && !mixed)
 		value += bonus * 0.3
-		origin_type = "[origin_type] and [new_paper.origin_type]"
+		origin_type = "[origin_type] и [new_paper.origin_type]"
 		mixed = TRUE
 	change_vol()
 	qdel(new_paper)

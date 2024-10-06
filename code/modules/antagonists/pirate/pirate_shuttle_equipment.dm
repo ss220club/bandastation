@@ -234,7 +234,7 @@
 /obj/machinery/computer/piratepad_control/multitool_act(mob/living/user, obj/item/multitool/I)
 	. = ..()
 	if (istype(I) && istype(I.buffer,/obj/machinery/piratepad))
-		to_chat(user, span_notice("Вы привязываете [src.name] к [I.buffer] с помощью буффера [I.name]."))
+		to_chat(user, span_notice("Вы привязываете [declent_ru(ACCUSATIVE)] к [I.buffer] с помощью буффера [I.declent_ru(GENITIVE)]."))
 		pad_ref = WEAKREF(I.buffer)
 		return TRUE
 
@@ -338,7 +338,7 @@
 	if(!value)
 		status_report += "Ничего"
 
-	pad.visible_message(span_notice("[pad.name] активируется!"))
+	pad.visible_message(span_notice("[capitalize(pad.declent_ru(NOMINATIVE))] активируется!"))
 	flick(pad.sending_state,pad)
 	pad.icon_state = pad.idle_state
 	sending = FALSE
@@ -385,7 +385,7 @@
 		return
 	sending = TRUE
 	status_report = "Отправка... "
-	pad.visible_message(span_notice("[pad.name] начинает заряжаться."))
+	pad.visible_message(span_notice("[capitalize(pad.declent_ru(NOMINATIVE))] начинает заряжаться."))
 	pad.icon_state = pad.warmup_state
 	sending_timer = addtimer(CALLBACK(src, PROC_REF(send)),warmup_time, TIMER_STOPPABLE)
 
@@ -438,7 +438,7 @@
 	var/mob_cost = get_cost(sold_item)
 	sold_item.process_capture(mob_cost, mob_cost * 1.2)
 	do_sparks(8, FALSE, sold_item)
-	playsound(picked_turf, 'sound/weapons/emitter2.ogg', 25, TRUE)
+	playsound(picked_turf, 'sound/items/weapons/emitter2.ogg', 25, TRUE)
 	sold_item.flash_act()
 	sold_item.adjust_confusion(10 SECONDS)
 	sold_item.adjust_dizzy(10 SECONDS)

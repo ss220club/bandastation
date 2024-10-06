@@ -123,7 +123,7 @@
 
 /datum/spellbook_entry/item/wands/try_equip_item(mob/living/carbon/human/user, obj/item/to_equip)
 	var/was_equipped = user.equip_to_slot_if_possible(to_equip, ITEM_SLOT_BELT, disable_warning = TRUE)
-	to_chat(user, span_notice("[to_equip.name] был призван [was_equipped ? "на ваш пояс" : "у ваших ног"]."))
+	to_chat(user, span_notice("[capitalize(to_equip.declent_ru(NOMINATIVE))] призывается [was_equipped ? "на ваш пояс" : "у ваших ног"]."))
 
 /datum/spellbook_entry/item/armor
 	name = "Mastercrafted Armor Set"

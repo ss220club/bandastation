@@ -14,7 +14,7 @@
 //ATTACK HAND IGNORING PARENT RETURN VALUE
 /obj/item/clothing/glasses/changeling/attack_hand(mob/user, list/modifiers)
 	if(loc == user && IS_CHANGELING(user))
-		to_chat(user, span_notice("Вы возвращаете [src.name] в свое тело."))
+		to_chat(user, span_notice("Вы возвращаете [declent_ru(ACCUSATIVE)] в свое тело."))
 		qdel(src)
 		return
 	. = ..()
@@ -29,7 +29,7 @@
 //ATTACK HAND IGNORING PARENT RETURN VALUE
 /obj/item/clothing/under/changeling/attack_hand(mob/user, list/modifiers)
 	if(loc == user && IS_CHANGELING(user))
-		to_chat(user, span_notice("Вы возвращаете [src.name] в свое тело."))
+		to_chat(user, span_notice("Вы возвращаете [declent_ru(ACCUSATIVE)] в свое тело."))
 		qdel(src)
 		return
 	. = ..()
@@ -45,7 +45,7 @@
 //ATTACK HAND IGNORING PARENT RETURN VALUE
 /obj/item/clothing/suit/changeling/attack_hand(mob/user, list/modifiers)
 	if(loc == user && IS_CHANGELING(user))
-		to_chat(user, span_notice("Вы возвращаете [src.name] в свое тело."))
+		to_chat(user, span_notice("Вы возвращаете [declent_ru(ACCUSATIVE)] в свое тело."))
 		qdel(src)
 		return
 	. = ..()
@@ -61,7 +61,7 @@
 //ATTACK HAND IGNORING PARENT RETURN VALUE
 /obj/item/clothing/head/changeling/attack_hand(mob/user, list/modifiers)
 	if(loc == user && IS_CHANGELING(user))
-		to_chat(user, span_notice("Вы возвращаете [src.name] в свое тело."))
+		to_chat(user, span_notice("Вы возвращаете [declent_ru(ACCUSATIVE)] в свое тело."))
 		qdel(src)
 		return
 	. = ..()
@@ -76,7 +76,7 @@
 //ATTACK HAND IGNORING PARENT RETURN VALUE
 /obj/item/clothing/shoes/changeling/attack_hand(mob/user, list/modifiers)
 	if(loc == user && IS_CHANGELING(user))
-		to_chat(user, span_notice("Вы возвращаете [src.name] в свое тело."))
+		to_chat(user, span_notice("Вы возвращаете [declent_ru(ACCUSATIVE)] в свое тело."))
 		qdel(src)
 		return
 	. = ..()
@@ -91,7 +91,7 @@
 //ATTACK HAND IGNORING PARENT RETURN VALUE
 /obj/item/clothing/gloves/changeling/attack_hand(mob/user, list/modifiers)
 	if(loc == user && IS_CHANGELING(user))
-		to_chat(user, span_notice("Вы возвращаете [src.name] в свое тело."))
+		to_chat(user, span_notice("Вы возвращаете [declent_ru(ACCUSATIVE)] в свое тело."))
 		qdel(src)
 		return
 	. = ..()
@@ -106,7 +106,7 @@
 //ATTACK HAND IGNORING PARENT RETURN VALUE
 /obj/item/clothing/mask/changeling/attack_hand(mob/user, list/modifiers)
 	if(loc == user && IS_CHANGELING(user))
-		to_chat(user, span_notice("Вы возвращаете [src.name] в свое тело."))
+		to_chat(user, span_notice("Вы возвращаете [declent_ru(ACCUSATIVE)] в свое тело."))
 		qdel(src)
 		return
 	. = ..()
@@ -122,7 +122,7 @@
 //ATTACK HAND IGNORING PARENT RETURN VALUE
 /obj/item/changeling/attack_hand(mob/user, list/modifiers)
 	if(loc == user && IS_CHANGELING(user))
-		to_chat(user, span_notice("Вы возвращаете [src.name] в свое тело."))
+		to_chat(user, span_notice("Вы возвращаете [declent_ru(ACCUSATIVE)] в свое тело."))
 		qdel(src)
 		return
 	. = ..()
@@ -142,7 +142,7 @@
 	if(hud_icon)
 		var/image/holder = user.hud_list[ID_HUD]
 		var/icon/I = icon(user.icon, user.icon_state, user.dir)
-		holder.pixel_y = I.Height() - world.icon_size
+		holder.pixel_y = I.Height() - ICON_SIZE_Y
 		holder.icon_state = hud_icon
 
 /**
@@ -156,10 +156,10 @@
 
 /obj/item/changeling/id/get_id_examine_strings(mob/user)
 	. = ..()
-	. += list("[icon2html(get_cached_flat_icon(), user, extra_classes = "bigicon")]")
+	. += list("[icon2html(get_cached_flat_icon(), user, extra_classes = "hugeicon")]")
 
-/obj/item/changeling/id/get_examine_string(mob/user, thats = FALSE)
-	return "[icon2html(get_cached_flat_icon(), user)] [thats? "That's ":""][get_examine_name(user)]" //displays all overlays in chat
+/obj/item/changeling/id/get_examine_icon(mob/user)
+	return icon2html(get_cached_flat_icon(), user)
 
 //Change our DNA to that of somebody we've absorbed.
 /datum/action/changeling/transform/sting_action(mob/living/carbon/human/user)

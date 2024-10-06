@@ -226,7 +226,7 @@
 /// Attempts to give the item to the buyer on purchase.
 /datum/spellbook_entry/item/proc/try_equip_item(mob/living/carbon/human/user, obj/item/to_equip)
 	var/was_put_in_hands = user.put_in_hands(to_equip)
-	to_chat(user, span_notice("Приобретенный [to_equip.name] был призван [was_put_in_hands ? "в ваши руки" : "у ваших ног"]."))
+	to_chat(user, span_notice("Приобретенный [to_equip.declent_ru(NOMINATIVE)] призывается [was_put_in_hands ? "в ваши руки" : "у ваших ног"]."))
 
 /// Ritual, these cause station wide effects and are (pretty much) a blank slate to implement stuff in
 /datum/spellbook_entry/summon

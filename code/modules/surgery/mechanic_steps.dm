@@ -7,16 +7,16 @@
 		/obj/item/knife = 50,
 		/obj/item = 10) // 10% success with any sharp item.
 	time = 24
-	preop_sound = 'sound/items/screwdriver.ogg'
-	success_sound = 'sound/items/screwdriver2.ogg'
+	preop_sound = 'sound/items/tools/screwdriver.ogg'
+	success_sound = 'sound/items/tools/screwdriver2.ogg'
 
 /datum/surgery_step/mechanic_open/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	display_results(
 		user,
 		target,
-		span_notice("Вы начинаете откручивать корпус в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]..."),
-		span_notice("[user] начинает откручивать корпус в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
-		span_notice("[user] начинает откручивать корпус в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
+		span_notice("Вы начинаете откручивать корпус в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]..."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает откручивать корпус в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает откручивать корпус в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]."),
 	)
 	display_pain(target, "Вы ощущаете, как <i>[target.parse_zone_with_bodypart(target_zone)]</i> немеет по мере откручивания сенсорной панели.", TRUE)
 
@@ -37,16 +37,16 @@
 		/obj/item/knife = 50,
 		/obj/item = 10) // 10% success with any sharp item.
 	time = 24
-	preop_sound = 'sound/items/screwdriver.ogg'
-	success_sound = 'sound/items/screwdriver2.ogg'
+	preop_sound = 'sound/items/tools/screwdriver.ogg'
+	success_sound = 'sound/items/tools/screwdriver2.ogg'
 
 /datum/surgery_step/mechanic_close/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	display_results(
 		user,
 		target,
-		span_notice("Вы начинаете закручивать корпус в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]..."),
-		span_notice("[user] начинает закручивать корпус в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
-		span_notice("[user] начинает закручивать корпус в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
+		span_notice("Вы начинаете закручивать корпус в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]..."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает закручивать корпус в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает закручивать корпус в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]."),
 	)
 	display_pain(target, "Вы ощущаете, как начинаете получать показания датчиков из <i>[target.parse_zone_with_bodypart(target_zone)]</i>, после того, как панель закрутили обратно.", TRUE)
 
@@ -72,9 +72,9 @@
 	display_results(
 		user,
 		target,
-		span_notice("Вы начинаете подготовку электроники в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]..."),
-		span_notice("[user] начинает подготовку электроники в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
-		span_notice("[user] начинает подготовку электроники в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
+		span_notice("Вы начинаете подготовку электроники в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]..."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает подготовку электроники в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает подготовку электроники в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]."),
 	)
 	display_pain(target, "Вы чувствуете слабое жужжание в <i>[target.parse_zone_with_bodypart(target_zone)]</i>, когда электроника перезагружается.", TRUE)
 
@@ -85,15 +85,15 @@
 		TOOL_WRENCH = 100,
 		TOOL_RETRACTOR = 75)
 	time = 24
-	preop_sound = 'sound/items/ratchet.ogg'
+	preop_sound = 'sound/items/tools/ratchet.ogg'
 
 /datum/surgery_step/mechanic_unwrench/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	display_results(
 		user,
 		target,
-		span_notice("Вы начинаете откручивать болты в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]..."),
-		span_notice("[user] начинает откручивать болты в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
-		span_notice("[user] начинает откручивать болты в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
+		span_notice("Вы начинаете откручивать болты в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]..."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает откручивать болты в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает откручивать болты в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]."),
 	)
 	display_pain(target, "Вы чувствуете вибрацию в <i>[target.parse_zone_with_bodypart(target_zone)]</i>, когда болты начинают ослабевать.", TRUE)
 
@@ -110,15 +110,15 @@
 		TOOL_WRENCH = 100,
 		TOOL_RETRACTOR = 75)
 	time = 24
-	preop_sound = 'sound/items/ratchet.ogg'
+	preop_sound = 'sound/items/tools/ratchet.ogg'
 
 /datum/surgery_step/mechanic_wrench/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	display_results(
 		user,
 		target,
-		span_notice("Вы начинаете закручивать болты в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]..."),
-		span_notice("[user] начинает закручивать болты в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
-		span_notice("[user] начинает закручивать болты в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
+		span_notice("Вы начинаете закручивать болты в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]..."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает закручивать болты в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает закручивать болты в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]."),
 	)
 	display_pain(target, "Вы чувствуете вибрацию в <i>[target.parse_zone_with_bodypart(target_zone)]</i>, когда болты начинают затягиваться.", TRUE)
 
@@ -133,16 +133,16 @@
 	name = "открытойте люк (рука)"
 	accept_hand = TRUE
 	time = 10
-	preop_sound = 'sound/items/ratchet.ogg'
-	preop_sound = 'sound/machines/doorclick.ogg'
+	preop_sound = 'sound/items/tools/ratchet.ogg'
+	preop_sound = 'sound/machines/airlock/doorclick.ogg'
 
 /datum/surgery_step/open_hatch/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	display_results(
 		user,
 		target,
-		span_notice("Вы начинаете открывать держатели люка в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]..."),
-		span_notice("[user] начинает открывать держатели люка в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
-		span_notice("[user] начинает открывать держатели люка в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
+		span_notice("Вы начинаете открывать держатели люка в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]..."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает открывать держатели люка в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает открывать держатели люка в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]."),
 	)
 	display_pain(target, "Вы получаете последние показания датчиков из вашей <i>[target.parse_zone_with_bodypart(target_zone)]</i>, когда открывается люк.", TRUE)
 

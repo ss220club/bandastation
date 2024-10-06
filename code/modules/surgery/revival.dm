@@ -47,6 +47,13 @@
 		return FALSE
 	return TRUE
 
+/datum/surgery/revival/mechanic/is_valid_target(mob/living/patient)
+	if (iscarbon(patient))
+		return FALSE
+	if (!(patient.mob_biotypes & (MOB_ROBOTIC|MOB_HUMANOID)))
+		return FALSE
+	return TRUE
+
 /datum/surgery_step/revive
 	name = "воздействуй на мозг электрическим разрядом (дефибриллятор)"
 	implements = list(
@@ -56,20 +63,20 @@
 		/obj/item/gun/energy = 60)
 	repeatable = TRUE
 	time = 5 SECONDS
-	success_sound = 'sound/magic/lightningbolt.ogg'
-	failure_sound = 'sound/magic/lightningbolt.ogg'
+	success_sound = 'sound/effects/magic/lightningbolt.ogg'
+	failure_sound = 'sound/effects/magic/lightningbolt.ogg'
 
 /datum/surgery_step/revive/tool_check(mob/user, obj/item/tool)
 	. = TRUE
 	if(istype(tool, /obj/item/shockpaddles))
 		var/obj/item/shockpaddles/paddles = tool
 		if((paddles.req_defib && !paddles.defib.powered) || !HAS_TRAIT(paddles, TRAIT_WIELDED) || paddles.cooldown || paddles.busy)
-			to_chat(user, span_warning("Вам нужно держать обе ручки, и для [paddles.defib] необходимо питание!"))
+			to_chat(user, span_warning("Вам нужно держать обе ручки, и для [paddles.defib.declent_ru(GENITIVE)] необходимо питание!"))
 			return FALSE
 	if(istype(tool, /obj/item/melee/baton/security))
 		var/obj/item/melee/baton/security/baton = tool
 		if(!baton.active)
-			to_chat(user, span_warning("[baton] должен быть активным!"))
+			to_chat(user, span_warning("Нужно активировать [baton.declent_ru(NOMINATIVE)]!"))
 			return FALSE
 	if(istype(tool, /obj/item/gun/energy))
 		var/obj/item/gun/energy/egun = tool
@@ -83,15 +90,15 @@
 	display_results(
 		user,
 		target,
-		span_notice("Вы готовитесь применить [tool.name] для воздействия на мозг [target]."),
-		span_notice("[user] готовится применить [tool.name] для воздействия на мозг."),
-		span_notice("[user] готовится применить [tool.name] для воздействия на мозг."),
+		span_notice("Вы готовитесь применить [tool.declent_ru(ACCUSATIVE)] для воздействия на мозг [target.declent_ru(GENITIVE)]."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] готовится применить [tool.declent_ru(ACCUSATIVE)] для воздействия на мозг."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] готовится применить [tool.declent_ru(ACCUSATIVE)] для воздействия на мозг."),
 	)
 	target.notify_revival("Кто-то пытается поразить ваш мозг.", source = target)
 
 /datum/surgery_step/revive/play_preop_sound(mob/user, mob/living/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	if(istype(tool, /obj/item/shockpaddles))
-		playsound(tool, 'sound/machines/defib_charge.ogg', 75, 0)
+		playsound(tool, 'sound/machines/defib/defib_charge.ogg', 75, 0)
 	else
 		..()
 
@@ -99,9 +106,9 @@
 	display_results(
 		user,
 		target,
-		span_notice("Вы успешно поразили мозг [target] с помощью [tool.name]..."),
-		span_notice("[user] посылает мощный удар в мозг [target] с помощью [tool.name]..."),
-		span_notice("[user] посылает мощный удар в мозг [target] с помощью [tool.name]..."),
+		span_notice("Вы успешно поразили мозг [target.declent_ru(GENITIVE)] с помощью [tool.declent_ru(GENITIVE)]..."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] посылает мощный удар в мозг [target.declent_ru(GENITIVE)] с помощью [tool.declent_ru(GENITIVE)]..."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] посылает мощный удар в мозг [target.declent_ru(GENITIVE)] с помощью [tool.declent_ru(GENITIVE)]..."),
 	)
 	target.grab_ghost()
 	target.adjustOxyLoss(-50)
@@ -112,12 +119,12 @@
 		on_revived(user, target)
 		return TRUE
 
-	target.visible_message(span_warning("...[target.p_they()] бьется в конвульсиях [target.p_s()], после чего замирает."))
+	target.visible_message(span_warning("...[target.ru_p_they()] бьется в конвульсиях, после чего замирает."))
 	return FALSE
 
 /// Called when you have been successfully raised from the dead
 /datum/surgery_step/revive/proc/on_revived(mob/surgeon, mob/living/patient)
-	patient.visible_message(span_notice("...[patient] Просыпается, живым и в сознании!"))
+	patient.visible_message(span_notice("...[capitalize(patient.declent_ru(NOMINATIVE))] просыпается, живым и в сознании!"))
 	patient.emote("gasp")
 	if(HAS_MIND_TRAIT(surgeon, TRAIT_MORBID) && ishuman(surgeon)) // Contrary to their typical hatred of resurrection, it wouldn't be very thematic if morbid people didn't love playing god
 		var/mob/living/carbon/human/morbid_weirdo = surgeon
@@ -127,9 +134,9 @@
 	display_results(
 		user,
 		target,
-		span_notice("Вы успешно поразили мозг [target] при помощи [tool.name], но [target.p_they()] не реагирует."),
-		span_notice("[user] успешно поражает мозг [target] мощным ударом с помощью [tool.name], но [target.p_they()] не реагирует."),
-		span_notice("[user] успешно поражает мозг [target] мощным ударом с помощью [tool.name], но [target.p_they()] не реагирует."),
+		span_notice("Вы успешно поразили мозг [target.declent_ru(GENITIVE)] при помощи [tool.declent_ru(GENITIVE)], но [target.ru_p_they()] не реагирует."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно поражает мозг [target.declent_ru(GENITIVE)] мощным ударом с помощью [tool.declent_ru(GENITIVE)], но [target.ru_p_they()] не реагирует."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно поражает мозг [target.declent_ru(GENITIVE)] мощным ударом с помощью [tool.declent_ru(GENITIVE)], но [target.ru_p_they()] не реагирует."),
 	)
 	return FALSE
 

@@ -56,7 +56,7 @@
 
 /obj/machinery/computer/piratepad_control/multitool_act(mob/living/user, obj/item/multitool/I)
 	if(istype(I) && istype(I.buffer,/obj/machinery/piratepad/civilian))
-		to_chat(user, span_notice("Вы привязываете [src.name] к [I.buffer] с помощью буффера [I.name]."))
+		to_chat(user, span_notice("Вы привязываете [declent_ru(ACCUSATIVE)] к [I.buffer] с помощью буффера [I.declent_ru(GENITIVE)]."))
 		pad_ref = WEAKREF(I.buffer)
 		return TRUE
 
@@ -76,11 +76,11 @@
 		return FALSE
 	if(!inserted_scan_id)
 		status_report = "Пожалуйста, вставьте сначала ID карту."
-		playsound(loc, 'sound/machines/synth_no.ogg', 30 , TRUE)
+		playsound(loc, 'sound/machines/synth/synth_no.ogg', 30 , TRUE)
 		return FALSE
 	if(!inserted_scan_id.registered_account.civilian_bounty)
 		status_report = "Пожалуйста, возьмите сначала новый заказ."
-		playsound(loc, 'sound/machines/synth_no.ogg', 30 , TRUE)
+		playsound(loc, 'sound/machines/synth/synth_no.ogg', 30 , TRUE)
 		return FALSE
 	status_report = "Гражданский заказ: "
 	var/obj/machinery/piratepad/civilian/pad = pad_ref?.resolve()
@@ -89,10 +89,10 @@
 			continue
 		if(inserted_scan_id.registered_account.civilian_bounty.applies_to(AM))
 			status_report += "Цель применима."
-			playsound(loc, 'sound/machines/synth_yes.ogg', 30 , TRUE)
+			playsound(loc, 'sound/machines/synth/synth_yes.ogg', 30 , TRUE)
 			return
 	status_report += "Цель неприменима."
-	playsound(loc, 'sound/machines/synth_no.ogg', 30 , TRUE)
+	playsound(loc, 'sound/machines/synth/synth_no.ogg', 30 , TRUE)
 
 /**
  * This fully rewrites base behavior in order to only check for bounty objects, and no other types of objects like pirate-pads do.
@@ -132,10 +132,10 @@
 		var/obj/item/bounty_cube/reward = new /obj/item/bounty_cube(drop_location())
 		reward.set_up(curr_bounty, inserted_scan_id)
 
-	pad.visible_message(span_notice("[pad.name] активируется!"))
+	pad.visible_message(span_notice("[capitalize(pad.declent_ru(NOMINATIVE))] активируется!"))
 	flick(pad.sending_state,pad)
 	pad.icon_state = pad.idle_state
-	playsound(loc, 'sound/machines/synth_yes.ogg', 30 , TRUE)
+	playsound(loc, 'sound/machines/synth/synth_yes.ogg', 30 , TRUE)
 	sending = FALSE
 
 ///Here is where cargo bounties are added to the player's bank accounts, then adjusted and scaled into a civilian bounty.
@@ -164,7 +164,7 @@
  */
 /obj/machinery/computer/piratepad_control/civilian/proc/pick_bounty(datum/bounty/choice)
 	if(!inserted_scan_id || !inserted_scan_id.registered_account || !inserted_scan_id.registered_account.bounties || !inserted_scan_id.registered_account.bounties[choice])
-		playsound(loc, 'sound/machines/synth_no.ogg', 40 , TRUE)
+		playsound(loc, 'sound/machines/synth/synth_no.ogg', 40 , TRUE)
 		return
 	inserted_scan_id.registered_account.civilian_bounty = inserted_scan_id.registered_account.bounties[choice]
 	inserted_scan_id.registered_account.bounties = null
@@ -242,13 +242,13 @@
 
 	if(target)
 		if(holder_item && inserting_item.InsertID(target))
-			playsound(src, 'sound/machines/terminal_insert_disc.ogg', 50, FALSE)
+			playsound(src, 'sound/machines/terminal/terminal_insert_disc.ogg', 50, FALSE)
 		else
 			id_eject(user, target)
 
-	user.visible_message(span_notice("[user] вставляет [card_to_insert.name] в [src.name]."),
-						span_notice("Вы вставляете [card_to_insert.name] в [src.name]."))
-	playsound(src, 'sound/machines/terminal_insert_disc.ogg', 50, FALSE)
+	user.visible_message(span_notice("[capitalize(user.declent_ru(NOMINATIVE))] вставляет [card_to_insert.declent_ru(ACCUSATIVE)] в [declent_ru(ACCUSATIVE)]."),
+						span_notice("Вы вставляете [card_to_insert.declent_ru(ACCUSATIVE)] в [declent_ru(ACCUSATIVE)]."))
+	playsound(src, 'sound/machines/terminal/terminal_insert_disc.ogg', 50, FALSE)
 	ui_interact(user)
 	return TRUE
 
@@ -261,9 +261,9 @@
 		target.forceMove(drop_location())
 		if(!issilicon(user) && Adjacent(user))
 			user.put_in_hands(target)
-		user.visible_message(span_notice("[user] получает [target.name] из [src.name]."), \
-							span_notice("Вы получаете [target.name] из [src.name]."))
-		playsound(src, 'sound/machines/terminal_insert_disc.ogg', 50, FALSE)
+		user.visible_message(span_notice("[capitalize(user.declent_ru(NOMINATIVE))] получает [target.declent_ru(ACCUSATIVE)] из [declent_ru(GENITIVE)]."), \
+							span_notice("Вы получаете [target.declent_ru(ACCUSATIVE)] из [declent_ru(GENITIVE)]."))
+		playsound(src, 'sound/machines/terminal/terminal_insert_disc.ogg', 50, FALSE)
 		inserted_scan_id = null
 		return TRUE
 
@@ -342,7 +342,7 @@
 	//if our nag cooldown has finished and we aren't on Centcom or in transit, then nag
 	if(COOLDOWN_FINISHED(src, next_nag_time) && !is_centcom_level(z) && !is_reserved_level(z))
 		//set up our nag message
-		var/nag_message = "[src.name] лежит неотправленным в [get_area(src)]."
+		var/nag_message = "[capitalize(declent_ru(NOMINATIVE))] лежит неотправленным в [get_area(src)]."
 
 		//nag on Supply channel and reduce the speed bonus multiplier to nothing
 		var/speed_bonus_lost = "[speed_bonus ? " Бонус за быструю доставку стоимостью [bounty_value * speed_bonus] кредитов был потерян." : ""]"
@@ -365,7 +365,7 @@
 	bounty_holder = holder_id.registered_name
 	bounty_holder_job = holder_id.assignment
 	bounty_holder_account = holder_id.registered_account
-	name = "\improper [bounty_value] cr [name]"
+	name = "\improper [bounty_value] cr [declent_ru(NOMINATIVE)]"
 	desc += " Торговая бирка показывает, что этот куб-награда для <i>[bounty_holder] ([bounty_holder_job])</i> за выполнение заказа \"<i>[bounty_name]</i>\" ."
 	AddComponent(/datum/component/pricetag, holder_id.registered_account, holder_cut, FALSE)
 	AddComponent(/datum/component/gps, "[src]")
@@ -404,7 +404,7 @@
 	var/uses = 2
 
 /obj/item/civ_bounty_beacon/attack_self()
-	loc.visible_message(span_warning("[src.name] начинает громко гудеть!"))
+	loc.visible_message(span_warning("[capitalize(declent_ru(NOMINATIVE))] начинает громко гудеть!"))
 	addtimer(CALLBACK(src, PROC_REF(launch_payload)), 1 SECONDS)
 
 /obj/item/civ_bounty_beacon/proc/launch_payload()

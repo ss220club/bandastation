@@ -166,7 +166,7 @@
 
 	var/obj/item/held = target.get_active_held_item()
 	if(held && !target.dropItemToGround(held))
-		to_chat(user, span_warning("К руке цели прилип [held.name], вы не можете наложить на него ложный армблейд!"))
+		to_chat(user, span_warning("У цели нельзя снять [held.declent_ru(ACCUSATIVE)], вы не можете наложить на цель ложный армблейд!"))
 		return
 
 	..()
@@ -176,18 +176,16 @@
 
 	var/obj/item/melee/arm_blade/false/blade = new(target,1)
 	target.put_in_hands(blade)
-	target.visible_message(span_warning("Страшный клинок образуется вокруг руки [target.name]!"), span_userdanger("Ваша рука скручивается и мутирует, превращаясь в ужасающее чудовище!"), span_hear("Вы слышите, как рвется и разрывается органическая масса!"))
-	playsound(target, 'sound/effects/blobattack.ogg', 30, TRUE)
+	target.visible_message(span_warning("Страшный клинок образуется вокруг руки [target.declent_ru(GENITIVE)]!"), span_userdanger("Ваша рука скручивается и мутирует, превращаясь в ужасающее чудовище!"), span_hear("Вы слышите, как рвется и разрывается органическая масса!"))
+	playsound(target, 'sound/effects/blob/blobattack.ogg', 30, TRUE)
 
 	addtimer(CALLBACK(src, PROC_REF(remove_fake), target, blade), 1 MINUTES)
 	return TRUE
 
 /datum/action/changeling/sting/false_armblade/proc/remove_fake(mob/target, obj/item/melee/arm_blade/false/blade)
-	playsound(target, 'sound/effects/blobattack.ogg', 30, TRUE)
-	target.visible_message("<span class='warning'>С болезненным хрустом, \
-	[target] превращает свой [blade.name] в руку!</span>",
-	span_warning("[blade.name] возвращается в нормальное состояние."),
-	"<span class='italics>Вы слышите, как рвется и разрывается органическая масса!</span>")
+	playsound(target, 'sound/effects/blob/blobattack.ogg', 30, TRUE)
+	target.visible_message(span_warning("С болезненным хрустом, [target.declent_ru(NOMINATIVE)] превращает [blade.declent_ru(ACCUSATIVE)] в руку!"),
+	span_warning("[capitalize(blade.declent_ru(NOMINATIVE))] возвращается в нормальное состояние."), span_italics("Вы слышите, как рвется и разрывается органическая масса!"))
 
 	qdel(blade)
 	target.update_held_items()

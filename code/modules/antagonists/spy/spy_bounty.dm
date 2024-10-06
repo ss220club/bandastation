@@ -132,6 +132,14 @@
 /datum/spy_bounty/proc/clean_up_stolen_item(atom/movable/stealing, mob/living/spy)
 	do_sparks(3, FALSE, stealing)
 
+	if(isitem(stealing) && stealing.loc == spy)
+		// get it out of our inventory before we mess with it to prevent any weirdness.
+		// bypasses nodrop - if you want, add a bespoke check for that higher up the chain
+		spy.temporarilyRemoveItemFromInventory(stealing, force = TRUE)
+		// also check for DROPDEL
+		if(QDELETED(stealing))
+			return
+
 	// Don't mess with it while it's going away
 	var/had_attack_hand_interaction = stealing.interaction_flags_atom & INTERACT_ATOM_ATTACK_HAND
 	stealing.interaction_flags_atom &= ~INTERACT_ATOM_ATTACK_HAND
@@ -255,7 +263,7 @@
 		return FALSE
 
 	desired_item = pick(valid_possible_items)
-	name = "[desired_item.name] [difficulty == SPY_DIFFICULTY_HARD ? "Грандиозная ":""]Кража"
+	name = "[difficulty == SPY_DIFFICULTY_HARD ? "Грандиозная ":""]Кража [desired_item.name]"
 	help = "Украдите любой [desired_item.name][desired_item.steal_hint ? ": [desired_item.steal_hint]" : "."]"
 	return TRUE
 
@@ -358,8 +366,8 @@
 			original_options_weakrefs += WEAKREF(other_machine)
 
 	location_type = machine_area.type
-	name ||= "Кража [machine.name]"
-	help ||= "Украдите [machine.name], находящаяся в [machine_area]."
+	name ||= "Кража [machine.declent_ru(ACCUSATIVE)]"
+	help ||= "Украдите [machine.declent_ru(ACCUSATIVE)], находящаяся в [machine_area]."
 	return TRUE
 
 /datum/spy_bounty/machine/is_stealable(atom/movable/stealing)
@@ -551,7 +559,7 @@
 /datum/spy_bounty/targets_person/some_item/target_found(mob/crewmember)
 	var/obj/item/desired_thing = find_desired_thing(crewmember)
 	target_original_desired_ref = WEAKREF(desired_thing)
-	name = "[desired_thing.name] у [crewmember.real_name]"
+	name = "[capitalize(desired_thing.declent_ru(NOMINATIVE))] у [crewmember.real_name]"
 	help = "Украдите [desired_thing] у [crewmember.real_name]. \
 		Вы можете сделать это с помощью грубой силы или просканировав их с помощью аплинка, пока они без сознания."
 	return TRUE
@@ -666,8 +674,8 @@
 
 	var/mob/living/picked = pick(possible_bots)
 	target_bot_ref = WEAKREF(picked)
-	name ||= "Похищение [picked.name]"
-	help ||= "Похитьте [picked.name] - робота-помощника станции."
+	name ||= "Похищение [picked.declent_ru(GENITIVE)]"
+	help ||= "Похитьте [picked.declent_ru(ACCUSATIVE)] - робота-помощника станции."
 	return TRUE
 
 /datum/spy_bounty/some_bot/is_stealable(atom/movable/stealing)

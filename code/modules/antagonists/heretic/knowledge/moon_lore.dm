@@ -208,7 +208,7 @@
 		text = "[generate_heretic_text()] Смейтесь, ибо Шпрехшталмейстер [user.real_name] вознесся! \
 				Правда наконец поглотит ложь! [generate_heretic_text()]",
 		title = "[generate_heretic_text()]",
-		sound = 'sound/ambience/antag/heretic/ascend_moon.ogg',
+		sound = 'sound/music/antag/heretic/ascend_moon.ogg',
 		color_override = "pink",
 	)
 

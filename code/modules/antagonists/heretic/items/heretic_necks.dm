@@ -1,5 +1,5 @@
 /obj/item/clothing/neck/heretic_focus
-	name = "Amber Focus"
+	name = "amber focus"
 	desc = "Янтарное фокусирующее стекло, обеспечивающее связь с потусторонним миром. Ожерелье как будто подергивается, но только когда вы смотрите на него краем глаза."
 	icon_state = "eldritch_necklace"
 	w_class = WEIGHT_CLASS_SMALL
@@ -10,7 +10,7 @@
 	AddElement(/datum/element/heretic_focus)
 
 /obj/item/clothing/neck/heretic_focus/crimson_medallion
-	name = "Crimson Medallion"
+	name = "crimson medallion"
 	desc = "A blood-red focusing glass that provides a link to the world beyond, and worse. Its eye is constantly twitching and gazing in all directions. It almost seems to be silently screaming..."
 	icon_state = "crimson_medallion"
 	/// The aura healing component. Used to delete it when taken off.
@@ -105,7 +105,7 @@
 		. += span_red("You can also squeeze it to recover a large amount of health quickly, at a cost...")
 
 /obj/item/clothing/neck/eldritch_amulet
-	name = "Warm Eldritch Medallion"
+	name = "warm eldritch medallion"
 	desc = "Странный медальон. Когда вы смотрите на кристаллическую поверхность, мир вокруг вас тает. Вы видите свое собственное бьющееся сердце и пульсацию тысячи других."
 	icon = 'icons/obj/antags/eldritch.dmi'
 	icon_state = "eye_medalion"
@@ -134,7 +134,7 @@
 	user.update_sight()
 
 /obj/item/clothing/neck/eldritch_amulet/piercing
-	name = "Piercing Eldritch Medallion"
+	name = "piercing eldritch medallion"
 	desc = "Странный медальон. Вглядываясь в кристаллическую поверхность, свет преломляется в новые и пугающие цветовые спектры. Вы видите себя, отраженного от каскадных зеркал, искаженного в невозможные формы."
 	heretic_only_trait = TRAIT_XRAY_VISION
 
@@ -149,7 +149,7 @@
 
 // The amulet conversion tool used by moon heretics
 /obj/item/clothing/neck/heretic_focus/moon_amulet
-	name = "Moonlight Amulet"
+	name = "moonlight amulet"
 	desc = "Кусочек разума, души и луны. От взгляда внутрь голова идет кругом, и можно услышать шепотки смеха и радости."
 	icon = 'icons/obj/antags/eldritch.dmi'
 	icon_state = "moon_amulette"

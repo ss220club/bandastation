@@ -19,14 +19,14 @@
 
 /datum/round_event/aurora_caelus/announce(fake)
 	priority_announce("[station_name()]: безобидное облако ионов приближается к вашей станции и истощает свою энергию, ударяя по корпусу. Компания Нанотрейзен одобрила небольшой перерыв для всех сотрудников, чтобы они могли расслабиться и понаблюдать за этим очень редким событием. В это время звездный свет будет ярким, но нежным, меняющимся между спокойными зелеными и синими цветами. Любой персонал, желающий увидеть эти огни самостоятельно, может пройти в ближайшую к ним зону со смотровыми иллюминаторами на космос. Мы надеемся, что вам понравится это явление.",
-	sound = 'sound/misc/notice2.ogg',
+	sound = 'sound/announcer/notice/notice2.ogg',
 	sender_override = "Nanotrasen Meteorology Division")
 	if (fake)
 		return
 	for(var/V in GLOB.player_list)
 		var/mob/M = V
 		if((M.client.prefs.read_preference(/datum/preference/toggle/sound_midi)) && is_station_level(M.z))
-			M.playsound_local(M, 'sound/ambience/aurora_caelus.ogg', 20, FALSE, pressure_affected = FALSE)
+			M.playsound_local(M, 'sound/ambience/aurora_caelus/aurora_caelus.ogg', 20, FALSE, pressure_affected = FALSE)
 	fade_space(fade_in = TRUE)
 	fade_kitchen(fade_in = TRUE)
 
@@ -66,7 +66,7 @@
 	fade_space()
 	fade_kitchen()
 	priority_announce("Событие aurora caelus подходит к концу. Условия звездного света постепенно вернутся в норму. Когда все закончится, пожалуйста, вернитесь на свое рабочее место и продолжайте работать в обычном режиме. Приятной смены, [station_name()] и спасибо, что смотрите с нами.",
-	sound = 'sound/misc/notice2.ogg',
+	sound = 'sound/announcer/notice/notice2.ogg',
 	sender_override = "Отдел метеорологии Нанотрейзен")
 
 /datum/round_event/aurora_caelus/proc/fade_space(fade_in = FALSE)

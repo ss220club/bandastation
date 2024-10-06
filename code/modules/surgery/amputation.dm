@@ -52,8 +52,8 @@
 		/obj/item/knife/butcher = 25,
 	)
 	time = 64
-	preop_sound = 'sound/surgery/scalpel1.ogg'
-	success_sound = 'sound/surgery/organ2.ogg'
+	preop_sound = 'sound/items/handling/surgery/scalpel1.ogg'
+	success_sound = 'sound/items/handling/surgery/organ2.ogg'
 	surgery_effects_mood = TRUE
 
 /datum/surgery_step/sever_limb/mechanic
@@ -66,8 +66,8 @@
 		TOOL_SAW = 50,
 	)
 	time = 20 //WAIT I NEED THAT!!
-	preop_sound = 'sound/items/ratchet.ogg'
-	preop_sound = 'sound/machines/doorclick.ogg'
+	preop_sound = 'sound/items/tools/ratchet.ogg'
+	preop_sound = 'sound/machines/airlock/doorclick.ogg'
 
 /datum/surgery_step/sever_limb/peg
 	name = "detach limb (circular saw)"
@@ -79,16 +79,16 @@
 		TOOL_SCALPEL = 25,
 	)
 	time = 30
-	preop_sound = 'sound/surgery/saw.ogg'
-	success_sound = 'sound/items/wood_drop.ogg'
+	preop_sound = 'sound/items/handling/surgery/saw.ogg'
+	success_sound = 'sound/items/handling/materials/wood_drop.ogg'
 
 /datum/surgery_step/sever_limb/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	display_results(
 		user,
 		target,
-		span_notice("Вы начинаете отрезать <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]..."),
-		span_notice("[user] начинает отрезать <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]!"),
-		span_notice("[user] начинает отрезать <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]!"),
+		span_notice("Вы начинаете отрезать <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]..."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает отрезать <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]!"),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает отрезать <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]!"),
 	)
 	display_pain(target, "Вы чувствуете жуткую боль в <i>[parse_zone(target_zone)]</i>!")
 
@@ -97,11 +97,11 @@
 	display_results(
 		user,
 		target,
-		span_notice("Вы отрезали <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
-		span_notice("[user] отрезал <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]!"),
-		span_notice("[user] отрезал <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]!"),
+		span_notice("Вы отрезали <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] отрезал <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]!"),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] отрезал <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]!"),
 	)
-	display_pain(target, "Вы больше не чувствуете свою отрезанную <i>[target.parse_zone_with_bodypart(target_zone)]</i>!")
+	display_pain(target, "Вы больше не чувствуете <i>[target.parse_zone_with_bodypart(target_zone)]</i> у себя!")
 
 	if(HAS_MIND_TRAIT(user, TRAIT_MORBID) && ishuman(user))
 		var/mob/living/carbon/human/morbid_weirdo = user

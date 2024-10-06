@@ -203,8 +203,8 @@
 		var/obj/item/clothing/glasses/eyepatch/new_patch = new(target.loc)
 		target.equip_to_slot_if_possible(new_patch, ITEM_SLOT_EYES, disable_warning = TRUE)
 
-	to_chat(user, span_notice("Вы успешно извлекаете глаза [target]."))
-	playsound(target, 'sound/surgery/retractor2.ogg', 100, TRUE)
+	to_chat(user, span_notice("Вы успешно извлекаете глаза [target.declent_ru(GENITIVE)]."))
+	playsound(target, 'sound/items/handling/surgery/retractor2.ogg', 100, TRUE)
 	playsound(target, 'sound/effects/pop.ogg', 100, TRAIT_MUTE)
 	eyeballies.Remove(target)
 	eyeballies.forceMove(get_turf(target))

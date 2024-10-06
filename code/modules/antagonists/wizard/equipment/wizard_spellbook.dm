@@ -61,7 +61,7 @@
 	if(!owner)
 		if(!user.mind)
 			return
-		to_chat(user, span_notice("Вы привязываете [src.name] к себе."))
+		to_chat(user, span_notice("Вы привязываете [declent_ru(ACCUSATIVE)] к себе."))
 		owner = user.mind
 		return
 
@@ -69,7 +69,7 @@
 		if(user.mind?.special_role == ROLE_WIZARD_APPRENTICE)
 			to_chat(user, span_warning("Если бы вас поймают за подглядыванием в книгу заклинаний вашего учителя, то, скорее всего, вас отчислять из Академии волшебников. Лучше не стоит."))
 		else
-			to_chat(user, span_warning("Вы не признаетесь владельцем [src.name], и она не собирается открываться!"))
+			to_chat(user, span_warning("Вы не признаетесь владельцем [declent_ru(GENITIVE)], и не собирается открываться!"))
 		return
 
 	return ..()
@@ -79,10 +79,10 @@
 	if(istype(O, /obj/item/antag_spawner/contract))
 		var/datum/spellbook_entry/item/contract/contract_entry = locate() in entries
 		if(!istype(contract_entry))
-			to_chat(user, span_warning("Похоже, что [src.name] не хочет возвращать очки за [O.name]."))
+			to_chat(user, span_warning("Похоже, что [declent_ru(NOMINATIVE)] не хочет возвращать очки за [O.declent_ru(ACCUSATIVE)]."))
 			return
 		if(!contract_entry.can_refund(user, src))
-			to_chat(user, span_warning("Вы не можете вернуть очки за [src.name]."))
+			to_chat(user, span_warning("Вы не можете вернуть очки за [declent_ru(ACCUSATIVE)]."))
 			return
 		var/obj/item/antag_spawner/contract/contract = O
 		if(contract.used)
@@ -97,10 +97,10 @@
 	else if(istype(O, /obj/item/antag_spawner/slaughter_demon/laughter))
 		var/datum/spellbook_entry/item/hugbottle/demon_entry = locate() in entries
 		if(!istype(demon_entry))
-			to_chat(user, span_warning("Похоже, что [src.name] не хочет возвращать очки за [O.name]."))
+			to_chat(user, span_warning("Похоже, что [declent_ru(NOMINATIVE)] не хочет возвращать очки за [O.declent_ru(ACCUSATIVE)]."))
 			return
 		if(!demon_entry.can_refund(user, src))
-			to_chat(user, span_warning("Вы не можете вернуть очки за [O.name]."))
+			to_chat(user, span_warning("Вы не можете вернуть очки за [O.declent_ru(ACCUSATIVE)]."))
 			return
 
 		to_chat(user, span_notice("Если подумать, может быть, вызов демона - не такая уж и смешная идея. Вы возвращаете свои очки."))
@@ -111,10 +111,10 @@
 	else if(istype(O, /obj/item/antag_spawner/slaughter_demon))
 		var/datum/spellbook_entry/item/bloodbottle/demon_entry = locate() in entries
 		if(!istype(demon_entry))
-			to_chat(user, span_warning("Похоже, что [src.name] не хочет возвращать очки за [O.name]."))
+			to_chat(user, span_warning("Похоже, что [declent_ru(NOMINATIVE)] не хочет возвращать очки за [O.declent_ru(ACCUSATIVE)]."))
 			return
 		if(!demon_entry.can_refund(user, src))
-			to_chat(user, span_warning("Вы не можете вернуть очки за [O.name]."))
+			to_chat(user, span_warning("Вы не можете вернуть очки за [O.declent_ru(ACCUSATIVE)]."))
 			return
 
 		to_chat(user, span_notice("Если подумать, возможно, вызов демона - плохая идея. Вы возвращаете свои очки."))

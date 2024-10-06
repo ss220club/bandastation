@@ -9,17 +9,17 @@
 		/obj/item/shard = 45,
 		/obj/item = 30) // 30% success with any sharp item.
 	time = 16
-	preop_sound = 'sound/surgery/scalpel1.ogg'
-	success_sound = 'sound/surgery/scalpel2.ogg'
+	preop_sound = 'sound/items/handling/surgery/scalpel1.ogg'
+	success_sound = 'sound/items/handling/surgery/scalpel2.ogg'
 	surgery_effects_mood = TRUE
 
 /datum/surgery_step/incise/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	display_results(
 		user,
 		target,
-		span_notice("Вы начинаете делать надрез в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]..."),
-		span_notice("[user] начинает делать надрез в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
-		span_notice("[user] начинает делать надрез в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
+		span_notice("Вы начинаете делать надрез в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]..."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает делать надрез в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает делать надрез в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]."),
 	)
 	display_pain(target, "Вы чувствуете колющую боль в <i>[target.parse_zone_with_bodypart(target_zone)]</i>.")
 
@@ -36,9 +36,9 @@
 			display_results(
 				user,
 				target,
-				span_notice("Вокруг <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [human_target] образуется лужа крови."),
-				span_notice("Вокруг <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [human_target] образуется лужа крови."),
-				span_notice("Вокруг <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [human_target] образуется лужа крови."),
+				span_notice("Вокруг <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [human_target.declent_ru(GENITIVE)] образуется лужа крови."),
+				span_notice("Вокруг <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [human_target.declent_ru(GENITIVE)] образуется лужа крови."),
+				span_notice("Вокруг <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [human_target.declent_ru(GENITIVE)] образуется лужа крови."),
 			)
 			var/obj/item/bodypart/target_bodypart = target.get_bodypart(target_zone)
 			if(target_bodypart)
@@ -49,9 +49,9 @@
 	display_results(
 		user,
 		target,
-		span_notice("Вы начинаете <i>осторожно</i> делать надрез в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]..."),
-		span_notice("[user] начинает <i>осторожно</i> делать надрез в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
-		span_notice("[user] начинает <i>осторожно</i> делать надрез в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
+		span_notice("Вы начинаете <i>осторожно</i> делать надрез в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]..."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает <i>осторожно</i> делать надрез в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает <i>осторожно</i> делать надрез в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]."),
 	)
 	display_pain(target, "Вы чувствуете <i>осторожный</i> колющий удар в <i>[target.parse_zone_with_bodypart(target_zone)]</i>.")
 
@@ -64,15 +64,15 @@
 		/obj/item/stack/package_wrap = 35,
 		/obj/item/stack/cable_coil = 15)
 	time = 24
-	preop_sound = 'sound/surgery/hemostat1.ogg'
+	preop_sound = 'sound/items/handling/surgery/hemostat1.ogg'
 
 /datum/surgery_step/clamp_bleeders/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	display_results(
 		user,
 		target,
-		span_notice("Вы начинаете зажимать кровеносные сосуды в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]..."),
-		span_notice("[user] начинает зажимать кровеносные сосуды в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
-		span_notice("[user] начинает зажимать кровеносные сосуды в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
+		span_notice("Вы начинаете зажимать кровеносные сосуды в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]..."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает зажимать кровеносные сосуды в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает зажимать кровеносные сосуды в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]."),
 	)
 	display_pain(target, "Вы чувствуете укол, послче чего кровотечение в вашей <i>[target.parse_zone_with_bodypart(target_zone)]</i> замедляется.")
 
@@ -95,16 +95,16 @@
 		TOOL_WIRECUTTER = 35,
 		/obj/item/stack/rods = 35)
 	time = 24
-	preop_sound = 'sound/surgery/retractor1.ogg'
-	success_sound = 'sound/surgery/retractor2.ogg'
+	preop_sound = 'sound/items/handling/surgery/retractor1.ogg'
+	success_sound = 'sound/items/handling/surgery/retractor2.ogg'
 
 /datum/surgery_step/retract_skin/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	display_results(
 		user,
 		target,
-		span_notice("Вы начинаете раздвигать кожу в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]..."),
-		span_notice("[user] начинаете раздвигать кожу в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
-		span_notice("[user] начинаете раздвигать кожу в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
+		span_notice("Вы начинаете раздвигать кожу в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]..."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинаете раздвигать кожу в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинаете раздвигать кожу в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]."),
 	)
 	display_pain(target, "Вы чувствуете сильную жгучую боль, распространяющуюся по всей <i>[target.parse_zone_with_bodypart(target_zone)]</i>, по мере того, как кожа возвращается в прежнее состояние!")
 
@@ -117,16 +117,16 @@
 		TOOL_WELDER = 70,
 		/obj/item = 30) // 30% success with any hot item.
 	time = 24
-	preop_sound = 'sound/surgery/cautery1.ogg'
-	success_sound = 'sound/surgery/cautery2.ogg'
+	preop_sound = 'sound/items/handling/surgery/cautery1.ogg'
+	success_sound = 'sound/items/handling/surgery/cautery2.ogg'
 
 /datum/surgery_step/close/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	display_results(
 		user,
 		target,
-		span_notice("Вы начинаете обрабатывать разрез в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]..."),
-		span_notice("[user] начинает обрабатывать разрез в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
-		span_notice("[user] начинает обрабатывать разрез в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
+		span_notice("Вы начинаете обрабатывать разрез в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]..."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает обрабатывать разрез в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает обрабатывать разрез в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]."),
 	)
 	display_pain(target, "Ваша <i>[target.parse_zone_with_bodypart(target_zone)]</i> прижигается!")
 
@@ -161,23 +161,23 @@
 		/obj/item = 25) //20% success (sort of) with any sharp item with a force >= 10
 	time = 54
 	preop_sound = list(
-		/obj/item/circular_saw = 'sound/surgery/saw.ogg',
-		/obj/item/melee/arm_blade = 'sound/surgery/scalpel1.ogg',
-		/obj/item/fireaxe = 'sound/surgery/scalpel1.ogg',
-		/obj/item/hatchet = 'sound/surgery/scalpel1.ogg',
-		/obj/item/knife/butcher = 'sound/surgery/scalpel1.ogg',
-		/obj/item = 'sound/surgery/scalpel1.ogg',
+		/obj/item/circular_saw = 'sound/items/handling/surgery/saw.ogg',
+		/obj/item/melee/arm_blade = 'sound/items/handling/surgery/scalpel1.ogg',
+		/obj/item/fireaxe = 'sound/items/handling/surgery/scalpel1.ogg',
+		/obj/item/hatchet = 'sound/items/handling/surgery/scalpel1.ogg',
+		/obj/item/knife/butcher = 'sound/items/handling/surgery/scalpel1.ogg',
+		/obj/item = 'sound/items/handling/surgery/scalpel1.ogg',
 	)
-	success_sound = 'sound/surgery/organ2.ogg'
+	success_sound = 'sound/items/handling/surgery/organ2.ogg'
 	surgery_effects_mood = TRUE
 
 /datum/surgery_step/saw/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	display_results(
 		user,
 		target,
-		span_notice("Вы начинаете распиливать кость в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]..."),
-		span_notice("[user] начинает распиливать кость в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
-		span_notice("[user] начинает распиливать кость в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
+		span_notice("Вы начинаете распиливать кость в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]..."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает распиливать кость в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает распиливать кость в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]."),
 	)
 	display_pain(target, "Вы чувствуете ужасную боль внутри <i>[target.parse_zone_with_bodypart(target_zone)]</i>!")
 
@@ -191,9 +191,9 @@
 	display_results(
 		user,
 		target,
-		span_notice("Вы вскрываете <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
-		span_notice("[user] вскрывает <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]!"),
-		span_notice("[user] вскрывает <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]!"),
+		span_notice("Вы вскрываете <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] вскрывает <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]!"),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] вскрывает <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]!"),
 	)
 	display_pain(target, "Такое ощущение, что в <i>[target.parse_zone_with_bodypart(target_zone)]</i> что-то сломано!")
 	return ..()
@@ -213,9 +213,9 @@
 	display_results(
 		user,
 		target,
-		span_notice("Вы начинаете сверлить прямо в кости в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]..."),
-		span_notice("[user] начинает сверлить прямо в кости в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
-		span_notice("[user] начинает сверлить прямо в кости в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
+		span_notice("Вы начинаете сверлить прямо в кости в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]..."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает сверлить прямо в кости в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает сверлить прямо в кости в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]."),
 	)
 	display_pain(target, "Вы чувствуете ужасную пронзительную боль в <i>[target.parse_zone_with_bodypart(target_zone)]</i>!")
 
@@ -223,8 +223,8 @@
 	display_results(
 		user,
 		target,
-		span_notice("Вы просверлили <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
-		span_notice("[user] просверливает <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]!"),
-		span_notice("[user] просверливает <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]!"),
+		span_notice("Вы просверлили <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] просверливает <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]!"),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] просверливает <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]!"),
 	)
 	return ..()

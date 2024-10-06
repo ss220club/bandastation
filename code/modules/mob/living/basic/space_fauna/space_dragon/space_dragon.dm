@@ -30,7 +30,7 @@
 	speed = 0
 	attack_verb_continuous = "chomps"
 	attack_verb_simple = "chomp"
-	attack_sound = 'sound/magic/demon_attack1.ogg'
+	attack_sound = 'sound/effects/magic/demon_attack1.ogg'
 	attack_vis_effect = ATTACK_EFFECT_BITE
 	obj_damage = 50
 	melee_damage_upper = 35
@@ -43,7 +43,7 @@
 	maptext_height = 64
 	maptext_width = 64
 	mouse_opacity = MOUSE_OPACITY_ICON
-	death_sound = 'sound/creatures/space_dragon_roar.ogg'
+	death_sound = 'sound/mobs/non-humanoids/space_dragon/space_dragon_roar.ogg'
 	death_message = "вопя в агонии, он рушится на пол, теперь его жизнь угасла."
 	butcher_results = list(/obj/item/stack/ore/diamond = 5, /obj/item/stack/sheet/sinew = 5, /obj/item/stack/sheet/bone = 30)
 	can_buckle_to = FALSE
@@ -176,8 +176,8 @@
 	adjust_health(-food.maxHealth * 0.25)
 	if (QDELETED(food) || food.loc == src)
 		return FALSE
-	playsound(src, 'sound/magic/demon_attack1.ogg', 60, TRUE)
-	visible_message(span_boldwarning("[src] поглощает [food] целиком!"))
+	playsound(src, 'sound/effects/magic/demon_attack1.ogg', 60, TRUE)
+	visible_message(span_boldwarning("[capitalize(declent_ru(NOMINATIVE))] поглощает [food.declent_ru(ACCUSATIVE)] целиком!"))
 	food.extinguish_mob() // It's wet in there, and our food is likely to be on fire. Let's be decent and not husk them.
 	food.forceMove(src)
 	return TRUE

@@ -42,23 +42,23 @@
 	var/static/list/ascension_bodies = list(
 		list(
 			"text" = "Fear the blaze, for the Ashlord, %FAKENAME% has ascended! The flames shall consume all!",
-			"sound" = 'sound/ambience/antag/heretic/ascend_blade.ogg',
+			"sound" = 'sound/music/antag/heretic/ascend_blade.ogg',
 		),
 		list(
 			"text" = "Master of blades, the Torn Champion's disciple, %FAKENAME% has ascended! Their steel is that which will cut reality in a maelstom of silver!",
-			"sound" = 'sound/ambience/antag/heretic/ascend_blade.ogg',
+			"sound" = 'sound/music/antag/heretic/ascend_blade.ogg',
 		),
 		list(
 			"text" = "Ever coiling vortex. Reality unfolded. ARMS OUTREACHED, THE LORD OF THE NIGHT, %FAKENAME% has ascended! Fear the ever twisting hand!",
-			"sound" = 'sound/ambience/antag/heretic/ascend_flesh.ogg',
+			"sound" = 'sound/music/antag/heretic/ascend_flesh.ogg',
 		),
 		list(
 			"text" = "Fear the decay, for the Rustbringer, %FAKENAME% has ascended! None shall escape the corrosion!",
-			"sound" = 'sound/ambience/antag/heretic/ascend_rust.ogg',
+			"sound" = 'sound/music/antag/heretic/ascend_rust.ogg',
 		),
 		list(
 			"text" = "The nobleman of void %FAKENAME% has arrived, stepping along the Waltz that ends worlds!",
-			"sound" = 'sound/ambience/antag/heretic/ascend_void.ogg',
+			"sound" = 'sound/music/antag/heretic/ascend_void.ogg',
 		)
 	)
 
@@ -93,9 +93,9 @@
 	var/area/fake_summon_area = GLOB.areas_by_type[fake_summon_area_type]
 
 	priority_announce(
-		text = "Зафиксирован призыв древнего божества культистом [totally_real_cult_leader.real_name] в [fake_summon_area]. Прервите ритуал любой ценой!",
+		text = "Зафиксирован призыв древнего божества в [fake_summon_area], культист-призыватель - [totally_real_cult_leader.real_name]. Прервите ритуал любой ценой!",
 		title = "[command_name()]: Отдел паранормальных явлений",
-		sound = 'sound/ambience/antag/bloodcult/bloodcult_scribe.ogg',
+		sound = 'sound/music/antag/bloodcult/bloodcult_scribe.ogg',
 		has_important_message = TRUE,
 		players = list(hallucinator),
 	)
@@ -111,7 +111,7 @@
 /datum/hallucination/station_message/supermatter_delam
 
 /datum/hallucination/station_message/supermatter_delam/start()
-	SEND_SOUND(hallucinator, 'sound/magic/charge.ogg')
+	SEND_SOUND(hallucinator, 'sound/effects/magic/charge.ogg')
 	to_chat(hallucinator, span_boldannounce("You feel reality distort for a moment..."))
 	return ..()
 
@@ -129,5 +129,5 @@
 	if(QDELETED(src))
 		return
 
-	hallucinator.playsound_local(get_turf(hallucinator), 'sound/effects/explosion_distant.ogg', 50, FALSE, pressure_affected = FALSE)
+	hallucinator.playsound_local(get_turf(hallucinator), 'sound/effects/explosion/explosion_distant.ogg', 50, FALSE, pressure_affected = FALSE)
 	qdel(src)

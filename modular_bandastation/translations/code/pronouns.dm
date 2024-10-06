@@ -1,10 +1,11 @@
 /atom
-	/// ru_names = list(NOMINATIVE = "челюсти жизни", GENITIVE = "челюстей жизни", DATIVE = "челюстям жизни", ACCUSATIVE = "челюсти жизни", INSTRUMENTAL = "челюстями жизни", PREPOSITIONAL = "челюстях жизни")
+	// code\__DEFINES\bandastation\pronouns.dm for more info
+	/// ru_names = RU_NAMES_LIST_INIT("jaws of life", "именительный", "родительный", "дательный", "винительный", "творительный", "предложный")
 	var/list/ru_names
 
 /**
 * Процедура выбора правильного падежа для любого предмета, если у него указан словарь «ru_names», примерно такой:
-* ru_names = list(NOMINATIVE = "челюсти жизни", GENITIVE = "челюстей жизни", DATIVE = "челюстям жизни", ACCUSATIVE = "челюсти жизни", INSTRUMENTAL = "челюстями жизни", PREPOSITIONAL = "челюстях жизни")
+* ru_names = RU_NAMES_LIST_INIT("jaws of life", "челюсти жизни", "челюстей жизни", "челюстям жизни","челюсти жизни", "челюстями жизни", "челюстях жизни")
 */
 /datum/proc/declent_ru(case_id, list/ru_names_override)
 	var/list/list_to_use = ru_names_override
@@ -15,8 +16,9 @@
 /atom/declent_ru(case_id, list/ru_names_override)
 	var/list/list_to_use = ru_names_override || ru_names
 	if(length(list_to_use))
-		return list_to_use[case_id] || "<i>[name]</i>"
-	return "<i>[name]</i>"
+		if(list_to_use[case_id] && list_to_use["base"] == name)
+			return list_to_use[case_id] || name
+	return name
 
 /// Склонения, например "секунда", "секунды", "секунд".
 /proc/declension_ru(num, single_name, double_name, multiple_name)

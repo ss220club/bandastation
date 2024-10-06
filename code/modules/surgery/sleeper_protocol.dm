@@ -67,8 +67,8 @@
 		TOOL_WIRECUTTER = 50,
 		/obj/item/stack/package_wrap = 35,
 		/obj/item/stack/cable_coil = 15)
-	preop_sound = 'sound/surgery/hemostat1.ogg'
-	success_sound = 'sound/surgery/hemostat1.ogg'
+	preop_sound = 'sound/items/handling/surgery/hemostat1.ogg'
+	success_sound = 'sound/items/handling/surgery/hemostat1.ogg'
 
 /datum/surgery_step/brainwash/sleeper_agent/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	objective = pick(possible_objectives)
@@ -76,8 +76,8 @@
 		user,
 		target,
 		span_notice("Вы начинаете промывать мозги [target]..."),
-		span_notice("[user] начинает исправлять мозги [target]."),
-		span_notice("[user] начинает делать операцию на мозге [target]."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает исправлять мозги [target.declent_ru(GENITIVE)]."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает делать операцию на мозге [target.declent_ru(GENITIVE)]."),
 	)
 	display_pain(target, "Голова раскалывается от невообразимой боли!") // Same message as other brain surgeries
 

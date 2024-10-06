@@ -230,7 +230,7 @@
 	priority_announce(
 		text = "[generate_heretic_text()] Бойтесь пламени, ибо Пепельный лорд, [user.real_name], вознесся! Пламя поглотит всех! [generate_heretic_text()]",
 		title = "[generate_heretic_text()]",
-		sound = 'sound/ambience/antag/heretic/ascend_ash.ogg',
+		sound = 'sound/music/antag/heretic/ascend_ash.ogg',
 		color_override = "pink",
 	)
 

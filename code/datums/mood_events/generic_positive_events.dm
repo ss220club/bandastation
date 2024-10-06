@@ -14,7 +14,7 @@
 	timeout = 4 MINUTES
 
 /datum/mood_event/betterhug/add_effects(mob/friend)
-	description = "[friend.name] был очень добр ко мне."
+	description = "[capitalize(friend.declent_ru(NOMINATIVE))] был очень добр ко мне."
 
 /datum/mood_event/besthug
 	description = "Весело находиться рядом с кем-то, не могу нарадоваться!"
@@ -22,7 +22,7 @@
 	timeout = 4 MINUTES
 
 /datum/mood_event/besthug/add_effects(mob/friend)
-	description = "Весело находиться рядом с [friend.name], не могу нарадоваться!"
+	description = "Весело находиться рядом с [friend.declent_ru(INSTRUMENTAL)], не могу нарадоваться!"
 
 /datum/mood_event/warmhug
 	description = "Теплые и уютные обнимашки самые лучшие!"
@@ -69,7 +69,7 @@
 	timeout = 5 MINUTES
 
 /datum/mood_event/pet_animal/add_effects(mob/animal)
-	description = "[capitalize(animal.name)] такой милый! Не могу перестать гладить!"
+	description = "[capitalize(animal.declent_ru(NOMINATIVE))] такой милый! Не могу перестать гладить!"
 
 /datum/mood_event/honk
 	description = "Меня захонкали!"
@@ -250,9 +250,9 @@
 	if(!beau)
 		return
 	if(direct)
-		description = "Поцелуй от [beau.name], ахх!!"
+		description = "Поцелуй от [beau.declent_ru(GENITIVE)], ахх!!"
 	else
-		description = "Воздушный поцелуй от [beau.name], я настоящая находка!"
+		description = "Воздушный поцелуй от [beau.declent_ru(GENITIVE)], я настоящая находка!"
 
 /datum/mood_event/honorbound
 	description = "Следование кодесу чести приносит удовлетворение!"
@@ -333,8 +333,33 @@
 
 /datum/mood_event/fishing
 	description = "Рыбалка расслабляет."
-	mood_change = 5
+	mood_change = 4
 	timeout = 3 MINUTES
+
+/datum/mood_event/fish_released
+	description = "Go, fish, swim and be free!"
+	mood_change = 1
+	timeout = 2 MINUTES
+
+/datum/mood_event/fish_released/add_effects(morbid, obj/item/fish/fish)
+	if(!morbid)
+		description = "Go, [fish.name], swim and be free!"
+		return
+	if(fish.status == FISH_DEAD)
+		description = "Some scavenger will surely find a use for the remains of [fish.name]. How pragmatic."
+	else
+		description = "Returned to the burden of the deep. But is this truly a mercy, [fish.name]? There will always be bigger fish..."
+
+/datum/mood_event/fish_petting
+	description = "It felt nice to pet the fish."
+	mood_change = 2
+	timeout = 2 MINUTES
+
+/datum/mood_event/fish_petting/add_effects(obj/item/fish/fish, morbid)
+	if(!morbid)
+		description = "It felt nice to pet \the [fish]."
+	else
+		description = "I caress \the [fish] as [fish.p_they()] squirms under my touch, blissfully unaware of how cruel this world is."
 
 /datum/mood_event/kobun
 	description = "Вы все любимы Вселенной. Я не одинок, как и вы."

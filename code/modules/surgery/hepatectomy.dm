@@ -41,9 +41,9 @@
 		/obj/item/knife = 45,
 		/obj/item/shard = 35)
 	time = 52
-	preop_sound = 'sound/surgery/scalpel1.ogg'
-	success_sound = 'sound/surgery/organ1.ogg'
-	failure_sound = 'sound/surgery/organ2.ogg'
+	preop_sound = 'sound/items/handling/surgery/scalpel1.ogg'
+	success_sound = 'sound/items/handling/surgery/organ1.ogg'
+	failure_sound = 'sound/items/handling/surgery/organ2.ogg'
 	surgery_effects_mood = TRUE
 
 /datum/surgery_step/hepatectomy/mechanic
@@ -54,16 +54,16 @@
 		/obj/item/melee/energy/sword = 65,
 		/obj/item/knife = 45,
 		/obj/item/shard = 35)
-	preop_sound = 'sound/items/ratchet.ogg'
-	success_sound = 'sound/machines/doorclick.ogg'
+	preop_sound = 'sound/items/tools/ratchet.ogg'
+	success_sound = 'sound/machines/airlock/doorclick.ogg'
 
 /datum/surgery_step/hepatectomy/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	display_results(
 		user,
 		target,
-		span_notice("Вы начинаете вырезать поврежденную часть печени у [target]..."),
-		span_notice("[user] начинает делать надрез у [target]."),
-		span_notice("[user] начинает делать надрез у [target]."),
+		span_notice("Вы начинаете вырезать поврежденную часть печени у [target.declent_ru(GENITIVE)]..."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает делать надрез у [target.declent_ru(GENITIVE)]."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает делать надрез у [target.declent_ru(GENITIVE)]."),
 	)
 	display_pain(target, "Ваша брюшная полость горит от ужасной колющей боли!")
 
@@ -78,9 +78,9 @@
 	display_results(
 		user,
 		target,
-		span_notice("Вы успешно удаляете поврежденную часть печени у [target]."),
-		span_notice("[user] успешно удаляет поврежденную часть печени у [target]."),
-		span_notice("[user] успешно удаляет поврежденную часть печени у [target]."),
+		span_notice("Вы успешно удаляете поврежденную часть печени у [target.declent_ru(GENITIVE)]."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно удаляет поврежденную часть печени у [target.declent_ru(GENITIVE)]."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно удаляет поврежденную часть печени у [target.declent_ru(GENITIVE)]."),
 	)
 	display_pain(target, "Боль немного стихает.")
 	return ..()
@@ -91,8 +91,8 @@
 	display_results(
 		user,
 		target,
-		span_warning("Вы удалили не ту часть печени у [target]!"),
-		span_warning("[user] удалил не ту часть печени у [target]!"),
-		span_warning("[user] удалил не ту часть печени у [target]!"),
+		span_warning("Вы удалили не ту часть печени у [target.declent_ru(GENITIVE)]!"),
+		span_warning("[capitalize(user.declent_ru(NOMINATIVE))] удалил не ту часть печени у [target.declent_ru(GENITIVE)]!"),
+		span_warning("[capitalize(user.declent_ru(NOMINATIVE))] удалил не ту часть печени у [target.declent_ru(GENITIVE)]!"),
 	)
 	display_pain(target, "Вы чувствуете острую боль в брюшной полости!")

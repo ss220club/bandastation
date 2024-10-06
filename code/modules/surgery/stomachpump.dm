@@ -36,15 +36,15 @@
 	accept_hand = TRUE
 	repeatable = TRUE
 	time = 20
-	success_sound = 'sound/surgery/organ2.ogg'
+	success_sound = 'sound/items/handling/surgery/organ2.ogg'
 
 /datum/surgery_step/stomach_pump/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	display_results(
 		user,
 		target,
-		span_notice("Вы начинаете промывать желудок у [target]..."),
-		span_notice("[user] начинает промывать желудок у [target]."),
-		span_notice("[user] начинает нажимать на грудь [target]."),
+		span_notice("Вы начинаете промывать желудок у [target.declent_ru(GENITIVE)]..."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает промывать желудок у [target.declent_ru(GENITIVE)]."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает нажимать на грудь [target.declent_ru(GENITIVE)]."),
 	)
 	display_pain(target, "Вы чувствуете жуткое бурление в желудке! Вас сейчас вырвет!")
 
@@ -54,9 +54,9 @@
 		display_results(
 			user,
 			target,
-			span_notice("[user] вызывает рвоту у [target_human], избавляя желудок от некоторых химикатов!"),
-			span_notice("[user] вызывает рвоту у [target_human], избавляя желудок от некоторых химикатов!"),
-			span_notice("[user] вызывает рвоту у [target_human]!"),
+			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] вызывает рвоту у [target_human.declent_ru(GENITIVE)], избавляя желудок от некоторых химикатов!"),
+			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] вызывает рвоту у [target_human.declent_ru(GENITIVE)], избавляя желудок от некоторых химикатов!"),
+			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] вызывает рвоту у [target_human.declent_ru(GENITIVE)]!"),
 		)
 		target_human.vomit((MOB_VOMIT_MESSAGE | MOB_VOMIT_STUN), lost_nutrition = 20, purge_ratio = 0.67) //higher purge ratio than regular vomiting
 	return ..()
@@ -67,9 +67,9 @@
 		display_results(
 			user,
 			target,
-			span_warning("Вы ошибаетесь, оставив ушиб на груди [target_human]!"),
-			span_warning("[user] ошибается, оставив ушиб на груди [target_human]!"),
-			span_warning("[user] ошибается!"),
+			span_warning("Вы ошибаетесь, оставив ушиб на груди [target_human.declent_ru(GENITIVE)]!"),
+			span_warning("[capitalize(user.declent_ru(NOMINATIVE))] ошибается, оставив ушиб на груди [target_human.declent_ru(GENITIVE)]!"),
+			span_warning("[capitalize(user.declent_ru(NOMINATIVE))] ошибается!"),
 		)
 		target_human.adjustOrganLoss(ORGAN_SLOT_STOMACH, 5)
 		target_human.adjustBruteLoss(5)

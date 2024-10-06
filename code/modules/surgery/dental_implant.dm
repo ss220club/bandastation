@@ -21,11 +21,11 @@
 		count++
 
 	if(teeth_receptangle.teeth_count == 0)
-		to_chat(user, span_notice("[user] has no teeth, doofus!"))
+		to_chat(user, span_notice("[capitalize(user.declent_ru(NOMINATIVE))] has no teeth, doofus!"))
 		return SURGERY_STEP_FAIL
 
 	if(count >= teeth_receptangle.teeth_count)
-		to_chat(user, span_notice("[user]'s teeth have all been replaced with pills already!"))
+		to_chat(user, span_notice("[capitalize(user.declent_ru(NOMINATIVE))]'s teeth have all been replaced with pills already!"))
 		return SURGERY_STEP_FAIL
 
 /datum/surgery_step/insert_pill
@@ -38,9 +38,9 @@
 	display_results(
 		user,
 		target,
-		span_notice("Вы начинаете вставлять [tool.name] в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]..."),
-		span_notice("[user] начинает вставлять [tool.name] в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
-		span_notice("[user] начинает вставлять что-то в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
+		span_notice("Вы начинаете вставлять [tool.declent_ru(ACCUSATIVE)] в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]..."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает вставлять [tool.declent_ru(ACCUSATIVE)] в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает вставлять что-то в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]."),
 	)
 	display_pain(target, "Что-то засовывают вам в <i>[target.parse_zone_with_bodypart(target_zone)]</i>!")
 
@@ -52,7 +52,7 @@
 	user.transferItemToLoc(tool, target.get_bodypart(BODY_ZONE_HEAD), TRUE)
 
 	var/datum/action/item_action/activate_pill/pill_action = new(tool)
-	pill_action.name = "Активируйте [tool.name]"
+	pill_action.name = "Активировать [tool.declent_ru(ACCUSATIVE)]"
 	pill_action.build_all_button_icons()
 	pill_action.target = tool
 	pill_action.Grant(target) //The pill never actually goes in an inventory slot, so the owner doesn't inherit actions from it
@@ -60,9 +60,9 @@
 	display_results(
 		user,
 		target,
-		span_notice("Вы вставили [tool.name] в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]."),
-		span_notice("[user] вставил [tool.name] в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]!"),
-		span_notice("[user] вставил что-то в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target]!"),
+		span_notice("Вы вставили [tool.declent_ru(ACCUSATIVE)] в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] вставил [tool.declent_ru(ACCUSATIVE)] в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]!"),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] вставил что-то в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]!"),
 	)
 	return ..()
 
@@ -100,8 +100,8 @@
 		user,
 		target,
 		span_notice("You begin looking in [target]'s mouth for implantable teeth..."),
-		span_notice("[user] begins to look in [target]'s mouth."),
-		span_notice("[user] begins to examine [target]'s teeth."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] begins to look in [target]'s mouth."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] begins to examine [target]'s teeth."),
 	)
 	display_pain(target, "You feel fingers poke around at your teeth.")
 
@@ -109,9 +109,9 @@
 	display_results(
 		user,
 		target,
-		span_notice("[user] marks a tooth in [target]'s mouth."),
-		span_notice("[user] marks a tooth in [target]'s mouth."),
-		span_notice("[user] prods a tooth in [target]'s mouth."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] marks a tooth in [target]'s mouth."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] marks a tooth in [target]'s mouth."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] prods a tooth in [target]'s mouth."),
 	)
 	surgery.status = MARK_TOOTH
 	return ..()

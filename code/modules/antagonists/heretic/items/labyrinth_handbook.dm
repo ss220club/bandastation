@@ -41,10 +41,12 @@
 	. += span_hypnophrase("Материализует барьер, который пропускает только вас. Действует 8 секунд.")
 	. += span_hypnophrase("Осталось использований: <b>[uses]</b>.")
 
-/obj/item/heretic_labyrinth_handbook/ranged_interact_with_atom(atom/interacting_with, mob/living/user, list/modifiers)
-	return interact_with_atom(interacting_with, user, modifiers)
-
 /obj/item/heretic_labyrinth_handbook/interact_with_atom(atom/interacting_with, mob/living/user, list/modifiers)
+	if(HAS_TRAIT(interacting_with, TRAIT_COMBAT_MODE_SKIP_INTERACTION))
+		return NONE
+	return ranged_interact_with_atom(interacting_with, user, modifiers)
+
+/obj/item/heretic_labyrinth_handbook/ranged_interact_with_atom(atom/interacting_with, mob/living/user, list/modifiers)
 	if(!IS_HERETIC(user))
 		if(ishuman(user))
 			var/mob/living/carbon/human/human_user = user
@@ -60,7 +62,7 @@
 		return ITEM_INTERACT_BLOCKING
 	turf_target.visible_message(span_warning("Бумажный шторм материализуется!"))
 	new /obj/effect/temp_visual/paper_scatter(turf_target)
-	playsound(turf_target, 'sound/magic/smoke.ogg', 30)
+	playsound(turf_target, 'sound/effects/magic/smoke.ogg', 30)
 	new barrier_type(turf_target, user)
 	uses--
 	if(uses <= 0)
