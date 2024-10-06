@@ -117,8 +117,8 @@
 		return jointext(override, " ")
 	if(!isnull(override[EXAMINE_POSITION_BEFORE]))
 		override -= null // There is no article, don't try to join it
-		return "[jointext(override, " ")]"
-	return "[declent_ru(declent)]"
+		return "[jointext(override, " ")]" // BANDASTATION EDIT - Declents
+	return "[declent_ru(declent)]" // BANDASTATION EDIT - Declents
 
 /mob/living/get_examine_name(mob/user, declent = NOMINATIVE) // BANDASTATION EDIT - Declents
 	return get_visible_name(declent = declent) // BANDASTATION EDIT - Declents
