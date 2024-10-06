@@ -73,7 +73,7 @@ export const ReplaceObjectivesButton = (props: ReplaceObjectivesProps) => {
     can_change_objective,
     button_title,
     button_colour,
-    button_tooltip = 'Replace your existing objectives with a custom one. This action can only be taken once',
+    button_tooltip = 'Заменить текущие цели на свою. Это действие можно выполнить только один раз',
   } = props;
   const { act } = useBackend();
   if (!can_change_objective) {
