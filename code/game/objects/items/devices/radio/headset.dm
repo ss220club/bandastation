@@ -58,7 +58,7 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 					avail_chans += "используйте [MODE_TOKEN_DEPARTMENT] или [GLOB.channel_tokens[channels[i]]] для канала \"[LOWER_TEXT(channels[i])]\""
 				else
 					avail_chans += "используйте [GLOB.channel_tokens[channels[i]]] для канала \"[LOWER_TEXT(channels[i])]\""
-		. += span_notice("Маленький экран на дисплее наушника показывает следующие доступные частоты:\n[english_list(avail_chans)].")
+		. += span_notice("Маленький экран на дисплее наушника показывает следующие доступные частоты:\n[english_list(avail_chans, and_text = " и ")].")
 
 		if(command)
 			. += span_info("Альт-Клик для переключения режима повышенной громкости.")
