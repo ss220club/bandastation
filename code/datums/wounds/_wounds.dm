@@ -611,9 +611,9 @@
 
 	if ((wound_flags & ACCEPTS_GAUZE) && limb.current_gauze)
 		var/sling_condition = get_gauze_condition()
-		desc = "[victim.p_Their()] [limb.plaintext_zone] is [sling_condition] fastened in a sling of [limb.current_gauze.name]"
+		desc = "[victim.ru_p_them(TRUE)] [limb.ru_plaintext_zone[NOMINATIVE]] [sling_condition] затянута в перевязь из [limb.current_gauze.declent_ru(GENITIVE)]"
 	else
-		desc = "[victim.p_Their()] [limb.plaintext_zone] [examine_desc]"
+		desc = "[victim.ru_p_them(TRUE)] [limb.ru_plaintext_zone[NOMINATIVE]] [examine_desc]"
 
 	desc = modify_desc_before_span(desc, user)
 
@@ -630,13 +630,13 @@
 
 	switch(limb.current_gauze.absorption_capacity)
 		if(0 to 1.25)
-			return "just barely"
+			return "едва"
 		if(1.25 to 2.75)
-			return "loosely"
+			return "свободно"
 		if(2.75 to 4)
-			return "mostly"
+			return "преимущественно"
 		if(4 to INFINITY)
-			return "tightly"
+			return "плотно"
 
 /// Spans [desc] based on our severity.
 /datum/wound/proc/get_desc_intensity(desc)

@@ -49,7 +49,7 @@
 
 /obj/item/grenade/c4/ninja/plant_c4(atom/bomb_target, mob/living/user)
 	if(!IS_SPACE_NINJA(user))
-		say("Доступ запрещён.")
+		say("Доступ запрещен.")
 		return FALSE
 	if(!check_loc(user))
 		return FALSE

@@ -145,7 +145,7 @@
 	var/datum/bank_account/pot_acc = inserted_scan_id.registered_account
 	if((pot_acc.civilian_bounty || pot_acc.bounties) && !COOLDOWN_FINISHED(pot_acc, bounty_timer))
 		var/curr_time = round((COOLDOWN_TIMELEFT(pot_acc, bounty_timer)) / (1 MINUTES), 0.01)
-		say("Внутренняя сеть идентификаторов наматывает катушки, попробуйте ещё раз через [curr_time] минут!")
+		say("Внутренняя сеть идентификаторов наматывает катушки, попробуйте еще раз через [curr_time] минут!")
 		return FALSE
 	if(!pot_acc.account_job)
 		say("Запрашиваемая ID карта не имеет зарегистрированной должности!")
