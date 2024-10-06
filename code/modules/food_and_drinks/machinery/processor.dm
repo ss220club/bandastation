@@ -1,7 +1,8 @@
 #define PROCESSOR_SELECT_RECIPE(movable_input) LAZYACCESS(processor_inputs[type], movable_input.type)
 
 /obj/machinery/processor
-	name = "кухонный комбайн"
+	name = "Processor"
+	ru_names = RU_NAMES_LIST_INIT("processor", "комбайн", "комбайна", "комбайну", "комбайн", "комбайном", "комбайне")
 	desc = "Промышленный комбайн, используемый для обработки мяса и других продуктов. Во время работы держите руки подальше от зоны приема."
 	icon = 'icons/obj/machines/kitchen.dmi'
 	base_icon_state = "processor"
@@ -108,7 +109,7 @@
 					loaded++
 
 		if(loaded)
-			to_chat(user, span_notice("[loaded] вставлен. Цель - [src.name].."))
+			to_chat(user, span_notice("[loaded] вставлен в [src.name].."))
 		return
 
 	var/datum/food_processor_process/recipe = PROCESSOR_SELECT_RECIPE(attacking_item)

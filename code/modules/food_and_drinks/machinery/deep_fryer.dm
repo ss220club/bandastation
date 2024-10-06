@@ -16,7 +16,8 @@ GLOBAL_LIST_INIT(oilfry_blacklisted_items, typecacheof(list(
 )))
 
 /obj/machinery/deepfryer
-	name = "фритюрница"
+	name = "deep fryer"
+	ru_names = RU_NAMES_LIST_INIT("deep fryer", "фритюрница", "фритюрницы", "фритюрнице", "фритюрницу", "фритюрницей", "фритюрнице")
 	desc = "Жарит <i>всё</i>."
 	icon = 'icons/obj/machines/kitchen.dmi'
 	icon_state = "fryer_off"
@@ -105,7 +106,7 @@ GLOBAL_LIST_INIT(oilfry_blacklisted_items, typecacheof(list(
 		if(!reagents.total_volume)
 			to_chat(user, span_warning("Не в чем растворять [weapon.name]!"))
 			return
-		user.visible_message(span_notice("[user] бросает [weapon.name] в [src.name]."), span_notice("Ты растворяешь [weapon.name] в [src.name]."))
+		user.visible_message(span_notice("[user] бросает [weapon.name] в [src.name.declent_ru(ACCUSATIVE)]."), span_notice("Ты растворяешь [weapon.name] в [src.name.declent_ru(ACCUSATIVE)]]."))
 		weapon.reagents.trans_to(src, weapon.reagents.total_volume, transferred_by = user)
 		qdel(weapon)
 		return
@@ -218,7 +219,7 @@ GLOBAL_LIST_INIT(oilfry_blacklisted_items, typecacheof(list(
 
 /obj/machinery/deepfryer/attack_hand(mob/living/user, list/modifiers)
 	if(frying)
-		to_chat(user, span_notice("Вы вытаскиваете [frying.name] из [src.name]."))
+		to_chat(user, span_notice("Вы вытаскиваете [frying.name] из [src.name.declent_ru(GENITIVE)]]."))
 		frying.forceMove(drop_location())
 		if(Adjacent(user) && !issilicon(user))
 			user.put_in_hands(frying)
@@ -230,14 +231,14 @@ GLOBAL_LIST_INIT(oilfry_blacklisted_items, typecacheof(list(
 			return
 		var/mob/living/carbon/dunking_target = user.pulling
 		log_combat(user, dunking_target, "dunked", null, "into [src.name]")
-		user.visible_message(span_danger("[user] макает лицо [dunking_target.name] в [src.name]!"))
+		user.visible_message(span_danger("[user] макает лицо [dunking_target.name] в [src.name.declent_ru(ACCUSATIVE)]]!"))
 		reagents.expose(dunking_target, TOUCH)
 		var/bio_multiplier = dunking_target.getarmor(BODY_ZONE_HEAD, BIO) * 0.01
 		var/target_temp = dunking_target.bodytemperature
 		var/cold_multiplier = 1
 		if(target_temp < TCMB + 10) // a tiny bit of leeway
 			dunking_target.visible_message(span_userdanger("[capitalize(dunking_target.name)] взрывается от энтропийной разницы! Блять!"))
-			dunking_target.investigate_log("has been gibbed by entropic difference (being dunked into [src]).", INVESTIGATE_DEATHS)
+			dunking_target.investigate_log("был развполощен в энтропиные пылинки (был обращен в [src.nam.declent_ru(ACCUSATIVE)]]).", INVESTIGATE_DEATHS)
 			dunking_target.gib(DROP_ALL_REMAINS)
 			log_combat(user, dunking_target, "blew up", null, "by dunking them into [src]")
 			return

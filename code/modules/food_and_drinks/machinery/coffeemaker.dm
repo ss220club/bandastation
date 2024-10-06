@@ -1,7 +1,8 @@
 #define BEAN_CAPACITY 10 //amount of coffee beans that can fit inside the impressa coffeemaker
 
 /obj/machinery/coffeemaker
-	name = "кофеварка"
+	name = "Coffeemaker"
+	ru_names = RU_NAMES_LIST_INIT("coffeemaker", "кофемашина", "кофемашины", "кофемашине", "кофемашину", "кофемашиной", "кофемашине")
 	desc = "Кофеварка Modello 3, которая варит кофе и поддерживает его идеальную температуру 80 градусов по Цельсию. Произведено компанией Piccionaia Home Appliances."
 	icon = 'icons/obj/medical/chemical.dmi'
 	icon_state = "coffeemaker_nopot_nocart"
@@ -72,7 +73,7 @@
 /obj/machinery/coffeemaker/examine(mob/user)
 	. = ..()
 	if(!in_range(user, src) && !issilicon(user) && !isobserver(user))
-		. += span_warning("Вы слишком далеко чтобы изучить содержимое и дисплей [src]!")
+		. += span_warning("Вы слишком далеко чтобы изучить содержимое и дисплей [src.declent_ru(GENITIVE)]!")
 		return
 
 	if(brewing)

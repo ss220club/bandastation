@@ -4,7 +4,8 @@
 #define GRILL_FUELUSAGE_ACTIVE 5
 
 /obj/machinery/grill
-	name = "Гриль для барбекю"
+	name = "Grill"
+	ru_names = RU_NAMES_LIST_INIT("grill", "грилль", "грилля", "гриллю", "грилль", "гриллем", "грилле")
 	desc = "Как в старые добрые времена. Копченые продукты на легком огне"
 	icon = 'icons/obj/machines/kitchen.dmi'
 	icon_state = "grill_open"
@@ -231,7 +232,7 @@
 		var/datum/component/sizzle/sizzle = grilled_item.GetComponent(/datum/component/sizzle)
 		if(!isnull(sizzle))
 			grill_time = sizzle.time_elapsed()
-		to_chat(user, span_notice("Вы положили [grilled_item.name] на [src.name]."))
+		to_chat(user, span_notice("Вы положили [grilled_item.name] на [src.name.declent_ru(ACCUSATIVE)]."))
 		update_appearance(UPDATE_ICON_STATE)
 		grill_loop.start()
 		return ITEM_INTERACT_SUCCESS
