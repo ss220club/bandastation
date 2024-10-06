@@ -366,7 +366,7 @@
 		if(MOOD_LEVEL_HAPPY4)
 			msg += "[span_boldnicegreen("Я обожаю жизнь!")]\n"
 
-	msg += "[span_notice("Модификатор:")]\n"//All moodlets
+	msg += "[span_notice("Модификаторы:")]\n"//All moodlets
 	if(mood_events.len)
 		for(var/category in mood_events)
 			var/datum/mood_event/event = mood_events[category]
