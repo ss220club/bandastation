@@ -49,21 +49,21 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 
 	if(item_flags & IN_INVENTORY && loc == user)
 		// construction of frequency description
-		var/list/avail_chans = list("Use [RADIO_KEY_COMMON] for the currently tuned frequency")
+		var/list/avail_chans = list("Используйте [RADIO_KEY_COMMON] для текущей настроенной частоты")
 		if(special_channels & RADIO_SPECIAL_BINARY)
-			avail_chans += "use [MODE_TOKEN_BINARY] for [MODE_BINARY]"
+			avail_chans += "используйте [MODE_TOKEN_BINARY] для канала \"[MODE_BINARY]\""
 		if(length(channels))
 			for(var/i in 1 to length(channels))
 				if(i == 1)
-					avail_chans += "use [MODE_TOKEN_DEPARTMENT] or [GLOB.channel_tokens[channels[i]]] for [LOWER_TEXT(channels[i])]"
+					avail_chans += "используйте [MODE_TOKEN_DEPARTMENT] или [GLOB.channel_tokens[channels[i]]] для канала \"[LOWER_TEXT(channels[i])]\""
 				else
-					avail_chans += "use [GLOB.channel_tokens[channels[i]]] for [LOWER_TEXT(channels[i])]"
-		. += span_notice("A small screen on the headset displays the following available frequencies:\n[english_list(avail_chans)].")
+					avail_chans += "используйте [GLOB.channel_tokens[channels[i]]] для канала \"[LOWER_TEXT(channels[i])]\""
+		. += span_notice("Маленький экран на дисплее наушника показывает следующие доступные частоты:\n[english_list(avail_chans)].")
 
 		if(command)
-			. += span_info("Alt-click to toggle the high-volume mode.")
+			. += span_info("Альт-Клик для переключения режима повышенной громкости.")
 	else
-		. += span_notice("A small screen on the headset flashes, it's too small to read without holding or wearing the headset.")
+		. += span_notice("Маленький экран на наушнике мигает, но его не разобрать, только если вы не держите или носите наушник.")
 
 /obj/item/radio/headset/Initialize(mapload)
 	. = ..()

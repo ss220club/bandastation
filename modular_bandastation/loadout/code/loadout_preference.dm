@@ -22,4 +22,4 @@
 		. -= path
 		removed_items += item.name
 	if(length(removed_items) && preferences.parent.mob)
-		to_chat(preferences.parent.mob, span_warning("У вас недостаточный уровень доната, чтобы взять: [english_list(removed_items, and_text = " и ")]!"))
+		to_chat(preferences.parent.mob, span_warning("У вас недостаточный уровень доната, чтобы взять: [english_list(removed_items)]!"))

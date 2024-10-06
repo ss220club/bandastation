@@ -348,25 +348,25 @@
 	return ..()
 
 /obj/item/clothing/under/examine(mob/user)
-	. = ..()
+	. = ..() // TRANSLATE THIS
 	if(can_adjust)
-		. += "Alt-click on [src] to wear it [adjusted == ALT_STYLE ? "normally" : "casually"]."
+		. += "Альт-Клик для смены стиля на [adjusted == ALT_STYLE ? "стандартный" : "свободный"]."
 	if(has_sensor == BROKEN_SENSORS)
-		. += span_warning("The medical sensors appear to be shorted out. You could repair it with some cabling.")
+		. += span_warning("Похоже, медицинские датчики закоротили. Вы можете починить их с помощью кабелей.")
 	else if(has_sensor > NO_SENSORS)
 		switch(sensor_mode)
 			if(SENSOR_OFF)
-				. += "Its sensors appear to be disabled."
+				. += "Датчики, похоже, отключены."
 			if(SENSOR_LIVING)
-				. += "Its binary life sensors appear to be enabled."
+				. += "Датчики \"жив-мертв\", похоже, включены."
 			if(SENSOR_VITALS)
-				. += "Its vital tracker appears to be enabled."
+				. += "Датчики жизненных показателей, похоже, включены."
 			if(SENSOR_COORDS)
-				. += "Its vital tracker and tracking beacon appear to be enabled."
+				. += "Датчики жизненных показателей и маячок слежения, похоже, включены."
 	if(LAZYLEN(attached_accessories))
 		var/list/accessories = list_accessories_with_icon(user)
-		. += "It has [english_list(accessories)] attached."
-		. += "Alt-Right-Click to remove [attached_accessories[1]]."
+		. += "Имеет прикрепленные: [english_list(accessories)]."
+		. += "Альт-ПКМ для снятия [attached_accessories[1].declent_ru(GENITIVE)]."
 
 /// Helper to list out all accessories with an icon besides it, for use in examine
 /obj/item/clothing/under/proc/list_accessories_with_icon(mob/user)
