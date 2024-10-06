@@ -62,27 +62,27 @@
 					organ_rejection_dam = 30
 
 			if(!bodypart_to_attach.can_attach_limb(target))
-				target.balloon_alert(user, "это не подходит к <i>[target.parse_zone_with_bodypart(target_zone)]</i>!")
+				target.balloon_alert(user, "это не подходит к [target.parse_zone_with_bodypart(target_zone, declent = DATIVE)]!")
 				return SURGERY_STEP_FAIL
 
 		if(target_zone == bodypart_to_attach.body_zone) //so we can't replace a leg with an arm, or a human arm with a monkey arm.
 			display_results(
 				user,
 				target,
-				span_notice("Вы начинаете заменять <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)] на [tool.declent_ru(ACCUSATIVE)]..."),
-				span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает заменять <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)] на [tool.declent_ru(ACCUSATIVE)]."),
-				span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает заменять <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]."),
+				span_notice("Вы начинаете заменять [target.parse_zone_with_bodypart(target_zone, declent = ACCUSATIVE)] у [target.declent_ru(GENITIVE)] на [tool.declent_ru(ACCUSATIVE)]..."),
+				span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает заменять [target.parse_zone_with_bodypart(target_zone, declent = ACCUSATIVE)] у [target.declent_ru(GENITIVE)] на [tool.declent_ru(ACCUSATIVE)]."),
+				span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает заменять [target.parse_zone_with_bodypart(target_zone, declent = ACCUSATIVE)] у [target.declent_ru(GENITIVE)]."),
 			)
 		else
-			to_chat(user, span_warning("[capitalize(tool.declent_ru(NOMINATIVE))] не подходит для <i>[target.parse_zone_with_bodypart(target_zone)]</i>."))
+			to_chat(user, span_warning("[capitalize(tool.declent_ru(NOMINATIVE))] не подходит для [target.parse_zone_with_bodypart(target_zone, declent = GENITIVE)]."))
 			return SURGERY_STEP_FAIL
 	else if(target_zone == BODY_ZONE_L_ARM || target_zone == BODY_ZONE_R_ARM)
 		display_results(
 			user,
 			target,
 			span_notice("Вы начинаете прикреплять [tool.declent_ru(ACCUSATIVE)] к [target.declent_ru(GENITIVE)]..."),
-			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает прикреплять [tool.declent_ru(ACCUSATIVE)] к <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]."),
-			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает прикреплять что-то к <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]."),
+			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает прикреплять [tool.declent_ru(ACCUSATIVE)] к [target.parse_zone_with_bodypart(target_zone, declent = DATIVE)] у [target.declent_ru(GENITIVE)]."),
+			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает прикреплять что-то к [target.parse_zone_with_bodypart(target_zone, declent = DATIVE)] у [target.declent_ru(GENITIVE)]."),
 		)
 	else
 		to_chat(user, span_warning("[capitalize(tool.declent_ru(NOMINATIVE))] устанавливается только в руку."))
@@ -105,11 +105,11 @@
 		display_results(
 			user,
 			target,
-			span_notice("Вы успешно заменили <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]."),
-			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно заменил <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)] на [tool.declent_ru(ACCUSATIVE)]!"),
-			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно заменил <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]!"),
+			span_notice("Вы успешно заменили [target.parse_zone_with_bodypart(target_zone, declent = ACCUSATIVE)]</i> у [target.declent_ru(GENITIVE)]."),
+			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно заменяет [target.parse_zone_with_bodypart(target_zone, declent = ACCUSATIVE)] у [target.declent_ru(GENITIVE)] на [tool.declent_ru(ACCUSATIVE)]!"),
+			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно заменяет [target.parse_zone_with_bodypart(target_zone, declent = ACCUSATIVE)] у [target.declent_ru(GENITIVE)]!"),
 		)
-		display_pain(target, "Вы наполняетесь позитивными ощущениями, потому что вы снова чувствуете ваш <i>[target.parse_zone_with_bodypart(target_zone)]</i>!", TRUE)
+		display_pain(target, "Вы наполняетесь позитивными ощущениями, потому что вы снова чувствуете [target.parse_zone_with_bodypart(target_zone, declent = ACCUSATIVE)] у вас!", TRUE)
 		return
 	else
 		var/obj/item/bodypart/bodypart_to_attach = target.newBodyPart(target_zone, FALSE, FALSE)
@@ -123,7 +123,7 @@
 			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] заканчивает прикреплять [tool.declent_ru(ACCUSATIVE)]!"),
 			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] завершает операцию по прикреплению!"),
 		)
-		display_pain(target, "Вы испытываете странные ощущения от своего нового <i>[target.parse_zone_with_bodypart(target_zone)]</i>.", TRUE)
+		display_pain(target, "Вы испытываете странные ощущения от присоединения [target.parse_zone_with_bodypart(target_zone, declent = GENITIVE)] у вас.", TRUE)
 		if(istype(tool, /obj/item/chainsaw))
 			qdel(tool)
 			var/obj/item/chainsaw/mounted_chainsaw/new_arm = new(target)
