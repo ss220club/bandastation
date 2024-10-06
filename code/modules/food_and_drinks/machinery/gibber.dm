@@ -1,6 +1,5 @@
 /obj/machinery/gibber
 	name = "Gibber"
-	ru_names = RU_NAMES_LIST_INIT("gibber", "мясорубка", "мясорубки", "мясорубке", "мясорубку", "мясорубкой", "мясорубке")
 	desc = "Название недостаточно информативное?"
 	icon = 'icons/obj/machines/kitchen.dmi'
 	icon_state = "grinder"
@@ -112,7 +111,7 @@
 
 		if(do_after(user, gibtime, target = src))
 			if(C && user.pulling == C && !C.buckled && !C.has_buckled_mobs() && !occupant)
-				user.visible_message(span_danger("[user] набивает [C.name] в [src.name.declent_ru(GENITIVE)]!"))
+				user.visible_message(span_danger("[user] набивает [C.name] в [src.declent_ru(GENITIVE)]!"))
 				C.forceMove(src)
 				set_occupant(C)
 				update_appearance()

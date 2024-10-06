@@ -2,7 +2,6 @@
 
 /obj/machinery/processor
 	name = "Processor"
-	ru_names = RU_NAMES_LIST_INIT("processor", "комбайн", "комбайна", "комбайну", "комбайн", "комбайном", "комбайне")
 	desc = "Промышленный комбайн, используемый для обработки мяса и других продуктов. Во время работы держите руки подальше от зоны приема."
 	icon = 'icons/obj/machines/kitchen.dmi'
 	base_icon_state = "processor"

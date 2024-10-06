@@ -274,7 +274,7 @@
 			accept_check(weapon) \
 		)
 			load(weapon, user)
-			user.visible_message(span_notice("[user] кладет [weapon.name] в [src.name.declent_ru(ACCUSATIVE)]]."), span_notice("Вы положили [weapon.name] в [src.name.declent_ru(ACCUSATIVE)]]."))
+			user.visible_message(span_notice("[user] кладет [weapon.name] в [src.declent_ru(ACCUSATIVE)]]."), span_notice("Вы положили [weapon.name] в [src.declent_ru(ACCUSATIVE)]]."))
 			SStgui.update_uis(src)
 			if(visible_contents)
 				update_appearance()
@@ -296,22 +296,22 @@
 
 			if(loaded)
 				if(shown_contents_length >= max_n_of_items)
-					user.visible_message(span_notice("[user] перекладывает предметы из [weapon.name.declent_ru(GENITIVE)] в [src.name.declent_ru(ACCUSATIVE)]."), \
+					user.visible_message(span_notice("[user] перекладывает предметы из [weapon.declent_ru(GENITIVE)] в [src.declent_ru(ACCUSATIVE)]."), \
 						span_notice("Вы заполняете [src.name] предметами из [weapon.name]."))
 				else
-					user.visible_message(span_notice("[user] перекладывает предметы из [weapon.name.declent_ru(GENITIVE)] в [src.name.declent_ru(ACCUSATIVE)]."), \
-						span_notice("Вы загружаете [src.name] предметами из [weapon.name.declent_ru(GENITIVE)]."))
+					user.visible_message(span_notice("[user] перекладывает предметы из [weapon.declent_ru(GENITIVE)] в [src.declent_ru(ACCUSATIVE)]."), \
+						span_notice("Вы загружаете [src.name] предметами из [weapon.declent_ru(GENITIVE)]."))
 				if(weapon.contents.len)
 					to_chat(user, span_warning("Некоторые предметы не влазят."))
 				if (visible_contents)
 					update_appearance()
 				return TRUE
 			else
-				to_chat(user, span_warning("В [weapon.name] нет ничего, что можно положить в [src.name.declent_ru(ACCUSATIVE)]!"))
+				to_chat(user, span_warning("В [weapon.name] нет ничего, что можно положить в [src.declent_ru(ACCUSATIVE)]!"))
 				return FALSE
 
 	if(!powered())
-		to_chat(user, span_warning("Магнитные двери [src.name.declent_ru(GENITIVE)] не откроются без энергии!"))
+		to_chat(user, span_warning("Магнитные двери [src.declent_ru(GENITIVE)] не откроются без энергии!"))
 		return FALSE
 
 	if(!user.combat_mode || (weapon.item_flags & NOBLUDGEON))

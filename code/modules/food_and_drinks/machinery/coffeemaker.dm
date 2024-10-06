@@ -2,7 +2,6 @@
 
 /obj/machinery/coffeemaker
 	name = "Coffeemaker"
-	ru_names = RU_NAMES_LIST_INIT("coffeemaker", "кофемашина", "кофемашины", "кофемашине", "кофемашину", "кофемашиной", "кофемашине")
 	desc = "Кофеварка Modello 3, которая варит кофе и поддерживает его идеальную температуру 80 градусов по Цельсию. Произведено компанией Piccionaia Home Appliances."
 	icon = 'icons/obj/medical/chemical.dmi'
 	icon_state = "coffeemaker_nopot_nocart"

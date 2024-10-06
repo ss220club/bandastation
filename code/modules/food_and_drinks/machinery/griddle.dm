@@ -1,6 +1,5 @@
 /obj/machinery/griddle
 	name = "Griddle"
-	ru_names = RU_NAMES_LIST_INIT("griddle","гридль", "гридля", "гридлю", "гридль", "гридлем", "гридле")
 	desc = "Сковородки для слабаков"
 	icon = 'icons/obj/machines/kitchen.dmi'
 	icon_state = "griddle1_off"
@@ -99,7 +98,7 @@
 
 	if(!istype(item, /obj/item/storage/bag/tray))
 		// Non-tray dumping requires a do_after
-		to_chat(user, span_notice("Вы начинаете вываливать содержимое [item.name] на [src.name.declent_ru(GENITIVE)]..."))
+		to_chat(user, span_notice("Вы начинаете вываливать содержимое [item.name] на [src.declent_ru(GENITIVE)]..."))
 		if(!do_after(user, 2 SECONDS, target = item))
 			return ITEM_INTERACT_BLOCKING
 
@@ -113,7 +112,7 @@
 			loaded++
 			AddToGrill(tray_item, user)
 	if(loaded)
-		to_chat(user, span_notice("[loaded] вываливается прямо на [src.name.declent_ru(GENITIVE)]."))
+		to_chat(user, span_notice("[loaded] вываливается прямо на [src.declent_ru(GENITIVE)]."))
 		update_appearance()
 		return ITEM_INTERACT_SUCCESS
 	return ITEM_INTERACT_BLOCKING

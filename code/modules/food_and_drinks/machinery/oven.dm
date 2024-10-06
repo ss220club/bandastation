@@ -10,7 +10,6 @@
 
 /obj/machinery/oven
 	name = "oven"
-	ru_names = RU_NAMES_LIST_INIT("oven", "духовка", "духовки", "духовке", "духовку", "духовкой", "духовке")
 	desc = "Иногда туда залезает повар, если инженеры не починили шлюз морозильной камеры..."
 	icon = 'icons/obj/machines/kitchen.dmi'
 	icon_state = "oven_off"
@@ -105,7 +104,7 @@
 		return ..()
 
 	if(user.transferItemToLoc(item, src, silent = FALSE))
-		to_chat(user, span_notice("Вы положили [item.name] в [src.name.declent_ru(ACCUSATIVE)]."))
+		to_chat(user, span_notice("Вы положили [item.name] в [src.declent_ru(ACCUSATIVE)]."))
 		add_tray_to_oven(item, user)
 
 /obj/machinery/oven/item_interaction(mob/living/user, obj/item/item, list/modifiers)
@@ -155,13 +154,13 @@
 	if(open)
 		playsound(src, 'sound/machines/oven/oven_open.ogg', 75, TRUE)
 		set_smoke_state(OVEN_SMOKE_STATE_NONE)
-		to_chat(user, span_notice("Вы открыли [src.name.declent_ru(ACCUSATIVE)]."))
+		to_chat(user, span_notice("Вы открыли [src.declent_ru(ACCUSATIVE)]."))
 		end_processing()
 		if(used_tray)
 			used_tray.vis_flags &= ~VIS_HIDE
 	else
 		playsound(src, 'sound/machines/oven/oven_close.ogg', 75, TRUE)
-		to_chat(user, span_notice("Вы закрыли [src.name.declent_ru(ACCUSATIVE)]."))
+		to_chat(user, span_notice("Вы закрыли [src.declent_ru(ACCUSATIVE)]."))
 		if(used_tray)
 			begin_processing()
 			used_tray.vis_flags |= VIS_HIDE
@@ -180,13 +179,13 @@
 	if(open)
 		playsound(src, 'sound/machines/oven/oven_open.ogg', 75, TRUE)
 		set_smoke_state(OVEN_SMOKE_STATE_NONE)
-		to_chat(user, span_notice("Вы открыли [src.name.declent_ru(ACCUSATIVE)]."))
+		to_chat(user, span_notice("Вы открыли [src.declent_ru(ACCUSATIVE)]."))
 		end_processing()
 		if(used_tray)
 			used_tray.vis_flags &= ~VIS_HIDE
 	else
 		playsound(src, 'sound/machines/oven/oven_close.ogg', 75, TRUE)
-		to_chat(user, span_notice("Вы закрыли [src.name.declent_ru(ACCUSATIVE)]."))
+		to_chat(user, span_notice("Вы закрыли [src.declent_ru(ACCUSATIVE)]."))
 		if(used_tray)
 			begin_processing()
 			used_tray.vis_flags |= VIS_HIDE
@@ -271,7 +270,7 @@
 
 	if(!istype(item, /obj/item/storage/bag/tray))
 		// Non-tray dumping requires a do_after
-		to_chat(user, span_notice("[item.name] выгружается прямо на [src.name.declent_ru(ACCUSATIVE)]..."))
+		to_chat(user, span_notice("[item.name] выгружается прямо на [src.declent_ru(ACCUSATIVE)]..."))
 		if(!do_after(user, 2 SECONDS, target = item))
 			return ITEM_INTERACT_BLOCKING
 
@@ -285,7 +284,7 @@
 			loaded++
 			AddToPlate(tray_item, user)
 	if(loaded)
-		to_chat(user, span_notice("[loaded] вставлен в [src.name.declent_ru(ACCUSATIVE)]."))
+		to_chat(user, span_notice("[loaded] вставлен в [src.declent_ru(ACCUSATIVE)]."))
 		update_appearance()
 		return ITEM_INTERACT_SUCCESS
 	return ITEM_INTERACT_BLOCKING

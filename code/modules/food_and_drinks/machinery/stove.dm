@@ -1,6 +1,5 @@
 /obj/machinery/stove
 	name = "stove"
-	ru_names = RU_NAMES_LIST_INIT("stove", "плита", "плиты", "плите", "плиту", "плитой", "духовке")
 	desc = "Можно подумать, что здесь эта штука будет полезнее."
 	icon = 'icons/obj/machines/kitchen_stove.dmi'
 	icon_state = "stove"
@@ -28,7 +27,6 @@
 // - Tasting the pot to learn its exact contents w/o sci goggles (chef skillchip?)
 /obj/item/reagent_containers/cup/soup_pot
 	name = "Soup pot"
-	ru_names = RU_NAMES_LIST_INIT("soup pot", "кастрюля", "кастрюля", "кастрюля", "кастрюля", "кастрюлю", "кастрюлю")
 	desc = "Высокая кастрюля предназначенная для смешивания и приготовления всех видов супов."
 	icon = 'icons/obj/service/kitchen.dmi'
 	icon_state = "pot"

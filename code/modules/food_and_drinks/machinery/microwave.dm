@@ -19,7 +19,6 @@
 
 /obj/machinery/microwave
 	name = "Microwave"
-	ru_names = RU_NAMES_LIST_INIT("microwave", "миркроволновка", "миркроволновки", "миркроволновке", "миркроволновку", "миркроволновкой", "миркроволновке")
 	desc = "Нагревает всякие штуки."
 	icon = 'icons/obj/machines/microwave.dmi'
 	base_icon_state = ""
@@ -181,7 +180,7 @@
 		. += span_notice("[EXAMINE_HINT("Right-click")] что бы начать [vampire_charging_enabled ? "зарядку" : "готовку"].")
 
 	if(!in_range(user, src) && !issilicon(user) && !isobserver(user))
-		. += span_warning("Вы слишком далеко, чтобы рассмотреть содержимое [src.name.declent_ru(GENITIVE)] и его дисплей!")
+		. += span_warning("Вы слишком далеко, чтобы рассмотреть содержимое [src.declent_ru(GENITIVE)] и его дисплей!")
 		return
 	if(operating)
 		. += span_notice("[src] работает.")
@@ -417,7 +416,7 @@
 		if(IS_EDIBLE(item))
 			balloon_alert(user, "не прикручено!")
 			return ITEM_INTERACT_BLOCKING
-	return NONE
+		return NONE
 
 	if(vampire_charging_capable && istype(item, /obj/item/modular_computer) && ingredients.len > 0)
 		balloon_alert(user, "максимум 1 устройство!")
@@ -433,7 +432,7 @@
 
 		ingredients += item
 		open(autoclose = 0.6 SECONDS)
-		user.visible_message(span_notice("[user] добавляет [item] к [src.name.declent_ru(DATIVE)]."), span_notice("[item] выгружается прямо в [src.name.declent_ru(ACCUSATIVE)]..."))
+		user.visible_message(span_notice("[user] добавляет [item] к [src.declent_ru(DATIVE)]."), span_notice("[item] выгружается прямо в [src.declent_ru(ACCUSATIVE)]..."))
 		update_appearance()
 		return ITEM_INTERACT_SUCCESS
 
@@ -450,7 +449,7 @@
 	var/loaded = 0
 	if(!istype(tool, /obj/item/storage/bag/tray))
 		// Non-tray dumping requires a do_after
-		to_chat(user, span_notice("Вы начиаете опустошать содержимое [tool] в [src.name.declent_ru(ACCUSATIVE)]..."))
+		to_chat(user, span_notice("Вы начиаете опустошать содержимое [tool] в [src.declent_ru(ACCUSATIVE)]..."))
 		if(!do_after(user, 2 SECONDS, target = tool))
 			return
 
@@ -492,7 +491,7 @@
 	balloon_alert(user, "установлен на [vampire_charging_enabled ? "зарядку" : "готовку"]")
 	playsound(src, 'sound/machines/beep/twobeep_high.ogg', 50, FALSE)
 	if(HAS_SILICON_ACCESS(user))
-		visible_message(span_notice("[user] поставил [src.name.declent_ru(ACCUSATIVE)] на [vampire_charging_enabled ? "зарядку" : "готовку"]."), blind_message = span_notice("[src] издает информативный звук!"))
+		visible_message(span_notice("[user] поставил [src.declent_ru(ACCUSATIVE)] на [vampire_charging_enabled ? "зарядку" : "готовку"]."), blind_message = span_notice("[src] издает информативный звук!"))
 	return CLICK_ACTION_SUCCESS
 
 /obj/machinery/microwave/click_ctrl(mob/user)
@@ -707,7 +706,7 @@
 			for(var/mob/smeller in get_hearers_in_view(DEFAULT_MESSAGE_RANGE, src))
 				if(HAS_TRAIT(smeller, TRAIT_ANOSMIA))
 					cant_smell += smeller
-			visible_message(span_danger("Вы чуете запах гари из [src.name.declent_ru(GENITIVE)]!"), ignored_mobs = cant_smell)
+			visible_message(span_danger("Вы чуете запах гари из [src.declent_ru(GENITIVE)]!"), ignored_mobs = cant_smell)
 			particles = new /particles/smoke()
 			addtimer(CALLBACK(src, PROC_REF(remove_smoke)), 10 SECONDS)
 			Shake(duration = 1 SECONDS)
