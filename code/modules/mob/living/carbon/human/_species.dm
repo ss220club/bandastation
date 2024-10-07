@@ -1016,7 +1016,7 @@ GLOBAL_LIST_EMPTY(features_by_species)
 /datum/species/proc/spec_attack_hand(mob/living/carbon/human/owner, mob/living/carbon/human/target, datum/martial_art/attacker_style, modifiers)
 	if(!istype(owner))
 		return
-	CHECK_DNA_AND_SPECIES(owner) // 2
+	CHECK_DNA_AND_SPECIES(owner)
 	CHECK_DNA_AND_SPECIES(target)
 
 	if(!istype(owner)) //sanity check for drones.
