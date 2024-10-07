@@ -90,7 +90,7 @@
 
 /obj/machinery/processor/attackby(obj/item/attacking_item, mob/living/user, params)
 	if(processing)
-		to_chat(user, span_warning("[src.name] находится в процессе обработки!"))
+		to_chat(user, span_warning("[name] находится в процессе обработки!"))
 		return TRUE
 	if(default_deconstruction_screwdriver(user, base_icon_state + "_open", base_icon_state, attacking_item) || default_pry_open(attacking_item, close_after_pry = TRUE) || default_deconstruction_crowbar(attacking_item))
 		return
@@ -108,14 +108,14 @@
 					loaded++
 
 		if(loaded)
-			to_chat(user, span_notice("[loaded] вставлен в [src.name].."))
+			to_chat(user, span_notice("[loaded] вставлен в [name].."))
 		return
 
 	var/datum/food_processor_process/recipe = PROCESSOR_SELECT_RECIPE(attacking_item)
 	if(recipe)
 		user.visible_message(
-			span_notice("[user] засунул [attacking_item.name] в [src.name]."),
-			span_notice("Вы засунули [attacking_item.name] в [src.name]."),
+			span_notice("[user] засунул [attacking_item.name] в [declent_ru(ACCUSATIVE)]."),
+			span_notice("Вы засунули [attacking_item.name] в [declent_ru(ACCUSATIVE)]."),
 		)
 		user.transferItemToLoc(attacking_item, src, TRUE)
 		LAZYADD(processor_contents, attacking_item)
@@ -128,14 +128,14 @@
 
 /obj/machinery/processor/interact(mob/user)
 	if(processing)
-		to_chat(user, span_warning("[src.name] находится в процессе обработки!"))
+		to_chat(user, span_warning("name] находится в процессе обработки!"))
 		return TRUE
 	if(ismob(user.pulling) && PROCESSOR_SELECT_RECIPE(user.pulling))
 		if(user.grab_state < GRAB_AGGRESSIVE)
 			to_chat(user, span_warning("Для этого вам нужен хват получше!"))
 			return
 		var/mob/living/pushed_mob = user.pulling
-		visible_message(span_warning("[user] пихает [pushed_mob.name]. [src.name] на пути!"))
+		visible_message(span_warning("[user] пихает [pushed_mob.name]. [name] на пути!"))
 		pushed_mob.forceMove(src)
 		LAZYADD(processor_contents, pushed_mob)
 		user.stop_pulling()
@@ -147,7 +147,7 @@
 	user.visible_message(span_notice("[user] включил [src]."), \
 		span_notice("Вы включили [src]."), \
 		span_hear("Вы слышите кухонный комбайн."))
-	playsound(src.loc, 'sound/machines/blender.ogg', 50, TRUE)
+	playsound(loc, 'sound/machines/blender.ogg', 50, TRUE)
 	use_energy(active_power_usage)
 	var/total_time = 0
 	for(var/atom/movable/movable_input as anything in processor_contents)
@@ -227,7 +227,7 @@
 	if (!recipe)
 		return
 
-	visible_message(span_notice("[picked_slime.name] засасывается в [src.name]."))
+	visible_message(span_notice("[picked_slime.name] засасывается в [declent_ru(ACCUSATIVE)]]."))
 	LAZYADD(processor_contents, picked_slime)
 	picked_slime.forceMove(src)
 

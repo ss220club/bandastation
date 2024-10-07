@@ -180,7 +180,7 @@
 		. += span_notice("[EXAMINE_HINT("Right-click")] что бы начать [vampire_charging_enabled ? "зарядку" : "готовку"].")
 
 	if(!in_range(user, src) && !issilicon(user) && !isobserver(user))
-		. += span_warning("Вы слишком далеко, чтобы рассмотреть содержимое [src.declent_ru(GENITIVE)] и его дисплей!")
+		. += span_warning("Вы слишком далеко, чтобы рассмотреть содержимое [declent_ru(GENITIVE)] и его дисплей!")
 		return
 	if(operating)
 		. += span_notice("[src] работает.")
@@ -188,9 +188,9 @@
 
 	if(length(ingredients))
 		if(issilicon(user))
-			. += span_notice("[src.name] имеет камеру, что показывает:")
+			. += span_notice("[name] имеет камеру, что показывает:")
 		else
-			. += span_notice("[src.name] содержит:")
+			. += span_notice("[name] содержит:")
 		var/list/items_counts = new
 		for(var/i in ingredients)
 			if(isstack(i))
@@ -330,16 +330,16 @@
 		return NONE
 
 	user.visible_message(
-		span_notice("[user] начинает ремонт, [src.name] скоро снова заработает!"),
-		span_notice("Вы начинаете ремона, [src.name] скоро снова заработает!"),
+		span_notice("[user] начинает ремонт, [name] скоро снова заработает!"),
+		span_notice("Вы начинаете ремонт, [name] скоро снова заработает!"),
 	)
 
 	if(!tool.use_tool(src, user, 2 SECONDS, volume = 50))
 		return ITEM_INTERACT_BLOCKING
 
 	user.visible_message(
-		span_notice("[user] заканчивает ремонт, [src.name] снова работает."),
-		span_notice("Вы заканчиваете ремонт, [src.name] снова работает."),
+		span_notice("[user] заканчивает ремонт, [name] снова работает."),
+		span_notice("Вы заканчиваете ремонт, [name] снова работает."),
 	)
 	broken = KINDA_BROKEN // Fix it a bit
 	update_appearance()
@@ -350,16 +350,16 @@
 		return NONE
 
 	user.visible_message(
-		span_notice("[user] начинает ремонт, [src.name] скоро снова заработает!"),
-		span_notice("ВВы начинаете ремона, [src.name] скоро снова заработает!"),
+		span_notice("[user] начинает ремонт, [name] скоро снова заработает!"),
+		span_notice("ВВы начинаете ремона, [name] скоро снова заработает!"),
 	)
 
 	if(!tool.use_tool(src, user, 2 SECONDS, amount = 1, volume = 50))
 		return ITEM_INTERACT_BLOCKING
 
 	user.visible_message(
-		span_notice("[user] заканчивает ремонт, [src.name] снова работает."),
-		span_notice("Вы заканчиваете ремонт, [src.name] снова работает."),
+		span_notice("[user] заканчивает ремонт, [name] снова работает."),
+		span_notice("Вы заканчиваете ремонт, [name] снова работает."),
 	)
 	broken = NOT_BROKEN
 	update_appearance()
@@ -432,7 +432,7 @@
 
 		ingredients += item
 		open(autoclose = 0.6 SECONDS)
-		user.visible_message(span_notice("[user] добавляет [item] к [src.declent_ru(DATIVE)]."), span_notice("[item] выгружается прямо в [src.declent_ru(ACCUSATIVE)]..."))
+		user.visible_message(span_notice("[user] добавляет [item] к [declent_ru(DATIVE)]."), span_notice("[item] выгружается прямо в [declent_ru(ACCUSATIVE)]..."))
 		update_appearance()
 		return ITEM_INTERACT_SUCCESS
 
@@ -449,7 +449,7 @@
 	var/loaded = 0
 	if(!istype(tool, /obj/item/storage/bag/tray))
 		// Non-tray dumping requires a do_after
-		to_chat(user, span_notice("Вы начиаете опустошать содержимое [tool] в [src.declent_ru(ACCUSATIVE)]..."))
+		to_chat(user, span_notice("Вы начиаете опустошать содержимое [tool] в [declent_ru(ACCUSATIVE)]..."))
 		if(!do_after(user, 2 SECONDS, target = tool))
 			return
 
@@ -491,7 +491,7 @@
 	balloon_alert(user, "установлен на [vampire_charging_enabled ? "зарядку" : "готовку"]")
 	playsound(src, 'sound/machines/beep/twobeep_high.ogg', 50, FALSE)
 	if(HAS_SILICON_ACCESS(user))
-		visible_message(span_notice("[user] поставил [src.declent_ru(ACCUSATIVE)] на [vampire_charging_enabled ? "зарядку" : "готовку"]."), blind_message = span_notice("[src] издает информативный звук!"))
+		visible_message(span_notice("[user] поставил [declent_ru(ACCUSATIVE)] на [vampire_charging_enabled ? "зарядку" : "готовку"]."), blind_message = span_notice("[src] издает информативный звук!"))
 	return CLICK_ACTION_SUCCESS
 
 /obj/machinery/microwave/click_ctrl(mob/user)
@@ -631,14 +631,14 @@
 			playsound(src, 'sound/machines/buzz/buzz-sigh.ogg', 50, FALSE)
 			return
 
-	visible_message(span_notice("[src.name] включилась."), null, span_hear("Вы слышите как гудит микроволновка."))
+	visible_message(span_notice("[name] включилась."), null, span_hear("Вы слышите как гудит микроволновка."))
 	operating = TRUE
 	set_light(l_range = 1.5, l_power = 1.2, l_on = TRUE)
 	soundloop.start()
 	update_appearance()
 
 /obj/machinery/microwave/proc/spark()
-	visible_message(span_warning("Искры разлетаются вокруг [src.name]!"))
+	visible_message(span_warning("Искры разлетаются вокруг [declent_ru(GENITIVE)]!"))
 	var/datum/effect_system/spark_spread/sparks = new
 	sparks.set_up(2, 1, src)
 	sparks.start()
@@ -706,7 +706,7 @@
 			for(var/mob/smeller in get_hearers_in_view(DEFAULT_MESSAGE_RANGE, src))
 				if(HAS_TRAIT(smeller, TRAIT_ANOSMIA))
 					cant_smell += smeller
-			visible_message(span_danger("Вы чуете запах гари из [src.declent_ru(GENITIVE)]!"), ignored_mobs = cant_smell)
+			visible_message(span_danger("Вы чуете запах гари из [declent_ru(GENITIVE)]!"), ignored_mobs = cant_smell)
 			particles = new /particles/smoke()
 			addtimer(CALLBACK(src, PROC_REF(remove_smoke)), 10 SECONDS)
 			Shake(duration = 1 SECONDS)
@@ -776,7 +776,7 @@
 	cook_loop(type = MICROWAVE_NORMAL, cycles = 10, cooker = cooker)
 
 /obj/machinery/microwave/proc/muck_finish()
-	visible_message(span_warning("[src.name] покрывается грязью!"))
+	visible_message(span_warning("[name] покрывается грязью!"))
 
 	dirty = MAX_MICROWAVE_DIRTINESS
 	dirty_anim_playing = FALSE

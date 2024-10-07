@@ -72,7 +72,7 @@
 /obj/machinery/coffeemaker/examine(mob/user)
 	. = ..()
 	if(!in_range(user, src) && !issilicon(user) && !isobserver(user))
-		. += span_warning("Вы слишком далеко чтобы изучить содержимое и дисплей [src.declent_ru(GENITIVE)]!")
+		. += span_warning("Вы слишком далеко чтобы изучить содержимое и дисплей [declent_ru(GENITIVE)]!")
 		return
 
 	if(brewing)

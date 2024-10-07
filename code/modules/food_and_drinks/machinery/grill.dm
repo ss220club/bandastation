@@ -158,7 +158,7 @@
 		if(!merged)
 			weapon.forceMove(src)
 
-		to_chat(user, span_notice("Вы добавили [src.name] в топку."))
+		to_chat(user, span_notice("Вы добавили [weapon.declent_ru(ACCUSATIVE)] в топку."))
 		if(!grill_fuel)
 			burn_stack()
 			begin_processing()
@@ -231,7 +231,7 @@
 		var/datum/component/sizzle/sizzle = grilled_item.GetComponent(/datum/component/sizzle)
 		if(!isnull(sizzle))
 			grill_time = sizzle.time_elapsed()
-		to_chat(user, span_notice("Вы положили [grilled_item.name] на [src.declent_ru(ACCUSATIVE)]."))
+		to_chat(user, span_notice("Вы положили [grilled_item.name] на [declent_ru(ACCUSATIVE)]."))
 		update_appearance(UPDATE_ICON_STATE)
 		grill_loop.start()
 		return ITEM_INTERACT_SUCCESS

@@ -105,15 +105,15 @@
 		return ITEM_INTERACT_BLOCKING
 
 	user.visible_message(
-		span_notice("[user] чинит [src.name]."),
-		span_notice("Вы начинаете чинить [src.name]..."),
+		span_notice("[user] чинит [declent_ru(ACCUSATIVE)]."),
+		span_notice("Вы начинаете чинить [declent_ru(ACCUSATIVE)]..."),
 		span_hear("Вы слышите сварку."),
 	)
 
 	if(tool.use_tool(src, user, delay = 40, volume = 50))
 		if(!(machine_stat & BROKEN))
 			return ITEM_INTERACT_BLOCKING
-		to_chat(user, span_notice("Вы починили [src.name]"))
+		to_chat(user, span_notice("Вы починили [declent_ru(ACCUSATIVE)]"))
 		atom_integrity = max_integrity
 		set_machine_stat(machine_stat & ~BROKEN)
 		update_icon()
@@ -254,9 +254,9 @@
 /obj/machinery/smartfridge/play_attack_sound(damage_amount, damage_type = BRUTE, damage_flag = 0)
 	switch(damage_type)
 		if(BRUTE)
-			playsound(src.loc, 'sound/effects/glass/glasshit.ogg', 75, TRUE)
+			playsound(loc, 'sound/effects/glass/glasshit.ogg', 75, TRUE)
 		if(BURN)
-			playsound(src.loc, 'sound/items/tools/welder.ogg', 100, TRUE)
+			playsound(loc, 'sound/items/tools/welder.ogg', 100, TRUE)
 
 /obj/machinery/smartfridge/atom_break(damage_flag)
 	playsound(src, SFX_SHATTER, 50, TRUE)
@@ -274,7 +274,7 @@
 			accept_check(weapon) \
 		)
 			load(weapon, user)
-			user.visible_message(span_notice("[user] кладет [weapon.name] в [src.declent_ru(ACCUSATIVE)]]."), span_notice("Вы положили [weapon.name] в [src.declent_ru(ACCUSATIVE)]]."))
+			user.visible_message(span_notice("[user] кладет [weapon.name] в [declent_ru(ACCUSATIVE)]]."), span_notice("Вы положили [weapon.name] в [declent_ru(ACCUSATIVE)]]."))
 			SStgui.update_uis(src)
 			if(visible_contents)
 				update_appearance()
@@ -296,22 +296,22 @@
 
 			if(loaded)
 				if(shown_contents_length >= max_n_of_items)
-					user.visible_message(span_notice("[user] перекладывает предметы из [weapon.declent_ru(GENITIVE)] в [src.declent_ru(ACCUSATIVE)]."), \
-						span_notice("Вы заполняете [src.name] предметами из [weapon.name]."))
+					user.visible_message(span_notice("[user] перекладывает предметы из [weapon.declent_ru(GENITIVE)] в [declent_ru(ACCUSATIVE)]."), \
+						span_notice("Вы заполняете [declent_ru(ACCUSATIVE)] предметами из [weapon.declent_ru(ACCUSATIVE)]."))
 				else
-					user.visible_message(span_notice("[user] перекладывает предметы из [weapon.declent_ru(GENITIVE)] в [src.declent_ru(ACCUSATIVE)]."), \
-						span_notice("Вы загружаете [src.name] предметами из [weapon.declent_ru(GENITIVE)]."))
+					user.visible_message(span_notice("[user] перекладывает предметы из [weapon.declent_ru(GENITIVE)] в [declent_ru(ACCUSATIVE)]."), \
+						span_notice("Вы загружаете [declent_ru(ACCUSATIVE)] предметами из [weapon.declent_ru(GENITIVE)]."))
 				if(weapon.contents.len)
 					to_chat(user, span_warning("Некоторые предметы не влазят."))
 				if (visible_contents)
 					update_appearance()
 				return TRUE
 			else
-				to_chat(user, span_warning("В [weapon.name] нет ничего, что можно положить в [src.declent_ru(ACCUSATIVE)]!"))
+				to_chat(user, span_warning("В [weapon.name] нет ничего, что можно положить в [declent_ru(ACCUSATIVE)]!"))
 				return FALSE
 
 	if(!powered())
-		to_chat(user, span_warning("Магнитные двери [src.declent_ru(GENITIVE)] не откроются без энергии!"))
+		to_chat(user, span_warning("Магнитные двери [declent_ru(GENITIVE)] не откроются без энергии!"))
 		return FALSE
 
 	if(!user.combat_mode || (weapon.item_flags & NOBLUDGEON))

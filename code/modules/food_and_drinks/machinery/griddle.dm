@@ -65,7 +65,7 @@
 /obj/machinery/griddle/attackby(obj/item/I, mob/user, params)
 
 	if(griddled_objects.len >= max_items)
-		to_chat(user, span_notice("[src.name] не может уместить больше предметов!"))
+		to_chat(user, span_notice("[name] не может уместить больше предметов!"))
 		return
 	var/list/modifiers = params2list(params)
 	//Center the icon where the user clicked.
@@ -75,7 +75,7 @@
 		//Clamp it so that the icon never moves more than 16 pixels in either direction (thus leaving the table turf)
 		I.pixel_x = clamp(text2num(LAZYACCESS(modifiers, ICON_X)) - 16, -(world.icon_size/2), world.icon_size/2)
 		I.pixel_y = clamp(text2num(LAZYACCESS(modifiers, ICON_Y)) - 16, -(world.icon_size/2), world.icon_size/2)
-		to_chat(user, span_notice("Ты кладешь [I.name] на [src.name]."))
+		to_chat(user, span_notice("Ты кладешь [I.name] на [declent_ru(ACCUSATIVE)]."))
 		AddToGrill(I, user)
 	else
 		return ..()
@@ -98,7 +98,7 @@
 
 	if(!istype(item, /obj/item/storage/bag/tray))
 		// Non-tray dumping requires a do_after
-		to_chat(user, span_notice("Вы начинаете вываливать содержимое [item.name] на [src.declent_ru(GENITIVE)]..."))
+		to_chat(user, span_notice("Вы начинаете вываливать содержимое [item.name] на [declent_ru(GENITIVE)]..."))
 		if(!do_after(user, 2 SECONDS, target = item))
 			return ITEM_INTERACT_BLOCKING
 
@@ -112,7 +112,7 @@
 			loaded++
 			AddToGrill(tray_item, user)
 	if(loaded)
-		to_chat(user, span_notice("[loaded] вываливается прямо на [src.declent_ru(GENITIVE)]."))
+		to_chat(user, span_notice("[loaded] вываливается прямо на [declent_ru(GENITIVE)]."))
 		update_appearance()
 		return ITEM_INTERACT_SUCCESS
 	return ITEM_INTERACT_BLOCKING
@@ -201,7 +201,7 @@
 		to_dump.pixel_y = to_dump.base_pixel_y + rand(-5, 5)
 		AddToGrill(to_dump, user)
 
-	to_chat(user, span_notice("Вы выбрасываете [storage.parent.name] на [src.name]."))
+	to_chat(user, span_notice("Вы выбрасываете [storage.parent.name] на [declent_ru(ACCUSATIVE)]."))
 	return STORAGE_DUMP_HANDLED
 
 /obj/machinery/griddle/process(seconds_per_tick)

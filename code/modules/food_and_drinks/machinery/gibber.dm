@@ -43,7 +43,7 @@
 		. += span_notice("на дисплее состояния отображается: Вывод <b>[meat_produced]</b> мясных кусков через <b>[gibtime*0.1]</b> секунд работы.")
 		for(var/datum/stock_part/servo/servo in component_parts)
 			if(servo.tier >= 2)
-				. += span_notice("[src.name] была модернизирована для обработки неорганических материалов.")
+				. += span_notice("[name] была модернизирована для обработки неорганических материалов.")
 
 /obj/machinery/gibber/update_overlays()
 	. = ..()
@@ -92,7 +92,7 @@
 	if(user.pulling && isliving(user.pulling))
 		var/mob/living/L = user.pulling
 		if(!iscarbon(L))
-			to_chat(user, span_warning("этот предмет не подходит для [src.name]!"))
+			to_chat(user, span_warning("этот предмет не подходит для [declent_ru(GENITIVE)]!"))
 			return
 		var/mob/living/carbon/C = L
 		if(C.buckled || C.has_buckled_mobs())
@@ -111,7 +111,7 @@
 
 		if(do_after(user, gibtime, target = src))
 			if(C && user.pulling == C && !C.buckled && !C.has_buckled_mobs() && !occupant)
-				user.visible_message(span_danger("[user] набивает [C.name] в [src.declent_ru(GENITIVE)]!"))
+				user.visible_message(span_danger("[user] набивает [C.name] в [declent_ru(GENITIVE)]!"))
 				C.forceMove(src)
 				set_occupant(C)
 				update_appearance()
@@ -222,7 +222,7 @@
 		skin = new typeofskin
 
 	log_combat(user, occupant, "gibbed")
-	mob_occupant.investigate_log("has been gibbed by [src.name].", INVESTIGATE_DEATHS)
+	mob_occupant.investigate_log("был перемолот при помощи [declent_ru(GENITIVE)].", INVESTIGATE_DEATHS)
 	mob_occupant.death(TRUE)
 	mob_occupant.ghostize()
 	set_occupant(null)
@@ -230,7 +230,7 @@
 	addtimer(CALLBACK(src, PROC_REF(make_meat), skin, allmeat, meat_produced, gibtype, diseases), gibtime)
 
 /obj/machinery/gibber/proc/make_meat(obj/item/stack/sheet/animalhide/skin, list/obj/item/food/meat/slab/allmeat, meat_produced, gibtype, list/datum/disease/diseases)
-	playsound(src.loc, 'sound/effects/splat.ogg', 50, TRUE)
+	playsound(loc, 'sound/effects/splat.ogg', 50, TRUE)
 	operating = FALSE
 	if (!dirty && prob(50))
 		dirty = TRUE
