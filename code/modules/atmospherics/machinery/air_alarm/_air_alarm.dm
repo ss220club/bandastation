@@ -96,7 +96,7 @@ GLOBAL_LIST_EMPTY_TYPED(air_alarms, /obj/machinery/airalarm)
 
 	if(name == initial(name))
 		name = "[get_area_name(src)] Air Alarm"
-		RU_NAMES_LIST_INIT("[get_area_name(src)] Air Alarm", "воздушная сигнализация", "воздушной сигнализации [get_area_name(src)]", "воздушной сигнализации [get_area_name(src)]", "воздушную сигнализацию [get_area_name(src)]", "воздушной сигнализацией [get_area_name(src)]", "воздушной сигнализации [get_area_name(src)]")
+		RU_NAMES_LIST_INIT("[get_area_name(src)] Air Alarm", "воздушная сигнализация [get_area_name(src)]", "воздушной сигнализации [get_area_name(src)]", "воздушной сигнализации [get_area_name(src)]", "воздушную сигнализацию [get_area_name(src)]", "воздушной сигнализацией [get_area_name(src)]", "воздушной сигнализации [get_area_name(src)]")
 
 	tlv_collection = list()
 	tlv_collection["pressure"] = new /datum/tlv/pressure
