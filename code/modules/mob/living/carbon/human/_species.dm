@@ -924,7 +924,7 @@ GLOBAL_LIST_EMPTY(features_by_species)
 		atk_verb = attacking_bodypart.grappled_attack_verb
 	target.visible_message(span_danger("[capitalize(user.declent_ru(NOMINATIVE))] [atk_verb] [target.declent_ru(ACCUSATIVE)]!"), \
 					span_userdanger("[capitalize(user.declent_ru(NOMINATIVE))] [atk_verb] вас!"), span_hear("Вы слышите противный звук удара плоти о плоть!"), COMBAT_MESSAGE_RANGE, user)
-	to_chat(user, span_danger("Вы [atk_verb] [target.declent_ru(ACCUSATIVE)]!"))
+	to_chat(user, span_danger("Вы [atk_verb]е [target.declent_ru(ACCUSATIVE)]!"))
 
 	target.lastattacker = user.real_name
 	target.lastattackerckey = user.ckey
