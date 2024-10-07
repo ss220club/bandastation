@@ -60,8 +60,8 @@
 			take_bodypart_damage(5 + 5 * extra_speed, check_armor = TRUE, wound_bonus = extra_speed * 5)
 		else if(!iscarbon(hit_atom) && extra_speed)
 			take_bodypart_damage(5 * extra_speed, check_armor = TRUE, wound_bonus = extra_speed * 5)
-		visible_message(span_danger("[src] crashes into [hit_atom][extra_speed ? " really hard" : ""]!"),\
-			span_userdanger("You violently crash into [hit_atom][extra_speed ? " extra hard" : ""]!"))
+		visible_message(span_danger("[capitalize(declent_ru(NOMINATIVE))] врезается в [hit_atom.declent_ru(ACCUSATIVE)][extra_speed ? " с большой скоростью" : ""]!"),\
+			span_userdanger("Вы врезаетесь в [hit_atom.declent_ru(ACCUSATIVE)][extra_speed ? " с большой скоростью" : ""]!"))
 		log_combat(hit_atom, src, "crashes ")
 		oof_noise = TRUE
 
@@ -81,21 +81,21 @@
 		oof_noise = TRUE
 
 		if(blocked)
-			visible_message(span_danger("[src] crashes into [victim][extra_speed ? " really hard" : ""], but [victim] blocked the worst of it!"),\
-				span_userdanger("You violently crash into [victim][extra_speed ? " extra hard" : ""], but [victim] managed to block the worst of it!"))
+			visible_message(span_danger("[capitalize(declent_ru(NOMINATIVE))] врезается в [victim.declent_ru(ACCUSATIVE)][extra_speed ? " с большой скоростью" : ""], но [victim.declent_ru(NOMINATIVE)] заблокировал большую часть удара!"),\
+				span_userdanger("Вы врезаетесь в [victim.declent_ru(ACCUSATIVE)][extra_speed ? " с большой скоростью" : ""], но [victim.declent_ru(NOMINATIVE)] заблокировал большую часть удара!"))
 			log_combat(src, victim, "crashed into and was blocked by")
 			return
 		else if(HAS_TRAIT(victim, TRAIT_BRAWLING_KNOCKDOWN_BLOCKED))
 			victim.take_bodypart_damage(10 + 5 * extra_speed, check_armor = TRUE, wound_bonus = extra_speed * 5)
 			victim.apply_damage(10 + 10 * extra_speed, STAMINA)
 			victim.adjust_staggered_up_to(STAGGERED_SLOWDOWN_LENGTH * 2, 10 SECONDS)
-			visible_message(span_danger("[src] crashes into [victim][extra_speed ? " really hard" : ""], but [victim] was able to stay on their feet!"),\
-				span_userdanger("You violently crash into [victim][extra_speed ? " extra hard" : ""], but [victim] managed to stay on their feet!"))
+			visible_message(span_danger("[capitalize(declent_ru(NOMINATIVE))] врезается в [victim.declent_ru(ACCUSATIVE)][extra_speed ? " с большой скоростью" : ""], но [victim.declent_ru(NOMINATIVE)] всё ещё стоит на ногах!"),\
+				span_userdanger("Вы врезаетесь в [victim.declent_ru(ACCUSATIVE)][extra_speed ? " с большой скоростью" : ""], но [victim.declent_ru(NOMINATIVE)] всё ещё стоит на ногах!"))
 		else
 			victim.Paralyze(2 SECONDS)
 			victim.take_bodypart_damage(10 + 5 * extra_speed, check_armor = TRUE, wound_bonus = extra_speed * 5)
-			visible_message(span_danger("[src] crashes into [victim][extra_speed ? " really hard" : ""], knocking them both over!"),\
-				span_userdanger("You violently crash into [victim][extra_speed ? " extra hard" : ""]!"))
+			visible_message(span_danger("[capitalize(declent_ru(NOMINATIVE))] врезается в [victim.declent_ru(ACCUSATIVE)][extra_speed ? " с большой скоростью" : ""], сбивая с ног их обоих!"),\
+				span_userdanger("Вы врезаетесь в [victim.declent_ru(ACCUSATIVE)][extra_speed ? " с большой скоростью" : ""]!"))
 		log_combat(src, victim, "crashed into")
 
 	if(oof_noise)
