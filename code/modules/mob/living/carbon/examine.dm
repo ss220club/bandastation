@@ -61,7 +61,7 @@
 			disabled += body_part
 		missing -= body_part.body_zone
 		for(var/obj/item/embedded as anything in body_part.embedded_objects)
-			var/stuck_wordage = embedded.is_embed_harmless() ? "застревает" : "впивается" // TODO220: Genderize it
+			var/stuck_wordage = embedded.is_embed_harmless() ? "застревает" : "впивается"
 			. += span_boldwarning("[capitalize(embedded.declent_ru(ACCUSATIVE))] [stuck_wordage] в [t_his] [body_part.ru_plaintext_zone[ACCUSATIVE]]!")
 
 		for(var/datum/wound/iter_wound as anything in body_part.wounds)
@@ -391,8 +391,8 @@
 	. = list()
 	var/obscured = check_obscured_slots()
 	var/t_He = ru_p_they(TRUE)
-	var/t_His = ru_p_them(TRUE) // TODO220 - p_their
-	var/t_his = ru_p_them() // TODO220 - p_their
+	var/t_His = ru_p_them(TRUE)
+	var/t_his = ru_p_them()
 	var/t_has = ru_p_have()
 	// var/t_is = p_are()
 

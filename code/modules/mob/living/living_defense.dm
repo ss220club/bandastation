@@ -350,7 +350,7 @@
 		return FALSE
 
 	var/damage = rand(user.melee_damage_lower, user.melee_damage_upper)
-	if(check_block(user, damage, "[capitalize(user.declent(NOMINATIVE))] [user.attack_verb_simple]", MELEE_ATTACK/*or UNARMED_ATTACK?*/, user.armour_penetration, user.melee_damage_type)) // TODO220 - translate this somehow
+	if(check_block(user, damage, "атаку [capitalize(user.declent(ACCUSATIVE))]", MELEE_ATTACK/*or UNARMED_ATTACK?*/, user.armour_penetration, user.melee_damage_type)) // TODO220 - translate this somehow using [user.attack_verb_simple]
 		return FALSE
 
 	if(user.attack_sound)
