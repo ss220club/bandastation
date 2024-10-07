@@ -365,9 +365,9 @@
 
 		// Let people know if they hugged someone really warm or really cold
 		if(helper.bodytemperature > BODYTEMP_HEAT_DAMAGE_LIMIT)
-			to_chat(src, span_warning("Кажется, что [helper.declent_ru(NOMINATIVE)] в состоянии перегрева, когда [helper.ru_p_they()()] обнимает вас."))
+			to_chat(src, span_warning("Кажется, что [helper.declent_ru(NOMINATIVE)] в состоянии перегрева, когда [helper.ru_p_they()] обнимает вас."))
 		else if(helper.bodytemperature < BODYTEMP_COLD_DAMAGE_LIMIT)
-			to_chat(src, span_warning("Кажется, что [helper.declent_ru(NOMINATIVE)] в состоянии переохлаждения, когда [helper.ru_p_they()()] обнимает вас."))
+			to_chat(src, span_warning("Кажется, что [helper.declent_ru(NOMINATIVE)] в состоянии переохлаждения, когда [helper.ru_p_they()] обнимает вас."))
 
 		if(bodytemperature > BODYTEMP_HEAT_DAMAGE_LIMIT)
 			to_chat(helper, span_warning("Кажется, что [declent_ru(NOMINATIVE)] в состоянии перегрева, когда вы обнимаете [ru_p_them()]."))

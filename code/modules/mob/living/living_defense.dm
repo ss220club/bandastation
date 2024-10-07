@@ -285,8 +285,8 @@
 	if(user.grab_state) //only the first upgrade is instantaneous
 		var/old_grab_state = user.grab_state
 		var/grab_upgrade_time = instant ? 0 : 30
-		visible_message(span_danger("[capitalize(user.declent(NOMINATIVE))] начинает усиливать захват на [declent_ru(PREPOSITIONAL)]!"), \
-						span_userdanger("[capitalize(user.declent(NOMINATIVE))] начинает усиливать захват на вас!"), span_hear("Вы слышите агрессивное шарканье!"), null, user)
+		visible_message(span_danger("[capitalize(user.declent_ru(NOMINATIVE))] начинает усиливать захват на [declent_ru(PREPOSITIONAL)]!"), \
+						span_userdanger("[capitalize(user.declent_ru(NOMINATIVE))] начинает усиливать захват на вас!"), span_hear("Вы слышите агрессивное шарканье!"), null, user)
 		to_chat(user, span_danger("Вы начинаете усиливать захват на [declent_ru(PREPOSITIONAL)]!"))
 		switch(user.grab_state)
 			if(GRAB_AGGRESSIVE)
@@ -302,27 +302,27 @@
 		if(GRAB_AGGRESSIVE)
 			var/add_log = ""
 			if(HAS_TRAIT(user, TRAIT_PACIFISM))
-				visible_message(span_danger("[capitalize(user.declent(NOMINATIVE))] крепко хватает [declent_ru(ACCUSATIVE)]!"),
-								span_danger("[capitalize(user.declent(NOMINATIVE))] крепко хватает вас!"), span_hear("Вы слышите агрессивное шарканье!"), null, user)
+				visible_message(span_danger("[capitalize(user.declent_ru(NOMINATIVE))] крепко хватает [declent_ru(ACCUSATIVE)]!"),
+								span_danger("[capitalize(user.declent_ru(NOMINATIVE))] крепко хватает вас!"), span_hear("Вы слышите агрессивное шарканье!"), null, user)
 				to_chat(user, span_danger("Вы крепко хватаете [declent_ru(ACCUSATIVE)]!"))
 				add_log = " (pacifist)"
 			else
-				visible_message(span_danger("[capitalize(user.declent(NOMINATIVE))] агрессивно хватает [declent_ru(ACCUSATIVE)]!"), \
-								span_userdanger("[capitalize(user.declent(NOMINATIVE))] агрессивно хватает вас!"), span_hear("Вы слышите агрессивное шарканье!"), null, user)
+				visible_message(span_danger("[capitalize(user.declent_ru(NOMINATIVE))] агрессивно хватает [declent_ru(ACCUSATIVE)]!"), \
+								span_userdanger("[capitalize(user.declent_ru(NOMINATIVE))] агрессивно хватает вас!"), span_hear("Вы слышите агрессивное шарканье!"), null, user)
 				to_chat(user, span_danger("Вы агрессивно хватаете [declent_ru(ACCUSATIVE)]!"))
 			stop_pulling()
 			log_combat(user, src, "grabbed", addition="aggressive grab[add_log]")
 		if(GRAB_NECK)
 			log_combat(user, src, "grabbed", addition="neck grab")
-			visible_message(span_danger("[capitalize(user.declent(NOMINATIVE))] хватает [declent_ru(ACCUSATIVE)] за шею!"),\
-							span_userdanger("[capitalize(user.declent(NOMINATIVE))] хватает вас за шею!"), span_hear("Вы слышите агрессивное шарканье!"), null, user)
+			visible_message(span_danger("[capitalize(user.declent_ru(NOMINATIVE))] хватает [declent_ru(ACCUSATIVE)] за шею!"),\
+							span_userdanger("[capitalize(user.declent_ru(NOMINATIVE))] хватает вас за шею!"), span_hear("Вы слышите агрессивное шарканье!"), null, user)
 			to_chat(user, span_danger("Вы хватаете [declent_ru(ACCUSATIVE)] за шею!"))
 			if(!buckled && !density)
 				Move(user.loc)
 		if(GRAB_KILL)
 			log_combat(user, src, "strangled", addition="kill grab")
-			visible_message(span_danger("[capitalize(user.declent(NOMINATIVE))] начинает душить [declent_ru(ACCUSATIVE)]!"), \
-							span_userdanger("[capitalize(user.declent(NOMINATIVE))] начинает душить вас!"), span_hear("Вы слышите агрессивное шарканье!"), null, user)
+			visible_message(span_danger("[capitalize(user.declent_ru(NOMINATIVE))] начинает душить [declent_ru(ACCUSATIVE)]!"), \
+							span_userdanger("[capitalize(user.declent_ru(NOMINATIVE))] начинает душить вас!"), span_hear("Вы слышите агрессивное шарканье!"), null, user)
 			to_chat(user, span_danger("Вы начинаете душить [declent_ru(ACCUSATIVE)]!"))
 			if(!buckled && !density)
 				Move(user.loc)
@@ -337,8 +337,8 @@
 	if(user.melee_damage_upper == 0)
 		if(user != src)
 			visible_message(
-				span_notice("[capitalize(user.declent(NOMINATIVE))] [user.friendly_verb_continuous] [declent_ru(ACCUSATIVE)]!"),
-				span_notice("[capitalize(user.declent(NOMINATIVE))] [user.friendly_verb_continuous] вас!"),
+				span_notice("[capitalize(user.declent_ru(NOMINATIVE))] [user.friendly_verb_continuous] [declent_ru(ACCUSATIVE)]!"),
+				span_notice("[capitalize(user.declent_ru(NOMINATIVE))] [user.friendly_verb_continuous] вас!"),
 				vision_distance = COMBAT_MESSAGE_RANGE,
 				ignored_mobs = user,
 			)
@@ -350,7 +350,7 @@
 		return FALSE
 
 	var/damage = rand(user.melee_damage_lower, user.melee_damage_upper)
-	if(check_block(user, damage, "атаку [capitalize(user.declent(ACCUSATIVE))]", MELEE_ATTACK/*or UNARMED_ATTACK?*/, user.armour_penetration, user.melee_damage_type)) // TODO220 - translate this somehow using [user.attack_verb_simple]
+	if(check_block(user, damage, "атаку [capitalize(user.declent_ru(ACCUSATIVE))]", MELEE_ATTACK/*or UNARMED_ATTACK?*/, user.armour_penetration, user.melee_damage_type)) // TODO220 - translate this somehow using [user.attack_verb_simple]
 		return FALSE
 
 	if(user.attack_sound)
@@ -358,8 +358,8 @@
 
 	user.do_attack_animation(src)
 	visible_message(
-		span_danger("[capitalize(user.declent(NOMINATIVE))] [user.attack_verb_continuous] [declent_ru(ACCUSATIVE)]!"),
-		span_userdanger("[capitalize(user.declent(NOMINATIVE))] [user.attack_verb_continuous] вас!"),
+		span_danger("[capitalize(user.declent_ru(NOMINATIVE))] [user.attack_verb_continuous] [declent_ru(ACCUSATIVE)]!"),
+		span_userdanger("[capitalize(user.declent_ru(NOMINATIVE))] [user.attack_verb_continuous] вас!"),
 		null,
 		COMBAT_MESSAGE_RANGE,
 		user,
@@ -416,7 +416,7 @@
 		to_chat(user, span_warning("Вы не можете кусаться с закрытым ртом!"))
 		return FALSE
 
-	if(check_block(user, 1, "укус [capitalize(user.declent(GENITIVE))]", UNARMED_ATTACK, 0, BRUTE))
+	if(check_block(user, 1, "укус [capitalize(user.declent_ru(GENITIVE))]", UNARMED_ATTACK, 0, BRUTE))
 		return FALSE
 
 	user.do_attack_animation(src, ATTACK_EFFECT_BITE)
@@ -465,7 +465,7 @@
 /mob/living/attack_alien(mob/living/carbon/alien/adult/user, list/modifiers)
 	SEND_SIGNAL(src, COMSIG_MOB_ATTACK_ALIEN, user, modifiers)
 	if(LAZYACCESS(modifiers, RIGHT_CLICK))
-		if(check_block(user, 0, "попытку уронить от [capitalize(user.declent(GENITIVE))]", MELEE_ATTACK, 0, BRUTE))
+		if(check_block(user, 0, "попытку уронить от [capitalize(user.declent_ru(GENITIVE))]", MELEE_ATTACK, 0, BRUTE))
 			return FALSE
 		user.do_attack_animation(src, ATTACK_EFFECT_DISARM)
 		return TRUE
@@ -474,13 +474,13 @@
 		if(HAS_TRAIT(user, TRAIT_PACIFISM))
 			to_chat(user, span_warning("Вы не хотите никому причинить вред!"))
 			return FALSE
-		if(check_block(user, user.melee_damage_upper, "разрезающий удар от [capitalize(user.declent(GENITIVE))]", MELEE_ATTACK, 0, BRUTE))
+		if(check_block(user, user.melee_damage_upper, "разрезающий удар от [capitalize(user.declent_ru(GENITIVE))]", MELEE_ATTACK, 0, BRUTE))
 			return FALSE
 		user.do_attack_animation(src)
 		return TRUE
 
-	visible_message(span_notice("[capitalize(user.declent(NOMINATIVE))] поглаживает [declent_ru(ACCUSATIVE)] своей косоподобной рукой."), \
-					span_notice("[capitalize(user.declent(NOMINATIVE))] поглаживает вас своей косоподобной рукой."), null, null, user)
+	visible_message(span_notice("[capitalize(user.declent_ru(NOMINATIVE))] поглаживает [declent_ru(ACCUSATIVE)] своей косоподобной рукой."), \
+					span_notice("[capitalize(user.declent_ru(NOMINATIVE))] поглаживает вас своей косоподобной рукой."), null, null, user)
 	to_chat(user, span_notice("Вы поглаживаете [declent_ru(ACCUSATIVE)] своей косоподобной рукой."))
 	return FALSE
 
@@ -517,7 +517,7 @@
 		adjustStaminaLoss(shock_damage)
 	if(!(flags & SHOCK_SUPPRESS_MESSAGE))
 		visible_message(
-			span_danger("[capitalize(declent_ru(NOMINATIVE))] получает удар током от [source.declent_ru(GENITIVE)]!"), \
+			span_danger("[capitalize(source)] ударяет током [capitalize(declent_ru(ACCUSATIVE))]!"), \
 			span_userdanger("Вы чувствуете мощный разряд, проходящий через всё ваше тело!"), \
 			span_hear("Вы слышите сильный электрический треск.") \
 		)
@@ -721,7 +721,7 @@
 	target.get_shoving_message(src, weapon, shove_flags)
 
 	//Take their lunch money
-	var/target_held_item = target.get_active_held_item()
+	var/datum/target_held_item = target.get_active_held_item()
 	var/append_message = weapon ? " with [weapon]" : ""
 	// If it's in our typecache, they're staggered and it exists, disarm. If they're knocked down, disarm too.
 	if(target_held_item && target.get_timed_status_effect_duration(/datum/status_effect/staggered) && is_type_in_typecache(target_held_item, GLOB.shove_disarming_types) || target_held_item && target.body_position == LYING_DOWN)
