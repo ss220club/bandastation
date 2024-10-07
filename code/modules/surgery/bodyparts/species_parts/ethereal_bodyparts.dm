@@ -37,7 +37,7 @@
 	limb_id = SPECIES_ETHEREAL
 	dmg_overlay_type = null
 	attack_type = BURN //burn bish
-	unarmed_attack_verbs = list("жгет", "обжигает")
+	unarmed_attack_verbs = list("burn", "sear")
 	grappled_attack_verb = "scorch"
 	unarmed_attack_sound = 'sound/items/weapons/etherealhit.ogg'
 	unarmed_miss_sound = 'sound/items/weapons/etherealmiss.ogg'
@@ -55,7 +55,7 @@
 	limb_id = SPECIES_ETHEREAL
 	dmg_overlay_type = null
 	attack_type = BURN // bish buzz
-	unarmed_attack_verbs = list("жгет", "обжигает")
+	unarmed_attack_verbs = list("burn", "sear")
 	grappled_attack_verb = "scorch"
 	unarmed_attack_sound = 'sound/items/weapons/etherealhit.ogg'
 	unarmed_miss_sound = 'sound/items/weapons/etherealmiss.ogg'
