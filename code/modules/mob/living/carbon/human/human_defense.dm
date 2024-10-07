@@ -118,14 +118,14 @@
 	. = ..()
 	if(!.)
 		return
-	var/hulk_verb = pick("smash","pummel")
-	if(check_block(user, 15, "the [hulk_verb]ing", attack_type = UNARMED_ATTACK))
+	var/hulk_verb = pick("крушит","избивает")
+	if(check_block(user, 15, "крушащий удар", attack_type = UNARMED_ATTACK))
 		return
 	var/obj/item/bodypart/arm/active_arm = user.get_active_hand()
 	playsound(loc, active_arm.unarmed_attack_sound, 25, TRUE, -1)
-	visible_message(span_danger("[user] [hulk_verb]ed [src]!"), \
-					span_userdanger("[user] [hulk_verb]ed [src]!"), span_hear("You hear a sickening sound of flesh hitting flesh!"), null, user)
-	to_chat(user, span_danger("You [hulk_verb] [src]!"))
+	visible_message(span_danger("[capitalize(user.declent_ru(NOMINATIVE))] [hulk_verb] [declent_ru(ACCUSATIVE)]!"), \
+					span_userdanger("[capitalize(user.declent_ru(NOMINATIVE))] [hulk_verb] [declent_ru(ACCUSATIVE)]!"), span_hear("Вы слышите противный звук удара плоти о плоть!"), null, user)
+	to_chat(user, span_danger("Вы [hulk_verb]е [declent_ru(ACCUSATIVE)]!"))
 	apply_damage(15, BRUTE, wound_bonus=10)
 
 /mob/living/carbon/human/attack_hand(mob/user, list/modifiers)
