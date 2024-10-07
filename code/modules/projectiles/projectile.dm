@@ -361,7 +361,7 @@
 			if(hitsound)
 				var/volume = vol_by_damage()
 				playsound(src, hitsound, volume, TRUE, -1)
-			living_target.visible_message(span_danger("[capitalize(declent_ru(NOMINATIVE))] попадает по [living_target.declent_ru(ACCUSATIVE)][organ_hit_text]!"), \
+			living_target.visible_message(span_danger("[capitalize(declent_ru(NOMINATIVE))] попадает по [living_target.declent_ru(DATIVE)][organ_hit_text]!"), \
 					span_userdanger("[capitalize(declent_ru(NOMINATIVE))] попадает по вам[organ_hit_text]!"), null, COMBAT_MESSAGE_RANGE)
 			if(living_target.is_blind())
 				to_chat(living_target, span_userdanger("Вы чувствуете, как что-то попадает по вам[organ_hit_text]!"))
