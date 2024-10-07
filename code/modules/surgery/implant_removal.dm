@@ -30,18 +30,18 @@
 		display_results(
 			user,
 			target,
-			span_notice("Вы начинаете извлекать [implant.declent_ru(ACCUSATIVE)] из <i>[target_zone]</i> у [target.declent_ru(GENITIVE)]..."),
-			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает извлекать [implant.declent_ru(ACCUSATIVE)] из <i>[target_zone]</i> у [target.declent_ru(GENITIVE)]."),
-			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает что-то извлекать из <i>[target_zone]</i> у [target.declent_ru(GENITIVE)]."),
+			span_notice("Вы начинаете извлекать [implant.declent_ru(ACCUSATIVE)] из [ru_parse_zone(target_zone, GENITIVE)] у [target.declent_ru(GENITIVE)]..."),
+			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает извлекать [implant.declent_ru(ACCUSATIVE)] из [ru_parse_zone(target_zone, GENITIVE)] у [target.declent_ru(GENITIVE)]."),
+			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает что-то извлекать из [ru_parse_zone(target_zone, GENITIVE)] у [target.declent_ru(GENITIVE)]."),
 		)
-		display_pain(target, "Вы чуствуете острую боль в <i>[target_zone]</i>!")
+		display_pain(target, "Вы чуствуете острую боль в [ru_parse_zone(target_zone, declent = PREPOSITIONAL)]!")
 	else
 		display_results(
 			user,
 			target,
-			span_notice("Вы ищете имплант в <i>[target_zone]</i> у [target.declent_ru(GENITIVE)]..."),
-			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] ищет имплант в <i>[target_zone]</i> у [target.declent_ru(GENITIVE)]."),
-			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] ищет что-то в <i>[target_zone]</i> у [target.declent_ru(GENITIVE)]."),
+			span_notice("Вы ищете имплант в [ru_parse_zone(target_zone, declent = PREPOSITIONAL)] у [target.declent_ru(GENITIVE)]..."),
+			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] ищет имплант в [ru_parse_zone(target_zone, declent = PREPOSITIONAL)] у [target.declent_ru(GENITIVE)]."),
+			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] ищет что-то в [ru_parse_zone(target_zone, declent = PREPOSITIONAL)] у [target.declent_ru(GENITIVE)]."),
 		)
 
 /datum/surgery_step/extract_implant/success(mob/user, mob/living/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
@@ -49,9 +49,9 @@
 		display_results(
 			user,
 			target,
-			span_notice("Вы успешно извлекли [implant.declent_ru(ACCUSATIVE)] из <i>[target_zone]</i> у [target.declent_ru(GENITIVE)]."),
-			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно извлек [implant.declent_ru(ACCUSATIVE)] из <i>[target_zone]</i> у [target.declent_ru(GENITIVE)]!"),
-			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно извлек что-то из <i>[target_zone]</i> у [target.declent_ru(GENITIVE)]!"),
+			span_notice("Вы успешно извлекли [implant.declent_ru(ACCUSATIVE)] из [ru_parse_zone(target_zone, GENITIVE)] у [target.declent_ru(GENITIVE)]."),
+			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно извлек [implant.declent_ru(ACCUSATIVE)] из [ru_parse_zone(target_zone, GENITIVE)] у [target.declent_ru(GENITIVE)]!"),
+			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно извлек что-то из [ru_parse_zone(target_zone, GENITIVE)] у [target.declent_ru(GENITIVE)]!"),
 		)
 		display_pain(target, "Вы чувствуете, как [implant.declent_ru(ACCUSATIVE)] извлекли из вас!")
 		implant.removed(target)
@@ -80,7 +80,7 @@
 			qdel(implant)
 
 	else
-		to_chat(user, span_warning("Вы не можете найти ничего в <i>[target_zone]</i> у [target.declent_ru(GENITIVE)]!"))
+		to_chat(user, span_warning("Вы не можете найти ничего в [ru_parse_zone(target_zone, declent = ACCUSATIVE)] у [target.declent_ru(GENITIVE)]!"))
 	return ..()
 
 /datum/surgery/implant_removal/mechanic

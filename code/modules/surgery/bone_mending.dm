@@ -60,13 +60,13 @@
 		display_results(
 			user,
 			target,
-			span_notice("Вы приступаете к устранению перелома в <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i> у [target.declent_ru(GENITIVE)]..."),
-			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] приступает к устранению перелома в <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i> у [target.declent_ru(GENITIVE)] при помощи [tool.declent_ru(GENITIVE)]."),
-			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] приступает к устранению перелома в <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i> у [target.declent_ru(GENITIVE)]."),
+			span_notice("Вы приступаете к устранению перелома в [target.parse_zone_with_bodypart(user.zone_selected, declent = PREPOSITIONAL)] у [target.declent_ru(GENITIVE)]..."),
+			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] приступает к устранению перелома в [target.parse_zone_with_bodypart(user.zone_selected, declent = PREPOSITIONAL)] у [target.declent_ru(GENITIVE)] при помощи [tool.declent_ru(GENITIVE)]."),
+			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] приступает к устранению перелома в [target.parse_zone_with_bodypart(user.zone_selected, declent = PREPOSITIONAL)] у [target.declent_ru(GENITIVE)]."),
 		)
-		display_pain(target, "<i>[capitalize(target.parse_zone_with_bodypart(user.zone_selected))]</i> у вас испытывает сильную боль!")
+		display_pain(target, "[capitalize(target.parse_zone_with_bodypart(user.zone_selected))] у вас испытывает сильную боль!")
 	else
-		user.visible_message(span_notice("[capitalize(user.declent_ru(NOMINATIVE))] ищет у [target.declent_ru(GENITIVE)] в <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i>."), span_notice("Вы ищете у [target.declent_ru(GENITIVE)] в <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i>..."))
+		user.visible_message(span_notice("[capitalize(user.declent_ru(NOMINATIVE))] ищет у [target.declent_ru(GENITIVE)] в [target.parse_zone_with_bodypart(user.zone_selected, declent = PREPOSITIONAL)]."), span_notice("Вы ищете у [target.declent_ru(GENITIVE)] в [target.parse_zone_with_bodypart(user.zone_selected, declent = PREPOSITIONAL)]..."))
 
 /datum/surgery_step/repair_bone_hairline/success(mob/living/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
 	if(surgery.operated_wound)
@@ -76,9 +76,9 @@
 		display_results(
 			user,
 			target,
-			span_notice("Вы успешно устранили перелом в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]."),
-			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно устранил перелом в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)] при помощи [tool.declent_ru(GENITIVE)]!"),
-			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно устранил перелом в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]!"),
+			span_notice("Вы успешно устранили перелом в [target.parse_zone_with_bodypart(target_zone, declent = PREPOSITIONAL)] у [target.declent_ru(GENITIVE)]."),
+			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно устранил перелом в [target.parse_zone_with_bodypart(target_zone, declent = PREPOSITIONAL)] у [target.declent_ru(GENITIVE)] при помощи [tool.declent_ru(GENITIVE)]!"),
+			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно устранил перелом в [target.parse_zone_with_bodypart(target_zone, declent = PREPOSITIONAL)] у [target.declent_ru(GENITIVE)]!"),
 		)
 		log_combat(user, target, "repaired a hairline fracture in", addition="COMBAT_MODE: [uppertext(user.combat_mode)]")
 		qdel(surgery.operated_wound)
@@ -109,13 +109,13 @@
 		display_results(
 			user,
 			target,
-			span_notice("Вы начинаете восстанавливать кость в <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i> у [target.declent_ru(GENITIVE)]..."),
-			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает восстанавливать кость в <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i> у [target.declent_ru(GENITIVE)] при помощи [tool.declent_ru(GENITIVE)]."),
-			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает восстанавливать кость в <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i> у [target.declent_ru(GENITIVE)]."),
+			span_notice("Вы начинаете восстанавливать кость в [target.parse_zone_with_bodypart(user.zone_selected, declent = PREPOSITIONAL)] у [target.declent_ru(GENITIVE)]..."),
+			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает восстанавливать кость в [target.parse_zone_with_bodypart(user.zone_selected, declent = PREPOSITIONAL)] у [target.declent_ru(GENITIVE)] при помощи [tool.declent_ru(GENITIVE)]."),
+			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает восстанавливать кость в [target.parse_zone_with_bodypart(user.zone_selected, declent = PREPOSITIONAL)] у [target.declent_ru(GENITIVE)]."),
 		)
-		display_pain(target, "Острая боль в <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i> просто невыносима!")
+		display_pain(target, "Острая боль в [target.parse_zone_with_bodypart(user.zone_selected, declent = PREPOSITIONAL)] просто невыносима!")
 	else
-		user.visible_message(span_notice("[capitalize(user.declent_ru(NOMINATIVE))] ищет у [target.declent_ru(GENITIVE)] в <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i>."), span_notice("Вы ищете у [target.declent_ru(GENITIVE)] в <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i>..."))
+		user.visible_message(span_notice("[capitalize(user.declent_ru(NOMINATIVE))] ищет у [target.declent_ru(GENITIVE)] в [target.parse_zone_with_bodypart(user.zone_selected, declent = PREPOSITIONAL)]."), span_notice("Вы ищете у [target.declent_ru(GENITIVE)] в [target.parse_zone_with_bodypart(user.zone_selected, declent = PREPOSITIONAL)]..."))
 
 /datum/surgery_step/reset_compound_fracture/success(mob/living/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
 	if(surgery.operated_wound)
@@ -125,9 +125,9 @@
 		display_results(
 			user,
 			target,
-			span_notice("Вы успешно восстановили кость в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]."),
-			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно восстановил кость в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)] при помощи [tool.declent_ru(GENITIVE)]!"),
-			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно восстановил кость в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]!"),
+			span_notice("Вы успешно восстановили кость в [target.parse_zone_with_bodypart(target_zone, declent = PREPOSITIONAL)] у [target.declent_ru(GENITIVE)]."),
+			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно восстановил кость в [target.parse_zone_with_bodypart(target_zone, declent = PREPOSITIONAL)] у [target.declent_ru(GENITIVE)] при помощи [tool.declent_ru(GENITIVE)]!"),
+			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно восстановил кость в [target.parse_zone_with_bodypart(target_zone, declent = PREPOSITIONAL)] у [target.declent_ru(GENITIVE)]!"),
 		)
 		log_combat(user, target, "reset a compound fracture in", addition="COMBAT MODE: [uppertext(user.combat_mode)]")
 	else
@@ -159,13 +159,13 @@
 		display_results(
 			user,
 			target,
-			span_notice("Вы приступаете к устранению перелома в <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i> у [target.declent_ru(GENITIVE)]..."),
-			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] приступает к устранению перелома в <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i> у [target.declent_ru(GENITIVE)] при помощи [tool.declent_ru(GENITIVE)]."),
-			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] приступает к устранению перелома в <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i> у [target.declent_ru(GENITIVE)]."),
+			span_notice("Вы приступаете к устранению перелома в [target.parse_zone_with_bodypart(user.zone_selected, declent = PREPOSITIONAL)] у [target.declent_ru(GENITIVE)]..."),
+			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] приступает к устранению перелома в [target.parse_zone_with_bodypart(user.zone_selected, declent = PREPOSITIONAL)] у [target.declent_ru(GENITIVE)] при помощи [tool.declent_ru(GENITIVE)]."),
+			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] приступает к устранению перелома в [target.parse_zone_with_bodypart(user.zone_selected, declent = PREPOSITIONAL)] у [target.declent_ru(GENITIVE)]."),
 		)
-		display_pain(target, "Острая боль в <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i> просто невыносима!")
+		display_pain(target, "Острая боль в [target.parse_zone_with_bodypart(user.zone_selected, declent = PREPOSITIONAL)] просто невыносима!")
 	else
-		user.visible_message(span_notice("[capitalize(user.declent_ru(NOMINATIVE))] ищет у [target.declent_ru(GENITIVE)] в <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i>."), span_notice("Вы ищете у [target.declent_ru(GENITIVE)] в <i>[target.parse_zone_with_bodypart(user.zone_selected)]</i>..."))
+		user.visible_message(span_notice("[capitalize(user.declent_ru(NOMINATIVE))] ищет у [target.declent_ru(GENITIVE)] в [target.parse_zone_with_bodypart(user.zone_selected, declent = PREPOSITIONAL)]."), span_notice("Вы ищете у [target.declent_ru(GENITIVE)] в [target.parse_zone_with_bodypart(user.zone_selected, declent = PREPOSITIONAL)]..."))
 
 /datum/surgery_step/repair_bone_compound/success(mob/living/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
 	if(surgery.operated_wound)
@@ -175,9 +175,9 @@
 		display_results(
 			user,
 			target,
-			span_notice("Вы успешно устранили перелом в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]."),
-			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно устранил перелом в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)] при помощи [tool]!"),
-			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно устранил перелом в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]!"),
+			span_notice("Вы успешно устранили перелом в [target.parse_zone_with_bodypart(target_zone, declent = PREPOSITIONAL)] у [target.declent_ru(GENITIVE)]."),
+			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно устранил перелом в [target.parse_zone_with_bodypart(target_zone, declent = PREPOSITIONAL)] у [target.declent_ru(GENITIVE)] при помощи [tool]!"),
+			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно устранил перелом в [target.parse_zone_with_bodypart(target_zone, declent = PREPOSITIONAL)] у [target.declent_ru(GENITIVE)]!"),
 		)
 		log_combat(user, target, "repaired a compound fracture in", addition="COMBAT_MODE: [uppertext(user.combat_mode)]")
 		qdel(surgery.operated_wound)
@@ -218,9 +218,9 @@
 	display_results(
 		user,
 		target,
-		span_notice("Вы начинаете избавляться от мелких обломков черепа в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]..."),
-		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает избавляться от мелких обломков черепа в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]..."),
-		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает копошиться в <i>[target.parse_zone_with_bodypart(target_zone)]</i> у [target.declent_ru(GENITIVE)]..."),
+		span_notice("Вы начинаете избавляться от мелких обломков черепа в [target.parse_zone_with_bodypart(target_zone, declent = PREPOSITIONAL)] у [target.declent_ru(GENITIVE)]..."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает избавляться от мелких обломков черепа в [target.parse_zone_with_bodypart(target_zone, declent = PREPOSITIONAL)] у [target.declent_ru(GENITIVE)]..."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает копошиться в [target.parse_zone_with_bodypart(target_zone, declent = PREPOSITIONAL)] у [target.declent_ru(GENITIVE)]..."),
 	)
 
 	display_pain(target, "Ваш мозг словно пронзают мелкие осколки стекла!")
