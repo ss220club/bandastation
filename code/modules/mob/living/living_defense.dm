@@ -428,9 +428,9 @@
 		to_chat(user, span_danger("Вы кусаете [declent_ru(ACCUSATIVE)]!"))
 		return TRUE
 	else
-		visible_message(span_danger("Кусание [user.declent_ru(GENITIVE)] промахивается по [declent_ru(DATIVE)]!"), \
+		visible_message(span_danger("Укус  [user.declent_ru(GENITIVE)] промахивается по [declent_ru(DATIVE)]!"), \
 						span_danger("Вы уворачиваетесь от укуса [user.declent_ru(GENITIVE)]!"), span_hear("Вы слышите звук захлопывающейся пасти!"), COMBAT_MESSAGE_RANGE, user)
-		to_chat(user, span_warning("Ваше кусание промахивается по [declent_ru(DATIVE)]!"))
+		to_chat(user, span_warning("Ваш укус промахивается по [declent_ru(DATIVE)]!"))
 
 	return FALSE
 
@@ -440,7 +440,7 @@
 			to_chat(L, span_warning("Вы не хотите никому причинить вред!"))
 			return FALSE
 
-		if(check_block(L, 1, "кусание [L.declent_ru(GENITIVE)]", UNARMED_ATTACK, 0, BRUTE))
+		if(check_block(L, 1, "укус [L.declent_ru(GENITIVE)]", UNARMED_ATTACK, 0, BRUTE))
 			return FALSE
 
 		L.do_attack_animation(src)
@@ -452,9 +452,9 @@
 			playsound(loc, 'sound/items/weapons/bite.ogg', 50, TRUE, -1)
 			return TRUE
 		else
-			visible_message(span_danger("Кусание [L.declent_ru(GENITIVE)] промахивается по [declent_ru(DATIVE)]!"), \
+			visible_message(span_danger("Укус [L.declent_ru(GENITIVE)] промахивается по [declent_ru(DATIVE)]!"), \
 							span_danger("Вы уворачиваетесь от укуса [L.declent_ru(GENITIVE)]!"), span_hear("Вы слышите звук захлопывающейся пасти!"), COMBAT_MESSAGE_RANGE, L)
-			to_chat(L, span_warning("Ваше кусание промахивается по [declent_ru(DATIVE)]!"))
+			to_chat(L, span_warning("Ваш укус промахивается по [declent_ru(DATIVE)]!"))
 			return FALSE
 
 	visible_message(span_notice("[capitalize(L.declent_ru(NOMINATIVE))] трется головой об [declent_ru(ACCUSATIVE)]."), \
