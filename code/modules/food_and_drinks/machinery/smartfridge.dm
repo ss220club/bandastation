@@ -64,8 +64,8 @@
 			return ITEM_INTERACT_BLOCKING
 
 		user.visible_message(
-			span_notice("[user] начинает срезать [name] от пола."),
-			span_notice("Вы начинаете срезать [src.name] от пола..."),
+			span_notice("[user] начинает срезать [declent_ru(ACCUSATIVE)] от пола."),
+			span_notice("Вы начинаете срезать [declent_ru(ACCUSATIVE)] от пола..."),
 			span_hear("Вы слышите сварку."),
 		)
 
@@ -73,7 +73,7 @@
 			return ITEM_INTERACT_BLOCKING
 
 		welded_down = FALSE
-		to_chat(user, span_notice("Вы отрезали [src.name] от пола."))
+		to_chat(user, span_notice("Вы отрезали [declent_ru(GENITIVE)] от пола."))
 		return ITEM_INTERACT_SUCCESS
 
 	if(!anchored)
@@ -84,8 +84,8 @@
 		return ITEM_INTERACT_BLOCKING
 
 	user.visible_message(
-		span_notice("[user.name] начинает приваривать [name] к полу."),
-		span_notice("Вы начинаете приваривать [src.name] к полу..."),
+		span_notice("[user.name] начинает приваривать [declent_ru(ACCUSATIVE)] к полу."),
+		span_notice("Вы начинаете приваривать [declent_ru(ACCUSATIVE)] к полу..."),
 		span_hear("Вы слышите сварку."),
 	)
 
@@ -93,7 +93,7 @@
 		return ITEM_INTERACT_BLOCKING
 
 	welded_down = TRUE
-	to_chat(user, span_notice("Вы приварили [src.name] к полу."))
+	to_chat(user, span_notice("Вы приварили [declent_ru(ACCUSATIVE)] к полу."))
 	return ITEM_INTERACT_SUCCESS
 
 /obj/machinery/smartfridge/welder_act_secondary(mob/living/user, obj/item/tool)
@@ -274,7 +274,7 @@
 			accept_check(weapon) \
 		)
 			load(weapon, user)
-			user.visible_message(span_notice("[user] кладет [weapon.name] в [declent_ru(ACCUSATIVE)]]."), span_notice("Вы положили [weapon.name] в [declent_ru(ACCUSATIVE)]]."))
+			user.visible_message(span_notice("[user] кладет [weapon.declent_ru(ACCUSATIVE)] в [declent_ru(ACCUSATIVE)]]."), span_notice("Вы положили [weapon.declent_ru(ACCUSATIVE)] в [declent_ru(ACCUSATIVE)]]."))
 			SStgui.update_uis(src)
 			if(visible_contents)
 				update_appearance()
@@ -307,7 +307,7 @@
 					update_appearance()
 				return TRUE
 			else
-				to_chat(user, span_warning("В [weapon.name] нет ничего, что можно положить в [declent_ru(ACCUSATIVE)]!"))
+				to_chat(user, span_warning("В [weapon.declent_ru(ACCUSATIVE)] нет ничего, что можно положить в [declent_ru(ACCUSATIVE)]!"))
 				return FALSE
 
 	if(!powered())
@@ -315,7 +315,7 @@
 		return FALSE
 
 	if(!user.combat_mode || (weapon.item_flags & NOBLUDGEON))
-		to_chat(user, span_warning("[src.name] умно отказывается принимать [weapon.name]."))
+		to_chat(user, span_warning("[capitalize(declent_ru(NOMINATIVE))] отказывается принимать [weapon.declent_ru(ACCUSATIVE)]."))
 		return FALSE
 
 	else

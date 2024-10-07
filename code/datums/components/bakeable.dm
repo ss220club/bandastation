@@ -97,14 +97,14 @@
 
 	if(positive_result)
 		used_oven.visible_message(
-			span_notice("Вы чувствуете, как [used_oven.name] источает приятный запах."),
+			span_notice("Вы чувствуете, как [used_oven.declent_ru(NOMINATIVE)] источает приятный запах."),
 			blind_message = span_notice("Вы чувствуете приятный запах..."),
 			ignored_mobs = asomnia_hadders,
 		)
 		BLACKBOX_LOG_FOOD_MADE(baked_result.type)
 	else
 		used_oven.visible_message(
-			span_warning("Вы чувствуете, как [used_oven.name] испускает горелое зловоние."),
+			span_warning("Вы чувствуете, как [used_oven.declent_ru(NOMINATIVE)] испускает горелое зловоние."),
 			blind_message = span_warning("Вы чувствуете запах горелого..."),
 			ignored_mobs = asomnia_hadders,
 		)
@@ -118,15 +118,15 @@
 	if(!current_bake_time) //Not baked yet
 		if(positive_result)
 			if(initial(bake_result.gender) == PLURAL)
-				examine_list += span_notice("Это [source.name]. [capitalize(initial(bake_result.name))] могут быть [span_bold("приготовлены")] из [parent.declent_ru(GENITIVE)].")
+				examine_list += span_notice("Это [source.declent_ru(NOMINATIVE)]. [capitalize(initial(bake_result.name))] может быть [span_bold("приготовлено")] из [parent.declent_ru(GENITIVE)].")
 			else
-				examine_list += span_notice("Это [source.name]. [capitalize(span_bold("Готовится"))] в [initial(bake_result.name)].")
+				examine_list += span_notice("Это [source.declent_ru(NOMINATIVE)]. [capitalize(span_bold("Можно"))] приготовить в [initial(bake_result.declent_ru(ACCUSATIVE))].")
 		return
 
 	if(positive_result)
 		if(current_bake_time <= required_bake_time * 0.75)
 			examine_list += span_notice("Наверное, [source.declent_ru(ACCUSATIVE)] нужно выпекать немного дольше!")
 		else if(current_bake_time <= required_bake_time)
-			examine_list += span_notice("Кажется, что блюдо '[source.name]' почти готово!")
+			examine_list += span_notice("Кажется, что блюдо '[source.declent_ru(NOMINATIVE)]' почти готово!")
 	else
-		examine_list += span_danger("[source.name] не стоит засовывать в духовку.")
+		examine_list += span_danger("[capitalize(source.declent_ru(NOMINATIVE))] не стоит засовывать в духовку.")

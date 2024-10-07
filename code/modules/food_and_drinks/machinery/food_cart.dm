@@ -53,7 +53,7 @@
 /obj/machinery/food_cart/proc/pack_up()
 	if(!unpacked)
 		return
-	visible_message(span_notice("[capitalize(src.name)] втягивает все свои распакованные части."))
+	visible_message(span_notice("[capitalize(declent_ru(NOMINATIVE))] втягивает все свои распакованные части."))
 	for(var/o in packed_things)
 		var/obj/object = o
 		UnregisterSignal(object, COMSIG_MOVABLE_MOVED)
@@ -67,7 +67,7 @@
 	if(!check_setup_place())
 		to_chat(user, span_warning("Здесь не хватит места, чтобы все распаковать! Плохие места отмечены красным цветом."))
 		return
-	visible_message(span_notice("[src.name] расширяется, превращаясь в полноценную стойку."))
+	visible_message(span_notice("[capitalize(declent_ru(NOMINATIVE))] расширяется, превращаясь в полноценную стойку."))
 	set_anchored(TRUE)
 	var/iteration = 1
 	var/turf/grabbed_turf = get_step(get_turf(src), EAST)
@@ -82,15 +82,15 @@
 /obj/machinery/food_cart/attack_hand(mob/living/user, list/modifiers)
 	. = ..()
 	if(machine_stat & BROKEN)
-		to_chat(user, span_warning("[src.name] полностью разрушена."))
+		to_chat(user, span_warning("[capitalize(declent_ru(NOMINATIVE))] полностью разрушена."))
 		return
 	var/obj/item/card/id/id_card = user.get_idcard(hand_first = TRUE)
 	if(!check_access(id_card))
 		playsound(src, 'sound/machines/buzz/buzz-sigh.ogg', 30, TRUE)
 		return
-	to_chat(user, span_notice("Вы пытаетесь [unpacked ? "распаковать" :"разобрать"] [src.name]..."))
+	to_chat(user, span_notice("Вы пытаетесь [unpacked ? "распаковать" :"разобрать"] [declent_ru(ACCUSATIVE)]..."))
 	if(!do_after(user, 5 SECONDS, src))
-		to_chat(user, span_warning("Ваша [unpacked ? "распаковка" :"разборка"] [src.name] была прервана!"))
+		to_chat(user, span_warning("Ваша [unpacked ? "распаковка" :"разборка"] [declent_ru(ACCUSATIVE)] была прервана!"))
 		return
 	if(unpacked)
 		pack_up()

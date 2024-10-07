@@ -95,7 +95,7 @@
 			for(var/mob/smeller in get_hearers_in_view(DEFAULT_MESSAGE_RANGE, src))
 				if(HAS_TRAIT(smeller, TRAIT_ANOSMIA))
 					asomnia_hadders += smeller
-			visible_message(span_danger("[capitalize(name)] источает запах гари!"), ignored_mobs = asomnia_hadders)
+			visible_message(span_danger("[capitalize(declent_ru(NOMINATIVE))] источает запах гари!"), ignored_mobs = asomnia_hadders)
 	set_smoke_state(worst_cooked_food_state)
 	update_appearance()
 	use_energy(active_power_usage)
@@ -105,7 +105,7 @@
 		return ..()
 
 	if(user.transferItemToLoc(item, src, silent = FALSE))
-		to_chat(user, span_notice("Вы положили [item.name] в [declent_ru(ACCUSATIVE)]."))
+		to_chat(user, span_notice("Вы положили [item.declent_ru(NOMINATIVE)] в [declent_ru(ACCUSATIVE)]."))
 		add_tray_to_oven(item, user)
 
 /obj/machinery/oven/item_interaction(mob/living/user, obj/item/item, list/modifiers)
@@ -271,7 +271,7 @@
 
 	if(!istype(item, /obj/item/storage/bag/tray))
 		// Non-tray dumping requires a do_after
-		to_chat(user, span_notice("[item.name] выгружается прямо на [declent_ru(ACCUSATIVE)]..."))
+		to_chat(user, span_notice("Вы положили [item.declent_ru(ACCUSATIVE)] на [declent_ru(ACCUSATIVE)]..."))
 		if(!do_after(user, 2 SECONDS, target = item))
 			return ITEM_INTERACT_BLOCKING
 
@@ -285,7 +285,7 @@
 			loaded++
 			AddToPlate(tray_item, user)
 	if(loaded)
-		to_chat(user, span_notice("[loaded] вставлен в [declent_ru(ACCUSATIVE)]."))
+		to_chat(user, span_notice("[capitalize(loaded)] вставлен в [declent_ru(ACCUSATIVE)]."))
 		update_appearance()
 		return ITEM_INTERACT_SUCCESS
 	return ITEM_INTERACT_BLOCKING

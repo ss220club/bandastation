@@ -77,15 +77,15 @@
 		return
 
 	if(brewing)
-		. += span_warning("[src] варит.")
+		. += span_warning("[capitalize(declent_ru(NOMINATIVE))] варит.")
 		return
 
 	if(panel_open)
-		. += span_notice("Панель [src] для обслуживания открыта!")
+		. += span_notice("Панель [declent_ru(GENITIVE)] для обслуживания открыта!")
 		return
 
 	if(coffeepot || cartridge)
-		. += span_notice("[src] содержит:")
+		. += span_notice("[capitalize(declent_ru(NOMINATIVE))] содержит:")
 		if(coffeepot)
 			. += span_notice("- [coffeepot].")
 		if(cartridge)

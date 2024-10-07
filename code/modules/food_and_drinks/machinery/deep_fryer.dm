@@ -93,7 +93,7 @@ GLOBAL_LIST_INIT(oilfry_blacklisted_items, typecacheof(list(
 /obj/machinery/deepfryer/examine(mob/user)
 	. = ..()
 	if(frying)
-		. += "Вы сможете разглядеть [frying.name] в масле."
+		. += "Вы сможете разглядеть [frying.declent_ru(ACCUSATIVE)] в масле."
 	if(in_range(user, src) || isobserver(user))
 		. += span_notice("На дисплее состояния отображается: Жарка на <b>[fry_speed*100]%</b> скорости.<br>Используется <b>[oil_use]</b> юнитов масла в секунду.")
 
@@ -106,19 +106,19 @@ GLOBAL_LIST_INIT(oilfry_blacklisted_items, typecacheof(list(
 	// Dissolving pills into the frier
 	if(istype(weapon, /obj/item/reagent_containers/pill))
 		if(!reagents.total_volume)
-			to_chat(user, span_warning("Не в чем растворять [weapon.name]!"))
+			to_chat(user, span_warning("Не в чем растворять [weapon.declent_ru(ACCUSATIVE)]!"))
 			return
-		user.visible_message(span_notice("[user] бросает [weapon.name] в [declent_ru(ACCUSATIVE)]."), span_notice("Ты растворяешь [weapon.name] в [declent_ru(ACCUSATIVE)]]."))
+		user.visible_message(span_notice("[user] бросает [weapon.declent_ru(ACCUSATIVE)] в [declent_ru(ACCUSATIVE)]."), span_notice("Ты растворяешь [weapon.declent_ru(ACCUSATIVE)] в [declent_ru(PREPOSITIONAL)]."))
 		weapon.reagents.trans_to(src, weapon.reagents.total_volume, transferred_by = user)
 		qdel(weapon)
 		return
 	// Make sure we have cooking oil
 	if(!reagents.has_reagent(/datum/reagent/consumable/nutriment/fat, check_subtypes = TRUE))
-		to_chat(user, span_warning("В [name] нет жира или масла для жарки!"))
+		to_chat(user, span_warning("В [declent_ru(DATIVE)] нет жира или масла для жарки!"))
 		return
 	// Don't deep fry indestructible things, for sanity reasons
 	if(weapon.resistance_flags & INDESTRUCTIBLE)
-		to_chat(user, span_warning("Вы думаете, что не стоит жарить [weapon.name]..."))
+		to_chat(user, span_warning("Вы полагате, что жарить [weapon.declent_ru(ACCUSATIVE)] может плохо кончиться..."))
 		return
 	// No fractal frying
 	if(HAS_TRAIT(weapon, TRAIT_FOOD_FRIED))
@@ -161,14 +161,14 @@ GLOBAL_LIST_INIT(oilfry_blacklisted_items, typecacheof(list(
 	if(cook_time >= DEEPFRYER_COOKTIME && !frying_fried)
 		frying_fried = TRUE //frying... frying... fried
 		playsound(loc, 'sound/machines/ding.ogg', 50, TRUE)
-		audible_message(span_notice("[capitalize(name)] звенит!"))
+		audible_message(span_notice("[capitalize(declent_ru(NOMINATIVE))] звенит!"))
 	else if (cook_time >= DEEPFRYER_BURNTIME && !frying_burnt)
 		frying_burnt = TRUE
 		var/list/asomnia_hadders = list()
 		for(var/mob/smeller in get_hearers_in_view(DEFAULT_MESSAGE_RANGE, src))
 			if(HAS_TRAIT(smeller, TRAIT_ANOSMIA))
 				asomnia_hadders += smeller
-		visible_message(span_warning("[capitalize(name)] источает едкий запах!"), ignored_mobs = asomnia_hadders)
+		visible_message(span_warning("[capitalize(declent_ru(NOMINATIVE))] источает едкий запах!"), ignored_mobs = asomnia_hadders)
 
 	use_energy(active_power_usage)
 
@@ -191,10 +191,10 @@ GLOBAL_LIST_INIT(oilfry_blacklisted_items, typecacheof(list(
 	update_appearance(UPDATE_OVERLAYS)
 
 /obj/machinery/deepfryer/proc/start_fry(obj/item/frying_item, mob/user)
-	to_chat(user, span_notice("Вы кладете [frying_item.name] в [declent_ru(ACCUSATIVE)]."))
+	to_chat(user, span_notice("Вы кладете [frying_item.declent_ru(ACCUSATIVE)] в [declent_ru(ACCUSATIVE)]."))
 	if(istype(frying_item, /obj/item/freeze_cube))
 		log_bomber(user, "put a freeze cube in a", src)
-		visible_message(span_userdanger("[capitalize(name)]  начинает пылать... О нет..."))
+		visible_message(span_userdanger("[capitalize(declent_ru(NOMINATIVE))]  начинает пылать... О нет..."))
 		playsound(src, 'sound/effects/pray_chaplain.ogg', 100)
 		add_filter("entropic_ray", 10, list("type" = "rays", "size" = 35, "color" = COLOR_VIVID_YELLOW))
 		addtimer(CALLBACK(src, PROC_REF(blow_up)), 5 SECONDS)

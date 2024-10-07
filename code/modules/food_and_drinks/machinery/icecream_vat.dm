@@ -64,7 +64,7 @@
 			if(cone.ingredients)
 				cone_prototypes[cone_path] = cone
 			else
-				stack_trace("Рожок [cone.name] (TYPE: [cone_path]) оказался без ингридиентов, сделайте баг-репорт об этом.")
+				stack_trace("Рожок [cone.declent_ru(NOMINATIVE)] (TYPE: [cone_path]) оказался без ингридиентов, сделайте баг-репорт об этом.")
 				qdel(cone)
 	if(!ice_cream_icons)
 		ice_cream_icons = list()
@@ -224,7 +224,7 @@
 	var/datum/reagent/reagent_to_remove = tgui_input_list(user, "Select a reagent to purge from the vat.", "Remove reagent", reagents.reagent_list, ui_state = GLOB.conscious_state)
 	if(isnull(reagent_to_remove) || !user.can_perform_action(src, action_bitflags = ALLOW_RESTING))
 		return
-	balloon_alert(user, "spilled [reagent_to_remove.name]")
+	balloon_alert(user, "выплеснул [reagent_to_remove.declent_ru(NOMINATIVE)]")
 	reagents.remove_reagent(reagent_to_remove.type, reagent_to_remove.volume)
 
 /obj/machinery/icecream_vat/proc/make_ice_cream_color(datum/ice_cream_flavour/flavor)
@@ -253,7 +253,7 @@
 
 	for(var/reagents_used in ingredients)
 		reagents.remove_reagent(reagents_used, CONE_REAGENT_NEEDED)
-	balloon_alert_to_viewers("делается [cone.name]", "делает [cone.name]")
+	balloon_alert_to_viewers("делается [cone.declent_ru(NOMINATIVE)]", "делает [cone.declent_ru(NOMINATIVE)]")
 	try_put_in_hand(cone, user)
 
 ///Makes ice cream if it can, then puts it in the ice cream cone we're being attacked with.

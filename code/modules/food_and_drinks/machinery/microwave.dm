@@ -189,9 +189,9 @@
 
 	if(length(ingredients))
 		if(issilicon(user))
-			. += span_notice("[name] имеет камеру, что показывает:")
+			. += span_notice("На камере [declent_ru(GENITIVE)] показывает:")
 		else
-			. += span_notice("[name] содержит:")
+			. += span_notice("[capitalize(declent_ru(NOMINATIVE))] содержит:")
 		var/list/items_counts = new
 		for(var/i in ingredients)
 			if(isstack(i))
@@ -331,16 +331,16 @@
 		return NONE
 
 	user.visible_message(
-		span_notice("[user] начинает ремонт, [name] скоро снова заработает!"),
-		span_notice("Вы начинаете ремонт, [name] скоро снова заработает!"),
+		span_notice("[user] начинает ремонт, [declent_ru(NOMINATIVE)] скоро снова заработает!"),
+		span_notice("Вы начинаете ремонт, [declent_ru(NOMINATIVE)] скоро снова заработает!"),
 	)
 
 	if(!tool.use_tool(src, user, 2 SECONDS, volume = 50))
 		return ITEM_INTERACT_BLOCKING
 
 	user.visible_message(
-		span_notice("[user] заканчивает ремонт, [name] снова работает."),
-		span_notice("Вы заканчиваете ремонт, [name] снова работает."),
+		span_notice("[user] заканчивает ремонт, [declent_ru(NOMINATIVE)] снова работает."),
+		span_notice("Вы заканчиваете ремонт, [declent_ru(NOMINATIVE)] снова работает."),
 	)
 	broken = KINDA_BROKEN // Fix it a bit
 	update_appearance()
@@ -351,16 +351,16 @@
 		return NONE
 
 	user.visible_message(
-		span_notice("[user] начинает ремонт, [name] скоро снова заработает!"),
-		span_notice("ВВы начинаете ремона, [name] скоро снова заработает!"),
+		span_notice("[user] начинает ремонт, [declent_ru(NOMINATIVE)] скоро снова заработает!"),
+		span_notice("ВВы начинаете ремона, [declent_ru(NOMINATIVE)] скоро снова заработает!"),
 	)
 
 	if(!tool.use_tool(src, user, 2 SECONDS, amount = 1, volume = 50))
 		return ITEM_INTERACT_BLOCKING
 
 	user.visible_message(
-		span_notice("[user] заканчивает ремонт, [name] снова работает."),
-		span_notice("Вы заканчиваете ремонт, [name] снова работает."),
+		span_notice("[user] заканчивает ремонт, [declent_ru(NOMINATIVE)] снова работает."),
+		span_notice("Вы заканчиваете ремонт, [declent_ru(NOMINATIVE)] снова работает."),
 	)
 	broken = NOT_BROKEN
 	update_appearance()
@@ -632,7 +632,7 @@
 			playsound(src, 'sound/machines/buzz/buzz-sigh.ogg', 50, FALSE)
 			return
 
-	visible_message(span_notice("[name] включилась."), null, span_hear("Вы слышите как гудит микроволновка."))
+	visible_message(span_notice("[capitalize(declent_ru(NOMINATIVE))] включена!"), null, span_hear("Вы слышите как гудит микроволновка."))
 	operating = TRUE
 	set_light(l_range = 1.5, l_power = 1.2, l_on = TRUE)
 	soundloop.start()
@@ -777,7 +777,7 @@
 	cook_loop(type = MICROWAVE_NORMAL, cycles = 10, cooker = cooker)
 
 /obj/machinery/microwave/proc/muck_finish()
-	visible_message(span_warning("[name] покрывается грязью!"))
+	visible_message(span_warning("[capitalize(declent_ru(NOMINATIVE))] покрывается грязью!"))
 
 	dirty = MAX_MICROWAVE_DIRTINESS
 	dirty_anim_playing = FALSE

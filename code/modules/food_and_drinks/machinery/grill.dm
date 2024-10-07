@@ -223,7 +223,7 @@
 			balloon_alert(user, "нет топлива!")
 			return ITEM_INTERACT_BLOCKING
 		if(!user.transferItemToLoc(weapon, src))
-			balloon_alert(user, "[weapon.name] у тебя в руках!")
+			balloon_alert(user, "[capitalize(weapon.declent_ru(NOMINATIVE))] у тебя в руках!")
 			return ITEM_INTERACT_BLOCKING
 
 		//add the item on the grill
@@ -232,7 +232,7 @@
 		var/datum/component/sizzle/sizzle = grilled_item.GetComponent(/datum/component/sizzle)
 		if(!isnull(sizzle))
 			grill_time = sizzle.time_elapsed()
-		to_chat(user, span_notice("Вы положили [grilled_item.name] на [declent_ru(ACCUSATIVE)]."))
+		to_chat(user, span_notice("Вы положили [grilled_item.declent_ru(ACCUSATIVE)] на [declent_ru(ACCUSATIVE)]."))
 		update_appearance(UPDATE_ICON_STATE)
 		grill_loop.start()
 		return ITEM_INTERACT_SUCCESS
