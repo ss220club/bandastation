@@ -140,12 +140,12 @@
 	log_combat(the_hulk, yeeted_person, "has started swinging by tail")
 	yeeted_person.Stun(2 SECONDS)
 	yeeted_person.visible_message(span_danger("[the_hulk] starts grasping [yeeted_person] by the tail..."), \
-					span_userdanger("[the_hulk] begins grasping your tail!"), span_hear("You hear aggressive shuffling!"), null, the_hulk)
+					span_userdanger("[the_hulk] begins grasping your tail!"), span_hear("Вы слышите агрессивное шарканье!"), null, the_hulk)
 	to_chat(the_hulk, span_danger("You start grasping [yeeted_person] by the tail..."))
 
 	if(!do_after(the_hulk, 2 SECONDS, yeeted_person))
 		yeeted_person.visible_message(span_danger("[yeeted_person] breaks free of [the_hulk]'s grasp!"), \
-					span_userdanger("You break free from [the_hulk]'s grasp!"), span_hear("You hear aggressive shuffling!"), null, the_hulk)
+					span_userdanger("You break free from [the_hulk]'s grasp!"), span_hear("Вы слышите агрессивное шарканье!"), null, the_hulk)
 		to_chat(the_hulk, span_danger("You lose your grasp on [yeeted_person]'s tail!"))
 		return
 

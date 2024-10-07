@@ -196,7 +196,7 @@
 		defender.visible_message(
 			span_danger("[attacker] disarms [defender]!"),
 			span_userdanger("You're disarmed by [attacker]!"),
-			span_hear("You hear aggressive shuffling!"),
+			span_hear("Вы слышите агрессивное шарканье!"),
 			COMBAT_MESSAGE_RANGE,
 			attacker,
 		)
