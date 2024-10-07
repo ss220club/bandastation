@@ -12,7 +12,7 @@
 	playsound(loc, SFX_PUNCH, 25, TRUE, -1)
 	visible_message(span_danger("[capitalize(user.declent_ru(NOMINATIVE))] [hitverb] [declent_ru(ACCUSATIVE)]!"), \
 					span_userdanger("[capitalize(user.declent_ru(NOMINATIVE))] [hitverb] вас!"), span_hear("Вы слышите противный звук удара плоти о плоть!"), COMBAT_MESSAGE_RANGE, user)
-	to_chat(user, span_danger("Вы [hitverb] [declent_ru(ACCUSATIVE)]!"))
+	to_chat(user, span_danger("Вы [hitverb]е [declent_ru(ACCUSATIVE)]!"))
 
 /mob/living/carbon/alien/adult/attack_hand(mob/living/carbon/human/user, list/modifiers)
 	. = ..()
