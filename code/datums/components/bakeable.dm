@@ -118,15 +118,15 @@
 	if(!current_bake_time) //Not baked yet
 		if(positive_result)
 			if(initial(bake_result.gender) == PLURAL)
-				examine_list += span_notice("Это [source.declent_ru(NOMINATIVE)]. [capitalize(initial(bake_result.name))] может быть [span_bold("приготовлено")] из [parent.declent_ru(GENITIVE)].")
+				examine_list += span_notice("[capitalize(parent.declent_ru(NOMINATIVE))] [span_bold("запекается")] в [initial(bake_result.ru_name_accusative) || initial(bake_result.name)].")
 			else
-				examine_list += span_notice("Это [source.declent_ru(NOMINATIVE)]. [capitalize(span_bold("Можно"))] приготовить в [initial(bake_result.ru_name_accusative)].")
+				examine_list += span_notice("Это [capitalize(parent.declent_ru(NOMINATIVE))]. [span_bold("запекается")] в [initial(bake_result.ru_name_accusative) || initial(bake_result.name)]..")
 		return
 
 	if(positive_result)
 		if(current_bake_time <= required_bake_time * 0.75)
-			examine_list += span_notice("Наверное, [source.declent_ru(ACCUSATIVE)] нужно выпекать немного дольше!")
+			examine_list += span_notice("Наверное, [parent.declent_ru(ACCUSATIVE)] нужно выпекать немного дольше!")
 		else if(current_bake_time <= required_bake_time)
-			examine_list += span_notice("Кажется, что блюдо '[source.declent_ru(NOMINATIVE)]' почти готово!")
+			examine_list += span_notice("Кажется, что блюдо '[parent.declent_ru(NOMINATIVE)]' почти готово!")
 	else
-		examine_list += span_danger("[capitalize(source.declent_ru(NOMINATIVE))] не стоит засовывать в духовку.")
+		examine_list += span_danger("[capitalize(parent.declent_ru(NOMINATIVE))] не стоит засовывать в духовку.")

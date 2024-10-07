@@ -230,7 +230,7 @@
 	return ITEM_INTERACT_SUCCESS
 
 /obj/machinery/oven/range
-	name = "плита с духовкой"
+	name = "oven range"
 	desc = "Плита с духовкой?!"
 	icon_state = "range_off"
 	base_icon_state = "range"
@@ -247,7 +247,7 @@
 	AddComponent(/datum/component/stove, container_x = -6, container_y = 14, spawn_container = mapload_container)
 
 /obj/item/plate/oven_tray
-	name = "противень духовки"
+	name = "oven tray"
 	desc = "Время печь печенье!"
 	icon_state = "oven_tray"
 	max_items = 6

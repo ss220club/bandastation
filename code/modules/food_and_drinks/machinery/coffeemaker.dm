@@ -73,7 +73,7 @@
 /obj/machinery/coffeemaker/examine(mob/user)
 	. = ..()
 	if(!in_range(user, src) && !issilicon(user) && !isobserver(user))
-		. += span_warning("Вы слишком далеко чтобы изучить содержимое и дисплей [declent_ru(GENITIVE)]!")
+		. += span_warning("Вы слишком далеко, чтобы изучить содержимое и дисплей [declent_ru(GENITIVE)]!")
 		return
 
 	if(brewing)
@@ -81,15 +81,15 @@
 		return
 
 	if(panel_open)
-		. += span_notice("Панель [declent_ru(GENITIVE)] для обслуживания открыта!")
+		. += span_notice("Панель для обслуживания [declent_ru(GENITIVE)] открыта!")
 		return
 
 	if(coffeepot || cartridge)
 		. += span_notice("[capitalize(declent_ru(NOMINATIVE))] содержит:")
 		if(coffeepot)
-			. += span_notice("- [coffeepot].")
+			. += span_notice("- [coffeepot.declent_ru(ACCUSATIVE)].")
 		if(cartridge)
-			. += span_notice("- [cartridge].")
+			. += span_notice("- [cartridge.declent_ru(ACCUSATIVE)].")
 		return
 
 	if(!(machine_stat & (NOPOWER|BROKEN)))
@@ -160,7 +160,7 @@
 		try_put_in_hand(coffeepot, user)
 	if(new_coffeepot)
 		coffeepot = new_coffeepot
-	balloon_alert(user, "заменил кофейник")
+	balloon_alert(user, "кофейник заменен")
 	update_appearance(UPDATE_OVERLAYS)
 	return TRUE
 
@@ -260,7 +260,7 @@
 		if(!user.transferItemToLoc(new_cartridge, src))
 			return
 		replace_cartridge(user, new_cartridge)
-		balloon_alert(user, "вставил картридж")
+		balloon_alert(user, "картридж вставлен")
 		update_appearance(UPDATE_OVERLAYS)
 		return TRUE //no afterattack
 
@@ -419,7 +419,7 @@
 
 //Coffee Cartridges: like toner, but for your coffee!
 /obj/item/coffee_cartridge
-	name = "картридж для кофеварки - Caffè Generico"
+	name = "coffee cartridge - Caffè Generico"
 	desc = "Кофейный картридж производства Piccionaia Coffee, предназначенный для использования с системой Modello 3."
 	icon = 'icons/obj/food/cartridges.dmi'
 	icon_state = "cartridge_basic"
@@ -429,12 +429,12 @@
 /obj/item/coffee_cartridge/examine(mob/user)
 	. = ..()
 	if(charges)
-		. += span_warning("Порций в картридже осталось: [charges].")
+		. += span_warning("Осталось порций в картридже: [charges].")
 	else
 		. += span_warning("В картридже ничего не осталось")
 
 /obj/item/coffee_cartridge/fancy
-	name = "картридж для кофеварки - Caffè Fantasioso"
+	name = "coffee cartridge - Caffè Fantasioso"
 	desc = "Изысканный кофейный картридж производства Piccionaia Coffee, предназначенный для использования с системой Modello 3."
 	icon_state = "cartridge_blend"
 
@@ -444,39 +444,39 @@
 	var/coffee_type = pick("blend", "blue_mountain", "kilimanjaro", "mocha")
 	switch(coffee_type)
 		if("blend")
-			name = "картридж для кофеварки - Miscela di Piccione"
+			name = "coffee cartridge - Miscela di Piccione"
 			icon_state = "cartridge_blend"
 		if("blue_mountain")
-			name = "картридж для кофеварки - Montagna Blu"
+			name = "coffee cartridge - Montagna Blu"
 			icon_state = "cartridge_blue_mtn"
 		if("kilimanjaro")
-			name = "картридж для кофеварки - Kilimangiaro"
+			name = "coffee cartridge - Kilimangiaro"
 			icon_state = "cartridge_kilimanjaro"
 		if("mocha")
-			name = "картридж для кофеварки - Moka Arabica"
+			name = "coffee cartridge - Moka Arabica"
 			icon_state = "cartridge_mocha"
 
 /obj/item/coffee_cartridge/decaf
-	name = "картридж для кофеварки - Caffè Decaffeinato"
+	name = "coffee cartridge - Caffè Decaffeinato"
 	desc = "Картридж для кофе без кофеина, произведенный компанией Piccionaia Coffee, предназначенный для использования с системой Modello 3."
 	icon_state = "cartridge_decaf"
 
 // no you can't just squeeze the juice bag into a glass!
 /obj/item/coffee_cartridge/bootleg
-	name = "картридж для кофеварки - Botany Blend"
+	name = "coffee cartridge - Botany Blend"
 	desc = "Картридж для приготовления кофе. Должен работать с системой Modello 3, хотя это может привести к потере гарантии."
 	icon_state = "cartridge_bootleg"
 
 // blank cartridge for crafting's sake, can be made at the service lathe
 /obj/item/blank_coffee_cartridge
-	name = "пустой кофейный картридж"
+	name = "empty coffee cartridge"
 	desc = "Пустой кофейный картридж, готовый к заполнению кофейным помолом."
 	icon = 'icons/obj/food/cartridges.dmi'
 	icon_state = "cartridge_blank"
 
 //now, how do you store coffee carts? well, in a rack, of course!
 /obj/item/storage/fancy/coffee_cart_rack
-	name = "Подставка для картриджей кофеварки"
+	name = "coffee cartridge rack"
 	desc = "Небольшая подставка для хранения картриджей кофемашины."
 	icon = 'icons/obj/food/containers.dmi'
 	icon_state = "coffee_cartrack4"
@@ -497,7 +497,7 @@
  */
 
 /obj/machinery/coffeemaker/impressa
-	name = "кофеварка impressa"
+	name = "coffeemaker impressa"
 	desc = "Кофеварка Impressa Modello 5 промышленного класса из линейки премиальных кофеварок Piccionaia Home Appliances. Готовит кофе из свежих сушеных цельных зерен."
 	icon = 'icons/obj/machines/coffeemaker.dmi'
 	icon_state = "coffeemaker_impressa"

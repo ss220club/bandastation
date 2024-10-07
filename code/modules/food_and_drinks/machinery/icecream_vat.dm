@@ -64,7 +64,7 @@
 			if(cone.ingredients)
 				cone_prototypes[cone_path] = cone
 			else
-				stack_trace("Рожок [cone.declent_ru(NOMINATIVE)] (TYPE: [cone_path]) оказался без ингридиентов, сделайте баг-репорт об этом.")
+				stack_trace("Ice cream cone [cone] (TYPE: [cone_path]) has been found without ingredients, please make a bug report about this.")
 				qdel(cone)
 	if(!ice_cream_icons)
 		ice_cream_icons = list()

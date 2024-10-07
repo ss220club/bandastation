@@ -1,6 +1,6 @@
 
 /obj/machinery/food_cart
-	name = "тележка с едой"
+	name = "food cart"
 	desc = "Компактная мобильная стойка для кулинарных работ с возможностью распаковки. Вот это да! В распакованном виде она напоминает те жирные геймерские установки, которые есть у некоторых людей в NTNet."
 	icon = 'icons/obj/service/kitchen.dmi'
 	icon_state = "foodcart"
@@ -132,7 +132,7 @@
 		QDEL_NULL(cart_tent)
 
 /obj/effect/food_cart_stand
-	name = "палатка тележки с едой"
+	name = "food cart stand"
 	desc = "Что-нибудь для борьбы с солнцем, ведь перерывов в работе у работников бургерной нет."
 	icon = 'icons/obj/fluff/3x3.dmi'
 	icon_state = "stand"

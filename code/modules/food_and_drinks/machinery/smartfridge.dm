@@ -344,7 +344,7 @@
 	if(ismob(weapon.loc))
 		var/mob/owner = weapon.loc
 		if(!owner.transferItemToLoc(weapon, src))
-			to_chat(owner, span_warning("[weapon] прилип к вашей руке. Нельзя положить [weapon] в [src]!"))
+			to_chat(owner, span_warning("[weapon.declent_ru(NOMINATIVE)] прилип к вашей руке. Нельзя положить [weapon.declent_ru(ACCUSATIVE)] в [declent_ru(ACCUSATIVE)]!"))
 			return FALSE
 		return TRUE
 	else
@@ -407,7 +407,7 @@
 			var/dispensed_amount = 0
 
 			if(isAI(living_mob))
-				to_chat(living_mob, span_warning("[src] вне зоны вашего контроля!"))
+				to_chat(living_mob, span_warning("[declent_ru(NOMINATIVE)] вне зоны вашего контроля!"))
 				return
 
 			for(var/obj/item/dispensed_item in contents)

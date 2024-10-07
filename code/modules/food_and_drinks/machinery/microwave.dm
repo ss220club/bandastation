@@ -184,7 +184,7 @@
 		. += span_warning("Вы слишком далеко, чтобы рассмотреть содержимое [declent_ru(GENITIVE)] и его дисплей!")
 		return
 	if(operating)
-		. += span_notice("[src] работает.")
+		. += span_notice("[declent_ru(NOMINATIVE)] работает.")
 		return
 
 	if(length(ingredients))
@@ -203,7 +203,7 @@
 		for(var/item in items_counts)
 			. += span_notice("- [items_counts[item]]x [item].")
 	else
-		. += span_notice("[src] пустая.")
+		. += span_notice("[declent_ru(NOMINATIVE)] пустая.")
 
 	if(!(machine_stat & (NOPOWER|BROKEN)))
 		. += "[span_notice("На дисплее состояния отображается:")]"+\
@@ -466,7 +466,7 @@
 
 	if(loaded)
 		open(autoclose = 0.6 SECONDS)
-		to_chat(user, span_notice("Вы вставляете [loaded] в [src]."))
+		to_chat(user, span_notice("Вы вставляете [loaded] в [declent_ru(ACCUSATIVE)]."))
 		update_appearance()
 
 /obj/machinery/microwave/mouse_drop_receive(obj/item/tool, mob/user, params)
@@ -492,7 +492,7 @@
 	balloon_alert(user, "установлен на [vampire_charging_enabled ? "зарядку" : "готовку"]")
 	playsound(src, 'sound/machines/beep/twobeep_high.ogg', 50, FALSE)
 	if(HAS_SILICON_ACCESS(user))
-		visible_message(span_notice("[user] поставил [declent_ru(ACCUSATIVE)] на [vampire_charging_enabled ? "зарядку" : "готовку"]."), blind_message = span_notice("[src] издает информативный звук!"))
+		visible_message(span_notice("[user] поставил [declent_ru(ACCUSATIVE)] на [vampire_charging_enabled ? "зарядку" : "готовку"]."), blind_message = span_notice("[declent_ru(NOMINATIVE)] издает звук уведомления!"))
 	return CLICK_ACTION_SUCCESS
 
 /obj/machinery/microwave/click_ctrl(mob/user)
@@ -588,7 +588,7 @@
 		return
 
 	if(wire_disabled)
-		audible_message("[src] жужжит.")
+		audible_message("[declent_ru(NOMINATIVE)] жужжит.")
 		playsound(src, 'sound/machines/buzz/buzz-sigh.ogg', 50, FALSE)
 		return
 
@@ -632,7 +632,7 @@
 			playsound(src, 'sound/machines/buzz/buzz-sigh.ogg', 50, FALSE)
 			return
 
-	visible_message(span_notice("[capitalize(declent_ru(NOMINATIVE))] включена!"), null, span_hear("Вы слышите как гудит микроволновка."))
+	visible_message(span_notice("[capitalize(declent_ru(NOMINATIVE))] включена!"), null, span_hear("Вы слышите как гудит [declent_ru(NOMINATIVE)]."))
 	operating = TRUE
 	set_light(l_range = 1.5, l_power = 1.2, l_on = TRUE)
 	soundloop.start()
@@ -833,7 +833,7 @@
 		return
 
 	if(wire_disabled)
-		audible_message("[src] жужжит.")
+		audible_message("[declent_ru(NOMINATIVE)] жужжит.")
 		playsound(src, 'sound/machines/buzz/buzz-sigh.ogg', 50, FALSE)
 		return
 

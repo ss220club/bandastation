@@ -93,9 +93,9 @@ GLOBAL_LIST_INIT(oilfry_blacklisted_items, typecacheof(list(
 /obj/machinery/deepfryer/examine(mob/user)
 	. = ..()
 	if(frying)
-		. += "Вы сможете разглядеть [frying.declent_ru(ACCUSATIVE)] в масле."
+		. += "Вы разглядываете [frying.declent_ru(ACCUSATIVE)] в масле."
 	if(in_range(user, src) || isobserver(user))
-		. += span_notice("На дисплее состояния отображается: Жарка на <b>[fry_speed*100]%</b> скорости.<br>Используется <b>[oil_use]</b> юнитов масла в секунду.")
+		. += span_notice("На дисплее состояния отображается: Скорость жарки - <b>[fry_speed*100]%</b>.<br>Используется <b>[oil_use]</b> юнитов масла в секунду.")
 
 /obj/machinery/deepfryer/wrench_act(mob/living/user, obj/item/tool)
 	. = ..()
@@ -108,13 +108,13 @@ GLOBAL_LIST_INIT(oilfry_blacklisted_items, typecacheof(list(
 		if(!reagents.total_volume)
 			to_chat(user, span_warning("Не в чем растворять [weapon.declent_ru(ACCUSATIVE)]!"))
 			return
-		user.visible_message(span_notice("[user] бросает [weapon.declent_ru(ACCUSATIVE)] в [declent_ru(ACCUSATIVE)]."), span_notice("Ты растворяешь [weapon.declent_ru(ACCUSATIVE)] в [declent_ru(PREPOSITIONAL)]."))
+		user.visible_message(span_notice("[user.declent_ru(NOMINATIVE)] бросает [weapon.declent_ru(ACCUSATIVE)] в [declent_ru(ACCUSATIVE)]."), span_notice("Вы растворяете [weapon.declent_ru(ACCUSATIVE)] в [declent_ru(PREPOSITIONAL)]."))
 		weapon.reagents.trans_to(src, weapon.reagents.total_volume, transferred_by = user)
 		qdel(weapon)
 		return
 	// Make sure we have cooking oil
 	if(!reagents.has_reagent(/datum/reagent/consumable/nutriment/fat, check_subtypes = TRUE))
-		to_chat(user, span_warning("В [declent_ru(DATIVE)] нет жира или масла для жарки!"))
+		to_chat(user, span_warning("[capitalize(declent_ru(NOMINATIVE))] не имеет жира или масла для жарки!"))
 		return
 	// Don't deep fry indestructible things, for sanity reasons
 	if(weapon.resistance_flags & INDESTRUCTIBLE)
@@ -191,10 +191,10 @@ GLOBAL_LIST_INIT(oilfry_blacklisted_items, typecacheof(list(
 	update_appearance(UPDATE_OVERLAYS)
 
 /obj/machinery/deepfryer/proc/start_fry(obj/item/frying_item, mob/user)
-	to_chat(user, span_notice("Вы кладете [frying_item.declent_ru(ACCUSATIVE)] в [declent_ru(ACCUSATIVE)]."))
+	to_chat(user, span_notice("Вы помещаете [frying_item.declent_ru(ACCUSATIVE)] в [declent_ru(ACCUSATIVE)]."))
 	if(istype(frying_item, /obj/item/freeze_cube))
 		log_bomber(user, "put a freeze cube in a", src)
-		visible_message(span_userdanger("[capitalize(declent_ru(NOMINATIVE))]  начинает пылать... О нет..."))
+		visible_message(span_userdanger("[capitalize(declent_ru(NOMINATIVE))]  начинает светиться... О нет..."))
 		playsound(src, 'sound/effects/pray_chaplain.ogg', 100)
 		add_filter("entropic_ray", 10, list("type" = "rays", "size" = 35, "color" = COLOR_VIVID_YELLOW))
 		addtimer(CALLBACK(src, PROC_REF(blow_up)), 5 SECONDS)
@@ -212,7 +212,7 @@ GLOBAL_LIST_INIT(oilfry_blacklisted_items, typecacheof(list(
 	fry_loop.start()
 
 /obj/machinery/deepfryer/proc/blow_up()
-	visible_message(span_userdanger("[capitalize(name)] взрывается в результате энтропийной реакции!"))
+	visible_message(span_userdanger("[capitalize(declent_ru(NOMINATIVE))] взрывается в результате энтропийной реакции!"))
 	explosion(src, devastation_range = 1, heavy_impact_range = 3, light_impact_range = 5, flame_range = 7)
 	deconstruct(FALSE)
 
@@ -221,7 +221,7 @@ GLOBAL_LIST_INIT(oilfry_blacklisted_items, typecacheof(list(
 
 /obj/machinery/deepfryer/attack_hand(mob/living/user, list/modifiers)
 	if(frying)
-		to_chat(user, span_notice("Вы вытаскиваете [frying.name] из [declent_ru(GENITIVE)]]."))
+		to_chat(user, span_notice("Вы вытаскиваете [frying.declent_ru(ACCUSATIVE)] из [declent_ru(GENITIVE)]]."))
 		frying.forceMove(drop_location())
 		if(Adjacent(user) && !issilicon(user))
 			user.put_in_hands(frying)
@@ -229,18 +229,18 @@ GLOBAL_LIST_INIT(oilfry_blacklisted_items, typecacheof(list(
 
 	else if(user.pulling && iscarbon(user.pulling) && reagents.total_volume)
 		if(user.grab_state < GRAB_AGGRESSIVE)
-			to_chat(user, span_warning("Тебе нужно получше схватить для этого!"))
+			to_chat(user, span_warning("Для этого нужно усилить захват!"))
 			return
 		var/mob/living/carbon/dunking_target = user.pulling
-		log_combat(user, dunking_target, "dunked", null, "into [name]")
-		user.visible_message(span_danger("[user] макает лицо [dunking_target.name] в [declent_ru(ACCUSATIVE)]]!"))
+		log_combat(user, dunking_target, "dunked", null, "into [src]")
+		user.visible_message(span_danger("[user] макает лицо [dunking_target.declent_ru(ACCUSATIVE)] в [declent_ru(ACCUSATIVE)]!"))
 		reagents.expose(dunking_target, TOUCH)
 		var/bio_multiplier = dunking_target.getarmor(BODY_ZONE_HEAD, BIO) * 0.01
 		var/target_temp = dunking_target.bodytemperature
 		var/cold_multiplier = 1
 		if(target_temp < TCMB + 10) // a tiny bit of leeway
-			dunking_target.visible_message(span_userdanger("[capitalize(dunking_target.name)] взрывается от энтропийной разницы! Блять!"))
-			dunking_target.investigate_log("был развполощен в энтропиные пылинки (был обращен в [declent_ru(ACCUSATIVE)]]).", INVESTIGATE_DEATHS)
+			dunking_target.visible_message(span_userdanger("[capitalize(dunking_target.declent_ru(NOMINATIVE))] взрывается от энтропийной разницы! Блять!"))
+			dunking_target.investigate_log("has been gibbed by entropic difference (being dunked into [src]).", INVESTIGATE_DEATHS)
 			dunking_target.gib(DROP_ALL_REMAINS)
 			log_combat(user, dunking_target, "blew up", null, "by dunking them into [src]")
 			return

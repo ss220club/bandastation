@@ -134,7 +134,7 @@
 		if(!QDELETED(grilled_item))
 			return NONE
 		if(!anchored)
-			balloon_alert(user, "сначала прикрути!")
+			balloon_alert(user, "нужно сперва прикрутить!")
 			return ITEM_INTERACT_BLOCKING
 
 		//required for amount subtypes
@@ -253,7 +253,7 @@
 
 	. = ITEM_INTERACT_BLOCKING
 	if(anchored)
-		balloon_alert(user, "сперва открути!")
+		balloon_alert(user, "нужно сперва открутить!")
 		return
 
 	if(default_deconstruction_crowbar(tool, ignore_panel = TRUE))

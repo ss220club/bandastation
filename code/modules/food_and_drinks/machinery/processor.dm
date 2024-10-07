@@ -55,7 +55,7 @@
 /obj/machinery/processor/examine(mob/user)
 	. = ..()
 	if(in_range(user, src) || isobserver(user))
-		. += span_notice("На дисплее состояния отображается: Вывод <b>[rating_amount]</b> предметов с <b>[rating_speed*100]%</b> скоростью.")
+		. += span_notice("На дисплее состояния отображается: Вывод <b>[rating_amount]</b> предметов с скоростью - <b>[rating_speed*100]%</b>.")
 
 /obj/machinery/processor/Exited(atom/movable/gone, direction)
 	..()
@@ -91,7 +91,7 @@
 
 /obj/machinery/processor/attackby(obj/item/attacking_item, mob/living/user, params)
 	if(processing)
-		to_chat(user, span_warning("[capitalize(declent_ru(NOMINATIVE))] находится в процессе обработки!"))
+		to_chat(user, span_warning("[capitalize(declent_ru(NOMINATIVE))] находится в работе!"))
 		return TRUE
 	if(default_deconstruction_screwdriver(user, base_icon_state + "_open", base_icon_state, attacking_item) || default_pry_open(attacking_item, close_after_pry = TRUE) || default_deconstruction_crowbar(attacking_item))
 		return
@@ -129,7 +129,7 @@
 
 /obj/machinery/processor/interact(mob/user)
 	if(processing)
-		to_chat(user, span_warning("[capitalize(declent_ru(NOMINATIVE))] находится в процессе обработки!"))
+		to_chat(user, span_warning("[capitalize(declent_ru(NOMINATIVE))] находится в работе!"))
 		return TRUE
 	if(ismob(user.pulling) && PROCESSOR_SELECT_RECIPE(user.pulling))
 		if(user.grab_state < GRAB_AGGRESSIVE)
@@ -145,7 +145,7 @@
 		to_chat(user, span_warning("[capitalize(declent_ru(NOMINATIVE))] пустой!"))
 		return TRUE
 	processing = TRUE
-	user.visible_message(span_notice("[user] включил [src]."), \
+	user.visible_message(span_notice("[user.declent_ru(NOMINATIVE)] включил [declent_ru(ACCUSATIVE)]."), \
 		span_notice("Вы включили [declent_ru(NOMINATIVE)]."), \
 		span_hear("Вы слышите кухонный комбайн."))
 	playsound(loc, 'sound/machines/blender.ogg', 50, TRUE)
@@ -170,7 +170,7 @@
 			continue
 		process_food(recipe, content_item)
 	processing = FALSE
-	visible_message(span_notice(" [src] заканчивает обработку."))
+	visible_message(span_notice(" [declent_ru(NOMINATIVE)] заканчивает обработку."))
 
 /obj/machinery/processor/verb/eject()
 	set category = "Object"
@@ -189,10 +189,10 @@
 
 /obj/machinery/processor/container_resist_act(mob/living/user)
 	user.forceMove(drop_location())
-	user.visible_message(span_notice("[user] выползает из кухонного комбайна!"))
+	user.visible_message(span_notice("[user.declent_ru(NOMINATIVE)] выбирается из кухонного комбайна!"))
 
 /obj/machinery/processor/slime
-	name = "переработчик слаймов"
+	name = "slime processor"
 	base_icon_state = "processor_slime"
 	icon_state = "processor_slime"
 	desc = "Промышленный комбайн с наклейкой о том, что он предназначен для научного отдела. Во время работы держите руки подальше от зоны приема."
@@ -228,7 +228,7 @@
 	if (!recipe)
 		return
 
-	visible_message(span_notice("[picked_slime.name] засасывается в [declent_ru(ACCUSATIVE)]]."))
+	visible_message(span_notice("[picked_slime.declent_ru(NOMINATIVE)] засасывается в [declent_ru(ACCUSATIVE)]]."))
 	LAZYADD(processor_contents, picked_slime)
 	picked_slime.forceMove(src)
 

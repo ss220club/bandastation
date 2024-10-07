@@ -76,7 +76,7 @@
 		//Clamp it so that the icon never moves more than 16 pixels in either direction (thus leaving the table turf)
 		I.pixel_x = clamp(text2num(LAZYACCESS(modifiers, ICON_X)) - 16, -(world.icon_size/2), world.icon_size/2)
 		I.pixel_y = clamp(text2num(LAZYACCESS(modifiers, ICON_Y)) - 16, -(world.icon_size/2), world.icon_size/2)
-		to_chat(user, span_notice("Ты кладешь [I.declent_ru(ACCUSATIVE)] на [declent_ru(ACCUSATIVE)]."))
+		to_chat(user, span_notice("Ты помещаешь [I.declent_ru(ACCUSATIVE)] на [declent_ru(ACCUSATIVE)]."))
 		AddToGrill(I, user)
 	else
 		return ..()
@@ -99,7 +99,7 @@
 
 	if(!istype(item, /obj/item/storage/bag/tray))
 		// Non-tray dumping requires a do_after
-		to_chat(user, span_notice("Вы начинаете вываливать содержимое [item.name] на [declent_ru(GENITIVE)]..."))
+		to_chat(user, span_notice("Вы начинаете вываливать содержимое [item.declent_ru(GENITIVE)] на [declent_ru(ACCUSATIVE)]..."))
 		if(!do_after(user, 2 SECONDS, target = item))
 			return ITEM_INTERACT_BLOCKING
 
@@ -113,7 +113,7 @@
 			loaded++
 			AddToGrill(tray_item, user)
 	if(loaded)
-		to_chat(user, span_notice("[loaded] вываливается прямо на [declent_ru(GENITIVE)]."))
+		to_chat(user, span_notice("[loaded] вываливается прямо на [declent_ru(ACCUSATIVE)]."))
 		update_appearance()
 		return ITEM_INTERACT_SUCCESS
 	return ITEM_INTERACT_BLOCKING
@@ -224,7 +224,7 @@
 	return ..()
 
 /obj/machinery/griddle/stand
-	name = "стойка гридля"
+	name = "griddle stand"
 	desc = "Более коммерческая версия традиционного гридля. Что случилось со старыми добрыми временами, когда люди жарили на гридле со страстью?"
 	variant = "stand"
 
