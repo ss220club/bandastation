@@ -41,7 +41,7 @@
 		)
 	if(hitting_projectile.suppressed != SUPPRESSED_VERY)
 		visible_message(
-			span_danger("В [declent_ru(ACCUSATIVE)] попадает [hitting_projectile.declent_ru(NOMINATIVE)][damage_sustained ? "" : ", [no_damage_feedback]"]!"),
+			span_danger("[capitalize(hitting_projectile.declent_ru(NOMINATIVE))] попадает в [declent_ru(ACCUSATIVE)][damage_sustained ? "" : ", [no_damage_feedback]"]!"),
 			vision_distance = COMBAT_MESSAGE_RANGE,
 		)
 
