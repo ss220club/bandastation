@@ -463,14 +463,14 @@
 	var/message_verb_simple = length(I.attack_verb_simple) ? "[pick(I.attack_verb_simple)]" : "атакуете"
 	var/message_hit_area = get_hit_area_message(hit_area)
 
-	var/attack_message_spectator = "[capitalize(declent_ru(NOMINATIVE))] [message_verb_continuous][message_hit_area] с помощью [I.declent_ru(GENITIVE)]!"
-	var/attack_message_victim = "Кто-то [message_verb_continuous] вас[message_hit_area] с помощью [I.declent_ru(GENITIVE)]!"
-	var/attack_message_attacker = "Вы [message_verb_simple] [declent_ru(ACCUSATIVE)][message_hit_area] с помощью [I.declent_ru(GENITIVE)]!"
+	var/attack_message_spectator = "[capitalize(declent_ru(NOMINATIVE))] [ru_attack_verb(message_verb_continuous)][message_hit_area] с помощью [I.declent_ru(GENITIVE)]!"
+	var/attack_message_victim = "Кто-то [ru_attack_verb(message_verb_continuous)] вас[message_hit_area] с помощью [I.declent_ru(GENITIVE)]!"
+	var/attack_message_attacker = "Вы [ru_attack_verb(message_verb_simple)] [declent_ru(ACCUSATIVE)][message_hit_area] с помощью [I.declent_ru(GENITIVE)]!"
 	if(user in viewers(src, null))
-		attack_message_spectator = "[capitalize(user.declent_ru(NOMINATIVE))] [message_verb_continuous] [declent_ru(ACCUSATIVE)][message_hit_area] с помощью [I.declent_ru(GENITIVE)]!"
-		attack_message_victim = "[capitalize(user.declent_ru(NOMINATIVE))] [message_verb_continuous] вас[message_hit_area] с помощью [I.declent_ru(GENITIVE)]!"
+		attack_message_spectator = "[capitalize(user.declent_ru(NOMINATIVE))] [ru_attack_verb(message_verb_continuous)] [declent_ru(ACCUSATIVE)][message_hit_area] с помощью [I.declent_ru(GENITIVE)]!"
+		attack_message_victim = "[capitalize(user.declent_ru(NOMINATIVE))] [ru_attack_verb(message_verb_continuous)] вас[message_hit_area] с помощью [I.declent_ru(GENITIVE)]!"
 	if(user == src)
-		attack_message_victim = "Вы [message_verb_simple] себя[message_hit_area] с помощью [I.declent_ru(GENITIVE)]."
+		attack_message_victim = "Вы [ru_attack_verb(message_verb_simple)] себя[message_hit_area] с помощью [I.declent_ru(GENITIVE)]."
 	visible_message(span_danger("[attack_message_spectator]"),\
 		span_userdanger("[attack_message_victim]"), null, COMBAT_MESSAGE_RANGE, user)
 	if(is_blind())

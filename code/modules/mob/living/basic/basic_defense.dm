@@ -10,11 +10,11 @@
 	if(!user.combat_mode)
 		if (stat != DEAD)
 			visible_message(
-				span_notice("[capitalize(user.declent_ru(NOMINATIVE))] [response_help_continuous] [declent_ru(ACCUSATIVE)]."),
-				span_notice("[capitalize(user.declent_ru(NOMINATIVE))] [response_help_continuous] вас."),
+				span_notice("[capitalize(user.declent_ru(NOMINATIVE))] [ru_attack_verb(response_help_continuous)] [declent_ru(ACCUSATIVE)]."),
+				span_notice("[capitalize(user.declent_ru(NOMINATIVE))] [ru_attack_verb(response_help_continuous)] вас."),
 				ignored_mobs = user,
 			)
-			to_chat(user, span_notice("Вы [response_help_simple] [declent_ru(ACCUSATIVE)]."))
+			to_chat(user, span_notice("Вы [ru_attack_verb(response_help_simple)] [declent_ru(ACCUSATIVE)]."))
 			playsound(loc, 'sound/items/weapons/thudswoosh.ogg', 50, TRUE, -1)
 		return TRUE
 
@@ -27,12 +27,12 @@
 		return
 	user.do_attack_animation(src, ATTACK_EFFECT_PUNCH)
 	visible_message(
-		span_danger("[capitalize(user.declent_ru(NOMINATIVE))] [response_harm_continuous] [declent_ru(ACCUSATIVE)]!"),
-		span_userdanger("[capitalize(user.declent_ru(NOMINATIVE))] [response_harm_continuous] вас!"),
+		span_danger("[capitalize(user.declent_ru(NOMINATIVE))] [ru_attack_verb(response_harm_continuous)] [declent_ru(ACCUSATIVE)]!"),
+		span_userdanger("[capitalize(user.declent_ru(NOMINATIVE))] [ru_attack_verb(response_harm_continuous)] вас!"),
 		vision_distance = COMBAT_MESSAGE_RANGE,
 		ignored_mobs = user,
 	)
-	to_chat(user, span_danger("Вы [response_harm_simple] [declent_ru(ACCUSATIVE)]!"))
+	to_chat(user, span_danger("Вы [ru_attack_verb(response_harm_simple)] [declent_ru(ACCUSATIVE)]!"))
 	playsound(loc, attacked_sound, 25, TRUE, -1)
 	apply_damage(damage)
 	log_combat(user, src, "attacked")
@@ -44,8 +44,8 @@
 		return ..()
 	var/moved = !(shove_flags & SHOVE_BLOCKED)
 	shover.visible_message(
-		span_danger("[capitalize(shover.declent_ru(NOMINATIVE))] [response_disarm_continuous] [declent_ru(ACCUSATIVE)][moved ? ", толкая [ru_p_them()]" : ""]!"),
-		span_danger("Вы [response_disarm_simple] [declent_ru(ACCUSATIVE)][moved ? ", толкая [ru_p_them()]" : ""]!"),
+		span_danger("[capitalize(shover.declent_ru(NOMINATIVE))] [ru_attack_verb(response_disarm_continuous)] [declent_ru(ACCUSATIVE)][moved ? ", толкая [ru_p_them()]" : ""]!"),
+		span_danger("Вы [ru_attack_verb(response_disarm_simple)] [declent_ru(ACCUSATIVE)][moved ? ", толкая [ru_p_them()]" : ""]!"),
 		span_hear("Вы слышите агрессивное шарканье!"),
 		COMBAT_MESSAGE_RANGE,
 		list(src),
@@ -69,9 +69,9 @@
 
 	if (!user.combat_mode)
 		if (health > 0)
-			visible_message(span_notice("[capitalize(user.declent_ru(NOMINATIVE))] [response_help_continuous] [declent_ru(ACCUSATIVE)]."), \
-							span_notice("[capitalize(user.declent_ru(NOMINATIVE))] [response_help_continuous] вас."), null, COMBAT_MESSAGE_RANGE, user)
-			to_chat(user, span_notice("Вы [response_help_simple] [declent_ru(ACCUSATIVE)]."))
+			visible_message(span_notice("[capitalize(user.declent_ru(NOMINATIVE))] [ru_attack_verb(response_help_continuous)] [declent_ru(ACCUSATIVE)]."), \
+							span_notice("[capitalize(user.declent_ru(NOMINATIVE))] [ru_attack_verb(response_help_continuous)] вас."), null, COMBAT_MESSAGE_RANGE, user)
+			to_chat(user, span_notice("Вы [ru_attack_verb(response_help_simple)] [declent_ru(ACCUSATIVE)]."))
 			playsound(loc, 'sound/items/weapons/thudswoosh.ogg', 50, TRUE, -1)
 
 
@@ -81,9 +81,9 @@
 		return
 	if(LAZYACCESS(modifiers, RIGHT_CLICK))
 		playsound(loc, 'sound/items/weapons/pierce.ogg', 25, TRUE, -1)
-		visible_message(span_danger("[capitalize(user.declent_ru(NOMINATIVE))] [response_disarm_continuous] [declent_ru(ACCUSATIVE)]!"), \
-			span_userdanger("[capitalize(user.declent_ru(NOMINATIVE))] [response_disarm_continuous] вас!"), null, COMBAT_MESSAGE_RANGE, user)
-		to_chat(user, span_danger("Вы [response_disarm_simple] [declent_ru(ACCUSATIVE)]!"))
+		visible_message(span_danger("[capitalize(user.declent_ru(NOMINATIVE))] [ru_attack_verb(response_disarm_continuous)] [declent_ru(ACCUSATIVE)]!"), \
+			span_userdanger("[capitalize(user.declent_ru(NOMINATIVE))] [ru_attack_verb(response_disarm_continuous)] вас!"), null, COMBAT_MESSAGE_RANGE, user)
+		to_chat(user, span_danger("Вы [ru_attack_verb(response_disarm_simple)] [declent_ru(ACCUSATIVE)]!"))
 		log_combat(user, src, "disarmed")
 		return
 	var/damage = rand(user.melee_damage_lower, user.melee_damage_upper)

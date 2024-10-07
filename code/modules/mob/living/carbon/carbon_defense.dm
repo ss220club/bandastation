@@ -121,14 +121,14 @@
 	var/message_hit_area = ""
 	if(hit_area)
 		message_hit_area = " в [hit_area]"
-	var/attack_message_spectator = "[capitalize(declent_ru(NOMINATIVE))] [message_verb_continuous][message_hit_area] с помощью [I.declent_ru(GENITIVE)][extra_wound_details]!"
-	var/attack_message_victim = "Вас [message_verb_continuous][message_hit_area] с помощью [I.declent_ru(GENITIVE)][extra_wound_details]!"
-	var/attack_message_attacker = "Вы [message_verb_simple] [declent_ru(ACCUSATIVE)][message_hit_area] с помощью [I.declent_ru(GENITIVE)][extra_wound_details]!"
+	var/attack_message_spectator = "[capitalize(declent_ru(NOMINATIVE))] [ru_attack_verb(message_verb_continuous)][message_hit_area] с помощью [I.declent_ru(GENITIVE)][extra_wound_details]!"
+	var/attack_message_victim = "Вас [ru_attack_verb(message_verb_continuous)][message_hit_area] с помощью [I.declent_ru(GENITIVE)][extra_wound_details]!"
+	var/attack_message_attacker = "Вы [ru_attack_verb(message_verb_simple)] [declent_ru(ACCUSATIVE)][message_hit_area] с помощью [I.declent_ru(GENITIVE)][extra_wound_details]!"
 	if(user in viewers(src, null))
-		attack_message_spectator = "[capitalize(user.declent_ru(NOMINATIVE))] [message_verb_continuous] [declent_ru(ACCUSATIVE)][message_hit_area] с помощью [I.declent_ru(GENITIVE)][extra_wound_details]!"
-		attack_message_victim = "[capitalize(user.declent_ru(NOMINATIVE))] [message_verb_continuous] вас[message_hit_area] с помощью [I.declent_ru(GENITIVE)][extra_wound_details]!"
+		attack_message_spectator = "[capitalize(user.declent_ru(NOMINATIVE))] [ru_attack_verb(message_verb_continuous)] [declent_ru(ACCUSATIVE)][message_hit_area] с помощью [I.declent_ru(GENITIVE)][extra_wound_details]!"
+		attack_message_victim = "[capitalize(user.declent_ru(NOMINATIVE))] [ru_attack_verb(message_verb_continuous)] вас[message_hit_area] с помощью [I.declent_ru(GENITIVE)][extra_wound_details]!"
 	if(user == src)
-		attack_message_victim = "Вы [message_verb_simple] себя[message_hit_area] с помощью [I.declent_ru(GENITIVE)][extra_wound_details]!"
+		attack_message_victim = "Вы [ru_attack_verb(message_verb_simple)] себя[message_hit_area] с помощью [I.declent_ru(GENITIVE)][extra_wound_details]!"
 	visible_message(span_danger("[attack_message_spectator]"),\
 		span_userdanger("[attack_message_victim]"), null, COMBAT_MESSAGE_RANGE, user)
 	if(user != src)

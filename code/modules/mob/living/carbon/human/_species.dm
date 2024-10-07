@@ -875,7 +875,7 @@ GLOBAL_LIST_EMPTY(features_by_species)
 		limb_accuracy += clamp((user.getFireLoss() + user.getBruteLoss()) * 0.5, 10, 200)
 		damage += damage * clamp((user.getFireLoss() + user.getBruteLoss()) / 100, 0.3, 2) //Basically a multiplier of how much extra damage you get based on how low your health is overall. A floor of about a 30%.
 		var/drunken_martial_descriptor = pick("пьяно", "опьянено", "подвыпивше", "опьяневше", "бредово", "огнегриво", "выключаемо")
-		atk_verb = "[drunken_martial_descriptor] [atk_verb]"
+		atk_verb = "[drunken_martial_descriptor] [ru_attack_verb(atk_verb, GLOB.ru_attack_verbs_unarmed)]"
 
 	else if(user_drunkenness > 30 && user_drunkenness < 60)
 		limb_accuracy *= 1.2
@@ -896,9 +896,9 @@ GLOBAL_LIST_EMPTY(features_by_species)
 
 	if(!damage || !affecting || prob(miss_chance))//future-proofing for species that have 0 damage/weird cases where no zone is targeted
 		playsound(target.loc, attacking_bodypart.unarmed_miss_sound, 25, TRUE, -1)
-		target.visible_message(span_danger("[capitalize(user.declent_ru(NOMINATIVE))] [atk_verb] и промахивается по [target.declent_ru(DATIVE)]!"), \
-						span_danger("[capitalize(user.declent_ru(NOMINATIVE))] [atk_verb] и промахивается по вам!"), span_hear("Вы слышите свист!"), COMBAT_MESSAGE_RANGE, user)
-		to_chat(user, span_warning("Вы [atk_verb]е и промахиваетесь по [target.declent_ru(DATIVE)]!"))
+		target.visible_message(span_danger("[capitalize(user.declent_ru(NOMINATIVE))] [ru_attack_verb(atk_verb, GLOB.ru_attack_verbs_unarmed)] и промахивается по [target.declent_ru(DATIVE)]!"), \
+						span_danger("[capitalize(user.declent_ru(NOMINATIVE))] [ru_attack_verb(atk_verb, GLOB.ru_attack_verbs_unarmed)] и промахивается по вам!"), span_hear("Вы слышите свист!"), COMBAT_MESSAGE_RANGE, user)
+		to_chat(user, span_warning("Вы [ru_attack_verb(atk_verb, GLOB.ru_attack_verbs_unarmed)]е и промахиваетесь по [target.declent_ru(DATIVE)]!"))
 		log_combat(user, target, "attempted to punch")
 		return FALSE
 
@@ -922,9 +922,9 @@ GLOBAL_LIST_EMPTY(features_by_species)
 
 	if(grappled && attacking_bodypart.grappled_attack_verb)
 		atk_verb = attacking_bodypart.grappled_attack_verb
-	target.visible_message(span_danger("[capitalize(user.declent_ru(NOMINATIVE))] [atk_verb] [target.declent_ru(ACCUSATIVE)]!"), \
-					span_userdanger("[capitalize(user.declent_ru(NOMINATIVE))] [atk_verb] вас!"), span_hear("Вы слышите противный звук удара плоти о плоть!"), COMBAT_MESSAGE_RANGE, user)
-	to_chat(user, span_danger("Вы [atk_verb]е [target.declent_ru(ACCUSATIVE)]!"))
+	target.visible_message(span_danger("[capitalize(user.declent_ru(NOMINATIVE))] [ru_attack_verb(atk_verb, GLOB.ru_attack_verbs_unarmed)] [target.declent_ru(ACCUSATIVE)]!"), \
+					span_userdanger("[capitalize(user.declent_ru(NOMINATIVE))] [ru_attack_verb(atk_verb, GLOB.ru_attack_verbs_unarmed)] вас!"), span_hear("Вы слышите противный звук удара плоти о плоть!"), COMBAT_MESSAGE_RANGE, user)
+	to_chat(user, span_danger("Вы [ru_attack_verb(atk_verb, GLOB.ru_attack_verbs_unarmed)]е [target.declent_ru(ACCUSATIVE)]!"))
 
 	target.lastattacker = user.real_name
 	target.lastattackerckey = user.ckey
