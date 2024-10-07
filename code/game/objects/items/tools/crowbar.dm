@@ -115,7 +115,7 @@
 
 /obj/item/crowbar/power
 	name = "jaws of life"
-	ru_names = RU_NAMES_LIST_INIT("jaws of life", "челюсти жизни", "челюстей жизни", "челюстям жизни", "челюсти жизни", "челюстями жизни", "челюстях жизни")
+	RU_NAMES_LIST_INIT("jaws of life", "челюсти жизни", "челюстей жизни", "челюстям жизни", "челюсти жизни", "челюстями жизни", "челюстях жизни")
 	desc = "A set of jaws of life, compressed through the magic of science."
 	icon_state = "jaws"
 	inhand_icon_state = "jawsoflife"
