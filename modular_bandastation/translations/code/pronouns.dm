@@ -4,7 +4,7 @@
 	var/list/ru_names
 	var/ru_name_nominative
 	var/ru_name_genitive
-	var/ru_name_datvie
+	var/ru_name_dative
 	var/ru_name_accusative
 	var/ru_name_instrumental
 	var/ru_name_prepositional

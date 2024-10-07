@@ -22,7 +22,7 @@
 	ru_names = RU_NAMES_LIST(base, nominative, genitive, dative, accusative, instrumental, prepositional);\
 	ru_name_nominative = nominative;\
 	ru_name_genitive = genitive;\
-	ru_name_datvie = dative;\
+	ru_name_dative = dative;\
 	ru_name_accusative = accusative;\
 	ru_name_instrumental = instrumental;\
 	ru_name_prepositional = prepositional
