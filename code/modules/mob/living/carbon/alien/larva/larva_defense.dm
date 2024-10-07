@@ -18,9 +18,9 @@
 		apply_damage(damage, BRUTE, affecting)
 	else
 		playsound(loc, 'sound/items/weapons/punchmiss.ogg', 25, TRUE, -1)
-		visible_message(span_danger("Пинок [user.declent_ru(GENITIVE)] мажет по [declent_ru(DATIVE)]!"), \
+		visible_message(span_danger("Пинок [user.declent_ru(GENITIVE)] промахивается по [declent_ru(DATIVE)]!"), \
 						span_danger("Вы уворачиваетесь от пинка [user.declent_ru(GENITIVE)]!"), span_hear("Вы слышите свист!"), COMBAT_MESSAGE_RANGE, user)
-		to_chat(user, span_warning("Ваш пинок мажет по [declent_ru(DATIVE)]!"))
+		to_chat(user, span_warning("Ваш пинок промахивается по [declent_ru(DATIVE)]!"))
 
 /mob/living/carbon/alien/larva/attack_hulk(mob/living/carbon/human/user)
 	. = ..()

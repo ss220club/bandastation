@@ -428,7 +428,7 @@
 		to_chat(user, span_danger("Вы кусаете [declent_ru(ACCUSATIVE)]!"))
 		return TRUE
 	else
-		visible_message(span_danger("Кусание [user.declent_ru(GENITIVE)] мажет по [declent_ru(DATIVE)]!"), \
+		visible_message(span_danger("Кусание [user.declent_ru(GENITIVE)] промахивается по [declent_ru(DATIVE)]!"), \
 						span_danger("Вы уворачиваетесь от укуса [user.declent_ru(GENITIVE)]!"), span_hear("Вы слышите звук захлопывающейся пасти!"), COMBAT_MESSAGE_RANGE, user)
 		to_chat(user, span_warning("Ваше кусание промахивается по [declent_ru(DATIVE)]!"))
 
@@ -452,7 +452,7 @@
 			playsound(loc, 'sound/items/weapons/bite.ogg', 50, TRUE, -1)
 			return TRUE
 		else
-			visible_message(span_danger("Кусание [L.declent_ru(GENITIVE)] мажет по [declent_ru(DATIVE)]!"), \
+			visible_message(span_danger("Кусание [L.declent_ru(GENITIVE)] промахивается по [declent_ru(DATIVE)]!"), \
 							span_danger("Вы уворачиваетесь от укуса [L.declent_ru(GENITIVE)]!"), span_hear("Вы слышите звук захлопывающейся пасти!"), COMBAT_MESSAGE_RANGE, L)
 			to_chat(L, span_warning("Ваше кусание промахивается по [declent_ru(DATIVE)]!"))
 			return FALSE

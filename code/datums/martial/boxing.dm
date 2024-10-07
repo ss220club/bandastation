@@ -126,7 +126,7 @@
 		playsound(defender.loc, active_arm.unarmed_miss_sound, 25, TRUE, -1)
 		defender.visible_message(span_warning("[capitalize(attacker.declent_ru(NOMINATIVE))] совершает [current_atk_verb] и промахивается по [defender.declent_ru(DATIVE)]!"), \
 			span_danger("Вы увернулись, [current_atk_verb] [attacker.declent_ru(GENITIVE)] прошел мимо!"), span_hear("Вы слышите свист!"), COMBAT_MESSAGE_RANGE, attacker)
-		to_chat(attacker, span_warning("Ваш [current_atk_verb] мажет по [defender.declent_ru(DATIVE)]!"))
+		to_chat(attacker, span_warning("Ваш [current_atk_verb] промахивается по [defender.declent_ru(DATIVE)]!"))
 		log_combat(attacker, defender, "attempted to hit", current_atk_verb)
 		return FALSE
 
