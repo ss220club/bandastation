@@ -99,7 +99,7 @@
 	defender.visible_message(
 		span_danger("[attacker] slams [defender] into the ground!"),
 		span_userdanger("You're slammed into the ground by [attacker]!"),
-		span_hear("You hear a sickening sound of flesh hitting flesh!"),
+		span_hear("Вы слышите противный звук удара плоти о плоть!"),
 		null,
 		attacker,
 	)
@@ -120,7 +120,7 @@
 		defender.visible_message(
 			span_danger("[attacker] kicks [defender]'s head, knocking [defender.p_them()] out!"),
 			span_userdanger("You're knocked unconscious by [attacker]!"),
-			span_hear("You hear a sickening sound of flesh hitting flesh!"),
+			span_hear("Вы слышите противный звук удара плоти о плоть!"),
 			null,
 			attacker,
 		)
@@ -136,7 +136,7 @@
 		defender.visible_message(
 			span_danger("[attacker] kicks [defender] back!"),
 			span_userdanger("You're kicked back by [attacker]!"),
-			span_hear("You hear a sickening sound of flesh hitting flesh!"),
+			span_hear("Вы слышите противный звук удара плоти о плоть!"),
 			COMBAT_MESSAGE_RANGE,
 			attacker,
 		)
@@ -157,7 +157,7 @@
 	defender.visible_message(
 		span_danger("[attacker] punches [defender]'s neck!"),
 		span_userdanger("Your neck is punched by [attacker]!"),
-		span_hear("You hear a sickening sound of flesh hitting flesh!"),
+		span_hear("Вы слышите противный звук удара плоти о плоть!"),
 		COMBAT_MESSAGE_RANGE,
 		attacker,
 	)
@@ -196,7 +196,7 @@
 	defender.visible_message(
 		span_danger("[attacker] strikes [defender]'s abdomen, neck and back consecutively"), \
 		span_userdanger("Your abdomen, neck and back are struck consecutively by [attacker]!"),
-		span_hear("You hear a sickening sound of flesh hitting flesh!"),
+		span_hear("Вы слышите противный звук удара плоти о плоть!"),
 		COMBAT_MESSAGE_RANGE,
 		attacker,
 	)
@@ -267,7 +267,7 @@
 		defender.visible_message(
 			span_danger("[attacker] leg sweeps [defender]!"),
 			span_userdanger("Your legs are sweeped by [attacker]!"),
-			span_hear("You hear a sickening sound of flesh hitting flesh!"),
+			span_hear("Вы слышите противный звук удара плоти о плоть!"),
 			null,
 			attacker,
 		)
@@ -296,7 +296,7 @@
 	defender.visible_message(
 		span_danger("[attacker] [picked_hit_type]ed [defender]!"),
 		span_userdanger("You're [picked_hit_type]ed by [attacker]!"),
-		span_hear("You hear a sickening sound of flesh hitting flesh!"),
+		span_hear("Вы слышите противный звук удара плоти о плоть!"),
 		COMBAT_MESSAGE_RANGE,
 		attacker,
 	)
@@ -339,7 +339,7 @@
 		defender.visible_message(
 			span_danger("[attacker] strikes [defender]'s jaw with their hand[disarmed_item ? ", disarming [defender.p_them()] of [disarmed_item]" : ""]!"),
 			span_userdanger("[attacker] strikes your jaw,[disarmed_item ? " disarming you of [disarmed_item] and" : ""] leaving you disoriented!"),
-			span_hear("You hear a sickening sound of flesh hitting flesh!"),
+			span_hear("Вы слышите противный звук удара плоти о плоть!"),
 			COMBAT_MESSAGE_RANGE,
 			attacker,
 		)
@@ -353,7 +353,7 @@
 	defender.visible_message(
 		span_danger("[attacker] fails to disarm [defender]!"), \
 		span_userdanger("You're nearly disarmed by [attacker]!"),
-		span_hear("You hear a swoosh!"),
+		span_hear("Вы слышите свист!"),
 		COMBAT_MESSAGE_RANGE,
 		attacker,
 	)
