@@ -898,7 +898,7 @@ GLOBAL_LIST_EMPTY(features_by_species)
 		playsound(target.loc, attacking_bodypart.unarmed_miss_sound, 25, TRUE, -1)
 		target.visible_message(span_danger("[capitalize(user.declent_ru(NOMINATIVE))] [atk_verb] и мажет по [target.declent_ru(DATIVE)]!"), \
 						span_danger("[capitalize(user.declent_ru(NOMINATIVE))] [atk_verb] и мажет по вам!"), span_hear("Вы слышите свист!"), COMBAT_MESSAGE_RANGE, user)
-		to_chat(user, span_warning("Вы [atk_verb] и мажете по [target.declent_ru(DATIVE)]!"))
+		to_chat(user, span_warning("Вы [atk_verb]е и мажете по [target.declent_ru(DATIVE)]!"))
 		log_combat(user, target, "attempted to punch")
 		return FALSE
 
