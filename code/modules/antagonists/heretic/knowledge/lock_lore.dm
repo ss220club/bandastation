@@ -155,7 +155,7 @@
 /datum/heretic_knowledge/spell/burglar_finesse
 	name = "Burglar's Finesse"
 	desc = "Дарует вам заклинание, Burglar's Finesse, которое \
-		кладет случайный предмет из сумки жертвы в вашу руку."
+		перемещает случайный предмет из сумки жертвы в вашу руку."
 	gain_text = "Общение с духами Взломщиками не одобряется, но Управляющий всегда хочет узнавать о новых дверях."
 	next_knowledge = list(
 		/datum/heretic_knowledge/spell/opening_blast,

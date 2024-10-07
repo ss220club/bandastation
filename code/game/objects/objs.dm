@@ -8,7 +8,7 @@
 	var/desc_controls
 
 	/// The context returned when an attack against this object doesn't deal any traditional damage to the object.
-	var/no_damage_feedback = "without leaving a mark"
+	var/no_damage_feedback = "не оставляя следов"
 	/// Icon to use as a 32x32 preview in crafting menus and such
 	var/icon_preview
 	var/icon_state_preview

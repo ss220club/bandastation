@@ -792,8 +792,8 @@
 	force = 18
 	damtype = BURN
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
-	attack_verb_continuous = list("sears", "clubs", "burn")
-	attack_verb_simple = list("sear", "club", "burn")
+	attack_verb_continuous = list("обжигает", "clubs", "жгет")
+	attack_verb_simple = list("обжигаете", "club", "жгете")
 	hitsound = 'sound/items/weapons/sear.ogg'
 	var/turf_type = /turf/open/lava/smooth/weak
 	var/transform_string = "lava"

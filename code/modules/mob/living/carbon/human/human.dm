@@ -510,40 +510,40 @@
 			return FALSE
 
 		if (target.stat == DEAD || HAS_TRAIT(target, TRAIT_FAKEDEATH))
-			balloon_alert(src, "[target.p_they()] [target.p_are()] dead!")
+			balloon_alert(src, "[target.ru_p_they()] в состоянии смерти!")
 			return FALSE
 
 		if (is_mouth_covered())
-			balloon_alert(src, "remove your mask first!")
+			balloon_alert(src, "снимите свою маску!")
 			return FALSE
 
 		if (target.is_mouth_covered())
-			balloon_alert(src, "remove [target.p_their()] mask first!")
+			balloon_alert(src, "снимите [target.ru_p_them()] маску!")
 			return FALSE
 
 		if(HAS_TRAIT_FROM(src, TRAIT_NOBREATH, DISEASE_TRAIT))
-			to_chat(src, span_warning("you can't breathe!"))
+			to_chat(src, span_warning("вы не можете дышать!"))
 			return FALSE
 
 		var/obj/item/organ/internal/lungs/human_lungs = get_organ_slot(ORGAN_SLOT_LUNGS)
 		if(isnull(human_lungs))
-			balloon_alert(src, "you don't have lungs!")
+			balloon_alert(src, "у вас нет легких!")
 			return FALSE
 		if(human_lungs.organ_flags & ORGAN_FAILING)
-			balloon_alert(src, "your lungs are too damaged!")
+			balloon_alert(src, "ваши легкие слишком повреждены!")
 			return FALSE
 
-		visible_message(span_notice("[src] is trying to perform CPR on [target.name]!"), \
-						span_notice("You try to perform CPR on [target.name]... Hold still!"))
+		visible_message(span_notice("[capitalize(declent_ru(NOMINATIVE))] пытается провести СЛР [target.declent_ru(DATIVE)]!"), \
+						span_notice("Вы пытаетесь провести СЛР [target.declent_ru(DATIVE)]!... Стойте на месте!"))
 
 		if (!do_after(src, delay = panicking ? CPR_PANIC_SPEED : (3 SECONDS), target = target))
-			balloon_alert(src, "you fail to perform CPR!")
+			balloon_alert(src, "у вас не получается провести СЛР!")
 			return FALSE
 
 		if (target.health > target.crit_threshold)
 			return FALSE
 
-		visible_message(span_notice("[src] performs CPR on [target.name]!"), span_notice("You perform CPR on [target.name]."))
+		visible_message(span_notice("[capitalize(declent_ru(NOMINATIVE))] проводит СЛР [target.declent_ru(DATIVE)]!"), span_notice("Вы проводите СЛР [target.declent_ru(DATIVE)]."))
 		if(HAS_MIND_TRAIT(src, TRAIT_MORBID))
 			add_mood_event("morbid_saved_life", /datum/mood_event/morbid_saved_life)
 		else
@@ -551,16 +551,16 @@
 		log_combat(src, target, "CPRed")
 
 		if (HAS_TRAIT(target, TRAIT_NOBREATH))
-			to_chat(target, span_unconscious("You feel a breath of fresh air... which is a sensation you don't recognise..."))
+			to_chat(target, span_unconscious("Вы чувствуете глоток свежего воздуха... ощущение, которое вам не знакомо..."))
 		else if (!target.get_organ_slot(ORGAN_SLOT_LUNGS))
-			to_chat(target, span_unconscious("You feel a breath of fresh air... but you don't feel any better..."))
+			to_chat(target, span_unconscious("Вы чувствуете глоток свежего воздуха... но вам не становится лучше..."))
 		else
 			target.adjustOxyLoss(-min(target.getOxyLoss(), 7))
-			to_chat(target, span_unconscious("You feel a breath of fresh air enter your lungs... It feels good..."))
+			to_chat(target, span_unconscious("Вы чувствуете глоток свежего воздуха, входящий в ваши легкие... Вам становится лучше..."))
 
 		if (target.health <= target.crit_threshold)
 			if (!panicking)
-				to_chat(src, span_warning("[target] still isn't up! You try harder!"))
+				to_chat(src, span_warning("[capitalize(target.declent_ru(NOMINATIVE))] всё ещё лежит! Вы стараетесь усерднее!"))
 			panicking = TRUE
 		else
 			panicking = FALSE
