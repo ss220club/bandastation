@@ -333,7 +333,7 @@
 	var/second_word_pick = pick(second_word_strike)
 
 	defender.visible_message(
-		span_danger("[capitalize(attacker.declent_ru(NOMINATIVE))] полностью выбивают всю дурь из [defender.declent_ru(GENITIVE)], используя ужасающий [first_word_pick][second_word_pick]!!!"),
+		span_danger("[capitalize(attacker.declent_ru(NOMINATIVE))] полностью выбивают всю дурь из [defender.declent_ru(GENITIVE)] ужасающим [first_word_pick][second_word_pick]!!!"),
 		span_userdanger("Из вас полностью выбивают всю дурь ударом от [attacker.declent_ru(GENITIVE)]!!!"),
 		span_hear("Вы слышите противный звук удара плоти о плоть!"),
 		COMBAT_MESSAGE_RANGE,
