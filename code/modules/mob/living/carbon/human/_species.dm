@@ -834,7 +834,7 @@ GLOBAL_LIST_EMPTY(features_by_species)
 ///This proc handles punching damage. IMPORTANT: Our owner is the TARGET and not the USER in this proc. For whatever reason...
 /datum/species/proc/harm(mob/living/carbon/human/user, mob/living/carbon/human/target, datum/martial_art/attacker_style)
 	if(HAS_TRAIT(user, TRAIT_PACIFISM) && !attacker_style?.pacifist_style)
-		to_chat(user, span_warning("You don't want to harm [target]!"))
+		to_chat(user, span_warning("Вы не хотите причинить вред [target.declent_ru(DATIVE)]!"))
 		return FALSE
 
 	var/obj/item/organ/internal/brain/brain = user.get_organ_slot(ORGAN_SLOT_BRAIN)
@@ -848,7 +848,7 @@ GLOBAL_LIST_EMPTY(features_by_species)
 
 	if(atk_effect == ATTACK_EFFECT_BITE)
 		if(user.is_mouth_covered(ITEM_SLOT_MASK))
-			to_chat(user, span_warning("You can't [atk_verb] with your mouth covered!"))
+			to_chat(user, span_warning("Вы не можете атаковать с закрытым ртом!")) //TODO220 - this again... need to use atk_verb here
 			return FALSE
 	user.do_attack_animation(target, atk_effect)
 
@@ -874,7 +874,7 @@ GLOBAL_LIST_EMPTY(features_by_species)
 	if(user_drunkenness && HAS_TRAIT(user, TRAIT_DRUNKEN_BRAWLER)) // Drunken brawlers only need to be intoxicated, doesn't matter how much
 		limb_accuracy += clamp((user.getFireLoss() + user.getBruteLoss()) * 0.5, 10, 200)
 		damage += damage * clamp((user.getFireLoss() + user.getBruteLoss()) / 100, 0.3, 2) //Basically a multiplier of how much extra damage you get based on how low your health is overall. A floor of about a 30%.
-		var/drunken_martial_descriptor = pick("Drunken", "Intoxicated", "Tipsy", "Inebriated", "Delirious", "Day-Drinker's", "Firegut", "Blackout")
+		var/drunken_martial_descriptor = pick("пьяно", "опьянено", "подвыпивше", "опьяневше", "бредово", "огнегриво", "выключаемо")
 		atk_verb = "[drunken_martial_descriptor] [atk_verb]"
 
 	else if(user_drunkenness > 30 && user_drunkenness < 60)
@@ -896,9 +896,9 @@ GLOBAL_LIST_EMPTY(features_by_species)
 
 	if(!damage || !affecting || prob(miss_chance))//future-proofing for species that have 0 damage/weird cases where no zone is targeted
 		playsound(target.loc, attacking_bodypart.unarmed_miss_sound, 25, TRUE, -1)
-		target.visible_message(span_danger("[user]'s [atk_verb] misses [target]!"), \
-						span_danger("You avoid [user]'s [atk_verb]!"), span_hear("You hear a swoosh!"), COMBAT_MESSAGE_RANGE, user)
-		to_chat(user, span_warning("Your [atk_verb] misses [target]!"))
+		target.visible_message(span_danger("[capitalize(user.declent_ru(NOMINATIVE))] [atk_verb] и мажет по [target.declent_ru(DATIVE)]!"), \
+						span_danger("[capitalize(user.declent_ru(NOMINATIVE))] [atk_verb] и мажет по вам!"), span_hear("Вы слышите свист!"), COMBAT_MESSAGE_RANGE, user)
+		to_chat(user, span_warning("Вы [atk_verb] и мажете по [target.declent_ru(DATIVE)]!"))
 		log_combat(user, target, "attempted to punch")
 		return FALSE
 
@@ -922,9 +922,9 @@ GLOBAL_LIST_EMPTY(features_by_species)
 
 	if(grappled && attacking_bodypart.grappled_attack_verb)
 		atk_verb = attacking_bodypart.grappled_attack_verb
-	target.visible_message(span_danger("[user] [atk_verb]ed [target]!"), \
-					span_userdanger("You're [atk_verb]ed by [user]!"), span_hear("You hear a sickening sound of flesh hitting flesh!"), COMBAT_MESSAGE_RANGE, user)
-	to_chat(user, span_danger("You [atk_verb] [target]!"))
+	target.visible_message(span_danger("[capitalize(user.declent_ru(NOMINATIVE))] [atk_verb] [target.declent_ru(ACCUSATIVE)]!"), \
+					span_userdanger("[capitalize(user.declent_ru(NOMINATIVE))] [atk_verb] вас!"), span_hear("Вы слышите противный звук удара плоти о плоть!"), COMBAT_MESSAGE_RANGE, user)
+	to_chat(user, span_danger("Вы [atk_verb] [target.declent_ru(ACCUSATIVE)]!"))
 
 	target.lastattacker = user.real_name
 	target.lastattackerckey = user.ckey
@@ -1016,18 +1016,18 @@ GLOBAL_LIST_EMPTY(features_by_species)
 /datum/species/proc/spec_attack_hand(mob/living/carbon/human/owner, mob/living/carbon/human/target, datum/martial_art/attacker_style, modifiers)
 	if(!istype(owner))
 		return
-	CHECK_DNA_AND_SPECIES(owner)
+	CHECK_DNA_AND_SPECIES(owner) // 2
 	CHECK_DNA_AND_SPECIES(target)
 
 	if(!istype(owner)) //sanity check for drones.
 		return
 	if(owner.mind)
 		attacker_style = owner.mind.martial_art
-	if((owner != target) && target.check_block(owner, 0, owner.name, attack_type = UNARMED_ATTACK))
+	if((owner != target) && target.check_block(owner, 0, owner.declent_ru(ACCUSATIVE), attack_type = UNARMED_ATTACK))
 		log_combat(owner, target, "attempted to touch")
-		target.visible_message(span_warning("[owner] attempts to touch [target]!"), \
-						span_danger("[owner] attempts to touch you!"), span_hear("You hear a swoosh!"), COMBAT_MESSAGE_RANGE, owner)
-		to_chat(owner, span_warning("You attempt to touch [target]!"))
+		target.visible_message(span_warning("[capitalize(owner.declent_ru(NOMINATIVE))] пытается прикоснуться к [target.declent_ru(DATIVE)]!"), \
+						span_danger("[capitalize(owner.declent_ru(NOMINATIVE))] пытается прикоснуться к вам!"), span_hear("Вы слышите свист!"), COMBAT_MESSAGE_RANGE, owner)
+		to_chat(owner, span_warning("Вы пытаетесь прикоснуться к [target.declent_ru(DATIVE)]!"))
 		return
 
 	SEND_SIGNAL(owner, COMSIG_MOB_ATTACK_HAND, owner, target, attacker_style)
