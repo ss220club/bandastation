@@ -32,7 +32,7 @@
 		vision_distance = COMBAT_MESSAGE_RANGE,
 		ignored_mobs = user,
 	)
-	to_chat(user, span_danger("You [response_harm_simple] [declent_ru(ACCUSATIVE)]!"))
+	to_chat(user, span_danger("Вы [response_harm_simple] [declent_ru(ACCUSATIVE)]!"))
 	playsound(loc, attacked_sound, 25, TRUE, -1)
 	apply_damage(damage)
 	log_combat(user, src, "attacked")
@@ -50,7 +50,7 @@
 		COMBAT_MESSAGE_RANGE,
 		list(src),
 	)
-	to_chat(src, span_userdanger("You're [moved ? "pushed" : "shoved"] by [shover.name]!"))
+	to_chat(src, span_userdanger("Вас [moved ? "подталкивает" : "толкает"] [shover.declent_ru(NOMINATIVE)]!"))
 
 /mob/living/basic/attack_hulk(mob/living/carbon/human/user)
 	. = ..()

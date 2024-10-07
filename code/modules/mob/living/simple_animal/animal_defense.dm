@@ -40,7 +40,7 @@
 		COMBAT_MESSAGE_RANGE,
 		list(src),
 	)
-	to_chat(src, span_userdanger("Вас [moved ? "отталкивает" : "толкает"] [shover.declent_ru(NOMINATIVE)]!"))
+	to_chat(src, span_userdanger("Вас [moved ? "подталкивает" : "толкает"] [shover.declent_ru(NOMINATIVE)]!"))
 
 /mob/living/simple_animal/attack_hulk(mob/living/carbon/human/user)
 	. = ..()
