@@ -120,7 +120,7 @@
 			if(initial(bake_result.gender) == PLURAL)
 				examine_list += span_notice("Это [source.declent_ru(NOMINATIVE)]. [capitalize(initial(bake_result.name))] может быть [span_bold("приготовлено")] из [parent.declent_ru(GENITIVE)].")
 			else
-				examine_list += span_notice("Это [source.declent_ru(NOMINATIVE)]. [capitalize(span_bold("Можно"))] приготовить в [initial(bake_result.declent_ru(ACCUSATIVE))].")
+				examine_list += span_notice("Это [source.declent_ru(NOMINATIVE)]. [capitalize(span_bold("Можно"))] приготовить в [initial(bake_result.ru_name_accusative)].")
 		return
 
 	if(positive_result)
