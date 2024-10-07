@@ -560,7 +560,7 @@
 
 		if (target.health <= target.crit_threshold)
 			if (!panicking)
-				to_chat(src, span_warning("[declent_ru(target.declent_ru(NOMINATIVE))] всё ещё лежит! Вы стараетесь усерднее!"))
+				to_chat(src, span_warning("[capitalize(target.declent_ru(NOMINATIVE))] всё ещё лежит! Вы стараетесь усерднее!"))
 			panicking = TRUE
 		else
 			panicking = FALSE
