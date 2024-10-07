@@ -337,12 +337,12 @@
 	if(user.melee_damage_upper == 0)
 		if(user != src)
 			visible_message(
-				span_notice("[capitalize(user.declent_ru(NOMINATIVE))] [user.friendly_verb_continuous] [declent_ru(ACCUSATIVE)]!"),
-				span_notice("[capitalize(user.declent_ru(NOMINATIVE))] [user.friendly_verb_continuous] вас!"),
+				span_notice("[capitalize(user.declent_ru(NOMINATIVE))] [ru_attack_verb(user.friendly_verb_continuous)] [declent_ru(ACCUSATIVE)]!"),
+				span_notice("[capitalize(user.declent_ru(NOMINATIVE))] [ru_attack_verb(user.friendly_verb_continuous)] вас!"),
 				vision_distance = COMBAT_MESSAGE_RANGE,
 				ignored_mobs = user,
 			)
-			to_chat(user, span_notice("Вы [user.friendly_verb_simple] [declent_ru(ACCUSATIVE)]!"))
+			to_chat(user, span_notice("Вы [ru_attack_verb(user.friendly_verb_simple)] [declent_ru(ACCUSATIVE)]!"))
 		return FALSE
 
 	if(HAS_TRAIT(user, TRAIT_PACIFISM))
@@ -358,8 +358,8 @@
 
 	user.do_attack_animation(src)
 	visible_message(
-		span_danger("[capitalize(user.declent_ru(NOMINATIVE))] [user.attack_verb_continuous] [declent_ru(ACCUSATIVE)]!"),
-		span_userdanger("[capitalize(user.declent_ru(NOMINATIVE))] [user.attack_verb_continuous] вас!"),
+		span_danger("[capitalize(user.declent_ru(NOMINATIVE))] [ru_attack_verb(user.attack_verb_continuous)] [declent_ru(ACCUSATIVE)]!"),
+		span_userdanger("[capitalize(user.declent_ru(NOMINATIVE))] [ru_attack_verb(user.attack_verb_continuous)] вас!"),
 		null,
 		COMBAT_MESSAGE_RANGE,
 		user,
@@ -371,7 +371,7 @@
 
 	var/armor_block = run_armor_check(user.zone_selected, MELEE, armour_penetration = user.armour_penetration)
 
-	to_chat(user, span_danger("Вы [user.attack_verb_simple] [declent_ru(ACCUSATIVE)]!"))
+	to_chat(user, span_danger("Вы [ru_attack_verb(user.attack_verb_simple)] [declent_ru(ACCUSATIVE)]!"))
 	log_combat(user, src, "attacked")
 	var/damage_done = apply_damage(
 		damage = damage,

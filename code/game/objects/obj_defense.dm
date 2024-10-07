@@ -73,7 +73,7 @@
 /obj/attack_animal(mob/living/simple_animal/user, list/modifiers)
 	. = ..()
 	if(!user.melee_damage_upper && !user.obj_damage)
-		user.emote("custom", message = "[user.friendly_verb_continuous] [src].")
+		user.emote("custom", message = "[ru_attack_verb(user.friendly_verb_continuous)] [declent_ru(ACCUSATIVE)].")
 		return FALSE
 	else
 		var/turf/current_turf = get_turf(src) //we want to save the turf to play the sound there, cause being destroyed deletes us!
