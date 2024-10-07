@@ -160,7 +160,7 @@
 		bonus_damage += 5
 		picked_hit_type = "растоптывание"
 
-	if(defender.check_block(attacker, 10 + bonus_damage, "[picked_hit_type] [attacker.declent_ru(ACCUSATIVE)]", UNARMED_ATTACK))
+	if(defender.check_block(attacker, 10 + bonus_damage, "[picked_hit_type] [attacker.declent_ru(GENITIVE)]", UNARMED_ATTACK))
 		return MARTIAL_ATTACK_FAIL
 	if(check_streak(attacker, defender))
 		return MARTIAL_ATTACK_SUCCESS
