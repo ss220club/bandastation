@@ -978,8 +978,8 @@ or shoot a gun to move around via Newton's 3rd Law of Motion."
 //OBJECT-BASED
 
 /atom/movable/screen/alert/buckled
-	name = "Buckled"
-	desc = "You've been buckled to something. Click the alert to unbuckle unless you're handcuffed."
+	name = "Пристегнуты"
+	desc = "Вы были к чему-то пристегнуты. Нажмите на это уведомление, чтобы отстегнуться, если вы не в наручниках."
 	icon_state = ALERT_BUCKLED
 
 /atom/movable/screen/alert/restrained/handcuffed

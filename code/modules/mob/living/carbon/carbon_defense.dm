@@ -297,7 +297,7 @@
 
 	if(body_position == LYING_DOWN)
 		if(buckled)
-			to_chat(helper, span_warning("You need to unbuckle [src] first to do that!"))
+			to_chat(helper, span_warning("Для начала вам нужно отстегнуться от [declent_ru(GENITIVE)]!"))
 			return
 		helper.visible_message(span_notice("[capitalize(helper.declent_ru(NOMINATIVE))] трясет [declent_ru(ACCUSATIVE)], пытаясь [ru_p_them()] поднять!"), \
 						null, span_hear("Вы слышите шорох одежды."), DEFAULT_MESSAGE_RANGE, list(helper, src))

@@ -255,13 +255,13 @@
 		var/obj/item/restraints/cuffs = src.get_item_by_slot(ITEM_SLOT_HANDCUFFED)
 		buckle_cd = cuffs.breakouttime
 
-	visible_message(span_warning("[src] attempts to unbuckle [p_them()]self!"),
-				span_notice("You attempt to unbuckle yourself... \
-				(This will take around [DisplayTimeText(buckle_cd)] and you must stay still.)"))
+	visible_message(span_warning("[capitalize(declent_ru(NOMINATIVE))] пытается отстегнуть себя!"),
+				span_notice("Вы пытаетесь отстегнуть себя... \
+				(Это займет примерно [DisplayTimeText(buckle_cd)], и вы должны стоять на месте.)"))
 
 	if(!do_after(src, buckle_cd, target = src, timed_action_flags = IGNORE_HELD_ITEM, hidden = TRUE))
 		if(buckled)
-			to_chat(src, span_warning("You fail to unbuckle yourself!"))
+			to_chat(src, span_warning("Вам не удалось отстегнуть себя!"))
 		return
 
 	if(QDELETED(src) || isnull(buckled))
