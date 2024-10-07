@@ -896,9 +896,9 @@ GLOBAL_LIST_EMPTY(features_by_species)
 
 	if(!damage || !affecting || prob(miss_chance))//future-proofing for species that have 0 damage/weird cases where no zone is targeted
 		playsound(target.loc, attacking_bodypart.unarmed_miss_sound, 25, TRUE, -1)
-		target.visible_message(span_danger("[capitalize(user.declent_ru(NOMINATIVE))] [atk_verb] и мажет по [target.declent_ru(DATIVE)]!"), \
-						span_danger("[capitalize(user.declent_ru(NOMINATIVE))] [atk_verb] и мажет по вам!"), span_hear("Вы слышите свист!"), COMBAT_MESSAGE_RANGE, user)
-		to_chat(user, span_warning("Вы [atk_verb]е и мажете по [target.declent_ru(DATIVE)]!"))
+		target.visible_message(span_danger("[capitalize(user.declent_ru(NOMINATIVE))] [atk_verb] и промахивается по [target.declent_ru(DATIVE)]!"), \
+						span_danger("[capitalize(user.declent_ru(NOMINATIVE))] [atk_verb] и промахивается по вам!"), span_hear("Вы слышите свист!"), COMBAT_MESSAGE_RANGE, user)
+		to_chat(user, span_warning("Вы [atk_verb]е и промахиваетесь по [target.declent_ru(DATIVE)]!"))
 		log_combat(user, target, "attempted to punch")
 		return FALSE
 
