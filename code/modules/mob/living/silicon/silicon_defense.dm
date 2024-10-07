@@ -13,7 +13,7 @@
 			playsound(loc, 'sound/items/weapons/slash.ogg', 25, TRUE, -1)
 			visible_message(span_danger("[capitalize(user.declent_ru(NOMINATIVE))] режет [declent_ru(ACCUSATIVE)]!"), \
 							span_userdanger("[capitalize(user.declent_ru(NOMINATIVE))] режет вас!"), null, null, user)
-			to_chat(user, span_danger("Вы режите [declent_ru(ACCUSATIVE)]!"))
+			to_chat(user, span_danger("Вы режете [declent_ru(ACCUSATIVE)]!"))
 			if(prob(8))
 				flash_act(affect_silicon = 1)
 			log_combat(user, src, "attacked")
