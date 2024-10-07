@@ -426,7 +426,7 @@
 				if(prob(damage_done))
 					visible_message(
 						span_danger("[capitalize(declent_ru(NOMINATIVE))] сбивается с ног!"),
-						span_userdanger("Вы сбиваетесь с ног!"),
+						span_userdanger("Вас сбивают с ног!"),
 					)
 					apply_effect(6 SECONDS, EFFECT_KNOCKDOWN, armor_block)
 
