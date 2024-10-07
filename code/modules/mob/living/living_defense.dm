@@ -168,7 +168,7 @@
 		else
 			playsound(loc, 'sound/items/weapons/genhit.ogg', 50, TRUE, -1) //Item sounds are handled in the item itself
 			if(!isvendor(AM) && !iscarbon(AM)) //Vendors have special interactions, while carbon mobs already generate visible messages!
-				visible_message(span_danger("В [(declent_ru(ACCUSATIVE))] врезается [AM.declent_ru(NOMINATIVE)]!"), \
+				visible_message(span_danger("[capitalize(AM.declent_ru(NOMINATIVE))] врезается в [(declent_ru(ACCUSATIVE))]!"), \
 							span_userdanger("В вас врезается [AM.declent_ru(NOMINATIVE)]!"))
 		log_combat(AM, src, "hit ")
 		return ..()
@@ -198,7 +198,7 @@
 		log_combat(thrown_item, src, "hit ")
 	if(nosell_hit)
 		return ..()
-	visible_message(span_danger("В [declent_ru(ACCUSATIVE)] врезается [thrown_item.declent_ru(NOMINATIVE)]!"), \
+	visible_message(span_danger("[capitalize(thrown_item.declent_ru(NOMINATIVE))] врезается в [declent_ru(ACCUSATIVE)]!"), \
 					span_userdanger("В вас врезается [thrown_item.declent_ru(NOMINATIVE)]!"))
 	if(!thrown_item.throwforce)
 		return
