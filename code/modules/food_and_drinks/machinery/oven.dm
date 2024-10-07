@@ -10,6 +10,7 @@
 
 /obj/machinery/oven
 	name = "oven"
+	RU_NAMES_LIST_INIT("oven", "духовка", "духовки", "духовке", "духовку", "духовкой", "духовке")
 	desc = "Иногда туда залезает повар, если инженеры не починили шлюз морозильной камеры..."
 	icon = 'icons/obj/machines/kitchen.dmi'
 	icon_state = "oven_off"

@@ -4,8 +4,9 @@
 #define GRILL_FUELUSAGE_ACTIVE 5
 
 /obj/machinery/grill
-	name = "Grill"
-	desc = "Как в старые добрые времена. Копченые продукты на легком огне"
+	name = "Barbeque grill"
+	RU_NAMES_LIST_INIT("Barbeque grill", "грилль для барбекю", "грилля для барбекю", "гриллю для барбекю", "грилль для барбекю", "гриллем для барбекю", "грилле для барбекю")
+	desc = "Как в старые добрые времена. Копченые продукты на легком огне."
 	icon = 'icons/obj/machines/kitchen.dmi'
 	icon_state = "grill_open"
 	density = TRUE

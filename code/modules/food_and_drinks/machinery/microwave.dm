@@ -18,7 +18,8 @@
 #define TIER_1_CELL_CHARGE_RATE (0.25 * STANDARD_CELL_CHARGE)
 
 /obj/machinery/microwave
-	name = "Microwave"
+	name = "microwave oven"
+	RU_NAMES_LIST_INIT("microwave oven", "микроволновка", "микроволновки", "микроволновке", "микроволновку", "микроволновкой", "микроволновке")
 	desc = "Нагревает всякие штуки."
 	icon = 'icons/obj/machines/microwave.dmi'
 	base_icon_state = ""

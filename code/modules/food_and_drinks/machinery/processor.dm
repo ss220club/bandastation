@@ -1,7 +1,8 @@
 #define PROCESSOR_SELECT_RECIPE(movable_input) LAZYACCESS(processor_inputs[type], movable_input.type)
 
 /obj/machinery/processor
-	name = "Processor"
+	name = "food processor"
+	RU_NAMES_LIST_INIT("food processor", "комбайн", "комбайна", "комбайну", "комбайн", "комбайном", "комбайне")
 	desc = "Промышленный комбайн, используемый для обработки мяса и других продуктов. Во время работы держите руки подальше от зоны приема."
 	icon = 'icons/obj/machines/kitchen.dmi'
 	base_icon_state = "processor"

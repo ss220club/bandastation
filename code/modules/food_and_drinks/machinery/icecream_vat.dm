@@ -7,8 +7,9 @@
 #define VAT_MODE_CONES "cones"
 
 /obj/machinery/icecream_vat
-	name = "Icecream_vat"
-	desc = "Смотря на машину вы вспоминаете мелодию вашего любимого кафе с мороженным. Теперь таким кафе стало Нанотрейзен!"
+	name = "ice cream vat"
+	RU_NAMES_LIST_INIT("ice cream vat", "машина для мороженного", "машины для мороженного", "машине для мороженного", "машину для мороженного", "машиной для мороженного", "машине для мороженного")
+	desc = "Смотря на машину, вы вспоминаете мелодию вашего любимого кафе с мороженным. Теперь таким кафе стало Нанотрейзен!"
 	icon = 'icons/obj/service/kitchen.dmi'
 	icon_state = "icecream_vat"
 	density = TRUE

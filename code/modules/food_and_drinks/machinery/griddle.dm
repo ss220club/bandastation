@@ -1,6 +1,7 @@
 /obj/machinery/griddle
-	name = "Griddle"
-	desc = "Сковородки для слабаков"
+	name = "griddle"
+	RU_NAMES_LIST_INIT("griddle", "гридль", "гридля", "гридлю", "гридль", "гридлем", "гридле")
+	desc = "Сковородки для слабаков."
 	icon = 'icons/obj/machines/kitchen.dmi'
 	icon_state = "griddle1_off"
 	density = TRUE
