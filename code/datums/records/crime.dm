@@ -55,8 +55,8 @@
 			continue
 
 		var/datum/signal/subspace/messaging/tablet_message/signal = new(source, list(
-			"fakename" = "Security Citation",
-			"fakejob" = "Citation Server",
+			"fakename" = "Штраф от безопасности",
+			"fakejob" = "Сервер штрафов",
 			"message" = message,
 			"targets" = list(messenger),
 			"automated" = TRUE

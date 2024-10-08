@@ -541,7 +541,7 @@
 	. += "Важные заметки: [security_note]"
 	. += "Записи охраны: <a href='?src=[REF(src)];hud=s;view=1;examine_time=[world.time]'>\[Показать\]</a>"
 	if(ishuman(user))
-		. += "<a href='?src=[REF(src)];hud=s;add_citation=1;examine_time=[world.time]'>\[Добавить цитату\]</a>\
+		. += "<a href='?src=[REF(src)];hud=s;add_citation=1;examine_time=[world.time]'>\[Добавить штраф\]</a>\
 			<a href='?src=[REF(src)];hud=s;add_crime=1;examine_time=[world.time]'>\[Добавить преступление\]</a>\
 			<a href='?src=[REF(src)];hud=s;add_note=1;examine_time=[world.time]'>\[Добавить примечание\]</a>"
 
