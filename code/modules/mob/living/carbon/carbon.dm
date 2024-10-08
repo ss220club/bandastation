@@ -321,7 +321,7 @@
 		if(do_after(src, breakouttime, target = src, timed_action_flags = IGNORE_HELD_ITEM))
 			. = clear_cuffs(cuffs, cuff_break)
 		else
-			to_chat(src, span_warning("Вам не удалось сломать [cuffs.declension_ru(ACCUSATIVE)]!"))
+			to_chat(src, span_warning("Вам не удалось сломать [cuffs.declent_ru(ACCUSATIVE)]!"))
 
 	else if(cuff_break == INSTANT_CUFFBREAK)
 		. = clear_cuffs(cuffs, cuff_break)
