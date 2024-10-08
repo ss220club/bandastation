@@ -242,20 +242,20 @@
  */
 /obj/item/clothing/under/proc/get_sensor_text(silent = TRUE)
 	if(has_sensor == BROKEN_SENSORS)
-		return "<font color='#ffcc33'>Non-Functional: Repair with cable coil</font>"
+		return "<font color='#ffcc33'>Не работают: Почините с помощью кабеля</font>"
 
 	if(silent)
 		return ""
 
 	switch(has_sensor)
 		if(NO_SENSORS)
-			return "Not Present"
+			return "Отсутствуют"
 
 		if(LOCKED_SENSORS)
-			return "Functional, Locked"
+			return "Работают, Заблокированы"
 
 		if(HAS_SENSORS)
-			return "Functional"
+			return "Работают"
 
 // End suit sensor handling
 
