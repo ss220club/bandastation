@@ -230,7 +230,7 @@
 	return ITEM_INTERACT_SUCCESS
 
 /obj/machinery/oven/range
-	name = "oven range"
+	name = "range"
 	desc = "Плита с духовкой?!"
 	icon_state = "range_off"
 	base_icon_state = "range"

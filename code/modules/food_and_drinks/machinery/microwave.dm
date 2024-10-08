@@ -918,7 +918,7 @@
 		addtimer(CALLBACK(src, PROC_REF(wzhzhzh)), rand(0.5 SECONDS, 3 SECONDS))
 
 /obj/machinery/microwave/engineering
-	name = "беспроводная микроволновка"
+	name = "wireless microwave oven"
 	desc = "Для трудолюбивого работника, который находится в глуши и просто хочет разогреть кондитерское изделие из автомата с завышенной ценой.."
 	base_icon_state = "engi_"
 	icon_state = "engi_mw_complete"

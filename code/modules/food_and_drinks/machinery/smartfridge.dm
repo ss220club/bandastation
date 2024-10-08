@@ -2,7 +2,7 @@
 //  SmartFridge.  Much todo
 // -------------------------
 /obj/machinery/smartfridge
-	name = "смарт-холодильник"
+	name = "smartfridge"
 	desc = "Сохраняет холодные вещи холодными, а горячие - горячими."
 	icon = 'icons/obj/machines/smartfridge.dmi'
 	icon_state = "smartfridge-icon"
@@ -437,7 +437,7 @@
 //  Drying 'smartfridge'
 // ----------------------------
 /obj/machinery/smartfridge/drying
-	name = "сушилка"
+	name = "dehydrator"
 	desc = "Механизм, используемый для сушки растительных продуктов, еды и шкур."
 	icon_state = "dehydrator-icon"
 	base_icon_state = "dehydrator"
@@ -604,7 +604,7 @@
 //  Bar drink smartfridge
 // ----------------------------
 /obj/machinery/smartfridge/drinks
-	name = "витрина напитков"
+	name = "drink showcase"
 	desc = "Холодильник для хранения вкусного алкоголя."
 	base_build_path = /obj/machinery/smartfridge/drinks
 	contents_overlay_icon = "drink"
@@ -642,7 +642,7 @@
 // Xenobiology Slime-Extract Smartfridge
 // -------------------------------------
 /obj/machinery/smartfridge/extract
-	name = "умное хранилище экстракта слаймов"
+	name = "smart slime extract storage""
 	desc = "Холодильник для хранения экстракта слаймов."
 	base_build_path = /obj/machinery/smartfridge/extract
 	contents_overlay_icon = "slime"
@@ -657,7 +657,7 @@
 // Cytology Petri Dish Smartfridge
 // -------------------------------------
 /obj/machinery/smartfridge/petri
-	name = "умное хранилище чашек Петри"
+	name = "smart petri dish storage"
 	desc = "Холодильник для хранения чашек Петри."
 	base_build_path = /obj/machinery/smartfridge/petri
 	contents_overlay_icon = "petri"
@@ -672,7 +672,7 @@
 // Organ Surgery Smartfridge
 // -------------------------
 /obj/machinery/smartfridge/organ
-	name = "умное хранилище органов"
+	name = "smart organ storage"
 	desc = "Холодильник для хранения органов."
 	max_n_of_items = 20 //vastly lower to prevent processing too long
 	base_build_path = /obj/machinery/smartfridge/organ
@@ -726,7 +726,7 @@
 // Chemistry Medical Smartfridge
 // -----------------------------
 /obj/machinery/smartfridge/chemistry
-	name = "умное хранилище химикатов"
+	name = "smart chemical storage"
 	desc = "Холодильник для хранения лекарств."
 	base_build_path = /obj/machinery/smartfridge/chemistry
 	contents_overlay_icon = "chem"
@@ -777,7 +777,7 @@
 // Virology Medical Smartfridge
 // ----------------------------
 /obj/machinery/smartfridge/chemistry/virology
-	name = "умное хранилище вирусов"
+	name = "smart virus storage"
 	desc = "Холодильник для хранения летучих образцов."
 	base_build_path = /obj/machinery/smartfridge/chemistry/virology
 	contents_overlay_icon = "viro"
@@ -799,7 +799,7 @@
 // Disk """fridge"""
 // ----------------------------
 /obj/machinery/smartfridge/disks
-	name = "устройство для сортировки дисков"
+	name = "disk compartmentalize"
 	desc = "Машина, способная хранить множество дисков. В большинстве случаев обозначается как DSU (disk storage unit)."
 	icon_state = "disktoaster"
 	base_icon_state = "disktoaster"
