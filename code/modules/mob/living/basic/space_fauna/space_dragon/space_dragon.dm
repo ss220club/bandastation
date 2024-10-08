@@ -199,7 +199,7 @@
 
 /// Try putting something inside us
 /mob/living/basic/space_dragon/proc/try_eat(atom/movable/food)
-	balloon_alert(src, "swallowing...")
+	balloon_alert(src, "пожираем...")
 	if (do_after(src, 3 SECONDS, target = food))
 		if(isliving(food))
 			eat(food)

@@ -218,9 +218,9 @@
 				if (bodytemperature > dna.species.bodytemp_heat_damage_limit)
 					. += "[t_He] краснеет и хрипло дышит."
 				if (bodytemperature < dna.species.bodytemp_cold_damage_limit)
-					. += "[t_He] [t_is] shivering."
+					. += "[t_He] дрожит."
 				if(HAS_TRAIT(src, TRAIT_EVIL))
-					. += "[t_His] eyes radiate with a unfeeling, cold detachment. There is nothing but darkness within [t_his] soul."
+					. += "[t_His] глаза излучают безчувственную, холодную отстраненность. В [t_his] душе нет ничего, кроме тьмы."
 					living_user.add_mood_event("encountered_evil", /datum/mood_event/encountered_evil)
 					living_user.set_jitter_if_lower(15 SECONDS)
 
