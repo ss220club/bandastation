@@ -419,7 +419,7 @@
 
 //Coffee Cartridges: like toner, but for your coffee!
 /obj/item/coffee_cartridge
-	name = "coffee cartridge - Caffè Generico"
+	name = "coffeemaker cartridge - Caffè Generico"
 	desc = "Кофейный картридж производства Piccionaia Coffee, предназначенный для использования с системой Modello 3."
 	icon = 'icons/obj/food/cartridges.dmi'
 	icon_state = "cartridge_basic"
@@ -434,7 +434,7 @@
 		. += span_warning("В картридже ничего не осталось")
 
 /obj/item/coffee_cartridge/fancy
-	name = "coffee cartridge - Caffè Fantasioso"
+	name = "coffeemaker cartridge - Caffè Fantasioso"
 	desc = "Изысканный кофейный картридж производства Piccionaia Coffee, предназначенный для использования с системой Modello 3."
 	icon_state = "cartridge_blend"
 
@@ -444,26 +444,26 @@
 	var/coffee_type = pick("blend", "blue_mountain", "kilimanjaro", "mocha")
 	switch(coffee_type)
 		if("blend")
-			name = "coffee cartridge - Miscela di Piccione"
+			name = "coffeemaker cartridge - Miscela di Piccione"
 			icon_state = "cartridge_blend"
 		if("blue_mountain")
-			name = "coffee cartridge - Montagna Blu"
+			name = "coffeemaker cartridge - Montagna Blu"
 			icon_state = "cartridge_blue_mtn"
 		if("kilimanjaro")
-			name = "coffee cartridge - Kilimangiaro"
+			name = "coffeemaker cartridge - Kilimangiaro"
 			icon_state = "cartridge_kilimanjaro"
 		if("mocha")
-			name = "coffee cartridge - Moka Arabica"
+			name = "coffeemaker cartridge - Moka Arabica"
 			icon_state = "cartridge_mocha"
 
 /obj/item/coffee_cartridge/decaf
-	name = "coffee cartridge - Caffè Decaffeinato"
+	name = "coffeemaker cartridge - Caffè Decaffeinato"
 	desc = "Картридж для кофе без кофеина, произведенный компанией Piccionaia Coffee, предназначенный для использования с системой Modello 3."
 	icon_state = "cartridge_decaf"
 
 // no you can't just squeeze the juice bag into a glass!
 /obj/item/coffee_cartridge/bootleg
-	name = "coffee cartridge - Botany Blend"
+	name = "coffeemaker cartridge - Botany Blend"
 	desc = "Картридж для приготовления кофе. Должен работать с системой Modello 3, хотя это может привести к потере гарантии."
 	icon_state = "cartridge_bootleg"
 
