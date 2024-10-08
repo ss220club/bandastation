@@ -246,7 +246,7 @@
 				if(quirkstring)
 					to_chat(human_user,  "<span class='notice ml-1'>Обнаружены физиологические черты:</span>\n<span class='notice ml-2'>[quirkstring]</span>")
 				else
-					to_chat(human_user,  "<span class='notice ml-1'>Не были обнаружены физиологические черты.</span>")
+					to_chat(human_user,  "<span class='notice ml-1'>Физиологические черты не были обнаружены.</span>")
 			return //Medical HUD ends here.
 
 		if(href_list["hud"] == "s")
@@ -330,7 +330,7 @@
 					var/datum/crime/citation/new_citation = new(name = citation_name, author = allowed_access, fine = fine)
 
 					target_record.citations += new_citation
-					new_citation.alert_owner(usr, src, target_record.name, "Вам был выставлен штраф в виде [fine] кредитов за '[citation_name]'. Штраф может быть оплачен у отдела безопасности.")
+					new_citation.alert_owner(usr, src, target_record.name, "Вам был выставлен штраф в размере [fine] кредитов за '[citation_name]'. Штраф может быть оплачен у отдела безопасности.")
 					investigate_log("New Citation: <strong>[citation_name]</strong> Fine: [fine] | Added to [target_record.name] by [key_name(human_user)]", INVESTIGATE_RECORDS)
 					SSblackbox.ReportCitation(REF(new_citation), human_user.ckey, human_user.real_name, target_record.name, citation_name, fine)
 
