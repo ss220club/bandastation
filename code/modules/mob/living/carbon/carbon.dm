@@ -302,26 +302,26 @@
 	if((cuff_break != INSTANT_CUFFBREAK) && (SEND_SIGNAL(src, COMSIG_MOB_REMOVING_CUFFS, cuffs) & COMSIG_MOB_BLOCK_CUFF_REMOVAL))
 		return //The blocking object should sent a fluff-appropriate to_chat about cuff removal being blocked
 	if(cuffs.item_flags & BEING_REMOVED)
-		to_chat(src, span_warning("You're already attempting to remove [cuffs]!"))
+		to_chat(src, span_warning("Вы уже пытаетесь снять [cuffs.declent_ru(ACCUSATIVE)]!"))
 		return
 	cuffs.item_flags |= BEING_REMOVED
 	breakouttime = cuffs.breakouttime
 	if(!cuff_break)
-		visible_message(span_warning("[src] attempts to remove [cuffs]!"))
-		to_chat(src, span_notice("You attempt to remove [cuffs]... (This will take around [DisplayTimeText(breakouttime)] and you need to stand still.)"))
+		visible_message(span_warning("[capitalize(declent_ru(NOMINATIVE))] пытается снять [cuffs.declent_ru(ACCUSATIVE)]!"))
+		to_chat(src, span_notice("Вы пытаетесь снять [cuffs.declent_ru(ACCUSATIVE)]... (Это займет примерно [DisplayTimeText(breakouttime)], и вы не должны двигаться.)"))
 		if(do_after(src, breakouttime, target = src, timed_action_flags = IGNORE_HELD_ITEM, hidden = TRUE))
 			. = clear_cuffs(cuffs, cuff_break)
 		else
-			to_chat(src, span_warning("You fail to remove [cuffs]!"))
+			to_chat(src, span_warning("Вам не удалось снять [cuffs.declent_ru(ACCUSATIVE)]!"))
 
 	else if(cuff_break == FAST_CUFFBREAK)
 		breakouttime = 5 SECONDS
-		visible_message(span_warning("[src] is trying to break [cuffs]!"))
-		to_chat(src, span_notice("You attempt to break [cuffs]... (This will take around 5 seconds and you need to stand still.)"))
+		visible_message(span_warning("[capitalize(declent_ru(NOMINATIVE))] пытается сломать [cuffs.declent_ru(ACCUSATIVE)]!"))
+		to_chat(src, span_notice("Вы пытаетесь сломать [cuffs.declent_ru(ACCUSATIVE)]... (Это займер примерно 5 секунд, и вы не должны двигаться.)"))
 		if(do_after(src, breakouttime, target = src, timed_action_flags = IGNORE_HELD_ITEM))
 			. = clear_cuffs(cuffs, cuff_break)
 		else
-			to_chat(src, span_warning("You fail to break [cuffs]!"))
+			to_chat(src, span_warning("Вам не удалось сломать [cuffs.declension_ru(ACCUSATIVE)]!"))
 
 	else if(cuff_break == INSTANT_CUFFBREAK)
 		. = clear_cuffs(cuffs, cuff_break)
@@ -363,8 +363,8 @@
 		return FALSE
 	if(I != handcuffed && I != legcuffed)
 		return FALSE
-	visible_message(span_danger("[src] manages to [cuff_break ? "break" : "remove"] [I]!"))
-	to_chat(src, span_notice("You successfully [cuff_break ? "break" : "remove"] [I]."))
+	visible_message(span_danger("[capitalize(declent_ru(NOMINATIVE))] [cuff_break ? "ломает" : "снимает"] [I.declent_ru(ACCUSATIVE)]!"))
+	to_chat(src, span_notice("Вы успешно [cuff_break ? "ломаете" : "снимаете"] [I.declent_ru(ACCUSATIVE)]."))
 
 	if(cuff_break)
 		. = !((I == handcuffed) || (I == legcuffed))
@@ -441,8 +441,8 @@
 	if(!force && !blood && (nutrition < 100))
 		if(message)
 			visible_message(
-				span_warning("[src] dry heaves!"),
-				span_userdanger("You try to throw up, but there's nothing in your stomach!"),
+				span_warning("[capitalize(declent_ru(NOMINATIVE))] всухую тужится!"),
+				span_userdanger("Вы пытаетесь блевать, но в желудке ничего нет!"),
 			)
 		if(stun)
 			var/stun_time = 20 SECONDS
@@ -456,16 +456,16 @@
 	if(is_mouth_covered()) //make this add a blood/vomit overlay later it'll be hilarious
 		if(message)
 			visible_message(
-				span_danger("[src] throws up all over [p_them()]self!"),
-				span_userdanger("You throw up all over yourself!"),
+				span_danger("[capitalize(declent_ru(NOMINATIVE))] блюет на себя!"),
+				span_userdanger("Вы блюете на себя!"),
 			)
 			add_mood_event("vomit", /datum/mood_event/vomitself)
 		distance = 0
 	else
 		if(message)
 			visible_message(
-				span_danger("[src] throws up!"),
-				span_userdanger("You throw up!"),
+				span_danger("[capitalize(declent_ru(NOMINATIVE))] блюет!"),
+				span_userdanger("Вы блюете!"),
 			)
 			if(!isflyperson(src))
 				add_mood_event("vomit", /datum/mood_event/vomit)
@@ -515,8 +515,8 @@
  * * amount: int The amount of reagent
  */
 /mob/living/carbon/proc/expel_ingested(atom/bite, amount)
-	visible_message(span_danger("[src] throws up all over [p_them()]self!"), \
-					span_userdanger("You are unable to keep the [bite] down without a stomach!"))
+	visible_message(span_danger("[capitalize(declent_ru(NOMINATIVE))] блюет на себя!"), \
+					span_userdanger("Вы не можете удержать в себе [bite.declent_ru(ACCUSATIVE)] без желудка!"))
 
 	var/turf/floor = get_turf(src)
 	var/obj/effect/decal/cleanable/vomit/spew = new(floor, get_static_viruses())
@@ -1005,7 +1005,7 @@
 			organ.Remove(src)
 			organ.forceMove(drop_location())
 	if(organs_amt)
-		to_chat(user, span_notice("You retrieve some of [src]\'s internal organs!"))
+		to_chat(user, span_notice("Вы вытаскиваете несколько органов из [declent_ru(GENITIVE)]!"))
 	remove_all_embedded_objects()
 
 /// Creates body parts for this carbon completely from scratch.
@@ -1480,7 +1480,7 @@
 	if(isnull(head))
 		return ..()
 	if(HAS_TRAIT(src, TRAIT_NOBLOOD))
-		to_chat(src, span_notice("You get a headache."))
+		to_chat(src, span_notice("У вас болит голова."))
 		return
 	head.adjustBleedStacks(5)
-	visible_message(span_notice("[src] gets a nosebleed."), span_warning("You get a nosebleed."))
+	visible_message(span_notice("У [declent_ru(GENITIVE)] пошла кровь из носа."), span_warning("У вас пошла кровь из носа."))

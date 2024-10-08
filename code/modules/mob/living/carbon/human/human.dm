@@ -729,7 +729,7 @@
 	if(vomit_flags & MOB_VOMIT_MESSAGE)
 		visible_message(
 			span_warning("[capitalize(declent_ru(NOMINATIVE))] всухую тужится!"),
-			span_userdanger("Вы пытаетесь вырвать, но в желудке ничего нет!"),
+			span_userdanger("Вы пытаетесь блевать, но в желудке ничего нет!"),
 		)
 	if(vomit_flags & MOB_VOMIT_STUN)
 		Stun(20 SECONDS)
