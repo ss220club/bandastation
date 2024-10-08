@@ -697,7 +697,7 @@ GLOBAL_LIST_EMPTY(features_by_species)
 				return FALSE
 			if(!H.wear_suit)
 				if(!disable_warning)
-					to_chat(H, span_warning("Вам нужно сперова надеть костюм, чтобы прикрепить [I.declent_ru(ACCUSATIVE)]!"))
+					to_chat(H, span_warning("Вам нужно сперва надеть костюм, чтобы прикрепить [I.declent_ru(ACCUSATIVE)]!"))
 				return FALSE
 			if(!H.wear_suit.allowed)
 				if(!disable_warning)
