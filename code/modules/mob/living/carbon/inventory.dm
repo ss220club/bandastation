@@ -365,7 +365,7 @@
 /mob/living/carbon/proc/cutoff_internals()
 	if (!external && !internal)
 		return
-	to_chat(src, span_notice("Вы перестаете дышать из [external.declent_ru(GENITIVE) || internal.declent_ru(GENITIVE)], и клапан перекрывается."))
+	to_chat(src, span_notice("Вы перестаете дышать из [external?.declent_ru(GENITIVE) || internal?.declent_ru(GENITIVE)], и клапан перекрывается."))
 	close_all_airtanks()
 
 /**
