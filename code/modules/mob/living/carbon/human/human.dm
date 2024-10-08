@@ -492,7 +492,7 @@
 		for(var/obj/item/hand in held_items)
 			if(prob(current_size * 5) && hand.w_class >= ((11-current_size)/2)  && dropItemToGround(hand))
 				step_towards(hand, src)
-				to_chat(src, span_warning("\The [S] pulls \the [hand] from your grip!"))
+				to_chat(src, span_warning("[capitalize(S.declent_ru(NOMINATIVE))] утягивает [hand.declent_ru(ACCUSATIVE)] от вас!"))
 
 #define CPR_PANIC_SPEED (0.8 SECONDS)
 
@@ -689,8 +689,8 @@
 	if(!I.loc || buckled)
 		return FALSE
 	if(I == wear_suit)
-		visible_message(span_danger("[src] manages to [cuff_break ? "break" : "remove"] [I]!"))
-		to_chat(src, span_notice("You successfully [cuff_break ? "break" : "remove"] [I]."))
+		visible_message(span_danger("[capitalize(declent_ru(NOMINATIVE))] [cuff_break ? "ломает" : "снимает"] [I.declent_ru(ACCUSATIVE)]!"))
+		to_chat(src, span_notice("Вы успешно [cuff_break ? "ломаете" : "снимаете"] [I.declent_ru(ACCUSATIVE)]."))
 		return TRUE
 
 /mob/living/carbon/human/replace_records_name(oldname, newname) // Only humans have records right now, move this up if changed.
@@ -728,8 +728,8 @@
 
 	if(vomit_flags & MOB_VOMIT_MESSAGE)
 		visible_message(
-			span_warning("[src] dry heaves!"),
-			span_userdanger("You try to throw up, but there's nothing in your stomach!"),
+			span_warning("[capitalize(declent_ru(NOMINATIVE))] всухую тужится!"),
+			span_userdanger("Вы пытаетесь вырвать, но в желудке ничего нет!"),
 		)
 	if(vomit_flags & MOB_VOMIT_STUN)
 		Stun(20 SECONDS)
@@ -927,7 +927,7 @@
 
 /mob/living/carbon/human/proc/fireman_carry(mob/living/carbon/target)
 	if(!can_be_firemanned(target) || INCAPACITATED_IGNORING(src, INCAPABLE_GRAB))
-		to_chat(src, span_warning("You can't fireman carry [target] while [target.p_they()] [target.p_are()] standing!"))
+		to_chat(src, span_warning("Вы не можете поднять [target.declent_ru(ACCUSATIVE)] на плечи, пока [target.ru_p_they()] сопротивляется!"))
 		return
 
 	var/carrydelay = 5 SECONDS //if you have latex you are faster at grabbing
@@ -946,42 +946,42 @@
 		carrydelay *= potential_spine.athletics_boost_multiplier
 
 	if(carrydelay <= 3 SECONDS)
-		skills_space = " very quickly"
+		skills_space = " очень быстро"
 	else if(carrydelay <= 4 SECONDS)
-		skills_space = " quickly"
+		skills_space = " быстро"
 
-	visible_message(span_notice("[src] starts[skills_space] lifting [target] onto [p_their()] back..."),
-		span_notice("You[skills_space] start to lift [target] onto your back..."))
+	visible_message(span_notice("[capitalize(declent_ru(NOMINATIVE))] начинает [skills_space] поднимать [target.declent_ru(ACCUSATIVE)] на свои плечи..."),
+		span_notice("Вы[skills_space] начинаете поднимать [target.declent_ru(ACCUSATIVE)] на свои плечи..."))
 	if(!do_after(src, carrydelay, target))
-		visible_message(span_warning("[src] fails to fireman carry [target]!"))
+		visible_message(span_warning("[capitalize(declent_ru(DATIVE))] не удается поднять [target.declent_ru(ACCUSATIVE)] на плечи!"))
 		return
 
 	//Second check to make sure they're still valid to be carried
 	if(!can_be_firemanned(target) || INCAPACITATED_IGNORING(src, INCAPABLE_GRAB) || target.buckled)
-		visible_message(span_warning("[src] fails to fireman carry [target]!"))
+		visible_message(span_warning("[capitalize(declent_ru(DATIVE))] не удается поднять [target.declent_ru(ACCUSATIVE)] на плечи!"))
 		return
 
 	return buckle_mob(target, TRUE, TRUE, CARRIER_NEEDS_ARM)
 
 /mob/living/carbon/human/proc/piggyback(mob/living/carbon/target)
 	if(!can_piggyback(target))
-		to_chat(target, span_warning("You can't piggyback ride [src] right now!"))
+		to_chat(target, span_warning("Вы не можете сейчас прокатиться на [declent_ru(PREPOSITIONAL)]!"))
 		return
 
-	visible_message(span_notice("[target] starts to climb onto [src]..."))
+	visible_message(span_notice("[capitalize(target.declent_ru(NOMINATIVE))] начинает залазить на [declent_ru(ACCUSATIVE)]..."))
 	if(!do_after(target, 1.5 SECONDS, target = src) || !can_piggyback(target))
-		visible_message(span_warning("[target] fails to climb onto [src]!"))
+		visible_message(span_warning("[capitalize(target.declent_ru(DATIVE))] не удается залезь на [target.declent_ru(ACCUSATIVE)]!"))
 		return
 
 	if(INCAPACITATED_IGNORING(target, INCAPABLE_GRAB) || INCAPACITATED_IGNORING(src, INCAPABLE_GRAB))
-		target.visible_message(span_warning("[target] can't hang onto [src]!"))
+		target.visible_message(span_warning("[capitalize(target.declent_ru(NOMINATIVE))] не может удержаться на [declent_ru(PREPOSITIONAL)]!"))
 		return
 
 	return buckle_mob(target, TRUE, TRUE, RIDER_NEEDS_ARMS)
 
 /mob/living/carbon/human/buckle_mob(mob/living/target, force = FALSE, check_loc = TRUE, buckle_mob_flags= NONE)
 	if(!is_type_in_typecache(target, can_ride_typecache))
-		target.visible_message(span_warning("[target] really can't seem to mount [src]..."))
+		target.visible_message(span_warning("Кажется, [target.declent_ru(NOMINATIVE)] не может оседлать [declent_ru(ACCUSATIVE)]..."))
 		return
 
 	if(!force)//humans are only meant to be ridden through piggybacking and special cases
