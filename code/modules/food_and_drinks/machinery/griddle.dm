@@ -113,7 +113,7 @@
 			loaded++
 			AddToGrill(tray_item, user)
 	if(loaded)
-		to_chat(user, span_notice("[loaded] вываливается прямо на [declent_ru(ACCUSATIVE)]."))
+		to_chat(user, span_notice("[capitalize(loaded)] вываливается прямо на [declent_ru(ACCUSATIVE)]."))
 		update_appearance()
 		return ITEM_INTERACT_SUCCESS
 	return ITEM_INTERACT_BLOCKING

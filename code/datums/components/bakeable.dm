@@ -127,6 +127,6 @@
 		if(current_bake_time <= required_bake_time * 0.75)
 			examine_list += span_notice("Наверное, [parent.declent_ru(ACCUSATIVE)] нужно выпекать немного дольше!")
 		else if(current_bake_time <= required_bake_time)
-			examine_list += span_notice("Кажется, что блюдо '[parent.declent_ru(NOMINATIVE)]' почти готово!")
+			examine_list += span_notice("Кажется, что [parent.declent_ru(NOMINATIVE)] вот-вот запечется!")
 	else
 		examine_list += span_danger("[capitalize(parent.declent_ru(NOMINATIVE))] не стоит засовывать в духовку.")

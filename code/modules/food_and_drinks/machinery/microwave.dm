@@ -203,7 +203,7 @@
 		for(var/item in items_counts)
 			. += span_notice("- [items_counts[item]]x [item].")
 	else
-		. += span_notice("[declent_ru(NOMINATIVE)] пустая.")
+		. += span_notice("[capitalize(declent_ru(NOMINATIVE))] пустая.")
 
 	if(!(machine_stat & (NOPOWER|BROKEN)))
 		. += "[span_notice("На дисплее состояния отображается:")]"+\
@@ -331,7 +331,7 @@
 		return NONE
 
 	user.visible_message(
-		span_notice("[user] начинает ремонт, [declent_ru(NOMINATIVE)] скоро снова заработает!"),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает ремонт, [declent_ru(NOMINATIVE)] скоро снова заработает!"),
 		span_notice("Вы начинаете ремонт, [declent_ru(NOMINATIVE)] скоро снова заработает!"),
 	)
 
@@ -339,7 +339,7 @@
 		return ITEM_INTERACT_BLOCKING
 
 	user.visible_message(
-		span_notice("[user] заканчивает ремонт, [declent_ru(NOMINATIVE)] снова работает."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] заканчивает ремонт, [declent_ru(NOMINATIVE)] снова работает."),
 		span_notice("Вы заканчиваете ремонт, [declent_ru(NOMINATIVE)] снова работает."),
 	)
 	broken = KINDA_BROKEN // Fix it a bit
@@ -351,7 +351,7 @@
 		return NONE
 
 	user.visible_message(
-		span_notice("[user] начинает ремонт, [declent_ru(NOMINATIVE)] скоро снова заработает!"),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает ремонт, [declent_ru(NOMINATIVE)] скоро снова заработает!"),
 		span_notice("ВВы начинаете ремона, [declent_ru(NOMINATIVE)] скоро снова заработает!"),
 	)
 
@@ -359,7 +359,7 @@
 		return ITEM_INTERACT_BLOCKING
 
 	user.visible_message(
-		span_notice("[user] заканчивает ремонт, [declent_ru(NOMINATIVE)] снова работает."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] заканчивает ремонт, [declent_ru(NOMINATIVE)] снова работает."),
 		span_notice("Вы заканчиваете ремонт, [declent_ru(NOMINATIVE)] снова работает."),
 	)
 	broken = NOT_BROKEN
@@ -433,7 +433,7 @@
 
 		ingredients += item
 		open(autoclose = 0.6 SECONDS)
-		user.visible_message(span_notice("[user] добавляет [item] к [declent_ru(DATIVE)]."), span_notice("[item] выгружается прямо в [declent_ru(ACCUSATIVE)]..."))
+		user.visible_message(span_notice("[capitalize(user.declent_ru(NOMINATIVE))] добавляет [item.declent_ru(ACCUSATIVE)] к [declent_ru(DATIVE)]."), span_notice("[item] выгружается прямо в [declent_ru(ACCUSATIVE)]..."))
 		update_appearance()
 		return ITEM_INTERACT_SUCCESS
 
@@ -492,7 +492,7 @@
 	balloon_alert(user, "установлен на [vampire_charging_enabled ? "зарядку" : "готовку"]")
 	playsound(src, 'sound/machines/beep/twobeep_high.ogg', 50, FALSE)
 	if(HAS_SILICON_ACCESS(user))
-		visible_message(span_notice("[user] поставил [declent_ru(ACCUSATIVE)] на [vampire_charging_enabled ? "зарядку" : "готовку"]."), blind_message = span_notice("[declent_ru(NOMINATIVE)] издает звук уведомления!"))
+		visible_message(span_notice("[capitalize(user.declent_ru(NOMINATIVE))] поставил [declent_ru(ACCUSATIVE)] на [vampire_charging_enabled ? "зарядку" : "готовку"]."), blind_message = span_notice("[declent_ru(NOMINATIVE)] издает звук уведомления!"))
 	return CLICK_ACTION_SUCCESS
 
 /obj/machinery/microwave/click_ctrl(mob/user)
@@ -588,7 +588,7 @@
 		return
 
 	if(wire_disabled)
-		audible_message("[declent_ru(NOMINATIVE)] жужжит.")
+		audible_message("[capitalize(declent_ru(NOMINATIVE))] жужжит.")
 		playsound(src, 'sound/machines/buzz/buzz-sigh.ogg', 50, FALSE)
 		return
 
@@ -613,7 +613,7 @@
 		if(istype(potential_fooditem, /obj/item/modular_computer) && prob(75))
 			pda_failure = TRUE
 			notify_ghosts(
-				"[cooker] перегрел свой КПК!",
+				"[capitalize(cooker.declent_ru(NOMINATIVE))] перегрел свой КПК!",
 				source = src,
 				notify_flags = NOTIFY_CATEGORY_NOFLASH,
 				header = "Hunger Games: Catching Fire",

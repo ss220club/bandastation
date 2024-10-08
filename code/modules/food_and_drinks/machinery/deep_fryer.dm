@@ -108,7 +108,7 @@ GLOBAL_LIST_INIT(oilfry_blacklisted_items, typecacheof(list(
 		if(!reagents.total_volume)
 			to_chat(user, span_warning("Не в чем растворять [weapon.declent_ru(ACCUSATIVE)]!"))
 			return
-		user.visible_message(span_notice("[user.declent_ru(NOMINATIVE)] бросает [weapon.declent_ru(ACCUSATIVE)] в [declent_ru(ACCUSATIVE)]."), span_notice("Вы растворяете [weapon.declent_ru(ACCUSATIVE)] в [declent_ru(PREPOSITIONAL)]."))
+		user.visible_message(span_notice("[capitalize(user.declent_ru(NOMINATIVE))] бросает [weapon.declent_ru(ACCUSATIVE)] в [declent_ru(ACCUSATIVE)]."), span_notice("Вы растворяете [weapon.declent_ru(ACCUSATIVE)] в [declent_ru(PREPOSITIONAL)]."))
 		weapon.reagents.trans_to(src, weapon.reagents.total_volume, transferred_by = user)
 		qdel(weapon)
 		return
@@ -233,7 +233,7 @@ GLOBAL_LIST_INIT(oilfry_blacklisted_items, typecacheof(list(
 			return
 		var/mob/living/carbon/dunking_target = user.pulling
 		log_combat(user, dunking_target, "dunked", null, "into [src]")
-		user.visible_message(span_danger("[user] макает лицо [dunking_target.declent_ru(ACCUSATIVE)] в [declent_ru(ACCUSATIVE)]!"))
+		user.visible_message(span_danger("[capitalize(user.declent_ru(NOMINATIVE))] макает лицо [dunking_target.declent_ru(ACCUSATIVE)] в [declent_ru(ACCUSATIVE)]!"))
 		reagents.expose(dunking_target, TOUCH)
 		var/bio_multiplier = dunking_target.getarmor(BODY_ZONE_HEAD, BIO) * 0.01
 		var/target_temp = dunking_target.bodytemperature

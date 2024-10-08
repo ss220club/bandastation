@@ -19,7 +19,7 @@
 	. = ..()
 	RegisterSignal(src, COMSIG_COMPONENT_CLEAN_ACT, PROC_REF(on_cleaned))
 	if(prob(5))
-		name = "мясорубка"
+		name = "meat grinder"
 		desc = "Ладно, если я... если я измельчу тебя в мясорубке, и единственное, что от тебя останется, - это глазное яблоко, \
 			то ты... ты ТОЧНО УМРЕШЬ! Ты, наверное, - не ты, я просто говорю, что если бы ты... если бы кто-то, типа, \
 			если тебя заталкивают в мясорубку, и, к примеру, одна из косточек твоего пальца все еще цела, они не станут ее поднимать и уходить, \
@@ -41,7 +41,7 @@
 /obj/machinery/gibber/examine(mob/user)
 	. = ..()
 	if(in_range(user, src) || isobserver(user))
-		. += span_notice("на дисплее состояния отображается: Вывод <b>[meat_produced]</b> мясных кусков через <b>[gibtime*0.1]</b> секунд работы.")
+		. += span_notice("На дисплее состояния отображается: Вывод <b>[meat_produced]</b> мясных кусков через <b>[gibtime*0.1]</b> секунд работы.")
 		for(var/datum/stock_part/servo/servo in component_parts)
 			if(servo.tier >= 2)
 				. += span_notice("[capitalize(declent_ru(NOMINATIVE))] была модернизирована для обработки неорганических материалов.")
@@ -106,13 +106,13 @@
 					to_chat(user, span_warning("На объекте не должно быть абиотических предметов!"))
 					return
 
-		user.visible_message(span_danger("[user] начинает запихивать [C.declent_ru(ACCUSATIVE)] в мясорубку!"))
+		user.visible_message(span_danger("[capitalize(user.declent_ru(NOMINATIVE))] начинает запихивать [C.declent_ru(ACCUSATIVE)] в мясорубку!"))
 
 		add_fingerprint(user)
 
 		if(do_after(user, gibtime, target = src))
 			if(C && user.pulling == C && !C.buckled && !C.has_buckled_mobs() && !occupant)
-				user.visible_message(span_danger("[user] запихивает [C.declent_ru(ACCUSATIVE)] в [declent_ru(GENITIVE)]!"))
+				user.visible_message(span_danger("[capitalize(user.declent_ru(NOMINATIVE))] запихивает [C.declent_ru(ACCUSATIVE)] в [declent_ru(GENITIVE)]!"))
 				C.forceMove(src)
 				set_occupant(C)
 				update_appearance()

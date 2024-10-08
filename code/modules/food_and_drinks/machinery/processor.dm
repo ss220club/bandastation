@@ -115,7 +115,7 @@
 	var/datum/food_processor_process/recipe = PROCESSOR_SELECT_RECIPE(attacking_item)
 	if(recipe)
 		user.visible_message(
-			span_notice("[user] засунул [attacking_item.declent_ru(ACCUSATIVE)] в [declent_ru(ACCUSATIVE)]."),
+			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] засунул [attacking_item.declent_ru(ACCUSATIVE)] в [declent_ru(ACCUSATIVE)]."),
 			span_notice("Вы засунули [attacking_item.declent_ru(ACCUSATIVE)] в [declent_ru(ACCUSATIVE)]."),
 		)
 		user.transferItemToLoc(attacking_item, src, TRUE)
@@ -136,7 +136,7 @@
 			to_chat(user, span_warning("Для этого вам нужен хват получше!"))
 			return
 		var/mob/living/pushed_mob = user.pulling
-		visible_message(span_warning("[user] пихает [pushed_mob.name] в [declent_ru(ACCUSATIVE)]!"))
+		visible_message(span_warning("[capitalize(user.declent_ru(NOMINATIVE))] пихает [pushed_mob.name] в [declent_ru(ACCUSATIVE)]!"))
 		pushed_mob.forceMove(src)
 		LAZYADD(processor_contents, pushed_mob)
 		user.stop_pulling()
@@ -145,7 +145,7 @@
 		to_chat(user, span_warning("[capitalize(declent_ru(NOMINATIVE))] пустой!"))
 		return TRUE
 	processing = TRUE
-	user.visible_message(span_notice("[user.declent_ru(NOMINATIVE)] включил [declent_ru(ACCUSATIVE)]."), \
+	user.visible_message(span_notice("[capitalize(user.declent_ru(NOMINATIVE))] включил [declent_ru(ACCUSATIVE)]."), \
 		span_notice("Вы включили [declent_ru(NOMINATIVE)]."), \
 		span_hear("Вы слышите кухонный комбайн."))
 	playsound(loc, 'sound/machines/blender.ogg', 50, TRUE)
@@ -189,7 +189,7 @@
 
 /obj/machinery/processor/container_resist_act(mob/living/user)
 	user.forceMove(drop_location())
-	user.visible_message(span_notice("[user.declent_ru(NOMINATIVE)] выбирается из кухонного комбайна!"))
+	user.visible_message(span_notice("[capitalize(user.declent_ru(NOMINATIVE))] выбирается из кухонного комбайна!"))
 
 /obj/machinery/processor/slime
 	name = "slime processor"
@@ -228,7 +228,7 @@
 	if (!recipe)
 		return
 
-	visible_message(span_notice("[picked_slime.declent_ru(NOMINATIVE)] засасывается в [declent_ru(ACCUSATIVE)]]."))
+	visible_message(span_notice("[capitalize(picked_slime.declent_ru(NOMINATIVE))] засасывается в [declent_ru(ACCUSATIVE)]]."))
 	LAZYADD(processor_contents, picked_slime)
 	picked_slime.forceMove(src)
 

@@ -132,7 +132,7 @@
 		QDEL_NULL(cart_tent)
 
 /obj/effect/food_cart_stand
-	name = "food cart stand"
+	name = "food cart tent"
 	desc = "Что-нибудь для борьбы с солнцем, ведь перерывов в работе у работников бургерной нет."
 	icon = 'icons/obj/fluff/3x3.dmi'
 	icon_state = "stand"

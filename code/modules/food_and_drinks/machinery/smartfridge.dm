@@ -64,7 +64,7 @@
 			return ITEM_INTERACT_BLOCKING
 
 		user.visible_message(
-			span_notice("[user] начинает срезать [declent_ru(ACCUSATIVE)] от пола."),
+			span_notice("[capitalize(declent_ru(NOMINATIVE))] начинает срезать [declent_ru(ACCUSATIVE)] от пола."),
 			span_notice("Вы начинаете срезать [declent_ru(ACCUSATIVE)] от пола..."),
 			span_hear("Вы слышите сварку."),
 		)
@@ -84,7 +84,7 @@
 		return ITEM_INTERACT_BLOCKING
 
 	user.visible_message(
-		span_notice("[user.name] начинает приваривать [declent_ru(ACCUSATIVE)] к полу."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает приваривать [declent_ru(ACCUSATIVE)] к полу."),
 		span_notice("Вы начинаете приваривать [declent_ru(ACCUSATIVE)] к полу..."),
 		span_hear("Вы слышите сварку."),
 	)
@@ -105,7 +105,7 @@
 		return ITEM_INTERACT_BLOCKING
 
 	user.visible_message(
-		span_notice("[user] чинит [declent_ru(ACCUSATIVE)]."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] чинит [declent_ru(ACCUSATIVE)]."),
 		span_notice("Вы начинаете чинить [declent_ru(ACCUSATIVE)]..."),
 		span_hear("Вы слышите сварку."),
 	)
@@ -274,7 +274,7 @@
 			accept_check(weapon) \
 		)
 			load(weapon, user)
-			user.visible_message(span_notice("[user] кладет [weapon.declent_ru(ACCUSATIVE)] в [declent_ru(ACCUSATIVE)]]."), span_notice("Вы положили [weapon.declent_ru(ACCUSATIVE)] в [declent_ru(ACCUSATIVE)]]."))
+			user.visible_message(span_notice("[capitalize(user.declent_ru(NOMINATIVE))] кладет [weapon.declent_ru(ACCUSATIVE)] в [declent_ru(ACCUSATIVE)]]."), span_notice("Вы положили [weapon.declent_ru(ACCUSATIVE)] в [declent_ru(ACCUSATIVE)]]."))
 			SStgui.update_uis(src)
 			if(visible_contents)
 				update_appearance()
@@ -296,10 +296,10 @@
 
 			if(loaded)
 				if(shown_contents_length >= max_n_of_items)
-					user.visible_message(span_notice("[user] перекладывает предметы из [weapon.declent_ru(GENITIVE)] в [declent_ru(ACCUSATIVE)]."), \
+					user.visible_message(span_notice("[capitalize(user.declent_ru(NOMINATIVE))] перекладывает предметы из [weapon.declent_ru(GENITIVE)] в [declent_ru(ACCUSATIVE)]."), \
 						span_notice("Вы заполняете [declent_ru(ACCUSATIVE)] предметами из [weapon.declent_ru(ACCUSATIVE)]."))
 				else
-					user.visible_message(span_notice("[user] перекладывает предметы из [weapon.declent_ru(GENITIVE)] в [declent_ru(ACCUSATIVE)]."), \
+					user.visible_message(span_notice("[capitalize(user.declent_ru(NOMINATIVE))] перекладывает предметы из [weapon.declent_ru(GENITIVE)] в [declent_ru(ACCUSATIVE)]."), \
 						span_notice("Вы загружаете [declent_ru(ACCUSATIVE)] предметами из [weapon.declent_ru(GENITIVE)]."))
 				if(weapon.contents.len)
 					to_chat(user, span_warning("Некоторые предметы не влазят."))
@@ -344,7 +344,7 @@
 	if(ismob(weapon.loc))
 		var/mob/owner = weapon.loc
 		if(!owner.transferItemToLoc(weapon, src))
-			to_chat(owner, span_warning("[weapon.declent_ru(NOMINATIVE)] прилип к вашей руке. Нельзя положить [weapon.declent_ru(ACCUSATIVE)] в [declent_ru(ACCUSATIVE)]!"))
+			to_chat(owner, span_warning("[capitalize(weapon.declent_ru(NOMINATIVE))] прилип к вашей руке. Нельзя положить [weapon.declent_ru(ACCUSATIVE)] в [declent_ru(ACCUSATIVE)]!"))
 			return FALSE
 		return TRUE
 	else
@@ -407,7 +407,7 @@
 			var/dispensed_amount = 0
 
 			if(isAI(living_mob))
-				to_chat(living_mob, span_warning("[declent_ru(NOMINATIVE)] вне зоны вашего контроля!"))
+				to_chat(living_mob, span_warning("[capitalize(declent_ru(NOMINATIVE))] вне зоны вашего контроля!"))
 				return
 
 			for(var/obj/item/dispensed_item in contents)
