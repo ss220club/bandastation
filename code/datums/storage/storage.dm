@@ -256,7 +256,7 @@
 		return
 
 	if(href_list["show_valid_pocket_items"])
-		to_chat(user, span_notice("[source] can hold: [can_hold_description]"))
+		to_chat(user, span_notice("[capitalize(source.declent_ru(NOMINATIVE))] может вмещать: [can_hold_description]"))
 
 /datum/storage/proc/handle_examination(datum/source, mob/user, list/examine_list)
 	SIGNAL_HANDLER
@@ -264,7 +264,7 @@
 	if(isnull(can_hold_description))
 		return
 
-	examine_list += span_notice("You can examine this further to check what kind of extra items it can hold.")
+	examine_list += span_notice("Осмотрите подробнее, чтобы узнать, какие еще предметы могут поместиться.")
 
 /datum/storage/proc/handle_extra_examination(datum/source, mob/user, list/examine_list)
 	SIGNAL_HANDLER
@@ -272,7 +272,7 @@
 	if(isnull(can_hold_description))
 		return
 
-	examine_list += span_notice("[source] can hold: [can_hold_description]")
+	examine_list += span_notice("[capitalize(source.declent_ru(NOMINATIVE))] может вмещать: [can_hold_description]")
 
 /// Almost 100% of the time the lists passed into set_holdable are reused for each instance
 /// Just fucking cache it 4head
@@ -309,7 +309,7 @@ GLOBAL_LIST_EMPTY(cached_storage_typecaches)
 	var/list/desc = list()
 
 	for(var/obj/item/valid_item as anything in can_hold_list)
-		desc += "\a [initial(valid_item.name)]"
+		desc += "[initial(valid_item.ru_name_nominative) || initial(valid_item.name)]"
 
 	return "\n\t[span_notice("[desc.Join("\n\t")]")]"
 
@@ -362,7 +362,7 @@ GLOBAL_LIST_EMPTY(cached_storage_typecaches)
 
 	if(locked > force)
 		if(messages && user)
-			user.balloon_alert(user, "closed!")
+			user.balloon_alert(user, "закрыто!")
 		return FALSE
 
 	if((to_insert == parent) || (to_insert == real_location))
@@ -371,21 +371,21 @@ GLOBAL_LIST_EMPTY(cached_storage_typecaches)
 	if(to_insert.w_class > max_specific_storage)
 		if(!is_type_in_typecache(to_insert, exception_hold))
 			if(messages && user)
-				user.balloon_alert(user, "too big!")
+				user.balloon_alert(user, "не помещается!")
 			return FALSE
 		if(exception_max <= get_exception_count())
 			if(messages && user)
-				user.balloon_alert(user, "no room!")
+				user.balloon_alert(user, "нет места!")
 			return FALSE
 
 	if(real_location.contents.len >= max_slots)
 		if(messages && user && !silent_for_user)
-			user.balloon_alert(user, "no room!")
+			user.balloon_alert(user, "нет места!")
 		return FALSE
 
 	if(to_insert.w_class + get_total_weight() > max_total_storage)
 		if(messages && user && !silent_for_user)
-			user.balloon_alert(user, "no room!")
+			user.balloon_alert(user, "нет места!")
 		return FALSE
 
 	var/can_hold_it = isnull(can_hold) || is_type_in_typecache(to_insert, can_hold) || is_type_in_typecache(to_insert, exception_hold)
@@ -393,19 +393,19 @@ GLOBAL_LIST_EMPTY(cached_storage_typecaches)
 	var/trait_says_no = HAS_TRAIT(to_insert, TRAIT_NO_STORAGE_INSERT)
 	if(!can_hold_it || cant_hold_it || trait_says_no)
 		if(messages && user)
-			user.balloon_alert(user, "can't hold!")
+			user.balloon_alert(user, "не может вмещать!")
 		return FALSE
 
 	if(HAS_TRAIT(to_insert, TRAIT_NODROP))
 		if(messages && user)
-			user.balloon_alert(user, "stuck on your hand!")
+			user.balloon_alert(user, "застревает на руке!")
 		return FALSE
 
 	// this is valid if the container our location is being held in is a storage item
 	var/datum/storage/bigger_fish = parent.loc.atom_storage
 	if(bigger_fish && bigger_fish.max_specific_storage < max_specific_storage)
 		if(messages && user)
-			user.balloon_alert(user, "[LOWER_TEXT(parent.loc.name)] is in the way!")
+			user.balloon_alert(user, "[LOWER_TEXT(parent.loc.declent_ru(NOMINATIVE))] на пути!")
 		return FALSE
 
 	if(isitem(parent))
@@ -413,7 +413,7 @@ GLOBAL_LIST_EMPTY(cached_storage_typecaches)
 		var/datum/storage/smaller_fish = to_insert.atom_storage
 		if(smaller_fish && !allow_big_nesting && to_insert.w_class >= item_parent.w_class)
 			if(messages && user)
-				user.balloon_alert(user, "too big!")
+				user.balloon_alert(user, "не помещается!")
 			return FALSE
 
 	return TRUE
