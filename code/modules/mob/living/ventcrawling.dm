@@ -43,7 +43,7 @@
 		return
 	if(buckled)
 		if(provide_feedback)
-			to_chat(src, span_warning("Вы должны остегнуться!"))
+			to_chat(src, span_warning("Вы должны отстегнуться!"))
 		return
 	if(iscarbon(src) && required_nudity)
 		if(length(get_equipped_items(INCLUDE_POCKETS)) || get_num_held_items())
@@ -101,7 +101,7 @@
 			visible_message(span_notice("[capitalize(declent_ru(NOMINATIVE))] залезает в вентиляцию!"), span_notice("Вы залезаете в вентиляцию."))
 			move_into_vent(ventcrawl_target)
 		else
-			to_chat(src, span_warning("Эта вентиляция не подключена к чему либо!"))
+			to_chat(src, span_warning("Эта вентиляция не подключена к чему-либо!"))
 
 /mob/living/basic/slime/can_enter_vent(obj/machinery/atmospherics/components/ventcrawl_target, provide_feedback = TRUE)
 	if(buckled)
