@@ -220,7 +220,7 @@
 		if (merge_stacks)
 			if (istype(active_stack) && active_stack.can_merge(item_stack, inhand = TRUE))
 				if (item_stack.merge(active_stack))
-					to_chat(usr, span_notice("Your [active_stack.name] stack now contains [active_stack.get_amount()] [active_stack.singular_name]\s."))
+					to_chat(usr, span_notice("Your [active_stack.name] stack now contains [active_stack.get_amount()] [active_stack.singular_name]\s.")) // TODO220 - need to add support in master
 					return TRUE
 			else
 				var/obj/item/stack/inactive_stack = get_inactive_held_item()
@@ -531,7 +531,7 @@
 		if(gear.atom_storage?.attempt_insert(src, user, messages = FALSE))
 			return TRUE
 
-	to_chat(user, span_warning("You are unable to equip that!"))
+	to_chat(user, span_warning("Вы не можете экипировать это!"))
 	return FALSE
 
 
@@ -558,7 +558,7 @@
 /mob/proc/execute_quick_equip()
 	var/obj/item/I = get_active_held_item()
 	if(!I)
-		to_chat(src, span_warning("You are not holding anything to equip!"))
+		to_chat(src, span_warning("Вы ничего не держите, что можно было бы экипировать!"))
 		return
 	if(!QDELETED(I))
 		I.equip_to_best_slot(src)
