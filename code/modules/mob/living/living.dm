@@ -185,7 +185,7 @@
 		//Should stop you pushing a restrained person out of the way
 		if(L.pulledby && L.pulledby != src && HAS_TRAIT(L, TRAIT_RESTRAINED))
 			if(!(world.time % 5))
-				to_chat(src, span_warning("[capitalize(L.declent_ru(NOMINATIVE))] связан, вы не можете протолкнуться сквозь."))
+				to_chat(src, span_warning("[capitalize(L.declent_ru(NOMINATIVE))] сдерживается, вы не можете протолкнуться сквозь."))
 			return TRUE
 
 		if(L.pulling)
@@ -193,7 +193,7 @@
 				var/mob/P = L.pulling
 				if(HAS_TRAIT(P, TRAIT_RESTRAINED))
 					if(!(world.time % 5))
-						to_chat(src, span_warning("[capitalize(L.declent_ru(NOMINATIVE))] удерживает [P.declent_ru(ACCUSATIVE)] связками, вы не можете протолкнуться сквозь."))
+						to_chat(src, span_warning("[capitalize(L.declent_ru(NOMINATIVE))] сдерживает [P.declent_ru(ACCUSATIVE)], вы не можете протолкнуться сквозь."))
 					return TRUE
 
 	if(moving_diagonally)//no mob swap during diagonal moves.
@@ -2663,7 +2663,7 @@ GLOBAL_LIST_EMPTY(fire_appearances)
 		reviver.log_message("has revived mob [key_name(src)] with a malfunctioning lazarus injector.", LOG_GAME)
 		if(!isnull(src.mind))
 			src.mind.enslave_mind_to_creator(reviver)
-		to_chat(src, span_userdanger("[reviver.real_name] - ваш хозяин. Помогайте хозяину во всем любой ценой."))
+		to_chat(src, span_userdanger("[capitalize(reviver.real_name)] - ваш хозяин. Помогайте хозяину во всем любой ценой."))
 		lazarus_policy = get_policy(ROLE_LAZARUS_BAD) || "Вы вернулись к жизни благодаря неисправному инъектору лазаруса! Вы теперь слуга того, кто вас вернул к жизни."
 	to_chat(src, span_boldnotice(lazarus_policy))
 
