@@ -186,11 +186,11 @@
 			bleeding_severity = "Вы чувствуете, как ваше тело немеет всё больше и больше по мере кровотечения"
 			next_cooldown *= 1.5
 		if(7 to INFINITY)
-			bleeding_severity = "Your heartbeat thrashes wildly trying to keep up with your bloodloss"
+			bleeding_severity = "Ваше сердце бешенно стучит, пытаясь справиться с кровопотерей"
 
-	var/rate_of_change = ", but it's getting better." // if there's no wounds actively getting bloodier or maintaining the same flow, we must be getting better!
+	var/rate_of_change = ", но кровотечение чуть замедляется." // if there's no wounds actively getting bloodier or maintaining the same flow, we must be getting better!
 	if(HAS_TRAIT(src, TRAIT_COAGULATING)) // if we have coagulant, we're getting better quick
-		rate_of_change = ", but it's clotting up quickly!"
+		rate_of_change = ", и кровь быстро сворачивается!"
 	else
 		// flick through our wounds to see if there are any bleeding ones getting worse or holding flow (maybe move this to handle_blood and cache it so we don't need to cycle through the wounds so much)
 		for(var/i in all_wounds)
@@ -200,10 +200,10 @@
 			var/iter_wound_roc = iter_wound.get_bleed_rate_of_change()
 			switch(iter_wound_roc)
 				if(BLOOD_FLOW_INCREASING) // assume the worst, if one wound is getting bloodier, we focus on that
-					rate_of_change = ", <b>and it's getting worse!</b>"
+					rate_of_change = ", <b>и всё становится только хуже!</b>"
 					break
 				if(BLOOD_FLOW_STEADY) // our best case now is that our bleeding isn't getting worse
-					rate_of_change = ", and it's holding steady."
+					rate_of_change = ", и скорость кровопотери не изменяется."
 				if(BLOOD_FLOW_DECREASING) // this only matters if none of the wounds fit the above two cases, included here for completeness
 					continue
 
