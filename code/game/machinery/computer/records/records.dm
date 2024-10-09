@@ -68,7 +68,7 @@
 			return TRUE
 
 		if("logout")
-			balloon_alert(user, "вышли")
+			balloon_alert(user, "выход")
 			playsound(src, 'sound/machines/terminal/terminal_off.ogg', 70, TRUE)
 			authenticated = FALSE
 
@@ -171,7 +171,7 @@
 		playsound(src, 'sound/machines/terminal/terminal_error.ogg', 70, TRUE)
 		return FALSE
 
-	balloon_alert(user, "вошли")
+	balloon_alert(user, "вход")
 	playsound(src, 'sound/machines/terminal/terminal_on.ogg', 70, TRUE)
 
 	return TRUE
