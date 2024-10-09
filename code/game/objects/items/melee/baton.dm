@@ -665,7 +665,7 @@
 /obj/item/melee/baton/security/proc/apply_stun_effect_end(mob/living/target)
 	var/trait_check = HAS_TRAIT(target, TRAIT_BATON_RESISTANCE) //var since we check it in out to_chat as well as determine stun duration
 	if(!target.IsKnockdown())
-		to_chat(target, span_warning("Your muscles seize, making you collapse[trait_check ? ", but your body quickly recovers..." : "!"]"))
+		to_chat(target, span_warning("Ваши мышцы сводит судорогой, заставляя вас упасть[trait_check ? ", но ваше тело быстро восстанавливается..." : "!"]"))
 
 	if(!trait_check)
 		target.Knockdown(knockdown_time)
@@ -767,7 +767,7 @@
 		to_chat(user, span_notice("Вы не думаете, что [item.declent_ru(NOMINATIVE)] способен хоть как-то улучшить [declent_ru(ACCUSATIVE)]."))
 		return ..()
 
-	to_chat(user, span_notice("Вы крепко вставляете [item.declent_ru(ACCUSATIVE)] в [sparkler.declension_ru(ACCUSATIVE)]."))
+	to_chat(user, span_notice("Вы крепко вставляете [item.declent_ru(ACCUSATIVE)] в [sparkler.declent_ru(ACCUSATIVE)]."))
 	remove_item_from_storage(user)
 	qdel(src)
 	var/obj/item/melee/baton/security/cattleprod/brand_new_prod = new our_prod(user.loc)

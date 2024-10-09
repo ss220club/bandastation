@@ -40,7 +40,7 @@ const UnauthorizedView = (props) => {
           <NoticeBox align="right">
             Вы не вошли.
             <Button ml={2} icon="lock-open" onClick={() => act('login')}>
-              Login
+              Войти
             </Button>
           </NoticeBox>
         </Stack.Item>
