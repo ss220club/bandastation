@@ -140,10 +140,10 @@ const CrimeDisplay = ({ item }: { item: Crime }) => {
           {!!fine && fine > 0 && (
             <>
               <LabeledList.Item color="bad" label="Fine">
-                {fine}cr <Icon color="gold" name="coins" />
+                {fine}кр <Icon color="gold" name="coins" />
               </LabeledList.Item>
               <LabeledList.Item color="good" label="Paid">
-                {paid}cr <Icon color="gold" name="coins" />
+                {paid}кр <Icon color="gold" name="coins" />
               </LabeledList.Item>
             </>
           )}

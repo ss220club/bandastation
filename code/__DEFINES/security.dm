@@ -57,11 +57,11 @@
 
 /// Wanted statuses
 #define WANTED_ARREST "Арест"
-#define WANTED_DISCHARGED "Оправдан"
-#define WANTED_NONE "Пусто"
+#define WANTED_DISCHARGED "Оправдано"
+#define WANTED_NONE "Нет"
 #define WANTED_PAROLE "УДО"
-#define WANTED_PRISONER "Заключенный"
-#define WANTED_SUSPECT "Подозреваемый"
+#define WANTED_PRISONER "Заключение"
+#define WANTED_SUSPECT "Подозрение"
 
 /// List of available wanted statuses
 #define WANTED_STATUSES(...) list(\
