@@ -47,7 +47,7 @@ GLOBAL_LIST_INIT(strippable_alien_humanoid_items, create_strippable_list(list(
 /mob/living/carbon/alien/adult/resist_grab(moving_resist)
 	if(pulledby.grab_state)
 		visible_message(span_danger("[capitalize(declent_ru(NOMINATIVE))] вырывается из хватки [pulledby.declent_ru(GENITIVE)]!"), \
-						span_danger("Вы вырываетест из хватки [pulledby.declent_ru(GENITIVE)]!"))
+						span_danger("Вы вырываетесь из хватки [pulledby.declent_ru(GENITIVE)]!"))
 	pulledby.stop_pulling()
 	. = 0
 
