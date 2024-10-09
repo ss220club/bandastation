@@ -662,7 +662,7 @@
 // -------------------------------------
 /obj/machinery/smartfridge/petri
 	name = "smart petri dish storage"
-	RU_NAMES_LIST_INIT("smart slime extract storage", "умное хранилище чашек Петри", "умного хранилища чашек Петри", "умному хранилищу чашек Петри", "умное хранилище чашек Петри", "умным хранилищем чашек Петри", "умном хранилище чашек Петри")
+	RU_NAMES_LIST_INIT("smart petri dish storage", "умное хранилище чашек Петри", "умного хранилища чашек Петри", "умному хранилищу чашек Петри", "умное хранилище чашек Петри", "умным хранилищем чашек Петри", "умном хранилище чашек Петри")
 	desc = "A refrigerated storage unit for petri dishes."
 	base_build_path = /obj/machinery/smartfridge/petri
 	contents_overlay_icon = "petri"
@@ -678,7 +678,7 @@
 // -------------------------
 /obj/machinery/smartfridge/organ
 	name = "smart organ storage"
-	RU_NAMES_LIST_INIT("smart slime extract storage", "умное хранилище органов", "умного хранилища органов", "умному хранилищу органов", "умное хранилище органов", "умным хранилищем органов", "умном хранилище органов")
+	RU_NAMES_LIST_INIT("smart organ storage", "умное хранилище органов", "умного хранилища органов", "умному хранилищу органов", "умное хранилище органов", "умным хранилищем органов", "умном хранилище органов")
 	desc = "A refrigerated storage unit for organ storage."
 	max_n_of_items = 20 //vastly lower to prevent processing too long
 	base_build_path = /obj/machinery/smartfridge/organ
@@ -733,7 +733,7 @@
 // -----------------------------
 /obj/machinery/smartfridge/chemistry
 	name = "smart chemical storage"
-	RU_NAMES_LIST_INIT("smart slime extract storage", "умное хранилище химикатов", "умного хранилища химикатов", "умному хранилищу химикатов", "умное хранилище химикатов", "умным хранилищем химикатов", "умном хранилище химикатов")
+	RU_NAMES_LIST_INIT("smart chemical storage", "умное хранилище химикатов", "умного хранилища химикатов", "умному хранилищу химикатов", "умное хранилище химикатов", "умным хранилищем химикатов", "умном хранилище химикатов")
 	desc = "A refrigerated storage unit for medicine storage."
 	base_build_path = /obj/machinery/smartfridge/chemistry
 	contents_overlay_icon = "chem"
@@ -785,7 +785,7 @@
 // ----------------------------
 /obj/machinery/smartfridge/chemistry/virology
 	name = "smart virus storage"
-	RU_NAMES_LIST_INIT("smart slime extract storage", "умное хранилище вирусов", "умного хранилища вирусов", "умному хранилищу вирусов", "умное хранилище вирусов", "умным хранилищем вирусов", "умном хранилище вирусов")
+	RU_NAMES_LIST_INIT("smart virus storage", "умное хранилище вирусов", "умного хранилища вирусов", "умному хранилищу вирусов", "умное хранилище вирусов", "умным хранилищем вирусов", "умном хранилище вирусов")
 	desc = "A refrigerated storage unit for volatile sample storage."
 	base_build_path = /obj/machinery/smartfridge/chemistry/virology
 	contents_overlay_icon = "viro"
@@ -808,7 +808,7 @@
 // ----------------------------
 /obj/machinery/smartfridge/disks
 	name = "disk compartmentalizer"
-	RU_NAMES_LIST_INIT("smart slime extract storage", "сортировщик дисков", "сортировщика дисков", "сортировщику дисков", "сортировщик дисков", "сортировщиком дисков", "сортировщике дисков")
+	RU_NAMES_LIST_INIT("disk compartmentalizer", "сортировщик дисков", "сортировщика дисков", "сортировщику дисков", "сортировщик дисков", "сортировщиком дисков", "сортировщике дисков")
 	desc = "A machine capable of storing a variety of disks. Denoted by most as the DSU (disk storage unit)."
 	icon_state = "disktoaster"
 	base_icon_state = "disktoaster"

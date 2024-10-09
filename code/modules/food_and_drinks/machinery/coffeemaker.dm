@@ -482,7 +482,7 @@
 //now, how do you store coffee carts? well, in a rack, of course!
 /obj/item/storage/fancy/coffee_cart_rack
 	name = "coffeemaker cartridge rack"
-	RU_NAMES_LIST_INIT("coffeemaker", "стойка для кофе-картриджее", "стойки для кофе-картриджее", "стойке для кофе-картриджее", "стойку для кофе-картриджее", "стойкой для кофе-картриджее", "стойке для кофе-картриджее")
+	RU_NAMES_LIST_INIT("coffeemaker", "стойка для кофе-картриджей", "стойки для кофе-картриджей", "стойке для кофе-картриджей", "стойку для кофе-картриджей", "стойкой для кофе-картриджей", "стойке для кофе-картриджей")
 	desc = "A small rack for storing coffeemaker cartridges."
 	icon = 'icons/obj/food/containers.dmi'
 	icon_state = "coffee_cartrack4"
