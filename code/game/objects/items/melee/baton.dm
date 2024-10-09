@@ -541,7 +541,7 @@
 /obj/item/melee/baton/security/examine(mob/user)
 	. = ..()
 	if(cell)
-		. += span_notice("[capitalize(declent_ru(NOMINATIVE))] заряжен на [round(cell.percent())]%.")
+		. += span_notice("Батарея [declent_ru(GENITIVE)] заряжена на [round(cell.percent())]%.")
 	else
 		. += span_warning("[capitalize(declent_ru(NOMINATIVE))] не имеет установленного источника питания.")
 
