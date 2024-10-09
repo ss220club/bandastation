@@ -15,7 +15,7 @@
 	/// Player that marked the crime as invalid
 	var/voider
 
-/datum/crime/New(name = "Crime", details = "No details provided.", author = "Anonymous")
+/datum/crime/New(name = "Crime", details = "Детали не указаны.", author = "Anonymous")
 	src.author = author
 	src.details = details
 	src.name = name
@@ -27,7 +27,7 @@
 	/// Amount of money paid for the crime
 	var/paid
 
-/datum/crime/citation/New(name = "Citation", details = "No details provided.", author = "Anonymous", fine = 0)
+/datum/crime/citation/New(name = "Citation", details = "Детали не указаны.", author = "Anonymous", fine = 0)
 	. = ..()
 	src.fine = fine
 	src.paid = 0

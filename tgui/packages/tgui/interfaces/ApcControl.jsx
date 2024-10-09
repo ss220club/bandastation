@@ -31,7 +31,7 @@ export const ApcControl = (props) => {
 const ApcLoggedOut = (props) => {
   const { act, data } = useBackend();
   const { emagged } = data;
-  const text = emagged === 1 ? 'Open' : 'Log In';
+  const text = emagged === 1 ? 'Open' : 'Войти';
   return (
     <Section>
       <Button
@@ -146,7 +146,7 @@ const ControlPanel = (props) => {
         <Button
           icon="sign-out-alt"
           color="bad"
-          content="Log Out"
+          content="Выйти"
           onClick={() => act('log-out')}
         />
       </Stack.Item>
