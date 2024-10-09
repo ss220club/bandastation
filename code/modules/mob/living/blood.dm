@@ -79,7 +79,7 @@
 					to_chat(src, span_bolddanger("Вы сильно чувствуете [word]. Становится сложнее дышать!"))
 					losebreath += 1 * determined_mod * seconds_per_tick
 				else if(getStaminaLoss() < 40 * determined_mod)
-					to_chat(src, span_bolddanger("Вы сильно чувствуете  [word]. Становится сложнее оставаться в сознании!"))
+					to_chat(src, span_bolddanger("Вы сильно чувствуете [word]. Становится сложнее оставаться в сознании!"))
 					adjustStaminaLoss(15 * determined_mod * REM * seconds_per_tick)
 		// Very low blood, danger!!
 		if(BLOOD_VOLUME_BAD to BLOOD_VOLUME_RISKY)
