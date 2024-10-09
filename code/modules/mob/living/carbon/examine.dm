@@ -62,7 +62,7 @@
 		missing -= body_part.body_zone
 		for(var/obj/item/embedded as anything in body_part.embedded_objects)
 			var/stuck_wordage = embedded.is_embed_harmless() ? "застревает" : "впивается"
-			. += span_boldwarning("[capitalize(embedded.declent_ru(ACCUSATIVE))] [stuck_wordage] в [t_his] [body_part.ru_plaintext_zone[ACCUSATIVE]]!")
+			. += span_boldwarning("[capitalize(embedded.declent_ru(ACCUSATIVE))] [stuck_wordage] в [t_his] [body_part.ru_plaintext_zone[ACCUSATIVE] || body_part.plaintext_zone]!")
 
 		for(var/datum/wound/iter_wound as anything in body_part.wounds)
 			. += span_danger(iter_wound.get_examine_description(user))
@@ -75,7 +75,7 @@
 			damage_text = "обмякла и безжизненна"
 		else
 			damage_text = (body_part.brute_dam >= body_part.burn_dam) ? body_part.heavy_brute_msg : body_part.heavy_burn_msg
-		. += span_boldwarning("[t_His] [body_part.ru_plaintext_zone[NOMINATIVE]] [damage_text]!")
+		. += span_boldwarning("[t_His] [body_part.ru_plaintext_zone[NOMINATIVE] || body_part.plaintext_zone] [damage_text]!")
 
 	//stores missing limbs
 	var/l_limbs_missing = 0
@@ -159,9 +159,9 @@
 
 		for(var/obj/item/bodypart/body_part as anything in bodyparts)
 			if(body_part.get_modified_bleed_rate())
-				bleeding_limbs += body_part.ru_plaintext_zone[GENITIVE]
+				bleeding_limbs += body_part.ru_plaintext_zone[GENITIVE] || body_part.plaintext_zone
 			if(body_part.grasped_by)
-				grasped_limbs += body_part.ru_plaintext_zone[ACCUSATIVE]
+				grasped_limbs += body_part.ru_plaintext_zone[ACCUSATIVE] || body_part.plaintext_zone
 
 		if(LAZYLEN(bleeding_limbs))
 			var/bleed_text = "<b>"
