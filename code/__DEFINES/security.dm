@@ -56,12 +56,12 @@
 #define DETSCAN_BLOCK "DETSCAN_BLOCK"
 
 /// Wanted statuses
-#define WANTED_ARREST "Arrest"
-#define WANTED_DISCHARGED "Discharged"
-#define WANTED_NONE "None"
-#define WANTED_PAROLE "Parole"
-#define WANTED_PRISONER "Incarcerated"
-#define WANTED_SUSPECT "Suspected"
+#define WANTED_ARREST "Арест"
+#define WANTED_DISCHARGED "Оправдан"
+#define WANTED_NONE "Пусто"
+#define WANTED_PAROLE "УДО"
+#define WANTED_PRISONER "Заключенный"
+#define WANTED_SUSPECT "Подозреваемый"
 
 /// List of available wanted statuses
 #define WANTED_STATUSES(...) list(\

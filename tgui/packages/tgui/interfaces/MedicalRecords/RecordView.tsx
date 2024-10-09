@@ -26,7 +26,7 @@ import { MedicalRecordData } from './types';
 /** Views a selected record. */
 export const MedicalRecordView = (props) => {
   const foundRecord = getMedicalRecord();
-  if (!foundRecord) return <NoticeBox>No record selected.</NoticeBox>;
+  if (!foundRecord) return <NoticeBox>Ничего не выбрано.</NoticeBox>;
 
   const { act, data } = useBackend<MedicalRecordData>();
   const { assigned_view, physical_statuses, mental_statuses, station_z } = data;
