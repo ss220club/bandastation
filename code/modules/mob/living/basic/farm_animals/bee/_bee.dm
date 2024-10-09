@@ -293,7 +293,7 @@
 	name = queen.name
 
 /obj/item/queen_bee/suicide_act(mob/living/user)
-	user.visible_message(span_suicide("[user] eats [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
+	user.visible_message(span_suicide("[user] eats [src]! Кажется, [user.ru_p_they()] пытается совершить самоубийство!"))
 	user.say("IT'S HIP TO EAT BEES!")
 	qdel(src)
 	return TOXLOSS

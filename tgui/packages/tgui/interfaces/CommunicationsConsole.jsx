@@ -658,8 +658,8 @@ export const CommunicationsConsole = (props) => {
               icon={authenticated ? 'sign-out-alt' : 'sign-in-alt'}
               content={
                 authenticated
-                  ? `Log Out${authorizeName ? ` (${authorizeName})` : ''}`
-                  : 'Log In'
+                  ? `Выйти${authorizeName ? ` (${authorizeName})` : ''}`
+                  : 'Войти'
               }
               color={authenticated ? 'bad' : 'good'}
               onClick={() => act('toggleAuthentication')}
