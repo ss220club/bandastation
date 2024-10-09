@@ -135,7 +135,7 @@ GLOBAL_LIST_INIT(bibleitemstates, list(
 	atom_storage.max_specific_storage = WEIGHT_CLASS_SMALL
 
 /obj/item/book/bible/suicide_act(mob/living/user)
-	user.visible_message(span_suicide("[user] is offering [user.p_them()]self to [deity_name]! It looks like [user.p_theyre()] trying to commit suicide!"))
+	user.visible_message(span_suicide("[user] is offering [user.p_them()]self to [deity_name]! Кажется, [user.ru_p_they()] пытается совершить самоубийство!"))
 	return BRUTELOSS
 
 /obj/item/book/bible/attack_self(mob/living/carbon/human/user)
