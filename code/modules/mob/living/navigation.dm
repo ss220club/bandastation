@@ -16,10 +16,10 @@
 		return
 	if(length(client.navigation_images))
 		addtimer(CALLBACK(src, PROC_REF(cut_navigation)), world.tick_lag)
-		balloon_alert(src, "навигатор убран")
+		balloon_alert(src, "навигация убрана")
 		return
 	if(!COOLDOWN_FINISHED(src, navigate_cooldown))
-		balloon_alert(src, "навигатор на задержке!")
+		balloon_alert(src, "навигация на задержке!")
 		return
 	addtimer(CALLBACK(src, PROC_REF(create_navigation)), world.tick_lag)
 
@@ -33,15 +33,15 @@
 
 	if(!is_reserved_level(z)) //don't let us path to nearest staircase or ladder on shuttles in transit
 		if(z > 1)
-			destination_list["Nearest Way Down"] = DOWN
+			destination_list["Близлежащий путь вниз"] = DOWN
 		if(z < world.maxz)
-			destination_list["Nearest Way Up"] = UP
+			destination_list["Близлежащий путь вверх"] = UP
 
 	if(!length(destination_list))
-		balloon_alert(src, "нет сигнала для новигатора!")
+		balloon_alert(src, "нет сигнала для навигации!")
 		return
 
-	var/platform_code = tgui_input_list(src, "Выберите локацию", "Навигатор", sort_list(destination_list))
+	var/platform_code = tgui_input_list(src, "Выберите локацию", "Навигация", sort_list(destination_list))
 	var/navigate_target = destination_list[platform_code]
 
 	if(isnull(navigate_target))
@@ -92,7 +92,7 @@
 		animate(path_image, 0.5 SECONDS, alpha = 150)
 	addtimer(CALLBACK(src, PROC_REF(shine_navigation)), 0.5 SECONDS)
 	RegisterSignal(src, COMSIG_LIVING_DEATH, PROC_REF(cut_navigation))
-	balloon_alert(src, "навигатор создан")
+	balloon_alert(src, "навигация создана")
 
 /mob/living/proc/shine_navigation()
 	for(var/i in 1 to length(client.navigation_images))
