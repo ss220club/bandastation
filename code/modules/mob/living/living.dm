@@ -98,8 +98,8 @@
 		skip_knockdown = TRUE
 		if(small_surface_area)
 			visible_message(
-				span_notice("[capitalize(declent_ru(NOMINATIVE))] жестко падает на [impacted_turf], но благополучно приземляется своими ногами!"),
-				span_notice("Вы жестко падаете на [impacted_turf], но благополучно приземляетесь своими ногами!"),
+				span_notice("[capitalize(declent_ru(NOMINATIVE))] жестко падает на [impacted_turf.declent_ru(ACCUSATIVE)], но благополучно приземляется своими ногами!"),
+				span_notice("Вы жестко падаете на [impacted_turf.declent_ru(ACCUSATIVE)], но благополучно приземляетесь своими ногами!"),
 			)
 			new /obj/effect/temp_visual/mook_dust/small(impacted_turf)
 			return .
@@ -108,8 +108,8 @@
 		add_movespeed_modifier(/datum/movespeed_modifier/landed_on_feet)
 		addtimer(CALLBACK(src, TYPE_PROC_REF(/mob, remove_movespeed_modifier), /datum/movespeed_modifier/landed_on_feet), levels * 2 SECONDS)
 		visible_message(
-			span_danger("[capitalize(declent_ru(NOMINATIVE))] жестко падает на [impacted_turf] и болезненно приземляется на свои ноги!"),
-			span_userdanger("Вы жестко падаете на [impacted_turf] и инстиктивно приземляетесь на ноги - болезненно!"),
+			span_danger("[capitalize(declent_ru(NOMINATIVE))] жестко падает на [impacted_turf.declent_ru(ACCUSATIVE)] и болезненно приземляется на свои ноги!"),
+			span_userdanger("Вы жестко падаете на [impacted_turf.declent_ru(ACCUSATIVE)] и инстиктивно приземляетесь на ноги - болезненно!"),
 		)
 		new /obj/effect/temp_visual/mook_dust(impacted_turf)
 
