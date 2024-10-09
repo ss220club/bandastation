@@ -386,7 +386,7 @@ const ProductStock = (props) => {
         'good'
       }
     >
-      ост. {remaining}
+      {remaining} ост.
     </Box>
   );
 };
