@@ -78,7 +78,7 @@
 		return ITEM_INTERACT_SUCCESS
 
 	if(!anchored)
-		balloon_alert(user, "сначала прикрути!")
+		balloon_alert(user, "не прикручено!")
 		return ITEM_INTERACT_BLOCKING
 
 	if(!tool.tool_start_check(user, amount=2))
@@ -132,7 +132,7 @@
 
 /obj/machinery/smartfridge/can_be_unfasten_wrench(mob/user, silent)
 	if(welded_down)
-		balloon_alert(user, "сперва развари!")
+		balloon_alert(user, "не разварено!")
 		return FAILED_UNFASTEN
 	return ..()
 
@@ -153,7 +153,7 @@
 		return ITEM_INTERACT_SUCCESS
 
 	if(welded_down)
-		balloon_alert(user, "сперва развари!")
+		balloon_alert(user, "не разварено!")
 	else
 		default_deconstruction_crowbar(tool)
 	return ITEM_INTERACT_SUCCESS

@@ -92,12 +92,12 @@
 				|| istype(current_reagent, /datum/reagent/water) \
 				|| istype(current_reagent, /datum/reagent/consumable) \
 			)
-				examine_list += "&bull; [round(current_reagent.volume, 0.01)] юнитов [current_reagent.declent_ru(GENITIVE)]"
+				examine_list += "&bull; [round(current_reagent.volume, 0.01)] [declension_ru(unknown_volume,"юнит","юнита","юнитов")] [current_reagent.declent_ru(GENITIVE)]"
 			else
 				unknown_volume += current_reagent.volume
 
 		if(unknown_volume > 0)
-			examine_list += "&bull; [round(unknown_volume, 0.01)] юнитов неизвестного ингредиента"
+			examine_list += "&bull; [round(unknown_volume, 0.01)] [declension_ru(unknown_volume,"юнит","юнита","юнитов")] неизвестного ингредиента"
 
 		if(reagents.total_volume > 0)
 			if(can_see_insides)
@@ -135,7 +135,7 @@
 		if(!can_add_ingredient(tray_item))
 			continue
 		if(LAZYLEN(added_ingredients) >= max_ingredients)
-			balloon_alert(user, "она полная!")
+			balloon_alert(user, "заполнено!")
 			return TRUE
 		if(tray.atom_storage.attempt_remove(tray_item, src))
 			loaded++

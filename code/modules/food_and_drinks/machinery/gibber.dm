@@ -84,21 +84,21 @@
 	if(machine_stat & (NOPOWER|BROKEN))
 		return
 	if(operating)
-		to_chat(user, span_danger("он заблокирован и работает."))
+		to_chat(user, span_danger("Машина работает, потому доступ заблокирован."))
 		return
 
 	if(!anchored)
-		to_chat(user, span_warning("нельзя использовать мясорубку, пока она не прикручена к полу!"))
+		to_chat(user, span_warning("Нельзя использовать [declent_ru(ACCUSATIVE)], пока [ru_p_they()] не прикручена к полу!"))
 		return
 
 	if(user.pulling && isliving(user.pulling))
 		var/mob/living/L = user.pulling
 		if(!iscarbon(L))
-			to_chat(user, span_warning("этот предмет не подходит для [declent_ru(GENITIVE)]!"))
+			to_chat(user, span_warning("Этот предмет не подходит для [declent_ru(GENITIVE)]!"))
 			return
 		var/mob/living/carbon/C = L
 		if(C.buckled || C.has_buckled_mobs())
-			to_chat(user, span_warning("[C.declent_ru(NOMINATIVE)] к чему-то прикреплен!"))
+			to_chat(user, span_warning("[capitalize(C.declent_ru(NOMINATIVE))] уже к чему-то прикреплен!"))
 			return
 
 		if(!ignore_clothing)
@@ -224,7 +224,7 @@
 		skin = new typeofskin
 
 	log_combat(user, occupant, "gibbed")
-	mob_occupant.investigate_log("был перемолот при помощи [declent_ru(GENITIVE)].", INVESTIGATE_DEATHS)
+	mob_occupant.investigate_log("has been gibbed by [src].", INVESTIGATE_DEATHS)
 	mob_occupant.death(TRUE)
 	mob_occupant.ghostize()
 	set_occupant(null)

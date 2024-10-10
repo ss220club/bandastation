@@ -135,7 +135,7 @@
 /obj/effect/food_cart_stand
 	name = "food cart tent"
 	RU_NAMES_LIST_INIT("food cart tent", "палатка для тележки с едой", "палатки для тележки с едой", "палатке для тележки с едой", "палатку для тележки с едой", "палаткой для тележки с едой", "палатке для тележки с едой")
-	desc = "Что-нибудь для борьбы с солнцем, ведь перерывов в работе у работников бургерной нет."
+	desc = "Что-то для борьбы с солнцем, ведь перерывов у работников бургерной нет."
 	icon = 'icons/obj/fluff/3x3.dmi'
 	icon_state = "stand"
 	layer = ABOVE_MOB_LAYER//big mobs will still go over the tent, this is fine and cool

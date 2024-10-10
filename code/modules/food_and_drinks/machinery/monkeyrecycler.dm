@@ -39,7 +39,7 @@ GLOBAL_LIST_EMPTY(monkey_recyclers)
 /obj/machinery/monkey_recycler/examine(mob/user)
 	. = ..()
 	if(in_range(user, src) || isobserver(user))
-		. += span_notice("На дисплее состояния отображается: Производит <b>[cube_production]</b> кубиков за каждую обезьяну.")
+		. += span_notice("На дисплее состояния отображается: Производит <b>[cube_production]</b> [declension_ru(cube_production,"кубик","кубика","кубиков")] за каждую обезьяну.")
 
 /obj/machinery/monkey_recycler/wrench_act(mob/living/user, obj/item/tool)
 	. = ..()

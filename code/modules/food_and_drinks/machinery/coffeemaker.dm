@@ -105,7 +105,7 @@
 				. += span_notice("- порций в кофейном картридже: [cartridge.charges].")
 
 	if (coffee_cups >= 1)
-		. += span_notice("Осталось [coffee_cups] [coffee_cups == 1 ? "кофейная чашка" : "кофейных чашек"].")
+		. += span_notice("Осталось [coffee_cups] [declension_ru(coffee_cups,"кофейная чашка","кофейные чашки","кофейных чашек")].")
 	else
 		. += span_notice("Чашек больше нет.")
 
@@ -266,19 +266,19 @@
 
 /obj/machinery/coffeemaker/proc/try_brew()
 	if(!cartridge)
-		balloon_alert(usr, "не вставлен картридж для кофе!")
+		balloon_alert(usr, "Не вставлен картридж для кофе!")
 		return FALSE
 	if(cartridge.charges < 1)
-		balloon_alert(usr, "кофейный картридж пуст!")
+		balloon_alert(usr, "Кофейный картридж пуст!")
 		return FALSE
 	if(!coffeepot)
-		balloon_alert(usr, "нет кофейника внутри!")
+		balloon_alert(usr, "Нет кофейника внутри!")
 		return FALSE
 	if(machine_stat & (NOPOWER|BROKEN))
-		balloon_alert(usr, "кофеварка обесточена!")
+		balloon_alert(usr, "Кофеварка обесточена!")
 		return FALSE
 	if(coffeepot.reagents.total_volume >= coffeepot.reagents.maximum_volume)
-		balloon_alert(usr, "кофейник уже полон!")
+		balloon_alert(usr, "Кофейник уже полон!")
 		return FALSE
 	return TRUE
 
@@ -532,7 +532,7 @@
 /obj/machinery/coffeemaker/impressa/examine(mob/user)
 	. = ..()
 	if(coffee)
-		. += span_notice("Внутренняя кофемолка содержит [coffee.len] порций кофейных зерен")
+		. += span_notice("Внутренняя кофемолка содержит [coffee.len] [declension_ru(coffee.len,"порция","порции","порций")] кофейных зерен")
 
 /obj/machinery/coffeemaker/impressa/update_overlays()
 	. = ..()
@@ -574,16 +574,16 @@
 
 /obj/machinery/coffeemaker/impressa/try_brew()
 	if(coffee_amount <= 0)
-		balloon_alert_to_viewers("нет кофейных зерен!")
+		balloon_alert_to_viewers("Нет кофейных зерен!")
 		return FALSE
 	if(!coffeepot)
-		balloon_alert_to_viewers("нет кофейника внутри!")
+		balloon_alert_to_viewers("Нет кофейника внутри!")
 		return FALSE
 	if(machine_stat & (NOPOWER|BROKEN) )
-		balloon_alert_to_viewers("кофеварка без питания!")
+		balloon_alert_to_viewers("Кофеварка без питания!")
 		return FALSE
 	if(coffeepot.reagents.total_volume >= coffeepot.reagents.maximum_volume)
-		balloon_alert_to_viewers("кофейник уже полон!")
+		balloon_alert_to_viewers("Кофейник уже полон!")
 		return FALSE
 	return TRUE
 
@@ -674,7 +674,7 @@
 			return
 		coffee += new_coffee
 		coffee_amount++
-		balloon_alert(user, "добавил кофе")
+		balloon_alert(user, "добавлено кофе")
 
 
 	if (istype(attack_item, /obj/item/storage/box/coffeepack))
@@ -689,7 +689,7 @@
 						coffee += new_coffee
 						coffee_amount++
 						new_coffee.forceMove(src)
-						balloon_alert(user, "добавил кофе")
+						balloon_alert(user, "добавлено кофе")
 						update_appearance(UPDATE_OVERLAYS)
 					else
 						return
@@ -706,7 +706,7 @@
 	if(!coffee_cups) //shouldn't happen, but we all know how stuff manages to break
 		balloon_alert(user, "чашек не осталось!")
 		return
-	balloon_alert_to_viewers("взял чашку")
+	balloon_alert_to_viewers("чашка взята!")
 	var/obj/item/reagent_containers/cup/glass/coffee/no_lid/new_cup = new(get_turf(src))
 	user.put_in_hands(new_cup)
 	coffee_cups--

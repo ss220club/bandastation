@@ -134,7 +134,7 @@
 			balloon_alert(user, "контейнеры заменены")
 			custom_ice_cream_beaker = beaker
 		else
-			balloon_alert(user, "некуда ставить!")
+			balloon_alert(user, "заполнено!")
 		return
 	if(!user.transferItemToLoc(beaker, src))
 		return

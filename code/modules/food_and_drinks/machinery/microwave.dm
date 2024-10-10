@@ -387,13 +387,13 @@
 
 	if(dirty >= MAX_MICROWAVE_DIRTINESS) // The microwave is all dirty so can't be used!
 		if(IS_EDIBLE(item))
-			balloon_alert(user, "it's too dirty!")
+			balloon_alert(user, "слишком грязно!")
 			return ITEM_INTERACT_BLOCKING
 		return NONE
 
 	if(broken > NOT_BROKEN)
 		if(IS_EDIBLE(item))
-			balloon_alert(user, "он сломан!")
+			balloon_alert(user, "сломано!")
 			return ITEM_INTERACT_BLOCKING
 		return NONE
 
@@ -409,7 +409,7 @@
 			update_appearance()
 			return ITEM_INTERACT_BLOCKING
 		cell = item
-		balloon_alert(user, "[swapped ? "поменял" : "вставил"] батарейку")
+		balloon_alert(user, "батарейка [swapped ? "заменена" : "вставлена"]")
 		update_appearance()
 		return ITEM_INTERACT_SUCCESS
 
@@ -425,7 +425,7 @@
 
 	if(item.w_class <= WEIGHT_CLASS_NORMAL && !user.combat_mode && isnull(item.atom_storage))
 		if(ingredients.len >= max_n_of_items)
-			balloon_alert(user, "Заполнено!")
+			balloon_alert(user, "заполнено!")
 			return ITEM_INTERACT_BLOCKING
 		if(!user.transferItemToLoc(item, src))
 			balloon_alert(user, "приклеилось к вашей руке!")
@@ -458,7 +458,7 @@
 		if(!IS_EDIBLE(tray_item))
 			continue
 		if(ingredients.len >= max_n_of_items)
-			balloon_alert(user, "Заполнено!")
+			balloon_alert(user, "заполнено!")
 			return
 		if(tool.atom_storage.attempt_remove(tray_item, src))
 			loaded++
@@ -477,7 +477,7 @@
 /obj/machinery/microwave/attack_hand_secondary(mob/user, list/modifiers)
 	if(user.can_perform_action(src, ALLOW_SILICON_REACH))
 		if(!length(ingredients))
-			balloon_alert(user, "он пустой!")
+			balloon_alert(user, "пусто!")
 			return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
 
 		start_cycle(user)
@@ -501,7 +501,7 @@
 
 	if(cell_powered && !isnull(cell))
 		user.put_in_hands(cell)
-		balloon_alert(user, "убрал батарейку")
+		balloon_alert(user, "батарейка убрана")
 		cell = null
 		update_appearance()
 		return CLICK_ACTION_SUCCESS
@@ -523,7 +523,7 @@
 		if(HAS_AI_ACCESS(user))
 			examine(user)
 		else
-			balloon_alert(user, "он пустой!")
+			balloon_alert(user, "пусто!")
 		return
 
 	var/choice = show_radial_menu(user, src, HAS_AI_ACCESS(user) ? ai_radial_options : radial_options, require_near = !HAS_SILICON_ACCESS(user))

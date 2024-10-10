@@ -76,7 +76,7 @@
 		//Clamp it so that the icon never moves more than 16 pixels in either direction (thus leaving the table turf)
 		I.pixel_x = clamp(text2num(LAZYACCESS(modifiers, ICON_X)) - 16, -(world.icon_size/2), world.icon_size/2)
 		I.pixel_y = clamp(text2num(LAZYACCESS(modifiers, ICON_Y)) - 16, -(world.icon_size/2), world.icon_size/2)
-		to_chat(user, span_notice("Ты помещаешь [I.declent_ru(ACCUSATIVE)] на [declent_ru(ACCUSATIVE)]."))
+		to_chat(user, span_notice("Вы помещаете [I.declent_ru(ACCUSATIVE)] на [declent_ru(ACCUSATIVE)]."))
 		AddToGrill(I, user)
 	else
 		return ..()
@@ -94,7 +94,7 @@
 		return NONE
 
 	if(length(contents) >= max_items)
-		balloon_alert(user, "Оно полно!")
+		balloon_alert(user, "заполнено!")
 		return ITEM_INTERACT_BLOCKING
 
 	if(!istype(item, /obj/item/storage/bag/tray))

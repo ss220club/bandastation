@@ -80,7 +80,7 @@
 	if(anchored)
 		. += span_notice("Он [EXAMINE_HINT("прикручен")] на месте.")
 	else
-		. += span_warning("должен быть [EXAMINE_HINT("прикручен")] для работы.")
+		. += span_warning("Должен быть [EXAMINE_HINT("прикручен")] для работы.")
 
 /obj/machinery/grill/update_icon_state()
 	if(!QDELETED(grilled_item))
@@ -134,7 +134,7 @@
 		if(!QDELETED(grilled_item))
 			return NONE
 		if(!anchored)
-			balloon_alert(user, "нужно сперва прикрутить!")
+			balloon_alert(user, "не прикручено!")
 			return ITEM_INTERACT_BLOCKING
 
 		//required for amount subtypes
@@ -151,7 +151,7 @@
 			if(!istype(stored, target_type))
 				continue
 			if(stored.amount == MAX_STACK_SIZE)
-				balloon_alert(user, "нет места!")
+				balloon_alert(user, "заполнено!")
 				return ITEM_INTERACT_BLOCKING
 			target.merge(stored)
 			merged = TRUE
@@ -212,12 +212,12 @@
 	if(IS_EDIBLE(weapon))
 		//sanity checks
 		if(!anchored)
-			balloon_alert(user, "сперва прикрути!")
+			balloon_alert(user, "не прикручено!")
 			return ITEM_INTERACT_BLOCKING
 		if(HAS_TRAIT(weapon, TRAIT_NODROP))
 			return ..()
 		if(!QDELETED(grilled_item))
-			balloon_alert(user, "сперва убери предметы!")
+			balloon_alert(user, "нужно опустошить!")
 			return ITEM_INTERACT_BLOCKING
 		if(grill_fuel <= 0)
 			balloon_alert(user, "нет топлива!")
@@ -253,7 +253,7 @@
 
 	. = ITEM_INTERACT_BLOCKING
 	if(anchored)
-		balloon_alert(user, "нужно сперва открутить!")
+		balloon_alert(user, "прикручено!")
 		return
 
 	if(default_deconstruction_crowbar(tool, ignore_panel = TRUE))

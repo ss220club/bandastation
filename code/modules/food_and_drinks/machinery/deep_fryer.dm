@@ -194,7 +194,7 @@ GLOBAL_LIST_INIT(oilfry_blacklisted_items, typecacheof(list(
 	to_chat(user, span_notice("Вы помещаете [frying_item.declent_ru(ACCUSATIVE)] в [declent_ru(ACCUSATIVE)]."))
 	if(istype(frying_item, /obj/item/freeze_cube))
 		log_bomber(user, "put a freeze cube in a", src)
-		visible_message(span_userdanger("[capitalize(declent_ru(NOMINATIVE))]  начинает светиться... О нет..."))
+		visible_message(span_userdanger("[capitalize(declent_ru(NOMINATIVE))] начинает светиться... О нет..."))
 		playsound(src, 'sound/effects/pray_chaplain.ogg', 100)
 		add_filter("entropic_ray", 10, list("type" = "rays", "size" = 35, "color" = COLOR_VIVID_YELLOW))
 		addtimer(CALLBACK(src, PROC_REF(blow_up)), 5 SECONDS)
@@ -233,7 +233,7 @@ GLOBAL_LIST_INIT(oilfry_blacklisted_items, typecacheof(list(
 			return
 		var/mob/living/carbon/dunking_target = user.pulling
 		log_combat(user, dunking_target, "dunked", null, "into [src]")
-		user.visible_message(span_danger("[capitalize(user.declent_ru(NOMINATIVE))] макает лицо [dunking_target.declent_ru(ACCUSATIVE)] в [declent_ru(ACCUSATIVE)]!"))
+		user.visible_message(span_danger("[capitalize(user.declent_ru(NOMINATIVE))] макает лицо [dunking_target.declent_ru(GENITIVE)] в [declent_ru(ACCUSATIVE)]!"))
 		reagents.expose(dunking_target, TOUCH)
 		var/bio_multiplier = dunking_target.getarmor(BODY_ZONE_HEAD, BIO) * 0.01
 		var/target_temp = dunking_target.bodytemperature
