@@ -1,7 +1,7 @@
 #define MAX_CONTAINER_PRINT_AMOUNT 50
 
 /obj/machinery/chem_master
-	name = "ХимМастер 3000"
+	name = "ChemMaster 3000"
 	desc = "Используется для выведения и разделения химикатов и их различных форм."
 	icon = 'icons/obj/medical/chemical.dmi'
 	icon_state = "chemmaster"
@@ -532,7 +532,7 @@
 		update_appearance(UPDATE_OVERLAYS)
 
 /obj/machinery/chem_master/condimaster
-	name = "ПриправМастер 3000"
+	name = "CondiMaster 3000"
 	desc = "Используется для создания приправ."
 	icon_state = "condimaster"
 

@@ -170,7 +170,7 @@
 			continue
 		process_food(recipe, content_item)
 	processing = FALSE
-	visible_message(span_notice(" [declent_ru(NOMINATIVE)] заканчивает обработку."))
+	visible_message(span_notice(" [capitalize(declent_ru(NOMINATIVE))] заканчивает обработку."))
 
 /obj/machinery/processor/verb/eject()
 	set category = "Object"
@@ -240,7 +240,7 @@
 
 	if(processed_slime.stat != DEAD)
 		processed_slime.forceMove(drop_location())
-		processed_slime.balloon_alert_to_viewers("ползет")
+		processed_slime.balloon_alert_to_viewers("выползает")
 		return
 
 	var/core_count = processed_slime.cores

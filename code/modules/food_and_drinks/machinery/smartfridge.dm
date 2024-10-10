@@ -4,7 +4,7 @@
 /obj/machinery/smartfridge
 	name = "smartfridge"
 	RU_NAMES_LIST_INIT("smartfridge", "умный холодильник", "умного холодильника", "умному холодильнику", "умный холодильник", "умным холодильником", "умном холодильнике")
-	desc = "Сохраняет холодные вещи холодными, а горячие - горячими."
+	desc = "Сохраняет холодные вещи холодными, а горячие - холодными."
 	icon = 'icons/obj/machines/smartfridge.dmi'
 	icon_state = "smartfridge-icon"
 	base_icon_state = "smartfridge"
@@ -65,16 +65,16 @@
 			return ITEM_INTERACT_BLOCKING
 
 		user.visible_message(
-			span_notice("[capitalize(declent_ru(NOMINATIVE))] начинает срезать [declent_ru(ACCUSATIVE)] от пола."),
-			span_notice("Вы начинаете срезать [declent_ru(ACCUSATIVE)] от пола..."),
-			span_hear("Вы слышите сварку."),
+			span_notice("[capitalize(declent_ru(NOMINATIVE))] начинает отваривать [declent_ru(ACCUSATIVE)] от пола."),
+			span_notice("Вы начинаете отваривать [declent_ru(ACCUSATIVE)] от пола..."),
+			span_hear("Вы слышите звук сварки."),
 		)
 
 		if(!tool.use_tool(src, user, delay=100, volume=100))
 			return ITEM_INTERACT_BLOCKING
 
 		welded_down = FALSE
-		to_chat(user, span_notice("Вы отрезали [declent_ru(GENITIVE)] от пола."))
+		to_chat(user, span_notice("Вы отварили [declent_ru(ACCUSATIVE)] от пола."))
 		return ITEM_INTERACT_SUCCESS
 
 	if(!anchored)
@@ -87,7 +87,7 @@
 	user.visible_message(
 		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает приваривать [declent_ru(ACCUSATIVE)] к полу."),
 		span_notice("Вы начинаете приваривать [declent_ru(ACCUSATIVE)] к полу..."),
-		span_hear("Вы слышите сварку."),
+		span_hear("Вы слышите звук сварки."),
 	)
 
 	if(!tool.use_tool(src, user, delay = 100, volume = 100))
@@ -106,15 +106,15 @@
 		return ITEM_INTERACT_BLOCKING
 
 	user.visible_message(
-		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] чинит [declent_ru(ACCUSATIVE)]."),
-		span_notice("Вы начинаете чинить [declent_ru(ACCUSATIVE)]..."),
-		span_hear("Вы слышите сварку."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает ремонтировать  [declent_ru(ACCUSATIVE)]."),
+		span_notice("Вы начинаете ремонтировать [declent_ru(ACCUSATIVE)]..."),
+		span_hear("Вы слышите звук сварки."),
 	)
 
 	if(tool.use_tool(src, user, delay = 40, volume = 50))
 		if(!(machine_stat & BROKEN))
 			return ITEM_INTERACT_BLOCKING
-		to_chat(user, span_notice("Вы починили [declent_ru(ACCUSATIVE)]"))
+		to_chat(user, span_notice("Вы отремонтировали [declent_ru(ACCUSATIVE)]"))
 		atom_integrity = max_integrity
 		set_machine_stat(machine_stat & ~BROKEN)
 		update_icon()
@@ -132,7 +132,7 @@
 
 /obj/machinery/smartfridge/can_be_unfasten_wrench(mob/user, silent)
 	if(welded_down)
-		balloon_alert(user, "не разварено!")
+		balloon_alert(user, "нужно отварить!")
 		return FAILED_UNFASTEN
 	return ..()
 
@@ -153,7 +153,7 @@
 		return ITEM_INTERACT_SUCCESS
 
 	if(welded_down)
-		balloon_alert(user, "не разварено!")
+		balloon_alert(user, "нужно отварить!")
 	else
 		default_deconstruction_crowbar(tool)
 	return ITEM_INTERACT_SUCCESS
@@ -165,13 +165,13 @@
 	var/tool_tip_set = FALSE
 	if(held_item.tool_behaviour == TOOL_WELDER)
 		if(welded_down)
-			context[SCREENTIP_CONTEXT_LMB] = "Разварить"
+			context[SCREENTIP_CONTEXT_LMB] = "Отварить"
 			tool_tip_set = TRUE
 		else if (!welded_down && anchored && can_be_welded_down)
 			context[SCREENTIP_CONTEXT_LMB] = "Приварить"
 			tool_tip_set = TRUE
 		if(machine_stat & BROKEN)
-			context[SCREENTIP_CONTEXT_RMB] = "Починить"
+			context[SCREENTIP_CONTEXT_RMB] = "Отремонтировать"
 			tool_tip_set = TRUE
 
 	else if(held_item.tool_behaviour == TOOL_SCREWDRIVER)
@@ -209,13 +209,13 @@
 	if(welded_down)
 		. += span_info("Крепежи накрепко [EXAMINE_HINT("приварены")] к полу.")
 	else if (can_be_welded_down)
-		. += span_info("Крепежи можно [EXAMINE_HINT("срезать")].")
+		. += span_info("Крепежи свободны и могут быть [EXAMINE_HINT("приварены")].")
 
 
 	if(anchored)
-		. += span_info("Можно [EXAMINE_HINT("прикрутить")] болты.")
+		. += span_info("Машина [EXAMINE_HINT("прикручена")] к полу.")
 	else
-		. += span_info("Можно [EXAMINE_HINT("открутить")] болты.")
+		. += span_info("Можно [EXAMINE_HINT("открутить")] от пола.")
 
 /obj/machinery/smartfridge/update_appearance(updates=ALL)
 	. = ..()
@@ -255,9 +255,9 @@
 /obj/machinery/smartfridge/play_attack_sound(damage_amount, damage_type = BRUTE, damage_flag = 0)
 	switch(damage_type)
 		if(BRUTE)
-			playsound(loc, 'sound/effects/glass/glasshit.ogg', 75, TRUE)
+			playsound(src.loc, 'sound/effects/glass/glasshit.ogg', 75, TRUE)
 		if(BURN)
-			playsound(loc, 'sound/items/tools/welder.ogg', 100, TRUE)
+			playsound(src.loc, 'sound/items/tools/welder.ogg', 100, TRUE)
 
 /obj/machinery/smartfridge/atom_break(damage_flag)
 	playsound(src, SFX_SHATTER, 50, TRUE)
@@ -275,7 +275,7 @@
 			accept_check(weapon) \
 		)
 			load(weapon, user)
-			user.visible_message(span_notice("[capitalize(user.declent_ru(NOMINATIVE))] кладет [weapon.declent_ru(ACCUSATIVE)] в [declent_ru(ACCUSATIVE)]]."), span_notice("Вы положили [weapon.declent_ru(ACCUSATIVE)] в [declent_ru(ACCUSATIVE)]]."))
+			user.visible_message(span_notice("[capitalize(user.declent_ru(NOMINATIVE))] перемещает [weapon.declent_ru(ACCUSATIVE)] в [declent_ru(ACCUSATIVE)]."), span_notice("Вы переместили [weapon.declent_ru(ACCUSATIVE)] в [declent_ru(ACCUSATIVE)]."))
 			SStgui.update_uis(src)
 			if(visible_contents)
 				update_appearance()
@@ -298,17 +298,17 @@
 			if(loaded)
 				if(shown_contents_length >= max_n_of_items)
 					user.visible_message(span_notice("[capitalize(user.declent_ru(NOMINATIVE))] перекладывает предметы из [weapon.declent_ru(GENITIVE)] в [declent_ru(ACCUSATIVE)]."), \
-						span_notice("Вы заполняете [declent_ru(ACCUSATIVE)] предметами из [weapon.declent_ru(ACCUSATIVE)]."))
+						span_notice("Вы перемещаете содержимое [weapon.declent_ru(ACCUSATIVE)] в [declent_ru(ACCUSATIVE)]."))
 				else
 					user.visible_message(span_notice("[capitalize(user.declent_ru(NOMINATIVE))] перекладывает предметы из [weapon.declent_ru(GENITIVE)] в [declent_ru(ACCUSATIVE)]."), \
-						span_notice("Вы загружаете [declent_ru(ACCUSATIVE)] предметами из [weapon.declent_ru(GENITIVE)]."))
+						span_notice("Вы перемещаете содержимое [weapon.declent_ru(GENITIVE)] в [declent_ru(ACCUSATIVE)]."))
 				if(weapon.contents.len)
 					to_chat(user, span_warning("Некоторые предметы не влазят."))
 				if (visible_contents)
 					update_appearance()
 				return TRUE
 			else
-				to_chat(user, span_warning("В [weapon.declent_ru(ACCUSATIVE)] нет ничего, что можно положить в [declent_ru(ACCUSATIVE)]!"))
+				to_chat(user, span_warning("В [weapon.declent_ru(PREPOSITIONAL)] нет ничего, что можно положить в [declent_ru(ACCUSATIVE)]!"))
 				return FALSE
 
 	if(!powered())
@@ -345,7 +345,7 @@
 	if(ismob(weapon.loc))
 		var/mob/owner = weapon.loc
 		if(!owner.transferItemToLoc(weapon, src))
-			to_chat(owner, span_warning("[capitalize(weapon.declent_ru(NOMINATIVE))] прилип к вашей руке. Нельзя положить [weapon.declent_ru(ACCUSATIVE)] в [declent_ru(ACCUSATIVE)]!"))
+			to_chat(owner, span_warning("[capitalize(weapon.declent_ru(NOMINATIVE))] застревает на вашей руке - нельзя переместить [weapon.declent_ru(ACCUSATIVE)] в [declent_ru(ACCUSATIVE)]!"))
 			return FALSE
 		return TRUE
 	else
@@ -444,9 +444,8 @@
 	icon_state = "dehydrator-icon"
 	base_icon_state = "dehydrator"
 	contents_overlay_icon = "contents"
-	base_build_path = /obj/machinery/smartfridge/drying //should really be seeing this without admin fuckery.
-	circuit = /obj/item/circuitboard/machine/dehydrator
 	light_power = 0.5
+	base_build_path = /obj/machinery/smartfridge/drying //should really be seeing this without admin fuckery.
 	has_emissive = FALSE
 	can_atmos_pass = ATMOS_PASS_YES
 	can_be_welded_down = FALSE
@@ -548,7 +547,7 @@
 /obj/machinery/smartfridge/drying/rack
 	name = "drying rack"
 	RU_NAMES_LIST_INIT("drying rack", "сушилка", "сушилки", "сушилке", "сушилку", "сушилкой", "сушилке")
-	desc = "Деревянное устройство, используемое для сушки растительных продуктов, пищи и шкур."
+	desc = "Машина, предназначенная для удаления влаги из различных продуктов питания."
 	icon_state = "drying-rack"
 	base_icon_state = "drying-rack"
 	resistance_flags = FLAMMABLE
@@ -609,7 +608,7 @@
 /obj/machinery/smartfridge/drinks
 	name = "drink showcase"
 	RU_NAMES_LIST_INIT("drink showcase", "витрина дла напитков", "витрины дла напитков", "витрине дла напитков", "витрину дла напитков", "витриной дла напитков", "витрине дла напитков")
-	desc = "Холодильник для хранения вкусного алкоголя."
+	desc = "Холодильник для хранения вкусного-вкусного алкоголя."
 	base_build_path = /obj/machinery/smartfridge/drinks
 	contents_overlay_icon = "drink"
 

@@ -1,7 +1,7 @@
 
 /obj/machinery/reagentgrinder
-	name = "\improper Гриндер Все-в-одном"
-	desc = "От БлендТех. Перемолит ли? Проверим!"
+	name = "\improper All-In-One Grinder"
+	desc = "От БлендерТех. Сблендерит ли? Проверим!"
 	icon = 'icons/obj/machines/kitchen.dmi'
 	icon_state = "juicer"
 	base_icon_state = "juicer"
@@ -96,27 +96,27 @@
 		. += span_notice("Сейчас содержит.")
 		for(var/target_name as anything in to_process)
 			. += span_notice("[to_process[target_name]] [target_name]")
-		. += span_notice("Наполенен на <b>[round((total_weight / maximum_weight) * 100)]%</b> вместимости.")
+		. += span_notice("Наполнен на <b>[round((total_weight / maximum_weight) * 100)]%</b> вместимости.")
 
 	if(!QDELETED(beaker))
-		. += span_notice("Контейнер, наполененый <b>[beaker.reagents.maximum_volume]u</b> вставлен. Содержимое:")
+		. += span_notice("Мензурка размером в <b>[beaker.reagents.maximum_volume]u</b> [declension_ru(loaded,"юнит","юнита","юнитов")] вставлена. Содержимое:")
 		if(beaker.reagents.total_volume)
 			for(var/datum/reagent/reg as anything in beaker.reagents.reagent_list)
-				. += span_notice("[round(reg.volume, CHEMICAL_VOLUME_ROUNDING)]u of [reg.name]")
+				. += span_notice("[round(reg.volume, CHEMICAL_VOLUME_ROUNDING)] [declension_ru(loaded,"юнит","юнита","юнитов")] [reg.name]")
 		else
-			. += span_notice("Нет.")
-		. += span_notice("[EXAMINE_HINT("Right click")] пустой рукой, чтобы убрать контейнер.")
+			. += span_notice("Ничего.")
+		. += span_notice("[EXAMINE_HINT("ПКМ")] пустой рукой для снятия мензурки.")
 	else
-		. += span_warning("Нет контейнера.")
+		. += span_warning("Нет мензурки.")
 
-	. += span_notice("Вы можете перетащить предмет-хранилище на гриндер, чтобы поместить в него содержимое.")
+	. += span_notice("Вы можете перетащить хранилище на [delcent_ru(ACCUSATIVE)], чтобы перемести всё содержимое.")
 	if(anchored)
-		. += span_notice("Он может быть [EXAMINE_HINT("отвинчен")].")
+		. += span_notice("Машина может быть [EXAMINE_HINT("откручена")].")
 	else
-		. += span_warning("Нужно что бы он был [EXAMINE_HINT("привинчен")] к полу для работы.")
-	. += span_notice("Его панель может быть [EXAMINE_HINT("овтерткой")] [panel_open ? "закрыта" : "открыта"].")
+		. += span_warning("Машина должна быть [EXAMINE_HINT("прикручена")] к полу для работы.")
+	. += span_notice("Панель обслуживания может быть [EXAMINE_HINT(panel_open ? "привинчина" : "отвинчина")].")
 	if(panel_open)
-		. += span_notice("Можно [EXAMINE_HINT("вырвать")] сожержимое.")
+		. += span_notice("Машина может быть [EXAMINE_HINT("вскрыта")].")
 
 /obj/machinery/reagentgrinder/update_overlays()
 	. = ..()

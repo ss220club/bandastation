@@ -141,7 +141,7 @@
 			loaded++
 			LAZYADD(added_ingredients, tray_item)
 	if(loaded)
-		to_chat(user, span_notice("Вы добавляете [loaded] в [declent_ru(ACCUSATIVE)]."))
+		to_chat(user, span_notice("Вы перемещаете [loaded] [declension_ru(loaded,"предмет","предмета","предметов")] в [declent_ru(ACCUSATIVE)]."))
 		update_appearance(UPDATE_OVERLAYS)
 	return TRUE
 
@@ -158,12 +158,12 @@
 		balloon_alert(user, "слишком много ингредиентов!")
 		return TRUE
 	if(!user.transferItemToLoc(attacking_item, src))
-		balloon_alert(user, "не могу добавить это!")
+		balloon_alert(user, "нельзя это добавить!")
 		return TRUE
 
 	// Ensures that faceatom works correctly, since we can can often be in another atom's loc (a stove)
 	var/atom/movable/balloon_loc = ismovable(loc) ? loc : src
-	balloon_loc.balloon_alert(user, "добавлен ингредиент")
+	balloon_loc.balloon_alert(user, "ингредиент добавлен")
 	user.face_atom(balloon_loc)
 
 	LAZYADD(added_ingredients, attacking_item)

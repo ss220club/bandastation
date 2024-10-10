@@ -6,7 +6,7 @@
 
 //Food items that aren't eaten normally and leave an empty container behind.
 /obj/item/reagent_containers/condiment
-	name = "бутылка специй"
+	name = "condiment bottle"
 	desc = "Просто обычная бутылка со специями."
 	icon = 'icons/obj/food/containers.dmi'
 	icon_state = "bottle"
@@ -37,13 +37,13 @@
 	return ..()
 
 /obj/item/reagent_containers/condiment/suicide_act(mob/living/carbon/user)
-	user.visible_message(span_suicide("[user] пытается проглоить содержимое [src.name]! Еда работает не так!"))
+	user.visible_message(span_suicide("[capitalize(user.declent_ru(NOMINATIVE))] пытается проглотить содержимое [name.declent_ru(GENITIVE)]! Еда работает не так!"))
 	return OXYLOSS
 
 /obj/item/reagent_containers/condiment/attack(mob/M, mob/user, def_zone)
 
 	if(!reagents || !reagents.total_volume)
-		to_chat(user, span_warning("[src.name] оказывается без наполнения, о нет!"))
+		to_chat(user, span_warning("[capitalize(name)] пуст, о нет!"))
 		return FALSE
 
 	if(!canconsume(M, user))

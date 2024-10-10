@@ -45,7 +45,7 @@
 		. += span_notice("На дисплее состояния отображается: Вывод <b>[meat_produced]</b> мясных кусков через <b>[gibtime*0.1]</b> секунд работы.")
 		for(var/datum/stock_part/servo/servo in component_parts)
 			if(servo.tier >= 2)
-				. += span_notice("[capitalize(declent_ru(NOMINATIVE))] была модернизирована для обработки неорганических материалов.")
+				. += span_notice("Машина была модернизирована для обработки неорганических материалов.")
 
 /obj/machinery/gibber/update_overlays()
 	. = ..()

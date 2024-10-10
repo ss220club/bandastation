@@ -577,13 +577,13 @@
 		balloon_alert_to_viewers("Нет кофейных зерен!")
 		return FALSE
 	if(!coffeepot)
-		balloon_alert_to_viewers("Нет кофейника внутри!")
+		balloon_alert_to_viewers("Нет [coffeepot.declent_ru(NOMINATIVE)] внутри!")
 		return FALSE
 	if(machine_stat & (NOPOWER|BROKEN) )
-		balloon_alert_to_viewers("Кофеварка без питания!")
+		balloon_alert_to_viewers("[capitalize(declent_ru(NOMINATIVE))] без питания!")
 		return FALSE
 	if(coffeepot.reagents.total_volume >= coffeepot.reagents.maximum_volume)
-		balloon_alert_to_viewers("Кофейник уже полон!")
+		balloon_alert_to_viewers("[capitalize(coffeepot.declent_ru(NOMINATIVE))] уже полон!")
 		return FALSE
 	return TRUE
 

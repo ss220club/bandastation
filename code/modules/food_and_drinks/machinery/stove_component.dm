@@ -124,7 +124,7 @@
 		turn_off()
 
 	else if(real_parent.machine_stat & (BROKEN|NOPOWER))
-		real_parent.balloon_alert_to_viewers("нет энергии!")
+		real_parent.balloon_alert_to_viewers("нет питания!")
 		return
 
 	else
@@ -154,7 +154,7 @@
 
 	if(user.transferItemToLoc(attacking_item, parent))
 		add_container(attacking_item, user)
-		to_chat(user, span_notice("Вы положили [attacking_item.declent_ru(NOMINATIVE)] на [parent.declent_ru(ACCUSATIVE)]."))
+		to_chat(user, span_notice("Вы перемещаете [attacking_item.declent_ru(ACCUSATIVE)] на [parent.declent_ru(ACCUSATIVE)]."))
 	return COMPONENT_NO_AFTERATTACK
 
 /datum/component/stove/proc/on_exited(obj/machinery/source, atom/movable/gone, direction)
@@ -198,13 +198,13 @@
 		return CONTEXTUAL_SCREENTIP_SET
 
 	if(held_item.is_open_container())
-		context[SCREENTIP_CONTEXT_LMB] = "Положить содержимое"
+		context[SCREENTIP_CONTEXT_LMB] = "Положить контейнер"
 		return CONTEXTUAL_SCREENTIP_SET
 
 /datum/component/stove/proc/on_examine(obj/machinery/source, mob/user, list/examine_list)
 	SIGNAL_HANDLER
 
-	examine_list += span_notice("Вы можете  [on ? "выключить" : "включить"] прожиг <i>правой кнопкой</i>.")
+	examine_list += span_notice("Вы можете  [on ? "выключить" : "включить"] прожиг с помощью <i>ПКМ</i>.")
 
 /datum/component/stove/proc/on_refresh_parts(obj/machinery/source)
 	SIGNAL_HANDLER
