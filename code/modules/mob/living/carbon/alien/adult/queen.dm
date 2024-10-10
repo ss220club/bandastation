@@ -35,6 +35,7 @@
 
 /mob/living/carbon/alien/adult/royal/queen
 	name = "alien queen"
+	RU_NAMES_LIST_INIT("alien queen", "королева Чужих", "королевы Чужих", "королеве Чужих", "королеву Чужих", "королевой Чужих", "королеве Чужих")
 	caste = "q"
 	maxHealth = 500
 	health = 500
@@ -52,6 +53,7 @@
 			continue
 		if(Q.client)
 			name = "alien princess ([rand(1, 999)])" //if this is too cutesy feel free to change it/remove it.
+			RU_NAMES_LIST_INIT("alien queen", "принцесса Чужих", "принцессы Чужих", "принцессе Чужих", "принцессу Чужих", "принцессой Чужих", "принцессе Чужих")
 			break
 
 	real_name = src.name
