@@ -548,7 +548,7 @@
 /obj/machinery/smartfridge/drying/rack
 	name = "drying rack"
 	RU_NAMES_LIST_INIT("drying rack", "сушилка", "сушилки", "сушилке", "сушилку", "сушилкой", "сушилке")
-	desc = "A wooden contraption, used to dry plant products, food and hide."
+	desc = "Деревянное устройство, используемое для сушки растительных продуктов, пищи и шкур."
 	icon_state = "drying-rack"
 	base_icon_state = "drying-rack"
 	resistance_flags = FLAMMABLE
