@@ -88,7 +88,7 @@
 
 	/// The preposition used when inserting items into this storage.
 	/// IE: You put things *in* a bag, but *on* a plate.
-	var/insert_preposition = "in"
+	var/insert_preposition = "в"
 
 	/// If TRUE, chat messages for inserting/removing items will not be shown.
 	var/silent = FALSE
@@ -535,11 +535,11 @@ GLOBAL_LIST_EMPTY(cached_storage_typecaches)
 		playsound(parent, rustle_sound, 50, rustle_vary, -5)
 
 	if(!silent_for_user)
-		to_chat(user, span_notice("You put [thing] [insert_preposition]to [parent]."))
+		to_chat(user, span_notice("Вы помещаете [thing.declent_ru(ACCUSATIVE)] [insert_preposition] [parent.declent_ru(ACCUSATIVE)]."))
 
 	for(var/mob/viewing in oviewers(user))
 		if(in_range(user, viewing) || (thing?.w_class >= WEIGHT_CLASS_NORMAL))
-			viewing.show_message(span_notice("[user] puts [thing] [insert_preposition]to [parent]."), MSG_VISUAL)
+			viewing.show_message(span_notice("[capitalize(user.declent_ru(NOMINATIVE))] помещает [thing.declent_ru(ACCUSATIVE)] [insert_preposition] [parent.declent_ru(ACCUSATIVE)]."), MSG_VISUAL)
 
 
 /**

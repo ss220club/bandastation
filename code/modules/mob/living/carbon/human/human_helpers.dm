@@ -121,10 +121,10 @@
 	. = ..()
 	if(G.trigger_guard == TRIGGER_GUARD_NORMAL)
 		if(check_chunky_fingers())
-			balloon_alert(src, "fingers are too big!")
+			balloon_alert(src, "слишком большие пальцы!")
 			return FALSE
 	if(HAS_TRAIT(src, TRAIT_NOGUNS))
-		to_chat(src, span_warning("You can't bring yourself to use a ranged weapon!"))
+		to_chat(src, span_warning("Использовать огнестрельное оружие?! Ну уж нет."))
 		return FALSE
 
 /mob/living/carbon/human/proc/check_chunky_fingers()
@@ -362,7 +362,7 @@
 /mob/living/carbon/human/proc/item_heal(mob/user, brute_heal, burn_heal, heal_message_brute, heal_message_burn, required_bodytype)
 	var/obj/item/bodypart/affecting = src.get_bodypart(check_zone(user.zone_selected))
 	if (!affecting || !(affecting.bodytype & required_bodytype))
-		to_chat(user, span_warning("[affecting] is already in good condition!"))
+		to_chat(user, span_warning("[capitalize(affecting.declent_ru(NOMINATIVE))] уже в хорошем состоянии!"))
 		return FALSE
 
 	var/brute_damaged = affecting.brute_dam > 0
@@ -370,18 +370,18 @@
 
 	var/nothing_to_heal = ((brute_heal <= 0 || !brute_damaged) && (burn_heal <= 0 || !burn_damaged))
 	if (nothing_to_heal)
-		to_chat(user, span_notice("[affecting] is already in good condition!"))
+		to_chat(user, span_notice("[capitalize(affecting.declent_ru(NOMINATIVE))] уже в хорошем состоянии!"))
 		return FALSE
 
 	src.update_damage_overlays()
 	var/message
 	if ((brute_damaged && brute_heal > 0) && (burn_damaged && burn_heal > 0))
-		message = "[heal_message_brute] and [heal_message_burn] on"
+		message = "[heal_message_brute] и [heal_message_burn]"
 	else if (brute_damaged && brute_heal > 0)
-		message = "[heal_message_brute] on"
+		message = "[heal_message_brute]"
 	else
-		message = "[heal_message_burn] on"
+		message = "[heal_message_burn]"
 	affecting.heal_damage(brute_heal, burn_heal, required_bodytype)
-	user.visible_message(span_notice("[user] fixes some of the [message] [src]'s [affecting.name]."), \
-		span_notice("You fix some of the [message] [src == user ? "your" : "[src]'s"] [affecting.name]."))
+	user.visible_message(span_notice("[capitalize(user.declent_ru(NOMINATIVE))] исправляет [message] на [affecting.declent_ru(PREPOSITIONAL)] у [declent_ru(GENITIVE)]."), \
+		span_notice("Вы исправляете [message] на [affecting.name] у [src == user ? "себя" : "[declent_ru(GENITIVE)]"] ."))
 	return TRUE

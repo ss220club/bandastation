@@ -17,12 +17,6 @@
 		var/datum/brain_trauma/BT = T
 		BT.on_death()
 
-/mob/living/carbon/proc/inflate_gib() // Plays an animation that makes mobs appear to inflate before finally gibbing
-	addtimer(CALLBACK(src, PROC_REF(gib), DROP_BRAIN|DROP_ORGANS|DROP_ITEMS), 2.5 SECONDS)
-	var/matrix/M = matrix()
-	M.Scale(1.8, 1.2)
-	animate(src, time = 40, transform = M, easing = SINE_EASING)
-
 /mob/living/carbon/gib(drop_bitflags=NONE)
 	add_memory_in_range(src, 7, /datum/memory/witness_gib, protagonist = src)
 	if(drop_bitflags & DROP_ITEMS)
@@ -33,7 +27,7 @@
 	var/atom/Tsec = drop_location()
 	for(var/mob/M in src)
 		M.forceMove(Tsec)
-		visible_message(span_danger("[M] bursts out of [src]!"))
+		visible_message(span_danger("[capitalize(M.declent_ru(NOMINATIVE))] вырывается из [declent_ru(GENITIVE)]!"))
 	return ..()
 
 /mob/living/carbon/spill_organs(drop_bitflags=NONE)
@@ -79,6 +73,6 @@
 	if(!..())
 		return FALSE
 	if(!(mobility_flags & MOBILITY_USE)) //just while I finish up the new 'fun' suiciding verb. This is to prevent metagaming via suicide
-		to_chat(src, span_warning("You can't commit suicide whilst immobile! (You can type Ghost instead however)."))
+		to_chat(src, span_warning("Вы не можете совершить самоубийство без свободных рук! (Но вы все еще можете выйти из тела)."))
 		return FALSE
 	return TRUE

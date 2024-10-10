@@ -50,7 +50,7 @@
 	defender.visible_message(
 		span_danger("[attacker] hits [defender] with Plasma Punch!"),
 		span_userdanger("You're hit with a Plasma Punch by [attacker]!"),
-		span_hear("You hear a sickening sound of flesh hitting flesh!"),
+		span_hear("Вы слышите противный звук удара плоти о плоть!"),
 		null,
 		attacker,
 	)
@@ -71,7 +71,7 @@
 	defender.visible_message(
 		span_danger("[attacker] hits [defender] with THE PLASMA FIST TECHNIQUE!"),
 		span_userdanger("You're suddenly hit with THE PLASMA FIST TECHNIQUE by [attacker]!"),
-		span_hear("You hear a sickening sound of flesh hitting flesh!"),
+		span_hear("Вы слышите противный звук удара плоти о плоть!"),
 		null,
 		attacker,
 	)

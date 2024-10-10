@@ -343,8 +343,8 @@
 	SHOULD_CALL_PARENT(TRUE)
 	if(!(impact_flags & ZIMPACT_NO_MESSAGE))
 		visible_message(
-			span_danger("[src] crashes into [impacted_turf]!"),
-			span_userdanger("You crash into [impacted_turf]!"),
+			span_danger("[capitalize(declent_ru(NOMINATIVE))] врезается в [impacted_turf.declent_ru(ACCUSATIVE)]!"),
+			span_userdanger("Вы врезаетесь в [impacted_turf.declent_ru(ACCUSATIVE)]!"),
 		)
 	if(!(impact_flags & ZIMPACT_NO_SPIN))
 		INVOKE_ASYNC(src, PROC_REF(SpinAnimation), 5, 2)
@@ -1630,8 +1630,14 @@
 
 /* End language procs */
 
-//Returns an atom's power cell, if it has one. Overload for individual items.
-/atom/movable/proc/get_cell()
+/**
+ * Returns an atom's power cell, if it has one. Overload for individual items.
+ * Args
+ *
+ * * /atom/movable/interface - the atom that is trying to interact with this cell
+ * * mob/user - the mob that is holding the interface
+ */
+/atom/movable/proc/get_cell(atom/movable/interface, mob/user)
 	return
 
 /atom/movable/proc/can_be_pulled(user, grab_state, force)

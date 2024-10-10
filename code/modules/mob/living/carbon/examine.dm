@@ -61,8 +61,8 @@
 			disabled += body_part
 		missing -= body_part.body_zone
 		for(var/obj/item/embedded as anything in body_part.embedded_objects)
-			var/stuck_wordage = embedded.is_embed_harmless() ? "прилепленный" : "вонзившийся" // TODO220: Genderize it
-			. += span_boldwarning("[t_He] [t_has] [icon2html(embedded, user)] [stuck_wordage] [embedded.declent_ru(ACCUSATIVE)] в [t_his] <i>[body_part.plaintext_zone]</i>!")
+			var/stuck_wordage = embedded.is_embed_harmless() ? "застревает" : "впивается"
+			. += span_boldwarning("[capitalize(embedded.declent_ru(ACCUSATIVE))] [stuck_wordage] в [t_his] [body_part.ru_plaintext_zone[ACCUSATIVE]]!")
 
 		for(var/datum/wound/iter_wound as anything in body_part.wounds)
 			. += span_danger(iter_wound.get_examine_description(user))
@@ -75,21 +75,21 @@
 			damage_text = "обмякла и безжизненна"
 		else
 			damage_text = (body_part.brute_dam >= body_part.burn_dam) ? body_part.heavy_brute_msg : body_part.heavy_burn_msg
-		. += span_boldwarning("[capitalize(t_his)] конечность <i>[body_part.plaintext_zone]</i> [damage_text]!")
+		. += span_boldwarning("[t_His] [body_part.ru_plaintext_zone[NOMINATIVE]] [damage_text]!")
 
 	//stores missing limbs
 	var/l_limbs_missing = 0
 	var/r_limbs_missing = 0
 	for(var/gone in missing)
 		if(gone == BODY_ZONE_HEAD)
-			. += span_deadsay("<B>[t_His] <i>[parse_zone(gone)]</i> отсутствует!</B>")
+			. += span_deadsay("<B>[t_His] [ru_parse_zone(gone, declent = NOMINATIVE)] отсутствует!</B>")
 			continue
 		if(gone == BODY_ZONE_L_ARM || gone == BODY_ZONE_L_LEG)
 			l_limbs_missing++
 		else if(gone == BODY_ZONE_R_ARM || gone == BODY_ZONE_R_LEG)
 			r_limbs_missing++
 
-		. += span_boldwarning("[capitalize(t_his)] <i>[parse_zone(gone)]</i> отсутствует!")
+		. += span_boldwarning("[t_His] [ru_parse_zone(gone, declent = NOMINATIVE)] отсутствует!")
 
 	if(l_limbs_missing >= 2 && r_limbs_missing == 0)
 		. += span_tinydanger("[t_He] выглядит право...")
@@ -159,9 +159,9 @@
 
 		for(var/obj/item/bodypart/body_part as anything in bodyparts)
 			if(body_part.get_modified_bleed_rate())
-				bleeding_limbs += body_part.plaintext_zone
+				bleeding_limbs += body_part.ru_plaintext_zone[GENITIVE]
 			if(body_part.grasped_by)
-				grasped_limbs += body_part.plaintext_zone
+				grasped_limbs += body_part.ru_plaintext_zone[ACCUSATIVE]
 
 		if(LAZYLEN(bleeding_limbs))
 			var/bleed_text = "<b>"
@@ -175,7 +175,7 @@
 			bleed_text += english_list(bleeding_limbs)
 
 			if(appears_dead)
-				bleed_text += ", но она скопилась и не течет."
+				bleed_text += ", но кровь скопилась и не течет."
 			else
 				if(HAS_TRAIT(src, TRAIT_BLOODY_MESS))
 					bleed_text += " невероятно быстро"
@@ -190,7 +190,7 @@
 			. += bleed_text
 			if(LAZYLEN(grasped_limbs))
 				for(var/grasped_part in grasped_limbs)
-					. += "[t_He] сдавливает <i>[grasped_part]</i>, чтобы замедлить кровотечение!"
+					. += "[t_He] прижимает [grasped_part], чтобы замедлить кровотечение!"
 
 	if(reagents.has_reagent(/datum/reagent/teslium, needs_metabolizing = TRUE))
 		. += span_smallnoticeital("[t_He] излучает слабое голубое свечение!") // this should be signalized
@@ -219,6 +219,10 @@
 					. += "[t_He] краснеет и хрипло дышит."
 				if (bodytemperature < dna.species.bodytemp_cold_damage_limit)
 					. += "[t_He] дрожит."
+				if(HAS_TRAIT(src, TRAIT_EVIL))
+					. += "[t_His] глаза излучают безчувственную, холодную отстраненность. В [t_his] душе нет ничего, кроме тьмы."
+					living_user.add_mood_event("encountered_evil", /datum/mood_event/encountered_evil)
+					living_user.set_jitter_if_lower(15 SECONDS)
 
 			if(HAS_TRAIT(user, TRAIT_SPIRITUAL) && mind?.holy_role)
 				. += "[t_He] [t_has] вокруг себя святую ауру."
@@ -265,7 +269,7 @@
 		. += span_warning("Это тело превратилось в гротескную шелуху.")
 	if(HAS_MIND_TRAIT(user, TRAIT_MORBID))
 		if(HAS_TRAIT(src, TRAIT_DISSECTED))
-			. += span_notice("[user.p_They()], похоже, были препарированы. Бесполезно для обследования... <b><i>пока что.</i></b>")
+			. += span_notice("Препарирование, похоже, уже было проведено. Бесполезно для обследования... <b><i>пока что.</i></b>")
 		if(HAS_TRAIT(src, TRAIT_SURGICALLY_ANALYZED))
 			. += span_notice("A skilled hand has mapped this one's internal intricacies. It will be far easier to perform future experimentations upon [user.p_them()]. <b><i>Exquisite.</i></b>")
 	if(HAS_MIND_TRAIT(user, TRAIT_EXAMINE_FITNESS))
@@ -391,8 +395,8 @@
 	. = list()
 	var/obscured = check_obscured_slots()
 	var/t_He = ru_p_they(TRUE)
-	var/t_His = ru_p_them(TRUE) // TODO220 - p_their
-	var/t_his = ru_p_them() // TODO220 - p_their
+	var/t_His = ru_p_them(TRUE)
+	var/t_his = ru_p_them()
 	var/t_has = ru_p_have()
 	// var/t_is = p_are()
 
@@ -537,7 +541,7 @@
 	. += "Важные заметки: [security_note]"
 	. += "Записи охраны: <a href='?src=[REF(src)];hud=s;view=1;examine_time=[world.time]'>\[Показать\]</a>"
 	if(ishuman(user))
-		. += "<a href='?src=[REF(src)];hud=s;add_citation=1;examine_time=[world.time]'>\[Добавить цитату\]</a>\
+		. += "<a href='?src=[REF(src)];hud=s;add_citation=1;examine_time=[world.time]'>\[Добавить штраф\]</a>\
 			<a href='?src=[REF(src)];hud=s;add_crime=1;examine_time=[world.time]'>\[Добавить преступление\]</a>\
 			<a href='?src=[REF(src)];hud=s;add_note=1;examine_time=[world.time]'>\[Добавить примечание\]</a>"
 

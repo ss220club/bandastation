@@ -235,7 +235,8 @@
 	if(!IS_ORGANIC_LIMB(src))
 		grind_results = null
 
-	name = "[parse_zone(body_zone)] ([limb_id])"
+	name = "[limb_id] [parse_zone(body_zone)]"
+	RU_NAMES_LIST_INIT("[limb_id] [parse_zone(body_zone)]", "[ru_parse_zone(body_zone, declent = NOMINATIVE)] ([limb_id])", "[ru_parse_zone(body_zone, declent = GENITIVE)] ([limb_id])", "[ru_parse_zone(body_zone, declent = DATIVE)] ([limb_id])", "[ru_parse_zone(body_zone, declent = ACCUSATIVE)] ([limb_id])", "[ru_parse_zone(body_zone, declent = INSTRUMENTAL)] ([limb_id])", "[ru_parse_zone(body_zone, declent = PREPOSITIONAL)] ([limb_id])")
 	update_icon_dropped()
 	refresh_bleed_rate()
 
@@ -1364,17 +1365,17 @@
 /// Returns the generic description of our BIO_EXTERNAL feature(s), prioritizing certain ones over others. Returns error on failure.
 /obj/item/bodypart/proc/get_external_description()
 	if (biological_state & BIO_FLESH)
-		return "flesh"
+		return "плоть"
 	if (biological_state & BIO_WIRED)
-		return "wiring"
+		return "проводку"
 
 	return "error"
 
 /// Returns the generic description of our BIO_INTERNAL feature(s), prioritizing certain ones over others. Returns error on failure.
 /obj/item/bodypart/proc/get_internal_description()
 	if (biological_state & BIO_BONE)
-		return "bone"
+		return "кость"
 	if (biological_state & BIO_METAL)
-		return "metal"
+		return "метал"
 
 	return "error"

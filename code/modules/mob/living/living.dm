@@ -394,9 +394,9 @@
 
 	if(AM.pulledby)
 		if(!supress_message)
-			AM.visible_message(span_danger("[src] pulls [AM] from [AM.pulledby]'s grip."), \
-							span_danger("[src] pulls you from [AM.pulledby]'s grip."), null, null, src)
-			to_chat(src, span_notice("You pull [AM] from [AM.pulledby]'s grip!"))
+			AM.visible_message(span_danger("[capitalize(declent_ru(NOMINATIVE))] оттаскивает [AM.declent_ru(ACCUSATIVE)] из захвата [AM.pulledby.declent_ru(GENITIVE)]."), \
+							span_danger("[capitalize(declent_ru(NOMINATIVE))] оттаскивает вас из захвата [AM.pulledby.declent_ru(GENITIVE)]"), null, null, src)
+			to_chat(src, span_notice("Вы оттаскиваете [AM.declent_ru(ACCUSATIVE)] из захвата [AM.pulledby.declent_ru(GENITIVE)]"))
 		log_combat(AM, AM.pulledby, "pulled from", src)
 		AM.pulledby.stop_pulling() //an object can't be pulled by two mobs at once.
 
@@ -424,13 +424,13 @@
 			if(ishuman(M))
 				var/mob/living/carbon/human/grabbed_human = M
 				var/grabbed_by_hands = (zone_selected == "l_arm" || zone_selected == "r_arm") && grabbed_human.usable_hands > 0
-				M.visible_message(span_warning("[src] grabs [M] [grabbed_by_hands ? "by their hands":"passively"]!"), \
-								span_warning("[src] grabs you [grabbed_by_hands ? "by your hands":"passively"]!"), null, null, src)
-				to_chat(src, span_notice("You grab [M] [grabbed_by_hands ? "by their hands":"passively"]!"))
+				M.visible_message(span_warning("[capitalize(declent_ru(NOMINATIVE))] хватает [M.declent_ru(ACCUSATIVE)] [grabbed_by_hands ? "за руки":"пассивно"]!"), \
+								span_warning("[capitalize(declent_ru(NOMINATIVE))] хватает вас [grabbed_by_hands ? "за руки":"пассивно"]!"), null, null, src)
+				to_chat(src, span_notice("Вы хватаете [M.declent_ru(ACCUSATIVE)] [grabbed_by_hands ? "за руки":"пассивно"]!"))
 			else
-				M.visible_message(span_warning("[src] grabs [M] passively!"), \
-								span_warning("[src] grabs you passively!"), null, null, src)
-				to_chat(src, span_notice("You grab [M] passively!"))
+				M.visible_message(span_warning("[capitalize(declent_ru(NOMINATIVE))] хватает [M.declent_ru(ACCUSATIVE)] пассивно!"), \
+								span_warning("[capitalize(declent_ru(NOMINATIVE))] хватает вас пассивно!"), null, null, src)
+				to_chat(src, span_notice("Вы хватаете [M.declent_ru(ACCUSATIVE)] пассивно!"))
 
 		if(isliving(M))
 			var/mob/living/L = M
@@ -1279,7 +1279,7 @@
 		animate(src, transform = flipped_matrix, pixel_y = pixel_y-4, time = 0.5 SECONDS, easing = EASE_OUT)
 		base_pixel_y -= 4
 
-/mob/living/singularity_pull(S, current_size)
+/mob/living/singularity_pull(obj/singularity/S, current_size)
 	..()
 	if(move_resist == INFINITY)
 		return
@@ -2163,6 +2163,19 @@ GLOBAL_LIST_EMPTY(fire_appearances)
 
 /mob/living/proc/start_look_up()
 	SIGNAL_HANDLER
+
+	looking_vertically = TRUE
+
+	var/turf/current_turf = get_turf(src)
+	var/turf/above_turf = GET_TURF_ABOVE(current_turf)
+
+	//Check if turf above exists
+	if(!above_turf)
+		to_chat(src, span_warning("There's nothing interesting above."))
+		to_chat(src, "You set your head straight again.")
+		end_look_up()
+		return
+
 	var/turf/ceiling = get_step_multiz(src, UP)
 	if(!ceiling) //We are at the highest z-level.
 		if (prob(0.1))
@@ -2183,7 +2196,6 @@ GLOBAL_LIST_EMPTY(fire_appearances)
 			to_chat(src, span_warning("You can't see through the floor above you."))
 			return
 
-	looking_vertically = TRUE
 	reset_perspective(ceiling)
 
 /mob/living/proc/stop_look_up()
@@ -2214,6 +2226,19 @@ GLOBAL_LIST_EMPTY(fire_appearances)
 
 /mob/living/proc/start_look_down()
 	SIGNAL_HANDLER
+
+	looking_vertically = TRUE
+
+	var/turf/current_turf = get_turf(src)
+	var/turf/below_turf = GET_TURF_BELOW(current_turf)
+
+	//Check if turf below exists
+	if(!below_turf)
+		to_chat(src, span_warning("There's nothing interesting below."))
+		to_chat(src, "You set your head straight again.")
+		end_look_up()
+		return
+
 	var/turf/floor = get_turf(src)
 	var/turf/lower_level = get_step_multiz(floor, DOWN)
 	if(!lower_level) //We are at the lowest z-level.
@@ -2235,7 +2260,6 @@ GLOBAL_LIST_EMPTY(fire_appearances)
 			to_chat(src, span_warning("You can't see through the floor below you."))
 			return
 
-	looking_vertically = TRUE
 	reset_perspective(lower_level)
 
 /mob/living/proc/stop_look_down()
@@ -2765,18 +2789,40 @@ GLOBAL_LIST_EMPTY(fire_appearances)
 	set category = "IC"
 
 	if(looking_vertically)
+		to_chat(src, "You set your head straight again.")
 		end_look_up()
-	else
-		look_up()
+		return
+
+	var/turf/current_turf = get_turf(src)
+	var/turf/above_turf = GET_TURF_ABOVE(current_turf)
+
+	//Check if turf above exists
+	if(!above_turf)
+		to_chat(src, span_warning("There's nothing interesting above. Better keep your eyes ahead."))
+		return
+
+	to_chat(src, "You tilt your head upwards.")
+	look_up()
 
 /mob/living/verb/lookdown()
 	set name = "Look Down"
 	set category = "IC"
 
 	if(looking_vertically)
+		to_chat(src, "You set your head straight again.")
 		end_look_down()
-	else
-		look_down()
+		return
+
+	var/turf/current_turf = get_turf(src)
+	var/turf/below_turf = GET_TURF_BELOW(current_turf)
+
+	//Check if turf below exists
+	if(!below_turf)
+		to_chat(src, span_warning("There's nothing interesting below. Better keep your eyes ahead."))
+		return
+
+	to_chat(src, "You tilt your head downwards.")
+	look_down()
 
 /**
  * Totals the physical cash on the mob and returns the total.

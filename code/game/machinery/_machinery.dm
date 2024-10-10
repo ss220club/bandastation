@@ -648,6 +648,11 @@
 	if(interaction_flags_machine & INTERACT_MACHINE_REQUIRES_SILICON) //if the user was a silicon, we'd have returned out earlier, so the user must not be a silicon
 		return FALSE
 
+	if(interaction_flags_machine & INTERACT_MACHINE_REQUIRES_STANDING)
+		var/mob/living/living_user = user
+		if(!(living_user.mobility_flags & MOBILITY_MOVE))
+			return FALSE
+
 	return TRUE // If we passed all of those checks, woohoo! We can interact with this machine.
 
 /obj/machinery/proc/check_nap_violations()
@@ -750,7 +755,7 @@
 		if(user_unbuckle_mob(buckled_mobs[1],user))
 			return TRUE
 
-	var/unbuckled = tgui_input_list(user, "Who do you wish to unbuckle?", "Unbuckle", sort_names(buckled_mobs))
+	var/unbuckled = tgui_input_list(user, "Кого вы хотите отстегнуть?", "Отстегивание", sort_names(buckled_mobs))
 	if(isnull(unbuckled))
 		return FALSE
 	if(user_unbuckle_mob(unbuckled,user))
