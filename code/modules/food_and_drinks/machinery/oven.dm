@@ -105,7 +105,7 @@
 		return ..()
 
 	if(user.transferItemToLoc(item, src, silent = FALSE))
-		to_chat(user, span_notice("Вы положили [item.declent_ru(NOMINATIVE)] в [declent_ru(ACCUSATIVE)]."))
+		to_chat(user, span_notice("Вы помещаете [item.declent_ru(NOMINATIVE)] в [declent_ru(ACCUSATIVE)]."))
 		add_tray_to_oven(item, user)
 
 /obj/machinery/oven/item_interaction(mob/living/user, obj/item/item, list/modifiers)
@@ -155,13 +155,13 @@
 	if(open)
 		playsound(src, 'sound/machines/oven/oven_open.ogg', 75, TRUE)
 		set_smoke_state(OVEN_SMOKE_STATE_NONE)
-		to_chat(user, span_notice("Вы открыли [declent_ru(ACCUSATIVE)]."))
+		to_chat(user, span_notice("Вы открываете [declent_ru(ACCUSATIVE)]."))
 		end_processing()
 		if(used_tray)
 			used_tray.vis_flags &= ~VIS_HIDE
 	else
 		playsound(src, 'sound/machines/oven/oven_close.ogg', 75, TRUE)
-		to_chat(user, span_notice("Вы закрыли [declent_ru(ACCUSATIVE)]."))
+		to_chat(user, span_notice("Вы закрываете [declent_ru(ACCUSATIVE)]."))
 		if(used_tray)
 			begin_processing()
 			used_tray.vis_flags |= VIS_HIDE
@@ -232,7 +232,7 @@
 /obj/machinery/oven/range
 	name = "range"
 	RU_NAMES_LIST_INIT("range", "духовка", "духовки", "духовке", "духовку", "духовкой", "духовке")
-	desc = "Плита с духовкой?!"
+	desc = "Плита с духовкой?! Здесь должен был быть каламбур, но вы приготовьте его сами!"
 	icon_state = "range_off"
 	base_icon_state = "range"
 	pass_flags_self = PASSMACHINE|PASSTABLE|LETPASSTHROW // Like the griddle, short
@@ -273,7 +273,7 @@
 
 	if(!istype(item, /obj/item/storage/bag/tray))
 		// Non-tray dumping requires a do_after
-		to_chat(user, span_notice("Вы положили [item.declent_ru(ACCUSATIVE)] на [declent_ru(ACCUSATIVE)]..."))
+		to_chat(user, span_notice("Вы помещаете содержимое [item.declent_ru(ACCUSATIVE)] на [declent_ru(ACCUSATIVE)]..."))
 		if(!do_after(user, 2 SECONDS, target = item))
 			return ITEM_INTERACT_BLOCKING
 
@@ -287,7 +287,7 @@
 			loaded++
 			AddToPlate(tray_item, user)
 	if(loaded)
-		to_chat(user, span_notice("[capitalize(loaded)] вставлен в [declent_ru(ACCUSATIVE)]."))
+		to_chat(user, span_notice("Вы помещете [loaded] [declension_ru(loaded,"предмет","предмета","предметов")] в [declent_ru(ACCUSATIVE)]."))
 		update_appearance()
 		return ITEM_INTERACT_SUCCESS
 	return ITEM_INTERACT_BLOCKING

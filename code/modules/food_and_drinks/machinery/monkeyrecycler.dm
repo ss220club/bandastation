@@ -3,7 +3,7 @@ GLOBAL_LIST_EMPTY(monkey_recyclers)
 /obj/machinery/monkey_recycler
 	name = "monkey recycler"
 	RU_NAMES_LIST_INIT("monkey recycler", "переработчик обезьян", "переработчика обезьян", "переработчику обезьян", "переработчик обезьян", "переработчиком обезьян", "переработчике обезьян")
-	desc = "Машина используемая для переработки мертвых обезьян в кубы обезьян."
+	desc = "Машина для переработки мертвых обезьян в кубы обезьян."
 	icon = 'icons/obj/machines/kitchen.dmi'
 	icon_state = "grinder"
 	layer = BELOW_OBJ_LAYER
@@ -39,7 +39,7 @@ GLOBAL_LIST_EMPTY(monkey_recyclers)
 /obj/machinery/monkey_recycler/examine(mob/user)
 	. = ..()
 	if(in_range(user, src) || isobserver(user))
-		. += span_notice("На дисплее состояния отображается: Производит <b>[cube_production]</b> [declension_ru(cube_production,"кубик","кубика","кубиков")] за каждую обезьяну.")
+		. += span_notice("На дисплее состояния отображается: Производит <b>[cube_production]</b> [declension_ru(cube_production,"кубик","кубика","кубиков")] за каждую вставленную обезьяну.")
 
 /obj/machinery/monkey_recycler/wrench_act(mob/living/user, obj/item/tool)
 	. = ..()
@@ -72,10 +72,10 @@ GLOBAL_LIST_EMPTY(monkey_recyclers)
 	if(!istype(target))
 		return
 	if(target.stat == CONSCIOUS)
-		to_chat(user, span_warning("Обезьяна слишком сильно сопротивляется, чтобы поместить его в утилизатор."))
+		to_chat(user, span_warning("Обезьяна слишком сильно сопротивляется, чтобы поместить её в утилизатор."))
 		return
 	if(target.buckled || target.has_buckled_mobs())
-		to_chat(user, span_warning("Обезьяна привязана к чему-то."))
+		to_chat(user, span_warning("Обезьяна пристегнута к чему-то."))
 		return
 	qdel(target)
 	to_chat(user, span_notice("Вы засовываете обезьяну в машину."))
@@ -94,7 +94,7 @@ GLOBAL_LIST_EMPTY(monkey_recyclers)
 		for(var/i in 1 to FLOOR(stored_matter, 1))
 			new /obj/item/food/monkeycube(src.loc)
 			stored_matter--
-		to_chat(user, span_notice("На дисплее машины мигает сообщение о том, что материалов на обезьян осталось [stored_matter]."))
+		to_chat(user, span_notice("На дисплее машины мигает сообщение о том, что материалов осталось на [stored_matter] обезьян."))
 	else
 		to_chat(user, span_danger("Чтобы изготовить кубик обезьяны, машине требуется материал стоимостью не менее 1 обезьяны. В настоящее время у нее есть [stored_matter]."))
 

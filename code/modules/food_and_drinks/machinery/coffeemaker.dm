@@ -266,19 +266,19 @@
 
 /obj/machinery/coffeemaker/proc/try_brew()
 	if(!cartridge)
-		balloon_alert(usr, "Не вставлен картридж для кофе!")
+		balloon_alert(usr, "не вставлен картридж для кофе!")
 		return FALSE
 	if(cartridge.charges < 1)
-		balloon_alert(usr, "Кофейный картридж пуст!")
+		balloon_alert(usr, "кофейный картридж пуст!")
 		return FALSE
 	if(!coffeepot)
-		balloon_alert(usr, "Нет кофейника внутри!")
+		balloon_alert(usr, "нет кофейника внутри!")
 		return FALSE
 	if(machine_stat & (NOPOWER|BROKEN))
-		balloon_alert(usr, "Кофеварка обесточена!")
+		balloon_alert(usr, "кофеварка обесточена!")
 		return FALSE
 	if(coffeepot.reagents.total_volume >= coffeepot.reagents.maximum_volume)
-		balloon_alert(usr, "Кофейник уже полон!")
+		balloon_alert(usr, "кофейник уже полон!")
 		return FALSE
 	return TRUE
 

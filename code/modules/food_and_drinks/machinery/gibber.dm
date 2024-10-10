@@ -113,7 +113,7 @@
 
 		if(do_after(user, gibtime, target = src))
 			if(C && user.pulling == C && !C.buckled && !C.has_buckled_mobs() && !occupant)
-				user.visible_message(span_danger("[capitalize(user.declent_ru(NOMINATIVE))] запихивает [C.declent_ru(ACCUSATIVE)] в [declent_ru(GENITIVE)]!"))
+				user.visible_message(span_danger("[capitalize(user.declent_ru(NOMINATIVE))] запихивает [C.declent_ru(ACCUSATIVE)] в [declent_ru(ACCUSATIVE)]!"))
 				C.forceMove(src)
 				set_occupant(C)
 				update_appearance()
@@ -157,7 +157,7 @@
 	if(operating)
 		return
 	if(!occupant)
-		audible_message(span_hear("Вы слышите громкий металлический скрежет.."))
+		audible_message(span_hear("Вы слышите громкий металлический скрежет."))
 		return
 	if(occupant.flags_1 & HOLOGRAM_1)
 		audible_message(span_hear("Вы слышите очень короткий металлический скрежет."))
@@ -232,7 +232,7 @@
 	addtimer(CALLBACK(src, PROC_REF(make_meat), skin, allmeat, meat_produced, gibtype, diseases), gibtime)
 
 /obj/machinery/gibber/proc/make_meat(obj/item/stack/sheet/animalhide/skin, list/obj/item/food/meat/slab/allmeat, meat_produced, gibtype, list/datum/disease/diseases)
-	playsound(loc, 'sound/effects/splat.ogg', 50, TRUE)
+	playsound(src.loc, 'sound/effects/splat.ogg', 50, TRUE)
 	operating = FALSE
 	if (!dirty && prob(50))
 		dirty = TRUE

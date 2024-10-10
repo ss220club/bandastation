@@ -109,14 +109,14 @@
 					loaded++
 
 		if(loaded)
-			to_chat(user, span_notice("[capitalize(loaded)] вставлен в [declent_ru(ACCUSATIVE)].."))
+			to_chat(user, span_notice("Вы помещаете [loaded] [declension_ru(loaded,"предмет","предмета","предметов")] вставлен в [declent_ru(ACCUSATIVE)].."))
 		return
 
 	var/datum/food_processor_process/recipe = PROCESSOR_SELECT_RECIPE(attacking_item)
 	if(recipe)
 		user.visible_message(
-			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] засунул [attacking_item.declent_ru(ACCUSATIVE)] в [declent_ru(ACCUSATIVE)]."),
-			span_notice("Вы засунули [attacking_item.declent_ru(ACCUSATIVE)] в [declent_ru(ACCUSATIVE)]."),
+			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] помещает [attacking_item.declent_ru(ACCUSATIVE)] в [declent_ru(ACCUSATIVE)]."),
+			span_notice("Вы помещаете [attacking_item.declent_ru(ACCUSATIVE)] в [declent_ru(ACCUSATIVE)]."),
 		)
 		user.transferItemToLoc(attacking_item, src, TRUE)
 		LAZYADD(processor_contents, attacking_item)
@@ -133,22 +133,22 @@
 		return TRUE
 	if(ismob(user.pulling) && PROCESSOR_SELECT_RECIPE(user.pulling))
 		if(user.grab_state < GRAB_AGGRESSIVE)
-			to_chat(user, span_warning("Для этого вам нужен хват получше!"))
+			to_chat(user, span_warning("Для этого вам нужен захват получше!"))
 			return
 		var/mob/living/pushed_mob = user.pulling
-		visible_message(span_warning("[capitalize(user.declent_ru(NOMINATIVE))] пихает [pushed_mob.name] в [declent_ru(ACCUSATIVE)]!"))
+		visible_message(span_warning("[capitalize(user.declent_ru(NOMINATIVE))] помещает [pushed_mob.name] в [declent_ru(ACCUSATIVE)]!"))
 		pushed_mob.forceMove(src)
 		LAZYADD(processor_contents, pushed_mob)
 		user.stop_pulling()
 		return
 	if(!LAZYLEN(processor_contents))
-		to_chat(user, span_warning("[capitalize(declent_ru(NOMINATIVE))] пустой!"))
+		to_chat(user, span_warning("Внутри [capitalize(declent_ru(NOMINATIVE))] пусто!"))
 		return TRUE
 	processing = TRUE
 	user.visible_message(span_notice("[capitalize(user.declent_ru(NOMINATIVE))] включил [declent_ru(ACCUSATIVE)]."), \
 		span_notice("Вы включили [declent_ru(NOMINATIVE)]."), \
-		span_hear("Вы слышите кухонный комбайн."))
-	playsound(loc, 'sound/machines/blender.ogg', 50, TRUE)
+		span_hear("Вы услышали кухонный комбайн."))
+	playsound(src.loc, 'sound/machines/blender.ogg', 50, TRUE)
 	use_energy(active_power_usage)
 	var/total_time = 0
 	for(var/atom/movable/movable_input as anything in processor_contents)
