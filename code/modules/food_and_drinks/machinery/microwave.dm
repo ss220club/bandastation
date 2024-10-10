@@ -123,30 +123,30 @@
 	. = ..()
 	if(cell_powered)
 		if(!isnull(cell))
-			context[SCREENTIP_CONTEXT_CTRL_LMB] = "Remove cell"
+			context[SCREENTIP_CONTEXT_CTRL_LMB] = "Убрать батарейку"
 		else if(held_item && istype(held_item, /obj/item/stock_parts/power_store/cell))
-			context[SCREENTIP_CONTEXT_CTRL_LMB] = "Insert cell"
+			context[SCREENTIP_CONTEXT_CTRL_LMB] = "Вставить батарейку"
 
 	if(held_item?.tool_behaviour == TOOL_WRENCH)
-		context[SCREENTIP_CONTEXT_LMB] = "[anchored ? "Unsecure" : "Install/Secure"]"
+		context[SCREENTIP_CONTEXT_LMB] = "[anchored ? "От : "При"]крутить"
 		return CONTEXTUAL_SCREENTIP_SET
 
 	if(broken > NOT_BROKEN)
 		if(broken == REALLY_BROKEN && held_item?.tool_behaviour == TOOL_WIRECUTTER)
-			context[SCREENTIP_CONTEXT_LMB] = "Repair"
+			context[SCREENTIP_CONTEXT_LMB] = "Ремонтировать"
 			return CONTEXTUAL_SCREENTIP_SET
 
 		else if(broken == KINDA_BROKEN && held_item?.tool_behaviour == TOOL_WELDER)
-			context[SCREENTIP_CONTEXT_LMB] = "Repair"
+			context[SCREENTIP_CONTEXT_LMB] = "Ремонтировать"
 			return CONTEXTUAL_SCREENTIP_SET
 
-	context[SCREENTIP_CONTEXT_LMB] = "Show menu"
+	context[SCREENTIP_CONTEXT_LMB] = "Показать настройки"
 
 	if(vampire_charging_capable)
-		context[SCREENTIP_CONTEXT_ALT_LMB] = "Change to [vampire_charging_enabled ? "cook" : "charge"]"
+		context[SCREENTIP_CONTEXT_ALT_LMB] = "Изменить на [vampire_charging_enabled ? "готовку" : "зарядку"]"
 
 	if(length(ingredients) != 0)
-		context[SCREENTIP_CONTEXT_RMB] = "Start [vampire_charging_enabled ? "charging" : "cooking"]"
+		context[SCREENTIP_CONTEXT_RMB] = "Начало [vampire_charging_enabled ? "готовки" : "зарядки"]"
 
 	return CONTEXTUAL_SCREENTIP_SET
 
