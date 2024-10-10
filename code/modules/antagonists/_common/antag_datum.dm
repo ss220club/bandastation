@@ -300,7 +300,7 @@ GLOBAL_LIST_EMPTY(antagonists)
 
 	var/mob/chosen_one = SSpolling.poll_ghosts_for_target(check_jobban = job_rank, role = job_rank, poll_time = 5 SECONDS, checked_target = owner.current, alert_pic = owner.current, role_name_text = name)
 	if(chosen_one)
-		to_chat(owner, "Your mob has been taken over by a ghost! Appeal your job ban if you want to avoid this in the future!")
+		to_chat(owner, "Your mob has been taken over by a ghost! Обжалуйте ваш джоббан, чтобы такого не случилось в будущем!")
 		message_admins("[key_name_admin(chosen_one)] has taken control of ([key_name_admin(owner)]) to replace antagonist banned player.")
 		log_game("[key_name(chosen_one)] has taken control of ([key_name(owner)]) to replace antagonist banned player.")
 		owner.current.ghostize(FALSE)

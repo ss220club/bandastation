@@ -3,6 +3,7 @@
 // -------------------------
 /obj/machinery/smartfridge
 	name = "smartfridge"
+	RU_NAMES_LIST_INIT("smartfridge", "умный холодильник", "умного холодильника", "умному холодильнику", "умный холодильник", "умным холодильником", "умном холодильнике")
 	desc = "Сохраняет холодные вещи холодными, а горячие - горячими."
 	icon = 'icons/obj/machines/smartfridge.dmi'
 	icon_state = "smartfridge-icon"
@@ -438,6 +439,7 @@
 // ----------------------------
 /obj/machinery/smartfridge/drying
 	name = "dehydrator"
+	RU_NAMES_LIST_INIT("dehydrator", "иссушатель", "иссушателя", "иссушателю", "иссушатель", "иссушателем", "иссушателе")
 	desc = "Механизм, используемый для сушки растительных продуктов, еды и шкур."
 	icon_state = "dehydrator-icon"
 	base_icon_state = "dehydrator"
@@ -545,6 +547,7 @@
 /// Wooden version
 /obj/machinery/smartfridge/drying/rack
 	name = "drying rack"
+	RU_NAMES_LIST_INIT("drying rack", "сушилка", "сушилки", "сушилке", "сушилку", "сушилкой", "сушилке")
 	desc = "A wooden contraption, used to dry plant products, food and hide."
 	icon_state = "drying-rack"
 	base_icon_state = "drying-rack"
@@ -605,6 +608,7 @@
 // ----------------------------
 /obj/machinery/smartfridge/drinks
 	name = "drink showcase"
+	RU_NAMES_LIST_INIT("drink showcase", "витрина дла напитков", "витрины дла напитков", "витрине дла напитков", "витрину дла напитков", "витриной дла напитков", "витрине дла напитков")
 	desc = "Холодильник для хранения вкусного алкоголя."
 	base_build_path = /obj/machinery/smartfridge/drinks
 	contents_overlay_icon = "drink"
@@ -643,6 +647,7 @@
 // -------------------------------------
 /obj/machinery/smartfridge/extract
 	name = "smart slime extract storage"
+	RU_NAMES_LIST_INIT("smart slime extract storage", "умное хранилище экстрактов слаймов", "умного хранилища экстрактов слаймов", "умному хранилищу экстрактов слаймов", "умное хранилище экстрактов слаймов", "умным хранилищем экстрактов слаймов", "умном хранилище экстрактов слаймов")
 	desc = "Холодильник для хранения экстракта слаймов."
 	base_build_path = /obj/machinery/smartfridge/extract
 	contents_overlay_icon = "slime"
@@ -658,6 +663,7 @@
 // -------------------------------------
 /obj/machinery/smartfridge/petri
 	name = "smart petri dish storage"
+	RU_NAMES_LIST_INIT("smart petri dish storage", "умное хранилище чашек Петри", "умного хранилища чашек Петри", "умному хранилищу чашек Петри", "умное хранилище чашек Петри", "умным хранилищем чашек Петри", "умном хранилище чашек Петри")
 	desc = "Холодильник для хранения чашек Петри."
 	base_build_path = /obj/machinery/smartfridge/petri
 	contents_overlay_icon = "petri"
@@ -673,6 +679,7 @@
 // -------------------------
 /obj/machinery/smartfridge/organ
 	name = "smart organ storage"
+	RU_NAMES_LIST_INIT("smart organ storage", "умное хранилище органов", "умного хранилища органов", "умному хранилищу органов", "умное хранилище органов", "умным хранилищем органов", "умном хранилище органов")
 	desc = "Холодильник для хранения органов."
 	max_n_of_items = 20 //vastly lower to prevent processing too long
 	base_build_path = /obj/machinery/smartfridge/organ
@@ -727,6 +734,7 @@
 // -----------------------------
 /obj/machinery/smartfridge/chemistry
 	name = "smart chemical storage"
+	RU_NAMES_LIST_INIT("smart chemical storage", "умное хранилище химикатов", "умного хранилища химикатов", "умному хранилищу химикатов", "умное хранилище химикатов", "умным хранилищем химикатов", "умном хранилище химикатов")
 	desc = "Холодильник для хранения лекарств."
 	base_build_path = /obj/machinery/smartfridge/chemistry
 	contents_overlay_icon = "chem"
@@ -778,6 +786,7 @@
 // ----------------------------
 /obj/machinery/smartfridge/chemistry/virology
 	name = "smart virus storage"
+	RU_NAMES_LIST_INIT("smart virus storage", "умное хранилище вирусов", "умного хранилища вирусов", "умному хранилищу вирусов", "умное хранилище вирусов", "умным хранилищем вирусов", "умном хранилище вирусов")
 	desc = "Холодильник для хранения летучих образцов."
 	base_build_path = /obj/machinery/smartfridge/chemistry/virology
 	contents_overlay_icon = "viro"
@@ -799,7 +808,8 @@
 // Disk """fridge"""
 // ----------------------------
 /obj/machinery/smartfridge/disks
-	name = "disk compartmentalize"
+	name = "disk compartmentalizer"
+	RU_NAMES_LIST_INIT("disk compartmentalizer", "сортировщик дисков", "сортировщика дисков", "сортировщику дисков", "сортировщик дисков", "сортировщиком дисков", "сортировщике дисков")
 	desc = "Машина, способная хранить множество дисков. В большинстве случаев обозначается как DSU (disk storage unit)."
 	icon_state = "disktoaster"
 	base_icon_state = "disktoaster"

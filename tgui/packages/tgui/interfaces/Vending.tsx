@@ -14,6 +14,7 @@ import {
 
 import { createSearch } from '../../common/string';
 import { useBackend } from '../backend';
+import { JOBS_RU } from '../bandastation/ru_jobs';
 import { DmIcon, Input } from '../components';
 import { Window } from '../layouts';
 
@@ -175,7 +176,9 @@ export const UserDetails = (props) => {
   if (!user) {
     return (
       <Section>
-        <NoticeBox>No ID detected! Contact the Head of Personnel.</NoticeBox>
+        <NoticeBox>
+          ID-карта не обнаружена! Обратитесь к главе персонала.
+        </NoticeBox>
       </Section>
     );
   } else {
@@ -187,9 +190,11 @@ export const UserDetails = (props) => {
           </Stack.Item>
           <Stack.Item>
             <LabeledList>
-              <LabeledList.Item label="User">{user.name}</LabeledList.Item>
-              <LabeledList.Item label="Occupation">
-                {user.job || 'Unemployed'}
+              <LabeledList.Item label="Пользователь">
+                {user.name}
+              </LabeledList.Item>
+              <LabeledList.Item label="Должность">
+                {JOBS_RU[user.job] || user.job || 'Без работы'}
               </LabeledList.Item>
             </LabeledList>
           </Stack.Item>
@@ -229,7 +234,7 @@ const ProductDisplay = (props: {
     <Section
       fill
       scrollable
-      title="Products"
+      title="Товары"
       buttons={
         <Stack>
           {!all_products_free && user && (
@@ -242,7 +247,7 @@ const ProductDisplay = (props: {
           <Stack.Item>
             <Input
               onInput={(_, value) => setStockSearch(value)}
-              placeholder="Search..."
+              placeholder="Поиск..."
               value={stockSearch}
             />
           </Stack.Item>
@@ -381,7 +386,7 @@ const ProductStock = (props) => {
         'good'
       }
     >
-      {remaining} left
+      {remaining} ост.
     </Box>
   );
 };
@@ -394,7 +399,7 @@ const ProductButton = (props) => {
   const customPrice = access ? 'FREE' : product.price;
   let standardPrice = product.price;
   if (free) {
-    standardPrice = 'FREE';
+    standardPrice = 'БЕСПЛАТНО';
   } else if (discount) {
     standardPrice = redPrice;
   }
@@ -428,8 +433,8 @@ const ProductButton = (props) => {
 };
 
 const CATEGORY_COLORS = {
-  Contraband: 'red',
-  Premium: 'yellow',
+  Контрабанда: 'red',
+  Премиум: 'yellow',
 };
 
 const CategorySelector = (props: {

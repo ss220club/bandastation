@@ -140,7 +140,7 @@
 	fill_icon_thresholds = null
 
 /obj/item/reagent_containers/condiment/saltshaker/suicide_act(mob/living/user)
-	user.visible_message(span_suicide("[user] начинает поглощать содержимое солонки! Это похоже на какой-то акт самоубийства!"))
+	user.visible_message(span_suicide("[user] начинает поглощать содержимое солонки! Кажется, [user.ru_p_they()] пытается совершить самоубийство!"))
 	var/newname = "[name]"
 	name = "[user.name]"
 	user.name = newname

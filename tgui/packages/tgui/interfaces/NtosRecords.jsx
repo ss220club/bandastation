@@ -61,7 +61,7 @@ export const NtosRecords = (props) => {
               <br />
               Пол: {record.gender}
               <br />
-              Возвраст: {record.age}
+              Возраст: {record.age}
               <br />
               Хэш отпечатков пальцев: {record.fingerprint}
               <br />

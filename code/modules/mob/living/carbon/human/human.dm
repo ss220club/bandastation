@@ -306,7 +306,7 @@
 				sec_record_message += "\n<b>Криминальный статус:</b> [target_record.wanted_status]"
 				sec_record_message += "\n<b>Штрафы:</b> [length(target_record.citations)]"
 				sec_record_message += "\n<b>Примечания:</b> [target_record.security_note || "Отсутствуют"]"
-				sec_record_message += "\n<b>Судимости:</b> [length(target_record.crimes)] инцидентов"
+				sec_record_message += "\n<b>Уголовное дело:</b> [length(target_record.crimes)] инцидентов"
 				if(length(target_record.crimes))
 					for(var/datum/crime/crime in target_record.crimes)
 						if(!crime.valid)

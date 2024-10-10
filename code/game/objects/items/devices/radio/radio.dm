@@ -561,7 +561,7 @@
 	addtimer(CALLBACK(src, PROC_REF(end_emp_effect), curremp), 20 SECONDS)
 
 /obj/item/radio/suicide_act(mob/living/user)
-	user.visible_message(span_suicide("[user] starts bouncing [src] off [user.p_their()] head! It looks like [user.p_theyre()] trying to commit suicide!"))
+	user.visible_message(span_suicide("[user] starts bouncing [src] off [user.p_their()] head! Кажется, [user.ru_p_they()] пытается совершить самоубийство!"))
 	return BRUTELOSS
 
 /obj/item/radio/proc/end_emp_effect(curremp)

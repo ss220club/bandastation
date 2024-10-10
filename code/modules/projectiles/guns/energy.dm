@@ -283,7 +283,7 @@
 
 /obj/item/gun/energy/suicide_act(mob/living/user)
 	if(istype(user) && can_shoot() && can_trigger_gun(user) && user.get_bodypart(BODY_ZONE_HEAD))
-		user.visible_message(span_suicide("[user] is putting the barrel of [src] in [user.p_their()] mouth. It looks like [user.p_theyre()] trying to commit suicide!"))
+		user.visible_message(span_suicide("[user] is putting the barrel of [src] in [user.p_their()] mouth. Кажется, [user.ru_p_they()] пытается совершить самоубийство!"))
 		sleep(2.5 SECONDS)
 		if(user.is_holding(src))
 			user.visible_message(span_suicide("[user] melts [user.p_their()] face off with [src]!"))
@@ -296,7 +296,7 @@
 			user.visible_message(span_suicide("[user] panics and starts choking to death!"))
 			return OXYLOSS
 	else
-		user.visible_message(span_suicide("[user] is pretending to melt [user.p_their()] face off with [src]! It looks like [user.p_theyre()] trying to commit suicide!</b>"))
+		user.visible_message(span_suicide("[user] is pretending to melt [user.p_their()] face off with [src]! Кажется, [user.ru_p_they()] пытается совершить самоубийство!</b>"))
 		playsound(src, dry_fire_sound, 30, TRUE)
 		return OXYLOSS
 

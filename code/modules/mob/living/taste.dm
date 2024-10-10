@@ -35,11 +35,11 @@
 		// We dont want to spam the same message over and over again at the
 		// person. Give it a bit of a buffer.
 		if(get_timed_status_effect_duration(/datum/status_effect/hallucination) > 100 SECONDS && prob(25))
-			text_output = pick("spiders","dreams","nightmares","the future","the past","victory",\
-			"defeat","pain","bliss","revenge","poison","time","space","death","life","truth","lies","justice","memory",\
-			"regrets","your soul","suffering","music","noise","blood","hunger","the american way")
+			text_output = pick("пауков","снов","ужасов","будущего","прошлого","победы",\
+			"поражения","боли","блаженства","мести","яда","времени","пространства","смерти","жизни","правды","лжи","справедливости","памяти",\
+			"сожаления","своей души","страданий","музыки","звука","крови","голода","американской свободы")
 		if(text_output != last_taste_text || last_taste_time + 100 < world.time)
-			to_chat(src, span_notice("You can taste [text_output]."))
+			to_chat(src, span_notice("Вы чувствуете вкус: [text_output]."))
 			// "something indescribable" -> too many tastes, not enough flavor.
 
 			last_taste_time = world.time

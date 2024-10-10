@@ -36,7 +36,7 @@
 		radiation_pulse(src, max_range = 2, threshold = RAD_EXTREME_INSULATION)
 
 /obj/item/nuke_core/suicide_act(mob/living/user)
-	user.visible_message(span_suicide("[user] is rubbing [src] against [user.p_them()]self! It looks like [user.p_theyre()] trying to commit suicide!"))
+	user.visible_message(span_suicide("[user] is rubbing [src] against [user.p_them()]self! Кажется, [user.ru_p_they()] пытается совершить самоубийство!"))
 	return TOXLOSS
 
 //nuke core box, for carrying the core

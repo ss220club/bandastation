@@ -76,7 +76,7 @@
 	return ..()
 
 /obj/item/spear/suicide_act(mob/living/carbon/user)
-	user.visible_message(span_suicide("[user] begins to sword-swallow \the [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
+	user.visible_message(span_suicide("[user] begins to sword-swallow \the [src]! Кажется, [user.ru_p_they()] пытается совершить самоубийство!"))
 	return BRUTELOSS
 
 /obj/item/spear/CheckParts(list/parts_list)
@@ -153,7 +153,7 @@
 	..()
 
 /obj/item/spear/explosive/suicide_act(mob/living/carbon/user)
-	user.visible_message(span_suicide("[user] begins to sword-swallow \the [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
+	user.visible_message(span_suicide("[user] begins to sword-swallow \the [src]! Кажется, [user.ru_p_they()] пытается совершить самоубийство!"))
 	user.say("[war_cry]", forced="spear warcry")
 	explosive.forceMove(user)
 	explosive.detonate()
