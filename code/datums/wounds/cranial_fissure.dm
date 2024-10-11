@@ -114,7 +114,7 @@
 	eyes.Remove(victim)
 	user.put_in_hands(eyes)
 
-	log_combat(user, victim, "вытащил глаза)
+	log_combat(user, victim, "вытащил глаза")
 
 	playsound(victim, 'sound/items/handling/surgery/organ1.ogg', 75, TRUE)
 	user.visible_message(

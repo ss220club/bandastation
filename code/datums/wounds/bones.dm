@@ -107,7 +107,7 @@
 		if(!victim || !limb)
 			qdel(src)
 			return
-		to_chat(victim, span_green("[limb.plaintext_zone] восстановилась от [name]!"))
+		to_chat(victim, span_green("Травма \"[name]\" на [capitalize(limb.ru_plaintext_zone[PREPOSITIONAL] || limb.plaintext_zone)] излечивается!"))
 		remove_wound()
 
 /// If we're a human who's punching something with a broken arm, we might hurt ourselves doing so
