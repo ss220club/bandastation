@@ -175,7 +175,7 @@
 				amount--
 			else
 				continue
-		string_ingredient_list += "[amount] единиц[declension_ru(amount, "у", "ы", "")] [initial(ingredient.name)]\n"
+		string_ingredient_list += "[amount == 1 ? "[initial(ingredient.ru_name_nominative) || initial(ingredient.name)]" : "[initial(ingredient.ru_name_genitive) || initial(ingredient.name)]"]\n"
 
 	// If we did find ingredients then add them onto the list.
 	if(length(string_ingredient_list))

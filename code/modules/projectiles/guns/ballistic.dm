@@ -577,7 +577,7 @@
 	. += "Внутри имеется [get_ammo(count_chambered)] патрон[declension_ru(get_ammo(count_chambered), "", "а", "ов")]."
 
 	if (!chambered && !hidden_chambered)
-		. += "Похоже, нет заряженного патрона"
+		. += "Похоже, что нет заряженного патрона."
 	if (bolt_locked)
 		. += "[capitalize(bolt_wording)] взведен и должен быть опущен перед стрельбой или очисткой."
 	if (suppressed)
