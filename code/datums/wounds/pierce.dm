@@ -43,23 +43,23 @@
 			victim.bleed(blood_bled, TRUE)
 		if(7 to 13)
 			victim.visible_message(
-				span_smalldanger("Капли крови вылетают из дыры в [limb.plaintext_zone] [victim]!."),
-				span_danger("Вы откашливаетесь, выплевывая немного крови из удара по вашей [limb.plaintext_zone]."),
+				span_smalldanger("Капли крови вылетают из дыры в [limb.ru_plaintext_zone[NOMINATIVE] || limb.plaintext_zone] [victim]!."),
+				span_danger("Вы откашливаетесь, выплевывая немного крови из удара по вашей [limb.ru_plaintext_zone[NOMINATIVE] || limb.plaintext_zone]."),
 				vision_distance = COMBAT_MESSAGE_RANGE,
 			)
 			victim.bleed(blood_bled, TRUE)
 		if(14 to 19)
 			victim.visible_message(
-				span_smalldanger("Небольшая струя крови брызгает из дыры в [limb.plaintext_zone] [victim]!!"),
-				span_danger("Вы выплевываете струю крови из удара по вашей [limb.plaintext_zone]!"),
+				span_smalldanger("Небольшая струя крови брызгает из дыры в [limb.ru_plaintext_zone[NOMINATIVE] || limb.plaintext_zone] [victim]!!"),
+				span_danger("Вы выплевываете струю крови из удара по вашей [limb.ru_plaintext_zone[NOMINATIVE] || limb.plaintext_zone]!"),
 				vision_distance = COMBAT_MESSAGE_RANGE,
 			)
 			new /obj/effect/temp_visual/dir_setting/bloodsplatter(victim.loc, victim.dir)
 			victim.bleed(blood_bled)
 		if(20 to INFINITY)
 			victim.visible_message(
-				span_danger("Брызги крови струятся из раны в [limb.plaintext_zone] [victim]!"),
-				span_bolddanger("Вы задыхаетесь, выплевывая брызги крови из удара по вашей [limb.plaintext_zone]!"),
+				span_danger("Брызги крови струятся из раны в [limb.ru_plaintext_zone[NOMINATIVE] || limb.plaintext_zone] [victim]!"),
+				span_bolddanger("Вы задыхаетесь, выплевывая брызги крови из удара по вашей [limb.ru_plaintext_zone[NOMINATIVE] || limb.plaintext_zone]!"),
 				vision_distance = COMBAT_MESSAGE_RANGE,
 			)
 			victim.bleed(blood_bled)
@@ -86,7 +86,7 @@
 		if(victim.bodytemperature < (BODYTEMP_NORMAL - 10))
 			adjust_blood_flow(-0.1 * seconds_per_tick)
 			if(SPT_PROB(2.5, seconds_per_tick))
-				to_chat(victim, span_notice("Вы чувствуете, как [LOWER_TEXT(name)] в вашей [limb.plaintext_zone] становится твердым от холода!"))
+				to_chat(victim, span_notice("Вы чувствуете, как [LOWER_TEXT(name)] в вашей [limb.ru_plaintext_zone[NOMINATIVE] || limb.plaintext_zone] становится твердым от холода!"))
 
 		if(HAS_TRAIT(victim, TRAIT_BLOODY_MESS))
 			adjust_blood_flow(0.25 * seconds_per_tick) // old heparin used to just add +2 bleed stacks per tick, this adds 0.5 bleed flow to all open cuts which is probably even stronger as long as you can cut them first
@@ -130,9 +130,9 @@
 
 	if(HAS_TRAIT(src, TRAIT_WOUND_SCANNED))
 		treatment_delay *= 0.5
-		user.visible_message(span_notice("[user] начинает искусно зашивать [limb.plaintext_zone] [victim] с помощью [I]..."), span_notice("Вы начинаете зашивать [user == victim ? "вашу" : "[victim]"] [limb.plaintext_zone] с помощью [I], имея в виду информацию с голограммы..."))
+		user.visible_message(span_notice("[user] начинает искусно зашивать [limb.ru_plaintext_zone[NOMINATIVE] || limb.plaintext_zone] [victim] с помощью [I]..."), span_notice("Вы начинаете зашивать [user == victim ? "вашу" : "[victim]"] [limb.ru_plaintext_zone[NOMINATIVE] || limb.plaintext_zone] с помощью [I], имея в виду информацию с голограммы..."))
 	else
-		user.visible_message(span_notice("[user] начинает зашивать [limb.plaintext_zone] [victim] с помощью [I]..."), span_notice("Вы начинаете зашивать [user == victim ? "вашу" : "[victim]"] [limb.plaintext_zone] с помощью [I]..."))
+		user.visible_message(span_notice("[user] начинает зашивать [limb.ru_plaintext_zone[NOMINATIVE] || limb.plaintext_zone] [victim] с помощью [I]..."), span_notice("Вы начинаете зашивать [user == victim ? "вашу" : "[victim]"] [limb.ru_plaintext_zone[NOMINATIVE] || limb.plaintext_zone] с помощью [I]..."))
 
 	if(!do_after(user, treatment_delay, target = victim, extra_checks = CALLBACK(src, PROC_REF(still_exists))))
 		return TRUE
@@ -146,7 +146,7 @@
 	if(blood_flow > 0)
 		return try_treating(I, user)
 	else
-		to_chat(user, span_green("Вы успешно закрываете дыру в [user == victim ? "вашей" : "[victim]'s"] [limb.plaintext_zone]."))
+		to_chat(user, span_green("Вы успешно закрываете дыру в [user == victim ? "вашей" : "[victim]'s"] [limb.ru_plaintext_zone[NOMINATIVE] || limb.plaintext_zone]."))
 		return TRUE
 
 /// Если кто-то использует инструмент для прижигания или что-то горячее для прижигания этой раны
@@ -159,9 +159,9 @@
 
 	if(HAS_TRAIT(src, TRAIT_WOUND_SCANNED))
 		treatment_delay *= 0.5
-		user.visible_message(span_danger("[user] начинает искусно прижигать [limb.plaintext_zone] [victim] с помощью [I]..."), span_warning("Вы начинаете прижигать [user == victim ? "вашу" : "[victim]"] [limb.plaintext_zone] с помощью [I], учитывая информацию с голограммы..."))
+		user.visible_message(span_danger("[user] начинает искусно прижигать [limb.ru_plaintext_zone[NOMINATIVE] || limb.plaintext_zone] [victim] с помощью [I]..."), span_warning("Вы начинаете прижигать [user == victim ? "вашу" : "[victim]"] [limb.ru_plaintext_zone[NOMINATIVE] || limb.plaintext_zone] с помощью [I], учитывая информацию с голограммы..."))
 	else
-		user.visible_message(span_danger("[user] начинает прижигать [limb.plaintext_zone] [victim] с помощью [I]..."), span_warning("Вы начинаете прижигать [user == victim ? "вашу" : "[victim]"] [limb.plaintext_zone] с помощью [I]..."))
+		user.visible_message(span_danger("[user] начинает прижигать [limb.ru_plaintext_zone[NOMINATIVE] || limb.plaintext_zone] [victim] с помощью [I]..."), span_warning("Вы начинаете прижигать [user == victim ? "вашу" : "[victim]"] [limb.ru_plaintext_zone[NOMINATIVE] || limb.plaintext_zone] с помощью [I]..."))
 
 	if(!do_after(user, treatment_delay, target = victim, extra_checks = CALLBACK(src, PROC_REF(still_exists))))
 		return TRUE
