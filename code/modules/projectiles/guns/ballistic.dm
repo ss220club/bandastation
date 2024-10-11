@@ -87,11 +87,11 @@
 	///Whether the gun has an internal magazine or a detatchable one. Overridden by BOLT_TYPE_NO_BOLT.
 	var/internal_magazine = FALSE
 	///Phrasing of the bolt in examine and notification messages; ex: bolt, slide, etc.
-	var/bolt_wording = "bolt"
+	var/bolt_wording = "затвора"
 	///Phrasing of the magazine in examine and notification messages; ex: magazine, box, etx
-	var/magazine_wording = "magazine"
+	var/magazine_wording = "магазина"
 	///Phrasing of the cartridge in examine and notification messages; ex: bullet, shell, dart, etc.
-	var/cartridge_wording = "bullet"
+	var/cartridge_wording = "патронов"
 	///length between individual racks
 	var/rack_delay = 5
 	///time of the most recent rack, used for cooldown purposes
@@ -331,11 +331,11 @@
 	if (bolt_type == BOLT_TYPE_OPEN)
 		if(!bolt_locked) //If it's an open bolt, racking again would do nothing
 			if (user)
-				balloon_alert(user, "[bolt_wording] already cocked!")
+				balloon_alert(user, "повторный взвод [bolt_wording] невозможен!")
 			return
 		bolt_locked = FALSE
 	if (user)
-		balloon_alert(user, "[bolt_wording] racked")
+		balloon_alert(user, "взвод [bolt_wording]")
 	process_chamber(!chambered, FALSE)
 	if (bolt_type == BOLT_TYPE_LOCKING && !chambered)
 		bolt_locked = TRUE
@@ -348,7 +348,7 @@
 /obj/item/gun/ballistic/proc/drop_bolt(mob/user = null)
 	playsound(src, bolt_drop_sound, bolt_drop_sound_volume, FALSE)
 	if (user)
-		balloon_alert(user, "[bolt_wording] dropped")
+		balloon_alert(user, "опуск [bolt_wording]")
 	chamber_round()
 	bolt_locked = FALSE
 	update_appearance()
@@ -361,7 +361,7 @@
 	if(user.transferItemToLoc(AM, src))
 		magazine = AM
 		if (display_message)
-			balloon_alert(user, "[magazine_wording] loaded")
+			balloon_alert(user, "вставка [magazine_wording]")
 		if (magazine.ammo_count())
 			playsound(src, load_sound, load_sound_volume, load_sound_vary)
 		else
@@ -386,16 +386,16 @@
 	var/obj/item/ammo_box/magazine/old_mag = magazine
 	if (tac_load)
 		if (insert_magazine(user, tac_load, FALSE))
-			balloon_alert(user, "[magazine_wording] swapped")
+			balloon_alert(user, "снятие [magazine_wording]")
 		else
-			to_chat(user, span_warning("You dropped the old [magazine_wording], but the new one doesn't fit. How embarassing."))
+			to_chat(user, span_warning("Вы провели снятие [magazine_wording], но не можете вставить новый. Как неловко."))
 			magazine = null
 	else
 		magazine = null
 	user.put_in_hands(old_mag)
 	old_mag.update_appearance()
 	if (display_message)
-		balloon_alert(user, "[magazine_wording] unloaded")
+		balloon_alert(user, "снятие [magazine_wording]")
 	update_appearance()
 
 /obj/item/gun/ballistic/can_shoot()
@@ -426,7 +426,7 @@
 				chambered = null
 			var/num_loaded = magazine?.attackby(A, user, params, TRUE)
 			if (num_loaded)
-				balloon_alert(user, "[num_loaded] [cartridge_wording]\s loaded")
+				balloon_alert(user, "[cartridge_wording] заряжено: [num_loaded]")
 				playsound(src, load_sound, load_sound_volume, load_sound_vary)
 				if (chambered == null && bolt_type == BOLT_TYPE_NO_BOLT)
 					chamber_round()
@@ -555,7 +555,7 @@
 			if(T && is_station_level(T.z))
 				SSblackbox.record_feedback("tally", "station_mess_created", 1, CB.name)
 		if (num_unloaded)
-			balloon_alert(user, "[num_unloaded] [cartridge_wording]\s unloaded")
+			balloon_alert(user, "[cartridge_wording] разряжено: [num_unloaded]")
 			playsound(user, eject_sound, eject_sound_volume, eject_sound_vary)
 			update_appearance()
 		else
@@ -579,7 +579,7 @@
 	if (!chambered && !hidden_chambered)
 		. += "It does not seem to have a round chambered."
 	if (bolt_locked)
-		. += "The [bolt_wording] is locked back and needs to be released before firing or de-fouling."
+		. += "[capitalize(bolt_wording)] взведен и должен быть опущен перед стрельбой или очисткой."
 	if (suppressed)
 		. += "It has a suppressor [can_unsuppress ? "attached that can be removed with <b>alt+click</b>." : "that is integral or can't otherwise be removed."]"
 	if(can_misfire)
