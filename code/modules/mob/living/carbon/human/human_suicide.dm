@@ -78,8 +78,8 @@
 		if(HUMAN_DEFAULT_MODE_SUICIDE_MESSAGE)
 			suicide_message = pick(list(
 				"[capitalize(declent_ru(NOMINATIVE))] слишком увлекается жизнью! Кажется, [ru_p_they()] пытается совершить самоубийство.",
-				"[capitalize(declent_ru(NOMINATIVE))] запятюнивает себя досмерти! Кажется, [ru_p_they()] пытается совершить самоубийство.",
-				"[capitalize(declent_ru(NOMINATIVE))] обнимает себя досмерти! Кажется, [ru_p_they()] пытается совершить самоубийство.",
+				"[capitalize(declent_ru(NOMINATIVE))] запятюнивает себя до смерти! Кажется, [ru_p_they()] пытается совершить самоубийство.",
+				"[capitalize(declent_ru(NOMINATIVE))] обнимает себя до смерти! Кажется, [ru_p_they()] пытается совершить самоубийство.",
 			))
 
 	visible_message(span_danger(suicide_message), span_userdanger(suicide_message), span_hear(get_blind_suicide_message()))

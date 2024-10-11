@@ -79,7 +79,7 @@
 
 /obj/item/gun/energy/get_cell(atom/movable/interface, mob/user)
 	if(istype(interface, /obj/item/inducer))
-		to_chat(user, span_alert("Error: unable to interface with [interface]."))
+		to_chat(user, span_alert("ОШИБКА: невозможно взаимодействие с [interface.declent_ru(INSTRUMENTAL)]."))
 		return null
 	return cell
 
@@ -283,20 +283,20 @@
 
 /obj/item/gun/energy/suicide_act(mob/living/user)
 	if(istype(user) && can_shoot() && can_trigger_gun(user) && user.get_bodypart(BODY_ZONE_HEAD))
-		user.visible_message(span_suicide("[user] is putting the barrel of [src] in [user.p_their()] mouth. Кажется, [user.ru_p_they()] пытается совершить самоубийство!"))
+		user.visible_message(span_suicide("[capitalize(user.declent_ru(NOMINATIVE))] вставляет ствол [declent_ru(GENITIVE)] себе в рот. Кажется, [user.ru_p_they()] пытается совершить самоубийство!"))
 		sleep(2.5 SECONDS)
 		if(user.is_holding(src))
-			user.visible_message(span_suicide("[user] melts [user.p_their()] face off with [src]!"))
+			user.visible_message(span_suicide("[capitalize(user.declent_ru(NOMINATIVE))] расплавляет себе лицо с помощью [declent_ru(GENITIVE)]!"))
 			playsound(loc, fire_sound, 50, TRUE, -1)
 			var/obj/item/ammo_casing/energy/shot = ammo_type[select]
 			cell.use(shot.e_cost)
 			update_appearance()
 			return FIRELOSS
 		else
-			user.visible_message(span_suicide("[user] panics and starts choking to death!"))
+			user.visible_message(span_suicide("[capitalize(user.declent_ru(NOMINATIVE))] паникует и начинает задыхаться до смерти!"))
 			return OXYLOSS
 	else
-		user.visible_message(span_suicide("[user] is pretending to melt [user.p_their()] face off with [src]! Кажется, [user.ru_p_they()] пытается совершить самоубийство!</b>"))
+		user.visible_message(span_suicide("[capitalize(user.declent_ru(NOMINATIVE))] притворяется, что расплавляет себе лицо с помощью [declent_ru(GENITIVE)]! Кажется, [user.ru_p_they()] пытается совершить самоубийство!</b>"))
 		playsound(src, dry_fire_sound, 30, TRUE)
 		return OXYLOSS
 
@@ -320,13 +320,13 @@
 		if(!loaded_projectile)
 			. = ""
 		else if(loaded_projectile.damage <= 0 || loaded_projectile.damage_type == STAMINA)
-			user.visible_message(span_danger("[user] tries to light [A.loc == user ? "[user.p_their()] [A.name]" : A] with [src], but it doesn't do anything. Dumbass."))
+			user.visible_message(span_danger("[capitalize(user.declent_ru(NOMINATIVE))] пытается зажечь [A.declent_ru(ACCUSATIVE)][A.loc == user ? " у себя" : ""] с помощью [declent_ru(GENITIVE)], но ничего не происходит. Тупица."))
 			playsound(user, E.fire_sound, 50, TRUE)
 			playsound(user, loaded_projectile.hitsound, 50, TRUE)
 			cell.use(E.e_cost)
 			. = ""
 		else if(loaded_projectile.damage_type != BURN)
-			user.visible_message(span_danger("[user] tries to light [A.loc == user ? "[user.p_their()] [A.name]" : A] with [src], but only succeeds in utterly destroying it. Dumbass."))
+			user.visible_message(span_danger("[capitalize(user.declent_ru(NOMINATIVE))] пытается зажечь [A.declent_ru(ACCUSATIVE)][A.loc == user ? " у себя" : ""] с помощью [declent_ru(GENITIVE)], но создает лишь разрушение. Тупица."))
 			playsound(user, E.fire_sound, 50, TRUE)
 			playsound(user, loaded_projectile.hitsound, 50, TRUE)
 			cell.use(E.e_cost)
@@ -336,7 +336,7 @@
 			playsound(user, E.fire_sound, 50, TRUE)
 			playsound(user, loaded_projectile.hitsound, 50, TRUE)
 			cell.use(E.e_cost)
-			. = span_danger("[user] casually lights [A.loc == user ? "[user.p_their()] [A.name]" : A] with [src]. Damn.")
+			. = span_danger("[capitalize(user.declent_ru(NOMINATIVE))] непринужденно зажигает [A.declent_ru(ACCUSATIVE)][A.loc == user ? " у себя" : ""] с помощью [declent_ru(GENITIVE)]. Емае.")
 
 /obj/item/gun/energy/proc/instant_recharge()
 	SIGNAL_HANDLER
