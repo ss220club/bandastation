@@ -37,7 +37,7 @@
 	return ..()
 
 /obj/item/reagent_containers/condiment/suicide_act(mob/living/carbon/user)
-	user.visible_message(span_suicide("[capitalize(user.declent_ru(NOMINATIVE))] пытается проглотить содержимое [name.declent_ru(GENITIVE)]! Еда работает не так!"))
+	user.visible_message(span_suicide("[capitalize(user.declent_ru(NOMINATIVE))] пытается проглотить содержимое [declent_ru(GENITIVE)]! Еда работает не так!"))
 	return OXYLOSS
 
 /obj/item/reagent_containers/condiment/attack(mob/M, mob/user, def_zone)

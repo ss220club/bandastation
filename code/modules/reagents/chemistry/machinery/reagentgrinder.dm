@@ -99,24 +99,24 @@
 		. += span_notice("Наполнен на <b>[round((total_weight / maximum_weight) * 100)]%</b> вместимости.")
 
 	if(!QDELETED(beaker))
-		. += span_notice("Мензурка размером в <b>[beaker.reagents.maximum_volume]u</b> [declension_ru(loaded,"юнит","юнита","юнитов")] вставлена. Содержимое:")
+		. += span_notice("Мензурка размером в <b>[beaker.reagents.maximum_volume]u</b> [declension_ru(beaker.reagents.maximum_volume,"юнит","юнита","юнитов")] вставлена. Содержимое:")
 		if(beaker.reagents.total_volume)
 			for(var/datum/reagent/reg as anything in beaker.reagents.reagent_list)
-				. += span_notice("[round(reg.volume, CHEMICAL_VOLUME_ROUNDING)] [declension_ru(loaded,"юнит","юнита","юнитов")] [reg.name]")
+				. += span_notice("[round(reg.volume, CHEMICAL_VOLUME_ROUNDING)] [declension_ru(round(reg.volume, CHEMICAL_VOLUME_ROUNDING),"юнит","юнита","юнитов")] [reg.name]")
 		else
 			. += span_notice("Ничего.")
 		. += span_notice("[EXAMINE_HINT("ПКМ")] пустой рукой для снятия мензурки.")
 	else
 		. += span_warning("Нет мензурки.")
 
-	. += span_notice("Вы можете перетащить хранилище на [delcent_ru(ACCUSATIVE)], чтобы перемести всё содержимое.")
+	. += span_notice("Вы можете перетащить хранилище на [declent_ru(ACCUSATIVE)], чтобы перемести всё содержимое.")
 	if(anchored)
 		. += span_notice("Машина может быть [EXAMINE_HINT("откручена")].")
 	else
 		. += span_warning("Машина должна быть [EXAMINE_HINT("прикручена")] к полу для работы.")
 	. += span_notice("Панель обслуживания может быть [EXAMINE_HINT(panel_open ? "привинчина" : "отвинчина")].")
 	if(panel_open)
-		. += span_notice("Машина может быть [EXAMINE_HINT("вскрыта")].")
+		. += span_notice("Машина может быть [EXAMINE_HINT("разобрана")] при помощи лома.")
 
 /obj/machinery/reagentgrinder/update_overlays()
 	. = ..()

@@ -128,7 +128,7 @@
 			context[SCREENTIP_CONTEXT_CTRL_LMB] = "Вставить батарейку"
 
 	if(held_item?.tool_behaviour == TOOL_WRENCH)
-		context[SCREENTIP_CONTEXT_LMB] = "[anchored ? "От : "При"]крутить"
+		context[SCREENTIP_CONTEXT_LMB] = "[anchored ? "От" : "При"]крутить"
 		return CONTEXTUAL_SCREENTIP_SET
 
 	if(broken > NOT_BROKEN)
@@ -143,10 +143,10 @@
 	context[SCREENTIP_CONTEXT_LMB] = "Показать настройки"
 
 	if(vampire_charging_capable)
-		context[SCREENTIP_CONTEXT_ALT_LMB] = "Изменить на [vampire_charging_enabled ? "готовку" : "зарядку"]"
+		context[SCREENTIP_CONTEXT_ALT_LMB] = "Изменить на [vampire_charging_enabled ? "зарядку" : "готовку"]"
 
 	if(length(ingredients) != 0)
-		context[SCREENTIP_CONTEXT_RMB] = "Начало [vampire_charging_enabled ? "готовки" : "зарядки"]"
+		context[SCREENTIP_CONTEXT_RMB] = "Начать [vampire_charging_enabled ? "зарядку" : "готовку"]"
 
 	return CONTEXTUAL_SCREENTIP_SET
 
@@ -352,14 +352,14 @@
 
 	user.visible_message(
 		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает ремонтировать [declent_ru(ACCUSATIVE)]."),
-		span_notice("ВВы начинаете ремонтировать [declent_ru(ACCUSATIVE)]."),
+		span_notice("Вы начинаете ремонтировать [declent_ru(ACCUSATIVE)]."),
 	)
 
 	if(!tool.use_tool(src, user, 2 SECONDS, amount = 1, volume = 50))
 		return ITEM_INTERACT_BLOCKING
 
 	user.visible_message(
-		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] заканчивает ремонт, [declent_ru(NOMINATIVE)] снова работает."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] заканчивает ремонтировать, [declent_ru(NOMINATIVE)] снова работает."),
 		span_notice("Вы заканчиваете ремонтировать [declent_ru(ACCUSATIVE)]."),
 	)
 	broken = NOT_BROKEN
@@ -428,7 +428,7 @@
 			balloon_alert(user, "заполнено!")
 			return ITEM_INTERACT_BLOCKING
 		if(!user.transferItemToLoc(item, src))
-			 balloon_alert(user, "застряло на руке!")
+			balloon_alert(user, "прилипло к руке!")
 			return ITEM_INTERACT_BLOCKING
 
 		ingredients += item

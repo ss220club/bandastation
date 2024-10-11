@@ -106,7 +106,7 @@
 		return ITEM_INTERACT_BLOCKING
 
 	user.visible_message(
-		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает ремонтировать  [declent_ru(ACCUSATIVE)]."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает ремонтировать [declent_ru(ACCUSATIVE)]."),
 		span_notice("Вы начинаете ремонтировать [declent_ru(ACCUSATIVE)]..."),
 		span_hear("Вы слышите звук сварки."),
 	)
@@ -213,9 +213,9 @@
 
 
 	if(anchored)
-		. += span_info("Машина [EXAMINE_HINT("прикручена")] к полу.")
+		. += span_info("Машина [EXAMINE_HINT("открутить")] от пола.")
 	else
-		. += span_info("Можно [EXAMINE_HINT("открутить")] от пола.")
+		. += span_info("Можно [EXAMINE_HINT("прикрутить")] к полу.")
 
 /obj/machinery/smartfridge/update_appearance(updates=ALL)
 	. = ..()
@@ -298,10 +298,10 @@
 			if(loaded)
 				if(shown_contents_length >= max_n_of_items)
 					user.visible_message(span_notice("[capitalize(user.declent_ru(NOMINATIVE))] перекладывает предметы из [weapon.declent_ru(GENITIVE)] в [declent_ru(ACCUSATIVE)]."), \
-						span_notice("Вы перемещаете содержимое [weapon.declent_ru(ACCUSATIVE)] в [declent_ru(ACCUSATIVE)]."))
+						span_notice("Вы перемещаете содержимое из [weapon.declent_ru(GENITIVE)] в [declent_ru(ACCUSATIVE)]."))
 				else
 					user.visible_message(span_notice("[capitalize(user.declent_ru(NOMINATIVE))] перекладывает предметы из [weapon.declent_ru(GENITIVE)] в [declent_ru(ACCUSATIVE)]."), \
-						span_notice("Вы перемещаете содержимое [weapon.declent_ru(GENITIVE)] в [declent_ru(ACCUSATIVE)]."))
+						span_notice("Вы перемещаете содержимое из [weapon.declent_ru(GENITIVE)] в [declent_ru(ACCUSATIVE)]."))
 				if(weapon.contents.len)
 					to_chat(user, span_warning("Некоторые предметы не влазят."))
 				if (visible_contents)
@@ -409,7 +409,7 @@
 
 			if(isAI(living_mob))
 				to_chat(living_mob, span_warning("[capitalize(declent_ru(NOMINATIVE))] вне зоны вашего контроля!"))
-				return
+				return TRUE
 
 			for(var/obj/item/dispensed_item in contents)
 				if(amount <= 0)
@@ -440,10 +440,11 @@
 /obj/machinery/smartfridge/drying
 	name = "dehydrator"
 	RU_NAMES_LIST_INIT("dehydrator", "иссушатель", "иссушателя", "иссушателю", "иссушатель", "иссушателем", "иссушателе")
-	desc = "Механизм, используемый для сушки растительных продуктов, еды и шкур."
+	desc = "Механизм, используемый для обезвоживания различных продуктов."
 	icon_state = "dehydrator-icon"
 	base_icon_state = "dehydrator"
 	contents_overlay_icon = "contents"
+	circuit = /obj/item/circuitboard/machine/dehydrator
 	light_power = 0.5
 	base_build_path = /obj/machinery/smartfridge/drying //should really be seeing this without admin fuckery.
 	has_emissive = FALSE

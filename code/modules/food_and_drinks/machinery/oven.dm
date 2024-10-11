@@ -273,7 +273,7 @@
 
 	if(!istype(item, /obj/item/storage/bag/tray))
 		// Non-tray dumping requires a do_after
-		to_chat(user, span_notice("Вы помещаете содержимое [item.declent_ru(ACCUSATIVE)] на [declent_ru(ACCUSATIVE)]..."))
+		to_chat(user, span_notice("Вы помещаете содержимое из [item.declent_ru(GENITIVE)] на [declent_ru(ACCUSATIVE)]..."))
 		if(!do_after(user, 2 SECONDS, target = item))
 			return ITEM_INTERACT_BLOCKING
 

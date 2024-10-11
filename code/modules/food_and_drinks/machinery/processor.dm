@@ -136,7 +136,7 @@
 			to_chat(user, span_warning("Для этого вам нужен захват получше!"))
 			return
 		var/mob/living/pushed_mob = user.pulling
-		visible_message(span_warning("[capitalize(user.declent_ru(NOMINATIVE))] помещает [pushed_mob.name] в [declent_ru(ACCUSATIVE)]!"))
+		visible_message(span_warning("[capitalize(user.declent_ru(NOMINATIVE))] помещает [pushed_mob.declent_ru(ACCUSATIVE)] в [declent_ru(ACCUSATIVE)]!"))
 		pushed_mob.forceMove(src)
 		LAZYADD(processor_contents, pushed_mob)
 		user.stop_pulling()
@@ -189,7 +189,7 @@
 
 /obj/machinery/processor/container_resist_act(mob/living/user)
 	user.forceMove(drop_location())
-	user.visible_message(span_notice("[capitalize(user.declent_ru(NOMINATIVE))] выбирается из кухонного комбайна!"))
+	user.visible_message(span_notice("[capitalize(user.declent_ru(NOMINATIVE))] выбирается из [declent_ru(NOMINATIVE)]!"))
 
 /obj/machinery/processor/slime
 	name = "slime processor"
