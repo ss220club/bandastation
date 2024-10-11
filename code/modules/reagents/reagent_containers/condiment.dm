@@ -89,7 +89,7 @@
 			to_chat(user, span_warning("В [declent_ru(DATIVE)] нет места!"))
 			return ITEM_INTERACT_BLOCKING
 		var/trans = src.reagents.trans_to(target, amount_per_transfer_from_this, transferred_by = user)
-		to_chat(user, span_notice("Содержимое [target.declent_ru(GENITIVE)] заполняется на [trans] [declension_ru(trans,"юнит","юнита","юнитов")]."))
+		to_chat(user, span_notice("Вы передаете [trans] [declension_ru(trans,"юнит","юнита","юнитов")] из [target.declent_ru(GENITIVE)]."))
 		return ITEM_INTERACT_SUCCESS
 
 	return NONE
