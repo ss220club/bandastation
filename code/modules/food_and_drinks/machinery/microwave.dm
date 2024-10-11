@@ -169,7 +169,6 @@
 	. = ..()
 	if(vampire_charging_capable)
 		. += span_info("Эта модель оснащена функцией Wave™: эксклюзив от Нанотрейзен. Наша новейшая разработка Wave™ позволяет заряжать КПК без проводов с помощью микроволновых частот! Вы можете зарядить свое устройство, поместив его внутрь и выбрав режим зарядки.")
-
 		. += span_info("Ведь ничто так не говорит 'будущее', как зарядка КПК во время переваривания остатков пищи. Нанотрейзен Wave™ - многозадачность в новом понимании.")
 
 	if(cell_powered)
@@ -332,16 +331,16 @@
 		return NONE
 
 	user.visible_message(
-		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает ремонт [declent_ru(GENITIVE)]."),
-		span_notice("Вы начинаете ремонт [declent_ru(GENITIVE)]."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает ремонтировать [declent_ru(GENITIVE)]."),
+		span_notice("Вы начинаете ремонтировать [declent_ru(ACCUSATIVE)]."),
 	)
 
 	if(!tool.use_tool(src, user, 2 SECONDS, volume = 50))
 		return ITEM_INTERACT_BLOCKING
 
 	user.visible_message(
-		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] заканчивает ремонт, [declent_ru(NOMINATIVE)] снова работает."),
-		span_notice("Вы заканчиваете ремонт, [declent_ru(NOMINATIVE)] снова работает."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] заканчивает ремонтировать [declent_ru(ACCUSATIVE)]."),
+		span_notice("Вы заканчиваете ремонтировать [declent_ru(ACCUSATIVE)]."),
 	)
 	broken = KINDA_BROKEN // Fix it a bit
 	update_appearance()
@@ -352,8 +351,8 @@
 		return NONE
 
 	user.visible_message(
-		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает ремонт, [declent_ru(NOMINATIVE)] скоро снова заработает!"),
-		span_notice("ВВы начинаете ремона, [declent_ru(NOMINATIVE)] скоро снова заработает!"),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает ремонтировать [declent_ru(ACCUSATIVE)]."),
+		span_notice("ВВы начинаете ремонтировать [declent_ru(ACCUSATIVE)]."),
 	)
 
 	if(!tool.use_tool(src, user, 2 SECONDS, amount = 1, volume = 50))
@@ -361,7 +360,7 @@
 
 	user.visible_message(
 		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] заканчивает ремонт, [declent_ru(NOMINATIVE)] снова работает."),
-		span_notice("Вы заканчиваете ремонтировать [declent_ru(DATIVE)]."),
+		span_notice("Вы заканчиваете ремонтировать [declent_ru(ACCUSATIVE)]."),
 	)
 	broken = NOT_BROKEN
 	update_appearance()
@@ -429,12 +428,12 @@
 			balloon_alert(user, "заполнено!")
 			return ITEM_INTERACT_BLOCKING
 		if(!user.transferItemToLoc(item, src))
-			balloon_alert(user, "застряло на руке!!")
+			 balloon_alert(user, "застряло на руке!")
 			return ITEM_INTERACT_BLOCKING
 
 		ingredients += item
 		open(autoclose = 0.6 SECONDS)
-		user.visible_message(span_notice("[capitalize(user.declent_ru(NOMINATIVE))] добавляет [item.declent_ru(ACCUSATIVE)] в [declent_ru(DATIVE)]."), span_notice("Вы добавляете прямо [item.declent_ru(ACCUSATIVE)] в [declent_ru(DATIVE)]..."))
+		user.visible_message(span_notice("[capitalize(user.declent_ru(NOMINATIVE))] добавляет [item.declent_ru(ACCUSATIVE)] в [declent_ru(DATIVE)]."), span_notice("Вы добавляете [item.declent_ru(ACCUSATIVE)] в [declent_ru(DATIVE)]..."))
 		update_appearance()
 		return ITEM_INTERACT_SUCCESS
 
@@ -493,7 +492,7 @@
 	balloon_alert(user, "режим изменен на [vampire_charging_enabled ? "зарядку" : "готовку"]")
 	playsound(src, 'sound/machines/beep/twobeep_high.ogg', 50, FALSE)
 	if(HAS_SILICON_ACCESS(user))
-		visible_message(span_notice("[capitalize(user.declent_ru(NOMINATIVE))] поставил [declent_ru(ACCUSATIVE)] на режим [vampire_charging_enabled ? "зарядки" : "готовки"]."), blind_message = span_notice("[capitalize(declent_ru(NOMINATIVE))] издает звук уведомления!"))
+		visible_message(span_notice("[capitalize(user.declent_ru(NOMINATIVE))] ставит [declent_ru(ACCUSATIVE)] на режим [vampire_charging_enabled ? "зарядки" : "готовки"]."), blind_message = span_notice("[capitalize(declent_ru(NOMINATIVE))] издает звук уведомления!"))
 	return CLICK_ACTION_SUCCESS
 
 /obj/machinery/microwave/click_ctrl(mob/user)

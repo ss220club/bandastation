@@ -145,9 +145,9 @@
 		to_chat(user, span_warning("Внутри [capitalize(declent_ru(NOMINATIVE))] пусто!"))
 		return TRUE
 	processing = TRUE
-	user.visible_message(span_notice("[capitalize(user.declent_ru(NOMINATIVE))] включил [declent_ru(ACCUSATIVE)]."), \
-		span_notice("Вы включили [declent_ru(NOMINATIVE)]."), \
-		span_hear("Вы услышали кухонный комбайн."))
+	user.visible_message(span_notice("[capitalize(user.declent_ru(NOMINATIVE))] включает [declent_ru(ACCUSATIVE)]."), \
+		span_notice("Вы включаете [declent_ru(NOMINATIVE)]."), \
+		span_hear("Вы слышите кухонный комбайн."))
 	playsound(src.loc, 'sound/machines/blender.ogg', 50, TRUE)
 	use_energy(active_power_usage)
 	var/total_time = 0

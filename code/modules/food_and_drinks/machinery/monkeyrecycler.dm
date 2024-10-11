@@ -75,7 +75,7 @@ GLOBAL_LIST_EMPTY(monkey_recyclers)
 		to_chat(user, span_warning("Обезьяна слишком сильно сопротивляется, чтобы поместить её в утилизатор."))
 		return
 	if(target.buckled || target.has_buckled_mobs())
-		to_chat(user, span_warning("Обезьяна пристегнута к чему-то."))
+		to_chat(user, span_warning("Тело обезьяны к чему-то пристегнуто."))
 		return
 	qdel(target)
 	to_chat(user, span_notice("Вы засовываете обезьяну в машину."))
@@ -85,7 +85,7 @@ GLOBAL_LIST_EMPTY(monkey_recyclers)
 	use_energy(active_power_usage)
 	stored_matter += cube_production
 	addtimer(VARSET_CALLBACK(src, pixel_x, base_pixel_x))
-	addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(to_chat), user, span_notice("Теперь машина имеет [stored_matter] хранящихся материалов стоимостью с обезьяну.")))
+	addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(to_chat), user, span_notice("Теперь машина имеет материалов для обезьян: [stored_matter].")))
 
 /obj/machinery/monkey_recycler/interact(mob/user)
 	if(stored_matter >= 1)

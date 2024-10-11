@@ -78,9 +78,9 @@
 	if(!anchored)
 		. += span_notice("Машина может быть [EXAMINE_HINT("разобрана")] ломом.")
 	if(anchored)
-		. += span_notice("Машина [EXAMINE_HINT("прикручена к полу")] на месте.")
+		. += span_notice("Машина [EXAMINE_HINT("прикручена")] к полу.")
 	else
-		. += span_warning("Машина должна быть [EXAMINE_HINT("прикручена к полу")] для работы.")
+		. += span_warning("Машина должна быть [EXAMINE_HINT("прикручена")] к полу для работы.")
 
 /obj/machinery/grill/update_icon_state()
 	if(!QDELETED(grilled_item))

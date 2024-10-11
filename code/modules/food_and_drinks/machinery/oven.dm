@@ -180,13 +180,13 @@
 	if(open)
 		playsound(src, 'sound/machines/oven/oven_open.ogg', 75, TRUE)
 		set_smoke_state(OVEN_SMOKE_STATE_NONE)
-		to_chat(user, span_notice("Вы открыли [declent_ru(ACCUSATIVE)]."))
+		to_chat(user, span_notice("Вы открываете [declent_ru(ACCUSATIVE)]."))
 		end_processing()
 		if(used_tray)
 			used_tray.vis_flags &= ~VIS_HIDE
 	else
 		playsound(src, 'sound/machines/oven/oven_close.ogg', 75, TRUE)
-		to_chat(user, span_notice("Вы закрыли [declent_ru(ACCUSATIVE)]."))
+		to_chat(user, span_notice("Вы открываете [declent_ru(ACCUSATIVE)]."))
 		if(used_tray)
 			begin_processing()
 			used_tray.vis_flags |= VIS_HIDE

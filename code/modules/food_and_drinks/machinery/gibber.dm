@@ -98,7 +98,7 @@
 			return
 		var/mob/living/carbon/C = L
 		if(C.buckled || C.has_buckled_mobs())
-			to_chat(user, span_warning("[capitalize(C.declent_ru(NOMINATIVE))] уже к чему-то прикреплен!"))
+			to_chat(user, span_warning("Тело [C.declent_ru(GENITIVE)] к чему-то пристегнуто!"))
 			return
 
 		if(!ignore_clothing)
@@ -107,7 +107,7 @@
 					to_chat(user, span_warning("На объекте не должно быть абиотических предметов!"))
 					return
 
-		user.visible_message(span_danger("[capitalize(user.declent_ru(NOMINATIVE))] начинает запихивать [C.declent_ru(ACCUSATIVE)] в мясорубку!"))
+		user.visible_message(span_danger("[capitalize(user.declent_ru(NOMINATIVE))] начинает запихивать [C.declent_ru(ACCUSATIVE)] в [declent_ru(ACCUSATIVE)]!"))
 
 		add_fingerprint(user)
 
