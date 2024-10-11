@@ -35,7 +35,7 @@
 
 /obj/item/gun/ballistic/rifle/examine(mob/user)
 	. = ..()
-	. += "The bolt is [bolt_locked ? "open" : "closed"]."
+	. += "Затвор [bolt_locked ? "открыт" : "закрыт"]."
 
 ///////////////////////
 // BOLT ACTION RIFLE //

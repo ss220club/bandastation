@@ -348,7 +348,7 @@
 /obj/item/gun/ballistic/proc/drop_bolt(mob/user = null)
 	playsound(src, bolt_drop_sound, bolt_drop_sound_volume, FALSE)
 	if (user)
-		balloon_alert(user, "опуск [bolt_wording]")
+		balloon_alert(user, "спуск [bolt_wording]")
 	chamber_round()
 	bolt_locked = FALSE
 	update_appearance()
@@ -574,7 +574,7 @@
 /obj/item/gun/ballistic/examine(mob/user)
 	. = ..()
 	var/count_chambered = !(bolt_type == BOLT_TYPE_NO_BOLT || bolt_type == BOLT_TYPE_OPEN)
-	. += "Внутри имеется [get_ammo(count_chambered)] патрон[declension_ru(get_ammo(count_chambered), "а", "ов", "ов")]."
+	. += "Внутри имеется [get_ammo(count_chambered)] патрон[declension_ru(get_ammo(count_chambered), "", "а", "ов")]."
 
 	if (!chambered && !hidden_chambered)
 		. += "Похоже, нет заряженного патрона"
