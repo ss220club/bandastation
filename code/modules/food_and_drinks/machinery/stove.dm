@@ -92,7 +92,7 @@
 				|| istype(current_reagent, /datum/reagent/water) \
 				|| istype(current_reagent, /datum/reagent/consumable) \
 			)
-				examine_list += "&bull; [round(current_reagent.volume, 0.01)] [declension_ru(round(unknown_volume, 0.01),"юнит","юнита","юнитов")] [initial(current_reagent.ru_name_nominative) || initial(current_reagent.name)]"
+				examine_list += "&bull; [round(current_reagent.volume, 0.01)] [declension_ru(round(unknown_volume, 0.01),"юнит","юнита","юнитов")] [initial(current_reagent.name)]"
 			else
 				unknown_volume += current_reagent.volume
 
