@@ -55,27 +55,31 @@
 	qdel(src)
 	return TRUE
 
-if(outright)
-    switch(wounding_type)
-        if(WOUND_BLUNT)
-            occur_text = "напрямую размазан в отвратительное месиво, полностью отсекая его!"
-        if(WOUND_SLASH)
-            occur_text = "напрямую срезан, полностью отсекая его!"
-        if(WOUND_PIERCE)
-            occur_text = "напрямую разорван, полностью отсекая его!"
-        if(WOUND_BURN)
-            occur_text = "напрямую сожжен, превратившись в пыль!"
-else
-    var/bone_text = get_internal_description()
-    var/tissue_text = get_external_description()
+/obj/item/bodypart/proc/get_dismember_message(wounding_type, outright)
+	var/occur_text
 
-    switch(wounding_type)
-        if(WOUND_BLUNT)
-            occur_text = "разрушен через последнюю [bone_text], держащую его вместе, полностью отсекая его!"
-        if(WOUND_SLASH)
-            occur_text = "перерезан через последний [tissue_text], держащий его вместе, полностью отсекая его!"
-        if(WOUND_PIERCE)
-            occur_text = "проколот через последний [tissue_text], держащий его вместе, полностью отсекая его!"
-        if(WOUND_BURN)
-            occur_text = "полностью сожжен, превратившись в пыль!"
+	if(outright)
+		switch(wounding_type)
+			if(WOUND_BLUNT)
+				occur_text = "напрямую размазан в отвратительное месиво, полностью отсекая его!"
+			if(WOUND_SLASH)
+				occur_text = "напрямую срезан, полностью отсекая его!"
+			if(WOUND_PIERCE)
+				occur_text = "напрямую разорван, полностью отсекая его!"
+			if(WOUND_BURN)
+				occur_text = "напрямую сожжен, превратившись в пыль!"
+	else
+		var/bone_text = get_internal_description()
+		var/tissue_text = get_external_description()
 
+		switch(wounding_type)
+			if(WOUND_BLUNT)
+				occur_text = "разрушен через последнюю [bone_text], держащую его вместе, полностью отсекая его!"
+			if(WOUND_SLASH)
+				occur_text = "перерезан через последний [tissue_text], держащий его вместе, полностью отсекая его!"
+			if(WOUND_PIERCE)
+				occur_text = "проколот через последний [tissue_text], держащий его вместе, полностью отсекая его!"
+			if(WOUND_BURN)
+				occur_text = "полностью сожжен, превратившись в пыль!"
+
+	return occur_text

@@ -39,32 +39,32 @@
 		wounding_dmg *= (1 - limb.current_gauze.splint_factor)
 	var/blood_bled = rand(1, wounding_dmg * internal_bleeding_coefficient) // 12 brute toolbox can cause up to 15/18/21 bloodloss on mod/sev/crit
 	switch(blood_bled)
-    if(1 to 6)
-        victim.bleed(blood_bled, TRUE)
-    if(7 to 13)
-        victim.visible_message(
-            span_smalldanger("Капли крови вылетают из дыры в [limb.plaintext_zone] [victim]!."),
-            span_danger("Вы откашливаетесь, выплевывая немного крови из удара по вашей [limb.plaintext_zone]."),
-            vision_distance = COMBAT_MESSAGE_RANGE,
-        )
-        victim.bleed(blood_bled, TRUE)
-    if(14 to 19)
-        victim.visible_message(
-            span_smalldanger("Небольшая струя крови брызгает из дыры в [limb.plaintext_zone] [victim]!!"),
-            span_danger("Вы выплевываете струю крови из удара по вашей [limb.plaintext_zone]!"),
-            vision_distance = COMBAT_MESSAGE_RANGE,
-        )
-        new /obj/effect/temp_visual/dir_setting/bloodsplatter(victim.loc, victim.dir)
-        victim.bleed(blood_bled)
-    if(20 to INFINITY)
-        victim.visible_message(
-            span_danger("Брызги крови струятся из раны в [limb.plaintext_zone] [victim]!"),
-            span_bolddanger("Вы задыхаетесь, выплевывая брызги крови из удара по вашей [limb.plaintext_zone]!"),
-            vision_distance = COMBAT_MESSAGE_RANGE,
-        )
-        victim.bleed(blood_bled)
-        new /obj/effect/temp_visual/dir_setting/bloodsplatter(victim.loc, victim.dir)
-        victim.add_splatter_floor(get_step(victim.loc, victim.dir))
+		if(1 to 6)
+			victim.bleed(blood_bled, TRUE)
+		if(7 to 13)
+			victim.visible_message(
+				span_smalldanger("Капли крови вылетают из дыры в [limb.plaintext_zone] [victim]!."),
+				span_danger("Вы откашливаетесь, выплевывая немного крови из удара по вашей [limb.plaintext_zone]."),
+				vision_distance = COMBAT_MESSAGE_RANGE,
+			)
+			victim.bleed(blood_bled, TRUE)
+		if(14 to 19)
+			victim.visible_message(
+				span_smalldanger("Небольшая струя крови брызгает из дыры в [limb.plaintext_zone] [victim]!!"),
+				span_danger("Вы выплевываете струю крови из удара по вашей [limb.plaintext_zone]!"),
+				vision_distance = COMBAT_MESSAGE_RANGE,
+			)
+			new /obj/effect/temp_visual/dir_setting/bloodsplatter(victim.loc, victim.dir)
+			victim.bleed(blood_bled)
+		if(20 to INFINITY)
+			victim.visible_message(
+				span_danger("Брызги крови струятся из раны в [limb.plaintext_zone] [victim]!"),
+				span_bolddanger("Вы задыхаетесь, выплевывая брызги крови из удара по вашей [limb.plaintext_zone]!"),
+				vision_distance = COMBAT_MESSAGE_RANGE,
+			)
+			victim.bleed(blood_bled)
+			new /obj/effect/temp_visual/dir_setting/bloodsplatter(victim.loc, victim.dir)
+			victim.add_splatter_floor(get_step(victim.loc, victim.dir))
 
 /datum/wound/pierce/bleed/get_bleed_rate_of_change()
 	//basically if a species doesn't bleed, the wound is stagnant and will not heal on its own (nor get worse)

@@ -267,7 +267,7 @@
 
 	if(HAS_TRAIT(src, TRAIT_WOUND_SCANNED))
 		treatment_delay *= 0.5
-		user.visible_message(span_danger("[user] начинает искусно прижигать [limb.plaintext_zone] [victim] с помощью [I]..."), span_warning("Вы начинаете прижигать [user == victim ? "вашу" : "[victim]] [limb.plaintext_zone] с помощью [I], учитывая указания голограммы..."))
+		user.visible_message(span_danger("[user] начинает искусно прижигать [limb.plaintext_zone] [victim] с помощью [I]..."), span_warning("Вы начинаете прижигать [user == victim ? "вашу" : "[victim]"] [limb.plaintext_zone] с помощью [I], учитывая указания голограммы..."))
 	else
 		user.visible_message(span_danger("[user] начинает прижигать [limb.plaintext_zone] [victim] с помощью [I]..."), span_warning("Вы начинаете прижигать [user == victim ? "вашу" : "[victim]"] [limb.plaintext_zone] с помощью [I]..."))
 
