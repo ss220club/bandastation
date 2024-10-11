@@ -627,7 +627,7 @@
 			B.throw_at(target, BRAINS_BLOWN_THROW_RANGE, BRAINS_BLOWN_THROW_SPEED, callback=gibspawner)
 			return BRUTELOSS
 		else
-			user.visible_message(span_suicide("[capitalize(user.declent_ru(NOMINATIVE))] паникует и начинает себя душить досмерти!"))
+			user.visible_message(span_suicide("[capitalize(user.declent_ru(NOMINATIVE))] паникует и начинает задыхаться до смерти!"))
 			return OXYLOSS
 	else
 		user.visible_message(span_suicide("[capitalize(user.declent_ru(NOMINATIVE))] притворяется, что выносит себе мозг с помощью [declent_ru(GENITIVE)]! Кажется, [user.ru_p_they()] пытается совершить самоубийство!</b>"))
