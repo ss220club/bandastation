@@ -67,7 +67,7 @@
 /obj/item/reagent_containers/cup/soup_pot/examine(mob/user)
 	. = ..()
 	. += span_notice("Есть место для еще <b>[max_ingredients - LAZYLEN(added_ingredients)]</b> ингредиентов \
-		или <b>[reagents.maximum_volume - reagents.total_volume]</b> [declension_ru((reagents.maximum_volume - reagents.total_volume),"юнит","юнита","юнитов")] ингредиентов.")
+		или <b>[reagents.maximum_volume - reagents.total_volume]</b> [declension_ru((reagents.maximum_volume - reagents.total_volume),"юнит","юнита","юнитов")] реагентов.")
 
 /**
  * Override standard reagent examine with something a bit more sensible for the soup pot,
@@ -97,7 +97,7 @@
 				unknown_volume += current_reagent.volume
 
 		if(unknown_volume > 0)
-			examine_list += "&bull; [round(unknown_volume, 0.01)] [declension_ru(round(unknown_volume, 0.01),"юнит","юнита","юнитов")] неизвестного ингредиента"
+			examine_list += "&bull; [round(unknown_volume, 0.01)] [declension_ru(round(unknown_volume, 0.01),"юнит","юнита","юнитов")] неизвестного реагента"
 
 		if(reagents.total_volume > 0)
 			if(can_see_insides)

@@ -146,7 +146,7 @@
 		return TRUE
 	processing = TRUE
 	user.visible_message(span_notice("[capitalize(user.declent_ru(NOMINATIVE))] включает [declent_ru(ACCUSATIVE)]."), \
-		span_notice("Вы включаете [declent_ru(NOMINATIVE)]."), \
+		span_notice("Вы включаете [declent_ru(ACCUSATIVE)]."), \
 		span_hear("Вы слышите кухонный комбайн."))
 	playsound(src.loc, 'sound/machines/blender.ogg', 50, TRUE)
 	use_energy(active_power_usage)
@@ -170,7 +170,7 @@
 			continue
 		process_food(recipe, content_item)
 	processing = FALSE
-	visible_message(span_notice(" [capitalize(declent_ru(NOMINATIVE))] заканчивает обработку."))
+	visible_message(span_notice("[capitalize(declent_ru(NOMINATIVE))] заканчивает обработку."))
 
 /obj/machinery/processor/verb/eject()
 	set category = "Object"

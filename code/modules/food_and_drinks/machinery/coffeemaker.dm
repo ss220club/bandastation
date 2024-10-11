@@ -105,22 +105,22 @@
 				. += span_notice("- порций в кофейном картридже: [cartridge.charges].")
 
 	if (coffee_cups >= 1)
-		. += span_notice("Осталось [coffee_cups] [declension_ru(coffee_cups,"кофейная чашка","кофейные чашки","кофейных чашек")].")
+		. += span_notice("[declension_ru(coffee_cups,"Осталась","Остались","Осталось")] [coffee_cups] [declension_ru(coffee_cups,"кофейная чашка","кофейные чашки","кофейных чашек")].")
 	else
 		. += span_notice("Чашек больше нет.")
 
 	if (sugar_packs >= 1)
-		. += span_notice("Осталось пачек сахара: [sugar_packs].")
+		. += span_notice("[declension_ru(sugar_packs,"Осталась","Остались","Осталось")] [sugar_packs] [declension_ru(sugar_packs,"пачка сахара","пачки сахара","пачек сахара")].")
 	else
 		. += span_notice("Сахара больше нет.")
 
 	if (sweetener_packs >= 1)
-		. += span_notice("Осталось пачек подсластителя: [sweetener_packs].")
+		. += span_notice("[declension_ru(sweetener_packs,"Осталась","Остались","Осталось")] [sweetener_packs] [declension_ru(sweetener_packs,"пачка подсластителя","пачки подсластителя","пачек подсластителя")].")
 	else
 		. += span_notice("Подсластителя больше нет.")
 
 	if (creamer_packs > 1)
-		. += span_notice("Осталось пачек сливок: [creamer_packs].")
+		. += span_notice("[declension_ru(creamer_packs,"Осталась","Остались","Осталось")] [creamer_packs] [declension_ru(creamer_packs,"пачка сливок","пачки сливок","пачек сливок")].")
 	else
 		. += span_notice("Сливок больше нет.")
 
@@ -532,7 +532,7 @@
 /obj/machinery/coffeemaker/impressa/examine(mob/user)
 	. = ..()
 	if(coffee)
-		. += span_notice("Внутренняя кофемолка содержит [coffee.len] [declension_ru(coffee.len,"порция","порции","порций")] кофейных зерен")
+		. += span_notice("Внутренняя кофемолка содержит [coffee.len] [declension_ru(coffee.len,"порцию","порции","порций")] кофейных зерен")
 
 /obj/machinery/coffeemaker/impressa/update_overlays()
 	. = ..()

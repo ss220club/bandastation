@@ -450,7 +450,7 @@
 	var/loaded = 0
 	if(!istype(tool, /obj/item/storage/bag/tray))
 		// Non-tray dumping requires a do_after
-		to_chat(user, span_notice("Вы начиаете перемещать содержимое [tool.declent_ru(GENITIVE)] в [declent_ru(ACCUSATIVE)]..."))
+		to_chat(user, span_notice("Вы начинаете перемещать содержимое [tool.declent_ru(GENITIVE)] в [declent_ru(ACCUSATIVE)]..."))
 		if(!do_after(user, 2 SECONDS, target = tool))
 			return
 
