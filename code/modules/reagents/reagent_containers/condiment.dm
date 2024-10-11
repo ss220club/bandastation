@@ -37,13 +37,13 @@
 	return ..()
 
 /obj/item/reagent_containers/condiment/suicide_act(mob/living/carbon/user)
-	user.visible_message(span_suicide("[capitalize(user.declent_ru(NOMINATIVE))] пытается проглотить содержимое [declent_ru(GENITIVE)]! Еда работает не так!"))
+	user.visible_message(span_suicide("[capitalize(user.declent_ru(NOMINATIVE))] пытается проглотить  [declent_ru(GENITIVE)] целиком! Это не так работает!"))
 	return OXYLOSS
 
 /obj/item/reagent_containers/condiment/attack(mob/M, mob/user, def_zone)
 
 	if(!reagents || !reagents.total_volume)
-		to_chat(user, span_warning("[capitalize(name)] пуст, о нет!"))
+		to_chat(user, span_warning("Внутри [declent_ru(GENITIVE)] пусто, о нет!"))
 		return FALSE
 
 	if(!canconsume(M, user))
@@ -51,15 +51,15 @@
 
 	if(M == user)
 		user.visible_message(span_notice("[capitalize(user.declent_ru(NOMINATIVE))] проглатывает немного содержимого [declent_ru(GENITIVE)]."), \
-			span_notice("Вы проглотили немного содержимого [src]."))
+			span_notice("Вы проглотили немного содержимого [declent_ru(GENITIVE)]."))
 	else
-		M.visible_message(span_warning("[capitalize(user.declent_ru(NOMINATIVE))] пытается накормить [M.declent_ru(ACCUSATIVE)] [declent_ru(INSTRUMENTAL)]."), \
+		M.visible_message(span_warning("[capitalize(user.declent_ru(NOMINATIVE))] пытается накормить [M.declent_ru(ACCUSATIVE)] c помощью [declent_ru(GENITIVE)]."), \
 			span_warning("[capitalize(user.declent_ru(NOMINATIVE))] пытается накормить вас [declent_ru(INSTRUMENTAL)]."))
 		if(!do_after(user, 3 SECONDS, M))
 			return
 		if(!reagents || !reagents.total_volume)
 			return // The condiment might be empty after the delay.
-		M.visible_message(span_warning("[capitalize(user.declent_ru(NOMINATIVE))] кормит [M.declent_ru(ACCUSATIVE)] [declent_ru(INSTRUMENTAL)]."), \
+		M.visible_message(span_warning("[capitalize(user.declent_ru(NOMINATIVE))] кормит [M.declent_ru(ACCUSATIVE)] с помощью[declent_ru(GENITIVE)]."), \
 			span_warning("[capitalize(user.declent_ru(NOMINATIVE))] кормит вас [declent_ru(INSTRUMENTAL)]"))
 		log_combat(user, M, "fed", reagents.get_reagent_log_string())
 	reagents.trans_to(M, 10, transferred_by = user, methods = INGEST)
@@ -69,15 +69,15 @@
 /obj/item/reagent_containers/condiment/interact_with_atom(atom/target, mob/living/user, list/modifiers)
 	if(istype(target, /obj/structure/reagent_dispensers)) //A dispenser. Transfer FROM it TO us.
 		if(!target.reagents.total_volume)
-			to_chat(user, span_warning("В [target.declent_ru(DATIVE)] пусто!"))
+			to_chat(user, span_warning("Внутри [target.declent_ru(GENITIVE)] пусто!"))
 			return ITEM_INTERACT_BLOCKING
 
 		if(reagents.total_volume >= reagents.maximum_volume)
-			to_chat(user, span_warning("В [declent_ru(DATIVE)] нет места!"))
+			to_chat(user, span_warning("Внутри [declent_ru(GENITIVE)] нет места!"))
 			return ITEM_INTERACT_BLOCKING
 
 		var/trans = target.reagents.trans_to(src, amount_per_transfer_from_this, transferred_by = user)
-		to_chat(user, span_notice("[declent_ru(NOMINATIVE)] наполняется [trans] [declension_ru(trans,"юнит","юнита","юнитов")] [target.declent_ru(GENITIVE)]."))
+		to_chat(user, span_notice("[capitalize(declent_ru(NOMINATIVE))] наполняет [trans] [declension_ru(trans,"юнитом","юнитами","юнитами")] содержимое [target.declent_ru(GENITIVE)]."))
 		return ITEM_INTERACT_SUCCESS
 
 	//Something like a glass or a food item. Player probably wants to transfer TO it.
