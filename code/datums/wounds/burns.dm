@@ -226,20 +226,20 @@
 
 /// if someone is using ointment or mesh on our burns
 /datum/wound/burn/flesh/proc/ointmentmesh(obj/item/stack/medical/I, mob/user)
-	user.visible_message(span_notice("[user] начинает наносить [I] на [victim]'s [limb.ru_plaintext_zone[NOMINATIVE] || limb.plaintext_zone]..."), span_notice("Вы начинаете наносить [I] на [user == victim ? "ваш" : "[victim]'s"] [limb.ru_plaintext_zone[NOMINATIVE] || limb.plaintext_zone]..."))
+	user.visible_message(span_notice("[user] начинает наносить [I.declent_ru(GENITIVE)] на [victim]'s [limb.ru_plaintext_zone[NOMINATIVE] || limb.plaintext_zone]..."), span_notice("Вы начинаете наносить [I.declent_ru(GENITIVE)] на [user == victim ? "ваш" : "[victim]'s"] [limb.ru_plaintext_zone[NOMINATIVE] || limb.plaintext_zone]..."))
 	if (I.amount <= 0)
 		return TRUE
 	if(!do_after(user, (user == victim ? I.self_delay : I.other_delay), target = victim, extra_checks = CALLBACK(src, PROC_REF(still_exists))))
 		return TRUE
 
 	limb.heal_damage(I.heal_brute, I.heal_burn)
-	user.visible_message(span_green("[user] наносит [I] на [victim]."), span_green("Вы наносите [I] на [user == victim ? "ваш" : "[victim]'s"] [limb.ru_plaintext_zone[NOMINATIVE] || limb.plaintext_zone]."))
+	user.visible_message(span_green("[user] наносит [I.declent_ru(GENITIVE)] на [victim]."), span_green("Вы наносите [I.declent_ru(GENITIVE)] на [user == victim ? "ваш" : "[victim]'s"] [limb.ru_plaintext_zone[NOMINATIVE] || limb.plaintext_zone]."))
 	I.use(1)
 	sanitization += I.sanitization
 	flesh_healing += I.flesh_regeneration
 
 	if((infestation <= 0 || sanitization >= infestation) && (flesh_damage <= 0 || flesh_healing > flesh_damage))
-		to_chat(user, span_notice("Вы сделали всё, что могли с [I], теперь вам нужно подождать, пока flesh на [victim]'s [limb.ru_plaintext_zone[NOMINATIVE] || limb.plaintext_zone] восстановится."))
+		to_chat(user, span_notice("Вы сделали всё, что могли с [I.declent_ru(GENITIVE)], теперь вам нужно подождать, пока flesh на [victim]'s [limb.ru_plaintext_zone[NOMINATIVE] || limb.plaintext_zone] восстановится."))
 		return TRUE
 	else
 		return try_treating(I, user)
@@ -247,13 +247,13 @@
 /// Paramedic UV penlights
 /datum/wound/burn/flesh/proc/uv(obj/item/flashlight/pen/paramedic/I, mob/user)
 	if(!COOLDOWN_FINISHED(I, uv_cooldown))
-		to_chat(user, span_notice("[I] еще перезаряжается!"))
+		to_chat(user, span_notice("[I.declent_ru(GENITIVE)] еще перезаряжается!"))
 		return TRUE
 	if(infestation <= 0 || infestation < sanitization)
 		to_chat(user, span_notice("Нет инфекция на [limb.ru_plaintext_zone[NOMINATIVE] || limb.plaintext_zone] [victim]!"))
 		return TRUE
 
-	user.visible_message(span_notice("[user] отчищает ожоги [limb] [victim] при помощи [I]."), span_notice("Вы очищаете ожоги [user == victim ? "вашей" : "[victim]"] [limb.ru_plaintext_zone[NOMINATIVE] || limb.plaintext_zone] при помощи [I]."), vision_distance=COMBAT_MESSAGE_RANGE)
+	user.visible_message(span_notice("[user] отчищает ожоги [limb] [victim] при помощи [I.declent_ru(GENITIVE)]."), span_notice("Вы очищаете ожоги [user == victim ? "вашей" : "[victim]"] [limb.ru_plaintext_zone[NOMINATIVE] || limb.plaintext_zone] при помощи [I.declent_ru(GENITIVE)]."), vision_distance=COMBAT_MESSAGE_RANGE)
 	sanitization += I.uv_power
 	COOLDOWN_START(I, uv_cooldown, I.uv_cooldown_length)
 	return TRUE

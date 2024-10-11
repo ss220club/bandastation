@@ -130,9 +130,9 @@
 
 	if(HAS_TRAIT(src, TRAIT_WOUND_SCANNED))
 		treatment_delay *= 0.5
-		user.visible_message(span_notice("[user] начинает искусно зашивать [limb.ru_plaintext_zone[NOMINATIVE] || limb.plaintext_zone] [victim] с помощью [I]..."), span_notice("Вы начинаете зашивать [user == victim ? "вашу" : "[victim]"] [limb.ru_plaintext_zone[NOMINATIVE] || limb.plaintext_zone] с помощью [I], имея в виду информацию с голограммы..."))
+		user.visible_message(span_notice("[user] начинает искусно зашивать [limb.ru_plaintext_zone[NOMINATIVE] || limb.plaintext_zone] [victim] с помощью [I.declent_ru(GENITIVE)]..."), span_notice("Вы начинаете зашивать [user == victim ? "вашу" : "[victim]"] [limb.ru_plaintext_zone[NOMINATIVE] || limb.plaintext_zone] с помощью [I.declent_ru(GENITIVE)], имея в виду информацию с голограммы..."))
 	else
-		user.visible_message(span_notice("[user] начинает зашивать [limb.ru_plaintext_zone[NOMINATIVE] || limb.plaintext_zone] [victim] с помощью [I]..."), span_notice("Вы начинаете зашивать [user == victim ? "вашу" : "[victim]"] [limb.ru_plaintext_zone[NOMINATIVE] || limb.plaintext_zone] с помощью [I]..."))
+		user.visible_message(span_notice("[user] начинает зашивать [limb.ru_plaintext_zone[NOMINATIVE] || limb.plaintext_zone] [victim] с помощью [I.declent_ru(GENITIVE)]..."), span_notice("Вы начинаете зашивать [user == victim ? "вашу" : "[victim]"] [limb.ru_plaintext_zone[NOMINATIVE] || limb.plaintext_zone] с помощью [I.declent_ru(GENITIVE)]..."))
 
 	if(!do_after(user, treatment_delay, target = victim, extra_checks = CALLBACK(src, PROC_REF(still_exists))))
 		return TRUE
@@ -159,9 +159,9 @@
 
 	if(HAS_TRAIT(src, TRAIT_WOUND_SCANNED))
 		treatment_delay *= 0.5
-		user.visible_message(span_danger("[user] начинает искусно прижигать [limb.ru_plaintext_zone[NOMINATIVE] || limb.plaintext_zone] [victim] с помощью [I]..."), span_warning("Вы начинаете прижигать [user == victim ? "вашу" : "[victim]"] [limb.ru_plaintext_zone[NOMINATIVE] || limb.plaintext_zone] с помощью [I], учитывая информацию с голограммы..."))
+		user.visible_message(span_danger("[user] начинает искусно прижигать [limb.ru_plaintext_zone[NOMINATIVE] || limb.plaintext_zone] [victim] с помощью [I.declent_ru(GENITIVE)]..."), span_warning("Вы начинаете прижигать [user == victim ? "вашу" : "[victim]"] [limb.ru_plaintext_zone[NOMINATIVE] || limb.plaintext_zone] с помощью [I.declent_ru(GENITIVE)], учитывая информацию с голограммы..."))
 	else
-		user.visible_message(span_danger("[user] начинает прижигать [limb.ru_plaintext_zone[NOMINATIVE] || limb.plaintext_zone] [victim] с помощью [I]..."), span_warning("Вы начинаете прижигать [user == victim ? "вашу" : "[victim]"] [limb.ru_plaintext_zone[NOMINATIVE] || limb.plaintext_zone] с помощью [I]..."))
+		user.visible_message(span_danger("[user] начинает прижигать [limb.ru_plaintext_zone[NOMINATIVE] || limb.plaintext_zone] [victim] с помощью [I.declent_ru(GENITIVE)]..."), span_warning("Вы начинаете прижигать [user == victim ? "вашу" : "[victim]"] [limb.ru_plaintext_zone[NOMINATIVE] || limb.plaintext_zone] с помощью [I.declent_ru(GENITIVE)]..."))
 
 	if(!do_after(user, treatment_delay, target = victim, extra_checks = CALLBACK(src, PROC_REF(still_exists))))
 		return TRUE
