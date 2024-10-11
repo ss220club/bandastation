@@ -124,9 +124,9 @@
 		if(locate(initial(result.name)) in already_used_names)
 			continue
 		already_used_names += initial(result.name)
-		string_results += list("\a [initial(result.name)]")
+		string_results += list("[initial(result.ru_name_nominative) || initial(result.name)]")
 
-	examine_list["часть рецепта"] = "Вы думаете, что [source.declent_ru(ACCUSATIVE)] можно использовать для создания: [english_list(string_results)]! Осмотрите еще раз для подробностей..."
+	examine_list["используемый в рецепте"] = "Вы думаете, что [source.declent_ru(ACCUSATIVE)] можно использовать для создания: [english_list(string_results)]! Осмотрите еще раз для подробностей..."
 
 /// Alerts any examiners to the details of the recipe.
 /datum/element/slapcrafting/proc/get_examine_more_info(atom/source, mob/user, list/examine_list)
