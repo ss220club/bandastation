@@ -574,10 +574,10 @@
 
 /obj/machinery/coffeemaker/impressa/try_brew()
 	if(coffee_amount <= 0)
-		balloon_alert_to_viewers("Нет кофейных зерен!")
+		balloon_alert_to_viewers("нет кофейных зерен!")
 		return FALSE
 	if(!coffeepot)
-		balloon_alert_to_viewers("Нет [coffeepot.declent_ru(NOMINATIVE)] внутри!")
+		balloon_alert_to_viewers("нет [coffeepot.declent_ru(NOMINATIVE)] внутри!")
 		return FALSE
 	if(machine_stat & (NOPOWER|BROKEN) )
 		balloon_alert_to_viewers("[declent_ru(NOMINATIVE)] без питания!")

@@ -186,7 +186,7 @@
 			used_tray.vis_flags &= ~VIS_HIDE
 	else
 		playsound(src, 'sound/machines/oven/oven_close.ogg', 75, TRUE)
-		to_chat(user, span_notice("Вы открываете [declent_ru(ACCUSATIVE)]."))
+		to_chat(user, span_notice("Вы закрываете [declent_ru(ACCUSATIVE)]."))
 		if(used_tray)
 			begin_processing()
 			used_tray.vis_flags |= VIS_HIDE

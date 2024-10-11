@@ -203,7 +203,7 @@
 			update_appearance(UPDATE_ICON_STATE)
 
 			//feedback
-			to_chat(user, span_notice("Вы наливаете [transfered_amount] юнитов в топку."))
+			to_chat(user, span_notice("Вы наливаете [transfered_amount] [declension_ru(transfered_amount,"юнит","юнита","юнитов")] в топку."))
 			return ITEM_INTERACT_SUCCESS
 
 		balloon_alert(user, "топливо не добавлено!")

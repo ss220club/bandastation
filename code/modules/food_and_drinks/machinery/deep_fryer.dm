@@ -95,7 +95,7 @@ GLOBAL_LIST_INIT(oilfry_blacklisted_items, typecacheof(list(
 	if(frying)
 		. += "Вы разглядываете [frying.declent_ru(ACCUSATIVE)] в масле."
 	if(in_range(user, src) || isobserver(user))
-		. += span_notice("На дисплее состояния отображается: Скорость жарки - <b>[fry_speed*100]%</b>.<br>Используется <b>[oil_use]</b> юнитов масла в секунду.")
+		. += span_notice("На дисплее состояния отображается: Скорость жарки - <b>[fry_speed*100]%</b>.<br>Используется <b>[oil_use]</b> [declension_ru(oil_use,"юнит","юнита","юнитов")] масла в секунду.")
 
 /obj/machinery/deepfryer/wrench_act(mob/living/user, obj/item/tool)
 	. = ..()

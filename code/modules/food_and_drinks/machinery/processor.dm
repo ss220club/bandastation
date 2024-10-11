@@ -109,7 +109,7 @@
 					loaded++
 
 		if(loaded)
-			to_chat(user, span_notice("Вы помещаете [loaded] [declension_ru(loaded,"предмет","предмета","предметов")] вставлен в [declent_ru(ACCUSATIVE)].."))
+			to_chat(user, span_notice("Вы помещаете [loaded] [declension_ru(loaded,"предмет","предмета","предметов")] в [declent_ru(ACCUSATIVE)].."))
 		return
 
 	var/datum/food_processor_process/recipe = PROCESSOR_SELECT_RECIPE(attacking_item)

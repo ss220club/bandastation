@@ -55,7 +55,7 @@
 		AddToGrill(new_pancake)
 		if(griddled_objects.len >= max_items)
 			break
-	visible_message(span_notice("[capitalize(exposing_reagent.declent_ru(NOMINATIVE))] начинает жарится на [declent_ru(PREPOSITIONAL)]."))
+	visible_message(span_notice("[capitalize(exposing_reagent.declent_ru(NOMINATIVE))] начинает жариться на [declent_ru(PREPOSITIONAL)]."))
 	return NONE
 
 /obj/machinery/griddle/crowbar_act(mob/living/user, obj/item/I)

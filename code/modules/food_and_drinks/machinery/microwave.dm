@@ -359,7 +359,7 @@
 		return ITEM_INTERACT_BLOCKING
 
 	user.visible_message(
-		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] заканчивает ремонтировать, [declent_ru(NOMINATIVE)] снова работает."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] заканчивает ремонтировать [declent_ru(ACCUSATIVE)]."),
 		span_notice("Вы заканчиваете ремонтировать [declent_ru(ACCUSATIVE)]."),
 	)
 	broken = NOT_BROKEN
