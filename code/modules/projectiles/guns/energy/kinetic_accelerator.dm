@@ -321,7 +321,7 @@
 		else
 			to_chat(user, span_notice("Этот модуль конфликтует с другим установленным модулем. Сперва, вам нужно снять все установленные модули."))
 	else
-		to_chat(user, span_notice("Не хватает места(<b>[KA.get_remaining_mod_capacity()]%</b> остал[declension_ru(get_remaining_mod_capacity(), "ся", "ось", "ось")], [cost]% нужно) для установки модуля. Используйте ломик или ПКМ пустой рукой для снятия установленных модулей."))
+		to_chat(user, span_notice("Не хватает места(<b>[KA.get_remaining_mod_capacity()]%</b> остал[declension_ru(KA.get_remaining_mod_capacity(), "ся", "ось", "ось")], [cost]% нужно) для установки модуля. Используйте ломик или ПКМ пустой рукой для снятия установленных модулей."))
 		. = FALSE
 
 /obj/item/borg/upgrade/modkit/deactivate(mob/living/silicon/robot/R, user = usr)
