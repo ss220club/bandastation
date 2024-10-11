@@ -145,7 +145,7 @@
 	. = ..()
 	if(!pinless)
 		if(pin)
-			. += "Имеет [pin.declent_ru(ACCUSATIVE)]."
+			. += "Установлен [pin.declent_ru(NOMINATIVE)]."
 			if(pin.pin_removable)
 				. += span_info("[capitalize(pin.declent_ru(NOMINATIVE))] снимается с помощью <b>инструментов</b>.")
 			else
