@@ -1,7 +1,6 @@
-/// How many seconds between each fuel depletion tick ("use" proc)
-#define WELDER_FUEL_BURN_INTERVAL 5
 /obj/item/weldingtool
 	name = "welding tool"
+	RU_NAMES_LIST_INIT("welding tool", "сварочный инструмент", "сварочного инструмента", "сварочному инструменту", "сварочный инструмент", "сварочным инструментом", "сварочном инструменте")
 	desc = "A standard edition welder provided by Nanotrasen."
 	icon = 'icons/obj/tools.dmi'
 	icon_state = "welder"
@@ -14,9 +13,9 @@
 	force = 3
 	throwforce = 5
 	hitsound = SFX_SWING_HIT
-	usesound = list('sound/items/welder.ogg', 'sound/items/welder2.ogg')
-	drop_sound = 'sound/items/handling/weldingtool_drop.ogg'
-	pickup_sound = 'sound/items/handling/weldingtool_pickup.ogg'
+	usesound = list('sound/items/tools/welder.ogg', 'sound/items/tools/welder2.ogg')
+	drop_sound = 'sound/items/handling/tools/weldingtool_drop.ogg'
+	pickup_sound = 'sound/items/handling/tools/weldingtool_pickup.ogg'
 	light_system = OVERLAY_LIGHT
 	light_range = 2
 	light_power = 1.5
@@ -48,8 +47,8 @@
 	/// When fuel was last removed.
 	var/burned_fuel_for = 0
 
-	var/activation_sound = 'sound/items/welderactivate.ogg'
-	var/deactivation_sound = 'sound/items/welderdeactivate.ogg'
+	var/activation_sound = 'sound/items/tools/welderactivate.ogg'
+	var/deactivation_sound = 'sound/items/tools/welderdeactivate.ogg'
 
 /datum/armor/item_weldingtool
 	fire = 100
@@ -89,7 +88,7 @@
 		force = 15
 		damtype = BURN
 		burned_fuel_for += seconds_per_tick
-		if(burned_fuel_for >= WELDER_FUEL_BURN_INTERVAL)
+		if(burned_fuel_for >= TOOL_FUEL_BURN_INTERVAL)
 			use(TRUE)
 		update_appearance()
 
@@ -244,7 +243,7 @@
 			playsound(loc, activation_sound, 50, TRUE)
 			force = 15
 			damtype = BURN
-			hitsound = 'sound/items/welder.ogg'
+			hitsound = 'sound/items/tools/welder.ogg'
 			update_appearance()
 			START_PROCESSING(SSobj, src)
 		else
@@ -276,16 +275,17 @@
 	return welding
 
 /// If welding tool ran out of fuel during a construction task, construction fails.
-/obj/item/weldingtool/tool_use_check(mob/living/user, amount)
+/obj/item/weldingtool/tool_use_check(mob/living/user, amount, heat_required)
 	if(!isOn() || !check_fuel())
 		to_chat(user, span_warning("[src] has to be on to complete this task!"))
 		return FALSE
-
-	if(get_fuel() >= amount)
-		return TRUE
-	else
+	if(get_fuel() < amount)
 		to_chat(user, span_warning("You need more welding fuel to complete this task!"))
 		return FALSE
+	if(heat < heat_required)
+		to_chat(user, span_warning("[src] is not hot enough to complete this task!"))
+		return FALSE
+	return TRUE
 
 /// Ran when the welder is attacked by a screwdriver.
 /obj/item/weldingtool/proc/flamethrower_screwdriver(obj/item/tool, mob/user)
@@ -327,6 +327,7 @@
 
 /obj/item/weldingtool/largetank
 	name = "industrial welding tool"
+	RU_NAMES_LIST_INIT("industrial welding tool", "промышленный сварочный инструмент", "промышленного сварочного инструмента", "промышленному сварочному инструменту", "промышленный сварочный инструмент", "промышленным сварочным инструментом", "промышленном сварочном инструменте")
 	desc = "A slightly larger welder with a larger tank."
 	icon_state = "indwelder"
 	max_fuel = 40
@@ -340,6 +341,7 @@
 
 /obj/item/weldingtool/largetank/cyborg
 	name = "integrated welding tool"
+	RU_NAMES_LIST_INIT("integrated welding tool", "интегрированный сварочный инструмент", "интегрированного сварочного инструмента", "интегрированному сварочному инструменту", "интегрированный сварочный инструмент", "интегрированным сварочным инструментом", "интегрированном сварочном инструменте")
 	desc = "An advanced welder designed to be used in robotic systems. Custom framework doubles the speed of welding."
 	icon = 'icons/obj/items_cyborg.dmi'
 	icon_state = "indwelder_cyborg"
@@ -353,6 +355,7 @@
 
 /obj/item/weldingtool/mini
 	name = "emergency welding tool"
+	RU_NAMES_LIST_INIT("emergency welding tool", "аварийный сварочный инструмент", "аварийного сварочного инструмента", "аварийному сварочному инструменту", "аварийный сварочный инструмент", "аварийным сварочным инструментом", "аварийном сварочном инструменте")
 	desc = "A miniature welder used during emergencies."
 	icon_state = "miniwelder"
 	max_fuel = 10
@@ -368,6 +371,7 @@
 
 /obj/item/weldingtool/abductor
 	name = "alien welding tool"
+	RU_NAMES_LIST_INIT("alien welding tool", "инопланетный сварочный инструмент", "инопланетного сварочного инструмента", "инопланетному сварочному инструменту", "инопланетный сварочный инструмент", "инопланетным сварочным инструментом", "инопланетном сварочном инструменте")
 	desc = "An alien welding tool. Whatever fuel it uses, it never runs out."
 	icon = 'icons/obj/antags/abductor.dmi'
 	icon_state = "welder"
@@ -384,6 +388,7 @@
 
 /obj/item/weldingtool/hugetank
 	name = "upgraded industrial welding tool"
+	RU_NAMES_LIST_INIT("upgraded industrial welding tool", "улучшенный сварочный инструмент", "улучшенного сварочного инструмента", "улучшенному сварочному инструменту", "улучшенный сварочный инструмент", "улучшенным сварочным инструментом", "улучшенном сварочном инструменте")
 	desc = "An upgraded welder based of the industrial welder."
 	icon_state = "upindwelder"
 	inhand_icon_state = "upindwelder"
@@ -392,6 +397,7 @@
 
 /obj/item/weldingtool/experimental
 	name = "experimental welding tool"
+	RU_NAMES_LIST_INIT("experimental welding tool", "экспериментальный сварочный инструмент", "экспериментального сварочного инструмента", "экспериментальному сварочному инструменту", "экспериментальный сварочный инструмент", "экспериментальным сварочным инструментом", "экспериментальном сварочном инструменте")
 	desc = "An experimental welder capable of self-fuel generation and less harmful to the eyes."
 	icon_state = "exwelder"
 	inhand_icon_state = "exwelder"
@@ -410,5 +416,3 @@
 	if(get_fuel() < max_fuel && nextrefueltick < world.time)
 		nextrefueltick = world.time + 10
 		reagents.add_reagent(/datum/reagent/fuel, 1)
-
-#undef WELDER_FUEL_BURN_INTERVAL

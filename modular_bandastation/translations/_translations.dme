@@ -1,5 +1,8 @@
 #include "_translations.dm"
 
+#include "code/bodyparts.dm"
 #include "code/moustache.dm"
+#include "code/pronouns.dm"
 #include "code/restaurant_customer.dm"
+#include "code/translate_attack_verb.dm"
 #include "code/translate_say.dm"
