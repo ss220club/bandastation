@@ -41,7 +41,7 @@
 				victim.grab_ghost(force = TRUE)
 				to_chat(victim, span_notice("You rise with a start, you're undead!!!"))
 			else if(victim.stat != DEAD)
-				to_chat(victim, span_notice("You feel great!"))
+				to_chat(victim, span_notice("Вы чувствуете себя прекрасно!"))
 			return
 		victim.investigate_log("has been killed by a bolt of death.", INVESTIGATE_DEATHS)
 		victim.death()
@@ -71,7 +71,7 @@
 		if(victim.revive(ADMIN_HEAL_ALL, force_grab_ghost = TRUE)) // This heals suicides
 			to_chat(victim, span_notice("You rise with a start, you're alive!!!"))
 		else if(victim.stat != DEAD)
-			to_chat(victim, span_notice("You feel great!"))
+			to_chat(victim, span_notice("Вы чувствуете себя прекрасно!"))
 
 	if(istype(target, /obj/machinery/hydroponics))
 		var/obj/machinery/hydroponics/plant_tray = target
