@@ -84,7 +84,7 @@
 			ingredient_amounts[ingredient.type] += 1
 
 		for(var/obj/item/ingredient_type as anything in ingredient_amounts)
-			examine_list += "&bull; [ingredient_amounts[ingredient_type]] [initial(ingredient_type.name)]\s"
+			examine_list += "&bull; [ingredient_amounts[ingredient_type]] [initial(ingredient_type.ru_name_nominative) || initial(ingredient_type.name)]\s"
 
 		var/unknown_volume = 0
 		for(var/datum/reagent/current_reagent as anything in reagents.reagent_list)
@@ -92,7 +92,7 @@
 				|| istype(current_reagent, /datum/reagent/water) \
 				|| istype(current_reagent, /datum/reagent/consumable) \
 			)
-				examine_list += "&bull; [round(current_reagent.volume, 0.01)] [declension_ru(round(unknown_volume, 0.01),"юнит","юнита","юнитов")] [current_reagent]"
+				examine_list += "&bull; [round(current_reagent.volume, 0.01)] [declension_ru(round(unknown_volume, 0.01),"юнит","юнита","юнитов")] [initial(current_reagent.ru_name_nominative) || initial(current_reagent.name)]"
 			else
 				unknown_volume += current_reagent.volume
 
