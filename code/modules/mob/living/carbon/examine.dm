@@ -436,7 +436,7 @@
 		. += "[t_He] носит [wear_suit.examine_title(user, declent = ACCUSATIVE)]."
 		//suit/armor storage
 		if(s_store && !(obscured & ITEM_SLOT_SUITSTORE) && !(s_store.item_flags & EXAMINE_SKIP))
-			. += "[t_He] носит [s_store.examine_title(user, declent = ACCUSATIVE)] на [wear_suit.declent_ru(DATIVE)]."
+			. += "[t_He] носит [s_store.examine_title(user, declent = ACCUSATIVE)] на [wear_suit.declent_ru(PREPOSITIONAL)]."
 	//back
 	if(back && !(back.item_flags & EXAMINE_SKIP))
 		. += "[t_He] носит [back.examine_title(user, declent = ACCUSATIVE)] на спине."
