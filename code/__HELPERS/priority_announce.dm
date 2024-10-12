@@ -89,11 +89,11 @@
 		if(length(title) > 0)
 			GLOB.news_network.submit_article(title + "<br><br>" + text, "[command_name()]", "Станционные оповещения", null)
 		else
-			GLOB.news_network.submit_article(text, "[command_name()] Update", "Станционные оповещения", null)
+			GLOB.news_network.submit_article(text, "[command_name()]: Сообщение", "Станционные оповещения", null)
 
 /proc/print_command_report(text = "", title = null, announce=TRUE)
 	if(!title)
-		title = "Засекреченное сообщение от [command_name()]"
+		title = "[command_name()]: Засекреченное сообщение"
 
 	if(announce)
 		priority_announce(
