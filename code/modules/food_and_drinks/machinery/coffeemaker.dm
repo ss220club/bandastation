@@ -577,7 +577,7 @@
 		balloon_alert_to_viewers("нет кофейных зерен!")
 		return FALSE
 	if(!coffeepot)
-		balloon_alert_to_viewers("нет [coffeepot.declent_ru(NOMINATIVE)] внутри!")
+		balloon_alert_to_viewers("нет [coffeepot.declent_ru(GENITIVE)] внутри!")
 		return FALSE
 	if(machine_stat & (NOPOWER|BROKEN) )
 		balloon_alert_to_viewers("[declent_ru(NOMINATIVE)] без питания!")
