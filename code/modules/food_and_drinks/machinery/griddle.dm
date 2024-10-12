@@ -211,7 +211,7 @@
 			continue
 		griddled_item.fire_act(1000) //Hot hot hot!
 		if(prob(10))
-			visible_message(span_danger("Жарить на [griddled_item.declent_ru(PREPOSITIONAL)] - не лучшая идея!"))
+			visible_message(span_danger("Кажется, [griddled_item.declent_ru(NOMINATIVE)] не очень удачно готовится на [declent_ru(PREPOSITIONAL)]!"))
 
 		use_energy(active_power_usage)
 

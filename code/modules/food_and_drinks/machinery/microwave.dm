@@ -433,7 +433,7 @@
 
 		ingredients += item
 		open(autoclose = 0.6 SECONDS)
-		user.visible_message(span_notice("[capitalize(user.declent_ru(NOMINATIVE))] добавляет [item.declent_ru(ACCUSATIVE)] в [declent_ru(DATIVE)]."), span_notice("Вы добавляете [item.declent_ru(ACCUSATIVE)] в [declent_ru(DATIVE)]..."))
+		user.visible_message(span_notice("[capitalize(user.declent_ru(NOMINATIVE))] добавляет [item.declent_ru(ACCUSATIVE)] в [declent_ru(ACCUSATIVE)]."), span_notice("Вы добавляете [item.declent_ru(ACCUSATIVE)] в [declent_ru(ACCUSATIVE)]..."))
 		update_appearance()
 		return ITEM_INTERACT_SUCCESS
 

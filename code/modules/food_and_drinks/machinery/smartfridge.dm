@@ -65,7 +65,7 @@
 			return ITEM_INTERACT_BLOCKING
 
 		user.visible_message(
-			span_notice("[capitalize(declent_ru(NOMINATIVE))] начинает отваривать [declent_ru(ACCUSATIVE)] от пола."),
+			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает отваривать [declent_ru(ACCUSATIVE)] от пола."),
 			span_notice("Вы начинаете отваривать [declent_ru(ACCUSATIVE)] от пола..."),
 			span_hear("Вы слышите звук сварки."),
 		)
@@ -211,9 +211,8 @@
 	else if (can_be_welded_down)
 		. += span_info("Крепежи свободны и могут быть [EXAMINE_HINT("приварены")].")
 
-
 	if(anchored)
-		. += span_info("Машина [EXAMINE_HINT("открутить")] от пола.")
+		. += span_info("Машина [EXAMINE_HINT("прикручена")] от пола.")
 	else
 		. += span_info("Можно [EXAMINE_HINT("прикрутить")] к полу.")
 

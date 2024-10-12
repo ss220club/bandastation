@@ -91,7 +91,7 @@
 		return
 	to_chat(user, span_notice("Вы пытаетесь [unpacked ? "распаковать" :"разобрать"] [declent_ru(ACCUSATIVE)]..."))
 	if(!do_after(user, 5 SECONDS, src))
-		to_chat(user, span_warning("Ваша [unpacked ? "распаковка" :"разборка"] [declent_ru(ACCUSATIVE)] была прервана!"))
+		to_chat(user, span_warning("Ваша [unpacked ? "распаковка" :"разборка"] [declent_ru(GENITIVE)] была прервана!"))
 		return
 	if(unpacked)
 		pack_up()

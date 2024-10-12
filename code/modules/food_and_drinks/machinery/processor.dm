@@ -142,7 +142,7 @@
 		user.stop_pulling()
 		return
 	if(!LAZYLEN(processor_contents))
-		to_chat(user, span_warning("Внутри [capitalize(declent_ru(NOMINATIVE))] пусто!"))
+		to_chat(user, span_warning("Внутри [declent_ru(GENITIVE)] пусто!"))
 		return TRUE
 	processing = TRUE
 	user.visible_message(span_notice("[capitalize(user.declent_ru(NOMINATIVE))] включает [declent_ru(ACCUSATIVE)]."), \
@@ -174,7 +174,7 @@
 
 /obj/machinery/processor/verb/eject()
 	set category = "Object"
-	set name = "Извлечь содержимое"
+	set name = "Eject Contents"
 	set src in oview(1)
 	if(usr.stat != CONSCIOUS || HAS_TRAIT(usr, TRAIT_HANDS_BLOCKED))
 		return
@@ -189,7 +189,7 @@
 
 /obj/machinery/processor/container_resist_act(mob/living/user)
 	user.forceMove(drop_location())
-	user.visible_message(span_notice("[capitalize(user.declent_ru(NOMINATIVE))] выбирается из [declent_ru(NOMINATIVE)]!"))
+	user.visible_message(span_notice("[capitalize(user.declent_ru(NOMINATIVE))] выбирается из [declent_ru(GENITIVE)]!"))
 
 /obj/machinery/processor/slime
 	name = "slime processor"

@@ -224,7 +224,7 @@
 	var/datum/reagent/reagent_to_remove = tgui_input_list(user, "Select a reagent to purge from the vat.", "Remove reagent", reagents.reagent_list, ui_state = GLOB.conscious_state)
 	if(isnull(reagent_to_remove) || !user.can_perform_action(src, action_bitflags = ALLOW_RESTING))
 		return
-	balloon_alert(user, "[reagent_to_remove.declent_ru(NOMINATIVE)] разливается")
+	balloon_alert(user, "[reagent_to_remove.name] разливается")
 	reagents.remove_reagent(reagent_to_remove.type, reagent_to_remove.volume)
 
 /obj/machinery/icecream_vat/proc/make_ice_cream_color(datum/ice_cream_flavour/flavor)
