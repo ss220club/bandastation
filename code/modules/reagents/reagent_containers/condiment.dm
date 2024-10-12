@@ -37,7 +37,7 @@
 	return ..()
 
 /obj/item/reagent_containers/condiment/suicide_act(mob/living/carbon/user)
-	user.visible_message(span_suicide("[capitalize(user.declent_ru(NOMINATIVE))] пытается проглотить  [declent_ru(GENITIVE)] целиком! Похоже, [ru_p_they()] пытается совершить суицид!"))
+	user.visible_message(span_suicide("[capitalize(user.declent_ru(NOMINATIVE))] пытается проглотить [declent_ru(ACCUSATIVE)] целиком! Кажется, [ru_p_they()] не знает, как работает еда!"))
 	return OXYLOSS
 
 /obj/item/reagent_containers/condiment/attack(mob/M, mob/user, def_zone)
@@ -59,7 +59,7 @@
 			return
 		if(!reagents || !reagents.total_volume)
 			return // The condiment might be empty after the delay.
-		M.visible_message(span_warning("[capitalize(user.declent_ru(NOMINATIVE))] кормит [M.declent_ru(ACCUSATIVE)] с помощью[declent_ru(GENITIVE)]."), \
+		M.visible_message(span_warning("[capitalize(user.declent_ru(NOMINATIVE))] кормит [M.declent_ru(ACCUSATIVE)] с помощью [declent_ru(GENITIVE)]."), \
 			span_warning("[capitalize(user.declent_ru(NOMINATIVE))] кормит вас [declent_ru(INSTRUMENTAL)]"))
 		log_combat(user, M, "fed", reagents.get_reagent_log_string())
 	reagents.trans_to(M, 10, transferred_by = user, methods = INGEST)
@@ -77,16 +77,16 @@
 			return ITEM_INTERACT_BLOCKING
 
 		var/trans = target.reagents.trans_to(src, amount_per_transfer_from_this, transferred_by = user)
-		to_chat(user, span_notice("[capitalize(declent_ru(NOMINATIVE))] наполняет [trans] [declension_ru(trans,"юнитом","юнитами","юнитами")] содержимое [target.declent_ru(GENITIVE)]."))
+		to_chat(user, span_notice("Вы наполняете [declent_ru(NOMINATIVE)] на [trans] [declension_ru(trans,"юнит","юнита","юнитов")] из [target.declent_ru(GENITIVE)]."))
 		return ITEM_INTERACT_SUCCESS
 
 	//Something like a glass or a food item. Player probably wants to transfer TO it.
 	else if(target.is_drainable() || IS_EDIBLE(target))
 		if(!reagents.total_volume)
-			to_chat(user, span_warning("В [target.declent_ru(GENITIVE)] пусто!"))
+			to_chat(user, span_warning("Внутри [target.declent_ru(GENITIVE)] пусто!"))
 			return ITEM_INTERACT_BLOCKING
 		if(target.reagents.total_volume >= target.reagents.maximum_volume)
-			to_chat(user, span_warning("В [declent_ru(DATIVE)] нет места!"))
+			to_chat(user, span_warning("Внутри [targent.declent_ru(GENITIVE)] недостаточно места!"))
 			return ITEM_INTERACT_BLOCKING
 		var/trans = src.reagents.trans_to(target, amount_per_transfer_from_this, transferred_by = user)
 		to_chat(user, span_notice("Вы передаете [trans] [declension_ru(trans,"юнит","юнита","юнитов")] из [target.declent_ru(GENITIVE)]."))
@@ -156,7 +156,7 @@
 		if(!reagents.has_reagent(/datum/reagent/consumable/salt, 2))
 			to_chat(user, span_warning("У вас недостаточно соли, чтобы сделать горсть!"))
 			return
-		user.visible_message(span_notice("[capitalize(user.declent_ru(NOMINATIVE))] наполняется солью [target.declent_ru(ACCUSATIVE)]."), span_notice("[capitalize(target.declent_ru(NOMINATIVE))] наполняется солью."))
+		user.visible_message(span_notice("[capitalize(user.declent_ru(NOMINATIVE))] посыпает солью [target.declent_ru(ACCUSATIVE)]."), span_notice("Вы посыпаете солью[target.declent_ru(ACCUSATIVE)]."))
 		reagents.remove_reagent(/datum/reagent/consumable/salt, 2)
 		new/obj/effect/decal/cleanable/food/salt(target)
 		return ITEM_INTERACT_SUCCESS
