@@ -18,7 +18,7 @@
 	var/t_His = ru_p_them(TRUE)
 	var/t_his = ru_p_them()
 	var/t_him = ru_p_them()
-	var/t_has = ru_p_have()
+	// var/t_has = ru_p_have()
 	// var/t_is = ru_p_are()
 
 	. = list()
@@ -107,26 +107,26 @@
 		var/list/damage_desc = get_majority_bodypart_damage_desc()
 		if(temp)
 			if(temp < 25)
-				. += span_danger("[t_He] [t_has] незначительные [damage_desc[BRUTE]].")
+				. += span_danger("У [ru_p_theirs()] незначительные [damage_desc[BRUTE]].")
 			else if(temp < 50)
-				. += span_danger("[t_He] [t_has] <b>умеренные</b> [damage_desc[BRUTE]]!")
+				. += span_danger("У [ru_p_theirs()] <b>умеренные</b> [damage_desc[BRUTE]]!")
 			else
-				. += span_bolddanger("[t_He] [t_has] тяжелые [damage_desc[BRUTE]]!")
+				. += span_bolddanger("У [ru_p_theirs()] тяжелые [damage_desc[BRUTE]]!")
 
 		temp = getFireLoss()
 		if(temp)
 			if(temp < 25)
-				. += span_danger("[t_He] [t_has] незначительные [damage_desc[BURN]].")
+				. += span_danger("У [ru_p_theirs()] незначительные [damage_desc[BURN]].")
 			else if (temp < 50)
-				. += span_danger("[t_He] [t_has] <b>умеренные</b> [damage_desc[BURN]]!")
+				. += span_danger("У [ru_p_theirs()] <b>умеренные</b> [damage_desc[BURN]]!")
 			else
-				. += span_bolddanger("[t_He] [t_has] тяжелые [damage_desc[BURN]]!")
+				. += span_bolddanger("У [ru_p_theirs()] тяжелые [damage_desc[BURN]]!")
 
 	if(pulledby?.grab_state)
 		. += span_warning("[t_His] держит в захвате [pulledby.declent_ru(NOMINATIVE)].")
 
 	if(nutrition < NUTRITION_LEVEL_STARVING - 50)
-		. += span_warning("[t_He] в состоянии сильного истощения.")
+		. += span_warning("У [ru_p_theirs()] сильное истощение.")
 	else if(nutrition >= NUTRITION_LEVEL_FAT)
 		if(user.nutrition < NUTRITION_LEVEL_STARVING - 50)
 			. += span_hypnophrase("[t_He] выглядит пухло и аппетитно - как маленький толстый поросенок. Вкусный поросенок.")
@@ -147,7 +147,7 @@
 			apparent_blood_volume -= (BLOOD_VOLUME_NORMAL * 0.25) // knocks you down a few pegs
 	switch(apparent_blood_volume)
 		if(BLOOD_VOLUME_OKAY to BLOOD_VOLUME_SAFE)
-			. += span_warning("[t_He] имеет бледную кожу.")
+			. += span_warning("У [ru_p_theirs()] бледная кожа.")
 		if(BLOOD_VOLUME_BAD to BLOOD_VOLUME_OKAY)
 			. += span_boldwarning("[t_He] выглядит бледно, как сама смерть.")
 		if(-INFINITY to BLOOD_VOLUME_BAD)
@@ -225,7 +225,7 @@
 					living_user.set_jitter_if_lower(15 SECONDS)
 
 			if(HAS_TRAIT(user, TRAIT_SPIRITUAL) && mind?.holy_role)
-				. += "[t_He] [t_has] вокруг себя святую ауру."
+				. += "Вокруг [ru_p_theirs()] видно святую ауру."
 				living_user.add_mood_event("religious_comfort", /datum/mood_event/religiously_comforted)
 
 		switch(stat)
@@ -235,13 +235,13 @@
 				. += span_notice("[t_He] едва находится в сознании.")
 			if(CONSCIOUS)
 				if(HAS_TRAIT(src, TRAIT_DUMB))
-					. += "[t_He] [t_has] глупое выражение лица."
+					. += "У [ru_p_theirs()] глупое выражение лица."
 		if(get_organ_by_type(/obj/item/organ/internal/brain) && isnull(ai_controller))
 			var/npc_message = ""
 			if(!key)
 				npc_message = "[t_He] в полной кататонии. Стресс, связанный с жизнью в глубоком космосе, видимо, переселил [t_him]. Восстановление маловероятно."
 			else if(!client)
-				npc_message ="[t_He] [t_has] имеет пустой и рассеянный взгляд и, кажется, совершенно ни на что не реагирует. [t_He], возможно, скоро опомнится."
+				npc_message ="У [ru_p_theirs()] пустой и рассеянный взгляд и, кажется, [ru_p_they()] совершенно ни на что не реагирует. [t_He], возможно, скоро опомнится."
 			if(npc_message)
 				// give some space since this is usually near the end
 				ADD_NEWLINE_IF_NECESSARY(.)
@@ -257,11 +257,11 @@
 		ADD_NEWLINE_IF_NECESSARY(.)
 		switch(scar_severity)
 			if(1 to 4)
-				. += span_tinynoticeital("[t_He] [t_has] видимые шрамы; вы можете осмотреть подробнее, чтобы разглядеть шрамы...")
+				. += span_tinynoticeital("У [ru_p_theirs()] видно шрамы; вы можете осмотреть подробнее, чтобы разглядеть шрамы...")
 			if(5 to 8)
-				. += span_smallnoticeital("[t_He] [t_has] несколько плохих шрамов; вы можете осмотреть подробнее, чтобы разглядеть шрамы...")
+				. += span_smallnoticeital("У [ru_p_theirs()] видно несколько плохих шрамов; вы можете осмотреть подробнее, чтобы разглядеть шрамы...")
 			if(9 to 11)
-				. += span_notice("<i>[t_He] [t_has] значительно обезображивающие шрамы; вы можете осмотреть подробнее, чтобы разглядеть шрамы...</i>")
+				. += span_notice("<i>У [ru_p_theirs()] видно значительно обезображивающие шрамы; вы можете осмотреть подробнее, чтобы разглядеть шрамы...</i>")
 			if(12 to INFINITY)
 				. += span_notice("<b><i>[t_He] выглядит абсолютно ужасно; вы можете осмотреть подробнее, чтобы разглядеть шрамы...</i></b>")
 
@@ -347,48 +347,48 @@
 	var/t_He = ru_p_they(TRUE)
 	var/t_His = ru_p_them(TRUE)
 	// var/t_his = p_their()
-	var/t_has = p_have()
+	// var/t_has = p_have()
 	// var/t_is = p_are()
 	//head
 	if(head && !(obscured & ITEM_SLOT_HEAD) && !(head.item_flags & EXAMINE_SKIP))
-		. += "[t_He] носит [head.examine_title(user, declent = ACCUSATIVE)] на своей голове."
+		. += "[t_He] носит [head.examine_title(user, declent = ACCUSATIVE)] на голове."
 	//back
 	if(back && !(back.item_flags & EXAMINE_SKIP))
-		. += "[t_He] носит [back.examine_title(user, declent = ACCUSATIVE)] на своей спине."
+		. += "[t_He] носит [back.examine_title(user, declent = ACCUSATIVE)] на спине."
 	//Hands
 	for(var/obj/item/held_thing in held_items)
 		if(held_thing.item_flags & (ABSTRACT|EXAMINE_SKIP|HAND_ITEM))
 			continue
-		. += "[t_He] держит [held_thing.examine_title(user, declent = ACCUSATIVE)] в своей [get_held_index_name(get_held_index_of_item(held_thing))]."
+		. += "[t_He] держит [held_thing.examine_title(user, declent = ACCUSATIVE)] в [get_held_index_name(get_held_index_of_item(held_thing))]."
 	//gloves
 	if(gloves && !(obscured & ITEM_SLOT_GLOVES) && !(gloves.item_flags & EXAMINE_SKIP))
-		. += "[t_He] носит [gloves.examine_title(user, declent = ACCUSATIVE)] на своих руках."
+		. += "[t_He] носит [gloves.examine_title(user, declent = ACCUSATIVE)] на руках."
 	else if(GET_ATOM_BLOOD_DNA_LENGTH(src))
 		if(num_hands)
-			. += span_warning("[t_He] [t_has] окровавленн[num_hands > 1 ? "ые" : "ую"] рук[num_hands > 1 ? "и" : "у"]!")
+			. += span_warning("У [ru_p_theirs()] окровавленн[num_hands > 1 ? "ые" : "ую"] рук[num_hands > 1 ? "и" : "у"]!")
 	//handcuffed?
 	if(handcuffed)
 		var/cables_or_cuffs = istype(handcuffed, /obj/item/restraints/handcuffs/cable) ? "в связках" : "в наручниках"
 		. += span_warning("[t_He] [icon2html(handcuffed, user)] [cables_or_cuffs]!")
 	//shoes
 	if(shoes && !(obscured & ITEM_SLOT_FEET)  && !(shoes.item_flags & EXAMINE_SKIP))
-		. += "[t_He] носит [shoes.examine_title(user, declent = ACCUSATIVE)] на своих ногах."
+		. += "[t_He] носит [shoes.examine_title(user, declent = ACCUSATIVE)] на ногах."
 	//mask
 	if(wear_mask && !(obscured & ITEM_SLOT_MASK)  && !(wear_mask.item_flags & EXAMINE_SKIP))
-		. += "[t_He] носит [wear_mask.examine_title(user, declent = ACCUSATIVE)] на своем лице."
+		. += "[t_He] носит [wear_mask.examine_title(user, declent = ACCUSATIVE)] на лице."
 	if(wear_neck && !(obscured & ITEM_SLOT_NECK)  && !(wear_neck.item_flags & EXAMINE_SKIP))
-		. += "[t_He] носит [wear_neck.examine_title(user, declent = ACCUSATIVE)] вокруг своей шеи."
+		. += "[t_He] носит [wear_neck.examine_title(user, declent = ACCUSATIVE)] вокруг шеи."
 	//eyes
 	if(!(obscured & ITEM_SLOT_EYES) )
 		if(glasses  && !(glasses.item_flags & EXAMINE_SKIP))
-			. += "[t_He] носит [glasses.examine_title(user, declent = ACCUSATIVE)] на своих глазах."
+			. += "[t_He] носит [glasses.examine_title(user, declent = ACCUSATIVE)] на глазах."
 		else if(HAS_TRAIT(src, TRAIT_UNNATURAL_RED_GLOWY_EYES))
 			. += span_warning("<B>[t_His] глаза светятся неестественной красной аурой!</B>")
 		else if(HAS_TRAIT(src, TRAIT_BLOODSHOT_EYES))
 			. += span_warning("<B>[t_His] глаза налиты кровью!</B>")
 	//ears
 	if(ears && !(obscured & ITEM_SLOT_EARS) && !(ears.item_flags & EXAMINE_SKIP))
-		. += "[t_He] носит [ears.examine_title(user, declent = ACCUSATIVE)] на своих ушах."
+		. += "[t_He] носит [ears.examine_title(user, declent = ACCUSATIVE)] на ушах."
 
 // Yes there's a lot of copypasta here, we can improve this later when carbons are less dumb in general
 /mob/living/carbon/human/get_clothing_examine_info(mob/living/user)
@@ -397,7 +397,7 @@
 	var/t_He = ru_p_they(TRUE)
 	var/t_His = ru_p_them(TRUE)
 	var/t_his = ru_p_them()
-	var/t_has = ru_p_have()
+	// var/t_has = ru_p_have()
 	// var/t_is = p_are()
 
 	//uniform
@@ -413,33 +413,33 @@
 		. += "[t_He] носит [w_uniform.examine_title(user, declent = ACCUSATIVE)][accessory_message]."
 	//head
 	if(head && !(obscured & ITEM_SLOT_HEAD) && !(head.item_flags & EXAMINE_SKIP))
-		. += "[t_He] носит [head.examine_title(user, declent = ACCUSATIVE)] на своей голове."
+		. += "[t_He] носит [head.examine_title(user, declent = ACCUSATIVE)] на голове."
 	//mask
 	if(wear_mask && !(obscured & ITEM_SLOT_MASK)  && !(wear_mask.item_flags & EXAMINE_SKIP))
-		. += "[t_He] носит [wear_mask.examine_title(user, declent = ACCUSATIVE)] на своем лице."
+		. += "[t_He] носит [wear_mask.examine_title(user, declent = ACCUSATIVE)] налице."
 	//neck
 	if(wear_neck && !(obscured & ITEM_SLOT_NECK)  && !(wear_neck.item_flags & EXAMINE_SKIP))
-		. += "[t_He] носит [wear_neck.examine_title(user, declent = ACCUSATIVE)] на своей шее."
+		. += "[t_He] носит [wear_neck.examine_title(user, declent = ACCUSATIVE)] на шее."
 	//eyes
 	if(!(obscured & ITEM_SLOT_EYES) )
 		if(glasses  && !(glasses.item_flags & EXAMINE_SKIP))
-			. += "[t_He] носит [glasses.examine_title(user, declent = ACCUSATIVE)] на своих глазах."
+			. += "[t_He] носит [glasses.examine_title(user, declent = ACCUSATIVE)] на глазах."
 		else if(HAS_TRAIT(src, TRAIT_UNNATURAL_RED_GLOWY_EYES))
 			. += span_warning("<B>[t_His] глаза светятся неестественной красной аурой!</B>")
 		else if(HAS_TRAIT(src, TRAIT_BLOODSHOT_EYES))
 			. += span_warning("<B>[t_His] глаза налиты кровью!</B>")
 	//ears
 	if(ears && !(obscured & ITEM_SLOT_EARS) && !(ears.item_flags & EXAMINE_SKIP))
-		. += "[t_He] носит [ears.examine_title(user, declent = ACCUSATIVE)] на своих ушах."
+		. += "[t_He] носит [ears.examine_title(user, declent = ACCUSATIVE)] на ушах."
 	//suit/armor
 	if(wear_suit && !(wear_suit.item_flags & EXAMINE_SKIP))
 		. += "[t_He] носит [wear_suit.examine_title(user, declent = ACCUSATIVE)]."
 		//suit/armor storage
 		if(s_store && !(obscured & ITEM_SLOT_SUITSTORE) && !(s_store.item_flags & EXAMINE_SKIP))
-			. += "[t_He] носит [s_store.examine_title(user, declent = ACCUSATIVE)] на [t_his] [wear_suit.declent_ru(DATIVE)]."
+			. += "[t_He] носит [s_store.examine_title(user, declent = ACCUSATIVE)] на [wear_suit.declent_ru(DATIVE)]."
 	//back
 	if(back && !(back.item_flags & EXAMINE_SKIP))
-		. += "[t_He] носит [back.examine_title(user, declent = ACCUSATIVE)] на своей спине."
+		. += "[t_He] носит [back.examine_title(user, declent = ACCUSATIVE)] на спине."
 	//ID
 	if(wear_id && !(wear_id.item_flags & EXAMINE_SKIP))
 		var/obj/item/card/id/id = wear_id.GetID()
@@ -453,23 +453,23 @@
 	for(var/obj/item/held_thing in held_items)
 		if(held_thing.item_flags & (ABSTRACT|EXAMINE_SKIP|HAND_ITEM))
 			continue
-		. += "[t_He] держит [held_thing.examine_title(user, declent = ACCUSATIVE)] в своей [get_held_index_name(get_held_index_of_item(held_thing))]."
+		. += "[t_He] держит [held_thing.examine_title(user, declent = ACCUSATIVE)] в [get_held_index_name(get_held_index_of_item(held_thing))]."
 	//gloves
 	if(gloves && !(obscured & ITEM_SLOT_GLOVES) && !(gloves.item_flags & EXAMINE_SKIP))
-		. += "[t_He] носит [gloves.examine_title(user, declent = ACCUSATIVE)] на своих руках."
+		. += "[t_He] носит [gloves.examine_title(user, declent = ACCUSATIVE)] на руках."
 	else if(GET_ATOM_BLOOD_DNA_LENGTH(src) || blood_in_hands)
 		if(num_hands)
-			. += span_warning("[t_He] [t_has] окровавленн[num_hands > 1 ? "ые" : "ую"] рук[num_hands > 1 ? "и" : "у"]!")
+			. += span_warning("У [ru_p_theirs()] окровавленн[num_hands > 1 ? "ые" : "ую"] рук[num_hands > 1 ? "и" : "у"]!")
 	//handcuffed?
 	if(handcuffed)
 		var/cables_or_cuffs = istype(handcuffed, /obj/item/restraints/handcuffs/cable) ? "в связках" : "в наручниках"
 		. += span_warning("[t_He] [icon2html(handcuffed, user)] [cables_or_cuffs]!")
 	//belt
 	if(belt && !(obscured & ITEM_SLOT_BELT) && !(belt.item_flags & EXAMINE_SKIP))
-		. += "[t_He] носит [belt.examine_title(user, declent = ACCUSATIVE)] на своем поясе."
+		. += "[t_He] носит [belt.examine_title(user, declent = ACCUSATIVE)] на поясе."
 	//shoes
 	if(shoes && !(obscured & ITEM_SLOT_FEET)  && !(shoes.item_flags & EXAMINE_SKIP))
-		. += "[t_He] носит [shoes.examine_title(user, declent = ACCUSATIVE)] на своих ногах."
+		. += "[t_He] носит [shoes.examine_title(user, declent = ACCUSATIVE)] на ногах."
 
 /// Collects info displayed about any HUDs the user has when examining src
 /mob/living/carbon/proc/get_hud_examine_info(mob/living/user)
