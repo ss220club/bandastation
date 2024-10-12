@@ -99,11 +99,11 @@
 	playsound(victim, 'sound/items/handling/surgery/organ2.ogg', 50, TRUE)
 	victim.balloon_alert(user, "вырывает глаза...")
 	user.visible_message(
-		span_boldwarning("[user] достигнает внутренности черепа [victim]..."),
+		span_boldwarning("[capitalize(user.declent_ru(NOMINATIVE))] достигнает внутренности черепа [victim.declent_ru(DATIVE)]..."),
 		ignored_mobs = user
 	)
 	victim.show_message(
-		span_userdanger("[victim] начинает тянуть ваши глазаs!"),
+		span_userdanger("[capitalise(victim.declent_ru(NOMINATIVE))] начинает тянуть ваши глазаs!"),
 		MSG_VISUAL,
 		span_userdanger("Достигает внутренностей вашей головы и начинает тянуть глаза!"),
 	)
@@ -118,13 +118,13 @@
 
 	playsound(victim, 'sound/items/handling/surgery/organ1.ogg', 75, TRUE)
 	user.visible_message(
-		span_boldwarning("[user] вырывает глаза [victim]!"),
-		span_boldwarning("Вы вырываете глаза [victim]!"),
+		span_boldwarning("[capitalize(user.declent_ru(NOMINATIVE))] вырывает глаза [victim.declent_ru(DATIVE)]!"),
+		span_boldwarning("Вы вырываете глаза [victim.declent_ru(DATIVE)]!"),
 		ignored_mobs = victim,
 	)
 
 	victim.show_message(
-		span_userdanger("[user] вырывает ваши глаза!"),
+		span_userdanger("[capitalize(user.declent_ru(NOMINATIVE))] вырывает ваши глаза!"),
 		MSG_VISUAL,
 		span_userdanger("Вы чувствуете, как рука выдёргивается из вашей головы, и понимаете, что что-то очень важное пропало!"),
 	)
