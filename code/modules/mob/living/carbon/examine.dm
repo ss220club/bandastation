@@ -167,7 +167,7 @@
 			var/bleed_text = "<b>"
 			if(appears_dead)
 				bleed_text += "<span class='deadsay'>"
-				bleed_text += "Видна кровь из [t_his] открытых"
+				bleed_text += "Видна кровь из [t_his] открытых "
 			else
 				bleed_text += "<span class='warning'>"
 				bleed_text += "[t_He] кровоточит из [t_his] "
