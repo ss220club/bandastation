@@ -86,7 +86,7 @@
 			to_chat(user, span_warning("Внутри [target.declent_ru(GENITIVE)] пусто!"))
 			return ITEM_INTERACT_BLOCKING
 		if(target.reagents.total_volume >= target.reagents.maximum_volume)
-			to_chat(user, span_warning("Внутри [targent.declent_ru(GENITIVE)] недостаточно места!"))
+			to_chat(user, span_warning("Внутри [target.declent_ru(GENITIVE)] недостаточно места!"))
 			return ITEM_INTERACT_BLOCKING
 		var/trans = src.reagents.trans_to(target, amount_per_transfer_from_this, transferred_by = user)
 		to_chat(user, span_notice("Вы передаете [trans] [declension_ru(trans,"юнит","юнита","юнитов")] из [target.declent_ru(GENITIVE)]."))
