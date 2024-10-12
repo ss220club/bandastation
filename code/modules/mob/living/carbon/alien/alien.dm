@@ -30,6 +30,8 @@
 		/obj/item/toy/toy_xeno,
 		/obj/item/sticker, //funny ~Jimmyl
 		/obj/item/toy/plush/rouny,
+		/obj/item/hand_item,
+		/obj/item/queen_promotion,
 	))
 
 /mob/living/carbon/alien/Initialize(mapload)
@@ -163,8 +165,8 @@ Des: Removes all infected images from the alien.
 
 	if(old_number != 0)
 		numba = old_number
+		ru_names_rename(RU_NAMES_LIST(initial(name), "[initial(ru_name_nominative) || initial(name)]", "[initial(ru_name_genitive) || initial(name)]", "[initial(ru_name_dative) || initial(name)]", "[initial(ru_name_accusative) || initial(name)]", "[initial(ru_name_instrumental) || initial(name)]", "[initial(ru_name_prepositional) || initial(name)]"))
 		name = initial(name) // prevent chicanery like two different numerical identifiers tied to the same mob
-		RU_NAMES_LIST_INIT("[name]", "[initial(ru_name_nominative) || initial(name)]", "[initial(ru_name_genitive) || initial(name)]", "[initial(ru_name_dative) || initial(name)]", "[initial(ru_name_accusative) || initial(name)]", "[initial(ru_name_instrumental) || initial(name)]", "[initial(ru_name_prepositional) || initial(name)]")
 
 	set_name()
 

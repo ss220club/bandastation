@@ -1204,8 +1204,11 @@
 		var/altered_grab_state = pulledby.grab_state
 		if((body_position == LYING_DOWN || HAS_TRAIT(src, TRAIT_GRABWEAKNESS) || get_timed_status_effect_duration(/datum/status_effect/staggered)) && pulledby.grab_state < GRAB_KILL) //If prone, resisting out of a grab is equivalent to 1 grab state higher. won't make the grab state exceed the normal max, however
 			altered_grab_state++
-		var/resist_chance = BASE_GRAB_RESIST_CHANCE /// see defines/combat.dm, this should be baseline 60%
-		resist_chance = (resist_chance/altered_grab_state) ///Resist chance divided by the value imparted by your grab state. It isn't until you reach neckgrab that you gain a penalty to escaping a grab.
+		if(HAS_TRAIT(src, TRAIT_GRABRESISTANCE))
+			altered_grab_state--
+		// see defines/combat.dm, this should be baseline 60%
+		// Resist chance divided by the value imparted by your grab state. It isn't until you reach neckgrab that you gain a penalty to escaping a grab.
+		var/resist_chance = altered_grab_state ? (BASE_GRAB_RESIST_CHANCE / altered_grab_state) : 100
 		if(prob(resist_chance))
 			visible_message(span_danger("[capitalize(declent_ru(NOMINATIVE))] вырывается из хватки [pulledby.declent_ru(GENITIVE)]!"), \
 							span_danger("Вы вырываетесь из хватки [pulledby.declent_ru(GENITIVE)]!"), null, null, pulledby)
@@ -1871,8 +1874,8 @@ GLOBAL_LIST_EMPTY(fire_appearances)
 /mob/living/proc/set_name()
 	if(numba == 0)
 		numba = rand(1, 1000)
+	ru_names_rename(RU_NAMES_LIST("[name] ([numba])", "[declent_ru(NOMINATIVE)] ([numba])", "[declent_ru(GENITIVE)] ([numba])", "[declent_ru(DATIVE)] ([numba])", "[declent_ru(ACCUSATIVE)] ([numba])", "[declent_ru(INSTRUMENTAL)] ([numba])", "[declent_ru(PREPOSITIONAL)] ([numba])"))
 	name = "[name] ([numba])"
-	RU_NAMES_LIST_INIT("[name]", "[initial(ru_name_nominative) || initial(name)] ([numba])", "[initial(ru_name_genitive) || initial(name)] ([numba])", "[initial(ru_name_dative) || initial(name)] ([numba])", "[initial(ru_name_accusative) || initial(name)] ([numba])", "[initial(ru_name_instrumental) || initial(name)] ([numba])", "[initial(ru_name_prepositional) || initial(name)] ([numba])")
 	real_name = declent_ru(NOMINATIVE)
 
 /mob/living/proc/mob_try_pickup(mob/living/user, instant=FALSE)
