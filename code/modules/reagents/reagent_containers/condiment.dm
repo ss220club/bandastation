@@ -83,7 +83,7 @@
 	//Something like a glass or a food item. Player probably wants to transfer TO it.
 	else if(target.is_drainable() || IS_EDIBLE(target))
 		if(!reagents.total_volume)
-			to_chat(user, span_warning("Внутри [target.declent_ru(GENITIVE)] пусто!"))
+			to_chat(user, span_warning("Внутри [declent_ru(GENITIVE)] пусто!"))
 			return ITEM_INTERACT_BLOCKING
 		if(target.reagents.total_volume >= target.reagents.maximum_volume)
 			to_chat(user, span_warning("Внутри [target.declent_ru(GENITIVE)] недостаточно места!"))
@@ -106,7 +106,7 @@
 	var/datum/chemical_reaction/recipe = GLOB.chemical_reactions_list[/datum/chemical_reaction/food/cheesewheel]
 	var/milk_required = recipe.required_reagents[/datum/reagent/consumable/milk]
 	var/enzyme_required = recipe.required_catalysts[/datum/reagent/consumable/enzyme]
-	. += span_notice("[milk_required] [declension_ru(milk_required,"юнит","юнита","юнитов")] молока, [enzyme_required] [declension_ru(enzyme_required,"юнит","юнита","юнитов")] энзима и вы получите сыр.")
+	. += span_notice("[milk_required] [declension_ru(milk_required,"юнит","юнита","юнитов")] молока, [enzyme_required] [declension_ru(enzyme_required,"юнит","юнита","юнитов")] энзима, и вы получите сыр.")
 	. += span_warning("Помните, что энзим лишь катализатор, не забудьте вернуть его в бутылку!")
 
 /obj/item/reagent_containers/condiment/sugar
@@ -125,7 +125,7 @@
 	var/flour_required = recipe.required_reagents[/datum/reagent/consumable/flour]
 	var/eggyolk_required = recipe.required_reagents[/datum/reagent/consumable/eggyolk]
 	var/sugar_required = recipe.required_reagents[/datum/reagent/consumable/sugar]
-	. += span_notice("[flour_required] [declension_ru(flour_required,"юнит","юнита","юнитов")] муки, [eggyolk_required] [declension_ru(eggyolk_required,"юнит","юнита","юнитов")] яичного желтка (или соевого молока),, [sugar_required] [declension_ru(sugar_required,"юнит","юнита","юнитов")] сахара, чтобы сделать слоенное тесто. Из него выйдет отличное тесто для пирога!")
+	. += span_notice("[flour_required] [declension_ru(flour_required,"юнит","юнита","юнитов")] муки, [eggyolk_required] [declension_ru(eggyolk_required,"юнит","юнита","юнитов")] яичного желтка (или соевого молока), [sugar_required] [declension_ru(sugar_required,"юнит","юнита","юнитов")] сахара, чтобы сделать слоенное тесто. Из него выйдет отличное тесто для пирога!")
 
 /obj/item/reagent_containers/condiment/saltshaker //Separate from above since it's a small shaker rather then
 	name = "salt shaker" // a large one.
@@ -189,7 +189,7 @@
 	var/datum/chemical_reaction/recipe = GLOB.chemical_reactions_list[/datum/chemical_reaction/food/cheesewheel]
 	var/milk_required = recipe.required_reagents[/datum/reagent/consumable/milk]
 	var/enzyme_required = recipe.required_catalysts[/datum/reagent/consumable/enzyme]
-	. += span_notice("[milk_required] [declension_ru(milk_required,"юнит","юнита","юнитов")] молока, [enzyme_required] [declension_ru(enzyme_required,"юнит","юнита","юнитов")] энзима и вы получите сыр.")
+	. += span_notice("[milk_required] [declension_ru(milk_required,"юнит","юнита","юнитов")] молока, [enzyme_required] [declension_ru(enzyme_required,"юнит","юнита","юнитов")] энзима, и вы получите сыр.")
 	. += span_warning("Помните, что энзим лишь катализатор, поэтому верни его обратно в бутылку после использования, глупыш!")
 
 /obj/item/reagent_containers/condiment/flour
@@ -451,14 +451,14 @@
 	//You can tear the bag open above food to put the condiments on it, obviously.
 	if(IS_EDIBLE(target))
 		if(!reagents.total_volume)
-			to_chat(user, span_warning("Вы разорвали [declent_ru(ACCUSATIVE)], но внутри пусто."))
+			to_chat(user, span_warning("Вы вскрываете [declent_ru(ACCUSATIVE)], но внутри пусто."))
 			qdel(src)
 			return ITEM_INTERACT_BLOCKING
 		if(target.reagents.total_volume >= target.reagents.maximum_volume)
-			to_chat(user, span_warning("Вы разорвали [declent_ru(ACCUSATIVE)] вскрыли, но [target.declent_ru(NOMINATIVE)] уже не вмещает больше, и все просто стекает!"))
+			to_chat(user, span_warning("Вы разорвали [declent_ru(ACCUSATIVE)] вскрыли, но [target.declent_ru(NOMINATIVE)] заполнен настолько, что всё просто стекает!"))
 			qdel(src)
 			return ITEM_INTERACT_BLOCKING
-		to_chat(user, span_notice("Вы разорвали [declent_ru(ACCUSATIVE)], и [target.declent_ru(ACCUSATIVE)] наполняется."))
+		to_chat(user, span_notice("Вы разорвали [declent_ru(ACCUSATIVE)] над [target.declent_ru(ACCUSATIVE)] и добавляете содержимое в блюдо."))
 		src.reagents.trans_to(target, amount_per_transfer_from_this, transferred_by = user)
 		qdel(src)
 		return ITEM_INTERACT_SUCCESS
