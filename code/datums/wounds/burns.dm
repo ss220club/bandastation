@@ -144,9 +144,9 @@
 
 /datum/wound/burn/flesh/get_wound_description(mob/user)
 	if(strikes_to_lose_limb <= 0)
-		return span_deadsay("<B>[victim.p_Their()] [limb.ru_plaintext_zone[DATIVE] || limb.plaintext_zone] полностью заблокирован и не функционирует.</B>")
+		return span_deadsay("<B>[victim.ru_p_their()] [limb.ru_plaintext_zone[DATIVE] || limb.plaintext_zone] полностью заблокирован и не функционирует.</B>")
 
-	var/list/condition = list("[victim.p_Their()] [limb.ru_plaintext_zone[DATIVE] || limb.plaintext_zone] [examine_desc]")
+	var/list/condition = list("[victim.ru_p_their()] [limb.ru_plaintext_zone[DATIVE] || limb.plaintext_zone] [examine_desc]")
 	if(limb.current_gauze)
 		var/bandage_condition
 		switch(limb.current_gauze.absorption_capacity)
@@ -169,7 +169,7 @@
 			if(WOUND_INFECTION_CRITICAL to WOUND_INFECTION_SEPTIC)
 				condition += ", [span_deadsay("с полосами гнилой инфекции!")]"
 			if(WOUND_INFECTION_SEPTIC to INFINITY)
-				return span_deadsay("<B>[victim.p_Their()] [limb.ru_plaintext_zone[DATIVE] || limb.plaintext_zone] представляет собой хаос из обожженной кожи и зараженного гниения!</B>")
+				return span_deadsay("<B>[victim.ru_p_their()] [limb.ru_plaintext_zone[DATIVE] || limb.plaintext_zone] представляет собой хаос из обожженной кожи и зараженного гниения!</B>")
 			else
 				condition += "!"
 
@@ -306,7 +306,7 @@
 	desc = "Пациент страдает от значительных ожогов с незначительным проникновением в кожу, что ослабляет целостность конечности и вызывает усиленные ощущения жжения."
 	treat_text = "Нанесите местную мазь или регенеративную сетку на рану."
 	treat_text_short = "Нанесите средство для лечения, например, регенеративную сетку."
-	examine_desc = "сильно обожжён и покрывается волдырями"
+	examine_desc = "сильно обожжёна и покрывается волдырями"
 	occur_text = "покрывается ярко-красными ожогами"
 	severity = WOUND_SEVERITY_MODERATE
 	damage_multiplier_penalty = 1.1
@@ -364,8 +364,8 @@
 		Если конечность зафиксирована, её необходимо ампутировать, заменить на имплант или лечить с помощью криогенной терапии."
 	treat_text_short = "Нанесите лечебное средство, такое как регенеративная сетка, Синтплоть или используйте криотерапию и продезинфицируйте / удалите инфицированные участки. \
 		Чистая марля или мазь замедлит скорость инфицирования."
-	examine_desc = "это разрушенный беспорядок из обесцвеченных костей, расплавленного жира и обугленной ткани"
-	occur_text = "испаряется, когда плоть, кости и жир плавятся в ужасающую массу"
+	examine_desc = "выглядит как разрушенный беспорядок из обесцвеченных костей, расплавленного жира и обугленной ткани"
+	occur_text = "источет дымок, когда плоть, кости и жир плавятся в ужасающую массу"
 	severity = WOUND_SEVERITY_CRITICAL
 	damage_multiplier_penalty = 1.3
 	sound_effect = 'sound/effects/wounds/sizzle2.ogg'

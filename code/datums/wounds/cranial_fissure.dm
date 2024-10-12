@@ -77,7 +77,7 @@
 	brain.throw_at(get_step(source_turf, source.dir), 1, 1)
 
 	source.visible_message(
-		span_boldwarning("Мозг [source] вытекает из [source.p_their()] головы!"),
+		span_boldwarning("Мозг [source] вытекает из [source.ru_p_their()] головы!"),
 		span_userdanger("Вы чувствуете, как ваш мозг вытекает из вашей головы!"),
 	)
 

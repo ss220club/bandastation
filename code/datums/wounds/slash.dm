@@ -86,7 +86,7 @@
 	if(!limb.current_gauze)
 		return ..()
 
-	var/list/msg = list("Раны на [victim.p_their()] [limb.ru_plaintext_zone[DATIVE] || limb.plaintext_zone] обернуты и повязки ")
+	var/list/msg = list("Раны на [victim.ru_p_their()] [limb.ru_plaintext_zone[DATIVE] || limb.plaintext_zone] обернуты и повязки ")
 	// сколько жизни у нас осталось в этих повязках
 	switch(limb.current_gauze.absorption_capacity)
 		if(0 to 1.25)
@@ -325,7 +325,7 @@
 			Затем обеспечьте питание и период отдыха."
 	treat_text_short = "Наложите повязку или сделайте шов."
 	examine_desc = "имеет открытую рану"
-	occur_text = "разрезана, медленно течет кровь"
+	occur_text = "разрезается, медленно течет кровь"
 	sound_effect = 'sound/effects/wounds/blood1.ogg'
 	severity = WOUND_SEVERITY_MODERATE
 	initial_flow = 2
@@ -357,7 +357,7 @@
 		После этого рекомендуется принимать добавки железа или соляно-глюкозные растворы, а также отдохнуть."
 	treat_text_short = "Наложите повязку, зашейте, используйте средства для остановки крови или прижигание."
 	examine_desc = "имеет серьезный порез"
-	occur_text = "разорван, вены бьют кровь"
+	occur_text = "разрывается, и вены начинают брызгать кровь"
 	sound_effect = 'sound/effects/wounds/blood2.ogg'
 	severity = WOUND_SEVERITY_SEVERE
 	initial_flow = 3.25
@@ -390,7 +390,7 @@
 		Следует провести контроль за ресангинацией."
 	treat_text_short = "Наложите повязку, зашейте рану, используйте средства для остановки кровотечения или cauterization."
 	examine_desc = "разорван до кости, брызгая кровью"
-	occur_text = "разорван, брызгая кровью"
+	occur_text = "разрывается, брызгая кровью"
 	sound_effect = 'sound/effects/wounds/blood3.ogg'
 	severity = WOUND_SEVERITY_CRITICAL
 	initial_flow = 4
@@ -418,7 +418,7 @@
 	name = "Многочисленные Небольшие Резаные Раны"
 	desc = "Кожа пациента покрыта многочисленными небольшими порезами и ссадинами, что приводит к умеренной потере крови."
 	examine_desc = "имеет множество мелких порезов"
-	occur_text = "порезан множество раз, оставляя много маленьких ссадин."
+	occur_text = "разрезается множество раз, оставляя много маленьких ссадин."
 
 
 /datum/wound_pregen_data/flesh_slash/abrasion/cuts
