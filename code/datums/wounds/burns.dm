@@ -144,9 +144,9 @@
 
 /datum/wound/burn/flesh/get_wound_description(mob/user)
 	if(strikes_to_lose_limb <= 0)
-		return span_deadsay("<B>[victim.ru_p_their()] [limb.ru_plaintext_zone[DATIVE] || limb.plaintext_zone] полностью заблокирован и не функционирует.</B>")
+		return span_deadsay("<B>[victim.ru_p_them()] [limb.ru_plaintext_zone[DATIVE] || limb.plaintext_zone] полностью заблокирован и не функционирует.</B>")
 
-	var/list/condition = list("[victim.ru_p_their()] [limb.ru_plaintext_zone[DATIVE] || limb.plaintext_zone] [examine_desc]")
+	var/list/condition = list("[victim.ru_p_them()] [limb.ru_plaintext_zone[DATIVE] || limb.plaintext_zone] [examine_desc]")
 	if(limb.current_gauze)
 		var/bandage_condition
 		switch(limb.current_gauze.absorption_capacity)
@@ -169,7 +169,7 @@
 			if(WOUND_INFECTION_CRITICAL to WOUND_INFECTION_SEPTIC)
 				condition += ", [span_deadsay("с полосами гнилой инфекции!")]"
 			if(WOUND_INFECTION_SEPTIC to INFINITY)
-				return span_deadsay("<B>[victim.ru_p_their()] [limb.ru_plaintext_zone[DATIVE] || limb.plaintext_zone] представляет собой хаос из обожженной кожи и зараженного гниения!</B>")
+				return span_deadsay("<B>[victim.ru_p_them()] [limb.ru_plaintext_zone[DATIVE] || limb.plaintext_zone] представляет собой хаос из обожженной кожи и зараженного гниения!</B>")
 			else
 				condition += "!"
 

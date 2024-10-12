@@ -86,7 +86,7 @@
 	if(!limb.current_gauze)
 		return ..()
 
-	var/list/msg = list("Раны на [victim.ru_p_their()] [limb.ru_plaintext_zone[DATIVE] || limb.plaintext_zone] перевязаны, и те ")
+	var/list/msg = list("Раны на [victim.ru_p_them()] [limb.ru_plaintext_zone[DATIVE] || limb.plaintext_zone] перевязаны, и те ")
 	// сколько жизни у нас осталось в этих повязках
 	switch(limb.current_gauze.absorption_capacity)
 		if(0 to 1.25)
