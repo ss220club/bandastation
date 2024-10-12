@@ -331,7 +331,7 @@
 		return NONE
 
 	user.visible_message(
-		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает ремонтировать [declent_ru(GENITIVE)]."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает ремонтировать [declent_ru(ACCUSATIVE)]."),
 		span_notice("Вы начинаете ремонтировать [declent_ru(ACCUSATIVE)]."),
 	)
 

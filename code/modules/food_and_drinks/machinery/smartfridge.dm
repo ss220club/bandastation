@@ -212,7 +212,7 @@
 		. += span_info("Крепежи свободны и могут быть [EXAMINE_HINT("приварены")].")
 
 	if(anchored)
-		. += span_info("Машина [EXAMINE_HINT("прикручена")] от пола.")
+		. += span_info("Машина [EXAMINE_HINT("прикручена")] к полу.")
 	else
 		. += span_info("Можно [EXAMINE_HINT("прикрутить")] к полу.")
 

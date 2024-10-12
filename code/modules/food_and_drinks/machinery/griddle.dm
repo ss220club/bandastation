@@ -202,7 +202,7 @@
 		to_dump.pixel_y = to_dump.base_pixel_y + rand(-5, 5)
 		AddToGrill(to_dump, user)
 
-	to_chat(user, span_notice("Вы перемещаете содержимое из [storage.parent.declent_ru(ACCUSATIVE)] на [declent_ru(ACCUSATIVE)]."))
+	to_chat(user, span_notice("Вы перемещаете содержимое из [storage.parent.declent_ru(GENITIVE)] на [declent_ru(ACCUSATIVE)]."))
 	return STORAGE_DUMP_HANDLED
 
 /obj/machinery/griddle/process(seconds_per_tick)
