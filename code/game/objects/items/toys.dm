@@ -537,7 +537,7 @@
 	src.bullets--
 	user.visible_message(span_danger("[user] fires [src] at [interacting_with]!"), \
 		span_danger("You fire [src] at [interacting_with]!"), \
-		span_hear("You hear a gunshot!"))
+		span_hear("Вы слышите выстрел!"))
 	return ITEM_INTERACT_SUCCESS
 
 /obj/item/toy/ammo/gun
