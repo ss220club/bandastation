@@ -77,7 +77,7 @@
 			return ITEM_INTERACT_BLOCKING
 
 		var/trans = target.reagents.trans_to(src, amount_per_transfer_from_this, transferred_by = user)
-		to_chat(user, span_notice("Вы наполняете [declent_ru(NOMINATIVE)] на [trans] [declension_ru(trans,"юнит","юнита","юнитов")] из [target.declent_ru(GENITIVE)]."))
+		to_chat(user, span_notice("Вы наполняете [declent_ru(ACCUSATIVE)] на [trans] [declension_ru(trans,"юнит","юнита","юнитов")] из [target.declent_ru(GENITIVE)]."))
 		return ITEM_INTERACT_SUCCESS
 
 	//Something like a glass or a food item. Player probably wants to transfer TO it.
@@ -106,7 +106,7 @@
 	var/datum/chemical_reaction/recipe = GLOB.chemical_reactions_list[/datum/chemical_reaction/food/cheesewheel]
 	var/milk_required = recipe.required_reagents[/datum/reagent/consumable/milk]
 	var/enzyme_required = recipe.required_catalysts[/datum/reagent/consumable/enzyme]
-	. += span_notice("Требуется [milk_required] [declension_ru(milk_required,"юнит","юнита","юнитов")] молока, [enzyme_required] [declension_ru(enzyme_required,"юнит","юнита","юнитов")] энзима и вы получите сыр.")
+	. += span_notice("[milk_required] [declension_ru(milk_required,"юнит","юнита","юнитов")] молока, [enzyme_required] [declension_ru(enzyme_required,"юнит","юнита","юнитов")] энзима и вы получите сыр.")
 	. += span_warning("Помните, что энзим лишь катализатор, не забудьте вернуть его в бутылку!")
 
 /obj/item/reagent_containers/condiment/sugar
@@ -125,7 +125,7 @@
 	var/flour_required = recipe.required_reagents[/datum/reagent/consumable/flour]
 	var/eggyolk_required = recipe.required_reagents[/datum/reagent/consumable/eggyolk]
 	var/sugar_required = recipe.required_reagents[/datum/reagent/consumable/sugar]
-	. += span_notice("[flour_required] [declension_ru(flour_required,"юнит","юнита","юнитов")] муки, [eggyolk_required] [declension_ru(eggyolk_required,"яйцо","яйца","яиц")] или соевого молока, [sugar_required] [declension_ru(sugar_required,"юнит","юнита","юнитов")] сахара, чтобы сделать слоенное тесто. Вы даже можете сделать пирог из него!")
+	. += span_notice("[flour_required] [declension_ru(flour_required,"юнит","юнита","юнитов")] муки, [eggyolk_required] [declension_ru(eggyolk_required,"юнит","юнита","юнитов")] яичного желтка (или соевого молока),, [sugar_required] [declension_ru(sugar_required,"юнит","юнита","юнитов")] сахара, чтобы сделать слоенное тесто. Из него выйдет отличное тесто для пирога!")
 
 /obj/item/reagent_containers/condiment/saltshaker //Separate from above since it's a small shaker rather then
 	name = "salt shaker" // a large one.
@@ -140,9 +140,9 @@
 	fill_icon_thresholds = null
 
 /obj/item/reagent_containers/condiment/saltshaker/suicide_act(mob/living/user)
-	user.visible_message(span_suicide("[capitalize(user.declent_ru(NOMINATIVE))] начинает поглощать содержимое солонки! Кажется, [user.ru_p_they()] пытается совершить самоубийство!"))
+	user.visible_message(span_suicide("[capitalize(user.declent_ru(NOMINATIVE))] начинает меняться формами с солонкой! Кажется, [user.ru_p_they()] пытается совершить самоубийство!"))
 	var/newname = "[name]"
-	name = "[user.declent_ru(NOMINATIVE)]"
+	name = "[user.name]"
 	user.name = newname
 	user.real_name = newname
 	desc = "Соль. Скорее всего из мертвого члена экипажа."
@@ -156,7 +156,7 @@
 		if(!reagents.has_reagent(/datum/reagent/consumable/salt, 2))
 			to_chat(user, span_warning("У вас недостаточно соли, чтобы сделать горсть!"))
 			return
-		user.visible_message(span_notice("[capitalize(user.declent_ru(NOMINATIVE))] посыпает солью [target.declent_ru(ACCUSATIVE)]."), span_notice("Вы посыпаете солью[target.declent_ru(ACCUSATIVE)]."))
+		user.visible_message(span_notice("[capitalize(user.declent_ru(NOMINATIVE))] посыпает солью [target.declent_ru(ACCUSATIVE)]."), span_notice("Вы посыпаете солью [target.declent_ru(ACCUSATIVE)]."))
 		reagents.remove_reagent(/datum/reagent/consumable/salt, 2)
 		new/obj/effect/decal/cleanable/food/salt(target)
 		return ITEM_INTERACT_SUCCESS
@@ -189,8 +189,8 @@
 	var/datum/chemical_reaction/recipe = GLOB.chemical_reactions_list[/datum/chemical_reaction/food/cheesewheel]
 	var/milk_required = recipe.required_reagents[/datum/reagent/consumable/milk]
 	var/enzyme_required = recipe.required_catalysts[/datum/reagent/consumable/enzyme]
-	. += span_notice("Требуется [milk_required] [declension_ru(milk_required,"юнит","юнита","юнитов")] молока, [enzyme_required] [declension_ru(enzyme_required,"юнит","юнита","юнитов")] энзима и вы получите сыр.")
-	. += span_warning("Помните, что энзим лишь катализатор, поэтому верните его потом на место!")
+	. += span_notice("[milk_required] [declension_ru(milk_required,"юнит","юнита","юнитов")] молока, [enzyme_required] [declension_ru(enzyme_required,"юнит","юнита","юнитов")] энзима и вы получите сыр.")
+	. += span_warning("Помните, что энзим лишь катализатор, поэтому верни его обратно в бутылку после использования, глупыш!")
 
 /obj/item/reagent_containers/condiment/flour
 	name = "flour sack"
@@ -212,12 +212,12 @@
 	var/cakebatter_eggyolk_required = recipe_cakebatter.required_reagents[/datum/reagent/consumable/eggyolk]
 	var/cakebatter_sugar_required = recipe_cakebatter.required_reagents[/datum/reagent/consumable/sugar]
 	. += "<b><i>Вы копаетесь в своих мыслях и вспоминаете рецепт... теста...</i></b>"
-	. += span_notice("Требуется [dough_flour_required] [declension_ru(dough_flour_required,"юнит","юнита","юнитов")] муки, [dough_water_required] [declension_ru(dough_water_required,"юнит","юнита","юнитов")] воды подойдет для обычного кусочка теста. Его можно потом раскатать в плоскую лепешку.")
-	. += span_notice("Нужно [cakebatter_flour_required] [declension_ru(cakebatter_flour_required,"юнит","юнита","юнитов")] муки, [cakebatter_eggyolk_required] [declension_ru(cakebatter_eggyolk_required,"юнит","юнита","юнитов")] яичного желтка (или соевого молока), [cakebatter_sugar_required] [declension_ru(cakebatter_sugar_required,"юнит","юнита","юнитов")] сахара, чтобы сделать слоенное тесто. Из него выйдет отличный пирог!")
+	. += span_notice("[dough_flour_required] [declension_ru(dough_flour_required,"юнит","юнита","юнитов")] муки, [dough_water_required] [declension_ru(dough_water_required,"юнит","юнита","юнитов")] воды подойдет для обычного кусочка теста. Его можно потом раскатать в плоскую лепешку.")
+	. += span_notice("Нужно [cakebatter_flour_required] [declension_ru(cakebatter_flour_required,"юнит","юнита","юнитов")] муки, [cakebatter_eggyolk_required] [declension_ru(cakebatter_eggyolk_required,"юнит","юнита","юнитов")] яичного желтка (или соевого молока), [cakebatter_sugar_required] [declension_ru(cakebatter_sugar_required,"юнит","юнита","юнитов")] сахара, чтобы сделать слоенное тесто. Из него выйдет отличное тесто для пирога!")
 
 /obj/item/reagent_containers/condiment/soymilk
 	name = "soy milk"
-	desc = "соя, божество прозрачное, но все еще питательное!"
+	desc = "Соевое молоко. Божество прозрачное, но все еще питательное!"
 	icon_state = "soymilk"
 	inhand_icon_state = "carton"
 	lefthand_file = 'icons/mob/inhands/items/drinks_lefthand.dmi'
@@ -237,7 +237,7 @@
 
 /obj/item/reagent_containers/condiment/cornmeal
 	name = "cornmeal box"
-	desc = "Крупная коробка с кукрзной мукой. Отличный выбор для приготовления южных блюд."
+	desc = "Крупная коробка с кукурузной мукой. Отличный выбор для приготовления южных блюд."
 	icon_state = "cornmeal"
 	inhand_icon_state = "carton"
 	lefthand_file = 'icons/mob/inhands/items/drinks_lefthand.dmi'
@@ -247,7 +247,7 @@
 
 /obj/item/reagent_containers/condiment/bbqsauce
 	name = "bbq sauce"
-	desc = "Салфетки не включены."
+	desc = "Салфетки в набор не входят."
 	icon_state = "bbqsauce"
 	list_reagents = list(/datum/reagent/consumable/bbqsauce = 50)
 
@@ -267,7 +267,7 @@
 
 /obj/item/reagent_containers/condiment/vinegar
 	name = "vinegar"
-	desc = "Превосходно подходит для чипсов. Если у вас специфичный вкус."
+	desc = "Превосходно подходит для чипсов, если вы сегодня хотите побыть космическим англичанином."
 	icon_state = "vinegar"
 	list_reagents = list(/datum/reagent/consumable/vinegar = 50)
 	fill_icon_thresholds = null
@@ -295,7 +295,7 @@
 
 /obj/item/reagent_containers/condiment/peanut_butter
 	name = "peanut butter"
-	desc = "Вкусное, тянущееся масло в банке."
+	desc = "Вкусное, тянущееся арахисовое масло в банке."
 	icon_state = "peanutbutter"
 	list_reagents = list(/datum/reagent/consumable/peanut_butter = 50)
 	fill_icon_thresholds = null
@@ -318,14 +318,14 @@
 	name = "ketchup"
 	// At time of writing, "ketchup" mechanically, is just ground tomatoes,
 	// rather than // tomatoes plus vinegar plus sugar.
-	desc = "Выжатые томаты, что скрываются в пластиковой бутылке."
+	desc = "Выжатые томаты, что скрываются в пластиковой бутылке. Смутно напоминают Америку."
 	icon_state = "ketchup"
 	list_reagents = list(/datum/reagent/consumable/ketchup = 50)
 	fill_icon_thresholds = null
 
 /obj/item/reagent_containers/condiment/worcestershire
 	name = "worcestershire sauce"
-	desc = "Фермнтированный легендарный соус с Земли."
+	desc = "Ферментированный легендарный соус со Старой Англии. Делает почти всё вкуснее."
 	icon_state = "worcestershire"
 	list_reagents = list(/datum/reagent/consumable/worcestershire = 50)
 	fill_icon_thresholds = null
@@ -391,9 +391,10 @@
 	icon_state = "condi_chocolate"
 	list_reagents = list(/datum/reagent/consumable/choccyshake = 10)
 
+
 /obj/item/reagent_containers/condiment/hotsauce
 	name = "hotsauce bottle"
-	desc= "Вы можете чувствовать язву!"
+	desc= "Вы можете уже ЧУВСТВОВАТЬ вкус язвы желудка!"
 	icon_state = "hotsauce"
 	list_reagents = list(/datum/reagent/consumable/capsaicin = 50)
 
@@ -417,19 +418,19 @@
 	  * Since all of them differs only in color should probably be replaced with usual reagentfillings instead
 	  */
 	var/list/possible_states = list(
-		/datum/reagent/consumable/ketchup = list("condi_ketchup", "Кетчуп", "Вы уже чувствуете себя более космическим."),
-		/datum/reagent/consumable/capsaicin = list("condi_hotsauce", "Острый соус", "Теперь вы почти можете ПОПРОБОВАТЬ язвы желудка!"),
-		/datum/reagent/consumable/soysauce = list("condi_soysauce", "Соевый соус", "Соленая приправа на основе сои."),
-		/datum/reagent/consumable/frostoil = list("condi_frostoil", "Холодный соус", "Оставляет язык онемевшим при еде."),
-		/datum/reagent/consumable/salt = list("condi_salt", "Солонка", "Соль. Вероятно, из космических океанов."),
-		/datum/reagent/consumable/blackpepper = list("condi_pepper", "Перечница", "Часто используется для придания вкуса пище или чтобы заставить людей чихать."),
+		/datum/reagent/consumable/ketchup = list("condi_ketchup", "Кетчуп", "Вы уже чувствуете себя более по-американски."),
+		/datum/reagent/consumable/capsaicin = list("condi_hotsauce", "Острый соус", "Вы можете уже ЧУВСТВОВАТЬ вкус язвы желудка!"),
+		/datum/reagent/consumable/soysauce = list("condi_soysauce", "Соевый соус", "Соленоватый соус на основе сои."),
+		/datum/reagent/consumable/frostoil = list("condi_frostoil", "Холодный соус", "Оставляет язык онемевшим после пробы."),
+		/datum/reagent/consumable/salt = list("condi_salt", "Солонка", "Соль. Скорее всего из космического океана."),
+		/datum/reagent/consumable/blackpepper = list("condi_pepper", "Перечница", "Часто используется для придания особого вкуса. Или чтобы заставить людей чихать."),
 		/datum/reagent/consumable/nutriment/fat/oil = list("condi_cornoil", "Растительное масло", "Вкусное масло, используемое в кулинарии."),
-		/datum/reagent/consumable/sugar = list("condi_sugar", "Сахар", "Вкусный космический сахар!"),
+		/datum/reagent/consumable/sugar = list("condi_sugar", "Сахар", "Сладкий космический сахар!"),
 		/datum/reagent/consumable/astrotame = list("condi_astrotame", "Астротейм", "Сладость тысячи сахаров, но без калорий."),
-		/datum/reagent/consumable/bbqsauce = list("condi_bbq", "BBQ соус", "Салфетки не включены."),
-		/datum/reagent/consumable/peanut_butter = list("condi_peanutbutter", "Арахисовое масло", "Кремовая паста из молотого арахиса."),
-		/datum/reagent/consumable/cherryjelly = list("condi_cherryjelly", "Вишневое желе", "Банка сверхсладкого вишневого желе."),
-		/datum/reagent/consumable/mayonnaise = list("condi_mayo", "Майонез", "Не является инструментом."),
+		/datum/reagent/consumable/bbqsauce = list("condi_bbq", "BBQ соус", "Салфетки в набор не включены."),
+		/datum/reagent/consumable/peanut_butter = list("condi_peanutbutter", "Арахисовое масло", "Вкусное, тянущееся арахисовое масло в банке."),
+		/datum/reagent/consumable/cherryjelly = list("condi_cherryjelly", "Вишневое желе", "Баночка с супер-сладким вишневым желе."),
+		/datum/reagent/consumable/mayonnaise = list("condi_mayo", "Майонез", "Маслянистая приправа из яичного желтка."),
 	)
 	/// Can't use initial(name) for this. This stores the name set by condimasters.
 	var/originalname = "condiment"
@@ -447,17 +448,17 @@
 	return
 
 /obj/item/reagent_containers/condiment/pack/interact_with_atom(atom/target, mob/living/user, list/modifiers)
-	//Пакет можно разорвать над едой, чтобы добавить приправы.
+	//You can tear the bag open above food to put the condiments on it, obviously.
 	if(IS_EDIBLE(target))
 		if(!reagents.total_volume)
-			to_chat(user, span_warning("[src.name] открыли, но внутри пусто."))
+			to_chat(user, span_warning("Вы разорвали [declent_ru(ACCUSATIVE)], но внутри пусто."))
 			qdel(src)
 			return ITEM_INTERACT_BLOCKING
 		if(target.reagents.total_volume >= target.reagents.maximum_volume)
-			to_chat(user, span_warning("[src.name] вскрыли, но [target.name] уже не вмещает больше, и все просто стекает!"))
+			to_chat(user, span_warning("Вы разорвали [declent_ru(ACCUSATIVE)] вскрыли, но [target.declent_ru(NOMINATIVE)] уже не вмещает больше, и все просто стекает!"))
 			qdel(src)
 			return ITEM_INTERACT_BLOCKING
-		to_chat(user, span_notice("[src.name] открыли, и [target.name] наполняется."))
+		to_chat(user, span_notice("Вы разорвали [declent_ru(ACCUSATIVE)], и [target.declent_ru(ACCUSATIVE)] наполняется."))
 		src.reagents.trans_to(target, amount_per_transfer_from_this, transferred_by = user)
 		qdel(src)
 		return ITEM_INTERACT_SUCCESS
@@ -482,7 +483,7 @@
 /obj/item/reagent_containers/condiment/pack/proc/on_reagent_del(datum/reagents/reagents)
 	SIGNAL_HANDLER
 	icon_state = "condi_empty"
-	desc = "Небольшой пакетик с приправами и он пуст."
+	desc = "Небольшой пакетик с приправами, и он пуст."
 
 //Ketchup
 /obj/item/reagent_containers/condiment/pack/ketchup
