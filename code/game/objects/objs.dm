@@ -79,8 +79,8 @@ GLOBAL_LIST_EMPTY(objects_by_id_tag)
 	if(attacking_item.demolition_mod < 1)
 		damage_verb = "ineffectively pierce"
 
-	user.visible_message(span_danger("[user] [damage_verb][plural_s(damage_verb)] [src] with [attacking_item][damage ? "." : ", [no_damage_feedback]!"]"), \
-		span_danger("You [damage_verb] [src] with [attacking_item][damage ? "." : ", [no_damage_feedback]!"]"), null, COMBAT_MESSAGE_RANGE)
+	user.visible_message(span_danger("[capitalize(user.declent_ru(NOMINATIVE))] [ru_attack_verb("[damage_verb]s")] [declent_ru(ACCUSATIVE)] с помощью [attacking_item.declent_ru(GENITIVE)][damage ? "." : ", [no_damage_feedback]!"]"), \
+		span_danger("Вы [ru_attack_verb(damage_verb)] [declent_ru(ACCUSATIVE)] с помощью [attacking_item.declent_ru(GENITIVE)][damage ? "." : ", [no_damage_feedback]!"]"), null, COMBAT_MESSAGE_RANGE)
 	log_combat(user, src, "attacked", attacking_item)
 
 /obj/assume_air(datum/gas_mixture/giver)
