@@ -106,7 +106,7 @@
 			to_chat(viewer, span_notice("Вы больше не можете разобрать ID-карту."))
 			return
 		if(!isobserver(viewer) && get_dist(viewer, src) > ID_EXAMINE_DISTANCE + 1) // leeway, ignored if the viewer is a ghost
-			to_chat(viewer, span_notice("You can't make out that ID from here."))
+			to_chat(viewer, span_notice("Вы не можете разобрать ID-карту отсюда."))
 			return
 
 		var/id_name = id.registered_name
