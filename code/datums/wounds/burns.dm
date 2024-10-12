@@ -212,7 +212,7 @@
 			if(WOUND_INFECTION_CRITICAL to WOUND_INFECTION_SEPTIC)
 				. += "Уровень инфекции: [span_deadsay("КРИТИЧЕСКИЙ")]\n"
 			if(WOUND_INFECTION_SEPTIC to INFINITY)
-				. += "Уровень инфекции: [span_deadsay("УТРАТА НЕМЕДЛЕННО")]\n"
+				. += "Уровень инфекции: [span_deadsay("ПОТЕРЯ НЕМИУЕМА")]\n"
 		if(infestation > sanitization)
 			. += "\tХирургическая обработка, антибиотики/стерилизаторы или регенеративная сетка избавят от инфекции. Ультрафиолетовые ручные фонарики парамедиков также эффективны.\n"
 
