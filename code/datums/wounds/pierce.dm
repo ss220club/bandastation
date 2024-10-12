@@ -170,7 +170,7 @@
 	user.visible_message(span_green("[capitalize(user.declent_ru(NOMINATIVE))] прижигает некоторые из [bleeding_wording] на [victim.declent_ru(GENITIVE)]."), span_green("Вы прижигаете некоторые из [bleeding_wording] на [victim.declent_ru(GENITIVE)]."))
 	limb.receive_damage(burn = 2 + severity, wound_bonus = CANT_WOUND)
 	if(prob(30))
-		victim.emote("кричит")
+		victim.emote("scream")
 	var/blood_cauterized = (0.6 / (self_penalty_mult * improv_penalty_mult))
 	adjust_blood_flow(-blood_cauterized)
 
