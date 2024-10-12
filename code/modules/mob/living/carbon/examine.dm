@@ -396,7 +396,7 @@
 	var/obscured = check_obscured_slots()
 	var/t_He = ru_p_they(TRUE)
 	var/t_His = ru_p_them(TRUE)
-	var/t_his = ru_p_them()
+	// var/t_his = ru_p_them()
 	// var/t_has = ru_p_have()
 	// var/t_is = p_are()
 
