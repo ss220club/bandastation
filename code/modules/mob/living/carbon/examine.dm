@@ -416,7 +416,7 @@
 		. += "[t_He] носит [head.examine_title(user, declent = ACCUSATIVE)] на голове."
 	//mask
 	if(wear_mask && !(obscured & ITEM_SLOT_MASK)  && !(wear_mask.item_flags & EXAMINE_SKIP))
-		. += "[t_He] носит [wear_mask.examine_title(user, declent = ACCUSATIVE)] налице."
+		. += "[t_He] носит [wear_mask.examine_title(user, declent = ACCUSATIVE)] на лице."
 	//neck
 	if(wear_neck && !(obscured & ITEM_SLOT_NECK)  && !(wear_neck.item_flags & EXAMINE_SKIP))
 		. += "[t_He] носит [wear_neck.examine_title(user, declent = ACCUSATIVE)] на шее."
