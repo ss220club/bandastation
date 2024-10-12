@@ -301,7 +301,7 @@
 
 	if(!do_after(user, treatment_delay, target = victim, extra_checks = CALLBACK(src, PROC_REF(still_exists))))
 		return TRUE
-	var/bleeding_wording = (!limb.can_bleed() ? "резы" : "кровотечение")
+	var/bleeding_wording = (!limb.can_bleed() ? "порезы" : "кровотечение")
 	user.visible_message(span_green("[capitalize(user.declent_ru(NOMINATIVE))] зашивает некоторые из [bleeding_wording] на [victim.declent_ru(GENITIVE)]."), span_green("Вы зашиваете некоторые из [bleeding_wording] на [user == victim ? "себе" : "[victim.declent_ru(GENITIVE)]"]."))
 	var/blood_sutured = I.stop_bleeding / self_penalty_mult
 	adjust_blood_flow(-blood_sutured)
@@ -319,7 +319,7 @@
 	return span_warning("Кожа на этой конечности выглядит сильно порезанной.")
 
 /datum/wound/slash/flesh/moderate
-	name = "Грубая абразия"
+	name = "Легкий порез"
 	desc = "Кожа пациента сильно соскоблена, что приводит к умеренной потере крови."
 	treat_text = "Наложите повязку или сделайте шов на ране. \
 			Затем обеспечьте питание и период отдыха."
@@ -340,7 +340,7 @@
 
 /datum/wound/slash/flesh/moderate/update_descriptions()
 	if(!limb.can_bleed())
-		occur_text = "разрезан"
+		occur_text = "разрезается"
 
 /datum/wound_pregen_data/flesh_slash/abrasion
 	abstract = FALSE
@@ -350,7 +350,7 @@
 	threshold_minimum = 20
 
 /datum/wound/slash/flesh/severe
-	name = "Открытая рана"
+	name = "Открытый разрез"
 	desc = "Кожа пациента разорвана, что вызывает значительную потерю крови."
 	treat_text = "Быстро наложите повязку или зашейте рану, \
 		или воспользуйтесь средствами для остановки крови или прижиганием. \
@@ -380,10 +380,10 @@
 
 /datum/wound/slash/flesh/severe/update_descriptions()
 	if(!limb.can_bleed())
-		occur_text = "открыта"
+		occur_text = "открывается разрез"
 
 /datum/wound/slash/flesh/critical
-	name = "Кровоточащая Авульсия"
+	name = "Авульсивный разрез"
 	desc = "Кожа пациента полностью разорвана, что приводит к значительной потере ткани. Экстремальная потеря крови приведет к быстрой смерти без вмешательства."
 	treat_text = "Немедленно наложите повязку или зашейте рану, \
 		или используйте средства для остановки кровотечения или cauterization. \
@@ -406,7 +406,7 @@
 
 /datum/wound/slash/flesh/critical/update_descriptions()
 	if (!limb.can_bleed())
-		occur_text = "is torn open"
+		occur_text = "разрывается на кусочки"
 
 /datum/wound_pregen_data/flesh_slash/avulsion
 	abstract = FALSE
@@ -435,7 +435,7 @@
 
 /datum/wound/slash/flesh/critical/cleave/update_descriptions()
 	if(!limb.can_bleed())
-		occur_text = "разорвана"
+		occur_text = "широко раскрывается"
 
 /datum/wound_pregen_data/flesh_slash/avulsion/clear
 	abstract = FALSE

@@ -35,14 +35,14 @@
 	var/self_msg
 
 	if(dismembered_part.body_zone == BODY_ZONE_CHEST)
-		occur_text = "разделен, вызывая выпадение внутренних органов [victim.ru_p_them()]!"
-		self_msg = "разделен, вызывая выпадение ваших внутренних органов!"
+		occur_text = "режется, вызывая выпадение внутренних органов [victim.ru_p_them()]!"
+		self_msg = "режется, вызывая выпадение ваших внутренних органов!"
 	else
 		occur_text = dismembered_part.get_dismember_message(wounding_type, outright)
 
-	var/msg = span_bolddanger("[victim]'s [dismembered_part.plaintext_zone] [occur_text]")
+	var/msg = span_bolddanger("[capitalize(dismembered_part.ru_plaintext_zone[PREPOSITIONAL] || dismembered_part.plaintext_zone)] у [victim.declent_ru(GENITIVE)] [occur_text]")
 
-	victim.visible_message(msg, span_userdanger("Ваша [dismembered_part.plaintext_zone] [self_msg ? self_msg : occur_text]"))
+	victim.visible_message(msg, span_userdanger("Ваша [dismembered_part.ru_plaintext_zone[PREPOSITIONAL] || dismembered_part.plaintext_zone] [self_msg ? self_msg : occur_text]"))
 
 	loss_wounding_type = wounding_type
 
@@ -61,25 +61,25 @@
 	if(outright)
 		switch(wounding_type)
 			if(WOUND_BLUNT)
-				occur_text = "напрямую размазан в отвратительное месиво, полностью отсекая его!"
+				occur_text = "разбивается в отвратительное месиво, полностью отсекая её!"
 			if(WOUND_SLASH)
-				occur_text = "напрямую срезан, полностью отсекая его!"
+				occur_text = "чисто срезается, полностью отсекая её!"
 			if(WOUND_PIERCE)
-				occur_text = "напрямую разорван, полностью отсекая его!"
+				occur_text = "разрывается, полностью отсекая её!"
 			if(WOUND_BURN)
-				occur_text = "напрямую сожжен, превратившись в пыль!"
+				occur_text = "сгорает, превратившись в пыль!"
 	else
 		var/bone_text = get_internal_description()
 		var/tissue_text = get_external_description()
 
 		switch(wounding_type)
 			if(WOUND_BLUNT)
-				occur_text = "разрушен через последнюю [bone_text], держащую его вместе, полностью отсекая его!"
+				occur_text = "разрушается последний [bone_text], что удерживал конечность, полностью отсекая её!"
 			if(WOUND_SLASH)
-				occur_text = "перерезан через последний [tissue_text], держащий его вместе, полностью отсекая его!"
+				occur_text = "разрезается последний [tissue_text], что удерживал конечность, полностью отсекая её!"
 			if(WOUND_PIERCE)
-				occur_text = "проколот через последний [tissue_text], держащий его вместе, полностью отсекая его!"
+				occur_text = "проколывается последний [tissue_text], что удерживал конечность, полностью отсекая её!"
 			if(WOUND_BURN)
-				occur_text = "полностью сожжен, превратившись в пыль!"
+				occur_text = "сгорает, превратившись в пыль!"
 
 	return occur_text
