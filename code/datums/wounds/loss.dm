@@ -35,7 +35,7 @@
 	var/self_msg
 
 	if(dismembered_part.body_zone == BODY_ZONE_CHEST)
-		occur_text = "режется, вызывая выпадение внутренних органов [victim.ru_p_them()]!"
+		occur_text = "режется, вызывая выпадение [victim.ru_p_them()] внутренних органов!"
 		self_msg = "режется, вызывая выпадение ваших внутренних органов!"
 	else
 		occur_text = dismembered_part.get_dismember_message(wounding_type, outright)
