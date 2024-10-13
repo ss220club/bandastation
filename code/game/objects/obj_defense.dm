@@ -54,7 +54,7 @@
 	else
 		playsound(src, 'sound/effects/bang.ogg', 50, TRUE)
 	var/damage = take_damage(hulk_damage(), BRUTE, MELEE, 0, get_dir(src, user))
-	user.visible_message(span_danger("[user] smashes [src][damage ? "" : ", [no_damage_feedback]"]!"), span_danger("You smash [src][damage ? "" : ", [no_damage_feedback]"]!"), null, COMBAT_MESSAGE_RANGE)
+	user.visible_message(span_danger("[capitalize(user.declent_ru(NOMINATIVE))] крушит [declent_ru(ACCUSATIVE)][damage ? "" : ", [no_damage_feedback]"]!"), span_danger("Вы крушите [declent_ru(ACCUSATIVE)][damage ? "" : ", [no_damage_feedback]"]!"), null, COMBAT_MESSAGE_RANGE)
 	return TRUE
 
 /obj/blob_act(obj/structure/blob/B)
