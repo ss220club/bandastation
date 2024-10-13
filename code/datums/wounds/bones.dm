@@ -320,11 +320,11 @@
 
 	if(victim == user)
 		limb.receive_damage(brute=15, wound_bonus=CANT_WOUND)
-		victim.visible_message(span_danger("[capitalize(user.declent_ru(NOMINATIVE))] заканчивает лечение вывиха своей [limb.ru_plaintext_zone[GENITIVE] || limb.plaintext_zone]!"), span_userdanger("Вы вправили вывих себе в [limb.ru_plaintext_zone[PREPOSITIONAL] || limb.plaintext_zone]!"))
+		victim.visible_message(span_danger("[capitalize(user.declent_ru(NOMINATIVE))] заканчивает лечение вывиха своей [limb.ru_plaintext_zone[GENITIVE] || limb.plaintext_zone]!"), span_userdanger("Вы вправили вывих своей [limb.ru_plaintext_zone[GENITIVE] || limb.plaintext_zone]!"))
 	else
 		limb.receive_damage(brute=10, wound_bonus=CANT_WOUND)
-		user.visible_message(span_danger("[capitalize(user.declent_ru(NOMINATIVE))] заканчивает лечение вывиха своей [limb.ru_plaintext_zone[GENITIVE] || limb.plaintext_zone]!!"), span_nicegreen("Вы вправили вывих [limb.ru_plaintext_zone[GENITIVE] || limb.plaintext_zone] у [victim.declent_ru(GENITIVE)]!"), ignored_mobs=victim)
-		to_chat(victim, span_userdanger("[capitalize(user.declent_ru(NOMINATIVE))] заканивает лечение вывиха [limb.ru_plaintext_zone[GENITIVE] || limb.plaintext_zone]!"))
+		user.visible_message(span_danger("[capitalize(user.declent_ru(NOMINATIVE))] заканчивает лечение вывиха [limb.ru_plaintext_zone[GENITIVE] || limb.plaintext_zone] у [victim.declent_ru(GENITIVE)]!!"), span_nicegreen("Вы вправили вывих [limb.ru_plaintext_zone[GENITIVE] || limb.plaintext_zone] у [victim.declent_ru(GENITIVE)]!"), ignored_mobs=victim)
+		to_chat(victim, span_userdanger("[capitalize(user.declent_ru(NOMINATIVE))] заканивает лечение вывиха вашей [limb.ru_plaintext_zone[GENITIVE] || limb.plaintext_zone]!"))
 
 	victim.emote("scream")
 	qdel(src)
@@ -439,7 +439,7 @@
 				victim.visible_message(span_danger("[capitalize(victim.declent_ru(NOMINATIVE))] не успевает завершить нанесение [I.declent_ru(GENITIVE)] на свою [limb.ru_plaintext_zone[ACCUSATIVE] || limb.plaintext_zone], теряя сознание от боли!"), span_notice("Вы теряете сознание от боли при нанесении [I.declent_ru(GENITIVE)] на вашу [limb.ru_plaintext_zone[ACCUSATIVE] || limb.plaintext_zone], не успев завершить!"))
 				victim.AdjustUnconscious(5 SECONDS)
 				return TRUE
-		victim.visible_message(span_notice("[capitalize(victim.declent_ru(NOMINATIVE))] завершает наносить [I.declent_ru(ACCUSATIVE)] на свою [limb.ru_plaintext_zone[ACCUSATIVE] || limb.plaintext_zone], корча лицо от боли!"), span_notice("Вы завершаете нанесение [I.declent_ru(GENITIVE)] на вашу [limb.ru_plaintext_zone[ACCUSATIVE] || limb.plaintext_zone], и ваши кости отдают страшной болью!"))
+		victim.visible_message(span_notice("[capitalize(victim.declent_ru(NOMINATIVE))] завершает наносить [I.declent_ru(ACCUSATIVE)] на свою [limb.ru_plaintext_zone[ACCUSATIVE] || limb.plaintext_zone], корча лицо от боли!"), span_notice("Вы завершаете нанесение [I.declent_ru(GENITIVE)] на свою [limb.ru_plaintext_zone[ACCUSATIVE] || limb.plaintext_zone], и ваши кости отдают страшной болью!"))
 
 	limb.receive_damage(25, wound_bonus=CANT_WOUND)
 	victim.adjustStaminaLoss(100)
@@ -487,7 +487,7 @@
 
 	I.use(1)
 	if(user != victim)
-		user.visible_message(span_notice("[capitalize(user.declent_ru(NOMINATIVE))] завершает нанесение [I.declent_ru(GENITIVE)] на [limb.ru_plaintext_zone[ACCUSATIVE] || limb.plaintext_zone] у [victim.declent_ru(GENITIVE)] , издавая шипящий звук!"), span_notice("Вы завершаете нанесение [I.declent_ru(GENITIVE)] на [limb.ru_plaintext_zone[ACCUSATIVE] || limb.plaintext_zone] у [victim.declent_ru(GENITIVE)] !"), ignored_mobs=victim)
+		user.visible_message(span_notice("[capitalize(user.declent_ru(NOMINATIVE))] завершает нанесение [I.declent_ru(GENITIVE)] на [limb.ru_plaintext_zone[ACCUSATIVE] || limb.plaintext_zone] у [victim.declent_ru(GENITIVE)], издавая шипящий звук!"), span_notice("Вы завершаете нанесение [I.declent_ru(GENITIVE)] на [limb.ru_plaintext_zone[ACCUSATIVE] || limb.plaintext_zone] у [victim.declent_ru(GENITIVE)]!"), ignored_mobs=victim)
 		to_chat(victim, span_green("[capitalize(user.declent_ru(NOMINATIVE))] завершает нанесение [I.declent_ru(GENITIVE)] на вашу [limb.ru_plaintext_zone[ACCUSATIVE] || limb.plaintext_zone], и вы сразу начинаете чувствовать, как ваши кости начинают восстанавливаться!"))
 	else
 		victim.visible_message(span_notice("[capitalize(victim.declent_ru(NOMINATIVE))] завершает нанесение [I.declent_ru(GENITIVE)] на свою [limb.ru_plaintext_zone[ACCUSATIVE] || limb.plaintext_zone], !"), span_green("Вы завершаете нанесение [I.declent_ru(GENITIVE)] на вашу [limb.ru_plaintext_zone[ACCUSATIVE] || limb.plaintext_zone], и вы сразу начинаете чувствовать, как ваши кости начинают восстанавливаться!"))
