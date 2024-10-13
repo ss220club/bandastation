@@ -46,7 +46,7 @@
 	if(check_access(id_card))
 		return TRUE
 
-	balloon_alert(user, "access denied!")
+	balloon_alert(user, "в доступе отказано!")
 	return FALSE
 
 /obj/item/storage/lockbox/update_icon_state()

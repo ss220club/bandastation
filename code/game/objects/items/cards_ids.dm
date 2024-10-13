@@ -1346,7 +1346,7 @@
 /obj/item/card/id/advanced/prisoner/proc/set_sentence_time(mob/living/user, obj/item/card/id/our_card)
 	var/list/id_access = our_card.GetAccess()
 	if(!(ACCESS_BRIG in id_access))
-		balloon_alert(user, "access denied!")
+		balloon_alert(user, "в доступе отказано!")
 		return ITEM_INTERACT_BLOCKING
 	if(!user.is_holding(src))
 		to_chat(user, span_warning("You must be holding the ID to continue!"))
