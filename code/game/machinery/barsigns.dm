@@ -114,7 +114,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/barsign, 32)
 	if(.)
 		return
 	if(!allowed(user))
-		balloon_alert(user, "access denied!")
+		balloon_alert(user, "в доступе отказано!")
 		return
 	if(machine_stat & (NOPOWER|BROKEN|EMPED))
 		balloon_alert(user, "controls are unresponsive!")

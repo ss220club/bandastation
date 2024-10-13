@@ -860,7 +860,7 @@
 	if(cover_locked)
 		var/obj/item/card/id/id_card = user.get_idcard(TRUE)
 		if(isnull(id_card))
-			balloon_alert(user, "access denied!")
+			balloon_alert(user, "в доступе отказано!")
 			return
 
 		try_toggle_lock(user, id_card)
@@ -876,7 +876,7 @@
 	if(!cover_open)
 		var/obj/item/card/id/id_card = user.get_idcard(TRUE)
 		if(isnull(id_card))
-			balloon_alert(user, "access denied!")
+			balloon_alert(user, "в доступе отказано!")
 			return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
 
 		try_toggle_lock(user, id_card)
@@ -906,7 +906,7 @@
 		update_appearance()
 		return TRUE
 
-	balloon_alert(user, "access denied!")
+	balloon_alert(user, "в доступе отказано!")
 	return FALSE
 
 /obj/machinery/transport/tram_controller/wrench_act_secondary(mob/living/user, obj/item/tool)

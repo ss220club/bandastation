@@ -232,7 +232,7 @@
 	if(weapon.GetID())
 		if(!allowed(user))
 			if(mecha_flags & ID_LOCK_ON)
-				balloon_alert(user, "access denied!")
+				balloon_alert(user, "в доступе отказано!")
 			else
 				balloon_alert(user, "unable to set id lock!")
 			return
@@ -372,7 +372,7 @@
 			balloon_alert(user, "access with this DNA denied!")
 			return
 	if((mecha_flags & ID_LOCK_ON) && !allowed(user))
-		balloon_alert(user, "access denied!")
+		balloon_alert(user, "в доступе отказано!")
 		return
 
 	var/list/stock_parts = list()
