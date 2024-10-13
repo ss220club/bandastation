@@ -132,7 +132,7 @@
 						to_chat(victim, span_deadsay("<b>Инфекция почти полностью захватила вашу [limb.ru_plaintext_zone[ACCUSATIVE] || limb.plaintext_zone]!</b>"))
 					if(0)
 						to_chat(victim, span_deadsay("<b>Последние нервные окончания в вашей [limb.ru_plaintext_zone[PREPOSITIONAL] || limb.plaintext_zone] увядают, пока инфекция полностью парализует ваш сустав.</b>"))
-						threshold_penalty = 120 // легко потерять
+						threshold_penalty = 120 // piss easy to destroy
 						set_disabling(TRUE)
 
 /datum/wound/burn/flesh/set_disabling(new_value)

@@ -87,7 +87,7 @@
 		return ..()
 
 	var/list/msg = list("Раны на [victim.ru_p_them()] [limb.ru_plaintext_zone[PREPOSITIONAL] || limb.plaintext_zone] перевязаны, и те ")
-	// сколько жизни у нас осталось в этих повязках
+	// how much life we have left in these bandages
 	switch(limb.current_gauze.absorption_capacity)
 		if(0 to 1.25)
 			msg += "почти износились"
@@ -203,7 +203,7 @@
 			to_chat(user, span_warning("Ваш рот закрыт, вы не можете лизать раны [victim.declent_ru(GENITIVE)]!"))
 			return
 		if(!carbon_user.get_organ_slot(ORGAN_SLOT_TONGUE))
-			to_chat(user, span_warning("Вы не можете лизать раны без языка!")) // f в чат
+			to_chat(user, span_warning("Вы не можете лизать раны без языка!")) // f in chat
 			return
 
 	lick_wounds(user)
