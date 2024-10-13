@@ -40,9 +40,9 @@
 	else
 		occur_text = dismembered_part.get_dismember_message(wounding_type, outright)
 
-	var/msg = span_bolddanger("[capitalize(dismembered_part.ru_plaintext_zone[PREPOSITIONAL] || dismembered_part.plaintext_zone)] у [victim.declent_ru(GENITIVE)] [occur_text]")
+	var/msg = span_bolddanger("[capitalize(dismembered_part.ru_plaintext_zone[NOMINATIVE] || dismembered_part.plaintext_zone)] у [victim.declent_ru(GENITIVE)] [occur_text]")
 
-	victim.visible_message(msg, span_userdanger("Ваша [dismembered_part.ru_plaintext_zone[PREPOSITIONAL] || dismembered_part.plaintext_zone] [self_msg ? self_msg : occur_text]"))
+	victim.visible_message(msg, span_userdanger("Ваша [dismembered_part.ru_plaintext_zone[NOMINATIVE] || dismembered_part.plaintext_zone] [self_msg ? self_msg : occur_text]"))
 
 	loss_wounding_type = wounding_type
 
