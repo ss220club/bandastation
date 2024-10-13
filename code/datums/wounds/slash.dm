@@ -302,7 +302,7 @@
 	if(!do_after(user, treatment_delay, target = victim, extra_checks = CALLBACK(src, PROC_REF(still_exists))))
 		return TRUE
 	var/bleeding_wording = (!limb.can_bleed() ? "порезы" : "кровотечение")
-	user.visible_message(span_green("[capitalize(user.declent_ru(NOMINATIVE))] зашивает некоторые из [bleeding_wording] на [limb.ru_plaintext_zone[PREPOSITIONAL]."), span_green("Вы зашиваете некоторые из [bleeding_wording] на [user == victim ? "себе" : "[victim.declent_ru(INSTRUMENTAL)]"]."))
+	user.visible_message(span_green("[capitalize(user.declent_ru(NOMINATIVE))] зашивает некоторые из [bleeding_wording] на [limb.ru_plaintext_zone[PREPOSITIONAL]]."), span_green("Вы зашиваете некоторые из [bleeding_wording] на [user == victim ? "себе" : "[victim.declent_ru(INSTRUMENTAL)]"]."))
 	var/blood_sutured = I.stop_bleeding / self_penalty_mult
 	adjust_blood_flow(-blood_sutured)
 	limb.heal_damage(I.heal_brute, I.heal_burn)
