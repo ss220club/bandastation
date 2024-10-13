@@ -244,7 +244,7 @@
 /datum/wound/blunt/bone/moderate/proc/door_crush()
 	SIGNAL_HANDLER
 	if(prob(40))
-		victim.visible_message(span_danger("[capitalize(limb.ru_plaintext_zone[DATIVE] || limb.plaintext_zone)] у [victim.declent_ru(GENITIVE)] встала обратно на место!"), span_userdanger("Сустав в районе [limb.ru_plaintext_zone[GENITIVE] || limb.plaintext_zone] встал обратно на место! Ой!"))
+		victim.visible_message(span_danger("[capitalize(limb.ru_plaintext_zone[NOMINATIVE] || limb.plaintext_zone)] у [victim.declent_ru(GENITIVE)] встала обратно на место!"), span_userdanger("Сустав в районе [limb.ru_plaintext_zone[GENITIVE] || limb.plaintext_zone] встал обратно на место! Ой!"))
 		remove_wound()
 
 /datum/wound/blunt/bone/moderate/try_handling(mob/living/user)
@@ -280,7 +280,7 @@
 		limb.receive_damage(brute=20, wound_bonus=CANT_WOUND)
 		qdel(src)
 	else
-		user.visible_message(span_danger("[capitalize(user.declent_ru(NOMINATIVE))] болезнено вправляет вывих [limb.ru_plaintext_zone[GENITIVE] || limb.plaintext_zone] у [victim.declent_ru(GENITIVE)]!"), span_danger("Вы болезненно вправляете вывих [limb.ru_plaintext_zone[DATIVE] || limb.plaintext_zone] у [victim.declent_ru(GENITIVE)]!"), ignored_mobs=victim)
+		user.visible_message(span_danger("[capitalize(user.declent_ru(NOMINATIVE))] болезнено вправляет вывих [limb.ru_plaintext_zone[GENITIVE] || limb.plaintext_zone] у [victim.declent_ru(GENITIVE)]!"), span_danger("Вы болезненно вправляете вывих [limb.ru_plaintext_zone[GENITIVE] || limb.plaintext_zone] у [victim.declent_ru(GENITIVE)]!"), ignored_mobs=victim)
 		to_chat(victim, span_userdanger("[capitalize(user.declent_ru(NOMINATIVE))] болезнено вправляет ваш вывих в [limb.ru_plaintext_zone[PREPOSITIONAL] || limb.plaintext_zone]!"))
 		limb.receive_damage(brute=10, wound_bonus=CANT_WOUND)
 		chiropractice(user)
@@ -452,7 +452,7 @@
 		to_chat(user, span_warning("[capitalize(limb.ru_plaintext_zone[NOMINATIVE] || limb.plaintext_zone)] у [user == victim ? "вас" : "[victim.declent_ru(GENITIVE)]"] уже покрыта костным гелем!"))
 		return
 
-	user.visible_message(span_danger("[capitalize(user.declent_ru(NOMINATIVE))] начинает наносить [I.declent_ru(ACCUSATIVE)] на [limb.ru_plaintext_zone[ACCUSATIVE] || limb.plaintext_zone] у [victim.declent_ru(GENITIVE)]..."), span_warning("Вы начинаете наносить [I.declent_ru(ACCUSATIVE)] на [limb.ru_plaintext_zone[DATIVE] || limb.plaintext_zone] у [user == victim ? "вас" : "[victim.declent_ru(GENITIVE)]"]..."))
+	user.visible_message(span_danger("[capitalize(user.declent_ru(NOMINATIVE))] начинает наносить [I.declent_ru(ACCUSATIVE)] на [limb.ru_plaintext_zone[ACCUSATIVE] || limb.plaintext_zone] у [victim.declent_ru(GENITIVE)]..."), span_warning("Вы начинаете наносить [I.declent_ru(ACCUSATIVE)] на [limb.ru_plaintext_zone[ACCUSATIVE] || limb.plaintext_zone] у [user == victim ? "вас" : "[victim.declent_ru(GENITIVE)]"]..."))
 
 	if(!do_after(user, base_treat_time * (user == victim ? 1.5 : 1), target = victim, extra_checks=CALLBACK(src, PROC_REF(still_exists))))
 		return

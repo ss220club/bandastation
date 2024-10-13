@@ -107,7 +107,7 @@
 		if(WOUND_INFECTION_CRITICAL to WOUND_INFECTION_SEPTIC)
 			if(!disabling)
 				if(SPT_PROB(1.5, seconds_per_tick))
-					to_chat(victim, span_warning("<b>Вы внезапно теряете все ощущения от гнойной инфекции в вашей [limb.ru_plaintext_zone[DATIVE] || limb.plaintext_zone]!</b>"))
+					to_chat(victim, span_warning("<b>Вы внезапно теряете все ощущения от гнойной инфекции в вашей [limb.ru_plaintext_zone[PREPOSITIONAL] || limb.plaintext_zone]!</b>"))
 					set_disabling(TRUE)
 					return
 			else if(SPT_PROB(1.5, seconds_per_tick))
@@ -127,11 +127,11 @@
 				strikes_to_lose_limb--
 				switch(strikes_to_lose_limb)
 					if(2 to INFINITY)
-						to_chat(victim, span_deadsay("<b>Инфекция в вашей [limb.ru_plaintext_zone[DATIVE] || limb.plaintext_zone] буквально стекает, вы чувствуете себя ужасно!</b>"))
+						to_chat(victim, span_deadsay("<b>Инфекция в вашей [limb.ru_plaintext_zone[PREPOSITIONAL] || limb.plaintext_zone] буквально стекает, вы чувствуете себя ужасно!</b>"))
 					if(1)
 						to_chat(victim, span_deadsay("<b>Инфекция почти полностью захватила вашу [limb.ru_plaintext_zone[ACCUSATIVE] || limb.plaintext_zone]!</b>"))
 					if(0)
-						to_chat(victim, span_deadsay("<b>Последние нервные окончания в вашей [limb.ru_plaintext_zone[DATIVE] || limb.plaintext_zone] увядают, пока инфекция полностью парализует ваш сустав.</b>"))
+						to_chat(victim, span_deadsay("<b>Последние нервные окончания в вашей [limb.ru_plaintext_zone[PREPOSITIONAL] || limb.plaintext_zone] увядают, пока инфекция полностью парализует ваш сустав.</b>"))
 						threshold_penalty = 120 // легко потерять
 						set_disabling(TRUE)
 
@@ -144,9 +144,9 @@
 
 /datum/wound/burn/flesh/get_wound_description(mob/user)
 	if(strikes_to_lose_limb <= 0)
-		return span_deadsay("<B>[capitalize(victim.ru_p_them())] [limb.ru_plaintext_zone[DATIVE] || limb.plaintext_zone] полностью обезжизнена и не функционирует.</B>")
+		return span_deadsay("<B>[capitalize(victim.ru_p_them())] [limb.ru_plaintext_zone[NOMINATIVE] || limb.plaintext_zone] полностью обезжизнена и не функционирует.</B>")
 
-	var/list/condition = list("[capitalize(victim.ru_p_them())] [limb.ru_plaintext_zone[DATIVE] || limb.plaintext_zone] [examine_desc]")
+	var/list/condition = list("[capitalize(victim.ru_p_them())] [limb.ru_plaintext_zone[NOMINATIVE] || limb.plaintext_zone] [examine_desc]")
 	if(limb.current_gauze)
 		var/bandage_condition
 		switch(limb.current_gauze.absorption_capacity)
@@ -169,7 +169,7 @@
 			if(WOUND_INFECTION_CRITICAL to WOUND_INFECTION_SEPTIC)
 				condition += ", [span_deadsay("с полосами гнилой инфекции!")]"
 			if(WOUND_INFECTION_SEPTIC to INFINITY)
-				return span_deadsay("<B>[capitalize(victim.ru_p_them())] [limb.ru_plaintext_zone[DATIVE] || limb.plaintext_zone] представляет собой хаос из обожженной кожи и зараженного гниения!</B>")
+				return span_deadsay("<B>[capitalize(victim.ru_p_them())] [limb.ru_plaintext_zone[NOMINATIVE] || limb.plaintext_zone] представляет собой хаос из обожженной кожи и зараженного гниения!</B>")
 			else
 				condition += "!"
 
@@ -250,10 +250,10 @@
 		to_chat(user, span_notice("[I.declent_ru(GENITIVE)] еще перезаряжается!"))
 		return TRUE
 	if(infestation <= 0 || infestation < sanitization)
-		to_chat(user, span_notice("Нет инфекция на [limb.ru_plaintext_zone[DATIVE] || limb.plaintext_zone] у [victim.declent_ru(GENITIVE)]!"))
+		to_chat(user, span_notice("Нет инфекции на [limb.ru_plaintext_zone[PREPOSITIONAL] || limb.plaintext_zone] у [victim.declent_ru(GENITIVE)]!"))
 		return TRUE
 
-	user.visible_message(span_notice("[capitalize(user.declent_ru(NOMINATIVE))] отчищает ожоги в [limb.ru_plaintext_zone[DATIVE] || limb.plaintext_zone] у [victim.declent_ru(GENITIVE)] при помощи [I.declent_ru(GENITIVE)]."), span_notice("Вы очищаете ожоги [limb.ru_plaintext_zone[DATIVE] || limb.plaintext_zone] у [user == victim ? "вас" : "[victim.declent_ru(GENITIVE)]"] при помощи [I.declent_ru(GENITIVE)]."), vision_distance=COMBAT_MESSAGE_RANGE)
+	user.visible_message(span_notice("[capitalize(user.declent_ru(NOMINATIVE))] отчищает ожоги в [limb.ru_plaintext_zone[PREPOSITIONAL] || limb.plaintext_zone] у [victim.declent_ru(GENITIVE)] при помощи [I.declent_ru(GENITIVE)]."), span_notice("Вы очищаете ожоги [limb.ru_plaintext_zone[GENITIVE] || limb.plaintext_zone] у [user == victim ? "вас" : "[victim.declent_ru(GENITIVE)]"] при помощи [I.declent_ru(GENITIVE)]."), vision_distance=COMBAT_MESSAGE_RANGE)
 	sanitization += I.uv_power
 	COOLDOWN_START(I, uv_cooldown, I.uv_cooldown_length)
 	return TRUE
@@ -275,12 +275,12 @@
 	. = ..()
 	if(strikes_to_lose_limb <= 0) // we've already hit sepsis, nothing more to do
 		if(SPT_PROB(0.5, seconds_per_tick))
-			victim.visible_message(span_danger("Зараженные остатки [limb.ru_plaintext_zone[GENITIVE] || limb.plaintext_zone] у [victim.declent_ru(GENITIVE)] пузыряться!"), span_warning("Вы можете чувствовать, как заражение на [limb.ru_plaintext_zone[DATIVE] || limb.plaintext_zone] проникает в ваши вены!"), vision_distance = COMBAT_MESSAGE_RANGE)
+			victim.visible_message(span_danger("Зараженные остатки [limb.ru_plaintext_zone[GENITIVE] || limb.plaintext_zone] у [victim.declent_ru(GENITIVE)] пузыряться!"), span_warning("Вы можете чувствовать, как заражение на [limb.ru_plaintext_zone[PREPOSITIONAL] || limb.plaintext_zone] проникает в ваши вены!"), vision_distance = COMBAT_MESSAGE_RANGE)
 		return
 	if(flesh_healing > 0)
 		flesh_damage = max(flesh_damage - (0.1 * seconds_per_tick), 0)
 	if((flesh_damage <= 0) && (infestation <= 1))
-		to_chat(victim, span_green("Ожоги на [limb.ru_plaintext_zone[DATIVE] || limb.plaintext_zone] очистились!"))
+		to_chat(victim, span_green("Ожоги на [limb.ru_plaintext_zone[PREPOSITIONAL] || limb.plaintext_zone] очистились!"))
 		qdel(src)
 		return
 	if(sanitization > 0)
