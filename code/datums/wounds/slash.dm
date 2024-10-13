@@ -420,7 +420,6 @@
 	examine_desc = "имеет множество мелких порезов"
 	occur_text = "разрезается множество раз, оставляя много маленьких ссадин."
 
-
 /datum/wound_pregen_data/flesh_slash/abrasion/cuts
 	abstract = FALSE
 	can_be_randomly_generated = FALSE
