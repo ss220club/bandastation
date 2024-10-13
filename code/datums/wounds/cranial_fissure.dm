@@ -28,11 +28,11 @@
 /// will cause your brain to fall out of your head.
 /datum/wound/cranial_fissure
 	name = "Черепная трещина"
-	desc = "Кровля пациента разъята, открывая серьезные повреждения черепа."
+	desc = "Макушка пациента раскрыта, обнажая серьезные повреждения черепа."
 	treat_text = "Необходима хирургическая реконструкция черепа."
 	treat_text_short = "Необходима хирургическая реконструкция."
 	examine_desc = "разделен на две части"
-	occur_text = "разделен на две отделенные части"
+	occur_text = "разделяется на две отделенные части"
 
 	simple_desc = "Череп пациента расколот."
 	threshold_penalty = 40
@@ -99,7 +99,7 @@
 	playsound(victim, 'sound/items/handling/surgery/organ2.ogg', 50, TRUE)
 	victim.balloon_alert(user, "вырывает глаза...")
 	user.visible_message(
-		span_boldwarning("[capitalize(user.declent_ru(NOMINATIVE))] достигнает внутренности черепа [victim.declent_ru(DATIVE)]..."),
+		span_boldwarning("[capitalize(user.declent_ru(NOMINATIVE))] достигнает внутренности черепа [victim.declent_ru(GENITIVE)]..."),
 		ignored_mobs = user
 	)
 	victim.show_message(
@@ -118,8 +118,8 @@
 
 	playsound(victim, 'sound/items/handling/surgery/organ1.ogg', 75, TRUE)
 	user.visible_message(
-		span_boldwarning("[capitalize(user.declent_ru(NOMINATIVE))] вырывает глаза [victim.declent_ru(DATIVE)]!"),
-		span_boldwarning("Вы вырываете глаза [victim.declent_ru(DATIVE)]!"),
+		span_boldwarning("[capitalize(user.declent_ru(NOMINATIVE))] вырывает глаза [victim.declent_ru(GENITIVE)]!"),
+		span_boldwarning("Вы вырываете глаза [victim.declent_ru(GENITIVE)]!"),
 		ignored_mobs = victim,
 	)
 
