@@ -1047,7 +1047,7 @@
 					break
 			if(secondary_part.get_part_rating() > current_rating)
 				//store name of part incase we qdel it below
-				var/secondary_part_name = secondary_part.declent_ru(INSTRUMENTAL)
+				var/secondary_part_name = secondary_part.declent_ru(ACCUSATIVE)
 				if(replacer_tool.atom_storage.attempt_remove(secondary_part, src))
 					if (istype(primary_part_base, /datum/stock_part))
 						var/stock_part_datum = GLOB.stock_part_datums_per_object[secondary_part.type]
@@ -1072,7 +1072,7 @@
 					physical_part = primary_part_base
 
 				replacer_tool.atom_storage.attempt_insert(physical_part, user, TRUE, force = STORAGE_SOFT_LOCKED)
-				to_chat(user, span_notice("[capitalize(physical_part.declent_ru(NOMINATIVE))] заменяется [secondary_part_name]."))
+				to_chat(user, span_notice("[capitalize(physical_part.declent_ru(NOMINATIVE))] заменяется на [secondary_part_name]."))
 				shouldplaysound = TRUE //Only play the sound when parts are actually replaced!
 				break
 
