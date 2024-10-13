@@ -60,7 +60,7 @@
 	ncore.forceMove(src)
 	core = ncore
 	icon_state = "core_container_loaded"
-	to_chat(user, span_warning("Контейнер запечатывается..."))
+	to_chat(user, span_warning("Контейнер герметизируется..."))
 	addtimer(CALLBACK(src, PROC_REF(seal)), 5 SECONDS)
 	return TRUE
 
@@ -70,12 +70,12 @@
 		icon_state = "core_container_sealed"
 		playsound(src, 'sound/items/deconstruct.ogg', 60, TRUE)
 		if(ismob(loc))
-			to_chat(loc, span_warning("Контейнер надежно запечатан, радиация [core.declent_ru(GENITIVE)] сдерживается."))
+			to_chat(loc, span_warning("[capitalize(declent_ru(NOMINATIVE))] надежно запечатывается, радиация [core.declent_ru(GENITIVE)] сдерживается."))
 
 /obj/item/nuke_core_container/attackby(obj/item/nuke_core/core, mob/user)
 	if(istype(core))
 		if(!user.temporarilyRemoveItemFromInventory(core))
-			to_chat(user, span_warning("[capitalize(core.declent_ru(NOMINATIVE))] прилипло к вашей руке!"))
+			to_chat(user, span_warning("[capitalize(core.declent_ru(NOMINATIVE))] застревает на вашей руке!"))
 			return
 		else
 			load(core, user)
@@ -110,11 +110,11 @@
 
 /obj/item/paper/guides/antag/hdd_extraction
 	default_raw_text = "<h1>Кража исходного кода и Вы! - руководство для идиотов по уничтожению исследований и разработок Нанотрейзен</h1><br>\
-	Ходят слухи, что Нанотрейзен используют свои РнД-серверы для создания чего-то ужасного! Они дали ему кодовое название «Проект Гуны», что бы это ни значило.<br>\
+	Ходят слухи, что Нанотрейзен используют свои научные сервера для создания чего-то ужасного! Они дали ему кодовое название «Проект Гуны», что бы это ни значило.<br>\
 	Этого нельзя допустить. Ниже приведены все наши данные о том, как украсть их исходный код и подорвать их исследовательские усилия:<br>\
 	<ul>\
 	<li>Найдите физические серверные мэйнфреймы РнД. Разведка предполагает, что они хранятся в специально охлаждаемых помещениях в глубине их научного отдела.</li>\
-	<li>Нанотрейзен - корпорация, не отличающаяся изысканностью дизайна. Вы должны быть в состоянии определить главный сервер по каким-либо отличительным знакам. - корпорация, не отличающаяся изысканностью дизайна. Вы должны быть в состоянии определить главный сервер по каким-либо отличительным знакам.</li>\
+	<li>Нанотрейзен - корпорация, не отличающаяся изысканностью дизайна. Вы должны быть в состоянии определить главный сервер по каким-либо отличительным знакам.</li>\
 	<li>Инструменты можно найти на месте. Отвертка, лом и кусачки - это все, что вам нужно для работы.</li>\
 	<li>Винты передней панели спрятаны в углублениях за наклейками. Их легко открутить, как только вы узнаете, что они там есть.</li>\
 	<li>Вероятно, жесткий диск находится в надежном корпусе. Возможно, вам придется поддеть его ломом, но это не должно нанести большого вреда.</li>\
@@ -122,7 +122,7 @@
 	</ul>\
 	Извлечение этого диска гарантированно подорвет исследовательскую работу, независимо от того, какие данные на нем содержатся.<br>\
 	Вероятно, эта штука имеет сложную фиксацию. После извлечения ее уже не вернуть на место. Если экипаж узнает, то скорее всего, будет в бешенстве как пчелы!<br>\
-	Переживите смену и безопастно вытащите жесткий диск.<br>\
+	Переживите смену, заберите и не повредите жесткий диск.<br>\
 	Справитесь - получите заветную зеленую отметку в свой послужной список за это задание. Провалите задание - красный цвет станет последним в вашей жизни.<br>\
 	Не разочаровывайте нас.<br>"
 
@@ -168,16 +168,16 @@
 	if(istype(W, /obj/item/hemostat/supermatter))
 		var/obj/item/hemostat/supermatter/tongs = W
 		if (tongs.sliver)
-			to_chat(user, span_warning("[capitalize(tongs.declent_ru(NOMINATIVE))] уже держат осколок суперматерии!"))
+			to_chat(user, span_warning("[capitalize(tongs.declent_ru(NOMINATIVE))] уже держит осколок суперматерии!"))
 			return FALSE
 		forceMove(tongs)
 		tongs.sliver = src
 		tongs.update_appearance()
-		to_chat(user, span_notice("Вы осторожно поднимаете [declent_ru(NOMINATIVE)] с помощью [tongs.declent_ru(ACCUSATIVE)]."))
+		to_chat(user, span_notice("Вы осторожно поднимаете [declent_ru(ACCUSATIVE)] с помощью [tongs.declent_ru(GENITIVE)]."))
 	else if(istype(W, /obj/item/scalpel/supermatter) || istype(W, /obj/item/nuke_core_container/supermatter/)) // we don't want it to dust
 		return
 	else
-		to_chat(user, span_notice("Когда он касается [declent_ru(NOMINATIVE)], а также [declent_ru(NOMINATIVE)] вместе с [W] рассыпаются в пыль!"))
+		to_chat(user, span_notice("[capitalize(W.declent_ru(NOMINATIVE))] и [declent_ru(GENITIVE)] обращаются в пыль от прикосновения друг с другом!"))
 		radiation_pulse(user, max_range = 2, threshold = RAD_EXTREME_INSULATION, chance = 40)
 		playsound(src, 'sound/effects/supermatter.ogg', 50, TRUE)
 		qdel(W)
@@ -197,8 +197,8 @@
 	else
 		message_admins("[src] has consumed [key_name_admin(victim)] [ADMIN_JMP(src)] via throw impact.")
 		investigate_log("has consumed [key_name(victim)] via throw impact.", INVESTIGATE_ENGINE)
-	victim.visible_message(span_danger("Когда [capitalize(victim.declent_ru(NOMINATIVE))] попадает под удар [declent_ru(ACCUSATIVE)], оба превращаются в пыль, и тишина заполняет комнату..."),\
-		span_userdanger("Вас ударяет [declent_ru(NOMINATIVE)], и все внезапно затихает. \n[capitalize(declent_ru(NOMINATIVE))] рассыпается в пыль, и как только вы замечаете это, вы тоже рассыпаетесь."),\
+	victim.visible_message(span_danger("Когда [declent_ru(NOMINATIVE)] врезается в [victim.declent_ru(ACCUSATIVE)], они обращаются в пыль от прикосновения друг с другом, и тишина заполняет комнату..."),\
+		span_userdanger("[capitalize(declent_ru(NOMINATIVE))] врезается в вас, и все внезапно затихает. \n[capitalize(declent_ru(NOMINATIVE))] обращается в пыль, и как только вы замечаете это, вы тоже обращаетесь."),\
 		span_hear("Все внезапно затихает."))
 	victim.investigate_log("has been dusted by [src].", INVESTIGATE_DEATHS)
 	victim.dust()
@@ -210,8 +210,8 @@
 	..()
 	if(!isliving(user) || HAS_TRAIT(user, TRAIT_GODMODE)) //try to keep this in sync with supermatter's consume fail conditions
 		return FALSE
-	user.visible_message(span_danger("[capitalize(user.declent_ru(NOMINATIVE))] протягивает руку и пытается поднять [declent_ru(NOMINATIVE)]. [capitalize(user.ru_p_them())] тело начинает светиться и вспыхивает, а затем рассыпается в пыль!"),\
-			span_userdanger("Вы тянетесь к [declent_ru(NOMINATIVE)] руками. Доволько глупо..."),\
+	user.visible_message(span_danger("[capitalize(user.declent_ru(NOMINATIVE))] протягивает руку и пытается поднять [declent_ru(ACCUSATIVE)]. [capitalize(user.ru_p_them())] тело начинает светиться и вспыхивает, а затем обращается в пыль!"),\
+			span_userdanger("Вы тянетесь к [declent_ru(DATIVE)] руками. Это было глупо..."),\
 			span_hear("Все внезапно затихает."))
 	radiation_pulse(user, max_range = 2, threshold = RAD_EXTREME_INSULATION, chance = 40)
 	playsound(src, 'sound/effects/supermatter.ogg', 50, TRUE)
@@ -235,7 +235,7 @@
 	T.sliver = null
 	T.icon_state = "supermatter_tongs"
 	icon_state = "core_container_loaded"
-	to_chat(user, span_warning("Контейнер запечатывается..."))
+	to_chat(user, span_warning("Контейнер герметизируется..."))
 	addtimer(CALLBACK(src, PROC_REF(seal)), 5 SECONDS)
 	return TRUE
 
@@ -245,7 +245,7 @@
 		icon_state = "core_container_sealed"
 		playsound(src, 'sound/items/Deconstruct.ogg', 60, TRUE)
 		if(ismob(loc))
-			to_chat(loc, span_warning("Контейнер надежно запечатан, [sliver.declent_ru(NOMINATIVE)] содержится в безопасности."))
+			to_chat(loc, span_warning("[capitalize(declent_ru(NOMINATIVE))] надежно герметизируется, [sliver.declent_ru(NOMINATIVE)] содержится в безопасности."))
 
 /obj/item/scalpel/supermatter
 	name = "supermatter scalpel"
@@ -301,7 +301,7 @@
 /obj/item/hemostat/supermatter/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum) // no instakill supermatter javelins
 	if(sliver)
 		sliver.forceMove(loc)
-		visible_message(span_notice("[capitalize(sliver.declent_ru(NOMINATIVE))] выпадает из [declent_ru(ACCUSATIVE)] при падении на землю."))
+		visible_message(span_notice("[capitalize(sliver.declent_ru(NOMINATIVE))] выпадает из [declent_ru(GENITIVE)] при падении на землю."))
 		sliver = null
 		update_appearance()
 	return ..()
@@ -324,8 +324,8 @@
 		qdel(AM)
 	if (user)
 		log_combat(user, AM, "consumed", sliver, "via [src]")
-		user.visible_message(span_danger("Когда [capitalize(user.declent_ru(NOMINATIVE))] прикасается к [AM] с помощью [declent_ru(ACCUSATIVE)], оба превращаются в пыль и тишина заполняет комнату..."),\
-			span_userdanger("Вы прикасаетесь к [AM] с помощью [declent_ru(ACCUSATIVE)], и все внезапно замолкает.\n[AM] и [sliver.declent_ru(NOMINATIVE)] превращаются в пыль, и как только вы замечаете это, вы тоже рассыпаетесь."),\
+		user.visible_message(span_danger("Когда [user.declent_ru(NOMINATIVE)] прикасается к [AM.declent_ru(DATIVE)] с помощью [declent_ru(GENITIVE)], они все обращаются в пыль, и тишина заполняет комнату..."),\
+			span_userdanger("Вы прикасаетесь к [AM.declent_ru(DATIVE)] с помощью [declent_ru(GENITIVE)], и всё внезапно замолкает.\n[capitalize(AM.declent_ru(NOMINATIVE))] и [sliver.declent_ru(NOMINATIVE)] обращаются в пыль, и как только вы замечаете это, вы тоже обращаетесь."),\
 			span_hear("Все внезапно затихает."))
 		user.investigate_log("has been dusted by [src].", INVESTIGATE_DEATHS)
 		user.dust()
