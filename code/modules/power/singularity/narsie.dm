@@ -253,12 +253,12 @@
 ///First crew last second win check and flufftext for [/proc/begin_the_end()]
 /proc/narsie_end_begin_check()
 	if(QDELETED(GLOB.cult_narsie)) // uno
-		priority_announce("Текущий статус? Мы обнаружили аномалию, но она почти сразу же пропала.","[command_name()]: Отдел паранормальных явлений", 'sound/announcer/notice/notice1.ogg')
+		priority_announce("Доклад статуса? Мы обнаружили аномалию, но она почти сразу же пропала.","[command_name()]: Отдел паранормальных явлений", 'sound/announcer/notice/notice1.ogg')
 		GLOB.cult_narsie = null
 		addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(cult_ending_helper), CULT_FAILURE_NARSIE_KILLED), 2 SECONDS)
 		return
 	priority_announce(
-		text = "В вашем секторе обнаружено нестандартное пространственное явление. Выдана классификация угрозы уровня ВЫМИРАНИЕ. Все доступные средства были направлены на моделирование решения. ВРЕМЯ ОЖИДАНИЯ: 60 СЕКУНД.",
+		text = "В вашем секторе зафиксировано беспричинное изменения пространства. Назначена классификация угрозы типа ТОТАЛЬНОЕ ВЫМИРАНИЕ. Задействованы все имеющиеся ресурсы для моделирование решения. ВРЕМЯ ОЖИДАНИЯ: 60 СЕКУНД.",
 		title = "[command_name()]: Отдел паранормальных явлений",
 		sound = 'sound/announcer/alarm/airraid.ogg',
 	)
@@ -267,11 +267,11 @@
 ///Second crew last second win check and flufftext for [/proc/begin_the_end()]
 /proc/narsie_end_second_check()
 	if(QDELETED(GLOB.cult_narsie)) // dos
-		priority_announce("Моделирования прерваны, так как датчики сообщают о нормализации нестандартного явления. Хорошая работа, экипаж.","[command_name()]: Отдел паранормальных явлений", 'sound/announcer/notice/notice1.ogg')
+		priority_announce("Моделирование прервано, датчики сообщают о нормализации пространственного явления. Хорошая работа, экипаж.","[command_name()]: Отдел паранормальных явлений", 'sound/announcer/notice/notice1.ogg')
 		GLOB.cult_narsie = null
 		addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(cult_ending_helper), CULT_FAILURE_NARSIE_KILLED), 2 SECONDS)
 		return
-	priority_announce("Моделирования по поводу нестандартного пространственного явления завершены. Развертываем решение. ВРЕМЯ ДО РАЗВЕРТЫВАНИЯ: ОДНА МИНУТА.","[command_name()]: Отдел паранормальных явлений")
+	priority_announce("Моделирование беспричинного изменения пространства завершено. Обрабатываем решение для развертывания. Время до развертывания: ОДНА МИНУТА.","[command_name()]: Отдел паранормальных явлений")
 	addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(narsie_start_destroy_station)), 5 SECONDS)
 
 ///security level and shuttle lockdowns for [/proc/begin_the_end()]
@@ -284,7 +284,7 @@
 ///Third crew last second win check and flufftext for [/proc/begin_the_end()]
 /proc/narsie_apocalypse()
 	if(QDELETED(GLOB.cult_narsie)) // tres
-		priority_announce("Обнаружена нормализация ситуации! Отменить развертывание!","[command_name()]: Отдел паранормальных явлений", 'sound/announcer/notice/notice1.ogg')
+		priority_announce("Явление нормализовано! Отменить развертывание!","[command_name()]: Отдел паранормальных явлений", 'sound/announcer/notice/notice1.ogg')
 		SSshuttle.clearHostileEnvironment(GLOB.cult_narsie)
 		GLOB.cult_narsie = null
 		addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(narsie_last_second_win)), 2 SECONDS)
