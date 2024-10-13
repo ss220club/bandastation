@@ -274,7 +274,7 @@
 	if(!do_after(user, treatment_delay, target = victim, extra_checks = CALLBACK(src, PROC_REF(still_exists))))
 		return
 	var/bleeding_wording = (!limb.can_bleed() ? "резы" : "кровотечение")
-	user.visible_message(span_green("[capitalize(user.declent_ru(NOMINATIVE))] прижигает некоторые из [bleeding_wording] на [victim.declent_ru(GENITIVE)]."), span_green("Вы прижигаете некоторые из [bleeding_wording] на [victim.declent_ru(GENITIVE)]."))
+	user.visible_message(span_green("[capitalize(user.declent_ru(NOMINATIVE))] прижигает некоторые из [bleeding_wording] на [victim.declent_ru(INSTRUMENTAL)]."), span_green("Вы прижигаете некоторые из [bleeding_wording] на [victim.declent_ru(INSTRUMENTAL)]."))
 	limb.receive_damage(burn = 2 + severity, wound_bonus = CANT_WOUND)
 	if(prob(30))
 		victim.emote("scream") // Эмоция жертвы
@@ -284,7 +284,7 @@
 	if(blood_flow > minimum_flow)
 		return try_treating(I, user)
 	else if(demotes_to)
-		to_chat(user, span_green("Вы успешно уменьшили тяжесть [user == victim ? "ваших" : "[victim.declent_ru(GENITIVE)]"] резов."))
+		to_chat(user, span_green("Вы успешно уменьшили тяжесть [user == victim ? "ваших" : "[victim.declent_ru(GENITIVE)]"] порезов."))
 		return TRUE
 	return FALSE
 
@@ -295,14 +295,14 @@
 
 	if(HAS_TRAIT(src, TRAIT_WOUND_SCANNED))
 		treatment_delay *= 0.5
-		user.visible_message(span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает искусно зашивать [limb.ru_plaintext_zone[DATIVE] || limb.plaintext_zone] [victim.declent_ru(GENITIVE)] с помощью [I.declent_ru(GENITIVE)]..."), span_notice("Вы начинаете зашивать [limb.ru_plaintext_zone[DATIVE] || limb.plaintext_zone] у [user == victim ? "вас" : "[victim.declent_ru(GENITIVE)]"]  с помощью [I.declent_ru(GENITIVE)], учитывая информацию с голограммы..."))
+		user.visible_message(span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает искусно зашивать [limb.ru_plaintext_zone[ACCUSATIVE] || limb.plaintext_zone] [victim.declent_ru(GENITIVE)] с помощью [I.declent_ru(GENITIVE)]..."), span_notice("Вы начинаете зашивать [limb.ru_plaintext_zone[ACCUSATIVE] || limb.plaintext_zone] у [user == victim ? "вас" : "[victim.declent_ru(GENITIVE)]"]  с помощью [I.declent_ru(GENITIVE)], учитывая информацию с голограммы..."))
 	else
-		user.visible_message(span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает зашивать [limb.ru_plaintext_zone[DATIVE] || limb.plaintext_zone] [victim.declent_ru(GENITIVE)] с помощью [I.declent_ru(GENITIVE)]..."), span_notice("Вы начинаете зашивать [limb.ru_plaintext_zone[DATIVE] || limb.plaintext_zone] у [user == victim ? "вас" : "[victim.declent_ru(GENITIVE)]"]  с помощью [I.declent_ru(GENITIVE)]..."))
+		user.visible_message(span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает зашивать [limb.ru_plaintext_zone[ACCUSATIVE] || limb.plaintext_zone] [victim.declent_ru(GENITIVE)] с помощью [I.declent_ru(GENITIVE)]..."), span_notice("Вы начинаете зашивать [limb.ru_plaintext_zone[ACCUSATIVE] || limb.plaintext_zone] у [user == victim ? "вас" : "[victim.declent_ru(GENITIVE)]"]  с помощью [I.declent_ru(GENITIVE)]..."))
 
 	if(!do_after(user, treatment_delay, target = victim, extra_checks = CALLBACK(src, PROC_REF(still_exists))))
 		return TRUE
 	var/bleeding_wording = (!limb.can_bleed() ? "порезы" : "кровотечение")
-	user.visible_message(span_green("[capitalize(user.declent_ru(NOMINATIVE))] зашивает некоторые из [bleeding_wording] на [victim.declent_ru(GENITIVE)]."), span_green("Вы зашиваете некоторые из [bleeding_wording] на [user == victim ? "себе" : "[victim.declent_ru(GENITIVE)]"]."))
+	user.visible_message(span_green("[capitalize(user.declent_ru(NOMINATIVE))] зашивает некоторые из [bleeding_wording] на [victim.declent_ru(INSTRUMENTAL)]."), span_green("Вы зашиваете некоторые из [bleeding_wording] на [user == victim ? "себе" : "[victim.declent_ru(INSTRUMENTAL)]"]."))
 	var/blood_sutured = I.stop_bleeding / self_penalty_mult
 	adjust_blood_flow(-blood_sutured)
 	limb.heal_damage(I.heal_brute, I.heal_burn)
@@ -311,7 +311,7 @@
 	if(blood_flow > minimum_flow)
 		return try_treating(I, user)
 	else if(demotes_to)
-		to_chat(user, span_green("Вы успешно уменьшили тяжесть [user == victim ? "ваших" : "[victim.declent_ru(GENITIVE)]"] резов."))
+		to_chat(user, span_green("Вы успешно уменьшили тяжесть [user == victim ? "ваших" : "[victim.declent_ru(GENITIVE)]"] порезов."))
 		return TRUE
 	return TRUE
 
