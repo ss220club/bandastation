@@ -177,7 +177,7 @@
 	else if(istype(W, /obj/item/scalpel/supermatter) || istype(W, /obj/item/nuke_core_container/supermatter/)) // we don't want it to dust
 		return
 	else
-		to_chat(user, span_notice("[capitalize(W.declent_ru(NOMINATIVE))] и [declent_ru(GENITIVE)] обращаются в пыль от прикосновения друг с другом!"))
+		to_chat(user, span_notice("[capitalize(W.declent_ru(NOMINATIVE))] и [declent_ru(NOMINATIVE)] обращаются в пыль от прикосновения друг с другом!"))
 		radiation_pulse(user, max_range = 2, threshold = RAD_EXTREME_INSULATION, chance = 40)
 		playsound(src, 'sound/effects/supermatter.ogg', 50, TRUE)
 		qdel(W)
