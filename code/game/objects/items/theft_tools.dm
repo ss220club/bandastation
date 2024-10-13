@@ -75,7 +75,7 @@
 /obj/item/nuke_core_container/attackby(obj/item/nuke_core/core, mob/user)
 	if(istype(core))
 		if(!user.temporarilyRemoveItemFromInventory(core))
-			to_chat(user, span_warning("[core.declent_ru(NOMINATIVE)] прилипло к вашей руке!"))
+			to_chat(user, span_warning("[capitalize(core.declent_ru(NOMINATIVE))] прилипло к вашей руке!"))
 			return
 		else
 			load(core, user)
@@ -168,7 +168,7 @@
 	if(istype(W, /obj/item/hemostat/supermatter))
 		var/obj/item/hemostat/supermatter/tongs = W
 		if (tongs.sliver)
-			to_chat(user, span_warning("[tongs.declent_ru(NOMINATIVE)] уже держат осколок суперматерии!"))
+			to_chat(user, span_warning("[capitalize(tongs.declent_ru(NOMINATIVE))] уже держат осколок суперматерии!"))
 			return FALSE
 		forceMove(tongs)
 		tongs.sliver = src
