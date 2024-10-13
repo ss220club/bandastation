@@ -342,7 +342,6 @@
 	examine_desc = "выглядит ужасно опухшей, с зазубренными буграми, указывающими на трещины в кости"
 	occur_text = "осыпается костной крошкой, и виден ужасный синяк"
 
-
 	severity = WOUND_SEVERITY_SEVERE
 	interaction_efficiency_penalty = 2
 	limp_slowdown = 6
@@ -379,7 +378,6 @@
 	treat_text_short = "Проведите хирургическое лечение или нанесите костный гель и хирургическую ленту. Также следует использовать шину или повязку из марли."
 	examine_desc = "полностью раздроблена и треснута, обнажая осколки кости"
 	occur_text = "раскалывается, обнажая сломанные кости на воздух"
-
 
 	severity = WOUND_SEVERITY_CRITICAL
 	interaction_efficiency_penalty = 2.5
