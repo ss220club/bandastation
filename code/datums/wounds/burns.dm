@@ -57,22 +57,22 @@
 	if(limb.current_gauze)
 		limb.seep_gauze(WOUND_BURN_SANITIZATION_RATE * seconds_per_tick)
 
-	if(flesh_healing > 0) // хорошие повязки удлиняют процесс заживления
+	if(flesh_healing > 0) // good bandages multiply the length of flesh healing
 		var/bandage_factor = limb.current_gauze?.burn_cleanliness_bonus || 1
 		flesh_damage = max(flesh_damage - (0.5 * seconds_per_tick), 0)
-		flesh_healing = max(flesh_healing - (0.5 * bandage_factor * seconds_per_tick), 0) // хорошие повязки удлиняют процесс заживления
+		flesh_healing = max(flesh_healing - (0.5 * bandage_factor * seconds_per_tick), 0) // good bandages multiply the length of flesh healing
 
-	// если у нас мало/нет инфекции, у конечности немного повреждений от ожога, и питание хорошее, заживление происходит
+	// if we have little/no infection, the limb doesn't have much burn damage, and our nutrition is good, heal some flesh
 	if(infestation <= WOUND_INFECTION_MODERATE && (limb.burn_dam < 5) && (victim.nutrition >= NUTRITION_LEVEL_FED))
 		flesh_healing += 0.2
 
-	// проверка на выздоровление
+	// here's the check to see if we're cleared up
 	if((flesh_damage <= 0) && (infestation <= WOUND_INFECTION_MODERATE))
-		to_chat(victim, span_green("Ожоги на вашей [limb.ru_plaintext_zone[DATIVE] || limb.plaintext_zone] зажили!"))
+		to_chat(victim, span_green("Ожоги на вашей [limb.ru_plaintext_zone[PREPOSITIONAL] || limb.plaintext_zone] зажили!"))
 		qdel(src)
 		return
 
-	// санитация проверяется после проверки на выздоровление, но перед фактическими негативными последствиями, потому что мы замораживаем эффекты инфекции, пока есть санитация
+	// sanitization is checked after the clearing check but before the actual ill-effects, because we freeze the effects of infection while we have sanitization
 	if(sanitization > 0)
 		var/bandage_factor = limb.current_gauze?.burn_cleanliness_bonus || 1
 		infestation = max(infestation - (WOUND_BURN_SANITIZATION_RATE * seconds_per_tick), 0)
@@ -88,7 +88,7 @@
 			if(SPT_PROB(15, seconds_per_tick))
 				victim.adjustToxLoss(0.2)
 				if(prob(6))
-					to_chat(victim, span_warning("Волдыри на вашей [limb.ru_plaintext_zone[DATIVE] || limb.plaintext_zone] выделяют странный гной..."))
+					to_chat(victim, span_warning("Волдыри на вашей [limb.ru_plaintext_zone[PREPOSITIONAL] || limb.plaintext_zone] выделяют странный гной..."))
 
 		if(WOUND_INFECTION_SEVERE to WOUND_INFECTION_CRITICAL)
 			if(!disabling)
@@ -193,7 +193,7 @@
 	. += " Инфекция"
 
 /datum/wound/burn/flesh/get_scanner_description(mob/user)
-	if(strikes_to_lose_limb <= 0) // Непонятно, может ли это значение опуститься ниже 0, лучше не рисковать
+	if(strikes_to_lose_limb <= 0) // Unclear if it can go below 0, best to not take the chance
 		var/oopsie = "Тип: [name]<br>Тяжесть: [severity_text()]"
 		oopsie += "<div class='ml-3'>Уровень инфекции: [span_deadsay("Часть тела пострадала от полной сепсиса и должна быть удалена. Ампутируйте или улучшите конечность немедленно, или поместите пациента в криотрубку.")]</div>"
 		return oopsie

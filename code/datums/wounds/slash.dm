@@ -161,7 +161,7 @@
 		if(demotes_to)
 			replace_wound(new demotes_to)
 		else
-			to_chat(victim, span_green("Рана на вашей [limb.ru_plaintext_zone[DATIVE] || limb.plaintext_zone] [!limb.can_bleed() ? "зажила" : "перестала кровоточить"]!"))
+			to_chat(victim, span_green("Рана на вашей [limb.ru_plaintext_zone[PREPOSITIONAL] || limb.plaintext_zone] [!limb.can_bleed() ? "зажила" : "перестала кровоточить"]!"))
 			qdel(src)
 
 /datum/wound/slash/flesh/on_stasis(seconds_per_tick, times_fired)
@@ -211,7 +211,7 @@
 
 /// if a felinid is licking this cut to reduce bleeding
 /datum/wound/slash/flesh/proc/lick_wounds(mob/living/carbon/human/user)
-	// передача односторонняя: пациент -> фелинит, потому что Google сказал, что слюна кошки является антисептиком или что-то в этом роде, и также потому что фелиниды уже рискуют получить по голове, даже не подозревая, что они распространяют вирус смерти
+	// transmission is one way patient -> felinid since google said cat saliva is antiseptic or whatever, and also because felinids are already risking getting beaten for this even without people suspecting they're spreading a deathvirus
 	for(var/i in victim.diseases)
 		var/datum/disease/iter_disease = i
 		if(iter_disease.spread_flags & (DISEASE_SPREAD_SPECIAL | DISEASE_SPREAD_NON_CONTAGIOUS))
@@ -260,8 +260,8 @@
 
 /// If someone is using either a cautery tool or something with heat to cauterize this cut
 /datum/wound/slash/flesh/proc/tool_cauterize(obj/item/I, mob/user)
-	var/improv_penalty_mult = (I.tool_behaviour == TOOL_CAUTERY ? 1 : 1.25) // 25% дольше и менее эффективно, если не используется настоящий прижигающий инструмент
-	var/self_penalty_mult = (user == victim ? 1.5 : 1) // 50% дольше и менее эффективно, если это делается самому себе
+	var/improv_penalty_mult = (I.tool_behaviour == TOOL_CAUTERY ? 1 : 1.25) // 25% longer and less effective if you don't use a real cautery
+	var/self_penalty_mult = (user == victim ? 1.5 : 1) // 50% longer and less effective if you do it to yourself
 
 	var/treatment_delay = base_treat_time * self_penalty_mult * improv_penalty_mult
 
@@ -277,7 +277,7 @@
 	user.visible_message(span_green("[capitalize(user.declent_ru(NOMINATIVE))] прижигает некоторые из [bleeding_wording] на [limb.ru_plaintext_zone[PREPOSITIONAL]]."), span_green("Вы прижигаете некоторые из [bleeding_wording] на [limb.ru_plaintext_zone[PREPOSITIONAL]]."))
 	limb.receive_damage(burn = 2 + severity, wound_bonus = CANT_WOUND)
 	if(prob(30))
-		victim.emote("scream") // Эмоция жертвы
+		victim.emote("scream")
 	var/blood_cauterized = (0.6 / (self_penalty_mult * improv_penalty_mult))
 	adjust_blood_flow(-blood_cauterized)
 

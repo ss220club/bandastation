@@ -149,11 +149,11 @@
 		to_chat(user, span_green("Вы успешно закрываете дыру в [limb.ru_plaintext_zone[DATIVE] || limb.plaintext_zone] у [user == victim ? "вас" : "[victim.declent_ru(GENITIVE)]"]."))
 		return TRUE
 
-/// Если кто-то использует инструмент для прижигания или что-то горячее для прижигания этой раны
+/// If someone is using either a cautery tool or something with heat to cauterize this pierce
 /datum/wound/pierce/bleed/proc/tool_cauterize(obj/item/I, mob/user)
 
-	var/improv_penalty_mult = (I.tool_behaviour == TOOL_CAUTERY ? 1 : 1.25) // На 25% дольше и менее эффективно, если вы не используете настоящий инструмент для прижигания
-	var/self_penalty_mult = (user == victim ? 1.5 : 1) // На 50% дольше и менее эффективно, если вы делаете это себе
+	var/improv_penalty_mult = (I.tool_behaviour == TOOL_CAUTERY ? 1 : 1.25) // 25% longer and less effective if you don't use a real cautery
+	var/self_penalty_mult = (user == victim ? 1.5 : 1) // 50% longer and less effective if you do it to yoursel
 
 	var/treatment_delay = base_treat_time * self_penalty_mult * improv_penalty_mult
 
