@@ -36,11 +36,7 @@
 		radiation_pulse(src, max_range = 2, threshold = RAD_EXTREME_INSULATION)
 
 /obj/item/nuke_core/suicide_act(mob/living/user)
-<<<<<<< Updated upstream
-	user.visible_message(span_suicide("[user] is rubbing [src] against [user.p_them()]self! Кажется, [user.ru_p_they()] пытается совершить самоубийство!"))
-=======
-	user.visible_message(span_suicide("[user] трет [src.name] об себя! Похоже, что [user] пытается совершить самоубийство!"))
->>>>>>> Stashed changes
+	user.visible_message(span_suicide("[capitalize(user.declent_ru(NOMINATIVE))] трет [declent_ru(NOMINATIVE)] об себя! Кажется, [user.ru_p_they()] пытается совершить самоубийство!"))
 	return TOXLOSS
 
 //nuke core box, for carrying the core
@@ -74,7 +70,7 @@
 		icon_state = "core_container_sealed"
 		playsound(src, 'sound/items/deconstruct.ogg', 60, TRUE)
 		if(ismob(loc))
-			to_chat(loc, span_warning("[src.name] надежно запечатан, радиация [core] сдерживается."))
+			to_chat(loc, span_warning("Контейнер надежно запечатан, радиация [core] сдерживается."))
 
 /obj/item/nuke_core_container/attackby(obj/item/nuke_core/core, mob/user)
 	if(istype(core))
@@ -172,12 +168,12 @@
 	if(istype(W, /obj/item/hemostat/supermatter))
 		var/obj/item/hemostat/supermatter/tongs = W
 		if (tongs.sliver)
-			to_chat(user, span_warning("[tongs.name] уже держат осколок суперматерии!"))
+			to_chat(user, span_warning("[tongs] уже держат осколок суперматерии!"))
 			return FALSE
 		forceMove(tongs)
 		tongs.sliver = src
 		tongs.update_appearance()
-		to_chat(user, span_notice("Вы осторожно поднимаете [declent_ru(NOMINATIVE)] с помощью [tongs.name]."))
+		to_chat(user, span_notice("Вы осторожно поднимаете [declent_ru(NOMINATIVE)] с помощью [tongs]."))
 	else if(istype(W, /obj/item/scalpel/supermatter) || istype(W, /obj/item/nuke_core_container/supermatter/)) // we don't want it to dust
 		return
 	else
@@ -201,8 +197,8 @@
 	else
 		message_admins("[src] has consumed [key_name_admin(victim)] [ADMIN_JMP(src)] via throw impact.")
 		investigate_log("has consumed [key_name(victim)] via throw impact.", INVESTIGATE_ENGINE)
-	victim.visible_message(span_danger("Когда [victim] попадает под удар [declent_ru(NOMINATIVE)], оба превращаются в пыль, и тишина заполняет комнату..."),\
-		span_userdanger("Вас ударяет [declent_ru(NOMINATIVE)], и все внезапно затихает. \n[capitalize(declent_ru(NOMINATIVE))] рассыпается в пыль, и как только вы можете заметить, вы тоже рассыпаетесь."),\
+	victim.visible_message(span_danger("Когда [capitalize(victim.declent_ru(NOMINATIVE))] попадает под удар [declent_ru(NOMINATIVE)], оба превращаются в пыль, и тишина заполняет комнату..."),\
+		span_userdanger("Вас ударяет [declent_ru(NOMINATIVE)], и все внезапно затихает. \n[capitalize(declent_ru(NOMINATIVE))] рассыпается в пыль, и как только вы замечаете это, вы тоже рассыпаетесь."),\
 		span_hear("Все внезапно затихает."))
 	victim.investigate_log("has been dusted by [src].", INVESTIGATE_DEATHS)
 	victim.dust()
@@ -214,8 +210,8 @@
 	..()
 	if(!isliving(user) || HAS_TRAIT(user, TRAIT_GODMODE)) //try to keep this in sync with supermatter's consume fail conditions
 		return FALSE
-	user.visible_message(span_danger("[user] протягивает руку и пытается поднять [src.name]. Тело [user.p_their()] начинает светиться и вспыхивает, а затем рассыпается в пыль!"),\
-			span_userdanger("Вы тянетесь к [src.name] руками. Это было глупо."),\
+	user.visible_message(span_danger("[capitalize(user.declent_ru(NOMINATIVE))] протягивает руку и пытается поднять [declent_ru(NOMINATIVE)]. [capitalize(user.ru_p_them())] тело начинает светиться и вспыхивает, а затем рассыпается в пыль!"),\
+			span_userdanger("Вы тянетесь к [declent_ru(NOMINATIVE)] руками. Доволько глупо..."),\
 			span_hear("Все внезапно затихает."))
 	radiation_pulse(user, max_range = 2, threshold = RAD_EXTREME_INSULATION, chance = 40)
 	playsound(src, 'sound/effects/supermatter.ogg', 50, TRUE)
@@ -305,7 +301,7 @@
 /obj/item/hemostat/supermatter/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum) // no instakill supermatter javelins
 	if(sliver)
 		sliver.forceMove(loc)
-		visible_message(span_notice("\n[sliver] выпадает из [src.name] при падении на землю."))
+		visible_message(span_notice("\n[sliver] выпадает из [declent_ru(NOMINATIVE)] при падении на землю."))
 		sliver = null
 		update_appearance()
 	return ..()
@@ -328,8 +324,8 @@
 		qdel(AM)
 	if (user)
 		log_combat(user, AM, "consumed", sliver, "via [src]")
-		user.visible_message(span_danger("Когда [user] прикасается к [AM] с помощью [src.name], оба превращаются в пыль и тишина заполняет комнату..."),\
-			span_userdanger("Вы прикасаетесь к [AM] с помощью [src.name], и все внезапно замолкает.\n[AM] и [sliver] превращаются в пыль, и как только вы можете это отметить, вы тоже рассыпаетесь."),\
+		user.visible_message(span_danger("Когда [capitalize(user.declent_ru(NOMINATIVE))] прикасается к [AM] с помощью [declent_ru(NOMINATIVE)], оба превращаются в пыль и тишина заполняет комнату..."),\
+			span_userdanger("Вы прикасаетесь к [AM] с помощью [declent_ru(NOMINATIVE)], и все внезапно замолкает.\n[AM] и [sliver] превращаются в пыль, и как только вы замечаете это, вы тоже рассыпаетесь."),\
 			span_hear("Все внезапно затихает."))
 		user.investigate_log("has been dusted by [src].", INVESTIGATE_DEATHS)
 		user.dust()
