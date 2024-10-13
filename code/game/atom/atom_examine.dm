@@ -32,7 +32,7 @@
 		// Weird bit but ensures that if the final element has its own "and" we don't add another one
 		tag_string = english_list(tag_string, and_text = (findtext(tag_string[length(tag_string)], " и ")) ? ", " : " и ")
 		var/post_descriptor = examine_post_descriptor(user)
-		. += "Это [tag_string] [examine_descriptor(user)][length(post_descriptor) ? " [jointext(post_descriptor, " ")]" : ""]."
+		. += "Это [examine_descriptor(user)] [tag_string][length(post_descriptor) ? " [jointext(post_descriptor, " ")]" : ""]."
 
 	if(reagents)
 		var/user_sees_reagents = user.can_see_reagents()

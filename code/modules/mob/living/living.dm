@@ -424,13 +424,13 @@
 			if(ishuman(M))
 				var/mob/living/carbon/human/grabbed_human = M
 				var/grabbed_by_hands = (zone_selected == "l_arm" || zone_selected == "r_arm") && grabbed_human.usable_hands > 0
-				M.visible_message(span_warning("[capitalize(declent_ru(NOMINATIVE))] хватает [M.declent_ru(ACCUSATIVE)] [grabbed_by_hands ? "за руки":"пассивно"]!"), \
-								span_warning("[capitalize(declent_ru(NOMINATIVE))] хватает вас [grabbed_by_hands ? "за руки":"пассивно"]!"), null, null, src)
-				to_chat(src, span_notice("Вы хватаете [M.declent_ru(ACCUSATIVE)] [grabbed_by_hands ? "за руки":"пассивно"]!"))
+				M.visible_message(span_warning("[capitalize(declent_ru(NOMINATIVE))][grabbed_by_hands ? "":" пассивно"] хватает[grabbed_by_hands ? " за руки":""] [M.declent_ru(ACCUSATIVE)]!"), \
+								span_warning("[capitalize(declent_ru(NOMINATIVE))][grabbed_by_hands ? "":" пассивно"] хватает вас [grabbed_by_hands ? " за руки":""]!"), null, null, src)
+				to_chat(src, span_notice("Вы[grabbed_by_hands ? "":" пассивно"] хватаете [M.declent_ru(ACCUSATIVE)][grabbed_by_hands ? " за руки":""]!"))
 			else
-				M.visible_message(span_warning("[capitalize(declent_ru(NOMINATIVE))] хватает [M.declent_ru(ACCUSATIVE)] пассивно!"), \
-								span_warning("[capitalize(declent_ru(NOMINATIVE))] хватает вас пассивно!"), null, null, src)
-				to_chat(src, span_notice("Вы хватаете [M.declent_ru(ACCUSATIVE)] пассивно!"))
+				M.visible_message(span_warning("[capitalize(declent_ru(NOMINATIVE))] пассивно хватает [M.declent_ru(ACCUSATIVE)]!"), \
+								span_warning("[capitalize(declent_ru(NOMINATIVE))] пассивно хватает вас!"), null, null, src)
+				to_chat(src, span_notice("Вы пассивно хватаете [M.declent_ru(ACCUSATIVE)]!"))
 
 		if(isliving(M))
 			var/mob/living/L = M
