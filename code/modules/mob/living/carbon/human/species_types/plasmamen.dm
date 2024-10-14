@@ -178,8 +178,8 @@
 		list(
 			SPECIES_PERK_TYPE = SPECIES_POSITIVE_PERK,
 			SPECIES_PERK_ICON = "bone",
-			SPECIES_PERK_NAME = "Сопротивление травмам",
-			SPECIES_PERK_DESC = "Плазмамены обладают повышенной устойчивостью к получению травм.",
+			SPECIES_PERK_NAME = "Сопротивление ранам",
+			SPECIES_PERK_DESC = "Плазмамены обладают повышенной устойчивостью к получению ран.",
 		),
 		list(
 			SPECIES_PERK_TYPE = SPECIES_POSITIVE_PERK,
