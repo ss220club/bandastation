@@ -46,7 +46,8 @@ export const RuNamesSuggestPanel = (props) => {
                 {entry_id.suggested_list['предложный']}
               </LabeledList.Item>
               <LabeledList.Item>
-                <Button
+                <Button.Confirm
+                  confirmContent="Вы уверены?"
                   color="green"
                   onClick={() =>
                     act('approve', {
@@ -54,11 +55,12 @@ export const RuNamesSuggestPanel = (props) => {
                     })
                   }
                 >
-                  Approve
-                </Button>
+                  Принять
+                </Button.Confirm>
               </LabeledList.Item>
               <LabeledList.Item>
-                <Button
+                <Button.Confirm
+                  confirmContent="Вы уверены?"
                   color="red"
                   onClick={() =>
                     act('deny', {
@@ -66,8 +68,8 @@ export const RuNamesSuggestPanel = (props) => {
                     })
                   }
                 >
-                  Deny
-                </Button>
+                  Отклонить
+                </Button.Confirm>
               </LabeledList.Item>
             </LabeledList>
           </Collapsible>
