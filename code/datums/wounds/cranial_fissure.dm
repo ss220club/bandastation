@@ -27,14 +27,14 @@
 /// Will allow other players to take your eyes out of your head, and slipping
 /// will cause your brain to fall out of your head.
 /datum/wound/cranial_fissure
-	name = "Cranial Fissure"
-	desc = "Patient's crown is agape, revealing severe damage to the skull."
-	treat_text = "Surgical reconstruction of the skull is necessary."
-	treat_text_short = "Surgical reconstruction required."
-	examine_desc = "is split open"
-	occur_text = "is split into two separated chunks"
+	name = "Черепная трещина"
+	desc = "Макушка пациента раскрыта, обнажая серьезные повреждения черепа."
+	treat_text = "Необходима хирургическая реконструкция черепа."
+	treat_text_short = "Необходима хирургическая реконструкция."
+	examine_desc = "разделен на две части"
+	occur_text = "разделяется на две отделенные части"
 
-	simple_desc = "Patient's skull is split open."
+	simple_desc = "Череп пациента расколот."
 	threshold_penalty = 40
 
 	severity = WOUND_SEVERITY_CRITICAL
