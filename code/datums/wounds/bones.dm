@@ -198,12 +198,12 @@
 /// Joint Dislocation (Moderate Blunt)
 /datum/wound/blunt/bone/moderate
 	name = "Joint Dislocation"
-	desc = "Patient's limb has been unset from socket, causing pain and reduced motor function."
-	treat_text = "Apply Bonesetter to the affected limb. \
-		Manual relocation by via an aggressive grab and a tight hug to the affected limb may also suffice."
-	treat_text_short = "Apply Bonesetter, or manually relocate the limb."
-	examine_desc = "is awkwardly janked out of place"
-	occur_text = "janks violently and becomes unseated"
+	desc = "Конечность пациента выпала из пазухи, вызывая боль и моторную дисфункцию."
+	treat_text = "Используйте костоправ на поврежденной конечности. \
+		Можно вправить руками если агрессивно схватить конечность и твердым объятием вставить на место."
+	treat_text_short = "Используйте костоправ или вручную вправьте сустав."
+	examine_desc = "выглядит не на своем месте"
+	occur_text = "болезненно сгибается и начинает безвольно шататься."
 	severity = WOUND_SEVERITY_MODERATE
 	interaction_efficiency_penalty = 1.3
 	limp_slowdown = 3
@@ -213,9 +213,9 @@
 	status_effect_type = /datum/status_effect/wound/blunt/bone/moderate
 	scar_keyword = "dislocate"
 
-	simple_desc = "Patient's bone has been dislocated, causing limping or reduced dexterity."
-	simple_treat_text = "<b>Bandaging</b> the wound will reduce its impact until treated with a bonesetter. Most commonly, it is treated by aggressively grabbing someone and helpfully wrenching the limb in place, though there's room for malfeasance when doing this."
-	homemade_treat_text = "Besides bandaging and wrenching, <b>bone setters</b> can be printed in lathes and utilized on oneself at the cost of great pain. As a last resort, <b>crushing</b> the patient with a <b>firelock</b> has sometimes been noted to fix their dislocated limb."
+	simple_desc = "Сустав пациента вывихнут, снижая общую ловкость."
+	simple_treat_text = "<b>Перевязывание</b> раны уменьшит ее влияние, пока не будет вправлена костоправом. Чаще их вправляют агрессивным хватом и последующим крепким объятием, хотя этим не стоит злоупотреблять."
+	homemade_treat_text = "Помимо бинтования и использования гаечного ключа, <b>костоправ</b> можно изготовить на станке и использовать на себе, но это будет сопровождаться сильной болью. В крайнем случае, <b>раздавливание</b>  пациента с помощью <b>аварийного шлюза</b> иногда может помочь вправить конечность."
 
 /datum/wound_pregen_data/bone/dislocate
 	abstract = FALSE
@@ -334,13 +334,13 @@
 */
 
 /datum/wound/blunt/bone/severe
-	name = "Hairline Fracture"
-	desc = "Patient's bone has suffered a crack in the foundation, causing serious pain and reduced limb functionality."
-	treat_text = "Repair surgically. In the event of an emergency, an application of bone gel over the affected area will fix over time. \
-		A splint or sling of medical gauze can also be used to prevent the fracture from worsening."
-	treat_text_short = "Repair surgically, or apply bone gel. A splint or gauze sling can also be used."
-	examine_desc = "appears grotesquely swollen, jagged bumps hinting at chips in the bone"
-	occur_text = "sprays chips of bone and develops a nasty looking bruise"
+	name = "Закрытый перелом"
+	desc = "Кость пациента имеет трещину, вызывая сильную боль и снижение функциональности конечности."
+	treat_text = "Вылечить хирургически. В случае крайней необходимости нанесение костного геля на пораженную область позволит зажить со временем. \
+		Также можно использовать шину или перевязывание медицинской марлей, чтобы предотвратить ухудшение трещины."
+	treat_text_short = "Хирургическое лечение или нанесение костного геля. Можно также использовать шину или повязку из марли."
+	examine_desc = "выглядит ужасно опухшей, с зазубренными буграми, указывающими на трещины в кости"
+	occur_text = "осыпается костной крошкой, и появляется синяк"
 
 	severity = WOUND_SEVERITY_SEVERE
 	interaction_efficiency_penalty = 2
@@ -356,9 +356,9 @@
 	wound_flags = (ACCEPTS_GAUZE | MANGLES_INTERIOR)
 	regen_ticks_needed = 120 // ticks every 2 seconds, 240 seconds, so roughly 4 minutes default
 
-	simple_desc = "Patient's bone has cracked in the middle, drastically reducing limb functionality."
-	simple_treat_text = "<b>Bandaging</b> the wound will reduce its impact until <b>surgically treated</b> with bone gel and surgical tape."
-	homemade_treat_text = "<b>Bone gel and surgical tape</b> may be applied directly to the wound, though this is quite difficult for most people to do so individually unless they've dosed themselves with one or more <b>painkillers</b> (Morphine and Miner's Salve have been known to help)"
+	simple_desc = "Кость пациента треснула посередине, значительно снижая функциональность конечности."
+	simple_treat_text = "<b>Перевязывание</b> раны уменьшит её влияние до тех пор, пока не будет проведено <b>хирургическое лечение</b> с использованием костного геля и хирургической ленты."
+	homemade_treat_text = "<b>Костный гель и хирургическая лента</b> могут быть нанесены непосредственно на рану, хотя это довольно сложно для большинства людей сделать самостоятельно, если только они не приняли одну или несколько <b>обезболивающих</b> (известно, что морфин и мазь шахтёра помогают)."
 
 
 /datum/wound_pregen_data/bone/hairline
@@ -371,13 +371,13 @@
 /// Compound Fracture (Critical Blunt)
 /datum/wound/blunt/bone/critical
 	name = "Compound Fracture"
-	desc = "Patient's bones have suffered multiple fractures, \
-		couped with a break in the skin, causing significant pain and near uselessness of limb."
-	treat_text = "Immediately bind the affected limb with gauze or a splint. Repair surgically. \
-		In the event of an emergency, bone gel and surgical tape can be applied to the affected area to fix over a long period of time."
-	treat_text_short = "Repair surgically, or apply bone gel and surgical tape. A splint or gauze sling should also be used."
-	examine_desc = "is thoroughly pulped and cracked, exposing shards of bone to open air"
-	occur_text = "cracks apart, exposing broken bones to open air"
+	desc = "Кости пациента получили множественные переломы, \
+		сопровождающиеся разрывом кожи, вызывая значительную боль и практически полную бесполезность конечности."
+	treat_text = "Немедленно перевяжите поврежденную конечность марлей или наложите шину. Проведите хирургическое лечение. \
+		В случае чрезвычайной ситуации можно нанести костный гель и хирургическую ленту на пораженную область для восстановления в течение длительного времени."
+	treat_text_short = "Проведите хирургическое лечение или нанесите костный гель и хирургическую ленту. Также следует использовать шину или повязку из марли."
+	examine_desc = "полностью раздроблена и треснута, обнажая осколки кости"
+	occur_text = "раскалывается, обнажая сломанные кости на воздух"
 
 	severity = WOUND_SEVERITY_CRITICAL
 	interaction_efficiency_penalty = 2.5
@@ -395,9 +395,9 @@
 	wound_flags = (ACCEPTS_GAUZE | MANGLES_INTERIOR)
 	regen_ticks_needed = 240 // ticks every 2 seconds, 480 seconds, so roughly 8 minutes default
 
-	simple_desc = "Patient's bones have effectively shattered completely, causing total immobilization of the limb."
-	simple_treat_text = "<b>Bandaging</b> the wound will slightly reduce its impact until <b>surgically treated</b> with bone gel and surgical tape."
-	homemade_treat_text = "Although this is extremely difficult and slow to function, <b>Bone gel and surgical tape</b> may be applied directly to the wound, though this is nigh-impossible for most people to do so individually unless they've dosed themselves with one or more <b>painkillers</b> (Morphine and Miner's Salve have been known to help)"
+	simple_desc = "Кости пациента фактически полностью раздроблены, вызывая полную неподвижность конечности."
+	simple_treat_text = "<b>Перевязывание</b> раны немного уменьшит её влияние до тех пор, пока не будет проведено <b>хирургическое лечение</b> с использованием костного геля и хирургической ленты."
+	homemade_treat_text = "Хотя это крайне сложно и медленно в исполнении, <b>костный гель и хирургическая лента</b> могут быть нанесены непосредственно на рану, однако для большинства людей это практически невозможно выполнить самостоятельно, если только они не приняли одну или несколько <b>обезболивающих</b> (Известно, что морфин и мазь шахтёра могут помочь)"
 
 /datum/wound_pregen_data/bone/compound
 	abstract = FALSE

@@ -302,11 +302,11 @@
 // we don't even care about first degree burns, straight to second
 /datum/wound/burn/flesh/moderate
 	name = "Second Degree Burns"
-	desc = "Patient is suffering considerable burns with mild skin penetration, weakening limb integrity and increased burning sensations."
-	treat_text = "Apply topical ointment or regenerative mesh to the wound."
-	treat_text_short = "Apply healing aid such as regenerative mesh."
-	examine_desc = "is badly burned and breaking out in blisters"
-	occur_text = "breaks out with violent red burns"
+	desc = "Пациент страдает от значительных ожогов с незначительным проникновением в кожу, что ослабляет целостность конечности и вызывает усиленные ощущения жжения."
+	treat_text = "Нанесите местную мазь или регенеративную сетку на рану."
+	treat_text_short = "Нанесите средство для лечения, например, регенеративную сетку."
+	examine_desc = "сильно обожжёна и покрывается волдырями"
+	occur_text = "покрывается ярко-красными ожогами"
 	severity = WOUND_SEVERITY_MODERATE
 	damage_multiplier_penalty = 1.1
 	threshold_penalty = 30 // burns cause significant decrease in limb integrity compared to other wounds
@@ -314,9 +314,9 @@
 	flesh_damage = 5
 	scar_keyword = "burnmoderate"
 
-	simple_desc = "Patient's skin is burned, weakening the limb and multiplying perceived damage!"
-	simple_treat_text = "Ointment will speed up recovery, as will regenerative mesh. Risk of infection is negligible."
-	homemade_treat_text = "Healthy tea will speed up recovery. Salt, or preferably a salt-water mixture, will sanitize the wound, but the former will cause skin irritation, increasing the risk of infection."
+	simple_desc = "Кожа пациента обожжена, что ослабляет конечность и увеличивает ощущаемый урон!"
+	simple_treat_text = "Мазь ускорит восстановление, как и регенеративная сетка. Риск заражения незначителен."
+	homemade_treat_text = "Полезный чай ускорит восстановление. Соль или, предпочтительно, солевой раствор, продезинфицируют рану, но использование соли может вызвать раздражение кожи и увеличить риск заражения."
 
 /datum/wound_pregen_data/flesh_burn/second_degree
 	abstract = FALSE
@@ -327,14 +327,14 @@
 
 /datum/wound/burn/flesh/severe
 	name = "Third Degree Burns"
-	desc = "Patient is suffering extreme burns with full skin penetration, creating serious risk of infection and greatly reduced limb integrity."
-	treat_text = "Swiftly apply healing aids such as Synthflesh or regenerative mesh to the wound. \
-		Disinfect the wound and surgically debride any infected skin, and wrap in clean gauze / use ointment to prevent further infection. \
-		If the limb has locked up, it must be amputated, augmented or treated with cryogenics."
-	treat_text_short = "Apply healing aid such as regenerative mesh, Synthflesh, or cryogenics and disinfect / debride. \
-		Clean gauze or ointment will slow infection rate."
-	examine_desc = "appears seriously charred, with aggressive red splotches"
-	occur_text = "chars rapidly, exposing ruined tissue and spreading angry red burns"
+	desc = "Пациент страдает от сильнейших ожогов с полным проникновением в кожу, что создает серьезный риск инфекции и значительно снижает целостность конечности."
+	treat_text = "Немедленно примените лечебные средства, такие как синтплоть или регенеративная сетка, к ране. \
+			Продезинфицируйте рану и хирургически удалите инфицированную кожу, затем оберните чистой марлей или используйте мазь для предотвращения дальнейшего заражения. \
+			Если конечность отмерла, ее необходимо ампутировать, заменить имплантатом или лечить криогеникой."
+	treat_text_short = "Примените лечебные средства, такие как регенеративная сетка, синтплоть или криогеника, и продезинфицируйте / удалите инфицированные участки. \
+			Чистая марля или мазь замедлят скорость распространения инфекции."
+	examine_desc = "выглядит сильно обугленной, с агрессивными красными пятнами"
+	occur_text = "обугливается, обнажая разрушенные ткани и распространяя ярко-красные ожоги"
 	severity = WOUND_SEVERITY_SEVERE
 	damage_multiplier_penalty = 1.2
 	threshold_penalty = 40
@@ -344,9 +344,9 @@
 	flesh_damage = 12.5
 	scar_keyword = "burnsevere"
 
-	simple_desc = "Patient's skin is badly burned, significantly weakening the limb and compounding further damage!!"
-	simple_treat_text = "<b>Bandages will speed up recovery</b>, as will <b>ointment or regenerative mesh</b>. <b>Spaceacilin, sterilizine, and 'Miner's Salve'</b> will help with infection."
-	homemade_treat_text = "<b>Healthy tea</b> will speed up recovery. <b>Salt</b>, or preferably a <b>salt-water</b> mixture, will sanitize the wound, but the former especially will cause skin irritation and dehydration, speeding up infection. <b>Space Cleaner</b> can be used as disinfectant in a pinch."
+	simple_desc = "Кожа пациента сильно обожжена, что значительно ослабляет конечность и усугубляет дальнейшие повреждения!!"
+	simple_treat_text = "<b>Бинты ускорят восстановление</b>, как и <b>мазь или регенеративная сетка</b>. <b>Спейсациллин, стерилизин и 'Шахтерская мазь'</b> помогут справиться с инфекцией."
+	homemade_treat_text = "<b>Полезный чай</b> ускорит восстановление. <b>Соль</b> или, предпочтительно, <b>смесь соли и воды</b>, продезинфицируют рану, но особенно первая вызовет раздражение кожи и обезвоживание, что ускорит развитие инфекции. <b>Космоочиститель</b> можно использовать в качестве дезинфицирующего средства в крайнем случае."
 
 /datum/wound_pregen_data/flesh_burn/third_degree
 	abstract = FALSE
@@ -357,14 +357,14 @@
 
 /datum/wound/burn/flesh/critical
 	name = "Catastrophic Burns"
-	desc = "Patient is suffering near complete loss of tissue and significantly charred muscle and bone, creating life-threatening risk of infection and negligible limb integrity."
-	treat_text = "Immediately apply healing aids such as Synthflesh or regenerative mesh to the wound. \
-		Disinfect the wound and surgically debride any infected skin, and wrap in clean gauze / use ointment to prevent further infection. \
-		If the limb has locked up, it must be amputated, augmented or treated with cryogenics."
-	treat_text_short = "Apply healing aid such as regenerative mesh, Synthflesh, or cryogenics and disinfect / debride. \
-		Clean gauze or ointment will slow infection rate."
-	examine_desc = "is a ruined mess of blanched bone, melted fat, and charred tissue"
-	occur_text = "vaporizes as flesh, bone, and fat melt together in a horrifying mess"
+	desc = "Пациент страдает от почти полного разрушения тканей, с серьезными обугленными мышцами и костями, что создает угрожающую жизни опасность инфекции и практически нулевую целостность конечности."
+	treat_text = "Немедленно нанесите лечебные средства, такие как Синтплоть или регенеративную сетку, на рану. \
+		Продезинфицируйте рану и хирургически удалите инфицированные участки кожи, затем оберните чистой марлей / используйте мазь для предотвращения дальнейшей инфекции. \
+		Если конечность зафиксирована, её необходимо ампутировать, заменить на имплант или лечить с помощью криогенной терапии."
+	treat_text_short = "Нанесите лечебное средство, такое как регенеративная сетка, Синтплоть или используйте криотерапию и продезинфицируйте / удалите инфицированные участки. \
+		Чистая марля или мазь замедлит скорость инфицирования."
+	examine_desc = "выглядит как разрушенный беспорядок из обесцвеченных костей, расплавленного жира и обугленной ткани"
+	occur_text = "источет дымок, когда плоть, кости и жир плавятся в ужасающую массу"
 	severity = WOUND_SEVERITY_CRITICAL
 	damage_multiplier_penalty = 1.3
 	sound_effect = 'sound/effects/wounds/sizzle2.ogg'
@@ -375,9 +375,9 @@
 	flesh_damage = 20
 	scar_keyword = "burncritical"
 
-	simple_desc = "Patient's skin is destroyed and tissue charred, leaving the limb with almost <b>no integrity<b> and a drastic chance of <b>infection<b>!!!"
-	simple_treat_text = "Immediately <b>bandage</b> the wound and treat it with <b>ointment or regenerative mesh</b>. <b>Spaceacilin, sterilizine, or 'Miner's Salve'</b> will stave off infection. Seek professional care <b>immediately</b>, before sepsis sets in and the wound becomes untreatable."
-	homemade_treat_text = "<b>Healthy tea</b> will help with recovery. A <b>salt-water mixture</b>, topically applied, might help stave off infection in the short term, but pure table salt is NOT recommended. <b>Space Cleaner</b> can be used as disinfectant in a pinch."
+	simple_desc = "Кожа пациента разрушена, ткани обуглены, конечность почти лишена <b>целостности</b> и подвержена крайне высокой вероятности <b>инфекции</b>!!!"
+	simple_treat_text = "Немедленно <b>перевяжите</b> рану и обработайте её <b>мазью или регенеративной сеткой</b>. <b>Спейсациллин, стерилизин или 'Мазь шахтёра'</b> помогут предотвратить инфекцию. Обратитесь за профессиональной помощью <b>немедленно</b>, до того как начнётся сепсис и рана станет неизлечимой."
+	homemade_treat_text = "<b>Целебный чай</b> поможет с восстановлением. <b>Раствор соли</b>, нанесенный местно, может временно предотвратить инфекцию, но чистая поваренная соль НЕ рекомендуется. <b>Космический очиститель</b> можно использовать в качестве дезинфицирующего средства в крайнем случае."
 
 /datum/wound_pregen_data/flesh_burn/fourth_degree
 	abstract = FALSE
@@ -389,9 +389,9 @@
 ///special severe wound caused by sparring interference or other god related punishments.
 /datum/wound/burn/flesh/severe/brand
 	name = "Holy Brand"
-	desc = "Patient is suffering extreme burns from a strange brand marking, creating serious risk of infection and greatly reduced limb integrity."
-	examine_desc = "appears to have holy symbols painfully branded into their flesh, leaving severe burns."
-	occur_text = "chars rapidly into a strange pattern of holy symbols, burned into the flesh."
+	desc = "Пациент страдает от сильных ожогов с загадочными клеймами, создающими серьезный риск инфекции и сильно сниженную целостность конечности."
+	examine_desc = "похоже, что на его/ее коже были выжжены священные символы, оставившие сильные ожоги."
+	occur_text = "быстро обугливается в странный узор из священных символов, выжженных на коже."
 
 	simple_desc = "Patient's skin has had strange markings burned onto it, significantly weakening the limb and compounding further damage!!"
 
@@ -404,9 +404,9 @@
 
 /datum/wound/burn/flesh/severe/cursed_brand
 	name = "Ancient Brand"
-	desc = "Patient is suffering extreme burns with oddly ornate brand markings, creating serious risk of infection and greatly reduced limb integrity."
-	examine_desc = "appears to have ornate symbols painfully branded into their flesh, leaving severe burns"
-	occur_text = "chars rapidly into a pattern that can only be described as an agglomeration of several financial symbols, burned into the flesh"
+	desc = "Пациент страдает от сильных ожогов с причудливым орнаментом, создающих серьезный риск инфекции и сильно сниженной целостностью конечности."
+	examine_desc = "похоже, что на его/ее коже были выжжены причудливые символы, оставившие сильные ожоги."
+	occur_text = "быстро обугливается в узор, который можно описать только как сочетание нескольких финансовых символов, выжженных на коже."
 
 /datum/wound/burn/flesh/severe/cursed_brand/get_limb_examine_description()
 	return span_warning("The flesh on this limb has several ornate symbols burned into it, with pitting throughout.")

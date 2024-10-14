@@ -12,8 +12,8 @@
 	threshold_minimum = WOUND_DISMEMBER_OUTRIGHT_THRESH // not actually used since dismembering is handled differently, but may as well assign it since we got it
 
 /datum/wound/loss
-	name = "Dismemberment Wound"
-	desc = "oof ouch!!"
+	name = "Рана от ампутации"
+	desc = "Ай яй яй!!"
 
 	sound_effect = 'sound/effects/dismember.ogg'
 	severity = WOUND_SEVERITY_LOSS

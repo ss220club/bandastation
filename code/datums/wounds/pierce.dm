@@ -191,13 +191,13 @@
 
 /datum/wound/pierce/bleed/moderate
 	name = "Minor Skin Breakage"
-	desc = "Patient's skin has been broken open, causing severe bruising and minor internal bleeding in affected area."
-	treat_text = "Apply bandaging or suturing to the wound, make use of blood clotting agents, \
-		cauterization, or in extreme circumstances, exposure to extreme cold or vaccuum. \
-		Follow with food and a rest period."
-	treat_text_short = "Apply bandaging or suturing."
-	examine_desc = "has a small, circular hole, gently bleeding"
-	occur_text = "spurts out a thin stream of blood"
+	desc = "Кожа пациента была повреждена, вызвав сильный синяк и незначительное внутреннее кровотечение в пораженной области."
+	treat_text = "Перевяжите или зашейте рану, используйте коагулянты, \
+		прижигание или в крайних случаях - воздействие сильного холода или вакуума. \
+		Следует обеспечить прием пищи и период отдыха."
+	treat_text_short = "Перевяжите или зашейте рану."
+	examine_desc = "имеет небольшое круглое отверстие, слегка кровоточит"
+	occur_text = "выбрызгивает тонкую струю крови"
 	sound_effect = 'sound/effects/wounds/pierce1.ogg'
 	severity = WOUND_SEVERITY_MODERATE
 	initial_flow = 1.5
@@ -208,8 +208,8 @@
 	status_effect_type = /datum/status_effect/wound/pierce/moderate
 	scar_keyword = "piercemoderate"
 
-	simple_treat_text = "<b>Bandaging</b> the wound will reduce blood loss, help the wound close by itself quicker, and speed up the blood recovery period. The wound itself can be slowly <b>sutured</b> shut."
-	homemade_treat_text = "<b>Tea</b> stimulates the body's natural healing systems, slightly fastening clotting. The wound itself can be rinsed off on a sink or shower as well. Other remedies are unnecessary."
+	simple_treat_text = "<b>Перевязывание</b> раны уменьшит кровопотерю, поможет ране быстрее закрыться самостоятельно и ускорит период восстановления крови. Саму рану можно медленно <b>зашить</b>."
+	homemade_treat_text = "<b>Чай</b> стимулирует естественныеHealing системы организма, слегка ускоряя свёртывание крови. Рану также можно промыть в раковине или под душем. Другие средства не нужны."
 
 /datum/wound_pregen_data/flesh_pierce/breakage
 	abstract = FALSE
@@ -225,13 +225,13 @@
 
 /datum/wound/pierce/bleed/severe
 	name = "Open Puncture"
-	desc = "Patient's internal tissue is penetrated, causing sizeable internal bleeding and reduced limb stability."
-	treat_text = "Swiftly apply bandaging or suturing to the wound, make use of blood clotting agents or saline-glucose, \
-		cauterization, or in extreme circumstances, exposure to extreme cold or vaccuum. \
-		Follow with iron supplements and a rest period."
-	treat_text_short = "Apply bandaging, suturing, clotting agents, or cauterization."
-	examine_desc = "is pierced clear through, with bits of tissue obscuring the open hole"
-	occur_text = "looses a violent spray of blood, revealing a pierced wound"
+	desc = "Внутренние ткани пациента повреждены, что вызывает значительное внутреннее кровотечение и снижение стабильности конечности."
+	treat_text = "Быстро примените повязку или швы к ране, используйте средства для свертывания крови или соляно-глюкозный раствор, \
+		каутеризацию или, в крайних случаях, воздействие на рану экстремальным холодом или вакуумом. \
+		Следует дополнить лечение добавками железа и периодом отдыха."
+	treat_text_short = "Примените повязку, швы, средства для свертывания крови или кутеризацию."
+	examine_desc = "проколота насквозь, с кусочками ткани, закрывающими открытое отверстие"
+	occur_text = "брызжет сильным фонтаном крови, обнажая проколотую рану"
 	sound_effect = 'sound/effects/wounds/pierce2.ogg'
 	severity = WOUND_SEVERITY_SEVERE
 	initial_flow = 2.25
@@ -242,8 +242,8 @@
 	status_effect_type = /datum/status_effect/wound/pierce/severe
 	scar_keyword = "piercesevere"
 
-	simple_treat_text = "<b>Bandaging</b> the wound is essential, and will reduce blood loss. Afterwards, the wound can be <b>sutured</b> shut, preferably while the patient is resting and/or grasping their wound."
-	homemade_treat_text = "Bed sheets can be ripped up to make <b>makeshift gauze</b>. <b>Flour, table salt, or salt mixed with water</b> can be applied directly to stem the flow, though unmixed salt will irritate the skin and worsen natural healing. Resting and grabbing your wound will also reduce bleeding."
+	simple_treat_text = "<b>Перевязывание</b> раны необходимо и поможет уменьшить кровотечение. После этого рану можно <b>зашить</b>, предпочтительно когда пациент отдыхает и/или держит свою рану."
+	homemade_treat_text = "Простыни можно разорвать, чтобы сделать <b>самодельный бинт</b>. <b>Мука, поваренная соль или соль, смешанная с водой</b> могут быть нанесены непосредственно на рану, чтобы остановить кровотечение, хотя неразмешанная соль будет раздражать кожу и ухудшать естественное заживление. Отдых и удерживание раны также помогут уменьшить кровотечение."
 
 /datum/wound_pregen_data/flesh_pierce/open_puncture
 	abstract = FALSE
@@ -258,13 +258,13 @@
 
 /datum/wound/pierce/bleed/critical
 	name = "Ruptured Cavity"
-	desc = "Patient's internal tissue and circulatory system is shredded, causing significant internal bleeding and damage to internal organs."
-	treat_text = "Immediately apply bandaging or suturing to the wound, make use of blood clotting agents or saline-glucose, \
-		cauterization, or in extreme circumstances, exposure to extreme cold or vaccuum. \
-		Follow with supervised resanguination."
-	treat_text_short = "Apply bandaging, suturing, clotting agents, or cauterization."
-	examine_desc = "is ripped clear through, barely held together by exposed bone"
-	occur_text = "blasts apart, sending chunks of viscera flying in all directions"
+	desc = "Внутренние ткани и кровеносная система пациента разорваны, что вызывает значительное внутреннее кровотечение и повреждение внутренних органов."
+	treat_text = "Сразу же наложите повязку или сделайте швы на ране, используйте средства для остановки кровотечения или соляно-глюкозный раствор, \
+		краткосрочное сжигание, или в крайних случаях, воздействие экстремального холода или вакуума. \
+		Затем следует провести контролируемую реинфузию."
+	treat_text_short = "Наложите повязку, сделайте швы, используйте средства для остановки кровотечения или краткосрочное сжигание."
+	examine_desc = "разорвана насквозь, едва удерживается на месте открытой костью"
+	occur_text = "разлетается на куски, отправляя части внутренностей во все стороны"
 	sound_effect = 'sound/effects/wounds/pierce3.ogg'
 	severity = WOUND_SEVERITY_CRITICAL
 	initial_flow = 3
@@ -276,8 +276,8 @@
 	scar_keyword = "piercecritical"
 	wound_flags = (ACCEPTS_GAUZE | MANGLES_EXTERIOR | CAN_BE_GRASPED)
 
-	simple_treat_text = "<b>Bandaging</b> the wound is of utmost importance, as is seeking direct medical attention - <b>Death</b> will ensue if treatment is delayed whatsoever, with lack of <b>oxygen</b> killing the patient, thus <b>Food, Iron, and saline solution</b> is always recommended after treatment. This wound will not naturally seal itself."
-	homemade_treat_text = "Bed sheets can be ripped up to make <b>makeshift gauze</b>. <b>Flour, salt, and saltwater</b> topically applied will help. Dropping to the ground and grabbing your wound will reduce blood flow."
+	simple_treat_text = "<b>Перевязывание</b> раны имеет первостепенное значение, так же как и получение непосредственной медицинской помощи - <b>Смерть</b> наступит, если лечение будет задержано, так как недостаток <b>кислорода</b> убьет пациента, поэтому <b>Пища, Железо и солевой раствор</b> всегда рекомендуются после лечения. Эта рана не заживет самостоятельно."
+	homemade_treat_text = "Простыни можно порвать, чтобы сделать <b>временные марлевые повязки</b>. <b>Мука, соль и соленая вода</b>, нанесенные на кожу, помогут. Падение на землю и удерживание раны снизит кровотечение."
 
 /datum/wound_pregen_data/flesh_pierce/cavity
 	abstract = FALSE
