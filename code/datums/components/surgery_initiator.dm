@@ -289,7 +289,7 @@
 			target.balloon_alert(user, "неправильный тип конечности!")
 			return
 		if(surgery.targetable_wound && !affecting_limb.get_wound_type(surgery.targetable_wound))
-			target.balloon_alert(user, "нет травм для лечения!")
+			target.balloon_alert(user, "нет ран для лечения!")
 			return
 
 	if (IS_IN_INVALID_SURGICAL_POSITION(target, surgery))

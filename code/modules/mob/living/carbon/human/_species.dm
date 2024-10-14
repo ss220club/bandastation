@@ -1784,7 +1784,7 @@ GLOBAL_LIST_EMPTY(features_by_species)
 			SPECIES_PERK_TYPE = SPECIES_NEGATIVE_PERK,
 			SPECIES_PERK_ICON = "user-times",
 			SPECIES_PERK_NAME = "Легко ранимый",
-			SPECIES_PERK_DESC = "Кожа у [plural_form] очень слабая и хрупкая. Им гораздо легче получить серьезные травмы.",
+			SPECIES_PERK_DESC = "Кожа у [plural_form] очень слабая и хрупкая. Им гораздо легче получить серьезные раны.",
 		))
 
 	if(TRAIT_TOXINLOVER in inherent_traits)

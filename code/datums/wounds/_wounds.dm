@@ -18,7 +18,7 @@
 
 /datum/wound
 	/// What it's named
-	var/name = "Травма"
+	var/name = "Рана"
 	/// The description shown on the scanners
 	var/desc = ""
 	/// The basic treatment suggested by health analyzers
@@ -601,7 +601,7 @@
 /datum/wound/proc/get_examine_description(mob/user)
 	. = get_wound_description(user)
 	if(HAS_TRAIT(src, TRAIT_WOUND_SCANNED))
-		. += span_notice("\nРядом с травмой есть голоизображение, указывающее на возможные варианты лечения.")
+		. += span_notice("\nРядом с раной есть голоизображение, указывающее на возможные варианты лечения.")
 
 	return .
 
@@ -661,7 +661,7 @@
 	for(var/i in 1 to severity)
 		severity_text_formatted += "!"
 
-	return "Травма обнаружена: [name]!<br>\
+	return "Рана обнаружена: [name]!<br>\
 		Тяжесть: [severity_text_formatted]<br>\
 		Описание: [simple_desc || desc]<br>\
 		<i>Руководство по лечению: [simple_treat_text]</i><br>\
