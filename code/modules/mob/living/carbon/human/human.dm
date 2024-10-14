@@ -182,12 +182,12 @@
 				var/span = "notice"
 				var/status = ""
 				if(getBruteLoss())
-					to_chat(human_user, "<b>Анализ физических ранений:</b>")
+					to_chat(human_user, "<b>Анализ ушибов на коже:</b>")
 					for(var/X in bodyparts)
 						var/obj/item/bodypart/BP = X
 						var/brutedamage = BP.brute_dam
 						if(brutedamage > 0)
-							status = "имеет незначительные физические повреждения."
+							status = "имеет незначительные ушибы."
 							span = "notice"
 						if(brutedamage > 20)
 							status = "имеет сильные повреждения."

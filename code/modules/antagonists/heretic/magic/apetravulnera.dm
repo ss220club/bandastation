@@ -1,6 +1,6 @@
 /datum/action/cooldown/spell/pointed/apetra_vulnera
 	name = "Apetra Vulnera"
-	desc = "Вызывает обильное кровотечение из каждой части тела, которое имеет более, чем 15 физического урона. \
+	desc = "Вызывает обильное кровотечение из каждой части тела, которое имеет более 15-и ушибов. \
 		Накладывает рану на случайную часть тела, если не найдены подходящие части тела."
 	background_icon_state = "bg_heretic"
 	overlay_icon_state = "bg_heretic_border"

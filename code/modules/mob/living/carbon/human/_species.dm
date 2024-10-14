@@ -1625,16 +1625,16 @@ GLOBAL_LIST_EMPTY(features_by_species)
 		to_add += list(list(
 			SPECIES_PERK_TYPE = SPECIES_NEGATIVE_PERK,
 			SPECIES_PERK_ICON = "band-aid",
-			SPECIES_PERK_NAME = "Слабость к физическому урону",
-			SPECIES_PERK_DESC = "[plural_form] слабы к физическому урону.",
+			SPECIES_PERK_NAME = "Слабость к ушибам",
+			SPECIES_PERK_DESC = "[plural_form] слабы к получению ушибов.",
 		))
 
 	if(initial(fake_chest.brute_modifier) < 1)
 		to_add += list(list(
 			SPECIES_PERK_TYPE = SPECIES_POSITIVE_PERK,
 			SPECIES_PERK_ICON = "shield-alt",
-			SPECIES_PERK_NAME = "Устойчивость к физическому урону",
-			SPECIES_PERK_DESC = "[plural_form] устойчивы к физическому урону.",
+			SPECIES_PERK_NAME = "Устойчивость к ушибам",
+			SPECIES_PERK_DESC = "[plural_form] устойчивы к получению ушибов.",
 		))
 
 	// Burn related
@@ -1643,7 +1643,7 @@ GLOBAL_LIST_EMPTY(features_by_species)
 			SPECIES_PERK_TYPE = SPECIES_NEGATIVE_PERK,
 			SPECIES_PERK_ICON = "burn",
 			SPECIES_PERK_NAME = "Слабость к ожогам",
-			SPECIES_PERK_DESC = "[plural_form] слабы к ожоговому урону.",
+			SPECIES_PERK_DESC = "[plural_form] слабы к получению ожогов.",
 		))
 
 	if(initial(fake_chest.burn_modifier) < 1)
@@ -1651,7 +1651,7 @@ GLOBAL_LIST_EMPTY(features_by_species)
 			SPECIES_PERK_TYPE = SPECIES_POSITIVE_PERK,
 			SPECIES_PERK_ICON = "shield-alt",
 			SPECIES_PERK_NAME = "Устойчивость к ожогам",
-			SPECIES_PERK_DESC = "[plural_form] устойчивы к ожоговому урону.",
+			SPECIES_PERK_DESC = "[plural_form] устойчивы к получению ожогов.",
 		))
 
 	// Shock damage

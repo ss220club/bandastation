@@ -168,7 +168,7 @@
 	var/progress_text
 
 	if(locate(/obj/item/healthanalyzer) in user.held_items)
-		progress_text = ". Оставшиеся физические повреждения: <font color='#ff3333'>[target.getBruteLoss()]</font>"
+		progress_text = ". Оставшиеся ушибы: <font color='#ff3333'>[target.getBruteLoss()]</font>"
 	else
 		switch(estimated_remaining_steps)
 			if(-INFINITY to 1)
