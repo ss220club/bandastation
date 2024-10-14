@@ -1,80 +1,84 @@
-import { Button, Collapsible, LabeledList } from 'tgui-core/components';
+import { useState } from 'react';
+import { Button, Input, LabeledList, Section } from 'tgui-core/components';
 
 import { useBackend } from '../backend';
 import { Window } from '../layouts';
 
 export const RuNamesSuggestPanel = (props) => {
   const { act, data } = useBackend();
-  const json_data = data.json_data || [];
+  const suggested_list = data.suggested_list || [];
+  const visible_name = data.visible_name;
+  const [nominative, setNominative] = useState('');
+  const [genitive, setGenitive] = useState('');
+  const [dative, setDative] = useState('');
+  const [accusative, setAccusative] = useState('');
+  const [instrumental, setInstrumental] = useState('');
+  const [prepositional, setPrepositional] = useState('');
   return (
-    <Window
-      title="Предложения переводов"
-      theme="admin"
-      width={550}
-      height={400}
-    >
-      <Window.Content scrollable>
-        {json_data.map((entry_id) => (
-          <Collapsible
-            key={entry_id}
-            title={entry_id.ckey + ' предлагает для ' + entry_id.atom_path}
-          >
-            <LabeledList>
-              <LabeledList.Item label="ckey">{entry_id.ckey}</LabeledList.Item>
-              <LabeledList.Item label="Путь к объекту">
-                {entry_id.atom_path}
-              </LabeledList.Item>
-              <LabeledList.Item label="Стандартное имя">
-                {entry_id.suggested_list['base']}
-              </LabeledList.Item>
-              <LabeledList.Item label="Именительный">
-                {entry_id.suggested_list['именительный']}
-              </LabeledList.Item>
-              <LabeledList.Item label="Родительный">
-                {entry_id.suggested_list['родительный']}
-              </LabeledList.Item>
-              <LabeledList.Item label="Дательный">
-                {entry_id.suggested_list['дательный']}
-              </LabeledList.Item>
-              <LabeledList.Item label="Винительный">
-                {entry_id.suggested_list['винительный']}
-              </LabeledList.Item>
-              <LabeledList.Item label="Творительный">
-                {entry_id.suggested_list['творительный']}
-              </LabeledList.Item>
-              <LabeledList.Item label="Предложный">
-                {entry_id.suggested_list['предложный']}
-              </LabeledList.Item>
-              <LabeledList.Item>
-                <Button.Confirm
-                  confirmContent="Вы уверены?"
-                  color="green"
-                  onClick={() =>
-                    act('approve', {
-                      entry_id: entry_id.ckey + '-' + entry_id.atom_path,
-                    })
-                  }
-                >
-                  Принять
-                </Button.Confirm>
-              </LabeledList.Item>
-              <LabeledList.Item>
-                <Button.Confirm
-                  confirmContent="Вы уверены?"
-                  color="red"
-                  onClick={() =>
-                    act('deny', {
-                      entry_id: entry_id.ckey + '-' + entry_id.atom_path,
-                    })
-                  }
-                >
-                  Отклонить
-                </Button.Confirm>
-              </LabeledList.Item>
-            </LabeledList>
-          </Collapsible>
-        ))}
-      </Window.Content>
+    <Window theme="admin" title="Предложение перевода" width={400} height={250}>
+      <Window.Content />
+      <Section title={'Оригинал: ' + visible_name}>
+        <LabeledList>
+          <LabeledList.Item label="Именительный падеж">
+            <Input
+              width="225px"
+              onChange={(e, value) => setNominative(value)}
+            />
+          </LabeledList.Item>
+          <LabeledList.Item label="Родительный падеж">
+            <Input width="225px" onChange={(e, value) => setGenitive(value)} />
+          </LabeledList.Item>
+          <LabeledList.Item label="Дательный падеж">
+            <Input width="225px" onChange={(e, value) => setDative(value)} />
+          </LabeledList.Item>
+          <LabeledList.Item label="Винительный падеж">
+            <Input
+              width="225px"
+              onChange={(e, value) => setAccusative(value)}
+            />
+          </LabeledList.Item>
+          <LabeledList.Item label="Творительный падеж">
+            <Input
+              width="225px"
+              onChange={(e, value) => setInstrumental(value)}
+            />
+          </LabeledList.Item>
+          <LabeledList.Item label="Предложный падеж">
+            <Input
+              width="225px"
+              onChange={(e, value) => setPrepositional(value)}
+            />
+          </LabeledList.Item>
+          <LabeledList.Item>
+            <Button.Confirm
+              confirmColor="green"
+              confirmContent="Вы уверены?"
+              disabled={
+                !nominative ||
+                !genitive ||
+                !dative ||
+                !accusative ||
+                !instrumental ||
+                !prepositional
+              }
+              onClick={() =>
+                act('send', {
+                  entries: [
+                    nominative,
+                    genitive,
+                    dative,
+                    accusative,
+                    instrumental,
+                    prepositional,
+                  ],
+                })
+              }
+            >
+              Отправить
+            </Button.Confirm>
+          </LabeledList.Item>
+        </LabeledList>
+      </Section>
     </Window>
   );
 };
