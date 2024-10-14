@@ -73,9 +73,9 @@ ADMIN_VERB(ru_names_review_panel, R_ADMIN, "Ru Names Review", "Shows player-sugg
 	json_data.Remove(entry_id)
 	// Logging
 	write_data()
-	to_chat(usr, span_notice("Entry [entry_id] approved."))
 	var/log_text = "[key_name_and_tag(usr)] [message]"
 	logger.Log(LOG_CATEGORY_RU_NAMES_SUGGEST, log_text)
+	to_chat(usr, span_notice("Entry [entry_id] approved."))
 
 /datum/ru_names_review_panel/proc/deny_entry(entry_id)
 	load_data()
@@ -89,9 +89,9 @@ ADMIN_VERB(ru_names_review_panel, R_ADMIN, "Ru Names Review", "Shows player-sugg
 	var/message = "denies [suggested_list] for [data["atom_path"]]"
 	json_data.Remove(entry_id)
 	write_data()
-	to_chat(usr, span_notice("Entry [entry_id] denied."))
 	var/log_text = "[key_name_and_tag(usr)] [message]"
 	logger.Log(LOG_CATEGORY_RU_NAMES_SUGGEST, log_text)
+	to_chat(usr, span_notice("Entry [entry_id] denied."))
 
 /datum/ru_names_review_panel/proc/add_entry(data)
 	var/json_file = file(FILE_PATH_TO_RU_NAMES_SUGGEST)
@@ -188,7 +188,8 @@ ADMIN_VERB(ru_names_review_panel, R_ADMIN, "Ru Names Review", "Shows player-sugg
 		to_chat(usr, span_warning("Ошибка! Пожалуйста, заполните все строки перед отправкой."))
 		return
 	for(var/declent in declents)
-		ru_name_data["suggested_list"]["[declent]"] = entries[1]
+		var/sanitized_input = trim(copytext_char(sanitize(entries[1]), 1, MAX_MESSAGE_LEN))
+		ru_name_data["suggested_list"]["[declent]"] = sanitized_input
 		entries -= entries[1]
 	GLOB.ru_names_review_panel.add_entry(ru_name_data)
 	qdel(src)
