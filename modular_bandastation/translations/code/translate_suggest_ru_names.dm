@@ -175,7 +175,6 @@ ADMIN_VERB(ru_names_review_panel, R_ADMIN, "Ru Names Review", "Shows player-sugg
 
 /datum/ru_name_suggest_panel/ui_data(mob/user)
 	. = list()
-	.["suggested_list"] = list(ru_name_data["suggested_list"])
 	.["visible_name"] = ru_name_data["visible_name"]
 
 /datum/ru_name_suggest_panel/ui_close(mob/user)

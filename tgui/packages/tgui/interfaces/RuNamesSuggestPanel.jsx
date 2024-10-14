@@ -6,7 +6,6 @@ import { Window } from '../layouts';
 
 export const RuNamesSuggestPanel = (props) => {
   const { act, data } = useBackend();
-  const suggested_list = data.suggested_list || [];
   const visible_name = data.visible_name;
   const [nominative, setNominative] = useState('');
   const [genitive, setGenitive] = useState('');
