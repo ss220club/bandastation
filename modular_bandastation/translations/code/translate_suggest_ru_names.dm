@@ -4,7 +4,7 @@
 
 GLOBAL_DATUM_INIT(ru_names_suggest_panel, /datum/ru_names_suggest_panel, new)
 
-ADMIN_VERB(ru_names_suggest_panel, R_ADMIN, "Ru-Names suggestions", "Shows player-suggested values for ru-names", ADMIN_CATEGORY_MAIN)
+ADMIN_VERB(ru_names_suggest_panel, R_ADMIN, "Ru Names Suggestions", "Shows player-suggested values for ru-names", ADMIN_CATEGORY_MAIN)
 	GLOB.ru_names_suggest_panel.ui_interact(user.mob)
 
 // MARK: Ru Names Suggest
