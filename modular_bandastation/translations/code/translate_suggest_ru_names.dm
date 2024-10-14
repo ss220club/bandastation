@@ -58,15 +58,18 @@ ADMIN_VERB(ru_names_suggest_panel, R_ADMIN, "Ru-Names suggestions", "Shows playe
 	if(!length(json_data))
 		return
 	if(!json_data[entry_id])
-		to_chat(usr, span_notice("Couldn't find entry #[entry_id]. Perhaps it was already approved or disapproved"))
-	var/message = "approves [json_data[entry_id]["suggested_list"]] for [json_data[entry_id]["atom_path"]]"
+		to_chat(usr, span_notice("Couldn't find entry [entry_id]. Perhaps it was already approved or disapproved"))
+		return
+	var/list/data = json_data[entry_id]
+	var/suggested_list = "RU_NAMES_LIST_INIT(\"[data["suggested_list"]["base"]]\", \"[data["suggested_list"][NOMINATIVE]]\", \"[data["suggested_list"][GENITIVE]]\", \"[data["suggested_list"][DATIVE]]\", \"[data["suggested_list"][ACCUSATIVE]]\", \"[data["suggested_list"][INSTRUMENTAL]]\", \"[data["suggested_list"][PREPOSITIONAL]]\")"
+	var/message = "approves [suggested_list] for [data["atom_path"]]"
 	// Here we send message to discord
 
 	json_data.Remove(entry_id)
 	// Logging
 	write_data()
-	to_chat(usr, span_notice("Entry #[entry_id] approved."))
-	var/log_text = "[key_name_and_tag(src)] [message]"
+	to_chat(usr, span_notice("Entry [entry_id] approved."))
+	var/log_text = "[key_name_and_tag(usr)] [message]"
 	logger.Log(LOG_CATEGORY_RU_NAMES_SUGGEST, log_text)
 
 /datum/ru_names_suggest_panel/proc/deny_entry(entry_id)
@@ -74,13 +77,15 @@ ADMIN_VERB(ru_names_suggest_panel, R_ADMIN, "Ru-Names suggestions", "Shows playe
 	if(!length(json_data))
 		return
 	if(!json_data[entry_id])
-		to_chat(usr, "Couldn't find entry #[entry_id]. Perhaps it was already approved or disapproved")
+		to_chat(usr, "Couldn't find entry [entry_id]. Perhaps it was already approved or disapproved")
 		return
-	var/message = "denies [json_data[entry_id]["suggested_list"]] for [json_data[entry_id]["atom_path"]]"
+	var/list/data = json_data[entry_id]
+	var/suggested_list = "RU_NAMES_LIST_INIT(\"[data["suggested_list"]["base"]]\", \"[data["suggested_list"][NOMINATIVE]]\", \"[data["suggested_list"][GENITIVE]]\", \"[data["suggested_list"][DATIVE]]\", \"[data["suggested_list"][ACCUSATIVE]]\", \"[data["suggested_list"][INSTRUMENTAL]]\", \"[data["suggested_list"][PREPOSITIONAL]]\")"
+	var/message = "denies [suggested_list] for [data["atom_path"]]"
 	json_data.Remove(entry_id)
 	write_data()
-	to_chat(usr, span_notice("Entry #[entry_id] denied."))
-	var/log_text = "[key_name_and_tag(src)] [message]"
+	to_chat(usr, span_notice("Entry [entry_id] denied."))
+	var/log_text = "[key_name_and_tag(usr)] [message]"
 	logger.Log(LOG_CATEGORY_RU_NAMES_SUGGEST, log_text)
 
 /datum/ru_names_suggest_panel/proc/add_entry(data)

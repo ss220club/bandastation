@@ -15,7 +15,10 @@ export const RuNamesSuggestPanel = (props) => {
     >
       <Window.Content scrollable>
         {json_data.map((entry_id) => (
-          <Collapsible key={entry_id} title={entry_id}>
+          <Collapsible
+            key={entry_id}
+            title={entry_id.ckey + ' предлагает для ' + entry_id.atom_path}
+          >
             <LabeledList>
               <LabeledList.Item label="ckey">{entry_id.ckey}</LabeledList.Item>
               <LabeledList.Item label="Путь к объекту">
@@ -43,12 +46,26 @@ export const RuNamesSuggestPanel = (props) => {
                 {entry_id.suggested_list['предложный']}
               </LabeledList.Item>
               <LabeledList.Item>
-                <Button onClick={() => act('approve', { entry_id: entry_id })}>
+                <Button
+                  color="green"
+                  onClick={() =>
+                    act('approve', {
+                      entry_id: entry_id.ckey + '-' + entry_id.atom_path,
+                    })
+                  }
+                >
                   Approve
                 </Button>
               </LabeledList.Item>
               <LabeledList.Item>
-                <Button onClick={() => act('deny', { entry_id: entry_id })}>
+                <Button
+                  color="red"
+                  onClick={() =>
+                    act('deny', {
+                      entry_id: entry_id.ckey + '-' + entry_id.atom_path,
+                    })
+                  }
+                >
                   Deny
                 </Button>
               </LabeledList.Item>
