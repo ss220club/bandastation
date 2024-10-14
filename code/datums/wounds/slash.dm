@@ -86,17 +86,17 @@
 	if(!limb.current_gauze)
 		return ..()
 
-	var/list/msg = list("Раны на [victim.ru_p_them()] [limb.ru_plaintext_zone[PREPOSITIONAL] || limb.plaintext_zone] перевязаны, и те ")
+	var/list/msg = list("Раны на [victim.ru_p_them()] [limb.ru_plaintext_zone[PREPOSITIONAL] || limb.plaintext_zone] перевязаны ")
 	// how much life we have left in these bandages
 	switch(limb.current_gauze.absorption_capacity)
 		if(0 to 1.25)
-			msg += "почти износились"
+			msg += "почти спавшей"
 		if(1.25 to 2.75)
-			msg += "сильно изношены"
+			msg += "сильно изношеной "
 		if(2.75 to 4)
-			msg += "слегка запачканы кровью"
+			msg += "слегка запачканой кровью"
 		if(4 to INFINITY)
-			msg += "чистые"
+			msg += "чистой"
 	msg += " [limb.current_gauze.name]!"
 
 	return "<B>[msg.Join()]</B>"
@@ -161,7 +161,7 @@
 		if(demotes_to)
 			replace_wound(new demotes_to)
 		else
-			to_chat(victim, span_green("Рана на вашей [limb.ru_plaintext_zone[PREPOSITIONAL] || limb.plaintext_zone] [!limb.can_bleed() ? "зажила" : "перестала кровоточить"]!"))
+			to_chat(victim, span_green("Порез на вашей [limb.ru_plaintext_zone[PREPOSITIONAL] || limb.plaintext_zone] [!limb.can_bleed() ? "зажил" : "перестал кровоточить"]!"))
 			qdel(src)
 
 /datum/wound/slash/flesh/on_stasis(seconds_per_tick, times_fired)
@@ -195,7 +195,7 @@
 		return FALSE
 
 	if(DOING_INTERACTION_WITH_TARGET(user, victim))
-		to_chat(user, span_warning("Вы уже взаимодействуете с [victim.declent_ru(GENITIVE)]!"))
+		to_chat(user, span_warning("Вы уже взаимодействуете с [victim.declent_ru(INSTRUMENTAL)]!"))
 		return
 	if(iscarbon(user))
 		var/mob/living/carbon/carbon_user = user
@@ -218,19 +218,19 @@
 			continue
 		user.ForceContractDisease(iter_disease)
 
-	user.visible_message(span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает лизать раны на [limb.ru_plaintext_zone[PREPOSITIONAL] || limb.plaintext_zone] [victim.declent_ru(GENITIVE)]."), span_notice("Вы начинаете лизать раны на [limb.ru_plaintext_zone[PREPOSITIONAL] || limb.plaintext_zone] [victim.declent_ru(GENITIVE)]..."), ignored_mobs=victim)
+	user.visible_message(span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает лизать раны на [limb.ru_plaintext_zone[PREPOSITIONAL] || limb.plaintext_zone] у [victim.declent_ru(GENITIVE)]."), span_notice("Вы начинаете лизать раны на [limb.ru_plaintext_zone[PREPOSITIONAL] || limb.plaintext_zone] у [victim.declent_ru(GENITIVE)]..."), ignored_mobs=victim)
 	to_chat(victim, span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает лизать раны на вашей [limb.ru_plaintext_zone[PREPOSITIONAL] || limb.plaintext_zone]."))
 	if(!do_after(user, base_treat_time, target = victim, extra_checks = CALLBACK(src, PROC_REF(still_exists))))
 		return
 
-	user.visible_message(span_notice("[capitalize(user.declent_ru(NOMINATIVE))] лижет раны на [limb.ru_plaintext_zone[PREPOSITIONAL] || limb.plaintext_zone] [victim.declent_ru(GENITIVE)]."), span_notice("Вы лижете некоторые из ран на [limb.ru_plaintext_zone[PREPOSITIONAL] || limb.plaintext_zone] [victim.declent_ru(GENITIVE)]"), ignored_mobs=victim)
+	user.visible_message(span_notice("[capitalize(user.declent_ru(NOMINATIVE))] лижет раны на [limb.ru_plaintext_zone[PREPOSITIONAL] || limb.plaintext_zone] у [victim.declent_ru(GENITIVE)]."), span_notice("Вы лижете некоторые из ран на [limb.ru_plaintext_zone[PREPOSITIONAL] || limb.plaintext_zone] у [victim.declent_ru(GENITIVE)]"), ignored_mobs=victim)
 	to_chat(victim, span_green("[capitalize(user.declent_ru(NOMINATIVE))] лижет раны на вашей [limb.ru_plaintext_zone[PREPOSITIONAL] || limb.plaintext_zone]!"))
 	adjust_blood_flow(-0.5)
 
 	if(blood_flow > minimum_flow)
 		try_handling(user)
 	else if(demotes_to)
-		to_chat(user, span_green("Вы успешно снижаете тяжесть порезов [victim.declent_ru(GENITIVE)]."))
+		to_chat(user, span_green("Вы успешно снижаете тяжесть порезов у [victim.declent_ru(GENITIVE)]."))
 
 /datum/wound/slash/flesh/on_xadone(power)
 	. = ..()
@@ -245,7 +245,7 @@
 /// If someone's putting a laser gun up to our cut to cauterize it
 /datum/wound/slash/flesh/proc/las_cauterize(obj/item/gun/energy/laser/lasgun, mob/user)
 	var/self_penalty_mult = (user == victim ? 1.25 : 1)
-	user.visible_message(span_warning("[capitalize(user.declent_ru(NOMINATIVE))] начинает целиться [lasgun] прямо на рану на [limb.ru_plaintext_zone[PREPOSITIONAL] || limb.plaintext_zone] [victim.declent_ru(GENITIVE)]..."), span_userdanger("Вы начинаете целится [lasgun] на [limb.ru_plaintext_zone[PREPOSITIONAL] || limb.plaintext_zone] у [user == victim ? "вас" : "[victim.declent_ru(GENITIVE)]"] ..."))
+	user.visible_message(span_warning("[capitalize(user.declent_ru(NOMINATIVE))] начинает прицеливаться [lasgun] на рану на [limb.ru_plaintext_zone[PREPOSITIONAL] || limb.plaintext_zone] [victim.declent_ru(GENITIVE)]..."), span_userdanger("Вы начинаете целится [lasgun] на [limb.ru_plaintext_zone[PREPOSITIONAL] || limb.plaintext_zone] у [user == victim ? "вас" : "[victim.declent_ru(GENITIVE)]"] ..."))
 	if(!do_after(user, base_treat_time  * self_penalty_mult, target = victim, extra_checks = CALLBACK(src, PROC_REF(still_exists))))
 		return
 	var/damage = lasgun.chambered.loaded_projectile.damage
@@ -273,7 +273,7 @@
 
 	if(!do_after(user, treatment_delay, target = victim, extra_checks = CALLBACK(src, PROC_REF(still_exists))))
 		return
-	var/bleeding_wording = (!limb.can_bleed() ? "резы" : "кровотечение")
+	var/bleeding_wording = (!limb.can_bleed() ? "порезов" : "кровотечений")
 	user.visible_message(span_green("[capitalize(user.declent_ru(NOMINATIVE))] прижигает некоторые из [bleeding_wording] на [limb.ru_plaintext_zone[PREPOSITIONAL]]."), span_green("Вы прижигаете некоторые из [bleeding_wording] на [limb.ru_plaintext_zone[PREPOSITIONAL]]."))
 	limb.receive_damage(burn = 2 + severity, wound_bonus = CANT_WOUND)
 	if(prob(30))

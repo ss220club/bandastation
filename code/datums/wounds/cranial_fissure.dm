@@ -103,7 +103,7 @@
 		ignored_mobs = user
 	)
 	victim.show_message(
-		span_userdanger("[capitalize(victim.declent_ru(NOMINATIVE))] начинает тянуть ваши глазаs!"),
+		span_userdanger("[capitalize(victim.declent_ru(NOMINATIVE))] начинает тянуть ваши глаза!"),
 		MSG_VISUAL,
 		span_userdanger("Достигает внутренностей вашей головы и начинает тянуть глаза!"),
 	)

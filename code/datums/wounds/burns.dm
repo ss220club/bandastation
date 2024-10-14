@@ -127,7 +127,7 @@
 				strikes_to_lose_limb--
 				switch(strikes_to_lose_limb)
 					if(2 to INFINITY)
-						to_chat(victim, span_deadsay("<b>Инфекция в вашей [limb.ru_plaintext_zone[PREPOSITIONAL] || limb.plaintext_zone] буквально стекает, вы чувствуете себя ужасно!</b>"))
+						to_chat(victim, span_deadsay("<b>Инфекция в вашей [limb.ru_plaintext_zone[PREPOSITIONAL] || limb.plaintext_zone] буквально сочится, вы чувствуете себя ужасно!</b>"))
 					if(1)
 						to_chat(victim, span_deadsay("<b>Инфекция почти полностью захватила вашу [limb.ru_plaintext_zone[ACCUSATIVE] || limb.plaintext_zone]!</b>"))
 					if(0)
@@ -181,16 +181,16 @@
 	. += " Ожог / "
 	switch(infestation)
 		if(-INFINITY to WOUND_INFECTION_MODERATE)
-			. += "Нет"
+			. += "Отсутствует"
 		if(WOUND_INFECTION_MODERATE to WOUND_INFECTION_SEVERE)
-			. += "Умеренный"
+			. += "Умеренная"
 		if(WOUND_INFECTION_SEVERE to WOUND_INFECTION_CRITICAL)
-			. += "<b>Серьезный</b>"
+			. += "<b>Серьезная</b>"
 		if(WOUND_INFECTION_CRITICAL to WOUND_INFECTION_SEPTIC)
-			. += "<b>Критический</b>"
+			. += "<b>Критическая</b>"
 		if(WOUND_INFECTION_SEPTIC to INFINITY)
-			. += "<b>Полный</b>"
-	. += " Инфекция"
+			. += "<b>Полностью распространенная</b>"
+	. += " инфекция"
 
 /datum/wound/burn/flesh/get_scanner_description(mob/user)
 	if(strikes_to_lose_limb <= 0) // Unclear if it can go below 0, best to not take the chance
