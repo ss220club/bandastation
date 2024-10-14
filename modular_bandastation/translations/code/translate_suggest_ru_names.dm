@@ -178,13 +178,17 @@ ADMIN_VERB(ru_names_review_panel, R_ADMIN, "Ru Names Review", "Shows player-sugg
 	.["suggested_list"] = list(ru_name_data["suggested_list"])
 	.["visible_name"] = ru_name_data["visible_name"]
 
+/datum/ru_name_suggest_panel/ui_close(mob/user)
+	. = ..()
+	qdel(src)
+
 /datum/ru_name_suggest_panel/proc/send_suggestion(list/entries)
 	var/list/declents = list(NOMINATIVE, GENITIVE, DATIVE, ACCUSATIVE, INSTRUMENTAL, PREPOSITIONAL)
 	if(length(entries) != length(declents))
 		to_chat(usr, span_warning("Ошибка! Пожалуйста, заполните все строки перед отправкой."))
 		return
 	for(var/declent in declents)
-		ru_name_data["suggested_list"] += list(declent = entries[1])
+		ru_name_data["suggested_list"]["[declent]"] = entries[1]
 		entries -= entries[1]
 	GLOB.ru_names_review_panel.add_entry(ru_name_data)
 	qdel(src)
