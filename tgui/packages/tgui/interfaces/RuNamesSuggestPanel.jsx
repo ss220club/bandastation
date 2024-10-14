@@ -10,8 +10,8 @@ export const RuNamesSuggestPanel = (props) => {
     <Window
       title="Предложения переводов"
       theme="admin"
-      width={700}
-      height={700}
+      width={550}
+      height={400}
     >
       <Window.Content scrollable>
         {json_data.map((entry_id) => (
