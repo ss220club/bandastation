@@ -24,7 +24,9 @@ ADMIN_VERB(ru_names_suggest_panel, R_ADMIN, "Ru-Names suggestions", "Shows playe
 
 /datum/ru_names_suggest_panel/ui_data(mob/user)
 	. = list()
-	.["json_data"] = json_data
+	.["json_data"] = list()
+	for(var/entry_id in json_data)
+		.["json_data"] += list(json_data["[entry_id]"])
 
 /datum/ru_names_suggest_panel/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
 	. = ..()
