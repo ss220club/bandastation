@@ -441,8 +441,9 @@
 	if(offered_item.on_offered(src)) // see if the item interrupts with its own behavior
 		return
 
-	visible_message(span_notice("[capitalize(declent_ru(NOMINATIVE))] предлагает [offered ? "[offered.declent_ru(DATIVE)] " : ""][offered_item.declent_ru(ACCUSATIVE)]."), \
-					span_notice("Вы предлагаете [offered ? "[offered.declent_ru(DATIVE)] " : ""][offered_item.declent_ru(ACCUSATIVE)]."), null, 2)
+	balloon_alert_to_viewers("offers something")
+	visible_message(span_notice("[src] is offering [offered ? "[offered] " : ""][offered_item]."), \
+					span_notice("You offer [offered ? "[offered] " : ""][offered_item]."), null, 2)
 
 	apply_status_effect(/datum/status_effect/offering, offered_item, null, offered)
 
