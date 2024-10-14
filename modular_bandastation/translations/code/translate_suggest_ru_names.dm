@@ -7,6 +7,7 @@ GLOBAL_DATUM_INIT(ru_names_suggest_panel, /datum/ru_names_suggest_panel, new)
 ADMIN_VERB(ru_names_suggest_panel, R_ADMIN, "Ru-Names suggestions", "Shows player-suggested values for ru-names", ADMIN_CATEGORY_MAIN)
 	GLOB.ru_names_suggest_panel.ui_interact(user.mob)
 
+// MARK: Ru Names Suggest
 /datum/ru_names_suggest_panel
 	var/list/json_data = list()
 
@@ -64,7 +65,8 @@ ADMIN_VERB(ru_names_suggest_panel, R_ADMIN, "Ru-Names suggestions", "Shows playe
 	var/suggested_list = "RU_NAMES_LIST_INIT(\"[data["suggested_list"]["base"]]\", \"[data["suggested_list"][NOMINATIVE]]\", \"[data["suggested_list"][GENITIVE]]\", \"[data["suggested_list"][DATIVE]]\", \"[data["suggested_list"][ACCUSATIVE]]\", \"[data["suggested_list"][INSTRUMENTAL]]\", \"[data["suggested_list"][PREPOSITIONAL]]\")"
 	var/message = "approves [suggested_list] for [data["atom_path"]]"
 	// Here we send message to discord
-
+	var/webhook_message = "[usr.ckey] [message] by [data["ckey"]]"
+	send2translate_webhook(webhook_message)
 	json_data.Remove(entry_id)
 	// Logging
 	write_data()
@@ -107,6 +109,7 @@ ADMIN_VERB(ru_names_suggest_panel, R_ADMIN, "Ru-Names suggestions", "Shows playe
 /datum/log_category/ru_names_suggest
 	category = LOG_CATEGORY_RU_NAMES_SUGGEST
 
+// MARK: Mob
 /mob/verb/suggest_ru_name(atom/A as mob|obj|turf in view())
 	set name = "Предложить перевод"
 
@@ -133,6 +136,30 @@ ADMIN_VERB(ru_names_suggest_panel, R_ADMIN, "Ru-Names suggestions", "Shows playe
 	data["atom_path"] = atom_type::type
 	GLOB.ru_names_suggest_panel.add_entry(data)
 	return TRUE
+
+// MARK: Webhook
+/datum/config_entry/string/translate_suggest_webhook_url
+
+/datum/config_entry/string/translate_suggest_webhook_pfp
+
+/datum/config_entry/string/translate_suggest_webhook_name
+
+/proc/send2translate_webhook(message)
+	var/webhook = CONFIG_GET(string/translate_suggest_webhook_url)
+	if(!webhook || !message)
+		return
+	var/list/webhook_info = list()
+	message = GLOB.has_discord_embeddable_links.Replace_char(replacetext_char(message, "`", ""), " ```$1``` ")
+	webhook_info["content"] = message
+	if(CONFIG_GET(string/translate_suggest_webhook_name))
+		webhook_info["username"] = CONFIG_GET(string/translate_suggest_webhook_name)
+	if(CONFIG_GET(string/translate_suggest_webhook_pfp))
+		webhook_info["avatar_url"] = CONFIG_GET(string/translate_suggest_webhook_pfp)
+	var/list/headers = list()
+	headers["Content-Type"] = "application/json"
+	var/datum/http_request/request = new()
+	request.prepare(RUSTG_HTTP_METHOD_POST, webhook, json_encode(webhook_info), headers, "tmp/response.json")
+	request.begin_async()
 
 #undef LOG_CATEGORY_RU_NAMES_SUGGEST
 #undef FILE_PATH_TO_RU_NAMES_SUGGEST
