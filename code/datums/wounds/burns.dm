@@ -159,13 +159,13 @@
 			if(4 to INFINITY)
 				bandage_condition = "чиста"
 
-		condition += " перевязана [limb.current_gauze.name]. Повязка [bandage_condition]!"
+		condition += ", и перевязана [limb.current_gauze.declent_ru(INSTRUMENTAL)]. Повязка [bandage_condition]!"
 	else
 		switch(infestation)
 			if(WOUND_INFECTION_MODERATE to WOUND_INFECTION_SEVERE)
-				condition += ", [span_deadsay("и видны ранние признаками инфекции.")]"
+				condition += ", [span_deadsay("и видны ранние признаки инфекции.")]"
 			if(WOUND_INFECTION_SEVERE to WOUND_INFECTION_CRITICAL)
-				condition += ", [span_deadsay("и видны растущие облаками инфекции.")]"
+				condition += ", [span_deadsay("и видны растущие облака инфекции.")]"
 			if(WOUND_INFECTION_CRITICAL to WOUND_INFECTION_SEPTIC)
 				condition += ", [span_deadsay("и видны полосы гнилой инфекции!")]"
 			if(WOUND_INFECTION_SEPTIC to INFINITY)

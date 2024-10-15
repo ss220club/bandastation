@@ -74,11 +74,11 @@
 
 		switch(wounding_type)
 			if(WOUND_BLUNT)
-				occur_text = "теряет от удара последунюю [bone_text], что удерживала конечность!"
+				occur_text = "теряет от удара последнюю [bone_text], что удерживала конечность!"
 			if(WOUND_SLASH)
-				occur_text = "теряет от разрезра последунюю  [tissue_text], что удерживала конечность!"
+				occur_text = "теряет от разрезра последунюю [tissue_text], что удерживала конечность!"
 			if(WOUND_PIERCE)
-				occur_text = "теряет от прокалывания последунюю  [tissue_text], что удерживала конечность!"
+				occur_text = "теряет от прокалывания последунюю [tissue_text], что удерживала конечность!"
 			if(WOUND_BURN)
 				occur_text = "сгорает, превратившись в пыль!"
 
