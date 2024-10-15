@@ -274,8 +274,8 @@
 		return
 
 	if(prob(65))
-		user.visible_message(span_danger("[capitalize(limb.ru_plaintext_zone[NOMINATIVE] || limb.plaintext_zone)] у [victim.declent_ru(GENITIVE)] щелкает, когда [capitalize(user.declent_ru(NOMINATIVE)))] вправляет ее обратно на место!"), span_notice("[capitalize(limb.ru_plaintext_zone[NOMINATIVE] || limb.plaintext_zone)] у [victim.declent_ru(GENITIVE)] щелкает, когда Вы вправляете ее обратно на место!"), ignored_mobs=victim)
-		to_chat(victim, span_userdanger("Ваша [capitalize([limb.ru_plaintext_zone[NOMINATIVE] || limb.plaintext_zone])] щелкает, , когда [capitalize(user.declent_ru(NOMINATIVE))] вправляет ее обратно на место!"))
+		user.visible_message(span_danger("[capitalize(limb.ru_plaintext_zone[NOMINATIVE] || limb.plaintext_zone)] у [victim.declent_ru(GENITIVE)] щелкает, когда [capitalize(user.declent_ru(NOMINATIVE))] вправляет ее обратно на место!"), span_notice("[capitalize(limb.ru_plaintext_zone[NOMINATIVE] || limb.plaintext_zone)] у [victim.declent_ru(GENITIVE)] щелкает, когда Вы вправляете ее обратно на место!"), ignored_mobs=victim)
+		to_chat(victim, span_userdanger("Ваша [limb.ru_plaintext_zone[NOMINATIVE] || limb.plaintext_zone] щелкает, когда [capitalize(user.declent_ru(NOMINATIVE))] вправляет ее обратно на место!"))
 		victim.emote("scream")
 		limb.receive_damage(brute=20, wound_bonus=CANT_WOUND)
 		qdel(src)
@@ -293,8 +293,8 @@
 		return
 
 	if(prob(65))
-		user.visible_message(span_danger("[capitalize(user.declent_ru(NOMINATIVE))] оглушительно щелкает, ломая с болезненым хрустом вывих в [limb.ru_plaintext_zone[PREPOSITIONAL] || limb.plaintext_zone] у [victim.declent_ru(GENITIVE)]!"), span_danger("Вы оглушительно щелкаете, ломая с болезненым хрустом вывих в [limb.ru_plaintext_zone[PREPOSITIONAL] || limb.plaintext_zone] у [victim.declent_ru(GENITIVE)]!"), ignored_mobs=victim)
-		to_chat(victim, span_userdanger("[capitalize(user.declent_ru(NOMINATIVE))] оглушительно щелкает, ломая с болезненым хрустом вывих в [limb.ru_plaintext_zone[PREPOSITIONAL] || limb.plaintext_zone] с хрустом!"))
+		user.visible_message(span_danger("[capitalize(limb.ru_plaintext_zone[NOMINATIVE] || limb.plaintext_zone)] у [victim.declent_ru(GENITIVE)] оглушительно щелкает, ломая с болезненым хрустом вывих в [limb.ru_plaintext_zone[PREPOSITIONAL] || limb.plaintext_zone] у [victim.declent_ru(GENITIVE)]!"), span_danger("Вы оглушительно щелкаете, ломая с болезненым хрустом вывих в [limb.ru_plaintext_zone[PREPOSITIONAL] || limb.plaintext_zone] у [victim.declent_ru(GENITIVE)]!"), ignored_mobs=victim)
+		to_chat(victim, span_userdanger("Ваша [limb.ru_plaintext_zone[NOMINATIVE] || limb.plaintext_zone] оглушительно щелкает, ломая с болезненым хрустом вывих в [limb.ru_plaintext_zone[PREPOSITIONAL] || limb.plaintext_zone] с хрустом!"))
 		victim.emote("scream")
 		limb.receive_damage(brute=25, wound_bonus=30)
 	else
