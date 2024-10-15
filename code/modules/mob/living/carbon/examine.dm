@@ -62,7 +62,7 @@
 		missing -= body_part.body_zone
 		for(var/obj/item/embedded as anything in body_part.embedded_objects)
 			var/stuck_wordage = embedded.is_embed_harmless() ? "застревает" : "впивается"
-			. += span_boldwarning("[capitalize(embedded.declent_ru(ACCUSATIVE))] [stuck_wordage] в [t_his] [body_part.ru_plaintext_zone[ACCUSATIVE] || body_part.plaintext_zone]!")
+			. += span_boldwarning("[icon2html(embedded, user)] [capitalize(embedded.declent_ru(ACCUSATIVE))] [stuck_wordage] в [t_his] [body_part.ru_plaintext_zone[ACCUSATIVE] || body_part.plaintext_zone]!")
 
 		for(var/datum/wound/iter_wound as anything in body_part.wounds)
 			. += span_danger(iter_wound.get_examine_description(user))
