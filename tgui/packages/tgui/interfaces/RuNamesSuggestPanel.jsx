@@ -14,35 +14,35 @@ export const RuNamesSuggestPanel = (props) => {
   const [instrumental, setInstrumental] = useState('');
   const [prepositional, setPrepositional] = useState('');
   return (
-    <Window theme="admin" title="Предложение перевода" width={400} height={250}>
+    <Window theme="admin" title="Предложение перевода" width={450} height={250}>
       <Window.Content />
       <Section title={'Оригинал: ' + visible_name}>
         <LabeledList>
-          <LabeledList.Item label="Именительный падеж">
+          <LabeledList.Item label="Именительный (Кто? Что?)">
             <Input
               width="225px"
               onChange={(e, value) => setNominative(value)}
             />
           </LabeledList.Item>
-          <LabeledList.Item label="Родительный падеж">
+          <LabeledList.Item label="Родительный (Кого? Чего?)">
             <Input width="225px" onChange={(e, value) => setGenitive(value)} />
           </LabeledList.Item>
-          <LabeledList.Item label="Дательный падеж">
+          <LabeledList.Item label="Дательный (Кому? Чему?)">
             <Input width="225px" onChange={(e, value) => setDative(value)} />
           </LabeledList.Item>
-          <LabeledList.Item label="Винительный падеж">
+          <LabeledList.Item label="Винительный (Кого? Что?)">
             <Input
               width="225px"
               onChange={(e, value) => setAccusative(value)}
             />
           </LabeledList.Item>
-          <LabeledList.Item label="Творительный падеж">
+          <LabeledList.Item label="Творительный (Кем? Чем?)">
             <Input
               width="225px"
               onChange={(e, value) => setInstrumental(value)}
             />
           </LabeledList.Item>
-          <LabeledList.Item label="Предложный падеж">
+          <LabeledList.Item label="Предложный (О/В ком/чём?)">
             <Input
               width="225px"
               onChange={(e, value) => setPrepositional(value)}

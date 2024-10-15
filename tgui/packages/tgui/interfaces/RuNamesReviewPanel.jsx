@@ -1,4 +1,4 @@
-import { Button, Collapsible, LabeledList } from 'tgui-core/components';
+import { Button, Collapsible, LabeledList, Stack } from 'tgui-core/components';
 
 import { useBackend } from '../backend';
 import { Window } from '../layouts';
@@ -45,8 +45,11 @@ export const RuNamesReviewPanel = (props) => {
               <LabeledList.Item label="Предложный">
                 {entry_id.suggested_list['предложный']}
               </LabeledList.Item>
-              <LabeledList.Item>
+            </LabeledList>
+            <Stack>
+              <Stack.Item grow>
                 <Button.Confirm
+                  fluid
                   confirmContent="Вы уверены?"
                   color="green"
                   onClick={() =>
@@ -57,9 +60,10 @@ export const RuNamesReviewPanel = (props) => {
                 >
                   Принять
                 </Button.Confirm>
-              </LabeledList.Item>
-              <LabeledList.Item>
+              </Stack.Item>
+              <Stack.Item grow>
                 <Button.Confirm
+                  fluid
                   confirmContent="Вы уверены?"
                   color="red"
                   onClick={() =>
@@ -70,8 +74,8 @@ export const RuNamesReviewPanel = (props) => {
                 >
                   Отклонить
                 </Button.Confirm>
-              </LabeledList.Item>
-            </LabeledList>
+              </Stack.Item>
+            </Stack>
           </Collapsible>
         ))}
       </Window.Content>
