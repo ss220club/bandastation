@@ -19,64 +19,59 @@ export const RuNamesSuggestPanel = (props) => {
       <Section title={'Оригинал: ' + visible_name}>
         <LabeledList>
           <LabeledList.Item label="Именительный (Кто? Что?)">
-            <Input
-              width="225px"
-              onChange={(e, value) => setNominative(value)}
-            />
+            <Input width="100%" onChange={(e, value) => setNominative(value)} />
           </LabeledList.Item>
           <LabeledList.Item label="Родительный (Кого? Чего?)">
-            <Input width="225px" onChange={(e, value) => setGenitive(value)} />
+            <Input width="100%" onChange={(e, value) => setGenitive(value)} />
           </LabeledList.Item>
           <LabeledList.Item label="Дательный (Кому? Чему?)">
-            <Input width="225px" onChange={(e, value) => setDative(value)} />
+            <Input width="100%" onChange={(e, value) => setDative(value)} />
           </LabeledList.Item>
           <LabeledList.Item label="Винительный (Кого? Что?)">
-            <Input
-              width="225px"
-              onChange={(e, value) => setAccusative(value)}
-            />
+            <Input width="100%" onChange={(e, value) => setAccusative(value)} />
           </LabeledList.Item>
           <LabeledList.Item label="Творительный (Кем? Чем?)">
             <Input
-              width="225px"
+              width="100%"
               onChange={(e, value) => setInstrumental(value)}
             />
           </LabeledList.Item>
           <LabeledList.Item label="Предложный (О/В ком/чём?)">
             <Input
-              width="225px"
+              width="100%"
               onChange={(e, value) => setPrepositional(value)}
             />
           </LabeledList.Item>
-          <LabeledList.Item>
-            <Button.Confirm
-              confirmColor="green"
-              confirmContent="Вы уверены?"
-              disabled={
-                !nominative ||
-                !genitive ||
-                !dative ||
-                !accusative ||
-                !instrumental ||
-                !prepositional
-              }
-              onClick={() =>
-                act('send', {
-                  entries: [
-                    nominative,
-                    genitive,
-                    dative,
-                    accusative,
-                    instrumental,
-                    prepositional,
-                  ],
-                })
-              }
-            >
-              Отправить
-            </Button.Confirm>
-          </LabeledList.Item>
         </LabeledList>
+        <Button.Confirm
+          fluid
+          textAlign="center"
+          mt={1.5}
+          confirmColor="green"
+          confirmContent="Вы уверены?"
+          disabled={
+            !nominative ||
+            !genitive ||
+            !dative ||
+            !accusative ||
+            !instrumental ||
+            !prepositional
+          }
+          onClick={() =>
+            act('send', {
+              entries: [
+                nominative,
+                genitive,
+                dative,
+                accusative,
+                instrumental,
+                prepositional,
+              ],
+            })
+          }
+        >
+          Отправить
+        </Button.Confirm>
       </Section>
     </Window>
   );
