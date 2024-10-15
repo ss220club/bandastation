@@ -386,16 +386,16 @@
 	var/obj/item/ammo_box/magazine/old_mag = magazine
 	if (tac_load)
 		if (insert_magazine(user, tac_load, FALSE))
-			balloon_alert(user, "снятие [magazine_wording]")
+			balloon_alert(user, "извлечение [magazine_wording]")
 		else
-			to_chat(user, span_warning("Вы провели снятие [magazine_wording], но не можете вставить новый. Как неловко."))
+			to_chat(user, span_warning("Вы извлекаете [magazine_wording], но не можете вставить новый. Как неловко."))
 			magazine = null
 	else
 		magazine = null
 	user.put_in_hands(old_mag)
 	old_mag.update_appearance()
 	if (display_message)
-		balloon_alert(user, "снятие [magazine_wording]")
+		balloon_alert(user, "извлечение [magazine_wording]")
 	update_appearance()
 
 /obj/item/gun/ballistic/can_shoot()
