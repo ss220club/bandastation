@@ -97,15 +97,15 @@
 		return TRUE
 
 	playsound(victim, 'sound/items/handling/surgery/organ2.ogg', 50, TRUE)
-	victim.balloon_alert(user, "вырывает глаза...")
+	victim.balloon_alert(user, "изъятие глаз...")
 	user.visible_message(
-		span_boldwarning("[capitalize(user.declent_ru(NOMINATIVE))] достигнает внутренности черепа [victim.declent_ru(GENITIVE)]..."),
+		span_boldwarning("[capitalize(user.declent_ru(NOMINATIVE))] достигает внутренностей черепа [victim.declent_ru(GENITIVE)]..."),
 		ignored_mobs = user
 	)
 	victim.show_message(
-		span_userdanger("[capitalize(victim.declent_ru(NOMINATIVE))] начинает тянуть ваши глаза!"),
+		span_userdanger("[capitalize(victim.declent_ru(NOMINATIVE))] начинает изымать ваши глаза!"),
 		MSG_VISUAL,
-		span_userdanger("Достигает рукой внутренностей вашей головы и начинает тянуть глаза!"),
+		span_userdanger("Чья-то рука достигает внутренностей вашей головы и начинает изымать глаза!"),
 	)
 
 	if (!do_after(user, 10 SECONDS, victim, extra_checks = CALLBACK(src, PROC_REF(still_has_eyes), eyes)))
