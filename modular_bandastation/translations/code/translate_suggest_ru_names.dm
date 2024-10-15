@@ -91,7 +91,7 @@ ADMIN_VERB(ru_names_review_panel, R_ADMIN, "Ru Names Review", "Shows player-sugg
 	to_chat(usr, span_notice("Entry [entry_id] denied."))
 
 /datum/ru_names_review_panel/proc/add_entry(data)
-	json_data["[usr.ckey]-[data["atom_path"]]"] = data
+	json_data["[data["ckey"]]-[data["atom_path"]]"] = data
 	rustg_file_write(json_encode(json_data, JSON_PRETTY_PRINT), FILE_PATH_TO_RU_NAMES_SUGGEST)
 
 	var/suggested_list = "RU_NAMES_LIST_INIT(\"[data["suggested_list"]["base"]]\", \"[data["suggested_list"][NOMINATIVE]]\", \"[data["suggested_list"][GENITIVE]]\", \"[data["suggested_list"][DATIVE]]\", \"[data["suggested_list"][ACCUSATIVE]]\", \"[data["suggested_list"][INSTRUMENTAL]]\", \"[data["suggested_list"][PREPOSITIONAL]]\")"
