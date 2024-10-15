@@ -48,13 +48,10 @@ ADMIN_VERB(ru_names_review_panel, R_ADMIN, "Ru Names Review", "Shows player-sugg
 /datum/ru_names_review_panel/proc/load_data()
 	var/json_file = file(FILE_PATH_TO_RU_NAMES_SUGGEST)
 	if(!fexists(json_file))
-		CRASH("File [FILE_PATH_TO_RU_NAMES_SUGGEST] doesn't exist!")
+		return
 	json_data = json_decode(file2text(json_file))
 
 /datum/ru_names_review_panel/proc/write_data()
-	var/json_file = file(FILE_PATH_TO_RU_NAMES_SUGGEST)
-	if(!fexists(json_file))
-		CRASH("File [FILE_PATH_TO_RU_NAMES_SUGGEST] doesn't exist!")
 	rustg_file_write(json_encode(json_data, JSON_PRETTY_PRINT), FILE_PATH_TO_RU_NAMES_SUGGEST)
 
 /datum/ru_names_review_panel/proc/approve_entry(entry_id)
@@ -94,11 +91,6 @@ ADMIN_VERB(ru_names_review_panel, R_ADMIN, "Ru Names Review", "Shows player-sugg
 	to_chat(usr, span_notice("Entry [entry_id] denied."))
 
 /datum/ru_names_review_panel/proc/add_entry(data)
-	var/json_file = file(FILE_PATH_TO_RU_NAMES_SUGGEST)
-	if(!fexists(json_file))
-		to_chat(usr, span_warning("Что-то пошло не так! Сообщите о том, что функционал не работает из-за отсутствия файла!"))
-		CRASH("File [FILE_PATH_TO_RU_NAMES_SUGGEST] doesn't exist!")
-
 	json_data["[usr.ckey]-[data["atom_path"]]"] = data
 	rustg_file_write(json_encode(json_data, JSON_PRETTY_PRINT), FILE_PATH_TO_RU_NAMES_SUGGEST)
 
