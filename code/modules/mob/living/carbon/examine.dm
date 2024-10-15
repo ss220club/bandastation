@@ -170,7 +170,7 @@
 				bleed_text += "Видна кровь из [t_his] открытых "
 			else
 				bleed_text += "<span class='warning'>"
-				bleed_text += "[t_He] кровоточит из [t_his] "
+				bleed_text += "[t_He] кровоточит из "
 
 			bleed_text += english_list(bleeding_limbs)
 
