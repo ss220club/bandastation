@@ -35,8 +35,8 @@
 	var/self_msg
 
 	if(dismembered_part.body_zone == BODY_ZONE_CHEST)
-		occur_text = "режется, вызывая выпадение [victim.ru_p_them()] внутренних органов!"
-		self_msg = "режется, вызывая выпадение ваших внутренних органов!"
+		occur_text = "рассекается, вызывая выпадение [victim.ru_p_them()] внутренних органов!"
+		self_msg = "рассекается, вызывая выпадение ваших внутренних органов!"
 	else
 		occur_text = dismembered_part.get_dismember_message(wounding_type, outright)
 
@@ -61,11 +61,11 @@
 	if(outright)
 		switch(wounding_type)
 			if(WOUND_BLUNT)
-				occur_text = "разбивается в отвратительное месиво, полностью отсекая её!"
+				occur_text = "разбивается в отвратительное месиво, отрываясь!"
 			if(WOUND_SLASH)
-				occur_text = "чисто срезается, полностью отсекая её!"
+				occur_text = "чисто срезается, полностью отсекаясь!"
 			if(WOUND_PIERCE)
-				occur_text = "разрывается, полностью отсекая её!"
+				occur_text = "разрывается, полностью отсекаясь!"
 			if(WOUND_BURN)
 				occur_text = "сгорает, превратившись в пыль!"
 	else
@@ -74,11 +74,11 @@
 
 		switch(wounding_type)
 			if(WOUND_BLUNT)
-				occur_text = "разрушается последний [bone_text], что удерживал конечность, полностью отсекая её!"
+				occur_text = "разрушается последняя [bone_text], что удерживала конечность, полностью отсекая её!"
 			if(WOUND_SLASH)
-				occur_text = "разрезается последний [tissue_text], что удерживал конечность, полностью отсекая её!"
+				occur_text = "разрезается [tissue_text], что удерживала конечность, полностью отсекая её!"
 			if(WOUND_PIERCE)
-				occur_text = "проколывается последний [tissue_text], что удерживал конечность, полностью отсекая её!"
+				occur_text = "проколывается [tissue_text], что удерживала конечность, полностью отсекая её!"
 			if(WOUND_BURN)
 				occur_text = "сгорает, превратившись в пыль!"
 

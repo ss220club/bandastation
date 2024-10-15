@@ -244,7 +244,7 @@
 /datum/wound/blunt/bone/moderate/proc/door_crush()
 	SIGNAL_HANDLER
 	if(prob(40))
-		victim.visible_message(span_danger("[capitalize(limb.ru_plaintext_zone[NOMINATIVE] || limb.plaintext_zone)] у [victim.declent_ru(GENITIVE)] встала обратно на место!"), span_userdanger("Сустав в районе [limb.ru_plaintext_zone[GENITIVE] || limb.plaintext_zone] встал обратно на место! Ой!"))
+		victim.visible_message(span_danger("[capitalize(limb.ru_plaintext_zone[NOMINATIVE] || limb.plaintext_zone)] у [victim.declent_ru(GENITIVE)] встала обратно на место!"), span_userdanger("Сустав в районе [limb.ru_plaintext_zone[GENITIVE] || limb.plaintext_zone] встал обратно на место! Ай!"))
 		remove_wound()
 
 /datum/wound/blunt/bone/moderate/try_handling(mob/living/user)
@@ -274,14 +274,14 @@
 		return
 
 	if(prob(65))
-		user.visible_message(span_danger("[capitalize(user.declent_ru(NOMINATIVE))] вправляет вывих в [limb.ru_plaintext_zone[PREPOSITIONAL] || limb.plaintext_zone] у [victim.declent_ru(GENITIVE)]!"), span_notice("Вы вправляете вывих в [limb.ru_plaintext_zone[PREPOSITIONAL] || limb.plaintext_zone] у [victim.declent_ru(GENITIVE)]!"), ignored_mobs=victim)
-		to_chat(victim, span_userdanger("[capitalize(user.declent_ru(NOMINATIVE))] вправляет ваш вывих в [limb.ru_plaintext_zone[PREPOSITIONAL] || limb.plaintext_zone]!"))
+		user.visible_message(span_danger("[capitalize(user.declent_ru(NOMINATIVE))] щелкает, вправляя вывих в [limb.ru_plaintext_zone[PREPOSITIONAL] || limb.plaintext_zone] у [victim.declent_ru(GENITIVE)]!"), span_notice("Вы щелкаете, вправляя вывих в [limb.ru_plaintext_zone[PREPOSITIONAL] || limb.plaintext_zone] у [victim.declent_ru(GENITIVE)]!"), ignored_mobs=victim)
+		to_chat(victim, span_userdanger("[capitalize(user.declent_ru(NOMINATIVE))] щелкает, вправляя ваш вывих в [limb.ru_plaintext_zone[PREPOSITIONAL] || limb.plaintext_zone]!"))
 		victim.emote("scream")
 		limb.receive_damage(brute=20, wound_bonus=CANT_WOUND)
 		qdel(src)
 	else
-		user.visible_message(span_danger("[capitalize(user.declent_ru(NOMINATIVE))] болезнено вправляет вывих в [limb.ru_plaintext_zone[PREPOSITIONAL] || limb.plaintext_zone] у [victim.declent_ru(GENITIVE)]!"), span_danger("Вы болезненно вправляете вывих в [limb.ru_plaintext_zone[PREPOSITIONAL] || limb.plaintext_zone] у [victim.declent_ru(GENITIVE)]!"), ignored_mobs=victim)
-		to_chat(victim, span_userdanger("[capitalize(user.declent_ru(NOMINATIVE))] болезнено вправляет ваш вывих в [limb.ru_plaintext_zone[PREPOSITIONAL] || limb.plaintext_zone]!"))
+		user.visible_message(span_danger("[capitalize(user.declent_ru(NOMINATIVE))] болезнено прокручивает вывих в [limb.ru_plaintext_zone[PREPOSITIONAL] || limb.plaintext_zone] у [victim.declent_ru(GENITIVE)]!"), span_danger("Вы болезненно прокручиваете вывих в [limb.ru_plaintext_zone[PREPOSITIONAL] || limb.plaintext_zone] у [victim.declent_ru(GENITIVE)]!"), ignored_mobs=victim)
+		to_chat(victim, span_userdanger("[capitalize(user.declent_ru(NOMINATIVE))] болезнено прокручивает ваш вывих в [limb.ru_plaintext_zone[PREPOSITIONAL] || limb.plaintext_zone]!"))
 		limb.receive_damage(brute=10, wound_bonus=CANT_WOUND)
 		chiropractice(user)
 
@@ -293,13 +293,13 @@
 		return
 
 	if(prob(65))
-		user.visible_message(span_danger("[capitalize(user.declent_ru(NOMINATIVE))] вправляет вывих в [limb.ru_plaintext_zone[PREPOSITIONAL] || limb.plaintext_zone] у [victim.declent_ru(GENITIVE)] с хрустом!"), span_danger("Вы вправляете вывих в [limb.ru_plaintext_zone[PREPOSITIONAL] || limb.plaintext_zone] у [victim.declent_ru(GENITIVE)] с хрустом!"), ignored_mobs=victim)
-		to_chat(victim, span_userdanger("[capitalize(user.declent_ru(NOMINATIVE))] вправляет ваш вывих в [limb.ru_plaintext_zone[PREPOSITIONAL] || limb.plaintext_zone] с хрустом!"))
+		user.visible_message(span_danger("[capitalize(user.declent_ru(NOMINATIVE))] оглушительно щелкает, вправляя с болезненым хрустом вывих в [limb.ru_plaintext_zone[PREPOSITIONAL] || limb.plaintext_zone] у [victim.declent_ru(GENITIVE)]!"), span_danger("Вы оглушительно щелкаете, вправляя с болезненым хрустом вывих в [limb.ru_plaintext_zone[PREPOSITIONAL] || limb.plaintext_zone] у [victim.declent_ru(GENITIVE)]!"), ignored_mobs=victim)
+		to_chat(victim, span_userdanger("[capitalize(user.declent_ru(NOMINATIVE))] оглушительно щелкает, вправляя с болезненым хрустом вывих в [limb.ru_plaintext_zone[PREPOSITIONAL] || limb.plaintext_zone] с хрустом!"))
 		victim.emote("scream")
 		limb.receive_damage(brute=25, wound_bonus=30)
 	else
-		user.visible_message(span_danger("[capitalize(user.declent_ru(NOMINATIVE))] болезнено вправляет вывих в [limb.ru_plaintext_zone[PREPOSITIONAL] || limb.plaintext_zone] у [victim.declent_ru(GENITIVE)]!"), span_danger("Вы болезненно вправляете вывих в [limb.ru_plaintext_zone[PREPOSITIONAL] || limb.plaintext_zone] у [victim.declent_ru(GENITIVE)]!"), ignored_mobs=victim)
-		to_chat(victim, span_userdanger("[capitalize(user.declent_ru(NOMINATIVE))] болезнено вправляет ваш вывих в [limb.ru_plaintext_zone[PREPOSITIONAL] || limb.plaintext_zone]!"))
+		user.visible_message(span_danger("[capitalize(user.declent_ru(NOMINATIVE))] болезнено прокручивает вывих в [limb.ru_plaintext_zone[PREPOSITIONAL] || limb.plaintext_zone] у [victim.declent_ru(GENITIVE)]!"), span_danger("Вы болезненно прокручиваете вывих в [limb.ru_plaintext_zone[PREPOSITIONAL] || limb.plaintext_zone] у [victim.declent_ru(GENITIVE)]!"), ignored_mobs=victim)
+		to_chat(victim, span_userdanger("[capitalize(user.declent_ru(NOMINATIVE))] болезнено прокручивает ваш вывих в [limb.ru_plaintext_zone[PREPOSITIONAL] || limb.plaintext_zone]!"))
 		limb.receive_damage(brute=10, wound_bonus=CANT_WOUND)
 		malpractice(user)
 
@@ -510,14 +510,14 @@
 	if(severity > WOUND_SEVERITY_MODERATE)
 		if((limb.biological_state & BIO_BONE) && !(limb.biological_state & BIO_FLESH))
 			if(!gelled)
-				. += "Рекомендуемое лечение: Нанесите костный гель непосредственно на поврежденную конечность. Существо из костей, похоже, не так сильно реагирует на нанесение костного геля, как особь с плотью. Хирургический скотч также будет ненужен.\n"
+				. += "Рекомендуемое лечение: Нанесите костный гель непосредственно на поврежденную конечность. Существо из костей, похоже, не так сильно реагирует на нанесение костного геля, как особь с плотью. Хирургическая лента также будет ненужен.\n"
 			else
 				. += "[span_notice("Примечание: Регенерация костей в процессе. Кости восстановлены на [round(regen_ticks_current*100/regen_ticks_needed)]%.")]\n"
 		else
 			if(!gelled)
-				. += "Альтернативное лечение: Нанесите костный гель непосредственно на поврежденную конечность, затем нанесите хирургический скотч, чтобы начать регенерацию костей. Это крайне болезненно и медленно, рекомендуется только в крайних случаях.\n"
+				. += "Альтернативное лечение: Нанесите костный гель непосредственно на поврежденную конечность, затем нанесите хирургическую ленту, чтобы начать регенерацию костей. Это крайне болезненно и медленно, рекомендуется только в крайних случаях.\n"
 			else if(!taped)
-				. += "[span_notice("Продолжайте альтернативное лечение: Нанесите хирургический скотч непосредственно на поврежденную конечность, чтобы начать регенерацию костей. Обратите внимание, что это крайне болезненно и медленно, хотя сон или лежание ускорят восстановление.")]\n"
+				. += "[span_notice("Продолжайте альтернативное лечение: Нанесите хирургическую ленту непосредственно на поврежденную конечность, чтобы начать регенерацию костей. Обратите внимание, что это крайне болезненно и медленно, хотя сон или лежание ускорят восстановление.")]\n"
 			else
 				. += "[span_notice("Примечание: Регенерация костей в процессе. Кости восстановлены на [round(regen_ticks_current*100/regen_ticks_needed)]%.")]\n"
 

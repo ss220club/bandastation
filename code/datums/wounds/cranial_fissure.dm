@@ -77,7 +77,7 @@
 	brain.throw_at(get_step(source_turf, source.dir), 1, 1)
 
 	source.visible_message(
-		span_boldwarning("Мозг [source] вытекает из [source.ru_p_them()] головы!"),
+		span_boldwarning("Мозг [source.declent_ru(GENITIVE)] вытекает из [source.ru_p_them()] головы!"),
 		span_userdanger("Вы чувствуете, как ваш мозг вытекает из вашей головы!"),
 	)
 
@@ -105,7 +105,7 @@
 	victim.show_message(
 		span_userdanger("[capitalize(victim.declent_ru(NOMINATIVE))] начинает тянуть ваши глаза!"),
 		MSG_VISUAL,
-		span_userdanger("Достигает внутренностей вашей головы и начинает тянуть глаза!"),
+		span_userdanger("Достигает рукой внутренностей вашей головы и начинает тянуть глаза!"),
 	)
 
 	if (!do_after(user, 10 SECONDS, victim, extra_checks = CALLBACK(src, PROC_REF(still_has_eyes), eyes)))
@@ -114,7 +114,7 @@
 	eyes.Remove(victim)
 	user.put_in_hands(eyes)
 
-	log_combat(user, victim, "вытащил глаза")
+	log_combat(user, victim, "pulled out the eyes of")
 
 	playsound(victim, 'sound/items/handling/surgery/organ1.ogg', 75, TRUE)
 	user.visible_message(

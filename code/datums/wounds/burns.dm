@@ -44,7 +44,7 @@
 	if(strikes_to_lose_limb <= 0) // we've already hit sepsis, nothing more to do
 		victim.adjustToxLoss(0.25 * seconds_per_tick)
 		if(SPT_PROB(0.5, seconds_per_tick))
-			victim.visible_message(span_danger("Инфекция на остатках [limb.ru_plaintext_zone[GENITIVE] || limb.plaintext_zone] у [victim.declent_ru(GENITIVE)] шевелится и пузырится, вызывая тошноту!"), span_warning("Вы чувствуете, как инфекция на остатках вашей [limb.ru_plaintext_zone[GENITIVE] || limb.plaintext_zone] проникает в ваши вены!"), vision_distance = COMBAT_MESSAGE_RANGE)
+			victim.visible_message(span_danger("Инфекция на остатках [limb.ru_plaintext_zone[GENITIVE] || limb.plaintext_zone] у [victim.declent_ru(GENITIVE)] тошнотворно пузырится!"), span_warning("Вы чувствуете, как инфекция на остатках вашей [limb.ru_plaintext_zone[GENITIVE] || limb.plaintext_zone] проникает в ваши вены!"), vision_distance = COMBAT_MESSAGE_RANGE)
 		return
 
 	for(var/datum/reagent/reagent as anything in victim.reagents.reagent_list)
@@ -138,7 +138,7 @@
 /datum/wound/burn/flesh/set_disabling(new_value)
 	. = ..()
 	if(new_value && strikes_to_lose_limb <= 0)
-		treat_text_short = "Ампутируйте или усовершенствуйте конечность немедленно, или поместите пациента в криогенерику."
+		treat_text_short = "Ампутируйте или аугментируйте конечность немедленно, или поместите пациента в криогенику."
 	else
 		treat_text_short = initial(treat_text_short)
 
@@ -146,20 +146,20 @@
 	if(strikes_to_lose_limb <= 0)
 		return span_deadsay("<B>[capitalize(victim.ru_p_them())] [limb.ru_plaintext_zone[NOMINATIVE] || limb.plaintext_zone] полностью обезжизнена и не функционирует.</B>")
 
-	var/list/condition = list("[capitalize(victim.ru_p_them())] [limb.ru_plaintext_zone[NOMINATIVE] || limb.plaintext_zone] [examine_desc]")
+	var/list/condition = list("[capitalize(victim.ru_p_them())] [limb.ru_plaintext_zone[NOMINATIVE] || limb.plaintext_zone] [examine_desc] перевязана [limb.current_gauze.name]. Повязка ")
 	if(limb.current_gauze)
 		var/bandage_condition
 		switch(limb.current_gauze.absorption_capacity)
 			if(0 to 1.25)
-				bandage_condition = "почти разрушен"
+				bandage_condition = "почти спала"
 			if(1.25 to 2.75)
-				bandage_condition = "плохо изношен"
+				bandage_condition = "сильно износилась"
 			if(2.75 to 4)
-				bandage_condition = "слегка запачкан"
+				bandage_condition = "слегка запачкана кровью"
 			if(4 to INFINITY)
-				bandage_condition = "чистый"
+				bandage_condition = "чиста"
 
-		condition += " под повязкой из [bandage_condition] [limb.current_gauze.name]"
+		condition += " [bandage_condition]!"
 	else
 		switch(infestation)
 			if(WOUND_INFECTION_MODERATE to WOUND_INFECTION_SEVERE)
@@ -169,12 +169,11 @@
 			if(WOUND_INFECTION_CRITICAL to WOUND_INFECTION_SEPTIC)
 				condition += ", [span_deadsay("с полосами гнилой инфекции!")]"
 			if(WOUND_INFECTION_SEPTIC to INFINITY)
-				return span_deadsay("<B>[capitalize(victim.ru_p_them())] [limb.ru_plaintext_zone[NOMINATIVE] || limb.plaintext_zone] представляет собой хаос из обожженной кожи и зараженного гниения!</B>")
+				return span_deadsay("<B>[capitalize(victim.ru_p_them())] [limb.ru_plaintext_zone[NOMINATIVE] || limb.plaintext_zone] представляет собой мессиво из обожженной кожи и зараженного гниения!</B>")
 			else
 				condition += "!"
 
 	return "<B>[condition.Join()]</B>"
-
 
 /datum/wound/burn/flesh/severity_text(simple = FALSE)
 	. = ..()
@@ -195,7 +194,7 @@
 /datum/wound/burn/flesh/get_scanner_description(mob/user)
 	if(strikes_to_lose_limb <= 0) // Unclear if it can go below 0, best to not take the chance
 		var/oopsie = "Тип: [name]<br>Тяжесть: [severity_text()]"
-		oopsie += "<div class='ml-3'>Уровень инфекции: [span_deadsay("Часть тела пострадала от полной сепсиса и должна быть удалена. Ампутируйте или улучшите конечность немедленно, или поместите пациента в криотрубку.")]</div>"
+		oopsie += "<div class='ml-3'>Уровень инфекции: [span_deadsay("Часть тела пострадала от полной сепсиса и должна быть удалена. Ампутируйте или аугментируйте конечность немедленно, или поместите пациента в криогенику.")]</div>"
 		return oopsie
 
 	. = ..()
@@ -217,7 +216,7 @@
 			. += "\tХирургическая обработка, антибиотики/стерилизаторы или регенеративная сетка избавят от инфекции. Ультрафиолетовые ручные фонарики парамедиков также эффективны.\n"
 
 		if(flesh_damage > 0)
-			. += "Обнаружено повреждение ткани: Применение мази, регенеративной сетки, Synthflesh или употребление \"Минералки\" помогут восстановить поврежденную ткань. Хорошее питание, отдых и поддержание чистоты раны также могут медленно восстановить ткань.\n"
+			. += "Обнаружено повреждение ткани: Применение мази, регенеративной сетки, синтплоти или шахтерской мази помогут восстановить поврежденную кожу. Хорошее питание, отдых и поддержание чистоты раны также могут медленно восстановить плоть.\n"
 	. += "</div>"
 
 /*
@@ -233,7 +232,7 @@
 		return TRUE
 
 	limb.heal_damage(I.heal_brute, I.heal_burn)
-	user.visible_message(span_green("[capitalize(user.declent_ru(NOMINATIVE))] наносит [I.declent_ru(ACCUSATIVE)] на [victim.declent_ru(ACCUSATIVE)]."), span_green("Вы наносите [I.declent_ru(GENITIVE)] на [limb.ru_plaintext_zone[ACCUSATIVE] || limb.plaintext_zone] у [user == victim ? "вас" : "[victim.declent_ru(GENITIVE)]"]."))
+	user.visible_message(span_green("[capitalize(user.declent_ru(NOMINATIVE))] наносит [I.declent_ru(ACCUSATIVE)] на [victim.declent_ru(ACCUSATIVE)]."), span_green("Вы наносите [I.declent_ru(ACCUSATIVE)] на [limb.ru_plaintext_zone[ACCUSATIVE] || limb.plaintext_zone] у [user == victim ? "вас" : "[victim.declent_ru(GENITIVE)]"]."))
 	I.use(1)
 	sanitization += I.sanitization
 	flesh_healing += I.flesh_regeneration
@@ -247,13 +246,13 @@
 /// Paramedic UV penlights
 /datum/wound/burn/flesh/proc/uv(obj/item/flashlight/pen/paramedic/I, mob/user)
 	if(!COOLDOWN_FINISHED(I, uv_cooldown))
-		to_chat(user, span_notice("[I.declent_ru(GENITIVE)] еще перезаряжается!"))
+		to_chat(user, span_notice("[capitalize(I.declent_ru(NOMINATIVE))] еще перезаряжается!"))
 		return TRUE
 	if(infestation <= 0 || infestation < sanitization)
 		to_chat(user, span_notice("Нет инфекции на [limb.ru_plaintext_zone[PREPOSITIONAL] || limb.plaintext_zone] у [victim.declent_ru(GENITIVE)]!"))
 		return TRUE
 
-	user.visible_message(span_notice("[capitalize(user.declent_ru(NOMINATIVE))] отчищает ожоги в [limb.ru_plaintext_zone[PREPOSITIONAL] || limb.plaintext_zone] у [victim.declent_ru(GENITIVE)] при помощи [I.declent_ru(GENITIVE)]."), span_notice("Вы очищаете ожоги [limb.ru_plaintext_zone[GENITIVE] || limb.plaintext_zone] у [user == victim ? "вас" : "[victim.declent_ru(GENITIVE)]"] при помощи [I.declent_ru(GENITIVE)]."), vision_distance=COMBAT_MESSAGE_RANGE)
+	user.visible_message(span_notice("[capitalize(user.declent_ru(NOMINATIVE))] дезинфицирует ожоги [limb.ru_plaintext_zone[GENITIVE] || limb.plaintext_zone] у [victim.declent_ru(GENITIVE)] при помощи [I.declent_ru(GENITIVE)]."), span_notice("Вы дезинфицируете ожоги [limb.ru_plaintext_zone[GENITIVE] || limb.plaintext_zone] у [user == victim ? "вас" : "[victim.declent_ru(GENITIVE)]"] при помощи [I.declent_ru(GENITIVE)]."), vision_distance=COMBAT_MESSAGE_RANGE)
 	sanitization += I.uv_power
 	COOLDOWN_START(I, uv_cooldown, I.uv_cooldown_length)
 	return TRUE
@@ -264,7 +263,7 @@
 	else if(istype(I, /obj/item/stack/medical/mesh))
 		var/obj/item/stack/medical/mesh/mesh_check = I
 		if(!mesh_check.is_open)
-			to_chat(user, span_warning("Ваш нужно открыть [mesh_check] для начала."))
+			to_chat(user, span_warning("Ваш нужно открыть [mesh_check.declent_ru(ACCUSATIVE)] для начала."))
 			return
 		return ointmentmesh(mesh_check, user)
 	else if(istype(I, /obj/item/flashlight/pen/paramedic))
@@ -275,7 +274,7 @@
 	. = ..()
 	if(strikes_to_lose_limb <= 0) // we've already hit sepsis, nothing more to do
 		if(SPT_PROB(0.5, seconds_per_tick))
-			victim.visible_message(span_danger("Зараженные остатки [limb.ru_plaintext_zone[GENITIVE] || limb.plaintext_zone] у [victim.declent_ru(GENITIVE)] пузыряться!"), span_warning("Вы можете чувствовать, как заражение на [limb.ru_plaintext_zone[PREPOSITIONAL] || limb.plaintext_zone] проникает в ваши вены!"), vision_distance = COMBAT_MESSAGE_RANGE)
+			victim.visible_message(span_danger("Инфекция [limb.ru_plaintext_zone[GENITIVE] || limb.plaintext_zone] у [victim.declent_ru(GENITIVE)] пузыряться!"), span_warning("Вы можете чувствовать, как инфекция на [limb.ru_plaintext_zone[PREPOSITIONAL] || limb.plaintext_zone] проникает в ваши вены!"), vision_distance = COMBAT_MESSAGE_RANGE)
 		return
 	if(flesh_healing > 0)
 		flesh_damage = max(flesh_damage - (0.1 * seconds_per_tick), 0)
@@ -394,7 +393,7 @@
 	examine_desc = "похоже, что на коже были выжжены священные символы, оставившие сильные ожоги."
 	occur_text = "быстро обугливается в странный узор из священных символов, выжженных на коже."
 
-	simple_desc = "На коже пациента выжжены странные метки, что значительно ослабляет конечность и усугубляет дальнейший ущерб!!"
+	simple_desc = "На коже пациента выжжены странные метки, что значительно ослабляет конечность и усугубляет дальнейшие повреждения!!"
 
 /datum/wound_pregen_data/flesh_burn/third_degree/holy
 	abstract = FALSE
@@ -402,6 +401,7 @@
 
 	wound_path_to_generate = /datum/wound/burn/flesh/severe/brand
 /// special severe wound caused by the cursed slot machine.
+
 /datum/wound/burn/flesh/severe/cursed_brand
 	name = "Древнее клеймо"
 	desc = "Пациент страдает от сильных ожогов нанесённых клеймом с причудливым орнаментом, что создают серьезный риск инфекции и сильно снижают целостность конечности."
