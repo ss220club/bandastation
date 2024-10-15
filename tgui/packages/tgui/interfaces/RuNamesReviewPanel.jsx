@@ -46,7 +46,7 @@ export const RuNamesReviewPanel = (props) => {
                 {entry_id.suggested_list['предложный']}
               </LabeledList.Item>
             </LabeledList>
-            <Stack>
+            <Stack m="10px">
               <Stack.Item grow>
                 <Button.Confirm
                   fluid
