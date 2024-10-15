@@ -143,21 +143,21 @@
 	name = "Залечить раны (Ушибы, Базово)"
 	replaced_by = /datum/surgery/healing/brute/upgraded
 	healing_step_type = /datum/surgery_step/heal/brute/basic
-	desc = "Хирургическая процедура, обеспечивающая базовое лечение грубых травм пациента. При тяжелых травмах заживление происходит немного быстрее."
+	desc = "Хирургическая процедура, обеспечивающая базовое лечение ушибов пациента. Лечение происходит быстрее, если пациент сильно ранен."
 
 /datum/surgery/healing/brute/upgraded
 	name = "Залечить раны (Ушибы, Продв.)"
 	replaced_by = /datum/surgery/healing/brute/upgraded/femto
 	requires_tech = TRUE
 	healing_step_type = /datum/surgery_step/heal/brute/upgraded
-	desc = "Хирургическая процедура, обеспечивающая продвинутое лечение грубых травм пациента. При тяжелых травмах заживление происходит быстрее."
+	desc = "Хирургическая процедура, обеспечивающая продвинутое лечение ушибов пациента. Лечение происходит быстрее, если пациент сильно ранен."
 
 /datum/surgery/healing/brute/upgraded/femto
 	name = "Залечить раны (Ушибы, Экспер.)"
 	replaced_by = /datum/surgery/healing/combo/upgraded/femto
 	requires_tech = TRUE
 	healing_step_type = /datum/surgery_step/heal/brute/upgraded/femto
-	desc = "Хирургическая процедура, которая обеспечивает экспериментальное лечение грубых травм пациента. При тяжелых травмах заживление происходит значительно быстрее."
+	desc = "Хирургическая процедура, которая обеспечивает экспериментальное лечение ушибов пациента. Лечение происходит быстрее, если пациент сильно ранен."
 
 /********************BRUTE STEPS********************/
 /datum/surgery_step/heal/brute/get_progress(mob/user, mob/living/carbon/target, brute_healed, burn_healed)
@@ -168,7 +168,7 @@
 	var/progress_text
 
 	if(locate(/obj/item/healthanalyzer) in user.held_items)
-		progress_text = ". Оставшиеся физические повреждения: <font color='#ff3333'>[target.getBruteLoss()]</font>"
+		progress_text = ". Оставшиеся ушибы: <font color='#ff3333'>[target.getBruteLoss()]</font>"
 	else
 		switch(estimated_remaining_steps)
 			if(-INFINITY to 1)
@@ -209,21 +209,21 @@
 	name = "Залечить раны (Ожоги, Базово)"
 	replaced_by = /datum/surgery/healing/burn/upgraded
 	healing_step_type = /datum/surgery_step/heal/burn/basic
-	desc = "Хирургическая процедура, обеспечивающая базовое лечение ожогов пациента. При тяжелых ранениях заживление происходит несколько быстрее."
+	desc = "Хирургическая процедура, обеспечивающая базовое лечение ожогов пациента. Лечение происходит быстрее, если пациент сильно ранен."
 
 /datum/surgery/healing/burn/upgraded
 	name = "Залечить раны (Ожоги, Продв.)"
 	replaced_by = /datum/surgery/healing/burn/upgraded/femto
 	requires_tech = TRUE
 	healing_step_type = /datum/surgery_step/heal/burn/upgraded
-	desc = "Хирургическая процедура, обеспечивающая продвинутое лечение ожогов пациента. При тяжелых травмах заживление происходит быстрее."
+	desc = "Хирургическая процедура, обеспечивающая продвинутое лечение ожогов пациента. Лечение происходит быстрее, если пациент сильно ранен."
 
 /datum/surgery/healing/burn/upgraded/femto
 	name = "Залечить раны (Ожоги, Экспер.)"
 	replaced_by = /datum/surgery/healing/combo/upgraded/femto
 	requires_tech = TRUE
 	healing_step_type = /datum/surgery_step/heal/burn/upgraded/femto
-	desc = "Хирургическое вмешательство, в ходе которого проводится экспериментальное лечение ожогов пациента. Заживление происходит значительно быстрее, если пациент сильно ранен."
+	desc = "Хирургическое вмешательство, в ходе которого проводится экспериментальное лечение ожогов пациента. Лечение происходит быстрее, если пациент сильно ранен."
 
 /********************BURN STEPS********************/
 /datum/surgery_step/heal/burn/get_progress(mob/user, mob/living/carbon/target, brute_healed, burn_healed)
@@ -275,20 +275,20 @@
 	replaced_by = /datum/surgery/healing/combo/upgraded
 	requires_tech = TRUE
 	healing_step_type = /datum/surgery_step/heal/combo
-	desc = "Хирургическая процедура, обеспечивающая базовое лечение ожогов и тяжелых травм пациента. При тяжелых ранениях заживает немного быстрее."
+	desc = "Хирургическая процедура, обеспечивающая базовое лечение ожогов и ушибов пациента. Лечение происходит быстрее, если пациент сильно ранен."
 
 /datum/surgery/healing/combo/upgraded
 	name = "Обработайте раны (Смесь, Продв.)"
 	replaced_by = /datum/surgery/healing/combo/upgraded/femto
 	healing_step_type = /datum/surgery_step/heal/combo/upgraded
-	desc = "Хирургическая процедура, обеспечивающая продвинутое лечение ожогов и тяжелых травм пациента. При тяжелых травмах заживление происходит быстрее."
+	desc = "Хирургическая процедура, обеспечивающая продвинутое лечение ожогов и ушибов пациента. Лечение происходит быстрее, если пациент сильно ранен."
 
 
 /datum/surgery/healing/combo/upgraded/femto //no real reason to type it like this except consistency, don't worry you're not missing anything
 	name = "Обработайте раны (Смесь, Экспер.)"
 	replaced_by = null
 	healing_step_type = /datum/surgery_step/heal/combo/upgraded/femto
-	desc = "Хирургическая процедура, которая обеспечивает экспериментальное лечение ожогов и тяжелых травм пациента. При тяжелых травмах заживление происходит значительно быстрее."
+	desc = "Хирургическая процедура, которая обеспечивает экспериментальное лечение ожогов и ушибов пациента. Лечение происходит быстрее, если пациент сильно ранен."
 
 /********************COMBO STEPS********************/
 /datum/surgery_step/heal/combo/get_progress(mob/user, mob/living/carbon/target, brute_healed, burn_healed)
@@ -302,9 +302,9 @@
 
 	if(locate(/obj/item/healthanalyzer) in user.held_items)
 		if(target.getBruteLoss())
-			progress_text = ". Оставшиеся физические повреждения: <font color='#ff3333'>[target.getBruteLoss()]</font>"
+			progress_text = ". Оставшиеся ушибы: <font color='#ff3333'>[target.getBruteLoss()]</font>"
 		if(target.getFireLoss())
-			progress_text += ". Оставшиеся ожоговые повреждения: <font color='#ff9933'>[target.getFireLoss()]</font>"
+			progress_text += ". Оставшиеся ожоги: <font color='#ff9933'>[target.getFireLoss()]</font>"
 	else
 		switch(estimated_remaining_steps)
 			if(-INFINITY to 1)
@@ -312,9 +312,9 @@
 			if(1 to 3)
 				progress_text = ", осталось обработать пару последние следы повреждений"
 			if(3 to 6)
-				progress_text = ", осталось обработать всего-лишь пару травм"
+				progress_text = ", осталось обработать всего-лишь пару повреждений"
 			if(6 to 9)
-				progress_text = ", продолжайте работать над обработкой ран"
+				progress_text = ", продолжайте работать над обработкой провреждений"
 			if(9 to 12)
 				progress_text = ", надо подсобраться, ведь операция будет ещё долго идти"
 			if(12 to 15)

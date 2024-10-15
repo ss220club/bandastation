@@ -441,6 +441,7 @@
 	if(offered_item.on_offered(src)) // see if the item interrupts with its own behavior
 		return
 
+	balloon_alert_to_viewers("что-то предлагает")
 	visible_message(span_notice("[capitalize(declent_ru(NOMINATIVE))] предлагает [offered ? "[offered.declent_ru(DATIVE)] " : ""][offered_item.declent_ru(ACCUSATIVE)]."), \
 					span_notice("Вы предлагаете [offered ? "[offered.declent_ru(DATIVE)] " : ""][offered_item.declent_ru(ACCUSATIVE)]."), null, 2)
 

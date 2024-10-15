@@ -544,7 +544,7 @@ GLOBAL_LIST_INIT(message_modes_stat_limits, list(
 	if(message_mods[WHISPER_MODE] == MODE_WHISPER)
 		. = verb_whisper
 	else if(message_mods[WHISPER_MODE] == MODE_WHISPER_CRIT && !HAS_TRAIT(src, TRAIT_SUCCUMB_OVERRIDE))
-		. = "[verb_whisper] своим последним вздохом"
+		. = "[GLOB.ru_say_verbs[verb_whisper] || verb_whisper] своим последним вздохом"
 	else if(message_mods[MODE_SING])
 		. = verb_sing
 	// Any subtype of slurring in our status effects make us "slur"
