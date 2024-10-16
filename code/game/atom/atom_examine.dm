@@ -83,7 +83,7 @@
 	var/mats_list = list()
 	for(var/custom_material in custom_materials)
 		var/datum/material/current_material = GET_MATERIAL_REF(custom_material)
-		mats_list += span_tooltip("Объект сделан из [current_material.name].", current_material.name)
+		mats_list += span_tooltip("Объект сделан из [current_material.declent_ru(GENITIVE)].", current_material.declent_ru(GENITIVE))
 	. += "из: [english_list(mats_list)]"
 
 /**
