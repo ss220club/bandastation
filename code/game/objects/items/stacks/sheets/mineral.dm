@@ -275,6 +275,7 @@ GLOBAL_LIST_INIT(bananium_recipes, list ( \
  */
 /obj/item/stack/sheet/mineral/titanium
 	name = "titanium"
+	RU_NAMES_LIST_INIT("titanium", "титан", "титана", "титану", "титан", "титаном", "титане")
 	icon_state = "sheet-titanium"
 	inhand_icon_state = "sheet-titanium"
 	singular_name = "titanium sheet"
@@ -308,6 +309,7 @@ GLOBAL_LIST_INIT(titanium_recipes, list ( \
  */
 /obj/item/stack/sheet/mineral/plastitanium
 	name = "plastitanium"
+	RU_NAMES_LIST_INIT("plastitanium", "пластитан", "пластитана", "пластитану", "пластитан", "пластитаном", "пластитане")
 	icon_state = "sheet-plastitanium"
 	inhand_icon_state = "sheet-plastitanium"
 	singular_name = "plastitanium sheet"
@@ -378,6 +380,7 @@ GLOBAL_LIST_INIT(adamantine_recipes, list(
 
 /obj/item/stack/sheet/mineral/adamantine
 	name = "adamantine"
+	RU_NAMES_LIST_INIT("adamantine", "адамантин", "адамантина", "адамантину", "адамантин", "адамантином", "адамантине")
 	icon_state = "sheet-adamantine"
 	inhand_icon_state = "sheet-adamantine"
 	singular_name = "adamantine sheet"
@@ -408,6 +411,7 @@ GLOBAL_LIST_INIT(adamantine_recipes, list(
  */
 /obj/item/stack/sheet/mineral/mythril
 	name = "mythril"
+	RU_NAMES_LIST_INIT("mythril", "мифрил", "мифрила", "мифрилу", "мифрил", "мифрилом", "мифриле")
 	icon_state = "sheet-mythril"
 	inhand_icon_state = "sheet-mythril"
 	singular_name = "mythril sheet"

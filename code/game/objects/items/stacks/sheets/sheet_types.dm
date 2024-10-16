@@ -858,6 +858,7 @@ GLOBAL_LIST_INIT(plastic_recipes, list(
 
 /obj/item/stack/sheet/plastic
 	name = "plastic"
+	RU_NAMES_LIST_INIT("plastic", "пластик", "пластика", "пластику", "пластик", "пластиком", "пластике")
 	desc = "Compress dinosaur over millions of years, then refine, split and mold, and voila! You have plastic."
 	singular_name = "plastic sheet"
 	icon_state = "sheet-plastic"
