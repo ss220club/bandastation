@@ -622,6 +622,7 @@
  */
 /obj/structure/table/reinforced
 	name = "reinforced table"
+	RU_NAMES_LIST_INIT("reinforced table", "укреплённый стол", "укреплённого стола", "укреплённому столу", "укреплённый стол", "укреплённым столом", "укреплённом столе")
 	desc = "A reinforced version of the four legged table."
 	icon = 'icons/obj/smooth_structures/reinforced_table.dmi'
 	icon_state = "reinforced_table-0"
