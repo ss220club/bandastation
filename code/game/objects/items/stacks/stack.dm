@@ -204,13 +204,13 @@
 		return
 	if(singular_name)
 		if(get_amount()>1)
-			. += "Внутри стопки [get_amount()] штук[declension_ru(get_amount(), "а", "и", "")] [declent_ru(GENITIVE)]."
+			. += "Внутри стопки [get_amount()] единиц[declension_ru(get_amount(), "а", "ы", "")] [declent_ru(GENITIVE)]."
 		else
-			. += "Внутри стопки [get_amount()] штука [declent_ru(GENITIVE)]."
+			. += "Внутри стопки [get_amount()] единица [declent_ru(GENITIVE)]."
 	else if(get_amount()>1)
-		. += "Внутри стопки [get_amount()] штук[declension_ru(get_amount(), "а", "и", "")] [declent_ru(GENITIVE)]."
+		. += "Внутри стопки [get_amount()] единиц[declension_ru(get_amount(), "а", "ы", "")] [declent_ru(GENITIVE)]."
 	else
-		. += "Внутри стопки [get_amount()] штука [declent_ru(GENITIVE)]."
+		. += "Внутри стопки [get_amount()] единица [declent_ru(GENITIVE)]."
 	. += span_notice("<b>ПКМ</b> пустой рукой, чтобы взять определенное количество.")
 
 /obj/item/stack/proc/get_amount()
