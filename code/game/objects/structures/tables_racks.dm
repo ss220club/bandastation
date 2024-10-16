@@ -779,6 +779,7 @@
 
 /obj/structure/table/optable
 	name = "operating table"
+	RU_NAMES_LIST_INIT("operating table", "операционный стол", "операционного стола", "операционному столу", "операционный стол", "операционным столом", "операционном столе")
 	desc = "Used for advanced medical procedures."
 	icon = 'icons/obj/medical/surgery_table.dmi'
 	icon_state = "surgery_table"
