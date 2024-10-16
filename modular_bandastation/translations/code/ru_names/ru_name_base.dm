@@ -2,6 +2,7 @@
 	// code\__DEFINES\bandastation\pronouns.dm for more info
 	/// RU_NAMES_LIST_INIT("name", "именительный", "родительный", "дательный", "винительный", "творительный", "предложный")
 	var/list/ru_names
+	var/ru_name_base
 	var/ru_name_nominative
 	var/ru_name_genitive
 	var/ru_name_dative
