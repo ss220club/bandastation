@@ -17,6 +17,7 @@ GLOBAL_LIST_INIT(glass_recipes, list ( \
 
 /obj/item/stack/sheet/glass
 	name = "glass"
+	RU_NAMES_LIST_INIT("glass", "стекло", "стекла", "стеклу", "стекло", "стеклом", "стекле")
 	desc = "HOLY SHEET! That is a lot of glass."
 	singular_name = "glass sheet"
 	icon_state = "sheet-glass"

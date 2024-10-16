@@ -93,6 +93,7 @@ GLOBAL_LIST_INIT(sandbag_recipes, list ( \
  */
 /obj/item/stack/sheet/mineral/diamond
 	name = "diamond"
+	RU_NAMES_LIST_INIT("diamond", "алмаз", "алмаза", "алмазу", "алмаз", "алмазом", "алмазе")
 	icon_state = "sheet-diamond"
 	inhand_icon_state = "sheet-diamond"
 	singular_name = "diamond"
@@ -121,6 +122,7 @@ GLOBAL_LIST_INIT(diamond_recipes, list ( \
  */
 /obj/item/stack/sheet/mineral/uranium
 	name = "uranium"
+	RU_NAMES_LIST_INIT("uranium", "уран", "урана", "урану", "уран", "ураном", "уране")
 	icon_state = "sheet-uranium"
 	inhand_icon_state = "sheet-uranium"
 	singular_name = "uranium sheet"
@@ -152,6 +154,7 @@ GLOBAL_LIST_INIT(uranium_recipes, list ( \
  */
 /obj/item/stack/sheet/mineral/plasma
 	name = "solid plasma"
+	RU_NAMES_LIST_INIT("solid plasma", "твёрдая плазма", "твёрдой плазмы", "твёрдой плазме", "твёрдую плазму", "твёрдой плазмой", "твёрдой плазме")
 	icon_state = "sheet-plasma"
 	inhand_icon_state = "sheet-plasma"
 	singular_name = "plasma sheet"
@@ -189,6 +192,7 @@ GLOBAL_LIST_INIT(plasma_recipes, list ( \
  */
 /obj/item/stack/sheet/mineral/gold
 	name = "gold"
+	RU_NAMES_LIST_INIT("gold", "золото", "золота", "золоту", "золото", "золотом", "золоте")
 	icon_state = "sheet-gold"
 	inhand_icon_state = "sheet-gold"
 	singular_name = "gold bar"
@@ -216,6 +220,7 @@ GLOBAL_LIST_INIT(gold_recipes, list ( \
  */
 /obj/item/stack/sheet/mineral/silver
 	name = "silver"
+	RU_NAMES_LIST_INIT("silver", "серебро", "серебра", "серебру", "серебро", "серебром", "серебре")
 	icon_state = "sheet-silver"
 	inhand_icon_state = "sheet-silver"
 	singular_name = "silver bar"
@@ -242,6 +247,7 @@ GLOBAL_LIST_INIT(silver_recipes, list ( \
  */
 /obj/item/stack/sheet/mineral/bananium
 	name = "bananium"
+	RU_NAMES_LIST_INIT("bananium", "бананиум", "бананиума", "бананиуму", "бананиум", "бананиумом", "бананиуме")
 	icon_state = "sheet-bananium"
 	inhand_icon_state = null
 	singular_name = "bananium sheet"

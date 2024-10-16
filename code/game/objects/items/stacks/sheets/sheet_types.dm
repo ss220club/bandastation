@@ -280,6 +280,7 @@ GLOBAL_LIST_INIT(plasteel_recipes, list ( \
 
 /obj/item/stack/sheet/plasteel
 	name = "plasteel"
+	RU_NAMES_LIST_INIT("plasteel", "пласталь", "пластали", "пластали", "пласталь", "пласталью", "пластали")
 	singular_name = "plasteel sheet"
 	desc = "This sheet is an alloy of iron and plasma."
 	icon_state = "sheet-plasteel"
@@ -372,6 +373,7 @@ GLOBAL_LIST_INIT(wood_recipes, list ( \
 
 /obj/item/stack/sheet/mineral/wood
 	name = "wooden plank"
+	RU_NAMES_LIST_INIT("wooden plank", "деревянная доска", "деревянной доски", "деревянной доске", "деревянную доску", "деревянной доской", "деревянной доске")
 	desc = "One can only guess that this is a bunch of wood."
 	singular_name = "wood plank"
 	icon_state = "sheet-wood"
