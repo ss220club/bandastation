@@ -69,7 +69,7 @@ DEFINE_BITFIELD(foodtypes, list(
 	"STONE", \
 )
 
-/// IC meaning (more or less) for food flags
+/// IC meaning (more or less) for food flags // BANDASTATION EDIT - сверяйте с tgui\packages\tgui\interfaces\PersonalCrafting.tsx
 #define FOOD_FLAGS_IC list( \
 	"Мясное", \
 	"Овощи", \

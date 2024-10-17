@@ -320,8 +320,8 @@
 				span_notice("Вы пристегиваете себя к [declent_ru(DATIVE)]."),\
 				span_hear("Вы слышите металлический лязг."))
 		else
-			M.visible_message(span_warning("[capitalize(M.declent_ru(NOMINATIVE))] пристегивает [M.declent_ru(ACCUSATIVE)] к [declent_ru(DATIVE)]!"),\
-				span_warning("[capitalize(M.declent_ru(NOMINATIVE))] пристегивает вас к [declent_ru(DATIVE)]!"),\
+			M.visible_message(span_warning("[capitalize(user.declent_ru(NOMINATIVE))] пристегивает [M.declent_ru(ACCUSATIVE)] к [declent_ru(DATIVE)]!"),\
+				span_warning("[capitalize(user.declent_ru(NOMINATIVE))] пристегивает вас к [declent_ru(DATIVE)]!"),\
 				span_hear("Вы слышите металлический лязг."))
 /**
  * Handles a user unbuckling a mob from src and sends a visible_message
