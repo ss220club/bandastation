@@ -148,7 +148,7 @@
 /// Sends an announcement about the level changing to players. Uses the passed in datum and the subsystem's previous security level to generate the message.
 /proc/level_announce(datum/security_level/selected_level, previous_level_number)
 	var/current_level_number = selected_level.number_level
-	var/current_level_name = selected_level.name
+	var/current_level_name = selected_level.ru_name
 	var/current_level_color = selected_level.announcement_color
 	var/current_level_sound = selected_level.sound
 
