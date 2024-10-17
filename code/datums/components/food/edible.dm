@@ -385,15 +385,15 @@ Behavior that's still missing from this component that original food items had t
 		var/message_to_blind_consumer = ""
 
 		if(junkiness && eater.satiety < -150 && eater.nutrition > NUTRITION_LEVEL_STARVING + 50 && !HAS_TRAIT(eater, TRAIT_VORACIOUS))
-			to_chat(eater, span_warning("You don't feel like eating any more junk food at the moment!"))
+			to_chat(eater, span_warning("Вам сейчас не хочется есть фастфуд."))
 			return
 		else if(fullness > (600 * (1 + eater.overeatduration / (4000 SECONDS)))) // The more you eat - the more you can eat
 			if(HAS_TRAIT(eater, TRAIT_VORACIOUS))
-				message_to_nearby_audience = span_notice("[capitalize(eater.declent_ru(NOMINATIVE))] voraciously forces \the [parent] down [eater.p_their()] throat..")
-				message_to_consumer = span_notice("You voraciously force \the [parent] down your throat.")
+				message_to_nearby_audience = span_notice("[capitalize(eater.declent_ru(NOMINATIVE))] прожорливо проталкивает [parent.declent_ru(ACCUSATIVE)] себе в горло.")
+				message_to_consumer = span_notice("Вы прожорливо проталкиваете [parent.declent_ru(ACCUSATIVE)] себе в горло.")
 			else
-				message_to_nearby_audience = span_warning("[eater] cannot force any more of \the [parent] to go down [eater.p_their()] throat!")
-				message_to_consumer = span_warning("You cannot force any more of \the [parent] to go down your throat!")
+				message_to_nearby_audience = span_warning("[capitalize(eater.declent_ru(NOMINATIVE))] больше не может протолкнуть [parent.declent_ru(ACCUSATIVE)] себе в горло!")
+				message_to_consumer = span_warning("Вы больше не можете протолкнуть [parent.declent_ru(ACCUSATIVE)] себе в горло!")
 				message_to_blind_consumer = message_to_consumer
 				eater.show_message(message_to_consumer, MSG_VISUAL, message_to_blind_consumer)
 				eater.visible_message(message_to_nearby_audience, ignored_mobs = eater)
@@ -401,20 +401,20 @@ Behavior that's still missing from this component that original food items had t
 				return
 		else if(fullness > 500)
 			if(HAS_TRAIT(eater, TRAIT_VORACIOUS))
-				message_to_nearby_audience = span_notice("[eater] [eatverb] \the [parent].")
-				message_to_consumer = span_notice("You [eatverb]е \the [parent].")
+				message_to_nearby_audience = span_notice("[capitalize(eater.declent_ru(NOMINATIVE))] [eatverb] [parent.declent_ru(ACCUSATIVE)].")
+				message_to_consumer = span_notice("Вы [eatverb]е [parent.declent_ru(ACCUSATIVE)].")
 			else
-				message_to_nearby_audience = span_notice("[eater] unwillingly [eatverb] a bit of \the [parent].")
-				message_to_consumer = span_notice("You unwillingly [eatverb]е a bit of \the [parent].")
+				message_to_nearby_audience = span_notice("[capitalize(eater.declent_ru(NOMINATIVE))] неохотно [eatverb] часть от [parent.declent_ru(GENITIVE)].")
+				message_to_consumer = span_notice("Вы неохотно [eatverb]е часть от [parent.declent_ru(GENITIVE)].")
 		else if(fullness > 150)
-			message_to_nearby_audience = span_notice("[eater] [eatverb] \the [parent].")
-			message_to_consumer = span_notice("You [eatverb]е \the [parent].")
+			message_to_nearby_audience = span_notice("[capitalize(eater.declent_ru(NOMINATIVE))] [eatverb] [parent.declent_ru(ACCUSATIVE)].")
+			message_to_consumer = span_notice("Вы [eatverb]е [parent.declent_ru(ACCUSATIVE)].")
 		else if(fullness > 50)
-			message_to_nearby_audience = span_notice("[eater] hungrily [eatverb] \the [parent].")
-			message_to_consumer = span_notice("You hungrily [eatverb]е \the [parent].")
+			message_to_nearby_audience = span_notice("[capitalize(eater.declent_ru(NOMINATIVE))] жадно [eatverb] [parent.declent_ru(ACCUSATIVE)].")
+			message_to_consumer = span_notice("Вы жадно [eatverb]е [parent.declent_ru(ACCUSATIVE)].")
 		else
-			message_to_nearby_audience = span_notice("[eater] hungrily [eatverb] \the [parent], gobbling it down!")
-			message_to_consumer = span_notice("You hungrily [eatverb]е \the [parent], gobbling it down!")
+			message_to_nearby_audience = span_notice("[capitalize(eater.declent_ru(NOMINATIVE))] жадно [eatverb] [parent.declent_ru(ACCUSATIVE)], проглатывая пищу!")
+			message_to_consumer = span_notice("Вы жадно [eatverb]е [parent.declent_ru(ACCUSATIVE)], проглатывая пищу!")
 
 		//if we're blind, we want to feel how hungrily we ate that food
 		message_to_blind_consumer = message_to_consumer
@@ -423,22 +423,22 @@ Behavior that's still missing from this component that original food items had t
 
 	else //If you're feeding it to someone else.
 		if(isbrain(eater))
-			to_chat(feeder, span_warning("[eater] doesn't seem to have a mouth!"))
+			to_chat(feeder, span_warning("[capitalize(eater.declent_ru(NOMINATIVE))], кажется, не имеет рта!"))
 			return
 		if(fullness <= (600 * (1 + eater.overeatduration / (2000 SECONDS))) || HAS_TRAIT(eater, TRAIT_VORACIOUS))
 			eater.visible_message(
-				span_danger("[feeder] attempts to [eater.get_bodypart(BODY_ZONE_HEAD) ? "feed [eater] [parent]." : "stuff [parent] down [eater]'s throat hole! Gross."]"),
-				span_userdanger("[feeder] attempts to [eater.get_bodypart(BODY_ZONE_HEAD) ? "feed you [parent]." : "stuff [parent] down your throat hole! Gross."]")
+				span_danger("[capitalize(feeder.declent_ru(NOMINATIVE))] пытается [eater.get_bodypart(BODY_ZONE_HEAD) ? "накормить [eater.declent_ru(ACCUSATIVE)] с помощью [parent.declent_ru(GENITIVE)]." : "протолкнуть [parent.declent_ru(ACCUSATIVE)] в горловую дыру [eater.declent_ru(GENITIVE)]! Гадость."]"),
+				span_userdanger("[capitalize(feeder.declent_ru(NOMINATIVE))] пытается [eater.get_bodypart(BODY_ZONE_HEAD) ? "накормить вас с помощью [parent.declent_ru(GENITIVE)]." : "протолкнуть [parent.declent_ru(ACCUSATIVE)] в вашу горловую дыру! Гадость."]")
 			)
 			if(eater.is_blind())
-				to_chat(eater, span_userdanger("You feel someone trying to feed you something!"))
+				to_chat(eater, span_userdanger("Вы чувствуете, как кто-то пытается вас чем-то накормить"))
 		else
 			eater.visible_message(
-				span_danger("[feeder] cannot force any more of [parent] down [eater]'s [eater.get_bodypart(BODY_ZONE_HEAD) ? "throat!" : "throat hole! Eugh."]"),
-				span_userdanger("[feeder] cannot force any more of [parent] down your [eater.get_bodypart(BODY_ZONE_HEAD) ? "throat!" : "throat hole! Eugh."]")
+				span_danger("[capitalize(feeder.declent_ru(NOMINATIVE))] больше не может протолкнуть [parent.declent_ru(ACCUSATIVE)] [eater.get_bodypart(BODY_ZONE_HEAD) ? "в горло [eater.declent_ru(GENITIVE)]!" : "в горловую дыру [eater.declent_ru(GENITIVE)]! Уээ."]"),
+				span_userdanger("[capitalize(feeder.declent_ru(NOMINATIVE))] больше не может протолкнуть [parent.declent_ru(ACCUSATIVE)] [eater.get_bodypart(BODY_ZONE_HEAD) ? "в ваше горло!" : "в вашу горловую дыру! Уээ."]")
 			)
 			if(eater.is_blind())
-				to_chat(eater, span_userdanger("You're too full to eat what's being fed to you!"))
+				to_chat(eater, span_userdanger("Вы слишком сыты, чтобы съесть то, что вам предлагают!"))
 			return
 		if(!do_after(feeder, delay = time_to_eat, target = eater)) //Wait 3-ish seconds before you can feed
 			return
@@ -446,11 +446,11 @@ Behavior that's still missing from this component that original food items had t
 			return
 		log_combat(feeder, eater, "fed", owner.reagents.get_reagent_log_string())
 		eater.visible_message(
-			span_danger("[feeder] forces [eater] to eat [parent]!"),
-			span_userdanger("[feeder] forces you to eat [parent]!")
+			span_danger("[capitalize(feeder.declent_ru(NOMINATIVE))] заставляет [eater.declent_ru(ACCUSATIVE)] съесть [parent.declent_ru(GENITIVE)]!"),
+			span_userdanger("[capitalize(feeder.declent_ru(NOMINATIVE))] заставляет вас съесть [parent.declent_ru(GENITIVE)]!")
 		)
 		if(eater.is_blind())
-			to_chat(eater, span_userdanger("You're forced to eat something!"))
+			to_chat(eater, span_userdanger("Вас заставляют что-то съесть!"))
 
 	TakeBite(eater, feeder)
 
