@@ -70,7 +70,7 @@ SUBSYSTEM_DEF(security_level)
  * Returns the current security level as text
  */
 /datum/controller/subsystem/security_level/proc/get_current_level_as_text()
-	return ((!initialized || !current_security_level) ? "зеленый" : current_security_level.name)
+	return ((!initialized || !current_security_level) ? "green" : current_security_level.name)
 
 /**
  * Converts a text security level to a number
