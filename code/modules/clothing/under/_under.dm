@@ -72,7 +72,7 @@
 
 	if(isnull(held_item) && has_sensor == HAS_SENSORS)
 		context[SCREENTIP_CONTEXT_RMB] = "Переключить датчики"
-		context[SCREENTIP_CONTEXT_CTRL_LMB] = "Поставить датчики на отслеживание"
+		context[SCREENTIP_CONTEXT_CTRL_LMB] = "Поставить датчики на слежение"
 		changed = TRUE
 
 	if(istype(held_item, /obj/item/clothing/accessory) && length(attached_accessories) < max_number_of_accessories)
