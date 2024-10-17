@@ -230,7 +230,7 @@ Behavior that's still missing from this component that original food items had t
 	var/quality = get_perceived_food_quality(user)
 	if(quality > 0)
 		var/quality_label = GLOB.food_quality_description[quality]
-		examine_list += span_green("Это [quality_label] пища.")
+		examine_list += span_green("Это выглядит, как [quality_label] пища.")
 	else if (quality == 0)
 		examine_list += span_notice("Это пища выглядит съедобно.")
 	else if (quality <= FOOD_QUALITY_DANGEROUS)
