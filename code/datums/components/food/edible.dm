@@ -224,50 +224,50 @@ Behavior that's still missing from this component that original food items had t
 	if(food_flags & FOOD_NO_EXAMINE)
 		return
 	if(foodtypes)
-		var/list/types = bitfield_to_list(foodtypes, FOOD_FLAGS)
-		examine_list += span_notice("It is [LOWER_TEXT(english_list(types))].")
+		var/list/types = bitfield_to_list(foodtypes, FOOD_FLAGS_IC)
+		examine_list += span_notice("Состав пищи: [LOWER_TEXT(english_list(types))].")
 
 	var/quality = get_perceived_food_quality(user)
 	if(quality > 0)
 		var/quality_label = GLOB.food_quality_description[quality]
-		examine_list += span_green("You find this meal [quality_label].")
+		examine_list += span_green("Это [quality_label] пища.")
 	else if (quality == 0)
-		examine_list += span_notice("You find this meal edible.")
+		examine_list += span_notice("Это пища выглядит съедобно.")
 	else if (quality <= FOOD_QUALITY_DANGEROUS)
-		examine_list += span_warning("You may die from eating this meal.")
+		examine_list += span_warning("Вы можете умереть, употребив эту пищу.")
 	else if (quality <= TOXIC_FOOD_QUALITY_THRESHOLD)
-		examine_list += span_warning("You find this meal disgusting!")
+		examine_list += span_warning("Эта пища выглядит отвратительно!")
 	else
-		examine_list += span_warning("You find this meal inedible.")
+		examine_list += span_warning("Эта пища выглядит несъедобной.")
 
 	if(owner.reagents.total_volume > 0)
 		var/purity = owner.reagents.get_average_purity(/datum/reagent/consumable)
 		switch(purity)
 			if(0 to 0.2)
-				examine_list += span_warning("It is made of terrible ingredients shortening the effect...")
+				examine_list += span_warning("Пища приготовлена из ужасных ингредиентов, что сокращает эффект...")
 			if(0.2 to 0.4)
-				examine_list += span_warning("It is made of synthetic ingredients shortening the effect.")
+				examine_list += span_warning("Пища приготовлена из синтетических ингредиентов, что сокращает эффект.")
 			if(0.4 to 0.6)
-				examine_list += span_notice("It is made of average quality ingredients.")
+				examine_list += span_notice("Пища приготовлена из ингредиентов обычного качества.")
 			if(0.6 to 0.8)
-				examine_list += span_green("It is made of organic ingredients prolonging the effect.")
+				examine_list += span_green("Пища приготовлена из огранических ингредиентов, что продлевает эффект.")
 			if(0.8 to 1)
-				examine_list += span_green("It is made of finest ingredients prolonging the effect!")
+				examine_list += span_green("Пища приготовлена из лучших ингредиентов, что продлевает эффект!")
 
 	var/datum/mind/mind = user.mind
 	if(mind && HAS_TRAIT_FROM(owner, TRAIT_FOOD_CHEF_MADE, REF(mind)))
-		examine_list += span_green("[owner] was made by you!")
+		examine_list += span_green("Эта пища была изготовлена вами!")
 
 	if(!(food_flags & FOOD_IN_CONTAINER))
 		switch(bitecount)
 			if(0)
 				pass()
 			if(1)
-				examine_list += span_notice("[owner] was bitten by someone!")
+				examine_list += span_notice("Кто-то уже укусил [owner.declent_ru(ACCUSATIVE)]!")
 			if(2, 3)
-				examine_list += span_notice("[owner] was bitten [bitecount] times!")
+				examine_list += span_notice("Кто-то уже укусил [owner.declent_ru(ACCUSATIVE)] [bitecount] раз[declension_ru(bitecount, "", "а", "")]!")
 			else
-				examine_list += span_notice("[owner] was bitten multiple times!")
+				examine_list += span_notice("Кто-то уже укусил [owner.declent_ru(ACCUSATIVE)] множество раз!")
 
 	if(GLOB.Debug2)
 		examine_list += span_notice("Reagent purities:")
@@ -279,7 +279,7 @@ Behavior that's still missing from this component that original food items had t
 	var/fraction = min(bite_consumption / owner.reagents.total_volume, 1)
 	checkLiked(fraction, user)
 	if (!owner.reagents.get_reagent_amount(/datum/reagent/consumable/salt))
-		examine_list += span_notice("It could use a little more Sodium Chloride...")
+		examine_list += span_notice("Не помешало бы добавить немного хлорида натрия...")
 	if (isliving(user))
 		var/mob/living/living_user = user
 		living_user.taste(owner.reagents)
@@ -377,7 +377,7 @@ Behavior that's still missing from this component that original food items had t
 			return
 		if(IsFoodGone(owner, feeder))
 			return
-		var/eatverb = pick(eatverbs)
+		var/eatverb = ru_eat_verb(pick(eatverbs))
 
 		var/message_to_nearby_audience = ""
 		var/message_to_consumer = ""
@@ -388,7 +388,7 @@ Behavior that's still missing from this component that original food items had t
 			return
 		else if(fullness > (600 * (1 + eater.overeatduration / (4000 SECONDS)))) // The more you eat - the more you can eat
 			if(HAS_TRAIT(eater, TRAIT_VORACIOUS))
-				message_to_nearby_audience = span_notice("[eater] voraciously forces \the [parent] down [eater.p_their()] throat..")
+				message_to_nearby_audience = span_notice("[capitalize(eater.declent_ru(NOMINATIVE))] voraciously forces \the [parent] down [eater.p_their()] throat..")
 				message_to_consumer = span_notice("You voraciously force \the [parent] down your throat.")
 			else
 				message_to_nearby_audience = span_warning("[eater] cannot force any more of \the [parent] to go down [eater.p_their()] throat!")
@@ -400,20 +400,20 @@ Behavior that's still missing from this component that original food items had t
 				return
 		else if(fullness > 500)
 			if(HAS_TRAIT(eater, TRAIT_VORACIOUS))
-				message_to_nearby_audience = span_notice("[eater] [eatverb]s \the [parent].")
-				message_to_consumer = span_notice("You [eatverb] \the [parent].")
+				message_to_nearby_audience = span_notice("[eater] [eatverb] \the [parent].")
+				message_to_consumer = span_notice("You [eatverb]е \the [parent].")
 			else
-				message_to_nearby_audience = span_notice("[eater] unwillingly [eatverb]s a bit of \the [parent].")
-				message_to_consumer = span_notice("You unwillingly [eatverb] a bit of \the [parent].")
+				message_to_nearby_audience = span_notice("[eater] unwillingly [eatverb] a bit of \the [parent].")
+				message_to_consumer = span_notice("You unwillingly [eatverb]е a bit of \the [parent].")
 		else if(fullness > 150)
-			message_to_nearby_audience = span_notice("[eater] [eatverb]s \the [parent].")
-			message_to_consumer = span_notice("You [eatverb] \the [parent].")
+			message_to_nearby_audience = span_notice("[eater] [eatverb] \the [parent].")
+			message_to_consumer = span_notice("You [eatverb]е \the [parent].")
 		else if(fullness > 50)
-			message_to_nearby_audience = span_notice("[eater] hungrily [eatverb]s \the [parent].")
-			message_to_consumer = span_notice("You hungrily [eatverb] \the [parent].")
+			message_to_nearby_audience = span_notice("[eater] hungrily [eatverb] \the [parent].")
+			message_to_consumer = span_notice("You hungrily [eatverb]е \the [parent].")
 		else
-			message_to_nearby_audience = span_notice("[eater] hungrily [eatverb]s \the [parent], gobbling it down!")
-			message_to_consumer = span_notice("You hungrily [eatverb] \the [parent], gobbling it down!")
+			message_to_nearby_audience = span_notice("[eater] hungrily [eatverb] \the [parent], gobbling it down!")
+			message_to_consumer = span_notice("You hungrily [eatverb]е \the [parent], gobbling it down!")
 
 		//if we're blind, we want to feel how hungrily we ate that food
 		message_to_blind_consumer = message_to_consumer
@@ -595,7 +595,7 @@ Behavior that's still missing from this component that original food items had t
 	gourmand.add_mood_event("quality_food", event)
 	gourmand.adjust_disgust(-5 + -2 * food_quality * fraction)
 	var/quality_label = GLOB.food_quality_description[food_quality]
-	to_chat(gourmand, span_notice("That's \an [quality_label] meal."))
+	to_chat(gourmand, span_notice("Это [quality_label] пища."))
 
 /// Get the complexity of the crafted food
 /datum/component/edible/proc/get_recipe_complexity()
