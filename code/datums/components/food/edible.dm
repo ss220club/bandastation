@@ -511,16 +511,16 @@ Behavior that's still missing from this component that original food items had t
 	if(!iscarbon(eater))
 		return FALSE
 	if(eater.is_mouth_covered())
-		eater.balloon_alert(feeder, "mouth is covered!")
+		eater.balloon_alert(feeder, "рот закрыт!")
 		return FALSE
 
 	var/atom/food = parent
 
 	if(food.flags_1 & HOLOGRAM_1)
 		if(eater == feeder)
-			to_chat(eater, span_notice("You try to take a bite out of [food], but it fades away!"))
+			to_chat(eater, span_notice("Вы пытаетесь укусить [food.declent_ru(ACCUSATIVE)], но пища просто испаряется!"))
 		else
-			to_chat(feeder, span_notice("You try to feed [eater] [food], but it fades away!"))
+			to_chat(feeder, span_notice("Вы пытаетесь накормить [eater.declent_ru(ACCUSATIVE)] с помощью [food.declent_ru(GENITIVE)], но пища просто испаряется!"))
 
 		qdel(food)
 		return FALSE
@@ -568,18 +568,18 @@ Behavior that's still missing from this component that original food items had t
 	var/food_quality = get_perceived_food_quality(gourmand)
 	if(food_quality <= FOOD_QUALITY_DANGEROUS && (foodtypes & gourmand.get_allergic_foodtypes())) // Only cause anaphylaxis if we're ACTUALLY allergic, otherwise it just tastes horrible
 		if(gourmand.ForceContractDisease(new /datum/disease/anaphylaxis(), make_copy = FALSE, del_on_fail = TRUE))
-			to_chat(gourmand, span_warning("You feel your throat start to itch."))
+			to_chat(gourmand, span_warning("Вы чувствуете начинающийся зуд в горле."))
 			gourmand.add_mood_event("allergic_food", /datum/mood_event/allergic_food)
 		return
 
 	if(food_quality <= TOXIC_FOOD_QUALITY_THRESHOLD)
-		to_chat(gourmand,span_warning("What the hell was that thing?!"))
+		to_chat(gourmand,span_warning("Что это, черт побери, было?!"))
 		gourmand.adjust_disgust(25 + 30 * fraction)
 		gourmand.add_mood_event("toxic_food", /datum/mood_event/disgusting_food)
 		return
 
 	if(food_quality < 0)
-		to_chat(gourmand,span_notice("That didn't taste very good..."))
+		to_chat(gourmand,span_notice("Эта пища была ужасна..."))
 		gourmand.adjust_disgust(11 + 15 * fraction)
 		gourmand.add_mood_event("gross_food", /datum/mood_event/gross_food)
 		return
@@ -664,7 +664,7 @@ Behavior that's still missing from this component that original food items had t
 	if (QDELETED(parent)) // might be destroyed by the callback
 		return
 
-	to_chat(feeder, span_warning("There is nothing left of [parent], oh no!"))
+	to_chat(feeder, span_warning("Ничего более не осталось от [parent.declent_ru(GENITIVE)], о нет!"))
 	if(isturf(parent))
 		var/turf/T = parent
 		T.ScrapeAway(1, CHANGETURF_INHERIT_AIR)
@@ -681,18 +681,18 @@ Behavior that's still missing from this component that original food items had t
 	var/atom/food = parent
 
 	if(food.flags_1 & HOLOGRAM_1)
-		to_chat(doggy, span_notice("You try to take a bite out of [food], but it fades away!"))
+		to_chat(doggy, span_notice("Вы пытаетесь укусить [food.declent_ru(ACCUSATIVE)], но пища просто испаряется!"))
 		qdel(food)
 		return
 
 	if(bitecount == 0 || prob(50))
-		doggy.manual_emote("nibbles away at \the [food].")
+		doggy.manual_emote("[ru_eat_verb("nibble")] [food.declent_ru(ACCUSATIVE)].")
 	bitecount++
 	. = COMPONENT_CANCEL_ATTACK_CHAIN
 
 	doggy.taste(food.reagents) // why should carbons get all the fun?
 	if(bitecount >= 5)
-		var/satisfaction_text = pick("burps from enjoyment.", "yaps for more!", "woofs twice.", "looks at the area where \the [food] was.")
+		var/satisfaction_text = pick("рыгает от удовольствия.", "тявкает, требуя добавки!", "дважды гавкает.", "смотрит на место, где была пища.")
 		doggy.manual_emote(satisfaction_text)
 		qdel(food)
 
@@ -720,13 +720,13 @@ Behavior that's still missing from this component that original food items had t
 	var/atom/food = parent
 
 	if(food.flags_1 & HOLOGRAM_1)
-		to_chat(eater, span_notice("You try to take a bite out of [food], but it fades away!"))
+		to_chat(eater, span_notice("Вы пытаетесь укусить [food.declent_ru(ACCUSATIVE)], но пища просто испаряется!"))
 		qdel(food)
 		return COMPONENT_ATOM_EATEN
 
 	if(foodtypes & edible_flags)
 		food.reagents.trans_to(eater, food.reagents.total_volume, transferred_by = eater)
-		eater.visible_message(span_warning("[src] eats [food]!"), span_notice("You eat [food]."))
+		eater.visible_message(span_warning("[declent_ru(NOMINATIVE)] ест [food.declent_ru(ACCUSATIVE)]!"), span_notice("Вы едите [food.declent_ru(ACCUSATIVE)]."))
 		playsound(get_turf(eater),'sound/items/eatfood.ogg', rand(30,50), TRUE)
 		qdel(food)
 		return COMPONENT_ATOM_EATEN
