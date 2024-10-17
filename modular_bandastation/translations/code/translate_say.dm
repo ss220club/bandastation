@@ -79,6 +79,9 @@ GLOBAL_LIST_INIT(ru_say_verbs, list(
 	// other
 ))
 
+/proc/ru_say_verb(say_verb)
+	return ru_say_verbs[say_verb] || say_verb
+
 /atom/movable/say_mod(input, list/message_mods)
 	. = ..()
 	return GLOB.ru_say_verbs[.] || .
