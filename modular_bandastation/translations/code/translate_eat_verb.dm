@@ -5,5 +5,5 @@
 		"nibble" = "покусывает",
 		"gnaw" = "грызёт",
 		"gobble" = "пожирает",
-		"chomp" = "лопает,")
+		"chomp" = "лопает",)
 	return eat_list[eat_verb] || eat_verb
