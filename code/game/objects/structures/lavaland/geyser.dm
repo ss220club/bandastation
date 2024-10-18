@@ -60,6 +60,7 @@
 
 /obj/structure/geyser/attackby(obj/item/item, mob/user, params)
 	if(!istype(item, /obj/item/mining_scanner) && !istype(item, /obj/item/t_scanner/adv_mining_scanner))
+		playsound(src, SFX_INDUSTRIAL_SCAN, 20, TRUE, -2, TRUE, FALSE)
 		return ..() //this runs the plunger code
 
 	if(discovered)
@@ -116,6 +117,7 @@
 ///A wearable tool that lets you empty plumbing machinery and some other stuff
 /obj/item/plunger
 	name = "plunger"
+	RU_NAMES_LIST_INIT("plunger", "вантуз", "вантуза", "вантузу", "вантуз", "вантузом", "вантузе")
 	desc = "It's a plunger for plunging."
 	icon = 'icons/obj/watercloset.dmi'
 	icon_state = "plunger"
@@ -177,6 +179,7 @@
 ///A faster reinforced plunger
 /obj/item/plunger/reinforced
 	name = "reinforced plunger"
+	RU_NAMES_LIST_INIT("reinforced plunger", "усиленный вантуз", "усиленного вантуза", "усиленному вантузу", "усиленный вантуз", "усиленным вантузом", "усиленном вантузе")
 	desc = "It's an M. 7 Reinforced Plunger© for heavy duty plunging."
 	icon_state = "reinforced_plunger"
 	worn_icon_state = "reinforced_plunger"
@@ -185,3 +188,7 @@
 	layer_mode_sprite = "reinforced_plunger_layer"
 
 	custom_premium_price = PAYCHECK_CREW * 8
+
+/obj/item/plunger/cyborg/Initialize(mapload)
+	. = ..()
+	ADD_TRAIT(src, TRAIT_NODROP, CYBORG_ITEM_TRAIT)

@@ -3,6 +3,7 @@
 // -------------------------
 /obj/machinery/smartfridge
 	name = "smartfridge"
+	RU_NAMES_LIST_INIT("smartfridge", "умный холодильник", "умного холодильника", "умному холодильнику", "умный холодильник", "умным холодильником", "умном холодильнике")
 	desc = "Keeps cold things cold and hot things cold."
 	icon = 'icons/obj/machines/smartfridge.dmi'
 	icon_state = "smartfridge-icon"
@@ -203,7 +204,7 @@
 
 /// Returns details related to the fridge structure
 /obj/machinery/smartfridge/proc/structure_examine()
-	. = ""
+	. = list()
 
 	if(welded_down)
 		. += span_info("It's moorings are firmly [EXAMINE_HINT("welded")] to the floor.")
@@ -253,9 +254,9 @@
 /obj/machinery/smartfridge/play_attack_sound(damage_amount, damage_type = BRUTE, damage_flag = 0)
 	switch(damage_type)
 		if(BRUTE)
-			playsound(src.loc, 'sound/effects/glasshit.ogg', 75, TRUE)
+			playsound(src.loc, 'sound/effects/glass/glasshit.ogg', 75, TRUE)
 		if(BURN)
-			playsound(src.loc, 'sound/items/welder.ogg', 100, TRUE)
+			playsound(src.loc, 'sound/items/tools/welder.ogg', 100, TRUE)
 
 /obj/machinery/smartfridge/atom_break(damage_flag)
 	playsound(src, SFX_SHATTER, 50, TRUE)
@@ -313,7 +314,7 @@
 		to_chat(user, span_warning("\The [src]'s magnetic door won't open without power!"))
 		return FALSE
 
-	if(!user.combat_mode)
+	if(!user.combat_mode || (weapon.item_flags & NOBLUDGEON))
 		to_chat(user, span_warning("\The [src] smartly refuses [weapon]."))
 		return FALSE
 
@@ -343,7 +344,7 @@
 	if(ismob(weapon.loc))
 		var/mob/owner = weapon.loc
 		if(!owner.transferItemToLoc(weapon, src))
-			to_chat(usr, span_warning("\the [weapon] is stuck to your hand, you cannot put it in \the [src]!"))
+			to_chat(owner, span_warning("\the [weapon] is stuck to your hand, you cannot put it in \the [src]!"))
 			return FALSE
 		return TRUE
 	else
@@ -396,42 +397,39 @@
 	if(. || !ui.user.can_perform_action(src, FORBID_TELEKINESIS_REACH))
 		return
 
-	. = TRUE
 	var/mob/living_mob = ui.user
 
 	switch(action)
 		if("Release")
 			var/amount = text2num(params["amount"])
-			var/desired = 1
+			if(isnull(amount) || !isnum(amount))
+				return TRUE
 			var/dispensed_amount = 0
 
 			if(isAI(living_mob))
 				to_chat(living_mob, span_warning("[src] does not respect your authority!"))
-				return
+				return TRUE
 
-			if (amount > 1)
-				desired = tgui_input_number(living_mob, "How many items would you like to take out?", "Release", default = min(amount, 50), max_value = min(amount, 50))
-				if(!desired)
-					return
-
-			for(var/obj/item/dispensed_item in src)
-				if(desired <= 0)
+			for(var/obj/item/dispensed_item in contents)
+				if(amount <= 0)
 					break
-				if(params["path"] == "[dispensed_item.type]-[dispensed_item.name]")
-					if(dispensed_item in component_parts)
-						CRASH("Attempted removal of [dispensed_item] component_part from smartfridge via smartfridge interface.")
-					//dispense the item
-					if(!living_mob.put_in_hands(dispensed_item))
-						dispensed_item.forceMove(drop_location())
-						adjust_item_drop_location(dispensed_item)
-					use_energy(active_power_usage)
-					dispensed_amount++
-					desired--
+				var/item_name = "[dispensed_item.type]-[replacetext(replacetext(dispensed_item.name, "\proper", ""), "\improper", "")]"
+				if(params["path"] != item_name)
+					continue
+				if(dispensed_item in component_parts)
+					CRASH("Attempted removal of [dispensed_item] component_part from smartfridge via smartfridge interface.")
+				//dispense the item
+				if(!living_mob.put_in_hands(dispensed_item))
+					dispensed_item.forceMove(drop_location())
+					adjust_item_drop_location(dispensed_item)
+				use_energy(active_power_usage)
+				dispensed_amount++
+				amount--
 			if(dispensed_amount && vend_sound)
 				playsound(src, vend_sound, 50, TRUE, extrarange = -3)
 			if (visible_contents)
 				update_appearance()
-			return
+			return TRUE
 
 	return FALSE
 
@@ -440,6 +438,7 @@
 // ----------------------------
 /obj/machinery/smartfridge/drying
 	name = "dehydrator"
+	RU_NAMES_LIST_INIT("dehydrator", "иссушатель", "иссушателя", "иссушателю", "иссушатель", "иссушателем", "иссушателе")
 	desc = "A machine meant to remove moisture from various food."
 	icon_state = "dehydrator-icon"
 	base_icon_state = "dehydrator"
@@ -479,15 +478,16 @@
 	.["isdryer"] = TRUE
 	.["drying"] = drying
 
-/obj/machinery/smartfridge/drying/ui_act(action, params)
+/obj/machinery/smartfridge/drying/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
 	. = ..()
 	if(.)
 		update_appearance() // This is to handle a case where the last item is taken out manually instead of through drying pop-out
 		return
 
+	var/mob/user = ui.user
 	switch(action)
 		if("Dry")
-			toggle_drying(FALSE, usr)
+			toggle_drying(FALSE, user)
 			return TRUE
 
 /obj/machinery/smartfridge/drying/powered()
@@ -546,6 +546,7 @@
 /// Wooden version
 /obj/machinery/smartfridge/drying/rack
 	name = "drying rack"
+	RU_NAMES_LIST_INIT("drying rack", "сушилка", "сушилки", "сушилке", "сушилку", "сушилкой", "сушилке")
 	desc = "A wooden contraption, used to dry plant products, food and hide."
 	icon_state = "drying-rack"
 	base_icon_state = "drying-rack"
@@ -606,6 +607,7 @@
 // ----------------------------
 /obj/machinery/smartfridge/drinks
 	name = "drink showcase"
+	RU_NAMES_LIST_INIT("drink showcase", "витрина дла напитков", "витрины дла напитков", "витрине дла напитков", "витрину дла напитков", "витриной дла напитков", "витрине дла напитков")
 	desc = "A refrigerated storage unit for tasty tasty alcohol."
 	base_build_path = /obj/machinery/smartfridge/drinks
 	contents_overlay_icon = "drink"
@@ -644,6 +646,7 @@
 // -------------------------------------
 /obj/machinery/smartfridge/extract
 	name = "smart slime extract storage"
+	RU_NAMES_LIST_INIT("smart slime extract storage", "умное хранилище экстрактов слаймов", "умного хранилища экстрактов слаймов", "умному хранилищу экстрактов слаймов", "умное хранилище экстрактов слаймов", "умным хранилищем экстрактов слаймов", "умном хранилище экстрактов слаймов")
 	desc = "A refrigerated storage unit for slime extracts."
 	base_build_path = /obj/machinery/smartfridge/extract
 	contents_overlay_icon = "slime"
@@ -659,6 +662,7 @@
 // -------------------------------------
 /obj/machinery/smartfridge/petri
 	name = "smart petri dish storage"
+	RU_NAMES_LIST_INIT("smart petri dish storage", "умное хранилище чашек Петри", "умного хранилища чашек Петри", "умному хранилищу чашек Петри", "умное хранилище чашек Петри", "умным хранилищем чашек Петри", "умном хранилище чашек Петри")
 	desc = "A refrigerated storage unit for petri dishes."
 	base_build_path = /obj/machinery/smartfridge/petri
 	contents_overlay_icon = "petri"
@@ -674,6 +678,7 @@
 // -------------------------
 /obj/machinery/smartfridge/organ
 	name = "smart organ storage"
+	RU_NAMES_LIST_INIT("smart organ storage", "умное хранилище органов", "умного хранилища органов", "умному хранилищу органов", "умное хранилище органов", "умным хранилищем органов", "умном хранилище органов")
 	desc = "A refrigerated storage unit for organ storage."
 	max_n_of_items = 20 //vastly lower to prevent processing too long
 	base_build_path = /obj/machinery/smartfridge/organ
@@ -728,6 +733,7 @@
 // -----------------------------
 /obj/machinery/smartfridge/chemistry
 	name = "smart chemical storage"
+	RU_NAMES_LIST_INIT("smart chemical storage", "умное хранилище химикатов", "умного хранилища химикатов", "умному хранилищу химикатов", "умное хранилище химикатов", "умным хранилищем химикатов", "умном хранилище химикатов")
 	desc = "A refrigerated storage unit for medicine storage."
 	base_build_path = /obj/machinery/smartfridge/chemistry
 	contents_overlay_icon = "chem"
@@ -779,6 +785,7 @@
 // ----------------------------
 /obj/machinery/smartfridge/chemistry/virology
 	name = "smart virus storage"
+	RU_NAMES_LIST_INIT("smart virus storage", "умное хранилище вирусов", "умного хранилища вирусов", "умному хранилищу вирусов", "умное хранилище вирусов", "умным хранилищем вирусов", "умном хранилище вирусов")
 	desc = "A refrigerated storage unit for volatile sample storage."
 	base_build_path = /obj/machinery/smartfridge/chemistry/virology
 	contents_overlay_icon = "viro"
@@ -801,6 +808,7 @@
 // ----------------------------
 /obj/machinery/smartfridge/disks
 	name = "disk compartmentalizer"
+	RU_NAMES_LIST_INIT("disk compartmentalizer", "сортировщик дисков", "сортировщика дисков", "сортировщику дисков", "сортировщик дисков", "сортировщиком дисков", "сортировщике дисков")
 	desc = "A machine capable of storing a variety of disks. Denoted by most as the DSU (disk storage unit)."
 	icon_state = "disktoaster"
 	base_icon_state = "disktoaster"

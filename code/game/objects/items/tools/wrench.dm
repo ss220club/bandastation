@@ -1,5 +1,6 @@
 /obj/item/wrench
 	name = "wrench"
+	RU_NAMES_LIST_INIT("wrench", "гаечный ключ", "гаечного ключа", "гаечному ключу", "гаечный ключ", "гаечным ключом", "гаечном ключе")
 	desc = "A wrench with common uses. Can be found in your hand."
 	icon = 'icons/obj/tools.dmi'
 	icon_state = "wrench"
@@ -13,11 +14,11 @@
 	throwforce = 7
 	demolition_mod = 1.25
 	w_class = WEIGHT_CLASS_SMALL
-	usesound = 'sound/items/ratchet.ogg'
-	operating_sound = list('sound/items/ratchet_fast.ogg', 'sound/items/ratchet_slow.ogg')
+	usesound = 'sound/items/tools/ratchet.ogg'
+	operating_sound = list('sound/items/tools/ratchet_fast.ogg', 'sound/items/tools/ratchet_slow.ogg')
 	custom_materials = list(/datum/material/iron=SMALL_MATERIAL_AMOUNT*1.5)
-	drop_sound = 'sound/items/handling/wrench_drop.ogg'
-	pickup_sound = 'sound/items/handling/wrench_pickup.ogg'
+	drop_sound = 'sound/items/handling/tools/wrench_drop.ogg'
+	pickup_sound = 'sound/items/handling/tools/wrench_pickup.ogg'
 
 	attack_verb_continuous = list("bashes", "batters", "bludgeons", "whacks")
 	attack_verb_simple = list("bash", "batter", "bludgeon", "whack")
@@ -35,11 +36,12 @@
 
 /obj/item/wrench/suicide_act(mob/living/user)
 	user.visible_message(span_suicide("[user] is beating [user.p_them()]self to death with [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
-	playsound(loc, 'sound/weapons/genhit.ogg', 50, TRUE, -1)
+	playsound(loc, 'sound/items/weapons/genhit.ogg', 50, TRUE, -1)
 	return BRUTELOSS
 
 /obj/item/wrench/abductor
 	name = "alien wrench"
+	RU_NAMES_LIST_INIT("alien wrench", "инопланетный гаечный ключ", "инопланетного гаечного ключа", "инопланетному гаечному ключу", "инопланетный гаечный ключ", "инопланетным гаечным ключом", "инопланетном гаечном ключе")
 	desc = "A polarized wrench. It causes anything placed between the jaws to turn."
 	icon = 'icons/obj/antags/abductor.dmi'
 	belt_icon_state = "wrench_alien"
@@ -50,6 +52,7 @@
 
 /obj/item/wrench/medical
 	name = "medical wrench"
+	RU_NAMES_LIST_INIT("medical wrench", "медицинский гаечный ключ", "медицинского гаечного ключа", "медицинскому гаечному ключу", "медицинский гаечный ключ", "медицинским гаечным ключом", "медицинском гаечном ключе")
 	desc = "A medical wrench with common(medical?) uses. Can be found in your hand."
 	icon_state = "wrench_medical"
 	inhand_icon_state = "wrench_medical"
@@ -86,6 +89,7 @@
 
 /obj/item/wrench/cyborg
 	name = "hydraulic wrench"
+	RU_NAMES_LIST_INIT("hydraulic wrench", "гидравлический гаечный ключ", "гидравлического гаечного ключа", "гидравлическому гаечному ключу", "гидравлический гаечный ключ", "гидравлическим гаечным ключом", "гидравлическом гаечном ключе")
 	desc = "An advanced robotic wrench, powered by internal hydraulics. Twice as fast as the handheld version."
 	icon = 'icons/obj/items_cyborg.dmi'
 	icon_state = "toolkit_engiborg_wrench"
@@ -93,6 +97,7 @@
 
 /obj/item/wrench/combat
 	name = "combat wrench"
+	RU_NAMES_LIST_INIT("combat wrench", "боевой гаечный ключ", "боевого гаечного ключа", "боевому гаечному ключу", "боевой гаечный ключ", "боевым гаечным ключом", "боевом гаечном ключе")
 	desc = "It's like a normal wrench but edgier. Can be found on the battlefield."
 	icon_state = "wrench_combat"
 	inhand_icon_state = "wrench_combat"
@@ -124,11 +129,12 @@
 	tool_behaviour = active ? TOOL_WRENCH : initial(tool_behaviour)
 	if(user)
 		balloon_alert(user, "[name] [active ? "active, woe!":"restrained"]")
-	playsound(src, active ? 'sound/weapons/saberon.ogg' : 'sound/weapons/saberoff.ogg', 5, TRUE)
+	playsound(src, active ? 'sound/items/weapons/saberon.ogg' : 'sound/items/weapons/saberoff.ogg', 5, TRUE)
 	return COMPONENT_NO_DEFAULT_MESSAGE
 
 /obj/item/wrench/bolter
 	name = "bolter wrench"
+	RU_NAMES_LIST_INIT("bolter wrench", "затворный гаечный ключ", "затворного гаечного ключа", "затворному гаечному ключу", "затворный гаечный ключ", "затворным гаечным ключом", "затворном гаечном ключе")
 	desc = "A wrench designed to grab into airlock's bolting system and raise it regardless of the airlock's power status."
 	icon_state = "bolter_wrench"
 	inhand_icon_state = "bolter_wrench"

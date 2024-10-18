@@ -1,13 +1,14 @@
 /obj/item/crowbar
 	name = "pocket crowbar"
+	RU_NAMES_LIST_INIT("pocket crowbar", "карманный лом", "карманного лома", "карманному лому", "карманный лом", "карманным ломом", "карманном ломе")
 	desc = "A small crowbar. This handy tool is useful for lots of things, such as prying floor tiles or opening unpowered doors."
 	icon = 'icons/obj/tools.dmi'
 	icon_state = "crowbar"
 	inhand_icon_state = "crowbar"
 	lefthand_file = 'icons/mob/inhands/equipment/tools_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/tools_righthand.dmi'
-	usesound = 'sound/items/crowbar.ogg'
-	operating_sound = 'sound/items/crowbar_prying.ogg'
+	usesound = 'sound/items/tools/crowbar.ogg'
+	operating_sound = 'sound/items/tools/crowbar_prying.ogg'
 	obj_flags = CONDUCTS_ELECTRICITY
 	slot_flags = ITEM_SLOT_BELT
 	force = 5
@@ -15,8 +16,8 @@
 	demolition_mod = 1.25
 	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron=SMALL_MATERIAL_AMOUNT*0.5)
-	drop_sound = 'sound/items/handling/crowbar_drop.ogg'
-	pickup_sound = 'sound/items/handling/crowbar_pickup.ogg'
+	drop_sound = 'sound/items/handling/tools/crowbar_drop.ogg'
+	pickup_sound = 'sound/items/handling/tools/crowbar_pickup.ogg'
 
 	attack_verb_continuous = list("attacks", "bashes", "batters", "bludgeons", "whacks")
 	attack_verb_simple = list("attack", "bash", "batter", "bludgeon", "whack")
@@ -35,7 +36,7 @@
 
 /obj/item/crowbar/suicide_act(mob/living/user)
 	user.visible_message(span_suicide("[user] is beating [user.p_them()]self to death with [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
-	playsound(loc, 'sound/weapons/genhit.ogg', 50, TRUE, -1)
+	playsound(loc, 'sound/items/weapons/genhit.ogg', 50, TRUE, -1)
 	return BRUTELOSS
 
 /obj/item/crowbar/red
@@ -45,9 +46,10 @@
 
 /obj/item/crowbar/abductor
 	name = "alien crowbar"
+	RU_NAMES_LIST_INIT("alien crowbar", "инопланетный лом", "инопланетного лома", "инопланетному лому", "инопланетный лом", "инопланетным ломом", "инопланетном ломе")
 	desc = "A hard-light crowbar. It appears to pry by itself, without any effort required."
 	icon = 'icons/obj/antags/abductor.dmi'
-	usesound = 'sound/weapons/sonic_jackhammer.ogg'
+	usesound = 'sound/items/weapons/sonic_jackhammer.ogg'
 	custom_materials = list(/datum/material/iron =SHEET_MATERIAL_AMOUNT * 2.5, /datum/material/silver = SHEET_MATERIAL_AMOUNT*1.25, /datum/material/plasma =HALF_SHEET_MATERIAL_AMOUNT, /datum/material/titanium =SHEET_MATERIAL_AMOUNT, /datum/material/diamond =SHEET_MATERIAL_AMOUNT)
 	icon_state = "crowbar"
 	belt_icon_state = "crowbar_alien"
@@ -55,6 +57,7 @@
 
 /obj/item/crowbar/large
 	name = "large crowbar"
+	RU_NAMES_LIST_INIT("large crowbar", "большой лом", "большого лома", "большому лому", "большой лом", "большим ломом", "большом ломе")
 	desc = "It's a big crowbar. It doesn't fit in your pockets, because it's big."
 	force = 12
 	w_class = WEIGHT_CLASS_NORMAL
@@ -67,11 +70,13 @@
 
 /obj/item/crowbar/large/emergency
 	name = "emergency crowbar"
+	RU_NAMES_LIST_INIT("emergency crowbar", "аварийный лом", "аварийного лома", "аварийному лому", "аварийный лом", "аварийным ломом", "аварийном ломе")
 	desc = "It's a bulky crowbar. It almost seems deliberately designed to not be able to fit inside of a backpack."
 	w_class = WEIGHT_CLASS_BULKY
 
 /obj/item/crowbar/hammer
 	name = "claw hammer"
+	RU_NAMES_LIST_INIT("claw hammer", "молоток-гвоздодер", "молотка-гвоздодера", "молотку-гвоздодеру", "молоток-гвоздодер", "молотком-гвоздодером", "молотке-гвоздодере")
 	desc = "It's a heavy hammer with a pry bar on the back of its head. Nails aren't common in space, but this tool can still be used as a weapon or a crowbar."
 	force = 11
 	w_class = WEIGHT_CLASS_NORMAL
@@ -90,6 +95,7 @@
 
 /obj/item/crowbar/large/heavy //from space ruin
 	name = "heavy crowbar"
+	RU_NAMES_LIST_INIT("heavy crowbar", "тяжелый лом", "тяжелого лома", "тяжелому лому", "тяжелый лом", "тяжелым ломом", "тяжелом ломе")
 	desc = "It's a big crowbar. It doesn't fit in your pockets, because it's big. It feels oddly heavy.."
 	force = 20
 	icon_state = "crowbar_powergame"
@@ -97,6 +103,7 @@
 
 /obj/item/crowbar/large/old
 	name = "old crowbar"
+	RU_NAMES_LIST_INIT("old crowbar", "старый лом", "старого лома", "старому лому", "старый лом", "старым ломом", "старом ломе")
 	desc = "It's an old crowbar. Much larger than the pocket sized ones, carrying a lot more heft. They don't make 'em like they used to."
 	throwforce = 10
 	throw_speed = 2
@@ -108,6 +115,7 @@
 
 /obj/item/crowbar/power
 	name = "jaws of life"
+	RU_NAMES_LIST_INIT("jaws of life", "челюсти жизни", "челюстей жизни", "челюстям жизни", "челюсти жизни", "челюстями жизни", "челюстях жизни")
 	desc = "A set of jaws of life, compressed through the magic of science."
 	icon_state = "jaws"
 	inhand_icon_state = "jawsoflife"
@@ -115,7 +123,7 @@
 	lefthand_file = 'icons/mob/inhands/equipment/tools_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/tools_righthand.dmi'
 	custom_materials = list(/datum/material/iron = SHEET_MATERIAL_AMOUNT*2.25, /datum/material/silver = SHEET_MATERIAL_AMOUNT*1.25, /datum/material/titanium = SHEET_MATERIAL_AMOUNT*1.75)
-	usesound = 'sound/items/jaws_pry.ogg'
+	usesound = 'sound/items/tools/jaws_pry.ogg'
 	force = 15
 	w_class = WEIGHT_CLASS_NORMAL
 	toolspeed = 0.7
@@ -152,7 +160,7 @@
 	tool_behaviour = (active ? TOOL_WIRECUTTER : TOOL_CROWBAR)
 	if(user)
 		balloon_alert(user, "attached [active ? "cutting" : "prying"]")
-	playsound(src, 'sound/items/change_jaws.ogg', 50, TRUE)
+	playsound(src, 'sound/items/tools/change_jaws.ogg', 50, TRUE)
 	if(tool_behaviour == TOOL_CROWBAR)
 		RemoveElement(/datum/element/cuffsnapping, snap_time_weak_handcuffs, snap_time_strong_handcuffs)
 	else
@@ -161,6 +169,7 @@
 
 /obj/item/crowbar/power/syndicate
 	name = "jaws of death"
+	RU_NAMES_LIST_INIT("jaws of death", "челюсти смерти", "челюстей смерти", "челюстям смерти", "челюсти смерти", "челюстями смерти", "челюстях смерти")
 	desc = "An improved, faster, and smaller copy of Nanotrasen's standard jaws of life. Can be used to force open airlocks in its crowbar configuration."
 	icon_state = "jaws_syndie"
 	w_class = WEIGHT_CLASS_SMALL
@@ -174,10 +183,10 @@
 /obj/item/crowbar/power/suicide_act(mob/living/user)
 	if(tool_behaviour == TOOL_CROWBAR)
 		user.visible_message(span_suicide("[user] is putting [user.p_their()] head in [src], it looks like [user.p_theyre()] trying to commit suicide!"))
-		playsound(loc, 'sound/items/jaws_pry.ogg', 50, TRUE, -1)
+		playsound(loc, 'sound/items/tools/jaws_pry.ogg', 50, TRUE, -1)
 	else
 		user.visible_message(span_suicide("[user] is wrapping \the [src] around [user.p_their()] neck. It looks like [user.p_theyre()] trying to rip [user.p_their()] head off!"))
-		playsound(loc, 'sound/items/jaws_cut.ogg', 50, TRUE, -1)
+		playsound(loc, 'sound/items/tools/jaws_cut.ogg', 50, TRUE, -1)
 		if(iscarbon(user))
 			var/mob/living/carbon/suicide_victim = user
 			var/obj/item/bodypart/target_bodypart = suicide_victim.get_bodypart(BODY_ZONE_HEAD)
@@ -188,16 +197,18 @@
 
 /obj/item/crowbar/cyborg
 	name = "hydraulic crowbar"
+	RU_NAMES_LIST_INIT("hydraulic crowbar", "гидравлический лом", "гидравлического лома", "гидравлическому лому", "гидравлический лом", "гидравлическим ломом", "гидравлическом ломе")
 	desc = "A hydraulic prying tool, simple but powerful."
 	icon = 'icons/obj/items_cyborg.dmi'
 	icon_state = "toolkit_engiborg_crowbar"
 	worn_icon_state = "toolkit_engiborg_crowbar" //error sprite - this shouldn't have been dropped
-	usesound = 'sound/items/jaws_pry.ogg'
+	usesound = 'sound/items/tools/jaws_pry.ogg'
 	force = 10
 	toolspeed = 0.5
 
 /obj/item/crowbar/mechremoval
 	name = "mech removal tool"
+	RU_NAMES_LIST_INIT("mech removal tool", "огромный лом", "огромного лома", "огромному лому", "огромный лом", "огромным ломом", "огромном ломе")
 	desc = "A... really big crowbar. You're pretty sure it could pry open a mech, but it seems unwieldy otherwise."
 	icon_state = "mechremoval0"
 	base_icon_state = "mechremoval"
@@ -234,7 +245,7 @@
 	user.log_message("tried to pry open [mech], located at [loc_name(mech)], which is currently occupied by [mech.occupants.Join(", ")].", LOG_ATTACK)
 	var/mech_dir = mech.dir
 	mech.balloon_alert(user, "prying open...")
-	playsound(mech, 'sound/machines/airlock_alien_prying.ogg', 100, TRUE)
+	playsound(mech, 'sound/machines/airlock/airlock_alien_prying.ogg', 100, TRUE)
 	if(!use_tool(mech, user, (mech.mecha_flags & IS_ENCLOSED) ? 5 SECONDS : 3 SECONDS, volume = 0, extra_checks = CALLBACK(src, PROC_REF(extra_checks), mech, mech_dir)))
 		mech.balloon_alert(user, "interrupted!")
 		return
@@ -243,7 +254,7 @@
 		if(isAI(occupant))
 			continue
 		mech.mob_exit(occupant, randomstep = TRUE)
-	playsound(mech, 'sound/machines/airlockforced.ogg', 75, TRUE)
+	playsound(mech, 'sound/machines/airlock/airlockforced.ogg', 75, TRUE)
 
 /obj/item/crowbar/mechremoval/proc/extra_checks(obj/vehicle/sealed/mecha/mech, mech_dir)
 	return HAS_TRAIT(src, TRAIT_WIELDED) && LAZYLEN(mech.occupants) && mech.dir == mech_dir

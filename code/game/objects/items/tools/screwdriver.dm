@@ -1,5 +1,6 @@
 /obj/item/screwdriver
 	name = "screwdriver"
+	RU_NAMES_LIST_INIT("screwdriver", "отвёртка", "отвёртки", "отвёртке", "отвёртку", "отвёрткой", "отвёртке")
 	desc = "You can be totally screwy with this."
 	icon = 'icons/obj/tools.dmi'
 	icon_state = "screwdriver_map"
@@ -20,14 +21,14 @@
 	custom_materials = list(/datum/material/iron=SMALL_MATERIAL_AMOUNT*0.75)
 	attack_verb_continuous = list("stabs")
 	attack_verb_simple = list("stab")
-	hitsound = 'sound/weapons/bladeslice.ogg'
-	usesound = list('sound/items/screwdriver.ogg', 'sound/items/screwdriver2.ogg')
-	operating_sound = 'sound/items/screwdriver_operating.ogg'
+	hitsound = 'sound/items/weapons/bladeslice.ogg'
+	usesound = list('sound/items/tools/screwdriver.ogg', 'sound/items/tools/screwdriver2.ogg')
+	operating_sound = 'sound/items/tools/screwdriver_operating.ogg'
 	tool_behaviour = TOOL_SCREWDRIVER
 	toolspeed = 1
 	armor_type = /datum/armor/item_screwdriver
-	drop_sound = 'sound/items/handling/screwdriver_drop.ogg'
-	pickup_sound = 'sound/items/handling/screwdriver_pickup.ogg'
+	drop_sound = 'sound/items/handling/tools/screwdriver_drop.ogg'
+	pickup_sound = 'sound/items/handling/tools/screwdriver_pickup.ogg'
 	sharpness = SHARP_POINTY
 	greyscale_config = /datum/greyscale_config/screwdriver
 	greyscale_config_inhand_left = /datum/greyscale_config/screwdriver_inhand_left
@@ -63,12 +64,13 @@
 
 /obj/item/screwdriver/abductor
 	name = "alien screwdriver"
+	RU_NAMES_LIST_INIT("alien screwdriver", "инопланетная отвёртка", "инопланетной отвёртки", "инопланетной отвёртке", "инопланетную отвёртку", "инопланетной отвёрткой", "инопланетной отвёртке")
 	desc = "An ultrasonic screwdriver."
 	icon = 'icons/obj/antags/abductor.dmi'
 	icon_state = "screwdriver_a"
 	inhand_icon_state = "screwdriver_nuke"
 	custom_materials = list(/datum/material/iron=HALF_SHEET_MATERIAL_AMOUNT*5, /datum/material/silver=SHEET_MATERIAL_AMOUNT*1.25, /datum/material/plasma =HALF_SHEET_MATERIAL_AMOUNT, /datum/material/titanium =SHEET_MATERIAL_AMOUNT, /datum/material/diamond =SHEET_MATERIAL_AMOUNT)
-	usesound = 'sound/items/pshoom.ogg'
+	usesound = 'sound/items/pshoom/pshoom.ogg'
 	toolspeed = 0.1
 	random_color = FALSE
 	greyscale_config_inhand_left = null
@@ -79,6 +81,7 @@
 
 /obj/item/screwdriver/power
 	name = "hand drill"
+	RU_NAMES_LIST_INIT("hand drill", "дрель-шуруповерт", "дрели-шуруповерта", "дрели-шуруповерту", "дрель-шуруповерт", "дрелью-шуруповертом", "дрели-шуруповерте")
 	desc = "A simple powered hand drill."
 	icon_state = "drill"
 	belt_icon_state = null
@@ -93,8 +96,8 @@
 	throw_range = 3//it's heavier than a screw driver/wrench, so it does more damage, but can't be thrown as far
 	attack_verb_continuous = list("drills", "screws", "jabs", "whacks")
 	attack_verb_simple = list("drill", "screw", "jab", "whack")
-	hitsound = 'sound/items/drill_hit.ogg'
-	usesound = 'sound/items/drill_use.ogg'
+	hitsound = 'sound/items/tools/drill_hit.ogg'
+	usesound = 'sound/items/tools/drill_use.ogg'
 	w_class = WEIGHT_CLASS_NORMAL
 	toolspeed = 0.7
 	random_color = FALSE
@@ -130,7 +133,7 @@
 	tool_behaviour = (active ? TOOL_WRENCH : TOOL_SCREWDRIVER)
 	if(user)
 		balloon_alert(user, "attached [active ? "bolt bit" : "screw bit"]")
-	playsound(src, 'sound/items/change_drill.ogg', 50, TRUE)
+	playsound(src, 'sound/items/tools/change_drill.ogg', 50, TRUE)
 	return COMPONENT_NO_DEFAULT_MESSAGE
 
 /obj/item/screwdriver/power/examine()
@@ -142,16 +145,17 @@
 		user.visible_message(span_suicide("[user] is putting [src] to [user.p_their()] temple. It looks like [user.p_theyre()] trying to commit suicide!"))
 	else
 		user.visible_message(span_suicide("[user] is pressing [src] against [user.p_their()] head! It looks like [user.p_theyre()] trying to commit suicide!"))
-	playsound(loc, 'sound/items/drill_use.ogg', 50, TRUE, -1)
+	playsound(loc, 'sound/items/tools/drill_use.ogg', 50, TRUE, -1)
 	return BRUTELOSS
 
 /obj/item/screwdriver/cyborg
 	name = "automated screwdriver"
+	RU_NAMES_LIST_INIT("automated screwdriver", "автоматическая отвёртка", "автоматической отвёртки", "автоматической отвёртке", "автоматическую отвёртку", "автоматической отвёрткой", "автоматической отвёртке")
 	desc = "A powerful automated screwdriver, designed to be both precise and quick."
 	icon = 'icons/obj/items_cyborg.dmi'
 	icon_state = "toolkit_engiborg_screwdriver"
-	hitsound = 'sound/items/drill_hit.ogg'
-	usesound = 'sound/items/drill_use.ogg'
+	hitsound = 'sound/items/tools/drill_hit.ogg'
+	usesound = 'sound/items/tools/drill_use.ogg'
 	toolspeed = 0.5
 	random_color = FALSE
 

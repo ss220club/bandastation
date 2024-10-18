@@ -10,6 +10,7 @@
 
 /obj/machinery/oven
 	name = "oven"
+	RU_NAMES_LIST_INIT("oven", "духовка", "духовки", "духовке", "духовку", "духовкой", "духовке")
 	desc = "Why do they call it oven when you of in the cold food of out hot eat the food?"
 	icon = 'icons/obj/machines/kitchen.dmi'
 	icon_state = "oven_off"
@@ -230,6 +231,7 @@
 
 /obj/machinery/oven/range
 	name = "range"
+	RU_NAMES_LIST_INIT("range", "духовка", "духовки", "духовке", "духовку", "духовкой", "духовке")
 	desc = "And Oven AND a Stove? I guess that's why it's got range!"
 	icon_state = "range_off"
 	base_icon_state = "range"
@@ -247,6 +249,7 @@
 
 /obj/item/plate/oven_tray
 	name = "oven tray"
+	RU_NAMES_LIST_INIT("oven tray", "протевень", "протевеня", "протевеню", "протевень", "протевенем", "протевене")
 	desc = "Time to bake cookies!"
 	icon_state = "oven_tray"
 	max_items = 6

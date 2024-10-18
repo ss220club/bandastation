@@ -17,6 +17,7 @@ GLOBAL_LIST_INIT(glass_recipes, list ( \
 
 /obj/item/stack/sheet/glass
 	name = "glass"
+	RU_NAMES_LIST_INIT("glass", "стекло", "стекла", "стеклу", "стекло", "стеклом", "стекле")
 	desc = "HOLY SHEET! That is a lot of glass."
 	singular_name = "glass sheet"
 	icon_state = "sheet-glass"
@@ -32,8 +33,8 @@ GLOBAL_LIST_INIT(glass_recipes, list ( \
 	cost = SHEET_MATERIAL_AMOUNT
 	source = /datum/robot_energy_storage/material/glass
 	sniffable = TRUE
-	pickup_sound = 'sound/items/glass_pick_up.ogg'
-	drop_sound = 'sound/items/glass_drop.ogg'
+	pickup_sound = 'sound/items/handling/materials/glass_pick_up.ogg'
+	drop_sound = 'sound/items/handling/materials/glass_drop.ogg'
 
 /datum/armor/sheet_glass
 	fire = 50
@@ -92,6 +93,7 @@ GLOBAL_LIST_INIT(pglass_recipes, list ( \
 
 /obj/item/stack/sheet/plasmaglass
 	name = "plasma glass"
+	RU_NAMES_LIST_INIT("plasma glass", "плазменное стекло", "плазменного стекла", "плазменному стеклу", "плазменное стекло", "плазменным стеклом", "плазменном стекле")
 	desc = "A glass sheet made out of a plasma-silicate alloy. It looks extremely tough and heavily fire resistant."
 	singular_name = "plasma glass sheet"
 	icon_state = "sheet-pglass"
@@ -104,8 +106,8 @@ GLOBAL_LIST_INIT(pglass_recipes, list ( \
 	grind_results = list(/datum/reagent/silicon = 20, /datum/reagent/toxin/plasma = 10)
 	material_flags = NONE
 	tableVariant = /obj/structure/table/glass/plasmaglass
-	pickup_sound = 'sound/items/glass_pick_up.ogg'
-	drop_sound = 'sound/items/glass_drop.ogg'
+	pickup_sound = 'sound/items/handling/materials/glass_pick_up.ogg'
+	drop_sound = 'sound/items/handling/materials/glass_drop.ogg'
 
 /obj/item/stack/sheet/plasmaglass/fifty
 	amount = 50
@@ -153,6 +155,7 @@ GLOBAL_LIST_INIT(reinforced_glass_recipes, list ( \
 
 /obj/item/stack/sheet/rglass
 	name = "reinforced glass"
+	RU_NAMES_LIST_INIT("reinforced glass", "усиленное стекло", "усиленного стекла", "усиленному стеклу", "усиленное стекло", "усиленным стеклом", "усиленном стекле")
 	desc = "Glass which seems to have rods or something stuck in them."
 	singular_name = "reinforced glass sheet"
 	icon_state = "sheet-rglass"
@@ -164,8 +167,8 @@ GLOBAL_LIST_INIT(reinforced_glass_recipes, list ( \
 	grind_results = list(/datum/reagent/silicon = 20, /datum/reagent/iron = 10)
 	matter_amount = 6
 	tableVariant = /obj/structure/table/reinforced/rglass
-	pickup_sound = 'sound/items/glass_pick_up.ogg'
-	drop_sound = 'sound/items/glass_drop.ogg'
+	pickup_sound = 'sound/items/handling/materials/glass_pick_up.ogg'
+	drop_sound = 'sound/items/handling/materials/glass_drop.ogg'
 
 /obj/item/stack/sheet/rglass/fifty
 	amount = 50
@@ -191,6 +194,7 @@ GLOBAL_LIST_INIT(prglass_recipes, list ( \
 
 /obj/item/stack/sheet/plasmarglass
 	name = "reinforced plasma glass"
+	RU_NAMES_LIST_INIT("reinforced plasma glass", "усиленное плазменное стекло", "усиленного плазменного стекла", "усиленному плазменному стеклу", "усиленное плазменное стекло", "усиленным плазменным стеклом", "усиленном плазменном стекле")
 	desc = "A glass sheet made out of a plasma-silicate alloy and a rod matrix. It looks hopelessly tough and nearly fire-proof!"
 	singular_name = "reinforced plasma glass sheet"
 	icon_state = "sheet-prglass"
@@ -204,8 +208,8 @@ GLOBAL_LIST_INIT(prglass_recipes, list ( \
 	gulag_valid = TRUE
 	matter_amount = 8
 	tableVariant = /obj/structure/table/reinforced/plasmarglass
-	pickup_sound = 'sound/items/glass_pick_up.ogg'
-	drop_sound = 'sound/items/glass_drop.ogg'
+	pickup_sound = 'sound/items/handling/materials/glass_pick_up.ogg'
+	drop_sound = 'sound/items/handling/materials/glass_drop.ogg'
 
 /datum/armor/sheet_plasmarglass
 	melee = 20
@@ -226,6 +230,7 @@ GLOBAL_LIST_INIT(titaniumglass_recipes, list(
 
 /obj/item/stack/sheet/titaniumglass
 	name = "titanium glass"
+	RU_NAMES_LIST_INIT("titanium glass", "титановое стекло", "титанового стекла", "титановому стеклу", "титановое стекло", "титановым стеклом", "титановом стекле")
 	desc = "A glass sheet made out of a titanium-silicate alloy."
 	singular_name = "titanium glass sheet"
 	icon_state = "sheet-titaniumglass"
@@ -236,8 +241,8 @@ GLOBAL_LIST_INIT(titaniumglass_recipes, list(
 	resistance_flags = ACID_PROOF
 	merge_type = /obj/item/stack/sheet/titaniumglass
 	tableVariant = /obj/structure/table/reinforced/titaniumglass
-	pickup_sound = 'sound/items/glass_pick_up.ogg'
-	drop_sound = 'sound/items/glass_drop.ogg'
+	pickup_sound = 'sound/items/handling/materials/glass_pick_up.ogg'
+	drop_sound = 'sound/items/handling/materials/glass_drop.ogg'
 
 /obj/item/stack/sheet/titaniumglass/fifty
 	amount = 50
@@ -257,6 +262,7 @@ GLOBAL_LIST_INIT(plastitaniumglass_recipes, list(
 
 /obj/item/stack/sheet/plastitaniumglass
 	name = "plastitanium glass"
+	RU_NAMES_LIST_INIT("titanium glass", "пластитановое стекло", "пластитанового стекла", "пластитановому стеклу", "пластитановое стекло", "пластитановым стеклом", "пластитановом стекле")
 	desc = "A glass sheet made out of a plasma-titanium-silicate alloy."
 	singular_name = "plastitanium glass sheet"
 	icon_state = "sheet-plastitaniumglass"
@@ -268,8 +274,8 @@ GLOBAL_LIST_INIT(plastitaniumglass_recipes, list(
 	resistance_flags = ACID_PROOF
 	merge_type = /obj/item/stack/sheet/plastitaniumglass
 	tableVariant = /obj/structure/table/reinforced/plastitaniumglass
-	pickup_sound = 'sound/items/glass_pick_up.ogg'
-	drop_sound = 'sound/items/glass_drop.ogg'
+	pickup_sound = 'sound/items/handling/materials/glass_pick_up.ogg'
+	drop_sound = 'sound/items/handling/materials/glass_drop.ogg'
 
 /obj/item/stack/sheet/plastitaniumglass/fifty
 	amount = 50
@@ -284,6 +290,7 @@ GLOBAL_LIST_INIT(plastitaniumglass_recipes, list(
 
 /obj/item/shard
 	name = "shard"
+	RU_NAMES_LIST_INIT("shard", "осколок", "осколка", "осколку", "осколок", "осколком", "осколоке")
 	desc = "A nasty looking shard of glass."
 	icon = 'icons/obj/debris.dmi'
 	icon_state = "large"
@@ -296,7 +303,7 @@ GLOBAL_LIST_INIT(plastitaniumglass_recipes, list(
 	custom_materials = list(/datum/material/glass=SHEET_MATERIAL_AMOUNT)
 	attack_verb_continuous = list("stabs", "slashes", "slices", "cuts")
 	attack_verb_simple = list("stab", "slash", "slice", "cut")
-	hitsound = 'sound/weapons/bladeslice.ogg'
+	hitsound = 'sound/items/weapons/bladeslice.ogg'
 	resistance_flags = ACID_PROOF
 	armor_type = /datum/armor/item_shard
 	max_integrity = 40
@@ -408,6 +415,7 @@ GLOBAL_LIST_INIT(plastitaniumglass_recipes, list(
 
 /obj/item/shard/plasma
 	name = "purple shard"
+	RU_NAMES_LIST_INIT("purple shard", "фиолетовый осколок", "фиолетового осколка", "фиолетовому осколку", "фиолетовый осколок", "фиолетовым осколком", "фиолетовом осколоке")
 	desc = "A nasty looking shard of plasma glass."
 	force = 6
 	throwforce = 11
@@ -421,6 +429,7 @@ GLOBAL_LIST_INIT(plastitaniumglass_recipes, list(
 
 /obj/item/shard/titanium
 	name = "bright shard"
+	RU_NAMES_LIST_INIT("bright shard", "яркий осколок", "яркого осколка", "яркому осколку", "яркий осколок", "ярким осколком", "ярком осколоке")
 	desc = "A nasty looking shard of titanium infused glass."
 	throwforce = 12
 	icon_state = "titaniumlarge"
@@ -433,6 +442,7 @@ GLOBAL_LIST_INIT(plastitaniumglass_recipes, list(
 
 /obj/item/shard/plastitanium
 	name = "dark shard"
+	RU_NAMES_LIST_INIT("dark shard", "темный осколок", "темного осколка", "темному осколку", "темный осколок", "темным осколком", "темном осколоке")
 	desc = "A nasty looking shard of titanium infused plasma glass."
 	force = 7
 	throwforce = 12

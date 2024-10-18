@@ -10,6 +10,7 @@
 
 /obj/item/clothing/mask/facehugger
 	name = "alien"
+	RU_NAMES_LIST_INIT("alien", "чужой", "чужого", "чужому", "чужого", "чужим", "чужом")
 	desc = "It has some sort of a tube at the end of its tail."
 	icon = 'icons/mob/nonhuman-player/alien.dmi'
 	icon_state = "facehugger"
@@ -23,7 +24,6 @@
 	flags_cover = MASKCOVERSEYES | MASKCOVERSMOUTH
 	layer = MOB_LAYER
 	max_integrity = 100
-	item_flags = XENOMORPH_HOLDABLE
 	slowdown = 2
 	var/stat = CONSCIOUS //UNCONSCIOUS is the idle state in this case
 

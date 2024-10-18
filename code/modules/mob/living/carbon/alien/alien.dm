@@ -1,5 +1,6 @@
 /mob/living/carbon/alien
 	name = "alien"
+	RU_NAMES_LIST_INIT("alien", "чужой", "чужого", "чужому", "чужого", "чужим", "чужом")
 	icon = 'icons/mob/nonhuman-player/alien.dmi'
 	gender = FEMALE //All xenos are girls!!
 	dna = null
@@ -23,6 +24,15 @@
 	unique_name = TRUE
 
 	var/static/regex/alien_name_regex = new("alien (larva|sentinel|drone|hunter|praetorian|queen)( \\(\\d+\\))?")
+	var/static/list/xeno_allowed_items = typecacheof(list(
+		/obj/item/clothing/mask/facehugger,
+		/obj/item/toy/basketball, // playing ball against a xeno is rigged since they cannot be disarmed, their game is out of this world
+		/obj/item/toy/toy_xeno,
+		/obj/item/sticker, //funny ~Jimmyl
+		/obj/item/toy/plush/rouny,
+		/obj/item/hand_item,
+		/obj/item/queen_promotion,
+	))
 
 /mob/living/carbon/alien/Initialize(mapload)
 	add_verb(src, /mob/living/proc/mob_sleep)
@@ -37,6 +47,11 @@
 	. = ..()
 	if(alien_speed)
 		update_alien_speed()
+	LoadComponent( \
+		/datum/component/itempicky, \
+		xeno_allowed_items, \
+		span_alien("Your claws lack the dexterity to hold %TARGET."), \
+		CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(_has_trait), src, TRAIT_ADVANCEDTOOLUSER))
 
 /mob/living/carbon/alien/create_internal_organs()
 	organs += new /obj/item/organ/internal/brain/alien
@@ -131,6 +146,11 @@ Des: Removes all infected images from the alien.
 		mind.name = new_xeno.real_name
 		mind.transfer_to(new_xeno)
 
+	var/obj/item/organ/internal/stomach/alien/melting_pot = get_organ_slot(ORGAN_SLOT_STOMACH)
+	var/obj/item/organ/internal/stomach/alien/frying_pan = new_xeno.get_organ_slot(ORGAN_SLOT_STOMACH)
+	if(istype(melting_pot) && istype(frying_pan))
+		for (var/atom/movable/poor_sod as anything in melting_pot.stomach_contents)
+			frying_pan.consume_thing(poor_sod)
 	qdel(src)
 
 /// Changes the name of the xeno we are evolving into in order to keep the same numerical identifier the old xeno had.
@@ -145,12 +165,10 @@ Des: Removes all infected images from the alien.
 
 	if(old_number != 0)
 		numba = old_number
+		ru_names_rename(RU_NAMES_LIST(initial(name), "[initial(ru_name_nominative) || initial(name)]", "[initial(ru_name_genitive) || initial(name)]", "[initial(ru_name_dative) || initial(name)]", "[initial(ru_name_accusative) || initial(name)]", "[initial(ru_name_instrumental) || initial(name)]", "[initial(ru_name_prepositional) || initial(name)]"))
 		name = initial(name) // prevent chicanery like two different numerical identifiers tied to the same mob
 
 	set_name()
-
-/mob/living/carbon/alien/can_hold_items(obj/item/I)
-	return (I && (I.item_flags & XENOMORPH_HOLDABLE || ISADVANCEDTOOLUSER(src)) && ..())
 
 /mob/living/carbon/alien/on_lying_down(new_lying_angle)
 	. = ..()
@@ -162,3 +180,6 @@ Des: Removes all infected images from the alien.
 
 /mob/living/carbon/alien/proc/update_alien_speed()
 	add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/alien_speed, multiplicative_slowdown = alien_speed)
+
+/mob/living/carbon/alien/get_footprint_sprite()
+	return FOOTPRINT_SPRITE_CLAWS

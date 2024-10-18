@@ -59,6 +59,7 @@ GLOBAL_LIST_INIT(paper_blanks, init_paper_blanks())
 
 /obj/machinery/photocopier
 	name = "photocopier"
+	RU_NAMES_LIST_INIT("photocopier", "ксерокс", "ксерокса", "ксероксу", "ксерокс", "ксероксом", "ксероксе")
 	desc = "Used to copy important documents and anatomy studies."
 	icon = 'icons/obj/service/library.dmi'
 	icon_state = "photocopier"
@@ -179,7 +180,7 @@ GLOBAL_LIST_INIT(paper_blanks, init_paper_blanks())
 
 	return data
 
-/obj/machinery/photocopier/ui_act(action, list/params)
+/obj/machinery/photocopier/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
 	. = ..()
 	if(.)
 		return

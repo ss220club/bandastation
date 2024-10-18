@@ -1,5 +1,6 @@
 /obj/structure/sink
 	name = "sink"
+	RU_NAMES_LIST_INIT("sink", "раковина", "раковины", "раковине", "раковину", "раковиной", "раковине")
 	icon = 'icons/obj/watercloset.dmi'
 	icon_state = "sink"
 	desc = "A sink used for washing one's hands and face. Passively reclaims water over time."
@@ -204,7 +205,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/sink, (-14))
 	if(O.item_flags & ABSTRACT) //Abstract items like grabs won't wash. No-drop items will though because it's still technically an item in your hand.
 		return
 
-	if(!user.combat_mode)
+	if(!user.combat_mode || (O.item_flags & NOBLUDGEON))
 		to_chat(user, span_notice("You start washing [O]..."))
 		busy = TRUE
 		if(!do_after(user, 4 SECONDS, target = src))
@@ -244,6 +245,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/sink, (-14))
 
 /obj/structure/sink/kitchen
 	name = "kitchen sink"
+	RU_NAMES_LIST_INIT("kitchen sink", "кухонная раковина", "кухонной раковины", "кухонной раковине", "кухонную раковину", "кухонной раковиной", "кухонной раковине")
 	icon_state = "sink_alt"
 	pixel_z = 4
 	pixel_shift = 16
@@ -264,6 +266,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/sink/kitchen, (-16))
 
 /obj/structure/sinkframe
 	name = "sink frame"
+	RU_NAMES_LIST_INIT("sink frame", "каркас раковины", "каркаса раковины", "каркасу раковины", "каркас раковины", "каркасом раковины", "каркасе раковины")
 	icon = 'icons/obj/watercloset.dmi'
 	icon_state = "sink_frame"
 	desc = "A sink frame, that needs a water recycler to finish construction."
