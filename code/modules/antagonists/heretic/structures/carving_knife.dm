@@ -163,6 +163,7 @@
 	name = "elder carving"
 	desc = "Коллекция неизвестных символов, они напоминают о давно ушедших днях..."
 	icon = 'icons/obj/service/hand_of_god_structures.dmi'
+	max_integrity = 60
 	/// A tip displayed to heretics who examine the rune carver. Explains what the rune does.
 	var/carver_tip
 	/// Reference to trap owner mob

@@ -68,7 +68,7 @@ GLOBAL_LIST_INIT(strippable_alien_humanoid_items, create_strippable_list(list(
 
 /mob/living/carbon/alien/adult/check_breath(datum/gas_mixture/breath)
 	if(breath?.total_moles() > 0 && !HAS_TRAIT(src, TRAIT_SNEAK))
-		playsound(get_turf(src), pick('sound/mobs/non-humanoids/hiss/lowHiss2.ogg', 'sound/mobs/non-humanoids/hiss/lowHiss3.ogg', 'sound/mobs/non-humanoids/hiss/lowHiss4.ogg'), 50, FALSE, -5)
+		playsound(get_turf(src), SFX_LOW_HISS, 50, FALSE, -5)
 	return ..()
 
 /mob/living/carbon/alien/adult/setGrabState(newstate)
@@ -134,9 +134,9 @@ GLOBAL_LIST_INIT(strippable_alien_humanoid_items, create_strippable_list(list(
 			span_alien("Вы чувствуете боль в своей... груди? Вы не можете проглотить [lucky_winner.declent_ru(ACCUSATIVE)]."))
 		return TRUE
 
-	lucky_winner.audible_message(span_danger("Вы слышите глубокий стон и резкий щелчок, схожий на звук капкана."))
-	lucky_winner.visible_message(span_danger("[capitalize(declent_ru(NOMINATIVE))] поглощает [lucky_winner.declent_ru(ACCUSATIVE)]!"), \
-			span_userdanger("[capitalize(lucky_winner.declent_ru(NOMINATIVE))] поглощает вас!"))
+	lucky_winner.audible_message(span_danger("You hear a deep groan, and a harsh snap like a mantrap."))
+	lucky_winner.visible_message(span_danger("[src] devours [lucky_winner]!"), \
+			span_userdanger("[src] devours you!"))
 	log_combat(src, lucky_winner, "devoured")
 	melting_pot.consume_thing(lucky_winner)
 	return TRUE

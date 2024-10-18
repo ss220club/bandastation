@@ -13,8 +13,8 @@ GLOBAL_LIST_EMPTY(scanned_fish_by_techweb)
 	allowed_experimentors = list(/obj/item/experi_scanner, /obj/machinery/destructive_scanner, /obj/item/fishing_rod/tech, /obj/item/fish_analyzer)
 	traits = EXPERIMENT_TRAIT_TYPECACHE
 	points_reward = list(TECHWEB_POINT_TYPE_GENERIC = TECHWEB_TIER_2_POINTS )
-	required_atoms = list(/obj/item/fish = 4)
-	scan_message = "Сканируйте разные виды рыб"
+	required_atoms = list(/obj/item/fish = 3)
+	scan_message = "Scan different species of fish"
 	///Further experiments added to the techweb when this one is completed.
 	var/list/next_experiments = list(/datum/experiment/scanning/fish/second)
 	///Completing a experiment may also enable a fish source to be used for use for the portal generator.
@@ -78,28 +78,28 @@ GLOBAL_LIST_EMPTY(scanned_fish_by_techweb)
 		experiment_handler.link_experiment(next_in_line)
 
 /datum/experiment/scanning/fish/second
-	name = "Эксперимент по скану рыбы (2)"
-	description = "Эксперимент, требующий отсканировать больше видов рыб, чтобы разблокировать настройку \"Бездна\" для рыболовного портала."
+	name = "Fish Scanning Experiment 2"
+	description = "An experiment requiring more fish species to be scanned to unlock the 'Ocean' setting for the fishing portal."
 	points_reward = list(TECHWEB_POINT_TYPE_GENERIC = TECHWEB_TIER_3_POINTS )
-	required_atoms = list(/obj/item/fish = 8)
+	required_atoms = list(/obj/item/fish = 7)
 	next_experiments = list(/datum/experiment/scanning/fish/third)
-	fish_source_reward = /datum/fish_source/portal/chasm
+	fish_source_reward = /datum/fish_source/portal/ocean
 
 /datum/experiment/scanning/fish/third
-	name = "Эксперимент по скану рыбы (3)"
-	description = "Эксперимент, требующий отсканировать еще больше видов рыб, чтобы разблокировать настройку \"Океан\" для рыболовного портала."
+	name = "Fish Scanning Experiment 3"
+	description = "An experiment requiring even more fish species to be scanned to unlock the 'Chasm' setting for the fishing portal."
 	points_reward = list(TECHWEB_POINT_TYPE_GENERIC = TECHWEB_TIER_4_POINTS )
-	required_atoms = list(/obj/item/fish = 14)
+	required_atoms = list(/obj/item/fish = 11)
 	next_experiments = list(/datum/experiment/scanning/fish/fourth, /datum/experiment/scanning/fish/holographic)
-	fish_source_reward = /datum/fish_source/portal/ocean
+	fish_source_reward = /datum/fish_source/portal/chasm
 
 /datum/experiment/scanning/fish/holographic
 	name = "Эксперимент по скану голорыбы"
 	description = "Чтобы разблокировать настройку \"Рандомизатор\" для рыболовного портала, потребуется голографическая рыба."
 	performance_hint = "Загрузите шаблон \"Пляж\" на Голодэке, чтобы половить голорыбу."
 	points_reward = list(TECHWEB_POINT_TYPE_GENERIC = TECHWEB_TIER_1_POINTS )
-	required_atoms = list(/obj/item/fish/holo = 4)
-	scan_message = "Сканирование различных видов голографических рыб"
+	required_atoms = list(/obj/item/fish/holo = 3)
+	scan_message = "Scan different species of holographic fish"
 	next_experiments = null
 	fish_source_reward = /datum/fish_source/portal/random
 
@@ -111,6 +111,6 @@ GLOBAL_LIST_EMPTY(scanned_fish_by_techweb)
 	name = "Эксперимент по скану рыбы (4)"
 	description = "Эксперимент, требующий много видов рыб, чтобы разблокировать настройку \"Гиперпространство\" для рыболовного портала."
 	points_reward = list(TECHWEB_POINT_TYPE_GENERIC = TECHWEB_TIER_5_POINTS )
-	required_atoms = list(/obj/item/fish = 21)
+	required_atoms = list(/obj/item/fish = 17)
 	next_experiments = null
 	fish_source_reward = /datum/fish_source/portal/hyperspace
