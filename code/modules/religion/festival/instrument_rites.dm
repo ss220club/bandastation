@@ -3,7 +3,7 @@
 	desc = "Creates a holy violin that can analyze songs played from it."
 	ritual_length = 6 SECONDS
 	ritual_invocations = list("Нужен слуга торжества ...")
-	invoke_msg = "... Великий разум музыкальных дел!"
+	invoke_msg = "... Великий разум для музыкальных дел!"
 	favor_cost = 20 //you only need one
 
 /datum/religion_rites/holy_violin/invoke_effect(mob/living/user, atom/religious_tool)

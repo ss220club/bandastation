@@ -71,7 +71,7 @@
 	name = "Synthetic Conversion"
 	desc = "Convert a human-esque individual into a (superior) Android. Buckle a human to convert them, otherwise it will convert you."
 	ritual_length = 30 SECONDS
-	ritual_invocations = list("Внутренние механизмы нашего бога ...",
+	ritual_invocations = list("Внутренними механизмами нашего бога ...",
 						"... Мы взываем к тебе, пред лицом невзгод ...",
 						"... заверши нас, удалив то, что нежеланно ...")
 	invoke_msg = "... Восстань, наш чемпион! Стань тем, чего жаждет твоя душа, обрети жизнь в этом мире в своём истинном облике!!!"
@@ -205,7 +205,7 @@
 /datum/religion_rites/greed/custom_vending
 	name = "Purchase Personal Vending Machine"
 	desc = "Summons a custom vending machine. You can use it to sell MANY items!"
-	invoke_msg = "Если я куплю торговый автомат для своих товаров, я смогу стать БОГАТЫМ!"
+	invoke_msg = "Если я куплю торговый автомат для своих товаров, то я смогу стать БОГАТЫМ!"
 	money_cost = 1000 //quite a step up from vendatray
 
 /datum/religion_rites/greed/custom_vending/invoke_effect(mob/living/user, atom/movable/religious_tool)
@@ -408,7 +408,7 @@
 	name = "Forge Ceremonial Gear"
 	desc = "Turn some material into ceremonial gear. Ceremonial blades are weak outside of sparring, and are quite heavy to lug around."
 	ritual_length = 10 SECONDS
-	invoke_msg = "Оружие во имя твоё! Бои с твоей кровью!"
+	invoke_msg = "Оружие во имя твоё! Бои с кровью твоей!"
 	favor_cost = 0
 	///the material that will be attempted to be forged into a weapon
 	var/obj/item/stack/sheet/converted
