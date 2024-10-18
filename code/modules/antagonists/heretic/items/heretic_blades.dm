@@ -135,7 +135,7 @@
 	icon_state = "dark_blade"
 	base_icon_state = "dark_blade"
 	inhand_icon_state = "dark_blade"
-	after_use_message = "The Torn Champion hears your call..."
+	after_use_message = "Разорванный чемпион слышит ваш зов..."
 	///If our blade is currently infused with the mansus grasp
 	var/infused = FALSE
 

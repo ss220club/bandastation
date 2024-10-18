@@ -21,7 +21,7 @@
 
 /obj/structure/destructible/eldritch_crucible/Initialize(mapload)
 	. = ..()
-	break_message = span_warning("[src] falls apart with a thud!")
+	break_message = span_warning("[capitalize(declent_ru(NOMINATIVE))] разваливается с грохотом!")
 	START_PROCESSING(SSobj, src)
 
 /obj/structure/destructible/eldritch_crucible/process(seconds_per_tick)
@@ -35,7 +35,7 @@
 /obj/structure/destructible/eldritch_crucible/atom_deconstruct(disassembled = TRUE)
 	// Create a spillage if we were destroyed with leftover mass
 	if(current_mass)
-		break_message = span_warning("[src] разваливается с грохотом, рассыпая сияющий экстракт повсюду!")
+		break_message = span_warning("[capitalize(declent_ru(NOMINATIVE))] разваливается с грохотом, рассыпая сияющий экстракт повсюду!")
 		var/turf/our_turf = get_turf(src)
 
 		new /obj/effect/decal/cleanable/greenglow(our_turf)
@@ -45,7 +45,7 @@
 		playsound(our_turf, 'sound/effects/bubbles/bubbles2.ogg', 50, TRUE)
 
 	return ..()
-
+f
 /obj/structure/destructible/eldritch_crucible/examine(mob/user)
 	. = ..()
 	if(!IS_HERETIC_OR_MONSTER(user) && !isobserver(user))
@@ -300,7 +300,7 @@
 	desc = "Стеклянная бутылка, содержащая тусклую желтую жидкость. Кажется, что она регулярно мерцает, исчезая и появляясь."
 	icon_state = "clarity"
 	status_effect = /datum/status_effect/duskndawn
-	crucible_tip = "Allows you to see through walls and objects. Lasts 90 seconds."
+	crucible_tip = "Позволяет видеть сквозь стены и предметы. Действует 90 секунд."
 
 /obj/item/eldritch_potion/wounded
 	name = "brew of the wounded soldier"

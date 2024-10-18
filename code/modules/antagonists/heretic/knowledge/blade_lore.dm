@@ -31,10 +31,10 @@
  */
 /datum/heretic_knowledge/limited_amount/starting/base_blade
 	name = "The Cutting Edge"
-	desc = "Opens up the Path of Blades to you. \
-		Allows you to transmute a knife with one bar of silver or titanium to create a Sundered Blade. \
-		You can create up to four at a time."
-	gain_text = "Our great ancestors forged swords and practiced sparring on the eve of great battles."
+	desc = "Открывает перед вами Путь клинков. \
+		Позволяет трансмутировать нож с одним слитком серебра или титаниума для создания Закаленного клинка. \
+		Одновременно можно иметь не более четырех."
+	gain_text = "Наши великие предки ковали мечи и практиковали спарринги накануне великих сражений."
 	next_knowledge = list(/datum/heretic_knowledge/blade_grasp)
 	required_atoms = list(
 		/obj/item/knife = 1,
@@ -73,7 +73,7 @@
 	// We're officially behind them, apply effects
 	target.AdjustParalyzed(1.5 SECONDS)
 	target.apply_damage(10, BRUTE, wound_bonus = CANT_WOUND)
-	target.balloon_alert(source, "backstab!")
+	target.balloon_alert(source, "удар в спину!")
 	playsound(target, 'sound/items/weapons/guillotine.ogg', 100, TRUE)
 
 /// The cooldown duration between triggers of blade dance
@@ -292,12 +292,12 @@
 
 /datum/heretic_knowledge/blade_upgrade/blade
 	name = "Empowered Blades"
-	desc = "Attacking someone with a Sundered Blade in both hands \
-		will now deliver a blow with both at once, dealing two attacks in rapid succession. \
-		The second blow will be slightly weaker. \
-		You are able to infuse your mansus grasp directly into your blades, and your blades are more effective against structures."
-	gain_text = "I found him cleaved in twain, halves locked in a duel without end; \
-		a flurry of blades, neither hitting their mark, for the Champion was indomitable."
+	desc = "Атакуя кого-либо с Закаленным клинком в обеих руках, \
+		теперь вы будете наносить удар обоими клинками сразу, нанося две атаки в быстрой последовательности. \
+		Второй удар будет немного слабее. \
+		Ваша Хватка мансуса может слиться с клинком, а сами клинки более эффективны против структур."
+	gain_text = "Я нашел его рассеченным на две части, половинки сцепились в дуэли без конца; \
+		шквал клинков, но ни один из них не попал в цель, ибо чемпион был неукротим."
 	next_knowledge = list(/datum/heretic_knowledge/spell/furious_steel)
 	route = PATH_BLADE
 	research_tree_icon_path = 'icons/ui_icons/antags/heretic/knowledge.dmi'

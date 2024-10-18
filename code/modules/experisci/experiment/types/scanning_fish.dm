@@ -14,7 +14,7 @@ GLOBAL_LIST_EMPTY(scanned_fish_by_techweb)
 	traits = EXPERIMENT_TRAIT_TYPECACHE
 	points_reward = list(TECHWEB_POINT_TYPE_GENERIC = TECHWEB_TIER_2_POINTS )
 	required_atoms = list(/obj/item/fish = 3)
-	scan_message = "Scan different species of fish"
+	scan_message = "Сканируйте разные виды рыб"
 	///Further experiments added to the techweb when this one is completed.
 	var/list/next_experiments = list(/datum/experiment/scanning/fish/second)
 	///Completing a experiment may also enable a fish source to be used for use for the portal generator.
@@ -79,7 +79,7 @@ GLOBAL_LIST_EMPTY(scanned_fish_by_techweb)
 
 /datum/experiment/scanning/fish/second
 	name = "Fish Scanning Experiment 2"
-	description = "An experiment requiring more fish species to be scanned to unlock the 'Ocean' setting for the fishing portal."
+	description = "Эксперимент, требующий отсканировать больше видов рыб, чтобы разблокировать настройку \"Океан\" для рыболовного портала."
 	points_reward = list(TECHWEB_POINT_TYPE_GENERIC = TECHWEB_TIER_3_POINTS )
 	required_atoms = list(/obj/item/fish = 7)
 	next_experiments = list(/datum/experiment/scanning/fish/third)
@@ -87,7 +87,7 @@ GLOBAL_LIST_EMPTY(scanned_fish_by_techweb)
 
 /datum/experiment/scanning/fish/third
 	name = "Fish Scanning Experiment 3"
-	description = "An experiment requiring even more fish species to be scanned to unlock the 'Chasm' setting for the fishing portal."
+	description = "Эксперимент, требующий отсканировать еще больше видов рыб, чтобы разблокировать настройку \"Бездна\" для рыболовного портала."
 	points_reward = list(TECHWEB_POINT_TYPE_GENERIC = TECHWEB_TIER_4_POINTS )
 	required_atoms = list(/obj/item/fish = 11)
 	next_experiments = list(/datum/experiment/scanning/fish/fourth, /datum/experiment/scanning/fish/holographic)
@@ -99,7 +99,7 @@ GLOBAL_LIST_EMPTY(scanned_fish_by_techweb)
 	performance_hint = "Загрузите шаблон \"Пляж\" на Голодэке, чтобы половить голорыбу."
 	points_reward = list(TECHWEB_POINT_TYPE_GENERIC = TECHWEB_TIER_1_POINTS )
 	required_atoms = list(/obj/item/fish/holo = 3)
-	scan_message = "Scan different species of holographic fish"
+	scan_message = "Сканирование различных видов голографических рыб"
 	next_experiments = null
 	fish_source_reward = /datum/fish_source/portal/random
 
