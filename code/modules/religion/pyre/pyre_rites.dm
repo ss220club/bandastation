@@ -122,7 +122,7 @@
 		"... даруй этому слабому болту своё благословение ...",
 		"... пусть горит он ярко ...",
 	)
-	invoke_msg = "... зажгись пылающая звезда!"
+	invoke_msg = "... зажгись, пылающая звезда!"
 	favor_cost = 2000
 	///arrow to enchant
 	var/obj/item/ammo_casing/arrow/holy/enchant_target
