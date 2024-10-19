@@ -87,7 +87,7 @@
 	icon_state = "red_cola"
 	name = "\improper Space Cola Vendor"
 	desc = "It vends cola, in space."
-	product_slogans = "Cola in space!"
+	product_slogans = "Кола в космосе!"
 	light_mask = "red_cola-light-mask"
 	light_color = COLOR_DARK_RED
 
@@ -95,7 +95,7 @@
 	icon_state = "space_up"
 	name = "\improper Space-up! Vendor"
 	desc = "Indulge in an explosion of flavor."
-	product_slogans = "Space-up! Like a hull breach in your mouth."
+	product_slogans = "Спейс-ап! Как пробоина корпуса во рту."
 	light_mask = "space_up-light-mask"
 	light_color = COLOR_DARK_MODERATE_LIME_GREEN
 
@@ -103,7 +103,7 @@
 	icon_state = "starkist"
 	name = "\improper Star-kist Vendor"
 	desc = "The taste of a star in liquid form."
-	product_slogans = "Drink the stars! Star-kist!"
+	product_slogans = "Выпей звёзды! Стар-кист!"
 	panel_type = "panel7"
 	light_mask = "starkist-light-mask"
 	light_color = COLOR_LIGHT_ORANGE
@@ -118,7 +118,7 @@
 	icon_state = "pwr_game"
 	name = "\improper Pwr Game Vendor"
 	desc = "You want it, we got it. Brought to you in partnership with Vlad's Salads."
-	product_slogans = "The POWER that gamers crave! PWR GAME!"
+	product_slogans = "СИЛА, которую жаждут геймеры! ПАВЭР ГЕЙМ!"
 	light_mask = "pwr_game-light-mask"
 	light_color = COLOR_STRONG_VIOLET
 
@@ -138,7 +138,7 @@
 		/obj/item/reagent_containers/cup/soda_cans/shamblers = 10,
 		/obj/item/reagent_containers/cup/soda_cans/wellcheers = 5,
 		)
-	product_slogans = "~Shake me up some of that Shambler's Juice!~"
+	product_slogans = "~Встряхни мне немного сока Шамблера!~"
 	product_ads = "Освежает!;Жажда ДНК? Утолите свою жажду!;Выпито более триллиона душ!;Сделано с использованием настоящей ДНК!;Коллективный разум требует вашей жажды!;Пей на здоровье!;Поглотите свою жажду."
 	light_mask = "shamblers-light-mask"
 	light_color = COLOR_MOSTLY_PURE_PINK
