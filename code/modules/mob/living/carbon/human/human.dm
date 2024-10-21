@@ -512,7 +512,7 @@
 			return FALSE
 
 		if (target.stat == DEAD || HAS_TRAIT(target, TRAIT_FAKEDEATH))
-			balloon_alert(src, "[target.ru_p_they()] в состоянии смерти!")
+			balloon_alert(src, "[target.ru_p_they()] [genderize_ru(target.gender, "мертв", "мертва", "мертвое", "мертвы")]!")
 			return FALSE
 
 		if (is_mouth_covered())
