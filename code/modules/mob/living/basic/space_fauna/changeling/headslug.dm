@@ -80,6 +80,7 @@
 
 	for(var/obj/item/organ/target in src)
 		target.forceMove(egg)
+
 	visible_message(
 		span_warning("[capitalize(declent_ru(NOMINATIVE))] вводит что-то в плоть [victim.declent_ru(GENITIVE)]!"),
 		span_danger("Мы вводим наше яйцо в тело [victim.declent_ru(GENITIVE)]!"),
