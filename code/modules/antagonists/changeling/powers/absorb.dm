@@ -106,8 +106,8 @@
 	var/list/recent_speech = target.copy_recent_speech()
 
 	if(recent_speech.len)
-		changeling.antag_memory += "<B>Некоторые образцы речи [target.declent_ru(GENITIVE)], мы должны изучить их, чтобы лучше изображать [target.p_them()]!</B><br>"
-		to_chat(owner, span_boldnotice("Некоторые образцы речи [target.declent_ru(GENITIVE)], мы должны изучить их, чтобы лучше изображать [target.p_them()]!"))
+		changeling.antag_memory += "<B>Некоторые образцы речи [target.declent_ru(GENITIVE)], мы должны изучить их, чтобы лучше изображать [target.ru_p_them()]!</B><br>"
+		to_chat(owner, span_boldnotice("Некоторые образцы речи [target.declent_ru(GENITIVE)], мы должны изучить их, чтобы лучше изображать [target.ru_p_them()]!"))
 		for(var/spoken_memory in recent_speech)
 			changeling.antag_memory += "\"[spoken_memory]\"<br>"
 			to_chat(owner, span_notice("\"[spoken_memory]\""))
