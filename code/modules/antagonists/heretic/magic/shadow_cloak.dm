@@ -101,7 +101,7 @@
 	var/mob/living/removed = source.owner
 	uncloak_mob(removed, show_message = FALSE)
 	removed.visible_message(
-		span_warning("[capitalize(cast_on.declent_ru(NOMINATIVE))] вытаскивается из тени!"),
+		span_warning("[capitalize(removed.declent_ru(NOMINATIVE))] вытаскивается из тени!"),
 		span_userdanger("Вас вытаскивают из тени!"),
 	)
 

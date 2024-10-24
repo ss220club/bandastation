@@ -30,7 +30,7 @@
 	if(isnull(storage_item))
 		return FALSE
 
-	var/item = pick(storage_item.contents)
+	var/obj/item = pick(storage_item.contents) // TODO220 - Type it to upstream
 	if(isnull(item))
 		return FALSE
 
