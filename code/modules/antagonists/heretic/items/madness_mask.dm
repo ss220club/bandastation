@@ -37,7 +37,7 @@
 		return
 
 	ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
-	to_chat(user, span_userdanger("[src] плотно прижимается к вашему лицу и начинаете чувствовать, как из вас вытекает душа!"))
+	to_chat(user, span_userdanger("[capitalize(declent_ru(NOMINATIVE))] плотно прижимается к вашему лицу, и вы начинаете чувствовать, как из вас вытекает душа!"))
 
 /obj/item/clothing/mask/madness_mask/dropped(mob/M)
 	local_user = null

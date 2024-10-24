@@ -179,13 +179,13 @@
 		return ITEM_INTERACT_SUCCESS
 	if(!istype(target, /obj/machinery/door))
 		return NONE
-	var/reference_resolved = link?.resolve()
+	var/obj/machinery/door/reference_resolved = link?.resolve() // TODO220 - Type it to upstream
 	if(reference_resolved == target)
 		return ITEM_INTERACT_BLOCKING
 
 	if(reference_resolved)
 		make_portal(user, reference_resolved, target)
-		to_chat(user, span_notice("Используя [src], вы соединяете [reference_resolved] с [target]."))
+		to_chat(user, span_notice("Вы соединяете [reference_resolved.declent_ru(ACCUSATIVE)] с [target.declent_ru(INSTRUMENTAL)], используя [declent_ru(ACCUSATIVE)]."))
 		link = null
 		balloon_alert(user, "соединено 2/2")
 	else

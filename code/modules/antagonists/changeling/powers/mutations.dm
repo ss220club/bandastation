@@ -54,7 +54,7 @@
 		user.temporarilyRemoveItemFromInventory(hand_item, TRUE) //DROPDEL will delete the item
 		if(!silent)
 			playsound(user, 'sound/effects/blob/blobattack.ogg', 30, TRUE)
-			user.visible_message(span_warning("С отвратительным хрустом, [user] превращает [weapon_name_simple] в руку!"), span_notice("Мы ассимилируем [weapon_name_simple] обратно в наше тело."), span_italics("Вы слышите, как рвется и разрывается органическая масса!"))
+			user.visible_message(span_warning("С отвратительным хрустом, [user.declent_ru(NOMINATIVE)] превращает [weapon_name_simple] в руку!"), span_notice("Мы ассимилируем [weapon_name_simple] обратно в наше тело."), span_italics("Вы слышите, как рвется и разрывается органическая масса!"))
 		user.update_held_items()
 		return TRUE
 
@@ -76,7 +76,7 @@
 	else
 		limb_regen = user.regenerate_limb(BODY_ZONE_L_ARM, 1)
 	if(limb_regen)
-		user.visible_message(span_warning("Отсутствующая рука [user] реформируется, издавая громкий, жуткий звук!"), span_userdanger("Ваша рука отрастает, издавая громкий хрустящий звук и причиняя вам сильную боль!"), span_hear("Вы слышите, как рвется и разрывается органическая масса!"))
+		user.visible_message(span_warning("Отсутствующая рука [user.declent_ru(GENITIVE)] реформируется, издавая громкий, жуткий звук!"), span_userdanger("Ваша рука отрастает, издавая громкий хрустящий звук и причиняя вам сильную боль!"), span_hear("Вы слышите, как рвется и разрывается органическая масса!"))
 		user.emote("scream")
 	var/obj/item/W = new weapon_type(user, silent)
 	user.put_in_hands(W)
@@ -131,7 +131,7 @@
 
 	if(istype(H.wear_suit, suit_type) || istype(H.head, helmet_type))
 		var/name_to_use = (isnull(suit_type) ? helmet_name_simple : suit_name_simple)
-		H.visible_message(span_warning("[H] сбрасывает свой [name_to_use]!"), span_warning("Мы сбрасываем нашу [name_to_use]."), span_hear("Вы слышите, как рвется и разрывается органическая масса!"))
+		H.visible_message(span_warning("[capitalize(H.declent_ru(NOMINATIVE))] сбрасывает свой [name_to_use]!"), span_warning("Мы сбрасываем нашу [name_to_use]."), span_hear("Вы слышите, как рвется и разрывается органическая масса!"))
 		if(!isnull(helmet_type))
 			H.temporarilyRemoveItemFromInventory(H.head, TRUE) //The qdel on dropped() takes care of it
 		if(!isnull(suit_type))

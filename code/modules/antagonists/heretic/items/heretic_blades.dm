@@ -57,11 +57,11 @@
 	var/turf/safe_turf = find_safe_turf(zlevels = z, extended_safety_checks = TRUE)
 	if(check_usability(user))
 		if(do_teleport(user, safe_turf, channel = TELEPORT_CHANNEL_MAGIC))
-			to_chat(user, span_warning("Когда вы разбиваете [src], вы чувствуете, как порыв энергии проходит через ваше тело. [after_use_message]"))
+			to_chat(user, span_warning("Когда вы разбиваете [declent_ru(ACCUSATIVE)], вы чувствуете, как порыв энергии проходит через ваше тело. [after_use_message]"))
 		else
-			to_chat(user, span_warning("Вы разбиваете [src], но ваша мольба остается без ответа."))
+			to_chat(user, span_warning("Вы разбиваете [declent_ru(ACCUSATIVE)], но ваша мольба остается без ответа."))
 	else
-		to_chat(user,span_warning("Вы разбиваете [src]."))
+		to_chat(user,span_warning("Вы разбиваете [declent_ru(ACCUSATIVE)]."))
 	playsound(src, SFX_SHATTER, 70, TRUE) //copied from the code for smashing a glass sheet onto the ground to turn it into a shard
 	qdel(src)
 

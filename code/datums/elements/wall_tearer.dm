@@ -50,7 +50,7 @@
 	// We need to do this three times to actually destroy it
 	var/rip_time = (istype(target, /turf/closed/wall/r_wall) ? tear_time * reinforced_multiplier : tear_time) / 3
 	if (rip_time > 0)
-		tearer.visible_message(span_warning("[tearer] начинает выламывать [target]!"))
+		tearer.visible_message(span_warning("[capitalize(tearer.declent_ru(NOMINATIVE))] начинает выламывать [target.declent_ru(ACCUSATIVE)]!"))
 		playsound(tearer, 'sound/machines/airlock/airlock_alien_prying.ogg', vol = 100, vary = TRUE)
 		target.balloon_alert(tearer, "выламываем...")
 		if (!do_after(tearer, delay = rip_time, target = target, interaction_key = do_after_key))

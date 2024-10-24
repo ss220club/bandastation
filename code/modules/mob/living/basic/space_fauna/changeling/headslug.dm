@@ -82,8 +82,8 @@
 		target.forceMove(egg)
 
 	visible_message(
-		span_warning("[src] вводит что-то в плоть [victim]!"),
-		span_danger("Мы вводим наше яйцо в тело [victim]!"),
+		span_warning("[capitalize(declent_ru(NOMINATIVE))] вводит что-то в плоть [victim.declent_ru(GENITIVE)]!"),
+		span_danger("Мы вводим наше яйцо в тело [victim.declent_ru(GENITIVE)]!"),
 	)
 
 	return TRUE

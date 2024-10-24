@@ -332,7 +332,7 @@
 
 	var/turf/destination = get_turf(destination_landmark)
 
-	sac_target.visible_message(span_danger("[sac_target] начинает сильно дрожать, когда темные усики начинают затягивать их в воздух!"))
+	sac_target.visible_message(span_danger("[capitalize(sac_target.declent_ru(NOMINATIVE))] начинает сильно дрожать, когда темные усики начинают затягивать их в воздух!"))
 	sac_target.set_handcuffed(new /obj/item/restraints/handcuffs/energy/cult(sac_target))
 	sac_target.update_handcuffed()
 
@@ -352,7 +352,7 @@
 	// If our target is dead, try to revive them
 	// and if we fail to revive them, don't proceede the chain
 	sac_target.adjustOxyLoss(-100, FALSE)
-	if(!sac_target.heal_and_revive(50, span_danger("Сердце [sac_target] начинает биться с нечестивой силой, когда они вернулись из мертвых!")))
+	if(!sac_target.heal_and_revive(50, span_danger("Сердце [sac_target.declent_ru(GENITIVE)] начинает биться с нечестивой силой, когда [sac_target.ru_p_they()] возвращается из мертвых!")))
 		return
 
 	if(sac_target.AdjustUnconscious(SACRIFICE_SLEEP_DURATION))
@@ -397,7 +397,7 @@
 	// and we fail to revive them (using a lower number than before),
 	// just disembowel them and stop the chain
 	sac_target.adjustOxyLoss(-100, FALSE)
-	if(!sac_target.heal_and_revive(60, span_danger("Сердце [sac_target] начинает биться с нечестивой силой, когда они вернулись из мертвых!")))
+	if(!sac_target.heal_and_revive(60, span_danger("Сердце [sac_target.declent_ru(GENITIVE)] начинает биться с нечестивой силой, когда [sac_target.ru_p_they()] возвращается из мертвых!")))
 		disembowel_target(sac_target)
 		return
 
@@ -537,7 +537,7 @@
 
 	if(heretic_mind?.current)
 		var/composed_return_message = ""
-		composed_return_message += span_notice("Ваша жертва, [sac_target], была возвращена на станцию - ")
+		composed_return_message += span_notice("Ваша жертва, [sac_target.declent_ru(NOMINATIVE)], была возвращена на станцию - ")
 		if(sac_target.stat == DEAD)
 			composed_return_message += span_red("мертвой. ")
 		else
@@ -628,7 +628,7 @@
 		sac_target.investigate_log("has been killed by heretic sacrifice.", INVESTIGATE_DEATHS)
 		sac_target.death()
 	sac_target.visible_message(
-		span_danger("Органы [sac_target] вытаскиваются из их груди теневыми руами!"),
+		span_danger("Органы [sac_target.declent_ru(GENITIVE)] вытаскиваются из их груди теневыми руами!"),
 		span_userdanger("Ваши органы жестоко вытаскиваются из груди теневыми руками!")
 	)
 

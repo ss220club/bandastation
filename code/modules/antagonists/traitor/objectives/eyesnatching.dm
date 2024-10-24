@@ -169,8 +169,8 @@
 		eye_snatch_enthusiasm *= 0.7
 	user.do_attack_animation(target, used_item = src)
 	target.visible_message(
-		span_warning("[user] прижимает [src] на череп [target]!"),
-		span_userdanger("[user] прижимает [src] на ваш череп!"))
+		span_warning("[capitalize(user.declent_ru(NOMINATIVE))] прижимает [declent_ru(ACCUSATIVE)] на череп [target.declent_ru(GENITIVE)]!"),
+		span_userdanger("[capitalize(user.declent_ru(NOMINATIVE))] прижимает [declent_ru(ACCUSATIVE)] на ваш череп!"))
 	if(!do_after(user, eye_snatch_enthusiasm, target = target, extra_checks = CALLBACK(src, PROC_REF(eyeballs_exist), eyeballies, head, target)))
 		return
 
@@ -184,7 +184,7 @@
 
 	target.apply_damage(20, BRUTE, BODY_ZONE_HEAD, wound_bonus = rand(min_wound, max_wound + 10), attacking_item = src)
 	target.visible_message(
-		span_danger("[src] пробивает череп [target], ужасно калеча глаза!"),
+		span_danger("[capitalize(declent_ru(NOMINATIVE))] пробивает череп [target.declent_ru(GENITIVE)], ужасно калеча глаза!"),
 		span_userdanger("Что-то проникает тебе в череп, ужасно калеча твои глаза! Пиздец!"),
 		span_hear("Вы слышите тошнотворный звук пронзения плоти металлом!")
 	)

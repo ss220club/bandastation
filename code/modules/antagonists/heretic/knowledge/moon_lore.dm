@@ -231,7 +231,7 @@
 			continue
 		// Heretics, lunatics and monsters shouldn't become lunatics because they either have a master or have a mansus grasp
 		if(IS_HERETIC_OR_MONSTER(crewmate))
-			to_chat(crewmate, span_boldwarning("Вознесение [user] влияет на слабовольных. Их разумы будут разрушены." ))
+			to_chat(crewmate, span_boldwarning("Вознесение [user.declent_ru(GENITIVE)] влияет на слабовольных. Их разумы будут разрушены." ))
 			continue
 		// Mindshielded and anti-magic folks are immune against this effect because this is a magical mind effect
 		if(HAS_MIND_TRAIT(crewmate, TRAIT_UNCONVERTABLE) || crewmate.can_block_magic(MAGIC_RESISTANCE))

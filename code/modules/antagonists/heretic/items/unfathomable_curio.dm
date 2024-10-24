@@ -58,7 +58,7 @@
 /obj/item/storage/belt/unfathomable_curio/proc/shield_reaction(mob/living/carbon/human/owner,
 	atom/movable/hitby,
 	damage = 0,
-	attack_text = "the attack",
+	attack_text = "атаку",
 	attack_type = MELEE_ATTACK,
 	armour_penetration = 0,
 	damage_type = BRUTE,
@@ -78,7 +78,7 @@
 		/datum/brain_trauma/severe/paralysis,
 		/datum/brain_trauma/severe/monophobia
 	)
-	wearer.visible_message(span_danger("Вуаль вокруг [wearer] заставляет [attack_text] промазать, но сила удара заставляет ее рассеяться!"))
+	wearer.visible_message(span_danger("Вуаль вокруг [wearer.declent_ru(GENITIVE)] заставляет [attack_text] промазать, но сила удара заставляет ее рассеяться!"))
 	if(IS_HERETIC(wearer))
 		return
 

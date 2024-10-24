@@ -66,7 +66,7 @@
 	. = ..()
 	if(user.combat_mode)
 		return
-	visible_message(span_warning("[src] потрескивает от статического электричества!"))
+	visible_message(span_warning("[capitalize(declent_ru(NOMINATIVE))] потрескивает от статического электричества!"))
 	for(var/atom/affected in range(2, get_turf(src)))
 		if(istype(affected, /obj/item/stock_parts/power_store/cell))
 			var/obj/item/stock_parts/power_store/cell/cell = affected

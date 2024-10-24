@@ -31,7 +31,7 @@
 	// Destroy legcuffs with our IMMENSE LEG STRENGTH.
 	if(istype(user.legcuffed))
 		user.visible_message(
-			span_warning("Ноги [user] неожиданно разрывают [user.legcuffed]!"),
+			span_warning("Ноги [user.declent_ru(GENITIVE)] неожиданно разрывают [user.legcuffed.declent_ru(ACCUSATIVE)]!"),
 			span_warning("Мы разрываем связывание на ногах!"),
 		)
 		qdel(user.legcuffed)

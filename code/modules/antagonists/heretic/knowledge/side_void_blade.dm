@@ -36,13 +36,13 @@
 		if(body.stat != DEAD)
 			continue
 		if(!IS_VALID_GHOUL_MOB(body) || HAS_TRAIT(body, TRAIT_HUSK))
-			to_chat(user, span_hierophant_warning("[body] не в подходящем состоянии для превращения в гуля."))
+			to_chat(user, span_hierophant_warning("[capitalize(body.declent_ru(NOMINATIVE))] не в подходящем состоянии для превращения в гуля."))
 			continue
 		if(!body.mind)
-			to_chat(user, span_hierophant_warning("[body] не имеет разума и не может быть превращен в гуля."))
+			to_chat(user, span_hierophant_warning("[capitalize(body.declent_ru(NOMINATIVE))] не имеет разума и не может быть превращен в гуля."))
 			continue
 		if(!body.client && !body.mind.get_ghost(ghosts_with_clients = TRUE))
-			to_chat(user, span_hierophant_warning("[body] не имеет души и не может быть превращен в гуля."))
+			to_chat(user, span_hierophant_warning("[capitalize(body.declent_ru(NOMINATIVE))] не имеет души и не может быть превращен в гуля."))
 			continue
 
 		// We will only accept valid bodies with a mind, or with a ghost connected that used to control the body

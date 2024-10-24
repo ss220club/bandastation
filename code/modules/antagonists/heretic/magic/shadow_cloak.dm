@@ -68,7 +68,7 @@
 /datum/action/cooldown/spell/shadow_cloak/proc/cloak_mob(mob/living/cast_on)
 	playsound(cast_on, 'sound/effects/chemistry/ahaha.ogg', 50, TRUE, -1, extrarange = SILENCED_SOUND_EXTRARANGE, frequency = 0.5)
 	cast_on.visible_message(
-		span_warning("[cast_on] исчезают в тени!"),
+		span_warning("[capitalize(cast_on.declent_ru(NOMINATIVE))] исчезает в тени!"),
 		span_notice("Вы исчезаете в тени, становясь неопознаваемым."),
 	)
 
@@ -86,7 +86,7 @@
 	playsound(cast_on, 'sound/effects/curse/curseattack.ogg', 50)
 	if(show_message)
 		cast_on.visible_message(
-			span_warning("[cast_on] появляются из тени!"),
+			span_warning("[capitalize(cast_on.declent_ru(NOMINATIVE))] появляется из тени!"),
 			span_notice("Вы появляетесь из тени, вас снова можно узнать."),
 		)
 
@@ -101,8 +101,8 @@
 	var/mob/living/removed = source.owner
 	uncloak_mob(removed, show_message = FALSE)
 	removed.visible_message(
-		span_warning("[removed] вытащены из тени!"),
-		span_userdanger("Вас вытащили из тени!"),
+		span_warning("[capitalize(removed.declent_ru(NOMINATIVE))] вытаскивается из тени!"),
+		span_userdanger("Вас вытаскивают из тени!"),
 	)
 
 	removed.Knockdown(0.5 SECONDS)
@@ -116,7 +116,7 @@
 
 	uncloak_mob(source, show_message = FALSE)
 	source.visible_message(
-		span_warning("[source] внезапно появляется из тени!"),
+		span_warning("[capitalize(source.declent_ru(NOMINATIVE))] внезапно появляется из тени!"),
 		span_userdanger("Вы утратили фокусировку, вас вытаскивает из тени!"),
 	)
 	StartCooldown(uncloak_time / 3)

@@ -124,13 +124,13 @@
 	if(..())
 		return
 	ADD_TRAIT(owner, TRAIT_DWARF, GENETIC_MUTATION)
-	owner.visible_message(span_danger("[owner] неожиданно уменьшается!"), span_notice("Всё вокруг тебя увеличивается.."))
+	owner.visible_message(span_danger("[capitalize(owner.declent_ru(NOMINATIVE))] неожиданно уменьшается!"), span_notice("Всё вокруг тебя увеличивается.."))
 
 /datum/mutation/human/dwarfism/on_losing(mob/living/carbon/human/owner)
 	if(..())
 		return
 	REMOVE_TRAIT(owner, TRAIT_DWARF, GENETIC_MUTATION)
-	owner.visible_message(span_danger("[owner] неожиданно увеличивается!"), span_notice("Всё вокруг тебя уменьшается.."))
+	owner.visible_message(span_danger("[capitalize(owner.declent_ru(NOMINATIVE))] неожиданно увеличивается!"), span_notice("Всё вокруг тебя уменьшается.."))
 
 /datum/mutation/human/acromegaly
 	name = "Acromegaly"
@@ -145,7 +145,7 @@
 	if(..())
 		return
 	ADD_TRAIT(owner, TRAIT_TOO_TALL, GENETIC_MUTATION)
-	owner.visible_message(span_danger("[owner] неожиданно становится выше!"), span_notice("У тебя появляется странное желание бороться с маленькими людьми с рогатками. Или стоит сыграть в баскетбол?"))
+	owner.visible_message(span_danger("[capitalize(owner.declent_ru(NOMINATIVE))] неожиданно становится выше!"), span_notice("У тебя появляется странное желание бороться с маленькими людьми с рогатками. Или стоит сыграть в баскетбол?"))
 	RegisterSignal(owner, COMSIG_MOVABLE_MOVED, PROC_REF(head_bonk))
 	owner.regenerate_icons()
 
@@ -153,7 +153,7 @@
 	if(..())
 		return
 	REMOVE_TRAIT(owner, TRAIT_TOO_TALL, GENETIC_MUTATION)
-	owner.visible_message(span_danger("[owner] неожиданно уменьшается!"), span_notice("Ты возвращаешься к своему обычному росту."))
+	owner.visible_message(span_danger("[capitalize(owner.declent_ru(NOMINATIVE))] неожиданно уменьшается!"), span_notice("Ты возвращаешься к своему обычному росту."))
 	UnregisterSignal(owner, COMSIG_MOVABLE_MOVED, PROC_REF(head_bonk))
 	owner.regenerate_icons()
 
@@ -182,14 +182,14 @@
 		return
 	ADD_TRAIT(owner, TRAIT_GIANT, GENETIC_MUTATION)
 	owner.update_transform(1.25)
-	owner.visible_message(span_danger("[owner] неожиданно увеличивается!"), span_notice("Всё вокруг тебя уменьшается.."))
+	owner.visible_message(span_danger("[capitalize(owner.declent_ru(NOMINATIVE))] неожиданно увеличивается!"), span_notice("Всё вокруг тебя уменьшается.."))
 
 /datum/mutation/human/gigantism/on_losing(mob/living/carbon/human/owner)
 	if(..())
 		return
 	REMOVE_TRAIT(owner, TRAIT_GIANT, GENETIC_MUTATION)
 	owner.update_transform(0.8)
-	owner.visible_message(span_danger("[owner] неожиданно уменьшается!"), span_notice("Всё вокруг тебя увеличивается..."))
+	owner.visible_message(span_danger("[capitalize(owner.declent_ru(NOMINATIVE))] неожиданно уменьшается!"), span_notice("Всё вокруг тебя увеличивается..."))
 //Clumsiness has a very large amount of small drawbacks depending on item.
 /datum/mutation/human/clumsy
 	name = "Clumsiness"

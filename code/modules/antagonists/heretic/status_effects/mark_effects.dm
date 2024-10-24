@@ -162,7 +162,7 @@
 
 	var/mob/thrower = throw_args[4]
 	if(istype(thrower))
-		to_chat(thrower, span_hypnophrase("Потусторонняя сила не позволяет вам выбросить [source] из [get_area_name(locked_to)]!"))
+		to_chat(thrower, span_hypnophrase("Потусторонняя сила не позволяет вам выбросить [source.declent_ru(ACCUSATIVE)] из [get_area_name(locked_to)]!"))
 
 	to_chat(source, span_hypnophrase("Потусторонняя сила не позволяет вам быть выброшенным из [get_area_name(locked_to)]!"))
 

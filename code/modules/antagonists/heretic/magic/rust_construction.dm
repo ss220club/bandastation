@@ -44,16 +44,16 @@
 		return
 
 	var/mob/living/living_owner = owner
-	invocation = span_danger("<b>[owner]</b> тянут свою рук[living_owner.usable_hands == 1 ? "у": "и"] вверх, когда стена ржавчины поднимается из [cast_on]!")
-	invocation_self_message = span_notice("Вы тащите рук[living_owner.usable_hands == 1 ? "у": "и"] вверх, когда из [cast_on] поднимается стена ржавчины")
+	invocation = span_danger("<b>[capitalize(owner.declent_ru(NOMINATIVE))]</b> тянет свою рук[living_owner.usable_hands == 1 ? "у": "и"] вверх, когда стена ржавчины поднимается из [cast_on.declent_ru(GENITIVE)]!")
+	invocation_self_message = span_notice("Вы тащите рук[living_owner.usable_hands == 1 ? "у": "и"] вверх, когда из [cast_on.declent_ru(GENITIVE)] поднимается стена ржавчины")
 
 /datum/action/cooldown/spell/pointed/rust_construction/cast(turf/cast_on)
 	. = ..()
-	var/rises_message = "поднимается из [cast_on]"
+	var/rises_message = "поднимается из [cast_on.declent_ru(GENITIVE)]"
 
 	// If we casted at a wall we'll try to rust it. In the case of an enchanted wall it'll deconstruct it
 	if(isclosedturf(cast_on))
-		cast_on.visible_message(span_warning("\The [cast_on] quakes as the rust causes it to crumble!"))
+		cast_on.visible_message(span_warning("[capitalize(cast_on.declent_ru(NOMINATIVE))] дрожит, когда ржавчина заставляет сыпаться!"))
 		var/mob/living/living_owner = owner
 		living_owner?.do_rust_heretic_act(cast_on)
 		// ref transfers to floor
@@ -87,13 +87,13 @@
 		message_shown = TRUE
 		if(IS_HERETIC_OR_MONSTER(living_mob) || living_mob == owner)
 			living_mob.visible_message(
-				span_warning("\A [new_wall] [rises_message] и толкает [living_mob]!"),
-				span_notice("\A [new_wall] [rises_message] под вашими ногами и толкает вас!"),
+				span_warning("[capitalize(new_wall.declent_ru(NOMINATIVE))] [rises_message] и толкает [living_mob.declent_ru(ACCUSATIVE)]!"),
+				span_notice("[capitalize(new_wall.declent_ru(NOMINATIVE))] [rises_message] под вашими ногами и толкает вас!"),
 			)
 		else
 			living_mob.visible_message(
-				span_warning("\A [new_wall] [rises_message] и врезается в [living_mob]!"),
-				span_userdanger("\A [new_wall] [rises_message] под вашими ногами и врезается в вас!"),
+				span_warning("[capitalize(new_wall.declent_ru(NOMINATIVE))] [rises_message] и врезается в [living_mob.declent_ru(ACCUSATIVE)]!"),
+				span_userdanger("[capitalize(new_wall.declent_ru(NOMINATIVE))] [rises_message] под вашими ногами и врезается в вас!"),
 			)
 			living_mob.apply_damage(10, BRUTE, wound_bonus = 10)
 			living_mob.Knockdown(5 SECONDS)

@@ -32,7 +32,7 @@
 
 	if(cast_on.can_block_magic(antimagic_flags))
 		cast_on.visible_message(
-			span_danger("Раны [cast_on] на мгновение излучают свет, но эффект заблокирован!"),
+			span_danger("Раны [cast_on.declent_ru(GENITIVE)] на мгновение излучают свет, но эффект заблокирован!"),
 			span_danger("Раны немного жгут, но вы защищены!")
 		)
 		return FALSE
@@ -50,7 +50,7 @@
 		crit_wound.apply_wound(pick(cast_on.bodyparts))
 
 	cast_on.visible_message(
-		span_danger("Раны и царапины [cast_on] разрываются нечистой силой!"),
+		span_danger("Раны и царапины [cast_on.declent_ru(GENITIVE)] разрываются нечистой силой!"),
 		span_danger("Ваши раны и царапины разрываются какой-то ужасной нечистой силой!")
 	)
 

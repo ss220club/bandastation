@@ -163,8 +163,8 @@
 	playsound(get_turf(source), 'sound/items/weapons/parry.ogg', 100, TRUE)
 	source.balloon_alert(source, "рипост использован")
 	source.visible_message(
-		span_warning("[source] наклоняется к [attack_text] и наносит внезапный рипост [target]!"),
-		span_warning("Вы наклоняетесь к [attack_text] и наносите внезапный рипост [target]!"),
+		span_warning("[capitalize(source.declent_ru(NOMINATIVE))] наклоняется к [attack_text] и наносит внезапный рипост [target.declent_ru(DATIVE)]!"),
+		span_warning("Вы наклоняетесь к [attack_text] и наносите внезапный рипост [target.declent_ru(DATIVE)]!"),
 		span_hear("Вы слышите лязг, за которым следует удар."),
 	)
 	weapon.melee_attack_chain(source, target)
@@ -263,7 +263,7 @@
 
 	var/obj/item/held_item = source.get_active_held_item()
 	if(in_duelist_stance)
-		examine_list += span_warning("[source] выглядят неестественно стойко[held_item?.force >= 15 ? " и готовы к выпаду":""].")
+		examine_list += span_warning("[capitalize(source.declent_ru(NOMINATIVE))] выглядит неестественно стойко[held_item?.force >= 15 ? " и готовы к выпаду":""].")
 
 /datum/heretic_knowledge/duel_stance/proc/on_wound_gain(mob/living/source, datum/wound/gained_wound, obj/item/bodypart/limb)
 	SIGNAL_HANDLER

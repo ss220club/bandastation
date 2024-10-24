@@ -156,7 +156,7 @@
 		if(body.stat != DEAD)
 			continue
 		if(!IS_VALID_GHOUL_MOB(body) || HAS_TRAIT(body, TRAIT_HUSK))
-			to_chat(user, span_hierophant_warning("[body] не в подходящем состоянии для превращения в гуля."))
+			to_chat(user, span_hierophant_warning("[capitalize(body.declent_ru(NOMINATIVE))] не в подходящем состоянии для превращения в гуля."))
 			continue
 
 		// We'll select any valid bodies here. If they're clientless, we'll give them a new one.

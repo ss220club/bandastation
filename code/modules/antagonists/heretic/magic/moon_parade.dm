@@ -65,7 +65,7 @@
 
 	// Anti-magic destroys the projectile for consistency and counterplay
 	if(victim.can_block_magic(MAGIC_RESISTANCE))
-		visible_message(span_warning("Парад попадает по [victim], и внезапно вы вновь мыслите ясно!"))
+		visible_message(span_warning("Парад попадает по [victim.declent_ru(DATIVE)], и внезапно вы вновь мыслите ясно!"))
 		return PROJECTILE_DELETE_WITHOUT_HITTING
 
 	return ..()

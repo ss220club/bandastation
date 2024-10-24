@@ -25,7 +25,7 @@
 
 /datum/action/cooldown/spell/touch/mansus_grasp/on_antimagic_triggered(obj/item/melee/touch_attack/hand, atom/victim, mob/living/carbon/caster)
 	victim.visible_message(
-		span_danger("Заклинание отскакивает от [victim]!"),
+		span_danger("Заклинание отскакивает от [victim.declent_ru(GENITIVE)]!"),
 		span_danger("Заклинание отскакивает от вас!"),
 	)
 
@@ -90,8 +90,8 @@
 /obj/item/melee/touch_attack/mansus_fist/Initialize(mapload)
 	. = ..()
 	AddComponent(/datum/component/effect_remover, \
-		success_feedback = "You remove %THEEFFECT.", \
-		tip_text = "Clear rune", \
+		success_feedback = "Вы убираете %THEEFFECT.", \
+		tip_text = "Очистить руну", \
 		on_clear_callback = CALLBACK(src, PROC_REF(after_clear_rune)), \
 		effects_we_clear = list(/obj/effect/heretic_rune), \
 		time_to_remove = 0.4 SECONDS)
@@ -107,11 +107,11 @@
 	remove_hand_with_no_refund(user)
 
 /obj/item/melee/touch_attack/mansus_fist/ignition_effect(atom/to_light, mob/user)
-	. = span_notice("[user] без труда щелкает своими пальцами возле [to_light], зажигая его мистической энергией. Чертовски круто!")
+	. = span_notice("[capitalize(user.declent_ru(NOMINATIVE))] без труда щелкает своими пальцами возле [to_light.declent_ru(GENITIVE)], зажигая мистической энергией. Чертовски круто!")
 	remove_hand_with_no_refund(user)
 
 /obj/item/melee/touch_attack/mansus_fist/suicide_act(mob/living/user)
-	user.visible_message(span_suicide("[user] накрывает своё лицо своей болезненно выглядящей рукой! Похоже, что они пытаются совершить самоубийство!"))
+	user.visible_message(span_suicide("[capitalize(user.declent_ru(NOMINATIVE))] накрывает своё лицо своей болезненно выглядящей рукой! Похоже, что они пытаются совершить самоубийство!"))
 	var/mob/living/carbon/carbon_user = user //iscarbon already used in spell's parent
 	var/datum/action/cooldown/spell/touch/mansus_grasp/source = spell_which_made_us?.resolve()
 	if(QDELETED(source) || !IS_HERETIC(user))

@@ -149,13 +149,13 @@
 
 		for(var/mob/living/L in T.contents)
 			if(L.can_block_magic())
-				L.visible_message(span_danger("Заклинание отскакивает от [L]!"), span_danger("Заклинание отскакивает от вас!"))
+				L.visible_message(span_danger("Заклинание отскакивает от [L.declent_ru(GENITIVE)]!"), span_danger("Заклинание отскакивает от вас!"))
 				continue
 			if((L in hit_list) || L == source)
 				continue
 			hit_list += L
 			L.adjustFireLoss(20)
-			to_chat(L, span_userdanger("Вы поражены мистическим пламенем от [source]!"))
+			to_chat(L, span_userdanger("Вы поражены мистическим пламенем [source.declent_ru(GENITIVE)]!"))
 
 		new /obj/effect/hotspot(T)
 		T.hotspot_expose(700,50,1)

@@ -168,11 +168,11 @@
 	var/datum/traitor_objective/locate_weakpoint/objective = objective_weakref.resolve()
 
 	if(!objective || objective.objective_state == OBJECTIVE_STATE_INACTIVE)
-		to_chat(user, span_warning("Ваше время использовать [src] еще не пришло."))
+		to_chat(user, span_warning("Ваше время использовать [declent_ru(ACCUSATIVE)] еще не пришло."))
 		return
 
 	if(objective.handler.owner != user.mind)
-		to_chat(user, span_warning("Вы понятия не имеете, как использовать [src]."))
+		to_chat(user, span_warning("Вы понятия не имеете, как использовать [declent_ru(ACCUSATIVE)]."))
 		return
 
 	var/area/user_area = get_area(user)
@@ -188,7 +188,7 @@
 
 	user.visible_message(span_danger("[user.declent_ru(NOMINATIVE)] нажимает несколько кнопок на [declent_ru(PREPOSITIONAL)], и предмет начинает зловеще пищать!"), span_notice("Вы активируете [declent_ru(ACCUSATIVE)] и начинаете сканировать местность. Не выходите [get_area_name(user, TRUE)], пока сканирование не завершится!"))
 	playsound(user, 'sound/machines/beep/triple_beep.ogg', 30, TRUE)
-	var/alertstr = span_userdanger("Сетевое оповещение: обнаружена попытка анализирование сети станции[user_area?" в [get_area_name(user, TRUE)]":". Невозможно определить местоположение"].")
+	var/alertstr = span_userdanger("Сетевое оповещение: обнаружена попытка анализирования сети станции[user_area?" в [get_area_name(user, TRUE)]":". Невозможно определить местоположение"].")
 	for(var/mob/living/silicon/ai/ai_player in GLOB.player_list)
 		to_chat(ai_player, alertstr)
 
@@ -250,16 +250,16 @@
 
 	var/datum/traitor_objective/locate_weakpoint/objective = objective_weakref.resolve()
 	if(!objective || objective.objective_state == OBJECTIVE_STATE_INACTIVE || objective.handler.owner != user.mind)
-		to_chat(user, span_warning("Вы не думаете, что было бы разумно использовать [src]."))
+		to_chat(user, span_warning("Вы не думаете, что было бы разумно использовать [declent_ru(ACCUSATIVE)]."))
 		return FALSE
 
 	var/area/target_area = get_area(bomb_target)
 	if (target_area.type != objective.weakpoint_area)
-		to_chat(user, span_warning("[src] можно взорвать только в [initial(objective.weakpoint_area.name)]."))
+		to_chat(user, span_warning("[capitalize(declent_ru(NOMINATIVE))] можно взорвать только в [initial(objective.weakpoint_area.name)]."))
 		return FALSE
 
 	if(!isfloorturf(bomb_target) && !iswallturf(bomb_target))
-		to_chat(user, span_warning("[src] можно ставить только на стену или пол"))
+		to_chat(user, span_warning("[capitalize(declent_ru(NOMINATIVE))] можно ставить только на стену или пол"))
 		return FALSE
 
 	return ..()
