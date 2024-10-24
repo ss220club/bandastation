@@ -342,7 +342,7 @@
 	if(!(check_usability(user)))
 		return
 
-	to_chat(user, span_notice("Вы активируете [declent_ru(ACCUSATIVE)] и ждете подтверждения."))
+	to_chat(user, span_notice("Вы активируете [declent_ru(ACCUSATIVE)] и ждёте подтверждения."))
 	var/mob/chosen_one = SSpolling.poll_ghost_candidates(
 		check_jobban = poll_role_check,
 		role = poll_role_check,
