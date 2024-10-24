@@ -179,7 +179,7 @@
 		return ITEM_INTERACT_SUCCESS
 	if(!istype(target, /obj/machinery/door))
 		return NONE
-	var/datum/reference_resolved = link?.resolve() // TODO220 - Type it to upstream
+	var/obj/machinery/door/reference_resolved = link?.resolve() // TODO220 - Type it to upstream
 	if(reference_resolved == target)
 		return ITEM_INTERACT_BLOCKING
 
