@@ -1,7 +1,7 @@
 /datum/quirk/item_quirk/blindness
 	name = "Blind"
-	desc = "Вы полностью слепой, это необратимо."
-	icon = FA_ICON_EYE_SLASH
+	desc = "You are completely blind, nothing can counteract this."
+	icon = FA_ICON_BLIND
 	value = -16
 	gain_text = span_danger("Вы ослепли и ничего не видите.")
 	lose_text = span_notice("Чудесным образом к вам вернулось зрение.")

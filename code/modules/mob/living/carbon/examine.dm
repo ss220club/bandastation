@@ -167,7 +167,7 @@
 			var/bleed_text = "<b>"
 			if(appears_dead)
 				bleed_text += "<span class='deadsay'>"
-				bleed_text += "Видна кровь из [t_his] открытых "
+				bleed_text += "Blood is visible in [t_his] open "
 			else
 				bleed_text += "<span class='warning'>"
 				bleed_text += "[t_He] кровоточит из "
@@ -220,9 +220,12 @@
 				if (bodytemperature < dna.species.bodytemp_cold_damage_limit)
 					. += "[t_He] дрожит."
 				if(HAS_TRAIT(src, TRAIT_EVIL))
-					. += "[t_His] глаза излучают безчувственную, холодную отстраненность. В [t_his] душе нет ничего, кроме тьмы."
-					living_user.add_mood_event("encountered_evil", /datum/mood_event/encountered_evil)
-					living_user.set_jitter_if_lower(15 SECONDS)
+					. += "[t_His] eyes radiate with a unfeeling, cold detachment. There is nothing but darkness within [t_his] soul."
+					if(living_user.mind?.holy_role >= HOLY_ROLE_PRIEST)
+						. += span_warning("PERFECT FOR SMITING!!")
+					else
+						living_user.add_mood_event("encountered_evil", /datum/mood_event/encountered_evil)
+						living_user.set_jitter_if_lower(15 SECONDS)
 
 			if(HAS_TRAIT(user, TRAIT_SPIRITUAL) && mind?.holy_role)
 				. += "Вокруг [ru_p_theirs()] видно святую ауру."
@@ -269,7 +272,7 @@
 		. += span_warning("Это тело превратилось в гротескную шелуху.")
 	if(HAS_MIND_TRAIT(user, TRAIT_MORBID))
 		if(HAS_TRAIT(src, TRAIT_DISSECTED))
-			. += span_notice("Препарирование, похоже, уже было проведено. Бесполезно для обследования... <b><i>пока что.</i></b>")
+			. += span_notice("[t_He] appear[p_s()] to have been dissected. Useless for examination... <b><i>for now.</i></b>")
 		if(HAS_TRAIT(src, TRAIT_SURGICALLY_ANALYZED))
 			. += span_notice("A skilled hand has mapped this one's internal intricacies. It will be far easier to perform future experimentations upon [user.p_them()]. <b><i>Exquisite.</i></b>")
 	if(HAS_MIND_TRAIT(user, TRAIT_EXAMINE_FITNESS))
