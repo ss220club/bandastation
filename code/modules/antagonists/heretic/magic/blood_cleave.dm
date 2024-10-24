@@ -31,7 +31,7 @@
 			continue
 		if(victim.can_block_magic(antimagic_flags))
 			victim.visible_message(
-				span_danger("[victim] вспыхивает огненным сиянием, но отражает пламя!"),
+				span_danger("[capitalize(victim.declent_ru(NOMINATIVE))] вспыхивает огненным сиянием, но отражает пламя!"),
 				span_danger("Ваше тело начинает вспыхивать огненным сиянием, но вы защищены!!")
 			)
 			continue
@@ -40,7 +40,7 @@
 			continue
 
 		victim.visible_message(
-			span_danger("Вены [victim] разрываются изнутри, и нечестивое пламя вырывается из крови!"),
+			span_danger("Вены [victim.declent_ru(GENITIVE)] разрываются изнутри, и нечестивое пламя вырывается из крови!"),
 			span_danger("Ваши вены лопаются изнутри, и нечестивое пламя вырывается из крови!")
 		)
 

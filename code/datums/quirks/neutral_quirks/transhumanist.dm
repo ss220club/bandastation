@@ -122,7 +122,7 @@
 	var/obj/item/new_part = new part_type()
 	if(isbodypart(new_part))
 		var/obj/item/bodypart/new_bodypart = new_part
-		slot_string = new_bodypart.plaintext_zone
+		slot_string = new_bodypart.ru_plaintext_zone[NOMINATIVE] || new_bodypart.plaintext_zone
 		old_part = human_holder.return_and_replace_bodypart(new_bodypart, special = TRUE)
 	else if(isorgan(new_part))
 		var/obj/item/organ/new_organ = new_part
@@ -130,7 +130,7 @@
 		new_organ.Insert(human_holder, special = TRUE)
 		old_part.moveToNullspace()
 		STOP_PROCESSING(SSobj, old_part)
-		slot_string = new_organ.name
+		slot_string = new_organ.declent_ru(NOMINATIVE)
 
 /datum/quirk/transhumanist/post_add()
 	if(!slot_string)

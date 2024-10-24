@@ -84,7 +84,7 @@
 	for(var/datum/antagonist/antagonist_datum as anything in suckedbrain.antag_datums)
 		var/list/all_objectives = antagonist_datum.objectives.Copy()
 		if(antagonist_datum.antag_memory)
-			changeling.antag_memory += "Воспоминания [target]: [antagonist_datum.antag_memory]."
+			changeling.antag_memory += "[capitalize(target.declent_ru(NOMINATIVE))], воспоминания: [antagonist_datum.antag_memory]."
 		if(!LAZYLEN(all_objectives))
 			continue
 		changeling.antag_memory += " Задачи:"
@@ -106,18 +106,18 @@
 	var/list/recent_speech = target.copy_recent_speech()
 
 	if(recent_speech.len)
-		changeling.antag_memory += "<B>Некоторые образцы речи [target], мы должны изучить их, чтобы лучше изображать [target.p_them()]!</B><br>"
-		to_chat(owner, span_boldnotice("Некоторые образцы речи [target], мы должны изучить их, чтобы лучше изображать [target.p_them()]!"))
+		changeling.antag_memory += "<B>Некоторые образцы речи [target.declent_ru(GENITIVE)], мы должны изучить их, чтобы лучше изображать [target.p_them()]!</B><br>"
+		to_chat(owner, span_boldnotice("Некоторые образцы речи [target.declent_ru(GENITIVE)], мы должны изучить их, чтобы лучше изображать [target.p_them()]!"))
 		for(var/spoken_memory in recent_speech)
 			changeling.antag_memory += "\"[spoken_memory]\"<br>"
 			to_chat(owner, span_notice("\"[spoken_memory]\""))
-		changeling.antag_memory += "<B>У нас нет больше знаний о образцах речи [target].</B><br>"
-		to_chat(owner, span_boldnotice("У нас больше нет знаний о образцах речи [target]."))
+		changeling.antag_memory += "<B>У нас нет больше знаний о образцах речи [target.declent_ru(GENITIVE)].</B><br>"
+		to_chat(owner, span_boldnotice("У нас больше нет знаний о образцах речи [target.declent_ru(GENITIVE)]."))
 
 
 	var/datum/antagonist/changeling/target_ling = IS_CHANGELING(target)
 	if(target_ling)//If the target was a changeling, suck out their extra juice and objective points!
-		to_chat(owner, span_boldnotice("[target] был одним из нас. Мы поглотили их силу."))
+		to_chat(owner, span_boldnotice("[capitalize(target.declent_ru(NOMINATIVE))] были одними из нас. Мы поглотили их силу."))
 
 		// Gain half of their genetic points.
 		var/genetic_points_to_add = round(target_ling.total_genetic_points / 2)
@@ -144,9 +144,9 @@
 			if(1)
 				to_chat(owner, span_notice("Это существо совместимо. Мы должны стоять неподвижно..."))
 			if(2)
-				owner.visible_message(span_warning("[owner] вытягивает жало-хоботок!"), span_notice("Мы вытягиваем жало-хоботок."))
+				owner.visible_message(span_warning("[capitalize(owner.declent_ru(NOMINATIVE))] вытягивает жало-хоботок!"), span_notice("Мы вытягиваем жало-хоботок."))
 			if(3)
-				owner.visible_message(span_danger("[owner] пронзает [target] жалом-хоботком!"), span_notice("Мы пронзаем [target] жалом-хоботком."))
+				owner.visible_message(span_danger("[capitalize(owner.declent_ru(NOMINATIVE))] пронзает [target.declent_ru(ACCUSATIVE)] жалом-хоботком!"), span_notice("Мы пронзаем [target.declent_ru(ACCUSATIVE)] жалом-хоботком."))
 				to_chat(target, span_userdanger("Вы чувствуете острую колющую боль!"))
 				target.take_overall_damage(40)
 

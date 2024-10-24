@@ -100,8 +100,8 @@
 	new /obj/effect/temp_visual/cult/sparks(get_turf(to_heal))
 	var/condition = (to_heal.damage > 0) ? "better" : "perfect"
 	caster.visible_message(
-		span_warning("Рука [caster] светится ярким красным светом, \the [to_heal] восстанавливается до состояния - [condition]!"),
-		span_notice("Ваша рука светится ярким красным светом, \the [to_heal] восстанавливается до состояния - [condition]!"),
+		span_warning("Рука [caster.declent_ru(GENITIVE)] светится ярким красным светом, [to_heal.declent_ru(NOMINATIVE)] восстанавливается до состояния - [condition]!"),
+		span_notice("Ваша рука светится ярким красным светом, [to_heal.declent_ru(NOMINATIVE)] восстанавливается до состояния - [condition]!"),
 	)
 
 	return TRUE
@@ -121,8 +121,8 @@
 	playsound(to_heal, 'sound/effects/magic/staff_healing.ogg', 30)
 	new /obj/effect/temp_visual/cult/sparks(get_turf(to_heal))
 	caster.visible_message(
-		span_warning("Рука [caster] светится ярким красным светом, [to_heal] восстанавливается до хорошего состояния!"),
-		span_notice("Ваша рука светится ярким красным светом, [to_heal] восстанавливается до хорошего состояния!"),
+		span_warning("Рука [caster.declent_ru(GENITIVE)] светится ярким красным светом, [to_heal.declent_ru(NOMINATIVE)] восстанавливается до хорошего состояния!"),
+		span_notice("Ваша рука светится ярким красным светом, [to_heal.declent_ru(NOMINATIVE)] восстанавливается до хорошего состояния!"),
 	)
 	return TRUE
 
@@ -135,7 +135,7 @@
 
 	// Round u pto the nearest generic zone (body, chest, arm)
 	var/zone_to_check = check_zone(caster.zone_selected)
-	var/parsed_zone = victim.parse_zone_with_bodypart(zone_to_check)
+	var/parsed_zone = victim.parse_zone_with_bodypart(zone_to_check, declent = DATIVE)
 
 	var/list/organs_we_can_remove = list()
 	for(var/obj/item/organ/organ as anything in carbon_victim.organs)
@@ -170,17 +170,17 @@
 
 		time_it_takes = 6 SECONDS
 		caster.visible_message(
-			span_danger("Рука [caster] светится ярким красным светом, когда они тянутся к своему [parsed_zone]!"),
-			span_userdanger("Ваша рука светится ярким красным светом, когда вы тянетесь к своему [parsed_zone]!"),
+			span_danger("Рука [caster.declent_ru(GENITIVE)] светится ярким красным светом, когда они тянутся к своей [parsed_zone]!"),
+			span_userdanger("Ваша рука светится ярким красным светом, когда вы тянетесь к своей [parsed_zone]!"),
 		)
 
 	else
 		carbon_victim.visible_message(
-			span_danger("Рука [caster] светится ярким светом, когда они тянутся к [parsed_zone] у [carbon_victim]!"),
-			span_userdanger("Рука [caster] светится ярким светом, когда они тянутся к вашему [parsed_zone]!"),
+			span_danger("Рука [caster.declent_ru(GENITIVE)] светится ярким светом, когда они тянутся к [parsed_zone] у [carbon_victim.declent_ru(GENITIVE)]!"),
+			span_userdanger("Рука [caster.declent_ru(GENITIVE)] светится ярким светом, когда они тянутся к вашему [parsed_zone]!"),
 		)
 
-	carbon_victim.balloon_alert(caster, "извлечение [chosen_organ]...")
+	carbon_victim.balloon_alert(caster, "начало извлечения [chosen_organ]...")
 	playsound(victim, 'sound/items/weapons/slice.ogg', 50, TRUE)
 	carbon_victim.add_atom_colour(COLOR_DARK_RED, TEMPORARY_COLOUR_PRIORITY)
 	if(!do_after(caster, time_it_takes, carbon_victim, extra_checks = CALLBACK(src, PROC_REF(extraction_checks), picked_organ, hand, victim, caster)))
@@ -192,18 +192,18 @@
 	// Mainly so it gets across if you're taking the eyes of someone who's conscious
 	if(carbon_victim == caster)
 		caster.visible_message(
-			span_bolddanger("[caster] извлекает свой же [chosen_organ] из своего [parsed_zone]!!"),
-			span_userdanger("Вы извлекаете свой [chosen_organ] из вашего [parsed_zone]!!"),
+			span_bolddanger("[capitalize(caster.declent_ru(NOMINATIVE))] извлекает из себя [picked_organ.declent_ru(ACCUSATIVE)] из [victim.parse_zone_with_bodypart(zone_to_check, declent = GENITIVE)]!!"),
+			span_userdanger("Вы извлекаете из себя [picked_organ.declent_ru(ACCUSATIVE)] из [victim.parse_zone_with_bodypart(zone_to_check, declent = GENITIVE)]!!"),
 		)
 
 	else
 		carbon_victim.visible_message(
-			span_bolddanger("[caster] извлекает [chosen_organ] из [carbon_victim] из их [parsed_zone]!!"),
-			span_userdanger("[caster] извлекает ваш [chosen_organ] из вашего [parsed_zone]!!"),
+			span_bolddanger("[capitalize(caster.declent_ru(NOMINATIVE))] извлекает [chosen_organ] из [carbon_victim] из их [victim.parse_zone_with_bodypart(zone_to_check, declent = GENITIVE)]!!"),
+			span_userdanger("[capitalize(caster.declent_ru(NOMINATIVE))] извлекает ваш [chosen_organ] из [victim.parse_zone_with_bodypart(zone_to_check, declent = GENITIVE)]!!"),
 		)
 
 	picked_organ.Remove(carbon_victim)
-	carbon_victim.balloon_alert(caster, "[chosen_organ] извлечен")
+	carbon_victim.balloon_alert(caster, "извлечение [picked_organ.declent_ru(NOMINATIVE)]")
 	carbon_victim.remove_atom_colour(TEMPORARY_COLOUR_PRIORITY, COLOR_DARK_RED)
 	playsound(victim, 'sound/effects/dismember.ogg', 50, TRUE)
 	if(carbon_victim.stat == CONSCIOUS)

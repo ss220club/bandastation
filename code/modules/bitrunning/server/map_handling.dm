@@ -12,7 +12,7 @@
 	balloon_alert_to_viewers("оповещаем клиентов...")
 	playsound(src, 'sound/machines/terminal/terminal_alert.ogg', 100, vary = TRUE)
 	user.visible_message(
-		span_danger("[user] начинает отключать сервер!"),
+		span_danger("[capitalize(user.declent_ru(NOMINATIVE))] начинает отключать сервер!"),
 		span_notice("Вы отключаете клиентов..."),
 		span_danger("Вы слышите быстрый стук клавиш по клавиатуре."),
 	)

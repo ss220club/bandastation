@@ -29,13 +29,13 @@
 	if(cast_on.can_block_magic())
 		owner.balloon_alert(owner, "spell blocked!")
 		cast_on.visible_message(
-			span_danger("Заклинание отскакивает от [cast_on]!"),
+			span_danger("Заклинание отскакивает от [cast_on.declent_ru(GENITIVE)]!"),
 			span_danger("Заклинание отскакивает от вас!"),
 		)
 		return FALSE
 
 	cast_on.visible_message(
-		span_danger("[cast_on] бледнеет, когда их охватывает красное сияние!"),
+		span_danger("[capitalize(cast_on.declent_ru(NOMINATIVE))] бледнеет, когда их охватывает красное сияние!"),
 		span_danger("Вы бледнеете, когда вас охватывает красное сияние.!"),
 	)
 

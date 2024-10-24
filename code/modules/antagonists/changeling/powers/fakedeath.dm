@@ -110,7 +110,7 @@
 
 	playsound(user, 'sound/effects/magic/demon_consume.ogg', 50, TRUE)
 	user.visible_message(
-		span_warning("Отсутствующие конечности [user] формируются, издавая громкий, жуткий звук!"),
+		span_warning("Отсутствующие конечности [user.declent_ru(GENITIVE)] формируются, издавая громкий, жуткий звук!"),
 		span_userdanger("Ваши конечности отрастают, издавая громкий хрустящий звук и причиняя вам сильную боль!"),
 		span_hear("Вы слышите, как рвется и разрывается органическая масса!"),
 	)

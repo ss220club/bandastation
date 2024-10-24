@@ -32,7 +32,7 @@
 
 /datum/action/changeling/darkness_adaptation/proc/enable_ability(mob/living/carbon/human/cling) //Enable the adaptation
 	animate(cling, alpha = 65,time = 3 SECONDS)
-	cling.visible_message(span_warning("Кожа [cling] внезапно становится полупрозрачной!"), \
+	cling.visible_message(span_warning("Кожа [cling.declent_ru(GENITIVE)] внезапно становится полупрозрачной!"), \
 					span_notice("Теперь мы стали гораздо более скрытными и лучше видим в темноте."))
 	animate(cling, color = COLOR_DARK, time = 3 SECONDS) // Darkens their overall appearance
 	var/datum/antagonist/changeling/changeling_data = cling.mind?.has_antag_datum(/datum/antagonist/changeling)
@@ -47,7 +47,7 @@
 /datum/action/changeling/darkness_adaptation/proc/disable_ability(mob/living/carbon/human/cling) //Restore the adaptation
 	animate(cling, alpha = 255, time = 3 SECONDS)
 	cling.visible_message(
-		span_warning("[cling] появляется из воздуха!"),
+		span_warning("[capitalize(cling.declent_ru(NOMINATIVE))] появляется из воздуха!"),
 		span_notice("Мы становимся внешне нормальными и теряем способность видеть в темноте."),
 	)
 	animate(cling, color = null, time = 3 SECONDS)

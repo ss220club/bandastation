@@ -486,7 +486,7 @@
 
 	if(!target.has_dna())
 		if(verbose)
-			to_chat(user, span_warning("ДНК [target] несовместимо с нашей биологией."))
+			to_chat(user, span_warning("ДНК [target.declent_ru(GENITIVE)] несовместимо с нашей биологией."))
 		return FALSE
 	if(has_profile_with_dna(target.dna))
 		if(verbose)
@@ -494,15 +494,15 @@
 		return FALSE
 	if(HAS_TRAIT(target, TRAIT_NO_DNA_COPY))
 		if(verbose)
-			to_chat(user, span_warning("ДНК [target] несовместимо с нашей биологией."))
+			to_chat(user, span_warning("ДНК [target.declent_ru(GENITIVE)] несовместимо с нашей биологией."))
 		return FALSE
 	if(HAS_TRAIT(target, TRAIT_BADDNA))
 		if(verbose)
-			to_chat(user, span_warning("ДНК [target] разрушено до неузнаваемости!"))
+			to_chat(user, span_warning("ДНК [target.declent_ru(GENITIVE)] разрушено до неузнаваемости!"))
 		return FALSE
 	if(HAS_TRAIT(target, TRAIT_HUSK))
 		if(verbose)
-			to_chat(user, span_warning("Тело [target] разрушено до непригодности!"))
+			to_chat(user, span_warning("Тело [target.declent_ru(GENITIVE)] разрушено до непригодности!"))
 		return FALSE
 	if(!ishuman(target) || ismonkey(target))//Absorbing monkeys is entirely possible, but it can cause issues with transforming. That's what lesser form is for anyway!
 		if(verbose)

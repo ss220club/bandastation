@@ -127,10 +127,10 @@
 
 /datum/action/changeling/sting/transformation/sting_action(mob/living/user, mob/living/target)
 	var/final_duration = sting_duration
-	var/final_message = span_notice("Мы трансформируем [target] в [selected_dna.dna.real_name].")
+	var/final_message = span_notice("Мы трансформируем [target.declent_ru(ACCUSATIVE)] в [selected_dna.dna.real_name].")
 	if(ismonkey(target))
 		final_duration = INFINITY
-		final_message = span_warning("Наши гены вопят, когда мы трансформируемся в низшую форму [target] в [selected_dna.dna.real_name] навсегда!")
+		final_message = span_warning("Наши гены вопят, когда мы трансформируем [target.declent_ru(ACCUSATIVE)] из низшей формы в [selected_dna.dna.real_name] навсегда!")
 
 	if(target.apply_status_effect(/datum/status_effect/temporary_transformation/trans_sting, final_duration, selected_dna.dna))
 		..()

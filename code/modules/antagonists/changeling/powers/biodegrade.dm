@@ -13,7 +13,7 @@
 		var/obj/O = user.get_item_by_slot(ITEM_SLOT_HANDCUFFED)
 		if(!istype(O))
 			return FALSE
-		user.visible_message(span_warning("[user] извергает сгустки кислоты на свои [O.name]!"), \
+		user.visible_message(span_warning("[capitalize(user.declent_ru(NOMINATIVE))] извергает сгустки кислоты на [O.declent_ru(ACCUSATIVE)]!"), \
 			span_warning("Мы извергаем кислотную жижу на наши наручники!"))
 
 		addtimer(CALLBACK(src, PROC_REF(dissolve_handcuffs), user, O), 3 SECONDS)
@@ -25,7 +25,7 @@
 		var/obj/O = user.get_item_by_slot(ITEM_SLOT_LEGCUFFED)
 		if(!istype(O))
 			return FALSE
-		user.visible_message(span_warning("[user] извергает сгустки кислоты на [O.name]!"), \
+		user.visible_message(span_warning("[capitalize(user.declent_ru(NOMINATIVE))] извергает сгустки кислоты на [O.declent_ru(ACCUSATIVE)]!"), \
 			span_warning("Мы извергаем кислотную жижу на наши наручники!"))
 
 		addtimer(CALLBACK(src, PROC_REF(dissolve_legcuffs), user, O), 3 SECONDS)
@@ -37,7 +37,7 @@
 		var/obj/item/clothing/suit/S = user.get_item_by_slot(ITEM_SLOT_OCLOTHING)
 		if(!istype(S))
 			return FALSE
-		user.visible_message(span_warning("[user] извергает сгустки кислоты на переднюю часть [S.name]!"), \
+		user.visible_message(span_warning("[capitalize(user.declent_ru(NOMINATIVE))] извергает сгустки кислоты на переднюю часть [S.declent_ru(GENITIVE)]!"), \
 			span_warning("Мы извергаем кислотную жижу на наш [user.wear_suit.name]!"))
 		addtimer(CALLBACK(src, PROC_REF(dissolve_straightjacket), user, S), 3 SECONDS)
 		log_combat(user, user.wear_suit, "melted [user.wear_suit]", addition = "(biodegrade)")
@@ -70,8 +70,8 @@
 	if(istype(shoes) && shoes.tied == SHOES_KNOTTED && !(shoes.resistance_flags & (INDESTRUCTIBLE|UNACIDABLE|ACID_PROOF)))
 		new /obj/effect/decal/cleanable/greenglow(shoes.drop_location())
 		user.visible_message(
-			span_warning("[capitalize(user.declent_ru(NOMINATIVE))] извергает сгустки кислоты на [shoes.declent_ru(ACCUSATIVE)], растапливая их в лужу слизи!"),
-			span_warning("Мы извергаем кислотную жижу на [shoes.declent_ru(ACCUSATIVE)], растапливая их в лужу слизи!"),
+			span_warning("[capitalize(user.declent_ru(NOMINATIVE))] извергает сгустки кислоты на [shoes.declent_ru(ACCUSATIVE)], растапливая в лужу слизи!"),
+			span_warning("Мы извергаем кислотную жижу на [shoes.declent_ru(ACCUSATIVE)], растапливая в лужу слизи!"),
 		)
 		log_combat(user, shoes, "melted own shoes", addition = "(biodegrade)")
 		qdel(shoes)

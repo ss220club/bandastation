@@ -196,7 +196,7 @@
 	RegisterSignal(to_link, COMSIG_MINDSHIELD_IMPLANTED, PROC_REF(sig_unlink_mob))
 	var/mob/living/owner = parent
 	to_chat(to_link, span_notice(link_message))
-	to_chat(owner, span_notice("Вы соединяете разум [to_link] к вашей [network_name]."))
+	to_chat(owner, span_notice("Вы соединяете разум [to_link.declent_ru(GENITIVE)] к вашей [network_name]."))
 	for(var/mob/living/other_link as anything in linked_mobs)
 		to_chat(other_link, span_notice("Вы ощущаете новый разум в [network_name], владелец которой - [owner.real_name]."))
 

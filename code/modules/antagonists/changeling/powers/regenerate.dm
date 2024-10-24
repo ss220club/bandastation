@@ -21,7 +21,7 @@
 	if(got_limbs_back)
 		playsound(user, 'sound/effects/magic/demon_consume.ogg', 50, TRUE)
 		carbon_user.visible_message(
-			span_warning("Отсутствующие конечности [user] срастаются, издавая громкий, жуткий звук!"),
+			span_warning("Отсутствующие конечности [user.declent_ru(GENITIVE)] срастаются, издавая громкий, жуткий звук!"),
 			span_userdanger("Ваши конечности отрастают, издавая громкий хрустящий звук и причиняя вам сильную боль!"),
 			span_hear("Вы слышите, как рвется и разрывается органическая масса!"),
 		)

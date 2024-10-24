@@ -52,7 +52,7 @@
 
 	if(iscyborg(defibber))
 		if(defibber.flash_act(affect_silicon = TRUE))
-			to_chat(defibber, span_userdanger("[changeling] внезапно пробуждается, перегружая ваши сенсоры!"))
+			to_chat(defibber, span_userdanger("[capitalize(changeling.declent_ru(NOMINATIVE))] внезапно пробуждается, перегружая ваши сенсоры!"))
 			// run default visible message regardless, no overt indication of the cyborg being overloaded to watchers
 
 	else
