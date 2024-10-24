@@ -415,7 +415,7 @@
 	drawing_rune = TRUE
 
 	var/rune_colour = GLOB.heretic_path_to_color[heretic_path]
-	target_turf.balloon_alert(user, "drawing rune...")
+	target_turf.balloon_alert(user, "создание руны...")
 	var/obj/effect/temp_visual/drawing_heretic_rune/drawing_effect
 	if (drawing_time < (10 SECONDS))
 		drawing_effect = new /obj/effect/temp_visual/drawing_heretic_rune/fast(target_turf, rune_colour)
