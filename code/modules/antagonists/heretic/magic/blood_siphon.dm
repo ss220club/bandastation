@@ -35,8 +35,8 @@
 		return FALSE
 
 	cast_on.visible_message(
-		span_danger("[capitalize(cast_on.declent_ru(NOMINATIVE))] бледнеет, когда их охватывает красное сияние!"),
-		span_danger("Вы бледнеете, когда вас охватывает красное сияние.!"),
+		span_danger("[capitalize(cast_on.declent_ru(NOMINATIVE))] бледнеет, когда [cast_on.ru_p_them()] охватывает красное сияние!"),
+		span_danger("Вы бледнеете, когда вас охватывает красное сияние!"),
 	)
 
 	var/mob/living/living_owner = owner
