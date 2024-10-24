@@ -726,7 +726,7 @@ Behavior that's still missing from this component that original food items had t
 
 	if(foodtypes & edible_flags)
 		food.reagents.trans_to(eater, food.reagents.total_volume, transferred_by = eater)
-		eater.visible_message(span_warning("[eater] eats [food]!"), span_notice("You eat [food]."))
+		eater.visible_message(span_warning("[eater.declent_ru(NOMINATIVE)] ест [food.declent_ru(ACCUSATIVE)]!"), span_notice("Вы едите [food.declent_ru(ACCUSATIVE)]."))
 		playsound(get_turf(eater),'sound/items/eatfood.ogg', rand(30,50), TRUE)
 		qdel(food)
 		return COMPONENT_ATOM_EATEN
