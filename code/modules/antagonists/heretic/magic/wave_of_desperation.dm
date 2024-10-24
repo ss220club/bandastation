@@ -27,10 +27,10 @@
 		return
 
 	if(cast_on.handcuffed)
-		cast_on.visible_message(span_danger("[cast_on.handcuffed], сковывающие [cast_on], разбиваются!"))
+		cast_on.visible_message(span_danger("[capitalize(cast_on.handcuffed.declent_ru(NOMINATIVE))], сковывающие [cast_on.declent_ru(GENITIVE)], разбиваются!"))
 		QDEL_NULL(cast_on.handcuffed)
 	if(cast_on.legcuffed)
-		cast_on.visible_message(span_danger("[cast_on.legcuffed], сковывающие [cast_on], разбиваются!"))
+		cast_on.visible_message(span_danger("[capitalize(cast_on.handcuffed.declent_ru(NOMINATIVE))], сковывающие [cast_on.declent_ru(GENITIVE)], разбиваются!"))
 		QDEL_NULL(cast_on.legcuffed)
 
 	cast_on.apply_status_effect(/datum/status_effect/heretic_lastresort)

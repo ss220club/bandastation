@@ -203,7 +203,7 @@
 	mob/living/carbon/human/source,
 	atom/movable/hitby,
 	damage = 0,
-	attack_text = "the attack",
+	attack_text = "атаку",
 	attack_type = MELEE_ATTACK,
 	armour_penetration = 0,
 	damage_type = BRUTE,
@@ -222,8 +222,8 @@
 
 	playsound(get_turf(source), 'sound/items/weapons/parry.ogg', 100, TRUE)
 	source.visible_message(
-		span_warning("[to_remove], кружащийся вокруг [source], выпригывает перед [attack_text], блокируя его, прежде чем исчезнуть!"),
-		span_warning("[to_remove], кружащийся вокруг вас, выпригывает перед [attack_text], блокируя его, прежде чем исчезнуть!"),
+		span_warning("[capitalize(to_remove.declent_ru(NOMINATIVE))], кружащийся вокруг [source.declent_ru(GENITIVE)], выпригывает на [attack_text] и блокирует, прежде чем исчезнуть!"),
+		span_warning("[capitalize(to_remove.declent_ru(NOMINATIVE))], кружащийся вокруг вас, выпригывает на [attack_text] и блокирует, прежде чем исчезнуть!"),
 		span_hear("Вы слышите лязг."),
 	)
 
@@ -302,17 +302,17 @@
 	UnregisterSignal(owner, COMSIG_ATOM_HOLYATTACK)
 	UnregisterSignal(owner, COMSIG_CARBON_CUFF_ATTEMPTED)
 	owner.visible_message(
-		span_warning("Дымка вокруг [owner] исчезает, материализуя их!"),
+		span_warning("Дымка вокруг [owner.declent_ru(GENITIVE)] исчезает, материализуя их!"),
 		span_notice("Вы выходите из убежища."),
 	)
 
 /datum/status_effect/caretaker_refuge/get_examine_text()
-	return span_warning("[owner.p_Theyre()] окутан нечистой дымкой!")
+	return span_warning("[owner.ru_p_they(TRUE)] окутывается нечистой дымкой!")
 
 /datum/status_effect/caretaker_refuge/proc/nullrod_handler(datum/source, obj/item/weapon)
 	SIGNAL_HANDLER
 	playsound(get_turf(owner), 'sound/effects/curse/curse1.ogg', 80, TRUE)
-	owner.visible_message(span_warning("[weapon.declent_ru(NOMINATIVE)] рассеивает дымку вокруг [owner.declent_ru(GENITIVE)]!"))
+	owner.visible_message(span_warning("[capitalize(weapon.declent_ru(NOMINATIVE))] рассеивает дымку вокруг [owner.declent_ru(GENITIVE)]!"))
 	owner.remove_status_effect(type)
 
 /datum/status_effect/caretaker_refuge/proc/on_focus_lost()

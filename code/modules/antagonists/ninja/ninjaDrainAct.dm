@@ -380,7 +380,7 @@
 	hacking_module.charge_message(src, cell.charge)
 	cell.charge = 0
 	update_appearance()
-	visible_message(span_warning("[ninja] вытягивает энергию из [src.name]!"))
+	visible_message(span_warning("[capitalize(ninja.declent_ru(NOMINATIVE))] вытягивает энергию из [declent_ru(GENITIVE)]!"))
 	do_sparks(number = 3, cardinal_only = FALSE, source = src)
 	return COMPONENT_CANCEL_ATTACK_CHAIN
 

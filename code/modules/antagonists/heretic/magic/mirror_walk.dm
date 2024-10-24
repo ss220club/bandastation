@@ -63,14 +63,14 @@
 		return
 
 	jaunter.Beam(nearby_reflection, icon_state = "light_beam", time = phase_out_time)
-	nearby_reflection.visible_message(span_warning("[nearby_reflection] начинают мерцать и слегка дрожать!"))
+	nearby_reflection.visible_message(span_warning("[capitalize(nearby_reflection.declent_ru(NOMINATIVE))] начинают мерцать и слегка дрожать!"))
 	if(!do_after(jaunter, phase_out_time, nearby_reflection, IGNORE_USER_LOC_CHANGE|IGNORE_INCAPACITATED, hidden = TRUE))
 		return
 
 	playsound(jaunter, 'sound/effects/magic/ethereal_enter.ogg', 50, TRUE, -1)
 	jaunter.visible_message(
-		span_boldwarning("[jaunter] исчезает из реальности, растворяясь на ваших глазах!"),
-		span_notice("Вы прыгаете в отражение, исходящее от [nearby_reflection], и попадаете в мир зеркал."),
+		span_boldwarning("[capitalize(jaunter.declent_ru(NOMINATIVE))] исчезает из реальности, растворяясь на ваших глазах!"),
+		span_notice("Вы прыгаете в отражение, исходящее от [nearby_reflection.declent_ru(GENITIVE)], и попадаете в мир зеркал."),
 	)
 
 	// Pass the turf of the nearby reflection to the parent call
@@ -95,7 +95,7 @@
 		return FALSE
 
 	nearby_reflection.Beam(phase_turf, icon_state = "light_beam", time = phase_in_time)
-	nearby_reflection.visible_message(span_warning("[nearby_reflection] начинают мерцать и слегка дрожать!"))
+	nearby_reflection.visible_message(span_warning("[capitalize(nearby_reflection.declent_ru(NOMINATIVE))] начинает мерцать и слегка дрожать!"))
 	if(!do_after(unjaunter, phase_in_time, nearby_reflection, hidden = TRUE))
 		return FALSE
 
@@ -118,8 +118,8 @@
 	if (!nearby_reflection) // Should only be true if you're forced out somehow, like by having the spell removed
 		return
 	unjaunter.visible_message(
-		span_boldwarning("[unjaunter] появляется в реальности на ваших глазах!"),
-		span_notice("Вы выпрыгиваете из отражения, исходящего от [nearby_reflection], выходя из мира зеркал."),
+		span_boldwarning("[capitalize(unjaunter.declent_ru(NOMINATIVE))] появляется в реальности на ваших глазах!"),
+		span_notice("Вы выпрыгиваете из отражения, исходящего от [nearby_reflection.declent_ru(GENITIVE)], выходя из мира зеркал."),
 	)
 
 /**

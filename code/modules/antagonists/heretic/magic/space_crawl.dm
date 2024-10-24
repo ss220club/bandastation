@@ -107,7 +107,7 @@
 	if(!exit_jaunt(jaunter, our_turf))
 		return FALSE
 	jaunter.remove_traits(jaunting_traits, SPACE_PHASING)
-	our_turf.visible_message(span_boldwarning("[jaunter] встаёт из [our_turf]!"))
+	our_turf.visible_message(span_boldwarning("[capitalize(jaunter.declent_ru(NOMINATIVE))] встаёт из [our_turf.declent_ru(GENITIVE)]!"))
 	return TRUE
 
 /datum/action/cooldown/spell/jaunt/space_crawl/on_jaunt_exited(obj/effect/dummy/phased_mob/jaunt, mob/living/unjaunter)
