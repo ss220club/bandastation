@@ -44,7 +44,7 @@
 		return
 
 	var/mob/living/living_owner = owner
-	invocation = span_danger("<b>[capitalize(living_owner.declent_ru(NOMINATIVE))]</b> тянет свою рук[living_owner.usable_hands == 1 ? "у": "и"] вверх, когда стена ржавчины поднимается из [cast_on.declent_ru(GENITIVE)]!")
+	invocation = span_danger("<b>[capitalize(owner.declent_ru(NOMINATIVE))]</b> тянет свою рук[living_owner.usable_hands == 1 ? "у": "и"] вверх, когда стена ржавчины поднимается из [cast_on.declent_ru(GENITIVE)]!")
 	invocation_self_message = span_notice("Вы тащите рук[living_owner.usable_hands == 1 ? "у": "и"] вверх, когда из [cast_on.declent_ru(GENITIVE)] поднимается стена ржавчины")
 
 /datum/action/cooldown/spell/pointed/rust_construction/cast(turf/cast_on)
