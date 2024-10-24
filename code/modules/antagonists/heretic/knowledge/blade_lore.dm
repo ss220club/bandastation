@@ -263,7 +263,7 @@
 
 	var/obj/item/held_item = source.get_active_held_item()
 	if(in_duelist_stance)
-		examine_list += span_warning("[capitalize(source.declent_ru(NOMINATIVE))] выглядят неестественно стойко[held_item?.force >= 15 ? " и готовы к выпаду":""].")
+		examine_list += span_warning("[capitalize(source.declent_ru(NOMINATIVE))] выглядит неестественно стойко[held_item?.force >= 15 ? " и готовы к выпаду":""].")
 
 /datum/heretic_knowledge/duel_stance/proc/on_wound_gain(mob/living/source, datum/wound/gained_wound, obj/item/bodypart/limb)
 	SIGNAL_HANDLER
