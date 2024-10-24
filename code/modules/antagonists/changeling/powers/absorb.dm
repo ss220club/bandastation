@@ -111,8 +111,8 @@
 		for(var/spoken_memory in recent_speech)
 			changeling.antag_memory += "\"[spoken_memory]\"<br>"
 			to_chat(owner, span_notice("\"[spoken_memory]\""))
-		changeling.antag_memory += "<B>У нас нет больше знаний о образцах речи [target.declent_ru(GENITIVE)].</B><br>"
-		to_chat(owner, span_boldnotice("У нас больше нет знаний о образцах речи [target.declent_ru(GENITIVE)]."))
+		changeling.antag_memory += "<B>У нас нет больше знаний об образцах речи [target.declent_ru(GENITIVE)].</B><br>"
+		to_chat(owner, span_boldnotice("У нас больше нет знаний об образцах речи [target.declent_ru(GENITIVE)]."))
 
 
 	var/datum/antagonist/changeling/target_ling = IS_CHANGELING(target)
