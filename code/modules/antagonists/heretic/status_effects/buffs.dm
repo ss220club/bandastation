@@ -222,8 +222,8 @@
 
 	playsound(get_turf(source), 'sound/items/weapons/parry.ogg', 100, TRUE)
 	source.visible_message(
-		span_warning("[capitalize(to_remove.declent_ru(NOMINATIVE))], кружащийся вокруг [source.declent_ru(GENITIVE)], выпригывает на [attack_text] и блокирует, прежде чем исчезнуть!"),
-		span_warning("[capitalize(to_remove.declent_ru(NOMINATIVE))], кружащийся вокруг вас, выпригывает на [attack_text] и блокирует, прежде чем исчезнуть!"),
+		span_warning("[capitalize(to_remove.declent_ru(NOMINATIVE))], кружащийся вокруг [source.declent_ru(GENITIVE)], выпригывает и блокирует [attack_text], прежде чем исчезнуть!"),
+		span_warning("[capitalize(to_remove.declent_ru(NOMINATIVE))], кружащийся вокруг вас, выпригывает и блокирует [attack_text], прежде чем исчезнуть!"),
 		span_hear("Вы слышите лязг."),
 	)
 
