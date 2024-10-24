@@ -126,7 +126,7 @@
 				return PROJECTILE_PIERCE_PHASE
 
 		if(victim.can_block_magic(MAGIC_RESISTANCE))
-			visible_message(span_warning("[src] падает на землю и тает при контакте с [victim]!"))
+			visible_message(span_warning("[capitalize(declent_ru(NOMINATIVE))] падает на землю и тает при контакте с [victim.declent_ru(INSTRUMENTAL)]!"))
 			return PROJECTILE_DELETE_WITHOUT_HITTING
 
 	return ..()

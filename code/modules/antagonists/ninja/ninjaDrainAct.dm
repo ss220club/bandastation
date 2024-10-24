@@ -324,7 +324,7 @@
 		var/datum/effect_system/spark_spread/spark_system = new /datum/effect_system/spark_spread()
 		spark_system.set_up(5, 0, loc)
 		spark_system.start()
-		visible_message(span_danger("[ninja] бьет током [src] косанием!"), span_userdanger("[ninja] бьет вас током косанием!"))
+		visible_message(span_danger("[capitalize(ninja.declent_ru(NOMINATIVE))] касанием бьет током [declent_ru(ACCUSATIVE)]!"), span_userdanger("[capitalize(ninja.declent_ru(NOMINATIVE))] касанием бьет вас током!"))
 		addtimer(CALLBACK(src, PROC_REF(ninja_knockdown)), 0.3 SECONDS)
 	return NONE
 

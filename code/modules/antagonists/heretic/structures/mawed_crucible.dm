@@ -56,11 +56,11 @@ f
 
 	if(current_mass < max_mass)
 		var/to_fill = max_mass - current_mass
-		. += span_notice("Для [src] необходимо больше органов или частей тела: <b>[to_fill]</b>.")
+		. += span_notice("Для [declent_ru(GENITIVE)] необходимо больше органов или частей тела: <b>[to_fill]</b>.")
 	else
-		. += span_boldnotice("[src] пузырится вязкой жидкостью до краев и готов к использованию.")
+		. += span_boldnotice("[capitalize(declent_ru(NOMINATIVE))] пузырится вязкой жидкостью до краев и готов к использованию.")
 
-	. += span_notice("Вы можете <b>[anchored ? "открепить и переместить":"закрепить на месте"]</b> [src] с помощью <b>Codex Cicatrix</b> или <b>хваткой Мансуса</b>.")
+	. += span_notice("Вы можете <b>[anchored ? "открепить и переместить":"закрепить на месте"]</b> [declent_ru(ACCUSATIVE)] с помощью <b>Codex Cicatrix</b> или <b>хваткой Мансуса</b>.")
 	. += span_info("Можно сварить следующие зелья:")
 	for(var/obj/item/eldritch_potion/potion as anything in subtypesof(/obj/item/eldritch_potion))
 		var/potion_string = span_info(initial(potion.name) + " - " + initial(potion.crucible_tip))
@@ -211,7 +211,7 @@ f
 	if(QDELETED(arm))
 		return
 
-	to_chat(user, span_userdanger("[src] хватает вашу [arm.name]!"))
+	to_chat(user, span_userdanger("[capitalize(declent_ru(NOMINATIVE))] хватает вашу [arm.declent_ru(ACCUSATIVE)]!"))
 	arm.dismember()
 	consume_fuel(consumed = arm)
 
@@ -227,7 +227,7 @@ f
 
 	current_mass++
 	playsound(src, 'sound/items/eatfood.ogg', 100, TRUE)
-	visible_message(span_notice("[src] пожирает [consumed] и наполняет себя жидкостью!"))
+	visible_message(span_notice("[capitalize(declent_ru(NOMINATIVE))] пожирает [consumed.declent_ru(ACCUSATIVE)] и наполняет себя жидкостью!"))
 
 	if(feeder)
 		balloon_alert(feeder, "накормлен ([current_mass] / [max_mass])")
@@ -268,13 +268,13 @@ f
 	playsound(src, 'sound/effects/bubbles/bubbles.ogg', 50, TRUE)
 
 	if(!IS_HERETIC_OR_MONSTER(user))
-		to_chat(user, span_danger("Вы выпиваете немного жидкости из [src]. Вкус вызывает у вас отвращение, и стакан исчезает."))
+		to_chat(user, span_danger("Вы выпиваете немного жидкости из [declent_ru(GENITIVE)]. Вкус вызывает у вас отвращение, и стакан исчезает."))
 		user.reagents?.add_reagent(/datum/reagent/eldritch, 10)
 		user.adjust_disgust(50)
 		qdel(src)
 		return TRUE
 
-	to_chat(user, span_notice("Вы выпиваете вязкую жидкость из [src], стакан дематериализовался."))
+	to_chat(user, span_notice("Вы выпиваете вязкую жидкость из [declent_ru(GENITIVE)], стакан дематериализовался."))
 	potion_effect(user)
 	qdel(src)
 	return TRUE

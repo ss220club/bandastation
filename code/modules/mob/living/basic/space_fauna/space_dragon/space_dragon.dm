@@ -277,7 +277,7 @@
 		return
 	new /obj/effect/decal/cleanable/vomit(loc)
 	playsound(src, 'sound/effects/splat.ogg', vol = 50, vary = TRUE)
-	visible_message(span_danger("[src] срыгивает [eaten]!"))
+	visible_message(span_danger("[capitalize(declent_ru(NOMINATIVE))] срыгивает [eaten.declent_ru(ACCUSATIVE)]!"))
 	eaten.forceMove(loc)
 	eaten.Paralyze(5 SECONDS)
 

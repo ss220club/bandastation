@@ -186,7 +186,7 @@ GLOBAL_DATUM_INIT(objective_machine_handler, /datum/objective_target_machine_han
 	UnregisterSignal(machine, COMSIG_QDELETING)
 	playsound(machine, 'sound/effects/structure_stress/pop3.ogg', 100, vary = TRUE)
 	forceMove(get_turf(machine))
-	visible_message(span_warning("[src] выпадает из [machine]!"))
+	visible_message(span_warning("[capitalize(declent_ru(NOMINATIVE))] выпадает из [machine.declent_ru(GENITIVE)]!"))
 
 /// Datum which manages references to things we are instructed to destroy
 /datum/objective_target_machine_handler

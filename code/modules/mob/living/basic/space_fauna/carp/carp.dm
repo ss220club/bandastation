@@ -138,7 +138,7 @@
 	if (!feedback)
 		return
 	spin(spintime = 10, speed = 1)
-	visible_message("[src] крутится на месте, видимо, он сблизился с [tamer].")
+	visible_message("[capitalize(declent_ru(NOMINATIVE))] крутится на месте и, видимо, сближается с [tamer.declent_ru(INSTRUMENTAL)].")
 
 /// Teleport when you right click away from you
 /mob/living/basic/carp/ranged_secondary_attack(atom/atom_target, modifiers)

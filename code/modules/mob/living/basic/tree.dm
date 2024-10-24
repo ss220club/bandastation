@@ -94,8 +94,8 @@
 	if(prob(paralyze_prob + boost))
 		victim.Paralyze(paralyze_value + boost)
 		victim.visible_message(
-			span_danger("[src] сбивает с ног [victim]!"),
-			span_userdanger("[src] сбивает вас с ног!"),
+			span_danger("[capitalize(declent_ru(NOMINATIVE))] сбивает с ног [victim.declent_ru(ACCUSATIVE)]!"),
+			span_userdanger("[capitalize(declent_ru(NOMINATIVE))] сбивает вас с ног!"),
 		)
 
 /datum/ai_controller/basic_controller/tree

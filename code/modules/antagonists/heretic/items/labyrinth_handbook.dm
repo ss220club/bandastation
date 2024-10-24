@@ -66,6 +66,6 @@
 	new barrier_type(turf_target, user)
 	uses--
 	if(uses <= 0)
-		to_chat(user, span_warning("[src] распадается на части, оставляя за собой пепел и пыль!"))
+		to_chat(user, span_warning("[capitalize(declent_ru(NOMINATIVE))] распадается на части, оставляя за собой пепел и пыль!"))
 		qdel(src)
 	return ITEM_INTERACT_SUCCESS
