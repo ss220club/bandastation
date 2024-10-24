@@ -177,7 +177,7 @@
 	else
 		carbon_victim.visible_message(
 			span_danger("Рука [caster.declent_ru(GENITIVE)] светится ярким светом, когда они тянутся к [parsed_zone] у [carbon_victim.declent_ru(GENITIVE)]!"),
-			span_userdanger("Рука [caster.declent_ru(GENITIVE)] светится ярким светом, когда они тянутся к вашему [parsed_zone]!"),
+			span_userdanger("Рука [caster.declent_ru(GENITIVE)] светится ярким светом, когда они тянутся к вашей [parsed_zone]!"),
 		)
 
 	carbon_victim.balloon_alert(caster, "начало извлечения [chosen_organ]...")
