@@ -164,7 +164,7 @@
 
 	// Sure you can remove your own organs, fun party trick
 	if(carbon_victim == caster)
-		var/are_you_sure = tgui_alert(caster, "Вы уверены, что хотите удалить свой [chosen_organ]?", "Вы уверены?", list("Да", "Нет"))
+		var/are_you_sure = tgui_alert(caster, "Вы уверены, что хотите удалить [picked_organ.declent_ru(ACCUSATIVE)] у себя?", "Вы уверены?", list("Да", "Нет"))
 		if(are_you_sure != "Да" || !extraction_checks(picked_organ, hand, victim, caster))
 			return FALSE
 
@@ -180,7 +180,7 @@
 			span_userdanger("Рука [caster.declent_ru(GENITIVE)] светится ярким светом, когда они тянутся к вашей [parsed_zone]!"),
 		)
 
-	carbon_victim.balloon_alert(caster, "начало извлечения [chosen_organ]...")
+	carbon_victim.balloon_alert(caster, "начало извлечения [picked_organ.declent_ru(GENITIVE)]...")
 	playsound(victim, 'sound/items/weapons/slice.ogg', 50, TRUE)
 	carbon_victim.add_atom_colour(COLOR_DARK_RED, TEMPORARY_COLOUR_PRIORITY)
 	if(!do_after(caster, time_it_takes, carbon_victim, extra_checks = CALLBACK(src, PROC_REF(extraction_checks), picked_organ, hand, victim, caster)))
@@ -198,12 +198,12 @@
 
 	else
 		carbon_victim.visible_message(
-			span_bolddanger("[capitalize(caster.declent_ru(NOMINATIVE))] извлекает [chosen_organ] из [carbon_victim] из их [victim.parse_zone_with_bodypart(zone_to_check, declent = GENITIVE)]!!"),
-			span_userdanger("[capitalize(caster.declent_ru(NOMINATIVE))] извлекает ваш [chosen_organ] из [victim.parse_zone_with_bodypart(zone_to_check, declent = GENITIVE)]!!"),
+			span_bolddanger("[capitalize(caster.declent_ru(NOMINATIVE))] извлекает [picked_organ.declent_ru(ACCUSATIVE)] из [carbon_victim] из их [victim.parse_zone_with_bodypart(zone_to_check, declent = GENITIVE)]!!"),
+			span_userdanger("[capitalize(caster.declent_ru(NOMINATIVE))] извлекает [picked_organ.declent_ru(ACCUSATIVE)] из вашей [victim.parse_zone_with_bodypart(zone_to_check, declent = GENITIVE)]!!"),
 		)
 
 	picked_organ.Remove(carbon_victim)
-	carbon_victim.balloon_alert(caster, "извлечение [picked_organ.declent_ru(NOMINATIVE)]")
+	carbon_victim.balloon_alert(caster, "извлечение [picked_organ.declent_ru(GENITIVE)]")
 	carbon_victim.remove_atom_colour(TEMPORARY_COLOUR_PRIORITY, COLOR_DARK_RED)
 	playsound(victim, 'sound/effects/dismember.ogg', 50, TRUE)
 	if(carbon_victim.stat == CONSCIOUS)
