@@ -494,7 +494,7 @@
 		for(var/obj/item/hand in held_items)
 			if(prob(current_size * 5) && hand.w_class >= ((11-current_size)/2)  && dropItemToGround(hand))
 				step_towards(hand, src)
-				to_chat(src, span_warning("\The [singularity] pulls \the [hand] from your grip!"))
+				to_chat(src, span_warning("[capitalize(singularity.declent_ru(NOMINATIVE))] утягивает [hand.declent_ru(ACCUSATIVE)] от вас!"))
 
 #define CPR_PANIC_SPEED (0.8 SECONDS)
 

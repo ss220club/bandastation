@@ -1,6 +1,6 @@
 /datum/mutation/human/shock
 	name = "Shock Touch"
-	desc = "The affected can channel excess electricity through their hands without shocking themselves, allowing them to shock others. Mostly harmless! Mostly... "
+	desc = "Подверженные данной мутации могут направить избыточное электричество через свои руки, позволяя им ударить током других. В основном безвредно! В основном..."
 	quality = POSITIVE
 	locked = TRUE
 	difficulty = 16
