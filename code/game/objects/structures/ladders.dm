@@ -79,7 +79,7 @@
 	icon_state = "ladder[up ? 1 : 0][down ? 1 : 0]"
 	return ..()
 
-/obj/structure/ladder/singularity_pull()
+/obj/structure/ladder/singularity_pull(atom/singularity, current_size)
 	if (!(resistance_flags & INDESTRUCTIBLE))
 		visible_message(span_danger("[capitalize(declent_ru(NOMINATIVE))] разрывается на части от гравитационной тяги!"))
 		qdel(src)
