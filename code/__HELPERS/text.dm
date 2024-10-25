@@ -1195,11 +1195,11 @@ GLOBAL_LIST_INIT(binary, list("0","1"))
 /proc/weight_class_to_tooltip(w_class)
 	switch(w_class)
 		if(WEIGHT_CLASS_TINY to WEIGHT_CLASS_SMALL)
-			return "This item can fit into pockets, boxes and backpacks."
+			return "Этот предмет помещается в карманы, коробки и сумки."
 		if(WEIGHT_CLASS_NORMAL)
-			return "This item can fit into backpacks."
+			return "Этот предмет помещается в сумки."
 		if(WEIGHT_CLASS_BULKY to WEIGHT_CLASS_GIGANTIC)
-			return "This item is too large to fit into any standard storage."
+			return "Этот предмет слишком большой, чтобы поместиться в стандартные хранилища."
 	return ""
 
 /// Removes all non-alphanumerics from the text, keep in mind this can lead to id conflicts
