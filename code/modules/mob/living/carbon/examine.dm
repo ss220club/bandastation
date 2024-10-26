@@ -220,9 +220,9 @@
 				if (bodytemperature < dna.species.bodytemp_cold_damage_limit)
 					. += "[t_He] дрожит."
 				if(HAS_TRAIT(src, TRAIT_EVIL))
-					. += "[t_His] eyes radiate with a unfeeling, cold detachment. There is nothing but darkness within [t_his] soul."
+					. += "[t_His] глаза излучают полную безчувственность и холодную отстраненность. Нет ничего, кроме как тьмы, в [t_his] душе."
 					if(living_user.mind?.holy_role >= HOLY_ROLE_PRIEST)
-						. += span_warning("PERFECT FOR SMITING!!")
+						. += span_warning("ИДЕАЛЬНЫЙ КАНДИДАТ ДЛЯ КАРЫ!!")
 					else
 						living_user.add_mood_event("encountered_evil", /datum/mood_event/encountered_evil)
 						living_user.set_jitter_if_lower(15 SECONDS)
