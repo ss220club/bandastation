@@ -305,7 +305,7 @@
 /datum/job/proc/get_spawn_message_information()
 	SHOULD_CALL_PARENT(TRUE)
 	var/list/info = list()
-	info += "<b>You are the [title].</b>\n"
+	info += "<b>Ваша роль на станции: [job_title_ru(title)].</b>\n"
 	var/related_policy = get_policy(policy_override || title)
 	var/radio_info = get_radio_information()
 	if(related_policy)

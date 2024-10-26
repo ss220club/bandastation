@@ -220,9 +220,9 @@
 				if (bodytemperature < dna.species.bodytemp_cold_damage_limit)
 					. += "[t_He] дрожит."
 				if(HAS_TRAIT(src, TRAIT_EVIL))
-					. += "[t_His] eyes radiate with a unfeeling, cold detachment. There is nothing but darkness within [t_his] soul."
+					. += "[t_His] глаза излучают полную безчувственность и холодную отстраненность. Нет ничего, кроме как тьмы, в [t_his] душе."
 					if(living_user.mind?.holy_role >= HOLY_ROLE_PRIEST)
-						. += span_warning("PERFECT FOR SMITING!!")
+						. += span_warning("ИДЕАЛЬНЫЙ КАНДИДАТ ДЛЯ КАРЫ!!")
 					else
 						living_user.add_mood_event("encountered_evil", /datum/mood_event/encountered_evil)
 						living_user.set_jitter_if_lower(15 SECONDS)
@@ -238,14 +238,14 @@
 				. += span_notice("[t_He] едва находится в сознании.")
 			if(CONSCIOUS)
 				if(HAS_TRAIT(src, TRAIT_DUMB))
-					. += "[t_He] [t_has] a stupid expression on [t_his] face."
+					. += "У [ru_p_theirs()] глупое выражение лица."
 		var/obj/item/organ/internal/brain/brain = get_organ_by_type(/obj/item/organ/internal/brain)
 		if(brain && isnull(ai_controller))
 			var/npc_message = ""
 			if(HAS_TRAIT(brain, TRAIT_GHOSTROLE_ON_REVIVE))
-				npc_message = "Soul is pending..."
+				npc_message = "Душа всё ещё тут..."
 			else if(!key)
-				npc_message = "[t_He] [t_is] totally catatonic. The stresses of life in deep-space must have been too much for [t_him]. Any recovery is unlikely."
+				npc_message = "[t_He] в полной кататонии. Стресс, связанный с жизнью в глубоком космосе, видимо, переселил [t_him]. Восстановление маловероятно."
 			else if(!client)
 				npc_message ="У [ru_p_theirs()] пустой и рассеянный взгляд и, кажется, [ru_p_they()] совершенно ни на что не реагирует. [t_He], возможно, скоро опомнится."
 			if(npc_message)
@@ -322,9 +322,9 @@
 	//This checks to see if the body is revivable
 	var/obj/item/organ/brain = get_organ_by_type(/obj/item/organ/internal/brain)
 	if(brain && HAS_TRAIT(brain, TRAIT_GHOSTROLE_ON_REVIVE))
-		return span_deadsay("[t_He] [t_is] limp and unresponsive; but [t_his] soul might yet come back...")
+		return span_deadsay("[t_He] выглядит обмякло и не реагирует; но [t_his] душа ещё может вернуться...")
 	if(brain && (client || HAS_TRAIT(src, TRAIT_MIND_TEMPORARILY_GONE) || (ghost?.can_reenter_corpse && ghost?.client)))
-		return span_deadsay("[t_He] [t_is] limp and unresponsive; there are no signs of life...")
+		return span_deadsay("[t_He] выглядит обмякло и не реагирует; нет признаков жизни...")
 	else
 		return span_deadsay("[t_He] выглядит обмякло и не реагирует; нет признаков жизни, и [t_his] душа ушла...")
 
