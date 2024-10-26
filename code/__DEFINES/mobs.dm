@@ -510,12 +510,13 @@
 // Randomization keys for calling wabbajack with.
 // Note the contents of these keys are important, as they're displayed to the player
 // Ex: (You turn into a "monkey", You turn into a "xenomorph")
-#define WABBAJACK_MONKEY "мартышки"
-#define WABBAJACK_ROBOT "робота"
-#define WABBAJACK_SLIME "слайма"
-#define WABBAJACK_XENO "ксеноморфа"
-#define WABBAJACK_HUMAN "гуманоида"
-#define WABBAJACK_ANIMAL "животного"
+#define WABBAJACK_MONKEY "monkey"
+#define WABBAJACK_ROBOT "robot"
+#define WABBAJACK_CLOWN "clown"
+#define WABBAJACK_SLIME "slime"
+#define WABBAJACK_XENO "xenomorph"
+#define WABBAJACK_HUMAN "humanoid"
+#define WABBAJACK_ANIMAL "animal"
 
 // Reasons a defibrillation might fail
 #define DEFIB_POSSIBLE (1<<0)
