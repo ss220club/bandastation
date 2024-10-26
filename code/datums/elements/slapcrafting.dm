@@ -104,7 +104,7 @@
 
 	var/atom/final_result = initial(actual_recipe.result)
 
-	to_chat(user, span_notice("Вы начинаете создавать [initial(final_result.ru_name_accusative) || initial(final_result.name)]..."))
+	to_chat(user, span_notice("Вы начинаете создавать [declent_ru_initial(final_result, ACCUSATIVE)]..."))
 
 	var/error_string = craft_sheet.construct_item(user, actual_recipe)
 
@@ -124,7 +124,7 @@
 		if(locate(initial(result.name)) in already_used_names)
 			continue
 		already_used_names += initial(result.name)
-		string_results += list("[initial(result.ru_name_nominative) || initial(result.name)]")
+		string_results += list("[declent_ru_initial(result, NOMINATIVE)]")
 
 	examine_list["используемый в рецепте"] = "Вы думаете, что [source.declent_ru(ACCUSATIVE)] можно использовать для создания: [english_list(string_results)]! Осмотрите еще раз для подробностей..."
 
@@ -134,7 +134,7 @@
 
 	for(var/datum/crafting_recipe/recipe as anything in slapcraft_recipes)
 		var/atom/result = initial(recipe.result)
-		examine_list += "<a href='?src=[REF(source)];check_recipe=[REF(recipe)]'>Узнать рецепт для [initial(result.ru_name_genitive) || initial(result.name)]</a>"
+		examine_list += "<a href='?src=[REF(source)];check_recipe=[REF(recipe)]'>Узнать рецепт для [declent_ru_initial(result, GENITIVE)]</a>"
 
 /datum/element/slapcrafting/proc/topic_handler(atom/source, user, href_list)
 	SIGNAL_HANDLER
@@ -149,7 +149,7 @@
 
 	var/atom/result = initial(cur_recipe.result)
 
-	to_chat(user, span_notice("Вы можете создать [initial(result.ru_name_accusative) || initial(result.name)], применив один из следующих предметов к этому!"))
+	to_chat(user, span_notice("Вы можете создать [declent_ru_initial(result, ACCUSATIVE)], применив один из следующих предметов к этому!"))
 
 	// Gotta instance it to copy the lists over.
 	cur_recipe = new cur_recipe()
@@ -175,7 +175,7 @@
 				amount--
 			else
 				continue
-		string_ingredient_list += "[amount == 1 ? "[initial(ingredient.ru_name_nominative) || initial(ingredient.name)]" : "[initial(ingredient.ru_name_genitive) || initial(ingredient.name)]"]\n"
+		string_ingredient_list += "[amount == 1 ? "[declent_ru_initial(ingredient, NOMINATIVE)]" : "[declent_ru_initial(ingredient, GENITIVE)]"]\n"
 
 	// If we did find ingredients then add them onto the list.
 	if(length(string_ingredient_list))
@@ -187,7 +187,7 @@
 	// Paste the required tools.
 	for(var/valid_type in cur_recipe.tool_paths)
 		var/atom/tool = valid_type
-		tool_list += "[initial(tool.ru_name_nominative) || initial(tool.name)]\n"
+		tool_list += "[declent_ru_initial(tool, NOMINATIVE)]\n"
 
 	for(var/string in cur_recipe.tool_behaviors)
 		tool_list += "[string]\n"
