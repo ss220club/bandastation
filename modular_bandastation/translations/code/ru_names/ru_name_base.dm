@@ -35,9 +35,9 @@
 			return list_to_use[case_id] || name
 	return name
 
-/proc/ru_name_get_initial(atom/target, declent)
+/proc/declent_ru_initial(atom/target, declent)
 	if(!ispath(target) && !istype(target))
-		CRASH("ru_name_get_initial got target that is not a path or a typed var!")
+		CRASH("declent_ru_initial got target that is not a path or a typed var!")
 	if(target::ru_name_base != target::name)
 		return target::name
 	switch(declent)
