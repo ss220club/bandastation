@@ -27,3 +27,13 @@
 	ru_name_accusative = accusative;\
 	ru_name_instrumental = instrumental;\
 	ru_name_prepositional = prepositional
+
+#define RU_NAME_GET_INITIAL(target, declent)\
+	target::ru_name_base != target::name ? target::name :\
+	declent == NOMINATIVE ? target::ru_name_nominative :\
+	declent == GENITIVE ? target::ru_name_genitive :\
+	declent == DATIVE ? target::ru_name_dative :\
+	declent == ACCUSATIVE ? target::ru_name_accusative :\
+	declent == INSTRUMENTAL ? target::ru_name_instrumental :\
+	declent == PREPOSITIONAL ? target::ru_name_instrumental :\
+	target::name
