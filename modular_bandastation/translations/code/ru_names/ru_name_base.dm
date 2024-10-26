@@ -34,3 +34,23 @@
 		if(list_to_use[case_id] && list_to_use["base"] == name)
 			return list_to_use[case_id] || name
 	return name
+
+/proc/ru_name_get_initial(atom/target, declent)
+	if(!ispath(target) && !istype(target))
+		CRASH("ru_name_get_initial got target that is not a path or a typed var!")
+	if(target::ru_name_base != target::name)
+		return target::name
+	switch(declent)
+		if(NOMINATIVE)
+			return target::ru_name_nominative
+		if(GENITIVE)
+			return target::ru_name_genitive
+		if(DATIVE)
+			return target::ru_name_dative
+		if(ACCUSATIVE)
+			return target::ru_name_accusative
+		if(INSTRUMENTAL)
+			return target::ru_name_instrumental
+		if(PREPOSITIONAL)
+			return target::ru_name_prepositional
+	return target::name
