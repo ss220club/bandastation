@@ -309,7 +309,7 @@ GLOBAL_LIST_EMPTY(cached_storage_typecaches)
 	var/list/desc = list()
 
 	for(var/obj/item/valid_item as anything in can_hold_list)
-		desc += "[RU_NAME_GET_INITIAL(valid_item, NOMINATIVE)]"
+		desc += "[declent_ru_initial(valid_item, NOMINATIVE)]"
 
 	return "\n\t[span_notice("[desc.Join("\n\t")]")]"
 

@@ -165,7 +165,7 @@ Des: Removes all infected images from the alien.
 
 	if(old_number != 0)
 		numba = old_number
-		ru_names_rename(RU_NAMES_LIST(initial(name), "[RU_NAME_GET_INITIAL(src, NOMINATIVE)]", "[RU_NAME_GET_INITIAL(src, GENITIVE)]", "[RU_NAME_GET_INITIAL(src, DATIVE)]", "[RU_NAME_GET_INITIAL(src, ACCUSATIVE)]", "[RU_NAME_GET_INITIAL(src, INSTRUMENTAL)]", "[RU_NAME_GET_INITIAL(src, PREPOSITIONAL)]"))
+		ru_names_rename(RU_NAMES_LIST(initial(name), "[declent_ru_initial(src, NOMINATIVE)]", "[declent_ru_initial(src, GENITIVE)]", "[declent_ru_initial(src, DATIVE)]", "[declent_ru_initial(src, ACCUSATIVE)]", "[declent_ru_initial(src, INSTRUMENTAL)]", "[declent_ru_initial(src, PREPOSITIONAL)]"))
 		name = initial(name) // prevent chicanery like two different numerical identifiers tied to the same mob
 
 	set_name()
