@@ -84,7 +84,7 @@
 			ingredient_amounts[ingredient.type] += 1
 
 		for(var/obj/item/ingredient_type as anything in ingredient_amounts)
-			examine_list += "&bull; [ingredient_amounts[ingredient_type]] единиц [declension_ru(ingredient_amounts[ingredient_type], "у", "ы", "")] [initial(ingredient_type.ru_name_genitive) || initial(ingredient_type.name)]"
+			examine_list += "&bull; [ingredient_amounts[ingredient_type]] единиц [declension_ru(ingredient_amounts[ingredient_type], "у", "ы", "")] [RU_NAME_GET_INITIAL(ingredient_type, GENITIVE)]"
 
 		var/unknown_volume = 0
 		for(var/datum/reagent/current_reagent as anything in reagents.reagent_list)
