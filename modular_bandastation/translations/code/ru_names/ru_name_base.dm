@@ -35,6 +35,7 @@
 			return list_to_use[case_id] || name
 	return name
 
+/// Used for getting initial values, such as for recipies where resulted atom is not yet created.
 /proc/declent_ru_initial(atom/target, declent)
 	if(!ispath(target) && !istype(target))
 		CRASH("declent_ru_initial got target that is not a path or a typed var!")
