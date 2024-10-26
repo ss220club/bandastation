@@ -37,8 +37,8 @@
 
 /// Used for getting initial values, such as for recipies where resulted atom is not yet created.
 /proc/declent_ru_initial(atom/target, declent)
-	if(!ispath(target) && !istype(target))
-		CRASH("declent_ru_initial got target that is not a path or a typed var!")
+	if(!istype(target) && !ispath(target, /atom))
+		CRASH("declent_ru_initial got target that is not an atom or atom's path!")
 	if(target::ru_name_base != target::name)
 		return target::name
 	switch(declent)
