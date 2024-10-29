@@ -223,7 +223,6 @@
 
 			var/datum/bodypart_overlay/simple/body_marking/overlay = new markings_type ()
 
-			// Tell the overlay what it should look like
 			overlay.icon = accessory.icon
 			overlay.icon_state = accessory.icon_state
 			overlay.use_gender = accessory.gender_specific

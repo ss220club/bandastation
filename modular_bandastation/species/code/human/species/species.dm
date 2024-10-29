@@ -85,7 +85,7 @@
 			StartCooldown()
 			return TRUE
 
-	if(!fingerprints && !blood)
+	if(!length(fingerprints) && !length(blood))
 		StartCooldown()
 		return TRUE
 

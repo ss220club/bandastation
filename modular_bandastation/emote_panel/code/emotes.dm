@@ -653,9 +653,10 @@
 /datum/emote/living/carbon/human/vulpkanin/can_run_emote(mob/user, status_check = TRUE, intentional = FALSE)
 	var/organ = user.get_organ_slot(ORGAN_SLOT_TONGUE)
 	if(istype(organ, /obj/item/organ/internal/tongue/vulpkanin))
-		return TRUE && ..()
+		return ..()
 
 /datum/emote/living/carbon/human/vulpkanin/howl
+	name = "Выть"
 	key = "howl"
 	key_third_person = "howls"
 	message = "воет."
@@ -666,6 +667,7 @@
 	sound = 'modular_bandastation/emote_panel/audio/howl.ogg'
 
 /datum/emote/living/carbon/human/vulpkanin/growl
+	name = "Рычать"
 	key = "growl"
 	key_third_person = "growls"
 	message = "рычит."
@@ -682,6 +684,7 @@
 	)
 
 /datum/emote/living/carbon/human/vulpkanin/purr
+	name = "Урчать"
 	key = "purr"
 	key_third_person = "purrs"
 	message = "урчит."
@@ -692,6 +695,7 @@
 	sound = 'modular_bandastation/emote_panel/audio/purr.ogg'
 
 /datum/emote/living/carbon/human/vulpkanin/bark
+	name = "Гавкнуть"
 	key = "bark"
 	key_third_person = "bark"
 	message = "гавкает."
@@ -702,6 +706,7 @@
 	sound = 'modular_bandastation/emote_panel/audio/bark.ogg'
 
 /datum/emote/living/carbon/human/vulpkanin/wbark
+	name = "Гавкнуть дважды"
 	key = "wbark"
 	key_third_person = "wbark"
 	message = "дважды гавкает."
