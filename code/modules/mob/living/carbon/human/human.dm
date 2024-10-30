@@ -952,7 +952,7 @@
 	else if(carrydelay <= 4 SECONDS)
 		skills_space = " быстро"
 
-	visible_message(span_notice("[capitalize(declent_ru(NOMINATIVE))] начинает [skills_space] поднимать [target.declent_ru(ACCUSATIVE)] на свои плечи..."),
+	visible_message(span_notice("[capitalize(declent_ru(NOMINATIVE))] начинает[skills_space] поднимать [target.declent_ru(ACCUSATIVE)] на свои плечи..."),
 		span_notice("Вы[skills_space] начинаете поднимать [target.declent_ru(ACCUSATIVE)] на свои плечи..."))
 	if(!do_after(src, carrydelay, target))
 		visible_message(span_warning("[capitalize(declent_ru(DATIVE))] не удается поднять [target.declent_ru(ACCUSATIVE)] на плечи!"))
