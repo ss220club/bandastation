@@ -3,10 +3,10 @@
 	description = "Командор Джонсон в критическом состоянии после ещё одного пережитого сердечного приступа. Врачи говорят, что им нужно новое сердце как можно быстрее. Отправьте одно, быстро! Мы возьмём и кибернетическое, но только улучшенное."
 	reward = CARGO_CRATE_VALUE * 5
 	wanted_types = list(
-		/obj/item/organ/internal/heart = TRUE,
-		/obj/item/organ/internal/heart/cybernetic = FALSE,
-		/obj/item/organ/internal/heart/cybernetic/tier2 = TRUE,
-		/obj/item/organ/internal/heart/cybernetic/tier3 = TRUE,
+		/obj/item/organ/heart = TRUE,
+		/obj/item/organ/heart/cybernetic = FALSE,
+		/obj/item/organ/heart/cybernetic/tier2 = TRUE,
+		/obj/item/organ/heart/cybernetic/tier3 = TRUE,
 	)
 
 /datum/bounty/item/medical/lung
@@ -15,17 +15,17 @@
 	reward = CARGO_CRATE_VALUE * 10
 	required_count = 3
 	wanted_types = list(
-		/obj/item/organ/internal/lungs = TRUE,
-		/obj/item/organ/internal/lungs/cybernetic = FALSE,
-		/obj/item/organ/internal/lungs/cybernetic/tier2 = TRUE,
-		/obj/item/organ/internal/lungs/cybernetic/tier3 = TRUE,
+		/obj/item/organ/lungs = TRUE,
+		/obj/item/organ/lungs/cybernetic = FALSE,
+		/obj/item/organ/lungs/cybernetic/tier2 = TRUE,
+		/obj/item/organ/lungs/cybernetic/tier3 = TRUE,
 	)
 
 /datum/bounty/item/medical/appendix
 	name = "Аппендикс"
 	description = "Повар Центрального Командования Гибб хочет приготовить блюдо, используя, особый деликатес: аппендикс. Если вы отправите один, он вам заплатит."
 	reward = CARGO_CRATE_VALUE * 5 //there are no synthetic appendixes
-	wanted_types = list(/obj/item/organ/internal/appendix = TRUE)
+	wanted_types = list(/obj/item/organ/appendix = TRUE)
 
 /datum/bounty/item/medical/ears
 	name = "Уши"
@@ -33,11 +33,11 @@
 	reward = CARGO_CRATE_VALUE * 10
 	required_count = 3
 	wanted_types = list(
-		/obj/item/organ/internal/ears = TRUE,
-		/obj/item/organ/internal/ears/cybernetic = FALSE,
-		/obj/item/organ/internal/ears/cybernetic/upgraded = TRUE,
-		/obj/item/organ/internal/ears/cybernetic/whisper = TRUE,
-		/obj/item/organ/internal/ears/cybernetic/xray = TRUE,
+		/obj/item/organ/ears = TRUE,
+		/obj/item/organ/ears/cybernetic = FALSE,
+		/obj/item/organ/ears/cybernetic/upgraded = TRUE,
+		/obj/item/organ/ears/cybernetic/whisper = TRUE,
+		/obj/item/organ/ears/cybernetic/xray = TRUE,
 	)
 
 /datum/bounty/item/medical/liver
@@ -46,10 +46,10 @@
 	reward = CARGO_CRATE_VALUE * 10
 	required_count = 3
 	wanted_types = list(
-		/obj/item/organ/internal/liver = TRUE,
-		/obj/item/organ/internal/liver/cybernetic = FALSE,
-		/obj/item/organ/internal/liver/cybernetic/tier2 = TRUE,
-		/obj/item/organ/internal/liver/cybernetic/tier3 = TRUE,
+		/obj/item/organ/liver = TRUE,
+		/obj/item/organ/liver/cybernetic = FALSE,
+		/obj/item/organ/liver/cybernetic/tier2 = TRUE,
+		/obj/item/organ/liver/cybernetic/tier3 = TRUE,
 	)
 
 /datum/bounty/item/medical/eye
@@ -58,8 +58,8 @@
 	reward = CARGO_CRATE_VALUE * 10
 	required_count = 3
 	wanted_types = list(
-		/obj/item/organ/internal/eyes = TRUE,
-		/obj/item/organ/internal/eyes/robotic = FALSE,
+		/obj/item/organ/eyes = TRUE,
+		/obj/item/organ/eyes/robotic = FALSE,
 	)
 
 /datum/bounty/item/medical/tongue
@@ -67,19 +67,19 @@
 	description = "Недавняя атака мимов экстремистов оставила экипаж станции 23 немыми. Отправьте несколько лишних языков."
 	reward = CARGO_CRATE_VALUE * 10
 	required_count = 3
-	wanted_types = list(/obj/item/organ/internal/tongue = TRUE)
+	wanted_types = list(/obj/item/organ/tongue = TRUE)
 
 /datum/bounty/item/medical/lizard_tail
 	name = "Хвост ящерицы"
 	description = "Федерация волшебников похитила у Нанотрейзен хвосты ящеров. Пока ЦК разбирается с волшебниками, не может ли станция отправить хвост из своих запасов?"
 	reward = CARGO_CRATE_VALUE * 6
-	wanted_types = list(/obj/item/organ/external/tail/lizard = TRUE)
+	wanted_types = list(/obj/item/organ/tail/lizard = TRUE)
 
 /datum/bounty/item/medical/cat_tail
 	name = "Хвост кошки"
 	description = "На Центральном Командовании кончились щётки для чистки сильнозагрязнённых труб. Не выручите ли вы нас отправкой кошачьего хвоста?"
 	reward = CARGO_CRATE_VALUE * 6
-	wanted_types = list(/obj/item/organ/external/tail/cat = TRUE)
+	wanted_types = list(/obj/item/organ/tail/cat = TRUE)
 
 /datum/bounty/item/medical/chainsaw
 	name = "Бензопила"

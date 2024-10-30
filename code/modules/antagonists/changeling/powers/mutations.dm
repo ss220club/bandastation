@@ -632,7 +632,7 @@
 
 /obj/item/clothing/head/helmet/changeling_hivehead/attackby(obj/item/attacking_item, mob/user, params)
 	. = ..()
-	if(!istype(attacking_item, /obj/item/organ/internal/monster_core/regenerative_core/legion) || !holds_reagents)
+	if(!istype(attacking_item, /obj/item/organ/monster_core/regenerative_core/legion) || !holds_reagents)
 		return
 	visible_message(span_boldwarning("Когда [user.declent_ru(NOMINATIVE)] запихивает [attacking_item.declent_ru(ACCUSATIVE)] в [declent_ru(ACCUSATIVE)], [declent_ru(NOMINATIVE)] начинает мутировать."))
 	var/mob/living/carbon/wearer = loc

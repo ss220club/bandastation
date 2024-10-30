@@ -24,9 +24,9 @@
 		if (!human_user.combat_mode)
 			if (body_position == STANDING_UP)
 				if(check_zone(user.zone_selected) == BODY_ZONE_HEAD && get_bodypart(BODY_ZONE_HEAD))
-					context[SCREENTIP_CONTEXT_LMB] = "Погладить"
-				else if(user.zone_selected == BODY_ZONE_PRECISE_GROIN && !isnull(get_organ_by_type(/obj/item/organ/external/tail)))
-					context[SCREENTIP_CONTEXT_LMB] = "Дернуть за хвост"
+					context[SCREENTIP_CONTEXT_LMB] = "Headpat"
+				else if(user.zone_selected == BODY_ZONE_PRECISE_GROIN && !isnull(get_organ_by_type(/obj/item/organ/tail)))
+					context[SCREENTIP_CONTEXT_LMB] = "Pull tail"
 				else
 					context[SCREENTIP_CONTEXT_LMB] = "Обнять"
 			else if (health >= 0 && !HAS_TRAIT(src, TRAIT_FAKEDEATH))
