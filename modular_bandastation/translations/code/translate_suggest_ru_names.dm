@@ -66,21 +66,19 @@ ADMIN_VERB(ru_names_review_panel, R_ADMIN, "Ru Names Review", "Shows player-sugg
 	var/message = "approves [suggested_list] for [data["atom_path"]]"
 	// Here we send message to discord
 	var/list/webhook_data = list(
-		"author" = list(
-			"name" = data["atom_path"]
-		),
+		"title" = data["atom_path"],
 		"fields" = list(
 			list(
-				"name" = "Approved by:",
-				"value" = usr.ckey,
+				"name" = "Suggested List:",
+				"value" = suggested_list,
 			),
 			list(
 				"name" = "Suggested by:",
 				"value" = data["ckey"],
 			),
 			list(
-				"name" = "Suggested List:",
-				"value" = suggested_list
+				"name" = "Approved by:",
+				"value" = usr.ckey,
 			),
 		),
 	)
