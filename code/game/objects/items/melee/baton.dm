@@ -303,6 +303,7 @@
 
 /obj/item/melee/baton/telescopic
 	name = "telescopic baton"
+	RU_NAMES_LIST_INIT("telescopic baton", "телескопическая дубинка", "телескопической дубинки", "телескопической дубинке", "телескопическую дубинку", "телескопической дубинкой", "телескопической дубинке")
 	desc = "A compact yet robust personal defense weapon. Can be concealed when folded."
 	icon = 'icons/obj/weapons/baton.dmi'
 	icon_state = "telebaton"
@@ -351,7 +352,7 @@
 
 /obj/item/melee/baton/telescopic/suicide_act(mob/living/user)
 	var/mob/living/carbon/human/human_user = user
-	var/obj/item/organ/internal/brain/our_brain = human_user.get_organ_by_type(/obj/item/organ/internal/brain)
+	var/obj/item/organ/brain/our_brain = human_user.get_organ_by_type(/obj/item/organ/brain)
 
 	user.visible_message(span_suicide("[user] stuffs [src] up [user.p_their()] nose and presses the 'extend' button! It looks like [user.p_theyre()] trying to clear [user.p_their()] mind."))
 	if(active)
