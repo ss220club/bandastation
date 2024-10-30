@@ -3,7 +3,7 @@
 	id = "vulptail"
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/c2/synthflesh = 20)
-	build_path = /obj/item/organ/external/tail/vulpkanin
+	build_path = /obj/item/organ/tail/vulpkanin
 	category = list(RND_CATEGORY_LIMBS_OTHER)
 
 /datum/design/vulp_tongue
@@ -11,5 +11,5 @@
 	id = "vulptongue"
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/c2/synthflesh = 10)
-	build_path = /obj/item/organ/internal/tongue/vulpkanin
+	build_path = /obj/item/organ/tongue/vulpkanin
 	category = list(RND_CATEGORY_LIMBS_OTHER)

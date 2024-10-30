@@ -9,7 +9,7 @@
 	icon_greyscale = 'modular_bandastation/species/icons/mob/species/vulpkanin/body.dmi'
 	limb_id = SPECIES_VULPKANIN
 	is_dimorphic = TRUE
-	wing_types = list(/obj/item/organ/external/wings/functional/dragon)
+	wing_types = list(/obj/item/organ/wings/functional/dragon)
 	species_bodytype = SPECIES_VULPKANIN
 
 /obj/item/bodypart/chest/vulpkanin/get_butt_sprite()

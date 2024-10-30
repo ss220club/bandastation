@@ -9,16 +9,16 @@
 
 	species_language_holder = /datum/language_holder/vulpkanin
 
-	mutantbrain = /obj/item/organ/internal/brain/vulpkanin
-	mutantheart = /obj/item/organ/internal/heart/vulpkanin
-	mutantlungs = /obj/item/organ/internal/lungs/vulpkanin
-	mutanteyes = /obj/item/organ/internal/eyes/vulpkanin
-	mutantears = /obj/item/organ/internal/ears/vulpkanin
-	mutanttongue = /obj/item/organ/internal/tongue/vulpkanin
-	mutantliver = /obj/item/organ/internal/liver/vulpkanin
-	mutantstomach = /obj/item/organ/internal/stomach/vulpkanin
+	mutantbrain = /obj/item/organ/brain/vulpkanin
+	mutantheart = /obj/item/organ/heart/vulpkanin
+	mutantlungs = /obj/item/organ/lungs/vulpkanin
+	mutanteyes = /obj/item/organ/eyes/vulpkanin
+	mutantears = /obj/item/organ/ears/vulpkanin
+	mutanttongue = /obj/item/organ/tongue/vulpkanin
+	mutantliver = /obj/item/organ/liver/vulpkanin
+	mutantstomach = /obj/item/organ/stomach/vulpkanin
 	mutant_organs = list(
-		/obj/item/organ/external/tail/vulpkanin = "Default",
+		/obj/item/organ/tail/vulpkanin = "Default",
 	)
 
 	body_markings = list(/datum/bodypart_overlay/simple/body_marking/vulpkanin = "None")

@@ -652,7 +652,7 @@
 
 /datum/emote/living/carbon/human/vulpkanin/can_run_emote(mob/user, status_check = TRUE, intentional = FALSE)
 	var/organ = user.get_organ_slot(ORGAN_SLOT_TONGUE)
-	if(istype(organ, /obj/item/organ/internal/tongue/vulpkanin))
+	if(istype(organ, /obj/item/organ/tongue/vulpkanin))
 		return ..()
 
 /datum/emote/living/carbon/human/vulpkanin/howl
