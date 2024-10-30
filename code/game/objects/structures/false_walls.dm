@@ -3,6 +3,7 @@
  */
 /obj/structure/falsewall
 	name = "wall"
+	RU_NAMES_LIST_INIT("wall", "стена", "стены", "стене", "стену", "стеной", "стене")
 	desc = "A huge chunk of metal used to separate rooms."
 	anchored = TRUE
 	icon = 'icons/turf/walls/false_walls.dmi'
@@ -130,7 +131,7 @@
 	if(tool)
 		tool.play_tool_sound(src, 100)
 	else
-		playsound(src, 'sound/items/welder.ogg', 100, TRUE)
+		playsound(src, 'sound/items/tools/welder.ogg', 100, TRUE)
 	deconstruct(disassembled)
 
 /obj/structure/falsewall/atom_deconstruct(disassembled = TRUE)
@@ -351,6 +352,7 @@
 
 /obj/structure/falsewall/titanium
 	name = "wall"
+	RU_NAMES_LIST_INIT("wall", "стена", "стены", "стене", "стену", "стеной", "стене")
 	desc = "A light-weight titanium wall used in shuttles."
 	fake_icon = 'icons/turf/walls/shuttle_wall.dmi'
 	icon_state = "shuttle_wall-open"
@@ -363,6 +365,7 @@
 
 /obj/structure/falsewall/plastitanium
 	name = "wall"
+	RU_NAMES_LIST_INIT("wall", "стена", "стены", "стене", "стену", "стеной", "стене")
 	desc = "An evil wall of plasma and titanium."
 	fake_icon = 'icons/turf/walls/plastitanium_wall.dmi'
 	icon_state = "plastitanium_wall-open"
@@ -375,6 +378,7 @@
 
 /obj/structure/falsewall/material
 	name = "wall"
+	RU_NAMES_LIST_INIT("wall", "стена", "стены", "стене", "стену", "стеной", "стене")
 	desc = "A huge chunk of material used to separate rooms."
 	fake_icon = 'icons/turf/walls/material_wall.dmi'
 	icon_state = "material_wall-open"
@@ -392,8 +396,9 @@
 		var/datum/material/material_datum = material
 		new material_datum.sheet_type(loc, FLOOR(custom_materials[material_datum] / SHEET_MATERIAL_AMOUNT, 1))
 
-/obj/structure/falsewall/material/mat_update_desc(mat)
-	desc = "A huge chunk of [mat] used to separate rooms."
+/obj/structure/falsewall/material/finalize_material_effects(list/materials)
+	. = ..()
+	desc = "A huge chunk of [get_material_english_list(materials)] used to separate rooms."
 
 /obj/structure/falsewall/material/toggle_open()
 	if(!QDELETED(src))

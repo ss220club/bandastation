@@ -15,6 +15,7 @@
 	create_storage(storage_type = /datum/storage/pockets/shoes/clown)
 	LoadComponent(/datum/component/squeak, squeak_sound, 50, falloff_exponent = 20) //die off quick please
 	AddElement(/datum/element/swabable, CELL_LINE_TABLE_CLOWN, CELL_VIRUS_TABLE_GENERIC, rand(2,3), 0)
+	AddComponent(/datum/component/adjust_fishing_difficulty, 3) //Goofy
 
 /obj/item/clothing/shoes/clown_shoes/equipped(mob/living/user, slot)
 	. = ..()
@@ -57,6 +58,7 @@
 
 /obj/item/clothing/shoes/clown_shoes/moffers
 	name = "moffers"
+	RU_NAMES_LIST_INIT("moffers", "мофферсы", "мофферсов", "мофферсам", "мофферсы", "мофферсами", "мофферсах")
 	desc = "No moths were harmed in the making of these slippers."
 	icon_state = "moffers"
 	squeak_sound = list('sound/effects/footstep/moffstep01.ogg'=1) //like sweet music to my ears

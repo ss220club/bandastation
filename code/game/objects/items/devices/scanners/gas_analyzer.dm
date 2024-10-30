@@ -1,6 +1,7 @@
 /obj/item/analyzer
 	desc = "A hand-held environmental scanner which reports current gas levels."
 	name = "gas analyzer"
+	RU_NAMES_LIST_INIT("gas analyzer", "газоанализатор", "газоанализатора", "газоанализатору", "газоанализатор", "газоанализатором", "газоанализаторе")
 	custom_price = PAYCHECK_LOWER * 0.9
 	icon = 'icons/obj/devices/scanner.dmi'
 	icon_state = "analyzer"
@@ -18,6 +19,8 @@
 	custom_materials = list(/datum/material/iron=SMALL_MATERIAL_AMOUNT * 0.3, /datum/material/glass=SMALL_MATERIAL_AMOUNT * 0.2)
 	grind_results = list(/datum/reagent/mercury = 5, /datum/reagent/iron = 5, /datum/reagent/silicon = 5)
 	interaction_flags_click = NEED_LITERACY|NEED_LIGHT|ALLOW_RESTING
+	pickup_sound = 'sound/items/handling/gas_analyzer/gas_analyzer_pickup.ogg'
+	drop_sound = 'sound/items/handling/gas_analyzer/gas_analyzer_drop.ogg'
 	/// Boolean whether this has a CD
 	var/cooldown = FALSE
 	/// The time in deciseconds
@@ -37,8 +40,8 @@
 		return
 	var/static/list/slapcraft_recipe_list = list(/datum/crafting_recipe/material_sniffer)
 
-	AddComponent(
-		/datum/component/slapcrafting,\
+	AddElement(
+		/datum/element/slapcrafting,\
 		slapcraft_recipes = slapcraft_recipe_list,\
 	)
 
@@ -181,6 +184,7 @@
 
 	var/icon = target
 	var/message = list()
+	playsound(user, SFX_INDUSTRIAL_SCAN, 20, TRUE, -2, TRUE, FALSE)
 	if(!silent && isliving(user))
 		user.visible_message(span_notice("[user] uses the analyzer on [icon2html(icon, viewers(user))] [target]."), span_notice("You use the analyzer on [icon2html(icon, user)] [target]."))
 	message += span_boldnotice("Results of analysis of [icon2html(icon, user)] [target].")
@@ -223,6 +227,7 @@
 /obj/item/analyzer/ranged
 	desc = "A hand-held long-range environmental scanner which reports current gas levels."
 	name = "long-range gas analyzer"
+	RU_NAMES_LIST_INIT("long-range gas analyzer", "газоанализатор дальнего действия", "газоанализатора дальнего действия", "газоанализатору дальнего действия", "газоанализатор дальнего действия", "газоанализатором дальнего действия", "газоанализаторе дальнего действия")
 	icon_state = "analyzerranged"
 	worn_icon_state = "analyzer"
 	w_class = WEIGHT_CLASS_NORMAL

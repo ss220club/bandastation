@@ -140,10 +140,10 @@ SUBSYSTEM_DEF(dynamic)
 	/// The maximum amount of time for antag random events to be hijacked.
 	var/random_event_hijack_maximum = 18 MINUTES
 
-	/// What is the lower bound of when the roundstart annoucement is sent out?
+	/// What is the lower bound of when the roundstart announcement is sent out?
 	var/waittime_l = 600
 
-	/// What is the higher bound of when the roundstart annoucement is sent out?
+	/// What is the higher bound of when the roundstart announcement is sent out?
 	var/waittime_h = 1800
 
 	/// A number between 0 and 100. The maximum amount of threat allowed to generate.
@@ -366,9 +366,13 @@ SUBSYSTEM_DEF(dynamic)
 	if(greenshift)
 		priority_announce("Thanks to the tireless efforts of our security and intelligence divisions, there are currently no credible threats to [station_name()]. All station construction projects have been authorized. Have a secure shift!", "Security Report", SSstation.announcer.get_rand_report_sound(), color_override = "green")
 	else
+		/* BANDASTATION EDIT START - No Blue roundstart
 		if(SSsecurity_level.get_current_level_as_number() < SEC_LEVEL_BLUE)
 			SSsecurity_level.set_level(SEC_LEVEL_BLUE, announce = FALSE)
 		priority_announce("[SSsecurity_level.current_security_level.elevating_to_announcement]\n\nA summary has been copied and printed to all communications consoles.", "Security level elevated.", ANNOUNCER_INTERCEPT, color_override = SSsecurity_level.current_security_level.announcement_color)
+		*/
+		priority_announce("Отчет был скопирован и распечатан на всех консолях связи.", "Отчет о безопасности", SSstation.announcer.get_rand_report_sound())
+		// BANDASTATION EDIT END - No Blue roundstart
 #endif
 
 	return .
@@ -526,7 +530,9 @@ SUBSYSTEM_DEF(dynamic)
 	//To new_player and such, and we want the datums to just free when the roundstart work is done
 	var/list/roundstart_rules = init_rulesets(/datum/dynamic_ruleset/roundstart)
 
-	SSjob.DivideOccupations(pure = TRUE, allow_all = TRUE)
+	var/security = 0 // BANDASTATION EDIT - Force players to play Sec
+
+	SSjob.divide_occupations(pure = TRUE, allow_all = TRUE)
 	for(var/i in GLOB.new_player_list)
 		var/mob/dead/new_player/player = i
 		if(player.ready == PLAYER_READY_TO_PLAY && player.mind && player.check_preferences())
@@ -541,11 +547,25 @@ SUBSYSTEM_DEF(dynamic)
 			else
 				roundstart_pop_ready++
 				candidates.Add(player)
-	SSjob.ResetOccupations()
+				// BANDASTATION EDIT START - Force players to play Sec
+				if(player.mind?.assigned_role?.departments_list?.Find(/datum/job_department/security))
+					security++
+				// BANDASTATION EDIT END
+	SSjob.reset_occupations()
 	log_dynamic("Listing [roundstart_rules.len] round start rulesets, and [candidates.len] players ready.")
 	if (candidates.len <= 0)
 		log_dynamic("[candidates.len] candidates.")
 		return TRUE
+
+	// BANDASTATION EDIT START - Force players to play Sec
+	if(security < CONFIG_GET(number/roundstart_security_for_threat))
+		var/roundstart_budget_low_sec = security / CONFIG_GET(number/roundstart_security_for_threat) * round_start_budget
+		var/transfer_to_midround = round_start_budget - roundstart_budget_low_sec
+		mid_round_budget += transfer_to_midround
+		round_start_budget = roundstart_budget_low_sec
+		initial_round_start_budget = roundstart_budget_low_sec
+		log_dynamic("Not enough security; forcing roundstart budget to [roundstart_budget_low_sec]")
+	// BANDASTATION EDIT END
 
 	if(GLOB.dynamic_forced_roundstart_ruleset.len > 0)
 		rigged_roundstart()
@@ -999,7 +1019,7 @@ SUBSYSTEM_DEF(dynamic)
 #define MAXIMUM_DYN_DISTANCE 5
 
 /**
- * Returns the comulative distribution of threat centre and width, and a random location of -0.5 to 0.5
+ * Returns the comulative distribution of threat centre and width, and a random location of -5 to 5
  * plus or minus the otherwise unattainable lower and upper percentiles. All multiplied by the maximum
  * threat and then rounded to the nearest interval.
  * rand() calls without arguments returns a value between 0 and 1, allowing for smaller intervals.
@@ -1018,7 +1038,7 @@ SUBSYSTEM_DEF(dynamic)
 	var/list/reopened_jobs = list()
 
 	for(var/mob/living/quitter in GLOB.suicided_mob_list)
-		var/datum/job/job = SSjob.GetJob(quitter.job)
+		var/datum/job/job = SSjob.get_job(quitter.job)
 		if(!job || !(job.job_flags & JOB_REOPEN_ON_ROUNDSTART_LOSS))
 			continue
 		if(!include_command && job.departments_bitflags & DEPARTMENT_BITFLAG_COMMAND)

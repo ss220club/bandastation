@@ -130,7 +130,7 @@
 		var/datum/track/one_song = songs[song_name]
 		UNTYPED_LIST_ADD(songs_data, list( \
 			"name" = song_name, \
-			"length" = DisplayTimeText(one_song.song_length), \
+			"length" = one_song.song_length  /* BANDASTATION EDIT - ORIGINAL: DisplayTimeText(one_song.song_length) */, \
 			"beat" = one_song.song_beat, \
 		))
 
@@ -400,7 +400,7 @@
 
 // Default track supplied for testing and also because it's a banger
 /datum/track/default
-	song_path = 'sound/ambience/title3.ogg'
+	song_path = 'sound/music/lobby_music/title3.ogg'
 	song_name = "Tintin on the Moon"
 	song_length = 3 MINUTES + 52 SECONDS
 	song_beat = 1 SECONDS

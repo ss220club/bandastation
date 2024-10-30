@@ -2,6 +2,7 @@
 // It functions almost identically (see code/datums/diseases/alien_embryo.dm)
 /obj/item/organ/internal/body_egg/alien_embryo
 	name = "alien embryo"
+	RU_NAMES_LIST_INIT("alien embryo", "эмбрион Чужих", "эмбриона Чужих", "эмбриону Чужих", "эмбрион Чужих", "эмбрионом Чужих", "эмбрионе Чужих")
 	icon = 'icons/mob/nonhuman-player/alien.dmi'
 	icon_state = "larva0_dead"
 	food_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/toxin/acid = 10)
@@ -120,7 +121,7 @@
 	var/atom/xeno_loc = get_turf(owner)
 	var/mob/living/carbon/alien/larva/new_xeno = new(xeno_loc)
 	new_xeno.key = ghost.key
-	SEND_SOUND(new_xeno, sound('sound/voice/hiss5.ogg',0,0,0,100)) //To get the player's attention
+	SEND_SOUND(new_xeno, sound('sound/mobs/non-humanoids/hiss/hiss5.ogg',0,0,0,100)) //To get the player's attention
 	new_xeno.add_traits(list(TRAIT_HANDS_BLOCKED, TRAIT_IMMOBILIZED, TRAIT_NO_TRANSFORM), type) //so we don't move during the bursting animation
 	new_xeno.SetInvisibility(INVISIBILITY_MAXIMUM, id=type)
 

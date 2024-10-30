@@ -1,5 +1,6 @@
 /turf/closed/wall/material
 	name = "wall"
+	RU_NAMES_LIST_INIT("wall", "стена", "стены", "стене", "стену", "стеной", "стене")
 	desc = "A huge chunk of material used to separate rooms."
 	icon = 'icons/turf/walls/material_wall.dmi'
 	icon_state = "material_wall-0"
@@ -22,6 +23,7 @@
 		var/datum/material/M = i
 		new M.sheet_type(src, FLOOR(custom_materials[M] / SHEET_MATERIAL_AMOUNT, 1))
 
-/turf/closed/wall/material/mat_update_desc(mat)
-	desc = "A huge chunk of [mat] used to separate rooms."
+/turf/closed/wall/material/finalize_material_effects(list/materials)
+	. = ..()
+	desc = "A huge chunk of [get_material_english_list(materials)] used to separate rooms."
 
