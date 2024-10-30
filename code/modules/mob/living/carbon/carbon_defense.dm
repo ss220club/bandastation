@@ -313,10 +313,10 @@
 			to_chat(helper, span_warning("[capitalize(declent_ru(NOMINATIVE))] выглядит заметно расстроенно, когда вы гладите [ru_p_them()] по голове."))
 
 	else if ((helper.zone_selected == BODY_ZONE_PRECISE_GROIN) && !isnull(src.get_organ_by_type(/obj/item/organ/tail)))
-		helper.visible_message(span_notice("[helper] pulls on [src]'s tail!"), \
-					null, span_hear("You hear a soft patter."), DEFAULT_MESSAGE_RANGE, list(helper, src))
-		to_chat(helper, span_notice("You pull on [src]'s tail!"))
-		to_chat(src, span_notice("[helper] pulls on your tail!"))
+		helper.visible_message(span_notice("[capitalize(helper.declent_ru(NOMINATIVE))] дергает за хвост [declent_ru(GENITIVE)]!"), \
+					null, span_hear("Вы слышите тихое поглаживание."), DEFAULT_MESSAGE_RANGE, list(helper, src))
+		to_chat(helper, span_notice("Вы дергаете за хвост [declent_ru(GENITIVE)]!"))
+		to_chat(src, span_notice("[capitalize(helper.declent_ru(NOMINATIVE))] дергает вас за хвост!"))
 		if(HAS_TRAIT(src, TRAIT_BADTOUCH)) //How dare they!
 			to_chat(helper, span_warning("[capitalize(declent_ru(NOMINATIVE))] издает ворчащий звук, когда вы дергаете за [ru_p_them()] хвост!"))
 		else

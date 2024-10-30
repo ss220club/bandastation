@@ -47,18 +47,18 @@
 	switch(organ_slot)
 		if(ORGAN_SLOT_HEART)
 			prosthetic = new /obj/item/organ/heart/cybernetic/surplus
-			slot_string = "heart"
+			slot_string = "сердце"
 		if(ORGAN_SLOT_LUNGS)
 			prosthetic = new /obj/item/organ/lungs/cybernetic/surplus
-			slot_string = "lungs"
+			slot_string = "лёгкие"
 		if(ORGAN_SLOT_LIVER)
 			prosthetic = new /obj/item/organ/liver/cybernetic/surplus
-			slot_string = "liver"
+			slot_string = "печень"
 		if(ORGAN_SLOT_STOMACH)
 			prosthetic = new /obj/item/organ/stomach/cybernetic/surplus
-			slot_string = "stomach"
-	medical_record_text = "During physical examination, patient was found to have a low-budget prosthetic [slot_string]. \
-		Removal of these organs is known to be dangerous to the patient as well as the practitioner."
+			slot_string = "желудок"
+	medical_record_text = "При физическом осмотре было обнаружено, что орган пациента, [slot_string], заменен бюджетным протезом. \
+		Известно, что удаление этих органов опасно как для пациента, так и для врача."
 	old_organ = human_holder.get_organ_slot(organ_slot)
 	prosthetic.Insert(human_holder, special = TRUE)
 	old_organ.moveToNullspace()

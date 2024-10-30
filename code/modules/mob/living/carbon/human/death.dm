@@ -48,7 +48,7 @@ GLOBAL_LIST_EMPTY(dead_players_during_shift)
 	for(var/datum/reagent/reagent in reagents?.reagent_list)
 		readout += "<br>[round(reagent.volume, 0.001)] юнитов [reagent.name]"
 
-	readout += "<br>Stomach:"
+	readout += "<br>Желудок:"
 	var/obj/item/organ/stomach/belly = get_organ_slot(ORGAN_SLOT_STOMACH)
 	for(var/datum/reagent/bile in belly?.reagents?.reagent_list)
 		if(!belly.food_reagents[bile.type])
