@@ -1,2 +1,2 @@
 /datum/tutorial_manager/should_run(mob/user)
-	return
+	return FALSE
