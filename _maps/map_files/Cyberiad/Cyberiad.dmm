@@ -2826,8 +2826,7 @@
 /obj/structure/extinguisher_cabinet{
 	dir = 4;
 	icon_state = "extinguisher_closed";
-	pixel_x = 32;
-	tag = "icon-extinguisher_closed (EAST)"
+	pixel_x = 32
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron/white,
@@ -39543,8 +39542,7 @@
 /obj/structure/extinguisher_cabinet{
 	dir = 4;
 	icon_state = "extinguisher_closed";
-	pixel_x = 32;
-	tag = "icon-extinguisher_closed (EAST)"
+	pixel_x = 32
 	},
 /turf/open/floor/plating,
 /area/station/maintenance/department/medical)
