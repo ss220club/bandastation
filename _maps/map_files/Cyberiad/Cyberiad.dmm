@@ -5838,7 +5838,6 @@
 "bPn" = (
 /obj/machinery/light/directional/south,
 /obj/structure/chair/sofa/bench{
-	cover_color = "#85130b";
 	dir = 1
 	},
 /obj/effect/turf_decal/tile/red/half,
@@ -6076,7 +6075,9 @@
 /turf/open/floor/wood,
 /area/station/maintenance/department/bridge)
 "bTH" = (
-/turf/closed/wall,
+/turf/closed/wall{
+	ru_name_genitive = s
+	},
 /area/station/maintenance/starboard/aft)
 "bTJ" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -11015,6 +11016,10 @@
 /obj/structure/lattice/catwalk,
 /turf/open/space/basic,
 /area/station/solars/starboard/aft)
+"dtL" = (
+/obj/effect/turf_decal/stripes/line,
+/turf/open/floor/plating,
+/area/space)
 "dtM" = (
 /obj/machinery/modular_computer/preset/curator{
 	dir = 8
@@ -25256,7 +25261,6 @@
 /area/station/security/checkpoint/arrivals)
 "icF" = (
 /obj/structure/chair/sofa/bench/right{
-	cover_color = "#85130b";
 	dir = 1
 	},
 /obj/effect/turf_decal/tile/red/half,
@@ -28214,6 +28218,11 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron,
 /area/station/command/teleporter)
+"iYy" = (
+/obj/structure/lattice,
+/obj/structure/grille,
+/turf/open/space/basic,
+/area/station/maintenance/floor2/port/aft)
 "iYC" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 4
@@ -33674,11 +33683,6 @@
 /obj/machinery/newscaster/directional/north,
 /turf/open/floor/carpet,
 /area/station/commons/vacant_room/office)
-"kKK" = (
-/turf/closed/wall/r_wall,
-/area/station/maintenance/department/security{
-	name = "Ghetto Security"
-	})
 "kKU" = (
 /obj/machinery/light/small/directional/south,
 /turf/open/floor/iron/dark,
@@ -35861,7 +35865,6 @@
 /area/station/hallway/primary/aft)
 "lwF" = (
 /obj/structure/chair/sofa/bench/right{
-	cover_color = "#2f8faf";
 	dir = 1
 	},
 /obj/effect/turf_decal/tile/blue/fourcorners,
@@ -72922,12 +72925,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
 /area/station/maintenance/disposal/incinerator)
-"xut" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/structure/cable,
-/turf/open/floor/plating,
-/area/space)
 "xuu" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
 /obj/effect/turf_decal/tile/yellow/half/contrasted{
@@ -74253,11 +74250,6 @@
 	},
 /turf/open/floor/iron,
 /area/station/service/hydroponics/garden)
-"xQZ" = (
-/obj/structure/lattice,
-/obj/structure/grille,
-/turf/open/space/basic,
-/area/station/maintenance/floor2/port/aft)
 "xRc" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
 /obj/effect/spawner/random/engineering/tracking_beacon,
@@ -74761,10 +74753,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron/dark,
 /area/station/ai_monitored/turret_protected/aisat_interior)
-"xZm" = (
-/obj/effect/turf_decal/stripes/line,
-/turf/open/floor/plating,
-/area/space)
 "xZs" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/external{
@@ -99532,7 +99520,7 @@ doz
 doz
 doz
 doz
-kKK
+sGU
 sGU
 sYS
 jxu
@@ -107847,7 +107835,7 @@ rax
 rax
 htD
 xxo
-xZm
+dtL
 kJf
 doz
 doz
@@ -108104,7 +108092,7 @@ guN
 guN
 xHm
 wov
-xZm
+dtL
 kJf
 kJf
 doz
@@ -108361,7 +108349,7 @@ guN
 guN
 nvV
 qUM
-xZm
+dtL
 kJf
 kJf
 kJf
@@ -113475,9 +113463,9 @@ doz
 qVj
 tHN
 qVj
-fif
-fif
-fif
+qVj
+qVj
+qVj
 kJf
 doz
 doz
@@ -113732,9 +113720,9 @@ doz
 qVj
 tHN
 tHN
-xut
-xut
-fif
+tHN
+tHN
+qVj
 kJf
 kJf
 kJf
@@ -117856,8 +117844,8 @@ doz
 doz
 doz
 qVj
-xQZ
-xQZ
+iYy
+iYy
 qVj
 tHN
 qVj
@@ -118113,8 +118101,8 @@ doz
 doz
 doz
 qVj
-xQZ
-xQZ
+iYy
+iYy
 qVj
 tHN
 qVj
@@ -118370,8 +118358,8 @@ doz
 doz
 doz
 qVj
-xQZ
-xQZ
+iYy
+iYy
 qVj
 tHN
 qVj
