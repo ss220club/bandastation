@@ -1,5 +1,6 @@
 /obj/item/stack/sheet
 	name = "sheet"
+	RU_NAMES_LIST_INIT("sheet", "лист", "листа", "листу", "лист", "листом", "листу")
 	lefthand_file = 'icons/mob/inhands/items/sheets_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/items/sheets_righthand.dmi'
 	icon_state = "sheet-metal_3"
@@ -13,8 +14,8 @@
 	attack_verb_simple = list("bash", "batter", "bludgeon", "thrash", "smash")
 	novariants = FALSE
 	material_flags = MATERIAL_EFFECTS
-	pickup_sound = 'sound/items/metal_pick_up.ogg'
-	drop_sound = 'sound/items/metal_drop.ogg'
+	pickup_sound = 'sound/items/handling/materials/metal_pick_up.ogg'
+	drop_sound = 'sound/items/handling/materials/metal_drop.ogg'
 	var/sheettype = null //this is used for girders in the creation of walls/false walls
 	///If true, this is worth points in the gulag labour stacker
 	var/gulag_valid = FALSE
@@ -63,7 +64,7 @@
  * Facilitates sheets being smacked on the floor
  *
  * This is used for crafting by hitting the floor with items.
- * The inital use case is glass sheets breaking in to shards when the floor is hit.
+ * The initial use case is glass sheets breaking in to shards when the floor is hit.
  * Args:
  * * user: The user that did the action
  * * params: paramas passed in from attackby

@@ -452,6 +452,10 @@
 	desc = "A wondrous decorated Christmas tree."
 	icon_state = "pine_c"
 
+/obj/structure/flora/tree/pine/xmas/presentless
+	icon_state = "pinepresents"
+	desc = "A wondrous decorated Christmas tree. It has presents, though none of them seem to have your name on them."
+
 /obj/structure/flora/tree/pine/xmas/presents
 	icon_state = "pinepresents"
 	desc = "A wondrous decorated Christmas tree. It has presents!"
@@ -633,6 +637,7 @@
 
 /obj/structure/flora/bush
 	name = "bush"
+	RU_NAMES_LIST_INIT("bush", "куст", "куста", "кусту", "куст", "кустом", "кусте")
 	desc = "Some type of shrubbery. Known for causing considerable economic stress on designers."
 	icon = 'icons/obj/fluff/flora/ausflora.dmi'
 	icon_state = "firstbush_1"

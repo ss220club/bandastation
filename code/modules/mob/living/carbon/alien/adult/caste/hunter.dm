@@ -1,5 +1,6 @@
 /mob/living/carbon/alien/adult/hunter
 	name = "alien hunter"
+	RU_NAMES_LIST_INIT("alien hunter", "охотник Чужих", "охотника Чужих", "охотнику Чужих", "охотника Чужих", "охотником Чужих", "охотнике Чужих")
 	caste = "h"
 	maxHealth = 125
 	health = 125
@@ -10,7 +11,7 @@
 	var/pounce_speed = 2
 
 /mob/living/carbon/alien/adult/hunter/create_internal_organs()
-	organs += new /obj/item/organ/internal/alien/plasmavessel/small
+	organs += new /obj/item/organ/alien/plasmavessel/small
 	..()
 
 //Hunter verbs

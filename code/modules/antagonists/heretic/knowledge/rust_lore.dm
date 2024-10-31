@@ -176,6 +176,8 @@
 	our_heretic.increase_rust_strength()
 
 /datum/heretic_knowledge/blade_upgrade/rust/do_melee_effects(mob/living/source, mob/living/target, obj/item/melee/sickly_blade/blade)
+	if(source == target || !isliving(target))
+		return
 	target.adjust_disgust(50)
 
 /datum/heretic_knowledge/spell/area_conversion/on_gain(mob/user, datum/antagonist/heretic/our_heretic)
@@ -255,7 +257,7 @@
 	priority_announce(
 		text = "[generate_heretic_text()] Fear the decay, for the Rustbringer, [user.real_name] has ascended! None shall escape the corrosion! [generate_heretic_text()]",
 		title = "[generate_heretic_text()]",
-		sound = 'sound/ambience/antag/heretic/ascend_rust.ogg',
+		sound = 'sound/music/antag/heretic/ascend_rust.ogg',
 		color_override = "pink",
 	)
 	trigger(loc)

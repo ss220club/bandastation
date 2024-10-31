@@ -6,6 +6,7 @@
 	inhand_icon_state = "electronic"
 	lefthand_file = 'icons/mob/inhands/items/devices_lefthand.dmi'
 	name = "personal AI device"
+	RU_NAMES_LIST_INIT("personal AI device", "устройство ПИИ", "устройства ПИИ", "устройству ПИИ", "устройство ПИИ", "устройством ПИИ", "устройстве ПИИ")
 	resistance_flags = FIRE_PROOF | ACID_PROOF | INDESTRUCTIBLE
 	righthand_file = 'icons/mob/inhands/items/devices_righthand.dmi'
 	slot_flags = ITEM_SLOT_BELT
@@ -27,7 +28,6 @@
 	update_appearance()
 	SSpai.pai_card_list += src
 	ADD_TRAIT(src, TRAIT_CASTABLE_LOC, INNATE_TRAIT)
-	RegisterSignal(src, COMSIG_HIT_BY_SABOTEUR, PROC_REF(on_saboteur))
 
 /obj/item/pai_card/attackby(obj/item/used, mob/user, params)
 	if(pai && istype(used, /obj/item/encryptionkey))
@@ -71,8 +71,8 @@
 	emotion_icon = initial(emotion_icon)
 	update_appearance()
 
-/obj/item/pai_card/proc/on_saboteur(datum/source, disrupt_duration)
-	SIGNAL_HANDLER
+/obj/item/pai_card/on_saboteur(datum/source, disrupt_duration)
+	. = ..()
 	if(pai)
 		return pai.on_saboteur(source, disrupt_duration)
 

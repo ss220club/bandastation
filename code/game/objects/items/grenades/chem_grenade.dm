@@ -234,7 +234,7 @@
 
 	active = TRUE
 	update_icon_state()
-	playsound(src, 'sound/weapons/armbomb.ogg', volume, TRUE)
+	playsound(src, 'sound/items/weapons/armbomb.ogg', volume, TRUE)
 	if(landminemode)
 		landminemode.activate()
 		return
@@ -483,6 +483,7 @@
 
 /obj/item/grenade/chem_grenade/cleaner
 	name = "cleaner grenade"
+	RU_NAMES_LIST_INIT("cleaner grenade", "чистящая граната", "чистящей гранаты", "чистящей гранате", "чистящую гранату", "чистящей гранатой", "чистящей гранате")
 	desc = "BLAM!-brand foaming space cleaner. In a special applicator for rapid cleaning of wide areas."
 	stage = GRENADE_READY
 

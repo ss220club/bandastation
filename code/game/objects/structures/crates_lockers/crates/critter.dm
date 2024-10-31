@@ -1,5 +1,6 @@
 /obj/structure/closet/crate/critter
 	name = "critter crate"
+	RU_NAMES_LIST_INIT("critter crate", "ящик для животных", "ящика для животных", "ящику для животных", "ящик для животных", "ящиком для животных", "ящике для животных")
 	desc = "A crate designed for safe transport of animals. It has an oxygen tank for safe transport in space."
 	icon_state = "crittercrate"
 	base_icon_state = "crittercrate"
@@ -9,14 +10,15 @@
 	material_drop = /obj/item/stack/sheet/mineral/wood
 	material_drop_amount = 4
 	delivery_icon = "deliverybox"
-	open_sound = 'sound/machines/wooden_closet_open.ogg'
-	close_sound = 'sound/machines/wooden_closet_close.ogg'
+	open_sound = 'sound/machines/closet/wooden_closet_open.ogg'
+	close_sound = 'sound/machines/closet/wooden_closet_close.ogg'
 	open_sound_volume = 25
 	close_sound_volume = 50
 	contents_pressure_protection = 0.8
 	can_install_electronics = FALSE
 	elevation = 21
 	elevation_open = 0
+	can_weld_shut = FALSE
 
 	var/obj/item/tank/internals/emergency_oxygen/tank
 

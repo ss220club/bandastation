@@ -2,6 +2,7 @@
 
 /obj/item/spess_knife
 	name = "spess knife"
+	RU_NAMES_LIST_INIT("spess knife", "швейцарский нож", "швейцарского ножа", "швейцарскому ножу", "швейцарский нож", "швейцарским ножом", "швейцарском ноже")
 	desc = "Unleash the cosmic ingenuity at your fingertips. It seamlessly shifts forms, revealing hidden talents that might just save the day. Who knows what secrets lie within this celestial tool?"
 	icon = 'icons/obj/tools.dmi'
 	icon_state = "spess_knife"
@@ -68,7 +69,7 @@
 
 	update_tool_parameters()
 	update_appearance(UPDATE_ICON_STATE)
-	playsound(src, 'sound/weapons/empty.ogg', 50, TRUE)
+	playsound(src, 'sound/items/weapons/empty.ogg', 50, TRUE)
 
 /// Used to pick random tool behavior for the knife
 /obj/item/spess_knife/proc/pick_tool()

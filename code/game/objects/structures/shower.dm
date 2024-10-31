@@ -28,6 +28,7 @@ GLOBAL_LIST_INIT(shower_mode_descriptions, list(
 
 /obj/machinery/shower
 	name = "shower"
+	RU_NAMES_LIST_INIT("shower", "душ", "душа", "душу", "душ", "душем", "душе")
 	desc = "The HS-452. Installed in the 2550s by the Nanotrasen Hygiene Division, now with 2560 lead compliance! Passively replenishes itself with water when not in use."
 	icon = 'icons/obj/watercloset.dmi'
 	icon_state = "shower"
@@ -90,6 +91,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/shower, (-16))
 	AddComponent(/datum/component/plumbing/simple_demand, extend_pipe_to_edge = TRUE)
 	var/static/list/loc_connections = list(
 		COMSIG_ATOM_ENTERED = PROC_REF(on_entered),
+		COMSIG_ATOM_EXITED = PROC_REF(on_exited),
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
 
@@ -233,18 +235,36 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/shower, (-16))
 		qdel(mist)
 
 
-/obj/machinery/shower/proc/on_entered(datum/source, atom/movable/AM)
+/obj/machinery/shower/proc/on_entered(datum/source, atom/movable/enterer)
 	SIGNAL_HANDLER
+
 	if(actually_on && reagents.total_volume)
-		wash_atom(AM)
+		wash_atom(enterer)
+
+/obj/machinery/shower/proc/on_exited(datum/source, atom/movable/exiter)
+	SIGNAL_HANDLER
+
+	if(!isliving(exiter))
+		return
+
+	var/obj/machinery/shower/locate_new_shower = locate() in get_turf(exiter)
+	if(locate_new_shower && isturf(exiter.loc))
+		return
+	var/mob/living/take_his_status_effect = exiter
+	take_his_status_effect.remove_status_effect(/datum/status_effect/shower_regen)
 
 /obj/machinery/shower/proc/wash_atom(atom/target)
 	target.wash(CLEAN_RAD | CLEAN_WASH)
 	reagents.expose(target, (TOUCH), SHOWER_EXPOSURE_MULTIPLIER * SHOWER_SPRAY_VOLUME / max(reagents.total_volume, SHOWER_SPRAY_VOLUME))
-	if(isliving(target))
-		var/mob/living/living_target = target
-		check_heat(living_target)
+	if(!isliving(target))
+		return
+	var/mob/living/living_target = target
+	check_heat(living_target)
+	living_target.apply_status_effect(/datum/status_effect/shower_regen)
+	if(!HAS_TRAIT(target, TRAIT_WATER_HATER) || HAS_TRAIT(target, TRAIT_WATER_ADAPTATION))
 		living_target.add_mood_event("shower", /datum/mood_event/nice_shower)
+	else
+		living_target.add_mood_event("shower", /datum/mood_event/shower_hater)
 
 /**
  * Toggle whether shower is actually on and outputting water.
@@ -333,6 +353,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/shower, (-16))
 
 /obj/structure/showerframe
 	name = "shower frame"
+	RU_NAMES_LIST_INIT("shower frame", "каркас душа", "каркаса душа", "каркасу душа", "каркас душа", "каркасом душа", "каркасе душа")
 	icon = 'icons/obj/watercloset.dmi'
 	icon_state = "shower_frame"
 	desc = "A shower frame, that needs a water recycler to finish construction."
@@ -369,6 +390,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/shower, (-16))
 
 /obj/effect/mist
 	name = "mist"
+	RU_NAMES_LIST_INIT("mist", "туман", "тумана", "туману", "туман", "туманом", "тумане")
 	icon = 'icons/obj/watercloset.dmi'
 	icon_state = "mist"
 	layer = FLY_LAYER

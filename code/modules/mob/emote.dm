@@ -150,6 +150,7 @@
 	message = "jumps!"
 	// Allows ghosts to jump
 	mob_type_ignore_stat_typecache = list(/mob/dead/observer)
+	affected_by_pitch = FALSE
 
 /datum/emote/jump/run_emote(mob/user, params, type_override, intentional)
 	. = ..()
@@ -159,10 +160,10 @@
 	animate(transform = original_transform, time = 0.1 SECONDS)
 
 /datum/emote/jump/get_sound(mob/user)
-	return 'sound/weapons/thudswoosh.ogg'
+	return 'sound/items/weapons/thudswoosh.ogg'
 
 // Avoids playing sounds if we're a ghost
 /datum/emote/jump/should_play_sound(mob/user, intentional)
-	if ishuman(user)
+	if(isliving(user))
 		return ..()
 	return FALSE

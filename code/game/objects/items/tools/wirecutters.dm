@@ -1,5 +1,6 @@
 /obj/item/wirecutters
 	name = "wirecutters"
+	RU_NAMES_LIST_INIT("wirecutters", "кусачки", "кусачек", "кусачкам", "кусачек", "кусачками", "кусачках")
 	desc = "This cuts wires."
 	icon = 'icons/obj/tools.dmi'
 	icon_state = "cutters_map"
@@ -22,11 +23,11 @@
 	custom_materials = list(/datum/material/iron=SMALL_MATERIAL_AMOUNT*0.8)
 	attack_verb_continuous = list("pinches", "nips")
 	attack_verb_simple = list("pinch", "nip")
-	hitsound = 'sound/items/wirecutter.ogg'
-	usesound = 'sound/items/wirecutter.ogg'
-	operating_sound = 'sound/items/wirecutter_cut.ogg'
-	drop_sound = 'sound/items/handling/wirecutter_drop.ogg'
-	pickup_sound = 'sound/items/handling/wirecutter_pickup.ogg'
+	hitsound = 'sound/items/tools/wirecutter.ogg'
+	usesound = 'sound/items/tools/wirecutter.ogg'
+	operating_sound = 'sound/items/tools/wirecutter_cut.ogg'
+	drop_sound = 'sound/items/handling/tools/wirecutter_drop.ogg'
+	pickup_sound = 'sound/items/handling/tools/wirecutter_pickup.ogg'
 	tool_behaviour = TOOL_WIRECUTTER
 	toolspeed = 1
 	armor_type = /datum/armor/item_wirecutters
@@ -66,6 +67,7 @@
 
 /obj/item/wirecutters/abductor
 	name = "alien wirecutters"
+	RU_NAMES_LIST_INIT("alien wirecutters", "инопланетные кусачки", "инопланетных кусачек", "инопланетным кусачкам", "инопланетных кусачек", "инопланетными кусачками", "инопланетных кусачках")
 	desc = "Extremely sharp wirecutters, made out of a silvery-green metal."
 	icon = 'icons/obj/antags/abductor.dmi'
 	custom_materials = list(/datum/material/iron =SHEET_MATERIAL_AMOUNT * 2.5, /datum/material/silver = SHEET_MATERIAL_AMOUNT*1.25, /datum/material/plasma =HALF_SHEET_MATERIAL_AMOUNT, /datum/material/titanium =SHEET_MATERIAL_AMOUNT, /datum/material/diamond =SHEET_MATERIAL_AMOUNT)
@@ -76,6 +78,7 @@
 
 /obj/item/wirecutters/cyborg
 	name = "powered wirecutters"
+	RU_NAMES_LIST_INIT("powered wirecutters", "электрические кусачки", "электрических кусачек", "электрическим кусачкам", "электрических кусачек", "электрическими кусачками", "электрических кусачках")
 	desc = "Cuts wires with the power of ELECTRICITY. Faster than normal wirecutters."
 	icon = 'icons/obj/items_cyborg.dmi'
 	icon_state = "toolkit_engiborg_cutters"

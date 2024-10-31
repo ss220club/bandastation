@@ -70,16 +70,16 @@ SUBSYSTEM_DEF(ambience)
 
 	///A list of rare sound effects to fuck with players. No, it does not contain actual minecraft sounds anymore.
 	var/static/list/minecraft_cave_noises = list(
-		'sound/machines/airlock.ogg',
+		'sound/machines/airlock/airlock.ogg',
 		'sound/effects/snap.ogg',
 		'sound/effects/footstep/clownstep1.ogg',
 		'sound/effects/footstep/clownstep2.ogg',
-		'sound/items/welder.ogg',
-		'sound/items/welder2.ogg',
-		'sound/items/crowbar.ogg',
+		'sound/items/tools/welder.ogg',
+		'sound/items/tools/welder2.ogg',
+		'sound/items/tools/crowbar.ogg',
 		'sound/items/deconstruct.ogg',
-		'sound/ambience/source_holehit3.ogg',
-		'sound/ambience/cavesound3.ogg',
+		'sound/ambience/misc/source_holehit3.ogg',
+		'sound/ambience//misc/cavesound3.ogg',
 	)
 
 /area/station/maintenance/play_ambience(mob/M, sound/override_sound, volume)
@@ -108,7 +108,7 @@ SUBSYSTEM_DEF(ambience)
 /mob/proc/refresh_looping_ambience()
 	SIGNAL_HANDLER
 
-	if(!client) // If a tree falls in the woods.
+	if(!client || isobserver(client.mob)) // If a tree falls in the woods. sadboysuss: Don't refresh for ghosts, it sounds bad
 		return
 
 	var/area/my_area = get_area(src)

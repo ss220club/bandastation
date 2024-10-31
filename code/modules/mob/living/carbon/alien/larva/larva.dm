@@ -1,5 +1,6 @@
 /mob/living/carbon/alien/larva
 	name = "alien larva"
+	RU_NAMES_LIST_INIT("alien larva", "грудолом Чужих", "грудолома Чужих", "грудолому Чужих", "грудолома Чужих", "грудоломом Чужих", "грудоломе Чужих")
 	real_name = "alien larva"
 	icon_state = "larva0"
 	pass_flags = PASSTABLE | PASSMOB
@@ -40,7 +41,7 @@
 	return ..()
 
 /mob/living/carbon/alien/larva/create_internal_organs()
-	organs += new /obj/item/organ/internal/alien/plasmavessel/small/tiny
+	organs += new /obj/item/organ/alien/plasmavessel/small/tiny
 	..()
 
 //This needs to be fixed

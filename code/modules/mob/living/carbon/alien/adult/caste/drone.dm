@@ -1,5 +1,6 @@
 /mob/living/carbon/alien/adult/drone
 	name = "alien drone"
+	RU_NAMES_LIST_INIT("alien", "трутень Чужих", "трутня Чужих", "трутню Чужих", "трутня Чужих", "трутнем Чужих", "трутне Чужих")
 	caste = "d"
 	maxHealth = 125
 	health = 125
@@ -10,9 +11,9 @@
 	return ..()
 
 /mob/living/carbon/alien/adult/drone/create_internal_organs()
-	organs += new /obj/item/organ/internal/alien/plasmavessel/large
-	organs += new /obj/item/organ/internal/alien/resinspinner
-	organs += new /obj/item/organ/internal/alien/acid
+	organs += new /obj/item/organ/alien/plasmavessel/large
+	organs += new /obj/item/organ/alien/resinspinner
+	organs += new /obj/item/organ/alien/acid
 	return ..()
 
 /datum/action/cooldown/alien/evolve_to_praetorian
@@ -33,7 +34,7 @@
 		return FALSE
 
 	var/mob/living/carbon/alien/adult/royal/evolver = owner
-	var/obj/item/organ/internal/alien/hivenode/node = evolver.get_organ_by_type(/obj/item/organ/internal/alien/hivenode)
+	var/obj/item/organ/alien/hivenode/node = evolver.get_organ_by_type(/obj/item/organ/alien/hivenode)
 	// Players are Murphy's Law. We may not expect
 	// there to ever be a living xeno with no hivenode,
 	// but they _WILL_ make it happen.
