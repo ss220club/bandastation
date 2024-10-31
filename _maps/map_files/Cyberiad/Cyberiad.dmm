@@ -883,9 +883,7 @@
 	dir = 4
 	},
 /turf/open/floor/plating,
-/area/station/maintenance/floor2/port{
-	name = "\improper Ghetto Central Port Maint"
-	})
+/area/station/maintenance/floor2/port)
 "anj" = (
 /obj/machinery/door/airlock/security,
 /obj/effect/mapping_helpers/airlock/access/all/security/general,
@@ -1703,9 +1701,7 @@
 /obj/structure/cable,
 /obj/machinery/light/small/directional/east,
 /turf/open/floor/plating,
-/area/station/maintenance/floor2/port{
-	name = "\improper Ghetto Central Port Maint"
-	})
+/area/station/maintenance/floor2/port)
 "aAs" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -2292,15 +2288,6 @@
 	},
 /turf/open/floor/iron/white,
 /area/station/medical/storage)
-"aJg" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/turf/open/floor/iron,
-/area/station/maintenance/floor2/port{
-	name = "\improper Ghetto Central Port Maint"
-	})
 "aJw" = (
 /obj/structure/chair/sofa/corp/right{
 	dir = 8
@@ -5857,6 +5844,7 @@
 "bPn" = (
 /obj/machinery/light/directional/south,
 /obj/structure/chair/sofa/bench{
+	cover_color = "#85130b";
 	dir = 1
 	},
 /obj/effect/turf_decal/tile/red/half,
@@ -6094,7 +6082,9 @@
 /turf/open/floor/wood,
 /area/station/maintenance/department/bridge)
 "bTH" = (
-/turf/closed/wall,
+/turf/closed/wall{
+	ru_name_genitive = s
+	},
 /area/station/maintenance/starboard/aft)
 "bTJ" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -7923,14 +7913,6 @@
 /obj/effect/landmark/navigate_destination/incinerator,
 /turf/open/floor/plating,
 /area/station/maintenance/disposal/incinerator)
-"cwi" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/structure/cable,
-/turf/open/floor/plating,
-/area/station/maintenance/floor2/port{
-	name = "\improper Ghetto Central Port Maint"
-	})
 "cwk" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/structure/cable,
@@ -11057,12 +11039,6 @@
 /obj/structure/lattice/catwalk,
 /turf/open/space/basic,
 /area/station/solars/starboard/aft)
-"dtL" = (
-/obj/effect/spawner/structure/window/reinforced,
-/turf/open/floor/plating,
-/area/station/maintenance/floor2/port{
-	name = "\improper Ghetto Central Port Maint"
-	})
 "dtM" = (
 /obj/machinery/modular_computer/preset/curator{
 	dir = 8
@@ -14878,9 +14854,7 @@
 /obj/effect/mapping_helpers/airlock/access/all/engineering/maintenance,
 /obj/effect/mapping_helpers/airlock/unres,
 /turf/open/floor/plating,
-/area/station/maintenance/floor2/port{
-	name = "\improper Ghetto Central Port Maint"
-	})
+/area/station/maintenance/floor2/port)
 "eGH" = (
 /obj/machinery/power/terminal{
 	dir = 1
@@ -25341,6 +25315,7 @@
 /area/station/security/checkpoint/arrivals)
 "icF" = (
 /obj/structure/chair/sofa/bench/right{
+	cover_color = "#85130b";
 	dir = 1
 	},
 /obj/effect/turf_decal/tile/red/half,
@@ -26548,11 +26523,6 @@
 /obj/effect/turf_decal/tile/neutral/fourcorners,
 /turf/open/floor/iron,
 /area/station/commons/dorms)
-"iwY" = (
-/turf/closed/wall,
-/area/station/maintenance/floor2/port{
-	name = "\improper Ghetto Central Port Maint"
-	})
 "ixb" = (
 /obj/structure/table,
 /obj/item/stack/sheet/glass{
@@ -27424,11 +27394,6 @@
 /obj/structure/sink/directional/east,
 /turf/open/floor/iron/white,
 /area/station/medical/surgery/fore)
-"iKx" = (
-/turf/open/floor/plating,
-/area/station/maintenance/floor2/port{
-	name = "\improper Ghetto Central Port Maint"
-	})
 "iKB" = (
 /obj/structure/cable,
 /obj/effect/turf_decal/trimline/dark_blue/line,
@@ -28312,15 +28277,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron,
 /area/station/command/teleporter)
-"iYy" = (
-/obj/machinery/door/airlock/maintenance{
-	name = "Maintenance"
-	},
-/obj/effect/mapping_helpers/airlock/access/all/engineering/maintenance,
-/turf/open/floor/plating,
-/area/station/maintenance/floor2/port{
-	name = "\improper Ghetto Central Port Maint"
-	})
 "iYC" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 4
@@ -31800,9 +31756,7 @@
 	dir = 1
 	},
 /turf/open/floor/plating,
-/area/station/maintenance/floor2/port{
-	name = "\improper Ghetto Central Port Maint"
-	})
+/area/station/maintenance/floor2/port)
 "khF" = (
 /obj/machinery/light/directional/west,
 /obj/machinery/airalarm/directional/west,
@@ -33538,9 +33492,7 @@
 	dir = 8
 	},
 /turf/open/floor/plating,
-/area/station/maintenance/floor2/port{
-	name = "\improper Ghetto Central Port Maint"
-	})
+/area/station/maintenance/floor2/port)
 "kHj" = (
 /obj/structure/bed/dogbed,
 /obj/effect/decal/remains/human,
@@ -34608,13 +34560,6 @@
 /obj/machinery/light/small/directional/south,
 /turf/open/floor/iron,
 /area/station/command/heads_quarters/hop)
-"kYB" = (
-/obj/structure/cable,
-/obj/machinery/power/apc/auto_name/directional/east,
-/turf/open/floor/plating,
-/area/station/maintenance/floor2/port{
-	name = "\improper Ghetto Central Port Maint"
-	})
 "kYD" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/structure/cable,
@@ -35988,6 +35933,7 @@
 /area/station/hallway/primary/aft)
 "lwF" = (
 /obj/structure/chair/sofa/bench/right{
+	cover_color = "#2f8faf";
 	dir = 1
 	},
 /obj/effect/turf_decal/tile/blue/fourcorners,
@@ -39687,12 +39633,6 @@
 	},
 /turf/open/floor/plating,
 /area/station/maintenance/department/medical)
-"mIs" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/turf/open/floor/plating,
-/area/station/maintenance/floor2/port{
-	name = "\improper Ghetto Central Port Maint"
-	})
 "mIz" = (
 /obj/machinery/door/airlock/maintenance{
 	name = "Maintenance"
@@ -52194,14 +52134,6 @@
 /obj/structure/cable,
 /turf/open/floor/iron/dark,
 /area/station/security/warden)
-"qJm" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 1
-	},
-/turf/open/floor/iron,
-/area/station/maintenance/floor2/port{
-	name = "\improper Ghetto Central Port Maint"
-	})
 "qJs" = (
 /obj/effect/turf_decal/stripes/red/line{
 	dir = 8
@@ -57287,12 +57219,6 @@
 /obj/structure/cable,
 /turf/open/floor/iron,
 /area/station/hallway/primary/aft)
-"spw" = (
-/obj/structure/cable,
-/turf/open/floor/plating,
-/area/station/maintenance/floor2/port{
-	name = "\improper Ghetto Central Port Maint"
-	})
 "spG" = (
 /obj/machinery/door/poddoor{
 	id = "maints2";
@@ -58338,12 +58264,6 @@
 /obj/structure/closet/toolcloset,
 /turf/open/floor/iron,
 /area/station/commons/storage/emergency/port)
-"sIe" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/turf/open/floor/plating,
-/area/station/maintenance/floor2/port{
-	name = "\improper Ghetto Central Port Maint"
-	})
 "sIk" = (
 /obj/machinery/door/poddoor{
 	density = 0;
@@ -62463,9 +62383,7 @@
 "tYD" = (
 /obj/effect/turf_decal/caution/stand_clear,
 /turf/open/floor/plating,
-/area/station/maintenance/floor2/port{
-	name = "\improper Ghetto Central Port Maint"
-	})
+/area/station/maintenance/floor2/port)
 "tYJ" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -67657,17 +67575,6 @@
 	},
 /turf/open/floor/iron/dark,
 /area/station/engineering/storage)
-"vIV" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/structure/cable,
-/obj/machinery/light/small{
-	dir = 4
-	},
-/turf/open/floor/plating,
-/area/station/maintenance/floor2/port{
-	name = "\improper Ghetto Central Port Maint"
-	})
 "vIZ" = (
 /obj/structure/closet,
 /turf/open/floor/plating,
@@ -69299,14 +69206,6 @@
 /obj/machinery/vending/tool,
 /turf/open/floor/iron/dark,
 /area/station/commons/storage/primary)
-"wiF" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/structure/cable,
-/turf/open/floor/plating,
-/area/station/maintenance/floor2/port{
-	name = "\improper Ghetto Central Port Maint"
-	})
 "wiJ" = (
 /obj/structure/grille,
 /turf/open/floor/plating/airless,
@@ -69473,9 +69372,7 @@
 	},
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron,
-/area/station/maintenance/floor2/port{
-	name = "\improper Ghetto Central Port Maint"
-	})
+/area/station/maintenance/floor2/port)
 "wmq" = (
 /obj/structure/table/wood,
 /obj/item/flashlight/lantern,
@@ -72948,15 +72845,6 @@
 	},
 /turf/open/floor/iron/dark,
 /area/station/engineering/atmos)
-"xsz" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/turf/open/floor/iron,
-/area/station/maintenance/floor2/port{
-	name = "\improper Ghetto Central Port Maint"
-	})
 "xsG" = (
 /obj/machinery/requests_console/directional/west{
 	department = "Science";
@@ -75018,11 +74906,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron/dark,
 /area/station/ai_monitored/turret_protected/aisat_interior)
-"xZm" = (
-/turf/open/floor/iron,
-/area/station/maintenance/floor2/port{
-	name = "\improper Ghetto Central Port Maint"
-	})
 "xZs" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/external{
@@ -75192,11 +75075,9 @@
 /turf/open/floor/plating,
 /area/station/ai_monitored/turret_protected/aisat/hallway)
 "ybP" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/turf/open/floor/iron,
-/area/station/maintenance/floor2/port{
-	name = "\improper Ghetto Central Port Maint"
-	})
+/obj/effect/turf_decal/stripes/line,
+/turf/open/floor/plating,
+/area/space)
 "ybW" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/tile/red/opposingcorners{
@@ -100589,17 +100470,17 @@ tCc
 dOO
 dOO
 dOO
-iwY
+mOI
 and
-iwY
-iwY
-iwY
-iwY
-iwY
-iwY
-iwY
-iwY
-iwY
+mOI
+mOI
+mOI
+mOI
+mOI
+mOI
+mOI
+mOI
+mOI
 mOI
 mOI
 ydV
@@ -100847,16 +100728,16 @@ sDH
 fRp
 fRp
 eGx
-spw
-spw
+xyL
+xyL
 aAp
-kYB
-spw
-spw
+ghy
+xyL
+xyL
 eGx
-spw
+xyL
 kGW
-spw
+xyL
 xyL
 bDQ
 bsv
@@ -100888,9 +100769,9 @@ doz
 doz
 doz
 doz
-iwY
-wiF
-iwY
+mOI
+bsv
+mOI
 kJf
 kJf
 kJf
@@ -101103,17 +100984,17 @@ dOO
 dOO
 dOO
 dOO
-iwY
-iwY
-iwY
-iwY
-iwY
-iwY
-iwY
-iwY
-iwY
-iwY
-iwY
+mOI
+mOI
+mOI
+mOI
+mOI
+mOI
+mOI
+mOI
+mOI
+mOI
+mOI
 mOI
 bsv
 guN
@@ -101145,9 +101026,9 @@ nql
 nql
 nql
 doz
-iwY
-wiF
-iwY
+mOI
+bsv
+mOI
 kJf
 doz
 doz
@@ -101402,9 +101283,9 @@ doz
 doz
 nql
 doz
-iwY
-wiF
-iwY
+mOI
+bsv
+mOI
 kJf
 doz
 doz
@@ -101659,9 +101540,9 @@ doz
 doz
 nql
 doz
-iwY
-wiF
-iwY
+mOI
+bsv
+mOI
 kJf
 doz
 doz
@@ -101916,9 +101797,9 @@ doz
 doz
 nql
 doz
-iwY
-wiF
-iwY
+mOI
+bsv
+mOI
 kJf
 doz
 doz
@@ -102173,9 +102054,9 @@ doz
 doz
 nql
 doz
-iwY
-wiF
-iwY
+mOI
+bsv
+mOI
 kJf
 doz
 doz
@@ -102430,9 +102311,9 @@ doz
 doz
 nql
 doz
-iwY
-wiF
-iwY
+mOI
+bsv
+mOI
 kJf
 kJf
 kJf
@@ -102693,11 +102574,11 @@ mOI
 mOI
 mOI
 mOI
-iwY
-iwY
-iwY
-iwY
-iwY
+mOI
+mOI
+mOI
+mOI
+mOI
 mOI
 qIe
 mOI
@@ -102950,11 +102831,11 @@ ePB
 jKW
 hIr
 jKW
-vIV
-cwi
-cwi
-cwi
-cwi
+ePB
+jKW
+jKW
+jKW
+jKW
 jKW
 jKW
 jKW
@@ -103207,11 +103088,11 @@ mOI
 mOI
 mOI
 mOI
-iwY
-iwY
-iwY
-iwY
-iYy
+mOI
+mOI
+mOI
+mOI
+huO
 mOI
 mOI
 mOI
@@ -103465,10 +103346,10 @@ gbJ
 mik
 oWA
 wmf
-sIe
-xsz
-xsz
-ybP
+gbJ
+oVx
+oVx
+mik
 oVx
 guN
 guN
@@ -103721,11 +103602,11 @@ dEc
 jjM
 hDZ
 bAH
-qJm
-xZm
-xZm
-iKx
-xZm
+wvV
+isK
+isK
+guN
+isK
 vCi
 guN
 isK
@@ -103978,11 +103859,11 @@ dEc
 mik
 hDZ
 knZ
-mIs
-aJg
-aJg
-aJg
-mIs
+knZ
+xrG
+xrG
+xrG
+knZ
 knZ
 xTr
 knZ
@@ -104235,11 +104116,11 @@ mOI
 mik
 knZ
 mOI
-iwY
-dtL
-dtL
-iwY
-dtL
+mOI
+qUM
+qUM
+mOI
+qUM
 qUM
 wov
 qUM
@@ -104492,7 +104373,7 @@ mOI
 mik
 hDZ
 kFM
-qqz
+qUM
 kJf
 kJf
 doz
@@ -104749,7 +104630,7 @@ mOI
 mik
 hDZ
 mOI
-iwY
+mOI
 kJf
 doz
 doz
@@ -105777,8 +105658,8 @@ dEc
 mik
 knZ
 qUM
-dtL
-dtL
+qUM
+qUM
 doz
 doz
 doz
@@ -106291,8 +106172,8 @@ dEc
 mik
 hDZ
 qUM
-dtL
-dtL
+qUM
+qUM
 doz
 doz
 doz
@@ -107319,15 +107200,15 @@ mOI
 jjM
 knZ
 mOI
-iwY
+fif
 doz
 doz
 doz
 doz
 kJf
-guN
-guN
-guN
+fKk
+fKk
+fKk
 kJf
 kJf
 kJf
@@ -107576,7 +107457,7 @@ mOI
 mik
 hDZ
 isK
-dtL
+qqz
 kJf
 kJf
 doz
@@ -107854,10 +107735,10 @@ qUM
 qUM
 mOI
 mOI
-mOI
-mOI
-mOI
-mOI
+fif
+fif
+fif
+fif
 doz
 doz
 doz
@@ -108111,7 +107992,7 @@ rax
 rax
 htD
 xxo
-pLU
+ybP
 kJf
 doz
 doz
@@ -108368,7 +108249,7 @@ guN
 guN
 xHm
 wov
-pLU
+ybP
 kJf
 kJf
 doz
@@ -108625,7 +108506,7 @@ guN
 guN
 nvV
 qUM
-pLU
+ybP
 kJf
 kJf
 kJf
@@ -108882,10 +108763,10 @@ qUM
 qUM
 mOI
 mOI
-mOI
-mOI
-mOI
-mOI
+fif
+fif
+fif
+fif
 doz
 doz
 doz
@@ -109126,10 +109007,10 @@ kJf
 qUM
 egM
 qUM
-dtL
-dtL
-dtL
-dtL
+qUM
+qUM
+qUM
+qUM
 qUM
 egM
 qUM
@@ -109885,7 +109766,7 @@ hJh
 mOI
 mOI
 mOI
-fif
+mOI
 doz
 vzJ
 kZe
