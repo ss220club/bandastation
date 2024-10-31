@@ -6075,9 +6075,7 @@
 /turf/open/floor/wood,
 /area/station/maintenance/department/bridge)
 "bTH" = (
-/turf/closed/wall{
-	ru_name_genitive = s
-	},
+/turf/closed/wall,
 /area/station/maintenance/starboard/aft)
 "bTJ" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -7900,6 +7898,11 @@
 /obj/effect/landmark/navigate_destination/incinerator,
 /turf/open/floor/plating,
 /area/station/maintenance/disposal/incinerator)
+"cwi" = (
+/obj/structure/lattice,
+/obj/structure/grille,
+/turf/open/space/basic,
+/area/station/maintenance/floor2/port/aft)
 "cwk" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/structure/cable,
@@ -11016,10 +11019,6 @@
 /obj/structure/lattice/catwalk,
 /turf/open/space/basic,
 /area/station/solars/starboard/aft)
-"dtL" = (
-/obj/effect/turf_decal/stripes/line,
-/turf/open/floor/plating,
-/area/space)
 "dtM" = (
 /obj/machinery/modular_computer/preset/curator{
 	dir = 8
@@ -28218,11 +28217,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron,
 /area/station/command/teleporter)
-"iYy" = (
-/obj/structure/lattice,
-/obj/structure/grille,
-/turf/open/space/basic,
-/area/station/maintenance/floor2/port/aft)
 "iYC" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 4
@@ -72684,6 +72678,10 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/iron,
 /area/station/maintenance/floor2/port)
+"xrP" = (
+/obj/effect/turf_decal/stripes/line,
+/turf/open/floor/plating,
+/area/space)
 "xrT" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -107835,7 +107833,7 @@ rax
 rax
 htD
 xxo
-dtL
+xrP
 kJf
 doz
 doz
@@ -108092,7 +108090,7 @@ guN
 guN
 xHm
 wov
-dtL
+xrP
 kJf
 kJf
 doz
@@ -108349,7 +108347,7 @@ guN
 guN
 nvV
 qUM
-dtL
+xrP
 kJf
 kJf
 kJf
@@ -117844,8 +117842,8 @@ doz
 doz
 doz
 qVj
-iYy
-iYy
+cwi
+cwi
 qVj
 tHN
 qVj
@@ -118101,8 +118099,8 @@ doz
 doz
 doz
 qVj
-iYy
-iYy
+cwi
+cwi
 qVj
 tHN
 qVj
@@ -118358,8 +118356,8 @@ doz
 doz
 doz
 qVj
-iYy
-iYy
+cwi
+cwi
 qVj
 tHN
 qVj
