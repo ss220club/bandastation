@@ -220,7 +220,7 @@
 "aec" = (
 /turf/open/floor/plating,
 /area/station/maintenance/floor2/starboard/fore{
-	name = "\improper Ghetto Fore Starboard Maint"
+	name = "\improper 2nd Floor Fore Starboard Maint"
 	})
 "aej" = (
 /obj/effect/turf_decal/stripes/line{
@@ -27025,7 +27025,7 @@
 "iEV" = (
 /turf/closed/wall,
 /area/station/maintenance/floor2/starboard/fore{
-	name = "\improper Ghetto Fore Starboard Maint"
+	name = "\improper 2nd Floor Fore Starboard Maint"
 	})
 "iFc" = (
 /obj/structure/disposalpipe/trunk{
@@ -37843,7 +37843,7 @@
 /obj/structure/cable,
 /turf/open/floor/plating,
 /area/station/maintenance/floor2/starboard/fore{
-	name = "\improper Ghetto Fore Starboard Maint"
+	name = "\improper 2nd Floor Fore Starboard Maint"
 	})
 "mak" = (
 /obj/effect/turf_decal/stripes/line{
@@ -39241,7 +39241,7 @@
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/station/maintenance/floor2/starboard/fore{
-	name = "\improper Ghetto Fore Starboard Maint"
+	name = "\improper 2nd Floor Fore Starboard Maint"
 	})
 "mCa" = (
 /obj/machinery/module_duplicator,
@@ -40713,7 +40713,7 @@
 /obj/effect/mapping_helpers/airlock/unres,
 /turf/open/floor/plating,
 /area/station/maintenance/floor2/starboard/fore{
-	name = "\improper Ghetto Fore Starboard Maint"
+	name = "\improper 2nd Floor Fore Starboard Maint"
 	})
 "mZu" = (
 /obj/structure/sign/warning,
