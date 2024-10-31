@@ -62,10 +62,3 @@ endmap
 
 map runtimestation
 endmap
-
-##SS220 MAPS##
-
-map cyberiad
-      maxplayers 100
-      votable
-endmap
