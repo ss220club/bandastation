@@ -226,7 +226,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod, 32)
 		..(target)
 		var/mob/living/mob_occupant = occupant
 		if(mob_occupant && mob_occupant.stat != DEAD)
-			to_chat(occupant, span_notice("<b>You feel cool air surround you. You go numb as your senses turn inward.</b>"))
+			to_chat(occupant, span_notice("<b>Вы чувствуете, как холодный воздух обволакивает вас. Чувства затухают и ваше тело немеет.</b>"))
 
 		COOLDOWN_START(src, despawn_world_time, time_till_despawn)
 
@@ -416,7 +416,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod, 32)
 			to_chat(user, span_danger("You can't put [target] into [src]. [target.p_Theyre()] conscious."))
 		return
 
-	if(target == user && (tgui_alert(target, "Would you like to enter cryosleep?", "Enter Cryopod?", list("Yes", "No")) != "Yes"))
+	if(target == user && (tgui_alert(target, "Войти в криохранилище?", "Войти в криокапсулу?", list("Да", "Нет")) != "Да"))
 		return
 
 	if(target == user)
@@ -424,7 +424,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod, 32)
 			tgui_alert(target, "Вы играете на важной роли! Вы уверены что хотите покинуть раунд?")
 		var/datum/antagonist/antag = target.mind.has_antag_datum(/datum/antagonist)
 		if(antag)
-			tgui_alert(target, "Вы \a [antag.name]! Вы уверены что хотите покинуть раунд?")
+			tgui_alert(target, "Вы [antag.name]! Вы уверены что хотите покинуть раунд?")
 
 	if(LAZYLEN(target.buckled_mobs) > 0)
 		if(target == user)
