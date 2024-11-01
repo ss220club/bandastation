@@ -7198,13 +7198,9 @@
 /obj/structure/disposalpipe/trunk{
 	dir = 4
 	},
+/obj/structure/window/reinforced/spawner/directional/east,
+/obj/structure/window/reinforced/spawner/directional/west,
 /obj/structure/window/reinforced/spawner/directional/south,
-/obj/structure/window/reinforced/spawner/directional/south{
-	dir = 8
-	},
-/obj/structure/window/reinforced/spawner/directional/south{
-	dir = 4
-	},
 /turf/open/floor/plating,
 /area/station/maintenance/disposal)
 "clU" = (
@@ -8974,9 +8970,7 @@
 /area/station/maintenance/floor2/port/aft)
 "cNQ" = (
 /obj/structure/bodycontainer/morgue,
-/obj/structure/window/reinforced/spawner/directional/east{
-	dir = 8
-	},
+/obj/structure/window/reinforced/spawner/directional/west,
 /turf/open/floor/iron/dark,
 /area/station/medical/morgue)
 "cNR" = (
@@ -11970,10 +11964,10 @@
 	dir = 1;
 	name = "Justice gas pump"
 	},
-/obj/machinery/door/window/right/directional/north,
 /obj/machinery/light/small/directional/south{
 	dir = 4
 	},
+/obj/machinery/door/window/right/directional/north,
 /turf/open/floor/iron/dark,
 /area/station/security/execution/education)
 "dLn" = (
@@ -20833,10 +20827,8 @@
 /area/station/command/heads_quarters/ce)
 "gKa" = (
 /obj/effect/turf_decal/bot,
-/obj/structure/window/reinforced/spawner/directional/east{
-	dir = 8
-	},
 /obj/machinery/light/warm/directional/north,
+/obj/structure/window/reinforced/spawner/directional/west,
 /turf/open/floor/iron/dark,
 /area/station/hallway/secondary/service)
 "gKe" = (
@@ -25570,9 +25562,7 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/structure/cable,
-/obj/machinery/power/apc/auto_name/directional/north{
-	pixel_x = 0
-	},
+/obj/machinery/power/apc/auto_name/directional/north,
 /turf/open/floor/plating,
 /area/station/maintenance/floor2/port/aft)
 "ilP" = (
@@ -26686,12 +26676,9 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/structure/disposalpipe/segment,
-/obj/machinery/door/airlock/freezer{
-	desc = "The freezer where the chef keeps all the stuff that needs to be kept cold. Ice cold.";
-	name = "The Ice Box"
-	},
 /obj/effect/mapping_helpers/airlock/access/all/service/kitchen,
 /obj/machinery/door/firedoor,
+/obj/machinery/door/airlock/freezer,
 /turf/open/floor/iron/freezer,
 /area/station/service/kitchen/coldroom)
 "iEl" = (
@@ -27789,11 +27776,8 @@
 /obj/structure/window/reinforced/spawner/directional/west{
 	dir = 4
 	},
-/obj/machinery/door/window/right/directional/north{
-	name = "Medbay Delivery";
-	req_access = list("medical")
-	},
 /obj/effect/turf_decal/delivery,
+/obj/machinery/door/window/right/directional/north,
 /turf/open/floor/iron/white,
 /area/station/medical/medbay)
 "iUI" = (
@@ -30453,9 +30437,7 @@
 /turf/open/floor/iron,
 /area/station/hallway/secondary/exit/departure_lounge)
 "jSn" = (
-/obj/effect/spawner/structure/window/reinforced{
-	polarizer_id = "Psych"
-	},
+/obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "psychological_office_shutters"
 	},
@@ -34722,8 +34704,8 @@
 /area/station/security/holding_cell)
 "lhZ" = (
 /obj/structure/bodycontainer/morgue,
-/obj/structure/window/reinforced/spawner/directional/south,
 /obj/structure/window/reinforced/spawner/directional/east,
+/obj/structure/window/reinforced/spawner/directional/south,
 /turf/open/floor/iron/dark,
 /area/station/medical/morgue)
 "lif" = (
@@ -35385,9 +35367,7 @@
 	},
 /obj/machinery/portable_atmospherics/canister/carbon_dioxide,
 /obj/effect/turf_decal/box/red,
-/obj/structure/window/reinforced/spawner/directional/west{
-	dir = 1
-	},
+/obj/structure/window/reinforced/spawner/directional/north,
 /turf/open/floor/iron/dark,
 /area/station/security/execution/education)
 "lrU" = (
@@ -36432,11 +36412,9 @@
 /area/station/medical/virology)
 "lKg" = (
 /obj/structure/rack,
-/obj/structure/sign/poster/contraband/red_rum{
-	pixel_y = 30
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/sign/poster/contraband/red_rum/directional/north,
 /turf/open/floor/wood,
 /area/station/maintenance/port/aft)
 "lKh" = (
@@ -39483,14 +39461,10 @@
 /area/station/commons/dorms)
 "mMK" = (
 /obj/structure/cable/multilayer/multiz,
-/obj/structure/window/reinforced/spawner/directional/west{
-	dir = 1
-	},
-/obj/structure/window/reinforced/spawner/directional/east,
-/obj/structure/window/reinforced/spawner/directional/east{
-	dir = 2
-	},
 /obj/machinery/light/directional/west,
+/obj/structure/window/reinforced/spawner/directional/east,
+/obj/structure/window/reinforced/spawner/directional/north,
+/obj/structure/window/reinforced/spawner/directional/south,
 /turf/open/floor/plating,
 /area/station/maintenance/aft)
 "mMO" = (
@@ -42871,9 +42845,7 @@
 	name = "Quarantine Lockdown";
 	opacity = 0
 	},
-/obj/effect/spawner/structure/window/reinforced{
-	polarizer_id = "Paramed"
-	},
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/iron/white,
 /area/station/medical/medbay/lobby)
 "nTm" = (
@@ -46770,9 +46742,7 @@
 /turf/open/floor/iron/stairs/right,
 /area/station/engineering/main)
 "pfE" = (
-/obj/effect/spawner/structure/window/reinforced{
-	polarizer_id = "Surgery2"
-	},
+/obj/effect/spawner/structure/window/reinforced,
 /turf/closed/wall,
 /area/station/medical/surgery/aft)
 "pgv" = (
@@ -47461,9 +47431,7 @@
 /area/station/maintenance/port/aft)
 "prN" = (
 /obj/structure/cable,
-/obj/machinery/power/apc/auto_name/directional/north{
-	pixel_x = 0
-	},
+/obj/machinery/power/apc/auto_name/directional/north,
 /turf/open/floor/plating,
 /area/station/maintenance/floor2/starboard/fore)
 "prX" = (
@@ -50816,9 +50784,7 @@
 "quH" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
-/obj/machinery/power/apc/auto_name/directional/north{
-	pixel_x = 0
-	},
+/obj/machinery/power/apc/auto_name/directional/north,
 /turf/open/floor/plating,
 /area/station/maintenance/floor2/port/aft)
 "quL" = (
@@ -52091,9 +52057,7 @@
 /turf/open/floor/iron/dark,
 /area/station/command/heads_quarters/hos)
 "qQD" = (
-/obj/effect/spawner/structure/window/reinforced{
-	polarizer_id = "holodeck"
-	},
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/station/commons/dorms)
 "qQF" = (
@@ -53073,10 +53037,8 @@
 /area/station/science/lobby)
 "rfx" = (
 /obj/structure/bodycontainer/morgue,
+/obj/structure/window/reinforced/spawner/directional/west,
 /obj/structure/window/reinforced/spawner/directional/south,
-/obj/structure/window/reinforced/spawner/directional/east{
-	dir = 8
-	},
 /turf/open/floor/iron/dark,
 /area/station/medical/morgue)
 "rfD" = (
@@ -53460,11 +53422,9 @@
 	dir = 8;
 	name = "Cargo Deliveries"
 	},
-/obj/structure/window/reinforced/spawner/directional/east,
-/obj/structure/window/reinforced/spawner/directional/north{
-	dir = 2
-	},
 /obj/effect/turf_decal/delivery,
+/obj/structure/window/reinforced/spawner/directional/east,
+/obj/structure/window/reinforced/spawner/directional/south,
 /turf/open/floor/iron/dark,
 /area/station/hallway/secondary/service)
 "rly" = (
@@ -56035,11 +55995,9 @@
 /turf/open/floor/iron/dark,
 /area/station/science/breakroom)
 "sdY" = (
-/obj/structure/window/reinforced/spawner/directional/north{
-	dir = 2
-	},
-/obj/machinery/door/window/right/directional/east,
 /obj/effect/turf_decal/delivery,
+/obj/structure/window/reinforced/spawner/directional/south,
+/obj/machinery/door/window/right/directional/east,
 /turf/open/floor/iron/dark,
 /area/station/service/hydroponics)
 "sem" = (
@@ -57220,12 +57178,10 @@
 /turf/open/floor/plating,
 /area/station/maintenance/floor2/port/aft)
 "sAe" = (
-/obj/machinery/power/apc/auto_name/directional/north{
-	pixel_x = 0
-	},
 /obj/structure/cable,
 /obj/structure/table/wood,
 /obj/effect/spawner/random/maintenance,
+/obj/machinery/power/apc/auto_name/directional/north,
 /turf/open/floor/plating,
 /area/station/maintenance/floor2/port/aft)
 "sAh" = (
@@ -59858,11 +59814,9 @@
 /area/station/engineering/main)
 "ttv" = (
 /obj/structure/cable/multilayer/multiz,
+/obj/structure/window/reinforced/spawner/directional/north,
 /obj/structure/window/reinforced/spawner/directional/east,
 /obj/structure/window/reinforced/spawner/directional/west,
-/obj/structure/window/reinforced/spawner/directional/west{
-	dir = 1
-	},
 /turf/open/floor/plating,
 /area/station/medical/chemistry)
 "ttx" = (
@@ -61790,9 +61744,7 @@
 /turf/open/floor/plating,
 /area/station/maintenance/starboard/fore)
 "tYC" = (
-/obj/effect/spawner/structure/window/reinforced{
-	polarizer_id = "Surgery2"
-	},
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/station/medical/surgery/aft)
 "tYD" = (
@@ -62669,11 +62621,9 @@
 /turf/open/floor/cult,
 /area/station/service/lawoffice)
 "unJ" = (
-/obj/machinery/power/apc/auto_name/directional/north{
-	pixel_x = 0
-	},
 /obj/effect/decal/cleanable/vomit,
 /obj/structure/cable,
+/obj/machinery/power/apc/auto_name/directional/north,
 /turf/open/floor/iron/cafeteria,
 /area/station/maintenance/floor2/port/aft)
 "unN" = (
@@ -68302,9 +68252,7 @@
 /turf/open/floor/iron,
 /area/station/security/prison)
 "wfg" = (
-/obj/effect/spawner/structure/window/reinforced{
-	polarizer_id = "Surgery2"
-	},
+/obj/effect/spawner/structure/window/reinforced,
 /turf/closed/wall,
 /area/station/medical/surgery/fore)
 "wfi" = (
@@ -69617,9 +69565,7 @@
 /turf/open/floor/iron,
 /area/station/service/hydroponics)
 "wCk" = (
-/obj/effect/spawner/structure/window/reinforced{
-	polarizer_id = "VIP"
-	},
+/obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/shutters/preopen{
 	dir = 8;
 	name = "Privacy Shutters";
@@ -70669,9 +70615,7 @@
 /turf/open/floor/plating,
 /area/station/maintenance/starboard/aft)
 "wSD" = (
-/obj/effect/spawner/structure/window/reinforced{
-	polarizer_id = "Surgery2"
-	},
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/station/medical/surgery/fore)
 "wSH" = (
