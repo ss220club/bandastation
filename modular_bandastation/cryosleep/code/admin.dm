@@ -23,5 +23,3 @@
 					unbuckle_mob(buckled_mob)
 			cryo.close_machine(src) //put player
 			break
-
-
