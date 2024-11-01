@@ -27773,11 +27773,9 @@
 /turf/open/floor/iron/dark,
 /area/station/security/brig)
 "iUw" = (
-/obj/structure/window/reinforced/spawner/directional/west{
-	dir = 4
-	},
 /obj/effect/turf_decal/delivery,
 /obj/machinery/door/window/right/directional/north,
+/obj/structure/window/reinforced/spawner/directional/east,
 /turf/open/floor/iron/white,
 /area/station/medical/medbay)
 "iUI" = (
@@ -28408,7 +28406,7 @@
 	name = "Privacy Shutters"
 	},
 /obj/effect/landmark/navigate_destination/hop,
-/obj/machinery/door/window/left/directional/west,
+/obj/machinery/door/window/right/directional/east,
 /turf/open/floor/plating,
 /area/station/command/heads_quarters/hop)
 "jgf" = (
@@ -44027,9 +44025,7 @@
 /area/station/maintenance/department/electrical)
 "omS" = (
 /obj/structure/barricade/wooden,
-/obj/machinery/door/airlock/freezer{
-	req_one_access_txt = "28"
-	},
+/obj/machinery/door/airlock/freezer,
 /turf/open/floor/iron/freezer,
 /area/station/maintenance/port/fore)
 "omU" = (
@@ -53126,8 +53122,7 @@
 "rhr" = (
 /obj/structure/closet/secure_closet{
 	anchored = 1;
-	name = "Evidence Storage";
-	req_one_access_txt = "4"
+	name = "Evidence Storage"
 	},
 /obj/item/folder/red{
 	pixel_x = -6;
