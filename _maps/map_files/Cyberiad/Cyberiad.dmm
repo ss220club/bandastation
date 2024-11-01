@@ -28389,12 +28389,6 @@
 	dir = 8
 	},
 /obj/structure/table/reinforced,
-/obj/machinery/door/window/brigdoor/left/directional/east{
-	base_state = "rightsecure";
-	icon_state = "rightsecure";
-	name = "Head of Personnel's Desk";
-	req_access = list("hop")
-	},
 /obj/machinery/flasher/directional/north{
 	id = "hopflash";
 	pixel_x = -6;
@@ -28406,7 +28400,9 @@
 	name = "Privacy Shutters"
 	},
 /obj/effect/landmark/navigate_destination/hop,
-/obj/machinery/door/window/right/directional/east,
+/obj/machinery/door/window/right/directional/west{
+	req_access = list("hop")
+	},
 /turf/open/floor/plating,
 /area/station/command/heads_quarters/hop)
 "jgf" = (
