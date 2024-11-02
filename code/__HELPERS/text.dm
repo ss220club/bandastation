@@ -361,7 +361,8 @@
 
 //Returns a string with the first element of the string capitalized.
 /proc/capitalize(t)
-	. = format_text(t) // BANDASTATION EDIT - Declents
+	t = format_text(t) // BANDASTATION ADDITION - Declents
+	. = t
 	if(t)
 		. = t[1]
 		return uppertext(.) + copytext(t, 1 + length(.))
