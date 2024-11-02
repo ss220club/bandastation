@@ -1,2 +1,2 @@
 #undef RU_NAMES_LENGTH
-#undef PATH_TO_DATA
+#undef PATH_TO_TRANSLATE_DATA

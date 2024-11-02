@@ -1,4 +1,3 @@
-#define RU_NAME_TOML_PATH "[PATH_TO_DATA]/ru_names.toml"
 GLOBAL_LIST_EMPTY(ru_names)
 
 /atom
@@ -8,7 +7,7 @@ GLOBAL_LIST_EMPTY(ru_names)
 
 /proc/ru_names_toml(name, prefix, suffix)
 	if(!length(GLOB.ru_names))
-		GLOB.ru_names = rustg_read_toml_file(RU_NAME_TOML_PATH)
+		GLOB.ru_names = rustg_read_toml_file("[PATH_TO_TRANSLATE_DATA]/ru_names.toml")
 	if(GLOB.ru_names[name])
 		return RU_NAMES_LIST(
 			"[prefix][name][suffix]",
@@ -63,5 +62,3 @@ GLOBAL_LIST_EMPTY(ru_names)
 	if(length(declented_list) && declented_list[declent])
 		return declented_list[declent]
 	return override_backup || target::name
-
-#undef RU_NAME_TOML_PATH
