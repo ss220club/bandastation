@@ -198,7 +198,7 @@
 		return
 
 	if(name == initial(name))
-		ru_names_rename(RU_NAMES_LIST("motion-sensitive security camera", "камера наблюдения с датчиком движения", "камеры наблюдения с датчиком движения", "камере наблюдения с датчиком движения", "камеру наблюдения с датчиком движения", "камерой наблюдения с датчиком движения", "камере наблюдения с датчиком движения"))
+		ru_names_rename(ru_names_toml("motion-sensitive security camera"))
 		name = "motion-sensitive security camera"
 	if(!proximity_monitor)
 		proximity_monitor = new(src)
@@ -207,7 +207,7 @@
 
 /obj/machinery/camera/proc/removeMotion()
 	if(name == "motion-sensitive security camera")
-		ru_names_rename(RU_NAMES_LIST("security camera", "камера наблюдения", "камеры наблюдения", "камере наблюдения", "камеру наблюдения", "камерой наблюдения", "камере наблюдения"))
+		ru_names_rename(ru_names_toml("security camera"))
 		name = "security camera"
 	camera_upgrade_bitflags &= ~CAMERA_UPGRADE_MOTION
 	if(!area_motion)

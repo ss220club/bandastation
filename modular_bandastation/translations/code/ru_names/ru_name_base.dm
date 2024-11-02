@@ -37,7 +37,7 @@ GLOBAL_LIST_EMPTY(ru_names)
 		return
 	if(length(new_list) != RU_NAMES_LENGTH)
 		CRASH("proc/ru_names_rename() received incorrect list!")
-	RU_NAMES_LIST_INIT(new_list["base"], new_list[NOMINATIVE], new_list[GENITIVE], new_list[DATIVE], new_list[ACCUSATIVE], new_list[INSTRUMENTAL], new_list[PREPOSITIONAL])
+	ru_names = new_list
 
 /**
 * Процедура выбора правильного падежа для любого предмета, если у него указан словарь «ru_names», примерно такой:
