@@ -8,7 +8,7 @@
 
 /obj/machinery/icecream_vat
 	name = "ice cream vat"
-	desc = "Смотря на машину, вы вспоминаете мелодию вашего любимого кафе с мороженным. Теперь таким кафе стало Нанотрейзен!"
+	desc = "Ding-aling ding dong. Get your Nanotrasen-approved ice cream!"
 	icon = 'icons/obj/service/kitchen.dmi'
 	icon_state = "icecream_vat"
 	density = TRUE

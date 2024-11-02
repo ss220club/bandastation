@@ -61,15 +61,13 @@ export const NtosNetChat = (props) => {
   } = data;
   const in_channel = active_channel !== null;
   const authorized = authed || adminmode;
-  // this list has cliented ordered from their status. online > away > offline
+  // This list has clients ordered by operator>status>alphabetical
   const displayed_clients = clients.sort((clientA, clientB) => {
-    if (clientA.operator) {
-      return -1;
-    }
-    if (clientB.operator) {
-      return 1;
-    }
-    return clientB.status - clientA.status;
+    return (
+      clientB.operator - clientA.operator ||
+      clientB.status - clientA.status ||
+      clientB.name < clientA.name
+    );
   });
   const client_color = (client) => {
     if (client.operator) {
@@ -178,6 +176,7 @@ export const NtosNetChat = (props) => {
                     'Написать в ' + title
                   }
                   fluid
+                  disabled={this_client && this_client.muted}
                   selfClear
                   mt={1}
                   onEnter={(e, value) =>

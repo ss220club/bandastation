@@ -1,6 +1,6 @@
 /obj/machinery/stove
 	name = "stove"
-	desc = "Можно подумать, что здесь эта штука была бы полезнее."
+	desc = "You'd think this thing would be more useful in here."
 	icon = 'icons/obj/machines/kitchen_stove.dmi'
 	icon_state = "stove"
 	base_icon_state = "stove"
@@ -27,7 +27,7 @@
 // - Tasting the pot to learn its exact contents w/o sci goggles (chef skillchip?)
 /obj/item/reagent_containers/cup/soup_pot
 	name = "soup pot"
-	desc = "Высокая кастрюля предназначенная для смешивания и приготовления всех видов супов."
+	desc = "A tall soup designed to mix and cook all kinds of soup."
 	icon = 'icons/obj/service/kitchen.dmi'
 	icon_state = "pot"
 	base_icon_state = "pot"

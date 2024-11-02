@@ -55,6 +55,10 @@
 		qdel(src)
 		return
 
+	if(SSmapping.level_trait(z, ZTRAIT_NOPHASE) || SSmapping.level_trait(destination.z, ZTRAIT_NOPHASE))
+		qdel(src)
+		return
+
 	//get it?
 	var/obj/machinery/door/doorstination = (inverted ? !IS_HERETIC_OR_MONSTER(teleportee) : IS_HERETIC_OR_MONSTER(teleportee)) ? destination.our_airlock : find_random_airlock()
 	if(!do_teleport(teleportee, get_turf(doorstination), channel = TELEPORT_CHANNEL_MAGIC))
@@ -73,6 +77,9 @@
 		if(airlock.z != z)
 			continue
 		if(airlock.loc == loc)
+			continue
+		var/area/airlock_area = get_area(airlock)
+		if(airlock_area.area_flags & NOTELEPORT)
 			continue
 		possible_destinations += airlock
 	return pick(possible_destinations)
@@ -179,7 +186,9 @@
 		return ITEM_INTERACT_SUCCESS
 	if(!istype(target, /obj/machinery/door))
 		return NONE
-	var/obj/machinery/door/reference_resolved = link?.resolve() // TODO220 - Type it to upstream
+	if(SSmapping.level_trait(target.z, ZTRAIT_NOPHASE))
+		return NONE
+	var/reference_resolved = link?.resolve()
 	if(reference_resolved == target)
 		return ITEM_INTERACT_BLOCKING
 

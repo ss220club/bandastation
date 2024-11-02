@@ -5,7 +5,7 @@
 
 /obj/machinery/grill
 	name = "Barbeque grill"
-	desc = "Как в старые добрые времена. Копченые продукты на легком огне."
+	desc = "Just like the old days. Smokes items over a light heat"
 	icon = 'icons/obj/machines/kitchen.dmi'
 	icon_state = "grill_open"
 	density = TRUE

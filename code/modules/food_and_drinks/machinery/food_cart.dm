@@ -1,7 +1,7 @@
 
 /obj/machinery/food_cart
 	name = "food cart"
-	desc = "Компактная мобильная стойка для кулинарных работ с возможностью распаковки. Вот это да! В распакованном виде она напоминает те жирные геймерские установки, которые есть у некоторых людей в NTNet."
+	desc = "A compact unpackable mobile cooking stand. Wow! When unpacked, it reminds you of those greasy gamer setups some people on NTNet have."
 	icon = 'icons/obj/service/kitchen.dmi'
 	icon_state = "foodcart"
 	density = TRUE
@@ -133,7 +133,7 @@
 
 /obj/effect/food_cart_stand
 	name = "food cart tent"
-	desc = "Что-то для борьбы с солнцем, ведь перерывов у работников бургерной нет."
+	desc = "Something to battle the sun, for there are no breaks for the burger flippers."
 	icon = 'icons/obj/fluff/3x3.dmi'
 	icon_state = "stand"
 	layer = ABOVE_MOB_LAYER//big mobs will still go over the tent, this is fine and cool
