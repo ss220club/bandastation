@@ -1,6 +1,6 @@
 // For any /obj/vehicle's that can be ridden
 
-/datum/component/riding/vehicle/Initialize(mob/living/riding_mob, force = FALSE, ride_check_flags = (RIDER_NEEDS_LEGS | RIDER_NEEDS_ARMS), potion_boost = FALSE)
+/datum/component/riding/vehicle/Initialize(mob/living/riding_mob, force = FALSE, ride_check_flags = (RIDER_NEEDS_LEGS | RIDER_NEEDS_ARMS))
 	if(!isvehicle(parent))
 		return COMPONENT_INCOMPATIBLE
 	return ..()
@@ -97,7 +97,7 @@
 		return
 
 	step(movable_parent, direction)
-	COOLDOWN_START(src, vehicle_move_cooldown, vehicle_move_delay)
+	COOLDOWN_START(src, vehicle_move_cooldown, modified_move_delay(vehicle_move_delay)) // BANDASTATION EDIT - Vehicle speed
 
 	if(QDELETED(src))
 		return

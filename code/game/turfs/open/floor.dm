@@ -1,6 +1,7 @@
 /// Anything above a lattice should go here.
 /turf/open/floor
 	name = "floor"
+	RU_NAMES_LIST_INIT("floor", "плитка", "плитку", "плитке", "плитку", "плиткой", "плитке")
 	icon = 'icons/turf/floors.dmi'
 	base_icon_state = "floor"
 	baseturfs = /turf/open/floor/plating
@@ -175,7 +176,7 @@
 		return null
 	return new floor_tile(src)
 
-/turf/open/floor/singularity_pull(S, current_size)
+/turf/open/floor/singularity_pull(atom/singularity, current_size)
 	..()
 	var/sheer = FALSE
 	switch(current_size)

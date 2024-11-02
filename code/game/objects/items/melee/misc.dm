@@ -95,7 +95,7 @@
  */
 /obj/item/melee/sabre/proc/attempt_bane(element_owner, mob/living/carbon/criminal)
 	SIGNAL_HANDLER
-	var/obj/item/organ/internal/liver/liver = criminal.get_organ_slot(ORGAN_SLOT_LIVER)
+	var/obj/item/organ/liver/liver = criminal.get_organ_slot(ORGAN_SLOT_LIVER)
 	if(isnull(liver) || !HAS_TRAIT(liver, TRAIT_MAINTENANCE_METABOLISM))
 		return COMPONENT_CANCEL_BANING
 
@@ -531,7 +531,7 @@
 
 ///Cleric maces are made of two custom materials: one is handle, and the other is the mace itself.
 /obj/item/melee/cleric_mace/get_material_multiplier(datum/material/custom_material, list/materials, index)
-	if(length(materials) < 1)
+	if(length(materials) <= 1)
 		return 1.2
 	if(index == 1)
 		return 1

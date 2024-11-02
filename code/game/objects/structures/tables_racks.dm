@@ -288,7 +288,7 @@
 		tableplace_delay = 2.75 SECONDS
 		skills_space = " quickly"
 
-	var/obj/item/organ/internal/cyberimp/chest/spine/potential_spine = user.get_organ_slot(ORGAN_SLOT_SPINE)
+	var/obj/item/organ/cyberimp/chest/spine/potential_spine = user.get_organ_slot(ORGAN_SLOT_SPINE)
 	if(istype(potential_spine))
 		tableplace_delay *= potential_spine.athletics_boost_multiplier
 
@@ -622,6 +622,7 @@
  */
 /obj/structure/table/reinforced
 	name = "reinforced table"
+	RU_NAMES_LIST_INIT("reinforced table", "укреплённый стол", "укреплённого стола", "укреплённому столу", "укреплённый стол", "укреплённым столом", "укреплённом столе")
 	desc = "A reinforced version of the four legged table."
 	icon = 'icons/obj/smooth_structures/reinforced_table.dmi'
 	icon_state = "reinforced_table-0"
@@ -778,6 +779,7 @@
 
 /obj/structure/table/optable
 	name = "operating table"
+	RU_NAMES_LIST_INIT("operating table", "операционный стол", "операционного стола", "операционному столу", "операционный стол", "операционным столом", "операционном столе")
 	desc = "Used for advanced medical procedures."
 	icon = 'icons/obj/medical/surgery_table.dmi'
 	icon_state = "surgery_table"

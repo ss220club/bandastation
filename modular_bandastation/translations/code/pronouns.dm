@@ -1,39 +1,4 @@
-#define RU_NAMES_LENGTH 7 // 6 падежей, 1 base
-
-/atom
-	// code\__DEFINES\bandastation\pronouns.dm for more info
-	/// RU_NAMES_LIST_INIT("name", "именительный", "родительный", "дательный", "винительный", "творительный", "предложный")
-	var/list/ru_names
-	var/ru_name_nominative
-	var/ru_name_genitive
-	var/ru_name_dative
-	var/ru_name_accusative
-	var/ru_name_instrumental
-	var/ru_name_prepositional
-
-/// Необходимо использовать ПЕРЕД изменением var/name, и использовать только этот прок для изменения в рантайме склонений
-/atom/proc/ru_names_rename(list/new_list)
-	if(length(new_list) != RU_NAMES_LENGTH)
-		CRASH("proc/ru_names_rename() received incorrect list!")
-	RU_NAMES_LIST_INIT(new_list["base"], new_list[NOMINATIVE], new_list[GENITIVE], new_list[DATIVE], new_list[ACCUSATIVE], new_list[INSTRUMENTAL], new_list[PREPOSITIONAL])
-
-/**
-* Процедура выбора правильного падежа для любого предмета, если у него указан словарь «ru_names», примерно такой:
-* RU_NAMES_LIST_INIT("jaws of life", "челюсти жизни", "челюстей жизни", "челюстям жизни", "челюсти жизни", "челюстями жизни", "челюстях жизни")
-*/
-/datum/proc/declent_ru(case_id, list/ru_names_override)
-	var/list/list_to_use = ru_names_override
-	if(length(list_to_use))
-		return list_to_use[case_id] || src
-	return src
-
-/atom/declent_ru(case_id, list/ru_names_override)
-	var/list/list_to_use = ru_names_override || ru_names
-	if(length(list_to_use))
-		if(list_to_use[case_id] && list_to_use["base"] == name)
-			return list_to_use[case_id] || name
-	return name
-
+// MARK: Helper procs
 /// Склонения, например "секунда", "секунды", "секунд".
 /proc/declension_ru(num, single_name, double_name, multiple_name)
 	if(!isnum(num) || round(num) != num)
@@ -124,6 +89,10 @@
 /datum/proc/ru_p_themselves(capitalized, temp_gender)
 	. = "само"
 
+/// Применяет одно из "них", "него", "него", или "нее" в зависимости от пола. Установите TRUE для заглавной буквы.
+/datum/proc/ru_p_theirs(capitalized, temp_gender)
+	. = "него"
+
 /// Применяет "имеет" для единственного числа и "имеют" для множественного ("она имеет" / "они имеют").
 /datum/proc/ru_p_have(temp_gender)
 	. = "имеет"
@@ -137,7 +106,7 @@
 	. = "делает"
 
 //////////////////////////////
-// MARK: Client procs
+// MARK: Client pronouns
 //////////////////////////////
 // Like clients, which do have gender.
 /client/ru_p_they(capitalized, temp_gender)
@@ -181,6 +150,21 @@
 	if(capitalized)
 		. = capitalize(.)
 
+/client/ru_p_theirs(capitalized, temp_gender)
+	if(!temp_gender)
+		temp_gender = gender
+	switch(temp_gender)
+		if(MALE)
+			. = "него"
+		if(FEMALE)
+			. = "нее"
+		if(NEUTER)
+			. = "него"
+		if(PLURAL)
+			. = "них"
+	if(capitalized)
+		. = capitalize(.)
+
 /client/ru_p_have(temp_gender)
 	if(!temp_gender)
 		temp_gender = gender
@@ -208,7 +192,7 @@
 		. = "делают"
 
 //////////////////////////////
-// MARK: Mob procs
+// MARK: Mob pronouns
 //////////////////////////////
 // Mobs (and atoms but atoms don't really matter write your own proc overrides) also have gender!
 /mob/ru_p_they(capitalized, temp_gender)
@@ -252,6 +236,21 @@
 	if(capitalized)
 		. = capitalize(.)
 
+/mob/ru_p_theirs(capitalized, temp_gender)
+	if(!temp_gender)
+		temp_gender = gender
+	switch(temp_gender)
+		if(MALE)
+			. = "него"
+		if(FEMALE)
+			. = "нее"
+		if(NEUTER)
+			. = "него"
+		if(PLURAL)
+			. = "них"
+	if(capitalized)
+		. = capitalize(.)
+
 /mob/ru_p_have(temp_gender)
 	if(!temp_gender)
 		temp_gender = gender
@@ -279,7 +278,7 @@
 		. = "делают"
 
 //////////////////////////////
-// MARK: Human procs
+// MARK: Human pronouns
 //////////////////////////////
 // Humans need special handling, because they can have their gender hidden
 /mob/living/carbon/human/ru_p_they(temp_gender)
@@ -297,6 +296,13 @@
 	return ..()
 
 /mob/living/carbon/human/ru_p_themselves(temp_gender)
+	var/obscured = check_obscured_slots()
+	var/skipface = (wear_mask && (wear_mask.flags_inv & HIDEFACE)) || (head && (head.flags_inv & HIDEFACE))
+	if((obscured & ITEM_SLOT_ICLOTHING) && skipface)
+		temp_gender = PLURAL
+	return ..()
+
+/mob/living/carbon/human/ru_p_theirs(temp_gender)
 	var/obscured = check_obscured_slots()
 	var/skipface = (wear_mask && (wear_mask.flags_inv & HIDEFACE)) || (head && (head.flags_inv & HIDEFACE))
 	if((obscured & ITEM_SLOT_ICLOTHING) && skipface)
@@ -323,5 +329,3 @@
 	if((obscured & ITEM_SLOT_ICLOTHING) && skipface)
 		temp_gender = PLURAL
 	return ..()
-
-#undef RU_NAMES_LENGTH

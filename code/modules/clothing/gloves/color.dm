@@ -44,7 +44,7 @@
 /obj/item/clothing/gloves/color/fingerless/Initialize(mapload)
 	. = ..()
 	var/static/list/slapcraft_recipe_list = list(/datum/crafting_recipe/gripperoffbrand)
-	AddComponent(/datum/component/adjust_fishing_difficulty, -2)
+	AddComponent(/datum/component/adjust_fishing_difficulty, -4)
 
 	AddElement(
 		/datum/element/slapcrafting,\
@@ -65,6 +65,7 @@
 
 /obj/item/clothing/gloves/color/red/insulated
 	name = "insulated gloves"
+	RU_NAMES_LIST_INIT("insulated gloves", "пара изоляционных перчаток", "пары изоляционных перчаток", "паре изоляционных перчаток", "пару изоляционных перчаток", "парой изоляционных перчаток", "паре изоляционных перчаток")
 	desc = "These gloves provide protection against electric shock."
 	siemens_coefficient = 0
 	armor_type = /datum/armor/red_insulated

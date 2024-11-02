@@ -1,6 +1,7 @@
 // Plant analyzer
 /obj/item/plant_analyzer
 	name = "plant analyzer"
+	RU_NAMES_LIST_INIT("plant analyzer", "анализатор растений", "анализатора растений", "анализатору растений", "анализатор растений", "анализатором растений", "анализаторе растений")
 	desc = "A scanner used to evaluate a plant's various areas of growth, and genetic traits. Comes with a growth scanning mode and a chemical scanning mode."
 	icon = 'icons/obj/devices/scanner.dmi'
 	icon_state = "hydro"
@@ -74,21 +75,26 @@
  */
 /obj/item/plant_analyzer/proc/do_plant_stats_scan(atom/scan_target, mob/user)
 	if(istype(scan_target, /obj/machinery/hydroponics))
+		playsound(src, SFX_INDUSTRIAL_SCAN, 20, TRUE, -2, TRUE, FALSE)
 		to_chat(user, examine_block(scan_tray_stats(scan_target)))
 		return TRUE
 	if(istype(scan_target, /obj/structure/glowshroom))
+		playsound(src, SFX_INDUSTRIAL_SCAN, 20, TRUE, -2, TRUE, FALSE)
 		var/obj/structure/glowshroom/shroom_plant = scan_target
 		to_chat(user, examine_block(scan_plant_stats(shroom_plant.myseed)))
 		return TRUE
 	if(istype(scan_target, /obj/item/graft))
+		playsound(src, SFX_INDUSTRIAL_SCAN, 20, TRUE, -2, TRUE, FALSE)
 		to_chat(user, examine_block(get_graft_text(scan_target)))
 		return TRUE
 	if(isitem(scan_target))
+		playsound(src, SFX_INDUSTRIAL_SCAN, 20, TRUE, -2, TRUE, FALSE)
 		var/obj/item/scanned_object = scan_target
 		if(scanned_object.get_plant_seed() || istype(scanned_object, /obj/item/seeds))
 			to_chat(user, examine_block(scan_plant_stats(scanned_object)))
 			return TRUE
 	if(isliving(scan_target))
+		playsound(src, SFX_INDUSTRIAL_SCAN, 20, TRUE, -2, TRUE, FALSE)
 		var/mob/living/L = scan_target
 		if(L.mob_biotypes & MOB_PLANT)
 			plant_biotype_health_scan(scan_target, user)
