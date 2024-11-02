@@ -8,7 +8,10 @@ GLOBAL_LIST_EMPTY(ru_say_verbs)
 	author = "Vallat, Larentoun, dj-34"
 
 /datum/modpack/translations/post_initialize()
-	var/list/verbs_toml_list = rustg_read_toml_file("[PATH_TO_TRANSLATE_DATA]/ru_verbs.toml")
+	var/toml_path = "[PATH_TO_TRANSLATE_DATA]/ru_verbs.toml"
+	if(!fexists(file(toml_path)))
+		return
+	var/list/verbs_toml_list = rustg_read_toml_file(toml_path)
 
 	var/list/attack_verbs = verbs_toml_list["attack_verbs"]
 	for(var/attack_key in attack_verbs)

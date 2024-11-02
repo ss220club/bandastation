@@ -6,6 +6,9 @@ GLOBAL_LIST_EMPTY(ru_names)
 	var/list/ru_names
 
 /proc/ru_names_toml(name, prefix, suffix)
+	var/toml_path = "[PATH_TO_TRANSLATE_DATA]/ru_names.toml"
+	if(!fexists(file(toml_path)))
+		return
 	if(!length(GLOB.ru_names))
 		GLOB.ru_names = rustg_read_toml_file("[PATH_TO_TRANSLATE_DATA]/ru_names.toml")
 	if(GLOB.ru_names[name])
