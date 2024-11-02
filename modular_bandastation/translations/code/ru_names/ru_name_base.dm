@@ -4,27 +4,28 @@ GLOBAL_LIST_EMPTY(ru_names)
 /atom
 	// code\__DEFINES\bandastation\pronouns.dm for more info
 	/// List consists of ("name", "именительный", "родительный", "дательный", "винительный", "творительный", "предложный")
-	var/ru_name_base
-	var/ru_name_nominative
-	var/ru_name_genitive
-	var/ru_name_dative
-	var/ru_name_accusative
-	var/ru_name_instrumental
-	var/ru_name_prepositional
+	var/list/ru_names
 
-/proc/ru_name_toml(name)
+/proc/ru_names_toml(name, prefix, suffix)
 	if(!length(GLOB.ru_names))
 		var/list/ru_name_list = rustg_raw_read_toml_file(RU_NAME_TOML_PATH)
 		if(!ru_name_list["success"])
-			CRASH("ru_name_toml() failed to initialize!")
+			CRASH("ru_names_toml() failed to initialize!")
 		GLOB.ru_names = json_decode(ru_name_list["content"])
 	if(GLOB.ru_names[name])
-		return RU_NAMES_LIST(name, GLOB.ru_names[name]["nominative"], GLOB.ru_names[name]["genitive"], GLOB.ru_names[name]["dative"], GLOB.ru_names[name]["accusative"], GLOB.ru_names[name]["instrumental"], GLOB.ru_names[name]["prepositional"])
+		return RU_NAMES_LIST(
+			"[prefix][name][suffix]",
+			"[prefix][GLOB.ru_names[name]["nominative"]][suffix]",
+			"[prefix][GLOB.ru_names[name]["genitive"]][suffix]",
+			"[prefix][GLOB.ru_names[name]["dative"]][suffix]",
+			"[prefix][GLOB.ru_names[name]["accusative"]][suffix]",
+			"[prefix][GLOB.ru_names[name]["instrumental"]][suffix]",
+			"[prefix][GLOB.ru_names[name]["prepositional"]][suffix]")
 
 /atom/Initialize(mapload, ...)
 	. = ..()
 	article = null
-	ru_names_rename(ru_name_toml(name))
+	ru_names_rename(ru_names_toml(name))
 
 /datum/proc/ru_names_rename(list/new_list)
 	SHOULD_CALL_PARENT(FALSE)
@@ -47,31 +48,18 @@ GLOBAL_LIST_EMPTY(ru_names)
 	CRASH("Unimplemented proc/declent_ru() was used")
 
 /atom/declent_ru(case_id, list/ru_names_override)
-	var/list/list_to_use = ru_names_override || RU_NAMES_LIST(ru_name_base, ru_name_nominative, ru_name_genitive, ru_name_dative, ru_name_accusative, ru_name_instrumental, ru_name_prepositional)
-	if(length(list_to_use))
-		if(list_to_use[case_id] && list_to_use["base"] == name)
-			return list_to_use[case_id] || name
+	var/list/list_to_use = ru_names_override || ru_names
+	if(length(list_to_use) && list_to_use["base"] == ru_names["base"] && list_to_use[case_id])
+		return list_to_use[case_id]
 	return name
 
 /// Used for getting initial values, such as for recipies where resulted atom is not yet created.
-/proc/declent_ru_initial(atom/target, declent)
+/proc/declent_ru_initial(atom/target, declent, override_backup)
 	if(!istype(target) && !ispath(target, /atom))
 		CRASH("declent_ru_initial got target that is not an atom or atom's path!")
-	if(target::ru_name_base != target::name)
-		return target::name
-	switch(declent)
-		if(NOMINATIVE)
-			return target::ru_name_nominative
-		if(GENITIVE)
-			return target::ru_name_genitive
-		if(DATIVE)
-			return target::ru_name_dative
-		if(ACCUSATIVE)
-			return target::ru_name_accusative
-		if(INSTRUMENTAL)
-			return target::ru_name_instrumental
-		if(PREPOSITIONAL)
-			return target::ru_name_prepositional
-	return target::name
+	var/list/declented_list = ru_names_toml(target::name)
+	if(length(declented_list) && declented_list[declent])
+		return declented_list[declent]
+	return override_backup || target::name
 
 #undef RU_NAME_TOML_PATH

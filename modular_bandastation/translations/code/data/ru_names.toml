@@ -1,3 +1,11 @@
+#["name"]
+#"nominative" = "именительный"
+#"genitive" = "родительный"
+#"dative" = "дательный"
+#"accusative" = "винительный"
+#"instrumental" = "творительный"
+#"prepositional" = "предложный"
+
 ["jaws of life"]
 "nominative" = "челюсти жизни"
 "genitive" = "челюстей жизни"
@@ -5,3 +13,43 @@
 "accusative" = "челюсти жизни"
 "instrumental" = "челюстями жизни"
 "prepositional" = "челюстях жизни"
+
+["holopad"]
+"nominative" = "голопад"
+"genitive" = "голопада"
+"dative" = "голопаду"
+"accusative" = "голопад"
+"instrumental" = "голопадом"
+"prepositional" = "голопаде"
+
+["secure holopad"]
+"nominative" = "защищенный голопад"
+"genitive" = "защищенного голопада"
+"dative" = "защищенному голопаду"
+"accusative" = "защищенный голопад"
+"instrumental" = "защищенным голопадом"
+"prepositional" = "защищенном голопаде"
+
+["recharging station"]
+"nominative" = "зарядная станция"
+"genitive" = "зарядной станции"
+"dative" = "зарядной станции"
+"accusative" = "зарядную станцию"
+"instrumental" = "зарядной станцией"
+"prepositional" = "зарядной станции"
+
+["security camera"]
+"nominative" = "камера наблюдения"
+"genitive" = "камеры наблюдения"
+"dative" = "камере наблюдения"
+"accusative" = "камеру наблюдения"
+"instrumental" = "камерой наблюдения"
+"prepositional" = "камере наблюдения"
+
+["motion-sensitive security camera"]
+"nominative" = "камера наблюдения с датчиком движения"
+"genitive" = "камеры наблюдения с датчиком движения"
+"dative" = "камере наблюдения с датчиком движения"
+"accusative" = "камеру наблюдения с датчиком движения"
+"instrumental" = "камерой наблюдения с датчиком движения"
+"prepositional" = "камере наблюдения с датчиком движения"

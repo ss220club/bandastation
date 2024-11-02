@@ -45,7 +45,6 @@
 /obj/machinery/camera/motion
 	start_active = TRUE
 	name = "motion-sensitive security camera"
-	RU_NAMES_LIST_INIT("motion-sensitive security camera", "камера наблюдения с датчиком движения", "камеры наблюдения с датчиком движения", "камере наблюдения с датчиком движения", "камеру наблюдения с датчиком движения", "камерой наблюдения с датчиком движения", "камере наблюдения с датчиком движения")
 
 /obj/machinery/camera/motion/Initialize(mapload)
 	. = ..()
@@ -88,7 +87,6 @@
 /obj/machinery/camera/autoname/motion
 	start_active = TRUE
 	name = "motion-sensitive security camera"
-	RU_NAMES_LIST_INIT("motion-sensitive security camera", "камера наблюдения с датчиком движения", "камеры наблюдения с датчиком движения", "камере наблюдения с датчиком движения", "камеру наблюдения с датчиком движения", "камерой наблюдения с датчиком движения", "камере наблюдения с датчиком движения")
 
 /obj/machinery/camera/autoname/motion/Initialize(mapload)
 	. = ..()
