@@ -1,6 +1,6 @@
 /obj/machinery/griddle
 	name = "griddle"
-	desc = "Because using pans is for pansies."
+	desc = "Сковородки для слабаков."
 	icon = 'icons/obj/machines/kitchen.dmi'
 	icon_state = "griddle1_off"
 	density = TRUE
@@ -224,7 +224,7 @@
 
 /obj/machinery/griddle/stand
 	name = "griddle stand"
-	desc = "A more commercialized version of your traditional griddle. What happened to the good old days where people griddled with passion?"
+	desc = "Более коммерческая версия традиционного гридля. Что случилось со старыми добрыми временами, когда люди жарили на гридле со страстью?"
 	variant = "stand"
 
 /obj/machinery/griddle/stand/update_overlays()

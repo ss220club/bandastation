@@ -236,7 +236,7 @@
 				if(is_species(scanned_human, scan_species))
 					beep = TRUE
 				if(detect_species_id == SPECIES_ZOMBIE) //Can detect dormant zombies
-					detected_thing = "Romerol infection"
+					detected_thing = "вирус Ромерола"
 					if(scanned_human.get_organ_slot(ORGAN_SLOT_ZOMBIE))
 						beep = TRUE
 		if(SCANGATE_GUNS)

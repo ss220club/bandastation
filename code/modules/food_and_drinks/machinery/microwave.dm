@@ -19,7 +19,7 @@
 
 /obj/machinery/microwave
 	name = "microwave oven"
-	desc = "Cooks and boils stuff."
+	desc = "Нагревает всякие штуки."
 	icon = 'icons/obj/machines/microwave.dmi'
 	base_icon_state = ""
 	icon_state = "mw_complete"
@@ -918,7 +918,7 @@
 
 /obj/machinery/microwave/engineering
 	name = "wireless microwave oven"
-	desc = "For the hard-working tradesperson who's in the middle of nowhere and just wants to warm up their pastry-based savoury item from an overpriced vending machine."
+	desc = "Для трудолюбивого работника, который находится в глуши и просто хочет разогреть кондитерское изделие из вендомата с завышенной ценой."
 	base_icon_state = "engi_"
 	icon_state = "engi_mw_complete"
 	circuit = /obj/item/circuitboard/machine/microwave/engineering

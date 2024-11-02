@@ -61,9 +61,9 @@
 
 	// Sometimes, try send a replacement message if we're hallucinating
 	if(get_timed_status_effect_duration(/datum/status_effect/hallucination) > 100 SECONDS && prob(25))
-		var/text_output = pick("spiders","dreams","nightmares","the future","the past","victory",\
-			"defeat","pain","bliss","revenge","poison","time","space","death","life","truth","lies","justice","memory",\
-			"regrets","your soul","suffering","music","noise","blood","hunger","the american way")
+		var/text_output = pick("пауков","снов","ужасов","будущего","прошлого","победы",\
+			"поражения","боли","блаженства","мести","яда","времени","пространства","смерти","жизни","правды","лжи","справедливости","памяти",\
+			"сожаления","своей души","страданий","музыки","звука","крови","голода","американской свободы")
 		send_taste_message(text_output)
 		return TRUE
 

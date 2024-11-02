@@ -188,7 +188,7 @@
 		return NONE
 	if(SSmapping.level_trait(target.z, ZTRAIT_NOPHASE))
 		return NONE
-	var/reference_resolved = link?.resolve()
+	var/obj/machinery/door/reference_resolved = link?.resolve() // TODO220 - Type it to upstream
 	if(reference_resolved == target)
 		return ITEM_INTERACT_BLOCKING
 
