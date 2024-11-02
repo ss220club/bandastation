@@ -16,7 +16,3 @@
 
 /// Макрос для упрощения создания листа падежей для объекта
 #define RU_NAMES_LIST(base, nominative, genitive, dative, accusative, instrumental, prepositional) (list("base" = base, NOMINATIVE = nominative, GENITIVE = genitive, DATIVE = dative, ACCUSATIVE = accusative, INSTRUMENTAL = instrumental, PREPOSITIONAL = prepositional))
-
-/// Макрос для добавления значений для переменных
-#define RU_NAMES_LIST_INIT(base, nominative, genitive, dative, accusative, instrumental, prepositional)\
-	ru_names = RU_NAMES_LIST(base, nominative, genitive, dative, accusative, instrumental, prepositional)
