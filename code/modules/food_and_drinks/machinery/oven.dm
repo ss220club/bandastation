@@ -10,7 +10,6 @@
 
 /obj/machinery/oven
 	name = "oven"
-	RU_NAMES_LIST_INIT("oven", "духовка", "духовки", "духовке", "духовку", "духовкой", "духовке")
 	desc = "Иногда туда залезает повар, если инженеры не починили шлюз морозильной камеры..."
 	icon = 'icons/obj/machines/kitchen.dmi'
 	icon_state = "oven_off"
@@ -231,7 +230,6 @@
 
 /obj/machinery/oven/range
 	name = "range"
-	RU_NAMES_LIST_INIT("range", "духовка", "духовки", "духовке", "духовку", "духовкой", "духовке")
 	desc = "Плита с духовкой?! Здесь должен был быть каламбур, но вы приготовьте его сами!"
 	icon_state = "range_off"
 	base_icon_state = "range"
@@ -249,7 +247,6 @@
 
 /obj/item/plate/oven_tray
 	name = "oven tray"
-	RU_NAMES_LIST_INIT("oven tray", "протевень", "протевеня", "протевеню", "протевень", "протевенем", "протевене")
 	desc = "Время печь печенье!"
 	icon_state = "oven_tray"
 	max_items = 6

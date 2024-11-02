@@ -19,7 +19,6 @@
 
 /obj/machinery/microwave
 	name = "microwave oven"
-	RU_NAMES_LIST_INIT("microwave oven", "микроволновка", "микроволновки", "микроволновке", "микроволновку", "микроволновкой", "микроволновке")
 	desc = "Нагревает всякие штуки."
 	icon = 'icons/obj/machines/microwave.dmi'
 	base_icon_state = ""
@@ -919,7 +918,6 @@
 
 /obj/machinery/microwave/engineering
 	name = "wireless microwave oven"
-	RU_NAMES_LIST_INIT("wireless microwave oven", "беспроводная микроволновка", "беспроводной микроволновки", "беспроводной микроволновке", "беспроводную микроволновку", "беспроводной микроволновкой", "беспроводной микроволновке")
 	desc = "Для трудолюбивого работника, который находится в глуши и просто хочет разогреть кондитерское изделие из вендомата с завышенной ценой."
 	base_icon_state = "engi_"
 	icon_state = "engi_mw_complete"
