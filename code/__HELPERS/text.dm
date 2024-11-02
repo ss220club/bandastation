@@ -361,11 +361,7 @@
 
 //Returns a string with the first element of the string capitalized.
 /proc/capitalize(t)
-	// BANDASTATION EDIT START - Declents
-	t = replacetext_char(t, "\improper", "")
-	t = replacetext_char(t, "\proper", "")
-	// BANDASTATION EDIT END
-	. = t
+	. = format_text(t) // BANDASTATION EDIT - Declents
 	if(t)
 		. = t[1]
 		return uppertext(.) + copytext(t, 1 + length(.))
