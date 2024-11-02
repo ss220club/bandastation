@@ -10,7 +10,7 @@
 
 /obj/machinery/oven
 	name = "oven"
-	desc = "Why do they call it oven when you of in the cold food of out hot eat the food?"
+	desc = "Иногда туда залезает повар, если инженеры не починили шлюз морозильной камеры..."
 	icon = 'icons/obj/machines/kitchen.dmi'
 	icon_state = "oven_off"
 	base_icon_state = "oven"
@@ -230,7 +230,7 @@
 
 /obj/machinery/oven/range
 	name = "range"
-	desc = "And Oven AND a Stove? I guess that's why it's got range!"
+	desc = "Плита с духовкой?! Здесь должен был быть каламбур, но вы приготовьте его сами!"
 	icon_state = "range_off"
 	base_icon_state = "range"
 	pass_flags_self = PASSMACHINE|PASSTABLE|LETPASSTHROW // Like the griddle, short
@@ -247,7 +247,7 @@
 
 /obj/item/plate/oven_tray
 	name = "oven tray"
-	desc = "Time to bake cookies!"
+	desc = "Время печь печенье!"
 	icon_state = "oven_tray"
 	max_items = 6
 	biggest_w_class = WEIGHT_CLASS_BULKY

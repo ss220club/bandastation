@@ -378,8 +378,8 @@
 			if (72 to 159)
 				cold_desc = "очень низких"
 			if (0 to 71)
-				cold_desc = "extremely low"
-		.["thermally insulated"] = "Protects the wearer from [jointext(list(heat_desc, cold_desc) - null, " and ")] temperatures."
+				cold_desc = "чрезвычайно низких"
+		.["термоизолированный"] = "Защищает носителя от [jointext(list(heat_desc, cold_desc) - null, " и ")] температур."
 
 /obj/item/clothing/examine_descriptor(mob/user)
 	return "надеваемый предмет"

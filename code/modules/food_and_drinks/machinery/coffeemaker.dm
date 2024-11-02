@@ -2,7 +2,7 @@
 
 /obj/machinery/coffeemaker
 	name = "coffeemaker"
-	desc = "A Modello 3 Coffeemaker that brews coffee and holds it at the perfect temperature of 176 fahrenheit. Made by Piccionaia Home Appliances."
+	desc = "Кофеварка Modello 3, которая варит кофе и поддерживает его идеальную температуру 80 градусов по Цельсию. Произведено компанией Piccionaia Home Appliances."
 	icon = 'icons/obj/medical/chemical.dmi'
 	icon_state = "coffeemaker_nopot_nocart"
 	base_icon_state = "coffeemaker"
@@ -419,7 +419,7 @@
 //Coffee Cartridges: like toner, but for your coffee!
 /obj/item/coffee_cartridge
 	name = "coffeemaker cartridge- Caffè Generico"
-	desc = "A coffee cartridge manufactured by Piccionaia Coffee, for use with the Modello 3 system."
+	desc = "Кофейный картридж производства Piccionaia Coffee, предназначенный для использования с системой Modello 3."
 	icon = 'icons/obj/food/cartridges.dmi'
 	icon_state = "cartridge_basic"
 	var/charges = 4
@@ -434,7 +434,7 @@
 
 /obj/item/coffee_cartridge/fancy
 	name = "coffeemaker cartridge - Caffè Fantasioso"
-	desc = "A fancy coffee cartridge manufactured by Piccionaia Coffee, for use with the Modello 3 system."
+	desc = "Изысканный кофейный картридж производства Piccionaia Coffee, предназначенный для использования с системой Modello 3."
 	icon_state = "cartridge_blend"
 
 //Here's the joke before I get 50 issue reports: they're all the same, and that's intentional
@@ -457,26 +457,26 @@
 
 /obj/item/coffee_cartridge/decaf
 	name = "coffeemaker cartridge - Caffè Decaffeinato"
-	desc = "A decaf coffee cartridge manufactured by Piccionaia Coffee, for use with the Modello 3 system."
+	desc = "Картридж для кофе без кофеина, произведенный компанией Piccionaia Coffee, предназначенный для использования с системой Modello 3."
 	icon_state = "cartridge_decaf"
 
 // no you can't just squeeze the juice bag into a glass!
 /obj/item/coffee_cartridge/bootleg
 	name = "coffeemaker cartridge - Botany Blend"
-	desc = "A jury-rigged coffee cartridge. Should work with a Modello 3 system, though it might void the warranty."
+	desc = "Картридж для приготовления кофе. Должен работать с системой Modello 3, хотя это может привести к потере гарантии."
 	icon_state = "cartridge_bootleg"
 
 // blank cartridge for crafting's sake, can be made at the service lathe
 /obj/item/blank_coffee_cartridge
 	name = "blank coffee cartridge"
-	desc = "A blank coffee cartridge, ready to be filled with coffee paste."
+	desc = "Пустой кофейный картридж, готовый к заполнению кофейным помолом."
 	icon = 'icons/obj/food/cartridges.dmi'
 	icon_state = "cartridge_blank"
 
 //now, how do you store coffee carts? well, in a rack, of course!
 /obj/item/storage/fancy/coffee_cart_rack
 	name = "coffeemaker cartridge rack"
-	desc = "A small rack for storing coffeemaker cartridges."
+	desc = "Небольшая подставка для хранения картриджей кофемашины."
 	icon = 'icons/obj/food/containers.dmi'
 	icon_state = "coffee_cartrack4"
 	base_icon_state = "coffee_cartrack"
@@ -497,7 +497,7 @@
 
 /obj/machinery/coffeemaker/impressa
 	name = "impressa coffeemaker"
-	desc = "An industry-grade Impressa Modello 5 Coffeemaker of the Piccionaia Home Appliances premium coffeemakers product line. Makes coffee from fresh dried whole beans."
+	desc = "Кофеварка Impressa Modello 5 промышленного класса из линейки премиальных кофеварок Piccionaia Home Appliances. Готовит кофе из свежих сушеных цельных зерен."
 	icon = 'icons/obj/machines/coffeemaker.dmi'
 	icon_state = "coffeemaker_impressa"
 	circuit = /obj/item/circuitboard/machine/coffeemaker/impressa

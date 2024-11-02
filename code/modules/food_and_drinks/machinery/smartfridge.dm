@@ -3,7 +3,7 @@
 // -------------------------
 /obj/machinery/smartfridge
 	name = "smartfridge"
-	desc = "Keeps cold things cold and hot things cold."
+	desc = "Сохраняет холодные вещи холодными, а горячие - холодными."
 	icon = 'icons/obj/machines/smartfridge.dmi'
 	icon_state = "smartfridge-icon"
 	base_icon_state = "smartfridge"
@@ -437,7 +437,7 @@
 // ----------------------------
 /obj/machinery/smartfridge/drying
 	name = "dehydrator"
-	desc = "A machine meant to remove moisture from various food."
+	desc = "Машина, используемая для осушения растений, еды и шукр."
 	icon_state = "dehydrator-icon"
 	base_icon_state = "dehydrator"
 	contents_overlay_icon = "contents"
@@ -544,7 +544,7 @@
 /// Wooden version
 /obj/machinery/smartfridge/drying/rack
 	name = "drying rack"
-	desc = "A wooden contraption, used to dry plant products, food and hide."
+	desc = "Машина, предназначенная для удаления влаги из различных продуктов питания."
 	icon_state = "drying-rack"
 	base_icon_state = "drying-rack"
 	resistance_flags = FLAMMABLE
@@ -604,7 +604,7 @@
 // ----------------------------
 /obj/machinery/smartfridge/drinks
 	name = "drink showcase"
-	desc = "A refrigerated storage unit for tasty tasty alcohol."
+	desc = "Холодильник для хранения вкусного-вкусного алкоголя."
 	base_build_path = /obj/machinery/smartfridge/drinks
 	contents_overlay_icon = "drink"
 
@@ -642,7 +642,7 @@
 // -------------------------------------
 /obj/machinery/smartfridge/extract
 	name = "smart slime extract storage"
-	desc = "A refrigerated storage unit for slime extracts."
+	desc = "Холодильник для хранения экстракта слаймов."
 	base_build_path = /obj/machinery/smartfridge/extract
 	contents_overlay_icon = "slime"
 
@@ -657,7 +657,7 @@
 // -------------------------------------
 /obj/machinery/smartfridge/petri
 	name = "smart petri dish storage"
-	desc = "A refrigerated storage unit for petri dishes."
+	desc = "Холодильник для хранения чашек Петри."
 	base_build_path = /obj/machinery/smartfridge/petri
 	contents_overlay_icon = "petri"
 
@@ -672,7 +672,7 @@
 // -------------------------
 /obj/machinery/smartfridge/organ
 	name = "smart organ storage"
-	desc = "A refrigerated storage unit for organ storage."
+	desc = "Холодильник для хранения органов."
 	max_n_of_items = 20 //vastly lower to prevent processing too long
 	base_build_path = /obj/machinery/smartfridge/organ
 	contents_overlay_icon = "organ"
@@ -726,7 +726,7 @@
 // -----------------------------
 /obj/machinery/smartfridge/chemistry
 	name = "smart chemical storage"
-	desc = "A refrigerated storage unit for medicine storage."
+	desc = "Холодильник для хранения лекарств."
 	base_build_path = /obj/machinery/smartfridge/chemistry
 	contents_overlay_icon = "chem"
 	default_list_view = TRUE
@@ -777,7 +777,7 @@
 // ----------------------------
 /obj/machinery/smartfridge/chemistry/virology
 	name = "smart virus storage"
-	desc = "A refrigerated storage unit for volatile sample storage."
+	desc = "Холодильник для хранения летучих образцов."
 	base_build_path = /obj/machinery/smartfridge/chemistry/virology
 	contents_overlay_icon = "viro"
 	default_list_view = TRUE
@@ -799,7 +799,7 @@
 // ----------------------------
 /obj/machinery/smartfridge/disks
 	name = "disk compartmentalizer"
-	desc = "A machine capable of storing a variety of disks. Denoted by most as the DSU (disk storage unit)."
+	desc = "Машина, способная хранить множество дисков. В большинстве случаев обозначается как DSU (disk storage unit)."
 	icon_state = "disktoaster"
 	base_icon_state = "disktoaster"
 	has_emissive = TRUE

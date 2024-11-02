@@ -2,7 +2,7 @@ GLOBAL_LIST_EMPTY(monkey_recyclers)
 
 /obj/machinery/monkey_recycler
 	name = "monkey recycler"
-	desc = "A machine used for recycling dead monkeys into monkey cubes."
+	desc = "Машина для переработки мертвых обезьян в кубы обезьян."
 	icon = 'icons/obj/machines/kitchen.dmi'
 	icon_state = "grinder"
 	layer = BELOW_OBJ_LAYER
