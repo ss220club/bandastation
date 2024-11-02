@@ -8,10 +8,7 @@ GLOBAL_LIST_EMPTY(ru_names)
 
 /proc/ru_names_toml(name, prefix, suffix)
 	if(!length(GLOB.ru_names))
-		var/list/ru_name_list = rustg_raw_read_toml_file(RU_NAME_TOML_PATH)
-		if(!ru_name_list["success"])
-			CRASH("ru_names_toml() failed to initialize!")
-		GLOB.ru_names = json_decode(ru_name_list["content"])
+		GLOB.ru_names = rustg_read_toml_file(RU_NAME_TOML_PATH)
 	if(GLOB.ru_names[name])
 		return RU_NAMES_LIST(
 			"[prefix][name][suffix]",
@@ -23,6 +20,11 @@ GLOBAL_LIST_EMPTY(ru_names)
 			"[prefix][GLOB.ru_names[name]["prepositional"]][suffix]")
 
 /atom/Initialize(mapload, ...)
+	. = ..()
+	article = null
+	ru_names_rename(ru_names_toml(name))
+
+/turf/Initialize(mapload)
 	. = ..()
 	article = null
 	ru_names_rename(ru_names_toml(name))
@@ -56,7 +58,7 @@ GLOBAL_LIST_EMPTY(ru_names)
 /// Used for getting initial values, such as for recipies where resulted atom is not yet created.
 /proc/declent_ru_initial(atom/target, declent, override_backup)
 	if(!istype(target) && !ispath(target, /atom))
-		CRASH("declent_ru_initial got target that is not an atom or atom's path!")
+		return override_backup
 	var/list/declented_list = ru_names_toml(target::name)
 	if(length(declented_list) && declented_list[declent])
 		return declented_list[declent]
