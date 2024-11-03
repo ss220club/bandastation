@@ -36,7 +36,7 @@
 		left_points -= total_cost
 		for(var/path in .)
 			var/datum/loadout_item/item = GLOB.all_loadout_datums[path]
-			if(donator_level <= item.donator_level)
+			if(donator_level < item.donator_level)
 				//Убираем предметы, на которые не хватает донат-уровня
 				. -= path
 				removed_items += item.name
