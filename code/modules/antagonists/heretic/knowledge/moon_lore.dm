@@ -242,7 +242,7 @@
 			to_chat(crewmate, span_boldwarning("Вы чувствуете, что защитились от чего-то." ))
 			continue
 		if(amount_of_lunatics > max_lunatics)
-			to_chat(crewmate, span_boldwarning("You feel uneasy, as if for a brief moment something was gazing at you."))
+			to_chat(crewmate, span_boldwarning("Вы чувствуете неспокойство, как будто на мгновение что-то смотрело на вас."))
 			continue
 		var/datum/antagonist/lunatic/lunatic = crewmate.mind.add_antag_datum(/datum/antagonist/lunatic)
 		lunatic.set_master(user.mind, user)
