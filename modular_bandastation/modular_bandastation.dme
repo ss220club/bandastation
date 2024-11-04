@@ -35,6 +35,5 @@
 #include "world_topics/_world_topics.dme"
 #include "preferences/_preferences.dme"
 #include "jukebox/_jukebox.dme"
-#include "objects/_objects.dme"
-
 #include "cryosleep/_cryosleep.dme"
+#include "objects/_objects.dme"
