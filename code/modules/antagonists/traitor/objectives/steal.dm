@@ -274,7 +274,7 @@ GLOBAL_DATUM_INIT(steal_item_handler, /datum/objective_item_handler, new())
 
 	if(IS_TRAITOR(user))
 		if(target_object_type)
-			. += span_notice("Это устройство необходимо разместить, <b>нажав на [declent_ru_initial(target_object_type, ACCUSATIVE)]</b> с ним.")
+			. += span_notice("Это устройство необходимо разместить, <b>нажав на [declent_ru_initial(target_object_type::name, ACCUSATIVE)]</b> с ним.")
 		. += span_notice("Помните, что вы можете оставить на устройстве отпечатки пальцев или волокна. Используйте <b>мыло</b> или что-то подобное, чтобы очистить его, чтобы быть в безопасности!")
 
 /obj/item/traitor_bug/interact_with_atom(atom/movable/target, mob/living/user, list/modifiers)
