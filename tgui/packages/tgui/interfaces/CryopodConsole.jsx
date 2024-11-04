@@ -7,16 +7,16 @@ export const CryopodConsole = (props) => {
   const { data } = useBackend();
   const { account_name } = data;
 
-  const welcomeTitle = `Hello, ${account_name || '[REDACTED]'}!`;
+  const welcomeTitle = `Добро пожаловать, ${account_name || '[УДАЛЕНО]'}!`;
 
   return (
-    <Window title="Cryopod Console" width={400} height={480}>
+    <Window title="Консоль криогенного наблюдения" width={400} height={480}>
       <Window.Content>
         <Stack vertical fill>
           <Stack.Item>
             <Section title={welcomeTitle}>
-              This automated cryogenic freezing unit will safely store your
-              corporeal form until your next assignment.
+              Эта автоматизированная установка для криогенной заморозки надежно
+              сохранит вашу материальную оболочку до следующего назначения.
             </Section>
           </Stack.Item>
           <Stack.Item grow>
@@ -46,7 +46,7 @@ const CrewList = (props) => {
           ))}
         </LabeledList>
       </Section>
-    )) || <NoticeBox>No stored crew!</NoticeBox>
+    )) || <NoticeBox>Нет экипажа на хранении!</NoticeBox>
   );
 };
 
@@ -54,7 +54,7 @@ const ItemList = (props) => {
   const { act, data } = useBackend();
   const { item_ref_list, item_ref_name, item_retrieval_allowed } = data;
   if (!item_retrieval_allowed) {
-    return <NoticeBox>You are not authorized for item management.</NoticeBox>;
+    return <NoticeBox>Вы не авторизованы для менеджмента предметов.</NoticeBox>;
   }
   return (
     (item_ref_list.length && (
@@ -64,7 +64,7 @@ const ItemList = (props) => {
             <LabeledList.Item key={item} label={item_ref_name[item]}>
               <Button
                 icon="exclamation-circle"
-                content="Retrieve"
+                content="Извлечь"
                 color="bad"
                 onClick={() => act('item_get', { item_get: item })}
               />
@@ -72,6 +72,6 @@ const ItemList = (props) => {
           ))}
         </LabeledList>
       </Section>
-    )) || <NoticeBox>No stored items!</NoticeBox>
+    )) || <NoticeBox>Нет предметов на хранении!</NoticeBox>
   );
 };
