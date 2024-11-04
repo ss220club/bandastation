@@ -504,7 +504,7 @@
 		var/atom_id = atoms.Find(atom)
 
 		data["atom_data"] += list(list(
-			"name" = declent_ru_initial(atom, NOMINATIVE),
+			"name" = declent_ru_initial(atom::name, NOMINATIVE),
 			"is_reagent" = ispath(atom, /datum/reagent/),
 		))
 
