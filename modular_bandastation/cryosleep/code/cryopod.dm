@@ -32,7 +32,6 @@ GLOBAL_LIST_EMPTY(valid_cryopods)
 
 /obj/machinery/computer/cryopod
 	name = "cryogenic oversight console"
-	RU_NAMES_LIST_INIT("cryogenic oversight console", "консоль криогенного наблюдения", "консоли криогенного наблюдения", "консоли криогенного наблюдения", "консоль криогенного наблюдения", "консолью криогенного наблюдения", "консоли криогенного наблюдения")
 	desc = "An interface between crew and the cryogenic storage oversight systems."
 	icon = 'modular_bandastation/cryosleep/icons/cryogenics.dmi'
 	icon_state = "cellconsole_1"
@@ -155,7 +154,6 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod, 32)
 // Cryopods themselves.
 /obj/machinery/cryopod
 	name = "cryogenic freezer"
-	RU_NAMES_LIST_INIT("cryogenic freezer", "криогенная морозильная камера", "криогенной морозильной камеры", "криогенной морозильной камере", "криогенную морозильную камеру", "криогенной морозильной камерой", "криогенной морозильной камере")
 	desc = "Suited for Cyborgs and Humanoids, the pod is a safe place for personnel affected by the Space Sleep Disorder to get some rest."
 	icon = 'modular_bandastation/cryosleep/icons/cryogenics.dmi'
 	icon_state = "cryopod-open"
