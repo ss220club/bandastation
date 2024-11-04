@@ -197,7 +197,7 @@
 	frequency_number = frequency_number + (rand(-5,5)/100); //Adds a bit of randomness in the frequency to not sound exactly the same.
 	//The volume of the sound takes the minimum between the distance thrown or the max range an item, but no more than 50. Short throws are quieter. A fast throwing speed also makes the noise sharper.
 	playsound(src, throwsound, min(8*min(get_dist(loc,target),thrown_thing.throw_range), 50), vary = TRUE, extrarange = -1, frequency = frequency_number)
-	visible_message(span_danger("[capitalize(declent_ru(NOMINATIVE))] [ru_attack_verb(plural_s(verb_text))] [thrown_thing.declent_ru(ACCUSATIVE)][power_throw_text]"), \
+	visible_message(span_danger("[capitalize(declent_ru(NOMINATIVE))] [ru_attack_verb("[verb_text][plural_s(verb_text)]")] [thrown_thing.declent_ru(ACCUSATIVE)][power_throw_text]"), \
 					span_danger("Вы [ru_attack_verb(verb_text)] [thrown_thing.declent_ru(ACCUSATIVE)][power_throw_text]"))
 	log_message("has thrown [thrown_thing] [power_throw_text]", LOG_ATTACK)
 	var/extra_throw_range = HAS_TRAIT(src, TRAIT_THROWINGARM) ? 2 : 0
