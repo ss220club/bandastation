@@ -118,7 +118,7 @@ export const sound_radio_noise: Feature<number> = {
 
 export const sound_ai_vox: FeatureToggle = {
   name: 'Включить звук VOX ИИ',
-  category: 'SOUND',
+  category: 'ЗВУК',
   description:
     'Слышать краткие озвученные сообщения от ИИ (также известные, как "VOX").',
   component: CheckboxInput,
