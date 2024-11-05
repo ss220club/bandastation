@@ -7,11 +7,11 @@ import {
 } from '../base';
 import { FeatureDropdownInput } from '../dropdowns';
 
-export const sound_ambience: FeatureToggle = {
-  name: 'Включить звук окружения',
-  category: 'ЗВУК',
-  description: `Различные звуки оружения, играющие по ситуации.`,
-  component: CheckboxInput,
+export const sound_ambience_volume: Feature<number> = {
+  name: 'Ambience volume',
+  category: 'SOUND',
+  description: `Ambience refers to the more noticeable ambient sounds that play on occasion.`,
+  component: FeatureSliderInput,
 };
 
 export const sound_breathing: FeatureToggle = {
@@ -73,10 +73,10 @@ export const sound_jukebox: FeatureToggle = {
   component: CheckboxInput,
 };
 
-export const sound_lobby: FeatureToggle = {
-  name: 'Включить звук лобби-музыки',
-  category: 'ЗВУК',
-  component: CheckboxInput,
+export const sound_lobby_volume: Feature<number> = {
+  name: 'Lobby music volume',
+  category: 'SOUND',
+  component: FeatureSliderInput,
 };
 
 export const sound_midi: FeatureToggle = {
@@ -86,11 +86,11 @@ export const sound_midi: FeatureToggle = {
   component: CheckboxInput,
 };
 
-export const sound_ship_ambience: FeatureToggle = {
-  name: 'Включить звук корабля',
-  category: 'ЗВУК',
-  description: `Звук окружения корабля (низкий гул).`,
-  component: CheckboxInput,
+export const sound_ship_ambience_volume: Feature<number> = {
+  name: 'Ship ambience volume',
+  category: 'SOUND',
+  description: `Ship ambience refers to the low ambient buzz that plays on loop.`,
+  component: FeatureSliderInput,
 };
 
 export const sound_elevator: FeatureToggle = {
@@ -109,12 +109,11 @@ export const sound_achievement: FeatureChoiced = {
   component: FeatureDropdownInput,
 };
 
-export const sound_radio_noise: FeatureToggle = {
-  name: 'Enable radio noise',
+export const sound_radio_noise: Feature<number> = {
+  name: 'Radio noise volume',
   category: 'SOUND',
-  description:
-    'When enabled, hear sounds of talking and hearing radio chatter.',
-  component: CheckboxInput,
+  description: `Volume of talking and hearing radio chatter sounds.`,
+  component: FeatureSliderInput,
 };
 
 export const sound_ai_vox: FeatureToggle = {
