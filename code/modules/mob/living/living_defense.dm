@@ -105,7 +105,7 @@
 	var/hit_limb_zone = check_hit_limb_zone_name(def_zone)
 	var/organ_hit_text = ""
 	if (hit_limb_zone)
-		organ_hit_text = "в [parse_zone_with_bodypart(hit_limb_zone, declent = ACCUSATIVE)]"
+		organ_hit_text = " в [parse_zone_with_bodypart(hit_limb_zone, declent = ACCUSATIVE)]"
 
 	switch (proj.suppressed)
 		if (SUPPRESSED_QUIET)
