@@ -8,9 +8,9 @@ import {
 import { FeatureDropdownInput } from '../dropdowns';
 
 export const sound_ambience_volume: Feature<number> = {
-  name: 'Ambience volume',
-  category: 'SOUND',
-  description: `Ambience refers to the more noticeable ambient sounds that play on occasion.`,
+  name: 'Громкость окружения',
+  category: 'ЗВУК',
+  description: `Различные звуки оружения, играющие по ситуации.`,
   component: FeatureSliderInput,
 };
 
@@ -74,8 +74,8 @@ export const sound_jukebox: FeatureToggle = {
 };
 
 export const sound_lobby_volume: Feature<number> = {
-  name: 'Lobby music volume',
-  category: 'SOUND',
+  name: 'Громкость музыки в лобби',
+  category: 'ЗВУК',
   component: FeatureSliderInput,
 };
 
@@ -87,9 +87,9 @@ export const sound_midi: FeatureToggle = {
 };
 
 export const sound_ship_ambience_volume: Feature<number> = {
-  name: 'Ship ambience volume',
-  category: 'SOUND',
-  description: `Ship ambience refers to the low ambient buzz that plays on loop.`,
+  name: 'Громкость звуков корабля',
+  category: 'ЗВУК',
+  description: `Зацикленный звук окружения корабля (низкий гул).`,
   component: FeatureSliderInput,
 };
 
@@ -110,16 +110,16 @@ export const sound_achievement: FeatureChoiced = {
 };
 
 export const sound_radio_noise: Feature<number> = {
-  name: 'Radio noise volume',
-  category: 'SOUND',
-  description: `Volume of talking and hearing radio chatter sounds.`,
+  name: 'Громкость оповещения рации',
+  category: 'ЗВУК',
+  description: `Громкость оповещений, когда в рацию кто-то говорит.`,
   component: FeatureSliderInput,
 };
 
 export const sound_ai_vox: FeatureToggle = {
-  name: 'Enable AI VOX announcements',
-  category: 'SOUND',
+  name: 'Включить звук VOX ИИ',
+  category: 'ЗВУК',
   description:
-    'When enabled, hear vocal AI announcements (also known as "VOX").',
+    'Слышать краткие озвученные сообщения от ИИ (также известные, как "VOX").',
   component: CheckboxInput,
 };
