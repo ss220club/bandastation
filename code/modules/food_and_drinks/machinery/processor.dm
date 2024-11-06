@@ -227,7 +227,7 @@
 	if (!recipe)
 		return
 
-	visible_message(span_notice("[capitalize(picked_slime.declent_ru(NOMINATIVE))] засасывается в [declent_ru(ACCUSATIVE)]]."))
+	visible_message(span_notice("[capitalize(picked_slime.declent_ru(NOMINATIVE))] засасывается в [declent_ru(ACCUSATIVE)]."))
 	LAZYADD(processor_contents, picked_slime)
 	picked_slime.forceMove(src)
 

@@ -220,7 +220,7 @@ GLOBAL_LIST_INIT(oilfry_blacklisted_items, typecacheof(list(
 
 /obj/machinery/deepfryer/attack_hand(mob/living/user, list/modifiers)
 	if(frying)
-		to_chat(user, span_notice("Вы вытаскиваете [frying.declent_ru(ACCUSATIVE)] из [declent_ru(GENITIVE)]]."))
+		to_chat(user, span_notice("Вы вытаскиваете [frying.declent_ru(ACCUSATIVE)] из [declent_ru(GENITIVE)]."))
 		frying.forceMove(drop_location())
 		if(Adjacent(user) && !issilicon(user))
 			user.put_in_hands(frying)
