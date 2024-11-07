@@ -77,7 +77,7 @@
 			user,
 			target,
 			span_notice("Вы успешно вырезаете самую поврежденную долю у [human_target.declent_ru(GENITIVE)]."),
-			span_notice("Успешно вырезает часть легких у [human_target.declent_ru(GENITIVE)]."),
+			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно вырезает часть легких у [human_target.declent_ru(GENITIVE)]."),
 			"",
 		)
 		display_pain(target, "Грудь адски болит, но дышать становится немного легче.")

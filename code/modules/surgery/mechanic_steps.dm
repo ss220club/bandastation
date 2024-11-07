@@ -130,7 +130,7 @@
 
 //open hatch
 /datum/surgery_step/open_hatch
-	name = "открытойте люк (рука)"
+	name = "откройте люк (рука)"
 	accept_hand = TRUE
 	time = 10
 	preop_sound = 'sound/items/tools/ratchet.ogg'

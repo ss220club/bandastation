@@ -86,7 +86,7 @@
 		user.visible_message(span_notice("[user.declent_ru(NOMINATIVE)] нажимает на кнопку на [declent_ru(PREPOSITIONAL)] и тот врезается в тело [target.declent_ru(GENITIVE)]."), span_notice("Вы нажимаете на кнопку на [declent_ru(PREPOSITIONAL)] и тот врезается в тело [target.declent_ru(GENITIVE)]."))
 	else
 		user.visible_message(
-			span_notice("[user.declent_ru(NOMINATIVE)] нажимает на кнопку на [declent_ru(PREPOSITIONAL)] и тот врезается в [user.ru_p_their()] тело."),
+			span_notice("[user.declent_ru(NOMINATIVE)] нажимает на кнопку на [declent_ru(PREPOSITIONAL)] и тот врезается в [user.ru_p_theirs()] тело."),
 			span_notice("Вы нажимаете на кнопку на [declent_ru(PREPOSITIONAL)] и тот врезается в ваше тело."),
 		)
 

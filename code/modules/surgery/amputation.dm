@@ -57,7 +57,7 @@
 	surgery_effects_mood = TRUE
 
 /datum/surgery_step/sever_limb/mechanic
-	name = "отсоедините конечность (ключ или монтировка)"
+	name = "отсоедините конечность (ключ или лом)"
 	implements = list(
 		/obj/item/shovel/giant_wrench = 300,
 		TOOL_WRENCH = 100,

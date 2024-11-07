@@ -25,7 +25,7 @@
 		return SURGERY_STEP_FAIL
 
 	if(count >= teeth_receptangle.teeth_count)
-		to_chat(user, span_notice("Зубы [capitalize(user.declent_ru(GENITIVE))] уже заменены на таблетки!"))
+		to_chat(user, span_notice("Зубы [user.declent_ru(GENITIVE)] уже заменены на таблетки!"))
 		return SURGERY_STEP_FAIL
 
 /datum/surgery_step/insert_pill
@@ -78,7 +78,7 @@
 /datum/action/item_action/activate_pill/Trigger(trigger_flags)
 	if(!..())
 		return FALSE
-	owner.balloon_alert_to_viewers("[owner] прикусывает зубы!", "Вы прикусываете зубами.")
+	owner.balloon_alert_to_viewers("[owner.declent_ru(NOMINATIVE)] прикусывает зубы!", "Вы прикусываете зубами.")
 	if(!do_after(owner, owner.stat * (2.5 SECONDS), owner,  IGNORE_USER_LOC_CHANGE | IGNORE_INCAPACITATED))
 		return FALSE
 	var/obj/item/item_target = target
@@ -90,7 +90,7 @@
 	return TRUE
 
 /datum/surgery_step/search_teeth
-	name = "осмотр зубов (рука)"
+	name = "осмотрите зубы (рука)"
 	accept_hand = TRUE
 	time = 2 SECONDS
 	repeatable = TRUE
@@ -99,11 +99,11 @@
 	display_results(
 		user,
 		target,
-		span_notice("Вы начинаете осматривать рот [target.declent_ru(ACCUSATIVE)] на имплантированные зубы..."),
+		span_notice("Вы начинаете осматривать рот [target.declent_ru(ACCUSATIVE)] на подходящие для имплантации зубы..."),
 		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает вглядываться в рот [target.declent_ru(ACCUSATIVE)]"),
-		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает проверять зубы [target.declent_ru(ACCUSATIVE)]."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает осматривать зубы [target.declent_ru(ACCUSATIVE)]."),
 	)
-	display_pain(target, "Вы чувствуете как рука касается ваших зубов.")
+	display_pain(target, "Вы чувствуете, как рука касается ваших зубов.")
 
 /datum/surgery_step/search_teeth/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
 	display_results(
@@ -111,7 +111,7 @@
 		target,
 		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] отмечает зуб во рту [target.declent_ru(ACCUSATIVE)]."),
 		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] отмечает зуб во рту [target.declent_ru(ACCUSATIVE)]."),
-		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] указывает на зуб во рту [target.declent_ru(ACCUSATIVE)]."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] касается зуба во рту [target.declent_ru(ACCUSATIVE)]."),
 	)
 	surgery.status = MARK_TOOTH
 	return ..()

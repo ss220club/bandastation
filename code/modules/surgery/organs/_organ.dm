@@ -65,7 +65,7 @@
 	/// Status Effects that are given to the holder of the organ.
 	var/list/organ_effects
 	/// String displayed when the organ has decayed.
-	var/failing_desc = "пребывает под влиянием разложения слишком долго, что уже принял болезнный свет. Он уже не заработает, если его не лечить."
+	var/failing_desc = "пребывает под влиянием разложения слишком долго, что уже принял болезненный цвет. Орган уже не заработает, если его не лечить."
 
 // Players can look at prefs before atoms SS init, and without this
 // they would not be able to see external organs, such as moth wings.
@@ -152,17 +152,17 @@ INITIALIZE_IMMEDIATE(/obj/item/organ)
 /obj/item/organ/examine(mob/user)
 	. = ..()
 
-	. += span_notice("Должно вставляться в [parse_zone(zone).declent_ru(INSTRUMENTAL)].")
+	. += span_notice("Должно вставляться в [ru_parse_zone(zone, declent = INSTRUMENTAL)].")
 
 	if(organ_flags & ORGAN_FAILING)
-		. += span_warning("[declent_ru(NOMINATIVE)] [failing_desc]")
+		. += span_warning("[capitalize(declent_ru(NOMINATIVE))] [failing_desc]")
 		return
 
 	if(damage > high_threshold)
 		if(IS_ROBOTIC_ORGAN(src))
-			. += span_warning("[declent_ru(NOMINATIVE)] выглядит поврежденным.")
+			. += span_warning("[capitalize(declent_ru(NOMINATIVE))] выглядит поврежденным.")
 			return
-		. += span_warning("[declent_ru(NOMINATIVE)] начинает выглядеть бесцвентным.")
+		. += span_warning("[capitalize(declent_ru(NOMINATIVE))] начинает выглядеть бесцветным.")
 
 ///Used as callbacks by object pooling
 /obj/item/organ/proc/exit_wardrobe()

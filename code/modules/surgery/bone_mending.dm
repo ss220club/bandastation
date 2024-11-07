@@ -176,7 +176,7 @@
 			user,
 			target,
 			span_notice("Вы успешно устраняете перелом в [target.parse_zone_with_bodypart(target_zone, declent = PREPOSITIONAL)] у [target.declent_ru(GENITIVE)]."),
-			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно устраняет перелом в [target.parse_zone_with_bodypart(target_zone, declent = PREPOSITIONAL)] у [target.declent_ru(GENITIVE)] при помощи [tool]!"),
+			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно устраняет перелом в [target.parse_zone_with_bodypart(target_zone, declent = PREPOSITIONAL)] у [target.declent_ru(GENITIVE)] при помощи [tool.declent_ru(GENITIVE)]!"),
 			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно устраняет перелом в [target.parse_zone_with_bodypart(target_zone, declent = PREPOSITIONAL)] у [target.declent_ru(GENITIVE)]!"),
 		)
 		log_combat(user, target, "repaired a compound fracture in", addition="COMBAT_MODE: [uppertext(user.combat_mode)]")

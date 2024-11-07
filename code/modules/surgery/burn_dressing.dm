@@ -106,7 +106,7 @@
 		if(burn_wound.infestation <= 0)
 			repeatable = FALSE
 	else
-		to_chat(user, span_warning("У [target.declent_ru(GENITIVE)] нет зараженной плоти!"))
+		to_chat(user, span_warning("У [target.declent_ru(GENITIVE)] нет зараженной плоти на [target.ru_p_theirs()] [target.parse_zone_with_bodypart(target_zone, declent = PREPOSITIONAL)]!"))
 	return ..()
 
 /datum/surgery_step/debride/failure(mob/user, mob/living/target, target_zone, obj/item/tool, datum/surgery/surgery, fail_prob = 0)
@@ -171,7 +171,7 @@
 		var/obj/item/bodypart/the_part = target.get_bodypart(target_zone)
 		the_part.apply_gauze(tool)
 	else
-		to_chat(user, span_warning("У [target.declent_ru(GENITIVE)] нет ожогов!"))
+		to_chat(user, span_warning("У [target.declent_ru(GENITIVE)] нет ожогов на [target.ru_p_theirs()] [target.parse_zone_with_bodypart(target_zone, declent = PREPOSITIONAL)]!"))
 	return ..()
 
 /datum/surgery_step/dress/failure(mob/user, mob/living/target, target_zone, obj/item/tool, datum/surgery/surgery, fail_prob = 0)

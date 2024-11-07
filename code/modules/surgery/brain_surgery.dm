@@ -24,7 +24,7 @@
 	)
 
 /datum/surgery_step/fix_brain
-	name = "Проведите коррекцию мозговой функции (гемостат)"
+	name = "проведите коррекцию мозговой функции (гемостат)"
 	implements = list(
 		TOOL_HEMOSTAT = 85,
 		TOOL_SCREWDRIVER = 35,
@@ -36,7 +36,7 @@
 	failure_sound = 'sound/items/handling/surgery/organ2.ogg'
 
 /datum/surgery_step/fix_brain/mechanic
-	name = "Проведите нейрологическую отладку (гемостат или мультитул)"
+	name = "проведите нейрологическую отладку (гемостат или мультитул)"
 	implements = list(
 		TOOL_HEMOSTAT = 85,
 		TOOL_MULTITOOL = 85,
@@ -54,7 +54,7 @@
 		target,
 		span_notice("Вы начинаете восстанавливать мозг у [target.declent_ru(GENITIVE)]..."),
 		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает восстанавливать мозг у [target.declent_ru(GENITIVE)]."),
-		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает восстанавливать мозг у [target.declent_ru(GENITIVE)]."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает проводить операцию на мозге у [target.declent_ru(GENITIVE)]."),
 	)
 	display_pain(target, "Ваша голова раскалывается от невыразимой боли!")
 
@@ -64,7 +64,7 @@
 		target,
 		span_notice("Вы успешно восстанавливаете функции мозга у [target.declent_ru(GENITIVE)]."),
 		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно восстанавливает функции мозга у [target.declent_ru(GENITIVE)]!"),
-		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно восстанавливает функции мозга у [target.declent_ru(GENITIVE)]."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] завершает операцию на мозге у [target.declent_ru(GENITIVE)]."),
 	)
 	display_pain(target, "Боль в голове утихает, мыслить становится немного легче!")
 	if(target.mind?.has_antag_datum(/datum/antagonist/brainwashed))

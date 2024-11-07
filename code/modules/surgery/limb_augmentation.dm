@@ -74,9 +74,9 @@
 				display_results(
 					user,
 					target,
-					span_warning("Вы проваливаете аугментацию [target.parse_zone_with_bodypart(target_zone, declent = ACCUSATIVE)] у [target.declent_ru(GENITIVE)]! Тело отвергает [tool.declent_ru(ACCUSATIVE)]!"),
-					span_warning("[capitalize(user.declent_ru(NOMINATIVE))] проваливает аугментацию [target.parse_zone_with_bodypart(target_zone, declent = ACCUSATIVE)] у [target.declent_ru(GENITIVE)]!"),
-					span_warning("[capitalize(user.declent_ru(NOMINATIVE))] проваливает аугментацию [target.parse_zone_with_bodypart(target_zone, declent = ACCUSATIVE)] у [target.declent_ru(GENITIVE)]!"),
+					span_warning("Вам не удается аугментировать [target.parse_zone_with_bodypart(target_zone, declent = ACCUSATIVE)] у [target.declent_ru(GENITIVE)]! Тело отвергает [tool.declent_ru(ACCUSATIVE)]!"),
+					span_warning("[capitalize(user.declent_ru(NOMINATIVE))] не удается аугментировать [target.parse_zone_with_bodypart(target_zone, declent = ACCUSATIVE)] у [target.declent_ru(GENITIVE)]!"),
+					span_warning("[capitalize(user.declent_ru(NOMINATIVE))] не удается аугментировать [target.parse_zone_with_bodypart(target_zone, declent = ACCUSATIVE)] у [target.declent_ru(GENITIVE)]!"),
 				)
 				tool.forceMove(target.loc)
 				return
@@ -92,5 +92,5 @@
 		display_pain(target, "[capitalize(target.parse_zone_with_bodypart(target_zone))] у вас наполняется синтетическими ощущениями!", mechanical_surgery = TRUE)
 		log_combat(user, target, "augmented", addition="by giving him new [target.parse_zone_with_bodypart(target_zone)] COMBAT MODE: [uppertext(user.combat_mode)]")
 	else
-		to_chat(user, span_warning("У [target.declent_ru(GENITIVE)] [target.parse_zone_with_bodypart(target_zone, declent = GENITIVE)] не из органики!"))
+		to_chat(user, span_warning("У [target.declent_ru(GENITIVE)] [target.parse_zone_with_bodypart(target_zone, declent = ACCUSATIVE)] не из органики!"))
 	return ..()
