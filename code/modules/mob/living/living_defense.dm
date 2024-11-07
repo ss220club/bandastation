@@ -559,9 +559,15 @@
 		adjustFireLoss(shock_damage)
 	else
 		adjustStaminaLoss(shock_damage)
+	//BANDASTATION EDIT START - electrocute message
+	var/shock_name = source
+	if(isatom(source))
+		var/atom/source_as_atom = source
+		shock_name = capitalize(source_as_atom.declent_ru(NOMINATIVE))
+	//BANDASTATION EDIT END
 	if(!(flags & SHOCK_SUPPRESS_MESSAGE))
 		visible_message(
-			span_danger("[capitalize(source)] ударяет током [capitalize(declent_ru(ACCUSATIVE))]!"), \
+			span_danger("[shock_name] ударяет током [capitalize(declent_ru(ACCUSATIVE))]!"), \
 			span_userdanger("Вы чувствуете мощный разряд, проходящий через всё ваше тело!"), \
 			span_hear("Вы слышите сильный электрический треск.") \
 		)
