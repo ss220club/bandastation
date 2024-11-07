@@ -8,7 +8,7 @@
 
 /datum/surgery/advanced/brainwashing_sleeper
 	name = "Sleeper Agent Surgery"
-	desc = "Хирургическая процедура, которая имплантирует протокол сна в мозг пациента, что делает его абсолютным приоритетом. Его можно очистить с помощью импланта защиты разума."
+	desc = "Хирургическая процедура, которая имплантирует протокол спящего агента в мозг пациента и делает его абсолютным приоритетом. Протокол можно очистить с помощью импланта защиты разума."
 	requires_bodypart_type = NONE
 	possible_locs = list(BODY_ZONE_HEAD)
 	steps = list(
@@ -22,7 +22,7 @@
 
 /datum/surgery/advanced/brainwashing_sleeper/mechanic
 	name = "Sleeper Agent Reprogramming"
-	desc = "Malware which directly implants the sleeper protocol directive into the robotic patient's operating system, making it their absolute priority. It can be cleared using a mindshield implant."
+	desc = "Программное обеспечение, которое напрямую имплантирует протокол спящего агента в операционную систему роботизированного пациента и делает его абсолютным приоритетом. Протокол можно очистить с помощью импланта защиты разума."
 	requires_bodypart_type = BODYTYPE_ROBOTIC
 	steps = list(
 		/datum/surgery_step/mechanic_open,
@@ -60,7 +60,7 @@
 	)
 
 /datum/surgery_step/brainwash/sleeper_agent/mechanic
-	name = "reprogram (multitool)"
+	name = "перепрограммирование (мультитул)"
 	implements = list(
 		TOOL_MULTITOOL = 85,
 		TOOL_HEMOSTAT = 50,
@@ -83,7 +83,7 @@
 
 /datum/surgery_step/brainwash/sleeper_agent/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
 	if(target.stat == DEAD)
-		to_chat(user, span_warning("Они должны быть живы, чтобы провести эту операцию!"))
+		to_chat(user, span_warning("Пациент должен быть жив, чтобы провести эту операцию!"))
 		return FALSE
 	. = ..()
 	if(!.)

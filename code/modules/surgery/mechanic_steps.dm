@@ -140,9 +140,9 @@
 	display_results(
 		user,
 		target,
-		span_notice("Вы начинаете открывать держатели люка в [target.parse_zone_with_bodypart(target_zone, declent = PREPOSITIONAL)] у [target.declent_ru(GENITIVE)]..."),
-		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает открывать держатели люка в [target.parse_zone_with_bodypart(target_zone, declent = PREPOSITIONAL)] у [target.declent_ru(GENITIVE)]."),
-		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает открывать держатели люка в [target.parse_zone_with_bodypart(target_zone, declent = PREPOSITIONAL)] у [target.declent_ru(GENITIVE)]."),
+		span_notice("Вы начинаете открывать люк в [target.parse_zone_with_bodypart(target_zone, declent = PREPOSITIONAL)] у [target.declent_ru(GENITIVE)]..."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает открывать люк в [target.parse_zone_with_bodypart(target_zone, declent = PREPOSITIONAL)] у [target.declent_ru(GENITIVE)]."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает открывать люк в [target.parse_zone_with_bodypart(target_zone, declent = PREPOSITIONAL)] у [target.declent_ru(GENITIVE)]."),
 	)
 	display_pain(target, "Вы получаете последние показания датчиков из [target.parse_zone_with_bodypart(target_zone, declent = GENITIVE)] у вас, когда открывается люк.", TRUE)
 

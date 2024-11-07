@@ -21,11 +21,11 @@
 		count++
 
 	if(teeth_receptangle.teeth_count == 0)
-		to_chat(user, span_notice("[capitalize(user.declent_ru(NOMINATIVE))] has no teeth, doofus!"))
+		to_chat(user, span_notice("[capitalize(user.declent_ru(NOMINATIVE))] не имеет зубов, дурашка!"))
 		return SURGERY_STEP_FAIL
 
 	if(count >= teeth_receptangle.teeth_count)
-		to_chat(user, span_notice("[capitalize(user.declent_ru(NOMINATIVE))]'s teeth have all been replaced with pills already!"))
+		to_chat(user, span_notice("Зубы [capitalize(user.declent_ru(GENITIVE))] уже заменены на таблетки!"))
 		return SURGERY_STEP_FAIL
 
 /datum/surgery_step/insert_pill
@@ -60,9 +60,9 @@
 	display_results(
 		user,
 		target,
-		span_notice("Вы вставили [tool.declent_ru(ACCUSATIVE)] в [target.parse_zone_with_bodypart(target_zone, declent = ACCUSATIVE)] у [target.declent_ru(GENITIVE)]."),
-		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] вставил [tool.declent_ru(ACCUSATIVE)] в [target.parse_zone_with_bodypart(target_zone, declent = ACCUSATIVE)] у [target.declent_ru(GENITIVE)]!"),
-		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] вставил что-то в [target.parse_zone_with_bodypart(target_zone, declent = ACCUSATIVE)] у [target.declent_ru(GENITIVE)]!"),
+		span_notice("Вы вставляете [tool.declent_ru(ACCUSATIVE)] в [target.parse_zone_with_bodypart(target_zone, declent = ACCUSATIVE)] у [target.declent_ru(GENITIVE)]."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] вставляет [tool.declent_ru(ACCUSATIVE)] в [target.parse_zone_with_bodypart(target_zone, declent = ACCUSATIVE)] у [target.declent_ru(GENITIVE)]!"),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] вставляет что-то в [target.parse_zone_with_bodypart(target_zone, declent = ACCUSATIVE)] у [target.declent_ru(GENITIVE)]!"),
 	)
 	return ..()
 
@@ -78,7 +78,7 @@
 /datum/action/item_action/activate_pill/Trigger(trigger_flags)
 	if(!..())
 		return FALSE
-	owner.balloon_alert_to_viewers("[owner] grinds their teeth!", "You grit your teeth.")
+	owner.balloon_alert_to_viewers("[owner] прикусывает зубы!", "Вы прикусываете зубами.")
 	if(!do_after(owner, owner.stat * (2.5 SECONDS), owner,  IGNORE_USER_LOC_CHANGE | IGNORE_INCAPACITATED))
 		return FALSE
 	var/obj/item/item_target = target
@@ -90,7 +90,7 @@
 	return TRUE
 
 /datum/surgery_step/search_teeth
-	name = "search teeth (hand)"
+	name = "осмотр зубов (рука)"
 	accept_hand = TRUE
 	time = 2 SECONDS
 	repeatable = TRUE
@@ -99,19 +99,19 @@
 	display_results(
 		user,
 		target,
-		span_notice("You begin looking in [target]'s mouth for implantable teeth..."),
-		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] begins to look in [target]'s mouth."),
-		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] begins to examine [target]'s teeth."),
+		span_notice("Вы начинаете осматривать рот [target.declent_ru(ACCUSATIVE)] на имплантированные зубы..."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает вглядываться в рот [target.declent_ru(ACCUSATIVE)]"),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает проверять зубы [target.declent_ru(ACCUSATIVE)]."),
 	)
-	display_pain(target, "You feel fingers poke around at your teeth.")
+	display_pain(target, "Вы чувствуете как рука касается ваших зубов.")
 
 /datum/surgery_step/search_teeth/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
 	display_results(
 		user,
 		target,
-		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] marks a tooth in [target]'s mouth."),
-		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] marks a tooth in [target]'s mouth."),
-		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] prods a tooth in [target]'s mouth."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] отмечает зуб во рту [target.declent_ru(ACCUSATIVE)]."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] отмечает зуб во рту [target.declent_ru(ACCUSATIVE)]."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] указывает на зуб во рту [target.declent_ru(ACCUSATIVE)]."),
 	)
 	surgery.status = MARK_TOOTH
 	return ..()

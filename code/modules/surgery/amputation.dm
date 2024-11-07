@@ -57,7 +57,7 @@
 	surgery_effects_mood = TRUE
 
 /datum/surgery_step/sever_limb/mechanic
-	name = "отсоединить конечность (ключ или монтировка)"
+	name = "отсоедините конечность (ключ или монтировка)"
 	implements = list(
 		/obj/item/shovel/giant_wrench = 300,
 		TOOL_WRENCH = 100,
@@ -70,7 +70,7 @@
 	preop_sound = 'sound/machines/airlock/doorclick.ogg'
 
 /datum/surgery_step/sever_limb/peg
-	name = "detach limb (circular saw)"
+	name = "отсоедините конечность (циркулярная пила)"
 	implements = list(
 		TOOL_SAW = 100,
 		/obj/item/shovel/serrated = 100,
@@ -97,11 +97,11 @@
 	display_results(
 		user,
 		target,
-		span_notice("Вы отрезали [target.parse_zone_with_bodypart(target_zone, declent = ACCUSATIVE)] у [target.declent_ru(GENITIVE)]."),
-		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] отрезал [target.parse_zone_with_bodypart(target_zone, declent = ACCUSATIVE)] у [target.declent_ru(GENITIVE)]!"),
-		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] отрезал [target.parse_zone_with_bodypart(target_zone, declent = ACCUSATIVE)] у [target.declent_ru(GENITIVE)]!"),
+		span_notice("Вы отрезаете [target.parse_zone_with_bodypart(target_zone, declent = ACCUSATIVE)] у [target.declent_ru(GENITIVE)]."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] отрезает [target.parse_zone_with_bodypart(target_zone, declent = ACCUSATIVE)] у [target.declent_ru(GENITIVE)]!"),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] отрезает [target.parse_zone_with_bodypart(target_zone, declent = ACCUSATIVE)] у [target.declent_ru(GENITIVE)]!"),
 	)
-	display_pain(target, "Вы больше не чувствуете [target.parse_zone_with_bodypart(target_zone, declent = ACCUSATIVE)] у себя!")
+	display_pain(target, "Вы больше не чувствуете свою [target.parse_zone_with_bodypart(target_zone, declent = ACCUSATIVE)]!")
 
 	if(HAS_MIND_TRAIT(user, TRAIT_MORBID) && ishuman(user))
 		var/mob/living/carbon/human/morbid_weirdo = user

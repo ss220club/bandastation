@@ -11,7 +11,7 @@
 	)
 
 /datum/surgery/brain_surgery/mechanic
-	name = "Wetware OS Diagnostics"
+	name = "Диагностика Wetware OS"
 	requires_bodypart_type = BODYTYPE_ROBOTIC
 	possible_locs = list(BODY_ZONE_HEAD)
 	steps = list(
@@ -36,7 +36,7 @@
 	failure_sound = 'sound/items/handling/surgery/organ2.ogg'
 
 /datum/surgery_step/fix_brain/mechanic
-	name = "perform neural debugging (hemostat or multitool)"
+	name = "Проведите нейрологическую отладку (гемостат или мультитул)"
 	implements = list(
 		TOOL_HEMOSTAT = 85,
 		TOOL_MULTITOOL = 85,
@@ -54,7 +54,7 @@
 		target,
 		span_notice("Вы начинаете восстанавливать мозг у [target.declent_ru(GENITIVE)]..."),
 		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает восстанавливать мозг у [target.declent_ru(GENITIVE)]."),
-		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает проводить операцию на мозге у [target.declent_ru(GENITIVE)]."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает восстанавливать мозг у [target.declent_ru(GENITIVE)]."),
 	)
 	display_pain(target, "Ваша голова раскалывается от невыразимой боли!")
 
@@ -62,9 +62,9 @@
 	display_results(
 		user,
 		target,
-		span_notice("Вы успешно восстановили функции мозга у [target.declent_ru(GENITIVE)]."),
-		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно восстановили функции мозга у [target.declent_ru(GENITIVE)]!"),
-		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] завершает операцию на мозге у [target.declent_ru(GENITIVE)]."),
+		span_notice("Вы успешно восстанавливаете функции мозга у [target.declent_ru(GENITIVE)]."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно восстанавливает функции мозга у [target.declent_ru(GENITIVE)]!"),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно восстанавливает функции мозга у [target.declent_ru(GENITIVE)]."),
 	)
 	display_pain(target, "Боль в голове утихает, мыслить становится немного легче!")
 	if(target.mind?.has_antag_datum(/datum/antagonist/brainwashed))

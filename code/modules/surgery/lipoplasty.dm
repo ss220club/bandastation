@@ -10,7 +10,7 @@
 	)
 
 /datum/surgery/lipoplasty/mechanic
-	name = "Nutrient Reserve Expulsion"
+	name = "Удаление резерва нутриментов"
 	requires_bodypart_type = BODYTYPE_ROBOTIC
 	steps = list(
 		/datum/surgery_step/mechanic_open,

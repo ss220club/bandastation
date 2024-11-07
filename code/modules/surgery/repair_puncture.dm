@@ -138,9 +138,9 @@
 	display_results(
 		user,
 		target,
-		span_notice("Вы успешно восстановили некоторые из поврежденных кровеносных сосудов в [target.parse_zone_with_bodypart(target_zone, declent = PREPOSITIONAL)] у [target.declent_ru(GENITIVE)] при помощи [tool.declent_ru(GENITIVE)]."),
-		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно восстановил некоторые из поврежденных кровеносных сосудов в [target.parse_zone_with_bodypart(target_zone, declent = PREPOSITIONAL)] у [target.declent_ru(GENITIVE)] при помощи [tool.declent_ru(GENITIVE)]!"),
-		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно восстановил некоторые из поврежденных кровеносных сосудов в [target.parse_zone_with_bodypart(target_zone, declent = PREPOSITIONAL)] у [target.declent_ru(GENITIVE)]!"),
+		span_notice("Вы успешно восстанавливаете некоторые из поврежденных кровеносных сосудов в [target.parse_zone_with_bodypart(target_zone, declent = PREPOSITIONAL)] у [target.declent_ru(GENITIVE)] при помощи [tool.declent_ru(GENITIVE)]."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно восстанавливает некоторые из поврежденных кровеносных сосудов в [target.parse_zone_with_bodypart(target_zone, declent = PREPOSITIONAL)] у [target.declent_ru(GENITIVE)] при помощи [tool.declent_ru(GENITIVE)]!"),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно восстанавливает некоторые из поврежденных кровеносных сосудов в [target.parse_zone_with_bodypart(target_zone, declent = PREPOSITIONAL)] у [target.declent_ru(GENITIVE)]!"),
 	)
 	log_combat(user, target, "dressed burns in", addition="COMBAT MODE: [uppertext(user.combat_mode)]")
 	pierce_wound.adjust_blood_flow(-0.5)
@@ -148,7 +148,7 @@
 		surgery.status = REALIGN_INNARDS
 		to_chat(user, span_notice("<i>Кажется, что кровеносные сосуды все еще смещены...</i>"))
 	else
-		to_chat(user, span_green("Вы восстановили все внутренние повреждения в [target.parse_zone_with_bodypart(target_zone, declent = PREPOSITIONAL)] у [target.declent_ru(GENITIVE)]!"))
+		to_chat(user, span_green("Вы восстанавливаете все внутренние повреждения в [target.parse_zone_with_bodypart(target_zone, declent = PREPOSITIONAL)] у [target.declent_ru(GENITIVE)]!"))
 	return ..()
 
 #undef REALIGN_INNARDS

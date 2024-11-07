@@ -74,7 +74,7 @@
 	success_sound = 'sound/machines/card_slide.ogg'
 
 /datum/surgery_step/filter_blood/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	display_pain(target, "Ты чувствуешь ужасную боль в груди!")
+	display_pain(target, "Вы чувствуете ужасную боль в груди!")
 
 /datum/surgery_step/filter_blood/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
 	var/obj/item/blood_filter/bloodfilter = tool
@@ -99,8 +99,8 @@
 	display_results(
 		user,
 		target,
-		span_warning("Вы ошибаетесь, оставив ушиб на груди у [target.declent_ru(GENITIVE)]!"),
-		span_warning("[capitalize(user.declent_ru(NOMINATIVE))] ошибается, оставив ушиб на груди у [target.declent_ru(GENITIVE)]!"),
+		span_warning("Вы ошибаетесь, оставляя ушиб на груди у [target.declent_ru(GENITIVE)]!"),
+		span_warning("[capitalize(user.declent_ru(NOMINATIVE))] ошибается, оставляя ушиб на груди у [target.declent_ru(GENITIVE)]!"),
 		span_warning("[capitalize(user.declent_ru(NOMINATIVE))] ошибается!"),
 	)
 	target.adjustBruteLoss(5)

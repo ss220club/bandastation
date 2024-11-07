@@ -76,14 +76,14 @@
 		display_results(
 			user,
 			target,
-			span_notice("Вы успешно устранили перелом в [target.parse_zone_with_bodypart(target_zone, declent = PREPOSITIONAL)] у [target.declent_ru(GENITIVE)]."),
-			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно устранил перелом в [target.parse_zone_with_bodypart(target_zone, declent = PREPOSITIONAL)] у [target.declent_ru(GENITIVE)] при помощи [tool.declent_ru(GENITIVE)]!"),
-			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно устранил перелом в [target.parse_zone_with_bodypart(target_zone, declent = PREPOSITIONAL)] у [target.declent_ru(GENITIVE)]!"),
+			span_notice("Вы успешно устраняете перелом в [target.parse_zone_with_bodypart(target_zone, declent = PREPOSITIONAL)] у [target.declent_ru(GENITIVE)]."),
+			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно устраняет перелом в [target.parse_zone_with_bodypart(target_zone, declent = PREPOSITIONAL)] у [target.declent_ru(GENITIVE)] при помощи [tool.declent_ru(GENITIVE)]!"),
+			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно устраняет перелом в [target.parse_zone_with_bodypart(target_zone, declent = PREPOSITIONAL)] у [target.declent_ru(GENITIVE)]!"),
 		)
 		log_combat(user, target, "repaired a hairline fracture in", addition="COMBAT_MODE: [uppertext(user.combat_mode)]")
 		qdel(surgery.operated_wound)
 	else
-		to_chat(user, span_warning("[capitalize(target.declent_ru(NOMINATIVE))] не имеет здесь перелома!"))
+		to_chat(user, span_warning("[capitalize(target.declent_ru(NOMINATIVE))] не имеет перелома!"))
 	return ..()
 
 /datum/surgery_step/repair_bone_hairline/failure(mob/user, mob/living/target, target_zone, obj/item/tool, datum/surgery/surgery, fail_prob = 0)
@@ -125,13 +125,13 @@
 		display_results(
 			user,
 			target,
-			span_notice("Вы успешно восстановили кость в [target.parse_zone_with_bodypart(target_zone, declent = PREPOSITIONAL)] у [target.declent_ru(GENITIVE)]."),
-			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно восстановил кость в [target.parse_zone_with_bodypart(target_zone, declent = PREPOSITIONAL)] у [target.declent_ru(GENITIVE)] при помощи [tool.declent_ru(GENITIVE)]!"),
-			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно восстановил кость в [target.parse_zone_with_bodypart(target_zone, declent = PREPOSITIONAL)] у [target.declent_ru(GENITIVE)]!"),
+			span_notice("Вы успешно восстанавливаете кость в [target.parse_zone_with_bodypart(target_zone, declent = PREPOSITIONAL)] у [target.declent_ru(GENITIVE)]."),
+			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно восстанавливает кость в [target.parse_zone_with_bodypart(target_zone, declent = PREPOSITIONAL)] у [target.declent_ru(GENITIVE)] при помощи [tool.declent_ru(GENITIVE)]!"),
+			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно восстанавливает кость в [target.parse_zone_with_bodypart(target_zone, declent = PREPOSITIONAL)] у [target.declent_ru(GENITIVE)]!"),
 		)
 		log_combat(user, target, "reset a compound fracture in", addition="COMBAT MODE: [uppertext(user.combat_mode)]")
 	else
-		to_chat(user, span_warning("[capitalize(target.declent_ru(NOMINATIVE))] не имеет здесь открытого перелома!"))
+		to_chat(user, span_warning("[capitalize(target.declent_ru(NOMINATIVE))] не имеет открытого перелома!"))
 	return ..()
 
 /datum/surgery_step/reset_compound_fracture/failure(mob/user, mob/living/target, target_zone, obj/item/tool, datum/surgery/surgery, fail_prob = 0)
@@ -175,9 +175,9 @@
 		display_results(
 			user,
 			target,
-			span_notice("Вы успешно устранили перелом в [target.parse_zone_with_bodypart(target_zone, declent = PREPOSITIONAL)] у [target.declent_ru(GENITIVE)]."),
-			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно устранил перелом в [target.parse_zone_with_bodypart(target_zone, declent = PREPOSITIONAL)] у [target.declent_ru(GENITIVE)] при помощи [tool]!"),
-			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно устранил перелом в [target.parse_zone_with_bodypart(target_zone, declent = PREPOSITIONAL)] у [target.declent_ru(GENITIVE)]!"),
+			span_notice("Вы успешно устраняете перелом в [target.parse_zone_with_bodypart(target_zone, declent = PREPOSITIONAL)] у [target.declent_ru(GENITIVE)]."),
+			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно устраняет перелом в [target.parse_zone_with_bodypart(target_zone, declent = PREPOSITIONAL)] у [target.declent_ru(GENITIVE)] при помощи [tool]!"),
+			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно устраняет перелом в [target.parse_zone_with_bodypart(target_zone, declent = PREPOSITIONAL)] у [target.declent_ru(GENITIVE)]!"),
 		)
 		log_combat(user, target, "repaired a compound fracture in", addition="COMBAT_MODE: [uppertext(user.combat_mode)]")
 		qdel(surgery.operated_wound)
@@ -256,9 +256,9 @@
 	display_results(
 		user,
 		target,
-		span_notice("Вы успешно восстановили череп у [target.declent_ru(GENITIVE)]."),
-		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно восстановил череп у [target.declent_ru(GENITIVE)] при помощи [tool.declent_ru(GENITIVE)]."),
-		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно восстановил череп у [target.declent_ru(GENITIVE)].")
+		span_notice("Вы успешно восстанавливаете череп у [target.declent_ru(GENITIVE)]."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно восстанавливает череп у [target.declent_ru(GENITIVE)] при помощи [tool.declent_ru(GENITIVE)]."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно восстанавливает череп у [target.declent_ru(GENITIVE)].")
 	)
 
 	qdel(surgery.operated_wound)

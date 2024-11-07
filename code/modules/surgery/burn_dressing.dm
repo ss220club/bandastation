@@ -95,9 +95,9 @@
 		display_results(
 			user,
 			target,
-			span_notice("Вы успешно удалили часть зараженной плоти из [target.parse_zone_with_bodypart(target_zone, declent = GENITIVE)] у [target.declent_ru(GENITIVE)][progress_text]."),
-			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно удалил часть зараженной плоти из [target.parse_zone_with_bodypart(target_zone, declent = GENITIVE)] у [target.declent_ru(GENITIVE)] при помощи [tool.declent_ru(GENITIVE)]!"),
-			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно удалил часть зараженной плоти из [target.parse_zone_with_bodypart(target_zone, declent = GENITIVE)] у [target.declent_ru(GENITIVE)]!"),
+			span_notice("Вы успешно удаляете часть зараженной плоти из [target.parse_zone_with_bodypart(target_zone, declent = GENITIVE)] у [target.declent_ru(GENITIVE)][progress_text]."),
+			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно удаляет часть зараженной плоти из [target.parse_zone_with_bodypart(target_zone, declent = GENITIVE)] у [target.declent_ru(GENITIVE)] при помощи [tool.declent_ru(GENITIVE)]!"),
+			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно удаляет часть зараженной плоти из [target.parse_zone_with_bodypart(target_zone, declent = GENITIVE)] у [target.declent_ru(GENITIVE)]!"),
 		)
 		log_combat(user, target, "excised infected flesh in", addition="COMBAT MODE: [uppertext(user.combat_mode)]")
 		surgery.operated_bodypart.receive_damage(brute=3, wound_bonus=CANT_WOUND)
@@ -106,7 +106,7 @@
 		if(burn_wound.infestation <= 0)
 			repeatable = FALSE
 	else
-		to_chat(user, span_warning("У [target.declent_ru(GENITIVE)] нет зараженной плоти здесь!"))
+		to_chat(user, span_warning("У [target.declent_ru(GENITIVE)] нет зараженной плоти!"))
 	return ..()
 
 /datum/surgery_step/debride/failure(mob/user, mob/living/target, target_zone, obj/item/tool, datum/surgery/surgery, fail_prob = 0)
@@ -171,7 +171,7 @@
 		var/obj/item/bodypart/the_part = target.get_bodypart(target_zone)
 		the_part.apply_gauze(tool)
 	else
-		to_chat(user, span_warning("У [target.declent_ru(GENITIVE)] нет ожогов здесь!"))
+		to_chat(user, span_warning("У [target.declent_ru(GENITIVE)] нет ожогов!"))
 	return ..()
 
 /datum/surgery_step/dress/failure(mob/user, mob/living/target, target_zone, obj/item/tool, datum/surgery/surgery, fail_prob = 0)
