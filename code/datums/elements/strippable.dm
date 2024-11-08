@@ -161,7 +161,7 @@
 				LAZYADD(victim_human.afk_thefts, new_entry)
 
 		else if(victim_human.is_blind())
-			to_chat(source, span_userdanger("Вы чувствуете, как кто-то шарится с вашими вещами"))
+			to_chat(source, span_userdanger("Вы чувствуете, как кто-то шарится с вашими вещами."))
 
 	return TRUE
 
