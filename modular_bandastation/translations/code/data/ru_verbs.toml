@@ -642,12 +642,18 @@
 
 # MARK: Eat Verbs
 [eat_verbs]
-"bite" = "кусает"
-"chew" = "жуёт"
-"nibble" = "покусывает"
-"gnaw" = "грызёт"
-"gobble" = "пожирает"
-"chomp" = "лопает"
+"bite" = "кусаете"
+"bites" = "кусает"
+"chew" = "жуёте"
+"chews" = "жуёт"
+"nibble" = "покусываете"
+"nibbles" = "покусывает"
+"gnaw" = "грызёте"
+"gnaws" = "грызёт"
+"gobble" = "пожираете"
+"gobbles" = "пожирает"
+"chomp" = "лопаете"
+"chomps" = "лопает"
 
 # MARK: Say Verbs
 [say_verbs]
