@@ -475,14 +475,14 @@
 
 /datum/experiment/scanning/reagent/cryostylane
 	name = "Сканирование чистого Cryostylane"
-	description = "Оказывается, реагент Cryostylane способен остановить все физиологические процессы в человеческом организме. Произведите Cryostylane чистотой не менее 99 % и просканируйте контейнер с ним."
+	description = "Оказывается, реагент Cryostylane способен остановить все физиологические процессы в человеческом организме. Произведите Cryostylane чистотой не менее 99% и просканируйте контейнер с ним."
 	performance_hint = "Keep the temperature as high as possible during the reaction."
 	required_reagent = /datum/reagent/cryostylane
 	min_purity = 0.99
 
 /datum/experiment/scanning/reagent/haloperidol
 	name = "Сканирование чистого Haloperidol"
-	description = "Нам требуются испытания, связанные с длительным лечением хронических психических расстройств. Произведите Haloperidol с чистотой не менее 98 % и просканируйте контейнер с ним."
+	description = "Нам требуются испытания, связанные с длительным лечением хронических психических расстройств. Произведите Haloperidol с чистотой не менее 98% и просканируйте контейнер с ним."
 	performance_hint = "Экзотермичен и потребляет водород во время реакции."
 	required_reagent = /datum/reagent/medicine/haloperidol
 	min_purity = 0.98
