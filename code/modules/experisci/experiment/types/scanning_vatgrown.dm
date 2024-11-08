@@ -1,12 +1,12 @@
 /datum/experiment/scanning/cytology
-	name = "Эксперемент по скану цитологии"
+	name = "Эксперимент по скану цитологии"
 	exp_tag = "Скан цитологии"
 
 /datum/experiment/scanning/cytology/final_contributing_index_checks(datum/component/experiment_handler/experiment_handler, atom/target, typepath)
 	return ..() && HAS_TRAIT(target, TRAIT_VATGROWN)
 
 /datum/experiment/scanning/cytology/serialize_progress_stage(atom/target, list/seen_instances)
-	return EXPERIMENT_PROG_INT("Скан образцов [initial(target.name)], выращенных в лаборатории", seen_instances.len, required_atoms[target])
+	return EXPERIMENT_PROG_INT("Скан образцов [declent_ru_initial(target::name, GENITIVE)], выращенных в лаборатории", seen_instances.len, required_atoms[target])
 
 /datum/experiment/scanning/cytology/slime
 	name = "Сканирование слаймов выращенных в лаборатории"

@@ -882,7 +882,7 @@ GLOBAL_LIST_EMPTY(possible_items)
 /datum/objective/destroy/update_explanation_text()
 	..()
 	if(target?.current)
-		explanation_text = "Уничтожьте [target.name], эксперементальный ИИ."
+		explanation_text = "Уничтожьте [target.name], экспериментальный ИИ."
 	else
 		explanation_text = "Свободная задача."
 
