@@ -41,7 +41,7 @@
 
 /datum/experiment/scanning/points/machinery_pinpoint_scan/check_progress()
 	. = ..()
-	.[1] = EXPERIMENT_PROG_INT("Отсканируйте образцы следующих машин, улучшенных с [initial(required_stock_part.name)], чтобы набрать достаточное количество очков для завершения эксперимента.", points, required_points)[1]
+	.[1] = EXPERIMENT_PROG_INT("Отсканируйте образцы следующих машин, улучшенных с помощью [declent_ru_initial(required_stock_part::name, GENITIVE)], чтобы набрать достаточное количество очков для завершения эксперимента.", points, required_points)[1]
 
 /datum/experiment/scanning/points/machinery_pinpoint_scan/final_contributing_index_checks(datum/component/experiment_handler/experiment_handler, atom/target, typepath)
 	. = ..()

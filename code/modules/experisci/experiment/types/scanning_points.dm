@@ -22,7 +22,7 @@
 	for (var/point_amt in point_val_cache)
 		var/list/types = point_val_cache[point_amt]
 		var/types_joined = types.Join(", ")
-		. += EXPERIMENT_PROG_DETAIL("[text2num(point_amt)] point\s: [types_joined]", complete)
+		. += EXPERIMENT_PROG_DETAIL("[text2num(point_amt)] очк[declension_ru(text2num(point_amt), "о", "а", "ов")]: [types_joined]", complete)
 
 /datum/experiment/scanning/points/experiment_requirements(datum/component/experiment_handler/experiment_handler, atom/target)
 	var/destructive = traits & EXPERIMENT_TRAIT_DESTRUCTIVE
