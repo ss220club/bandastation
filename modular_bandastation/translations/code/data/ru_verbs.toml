@@ -404,9 +404,11 @@
 "pumps" = "фильтрует"
 "siphon" = "откачиваете"
 "siphons" = "откачивает"
+"slash" = "режете"
+"slashes" = "режет"
 # MARK: Organs
 "bashed" = "колотите"
-"slashed" = "режите"
+"slashed" = "режете"
 "kicked" = "пинаете"
 "stomped" = "растаптываете"
 "thump" = "стучите"
@@ -635,7 +637,6 @@
 "stares down" = "пристально смотрит на"
 "growl at" = "рычите на"
 "growls at" = "рычит на"
-# MARK: Obj
 "ineffectively pierce" = "неэффективно пробиваете"
 "ineffectively pierces" = "неэффективно пробивает"
 
