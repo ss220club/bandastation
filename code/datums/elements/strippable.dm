@@ -92,7 +92,7 @@
 		return FALSE
 
 	if (HAS_TRAIT(equipping, TRAIT_NODROP))
-		to_chat(user, span_warning("Вы не можете экипировать [equipping.declent_ru(ACCUSATIVE)] на [source.declent_ru(PREPOSITIONAL)], предмет застрял на вашей руке!"))
+		to_chat(user, span_warning("Вы не можете экипировать [equipping.declent_ru(ACCUSATIVE)] на [source.declent_ru(ACCUSATIVE)], предмет застрял на вашей руке!"))
 		return FALSE
 
 	if (equipping.item_flags & ABSTRACT)
