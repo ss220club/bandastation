@@ -30,5 +30,5 @@
 	return FALSE
 
 /datum/experiment/scanning/people/serialize_progress_stage(atom/target, list/seen_instances)
-	return EXPERIMENT_PROG_INT("Сканируйте уникальные личности с [required_traits_desc].", \
+	return EXPERIMENT_PROG_INT("Просканируйте уникальную особь[required_traits_desc].", \
 		seen_instances.len, required_atoms[target])

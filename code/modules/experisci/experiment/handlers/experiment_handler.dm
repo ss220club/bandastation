@@ -94,7 +94,7 @@
 	if ((isnull(selected_experiment) && !(config_flags & EXPERIMENT_CONFIG_ALWAYS_ACTIVE)) || (config_flags & EXPERIMENT_CONFIG_SILENT_FAIL))
 		return
 	playsound(user, 'sound/machines/buzz/buzz-sigh.ogg', 25)
-	to_chat(user, span_notice("[target.declent_ru(NOMINATIVE)] не имеет отношения к выбранному эксперименту."))
+	to_chat(user, span_notice("[capitalize(target.declent_ru(NOMINATIVE))] не имеет отношения к выбранному эксперименту."))
 
 /**
  * Checks that an experiment can be run using the provided target, used for preventing the cancellation of the attack chain inappropriately
@@ -122,16 +122,16 @@
 /datum/component/experiment_handler/proc/try_run_handheld_experiment_async(datum/source, atom/target, mob/user)
 	if (selected_experiment == null && !(config_flags & EXPERIMENT_CONFIG_ALWAYS_ACTIVE))
 		if(!(config_flags & EXPERIMENT_CONFIG_SILENT_FAIL))
-			to_chat(user, span_notice("You do not have an experiment selected!"))
+			to_chat(user, span_notice("Вы не выбрали эксперимент!"))
 		return
 	if(!(config_flags & EXPERIMENT_CONFIG_IMMEDIATE_ACTION) && !do_after(user, 1 SECONDS, target = target))
 		return
 	if(action_experiment(source, target))
 		playsound(user, 'sound/machines/ping.ogg', 25)
-		to_chat(user, span_notice("You scan [target]."))
+		to_chat(user, span_notice("Вы сканируете [target.declent_ru(ACCUSATIVE)]."))
 	else if(!(config_flags & EXPERIMENT_CONFIG_SILENT_FAIL))
 		playsound(user, 'sound/machines/buzz/buzz-sigh.ogg', 25)
-		to_chat(user, span_notice("[target.declent_ru(NOMINATIVE)] не имеет отношения к выбранному эксперименту."))
+		to_chat(user, span_notice("[capitalize(target.declent_ru(NOMINATIVE))] не имеет отношения к выбранному эксперименту."))
 
 /**
  * Hooks on destructive scans to try and run an experiment (When using a handheld handler)
@@ -315,7 +315,7 @@
 	ui = SStgui.try_update_ui(user, src, ui)
 	if (!ui)
 		var/atom/parent_atom = parent
-		ui = new(user, src, "ExperimentConfigure", "[parent_atom ? "[parent_atom.declent_ru(NOMINATIVE)] | " : ""]Конфигурация Экспериментов")
+		ui = new(user, src, "ExperimentConfigure", "[parent_atom ? "[capitalize(parent_atom.declent_ru(NOMINATIVE))] | " : ""]Конфигурация Экспериментов")
 		ui.open()
 
 /datum/component/experiment_handler/ui_data(mob/user)
