@@ -68,7 +68,7 @@
 		out += "сильный аромат [english_list(strong, TEXT_NO_TASTE)]"
 	if(LAZYLEN(mild))
 		// Prefix "some " if there are strong flavors to avoid seeming like a strong flavor
-		out += "[LAZYLEN(strong) ? "немного " : ""][english_list(mild, TEXT_NO_TASTE)]"
+		out += "[LAZYLEN(strong) ? "вкус " : "вкус "][english_list(mild, TEXT_NO_TASTE)]"
 	if(LAZYLEN(hint))
 		out += "нотку [english_list(hint, TEXT_NO_TASTE)]"
 
