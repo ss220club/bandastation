@@ -64,7 +64,7 @@
 		var/text_output = pick("пауков","снов","ужасов","будущего","прошлого","победы",\
 			"поражения","боли","блаженства","мести","яда","времени","пространства","смерти","жизни","правды","лжи","справедливости","памяти",\
 			"сожаления","своей души","страданий","музыки","звука","крови","голода","американской свободы")
-		send_taste_message(text_output)
+		send_taste_message("вкус [text_output]")
 		return TRUE
 
 	return FALSE
@@ -76,7 +76,7 @@
 	if(tastes_text == last_taste_text && last_taste_time + 100 >= world.time)
 		return
 
-	to_chat(src, span_notice("You can taste [tastes_text]."))
+	to_chat(src, span_notice("Вы чувствуете [tastes_text]."))
 	// "something indescribable" -> too many tastes, not enough flavor.
 
 	last_taste_time = world.time
