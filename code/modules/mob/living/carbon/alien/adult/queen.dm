@@ -52,7 +52,7 @@
 			continue
 		if(Q.client)
 			var/number = rand(1, 999) // BANDASTATION EDIT
-			ru_names_rename(ru_names_toml("alien princess", suffix = " ([number])"))
+			ru_names_rename(ru_names_toml("alien princess", suffix = " ([number])", override_base = "alien princess ([number])"))
 			name = "alien princess ([number])" //if this is too cutesy feel free to change it/remove it.
 			break
 

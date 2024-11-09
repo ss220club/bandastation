@@ -11,7 +11,7 @@ GLOBAL_LIST_EMPTY(ru_names)
 		CRASH("ru_names_list() received incomplete declent list!")
 	return list("base" = base, NOMINATIVE = nominative, GENITIVE = genitive, DATIVE = dative, ACCUSATIVE = accusative, INSTRUMENTAL = instrumental, PREPOSITIONAL = prepositional, "gender" = gender)
 
-/proc/ru_names_toml(name, prefix, suffix)
+/proc/ru_names_toml(name, prefix, suffix, override_base)
 	if(!length(GLOB.ru_names))
 		var/toml_path = "[PATH_TO_TRANSLATE_DATA]/ru_names.toml"
 		if(!fexists(file(toml_path)))
@@ -19,8 +19,9 @@ GLOBAL_LIST_EMPTY(ru_names)
 			return
 		GLOB.ru_names = rustg_read_toml_file("[PATH_TO_TRANSLATE_DATA]/ru_names.toml")
 	if(GLOB.ru_names[name])
+		var/base = override_base || "[prefix][name][suffix]"
 		return ru_names_list(
-			"[prefix][name][suffix]",
+			base,
 			"[prefix][GLOB.ru_names[name]["nominative"]][suffix]",
 			"[prefix][GLOB.ru_names[name]["genitive"]][suffix]",
 			"[prefix][GLOB.ru_names[name]["dative"]][suffix]",
