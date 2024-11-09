@@ -41,26 +41,26 @@
 	var/static/list/groin = ru_names_toml("groin")
 	switch(zone)
 		if(BODY_ZONE_CHEST)
-			return chest[declent]
+			return chest[declent] || zone
 		if(BODY_ZONE_HEAD)
-			return head[declent]
+			return head[declent] || zone
 		if(BODY_ZONE_PRECISE_R_HAND)
-			return right_hand[declent]
+			return right_hand[declent] || zone
 		if(BODY_ZONE_PRECISE_L_HAND)
-			return left_hand[declent]
+			return left_hand[declent] || zone
 		if(BODY_ZONE_L_ARM)
-			return left_arm[declent]
+			return left_arm[declent] || zone
 		if(BODY_ZONE_R_ARM)
-			return right_arm[declent]
+			return right_arm[declent] || zone
 		if(BODY_ZONE_L_LEG)
-			return left_leg[declent]
+			return left_leg[declent] || zone
 		if(BODY_ZONE_R_LEG)
-			return right_leg[declent]
+			return right_leg[declent] || zone
 		if(BODY_ZONE_PRECISE_L_FOOT)
-			return left_foot[declent]
+			return left_foot[declent] || zone
 		if(BODY_ZONE_PRECISE_R_FOOT)
-			return right_foot[declent]
+			return right_foot[declent] || zone
 		if(BODY_ZONE_PRECISE_GROIN)
-			return groin[declent]
+			return groin[declent] || zone
 		else
 			return zone
