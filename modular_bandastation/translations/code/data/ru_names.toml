@@ -1247,6 +1247,14 @@ accusative = "королеву Чужих"
 instrumental = "королевой Чужих"
 prepositional = "королеве Чужих"
 
+["alien princess"]
+nominative = "принцесса Чужих"
+genitive = "принцессы Чужих"
+dative = "принцессе Чужих"
+accusative = "принцессу Чужих"
+instrumental = "принцессой Чужих"
+prepositional = "принцессе Чужих"
+
 # MARK: Machinery Uncategorized
 
 ["slot machine"]
