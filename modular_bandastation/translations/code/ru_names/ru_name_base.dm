@@ -66,6 +66,8 @@ GLOBAL_LIST_EMPTY(ru_names)
 	var/list/list_to_use = ru_names_override || ru_names
 	if(length(list_to_use) && list_to_use["base"] == ru_names["base"] && list_to_use[case_id])
 		return list_to_use[case_id]
+	if(case_id == "gender")
+		return
 	return name
 
 /// Used for getting initial values, such as for recipies where resulted atom is not yet created.
