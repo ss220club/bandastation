@@ -24,7 +24,7 @@
 //	Cyberiad  //
 
 /area/station/hallway/primary/starboard/west
- 	name = "Главный коридор правого борта запад"
+ 	name = "\improper Starboard Primary Hallway West"
 	icon_state = "starboardhall"
 
 /area/station/engineering/hallway/west
@@ -32,11 +32,11 @@
 	icon_state = "engine_hallway" 
 
 /area/station/engineering/dronefabricator
-	name = "Комната Изготовления Дронов"
+	name = "Drone Fabricator"
 	icon_state = "engine"
 
 /area/station/maintenance/disposal/trash
-	name = "Мусоросжигатель"
+	name = "Waste Burner"
 	icon_state = "engine"
 
 /area/station/security/prison/ghetto
