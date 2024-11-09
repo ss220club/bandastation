@@ -24,7 +24,7 @@
 //	Cyberiad  //
 
 /area/station/hallway/primary/starboard/west
- 	name = "\improper Starboard Primary Hallway West"
+	name = "\improper Starboard Primary Hallway West"
 	icon_state = "starboardhall"
 
 /area/station/engineering/hallway/west
