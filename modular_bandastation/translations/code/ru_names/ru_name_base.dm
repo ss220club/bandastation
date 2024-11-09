@@ -12,15 +12,16 @@ GLOBAL_LIST_EMPTY(ru_names)
 	return list("base" = base, NOMINATIVE = nominative, GENITIVE = genitive, DATIVE = dative, ACCUSATIVE = accusative, INSTRUMENTAL = instrumental, PREPOSITIONAL = prepositional, "gender" = gender)
 
 /proc/ru_names_toml(name, prefix, suffix, override_base)
+	. = list()
 	if(!length(GLOB.ru_names))
 		var/toml_path = "[PATH_TO_TRANSLATE_DATA]/ru_names.toml"
 		if(!fexists(file(toml_path)))
 			GLOB.ru_names = list("ERROR" = "File not found!")
-			return list()
+			return .
 		GLOB.ru_names = rustg_read_toml_file("[PATH_TO_TRANSLATE_DATA]/ru_names.toml")
 	if(GLOB.ru_names[name])
 		var/base = override_base || "[prefix][name][suffix]"
-		return ru_names_list(
+		. = ru_names_list(
 			base,
 			"[prefix][GLOB.ru_names[name]["nominative"]][suffix]",
 			"[prefix][GLOB.ru_names[name]["genitive"]][suffix]",
@@ -28,7 +29,7 @@ GLOBAL_LIST_EMPTY(ru_names)
 			"[prefix][GLOB.ru_names[name]["accusative"]][suffix]",
 			"[prefix][GLOB.ru_names[name]["instrumental"]][suffix]",
 			"[prefix][GLOB.ru_names[name]["prepositional"]][suffix]",
-			"[GLOB.ru_names[name]["gender"]]",)
+			gender = "[GLOB.ru_names[name]["gender"]]",)
 
 /atom/Initialize(mapload, ...)
 	. = ..()
