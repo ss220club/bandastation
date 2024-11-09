@@ -64,7 +64,7 @@
 		return PROJECTILE_PIERCE_PHASE
 
 	// Anti-magic destroys the projectile for consistency and counterplay
-	if(victim.can_block_magic(MAGIC_RESISTANCE))
+	if(victim.can_block_magic(MAGIC_RESISTANCE|MAGIC_RESISTANCE_MIND))
 		visible_message(span_warning("Парад попадает по [victim.declent_ru(DATIVE)], и внезапно вы вновь мыслите ясно!"))
 		return PROJECTILE_DELETE_WITHOUT_HITTING
 

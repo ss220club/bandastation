@@ -19,7 +19,7 @@
 	active_msg = "Вы вызываете три клинка из яростного серебра."
 	deactive_msg = "Ты скрываешь клинки из яростного серебра."
 	cast_range = 20
-	projectile_type = /obj/projectile/floating_blade
+	projectile_type = /obj/effect/floating_blade
 	projectile_amount = 3
 
 	/// A ref to the status effect surrounding our heretic on activation.

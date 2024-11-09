@@ -150,7 +150,7 @@ export const NtosNetChat = (props) => {
                   {(in_channel &&
                     (authorized ? (
                       messages.map((message) => (
-                        <Box key={message.msg}>{message.msg}</Box>
+                        <Box key={message.key}>{message.msg}</Box>
                       ))
                     ) : (
                       <Box textAlign="center">

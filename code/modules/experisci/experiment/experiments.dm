@@ -119,8 +119,8 @@
 	required_gas = /datum/gas/nitrous_oxide
 
 /datum/experiment/ordnance/gaseous/plasma
-	name = "Plasma Gas Shells"
-	description = "The delivery of Plasma gas into an area of operation might prove useful. Pack the specified gas into a tank and burst it using a Tank Compressor. Publish the data in a paper."
+	name = "Плазменные снаряды"
+	description = "Доставка плазмы в район проведения операции может оказаться полезной. Упакуйте указанный газ в канистру и взорвите его с помощью компрессора для канистр. Опубликуйте данные в отчёте."
 	gain = list(10,40)
 	target_amount = list(200,600)
 	experiment_proper = TRUE
@@ -325,7 +325,7 @@
 /datum/experiment/scanning/random/mecha_damage_scan
 	name = "Материалы для экзокостюмов: стресс-тест"
 	description = "Ваши устройства для изготовления экзокостюмов позволяют быстро производить их в небольших масштабах, но структурная целостность созданных деталей уступает более традиционным средствам."
-	exp_tag = "Scan"
+	exp_tag = "Скан"
 	total_requirement = 2
 	possible_types = list(/obj/vehicle/sealed/mecha)
 	///Damage percent that each mech needs to be at for a scan to work.
@@ -339,10 +339,10 @@
 
 /// Scan a person with any mutation
 /datum/experiment/scanning/people/mutant
-	name = "Human Field Research: Genetic Mutations"
-	description = "Our new research assistants have been drinking random chemicals for science, when one of them mastered telekinesis and another started shooting lasers from the eyes. This could be useful for our studies. Repeat the experiment by making assistants drink unstable mutagen, scan them and report the results."
-	performance_hint = "Scan a person with a random mutation."
-	required_traits_desc = "random mutation"
+	name = "Исследование человеческого тела: генетические мутации"
+	description = "Наши новые научные ассистенты пили случайные химикаты для науки, когда один из них овладел телекинезом, а другой начал стрелять лазерами из глаз. Это может быть полезно для наших исследований. Повторите эксперимент, заставив ассистентов выпить нестабильный мутаген, просканируйте их и сообщите о результатах."
+	performance_hint = "Просканируйте кого-то со случайной мутацией."
+	required_traits_desc = " со случайной мутацией"
 
 /datum/experiment/scanning/people/mutant/is_valid_scan_target(mob/living/carbon/human/check, datum/component/experiment_handler/experiment_handler)
 	. = ..()
@@ -354,11 +354,11 @@
 
 /// Scan for organs you didn't start the round with
 /datum/experiment/scanning/people/novel_organs
-	name = "Исследование людского поля: дивергентная биология"
+	name = "Исследование человеческого тела: дивергентная биология"
 	description = "Нам нужны данные об органической совместимости между видами. Отсканируйте несколько образцов гуманоидных организмов с органами, которых у них обычно нет. \
 		Данные о механических органах нам ни к чему."
 	performance_hint = "Необычные органы могут быть введены вручную путем пересадки, генетической инфузии или очень быстро с помощью эффекта аномалии Биоскрэмблэр."
-	required_traits_desc = "несинтетические органы, не характерные для их вида"
+	required_traits_desc = " с несинтетическими органами, не характерных для её вида"
 	/// Disallow prosthetic organs
 	var/organic_only = TRUE
 
@@ -394,10 +394,10 @@
 
 /// Scan for cybernetic organs
 /datum/experiment/scanning/people/augmented_organs
-	name = "Human Field Research: Augmented Organs"
-	description = "We need to gather data on how cybernetic vital organs integrate with human biology. Conduct a scan on a human with these implants to help us understand their compatibility."
-	performance_hint = "Perform an organ manipulation surgery to replace one of the vital organs with a cybernetic variant."
-	required_traits_desc = "augmented vital organs"
+	name = "Исследование человеческого тела: аугментированные органы"
+	description = "Нам нужно собрать данные о том, как кибернетические жизненно важные органы сочетаются с биологией человека. Проведите сканирование человека с такими имплантами, чтобы понять их совместимость."
+	performance_hint = "Проведите хирургическую операцию по манипуляцией органами, чтобы заменить один из жизненно важных органов на кибернетическую альтернативу."
+	required_traits_desc = " с аугментированными жизненно важными органами"
 	required_count = 1
 
 /datum/experiment/scanning/people/augmented_organs/is_valid_scan_target(mob/living/carbon/human/check)
@@ -420,10 +420,10 @@
 
 /// Scan for skillchips
 /datum/experiment/scanning/people/skillchip
-	name = "Human Field Research: Skill Chip Implants"
-	description = "Before sticking programmed circuits into human brain, we need to know how it handles simple ones. Scan a live person with a skill chip implant in their brain."
-	performance_hint = "Perform a skill chip implantation with a skill station."
-	required_traits_desc = "skill chip implant"
+	name = "Исследование человеческого тела: импланты скилл-чипы"
+	description = "Прежде чем внедрять программируемые схемы в человеческий мозг, нам нужно узнать, как он справляется с простыми. Просканируйте живую особь с имплантированным скилл-чипом в мозге."
+	performance_hint = "Проведите имплантирование скилл-чипа с помощью Skill Station."
+	required_traits_desc = " с импантированным скилл-чипом"
 
 /datum/experiment/scanning/people/skillchip/is_valid_scan_target(mob/living/carbon/human/check, datum/component/experiment_handler/experiment_handler)
 	. = ..()
@@ -431,19 +431,19 @@
 		return
 	var/obj/item/organ/brain/scanned_brain = check.get_organ_slot(ORGAN_SLOT_BRAIN)
 	if (isnull(scanned_brain))
-		experiment_handler.announce_message("Subject is brainless!")
+		experiment_handler.announce_message("Субъект не имеет мозга!")
 		return FALSE
 	if (scanned_brain.get_used_skillchip_slots() == 0)
-		experiment_handler.announce_message("No skill chips found!")
+		experiment_handler.announce_message("Не найдены скилл-чипы!")
 		return FALSE
 	return TRUE
 
 /// Scan an android
 /datum/experiment/scanning/people/android
-	name = "Human Field Research: Full Augmentation"
-	description = "Perform a full cybernetic augmentation on a crewmate then scan them to test their newfound capabilities and new sensory and cognitive functions."
-	performance_hint = "Achieve full augmentation by performing a set of surgery operations."
-	required_traits_desc = "fully augmented android"
+	name = "Исследование человеческого тела: полная аугментация"
+	description = "Проведите полную кибернетическую аугментацию члена экипажа, а затем просканируйте его, чтобы проверить у них новые возможности и новые сенсорные и когнитивные функции."
+	performance_hint = "Проведите хирургические операции, чтобы полностью аугментировать тело."
+	required_traits_desc = ", полностью аугментированную в андроида"
 	required_count = 1
 
 /datum/experiment/scanning/people/android/is_valid_scan_target(mob/living/carbon/human/check, datum/component/experiment_handler/experiment_handler)
@@ -474,22 +474,22 @@
 	return TRUE
 
 /datum/experiment/scanning/reagent/cryostylane
-	name = "Pure Cryostylane Scan"
-	description = "It appears that the Cryostylane reagent can potentially halt all physiological processes in the human body. Produce Cryostylane with at least 99% purity and scan the beaker."
+	name = "Сканирование чистого Cryostylane"
+	description = "Оказывается, реагент Cryostylane способен остановить все физиологические процессы в человеческом организме. Произведите Cryostylane чистотой не менее 99% и просканируйте контейнер с ним."
 	performance_hint = "Keep the temperature as high as possible during the reaction."
 	required_reagent = /datum/reagent/cryostylane
 	min_purity = 0.99
 
 /datum/experiment/scanning/reagent/haloperidol
-	name = "Pure Haloperidol Scan"
-	description = "We require testing related to the long-term treatment of chronic psychiatric disorders. Produce Haloperidol with at least 98% purity and scan the beaker."
-	performance_hint = "Exothermic and consumes hydrogen during reaction."
+	name = "Сканирование чистого Haloperidol"
+	description = "Нам требуются испытания, связанные с длительным лечением хронических психических расстройств. Произведите Haloperidol с чистотой не менее 98% и просканируйте контейнер с ним."
+	performance_hint = "Экзотермичен и потребляет водород во время реакции."
 	required_reagent = /datum/reagent/medicine/haloperidol
 	min_purity = 0.98
 
 /datum/experiment/scanning/points/bluespace_crystal
-	name = "Bluespace Crystal Sampling"
-	description = "Investigate the properties of bluespace crystals by scanning either an artificial or naturally occurring variant. This will help us deepen our understanding of bluespace phenomena."
+	name = "Изучение блуспейс кристаллов"
+	description = "Исследуйте свойства блуспейс кристаллов путём сканирования искусственных или естественных вариантов. Это поможет нам глубже понять феномен блуспейса."
 	required_points = 1
 	required_atoms = list(
 		/obj/item/stack/ore/bluespace_crystal = 1,
@@ -497,14 +497,14 @@
 	)
 
 /datum/experiment/scanning/points/anomalies
-	name = "Neutralized Anomaly Analysis"
-	description = "We have the power to deal with the anomalies now. Neutralize them with an anomaly neutralizer or refine the raw cores in the refinery and scan the results."
+	name = "Анализ нейтрализованных аномалий"
+	description = "Теперь у нас есть возможность справиться с аномалиями. Нейтрализуйте их с помощью нейтрализатора аномалий или зарядите необработанные ядра и просканируйте результаты."
 	required_points = 4
 	required_atoms = list(/obj/item/assembly/signaler/anomaly = 1)
 
 /datum/experiment/scanning/points/machinery_tiered_scan/tier2_any
-	name = "Upgraded Stock Parts Benchmark"
-	description = "Our newly-designed machinery components require practical application tests for hints at possible further advancements, as well as a general confirmation that we didn't actually design worse parts somehow. Scan any machinery with Upgraded Parts and report the results."
+	name = "Проверка улучшенных деталей"
+	description = "Наши новые детали машин нуждаются в практических испытаниях, чтобы получить подсказки о возможных дальнейших усовершенствованиях, а также общее подтверждение того, что мы действительно не разработали детали хуже. Просканируйте любую машину с улучшенными деталями и сообщите о результатах."
 	required_points = 6
 	required_atoms = list(
 		/obj/machinery = 1
@@ -512,8 +512,8 @@
 	required_tier = 2
 
 /datum/experiment/scanning/points/machinery_tiered_scan/tier3_any
-	name = "Advanced Stock Parts Benchmark"
-	description = "Our newly-designed machinery components require practical application tests for hints at possible further advancements, as well as a general confirmation that we didn't actually design worse parts somehow. Scan any machinery with Advanced Parts and report the results."
+	name = "Проверка продвинутых деталей"
+	description = "Наши новые детали машин нуждаются в практических испытаниях, чтобы получить подсказки о возможных дальнейших усовершенствованиях, а также общее подтверждение того, что мы действительно не разработали детали хуже. Просканируйте любую машину с продвинутыми деталями и сообщите о результатах."
 	required_points = 6
 	required_atoms = list(
 		/obj/machinery = 1

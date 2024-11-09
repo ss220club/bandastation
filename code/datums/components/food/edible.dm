@@ -380,7 +380,7 @@ Behavior that's still missing from this component that original food items had t
 			return
 		if(IsFoodGone(owner, feeder))
 			return
-		var/eatverb = ru_eat_verb(pick(eatverbs))
+		var/eatverb = pick(eatverbs)
 
 		var/message_to_nearby_audience = ""
 		var/message_to_consumer = ""
@@ -403,20 +403,20 @@ Behavior that's still missing from this component that original food items had t
 				return
 		else if(fullness > 500)
 			if(HAS_TRAIT(eater, TRAIT_VORACIOUS))
-				message_to_nearby_audience = span_notice("[capitalize(eater.declent_ru(NOMINATIVE))] [eatverb] [parent.declent_ru(ACCUSATIVE)].")
-				message_to_consumer = span_notice("Вы [eatverb]е [parent.declent_ru(ACCUSATIVE)].")
+				message_to_nearby_audience = span_notice("[capitalize(eater.declent_ru(NOMINATIVE))] [ru_eat_verb("[eatverb]s")] [parent.declent_ru(ACCUSATIVE)].")
+				message_to_consumer = span_notice("Вы [ru_eat_verb(eatverb)] [parent.declent_ru(ACCUSATIVE)].")
 			else
-				message_to_nearby_audience = span_notice("[capitalize(eater.declent_ru(NOMINATIVE))] неохотно [eatverb] часть от [parent.declent_ru(GENITIVE)].")
-				message_to_consumer = span_notice("Вы неохотно [eatverb]е часть от [parent.declent_ru(GENITIVE)].")
+				message_to_nearby_audience = span_notice("[capitalize(eater.declent_ru(NOMINATIVE))] неохотно [ru_eat_verb("[eatverb]s")] часть от [parent.declent_ru(GENITIVE)].")
+				message_to_consumer = span_notice("Вы неохотно [ru_eat_verb(eatverb)] часть от [parent.declent_ru(GENITIVE)].")
 		else if(fullness > 150)
-			message_to_nearby_audience = span_notice("[capitalize(eater.declent_ru(NOMINATIVE))] [eatverb] [parent.declent_ru(ACCUSATIVE)].")
-			message_to_consumer = span_notice("Вы [eatverb]е [parent.declent_ru(ACCUSATIVE)].")
+			message_to_nearby_audience = span_notice("[capitalize(eater.declent_ru(NOMINATIVE))] [ru_eat_verb("[eatverb]s")] [parent.declent_ru(ACCUSATIVE)].")
+			message_to_consumer = span_notice("Вы [ru_eat_verb(eatverb)] [parent.declent_ru(ACCUSATIVE)].")
 		else if(fullness > 50)
-			message_to_nearby_audience = span_notice("[capitalize(eater.declent_ru(NOMINATIVE))] жадно [eatverb] [parent.declent_ru(ACCUSATIVE)].")
-			message_to_consumer = span_notice("Вы жадно [eatverb]е [parent.declent_ru(ACCUSATIVE)].")
+			message_to_nearby_audience = span_notice("[capitalize(eater.declent_ru(NOMINATIVE))] жадно [ru_eat_verb("[eatverb]s")] [parent.declent_ru(ACCUSATIVE)].")
+			message_to_consumer = span_notice("Вы жадно [ru_eat_verb(eatverb)] [parent.declent_ru(ACCUSATIVE)].")
 		else
-			message_to_nearby_audience = span_notice("[capitalize(eater.declent_ru(NOMINATIVE))] жадно [eatverb] [parent.declent_ru(ACCUSATIVE)], проглатывая пищу!")
-			message_to_consumer = span_notice("Вы жадно [eatverb]е [parent.declent_ru(ACCUSATIVE)], проглатывая пищу!")
+			message_to_nearby_audience = span_notice("[capitalize(eater.declent_ru(NOMINATIVE))] жадно [ru_eat_verb("[eatverb]s")] [parent.declent_ru(ACCUSATIVE)], проглатывая пищу!")
+			message_to_consumer = span_notice("Вы жадно [ru_eat_verb(eatverb)] [parent.declent_ru(ACCUSATIVE)], проглатывая пищу!")
 
 		//if we're blind, we want to feel how hungrily we ate that food
 		message_to_blind_consumer = message_to_consumer
