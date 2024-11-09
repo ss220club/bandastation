@@ -23,7 +23,7 @@
 
 //	Cyberiad  //
 
- /area/station/hallway/primary/starboard/west
+ /area/station/hallway/primary/starboard/aft
  	name = "Главный коридор правого борта запад"
 	icon_state = "starboardhall"
 
