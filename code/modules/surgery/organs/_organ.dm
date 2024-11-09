@@ -75,7 +75,6 @@ INITIALIZE_IMMEDIATE(/obj/item/organ)
 
 /obj/item/organ/Initialize(mapload)
 	. = ..()
-
 	if(organ_flags & ORGAN_EDIBLE)
 		AddComponent(/datum/component/edible,\
 			initial_reagents = food_reagents,\
@@ -161,9 +160,9 @@ INITIALIZE_IMMEDIATE(/obj/item/organ)
 
 	if(damage > high_threshold)
 		if(IS_ROBOTIC_ORGAN(src))
-			. += span_warning("[capitalize(declent_ru(NOMINATIVE))] выглядит поврежденным.")
+			. += span_warning("[capitalize(declent_ru(NOMINATIVE))], кажется, работает неисправно.")
 			return
-		. += span_warning("[capitalize(declent_ru(NOMINATIVE))] начинает выглядеть бесцветным.")
+		. += span_warning("[capitalize(declent_ru(NOMINATIVE))] начинает обесцвечиваться.")
 
 ///Used as callbacks by object pooling
 /obj/item/organ/proc/exit_wardrobe()
