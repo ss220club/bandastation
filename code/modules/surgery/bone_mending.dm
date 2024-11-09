@@ -131,7 +131,7 @@
 		)
 		log_combat(user, target, "reset a compound fracture in", addition="COMBAT MODE: [uppertext(user.combat_mode)]")
 	else
-		to_chat(user, span_warning("[capitalize(target.declent_ru(NOMINATIVE))] не имеет открытого перелома!"))
+		to_chat(user, span_warning("[capitalize(target.declent_ru(NOMINATIVE))] не имеет открытого перелома в [target.ru_p_theirs()] [target.parse_zone_with_bodypart(target_zone, declent = PREPOSITIONAL)]!"))
 	return ..()
 
 /datum/surgery_step/reset_compound_fracture/failure(mob/user, mob/living/target, target_zone, obj/item/tool, datum/surgery/surgery, fail_prob = 0)
@@ -182,7 +182,7 @@
 		log_combat(user, target, "repaired a compound fracture in", addition="COMBAT_MODE: [uppertext(user.combat_mode)]")
 		qdel(surgery.operated_wound)
 	else
-		to_chat(user, span_warning("[capitalize(target.declent_ru(NOMINATIVE))] не имеет здесь открытого перелома!"))
+		to_chat(user, span_warning("[capitalize(target.declent_ru(NOMINATIVE))] не имеет открытого перелома в [target.ru_p_theirs()] [target.parse_zone_with_bodypart(target_zone, declent = PREPOSITIONAL)]!"))
 	return ..()
 
 /datum/surgery_step/repair_bone_compound/failure(mob/user, mob/living/target, target_zone, obj/item/tool, datum/surgery/surgery, fail_prob = 0)

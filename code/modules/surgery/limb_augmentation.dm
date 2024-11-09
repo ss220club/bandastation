@@ -92,5 +92,5 @@
 		display_pain(target, "[capitalize(target.parse_zone_with_bodypart(target_zone))] у вас наполняется синтетическими ощущениями!", mechanical_surgery = TRUE)
 		log_combat(user, target, "augmented", addition="by giving him new [target.parse_zone_with_bodypart(target_zone)] COMBAT MODE: [uppertext(user.combat_mode)]")
 	else
-		to_chat(user, span_warning("У [target.declent_ru(GENITIVE)] [target.parse_zone_with_bodypart(target_zone, declent = ACCUSATIVE)] не из органики!"))
+		to_chat(user, span_warning("У [target.declent_ru(GENITIVE)] [target.parse_zone_with_bodypart(target_zone, declent = NOMINATIVE)] не из органики!"))
 	return ..()

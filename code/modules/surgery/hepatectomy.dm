@@ -14,7 +14,7 @@
 	)
 
 /datum/surgery/hepatectomy/mechanic
-	name = "диагностика системы очистки"
+	name = "Диагностика системы очистки"
 	requires_bodypart_type = BODYTYPE_ROBOTIC
 	steps = list(
 		/datum/surgery_step/mechanic_open,

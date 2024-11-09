@@ -65,7 +65,7 @@
 	/// Status Effects that are given to the holder of the organ.
 	var/list/organ_effects
 	/// String displayed when the organ has decayed.
-	var/failing_desc = "пребывает под влиянием разложения слишком долго, что уже принял болезненный цвет. Орган уже не заработает, если его не лечить."
+	var/failing_desc = "пребывает под влиянием разложения слишком долго, что уже принимает болезненный цвет. Орган уже не заработает, если его не лечить."
 
 // Players can look at prefs before atoms SS init, and without this
 // they would not be able to see external organs, such as moth wings.
@@ -75,6 +75,7 @@ INITIALIZE_IMMEDIATE(/obj/item/organ)
 
 /obj/item/organ/Initialize(mapload)
 	. = ..()
+
 	if(organ_flags & ORGAN_EDIBLE)
 		AddComponent(/datum/component/edible,\
 			initial_reagents = food_reagents,\
@@ -152,7 +153,7 @@ INITIALIZE_IMMEDIATE(/obj/item/organ)
 /obj/item/organ/examine(mob/user)
 	. = ..()
 
-	. += span_notice("Должно вставляться в [ru_parse_zone(zone, declent = INSTRUMENTAL)].")
+	. += span_notice("Должно вставляться в [ru_parse_zone(zone, declent = ACCUSATIVE)].")
 
 	if(organ_flags & ORGAN_FAILING)
 		. += span_warning("[capitalize(declent_ru(NOMINATIVE))] [failing_desc]")

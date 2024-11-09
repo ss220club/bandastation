@@ -55,7 +55,7 @@
 	return TRUE
 
 /datum/surgery_step/revive
-	name = "воздействуйте на мозг электрическим разрядом (дефибриллятор, палка или тазер)"
+	name = "шокируйте мозг (дефибриллятор)"
 	implements = list(
 		/obj/item/shockpaddles = 100,
 		/obj/item/melee/touch_attack/shock = 100,

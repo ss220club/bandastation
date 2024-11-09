@@ -37,11 +37,11 @@
 /obj/item/autosurgeon/proc/load_organ(obj/item/organ/loaded_organ, mob/living/user)
 	if(user)
 		if(stored_organ)
-			to_chat(user, span_alert("[declent_ru(NOMINATIVE)] уже содержит имплант."))
+			to_chat(user, span_alert("[capitalize(declent_ru(NOMINATIVE))] уже содержит имплант."))
 			return
 
 		if(uses == 0)
-			to_chat(user, span_alert("[declent_ru(NOMINATIVE)] достигает предела использования и не может загружать новые импланты."))
+			to_chat(user, span_alert("[capitalize(declent_ru(NOMINATIVE))] достигает предела использования и не может загружать новые импланты."))
 			return
 
 		if(organ_whitelist.len)
@@ -51,11 +51,11 @@
 					organ_whitelisted = TRUE
 					break
 			if(!organ_whitelisted)
-				to_chat(user, span_alert("[declent_ru(NOMINATIVE)] несовместимо с [loaded_organ.declent_ru(INSTRUMENTAL)]."))
+				to_chat(user, span_alert("[capitalize(declent_ru(NOMINATIVE))] несовместимо с [loaded_organ.declent_ru(INSTRUMENTAL)]."))
 				return
 
 		if(!user.transferItemToLoc(loaded_organ, src))
-			to_chat(user, span_alert("[loaded_organ.declent_ru(NOMINATIVE)] прилипает к вашей руке!"))
+			to_chat(user, span_alert("[capitalize(loaded_organ.declent_ru(NOMINATIVE))] прилипает к вашей руке!"))
 			return
 
 	stored_organ = loaded_organ
@@ -66,16 +66,16 @@
 
 /obj/item/autosurgeon/proc/use_autosurgeon(mob/living/target, mob/living/user, implant_time)
 	if(!stored_organ)
-		to_chat(user, span_alert("[declent_ru(NOMINATIVE)] в данный момент не хранит имплантов."))
+		to_chat(user, span_alert("[capitalize(declent_ru(NOMINATIVE))] в данный момент не хранит имплантов."))
 		return
 
 	if(!uses)
-		to_chat(user, span_alert("[declent_ru(NOMINATIVE)] не может использоваться. Устройства сложены и не могут быть реактивированны."))
+		to_chat(user, span_alert("[capitalize(declent_ru(NOMINATIVE))] не может использоваться. Устройства сложены и не могут быть реактивированны."))
 		return
 
 	if(implant_time)
 		user.visible_message(
-			span_notice("[user.declent_ru(NOMINATIVE)] собирается использовать [declent_ru(ACCUSATIVE)] на [target.declent_ru(PREPOSITIONAL)]."),
+			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] собирается использовать [declent_ru(ACCUSATIVE)] на [target.declent_ru(PREPOSITIONAL)]."),
 			span_notice("Вы собираетесь использовать [declent_ru(ACCUSATIVE)] на [target.declent_ru(PREPOSITIONAL)]."),
 		)
 		if(!do_after(user, (implant_time * surgery_speed), target))
@@ -83,10 +83,10 @@
 
 	if(target != user)
 		log_combat(user, target, "autosurgeon implanted [stored_organ] into", "[src]", "in [AREACOORD(target)]")
-		user.visible_message(span_notice("[user.declent_ru(NOMINATIVE)] нажимает на кнопку на [declent_ru(PREPOSITIONAL)] и тот врезается в тело [target.declent_ru(GENITIVE)]."), span_notice("Вы нажимаете на кнопку на [declent_ru(PREPOSITIONAL)] и тот врезается в тело [target.declent_ru(GENITIVE)]."))
+		user.visible_message(span_notice("[capitalize(user.declent_ru(NOMINATIVE))] нажимает на кнопку на [declent_ru(PREPOSITIONAL)] и тот врезается в тело [target.declent_ru(GENITIVE)]."), span_notice("Вы нажимаете на кнопку на [declent_ru(PREPOSITIONAL)] и тот врезается в тело [target.declent_ru(GENITIVE)]."))
 	else
 		user.visible_message(
-			span_notice("[user.declent_ru(NOMINATIVE)] нажимает на кнопку на [declent_ru(PREPOSITIONAL)] и тот врезается в [user.ru_p_theirs()] тело."),
+			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] нажимает на кнопку на [declent_ru(PREPOSITIONAL)] и тот врезается в [user.ru_p_theirs()] тело."),
 			span_notice("Вы нажимаете на кнопку на [declent_ru(PREPOSITIONAL)] и тот врезается в ваше тело."),
 		)
 
