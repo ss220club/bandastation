@@ -3,36 +3,42 @@
 /obj/item/bodypart
 	var/list/ru_plaintext_zone = list()
 
-/obj/item/bodypart/head
-	ru_plaintext_zone = RU_NAMES_LIST("head", "голова", "головы", "голове", "голову", "головой", "голове")
+/obj/item/bodypart/head/Initialize(mapload)
+	. = ..()
+	ru_plaintext_zone = ru_names_list("head", "голова", "головы", "голове", "голову", "головой", "голове", gender = FEMALE)
 
-/obj/item/bodypart/chest
-	ru_plaintext_zone = RU_NAMES_LIST("chest", "грудь", "груди", "груди", "грудь", "грудью", "груди")
+/obj/item/bodypart/chest/Initialize(mapload)
+	. = ..()
+	ru_plaintext_zone = ru_names_list("chest", "грудь", "груди", "груди", "грудь", "грудью", "груди", gender = FEMALE)
 
-/obj/item/bodypart/arm/left
-	ru_plaintext_zone = RU_NAMES_LIST("left arm", "левая рука", "левой руки", "левой руке", "левую руку", "левой рукой", "левой руке")
+/obj/item/bodypart/arm/left/Initialize(mapload)
+	. = ..()
+	ru_plaintext_zone = ru_names_list("left arm", "левая рука", "левой руки", "левой руке", "левую руку", "левой рукой", "левой руке", gender = FEMALE)
 
-/obj/item/bodypart/arm/right
-	ru_plaintext_zone = RU_NAMES_LIST("right arm", "правая рука", "правой руки", "правой руке", "правую руку", "правой рукой", "правой руке")
+/obj/item/bodypart/arm/right/Initialize(mapload)
+	. = ..()
+	ru_plaintext_zone = ru_names_list("right arm", "правая рука", "правой руки", "правой руке", "правую руку", "правой рукой", "правой руке", gender = FEMALE)
 
-/obj/item/bodypart/leg/left
-	ru_plaintext_zone = RU_NAMES_LIST("left leg", "левая нога", "левой ноги", "левой ноге", "левую ногу", "левой ногой", "левой ноге")
+/obj/item/bodypart/leg/left/Initialize(mapload)
+	. = ..()
+	ru_plaintext_zone = ru_names_list("left leg", "левая нога", "левой ноги", "левой ноге", "левую ногу", "левой ногой", "левой ноге", gender = FEMALE)
 
-/obj/item/bodypart/leg/right
-	ru_plaintext_zone = RU_NAMES_LIST("right leg", "правая нога", "правой ноги", "правой ноге", "правую ногу", "правой ногой", "правой ноге")
+/obj/item/bodypart/leg/right/Initialize(mapload)
+	. = ..()
+	ru_plaintext_zone = ru_names_list("right leg", "правая нога", "правой ноги", "правой ноге", "правую ногу", "правой ногой", "правой ноге", gender = FEMALE)
 
 /proc/ru_parse_zone(zone, declent = NOMINATIVE)
-	var/static/list/chest = RU_NAMES_LIST("chest", "грудь", "груди", "груди", "грудь", "грудью", "груди")
-	var/static/list/head = RU_NAMES_LIST("head", "голова", "головы", "голове", "голову", "головой", "голове")
-	var/static/list/right_hand = RU_NAMES_LIST("right hand", "правое запястье", "правого запястья", "правому запястью", "правое запястье", "правым запястьем", "правом запястье")
-	var/static/list/left_hand = RU_NAMES_LIST("left hand", "левое запястье", "левое запястье", "левой руке", "левую руку", "левой рукой", "левой руке")
-	var/static/list/left_arm = RU_NAMES_LIST("left arm", "левая рука", "левой руки", "левой руке", "левую руку", "левой рукой", "левой руке")
-	var/static/list/right_arm = RU_NAMES_LIST("right arm", "правая рука", "правой руки", "правой руке", "правую руку", "правой рукой", "правой руке")
-	var/static/list/left_leg = RU_NAMES_LIST("left leg", "левая нога", "левой ноги", "левой ноге", "левую ногу", "левой ногой", "левой ноге")
-	var/static/list/right_leg = RU_NAMES_LIST("right leg", "правая нога", "правой ноги", "правой ноге", "правую ногу", "правой ногой", "правой ноге")
-	var/static/list/left_foot = RU_NAMES_LIST("left leg", "левая стопа", "левой стопы", "левой стопе", "левую стопу", "левой стопой", "левой стопе")
-	var/static/list/right_foot = RU_NAMES_LIST("left leg", "правая стопа", "правой стопы", "правой стопе", "правую стопу", "правой стопой", "правой стопе")
-	var/static/list/groin = RU_NAMES_LIST("groin", "паховая область", "паховой области", "паховой области", "паховую область", "паховой областью", "паховой области")
+	var/static/list/chest = ru_names_list("chest", "грудь", "груди", "груди", "грудь", "грудью", "груди", gender = FEMALE)
+	var/static/list/head = ru_names_list("head", "голова", "головы", "голове", "голову", "головой", "голове", gender = FEMALE)
+	var/static/list/right_hand = ru_names_list("right hand", "правое запястье", "правого запястья", "правому запястью", "правое запястье", "правым запястьем", "правом запястье", gender = FEMALE)
+	var/static/list/left_hand = ru_names_list("left hand", "левое запястье", "левое запястье", "левой руке", "левую руку", "левой рукой", "левой руке", gender = FEMALE)
+	var/static/list/left_arm = ru_names_list("left arm", "левая рука", "левой руки", "левой руке", "левую руку", "левой рукой", "левой руке", gender = FEMALE)
+	var/static/list/right_arm = ru_names_list("right arm", "правая рука", "правой руки", "правой руке", "правую руку", "правой рукой", "правой руке", gender = FEMALE)
+	var/static/list/left_leg = ru_names_list("left leg", "левая нога", "левой ноги", "левой ноге", "левую ногу", "левой ногой", "левой ноге", gender = FEMALE)
+	var/static/list/right_leg = ru_names_list("right leg", "правая нога", "правой ноги", "правой ноге", "правую ногу", "правой ногой", "правой ноге", gender = FEMALE)
+	var/static/list/left_foot = ru_names_list("left leg", "левая стопа", "левой стопы", "левой стопе", "левую стопу", "левой стопой", "левой стопе", gender = FEMALE)
+	var/static/list/right_foot = ru_names_list("left leg", "правая стопа", "правой стопы", "правой стопе", "правую стопу", "правой стопой", "правой стопе", gender = FEMALE)
+	var/static/list/groin = ru_names_list("groin", "паховая область", "паховой области", "паховой области", "паховую область", "паховой областью", "паховой области", gender = FEMALE)
 	switch(zone)
 		if(BODY_ZONE_CHEST)
 			return chest[declent]

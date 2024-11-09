@@ -5,6 +5,7 @@
 #accusative = "винительный"
 #instrumental = "творительный"
 #prepositional = "предложный"
+#gender = "male"
 
 # MARK: Uncategorized
 
@@ -15,6 +16,7 @@ dative = "челюстям жизни"
 accusative = "челюсти жизни"
 instrumental = "челюстями жизни"
 prepositional = "челюстях жизни"
+gender = "plural"
 
 [holopad]
 nominative = "голопад"
@@ -23,6 +25,7 @@ dative = "голопаду"
 accusative = "голопад"
 instrumental = "голопадом"
 prepositional = "голопаде"
+gender = "male"
 
 ["secure holopad"]
 nominative = "защищенный голопад"

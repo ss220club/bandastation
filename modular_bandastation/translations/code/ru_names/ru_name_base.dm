@@ -2,8 +2,14 @@ GLOBAL_LIST_EMPTY(ru_names)
 
 /atom
 	// code\__DEFINES\bandastation\pronouns.dm for more info
-	/// List consists of ("name", "именительный", "родительный", "дательный", "винительный", "творительный", "предложный")
+	/// List consists of ("name", "именительный", "родительный", "дательный", "винительный", "творительный", "предложный", "gender")
 	var/list/ru_names
+
+/// Хелпер для создания склонений
+/proc/ru_names_list(base, nominative, genitive, dative, accusative, instrumental, prepositional, gender)
+	if(!base || !nominative || !genitive || !dative || !accusative || !instrumental || !prepositional)
+		CRASH("ru_names_list() received incomplete declent list!")
+	return list("base" = base, NOMINATIVE = nominative, GENITIVE = genitive, DATIVE = dative, ACCUSATIVE = accusative, INSTRUMENTAL = instrumental, PREPOSITIONAL = prepositional, "gender" = gender)
 
 /proc/ru_names_toml(name, prefix, suffix)
 	if(!length(GLOB.ru_names))
@@ -13,14 +19,15 @@ GLOBAL_LIST_EMPTY(ru_names)
 			return
 		GLOB.ru_names = rustg_read_toml_file("[PATH_TO_TRANSLATE_DATA]/ru_names.toml")
 	if(GLOB.ru_names[name])
-		return RU_NAMES_LIST(
+		return ru_names_list(
 			"[prefix][name][suffix]",
 			"[prefix][GLOB.ru_names[name]["nominative"]][suffix]",
 			"[prefix][GLOB.ru_names[name]["genitive"]][suffix]",
 			"[prefix][GLOB.ru_names[name]["dative"]][suffix]",
 			"[prefix][GLOB.ru_names[name]["accusative"]][suffix]",
 			"[prefix][GLOB.ru_names[name]["instrumental"]][suffix]",
-			"[prefix][GLOB.ru_names[name]["prepositional"]][suffix]")
+			"[prefix][GLOB.ru_names[name]["prepositional"]][suffix]",
+			"[GLOB.ru_names[name]["gender"]]",)
 
 /atom/Initialize(mapload, ...)
 	. = ..()
@@ -40,9 +47,11 @@ GLOBAL_LIST_EMPTY(ru_names)
 /atom/ru_names_rename(list/new_list)
 	if(!length(new_list))
 		return
-	if(length(new_list) != RU_NAMES_LENGTH)
-		CRASH("proc/ru_names_rename() received incorrect list!")
 	ru_names = new_list
+	if(new_list["gender"])
+		gender = new_list["gender"]
+	else
+		gender = src::gender
 
 /**
 * Процедура выбора правильного падежа для любого предмета, если у него указан словарь «ru_names», примерно такой:
