@@ -173,7 +173,7 @@
 			return SURGERY_STEP_FAIL
 		var/obj/item/organ/meatslab = tool
 		if(!meatslab.useable)
-			to_chat(user, span_warning("Кажется, что имеются повреждения у [target_organ.declent_ru(GENITIVE)], вы не сможете использовать это!"))
+			to_chat(user, span_warning("Кажется, что имеются повреждения у [target_organ.declent_ru(GENITIVE)], вы не сможете имплантировать это!"))
 			return SURGERY_STEP_FAIL
 
 		if(!can_use_organ(user, meatslab))
@@ -260,9 +260,9 @@
 		display_results(
 			user,
 			target,
-			span_notice("Вы установили [tool.declent_ru(ACCUSATIVE)] в [target.parse_zone_with_bodypart(target_zone, declent = ACCUSATIVE)] у [target.declent_ru(GENITIVE)]."),
-			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] установил [tool.declent_ru(ACCUSATIVE)] в [target.parse_zone_with_bodypart(target_zone, declent = ACCUSATIVE)] у [target.declent_ru(GENITIVE)]!"),
-			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] установил что-то в [target.parse_zone_with_bodypart(target_zone, declent = ACCUSATIVE)] у [target.declent_ru(GENITIVE)]!"),
+			span_notice("Вы устанавливаете [tool.declent_ru(ACCUSATIVE)] в [target.parse_zone_with_bodypart(target_zone, declent = ACCUSATIVE)] у [target.declent_ru(GENITIVE)]."),
+			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] устанавливает [tool.declent_ru(ACCUSATIVE)] в [target.parse_zone_with_bodypart(target_zone, declent = ACCUSATIVE)] у [target.declent_ru(GENITIVE)]!"),
+			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] устанавливает что-то в [target.parse_zone_with_bodypart(target_zone, declent = ACCUSATIVE)] у [target.declent_ru(GENITIVE)]!"),
 		)
 		display_pain(target, "[capitalize(target.parse_zone_with_bodypart(target_zone))] у вас болит, пока [tool.declent_ru(NOMINATIVE)] приживается к телу!")
 		target_organ.on_surgical_insertion(user, target, target_zone, tool)

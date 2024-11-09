@@ -39,8 +39,8 @@
 	display_results(
 		user,
 		target,
-		span_notice("Вы успешно вылечили глаза у [target.declent_ru(GENITIVE)]."),
-		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно лечит глаза у [target.declent_ru(GENITIVE)]!"),
+		span_notice("Вы успешно вылечиваете глаза у [target.declent_ru(GENITIVE)]."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно излечивает глаза у [target.declent_ru(GENITIVE)]!"),
 		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] завершает операцию на глазах у [target.declent_ru(GENITIVE)]."),
 	)
 	display_pain(target, "Ваше зрение размыто, но кажется, что теперь вы видите немного лучше!")

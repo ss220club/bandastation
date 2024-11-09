@@ -13,7 +13,7 @@
 	)
 
 /datum/surgery/gastrectomy/mechanic
-	name = "Engine Diagnostic"
+	name = "Диагностика двигателя"
 	requires_bodypart_type = BODYTYPE_ROBOTIC
 	steps = list(
 		/datum/surgery_step/mechanic_open,
@@ -47,7 +47,7 @@
 	surgery_effects_mood = TRUE
 
 /datum/surgery_step/incise_heart/mechanic
-	name = "access engine internals (scalpel or crowbar)"
+	name = "получите доступ к двигателю (скальпель или лом)"
 	implements = list(
 		TOOL_SCALPEL = 95,
 		TOOL_CROWBAR = 95,
@@ -112,7 +112,7 @@
 	failure_sound = 'sound/items/handling/surgery/organ2.ogg'
 
 /datum/surgery_step/coronary_bypass/mechanic
-	name = "perform maintenance (hemostat or wrench)"
+	name = "проведите обслуживание (гемостат или ключ)"
 	implements = list(
 		TOOL_HEMOSTAT = 90,
 		TOOL_WRENCH = 90,
@@ -142,9 +142,9 @@
 	display_results(
 		user,
 		target,
-		span_notice("Вы успешно провели шунтирование сердца у [target.declent_ru(GENITIVE)]."),
-		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно провел шунтирование сердца у [target.declent_ru(GENITIVE)]."),
-		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно провел шунтирование сердца у [target.declent_ru(GENITIVE)]."),
+		span_notice("Вы успешно проводите шунтирование сердца у [target.declent_ru(GENITIVE)]."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно проводит шунтирование сердца у [target.declent_ru(GENITIVE)]."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно проводит шунтирование сердца у [target.declent_ru(GENITIVE)]."),
 	)
 	display_pain(target, "Боль в груди не отступает, но сердце чувствует себя как никогда хорошо!")
 	return ..()
@@ -155,7 +155,7 @@
 		display_results(
 			user,
 			target,
-			span_warning("Вы ошибаетесь при шунтирование сердца и повредили часть сердца!"),
+			span_warning("Вы ошибаетесь при шунтировании сердца и повредили часть сердца!"),
 			span_warning("[capitalize(user.declent_ru(NOMINATIVE))] ошибается, в результате чего из груди [target_human.declent_ru(GENITIVE)] обильно хлещет кровь!"),
 			span_warning("[capitalize(user.declent_ru(NOMINATIVE))] ошибается, в результате чего из груди [target_human.declent_ru(GENITIVE)] обильно хлещет кровь!"),
 		)

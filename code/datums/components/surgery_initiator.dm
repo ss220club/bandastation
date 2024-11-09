@@ -313,7 +313,7 @@
 
 	user.visible_message(
 		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] накидывает [parent.declent_ru(ACCUSATIVE)] на [target.parse_zone_with_bodypart(selected_zone, declent = ACCUSATIVE)] у [target.declent_ru(GENITIVE)] для подготовки к операции."),
-		span_notice("Вы накидываете [parent.declent_ru(ACCUSATIVE)] на [target.parse_zone_with_bodypart(selected_zone, declent = ACCUSATIVE)] у [target.declent_ru(GENITIVE)] для подготовки к [procedure.name]."),
+		span_notice("Вы накидываете [parent.declent_ru(ACCUSATIVE)] на [target.parse_zone_with_bodypart(selected_zone, declent = ACCUSATIVE)] у [target.declent_ru(GENITIVE)] для подготовки к операции \"[procedure.name]\"."),
 	)
 
 	log_combat(user, target, "operated on", null, "(OPERATION TYPE: [procedure.name]) (TARGET AREA: [selected_zone])")

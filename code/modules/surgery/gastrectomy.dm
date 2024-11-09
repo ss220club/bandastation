@@ -15,7 +15,7 @@
 	)
 
 /datum/surgery/gastrectomy/mechanic
-	name = "Nutrient Processing System Diagnostic"
+	name = "Диагностика системы усвоения нутриментов"
 	requires_bodypart_type = BODYTYPE_ROBOTIC
 	steps = list(
 		/datum/surgery_step/mechanic_open,
@@ -48,7 +48,7 @@
 	surgery_effects_mood = TRUE
 
 /datum/surgery_step/gastrectomy/mechanic
-	name = "perform maintenance (scalpel or wrench)"
+	name = "проведите обслуживание (скальпель или ключ)"
 	implements = list(
 		TOOL_SCALPEL = 95,
 		TOOL_WRENCH = 95,
@@ -92,8 +92,8 @@
 	display_results(
 		user,
 		target,
-		span_warning("Вы удалили не ту часть желудка у [target.declent_ru(GENITIVE)]!"),
-		span_warning("[capitalize(user.declent_ru(NOMINATIVE))] удалил не ту часть желудка у [target.declent_ru(GENITIVE)]!"),
-		span_warning("[capitalize(user.declent_ru(NOMINATIVE))] удалил не ту часть желудка у [target.declent_ru(GENITIVE)]!"),
+		span_warning("Вы удаляете не ту часть желудка у [target.declent_ru(GENITIVE)]!"),
+		span_warning("[capitalize(user.declent_ru(NOMINATIVE))] удаляет не ту часть желудка у [target.declent_ru(GENITIVE)]!"),
+		span_warning("[capitalize(user.declent_ru(NOMINATIVE))] удаляет не ту часть желудка у [target.declent_ru(GENITIVE)]!"),
 	)
 	display_pain(target, "У вас болит живот, и от этого не становится легче!")

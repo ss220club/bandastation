@@ -12,7 +12,7 @@
 	)
 
 /datum/surgery/lobectomy/mechanic
-	name = "Air Filtration Diagnostic"
+	name = "Диагностика воздушного фильтра"
 	requires_bodypart_type = BODYTYPE_ROBOTIC
 	steps = list(
 		/datum/surgery_step/mechanic_open,
@@ -44,7 +44,7 @@
 	surgery_effects_mood = TRUE
 
 /datum/surgery_step/lobectomy/mechanic
-	name = "Perform maintenance (scalpel or wrench)"
+	name = "проведите обслуживание (скальпель или ключ)"
 	implements = list(
 		TOOL_SCALPEL = 95,
 		TOOL_WRENCH = 95,
@@ -77,7 +77,7 @@
 			user,
 			target,
 			span_notice("Вы успешно вырезаете самую поврежденную долю у [human_target.declent_ru(GENITIVE)]."),
-			span_notice("Успешно отрезал часть легких у [human_target.declent_ru(GENITIVE)]."),
+			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно вырезает часть легких у [human_target.declent_ru(GENITIVE)]."),
 			"",
 		)
 		display_pain(target, "Грудь адски болит, но дышать становится немного легче.")

@@ -55,7 +55,7 @@
 		return
 
 	if(pierce_wound.blood_flow <= 0)
-		to_chat(user, span_notice("У [target] в [target.parse_zone_with_bodypart(user.zone_selected, declent = PREPOSITIONAL)] нет сквозного ранения, которое нуждается в обработке!"))
+		to_chat(user, span_notice("У [target.declent_ru(GENITIVE)] нет на [target.ru_p_theirs()] [target.parse_zone_with_bodypart(target_zone, declent = PREPOSITIONAL)] сквозного ранения, которое нуждается в обработке!"))
 		surgery.status++
 		return
 
@@ -71,7 +71,7 @@
 /datum/surgery_step/repair_innards/success(mob/living/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
 	var/datum/wound/pierce/bleed/pierce_wound = surgery.operated_wound
 	if(!pierce_wound)
-		to_chat(user, span_warning("У [target] нет сквозного ранения, которое нуждается в обработке!"))
+		to_chat(user, span_warning("У [target.declent_ru(GENITIVE)] нет на [target.ru_p_theirs()] [target.parse_zone_with_bodypart(target_zone, declent = PREPOSITIONAL)] сквозного ранения, которое нуждается в обработке!"))
 		return ..()
 
 	display_results(
@@ -132,15 +132,15 @@
 /datum/surgery_step/seal_veins/success(mob/living/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
 	var/datum/wound/pierce/bleed/pierce_wound = surgery.operated_wound
 	if(!pierce_wound)
-		to_chat(user, span_warning("У [target] нет сквозного ранения!"))
+		to_chat(user, span_warning("У [target.declent_ru(GENITIVE)] нет на [target.ru_p_theirs()] [target.parse_zone_with_bodypart(target_zone, declent = PREPOSITIONAL)] сквозного ранения!"))
 		return ..()
 
 	display_results(
 		user,
 		target,
-		span_notice("Вы успешно восстановили некоторые из поврежденных кровеносных сосудов в [target.parse_zone_with_bodypart(target_zone, declent = PREPOSITIONAL)] у [target.declent_ru(GENITIVE)] при помощи [tool.declent_ru(GENITIVE)]."),
-		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно восстановил некоторые из поврежденных кровеносных сосудов в [target.parse_zone_with_bodypart(target_zone, declent = PREPOSITIONAL)] у [target.declent_ru(GENITIVE)] при помощи [tool.declent_ru(GENITIVE)]!"),
-		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно восстановил некоторые из поврежденных кровеносных сосудов в [target.parse_zone_with_bodypart(target_zone, declent = PREPOSITIONAL)] у [target.declent_ru(GENITIVE)]!"),
+		span_notice("Вы успешно восстанавливаете некоторые из поврежденных кровеносных сосудов в [target.parse_zone_with_bodypart(target_zone, declent = PREPOSITIONAL)] у [target.declent_ru(GENITIVE)] при помощи [tool.declent_ru(GENITIVE)]."),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно восстанавливает некоторые из поврежденных кровеносных сосудов в [target.parse_zone_with_bodypart(target_zone, declent = PREPOSITIONAL)] у [target.declent_ru(GENITIVE)] при помощи [tool.declent_ru(GENITIVE)]!"),
+		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно восстанавливает некоторые из поврежденных кровеносных сосудов в [target.parse_zone_with_bodypart(target_zone, declent = PREPOSITIONAL)] у [target.declent_ru(GENITIVE)]!"),
 	)
 	log_combat(user, target, "dressed burns in", addition="COMBAT MODE: [uppertext(user.combat_mode)]")
 	pierce_wound.adjust_blood_flow(-0.5)
@@ -148,7 +148,7 @@
 		surgery.status = REALIGN_INNARDS
 		to_chat(user, span_notice("<i>Кажется, что кровеносные сосуды все еще смещены...</i>"))
 	else
-		to_chat(user, span_green("Вы восстановили все внутренние повреждения в [target.parse_zone_with_bodypart(target_zone, declent = PREPOSITIONAL)] у [target.declent_ru(GENITIVE)]!"))
+		to_chat(user, span_green("Вы восстанавливаете все внутренние повреждения в [target.parse_zone_with_bodypart(target_zone, declent = PREPOSITIONAL)] у [target.declent_ru(GENITIVE)]!"))
 	return ..()
 
 #undef REALIGN_INNARDS

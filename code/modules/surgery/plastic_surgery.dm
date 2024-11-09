@@ -79,7 +79,7 @@
 		display_results(
 			user,
 			target,
-			span_notice("Вы успешно восстановили внешний вид лица у [target.declent_ru(GENITIVE)]."),
+			span_notice("Вы успешно восстанавливаете внешний вид лица у [target.declent_ru(GENITIVE)]."),
 			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно восстанавливает внешний вид лица у [target.declent_ru(GENITIVE)]!"),
 			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] заканчивает проводить операцию на лице у [target.declent_ru(GENITIVE)]."),
 		)
@@ -109,8 +109,8 @@
 		display_results(
 			user,
 			target,
-			span_notice("Вы полностью изменили внешность у [oldname], [target.ru_p_they()] теперь [newname]."),
-			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] полностью изменил внешность у [oldname], [target.ru_p_they()] теперь [newname]!"),
+			span_notice("Вы полностью изменяете внешность у [oldname], [target.ru_p_they()] теперь [newname]."),
+			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] полностью изменяет внешность у [oldname], [target.ru_p_they()] теперь [newname]!"),
 			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] заканчивает проводить операцию на лице у [target.declent_ru(GENITIVE)]."),
 		)
 		display_pain(target, "Боль проходит, а ваше лицо кажется новым и непривычным!")

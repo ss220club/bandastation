@@ -42,7 +42,7 @@
 		display_results(
 			user,
 			target,
-			span_notice("Вы успешно извлекли из [target.declent_ru(GENITIVE)] ядер: [core_count]."),
+			span_notice("Вы успешно извлекаете из [target.declent_ru(GENITIVE)] ядер: [core_count]."),
 			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно извлекает из [target.declent_ru(GENITIVE)] ядер: [core_count]!"),
 			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно извлекает из [target.declent_ru(GENITIVE)] ядер: [core_count]!"),
 		)

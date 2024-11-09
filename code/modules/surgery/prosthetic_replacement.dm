@@ -105,7 +105,7 @@
 		display_results(
 			user,
 			target,
-			span_notice("Вы успешно заменили [target.parse_zone_with_bodypart(target_zone, declent = ACCUSATIVE)]</i> у [target.declent_ru(GENITIVE)]."),
+			span_notice("Вы успешно заменяете [target.parse_zone_with_bodypart(target_zone, declent = ACCUSATIVE)]</i> у [target.declent_ru(GENITIVE)]."),
 			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно заменяет [target.parse_zone_with_bodypart(target_zone, declent = ACCUSATIVE)] у [target.declent_ru(GENITIVE)] на [tool.declent_ru(ACCUSATIVE)]!"),
 			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно заменяет [target.parse_zone_with_bodypart(target_zone, declent = ACCUSATIVE)] у [target.declent_ru(GENITIVE)]!"),
 		)
@@ -119,8 +119,8 @@
 		display_results(
 			user,
 			target,
-			span_notice("Вы прикрепили [tool.declent_ru(ACCUSATIVE)]."),
-			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] заканчивает прикреплять [tool.declent_ru(ACCUSATIVE)]!"),
+			span_notice("Вы прикрепляете [tool.declent_ru(ACCUSATIVE)]."),
+			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] прикрепляет [tool.declent_ru(ACCUSATIVE)]!"),
 			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] завершает операцию по прикреплению!"),
 		)
 		display_pain(target, "Вы испытываете странные ощущения от присоединения [target.parse_zone_with_bodypart(target_zone, declent = GENITIVE)] у вас.", TRUE)

@@ -16,7 +16,7 @@
 	)
 
 /datum/surgery/revival/mechanic
-	name = "Full System Reboot"
+	name = "Полный перезапуск систем"
 	requires_bodypart_type = BODYTYPE_ROBOTIC
 	steps = list(
 		/datum/surgery_step/mechanic_open,
@@ -55,7 +55,7 @@
 	return TRUE
 
 /datum/surgery_step/revive
-	name = "воздействуй на мозг электрическим разрядом (дефибриллятор)"
+	name = "шокируйте мозг (дефибриллятор)"
 	implements = list(
 		/obj/item/shockpaddles = 100,
 		/obj/item/melee/touch_attack/shock = 100,
@@ -106,7 +106,7 @@
 	display_results(
 		user,
 		target,
-		span_notice("Вы успешно поразили мозг [target.declent_ru(GENITIVE)] с помощью [tool.declent_ru(GENITIVE)]..."),
+		span_notice("Вы успешно поражаете мозг [target.declent_ru(GENITIVE)] с помощью [tool.declent_ru(GENITIVE)]..."),
 		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] посылает мощный удар в мозг [target.declent_ru(GENITIVE)] с помощью [tool.declent_ru(GENITIVE)]..."),
 		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] посылает мощный удар в мозг [target.declent_ru(GENITIVE)] с помощью [tool.declent_ru(GENITIVE)]..."),
 	)
@@ -134,7 +134,7 @@
 	display_results(
 		user,
 		target,
-		span_notice("Вы успешно поразили мозг [target.declent_ru(GENITIVE)] при помощи [tool.declent_ru(GENITIVE)], но [target.ru_p_they()] не реагирует."),
+		span_notice("Вы успешно поражаете мозг [target.declent_ru(GENITIVE)] при помощи [tool.declent_ru(GENITIVE)], но [target.ru_p_they()] не реагирует."),
 		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно поражает мозг [target.declent_ru(GENITIVE)] мощным ударом с помощью [tool.declent_ru(GENITIVE)], но [target.ru_p_they()] не реагирует."),
 		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно поражает мозг [target.declent_ru(GENITIVE)] мощным ударом с помощью [tool.declent_ru(GENITIVE)], но [target.ru_p_they()] не реагирует."),
 	)

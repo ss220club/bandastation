@@ -14,7 +14,7 @@
 	)
 
 /datum/surgery/hepatectomy/mechanic
-	name = "Impurity Management System Diagnostic"
+	name = "Диагностика системы очистки"
 	requires_bodypart_type = BODYTYPE_ROBOTIC
 	steps = list(
 		/datum/surgery_step/mechanic_open,
@@ -47,7 +47,7 @@
 	surgery_effects_mood = TRUE
 
 /datum/surgery_step/hepatectomy/mechanic
-	name = "perform maintenance (scalpel or wirecutter)"
+	name = "проведите обслуживание (скальпель или кусачки)"
 	implements = list(
 		TOOL_SCALPEL = 95,
 		TOOL_WRENCH = 95,
@@ -91,8 +91,8 @@
 	display_results(
 		user,
 		target,
-		span_warning("Вы удалили не ту часть печени у [target.declent_ru(GENITIVE)]!"),
-		span_warning("[capitalize(user.declent_ru(NOMINATIVE))] удалил не ту часть печени у [target.declent_ru(GENITIVE)]!"),
-		span_warning("[capitalize(user.declent_ru(NOMINATIVE))] удалил не ту часть печени у [target.declent_ru(GENITIVE)]!"),
+		span_warning("Вы удаляете не ту часть печени у [target.declent_ru(GENITIVE)]!"),
+		span_warning("[capitalize(user.declent_ru(NOMINATIVE))] удаляет не ту часть печени у [target.declent_ru(GENITIVE)]!"),
+		span_warning("[capitalize(user.declent_ru(NOMINATIVE))] удаляет не ту часть печени у [target.declent_ru(GENITIVE)]!"),
 	)
 	display_pain(target, "Вы чувствуете острую боль в брюшной полости!")

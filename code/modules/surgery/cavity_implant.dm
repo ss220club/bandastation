@@ -74,10 +74,10 @@ GLOBAL_LIST_INIT(heavy_cavity_implants, typecacheof(list(/obj/item/transfer_valv
 				span_notice("[capitalize(user.declent_ru(NOMINATIVE))] вытягивает [item_for_cavity.declent_ru(ACCUSATIVE)] из [ru_parse_zone(target_zone, GENITIVE)] у [target.declent_ru(GENITIVE)]!"),
 				span_notice("[capitalize(user.declent_ru(NOMINATIVE))] вытягивает [item_for_cavity.w_class > WEIGHT_CLASS_SMALL ? item_for_cavity.declent_ru(ACCUSATIVE) : "что-то"] из [ru_parse_zone(target_zone, GENITIVE)] у [target.declent_ru(GENITIVE)]."),
 			)
-			display_pain(target, "Что-то вытащили из [ru_parse_zone(target_zone, declent = GENITIVE)] у вас! Это чертовски больно!")
+			display_pain(target, "Что-то вытягивают из [ru_parse_zone(target_zone, declent = GENITIVE)] у вас! Это чертовски больно!")
 			user.put_in_hands(item_for_cavity)
 			target_chest.cavity_item = null
 			return ..()
 		else
-			to_chat(user, span_warning("Вы не нашли ничего в [ru_parse_zone(target_zone, declent = PREPOSITIONAL)] у [target.declent_ru(GENITIVE)]."))
+			to_chat(user, span_warning("Вы ничего не нашли в [ru_parse_zone(target_zone, declent = PREPOSITIONAL)] у [target.declent_ru(GENITIVE)]."))
 			return FALSE

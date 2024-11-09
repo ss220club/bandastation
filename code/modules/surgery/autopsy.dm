@@ -10,7 +10,7 @@
 	)
 
 /datum/surgery/autopsy/mechanic
-	name = "System Failure Analysis"
+	name = "Анализ системного сбоя"
 	requires_bodypart_type = BODYTYPE_ROBOTIC
 	steps = list(
 		/datum/surgery_step/mechanic_open,
@@ -61,8 +61,8 @@
 	display_results(
 		user,
 		target,
-		span_warning("Вы ошибаетесь, оставив ушиб на груди у [target.declent_ru(GENITIVE)]!"),
-		span_warning("[capitalize(user.declent_ru(NOMINATIVE))] ошибается, оставив ушиб на груди у [target.declent_ru(GENITIVE)]!"),
+		span_warning("Вы ошибаетесь, оставляя ушиб на груди у [target.declent_ru(GENITIVE)]!"),
+		span_warning("[capitalize(user.declent_ru(NOMINATIVE))] ошибается, оставляя ушиб на груди у [target.declent_ru(GENITIVE)]!"),
 		span_warning("[capitalize(user.declent_ru(NOMINATIVE))] ошибается!"),
 	)
 	target.adjustBruteLoss(5)

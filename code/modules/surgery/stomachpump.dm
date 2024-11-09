@@ -11,7 +11,7 @@
 	)
 
 /datum/surgery/stomach_pump/mechanic
-	name = "Nutrient Processing Purge"
+	name = "Очистка обработчика нутриментов"
 	requires_bodypart_type = BODYTYPE_ROBOTIC
 	steps = list(
 		/datum/surgery_step/mechanic_open,
@@ -67,8 +67,8 @@
 		display_results(
 			user,
 			target,
-			span_warning("Вы ошибаетесь, оставив ушиб на груди [target_human.declent_ru(GENITIVE)]!"),
-			span_warning("[capitalize(user.declent_ru(NOMINATIVE))] ошибается, оставив ушиб на груди [target_human.declent_ru(GENITIVE)]!"),
+			span_warning("Вы ошибаетесь, оставляя ушиб на груди [target_human.declent_ru(GENITIVE)]!"),
+			span_warning("[capitalize(user.declent_ru(NOMINATIVE))] ошибается, оставляя ушиб на груди [target_human.declent_ru(GENITIVE)]!"),
 			span_warning("[capitalize(user.declent_ru(NOMINATIVE))] ошибается!"),
 		)
 		target_human.adjustOrganLoss(ORGAN_SLOT_STOMACH, 5)
