@@ -14585,11 +14585,6 @@
 	},
 /turf/open/floor/iron,
 /area/station/cargo/storage/ghetto)
-"eej" = (
-/obj/effect/spawner/structure/window/reinforced,
-/obj/structure/cable,
-/turf/open/floor/plating,
-/area/station/engineering/storage_shared)
 "eem" = (
 /obj/structure/holosign/barrier/atmos,
 /turf/open/floor/plating,
@@ -179591,7 +179586,7 @@ rYX
 cnU
 swg
 gCE
-eej
+kpf
 sox
 cMJ
 eVN
