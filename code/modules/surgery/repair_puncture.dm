@@ -55,7 +55,7 @@
 		return
 
 	if(pierce_wound.blood_flow <= 0)
-		to_chat(user, span_notice("У [target] в [target.parse_zone_with_bodypart(user.zone_selected, declent = PREPOSITIONAL)] нет сквозного ранения, которое нуждается в обработке!"))
+		to_chat(user, span_notice("У [target.declent_ru(GENITIVE)] нет на [target.ru_p_theirs()] [target.parse_zone_with_bodypart(target_zone, declent = PREPOSITIONAL)] сквозного ранения, которое нуждается в обработке!"))
 		surgery.status++
 		return
 
@@ -71,7 +71,7 @@
 /datum/surgery_step/repair_innards/success(mob/living/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
 	var/datum/wound/pierce/bleed/pierce_wound = surgery.operated_wound
 	if(!pierce_wound)
-		to_chat(user, span_warning("У [target] нет сквозного ранения, которое нуждается в обработке!"))
+		to_chat(user, span_warning("У У [target.declent_ru(GENITIVE)] нет на [target.ru_p_theirs()] [target.parse_zone_with_bodypart(target_zone, declent = PREPOSITIONAL)] сквозного ранения, которое нуждается в обработке!"))
 		return ..()
 
 	display_results(
@@ -132,7 +132,7 @@
 /datum/surgery_step/seal_veins/success(mob/living/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
 	var/datum/wound/pierce/bleed/pierce_wound = surgery.operated_wound
 	if(!pierce_wound)
-		to_chat(user, span_warning("У [target] нет сквозного ранения!"))
+		to_chat(user, span_warning("У [target.declent_ru(GENITIVE)] нет на [target.ru_p_theirs()] [target.parse_zone_with_bodypart(target_zone, declent = PREPOSITIONAL)] сквозного ранения!"))
 		return ..()
 
 	display_results(

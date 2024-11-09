@@ -73,7 +73,7 @@
 	if(surgery.operated_wound)
 		var/datum/wound/burn/flesh/burn_wound = surgery.operated_wound
 		if(burn_wound.infestation <= 0)
-			to_chat(user, span_notice("У [target] в [target.parse_zone_with_bodypart(user.zone_selected, declent = PREPOSITIONAL)] нет зараженной плоти, которую нужно удалить!"))
+			to_chat(user, span_notice("У [target.declent_ru(GENITIVE)] нет на [target.ru_p_theirs()] [target.parse_zone_with_bodypart(target_zone, declent = PREPOSITIONAL)] зараженной плоти, которую нужно удалить!"))
 			surgery.status++
 			repeatable = FALSE
 			return
@@ -106,7 +106,7 @@
 		if(burn_wound.infestation <= 0)
 			repeatable = FALSE
 	else
-		to_chat(user, span_warning("У [target.declent_ru(GENITIVE)] нет зараженной плоти на [target.ru_p_theirs()] [target.parse_zone_with_bodypart(target_zone, declent = PREPOSITIONAL)]!"))
+		to_chat(user, span_warning("У [target.declent_ru(GENITIVE)] нет на [target.ru_p_theirs()] [target.parse_zone_with_bodypart(target_zone, declent = PREPOSITIONAL)] зараженной плоти!"))
 	return ..()
 
 /datum/surgery_step/debride/failure(mob/user, mob/living/target, target_zone, obj/item/tool, datum/surgery/surgery, fail_prob = 0)
@@ -171,7 +171,7 @@
 		var/obj/item/bodypart/the_part = target.get_bodypart(target_zone)
 		the_part.apply_gauze(tool)
 	else
-		to_chat(user, span_warning("У [target.declent_ru(GENITIVE)] нет ожогов на [target.ru_p_theirs()] [target.parse_zone_with_bodypart(target_zone, declent = PREPOSITIONAL)]!"))
+		to_chat(user, span_warning("У [target.declent_ru(GENITIVE)] нет на [target.ru_p_theirs()] [target.parse_zone_with_bodypart(target_zone, declent = PREPOSITIONAL)] ожогов!"))
 	return ..()
 
 /datum/surgery_step/dress/failure(mob/user, mob/living/target, target_zone, obj/item/tool, datum/surgery/surgery, fail_prob = 0)
