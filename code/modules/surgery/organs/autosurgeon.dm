@@ -51,7 +51,7 @@
 					organ_whitelisted = TRUE
 					break
 			if(!organ_whitelisted)
-				to_chat(user, span_alert("[capitalize(declent_ru(NOMINATIVE))] несовместим[genderize_decode(bayonet, "", "а", "о", "ы")] с [loaded_organ.declent_ru(INSTRUMENTAL)]."))
+				to_chat(user, span_alert("[capitalize(declent_ru(NOMINATIVE))] несовместим[genderize_decode(name, "", "а", "о", "ы")] с [loaded_organ.declent_ru(INSTRUMENTAL)]."))
 				return
 
 		if(!user.transferItemToLoc(loaded_organ, src))
@@ -138,7 +138,7 @@
 
 /obj/item/autosurgeon/medical_hud
 	name = "autosurgeon"
-	desc = "Одноразовый автохирург, который содержит медицинский имплант интерфейса. Отверткой можно достать имплант, но нельзя вставить обратно."
+	desc = "Одноразовый автохирург, который содержит имплант MedHUD. Отверткой можно достать имплант, но нельзя вставить обратно."
 	uses = 1
 	starting_organ = /obj/item/organ/cyberimp/eyes/hud/medical
 
