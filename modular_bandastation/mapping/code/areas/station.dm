@@ -35,6 +35,10 @@
 	name = "Комната Изготовления Дронов"
 	icon_state = "engine"
 
+/area/station/maintenance/disposal/trash
+	name = "Комната Изготовления Дронов"
+	icon_state = "engine"
+
 /area/station/security/prison/ghetto
 	name = "\improper Prison Wing Ghetto"
 	icon_state = "sec_prison"
