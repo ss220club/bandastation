@@ -1,6 +1,6 @@
 /obj/item/autosurgeon
 	name = "autosurgeon"
-	desc = "Устройство, которое устанавливает орган, имплант или скилл-чип в пользователя без интенсивной операции. \
+	desc = "Устройство, которое устанавливает орган, имплант или скилл-чип в пользователя без необходимости хирургического вмешательства. \
 		У него есть гнездо для установки импланта или органа, и гнездо для отвертки, чтобы доставать случайно вставленные вещи."
 	icon = 'icons/obj/devices/tool.dmi'
 	icon_state = "autosurgeon"
@@ -51,11 +51,11 @@
 					organ_whitelisted = TRUE
 					break
 			if(!organ_whitelisted)
-				to_chat(user, span_alert("[capitalize(declent_ru(NOMINATIVE))] несовместимо с [loaded_organ.declent_ru(INSTRUMENTAL)]."))
+				to_chat(user, span_alert("[capitalize(declent_ru(NOMINATIVE))] несовместим[genderize_decode(bayonet, "", "а", "о", "ы")] с [loaded_organ.declent_ru(INSTRUMENTAL)]."))
 				return
 
 		if(!user.transferItemToLoc(loaded_organ, src))
-			to_chat(user, span_alert("[capitalize(loaded_organ.declent_ru(NOMINATIVE))] прилипает к вашей руке!"))
+			to_chat(user, span_alert("[capitalize(loaded_organ.declent_ru(NOMINATIVE))] застревает в вашей руке!"))
 			return
 
 	stored_organ = loaded_organ
@@ -70,7 +70,7 @@
 		return
 
 	if(!uses)
-		to_chat(user, span_alert("[capitalize(declent_ru(NOMINATIVE))] не может использоваться. Устройства сложены и не могут быть реактивированны."))
+		to_chat(user, span_alert("[capitalize(declent_ru(NOMINATIVE))] не имеет больше зарядов. Устройства сложены и не могут быть реактивированны."))
 		return
 
 	if(implant_time)
@@ -83,11 +83,11 @@
 
 	if(target != user)
 		log_combat(user, target, "autosurgeon implanted [stored_organ] into", "[src]", "in [AREACOORD(target)]")
-		user.visible_message(span_notice("[capitalize(user.declent_ru(NOMINATIVE))] нажимает на кнопку на [declent_ru(PREPOSITIONAL)] и тот врезается в тело [target.declent_ru(GENITIVE)]."), span_notice("Вы нажимаете на кнопку на [declent_ru(PREPOSITIONAL)] и тот врезается в тело [target.declent_ru(GENITIVE)]."))
+		user.visible_message(span_notice("[capitalize(user.declent_ru(NOMINATIVE))] нажимает на кнопку на [declent_ru(PREPOSITIONAL)], и тот врезается в тело [target.declent_ru(GENITIVE)]."), span_notice("Вы нажимаете на кнопку на [declent_ru(PREPOSITIONAL)], и тот врезается в тело [target.declent_ru(GENITIVE)]."))
 	else
 		user.visible_message(
-			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] нажимает на кнопку на [declent_ru(PREPOSITIONAL)] и тот врезается в [user.ru_p_theirs()] тело."),
-			span_notice("Вы нажимаете на кнопку на [declent_ru(PREPOSITIONAL)] и тот врезается в ваше тело."),
+			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] нажимает на кнопку на [declent_ru(PREPOSITIONAL)], и тот врезается в [user.ru_p_theirs()] тело."),
+			span_notice("Вы нажимаете на кнопку на [declent_ru(PREPOSITIONAL)], и тот врезается в ваше тело."),
 		)
 
 	stored_organ.Insert(target)//insert stored organ into the user
@@ -99,7 +99,7 @@
 	if(uses)
 		uses--
 	if(uses == 0)
-		desc = "[initial(desc)] Выглядит, словно уже был использован."
+		desc = "[initial(desc)] Выглядит, словно не имеет больше зарядов."
 
 /obj/item/autosurgeon/attack_self(mob/user)//when the object it used...
 	use_autosurgeon(user, user)
@@ -125,14 +125,14 @@
 		var/atom/drop_loc = user.drop_location()
 		for(var/atom/movable/stored_implant as anything in src)
 			stored_implant.forceMove(drop_loc)
-			to_chat(user, span_notice("Вы убераете [stored_organ.declent_ru(ACCUSATIVE)] из [declent_ru(GENITIVE)]."))
+			to_chat(user, span_notice("Вы убираете [stored_organ.declent_ru(ACCUSATIVE)] из [declent_ru(GENITIVE)]."))
 			stored_organ = null
 
 		screwtool.play_tool_sound(src)
 		if (uses)
 			uses--
 		if(!uses)
-			desc = "[initial(desc)] Выглядит, словно уже был использован."
+			desc = "[initial(desc)] Выглядит, словно не имеет больше зарядов."
 		update_appearance(UPDATE_ICON)
 	return TRUE
 
@@ -183,7 +183,7 @@
 	uses = 1
 
 /obj/item/autosurgeon/syndicate/commsagent
-	desc = "Устройство, которое автоматически - болезненно - вставляет импланты. Выглядит так, словно кто-то специално \
+	desc = "Устройство, которое автоматически - и болезненно - вставляет импланты. Выглядит так, словно кто-то специально \
 	модифицировал его, чтобы оно вставляло только... языки. Пугающе."
 	starting_organ = /obj/item/organ/tongue
 
@@ -198,6 +198,6 @@
 	uses = 1
 
 /obj/item/autosurgeon/syndicate/contraband_sechud
-	desc = "Содержит контрабадный имплант интерфейса безопасности, который нельзя обнаружить анализаторами здоровья."
+	desc = "Содержит контрабандный имплант SecHUD, который нельзя обнаружить анализаторами здоровья."
 	uses = 1
 	starting_organ = /obj/item/organ/cyberimp/eyes/hud/security/syndicate
