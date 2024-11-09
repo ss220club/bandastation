@@ -36,7 +36,7 @@
 	icon_state = "engine"
 
 /area/station/maintenance/disposal/trash
-	name = "Комната Изготовления Дронов"
+	name = "Мусоросжигатель"
 	icon_state = "engine"
 
 /area/station/security/prison/ghetto
