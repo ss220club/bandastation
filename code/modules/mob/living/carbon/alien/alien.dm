@@ -49,7 +49,7 @@
 	LoadComponent( \
 		/datum/component/itempicky, \
 		xeno_allowed_items, \
-		span_alien("[capitalize("%TARGET")] не может держаться вами - ваши когти недостаточно ловки."), \
+		span_alien("Ваши когти недостаточно ловки, чтобы держать %TARGET."), \
 		CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(_has_trait), src, TRAIT_ADVANCEDTOOLUSER))
 
 /mob/living/carbon/alien/create_internal_organs()
