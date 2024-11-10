@@ -4,4 +4,4 @@
 
 // Override to default
 /obj/structure/railing/wooden_fence
-	icon = 'icons/obj/railings.dmi'
+	icon = 'icons/obj/structures.dmi'
