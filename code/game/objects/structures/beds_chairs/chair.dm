@@ -1,6 +1,5 @@
 /obj/structure/chair
 	name = "chair"
-	RU_NAMES_LIST_INIT("chair", "стул", "стула", "стулу", "стул", "стулом", "стуле")
 	desc = "You sit in this. Either by will or force."
 	icon = 'icons/obj/chairs.dmi'
 	icon_state = "chair"
@@ -26,7 +25,7 @@
 /obj/structure/chair/Initialize(mapload)
 	. = ..()
 	if(prob(0.2))
-		ru_names_rename(RU_NAMES_LIST("tactical [name]", "тактический стул", "тактического стула", "тактическому стулу", "тактический стул", "тактическим стулом", "тактическом стуле"))
+		ru_names_rename(ru_names_list("tactical [name]", "тактический [declent_ru(NOMINATIVE)]", "тактического [declent_ru(GENITIVE)]", "тактическому [declent_ru(DATIVE)]", "тактический [declent_ru(ACCUSATIVE)]", "тактическим [declent_ru(INSTRUMENTAL)]", "тактическом [declent_ru(PREPOSITIONAL)]", gender = declent_ru("gender")))
 		name = "tactical [name]"
 		fishing_modifier -= 8
 	MakeRotate()
@@ -310,7 +309,6 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/chair/stool/bar, 0)
 
 /obj/item/chair
 	name = "chair"
-	RU_NAMES_LIST_INIT("chair", "стул", "стула", "стулу", "стул", "стулом", "стуле")
 	desc = "Bar brawl essential."
 	icon = 'icons/obj/chairs.dmi'
 	icon_state = "chair_toppled"

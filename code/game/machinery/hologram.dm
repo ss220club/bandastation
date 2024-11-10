@@ -35,7 +35,6 @@ Possible to do for anyone motivated enough:
 
 /obj/machinery/holopad
 	name = "holopad"
-	RU_NAMES_LIST_INIT("holopad", "голопад", "голопада", "голопаду", "голопад", "голопадом", "голопаде")
 	desc = "It's a floor-mounted device for projecting holographic images."
 	icon = 'icons/obj/machines/floor.dmi'
 	icon_state = "holopad0"
@@ -115,7 +114,6 @@ Possible to do for anyone motivated enough:
 
 /obj/machinery/holopad/secure
 	name = "secure holopad"
-	RU_NAMES_LIST_INIT("secure holopad", "защищенный голопад", "защищенного голопада", "защищенному голопаду", "защищенный голопад", "защищенным голопадом", "защищенном голопаде")
 	desc = "It's a floor-mounted device for projecting holographic images. This one will refuse to auto-connect incoming calls."
 	secure = TRUE
 
@@ -558,7 +556,7 @@ Possible to do for anyone motivated enough:
 		hologram.layer = FLY_LAYER //Above all the other objects/mobs. Or the vast majority of them.
 		SET_PLANE_EXPLICIT(hologram, ABOVE_GAME_PLANE, src)
 		hologram.set_anchored(TRUE)//So space wind cannot drag it.
-		hologram.ru_names_rename(RU_NAMES_LIST("[user.name] (Hologram)", "голограмма [user.declent_ru(GENITIVE)]", "голограммы [user.declent_ru(GENITIVE)]", "голограмме [user.declent_ru(GENITIVE)]", "голограмму [user.declent_ru(GENITIVE)]", "голограммой [user.declent_ru(GENITIVE)]", "голограмме [user.declent_ru(GENITIVE)]"))
+		hologram.ru_names_rename(ru_names_toml("hologram", suffix = " [user.declent_ru(GENITIVE)]", override_base = "[user.name] (Hologram)"))
 		hologram.name = "[user.name] (Hologram)"//If someone decides to right click.
 		set_holo(user, hologram)
 
@@ -747,7 +745,7 @@ For the other part of the code, check silicon say.dm. Particularly robot talk.*/
 	hologram.layer = FLY_LAYER//Above all the other objects/mobs. Or the vast majority of them.
 	SET_PLANE_EXPLICIT(hologram, ABOVE_GAME_PLANE, src)
 	hologram.set_anchored(TRUE)//So space wind cannot drag it.
-	hologram.ru_names_rename(RU_NAMES_LIST("[record.caller_name] (Hologram)", "голограмма [record.caller_name]", "голограммы [record.caller_name]", "голограмме [record.caller_name]", "голограмму [record.caller_name]", "голограммой [record.caller_name]", "голограмме [record.caller_name]"))
+	hologram.ru_names_rename(ru_names_toml("hologram", suffix = " [record.caller_name]", override_base = "[record.caller_name] (Hologram)"))
 	hologram.name = "[record.caller_name] (Hologram)"//If someone decides to right click.
 	set_holo(record, hologram)
 
@@ -839,7 +837,7 @@ For the other part of the code, check silicon say.dm. Particularly robot talk.*/
 			replay_holo.icon_state = work_off.icon_state
 			replay_holo.copy_overlays(work_off, TRUE)
 		if(HOLORECORD_RENAME)
-			replay_holo.ru_names_rename(RU_NAMES_LIST(entry[2] + " (Hologram)", "голограмма [entry[2]]", "голограммы [entry[2]]", "голограмме [entry[2]]", "голограмму [entry[2]]", "голограммой [entry[2]]", "голограмме [entry[2]]"))
+			replay_holo.ru_names_rename(ru_names_toml("hologram", suffix = " [entry[2]]", override_base = entry[2] + " (Hologram)"))
 			replay_holo.name = entry[2] + " (Hologram)"
 	.(entry_number+1)
 

@@ -1,6 +1,5 @@
 /mob/living/carbon/alien
 	name = "alien"
-	RU_NAMES_LIST_INIT("alien", "чужой", "чужого", "чужому", "чужого", "чужим", "чужом")
 	icon = 'icons/mob/nonhuman-player/alien.dmi'
 	gender = FEMALE //All xenos are girls!!
 	dna = null
@@ -140,7 +139,7 @@ Des: Removes all infected images from the alien.
 	)
 
 	new_xeno.setDir(dir)
-	new_xeno.change_name(name, real_name, numba)
+	new_xeno.change_name(name, real_name, identifier)
 
 	if(mind)
 		mind.name = new_xeno.real_name
@@ -154,7 +153,7 @@ Des: Removes all infected images from the alien.
 	qdel(src)
 
 /// Changes the name of the xeno we are evolving into in order to keep the same numerical identifier the old xeno had.
-/mob/living/carbon/alien/proc/change_name(old_name, old_real_name, old_number)
+/mob/living/carbon/alien/proc/change_name(old_name, old_real_name, old_identifier)
 	if(!alien_name_regex.Find(old_name)) // check to make sure there's no admins doing funny stuff with naming these aliens
 		name = old_name
 		real_name = old_real_name
@@ -163,10 +162,10 @@ Des: Removes all infected images from the alien.
 	if(!unique_name)
 		return
 
-	if(old_number != 0)
-		numba = old_number
-		ru_names_rename(RU_NAMES_LIST(initial(name), "[initial(ru_name_nominative) || initial(name)]", "[initial(ru_name_genitive) || initial(name)]", "[initial(ru_name_dative) || initial(name)]", "[initial(ru_name_accusative) || initial(name)]", "[initial(ru_name_instrumental) || initial(name)]", "[initial(ru_name_prepositional) || initial(name)]"))
+	if(old_identifier != 0)
+		identifier = old_identifier
 		name = initial(name) // prevent chicanery like two different numerical identifiers tied to the same mob
+		ru_names_rename(ru_names_toml(name))
 
 	set_name()
 

@@ -1,7 +1,6 @@
 /obj/item/analyzer
 	desc = "A hand-held environmental scanner which reports current gas levels."
 	name = "gas analyzer"
-	RU_NAMES_LIST_INIT("gas analyzer", "газоанализатор", "газоанализатора", "газоанализатору", "газоанализатор", "газоанализатором", "газоанализаторе")
 	custom_price = PAYCHECK_LOWER * 0.9
 	icon = 'icons/obj/devices/scanner.dmi'
 	icon_state = "analyzer"
@@ -152,7 +151,7 @@
 	return interact_with_atom(interacting_with, user, modifiers)
 
 /obj/item/analyzer/interact_with_atom(atom/interacting_with, mob/living/user, list/modifiers)
-	if(can_see(user, interacting_with, ranged_scan_distance))
+	if(!HAS_TRAIT(interacting_with, TRAIT_COMBAT_MODE_SKIP_INTERACTION) && can_see(user, interacting_with, ranged_scan_distance))
 		atmos_scan(user, (interacting_with.return_analyzable_air() ? interacting_with : get_turf(interacting_with)))
 	return NONE // Non-blocking
 
@@ -227,7 +226,6 @@
 /obj/item/analyzer/ranged
 	desc = "A hand-held long-range environmental scanner which reports current gas levels."
 	name = "long-range gas analyzer"
-	RU_NAMES_LIST_INIT("long-range gas analyzer", "газоанализатор дальнего действия", "газоанализатора дальнего действия", "газоанализатору дальнего действия", "газоанализатор дальнего действия", "газоанализатором дальнего действия", "газоанализаторе дальнего действия")
 	icon_state = "analyzerranged"
 	worn_icon_state = "analyzer"
 	w_class = WEIGHT_CLASS_NORMAL
