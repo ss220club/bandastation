@@ -506,7 +506,6 @@
 
 /obj/item/toy/plush/lizard_plushie
 	name = "lizard plushie"
-	RU_NAMES_LIST_INIT("lizard plushie", "плюшевая ящерица", "плюшевой ящерицы", "плюшевой ящерице", "плюшевую ящерицу", "плюшевой ящерицей", "плюшевой ящерице")
 	desc = "An adorable stuffed toy that resembles a lizardperson."
 	icon_state = "map_plushie_lizard"
 	greyscale_config = /datum/greyscale_config/plush_lizard
@@ -634,7 +633,7 @@
 			"I WILL DIE TO JUST ONE ATTTTTTAAAAACKKKKKK!!",
 			"I WILLLLLL NOT DROP GOOOD IITITTEEEEEMMMS!!",
 		)
-	AddComponent(/datum/component/keep_me_secure, CALLBACK(src, PROC_REF(secured_process)) , CALLBACK(src, PROC_REF(unsecured_process)))
+	AddComponent(/datum/component/keep_me_secure, CALLBACK(src, PROC_REF(secured_process)) , CALLBACK(src, PROC_REF(unsecured_process)), 0)
 
 /obj/item/toy/plush/whiny_plushie/proc/secured_process(last_move)
 	icon_state = initial(icon_state)

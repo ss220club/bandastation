@@ -212,10 +212,12 @@ Behavior that's still missing from this component that original food items had t
 
 	for(var/rid in reagents)
 		var/amount = reagents[rid]
-		if(length(tastes) && (rid == /datum/reagent/consumable/nutriment || rid == /datum/reagent/consumable/nutriment/vitamin))
-			owner.reagents.add_reagent(rid, amount, tastes.Copy(), added_purity = reagent_purity)
-		else
-			owner.reagents.add_reagent(rid, amount, added_purity = reagent_purity)
+		if(length(tastes) && ispath(rid, /datum/reagent/consumable/nutriment))
+			var/datum/reagent/consumable/nutriment/nid = rid
+			if(initial(nid.carry_food_tastes))
+				owner.reagents.add_reagent(rid, amount, tastes.Copy(), added_purity = reagent_purity)
+				continue
+		owner.reagents.add_reagent(rid, amount, added_purity = reagent_purity)
 
 /datum/component/edible/proc/examine(datum/source, mob/user, list/examine_list)
 	SIGNAL_HANDLER
@@ -282,7 +284,7 @@ Behavior that's still missing from this component that original food items had t
 		examine_list += span_notice("It could use a little more Sodium Chloride...")
 	if (isliving(user))
 		var/mob/living/living_user = user
-		living_user.taste(owner.reagents)
+		living_user.taste_container(owner.reagents)
 
 /datum/component/edible/proc/UseFromHand(obj/item/source, mob/living/M, mob/living/user)
 	SIGNAL_HANDLER
@@ -312,7 +314,7 @@ Behavior that's still missing from this component that original food items had t
 	original_atom.reagents.copy_to(this_food, original_atom.reagents.total_volume / chosen_processing_option[TOOL_PROCESSING_AMOUNT], 1)
 
 	if(original_atom.name != initial(original_atom.name))
-		this_food.ru_names_rename(RU_NAMES_LIST("slice of [original_atom.name]", "кусочек [original_atom.declent_ru(GENITIVE)]", "кусочка [original_atom.declent_ru(GENITIVE)]", "кусочку [original_atom.declent_ru(GENITIVE)]", "кусочек [original_atom.declent_ru(GENITIVE)]", "кусочком [original_atom.declent_ru(GENITIVE)]", "кусочке [original_atom.declent_ru(GENITIVE)]"))
+		this_food.ru_names_rename(ru_names_toml("slice of", suffix = " [original_atom.declent_ru(GENITIVE)]", override_base = "slice of [original_atom.name]"))
 		this_food.name = "slice of [original_atom.name]"
 	if(original_atom.desc != initial(original_atom.desc))
 		this_food.desc = "[original_atom.desc]"
@@ -687,7 +689,7 @@ Behavior that's still missing from this component that original food items had t
 	bitecount++
 	. = COMPONENT_CANCEL_ATTACK_CHAIN
 
-	doggy.taste(food.reagents) // why should carbons get all the fun?
+	doggy.taste_container(food.reagents) // why should carbons get all the fun?
 	if(bitecount >= 5)
 		var/satisfaction_text = pick("burps from enjoyment.", "yaps for more!", "woofs twice.", "looks at the area where \the [food] was.")
 		doggy.manual_emote(satisfaction_text)

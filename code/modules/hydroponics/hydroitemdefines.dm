@@ -1,7 +1,6 @@
 // Plant analyzer
 /obj/item/plant_analyzer
 	name = "plant analyzer"
-	RU_NAMES_LIST_INIT("plant analyzer", "анализатор растений", "анализатора растений", "анализатору растений", "анализатор растений", "анализатором растений", "анализаторе растений")
 	desc = "A scanner used to evaluate a plant's various areas of growth, and genetic traits. Comes with a growth scanning mode and a chemical scanning mode."
 	icon = 'icons/obj/devices/scanner.dmi'
 	icon_state = "hydro"
@@ -470,6 +469,11 @@
 		H.visible_message(span_warning("[H] steps on [src] causing the handle to hit [H.p_them()] right in the face!"), \
 						  span_userdanger("You step on [src] causing the handle to hit you right in the face!"))
 
+/obj/item/cultivator/cyborg
+	name = "cyborg cultivator"
+	icon = 'icons/obj/items_cyborg.dmi'
+	icon_state = "sili_cultivator"
+
 /obj/item/hatchet
 	name = "hatchet"
 	desc = "A very sharp axe blade upon a short fibremetal handle. It has a long history of chopping things, but now it is used for chopping wood."
@@ -514,6 +518,11 @@
 	custom_materials = list(/datum/material/wood = SHEET_MATERIAL_AMOUNT * 1)
 	resistance_flags = FLAMMABLE
 	flags_1 = NONE
+
+/obj/item/hatchet/cyborg
+	name = "cyborg hatchet"
+	icon = 'icons/obj/items_cyborg.dmi'
+	icon_state = "sili_hatchet"
 
 /obj/item/scythe
 	name = "scythe"
@@ -607,6 +616,11 @@
 ///Send a signal to whatever we clicked and ask them if they wanna be PLANT RESTYLED YEAAAAAAAH
 /obj/item/secateurs/proc/restyle(atom/target, mob/living/user)
 	SEND_SIGNAL(target, COMSIG_ATOM_RESTYLE, user, target, user.zone_selected, EXTERNAL_RESTYLE_PLANT, 6 SECONDS)
+
+/obj/item/secateurs/cyborg
+	name = "cyborg secateurs"
+	icon = 'icons/obj/items_cyborg.dmi'
+	icon_state = "sili_secateur"
 
 /obj/item/geneshears
 	name = "botanogenetic plant shears"
