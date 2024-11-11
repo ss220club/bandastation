@@ -47698,7 +47698,7 @@
 /obj/structure/railing{
 	dir = 8
 	},
-/obj/machinery/light/floor/broken,
+/obj/machinery/light/floor,
 /turf/open/floor/iron/dark/smooth_large,
 /area/station/maintenance/ghetto/starboard/aft)
 "nsJ" = (
