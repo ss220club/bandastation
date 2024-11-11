@@ -464,7 +464,7 @@
 	return TRUE
 
 /obj/item/gun/ballistic/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0)
-	var/could_it_misfire = (can_misfire && chambered.can_misfire != FALSE) || chambered.can_misfire
+	var/could_it_misfire = chambered && chambered.can_misfire
 	if(target != user && chambered.loaded_projectile && could_it_misfire && prob(misfire_probability) && blow_up(user))
 		to_chat(user, span_userdanger("[src] misfires!"))
 		return
@@ -669,7 +669,7 @@ GLOBAL_LIST_INIT(gun_saw_types, typecacheof(list(
 	SEND_SIGNAL(src, COMSIG_GUN_SAWN_OFF)
 	if(!handle_modifications)
 		return TRUE
-	ru_names_rename(RU_NAMES_LIST("sawn-off [src.name]", "обрез [declent_ru(GENITIVE)]", "обреза [declent_ru(GENITIVE)]", "обрезу [declent_ru(GENITIVE)]", "обрез [declent_ru(GENITIVE)]", "обрезом [declent_ru(GENITIVE)]", "обрезе [declent_ru(GENITIVE)]"))
+	ru_names_rename(ru_names_toml("sawn-off", suffix = " [declent_ru(GENITIVE)]", override_base = "sawn-off [src.name]"))
 	name = "sawn-off [src.name]"
 	desc = sawn_desc
 	update_weight_class(WEIGHT_CLASS_NORMAL)
