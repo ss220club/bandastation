@@ -6023,6 +6023,11 @@
 /area/station/engineering/storage)
 "bIW" = (
 /obj/effect/turf_decal/delivery,
+/obj/machinery/button/elevator/directional/west{
+	pixel_x = -24;
+	pixel_y = 6;
+	id = "aft_vator"
+	},
 /turf/open/floor/iron,
 /area/station/cargo/storage/ghetto)
 "bIX" = (
@@ -9974,12 +9979,9 @@
 /area/station/medical/chemistry)
 "cLp" = (
 /obj/item/clothing/mask/balaclava,
-/obj/structure/window/reinforced/spawner/directional/north,
 /obj/structure/window/reinforced/spawner/directional/east,
 /obj/effect/turf_decal/delivery/red,
-/obj/structure/closet/secure_closet/security/sec{
-	layer = 3.4
-	},
+/obj/structure/closet/secure_closet/security/sec,
 /turf/open/floor/iron/dark,
 /area/station/security/lockers)
 "cLs" = (
@@ -17985,11 +17987,8 @@
 "eWL" = (
 /obj/item/clothing/mask/balaclava,
 /obj/structure/window/reinforced/spawner/directional/west,
-/obj/structure/closet/secure_closet/security/sec{
-	layer = 3.4
-	},
-/obj/structure/window/reinforced/spawner/directional/north,
 /obj/effect/turf_decal/delivery/red,
+/obj/structure/closet/secure_closet/security/sec,
 /turf/open/floor/iron/dark,
 /area/station/security/lockers)
 "eWR" = (
@@ -34854,11 +34853,14 @@
 /turf/open/floor/iron,
 /area/station/engineering/lobby)
 "jOD" = (
-/obj/structure/cable,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/delivery,
+/obj/machinery/button/elevator/directional/west{
+	pixel_y = 6;
+	pixel_x = -24;
+	id = "aft_vator"
+	},
 /turf/open/floor/iron,
-/area/station/maintenance/ghetto/fore/starboard)
+/area/station/cargo/storage)
 "jPb" = (
 /obj/machinery/light/small/directional/east,
 /turf/open/floor/plating,
@@ -62773,6 +62775,9 @@
 	linked_elevator_id = "aft_vator";
 	range = 2
 	},
+/obj/effect/landmark/transport/transport_id{
+	specific_transport_id = "aft_vator"
+	},
 /turf/open/floor/plating/elevatorshaft,
 /area/station/cargo/storage/ghetto)
 "rFK" = (
@@ -69687,14 +69692,6 @@
 /obj/effect/spawner/random/maintenance,
 /turf/open/floor/plating,
 /area/station/maintenance/starboard/fore)
-"tFl" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/structure/cable,
-/obj/machinery/light/small/directional/west,
-/obj/machinery/light/small/directional/west,
-/turf/open/floor/plating,
-/area/station/maintenance/ghetto/starboard)
 "tFm" = (
 /obj/structure/closet/radiation,
 /obj/effect/turf_decal/bot,
@@ -77271,19 +77268,6 @@
 /obj/machinery/light/small/directional/east,
 /turf/open/floor/plating,
 /area/station/maintenance/ghetto/port)
-"vNO" = (
-/obj/structure/cable,
-/obj/effect/turf_decal/tile/yellow/half/contrasted{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/smart/simple/orange/visible{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/turf/open/floor/iron,
-/area/station/engineering/atmos)
 "vNQ" = (
 /obj/structure/disposalpipe/segment{
 	dir = 6
@@ -78921,13 +78905,6 @@
 /obj/machinery/airalarm/directional/west,
 /turf/open/floor/iron,
 /area/station/engineering/atmos/project)
-"wmf" = (
-/obj/structure/transport/linear/public,
-/obj/effect/landmark/transport/transport_id{
-	specific_transport_id = "aft_vator"
-	},
-/turf/open/floor/plating/elevatorshaft,
-/area/station/cargo/storage/ghetto)
 "wmq" = (
 /obj/structure/table/wood,
 /obj/item/flashlight/lantern,
@@ -82408,7 +82385,6 @@
 /turf/closed/wall,
 /area/station/engineering/atmos/project)
 "xkQ" = (
-/obj/structure/cable,
 /obj/machinery/door/airlock/external{
 	name = "External Airlock"
 	},
@@ -105576,7 +105552,7 @@ doz
 omh
 yfu
 rQU
-wmf
+kTl
 rFH
 mVe
 hXY
@@ -124574,8 +124550,8 @@ vbK
 pNZ
 vpn
 kKA
-jOD
-wsk
+dkL
+vpn
 yaI
 jJb
 qqz
@@ -127685,7 +127661,7 @@ cwi
 cwi
 cwi
 cwi
-tFl
+ayj
 cwi
 qTP
 ipz
@@ -170857,7 +170833,7 @@ uWj
 dMR
 caC
 caC
-htD
+jOD
 vTr
 rtU
 kGz
@@ -178121,7 +178097,7 @@ vwo
 dRK
 yeZ
 awU
-vNO
+eZH
 cXq
 qzY
 eXR
