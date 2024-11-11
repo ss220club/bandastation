@@ -9816,7 +9816,6 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 9
 	},
-/obj/machinery/light/floor,
 /turf/open/floor/iron/smooth,
 /area/station/maintenance/ghetto/storage)
 "cJm" = (
@@ -35741,7 +35740,6 @@
 /obj/structure/railing{
 	dir = 8
 	},
-/obj/machinery/light/floor,
 /turf/open/floor/wood/large,
 /area/station/maintenance/ghetto/port)
 "kbA" = (
@@ -44229,7 +44227,6 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 6
 	},
-/obj/machinery/light/floor,
 /turf/open/floor/iron/smooth,
 /area/station/maintenance/ghetto/storage)
 "muQ" = (
@@ -47698,7 +47695,7 @@
 /obj/structure/railing{
 	dir = 8
 	},
-/obj/machinery/light/floor,
+/obj/machinery/light/floor/broken,
 /turf/open/floor/iron/dark/smooth_large,
 /area/station/maintenance/ghetto/starboard/aft)
 "nsJ" = (
@@ -62718,7 +62715,6 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 5
 	},
-/obj/machinery/light/floor,
 /turf/open/floor/iron/smooth,
 /area/station/maintenance/ghetto/storage)
 "rEX" = (
@@ -65977,14 +65973,6 @@
 /obj/machinery/firealarm/directional/east,
 /turf/open/floor/iron,
 /area/station/security/range)
-"sCc" = (
-/obj/effect/decal/cleanable/food/tomato_smudge,
-/obj/structure/railing{
-	dir = 8
-	},
-/obj/machinery/light/floor/broken,
-/turf/open/floor/wood/large,
-/area/station/maintenance/ghetto/port)
 "sCf" = (
 /obj/effect/turf_decal/tile/green/half{
 	dir = 8
@@ -67722,13 +67710,6 @@
 	},
 /turf/open/floor/iron/dark,
 /area/station/engineering/atmos/mix)
-"teN" = (
-/obj/structure/railing{
-	dir = 1
-	},
-/obj/machinery/light/floor,
-/turf/open/floor/wood,
-/area/station/service/library/upper)
 "tfm" = (
 /obj/machinery/light/directional/south,
 /turf/open/floor/plating,
@@ -69613,7 +69594,6 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 10
 	},
-/obj/machinery/light/floor,
 /turf/open/floor/iron/smooth,
 /area/station/maintenance/ghetto/storage)
 "tEp" = (
@@ -104276,7 +104256,7 @@ tnW
 kbz
 kWG
 kWG
-sCc
+kbz
 tWQ
 roX
 eUy
@@ -195513,7 +195493,7 @@ iCi
 dFK
 dFK
 dFK
-teN
+lit
 hiG
 sjW
 sXi
@@ -195770,7 +195750,7 @@ dFK
 dFK
 dFK
 dFK
-teN
+lit
 ajz
 tnv
 amc
