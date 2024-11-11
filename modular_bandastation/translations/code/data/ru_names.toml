@@ -9,15 +9,6 @@
 
 # MARK: Uncategorized
 
-["jaws of life"]
-nominative = "челюсти жизни"
-genitive = "челюстей жизни"
-dative = "челюстям жизни"
-accusative = "челюсти жизни"
-instrumental = "челюстями жизни"
-prepositional = "челюстях жизни"
-gender = "plural"
-
 [holopad]
 nominative = "голопад"
 genitive = "голопада"
@@ -443,14 +434,6 @@ instrumental = "кофемашиной Impressa"
 nominative = "кофемашина Impressa"
 prepositional = "кофемашине Impressa"
 
-["industrial welding tool"]
-accusative = "промышленный сварочный инструмент"
-dative = "промышленному сварочному инструменту"
-genitive = "промышленного сварочного инструмента"
-instrumental = "промышленным сварочным инструментом"
-nominative = "промышленный сварочный инструмент"
-prepositional = "промышленном сварочном инструменте"
-
 ["intercom frame"]
 accusative = "каркас интеркома"
 dative = "каркасу интеркома"
@@ -466,14 +449,6 @@ genitive = "железа"
 instrumental = "железом"
 nominative = "железо"
 prepositional = "железе"
-
-["jaws of death"]
-accusative = "челюсти смерти"
-dative = "челюстям смерти"
-genitive = "челюстей смерти"
-instrumental = "челюстями смерти"
-nominative = "челюсти смерти"
-prepositional = "челюстях смерти"
 
 ["kitchen sink"]
 accusative = "кухонную раковину"
@@ -898,14 +873,6 @@ genitive = "широкополосного интеркома синдиката
 instrumental = "широкополосным интеркомом синдиката"
 nominative = "широкополосный интерком синдиката"
 prepositional = "широкополосном интеркоме синдиката"
-
-["telescopic baton"]
-accusative = "телескопическую дубинку"
-dative = "телескопической дубинке"
-genitive = "телескопической дубинки"
-instrumental = "телескопической дубинкой"
-nominative = "телескопическая дубинка"
-prepositional = "телескопической дубинке"
 
 [titanium]
 accusative = "титан"
@@ -1461,6 +1428,15 @@ instrumental = "обрезом"
 prepositional = "обрезе"
 gender = "male"
 
+["telescopic baton"]
+nominative = "телескопическая дубинка"
+genitive = "телескопической дубинки"
+dative = "телескопической дубинке"
+accusative = "телескопическую дубинку"
+instrumental = "телескопической дубинкой"
+prepositional = "телескопической дубинке"
+gender = "female"
+
 # MARK: Kitchen
 
 ["pepper mill"]
@@ -1786,6 +1762,15 @@ instrumental = "экспериментальным сварочным инстр
 prepositional = "экспериментальном сварочном инструменте"
 gender = "male"
 
+["industrial welding tool"]
+accusative = "промышленный сварочный инструмент"
+genitive = "промышленного сварочного инструмента"
+dative = "промышленному сварочному инструменту"
+nominative = "промышленный сварочный инструмент"
+instrumental = "промышленным сварочным инструментом"
+prepositional = "промышленном сварочном инструменте"
+gender = "male"
+
 # Screwdriver
 [screwdriver]
 nominative = "отвёртка"
@@ -1813,6 +1798,25 @@ accusative = "инопланетную отвёртку"
 instrumental = "инопланетной отвёрткой"
 prepositional = "инопланетной отвёртке"
 gender = "female"
+
+# Other
+["jaws of life"]
+nominative = "челюсти жизни"
+genitive = "челюстей жизни"
+dative = "челюстям жизни"
+accusative = "челюсти жизни"
+instrumental = "челюстями жизни"
+prepositional = "челюстях жизни"
+gender = "plural"
+
+["jaws of death"]
+nominative = "челюсти смерти"
+genitive = "челюстей смерти"
+dative = "челюстям смерти"
+accusative = "челюсти смерти"
+instrumental = "челюстями смерти"
+prepositional = "челюстях смерти"
+gender = "plural"
 
 # MARK: Engineering
 
