@@ -196,8 +196,8 @@
 	possible_plant_genes = list(/datum/plant_gene/trait/squash, /datum/plant_gene/trait/cell_charge, /datum/plant_gene/trait/glow/shadow, /datum/plant_gene/trait/teleport, /datum/plant_gene/trait/brewing, /datum/plant_gene/trait/juicing, /datum/plant_gene/trait/eyes, /datum/plant_gene/trait/sticky)
 
 /datum/experiment/scanning/points/machinery_tiered_scan/tier2_lathes
-	name = "Эталон продвинутых комплектующих"
-	description = "Наши недавно разработанные компоненты продвинутого оборудования требуют испытаний для получения подсказок о возможных будущих улучшениях, а также подтверждения того, что мы не разработали мусор."
+	name = "Эталон улучшенных деталей"
+	description = "Наши недавно разработанные улучшенные детали машин требуют испытаний для получения подсказок о возможных будущих улучшениях, а также подтверждения того, что мы не разработали мусор."
 	required_points = 6
 	required_atoms = list(
 		/obj/machinery/rnd/production/protolathe/department/science = 1,
@@ -211,7 +211,7 @@
 
 /datum/experiment/scanning/points/machinery_tiered_scan/tier3_bluespacemachines
 	name = "Настройка блюспейс машин"
-	description = "Технология телепортации благодаря возможностям блюспейса - одно из главных преимуществ нашей компании, но угроза сбоя в процедурах калибровки - это не то, что мы предсказываем. Так как наш НИО начал бунт из-за мухолюдей, возможно, ваши достижения в области компонентов спасут нас, пока всё не пошло по жужжде."
+	description = "Технология телепортации благодаря возможностям блюспейса - одно из главных преимуществ нашей компании, но угроза сбоя в процедурах калибровки - это не то, что мы предсказываем. Так как наш НИО начал бунт из-за мухолюдей, возможно, ваши достижения в области деталей спасут нас, пока всё не пошло по жужжде."
 	required_points = 4
 	required_atoms = list(
 		/obj/machinery/teleport/hub = 1,
@@ -221,7 +221,7 @@
 
 /datum/experiment/scanning/points/machinery_tiered_scan/tier3_variety
 	name = "Испытание высокоэффективных деталей"
-	description = "Нам требуется дальнейшее тестирование компонентов, чтобы еще больше повысить их эффективность и рыночную цену."
+	description = "Нам требуется дальнейшее тестирование деталей, чтобы еще больше повысить их эффективность и рыночную цену."
 	required_points = 15
 	required_atoms = list(
 		/obj/machinery/autolathe = 1,
@@ -267,7 +267,7 @@
 	required_stock_part = /obj/item/stock_parts/micro_laser/high
 
 /datum/experiment/scanning/points/machinery_pinpoint_scan/tier2_capacitors
-	name = "Эталон продвинутых конденсаторов"
+	name = "Эталон улучшенных конденсаторов"
 	description = "Дальнейшее повышение мощности устройств по всей станции - следующий шаг на пути к важному проекту, обозначенному как ВАЖНЫЙ: инвалидные коляски с мотором, работающие на блюспейс-концентрированной ядерной энергии."
 	required_points = 12
 	required_atoms = list(
@@ -283,7 +283,7 @@
 	required_stock_part = /obj/item/stock_parts/capacitor/adv
 
 /datum/experiment/scanning/points/machinery_pinpoint_scan/tier2_scanmodules
-	name = "Калибровка продвинутых сканирующих модулей"
+	name = "Калибровка улучшенных сканирующих модулей"
 	description = "Несмотря на очевидную невостребованность сканирующих модулей на наших станциях, мы все равно ждем от вас тестов на их производительность - на случай, если мы придумаем революционный способ вместить 6 сканирующих модулей в мех."
 	required_points = 6
 	required_atoms = list(
