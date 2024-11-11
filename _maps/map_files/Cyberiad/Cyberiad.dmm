@@ -1737,7 +1737,6 @@
 /obj/structure/flora/tree/jungle{
 	pixel_y = -14
 	},
-/obj/machinery/light/floor,
 /turf/open/misc/grass,
 /area/station/hallway/secondary/exit/departure_lounge)
 "ayR" = (
@@ -77280,12 +77279,10 @@
 /turf/open/floor/plating,
 /area/station/maintenance/ghetto/port)
 "vNO" = (
-/obj/effect/turf_decal/tile/red{
-	dir = 4
-	},
-/obj/machinery/camera/autoname/directional/east{
-	c_tag = "Security - Permabrig Chapel Enterance"
-	},
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/obj/machinery/light/small/directional/west,
 /turf/open/floor/iron,
 /area/station/security/prison/ghetto)
 "vNQ" = (
@@ -78926,10 +78923,12 @@
 /turf/open/floor/iron,
 /area/station/engineering/atmos/project)
 "wmf" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/structure/cable,
-/obj/machinery/light/small/directional/west,
+/obj/effect/turf_decal/tile/red{
+	dir = 4
+	},
+/obj/machinery/camera/autoname/directional/east{
+	c_tag = "Security - Permabrig Chapel Enterance"
+	},
 /turf/open/floor/iron,
 /area/station/security/prison/ghetto)
 "wmq" = (
@@ -106553,7 +106552,7 @@ cDp
 rgK
 rgK
 rgK
-wmf
+vNO
 bvW
 ekb
 rgK
@@ -106809,7 +106808,7 @@ htA
 htA
 htA
 tuh
-vNO
+wmf
 ekb
 wfs
 pam
