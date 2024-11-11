@@ -42773,7 +42773,6 @@
 /obj/structure/railing{
 	dir = 10
 	},
-/obj/machinery/light/floor,
 /turf/open/floor/grass,
 /area/station/maintenance/starboard/lesser)
 "lWl" = (
@@ -69694,14 +69693,14 @@
 /turf/open/floor/plating,
 /area/station/maintenance/starboard/fore)
 "tFl" = (
-/obj/effect/turf_decal/delivery,
-/obj/machinery/button/elevator/directional/west{
-	pixel_y = 6;
-	pixel_x = -24;
-	id = "aft_vator"
+/obj/effect/turf_decal/tile/red{
+	dir = 4
+	},
+/obj/machinery/camera/autoname/directional/east{
+	c_tag = "Security - Permabrig Chapel Enterance"
 	},
 /turf/open/floor/iron,
-/area/station/cargo/storage)
+/area/station/security/prison/ghetto)
 "tFm" = (
 /obj/structure/closet/radiation,
 /obj/effect/turf_decal/bot,
@@ -77279,12 +77278,14 @@
 /turf/open/floor/plating,
 /area/station/maintenance/ghetto/port)
 "vNO" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/structure/cable,
-/obj/machinery/light/small/directional/west,
+/obj/effect/turf_decal/delivery,
+/obj/machinery/button/elevator/directional/west{
+	pixel_y = 6;
+	pixel_x = -24;
+	id = "aft_vator"
+	},
 /turf/open/floor/iron,
-/area/station/security/prison/ghetto)
+/area/station/cargo/storage)
 "vNQ" = (
 /obj/structure/disposalpipe/segment{
 	dir = 6
@@ -78923,12 +78924,10 @@
 /turf/open/floor/iron,
 /area/station/engineering/atmos/project)
 "wmf" = (
-/obj/effect/turf_decal/tile/red{
-	dir = 4
-	},
-/obj/machinery/camera/autoname/directional/east{
-	c_tag = "Security - Permabrig Chapel Enterance"
-	},
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/obj/machinery/light/small/directional/west,
 /turf/open/floor/iron,
 /area/station/security/prison/ghetto)
 "wmq" = (
@@ -106552,7 +106551,7 @@ cDp
 rgK
 rgK
 rgK
-vNO
+wmf
 bvW
 ekb
 rgK
@@ -106808,7 +106807,7 @@ htA
 htA
 htA
 tuh
-wmf
+tFl
 ekb
 wfs
 pam
@@ -170859,7 +170858,7 @@ uWj
 dMR
 caC
 caC
-tFl
+vNO
 vTr
 rtU
 kGz
