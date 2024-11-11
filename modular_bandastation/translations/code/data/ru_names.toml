@@ -1862,12 +1862,12 @@ prepositional = "пикосервоприводе"
 gender = "male"
 
 ["ultra-high-power micro-laser"]
-nominative = "высокочастотный микролазер"
-genitive = "высокочастотного микролазера"
-dative = "высокочастотному микролазеру"
-accusative = "высокочастотный микролазер"
-instrumental = "высокочастотным микролазером"
-prepositional = "высокочастотном микролазере"
+nominative = "сверхмощный микролазер"
+genitive = "сверхмощного микролазера"
+dative = "сверхмощному микролазеру"
+accusative = "сверхмощный микролазер"
+instrumental = "сверхмощным микролазером"
+prepositional = "сверхмощном микролазере"
 gender = "male"
 
 ["super matter bin"]
