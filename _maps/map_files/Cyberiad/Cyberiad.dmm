@@ -34853,14 +34853,14 @@
 /turf/open/floor/iron,
 /area/station/engineering/lobby)
 "jOD" = (
-/obj/effect/turf_decal/delivery,
-/obj/machinery/button/elevator/directional/west{
-	pixel_y = 6;
-	pixel_x = -24;
-	id = "aft_vator"
+/obj/effect/turf_decal/tile/red{
+	dir = 4
+	},
+/obj/machinery/camera/autoname/directional/east{
+	c_tag = "Security - Permabrig Chapel Enterance"
 	},
 /turf/open/floor/iron,
-/area/station/cargo/storage)
+/area/station/security/prison/ghetto)
 "jPb" = (
 /obj/machinery/light/small/directional/east,
 /turf/open/floor/plating,
@@ -59171,6 +59171,7 @@
 	},
 /obj/effect/mapping_helpers/airlock/access/all/engineering/general,
 /obj/structure/cable,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/plating,
 /area/station/maintenance/department/engine/ghetto)
 "qFY" = (
@@ -59455,6 +59456,7 @@
 /obj/machinery/door/airlock/maintenance{
 	name = "Maintenance"
 	},
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/plating,
 /area/station/maintenance/ghetto/kitchen)
 "qKH" = (
@@ -69692,6 +69694,15 @@
 /obj/effect/spawner/random/maintenance,
 /turf/open/floor/plating,
 /area/station/maintenance/starboard/fore)
+"tFl" = (
+/obj/effect/turf_decal/delivery,
+/obj/machinery/button/elevator/directional/west{
+	pixel_y = 6;
+	pixel_x = -24;
+	id = "aft_vator"
+	},
+/turf/open/floor/iron,
+/area/station/cargo/storage)
 "tFm" = (
 /obj/structure/closet/radiation,
 /obj/effect/turf_decal/bot,
@@ -78905,6 +78916,13 @@
 /obj/machinery/airalarm/directional/west,
 /turf/open/floor/iron,
 /area/station/engineering/atmos/project)
+"wmf" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/obj/machinery/light/small/directional/west,
+/turf/open/floor/iron,
+/area/station/security/prison/ghetto)
 "wmq" = (
 /obj/structure/table/wood,
 /obj/item/flashlight/lantern,
@@ -106526,7 +106544,7 @@ cDp
 rgK
 rgK
 rgK
-ekb
+wmf
 bvW
 ekb
 rgK
@@ -106782,7 +106800,7 @@ htA
 htA
 htA
 tuh
-mmC
+jOD
 ekb
 wfs
 pam
@@ -170833,7 +170851,7 @@ uWj
 dMR
 caC
 caC
-jOD
+tFl
 vTr
 rtU
 kGz
