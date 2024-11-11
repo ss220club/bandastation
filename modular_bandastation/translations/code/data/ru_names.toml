@@ -1720,6 +1720,231 @@ prepositional = "биогенераторе"
 
 # MARK: Tools
 
+["fire extinguisher"]
+nominative = "огнетушитель"
+genitive = "огнетушителя"
+dative = "огнетушителю"
+accusative = "огнетушитель"
+instrumental = "огнетушителем"
+prepositional = "огнетушителе"
+gender = "male"
+
+# MARK: Janitor
+
+["galoshes"]
+nominative = "галоши"
+genitive = "галош"
+dative = "галошам"
+accusative = "галоши"
+instrumental = "галошами"
+prepositional = "галошах"
+gender = "plural"
+
+# MARK: Stock parts
+# Tier 1
+["capacitor"]
+nominative = "конденсатор"
+genitive = "конденсатора"
+dative = "конденсатору"
+accusative = "конденсатор"
+instrumental = "конденсатором"
+prepositional = "конденсаторе"
+gender = "male"
+
+["scanning module"]
+nominative = "сканирующий модуль"
+genitive = "сканирующего модуля"
+dative = "сканирующему модулю"
+accusative = "сканирующий модуль"
+instrumental = "сканирующим модулем"
+prepositional = "сканирующем модуле"
+gender = "male"
+
+["micro-servo"]
+nominative = "микросервопривод"
+genitive = "микросервопривода"
+dative = "микросервоприводу"
+accusative = "микросервопривод"
+instrumental = "микросервоприводом"
+prepositional = "микросервоприводе"
+gender = "male"
+
+["micro-laser"]
+nominative = "микролазер"
+genitive = "микролазера"
+dative = "микролазеру"
+accusative = "микролазер"
+instrumental = "микролазером"
+prepositional = "микролазере"
+gender = "male"
+
+["matter bin"]
+nominative = "емкость материи"
+genitive = "емкости материи"
+dative = "емкости материи"
+accusative = "емкость материи"
+instrumental = "емкостью материи"
+prepositional = "емкости материи"
+gender = "female"
+
+# Tier 2
+["advanced capacitor"]
+nominative = "улучшенный конденсатор"
+genitive = "улучшенного конденсатора"
+dative = "улучшенному конденсатору"
+accusative = "улучшенный конденсатор"
+instrumental = "улучшенным конденсатором"
+prepositional = "улучшенном конденсаторе"
+gender = "male"
+
+["advanced scanning module"]
+nominative = "улучшенный сканирующий модуль"
+genitive = "улучшенного сканирующего модуля"
+dative = "улучшенному сканирующему модулю"
+accusative = "улучшенный сканирующий модуль"
+instrumental = "улучшенным сканирующим модулем"
+prepositional = "улучшенном сканирующем модуле"
+gender = "male"
+
+["nano-servo"]
+nominative = "наносервопривод"
+genitive = "наносервопривода"
+dative = "наносервоприводу"
+accusative = "наносервопривод"
+instrumental = "наносервоприводом"
+prepositional = "наносервоприводе"
+gender = "male"
+
+["high-power micro-laser"]
+nominative = "мощный микролазер"
+genitive = "мощного микролазера"
+dative = "мощному микролазеру"
+accusative = "мощный микролазер"
+instrumental = "мощным микролазером"
+prepositional = "мощном микролазере"
+gender = "male"
+
+["advanced matter bin"]
+nominative = "улучшенная емкость материи"
+genitive = "улучшенной емкости материи"
+dative = "улучшенной емкости материи"
+accusative = "улучшенную емкость материи"
+instrumental = "улучшенной емкостью материи"
+prepositional = "улучшенной емкости материи"
+gender = "female"
+
+# Tier 3
+["super capacitor"]
+nominative = "суперконденсатор"
+genitive = "суперконденсатора"
+dative = "суперконденсатору"
+accusative = "суперконденсатор"
+instrumental = "суперконденсатором"
+prepositional = "суперконденсаторе"
+gender = "male"
+
+["phasic scanning module"]
+nominative = "улучшенный сканирующий модуль"
+genitive = "улучшенного сканирующего модуля"
+dative = "улучшенному сканирующему модулю"
+accusative = "улучшенный сканирующий модуль"
+instrumental = "улучшенным сканирующим модулем"
+prepositional = "улучшенном сканирующем модуле"
+gender = "male"
+
+["pico-servo"]
+nominative = "пикосервопривод"
+genitive = "пикосервопривода"
+dative = "пикосервоприводу"
+accusative = "пикосервопривод"
+instrumental = "пикосервоприводом"
+prepositional = "пикосервоприводе"
+gender = "male"
+
+["ultra-high-power micro-laser"]
+nominative = "высокочастотный микролазер"
+genitive = "высокочастотного микролазера"
+dative = "высокочастотному микролазеру"
+accusative = "высокочастотный микролазер"
+instrumental = "высокочастотным микролазером"
+prepositional = "высокочастотном микролазере"
+gender = "male"
+
+["super matter bin"]
+nominative = "суперемкость материи"
+genitive = "суперемкости материи"
+dative = "суперемкости материи"
+accusative = "суперемкость материи"
+instrumental = "суперемкостью материи"
+prepositional = "суперемкости материи"
+gender = "female"
+
+
+# Tier 4
+["quadratic capacitor"]
+nominative = "квадратичный конденсатор"
+genitive = "квадратичного конденсатора"
+dative = "квадратичному конденсатору"
+accusative = "квадратичный конденсатор"
+instrumental = "квадратичным конденсатором"
+prepositional = "квадратичном конденсаторе"
+gender = "male"
+
+["triphasic scanning module"]
+nominative = "грудь"
+genitive = "груди"
+dative = "груди"
+accusative = "грудь"
+instrumental = "грудью"
+prepositional = "груди"
+gender = "female"
+
+["femto-servo"]
+nominative = "фемтосервопривод"
+genitive = "фемтосервопривода"
+dative = "фемтосервоприводу"
+accusative = "фемтосервопривод"
+instrumental = "фемтосервоприводом"
+prepositional = "фемтосервоприводе"
+gender = "male"
+
+["quad-ultra micro-laser"]
+nominative = "квадроультра микролазер"
+genitive = "квадроультра микролазера"
+dative = "квадроультра микролазеру"
+accusative = "квадроультра микролазер"
+instrumental = "квадроультра микролазером"
+prepositional = "квадроультра микролазере"
+gender = "male"
+
+["bluespace matter bin"]
+nominative = "блуспейс емкость материи"
+genitive = "блуспейс емкости материи"
+dative = "блуспейс емкости материи"
+accusative = "блуспейс емкость материи"
+instrumental = "блуспейс емкостью материи"
+prepositional = "блуспейс емкости материи"
+gender = "female"
+
+# RPED
+["rapid part exchange device"]
+nominative = "быстрозаменитель компонентов"
+genitive = "быстрозаменителя компонентов"
+dative = "быстрозаменителю компонентов"
+accusative = "быстрозаменитель компонентов"
+instrumental = "быстрозаменителем компонентов"
+prepositional = "быстрозаменителе компонентов"
+gender = "male"
+
+["bluespace rapid part exchange device"]
+nominative = "блуспейс быстрозаменитель компонентов"
+genitive = "блуспейс быстрозаменителя компонентов"
+dative = "блуспейс быстрозаменителю компонентов"
+accusative = "блуспейс быстрозаменитель компонентов"
+instrumental = "блуспейс быстрозаменителем компонентов"
+prepositional = "блуспейс быстрозаменителе компонентов"
+gender = "male"
+
 # MARK: Organs
 
 ["chest"]
