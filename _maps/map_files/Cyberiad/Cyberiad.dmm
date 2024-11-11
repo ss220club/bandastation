@@ -26687,11 +26687,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/cyan,
 /turf/open/floor/plating,
 /area/station/maintenance/port/aft)
-"hxD" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/light/small/broken/directional/south,
-/turf/open/floor/plating,
-/area/station/maintenance/ghetto/starboard/aft)
 "hxF" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -27087,6 +27082,13 @@
 	},
 /turf/open/floor/iron/white,
 /area/station/medical/medbay/lobby)
+"hDZ" = (
+/obj/structure/cable,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/machinery/holopad,
+/turf/open/floor/wood,
+/area/station/service/library)
 "hEa" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 4
@@ -35715,13 +35717,6 @@
 	},
 /turf/open/floor/wood,
 /area/station/service/library)
-"kbz" = (
-/obj/effect/decal/cleanable/food/tomato_smudge,
-/obj/structure/railing{
-	dir = 8
-	},
-/turf/open/floor/wood/large,
-/area/station/maintenance/ghetto/port)
 "kbA" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -39861,6 +39856,14 @@
 /obj/machinery/atmospherics/pipe/smart/simple/orange/visible,
 /turf/open/floor/plating,
 /area/station/engineering/supermatter/room)
+"lgM" = (
+/obj/machinery/disposal/bin,
+/obj/structure/disposalpipe/trunk,
+/obj/structure/window/reinforced/spawner/directional/west,
+/obj/effect/turf_decal/bot,
+/obj/machinery/light/directional/south,
+/turf/open/floor/iron,
+/area/station/science/xenobiology)
 "lgQ" = (
 /obj/machinery/conveyor{
 	dir = 4;
@@ -43315,6 +43318,10 @@
 /obj/item/radio/intercom/directional/north,
 /turf/open/floor/wood/parquet,
 /area/station/hallway/secondary/service)
+"mdW" = (
+/obj/machinery/light/directional/south,
+/turf/open/water/beach,
+/area/station/command/bridge)
 "mes" = (
 /obj/machinery/autolathe,
 /turf/open/floor/iron,
@@ -52502,15 +52509,10 @@
 /turf/open/floor/iron,
 /area/station/cargo/warehouse)
 "oLk" = (
-/obj/structure/window/reinforced/spawner/directional/west,
-/obj/machinery/disposal/bin,
-/obj/structure/disposalpipe/trunk{
-	dir = 1
-	},
-/obj/effect/turf_decal/bot,
-/obj/machinery/light/directional/north,
-/turf/open/floor/iron,
-/area/station/science/xenobiology)
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/small/broken/directional/south,
+/turf/open/floor/plating,
+/area/station/maintenance/ghetto/starboard/aft)
 "oLl" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -65377,13 +65379,6 @@
 "stl" = (
 /turf/open/floor/carpet/blue,
 /area/station/service/library)
-"stz" = (
-/obj/structure/cable,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/machinery/holopad,
-/turf/open/floor/wood,
-/area/station/service/library)
 "stA" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/iron/dark,
@@ -65940,6 +65935,13 @@
 /obj/machinery/firealarm/directional/east,
 /turf/open/floor/iron,
 /area/station/security/range)
+"sCc" = (
+/obj/effect/decal/cleanable/food/tomato_smudge,
+/obj/structure/railing{
+	dir = 8
+	},
+/turf/open/floor/wood/large,
+/area/station/maintenance/ghetto/port)
 "sCf" = (
 /obj/effect/turf_decal/tile/green/half{
 	dir = 8
@@ -67213,11 +67215,6 @@
 /obj/effect/mapping_helpers/airlock/access/all/security/brig,
 /turf/open/floor/plating,
 /area/station/security/courtroom/holding)
-"sWA" = (
-/obj/structure/flora/bush/fullgrass/style_random,
-/obj/machinery/light/directional/north,
-/turf/open/floor/grass,
-/area/station/maintenance/starboard/lesser)
 "sWD" = (
 /obj/effect/turf_decal/tile/yellow/fourcorners,
 /obj/item/radio/intercom/directional/north,
@@ -67675,6 +67672,12 @@
 	},
 /turf/open/floor/iron/dark,
 /area/station/engineering/atmos/mix)
+"teN" = (
+/obj/structure/railing,
+/obj/effect/turf_decal/tile/red/half,
+/obj/machinery/light/directional/east,
+/turf/open/floor/iron,
+/area/station/security/prison)
 "tfm" = (
 /obj/machinery/light/directional/south,
 /turf/open/floor/plating,
@@ -73631,14 +73634,6 @@
 /obj/effect/turf_decal/stripes/line,
 /turf/open/floor/plating,
 /area/station/security/prison)
-"uOI" = (
-/obj/machinery/disposal/bin,
-/obj/structure/disposalpipe/trunk,
-/obj/structure/window/reinforced/spawner/directional/west,
-/obj/effect/turf_decal/bot,
-/obj/machinery/light/directional/south,
-/turf/open/floor/iron,
-/area/station/science/xenobiology)
 "uOY" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -79903,12 +79898,6 @@
 	},
 /turf/open/floor/plating,
 /area/station/maintenance/department/security/ghetto/south)
-"wBO" = (
-/obj/structure/railing,
-/obj/effect/turf_decal/tile/red/half,
-/obj/machinery/light/directional/east,
-/turf/open/floor/iron,
-/area/station/security/prison)
 "wBP" = (
 /obj/machinery/light/small/directional/west,
 /turf/open/floor/plating,
@@ -82610,9 +82599,15 @@
 /turf/open/floor/iron,
 /area/station/hallway/primary/central/fore)
 "xoI" = (
-/obj/machinery/light/directional/south,
-/turf/open/water/beach,
-/area/station/command/bridge)
+/obj/structure/window/reinforced/spawner/directional/west,
+/obj/machinery/disposal/bin,
+/obj/structure/disposalpipe/trunk{
+	dir = 1
+	},
+/obj/effect/turf_decal/bot,
+/obj/machinery/light/directional/north,
+/turf/open/floor/iron,
+/area/station/science/xenobiology)
 "xoY" = (
 /obj/structure/cable,
 /obj/effect/turf_decal/tile/neutral/fourcorners,
@@ -104203,10 +104198,10 @@ iEV
 uSW
 tWQ
 tnW
-kbz
+sCc
 kWG
 kWG
-kbz
+sCc
 tWQ
 roX
 eUy
@@ -129457,11 +129452,11 @@ uyR
 iXB
 bwl
 afy
-oLk
+xoI
 xNB
 elH
 uqi
-uOI
+lgM
 jhg
 fKC
 iXB
@@ -130164,7 +130159,7 @@ roi
 pDX
 kSG
 cnn
-stz
+hDZ
 qKB
 qKB
 qKB
@@ -130999,11 +130994,11 @@ sKi
 iXB
 bwl
 kub
-oLk
+xoI
 xNB
 nks
 uqi
-uOI
+lgM
 luu
 fKC
 iXB
@@ -136392,7 +136387,7 @@ uTK
 dLM
 oEO
 kql
-sWA
+wdQ
 wdQ
 rsx
 cIc
@@ -136402,7 +136397,7 @@ rsx
 kql
 jWi
 hFO
-hxD
+oLk
 iYR
 fKk
 kpd
@@ -172283,7 +172278,7 @@ dsb
 cnI
 gjv
 xRv
-wBO
+teN
 nUk
 nUk
 nUk
@@ -179274,7 +179269,7 @@ nib
 lwF
 ydD
 ydD
-xoI
+mdW
 yjA
 vco
 lXA
@@ -181330,7 +181325,7 @@ fZj
 oHx
 ydD
 ydD
-xoI
+mdW
 jHL
 jGx
 saa
