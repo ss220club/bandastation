@@ -1,4 +1,4 @@
-/obj/structure/closet/secure_closet/togglelock(mob/user)
+/obj/structure/closet/secure_closet/togglelock(mob/living/user, silent)
 	. = ..()
 	var/list/togglelock_sound = list(
 		'modular_bandastation/aesthetics_sounds/sound/lock_1.ogg',
