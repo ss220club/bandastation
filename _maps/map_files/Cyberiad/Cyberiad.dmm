@@ -6636,6 +6636,7 @@
 	dir = 8
 	},
 /obj/structure/flora/bush/flowers_pp/style_random,
+/obj/machinery/light/small/directional/north,
 /turf/open/misc/grass,
 /area/station/hallway/secondary/exit/departure_lounge)
 "bQI" = (
@@ -34853,14 +34854,13 @@
 /turf/open/floor/iron,
 /area/station/engineering/lobby)
 "jOD" = (
-/obj/effect/turf_decal/tile/red{
+/obj/structure/railing{
 	dir = 4
 	},
-/obj/machinery/camera/autoname/directional/east{
-	c_tag = "Security - Permabrig Chapel Enterance"
-	},
-/turf/open/floor/iron,
-/area/station/security/prison/ghetto)
+/obj/structure/flora/bush/lavendergrass,
+/obj/machinery/light/small/directional/south,
+/turf/open/misc/grass,
+/area/station/hallway/secondary/exit/departure_lounge)
 "jPb" = (
 /obj/machinery/light/small/directional/east,
 /turf/open/floor/plating,
@@ -77279,6 +77279,15 @@
 /obj/machinery/light/small/directional/east,
 /turf/open/floor/plating,
 /area/station/maintenance/ghetto/port)
+"vNO" = (
+/obj/effect/turf_decal/tile/red{
+	dir = 4
+	},
+/obj/machinery/camera/autoname/directional/east{
+	c_tag = "Security - Permabrig Chapel Enterance"
+	},
+/turf/open/floor/iron,
+/area/station/security/prison/ghetto)
 "vNQ" = (
 /obj/structure/disposalpipe/segment{
 	dir = 6
@@ -106800,7 +106809,7 @@ htA
 htA
 htA
 tuh
-jOD
+vNO
 ekb
 wfs
 pam
@@ -204000,7 +204009,7 @@ jSm
 dna
 xwP
 lmG
-lmG
+jOD
 aud
 rBH
 oqb
