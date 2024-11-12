@@ -15,5 +15,3 @@
 				SSjob.FreeRole(JOB_AI)
 		src.mind.special_role = null
 		qdel(src)
-	else
-		return
