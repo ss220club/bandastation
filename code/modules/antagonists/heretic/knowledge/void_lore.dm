@@ -1,32 +1,22 @@
-/**
- * # The path of VOID.
- *
- * Goes as follows:
- *
- * Glimmer of Winter
- * Grasp of Void
- * Aristocrat's Way
- * > Sidepaths:
- *   Void Cloak
- *   Shattered Ritual
- *
- * Mark of Void
- * Ritual of Knowledge
- * Void Conduit
- * Void Phase
- * > Sidepaths:
- *   Void Stasis
- *   Carving Knife
- *   Blood Siphon
- *
- * Seeking blade
- * Void Pull
- * > Sidepaths:
- *   Cleave
- *   Maid in the Mirror
- *
- * Waltz at the End of Time
- */
+
+/datum/heretic_knowledge_tree_column/main/void
+	neighbour_type_left = /datum/heretic_knowledge_tree_column/flesh_to_void
+	neighbour_type_right = /datum/heretic_knowledge_tree_column/void_to_blade
+
+	route = PATH_VOID
+	ui_bgr = "node_void"
+
+	start = /datum/heretic_knowledge/limited_amount/starting/base_void
+	grasp = /datum/heretic_knowledge/void_grasp
+	tier1 = /datum/heretic_knowledge/cold_snap
+	mark = 	/datum/heretic_knowledge/mark/void_mark
+	ritual_of_knowledge = /datum/heretic_knowledge/knowledge_ritual/void
+	unique_ability = /datum/heretic_knowledge/spell/void_conduit
+	tier2 = /datum/heretic_knowledge/spell/void_phase
+	blade = /datum/heretic_knowledge/blade_upgrade/void
+	tier3 =	/datum/heretic_knowledge/spell/void_pull
+	ascension = /datum/heretic_knowledge/ultimate/void_final
+
 /datum/heretic_knowledge/limited_amount/starting/base_void
 	name = "Glimmer of Winter"
 	desc = "Открывает перед вами Путь пустоты. \
@@ -34,10 +24,8 @@
 		дновременно можно иметь только два."
 	gain_text = "Я чувствую мерцание в воздухе, воздух вокруг меня становится холоднее. \
 		Я начинаю осознавать пустоту существования. Что-то наблюдает за мной."
-	next_knowledge = list(/datum/heretic_knowledge/void_grasp)
 	required_atoms = list(/obj/item/knife = 1)
 	result_atoms = list(/obj/item/melee/sickly_blade/void)
-	route = PATH_VOID
 	research_tree_icon_path = 'icons/obj/weapons/khopesh.dmi'
 	research_tree_icon_state = "void_blade"
 
@@ -58,10 +46,7 @@
 	desc = "Ваша Хватка Мансуса на время заглушает и охлаждает жертву."
 	gain_text = "Я увидел холодного наблюдателя, который наблюдает за мной. Во мне поселился холод. \
 		Он молчит. Это еще не конец таинства."
-	next_knowledge = list(/datum/heretic_knowledge/cold_snap)
 	cost = 1
-	route = PATH_VOID
-	depth = 3
 	research_tree_icon_path = 'icons/ui_icons/antags/heretic/knowledge.dmi'
 	research_tree_icon_state = "grasp_void"
 
@@ -87,16 +72,10 @@
 		Вы все еще можете получить повреждения из-за отсутствия давления."
 	gain_text = "Я нашел нить холодного дыхания. Она привела меня в странное святилище, сплошь состоящее из кристаллов. \
 		Полупрозрачное и белое изображение дворянина стояло передо мной."
-	next_knowledge = list(
-		/datum/heretic_knowledge/mark/void_mark,
-		/datum/heretic_knowledge/void_cloak,
-		/datum/heretic_knowledge/limited_amount/risen_corpse,
-	)
 	cost = 1
-	route = PATH_VOID
 	research_tree_icon_path = 'icons/effects/effects.dmi'
 	research_tree_icon_state = "the_freezer"
-	depth = 4
+
 	/// Traits we apply to become immune to the environment
 	var/static/list/gain_traits = list(TRAIT_NO_SLIP_ICE, TRAIT_NO_SLIP_SLIDE)
 
@@ -127,13 +106,9 @@
 		При срабатывании он заставляет жертву замолчать и быстро понижает температуру ее тела и окружающего воздуха."
 	gain_text = "Порыв ветра? Мерцание в воздухе? Присутствие переполняет, \
 		мои чувства начали предавать меня. Мой разум - мой собственный враг."
-	next_knowledge = list(/datum/heretic_knowledge/knowledge_ritual/void)
-	route = PATH_VOID
 	mark_type = /datum/status_effect/eldritch/void
 
 /datum/heretic_knowledge/knowledge_ritual/void
-	next_knowledge = list(/datum/heretic_knowledge/spell/void_conduit)
-	route = PATH_VOID
 
 /datum/heretic_knowledge/spell/void_conduit
 	name = "Void Conduit"
@@ -141,11 +116,8 @@
 	gain_text = "В неподвижном и холодном воздухе, гул переходит в какофонический грохот. \
 		В этому шуме нет различия между стуком оконных стекол и зевком знания, который резонирует в моем черепе. \
 		Двери не закроются. Теперь я не могу сдержать холод."
-	next_knowledge = list(/datum/heretic_knowledge/spell/void_phase)
 	spell_to_add = /datum/action/cooldown/spell/conjure/void_conduit
 	cost = 1
-	route = PATH_VOID
-	depth = 7
 
 /datum/heretic_knowledge/spell/void_phase
 	name = "Void Phase"
@@ -153,25 +125,16 @@
 		Дополнительно наносит урон язычникам вокруг вашей первоначальной и целевой цели."
 	gain_text = "Сущность называет себя Аристократом. Он легко проходит сквозь воздух, \
 		оставляя за собой резкий холодный ветер. Он исчезает, а я остаюсь в метели."
-	next_knowledge = list(
-		/datum/heretic_knowledge/blade_upgrade/void,
-		/datum/heretic_knowledge/reroll_targets,
-		/datum/heretic_knowledge/spell/blood_siphon,
-		/datum/heretic_knowledge/spell/void_prison,
-		/datum/heretic_knowledge/rune_carver,
-	)
 	spell_to_add = /datum/action/cooldown/spell/pointed/void_phase
 	cost = 1
-	route = PATH_VOID
-	depth = 8
 	research_tree_icon_frame = 7
 
 /datum/heretic_knowledge/blade_upgrade/void
 	name = "Seeking Blade"
 	desc = "Ваш клинок теперь замораживает врагов. К тому же, теперь вы можете атаковать отмеченные цели на расстоянии Пустотным клинком, телепортируясь прямо к ним. "
 	gain_text = "Мимолетные воспоминания, мимолетные ноги. Я отмечаю свой путь застывшей кровью на снегу. Покрытый и забытый."
-	next_knowledge = list(/datum/heretic_knowledge/spell/void_pull)
-	route = PATH_VOID
+
+
 	research_tree_icon_path = 'icons/ui_icons/antags/heretic/knowledge.dmi'
 	research_tree_icon_state = "blade_upgrade_void"
 
@@ -198,15 +161,11 @@
 	desc = "Наделяет вас заклинанием Void Pull, которое притягивает всех ближайших язычников к вам, ненадолго оглушая их."
 	gain_text = "Все мимолетно, но разве что-то остается? Я близок к завершению начатого. \
 		Аристократ снова предстает передо мной. Он говорит мне, что я опоздал. Его притяжение огромно, я не могу повернуть назад."
-	next_knowledge = list(
-		/datum/heretic_knowledge/ultimate/void_final,
-		/datum/heretic_knowledge/spell/cleave,
-		/datum/heretic_knowledge/summon/maid_in_mirror,
-	)
+
 	spell_to_add = /datum/action/cooldown/spell/aoe/void_pull
 	cost = 1
-	route = PATH_VOID
-	depth = 10
+
+
 	research_tree_icon_frame = 6
 
 /datum/heretic_knowledge/ultimate/void_final
@@ -219,7 +178,7 @@
 	gain_text = "Мир погружается во тьму. Я стою в пустом мире, с неба падают мелкие хлопья льда. \
 		Аристократ стоит передо мной, призывая. Мы будем играть вальс под шепот умирающей реальности, \
 		пока мир разрушается на наших глазах. Пустота вернет все в ничто, УЗРИТЕ МОЕ ВОЗНЕСЕНИЕ!"
-	route = PATH_VOID
+
 	ascension_achievement = /datum/award/achievement/misc/void_ascension
 	///soundloop for the void theme
 	var/datum/looping_sound/void_loop/sound_loop

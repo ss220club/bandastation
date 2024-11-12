@@ -1,48 +1,34 @@
-/**
- * # The path of Blades. Stab stab.
- *
- * Goes as follows:
- *
- * The Cutting Edge
- * Grasp of the Blade
- * Dance of the Brand
- * > Sidepaths:
- *   Shattered Risen
- *   Armorer's Ritual
- *
- * Mark of the Blade
- * Ritual of Knowledge
- * Realignment
- * > Sidepaths:
- *   Lionhunter Rifle
- *
- * Stance of the Scarred Duelist
- * > Sidepaths:
- *   Carving Knife
- *   Mawed Crucible
- *
- * Swift Blades
- * Furious Steel
- * > Sidepaths:
- *   Maid in the Mirror
- *   Rust Charge
- *
- * Maelstrom of Silver
- */
+
+/datum/heretic_knowledge_tree_column/main/blade
+	neighbour_type_left = /datum/heretic_knowledge_tree_column/void_to_blade
+	neighbour_type_right = /datum/heretic_knowledge_tree_column/blade_to_rust
+
+	route = PATH_BLADE
+	ui_bgr = "node_blade"
+
+	start = /datum/heretic_knowledge/limited_amount/starting/base_blade
+	grasp = /datum/heretic_knowledge/blade_grasp
+	tier1 = /datum/heretic_knowledge/blade_dance
+	mark = /datum/heretic_knowledge/mark/blade_mark
+	ritual_of_knowledge = /datum/heretic_knowledge/knowledge_ritual/blade
+	unique_ability = /datum/heretic_knowledge/spell/realignment
+	tier2 = /datum/heretic_knowledge/duel_stance
+	blade = /datum/heretic_knowledge/blade_upgrade/blade
+	tier3 =	 /datum/heretic_knowledge/spell/furious_steel
+	ascension = /datum/heretic_knowledge/ultimate/blade_final
+
 /datum/heretic_knowledge/limited_amount/starting/base_blade
 	name = "The Cutting Edge"
 	desc = "Открывает перед вами Путь клинков. \
 		Позволяет трансмутировать нож с одним слитком серебра или титаниума для создания Закаленного клинка. \
 		Одновременно можно иметь не более четырех."
 	gain_text = "Наши великие предки ковали мечи и практиковали спарринги накануне великих сражений."
-	next_knowledge = list(/datum/heretic_knowledge/blade_grasp)
 	required_atoms = list(
 		/obj/item/knife = 1,
 		list(/obj/item/stack/sheet/mineral/silver, /obj/item/stack/sheet/mineral/titanium) = 1,
 	)
 	result_atoms = list(/obj/item/melee/sickly_blade/dark)
 	limit = 4 // It's the blade path, it's a given
-	route = PATH_BLADE
 	research_tree_icon_path = 'icons/obj/weapons/khopesh.dmi'
 	research_tree_icon_state = "dark_blade"
 
@@ -51,10 +37,7 @@
 	desc = "Ваша Хватка Мансуса вызывает короткое оглушение при использовании на лежачей или стоящей спиной к вам цели."
 	gain_text = "История пехотинца рассказывается с древности. Это история крови и доблести, \
 		за которую выступают меч, сталь и серебро."
-	next_knowledge = list(/datum/heretic_knowledge/blade_dance)
 	cost = 1
-	route = PATH_BLADE
-	depth = 3
 	research_tree_icon_path = 'icons/ui_icons/antags/heretic/knowledge.dmi'
 	research_tree_icon_state = "grasp_blade"
 
@@ -85,14 +68,7 @@
 		наносите удар в сторону нападающего. Этот эффект может сработать только один раз в 20 секунд."
 	gain_text = "Пехотинец был известен как грозный дуэлянт. \
 		Их генерал быстро назначил своим личным чемпионом."
-	next_knowledge = list(
-		/datum/heretic_knowledge/limited_amount/risen_corpse,
-		/datum/heretic_knowledge/mark/blade_mark,
-		/datum/heretic_knowledge/armor,
-	)
 	cost = 1
-	route = PATH_BLADE
-	depth = 4
 	research_tree_icon_path = 'icons/mob/actions/actions_ecult.dmi'
 	research_tree_icon_state = "shatter"
 	/// Whether the counter-attack is ready or not.
@@ -183,8 +159,6 @@
 		Нож блокирует любую направленную на вас атаку, но расходуется при использовании."
 	gain_text = "Его генерал хотел закончить войну, но чемпион знал, что без смерти не может быть жизни. \
 		Он сам убьет труса и всех, кто попытается бежать."
-	next_knowledge = list(/datum/heretic_knowledge/knowledge_ritual/blade)
-	route = PATH_BLADE
 	mark_type = /datum/status_effect/eldritch/blade
 
 /datum/heretic_knowledge/mark/blade_mark/create_mark(mob/living/source, mob/living/target)
@@ -202,8 +176,8 @@
 	source.apply_status_effect(/datum/status_effect/protective_blades, 60 SECONDS, 1, 20, 0 SECONDS)
 
 /datum/heretic_knowledge/knowledge_ritual/blade
-	next_knowledge = list(/datum/heretic_knowledge/spell/realignment)
-	route = PATH_BLADE
+
+
 
 /datum/heretic_knowledge/spell/realignment
 	name = "Realignment"
@@ -211,11 +185,9 @@
 		Во время этого процесса вы будете быстро восстанавливать стамину и быстро восстанавливаться после оглушения, однако вы не сможете атаковать. \
 		Это заклинание можно применять подряд, но при этом увеличивается время его перезарядки."
 	gain_text = "В шквале смертей он обрел мир внутри себя. Несмотря на неодолимые шансы, он ступал вперед."
-	next_knowledge = list(/datum/heretic_knowledge/duel_stance)
 	spell_to_add = /datum/action/cooldown/spell/realignment
 	cost = 1
-	route = PATH_BLADE
-	depth = 7
+
 
 /// The amount of blood flow reduced per level of severity of gained bleeding wounds for Stance of the Torn Champion.
 #define BLOOD_FLOW_PER_SEVEIRTY -1
@@ -227,16 +199,7 @@
 		вы получаете повышенную устойчивость к получению ран и устойчивость к батонам."
 	gain_text = "Со временем именно он оказался среди тел своих бывших товарищей, залитых кровью, но не его собственной. \
 		Он был без конкурентов, равных и без цели."
-	next_knowledge = list(
-		/datum/heretic_knowledge/blade_upgrade/blade,
-		/datum/heretic_knowledge/reroll_targets,
-		/datum/heretic_knowledge/rune_carver,
-		/datum/heretic_knowledge/crucible,
-		/datum/heretic_knowledge/rifle,
-	)
 	cost = 1
-	route = PATH_BLADE
-	depth = 8
 	research_tree_icon_path = 'icons/effects/blood.dmi'
 	research_tree_icon_state = "suitblood"
 	research_tree_icon_dir = SOUTH
@@ -298,8 +261,6 @@
 		Ваша Хватка мансуса может слиться с клинком, а сами клинки более эффективны против структур."
 	gain_text = "Я нашел его рассеченным на две части, половинки сцепились в дуэли без конца; \
 		шквал клинков, но ни один из них не попал в цель, ибо чемпион был неукротим."
-	next_knowledge = list(/datum/heretic_knowledge/spell/furious_steel)
-	route = PATH_BLADE
 	research_tree_icon_path = 'icons/ui_icons/antags/heretic/knowledge.dmi'
 	research_tree_icon_state = "blade_upgrade_blade"
 	/// How much force do we apply to the offhand?
@@ -403,15 +364,8 @@
 	в цель, нанося урон и вызывая кровотечение."
 	gain_text = "Не раздумывая, я взял нож павшего солдата и со всей силы метнул. Моя меткость оказалась верна! \
 		Разорванный чемпион улыбнулся их первому вкусу агонии, и, кивнув, их клинки стали моими собственными."
-	next_knowledge = list(
-		/datum/heretic_knowledge/summon/maid_in_mirror,
-		/datum/heretic_knowledge/ultimate/blade_final,
-		/datum/heretic_knowledge/spell/rust_charge,
-	)
 	spell_to_add = /datum/action/cooldown/spell/pointed/projectile/furious_steel
 	cost = 1
-	route = PATH_BLADE
-	depth = 10
 
 /datum/heretic_knowledge/ultimate/blade_final
 	name = "Maelstrom of Silver"
@@ -424,7 +378,7 @@
 		Ваши Закаленные клинки наносят бонусный урон и исцеляют вас при атаке на часть нанесенного урона."
 	gain_text = "Разорванный чемпион освобожден! Я стану воссоединенным клинком, и с моими более великими амбициями, \
 		НЕ НЕТ РАВНЫХ! БУРЯ ИЗ СТАЛИ И СЕРЕБРА НАДВИГАЕТСЯ НА НАС! УЗРИТЕ МОЕ ВОЗНЕСЕНИЕ!"
-	route = PATH_BLADE
+
 	ascension_achievement = /datum/award/achievement/misc/blade_ascension
 
 /datum/heretic_knowledge/ultimate/blade_final/is_valid_sacrifice(mob/living/carbon/human/sacrifice)

@@ -1,5 +1,17 @@
 // Sidepaths for knowledge between Void and Blade.
 
+/datum/heretic_knowledge_tree_column/void_to_blade
+	neighbour_type_left = /datum/heretic_knowledge_tree_column/main/void
+	neighbour_type_right = /datum/heretic_knowledge_tree_column/main/blade
+
+	route = PATH_SIDE
+
+	tier1 = /datum/heretic_knowledge/limited_amount/risen_corpse
+	tier2 = /datum/heretic_knowledge/rune_carver
+	tier3 = /datum/heretic_knowledge/summon/maid_in_mirror
+
+
+
 /// The max health given to Shattered Risen
 #define RISEN_MAX_HEALTH 125
 
@@ -12,20 +24,17 @@
 	gain_text = "Я узрел как холодная, раздирающая сила вернула этот труп к полу-жизни. \
 		Движения хрустящие, как сломанное стекло. Руки больше не похожи на человеческие - \
 		в каждом сжатом кулаке жестокие гнезда острых костяных осколков."
-	next_knowledge = list(
-		/datum/heretic_knowledge/cold_snap,
-		/datum/heretic_knowledge/blade_dance,
-	)
+
 	required_atoms = list(
 		/obj/item/clothing/suit = 1,
 		/obj/item/clothing/gloves/latex = 1,
 	)
 	limit = 1
 	cost = 1
-	route = PATH_SIDE
+
 	research_tree_icon_path = 'icons/ui_icons/antags/heretic/knowledge.dmi'
 	research_tree_icon_state = "ghoul_shattered"
-	depth = 4
+
 
 /datum/heretic_knowledge/limited_amount/risen_corpse/recipe_snowflake_check(mob/living/user, list/atoms, list/selected_atoms, turf/loc)
 	. = ..()
@@ -130,10 +139,7 @@
 		Также является удобным метательным оружием."
 	gain_text = "Высеченные, вырезанные... вечные. Сила скрыта во всем. Я могу раскрыть ее! \
 		Я могу вырезать монолит, раскрывающий цепи!"
-	next_knowledge = list(
-		/datum/heretic_knowledge/spell/void_phase,
-		/datum/heretic_knowledge/duel_stance,
-	)
+
 	required_atoms = list(
 		/obj/item/knife = 1,
 		/obj/item/shard = 1,
@@ -141,8 +147,8 @@
 	)
 	result_atoms = list(/obj/item/melee/rune_carver)
 	cost = 1
-	route = PATH_SIDE
-	depth = 8
+
+
 	research_tree_icon_path = 'icons/obj/antags/eldritch.dmi'
 	research_tree_icon_state = "rune_carver"
 
@@ -154,10 +160,7 @@
 		Но они слабы против взгляда смертных и получают урон при осмотре."
 	gain_text = "Внутри каждого отражения - ворота в невообразимый мир невиданных красок и \
 		незнакомых людей. Подъем - стекло, а стены - ножи. Каждый шаг - это кровь, если у вас нет проводника."
-	next_knowledge = list(
-		/datum/heretic_knowledge/spell/void_pull,
-		/datum/heretic_knowledge/spell/furious_steel,
-	)
+
 	required_atoms = list(
 		/obj/item/stack/sheet/mineral/titanium = 5,
 		/obj/item/clothing/suit/armor = 1,
@@ -165,7 +168,7 @@
 		/obj/item/organ/lungs = 1,
 	)
 	cost = 1
-	route = PATH_SIDE
+
 	mob_to_summon = /mob/living/basic/heretic_summon/maid_in_the_mirror
 	poll_ignore_define = POLL_IGNORE_MAID_IN_MIRROR
-	depth = 10
+

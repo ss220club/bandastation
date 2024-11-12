@@ -1,3 +1,13 @@
+/datum/heretic_knowledge_tree_column/blade_to_rust
+	neighbour_type_left = /datum/heretic_knowledge_tree_column/main/blade
+	neighbour_type_right = /datum/heretic_knowledge_tree_column/main/rust
+
+	route = PATH_SIDE
+
+	tier1 = /datum/heretic_knowledge/armor
+	tier2 = list(/datum/heretic_knowledge/crucible, /datum/heretic_knowledge/rifle)
+	tier3 = /datum/heretic_knowledge/spell/rust_charge
+
 // Sidepaths for knowledge between Rust and Blade.
 /datum/heretic_knowledge/armor
 	name = "Armorer's Ritual"
@@ -5,21 +15,18 @@
 		Мистическая броня обеспечивает отличную защиту, а также действует как фокус, когда на него накинут капюшон."
 	gain_text = "Ржавые холмы приветствовали Кузнеца в своей щедрости. И Кузнец \
 		ответил им щедростью на щедрость."
-	next_knowledge = list(
-		/datum/heretic_knowledge/rust_regen,
-		/datum/heretic_knowledge/blade_dance,
-	)
+
 	required_atoms = list(
 		/obj/structure/table = 1,
 		/obj/item/clothing/mask/gas = 1,
 	)
 	result_atoms = list(/obj/item/clothing/suit/hooded/cultrobes/eldritch)
 	cost = 1
-	route = PATH_SIDE
+
 	research_tree_icon_path = 'icons/obj/clothing/suits/armor.dmi'
 	research_tree_icon_state = "eldritch_armor"
 	research_tree_icon_frame = 12
-	depth = 4
+
 
 /datum/heretic_knowledge/crucible
 	name = "Mawed Crucible"
@@ -27,20 +34,17 @@
 		Голодное горнило позволяет варить мощные боевые и воспомогательные зелья, но взамен требует части тела и органы."
 	gain_text = "Это чистая агония. Мне не удалось вызвать образ Аристократа, \
 		но благодаря вниманию Жреца я наткнулся на другой рецепт..."
-	next_knowledge = list(
-		/datum/heretic_knowledge/duel_stance,
-		/datum/heretic_knowledge/spell/area_conversion,
-	)
+
 	required_atoms = list(
 		/obj/structure/reagent_dispensers/watertank = 1,
 		/obj/structure/table = 1,
 	)
 	result_atoms = list(/obj/structure/destructible/eldritch_crucible)
 	cost = 1
-	route = PATH_SIDE
+
 	research_tree_icon_path = 'icons/obj/antags/eldritch.dmi'
 	research_tree_icon_state = "crucible"
-	depth = 8
+
 
 /datum/heretic_knowledge/rifle
 	name = "Lionhunter's Rifle"
@@ -52,11 +56,7 @@
 		в результате чего выстрел даст Метку жертве и телепортирует вас к ней."
 	gain_text = "В антикварном магазине я встретил старика, который владел очень необычным оружием. \
 		В то время я не мог его приобрести, но они показали мне, как они делали его много лет назад."
-	next_knowledge = list(
-		/datum/heretic_knowledge/duel_stance,
-		/datum/heretic_knowledge/spell/area_conversion,
-		/datum/heretic_knowledge/rifle_ammo,
-	)
+
 	required_atoms = list(
 		/obj/item/stack/sheet/mineral/wood = 1,
 		/obj/item/stack/sheet/animalhide = 1,
@@ -64,8 +64,8 @@
 	)
 	result_atoms = list(/obj/item/gun/ballistic/rifle/lionhunter)
 	cost = 1
-	route = PATH_SIDE
-	depth = 8
+
+
 	research_tree_icon_path = 'icons/obj/weapons/guns/ballistic.dmi'
 	research_tree_icon_state = "goldrevolver"
 
@@ -81,10 +81,10 @@
 	)
 	result_atoms = list(/obj/item/ammo_box/strilka310/lionhunter)
 	cost = 0
-	route = PATH_SIDE
+
 	research_tree_icon_path = 'icons/obj/weapons/guns/ammo.dmi'
 	research_tree_icon_state = "310_strip"
-	depth = 8
+
 	/// A list of calibers that the ritual will deny. Only ballistic calibers are allowed.
 	var/static/list/caliber_blacklist = list(
 		CALIBER_LASER,
@@ -111,11 +111,8 @@
 	name = "Rust Charge"
 	desc = "Рывок, который должен начаться на ржавом тайле, уничтожающий все ржавые объекты по пути. Наносит большой урон остальным и создает ржавчину вокруг вас во время рывка."
 	gain_text = "Холмы сверкали, и по мере приближения мой разум начал метаться. Я быстро вернул свою решимость и устремился вперед, ведь последний этап будет самым коварным."
-	next_knowledge = list(
-		/datum/heretic_knowledge/spell/furious_steel,
-		/datum/heretic_knowledge/spell/entropic_plume,
-	)
+
 	spell_to_add = /datum/action/cooldown/mob_cooldown/charge/rust
 	cost = 1
-	route = PATH_SIDE
-	depth = 10
+
+

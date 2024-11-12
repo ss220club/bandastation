@@ -3,47 +3,36 @@
 /// The max amount of health a voiceless dead has.
 #define MUTE_MAX_HEALTH 50
 
-/**
- * # The path of Flesh.
- *
- * Goes as follows:
- *
- * Principle of Hunger
- * Grasp of Flesh
- * Imperfect Ritual
- * > Sidepaths:
- *   Void Cloak
- *
- * Mark of Flesh
- * Ritual of Knowledge
- * Flesh Surgery
- * Raw Ritual
- * > Sidepaths:
- *   Blood Siphon
- *   Opening Blast
- *
- * Bleeding Steel
- * Lonely Ritual
- * > Sidepaths:
- *   Cleave
- *   Aptera Vulnera
- *
- * Priest's Final Hymn
- */
+/datum/heretic_knowledge_tree_column/main/flesh
+	neighbour_type_left = /datum/heretic_knowledge_tree_column/lock_to_flesh
+	neighbour_type_right = /datum/heretic_knowledge_tree_column/flesh_to_void
+
+	route = PATH_FLESH
+	ui_bgr = "node_flesh"
+
+	start = /datum/heretic_knowledge/limited_amount/starting/base_flesh
+	grasp = /datum/heretic_knowledge/limited_amount/flesh_grasp
+	tier1 = /datum/heretic_knowledge/limited_amount/flesh_ghoul
+	mark = 	/datum/heretic_knowledge/mark/flesh_mark
+	ritual_of_knowledge = /datum/heretic_knowledge/knowledge_ritual/flesh
+	unique_ability = /datum/heretic_knowledge/spell/flesh_surgery
+	tier2 = /datum/heretic_knowledge/summon/raw_prophet
+	blade = /datum/heretic_knowledge/blade_upgrade/flesh
+	tier3 = /datum/heretic_knowledge/summon/stalker
+	ascension = /datum/heretic_knowledge/ultimate/flesh_final
+
 /datum/heretic_knowledge/limited_amount/starting/base_flesh
 	name = "Principle of Hunger"
 	desc = "Открывает перед вами Путь плоти. \
 		Позволяет трансмутировать нож и лужу крови в Кровавый клинок. \
 		Одновременно можно иметь только три."
 	gain_text = "Сотни наших голодали, но не я... Я нашел силу в своей жадности."
-	next_knowledge = list(/datum/heretic_knowledge/limited_amount/flesh_grasp)
 	required_atoms = list(
 		/obj/item/knife = 1,
 		/obj/effect/decal/cleanable/blood = 1,
 	)
 	result_atoms = list(/obj/item/melee/sickly_blade/flesh)
 	limit = 3 // Bumped up so they can arm up their ghouls too.
-	route = PATH_FLESH
 	research_tree_icon_path = 'icons/obj/weapons/khopesh.dmi'
 	research_tree_icon_state = "flesh_blade"
 
@@ -62,11 +51,11 @@
 		Гули имеют всего 25 здоровья и выглядят как хаски в глазах язычников, но могут эффективно использовать Кровавые клинки. \
 		Используя этот способ, можно иметь только одного."
 	gain_text = "Мои новообретенные желания заставляли меня достигать все больших и больших высот."
-	next_knowledge = list(/datum/heretic_knowledge/limited_amount/flesh_ghoul)
+
 	limit = 1
 	cost = 1
-	route = PATH_FLESH
-	depth = 3
+
+
 	research_tree_icon_path = 'icons/ui_icons/antags/heretic/knowledge.dmi'
 	research_tree_icon_state = "grasp_flesh"
 
@@ -131,21 +120,16 @@
 		Безголосые мертвецы - это немые гули, у них всего 50 здоровья, но они могут эффективно использовать Кровавые клинки. \
 		Одновременно можно иметь только два."
 	gain_text = "Я нашел записи о темном ритуале, незаконченные... но все же я стремился вперед."
-	next_knowledge = list(
-		/datum/heretic_knowledge/mark/flesh_mark,
-		/datum/heretic_knowledge/void_cloak,
-	)
 	required_atoms = list(
 		/mob/living/carbon/human = 1,
 		/obj/item/food/grown/poppy = 1,
 	)
 	limit = 2
 	cost = 1
-	route = PATH_FLESH
 	research_tree_icon_path = 'icons/ui_icons/antags/heretic/knowledge.dmi'
 	research_tree_icon_state = "ghoul_voiceless"
 
-	depth = 4
+
 
 /datum/heretic_knowledge/limited_amount/flesh_ghoul/recipe_snowflake_check(mob/living/user, list/atoms, list/selected_atoms, turf/loc)
 	. = ..()
@@ -217,13 +201,11 @@
 	desc = "Ваша Хватка Мансуса теперь накладывает Метку плоти. Метка срабатывает от атаки вашим Кровавым клинком. \
 		При срабатывании у жертвы начинается обильное кровотечение."
 	gain_text = "Тогда-то я и увидел их, отмеченных. Они были вне досягаемости. Они кричали и кричали."
-	next_knowledge = list(/datum/heretic_knowledge/knowledge_ritual/flesh)
-	route = PATH_FLESH
+
+
 	mark_type = /datum/status_effect/eldritch/flesh
 
 /datum/heretic_knowledge/knowledge_ritual/flesh
-	next_knowledge = list(/datum/heretic_knowledge/spell/flesh_surgery)
-	route = PATH_FLESH
 
 /datum/heretic_knowledge/spell/flesh_surgery
 	name = "Knitting of Flesh"
@@ -232,11 +214,8 @@
 		Это заклинание также позволяет вам исцелять ваших миньонов и призванных или восстанавливать отказавшие органы до приемлемого состояния."
 	gain_text = "Но они недолго оставались вне моей досягаемости. С каждым шагом крики усиливались, пока, наконец, \
 		я не понял, что их можно заглушить."
-	next_knowledge = list(/datum/heretic_knowledge/summon/raw_prophet)
 	spell_to_add = /datum/action/cooldown/spell/touch/flesh_surgery
 	cost = 1
-	route = PATH_FLESH
-	depth = 7
 
 /datum/heretic_knowledge/summon/raw_prophet
 	name = "Raw Ritual"
@@ -245,12 +224,6 @@
 		а также джаунтом дальнего действия и способностью связывать разумы для легкого общения, но очень хрупки и слабы в бою."
 	gain_text = "Я не мог продолжать в одиночку. Я смог призвать Жуткого человека, чтобы он помог мне увидеть больше. \
 		Крики... когда-то постоянные, теперь заглушались их убогим видом. Ничто не было недосягаемо."
-	next_knowledge = list(
-		/datum/heretic_knowledge/blade_upgrade/flesh,
-		/datum/heretic_knowledge/reroll_targets,
-		/datum/heretic_knowledge/spell/blood_siphon,
-		/datum/heretic_knowledge/spell/opening_blast,
-	)
 	required_atoms = list(
 		/obj/item/organ/eyes = 1,
 		/obj/effect/decal/cleanable/blood = 1,
@@ -258,17 +231,14 @@
 	)
 	mob_to_summon = /mob/living/basic/heretic_summon/raw_prophet
 	cost = 1
-	route = PATH_FLESH
 	poll_ignore_define = POLL_IGNORE_RAW_PROPHET
-	depth = 8
+
 
 /datum/heretic_knowledge/blade_upgrade/flesh
 	name = "Bleeding Steel"
 	desc = "Ваш Кровавый клинок теперь вызывает у врагов сильное кровотечение при атаке."
 	gain_text = "Жудкий человек был не один. Он привел меня к Маршалу. \
 		Наконец-то я начал понимать. А потом с небес хлынул кровавый дождь."
-	next_knowledge = list(/datum/heretic_knowledge/summon/stalker)
-	route = PATH_FLESH
 	research_tree_icon_path = 'icons/ui_icons/antags/heretic/knowledge.dmi'
 	research_tree_icon_state = "blade_upgrade_flesh"
 	///What type of wound do we apply on hit
@@ -289,11 +259,7 @@
 		Сталкеры имеют джаунт, могут выпускать ЭМИ, превращаться в животных или автоматонов и сильны в бою."
 	gain_text = "Я смог объединить свою жадность и желания, чтобы вызвать мистическое чудовище, которого я никогда раньше не видел. \
 		Постоянно меняющая форму масса плоти, она хорошо знала мои цели. Маршал одобрил."
-	next_knowledge = list(
-		/datum/heretic_knowledge/ultimate/flesh_final,
-		/datum/heretic_knowledge/spell/apetra_vulnera,
-		/datum/heretic_knowledge/spell/cleave,
-	)
+
 	required_atoms = list(
 		/obj/item/organ/tail = 1,
 		/obj/item/organ/stomach = 1,
@@ -303,9 +269,9 @@
 	)
 	mob_to_summon = /mob/living/basic/heretic_summon/stalker
 	cost = 1
-	route = PATH_FLESH
+
 	poll_ignore_define = POLL_IGNORE_STALKER
-	depth = 10
+
 
 /datum/heretic_knowledge/ultimate/flesh_final
 	name = "Priest's Final Hymn"
@@ -321,7 +287,6 @@
 		Люди этого мира, услышьте меня, ибо время пришло! Маршал ведет мою армию! \
 		Реальность согнется перед ВЛАДЫКОЙ НОЧИ или будет разрушена! УЗРИТЕ МОЕ ВОЗНЕСЕНИЕ!"
 	required_atoms = list(/mob/living/carbon/human = 4)
-	route = PATH_FLESH
 	ascension_achievement = /datum/award/achievement/misc/flesh_ascension
 
 /datum/heretic_knowledge/ultimate/flesh_final/on_finished_recipe(mob/living/user, list/selected_atoms, turf/loc)
