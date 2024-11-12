@@ -325,7 +325,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod, 32)
 
 	if(!announce_rank) // No need to loop over all of those if we already found it beforehand.
 		for(var/datum/record/crew/possible_target_record as anything in GLOB.manifest.general)
-			if(possible_target_record.name == occupant_name && (occupant_rank == "N/A" || possible_target_record.trim == occupant_rank))
+			if(possible_target_record.name == occupant_name && (occupant_rank == "N/A" || possible_target_record.trim == job_title_ru(occupant_rank)))
 				announce_rank = possible_target_record.rank
 				qdel(possible_target_record)
 				break
@@ -412,7 +412,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod, 32)
 					name = "[name] ([target.name])"
 
 		else if(iscyborg(target))
-			to_chat(user, span_danger("Вы не можете поместить [target] в [src]. [target.ru_p_they(TRUE, target.gender)] активен."))
+			to_chat(user, span_danger("Вы не можете поместить [target] в [src]. Юнит активен."))
 		else
 			to_chat(user, span_danger("Вы не можете поместить [target] в [src]. [target.ru_p_they(TRUE, target.gender)] в сознании."))
 		return
