@@ -7643,6 +7643,9 @@
 /obj/effect/turf_decal/tile/green/half/contrasted{
 	dir = 4
 	},
+/obj/machinery/cryopod{
+	dir = 4
+	},
 /turf/open/floor/iron/white,
 /area/station/common/cryopods)
 "cds" = (
@@ -30590,6 +30593,9 @@
 /obj/effect/turf_decal/tile/green{
 	dir = 8
 	},
+/obj/machinery/cryopod{
+	dir = 8
+	},
 /turf/open/floor/iron/white,
 /area/station/common/cryopods)
 "ivw" = (
@@ -32047,6 +32053,9 @@
 /area/station/medical/surgery/theatre)
 "iPy" = (
 /obj/effect/turf_decal/tile/green,
+/obj/machinery/cryopod{
+	dir = 4
+	},
 /turf/open/floor/iron/white,
 /area/station/common/cryopods)
 "iPz" = (
@@ -36900,6 +36909,7 @@
 /obj/effect/turf_decal/tile/green/fourcorners,
 /obj/machinery/light/directional/north,
 /obj/machinery/holopad,
+/obj/machinery/computer/cryopod/directional/north,
 /turf/open/floor/iron/white,
 /area/station/common/cryopods)
 "kjI" = (
@@ -48587,6 +48597,9 @@
 /obj/effect/turf_decal/tile/green{
 	dir = 4
 	},
+/obj/machinery/cryopod{
+	dir = 4
+	},
 /turf/open/floor/iron/white,
 /area/station/common/cryopods)
 "nvj" = (
@@ -57876,6 +57889,9 @@
 	dir = 1
 	},
 /obj/machinery/light_switch/directional/east,
+/obj/machinery/cryopod{
+	dir = 8
+	},
 /turf/open/floor/iron/white,
 /area/station/common/cryopods)
 "pWG" = (
@@ -69777,6 +69793,9 @@
 	dir = 8
 	},
 /obj/machinery/airalarm/directional/east,
+/obj/machinery/cryopod{
+	dir = 8
+	},
 /turf/open/floor/iron/white,
 /area/station/common/cryopods)
 "tra" = (
