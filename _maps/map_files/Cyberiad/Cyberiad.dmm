@@ -61932,6 +61932,10 @@
 /obj/machinery/holopad,
 /turf/open/floor/iron,
 /area/station/command/heads_quarters/qm)
+"rdQ" = (
+/obj/structure/water_source/puddle,
+/turf/open/floor/grass,
+/area/station/service/hydroponics/garden)
 "rdT" = (
 /obj/effect/turf_decal/tile/blue/fourcorners,
 /turf/open/floor/iron/white,
@@ -169303,7 +169307,7 @@ qHQ
 hEU
 noS
 wzI
-noS
+rdQ
 qMA
 afI
 pUU
