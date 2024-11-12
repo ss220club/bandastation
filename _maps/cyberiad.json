@@ -11,7 +11,10 @@
 	},
 	"traits": [
 		{
-			"Baseturf": "/turf/open/misc/asteroid/airless",
+			"Linkage": "Cross"
+		},		
+		{
+			"Baseturf": "/turf/open/openspace",
 			"Linkage": "Cross"
 		},
 		{
