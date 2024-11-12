@@ -9286,12 +9286,6 @@
 	},
 /turf/open/floor/iron,
 /area/station/maintenance/ghetto/storage)
-"cBM" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/structure/cable,
-/obj/machinery/light/small/directional/north,
-/turf/open/floor/iron,
-/area/station/maintenance/ghetto/auxiliary)
 "cBQ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small/directional/west,
@@ -10533,6 +10527,11 @@
 /obj/structure/cable,
 /turf/open/floor/plating,
 /area/station/maintenance/ghetto/starboard/aft)
+"cSS" = (
+/obj/effect/turf_decal/tile/yellow,
+/obj/machinery/light/small/directional/east,
+/turf/open/floor/iron,
+/area/station/hallway/primary/aft)
 "cSW" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/window/brigdoor/right/directional/north{
@@ -18588,11 +18587,6 @@
 	dir = 8
 	},
 /area/station/service/chapel/monastery)
-"fgK" = (
-/obj/effect/turf_decal/tile/yellow,
-/obj/machinery/light/small/directional/east,
-/turf/open/floor/iron,
-/area/station/hallway/primary/aft)
 "fgR" = (
 /obj/machinery/chem_master/condimaster{
 	desc = "Looks like a knock-off chem-master. Perhaps useful for separating liquids when mixing drinks precisely. Also dispenses condiments.";
@@ -26716,11 +26710,7 @@
 /turf/open/floor/plating,
 /area/station/maintenance/port/aft)
 "hxD" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/machinery/light/small/directional/west,
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/iron,
 /area/station/maintenance/ghetto/auxiliary)
 "hxF" = (
@@ -28495,6 +28485,14 @@
 /obj/structure/closet/emcloset,
 /turf/open/floor/iron,
 /area/station/maintenance/ghetto/port/aft)
+"hXQ" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/machinery/light/small/directional/west,
+/turf/open/floor/iron,
+/area/station/maintenance/ghetto/auxiliary)
 "hXT" = (
 /turf/open/floor/plating,
 /area/station/maintenance/aft)
@@ -31566,11 +31564,6 @@
 /obj/structure/cable,
 /turf/open/floor/plating,
 /area/station/maintenance/ghetto/starboard/aft)
-"iQA" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/machinery/light/small/directional/north,
-/turf/open/floor/iron,
-/area/station/maintenance/ghetto/auxiliary)
 "iQE" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -52576,6 +52569,8 @@
 /turf/open/floor/iron,
 /area/station/cargo/warehouse)
 "oLk" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
 /obj/machinery/light/small/directional/north,
 /turf/open/floor/iron,
 /area/station/maintenance/ghetto/auxiliary)
@@ -54201,6 +54196,12 @@
 	},
 /turf/open/floor/plating,
 /area/station/maintenance/solars/port/fore)
+"pkt" = (
+/obj/machinery/atmospherics/components/unary/passive_vent{
+	dir = 4
+	},
+/turf/open/floor/plating/airless,
+/area/space/nearstation)
 "pkv" = (
 /obj/machinery/light/small/directional/south,
 /obj/machinery/chem_dispenser/drinks/beer{
@@ -73707,11 +73708,10 @@
 /turf/open/floor/plating,
 /area/station/security/prison)
 "uOI" = (
-/obj/machinery/atmospherics/components/unary/passive_vent{
-	dir = 4
-	},
-/turf/open/floor/plating/airless,
-/area/space)
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/machinery/light/small/directional/north,
+/turf/open/floor/iron,
+/area/station/maintenance/ghetto/auxiliary)
 "uOY" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -118761,7 +118761,7 @@ jKQ
 ofa
 vhP
 dwq
-hxD
+hXQ
 tdI
 nSZ
 pZA
@@ -119783,7 +119783,7 @@ rax
 rmv
 rmv
 uPA
-cBM
+oLk
 gFH
 byB
 ncb
@@ -122867,7 +122867,7 @@ rmv
 rmv
 uPA
 uPA
-iQA
+uOI
 gFH
 bFB
 ncb
@@ -124666,7 +124666,7 @@ fif
 ceC
 ceC
 uPA
-oLk
+hxD
 pZA
 uPA
 ceC
@@ -169914,7 +169914,7 @@ ges
 vbK
 vbK
 hBY
-uOI
+pkt
 doz
 doz
 doz
@@ -180924,7 +180924,7 @@ wYZ
 nrC
 nrC
 nrC
-fgK
+cSS
 dwH
 wPt
 edt
