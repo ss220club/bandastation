@@ -140,12 +140,12 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod, 32)
 /obj/machinery/computer/cryopod/proc/announce(message_type, user, rank, occupant_departments_bitflags, occupant_job_radio, occupant_gender)
 	switch(message_type)
 		if("CRYO_JOIN")
-			radio.talk_into(src, "[user][rank ? ", [rank]" : ""] [genderize_ru(occupant_gender, "пробудился", "пробудилась", "пробудилось", "пробудились")] из криогенного хранилища.", announcement_channel)
+			radio.talk_into(src, "[user][rank ? ", [rank]" : ""] пробудил[genderize_ru(occupant_gender, "ся", "ась", "ось", "ись")] из криогенного хранилища.", announcement_channel)
 		if("CRYO_LEAVE")
 			if (occupant_job_radio)
 				if (occupant_departments_bitflags & DEPARTMENT_BITFLAG_COMMAND)
 					if (occupant_job_radio != RADIO_CHANNEL_COMMAND)
-						radio.talk_into(src, "[user][rank ? ", [rank]" : ""] [genderize_ru(occupant_gender, "был", "была", "было", "были")] [genderize_ru(occupant_gender, "перемещён", "перемещена", "перемещено", "перемещены")] в криогенное хранилище.", RADIO_CHANNEL_COMMAND)
+						radio.talk_into(src, "[user][rank ? ", [rank]" : ""] был[genderize_ru(occupant_gender, "", "а", "о", "и")] перемещ[genderize_ru(occupant_gender, "ён", "ена", "ено", "ены")] в криогенное хранилище.", RADIO_CHANNEL_COMMAND)
 					radio.use_command = TRUE
 				radio.talk_into(src, "[user][rank ? ", [rank]" : ""] [genderize_ru(occupant_gender, "был", "была", "было", "были")] [genderize_ru(occupant_gender, "перемещён", "перемещена", "перемещено", "перемещены")] в криогенное хранилище.", occupant_job_radio)
 				radio.use_command = FALSE
@@ -223,15 +223,15 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod, 32)
 	if(!control_computer_weakref)
 		find_control_computer(TRUE)
 	if((isnull(target) || isliving(target)) && state_open && !panel_open)
-		..(target)
+		. = ..(target)
 		var/mob/living/mob_occupant = occupant
-		if(mob_occupant && mob_occupant.stat != DEAD)
+		if(mob_occupant?.stat != DEAD)
 			to_chat(occupant, span_notice("<b>Вы чувствуете, как холодный воздух обволакивает вас. Чувства затухают и ваше тело немеет.</b>"))
 
 		COOLDOWN_START(src, despawn_world_time, time_till_despawn)
 
 /obj/machinery/cryopod/open_machine(drop = TRUE, density_to_set = FALSE)
-	..()
+	. = ..()
 	set_density(TRUE)
 	name = initial(name)
 	tucked = FALSE
