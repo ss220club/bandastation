@@ -1,48 +1,37 @@
-/**
- * # The path of Moon.
- *
- * Goes as follows:
- *
- * Moonlight Troupe
- * Grasp of Lunacy
- * Smile of the moon
- * > Sidepaths:
- *   Mind Gate
- *   Ashen Eyes
- *
- * Mark of Moon
- * Ritual of Knowledge
- * Lunar Parade
- * Moonlight Amulet
- * > Sidepaths:
- *   Curse of Paralasys
- *   Unfathomable Curio
- * 	 Unsealed Arts
- *
- * Moonlight blade
- * Ringleaders Rise
- * > Sidepaths:
- *   Ashen Ritual
- *
- * Last Act
- */
+
+/datum/heretic_knowledge_tree_column/main/moon
+	neighbour_type_left = /datum/heretic_knowledge_tree_column/ash_to_moon
+	neighbour_type_right = /datum/heretic_knowledge_tree_column/moon_to_lock
+
+	route = PATH_MOON
+	ui_bgr = "node_moon"
+
+	start = /datum/heretic_knowledge/limited_amount/starting/base_moon
+	grasp = /datum/heretic_knowledge/moon_grasp
+	tier1 = /datum/heretic_knowledge/spell/moon_smile
+	mark = /datum/heretic_knowledge/mark/moon_mark
+	ritual_of_knowledge = /datum/heretic_knowledge/knowledge_ritual/moon
+	unique_ability = /datum/heretic_knowledge/spell/moon_parade
+	tier2 = /datum/heretic_knowledge/moon_amulet
+	blade = /datum/heretic_knowledge/blade_upgrade/moon
+	tier3 =	/datum/heretic_knowledge/spell/moon_ringleader
+	ascension = /datum/heretic_knowledge/ultimate/moon_final
+
 /datum/heretic_knowledge/limited_amount/starting/base_moon
 	name = "Moonlight Troupe"
 	desc = "Открывает перед вами Путь луны. \
 		Позволяет трансмутировать 2 листа железа и нож в Лунный клинок. \
 		Одновременно можно иметь только два."
 	gain_text = "Под лунным светом смех отдается эхом."
-	next_knowledge = list(/datum/heretic_knowledge/moon_grasp)
 	required_atoms = list(
 		/obj/item/knife = 1,
 		/obj/item/stack/sheet/iron = 2,
 	)
 	result_atoms = list(/obj/item/melee/sickly_blade/moon)
-	route = PATH_MOON
 	research_tree_icon_path = 'icons/obj/weapons/khopesh.dmi'
 	research_tree_icon_state = "moon_blade"
 
-/datum/heretic_knowledge/base_moon/on_gain(mob/user, datum/antagonist/heretic/our_heretic)
+/datum/heretic_knowledge/limited_amount/starting/base_moon/on_gain(mob/user, datum/antagonist/heretic/our_heretic)
 	add_traits(user ,TRAIT_EMPATH, REF(src))
 
 /datum/heretic_knowledge/moon_grasp
@@ -50,10 +39,7 @@
 	desc = "Ваша Хватка Мансуса заставит жертву галлюцинировать, что все вокруг - лунная масса, \
 		и на короткое время скроет вашу личность."
 	gain_text = "Труппа на стороне луны показала мне правду, и я принял её."
-	next_knowledge = list(/datum/heretic_knowledge/spell/moon_smile)
 	cost = 1
-	route = PATH_MOON
-	depth = 3
 	research_tree_icon_path = 'icons/ui_icons/antags/heretic/knowledge.dmi'
 	research_tree_icon_state = "grasp_moon"
 
@@ -83,15 +69,9 @@
 	desc = "Дает вам заклинание Smile of the moon, позволяющее на расстоянии заглушить, ослепить, оглушить и сбить с ног цель \
 		на время, зависящее от ее рассудка."
 	gain_text = "Луна улыбается всем нам, и те, кто видит ее правдивую сторону, могут приносить её радость."
-	next_knowledge = list(
-		/datum/heretic_knowledge/mark/moon_mark,
-		/datum/heretic_knowledge/medallion,
-		/datum/heretic_knowledge/spell/mind_gate,
-	)
+
 	spell_to_add = /datum/action/cooldown/spell/pointed/moon_smile
 	cost = 1
-	route = PATH_MOON
-	depth = 4
 
 /datum/heretic_knowledge/mark/moon_mark
 	name = "Mark of Moon"
@@ -100,25 +80,17 @@
 	gain_text = "Труппа на луне могла танцевать весь день \
 		и в этом танце луна улыбалась нам \
 		но когда наступала ночь, ее улыбка тусклела, так как была вынуждена смотреть на землю."
-	next_knowledge = list(/datum/heretic_knowledge/knowledge_ritual/moon)
-	route = PATH_MOON
 	mark_type = /datum/status_effect/eldritch/moon
 
 /datum/heretic_knowledge/knowledge_ritual/moon
-	next_knowledge = list(/datum/heretic_knowledge/spell/moon_parade)
-	route = PATH_MOON
 
 /datum/heretic_knowledge/spell/moon_parade
 	name = "Lunar Parade"
 	desc = "Дает вам заклинание Lunar Parade, которое через короткую задержку посылает вперед карнавал. \
 		Те, в кого попал карнавал, вынуждены присоединиться к параду и страдать от галлюцинаций."
 	gain_text = "Музыка, как отражение души, побуждала их, и они, словно мотыльки на пламя, следовали за ней."
-	next_knowledge = list(/datum/heretic_knowledge/moon_amulet)
 	spell_to_add = /datum/action/cooldown/spell/pointed/projectile/moon_parade
 	cost = 1
-	route = PATH_MOON
-	depth = 7
-
 
 /datum/heretic_knowledge/moon_amulet
 	name = "Moonlight Amulet"
@@ -126,13 +98,7 @@
 			Если предмет использован на том, у кого слабый рассудок, они становятся берсерком, нападая на всех подряд; \
 			если рассудок не достаточно низок, то уменьшается их настроение."
 	gain_text = "Во главе парада стоял он, луна сгустилась в единную массу, отражение души."
-	next_knowledge = list(
-		/datum/heretic_knowledge/blade_upgrade/moon,
-		/datum/heretic_knowledge/reroll_targets,
-		/datum/heretic_knowledge/unfathomable_curio,
-		/datum/heretic_knowledge/curse/paralysis,
-		/datum/heretic_knowledge/painting,
-	)
+
 	required_atoms = list(
 		/obj/item/organ/heart = 1,
 		/obj/item/stack/sheet/glass = 2,
@@ -140,8 +106,8 @@
 	)
 	result_atoms = list(/obj/item/clothing/neck/heretic_focus/moon_amulet)
 	cost = 1
-	route = PATH_MOON
-	depth = 8
+
+
 	research_tree_icon_path = 'icons/obj/antags/eldritch.dmi'
 	research_tree_icon_state = "moon_amulette"
 	research_tree_icon_frame = 9
@@ -150,8 +116,8 @@
 	name = "Moonlight Blade"
 	desc = "Ваш клинок теперь наносит урон мозгу и рассудку, а также вызывает случайные галлюцинации."
 	gain_text = "Его остроумие было острым, как клинок, оно прорезало ложь, чтобы принести нам радость."
-	next_knowledge = list(/datum/heretic_knowledge/spell/moon_ringleader)
-	route = PATH_MOON
+
+
 	research_tree_icon_path = 'icons/ui_icons/antags/heretic/knowledge.dmi'
 	research_tree_icon_state = "blade_upgrade_moon"
 
@@ -177,14 +143,11 @@
 			Если их рассудок достаточно слабый, они обезумеют и потеряют половину рассудка."
 	gain_text = "Взял его за руку, мы поднялись, и те, кто видел правду, поднялись вместе с нами. \
 		Шпрехшталмейстер указал вверх, и тусклый свет правды осветил нас еще больше."
-	next_knowledge = list(
-		/datum/heretic_knowledge/ultimate/moon_final,
-		/datum/heretic_knowledge/summon/ashy,
-	)
+
 	spell_to_add = /datum/action/cooldown/spell/aoe/moon_ringleader
 	cost = 1
-	route = PATH_MOON
-	depth = 10
+
+
 	research_tree_icon_frame = 5
 
 /datum/heretic_knowledge/ultimate/moon_final
@@ -197,7 +160,7 @@
 	gain_text = "Мы нырнули вниз, к толпе, его душа отделилась в поисках более великой авантюры, \
 		туда, откуда Шпрехшталмейстер начал парад, и я продолжу его до самой кончины солнца \
 		УЗРИТЕ МОЕ ВОЗНЕСЕНИЕ, ЛУНА УЛЫБНЕТСЯ РАЗ И НАВСЕГДА!"
-	route = PATH_MOON
+
 	ascension_achievement = /datum/award/achievement/misc/moon_ascension
 
 /datum/heretic_knowledge/ultimate/moon_final/is_valid_sacrifice(mob/living/sacrifice)

@@ -1,47 +1,33 @@
-/**
- * # The path of Rust.
- *
- * Goes as follows:
- *
- * Blacksmith's Tale
- * Grasp of Rust
- * Leeching Walk
- * > Sidepaths:
- *   Priest's Ritual
- *   Armorer's Ritual
- *
- * Mark of Rust
- * Ritual of Knowledge
- * Rust Construction
- * > Sidepaths:
- *   Lionhunter Rifle
- *
- * Aggressive Spread
- * > Sidepaths:
- *   Curse of Corrosion
- *   Mawed Crucible
- *
- * Toxic Blade
- * Entropic Plume
- * > Sidepaths:
- *   Rusted Ritual
- *   Rust Charge
- *
- * Rustbringer's Oath
- */
+
+/datum/heretic_knowledge_tree_column/main/rust
+	neighbour_type_left = /datum/heretic_knowledge_tree_column/blade_to_rust
+	neighbour_type_right = /datum/heretic_knowledge_tree_column/rust_to_cosmic
+
+	route = PATH_RUST
+	ui_bgr = "node_rust"
+
+	start = /datum/heretic_knowledge/limited_amount/starting/base_rust
+	grasp = /datum/heretic_knowledge/rust_fist
+	tier1 = /datum/heretic_knowledge/rust_regen
+	mark = /datum/heretic_knowledge/mark/rust_mark
+	ritual_of_knowledge = /datum/heretic_knowledge/knowledge_ritual/rust
+	unique_ability = /datum/heretic_knowledge/spell/rust_construction
+	tier2 = /datum/heretic_knowledge/spell/area_conversion
+	blade = /datum/heretic_knowledge/blade_upgrade/rust
+	tier3 =	/datum/heretic_knowledge/spell/entropic_plume
+	ascension = /datum/heretic_knowledge/ultimate/rust_final
+
 /datum/heretic_knowledge/limited_amount/starting/base_rust
 	name = "Blacksmith's Tale"
 	desc = "Открывает перед вами Путь ржавчины. \
 		Позволяет трансмутировать нож с любым мусором в Ржавый клинок. \
 		Одновременно можно создать только два."
 	gain_text = "\"Позвольте мне рассказать вам историю\", сказал Кузнец, вглядываясь в глубину своего ржавого клинка."
-	next_knowledge = list(/datum/heretic_knowledge/rust_fist)
 	required_atoms = list(
 		/obj/item/knife = 1,
 		/obj/item/trash = 1,
 	)
 	result_atoms = list(/obj/item/melee/sickly_blade/rust)
-	route = PATH_RUST
 	research_tree_icon_path = 'icons/obj/weapons/khopesh.dmi'
 	research_tree_icon_state = "rust_blade"
 
@@ -51,10 +37,7 @@
 		Уже заржавевшие поверхности разрушаются. Поверхности и структуры можно заставить ржаветь с помощью ПКМ. \
 		Позволяет заставить ржаветь обычные железные стены и пол."
 	gain_text = "На потолке Мансуса ржавчина растет, как мох на камне."
-	next_knowledge = list(/datum/heretic_knowledge/rust_regen)
 	cost = 1
-	route = PATH_RUST
-	depth = 3
 	research_tree_icon_path = 'icons/ui_icons/antags/heretic/knowledge.dmi'
 	research_tree_icon_state = "grasp_rust"
 
@@ -90,17 +73,10 @@
 	name = "Leeching Walk"
 	desc = "Дает вам пассивное исцеление и устойчивость к батонам, когда вы стоите над ржавчиной."
 	gain_text = "Скорость была беспрецедентной, сила - неестественной. Кузнец улыбался."
-	next_knowledge = list(
-		/datum/heretic_knowledge/mark/rust_mark,
-		/datum/heretic_knowledge/armor,
-		/datum/heretic_knowledge/essence,
-		/datum/heretic_knowledge/entropy_pulse,
-	)
 	cost = 1
-	route = PATH_RUST
 	research_tree_icon_path = 'icons/effects/eldritch.dmi'
 	research_tree_icon_state = "cloud_swirl"
-	depth = 4
+
 
 /datum/heretic_knowledge/rust_regen/on_gain(mob/user, datum/antagonist/heretic/our_heretic)
 	user.AddElement(/datum/element/leeching_walk)
@@ -114,8 +90,6 @@
 		При срабатывании, жертва получит сильное отвращение и будет контужена. \
 		Позволяет заставить ржаветь укрепленные стены и пол, а также пласталь."
 	gain_text = "Кузнец смотрит вдаль. В давно потерянное место. \"Ржавые холмы помогают остро нуждающимся... за определенную плату.\""
-	next_knowledge = list(/datum/heretic_knowledge/knowledge_ritual/rust)
-	route = PATH_RUST
 	mark_type = /datum/status_effect/eldritch/rust
 
 /datum/heretic_knowledge/mark/rust_mark/on_gain(mob/user, datum/antagonist/heretic/our_heretic)
@@ -123,8 +97,6 @@
 	our_heretic.increase_rust_strength()
 
 /datum/heretic_knowledge/knowledge_ritual/rust
-	next_knowledge = list(/datum/heretic_knowledge/spell/rust_construction)
-	route = PATH_RUST
 
 /datum/heretic_knowledge/spell/rust_construction
 	name = "Rust Construction"
@@ -132,29 +104,16 @@
 		Любой человек, находящийся над стеной, будет отброшен в сторону (или вверх) и получит урон."
 	gain_text = "В моем сознании начали плясать образы иноземных и зловещих сооружений. Покрытые с ног до головы толстым слоем ржавчины, \
 		они больше не выглядели рукотворными. А может быть, они вообще никогда и не существовали."
-	next_knowledge = list(/datum/heretic_knowledge/spell/area_conversion)
 	spell_to_add = /datum/action/cooldown/spell/pointed/rust_construction
 	cost = 1
-	route = PATH_RUST
-	depth = 7
 
 /datum/heretic_knowledge/spell/area_conversion
 	name = "Aggressive Spread"
 	desc = "Дает вам заклинание Aggressive Spread, которое распространяет ржавчину на близлежащие поверхности. \
 		Уже заржавевшие поверхности разрушаются. \ Также улучшает способности ржавчины еретиков не Пути ржавчины."
 	gain_text = "Мудрецы знают, что не стоит посещать Ржавые холмы... Но рассказ Кузнеца был вдохновляющим."
-	next_knowledge = list(
-		/datum/heretic_knowledge/blade_upgrade/rust,
-		/datum/heretic_knowledge/reroll_targets,
-		/datum/heretic_knowledge/curse/corrosion,
-		/datum/heretic_knowledge/summon/rusty,
-		/datum/heretic_knowledge/crucible,
-		/datum/heretic_knowledge/rifle,
-	)
 	spell_to_add = /datum/action/cooldown/spell/aoe/rust_conversion
 	cost = 1
-	route = PATH_RUST
-	depth = 8
 	research_tree_icon_frame = 5
 
 /datum/heretic_knowledge/spell/area_conversion/on_gain(mob/user, datum/antagonist/heretic/our_heretic)
@@ -166,8 +125,6 @@
 	desc = "Ваш Ржавый клинок теперь отвращает врагов при атаке. \ Позволяет заставить ржаветь титаниум и пластитаниум."
 	gain_text = "Кузнец протягивает вам свой клинок. \"Клинок проведет тебя через плоть, если ты позволишь ему.\" \
 		Тяжелая ржавчина утяжеляет клинок. Вы пристально вглядываетесь в него. Ржавые холмы зовут тебя."
-	next_knowledge = list(/datum/heretic_knowledge/spell/entropic_plume)
-	route = PATH_RUST
 	research_tree_icon_path = 'icons/ui_icons/antags/heretic/knowledge.dmi'
 	research_tree_icon_state = "blade_upgrade_rust"
 
@@ -189,14 +146,11 @@
 		на друзей или врагов. Также ржавеет и разрушает поверхности, на которые попадает. Улучшает способности ржавчины еретиков не Пути ржавчины."
 	gain_text = "Коррозия была неостановима. Ржавчина была неприятной. \
 		Кузнец ушел, ты держишь его клинок. Чемпионы надежды, Повелитель ржавчины близок!"
-	next_knowledge = list(
-		/datum/heretic_knowledge/ultimate/rust_final,
-		/datum/heretic_knowledge/spell/rust_charge,
-	)
+
 	spell_to_add = /datum/action/cooldown/spell/cone/staggered/entropic_plume
 	cost = 1
-	route = PATH_RUST
-	depth = 10
+
+
 
 /datum/heretic_knowledge/spell/entropic_plume/on_gain(mob/user)
 	. = ..()
@@ -212,7 +166,7 @@
 		и приобретая иммунитет ко многим эффектам и опасностям. Вы сможете заставлять ржаветь почти всё."
 	gain_text = "Чемпион ржавчины. Разлагатель стали. Бойся темноты, ибо пришел ПОВЕЛИТЕЛЬ РЖАВЧИНЫ! \
 		Работа Кузнеца продолжается! Ржавые холмы, УСЛЫШЬТЕ МОЕ ИМЯ! УЗРИТЕ МОЕ ВОЗНЕСЕНИЕ!"
-	route = PATH_RUST
+
 	ascension_achievement = /datum/award/achievement/misc/rust_ascension
 	/// If TRUE, then immunities are currently active.
 	var/immunities_active = FALSE

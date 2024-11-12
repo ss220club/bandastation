@@ -1,7 +1,7 @@
 /obj/structure/lock_tear
 	name = "???"
 	desc = "Оно смотрит в ответ. Нет причин оставаться. Беги."
-	max_integrity = INFINITE
+	max_integrity = INFINITY
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 	icon = 'icons/obj/anomaly.dmi'
 	icon_state = "bhole3"

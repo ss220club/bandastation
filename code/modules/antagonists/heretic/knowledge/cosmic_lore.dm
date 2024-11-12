@@ -1,43 +1,33 @@
-/**
- * # The path of Cosmos.
- *
- * Goes as follows:
- *
- * Eternal Gate
- * Grasp of Cosmos
- * Cosmic Runes
- * > Sidepaths:
- *   Priest's Ritual
- *   Scorching Shark
- *
- * Mark of Cosmos
- * Ritual of Knowledge
- * Star Touch
- * Star Blast
- * > Sidepaths:
- *   Curse of Corrosion
- *   Space Phase
- *
- * Cosmic Blade
- * Cosmic Expansion
- * > Sidepaths:
- *   Eldritch Coin
- *
- * Creators's Gift
- */
+
+/datum/heretic_knowledge_tree_column/main/cosmic
+	neighbour_type_left = /datum/heretic_knowledge_tree_column/rust_to_cosmic
+	neighbour_type_right = /datum/heretic_knowledge_tree_column/cosmic_to_ash
+
+	route = PATH_COSMIC
+	ui_bgr = "node_cosmos"
+
+	start = /datum/heretic_knowledge/limited_amount/starting/base_cosmic
+	grasp = /datum/heretic_knowledge/cosmic_grasp
+	tier1 = /datum/heretic_knowledge/spell/cosmic_runes
+	mark = /datum/heretic_knowledge/mark/cosmic_mark
+	ritual_of_knowledge = /datum/heretic_knowledge/knowledge_ritual/cosmic
+	unique_ability = /datum/heretic_knowledge/spell/star_touch
+	tier2 = /datum/heretic_knowledge/spell/star_blast
+	blade = /datum/heretic_knowledge/blade_upgrade/cosmic
+	tier3 =	 /datum/heretic_knowledge/spell/cosmic_expansion
+	ascension = /datum/heretic_knowledge/ultimate/cosmic_final
+
 /datum/heretic_knowledge/limited_amount/starting/base_cosmic
 	name = "Eternal Gate"
 	desc = "Открывает перед вами Путь космоса. \
 		озволяет трансмутировать лист плазмы и нож в Космический клинок. \
 		Одновременно можно иметь только два."
 	gain_text = "Туманность появилась в небе, ее пламенное рождение озарило меня. Это было начало великой трансценденции"
-	next_knowledge = list(/datum/heretic_knowledge/cosmic_grasp)
 	required_atoms = list(
 		/obj/item/knife = 1,
 		/obj/item/stack/sheet/mineral/plasma = 1,
 	)
 	result_atoms = list(/obj/item/melee/sickly_blade/cosmic)
-	route = PATH_COSMIC
 	research_tree_icon_path = 'icons/obj/weapons/khopesh.dmi'
 	research_tree_icon_state = "cosmic_blade"
 
@@ -47,10 +37,7 @@
 		Люди с Меткой звезды не могут проходить через космические поля."
 	gain_text = "Некоторые звезды меркли, другие увеличивались. \
 		С новообретенной силой я смог направить силу туманности в себя."
-	next_knowledge = list(/datum/heretic_knowledge/spell/cosmic_runes)
 	cost = 1
-	route = PATH_COSMIC
-	depth = 3
 	research_tree_icon_path = 'icons/ui_icons/antags/heretic/knowledge.dmi'
 	research_tree_icon_state = "grasp_cosmos"
 
@@ -75,15 +62,9 @@
 		Однако люди с Меткой звезды будут переноситься вместе с тем, кто использует руну."
 	gain_text = "Далекие звезды закрались в мои сны, беспричинно ревя и крича. \
 		Я заговорил и услышал, как мои же слова отозвались эхом."
-	next_knowledge = list(
-		/datum/heretic_knowledge/summon/fire_shark,
-		/datum/heretic_knowledge/mark/cosmic_mark,
-		/datum/heretic_knowledge/essence,
-	)
 	spell_to_add = /datum/action/cooldown/spell/cosmic_rune
 	cost = 1
-	route = PATH_COSMIC
-	depth = 4
+
 
 /datum/heretic_knowledge/mark/cosmic_mark
 	name = "Mark of Cosmos"
@@ -93,13 +74,9 @@
 		Затем они будут парализованы на 2 секунды."
 	gain_text = "Теперь Зверь изредка шептал мне, рассказывая лишь немного о своих обстоятельствах. \
 		Я могу им помочь, я должен им помочь."
-	next_knowledge = list(/datum/heretic_knowledge/knowledge_ritual/cosmic)
-	route = PATH_COSMIC
 	mark_type = /datum/status_effect/eldritch/cosmic
 
 /datum/heretic_knowledge/knowledge_ritual/cosmic
-	next_knowledge = list(/datum/heretic_knowledge/spell/star_touch)
-	route = PATH_COSMIC
 
 /datum/heretic_knowledge/spell/star_touch
 	name = "Star Touch"
@@ -109,28 +86,16 @@
 		Луч действует в течение минуты, пока луч не будет прегражден или пока не будет найдена новая цель."
 	gain_text = "Проснувшись в холодном поту, я почувствовал ладонь на своем скальпе, сигил был выжжен на мне. \
 		Теперь мои вены изучали странное фиолетовое сияние: Зверь знает, что я превзойду их ожидания."
-	next_knowledge = list(/datum/heretic_knowledge/spell/star_blast)
 	spell_to_add = /datum/action/cooldown/spell/touch/star_touch
 	cost = 1
-	route = PATH_COSMIC
-	depth = 7
 
 /datum/heretic_knowledge/spell/star_blast
 	name = "Star Blast"
 	desc = "Выпускает снаряд, который движется очень медленно и создает стену космического поля на своем пути на короткое время. \
 		Каждый, в кого попадет снаряд, получит урон от ожога, будет сбит с ног и даст людям в радиусе трех тайлов Метку звезды."
 	gain_text = "Зверь теперь всегда следовал за мной, и при каждом жертвоприношении в меня вливались слова одобрения."
-	next_knowledge = list(
-		/datum/heretic_knowledge/blade_upgrade/cosmic,
-		/datum/heretic_knowledge/reroll_targets,
-		/datum/heretic_knowledge/curse/corrosion,
-		/datum/heretic_knowledge/summon/rusty,
-		/datum/heretic_knowledge/spell/space_phase,
-	)
 	spell_to_add = /datum/action/cooldown/spell/pointed/projectile/star_blast
 	cost = 1
-	route = PATH_COSMIC
-	depth = 8
 
 /datum/heretic_knowledge/blade_upgrade/cosmic
 	name = "Cosmic Blade"
@@ -141,8 +106,6 @@
 		космический след и увеличите таймер вашего комбо до 10 секунд."
 	gain_text = "Когда Зверь взял мои клинки в свою руку, я упал на колени и почувствовал острую боль \
 		Клинки теперь сверкали раздробленной силой. Я упал на землю и зарыдал у ног Зверя."
-	next_knowledge = list(/datum/heretic_knowledge/spell/cosmic_expansion)
-	route = PATH_COSMIC
 	research_tree_icon_path = 'icons/ui_icons/antags/heretic/knowledge.dmi'
 	research_tree_icon_state = "blade_upgrade_cosmos"
 	/// Storage for the second target.
@@ -236,14 +199,8 @@
 	desc = "Дарует вам Cosmic Expansion, заклинание, создающее вокруг вас область космических полей размером 3x3. \
 		Близлежащие существа также будут отмечены Меткой звезды."
 	gain_text = "Теперь земля содрогалась подо мной. Зверь вселился в меня, и его голос был пьянящим."
-	next_knowledge = list(
-		/datum/heretic_knowledge/ultimate/cosmic_final,
-		/datum/heretic_knowledge/eldritch_coin,
-	)
 	spell_to_add = /datum/action/cooldown/spell/conjure/cosmic_expansion
 	cost = 1
-	route = PATH_COSMIC
-	depth = 10
 
 /datum/heretic_knowledge/ultimate/cosmic_final
 	name = "Creators's Gift"
@@ -260,7 +217,7 @@
 		Я прижался к ним, они защитят меня, и я защищаю их. \
 		Я закрыл глаза, прижавшись головой к их телу. Я был в безопасности. \
 		УЗРИТЕ МОЕ ВОЗНЕСЕНИЕ!"
-	route = PATH_COSMIC
+
 	ascension_achievement = /datum/award/achievement/misc/cosmic_ascension
 	/// A static list of command we can use with our mob.
 	var/static/list/star_gazer_commands = list(

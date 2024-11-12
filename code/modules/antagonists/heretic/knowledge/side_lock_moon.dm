@@ -1,4 +1,22 @@
+/datum/heretic_knowledge_tree_column/moon_to_lock
+	neighbour_type_left = /datum/heretic_knowledge_tree_column/main/moon
+	neighbour_type_right = /datum/heretic_knowledge_tree_column/main/lock
+
+	route = PATH_SIDE
+
+	tier1 = /datum/heretic_knowledge/spell/mind_gate
+	tier2 = list(/datum/heretic_knowledge/unfathomable_curio, /datum/heretic_knowledge/painting)
+	tier3 = /datum/heretic_knowledge/dummy_moon_to_lock
+
 // Sidepaths for knowledge between Knock and Moon.
+
+/datum/heretic_knowledge/dummy_moon_to_lock
+	name = "Lock and Moon ways"
+	desc = "Research this to gain access to the other path"
+	gain_text = "The powers of Madness are like a wound in one's soul, and every wound can be opened and closed."
+	cost = 1
+
+
 
 /datum/heretic_knowledge/spell/mind_gate
 	name = "Mind Gate"
@@ -6,14 +24,9 @@
 		наносит вам 20 урона мозгу, и накладывает галлюцинации на цель, \
 		замешательство на 10 секунд, потерю дыхания и урон мозгу."
 	gain_text = "Мой разум распахивается, словно врата, и его озарение позволяет мне постичь правду."
-	next_knowledge = list(
-		/datum/heretic_knowledge/key_ring,
-		/datum/heretic_knowledge/spell/moon_smile,
-	)
+
 	spell_to_add = /datum/action/cooldown/spell/pointed/mind_gate
 	cost = 1
-	route = PATH_SIDE
-	depth = 4
 
 /datum/heretic_knowledge/unfathomable_curio
 	name = "Unfathomable Curio"
@@ -22,10 +35,7 @@
 			он также будет покрывать вас вуалью, позволяющей последующим 5 ударам не наносить по вам урон. \
 			Вуаль очень медленно перезаряжается вне боя."
 	gain_text = "В Мансусе хранится множество диковинок, но некоторые из них не предназначены для глаза смертных."
-	next_knowledge = list(
-		/datum/heretic_knowledge/spell/burglar_finesse,
-		/datum/heretic_knowledge/moon_amulet,
-	)
+
 	required_atoms = list(
 		/obj/item/organ/lungs = 1,
 		/obj/item/stack/rods = 3,
@@ -33,10 +43,10 @@
 	)
 	result_atoms = list(/obj/item/storage/belt/unfathomable_curio)
 	cost = 1
-	route = PATH_SIDE
+
 	research_tree_icon_path = 'icons/obj/clothing/belts.dmi'
 	research_tree_icon_state = "unfathomable_curio"
-	depth = 8
+
 
 /datum/heretic_knowledge/painting
 	name = "Unsealed Arts"
@@ -50,17 +60,14 @@
 			Не-еретики могут избавиться от этих эффектов, осматривая эти картины."
 	gain_text = "Ветер вдохновения дует через меня; за стенами и за вратами лежит вдохновение, которое еще предстоит изобразить \
 				Они снова жаждут взгляда смертных, и я исполню это желание."
-	next_knowledge = list(
-		/datum/heretic_knowledge/spell/burglar_finesse,
-		/datum/heretic_knowledge/moon_amulet,
-	)
+
 	required_atoms = list(/obj/item/canvas = 1)
 	result_atoms = list(/obj/item/canvas)
 	cost = 1
-	route = PATH_SIDE
+
 	research_tree_icon_path = 'icons/obj/signs.dmi'
 	research_tree_icon_state = "eldritch_painting_weeping"
-	depth = 8
+
 
 /datum/heretic_knowledge/painting/recipe_snowflake_check(mob/living/user, list/atoms, list/selected_atoms, turf/loc)
 	if(locate(/obj/item/organ/eyes) in atoms)
