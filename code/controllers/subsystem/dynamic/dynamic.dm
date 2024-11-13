@@ -463,6 +463,16 @@ SUBSYSTEM_DEF(dynamic)
 /// Generates the midround and roundstart budgets
 /datum/controller/subsystem/dynamic/proc/generate_budgets()
 	round_start_budget = lorentz_to_amount(roundstart_split_curve_centre, roundstart_split_curve_width, threat_level, 0.1)
+	// BANDASTATION EDIT START - Threat management
+	var/min_threat_to_roundstart_percent = CONFIG_GET(number/min_threat_to_roundstart_percent)
+	var/max_threat_to_roundstart_percent = CONFIG_GET(number/min_threat_to_roundstart_percent)
+	if(min_threat_to_roundstart_percent && max_threat_to_roundstart_percent && min_threat_to_roundstart_percent < max_threat_to_roundstart_percent)
+		var/previous_round_start_budget = round_start_budget
+		var/updated_round_start_budget = clamp(previous_round_start_budget, min_threat_to_roundstart_percent, max_threat_to_roundstart_percent)
+		if(previous_round_start_budget != updated_round_start_budget)
+			round_start_budget = updated_round_start_budget
+			log_dynamic("Clamped roundstart budget from [previous_round_start_budget] to [updated_round_start_budget]")
+	// BANDASTATION EDIT END
 	initial_round_start_budget = round_start_budget
 	mid_round_budget = threat_level - round_start_budget
 
