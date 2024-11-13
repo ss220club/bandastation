@@ -9,7 +9,7 @@
 	var/mob/living/carbon/C = target
 	// Restricts duplicating element to prevent very x/y-sized mobs
 	if(C.squish_counter >= MAXIMUM_SQUISHES)
-		return ELEMENT_INCOMPATIBLE
+		return FALSE
 	C.squish_counter++
 	return ..()
 
