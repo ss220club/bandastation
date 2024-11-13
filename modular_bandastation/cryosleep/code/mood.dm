@@ -6,4 +6,4 @@
 /datum/mood_event/tucked_in/add_effects(mob/tuckee)
 	if(!tuckee)
 		return
-	description = "Я чувствую себя лучше, уложив [tuckee.name] отдохнуть на ночь!"
+	description = "Я чувствую себя лучше, уложив [tuckee.declent_ru(ACCUSATIVE)] отдохнуть на ночь!"

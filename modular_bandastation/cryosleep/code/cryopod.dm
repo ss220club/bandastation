@@ -140,16 +140,16 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod, 32)
 /obj/machinery/computer/cryopod/proc/announce(message_type, user, rank, occupant_departments_bitflags, occupant_job_radio, occupant_gender)
 	switch(message_type)
 		if("CRYO_JOIN")
-			radio.talk_into(src, "[user][rank ? ", [rank]" : ""] пробудил[genderize_ru(occupant_gender, "ся", "ась", "ось", "ись")] из криогенного хранилища.", announcement_channel)
+			radio.talk_into(src, "[user][rank ? ", [rank]," : ""] пробудил[genderize_ru(occupant_gender, "ся", "ась", "ось", "ись")] из криогенного хранилища.", announcement_channel)
 		if("CRYO_LEAVE")
 			if (occupant_job_radio)
 				if (occupant_departments_bitflags & DEPARTMENT_BITFLAG_COMMAND)
 					if (occupant_job_radio != RADIO_CHANNEL_COMMAND)
-						radio.talk_into(src, "[user][rank ? ", [rank]" : ""] был[genderize_ru(occupant_gender, "", "а", "о", "и")] перемещ[genderize_ru(occupant_gender, "ён", "ена", "ено", "ены")] в криогенное хранилище.", RADIO_CHANNEL_COMMAND)
+						radio.talk_into(src, "[user][rank ? ", [rank]," : ""] был[genderize_ru(occupant_gender, "", "а", "о", "и")] перемещ[genderize_ru(occupant_gender, "ён", "ена", "ено", "ены")] в криогенное хранилище.", RADIO_CHANNEL_COMMAND)
 					radio.use_command = TRUE
-				radio.talk_into(src, "[user][rank ? ", [rank]" : ""] [genderize_ru(occupant_gender, "был", "была", "было", "были")] [genderize_ru(occupant_gender, "перемещён", "перемещена", "перемещено", "перемещены")] в криогенное хранилище.", occupant_job_radio)
+				radio.talk_into(src, "[user][rank ? ", [rank]," : ""] был[genderize_ru(occupant_gender, "", "а", "о", "и")] перемещ[genderize_ru(occupant_gender, "ён", "ена", "ено", "ены")] в криогенное хранилище.", occupant_job_radio)
 				radio.use_command = FALSE
-			radio.talk_into(src, "[user][rank ? ", [rank]" : ""] [genderize_ru(occupant_gender, "был", "была", "было", "были")] [genderize_ru(occupant_gender, "перемещён", "перемещена", "перемещено", "перемещены")] в криогенное хранилище.", announcement_channel)
+			radio.talk_into(src, "[user][rank ? ", [rank]," : ""] был[genderize_ru(occupant_gender, "", "а", "о", "и")] перемещ[genderize_ru(occupant_gender, "ён", "ена", "ено", "ены")] в криогенное хранилище.", announcement_channel)
 
 // Cryopods themselves.
 /obj/machinery/cryopod
@@ -237,8 +237,8 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod, 32)
 	tucked = FALSE
 
 /obj/machinery/cryopod/container_resist_act(mob/living/user)
-	visible_message(span_notice("[occupant] вылезает из [src]!"),
-		span_notice("Вы вылезаете из [src]!"))
+	visible_message(span_notice("[occupant] вылезает из [declent_ru(GENITIVE)]!"),
+		span_notice("Вы вылезаете из [declent_ru(GENITIVE)]!"))
 	open_machine()
 
 /obj/machinery/cryopod/relaymove(mob/user)
@@ -259,6 +259,9 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod, 32)
 		despawn_occupant()
 
 /obj/machinery/cryopod/proc/handle_objectives()
+	if(!occupant)
+		return
+
 	var/mob/living/mob_occupant = occupant
 	// Update any existing objectives involving this mob.
 	for(var/datum/objective/objective in GLOB.objectives)
@@ -270,7 +273,8 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod, 32)
 			for(var/datum/mind/mind in objective.team.members)
 				to_chat(mind.current, "<BR>[span_userdanger("Ваша цель вне зоны досягаемости. Цель удалена!")]")
 				mind.announce_objectives()
-		else if(istype(objective.target) && objective.target == mob_occupant.mind)
+			return
+		if(istype(objective.target) && objective.target == mob_occupant.mind)
 			var/old_target = objective.target
 			objective.target = null
 			if(!objective)
@@ -303,6 +307,9 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod, 32)
 /// This function can not be undone; do not call this unless you are sure.
 /// Handles despawning the player.
 /obj/machinery/cryopod/proc/despawn_occupant()
+	if(!occupant)
+		return
+
 	var/mob/living/mob_occupant = occupant
 
 	var/occupant_ckey = mob_occupant.ckey || mob_occupant.mind?.key
@@ -340,7 +347,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod, 32)
 		if(!quiet)
 			control_computer.announce("CRYO_LEAVE", mob_occupant.real_name, announce_rank, occupant_departments_bitflags, occupant_job_radio, occupant_gender)
 
-	visible_message(span_notice("[src] гудит и шипит, перемещая [mob_occupant.real_name] в хранилище."))
+	visible_message(span_notice("[declent_ru(NOMINATIVE)] гудит и шипит, перемещая [mob_occupant.declent_ru(ACCUSATIVE)] в хранилище."))
 
 	for(var/obj/item/item_content as anything in mob_occupant)
 		if(!istype(item_content) || HAS_TRAIT(item_content, TRAIT_NODROP))
@@ -367,11 +374,11 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod, 32)
 	name = initial(name)
 
 /obj/machinery/cryopod/mouse_drop_receive(mob/living/target, mob/user, params)
-	if(!istype(target) || !ismob(target) || isanimal(target) || !istype(user.loc, /turf) || target.buckled)
+	if(!istype(target) || isanimal(target) || !istype(user.loc, /turf) || target.buckled)
 		return
 
 	if(occupant)
-		to_chat(user, span_notice("[src] уже занята!"))
+		to_chat(user, span_notice("[capitalize(declent_ru(NOMINATIVE))] уже занята!"))
 		return
 
 	if(target.stat == DEAD)
@@ -380,8 +387,8 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod, 32)
 
 // Allows admins to enable players to override SSD Time check.
 	if(allow_timer_override)
-		if(tgui_alert(user, "Хотите помесить [target] в [src]?", "Поместить в криопод?", list("Да", "Нет")) != "Нет")
-			to_chat(user, span_danger("Вы помещаете [target] в [src]."))
+		if(tgui_alert(user, "Хотите помесить [target.declent_ru(ACCUSATIVE)] в [declent_ru(ACCUSATIVE)]?", "Поместить в [declent_ru(ACCUSATIVE)]?", list("Да", "Нет")) != "Нет")
+			to_chat(user, span_danger("Вы помещаете [target.declent_ru(ACCUSATIVE)] в [declent_ru(ACCUSATIVE)]."))
 			log_admin("[key_name(user)] has put [key_name(target)] into a overridden stasis pod.")
 			message_admins("[key_name(user)] has put [key_name(target)] into a overridden stasis pod. [ADMIN_JMP(src)]")
 
@@ -395,14 +402,14 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod, 32)
 		if(target.get_organ_by_type(/obj/item/organ/brain)) //Target the Brain
 			if(!target.mind || target.is_ssd) // Is the character empty / AI Controlled
 				if(target.lastclienttime + ssd_time >= world.time)
-					to_chat(user, span_notice("Вы не можете поместить [target] в [src] ещё [round(((ssd_time - (world.time - target.lastclienttime)) / (1 MINUTES)), 1)] минут."))
+					to_chat(user, span_notice("Вы не можете поместить [target.declent_ru(ACCUSATIVE)] в [declent_ru(ACCUSATIVE)] ещё [round(((ssd_time - (world.time - target.lastclienttime)) / (1 MINUTES)), 1)] минут."))
 					log_admin("[key_name(user)] has attempted to put [key_name(target)] into a stasis pod, but they were only disconnected for [round(((world.time - target.lastclienttime) / (1 MINUTES)), 1)] minutes.")
 					message_admins("[key_name(user)] has attempted to put [key_name(target)] into a stasis pod. [ADMIN_JMP(src)]")
 					return
-				else if(tgui_alert(user, "Хотите поместить [target] в [src]?", "Поместить в криокамеру?", list("Да", "Нет")) == "Да")
+				else if(tgui_alert(user, "Хотите поместить [target.declent_ru(ACCUSATIVE)] в [declent_ru(ACCUSATIVE)]?", "Поместить в криокамеру?", list("Да", "Нет")) == "Да")
 					if(target.mind.assigned_role.req_admin_notify)
-						tgui_alert(user, "Они играют на важной роли! Вы уверены что хотите переместить их в криохранилище?")
-					to_chat(user, span_danger("Вы помещаете [target] в [src]."))
+						tgui_alert(user, "Они играют на важной роли! Уверены что хотите переместить их в криохранилище?")
+					to_chat(user, span_danger("Вы помещаете [target.declent_ru(ACCUSATIVE)] в [declent_ru(ACCUSATIVE)]."))
 					log_admin("[key_name(user)] has put [key_name(target)] into a stasis pod.")
 					message_admins("[key_name(user)] has put [key_name(target)] into a stasis pod. [ADMIN_JMP(src)]")
 
@@ -412,9 +419,9 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod, 32)
 					name = "[name] ([target.name])"
 
 		else if(iscyborg(target))
-			to_chat(user, span_danger("Вы не можете поместить [target] в [src]. Юнит активен."))
+			to_chat(user, span_danger("Вы не можете поместить [target.declent_ru(ACCUSATIVE)] в [declent_ru(ACCUSATIVE)]. Юнит активен."))
 		else
-			to_chat(user, span_danger("Вы не можете поместить [target] в [src]. [target.ru_p_they(TRUE, target.gender)] в сознании."))
+			to_chat(user, span_danger("Вы не можете поместить [target.declent_ru(ACCUSATIVE)] в [declent_ru(ACCUSATIVE)]. [target.ru_p_they(TRUE, target.gender)] в сознании."))
 		return
 
 	if(target == user && (tgui_alert(target, "Войти в криохранилище?", "Войти в криокапсулу?", list("Да", "Нет")) != "Да"))
@@ -422,16 +429,16 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod, 32)
 
 	if(target == user)
 		if(target.mind.assigned_role.req_admin_notify)
-			tgui_alert(target, "Вы играете на важной роли! Вы уверены что хотите покинуть раунд?")
+			tgui_alert(target, "Вы играете на важной роли! Уверены что хотите покинуть раунд?")
 		var/datum/antagonist/antag = target.mind.has_antag_datum(/datum/antagonist)
 		if(antag)
-			tgui_alert(target, "Вы [antag.name]! Вы уверены что хотите покинуть раунд?")
+			tgui_alert(target, "Вы [antag.declent_ru(NOMINATIVE)]! Уверены что хотите покинуть раунд?")
 
 	if(LAZYLEN(target.buckled_mobs) > 0)
 		if(target == user)
-			to_chat(user, span_danger("Вы не влезете в криопод, пока кто-то к вам пристёгнут."))
+			to_chat(user, span_danger("Вы не сможете влезеть в [declent_ru(ACCUSATIVE)], пока к вам кто-то пристёгнут."))
 		else
-			to_chat(user, span_danger("[target] не влезет в криопод, пока кто-то пристёгнут к ним."))
+			to_chat(user, span_danger("[capitalize(target.declent_ru(NOMINATIVE))] не сможет влезть в [declent_ru(ACCUSATIVE)], пока [target.ru_p_they()] пристёгнут[genderize_ru(target.gender, "", "а", "о", "ы")]."))
 		return
 
 	if(!istype(target) || !can_interact(user) || !target.Adjacent(user) || !ismob(target) || isanimal(target) || !istype(user.loc, /turf) || target.buckled)
@@ -439,15 +446,15 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod, 32)
 		// rerun the checks in case of shenanigans
 
 	if(occupant)
-		to_chat(user, span_notice("[src] занят!"))
+		to_chat(user, span_notice("[capitalize(declent_ru(NOMINATIVE))] занята!"))
 		return
 
 	if(target == user)
-		visible_message(span_infoplain("[user] залезает в криопод."))
+		visible_message(span_infoplain("[user.declent_ru(NOMINATIVE)] залезает в [declent_ru(ACCUSATIVE)]."))
 	else
-		visible_message(span_infoplain("[user] помещает [target] в криопод."))
+		visible_message(span_infoplain("[user.declent_ru(NOMINATIVE)] помещает [target.declent_ru(ACCUSATIVE)] в [declent_ru(ACCUSATIVE)]."))
 
-	to_chat(target, span_warning("<b>Если вы сейчас станете призраком, выйдете из игры или закроете клиент, ваш персонаж вскоре будет навсегда удален из раунда.</b>"))
+	to_chat(target, span_warning("<b>Если вы станете призраком, выйдете из игры или закроете клиент, ваш персонаж вскоре будет навсегда удален из раунда.</b>"))
 
 	log_admin("[key_name(target)] entered a stasis pod.")
 	message_admins("[key_name_admin(target)] entered a stasis pod. [ADMIN_JMP(src)]")
@@ -466,9 +473,9 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod, 32)
 		if(!occupant || !istype(occupant, /mob/living))
 			return
 		if(tucked)
-			to_chat(user, span_warning("[occupant.name] выглядит уже достаточно комфортабельно!"))
+			to_chat(user, span_warning("[capitalize(occupant.declent_ru(NOMINATIVE))] выглядит уже достаточно комфортабельно!"))
 			return
-		to_chat(user, span_notice("Вы укладываете [occupant.name] в криопод!"))
+		to_chat(user, span_notice("Вы укладываете [occupant.declent_ru(ACCUSATIVE)] в [declent_ru(ACCUSATIVE)]!"))
 		qdel(weapon)
 		user.add_mood_event("tucked", /datum/mood_event/tucked_in, occupant)
 		tucked = TRUE
