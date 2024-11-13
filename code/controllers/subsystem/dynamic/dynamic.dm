@@ -478,7 +478,7 @@ SUBSYSTEM_DEF(dynamic)
 		var/previous_round_start_budget = round_start_budget
 		round_start_budget = clamp(previous_round_start_budget, min_threat_to_roundstart_percent / 100 * threat_level, max_threat_to_roundstart_percent / 100 * threat_level)
 		if(round_start_budget != previous_round_start_budget)
-			log_dynamic("Clamped roundstart budget from [previous_round_start_budget] to [updated_round_start_budget]")
+			log_dynamic("Clamped roundstart budget from [previous_round_start_budget] to [round_start_budget]")
 	// BANDASTATION EDIT END
 	initial_round_start_budget = round_start_budget
 	mid_round_budget = threat_level - round_start_budget
