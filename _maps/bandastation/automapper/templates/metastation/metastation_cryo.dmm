@@ -59,12 +59,14 @@
 /obj/machinery/door/airlock/public/glass{
 	name = "Cryopods"
 	},
-/obj/effect/landmark/navigate_destination,
 /obj/effect/turf_decal/trimline/dark_green/corner{
 	dir = 1
 	},
 /obj/effect/turf_decal/trimline/dark_green/corner{
 	dir = 8
+	},
+/obj/effect/landmark/navigate_destination{
+	location = "Cryopods"
 	},
 /turf/open/floor/iron/white,
 /area/station/common/cryopods)

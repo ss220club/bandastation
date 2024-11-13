@@ -72,3 +72,19 @@ directory = "_maps/bandastation/automapper/templates/birdshot/"
 required_map = "birdshot.dmm"
 coordinates = [142, 84, 1]
 trait_name = "Station"
+
+# Nebulastation Cryo
+[templates.nebulastation_cryo]
+map_files = ["nebulastation_cryo.dmm"]
+directory = "_maps/bandastation/automapper/templates/nebulastation/"
+required_map = "NebulaStation.dmm"
+coordinates = [81, 145, 1]
+trait_name = "Station"
+
+# Northstar Cryo
+[templates.northstar_cryo]
+map_files = ["northstar_cryo.dmm"]
+directory = "_maps/bandastation/automapper/templates/northstar/"
+required_map = "north_star.dmm"
+coordinates = [130, 114, 3]
+trait_name = "Station"
