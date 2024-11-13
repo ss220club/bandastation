@@ -1,7 +1,7 @@
 /// Maximum amount of squishes for mob to prevent infinite squishing
 #define MAXIMUM_SQUISHES 3
 
-/mob/living
+/mob/living/carbon
 	/// Used in squish amount restriction
 	var/squish_counter = 0
 
