@@ -1,5 +1,5 @@
 /obj/structure/closet
-	var/list/togglelock_sound = list()
+	var/static/list/togglelock_sound = list()
 
 /obj/structure/closet/secure_closet/Initialize(mapload)
 	. = ..()
@@ -19,10 +19,10 @@
 
 /obj/structure/closet/secure_closet/togglelock(mob/living/user, silent)
 	. = ..()
-	if(!opened && !broken && !(user.loc == src) && allowed(user))
+	if(!opened && !broken)
 		playsound(loc, pick(togglelock_sound), 10, TRUE, -3)
 
 /obj/structure/closet/crate/secure/togglelock(mob/living/user, silent)
 	. = ..()
-	if(!opened && !broken && !(user.loc == src) && allowed(user))
+	if(!opened && !broken)
 		playsound(loc, pick(togglelock_sound), 10, TRUE, -3)
