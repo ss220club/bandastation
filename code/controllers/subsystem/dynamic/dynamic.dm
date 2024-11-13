@@ -468,7 +468,7 @@ SUBSYSTEM_DEF(dynamic)
 	var/max_threat_to_roundstart_percent = CONFIG_GET(number/min_threat_to_roundstart_percent)
 	if(min_threat_to_roundstart_percent && max_threat_to_roundstart_percent && min_threat_to_roundstart_percent < max_threat_to_roundstart_percent)
 		var/previous_round_start_budget = round_start_budget
-		var/updated_round_start_budget = clamp(previous_round_start_budget, min_threat_to_roundstart_percent * threat_level, max_threat_to_roundstart_percent * threat_level)
+		var/updated_round_start_budget = clamp(previous_round_start_budget, min_threat_to_roundstart_percent / 100 * threat_level, max_threat_to_roundstart_percent / 100 * threat_level)
 		if(previous_round_start_budget != updated_round_start_budget)
 			round_start_budget = updated_round_start_budget
 			log_dynamic("Clamped roundstart budget from [previous_round_start_budget] to [updated_round_start_budget]")
