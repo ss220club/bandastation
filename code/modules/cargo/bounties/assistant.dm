@@ -174,7 +174,7 @@
 	name = "Мелки"
 	description = "Дети доктора Джонса снова съели все наши мелки. Пожалуйста, отправьте нам свои."
 	reward = CARGO_CRATE_VALUE * 4
-	required_count = 24
+	required_count = 8
 	wanted_types = list(/obj/item/toy/crayon = TRUE)
 
 /datum/bounty/item/assistant/pens

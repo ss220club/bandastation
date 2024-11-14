@@ -7,7 +7,7 @@
  */
 /datum/action/cooldown/spell/jaunt/space_crawl
 	name = "Space Phase"
-	desc = "Позволяет вам появляться и исчезать, находясь на космическом или схожему ему тайле."
+	desc = "Allows you to phase in and out of existence while in space or misc tiles."
 	background_icon_state = "bg_heretic"
 	overlay_icon_state = "bg_heretic_border"
 
