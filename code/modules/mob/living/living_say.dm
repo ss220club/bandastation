@@ -310,7 +310,7 @@ GLOBAL_LIST_INIT(message_modes_stat_limits, list(
 			var/mob/living/living_speaker = speaker
 			if(istype(living_speaker) && living_speaker.is_mouth_covered()) // Can't see them speak if their mouth is covered
 				return FALSE
-			deaf_message = "[span_name("[capitalize(speaker.declent_ru(NOMINATIVE))]")] [speaker.verb_whisper] что-то, но вы слишком далеко, чтобы услышать [speaker.ru_p_them()]."
+			deaf_message = "[span_name("[capitalize(speaker.declent_ru(NOMINATIVE))]")] [ru_say_verb(speaker.verb_whisper)] что-то, но вы слишком далеко, чтобы услышать [speaker.ru_p_them()]."
 
 		if(deaf_message)
 			deaf_type = MSG_VISUAL
