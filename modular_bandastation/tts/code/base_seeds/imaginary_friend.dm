@@ -11,15 +11,4 @@
 
 /mob/eye/imaginary_friend/Initialize(mapload)
 	. = ..()
-	GRANT_ACTION(/datum/action/innate/imaginary_voice_change)
-
-/datum/action/innate/imaginary_voice_change
-	name = "Сменить TTS"
-	desc = "Изменяет ваш TTS вне зависимости от пола, но с учетом вашей подписки."
-	button_icon = 'icons/mob/actions/actions_ai.dmi'
-	background_icon_state = "bg_revenant"
-	overlay_icon_state = "bg_revenant_border"
-	button_icon_state = "voice_changer"
-
-/datum/action/innate/imaginary_voice_change/Activate()
-	owner.change_tts_seed(src, TTS_OVERRIDE_GENDER)
+	GRANT_ACTION(/datum/action/innate/voice_change/genderless)

@@ -162,8 +162,6 @@
 
 // Component usage
 
-/mob/living/silicon/verb/synth_change_voice()
-	set name = "Смена голоса"
-	set desc = "Express yourself!"
-	set category = "Silicon Commands"
-	change_tts_seed(src, TTS_OVERRIDE_GENDER, new_traits = list(TTS_TRAIT_ROBOTIZE))
+/mob/living/silicon/Initialize(mapload)
+	. = ..()
+	GRANT_ACTION(/datum/action/innate/voice_change/genderless/robotic)
