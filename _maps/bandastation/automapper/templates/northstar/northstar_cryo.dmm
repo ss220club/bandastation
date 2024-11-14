@@ -179,16 +179,6 @@
 /obj/machinery/light_switch/directional/west,
 /turf/open/floor/iron/checker,
 /area/station/commons/vacant_room/commissary)
-"nB" = (
-/obj/effect/turf_decal/trimline/green/filled/line{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/structure/cable,
-/obj/machinery/power/apc/auto_name/directional/east,
-/turf/open/floor/iron,
-/area/station/commons/vacant_room/commissary)
 "nC" = (
 /obj/effect/turf_decal/trimline/green/filled/line{
 	dir = 6
@@ -247,8 +237,6 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/machinery/power/apc/auto_name/directional/north,
-/obj/structure/cable,
 /turf/open/floor/iron,
 /area/station/commons/vacant_room/commissary)
 "qE" = (
@@ -283,7 +271,6 @@
 	dir = 4
 	},
 /obj/machinery/light/directional/north,
-/obj/structure/cable,
 /obj/machinery/button/door/directional/north{
 	name = "Commissary Shutters";
 	pixel_x = -5;
@@ -388,6 +375,9 @@
 /obj/structure/table,
 /obj/item/stack/cable_coil,
 /obj/item/stack/sheet/glass/fifty,
+/obj/machinery/power/apc/auto_name/directional/south,
+/obj/structure/cable,
+/obj/structure/cable,
 /turf/open/floor/iron,
 /area/station/commons/vacant_room/commissary)
 "CF" = (
@@ -415,6 +405,7 @@
 	},
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/structure/cable,
 /turf/open/floor/iron,
 /area/station/commons/vacant_room/commissary)
 "EE" = (
@@ -460,6 +451,7 @@
 /obj/structure/table,
 /obj/item/stack/sheet/iron/ten,
 /obj/machinery/light_switch/directional/west,
+/obj/structure/cable,
 /turf/open/floor/iron,
 /area/station/commons/vacant_room/commissary)
 "Io" = (
@@ -522,6 +514,7 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/structure/cable,
 /turf/open/floor/iron,
 /area/station/commons/vacant_room/commissary)
 "NZ" = (
@@ -535,6 +528,7 @@
 /obj/effect/turf_decal/trimline/green/filled/line{
 	dir = 4
 	},
+/obj/structure/cable,
 /turf/open/floor/iron,
 /area/station/commons/vacant_room/commissary)
 "Po" = (
@@ -781,7 +775,7 @@ qE
 Wr
 eN
 Zv
-nB
+bV
 bV
 bV
 bV
