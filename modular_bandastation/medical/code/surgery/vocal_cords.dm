@@ -35,7 +35,7 @@
 		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно настраивает голосовые связки [target.declent_ru(GENITIVE)]!"),
 		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] завершает операцию на голосовых связках [target.declent_ru(GENITIVE)]."),
 	)
-	target.change_tts_seed(user, TRUE)
+	target.change_tts_seed(user, TTS_OVERRIDE_GENDER)
 	return ..()
 
 /datum/surgery_step/tune_vocal_cords/failure(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
