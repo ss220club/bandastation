@@ -6918,11 +6918,13 @@
 /turf/open/floor/iron/dark,
 /area/station/engineering/main)
 "bTP" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/turf_decal/tile/red,
-/obj/machinery/light/small/directional/south,
-/turf/open/floor/iron/dark,
-/area/station/maintenance/department/security/brig)
+/obj/effect/mapping_helpers/airlock/access/all/engineering/maintenance,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 8
+	},
+/obj/machinery/door/airlock/external/glass,
+/turf/open/floor/plating,
+/area/station/maintenance/ghetto/central)
 "bTY" = (
 /obj/structure/chair/wood{
 	dir = 8
@@ -14846,10 +14848,11 @@
 /turf/open/floor/iron/dark,
 /area/station/science/breakroom)
 "dXq" = (
-/obj/machinery/vending/medical,
 /obj/effect/turf_decal/trimline/blue/filled/line{
 	dir = 9
 	},
+/obj/machinery/vending/wallmed/directional/north,
+/obj/item/kirbyplants/random,
 /turf/open/floor/iron/white,
 /area/station/medical/medbay)
 "dXr" = (
@@ -25141,13 +25144,11 @@
 /turf/open/floor/plating,
 /area/station/engineering/storage)
 "gRA" = (
-/obj/effect/mapping_helpers/airlock/access/all/engineering/maintenance,
-/obj/effect/mapping_helpers/airlock/cyclelink_helper{
-	dir = 8
-	},
-/obj/machinery/door/airlock/external/glass,
-/turf/open/floor/plating,
-/area/station/maintenance/ghetto/central)
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/tile/red,
+/obj/machinery/light/small/directional/south,
+/turf/open/floor/iron/dark,
+/area/station/maintenance/department/security/brig)
 "gRD" = (
 /obj/effect/turf_decal/stripes/line,
 /obj/effect/decal/cleanable/dirt,
@@ -43088,10 +43089,10 @@
 /turf/open/floor/iron/dark,
 /area/station/hallway/secondary/exit/departure_lounge)
 "lOk" = (
-/obj/machinery/vending/medical,
 /obj/effect/turf_decal/trimline/green/filled/line{
 	dir = 6
 	},
+/obj/item/kirbyplants/random,
 /turf/open/floor/iron/white,
 /area/station/medical/medbay)
 "lOl" = (
@@ -56132,11 +56133,11 @@
 /turf/open/floor/wood,
 /area/station/security/courtroom)
 "pvv" = (
-/obj/machinery/vending/medical,
 /obj/machinery/light/directional/north,
 /obj/effect/turf_decal/trimline/blue/filled/line{
 	dir = 1
 	},
+/obj/machinery/vending/drugs,
 /turf/open/floor/iron/white,
 /area/station/medical/treatment_center)
 "pvD" = (
@@ -63649,7 +63650,10 @@
 /obj/effect/turf_decal/trimline/blue/filled/line{
 	dir = 9
 	},
-/obj/machinery/vending/medical,
+/obj/machinery/vending/wallmed/directional/west,
+/obj/structure/chair/comfy/teal{
+	dir = 4
+	},
 /turf/open/floor/iron/dark,
 /area/station/medical/surgery/theatre)
 "rws" = (
@@ -78309,6 +78313,14 @@
 /obj/structure/extinguisher_cabinet/directional/south,
 /turf/open/floor/plating,
 /area/station/commons/storage/emergency)
+"vFO" = (
+/obj/effect/mapping_helpers/airlock/access/all/engineering/maintenance,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 4
+	},
+/obj/machinery/door/airlock/external/glass,
+/turf/open/floor/plating,
+/area/station/maintenance/ghetto/central)
 "vFW" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -87027,14 +87039,6 @@
 /obj/structure/table/reinforced/rglass,
 /turf/open/floor/iron/white,
 /area/station/medical/pharmacy)
-"ycr" = (
-/obj/effect/mapping_helpers/airlock/access/all/engineering/maintenance,
-/obj/effect/mapping_helpers/airlock/cyclelink_helper{
-	dir = 4
-	},
-/obj/machinery/door/airlock/external/glass,
-/turf/open/floor/plating,
-/area/station/maintenance/ghetto/central)
 "ycB" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/structure/cable,
@@ -118335,7 +118339,7 @@ kLW
 bML
 uvB
 ptQ
-bTP
+gRA
 gqU
 hux
 hZl
@@ -120189,7 +120193,7 @@ doz
 doz
 doz
 mOI
-ycr
+vFO
 mOI
 doz
 vbK
@@ -120703,7 +120707,7 @@ mOI
 mOI
 mOI
 mOI
-gRA
+bTP
 mOI
 mOI
 mOI
