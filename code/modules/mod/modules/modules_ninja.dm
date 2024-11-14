@@ -182,7 +182,7 @@
 	if(!linked_weapon)
 		var/obj/item/weapon_to_link = mod.wearer.is_holding_item_of_type(accepted_type)
 		if(!weapon_to_link)
-			balloon_alert(mod.wearer, "no linked weapon!")
+			balloon_alert(mod.wearer, "нет привязанного оружия!")
 			return
 		set_weapon(weapon_to_link)
 		balloon_alert(mod.wearer, "связь с [linked_weapon.declent_ru(INSTRUMENTAL)] установлена")
