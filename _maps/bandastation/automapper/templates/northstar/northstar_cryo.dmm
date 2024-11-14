@@ -377,7 +377,6 @@
 /obj/item/stack/sheet/glass/fifty,
 /obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/cable,
-/obj/structure/cable,
 /turf/open/floor/iron,
 /area/station/commons/vacant_room/commissary)
 "CF" = (
