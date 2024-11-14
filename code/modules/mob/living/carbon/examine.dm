@@ -92,9 +92,9 @@
 		. += span_boldwarning("[t_His] [ru_parse_zone(gone, declent = NOMINATIVE)] отсутствует!")
 
 	if(l_limbs_missing >= 2 && r_limbs_missing == 0)
-		. += span_tinydanger("[t_He] выглядит право...")
+		. += span_tinydanger("[t_He] полностью прав[genderize_ru(gender, "", "а", "о", "ы")]...")
 	else if(l_limbs_missing == 0 && r_limbs_missing >= 2)
-		. += span_tinydanger("[t_He] видимо любит левить...")
+		. += span_tinydanger("[t_He] полностью лев[genderize_ru(gender, "", "а", "о", "ы")]...")
 	else if(l_limbs_missing >= 2 && r_limbs_missing >= 2)
 		. += span_tinydanger("[t_He] не выглядит полноценно...")
 
