@@ -2490,13 +2490,11 @@
 /turf/open/floor/plating,
 /area/station/maintenance/department/crew_quarters/bar)
 "aIj" = (
-/obj/effect/mapping_helpers/airlock/access/all/engineering/maintenance,
-/obj/effect/mapping_helpers/airlock/cyclelink_helper{
-	dir = 4
-	},
-/obj/machinery/door/airlock/external/glass,
-/turf/open/floor/plating,
-/area/station/maintenance/ghetto/central)
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/tile/red,
+/obj/machinery/light/small/directional/south,
+/turf/open/floor/iron/dark,
+/area/station/maintenance/department/security/brig)
 "aIn" = (
 /turf/open/floor/plating,
 /area/station/maintenance/ghetto/sorting)
@@ -6925,12 +6923,6 @@
 	},
 /turf/open/floor/iron/dark,
 /area/station/engineering/main)
-"bTP" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/turf_decal/tile/red,
-/obj/machinery/light/small/directional/south,
-/turf/open/floor/iron/dark,
-/area/station/maintenance/department/security/brig)
 "bTY" = (
 /obj/structure/chair/wood{
 	dir = 8
@@ -56208,6 +56200,7 @@
 	id = "AI";
 	pixel_x = -10
 	},
+/obj/effect/mapping_helpers/apc/cell_10k,
 /turf/open/floor/circuit,
 /area/station/ai_monitored/turret_protected/ai)
 "pwz" = (
@@ -60217,6 +60210,7 @@
 /obj/machinery/light/cold/directional/north,
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable,
+/obj/effect/mapping_helpers/apc/cell_10k,
 /turf/open/floor/iron/dark/telecomms,
 /area/station/tcommsat/server)
 "qCm" = (
@@ -71016,6 +71010,7 @@
 "tCF" = (
 /obj/structure/cable,
 /obj/machinery/power/apc/auto_name/directional/north,
+/obj/effect/mapping_helpers/apc/cell_10k,
 /turf/open/floor/iron/dark,
 /area/station/engineering/gravity_generator)
 "tCI" = (
@@ -74176,6 +74171,14 @@
 /obj/effect/turf_decal/tile/yellow/opposingcorners,
 /turf/open/floor/iron/dark,
 /area/station/maintenance/ghetto/fore/starboard)
+"uxo" = (
+/obj/effect/mapping_helpers/airlock/access/all/engineering/maintenance,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 8
+	},
+/obj/machinery/door/airlock/external/glass,
+/turf/open/floor/plating,
+/area/station/maintenance/ghetto/central)
 "uxp" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -85179,7 +85182,7 @@
 "xBq" = (
 /obj/effect/mapping_helpers/airlock/access/all/engineering/maintenance,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
-	dir = 8
+	dir = 4
 	},
 /obj/machinery/door/airlock/external/glass,
 /turf/open/floor/plating,
@@ -118337,7 +118340,7 @@ kLW
 bML
 uvB
 ptQ
-bTP
+aIj
 gqU
 hux
 hZl
@@ -120191,7 +120194,7 @@ doz
 doz
 doz
 mOI
-aIj
+xBq
 mOI
 doz
 vbK
@@ -120705,7 +120708,7 @@ mOI
 mOI
 mOI
 mOI
-xBq
+uxo
 mOI
 mOI
 mOI
