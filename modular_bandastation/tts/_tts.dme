@@ -12,6 +12,7 @@
 #include "code/tts_seed.dm"
 #include "code/tts_subsystem.dm"
 #include "code/tts_vv.dm"
+#include "code/base_seeds/imaginary_friend.dm"
 #include "code/base_seeds/mobs/_base.dm"
 #include "code/base_seeds/mobs/alien.dm"
 #include "code/base_seeds/mobs/friendly.dm"
