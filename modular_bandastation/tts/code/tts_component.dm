@@ -146,22 +146,25 @@
 
 	effect = get_effect(effect)
 
-	. = list()
-	.[TTS_CAST_SPEAKER] = speaker
-	.[TTS_CAST_LISTENER] = listener
-	.[TTS_CAST_MESSAGE] = message
-	.[TTS_CAST_LOCATION] = location
-	.[TTS_CAST_LOCAL] = is_local
-	.[TTS_CAST_EFFECT] = effect
-	.[TTS_CAST_TRAITS] = traits
-	.[TTS_CAST_PRE_SFX] = preSFX
-	.[TTS_CAST_POST_SFX] = postSFX
-	.[TTS_CAST_SEED] = tts_seed
-	.[TTS_PRIORITY] = TTS_PRIORITY_VOICE
-	SEND_SIGNAL(speaker, COMSIG_TTS_COMPONENT_PRE_CAST_TTS, .)
+	var/list/tts_args = list()
+	tts_args[TTS_CAST_SPEAKER] = speaker
+	tts_args[TTS_CAST_LISTENER] = listener
+	tts_args[TTS_CAST_MESSAGE] = message
+	tts_args[TTS_CAST_LOCATION] = location
+	tts_args[TTS_CAST_LOCAL] = is_local
+	tts_args[TTS_CAST_EFFECT] = effect
+	tts_args[TTS_CAST_TRAITS] = traits
+	tts_args[TTS_CAST_PRE_SFX] = preSFX
+	tts_args[TTS_CAST_POST_SFX] = postSFX
+	tts_args[TTS_CAST_SEED] = tts_seed
+	tts_args[TTS_PRIORITY] = TTS_PRIORITY_VOICE
+	finalize_tts(tts_args)
+
+/datum/component/tts_component/proc/finalize_tts(list/tts_args)
+	. = tts_args
+	SEND_SIGNAL(parent, COMSIG_TTS_COMPONENT_PRE_CAST_TTS, .)
 	if(!.[TTS_CAST_SEED])
 		return
-
 	INVOKE_ASYNC(SStts220, TYPE_PROC_REF(/datum/controller/subsystem/tts220, get_tts),
 		.[TTS_CAST_LOCATION], .[TTS_CAST_LISTENER], .[TTS_CAST_MESSAGE], .[TTS_CAST_SEED], .[TTS_CAST_LOCAL], .[TTS_CAST_EFFECT], .[TTS_CAST_TRAITS], .[TTS_CAST_PRE_SFX], .[TTS_CAST_POST_SFX])
 
