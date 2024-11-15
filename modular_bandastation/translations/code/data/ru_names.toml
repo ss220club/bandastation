@@ -958,6 +958,15 @@ instrumental = "твёрдой плазмой"
 prepositional = "твёрдой плазме"
 gender = "female"
 
+["plasma"]
+nominative = "плазма"
+genitive = "плазмы"
+dative = "плазме"
+accusative = "плазму"
+instrumental = "плазмой"
+prepositional = "плазме"
+gender = "female"
+
 [silver]
 nominative = "серебро"
 genitive = "серебра"
@@ -1057,6 +1066,15 @@ instrumental = "деревянной доской"
 prepositional = "деревянной доске"
 gender = "female"
 
+["wood"]
+nominative = "дерево"
+genitive = "дерева"
+dative = "дереву"
+accusative = "дерево"
+instrumental = "деревом"
+prepositional = "дереве"
+gender = "neuter"
+
 [mythril]
 nominative = "мифрил"
 genitive = "мифрила"
@@ -1091,6 +1109,15 @@ dative = "фиолетовому осколку"
 accusative = "фиолетовый осколок"
 instrumental = "фиолетовым осколком"
 prepositional = "фиолетовом осколоке"
+gender = "male"
+
+["alien alloy"]
+nominative = "инопланетный сплав"
+genitive = "инопланетного сплава"
+dative = "инопланетному сплаву"
+accusative = "инопланетный сплав"
+instrumental = "инопланетным сплавом"
+prepositional = "инопланетном сплаве"
 gender = "male"
 
 # MARK: Structures
