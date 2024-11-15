@@ -11,7 +11,7 @@
 	var/light_amount = user_turf.get_lumcount()
 	if (light_amount < SURGFAIL_LIGHT_AMOUNT_REQUERED)
 		success_prob -= (SURGFAIL_LIGHT_AMOUNT_REQUERED - clamp(light_amount, 0, SURGFAIL_LIGHT_AMOUNT_REQUERED)) * SURGFAIL_LIGHT_AMOUNT_MULTIPLIER
-	if ((!(target.stat == UNCONSCIOUS || target.IsSleeping()) && target.stat != DEAD) && !HAS_TRAIT(target, TRAIT_ANALGESIA) && !HAS_TRAIT(target, TRAIT_STASIS))
+	if ((!(target.stat == UNCONSCIOUS || target.IsSleeping()) && target.stat != DEAD) && !HAS_TRAIT(target, TRAIT_ANALGESIA))
 		success_prob -= SURGFAIL_NO_PAINKILLER
 	var/fail_prob = CRITICAL_SUCCESS_CHANCE - success_prob
 	fail_prob *= modded_time / time
@@ -23,3 +23,11 @@
 #undef SURGFAIL_NO_PAINKILLER
 #undef BASIC_SURGERY_SUCCESS_CHANCE
 #undef CRITICAL_SUCCESS_CHANCE
+
+/datum/status_effect/grouped/stasis/on_apply()
+	. = ..()
+	add_traits(list(TRAIT_ANALGESIA), TRAIT_STATUS_EFFECT(id))
+
+/datum/status_effect/grouped/stasis/on_remove()
+	. = ..()
+	remove_traits(list(TRAIT_ANALGESIA), TRAIT_STATUS_EFFECT(id))
