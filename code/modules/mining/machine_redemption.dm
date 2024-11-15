@@ -231,7 +231,7 @@
 			var/sheet_amount = amount / SHEET_MATERIAL_AMOUNT
 			var/obj/sheet_type = material.sheet_type
 			data["materials"] += list(list(
-				"name" = material.name,
+				"name" = material.declent_ru(NOMINATIVE),
 				"id" = REF(material),
 				"amount" = sheet_amount,
 				"category" = "material",
@@ -244,7 +244,7 @@
 			var/datum/design/alloy = SSresearch.techweb_design_by_id(research)
 			var/obj/alloy_type = alloy.build_path
 			data["materials"] += list(list(
-				"name" = alloy.name,
+				"name" = alloy.declent_ru(NOMINATIVE),
 				"id" = alloy.id,
 				"category" = "alloy",
 				"amount" = can_smelt_alloy(alloy),
