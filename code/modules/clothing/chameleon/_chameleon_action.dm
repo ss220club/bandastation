@@ -125,6 +125,7 @@
 	PROTECTED_PROC(TRUE) // Call update_look, not this!
 
 	var/atom/atom_target = target
+	atom_target.ru_names_rename(ru_names_toml(picked_item::name))
 	atom_target.name = initial(picked_item.name)
 	atom_target.desc = initial(picked_item.desc)
 	atom_target.icon_state = initial(picked_item.icon_state)
@@ -156,6 +157,7 @@
 				)
 
 		item_target.flags_inv = initial(picked_item.flags_inv)
+		item_target.hair_mask = initial(picked_item.hair_mask)
 		item_target.transparent_protection = initial(picked_item.transparent_protection)
 		if(isclothing(item_target) && ispath(picked_item, /obj/item/clothing))
 			var/obj/item/clothing/clothing_target = item_target
@@ -208,7 +210,7 @@
 
 	if(istype(applying_from, /datum/outfit/job))
 		var/datum/outfit/job/job_outfit = applying_from
-		var/datum/job/job_datum = SSjob.GetJobType(job_outfit.jobtype)
+		var/datum/job/job_datum = SSjob.get_job_type(job_outfit.jobtype)
 		apply_job_data(job_datum)
 
 	update_look(using_item_type)

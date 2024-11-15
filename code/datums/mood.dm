@@ -406,7 +406,7 @@
 		clear_mood_event(MOOD_CATEGORY_AREA_BEAUTY)
 		return
 
-	if(HAS_TRAIT(mob_parent, TRAIT_MORBID))
+	if(HAS_MIND_TRAIT(mob_parent, TRAIT_MORBID))
 		if(HAS_TRAIT(mob_parent, TRAIT_SNOB))
 			switch(area_to_beautify.beauty)
 				if(BEAUTY_LEVEL_DECENT to BEAUTY_LEVEL_GOOD)
@@ -462,8 +462,8 @@
 /datum/mood/proc/set_sanity(amount, minimum = SANITY_INSANE, maximum = SANITY_GREAT, override = FALSE)
 	// If we're out of the acceptable minimum-maximum range move back towards it in steps of 0.7
 	// If the new amount would move towards the acceptable range faster then use it instead
-	if(amount < minimum)
-		amount += clamp(minimum - amount, 0, 0.7)
+	if(amount < minimum && sanity < minimum)
+		amount = sanity + 0.7
 	if((!override && HAS_TRAIT(mob_parent, TRAIT_UNSTABLE)) || amount > maximum)
 		amount = min(sanity, amount)
 	if(amount == sanity) //Prevents stuff from flicking around.

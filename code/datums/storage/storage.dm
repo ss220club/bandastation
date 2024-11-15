@@ -47,6 +47,8 @@
 	var/rustle_vary = TRUE
 	/// Path for the item's rustle sound.
 	var/rustle_sound = SFX_RUSTLE
+	/// Path for the item's rustle sound when removing items.
+	var/remove_rustle_sound = null
 	/// The sound to play when we open/access the storage
 	var/open_sound
 	var/open_sound_vary = TRUE
@@ -171,6 +173,7 @@
 	arrived.item_flags |= IN_STORAGE
 	refresh_views()
 	arrived.on_enter_storage(src)
+	RegisterSignal(arrived, COMSIG_MOUSEDROPPED_ONTO, PROC_REF(mousedrop_receive))
 	SEND_SIGNAL(arrived, COMSIG_ITEM_STORED, src)
 	parent.update_appearance()
 
@@ -184,25 +187,25 @@
 	gone.item_flags &= ~IN_STORAGE
 	remove_and_refresh(gone)
 	gone.on_exit_storage(src)
+	UnregisterSignal(gone, COMSIG_MOUSEDROPPED_ONTO)
 	SEND_SIGNAL(gone, COMSIG_ITEM_UNSTORED, src)
 	parent.update_appearance()
 
 /// Set the passed atom as the parent
 /datum/storage/proc/set_parent(atom/new_parent)
-	PRIVATE_PROC(TRUE)
+	PROTECTED_PROC(TRUE)
 
 	ASSERT(isnull(parent))
 
 	parent = new_parent
+	ADD_TRAIT(parent, TRAIT_COMBAT_MODE_SKIP_INTERACTION, REF(src))
 	// a few of theses should probably be on the real_location rather than the parent
-	RegisterSignal(parent, COMSIG_ATOM_ITEM_INTERACTION, PROC_REF(on_item_interact))
 	RegisterSignals(parent, list(COMSIG_ATOM_ATTACK_PAW, COMSIG_ATOM_ATTACK_HAND), PROC_REF(on_attack))
 	RegisterSignal(parent, COMSIG_MOUSEDROP_ONTO, PROC_REF(on_mousedrop_onto))
 	RegisterSignal(parent, COMSIG_MOUSEDROPPED_ONTO, PROC_REF(on_mousedropped_onto))
 	RegisterSignal(parent, COMSIG_ITEM_PRE_ATTACK, PROC_REF(on_preattack))
 	RegisterSignal(parent, COMSIG_ITEM_ATTACK_SELF, PROC_REF(mass_empty))
 	RegisterSignals(parent, list(COMSIG_ATOM_ATTACK_GHOST, COMSIG_ATOM_ATTACK_HAND_SECONDARY), PROC_REF(open_storage_on_signal))
-	RegisterSignal(parent, COMSIG_ATOM_ITEM_INTERACTION_SECONDARY, PROC_REF(on_item_interact_secondary))
 	RegisterSignal(parent, COMSIG_MOVABLE_MOVED, PROC_REF(close_distance))
 	RegisterSignal(parent, COMSIG_ITEM_EQUIPPED, PROC_REF(update_actions))
 	RegisterSignal(parent, COMSIG_TOPIC, PROC_REF(topic_handle))
@@ -452,7 +455,6 @@ GLOBAL_LIST_EMPTY(cached_storage_typecaches)
 
 	SEND_SIGNAL(parent, COMSIG_ATOM_STORED_ITEM, to_insert, user, force)
 	SEND_SIGNAL(src, COMSIG_STORAGE_STORED_ITEM, to_insert, user, force)
-	RegisterSignal(to_insert, COMSIG_MOUSEDROPPED_ONTO, PROC_REF(mousedrop_receive))
 	to_insert.forceMove(real_location)
 	item_insertion_feedback(user, to_insert, override)
 	parent.update_appearance()
@@ -469,7 +471,6 @@ GLOBAL_LIST_EMPTY(cached_storage_typecaches)
 		return
 
 	if (target.loc != real_location) // what even
-		UnregisterSignal(target, COMSIG_MOUSEDROPPED_ONTO)
 		return
 
 	if(numerical_stacking)
@@ -564,7 +565,10 @@ GLOBAL_LIST_EMPTY(cached_storage_typecaches)
 		thing.forceMove(remove_to_loc)
 
 		if(do_rustle && !silent)
-			playsound(parent, SFX_RUSTLE, 50, TRUE, -5)
+			if(remove_rustle_sound)
+				playsound(parent, remove_rustle_sound, 50, TRUE, -5)
+			else
+				playsound(parent, rustle_sound, 50, TRUE, -5)
 	else
 		thing.moveToNullspace()
 
@@ -574,7 +578,6 @@ GLOBAL_LIST_EMPTY(cached_storage_typecaches)
 	refresh_views()
 	parent.update_appearance()
 
-	UnregisterSignal(thing, COMSIG_MOUSEDROPPED_ONTO)
 	SEND_SIGNAL(parent, COMSIG_ATOM_REMOVED_ITEM, thing, remove_to_loc, silent)
 	SEND_SIGNAL(src, COMSIG_STORAGE_REMOVED_ITEM, thing, remove_to_loc, silent)
 	return TRUE
@@ -827,26 +830,12 @@ GLOBAL_LIST_EMPTY(cached_storage_typecaches)
 		return
 	if(!iscarbon(user) && !isdrone(user))
 		return
-	var/mob/living/user_living = user
-	if(user_living.incapacitated)
-		return
-
 	attempt_insert(dropping, user)
 	return COMPONENT_CANCEL_MOUSEDROPPED_ONTO
 
-/// Signal handler for whenever we're attacked by an object.
-/datum/storage/proc/on_item_interact(datum/source, mob/user, obj/item/thing, params)
-	SIGNAL_HANDLER
-
-	if(!insert_on_attack)
-		return NONE
-	if(!thing.storage_insert_on_interaction(src, parent, user))
-		return NONE
-	if(!parent.storage_insert_on_interacted_with(src, thing, user))
-		return NONE
-	if(SEND_SIGNAL(parent, COMSIG_ATOM_STORAGE_ITEM_INTERACT_INSERT, thing, user) & BLOCK_STORAGE_INSERT)
-		return NONE
-
+/// Called directly from the attack chain if [insert_on_attack] is TRUE.
+/// Handles inserting an item into the storage when clicked.
+/datum/storage/proc/item_interact_insert(mob/living/user, obj/item/thing)
 	if(iscyborg(user))
 		return ITEM_INTERACT_BLOCKING
 
@@ -896,18 +885,6 @@ GLOBAL_LIST_EMPTY(cached_storage_typecaches)
 			numberdisplay.number += total_amnt
 
 	return toreturn
-
-/// Signal handler for when we get attacked with secondary click by an item.
-/datum/storage/proc/on_item_interact_secondary(datum/source, mob/user, atom/weapon)
-	SIGNAL_HANDLER
-
-	if(istype(weapon, /obj/item/chameleon))
-		var/obj/item/chameleon/chameleon_weapon = weapon
-		chameleon_weapon.make_copy(source, user)
-
-	if(open_storage_on_signal(source, user))
-		return ITEM_INTERACT_BLOCKING
-	return NONE
 
 /// Signal handler to open up the storage when we receive a signal.
 /datum/storage/proc/open_storage_on_signal(datum/source, mob/to_show)
@@ -1001,7 +978,7 @@ GLOBAL_LIST_EMPTY(cached_storage_typecaches)
 		if(user.active_storage == src && user.client)
 			seeing += user
 		else
-			is_using -= user
+			hide_contents(user)
 	return seeing
 
 /**
@@ -1059,8 +1036,6 @@ GLOBAL_LIST_EMPTY(cached_storage_typecaches)
  * * mob/to_hide - the mob to hide the storage from
  */
 /datum/storage/proc/hide_contents(mob/to_hide)
-	if(!to_hide.client)
-		return TRUE
 	if(to_hide.active_storage == src)
 		to_hide.active_storage = null
 
@@ -1073,8 +1048,9 @@ GLOBAL_LIST_EMPTY(cached_storage_typecaches)
 
 	is_using -= to_hide
 
-	to_hide.client.screen -= storage_interfaces[to_hide].list_ui_elements()
-	to_hide.client.screen -= real_location.contents
+	if(to_hide.client)
+		to_hide.client.screen -= storage_interfaces[to_hide].list_ui_elements()
+		to_hide.client.screen -= real_location.contents
 	QDEL_NULL(storage_interfaces[to_hide])
 	storage_interfaces -= to_hide
 
@@ -1105,7 +1081,9 @@ GLOBAL_LIST_EMPTY(cached_storage_typecaches)
 	var/columns = clamp(max_slots, 1, screen_max_columns)
 	var/rows = clamp(CEILING(adjusted_contents / columns, 1) + additional_row, 1, screen_max_rows)
 
-	for (var/ui_user in storage_interfaces)
+	for (var/mob/ui_user as anything in storage_interfaces)
+		if (isnull(storage_interfaces[ui_user]))
+			continue
 		storage_interfaces[ui_user].update_position(screen_start_x, screen_pixel_x, screen_start_y, screen_pixel_y, columns, rows)
 
 	var/current_x = screen_start_x

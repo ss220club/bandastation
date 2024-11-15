@@ -50,9 +50,10 @@
 			bodypart_overlay.draw_color = color
 		my_head.add_bodypart_overlay(bodypart_overlay)
 		RegisterSignals(my_head, list(COMSIG_BODYPART_REMOVED, COMSIG_QDELETING), PROC_REF(lost_head))
-		carbon_parent.update_body_parts()
 	else
 		normal_overlay = get_normal_overlay()
+		normal_overlay.color = color
+
 
 	RegisterSignals(parent, list(
 		COMSIG_COMPONENT_CLEAN_ACT,
@@ -77,14 +78,9 @@
 	if(my_head)
 		if(bodypart_overlay)
 			my_head.remove_bodypart_overlay(bodypart_overlay)
-			if(!my_head.owner)
-				my_head.update_icon_dropped()
 			QDEL_NULL(bodypart_overlay)
 		UnregisterSignal(my_head, list(COMSIG_BODYPART_REMOVED, COMSIG_QDELETING))
 		my_head = null
-	if(iscarbon(parent))
-		var/mob/living/carbon/carbon_parent = parent
-		carbon_parent.update_body_parts()
 	if(normal_overlay)
 		var/atom/atom_parent = parent
 		UnregisterSignal(atom_parent, COMSIG_ATOM_UPDATE_OVERLAYS)
@@ -113,37 +109,39 @@
 	SIGNAL_HANDLER
 	qdel(src)
 
-/// Creampie subtype, handling signals and mood logic
+/// splat subtype, handling signals and mood logic
 
-GLOBAL_LIST_INIT(creamable, typecacheof(list(
-	/mob/living/carbon/human,
-	/mob/living/basic/pet/dog/corgi,
-	/mob/living/silicon/ai,
+GLOBAL_LIST_INIT(splattable, zebra_typecacheof(list(
+	/mob/living/carbon/human = "human",
+	/mob/living/basic/pet/dog/corgi = "corgi",
+	/mob/living/silicon/ai = "ai",
 )))
 
-/datum/component/face_decal/creampie/Initialize()
-	. = ..()
-	if(!is_type_in_typecache(parent, GLOB.creamable))
+/datum/component/face_decal/splat
+	///The mood_event that we add
+	var/mood_event_type
+
+/datum/component/face_decal/splat/Initialize(icon_state, layers, color, memory_type = /datum/memory/witnessed_creampie, mood_event_type = /datum/mood_event/creampie)
+	if(!is_type_in_typecache(parent, GLOB.splattable))
 		return COMPONENT_INCOMPATIBLE
 
-	SEND_SIGNAL(parent, COMSIG_MOB_CREAMED, src)
-	add_memory_in_range(parent, 7, /datum/memory/witnessed_creampie, protagonist = parent)
+	. = ..()
 
-/datum/component/face_decal/creampie/get_normal_overlay()
-	if(iscorgi(parent))
-		return mutable_appearance('icons/mob/effects/creampie.dmi', "[icon_state]_corgi")
+	SEND_SIGNAL(parent, COMSIG_MOB_HIT_BY_SPLAT, src)
+	add_memory_in_range(parent, 7, memory_type, protagonist = parent)
+	src.mood_event_type = mood_event_type
 
-	if(isAI(parent))
-		return mutable_appearance('icons/mob/effects/creampie.dmi', "[icon_state]_ai")
+/datum/component/face_decal/splat/get_normal_overlay()
+	return mutable_appearance('icons/mob/effects/face_decal.dmi', "[icon_state]_[GLOB.splattable[type]]")
 
-/datum/component/face_decal/creampie/RegisterWithParent()
+/datum/component/face_decal/splat/RegisterWithParent()
 	. = ..()
 	if(iscarbon(parent))
 		var/mob/living/carbon/human/carbon_parent = parent
-		carbon_parent.add_mood_event("creampie", /datum/mood_event/creampie)
+		carbon_parent.add_mood_event("splat", mood_event_type)
 
-/datum/component/face_decal/creampie/UnregisterFromParent()
+/datum/component/face_decal/splat/UnregisterFromParent()
 	. = ..()
 	if(iscarbon(parent))
 		var/mob/living/carbon/carbon_parent = parent
-		carbon_parent.clear_mood_event("creampie")
+		carbon_parent.clear_mood_event("splat")

@@ -51,10 +51,12 @@
 		if(Q.stat == DEAD)
 			continue
 		if(Q.client)
-			name = "alien princess ([rand(1, 999)])" //if this is too cutesy feel free to change it/remove it.
+			var/number = rand(1, 999) // BANDASTATION EDIT
+			ru_names_rename(ru_names_toml("alien princess", suffix = " ([number])", override_base = "alien princess ([number])"))
+			name = "alien princess ([number])" //if this is too cutesy feel free to change it/remove it.
 			break
 
-	real_name = src.name
+	real_name = declent_ru(NOMINATIVE)
 
 	var/static/list/innate_actions = list(
 		/datum/action/cooldown/alien/promote,
@@ -65,11 +67,11 @@
 	return ..()
 
 /mob/living/carbon/alien/adult/royal/queen/create_internal_organs()
-	organs += new /obj/item/organ/internal/alien/plasmavessel/large/queen
-	organs += new /obj/item/organ/internal/alien/resinspinner
-	organs += new /obj/item/organ/internal/alien/acid
-	organs += new /obj/item/organ/internal/alien/neurotoxin
-	organs += new /obj/item/organ/internal/alien/eggsac
+	organs += new /obj/item/organ/alien/plasmavessel/large/queen
+	organs += new /obj/item/organ/alien/resinspinner
+	organs += new /obj/item/organ/alien/acid
+	organs += new /obj/item/organ/alien/neurotoxin
+	organs += new /obj/item/organ/alien/eggsac
 	return ..()
 
 //Queen verbs
@@ -168,10 +170,9 @@
 		span_noticealien("The queen has granted you a promotion to Praetorian!"),
 	)
 
-	var/mob/living/carbon/alien/adult/royal/praetorian/new_prae = new(to_promote.loc)
-	to_promote.mind.transfer_to(new_prae)
-
-	qdel(to_promote)
+	var/mob/living/carbon/alien/lucky_winner = to_promote
+	var/mob/living/carbon/alien/adult/royal/praetorian/new_prae = new(lucky_winner.loc)
+	lucky_winner.alien_evolve(new_prae)
 	qdel(src)
 	return TRUE
 
