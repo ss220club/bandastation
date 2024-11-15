@@ -4,6 +4,8 @@
 		return
 	if(slot_flags & slot)
 		RegisterSignal(user, COMSIG_TTS_COMPONENT_PRE_CAST_TTS, PROC_REF(mimic_voice))
+	else
+		UnregisterSignal(user, COMSIG_TTS_COMPONENT_PRE_CAST_TTS)
 
 /obj/item/clothing/mask/chameleon/dropped(mob/living/user)
 	. = ..()
