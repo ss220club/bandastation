@@ -15,6 +15,7 @@
 	designation = "Default" //used for displaying the prefix & getting the current model of cyborg
 	has_limbs = TRUE
 	hud_type = /datum/hud/robot
+	unique_name = TRUE
 
 	///Represents the cyborg's model (engineering, medical, etc.)
 	var/obj/item/robot_model/model = null
@@ -42,6 +43,8 @@
 	///If this is a path, this gets created as an object in Initialize.
 	var/obj/item/stock_parts/power_store/cell = /obj/item/stock_parts/power_store/cell/high
 
+	///If we've been forcibly disabled for a temporary amount of time.
+	COOLDOWN_DECLARE(disabled_time)
 	///If the lamp isn't broken.
 	var/lamp_functional = TRUE
 	///If the lamp is turned on
@@ -108,8 +111,6 @@
 	var/ai_lockdown = FALSE
 	///Timer that allows the borg to self-unlock after a set amount of time
 	var/lockdown_timer = null
-	///Random serial number generated for each cyborg upon its initialization
-	var/ident = 0
 	var/locked = TRUE
 	req_one_access = list(ACCESS_ROBOTICS)
 

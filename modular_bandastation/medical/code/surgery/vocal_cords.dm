@@ -7,7 +7,7 @@
 		/datum/surgery_step/tune_vocal_cords,
 		/datum/surgery_step/close,
 	)
-	
+
 /datum/surgery_step/tune_vocal_cords
 	name = "настройка голосовых связок (гемостат)"
 	implements = list(
@@ -15,7 +15,7 @@
 		TOOL_WIRECUTTER = 50,
 		/obj/item/kitchen/fork = 35
 	)
-	preop_sound = 'sound/surgery/hemostat1.ogg'
+	preop_sound = 'sound/items/handling/surgery/hemostat1.ogg'
 	time = 6.4 SECONDS
 
 /datum/surgery_step/tune_vocal_cords/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
@@ -35,7 +35,7 @@
 		span_notice("[user] успешно настраивает голосовые связки [target]!"),
 		span_notice("[user] завершает операцию на голосовых связках [target]."),
 	)
-	target.change_tts_seed(user, TRUE)
+	target.change_tts_seed(user, TTS_OVERRIDE_GENDER)
 	return ..()
 
 /datum/surgery_step/tune_vocal_cords/failure(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)

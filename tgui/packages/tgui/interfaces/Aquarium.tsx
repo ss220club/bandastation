@@ -116,7 +116,7 @@ const FishInfo = (props) => {
                 ml={1}
                 style={{ fontSize: '13px', fontWeight: 'bold' }}
               >
-                {fish.fish_name.toUpperCase()}
+                {fish.fish_name}
               </Stack.Item>
               <Stack.Item mt={fish.fish_health > 0 ? -4 : 1}>
                 {(fish.fish_health > 0 && (
@@ -319,7 +319,7 @@ const Settings = (props) => {
         <Section fill title="Settings">
           <Box mt={2}>
             <LabeledList>
-              <LabeledList.Item label="Reproduction">
+              <LabeledList.Item label="Reproduction/Growth">
                 <Button
                   textAlign="center"
                   width="75px"

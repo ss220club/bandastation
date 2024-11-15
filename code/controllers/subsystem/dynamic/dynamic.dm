@@ -1,6 +1,6 @@
 #define FAKE_GREENSHIFT_FORM_CHANCE 15
 #define FAKE_REPORT_CHANCE 8
-#define PULSAR_REPORT_CHANCE 100 // BANDASTATION EDIT - you don't know threat level. Original: 8
+#define PULSAR_REPORT_CHANCE 8
 #define REPORT_NEG_DIVERGENCE -15
 #define REPORT_POS_DIVERGENCE 15
 
@@ -67,7 +67,9 @@ SUBSYSTEM_DEF(dynamic)
 	var/list/executed_rules = list()
 	/// If TRUE, the next player to latejoin will guarantee roll for a random latejoin antag
 	/// (this does not guarantee they get said antag roll, depending on preferences and circumstances)
-	var/forced_injection = FALSE
+	var/late_forced_injection = FALSE
+	/// If TRUE, a midround ruleset will be rolled
+	var/mid_forced_injection = FALSE
 	/// Forced ruleset to be executed for the next latejoin.
 	var/datum/dynamic_ruleset/latejoin/forced_latejoin_rule = null
 	/// How many percent of the rounds are more peaceful.
@@ -258,10 +260,10 @@ SUBSYSTEM_DEF(dynamic)
 			spend_midround_budget(-threatadd, threat_log, "[worldtime2text()]: decreased by [key_name(usr)]")
 	else if (href_list["injectlate"])
 		latejoin_injection_cooldown = 0
-		forced_injection = TRUE
+		late_forced_injection = TRUE
 		message_admins("[key_name(usr)] forced a latejoin injection.")
 	else if (href_list["injectmid"])
-		forced_injection = TRUE
+		mid_forced_injection = TRUE
 		message_admins("[key_name(usr)] forced a midround injection.")
 		try_midround_roll()
 	else if (href_list["threatlog"])
@@ -451,6 +453,14 @@ SUBSYSTEM_DEF(dynamic)
 	log_dynamic("Calculated maximum threat level based on player count of [SSticker.totalPlayersReady]: [calculated_max_threat]")
 
 	threat_level = lorentz_to_amount(threat_curve_centre, threat_curve_width, calculated_max_threat)
+	// BANDASTATION EDIT START - Threat management
+	var/min_threat_level = CONFIG_GET(number/min_threat_level)
+	if(min_threat_level && min_threat_level < max_threat_level)
+		var/previous_threat_level = threat_level
+		threat_level = clamp(threat_level, min_threat_level, max_threat_level)
+		if(threat_level != previous_threat_level)
+			log_dynamic("Threat was increased to the min value of [min_threat_level] from [previous_threat_level]")
+	// BANDASTATION EDIT END
 
 	for(var/datum/station_trait/station_trait in GLOB.dynamic_station_traits)
 		threat_level = max(threat_level - GLOB.dynamic_station_traits[station_trait], 0)
@@ -461,6 +471,15 @@ SUBSYSTEM_DEF(dynamic)
 /// Generates the midround and roundstart budgets
 /datum/controller/subsystem/dynamic/proc/generate_budgets()
 	round_start_budget = lorentz_to_amount(roundstart_split_curve_centre, roundstart_split_curve_width, threat_level, 0.1)
+	// BANDASTATION EDIT START - Threat management
+	var/min_threat_to_roundstart_percent = CONFIG_GET(number/min_threat_to_roundstart_percent)
+	var/max_threat_to_roundstart_percent = CONFIG_GET(number/min_threat_to_roundstart_percent)
+	if(min_threat_to_roundstart_percent && max_threat_to_roundstart_percent && min_threat_to_roundstart_percent < max_threat_to_roundstart_percent)
+		var/previous_round_start_budget = round_start_budget
+		round_start_budget = clamp(previous_round_start_budget, min_threat_to_roundstart_percent / 100 * threat_level, max_threat_to_roundstart_percent / 100 * threat_level)
+		if(round_start_budget != previous_round_start_budget)
+			log_dynamic("Clamped roundstart budget from [previous_round_start_budget] to [round_start_budget]")
+	// BANDASTATION EDIT END
 	initial_round_start_budget = round_start_budget
 	mid_round_budget = threat_level - round_start_budget
 
@@ -532,7 +551,7 @@ SUBSYSTEM_DEF(dynamic)
 
 	var/security = 0 // BANDASTATION EDIT - Force players to play Sec
 
-	SSjob.DivideOccupations(pure = TRUE, allow_all = TRUE)
+	SSjob.divide_occupations(pure = TRUE, allow_all = TRUE)
 	for(var/i in GLOB.new_player_list)
 		var/mob/dead/new_player/player = i
 		if(player.ready == PLAYER_READY_TO_PLAY && player.mind && player.check_preferences())
@@ -551,7 +570,7 @@ SUBSYSTEM_DEF(dynamic)
 				if(player.mind?.assigned_role?.departments_list?.Find(/datum/job_department/security))
 					security++
 				// BANDASTATION EDIT END
-	SSjob.ResetOccupations()
+	SSjob.reset_occupations()
 	log_dynamic("Listing [roundstart_rules.len] round start rulesets, and [candidates.len] players ready.")
 	if (candidates.len <= 0)
 		log_dynamic("[candidates.len] candidates.")
@@ -893,14 +912,14 @@ SUBSYSTEM_DEF(dynamic)
 		forced_latejoin_rule = null
 		return
 
-	if(!forced_injection)
+	if(!late_forced_injection)
 		if(latejoin_injection_cooldown >= world.time)
 			return
 		if(!prob(latejoin_roll_chance))
 			return
 
-	var/was_forced = forced_injection
-	forced_injection = FALSE
+	var/was_forced = late_forced_injection
+	late_forced_injection = FALSE
 	var/list/possible_latejoin_rules = list()
 	for (var/datum/dynamic_ruleset/latejoin/rule in latejoin_rules)
 		if(!rule.weight)
@@ -1038,7 +1057,7 @@ SUBSYSTEM_DEF(dynamic)
 	var/list/reopened_jobs = list()
 
 	for(var/mob/living/quitter in GLOB.suicided_mob_list)
-		var/datum/job/job = SSjob.GetJob(quitter.job)
+		var/datum/job/job = SSjob.get_job(quitter.job)
 		if(!job || !(job.job_flags & JOB_REOPEN_ON_ROUNDSTART_LOSS))
 			continue
 		if(!include_command && job.departments_bitflags & DEPARTMENT_BITFLAG_COMMAND)
