@@ -73,4 +73,4 @@ GLOBAL_LIST_EMPTY(human_to_tts)
 
 /datum/preferences/apply_prefs_to(mob/living/carbon/human/character, icon_updates)
 	. = ..()
-	GLOB.human_to_tts += list("[character.real_name]" = character.dna.tts_seed_dna)
+	GLOB.human_to_tts["[character.real_name]"] = character.dna.tts_seed_dna

@@ -102,6 +102,9 @@
 	if(iscarbon(being_changed))
 		var/mob/living/carbon/carbon = being_changed
 		carbon.dna?.tts_seed_dna = tts_seed
+	if(ishuman(being_changed))
+		var/mob/living/carbon/human/human = being_changed
+		GLOB.human_to_tts["[human.real_name]"] = tts_seed
 
 /datum/component/tts_component/proc/get_random_tts_seed_by_gender()
 	var/atom/being_changed = parent
