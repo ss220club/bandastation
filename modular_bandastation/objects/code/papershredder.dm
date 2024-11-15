@@ -82,7 +82,7 @@
 
 /obj/machinery/papershredder/examine(mob/user)
 	. = ..()
-	. += span_info("Нажмите <b>ПКМ</b> чтобы опустошить [src.declent_ru(ACCUSATIVE)].")
+	. += span_info("Нажмите <b>ПКМ</b> чтобы опустошить [declent_ru(ACCUSATIVE)].")
 
 /obj/machinery/papershredder/proc/empty_contents(mob/living/user)
 	if(HAS_TRAIT(user, TRAIT_RESTRAINED))
@@ -90,7 +90,7 @@
 		return
 
 	if(!paper_amount)
-		to_chat(user, span_notice("[capitalize(src.declent_ru(NOMINATIVE))] пуст."))
+		to_chat(user, span_notice("[capitalize(declent_ru(NOMINATIVE))] пуст."))
 		return
 
 	get_shredded_paper()
