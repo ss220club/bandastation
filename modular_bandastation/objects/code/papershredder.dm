@@ -1,34 +1,56 @@
+/obj/item
+	var/can_be_papershredded = FALSE
+	var/shredded_paper_amount
+
+/obj/item/photo
+	can_be_papershredded = TRUE
+	shredded_paper_amount = 1
+
+/obj/item/paper
+	can_be_papershredded = TRUE
+	shredded_paper_amount = 1
+
+/obj/item/paper/paperslip/corporate
+	can_be_papershredded = FALSE
+
+/obj/item/newspaper
+	can_be_papershredded = TRUE
+	shredded_paper_amount = 3
+
+/obj/item/shredded_paper
+	can_be_papershredded = TRUE
+	shredded_paper_amount = 1
+
+/obj/item/folder
+	can_be_papershredded = TRUE
+	shredded_paper_amount = 4
+
+/obj/item/book
+	can_be_papershredded = TRUE
+	shredded_paper_amount = 5
+
 /obj/machinery/papershredder
 	name = "\improper paper shredder"
-	desc = "For those documents you don't want seen."
+	desc = "Для тех документов, что вы не хотите видеть."
 	icon = 'modular_bandastation/objects/icons/papershredder.dmi'
 	icon_state = "papershredder0"
 	density = TRUE
 	anchored = TRUE
 	var/max_paper = 15
 	var/paper_amount = 0
-	var/list/shred_amounts = list(
-		/obj/item/photo = 1,
-		/obj/item/shredded_paper = 1,
-		/obj/item/paper = 1,
-		/obj/item/newspaper = 3,
-		/obj/item/card/id = 3,
-		/obj/item/folder = 4,
-		/obj/item/book = 5
-	)
 
 /obj/machinery/papershredder/Initialize(mapload)
 	. = ..()
-	AddElement(/datum/element/contextual_screentip_bare_hands, rmb_text = "Empty shredded paper bin")
+	AddElement(/datum/element/contextual_screentip_bare_hands, rmb_text = "Опустошить корзину с измельчённой бумагой")
 	register_context()
 
 /obj/machinery/papershredder/add_context(atom/source, list/context, obj/item/held_item, mob/user)
 	. = ..()
 	if(held_item.tool_behaviour == TOOL_WRENCH)
-		context[SCREENTIP_CONTEXT_LMB] = anchored ? "Unanchor" : "Anchor"
+		context[SCREENTIP_CONTEXT_LMB] = anchored ? "Открутить" : "Прикрутить"
 		return CONTEXTUAL_SCREENTIP_SET
-	if(held_item.type in shred_amounts)
-		context[SCREENTIP_CONTEXT_LMB] = "Shred item"
+	if(held_item.can_be_papershredded)
+		context[SCREENTIP_CONTEXT_LMB] = "Измельчить [held_item.declent_ru(ACCUSATIVE)]"
 		return CONTEXTUAL_SCREENTIP_SET
 	return NONE
 
@@ -40,12 +62,13 @@
 	return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
 
 /obj/machinery/papershredder/attackby(obj/item/item, mob/user, params)
-	if(!(item.type in shred_amounts))
+	if(!item.can_be_papershredded)
+		user.balloon_alert(user, "невозможно измельчить!")
 		return ..()
 	if(paper_amount == max_paper)
-		to_chat(user, span_warning("[src] is full. Please empty it before you continue."))
+		to_chat(user, span_warning("[capitalize(declent_ru(NOMINATIVE))] полон. Пожалуйста, опустошите его прежде чем продолжить."))
 		return
-	var/paper_result = shred_amounts[item.type]
+	var/paper_result = item.shredded_paper_amount
 	paper_amount += paper_result
 	qdel(item)
 	playsound(loc, 'modular_bandastation/objects/sounds/pshred.ogg', 75, 1)
@@ -59,15 +82,15 @@
 
 /obj/machinery/papershredder/examine(mob/user)
 	. = ..()
-	. += span_info("<b>Right-Click</b> to empty [src].")
+	. += span_info("Нажмите <b>ПКМ</b> чтобы опустошить [src.declent_ru(ACCUSATIVE)].")
 
 /obj/machinery/papershredder/proc/empty_contents(mob/living/user)
 	if(HAS_TRAIT(user, TRAIT_RESTRAINED))
-		to_chat(user, span_warning("You need your hands free for this."))
+		to_chat(user, span_warning("Вам нужны свободные руки, чтобы сделать это."))
 		return
 
 	if(!paper_amount)
-		to_chat(user, span_notice("[src] is empty."))
+		to_chat(user, span_notice("[capitalize(src.declent_ru(NOMINATIVE))] пуст."))
 		return
 
 	get_shredded_paper()

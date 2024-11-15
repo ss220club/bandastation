@@ -948,6 +948,24 @@ instrumental = "голограммой"
 prepositional = "голограмме"
 gender = "female"
 
+["papershredder"]
+nominative = "измельчитель бумаги"
+genitive = "измельчителя бумаги"
+dative = "измельчителю бумаги"
+accusative = "измельчитель бумаги"
+instrumental = "измельчителем бумаги"
+prepositional = "измельчителе бумаги"
+gender = "male"
+
+["shredded paper"]
+nominative = "измельчённая бумага"
+genitive = "измельчённой бумаги"
+dative = "измельчённой бумаге"
+accusative = "измельчённую бумагу"
+instrumental = "измельчённой бумагой"
+prepositional = "измельчённой бумаге"
+gender = "female"
+
 # MARK: Mobs. Uncategorized
 
 # MARK: Mobs. Aliens
