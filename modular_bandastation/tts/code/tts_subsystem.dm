@@ -442,9 +442,6 @@ SUBSYSTEM_DEF(tts220)
 /datum/controller/subsystem/tts220/proc/get_random_seed(owner)
 	return pick(get_available_seeds(owner))
 
-/datum/controller/subsystem/tts220/proc/get_tts_datum_by_seed(seed)
-	return tts_seeds[seed] || null
-
 /datum/controller/subsystem/tts220/proc/sanitize_tts_input(message)
 	var/hash
 	if(sanitized_messages_caching)

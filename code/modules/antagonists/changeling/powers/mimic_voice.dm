@@ -34,7 +34,7 @@
 				mimic_tts_seed = GLOB.human_to_tts[mimic_voice]
 			else
 				var/mimic_tts_seed_name = tgui_input_list(user, "Choose a TTS to mimic", "Mimic Voice", SStts220.get_available_seeds(user))
-				mimic_tts_seed = SStts220.get_tts_datum_by_seed(mimic_tts_seed_name)
+				mimic_tts_seed = SStts220.tts_seeds[mimic_tts_seed_name]
 	// BANDASTATION EDIT END
 	..()
 	changeling.mimicing = mimic_voice
