@@ -19,21 +19,21 @@
 		return
 	// BANDASTATION EDIT START - TTS
 	var/mimic_voice
-	var/choice = tgui_input_list(user, "Custom name or from existing humans?", "Mimic Voice", list("Custom name", "Existing human"))
+	var/choice = tgui_input_list(user, "Выбрать самому имя или из существующих людей?", "Имитация голоса", list("Ручной ввод имени", "Существующий человек"))
 	switch(choice)
-		if("Existing human")
-			mimic_voice = tgui_input_list(user, "Choose a name to mimic", "Mimic Voice", GLOB.human_to_tts)
+		if("Существующий человек")
+			mimic_voice = tgui_input_list(user, "Выберите имя для подражания", "Имитация голоса", GLOB.human_to_tts)
 			if(!mimic_voice)
 				return
 			mimic_tts_seed = GLOB.human_to_tts[mimic_voice]
-		if("Custom name")
-			mimic_voice = sanitize_name(tgui_input_text(user, "Enter a name to mimic", "Mimic Voice", max_length = MAX_NAME_LEN))
+		if("Ручной ввод имени")
+			mimic_voice = sanitize_name(tgui_input_text(user, "Введите имя для подражания", "Имитация голоса", max_length = MAX_NAME_LEN))
 			if(!mimic_voice)
 				return
 			if(GLOB.human_to_tts[mimic_voice])
 				mimic_tts_seed = GLOB.human_to_tts[mimic_voice]
 			else
-				var/mimic_tts_seed_name = tgui_input_list(user, "Choose a TTS to mimic", "Mimic Voice", SStts220.get_available_seeds(user))
+				var/mimic_tts_seed_name = tgui_input_list(user, "Выберите TTS голос для подражания", "Имитация голоса", SStts220.get_available_seeds(user))
 				mimic_tts_seed = SStts220.tts_seeds[mimic_tts_seed_name]
 	// BANDASTATION EDIT END
 	..()
