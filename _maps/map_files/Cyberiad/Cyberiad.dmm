@@ -3426,7 +3426,6 @@
 /area/station/engineering/supermatter/room)
 "aVD" = (
 /obj/structure/bed,
-/obj/machinery/computer/security/telescreen/entertainment/directional/south,
 /obj/effect/turf_decal/tile/red,
 /turf/open/floor/iron,
 /area/station/security/holding_cell)
@@ -20816,6 +20815,9 @@
 /area/station/medical/medbay/aft)
 "fEV" = (
 /obj/machinery/computer/security/wooden_tv,
+/obj/machinery/button/door/directional/north{
+	id = "dec_window"
+	},
 /turf/open/floor/iron/grimy,
 /area/station/security/detectives_office)
 "fEW" = (
@@ -64090,9 +64092,6 @@
 /area/station/maintenance/ghetto/aft)
 "rvB" = (
 /obj/machinery/photocopier,
-/obj/machinery/button/door/directional/south{
-	id = "dec_window"
-	},
 /turf/open/floor/wood,
 /area/station/security/detectives_office)
 "rvF" = (
