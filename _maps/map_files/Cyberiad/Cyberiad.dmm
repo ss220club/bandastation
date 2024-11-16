@@ -2567,7 +2567,6 @@
 /turf/open/floor/iron,
 /area/station/hallway/secondary/exit/departure_lounge)
 "aIW" = (
-/obj/structure/closet/crate/freezer,
 /obj/item/reagent_containers/chem_pack,
 /obj/item/reagent_containers/chem_pack,
 /obj/item/reagent_containers/chem_pack,
@@ -2579,6 +2578,7 @@
 /obj/effect/turf_decal/trimline/blue/filled/line{
 	dir = 6
 	},
+/obj/structure/closet/crate/freezer/blood,
 /turf/open/floor/iron/white,
 /area/station/medical/storage)
 "aJk" = (
@@ -9730,6 +9730,17 @@
 /obj/effect/turf_decal/delivery,
 /turf/open/floor/iron,
 /area/station/cargo/sorting)
+"cFt" = (
+/obj/docking_port/stationary{
+	dir = 8;
+	dwidth = 2;
+	height = 13;
+	name = "port bay 2";
+	shuttle_id = "ferry_home";
+	width = 5
+	},
+/turf/open/space/openspace,
+/area/space)
 "cFH" = (
 /obj/structure/chair{
 	dir = 1
@@ -11435,6 +11446,7 @@
 	name = "Morgue Slab"
 	},
 /obj/item/autopsy_scanner,
+/obj/item/storage/toolbox/mechanical,
 /turf/open/floor/iron/dark,
 /area/station/medical/morgue)
 "cZW" = (
@@ -41812,6 +41824,10 @@
 "lrd" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/structure/cable,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "dec_window";
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/station/security/detectives_office)
 "lrf" = (
@@ -64083,7 +64099,9 @@
 /area/station/maintenance/ghetto/aft)
 "rvB" = (
 /obj/machinery/photocopier,
-/obj/machinery/light_switch/directional/south,
+/obj/machinery/button/door/directional/south{
+	id = "dec_window"
+	},
 /turf/open/floor/wood,
 /area/station/security/detectives_office)
 "rvF" = (
@@ -84343,7 +84361,6 @@
 /turf/open/floor/wood,
 /area/station/maintenance/starboard/fore)
 "xfK" = (
-/obj/structure/closet/crate/freezer,
 /obj/item/reagent_containers/chem_pack,
 /obj/item/reagent_containers/chem_pack,
 /obj/item/reagent_containers/chem_pack,
@@ -84357,6 +84374,7 @@
 /obj/effect/turf_decal/trimline/blue/filled/line{
 	dir = 5
 	},
+/obj/structure/closet/crate/freezer/blood,
 /turf/open/floor/iron/white,
 /area/station/medical/storage)
 "xfP" = (
@@ -165330,7 +165348,7 @@ pMk
 pop
 tYD
 tYD
-tYD
+cFt
 tYD
 tYD
 pop
