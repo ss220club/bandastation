@@ -96,7 +96,7 @@ GLOBAL_VAR_INIT(looc_allowed, TRUE)
 		if(!hearing.client)
 			continue
 
-		if(isliving(mob))
+		if(hearing.client.prefs.read_preference(/datum/preference/toggle/enable_runechat) && isliving(mob))
 			hearing.create_chat_message(speaker = mob, raw_message = msg, spans = list("looc"))
 
 		var/client/hearing_client = hearing.client
