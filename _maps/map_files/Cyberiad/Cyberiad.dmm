@@ -605,6 +605,7 @@
 	dir = 8;
 	network = list("SS13","Engineering")
 	},
+/obj/item/stack/sheet/mineral/plasma/five,
 /turf/open/floor/iron/dark,
 /area/station/engineering/main)
 "aip" = (
@@ -5990,6 +5991,7 @@
 "bGd" = (
 /obj/structure/rack,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
+/obj/item/stack/sheet/mineral/plasma/five,
 /turf/open/floor/iron,
 /area/station/engineering/storage_shared)
 "bGf" = (
@@ -16356,9 +16358,9 @@
 /obj/machinery/door/airlock/engineering/glass{
 	name = "Power Storage"
 	},
-/obj/effect/mapping_helpers/airlock/access/all/engineering/engine_equipment,
 /obj/machinery/door/firedoor,
 /obj/structure/cable/layer1,
+/obj/effect/mapping_helpers/airlock/access/all/engineering/general,
 /turf/open/floor/iron,
 /area/station/engineering/engine_smes)
 "eqk" = (
@@ -76149,6 +76151,8 @@
 	},
 /obj/item/stack/sheet/iron/fifty,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
+/obj/item/stack/sheet/mineral/plasma/five,
+/obj/item/stack/sheet/mineral/plasma/five,
 /turf/open/floor/iron/dark,
 /area/station/engineering/dronefabricator)
 "uTs" = (
@@ -88173,6 +88177,11 @@
 /obj/machinery/portable_atmospherics/pump,
 /turf/open/floor/plating,
 /area/station/maintenance/department/security/ghetto/north)
+"yjU" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/power/port_gen/pacman,
+/turf/open/floor/iron,
+/area/station/engineering/storage_shared)
 "yjW" = (
 /obj/structure/grille,
 /turf/open/floor/plating,
@@ -178769,7 +178778,7 @@ oFK
 tkP
 pcn
 fjs
-vvN
+yjU
 bGd
 xiS
 fjs
