@@ -52,6 +52,7 @@
 		changeling.mimicing = ""
 		to_chat(user, span_notice("Our vocal glands return to their original position."))
 		UnregisterSignal(user, COMSIG_TTS_COMPONENT_PRE_CAST_TTS) // BANDASTATION EDIT - TTS
+		mimic_tts_seed = null // BANDASTATION EDIT - TTS
 	. = ..()
 
 // BANDASTATION EDIT START - TTS
