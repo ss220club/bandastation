@@ -14,7 +14,7 @@
 	if(changeling.mimicing)
 		changeling.mimicing = ""
 		changeling.chem_recharge_slowdown -= 0.25
-		to_chat(user, span_notice("We return our vocal glands to their original position."))
+		to_chat(user, span_notice("Мы возвращаем наши голосовые железы в исходное положение."))
 		UnregisterSignal(user, COMSIG_TTS_COMPONENT_PRE_CAST_TTS) // BANDASTATION EDIT - TTS
 		mimic_tts_seed = null // BANDASTATION EDIT - TTS
 		return
@@ -40,8 +40,8 @@
 	..()
 	changeling.mimicing = mimic_voice
 	changeling.chem_recharge_slowdown += 0.25
-	to_chat(user, span_notice("We shape our glands to take the voice of <b>[mimic_voice]</b>, this will slow down regenerating chemicals while active."))
-	to_chat(user, span_notice("Use this power again to return to our original voice and return chemical production to normal levels."))
+	to_chat(user, span_notice("Мы формируем наши железы так, чтобы они издавали голос <b>[mimic_voice]</b>, Это замедлит регенерацию химических веществ во время активной деятельности."))
+	to_chat(user, span_notice("Используйте эту силу снова, чтобы вернуть наш прежний голос и вернуть производство химикатов к нормальному уровню."))
 	RegisterSignal(user, COMSIG_TTS_COMPONENT_PRE_CAST_TTS, PROC_REF(replace_tts_seed)) // BANDASTATION EDIT - TTS
 	return TRUE
 
@@ -50,7 +50,7 @@
 	if(changeling?.mimicing)
 		changeling.chem_recharge_slowdown = max(0, changeling.chem_recharge_slowdown - 0.25)
 		changeling.mimicing = ""
-		to_chat(user, span_notice("Our vocal glands return to their original position."))
+		to_chat(user, span_notice("Наши голосовые железы возвращаются в исходное положение."))
 		UnregisterSignal(user, COMSIG_TTS_COMPONENT_PRE_CAST_TTS) // BANDASTATION EDIT - TTS
 		mimic_tts_seed = null // BANDASTATION EDIT - TTS
 	. = ..()
