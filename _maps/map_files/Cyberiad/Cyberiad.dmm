@@ -80805,6 +80805,10 @@
 	},
 /obj/effect/spawner/structure/window/reinforced,
 /obj/structure/cable,
+/obj/machinery/door/poddoor{
+	id = "xenobio_maint_fore";
+	name = "Xenobiology Blast Door"
+	},
 /turf/open/floor/plating,
 /area/station/science/xenobiology)
 "wgj" = (
