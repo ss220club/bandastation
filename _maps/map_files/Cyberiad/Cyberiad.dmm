@@ -53292,15 +53292,6 @@
 /obj/machinery/newscaster/directional/north,
 /turf/open/floor/wood,
 /area/station/service/library/upper)
-"ozZ" = (
-/obj/structure/sign/painting/library{
-	pixel_y = -32
-	},
-/obj/structure/sign/painting/library{
-	pixel_y = -32
-	},
-/turf/closed/wall,
-/area/station/service/library/artgallery)
 "oAb" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 8
@@ -130906,7 +130897,7 @@ gUL
 gUL
 gUL
 gUL
-ozZ
+gUL
 gUL
 gUL
 gUL
