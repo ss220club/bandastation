@@ -27122,6 +27122,11 @@
 /obj/machinery/firealarm/directional/south,
 /turf/open/floor/iron,
 /area/station/hallway/primary/port)
+"hqX" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/power/port_gen/pacman,
+/turf/open/floor/iron,
+/area/station/engineering/storage_shared)
 "hri" = (
 /obj/effect/turf_decal/tile/yellow/half{
 	dir = 4
@@ -75627,6 +75632,7 @@
 /obj/effect/turf_decal/tile/yellow/half{
 	dir = 8
 	},
+/obj/machinery/cell_charger,
 /turf/open/floor/iron/dark,
 /area/station/engineering/main)
 "uLI" = (
@@ -88177,11 +88183,6 @@
 /obj/machinery/portable_atmospherics/pump,
 /turf/open/floor/plating,
 /area/station/maintenance/department/security/ghetto/north)
-"yjU" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/power/port_gen/pacman,
-/turf/open/floor/iron,
-/area/station/engineering/storage_shared)
 "yjW" = (
 /obj/structure/grille,
 /turf/open/floor/plating,
@@ -178778,7 +178779,7 @@ oFK
 tkP
 pcn
 fjs
-yjU
+hqX
 bGd
 xiS
 fjs
