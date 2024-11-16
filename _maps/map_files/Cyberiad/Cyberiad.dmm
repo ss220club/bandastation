@@ -770,11 +770,11 @@
 /turf/open/floor/carpet/blue,
 /area/station/command/heads_quarters/captain)
 "akM" = (
-/obj/machinery/power/solar{
-	id = "aftstarboard";
-	name = "Aft-Starboard Solar Array"
-	},
 /obj/structure/cable,
+/obj/machinery/power/solar{
+	id = "aftport";
+	name = "Aft-Port Solar Array"
+	},
 /turf/open/floor/iron/solarpanel/airless,
 /area/station/solars/port/aft)
 "akV" = (
@@ -8001,6 +8001,7 @@
 /area/station/security/medical)
 "ciC" = (
 /obj/machinery/power/tracker,
+/obj/structure/cable,
 /turf/open/floor/iron/solarpanel/airless,
 /area/station/solars/port/aft)
 "ciD" = (
@@ -8260,7 +8261,7 @@
 /obj/structure/cable,
 /obj/effect/mapping_helpers/airlock/access/all/engineering/general,
 /turf/open/floor/plating,
-/area/station/maintenance/port/greater)
+/area/station/maintenance/solars/port/fore)
 "ckX" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 4
@@ -10927,6 +10928,7 @@
 	id = "aftport";
 	name = "Port Quarter Solar Control"
 	},
+/obj/structure/cable,
 /turf/open/floor/plating,
 /area/station/maintenance/solars/port/aft)
 "cUY" = (
@@ -16020,8 +16022,8 @@
 /turf/open/water/beach,
 /area/station/command/bridge)
 "elY" = (
-/obj/machinery/power/tracker,
 /obj/structure/cable,
+/obj/machinery/power/tracker,
 /turf/open/floor/iron/solarpanel/airless,
 /area/station/solars/starboard/fore)
 "emb" = (
@@ -19601,10 +19603,10 @@
 "fnc" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/camera/directional/east,
-/obj/machinery/suit_storage_unit/industrial/loader,
 /obj/effect/turf_decal/stripes/line{
 	dir = 10
 	},
+/obj/machinery/suit_storage_unit/industrial/loader,
 /turf/open/floor/iron/dark/textured_large,
 /area/station/cargo/warehouse)
 "fnm" = (
@@ -19915,11 +19917,11 @@
 /turf/open/floor/iron/dark,
 /area/station/service/hydroponics)
 "fsk" = (
-/obj/machinery/power/solar{
-	id = "foreport";
-	name = "Fore-Port Solar Array"
-	},
 /obj/structure/cable,
+/obj/machinery/power/solar{
+	id = "forestarboard";
+	name = "Fore-Starboard Solar Array"
+	},
 /turf/open/floor/iron/solarpanel/airless,
 /area/station/solars/starboard/fore)
 "fsl" = (
@@ -20816,7 +20818,7 @@
 /area/station/medical/medbay/aft)
 "fEV" = (
 /obj/machinery/computer/security/wooden_tv,
-/obj/machinery/button/door/directional/north{
+/obj/machinery/button/door/directional/east{
 	id = "dec_window"
 	},
 /turf/open/floor/iron/grimy,
@@ -35745,11 +35747,11 @@
 /turf/open/floor/iron/white,
 /area/station/medical/medbay)
 "jMT" = (
+/obj/structure/cable,
 /obj/machinery/power/solar{
 	id = "aftstarboard";
 	name = "Aft-Starboard Solar Array"
 	},
-/obj/structure/cable,
 /turf/open/floor/iron/solarpanel/airless,
 /area/station/solars/starboard/aft)
 "jMY" = (
@@ -36882,7 +36884,7 @@
 "kdD" = (
 /obj/structure/table,
 /obj/effect/turf_decal/tile/blue/fourcorners,
-/obj/item/defibrillator/loaded,
+/obj/machinery/cell_charger,
 /turf/open/floor/iron/white,
 /area/station/medical/storage)
 "kdI" = (
@@ -38050,6 +38052,9 @@
 	pixel_y = 6
 	},
 /obj/item/defibrillator/loaded,
+/obj/item/defibrillator/loaded{
+	pixel_y = -7
+	},
 /turf/open/floor/iron/white,
 /area/station/medical/storage)
 "ksz" = (
@@ -45970,8 +45975,8 @@
 /turf/open/floor/plating,
 /area/station/maintenance/port/aft)
 "mAB" = (
-/obj/machinery/power/tracker,
 /obj/structure/cable,
+/obj/machinery/power/tracker,
 /turf/open/floor/iron/solarpanel/airless,
 /area/station/solars/port/fore)
 "mAR" = (
@@ -56572,6 +56577,7 @@
 	name = "Emergency Storage"
 	},
 /obj/effect/mapping_helpers/airlock/access/all/medical/psychology,
+/obj/structure/cable,
 /turf/open/floor/plating,
 /area/station/medical/psychology)
 "pvN" = (
@@ -58256,6 +58262,7 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/structure/disposalpipe/segment,
 /obj/effect/turf_decal/tile/blue/half,
+/obj/structure/cable,
 /turf/open/floor/iron,
 /area/station/hallway/primary/central)
 "pRD" = (
@@ -61748,6 +61755,7 @@
 	id = "aftstarboard";
 	name = "Starboard Quarter Solar Control"
 	},
+/obj/structure/cable,
 /turf/open/floor/plating,
 /area/station/maintenance/solars/starboard/aft)
 "qQS" = (
@@ -64993,8 +65001,8 @@
 /turf/open/floor/iron,
 /area/station/maintenance/ghetto/aft)
 "rKY" = (
-/obj/machinery/power/tracker,
 /obj/structure/cable,
+/obj/machinery/power/tracker,
 /turf/open/floor/iron/solarpanel/airless,
 /area/station/solars/starboard/aft)
 "rLg" = (
@@ -68008,6 +68016,7 @@
 	id = "foreport";
 	name = "Port Bow Solar Control"
 	},
+/obj/structure/cable,
 /turf/open/floor/plating,
 /area/station/maintenance/solars/port/fore)
 "sCA" = (
@@ -69286,7 +69295,7 @@
 	name = "Prisoner Processing"
 	},
 /obj/effect/mapping_helpers/airlock/access/all/security/general,
-/turf/open/floor/plating,
+/turf/open/floor/iron/dark,
 /area/station/security/courtroom/holding)
 "sWA" = (
 /obj/machinery/light/floor,
@@ -69987,10 +69996,10 @@
 /area/station/security/detectives_office)
 "tiH" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/suit_storage_unit/industrial/loader,
 /obj/effect/turf_decal/stripes/line{
 	dir = 9
 	},
+/obj/machinery/suit_storage_unit/industrial/loader,
 /turf/open/floor/iron/dark/textured_large,
 /area/station/cargo/warehouse)
 "tiS" = (
