@@ -155,7 +155,7 @@ GLOBAL_DATUM_INIT(orbit_menu, /datum/orbit_menu, new)
 	var/list/serialized = list()
 
 	for(var/datum/antagonist/antag as anything in poi_mind.antag_datums)
-		if(!antag.show_to_ghosts && !is_admin) //BANDASTATION EDIT - Original: if(!antag.show_to_ghosts)
+		if(!antag.show_to_ghosts && !is_admin) // BANDASTATION EDIT - Original: if(!antag.show_to_ghosts)
 			continue
 
 		serialized["antag"] = antag.name
