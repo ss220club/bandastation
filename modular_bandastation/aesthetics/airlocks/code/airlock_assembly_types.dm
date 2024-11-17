@@ -103,7 +103,6 @@
 	glass_type = /obj/machinery/door/airlock/eva/glass
 	airlock_type = /obj/machinery/door/airlock/eva
 
-
 /obj/structure/door_assembly/door_assembly_service
 	icon = 'modular_bandastation/aesthetics/airlocks/icons/station/service.dmi'
 	base_name = "service airlock"
