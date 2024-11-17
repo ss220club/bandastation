@@ -33113,10 +33113,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron/dark,
 /area/station/ai_monitored/security/armory)
-"iOr" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/closed/wall,
-/area/station/maintenance/port/aft)
 "iOw" = (
 /obj/machinery/door/airlock/maintenance{
 	name = "Maintenance"
@@ -65657,11 +65653,6 @@
 /obj/machinery/ntnet_relay,
 /turf/open/floor/circuit/telecomms/mainframe,
 /area/station/tcommsat/server)
-"rxb" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/closed/wall,
-/area/station/maintenance/port/aft)
 "rxh" = (
 /obj/structure/cable,
 /obj/machinery/power/apc/auto_name/directional/east,
@@ -177474,7 +177465,7 @@ coz
 mKG
 gnv
 pYY
-rxb
+oXc
 oAG
 oXc
 oXc
@@ -177988,7 +177979,7 @@ oXc
 smf
 prA
 yaS
-iOr
+oXc
 bfw
 emi
 oXc
