@@ -764,6 +764,15 @@ instrumental = "голограммой"
 prepositional = "голограмме"
 gender = "female"
 
+["box"]
+nominative = "коробка"
+genitive = "коробки"
+dative = "коробке"
+accusative = "коробку"
+instrumental = "коробкой"
+prepositional = "коробке"
+gender = "female"
+
 # MARK: Mobs. Uncategorized
 
 # MARK: Mobs. Aliens
@@ -1500,6 +1509,15 @@ instrumental = "телескопической дубинкой"
 prepositional = "телескопической дубинке"
 gender = "female"
 
+["baseball bat"]
+nominative = "бейсбольная бита"
+genitive = "бейсбольной биты"
+dative = "бейсбольной бите"
+accusative = "бейсбольную биту"
+instrumental = "бейсбольной битой"
+prepositional = "бейсбольной бите"
+gender = "female"
+
 # MARK: Security
 ["handcuffs"]
 nominative = "наручники"
@@ -1526,6 +1544,15 @@ dative = "светошумовой гранате"
 accusative = "светошумовую гранату"
 instrumental = "светошумовой гранатой"
 prepositional = "светошумовой гранате"
+gender = "female"
+
+["donut box"]
+nominative = "коробка пончиков"
+genitive = "коробки пончиков"
+dative = "коробке пончиков"
+accusative = "коробку пончиков"
+instrumental = "коробкой пончиков"
+prepositional = "коробке пончиков"
 gender = "female"
 
 # MARK: Kitchen
@@ -1983,6 +2010,24 @@ instrumental = "смешным экстренным кислородным ба�
 prepositional = "смешном экстренном кислородном баллоне"
 gender = "male"
 
+["AI display"]
+nominative = "дисплей ИИ"
+genitive = "дисплея ИИ"
+dative = "дисплею ИИ"
+accusative = "дисплей ИИ"
+instrumental = "дисплеем ИИ"
+prepositional = "дисплее ИИ"
+gender = "male"
+
+["mannequin"]
+nominative = "манекен"
+genitive = "манекена"
+dative = "манекену"
+accusative = "манекен"
+instrumental = "манекеном"
+prepositional = "манекене"
+gender = "male"
+
 # MARK: Burocracy and Art
 ["folder"]
 nominative = "папка"
@@ -2001,6 +2046,24 @@ accusative = "ручку"
 instrumental = "ручкой"
 prepositional = "ручке"
 gender = "female"
+
+["desk lamp"]
+nominative = "настольная лампа"
+genitive = "настольной лампы"
+dative = "настольной лампе"
+accusative = "настольную лампу"
+instrumental = "настольной лампой"
+prepositional = "настольной лампе"
+gender = "female"
+
+["camera"]
+nominative = "камера"
+genitive = "камеры"
+dative = "камере"
+accusative = "камеру"
+instrumental = "камерой"
+prepositional = "камере"
+gernder = "female"
 
 # MARK: Janitor
 ["galoshes"]
