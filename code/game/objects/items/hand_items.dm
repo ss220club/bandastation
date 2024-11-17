@@ -486,7 +486,7 @@
 		kiss_type = /obj/projectile/kiss/chef
 
 	var/obj/projectile/blown_kiss = new kiss_type(get_turf(user))
-	user.visible_message("<b>[user]</b> blows \a [blown_kiss] at [target]!", span_notice("You blow \a [blown_kiss] at [target]!"))
+	user.visible_message("<b>[capitalize(user.declent_ru(NOMINATIVE))]</b> отправляет [blown_kiss.declent_ru(ACCUSATIVE)] [target.declent_ru(DATIVE)]!", span_notice("Вы отправляете [blown_kiss.declent_ru(ACCUSATIVE)] [target.declent_ru(DATIVE)]!"))
 
 	//Shooting Code:
 	blown_kiss.original = target
