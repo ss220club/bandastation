@@ -14,6 +14,8 @@
 		return
 	if(radio_freq == FREQ_ENTERTAINMENT)
 		return
+	if(findtext_char(raw_message, "*")) // raw_message's change in ..() doesn't change its value here...
+		return
 	speaker.cast_tts(src, raw_message, effect = radio_freq ? /datum/singleton/sound_effect/radio : null)
 
 /mob/dead/observer/Hear(message, atom/movable/speaker, datum/language/message_language, raw_message, radio_freq, list/spans, list/message_mods, message_range)
@@ -21,6 +23,8 @@
 	if(!. || (length(message_mods) && message_mods[MODE_CUSTOM_SAY_EMOTE] && message_mods[MODE_CUSTOM_SAY_ERASE_INPUT]))
 		return
 	if(radio_freq == FREQ_ENTERTAINMENT)
+		return
+	if(findtext_char(raw_message, "*")) // raw_message's change in ..() doesn't change its value here...
 		return
 	speaker.cast_tts(src, raw_message, effect = radio_freq ? /datum/singleton/sound_effect/radio : null)
 
