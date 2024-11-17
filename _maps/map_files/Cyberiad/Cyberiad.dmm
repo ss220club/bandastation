@@ -22141,11 +22141,18 @@
 /obj/machinery/button/door{
 	id = "bridge blast";
 	name = "Bridge Blast Door Control";
-	pixel_x = 32;
+	pixel_x = 26;
 	pixel_y = -2;
 	req_access = list("command")
 	},
 /obj/structure/cable,
+/obj/machinery/button/door{
+	id = "bridge windows";
+	name = "Bridge Windows Control";
+	pixel_x = 38;
+	pixel_y = -2;
+	req_access = list("command")
+	},
 /turf/open/floor/iron,
 /area/station/command/bridge)
 "fOE" = (
