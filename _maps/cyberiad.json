@@ -12,7 +12,7 @@
 	"traits": [
 		{
 			"Linkage": "Cross"
-		},		
+		},
 		{
 			"Baseturf": "/turf/open/openspace",
 			"Linkage": "Cross"
