@@ -486,7 +486,7 @@
 		kiss_type = /obj/projectile/kiss/chef
 
 	var/obj/projectile/blown_kiss = new kiss_type(get_turf(user))
-	user.visible_message("<b>[user]</b> blows \a [blown_kiss] at [target]!", span_notice("You blow \a [blown_kiss] at [target]!"))
+	user.visible_message("<b>[capitalize(user.declent_ru(NOMINATIVE))]</b> отправляет [blown_kiss.declent_ru(ACCUSATIVE)] [target.declent_ru(DATIVE)]!", span_notice("Вы отправляете [blown_kiss.declent_ru(ACCUSATIVE)] [target.declent_ru(DATIVE)]!"))
 
 	//Shooting Code:
 	blown_kiss.original = target
@@ -580,7 +580,7 @@
 /obj/projectile/kiss/proc/harmless_on_hit(mob/living/living_target)
 	playsound(get_turf(living_target), hitsound, 100, TRUE)
 	if(!suppressed)  // direct
-		living_target.visible_message(span_danger("[living_target] is hit by \a [src]."), span_userdanger("You're hit by \a [src]!"), vision_distance=COMBAT_MESSAGE_RANGE)
+		living_target.visible_message(span_danger("[capitalize(declent_ru(NOMINATIVE))] попадает по [living_target.declent_ru(DATIVE)]."), span_userdanger("[capitalize(declent_ru(NOMINATIVE))] попадает по вам!"), vision_distance=COMBAT_MESSAGE_RANGE)
 
 	living_target.add_mob_memory(/datum/memory/kissed, deuteragonist = firer)
 	living_target.add_mood_event("kiss", /datum/mood_event/kiss, firer, suppressed)
