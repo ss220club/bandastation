@@ -324,3 +324,53 @@
 		return FALSE
 	var/pref = preferences.read_preference(/datum/preference/choiced/tail_vulpkanin)
 	return (pref == "Default" || pref == "Bushy" || pref == "Straight Bushy") && preferences.read_preference(/datum/preference/choiced/vulpkanin_tail_markings) != "None"
+
+// // LEGS
+
+// /datum/preference/choiced/vulpkanin_legs
+// 	savefile_key = "feature_vulpkanin_legs"
+// 	savefile_identifier = PREFERENCE_CHARACTER
+// 	category = PREFERENCE_CATEGORY_SECONDARY_FEATURES
+
+// /datum/preference/choiced/vulpkanin_legs/init_possible_values()
+// 	return list(NORMAL_LEGS, DIGITIGRADE_LEGS)
+
+// /datum/preference/choiced/vulpkanin_legs/apply_to_human(mob/living/carbon/human/target, value)
+// 	target.dna.features["legs"] = value
+// 	if(!isdummy(target) || target.dna.species.digitigrade_customization == DIGITIGRADE_NEVER)
+// 		return
+
+// 	var/list/correct_legs = target.dna.species.bodypart_overrides.Copy() & list(BODY_ZONE_R_LEG, BODY_ZONE_L_LEG)
+
+// 	if(value == DIGITIGRADE_LEGS)
+// 		correct_legs[BODY_ZONE_R_LEG] = /obj/item/bodypart/leg/right/vulpkanin/digitigrade
+// 		correct_legs[BODY_ZONE_L_LEG] = /obj/item/bodypart/leg/left/vulpkanin/digitigrade
+
+// 	for(var/obj/item/bodypart/old_part as anything in target.bodyparts)
+// 		if(old_part.change_exempt_flags & BP_BLOCK_CHANGE_SPECIES)
+// 			continue
+
+// 		var/path = correct_legs[old_part.body_zone]
+// 		if(!path)
+// 			continue
+// 		var/obj/item/bodypart/new_part = new path()
+// 		new_part.replace_limb(target, TRUE)
+// 		new_part.update_limb(is_creating = TRUE)
+// 		qdel(old_part)
+
+// /datum/preference/choiced/vulpkanin_legs/is_accessible(datum/preferences/preferences)
+// 	if(!..())
+// 		return FALSE
+// 	var/datum/species/species_type = preferences.read_preference(/datum/preference/choiced/species)
+// 	return initial(species_type.digitigrade_customization) == DIGITIGRADE_OPTIONAL
+
+
+// /datum/preference/choiced/vulpkanin_legs/is_accessible(datum/preferences/preferences)
+// 	. = ..()
+
+// 	if(!.)
+// 		return
+
+// 	var/datum/species/species_type = preferences.read_preference(/datum/preference/choiced/species)
+
+// 	return initial(species_type.digitigrade_customization) & DIGITIGRADE_OPTIONAL

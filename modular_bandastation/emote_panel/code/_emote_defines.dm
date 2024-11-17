@@ -69,6 +69,7 @@
 #define EMOTE_HUMAN_SIGNAL 			"Показать пальцы"
 #define EMOTE_HUMAN_SHRUG 			"Пожать плечами"
 #define EMOTE_HUMAN_SNIFF 			"Шмыгать носом"
+#define EMOTE_HUMAN_SNIFFLE 		"Нюхать"
 #define EMOTE_HUMAN_JOHNNY 			"Курить стильно"
 #define EMOTE_HUMAN_SNEEZE 			"Чихнуть"
 #define EMOTE_HUMAN_SLAP 			"Дать пощёчину"

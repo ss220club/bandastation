@@ -45,9 +45,9 @@
 	if(get_dist(owner, target) > 1)
 		return FALSE
 	if(ishuman(target))
-		owner.emote("sniff", message = target.name, intentional = TRUE)
+		owner.emote("sniffle", message = target.name, intentional = TRUE)
 	else
-		owner.emote("sniff")
+		owner.emote("sniffle")
 	if(HAS_TRAIT(owner, TRAIT_ANOSMIA))
 		return TRUE
 
