@@ -8,13 +8,6 @@
 	},
 /turf/open/floor/iron/grimy,
 /area/station/security/detectives_office)
-"b" = (
-/obj/effect/landmark/event_spawn,
-/obj/structure/cable,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/turf/open/floor/iron/grimy,
-/area/station/security/detectives_office)
 "c" = (
 /obj/structure/sign/calendar/directional/east,
 /obj/structure/table/wood,
@@ -23,6 +16,7 @@
 	pixel_y = 7
 	},
 /obj/item/taperecorder,
+/obj/item/pen,
 /turf/open/floor/carpet,
 /area/station/security/detectives_office)
 "d" = (
@@ -77,13 +71,8 @@
 /obj/structure/sign/poster/official/dick_gum/directional/south,
 /turf/open/floor/iron/grimy,
 /area/station/security/detectives_office)
-"v" = (
-/obj/structure/cable,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/turf/open/floor/iron/grimy,
-/area/station/security/detectives_office)
 "x" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
+/obj/effect/landmark/event_spawn,
 /turf/open/floor/iron/grimy,
 /area/station/security/detectives_office)
 "z" = (
@@ -111,6 +100,7 @@
 /obj/structure/chair/stool{
 	dir = 4
 	},
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron/grimy,
 /area/station/security/detectives_office)
 "J" = (
@@ -120,6 +110,11 @@
 "M" = (
 /obj/structure/filingcabinet,
 /obj/structure/filingcabinet,
+/obj/machinery/camera{
+	dir = 9;
+	network = list("ss13","Security");
+	c_tag = "Security - Detective's Office"
+	},
 /turf/open/floor/iron/grimy,
 /area/station/security/detectives_office)
 "N" = (
@@ -175,12 +170,7 @@
 "X" = (
 /obj/structure/cable,
 /obj/machinery/light/warm/directional/north,
-/obj/machinery/firealarm/directional/north,
-/obj/machinery/camera{
-	dir = 9;
-	network = list("ss13","Security");
-	c_tag = "Security - Detective's Office"
-	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
 /turf/open/floor/iron/grimy,
 /area/station/security/detectives_office)
 "Y" = (
@@ -205,7 +195,7 @@ d
 (2,1,1) = {"
 P
 C
-b
+k
 a
 "}
 (3,1,1) = {"
@@ -217,7 +207,7 @@ u
 (4,1,1) = {"
 X
 I
-v
+k
 Y
 "}
 (5,1,1) = {"
