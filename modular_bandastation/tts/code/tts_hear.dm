@@ -14,7 +14,9 @@
 		return
 	if(radio_freq == FREQ_ENTERTAINMENT)
 		return
-	if(findtext_char(raw_message, "*")) // raw_message's change in ..() doesn't change its value here...
+	// Copypasted check from Hear where raw_message gets stars
+	var/dist = get_dist(speaker, src) - message_range
+	if(dist > 0 && dist <= EAVESDROP_EXTRA_RANGE && !HAS_TRAIT(src, TRAIT_GOOD_HEARING) && !isobserver(src))
 		return
 	speaker.cast_tts(src, raw_message, effect = radio_freq ? /datum/singleton/sound_effect/radio : null)
 
@@ -23,8 +25,6 @@
 	if(!. || (length(message_mods) && message_mods[MODE_CUSTOM_SAY_EMOTE] && message_mods[MODE_CUSTOM_SAY_ERASE_INPUT]))
 		return
 	if(radio_freq == FREQ_ENTERTAINMENT)
-		return
-	if(findtext_char(raw_message, "*")) // raw_message's change in ..() doesn't change its value here...
 		return
 	speaker.cast_tts(src, raw_message, effect = radio_freq ? /datum/singleton/sound_effect/radio : null)
 
