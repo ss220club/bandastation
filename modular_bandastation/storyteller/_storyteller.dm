@@ -1,4 +1,4 @@
-/datum/modpack/jukebox
+/datum/modpack/storyteller
 	name = "Storyteller mode"
 	desc = "Адаптация режиме сторителлера для Bandastation."
-	author = "Хто-то"
+	author = "Bubberstation, KageIIte"

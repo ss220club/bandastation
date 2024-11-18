@@ -1,5 +1,4 @@
-// #define RANDOM_EVENT_ADMIN_INTERVENTION_TIME (10 SECONDS)
-#define RANDOM_EVENT_ADMIN_INTERVENTION_TIME (2 MINUTES) // BANDASTATION EDIT CHANGE - STORYTELLER (взято с буббера как настройка скайрата, возможно стоит снести именно это изменение?)
+#define RANDOM_EVENT_ADMIN_INTERVENTION_TIME (2 MINUTES) // BANDASTATION EDIT CHANGE - STORYTELLER. Original: 10 SECONDS
 
 //this singleton datum is used by the events controller to dictate how it selects events
 /datum/round_event_control
@@ -75,9 +74,11 @@
 	SHOULD_CALL_PARENT(TRUE)
 	if(occurrences >= max_occurrences)
 		return FALSE
-	//if(earliest_start >= world.time-SSticker.round_start_time) // BANDASTATION EDIT - STORYTELLER
-	if(!roundstart && earliest_start >= world.time-SSticker.round_start_time ) // BANDASTATION EDIT: Roundstart checks added
+	// BANDASTATION EDIT START - STORYTELLER
+	//if(earliest_start >= world.time-SSticker.round_start_time)
+	if(!roundstart && earliest_start >= world.time-SSticker.round_start_time )
 		return FALSE
+	// BANDASTATION EDIT END
 	if(!allow_magic && wizardevent != SSevents.wizardmode)
 		return FALSE
 	if(players_amt < min_players)
@@ -104,8 +105,8 @@
 	triggering = TRUE
 
 	// We sleep HERE, in pre-event setup (because there's no sense doing it in run_event() since the event is already running!) for the given amount of time to make an admin has enough time to cancel an event un-fitting of the present round or at least reroll it.
-	//message_admins("Random Event triggering in [DisplayTimeText(RANDOM_EVENT_ADMIN_INTERVENTION_TIME)]: [name]. (<a href='?src=[REF(src)];cancel=1'>CANCEL</a>) (<a href='?src=[REF(src)];different_event=1'>SOMETHING ELSE</a>)") // BANDASTATION EDIT - STORYTELLER
-	// BANDASTATION EDIT START - Only delay on roundstart
+	// BANDASTATION EDIT START - STORYTELLER
+	//message_admins("Random Event triggering in [DisplayTimeText(RANDOM_EVENT_ADMIN_INTERVENTION_TIME)]: [name]. (<a href='?src=[REF(src)];cancel=1'>CANCEL</a>) (<a href='?src=[REF(src)];different_event=1'>SOMETHING ELSE</a>)")
 	if(SSticker.HasRoundStarted())
 		message_admins("<font color='[COLOR_ADMIN_PINK]'>Random Event triggering in [DisplayTimeText(RANDOM_EVENT_ADMIN_INTERVENTION_TIME)]: [name]. (\
 			<a href='?src=[REF(src)];cancel=1'>CANCEL</a> | \

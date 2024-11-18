@@ -596,7 +596,7 @@ SUBSYSTEM_DEF(gamemode)
 
 /// Loads json event config values from events.txt
 /datum/controller/subsystem/gamemode/proc/load_event_config_vars()
-	var/json_file = file("[global.config.directory]/events.json")
+	var/json_file = file("[global.config.directory]/bandastation/events.json")
 	if(!fexists(json_file))
 		return
 	var/list/decoded = json_decode(file2text(json_file))

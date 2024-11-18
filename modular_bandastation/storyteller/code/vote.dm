@@ -1,4 +1,5 @@
-/datum/vote/var/has_desc = FALSE
+/datum/vote/
+	var/has_desc = FALSE
 
 /datum/vote/proc/return_desc(vote_name)
 	return ""
@@ -9,7 +10,6 @@
 	has_desc = TRUE
 	count_method = VOTE_COUNT_METHOD_MULTI
 	winner_method = VOTE_WINNER_METHOD_SIMPLE
-	vote_reminder = TRUE
 
 /datum/vote/storyteller/New()
 	. = ..()

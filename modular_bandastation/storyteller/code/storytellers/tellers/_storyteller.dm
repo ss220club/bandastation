@@ -14,7 +14,7 @@
 		EVENT_TRACK_MODERATE = 1,
 		EVENT_TRACK_MAJOR = 1,
 		EVENT_TRACK_CREWSET = 1,
-		EVENT_TRACK_GHOSTSET = 1
+		EVENT_TRACK_GHOSTSET = 1,
 		)
 	/// The datum containing track size data
 	var/datum/storyteller_data/tracks/track_data = /datum/storyteller_data/tracks
@@ -54,19 +54,17 @@
 
 /// Add points to all tracks while respecting the multipliers.
 /datum/storyteller/proc/add_points(delta_time)
-	var/datum/controller/subsystem/gamemode/mode = SSgamemode
-	for(var/track in mode.event_track_points)
+	for(var/track in SSgamemode.event_track_points)
 		var/point_gain = delta_time
-		mode.event_track_points[track] += point_gain
-		mode.last_point_gains[track] = point_gain
+		SSgamemode.event_track_points[track] += point_gain
+		SSgamemode.last_point_gains[track] = point_gain
 
 /// Goes through every track of the gamemode and checks if it passes a threshold to buy an event, if does, buys one.
 /datum/storyteller/proc/handle_tracks()
 	. = FALSE //Has return value for the roundstart loop
-	var/datum/controller/subsystem/gamemode/mode = SSgamemode
-	for(var/track in mode.event_track_points)
-		var/points = mode.event_track_points[track]
-		if(points >= mode.point_thresholds[track] && find_and_buy_event_from_track(track))
+	for(var/track in SSgamemode.event_track_points)
+		var/points = SSgamemode.event_track_points[track]
+		if(points >= SSgamemode.point_thresholds[track] && find_and_buy_event_from_track(track))
 			. = TRUE
 
 /// Find and buy a valid event from a track.

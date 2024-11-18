@@ -233,8 +233,6 @@ SUBSYSTEM_DEF(ticker)
 	CHECK_TICK
 	//Configure mode and assign player to antagonists
 	var/can_continue = FALSE
-
-	//	can_continue = SSdynamic.pre_setup() //Choose antagonists // BANDASTATION EDIT - STORYTELLER (note: maybe disable)
 	// BANDASTATION EDIT BEGIN - STORYTELLER
 	SSgamemode.init_storyteller()
 	can_continue = SSgamemode.pre_setup()
@@ -306,7 +304,6 @@ SUBSYSTEM_DEF(ticker)
 /datum/controller/subsystem/ticker/proc/PostSetup()
 	set waitfor = FALSE
 	SSdynamic.post_setup()
-	SSgamemode.post_setup() // BANDASTATION EDIT - Storyteller
 	GLOB.start_state = new /datum/station_state()
 	GLOB.start_state.count()
 
