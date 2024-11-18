@@ -46,6 +46,7 @@
 #define GAMEMODE_PANEL_VARIABLES "Variables"
 
 /// Reused for multipliers of the thresholds
+#define STORYTELLER_MAX_SEC_BASE_MULT 1.5
 #define MUNDANE_POINT_THRESHOLD 1
 #define MODERATE_POINT_THRESHOLD 1
 #define MAJOR_POINT_THRESHOLD 1
