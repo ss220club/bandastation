@@ -42,7 +42,8 @@
 	var/population_max
 	/// The antag divisor, the higher it is the lower the antag cap gets. Basically means "for every antag_divisor crew, spawn 1 antag".
 	var/antag_divisor = 8
-
+	/// Указывает множитель, который используется для максимального количества антагов относительно активного состава СБ, умноженного на этот множитель
+	var/max_sec_mult = 1
 	/// Two tellers of the same intensity group can't run in 2 consecutive rounds
 	var/storyteller_type = STORYTELLER_TYPE_ALWAYS_AVAILABLE
 
@@ -108,18 +109,17 @@
 
 /// Find and buy a valid event from a track.
 /datum/storyteller/proc/buy_event(datum/round_event_control/bought_event, track)
-	var/datum/controller/subsystem/gamemode/mode = SSgamemode
 	// Perhaps use some bell curve instead of a flat variance?
-	var/total_cost = bought_event.cost * mode.point_thresholds[track]
+	var/total_cost = bought_event.cost * SSgamemode.point_thresholds[track]
 	if(!bought_event.roundstart)
 		total_cost *= (1 - (rand(0, cost_variance) / 100)) //Apply cost variance if not roundstart event
-	mode.event_track_points[track] = max(0, mode.event_track_points[track] - total_cost)
+	SSgamemode.event_track_points[track] = max(0, SSgamemode.event_track_points[track] - total_cost)
 	message_admins("Storyteller purchased and triggered [bought_event] event, on [track] track, for [total_cost] cost.")
 	log_admin("Storyteller purchased and triggered [bought_event] event, on [track] track, for [total_cost] cost.")
 	if(bought_event.roundstart)
-		mode.TriggerEvent(bought_event)
+		SSgamemode.TriggerEvent(bought_event)
 	else
-		mode.schedule_event(bought_event, (rand(3, 4) MINUTES), total_cost)
+		SSgamemode.schedule_event(bought_event, (rand(3, 4) MINUTES), total_cost)
 
 /// Calculates the weights of the events from a passed track.
 /datum/storyteller/proc/calculate_weights(track)

@@ -207,11 +207,11 @@ SUBSYSTEM_DEF(gamemode)
 		return 0
 	if(!storyteller.antag_divisor)
 		return 0
-	return round(max(min(get_correct_popcount() / storyteller.antag_divisor + sec_crew ,sec_crew * 1.5),ANTAG_CAP_FLAT))
+	return round(clamp(get_correct_popcount() / storyteller.antag_divisor + sec_crew, ANTAG_CAP_FLAT, sec_crew * storyteller.max_sec_mult))
 
 /// Whether events can inject more antagonists into the round
 /datum/controller/subsystem/gamemode/proc/can_inject_antags()
-	return (get_antag_cap() > length(GLOB.current_living_antags))
+	return get_antag_cap() > length(GLOB.current_living_antags)
 
 /// Gets candidates for antagonist roles.
 
@@ -699,6 +699,7 @@ SUBSYSTEM_DEF(gamemode)
 	storyteller = storytellers[passed_type]
 
 	var/datum/storyteller_data/tracks/track_data = storyteller.track_data
+	storyteller.max_sec_mult = storyteller.max_sec_mult * CONFIG_GET(number/max_sec_mult)
 	point_thresholds[EVENT_TRACK_MUNDANE] = track_data.threshold_mundane * CONFIG_GET(number/mundane_point_threshold)
 	point_thresholds[EVENT_TRACK_MODERATE] = track_data.threshold_moderate * CONFIG_GET(number/moderate_point_threshold)
 	point_thresholds[EVENT_TRACK_MAJOR] = track_data.threshold_major * CONFIG_GET(number/major_point_threshold)
@@ -764,8 +765,8 @@ SUBSYSTEM_DEF(gamemode)
 				even = !even
 				var/background_cl = even ? "#17191C" : "#23273C"
 				var/lower = event_track_points[track]
-				var/upper = point_thresholds[track] == 0 ? 1000000 : point_thresholds[track] // КРАШИТСЯ ЗДЕСЬ - CREWSET - трэк присылает 0 (временый фикс, 100000 это значит будет низкая вероятность)
-				var/percent = round((lower/upper)*100) // КРАШИТСЯ ЗДЕСЬ - CREWSET - трэк присылает 0 и делит на
+				var/upper = point_thresholds[track]
+				var/percent = round((lower/upper)*100)
 				var/next = 0
 				var/last_points = last_point_gains[track]
 				if(last_points)

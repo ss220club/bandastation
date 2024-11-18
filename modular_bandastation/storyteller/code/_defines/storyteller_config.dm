@@ -68,6 +68,12 @@
 	min_val = 0
 
 // Point Thresholds
+/datum/config_entry/number/max_sec_mult
+	config_entry_value = STORYTELLER_MAX_SEC_BASE_MULT
+	integer = FALSE
+	min_val = 0
+
+// Point Thresholds
 /datum/config_entry/number/mundane_point_threshold
 	config_entry_value = MUNDANE_POINT_THRESHOLD
 	integer = TRUE

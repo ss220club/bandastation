@@ -42,6 +42,9 @@ MAJOR_MIN_POP 20
 CREWSET_MIN_POP 0
 GHOSTSET_MIN_POP 0
 
+## Basic multiplayer for storytellers
+STORYTELLER_MAX_SEC_BASE_MULT 1.5
+
 ## Point threshold multipliers for tracks to run events. The lesser the more frequent events will be.
 MUNDANE_POINT_THRESHOLD 1
 MODERATE_POINT_THRESHOLD 1
