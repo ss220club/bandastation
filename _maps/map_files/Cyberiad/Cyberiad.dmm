@@ -630,12 +630,12 @@
 /turf/open/floor/iron,
 /area/station/maintenance/department/electrical/ghetto)
 "aiv" = (
-/obj/machinery/atmospherics/components/binary/pump/off/yellow/visible{
-	dir = 1;
-	name = "O2 To Pure"
-	},
 /obj/effect/turf_decal/tile/blue/opposingcorners{
 	dir = 1
+	},
+/obj/machinery/atmospherics/components/binary/pump/off/yellow/visible{
+	dir = 1;
+	name = "Air to Pure"
 	},
 /turf/open/floor/iron/white/corner,
 /area/station/engineering/atmos)
@@ -30543,11 +30543,11 @@
 /turf/open/floor/iron/stairs/right,
 /area/station/hallway/primary/central/fore)
 "igF" = (
+/obj/effect/turf_decal/tile/red/anticorner/contrasted,
 /obj/machinery/atmospherics/components/binary/pump/off/yellow/visible{
 	dir = 1;
-	name = "O2 To Pure"
+	name = "N2 to Pure"
 	},
-/obj/effect/turf_decal/tile/red/anticorner/contrasted,
 /turf/open/floor/iron,
 /area/station/engineering/atmos)
 "igH" = (
@@ -31620,14 +31620,14 @@
 /turf/open/floor/iron,
 /area/station/engineering/engine_smes)
 "iux" = (
-/obj/machinery/atmospherics/components/binary/pump/off/yellow/visible{
-	dir = 1;
-	name = "O2 To Pure"
-	},
 /obj/machinery/atmospherics/pipe/bridge_pipe/cyan/visible{
 	dir = 4
 	},
 /obj/effect/turf_decal/tile/yellow/anticorner/contrasted,
+/obj/machinery/atmospherics/components/binary/pump/off/yellow/visible{
+	dir = 1;
+	name = "CO2 to Pure"
+	},
 /turf/open/floor/iron,
 /area/station/engineering/atmos)
 "iuy" = (
@@ -39369,11 +39369,11 @@
 /turf/open/floor/iron,
 /area/station/cargo/storage)
 "kys" = (
+/obj/effect/turf_decal/tile/red,
 /obj/machinery/atmospherics/components/binary/pump/off/yellow/visible{
 	dir = 1;
-	name = "O2 To Pure"
+	name = "N2O to Pure"
 	},
-/obj/effect/turf_decal/tile/red,
 /turf/open/floor/iron/cafeteria{
 	dir = 1
 	},
@@ -66465,16 +66465,16 @@
 /turf/open/floor/plating,
 /area/station/maintenance/starboard/upper)
 "rKx" = (
-/obj/machinery/atmospherics/components/binary/pump/off/yellow/visible{
-	dir = 1;
-	name = "O2 To Pure"
-	},
 /obj/machinery/atmospherics/pipe/bridge_pipe/cyan/visible{
 	dir = 4
 	},
 /obj/effect/turf_decal/tile/purple/anticorner/contrasted,
 /obj/effect/turf_decal/stripes/line{
 	dir = 6
+	},
+/obj/machinery/atmospherics/components/binary/pump/off/yellow/visible{
+	dir = 1;
+	name = "Plasma to Pure"
 	},
 /turf/open/floor/iron,
 /area/station/engineering/atmos)
