@@ -50,14 +50,6 @@ accusative = "камеру наблюдения с датчиком движен
 instrumental = "камерой наблюдения с датчиком движения"
 prepositional = "камере наблюдения с датчиком движения"
 
-["Barbeque grill"]
-accusative = "грилль для барбекю"
-dative = "гриллю для барбекю"
-genitive = "грилля для барбекю"
-instrumental = "гриллем для барбекю"
-nominative = "грилль для барбекю"
-prepositional = "грилле для барбекю"
-
 ["Confessional intercom"]
 accusative = "интерком исповедания"
 dative = "интеркому исповедания"
@@ -73,14 +65,6 @@ genitive = "Иана"
 instrumental = "Ианом"
 nominative = "Иан"
 prepositional = "Иане"
-
-[adamantine]
-accusative = "адамантин"
-dative = "адамантину"
-genitive = "адамантина"
-instrumental = "адамантином"
-nominative = "адамантин"
-prepositional = "адамантине"
 
 ["air alarm"]
 accusative = "воздушную сигнализацию"
@@ -105,30 +89,6 @@ genitive = "локального контроллера питания"
 instrumental = "локальным контроллером питания"
 nominative = "локальный контроллер питания"
 prepositional = "локальном контроллере питания"
-
-[bananium]
-accusative = "бананиум"
-dative = "бананиуму"
-genitive = "бананиума"
-instrumental = "бананиумом"
-nominative = "бананиум"
-prepositional = "бананиуме"
-
-["beer keg"]
-accusative = "кегу пива"
-dative = "кеге пива"
-genitive = "кеги пива"
-instrumental = "кегой пива"
-nominative = "кега пива"
-prepositional = "кеге пива"
-
-["blank coffee cartridge"]
-accusative = "пустой кофе-картридж"
-dative = "пустому кофе-картриджу"
-genitive = "пустого кофе-картриджа"
-instrumental = "пустым кофе-картриджем"
-nominative = "пустой кофе-картридж"
-prepositional = "пустом кофе-картридже"
 
 ["bright shard"]
 accusative = "яркий осколок"
@@ -178,46 +138,6 @@ instrumental = "чистящей гранатой"
 nominative = "чистящая граната"
 prepositional = "чистящей гранате"
 
-[coffeemaker]
-accusative = "кофемашину"
-dative = "кофемашине"
-genitive = "кофемашины"
-instrumental = "кофемашиной"
-nominative = "кофемашина"
-prepositional = "кофемашине"
-
-["coffeemaker cartridge - Botany Blend"]
-accusative = "картридж кофеварки - Botany Blend"
-dative = "картриджу кофеварки - Botany Blend"
-genitive = "картриджа кофеварки - Botany Blend"
-instrumental = "картриджем кофеварки - Botany Blend"
-nominative = "картридж кофеварки - Botany Blend"
-prepositional = "картридже кофеварки - Botany Blend"
-
-["coffeemaker cartridge - Caffè Decaffeinato"]
-accusative = "картридж кофеварки - Caffè Decaffeinato"
-dative = "картриджу кофеварки - Caffè Decaffeinato"
-genitive = "картриджа кофеварки - Caffè Decaffeinato"
-instrumental = "картриджем кофеварки - Caffè Decaffeinato"
-nominative = "картридж кофеварки - Caffè Decaffeinato"
-prepositional = "картридже кофеварки - Caffè Decaffeinato"
-
-["coffeemaker cartridge - Caffè Fantasioso"]
-accusative = "картридж кофеварки - Caffè Fantasioso"
-dative = "картриджу кофеварки - Caffè Fantasioso"
-genitive = "картриджа кофеварки - Caffè Fantasioso"
-instrumental = "картриджем кофеварки - Caffè Fantasioso"
-nominative = "картридж кофеварки - Caffè Fantasioso"
-prepositional = "картридже кофеварки - Caffè Fantasioso"
-
-["coffeemaker cartridge- Caffè Generico"]
-accusative = "картридж кофеварки - Caffè Generico"
-dative = "картриджу кофеварки - Caffè Generico"
-genitive = "картриджа кофеварки - Caffè Generico"
-instrumental = "картриджем кофеварки - Caffè Generico"
-nominative = "картридж кофеварки - Caffè Generico"
-prepositional = "картридже кофеварки - Caffè Generico"
-
 ["command intercom"]
 accusative = "интерком командования"
 dative = "интеркому командования"
@@ -242,38 +162,6 @@ instrumental = "маскировочным проектором киборга"
 nominative = "маскировочный проектор киборга"
 prepositional = "маскировочном проекторе киборга"
 
-["dark shard"]
-accusative = "темный осколок"
-dative = "темному осколку"
-genitive = "темного осколка"
-instrumental = "темным осколком"
-nominative = "темный осколок"
-prepositional = "темном осколоке"
-
-["deep fryer"]
-accusative = "фритюрницу"
-dative = "фритюрнице"
-genitive = "фритюрницы"
-instrumental = "фритюрницей"
-nominative = "фритюрница"
-prepositional = "фритюрнице"
-
-[dehydrator]
-accusative = "иссушатель"
-dative = "иссушателю"
-genitive = "иссушателя"
-instrumental = "иссушателем"
-nominative = "иссушатель"
-prepositional = "иссушателе"
-
-[diamond]
-accusative = "алмаз"
-dative = "алмазу"
-genitive = "алмаза"
-instrumental = "алмазом"
-nominative = "алмаз"
-prepositional = "алмазе"
-
 ["disk compartmentalizer"]
 accusative = "сортировщик дисков"
 dative = "сортировщику дисков"
@@ -282,14 +170,6 @@ instrumental = "сортировщиком дисков"
 nominative = "сортировщик дисков"
 prepositional = "сортировщике дисков"
 
-["double rat-kebab"]
-accusative = "двойной крышлык"
-dative = "двойному крышлыку"
-genitive = "двойного крышлыка"
-instrumental = "двойным крышлыком"
-nominative = "двойной крышлык"
-prepositional = "двойном крышлыке"
-
 ["drink showcase"]
 accusative = "витрину дла напитков"
 dative = "витрине дла напитков"
@@ -297,14 +177,6 @@ genitive = "витрины дла напитков"
 instrumental = "витриной дла напитков"
 nominative = "витрина дла напитков"
 prepositional = "витрине дла напитков"
-
-["drying rack"]
-accusative = "сушилку"
-dative = "сушилке"
-genitive = "сушилки"
-instrumental = "сушилкой"
-nominative = "сушилка"
-prepositional = "сушилке"
 
 ["engineering crate"]
 accusative = "инженерный ящик"
@@ -330,86 +202,6 @@ instrumental = "плиткой"
 nominative = "плитка"
 prepositional = "плитке"
 
-["food cart"]
-accusative = "тележку с едой"
-dative = "тележке с едой"
-genitive = "тележки с едой"
-instrumental = "тележкой с едой"
-nominative = "тележка с едой"
-prepositional = "тележке с едой"
-
-["food cart tent"]
-accusative = "палатку для тележки с едой"
-dative = "палатке для тележки с едой"
-genitive = "палатки для тележки с едой"
-instrumental = "палаткой для тележки с едой"
-nominative = "палатка для тележки с едой"
-prepositional = "палатке для тележки с едой"
-
-["food processor"]
-accusative = "комбайн"
-dative = "комбайну"
-genitive = "комбайна"
-instrumental = "комбайном"
-nominative = "комбайн"
-prepositional = "комбайне"
-
-["gas analyzer"]
-accusative = "газоанализатор"
-dative = "газоанализатору"
-genitive = "газоанализатора"
-instrumental = "газоанализатором"
-nominative = "газоанализатор"
-prepositional = "газоанализаторе"
-
-[gibber]
-accusative = "мясорубку"
-dative = "мясорубке"
-genitive = "мясорубки"
-instrumental = "мясорубкой"
-nominative = "мясорубка"
-prepositional = "мясорубке"
-
-[glass]
-accusative = "стекло"
-dative = "стеклу"
-genitive = "стекла"
-instrumental = "стеклом"
-nominative = "стекло"
-prepositional = "стекле"
-
-[gold]
-accusative = "золото"
-dative = "золоту"
-genitive = "золота"
-instrumental = "золотом"
-nominative = "золото"
-prepositional = "золоте"
-
-[griddle]
-accusative = "гридль"
-dative = "гридлю"
-genitive = "гридля"
-instrumental = "гридлем"
-nominative = "гридль"
-prepositional = "гридле"
-
-["griddle stand"]
-accusative = "столик гридля"
-dative = "столику гридля"
-genitive = "столика гридля"
-instrumental = "столиком гридля"
-nominative = "столик гридля"
-prepositional = "столике гридля"
-
-["hand drill"]
-accusative = "шуруповёрт"
-dative = "шуруповёрту"
-genitive = "шуруповёрта"
-instrumental = "шуруповёртом"
-nominative = "шуруповёрт"
-prepositional = "шуруповёрте"
-
 [helmet]
 accusative = "шлем"
 dative = "шлему"
@@ -418,22 +210,6 @@ instrumental = "шлемом"
 nominative = "шлем"
 prepositional = "шлеме"
 
-["ice cream vat"]
-accusative = "машину для мороженного"
-dative = "машине для мороженного"
-genitive = "машины для мороженного"
-instrumental = "машиной для мороженного"
-nominative = "машина для мороженного"
-prepositional = "машине для мороженного"
-
-["impressa coffeemaker"]
-accusative = "кофемашину Impressa"
-dative = "кофемашине Impressa"
-genitive = "кофемашины Impressa"
-instrumental = "кофемашиной Impressa"
-nominative = "кофемашина Impressa"
-prepositional = "кофемашине Impressa"
-
 ["intercom frame"]
 accusative = "каркас интеркома"
 dative = "каркасу интеркома"
@@ -441,14 +217,6 @@ genitive = "каркаса интеркома"
 instrumental = "каркасом интеркома"
 nominative = "каркас интеркома"
 prepositional = "каркасе интеркома"
-
-[iron]
-accusative = "железо"
-dative = "железу"
-genitive = "железа"
-instrumental = "железом"
-nominative = "железо"
-prepositional = "железе"
 
 ["kitchen sink"]
 accusative = "кухонную раковину"
@@ -466,14 +234,6 @@ instrumental = "плюшевой ящерицей"
 nominative = "плюшевая ящерица"
 prepositional = "плюшевой ящерице"
 
-["long-range gas analyzer"]
-accusative = "газоанализатор дальнего действия"
-dative = "газоанализатору дальнего действия"
-genitive = "газоанализатора дальнего действия"
-instrumental = "газоанализатором дальнего действия"
-nominative = "газоанализатор дальнего действия"
-prepositional = "газоанализаторе дальнего действия"
-
 ["mech removal tool"]
 accusative = "огромный лом"
 dative = "огромному лому"
@@ -489,14 +249,6 @@ genitive = "медицинского шприцимёта"
 instrumental = "медицинским шприцемётом"
 nominative = "медицинский шприцемёт"
 prepositional = "медицинском шприцемёте"
-
-["microwave oven"]
-accusative = "микроволновку"
-dative = "микроволновке"
-genitive = "микроволновки"
-instrumental = "микроволновкой"
-nominative = "микроволновка"
-prepositional = "микроволновке"
 
 [mist]
 accusative = "туман"
@@ -514,14 +266,6 @@ instrumental = "мофферсами"
 nominative = "мофферсы"
 prepositional = "мофферсах"
 
-["monkey recycler"]
-accusative = "переработчик обезьян"
-dative = "переработчику обезьян"
-genitive = "переработчика обезьян"
-instrumental = "переработчиком обезьян"
-nominative = "переработчик обезьян"
-prepositional = "переработчике обезьян"
-
 [mop]
 accusative = "швабру"
 dative = "швабре"
@@ -530,14 +274,6 @@ instrumental = "шваброй"
 nominative = "швабра"
 prepositional = "швабре"
 
-[mythril]
-accusative = "мифрил"
-dative = "мифрилу"
-genitive = "мифрила"
-instrumental = "мифрилом"
-nominative = "мифрил"
-prepositional = "мифриле"
-
 ["operating table"]
 accusative = "операционный стол"
 dative = "операционному столу"
@@ -545,22 +281,6 @@ genitive = "операционного стола"
 instrumental = "операционным столом"
 nominative = "операционный стол"
 prepositional = "операционном столе"
-
-[oven]
-accusative = "духовку"
-dative = "духовке"
-genitive = "духовки"
-instrumental = "духовкой"
-nominative = "духовка"
-prepositional = "духовке"
-
-["oven tray"]
-accusative = "протевень"
-dative = "протевеню"
-genitive = "протевеня"
-instrumental = "протевенем"
-nominative = "протевень"
-prepositional = "протевене"
 
 ["personal AI device"]
 accusative = "устройство ПИИ"
@@ -578,38 +298,6 @@ instrumental = "ксероксом"
 nominative = "ксерокс"
 prepositional = "ксероксе"
 
-["plant analyzer"]
-accusative = "анализатор растений"
-dative = "анализатору растений"
-genitive = "анализатора растений"
-instrumental = "анализатором растений"
-nominative = "анализатор растений"
-prepositional = "анализаторе растений"
-
-["plasma glass"]
-accusative = "плазменное стекло"
-dative = "плазменному стеклу"
-genitive = "плазменного стекла"
-instrumental = "плазменным стеклом"
-nominative = "плазменное стекло"
-prepositional = "плазменном стекле"
-
-[plasteel]
-accusative = "пласталь"
-dative = "пластали"
-genitive = "пластали"
-instrumental = "пласталью"
-nominative = "пласталь"
-prepositional = "пластали"
-
-[plastic]
-accusative = "пластик"
-dative = "пластику"
-genitive = "пластика"
-instrumental = "пластиком"
-nominative = "пластик"
-prepositional = "пластике"
-
 ["plastic potted plant"]
 accusative = "пластиковое растение"
 dative = "пластиковому растению"
@@ -617,14 +305,6 @@ genitive = "пластикового растения"
 instrumental = "пластиковым растением"
 nominative = "пластиковое растение"
 prepositional = "пластиковом растении"
-
-[plastitanium]
-accusative = "пластитан"
-dative = "пластитану"
-genitive = "пластитана"
-instrumental = "пластитаном"
-nominative = "пластитан"
-prepositional = "пластитане"
 
 [plunger]
 accusative = "вантуз"
@@ -642,22 +322,6 @@ instrumental = "комнатным растением"
 nominative = "комнатное растение"
 prepositional = "комнатном растении"
 
-["purple shard"]
-accusative = "фиолетовый осколок"
-dative = "фиолетовому осколку"
-genitive = "фиолетового осколка"
-instrumental = "фиолетовым осколком"
-nominative = "фиолетовый осколок"
-prepositional = "фиолетовом осколоке"
-
-[range]
-accusative = "духовку"
-dative = "духовке"
-genitive = "духовки"
-instrumental = "духовкой"
-nominative = "духовка"
-prepositional = "духовке"
-
 ["receive-only intercom"]
 accusative = "интерком для приема"
 dative = "интеркому для приема"
@@ -665,22 +329,6 @@ genitive = "интеркома для приема"
 instrumental = "интеркомом для приема"
 nominative = "интерком для приема"
 prepositional = "интеркоме для приема"
-
-["reinforced glass"]
-accusative = "усиленное стекло"
-dative = "усиленному стеклу"
-genitive = "усиленного стекла"
-instrumental = "усиленным стеклом"
-nominative = "усиленное стекло"
-prepositional = "усиленном стекле"
-
-["reinforced plasma glass"]
-accusative = "усиленное плазменное стекло"
-dative = "усиленному плазменному стеклу"
-genitive = "усиленного плазменного стекла"
-instrumental = "усиленным плазменным стеклом"
-nominative = "усиленное плазменное стекло"
-prepositional = "усиленном плазменном стекле"
 
 ["reinforced plunger"]
 accusative = "усиленный вантуз"
@@ -706,22 +354,6 @@ instrumental = "усиленной стеной"
 nominative = "усиленная стена"
 prepositional = "усиленной стене"
 
-[shard]
-accusative = "осколок"
-dative = "осколку"
-genitive = "осколка"
-instrumental = "осколком"
-nominative = "осколок"
-prepositional = "осколоке"
-
-[sheet]
-accusative = "лист"
-dative = "листу"
-genitive = "листа"
-instrumental = "листом"
-nominative = "лист"
-prepositional = "листу"
-
 [shower]
 accusative = "душ"
 dative = "душу"
@@ -738,110 +370,6 @@ instrumental = "каркасом душа"
 nominative = "каркас душа"
 prepositional = "каркасе душа"
 
-[silver]
-accusative = "серебро"
-dative = "серебру"
-genitive = "серебра"
-instrumental = "серебром"
-nominative = "серебро"
-prepositional = "серебре"
-
-[sink]
-accusative = "раковину"
-dative = "раковине"
-genitive = "раковины"
-instrumental = "раковиной"
-nominative = "раковина"
-prepositional = "раковине"
-
-["sink frame"]
-accusative = "каркас раковины"
-dative = "каркасу раковины"
-genitive = "каркаса раковины"
-instrumental = "каркасом раковины"
-nominative = "каркас раковины"
-prepositional = "каркасе раковины"
-
-["slime processor"]
-accusative = "переработчик слаймов"
-dative = "переработчику слаймов"
-genitive = "переработчика слаймов"
-instrumental = "переработчиком слаймов"
-nominative = "переработчик слаймов"
-prepositional = "переработчике слаймов"
-
-["smart chemical storage"]
-accusative = "умное хранилище химикатов"
-dative = "умному хранилищу химикатов"
-genitive = "умного хранилища химикатов"
-instrumental = "умным хранилищем химикатов"
-nominative = "умное хранилище химикатов"
-prepositional = "умном хранилище химикатов"
-
-["smart organ storage"]
-accusative = "умное хранилище органов"
-dative = "умному хранилищу органов"
-genitive = "умного хранилища органов"
-instrumental = "умным хранилищем органов"
-nominative = "умное хранилище органов"
-prepositional = "умном хранилище органов"
-
-["smart petri dish storage"]
-accusative = "умное хранилище чашек Петри"
-dative = "умному хранилищу чашек Петри"
-genitive = "умного хранилища чашек Петри"
-instrumental = "умным хранилищем чашек Петри"
-nominative = "умное хранилище чашек Петри"
-prepositional = "умном хранилище чашек Петри"
-
-["smart slime extract storage"]
-accusative = "умное хранилище экстрактов слаймов"
-dative = "умному хранилищу экстрактов слаймов"
-genitive = "умного хранилища экстрактов слаймов"
-instrumental = "умным хранилищем экстрактов слаймов"
-nominative = "умное хранилище экстрактов слаймов"
-prepositional = "умном хранилище экстрактов слаймов"
-
-["smart virus storage"]
-accusative = "умное хранилище вирусов"
-dative = "умному хранилищу вирусов"
-genitive = "умного хранилища вирусов"
-instrumental = "умным хранилищем вирусов"
-nominative = "умное хранилище вирусов"
-prepositional = "умном хранилище вирусов"
-
-[smartfridge]
-accusative = "умный холодильник"
-dative = "умному холодильнику"
-genitive = "умного холодильника"
-instrumental = "умным холодильником"
-nominative = "умный холодильник"
-prepositional = "умном холодильнике"
-
-["solid plasma"]
-accusative = "твёрдую плазму"
-dative = "твёрдой плазме"
-genitive = "твёрдой плазмы"
-instrumental = "твёрдой плазмой"
-nominative = "твёрдая плазма"
-prepositional = "твёрдой плазме"
-
-["soup pot"]
-accusative = "кастрюлю"
-dative = "кастрюле"
-genitive = "кастрюли"
-instrumental = "кастрюлей"
-nominative = "кастрюля"
-prepositional = "кастрюле"
-
-["spess knife"]
-accusative = "швейцарский нож"
-dative = "швейцарскому ножу"
-genitive = "швейцарского ножа"
-instrumental = "швейцарским ножом"
-nominative = "швейцарский нож"
-prepositional = "швейцарском ноже"
-
 ["station intercom"]
 accusative = "интерком станции"
 dative = "интеркому станции"
@@ -849,14 +377,6 @@ genitive = "интеркома станции"
 instrumental = "интеркомом станции"
 nominative = "интерком станции"
 prepositional = "интеркоме станции"
-
-[stove]
-accusative = "плиту"
-dative = "плите"
-genitive = "плиты"
-instrumental = "плитой"
-nominative = "плита"
-prepositional = "плите"
 
 ["syndicate intercom"]
 accusative = "интерком синдиката"
@@ -874,30 +394,6 @@ instrumental = "широкополосным интеркомом синдика
 nominative = "широкополосный интерком синдиката"
 prepositional = "широкополосном интеркоме синдиката"
 
-[titanium]
-accusative = "титан"
-dative = "титану"
-genitive = "титана"
-instrumental = "титаном"
-nominative = "титан"
-prepositional = "титане"
-
-["titanium glass"]
-accusative = "титановое стекло"
-dative = "титановому стеклу"
-genitive = "титанового стекла"
-instrumental = "титановым стеклом"
-nominative = "титановое стекло"
-prepositional = "титановом стекле"
-
-[uranium]
-accusative = "уран"
-dative = "урану"
-genitive = "урана"
-instrumental = "ураном"
-nominative = "уран"
-prepositional = "уране"
-
 [wall]
 accusative = "стену"
 dative = "стене"
@@ -905,14 +401,6 @@ genitive = "стены"
 instrumental = "стеной"
 nominative = "стена"
 prepositional = "стене"
-
-["wireless microwave oven"]
-accusative = "беспроводную микроволновку"
-dative = "беспроводной микроволновке"
-genitive = "беспроводной микроволновки"
-instrumental = "беспроводной микроволновкой"
-nominative = "беспроводная микроволновка"
-prepositional = "беспроводной микроволновке"
 
 ["briefcase"]
 nominative = "портфель"
@@ -930,15 +418,6 @@ accusative = "шов"
 instrumental = "швом"
 prepositional = "шве"
 
-["slice of"]
-nominative = "кусочек"
-genitive = "кусочка"
-dative = "кусочку"
-accusative = "кусочек"
-instrumental = "кусочком"
-prepositional = "кусочке"
-gender = "male"
-
 ["hologram"]
 nominative = "голограмма"
 genitive = "голограммы"
@@ -948,10 +427,18 @@ instrumental = "голограммой"
 prepositional = "голограмме"
 gender = "female"
 
+["box"]
+nominative = "коробка"
+genitive = "коробки"
+dative = "коробке"
+accusative = "коробку"
+instrumental = "коробкой"
+prepositional = "коробке"
+gender = "female"
+
 # MARK: Mobs. Uncategorized
 
 # MARK: Mobs. Aliens
-
 [alien]
 nominative = "чужой"
 genitive = "чужого"
@@ -1025,7 +512,6 @@ prepositional = "принцессе Чужих"
 gender = "female"
 
 # MARK: Machinery Uncategorized
-
 ["slot machine"]
 nominative = "слот-машина"
 genitive = "слот-машины"
@@ -1054,6 +540,194 @@ prepositional = "химическом раздатчике"
 gender = "male"
 
 # MARK: Materials
+[sheet]
+nominative = "лист"
+genitive = "листа"
+dative = "листу"
+accusative = "лист"
+instrumental = "листом"
+prepositional = "листу"
+gender = "male"
+
+[glass]
+nominative = "стекло"
+genitive = "стекла"
+dative = "стеклу"
+accusative = "стекло"
+instrumental = "стеклом"
+prepositional = "стекле"
+gender = "neuter"
+
+["reinforced glass"]
+nominative = "усиленное стекло"
+genitive = "усиленного стекла"
+dative = "усиленному стеклу"
+accusative = "усиленное стекло"
+instrumental = "усиленным стеклом"
+prepositional = "усиленном стекле"
+gender = "neuter"
+
+["plasma glass"]
+nominative = "плазменное стекло"
+genitive = "плазменного стекла"
+dative = "плазменному стеклу"
+accusative = "плазменное стекло"
+instrumental = "плазменным стеклом"
+prepositional = "плазменном стекле"
+gender = "neuter"
+
+["reinforced plasma glass"]
+nominative = "усиленное плазменное стекло"
+genitive = "усиленного плазменного стекла"
+dative = "усиленному плазменному стеклу"
+accusative = "усиленное плазменное стекло"
+instrumental = "усиленным плазменным стеклом"
+prepositional = "усиленном плазменном стекле"
+gender = "neuter"
+
+["titanium glass"]
+nominative = "титановое стекло"
+genitive = "титанового стекла"
+dative = "титановому стеклу"
+accusative = "титановое стекло"
+instrumental = "титановым стеклом"
+prepositional = "титановом стекле"
+gender = "neuter"
+
+[iron]
+nominative = "железо"
+genitive = "железа"
+dative = "железу"
+accusative = "железо"
+instrumental = "железом"
+prepositional = "железе"
+gender = "neuter"
+
+[plastic]
+nominative = "пластик"
+genitive = "пластика"
+dative = "пластику"
+accusative = "пластик"
+instrumental = "пластиком"
+prepositional = "пластике"
+gender = "male"
+
+[titanium]
+nominative = "титан"
+genitive = "титана"
+dative = "титану"
+accusative = "титан"
+instrumental = "титаном"
+prepositional = "титане"
+gender = "male"
+
+["solid plasma"]
+nominative = "твёрдая плазма"
+genitive = "твёрдой плазмы"
+dative = "твёрдой плазме"
+accusative = "твёрдую плазму"
+instrumental = "твёрдой плазмой"
+prepositional = "твёрдой плазме"
+gender = "female"
+
+["plasma"]
+nominative = "плазма"
+genitive = "плазмы"
+dative = "плазме"
+accusative = "плазму"
+instrumental = "плазмой"
+prepositional = "плазме"
+gender = "female"
+
+[silver]
+nominative = "серебро"
+genitive = "серебра"
+dative = "серебру"
+accusative = "серебро"
+instrumental = "серебром"
+prepositional = "серебре"
+gender = "neuter"
+
+[gold]
+nominative = "золото"
+genitive = "золота"
+dative = "золоту"
+accusative = "золото"
+instrumental = "золотом"
+prepositional = "золоте"
+gender = "neuter"
+
+[uranium]
+nominative = "уран"
+genitive = "урана"
+dative = "урану"
+accusative = "уран"
+instrumental = "ураном"
+prepositional = "уране"
+gender = "male"
+
+[diamond]
+nominative = "алмаз"
+genitive = "алмаза"
+dative = "алмазу"
+accusative = "алмаз"
+instrumental = "алмазом"
+prepositional = "алмазе"
+gender = "male"
+
+["bluespace polycrystal"]
+nominative = "блуспейс поликристал"
+genitive = "блуспейс поликристала"
+dative = "блуспейс поликристалу"
+accusative = "блуспейс поликристал"
+instrumental = "блуспейс поликристалом"
+prepositional = "блуспейс поликристале"
+gender = "male"
+
+["bluespace crystal"]
+nominative = "блуспейс кристал"
+genitive = "блуспейс кристала"
+dative = "блуспейс кристалу"
+accusative = "блуспейс кристал"
+instrumental = "блуспейс кристалом"
+prepositional = "блуспейс кристале"
+gender = "male"
+
+[plasteel]
+nominative = "пласталь"
+genitive = "пластали"
+dative = "пластали"
+accusative = "пласталь"
+instrumental = "пласталью"
+prepositional = "пластали"
+gender = "female"
+
+[plastitanium]
+nominative = "пластитан"
+genitive = "пластитана"
+dative = "пластитану"
+accusative = "пластитан"
+instrumental = "пластитаном"
+prepositional = "пластитане"
+gender = "male"
+
+[bananium]
+nominative = "бананиум"
+genitive = "бананиума"
+dative = "бананиуму"
+accusative = "бананиум"
+instrumental = "бананиумом"
+prepositional = "бананиуме"
+gender = "male"
+
+[adamantine]
+nominative = "адамантин"
+genitive = "адамантина"
+dative = "адамантину"
+accusative = "адамантин"
+instrumental = "адамантином"
+prepositional = "адамантине"
+gender = "male"
 
 ["wooden plank"]
 nominative = "деревянная доска"
@@ -1064,8 +738,61 @@ instrumental = "деревянной доской"
 prepositional = "деревянной доске"
 gender = "female"
 
-# MARK: Structures
+["wood"]
+nominative = "дерево"
+genitive = "дерева"
+dative = "дереву"
+accusative = "дерево"
+instrumental = "деревом"
+prepositional = "дереве"
+gender = "neuter"
 
+[mythril]
+nominative = "мифрил"
+genitive = "мифрила"
+dative = "мифрилу"
+accusative = "мифрил"
+instrumental = "мифрилом"
+prepositional = "мифриле"
+gender = "male"
+
+[shard]
+nominative = "осколок"
+genitive = "осколка"
+dative = "осколку"
+accusative = "осколок"
+instrumental = "осколком"
+prepositional = "осколоке"
+gender = "male"
+
+["dark shard"]
+nominative = "темный осколок"
+genitive = "темного осколка"
+dative = "темному осколку"
+accusative = "темный осколок"
+instrumental = "темным осколком"
+prepositional = "темном осколоке"
+gender = "male"
+
+["purple shard"]
+nominative = "фиолетовый осколок"
+genitive = "фиолетового осколка"
+dative = "фиолетовому осколку"
+accusative = "фиолетовый осколок"
+instrumental = "фиолетовым осколком"
+prepositional = "фиолетовом осколоке"
+gender = "male"
+
+["alien alloy"]
+nominative = "инопланетный сплав"
+genitive = "инопланетного сплава"
+dative = "инопланетному сплаву"
+accusative = "инопланетный сплав"
+instrumental = "инопланетным сплавом"
+prepositional = "инопланетном сплаве"
+gender = "male"
+
+# MARK: Structures
 ["stool"]
 nominative = "табурет"
 genitive = "табурета"
@@ -1093,8 +820,16 @@ instrumental = "баком с топливом"
 prepositional = "баке с топливом"
 gender = "male"
 
-# MARK: Weapons
+["girder"]
+nominative = "балка"
+genitive = "балки"
+dative = "балке"
+accusative = "балку"
+instrumental = "балкой"
+prepositional = "балке"
+gender = "female"
 
+# MARK: Weapons
 ["temperature gun"]
 nominative = "температурная винтовка"
 genitive = "температурной винтовки"
@@ -1437,6 +1172,98 @@ instrumental = "телескопической дубинкой"
 prepositional = "телескопической дубинке"
 gender = "female"
 
+["baseball bat"]
+nominative = "бейсбольная бита"
+genitive = "бейсбольной биты"
+dative = "бейсбольной бите"
+accusative = "бейсбольную биту"
+instrumental = "бейсбольной битой"
+prepositional = "бейсбольной бите"
+gender = "female"
+
+# MARK: Projectiles
+["kiss"]
+nominative = "поцелуй"
+genitive = "поцелуя"
+dative = "поцелую"
+accusative = "поцелуй"
+instrumental = "поцелуем"
+prepositional = "поцелуе"
+gender = "male"
+
+["kiss of death"]
+nominative = "поцелуй смерти"
+genitive = "поцелуя смерти"
+dative = "поцелую смерти"
+accusative = "поцелуй смерти"
+instrumental = "поцелуем смерти"
+prepositional = "поцелуе смерти"
+gender = "male"
+
+["syndie kiss"]
+nominative = "поцелуй синди"
+genitive = "поцелуя синди"
+dative = "поцелую синди"
+accusative = "поцелуй синди"
+instrumental = "поцелуем синди"
+prepositional = "поцелуе синди"
+gender = "male"
+
+["french kiss (is that a hint of garlic?)"]
+nominative = "французский поцелуй (с привкусом чеснока?)"
+genitive = "французского поцелуя (с привкусом чеснока?)"
+dative = "французскому поцелую (с привкусом чеснока?)"
+accusative = "французский поцелуй (с привкусом чеснока?)"
+instrumental = "французским поцелуем (с привкусом чеснока?)"
+prepositional = "французском поцелуе (с привкусом чеснока?)"
+gender = "male"
+
+["chef's kiss"]
+nominative = "поцелуй повара"
+genitive = "поцелуя повара"
+dative = "поцелую повара"
+accusative = "поцелуй повара"
+instrumental = "поцелуем повара"
+prepositional = "поцелуе повара"
+gender = "male"
+
+# MARK: Security
+["handcuffs"]
+nominative = "наручники"
+genitive = "наручников"
+dative = "наручникам"
+accusative = "наручники"
+instrumental = "наручниками"
+prepositional = "наручниках"
+gender = "plural"
+
+["pepperspray"]
+nominative = "перцовый баллончик"
+genitive = "перцового баллончика"
+dative = "перцовому баллончику"
+accusative = "перцовый баллончик"
+instrumental = "перцовым баллончиком"
+prepositional = "перцовом баллончике"
+gender = "male"
+
+["flashbang"]
+nominative = "светошумовая граната"
+genitive = "светошумовой гранаты"
+dative = "светошумовой гранате"
+accusative = "светошумовую гранату"
+instrumental = "светошумовой гранатой"
+prepositional = "светошумовой гранате"
+gender = "female"
+
+["donut box"]
+nominative = "коробка пончиков"
+genitive = "коробки пончиков"
+dative = "коробке пончиков"
+accusative = "коробку пончиков"
+instrumental = "коробкой пончиков"
+prepositional = "коробке пончиков"
+gender = "female"
+
 # MARK: Kitchen
 
 ["pepper mill"]
@@ -1447,6 +1274,350 @@ accusative = "перцемолку"
 instrumental = "перцемолкой"
 prepositional = "перцемолке"
 gender = "female"
+
+["monkey recycler"]
+nominative = "переработчик обезьян"
+genitive = "переработчика обезьян"
+dative = "переработчику обезьян"
+accusative = "переработчик обезьян"
+instrumental = "переработчиком обезьян"
+prepositional = "переработчике обезьян"
+gender = "male"
+
+["Barbeque grill"]
+nominative = "грилль для барбекю"
+genitive = "грилля для барбекю"
+dative = "гриллю для барбекю"
+accusative = "грилль для барбекю"
+instrumental = "гриллем для барбекю"
+prepositional = "грилле для барбекю"
+gender = "male"
+
+["beer keg"]
+nominative = "кега пива"
+genitive = "кеги пива"
+dative = "кеге пива"
+accusative = "кегу пива"
+instrumental = "кегой пива"
+prepositional = "кеге пива"
+gender = "female"
+
+["blank coffee cartridge"]
+nominative = "пустой кофе-картридж"
+genitive = "пустого кофе-картриджа"
+dative = "пустому кофе-картриджу"
+accusative = "пустой кофе-картридж"
+instrumental = "пустым кофе-картриджем"
+prepositional = "пустом кофе-картридже"
+gender = "male"
+
+[coffeemaker]
+nominative = "кофемашина"
+genitive = "кофемашины"
+dative = "кофемашине"
+accusative = "кофемашину"
+instrumental = "кофемашиной"
+prepositional = "кофемашине"
+gender = "female"
+
+["coffeemaker cartridge - Botany Blend"]
+nominative = "картридж кофеварки - Botany Blend"
+genitive = "картриджа кофеварки - Botany Blend"
+dative = "картриджу кофеварки - Botany Blend"
+accusative = "картридж кофеварки - Botany Blend"
+instrumental = "картриджем кофеварки - Botany Blend"
+prepositional = "картридже кофеварки - Botany Blend"
+gender = "male"
+
+["coffeemaker cartridge - Caffè Decaffeinato"]
+nominative = "картридж кофеварки - Caffè Decaffeinato"
+genitive = "картриджа кофеварки - Caffè Decaffeinato"
+dative = "картриджу кофеварки - Caffè Decaffeinato"
+accusative = "картридж кофеварки - Caffè Decaffeinato"
+instrumental = "картриджем кофеварки - Caffè Decaffeinato"
+prepositional = "картридже кофеварки - Caffè Decaffeinato"
+gender = "male"
+
+["coffeemaker cartridge - Caffè Fantasioso"]
+nominative = "картридж кофеварки - Caffè Fantasioso"
+genitive = "картриджа кофеварки - Caffè Fantasioso"
+dative = "картриджу кофеварки - Caffè Fantasioso"
+accusative = "картридж кофеварки - Caffè Fantasioso"
+instrumental = "картриджем кофеварки - Caffè Fantasioso"
+prepositional = "картридже кофеварки - Caffè Fantasioso"
+gender = "male"
+
+["coffeemaker cartridge- Caffè Generico"]
+nominative = "картридж кофеварки - Caffè Generico"
+genitive = "картриджа кофеварки - Caffè Generico"
+dative = "картриджу кофеварки - Caffè Generico"
+accusative = "картридж кофеварки - Caffè Generico"
+instrumental = "картриджем кофеварки - Caffè Generico"
+prepositional = "картридже кофеварки - Caffè Generico"
+gender = "male"
+
+["deep fryer"]
+nominative = "фритюрница"
+genitive = "фритюрницы"
+dative = "фритюрнице"
+accusative = "фритюрницу"
+instrumental = "фритюрницей"
+prepositional = "фритюрнице"
+gender = "female"
+
+[dehydrator]
+nominative = "иссушатель"
+genitive = "иссушателя"
+dative = "иссушателю"
+accusative = "иссушатель"
+instrumental = "иссушателем"
+prepositional = "иссушателе"
+gender = "male"
+
+["drying rack"]
+nominative = "сушилка"
+genitive = "сушилки"
+dative = "сушилке"
+accusative = "сушилку"
+instrumental = "сушилкой"
+prepositional = "сушилке"
+gender = "female"
+
+["food cart"]
+nominative = "тележка с едой"
+genitive = "тележки с едой"
+dative = "тележке с едой"
+accusative = "тележку с едой"
+instrumental = "тележкой с едой"
+prepositional = "тележке с едой"
+gender = "female"
+
+["food cart tent"]
+nominative = "палатка для тележки с едой"
+genitive = "палатки для тележки с едой"
+dative = "палатке для тележки с едой"
+accusative = "палатку для тележки с едой"
+instrumental = "палаткой для тележки с едой"
+prepositional = "палатке для тележки с едой"
+gender = "female"
+
+["food processor"]
+nominative = "комбайн"
+genitive = "комбайна"
+dative = "комбайну"
+accusative = "комбайн"
+instrumental = "комбайном"
+prepositional = "комбайне"
+gender = "male"
+
+[gibber]
+nominative = "мясорубка"
+genitive = "мясорубки"
+dative = "мясорубке"
+accusative = "мясорубку"
+instrumental = "мясорубкой"
+prepositional = "мясорубке"
+gender = "female"
+
+[griddle]
+nominative = "гридль"
+genitive = "гридля"
+dative = "гридлю"
+accusative = "гридль"
+instrumental = "гридлем"
+prepositional = "гридле"
+gender = "male"
+
+["griddle stand"]
+nominative = "столик гридля"
+genitive = "столика гридля"
+dative = "столику гридля"
+accusative = "столик гридля"
+instrumental = "столиком гридля"
+prepositional = "столике гридля"
+gender = "male"
+
+["ice cream vat"]
+nominative = "машина для мороженного"
+genitive = "машины для мороженного"
+dative = "машине для мороженного"
+accusative = "машину для мороженного"
+instrumental = "машиной для мороженного"
+prepositional = "машине для мороженного"
+gender = "female"
+
+["impressa coffeemaker"]
+nominative = "кофемашина Impressa"
+genitive = "кофемашины Impressa"
+dative = "кофемашине Impressa"
+accusative = "кофемашину Impressa"
+instrumental = "кофемашиной Impressa"
+prepositional = "кофемашине Impressa"
+gender = "female"
+
+["microwave oven"]
+nominative = "микроволновка"
+genitive = "микроволновки"
+dative = "микроволновке"
+accusative = "микроволновку"
+instrumental = "микроволновкой"
+prepositional = "микроволновке"
+gender = "female"
+
+[oven]
+nominative = "духовка"
+genitive = "духовки"
+dative = "духовке"
+accusative = "духовку"
+instrumental = "духовкой"
+prepositional = "духовке"
+gender = "female"
+
+["oven tray"]
+nominative = "протевень"
+genitive = "протевеня"
+dative = "протевеню"
+accusative = "протевень"
+instrumental = "протевенем"
+prepositional = "протевене"
+gender = "male"
+
+[range]
+nominative = "духовка"
+genitive = "духовки"
+dative = "духовке"
+accusative = "духовку"
+instrumental = "духовкой"
+prepositional = "духовке"
+gender = "female"
+
+[sink]
+nominative = "раковина"
+genitive = "раковины"
+dative = "раковине"
+accusative = "раковину"
+instrumental = "раковиной"
+prepositional = "раковине"
+gender = "female"
+
+["sink frame"]
+nominative = "каркас раковины"
+genitive = "каркаса раковины"
+dative = "каркасу раковины"
+accusative = "каркас раковины"
+instrumental = "каркасом раковины"
+prepositional = "каркасе раковины"
+gender = "male"
+
+["slime processor"]
+nominative = "переработчик слаймов"
+genitive = "переработчика слаймов"
+dative = "переработчику слаймов"
+accusative = "переработчик слаймов"
+instrumental = "переработчиком слаймов"
+prepositional = "переработчике слаймов"
+gender = "male"
+
+["smart chemical storage"]
+nominative = "умное хранилище химикатов"
+genitive = "умного хранилища химикатов"
+dative = "умному хранилищу химикатов"
+accusative = "умное хранилище химикатов"
+instrumental = "умным хранилищем химикатов"
+prepositional = "умном хранилище химикатов"
+gender = "neuter"
+
+["smart organ storage"]
+nominative = "умное хранилище органов"
+genitive = "умного хранилища органов"
+dative = "умному хранилищу органов"
+accusative = "умное хранилище органов"
+instrumental = "умным хранилищем органов"
+prepositional = "умном хранилище органов"
+gender = "neuter"
+
+["smart petri dish storage"]
+nominative = "умное хранилище чашек Петри"
+genitive = "умного хранилища чашек Петри"
+dative = "умному хранилищу чашек Петри"
+accusative = "умное хранилище чашек Петри"
+instrumental = "умным хранилищем чашек Петри"
+prepositional = "умном хранилище чашек Петри"
+gender = "neuter"
+
+["smart slime extract storage"]
+nominative = "умное хранилище экстрактов слаймов"
+genitive = "умного хранилища экстрактов слаймов"
+dative = "умному хранилищу экстрактов слаймов"
+accusative = "умное хранилище экстрактов слаймов"
+instrumental = "умным хранилищем экстрактов слаймов"
+prepositional = "умном хранилище экстрактов слаймов"
+gender = "neuter"
+
+["smart virus storage"]
+nominative = "умное хранилище вирусов"
+genitive = "умного хранилища вирусов"
+dative = "умному хранилищу вирусов"
+accusative = "умное хранилище вирусов"
+instrumental = "умным хранилищем вирусов"
+prepositional = "умном хранилище вирусов"
+gender = "neuter"
+
+[smartfridge]
+nominative = "умный холодильник"
+genitive = "умного холодильника"
+dative = "умному холодильнику"
+accusative = "умный холодильник"
+instrumental = "умным холодильником"
+prepositional = "умном холодильнике"
+gender = "male"
+
+["soup pot"]
+nominative = "кастрюля"
+genitive = "кастрюли"
+dative = "кастрюле"
+accusative = "кастрюлю"
+instrumental = "кастрюлей"
+prepositional = "кастрюле"
+gender = "female"
+
+[stove]
+nominative = "плита"
+genitive = "плиты"
+dative = "плите"
+accusative = "плиту"
+instrumental = "плитой"
+prepositional = "плите"
+gender = "female"
+
+["wireless microwave oven"]
+nominative = "беспроводная микроволновка"
+genitive = "беспроводной микроволновки"
+dative = "беспроводной микроволновке"
+accusative = "беспроводную микроволновку"
+instrumental = "беспроводной микроволновкой"
+prepositional = "беспроводной микроволновке"
+gender = "female"
+
+# MARK: Food
+
+["double rat-kebab"]
+nominative = "двойной крышлык"
+genitive = "двойного крышлыка"
+dative = "двойному крышлыку"
+accusative = "двойной крышлык"
+instrumental = "двойным крышлыком"
+prepositional = "двойном крышлыке"
+gender = "male"
+
+["slice of"]
+nominative = "кусочек"
+genitive = "кусочка"
+dative = "кусочку"
+accusative = "кусочек"
+instrumental = "кусочком"
+prepositional = "кусочке"
+gender = "male"
 
 # MARK: Botany
 
@@ -1529,6 +1700,15 @@ dative = "биогенератору"
 accusative = "биогенератор"
 instrumental = "биогенератором"
 prepositional = "биогенераторе"
+gender = "male"
+
+["plant analyzer"]
+accusative = "анализатор растений"
+dative = "анализатору растений"
+genitive = "анализатора растений"
+instrumental = "анализатором растений"
+nominative = "анализатор растений"
+prepositional = "анализаторе растений"
 gender = "male"
 
 # MARK: Tools
@@ -1818,6 +1998,42 @@ instrumental = "челюстями смерти"
 prepositional = "челюстях смерти"
 gender = "plural"
 
+["gas analyzer"]
+nominative = "газоанализатор"
+genitive = "газоанализатора"
+dative = "газоанализатору"
+accusative = "газоанализатор"
+instrumental = "газоанализатором"
+prepositional = "газоанализаторе"
+gender = "male"
+
+["long-range gas analyzer"]
+nominative = "газоанализатор дальнего действия"
+genitive = "газоанализатора дальнего действия"
+dative = "газоанализатору дальнего действия"
+accusative = "газоанализатор дальнего действия"
+instrumental = "газоанализатором дальнего действия"
+prepositional = "газоанализаторе дальнего действия"
+gender = "male"
+
+["hand drill"]
+nominative = "шуруповёрт"
+genitive = "шуруповёрта"
+dative = "шуруповёрту"
+accusative = "шуруповёрт"
+instrumental = "шуруповёртом"
+prepositional = "шуруповёрте"
+gender = "male"
+
+["spess knife"]
+nominative = "швейцарский нож"
+genitive = "швейцарского ножа"
+dative = "швейцарскому ножу"
+accusative = "швейцарский нож"
+instrumental = "швейцарским ножом"
+prepositional = "швейцарском ноже"
+gender = "male"
+
 # MARK: Engineering
 
 ["insulated gloves"]
@@ -1838,8 +2054,107 @@ instrumental = "проволочной щёткой"
 prepositional = "проволочной щётке"
 gender = "female"
 
-# MARK: Janitor
+["oxygen tank"]
+nominative = "кислородный баллон"
+genitive = "кислородного баллона"
+dative = "кислородному баллону"
+accusative = "кислородный баллон"
+instrumental = "кислородным баллоном"
+prepositional = "кислородном баллоне"
+gender = "male"
 
+["emergency oxygen tank"]
+nominative = "экстренный кислородный баллон"
+genitive = "экстренного кислородного баллона"
+dative = "экстренному кислородному баллону"
+accusative = "экстренный кислородный баллон"
+instrumental = "экстренным кислородным баллоном"
+prepositional = "экстренном кислородном баллоне"
+gender = "male"
+
+["extended-capacity emergency oxygen tank"]
+nominative = "увеличенный экстренный кислородный баллон"
+genitive = "увеличенного экстренного кислородного баллона"
+dative = "увеличенному экстренному кислородному баллону"
+accusative = "увеличенный экстренный кислородный баллон"
+instrumental = "увеличенным экстренным кислородным баллоном"
+prepositional = "увеличенном экстренном кислородном баллоне"
+gender = "male"
+
+["double emergency oxygen tank"]
+nominative = "удвоенный экстренный кислородный баллон"
+genitive = "удвоенного экстренного кислородного баллона"
+dative = "удвоенному экстренному кислородному баллону"
+accusative = "удвоенный экстренный кислородный баллон"
+instrumental = "удвоенным экстренным кислородным баллоном"
+prepositional = "удвоенном экстренном кислородном баллоне"
+gender = "male"
+
+["funny emergency oxygen tank"]
+nominative = "смешной экстренный кислородный баллон"
+genitive = "смешного экстренного кислородного баллона"
+dative = "смешному экстренному кислородному баллону"
+accusative = "смешной экстренный кислородный баллон"
+instrumental = "смешным экстренным кислородным баллоном"
+prepositional = "смешном экстренном кислородном баллоне"
+gender = "male"
+
+["AI display"]
+nominative = "дисплей ИИ"
+genitive = "дисплея ИИ"
+dative = "дисплею ИИ"
+accusative = "дисплей ИИ"
+instrumental = "дисплеем ИИ"
+prepositional = "дисплее ИИ"
+gender = "male"
+
+["mannequin"]
+nominative = "манекен"
+genitive = "манекена"
+dative = "манекену"
+accusative = "манекен"
+instrumental = "манекеном"
+prepositional = "манекене"
+gender = "male"
+
+# MARK: Burocracy and Art
+["folder"]
+nominative = "папка"
+genitive = "папки"
+dative = "папке"
+accusative = "папку"
+instrumental = "папкой"
+prepositional = "папке"
+gender = "female"
+
+["pen"]
+nominative = "ручка"
+genitive = "ручки"
+dative = "ручке"
+accusative = "ручку"
+instrumental = "ручкой"
+prepositional = "ручке"
+gender = "female"
+
+["desk lamp"]
+nominative = "настольная лампа"
+genitive = "настольной лампы"
+dative = "настольной лампе"
+accusative = "настольную лампу"
+instrumental = "настольной лампой"
+prepositional = "настольной лампе"
+gender = "female"
+
+["camera"]
+nominative = "камера"
+genitive = "камеры"
+dative = "камере"
+accusative = "камеру"
+instrumental = "камерой"
+prepositional = "камере"
+gernder = "female"
+
+# MARK: Janitor
 ["galoshes"]
 nominative = "галоши"
 genitive = "галош"
@@ -1953,12 +2268,12 @@ prepositional = "суперконденсаторе"
 gender = "male"
 
 ["phasic scanning module"]
-nominative = "улучшенный сканирующий модуль"
-genitive = "улучшенного сканирующего модуля"
-dative = "улучшенному сканирующему модулю"
-accusative = "улучшенный сканирующий модуль"
-instrumental = "улучшенным сканирующим модулем"
-prepositional = "улучшенном сканирующем модуле"
+nominative = "фазовый сканирующий модуль"
+genitive = "фазового сканирующего модуля"
+dative = "фазовому сканирующему модулю"
+accusative = "фазовый сканирующий модуль"
+instrumental = "фазовым сканирующим модулем"
+prepositional = "фазовом сканирующем модуле"
 gender = "male"
 
 ["pico-servo"]
@@ -1999,13 +2314,13 @@ prepositional = "квадратичном конденсаторе"
 gender = "male"
 
 ["triphasic scanning module"]
-nominative = "грудь"
-genitive = "груди"
-dative = "груди"
-accusative = "грудь"
-instrumental = "грудью"
-prepositional = "груди"
-gender = "female"
+nominative = "трёхфазный сканирующий модуль"
+genitive = "трёхфазного сканирующего модуля"
+dative = "трёхфазному сканирующему модулю"
+accusative = "трёхфазный сканирующий модуль"
+instrumental = "трёхфазным сканирующим модулем"
+prepositional = "о трёхфазном сканирующем модуле"
+gender = "male"
 
 ["femto-servo"]
 nominative = "фемтосервопривод"
