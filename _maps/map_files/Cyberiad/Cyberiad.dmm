@@ -7671,9 +7671,7 @@
 /turf/closed/wall/r_wall,
 /area/station/security/mechbay)
 "cbj" = (
-/obj/structure/ladder{
-	name = "chemistry lab access"
-	},
+/obj/structure/ladder,
 /obj/effect/turf_decal/stripes/box,
 /turf/open/floor/plating,
 /area/station/maintenance/ghetto/port/greater)
@@ -12944,9 +12942,7 @@
 	nightshift_allowed = 0;
 	nightshift_enabled = 1
 	},
-/obj/structure/ladder{
-	name = "chemistry lab access"
-	},
+/obj/structure/ladder,
 /obj/effect/turf_decal/stripes/box,
 /turf/open/floor/plating,
 /area/station/maintenance/fore/lesser)
@@ -16319,9 +16315,7 @@
 /turf/open/floor/carpet/red,
 /area/station/maintenance/department/security/brig)
 "ejO" = (
-/obj/structure/ladder{
-	name = "chemistry lab access"
-	},
+/obj/structure/ladder,
 /obj/effect/turf_decal/stripes/box,
 /turf/open/floor/iron,
 /area/station/maintenance/department/electrical)
@@ -24668,9 +24662,7 @@
 /turf/open/space/openspace,
 /area/space/nearstation)
 "gBm" = (
-/obj/structure/ladder{
-	name = "chemistry lab access"
-	},
+/obj/structure/ladder,
 /obj/effect/turf_decal/stripes/box,
 /turf/open/floor/plating,
 /area/station/maintenance/port/fore)
@@ -28577,9 +28569,7 @@
 /turf/open/floor/iron/white,
 /area/station/medical/medbay/lobby)
 "hDD" = (
-/obj/structure/ladder{
-	name = "chemistry lab access"
-	},
+/obj/structure/ladder,
 /obj/effect/turf_decal/stripes/box,
 /turf/open/floor/plating,
 /area/station/maintenance/starboard/aft)
@@ -34767,10 +34757,6 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on,
 /turf/open/floor/wood,
 /area/station/service/kitchen/abandoned)
-"jld" = (
-/obj/machinery/vending/donksofttoyvendor,
-/turf/open/floor/eighties,
-/area/station/commons/dorms/apartment1)
 "jlo" = (
 /obj/effect/turf_decal/stripes/line,
 /obj/effect/turf_decal/stripes/corner{
@@ -35790,9 +35776,7 @@
 /turf/closed/wall/r_wall,
 /area/station/engineering/atmos)
 "jCp" = (
-/obj/structure/ladder{
-	name = "chemistry lab access"
-	},
+/obj/structure/ladder,
 /obj/effect/turf_decal/stripes/box,
 /turf/open/floor/plating,
 /area/station/maintenance/starboard/upper)
@@ -40724,9 +40708,6 @@
 /obj/structure/closet/radiation,
 /turf/open/floor/iron/dark,
 /area/station/engineering/atmos/project)
-"kNy" = (
-/turf/open/floor/eighties,
-/area/station/commons/dorms/apartment1)
 "kNL" = (
 /obj/structure/table/wood,
 /obj/item/flashlight/lamp/green,
@@ -49098,9 +49079,7 @@
 /turf/open/floor/iron/showroomfloor,
 /area/station/service/kitchen/abandoned)
 "nbq" = (
-/obj/structure/ladder{
-	name = "chemistry lab access"
-	},
+/obj/structure/ladder,
 /obj/effect/turf_decal/stripes/box,
 /obj/machinery/light/small/directional/north,
 /turf/open/floor/plating,
@@ -50784,9 +50763,7 @@
 /turf/open/floor/plating,
 /area/station/maintenance/department/security/brig)
 "nAb" = (
-/obj/structure/ladder{
-	name = "chemistry lab access"
-	},
+/obj/structure/ladder,
 /obj/effect/turf_decal/stripes/box,
 /turf/open/floor/iron/smooth,
 /area/station/medical/chemistry)
@@ -60846,9 +60823,7 @@
 /turf/open/floor/iron/dark,
 /area/station/science/ordnance)
 "qiU" = (
-/obj/structure/ladder{
-	name = "chemistry lab access"
-	},
+/obj/structure/ladder,
 /obj/effect/turf_decal/stripes/box,
 /turf/open/floor/plating,
 /area/station/maintenance/starboard/fore)
@@ -68464,9 +68439,7 @@
 /turf/open/floor/iron,
 /area/station/security/office)
 "slr" = (
-/obj/structure/ladder{
-	name = "chemistry lab access"
-	},
+/obj/structure/ladder,
 /turf/open/floor/plating,
 /area/station/maintenance/department/electrical/ghetto)
 "slt" = (
@@ -74689,7 +74662,6 @@
 /area/station/maintenance/starboard/aft)
 "tVN" = (
 /obj/structure/ladder{
-	name = "chemistry lab access";
 	pixel_y = 6;
 	pixel_x = -2
 	},
@@ -85482,9 +85454,7 @@
 /turf/open/floor/iron/dark,
 /area/station/medical/surgery/aft)
 "wSJ" = (
-/obj/structure/ladder{
-	name = "chemistry lab access"
-	},
+/obj/structure/ladder,
 /obj/effect/turf_decal/stripes/box,
 /turf/open/floor/plating,
 /area/station/maintenance/ghetto/starboard/aft)
@@ -89626,7 +89596,6 @@
 /area/station/engineering/atmos)
 "yaj" = (
 /obj/structure/ladder{
-	name = "chemistry lab access";
 	pixel_y = 7
 	},
 /obj/effect/turf_decal/stripes/box,
@@ -195389,7 +195358,7 @@ fRG
 xFr
 dbg
 qre
-kNy
+jRX
 cbH
 jRX
 hNu
@@ -195646,7 +195615,7 @@ dsp
 nxS
 dbg
 ipZ
-jld
+xiG
 nBr
 lWJ
 xiG
