@@ -159,6 +159,7 @@ SUBSYSTEM_DEF(ticker)
 			to_chat(world, span_notice("<b>Welcome to [station_name()]!</b>"))
 			send2chat(new /datum/tgs_message_content("New round starting on [SSmapping.current_map.map_name]!"), CONFIG_GET(string/channel_announce_new_game))
 			current_state = GAME_STATE_PREGAME
+			SSvote.initiate_vote(/datum/vote/storyteller, "Storyteller Vote", forced = TRUE) // BANDASTATION EDIT ADDITION
 			SEND_SIGNAL(src, COMSIG_TICKER_ENTER_PREGAME)
 
 			fire()
@@ -232,7 +233,13 @@ SUBSYSTEM_DEF(ticker)
 	CHECK_TICK
 	//Configure mode and assign player to antagonists
 	var/can_continue = FALSE
-	can_continue = SSdynamic.pre_setup() //Choose antagonists
+
+	//	can_continue = SSdynamic.pre_setup() //Choose antagonists // BANDASTATION EDIT - STORYTELLER (note: maybe disable)
+	// BANDASTATION EDIT BEGIN - STORYTELLER
+	SSgamemode.init_storyteller()
+	can_continue = SSgamemode.pre_setup()
+	// BANDASTATION EDIT END - STORYTELLER
+
 	CHECK_TICK
 	SEND_GLOBAL_SIGNAL(COMSIG_GLOB_PRE_JOBS_ASSIGNED, src)
 	can_continue = can_continue && SSjob.divide_occupations() //Distribute jobs
@@ -299,6 +306,7 @@ SUBSYSTEM_DEF(ticker)
 /datum/controller/subsystem/ticker/proc/PostSetup()
 	set waitfor = FALSE
 	SSdynamic.post_setup()
+	SSgamemode.post_setup() // BANDASTATION EDIT - Storyteller
 	GLOB.start_state = new /datum/station_state()
 	GLOB.start_state.count()
 

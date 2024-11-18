@@ -1,0 +1,45 @@
+#include "_storyteller.dm"
+
+#include "code\_defines\storyteller_defines.dm"
+#include "code\_defines\storyteller_config.dm"
+
+#include "code\event_defines\crewset\_antagonist_event.dm"
+#include "code\event_defines\crewset\changeling.dm"
+#include "code\event_defines\crewset\heretic.dm"
+#include "code\event_defines\crewset\malf.dm"
+#include "code\event_defines\crewset\nuke_ops.dm"
+#include "code\event_defines\crewset\spies.dm"
+#include "code\event_defines\crewset\traitors.dm"
+
+#include "code\event_defines\ghostset\override.dm"
+#include "code\event_defines\ghostset\voidwalker.dm"
+
+#include "code\event_defines\major\override.dm"
+#include "code\event_defines\moderate\override.dm"
+#include "code\event_defines\mundane\override.dm"
+
+#include "code\storytellers\data\tracks.dm"
+#include "code\storytellers\tellers\_storyteller.dm"
+#include "code\storytellers\tellers\storyteller_bomb.dm"
+#include "code\storytellers\tellers\storyteller_chill.dm"
+#include "code\storytellers\tellers\storyteller_clown.dm"
+#include "code\storytellers\tellers\storyteller_default.dm"
+#include "code\storytellers\tellers\storyteller_extended.dm"
+#include "code\storytellers\tellers\storyteller_fragile.dm"
+#include "code\storytellers\tellers\storyteller_gamer.dm"
+
+#include "code\divergency_report.dm"
+#include "code\scheduled_event.dm"
+#include "code\vote_reminder.dm"
+#include "code\vote.dm"
+#include "code\jobs_restrictions.dm"
+#include "code\gamemode.dm"
+
+#include "code\event_defines\_event.dm"
+#include "code\event_defines\override_events.dm"
+#include "code\event_defines\disabled_event_overrides.dm"
+
+
+
+
+

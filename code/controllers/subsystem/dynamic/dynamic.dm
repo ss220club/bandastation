@@ -321,7 +321,7 @@ SUBSYSTEM_DEF(dynamic)
 		SSticker.news_report = SSshuttle.emergency?.is_hijacked() ? SHUTTLE_HIJACK : STATION_EVACUATED
 
 /datum/controller/subsystem/dynamic/proc/send_intercept()
-	if(GLOB.communications_controller.block_command_report) //If we don't want the report to be printed just yet, we put it off until it's ready
+	/*if(GLOB.communications_controller.block_command_report) //If we don't want the report to be printed just yet, we put it off until it's ready
 		addtimer(CALLBACK(src, PROC_REF(send_intercept)), 10 SECONDS)
 		return
 
@@ -376,7 +376,7 @@ SUBSYSTEM_DEF(dynamic)
 		priority_announce("Отчет был скопирован и распечатан на всех консолях связи.", "Отчет о безопасности", SSstation.announcer.get_rand_report_sound())
 		// BANDASTATION EDIT END - No Blue roundstart
 #endif
-
+		*/ // BANDASTATION EDIT END - Storyteller
 	return .
 
 /// Generate the advisory level depending on the shown threat level.

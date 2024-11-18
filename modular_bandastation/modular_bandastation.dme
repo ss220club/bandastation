@@ -35,3 +35,5 @@
 #include "preferences/_preferences.dme"
 #include "jukebox/_jukebox.dme"
 #include "objects/_objects.dme"
+#include "overrides/_overrides.dme"
+#include "storyteller/_storyteller.dme"
