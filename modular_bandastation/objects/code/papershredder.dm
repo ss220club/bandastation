@@ -1,34 +1,3 @@
-/obj/item
-	var/can_be_papershredded = FALSE
-	var/shredded_paper_amount
-
-/obj/item/photo
-	can_be_papershredded = TRUE
-	shredded_paper_amount = 1
-
-/obj/item/paper
-	can_be_papershredded = TRUE
-	shredded_paper_amount = 1
-
-/obj/item/paper/paperslip/corporate
-	can_be_papershredded = FALSE
-
-/obj/item/newspaper
-	can_be_papershredded = TRUE
-	shredded_paper_amount = 3
-
-/obj/item/shredded_paper
-	can_be_papershredded = TRUE
-	shredded_paper_amount = 1
-
-/obj/item/folder
-	can_be_papershredded = TRUE
-	shredded_paper_amount = 4
-
-/obj/item/book
-	can_be_papershredded = TRUE
-	shredded_paper_amount = 5
-
 /obj/machinery/papershredder
 	name = "\improper paper shredder"
 	desc = "Для тех документов, что вы не хотите видеть."
@@ -38,6 +7,29 @@
 	anchored = TRUE
 	var/max_paper = 15
 	var/paper_amount = 0
+	var/list/shredded_paper_amount = list(
+		/obj/item/paper = 1,
+		/obj/item/paper/paperslip = 1,
+		/obj/item/paper/carbon = 1,
+		/obj/item/paper/valentine = 1,
+		/obj/item/paper/carbon_copy = 1,
+		/obj/item/paper/construction = 1,
+		/obj/item/paper/natural = 1,
+		/obj/item/paper/crumpled = 1,
+		/obj/item/paper/crumpled/muddy = 1,
+		/obj/item/paper/requisition = 1,
+		/obj/item/photo = 1,
+		/obj/item/photo/old = 1,
+		/obj/item/shredded_paper = 1,
+		/obj/item/newspaper = 3,
+		/obj/item/folder = 4,
+		/obj/item/folder/red = 4,
+		/obj/item/folder/white = 4,
+		/obj/item/folder/yellow = 4,
+		/obj/item/folder/blue = 4,
+		/obj/item/book = 5,
+		/obj/item/book/random = 5,
+	)
 
 /obj/machinery/papershredder/Initialize(mapload)
 	. = ..()
@@ -49,7 +41,7 @@
 	if(held_item.tool_behaviour == TOOL_WRENCH)
 		context[SCREENTIP_CONTEXT_LMB] = anchored ? "Открутить" : "Прикрутить"
 		return CONTEXTUAL_SCREENTIP_SET
-	if(held_item.can_be_papershredded)
+	if(held_item.parent_type in shredded_paper_amount)
 		context[SCREENTIP_CONTEXT_LMB] = "Измельчить [held_item.declent_ru(ACCUSATIVE)]"
 		return CONTEXTUAL_SCREENTIP_SET
 	return NONE
@@ -62,13 +54,13 @@
 	return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
 
 /obj/machinery/papershredder/attackby(obj/item/item, mob/user, params)
-	if(!item.can_be_papershredded)
+	if(!(item.type in shredded_paper_amount))
 		user.balloon_alert(user, "невозможно измельчить!")
 		return ..()
 	if(paper_amount == max_paper)
 		to_chat(user, span_warning("[capitalize(declent_ru(NOMINATIVE))] полон. Пожалуйста, опустошите его прежде чем продолжить."))
 		return
-	var/paper_result = item.shredded_paper_amount
+	var/paper_result = shredded_paper_amount[item.type]
 	paper_amount += paper_result
 	qdel(item)
 	playsound(loc, 'modular_bandastation/objects/sounds/pshred.ogg', 75, 1)
