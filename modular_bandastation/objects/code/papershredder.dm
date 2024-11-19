@@ -33,7 +33,7 @@
 
 /obj/machinery/papershredder/Initialize(mapload)
 	. = ..()
-	AddElement(/datum/element/contextual_screentip_bare_hands, rmb_text = "Опустошить корзину с измельчённой бумагой")
+	AddElement(/datum/element/contextual_screentip_bare_hands, rmb_text = "Опустошить корзину для измельчённой бумагой")
 	register_context()
 
 /obj/machinery/papershredder/add_context(atom/source, list/context, obj/item/held_item, mob/user)
@@ -78,7 +78,7 @@
 
 /obj/machinery/papershredder/proc/empty_contents(mob/living/user)
 	if(HAS_TRAIT(user, TRAIT_RESTRAINED))
-		to_chat(user, span_warning("Вам нужны свободные руки, чтобы сделать это."))
+		to_chat(user, span_warning("Ваши руки должны быть свободны, чтобы сделать это."))
 		return
 
 	if(!paper_amount)
