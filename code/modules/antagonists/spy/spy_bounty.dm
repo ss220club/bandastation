@@ -560,7 +560,7 @@
 	var/obj/item/desired_thing = find_desired_thing(crewmember)
 	target_original_desired_ref = WEAKREF(desired_thing)
 	name = "[capitalize(desired_thing.declent_ru(NOMINATIVE))] у [crewmember.real_name]"
-	help = "Украдите [desired_thing] у [crewmember.real_name]. \
+	help = "Украдите [desired_thing.declent_ru(ACCUSATIVE)] у [crewmember.real_name]. \
 		Вы можете сделать это с помощью грубой силы или просканировав их с помощью аплинка, пока они без сознания."
 	return TRUE
 

@@ -75,7 +75,8 @@
 			tracked_items += item
 	if(length(target_item.special_equipment))
 		special_equipment = target_item.special_equipment
-	replace_in_name("%ITEM%", target_item.name)
+	var/obj/steal_target = target_item.targetitem // BANDASTATION EDIT ADDITION
+	replace_in_name("%ITEM%", declent_ru_initial(steal_target::name, ACCUSATIVE, target_item.name))
 	AddComponent(/datum/component/traitor_objective_mind_tracker, generating_for, \
 		signals = list(COMSIG_MOB_EQUIPPED_ITEM = PROC_REF(on_item_pickup)))
 	return TRUE

@@ -296,7 +296,7 @@
 /datum/objective/steal/heirloom_thief/update_explanation_text()
 	..()
 	if(steal_target)
-		explanation_text = "Украдите семейную реликвию, [steal_target], которая чтится у [target.name]."
+		explanation_text = "Украдите семейную реликвию, [steal_target.declent_ru(NOMINATIVE)], которая чтится у [target.name]."
 	else
 		explanation_text = "Free Objective"
 
