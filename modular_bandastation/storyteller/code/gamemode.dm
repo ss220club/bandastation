@@ -234,8 +234,7 @@ SUBSYSTEM_DEF(gamemode)
 			if(player.ready == PLAYER_READY_TO_PLAY && player.mind && player.check_preferences())
 				candidate_candidates += player
 	else if(pick_observers)
-		for(var/mob/player as anything in GLOB.dead_mob_list)
-			candidate_candidates += player
+		candidate_candidates += GLOB.dead_mob_list
 	else
 		for(var/datum/record/locked/manifest_log as anything in GLOB.manifest.locked)
 			var/datum/mind/player_mind = manifest_log.mind_ref.resolve()
@@ -279,9 +278,9 @@ SUBSYSTEM_DEF(gamemode)
 	if(SSticker.HasRoundStarted())
 		update_crew_infos()
 		return active_players
-	else
-		calculate_ready_players()
-		return ready_players
+
+	calculate_ready_players()
+	return ready_players
 
 /// Refunds and removes a scheduled event.
 /datum/controller/subsystem/gamemode/proc/refund_scheduled_event(datum/scheduled_event/refunded)
@@ -356,9 +355,7 @@ SUBSYSTEM_DEF(gamemode)
 	for(var/datum/round_event/event as anything in running)
 		if(!event.control.roundstart)
 			continue
-		ASYNC
-			event.try_start()
-//		INVOKE_ASYNC(event, /datum/round_event.proc/try_start)
+		INVOKE_ASYNC(event, TYPE_PROC_REF(/datum/round_event, try_start))
 
 /// Schedules an event to run later.
 /datum/controller/subsystem/gamemode/proc/schedule_event(datum/round_event_control/passed_event, passed_time, passed_cost, passed_ignore, passed_announce)
@@ -380,9 +377,9 @@ SUBSYSTEM_DEF(gamemode)
 	for(var/mob/player_mob as anything in GLOB.player_list)
 		if(!player_mob.client)
 			continue
-		if(player_mob.stat) //If they're alive
+		if(player_mob.stat)
 			continue
-		if(player_mob.client.is_afk()) //If afk
+		if(player_mob.client.is_afk())
 			continue
 		if(!ishuman(player_mob))
 			continue
@@ -521,12 +518,7 @@ SUBSYSTEM_DEF(gamemode)
 /datum/controller/subsystem/gamemode/proc/check_finished(force_ending) //to be called by SSticker
 	if(!SSticker.setup_done)
 		return FALSE
-	if(SSshuttle.emergency && (SSshuttle.emergency.mode == SHUTTLE_ENDGAME))
-		return TRUE
-	if(GLOB.station_was_nuked)
-		return TRUE
-	if(force_ending)
-		return TRUE
+	return force_ending || GLOB.station_was_nuked || SSshuttle?.emergency?.mode == SHUTTLE_ENDGAME
 
 //////////////////////////
 //Reports player logouts//
@@ -596,7 +588,13 @@ SUBSYSTEM_DEF(gamemode)
 
 /// Loads json event config values from events.txt
 /datum/controller/subsystem/gamemode/proc/load_event_config_vars()
-	var/list/decoded = rustg_read_toml_file("[global.config.directory]/bandastation/events.toml")
+	var/file_path = "[global.config.directory]/bandastation/events.toml"
+	var/toml_file = file(file_path)
+	if(!fexists(toml_file))
+		return
+	var/list/decoded = rustg_read_toml_file(file_path)
+	if(!length(decoded ))
+		return
 	for(var/event_text_path in decoded)
 		var/event_path = text2path(event_text_path)
 		var/datum/round_event_control/event
@@ -626,9 +624,7 @@ SUBSYSTEM_DEF(gamemode)
 				if("reoccurence_penalty_multiplier")
 					event.reoccurence_penalty_multiplier = value
 				if("shared_occurence_type")
-					if(!isnull(value))
-						value = text2path(value)
-					event.shared_occurence_type = value
+					event.shared_occurence_type= !isnull(value) ? text2path(value) : null
 
 /// Loads config values from game_options.txt
 /datum/controller/subsystem/gamemode/proc/load_config_vars()

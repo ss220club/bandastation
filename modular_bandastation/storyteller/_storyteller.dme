@@ -1,6 +1,7 @@
 #include "_storyteller.dm"
 
 #include "code\_defines\_persistence.dm"
+#include "code\_defines\_ticker.dm"
 #include "code\_defines\storyteller_defines.dm"
 #include "code\_defines\storyteller_config.dm"
 
@@ -33,7 +34,6 @@
 #include "code\divergency_report.dm"
 #include "code\scheduled_event.dm"
 #include "code\vote.dm"
-#include "code\jobs_restrictions.dm"
 #include "code\gamemode.dm"
 
 #include "code\event_defines\_event.dm"
