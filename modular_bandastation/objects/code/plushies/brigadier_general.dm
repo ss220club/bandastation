@@ -1,7 +1,7 @@
 /obj/item/toy/plush/brigadier_general
 	name = "brigadier general Gold"
-	desc = "Эта игрушка была сделана в честь бригадного генерала ТСФ, погибшего во время яростного сражения на Тау Ките во время \
-	Великой межсистемной войны. На задней части игрушки имеется бирка с надписью: \"Важно дойти до конца!\"."
+	desc = "Эта игрушка была сделана в честь бригадного генерала ТСФ, погибшего во время яростного сражения на Тау Кита во время \
+	Великой межсистемной войны. На задней части игрушки имеется бирка с надписью: \"Важно дойти до конца.\"."
 	icon = 'modular_bandastation/objects/icons/plushies.dmi'
 	icon_state = "brigadier_general"
 	lefthand_file = 'modular_bandastation/objects/icons/inhands/plushies_lefthand.dmi'
@@ -14,4 +14,4 @@
 		return
 	COOLDOWN_START(src, squeeze_cooldown, 5 SECONDS)
 	. = ..()
-	say("Важно дойти до конца!")
+	say("Важно дойти до конца")

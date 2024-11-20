@@ -33,3 +33,7 @@
 /datum/loadout_item/pocket_items/plush/hampter_sec
 	name = "Хамптер офицер"
 	item_path = /obj/item/toy/plush/hampter/security
+
+/datum/loadout_item/pocket_items/plush/brigadier_general
+	name = "Бригадный генерал ТСФ"
+	item_path = /obj/item/toy/plush/brigadier_general
