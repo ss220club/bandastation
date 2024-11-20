@@ -154,10 +154,10 @@
 
 /datum/heretic_knowledge/spell/caretaker_refuge
 	name = "Caretaker’s Last Refuge"
-	desc = "Gives you a spell that makes you transparent and not dense. Cannot be used near living sentient beings. \
-		While in refuge, you cannot use your hands or spells, and you are immune to slowdown. \
-		You are invincible but unable to harm anything. Cancelled by being hit with an anti-magic item."
-	gain_text = "Jealously, the Guard and the Hound hunted me. But I unlocked my form, and was but a haze, untouchable."
+	desc = "Заклинание, позволяющее становиться прозрачным и безтелесным. Невозможно использовать рядом с живыми разумными существами. \
+		Пока вы находитесь в убежище, вы не можете использовать руки и заклинания, и вы имеете иммунитет к замедлению. \
+		Вы неуязвимы, но также не можете ничему вредить. При попадании анти-магией, эффект прерывается."
+	gain_text = "Страж и Гончая охотились за мной из ревности. Но я раскрыл свою форму, став лишь неприкосаемой дымкой."
 	action_to_add = /datum/action/cooldown/spell/caretaker
 	cost = 1
 

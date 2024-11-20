@@ -123,7 +123,7 @@
 		// And you have a 70% or 50% chance to actually land the blow, respectively
 		if(HAS_TRAIT(victim, TRAIT_ANALGESIA) || prob(70 - 20 * (severity - 1)))
 			if(!HAS_TRAIT(victim, TRAIT_ANALGESIA))
-				to_chat(victim, span_danger("The fracture in your [limb.plaintext_zone] shoots with pain as you strike [target]!"))
+				to_chat(victim, span_danger("Перелом в [limb.ru_plaintext_zone[PREPOSITIONAL] || limb.plaintext_zone] отдает болью, когда вы ударяете [target.declent_ru(ACCUSATIVE)]!"))
 			victim.apply_damage(rand(1, 5), BRUTE, limb, wound_bonus = CANT_WOUND, wound_clothing = FALSE)
 		else
 			victim.visible_message(span_danger("[capitalize(victim.declent_ru(NOMINATIVE))] слабо бьет [target.declent_ru(ACCUSATIVE)] своей сломанной [limb.ru_plaintext_zone[INSTRUMENTAL] || limb.plaintext_zone], пошатываясь от боли!"), \

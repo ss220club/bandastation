@@ -5,8 +5,8 @@
  * This is one time use, we'll delete ourselves once done.
  */
 /datum/mafia_ability/reveal_role
-	name = "Reveal"
-	ability_action = "psychologically evaluate"
+	name = "Откровения"
+	ability_action = "психологически оценить"
 
 /datum/mafia_ability/reveal_role/perform_action_target(datum/mafia_controller/game, datum/mafia_role/day_target)
 	. = ..()

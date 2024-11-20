@@ -106,13 +106,13 @@
 	var/list/recent_speech = target.copy_recent_speech()
 
 	if(recent_speech.len)
-		changeling.antag_memory += "Some of [target]'s speech patterns, we should study these to better impersonate [target.p_them()]: "
-		to_chat(owner, span_boldnotice("Some of [target]'s speech patterns, we should study these to better impersonate [target.p_them()]!"))
+		changeling.antag_memory += "Некоторые образцы речи [target.declent_ru(GENITIVE)], мы должны изучить их, чтобы лучше изображать [target.ru_p_them()]: "
+		to_chat(owner, span_boldnotice("Некоторые образцы речи [target.declent_ru(GENITIVE)], мы должны изучить их, чтобы лучше изображать [target.ru_p_them()]!"))
 		for(var/spoken_memory in recent_speech)
 			changeling.antag_memory += " \"[spoken_memory]\""
 			to_chat(owner, span_notice("\"[spoken_memory]\""))
-		changeling.antag_memory += ". We have no more knowledge of [target]'s speech patterns. "
-		to_chat(owner, span_boldnotice("We have no more knowledge of [target]'s speech patterns."))
+		changeling.antag_memory += ". У нас нет больше знаний об образцах речи [target.declent_ru(GENITIVE)]. "
+		to_chat(owner, span_boldnotice("У нас больше нет знаний об образцах речи [target.declent_ru(GENITIVE)]."))
 
 
 	var/datum/antagonist/changeling/target_ling = IS_CHANGELING(target)
