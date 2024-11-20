@@ -1246,9 +1246,9 @@
 			return FALSE
 		else
 			adjustStaminaLoss(damage_on_resist_fail) //Do some stamina damage if we fail to resist
-			visible_message(span_danger("[src] struggles as they fail to break free of [pulledby]'s grip!"), \
-							span_warning("You struggle as you fail to break free of [pulledby]'s grip!"), null, null, pulledby)
-			to_chat(pulledby, span_danger("[src] struggles as they fail to break free of your grip!"))
+			visible_message(span_danger("[capitalize(declent_ru(NOMINATIVE))] неуспешно пытается вырваться из хватки [pulledby.declent_ru(GENITIVE)]!"), \
+							span_warning("Вы неуспешно пытаетесь вырваться из хватки [pulledby.declent_ru(GENITIVE)]!"), null, null, pulledby)
+			to_chat(pulledby, span_danger("[capitalize(declent_ru(NOMINATIVE))] неуспешно пытается вырваться из вашей хватки!"))
 		if(moving_resist && client) //we resisted by trying to move
 			client.move_delay = world.time + 4 SECONDS
 	else

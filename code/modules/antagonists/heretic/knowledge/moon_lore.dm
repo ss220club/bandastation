@@ -86,9 +86,9 @@
 
 /datum/heretic_knowledge/spell/moon_parade
 	name = "Lunar Parade"
-	desc = "Grants you Lunar Parade, a spell that - after a short charge - sends a carnival forward \
-		when hitting someone they are forced to join the parade and suffer hallucinations."
-	gain_text = "The music like a reflection of the soul compelled them, like moths to a flame they followed"
+	desc = "Дает вам заклинание Lunar Parade, которое через короткую задержку посылает вперед карнавал. \
+		Те, в кого попал карнавал, вынуждены присоединиться к параду и страдать от галлюцинаций."
+	gain_text = "Музыка, как отражение души, побуждала их, и они, словно мотыльки на пламя, следовали за ней."
 	action_to_add = /datum/action/cooldown/spell/pointed/projectile/moon_parade
 	cost = 1
 

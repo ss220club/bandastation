@@ -209,11 +209,11 @@
 
 /datum/heretic_knowledge/spell/flesh_surgery
 	name = "Knitting of Flesh"
-	desc = "Grants you the spell Knit Flesh. This spell allows you to remove organs from victims \
-		without requiring a lengthy surgery. This process is much longer if the target is not dead. \
-		This spell also allows you to heal your minions and summons, or restore failing organs to acceptable status."
-	gain_text = "But they were not out of my reach for long. With every step, the screams grew, until at last \
-		I learned that they could be silenced."
+	desc = "Дарует вам заклинание Knit Flesh. Это заклинание позволяет извлекать органы из жертв \
+		без необходимости длительной операции. Этот процесс занимает гораздо больше времени, если цель жива. \
+		Это заклинание также позволяет вам исцелять ваших миньонов и призванных или восстанавливать отказавшие органы до приемлемого состояния."
+	gain_text = "Но они недолго оставались вне моей досягаемости. С каждым шагом крики усиливались, пока, наконец, \
+		я не понял, что их можно заглушить."
 	action_to_add = /datum/action/cooldown/spell/touch/flesh_surgery
 	cost = 1
 

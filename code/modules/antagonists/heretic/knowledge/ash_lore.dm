@@ -95,10 +95,10 @@
 
 /datum/heretic_knowledge/spell/fire_blast
 	name = "Volcano Blast"
-	desc = "Grants you Volcano Blast, a spell that - after a short charge - fires off a beam of energy \
-		at a nearby enemy, setting them on fire and burning them. If they do not extinguish themselves, \
-		the beam will continue to another target."
-	gain_text = "No fire was hot enough to rekindle them. No fire was bright enough to save them. No fire is eternal."
+	desc = "Дает вам Volcano Blast - заклинание, которое после короткой зарядки выстреливает лучом энергии \
+		в ближайшего врага, поджигая и обжигая его. Если они не потушат себя, \
+		луч продолжит движение к другой цели."
+	gain_text = "Ни один огонь не был достаточно горячим, чтобы разжечь их. Ни один огонь не был достаточно ярким, чтобы спасти их. Ни один огонь не вечен."
 	action_to_add = /datum/action/cooldown/spell/charged/beam/fire_blast
 	cost = 1
 	research_tree_icon_frame = 7
@@ -140,11 +140,11 @@
 
 /datum/heretic_knowledge/spell/flame_birth
 	name = "Nightwatcher's Rebirth"
-	desc = "Grants you Nightwatcher's Rebirth, a spell that extinguishes you and \
-		burns all nearby heathens who are currently on fire, healing you for every victim afflicted. \
-		If any victims afflicted are in critical condition, they will also instantly die."
-	gain_text = "The fire was inescapable, and yet, life remained in his charred body. \
-		The Nightwatcher was a particular man, always watching."
+	desc = "Дарует вам Nightwatcher's Rebirth, заклинание, которое потушит вас \
+		и обжигает всех ближайших язычников, которые в данный момент горят, исцеляя вас за каждую пораженную цель. \
+		Если цель находится в критическом состоянии, она мгновенно умрёт."
+	gain_text = "Огонь был неизбежным, и все же жизнь оставалась в его обугленном теле. \
+		Ночной дозорный был конкретным человеком, всегда бдительным."
 	action_to_add = /datum/action/cooldown/spell/aoe/fiery_rebirth
 	cost = 1
 	research_tree_icon_frame = 5

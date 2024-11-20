@@ -100,18 +100,18 @@
 
 /datum/heretic_knowledge/spell/rust_construction
 	name = "Rust Construction"
-	desc = "Grants you Rust Construction, a spell that allows you to raise a wall out of a rusted floor. \
-		Anyone overtop the wall will be throw aside (or upwards) and sustain damage."
-	gain_text = "Images of foreign and ominous structures began to dance in my mind. Covered head to toe in thick rust, \
-		they no longer looked man made. Or perhaps they never were in the first place."
+	desc = "Дает вам Rust Construction - заклинание, позволяющее возвести стену из ржавого пола. \
+		Любой человек, находящийся над стеной, будет отброшен в сторону (или вверх) и получит урон."
+	gain_text = "В моем сознании начали плясать образы иноземных и зловещих сооружений. Покрытые с ног до головы толстым слоем ржавчины, \
+		они больше не выглядели рукотворными. А может быть, они вообще никогда и не существовали."
 	action_to_add = /datum/action/cooldown/spell/pointed/rust_construction
 	cost = 1
 
 /datum/heretic_knowledge/spell/area_conversion
 	name = "Aggressive Spread"
-	desc = "Grants you Aggressive Spread, a spell that spreads rust to nearby surfaces. \
-		Already rusted surfaces are destroyed \ Also improves the rusting abilities of non rust-heretics."
-	gain_text = "All wise men know well not to visit the Rusted Hills... Yet the Blacksmith's tale was inspiring."
+	desc = "Дает вам заклинание Aggressive Spread, которое распространяет ржавчину на близлежащие поверхности. \
+		Уже заржавевшие поверхности разрушаются. \ Также улучшает способности ржавчины еретиков не Пути ржавчины."
+	gain_text = "Мудрецы знают, что не стоит посещать Ржавые холмы... Но рассказ Кузнеца был вдохновляющим."
 	action_to_add = /datum/action/cooldown/spell/aoe/rust_conversion
 	cost = 1
 	research_tree_icon_frame = 5

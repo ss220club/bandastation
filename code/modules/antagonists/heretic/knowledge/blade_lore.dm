@@ -181,10 +181,10 @@
 
 /datum/heretic_knowledge/spell/realignment
 	name = "Realignment"
-	desc = "Grants you Realignment a spell that wil realign your body rapidly for a short period. \
-		During this process, you will rapidly regenerate stamina and quickly recover from stuns, however, you will be unable to attack. \
-		This spell can be cast in rapid succession, but doing so will increase the cooldown."
-	gain_text = "In the flurry of death, he found peace within himself. Despite insurmountable odds, he forged on."
+	desc = "Дает вам заклинание Realignment, которое быстро и на короткое время выправит ваше тело. \
+		Во время этого процесса вы будете быстро восстанавливать стамину и быстро восстанавливаться после оглушения, однако вы не сможете атаковать. \
+		Это заклинание можно применять подряд, но при этом увеличивается время его перезарядки."
+	gain_text = "В шквале смертей он обрел мир внутри себя. Несмотря на неодолимые шансы, он ступал вперед."
 	action_to_add = /datum/action/cooldown/spell/realignment
 	cost = 1
 
@@ -358,12 +358,12 @@
 
 /datum/heretic_knowledge/spell/furious_steel
 	name = "Furious Steel"
-	desc = "Grants you Furious Steel, a targeted spell. Using it will summon three \
-		orbiting blades around you. These blades will protect you from all attacks, \
-		but are consumed on use. Additionally, you can click to fire the blades \
-		at a target, dealing damage and causing bleeding."
-	gain_text = "Without thinking, I took the knife of a fallen soldier and threw with all my might. My aim was true! \
-		The Torn Champion smiled at their first taste of agony, and with a nod, their blades became my own."
+	desc = "Дарует вам Furious Steel, заклинание с выбором цели. При его использовании вокруг вас появятся три \
+		вращающихся клинка. Эти клинки защищают вас от всех атак, \
+		но при использовании расходуются. Кроме того, вы можете использовать кнопку, чтобы выстрелить лезвиями \
+		в цель, нанося урон и вызывая кровотечение."
+	gain_text = "Не раздумывая, я взял нож павшего солдата и со всей силы метнул. Моя меткость оказалась верна! \
+		Разорванный чемпион улыбнулся их первому вкусу агонии, и, кивнув, их клинки стали моими собственными."
 	action_to_add = /datum/action/cooldown/spell/pointed/projectile/furious_steel
 	cost = 1
 
