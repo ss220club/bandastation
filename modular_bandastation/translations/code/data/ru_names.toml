@@ -948,6 +948,15 @@ instrumental = "голограммой"
 prepositional = "голограмме"
 gender = "female"
 
+["brigadier general Gold"]
+nominative = "бригадный генерал Голд"
+genitive = "бригадного генерала Голд"
+dative = "бригадному генералу Голд"
+accusative = "бригадного генерала Голд"
+instrumental = "бригадным генералом Голд"
+prepositional = "бригадном генерале Голд"
+gender = "male"
+
 # MARK: Mobs. Uncategorized
 
 # MARK: Mobs. Aliens
