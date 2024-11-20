@@ -53,7 +53,7 @@
 	. = ..()
 	if(!.)
 		return
-	if(!roundstart && !SSgamemode.can_inject_antags())
+	if(roundstart || !SSgamemode.can_inject_antags())
 		return FALSE
 	if(!get_antag_amount())
 		return FALSE

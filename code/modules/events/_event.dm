@@ -12,7 +12,7 @@
 									//10 is the default weight. 20 is twice more likely; 5 is half as likely as this default.
 									//0 here does NOT disable the event, it just makes it extremely unlikely
 
-	var/earliest_start = 20 MINUTES //The earliest world.time that an event can start (round-duration in deciseconds) default: 20 mins
+	var/earliest_start = 20 MINUTES //The earliest world.time that an event can start (round-duration in deciseconds) default: 20 mins ///BANDASTATION EDIT - STORYTELLER
 	var/min_players = 0 //The minimum amount of alive, non-AFK human players on server required to start the event.
 
 	var/occurrences = 0 //How many times this event has occurred
@@ -197,6 +197,9 @@ Runs the event
 
 	if(alert_observers)
 		round_event.announce_deadchat(random, event_cause)
+
+	log_admin_private("[random ? "Random" : "Forced"] Event triggering: [name] ([typepath]).")
+	message_admins(span_adminnotice("[random ? "Random" : "Forced"] Event triggering: [name] ([typepath])."))
 
 	SSblackbox.record_feedback("tally", "event_ran", 1, "[round_event]")
 	return round_event
