@@ -1,4 +1,4 @@
-/datum/vote/
+/datum/vote
 	var/has_desc = FALSE
 
 /datum/vote/proc/return_desc(vote_name)

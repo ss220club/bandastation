@@ -71,7 +71,6 @@ SUBSYSTEM_DEF(persistence)
 	load_delamination_counter()
 	load_tram_counter()
 	load_adventures()
-	load_storyteller_type() // BANDASTATION EDIT ADD - Storyteller
 	return SS_INIT_SUCCESS
 
 ///Collects all data to persist.

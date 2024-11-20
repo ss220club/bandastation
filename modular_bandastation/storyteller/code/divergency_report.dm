@@ -8,7 +8,7 @@
 	. += "<hr>Это включает в себя вашу смену с начала до момента окончания. Удачной смены!<hr>\
 	<p style=\"color: grey; text-align: justify;\">Этот ярлык подтверждает, что стажёр проверил вышеизложенное перед отправкой. Данный документ является собственностью корпорации Nanotrasen.</p>"
 
-	print_command_report(., "Отчет Центрального Коммандования", announce = FALSE)
+	print_command_report(., "Отчет Центрального Командования", announce = FALSE)
 	priority_announce("Приветствуем вас, экипаж станции [station_name()]. Наш стажёр проверил отчет и возможные отклонения и направил вам результат. Хорошей смены!", "Протокол отклонений", SSstation.announcer.get_rand_report_sound())
 
 /*
@@ -42,12 +42,3 @@
 		station_traits_report += "[station_trait.get_report()]<br>"
 
 	return station_traits_report.Join()
-
-/*/datum/controller/subsystem/gamemode/proc/generate_station_goals()
-	var/list/possible = subtypesof(/datum/station_goal)
-	var/goal_weights = 0
-	while(possible.len && goal_weights < 1) // station goal budget is 1
-		var/datum/station_goal/picked = pick_n_take(possible)
-		goal_weights += initial(picked.weight)
-		SSstation.goals_by_type += new picked // does this still work?
-*/
