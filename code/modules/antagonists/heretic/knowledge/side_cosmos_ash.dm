@@ -36,7 +36,7 @@
 		Появляться и исчезать можно только тогда, когда вы находитесь в на космических или схожих тайлах."
 	gain_text = "Вы чувствуете, что ваше тело может перемещаться по космосу, как будто вы пылинка."
 
-	spell_to_add = /datum/action/cooldown/spell/jaunt/space_crawl
+	action_to_add = /datum/action/cooldown/spell/jaunt/space_crawl
 	cost = 1
 
 

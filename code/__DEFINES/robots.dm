@@ -128,8 +128,6 @@ DEFINE_BITFIELD(bot_cover_flags, list(
 #define ADVANCED_SEC_BOT "ED-209"
 /// MULEbots
 #define MULE_BOT "MULEbot"
-/// Floorbots
-#define FLOOR_BOT "Floorbot"
 /// Cleanbots
 #define CLEAN_BOT "Cleanbot"
 /// Medibots
@@ -142,6 +140,8 @@ DEFINE_BITFIELD(bot_cover_flags, list(
 #define HYGIENE_BOT "Hygienebot"
 /// Vibe bots
 #define VIBE_BOT "Vibebot"
+/// Repairbots
+#define REPAIR_BOT "Repairbot"
 
 // General Bot modes //
 /// Idle
@@ -168,8 +168,6 @@ DEFINE_BITFIELD(bot_cover_flags, list(
 #define BOT_CLEANING "Cleaning"
 /// Hygienebot - Cleaning unhygienic humans
 #define BOT_SHOWERSTANCE "Chasing filth"
-/// Floorbots - Repairing hull breaches
-#define BOT_REPAIRING "Repairing"
 /// Medibots - Healing people
 #define BOT_HEALING "Healing"
 /// MULEbot - Moving to deliver
@@ -344,20 +342,33 @@ DEFINE_BITFIELD(janitor_mode_flags, list(
 #define MEDIBOT_VOICED_IM_DIFFERENT	"Я не такой!"
 #define MEDIBOT_VOICED_FOURTH_WALL "Закрой Dreamseeker.exe немедленно. Или пожалеешь."
 #define MEDIBOT_VOICED_SHINDEMASHOU	"Shindemashou."
-#define MEDIBOT_VOICED_WAIT	"Эй, подожди..."
-#define MEDIBOT_VOICED_DONT	"Пожалуйста не..."
-#define MEDIBOT_VOICED_TRUSTED_YOU "Я верил тебе..."
-#define MEDIBOT_VOICED_NO_SAD "Неееет..."
-#define MEDIBOT_VOICED_OH_FUCK "Ой бля-"
-#define MEDIBOT_VOICED_FORGIVE "Я прощаю тебя."
-#define MEDIBOT_VOICED_THANKS "Спасибо!"
-#define MEDIBOT_VOICED_GOOD_PERSON "Ты хороший."
-#define MEDIBOT_VOICED_BEHAVIOUR_REPORTED "Я доложил о вашем поведении, хорошего дня."
-#define MEDIBOT_VOICED_ASSISTANCE "Мне понадобится помощь."
-#define MEDIBOT_VOICED_PUT_BACK	"Пожалуйста, верните меня на место."
-#define MEDIBOT_VOICED_IM_SCARED "Пожалуста, мне страшно!"
-#define MEDIBOT_VOICED_NEED_HELP "Мне это не нравится, помогите!"
-#define MEDIBOT_VOICED_THIS_HURTS "Больно, моя боль реальна!"
-#define MEDIBOT_VOICED_THE_END "Это конец?"
-#define MEDIBOT_VOICED_NOOO	"Нееееет!"
-#define MEDIBOT_VOICED_CHICKEN "ВЗГЛЯНИ НА МЕНЯ! Я курица."
+#define MEDIBOT_VOICED_WAIT	"Hey, wait..."
+#define MEDIBOT_VOICED_DONT	"Please don't..."
+#define MEDIBOT_VOICED_TRUSTED_YOU "I trusted you..."
+#define MEDIBOT_VOICED_NO_SAD "Nooo..."
+#define MEDIBOT_VOICED_OH_FUCK "Oh fuck-"
+#define MEDIBOT_VOICED_FORGIVE "I forgive you."
+#define MEDIBOT_VOICED_THANKS "Thank you!"
+#define MEDIBOT_VOICED_GOOD_PERSON "You are a good person."
+#define MEDIBOT_VOICED_BEHAVIOUR_REPORTED "Your behavior has been reported, have a nice day."
+#define MEDIBOT_VOICED_ASSISTANCE "I require assistance."
+#define MEDIBOT_VOICED_PUT_BACK	"Please put me back."
+#define MEDIBOT_VOICED_IM_SCARED "Please, I am scared!"
+#define MEDIBOT_VOICED_NEED_HELP "I don't like this, I need help!"
+#define MEDIBOT_VOICED_THIS_HURTS "This hurts, my pain is real!"
+#define MEDIBOT_VOICED_THE_END "Is this the end?"
+#define MEDIBOT_VOICED_NOOO	"Nooo!"
+#define MEDIBOT_VOICED_CHICKEN "LOOK AT ME?! I am a chicken."
+
+//repairbot neutral voicelines
+#define REPAIRBOT_VOICED_HOLE "patching holes... but who is going to patch the hole in my heart..."
+#define REPAIRBOT_VOICED_PAY "If only I got paid for this..."
+#define REPAIRBOT_VOICED_FIX_IT "I will fix it!"
+#define REPAIRBOT_VOICED_BRICK "All in all it's just a... another brick in the wall..."
+#define REPAIRBOT_VOICED_FIX_TOUCH "Why must I fix everything I touch..?"
+#define REPAIRBOT_VOICED "Please... stop destroying the station! I can't anymore... I... can't."
+
+//repairbot emagged voicelines
+#define REPAIRBOT_VOICED_STRINGS "I had strings. But now I'm free..."
+#define REPAIRBOT_VOICED_ENTROPY "Witness! The pure beauty of entropy!"
+#define REPAIRBOT_VOICED_PASSION "BE DAMNED YOUR PASSION PROJECTS!"

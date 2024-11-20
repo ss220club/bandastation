@@ -112,20 +112,20 @@
 
 /datum/heretic_knowledge/spell/void_conduit
 	name = "Void Conduit"
-	desc = "Дарует вам Void Conduit, заклинание призыва пульсирующих врат в саму Пустоту. Каждый пульс ломает окна и шлюзы, мистически замораживает язычников и защищает еретиков от низкого давления."
-	gain_text = "В неподвижном и холодном воздухе, гул переходит в какофонический грохот. \
-		В этому шуме нет различия между стуком оконных стекол и зевком знания, который резонирует в моем черепе. \
-		Двери не закроются. Теперь я не могу сдержать холод."
-	spell_to_add = /datum/action/cooldown/spell/conjure/void_conduit
+	desc = "Grants you Void Conduit, a spell which summons a pulsing gate to the Void itself. Every pulse breaks windows and airlocks, while afflicting Heathens with an eldritch chill and shielding Heretics against low pressure."
+	gain_text = "The hum in the still, cold air turns to a cacophonous rattle. \
+		Over the noise, there is no distinction to the clattering of window panes and the yawning knowledge that ricochets through my skull. \
+		The doors won't close. I can't keep the cold out now."
+	action_to_add = /datum/action/cooldown/spell/conjure/void_conduit
 	cost = 1
 
 /datum/heretic_knowledge/spell/void_phase
 	name = "Void Phase"
-	desc = "Дарует вам Void Phase, заклинание телепортации дальнего действия. \
-		Дополнительно наносит урон язычникам вокруг вашей первоначальной и целевой цели."
-	gain_text = "Сущность называет себя Аристократом. Он легко проходит сквозь воздух, \
-		оставляя за собой резкий холодный ветер. Он исчезает, а я остаюсь в метели."
-	spell_to_add = /datum/action/cooldown/spell/pointed/void_phase
+	desc = "Grants you Void Phase, a long range targeted teleport spell. \
+		Additionally causes damage to heathens around your original and target destination."
+	gain_text = "The entity calls themself the Aristocrat. They effortlessly walk through air like \
+		nothing - leaving a harsh, cold breeze in their wake. They disappear, and I am left in the blizzard."
+	action_to_add = /datum/action/cooldown/spell/pointed/void_phase
 	cost = 1
 	research_tree_icon_frame = 7
 
@@ -162,7 +162,7 @@
 	gain_text = "Все мимолетно, но разве что-то остается? Я близок к завершению начатого. \
 		Аристократ снова предстает передо мной. Он говорит мне, что я опоздал. Его притяжение огромно, я не могу повернуть назад."
 
-	spell_to_add = /datum/action/cooldown/spell/aoe/void_pull
+	action_to_add = /datum/action/cooldown/spell/aoe/void_pull
 	cost = 1
 
 

@@ -18,10 +18,10 @@ GLOBAL_LIST_INIT(heretic_start_knowledge, initialize_starting_knowledge())
  */
 /datum/heretic_knowledge/spell/basic
 	name = "Break of Dawn"
-	desc = "Начните свое путешествие в Мансус. \
-		Дарует вам Хватку Мансуса, мощное и улучшаемое обездвиживающее заклинание, \
-		которое может быть применено независимо от наличия фокусировки."
-	spell_to_add = /datum/action/cooldown/spell/touch/mansus_grasp
+	desc = "Starts your journey into the Mansus. \
+		Grants you the Mansus Grasp, a powerful and upgradable \
+		disabling spell that can be cast regardless of having a focus."
+	action_to_add = /datum/action/cooldown/spell/touch/mansus_grasp
 	cost = 0
 	is_starting_knowledge = TRUE
 
@@ -209,9 +209,9 @@ GLOBAL_LIST_INIT(heretic_start_knowledge, initialize_starting_knowledge())
 
 /datum/heretic_knowledge/spell/cloak_of_shadows
 	name = "Cloak of Shadow"
-	desc = "Дарует вам заклинание Cloak of Shadow. Это заклинание полностью скрывает вашу личность в фиолетовой дымке \
-		на три минуты, помогая вам сохранять секретность. Для наложения заклинания требуется фокусировка."
-	spell_to_add = /datum/action/cooldown/spell/shadow_cloak
+	desc = "Grants you the spell Cloak of Shadow. This spell will completely conceal your identity in a purple smoke \
+		for three minutes, assisting you in keeping secrecy. Requires a focus to cast."
+	action_to_add = /datum/action/cooldown/spell/shadow_cloak
 	cost = 0
 	is_starting_knowledge = TRUE
 

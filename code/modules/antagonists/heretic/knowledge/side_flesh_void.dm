@@ -35,7 +35,7 @@
 		Также имеет шанс передать раны от вас к жертве."
 	gain_text = "\"Независимо от человека, кровь у нас течет одинаково.\" Так мне сказал Маршал."
 
-	spell_to_add = /datum/action/cooldown/spell/pointed/blood_siphon
+	action_to_add = /datum/action/cooldown/spell/pointed/blood_siphon
 	cost = 1
 
 /datum/heretic_knowledge/spell/void_prison
@@ -47,7 +47,7 @@
 		But the only welts made are on my own beating fist. \
 		My smiling face turns to regard me, reflecting back in glassy eyes the empty path I have been lead down."
 
-	spell_to_add = /datum/action/cooldown/spell/pointed/void_prison
+	action_to_add = /datum/action/cooldown/spell/pointed/void_prison
 	cost = 1
 
 /datum/heretic_knowledge/spell/cleave
@@ -57,7 +57,7 @@
 	gain_text = "Сначала я не понимал этих инструментов войны, но Жрец \
 		сказал мне использовать их независимо от этого. Скоро, сказал он, я буду знать их хорошо."
 
-	spell_to_add = /datum/action/cooldown/spell/pointed/cleave
+	action_to_add = /datum/action/cooldown/spell/pointed/cleave
 	cost = 1
 
 

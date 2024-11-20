@@ -32,7 +32,7 @@
 	research_tree_icon_state = "moon_blade"
 
 /datum/heretic_knowledge/limited_amount/starting/base_moon/on_gain(mob/user, datum/antagonist/heretic/our_heretic)
-	add_traits(user ,TRAIT_EMPATH, REF(src))
+	ADD_TRAIT(user, TRAIT_EMPATH, REF(src))
 
 /datum/heretic_knowledge/moon_grasp
 	name = "Grasp of Lunacy"
@@ -70,7 +70,7 @@
 		на время, зависящее от ее рассудка."
 	gain_text = "Луна улыбается всем нам, и те, кто видит ее правдивую сторону, могут приносить её радость."
 
-	spell_to_add = /datum/action/cooldown/spell/pointed/moon_smile
+	action_to_add = /datum/action/cooldown/spell/pointed/moon_smile
 	cost = 1
 
 /datum/heretic_knowledge/mark/moon_mark
@@ -86,10 +86,10 @@
 
 /datum/heretic_knowledge/spell/moon_parade
 	name = "Lunar Parade"
-	desc = "Дает вам заклинание Lunar Parade, которое через короткую задержку посылает вперед карнавал. \
-		Те, в кого попал карнавал, вынуждены присоединиться к параду и страдать от галлюцинаций."
-	gain_text = "Музыка, как отражение души, побуждала их, и они, словно мотыльки на пламя, следовали за ней."
-	spell_to_add = /datum/action/cooldown/spell/pointed/projectile/moon_parade
+	desc = "Grants you Lunar Parade, a spell that - after a short charge - sends a carnival forward \
+		when hitting someone they are forced to join the parade and suffer hallucinations."
+	gain_text = "The music like a reflection of the soul compelled them, like moths to a flame they followed"
+	action_to_add = /datum/action/cooldown/spell/pointed/projectile/moon_parade
 	cost = 1
 
 /datum/heretic_knowledge/moon_amulet
@@ -144,7 +144,7 @@
 	gain_text = "Взял его за руку, мы поднялись, и те, кто видел правду, поднялись вместе с нами. \
 		Шпрехшталмейстер указал вверх, и тусклый свет правды осветил нас еще больше."
 
-	spell_to_add = /datum/action/cooldown/spell/aoe/moon_ringleader
+	action_to_add = /datum/action/cooldown/spell/aoe/moon_ringleader
 	cost = 1
 
 

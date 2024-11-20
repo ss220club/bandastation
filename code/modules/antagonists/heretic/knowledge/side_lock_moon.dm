@@ -25,7 +25,7 @@
 		замешательство на 10 секунд, потерю дыхания и урон мозгу."
 	gain_text = "Мой разум распахивается, словно врата, и его озарение позволяет мне постичь правду."
 
-	spell_to_add = /datum/action/cooldown/spell/pointed/mind_gate
+	action_to_add = /datum/action/cooldown/spell/pointed/mind_gate
 	cost = 1
 
 /datum/heretic_knowledge/unfathomable_curio

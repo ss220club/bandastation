@@ -22,7 +22,7 @@
 		Однако, вы потеряете сознание на короткий срок после использования"
 	gain_text = "Мои оковы разрываются в темной ярости, их слабые цепи рассыпаются перед моей силой"
 
-	spell_to_add = /datum/action/cooldown/spell/aoe/wave_of_desperation
+	action_to_add = /datum/action/cooldown/spell/aoe/wave_of_desperation
 	cost = 1
 
 /datum/heretic_knowledge/spell/apetra_vulnera
@@ -32,7 +32,7 @@
 		Накладывает рану на случайную часть тела, если не найдены подходящие части тела."
 	gain_text = "Плоть открывается, кровь проливается. Мой хозяин ищет жертвоприношения, и я умиротворю его."
 
-	spell_to_add = /datum/action/cooldown/spell/pointed/apetra_vulnera
+	action_to_add = /datum/action/cooldown/spell/pointed/apetra_vulnera
 	cost = 1
 
 
