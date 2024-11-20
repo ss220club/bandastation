@@ -1,10 +1,10 @@
 /obj/item/toy/plush/hampter
 	name = "хамптер"
 	desc = "Просто плюшевый хамптер. Самый обычный."
-	icon = 'modular_bandastation/objects/icons/hampter.dmi'
+	icon = 'modular_bandastation/objects/icons/plushies.dmi'
 	icon_state = "hampter"
-	lefthand_file = 'modular_bandastation/objects/icons/inhands/hampter_lefthand.dmi'
-	righthand_file = 'modular_bandastation/objects/icons/inhands/hampter_righthand.dmi'
+	lefthand_file = 'modular_bandastation/objects/icons/inhands/plushies_lefthand.dmi'
+	righthand_file = 'modular_bandastation/objects/icons/inhands/plushies_righthand.dmi'
 	inhand_icon_state = "hampter"
 	worn_icon = 'modular_bandastation/objects/icons/inhead/head.dmi'
 	worn_icon_state = "hampter"
