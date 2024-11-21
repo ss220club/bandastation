@@ -24907,7 +24907,6 @@
 /obj/effect/turf_decal/trimline/yellow/filled/line{
 	dir = 4
 	},
-/obj/machinery/vending/wallmed/directional/east,
 /obj/machinery/light_switch/directional/east{
 	pixel_x = 23
 	},
@@ -58469,6 +58468,7 @@
 /obj/machinery/light/directional/east,
 /obj/machinery/status_display/evac/directional/east,
 /obj/structure/table/reinforced,
+/obj/item/storage/box/syringes,
 /turf/open/floor/iron/dark/textured_half{
 	dir = 1
 	},
