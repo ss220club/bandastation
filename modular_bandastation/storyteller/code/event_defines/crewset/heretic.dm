@@ -8,7 +8,7 @@
 	min_players = 30
 
 	maximum_antags_global = 2
-
+	category = EVENT_CATEGORY_INVASION
 	tags = list(TAG_COMBAT, TAG_SPOOKY, TAG_CREW_ANTAG)
 
 /datum/round_event_control/antagonist/solo/heretic/New()

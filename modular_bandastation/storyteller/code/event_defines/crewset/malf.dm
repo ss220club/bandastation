@@ -14,6 +14,7 @@
 	weight = 1
 	tags = list(TAG_CREW_ANTAG, TAG_COMBAT, TAG_DESTRUCTIVE, TAG_CHAOTIC)
 	restricted_roles = list()
+	category = EVENT_CATEGORY_AI
 
 /datum/round_event_control/antagonist/solo/malf/get_candidates()
 	return GLOB.ai_list

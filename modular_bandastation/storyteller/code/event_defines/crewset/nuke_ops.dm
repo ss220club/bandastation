@@ -16,6 +16,7 @@
 	typepath = /datum/round_event/antagonist/team/nukie
 
 	ruleset_lazy_templates = list(LAZY_TEMPLATE_KEY_NUKIEBASE)
+	category = EVENT_CATEGORY_INVASION
 
 /datum/round_event/antagonist/team/nukie
 	var/datum/job/job_type = /datum/job/nuclear_operative

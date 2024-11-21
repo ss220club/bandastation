@@ -136,6 +136,7 @@ SUBSYSTEM_DEF(gamemode)
 
 /datum/controller/subsystem/gamemode/Initialize(time, zlevel)
 	. = ..()
+	SSevents.flags |= SS_NO_FIRE
 	// Populate event pools
 	for(var/track in event_tracks)
 		event_pools[track] = list()

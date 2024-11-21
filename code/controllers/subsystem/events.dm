@@ -64,7 +64,6 @@ SUBSYSTEM_DEF(events)
 //decides which world.time we should select another random event at.
 /datum/controller/subsystem/events/proc/reschedule()
 	scheduled = world.time + rand(frequency_lower, max(frequency_lower,frequency_upper))
-
 /**
  * Selects a random event based on whether it can occur and its 'weight'(probability)
  *
@@ -101,11 +100,16 @@ SUBSYSTEM_DEF(events)
 
 ///Does the last pre-flight checks for the passed event, and runs it if the event is ready.
 /datum/controller/subsystem/events/proc/TriggerEvent(datum/round_event_control/event_to_trigger)
+	/* /// BANDASTATION EDIT START - STORYTELLER - потому-что в жопу вашу систему
 	. = event_to_trigger.preRunEvent()
 	if(. == EVENT_CANT_RUN)//we couldn't run this event for some reason, set its max_occurrences to 0
 		event_to_trigger.max_occurrences = 0
 	else if(. == EVENT_READY)
 		event_to_trigger.run_event(random = TRUE)
+	*/ /// BANDASTATION EDIT END - STORYTELLER
+	message_admins("SSevents sends a [event_to_trigger.name] to Storyteller schedule!")
+	log_game("SSevents sends a [event_to_trigger.name] to Storyteller schedule!")
+	SSgamemode.schedule_event(event_to_trigger, 0, 0, FALSE, TRUE)
 
 ///Toggles whether or not wizard events will be in the event pool, and sends a notification to the admins.
 /datum/controller/subsystem/events/proc/toggleWizardmode()
