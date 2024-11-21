@@ -202,14 +202,6 @@ instrumental = "плиткой"
 nominative = "плитка"
 prepositional = "плитке"
 
-[helmet]
-accusative = "шлем"
-dative = "шлему"
-genitive = "шлема"
-instrumental = "шлемом"
-nominative = "шлем"
-prepositional = "шлеме"
-
 ["intercom frame"]
 accusative = "каркас интеркома"
 dative = "каркасу интеркома"
@@ -1282,6 +1274,15 @@ instrumental = "светошумовой гранатой"
 prepositional = "светошумовой гранате"
 gender = "female"
 
+["box of flashbangs (WARNING)"]
+nominative = "коробка с светошумовыми гранатами (ОСТОРОЖНО)"
+
+["teargas grenade"]
+nominative = "слезоточивая граната"
+
+["box of tear gas grenades (WARNING)"]
+nominative = "коробка с слезоточивыми гранатами"
+
 ["donut box"]
 nominative = "коробка пончиков"
 genitive = "коробки пончиков"
@@ -1292,91 +1293,336 @@ prepositional = "коробке пончиков"
 gender = "female"
 
 ["zipties"]
-["flash"]
-["donut"]
-["evidence bag box"]
-["seclite"]
-["energy bola"]
-["enhanced retrieval gloves"]
-["security holobarrier projector"]
-["security webbing"]
-["antag token"]
-["blue helmet"]
-["security gloves"]
-["large armor vest"]
-["stingbang"]
-["anti-tider-2500 supression backpack"]
-["energy shoulder holsters"]
-["security officer's locker"]
-["armor vest"]
-["security radio headset"]
-["security bowman headset"]
-["security HUDSunglasses"]
-["security belt"]
-["security beret"]
-["security cap"]
-["striped security bandana"]
-["security uniform"]
-["security skirt"]
-["grey security jumpsuit"]
-["slacks"]
-["blue shirt and tie"]
-["security jacket"]
-["security winter jacket"]
-["jackboots"]
-["security backpack"]
-["security satchel"]
-["security duffel bag"]
-["security messenger bag"]
-["security officer's formal uniform"]
-["security officer's jacket"]
-["recharger"]
-["training bomb"]
-["sunglasses"]
-["earmuffs"]
+nominative = "стяжки"
+
 ["box of spare zipties"]
-["box of flashbangs (WARNING)"]
+nominative = "коробка с запасными стяжками"
+
+["flash"]
+nominative = "вспышка"
+
+["portable flasher"]
+nominative = "переносная вспышка"
+
+["security barrier"]
+nominative = "барьер охраны"
+
+["training bomb"]
+nominative = "тренировочная бомба"
+
+["straight jacket"]
+nominative = "смирительная рубашка"
+
+["donut"]
+nominative = "пончик"
+
+["evidence bag"]
+nominative = "пакет для улик"
+
+["evidence bag box"]
+nominative = "коробка с пакетами для улик"
+
+["seclite"]
+nominative = "фонарь охраны"
+
+["energy bola"]
+nominative = "энергетическая бола"
+
+["enhanced retrieval gloves"]
+
+["security holobarrier projector"]
+nominative = "голопроектор охраны"
+
+["security webbing"]
+nominative = "разгрузка охраны"
+
+["antag token"]
+nominative = "жетон антагониста"
+
+["blue helmet"]
+nominative = "синий шлем"
+
+["security gloves"]
+nominative = "перчатки охраны"
+
+["stingbang"]
+nominative = "травматическая граната"
+
+["anti-tider-2500 supression backpack"]
+nominative = "рюкзак подавитель-набегов-2500"
+
+["shoulder holster"]
+nominative = "наплечная кобура"
+
+["energy shoulder holsters"]
+nominative = "энергетическая наплечная кобура"
+
+["security officer's locker"]
+nominative = "шкафчик офицера охраны"
+
+["security radio headset"]
+nominative = "гарнитура охраны"
+
+["security bowman headset"]
+nominative = "гарнитура bowman охраны"
+
+["security HUDSunglasses"]
+nominative = "солнцезащитные HUD очки охраны"
+
+["security belt"]
+nominative = "пояс охраны"
+
+["security beret"]
+nominative = "берет охраны"
+
+["security cap"]
+nominative = "кепка охраны"
+
+["striped security bandana"]
+nominative = "полосатая бандана охраны"
+
+["security uniform"]
+nominative = "комбинезон охраны"
+
+["security skirt"]
+nominative = "комбинезон с юбкой охраны"
+
+["grey security jumpsuit"]
+nominative = "серый комбинезон охраны"
+
+["slacks"]
+nominative = "широкие брюки"
+
+["blue shirt and tie"]
+nominative = "синяя рубашка с галстуком"
+
+["security jacket"]
+nominative = "куртка охраны"
+
+["security winter jacket"]
+nominative = "зимняя куртка охраны"
+
+["jackboots"]
+nominative = "берцы"
+
+["security backpack"]
+nominative = "рюкзак охраны"
+
+["security satchel"]
+nominative = "ранец охраны"
+
+["security duffel bag"]
+nominative = "вещевой мешок охраны"
+
+["security messenger bag"]
+nominative = "сумка посыльного охраны"
+
+["security officer's formal uniform"]
+nominative = "формальная униформа офицера охраны"
+
+["security officer's jacket"]
+nominative = "куртка офицера охраны"
+
+["recharger"]
+nominative = "зарядник"
+
+["sunglasses"]
+nominative = "солнцезащитные очки"
+
+["earmuffs"]
+nominative = "противошумный наушник"
+
 ["security gas mask"]
+nominative = "противогаз охраны"
+
+[helmet]
+nominative = "шлем"
+genitive = "шлема"
+dative = "шлему"
+accusative = "шлем"
+instrumental = "шлемом"
+prepositional = "шлеме"
+gender = "male"
+
+["armor vest"]
+nominative = "бронежилет"
+
+["large armor vest"]
+nominative = "большой бронежилет"
+
+["bulletproof armor"]
+nominative = "пуленепробиваемый бронежилет"
+
+["bulletproof helmet"]
+nominative = "пуленепробиваемый шлем"
+
+["riot suit"]
+nominative = "броня для подавления беспорядков"
+
+["riot helmet"]
+nominative = "шлем для подавления беспорядков"
+
+["MK.I SWAT Suit"]
+nominative = "броня MK.I SWAT"
+
+["SWAT Helmet"]
+nominative = "шлем SWAT"
+
+["SWAT mask"]
+nominative = "маска SWAT"
+
+["riot shield"]
+nominative = "щит для подавления беспорядков"
+
+["telescopic shield"]
+nominative = "телескопический щит"
 
 # Warden
 ["warden's garment bag"]
+nominative = "сумка-чехол смотрителя"
+
 ["krav maga gloves"]
+nominative = "перчатки крав мага"
+
 ["warden's jacket"]
+nominative = "куртка смотрителя"
+
 ["warden's police hat"]
+nominative = "полицейская шляпа смотрителя"
+
 ["warden's campaign hat"]
+nominative = "форменная полевая шляпа смотрителя"
+
 ["warden's beret"]
+nominative = "берет смотрителя"
+
 ["warden's armored jacket"]
+nominative = "бронированная куртка смотрителя"
+
 ["warden's formal uniform"]
+nominative = "формальная униформа смотрителя"
+
 ["warden's suitskirt"]
+nominative = "комбинезон с юбкой смотрителя"
 
 # HoS
 ["head of security's locker"]
-["pinpointer"]
+nominative = "шкафчик главы службы безопасности"
+
 ["head of security data disk"]
+nominative = "диск с данными главы службы безопасности"
+
 ["the head of security's headset"]
+nominative = "гарнитура главы службы безопасности"
+
 ["the head of security's bowman headset"]
+nominative = "гарнитура bowman главы службы безопасности"
+
 ["head of security's garment bag"]
+nominative = "сумка-чехол главы службы безопасности"
+
 ["security medal box"]
+nominative = "коробка с медалями охраны"
+
 ["security megaphone"]
+nominative = "громкоговоритель охраны"
+
 ["lockbox of mindshield implants"]
-["telescopic shield"]
+nominative = "кейс с имплантами разума"
+
 ["photo album (Head of Security)"]
+nominative = "фото-альбом (глава службы безопасности)"
+
 ["head of security cap"]
-["SWAT mask"]
+nominative = "кепка главы службы безопасности"
+
 ["head of security's cloak"]
+nominative = "плащ главы службы безопасности"
+
 ["armored greatcoat"]
+nominative = "бронированная шанель"
+
 ["Head of Security's parade jacket"]
+nominative = "парадная куртка главы службы безопасности"
+
 ["head of security's winter trenchcoat"]
+nominative = "зимний тренч главы службы безопасности"
+
 ["security overcoat"]
+nominative = "пальто охраны"
+
 ["eyepatch HUD"]
+nominative = "повязка с HUD"
+
 ["giga HUD gar glasses"]
+nominative = "гига-гар очки HUD"
+
 ["head of security's beret"]
+nominative = "берет главы службы безопасности"
+
 ["gorilla gloves"]
+nominative = "перчатки gorilla"
+
 ["head of security's parade uniform"]
+nominative = "парадная униформа главы службы безопасности"
+
 ["head of security's grey jumpsuit"]
+nominative = "серый комбинезон главы службы безопасности"
+
 ["head of security's turtleneck skirt"]
+nominative = "водолазка с юбкой главы службы безопасности"
+
 ["head of security's turtleneck"]
+nominative = "водолазка главы службы безопасности"
+
 ["head of security's skirt"]
+nominative = "комбинезон с юбкой главы службы безопасности"
+
+# Other
+["assault belt"]
+nominative = "штурмовой пояс"
+
+["block gloves"]
+nominative = "чёрные перчатки"
+
+["lethal injection syringe"]
+nominative = "шприц со смертельной инъекцией"
+
+["lethal injections locker"]
+nominative = "шкафчик со смертельными инъекциями"
+
+["tracking implant"]
+nominative = "имплант слежения"
+
+["chem implant"]
+nominative = "химический имплант"
+
+["mindshield implant"]
+nominative = "имплант защиты разума"
+
+["pinpointer"]
+nominative = "целеуказатель"
+
+["crew pinpointer"]
+nominative = "целеуказатель на экипаж"
+
+["medical cyborg crew pinpointer"]
+nominative = "целеуказатель на экипаж медицинского киборга"
+
+["syndicate pinpointer"]
+nominative = "целеуказатель синдиката"
+
+["cyborg syndicate pinpointer"]
+nominative = "целеуказатель синдиката киборга"
+
+["contractor pinpointer"]
+nominative = "целеуказатель контрактника"
+
+["pair pinpointer"]
+nominative = "парный целеуказатель"
+
+["bounty shuttle pinpointer"]
+nominative = "целеуказатель шаттла охотников"
 
 # MARK: Kitchen
 
