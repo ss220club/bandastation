@@ -6994,6 +6994,9 @@
 /obj/item/radio/intercom/directional/south,
 /obj/machinery/light/directional/south,
 /obj/effect/turf_decal/tile/red,
+/obj/machinery/computer/warrant{
+	dir = 1
+	},
 /turf/open/floor/iron,
 /area/station/security/brig/entrance)
 "bRL" = (
@@ -85806,7 +85809,6 @@
 /turf/open/floor/iron,
 /area/station/commons/dorms)
 "wWx" = (
-/obj/item/kirbyplants/random,
 /obj/effect/turf_decal/tile/red/half/contrasted{
 	dir = 8
 	},
