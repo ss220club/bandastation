@@ -128,6 +128,7 @@ SUBSYSTEM_DEF(gamemode)
 	var/eng_crew = 0
 	var/sec_crew = 0
 	var/med_crew = 0
+	var/rnd_crew = 0
 
 	var/wizardmode = FALSE
 
@@ -207,7 +208,11 @@ SUBSYSTEM_DEF(gamemode)
 		return 0
 	if(!storyteller.antag_divisor)
 		return 0
-	return round(clamp(get_correct_popcount() / storyteller.antag_divisor + sec_crew, ANTAG_CAP_FLAT, sec_crew * storyteller.max_sec_mult))
+	var/max_antags = sec_crew * storyteller.max_sec_mult
+	var/min_antags = ANTAG_CAP_FLAT
+	var/calculated_cap = (get_correct_popcount() / storyteller.antag_divisor) + sec_crew
+	var/clamped_cap = clamp(calculated_cap, min_antags, max_antags)
+	return round(clamped_cap)
 
 /// Whether events can inject more antagonists into the round
 /datum/controller/subsystem/gamemode/proc/can_inject_antags()
@@ -692,7 +697,8 @@ SUBSYSTEM_DEF(gamemode)
 	storyteller = storytellers[passed_type]
 
 	var/datum/storyteller_data/tracks/track_data = storyteller.track_data
-	storyteller.max_sec_mult = storyteller.max_sec_mult * CONFIG_GET(number/max_sec_mult)
+	var/config_sec_mult = CONFIG_GET(number/max_sec_mult)
+	storyteller.max_sec_mult = storyteller.max_sec_mult * config_sec_mult
 	point_thresholds[EVENT_TRACK_MUNDANE] = track_data.threshold_mundane * CONFIG_GET(number/mundane_point_threshold)
 	point_thresholds[EVENT_TRACK_MODERATE] = track_data.threshold_moderate * CONFIG_GET(number/moderate_point_threshold)
 	point_thresholds[EVENT_TRACK_MAJOR] = track_data.threshold_major * CONFIG_GET(number/major_point_threshold)
@@ -711,7 +717,7 @@ SUBSYSTEM_DEF(gamemode)
 	dat += "Storyteller: [storyteller ? "[storyteller.name]" : "None"] "
 	dat += " <a href='?src=[REF(src)];panel=main;action=halt_storyteller' [halted_storyteller ? "class='linkOn'" : ""]>HALT Storyteller</a> <a href='?src=[REF(src)];panel=main;action=open_stats'>Event Panel</a> <a href='?src=[REF(src)];panel=main;action=set_storyteller'>Set Storyteller</a> <a href='?src=[REF(src)];panel=main'>Refresh</a>"
 	dat += "<BR><font color='#888888'><i>Storyteller determines points gained, event chances, and is the entity responsible for rolling events.</i></font>"
-	dat += "<BR>Active Players: [active_pop]   (Head: [head_crew], Sec: [sec_crew], Eng: [eng_crew], Med: [med_crew]) - Antag Cap: [get_antag_cap()]"
+	dat += "<BR>Active Players: [active_pop]   (Head: [head_crew], Sec: [sec_crew], Eng: [eng_crew], Med: [med_crew], Rnd: [med_crew]) - Antag Cap: [get_antag_cap()]"
 	dat += "<HR>"
 	dat += "<a href='?src=[REF(src)];panel=main;action=tab;tab=[GAMEMODE_PANEL_MAIN]' [panel_page == GAMEMODE_PANEL_MAIN ? "class='linkOn'" : ""]>Main</a>"
 	dat += " <a href='?src=[REF(src)];panel=main;action=tab;tab=[GAMEMODE_PANEL_VARIABLES]' [panel_page == GAMEMODE_PANEL_VARIABLES ? "class='linkOn'" : ""]>Variables</a>"

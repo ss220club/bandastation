@@ -76,4 +76,5 @@
 
 /datum/round_event_control/wizard
 	track = EVENT_TRACK_MAJOR
+	weight = 5
 	tags = list(TAG_COMMUNAL, TAG_DESTRUCTIVE, TAG_CHAOTIC)

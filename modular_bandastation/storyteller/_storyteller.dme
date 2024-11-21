@@ -10,6 +10,7 @@
 #include "code\event_defines\crewset\heretic.dm"
 #include "code\event_defines\crewset\malf.dm"
 #include "code\event_defines\crewset\nuke_ops.dm"
+#include "code\event_defines\crewset\spies.dm"
 #include "code\event_defines\crewset\traitors.dm"
 
 #include "code\event_defines\ghostset\override.dm"

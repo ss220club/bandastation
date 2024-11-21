@@ -69,7 +69,7 @@
 
 // Point Thresholds
 /datum/config_entry/number/max_sec_mult
-	config_entry_value = STORYTELLER_MAX_SEC_BASE_MULT
+	config_entry_value = MAX_SEC_MULT
 	integer = FALSE
 	min_val = 0
 
