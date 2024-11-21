@@ -94,8 +94,8 @@
 				valid_events[event] = event.calculated_weight
 		///If we didn't get any events, remove the points inform admins and dont do anything
 		if(!length(valid_events))
-			message_admins("Storyteller failed to pick an event for track of [track].")
-			log_admin("Storyteller failed to pick an event for track of [track].")
+			message_admins("Storyteller failed to pick an event for track of [track] due to no valid events.")
+			log_admin("Storyteller failed to pick an event for track of [track] due to no valid events.")
 			SSgamemode.event_track_points[track] *= TRACK_FAIL_POINT_PENALTY_MULTIPLIER
 			return
 		picked_event = pick_weight(valid_events)
