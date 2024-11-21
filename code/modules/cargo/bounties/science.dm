@@ -118,7 +118,7 @@
 	wanted_types = list(/obj/item/assembly/signaler/anomaly/pyro = TRUE)
 
 /datum/bounty/item/science/ref_anomaly/grav
-	name = "Перерабтанное гравитационное ядро"
+	name = "Переработанное гравитационное ядро"
 	description = "Центральный НИО пытается обнаружить способ заставить мехов парить, отправьте гравитационное ядро."
 	wanted_types = list(/obj/item/assembly/signaler/anomaly/grav = TRUE)
 
