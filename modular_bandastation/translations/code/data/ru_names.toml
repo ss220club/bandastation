@@ -130,14 +130,6 @@ instrumental = "молотком-гвоздодером"
 nominative = "молоток-гвоздодер"
 prepositional = "молотке-гвоздодере"
 
-["cleaner grenade"]
-accusative = "чистящую гранату"
-dative = "чистящей гранате"
-genitive = "чистящей гранаты"
-instrumental = "чистящей гранатой"
-nominative = "чистящая граната"
-prepositional = "чистящей гранате"
-
 ["command intercom"]
 accusative = "интерком командования"
 dative = "интеркому командования"
@@ -193,14 +185,6 @@ genitive = "удочки"
 instrumental = "удочкой"
 nominative = "удочка"
 prepositional = "удочке"
-
-[floor]
-accusative = "плитку"
-dative = "плитке"
-genitive = "плитку"
-instrumental = "плиткой"
-nominative = "плитка"
-prepositional = "плитке"
 
 ["intercom frame"]
 accusative = "каркас интеркома"
@@ -338,14 +322,6 @@ instrumental = "укреплённым столом"
 nominative = "укреплённый стол"
 prepositional = "укреплённом столе"
 
-["reinforced wall"]
-accusative = "усиленную стену"
-dative = "усиленной стене"
-genitive = "усиленной стены"
-instrumental = "усиленной стеной"
-nominative = "усиленная стена"
-prepositional = "усиленной стене"
-
 [shower]
 accusative = "душ"
 dative = "душу"
@@ -385,14 +361,6 @@ genitive = "широкополосного интеркома синдиката
 instrumental = "широкополосным интеркомом синдиката"
 nominative = "широкополосный интерком синдиката"
 prepositional = "широкополосном интеркоме синдиката"
-
-[wall]
-accusative = "стену"
-dative = "стене"
-genitive = "стены"
-instrumental = "стеной"
-nominative = "стена"
-prepositional = "стене"
 
 ["briefcase"]
 nominative = "портфель"
@@ -2477,6 +2445,34 @@ instrumental = "манекеном"
 prepositional = "манекене"
 gender = "male"
 
+# MARK: Turfs
+[floor]
+nominative = "плитка"
+genitive = "плитки"
+dative = "плитке"
+accusative = "плитку"
+instrumental = "плиткой"
+prepositional = "плитке"
+gender = "female"
+
+[wall]
+nominative = "стена"
+genitive = "стены"
+dative = "стене"
+accusative = "стену"
+instrumental = "стеной"
+prepositional = "стене"
+gender = "female"
+
+["reinforced wall"]
+nominative = "усиленная стена"
+genitive = "усиленной стены"
+dative = "усиленной стене"
+accusative = "усиленную стену"
+instrumental = "усиленной стеной"
+prepositional = "усиленной стене"
+gender = "female"
+
 # MARK: Burocracy and Art
 ["folder"]
 nominative = "папка"
@@ -2523,6 +2519,15 @@ accusative = "галоши"
 instrumental = "галошами"
 prepositional = "галошах"
 gender = "plural"
+
+["cleaner grenade"]
+nominative = "чистящая граната"
+genitive = "чистящей гранаты"
+dative = "чистящей гранате"
+accusative = "чистящую гранату"
+instrumental = "чистящей гранатой"
+prepositional = "чистящей гранате"
+gender = "female"
 
 # MARK: Stock parts
 # Tier 1
