@@ -213,7 +213,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/duct,
-/obj/structure/cable,
 /turf/open/floor/iron,
 /area/station/engineering/storage_shared)
 "adh" = (
@@ -3674,13 +3673,6 @@
 "aXv" = (
 /turf/open/floor/iron,
 /area/station/engineering/atmos/project)
-"aXx" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/duct,
-/obj/structure/cable,
-/turf/open/floor/iron,
-/area/station/engineering/storage_shared)
 "aXE" = (
 /obj/structure/table/wood,
 /obj/item/clothing/under/costume/maid,
@@ -7827,7 +7819,6 @@
 /turf/open/floor/plating/airless,
 /area/space/nearstation)
 "ccQ" = (
-/obj/structure/cable,
 /turf/open/floor/iron,
 /area/station/engineering/storage_shared)
 "ccU" = (
@@ -16870,6 +16861,7 @@
 /obj/effect/turf_decal/tile/yellow{
 	dir = 4
 	},
+/obj/structure/cable,
 /turf/open/floor/iron/dark,
 /area/station/engineering/storage_shared)
 "eru" = (
@@ -20916,7 +20908,6 @@
 	id = "engi_storage"
 	},
 /obj/machinery/duct,
-/obj/structure/cable,
 /turf/open/floor/iron/dark,
 /area/station/engineering/storage_shared)
 "fyf" = (
@@ -34474,9 +34465,7 @@
 	id = "hop";
 	name = "Privacy Shutters"
 	},
-/obj/machinery/door/window/right/directional/west{
-	req_access = list("hop")
-	},
+/obj/machinery/door/window/right/directional/west,
 /obj/machinery/door/window/right/directional/east{
 	req_access = list("hop")
 	},
@@ -38542,6 +38531,7 @@
 /obj/effect/turf_decal/tile/yellow/half/contrasted{
 	dir = 8
 	},
+/obj/structure/cable,
 /turf/open/floor/iron/dark,
 /area/station/engineering/hallway)
 "knd" = (
@@ -40185,8 +40175,6 @@
 "kFP" = (
 /obj/machinery/light/small/directional/north,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/power/apc/auto_name/directional/north,
-/obj/structure/cable,
 /turf/open/floor/iron,
 /area/station/engineering/storage_shared)
 "kFX" = (
@@ -50052,6 +50040,8 @@
 /obj/item/storage/box/lights/mixed,
 /obj/effect/turf_decal/bot,
 /obj/effect/turf_decal/tile/yellow/fourcorners,
+/obj/machinery/power/apc/auto_name/directional/north,
+/obj/structure/cable,
 /turf/open/floor/iron/dark,
 /area/station/engineering/storage_shared)
 "noj" = (
@@ -67243,6 +67233,7 @@
 	pixel_y = 3
 	},
 /obj/machinery/light/directional/north,
+/obj/item/reagent_containers/condiment/enzyme,
 /turf/open/floor/iron/cafeteria,
 /area/station/service/kitchen)
 "rVa" = (
@@ -71165,6 +71156,7 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/door/firedoor,
+/obj/structure/cable,
 /turf/open/floor/iron/dark,
 /area/station/engineering/storage_shared)
 "sZl" = (
@@ -72771,7 +72763,9 @@
 	pixel_y = -3
 	},
 /obj/structure/table/reinforced,
-/obj/machinery/door/window/right/directional/south,
+/obj/machinery/door/window/right/directional/south{
+	req_access = list("medical")
+	},
 /turf/open/floor/iron/white,
 /area/station/medical/storage)
 "tuh" = (
@@ -85091,7 +85085,9 @@
 	pixel_y = -3
 	},
 /obj/structure/table/reinforced,
-/obj/machinery/door/window/left/directional/south,
+/obj/machinery/door/window/left/directional/south{
+	req_access = list("medical")
+	},
 /turf/open/floor/iron/white,
 /area/station/medical/storage)
 "wLD" = (
@@ -86811,6 +86807,7 @@
 "xjP" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
 /turf/open/floor/iron/dark,
 /area/station/engineering/storage_shared)
 "xjR" = (
@@ -181475,7 +181472,7 @@ pyd
 fjs
 kFP
 ccQ
-aXx
+fyD
 utw
 fur
 lcR
