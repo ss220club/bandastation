@@ -3351,6 +3351,7 @@ dative = "банану"
 accusative = "банан"
 instrumental = "бананом"
 prepositional = "банане"
+gender = "male"
 
 # MARK: Cargo
 ["crate"]
