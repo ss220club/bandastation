@@ -14700,7 +14700,6 @@
 /obj/structure/disposalpipe/segment{
 	dir = 10
 	},
-/obj/machinery/vending/wallmed/directional/north,
 /obj/machinery/duct,
 /turf/open/floor/iron/dark,
 /area/station/service/hydroponics)
