@@ -124,7 +124,7 @@
 
 /datum/bounty/item/science/ref_anomaly/vortex
 	name = "Переработанное вортекс ядро"
-	description = "Мы собираемся бросить ворктес ядро в червоточину и посмотреть, что произойдёт. Отправьте одно."
+	description = "Мы собираемся бросить вортекс ядро в червоточину и посмотреть, что произойдёт. Отправьте одно."
 	wanted_types = list(/obj/item/assembly/signaler/anomaly/vortex = TRUE)
 
 /datum/bounty/item/science/ref_anomaly/hallucination
