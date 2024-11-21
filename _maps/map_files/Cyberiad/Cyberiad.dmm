@@ -83136,6 +83136,9 @@
 /obj/machinery/door/airlock/maintenance{
 	name = "Bar Maintenance"
 	},
+/obj/effect/mapping_helpers/airlock/unres{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/station/maintenance/starboard/fore)
 "wje" = (
