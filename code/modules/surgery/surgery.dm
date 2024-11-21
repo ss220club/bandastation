@@ -131,7 +131,7 @@
 		return FALSE
 	//Just because you used the wrong tool it doesn't mean you meant to whack the patient with it
 	if((surgery_flags & SURGERY_CHECK_TOOL_BEHAVIOUR) ? tool.tool_behaviour : (tool.item_flags & SURGICAL_TOOL))
-		to_chat(user, span_warning("This step requires a different tool!"))
+		to_chat(user, span_warning("Для этого шага требуется другой инструмент!"))
 		return TRUE
 
 	return FALSE

@@ -706,7 +706,7 @@
 			for(var/mob/smeller in get_hearers_in_view(DEFAULT_MESSAGE_RANGE, src))
 				if(HAS_TRAIT(smeller, TRAIT_ANOSMIA))
 					cant_smell += smeller
-			visible_message(span_danger("You smell a burnt smell coming from [src]!"), ignored_mobs = cant_smell)
+			visible_message(span_danger("Вы чуете запах гари из [declent_ru(GENITIVE)]!"), ignored_mobs = cant_smell)
 			add_shared_particles(/particles/smoke)
 			addtimer(CALLBACK(src, TYPE_PROC_REF(/atom/movable, remove_shared_particles), /particles/smoke), 10 SECONDS)
 			Shake(duration = 1 SECONDS)
