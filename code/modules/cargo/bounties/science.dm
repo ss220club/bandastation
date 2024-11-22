@@ -118,13 +118,13 @@
 	wanted_types = list(/obj/item/assembly/signaler/anomaly/pyro = TRUE)
 
 /datum/bounty/item/science/ref_anomaly/grav
-	name = "Перерабтанное гравитационное ядро"
+	name = "Переработанное гравитационное ядро"
 	description = "Центральный НИО пытается обнаружить способ заставить мехов парить, отправьте гравитационное ядро."
 	wanted_types = list(/obj/item/assembly/signaler/anomaly/grav = TRUE)
 
 /datum/bounty/item/science/ref_anomaly/vortex
 	name = "Переработанное вортекс ядро"
-	description = "Мы собираемся бросить ворктес ядро в червоточину и посмотреть, что произойдёт. Отправьте одно."
+	description = "Мы собираемся бросить вортекс ядро в червоточину и посмотреть, что произойдёт. Отправьте одно."
 	wanted_types = list(/obj/item/assembly/signaler/anomaly/vortex = TRUE)
 
 /datum/bounty/item/science/ref_anomaly/hallucination
