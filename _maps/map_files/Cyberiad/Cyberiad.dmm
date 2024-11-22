@@ -45183,7 +45183,9 @@
 /area/station/science/robotics/lab)
 "lWi" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/machinery/door/airlock/public/glass,
+/obj/machinery/door/airlock/public{
+	id_tag = "VacantStore"
+	},
 /obj/effect/mapping_helpers/airlock/autoname,
 /obj/machinery/door/firedoor,
 /obj/effect/mapping_helpers/airlock/access/all/engineering/maintenance,
@@ -62146,6 +62148,12 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/structure/railing{
 	dir = 4
+	},
+/obj/machinery/button/door/directional/west{
+	id = "VacantStore";
+	name = "Lock Control";
+	normaldoorcontrol = 1;
+	specialfunctions = 4
 	},
 /turf/open/floor/iron/stairs{
 	dir = 1
