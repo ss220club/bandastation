@@ -2,11 +2,6 @@
 	track = EVENT_TRACK_MAJOR
 	tags = list(TAG_DESTRUCTIVE)
 
-/datum/round_event_control/bureaucratic_error
-	track = EVENT_TRACK_MAJOR // Yes, it's annoying.
-	tags = list(TAG_COMMUNAL)
-	weight = 5
-
 /datum/round_event_control/blob
 	track = EVENT_TRACK_MAJOR
 	tags = list(TAG_DESTRUCTIVE, TAG_COMBAT, TAG_CHAOTIC)
@@ -78,3 +73,9 @@
 	track = EVENT_TRACK_MAJOR
 	weight = 5
 	tags = list(TAG_COMMUNAL, TAG_DESTRUCTIVE, TAG_CHAOTIC)
+
+/datum/round_event_control/wizard/round_start
+	track = EVENT_TRACK_MAJOR
+	weight = 5
+	tags = list(TAG_COMMUNAL, TAG_DESTRUCTIVE, TAG_CHAOTIC)
+	roundstart = TRUE

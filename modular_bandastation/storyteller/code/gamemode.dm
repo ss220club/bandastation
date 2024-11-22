@@ -136,7 +136,6 @@ SUBSYSTEM_DEF(gamemode)
 
 /datum/controller/subsystem/gamemode/Initialize(time, zlevel)
 	. = ..()
-	SSevents.flags |= SS_NO_FIRE
 	// Populate event pools
 	for(var/track in event_tracks)
 		event_pools[track] = list()
@@ -380,6 +379,7 @@ SUBSYSTEM_DEF(gamemode)
 	eng_crew = 0
 	med_crew = 0
 	sec_crew = 0
+	rnd_crew = 0
 	for(var/mob/player_mob as anything in GLOB.player_list)
 		if(!player_mob.client)
 			continue
@@ -403,8 +403,8 @@ SUBSYSTEM_DEF(gamemode)
 			if(player_role.departments_bitflags & DEPARTMENT_BITFLAG_SCIENCE)
 				rnd_crew++
 
-/datum/controller/subsystem/gamemode/proc/TriggerEvent(datum/round_event_control/event)
-	. = event.preRunEvent()
+/datum/controller/subsystem/gamemode/proc/TriggerEvent(datum/round_event_control/event, admin_forced = FALSE)
+	. = event.preRunEvent(admin_forced)
 	if(. == EVENT_CANT_RUN)//we couldn't run this event for some reason, set its max_occurrences to 0
 		event.max_occurrences = 0
 	else if(. == EVENT_READY)

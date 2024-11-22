@@ -82,4 +82,4 @@
 		if("fire")
 			message_admins("[key_name_admin(usr)] has fired event [src.name].")
 			log_admin_private("[key_name(usr)] has fired event [src.name].")
-			SSgamemode.fire(src)
+			run_event(random = FALSE, admin_forced = TRUE)

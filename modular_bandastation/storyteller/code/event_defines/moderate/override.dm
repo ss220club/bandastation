@@ -44,3 +44,8 @@
 
 /datum/round_event_control/obsessed
 	tags = list(TAG_TARGETED)
+
+/datum/round_event_control/bureaucratic_error
+	tags = list(TAG_COMMUNAL)
+	weight = 5
+	max_occurrences = 1

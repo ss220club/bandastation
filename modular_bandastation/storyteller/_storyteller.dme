@@ -12,6 +12,10 @@
 #include "code\event_defines\crewset\nuke_ops.dm"
 #include "code\event_defines\crewset\spies.dm"
 #include "code\event_defines\crewset\traitors.dm"
+#include "code\event_defines\crewset\blood_brothers.dm"
+#include "code\event_defines\crewset\cult.dm"
+#include "code\event_defines\crewset\clown_ops.dm"
+#include "code\event_defines\crewset\revolution.dm"
 
 #include "code\event_defines\ghostset\override.dm"
 #include "code\event_defines\ghostset\voidwalker.dm"

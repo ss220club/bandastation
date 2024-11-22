@@ -1,3 +1,13 @@
+/datum/round_event_control/space_dust
+	track = EVENT_TRACK_MUNDANE
+	weight = 10
+	tags = list(TAG_SPACE)
+
+/datum/round_event_control/camera_failure
+	track = EVENT_TRACK_MUNDANE
+	weight = 10
+	tags = list(TAG_COMMUNAL)
+
 /datum/round_event_control/aurora_caelus
 	track = EVENT_TRACK_MUNDANE
 	tags = list(TAG_COMMUNAL, TAG_POSITIVE, TAG_SPACE)

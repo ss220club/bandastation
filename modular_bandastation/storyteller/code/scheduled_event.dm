@@ -45,7 +45,7 @@
 		return "<a href='?src=[REF(src)];action=cancel'>Cancel</a>"
 
 /// Try and fire off the scheduled event
-/datum/scheduled_event/proc/try_fire()
+/datum/scheduled_event/proc/try_fire(admin_forced = FALSE)
 	/// Remove our fake occurence pre-emptively for the checks.
 	remove_occurence()
 	var/players_amt = get_active_player_count(alive_check = TRUE, afk_check = TRUE, human_check = FALSE)
@@ -59,7 +59,7 @@
 
 	///Trigger the event and remove the scheduled datum
 	message_admins("Scheduled Event: [event] successfully triggered.")
-	SSgamemode.TriggerEvent(event)
+	SSgamemode.TriggerEvent(event, admin_forced)
 	SSgamemode.remove_scheduled_event(src)
 
 /datum/scheduled_event/Destroy()
@@ -93,4 +93,4 @@
 				return
 			message_admins("[key_name_admin(usr)] has fired scheduled event [event.name].")
 			log_admin_private("[key_name(usr)] has fired scheduled event [event.name].")
-			try_fire()
+			event.run_event(admin_forced = TRUE)
