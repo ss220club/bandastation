@@ -46073,6 +46073,13 @@
 "miI" = (
 /turf/open/floor/iron/dark,
 /area/station/science/robotics/lab)
+"miL" = (
+/obj/docking_port/stationary/random{
+	name = "lavaland";
+	shuttle_id = "pod_2_lavaland"
+	},
+/turf/open/space/openspace,
+/area/space)
 "miT" = (
 /obj/structure/table/glass,
 /obj/item/storage/dice,
@@ -62167,13 +62174,6 @@
 /obj/effect/mapping_helpers/airlock/access/all/security/general,
 /turf/open/floor/iron,
 /area/station/security/checkpoint/customs)
-"qAy" = (
-/obj/docking_port/stationary/random{
-	name = "lavaland";
-	shuttle_id = "pod_2_lavaland"
-	},
-/turf/open/space/openspace,
-/area/space)
 "qAC" = (
 /obj/item/seeds/banana,
 /obj/effect/decal/cleanable/dirt,
@@ -88428,6 +88428,7 @@
 /obj/effect/turf_decal/trimline/green/filled/line{
 	dir = 1
 	},
+/obj/structure/reagent_dispensers/wall/virusfood/directional/north,
 /turf/open/floor/iron/white,
 /area/station/medical/virology)
 "xGb" = (
@@ -166860,7 +166861,7 @@ tYD
 tYD
 tYD
 tYD
-qAy
+miL
 tYD
 tYD
 tYD
