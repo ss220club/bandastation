@@ -55,22 +55,32 @@
 	if(!.)
 		return
 	if(roundstart && SSticker.HasRoundStarted())
-		message_admins("<font color='[COLOR_SOFT_RED]'>Storyteller event: [name]</font> was unable to run due event is roundstart and round started.")
-		log_admin("<font color='[COLOR_SOFT_RED]'>Storyteller event: [name]</font> was unable to run due event is roundstart and round started.")
 		return FALSE
 	if(SSgamemode.can_inject_antags())
-		message_admins("<font color='[COLOR_SOFT_RED]'>Storyteller event: [name]</font> was unable to run due event can't inject antags over sec cap.")
-		log_admin("<font color='[COLOR_SOFT_RED]'>Storyteller event: [name]</font> was unable to run due event can't inject antags over sec cap.")
 		return FALSE
 	if(!get_antag_amount())
-		message_admins("<font color='[COLOR_SOFT_RED]'>Storyteller event: [name]</font> was unable to run due too many antags.")
-		log_admin("<font color='[COLOR_SOFT_RED]'>Storyteller event: [name]</font> was unable to run due too many antags.")
 		return FALSE
 	var/list/candidates = get_candidates()
 	if(candidates.len < get_minimum_candidates())
-		message_admins("<font color='[COLOR_SOFT_RED]'>Storyteller event: [name]</font> was unable to run due too low candidates count.")
-		log_admin("<font color='[COLOR_SOFT_RED]'>Storyteller event: [name]</font> was unable to run due too low candidates count.")
 		return FALSE
+
+/datum/round_event_control/antagonist/can_spawn_event_error_reason(players_amt, allow_magic = FALSE, popchecks = TRUE)
+	. = ..()
+	var/message = .
+	if(message == "success")
+		return
+	if(roundstart && SSticker.HasRoundStarted())
+		message = "<font color='[COLOR_SOFT_RED]'>Storyteller event: [name]</font> was unable to run due event is roundstart and round started."
+	if(SSgamemode.can_inject_antags())
+		message = "<font color='[COLOR_SOFT_RED]'>Storyteller event: [name]</font> was unable to run due event can't inject antags over sec cap: [SSgamemode.get_antag_cap()]."
+	if(!get_antag_amount())
+		message = "<font color='[COLOR_SOFT_RED]'>Storyteller event: [name]</font> was unable to run due no antags count to spawn."
+	var/list/candidates = get_candidates()
+	if(candidates.len < get_minimum_candidates())
+		message = "<font color='[COLOR_SOFT_RED]'>Storyteller event: [name]</font> was unable to run due too low candidates count."
+
+	return message
+
 
 /datum/round_event_control/antagonist/proc/get_minimum_candidates()
 	return minimum_candidate_base
