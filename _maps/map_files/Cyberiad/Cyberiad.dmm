@@ -13112,6 +13112,13 @@
 /obj/machinery/air_sensor/carbon_tank,
 /turf/open/floor/engine/co2,
 /area/station/engineering/atmos)
+"drL" = (
+/obj/docking_port/stationary/random{
+	name = "lavaland";
+	shuttle_id = "pod_2_lavaland"
+	},
+/turf/open/space/openspace,
+/area/space)
 "drS" = (
 /obj/structure/barricade/wooden,
 /obj/effect/spawner/structure/window/reinforced,
@@ -16212,7 +16219,7 @@
 "ehl" = (
 /obj/docking_port/stationary/random{
 	name = "lavaland";
-	shuttle_id = "pod_lavaland";
+	shuttle_id = "pod_3_lavaland";
 	dir = 4
 	},
 /turf/open/space/openspace,
@@ -77650,7 +77657,7 @@
 "uKq" = (
 /obj/docking_port/stationary/random{
 	name = "lavaland";
-	shuttle_id = "pod_lavaland";
+	shuttle_id = "pod_4_lavaland";
 	dir = 4
 	},
 /turf/open/space/basic,
@@ -167012,7 +167019,7 @@ tYD
 tYD
 tYD
 tYD
-vHR
+drL
 tYD
 tYD
 tYD
