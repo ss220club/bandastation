@@ -8012,7 +8012,6 @@
 /obj/effect/turf_decal/tile/green/half{
 	dir = 1
 	},
-/obj/machinery/duct,
 /turf/open/floor/iron/edge{
 	dir = 1
 	},
@@ -14710,7 +14709,6 @@
 /obj/structure/disposalpipe/segment{
 	dir = 10
 	},
-/obj/machinery/duct,
 /turf/open/floor/iron/dark,
 /area/station/service/hydroponics)
 "dNI" = (
@@ -18127,7 +18125,6 @@
 /obj/effect/turf_decal/tile/blue/half/contrasted{
 	dir = 4
 	},
-/obj/machinery/duct,
 /turf/open/floor/iron/edge{
 	dir = 4
 	},
@@ -19012,7 +19009,6 @@
 /obj/effect/turf_decal/tile/blue{
 	dir = 1
 	},
-/obj/machinery/duct,
 /turf/open/floor/iron,
 /area/station/service/hydroponics)
 "eXj" = (
@@ -28769,6 +28765,8 @@
 /area/station/service/hydroponics/garden)
 "hEZ" = (
 /obj/structure/extinguisher_cabinet/directional/east,
+/obj/structure/reagent_dispensers/watertank/high,
+/obj/item/reagent_containers/cup/watering_can,
 /turf/open/floor/iron/dark,
 /area/station/service/hydroponics)
 "hFb" = (
@@ -31471,7 +31469,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/structure/disposalpipe/segment,
-/obj/machinery/duct,
 /turf/open/floor/iron/dark,
 /area/station/service/hydroponics)
 "isq" = (
@@ -32984,13 +32981,6 @@
 /obj/effect/spawner/random/trash/grime,
 /turf/open/floor/iron/large,
 /area/station/maintenance/ghetto/central)
-"iLU" = (
-/obj/docking_port/stationary/random{
-	name = "lavaland";
-	shuttle_id = "pod_2_lavaland"
-	},
-/turf/open/space/openspace,
-/area/space)
 "iMb" = (
 /obj/machinery/door/firedoor,
 /obj/structure/disposalpipe/segment,
@@ -36497,9 +36487,6 @@
 /area/station/maintenance/starboard/aft)
 "jKd" = (
 /obj/machinery/light_switch/directional/west,
-/obj/machinery/power/floodlight{
-	anchored = 1
-	},
 /turf/open/floor/iron/dark,
 /area/station/service/hydroponics)
 "jKe" = (
@@ -45718,7 +45705,6 @@
 /obj/effect/turf_decal/tile/green/half{
 	dir = 4
 	},
-/obj/machinery/duct,
 /turf/open/floor/iron/edge{
 	dir = 4
 	},
@@ -52992,7 +52978,6 @@
 	dir = 5
 	},
 /obj/structure/cable,
-/obj/machinery/duct,
 /turf/open/floor/iron/dark,
 /area/station/service/hydroponics)
 "ocB" = (
@@ -54032,7 +54017,6 @@
 /obj/effect/mapping_helpers/airlock/autoname,
 /obj/effect/mapping_helpers/airlock/access/all/service/hydroponics,
 /obj/machinery/door/firedoor,
-/obj/machinery/duct,
 /turf/open/floor/iron/dark,
 /area/station/service/hydroponics)
 "oqR" = (
@@ -54826,13 +54810,9 @@
 /turf/open/floor/wood,
 /area/station/security/courtroom)
 "oBh" = (
-/obj/structure/table,
-/obj/item/reagent_containers/cup/watering_can{
-	pixel_y = 2
-	},
-/obj/item/reagent_containers/cup/watering_can{
-	pixel_y = 6
-	},
+/obj/structure/reagent_dispensers/watertank/high,
+/obj/item/reagent_containers/cup/watering_can,
+/obj/structure/window/reinforced/spawner/directional/north,
 /turf/open/floor/iron/dark,
 /area/station/service/hydroponics)
 "oBi" = (
@@ -62187,6 +62167,13 @@
 /obj/effect/mapping_helpers/airlock/access/all/security/general,
 /turf/open/floor/iron,
 /area/station/security/checkpoint/customs)
+"qAy" = (
+/obj/docking_port/stationary/random{
+	name = "lavaland";
+	shuttle_id = "pod_2_lavaland"
+	},
+/turf/open/space/openspace,
+/area/space)
 "qAC" = (
 /obj/item/seeds/banana,
 /obj/effect/decal/cleanable/dirt,
@@ -69122,7 +69109,6 @@
 /area/station/maintenance/department/engine/atmos)
 "srE" = (
 /obj/effect/turf_decal/tile/blue/anticorner/contrasted,
-/obj/machinery/duct,
 /turf/open/floor/iron/corner{
 	dir = 1
 	},
@@ -69261,7 +69247,6 @@
 /obj/effect/mapping_helpers/airlock/autoname,
 /obj/structure/cable,
 /obj/machinery/door/firedoor,
-/obj/machinery/duct,
 /obj/effect/mapping_helpers/airlock/access/all/service/hydroponics,
 /turf/open/floor/iron/dark,
 /area/station/hallway/secondary/service)
@@ -69795,13 +69780,9 @@
 /turf/open/floor/iron,
 /area/station/security/range)
 "sCf" = (
-/obj/effect/turf_decal/tile/green/half{
-	dir = 8
-	},
-/obj/machinery/duct,
-/turf/open/floor/iron/edge{
-	dir = 8
-	},
+/obj/structure/reagent_dispensers/plumbed,
+/obj/structure/window/reinforced/spawner/directional/south,
+/turf/open/floor/iron/dark,
 /area/station/service/hydroponics)
 "sCm" = (
 /turf/open/floor/engine/air,
@@ -72393,7 +72374,6 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/machinery/duct,
 /turf/open/floor/iron/dark,
 /area/station/service/hydroponics)
 "toF" = (
@@ -74161,7 +74141,6 @@
 /obj/effect/turf_decal/tile/blue{
 	dir = 4
 	},
-/obj/machinery/duct,
 /turf/open/floor/iron/edge{
 	dir = 4
 	},
@@ -77258,7 +77237,6 @@
 "uGI" = (
 /obj/effect/landmark/start/botanist,
 /obj/structure/chair/stool/directional/west,
-/obj/machinery/duct,
 /turf/open/floor/iron/dark,
 /area/station/service/hydroponics)
 "uGM" = (
@@ -78033,7 +78011,6 @@
 /obj/structure/disposalpipe/segment{
 	dir = 9
 	},
-/obj/machinery/duct,
 /turf/open/floor/iron/dark,
 /area/station/service/hydroponics)
 "uRh" = (
@@ -80646,7 +80623,6 @@
 "vAa" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/effect/turf_decal/tile/blue,
-/obj/machinery/duct,
 /turf/open/floor/iron,
 /area/station/service/hydroponics)
 "vAe" = (
@@ -166884,7 +166860,7 @@ tYD
 tYD
 tYD
 tYD
-iLU
+qAy
 tYD
 tYD
 tYD
@@ -196462,7 +196438,7 @@ mvc
 nrH
 ctG
 rKR
-sCf
+chW
 keB
 chW
 keB
@@ -196725,7 +196701,7 @@ eJS
 mcF
 mcF
 tLO
-byC
+qAE
 cbP
 uap
 kkl
@@ -198004,7 +197980,7 @@ ylA
 nrH
 oBh
 hEZ
-qAE
+sCf
 qTE
 fiS
 qTE
