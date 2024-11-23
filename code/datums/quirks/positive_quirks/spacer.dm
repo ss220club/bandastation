@@ -9,7 +9,7 @@
 	gain_text = span_notice("В космосе вы чувствуете себя как рыба в воде.")
 	lose_text = span_danger("Кажется, в космосе уже не так комфортно, как раньше.")
 	icon = FA_ICON_USER_ASTRONAUT
-	value = 7
+	value = 5
 	quirk_flags = QUIRK_HUMAN_ONLY|QUIRK_CHANGES_APPEARANCE
 	medical_record_text = "Пациент хорошо адаптирован к неземной среде."
 	mail_goodies = list(
