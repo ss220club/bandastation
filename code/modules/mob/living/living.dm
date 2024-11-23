@@ -534,7 +534,7 @@
 	if (!CAN_SUCCUMB(src))
 		if(HAS_TRAIT(src, TRAIT_SUCCUMB_OVERRIDE))
 			if(whispered)
-				to_chat(src, span_notice("Your immortal body is keeping you alive! Unless you just press the UI button."), type=MESSAGE_TYPE_INFO)
+				to_chat(src, span_notice("Ваше бессмертное тело не даёт вам умереть! Пока вы не нажмёте кнопку на экране."), type=MESSAGE_TYPE_INFO)
 				return
 		else
 			to_chat(src, span_warning("Вы не можете сдаться смерти! Эта жизнь продолжается."), type=MESSAGE_TYPE_INFO)

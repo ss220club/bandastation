@@ -1493,7 +1493,7 @@
 		to_chat(src, span_notice("У вас болит голова."))
 		return
 	head.adjustBleedStacks(5)
-	visible_message(span_notice("[src] gets a nosebleed."), span_warning("You get a nosebleed."))
+	visible_message(span_notice("У [declent_ru(GENITIVE)] пошла кровь из носа."), span_warning("У вас пошла кровь из носа."))
 
 /mob/living/carbon/check_hit_limb_zone_name(hit_zone)
 	if(get_bodypart(hit_zone))
