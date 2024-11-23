@@ -104,8 +104,8 @@ SUBSYSTEM_DEF(events)
 	if(. == EVENT_CANT_RUN)//we couldn't run this event for some reason, set its max_occurrences to 0
 		event_to_trigger.max_occurrences = 0
 	else if(. == EVENT_READY)
-		message_admins("SSevents sends a [event_to_trigger.name] to Storyteller schedule!")
-		log_game("SSevents sends a [event_to_trigger.name] to Storyteller schedule!")
+		message_admins("<font color='[COLOR_DARK_MODERATE_LIME_GREEN]'>SSevents</font> sends a [event_to_trigger.name] to Storyteller schedule!")
+		log_game("<font color='[COLOR_DARK_MODERATE_LIME_GREEN]'>SSevents</font> sends a [event_to_trigger.name] to Storyteller schedule!")
 		SSgamemode.schedule_event(event_to_trigger, 0, 0, FALSE, TRUE)
 		//event_to_trigger.run_event(random = TRUE) /// BANDASTATION EDIT - STORYTELLER - переброска ивентов в запланированные, вместо самоспавна
 

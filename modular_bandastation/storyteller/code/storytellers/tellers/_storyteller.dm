@@ -80,8 +80,8 @@
 		var/player_pop = SSgamemode.get_correct_popcount()
 		var/pop_required = SSgamemode.min_pop_thresholds[track]
 		if(player_pop < pop_required)
-			message_admins("Storyteller failed to pick an event for track of [track] due to insufficient population. (required: [pop_required] active pop for [track]. Current: [player_pop])")
-			log_admin("Storyteller failed to pick an event for track of [track] due to insufficient population. (required: [pop_required] active pop for [track]. Current: [player_pop])")
+			message_admins("<font color='[COLOR_SOFT_RED]'>Storyteller</font> failed to pick an event for track of [track] due to insufficient population. (required: [pop_required] active pop for [track]. Current: [player_pop])")
+			log_admin("<font color='[COLOR_SOFT_RED]'>Storyteller</font> failed to pick an event for track of [track] due to insufficient population. (required: [pop_required] active pop for [track]. Current: [player_pop])")
 			SSgamemode.event_track_points[track] *= TRACK_FAIL_POINT_PENALTY_MULTIPLIER
 			return
 		calculate_weights(track)
@@ -94,15 +94,15 @@
 				valid_events[event] = event.calculated_weight
 		///If we didn't get any events, remove the points inform admins and dont do anything
 		if(!length(valid_events))
-			message_admins("Storyteller failed to pick an event for track of [track] due to no valid events.")
-			log_admin("Storyteller failed to pick an event for track of [track] due to no valid events.")
+			message_admins("<font color='[COLOR_FIRE_LIGHT_RED]'>Storyteller</font> failed to pick an event for track of [track] due to no valid events.")
+			log_admin("<font color='[COLOR_FIRE_LIGHT_RED]'>Storyteller</font> failed to pick an event for track of [track] due to no valid events.")
 			SSgamemode.event_track_points[track] *= TRACK_FAIL_POINT_PENALTY_MULTIPLIER
 			return
 		picked_event = pick_weight(valid_events)
 		if(!picked_event)
-			message_admins("WARNING: Storyteller picked a null from event pool. Aborting event roll.")
-			log_admin("WARNING: Storyteller picked a null from event pool. Aborting event roll.")
-			stack_trace("WARNING: Storyteller [src] picked a null from event pool at track [track].")
+			message_admins("<font color='[COLOR_DARK_RED]'>WARNING: Storyteller</font> picked a null from event pool. Aborting event roll.")
+			log_admin("<font color='[COLOR_DARK_RED]'>WARNING: Storyteller</font> picked a null from event pool. Aborting event roll.")
+			stack_trace("<font color='[COLOR_DARK_RED]'>WARNING: Storyteller</font> [src] picked a null from event pool at track [track].")
 			return
 	buy_event(picked_event, track)
 	. = TRUE
@@ -114,8 +114,8 @@
 	if(!bought_event.roundstart)
 		total_cost *= (1 - (rand(0, cost_variance) / 100)) //Apply cost variance if not roundstart event
 	SSgamemode.event_track_points[track] = max(0, SSgamemode.event_track_points[track] - total_cost)
-	message_admins("Storyteller purchased and triggered [bought_event] event, on [track] track, for [total_cost] cost.")
-	log_admin("Storyteller purchased and triggered [bought_event] event, on [track] track, for [total_cost] cost.")
+	message_admins("<font color='[COLOR_GREEN]'>Storyteller</font> purchased and triggered [bought_event] event, on [track] track, for [total_cost] cost.")
+	log_admin("<font color='[COLOR_GREEN]'>Storyteller</font> purchased and triggered [bought_event] event, on [track] track, for [total_cost] cost.")
 	if(bought_event.roundstart)
 		SSgamemode.TriggerEvent(bought_event)
 	else

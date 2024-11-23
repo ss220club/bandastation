@@ -54,21 +54,21 @@
 	if(!.)
 		return
 	if(roundstart && SSticker.HasRoundStarted())
-		message_admins("Event: [name] was unable to run due event is roundstart and round started.")
-		log_admin("Event: [name] was unable to run due event is roundstart and round started.")
+		message_admins("<font color='[COLOR_SOFT_RED]'>Storyteller event: [name]</font> was unable to run due event is roundstart and round started.")
+		log_admin("<font color='[COLOR_SOFT_RED]'>Storyteller event: [name]</font> was unable to run due event is roundstart and round started.")
 		return FALSE
 	if(SSgamemode.can_inject_antags())
-		message_admins("Event: [name] was unable to run due event can't inject antags over sec cap.")
-		log_admin("Event: [name] was unable to run due event can't inject antags over sec cap.")
+		message_admins("<font color='[COLOR_SOFT_RED]'>Storyteller event: [name]</font> was unable to run due event can't inject antags over sec cap.")
+		log_admin("<font color='[COLOR_SOFT_RED]'>Storyteller event: [name]</font> was unable to run due event can't inject antags over sec cap.")
 		return FALSE
 	if(!get_antag_amount())
-		message_admins("Event: [name] was unable to run due too many antags.")
-		log_admin("Event: [name] was unable to run due too many antags.")
+		message_admins("<font color='[COLOR_SOFT_RED]'>Storyteller event: [name]</font> was unable to run due too many antags.")
+		log_admin("<font color='[COLOR_SOFT_RED]'>Storyteller event: [name]</font> was unable to run due too many antags.")
 		return FALSE
 	var/list/candidates = get_candidates()
 	if(candidates.len < get_minimum_candidates())
-		message_admins("Event: [name] was unable to run due too low candidates count.")
-		log_admin("Event: [name] was unable to run due too low candidates count.")
+		message_admins("<font color='[COLOR_SOFT_RED]'>Storyteller event: [name]</font> was unable to run due too low candidates count.")
+		log_admin("<font color='[COLOR_SOFT_RED]'>Storyteller event: [name]</font> was unable to run due too low candidates count.")
 		return FALSE
 
 /datum/round_event_control/antagonist/proc/get_minimum_candidates()

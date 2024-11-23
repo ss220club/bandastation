@@ -73,40 +73,40 @@
 /datum/round_event_control/proc/can_spawn_event(players_amt, allow_magic = FALSE)
 	SHOULD_CALL_PARENT(TRUE)
 	if(occurrences >= max_occurrences)
-		message_admins("Event: [name] was unable to run due max occurrence limit.")
-		log_admin("Scheduled Event: [name] was unable to run due max occurrence limit.")
+		message_admins("<font color='[COLOR_SOFT_RED]'>Storyteller event: [name]</font> was unable to run due max occurrence limit.")
+		log_admin("<font color='[COLOR_SOFT_RED]'>Storyteller event: [name]</font> was unable to run due max occurrence limit.")
 		return FALSE
 	// BANDASTATION EDIT START - STORYTELLER
 	//if(earliest_start >= world.time-SSticker.round_start_time)
 	if(!roundstart && earliest_start >= world.time-SSticker.round_start_time )
-		message_admins("Event: [name] was unable to run due earliest start timer limit.")
-		log_admin("Scheduled Event: [name] was unable to run due mearliest start timer limit.")
+		message_admins("<font color='[COLOR_SOFT_RED]'>Storyteller event: [name]</font> was unable to run due earliest start timer limit.")
+		log_admin("<font color='[COLOR_SOFT_RED]'>Storyteller event: [name]</font> was unable to run due mearliest start timer limit.")
 		return FALSE
 	// BANDASTATION EDIT END
 	if(!allow_magic && wizardevent != SSevents.wizardmode)
-		message_admins("Event: [name] was unable to run due magic not allowed and it's wizard mode.")
-		log_admin("Scheduled Event: [name] was unable to run due magic not allowed and it's wizard mode.")
+		message_admins("<font color='[COLOR_SOFT_RED]'>Storyteller event: [name]</font> was unable to run due magic not allowed and it's wizard mode.")
+		log_admin("<font color='[COLOR_SOFT_RED]'>Storyteller event: [name]</font> was unable to run due magic not allowed and it's wizard mode.")
 		return FALSE
 	if(players_amt < min_players)
-		message_admins("Event: [name] was unable to run due too low players for event.")
-		log_admin("Scheduled Event: [name] was unable to run due too low players for event.")
+		message_admins("<font color='[COLOR_SOFT_RED]'>Storyteller event: [name]</font> was unable to run due too low players for event.")
+		log_admin("<font color='[COLOR_SOFT_RED]'>Storyteller event: [name]</font> was unable to run due too low players for event.")
 		return FALSE
 	if(holidayID && !check_holidays(holidayID))
-		message_admins("Event: [name] was unable to run due try to run on non-holiday day.")
-		log_admin("Scheduled Event: [name] was unable to run due try to run on non-holiday day.")
+		message_admins("<font color='[COLOR_SOFT_RED]'>Storyteller event: [name]</font> was unable to run due try to run on non-holiday day.")
+		log_admin("<font color='[COLOR_SOFT_RED]'>Storyteller event: [name]</font> was unable to run due try to run on non-holiday day.")
 		return FALSE
 	if(EMERGENCY_ESCAPED_OR_ENDGAMED)
-		message_admins("Event: [name] was unable to run due escaped or endgamed.")
-		log_admin("Scheduled Event: [name] was unable to run due escaped or endgamed.")
+		message_admins("<font color='[COLOR_SOFT_RED]'>Storyteller event: [name]</font> was unable to run due escaped or endgamed.")
+		log_admin("<font color='[COLOR_SOFT_RED]'>Storyteller event: [name]</font> was unable to run due escaped or endgamed.")
 		return FALSE
 	if(ispath(typepath, /datum/round_event/ghost_role) && !(GLOB.ghost_role_flags & GHOSTROLE_MIDROUND_EVENT))
-		message_admins("Event: [name] was unable to run due it's ghost role for not midround event.")
-		log_admin("Scheduled Event: [name] was unable to run due it's ghost role for not midround event.")
+		message_admins("<font color='[COLOR_SOFT_RED]'>Storyteller event: [name]</font> was unable to run due it's ghost role for not midround event.")
+		log_admin("<font color='[COLOR_SOFT_RED]'>Storyteller event: [name]</font> was unable to run due it's ghost role for not midround event.")
 		return FALSE
 
 	if (dynamic_should_hijack && SSdynamic.random_event_hijacked != HIJACKED_NOTHING)
-		message_admins("Event: [name] was unable to run due hijack in progress.")
-		log_admin("Scheduled Event: [name] was unable to run due hijack in progress.")
+		message_admins("<font color='[COLOR_SOFT_RED]'>Storyteller event: [name]</font> was unable to run due hijack in progress.")
+		log_admin("<font color='[COLOR_SOFT_RED]'>Storyteller event: [name]</font> was unable to run due hijack in progress.")
 		return FALSE
 
 	return TRUE
