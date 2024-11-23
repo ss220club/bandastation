@@ -1132,16 +1132,16 @@
 		//infer name & icon of part. stacks are just type paths so we have to get their initial values
 		if(ispath(component_part, /obj/item/stack))
 			var/obj/item/stack/stack_ref = component_part
-			part_name = initial(stack_ref.singular_name)
+			part_name = declent_ru_initial(stack_ref::name, NOMINATIVE, stack_ref::singular_name)
 			html_icon = initial(stack_ref.icon)
 			icon_state = initial(stack_ref.icon_state)
 		else
 			var/obj/item/part = component_part
-			part_name = part.name
+			part_name = part.declent_ru(NOMINATIVE)
 			html_icon = part.icon
 			icon_state = part.icon_state
 		//merge icon & name into text
-		text += span_notice("[icon2html(html_icon, user, icon_state)] [part_count[component_part]] [part_name]\s.")
+		text += span_notice("[icon2html(html_icon, user, icon_state)] [part_count[component_part]] [part_name].")
 
 	return text
 
