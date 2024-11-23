@@ -1230,7 +1230,6 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 8
 	},
-/obj/machinery/duct,
 /turf/open/floor/iron/dark,
 /area/station/service/hydroponics)
 "aqx" = (
@@ -8026,6 +8025,7 @@
 /obj/effect/turf_decal/tile/green/half{
 	dir = 1
 	},
+/obj/machinery/duct,
 /turf/open/floor/iron/edge{
 	dir = 1
 	},
@@ -13112,6 +13112,13 @@
 /obj/machinery/air_sensor/carbon_tank,
 /turf/open/floor/engine/co2,
 /area/station/engineering/atmos)
+"drL" = (
+/obj/docking_port/stationary/random{
+	name = "lavaland";
+	shuttle_id = "pod_2_lavaland"
+	},
+/turf/open/space/openspace,
+/area/space)
 "drS" = (
 /obj/structure/barricade/wooden,
 /obj/effect/spawner/structure/window/reinforced,
@@ -18199,6 +18206,7 @@
 /obj/effect/turf_decal/tile/blue/half/contrasted{
 	dir = 4
 	},
+/obj/machinery/duct,
 /turf/open/floor/iron/edge{
 	dir = 4
 	},
@@ -19086,6 +19094,7 @@
 /obj/effect/turf_decal/tile/blue{
 	dir = 1
 	},
+/obj/machinery/duct,
 /turf/open/floor/iron,
 /area/station/service/hydroponics)
 "eXj" = (
@@ -20519,7 +20528,6 @@
 /area/station/service/library/upper)
 "frW" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/machinery/duct,
 /turf/open/floor/iron/dark,
 /area/station/service/hydroponics)
 "fsk" = (
@@ -28877,10 +28885,6 @@
 /area/station/service/hydroponics/garden)
 "hEZ" = (
 /obj/structure/extinguisher_cabinet/directional/east,
-/obj/structure/reagent_dispensers/watertank/high,
-/obj/item/reagent_containers/cup/watering_can{
-	pixel_y = 2
-	},
 /turf/open/floor/iron/dark,
 /area/station/service/hydroponics)
 "hFb" = (
@@ -34887,7 +34891,6 @@
 "jki" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/effect/landmark/start/botanist,
-/obj/machinery/duct,
 /turf/open/floor/iron/dark,
 /area/station/service/hydroponics)
 "jkB" = (
@@ -39413,10 +39416,13 @@
 /turf/open/floor/plating,
 /area/station/maintenance/ghetto/central)
 "kvX" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/structure/disposalpipe/segment,
-/turf/open/floor/iron/dark,
+/obj/effect/turf_decal/siding/white{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/white{
+	dir = 4
+	},
+/turf/open/misc/beach/sand,
 /area/station/service/hydroponics)
 "kwc" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -45821,6 +45827,7 @@
 /obj/effect/turf_decal/tile/green/half{
 	dir = 4
 	},
+/obj/machinery/duct,
 /turf/open/floor/iron/edge{
 	dir = 4
 	},
@@ -54140,6 +54147,7 @@
 	},
 /obj/effect/mapping_helpers/airlock/access/all/service/hydroponics,
 /obj/machinery/door/firedoor,
+/obj/machinery/duct,
 /turf/open/floor/iron/dark,
 /area/station/service/hydroponics)
 "oqR" = (
@@ -54926,8 +54934,13 @@
 /turf/open/floor/wood,
 /area/station/security/courtroom)
 "oBh" = (
-/obj/structure/reagent_dispensers/plumbed,
-/obj/structure/window/reinforced/spawner/directional/north,
+/obj/structure/table,
+/obj/item/reagent_containers/cup/watering_can{
+	pixel_y = 2
+	},
+/obj/item/reagent_containers/cup/watering_can{
+	pixel_y = 6
+	},
 /turf/open/floor/iron/dark,
 /area/station/service/hydroponics)
 "oBi" = (
@@ -59478,12 +59491,13 @@
 /turf/open/floor/iron,
 /area/station/maintenance/ghetto/central)
 "pLB" = (
-/obj/docking_port/stationary/random{
-	name = "lavaland";
-	shuttle_id = "pod_2_lavaland"
+/obj/structure/window/reinforced/spawner/directional/west,
+/mob/living/basic/chicken{
+	name = "Kentucky";
+	real_name = "Kentucky"
 	},
-/turf/open/space/openspace,
-/area/space)
+/turf/open/floor/grass,
+/area/station/service/hydroponics)
 "pLC" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -62277,11 +62291,7 @@
 /turf/open/floor/iron,
 /area/station/maintenance/starboard/aft)
 "qAE" = (
-/obj/structure/reagent_dispensers/watertank/high,
-/obj/item/reagent_containers/cup/watering_can{
-	pixel_y = 2
-	},
-/obj/structure/window/reinforced/spawner/directional/south,
+/obj/machinery/seed_extractor,
 /turf/open/floor/iron/dark,
 /area/station/service/hydroponics)
 "qAG" = (
@@ -69221,6 +69231,7 @@
 /area/station/maintenance/department/engine/atmos)
 "srE" = (
 /obj/effect/turf_decal/tile/blue/anticorner/contrasted,
+/obj/machinery/duct,
 /turf/open/floor/iron/corner{
 	dir = 1
 	},
@@ -69898,8 +69909,14 @@
 /turf/open/floor/iron,
 /area/station/security/range)
 "sCf" = (
-/turf/open/floor/iron,
-/area/station/hallway/secondary/service)
+/obj/effect/turf_decal/tile/green/half{
+	dir = 8
+	},
+/obj/machinery/duct,
+/turf/open/floor/iron/edge{
+	dir = 8
+	},
+/area/station/service/hydroponics)
 "sCm" = (
 /turf/open/floor/engine/air,
 /area/station/engineering/atmos)
@@ -72508,7 +72525,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/machinery/seed_extractor,
+/obj/machinery/duct,
 /turf/open/floor/iron/dark,
 /area/station/service/hydroponics)
 "toF" = (
@@ -74286,6 +74303,7 @@
 /obj/effect/turf_decal/tile/blue{
 	dir = 4
 	},
+/obj/machinery/duct,
 /turf/open/floor/iron/edge{
 	dir = 4
 	},
@@ -77367,6 +77385,7 @@
 "uGI" = (
 /obj/effect/landmark/start/botanist,
 /obj/structure/chair/stool/directional/west,
+/obj/machinery/duct,
 /turf/open/floor/iron/dark,
 /area/station/service/hydroponics)
 "uGM" = (
@@ -78143,6 +78162,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 9
 	},
+/obj/machinery/duct,
 /turf/open/floor/iron/dark,
 /area/station/service/hydroponics)
 "uRh" = (
@@ -80760,6 +80780,7 @@
 "vAa" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/effect/turf_decal/tile/blue,
+/obj/machinery/duct,
 /turf/open/floor/iron,
 /area/station/service/hydroponics)
 "vAe" = (
@@ -86157,7 +86178,6 @@
 /area/station/service/library)
 "wYg" = (
 /obj/machinery/airalarm/directional/east,
-/obj/structure/sink/directional/west,
 /turf/open/floor/iron/dark,
 /area/station/service/hydroponics)
 "wYk" = (
@@ -166999,7 +167019,7 @@ tYD
 tYD
 tYD
 tYD
-pLB
+drL
 tYD
 tYD
 tYD
@@ -195038,7 +195058,7 @@ uqu
 dKr
 vMn
 unf
-jBk
+pLB
 jBk
 jBk
 ibV
@@ -195295,7 +195315,7 @@ tIt
 lya
 lya
 kIg
-aSb
+kvX
 aSb
 vBW
 voK
@@ -196052,7 +196072,7 @@ fNP
 gvH
 gKm
 jkH
-sCf
+vix
 sjU
 tli
 lJm
@@ -196577,7 +196597,7 @@ mvc
 nrH
 ctG
 rKR
-chW
+sCf
 keB
 chW
 keB
@@ -197087,7 +197107,7 @@ gAA
 nrH
 dND
 isp
-kvX
+isp
 oqP
 uRd
 uDi
