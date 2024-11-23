@@ -12,6 +12,7 @@
 	base_antags = 2
 	maximum_antags = 5
 	maximum_antags_global = 5
+	min_players = 40
 
 	typepath = /datum/round_event/antagonist/team/clown_ops
 

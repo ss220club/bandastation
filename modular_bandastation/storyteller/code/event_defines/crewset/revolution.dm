@@ -11,6 +11,7 @@
 
 	base_antags = 3
 	maximum_antags_global = 6
+	min_players = 40
 
 	restricted_roles = list(
 		JOB_AI,
