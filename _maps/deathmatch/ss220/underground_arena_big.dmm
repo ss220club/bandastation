@@ -331,9 +331,6 @@
 /obj/item/gun/ballistic/rifle/rebarxbow/syndie,
 /turf/open/indestructible/dark/smooth_large,
 /area/deathmatch)
-"st" = (
-/turf/open/space/basic,
-/area/deathmatch)
 "sK" = (
 /obj/effect/light_emitter{
 	set_cap = 2;
@@ -1541,7 +1538,7 @@ qa
 (13,1,1) = {"
 qa
 aI
-st
+aI
 xf
 nI
 Jq
@@ -1582,7 +1579,7 @@ qa
 (14,1,1) = {"
 qa
 aI
-st
+aI
 qa
 tT
 XP
@@ -1623,7 +1620,7 @@ qa
 (15,1,1) = {"
 qa
 aI
-st
+aI
 fk
 nI
 Jq
@@ -1664,7 +1661,7 @@ qa
 (16,1,1) = {"
 qa
 aI
-st
+aI
 qa
 nI
 Jq
@@ -1705,7 +1702,7 @@ qa
 (17,1,1) = {"
 qa
 aI
-st
+aI
 qa
 yA
 nT
@@ -1746,7 +1743,7 @@ qa
 (18,1,1) = {"
 qa
 aI
-st
+aI
 qa
 nI
 Jq
@@ -1787,7 +1784,7 @@ qa
 (19,1,1) = {"
 qa
 aI
-st
+aI
 xf
 nI
 Jq
@@ -1828,7 +1825,7 @@ qa
 (20,1,1) = {"
 qa
 aI
-st
+aI
 qa
 tT
 XP
@@ -1869,7 +1866,7 @@ qa
 (21,1,1) = {"
 qa
 aI
-st
+aI
 xf
 nI
 Jq
@@ -1910,7 +1907,7 @@ qa
 (22,1,1) = {"
 qa
 aI
-st
+aI
 xf
 nI
 Jq
@@ -1951,7 +1948,7 @@ qa
 (23,1,1) = {"
 qa
 aI
-st
+aI
 qa
 nI
 nI
@@ -1992,7 +1989,7 @@ qa
 (24,1,1) = {"
 qa
 aI
-st
+aI
 Bl
 nI
 yA
@@ -2033,7 +2030,7 @@ qa
 (25,1,1) = {"
 qa
 aI
-st
+aI
 Bl
 nI
 la
@@ -2074,7 +2071,7 @@ qa
 (26,1,1) = {"
 qa
 aI
-st
+aI
 Bl
 nI
 TY
@@ -2115,7 +2112,7 @@ qa
 (27,1,1) = {"
 qa
 aI
-st
+aI
 Bl
 nI
 Uv
