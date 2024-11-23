@@ -16165,7 +16165,7 @@
 "ehl" = (
 /obj/docking_port/stationary/random{
 	name = "lavaland";
-	shuttle_id = "pod_lavaland";
+	shuttle_id = "pod_3_lavaland";
 	dir = 4
 	},
 /turf/open/space/openspace,
@@ -32984,6 +32984,13 @@
 /obj/effect/spawner/random/trash/grime,
 /turf/open/floor/iron/large,
 /area/station/maintenance/ghetto/central)
+"iLU" = (
+/obj/docking_port/stationary/random{
+	name = "lavaland";
+	shuttle_id = "pod_2_lavaland"
+	},
+/turf/open/space/openspace,
+/area/space)
 "iMb" = (
 /obj/machinery/door/firedoor,
 /obj/structure/disposalpipe/segment,
@@ -77524,7 +77531,7 @@
 "uKq" = (
 /obj/docking_port/stationary/random{
 	name = "lavaland";
-	shuttle_id = "pod_lavaland";
+	shuttle_id = "pod_4_lavaland";
 	dir = 4
 	},
 /turf/open/space/basic,
@@ -166877,7 +166884,7 @@ tYD
 tYD
 tYD
 tYD
-vHR
+iLU
 tYD
 tYD
 tYD
