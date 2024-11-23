@@ -42,12 +42,13 @@
 
 /datum/round_event_control/antagonist/New()
 	. = ..()
-	if(CONFIG_GET(flag/protect_roles_from_antagonist))
-		restricted_roles |= protected_roles
-	restricted_roles |= SSstation.antag_restricted_roles
-	restricted_roles |= SSstation.antag_protected_roles
-	if(CONFIG_GET(flag/protect_assistant_from_antagonist))
-		restricted_roles |= JOB_ASSISTANT
+	if(!SSticker.HasRoundStarted()) // Снятие защиты от раундстартовых антагов
+		if(CONFIG_GET(flag/protect_roles_from_antagonist))
+			restricted_roles |= protected_roles
+		restricted_roles |= SSstation.antag_restricted_roles
+		restricted_roles |= SSstation.antag_protected_roles
+		if(CONFIG_GET(flag/protect_assistant_from_antagonist))
+			restricted_roles |= JOB_ASSISTANT
 
 /datum/round_event_control/antagonist/can_spawn_event(players_amt, allow_magic = FALSE, popchecks = TRUE)
 	. = ..()

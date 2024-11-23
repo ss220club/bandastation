@@ -82,7 +82,7 @@ ADMIN_VERB(force_event, R_FUN, "Trigger Event", "Forces an event to occur.", ADM
 		return
 	switch(action)
 		if("forceevent")
-			//var/announce_event = params["announce"] /// BANDASTATION EDIT - STORYTELLER
+			var/announce_event = params["announce"]
 			var/string_path = params["type"]
 			if(!string_path)
 				return
@@ -96,9 +96,11 @@ ADMIN_VERB(force_event, R_FUN, "Trigger Event", "Forces an event to occur.", ADM
 				for(var/datum/event_admin_setup/admin_setup_datum as anything in event.admin_setup)
 					if(admin_setup_datum.prompt_admins() == ADMIN_CANCEL_EVENT)
 						return
-			//var/always_announce_chance = 100 /// BANDASTATION EDIT - STORYTELLER
-			//var/no_announce_chance = 0 /// BANDASTATION EDIT - STORYTELLER
-			//event.run_event(announce_chance_override = announce_event ? always_announce_chance : no_announce_chance, admin_forced = TRUE) /// BANDASTATION EDIT - STORYTELLER
-			SSgamemode.TriggerEvent(event)
+			var/always_announce_chance = 100
+			var/no_announce_chance = 0
+			if(SSticker.HasRoundStarted())
+				event.run_event(announce_chance_override = announce_event ? always_announce_chance : no_announce_chance, admin_forced = TRUE)
+			else
+				SSgamemode.schedule_event(event)
 			message_admins("[key_name_admin(usr)] has triggered an event. ([event.name])")
 			log_admin("[key_name(usr)] has triggered an event. ([event.name])")

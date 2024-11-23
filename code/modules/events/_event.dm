@@ -123,7 +123,7 @@
 	// We sleep HERE, in pre-event setup (because there's no sense doing it in run_event() since the event is already running!) for the given amount of time to make an admin has enough time to cancel an event un-fitting of the present round or at least reroll it.
 	// BANDASTATION EDIT START - STORYTELLER
 	//message_admins("Random Event triggering in [DisplayTimeText(RANDOM_EVENT_ADMIN_INTERVENTION_TIME)]: [name]. (<a href='?src=[REF(src)];cancel=1'>CANCEL</a>) (<a href='?src=[REF(src)];different_event=1'>SOMETHING ELSE</a>)")
-	if(SSticker.HasRoundStarted())
+	if(SSticker.HasRoundStarted() && !roundstart && !admin_forced)
 		message_admins("<font color='[COLOR_ADMIN_PINK]'>Storyteller: Event triggering in [DisplayTimeText(RANDOM_EVENT_ADMIN_INTERVENTION_TIME)]: [name]. (\
 			<a href='?src=[REF(src)];cancel=1'>CANCEL</a> | \
 			<a href='?src=[REF(src)];something_else=1'>SOMETHING ELSE</a>)</font>")
@@ -135,10 +135,10 @@
 		sleep(RANDOM_EVENT_ADMIN_INTERVENTION_TIME)
 
 	if(triggering)
-		message_admins("<font color='[COLOR_ADMIN_PINK]'>Storyteller: Event triggering in [DisplayTimeText(RANDOM_EVENT_ADMIN_INTERVENTION_TIME * 0.5)]: [name]. (\
-		<a href='?src=[REF(src)];cancel=1'>CANCEL</a> | \
-		<a href='?src=[REF(src)];something_else=1'>SOMETHING ELSE</a>)</font>")
-		if(!roundstart)
+		if(!roundstart && !admin_forced)
+			message_admins("<font color='[COLOR_ADMIN_PINK]'>Storyteller: Event triggering in [DisplayTimeText(RANDOM_EVENT_ADMIN_INTERVENTION_TIME * 0.5)]: [name]. (\
+			<a href='?src=[REF(src)];cancel=1'>CANCEL</a> | \
+			<a href='?src=[REF(src)];something_else=1'>SOMETHING ELSE</a>)</font>")
 			sleep(RANDOM_EVENT_ADMIN_INTERVENTION_TIME * 0.5)
 	else
 		message_admins("<font color='[COLOR_ADMIN_PINK]'> Roundstart event chosen: [name].")
