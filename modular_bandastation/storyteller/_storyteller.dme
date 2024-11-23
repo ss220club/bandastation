@@ -34,6 +34,7 @@
 #include "code\storytellers\tellers\storyteller_fragile.dm"
 #include "code\storytellers\tellers\storyteller_gamer.dm"
 #include "code\storytellers\tellers\storyteller_black_orbit.dm"
+#include "code\storytellers\tellers\storyteller_phantom.dm"
 
 #include "code\divergency_report.dm"
 #include "code\scheduled_event.dm"

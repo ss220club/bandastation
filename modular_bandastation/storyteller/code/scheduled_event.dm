@@ -94,3 +94,4 @@
 			message_admins("[key_name_admin(usr)] has fired scheduled event [event.name].")
 			log_admin_private("[key_name(usr)] has fired scheduled event [event.name].")
 			event.run_event(admin_forced = TRUE)
+			SSgamemode.remove_scheduled_event(src)

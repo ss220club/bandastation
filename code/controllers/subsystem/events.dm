@@ -35,7 +35,7 @@ SUBSYSTEM_DEF(events)
 
 /datum/controller/subsystem/events/fire(resumed = FALSE)
 	if(!resumed)
-		checkEvent() //only check these if we aren't resuming a paused fire
+		//checkEvent() //only check these if we aren't resuming a paused fire
 		src.currentrun = running.Copy()
 
 	//cache for sanic speed (lists are references anyways)

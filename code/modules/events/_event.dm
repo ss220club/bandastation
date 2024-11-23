@@ -1,4 +1,4 @@
-#define RANDOM_EVENT_ADMIN_INTERVENTION_TIME (10 SECONDS) // BANDASTATION EDIT CHANGE - STORYTELLER. Original: 10 SECONDS
+#define RANDOM_EVENT_ADMIN_INTERVENTION_TIME (60 SECONDS) // BANDASTATION EDIT CHANGE - STORYTELLER. Original: 10 SECONDS
 
 //this singleton datum is used by the events controller to dictate how it selects events
 /datum/round_event_control
@@ -124,7 +124,7 @@
 	// BANDASTATION EDIT START - STORYTELLER
 	//message_admins("Random Event triggering in [DisplayTimeText(RANDOM_EVENT_ADMIN_INTERVENTION_TIME)]: [name]. (<a href='?src=[REF(src)];cancel=1'>CANCEL</a>) (<a href='?src=[REF(src)];different_event=1'>SOMETHING ELSE</a>)")
 	if(SSticker.HasRoundStarted())
-		message_admins("<font color='[COLOR_ADMIN_PINK]'>Storyteller: Random Event triggering in [DisplayTimeText(RANDOM_EVENT_ADMIN_INTERVENTION_TIME)]: [name]. (\
+		message_admins("<font color='[COLOR_ADMIN_PINK]'>Storyteller: Event triggering in [DisplayTimeText(RANDOM_EVENT_ADMIN_INTERVENTION_TIME)]: [name]. (\
 			<a href='?src=[REF(src)];cancel=1'>CANCEL</a> | \
 			<a href='?src=[REF(src)];something_else=1'>SOMETHING ELSE</a>)</font>")
 		for(var/client/staff as anything in GLOB.admins)
@@ -135,7 +135,7 @@
 		sleep(RANDOM_EVENT_ADMIN_INTERVENTION_TIME)
 
 	if(triggering)
-		message_admins("<font color='[COLOR_ADMIN_PINK]'>Storyteller: Random Event triggering in [DisplayTimeText(RANDOM_EVENT_ADMIN_INTERVENTION_TIME * 0.5)]: [name]. (\
+		message_admins("<font color='[COLOR_ADMIN_PINK]'>Storyteller: Event triggering in [DisplayTimeText(RANDOM_EVENT_ADMIN_INTERVENTION_TIME * 0.5)]: [name]. (\
 		<a href='?src=[REF(src)];cancel=1'>CANCEL</a> | \
 		<a href='?src=[REF(src)];something_else=1'>SOMETHING ELSE</a>)</font>")
 		if(!roundstart)
