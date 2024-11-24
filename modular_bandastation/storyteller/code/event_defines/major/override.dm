@@ -1,6 +1,7 @@
 /datum/round_event_control/earthquake
 	track = EVENT_TRACK_MAJOR
 	tags = list(TAG_DESTRUCTIVE)
+	eng_required_crew = 2
 
 /datum/round_event_control/blob
 	track = EVENT_TRACK_MAJOR
@@ -12,6 +13,7 @@
 	tags = list(TAG_COMMUNAL, TAG_SPACE, TAG_DESTRUCTIVE, TAG_CHAOTIC)
 	weight = 10
 	max_occurrences = 1
+	eng_required_crew = 3
 
 /datum/round_event_control/meteor_wave/meaty
 	weight = 15
@@ -26,6 +28,7 @@
 /datum/round_event_control/radiation_storm
 	track = EVENT_TRACK_MAJOR
 	tags = list(TAG_COMMUNAL)
+	med_required_crew = 3
 
 /datum/round_event_control/wormholes
 	track = EVENT_TRACK_MAJOR
@@ -35,14 +38,17 @@
 	track = EVENT_TRACK_MAJOR
 	tags = list(TAG_DESTRUCTIVE)
 	weight = 20
+	eng_required_crew = 2
 
 /datum/round_event_control/anomaly/anomaly_vortex
 	track = EVENT_TRACK_MAJOR
 	tags = list(TAG_DESTRUCTIVE)
+	rnd_required_crew = 3
 
 /datum/round_event_control/anomaly/anomaly_pyro
 	track = EVENT_TRACK_MAJOR
 	tags = list(TAG_DESTRUCTIVE)
+	rnd_required_crew = 3
 
 /datum/round_event_control/revenant
 	min_players = 20

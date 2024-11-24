@@ -73,32 +73,31 @@
 /datum/round_event_control/proc/can_spawn_event(players_amt, allow_magic = FALSE)
 	SHOULD_CALL_PARENT(TRUE)
 	if(occurrences >= max_occurrences)
-		message_admins("<font color='[COLOR_SOFT_RED]'>Storyteller event: [name]</font> was unable to run due max occurrence limit.")
 		return FALSE
 	// BANDASTATION EDIT START - STORYTELLER
 	//if(earliest_start >= world.time-SSticker.round_start_time)
 	if(!roundstart && earliest_start >= world.time-SSticker.round_start_time )
-		message_admins("<font color='[COLOR_SOFT_RED]'>Storyteller event: [name]</font> was unable to run due earliest start timer limit.")
 		return FALSE
 	// BANDASTATION EDIT END
 	if(!allow_magic && wizardevent != SSevents.wizardmode)
-		message_admins("<font color='[COLOR_SOFT_RED]'>Storyteller event: [name]</font> was unable to run due magic not allowed and it's wizard mode.")
 		return FALSE
 	if(players_amt < min_players)
-		message_admins("<font color='[COLOR_SOFT_RED]'>Storyteller event: [name]</font> was unable to run due too low players for event.")
 		return FALSE
 	if(holidayID && !check_holidays(holidayID))
-		message_admins("<font color='[COLOR_SOFT_RED]'>Storyteller event: [name]</font> was unable to run due try to run on non-holiday day.")
 		return FALSE
 	if(EMERGENCY_ESCAPED_OR_ENDGAMED)
-		message_admins("<font color='[COLOR_SOFT_RED]'>Storyteller event: [name]</font> was unable to run due escaped or endgamed.")
 		return FALSE
 	if(ispath(typepath, /datum/round_event/ghost_role) && !(GLOB.ghost_role_flags & GHOSTROLE_MIDROUND_EVENT))
-		message_admins("<font color='[COLOR_SOFT_RED]'>Storyteller event: [name]</font> was unable to run due it's ghost role for not midround event.")
 		return FALSE
-
+	if(SSgamemode.rnd_crew < rnd_required_crew)
+		return FALSE
+	if(SSgamemode.med_crew < med_required_crew)
+		return FALSE
+	if(SSgamemode.eng_crew < eng_required_crew)
+		return FALSE
+	if(SSgamemode.head_crew < head_required_crew)
+		return FALSE
 	if (dynamic_should_hijack && SSdynamic.random_event_hijacked != HIJACKED_NOTHING)
-		message_admins("<font color='[COLOR_SOFT_RED]'>Storyteller event: [name]</font> was unable to run due hijack in progress.")
 		return FALSE
 
 	return TRUE
@@ -123,7 +122,14 @@
 		message = "<font color='[COLOR_SOFT_RED]'>Storyteller event: [name]</font> was unable to run due escaped or endgamed."
 	if(ispath(typepath, /datum/round_event/ghost_role) && !(GLOB.ghost_role_flags & GHOSTROLE_MIDROUND_EVENT))
 		message = "<font color='[COLOR_SOFT_RED]'>Storyteller event: [name]</font> was unable to run due it's ghost role for not midround event."
-
+	if(SSgamemode.rnd_crew < rnd_required_crew)
+		message = "<font color='[COLOR_SOFT_RED]'>Storyteller event: [name]</font> was unable to run due lack of science roles - count/needed [SSgamemode.rnd_crew]/[rnd_required_crew]."
+	if(SSgamemode.med_crew < med_required_crew)
+		message = "<font color='[COLOR_SOFT_RED]'>Storyteller event: [name]</font> was unable to run due lack of medical roles - count/needed [SSgamemode.med_crew]/[med_required_crew]."
+	if(SSgamemode.eng_crew < eng_required_crew)
+		message = "<font color='[COLOR_SOFT_RED]'>Storyteller event: [name]</font> was unable to run due lack of engineering roles - count/needed [SSgamemode.eng_crew]/[eng_required_crew]."
+	if(SSgamemode.head_crew < head_required_crew)
+		message = "<font color='[COLOR_SOFT_RED]'>Storyteller event: [name]</font> was unable to run due lack of heads roles - count/needed [SSgamemode.head_crew]/[head_required_crew]."
 	if (dynamic_should_hijack && SSdynamic.random_event_hijacked != HIJACKED_NOTHING)
 		message = "<font color='[COLOR_SOFT_RED]'>Storyteller event: [name]</font> was unable to run due hijack in progress."
 

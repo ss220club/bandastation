@@ -26,7 +26,6 @@
 /// When the event requires the station to be on planetary.
 #define TAG_PLANETARY "planetary"
 
-
 #define EVENT_TRACK_MUNDANE "Mundane"
 #define EVENT_TRACK_MODERATE "Moderate"
 #define EVENT_TRACK_MAJOR "Major"

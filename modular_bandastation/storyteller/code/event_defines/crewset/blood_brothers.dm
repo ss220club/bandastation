@@ -9,6 +9,7 @@
 	tags = list(TAG_CREW_ANTAG, TAG_COMMUNAL)
 
 	base_antags = 2
+	minimum_candidate_base = 2
 	maximum_antags_global = 6
 
 	restricted_roles = list(

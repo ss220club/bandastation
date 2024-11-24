@@ -98,8 +98,9 @@
 				if(isnull(event))
 					continue
 				var/message = event.can_spawn_event_error_reason()
-				message_admins(message)
-				log_admin(message)
+				if(message != "success")
+					message_admins(message)
+					log_admin(message)
 			message_admins("<font color='[COLOR_FIRE_LIGHT_RED]'>Storyteller</font> failed to pick an event for track of [track] due to no valid events.")
 			log_admin("<font color='[COLOR_FIRE_LIGHT_RED]'>Storyteller</font> failed to pick an event for track of [track] due to no valid events.")
 			SSgamemode.event_track_points[track] *= TRACK_FAIL_POINT_PENALTY_MULTIPLIER

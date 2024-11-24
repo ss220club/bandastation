@@ -16,6 +16,7 @@
 #include "code\event_defines\crewset\cult.dm"
 #include "code\event_defines\crewset\clown_ops.dm"
 #include "code\event_defines\crewset\revolution.dm"
+#include "code\event_defines\crewset\obsessed.dm"
 
 #include "code\event_defines\ghostset\override.dm"
 #include "code\event_defines\ghostset\voidwalker.dm"

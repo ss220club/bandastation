@@ -6,7 +6,8 @@
 /datum/round_event_control/camera_failure
 	track = EVENT_TRACK_MUNDANE
 	weight = 10
-	tags = list(TAG_COMMUNAL)
+	tags = list(TAG_COMMUNAL, TAG_SPOOKY)
+	eng_required_crew = 1
 
 /datum/round_event_control/aurora_caelus
 	track = EVENT_TRACK_MUNDANE
@@ -15,14 +16,12 @@
 /datum/round_event_control/brain_trauma
 	track = EVENT_TRACK_MUNDANE
 	tags = list(TAG_TARGETED)
+	med_required_crew = 1
 
 /datum/round_event_control/heart_attack
 	track = EVENT_TRACK_MUNDANE
 	tags = list(TAG_TARGETED)
-
-/datum/round_event_control/camera_failure
-	track = EVENT_TRACK_MUNDANE
-	tags = list(TAG_COMMUNAL, TAG_SPOOKY)
+	med_required_crew = 2
 
 /datum/round_event_control/grid_check
 	track = EVENT_TRACK_MUNDANE
@@ -31,14 +30,12 @@
 /datum/round_event_control/disease_outbreak
 	track = EVENT_TRACK_MUNDANE
 	tags = list(TAG_TARGETED)
-
-/datum/round_event_control/space_dust
-	track = EVENT_TRACK_MUNDANE
-	tags = list(TAG_DESTRUCTIVE, TAG_SPACE)
+	med_required_crew = 1
 
 /datum/round_event_control/electrical_storm
 	track = EVENT_TRACK_MUNDANE
 	tags = list(TAG_SPOOKY)
+	eng_required_crew = 1
 
 /datum/round_event_control/fake_virus
 	track = EVENT_TRACK_MUNDANE
@@ -72,6 +69,7 @@
 /datum/round_event_control/stray_cargo
 	track = EVENT_TRACK_MUNDANE
 	tags = list(TAG_COMMUNAL)
+	eng_required_crew = 1
 
 /datum/round_event_control/grey_tide
 	track = EVENT_TRACK_MUNDANE
@@ -80,6 +78,7 @@
 /datum/round_event_control/gravity_generator_blackout
 	track = EVENT_TRACK_MUNDANE
 	tags = list(TAG_COMMUNAL, TAG_SPACE)
+	eng_required_crew = 1
 
 /datum/round_event_control/shuttle_insurance
 	track = EVENT_TRACK_MUNDANE
@@ -88,6 +87,7 @@
 /datum/round_event_control/tram_malfunction
 	track = EVENT_TRACK_MUNDANE
 	tags = list(TAG_TARGETED, TAG_SPOOKY)
+	eng_required_crew = 1
 
 /datum/round_event_control/bitrunning_glitch
 	track = EVENT_TRACK_MUNDANE
@@ -133,12 +133,13 @@
 
 /datum/round_event_control/scrubber_overflow/threatening
 	weight = 0
-	max_occurrences = 0
+	med_required_crew = 1
 
 /datum/round_event_control/scrubber_overflow/catastrophic
 	weight = 0
-	max_occurrences = 0
+	med_required_crew = 1
+	eng_required_crew = 1
 
 /datum/round_event_control/scrubber_overflow/every_vent
 	weight = 0
-	max_occurrences = 0
+	head_required_crew = 1

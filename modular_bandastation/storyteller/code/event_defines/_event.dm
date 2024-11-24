@@ -12,6 +12,12 @@
 	/// Whether a roundstart event can happen post roundstart. Very important for events which override job assignments.
 	var/can_run_post_roundstart = TRUE
 
+	// BANDASTATION EDIT - STORYTELLER - CREW REQUIREMENTS
+	var/med_required_crew = 0
+	var/eng_required_crew = 0
+	var/rnd_required_crew = 0
+	var/head_required_crew = 0
+
 /datum/round_event
 	/// Whether the event called its start() yet or not.
 	var/has_started = FALSE
