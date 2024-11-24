@@ -56,7 +56,7 @@
 		return
 	if(roundstart && SSticker.HasRoundStarted())
 		return FALSE
-	if(SSgamemode.can_inject_antags())
+	if(!SSgamemode.can_inject_antags())
 		return FALSE
 	if(!get_antag_amount())
 		return FALSE
