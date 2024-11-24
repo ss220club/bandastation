@@ -380,6 +380,8 @@
 		НЕ НЕТ РАВНЫХ! БУРЯ ИЗ СТАЛИ И СЕРЕБРА НАДВИГАЕТСЯ НА НАС! УЗРИТЕ МОЕ ВОЗНЕСЕНИЕ!"
 
 	ascension_achievement = /datum/award/achievement/misc/blade_ascension
+	announcement_text = "%SPOOKY% Мастер клинков, ученик разорванного чемпиона, %NAME% вознесся! Их сталь - это сталь, которая разрежет реальность в вихре серебра! %SPOOKY%"
+	announcement_sound = 'sound/music/antag/heretic/ascend_blade.ogg'
 
 /datum/heretic_knowledge/ultimate/blade_final/is_valid_sacrifice(mob/living/carbon/human/sacrifice)
 	. = ..()
@@ -390,13 +392,8 @@
 
 /datum/heretic_knowledge/ultimate/blade_final/on_finished_recipe(mob/living/user, list/selected_atoms, turf/loc)
 	. = ..()
-	priority_announce(
-		text = "[generate_heretic_text()] Мастер клинков, ученик разорванного чемпиона, [user.real_name] вознесся! Их сталь - это сталь, которая разрежет реальность в вихре серебра! [generate_heretic_text()]",
-		title = "[generate_heretic_text()]",
-		sound = 'sound/music/antag/heretic/ascend_blade.ogg',
-		color_override = "pink",
-	)
-	ADD_TRAIT(user, TRAIT_NEVER_WOUNDED, name)
+
+	ADD_TRAIT(user, TRAIT_NEVER_WOUNDED, type)
 	RegisterSignal(user, COMSIG_HERETIC_BLADE_ATTACK, PROC_REF(on_eldritch_blade))
 	user.apply_status_effect(/datum/status_effect/protective_blades/recharging, null, 8, 30, 0.25 SECONDS, /obj/effect/floating_blade, 1 MINUTES)
 	user.add_stun_absorption(

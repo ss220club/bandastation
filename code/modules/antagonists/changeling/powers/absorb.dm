@@ -7,6 +7,7 @@
 	req_human = TRUE
 	///if we're currently absorbing, used for sanity
 	var/is_absorbing = FALSE
+	var/datum/looping_sound/changeling_absorb/absorbing_loop
 
 /datum/action/changeling/absorb_dna/can_sting(mob/living/carbon/owner)
 	if(!..())
@@ -59,6 +60,7 @@
 	if(target.mind && owner.mind)//if the victim and owner have minds
 		absorb_memories(target)
 
+	qdel(absorbing_loop)
 	is_absorbing = FALSE
 
 	changeling.adjust_chemicals(10)
@@ -146,6 +148,7 @@
 			if(2)
 				owner.visible_message(span_warning("[capitalize(owner.declent_ru(NOMINATIVE))] вытягивает жало-хоботок!"), span_notice("Мы вытягиваем жало-хоботок."))
 			if(3)
+				absorbing_loop = new(owner, start_immediately = TRUE)
 				owner.visible_message(span_danger("[capitalize(owner.declent_ru(NOMINATIVE))] пронзает [target.declent_ru(ACCUSATIVE)] жалом-хоботком!"), span_notice("Мы пронзаем [target.declent_ru(ACCUSATIVE)] жалом-хоботком."))
 				to_chat(target, span_userdanger("Вы чувствуете острую колющую боль!"))
 				target.take_overall_damage(40)
@@ -153,6 +156,7 @@
 		SSblackbox.record_feedback("nested tally", "changeling_powers", 1, list("Absorb DNA", "[absorbing_iteration]"))
 		if(!do_after(owner, 15 SECONDS, target, hidden = TRUE))
 			owner.balloon_alert(owner, "прервано!")
+			qdel(absorbing_loop)
 			is_absorbing = FALSE
 			return FALSE
 	return TRUE
