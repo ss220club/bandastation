@@ -41,3 +41,9 @@
 		/datum/reagent/water/salt,
 		/datum/reagent/yuck,
 	)
+
+/datum/round_event_control/wizard/round_start
+	track = EVENT_TRACK_CREWSET
+	weight = 1
+	tags = list(TAG_COMMUNAL, TAG_DESTRUCTIVE, TAG_CHAOTIC)
+	roundstart = TRUE

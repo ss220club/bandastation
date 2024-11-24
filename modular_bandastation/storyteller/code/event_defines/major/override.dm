@@ -75,11 +75,6 @@
 	track = EVENT_TRACK_MAJOR
 	tags = list(TAG_COMBAT, TAG_CHAOTIC, TAG_CREW_ANTAG)
 
-/datum/round_event_control/wizard
-	track = EVENT_TRACK_MAJOR
-	weight = 5
-	tags = list(TAG_COMMUNAL, TAG_DESTRUCTIVE, TAG_CHAOTIC)
-
 /datum/round_event_control/wizard/round_start
 	track = EVENT_TRACK_MAJOR
 	weight = 5
