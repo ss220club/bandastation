@@ -355,7 +355,7 @@ export class Uplink extends Component<{}, UplinkState> {
                       </Tooltip>
                     </Stack.Item>
                   )}
-                  {(primary_objectives || has_objectives) && (
+                  {!!(primary_objectives || has_objectives) && (
                     <Stack.Item grow={1}>
                       <Tabs fluid>
                         {primary_objectives && (
