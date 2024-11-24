@@ -165,8 +165,8 @@
 	for(var/datum/mind/antag_mind as anything in setup_minds)
 		add_datum_to_mind(antag_mind)
 
-/datum/round_event/antagonist/proc/add_datum_to_mind(datum/mind/antag_mind)
-	antag_mind.add_antag_datum(antag_datum)
+/datum/round_event/antagonist/proc/add_datum_to_mind(datum/mind/antag_mind, team)
+	antag_mind.add_antag_datum(antag_datum, team)
 
 /datum/round_event_control/antagonist/team
 	typepath = /datum/round_event/antagonist/team

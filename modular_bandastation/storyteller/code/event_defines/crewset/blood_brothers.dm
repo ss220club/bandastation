@@ -35,5 +35,5 @@
 
 /datum/round_event/antagonist/team/blood_brothers/start()
 	for(var/datum/mind/assigned_player in setup_minds)
-		add_datum_to_mind(assigned_player)
+		add_datum_to_mind(assigned_player, brother_team)
 	return TRUE
