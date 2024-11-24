@@ -209,7 +209,7 @@ SUBSYSTEM_DEF(gamemode)
 	if(!storyteller.antag_divisor)
 		return 0
 	var/max_antags = sec_crew * storyteller.max_sec_mult
-	var/min_antags = ANTAG_CAP_FLAT
+	var/min_antags = min(sec_crew, ANTAG_CAP_FLAT)
 	var/calculated_cap = (get_correct_popcount() / storyteller.antag_divisor) + sec_crew
 	var/clamped_cap = clamp(calculated_cap, min_antags, max_antags)
 	return round(clamped_cap)
