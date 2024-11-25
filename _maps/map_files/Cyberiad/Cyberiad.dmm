@@ -40274,7 +40274,6 @@
 "kwf" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/storage/bag/trash,
-/mob/living/basic/mouse/rat,
 /turf/open/floor/plating,
 /area/station/maintenance/fore/lesser)
 "kwg" = (
