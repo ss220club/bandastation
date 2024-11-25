@@ -50,11 +50,11 @@
 		if(CONFIG_GET(flag/protect_assistant_from_antagonist))
 			restricted_roles |= JOB_ASSISTANT
 
-/datum/round_event_control/antagonist/can_spawn_event(players_amt, allow_magic = FALSE, popchecks = TRUE)
+/datum/round_event_control/antagonist/can_spawn_event(players_amt, allow_magic = FALSE, popchecks = TRUE, round_start_event = FALSE)
 	. = ..()
 	if(!.)
 		return
-	if(roundstart && SSticker.HasRoundStarted())
+	if(roundstart && (SSticker.HasRoundStarted() && !round_start_event))
 		return FALSE
 	if(SSticker.HasRoundStarted() && !SSgamemode.can_inject_antags())
 		return FALSE
@@ -64,12 +64,12 @@
 	if(candidates.len < get_minimum_candidates())
 		return FALSE
 
-/datum/round_event_control/antagonist/can_spawn_event_error_reason(players_amt, allow_magic = FALSE, popchecks = TRUE)
+/datum/round_event_control/antagonist/can_spawn_event_error_reason(players_amt, allow_magic = FALSE, popchecks = TRUE, round_start_event = FALSE)
 	. = ..()
 	var/message = .
 	if(message == "success")
 		return
-	if(roundstart && SSticker.HasRoundStarted())
+	if(roundstart && (SSticker.HasRoundStarted() && !round_start_event))
 		message = "<font color='[COLOR_SOFT_RED]'>Storyteller event: [name]</font> was unable to run due event is roundstart and round started."
 	if(SSticker.HasRoundStarted() && !SSgamemode.can_inject_antags())
 		message = "<font color='[COLOR_SOFT_RED]'>Storyteller event: [name]</font> was unable to run due event can't inject antags over sec cap - cap/antags [SSgamemode.sec_crew]/[SSgamemode.get_antag_cap()]/[length(GLOB.current_living_antags)]."

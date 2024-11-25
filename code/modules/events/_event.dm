@@ -70,7 +70,7 @@
 
 // Checks if the event can be spawned. Used by event controller and "false alarm" event.
 // Admin-created events override this.
-/datum/round_event_control/proc/can_spawn_event(players_amt, allow_magic = FALSE)
+/datum/round_event_control/proc/can_spawn_event(players_amt, allow_magic = FALSE, round_start_event = FALSE)
 	SHOULD_CALL_PARENT(TRUE)
 	if(occurrences >= max_occurrences)
 		return FALSE
@@ -102,7 +102,7 @@
 
 	return TRUE
 
-/datum/round_event_control/proc/can_spawn_event_error_reason(players_amt, allow_magic = FALSE)
+/datum/round_event_control/proc/can_spawn_event_error_reason(players_amt, allow_magic = FALSE, round_start_event = FALSE)
 	SHOULD_CALL_PARENT(TRUE)
 	var/message = "success"
 	if(occurrences >= max_occurrences)
@@ -135,7 +135,7 @@
 
 	return message
 
-/datum/round_event_control/proc/preRunEvent(admin_forced = FALSE)
+/datum/round_event_control/proc/preRunEvent(admin_forced = FALSE, round_start_event = FALSE)
 	if(!ispath(typepath, /datum/round_event))
 		return EVENT_CANT_RUN
 
@@ -171,9 +171,11 @@
 	var/players_amt = get_active_player_count(alive_check = TRUE, afk_check = TRUE, human_check = TRUE)
 	if(!can_spawn_event(players_amt))
 		message_admins("Second pre-condition check for [name] failed, rerolling...")
-		SSevents.spawnEvent(excluded_event = src)
+		SSevents.spawnEvent(excluded_event = src, reroll_reason = SSgamemode.storyteller.round_start_handle)
 		return EVENT_INTERRUPTED
-
+	else
+		if(SSgamemode.storyteller.round_start_handle && SSticker.HasRoundStarted())
+			SSgamemode.storyteller.round_start_handle = FALSE
 	if(!triggering)
 		return EVENT_CANCELLED //admin cancelled
 	triggering = FALSE

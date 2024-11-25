@@ -46,6 +46,7 @@
 	var/max_sec_mult = 1
 	/// Two tellers of the same intensity group can't run in 2 consecutive rounds
 	var/storyteller_type = STORYTELLER_TYPE_ALWAYS_AVAILABLE
+	var/round_start_handle = FALSE
 
 /datum/storyteller/process(delta_time)
 	if(disable_distribution)
@@ -97,7 +98,7 @@
 			for(var/datum/round_event_control/event as anything in SSgamemode.event_pools[track])
 				if(isnull(event))
 					continue
-				var/message = event.can_spawn_event_error_reason()
+				var/message = event.can_spawn_event_error_reason(round_start_handle)
 				if(message != "success")
 					message_admins(message)
 					log_admin(message)
@@ -124,7 +125,7 @@
 	message_admins("<font color='[COLOR_GREEN]'>Storyteller</font> purchased and triggered [bought_event] event, on [track] track, for [total_cost] cost.")
 	log_admin("<font color='[COLOR_GREEN]'>Storyteller</font> purchased and triggered [bought_event] event, on [track] track, for [total_cost] cost.")
 	if(bought_event.roundstart)
-		SSgamemode.TriggerEvent(bought_event)
+		SSgamemode.TriggerEvent(bought_event, round_start_event = round_start_handle)
 	else
 		SSgamemode.schedule_event(bought_event, (rand(3, 4) MINUTES), total_cost)
 

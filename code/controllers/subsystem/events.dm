@@ -70,7 +70,7 @@ SUBSYSTEM_DEF(events)
  * Arguments:
  * * excluded_event - The event path we will be foregoing, if present.
  */
-/datum/controller/subsystem/events/proc/spawnEvent(datum/round_event_control/excluded_event)
+/datum/controller/subsystem/events/proc/spawnEvent(datum/round_event_control/excluded_event, reroll_reason = FALSE)
 	set waitfor = FALSE //for the admin prompt
 	if(!CONFIG_GET(flag/allow_random_events))
 		return
@@ -96,18 +96,17 @@ SUBSYSTEM_DEF(events)
 
 	var/datum/round_event_control/event_to_run = pick_weight(event_roster)
 	if(event_to_run)
-		TriggerEvent(event_to_run)
+		TriggerEvent(event_to_run, reroll_reason)
 
 ///Does the last pre-flight checks for the passed event, and runs it if the event is ready.
-/datum/controller/subsystem/events/proc/TriggerEvent(datum/round_event_control/event_to_trigger)
+/datum/controller/subsystem/events/proc/TriggerEvent(datum/round_event_control/event_to_trigger, reroll_reason = FALSE)
 	. = event_to_trigger.preRunEvent()
 	if(. == EVENT_CANT_RUN)//we couldn't run this event for some reason, set its max_occurrences to 0
 		event_to_trigger.max_occurrences = 0
-	/*else if(. == EVENT_READY)
+	else if(. == EVENT_READY && reroll_reason)
 		message_admins("<font color='[COLOR_DARK_MODERATE_LIME_GREEN]'>SSevents</font> sends a [event_to_trigger.name] to Storyteller schedule!")
 		log_game("<font color='[COLOR_DARK_MODERATE_LIME_GREEN]'>SSevents</font> sends a [event_to_trigger.name] to Storyteller schedule!")
-		SSgamemode.schedule_event(event_to_trigger, 0, 0, FALSE, TRUE)
-		event_to_trigger.run_event(random = TRUE)*/ /// BANDASTATION EDIT - STORYTELLER - Отключение запуска рандом-ивентов
+		event_to_trigger.run_event(random = TRUE)
 
 ///Toggles whether or not wizard events will be in the event pool, and sends a notification to the admins.
 /datum/controller/subsystem/events/proc/toggleWizardmode()

@@ -337,6 +337,7 @@ SUBSYSTEM_DEF(gamemode)
 
 	/// If the storyteller guarantees an antagonist roll, add points to make it so.
 	if(storyteller.guarantees_roundstart_crewset)
+		storyteller.round_start_handle = TRUE
 		event_track_points[EVENT_TRACK_CREWSET] = point_thresholds[EVENT_TRACK_CREWSET]
 
 	/// If we have any forced events, ensure we get enough points for them
@@ -404,8 +405,8 @@ SUBSYSTEM_DEF(gamemode)
 			if(player_role.departments_bitflags & DEPARTMENT_BITFLAG_SCIENCE)
 				rnd_crew++
 
-/datum/controller/subsystem/gamemode/proc/TriggerEvent(datum/round_event_control/event, admin_forced = FALSE)
-	. = event.preRunEvent(admin_forced)
+/datum/controller/subsystem/gamemode/proc/TriggerEvent(datum/round_event_control/event, admin_forced = FALSE, round_start_event = FALSE)
+	. = event.preRunEvent(admin_forced, round_start_event)
 	if(. == EVENT_CANT_RUN)//we couldn't run this event for some reason, set its max_occurrences to 0
 		event.max_occurrences = 0
 	else if(. == EVENT_READY)
