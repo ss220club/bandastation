@@ -64009,11 +64009,8 @@
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable,
 /obj/effect/mapping_helpers/apc/cell_10k,
-/obj/effect/turf_decal/trimline/dark_blue/filled/line{
-	dir = 4
-	},
-/obj/effect/turf_decal/trimline/dark_blue/filled/line{
-	dir = 8
+/obj/effect/turf_decal/trimline/dark_blue/filled/end{
+	dir = 1
 	},
 /turf/open/floor/iron/dark/telecomms,
 /area/station/tcommsat/server)
