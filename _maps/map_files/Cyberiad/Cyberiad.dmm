@@ -22376,7 +22376,7 @@
 /area/station/maintenance/ghetto/starboard/aft)
 "fKm" = (
 /obj/effect/turf_decal/trimline/yellow/filled/line,
-/obj/machinery/light/broken/directional/south,
+/obj/machinery/light/directional/south,
 /turf/open/floor/iron/white,
 /area/station/medical/chemistry)
 "fKp" = (
