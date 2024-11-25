@@ -19476,13 +19476,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron,
 /area/station/maintenance/aft)
-"eYA" = (
-/obj/item/storage/box/monkeycubes{
-	pixel_x = -5;
-	pixel_y = 1
-	},
-/turf/closed/wall/r_wall,
-/area/station/maintenance/ghetto/aft)
 "eYB" = (
 /obj/item/kirbyplants/random,
 /obj/effect/turf_decal/tile/purple{
@@ -137050,7 +137043,7 @@ fif
 doz
 doz
 oVL
-eYA
+etx
 uiT
 mrE
 aPQ
