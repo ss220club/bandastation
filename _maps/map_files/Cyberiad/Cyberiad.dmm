@@ -8798,6 +8798,9 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
 	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/station/maintenance/port)
 "cmg" = (
@@ -16619,6 +16622,9 @@
 	dir = 8
 	},
 /obj/effect/spawner/random/trash/garbage,
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/station/maintenance/starboard/aft)
 "eiu" = (
@@ -19476,6 +19482,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron,
 /area/station/maintenance/aft)
+"eYA" = (
+/obj/machinery/door/firedoor/border_only,
+/turf/open/floor/plating,
+/area/station/maintenance/starboard/aft)
 "eYB" = (
 /obj/item/kirbyplants/random,
 /obj/effect/turf_decal/tile/purple{
@@ -30920,6 +30930,9 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
 /turf/open/floor/plating,
 /area/station/maintenance/port)
 "hZK" = (
@@ -39120,6 +39133,9 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/cyan,
 /obj/structure/disposalpipe/segment{
 	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
 	},
 /turf/open/floor/iron,
 /area/station/maintenance/port)
@@ -61406,6 +61422,9 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/station/maintenance/starboard/aft)
 "pSx" = (
@@ -89020,6 +89039,9 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
 /turf/open/floor/plating,
@@ -209226,7 +209248,7 @@ fjY
 xth
 bTH
 xVe
-rMZ
+eYA
 aWs
 aWs
 xho
