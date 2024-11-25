@@ -206,6 +206,8 @@ GLOBAL_LIST_INIT(available_ui_styles, list(
 	SIGNAL_HANDLER
 	update_parallax_pref() // If your eye changes z level, so should your parallax prefs
 	var/turf/eye_turf = get_turf(eye)
+	if(!eye_turf)
+		return
 	SEND_SIGNAL(src, COMSIG_HUD_Z_CHANGED, eye_turf.z)
 	var/new_offset = GET_TURF_PLANE_OFFSET(eye_turf)
 	if(current_plane_offset == new_offset)
@@ -505,7 +507,7 @@ GLOBAL_LIST_INIT(available_ui_styles, list(
 
 	var/i = 1
 	for(var/atom/movable/screen/swap_hand/SH in static_inventory)
-		SH.screen_loc = ui_swaphand_position(mymob,!(i % 2) ? 2: 1)
+		SH.screen_loc = ui_swaphand_position(mymob, IS_RIGHT_INDEX(i) ? RIGHT_HANDS : LEFT_HANDS)
 		i++
 	for(var/atom/movable/screen/human/equip/E in static_inventory)
 		E.screen_loc = ui_equip_position(mymob)
