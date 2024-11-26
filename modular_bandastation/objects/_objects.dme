@@ -5,6 +5,8 @@
 #include "code/papershredder.dm"
 #include "code/platform.dm"
 #include "code/wallets.dm"
+#include "code/containers.dm"
+#include "code/fake_light.dm"
 
 #include "code/clothing/head/hat.dm"
 #include "code/clothing/head/soft_caps.dm"
@@ -19,5 +21,7 @@
 #include "code/structures/posters.dm"
 
 #include "code/vending/vending.dm"
+
+#include "code/mecha/mecha.dm"
 
 #include "code/weapons/ranged/awaymission_gun.dm"
