@@ -6,7 +6,7 @@
 	antag_datum = /datum/antagonist/nukeop/clownop
 	antag_leader_datum = /datum/antagonist/nukeop/leader/clownop
 
-	weight = 6
+	weight = 0
 	tags = list(TAG_CREW_ANTAG, TAG_CHAOTIC)
 
 	base_antags = 2

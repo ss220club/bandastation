@@ -5,7 +5,7 @@
 	antag_flag = ROLE_CULTIST
 	antag_datum = /datum/antagonist/cult
 
-	weight = 1
+	weight = 6
 	tags = list(TAG_CREW_ANTAG, TAG_CHAOTIC, TAG_COMBAT)
 
 	base_antags = 3
