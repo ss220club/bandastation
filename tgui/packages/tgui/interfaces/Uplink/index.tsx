@@ -298,7 +298,7 @@ export class Uplink extends Component<{}, UplinkState> {
                               {has_objectives
                                 ? ' сложность получаемых второстепенных задач и '
                                 : ' '}
-                              what items you can purchase.&nbsp;
+                              и на список доступных для покупки предметов.&nbsp;
                               <Box mt={0.5}>
                                 {/* A minute in deciseconds */}
                                 Угроза пассивно увеличивается на{' '}
