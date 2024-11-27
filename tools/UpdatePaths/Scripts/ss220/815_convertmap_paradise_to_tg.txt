@@ -1,3 +1,12 @@
+# Areas
+/area/syndicate_mothership : /area/centcom/syndicate_base
+/area/syndicate_mothership/outside : /area/centcom/syndicate_base/outside
+/area/syndicate_mothership/control : /area/centcom/syndicate_base/control
+/area/syndicate_mothership/elite_squad : /area/centcom/syndicate_base/elite_squad
+/area/syndicate_mothership/infteam : /area/centcom/syndicate_base/infteam
+/area/syndicate_mothership/jail : /area/centcom/syndicate_base/jail
+/area/syndicate_mothership/cargo : /area/centcom/syndicate_base/cargo
+
 # Turfs
 /turf/simulated/floor/plating : /turf/open/floor/plating
 /turf/simulated/floor/plating/asteroid : /turf/open/misc/asteroid
@@ -36,14 +45,13 @@
 # Structures
 /obj/structure/mopbucket : /obj/structure/mop_bucket{@OLD}
 /obj/structure/curtain/open/shower : /obj/structure/curtain{@OLD}
+/obj/structure/curtain/black : /obj/structure/curtain/bounty/start_closed{@OLD}
 /obj/structure/holohoop : /obj/structure/hoop{@OLD}
 /obj/structure/weightmachine/stacklifter : /obj/structure/weightmachine{@OLD}
 /obj/structure/chair/office/dark : /obj/structure/chair/office
 /obj/structure/rack/holorack : /obj/structure/rack{@OLD}
 /obj/structure/reagent_dispensers/beerkeg/nuke : /obj/machinery/nuclearbomb/beer{@OLD}
 /obj/structure/marker_beacon/dock_marker/collision : /obj/structure/marker_beacon/burgundy{@OLD}
-/obj/structure/chair/comfy/purp : /obj/structure/chair/comfy/black{@OLD}
-/obj/structure/chair/comfy/red : /obj/structure/chair/comfy/brown{@OLD}
 /obj/structure/chair/comfy/shuttle/dark : /obj/structure/chair/comfy/shuttle/tactical{@OLD}
 /obj/structure/light_fake : /obj/machinery/light{@OLD}
 /obj/structure/light_fake/spot : /obj/machinery/light{@OLD}
@@ -88,7 +96,7 @@
 /obj/machinery/kitchen_machine/microwave/upgraded : /obj/machinery/microwave{@OLD}
 /obj/machinery/kitchen_machine/oven/upgraded : /obj/machinery/oven/range{@OLD}
 /obj/machinery/kitchen_machine/grill/upgraded : /obj/machinery/griddle{@OLD}
-/obj/machinery/photocopier/syndie : /obj/machinery/photocopier{@OLD}
+/obj/machinery/photocopier/syndie : /obj/machinery/photocopier/syndicate{@OLD}
 /obj/machinery/photocopier/faxmachine/longrange/syndie : /obj/machinery/fax/admin/syndicate{@OLD}
 /obj/machinery/door_control/no_emag : /obj/machinery/button/door/indestructible{@OLD}
 /obj/machinery/recharge_station/upgraded : /obj/machinery/recharge_station
@@ -96,6 +104,7 @@
 /obj/machinery/access_button : /obj/machinery/door_buttons/access_button{@OLD}
 
 # Items
+/obj/item/flag/syndi : /obj/item/banner/syndicate{@OLD}
 /obj/item/paper_bin/syndicate : /obj/item/paper_bin{@OLD}
 /obj/item/bio_chip_implanter/emp : /obj/item/implanter/emp{@OLD}
 /obj/item/bio_chip_implanter/krav_maga : /obj/item/implanter/krav_maga{@OLD}
@@ -132,8 +141,10 @@
 /obj/item/stack/cable_coil/random : /obj/item/stack/cable_coil{@OLD}
 
 # Effects
-/obj/effect/mapping_helpers/light : /obj/effect/light_emitter/fake_outdoors
+/obj/effect/decal/syndie_logo : /obj/effect/turf_decal/syndie_logo{@OLD}
+/obj/effect/decal/solgov_logo : /obj/effect/turf_decal/solgov_logo{@OLD}
+/obj/effect/decal/cleanable/cobweb2 : /obj/effect/decal/cleanable/cobweb/cobweb2{@OLD}
 /obj/effect/turf_decal/miscellaneous/plumbing : /obj/structure/fluff/shower_drain{@OLD}
 /obj/effect/turf_decal/siding/wood/@SUBTYPES : /obj/effect/turf_decal/siding/wood{@OLD}
-/obj/effect/decal/cleanable/cobweb2 : /obj/effect/decal/cleanable/cobweb/cobweb2{@OLD}
 /obj/effect/spawner/window/plastitanium : /obj/effect/spawner/structure/window/reinforced/plasma/plastitanium
+/obj/effect/mapping_helpers/light : /obj/effect/light_emitter/fake_outdoors
