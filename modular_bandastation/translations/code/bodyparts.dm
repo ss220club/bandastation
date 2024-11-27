@@ -1,7 +1,7 @@
 // Code for handling declents for bodyparts
 
 /obj/item/bodypart
-	var/list/ru_plaintext_zone = list()
+	var/list/ru_plaintext_zone
 
 /obj/item/bodypart/head/Initialize(mapload)
 	. = ..()
