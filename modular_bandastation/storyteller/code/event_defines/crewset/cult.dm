@@ -11,7 +11,7 @@
 	base_antags = 3
 	maximum_antags = 6
 	maximum_antags_global = 6
-	min_players = 40
+	//min_players = 40
 
 	restricted_roles = list(
 			JOB_AI,
@@ -25,8 +25,6 @@
 			JOB_SECURITY_OFFICER,
 			JOB_WARDEN,
 		)
-
-	typepath = /datum/team/cult
 
 	category = EVENT_CATEGORY_INVASION
 

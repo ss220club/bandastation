@@ -882,7 +882,7 @@ SUBSYSTEM_DEF(gamemode)
 	var/list/assoc_spawn_weight = list()
 	var/active_pop = get_correct_popcount()
 	for(var/datum/round_event_control/event as anything in event_lookup)
-		if(event.roundstart != roundstart_event_view)
+		if((!roundstart_event_view && event.roundstart) || (roundstart_event_view && !event.roundstart))
 			continue
 		if(event.can_spawn_event(active_pop))
 			total_weight += event.calculated_weight
