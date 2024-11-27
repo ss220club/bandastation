@@ -16,7 +16,10 @@
 #include "code/consumables/drinks.dm"
 #include "code/consumables/customer_data.dm"
 
+#include "code/items/banners.dm"
+
 #include "code/structures/posters.dm"
+#include "code/structures/statues.dm"
 
 #include "code/vending/vending.dm"
 
