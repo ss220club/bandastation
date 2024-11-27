@@ -22,7 +22,7 @@
 /datum/round_event_control/antagonist/solo/malf/roundstart
 	name = "Malfunctioning AI"
 
-	roundstart = TRUE
+	roundstart = 40
 	typepath = /datum/round_event/antagonist/solo/malf_ai/roundstart
 	weight = 10
 

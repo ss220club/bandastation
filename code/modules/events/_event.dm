@@ -175,11 +175,12 @@
 		if(message != "success")
 			message_admins(message)
 			log_admin(message)
-		SSevents.spawnEvent(excluded_event = src, reroll_reason = SSgamemode.storyteller.round_start_handle)
+		SSevents.spawnEvent(excluded_event = src)
 		return EVENT_INTERRUPTED
 	else
 		if(SSgamemode.storyteller.round_start_handle && SSticker.HasRoundStarted())
 			SSgamemode.storyteller.round_start_handle = FALSE
+			SSgamemode.storyteller.round_start_budget = 0
 	if(!triggering)
 		return EVENT_CANCELLED //admin cancelled
 	triggering = FALSE

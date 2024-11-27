@@ -1,6 +1,6 @@
 /datum/round_event_control/antagonist/solo/blood_brothers
 	name = "Blood Brother"
-	roundstart = TRUE
+	roundstart = 8
 	track = EVENT_TRACK_CREWSET
 	antag_flag = ROLE_BROTHER
 	antag_datum = /datum/antagonist/brother

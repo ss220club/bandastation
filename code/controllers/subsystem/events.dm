@@ -70,7 +70,7 @@ SUBSYSTEM_DEF(events)
  * Arguments:
  * * excluded_event - The event path we will be foregoing, if present.
  */
-/datum/controller/subsystem/events/proc/spawnEvent(datum/round_event_control/excluded_event, reroll_reason = FALSE)
+/datum/controller/subsystem/events/proc/spawnEvent(datum/round_event_control/excluded_event)
 	set waitfor = FALSE //for the admin prompt
 	if(!CONFIG_GET(flag/allow_random_events))
 		return
@@ -86,7 +86,7 @@ SUBSYSTEM_DEF(events)
 		if(!event_to_check.can_spawn_event(players_amt))
 			continue
 		if(event_to_check.weight < 0) //for round-start events etc.
-			var/res = TriggerEvent(event_to_check)
+			var/res = SSgamemode.TriggerEvent(event_to_check) // BANDASTATION EDIT - STORYTELLER - перевод выстрелов событий в сторителлер
 			if(res == EVENT_INTERRUPTED)
 				continue //like it never happened
 			if(res == EVENT_CANT_RUN)
@@ -96,17 +96,19 @@ SUBSYSTEM_DEF(events)
 
 	var/datum/round_event_control/event_to_run = pick_weight(event_roster)
 	if(event_to_run)
-		TriggerEvent(event_to_run, reroll_reason)
+		SSgamemode.TriggerEvent(event_to_run) // BANDASTATION EDIT - STORYTELLER - перевод выстрелов событий в сторителлер
 
 ///Does the last pre-flight checks for the passed event, and runs it if the event is ready.
-/datum/controller/subsystem/events/proc/TriggerEvent(datum/round_event_control/event_to_trigger, reroll_reason = FALSE)
+/*
+/datum/controller/subsystem/events/proc/TriggerEvent(datum/round_event_control/event_to_trigger)
 	. = event_to_trigger.preRunEvent()
 	if(. == EVENT_CANT_RUN)//we couldn't run this event for some reason, set its max_occurrences to 0
 		event_to_trigger.max_occurrences = 0
-	else if(. == EVENT_READY && reroll_reason)
+	else if(. == EVENT_READY)
 		message_admins("<font color='[COLOR_DARK_MODERATE_LIME_GREEN]'>SSevents</font> sends a [event_to_trigger.name] to Storyteller schedule!")
 		log_game("<font color='[COLOR_DARK_MODERATE_LIME_GREEN]'>SSevents</font> sends a [event_to_trigger.name] to Storyteller schedule!")
 		event_to_trigger.run_event(random = TRUE)
+		*/ /// BANDASTATION EDIT - STORYTELLER - отключение базового фаера событий
 
 ///Toggles whether or not wizard events will be in the event pool, and sends a notification to the admins.
 /datum/controller/subsystem/events/proc/toggleWizardmode()

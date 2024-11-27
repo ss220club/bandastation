@@ -1,6 +1,6 @@
 /datum/round_event_control/antagonist/team/nuke_ops
 	name = "Nuclear Operatives"
-	roundstart = TRUE
+	roundstart = 40
 
 	antag_flag = ROLE_OPERATIVE
 	antag_datum = /datum/antagonist/nukeop

@@ -1,6 +1,6 @@
 /datum/round_event_control/antagonist/solo/changeling
 	name = "Changelings"
-	roundstart = TRUE
+	roundstart = 12
 
 	antag_flag = ROLE_CHANGELING
 	antag_datum = /datum/antagonist/changeling

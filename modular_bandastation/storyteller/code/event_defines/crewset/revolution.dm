@@ -1,6 +1,6 @@
 /datum/round_event_control/antagonist/team/revolution
 	name = "revolution"
-	roundstart = TRUE
+	roundstart = 30
 	track = EVENT_TRACK_MAJOR
 	antag_flag = ROLE_REV
 	antag_datum = /datum/antagonist/rev/
