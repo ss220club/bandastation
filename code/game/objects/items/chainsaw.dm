@@ -68,6 +68,8 @@
 	toolspeed = active ? 0.5 : initial(toolspeed)
 	update_item_action_buttons()
 
+	return COMPONENT_NO_DEFAULT_MESSAGE
+
 /obj/item/chainsaw/suicide_act(mob/living/carbon/user)
 	if(!HAS_TRAIT(src, TRAIT_TRANSFORM_ACTIVE))
 		user.visible_message(span_suicide("[user] smashes [src] into [user.p_their()] neck, destroying [user.p_their()] esophagus! Кажется, [user.ru_p_they()] пытается совершить самоубийство!"))

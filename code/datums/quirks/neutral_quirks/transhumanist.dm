@@ -136,11 +136,11 @@
 	if(!slot_string)
 		return
 	if(isbodypart(old_part))
-		to_chat(quirk_holder, span_boldannounce("Ваша конечность, [slot_string], была заменена на руку робота. Чтобы починить ее, вместо швов и регенеративных сеток нужно использовать сварочный инструмент и кабели."))
+		to_chat(quirk_holder, span_bolddanger("Ваша конечность, [slot_string], была заменена на руку робота. Чтобы починить ее, вместо швов и регенеративных сеток нужно использовать сварочный инструмент и кабели."))
 	else if (old_part.name == "eyes")
-		to_chat(quirk_holder, span_boldannounce("Вы заменили свои глаза на фонарики, а не камеры. Вы ни черта не видите!"))
+		to_chat(quirk_holder, span_bolddanger("Вы заменили свои глаза на фонарики, а не камеры. Вы ни черта не видите!"))
 	else if (isorgan(old_part))
-		to_chat(quirk_holder, span_boldannounce("Ваша замена [slot_string] делает вас на шаг ближе к идеалу синтетики, но вам не хватает совсем чуть-чуть."))
+		to_chat(quirk_holder, span_bolddanger("Ваша замена [slot_string] делает вас на шаг ближе к идеалу синтетики, но вам не хватает совсем чуть-чуть."))
 
 /datum/quirk/transhumanist/remove()
 	if(isnull(old_part))

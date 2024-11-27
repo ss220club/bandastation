@@ -16,5 +16,5 @@
 	human_holder.del_and_replace_bodypart(new /obj/item/bodypart/leg/right/robot/surplus, special = TRUE)
 
 /datum/quirk/quadruple_amputee/post_add()
-	to_chat(quirk_holder, span_boldannounce("Все ваши конечности были заменены на дешевые протезы. Они хрупкие и легко разлетаются на части под давлением. \
+	to_chat(quirk_holder, span_bolddanger("Все ваши конечности были заменены на дешевые протезы. Они хрупкие и легко разлетаются на части под давлением. \
 	Кроме того, для их устранения необходимо использовать сварочный инструмент и кабели, а не бинты и мази."))

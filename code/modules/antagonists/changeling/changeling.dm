@@ -1031,7 +1031,7 @@
 
 /datum/antagonist/changeling/headslug/greet()
 	play_stinger()
-	to_chat(owner, span_boldannounce("Вы новый генокрад, только что родившийся из червя! \
+	to_chat(owner, span_bolddanger("Вы новый генокрад, только что родившийся из червя! \
 		Вы не так сильны, как обычные генокрады, так как вы только что родились."))
 
 
