@@ -330,22 +330,32 @@
 		temp_gender = PLURAL
 	return ..()
 
-/atom/proc/ru_p_yours()
-	. = "ваш"
+/atom/proc/ru_p_yours(declent = NOMINATIVE)
+	var/static/list/ru_names_male = ru_names_toml("ваш")
+	var/static/list/ru_names_female = ru_names_toml("ваша")
+	var/static/list/ru_names_neuter = ru_names_toml("ваше")
+	var/static/list/ru_names_plural = ru_names_toml("ваши")
 	switch(gender)
 		if(FEMALE)
-			. = "ваша"
+			return ru_names_female[declent] || "ваша"
 		if(NEUTER)
-			. = "ваше"
+			return ru_names_neuter[declent] || "ваше"
 		if(PLURAL)
-			. = "ваши"
+			return ru_names_plural[declent] || "ваши"
+		else
+			return ru_names_male[declent] || "ваш"
 
-/atom/proc/ru_p_mine()
-	. = "свой"
+/atom/proc/ru_p_own(declent = NOMINATIVE)
+	var/static/list/ru_names_male = ru_names_toml("свой")
+	var/static/list/ru_names_female = ru_names_toml("своя")
+	var/static/list/ru_names_neuter = ru_names_toml("своё")
+	var/static/list/ru_names_plural = ru_names_toml("свои")
 	switch(gender)
 		if(FEMALE)
-			. = "своя"
+			return ru_names_female[declent] || "своя"
 		if(NEUTER)
-			. = "своё"
+			return ru_names_neuter[declent] || "своё"
 		if(PLURAL)
-			. = "свои"
+			return ru_names_plural[declent] || "свои"
+		else
+			return ru_names_male[declent] || "свой"
