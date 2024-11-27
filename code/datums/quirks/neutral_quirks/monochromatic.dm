@@ -16,7 +16,7 @@
 
 /datum/quirk/monochromatic/post_add()
 	if(is_detective_job(quirk_holder.mind.assigned_role))
-		to_chat(quirk_holder, span_boldannounce("Ммм... На этой станции никогда ничего не ясно. Всегда как-то серо..."))
+		to_chat(quirk_holder, span_bolddanger("Ммм... На этой станции никогда ничего не ясно. Всегда как-то серо..."))
 		quirk_holder.playsound_local(quirk_holder, 'sound/ambience/security/ambidet1.ogg', 50, FALSE)
 
 /datum/quirk/monochromatic/remove()

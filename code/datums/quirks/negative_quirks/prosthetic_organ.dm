@@ -65,7 +65,7 @@
 	STOP_PROCESSING(SSobj, old_organ)
 
 /datum/quirk/prosthetic_organ/post_add()
-	to_chat(quirk_holder, span_boldannounce("Ваш орган, [slot_string], был замен дешевым протезом. Он слаб и крайне нестабилен. \
+	to_chat(quirk_holder, span_bolddanger("Ваш орган, [slot_string], был замен дешевым протезом. Он слаб и крайне нестабилен. \
 	Кроме того, любое ЭМИ воздействие заставит его полностью прекратить работу."))
 
 /datum/quirk/prosthetic_organ/remove()

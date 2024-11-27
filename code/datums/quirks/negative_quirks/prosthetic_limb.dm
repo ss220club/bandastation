@@ -28,7 +28,7 @@
 	old_limb = human_holder.return_and_replace_bodypart(surplus, special = TRUE)
 
 /datum/quirk/prosthetic_limb/post_add()
-	to_chat(quirk_holder, span_boldannounce("Ваша конечность, [slot_string], была заменена дешевым протезом. Он почти не обладает мышечной силой и делает вас еще более нездоровым. Кроме того, \
+	to_chat(quirk_holder, span_bolddanger("Ваша конечность, [slot_string], была заменена дешевым протезом. Он почти не обладает мышечной силой и делает вас еще более нездоровым. Кроме того, \
 	для ремонта необходимо использовать сварочный аппарат и кабели, а не швы и регенеративные сетки."))
 
 /datum/quirk/prosthetic_limb/remove()

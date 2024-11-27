@@ -33,5 +33,5 @@
 		new_organ.Insert(human_holder, special = TRUE, movement_flags = DELETE_IF_REPLACED)
 
 /datum/quirk/tin_man/post_add()
-	to_chat(quirk_holder, span_boldannounce("Большинство ваших внутренних органов заменены на дешевые протезы. Они хрупкие и легко разлетаются на части под давлением. \
+	to_chat(quirk_holder, span_bolddanger("Большинство ваших внутренних органов заменены на дешевые протезы. Они хрупкие и легко разлетаются на части под давлением. \
 	Кроме того, любое ЭМИ воздействие заставит их полностью прекратить работу."))
