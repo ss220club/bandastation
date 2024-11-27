@@ -1,0 +1,121 @@
+# Turfs
+/turf/simulated/floor/plating : /turf/open/floor/plating
+/turf/simulated/floor/plating/asteroid : /turf/open/misc/asteroid
+/turf/simulated/floor/plating/asteroid/ancient : /turf/open/misc/asteroid
+/turf/simulated/floor/plasteel{icon_state = "dark"} : /turf/open/floor/iron/dark
+/turf/simulated/floor/plasteel{icon_state = "grimy"} : /turf/open/floor/iron/grimy
+/turf/simulated/floor/plasteel{icon_state = "freezerfloor"} : /turf/open/floor/iron/white
+/turf/simulated/floor/plasteel{icon_state = "darkneutralfull"} : /turf/open/floor/iron/dark, /obj/effect/turf_decal/tile/neutral/fourcorners
+/turf/simulated/floor/plasteel/dark : /turf/open/floor/iron/dark
+/turf/simulated/floor/plasteel/stairs : /turf/open/floor/iron/stairs{@OLD}
+/turf/simulated/floor/plasteel/goonplaque/memorial : /turf/open/floor/iron/goonplaque
+/turf/simulated/floor/bluegrid : /turf/open/floor/circuit
+/turf/simulated/floor/greengrid : /turf/open/floor/circuit/green
+/turf/simulated/floor/redgrid : /turf/open/floor/circuit/red
+/turf/simulated/floor/carpet : /turf/open/floor/carpet
+/turf/simulated/floor/carpet/red : /turf/open/floor/carpet/red
+/turf/simulated/floor/carpet/royalblack : /turf/open/floor/carpet/royalblack
+/turf/simulated/floor/carpet/black : /turf/open/floor/carpet/black
+/turf/simulated/floor/carpet/arcade : /turf/open/floor/eighties
+/turf/simulated/floor/wood/oak : /turf/open/floor/wood
+/turf/simulated/floor/mineral/plastitanium : /turf/open/floor/mineral/plastitanium
+/turf/simulated/floor/mineral/plastitanium/red : /turf/open/floor/mineral/plastitanium/red
+/turf/simulated/floor/beach/away/water : /turf/open/water/beach
+/turf/simulated/floor/beach/away/sand : /turf/open/misc/beach/sand
+/turf/simulated/floor/beach/away/coastline : /turf/open/misc/beach/coast{@OLD}
+/turf/simulated/floor/beach/away/coastline/beachcorner : /turf/open/misc/beach/coast/corner{@OLD}
+/turf/simulated/floor/indestructible/grass : /turf/open/floor/grass
+/turf/simulated/floor/indestructible/grass/no_creep : /turf/open/floor/grass
+/turf/simulated/wall/mineral/plastitanium : /turf/closed/wall/mineral/plastitanium
+/turf/simulated/wall/mineral/plastitanium/nodiagonal : /turf/closed/wall/mineral/plastitanium/nodiagonal
+/turf/simulated/wall/indestructible/opsglass : /turf/closed/indestructible/opsglass
+/turf/simulated/wall/indestructible/rock : /turf/closed/indestructible/rock
+/turf/simulated/wall/indestructible/rock/mineral : /turf/closed/indestructible/rock
+/turf/simulated/wall/indestructible/syndicate : /turf/closed/indestructible/syndicate
+
+# Structures
+/obj/structure/curtain/open/shower : /obj/structure/curtain{@OLD}
+/obj/structure/holohoop : /obj/structure/hoop{@OLD}
+/obj/structure/weightmachine/stacklifter : /obj/structure/weightmachine{@OLD}
+/obj/structure/chair/comfy/purp : /obj/structure/chair/comfy/black{@OLD}
+/obj/structure/chair/comfy/red : /obj/structure/chair/comfy/brown{@OLD}
+/obj/structure/light_fake : /obj/machinery/light{@OLD}
+/obj/structure/light_fake/spot : /obj/machinery/light{@OLD}
+/obj/structure/light_fake/small : /obj/machinery/light/small{@OLD}
+/obj/structure/shuttle/engine/@SUBTYPES : /obj/machinery/power/shuttle_engine/@SUBTYPES{@OLD}
+/obj/structure/flora/rock/jungle : /obj/structure/flora/rock/pile/jungle/style_random
+/obj/structure/flora/ausbushes/brflowers : /obj/structure/flora/bush/flowers_br/style_random
+/obj/structure/flora/ausbushes/fernybush : /obj/structure/flora/bush/ferny/style_random
+/obj/structure/flora/ausbushes/fullgrass : /obj/structure/flora/bush/fullgrass/style_random
+/obj/structure/flora/ausbushes/genericbush : /obj/structure/flora/bush/generic/style_random
+/obj/structure/flora/ausbushes/grassybush : /obj/structure/flora/bush/grassy/style_random
+/obj/structure/flora/ausbushes/lavendergrass : /obj/structure/flora/bush/lavendergrass/style_random
+/obj/structure/flora/ausbushes/leafybush : /obj/structure/flora/bush/leafy/style_random
+/obj/structure/flora/ausbushes/palebush : /obj/structure/flora/bush/pale/style_random
+/obj/structure/flora/ausbushes/pointybush : /obj/structure/flora/bush/pointy/style_random
+/obj/structure/flora/ausbushes/ppflowers : /obj/structure/flora/bush/flowers_pp/style_random
+/obj/structure/flora/ausbushes/reedbush : /obj/structure/flora/bush/reed/style_random
+/obj/structure/flora/ausbushes/sparsegrass : /obj/structure/flora/bush/sparsegrass/style_random
+/obj/structure/flora/ausbushes/stalkybush : /obj/structure/flora/bush/stalky/style_random
+/obj/structure/flora/ausbushes/sunnybush : /obj/structure/flora/bush/sunny/style_random
+/obj/structure/flora/ausbushes/ywflowers : /obj/structure/flora/bush/flowers_yw/style_random
+/obj/structure/railing/cap/reversed : /obj/structure/railing/corner/end/flip{@OLD}
+/obj/structure/sign/double/map/left : /obj/structure/sign/map/left{@OLD}
+/obj/structure/sign/double/map/right : /obj/structure/sign/map/right{@OLD}
+/obj/structure/sign/nosmoking_2 : /obj/structure/sign/warning/no_smoking{@OLD}
+/obj/structure/sign/poster/contraband/random/south : /obj/structure/sign/poster/contraband/random/directional/south{@OLD}
+/obj/structure/statue/mooniverse : /mob/living/basic/statue{@OLD}
+
+# Machinery
+/obj/machinery/economy/vending/@SUBTYPES : /obj/machinery/vending/@SUBTYPES{@OLD}
+/obj/machinery/economy/vending/syndicigs : /obj/machinery/vending/cigarette/syndicate{@OLD}
+/obj/machinery/economy/vending/wallmed/syndicate/@SUBTYPES : /obj/machinery/vending/wallmed/@SUBTYPES{@OLD}
+/obj/machinery/door/airlock/hatch/syndicate : /obj/machinery/door/airlock/hatch{@OLD}
+/obj/machinery/door/airlock/hatch/syndicate/command : /obj/machinery/door/airlock/hatch{@OLD}
+/obj/machinery/door/airlock/hatch/syndicate/vault : /obj/machinery/door/airlock/vault{@OLD}
+/obj/machinery/atmospherics/portable/canister/nitrogen : /obj/machinery/portable_atmospherics/canister/nitrogen{@OLD}
+/obj/machinery/chem_dispenser/soda/upgraded : /obj/machinery/chem_dispenser/drinks/fullupgrade{@OLD}
+/obj/machinery/chem_dispenser/beer/upgraded : /obj/machinery/chem_dispenser/drinks/beer/fullupgrade{@OLD}
+/obj/machinery/kitchen_machine/microwave : /obj/machinery/microwave{@OLD}
+/obj/machinery/kitchen_machine/microwave/upgraded : /obj/machinery/microwave{@OLD}
+/obj/machinery/photocopier/syndie : /obj/machinery/photocopier{@OLD}
+/obj/machinery/photocopier/faxmachine/longrange/syndie : /obj/machinery/fax/admin/syndicate{@OLD}
+/obj/machinery/fishtank/wall : /obj/structure/aquarium{@OLD}
+/obj/machinery/access_button : /obj/machinery/door_buttons/access_button{@OLD}
+
+# Items
+/obj/item/restraints/handcuffs/pinkcuffs : /obj/item/restraints/handcuffs/cable/pink{@OLD}
+/obj/item/card/id/prisoner/random : /obj/item/card/id/advanced/prisoner{@OLD}
+/obj/item/beach_ball/holoball : /obj/item/toy/basketball{@OLD}
+/obj/item/pen/multi/gold : /obj/item/pen/fourcolor{@OLD}
+/obj/item/pen/fancy : /obj/item/pen/fountain{@OLD}
+/obj/item/gun/projectile/automatic/pistol : /obj/item/gun/ballistic/automatic/pistol{@OLD}
+/obj/item/gun/projectile/automatic/c20r : /obj/item/gun/ballistic/automatic/c20r{@OLD}
+/obj/item/gun/projectile/automatic/sniper_rifle : /obj/item/gun/ballistic/rifle/sniper_rifle{@OLD}
+/obj/item/melee/classic_baton/telescopic : /obj/item/melee/baton/telescopic{@OLD}
+/obj/item/organ/internal/cyberimp/arm/toolset : /obj/item/organ/cyberimp/arm/toolset{@OLD}
+/obj/item/reagent_containers/drinks/drinkingglass/shotglass : /obj/item/reagent_containers/cup/glass/drinkingglass/shotglass{@OLD}
+/obj/item/storage/backpack/duffel/syndie/med/surgery : /obj/item/storage/backpack/duffelbag/syndie/surgery{@OLD}
+/obj/item/storage/firstaid/tactical : /obj/item/storage/medkit/tactical{@OLD}
+/obj/item/storage/fancy/crayons : /obj/item/storage/crayons{@OLD}
+/obj/item/lighter/zippo/gonzofist : /obj/item/lighter/skull{@OLD}
+/obj/item/toy/figure/crew/syndie : /obj/item/toy/figure/syndie{@OLD}
+/obj/item/toy/syndicateballoon/contractor : /obj/item/toy/balloon/syndicate{@OLD}
+/obj/item/stack/tape_roll : /obj/item/stack/sticky_tape{@OLD}
+/obj/item/reagent_containers/drinks/shaker : /obj/item/reagent_containers/cup/glass/shaker{@OLD}
+/obj/item/reagent_containers/drinks/bottle/whiskey : /obj/item/reagent_containers/cup/glass/bottle/whiskey{@OLD}
+/obj/item/reagent_containers/drinks/bottle/wine : /obj/item/reagent_containers/cup/glass/bottle/wine{@OLD}
+/obj/item/reagent_containers/drinks/bottle/vodka : /obj/item/reagent_containers/cup/glass/bottle/vodka{@OLD}
+/obj/item/reagent_containers/drinks/bottle/vodka/badminka : /obj/item/reagent_containers/cup/glass/bottle/vodka/badminka{@OLD}
+/obj/item/beacon/syndicate/bomb : /obj/item/sbeacondrop/bomb{@OLD}
+/obj/item/clothing/glasses/meson/fluff : /obj/item/clothing/glasses/meson{@OLD}
+/obj/item/organ/internal/cyberimp/brain/anti_drop : /obj/item/organ/cyberimp/brain/anti_drop{@OLD}
+/obj/item/paicard/syndicate : /obj/item/pai_card{@OLD}
+/obj/item/stack/cable_coil/random : /obj/item/stack/cable_coil{@OLD}
+
+# Effects
+/obj/effect/mapping_helpers/light : /obj/effect/light_emitter/fake_outdoors
+/obj/effect/turf_decal/miscellaneous/plumbing : /obj/structure/fluff/shower_drain{@OLD}
+/obj/effect/turf_decal/siding/wood/@SUBTYPES : /obj/effect/turf_decal/siding/wood{@OLD}
+/obj/effect/decal/cleanable/cobweb2 : /obj/effect/decal/cleanable/cobweb/cobweb2{@OLD}
+/obj/effect/spawner/window/plastitanium : /obj/effect/spawner/structure/window/reinforced/plasma/plastitanium
