@@ -9,7 +9,7 @@
 	anchored = TRUE
 	max_integrity = 1000
 	impressiveness = 50
-	abstract_type = /obj/structure/statue/themis // This one is uncarvable
+	abstract_type = /obj/structure/statue/themis
 
 // MARK: Off-station statues
 /obj/structure/statue/mooniverse
@@ -21,7 +21,7 @@
 	anchored = TRUE
 	max_integrity = 1000
 	impressiveness = 100
-	abstract_type = /obj/structure/statue/mooniverse // This one is uncarvable
+	abstract_type = /obj/structure/statue/mooniverse
 
 /obj/structure/statue/ell_good
 	name = "Mr.Буум"
@@ -34,4 +34,20 @@
 	anchored = TRUE
 	max_integrity = 1000
 	impressiveness = 100
-	abstract_type = /obj/structure/statue/ell_good // This one is uncarvable
+	abstract_type = /obj/structure/statue/ell_good
+
+// Dummies
+/**
+ *	It is used as decorative element, or for shitspawn/events
+ *	DO NOT use these icons for PvE NPCs! TGs NPCs made different.
+ */
+/obj/structure/statue/dummy
+	name = "Unknown"
+	desc = null
+	icon = 'modular_bandastation/mobs/icons/dummies.dmi'
+	icon_state = null
+	pixel_y = 7
+	anchored = TRUE
+	max_integrity = 1000
+	impressiveness = 0
+	abstract_type = /obj/structure/statue/dummy
