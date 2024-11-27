@@ -329,3 +329,13 @@
 	if((obscured & ITEM_SLOT_ICLOTHING) && skipface)
 		temp_gender = PLURAL
 	return ..()
+
+/atom/proc/ru_p_yours()
+	. = "ваш"
+	switch(gender)
+		if(FEMALE)
+			. = "ваша"
+		if(NEUTER)
+			. = "ваше"
+		if(PLURAL)
+			. = "ваши"
