@@ -344,7 +344,7 @@
 	. = "свой"
 	switch(gender)
 		if(FEMALE)
-			. = "свою"
+			. = "своя"
 		if(NEUTER)
 			. = "своё"
 		if(PLURAL)
