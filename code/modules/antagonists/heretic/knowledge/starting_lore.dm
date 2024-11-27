@@ -83,9 +83,9 @@ GLOBAL_LIST_INIT(heretic_start_knowledge, initialize_starting_knowledge())
 		where_to_put_our_heart.AddComponent(/datum/component/living_heart)
 		desc = "Дарует вам Живое сердце, привязанное к вашему [where_to_put_our_heart.name], \
 			позволяя отслеживать жертвенные цели. \
-			Если вы потеряете [where_to_put_our_heart.declent_ru(GENITIVE)] у вас, вы можете трансмутировать мак и лужу крови, \
-			чтобы пробудить [where_to_put_our_heart.declent_ru(ACCUSATIVE)] у вас в Живое сердце. \
-			Если [where_to_put_our_heart.declent_ru(NOMINATIVE)] у вас кибернетическое, \
+			Если вы потеряете [where_to_put_our_heart.ru_p_own(ACCUSATIVE)] [where_to_put_our_heart.declent_ru(ACCUSATIVE)], вы можете трансмутировать мак и лужу крови, \
+			чтобы пробудить [where_to_put_our_heart.ru_p_own(ACCUSATIVE)] [where_to_put_our_heart.declent_ru(ACCUSATIVE)] в Живое сердце. \
+			Если [where_to_put_our_heart.ru_p_yours()] [where_to_put_our_heart.declent_ru(NOMINATIVE)] кибернетическое, \
 			вам дополнительно потребуется [where_to_put_our_heart.declent_ru(NOMINATIVE)] из органики и без повреждений при трансмутации."
 
 	else
@@ -173,7 +173,7 @@ GLOBAL_LIST_INIT(heretic_start_knowledge, initialize_starting_knowledge())
 	selected_atoms -= our_new_heart
 	// Make it the living heart
 	our_new_heart.AddComponent(/datum/component/living_heart)
-	to_chat(user, span_warning("Вы чувствуете, как [our_new_heart.declent_ru(NOMINATIVE)] у вас начинает пульсировать все быстрее и быстрее по мере того, как оно пробуждается!"))
+	to_chat(user, span_warning("Вы чувствуете, как [our_new_heart.ru_p_yours()] [our_new_heart.declent_ru(NOMINATIVE)] начинает пульсировать все быстрее и быстрее по мере того, как оно пробуждается!"))
 	playsound(user, 'sound/effects/magic/demon_consume.ogg', 50, TRUE)
 	return TRUE
 

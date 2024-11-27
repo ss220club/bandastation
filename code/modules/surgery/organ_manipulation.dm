@@ -203,7 +203,7 @@
 			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] вставляет [tool.declent_ru(ACCUSATIVE)] в [target.parse_zone_with_bodypart(target_zone, declent = ACCUSATIVE)] у [target.declent_ru(GENITIVE)]."),
 			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] вставляет что-то в [target.parse_zone_with_bodypart(target_zone, declent = ACCUSATIVE)] у [target.declent_ru(GENITIVE)]."),
 		)
-		display_pain(target, "Вы чувствуете, как что-то вставили в [target.parse_zone_with_bodypart(target_zone, declent = ACCUSATIVE)] у вас!")
+		display_pain(target, "Вы чувствуете, как что-то вставили в вашу [target.parse_zone_with_bodypart(target_zone, declent = ACCUSATIVE)]!")
 
 
 	else if(implement_type in implements_extract)
@@ -253,7 +253,7 @@
 					span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает извлекать [target_organ.declent_ru(ACCUSATIVE)] из [target.parse_zone_with_bodypart(target_zone, declent = GENITIVE)] у [target.declent_ru(GENITIVE)]."),
 					span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает извлекать что-то из [target.parse_zone_with_bodypart(target_zone, declent = GENITIVE)] у [target.declent_ru(GENITIVE)]."),
 				)
-				display_pain(target, "Вы чувствуете, как [target_organ.declent_ru(ACCUSATIVE)] извлекли из [target.parse_zone_with_bodypart(target_zone, declent = GENITIVE)] у вас!")
+				display_pain(target, "Вы чувствуете, как [target_organ.declent_ru(ACCUSATIVE)] извлекли из вашей [target.parse_zone_with_bodypart(target_zone, declent = GENITIVE)]!")
 			else
 				return SURGERY_STEP_FAIL
 
@@ -279,7 +279,7 @@
 			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] устанавливает [tool.declent_ru(ACCUSATIVE)] в [target.parse_zone_with_bodypart(target_zone, declent = ACCUSATIVE)] у [target.declent_ru(GENITIVE)]!"),
 			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] устанавливает что-то в [target.parse_zone_with_bodypart(target_zone, declent = ACCUSATIVE)] у [target.declent_ru(GENITIVE)]!"),
 		)
-		display_pain(target, "[capitalize(target.parse_zone_with_bodypart(target_zone))] у вас болит, пока [tool.declent_ru(NOMINATIVE)] приживается к телу!")
+		display_pain(target, "Ваша [target.parse_zone_with_bodypart(target_zone)] болит, пока [tool.declent_ru(NOMINATIVE)] приживается к телу!")
 		target_organ.on_surgical_insertion(user, target, target_zone, tool)
 
 	else if(current_type == "extract")
@@ -291,7 +291,7 @@
 				span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно извлек [target_organ.declent_ru(ACCUSATIVE)] из [target.parse_zone_with_bodypart(target_zone, declent = GENITIVE)] у [target.declent_ru(GENITIVE)]!"),
 				span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно извлек что-то из [target.parse_zone_with_bodypart(target_zone, declent = GENITIVE)] у [target.declent_ru(GENITIVE)]!"),
 			)
-			display_pain(target, "[capitalize(target.parse_zone_with_bodypart(target_zone))] у вас болит, вы больше не чувствуете [target_organ.declent_ru(ACCUSATIVE)]!")
+			display_pain(target, "Ваша [target.parse_zone_with_bodypart(target_zone)] болит, вы больше не чувствуете [target_organ.declent_ru(ACCUSATIVE)]!")
 			log_combat(user, target, "surgically removed [target_organ.name] from", addition="COMBAT MODE: [uppertext(user.combat_mode)]")
 			target_organ.Remove(target)
 			target_organ.forceMove(get_turf(target))

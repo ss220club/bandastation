@@ -109,7 +109,7 @@
 			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно заменяет [target.parse_zone_with_bodypart(target_zone, declent = ACCUSATIVE)] у [target.declent_ru(GENITIVE)] на [tool.declent_ru(ACCUSATIVE)]!"),
 			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно заменяет [target.parse_zone_with_bodypart(target_zone, declent = ACCUSATIVE)] у [target.declent_ru(GENITIVE)]!"),
 		)
-		display_pain(target, "Вы наполняетесь позитивными ощущениями, потому что вы снова чувствуете [target.parse_zone_with_bodypart(target_zone, declent = ACCUSATIVE)] у вас!", TRUE)
+		display_pain(target, "Вы наполняетесь позитивными ощущениями, потому что вы снова чувствуете вашу [target.parse_zone_with_bodypart(target_zone, declent = ACCUSATIVE)]!", TRUE)
 		return
 	else
 		var/obj/item/bodypart/bodypart_to_attach = target.newBodyPart(target_zone, FALSE, FALSE)
@@ -123,7 +123,7 @@
 			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] прикрепляет [tool.declent_ru(ACCUSATIVE)]!"),
 			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] завершает операцию по прикреплению!"),
 		)
-		display_pain(target, "Вы испытываете странные ощущения от присоединения [target.parse_zone_with_bodypart(target_zone, declent = GENITIVE)] у вас.", TRUE)
+		display_pain(target, "Вы испытываете странные ощущения от присоединения вашей [target.parse_zone_with_bodypart(target_zone, declent = GENITIVE)].", TRUE)
 		if(istype(tool, /obj/item/chainsaw))
 			qdel(tool)
 			var/obj/item/chainsaw/mounted_chainsaw/new_arm = new(target)

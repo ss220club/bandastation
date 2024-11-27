@@ -74,10 +74,10 @@ GLOBAL_LIST_INIT(strippable_human_items, create_strippable_list(list(
 			stack_trace("Unknown action key: [action_key] for [type]")
 
 /datum/strippable_item/mob_item_slot/jumpsuit/proc/do_adjust_jumpsuit(atom/source, mob/user, obj/item/clothing/under/jumpsuit)
-	to_chat(source, span_notice("[capitalize(user.declent_ru(NOMINATIVE))] пытается изменить стиль [jumpsuit.declent_ru(GENITIVE)] у вас."))
+	to_chat(source, span_notice("[capitalize(user.declent_ru(NOMINATIVE))] пытается изменить стиль [jumpsuit.ru_p_yours(GENITIVE)] [jumpsuit.declent_ru(GENITIVE)]."))
 	if (!do_after(user, (jumpsuit.strip_delay * 0.5), source))
 		return
-	to_chat(source, span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно меняет стиль [jumpsuit.declent_ru(GENITIVE)] у вас."))
+	to_chat(source, span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно меняет стиль [jumpsuit.ru_p_yours(GENITIVE)] [jumpsuit.declent_ru(GENITIVE)]."))
 	jumpsuit.toggle_jumpsuit_adjust()
 
 	if (!ismob(source))
@@ -113,13 +113,13 @@ GLOBAL_LIST_INIT(strippable_human_items, create_strippable_list(list(
 		source.balloon_alert(user, "не можете достать!")
 		return
 
-	to_chat(source, span_notice("[capitalize(user.declent_ru(NOMINATIVE))] пытается переключить датчики [jumpsuit.declent_ru(GENITIVE)] у вас."))
+	to_chat(source, span_notice("[capitalize(user.declent_ru(NOMINATIVE))] пытается переключить датчики [jumpsuit.ru_p_yours(GENITIVE)] [jumpsuit.declent_ru(GENITIVE)]."))
 	if(!do_after(user, jumpsuit.strip_delay * 0.5, source)) // takes the same amount of time as adjusting it
 		source.balloon_alert(user, "не удалось!")
 		return
 	source.balloon_alert(user, "датчики переключены")
 	jumpsuit.sensor_mode = new_mode
-	to_chat(source, span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно переключает датчики [jumpsuit.declent_ru(GENITIVE)] у вас."))
+	to_chat(source, span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно переключает датчики [jumpsuit.ru_p_yours(GENITIVE)] [jumpsuit.declent_ru(GENITIVE)]."))
 	if(ishuman(source))
 		var/mob/living/carbon/human/humano = source
 		humano.update_suit_sensors()
@@ -265,7 +265,7 @@ GLOBAL_LIST_INIT(strippable_human_items, create_strippable_list(list(
 
 	carbon_source.visible_message(
 		span_danger("[capitalize(user.declent_ru(NOMINATIVE))] пытается [(carbon_source.internal != item) ? "открыть" : "перекрыть"] клапан на [item.declent_ru(PREPOSITIONAL)] у [source.declent_ru(GENITIVE)]."),
-		span_userdanger("[capitalize(user.declent_ru(NOMINATIVE))] пытается [(carbon_source.internal != item) ? "открыть" : "перекрыть"] клапан на [item.declent_ru(PREPOSITIONAL)] у вас."),
+		span_userdanger("[capitalize(user.declent_ru(NOMINATIVE))] пытается [(carbon_source.internal != item) ? "открыть" : "перекрыть"] клапан на [item.ru_p_yours(GENITIVE)] [item.declent_ru(PREPOSITIONAL)]."),
 		ignored_mobs = user,
 	)
 
@@ -283,7 +283,7 @@ GLOBAL_LIST_INIT(strippable_human_items, create_strippable_list(list(
 
 	carbon_source.visible_message(
 		span_danger("[capitalize(user.declent_ru(NOMINATIVE))] [isnull(carbon_source.internal) ? "перекрывает": "открывает"] клапан на [item.declent_ru(PREPOSITIONAL)] у [source.declent_ru(GENITIVE)]."),
-		span_userdanger("[capitalize(user.declent_ru(NOMINATIVE))] [isnull(carbon_source.internal) ? "перекрывает": "открывает"] клапан на [item.declent_ru(PREPOSITIONAL)] у вас."),
+		span_userdanger("[capitalize(user.declent_ru(NOMINATIVE))] [isnull(carbon_source.internal) ? "перекрывает": "открывает"] клапан на [item.ru_p_yours(PREPOSITIONAL)] [item.declent_ru(PREPOSITIONAL)]."),
 		ignored_mobs = user,
 	)
 

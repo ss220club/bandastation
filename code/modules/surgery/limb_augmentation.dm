@@ -89,7 +89,7 @@
 			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно заменяет [target.parse_zone_with_bodypart(target_zone, declent = ACCUSATIVE)] у [target.declent_ru(GENITIVE)] на [tool.declent_ru(ACCUSATIVE)]!"),
 			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] успешно заменяет [target.parse_zone_with_bodypart(target_zone, declent = ACCUSATIVE)] у [target.declent_ru(GENITIVE)]!"),
 		)
-		display_pain(target, "[capitalize(target.parse_zone_with_bodypart(target_zone))] у вас наполняется синтетическими ощущениями!", mechanical_surgery = TRUE)
+		display_pain(target, "Ваша [target.parse_zone_with_bodypart(target_zone)] наполняется синтетическими ощущениями!", mechanical_surgery = TRUE)
 		log_combat(user, target, "augmented", addition="by giving him new [target.parse_zone_with_bodypart(target_zone)] COMBAT MODE: [uppertext(user.combat_mode)]")
 	else
 		to_chat(user, span_warning("У [target.declent_ru(GENITIVE)] [target.parse_zone_with_bodypart(target_zone, declent = NOMINATIVE)] не из органики!"))
