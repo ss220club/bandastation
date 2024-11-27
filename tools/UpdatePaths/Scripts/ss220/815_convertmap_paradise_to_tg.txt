@@ -34,11 +34,17 @@
 /turf/simulated/wall/indestructible/syndicate : /turf/closed/indestructible/syndicate
 
 # Structures
+/obj/structure/mopbucket : /obj/structure/mop_bucket{@OLD}
 /obj/structure/curtain/open/shower : /obj/structure/curtain{@OLD}
 /obj/structure/holohoop : /obj/structure/hoop{@OLD}
 /obj/structure/weightmachine/stacklifter : /obj/structure/weightmachine{@OLD}
+/obj/structure/chair/office/dark : /obj/structure/chair/office
+/obj/structure/rack/holorack : /obj/structure/rack{@OLD}
+/obj/structure/reagent_dispensers/beerkeg/nuke : /obj/machinery/nuclearbomb/beer{@OLD}
+/obj/structure/marker_beacon/dock_marker/collision : /obj/structure/marker_beacon/burgundy{@OLD}
 /obj/structure/chair/comfy/purp : /obj/structure/chair/comfy/black{@OLD}
 /obj/structure/chair/comfy/red : /obj/structure/chair/comfy/brown{@OLD}
+/obj/structure/chair/comfy/shuttle/dark : /obj/structure/chair/comfy/shuttle/tactical{@OLD}
 /obj/structure/light_fake : /obj/machinery/light{@OLD}
 /obj/structure/light_fake/spot : /obj/machinery/light{@OLD}
 /obj/structure/light_fake/small : /obj/machinery/light/small{@OLD}
@@ -50,7 +56,7 @@
 /obj/structure/flora/ausbushes/genericbush : /obj/structure/flora/bush/generic/style_random
 /obj/structure/flora/ausbushes/grassybush : /obj/structure/flora/bush/grassy/style_random
 /obj/structure/flora/ausbushes/lavendergrass : /obj/structure/flora/bush/lavendergrass/style_random
-/obj/structure/flora/ausbushes/leafybush : /obj/structure/flora/bush/leafy/style_random
+/obj/structure/flora/ausbushes/leafybush : /obj/structure/flora/bush/leafy
 /obj/structure/flora/ausbushes/palebush : /obj/structure/flora/bush/pale/style_random
 /obj/structure/flora/ausbushes/pointybush : /obj/structure/flora/bush/pointy/style_random
 /obj/structure/flora/ausbushes/ppflowers : /obj/structure/flora/bush/flowers_pp/style_random
@@ -63,36 +69,49 @@
 /obj/structure/sign/double/map/left : /obj/structure/sign/map/left{@OLD}
 /obj/structure/sign/double/map/right : /obj/structure/sign/map/right{@OLD}
 /obj/structure/sign/nosmoking_2 : /obj/structure/sign/warning/no_smoking{@OLD}
-/obj/structure/sign/poster/contraband/random/south : /obj/structure/sign/poster/contraband/random/directional/south{@OLD}
-/obj/structure/statue/mooniverse : /mob/living/basic/statue{@OLD}
+/obj/structure/sign/poster/contraband/random/@SUBTYPES : /obj/structure/sign/poster/contraband/random/directional/@SUBTYPES
 
 # Machinery
-/obj/machinery/economy/vending/@SUBTYPES : /obj/machinery/vending/@SUBTYPES{@OLD}
 /obj/machinery/economy/vending/syndicigs : /obj/machinery/vending/cigarette/syndicate{@OLD}
-/obj/machinery/economy/vending/wallmed/syndicate/@SUBTYPES : /obj/machinery/vending/wallmed/@SUBTYPES{@OLD}
+/obj/machinery/economy/vending/boozeomat/syndicate_access : /obj/machinery/vending/boozeomat/syndicate{@OLD}
+/obj/machinery/economy/vending/wallmed/syndicate/@SUBTYPES : /obj/machinery/vending/wallmed/@SUBTYPES
+/obj/machinery/economy/vending/@SUBTYPES : /obj/machinery/vending/@SUBTYPES{@OLD}
 /obj/machinery/door/airlock/hatch/syndicate : /obj/machinery/door/airlock/hatch{@OLD}
 /obj/machinery/door/airlock/hatch/syndicate/command : /obj/machinery/door/airlock/hatch{@OLD}
 /obj/machinery/door/airlock/hatch/syndicate/vault : /obj/machinery/door/airlock/vault{@OLD}
+/obj/machinery/door/poddoor/impassable : /obj/machinery/door/poddoor/ert{@OLD}
 /obj/machinery/atmospherics/portable/canister/nitrogen : /obj/machinery/portable_atmospherics/canister/nitrogen{@OLD}
 /obj/machinery/chem_dispenser/soda/upgraded : /obj/machinery/chem_dispenser/drinks/fullupgrade{@OLD}
 /obj/machinery/chem_dispenser/beer/upgraded : /obj/machinery/chem_dispenser/drinks/beer/fullupgrade{@OLD}
+/obj/machinery/chem_dispenser/upgraded : /obj/machinery/chem_dispenser/fullupgrade{@OLD}
 /obj/machinery/kitchen_machine/microwave : /obj/machinery/microwave{@OLD}
 /obj/machinery/kitchen_machine/microwave/upgraded : /obj/machinery/microwave{@OLD}
+/obj/machinery/kitchen_machine/oven/upgraded : /obj/machinery/oven/range{@OLD}
+/obj/machinery/kitchen_machine/grill/upgraded : /obj/machinery/griddle{@OLD}
 /obj/machinery/photocopier/syndie : /obj/machinery/photocopier{@OLD}
 /obj/machinery/photocopier/faxmachine/longrange/syndie : /obj/machinery/fax/admin/syndicate{@OLD}
+/obj/machinery/door_control/no_emag : /obj/machinery/button/door/indestructible{@OLD}
+/obj/machinery/recharge_station/upgraded : /obj/machinery/recharge_station
 /obj/machinery/fishtank/wall : /obj/structure/aquarium{@OLD}
 /obj/machinery/access_button : /obj/machinery/door_buttons/access_button{@OLD}
 
 # Items
+/obj/item/paper_bin/syndicate : /obj/item/paper_bin{@OLD}
+/obj/item/bio_chip_implanter/emp : /obj/item/implanter/emp{@OLD}
+/obj/item/bio_chip_implanter/krav_maga : /obj/item/implanter/krav_maga{@OLD}
 /obj/item/restraints/handcuffs/pinkcuffs : /obj/item/restraints/handcuffs/cable/pink{@OLD}
 /obj/item/card/id/prisoner/random : /obj/item/card/id/advanced/prisoner{@OLD}
 /obj/item/beach_ball/holoball : /obj/item/toy/basketball{@OLD}
 /obj/item/pen/multi/gold : /obj/item/pen/fourcolor{@OLD}
 /obj/item/pen/fancy : /obj/item/pen/fountain{@OLD}
+/obj/item/gun/rocketlauncher : /obj/item/gun/ballistic/rocketlauncher{@OLD}
 /obj/item/gun/projectile/automatic/pistol : /obj/item/gun/ballistic/automatic/pistol{@OLD}
 /obj/item/gun/projectile/automatic/c20r : /obj/item/gun/ballistic/automatic/c20r{@OLD}
 /obj/item/gun/projectile/automatic/sniper_rifle : /obj/item/gun/ballistic/rifle/sniper_rifle{@OLD}
+/obj/item/gun/projectile/automatic/@SUBTYPES : /obj/item/gun/ballistic/automatic/@SUBTYPES{@OLD}
 /obj/item/melee/classic_baton/telescopic : /obj/item/melee/baton/telescopic{@OLD}
+/obj/item/kitchen/knife : /obj/item/knife{@OLD}
+/obj/item/candle : /obj/item/flashlight/flare/candle{@OLD}
 /obj/item/organ/internal/cyberimp/arm/toolset : /obj/item/organ/cyberimp/arm/toolset{@OLD}
 /obj/item/reagent_containers/drinks/drinkingglass/shotglass : /obj/item/reagent_containers/cup/glass/drinkingglass/shotglass{@OLD}
 /obj/item/storage/backpack/duffel/syndie/med/surgery : /obj/item/storage/backpack/duffelbag/syndie/surgery{@OLD}
@@ -103,11 +122,10 @@
 /obj/item/toy/syndicateballoon/contractor : /obj/item/toy/balloon/syndicate{@OLD}
 /obj/item/stack/tape_roll : /obj/item/stack/sticky_tape{@OLD}
 /obj/item/reagent_containers/drinks/shaker : /obj/item/reagent_containers/cup/glass/shaker{@OLD}
-/obj/item/reagent_containers/drinks/bottle/whiskey : /obj/item/reagent_containers/cup/glass/bottle/whiskey{@OLD}
-/obj/item/reagent_containers/drinks/bottle/wine : /obj/item/reagent_containers/cup/glass/bottle/wine{@OLD}
-/obj/item/reagent_containers/drinks/bottle/vodka : /obj/item/reagent_containers/cup/glass/bottle/vodka{@OLD}
-/obj/item/reagent_containers/drinks/bottle/vodka/badminka : /obj/item/reagent_containers/cup/glass/bottle/vodka/badminka{@OLD}
+/obj/item/reagent_containers/drinks/bottle/@SUBTYPES : /obj/item/reagent_containers/cup/glass/bottle/@SUBTYPES{@OLD}
+/obj/item/reagent_containers/syringe/pancuronium : /obj/item/reagent_containers/cup/bottle/pancuronium{@OLD}
 /obj/item/beacon/syndicate/bomb : /obj/item/sbeacondrop/bomb{@OLD}
+/obj/item/clothing/head/welding : /obj/item/clothing/head/utility/welding{@OLD}
 /obj/item/clothing/glasses/meson/fluff : /obj/item/clothing/glasses/meson{@OLD}
 /obj/item/organ/internal/cyberimp/brain/anti_drop : /obj/item/organ/cyberimp/brain/anti_drop{@OLD}
 /obj/item/paicard/syndicate : /obj/item/pai_card{@OLD}
