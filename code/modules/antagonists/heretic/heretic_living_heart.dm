@@ -44,7 +44,7 @@
 /datum/component/living_heart/proc/on_organ_removed(obj/item/organ/source, mob/living/carbon/old_owner)
 	SIGNAL_HANDLER
 
-	to_chat(old_owner, span_userdanger("Когда [source.declent_ru(NOMINATIVE)] у вас покидает ваше тело, вы чувствуете себя менее привязанным к Мансусу!"))
+	to_chat(old_owner, span_userdanger("Когда [source.ru_p_yours()] [source.declent_ru(NOMINATIVE)] покидает ваше тело, вы чувствуете себя менее привязанным к Мансусу!"))
 	qdel(src)
 
 /**
