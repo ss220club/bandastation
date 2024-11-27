@@ -4735,10 +4735,6 @@
 /area/station/hallway/secondary/service)
 "aHZ" = (
 /obj/machinery/airalarm/directional/west,
-/obj/effect/turf_decal/tile/blue/opposingcorners{
-	dir = 8
-	},
-/obj/effect/turf_decal/tile/red/opposingcorners,
 /turf/closed/wall,
 /area/station/service/theater)
 "aIe" = (
