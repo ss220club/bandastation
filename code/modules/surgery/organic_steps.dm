@@ -74,7 +74,7 @@
 		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает зажимать кровеносные сосуды в [target.parse_zone_with_bodypart(target_zone, declent = PREPOSITIONAL)] у [target.declent_ru(GENITIVE)]."),
 		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает зажимать кровеносные сосуды в [target.parse_zone_with_bodypart(target_zone, declent = PREPOSITIONAL)] у [target.declent_ru(GENITIVE)]."),
 	)
-	display_pain(target, "Вы чувствуете укол, после чего кровотечение в [target.parse_zone_with_bodypart(target_zone, declent = PREPOSITIONAL)] у вас замедляется.")
+	display_pain(target, "Вы чувствуете укол, после чего кровотечение в вашей [target.parse_zone_with_bodypart(target_zone, declent = PREPOSITIONAL)] замедляется.")
 
 /datum/surgery_step/clamp_bleeders/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results)
 	if(locate(/datum/surgery_step/saw) in surgery.steps)
@@ -128,7 +128,7 @@
 		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает обрабатывать разрез в [target.parse_zone_with_bodypart(target_zone, declent = PREPOSITIONAL)] у [target.declent_ru(GENITIVE)]."),
 		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает обрабатывать разрез в [target.parse_zone_with_bodypart(target_zone, declent = PREPOSITIONAL)] у [target.declent_ru(GENITIVE)]."),
 	)
-	display_pain(target, "[capitalize(target.parse_zone_with_bodypart(target_zone))] у вас прижигается!")
+	display_pain(target, "Ваша [target.parse_zone_with_bodypart(target_zone)] прижигается!")
 
 /datum/surgery_step/close/tool_check(mob/user, obj/item/tool)
 	if(implement_type == TOOL_WELDER || implement_type == /obj/item)

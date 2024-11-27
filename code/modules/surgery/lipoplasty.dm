@@ -66,7 +66,7 @@
 		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает отрезать лишний жир у [target.declent_ru(GENITIVE)]"),
 		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает отрезать что-то из [ru_parse_zone(target_zone, declent = GENITIVE)] у [target.declent_ru(GENITIVE)] при помощи [tool.declent_ru(GENITIVE)]."),
 	)
-	display_pain(target, "Вы чувствуете резкую боль в [ru_parse_zone(target_zone, declent = PREPOSITIONAL)] у вас!")
+	display_pain(target, "Вы чувствуете резкую боль в вашей [ru_parse_zone(target_zone, declent = PREPOSITIONAL)]!")
 
 /datum/surgery_step/cut_fat/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results)
 	display_results(
@@ -76,7 +76,7 @@
 		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] отрезал лишний жир у [target.declent_ru(GENITIVE)]!"),
 		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] заканчивает разрез на [ru_parse_zone(target_zone, declent = PREPOSITIONAL)] у [target.declent_ru(GENITIVE)]."),
 	)
-	display_pain(target, "Жир в [ru_parse_zone(target_zone, declent = PREPOSITIONAL)] у вас ослабевает, свисает и болит, как черт знает что!")
+	display_pain(target, "Жир в вашей [ru_parse_zone(target_zone, declent = PREPOSITIONAL)] ослабевает, свисает и болит, как черт знает что!")
 	return TRUE
 
 //remove fat

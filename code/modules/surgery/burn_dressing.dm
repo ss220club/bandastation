@@ -84,7 +84,7 @@
 			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает удалять зараженную плоть из [target.parse_zone_with_bodypart(user.zone_selected, declent = GENITIVE)] у [target.declent_ru(GENITIVE)] при помощи [tool.declent_ru(GENITIVE)]."),
 			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает удалять зараженную плоть из [target.parse_zone_with_bodypart(user.zone_selected, declent = GENITIVE)] у [target.declent_ru(GENITIVE)]."),
 		)
-		display_pain(target, "Инфекция в [target.parse_zone_with_bodypart(user.zone_selected, declent = PREPOSITIONAL)] у вас адски зудит! Такое ощущение, что тебя режут ножом!")
+		display_pain(target, "Инфекция в вашей [target.parse_zone_with_bodypart(user.zone_selected, declent = PREPOSITIONAL)] адски зудит! Такое ощущение, что тебя режут ножом!")
 	else
 		user.visible_message(span_notice("[capitalize(user.declent_ru(NOMINATIVE))] ищет [target.parse_zone_with_bodypart(user.zone_selected, declent = ACCUSATIVE)] у [target.declent_ru(GENITIVE)]."), span_notice("Вы ищете [target.parse_zone_with_bodypart(user.zone_selected, declent = ACCUSATIVE)] у [target.declent_ru(GENITIVE)]..."))
 

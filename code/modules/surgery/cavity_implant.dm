@@ -38,7 +38,7 @@ GLOBAL_LIST_INIT(heavy_cavity_implants, typecacheof(list(/obj/item/transfer_valv
 			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает вставлять [tool.declent_ru(ACCUSATIVE)] в [ru_parse_zone(target_zone, declent = ACCUSATIVE)] у [target.declent_ru(GENITIVE)]."),
 			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает вставлять [tool.w_class > WEIGHT_CLASS_SMALL ? tool.declent_ru(ACCUSATIVE) : "что-то"] в [ru_parse_zone(target_zone, declent = ACCUSATIVE)] у [target.declent_ru(GENITIVE)]."),
 		)
-		display_pain(target, "Вы чувствуете, как что-то вставляют в [ru_parse_zone(target_zone, declent = ACCUSATIVE)] у вас, это чертовски больно!")
+		display_pain(target, "Вы чувствуете, как что-то вставляют в вашу [ru_parse_zone(target_zone, declent = ACCUSATIVE)], это чертовски больно!")
 	else
 		display_results(
 			user,
@@ -74,7 +74,7 @@ GLOBAL_LIST_INIT(heavy_cavity_implants, typecacheof(list(/obj/item/transfer_valv
 				span_notice("[capitalize(user.declent_ru(NOMINATIVE))] вытягивает [item_for_cavity.declent_ru(ACCUSATIVE)] из [ru_parse_zone(target_zone, GENITIVE)] у [target.declent_ru(GENITIVE)]!"),
 				span_notice("[capitalize(user.declent_ru(NOMINATIVE))] вытягивает [item_for_cavity.w_class > WEIGHT_CLASS_SMALL ? item_for_cavity.declent_ru(ACCUSATIVE) : "что-то"] из [ru_parse_zone(target_zone, GENITIVE)] у [target.declent_ru(GENITIVE)]."),
 			)
-			display_pain(target, "Что-то вытягивают из [ru_parse_zone(target_zone, declent = GENITIVE)] у вас! Это чертовски больно!")
+			display_pain(target, "Что-то вытягивают из вашей [ru_parse_zone(target_zone, declent = GENITIVE)]! Это чертовски больно!")
 			user.put_in_hands(item_for_cavity)
 			target_chest.cavity_item = null
 			return ..()

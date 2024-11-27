@@ -392,7 +392,7 @@
 		if(!thing)
 			equipped_item.attack_hand(src)
 		else
-			to_chat(src, span_warning("Вы не можете поместить [thing.declent_ru(ACCUSATIVE)] в [equipped_item.declent_ru(ACCUSATIVE)] у вас!"))
+			to_chat(src, span_warning("Вы не можете поместить [thing.declent_ru(ACCUSATIVE)] в [equipped_item.ru_p_own(ACCUSATIVE)] [equipped_item.declent_ru(ACCUSATIVE)]!"))
 		return
 	if(!storage.supports_smart_equip)
 		return
@@ -401,7 +401,7 @@
 		return
 	if(thing) // put thing in storage item
 		if(!equipped_item.atom_storage?.attempt_insert(thing, src))
-			to_chat(src, span_warning("Вы не можете поместить [thing.declent_ru(ACCUSATIVE)] в [equipped_item.declent_ru(ACCUSATIVE)] у вас!"))
+			to_chat(src, span_warning("Вы не можете поместить [thing.declent_ru(ACCUSATIVE)] в [equipped_item.ru_p_own(ACCUSATIVE)] [equipped_item.declent_ru(ACCUSATIVE)]!"))
 		return
 	if(!storage.real_location.contents.len) // nothing to take out
 		to_chat(src, span_warning("Нечего вытаскивать из [equipped_item.declent_ru(GENITIVE)]!"))

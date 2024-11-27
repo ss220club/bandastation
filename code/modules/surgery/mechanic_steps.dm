@@ -144,7 +144,7 @@
 		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает открывать люк в [target.parse_zone_with_bodypart(target_zone, declent = PREPOSITIONAL)] у [target.declent_ru(GENITIVE)]."),
 		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] начинает открывать люк в [target.parse_zone_with_bodypart(target_zone, declent = PREPOSITIONAL)] у [target.declent_ru(GENITIVE)]."),
 	)
-	display_pain(target, "Вы получаете последние показания датчиков из [target.parse_zone_with_bodypart(target_zone, declent = GENITIVE)] у вас, когда открывается люк.", TRUE)
+	display_pain(target, "Вы получаете последние показания датчиков из вашей [target.parse_zone_with_bodypart(target_zone, declent = GENITIVE)], когда открывается люк.", TRUE)
 
 /datum/surgery_step/open_hatch/tool_check(mob/user, obj/item/tool)
 	if(tool.usesound)

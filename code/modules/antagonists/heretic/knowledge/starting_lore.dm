@@ -83,8 +83,8 @@ GLOBAL_LIST_INIT(heretic_start_knowledge, initialize_starting_knowledge())
 		where_to_put_our_heart.AddComponent(/datum/component/living_heart)
 		desc = "Дарует вам Живое сердце, привязанное к вашему [where_to_put_our_heart.name], \
 			позволяя отслеживать жертвенные цели. \
-			Если вы потеряете [where_to_put_our_heart.ru_p_mine()] [where_to_put_our_heart.declent_ru(GENITIVE)], вы можете трансмутировать мак и лужу крови, \
-			чтобы пробудить [where_to_put_our_heart.ru_p_mine()] [where_to_put_our_heart.declent_ru(ACCUSATIVE)] в Живое сердце. \
+			Если вы потеряете [where_to_put_our_heart.ru_p_own(ACCUSATIVE)] [where_to_put_our_heart.declent_ru(ACCUSATIVE)], вы можете трансмутировать мак и лужу крови, \
+			чтобы пробудить [where_to_put_our_heart.ru_p_own(ACCUSATIVE)] [where_to_put_our_heart.declent_ru(ACCUSATIVE)] в Живое сердце. \
 			Если [where_to_put_our_heart.ru_p_yours()] [where_to_put_our_heart.declent_ru(NOMINATIVE)] кибернетическое, \
 			вам дополнительно потребуется [where_to_put_our_heart.declent_ru(NOMINATIVE)] из органики и без повреждений при трансмутации."
 

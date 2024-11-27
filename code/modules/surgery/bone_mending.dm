@@ -64,7 +64,7 @@
 			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] приступает к устранению перелома в [target.parse_zone_with_bodypart(user.zone_selected, declent = PREPOSITIONAL)] у [target.declent_ru(GENITIVE)] при помощи [tool.declent_ru(GENITIVE)]."),
 			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] приступает к устранению перелома в [target.parse_zone_with_bodypart(user.zone_selected, declent = PREPOSITIONAL)] у [target.declent_ru(GENITIVE)]."),
 		)
-		display_pain(target, "[capitalize(target.parse_zone_with_bodypart(user.zone_selected))] у вас испытывает сильную боль!")
+		display_pain(target, "Ваша [target.parse_zone_with_bodypart(user.zone_selected)] испытывает сильную боль!")
 	else
 		user.visible_message(span_notice("[capitalize(user.declent_ru(NOMINATIVE))] ищет у [target.declent_ru(GENITIVE)] в [target.parse_zone_with_bodypart(user.zone_selected, declent = PREPOSITIONAL)]."), span_notice("Вы ищете у [target.declent_ru(GENITIVE)] в [target.parse_zone_with_bodypart(user.zone_selected, declent = PREPOSITIONAL)]..."))
 

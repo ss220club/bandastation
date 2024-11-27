@@ -241,7 +241,7 @@
 					span_userdanger("В вас врезается [thrown_item.declent_ru(NOMINATIVE)]!"))
 	if(!thrown_item.throwforce)
 		return
-	var/armor = run_armor_check(zone, MELEE, "Ваша броня защищает [parse_zone_with_bodypart(zone)] у вас.", "Ваша броня смягчает удар по [parse_zone_with_bodypart(zone, declent = DATIVE)] у вас.", thrown_item.armour_penetration, "", FALSE, thrown_item.weak_against_armour)
+	var/armor = run_armor_check(zone, MELEE, "Ваша броня защищает вашу [parse_zone_with_bodypart(zone)].", "Ваша броня смягчает удар по вашей [parse_zone_with_bodypart(zone, declent = DATIVE)].", thrown_item.armour_penetration, "", FALSE, thrown_item.weak_against_armour)
 	apply_damage(thrown_item.throwforce, thrown_item.damtype, zone, armor, sharpness = thrown_item.get_sharpness(), wound_bonus = (nosell_hit * CANT_WOUND))
 	if(QDELETED(src)) //Damage can delete the mob.
 		return

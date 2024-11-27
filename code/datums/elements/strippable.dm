@@ -143,7 +143,7 @@
 
 	source.visible_message(
 		span_warning("[capitalize(user.declent_ru(NOMINATIVE))] пытается снять [item.declent_ru(ACCUSATIVE)] у [source.declent_ru(GENITIVE)]."),
-		span_userdanger("[capitalize(user.declent_ru(NOMINATIVE))] пытается снять у вас [item.declent_ru(ACCUSATIVE)]."),
+		span_userdanger("[capitalize(user.declent_ru(NOMINATIVE))] пытается снять [item.ru_p_yours(ACCUSATIVE)] [item.declent_ru(ACCUSATIVE)]."),
 		blind_message = span_hear("Вы слышите шорох."),
 		ignored_mobs = user,
 	)
@@ -157,7 +157,7 @@
 		var/mob/living/carbon/human/victim_human = source
 		if(victim_human.key && !victim_human.client) // AKA braindead
 			if(victim_human.stat <= SOFT_CRIT && LAZYLEN(victim_human.afk_thefts) <= AFK_THEFT_MAX_MESSAGES)
-				var/list/new_entry = list(list(user.name, "пытался снять у вас [item.declent_ru(ACCUSATIVE)]", world.time))
+				var/list/new_entry = list(list(user.name, "пытался снять [item.ru_p_yours(ACCUSATIVE)] [item.declent_ru(ACCUSATIVE)]", world.time))
 				LAZYADD(victim_human.afk_thefts, new_entry)
 
 		else if(victim_human.is_blind())
