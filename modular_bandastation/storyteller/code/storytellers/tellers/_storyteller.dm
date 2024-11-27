@@ -95,13 +95,6 @@
 				valid_events[event] = event.calculated_weight
 		///If we didn't get any events, remove the points inform admins and dont do anything
 		if(!length(valid_events))
-			for(var/datum/round_event_control/event as anything in SSgamemode.event_pools[track])
-				if(isnull(event))
-					continue
-				var/message = event.can_spawn_event_error_reason(round_start_handle)
-				if(message != "success")
-					message_admins(message)
-					log_admin(message)
 			message_admins("<font color='[COLOR_FIRE_LIGHT_RED]'>Storyteller</font> failed to pick an event for track of [track] due to no valid events.")
 			log_admin("<font color='[COLOR_FIRE_LIGHT_RED]'>Storyteller</font> failed to pick an event for track of [track] due to no valid events.")
 			SSgamemode.event_track_points[track] *= TRACK_FAIL_POINT_PENALTY_MULTIPLIER

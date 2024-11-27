@@ -171,6 +171,10 @@
 	var/players_amt = get_active_player_count(alive_check = TRUE, afk_check = TRUE, human_check = TRUE)
 	if(!can_spawn_event(players_amt))
 		message_admins("Second pre-condition check for [name] failed, rerolling...")
+		var/message = can_spawn_event_error_reason(SSgamemode.storyteller.round_start_handle)
+		if(message != "success")
+			message_admins(message)
+			log_admin(message)
 		SSevents.spawnEvent(excluded_event = src, reroll_reason = SSgamemode.storyteller.round_start_handle)
 		return EVENT_INTERRUPTED
 	else
