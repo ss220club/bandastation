@@ -339,3 +339,13 @@
 			. = "ваше"
 		if(PLURAL)
 			. = "ваши"
+
+/atom/proc/ru_p_mine()
+	. = "свой"
+	switch(gender)
+		if(FEMALE)
+			. = "свою"
+		if(NEUTER)
+			. = "своё"
+		if(PLURAL)
+			. = "свои"
