@@ -1,35 +1,17 @@
 ["100::: Modular Shield Charger"]
 untranslated_item = "11111"
 
-["100::: Modular Shield Charger Board"] # Unique Design Name
-unique_design_name = "11111"
-
 ["101::: Modular Shield Well"]
 untranslated_item = "11111"
-
-["101::: Modular Shield Well Board"] # Unique Design Name
-unique_design_name = "11111"
 
 ["102::: Teleporter"]
 untranslated_item = "11111"
 
-["102::: Teleporter Console Board"] # Unique Design Name
-unique_design_name = "11111"
-
 ["103::: Cryotube"]
 untranslated_item = "11111"
 
-["103::: Cryotube Board"] # Unique Design Name
-unique_design_name = "11111"
-
 ["104::: Chem Dispenser"]
 untranslated_item = "11111"
-
-["104::: Portable Chem Dispenser Board"] # Unique Design Name
-unique_design_name = "11111"
-
-["105::: Chem Master Board"] # Unique Design Name
-unique_design_name = "11111"
 
 ["105::: ChemMaster 3000"]
 untranslated_item = "11111"
@@ -37,143 +19,71 @@ untranslated_item = "11111"
 ["106::: Chemical Heater"]
 untranslated_item = "11111"
 
-["106::: Chemical Heater Board"] # Unique Design Name
-unique_design_name = "11111"
-
 ["107::: High-Performance Liquid Chromatography"]
 untranslated_item = "11111"
-
-["107::: High-Performance Liquid Chromatography Board"] # Unique Design Name
-unique_design_name = "11111"
 
 ["108::: Smoke Machine"]
 untranslated_item = "11111"
 
-["108::: Smoke Machine Board"] # Unique Design Name
-unique_design_name = "11111"
-
 ["109::: All-In-One Grinder"]
 untranslated_item = "11111"
-
-["109::: All-In-One Grinder Board"] # Unique Design Name
-unique_design_name = "11111"
 
 ["110::: Enhanced Interrogation Chamber"]
 untranslated_item = "11111"
 
-["110::: Enhanced Interrogation Chamber Board"] # Unique Design Name
-unique_design_name = "11111"
-
 ["111::: Photobooth"]
 untranslated_item = "11111"
-
-["111::: Photobooth Board"] # Unique Design Name
-unique_design_name = "11111"
 
 ["112::: Security Photobooth"]
 untranslated_item = "11111"
 
-["112::: Security Photobooth Board"] # Unique Design Name
-unique_design_name = "11111"
-
 ["113::: Biogenerator"]
 untranslated_item = "11111"
-
-["113::: Biogenerator Board"] # Unique Design Name
-unique_design_name = "11111"
 
 ["114::: Hydroponics Tray"]
 untranslated_item = "11111"
 
-["114::: Hydroponics Tray Board"] # Unique Design Name
-unique_design_name = "11111"
-
 ["115::: Destructive Analyzer"]
 untranslated_item = "11111"
-
-["115::: Destructive Analyzer Board"] # Unique Design Name
-unique_design_name = "11111"
 
 ["116::: E.X.P.E.R.I-MENTOR"]
 untranslated_item = "11111"
 
-["116::: E.X.P.E.R.I-MENTOR Board"] # Unique Design Name
-unique_design_name = "11111"
-
 ["117::: Protolathe"]
 untranslated_item = "11111"
-
-["117::: Protolathe Board"] # Unique Design Name
-unique_design_name = "11111"
 
 ["118::: Ancient Protolathe"]
 untranslated_item = "11111"
 
-["118::: Ancient Protolathe Board"] # Unique Design Name
-unique_design_name = "11111"
-
 ["119::: Circuit Imprinter"]
 untranslated_item = "11111"
-
-["119::: Circuit Imprinter Board"] # Unique Design Name
-unique_design_name = "11111"
 
 ["120::: Ancient Circuit Imprinter"]
 untranslated_item = "11111"
 
-["120::: Ancient Circuit Imprinter Board"] # Unique Design Name
-unique_design_name = "11111"
-
 ["121::: R&D Server Control"]
 untranslated_item = "11111"
-
-["121::: R&D Server Control Console Board"] # Unique Design Name
-unique_design_name = "11111"
 
 ["122::: R&D Server"]
 untranslated_item = "11111"
 
-["122::: R&D Server Board"] # Unique Design Name
-unique_design_name = "11111"
-
 ["123::: Exosuit Fabricator"]
 untranslated_item = "11111"
-
-["123::: Exosuit Fabricator Board"] # Unique Design Name
-unique_design_name = "11111"
 
 ["124::: Cyborg Recharger"]
 untranslated_item = "11111"
 
-["124::: Cyborg Recharger Board"] # Unique Design Name
-unique_design_name = "11111"
-
 ["125::: Mechbay Recharger"]
 untranslated_item = "11111"
-
-["125::: Mechbay Recharger Board"] # Unique Design Name
-unique_design_name = "11111"
 
 ["126::: DNA Scanner"]
 untranslated_item = "11111"
 
-["126::: DNA Scanner Board"] # Unique Design Name
-unique_design_name = "11111"
-
 ["127::: DNA Infuser"]
 untranslated_item = "11111"
 
-["127::: DNA Infuser Board"] # Unique Design Name
-unique_design_name = "11111"
-
 ["128::: DNA Console"]
 untranslated_item = "11111"
-
-["128::: DNA Console Board"] # Unique Design Name
-unique_design_name = "11111"
-
-["129::: Destructive Scanner Board"] # Unique Design Name
-unique_design_name = "11111"
 
 ["129::: Experimental Destructive Scanner"]
 untranslated_item = "11111"
@@ -181,29 +91,14 @@ untranslated_item = "11111"
 ["130::: Tachyon-Doppler Research Array"]
 untranslated_item = "11111"
 
-["130::: Tachyon-Doppler Research Array Board"] # Unique Design Name
-unique_design_name = "11111"
-
 ["131::: Anomaly Refinery"]
 untranslated_item = "11111"
-
-["131::: Anomaly Refinery Board"] # Unique Design Name
-unique_design_name = "11111"
 
 ["132::: Tank Compressor"]
 untranslated_item = "11111"
 
-["132::: Tank Compressor Board"] # Unique Design Name
-unique_design_name = "11111"
-
 ["133::: Microwave"]
 untranslated_item = "11111"
-
-["133::: Microwave Board"] # Unique Design Name
-unique_design_name = "11111"
-
-["134::: Wireless Microwave Board"] # Unique Design Name
-unique_design_name = "11111"
 
 ["134::: Wireless Microwave Oven"]
 untranslated_item = "11111"
@@ -211,47 +106,23 @@ untranslated_item = "11111"
 ["135::: Gibber"]
 untranslated_item = "11111"
 
-["135::: Gibber Board"] # Unique Design Name
-unique_design_name = "11111"
-
 ["136::: Smartfridge"]
 untranslated_item = "11111"
-
-["136::: Smartfridge Board"] # Unique Design Name
-unique_design_name = "11111"
 
 ["137::: Dehydrator"]
 untranslated_item = "11111"
 
-["137::: Dehydrator Board"] # Unique Design Name
-unique_design_name = "11111"
-
 ["138::: Growing Vat"]
 untranslated_item = "11111"
-
-["138::: Growing Vat Board"] # Unique Design Name
-unique_design_name = "11111"
 
 ["139::: Monkey Recycler"]
 untranslated_item = "11111"
 
-["139::: Monkey Recycler Board"] # Unique Design Name
-unique_design_name = "11111"
-
 ["140::: Seed Extractor"]
 untranslated_item = "11111"
 
-["140::: Seed Extractor Board"] # Unique Design Name
-unique_design_name = "11111"
-
 ["141::: Food Processor"]
 untranslated_item = "11111"
-
-["141::: Food/Slime Processor Board"] # Unique Design Name
-unique_design_name = "11111"
-
-["142::: Portable Soda Dispenser Board"] # Unique Design Name
-unique_design_name = "11111"
 
 ["142::: Soda Dispenser"]
 untranslated_item = "11111"
@@ -259,53 +130,26 @@ untranslated_item = "11111"
 ["143::: Booze Dispenser"]
 untranslated_item = "11111"
 
-["143::: Portable Booze Dispenser Board"] # Unique Design Name
-unique_design_name = "11111"
-
 ["144::: Recycler"]
 untranslated_item = "11111"
-
-["144::: Recycler Board"] # Unique Design Name
-unique_design_name = "11111"
 
 ["145::: Scanner Gate"]
 untranslated_item = "11111"
 
-["145::: Scanner Gate Board"] # Unique Design Name
-unique_design_name = "11111"
-
 ["146::: AI Holopad"]
 untranslated_item = "11111"
-
-["146::: AI Holopad Board"] # Unique Design Name
-unique_design_name = "11111"
 
 ["147::: Autolathe"]
 untranslated_item = "11111"
 
-["147::: Autolathe Board"] # Unique Design Name
-unique_design_name = "11111"
-
 ["148::: Weapon Recharger"]
 untranslated_item = "11111"
-
-["148::: Weapon Recharger Board"] # Unique Design Name
-unique_design_name = "11111"
 
 ["149::: Custom Vendor"]
 untranslated_item = "11111"
 
-["149::: Vendor Board"] # Unique Design Name
-unique_design_name = "11111"
-
 ["150::: Ore Redemption"]
 untranslated_item = "11111"
-
-["150::: Ore Redemption Machine Board"] # Unique Design Name
-unique_design_name = "11111"
-
-["151::: Mining Rewards Vendor Board"] # Unique Design Name
-unique_design_name = "11111"
 
 ["151::: Mining Vending Console"]
 untranslated_item = "11111"
@@ -313,41 +157,20 @@ untranslated_item = "11111"
 ["160::: Deep Fryer"]
 untranslated_item = "11111"
 
-["160::: Deep Fryer Board"] # Unique Design Name
-unique_design_name = "11111"
-
 ["161::: Griddle"]
 untranslated_item = "11111"
-
-["161::: Griddle Board"] # Unique Design Name
-unique_design_name = "11111"
 
 ["162::: Oven"]
 untranslated_item = "11111"
 
-["162::: Oven Board"] # Unique Design Name
-unique_design_name = "11111"
-
 ["163::: Stove"]
 untranslated_item = "11111"
-
-["163::: Stove Board"] # Unique Design Name
-unique_design_name = "11111"
 
 ["164::: Range (Oven & Stove)"]
 untranslated_item = "11111"
 
-["164::: Range Board"] # Unique Design Name
-unique_design_name = "11111"
-
 ["165::: Donksoft Toy Vendor"]
 untranslated_item = "11111"
-
-["165::: Donksoft Toy Vendor Board"] # Unique Design Name
-unique_design_name = "11111"
-
-["153::: Tesla Coil Board"] # Unique Design Name
-unique_design_name = "11111"
 
 ["153::: Tesla Controller"]
 untranslated_item = "11111"
@@ -355,137 +178,68 @@ untranslated_item = "11111"
 ["154::: Grounding Rod"]
 untranslated_item = "11111"
 
-["154::: Grounding Rod Board"] # Unique Design Name
-unique_design_name = "11111"
-
 ["155::: NTNet Relay"]
 untranslated_item = "11111"
-
-["155::: NTNet Relay Board"] # Unique Design Name
-unique_design_name = "11111"
 
 ["156::: Crossing Signal"]
 untranslated_item = "11111"
 
-["156::: Crossing Signal Board"] # Unique Design Name
-unique_design_name = "11111"
-
 ["157::: Guideway Sensor"]
 untranslated_item = "11111"
-
-["157::: Guideway Sensor Board"] # Unique Design Name
-unique_design_name = "11111"
 
 ["158::: Limb Grower"]
 untranslated_item = "11111"
 
-["158::: Limb Grower Board"] # Unique Design Name
-unique_design_name = "11111"
-
 ["159::: Harvester"]
 untranslated_item = "11111"
-
-["159::: Organ Harvester Board"] # Unique Design Name
-unique_design_name = "11111"
 
 ["166::: Cell Charger"]
 untranslated_item = "11111"
 
-["166::: Cell Charger Board"] # Unique Design Name
-unique_design_name = "11111"
-
 ["167::: Dish Drive"]
 untranslated_item = "11111"
-
-["167::: Dish Drive Board"] # Unique Design Name
-unique_design_name = "11111"
 
 ["168::: Stacking Machine Console"]
 untranslated_item = "11111"
 
-["168::: Stacking Machine Console Board"] # Unique Design Name
-unique_design_name = "11111"
-
 ["169::: Stacking Machine"]
 untranslated_item = "11111"
-
-["169::: Stacking Machine Board"] # Unique Design Name
-unique_design_name = "11111"
 
 ["170::: Ore Silo"]
 untranslated_item = "11111"
 
-["170::: Ore Silo Board"] # Unique Design Name
-unique_design_name = "11111"
-
 ["171::: Lipid Extractor"]
 untranslated_item = "11111"
-
-["171::: Lipid Extractor Board"] # Unique Design Name
-unique_design_name = "11111"
 
 ["172::: Lifeform Stasis Unit"]
 untranslated_item = "11111"
 
-["172::: Lifeform Stasis Unit Board"] # Unique Design Name
-unique_design_name = "11111"
-
 ["173::: Medical Kiosk"]
 untranslated_item = "11111"
-
-["173::: Medical Kiosk Board"] # Unique Design Name
-unique_design_name = "11111"
 
 ["174::: Medipen Refiller"]
 untranslated_item = "11111"
 
-["174::: Medipen Refiller Board"] # Unique Design Name
-unique_design_name = "11111"
-
 ["175::: Chemical Recipient"]
 untranslated_item = "11111"
-
-["175::: Chemical Recipient Board"] # Unique Design Name
-unique_design_name = "11111"
 
 ["176::: Sheet-meister 2000"]
 untranslated_item = "11111"
 
-["176::: Sheet-meister 2000 Board"] # Unique Design Name
-unique_design_name = "11111"
-
 ["177::: Restaurant Portal"]
 untranslated_item = "11111"
-
-["177::: Restaurant Portal Board"] # Unique Design Name
-unique_design_name = "11111"
 
 ["178::: Vend-A-Tray"]
 untranslated_item = "11111"
 
-["178::: Vend-a-Tray Board"] # Unique Design Name
-unique_design_name = "11111"
-
 ["179::: Civilian Bounty Pad"]
 untranslated_item = "11111"
-
-["179::: Civilian Bounty Pad Board"] # Unique Design Name
-unique_design_name = "11111"
 
 ["180::: Skill Station"]
 untranslated_item = "11111"
 
-["180::: Skill Station Board"] # Unique Design Name
-unique_design_name = "11111"
-
 ["181::: Fax Machine"]
 untranslated_item = "11111"
-
-["181::: Fax Machine Board"] # Unique Design Name
-unique_design_name = "11111"
-
-["182::: HFR Core Board"] # Unique Design Name
-unique_design_name = "11111"
 
 ["182::: HFR core"]
 untranslated_item = "11111"
@@ -493,161 +247,80 @@ untranslated_item = "11111"
 ["183::: HFR Fuel Input"]
 untranslated_item = "11111"
 
-["183::: HFR Fuel Input Board"] # Unique Design Name
-unique_design_name = "11111"
-
 ["184::: HFR Waste Output"]
 untranslated_item = "11111"
-
-["184::: HFR Waste Output Board"] # Unique Design Name
-unique_design_name = "11111"
 
 ["185::: HFR Moderator Input"]
 untranslated_item = "11111"
 
-["185::: HFR Moderator Input Board"] # Unique Design Name
-unique_design_name = "11111"
-
 ["186::: HFR Corner"]
 untranslated_item = "11111"
-
-["186::: HFR Corner Board"] # Unique Design Name
-unique_design_name = "11111"
 
 ["187::: HFR Interface"]
 untranslated_item = "11111"
 
-["187::: HFR Interface Board"] # Unique Design Name
-unique_design_name = "11111"
-
 ["188::: Crystallizer"]
 untranslated_item = "11111"
-
-["188::: Crystallizer Board"] # Unique Design Name
-unique_design_name = "11111"
 
 ["189::: Exoscanner"]
 untranslated_item = "11111"
 
-["189::: Scanner Array Board"] # Unique Design Name
-unique_design_name = "11111"
-
 ["190::: Exploration Drone Launcher"]
 untranslated_item = "11111"
-
-["190::: Exploration Drone Launcher Board"] # Unique Design Name
-unique_design_name = "11111"
 
 ["191::: Component Printer (Machine Board)"]
 untranslated_item = "11111"
 
-["191::: Component Printer Board"] # Unique Design Name
-unique_design_name = "11111"
-
 ["192::: Module Duplicator (Machine Board)"]
 untranslated_item = "11111"
-
-["192::: Module Duplicator Board"] # Unique Design Name
-unique_design_name = "11111"
 
 ["193::: Coffeemaker (Machine Board)"]
 untranslated_item = "11111"
 
-["193::: Coffeemaker Board"] # Unique Design Name
-unique_design_name = "11111"
-
 ["194::: Bot Navigational Beacon"]
 untranslated_item = "11111"
-
-["194::: Machine Design (Bot Navigational Beacon)"] # Unique Design Name
-unique_design_name = "11111"
 
 ["195::: Fishing Portal Generator"]
 untranslated_item = "11111"
 
-["195::: Fishing Portal Generator Board"] # Unique Design Name
-unique_design_name = "11111"
-
 ["197::: Flatpacker"]
 untranslated_item = "11111"
-
-["197::: Flatpacker Machine Board"] # Unique Design Name
-unique_design_name = "11111"
 
 ["198::: Portable Air Scrubber"]
 untranslated_item = "11111"
 
-["198::: Portable Air Scrubber Board"] # Unique Design Name
-unique_design_name = "11111"
-
 ["199::: Portable Air Pump"]
 untranslated_item = "11111"
-
-["199::: Portable Air Pump Board"] # Unique Design Name
-unique_design_name = "11111"
 
 ["1::: Netpod"]
 untranslated_item = "11111"
 
-["1::: Netpod Board"] # Unique Design Name
-unique_design_name = "11111"
-
 ["200::: Portable Pipe Scrubber"]
 untranslated_item = "11111"
-
-["200::: Portable Pipe Scrubber Board"] # Unique Design Name
-unique_design_name = "11111"
 
 ["203::: Big Manipulator"]
 untranslated_item = "11111"
 
-["203::: Big Manipulator Board"] # Unique Design Name
-unique_design_name = "11111"
-
-["204::: Manufacturing Lathe Board"] # Unique Design Name
-unique_design_name = "11111"
-
 ["204::: manufacturing lathe"]
 untranslated_item = "11111"
-
-["205::: Manufacturing Assembling Machine Board"] # Unique Design Name
-unique_design_name = "11111"
 
 ["205::: manufacturing assembling machine"]
 untranslated_item = "11111"
 
-["206::: Manufacturing Crusher Board"] # Unique Design Name
-unique_design_name = "11111"
-
 ["206::: manufacturing crusher"]
 untranslated_item = "11111"
-
-["207::: Manufacturing Router Board"] # Unique Design Name
-unique_design_name = "11111"
 
 ["207::: manufacturing router"]
 untranslated_item = "11111"
 
-["208::: Conveyor Sort-Router Board"] # Unique Design Name
-unique_design_name = "11111"
-
 ["208::: conveyor sort-router"]
 untranslated_item = "11111"
-
-["209::: Manufacturing Crate Unloader Board"] # Unique Design Name
-unique_design_name = "11111"
 
 ["209::: manufacturing crate unloader"]
 untranslated_item = "11111"
 
-["210::: Manufacturing Smelter Board"] # Unique Design Name
-unique_design_name = "11111"
-
 ["210::: manufacturing smelter"]
 untranslated_item = "11111"
-
-["232::: PACMAN Board"] # Unique Design Name
-unique_design_name = "11111"
 
 ["232::: PACMAN-type Generator"]
 untranslated_item = "11111"
@@ -655,35 +328,17 @@ untranslated_item = "11111"
 ["233::: Subspace Receiver"]
 untranslated_item = "11111"
 
-["233::: Subspace Receiver Board"] # Unique Design Name
-unique_design_name = "11111"
-
 ["234::: Bus Mainframe"]
 untranslated_item = "11111"
-
-["234::: Bus Mainframe Board"] # Unique Design Name
-unique_design_name = "11111"
 
 ["235::: Hub Mainframe"]
 untranslated_item = "11111"
 
-["235::: Hub Mainframe Board"] # Unique Design Name
-unique_design_name = "11111"
-
 ["236::: Relay Mainframe"]
 untranslated_item = "11111"
 
-["236::: Relay Mainframe Board"] # Unique Design Name
-unique_design_name = "11111"
-
 ["237::: Processor Unit"]
 untranslated_item = "11111"
-
-["237::: Processor Unit Board"] # Unique Design Name
-unique_design_name = "11111"
-
-["238::: Server Mainframe Board"] # Unique Design Name
-unique_design_name = "11111"
 
 ["238::: Telecommunication Server"]
 untranslated_item = "11111"
@@ -691,41 +346,20 @@ untranslated_item = "11111"
 ["239::: Messaging Server"]
 untranslated_item = "11111"
 
-["239::: Messaging Server Board"] # Unique Design Name
-unique_design_name = "11111"
-
 ["240::: Subspace Broadcaster"]
 untranslated_item = "11111"
-
-["240::: Subspace Broadcaster Board"] # Unique Design Name
-unique_design_name = "11111"
 
 ["2::: Quantum Console"]
 untranslated_item = "11111"
 
-["2::: Quantum Console Board"] # Unique Design Name
-unique_design_name = "11111"
-
 ["3::: Byteforge"]
 untranslated_item = "11111"
-
-["3::: Byteforge Board"] # Unique Design Name
-unique_design_name = "11111"
 
 ["40::: Arcade Battle"]
 untranslated_item = "11111"
 
-["40::: Battle Arcade Machine Board"] # Unique Design Name
-unique_design_name = "11111"
-
 ["41::: Orion Trail"]
 untranslated_item = "11111"
-
-["41::: Orion Trail Arcade Machine Board"] # Unique Design Name
-unique_design_name = "11111"
-
-["42::: Security Camera Board"] # Unique Design Name
-unique_design_name = "11111"
 
 ["42::: Security Cameras"]
 untranslated_item = "11111"
@@ -733,29 +367,14 @@ untranslated_item = "11111"
 ["43::: Research Monitor"]
 untranslated_item = "11111"
 
-["43::: Research Monitor Board"] # Unique Design Name
-unique_design_name = "11111"
-
 ["44::: Xenobiology Console"]
 untranslated_item = "11111"
-
-["44::: Xenobiology Console Board"] # Unique Design Name
-unique_design_name = "11111"
 
 ["45::: AI Upload"]
 untranslated_item = "11111"
 
-["45::: AI Upload Board"] # Unique Design Name
-unique_design_name = "11111"
-
 ["46::: Cyborg Upload"]
 untranslated_item = "11111"
-
-["46::: Cyborg Upload Board"] # Unique Design Name
-unique_design_name = "11111"
-
-["47::: Medical Records Board"] # Unique Design Name
-unique_design_name = "11111"
 
 ["47::: Medical Records Console"]
 untranslated_item = "11111"
@@ -763,29 +382,14 @@ untranslated_item = "11111"
 ["48::: Operating Computer"]
 untranslated_item = "11111"
 
-["48::: Operating Computer Board"] # Unique Design Name
-unique_design_name = "11111"
-
 ["49::: PanD.E.M.I.C. 2200"]
 untranslated_item = "11111"
-
-["49::: PanD.E.M.I.C. 2200 Board"] # Unique Design Name
-unique_design_name = "11111"
 
 ["50::: Communications"]
 untranslated_item = "11111"
 
-["50::: Communications Board"] # Unique Design Name
-unique_design_name = "11111"
-
-["51::: Bank Machine Board"] # Unique Design Name
-unique_design_name = "11111"
-
 ["51::: Bank Machine Console"]
 untranslated_item = "11111"
-
-["52::: Crew Monitoring Computer Board"] # Unique Design Name
-unique_design_name = "11111"
 
 ["52::: Crew Monitoring Console"]
 untranslated_item = "11111"
@@ -793,125 +397,62 @@ untranslated_item = "11111"
 ["53::: Security Records Console"]
 untranslated_item = "11111"
 
-["53::: Security Records Console Board"] # Unique Design Name
-unique_design_name = "11111"
-
-["54::: Atmosphere Alert Board"] # Unique Design Name
-unique_design_name = "11111"
-
 ["54::: Atmospheric Alert"]
 untranslated_item = "11111"
 
 ["55::: Atmospheric Control"]
 untranslated_item = "11111"
 
-["55::: Atmospheric Monitor Board"] # Unique Design Name
-unique_design_name = "11111"
-
 ["56::: Robotics Control"]
 untranslated_item = "11111"
-
-["56::: Robotics Control Console Board"] # Unique Design Name
-unique_design_name = "11111"
 
 ["57::: Slot Machine"]
 untranslated_item = "11111"
 
-["57::: Slot Machine Board"] # Unique Design Name
-unique_design_name = "11111"
-
 ["58::: Power Monitor"]
 untranslated_item = "11111"
-
-["58::: Power Monitor Board"] # Unique Design Name
-unique_design_name = "11111"
 
 ["59::: Solar Control"]
 untranslated_item = "11111"
 
-["59::: Solar Control Board"] # Unique Design Name
-unique_design_name = "11111"
-
 ["60::: Prisoner Management Console"]
 untranslated_item = "11111"
-
-["60::: Prisoner Management Console Board"] # Unique Design Name
-unique_design_name = "11111"
 
 ["616::: Express Supply Console"]
 untranslated_item = "11111"
 
-["616::: Express Supply Console Board"] # Unique Design Name
-unique_design_name = "11111"
-
 ["61::: Exosuit Control Console"]
 untranslated_item = "11111"
-
-["61::: Exosuit Control Console Board"] # Unique Design Name
-unique_design_name = "11111"
 
 ["62::: Mech Bay Power Control Console"]
 untranslated_item = "11111"
 
-["62::: Mech Bay Power Control Console Board"] # Unique Design Name
-unique_design_name = "11111"
-
 ["63::: R&D Console"]
 untranslated_item = "11111"
-
-["63::: R&D Console Board"] # Unique Design Name
-unique_design_name = "11111"
 
 ["64::: Supply Console"]
 untranslated_item = "11111"
 
-["64::: Supply Console Board"] # Unique Design Name
-unique_design_name = "11111"
-
 ["65::: Supply Request Console"]
 untranslated_item = "11111"
-
-["65::: Supply Request Console Board"] # Unique Design Name
-unique_design_name = "11111"
 
 ["66::: Outpost Status Display"]
 untranslated_item = "11111"
 
-["66::: Outpost Status Display Board"] # Unique Design Name
-unique_design_name = "11111"
-
 ["67::: Telecommunications Monitor"]
 untranslated_item = "11111"
-
-["67::: Telecommunications Monitoring Console Board"] # Unique Design Name
-unique_design_name = "11111"
 
 ["68::: Telecommunications Server Monitor"]
 untranslated_item = "11111"
 
-["68::: Telecommunications Server Monitoring Console Board"] # Unique Design Name
-unique_design_name = "11111"
-
 ["69::: Message Monitor"]
 untranslated_item = "11111"
-
-["69::: Messaging Monitor Console Board"] # Unique Design Name
-unique_design_name = "11111"
 
 ["70::: AI Integrity Restorer"]
 untranslated_item = "11111"
 
-["70::: AI Integrity Restorer Board"] # Unique Design Name
-unique_design_name = "11111"
-
-["71::: Library Console Board"] # Unique Design Name
-unique_design_name = "11111"
-
 ["71::: Library Visitor Console"]
 untranslated_item = "11111"
-
-["72::: APC Control Board"] # Unique Design Name
-unique_design_name = "11111"
 
 ["72::: Power Flow Control Console"]
 untranslated_item = "11111"
@@ -919,53 +460,26 @@ untranslated_item = "11111"
 ["73::: Advanced Camera Console"]
 untranslated_item = "11111"
 
-["73::: Advanced Camera Console Board"] # Unique Design Name
-unique_design_name = "11111"
-
 ["74::: Bounty Pad"]
 untranslated_item = "11111"
-
-["74::: Civilian Bounty Pad Control Board"] # Unique Design Name
-unique_design_name = "11111"
 
 ["75::: Scanner Array Control Console"]
 untranslated_item = "11111"
 
-["75::: Scanner Array Control Console Board"] # Unique Design Name
-unique_design_name = "11111"
-
 ["76::: Exploration Drone Control Console"]
 untranslated_item = "11111"
-
-["76::: Exploration Drone Control Console Board"] # Unique Design Name
-unique_design_name = "11111"
 
 ["77::: Account Lookup Console"]
 untranslated_item = "11111"
 
-["77::: Account Lookup Console Board"] # Unique Design Name
-unique_design_name = "11111"
-
 ["78::: Electrolyzer"]
 untranslated_item = "11111"
-
-["78::: Electrolyzer Board"] # Unique Design Name
-unique_design_name = "11111"
 
 ["79::: SMES"]
 untranslated_item = "11111"
 
-["79::: SMES Board"] # Unique Design Name
-unique_design_name = "11111"
-
-["80::: Power Connector Board"] # Unique Design Name
-unique_design_name = "11111"
-
 ["80::: power connector"]
 untranslated_item = "11111"
-
-["81::: Portable SMES Board"] # Unique Design Name
-unique_design_name = "11111"
 
 ["81::: portable SMES"]
 untranslated_item = "11111"
@@ -973,65 +487,32 @@ untranslated_item = "11111"
 ["82::: Announcement System"]
 untranslated_item = "11111"
 
-["82::: Automated Announcement System Board"] # Unique Design Name
-unique_design_name = "11111"
-
 ["83::: Turbine Computer"]
 untranslated_item = "11111"
-
-["83::: Turbine Power Console Board"] # Unique Design Name
-unique_design_name = "11111"
 
 ["84::: Emitter"]
 untranslated_item = "11111"
 
-["84::: Emitter Board"] # Unique Design Name
-unique_design_name = "11111"
-
 ["85::: Mass Driver"]
 untranslated_item = "11111"
-
-["85::: Mass Driver Board"] # Unique Design Name
-unique_design_name = "11111"
 
 ["86::: Turbine - Inlet Compressor"]
 untranslated_item = "11111"
 
-["86::: Turbine Compressor Board"] # Unique Design Name
-unique_design_name = "11111"
-
 ["87::: Turbine - Core Rotor"]
 untranslated_item = "11111"
-
-["87::: Turbine Rotor Board"] # Unique Design Name
-unique_design_name = "11111"
 
 ["88::: Turbine - Turbine Outlet"]
 untranslated_item = "11111"
 
-["88::: Turbine Stator Board"] # Unique Design Name
-unique_design_name = "11111"
-
 ["89::: Thermomachine"]
 untranslated_item = "11111"
-
-["89::: Thermomachine Board"] # Unique Design Name
-unique_design_name = "11111"
 
 ["90::: Space Heater"]
 untranslated_item = "11111"
 
-["90::: Space Heater Board"] # Unique Design Name
-unique_design_name = "11111"
-
-["91::: Teleportation Station Board"] # Unique Design Name
-unique_design_name = "11111"
-
 ["91::: Teleporter Station"]
 untranslated_item = "11111"
-
-["92::: Teleportation Hub Board"] # Unique Design Name
-unique_design_name = "11111"
 
 ["92::: Teleporter Hub"]
 untranslated_item = "11111"
@@ -1039,17 +520,8 @@ untranslated_item = "11111"
 ["93::: Quantum Pad"]
 untranslated_item = "11111"
 
-["93::: Quantum Pad Board"] # Unique Design Name
-unique_design_name = "11111"
-
 ["95::: Bluespace Launchpad"]
 untranslated_item = "11111"
-
-["95::: Bluespace Launchpad Board"] # Unique Design Name
-unique_design_name = "11111"
-
-["96::: Bluespace Launchpad Console Board"] # Unique Design Name
-unique_design_name = "11111"
 
 ["96::: Launchpad Control Console"]
 untranslated_item = "11111"
@@ -1057,17 +529,8 @@ untranslated_item = "11111"
 ["97::: Modular Shield Generator"]
 untranslated_item = "11111"
 
-["97::: Modular Shield Generator Board"] # Unique Design Name
-unique_design_name = "11111"
-
 ["98::: Modular Shield Node"]
 untranslated_item = "11111"
 
-["98::: Modular Shield Node Board"] # Unique Design Name
-unique_design_name = "11111"
-
 ["99::: Modular Shield Relay"]
 untranslated_item = "11111"
-
-["99::: Modular Shield Relay Board"] # Unique Design Name
-unique_design_name = "11111"
