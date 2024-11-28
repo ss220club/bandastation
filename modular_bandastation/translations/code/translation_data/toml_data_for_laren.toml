@@ -736,37 +736,29 @@
 
 ["607::: wall-penetrating cybernetic ears"]
 
-["608::: Basic Cybernetic Eyes"] # Unique Design Name
-
 ["608::: basic robotic eyes"]
-
-["609::: Basic Cybernetic Moth Eyes"] # Unique Design Name
+nominative = "базовые кибернетические глаза"
 
 ["609::: basic robotic moth eyes"]
-
-["610::: Cybernetic Eyes"] # Unique Design Name
+nominative = "базовые кибернетические молиные глаза"
 
 ["610::: robotic eyes"]
-
-["611::: Cybernetic Moth Eyes"] # Unique Design Name
+nominative = "кибернетические глаза"
 
 ["611::: robotic moth eyes"]
-
-["612::: Welding Shield Eyes"] # Unique Design Name
+nominative = "кибернетические молиные глаза"
 
 ["612::: shielded robotic eyes"]
-
-["613::: Welding Shield Moth Eyes"] # Unique Design Name
+nominative = "кибернетические глаза с защитой от вспышек"
 
 ["613::: shielded robotic moth eyes"]
+nominative = "кибернетические молиные глаза с защитой от вспышек"
 
 ["614::: High Luminosity Eyes"]
-
-["614::: Luminescent Eyes"] # Unique Design Name
+nominative = "люминесцентные глаза"
 
 ["615::: High Luminosity Moth Eyes"]
-
-["615::: Luminescent Moth Eyes"] # Unique Design Name
+nominative = "люминесцентные молиные глаза"
 
 ["617::: Bluespace Drop Pod Upgrade"]
 
@@ -1429,10 +1421,6 @@
 ["948::: circular saw"]
 
 ["949::: bonesetter"]
-
-["94::: Bot launchpad"]
-
-["94::: Machine Design (Bot launchpad)"] # Unique Design Name
 
 ["950::: surgical drill"]
 
