@@ -77,9 +77,9 @@ GLOBAL_LIST_EMPTY(ru_names)
 		return .
 	return get_declented_value(ru_names, declent, .)
 
-/// Used for getting initial values, such as for recipies where resulted atom is not yet created.
-/proc/declent_ru_initial(target_name, declent, override_backup)
-	. = override_backup || target_name
+/// Used for getting initial values, such as for recipies where resulted atom is not yet created. It can return null - use var/override_backup to have a returned value guaranteed
+/proc/declent_ru_initial(target_name, declent = NOMINATIVE, override_backup = null)
+	. = override_backup
 	if(declent == "gender")
 		. = NEUTER
 	var/list/declented_list = ru_names_toml(target_name)
