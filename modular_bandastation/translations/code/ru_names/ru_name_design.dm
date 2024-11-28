@@ -10,7 +10,7 @@
 	ru_names = ru_names_toml(design_result::name)
 	//name = capitalize(declent_ru_initial(design_result::name, NOMINATIVE, name))
 
-/datum/design/declent_ru()
+/datum/design/declent_ru(declent)
 	. = name
 	if(declent == "gender")
 		. = NEUTER
