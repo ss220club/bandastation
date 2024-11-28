@@ -1,4 +1,5 @@
 /datum/design
+	var/suffix = null
 
 /datum/design/New()
 	. = ..()
@@ -6,7 +7,13 @@
 	if(!new_name && ispath(build_path, /atom))
 		var/atom/design_result = build_path
 		new_name = declent_ru_initial(design_result::name)
-	name = capitalize(new_name) || name
+		if(new_name)
+			name = "[capitalize(new_name)][suffix]"
+			return
+	name = new_name
+
+/datum/design/board
+	suffix = " (плата)"
 
 /datum/crafting_recipe
 
