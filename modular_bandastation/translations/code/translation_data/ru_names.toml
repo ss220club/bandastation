@@ -4405,36 +4405,41 @@ nominative = "имплант охранного ИЛС"
 ["diagnostic HUD implant"]
 nominative = "имплант диагностического ИЛС"
 
-["572::: X-ray eyes"]
+["X-ray eyes"]
 nominative = "рентгеновские глаза"
 
-["573::: Moth X-ray Eyes"] # Unique Design Name
+[" Moth X-ray Eyes"]
+nominative = "рентгеновские молиные глаза"
 
-["573::: robotic eyes"]
+["thermal eyes"]
+nominative = "термальные глаза"
 
-["574::: thermal eyes"]
+["thermal moth eyes"]
+nominative = "термальные молиные глаза"
 
-["575::: Moth Thermal Eyes"] # Unique Design Name
+["anti-drop implant"]
+nominative = "имплант антидроп"
 
-["575::: thermal moth eyes"]
+["CNS rebooter implant"]
+nominative = "имплант перезапуска ЦНС"
 
-["576::: anti-drop implant"]
+["Herculean gravitronic spinal implant"]
+nominative = "Геркулесный гравитронный спинномозговой имплант"
 
-["577::: CNS rebooter implant"]
+["CNS skillchip connector implant"]
+nominative = "имплант подключения скилл-чипов к ЦНС"
 
-["578::: Herculean gravitronic spinal implant"]
+["nutriment pump implant"]
+nominative = "имплант питающей помпы"
 
-["579::: CNS skillchip connector implant"]
+["nutriment pump implant PLUS"]
+nominative = "имплант питающей помпы ПЛЮС"
 
-["580::: nutriment pump implant"]
+["reviver implant"]
+nominative = "оживляющий имплант"
 
-["581::: nutriment pump implant PLUS"]
-
-["582::: reviver implant"]
-
-["583::: Thrusters Set Implant"] # Unique Design Name
-
-["583::: implantable thrusters set"]
+["implantable thrusters set"]
+nominative = "имплант толкателей"
 
 # MARK: ..........Science
 ["autolathe"]
@@ -5839,6 +5844,11 @@ prepositional = "кластерных гранатах для SOB-3"
 gender = "plural"
 
 # MARK: Silicons
+
+["459::: Man-Machine Interface"]
+["460::: positronic brain"]
+
+# MARK: AI modules
 
 ["'Asimov' Core AI Module"]
 nominative = "модуль основных законов ИИ 'Азимов'"
