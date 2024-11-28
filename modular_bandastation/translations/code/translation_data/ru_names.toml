@@ -6082,268 +6082,213 @@ nominative = "держатель мензурок инженерного киб�
 
 # MARK: MOD
 ["464::: MOD shell"]
+nominative = "MOD - оболочка"
 
 ["465::: MOD helmet"]
+nominative = "MOD - шлем"
 
 ["466::: MOD chestplate"]
+nominative = "MOD - нагрудник"
 
 ["467::: MOD gauntlets"]
+nominative = "MOD - рукавицы"
 
 ["468::: MOD boots"]
+nominative = "MOD - ботинки"
 
 ["469::: MOD external plating"]
+nominative = "MOD - внешняя обшивка"
 
 ["470::: MOD Civilian Plating"] # Unique Design Name
-
-["470::: MOD external plating"]
+nominative = "MOD - гражданская обшивка"
 
 ["471::: MOD Engineering Plating"] # Unique Design Name
-
-["471::: MOD external plating"]
+nominative = "MOD - инженерная обшивка"
 
 ["472::: MOD Atmospheric Plating"] # Unique Design Name
-
-["472::: MOD external plating"]
+nominative = "MOD - атмосферная обшивка"
 
 ["473::: MOD Medical Plating"] # Unique Design Name
-
-["473::: MOD external plating"]
+nominative = "MOD - медицинская обшивка"
 
 ["474::: MOD Security Plating"] # Unique Design Name
-
-["474::: MOD external plating"]
+nominative = "MOD - охранная обшивка"
 
 ["475::: MOD Cosmohonk Plating"] # Unique Design Name
-
-["475::: MOD external plating"]
+nominative = "MOD - космохонская обшивка"
 
 ["476::: MOD paint kit"]
+nominative = "MOD - набор покраски"
 
 ["477::: MODlink scryer"]
+nominative = "MODсвязь гадатель"
 
 ["478::: MOD storage module"]
-
-["478::: Storage Module"] # Unique Design Name
-
-["479::: Expanded Storage Module"] # Unique Design Name
+nominative = "MOD модуль - хранилище"
 
 ["479::: MOD expanded storage module"]
+nominative = "MOD модуль - расширенное хранилище"
 
 ["480::: MOD medical visor module"]
-
-["480::: Medical Visor Module"] # Unique Design Name
-
-["481::: Diagnostic Visor Module"] # Unique Design Name
+nominative = "MOD модуль - медицинский визор"
 
 ["481::: MOD diagnostic visor module"]
+nominative = "MOD модуль - диагностический визор"
 
 ["482::: MOD security visor module"]
-
-["482::: Security Visor Module"] # Unique Design Name
+nominative = "MOD модуль - охранный визор"
 
 ["483::: MOD meson visor module"]
-
-["483::: Meson Visor Module"] # Unique Design Name
+nominative = "MOD модуль - мезонный визор"
 
 ["484::: MOD welding protection module"]
-
-["484::: Welding Protection Module"] # Unique Design Name
+nominative = "MOD модуль - сварочная защита"
 
 ["485::: MOD safety-first head protection module"]
-
-["485::: Safety-First Head Protection Module"] # Unique Design Name
+nominative = "MOD модуль - защита головы по ТБ"
 
 ["486::: MOD t-ray scan module"]
-
-["486::: T-Ray Scanner Module"] # Unique Design Name
-
-["487::: Health Analyzer Module"] # Unique Design Name
+nominative = "MOD модуль - сканер T-ray"
 
 ["487::: MOD health analyzer module"]
-
-["488::: Cloak Module"] # Unique Design Name
+nominative = "MOD модуль - анализатор здоровья"
 
 ["488::: MOD prototype cloaking module"]
-
-["489::: Ion Jetpack Module"] # Unique Design Name
+nominative = "MOD модуль - прототип маскировки"
 
 ["489::: MOD ion jetpack module"]
+nominative = "MOD модуль - ионный реактивный ранец"
 
 ["490::: MOD magnetic stability module"]
-
-["490::: Magnetic Stabilizator Module"] # Unique Design Name
+nominative = "MOD модуль - магнитный стабилизатор"
 
 ["491::: MOD magnetic harness module"]
-
-["491::: Magnetic Harness Module"] # Unique Design Name
-
-["492::: Emergency Tether Module"] # Unique Design Name
+nominative = "MOD модуль - магнитная кобура"
 
 ["492::: MOD emergency tether module"]
-
-["493::: Eating Apparatus Module"] # Unique Design Name
+nominative = "MOD модуль - аварийная лебёдка"
 
 ["493::: MOD eating apparatus module"]
+nominative = "MOD модуль - аппарат приёма пищи"
 
 ["494::: MOD radiation protection module"]
-
-["494::: Radiation Protection Module"] # Unique Design Name
-
-["495::: EMP Shield Module"] # Unique Design Name
+nominative = "MOD модуль - радиационная защита"
 
 ["495::: MOD EMP shield module"]
-
-["496::: Flashlight Module"] # Unique Design Name
+nominative = "MOD модуль - ЭМИ-заслон"
 
 ["496::: MOD flashlight module"]
+nominative = "MOD модуль - фонарик"
 
 ["497::: MOD reagent scanner module"]
-
-["497::: Reagent Scanner Module"] # Unique Design Name
-
-["498::: Internal GPS Module"] # Unique Design Name
+nominative = "MOD модуль - сканер реагентов"
 
 ["498::: MOD internal GPS module"]
-
-["499::: Constructor Module"] # Unique Design Name
+nominative = "MOD модуль - встроенный GPS"
 
 ["499::: MOD constructor module"]
-
-
+nominative = "MOD модуль - конструктор"
 
 ["500::: MOD quick carry module"]
-
-["500::: Quick Carry Module"] # Unique Design Name
-
-["501::: Longfall Module"] # Unique Design Name
+nominative = "MOD модуль - быстрая переноска"
 
 ["501::: MOD longfall module"]
+nominative = "MOD модуль - защита от падения"
 
 ["502::: MOD thermal regulator module"]
-
-["502::: Thermal Regulator Module"] # Unique Design Name
-
-["503::: Injector Module"] # Unique Design Name
+nominative = "MOD модуль - термальный регулятор"
 
 ["503::: MOD injector module"]
-
-["504::: Bike Horn Module"] # Unique Design Name
+nominative = "MOD модуль - инъектор"
 
 ["504::: MOD bike horn module"]
+nominative = "MOD модуль - гудок"
 
 ["505::: MOD microwave beam module"]
-
-["505::: Microwave Beam Module"] # Unique Design Name
+nominative = "MOD модуль - микроволновый луч"
 
 ["506::: MOD waddle module"]
-
-["506::: Waddle Module"] # Unique Design Name
-
-["507::: Crate Clamp Module"] # Unique Design Name
+nominative = "MOD модуль - переваливатель"
 
 ["507::: MOD hydraulic clamp module"]
-
-["508::: Drill Module"] # Unique Design Name
+nominative = "MOD модуль - гидравлическая клешня"
 
 ["508::: MOD drill module"]
+nominative = "MOD модуль - дрель"
 
 ["509::: MOD ore bag module"]
-
-["509::: Ore Bag Module"] # Unique Design Name
+nominative = "MOD модуль - мешок для руды"
 
 ["510::: MOD organizer module"]
-
-["510::: Organizer Module"] # Unique Design Name
+nominative = "MOD модуль - организатор"
 
 ["511::: MOD pathfinder module"]
-
-["511::: Pathfinder Module"] # Unique Design Name
-
-["512::: DNA Lock Module"] # Unique Design Name
+nominative = "MOD модуль - система \"Пасфайндер\""
 
 ["512::: MOD DNA lock module"]
+nominative = "MOD модуль - ДНК-замок"
 
 ["513::: MOD plasma stabilizer module"]
-
-["513::: Plasma Stabilizer Module"] # Unique Design Name
-
-["514::: Glove Translator Module"] # Unique Design Name
+nominative = "MOD модуль - стабилизатор плазмы"
 
 ["514::: MOD glove translator module"]
+nominative = "MOD модуль - перчатки-переводчики"
 
 ["515::: MOD resin mister module"]
-
-["515::: Resin Mister Module"] # Unique Design Name
-
-["516::: Holster Module"] # Unique Design Name
+nominative = "MOD модуль - противопожарный бак"
 
 ["516::: MOD holster module"]
-
-["517::: Active Sonar Module"] # Unique Design Name
+nominative = "MOD модуль - кобура"
 
 ["517::: MOD active sonar"]
+nominative = "MOD модуль - активный сонар"
 
 ["518::: MOD projectile dampener module"]
-
-["518::: Projectile Dampener Module"] # Unique Design Name
+nominative = "MOD модуль - ослабитель снарядов"
 
 ["519::: MOD surgical processor module"]
-
-["519::: Surgical Processor Module"] # Unique Design Name
+nominative = "MOD модуль - хирургический процессор"
 
 ["520::: MOD thread ripper module"]
-
-["520::: Thread Ripper Module"] # Unique Design Name
-
-["521::: Defibrillator Module"] # Unique Design Name
+nominative = "MOD модуль - нитерез"
 
 ["521::: MOD defibrillator module"]
+nominative = "MOD модуль - дефибриллятор"
 
 ["522::: MOD status readout module"]
-
-["522::: Status Readout Module"] # Unique Design Name
+nominative = "MOD модуль - хирургический процессор"
 
 ["523::: MOD patient transport module"]
-
-["523::: Patient Transport Module"] # Unique Design Name
-
-["524::: Criminal Capture Module"] # Unique Design Name
+nominative = "MOD модуль - транспортировка пациента"
 
 ["524::: MOD criminal capture module"]
+nominative = "MOD модуль - держатель преступника"
 
 ["525::: MOD mirage grenade dispenser module"]
-
-["525::: Mirage Grenade Dispenser Module"] # Unique Design Name
-
-["526::: Disposal Connector Module"] # Unique Design Name
+nominative = "MOD модуль - раздатчик гранат \"Мираж\""
 
 ["526::: MOD disposal selector module"]
-
-["527::: Joint Torsion Ratchet Module"] # Unique Design Name
+nominative = "MOD модуль - переработчик"
 
 ["527::: MOD joint torsion ratchet module"]
 
 ["528::: MOD recycler module"]
-
-["528::: Recycler Module"] # Unique Design Name
+nominative = "MOD модуль - переработчик"
 
 ["529::: MOD shooting assistant module"]
-
-["529::: Shooting Assistant Module"] # Unique Design Name
-
-["530::: Anti-Gravity Module"] # Unique Design Name
+nominative = "MOD модуль - помощник прицеливания"
 
 ["530::: MOD anti-gravity module"]
+nominative = "MOD модуль - анти-гравитация"
 
 ["531::: MOD teleporter module"]
-
-["531::: Teleporter Module"] # Unique Design Name
-
-["532::: Kinesis Module"] # Unique Design Name
+nominative = "MOD модуль - телепортер"
 
 ["532::: MOD kinesis module"]
+nominative = "MOD модуль - кинетика"
 
 ["533::: MOD fishing glove module"]
+nominative = "MOD модуль - рыболовные перчатки"
 
 # MARK: AI modules
 
