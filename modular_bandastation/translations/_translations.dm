@@ -79,12 +79,12 @@ ADMIN_VERB(get_data_to_toml, R_ADMIN, "DEBUG - Get data to toml", "Yeap", ADMIN_
 			// Is design name unique?
 			if(LOWER_TEXT(format_text(design_result::name)) == LOWER_TEXT(design::name))
 				// Need to translate only built item
-				data["[pair]-[format_text(design_result::name)]"] = list("untranslated_item" = "11111")
+				data["[pair]::: [format_text(design_result::name)]"] = list("untranslated_item" = "11111")
 				pair++
 				continue
 			// Need to translate both built item and unique design name
-			data["[pair]-[design::name]"] = list("unique_design_name" = "11111")
-			data["[pair]-[format_text(design_result::name)]"] = list("untranslated_item" = "11111")
+			data["[pair]::: [design::name]"] = list("unique_design_name" = "11111")
+			data["[pair]::: [format_text(design_result::name)]"] = list("untranslated_item" = "11111")
 			pair++
 			continue
 
@@ -92,7 +92,7 @@ ADMIN_VERB(get_data_to_toml, R_ADMIN, "DEBUG - Get data to toml", "Yeap", ADMIN_
 		// Are they equal in english?
 		if(full_capitalize(declented_list_design["base"]) != design::name)
 			// Need to translate design name
-			data["[pair]-[design::name]"] = list("design_from_result" = declented_list_design[NOMINATIVE])
+			data["[pair]::: [design::name]"] = list("design_from_result" = declented_list_design[NOMINATIVE])
 			pair++
 
 	var/file_location = "data/toml_data_for_laren.toml"

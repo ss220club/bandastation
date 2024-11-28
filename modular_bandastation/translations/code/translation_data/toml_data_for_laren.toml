@@ -3,5231 +3,5231 @@
 # At the very least 1028 items need to be translated and declented.
 # ...
 
-[1-Netpod]
-untranslated_item = "11111"
-
-["1-Netpod Board"]
-unique_design_name = "11111"
-
-["10-'Freeform' AI Module"]
-untranslated_item = "11111"
-
-["10-Freeform Module"]
-unique_design_name = "11111"
-
-["100-Modular Shield Charger"]
-untranslated_item = "11111"
-
-["100-Modular Shield Charger Board"]
-unique_design_name = "11111"
-
-["1000-Ammo Box (10mm) (Lethal)"]
+["1000::: Ammo Box (10mm) (Lethal)"]
 unique_design_name = "11111"
 
-["1000-ammo box (10mm)"]
+["1000::: ammo box (10mm)"]
 untranslated_item = "11111"
 
-["1001-Ammo Box (.45) (Lethal)"]
+["1001::: Ammo Box (.45) (Lethal)"]
 unique_design_name = "11111"
 
-["1001-ammo box (.45)"]
+["1001::: ammo box (.45)"]
 untranslated_item = "11111"
 
-["1002-Ammo Box (9mm) (Lethal)"]
+["1002::: Ammo Box (9mm) (Lethal)"]
 unique_design_name = "11111"
 
-["1002-ammo box (9mm)"]
+["1002::: ammo box (9mm)"]
 untranslated_item = "11111"
 
-["1003-Interrogation Telescreen"]
+["1003::: Interrogation Telescreen"]
 unique_design_name = "11111"
 
-["1003-interrogation telescreen frame"]
+["1003::: interrogation telescreen frame"]
 untranslated_item = "11111"
 
-["1004-Prison Telescreen"]
+["1004::: Prison Telescreen"]
 unique_design_name = "11111"
 
-["1004-prison telescreen frame"]
+["1004::: prison telescreen frame"]
 untranslated_item = "11111"
 
-[1005-bucket]
+["1005::: bucket"]
 untranslated_item = "11111"
 
-["1006-push broom"]
+["1006::: push broom"]
 untranslated_item = "11111"
 
-["1007-Camera Film Cartridge"]
+["1007::: Camera Film Cartridge"]
 unique_design_name = "11111"
 
-["1007-film cartridge"]
+["1007::: film cartridge"]
 untranslated_item = "11111"
 
-["1008-plastic knife"]
+["1008::: plastic knife"]
 untranslated_item = "11111"
 
-[1009-fork]
+["1009::: fork"]
 untranslated_item = "11111"
 
-["101-Modular Shield Well"]
+["100::: Modular Shield Charger"]
 untranslated_item = "11111"
 
-["101-Modular Shield Well Board"]
+["100::: Modular Shield Charger Board"]
 unique_design_name = "11111"
 
-["1010-plastic fork"]
+["1010::: plastic fork"]
 untranslated_item = "11111"
 
-[1011-spoon]
+["1011::: spoon"]
 untranslated_item = "11111"
 
-["1012-plastic spoon"]
+["1012::: plastic spoon"]
 untranslated_item = "11111"
 
-[1013-tongs]
+["1013::: tongs"]
 untranslated_item = "11111"
 
-["1014-serving tray"]
+["1014::: serving tray"]
 untranslated_item = "11111"
 
-[1015-plate]
+["1015::: plate"]
 untranslated_item = "11111"
 
-["1016-cafeteria tray"]
+["1016::: cafeteria tray"]
 untranslated_item = "11111"
 
-[1017-bowl]
+["1017::: bowl"]
 untranslated_item = "11111"
 
-["1018-drinking glass"]
+["1018::: drinking glass"]
 untranslated_item = "11111"
 
-["1019-shot glass"]
+["1019::: shot glass"]
 untranslated_item = "11111"
 
-[102-Teleporter]
+["101::: Modular Shield Well"]
 untranslated_item = "11111"
 
-["102-Teleporter Console Board"]
+["101::: Modular Shield Well Board"]
 unique_design_name = "11111"
 
-[1020-shaker]
+["1020::: shaker"]
 untranslated_item = "11111"
 
-[1021-shovel]
+["1021::: shovel"]
 untranslated_item = "11111"
 
-["1022-radio headset"]
+["1022::: radio headset"]
 untranslated_item = "11111"
 
-["1023-station bounced radio"]
+["1023::: station bounced radio"]
 untranslated_item = "11111"
 
-["1024-hand labeler"]
+["1024::: hand labeler"]
 untranslated_item = "11111"
 
-["1025-pet carrier"]
+["1025::: pet carrier"]
 untranslated_item = "11111"
 
-["1026-cap gun"]
+["1026::: cap gun"]
 untranslated_item = "11111"
 
-["1027-Box of Cap Gun Shots"]
+["1027::: Box of Cap Gun Shots"]
 unique_design_name = "11111"
 
-["1027-capgun ammo"]
+["1027::: capgun ammo"]
 untranslated_item = "11111"
 
-["1028-Plastic Balloon"]
+["1028::: Plastic Balloon"]
 unique_design_name = "11111"
 
-[1028-balloon]
+["1028::: balloon"]
 untranslated_item = "11111"
 
-["1029-Plastic Armblade"]
+["1029::: Plastic Armblade"]
 unique_design_name = "11111"
 
-["1029-foam armblade"]
+["1029::: foam armblade"]
 untranslated_item = "11111"
 
-[103-Cryotube]
+["102::: Teleporter"]
 untranslated_item = "11111"
 
-["103-Cryotube Board"]
+["102::: Teleporter Console Board"]
 unique_design_name = "11111"
 
-["1030-plastic bead necklace"]
+["1030::: plastic bead necklace"]
 untranslated_item = "11111"
 
-["1031-Plastic Can Rings"]
+["1031::: Plastic Can Rings"]
 unique_design_name = "11111"
 
-["1031-can ring"]
+["1031::: can ring"]
 untranslated_item = "11111"
 
-["1032-plastic box"]
+["1032::: plastic box"]
 untranslated_item = "11111"
 
-[1033-chisel]
+["1033::: chisel"]
 untranslated_item = "11111"
 
-["1034-hand labeler paper roll"]
+["1034::: hand labeler paper roll"]
 untranslated_item = "11111"
 
-["1035-toner cartridge"]
+["1035::: toner cartridge"]
 untranslated_item = "11111"
 
-["1036-Toner Cartridge (Large)"]
+["1036::: Toner Cartridge (Large)"]
 unique_design_name = "11111"
 
-["1036-large toner cartridge"]
+["1036::: large toner cartridge"]
 untranslated_item = "11111"
 
-["1037-material fishing rod"]
+["1037::: material fishing rod"]
 untranslated_item = "11111"
 
-["1038-stasis fish case"]
+["1038::: stasis fish case"]
 untranslated_item = "11111"
 
-["1039-ticket machine frame"]
+["1039::: ticket machine frame"]
 untranslated_item = "11111"
 
-["104-Chem Dispenser"]
+["103::: Cryotube"]
 untranslated_item = "11111"
 
-["104-Portable Chem Dispenser Board"]
+["103::: Cryotube Board"]
 unique_design_name = "11111"
 
-["1040-Bar Telescreen"]
+["1040::: Bar Telescreen"]
 unique_design_name = "11111"
 
-["1040-bar telescreen frame"]
+["1040::: bar telescreen frame"]
 untranslated_item = "11111"
 
-["1041-Entertainment Telescreen"]
+["1041::: Entertainment Telescreen"]
 unique_design_name = "11111"
 
-["1041-entertainment telescreen frame"]
+["1041::: entertainment telescreen frame"]
 untranslated_item = "11111"
 
-["1042-entertainment radio"]
+["1042::: entertainment radio"]
 untranslated_item = "11111"
 
-["1043-barcode scanner"]
+["1043::: barcode scanner"]
 untranslated_item = "11111"
 
-["1044-Exploreverse Mk.I"]
+["1044::: Exploreverse Mk.I"]
 untranslated_item = "11111"
 
-["1045-Exploreverse Mk.II"]
+["1045::: Exploreverse Mk.II"]
 untranslated_item = "11111"
+
+["104::: Chem Dispenser"]
+untranslated_item = "11111"
+
+["104::: Portable Chem Dispenser Board"]
+unique_design_name = "11111"
 
-["105-Chem Master Board"]
+["105::: Chem Master Board"]
 unique_design_name = "11111"
 
-["105-ChemMaster 3000"]
+["105::: ChemMaster 3000"]
 untranslated_item = "11111"
 
-["106-Chemical Heater"]
+["106::: Chemical Heater"]
 untranslated_item = "11111"
 
-["106-Chemical Heater Board"]
+["106::: Chemical Heater Board"]
 unique_design_name = "11111"
 
-["107-High-Performance Liquid Chromatography"]
+["107::: High-Performance Liquid Chromatography"]
 untranslated_item = "11111"
 
-["107-High-Performance Liquid Chromatography Board"]
+["107::: High-Performance Liquid Chromatography Board"]
 unique_design_name = "11111"
 
-["108-Smoke Machine"]
+["108::: Smoke Machine"]
 untranslated_item = "11111"
 
-["108-Smoke Machine Board"]
+["108::: Smoke Machine Board"]
 unique_design_name = "11111"
 
-["109-All-In-One Grinder"]
+["109::: All-In-One Grinder"]
 untranslated_item = "11111"
 
-["109-All-In-One Grinder Board"]
+["109::: All-In-One Grinder Board"]
 unique_design_name = "11111"
 
-["11-'Reset' AI module"]
+["10::: 'Freeform' AI Module"]
 untranslated_item = "11111"
 
-["11-Reset Module"]
+["10::: Freeform Module"]
 unique_design_name = "11111"
 
-["110-Enhanced Interrogation Chamber"]
+["110::: Enhanced Interrogation Chamber"]
 untranslated_item = "11111"
 
-["110-Enhanced Interrogation Chamber Board"]
+["110::: Enhanced Interrogation Chamber Board"]
 unique_design_name = "11111"
 
-[111-Photobooth]
+["111::: Photobooth"]
 untranslated_item = "11111"
 
-["111-Photobooth Board"]
+["111::: Photobooth Board"]
 unique_design_name = "11111"
 
-["112-Security Photobooth"]
+["112::: Security Photobooth"]
 untranslated_item = "11111"
 
-["112-Security Photobooth Board"]
+["112::: Security Photobooth Board"]
 unique_design_name = "11111"
 
-[113-Biogenerator]
+["113::: Biogenerator"]
 untranslated_item = "11111"
 
-["113-Biogenerator Board"]
+["113::: Biogenerator Board"]
 unique_design_name = "11111"
 
-["114-Hydroponics Tray"]
+["114::: Hydroponics Tray"]
 untranslated_item = "11111"
 
-["114-Hydroponics Tray Board"]
+["114::: Hydroponics Tray Board"]
 unique_design_name = "11111"
 
-["115-Destructive Analyzer"]
+["115::: Destructive Analyzer"]
 untranslated_item = "11111"
 
-["115-Destructive Analyzer Board"]
+["115::: Destructive Analyzer Board"]
 unique_design_name = "11111"
 
-["116-E.X.P.E.R.I-MENTOR"]
+["116::: E.X.P.E.R.I-MENTOR"]
 untranslated_item = "11111"
 
-["116-E.X.P.E.R.I-MENTOR Board"]
+["116::: E.X.P.E.R.I-MENTOR Board"]
 unique_design_name = "11111"
 
-[117-Protolathe]
+["117::: Protolathe"]
 untranslated_item = "11111"
 
-["117-Protolathe Board"]
+["117::: Protolathe Board"]
 unique_design_name = "11111"
 
-["118-Ancient Protolathe"]
+["118::: Ancient Protolathe"]
 untranslated_item = "11111"
 
-["118-Ancient Protolathe Board"]
+["118::: Ancient Protolathe Board"]
 unique_design_name = "11111"
 
-["119-Circuit Imprinter"]
+["119::: Circuit Imprinter"]
 untranslated_item = "11111"
 
-["119-Circuit Imprinter Board"]
+["119::: Circuit Imprinter Board"]
 unique_design_name = "11111"
 
-["12-'Purge' AI Module"]
+["11::: 'Reset' AI module"]
 untranslated_item = "11111"
 
-["12-Purge Module"]
+["11::: Reset Module"]
 unique_design_name = "11111"
 
-["120-Ancient Circuit Imprinter"]
+["120::: Ancient Circuit Imprinter"]
 untranslated_item = "11111"
 
-["120-Ancient Circuit Imprinter Board"]
+["120::: Ancient Circuit Imprinter Board"]
 unique_design_name = "11111"
 
-["121-R&D Server Control"]
+["121::: R&D Server Control"]
 untranslated_item = "11111"
 
-["121-R&D Server Control Console Board"]
+["121::: R&D Server Control Console Board"]
 unique_design_name = "11111"
 
-["122-R&D Server"]
+["122::: R&D Server"]
 untranslated_item = "11111"
 
-["122-R&D Server Board"]
+["122::: R&D Server Board"]
 unique_design_name = "11111"
 
-["123-Exosuit Fabricator"]
+["123::: Exosuit Fabricator"]
 untranslated_item = "11111"
 
-["123-Exosuit Fabricator Board"]
+["123::: Exosuit Fabricator Board"]
 unique_design_name = "11111"
 
-["124-Cyborg Recharger"]
+["124::: Cyborg Recharger"]
 untranslated_item = "11111"
 
-["124-Cyborg Recharger Board"]
+["124::: Cyborg Recharger Board"]
 unique_design_name = "11111"
 
-["125-Mechbay Recharger"]
+["125::: Mechbay Recharger"]
 untranslated_item = "11111"
 
-["125-Mechbay Recharger Board"]
+["125::: Mechbay Recharger Board"]
 unique_design_name = "11111"
 
-["126-DNA Scanner"]
+["126::: DNA Scanner"]
 untranslated_item = "11111"
 
-["126-DNA Scanner Board"]
+["126::: DNA Scanner Board"]
 unique_design_name = "11111"
 
-["127-DNA Infuser"]
+["127::: DNA Infuser"]
 untranslated_item = "11111"
 
-["127-DNA Infuser Board"]
+["127::: DNA Infuser Board"]
 unique_design_name = "11111"
 
-["128-DNA Console"]
+["128::: DNA Console"]
 untranslated_item = "11111"
 
-["128-DNA Console Board"]
+["128::: DNA Console Board"]
 unique_design_name = "11111"
 
-["129-Destructive Scanner Board"]
+["129::: Destructive Scanner Board"]
 unique_design_name = "11111"
 
-["129-Experimental Destructive Scanner"]
+["129::: Experimental Destructive Scanner"]
 untranslated_item = "11111"
 
-["13-'Remove Law' AI module"]
+["12::: 'Purge' AI Module"]
 untranslated_item = "11111"
 
-["13-Law Removal Module"]
+["12::: Purge Module"]
 unique_design_name = "11111"
 
-["130-Tachyon-Doppler Research Array"]
+["130::: Tachyon-Doppler Research Array"]
 untranslated_item = "11111"
 
-["130-Tachyon-Doppler Research Array Board"]
+["130::: Tachyon-Doppler Research Array Board"]
 unique_design_name = "11111"
 
-["131-Anomaly Refinery"]
+["131::: Anomaly Refinery"]
 untranslated_item = "11111"
 
-["131-Anomaly Refinery Board"]
+["131::: Anomaly Refinery Board"]
 unique_design_name = "11111"
 
-["132-Tank Compressor"]
+["132::: Tank Compressor"]
 untranslated_item = "11111"
 
-["132-Tank Compressor Board"]
+["132::: Tank Compressor Board"]
 unique_design_name = "11111"
 
-[133-Microwave]
+["133::: Microwave"]
 untranslated_item = "11111"
 
-["133-Microwave Board"]
+["133::: Microwave Board"]
 unique_design_name = "11111"
 
-["134-Wireless Microwave Board"]
+["134::: Wireless Microwave Board"]
 unique_design_name = "11111"
 
-["134-Wireless Microwave Oven"]
+["134::: Wireless Microwave Oven"]
 untranslated_item = "11111"
 
-[135-Gibber]
+["135::: Gibber"]
 untranslated_item = "11111"
 
-["135-Gibber Board"]
+["135::: Gibber Board"]
 unique_design_name = "11111"
 
-[136-Smartfridge]
+["136::: Smartfridge"]
 untranslated_item = "11111"
 
-["136-Smartfridge Board"]
+["136::: Smartfridge Board"]
 unique_design_name = "11111"
 
-[137-Dehydrator]
+["137::: Dehydrator"]
 untranslated_item = "11111"
 
-["137-Dehydrator Board"]
+["137::: Dehydrator Board"]
 unique_design_name = "11111"
 
-["138-Growing Vat"]
+["138::: Growing Vat"]
 untranslated_item = "11111"
 
-["138-Growing Vat Board"]
+["138::: Growing Vat Board"]
 unique_design_name = "11111"
 
-["139-Monkey Recycler"]
+["139::: Monkey Recycler"]
 untranslated_item = "11111"
 
-["139-Monkey Recycler Board"]
+["139::: Monkey Recycler Board"]
 unique_design_name = "11111"
 
-["14-'Freeform' Core AI Module"]
+["13::: 'Remove Law' AI module"]
 untranslated_item = "11111"
 
-["14-Core Freeform Module"]
+["13::: Law Removal Module"]
 unique_design_name = "11111"
 
-["140-Seed Extractor"]
+["140::: Seed Extractor"]
 untranslated_item = "11111"
 
-["140-Seed Extractor Board"]
+["140::: Seed Extractor Board"]
 unique_design_name = "11111"
 
-["141-Food Processor"]
+["141::: Food Processor"]
 untranslated_item = "11111"
 
-["141-Food/Slime Processor Board"]
+["141::: Food/Slime Processor Board"]
 unique_design_name = "11111"
 
-["142-Portable Soda Dispenser Board"]
+["142::: Portable Soda Dispenser Board"]
 unique_design_name = "11111"
 
-["142-Soda Dispenser"]
+["142::: Soda Dispenser"]
 untranslated_item = "11111"
 
-["143-Booze Dispenser"]
+["143::: Booze Dispenser"]
 untranslated_item = "11111"
 
-["143-Portable Booze Dispenser Board"]
+["143::: Portable Booze Dispenser Board"]
 unique_design_name = "11111"
 
-[144-Recycler]
+["144::: Recycler"]
 untranslated_item = "11111"
 
-["144-Recycler Board"]
+["144::: Recycler Board"]
 unique_design_name = "11111"
 
-["145-Scanner Gate"]
+["145::: Scanner Gate"]
 untranslated_item = "11111"
 
-["145-Scanner Gate Board"]
+["145::: Scanner Gate Board"]
 unique_design_name = "11111"
 
-["146-AI Holopad"]
+["146::: AI Holopad"]
 untranslated_item = "11111"
 
-["146-AI Holopad Board"]
+["146::: AI Holopad Board"]
 unique_design_name = "11111"
 
-[147-Autolathe]
+["147::: Autolathe"]
 untranslated_item = "11111"
 
-["147-Autolathe Board"]
+["147::: Autolathe Board"]
 unique_design_name = "11111"
 
-["148-Weapon Recharger"]
+["148::: Weapon Recharger"]
 untranslated_item = "11111"
 
-["148-Weapon Recharger Board"]
+["148::: Weapon Recharger Board"]
 unique_design_name = "11111"
 
-["149-Custom Vendor"]
+["149::: Custom Vendor"]
 untranslated_item = "11111"
 
-["149-Vendor Board"]
+["149::: Vendor Board"]
 unique_design_name = "11111"
 
-["15-'Asimov' Core AI Module"]
+["14::: 'Freeform' Core AI Module"]
 untranslated_item = "11111"
 
-["15-Asimov Module"]
+["14::: Core Freeform Module"]
 unique_design_name = "11111"
 
-["150-Ore Redemption"]
+["150::: Ore Redemption"]
 untranslated_item = "11111"
 
-["150-Ore Redemption Machine Board"]
+["150::: Ore Redemption Machine Board"]
 unique_design_name = "11111"
 
-["151-Mining Rewards Vendor Board"]
+["151::: Mining Rewards Vendor Board"]
 unique_design_name = "11111"
 
-["151-Mining Vending Console"]
+["151::: Mining Vending Console"]
 untranslated_item = "11111"
 
-["152-Suit Storage Unit"]
+["152::: Suit Storage Unit"]
 untranslated_item = "11111"
 
-["153-Tesla Coil Board"]
+["153::: Tesla Coil Board"]
 unique_design_name = "11111"
 
-["153-Tesla Controller"]
+["153::: Tesla Controller"]
 untranslated_item = "11111"
 
-["154-Grounding Rod"]
+["154::: Grounding Rod"]
 untranslated_item = "11111"
 
-["154-Grounding Rod Board"]
+["154::: Grounding Rod Board"]
 unique_design_name = "11111"
 
-["155-NTNet Relay"]
+["155::: NTNet Relay"]
 untranslated_item = "11111"
 
-["155-NTNet Relay Board"]
+["155::: NTNet Relay Board"]
 unique_design_name = "11111"
 
-["156-Crossing Signal"]
+["156::: Crossing Signal"]
 untranslated_item = "11111"
 
-["156-Crossing Signal Board"]
+["156::: Crossing Signal Board"]
 unique_design_name = "11111"
 
-["157-Guideway Sensor"]
+["157::: Guideway Sensor"]
 untranslated_item = "11111"
 
-["157-Guideway Sensor Board"]
+["157::: Guideway Sensor Board"]
 unique_design_name = "11111"
 
-["158-Limb Grower"]
+["158::: Limb Grower"]
 untranslated_item = "11111"
 
-["158-Limb Grower Board"]
+["158::: Limb Grower Board"]
 unique_design_name = "11111"
 
-[159-Harvester]
+["159::: Harvester"]
 untranslated_item = "11111"
 
-["159-Organ Harvester Board"]
+["159::: Organ Harvester Board"]
 unique_design_name = "11111"
 
-["16-'P.A.L.A.D.I.N. version 3.5e' Core AI Module"]
+["15::: 'Asimov' Core AI Module"]
 untranslated_item = "11111"
 
-["16-P.A.L.A.D.I.N. Module"]
+["15::: Asimov Module"]
 unique_design_name = "11111"
 
-["160-Deep Fryer"]
+["160::: Deep Fryer"]
 untranslated_item = "11111"
 
-["160-Deep Fryer Board"]
+["160::: Deep Fryer Board"]
 unique_design_name = "11111"
 
-[161-Griddle]
+["161::: Griddle"]
 untranslated_item = "11111"
 
-["161-Griddle Board"]
+["161::: Griddle Board"]
 unique_design_name = "11111"
 
-[162-Oven]
+["162::: Oven"]
 untranslated_item = "11111"
 
-["162-Oven Board"]
+["162::: Oven Board"]
 unique_design_name = "11111"
 
-[163-Stove]
+["163::: Stove"]
 untranslated_item = "11111"
 
-["163-Stove Board"]
+["163::: Stove Board"]
 unique_design_name = "11111"
 
-["164-Range (Oven & Stove)"]
+["164::: Range (Oven & Stove)"]
 untranslated_item = "11111"
 
-["164-Range Board"]
+["164::: Range Board"]
 unique_design_name = "11111"
 
-["165-Donksoft Toy Vendor"]
+["165::: Donksoft Toy Vendor"]
 untranslated_item = "11111"
 
-["165-Donksoft Toy Vendor Board"]
+["165::: Donksoft Toy Vendor Board"]
 unique_design_name = "11111"
 
-["166-Cell Charger"]
+["166::: Cell Charger"]
 untranslated_item = "11111"
 
-["166-Cell Charger Board"]
+["166::: Cell Charger Board"]
 unique_design_name = "11111"
 
-["167-Dish Drive"]
+["167::: Dish Drive"]
 untranslated_item = "11111"
 
-["167-Dish Drive Board"]
+["167::: Dish Drive Board"]
 unique_design_name = "11111"
 
-["168-Stacking Machine Console"]
+["168::: Stacking Machine Console"]
 untranslated_item = "11111"
 
-["168-Stacking Machine Console Board"]
+["168::: Stacking Machine Console Board"]
 unique_design_name = "11111"
 
-["169-Stacking Machine"]
+["169::: Stacking Machine"]
 untranslated_item = "11111"
 
-["169-Stacking Machine Board"]
+["169::: Stacking Machine Board"]
 unique_design_name = "11111"
 
-["17-'T.Y.R.A.N.T.' Core AI Module"]
+["16::: 'P.A.L.A.D.I.N. version 3.5e' Core AI Module"]
 untranslated_item = "11111"
 
-["17-T.Y.R.A.N.T. Module"]
+["16::: P.A.L.A.D.I.N. Module"]
 unique_design_name = "11111"
 
-["170-Ore Silo"]
+["170::: Ore Silo"]
 untranslated_item = "11111"
 
-["170-Ore Silo Board"]
+["170::: Ore Silo Board"]
 unique_design_name = "11111"
 
-["171-Lipid Extractor"]
+["171::: Lipid Extractor"]
 untranslated_item = "11111"
 
-["171-Lipid Extractor Board"]
+["171::: Lipid Extractor Board"]
 unique_design_name = "11111"
 
-["172-Lifeform Stasis Unit"]
+["172::: Lifeform Stasis Unit"]
 untranslated_item = "11111"
 
-["172-Lifeform Stasis Unit Board"]
+["172::: Lifeform Stasis Unit Board"]
 unique_design_name = "11111"
 
-["173-Medical Kiosk"]
+["173::: Medical Kiosk"]
 untranslated_item = "11111"
 
-["173-Medical Kiosk Board"]
+["173::: Medical Kiosk Board"]
 unique_design_name = "11111"
 
-["174-Medipen Refiller"]
+["174::: Medipen Refiller"]
 untranslated_item = "11111"
 
-["174-Medipen Refiller Board"]
+["174::: Medipen Refiller Board"]
 unique_design_name = "11111"
 
-["175-Chemical Recipient"]
+["175::: Chemical Recipient"]
 untranslated_item = "11111"
 
-["175-Chemical Recipient Board"]
+["175::: Chemical Recipient Board"]
 unique_design_name = "11111"
 
-["176-Sheet-meister 2000"]
+["176::: Sheet-meister 2000"]
 untranslated_item = "11111"
 
-["176-Sheet-meister 2000 Board"]
+["176::: Sheet-meister 2000 Board"]
 unique_design_name = "11111"
 
-["177-Restaurant Portal"]
+["177::: Restaurant Portal"]
 untranslated_item = "11111"
 
-["177-Restaurant Portal Board"]
+["177::: Restaurant Portal Board"]
 unique_design_name = "11111"
 
-[178-Vend-A-Tray]
+["178::: Vend-A-Tray"]
 untranslated_item = "11111"
 
-["178-Vend-a-Tray Board"]
+["178::: Vend-a-Tray Board"]
 unique_design_name = "11111"
 
-["179-Civilian Bounty Pad"]
+["179::: Civilian Bounty Pad"]
 untranslated_item = "11111"
 
-["179-Civilian Bounty Pad Board"]
+["179::: Civilian Bounty Pad Board"]
 unique_design_name = "11111"
 
-["18-'Overlord' Core AI Module"]
+["17::: 'T.Y.R.A.N.T.' Core AI Module"]
 untranslated_item = "11111"
 
-["18-Overlord Module"]
+["17::: T.Y.R.A.N.T. Module"]
 unique_design_name = "11111"
 
-["180-Skill Station"]
+["180::: Skill Station"]
 untranslated_item = "11111"
 
-["180-Skill Station Board"]
+["180::: Skill Station Board"]
 unique_design_name = "11111"
 
-["181-Fax Machine"]
+["181::: Fax Machine"]
 untranslated_item = "11111"
 
-["181-Fax Machine Board"]
+["181::: Fax Machine Board"]
 unique_design_name = "11111"
 
-["182-HFR Core Board"]
+["182::: HFR Core Board"]
 unique_design_name = "11111"
 
-["182-HFR core"]
+["182::: HFR core"]
 untranslated_item = "11111"
 
-["183-HFR Fuel Input"]
+["183::: HFR Fuel Input"]
 untranslated_item = "11111"
 
-["183-HFR Fuel Input Board"]
+["183::: HFR Fuel Input Board"]
 unique_design_name = "11111"
 
-["184-HFR Waste Output"]
+["184::: HFR Waste Output"]
 untranslated_item = "11111"
 
-["184-HFR Waste Output Board"]
+["184::: HFR Waste Output Board"]
 unique_design_name = "11111"
 
-["185-HFR Moderator Input"]
+["185::: HFR Moderator Input"]
 untranslated_item = "11111"
 
-["185-HFR Moderator Input Board"]
+["185::: HFR Moderator Input Board"]
 unique_design_name = "11111"
 
-["186-HFR Corner"]
+["186::: HFR Corner"]
 untranslated_item = "11111"
 
-["186-HFR Corner Board"]
+["186::: HFR Corner Board"]
 unique_design_name = "11111"
 
-["187-HFR Interface"]
+["187::: HFR Interface"]
 untranslated_item = "11111"
 
-["187-HFR Interface Board"]
+["187::: HFR Interface Board"]
 unique_design_name = "11111"
 
-[188-Crystallizer]
+["188::: Crystallizer"]
 untranslated_item = "11111"
 
-["188-Crystallizer Board"]
+["188::: Crystallizer Board"]
 unique_design_name = "11111"
 
-[189-Exoscanner]
+["189::: Exoscanner"]
 untranslated_item = "11111"
 
-["189-Scanner Array Board"]
+["189::: Scanner Array Board"]
 unique_design_name = "11111"
 
-["19-'Corporate' Core AI Module"]
+["18::: 'Overlord' Core AI Module"]
 untranslated_item = "11111"
 
-["19-Corporate Module"]
+["18::: Overlord Module"]
 unique_design_name = "11111"
 
-["190-Exploration Drone Launcher"]
+["190::: Exploration Drone Launcher"]
 untranslated_item = "11111"
 
-["190-Exploration Drone Launcher Board"]
+["190::: Exploration Drone Launcher Board"]
 unique_design_name = "11111"
 
-["191-Component Printer (Machine Board)"]
+["191::: Component Printer (Machine Board)"]
 untranslated_item = "11111"
 
-["191-Component Printer Board"]
+["191::: Component Printer Board"]
 unique_design_name = "11111"
 
-["192-Module Duplicator (Machine Board)"]
+["192::: Module Duplicator (Machine Board)"]
 untranslated_item = "11111"
 
-["192-Module Duplicator Board"]
+["192::: Module Duplicator Board"]
 unique_design_name = "11111"
 
-["193-Coffeemaker (Machine Board)"]
+["193::: Coffeemaker (Machine Board)"]
 untranslated_item = "11111"
 
-["193-Coffeemaker Board"]
+["193::: Coffeemaker Board"]
 unique_design_name = "11111"
 
-["194-Bot Navigational Beacon"]
+["194::: Bot Navigational Beacon"]
 untranslated_item = "11111"
 
-["194-Machine Design (Bot Navigational Beacon)"]
+["194::: Machine Design (Bot Navigational Beacon)"]
 unique_design_name = "11111"
 
-["195-Fishing Portal Generator"]
+["195::: Fishing Portal Generator"]
 untranslated_item = "11111"
 
-["195-Fishing Portal Generator Board"]
+["195::: Fishing Portal Generator Board"]
 unique_design_name = "11111"
 
-["196-Boulder Retrieval Matrix"]
+["196::: Boulder Retrieval Matrix"]
 untranslated_item = "11111"
 
-[197-Flatpacker]
+["197::: Flatpacker"]
 untranslated_item = "11111"
 
-["197-Flatpacker Machine Board"]
+["197::: Flatpacker Machine Board"]
 unique_design_name = "11111"
 
-["198-Portable Air Scrubber"]
+["198::: Portable Air Scrubber"]
 untranslated_item = "11111"
 
-["198-Portable Air Scrubber Board"]
+["198::: Portable Air Scrubber Board"]
 unique_design_name = "11111"
 
-["199-Portable Air Pump"]
+["199::: Portable Air Pump"]
 untranslated_item = "11111"
 
-["199-Portable Air Pump Board"]
+["199::: Portable Air Pump Board"]
 unique_design_name = "11111"
 
-["2-Quantum Console"]
+["19::: 'Corporate' Core AI Module"]
 untranslated_item = "11111"
 
-["2-Quantum Console Board"]
+["19::: Corporate Module"]
 unique_design_name = "11111"
 
-["20-Default Core AI Module"]
+["1::: Netpod"]
 untranslated_item = "11111"
 
-["20-Default Module"]
+["1::: Netpod Board"]
 unique_design_name = "11111"
 
-["200-Portable Pipe Scrubber"]
+["200::: Portable Pipe Scrubber"]
 untranslated_item = "11111"
 
-["200-Portable Pipe Scrubber Board"]
+["200::: Portable Pipe Scrubber Board"]
 unique_design_name = "11111"
 
-["201-Book Binder"]
+["201::: Book Binder"]
 untranslated_item = "11111"
 
-["202-Book Scanner"]
+["202::: Book Scanner"]
 untranslated_item = "11111"
 
-["203-Big Manipulator"]
+["203::: Big Manipulator"]
 untranslated_item = "11111"
 
-["203-Big Manipulator Board"]
+["203::: Big Manipulator Board"]
 unique_design_name = "11111"
 
-["204-Manufacturing Lathe Board"]
+["204::: Manufacturing Lathe Board"]
 unique_design_name = "11111"
 
-["204-manufacturing lathe"]
+["204::: manufacturing lathe"]
 untranslated_item = "11111"
 
-["205-Manufacturing Assembling Machine Board"]
+["205::: Manufacturing Assembling Machine Board"]
 unique_design_name = "11111"
 
-["205-manufacturing assembling machine"]
+["205::: manufacturing assembling machine"]
 untranslated_item = "11111"
 
-["206-Manufacturing Crusher Board"]
+["206::: Manufacturing Crusher Board"]
 unique_design_name = "11111"
 
-["206-manufacturing crusher"]
+["206::: manufacturing crusher"]
 untranslated_item = "11111"
 
-["207-Manufacturing Router Board"]
+["207::: Manufacturing Router Board"]
 unique_design_name = "11111"
 
-["207-manufacturing router"]
+["207::: manufacturing router"]
 untranslated_item = "11111"
 
-["208-Conveyor Sort-Router Board"]
+["208::: Conveyor Sort-Router Board"]
 unique_design_name = "11111"
 
-["208-conveyor sort-router"]
+["208::: conveyor sort-router"]
 untranslated_item = "11111"
 
-["209-Manufacturing Crate Unloader Board"]
+["209::: Manufacturing Crate Unloader Board"]
 unique_design_name = "11111"
 
-["209-manufacturing crate unloader"]
+["209::: manufacturing crate unloader"]
 untranslated_item = "11111"
 
-["21-'Dungeon Master' Core AI Module"]
+["20::: Default Core AI Module"]
 untranslated_item = "11111"
 
-["21-Dungeon Master Module"]
+["20::: Default Module"]
 unique_design_name = "11111"
 
-["210-Manufacturing Smelter Board"]
+["210::: Manufacturing Smelter Board"]
 unique_design_name = "11111"
 
-["210-manufacturing smelter"]
+["210::: manufacturing smelter"]
 untranslated_item = "11111"
 
-["211-APLU \"Ripley\" Central Control module"]
+["211::: APLU \"Ripley\" Central Control module"]
 unique_design_name = "11111"
 
-["211-Ripley Central Control module (Exosuit Board)"]
+["211::: Ripley Central Control module (Exosuit Board)"]
 untranslated_item = "11111"
 
-["212-APLU \"Ripley\" Peripherals Control module"]
+["212::: APLU \"Ripley\" Peripherals Control module"]
 unique_design_name = "11111"
 
-["212-Ripley Peripherals Control module (Exosuit Board)"]
+["212::: Ripley Peripherals Control module (Exosuit Board)"]
 untranslated_item = "11111"
 
-["213-\"Odysseus\" Central Control module"]
+["213::: \"Odysseus\" Central Control module"]
 unique_design_name = "11111"
 
-["213-Odysseus Central Control module (Exosuit Board)"]
+["213::: Odysseus Central Control module (Exosuit Board)"]
 untranslated_item = "11111"
 
-["214-\"Odysseus\" Peripherals Control module"]
+["214::: \"Odysseus\" Peripherals Control module"]
 unique_design_name = "11111"
 
-["214-Odysseus Peripherals Control module (Exosuit Board)"]
+["214::: Odysseus Peripherals Control module (Exosuit Board)"]
 untranslated_item = "11111"
 
-["215-\"Gygax\" Central Control module"]
+["215::: \"Gygax\" Central Control module"]
 unique_design_name = "11111"
 
-["215-Gygax Central Control module (Exosuit Board)"]
+["215::: Gygax Central Control module (Exosuit Board)"]
 untranslated_item = "11111"
 
-["216-\"Gygax\" Peripherals Control module"]
+["216::: \"Gygax\" Peripherals Control module"]
 unique_design_name = "11111"
 
-["216-Gygax Peripherals Control module (Exosuit Board)"]
+["216::: Gygax Peripherals Control module (Exosuit Board)"]
 untranslated_item = "11111"
 
-["217-\"Gygax\" Weapons & Targeting Control module"]
+["217::: \"Gygax\" Weapons & Targeting Control module"]
 unique_design_name = "11111"
 
-["217-Gygax Weapon Control and Targeting module (Exosuit Board)"]
+["217::: Gygax Weapon Control and Targeting module (Exosuit Board)"]
 untranslated_item = "11111"
 
-["218-\"Durand\" Central Control module"]
+["218::: \"Durand\" Central Control module"]
 unique_design_name = "11111"
 
-["218-Durand Central Control module (Exosuit Board)"]
+["218::: Durand Central Control module (Exosuit Board)"]
 untranslated_item = "11111"
 
-["219-\"Durand\" Peripherals Control module"]
+["219::: \"Durand\" Peripherals Control module"]
 unique_design_name = "11111"
 
-["219-Durand Peripherals Control module (Exosuit Board)"]
+["219::: Durand Peripherals Control module (Exosuit Board)"]
 untranslated_item = "11111"
 
-["22-'Painter' Core AI Module"]
+["21::: 'Dungeon Master' Core AI Module"]
 untranslated_item = "11111"
 
-["22-Painter Module"]
+["21::: Dungeon Master Module"]
 unique_design_name = "11111"
 
-["220-\"Durand\" Weapons & Targeting Control module"]
+["220::: \"Durand\" Weapons & Targeting Control module"]
 unique_design_name = "11111"
 
-["220-Durand Weapon Control and Targeting module (Exosuit Board)"]
+["220::: Durand Weapon Control and Targeting module (Exosuit Board)"]
 untranslated_item = "11111"
 
-["221-\"H.O.N.K.\" Central Control module"]
+["221::: \"H.O.N.K.\" Central Control module"]
 unique_design_name = "11111"
 
-["221-H.O.N.K Central Control module (Exosuit Board)"]
+["221::: H.O.N.K Central Control module (Exosuit Board)"]
 untranslated_item = "11111"
 
-["222-\"H.O.N.K.\" Peripherals Control module"]
+["222::: \"H.O.N.K.\" Peripherals Control module"]
 unique_design_name = "11111"
 
-["222-H.O.N.K Peripherals Control module (Exosuit Board)"]
+["222::: H.O.N.K Peripherals Control module (Exosuit Board)"]
 untranslated_item = "11111"
 
-["223-\"H.O.N.K.\" Weapons & Targeting Control module"]
+["223::: \"H.O.N.K.\" Weapons & Targeting Control module"]
 unique_design_name = "11111"
 
-["223-H.O.N.K Weapon Control and Targeting module (Exosuit Board)"]
+["223::: H.O.N.K Weapon Control and Targeting module (Exosuit Board)"]
 untranslated_item = "11111"
 
-["224-\"Phazon\" Central Control module"]
+["224::: \"Phazon\" Central Control module"]
 unique_design_name = "11111"
 
-["224-Phazon Central Control module (Exosuit Board)"]
+["224::: Phazon Central Control module (Exosuit Board)"]
 untranslated_item = "11111"
 
-["225-\"Phazon\" Peripherals Control module"]
+["225::: \"Phazon\" Peripherals Control module"]
 unique_design_name = "11111"
 
-["225-Phazon Peripherals Control module (Exosuit Board)"]
+["225::: Phazon Peripherals Control module (Exosuit Board)"]
 untranslated_item = "11111"
 
-["226-\"Phazon\" Weapons & Targeting Control module"]
+["226::: \"Phazon\" Weapons & Targeting Control module"]
 unique_design_name = "11111"
 
-["226-Phazon Weapon Control and Targeting module (Exosuit Board)"]
+["226::: Phazon Weapon Control and Targeting module (Exosuit Board)"]
 untranslated_item = "11111"
 
-["227-\"Clarke\" Central Control module"]
+["227::: \"Clarke\" Central Control module"]
 unique_design_name = "11111"
 
-["227-Clarke Central Control module (Exosuit Board)"]
+["227::: Clarke Central Control module (Exosuit Board)"]
 untranslated_item = "11111"
 
-["228-\"Clarke\" Peripherals Control module"]
+["228::: \"Clarke\" Peripherals Control module"]
 unique_design_name = "11111"
 
-["228-Clarke Peripherals Control module (Exosuit Board)"]
+["228::: Clarke Peripherals Control module (Exosuit Board)"]
 untranslated_item = "11111"
 
-["229-\"Savannah-Ivanov\" Central Control module"]
+["229::: \"Savannah-Ivanov\" Central Control module"]
 unique_design_name = "11111"
 
-["229-Savannah-Ivanov Combination Control Lock module (Exosuit Board)"]
+["229::: Savannah-Ivanov Combination Control Lock module (Exosuit Board)"]
 untranslated_item = "11111"
 
-["23-'Y.E.S.M.A.N.' Core AI Module"]
+["22::: 'Painter' Core AI Module"]
 untranslated_item = "11111"
 
-["23-Y.E.S.M.A.N. Module"]
+["22::: Painter Module"]
 unique_design_name = "11111"
 
-["230-\"Savannah-Ivanov\" Peripherals Control module"]
+["230::: \"Savannah-Ivanov\" Peripherals Control module"]
 unique_design_name = "11111"
 
-["230-Savannah Peripherals Control module (Exosuit Board)"]
+["230::: Savannah Peripherals Control module (Exosuit Board)"]
 untranslated_item = "11111"
 
-["231-\"Savannah-Ivanov\" Weapons & Targeting Control module"]
+["231::: \"Savannah-Ivanov\" Weapons & Targeting Control module"]
 unique_design_name = "11111"
 
-["231-Ivanov Weapon Control and Targeting module (Exosuit Board)"]
+["231::: Ivanov Weapon Control and Targeting module (Exosuit Board)"]
 untranslated_item = "11111"
 
-["232-PACMAN Board"]
+["232::: PACMAN Board"]
 unique_design_name = "11111"
 
-["232-PACMAN-type Generator"]
+["232::: PACMAN-type Generator"]
 untranslated_item = "11111"
 
-["233-Subspace Receiver"]
+["233::: Subspace Receiver"]
 untranslated_item = "11111"
 
-["233-Subspace Receiver Board"]
+["233::: Subspace Receiver Board"]
 unique_design_name = "11111"
 
-["234-Bus Mainframe"]
+["234::: Bus Mainframe"]
 untranslated_item = "11111"
 
-["234-Bus Mainframe Board"]
+["234::: Bus Mainframe Board"]
 unique_design_name = "11111"
 
-["235-Hub Mainframe"]
+["235::: Hub Mainframe"]
 untranslated_item = "11111"
 
-["235-Hub Mainframe Board"]
+["235::: Hub Mainframe Board"]
 unique_design_name = "11111"
 
-["236-Relay Mainframe"]
+["236::: Relay Mainframe"]
 untranslated_item = "11111"
 
-["236-Relay Mainframe Board"]
+["236::: Relay Mainframe Board"]
 unique_design_name = "11111"
 
-["237-Processor Unit"]
+["237::: Processor Unit"]
 untranslated_item = "11111"
 
-["237-Processor Unit Board"]
+["237::: Processor Unit Board"]
 unique_design_name = "11111"
 
-["238-Server Mainframe Board"]
+["238::: Server Mainframe Board"]
 unique_design_name = "11111"
 
-["238-Telecommunication Server"]
+["238::: Telecommunication Server"]
 untranslated_item = "11111"
 
-["239-Messaging Server"]
+["239::: Messaging Server"]
 untranslated_item = "11111"
 
-["239-Messaging Server Board"]
+["239::: Messaging Server Board"]
 unique_design_name = "11111"
 
-["24-'Nutimov' Core AI Module"]
+["23::: 'Y.E.S.M.A.N.' Core AI Module"]
 untranslated_item = "11111"
 
-["24-Nutimov Module"]
+["23::: Y.E.S.M.A.N. Module"]
 unique_design_name = "11111"
 
-["240-Subspace Broadcaster"]
+["240::: Subspace Broadcaster"]
 untranslated_item = "11111"
 
-["240-Subspace Broadcaster Board"]
+["240::: Subspace Broadcaster Board"]
 unique_design_name = "11111"
 
-["241-Brain-Computer Interface Manipulation Chamber"]
+["241::: Brain-Computer Interface Manipulation Chamber"]
 unique_design_name = "11111"
 
-["241-Brain-Computer Interface Manipulation Chamber (Machine Board)"]
+["241::: Brain-Computer Interface Manipulation Chamber (Machine Board)"]
 untranslated_item = "11111"
 
-["242-Boulder Smelter"]
+["242::: Boulder Smelter"]
 untranslated_item = "11111"
 
-["243-Boulder Refinery"]
+["243::: Boulder Refinery"]
 untranslated_item = "11111"
 
-["244-'Крюзимов++' Core AI Module"]
+["244::: 'Крюзимов++' Core AI Module"]
 untranslated_item = "11111"
 
-["244-Crewsimov++ Module"]
+["244::: Crewsimov++ Module"]
 unique_design_name = "11111"
 
-["245-'НТ Стандарт' Core AI Module"]
+["245::: 'НТ Стандарт' Core AI Module"]
 untranslated_item = "11111"
 
-["245-NT Default Module"]
+["245::: NT Default Module"]
 unique_design_name = "11111"
 
-["246-Golem Shell Construction"]
+["246::: Golem Shell Construction"]
 unique_design_name = "11111"
 
-["246-incomplete free golem shell"]
+["246::: incomplete free golem shell"]
 untranslated_item = "11111"
 
-["247-Kinetic Accelerator Offensive Mining Explosion Mod"]
+["247::: Kinetic Accelerator Offensive Mining Explosion Mod"]
 unique_design_name = "11111"
 
-["247-offensive mining explosion"]
+["247::: offensive mining explosion"]
 untranslated_item = "11111"
 
-["248-Kinetic Accelerator Rapid Repeater Mod"]
+["248::: Kinetic Accelerator Rapid Repeater Mod"]
 unique_design_name = "11111"
 
-["248-rapid repeater"]
+["248::: rapid repeater"]
 untranslated_item = "11111"
 
-["249-Kinetic Accelerator Resonator Blast Mod"]
+["249::: Kinetic Accelerator Resonator Blast Mod"]
 unique_design_name = "11111"
 
-["249-resonator blast"]
+["249::: resonator blast"]
 untranslated_item = "11111"
 
-["25-'10 Commandments' Core AI Module"]
+["24::: 'Nutimov' Core AI Module"]
 untranslated_item = "11111"
 
-["25-10 Commandments Module"]
+["24::: Nutimov Module"]
 unique_design_name = "11111"
 
-["250-Kinetic Accelerator Death Syphon Mod"]
+["250::: Kinetic Accelerator Death Syphon Mod"]
 unique_design_name = "11111"
 
-["250-death syphon"]
+["250::: death syphon"]
 untranslated_item = "11111"
 
-["251-monkey cube"]
+["251::: monkey cube"]
 untranslated_item = "11111"
 
-["252-seaweed sheet"]
+["252::: seaweed sheet"]
 untranslated_item = "11111"
 
-["253-Sheet of Leather"]
+["253::: Sheet of Leather"]
 unique_design_name = "11111"
 
-[253-leather]
+["253::: leather"]
 untranslated_item = "11111"
 
-["254-Sheet of Cloth"]
+["254::: Sheet of Cloth"]
 unique_design_name = "11111"
 
-[254-cloth]
+["254::: cloth"]
 untranslated_item = "11111"
 
-["255-Sheet of Cardboard"]
+["255::: Sheet of Cardboard"]
 unique_design_name = "11111"
 
-[255-cardboard]
+["255::: cardboard"]
 untranslated_item = "11111"
 
-["256-Sheet of Paper"]
+["256::: Sheet of Paper"]
 unique_design_name = "11111"
 
-[256-paper]
+["256::: paper"]
 untranslated_item = "11111"
 
-["257-Sheet of Rolling Paper"]
+["257::: Sheet of Rolling Paper"]
 unique_design_name = "11111"
 
-["257-rolling paper"]
+["257::: rolling paper"]
 untranslated_item = "11111"
 
-[258-Candle]
+["258::: Candle"]
 unique_design_name = "11111"
 
-["258-red candle"]
+["258::: red candle"]
 untranslated_item = "11111"
 
-["259-tracking beacon"]
+["259::: tracking beacon"]
 untranslated_item = "11111"
 
-["26-'Asimov++' Core AI Module"]
+["25::: '10 Commandments' Core AI Module"]
 untranslated_item = "11111"
 
-["26-Asimov++ Module"]
+["25::: 10 Commandments Module"]
 unique_design_name = "11111"
 
-["260-inert bag of holding"]
+["260::: inert bag of holding"]
 untranslated_item = "11111"
 
-["261-artificial bluespace crystal"]
+["261::: artificial bluespace crystal"]
 untranslated_item = "11111"
 
-["262-GPS Device"]
+["262::: GPS Device"]
 unique_design_name = "11111"
 
-["262-global positioning system"]
+["262::: global positioning system"]
 untranslated_item = "11111"
 
-[263-desynchronizer]
+["263::: desynchronizer"]
 untranslated_item = "11111"
 
-["264-mining satchel of holding"]
+["264::: mining satchel of holding"]
 untranslated_item = "11111"
 
-["265-quantum spin inverter"]
+["265::: quantum spin inverter"]
 untranslated_item = "11111"
 
-["266-data disk"]
+["266::: data disk"]
 untranslated_item = "11111"
 
-["267-advanced data disk"]
+["267::: advanced data disk"]
 untranslated_item = "11111"
 
-["268-super data disk"]
+["268::: super data disk"]
 untranslated_item = "11111"
 
-["269-Intellicard AI Transportation System"]
+["269::: Intellicard AI Transportation System"]
 unique_design_name = "11111"
 
-[269-intelliCard]
+["269::: intelliCard"]
 untranslated_item = "11111"
 
-["27-'Robodoctor' Core AI Module"]
+["26::: 'Asimov++' Core AI Module"]
 untranslated_item = "11111"
 
-["27-Hippocratic Module"]
+["26::: Asimov++ Module"]
 unique_design_name = "11111"
 
-["270-Personal Artificial Intelligence Card"]
+["270::: Personal Artificial Intelligence Card"]
 design_from_result = "устройство ПИИ"
 
-["271-AI Surveillance Software Update"]
+["271::: AI Surveillance Software Update"]
 unique_design_name = "11111"
 
-["271-surveillance software upgrade"]
+["271::: surveillance software upgrade"]
 untranslated_item = "11111"
 
-["272-AI Power Transfer Update"]
+["272::: AI Power Transfer Update"]
 unique_design_name = "11111"
 
-["272-power transfer upgrade"]
+["272::: power transfer upgrade"]
 untranslated_item = "11111"
 
-["273-Technology Data Storage Disk"]
+["273::: Technology Data Storage Disk"]
 unique_design_name = "11111"
 
-["273-technology disk"]
+["273::: technology disk"]
 untranslated_item = "11111"
 
-[274-Experi-Scanner]
+["274::: Experi-Scanner"]
 untranslated_item = "11111"
 
-["274-Experimental Scanner"]
+["274::: Experimental Scanner"]
 unique_design_name = "11111"
 
-[275-heart]
+["275::: heart"]
 untranslated_item = "11111"
 
-[276-lungs]
+["276::: lungs"]
 untranslated_item = "11111"
 
-[277-liver]
+["277::: liver"]
 untranslated_item = "11111"
 
-[278-stomach]
+["278::: stomach"]
 untranslated_item = "11111"
 
-[279-appendix]
+["279::: appendix"]
 untranslated_item = "11111"
 
-["28-'P.A.L.A.D.I.N. version 5e' Core AI Module"]
+["27::: 'Robodoctor' Core AI Module"]
 untranslated_item = "11111"
 
-["28-Paladin Devotion Module"]
+["27::: Hippocratic Module"]
 unique_design_name = "11111"
 
-[280-eyes]
+["280::: eyes"]
 untranslated_item = "11111"
 
-[281-ears]
+["281::: ears"]
 untranslated_item = "11111"
 
-[282-tongue]
+["282::: tongue"]
 untranslated_item = "11111"
 
-["283-Lizard Tail"]
+["283::: Lizard Tail"]
 unique_design_name = "11111"
 
-["283-fabricated lizard tail"]
+["283::: fabricated lizard tail"]
 untranslated_item = "11111"
 
-["284-forked tongue"]
+["284::: forked tongue"]
 untranslated_item = "11111"
 
-["285-monkey tail"]
+["285::: monkey tail"]
 untranslated_item = "11111"
 
-["286-Cat Tail"]
+["286::: Cat Tail"]
 unique_design_name = "11111"
 
-[286-tail]
+["286::: tail"]
 untranslated_item = "11111"
 
-["287-cat ears"]
+["287::: cat ears"]
 untranslated_item = "11111"
 
-["288-plasma filter"]
+["288::: plasma filter"]
 untranslated_item = "11111"
 
-["289-Plasma Bone Tongue"]
+["289::: Plasma Bone Tongue"]
 unique_design_name = "11111"
 
-["289-plasma bone \"tongue\""]
+["289::: plasma bone \"tongue\""]
 untranslated_item = "11111"
 
-["29-'Robo-Officer' Core AI Module"]
+["28::: 'P.A.L.A.D.I.N. version 5e' Core AI Module"]
 untranslated_item = "11111"
 
-["29-Robocop Module"]
+["28::: Paladin Devotion Module"]
 unique_design_name = "11111"
 
-["290-reagent processing crystal"]
+["290::: reagent processing crystal"]
 untranslated_item = "11111"
 
-["291-digestive crystal"]
+["291::: digestive crystal"]
 untranslated_item = "11111"
 
-["292-biological battery"]
+["292::: biological battery"]
 untranslated_item = "11111"
 
-["293-Electrical Discharger"]
+["293::: Electrical Discharger"]
 unique_design_name = "11111"
 
-["293-electric discharger"]
+["293::: electric discharger"]
 untranslated_item = "11111"
 
-["294-aeration reticulum"]
+["294::: aeration reticulum"]
 untranslated_item = "11111"
 
-["295-crystal core"]
+["295::: crystal core"]
 untranslated_item = "11111"
 
-["296-Arm Blade"]
+["296::: Arm Blade"]
 unique_design_name = "11111"
 
-["296-synthetic arm blade"]
+["296::: synthetic arm blade"]
 untranslated_item = "11111"
 
-["297-Limb Design Disk"]
+["297::: Limb Design Disk"]
 untranslated_item = "11111"
 
-["298-Felinid Organ Design Disk"]
+["298::: Felinid Organ Design Disk"]
 untranslated_item = "11111"
 
-["299-Lizard Organ Design Disk"]
+["299::: Lizard Organ Design Disk"]
 untranslated_item = "11111"
 
-[3-Byteforge]
+["29::: 'Robo-Officer' Core AI Module"]
 untranslated_item = "11111"
 
-["3-Byteforge Board"]
+["29::: Robocop Module"]
 unique_design_name = "11111"
 
-["30-'Station Efficiency' Core AI Module"]
+["2::: Quantum Console"]
 untranslated_item = "11111"
 
-["30-Maintain Module"]
+["2::: Quantum Console Board"]
 unique_design_name = "11111"
 
-["300-Plasmaman Organ Design Disk"]
+["300::: Plasmaman Organ Design Disk"]
 untranslated_item = "11111"
 
-["301-Ethereal Organ Design Disk"]
+["301::: Ethereal Organ Design Disk"]
 untranslated_item = "11111"
 
-["302-LBX AC 10 \"Scattershot\""]
+["302::: LBX AC 10 \"Scattershot\""]
 untranslated_item = "11111"
 
-["303-LBX AC 10 Ammunition"]
+["303::: LBX AC 10 Ammunition"]
 unique_design_name = "11111"
 
-["303-scattershot ammo box"]
+["303::: scattershot ammo box"]
 untranslated_item = "11111"
 
-["304-FNX-99 \"Hades\" Carbine"]
+["304::: FNX-99 \"Hades\" Carbine"]
 untranslated_item = "11111"
 
-["305-FNX-99 Carbine Ammunition"]
+["305::: FNX-99 Carbine Ammunition"]
 unique_design_name = "11111"
 
-["305-incendiary ammo box"]
+["305::: incendiary ammo box"]
 untranslated_item = "11111"
 
-["306-MKIV ion heavy cannon"]
+["306::: MKIV ion heavy cannon"]
 untranslated_item = "11111"
 
-["307-MKI Tesla Cannon"]
+["307::: MKI Tesla Cannon"]
 untranslated_item = "11111"
 
-["308-CH-PS \"Immolator\" laser"]
+["308::: CH-PS \"Immolator\" laser"]
 untranslated_item = "11111"
 
-["309-CH-LC \"Solaris\" laser cannon"]
+["309::: CH-LC \"Solaris\" laser cannon"]
 untranslated_item = "11111"
 
-["31-'Live And Let Live' Core AI Module"]
+["30::: 'Station Efficiency' Core AI Module"]
 untranslated_item = "11111"
 
-["31-Liveandletlive Module"]
+["30::: Maintain Module"]
 unique_design_name = "11111"
 
-["310-CH-DS \"Peacemaker\" disabler"]
+["310::: CH-DS \"Peacemaker\" disabler"]
 untranslated_item = "11111"
 
-["311-SGL-6 grenade launcher"]
+["311::: SGL-6 grenade launcher"]
 untranslated_item = "11111"
 
-["312-SGL-6 Grenade Launcher Ammunition"]
+["312::: SGL-6 Grenade Launcher Ammunition"]
 unique_design_name = "11111"
 
-["312-launchable flashbangs"]
+["312::: launchable flashbangs"]
 untranslated_item = "11111"
 
-["313-PEP-6 missile rack"]
+["313::: PEP-6 missile rack"]
 untranslated_item = "11111"
 
-["314-PEP-6 Missile Rack Ammunition"]
+["314::: PEP-6 Missile Rack Ammunition"]
 unique_design_name = "11111"
 
-["314-precision explosive missiles"]
+["314::: precision explosive missiles"]
 untranslated_item = "11111"
 
-["315-SOB-3 Clusterbang Launcher"]
+["315::: SOB-3 Clusterbang Launcher"]
 unique_design_name = "11111"
 
-["315-SOB-3 grenade launcher"]
+["315::: SOB-3 grenade launcher"]
 untranslated_item = "11111"
 
-["316-SOB-3 Clusterbang Launcher Ammunition"]
+["316::: SOB-3 Clusterbang Launcher Ammunition"]
 unique_design_name = "11111"
 
-["316-launchable flashbang clusters"]
+["316::: launchable flashbang clusters"]
 untranslated_item = "11111"
 
-["317-Localized Wormhole Generator"]
+["317::: Localized Wormhole Generator"]
 unique_design_name = "11111"
 
-["317-mounted wormhole generator"]
+["317::: mounted wormhole generator"]
 untranslated_item = "11111"
 
-["318-Teleporter Module"]
+["318::: Teleporter Module"]
 unique_design_name = "11111"
 
-["318-mounted teleporter"]
+["318::: mounted teleporter"]
 untranslated_item = "11111"
 
-["319-RCD Module"]
+["319::: RCD Module"]
 unique_design_name = "11111"
 
-["319-mounted RCD"]
+["319::: mounted RCD"]
 untranslated_item = "11111"
 
-["32-'Peacekeeper' Core AI Module"]
+["31::: 'Live And Let Live' Core AI Module"]
 untranslated_item = "11111"
 
-["32-Peacekeeper Module"]
+["31::: Liveandletlive Module"]
 unique_design_name = "11111"
 
-["320-RCS thruster package"]
+["320::: RCS thruster package"]
 untranslated_item = "11111"
 
-["321-Gravitational Catapult Module"]
+["321::: Gravitational Catapult Module"]
 unique_design_name = "11111"
 
-["321-mounted gravitational catapult"]
+["321::: mounted gravitational catapult"]
 untranslated_item = "11111"
 
-["322-Repair Droid Module"]
+["322::: Repair Droid Module"]
 unique_design_name = "11111"
 
-["322-exosuit repair droid"]
+["322::: exosuit repair droid"]
 untranslated_item = "11111"
 
-["323-Impact Cushion Plates"]
+["323::: Impact Cushion Plates"]
 untranslated_item = "11111"
 
-["323-Reactive Armor Booster Module"]
+["323::: Reactive Armor Booster Module"]
 unique_design_name = "11111"
 
-["324-Projectile Shielding"]
+["324::: Projectile Shielding"]
 untranslated_item = "11111"
 
-["324-Reflective Armor Booster Module"]
+["324::: Reflective Armor Booster Module"]
 unique_design_name = "11111"
 
-["325-Diamond Mining Drill"]
+["325::: Diamond Mining Drill"]
 unique_design_name = "11111"
 
-["325-diamond-tipped exosuit drill"]
+["325::: diamond-tipped exosuit drill"]
 untranslated_item = "11111"
 
-["326-217-D Heavy Plasma Cutter"]
+["326::: 217-D Heavy Plasma Cutter"]
 untranslated_item = "11111"
 
-["327-Exosuit Proto-kinetic Accelerator"]
+["327::: Exosuit Proto-kinetic Accelerator"]
 untranslated_item = "11111"
 
-["328-Ultra AC 2"]
+["328::: Ultra AC 2"]
 untranslated_item = "11111"
 
-["328-Ultra AC 2 LMG"]
+["328::: Ultra AC 2 LMG"]
 unique_design_name = "11111"
 
-["329-Ultra AC 2 Ammunition"]
+["329::: Ultra AC 2 Ammunition"]
 unique_design_name = "11111"
 
-["329-machine gun ammo box"]
+["329::: machine gun ammo box"]
 untranslated_item = "11111"
 
-["33-'Reportertron' Core AI Module"]
+["32::: 'Peacekeeper' Core AI Module"]
 untranslated_item = "11111"
 
-["33-Reporter Module"]
+["32::: Peacekeeper Module"]
 unique_design_name = "11111"
 
-["330-mounted sleeper"]
+["330::: mounted sleeper"]
 untranslated_item = "11111"
 
-["331-Exosuit Medical (Syringe Gun)"]
+["331::: Exosuit Medical (Syringe Gun)"]
 unique_design_name = "11111"
 
-["331-exosuit syringe gun"]
+["331::: exosuit syringe gun"]
 untranslated_item = "11111"
 
-["332-Exosuit Medical (Medical Beamgun)"]
+["332::: Exosuit Medical (Medical Beamgun)"]
 unique_design_name = "11111"
 
-["332-exosuit medical beamgun"]
+["332::: exosuit medical beamgun"]
 untranslated_item = "11111"
 
-["333-cyborg endoskeleton"]
+["333::: cyborg endoskeleton"]
 untranslated_item = "11111"
 
-["334-cyborg torso"]
+["334::: cyborg torso"]
 untranslated_item = "11111"
 
-["335-cyborg head"]
+["335::: cyborg head"]
 untranslated_item = "11111"
 
-["336-cyborg left arm"]
+["336::: cyborg left arm"]
 untranslated_item = "11111"
 
-["337-cyborg right arm"]
+["337::: cyborg right arm"]
 untranslated_item = "11111"
 
-["338-cyborg left leg"]
+["338::: cyborg left leg"]
 untranslated_item = "11111"
 
-["339-cyborg right leg"]
+["339::: cyborg right leg"]
 untranslated_item = "11111"
 
-["34-'H.O.G.A.N.' Core AI Module"]
+["33::: 'Reportertron' Core AI Module"]
 untranslated_item = "11111"
 
-["34-H.O.G.A.N. Module"]
+["33::: Reporter Module"]
 unique_design_name = "11111"
 
-["340-Advanced Left Arm"]
+["340::: Advanced Left Arm"]
 unique_design_name = "11111"
 
-["340-advanced robotic left arm"]
+["340::: advanced robotic left arm"]
 untranslated_item = "11111"
 
-["341-Advanced Right Arm"]
+["341::: Advanced Right Arm"]
 unique_design_name = "11111"
 
-["341-advanced robotic right arm"]
+["341::: advanced robotic right arm"]
 untranslated_item = "11111"
 
-["342-Advanced Left Leg"]
+["342::: Advanced Left Leg"]
 unique_design_name = "11111"
 
-["342-advanced robotic left leg"]
+["342::: advanced robotic left leg"]
 untranslated_item = "11111"
 
-["343-Advanced Right Leg"]
+["343::: Advanced Right Leg"]
 unique_design_name = "11111"
 
-["343-heavy robotic right leg"]
+["343::: heavy robotic right leg"]
 untranslated_item = "11111"
 
-["344-Exosuit Chassis (APLU \"Ripley\")"]
+["344::: Exosuit Chassis (APLU \"Ripley\")"]
 unique_design_name = "11111"
 
-["344-Ripley chassis"]
+["344::: Ripley chassis"]
 untranslated_item = "11111"
 
-["345-Exosuit Torso (APLU \"Ripley\")"]
+["345::: Exosuit Torso (APLU \"Ripley\")"]
 unique_design_name = "11111"
 
-["345-Ripley torso"]
+["345::: Ripley torso"]
 untranslated_item = "11111"
 
-["346-Exosuit Left Arm (APLU \"Ripley\")"]
+["346::: Exosuit Left Arm (APLU \"Ripley\")"]
 unique_design_name = "11111"
 
-["346-Ripley left arm"]
+["346::: Ripley left arm"]
 untranslated_item = "11111"
 
-["347-Exosuit Right Arm (APLU \"Ripley\")"]
+["347::: Exosuit Right Arm (APLU \"Ripley\")"]
 unique_design_name = "11111"
 
-["347-Ripley right arm"]
+["347::: Ripley right arm"]
 untranslated_item = "11111"
 
-["348-Exosuit Left Leg (APLU \"Ripley\")"]
+["348::: Exosuit Left Leg (APLU \"Ripley\")"]
 unique_design_name = "11111"
 
-["348-Ripley left leg"]
+["348::: Ripley left leg"]
 untranslated_item = "11111"
 
-["349-Exosuit Right Leg (APLU \"Ripley\")"]
+["349::: Exosuit Right Leg (APLU \"Ripley\")"]
 unique_design_name = "11111"
 
-["349-Ripley right leg"]
+["349::: Ripley right leg"]
 untranslated_item = "11111"
 
-["35-'Mother Drone' Core AI Module"]
+["34::: 'H.O.G.A.N.' Core AI Module"]
 untranslated_item = "11111"
 
-["35-Drone Module"]
+["34::: H.O.G.A.N. Module"]
 unique_design_name = "11111"
 
-["350-Exosuit Chassis (\"Odysseus\")"]
+["350::: Exosuit Chassis (\"Odysseus\")"]
 unique_design_name = "11111"
 
-["350-Odysseus chassis"]
+["350::: Odysseus chassis"]
 untranslated_item = "11111"
 
-["351-Exosuit Torso (\"Odysseus\")"]
+["351::: Exosuit Torso (\"Odysseus\")"]
 unique_design_name = "11111"
 
-["351-Odysseus torso"]
+["351::: Odysseus torso"]
 untranslated_item = "11111"
 
-["352-Exosuit Head (\"Odysseus\")"]
+["352::: Exosuit Head (\"Odysseus\")"]
 unique_design_name = "11111"
 
-["352-Odysseus head"]
+["352::: Odysseus head"]
 untranslated_item = "11111"
 
-["353-Exosuit Left Arm (\"Odysseus\")"]
+["353::: Exosuit Left Arm (\"Odysseus\")"]
 unique_design_name = "11111"
 
-["353-Odysseus left arm"]
+["353::: Odysseus left arm"]
 untranslated_item = "11111"
 
-["354-Exosuit Right Arm (\"Odysseus\")"]
+["354::: Exosuit Right Arm (\"Odysseus\")"]
 unique_design_name = "11111"
 
-["354-Odysseus right arm"]
+["354::: Odysseus right arm"]
 untranslated_item = "11111"
 
-["355-Exosuit Left Leg (\"Odysseus\")"]
+["355::: Exosuit Left Leg (\"Odysseus\")"]
 unique_design_name = "11111"
 
-["355-Odysseus left leg"]
+["355::: Odysseus left leg"]
 untranslated_item = "11111"
 
-["356-Exosuit Right Leg (\"Odysseus\")"]
+["356::: Exosuit Right Leg (\"Odysseus\")"]
 unique_design_name = "11111"
 
-["356-Odysseus right leg"]
+["356::: Odysseus right leg"]
 untranslated_item = "11111"
 
-["357-Exosuit Chassis (\"Gygax\")"]
+["357::: Exosuit Chassis (\"Gygax\")"]
 unique_design_name = "11111"
 
-["357-Gygax chassis"]
+["357::: Gygax chassis"]
 untranslated_item = "11111"
 
-["358-Exosuit Torso (\"Gygax\")"]
+["358::: Exosuit Torso (\"Gygax\")"]
 unique_design_name = "11111"
 
-["358-Gygax torso"]
+["358::: Gygax torso"]
 untranslated_item = "11111"
 
-["359-Exosuit Head (\"Gygax\")"]
+["359::: Exosuit Head (\"Gygax\")"]
 unique_design_name = "11111"
 
-["359-Gygax head"]
+["359::: Gygax head"]
 untranslated_item = "11111"
 
-["36-'Antimov' Core AI Module"]
+["35::: 'Mother Drone' Core AI Module"]
 untranslated_item = "11111"
 
-["36-Antimov Module"]
+["35::: Drone Module"]
 unique_design_name = "11111"
 
-["360-Exosuit Left Arm (\"Gygax\")"]
+["360::: Exosuit Left Arm (\"Gygax\")"]
 unique_design_name = "11111"
 
-["360-Gygax left arm"]
+["360::: Gygax left arm"]
 untranslated_item = "11111"
 
-["361-Exosuit Right Arm (\"Gygax\")"]
+["361::: Exosuit Right Arm (\"Gygax\")"]
 unique_design_name = "11111"
 
-["361-Gygax right arm"]
+["361::: Gygax right arm"]
 untranslated_item = "11111"
 
-["362-Exosuit Left Leg (\"Gygax\")"]
+["362::: Exosuit Left Leg (\"Gygax\")"]
 unique_design_name = "11111"
 
-["362-Gygax left leg"]
+["362::: Gygax left leg"]
 untranslated_item = "11111"
 
-["363-Exosuit Right Leg (\"Gygax\")"]
+["363::: Exosuit Right Leg (\"Gygax\")"]
 unique_design_name = "11111"
 
-["363-Gygax right leg"]
+["363::: Gygax right leg"]
 untranslated_item = "11111"
 
-["364-Exosuit Armor (\"Gygax\")"]
+["364::: Exosuit Armor (\"Gygax\")"]
 unique_design_name = "11111"
 
-["364-Gygax armor plates"]
+["364::: Gygax armor plates"]
 untranslated_item = "11111"
 
-["365-Durand chassis"]
+["365::: Durand chassis"]
 untranslated_item = "11111"
 
-["365-Exosuit Chassis (\"Durand\")"]
+["365::: Exosuit Chassis (\"Durand\")"]
 unique_design_name = "11111"
 
-["366-Durand torso"]
+["366::: Durand torso"]
 untranslated_item = "11111"
 
-["366-Exosuit Torso (\"Durand\")"]
+["366::: Exosuit Torso (\"Durand\")"]
 unique_design_name = "11111"
 
-["367-Durand head"]
+["367::: Durand head"]
 untranslated_item = "11111"
 
-["367-Exosuit Head (\"Durand\")"]
+["367::: Exosuit Head (\"Durand\")"]
 unique_design_name = "11111"
 
-["368-Durand left arm"]
+["368::: Durand left arm"]
 untranslated_item = "11111"
 
-["368-Exosuit Left Arm (\"Durand\")"]
+["368::: Exosuit Left Arm (\"Durand\")"]
 unique_design_name = "11111"
 
-["369-Durand right arm"]
+["369::: Durand right arm"]
 untranslated_item = "11111"
 
-["369-Exosuit Right Arm (\"Durand\")"]
+["369::: Exosuit Right Arm (\"Durand\")"]
 unique_design_name = "11111"
 
-["37-'Guardian of Balance' Core AI Module"]
+["36::: 'Antimov' Core AI Module"]
 untranslated_item = "11111"
 
-["37-Balance Module"]
+["36::: Antimov Module"]
 unique_design_name = "11111"
 
-["370-Durand left leg"]
+["370::: Durand left leg"]
 untranslated_item = "11111"
 
-["370-Exosuit Left Leg (\"Durand\")"]
+["370::: Exosuit Left Leg (\"Durand\")"]
 unique_design_name = "11111"
 
-["371-Durand right leg"]
+["371::: Durand right leg"]
 untranslated_item = "11111"
 
-["371-Exosuit Right Leg (\"Durand\")"]
+["371::: Exosuit Right Leg (\"Durand\")"]
 unique_design_name = "11111"
 
-["372-Durand armor plates"]
+["372::: Durand armor plates"]
 untranslated_item = "11111"
 
-["372-Exosuit Armor (\"Durand\")"]
+["372::: Exosuit Armor (\"Durand\")"]
 unique_design_name = "11111"
 
-["373-Exosuit Chassis (\"H.O.N.K\")"]
+["373::: Exosuit Chassis (\"H.O.N.K\")"]
 unique_design_name = "11111"
 
-["373-H.O.N.K chassis"]
+["373::: H.O.N.K chassis"]
 untranslated_item = "11111"
 
-["374-Exosuit Torso (\"H.O.N.K\")"]
+["374::: Exosuit Torso (\"H.O.N.K\")"]
 unique_design_name = "11111"
 
-["374-H.O.N.K torso"]
+["374::: H.O.N.K torso"]
 untranslated_item = "11111"
 
-["375-Exosuit Head (\"H.O.N.K\")"]
+["375::: Exosuit Head (\"H.O.N.K\")"]
 unique_design_name = "11111"
 
-["375-H.O.N.K head"]
+["375::: H.O.N.K head"]
 untranslated_item = "11111"
 
-["376-Exosuit Left Arm (\"H.O.N.K\")"]
+["376::: Exosuit Left Arm (\"H.O.N.K\")"]
 unique_design_name = "11111"
 
-["376-H.O.N.K left arm"]
+["376::: H.O.N.K left arm"]
 untranslated_item = "11111"
 
-["377-Exosuit Right Arm (\"H.O.N.K\")"]
+["377::: Exosuit Right Arm (\"H.O.N.K\")"]
 unique_design_name = "11111"
 
-["377-H.O.N.K right arm"]
+["377::: H.O.N.K right arm"]
 untranslated_item = "11111"
 
-["378-Exosuit Left Leg (\"H.O.N.K\")"]
+["378::: Exosuit Left Leg (\"H.O.N.K\")"]
 unique_design_name = "11111"
 
-["378-H.O.N.K left leg"]
+["378::: H.O.N.K left leg"]
 untranslated_item = "11111"
 
-["379-Exosuit Right Leg (\"H.O.N.K\")"]
+["379::: Exosuit Right Leg (\"H.O.N.K\")"]
 unique_design_name = "11111"
 
-["379-H.O.N.K right leg"]
+["379::: H.O.N.K right leg"]
 untranslated_item = "11111"
 
-["38-'Thermodynamic' Core AI Module"]
+["37::: 'Guardian of Balance' Core AI Module"]
 untranslated_item = "11111"
 
-["38-Thermodynamic Module"]
+["37::: Balance Module"]
 unique_design_name = "11111"
 
-["380-Exosuit Chassis (\"Phazon\")"]
+["380::: Exosuit Chassis (\"Phazon\")"]
 unique_design_name = "11111"
 
-["380-Phazon chassis"]
+["380::: Phazon chassis"]
 untranslated_item = "11111"
 
-["381-Exosuit Torso (\"Phazon\")"]
+["381::: Exosuit Torso (\"Phazon\")"]
 unique_design_name = "11111"
 
-["381-Phazon torso"]
+["381::: Phazon torso"]
 untranslated_item = "11111"
 
-["382-Exosuit Head (\"Phazon\")"]
+["382::: Exosuit Head (\"Phazon\")"]
 unique_design_name = "11111"
 
-["382-Phazon head"]
+["382::: Phazon head"]
 untranslated_item = "11111"
 
-["383-Exosuit Left Arm (\"Phazon\")"]
+["383::: Exosuit Left Arm (\"Phazon\")"]
 unique_design_name = "11111"
 
-["383-Phazon left arm"]
+["383::: Phazon left arm"]
 untranslated_item = "11111"
 
-["384-Exosuit Right Arm (\"Phazon\")"]
+["384::: Exosuit Right Arm (\"Phazon\")"]
 unique_design_name = "11111"
 
-["384-Phazon right arm"]
+["384::: Phazon right arm"]
 untranslated_item = "11111"
 
-["385-Exosuit Left Leg (\"Phazon\")"]
+["385::: Exosuit Left Leg (\"Phazon\")"]
 unique_design_name = "11111"
 
-["385-Phazon left leg"]
+["385::: Phazon left leg"]
 untranslated_item = "11111"
 
-["386-Exosuit Right Leg (\"Phazon\")"]
+["386::: Exosuit Right Leg (\"Phazon\")"]
 unique_design_name = "11111"
 
-["386-Phazon right leg"]
+["386::: Phazon right leg"]
 untranslated_item = "11111"
 
-["387-Exosuit Armor (\"Phazon\")"]
+["387::: Exosuit Armor (\"Phazon\")"]
 unique_design_name = "11111"
 
-["387-Phazon armor"]
+["387::: Phazon armor"]
 untranslated_item = "11111"
 
-["388-Exosuit Chassis (\"Savannah-Ivanov\")"]
+["388::: Exosuit Chassis (\"Savannah-Ivanov\")"]
 unique_design_name = "11111"
 
-["388-Savannah-Ivanov chassis"]
+["388::: Savannah-Ivanov chassis"]
 untranslated_item = "11111"
 
-["389-Exosuit Torso (\"Savannah-Ivanov\")"]
+["389::: Exosuit Torso (\"Savannah-Ivanov\")"]
 unique_design_name = "11111"
 
-["389-Savannah-Ivanov torso"]
+["389::: Savannah-Ivanov torso"]
 untranslated_item = "11111"
 
-["39-Damaged AI Module"]
-unique_design_name = "11111"
-
-["39-damaged Core AI Module"]
+["38::: 'Thermodynamic' Core AI Module"]
 untranslated_item = "11111"
+
+["38::: Thermodynamic Module"]
+unique_design_name = "11111"
 
-["390-Exosuit Head (\"Savannah-Ivanov\")"]
+["390::: Exosuit Head (\"Savannah-Ivanov\")"]
 unique_design_name = "11111"
 
-["390-Savannah-Ivanov head"]
+["390::: Savannah-Ivanov head"]
 untranslated_item = "11111"
 
-["391-Exosuit Left Arm (\"Savannah-Ivanov\")"]
+["391::: Exosuit Left Arm (\"Savannah-Ivanov\")"]
 unique_design_name = "11111"
 
-["391-Savannah-Ivanov left arm"]
+["391::: Savannah-Ivanov left arm"]
 untranslated_item = "11111"
 
-["392-Exosuit Right Arm (\"Savannah-Ivanov\")"]
+["392::: Exosuit Right Arm (\"Savannah-Ivanov\")"]
 unique_design_name = "11111"
 
-["392-Savannah-Ivanov right arm"]
+["392::: Savannah-Ivanov right arm"]
 untranslated_item = "11111"
 
-["393-Exosuit Left Leg (\"Savannah-Ivanov\")"]
+["393::: Exosuit Left Leg (\"Savannah-Ivanov\")"]
 unique_design_name = "11111"
 
-["393-Savannah-Ivanov left leg"]
+["393::: Savannah-Ivanov left leg"]
 untranslated_item = "11111"
 
-["394-Exosuit Right Leg (\"Savannah-Ivanov\")"]
+["394::: Exosuit Right Leg (\"Savannah-Ivanov\")"]
 unique_design_name = "11111"
 
-["394-Savannah-Ivanov right leg"]
+["394::: Savannah-Ivanov right leg"]
 untranslated_item = "11111"
 
-["395-Exosuit Armor (\"Savannah-Ivanov\")"]
+["395::: Exosuit Armor (\"Savannah-Ivanov\")"]
 unique_design_name = "11111"
 
-["395-Savannah-Ivanov armor"]
+["395::: Savannah-Ivanov armor"]
 untranslated_item = "11111"
 
-["396-Exosuit Chassis (\"Justice\")"]
+["396::: Exosuit Chassis (\"Justice\")"]
 unique_design_name = "11111"
 
-["396-Justice chassis"]
+["396::: Justice chassis"]
 untranslated_item = "11111"
 
-["397-Exosuit Torso (\"Justice\")"]
+["397::: Exosuit Torso (\"Justice\")"]
 unique_design_name = "11111"
 
-["397-Justice torso"]
+["397::: Justice torso"]
 untranslated_item = "11111"
 
-["398-Exosuit Left Arm (\"Justice\")"]
+["398::: Exosuit Left Arm (\"Justice\")"]
 unique_design_name = "11111"
 
-["398-Justice left arm"]
+["398::: Justice left arm"]
 untranslated_item = "11111"
 
-["399-Exosuit Right Arm (\"Justice\")"]
+["399::: Exosuit Right Arm (\"Justice\")"]
 unique_design_name = "11111"
 
-["399-Justice right arm"]
+["399::: Justice right arm"]
 untranslated_item = "11111"
 
-["4-AI Core Board"]
+["39::: Damaged AI Module"]
 unique_design_name = "11111"
 
-["4-AI core (AI Core Board)"]
+["39::: damaged Core AI Module"]
 untranslated_item = "11111"
 
-["40-Arcade Battle"]
+["3::: Byteforge"]
 untranslated_item = "11111"
 
-["40-Battle Arcade Machine Board"]
+["3::: Byteforge Board"]
 unique_design_name = "11111"
 
-["400-Exosuit Left Leg (\"Justice\")"]
+["400::: Exosuit Left Leg (\"Justice\")"]
 unique_design_name = "11111"
 
-["400-Justice left leg"]
+["400::: Justice left leg"]
 untranslated_item = "11111"
 
-["401-Exosuit Right Leg (\"Justice\")"]
+["401::: Exosuit Right Leg (\"Justice\")"]
 unique_design_name = "11111"
 
-["401-Justice right leg"]
+["401::: Justice right leg"]
 untranslated_item = "11111"
 
-["402-Exosuit Armor (\"Justice\")"]
+["402::: Exosuit Armor (\"Justice\")"]
 unique_design_name = "11111"
 
-["402-Justice armor"]
+["402::: Justice armor"]
 untranslated_item = "11111"
 
-["403-Clarke chassis"]
+["403::: Clarke chassis"]
 untranslated_item = "11111"
 
-["403-Exosuit Chassis (\"Clarke\")"]
+["403::: Exosuit Chassis (\"Clarke\")"]
 unique_design_name = "11111"
 
-["404-Clarke torso"]
+["404::: Clarke torso"]
 untranslated_item = "11111"
 
-["404-Exosuit Torso (\"Clarke\")"]
+["404::: Exosuit Torso (\"Clarke\")"]
 unique_design_name = "11111"
 
-["405-Clarke head"]
+["405::: Clarke head"]
 untranslated_item = "11111"
 
-["405-Exosuit Head (\"Clarke\")"]
+["405::: Exosuit Head (\"Clarke\")"]
 unique_design_name = "11111"
 
-["406-Clarke left arm"]
+["406::: Clarke left arm"]
 untranslated_item = "11111"
 
-["406-Exosuit Left Arm (\"Clarke\")"]
+["406::: Exosuit Left Arm (\"Clarke\")"]
 unique_design_name = "11111"
 
-["407-Clarke right arm"]
+["407::: Clarke right arm"]
 untranslated_item = "11111"
 
-["407-Exosuit Right Arm (\"Clarke\")"]
+["407::: Exosuit Right Arm (\"Clarke\")"]
 unique_design_name = "11111"
 
-["408-Ripley MK-I to MK-II Conversion Kit"]
+["408::: Ripley MK-I to MK-II Conversion Kit"]
 unique_design_name = "11111"
 
-["408-Ripley MK-II Conversion Kit"]
+["408::: Ripley MK-II Conversion Kit"]
 untranslated_item = "11111"
 
-["409-Paddy Conversion Kit"]
+["409::: Paddy Conversion Kit"]
 untranslated_item = "11111"
 
-["409-Ripley MK-I to Paddy Conversion Kit"]
+["409::: Ripley MK-I to Paddy Conversion Kit"]
 unique_design_name = "11111"
 
-["41-Orion Trail"]
+["40::: Arcade Battle"]
 untranslated_item = "11111"
 
-["41-Orion Trail Arcade Machine Board"]
+["40::: Battle Arcade Machine Board"]
 unique_design_name = "11111"
 
-["410-hydraulic clamp"]
+["410::: hydraulic clamp"]
 untranslated_item = "11111"
 
-["411-hydraulic claw"]
+["411::: hydraulic claw"]
 untranslated_item = "11111"
 
-["412-Mining Drill"]
+["412::: Mining Drill"]
 unique_design_name = "11111"
 
-["412-exosuit drill"]
+["412::: exosuit drill"]
 untranslated_item = "11111"
 
-["413-Mining Scanner"]
+["413::: Mining Scanner"]
 unique_design_name = "11111"
 
-["413-exosuit mining scanner"]
+["413::: exosuit mining scanner"]
 untranslated_item = "11111"
 
-[414-Extinguisher]
+["414::: Extinguisher"]
 unique_design_name = "11111"
 
-["414-exosuit extinguisher"]
+["414::: exosuit extinguisher"]
 untranslated_item = "11111"
 
-["415-Plasma Generator"]
+["415::: Plasma Generator"]
 unique_design_name = "11111"
 
-["415-plasma engine"]
+["415::: plasma engine"]
 untranslated_item = "11111"
 
-["416-mousetrap mortar"]
+["416::: mousetrap mortar"]
 untranslated_item = "11111"
 
-["417-banana mortar"]
+["417::: banana mortar"]
 untranslated_item = "11111"
 
-["418-HoNkER BlAsT 5000"]
+["418::: HoNkER BlAsT 5000"]
 untranslated_item = "11111"
 
-["419-Oingo Boingo Punch-face"]
+["419::: Oingo Boingo Punch-face"]
 untranslated_item = "11111"
-
-["42-Security Camera Board"]
-unique_design_name = "11111"
 
-["42-Security Cameras"]
+["41::: Orion Trail"]
 untranslated_item = "11111"
 
-["420-Mech Radio"]
+["41::: Orion Trail Arcade Machine Board"]
 unique_design_name = "11111"
 
-["420-mounted radio"]
-untranslated_item = "11111"
-
-["421-Mech Air Tank"]
+["420::: Mech Radio"]
 unique_design_name = "11111"
 
-["421-mounted air tank"]
+["420::: mounted radio"]
 untranslated_item = "11111"
 
-["422-Rename Board"]
+["421::: Mech Air Tank"]
 unique_design_name = "11111"
 
-["422-cyborg reclassification board"]
+["421::: mounted air tank"]
 untranslated_item = "11111"
 
-["423-Emergency Reboot Board"]
+["422::: Rename Board"]
 unique_design_name = "11111"
 
-["423-cyborg emergency reboot module"]
+["422::: cyborg reclassification board"]
 untranslated_item = "11111"
 
-["424-Ion Thrusters"]
+["423::: Emergency Reboot Board"]
 unique_design_name = "11111"
 
-["424-ion thruster upgrade"]
+["423::: cyborg emergency reboot module"]
 untranslated_item = "11111"
 
-["425-Rapid Disabler Cooling Module"]
+["424::: Ion Thrusters"]
 unique_design_name = "11111"
 
-["425-cyborg rapid disabler cooling module"]
+["424::: ion thruster upgrade"]
 untranslated_item = "11111"
 
-["426-Diamond Drill"]
+["425::: Rapid Disabler Cooling Module"]
 unique_design_name = "11111"
 
-["426-mining cyborg diamond drill"]
+["425::: cyborg rapid disabler cooling module"]
 untranslated_item = "11111"
 
-["427-Ore Satchel of Holding"]
+["426::: Diamond Drill"]
 unique_design_name = "11111"
 
-["427-mining cyborg satchel of holding"]
+["426::: mining cyborg diamond drill"]
 untranslated_item = "11111"
 
-["428-Lavaproof Tracks"]
+["427::: Ore Satchel of Holding"]
 unique_design_name = "11111"
 
-["428-mining cyborg lavaproof chassis"]
+["427::: mining cyborg satchel of holding"]
 untranslated_item = "11111"
 
-["429-Illegal Modules"]
+["428::: Lavaproof Tracks"]
 unique_design_name = "11111"
 
-["429-illegal equipment module"]
+["428::: mining cyborg lavaproof chassis"]
 untranslated_item = "11111"
+
+["429::: Illegal Modules"]
+unique_design_name = "11111"
 
-["43-Research Monitor"]
+["429::: illegal equipment module"]
 untranslated_item = "11111"
 
-["43-Research Monitor Board"]
+["42::: Security Camera Board"]
 unique_design_name = "11111"
+
+["42::: Security Cameras"]
+untranslated_item = "11111"
 
-["430-Clown Module"]
+["430::: Clown Module"]
 unique_design_name = "11111"
 
-["430-borg model picker (Clown)"]
+["430::: borg model picker (Clown)"]
 untranslated_item = "11111"
 
-["431-self-repair module"]
+["431::: self-repair module"]
 untranslated_item = "11111"
 
-["432-Expanded Hypospray Synthesiser"]
+["432::: Expanded Hypospray Synthesiser"]
 unique_design_name = "11111"
 
-["432-medical cyborg expanded hypospray"]
+["432::: medical cyborg expanded hypospray"]
 untranslated_item = "11111"
 
-["433-Piercing Hypospray"]
+["433::: Piercing Hypospray"]
 unique_design_name = "11111"
 
-["433-cyborg piercing hypospray"]
+["433::: cyborg piercing hypospray"]
 untranslated_item = "11111"
 
-[434-Defibrillator]
+["434::: Defibrillator"]
 unique_design_name = "11111"
 
-["434-medical cyborg defibrillator"]
+["434::: medical cyborg defibrillator"]
 untranslated_item = "11111"
 
-["435-Surgical Processor"]
+["435::: Surgical Processor"]
 unique_design_name = "11111"
 
-["435-medical cyborg surgical processor"]
+["435::: medical cyborg surgical processor"]
 untranslated_item = "11111"
 
-["436-Advanced Surgical Omnitool Upgrade"]
+["436::: Advanced Surgical Omnitool Upgrade"]
 unique_design_name = "11111"
 
-["436-cyborg surgical omni-tool upgrade"]
+["436::: cyborg surgical omni-tool upgrade"]
 untranslated_item = "11111"
 
-["437-Advanced Engineering Omnitool Upgrade"]
+["437::: Advanced Engineering Omnitool Upgrade"]
 unique_design_name = "11111"
 
-["437-cyborg engineering omni-tool upgrade"]
+["437::: cyborg engineering omni-tool upgrade"]
 untranslated_item = "11111"
 
-["438-Trash Bag of Holding"]
+["438::: Trash Bag of Holding"]
 unique_design_name = "11111"
 
-["438-janitor cyborg trash bag of holding"]
+["438::: janitor cyborg trash bag of holding"]
 untranslated_item = "11111"
 
-["439-Advanced Mop"]
+["439::: Advanced Mop"]
 unique_design_name = "11111"
 
-["439-janitor cyborg advanced mop"]
+["439::: janitor cyborg advanced mop"]
 untranslated_item = "11111"
 
-["44-Xenobiology Console"]
+["43::: Research Monitor"]
 untranslated_item = "11111"
 
-["44-Xenobiology Console Board"]
+["43::: Research Monitor Board"]
 unique_design_name = "11111"
 
-["440-Plating Repair Tool"]
+["440::: Plating Repair Tool"]
 unique_design_name = "11111"
 
-["440-janitor cyborg plating repair tool"]
+["440::: janitor cyborg plating repair tool"]
 untranslated_item = "11111"
 
-["441-Integrated Plunger"]
+["441::: Integrated Plunger"]
 unique_design_name = "11111"
 
-["441-janitor cyborg plunging tool"]
+["441::: janitor cyborg plunging tool"]
 untranslated_item = "11111"
 
-["442-High Capacity Light Replacer"]
+["442::: High Capacity Light Replacer"]
 unique_design_name = "11111"
 
-["442-janitor cyborg high capacity replacer"]
+["442::: janitor cyborg high capacity replacer"]
 untranslated_item = "11111"
 
-["443-Rolling Table Dock"]
+["443::: Rolling Table Dock"]
 unique_design_name = "11111"
 
-["443-Service Cyborg Rolling Table Dock"]
+["443::: Service Cyborg Rolling Table Dock"]
 untranslated_item = "11111"
 
-["444-Condiment Synthesizer"]
+["444::: Condiment Synthesizer"]
 unique_design_name = "11111"
 
-["444-Service Cyborg Condiment Synthesiser"]
+["444::: Service Cyborg Condiment Synthesiser"]
 untranslated_item = "11111"
 
-["445-Kitchen Toolset"]
+["445::: Kitchen Toolset"]
 unique_design_name = "11111"
 
-["445-Service Cyborg Kitchen Toolset"]
+["445::: Service Cyborg Kitchen Toolset"]
 untranslated_item = "11111"
 
-["446-Botany Tools"]
+["446::: Botany Tools"]
 unique_design_name = "11111"
 
-["446-Service Cyborg Botany Tools"]
+["446::: Service Cyborg Botany Tools"]
 untranslated_item = "11111"
 
-["447-Drink Apparatus"]
+["447::: Drink Apparatus"]
 unique_design_name = "11111"
 
-["447-glass storage apparatus"]
+["447::: glass storage apparatus"]
 untranslated_item = "11111"
 
-["448-Service Apparatus"]
+["448::: Service Apparatus"]
 unique_design_name = "11111"
 
-["448-Service Cyborg Service Apparatus"]
+["448::: Service Cyborg Service Apparatus"]
 untranslated_item = "11111"
 
-["449-Service Cookbook"]
+["449::: Service Cookbook"]
 unique_design_name = "11111"
 
-["449-Service Cyborg Cookbook"]
+["449::: Service Cyborg Cookbook"]
 untranslated_item = "11111"
 
-["45-AI Upload"]
+["44::: Xenobiology Console"]
 untranslated_item = "11111"
 
-["45-AI Upload Board"]
+["44::: Xenobiology Console Board"]
 unique_design_name = "11111"
 
-["450-Expand Module"]
+["450::: Expand Module"]
 unique_design_name = "11111"
 
-["450-borg expander"]
+["450::: borg expander"]
 untranslated_item = "11111"
 
-["451-B.O.R.I.S. AI-Cyborg Remote Control"]
+["451::: B.O.R.I.S. AI-Cyborg Remote Control"]
 unique_design_name = "11111"
 
-["451-B.O.R.I.S. module"]
+["451::: B.O.R.I.S. module"]
 untranslated_item = "11111"
 
-["452-Rapid Part Exchange Device"]
+["452::: Rapid Part Exchange Device"]
 unique_design_name = "11111"
 
-["452-engineering cyborg RPED"]
+["452::: engineering cyborg RPED"]
 untranslated_item = "11111"
 
-["453-Cyborg inducer"]
+["453::: Cyborg inducer"]
 unique_design_name = "11111"
 
-["453-engineering integrated power inducer"]
+["453::: engineering integrated power inducer"]
 untranslated_item = "11111"
 
-["454-Circuit Manipulator"]
+["454::: Circuit Manipulator"]
 unique_design_name = "11111"
 
-["454-circuit manipulation apparatus"]
+["454::: circuit manipulation apparatus"]
 untranslated_item = "11111"
 
-["455-Secondary Beaker Storage"]
+["455::: Secondary Beaker Storage"]
 unique_design_name = "11111"
 
-["455-beaker storage apparatus"]
+["455::: beaker storage apparatus"]
 untranslated_item = "11111"
 
-["456-Crew Pinpointer"]
+["456::: Crew Pinpointer"]
 design_from_result = "целеуказатель на экипаж медицинского киборга"
 
-["457-experimental push broom"]
+["457::: experimental push broom"]
 untranslated_item = "11111"
 
-["458-Man-Machine Interface"]
+["458::: Man-Machine Interface"]
 untranslated_item = "11111"
 
-["459-Man-Machine Interface"]
+["459::: Man-Machine Interface"]
 untranslated_item = "11111"
 
-["46-Cyborg Upload"]
+["45::: AI Upload"]
 untranslated_item = "11111"
 
-["46-Cyborg Upload Board"]
+["45::: AI Upload Board"]
 unique_design_name = "11111"
 
-["460-positronic brain"]
+["460::: positronic brain"]
 untranslated_item = "11111"
 
-["461-exosuit tracking beacon"]
+["461::: exosuit tracking beacon"]
 untranslated_item = "11111"
 
-["462-AI Control Beacon"]
+["462::: AI Control Beacon"]
 unique_design_name = "11111"
 
-["462-exosuit AI control beacon"]
+["462::: exosuit AI control beacon"]
 untranslated_item = "11111"
 
-["463-Exosuit External Camera Kit"]
+["463::: Exosuit External Camera Kit"]
 unique_design_name = "11111"
 
-["463-exosuit-mounted camera"]
+["463::: exosuit-mounted camera"]
 untranslated_item = "11111"
 
-["464-MOD shell"]
+["464::: MOD shell"]
 untranslated_item = "11111"
 
-["465-MOD helmet"]
+["465::: MOD helmet"]
 untranslated_item = "11111"
 
-["466-MOD chestplate"]
+["466::: MOD chestplate"]
 untranslated_item = "11111"
 
-["467-MOD gauntlets"]
+["467::: MOD gauntlets"]
 untranslated_item = "11111"
 
-["468-MOD boots"]
+["468::: MOD boots"]
 untranslated_item = "11111"
 
-["469-MOD external plating"]
+["469::: MOD external plating"]
 untranslated_item = "11111"
 
-["47-Medical Records Board"]
-unique_design_name = "11111"
-
-["47-Medical Records Console"]
+["46::: Cyborg Upload"]
 untranslated_item = "11111"
+
+["46::: Cyborg Upload Board"]
+unique_design_name = "11111"
 
-["470-MOD Civilian Plating"]
+["470::: MOD Civilian Plating"]
 unique_design_name = "11111"
 
-["470-MOD external plating"]
+["470::: MOD external plating"]
 untranslated_item = "11111"
 
-["471-MOD Engineering Plating"]
+["471::: MOD Engineering Plating"]
 unique_design_name = "11111"
 
-["471-MOD external plating"]
+["471::: MOD external plating"]
 untranslated_item = "11111"
 
-["472-MOD Atmospheric Plating"]
+["472::: MOD Atmospheric Plating"]
 unique_design_name = "11111"
 
-["472-MOD external plating"]
+["472::: MOD external plating"]
 untranslated_item = "11111"
 
-["473-MOD Medical Plating"]
+["473::: MOD Medical Plating"]
 unique_design_name = "11111"
 
-["473-MOD external plating"]
+["473::: MOD external plating"]
 untranslated_item = "11111"
 
-["474-MOD Security Plating"]
+["474::: MOD Security Plating"]
 unique_design_name = "11111"
 
-["474-MOD external plating"]
+["474::: MOD external plating"]
 untranslated_item = "11111"
 
-["475-MOD Cosmohonk Plating"]
+["475::: MOD Cosmohonk Plating"]
 unique_design_name = "11111"
 
-["475-MOD external plating"]
+["475::: MOD external plating"]
 untranslated_item = "11111"
 
-["476-MOD paint kit"]
+["476::: MOD paint kit"]
 untranslated_item = "11111"
 
-["477-MODlink scryer"]
+["477::: MODlink scryer"]
 untranslated_item = "11111"
 
-["478-MOD storage module"]
+["478::: MOD storage module"]
 untranslated_item = "11111"
 
-["478-Storage Module"]
+["478::: Storage Module"]
 unique_design_name = "11111"
 
-["479-Expanded Storage Module"]
+["479::: Expanded Storage Module"]
 unique_design_name = "11111"
-
-["479-MOD expanded storage module"]
-untranslated_item = "11111"
 
-["48-Operating Computer"]
+["479::: MOD expanded storage module"]
 untranslated_item = "11111"
 
-["48-Operating Computer Board"]
+["47::: Medical Records Board"]
 unique_design_name = "11111"
+
+["47::: Medical Records Console"]
+untranslated_item = "11111"
 
-["480-MOD medical visor module"]
+["480::: MOD medical visor module"]
 untranslated_item = "11111"
 
-["480-Medical Visor Module"]
+["480::: Medical Visor Module"]
 unique_design_name = "11111"
 
-["481-Diagnostic Visor Module"]
+["481::: Diagnostic Visor Module"]
 unique_design_name = "11111"
 
-["481-MOD diagnostic visor module"]
+["481::: MOD diagnostic visor module"]
 untranslated_item = "11111"
 
-["482-MOD security visor module"]
+["482::: MOD security visor module"]
 untranslated_item = "11111"
 
-["482-Security Visor Module"]
+["482::: Security Visor Module"]
 unique_design_name = "11111"
 
-["483-MOD meson visor module"]
+["483::: MOD meson visor module"]
 untranslated_item = "11111"
 
-["483-Meson Visor Module"]
+["483::: Meson Visor Module"]
 unique_design_name = "11111"
 
-["484-MOD welding protection module"]
+["484::: MOD welding protection module"]
 untranslated_item = "11111"
 
-["484-Welding Protection Module"]
+["484::: Welding Protection Module"]
 unique_design_name = "11111"
 
-["485-MOD safety-first head protection module"]
+["485::: MOD safety-first head protection module"]
 untranslated_item = "11111"
 
-["485-Safety-First Head Protection Module"]
+["485::: Safety-First Head Protection Module"]
 unique_design_name = "11111"
 
-["486-MOD t-ray scan module"]
+["486::: MOD t-ray scan module"]
 untranslated_item = "11111"
 
-["486-T-Ray Scanner Module"]
+["486::: T-Ray Scanner Module"]
 unique_design_name = "11111"
 
-["487-Health Analyzer Module"]
+["487::: Health Analyzer Module"]
 unique_design_name = "11111"
 
-["487-MOD health analyzer module"]
+["487::: MOD health analyzer module"]
 untranslated_item = "11111"
 
-["488-Cloak Module"]
+["488::: Cloak Module"]
 unique_design_name = "11111"
 
-["488-MOD prototype cloaking module"]
+["488::: MOD prototype cloaking module"]
 untranslated_item = "11111"
 
-["489-Ion Jetpack Module"]
+["489::: Ion Jetpack Module"]
 unique_design_name = "11111"
 
-["489-MOD ion jetpack module"]
+["489::: MOD ion jetpack module"]
 untranslated_item = "11111"
 
-["49-PanD.E.M.I.C. 2200"]
+["48::: Operating Computer"]
 untranslated_item = "11111"
 
-["49-PanD.E.M.I.C. 2200 Board"]
+["48::: Operating Computer Board"]
 unique_design_name = "11111"
 
-["490-MOD magnetic stability module"]
+["490::: MOD magnetic stability module"]
 untranslated_item = "11111"
 
-["490-Magnetic Stabilizator Module"]
+["490::: Magnetic Stabilizator Module"]
 unique_design_name = "11111"
 
-["491-MOD magnetic harness module"]
+["491::: MOD magnetic harness module"]
 untranslated_item = "11111"
 
-["491-Magnetic Harness Module"]
+["491::: Magnetic Harness Module"]
 unique_design_name = "11111"
 
-["492-Emergency Tether Module"]
+["492::: Emergency Tether Module"]
 unique_design_name = "11111"
 
-["492-MOD emergency tether module"]
+["492::: MOD emergency tether module"]
 untranslated_item = "11111"
 
-["493-Eating Apparatus Module"]
+["493::: Eating Apparatus Module"]
 unique_design_name = "11111"
 
-["493-MOD eating apparatus module"]
+["493::: MOD eating apparatus module"]
 untranslated_item = "11111"
 
-["494-MOD radiation protection module"]
+["494::: MOD radiation protection module"]
 untranslated_item = "11111"
 
-["494-Radiation Protection Module"]
+["494::: Radiation Protection Module"]
 unique_design_name = "11111"
 
-["495-EMP Shield Module"]
+["495::: EMP Shield Module"]
 unique_design_name = "11111"
 
-["495-MOD EMP shield module"]
+["495::: MOD EMP shield module"]
 untranslated_item = "11111"
 
-["496-Flashlight Module"]
+["496::: Flashlight Module"]
 unique_design_name = "11111"
 
-["496-MOD flashlight module"]
+["496::: MOD flashlight module"]
 untranslated_item = "11111"
 
-["497-MOD reagent scanner module"]
+["497::: MOD reagent scanner module"]
 untranslated_item = "11111"
 
-["497-Reagent Scanner Module"]
+["497::: Reagent Scanner Module"]
 unique_design_name = "11111"
 
-["498-Internal GPS Module"]
+["498::: Internal GPS Module"]
 unique_design_name = "11111"
 
-["498-MOD internal GPS module"]
+["498::: MOD internal GPS module"]
 untranslated_item = "11111"
 
-["499-Constructor Module"]
+["499::: Constructor Module"]
 unique_design_name = "11111"
 
-["499-MOD constructor module"]
+["499::: MOD constructor module"]
 untranslated_item = "11111"
 
-["5-'Safeguard' AI Module"]
+["49::: PanD.E.M.I.C. 2200"]
 untranslated_item = "11111"
 
-["5-Safeguard Module"]
+["49::: PanD.E.M.I.C. 2200 Board"]
 unique_design_name = "11111"
-
-[50-Communications]
-untranslated_item = "11111"
 
-["50-Communications Board"]
+["4::: AI Core Board"]
 unique_design_name = "11111"
 
-["500-MOD quick carry module"]
+["4::: AI core (AI Core Board)"]
 untranslated_item = "11111"
 
-["500-Quick Carry Module"]
+["500::: MOD quick carry module"]
+untranslated_item = "11111"
+
+["500::: Quick Carry Module"]
 unique_design_name = "11111"
 
-["501-Longfall Module"]
+["501::: Longfall Module"]
 unique_design_name = "11111"
 
-["501-MOD longfall module"]
+["501::: MOD longfall module"]
 untranslated_item = "11111"
 
-["502-MOD thermal regulator module"]
+["502::: MOD thermal regulator module"]
 untranslated_item = "11111"
 
-["502-Thermal Regulator Module"]
+["502::: Thermal Regulator Module"]
 unique_design_name = "11111"
 
-["503-Injector Module"]
+["503::: Injector Module"]
 unique_design_name = "11111"
 
-["503-MOD injector module"]
+["503::: MOD injector module"]
 untranslated_item = "11111"
 
-["504-Bike Horn Module"]
+["504::: Bike Horn Module"]
 unique_design_name = "11111"
 
-["504-MOD bike horn module"]
+["504::: MOD bike horn module"]
 untranslated_item = "11111"
 
-["505-MOD microwave beam module"]
+["505::: MOD microwave beam module"]
 untranslated_item = "11111"
 
-["505-Microwave Beam Module"]
+["505::: Microwave Beam Module"]
 unique_design_name = "11111"
 
-["506-MOD waddle module"]
+["506::: MOD waddle module"]
 untranslated_item = "11111"
 
-["506-Waddle Module"]
+["506::: Waddle Module"]
 unique_design_name = "11111"
 
-["507-Crate Clamp Module"]
+["507::: Crate Clamp Module"]
 unique_design_name = "11111"
 
-["507-MOD hydraulic clamp module"]
+["507::: MOD hydraulic clamp module"]
 untranslated_item = "11111"
 
-["508-Drill Module"]
+["508::: Drill Module"]
 unique_design_name = "11111"
 
-["508-MOD drill module"]
+["508::: MOD drill module"]
 untranslated_item = "11111"
 
-["509-MOD ore bag module"]
+["509::: MOD ore bag module"]
 untranslated_item = "11111"
-
-["509-Ore Bag Module"]
-unique_design_name = "11111"
 
-["51-Bank Machine Board"]
+["509::: Ore Bag Module"]
 unique_design_name = "11111"
 
-["51-Bank Machine Console"]
+["50::: Communications"]
 untranslated_item = "11111"
 
-["510-MOD organizer module"]
+["50::: Communications Board"]
+unique_design_name = "11111"
+
+["510::: MOD organizer module"]
 untranslated_item = "11111"
 
-["510-Organizer Module"]
+["510::: Organizer Module"]
 unique_design_name = "11111"
 
-["511-MOD pathfinder module"]
+["511::: MOD pathfinder module"]
 untranslated_item = "11111"
 
-["511-Pathfinder Module"]
+["511::: Pathfinder Module"]
 unique_design_name = "11111"
 
-["512-DNA Lock Module"]
+["512::: DNA Lock Module"]
 unique_design_name = "11111"
 
-["512-MOD DNA lock module"]
+["512::: MOD DNA lock module"]
 untranslated_item = "11111"
 
-["513-MOD plasma stabilizer module"]
+["513::: MOD plasma stabilizer module"]
 untranslated_item = "11111"
 
-["513-Plasma Stabilizer Module"]
+["513::: Plasma Stabilizer Module"]
 unique_design_name = "11111"
 
-["514-Glove Translator Module"]
+["514::: Glove Translator Module"]
 unique_design_name = "11111"
 
-["514-MOD glove translator module"]
+["514::: MOD glove translator module"]
 untranslated_item = "11111"
 
-["515-MOD resin mister module"]
+["515::: MOD resin mister module"]
 untranslated_item = "11111"
 
-["515-Resin Mister Module"]
+["515::: Resin Mister Module"]
 unique_design_name = "11111"
 
-["516-Holster Module"]
+["516::: Holster Module"]
 unique_design_name = "11111"
 
-["516-MOD holster module"]
+["516::: MOD holster module"]
 untranslated_item = "11111"
 
-["517-Active Sonar Module"]
+["517::: Active Sonar Module"]
 unique_design_name = "11111"
 
-["517-MOD active sonar"]
+["517::: MOD active sonar"]
 untranslated_item = "11111"
 
-["518-MOD projectile dampener module"]
+["518::: MOD projectile dampener module"]
 untranslated_item = "11111"
 
-["518-Projectile Dampener Module"]
+["518::: Projectile Dampener Module"]
 unique_design_name = "11111"
 
-["519-MOD surgical processor module"]
+["519::: MOD surgical processor module"]
 untranslated_item = "11111"
 
-["519-Surgical Processor Module"]
+["519::: Surgical Processor Module"]
 unique_design_name = "11111"
 
-["52-Crew Monitoring Computer Board"]
+["51::: Bank Machine Board"]
 unique_design_name = "11111"
 
-["52-Crew Monitoring Console"]
+["51::: Bank Machine Console"]
 untranslated_item = "11111"
 
-["520-MOD thread ripper module"]
+["520::: MOD thread ripper module"]
 untranslated_item = "11111"
 
-["520-Thread Ripper Module"]
+["520::: Thread Ripper Module"]
 unique_design_name = "11111"
 
-["521-Defibrillator Module"]
+["521::: Defibrillator Module"]
 unique_design_name = "11111"
 
-["521-MOD defibrillator module"]
+["521::: MOD defibrillator module"]
 untranslated_item = "11111"
 
-["522-MOD status readout module"]
+["522::: MOD status readout module"]
 untranslated_item = "11111"
 
-["522-Status Readout Module"]
+["522::: Status Readout Module"]
 unique_design_name = "11111"
 
-["523-MOD patient transport module"]
+["523::: MOD patient transport module"]
 untranslated_item = "11111"
 
-["523-Patient Transport Module"]
+["523::: Patient Transport Module"]
 unique_design_name = "11111"
 
-["524-Criminal Capture Module"]
+["524::: Criminal Capture Module"]
 unique_design_name = "11111"
 
-["524-MOD criminal capture module"]
+["524::: MOD criminal capture module"]
 untranslated_item = "11111"
 
-["525-MOD mirage grenade dispenser module"]
+["525::: MOD mirage grenade dispenser module"]
 untranslated_item = "11111"
 
-["525-Mirage Grenade Dispenser Module"]
+["525::: Mirage Grenade Dispenser Module"]
 unique_design_name = "11111"
 
-["526-Disposal Connector Module"]
+["526::: Disposal Connector Module"]
 unique_design_name = "11111"
 
-["526-MOD disposal selector module"]
+["526::: MOD disposal selector module"]
 untranslated_item = "11111"
 
-["527-Joint Torsion Ratchet Module"]
+["527::: Joint Torsion Ratchet Module"]
 unique_design_name = "11111"
 
-["527-MOD joint torsion ratchet module"]
+["527::: MOD joint torsion ratchet module"]
 untranslated_item = "11111"
 
-["528-MOD recycler module"]
+["528::: MOD recycler module"]
 untranslated_item = "11111"
 
-["528-Recycler Module"]
+["528::: Recycler Module"]
 unique_design_name = "11111"
 
-["529-MOD shooting assistant module"]
+["529::: MOD shooting assistant module"]
 untranslated_item = "11111"
 
-["529-Shooting Assistant Module"]
+["529::: Shooting Assistant Module"]
 unique_design_name = "11111"
-
-["53-Security Records Console"]
-untranslated_item = "11111"
 
-["53-Security Records Console Board"]
+["52::: Crew Monitoring Computer Board"]
 unique_design_name = "11111"
+
+["52::: Crew Monitoring Console"]
+untranslated_item = "11111"
 
-["530-Anti-Gravity Module"]
+["530::: Anti-Gravity Module"]
 unique_design_name = "11111"
 
-["530-MOD anti-gravity module"]
+["530::: MOD anti-gravity module"]
 untranslated_item = "11111"
 
-["531-MOD teleporter module"]
+["531::: MOD teleporter module"]
 untranslated_item = "11111"
 
-["531-Teleporter Module"]
+["531::: Teleporter Module"]
 unique_design_name = "11111"
 
-["532-Kinesis Module"]
+["532::: Kinesis Module"]
 unique_design_name = "11111"
 
-["532-MOD kinesis module"]
+["532::: MOD kinesis module"]
 untranslated_item = "11111"
 
-["533-MOD fishing glove module"]
+["533::: MOD fishing glove module"]
 untranslated_item = "11111"
 
-["534-positronic sphere"]
+["534::: positronic sphere"]
 untranslated_item = "11111"
 
-["535-health analyzer"]
+["535::: health analyzer"]
 untranslated_item = "11111"
 
-["536-autopsy scanner"]
+["536::: autopsy scanner"]
 untranslated_item = "11111"
 
-["537-bluespace beaker"]
+["537::: bluespace beaker"]
 untranslated_item = "11111"
 
-["538-cryostasis beaker"]
+["538::: cryostasis beaker"]
 untranslated_item = "11111"
 
-["539-x-large beaker"]
+["539::: x-large beaker"]
 untranslated_item = "11111"
-
-["54-Atmosphere Alert Board"]
-unique_design_name = "11111"
 
-["54-Atmospheric Alert"]
+["53::: Security Records Console"]
 untranslated_item = "11111"
+
+["53::: Security Records Console Board"]
+unique_design_name = "11111"
 
-["540-metamaterial beaker"]
+["540::: metamaterial beaker"]
 untranslated_item = "11111"
 
-["541-Chemical Analyzer"]
+["541::: Chemical Analyzer"]
 untranslated_item = "11111"
 
-["542-bluespace syringe"]
+["542::: bluespace syringe"]
 untranslated_item = "11111"
 
-["543-DNA data disk"]
+["543::: DNA data disk"]
 untranslated_item = "11111"
 
-["543-Genetic Data Disk"]
+["543::: Genetic Data Disk"]
 unique_design_name = "11111"
 
-["544-piercing syringe"]
+["544::: piercing syringe"]
 untranslated_item = "11111"
 
-["545-bluespace body bag"]
+["545::: bluespace body bag"]
 untranslated_item = "11111"
 
-["546-Plasmaman Jumpsuit Refill"]
+["546::: Plasmaman Jumpsuit Refill"]
 unique_design_name = "11111"
 
-["546-envirosuit extinguisher cartridge"]
+["546::: envirosuit extinguisher cartridge"]
 untranslated_item = "11111"
 
-[547-defibrillator]
+["547::: defibrillator"]
 untranslated_item = "11111"
 
-["548-Defibrillator Wall Mount"]
+["548::: Defibrillator Wall Mount"]
 unique_design_name = "11111"
 
-["548-unhooked defibrillator mount"]
+["548::: unhooked defibrillator mount"]
 untranslated_item = "11111"
 
-["549-PENLITE Defibrillator Wall Mount"]
+["549::: PENLITE Defibrillator Wall Mount"]
 unique_design_name = "11111"
 
-["549-unhooked PENLITE defibrillator mount"]
+["549::: unhooked PENLITE defibrillator mount"]
 untranslated_item = "11111"
 
-["55-Atmospheric Control"]
-untranslated_item = "11111"
-
-["55-Atmospheric Monitor Board"]
+["54::: Atmosphere Alert Board"]
 unique_design_name = "11111"
+
+["54::: Atmospheric Alert"]
+untranslated_item = "11111"
 
-["550-compact defibrillator"]
+["550::: compact defibrillator"]
 untranslated_item = "11111"
 
-["551-Genetic Sequence Analyzer"]
+["551::: Genetic Sequence Analyzer"]
 unique_design_name = "11111"
 
-["551-genetic sequence scanner"]
+["551::: genetic sequence scanner"]
 untranslated_item = "11111"
 
-["552-advanced health analyzer"]
+["552::: advanced health analyzer"]
 untranslated_item = "11111"
 
-["553-medical gel"]
+["553::: medical gel"]
 untranslated_item = "11111"
 
-["554-surgical drapes"]
+["554::: surgical drapes"]
 untranslated_item = "11111"
 
-["555-laser scalpel"]
+["555::: laser scalpel"]
 untranslated_item = "11111"
 
-["556-mechanical pinches"]
+["556::: mechanical pinches"]
 untranslated_item = "11111"
 
-["557-searing tool"]
+["557::: searing tool"]
 untranslated_item = "11111"
 
-["558-medical spray bottle"]
+["558::: medical spray bottle"]
 untranslated_item = "11111"
 
-["559-intravenous medicine bag"]
+["559::: intravenous medicine bag"]
 untranslated_item = "11111"
 
-["56-Robotics Control"]
+["55::: Atmospheric Control"]
 untranslated_item = "11111"
 
-["56-Robotics Control Console Board"]
+["55::: Atmospheric Monitor Board"]
 unique_design_name = "11111"
 
-["560-blood pack"]
+["560::: blood pack"]
 untranslated_item = "11111"
 
-["561-portable chemical mixer"]
+["561::: portable chemical mixer"]
 untranslated_item = "11111"
 
-["562-medical bed"]
+["562::: medical bed"]
 untranslated_item = "11111"
 
-["563-Medical Bed (Emergency)"]
+["563::: Medical Bed (Emergency)"]
 unique_design_name = "11111"
 
-["563-roller bed"]
+["563::: roller bed"]
 untranslated_item = "11111"
 
-[564-penlight]
+["564::: penlight"]
 untranslated_item = "11111"
 
-["565-paramedic penlight"]
+["565::: paramedic penlight"]
 untranslated_item = "11111"
 
-["566-breathing tube implant"]
+["566::: breathing tube implant"]
 untranslated_item = "11111"
 
-["567-Surgical Arm Implant"]
+["567::: Surgical Arm Implant"]
 unique_design_name = "11111"
 
-["567-surgical toolset implant"]
+["567::: surgical toolset implant"]
 untranslated_item = "11111"
 
-["568-Toolset Arm Implant"]
+["568::: Toolset Arm Implant"]
 unique_design_name = "11111"
 
-["568-integrated toolset implant"]
+["568::: integrated toolset implant"]
 untranslated_item = "11111"
 
-["569-medical HUD implant"]
+["569::: medical HUD implant"]
 untranslated_item = "11111"
 
-["57-Slot Machine"]
+["56::: Robotics Control"]
 untranslated_item = "11111"
 
-["57-Slot Machine Board"]
+["56::: Robotics Control Console Board"]
 unique_design_name = "11111"
 
-["570-security HUD implant"]
+["570::: security HUD implant"]
 untranslated_item = "11111"
 
-["571-diagnostic HUD implant"]
+["571::: diagnostic HUD implant"]
 untranslated_item = "11111"
 
-["572-X-ray eyes"]
+["572::: X-ray eyes"]
 untranslated_item = "11111"
 
-["573-Moth X-ray Eyes"]
+["573::: Moth X-ray Eyes"]
 unique_design_name = "11111"
 
-["573-robotic eyes"]
+["573::: robotic eyes"]
 untranslated_item = "11111"
 
-["574-thermal eyes"]
+["574::: thermal eyes"]
 untranslated_item = "11111"
 
-["575-Moth Thermal Eyes"]
+["575::: Moth Thermal Eyes"]
 unique_design_name = "11111"
 
-["575-thermal moth eyes"]
+["575::: thermal moth eyes"]
 untranslated_item = "11111"
 
-["576-anti-drop implant"]
+["576::: anti-drop implant"]
 untranslated_item = "11111"
 
-["577-CNS rebooter implant"]
+["577::: CNS rebooter implant"]
 untranslated_item = "11111"
 
-["578-Herculean gravitronic spinal implant"]
+["578::: Herculean gravitronic spinal implant"]
 untranslated_item = "11111"
 
-["579-CNS skillchip connector implant"]
+["579::: CNS skillchip connector implant"]
 untranslated_item = "11111"
 
-["58-Power Monitor"]
+["57::: Slot Machine"]
 untranslated_item = "11111"
 
-["58-Power Monitor Board"]
+["57::: Slot Machine Board"]
 unique_design_name = "11111"
 
-["580-nutriment pump implant"]
+["580::: nutriment pump implant"]
 untranslated_item = "11111"
 
-["581-nutriment pump implant PLUS"]
+["581::: nutriment pump implant PLUS"]
 untranslated_item = "11111"
 
-["582-reviver implant"]
+["582::: reviver implant"]
 untranslated_item = "11111"
 
-["583-Thrusters Set Implant"]
+["583::: Thrusters Set Implant"]
 unique_design_name = "11111"
 
-["583-implantable thrusters set"]
+["583::: implantable thrusters set"]
 untranslated_item = "11111"
 
-["584-implant case"]
+["584::: implant case"]
 untranslated_item = "11111"
 
-["585-Sad Trombone Implant Case"]
+["585::: Sad Trombone Implant Case"]
 unique_design_name = "11111"
 
-["585-implant case - 'Sad Trombone'"]
+["585::: implant case - 'Sad Trombone'"]
 untranslated_item = "11111"
 
-["586-Chemical Implant Case"]
+["586::: Chemical Implant Case"]
 unique_design_name = "11111"
 
-["586-implant case - 'Remote Chemical'"]
+["586::: implant case - 'Remote Chemical'"]
 untranslated_item = "11111"
 
-["587-Tracking Implant Case"]
+["587::: Tracking Implant Case"]
 unique_design_name = "11111"
 
-["587-implant case - 'Tracking'"]
+["587::: implant case - 'Tracking'"]
 untranslated_item = "11111"
 
-["588-Beacon Implant Case"]
+["588::: Beacon Implant Case"]
 unique_design_name = "11111"
 
-["588-implant case - 'Beacon'"]
+["588::: implant case - 'Beacon'"]
 untranslated_item = "11111"
 
-["589-Bluespace Grounding Implant Case"]
+["589::: Bluespace Grounding Implant Case"]
 unique_design_name = "11111"
 
-["589-implant case - 'Bluespace Grounding'"]
+["589::: implant case - 'Bluespace Grounding'"]
 untranslated_item = "11111"
 
-["59-Solar Control"]
+["58::: Power Monitor"]
 untranslated_item = "11111"
 
-["59-Solar Control Board"]
+["58::: Power Monitor Board"]
 unique_design_name = "11111"
 
-["590-Exile Implant Case"]
+["590::: Exile Implant Case"]
 unique_design_name = "11111"
 
-["590-implant case - 'Exile'"]
+["590::: implant case - 'Exile'"]
 untranslated_item = "11111"
 
-["591-basic cybernetic liver"]
+["591::: basic cybernetic liver"]
 untranslated_item = "11111"
 
-["592-cybernetic liver"]
+["592::: cybernetic liver"]
 untranslated_item = "11111"
 
-["593-upgraded cybernetic liver"]
+["593::: upgraded cybernetic liver"]
 untranslated_item = "11111"
 
-["594-basic cybernetic heart"]
+["594::: basic cybernetic heart"]
 untranslated_item = "11111"
 
-["595-cybernetic heart"]
+["595::: cybernetic heart"]
 untranslated_item = "11111"
 
-["596-upgraded cybernetic heart"]
+["596::: upgraded cybernetic heart"]
 untranslated_item = "11111"
 
-["597-voltaic combat cyberheart"]
+["597::: voltaic combat cyberheart"]
 untranslated_item = "11111"
 
-["598-basic cybernetic lungs"]
+["598::: basic cybernetic lungs"]
 untranslated_item = "11111"
 
-["599-cybernetic lungs"]
+["599::: cybernetic lungs"]
 untranslated_item = "11111"
 
-["6-'OneHuman' AI Module"]
+["59::: Solar Control"]
 untranslated_item = "11111"
 
-["6-OneHuman Module"]
+["59::: Solar Control Board"]
 unique_design_name = "11111"
 
-["60-Prisoner Management Console"]
+["5::: 'Safeguard' AI Module"]
 untranslated_item = "11111"
 
-["60-Prisoner Management Console Board"]
+["5::: Safeguard Module"]
 unique_design_name = "11111"
 
-["600-upgraded cybernetic lungs"]
+["600::: upgraded cybernetic lungs"]
 untranslated_item = "11111"
 
-["601-basic cybernetic stomach"]
+["601::: basic cybernetic stomach"]
 untranslated_item = "11111"
 
-["602-cybernetic stomach"]
+["602::: cybernetic stomach"]
 untranslated_item = "11111"
 
-["603-upgraded cybernetic stomach"]
+["603::: upgraded cybernetic stomach"]
 untranslated_item = "11111"
 
-["604-basic cybernetic ears"]
+["604::: basic cybernetic ears"]
 untranslated_item = "11111"
 
-["605-cybernetic ears"]
+["605::: cybernetic ears"]
 untranslated_item = "11111"
 
-["606-whisper-sensitive cybernetic ears"]
+["606::: whisper-sensitive cybernetic ears"]
 untranslated_item = "11111"
 
-["607-wall-penetrating cybernetic ears"]
+["607::: wall-penetrating cybernetic ears"]
 untranslated_item = "11111"
 
-["608-Basic Cybernetic Eyes"]
+["608::: Basic Cybernetic Eyes"]
 unique_design_name = "11111"
 
-["608-basic robotic eyes"]
+["608::: basic robotic eyes"]
 untranslated_item = "11111"
 
-["609-Basic Cybernetic Moth Eyes"]
+["609::: Basic Cybernetic Moth Eyes"]
 unique_design_name = "11111"
 
-["609-basic robotic moth eyes"]
+["609::: basic robotic moth eyes"]
 untranslated_item = "11111"
 
-["61-Exosuit Control Console"]
+["60::: Prisoner Management Console"]
 untranslated_item = "11111"
 
-["61-Exosuit Control Console Board"]
+["60::: Prisoner Management Console Board"]
 unique_design_name = "11111"
 
-["610-Cybernetic Eyes"]
+["610::: Cybernetic Eyes"]
 unique_design_name = "11111"
 
-["610-robotic eyes"]
+["610::: robotic eyes"]
 untranslated_item = "11111"
 
-["611-Cybernetic Moth Eyes"]
+["611::: Cybernetic Moth Eyes"]
 unique_design_name = "11111"
 
-["611-robotic moth eyes"]
+["611::: robotic moth eyes"]
 untranslated_item = "11111"
 
-["612-Welding Shield Eyes"]
+["612::: Welding Shield Eyes"]
 unique_design_name = "11111"
 
-["612-shielded robotic eyes"]
+["612::: shielded robotic eyes"]
 untranslated_item = "11111"
 
-["613-Welding Shield Moth Eyes"]
+["613::: Welding Shield Moth Eyes"]
 unique_design_name = "11111"
 
-["613-shielded robotic moth eyes"]
+["613::: shielded robotic moth eyes"]
 untranslated_item = "11111"
 
-["614-High Luminosity Eyes"]
+["614::: High Luminosity Eyes"]
 untranslated_item = "11111"
 
-["614-Luminescent Eyes"]
+["614::: Luminescent Eyes"]
 unique_design_name = "11111"
 
-["615-High Luminosity Moth Eyes"]
+["615::: High Luminosity Moth Eyes"]
 untranslated_item = "11111"
 
-["615-Luminescent Moth Eyes"]
+["615::: Luminescent Moth Eyes"]
 unique_design_name = "11111"
 
-["616-Express Supply Console"]
+["616::: Express Supply Console"]
 untranslated_item = "11111"
 
-["616-Express Supply Console Board"]
+["616::: Express Supply Console Board"]
 unique_design_name = "11111"
 
-["617-Bluespace Drop Pod Upgrade"]
+["617::: Bluespace Drop Pod Upgrade"]
 untranslated_item = "11111"
 
-["617-Express Supply Drop Pod Upgrade Disk"]
+["617::: Express Supply Drop Pod Upgrade Disk"]
 unique_design_name = "11111"
 
-[618-pickaxe]
+["618::: pickaxe"]
 untranslated_item = "11111"
 
-["619-mining drill"]
+["619::: mining drill"]
 untranslated_item = "11111"
 
-["62-Mech Bay Power Control Console"]
+["61::: Exosuit Control Console"]
 untranslated_item = "11111"
 
-["62-Mech Bay Power Control Console Board"]
+["61::: Exosuit Control Console Board"]
 unique_design_name = "11111"
 
-["620-diamond-tipped mining drill"]
+["620::: diamond-tipped mining drill"]
 untranslated_item = "11111"
 
-["621-sonic jackhammer"]
+["621::: sonic jackhammer"]
 untranslated_item = "11111"
 
-["622-upgraded resonator"]
+["622::: upgraded resonator"]
 untranslated_item = "11111"
 
-["623-Kinetic Accelerator Trigger Guard Mod"]
+["623::: Kinetic Accelerator Trigger Guard Mod"]
 unique_design_name = "11111"
 
-["623-modified trigger guard"]
+["623::: modified trigger guard"]
 untranslated_item = "11111"
 
-["624-Kinetic Accelerator Damage Mod"]
+["624::: Kinetic Accelerator Damage Mod"]
 unique_design_name = "11111"
 
-["624-damage increase"]
+["624::: damage increase"]
 untranslated_item = "11111"
 
-["625-Kinetic Accelerator Damage Mod"]
+["625::: Kinetic Accelerator Damage Mod"]
 unique_design_name = "11111"
 
-["625-damage increase"]
+["625::: damage increase"]
 untranslated_item = "11111"
 
-["626-Kinetic Accelerator Cooldown Mod"]
+["626::: Kinetic Accelerator Cooldown Mod"]
 unique_design_name = "11111"
 
-["626-cooldown decrease"]
+["626::: cooldown decrease"]
 untranslated_item = "11111"
 
-["627-Kinetic Accelerator Cooldown Mod"]
+["627::: Kinetic Accelerator Cooldown Mod"]
 unique_design_name = "11111"
 
-["627-cooldown decrease"]
+["627::: cooldown decrease"]
 untranslated_item = "11111"
 
-["628-Kinetic Accelerator Range Mod"]
+["628::: Kinetic Accelerator Range Mod"]
 unique_design_name = "11111"
 
-["628-range increase"]
+["628::: range increase"]
 untranslated_item = "11111"
 
-["629-Kinetic Accelerator Range Mod"]
+["629::: Kinetic Accelerator Range Mod"]
 unique_design_name = "11111"
 
-["629-range increase"]
+["629::: range increase"]
 untranslated_item = "11111"
 
-["63-R&D Console"]
+["62::: Mech Bay Power Control Console"]
 untranslated_item = "11111"
 
-["63-R&D Console Board"]
+["62::: Mech Bay Power Control Console Board"]
 unique_design_name = "11111"
 
-["630-Kinetic Accelerator Mining AoE Mod"]
+["630::: Kinetic Accelerator Mining AoE Mod"]
 unique_design_name = "11111"
 
-["630-mining explosion"]
+["630::: mining explosion"]
 untranslated_item = "11111"
 
-["631-Kinetic Accelerator Mining AoE Mod"]
+["631::: Kinetic Accelerator Mining AoE Mod"]
 unique_design_name = "11111"
 
-["631-mining explosion"]
+["631::: mining explosion"]
 untranslated_item = "11111"
 
-["632-Mining Scanner"]
+["632::: Mining Scanner"]
 unique_design_name = "11111"
 
-["632-automatic mining scanner"]
+["632::: automatic mining scanner"]
 untranslated_item = "11111"
 
-["633-health scanner HUD"]
+["633::: health scanner HUD"]
 untranslated_item = "11111"
 
-["634-night vision health scanner HUD"]
+["634::: night vision health scanner HUD"]
 untranslated_item = "11111"
 
-["635-security HUD"]
+["635::: security HUD"]
 untranslated_item = "11111"
 
-["636-night vision security HUD"]
+["636::: night vision security HUD"]
 untranslated_item = "11111"
 
-["637-diagnostic HUD"]
+["637::: diagnostic HUD"]
 untranslated_item = "11111"
 
-["638-night vision diagnostic HUD"]
+["638::: night vision diagnostic HUD"]
 untranslated_item = "11111"
 
-["639-welding goggles"]
+["639::: welding goggles"]
 untranslated_item = "11111"
 
-["64-Supply Console"]
+["63::: R&D Console"]
 untranslated_item = "11111"
 
-["64-Supply Console Board"]
+["63::: R&D Console Board"]
 unique_design_name = "11111"
 
-["640-Welding Gas Mask"]
+["640::: Welding Gas Mask"]
 unique_design_name = "11111"
 
-["640-welding mask"]
+["640::: welding mask"]
 untranslated_item = "11111"
 
-["641-workplace-ready firefighter helmet"]
+["641::: workplace-ready firefighter helmet"]
 untranslated_item = "11111"
 
-["642-mauna mug"]
+["642::: mauna mug"]
 untranslated_item = "11111"
 
-["643-Rolling table"]
+["643::: Rolling table"]
 untranslated_item = "11111"
 
-["643-Rolly poly"]
+["643::: Rolly poly"]
 unique_design_name = "11111"
 
-["644-portable seed extractor"]
+["644::: portable seed extractor"]
 untranslated_item = "11111"
 
-["645-water balloon"]
+["645::: water balloon"]
 untranslated_item = "11111"
 
-["646-Optical Meson Scanners"]
+["646::: Optical Meson Scanners"]
 unique_design_name = "11111"
 
-["646-optical meson scanner"]
+["646::: optical meson scanner"]
 untranslated_item = "11111"
 
-["647-engineering scanner goggles"]
+["647::: engineering scanner goggles"]
 untranslated_item = "11111"
 
-["648-Optical T-Ray Scanners"]
+["648::: Optical T-Ray Scanners"]
 unique_design_name = "11111"
 
-["648-optical t-ray scanner"]
+["648::: optical t-ray scanner"]
 untranslated_item = "11111"
 
-["649-atmospheric thermal imaging goggles"]
+["649::: atmospheric thermal imaging goggles"]
 untranslated_item = "11111"
 
-["65-Supply Request Console"]
+["64::: Supply Console"]
 untranslated_item = "11111"
 
-["65-Supply Request Console Board"]
+["64::: Supply Console Board"]
 unique_design_name = "11111"
 
-["650-Night Vision Optical Meson Scanners"]
+["650::: Night Vision Optical Meson Scanners"]
 unique_design_name = "11111"
 
-["650-night vision meson scanner"]
+["650::: night vision meson scanner"]
 untranslated_item = "11111"
 
-["651-night vision goggles"]
+["651::: night vision goggles"]
 untranslated_item = "11111"
 
-["652-Magnetic Boots"]
+["652::: Magnetic Boots"]
 unique_design_name = "11111"
 
-[652-magboots]
+["652::: magboots"]
 untranslated_item = "11111"
 
-["653-forcefield projector"]
+["653::: forcefield projector"]
 untranslated_item = "11111"
 
-["654-science goggles"]
+["654::: science goggles"]
 untranslated_item = "11111"
 
-["655-night vision science goggles"]
+["655::: night vision science goggles"]
 untranslated_item = "11111"
 
-["656-advanced roasting stick"]
+["656::: advanced roasting stick"]
 untranslated_item = "11111"
 
-["657-bluespace locator"]
+["657::: bluespace locator"]
 untranslated_item = "11111"
 
-["658-quantum keycard"]
+["658::: quantum keycard"]
 untranslated_item = "11111"
 
-["659-Bot Launchpad Controller"]
+["659::: Bot Launchpad Controller"]
 unique_design_name = "11111"
 
-["659-Bot pad controller"]
+["659::: Bot pad controller"]
 untranslated_item = "11111"
 
-["66-Outpost Status Display"]
+["65::: Supply Request Console"]
 untranslated_item = "11111"
 
-["66-Outpost Status Display Board"]
+["65::: Supply Request Console Board"]
 unique_design_name = "11111"
 
-["660-anomaly neutralizer"]
+["660::: anomaly neutralizer"]
 untranslated_item = "11111"
 
-["661-Donksoft Toy Vendor Refill"]
+["661::: Donksoft Toy Vendor Refill"]
 unique_design_name = "11111"
 
-["661-resupply canister"]
+["661::: resupply canister"]
 untranslated_item = "11111"
 
-["662-plasma tank"]
+["662::: plasma tank"]
 untranslated_item = "11111"
 
-["663-identification card"]
+["663::: identification card"]
 untranslated_item = "11111"
 
-["664-Tinkers Gloves"]
+["664::: Tinkers Gloves"]
 unique_design_name = "11111"
 
-["664-tinker's gloves"]
+["664::: tinker's gloves"]
 untranslated_item = "11111"
 
-["665-Lava-Resistant Iron Rods"]
+["665::: Lava-Resistant Iron Rods"]
 unique_design_name = "11111"
 
-["665-heat resistant rod"]
+["665::: heat resistant rod"]
 untranslated_item = "11111"
 
-["666-Rubber Ducky"]
+["666::: Rubber Ducky"]
 unique_design_name = "11111"
 
-["666-plastic ducky"]
+["666::: plastic ducky"]
 untranslated_item = "11111"
 
-["667-pneumatic airlock seal"]
+["667::: pneumatic airlock seal"]
 untranslated_item = "11111"
 
-["668-advanced mop"]
+["668::: advanced mop"]
 untranslated_item = "11111"
 
-[669-Trashbag]
+["669::: Trashbag"]
 unique_design_name = "11111"
 
-["669-trash bag"]
+["669::: trash bag"]
 untranslated_item = "11111"
 
-["67-Telecommunications Monitor"]
+["66::: Outpost Status Display"]
 untranslated_item = "11111"
 
-["67-Telecommunications Monitoring Console Board"]
+["66::: Outpost Status Display Board"]
 unique_design_name = "11111"
 
-["670-Trashbag of Holding"]
+["670::: Trashbag of Holding"]
 unique_design_name = "11111"
 
-["670-trash bag of holding"]
+["670::: trash bag of holding"]
 untranslated_item = "11111"
 
-["671-light replacer"]
+["671::: light replacer"]
 untranslated_item = "11111"
 
-["672-bluespace light replacer"]
+["672::: bluespace light replacer"]
 untranslated_item = "11111"
 
-["673-floor buffer upgrade"]
+["673::: floor buffer upgrade"]
 untranslated_item = "11111"
 
-["674-vacuum upgrade"]
+["674::: vacuum upgrade"]
 untranslated_item = "11111"
 
-["675-paint remover"]
+["675::: paint remover"]
 untranslated_item = "11111"
 
-["676-spray bottle"]
+["676::: spray bottle"]
 untranslated_item = "11111"
 
-["677-bear trap"]
+["677::: bear trap"]
 untranslated_item = "11111"
 
-["678-advanced watering can"]
+["678::: advanced watering can"]
 untranslated_item = "11111"
 
-["679-holographic sign projector"]
+["679::: holographic sign projector"]
 untranslated_item = "11111"
 
-["68-Telecommunications Server Monitor"]
+["67::: Telecommunications Monitor"]
 untranslated_item = "11111"
 
-["68-Telecommunications Server Monitoring Console Board"]
+["67::: Telecommunications Monitoring Console Board"]
 unique_design_name = "11111"
 
-["680-Restaurant Seating Projector"]
+["680::: Restaurant Seating Projector"]
 unique_design_name = "11111"
 
-["680-restaurant seating indicator placer"]
+["680::: restaurant seating indicator placer"]
 untranslated_item = "11111"
 
-["681-Bar Seating Projector"]
+["681::: Bar Seating Projector"]
 unique_design_name = "11111"
 
-["681-bar seating indicator placer"]
+["681::: bar seating indicator placer"]
 untranslated_item = "11111"
 
-["682-custodial holobarrier projector"]
+["682::: custodial holobarrier projector"]
 untranslated_item = "11111"
 
-["683-engineering holobarrier projector"]
+["683::: engineering holobarrier projector"]
 untranslated_item = "11111"
 
-["684-ATMOS holofan projector"]
+["684::: ATMOS holofan projector"]
 untranslated_item = "11111"
 
-["685-PENLITE Holobarrier Projector"]
+["685::: PENLITE Holobarrier Projector"]
 unique_design_name = "11111"
 
-["685-PENLITE barrier projector"]
+["685::: PENLITE barrier projector"]
 untranslated_item = "11111"
 
-["686-reactive armor shell"]
+["686::: reactive armor shell"]
 untranslated_item = "11111"
 
-["687-knight armour"]
+["687::: knight armour"]
 untranslated_item = "11111"
 
-["688-knight helmet"]
+["688::: knight helmet"]
 untranslated_item = "11111"
 
-["689-Pepper Spray"]
+["689::: Pepper Spray"]
 design_from_result = "перцовый баллончик"
 
-["69-Message Monitor"]
+["68::: Telecommunications Server Monitor"]
 untranslated_item = "11111"
 
-["69-Messaging Monitor Console Board"]
+["68::: Telecommunications Server Monitoring Console Board"]
 unique_design_name = "11111"
 
-["690-DRAGnet beacon"]
+["690::: DRAGnet beacon"]
 untranslated_item = "11111"
 
-["691-N-spect scanner"]
+["691::: N-spect scanner"]
 untranslated_item = "11111"
 
-["692-security pen"]
+["692::: security pen"]
 untranslated_item = "11111"
 
-["693-Plumbing Constructor"]
+["693::: Plumbing Constructor"]
 untranslated_item = "11111"
 
-["694-Gas Filter"]
+["694::: Gas Filter"]
 unique_design_name = "11111"
 
-["694-atmospheric gas filter"]
+["694::: atmospheric gas filter"]
 untranslated_item = "11111"
 
-["695-Plasmaman Gas Filter"]
+["695::: Plasmaman Gas Filter"]
 unique_design_name = "11111"
 
-["695-plasmaman atmospheric gas filter"]
+["695::: plasmaman atmospheric gas filter"]
 untranslated_item = "11111"
 
-["696-super sticky tape"]
+["696::: super sticky tape"]
 untranslated_item = "11111"
 
-["697-pointy tape"]
+["697::: pointy tape"]
 untranslated_item = "11111"
 
-["698-super pointy tape"]
+["698::: super pointy tape"]
 untranslated_item = "11111"
 
-["699-dolphin gloves"]
+["699::: dolphin gloves"]
 untranslated_item = "11111"
 
-["7-'ProtectStation' AI Module"]
+["69::: Message Monitor"]
 untranslated_item = "11111"
 
-["7-ProtectStation Module"]
+["69::: Messaging Monitor Console Board"]
 unique_design_name = "11111"
 
-["70-AI Integrity Restorer"]
+["6::: 'OneHuman' AI Module"]
 untranslated_item = "11111"
 
-["70-AI Integrity Restorer Board"]
+["6::: OneHuman Module"]
 unique_design_name = "11111"
 
-["700-rocket gloves"]
+["700::: rocket gloves"]
 untranslated_item = "11111"
 
-["701-advanced fishing rod"]
+["701::: advanced fishing rod"]
 untranslated_item = "11111"
 
-["702-athletic fishing gloves"]
+["702::: athletic fishing gloves"]
 untranslated_item = "11111"
 
-["703-gyro-stabilized hook"]
+["703::: gyro-stabilized hook"]
 untranslated_item = "11111"
 
-["704-fishing line auto-reel"]
+["704::: fishing line auto-reel"]
 untranslated_item = "11111"
 
-["705-fish analyzer"]
+["705::: fish analyzer"]
 untranslated_item = "11111"
 
-["706-bluespace fish case"]
+["706::: bluespace fish case"]
 untranslated_item = "11111"
 
-["707-bluespace fish tank kit"]
+["707::: bluespace fish tank kit"]
 untranslated_item = "11111"
 
-[708-coffeepot]
+["708::: coffeepot"]
 untranslated_item = "11111"
 
-["709-bluespace coffeepot"]
+["709::: bluespace coffeepot"]
 untranslated_item = "11111"
 
-["71-Library Console Board"]
+["70::: AI Integrity Restorer"]
+untranslated_item = "11111"
+
+["70::: AI Integrity Restorer Board"]
 unique_design_name = "11111"
 
-["71-Library Visitor Console"]
+["710::: syrup bottle"]
 untranslated_item = "11111"
 
-["710-syrup bottle"]
+["711::: compact radio navigation gigabeacon"]
 untranslated_item = "11111"
 
-["711-compact radio navigation gigabeacon"]
+["712::: polymorphic field inverter"]
 untranslated_item = "11111"
 
-["712-polymorphic field inverter"]
+["713::: perceptomatrix helm"]
 untranslated_item = "11111"
 
-["713-perceptomatrix helm"]
-untranslated_item = "11111"
-
-["714-Basic Power Cell"]
+["714::: Basic Power Cell"]
 unique_design_name = "11111"
 
-["714-power cell"]
+["714::: power cell"]
 untranslated_item = "11111"
 
-["715-high-capacity power cell"]
+["715::: high-capacity power cell"]
 untranslated_item = "11111"
 
-["716-super-capacity power cell"]
+["716::: super-capacity power cell"]
 untranslated_item = "11111"
 
-["717-hyper-capacity power cell"]
+["717::: hyper-capacity power cell"]
 untranslated_item = "11111"
 
-["718-bluespace power cell"]
+["718::: bluespace power cell"]
 untranslated_item = "11111"
 
-["719-Basic Megacell"]
+["719::: Basic Megacell"]
 unique_design_name = "11111"
 
-[719-megacell]
+["719::: megacell"]
 untranslated_item = "11111"
 
-["72-APC Control Board"]
+["71::: Library Console Board"]
 unique_design_name = "11111"
 
-["72-Power Flow Control Console"]
+["71::: Library Visitor Console"]
 untranslated_item = "11111"
 
-["720-high-capacity megacell"]
+["720::: high-capacity megacell"]
 untranslated_item = "11111"
 
-["721-super-capacity megacell"]
+["721::: super-capacity megacell"]
 untranslated_item = "11111"
 
-["722-hyper-capacity megacell"]
+["722::: hyper-capacity megacell"]
 untranslated_item = "11111"
 
-["723-bluespace megacell"]
+["723::: bluespace megacell"]
 untranslated_item = "11111"
 
-[724-inducer]
+["724::: inducer"]
 untranslated_item = "11111"
 
-[725-inducer]
+["725::: inducer"]
 untranslated_item = "11111"
 
-["726-aquarium bioelectricity kit"]
+["726::: aquarium bioelectricity kit"]
 untranslated_item = "11111"
 
-["727-Turbine Compressor"]
+["727::: Turbine Compressor"]
 unique_design_name = "11111"
 
-["727-compressor part"]
+["727::: compressor part"]
 untranslated_item = "11111"
 
-["728-Turbine Rotor"]
+["728::: Turbine Rotor"]
 unique_design_name = "11111"
 
-["728-rotor part"]
+["728::: rotor part"]
 untranslated_item = "11111"
 
-["729-Turbine Stator"]
+["729::: Turbine Stator"]
 unique_design_name = "11111"
 
-["729-stator part"]
+["729::: stator part"]
 untranslated_item = "11111"
 
-["73-Advanced Camera Console"]
-untranslated_item = "11111"
-
-["73-Advanced Camera Console Board"]
+["72::: APC Control Board"]
 unique_design_name = "11111"
 
-["730-plastitanium glass"]
+["72::: Power Flow Control Console"]
 untranslated_item = "11111"
 
-["731-Bluespace RPED"]
+["730::: plastitanium glass"]
+untranslated_item = "11111"
+
+["731::: Bluespace RPED"]
 design_from_result = "блюспейс быстрозаменитель компонентов"
 
-["732-Basic Capacitor"]
+["732::: Basic Capacitor"]
 design_from_result = "конденсатор"
 
-["733-Basic Scanning Module"]
+["733::: Basic Scanning Module"]
 design_from_result = "сканирующий модуль"
 
-["734-Micro Servo"]
+["734::: Micro Servo"]
 design_from_result = "микросервопривод"
 
-["735-Nano Servo"]
+["735::: Nano Servo"]
 design_from_result = "наносервопривод"
 
-["736-Pico Servo"]
+["736::: Pico Servo"]
 design_from_result = "пикосервопривод"
 
-["737-Femto Servo"]
+["737::: Femto Servo"]
 design_from_result = "фемтосервопривод"
 
-["738-Basic Micro-Laser"]
+["738::: Basic Micro-Laser"]
 design_from_result = "микролазер"
 
-["739-Basic Matter Bin"]
+["739::: Basic Matter Bin"]
 design_from_result = "емкость материи"
 
-["74-Bounty Pad"]
+["73::: Advanced Camera Console"]
 untranslated_item = "11111"
 
-["74-Civilian Bounty Pad Control Board"]
+["73::: Advanced Camera Console Board"]
 unique_design_name = "11111"
 
-["740-subspace ansible"]
+["740::: subspace ansible"]
 untranslated_item = "11111"
 
-["741-hyperwave filter"]
+["741::: hyperwave filter"]
 untranslated_item = "11111"
 
-["742-subspace amplifier"]
+["742::: subspace amplifier"]
 untranslated_item = "11111"
 
-["743-subspace treatment disk"]
+["743::: subspace treatment disk"]
 untranslated_item = "11111"
 
-["744-Subspace Analyzer"]
+["744::: Subspace Analyzer"]
 unique_design_name = "11111"
 
-["744-subspace wavelength analyzer"]
+["744::: subspace wavelength analyzer"]
 untranslated_item = "11111"
 
-["745-ansible crystal"]
+["745::: ansible crystal"]
 untranslated_item = "11111"
 
-["746-subspace transmitter"]
+["746::: subspace transmitter"]
 untranslated_item = "11111"
 
-["747-card reader"]
+["747::: card reader"]
 untranslated_item = "11111"
 
-["748-water recycler"]
+["748::: water recycler"]
 untranslated_item = "11111"
 
-["749-Jaws of Life"]
+["749::: Jaws of Life"]
 design_from_result = "челюсти жизни"
 
-["75-Scanner Array Control Console"]
+["74::: Bounty Pad"]
 untranslated_item = "11111"
 
-["75-Scanner Array Control Console Board"]
+["74::: Civilian Bounty Pad Control Board"]
 unique_design_name = "11111"
 
-["750-Experimental Long-range Gas Analyzer"]
+["750::: Experimental Long-range Gas Analyzer"]
 design_from_result = "газоанализатор дальнего действия"
 
-["751-Rapid Pipe Dispenser (RPD)"]
+["751::: Rapid Pipe Dispenser (RPD)"]
 unique_design_name = "11111"
 
-["751-rapid pipe dispenser"]
+["751::: rapid pipe dispenser"]
 untranslated_item = "11111"
 
-["752-Rapid Construction Device"]
+["752::: Rapid Construction Device"]
 unique_design_name = "11111"
 
-["752-rapid-construction-device (RCD)"]
+["752::: rapid-construction-device (RCD)"]
 untranslated_item = "11111"
 
-["753-Rapid Tiling Device"]
+["753::: Rapid Tiling Device"]
 unique_design_name = "11111"
 
-["753-rapid-tiling-device (RTD)"]
+["753::: rapid-tiling-device (RTD)"]
 untranslated_item = "11111"
 
-["754-RCD matter cartridge"]
+["754::: RCD matter cartridge"]
 untranslated_item = "11111"
 
-["755-RCD advanced upgrade: frames"]
+["755::: RCD advanced upgrade: frames"]
 untranslated_item = "11111"
 
-["755-RCD frames designs upgrade"]
+["755::: RCD frames designs upgrade"]
 unique_design_name = "11111"
 
-["756-RCD advanced upgrade: simple circuits"]
+["756::: RCD advanced upgrade: simple circuits"]
 untranslated_item = "11111"
 
-["756-RCD simple circuits designs upgrade"]
+["756::: RCD simple circuits designs upgrade"]
 unique_design_name = "11111"
 
-["757-RCD advanced upgrade: anti disruption"]
+["757::: RCD advanced upgrade: anti disruption"]
 untranslated_item = "11111"
 
-["757-RCD anti disruption designs upgrade"]
+["757::: RCD anti disruption designs upgrade"]
 unique_design_name = "11111"
 
-["758-RCD advanced upgrade: enhanced cooling"]
+["758::: RCD advanced upgrade: enhanced cooling"]
 untranslated_item = "11111"
 
-["758-RCD cooling upgrade"]
+["758::: RCD cooling upgrade"]
 unique_design_name = "11111"
 
-["759-RCD advanced upgrade: furnishings"]
+["759::: RCD advanced upgrade: furnishings"]
 untranslated_item = "11111"
 
-["759-RCD furnishing upgrade"]
+["759::: RCD furnishing upgrade"]
 unique_design_name = "11111"
 
-["76-Exploration Drone Control Console"]
+["75::: Scanner Array Control Console"]
 untranslated_item = "11111"
 
-["76-Exploration Drone Control Console Board"]
+["75::: Scanner Array Control Console Board"]
 unique_design_name = "11111"
 
-["760-Advanced RCD silo link upgrade"]
+["760::: Advanced RCD silo link upgrade"]
 unique_design_name = "11111"
 
-["760-RCD advanced upgrade: silo link"]
+["760::: RCD advanced upgrade: silo link"]
 untranslated_item = "11111"
 
-["761-RPD advanced upgrade: wrench mode"]
+["761::: RPD advanced upgrade: wrench mode"]
 untranslated_item = "11111"
 
-["761-RPD unwrenching upgrade"]
+["761::: RPD unwrenching upgrade"]
 unique_design_name = "11111"
 
-["762-Mini Rapid Light Device (MRLD)"]
+["762::: Mini Rapid Light Device (MRLD)"]
 unique_design_name = "11111"
 
-[762-mini-rapid-light-device]
+["762::: mini-rapid-light-device"]
 untranslated_item = "11111"
 
-["763-botanogenetic plant shears"]
+["763::: botanogenetic plant shears"]
 untranslated_item = "11111"
 
-["764-service plumbing constructor"]
+["764::: service plumbing constructor"]
 untranslated_item = "11111"
 
-["765-biopsy tool"]
+["765::: biopsy tool"]
 untranslated_item = "11111"
 
-["766-alien multitool"]
+["766::: alien multitool"]
 untranslated_item = "11111"
 
-["767-alien scalpel"]
+["767::: alien scalpel"]
 untranslated_item = "11111"
 
-["768-alien hemostat"]
+["768::: alien hemostat"]
 untranslated_item = "11111"
 
-["769-alien retractor"]
+["769::: alien retractor"]
 untranslated_item = "11111"
 
-["77-Account Lookup Console"]
+["76::: Exploration Drone Control Console"]
 untranslated_item = "11111"
 
-["77-Account Lookup Console Board"]
+["76::: Exploration Drone Control Console Board"]
 unique_design_name = "11111"
 
-["770-Alien Circular Saw"]
+["770::: Alien Circular Saw"]
 unique_design_name = "11111"
 
-["770-alien saw"]
+["770::: alien saw"]
 untranslated_item = "11111"
 
-["771-alien drill"]
+["771::: alien drill"]
 untranslated_item = "11111"
 
-["772-alien cautery"]
+["772::: alien cautery"]
 untranslated_item = "11111"
 
-["773-Speed Loader (.38) (Lethal)"]
+["773::: Speed Loader (.38) (Lethal)"]
 unique_design_name = "11111"
 
-["773-speed loader (.38)"]
+["773::: speed loader (.38)"]
 untranslated_item = "11111"
 
-["774-Speed Loader (.38) (Lethal)"]
+["774::: Speed Loader (.38) (Lethal)"]
 unique_design_name = "11111"
 
-["774-speed loader (.38)"]
+["774::: speed loader (.38)"]
 untranslated_item = "11111"
 
-["775-Speed Loader (.38 TRAC) (Less Lethal)"]
+["775::: Speed Loader (.38 TRAC) (Less Lethal)"]
 unique_design_name = "11111"
 
-["775-speed loader (.38 TRAC)"]
+["775::: speed loader (.38 TRAC)"]
 untranslated_item = "11111"
 
-["776-Speed Loader (.38 Hot Shot) (Very Lethal)"]
+["776::: Speed Loader (.38 Hot Shot) (Very Lethal)"]
 unique_design_name = "11111"
 
-["776-speed loader (.38 Hot Shot)"]
+["776::: speed loader (.38 Hot Shot)"]
 untranslated_item = "11111"
 
-["777-Speed Loader (.38 Iceblox) (Lethal/Very Lethal (Lizardpeople))"]
+["777::: Speed Loader (.38 Iceblox) (Lethal/Very Lethal (Lizardpeople))"]
 unique_design_name = "11111"
 
-["777-speed loader (.38 Iceblox)"]
+["777::: speed loader (.38 Iceblox)"]
 untranslated_item = "11111"
 
-["778-Speed Loader (.38 Rubber) (Less Lethal)"]
+["778::: Speed Loader (.38 Rubber) (Less Lethal)"]
 unique_design_name = "11111"
 
-["778-speed loader (.38 Rubber)"]
+["778::: speed loader (.38 Rubber)"]
 untranslated_item = "11111"
 
-["779-Rubber Shot (Less Lethal)"]
+["779::: Rubber Shot (Less Lethal)"]
 unique_design_name = "11111"
 
-["779-rubber shot"]
+["779::: rubber shot"]
 untranslated_item = "11111"
 
-[78-Electrolyzer]
+["77::: Account Lookup Console"]
 untranslated_item = "11111"
 
-["78-Electrolyzer Board"]
+["77::: Account Lookup Console Board"]
 unique_design_name = "11111"
 
-["780-Rubber Shot (Less Lethal)"]
+["780::: Rubber Shot (Less Lethal)"]
 unique_design_name = "11111"
 
-["780-rubber shot"]
+["780::: rubber shot"]
 untranslated_item = "11111"
 
-["781-Beanbag Slug (Less Lethal)"]
+["781::: Beanbag Slug (Less Lethal)"]
 unique_design_name = "11111"
 
-["781-beanbag slug"]
+["781::: beanbag slug"]
 untranslated_item = "11111"
 
-["782-Beanbag Slug (Less Lethal)"]
+["782::: Beanbag Slug (Less Lethal)"]
 unique_design_name = "11111"
 
-["782-beanbag slug"]
+["782::: beanbag slug"]
 untranslated_item = "11111"
 
-["783-Shotgun Dart (Lethal)"]
+["783::: Shotgun Dart (Lethal)"]
 unique_design_name = "11111"
 
-["783-shotgun dart"]
+["783::: shotgun dart"]
 untranslated_item = "11111"
 
-["784-Shotgun Dart (Lethal)"]
+["784::: Shotgun Dart (Lethal)"]
 unique_design_name = "11111"
 
-["784-shotgun dart"]
+["784::: shotgun dart"]
 untranslated_item = "11111"
 
-["785-Incendiary Slug (Lethal)"]
+["785::: Incendiary Slug (Lethal)"]
 unique_design_name = "11111"
 
-["785-incendiary slug"]
+["785::: incendiary slug"]
 untranslated_item = "11111"
 
-["786-Incendiary Slug (Lethal)"]
+["786::: Incendiary Slug (Lethal)"]
 unique_design_name = "11111"
 
-["786-incendiary slug"]
+["786::: incendiary slug"]
 untranslated_item = "11111"
 
-["787-WT-550 Autorifle Magazine (4.6x30mm) (Lethal)"]
+["787::: WT-550 Autorifle Magazine (4.6x30mm) (Lethal)"]
 unique_design_name = "11111"
 
-["787-wt550 magazine (4.6x30mm)"]
+["787::: wt550 magazine (4.6x30mm)"]
 untranslated_item = "11111"
 
-["788-WT-550 Autorifle Armour Piercing Magazine (4.6x30mm AP) (Lethal)"]
+["788::: WT-550 Autorifle Armour Piercing Magazine (4.6x30mm AP) (Lethal)"]
 unique_design_name = "11111"
 
-["788-wt550 magazine (Armour Piercing 4.6x30mm)"]
+["788::: wt550 magazine (Armour Piercing 4.6x30mm)"]
 untranslated_item = "11111"
 
-["789-WT-550 Autorifle Incendiary Magazine (4.6x30mm IC) (Lethal/Highly Destructive)"]
+["789::: WT-550 Autorifle Incendiary Magazine (4.6x30mm IC) (Lethal/Highly Destructive)"]
 unique_design_name = "11111"
 
-["789-wt550 magazine (Incendiary 4.6x30mm)"]
+["789::: wt550 magazine (Incendiary 4.6x30mm)"]
 untranslated_item = "11111"
 
-[79-SMES]
+["78::: Electrolyzer"]
 untranslated_item = "11111"
 
-["79-SMES Board"]
+["78::: Electrolyzer Board"]
 unique_design_name = "11111"
 
-["790-Tesla Cannon Part Kit (Lethal)"]
+["790::: Tesla Cannon Part Kit (Lethal)"]
 unique_design_name = "11111"
 
-["790-tesla cannon parts kit (lethal)"]
+["790::: tesla cannon parts kit (lethal)"]
 untranslated_item = "11111"
 
-["791-Advanced Energy Gun Part Kit (Lethal/Nonlethal)"]
+["791::: Advanced Energy Gun Part Kit (Lethal/Nonlethal)"]
 unique_design_name = "11111"
 
-["791-advanced energy gun parts kit (lethal/nonlethal)"]
+["791::: advanced energy gun parts kit (lethal/nonlethal)"]
 untranslated_item = "11111"
 
-["792-Telescopic Riot Shield"]
+["792::: Telescopic Riot Shield"]
 design_from_result = "телескопический щит"
 
-["793-ballistic shield"]
+["793::: ballistic shield"]
 untranslated_item = "11111"
 
-["794-Event Horizon Anti-Existential Beam Rifle Part Kit (DOOMSDAY DEVICE)"]
+["794::: Event Horizon Anti-Existential Beam Rifle Part Kit (DOOMSDAY DEVICE)"]
 unique_design_name = "11111"
 
-["794-Event Horizon anti-existential beam rifle part kit (DOOMSDAY DEVICE, DO NOT CONSTRUCT)"]
+["794::: Event Horizon anti-existential beam rifle part kit (DOOMSDAY DEVICE, DO NOT CONSTRUCT)"]
 untranslated_item = "11111"
 
-["795-Rapid Syringe Gun"]
+["795::: Rapid Syringe Gun"]
 unique_design_name = "11111"
 
-["795-compact rapid syringe gun"]
+["795::: compact rapid syringe gun"]
 untranslated_item = "11111"
 
-["796-Temperature Gun Part Kit (Less Lethal/Very Lethal (Lizardpeople))"]
+["796::: Temperature Gun Part Kit (Less Lethal/Very Lethal (Lizardpeople))"]
 unique_design_name = "11111"
 
-["796-temperature gun parts kit (less lethal/very lethal (lizardpeople))"]
+["796::: temperature gun parts kit (less lethal/very lethal (lizardpeople))"]
 untranslated_item = "11111"
 
-["797-Large Grenade Casing"]
+["797::: Large Grenade Casing"]
 unique_design_name = "11111"
 
-["797-large grenade"]
+["797::: large grenade"]
 untranslated_item = "11111"
 
-["798-Pyro Grenade Casing"]
+["798::: Pyro Grenade Casing"]
 unique_design_name = "11111"
 
-["798-pyro grenade"]
+["798::: pyro grenade"]
 untranslated_item = "11111"
 
-["799-Cryo Grenade Casing"]
+["799::: Cryo Grenade Casing"]
 unique_design_name = "11111"
 
-["799-cryo grenade"]
+["799::: cryo grenade"]
 untranslated_item = "11111"
 
-["8-'Quarantine' AI Module"]
+["79::: SMES"]
 untranslated_item = "11111"
 
-["8-Quarantine Module"]
+["79::: SMES Board"]
 unique_design_name = "11111"
 
-["80-Power Connector Board"]
-unique_design_name = "11111"
-
-["80-power connector"]
+["7::: 'ProtectStation' AI Module"]
 untranslated_item = "11111"
+
+["7::: ProtectStation Module"]
+unique_design_name = "11111"
 
-["800-Advanced Release Grenade Casing"]
+["800::: Advanced Release Grenade Casing"]
 unique_design_name = "11111"
 
-["800-advanced release grenade"]
+["800::: advanced release grenade"]
 untranslated_item = "11111"
 
-["801-X-ray Laser Gun Part Kit (Lethal)"]
+["801::: X-ray Laser Gun Part Kit (Lethal)"]
 unique_design_name = "11111"
 
-["801-x-ray laser gun parts kit (lethal)"]
+["801::: x-ray laser gun parts kit (lethal)"]
 untranslated_item = "11111"
 
-["802-Ion Carbine Part Kit (Nonlethal/Highly Destructive/Lethal (Silicons))"]
+["802::: Ion Carbine Part Kit (Nonlethal/Highly Destructive/Lethal (Silicons))"]
 unique_design_name = "11111"
 
-["802-ion carbine parts kit (nonlethal/highly destructive/very lethal (silicons))"]
+["802::: ion carbine parts kit (nonlethal/highly destructive/very lethal (silicons))"]
 untranslated_item = "11111"
 
-["803-Stun Shell"]
+["803::: Stun Shell"]
 unique_design_name = "11111"
 
-["803-taser slug"]
+["803::: taser slug"]
 untranslated_item = "11111"
 
-["804-Scatter Laser Shotgun Shell (Lethal)"]
+["804::: Scatter Laser Shotgun Shell (Lethal)"]
 unique_design_name = "11111"
 
-["804-scatter laser shell"]
+["804::: scatter laser shell"]
 untranslated_item = "11111"
 
-["805-Unloaded Technological Shotshell"]
+["805::: Unloaded Technological Shotshell"]
 unique_design_name = "11111"
 
-["805-unloaded technological shell"]
+["805::: unloaded technological shell"]
 untranslated_item = "11111"
 
-[806-suppressor]
+["806::: suppressor"]
 untranslated_item = "11111"
 
-["807-one-point gravitational manipulator"]
+["807::: one-point gravitational manipulator"]
 untranslated_item = "11111"
 
-["808-Energy Crossbow Part Kit (Less Lethal/Contraband)"]
+["808::: Energy Crossbow Part Kit (Less Lethal/Contraband)"]
 unique_design_name = "11111"
 
-["808-energy crossbow part kit (less lethal)"]
+["808::: energy crossbow part kit (less lethal)"]
 untranslated_item = "11111"
 
-["809-cleric mace"]
+["809::: cleric mace"]
 untranslated_item = "11111"
 
-["81-Portable SMES Board"]
+["80::: Power Connector Board"]
 unique_design_name = "11111"
 
-["81-portable SMES"]
+["80::: power connector"]
 untranslated_item = "11111"
 
-["810-OZtek Boomerang"]
+["810::: OZtek Boomerang"]
 untranslated_item = "11111"
 
-["811-Photon Cannon Part Kit (Nonlethal)"]
+["811::: Photon Cannon Part Kit (Nonlethal)"]
 unique_design_name = "11111"
 
-["811-photon cannon parts kit (nonlethal)"]
+["811::: photon cannon parts kit (nonlethal)"]
 untranslated_item = "11111"
 
-["812-integrated circuit"]
+["812::: integrated circuit"]
 untranslated_item = "11111"
 
-["813-circuit multitool"]
+["813::: circuit multitool"]
 untranslated_item = "11111"
 
-["814-usb cable"]
+["814::: usb cable"]
 untranslated_item = "11111"
 
-["815-Arithmetic Component"]
+["815::: Arithmetic Component"]
 unique_design_name = "11111"
 
-[815-component]
+["815::: component"]
 untranslated_item = "11111"
 
-["816-Trigonometry Component"]
+["816::: Trigonometry Component"]
 unique_design_name = "11111"
 
-[816-component]
+["816::: component"]
 untranslated_item = "11111"
 
-["817-Arctangent 2 Component"]
+["817::: Arctangent 2 Component"]
 unique_design_name = "11111"
 
-[817-component]
+["817::: component"]
 untranslated_item = "11111"
 
-["818-Clock Component"]
+["818::: Clock Component"]
 unique_design_name = "11111"
 
-[818-component]
+["818::: component"]
 untranslated_item = "11111"
 
-["819-Comparison Component"]
+["819::: Comparison Component"]
 unique_design_name = "11111"
 
-[819-component]
+["819::: component"]
 untranslated_item = "11111"
 
-["82-Announcement System"]
-untranslated_item = "11111"
-
-["82-Automated Announcement System Board"]
+["81::: Portable SMES Board"]
 unique_design_name = "11111"
+
+["81::: portable SMES"]
+untranslated_item = "11111"
 
-["820-Logic Component"]
+["820::: Logic Component"]
 unique_design_name = "11111"
 
-[820-component]
+["820::: component"]
 untranslated_item = "11111"
 
-["821-Toggle Component"]
+["821::: Toggle Component"]
 unique_design_name = "11111"
 
-[821-component]
+["821::: component"]
 untranslated_item = "11111"
 
-["822-Delay Component"]
+["822::: Delay Component"]
 unique_design_name = "11111"
 
-[822-component]
+["822::: component"]
 untranslated_item = "11111"
 
-["823-Format List Component"]
+["823::: Format List Component"]
 unique_design_name = "11111"
 
-[823-component]
+["823::: component"]
 untranslated_item = "11111"
 
-["824-Format Associative List Component"]
+["824::: Format Associative List Component"]
 unique_design_name = "11111"
 
-[824-component]
+["824::: component"]
 untranslated_item = "11111"
 
-["825-Index Component"]
+["825::: Index Component"]
 unique_design_name = "11111"
 
-[825-component]
+["825::: component"]
 untranslated_item = "11111"
 
-["826-Index Associative List Component"]
+["826::: Index Associative List Component"]
 unique_design_name = "11111"
 
-[826-component]
+["826::: component"]
 untranslated_item = "11111"
 
-["827-Length Component"]
+["827::: Length Component"]
 unique_design_name = "11111"
 
-[827-component]
+["827::: component"]
 untranslated_item = "11111"
 
-["828-Light Component"]
+["828::: Light Component"]
 unique_design_name = "11111"
 
-[828-component]
+["828::: component"]
 untranslated_item = "11111"
 
-["829-Not Component"]
+["829::: Not Component"]
 unique_design_name = "11111"
 
-[829-component]
+["829::: component"]
 untranslated_item = "11111"
 
-["83-Turbine Computer"]
+["82::: Announcement System"]
 untranslated_item = "11111"
 
-["83-Turbine Power Console Board"]
+["82::: Automated Announcement System Board"]
 unique_design_name = "11111"
 
-["830-Random Component"]
+["830::: Random Component"]
 unique_design_name = "11111"
 
-[830-component]
+["830::: component"]
 untranslated_item = "11111"
 
-["831-Binary Conversion Component"]
+["831::: Binary Conversion Component"]
 unique_design_name = "11111"
 
-[831-component]
+["831::: component"]
 untranslated_item = "11111"
 
-["832-Decimal Conversion Component"]
+["832::: Decimal Conversion Component"]
 unique_design_name = "11111"
 
-[832-component]
+["832::: component"]
 untranslated_item = "11111"
 
-["833-Get Species Component"]
+["833::: Get Species Component"]
 unique_design_name = "11111"
 
-[833-component]
+["833::: component"]
 untranslated_item = "11111"
 
-["834-Speech Component"]
+["834::: Speech Component"]
 unique_design_name = "11111"
 
-[834-component]
+["834::: component"]
 untranslated_item = "11111"
 
-["835-Laser Pointer Component"]
+["835::: Laser Pointer Component"]
 unique_design_name = "11111"
 
-[835-component]
+["835::: component"]
 untranslated_item = "11111"
 
-["836-Timepiece Component"]
+["836::: Timepiece Component"]
 unique_design_name = "11111"
 
-[836-component]
+["836::: component"]
 untranslated_item = "11111"
 
-["837-To String Component"]
+["837::: To String Component"]
 unique_design_name = "11111"
 
-[837-component]
+["837::: component"]
 untranslated_item = "11111"
 
-["838-To Number"]
+["838::: To Number"]
 unique_design_name = "11111"
 
-[838-component]
+["838::: component"]
 untranslated_item = "11111"
 
-["839-Typecheck Component"]
+["839::: Typecheck Component"]
 unique_design_name = "11111"
 
-[839-component]
+["839::: component"]
 untranslated_item = "11111"
 
-[84-Emitter]
+["83::: Turbine Computer"]
 untranslated_item = "11111"
 
-["84-Emitter Board"]
+["83::: Turbine Power Console Board"]
 unique_design_name = "11111"
 
-["840-Concatenation Component"]
+["840::: Concatenation Component"]
 unique_design_name = "11111"
 
-[840-component]
+["840::: component"]
 untranslated_item = "11111"
 
-["841-Textcase Component"]
+["841::: Textcase Component"]
 unique_design_name = "11111"
 
-[841-component]
+["841::: component"]
 untranslated_item = "11111"
 
-["842-Voice Activator Component"]
+["842::: Voice Activator Component"]
 unique_design_name = "11111"
 
-[842-component]
+["842::: component"]
 untranslated_item = "11111"
 
-["843-String Contains Component"]
+["843::: String Contains Component"]
 unique_design_name = "11111"
 
-[843-component]
+["843::: component"]
 untranslated_item = "11111"
 
-["844-Self Component"]
+["844::: Self Component"]
 unique_design_name = "11111"
 
-[844-component]
+["844::: component"]
 untranslated_item = "11111"
 
-["845-Radio Component"]
+["845::: Radio Component"]
 unique_design_name = "11111"
 
-[845-component]
+["845::: component"]
 untranslated_item = "11111"
 
-["846-GPS Component"]
+["846::: GPS Component"]
 unique_design_name = "11111"
 
-[846-component]
+["846::: component"]
 untranslated_item = "11111"
 
-["847-Direction Component"]
+["847::: Direction Component"]
 unique_design_name = "11111"
 
-[847-component]
+["847::: component"]
 untranslated_item = "11111"
 
-["848-Reagents Scanner"]
+["848::: Reagents Scanner"]
 unique_design_name = "11111"
 
-[848-component]
+["848::: component"]
 untranslated_item = "11111"
 
-["849-Health Component"]
+["849::: Health Component"]
 unique_design_name = "11111"
 
-[849-component]
+["849::: component"]
 untranslated_item = "11111"
 
-["85-Mass Driver"]
+["84::: Emitter"]
 untranslated_item = "11111"
 
-["85-Mass Driver Board"]
+["84::: Emitter Board"]
 unique_design_name = "11111"
 
-["850-Compare Health State Component"]
+["850::: Compare Health State Component"]
 unique_design_name = "11111"
 
-[850-component]
+["850::: component"]
 untranslated_item = "11111"
 
-["851-Material Scanner"]
+["851::: Material Scanner"]
 unique_design_name = "11111"
 
-[851-component]
+["851::: component"]
 untranslated_item = "11111"
 
-["852-Split Component"]
+["852::: Split Component"]
 unique_design_name = "11111"
 
-[852-component]
+["852::: component"]
 untranslated_item = "11111"
 
-["853-Pull Component"]
+["853::: Pull Component"]
 unique_design_name = "11111"
 
-[853-component]
+["853::: component"]
 untranslated_item = "11111"
 
-["854-Sound Emitter Component"]
+["854::: Sound Emitter Component"]
 unique_design_name = "11111"
 
-[854-component]
+["854::: component"]
 untranslated_item = "11111"
 
-["855-MMI Component"]
+["855::: MMI Component"]
 unique_design_name = "11111"
 
-[855-component]
+["855::: component"]
 untranslated_item = "11111"
 
-["856-Router Component"]
+["856::: Router Component"]
 unique_design_name = "11111"
 
-[856-component]
+["856::: component"]
 untranslated_item = "11111"
 
-["857-Multiplexer Component"]
+["857::: Multiplexer Component"]
 unique_design_name = "11111"
 
-[857-component]
+["857::: component"]
 untranslated_item = "11111"
 
-["858-Get Column Component"]
+["858::: Get Column Component"]
 unique_design_name = "11111"
 
-[858-component]
+["858::: component"]
 untranslated_item = "11111"
 
-["859-Index Table Component"]
+["859::: Index Table Component"]
 unique_design_name = "11111"
 
-[859-component]
+["859::: component"]
 untranslated_item = "11111"
 
-["86-Turbine - Inlet Compressor"]
+["85::: Mass Driver"]
 untranslated_item = "11111"
 
-["86-Turbine Compressor Board"]
+["85::: Mass Driver Board"]
 unique_design_name = "11111"
 
-["860-Concatenate List Component"]
+["860::: Concatenate List Component"]
 unique_design_name = "11111"
 
-[860-component]
+["860::: component"]
 untranslated_item = "11111"
 
-["861-List Add"]
+["861::: List Add"]
 unique_design_name = "11111"
 
-[861-component]
+["861::: component"]
 untranslated_item = "11111"
 
-["862-List Remove"]
+["862::: List Remove"]
 unique_design_name = "11111"
 
-[862-component]
+["862::: component"]
 untranslated_item = "11111"
 
-["863-Associative List Set"]
+["863::: Associative List Set"]
 unique_design_name = "11111"
 
-[863-component]
+["863::: component"]
 untranslated_item = "11111"
 
-["864-Associative List Remove"]
+["864::: Associative List Remove"]
 unique_design_name = "11111"
 
-[864-component]
+["864::: component"]
 untranslated_item = "11111"
 
-["865-List Clear"]
+["865::: List Clear"]
 unique_design_name = "11111"
 
-[865-component]
+["865::: component"]
 untranslated_item = "11111"
 
-["866-Element Find"]
+["866::: Element Find"]
 unique_design_name = "11111"
 
-[866-component]
+["866::: component"]
 untranslated_item = "11111"
 
-["867-Select Query Component"]
+["867::: Select Query Component"]
 unique_design_name = "11111"
 
-[867-component]
+["867::: component"]
 untranslated_item = "11111"
 
-[868-Pathfinder]
+["868::: Pathfinder"]
 unique_design_name = "11111"
 
-[868-component]
+["868::: component"]
 untranslated_item = "11111"
 
-["869-Temperature Sensor Component"]
+["869::: Temperature Sensor Component"]
 unique_design_name = "11111"
 
-[869-component]
+["869::: component"]
 untranslated_item = "11111"
 
-["87-Turbine - Core Rotor"]
+["86::: Turbine - Inlet Compressor"]
 untranslated_item = "11111"
 
-["87-Turbine Rotor Board"]
+["86::: Turbine Compressor Board"]
 unique_design_name = "11111"
 
-["870-Pressure Sensor Component"]
+["870::: Pressure Sensor Component"]
 unique_design_name = "11111"
 
-[870-component]
+["870::: component"]
 untranslated_item = "11111"
 
-["871-Module Component"]
+["871::: Module Component"]
 unique_design_name = "11111"
 
-[871-component]
+["871::: component"]
 untranslated_item = "11111"
 
-["872-NTNet Receiver"]
+["872::: NTNet Receiver"]
 unique_design_name = "11111"
 
-[872-component]
+["872::: component"]
 untranslated_item = "11111"
 
-["873-NTNet Transmitter"]
+["873::: NTNet Transmitter"]
 unique_design_name = "11111"
 
-[873-component]
+["873::: component"]
 untranslated_item = "11111"
 
-["874-NFC Transmitter"]
+["874::: NFC Transmitter"]
 unique_design_name = "11111"
 
-[874-component]
+["874::: component"]
 untranslated_item = "11111"
 
-["875-NFC Receiver"]
+["875::: NFC Receiver"]
 unique_design_name = "11111"
 
-[875-component]
+["875::: component"]
 untranslated_item = "11111"
 
-["876-List Literal Component"]
+["876::: List Literal Component"]
 unique_design_name = "11111"
 
-[876-component]
+["876::: component"]
 untranslated_item = "11111"
 
-["877-NTNet Transmitter List Literal"]
+["877::: NTNet Transmitter List Literal"]
 unique_design_name = "11111"
 
-[877-component]
+["877::: component"]
 untranslated_item = "11111"
 
-["878-Associative List Literal"]
+["878::: Associative List Literal"]
 unique_design_name = "11111"
 
-[878-component]
+["878::: component"]
 untranslated_item = "11111"
 
-["879-Typecast Component"]
+["879::: Typecast Component"]
 unique_design_name = "11111"
 
-[879-component]
+["879::: component"]
 untranslated_item = "11111"
 
-["88-Turbine - Turbine Outlet"]
+["87::: Turbine - Core Rotor"]
 untranslated_item = "11111"
 
-["88-Turbine Stator Board"]
+["87::: Turbine Rotor Board"]
 unique_design_name = "11111"
 
-["880-Proximity Pinpointer Component"]
+["880::: Proximity Pinpointer Component"]
 unique_design_name = "11111"
 
-[880-component]
+["880::: component"]
 untranslated_item = "11111"
 
-["881-Equipment Action Component"]
+["881::: Equipment Action Component"]
 unique_design_name = "11111"
 
-[881-component]
+["881::: component"]
 untranslated_item = "11111"
 
-["882-Object Overlay Component"]
+["882::: Object Overlay Component"]
 unique_design_name = "11111"
 
-[882-component]
+["882::: component"]
 untranslated_item = "11111"
 
-["883-Bar Overlay Component"]
+["883::: Bar Overlay Component"]
 unique_design_name = "11111"
 
-[883-component]
+["883::: component"]
 untranslated_item = "11111"
 
-["884-VOX Announcement Component"]
+["884::: VOX Announcement Component"]
 unique_design_name = "11111"
 
-[884-component]
+["884::: component"]
 untranslated_item = "11111"
 
-["885-Thought Listener Component"]
+["885::: Thought Listener Component"]
 unique_design_name = "11111"
 
-[885-component]
+["885::: component"]
 untranslated_item = "11111"
 
-["886-BCI Target Interceptor"]
+["886::: BCI Target Interceptor"]
 unique_design_name = "11111"
 
-[886-component]
+["886::: component"]
 untranslated_item = "11111"
 
-["887-Counter Overlay Component"]
+["887::: Counter Overlay Component"]
 unique_design_name = "11111"
 
-[887-component]
+["887::: component"]
 untranslated_item = "11111"
 
-["888-Reagent Injector Component"]
+["888::: Reagent Injector Component"]
 unique_design_name = "11111"
 
-[888-component]
+["888::: component"]
 untranslated_item = "11111"
 
-["889-Install Detector Component"]
+["889::: Install Detector Component"]
 unique_design_name = "11111"
 
-[889-component]
+["889::: component"]
 untranslated_item = "11111"
 
-[89-Thermomachine]
+["88::: Turbine - Turbine Outlet"]
 untranslated_item = "11111"
 
-["89-Thermomachine Board"]
+["88::: Turbine Stator Board"]
 unique_design_name = "11111"
 
-["890-BCI Camera"]
+["890::: BCI Camera"]
 unique_design_name = "11111"
 
-[890-component]
+["890::: component"]
 untranslated_item = "11111"
 
-["891-For Each Component"]
+["891::: For Each Component"]
 unique_design_name = "11111"
 
-[891-component]
+["891::: component"]
 untranslated_item = "11111"
 
-["892-Filter List Component"]
+["892::: Filter List Component"]
 unique_design_name = "11111"
 
-[892-component]
+["892::: component"]
 untranslated_item = "11111"
 
-["893-ID Getter Component"]
+["893::: ID Getter Component"]
 unique_design_name = "11111"
 
-[893-component]
+["893::: component"]
 untranslated_item = "11111"
 
-["894-ID Info Reader Component"]
+["894::: ID Info Reader Component"]
 unique_design_name = "11111"
 
-[894-component]
+["894::: component"]
 untranslated_item = "11111"
 
-["895-ID Access Reader Component"]
+["895::: ID Access Reader Component"]
 unique_design_name = "11111"
 
-[895-component]
+["895::: component"]
 untranslated_item = "11111"
 
-["896-Set Variable Trigger"]
+["896::: Set Variable Trigger"]
 unique_design_name = "11111"
 
-[896-component]
+["896::: component"]
 untranslated_item = "11111"
 
-["897-View Sensor Component"]
+["897::: View Sensor Component"]
 unique_design_name = "11111"
 
-[897-component]
+["897::: component"]
 untranslated_item = "11111"
 
-["898-Access Checker Component"]
+["898::: Access Checker Component"]
 unique_design_name = "11111"
 
-[898-component]
+["898::: component"]
 untranslated_item = "11111"
 
-["899-List Pick Component"]
+["899::: List Pick Component"]
 unique_design_name = "11111"
 
-[899-component]
+["899::: component"]
 untranslated_item = "11111"
 
-["9-'OxygenIsToxicToHumans' AI Module"]
+["89::: Thermomachine"]
 untranslated_item = "11111"
 
-["9-OxygenIsToxicToHumans Module"]
+["89::: Thermomachine Board"]
 unique_design_name = "11111"
 
-["90-Space Heater"]
+["8::: 'Quarantine' AI Module"]
 untranslated_item = "11111"
 
-["90-Space Heater Board"]
+["8::: Quarantine Module"]
 unique_design_name = "11111"
 
-["900-Associative List Pick Component"]
+["900::: Associative List Pick Component"]
 unique_design_name = "11111"
 
-[900-component]
+["900::: component"]
 untranslated_item = "11111"
 
-["901-Compact Remote Shell"]
+["901::: Compact Remote Shell"]
 unique_design_name = "11111"
 
-["901-compact remote"]
+["901::: compact remote"]
 untranslated_item = "11111"
 
-["902-Controller Shell"]
+["902::: Controller Shell"]
 unique_design_name = "11111"
 
-[902-controller]
+["902::: controller"]
 untranslated_item = "11111"
 
-["903-Scanner Shell"]
+["903::: Scanner Shell"]
 unique_design_name = "11111"
 
-[903-scanner]
+["903::: scanner"]
 untranslated_item = "11111"
 
-["904-Keyboard Shell"]
+["904::: Keyboard Shell"]
 untranslated_item = "11111"
 
-["905-Gun Shell"]
+["905::: Gun Shell"]
 unique_design_name = "11111"
 
-["905-circuit gun"]
+["905::: circuit gun"]
 untranslated_item = "11111"
 
-["906-Bot Shell"]
+["906::: Bot Shell"]
 unique_design_name = "11111"
 
-["906-bot assembly"]
+["906::: bot assembly"]
 untranslated_item = "11111"
 
-["907-Money Bot Shell"]
+["907::: Money Bot Shell"]
 unique_design_name = "11111"
 
-["907-money bot assembly"]
+["907::: money bot assembly"]
 untranslated_item = "11111"
 
-["908-Drone Shell"]
+["908::: Drone Shell"]
 unique_design_name = "11111"
 
-["908-drone assembly"]
+["908::: drone assembly"]
 untranslated_item = "11111"
 
-["909-Server Shell"]
+["909::: Server Shell"]
 unique_design_name = "11111"
 
-["909-server assembly"]
+["909::: server assembly"]
 untranslated_item = "11111"
 
-["91-Teleportation Station Board"]
-unique_design_name = "11111"
-
-["91-Teleporter Station"]
+["90::: Space Heater"]
 untranslated_item = "11111"
+
+["90::: Space Heater Board"]
+unique_design_name = "11111"
 
-["910-Airlock Shell"]
+["910::: Airlock Shell"]
 unique_design_name = "11111"
 
-["910-circuit airlock assembly"]
+["910::: circuit airlock assembly"]
 untranslated_item = "11111"
 
-["911-Dispenser Shell"]
+["911::: Dispenser Shell"]
 unique_design_name = "11111"
 
-["911-circuit dispenser assembly"]
+["911::: circuit dispenser assembly"]
 untranslated_item = "11111"
 
-["912-Brain-Computer Interface Shell"]
+["912::: Brain-Computer Interface Shell"]
 unique_design_name = "11111"
 
-["912-brain-computer interface assembly"]
+["912::: brain-computer interface assembly"]
 untranslated_item = "11111"
 
-["913-Scanner Gate Shell"]
+["913::: Scanner Gate Shell"]
 unique_design_name = "11111"
 
-["913-scanner gate assembly"]
+["913::: scanner gate assembly"]
 untranslated_item = "11111"
 
-["914-Assembly Shell"]
+["914::: Assembly Shell"]
 unique_design_name = "11111"
 
-["914-circuit assembly"]
+["914::: circuit assembly"]
 untranslated_item = "11111"
 
-["915-MOD Module Shell"]
+["915::: MOD Module Shell"]
 unique_design_name = "11111"
 
-["915-MOD circuit adapter module"]
+["915::: MOD circuit adapter module"]
 untranslated_item = "11111"
 
-["916-Solar Panel Frame"]
+["916::: Solar Panel Frame"]
 unique_design_name = "11111"
 
-["916-solar panel assembly"]
+["916::: solar panel assembly"]
 untranslated_item = "11111"
 
-["917-Solar Tracking Electronics"]
+["917::: Solar Tracking Electronics"]
 unique_design_name = "11111"
 
-["917-tracker electronics"]
+["917::: tracker electronics"]
 untranslated_item = "11111"
 
-["918-blast door controller"]
+["918::: blast door controller"]
 untranslated_item = "11111"
 
-["919-Ignition Switch Controller"]
+["919::: Ignition Switch Controller"]
 unique_design_name = "11111"
 
-["919-ignition controller"]
+["919::: ignition controller"]
 untranslated_item = "11111"
 
-["92-Teleportation Hub Board"]
+["91::: Teleportation Station Board"]
 unique_design_name = "11111"
 
-["92-Teleporter Hub"]
+["91::: Teleporter Station"]
 untranslated_item = "11111"
 
-["920-Custom Vendor Refill"]
+["920::: Custom Vendor Refill"]
 unique_design_name = "11111"
 
-["920-resupply canister"]
+["920::: resupply canister"]
 untranslated_item = "11111"
 
-["921-Light Fixture Battery"]
+["921::: Light Fixture Battery"]
 unique_design_name = "11111"
 
-["921-miniature power cell"]
+["921::: miniature power cell"]
 untranslated_item = "11111"
 
-["922-Geiger counter"]
+["922::: Geiger counter"]
 untranslated_item = "11111"
 
-["923-pipe painter"]
+["923::: pipe painter"]
 untranslated_item = "11111"
 
-["924-airlock painter"]
+["924::: airlock painter"]
 untranslated_item = "11111"
 
-["925-decal painter"]
+["925::: decal painter"]
 untranslated_item = "11111"
 
-["926-tile sprayer"]
+["926::: tile sprayer"]
 untranslated_item = "11111"
 
-["927-APC Module"]
+["927::: APC Module"]
 unique_design_name = "11111"
 
-["927-power control module"]
+["927::: power control module"]
 untranslated_item = "11111"
 
-["928-airlock electronics"]
+["928::: airlock electronics"]
 untranslated_item = "11111"
 
-["929-firelock circuitry"]
+["929::: firelock circuitry"]
 untranslated_item = "11111"
 
-["93-Quantum Pad"]
-untranslated_item = "11111"
-
-["93-Quantum Pad Board"]
+["92::: Teleportation Hub Board"]
 unique_design_name = "11111"
+
+["92::: Teleporter Hub"]
+untranslated_item = "11111"
 
-["930-air alarm electronics"]
+["930::: air alarm electronics"]
 untranslated_item = "11111"
 
-["931-fire alarm electronics"]
+["931::: fire alarm electronics"]
 untranslated_item = "11111"
 
-["932-Trapdoor Controller Electronics"]
+["932::: Trapdoor Controller Electronics"]
 unique_design_name = "11111"
 
-["932-trapdoor controller"]
+["932::: trapdoor controller"]
 untranslated_item = "11111"
 
-["933-iron rod"]
+["933::: iron rod"]
 untranslated_item = "11111"
 
-[934-Plasma]
+["934::: Plasma"]
 design_from_result = "твёрдая плазма"
 
-["935-pill bottle"]
+["935::: pill bottle"]
 untranslated_item = "11111"
 
-[936-stethoscope]
+["936::: stethoscope"]
 untranslated_item = "11111"
 
-["937-sticky tape"]
+["937::: sticky tape"]
 untranslated_item = "11111"
 
-["938-surgical tape"]
+["938::: surgical tape"]
 untranslated_item = "11111"
 
-["939-slime scanner"]
+["939::: slime scanner"]
 untranslated_item = "11111"
 
-["94-Bot launchpad"]
+["93::: Quantum Pad"]
 untranslated_item = "11111"
 
-["94-Machine Design (Bot launchpad)"]
+["93::: Quantum Pad Board"]
 unique_design_name = "11111"
 
-["940-petri dish"]
+["940::: petri dish"]
 untranslated_item = "11111"
 
-["941-Sterile Swab"]
+["941::: Sterile Swab"]
 unique_design_name = "11111"
 
-[941-swab]
+["941::: swab"]
 untranslated_item = "11111"
 
-["942-Research Telescreen"]
+["942::: Research Telescreen"]
 unique_design_name = "11111"
 
-["942-research telescreen frame"]
+["942::: research telescreen frame"]
 untranslated_item = "11111"
 
-["943-Ordnance Telescreen"]
+["943::: Ordnance Telescreen"]
 unique_design_name = "11111"
 
-["943-bomb test site telescreen frame"]
+["943::: bomb test site telescreen frame"]
 untranslated_item = "11111"
 
-[944-syringe]
+["944::: syringe"]
 untranslated_item = "11111"
 
-[945-dropper]
+["945::: dropper"]
 untranslated_item = "11111"
 
-["946-blood filter"]
+["946::: blood filter"]
 untranslated_item = "11111"
 
-[947-scalpel]
+["947::: scalpel"]
 untranslated_item = "11111"
 
-["948-circular saw"]
+["948::: circular saw"]
 untranslated_item = "11111"
 
-[949-bonesetter]
+["949::: bonesetter"]
 untranslated_item = "11111"
 
-["95-Bluespace Launchpad"]
+["94::: Bot launchpad"]
 untranslated_item = "11111"
 
-["95-Bluespace Launchpad Board"]
+["94::: Machine Design (Bot launchpad)"]
 unique_design_name = "11111"
 
-["950-surgical drill"]
+["950::: surgical drill"]
 untranslated_item = "11111"
 
-[951-retractor]
+["951::: retractor"]
 untranslated_item = "11111"
 
-[952-cautery]
+["952::: cautery"]
 untranslated_item = "11111"
 
-[953-hemostat]
+["953::: hemostat"]
 untranslated_item = "11111"
 
-[954-flashlight]
+["954::: flashlight"]
 untranslated_item = "11111"
 
-[955-multitool]
+["955::: multitool"]
 untranslated_item = "11111"
 
-["956-T-ray scanner"]
+["956::: T-ray scanner"]
 untranslated_item = "11111"
 
-["957-rapid wiring device"]
+["957::: rapid wiring device"]
 untranslated_item = "11111"
 
-["958-welding helmet"]
+["958::: welding helmet"]
 untranslated_item = "11111"
 
-["959-Cable (x5)"]
+["959::: Cable (x5)"]
 unique_design_name = "11111"
 
-["959-cable coil"]
+["959::: cable coil"]
 untranslated_item = "11111"
 
-["96-Bluespace Launchpad Console Board"]
+["95::: Bluespace Launchpad"]
+untranslated_item = "11111"
+
+["95::: Bluespace Launchpad Board"]
 unique_design_name = "11111"
 
-["96-Launchpad Control Console"]
+["960::: toolbox"]
 untranslated_item = "11111"
 
-[960-toolbox]
-untranslated_item = "11111"
-
-["961-Plasmaman Belt Tank"]
+["961::: Plasmaman Belt Tank"]
 unique_design_name = "11111"
 
-["961-plasma internals tank"]
+["961::: plasma internals tank"]
 untranslated_item = "11111"
 
-["962-Generic Gas Tank"]
+["962::: Generic Gas Tank"]
 unique_design_name = "11111"
 
-["962-gas tank"]
+["962::: gas tank"]
 untranslated_item = "11111"
 
-[963-boxcutter]
+["963::: boxcutter"]
 untranslated_item = "11111"
 
-["964-tinfoil hat"]
+["964::: tinfoil hat"]
 untranslated_item = "11111"
 
-[965-beaker]
+["965::: beaker"]
 untranslated_item = "11111"
 
-["966-large beaker"]
+["966::: large beaker"]
 untranslated_item = "11111"
 
-[967-igniter]
+["967::: igniter"]
 untranslated_item = "11111"
 
-[968-condenser]
+["968::: condenser"]
 untranslated_item = "11111"
 
-["969-remote signaling device"]
+["969::: remote signaling device"]
 untranslated_item = "11111"
 
-["97-Modular Shield Generator"]
-untranslated_item = "11111"
-
-["97-Modular Shield Generator Board"]
+["96::: Bluespace Launchpad Console Board"]
 unique_design_name = "11111"
 
-["970-infrared emitter"]
+["96::: Launchpad Control Console"]
 untranslated_item = "11111"
 
-["971-health sensor"]
+["970::: infrared emitter"]
 untranslated_item = "11111"
 
-[972-timer]
+["971::: health sensor"]
 untranslated_item = "11111"
 
-["973-voice analyzer"]
+["972::: timer"]
 untranslated_item = "11111"
 
-["974-light tube"]
+["973::: voice analyzer"]
 untranslated_item = "11111"
 
-["975-light bulb"]
+["974::: light tube"]
 untranslated_item = "11111"
 
-["976-proximity sensor"]
+["975::: light bulb"]
 untranslated_item = "11111"
 
-["977-butcher's cleaver"]
+["976::: proximity sensor"]
 untranslated_item = "11111"
 
-[978-Spraycan]
+["977::: butcher's cleaver"]
+untranslated_item = "11111"
+
+["978::: Spraycan"]
 unique_design_name = "11111"
 
-["978-spray can"]
+["978::: spray can"]
 untranslated_item = "11111"
 
-["979-destination tagger"]
+["979::: destination tagger"]
 untranslated_item = "11111"
 
-["98-Modular Shield Node"]
+["97::: Modular Shield Generator"]
 untranslated_item = "11111"
 
-["98-Modular Shield Node Board"]
+["97::: Modular Shield Generator Board"]
 unique_design_name = "11111"
 
-["980-Fluid Duct"]
+["980::: Fluid Duct"]
 unique_design_name = "11111"
 
-["980-stack of duct"]
+["980::: stack of duct"]
 untranslated_item = "11111"
 
-["981-digital clock frame"]
+["981::: digital clock frame"]
 untranslated_item = "11111"
 
-["982-electric razor"]
+["982::: electric razor"]
 untranslated_item = "11111"
 
-["983-Package Wrapping"]
+["983::: Package Wrapping"]
 unique_design_name = "11111"
 
-["983-package wrapper"]
+["983::: package wrapper"]
 untranslated_item = "11111"
 
-[984-Holodisk]
+["984::: Holodisk"]
 unique_design_name = "11111"
 
-["984-holorecord disk"]
+["984::: holorecord disk"]
 untranslated_item = "11111"
 
-["985-Conveyor Belt"]
+["985::: Conveyor Belt"]
 unique_design_name = "11111"
 
-["985-conveyor belt assembly"]
+["985::: conveyor belt assembly"]
 untranslated_item = "11111"
 
-["986-Conveyor Belt Switch"]
+["986::: Conveyor Belt Switch"]
 unique_design_name = "11111"
 
-["986-conveyor switch assembly"]
+["986::: conveyor switch assembly"]
 untranslated_item = "11111"
 
-["987-Laptop Frame"]
+["987::: Laptop Frame"]
 unique_design_name = "11111"
 
-[987-laptop]
+["987::: laptop"]
 untranslated_item = "11111"
 
-["988-universal scanner"]
+["988::: universal scanner"]
 untranslated_item = "11111"
 
-["989-Paper Biscuit"]
+["989::: Paper Biscuit"]
 unique_design_name = "11111"
 
-["989-biscuit card"]
+["989::: biscuit card"]
 untranslated_item = "11111"
 
-["99-Modular Shield Relay"]
+["98::: Modular Shield Node"]
 untranslated_item = "11111"
 
-["99-Modular Shield Relay Board"]
+["98::: Modular Shield Node Board"]
 unique_design_name = "11111"
 
-["990-Confidential Paper Biscuit"]
+["990::: Confidential Paper Biscuit"]
 unique_design_name = "11111"
 
-["990-confidential biscuit card"]
+["990::: confidential biscuit card"]
 untranslated_item = "11111"
 
-["991-Universal Recorder Tape"]
+["991::: Universal Recorder Tape"]
 design_from_result = "касета"
 
-["992-Box of Foam Darts (Harmless)"]
+["992::: Box of Foam Darts (Harmless)"]
 unique_design_name = "11111"
 
-["992-ammo box (Foam Darts)"]
+["992::: ammo box (Foam Darts)"]
 untranslated_item = "11111"
 
-["993-Flamethrower (Lethal/Highly Destructive)"]
+["993::: Flamethrower (Lethal/Highly Destructive)"]
 unique_design_name = "11111"
 
-[993-flamethrower]
+["993::: flamethrower"]
 untranslated_item = "11111"
 
-[994-electropack]
+["994::: electropack"]
 untranslated_item = "11111"
 
-["995-modular receiver"]
+["995::: modular receiver"]
 untranslated_item = "11111"
 
-["996-Foam Riot Dart (Nonlethal)"]
+["996::: Foam Riot Dart (Nonlethal)"]
 unique_design_name = "11111"
 
-["996-riot foam dart"]
+["996::: riot foam dart"]
 untranslated_item = "11111"
 
-["997-Foam Riot Dart Box (Nonlethal)"]
+["997::: Foam Riot Dart Box (Nonlethal)"]
 unique_design_name = "11111"
 
-["997-ammo box (Foam Darts)"]
+["997::: ammo box (Foam Darts)"]
 untranslated_item = "11111"
 
-["998-.357 Casing (VERY Lethal)"]
+["998::: .357 Casing (VERY Lethal)"]
 unique_design_name = "11111"
 
-["998-.357 bullet casing"]
+["998::: .357 bullet casing"]
 untranslated_item = "11111"
 
-["999-.310 Strilka surplus bullet casing"]
+["999::: .310 Strilka surplus bullet casing"]
 untranslated_item = "11111"
 
-["999-.310 Surplus Bullet Casing (VERY Lethal)"]
+["999::: .310 Surplus Bullet Casing (VERY Lethal)"]
+unique_design_name = "11111"
+
+["99::: Modular Shield Relay"]
+untranslated_item = "11111"
+
+["99::: Modular Shield Relay Board"]
+unique_design_name = "11111"
+
+["9::: 'OxygenIsToxicToHumans' AI Module"]
+untranslated_item = "11111"
+
+["9::: OxygenIsToxicToHumans Module"]
 unique_design_name = "11111"
