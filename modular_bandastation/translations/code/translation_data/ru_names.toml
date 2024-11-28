@@ -234,6 +234,9 @@ instrumental = "устройством ПИИ"
 nominative = "устройство ПИИ"
 prepositional = "устройстве ПИИ"
 
+["Personal Artificial Intelligence Card"] # Unique Design Name
+nominative = "Устройство персонального искусственного интеллекта"
+
 [photocopier]
 accusative = "ксерокс"
 dative = "ксероксу"
@@ -557,6 +560,9 @@ accusative = "твёрдую плазму"
 instrumental = "твёрдой плазмой"
 prepositional = "твёрдой плазме"
 gender = "female"
+
+["Plasma"] # Unique Design Name
+nominative = "Плазма"
 
 ["plasma"]
 nominative = "плазма"
@@ -2751,6 +2757,9 @@ instrumental = "касетой"
 prepositional = "касете"
 gender = "female"
 
+["Universal Recorder Tape"]  # Unique Design Name
+nominative = "Касета для универсального диктофона"
+
 # Other
 ["assault belt"]
 nominative = "штурмовой пояс"
@@ -3786,6 +3795,9 @@ accusative = "газоанализатор дальнего действия"
 instrumental = "газоанализатором дальнего действия"
 prepositional = "газоанализаторе дальнего действия"
 gender = "male"
+
+["Experimental Long-range Gas Analyzer"] # Unique Design Name
+nominative = "Экспериментальный газоанализатор дальнего действия"
 
 ["hand drill"]
 nominative = "шуруповёрт"

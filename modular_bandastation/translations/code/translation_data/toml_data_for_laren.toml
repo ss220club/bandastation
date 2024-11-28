@@ -1257,9 +1257,6 @@ untranslated_item = "11111"
 ["26::: Asimov++ Module"] # Unique Design Name
 unique_design_name = "11111"
 
-["270::: Personal Artificial Intelligence Card"]
-design_from_result = "устройство ПИИ"
-
 ["271::: AI Surveillance Software Update"] # Unique Design Name
 unique_design_name = "11111"
 
@@ -2343,8 +2340,8 @@ unique_design_name = "11111"
 ["455::: beaker storage apparatus"]
 untranslated_item = "11111"
 
-["456::: Crew Pinpointer"]
-design_from_result = "целеуказатель на экипаж медицинского киборга"
+["Crew Pinpointer"] # Unique Design Name
+"nominative" = "Целеуказатель на экипаж"
 
 ["457::: experimental push broom"]
 untranslated_item = "11111"
@@ -3540,9 +3537,6 @@ untranslated_item = "11111"
 ["688::: knight helmet"]
 untranslated_item = "11111"
 
-["689::: Pepper Spray"]
-design_from_result = "перцовый баллончик"
-
 ["68::: Telecommunications Server Monitor"]
 untranslated_item = "11111"
 
@@ -3723,33 +3717,6 @@ untranslated_item = "11111"
 ["730::: plastitanium glass"]
 untranslated_item = "11111"
 
-["731::: Bluespace RPED"]
-design_from_result = "блюспейс быстрозаменитель компонентов"
-
-["732::: Basic Capacitor"]
-design_from_result = "конденсатор"
-
-["733::: Basic Scanning Module"]
-design_from_result = "сканирующий модуль"
-
-["734::: Micro Servo"]
-design_from_result = "микросервопривод"
-
-["735::: Nano Servo"]
-design_from_result = "наносервопривод"
-
-["736::: Pico Servo"]
-design_from_result = "пикосервопривод"
-
-["737::: Femto Servo"]
-design_from_result = "фемтосервопривод"
-
-["738::: Basic Micro-Laser"]
-design_from_result = "микролазер"
-
-["739::: Basic Matter Bin"]
-design_from_result = "емкость материи"
-
 ["73::: Advanced Camera Console"]
 untranslated_item = "11111"
 
@@ -3786,17 +3753,11 @@ untranslated_item = "11111"
 ["748::: water recycler"]
 untranslated_item = "11111"
 
-["749::: Jaws of Life"]
-design_from_result = "челюсти жизни"
-
 ["74::: Bounty Pad"]
 untranslated_item = "11111"
 
 ["74::: Civilian Bounty Pad Control Board"] # Unique Design Name
 unique_design_name = "11111"
-
-["750::: Experimental Long-range Gas Analyzer"]
-design_from_result = "газоанализатор дальнего действия"
 
 ["751::: Rapid Pipe Dispenser (RPD)"] # Unique Design Name
 unique_design_name = "11111"
@@ -4037,9 +3998,6 @@ unique_design_name = "11111"
 
 ["791::: advanced energy gun parts kit (lethal/nonlethal)"]
 untranslated_item = "11111"
-
-["792::: Telescopic Riot Shield"]
-design_from_result = "телескопический щит"
 
 ["793::: ballistic shield"]
 untranslated_item = "11111"
@@ -4923,9 +4881,6 @@ untranslated_item = "11111"
 ["933::: iron rod"]
 untranslated_item = "11111"
 
-["934::: Plasma"]
-design_from_result = "твёрдая плазма"
-
 ["935::: pill bottle"]
 untranslated_item = "11111"
 
@@ -5174,9 +5129,6 @@ unique_design_name = "11111"
 
 ["990::: confidential biscuit card"]
 untranslated_item = "11111"
-
-["991::: Universal Recorder Tape"]
-design_from_result = "касета"
 
 ["992::: Box of Foam Darts (Harmless)"] # Unique Design Name
 unique_design_name = "11111"
