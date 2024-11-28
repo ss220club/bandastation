@@ -1408,24 +1408,6 @@ instrumental = "экспериментальным разрушающим ска
 prepositional = "экспериментальном разрушающем сканере"
 gender = "male"
 
-["tachyon-doppler array"]
-nominative = "тахионно-доплеровская антенна"
-genitive = "тахионно-доплеровской антенны"
-dative = "тахионно-доплеровской антенне"
-accusative = "тахионно-доплеровскую антенну"
-instrumental = "тахионно-доплеровской антенной"
-prepositional = "тахионно-доплеровской антенне"
-gender = "female"
-
-["Tank Compressor"]
-nominative = "компрессор для баллонов"
-genitive = "компрессора для баллонов"
-dative = "компрессору для баллонов"
-accusative = "компрессор для баллонов"
-instrumental = "компрессором для баллонов"
-prepositional = "компрессоре для баллонов"
-gender = "male"
-
 ["AI upload console"]
 nominative = "консоль загрузки ИИ"
 genitive = "консоли загрузки ИИ"
@@ -1448,3 +1430,9 @@ original = "turbine outlet"
 original = "thermomachine"
 
 ["anomaly refinery"]
+
+["tachyon-doppler array"]
+nominative = "тахионно-доплеровская матрица"
+
+["Tank Compressor"]
+nominative = "компрессор для канистр"
