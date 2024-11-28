@@ -3,31 +3,31 @@
 # At the very least 1028 items need to be translated and declented.
 # ...
 
-["1000::: Ammo Box (10mm) (Lethal)"]
+["1000::: Ammo Box (10mm) (Lethal)"] # Unique Design Name
 unique_design_name = "11111"
 
 ["1000::: ammo box (10mm)"]
 untranslated_item = "11111"
 
-["1001::: Ammo Box (.45) (Lethal)"]
+["1001::: Ammo Box (.45) (Lethal)"] # Unique Design Name
 unique_design_name = "11111"
 
 ["1001::: ammo box (.45)"]
 untranslated_item = "11111"
 
-["1002::: Ammo Box (9mm) (Lethal)"]
+["1002::: Ammo Box (9mm) (Lethal)"] # Unique Design Name
 unique_design_name = "11111"
 
 ["1002::: ammo box (9mm)"]
 untranslated_item = "11111"
 
-["1003::: Interrogation Telescreen"]
+["1003::: Interrogation Telescreen"] # Unique Design Name
 unique_design_name = "11111"
 
 ["1003::: interrogation telescreen frame"]
 untranslated_item = "11111"
 
-["1004::: Prison Telescreen"]
+["1004::: Prison Telescreen"] # Unique Design Name
 unique_design_name = "11111"
 
 ["1004::: prison telescreen frame"]
@@ -39,7 +39,7 @@ untranslated_item = "11111"
 ["1006::: push broom"]
 untranslated_item = "11111"
 
-["1007::: Camera Film Cartridge"]
+["1007::: Camera Film Cartridge"] # Unique Design Name
 unique_design_name = "11111"
 
 ["1007::: film cartridge"]
@@ -54,7 +54,7 @@ untranslated_item = "11111"
 ["100::: Modular Shield Charger"]
 untranslated_item = "11111"
 
-["100::: Modular Shield Charger Board"]
+["100::: Modular Shield Charger Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["1010::: plastic fork"]
@@ -90,7 +90,7 @@ untranslated_item = "11111"
 ["101::: Modular Shield Well"]
 untranslated_item = "11111"
 
-["101::: Modular Shield Well Board"]
+["101::: Modular Shield Well Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["1020::: shaker"]
@@ -114,19 +114,19 @@ untranslated_item = "11111"
 ["1026::: cap gun"]
 untranslated_item = "11111"
 
-["1027::: Box of Cap Gun Shots"]
+["1027::: Box of Cap Gun Shots"] # Unique Design Name
 unique_design_name = "11111"
 
 ["1027::: capgun ammo"]
 untranslated_item = "11111"
 
-["1028::: Plastic Balloon"]
+["1028::: Plastic Balloon"] # Unique Design Name
 unique_design_name = "11111"
 
 ["1028::: balloon"]
 untranslated_item = "11111"
 
-["1029::: Plastic Armblade"]
+["1029::: Plastic Armblade"] # Unique Design Name
 unique_design_name = "11111"
 
 ["1029::: foam armblade"]
@@ -135,13 +135,13 @@ untranslated_item = "11111"
 ["102::: Teleporter"]
 untranslated_item = "11111"
 
-["102::: Teleporter Console Board"]
+["102::: Teleporter Console Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["1030::: plastic bead necklace"]
 untranslated_item = "11111"
 
-["1031::: Plastic Can Rings"]
+["1031::: Plastic Can Rings"] # Unique Design Name
 unique_design_name = "11111"
 
 ["1031::: can ring"]
@@ -159,7 +159,7 @@ untranslated_item = "11111"
 ["1035::: toner cartridge"]
 untranslated_item = "11111"
 
-["1036::: Toner Cartridge (Large)"]
+["1036::: Toner Cartridge (Large)"] # Unique Design Name
 unique_design_name = "11111"
 
 ["1036::: large toner cartridge"]
@@ -177,16 +177,16 @@ untranslated_item = "11111"
 ["103::: Cryotube"]
 untranslated_item = "11111"
 
-["103::: Cryotube Board"]
+["103::: Cryotube Board"] # Unique Design Name
 unique_design_name = "11111"
 
-["1040::: Bar Telescreen"]
+["1040::: Bar Telescreen"] # Unique Design Name
 unique_design_name = "11111"
 
 ["1040::: bar telescreen frame"]
 untranslated_item = "11111"
 
-["1041::: Entertainment Telescreen"]
+["1041::: Entertainment Telescreen"] # Unique Design Name
 unique_design_name = "11111"
 
 ["1041::: entertainment telescreen frame"]
@@ -207,10 +207,10 @@ untranslated_item = "11111"
 ["104::: Chem Dispenser"]
 untranslated_item = "11111"
 
-["104::: Portable Chem Dispenser Board"]
+["104::: Portable Chem Dispenser Board"] # Unique Design Name
 unique_design_name = "11111"
 
-["105::: Chem Master Board"]
+["105::: Chem Master Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["105::: ChemMaster 3000"]
@@ -219,154 +219,154 @@ untranslated_item = "11111"
 ["106::: Chemical Heater"]
 untranslated_item = "11111"
 
-["106::: Chemical Heater Board"]
+["106::: Chemical Heater Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["107::: High-Performance Liquid Chromatography"]
 untranslated_item = "11111"
 
-["107::: High-Performance Liquid Chromatography Board"]
+["107::: High-Performance Liquid Chromatography Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["108::: Smoke Machine"]
 untranslated_item = "11111"
 
-["108::: Smoke Machine Board"]
+["108::: Smoke Machine Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["109::: All-In-One Grinder"]
 untranslated_item = "11111"
 
-["109::: All-In-One Grinder Board"]
+["109::: All-In-One Grinder Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["10::: 'Freeform' AI Module"]
 untranslated_item = "11111"
 
-["10::: Freeform Module"]
+["10::: Freeform Module"] # Unique Design Name
 unique_design_name = "11111"
 
 ["110::: Enhanced Interrogation Chamber"]
 untranslated_item = "11111"
 
-["110::: Enhanced Interrogation Chamber Board"]
+["110::: Enhanced Interrogation Chamber Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["111::: Photobooth"]
 untranslated_item = "11111"
 
-["111::: Photobooth Board"]
+["111::: Photobooth Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["112::: Security Photobooth"]
 untranslated_item = "11111"
 
-["112::: Security Photobooth Board"]
+["112::: Security Photobooth Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["113::: Biogenerator"]
 untranslated_item = "11111"
 
-["113::: Biogenerator Board"]
+["113::: Biogenerator Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["114::: Hydroponics Tray"]
 untranslated_item = "11111"
 
-["114::: Hydroponics Tray Board"]
+["114::: Hydroponics Tray Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["115::: Destructive Analyzer"]
 untranslated_item = "11111"
 
-["115::: Destructive Analyzer Board"]
+["115::: Destructive Analyzer Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["116::: E.X.P.E.R.I-MENTOR"]
 untranslated_item = "11111"
 
-["116::: E.X.P.E.R.I-MENTOR Board"]
+["116::: E.X.P.E.R.I-MENTOR Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["117::: Protolathe"]
 untranslated_item = "11111"
 
-["117::: Protolathe Board"]
+["117::: Protolathe Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["118::: Ancient Protolathe"]
 untranslated_item = "11111"
 
-["118::: Ancient Protolathe Board"]
+["118::: Ancient Protolathe Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["119::: Circuit Imprinter"]
 untranslated_item = "11111"
 
-["119::: Circuit Imprinter Board"]
+["119::: Circuit Imprinter Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["11::: 'Reset' AI module"]
 untranslated_item = "11111"
 
-["11::: Reset Module"]
+["11::: Reset Module"] # Unique Design Name
 unique_design_name = "11111"
 
 ["120::: Ancient Circuit Imprinter"]
 untranslated_item = "11111"
 
-["120::: Ancient Circuit Imprinter Board"]
+["120::: Ancient Circuit Imprinter Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["121::: R&D Server Control"]
 untranslated_item = "11111"
 
-["121::: R&D Server Control Console Board"]
+["121::: R&D Server Control Console Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["122::: R&D Server"]
 untranslated_item = "11111"
 
-["122::: R&D Server Board"]
+["122::: R&D Server Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["123::: Exosuit Fabricator"]
 untranslated_item = "11111"
 
-["123::: Exosuit Fabricator Board"]
+["123::: Exosuit Fabricator Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["124::: Cyborg Recharger"]
 untranslated_item = "11111"
 
-["124::: Cyborg Recharger Board"]
+["124::: Cyborg Recharger Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["125::: Mechbay Recharger"]
 untranslated_item = "11111"
 
-["125::: Mechbay Recharger Board"]
+["125::: Mechbay Recharger Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["126::: DNA Scanner"]
 untranslated_item = "11111"
 
-["126::: DNA Scanner Board"]
+["126::: DNA Scanner Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["127::: DNA Infuser"]
 untranslated_item = "11111"
 
-["127::: DNA Infuser Board"]
+["127::: DNA Infuser Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["128::: DNA Console"]
 untranslated_item = "11111"
 
-["128::: DNA Console Board"]
+["128::: DNA Console Board"] # Unique Design Name
 unique_design_name = "11111"
 
-["129::: Destructive Scanner Board"]
+["129::: Destructive Scanner Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["129::: Experimental Destructive Scanner"]
@@ -375,34 +375,34 @@ untranslated_item = "11111"
 ["12::: 'Purge' AI Module"]
 untranslated_item = "11111"
 
-["12::: Purge Module"]
+["12::: Purge Module"] # Unique Design Name
 unique_design_name = "11111"
 
 ["130::: Tachyon-Doppler Research Array"]
 untranslated_item = "11111"
 
-["130::: Tachyon-Doppler Research Array Board"]
+["130::: Tachyon-Doppler Research Array Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["131::: Anomaly Refinery"]
 untranslated_item = "11111"
 
-["131::: Anomaly Refinery Board"]
+["131::: Anomaly Refinery Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["132::: Tank Compressor"]
 untranslated_item = "11111"
 
-["132::: Tank Compressor Board"]
+["132::: Tank Compressor Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["133::: Microwave"]
 untranslated_item = "11111"
 
-["133::: Microwave Board"]
+["133::: Microwave Board"] # Unique Design Name
 unique_design_name = "11111"
 
-["134::: Wireless Microwave Board"]
+["134::: Wireless Microwave Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["134::: Wireless Microwave Oven"]
@@ -411,52 +411,52 @@ untranslated_item = "11111"
 ["135::: Gibber"]
 untranslated_item = "11111"
 
-["135::: Gibber Board"]
+["135::: Gibber Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["136::: Smartfridge"]
 untranslated_item = "11111"
 
-["136::: Smartfridge Board"]
+["136::: Smartfridge Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["137::: Dehydrator"]
 untranslated_item = "11111"
 
-["137::: Dehydrator Board"]
+["137::: Dehydrator Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["138::: Growing Vat"]
 untranslated_item = "11111"
 
-["138::: Growing Vat Board"]
+["138::: Growing Vat Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["139::: Monkey Recycler"]
 untranslated_item = "11111"
 
-["139::: Monkey Recycler Board"]
+["139::: Monkey Recycler Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["13::: 'Remove Law' AI module"]
 untranslated_item = "11111"
 
-["13::: Law Removal Module"]
+["13::: Law Removal Module"] # Unique Design Name
 unique_design_name = "11111"
 
 ["140::: Seed Extractor"]
 untranslated_item = "11111"
 
-["140::: Seed Extractor Board"]
+["140::: Seed Extractor Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["141::: Food Processor"]
 untranslated_item = "11111"
 
-["141::: Food/Slime Processor Board"]
+["141::: Food/Slime Processor Board"] # Unique Design Name
 unique_design_name = "11111"
 
-["142::: Portable Soda Dispenser Board"]
+["142::: Portable Soda Dispenser Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["142::: Soda Dispenser"]
@@ -465,58 +465,58 @@ untranslated_item = "11111"
 ["143::: Booze Dispenser"]
 untranslated_item = "11111"
 
-["143::: Portable Booze Dispenser Board"]
+["143::: Portable Booze Dispenser Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["144::: Recycler"]
 untranslated_item = "11111"
 
-["144::: Recycler Board"]
+["144::: Recycler Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["145::: Scanner Gate"]
 untranslated_item = "11111"
 
-["145::: Scanner Gate Board"]
+["145::: Scanner Gate Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["146::: AI Holopad"]
 untranslated_item = "11111"
 
-["146::: AI Holopad Board"]
+["146::: AI Holopad Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["147::: Autolathe"]
 untranslated_item = "11111"
 
-["147::: Autolathe Board"]
+["147::: Autolathe Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["148::: Weapon Recharger"]
 untranslated_item = "11111"
 
-["148::: Weapon Recharger Board"]
+["148::: Weapon Recharger Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["149::: Custom Vendor"]
 untranslated_item = "11111"
 
-["149::: Vendor Board"]
+["149::: Vendor Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["14::: 'Freeform' Core AI Module"]
 untranslated_item = "11111"
 
-["14::: Core Freeform Module"]
+["14::: Core Freeform Module"] # Unique Design Name
 unique_design_name = "11111"
 
 ["150::: Ore Redemption"]
 untranslated_item = "11111"
 
-["150::: Ore Redemption Machine Board"]
+["150::: Ore Redemption Machine Board"] # Unique Design Name
 unique_design_name = "11111"
 
-["151::: Mining Rewards Vendor Board"]
+["151::: Mining Rewards Vendor Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["151::: Mining Vending Console"]
@@ -525,7 +525,7 @@ untranslated_item = "11111"
 ["152::: Suit Storage Unit"]
 untranslated_item = "11111"
 
-["153::: Tesla Coil Board"]
+["153::: Tesla Coil Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["153::: Tesla Controller"]
@@ -534,190 +534,190 @@ untranslated_item = "11111"
 ["154::: Grounding Rod"]
 untranslated_item = "11111"
 
-["154::: Grounding Rod Board"]
+["154::: Grounding Rod Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["155::: NTNet Relay"]
 untranslated_item = "11111"
 
-["155::: NTNet Relay Board"]
+["155::: NTNet Relay Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["156::: Crossing Signal"]
 untranslated_item = "11111"
 
-["156::: Crossing Signal Board"]
+["156::: Crossing Signal Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["157::: Guideway Sensor"]
 untranslated_item = "11111"
 
-["157::: Guideway Sensor Board"]
+["157::: Guideway Sensor Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["158::: Limb Grower"]
 untranslated_item = "11111"
 
-["158::: Limb Grower Board"]
+["158::: Limb Grower Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["159::: Harvester"]
 untranslated_item = "11111"
 
-["159::: Organ Harvester Board"]
+["159::: Organ Harvester Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["15::: 'Asimov' Core AI Module"]
 untranslated_item = "11111"
 
-["15::: Asimov Module"]
+["15::: Asimov Module"] # Unique Design Name
 unique_design_name = "11111"
 
 ["160::: Deep Fryer"]
 untranslated_item = "11111"
 
-["160::: Deep Fryer Board"]
+["160::: Deep Fryer Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["161::: Griddle"]
 untranslated_item = "11111"
 
-["161::: Griddle Board"]
+["161::: Griddle Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["162::: Oven"]
 untranslated_item = "11111"
 
-["162::: Oven Board"]
+["162::: Oven Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["163::: Stove"]
 untranslated_item = "11111"
 
-["163::: Stove Board"]
+["163::: Stove Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["164::: Range (Oven & Stove)"]
 untranslated_item = "11111"
 
-["164::: Range Board"]
+["164::: Range Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["165::: Donksoft Toy Vendor"]
 untranslated_item = "11111"
 
-["165::: Donksoft Toy Vendor Board"]
+["165::: Donksoft Toy Vendor Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["166::: Cell Charger"]
 untranslated_item = "11111"
 
-["166::: Cell Charger Board"]
+["166::: Cell Charger Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["167::: Dish Drive"]
 untranslated_item = "11111"
 
-["167::: Dish Drive Board"]
+["167::: Dish Drive Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["168::: Stacking Machine Console"]
 untranslated_item = "11111"
 
-["168::: Stacking Machine Console Board"]
+["168::: Stacking Machine Console Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["169::: Stacking Machine"]
 untranslated_item = "11111"
 
-["169::: Stacking Machine Board"]
+["169::: Stacking Machine Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["16::: 'P.A.L.A.D.I.N. version 3.5e' Core AI Module"]
 untranslated_item = "11111"
 
-["16::: P.A.L.A.D.I.N. Module"]
+["16::: P.A.L.A.D.I.N. Module"] # Unique Design Name
 unique_design_name = "11111"
 
 ["170::: Ore Silo"]
 untranslated_item = "11111"
 
-["170::: Ore Silo Board"]
+["170::: Ore Silo Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["171::: Lipid Extractor"]
 untranslated_item = "11111"
 
-["171::: Lipid Extractor Board"]
+["171::: Lipid Extractor Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["172::: Lifeform Stasis Unit"]
 untranslated_item = "11111"
 
-["172::: Lifeform Stasis Unit Board"]
+["172::: Lifeform Stasis Unit Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["173::: Medical Kiosk"]
 untranslated_item = "11111"
 
-["173::: Medical Kiosk Board"]
+["173::: Medical Kiosk Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["174::: Medipen Refiller"]
 untranslated_item = "11111"
 
-["174::: Medipen Refiller Board"]
+["174::: Medipen Refiller Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["175::: Chemical Recipient"]
 untranslated_item = "11111"
 
-["175::: Chemical Recipient Board"]
+["175::: Chemical Recipient Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["176::: Sheet-meister 2000"]
 untranslated_item = "11111"
 
-["176::: Sheet-meister 2000 Board"]
+["176::: Sheet-meister 2000 Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["177::: Restaurant Portal"]
 untranslated_item = "11111"
 
-["177::: Restaurant Portal Board"]
+["177::: Restaurant Portal Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["178::: Vend-A-Tray"]
 untranslated_item = "11111"
 
-["178::: Vend-a-Tray Board"]
+["178::: Vend-a-Tray Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["179::: Civilian Bounty Pad"]
 untranslated_item = "11111"
 
-["179::: Civilian Bounty Pad Board"]
+["179::: Civilian Bounty Pad Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["17::: 'T.Y.R.A.N.T.' Core AI Module"]
 untranslated_item = "11111"
 
-["17::: T.Y.R.A.N.T. Module"]
+["17::: T.Y.R.A.N.T. Module"] # Unique Design Name
 unique_design_name = "11111"
 
 ["180::: Skill Station"]
 untranslated_item = "11111"
 
-["180::: Skill Station Board"]
+["180::: Skill Station Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["181::: Fax Machine"]
 untranslated_item = "11111"
 
-["181::: Fax Machine Board"]
+["181::: Fax Machine Board"] # Unique Design Name
 unique_design_name = "11111"
 
-["182::: HFR Core Board"]
+["182::: HFR Core Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["182::: HFR core"]
@@ -726,85 +726,85 @@ untranslated_item = "11111"
 ["183::: HFR Fuel Input"]
 untranslated_item = "11111"
 
-["183::: HFR Fuel Input Board"]
+["183::: HFR Fuel Input Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["184::: HFR Waste Output"]
 untranslated_item = "11111"
 
-["184::: HFR Waste Output Board"]
+["184::: HFR Waste Output Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["185::: HFR Moderator Input"]
 untranslated_item = "11111"
 
-["185::: HFR Moderator Input Board"]
+["185::: HFR Moderator Input Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["186::: HFR Corner"]
 untranslated_item = "11111"
 
-["186::: HFR Corner Board"]
+["186::: HFR Corner Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["187::: HFR Interface"]
 untranslated_item = "11111"
 
-["187::: HFR Interface Board"]
+["187::: HFR Interface Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["188::: Crystallizer"]
 untranslated_item = "11111"
 
-["188::: Crystallizer Board"]
+["188::: Crystallizer Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["189::: Exoscanner"]
 untranslated_item = "11111"
 
-["189::: Scanner Array Board"]
+["189::: Scanner Array Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["18::: 'Overlord' Core AI Module"]
 untranslated_item = "11111"
 
-["18::: Overlord Module"]
+["18::: Overlord Module"] # Unique Design Name
 unique_design_name = "11111"
 
 ["190::: Exploration Drone Launcher"]
 untranslated_item = "11111"
 
-["190::: Exploration Drone Launcher Board"]
+["190::: Exploration Drone Launcher Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["191::: Component Printer (Machine Board)"]
 untranslated_item = "11111"
 
-["191::: Component Printer Board"]
+["191::: Component Printer Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["192::: Module Duplicator (Machine Board)"]
 untranslated_item = "11111"
 
-["192::: Module Duplicator Board"]
+["192::: Module Duplicator Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["193::: Coffeemaker (Machine Board)"]
 untranslated_item = "11111"
 
-["193::: Coffeemaker Board"]
+["193::: Coffeemaker Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["194::: Bot Navigational Beacon"]
 untranslated_item = "11111"
 
-["194::: Machine Design (Bot Navigational Beacon)"]
+["194::: Machine Design (Bot Navigational Beacon)"] # Unique Design Name
 unique_design_name = "11111"
 
 ["195::: Fishing Portal Generator"]
 untranslated_item = "11111"
 
-["195::: Fishing Portal Generator Board"]
+["195::: Fishing Portal Generator Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["196::: Boulder Retrieval Matrix"]
@@ -813,37 +813,37 @@ untranslated_item = "11111"
 ["197::: Flatpacker"]
 untranslated_item = "11111"
 
-["197::: Flatpacker Machine Board"]
+["197::: Flatpacker Machine Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["198::: Portable Air Scrubber"]
 untranslated_item = "11111"
 
-["198::: Portable Air Scrubber Board"]
+["198::: Portable Air Scrubber Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["199::: Portable Air Pump"]
 untranslated_item = "11111"
 
-["199::: Portable Air Pump Board"]
+["199::: Portable Air Pump Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["19::: 'Corporate' Core AI Module"]
 untranslated_item = "11111"
 
-["19::: Corporate Module"]
+["19::: Corporate Module"] # Unique Design Name
 unique_design_name = "11111"
 
 ["1::: Netpod"]
 untranslated_item = "11111"
 
-["1::: Netpod Board"]
+["1::: Netpod Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["200::: Portable Pipe Scrubber"]
 untranslated_item = "11111"
 
-["200::: Portable Pipe Scrubber Board"]
+["200::: Portable Pipe Scrubber Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["201::: Book Binder"]
@@ -855,40 +855,40 @@ untranslated_item = "11111"
 ["203::: Big Manipulator"]
 untranslated_item = "11111"
 
-["203::: Big Manipulator Board"]
+["203::: Big Manipulator Board"] # Unique Design Name
 unique_design_name = "11111"
 
-["204::: Manufacturing Lathe Board"]
+["204::: Manufacturing Lathe Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["204::: manufacturing lathe"]
 untranslated_item = "11111"
 
-["205::: Manufacturing Assembling Machine Board"]
+["205::: Manufacturing Assembling Machine Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["205::: manufacturing assembling machine"]
 untranslated_item = "11111"
 
-["206::: Manufacturing Crusher Board"]
+["206::: Manufacturing Crusher Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["206::: manufacturing crusher"]
 untranslated_item = "11111"
 
-["207::: Manufacturing Router Board"]
+["207::: Manufacturing Router Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["207::: manufacturing router"]
 untranslated_item = "11111"
 
-["208::: Conveyor Sort-Router Board"]
+["208::: Conveyor Sort-Router Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["208::: conveyor sort-router"]
 untranslated_item = "11111"
 
-["209::: Manufacturing Crate Unloader Board"]
+["209::: Manufacturing Crate Unloader Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["209::: manufacturing crate unloader"]
@@ -897,64 +897,64 @@ untranslated_item = "11111"
 ["20::: Default Core AI Module"]
 untranslated_item = "11111"
 
-["20::: Default Module"]
+["20::: Default Module"] # Unique Design Name
 unique_design_name = "11111"
 
-["210::: Manufacturing Smelter Board"]
+["210::: Manufacturing Smelter Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["210::: manufacturing smelter"]
 untranslated_item = "11111"
 
-["211::: APLU \"Ripley\" Central Control module"]
+["211::: APLU \"Ripley\" Central Control module"] # Unique Design Name
 unique_design_name = "11111"
 
 ["211::: Ripley Central Control module (Exosuit Board)"]
 untranslated_item = "11111"
 
-["212::: APLU \"Ripley\" Peripherals Control module"]
+["212::: APLU \"Ripley\" Peripherals Control module"] # Unique Design Name
 unique_design_name = "11111"
 
 ["212::: Ripley Peripherals Control module (Exosuit Board)"]
 untranslated_item = "11111"
 
-["213::: \"Odysseus\" Central Control module"]
+["213::: \"Odysseus\" Central Control module"] # Unique Design Name
 unique_design_name = "11111"
 
 ["213::: Odysseus Central Control module (Exosuit Board)"]
 untranslated_item = "11111"
 
-["214::: \"Odysseus\" Peripherals Control module"]
+["214::: \"Odysseus\" Peripherals Control module"] # Unique Design Name
 unique_design_name = "11111"
 
 ["214::: Odysseus Peripherals Control module (Exosuit Board)"]
 untranslated_item = "11111"
 
-["215::: \"Gygax\" Central Control module"]
+["215::: \"Gygax\" Central Control module"] # Unique Design Name
 unique_design_name = "11111"
 
 ["215::: Gygax Central Control module (Exosuit Board)"]
 untranslated_item = "11111"
 
-["216::: \"Gygax\" Peripherals Control module"]
+["216::: \"Gygax\" Peripherals Control module"] # Unique Design Name
 unique_design_name = "11111"
 
 ["216::: Gygax Peripherals Control module (Exosuit Board)"]
 untranslated_item = "11111"
 
-["217::: \"Gygax\" Weapons & Targeting Control module"]
+["217::: \"Gygax\" Weapons & Targeting Control module"] # Unique Design Name
 unique_design_name = "11111"
 
 ["217::: Gygax Weapon Control and Targeting module (Exosuit Board)"]
 untranslated_item = "11111"
 
-["218::: \"Durand\" Central Control module"]
+["218::: \"Durand\" Central Control module"] # Unique Design Name
 unique_design_name = "11111"
 
 ["218::: Durand Central Control module (Exosuit Board)"]
 untranslated_item = "11111"
 
-["219::: \"Durand\" Peripherals Control module"]
+["219::: \"Durand\" Peripherals Control module"] # Unique Design Name
 unique_design_name = "11111"
 
 ["219::: Durand Peripherals Control module (Exosuit Board)"]
@@ -963,64 +963,64 @@ untranslated_item = "11111"
 ["21::: 'Dungeon Master' Core AI Module"]
 untranslated_item = "11111"
 
-["21::: Dungeon Master Module"]
+["21::: Dungeon Master Module"] # Unique Design Name
 unique_design_name = "11111"
 
-["220::: \"Durand\" Weapons & Targeting Control module"]
+["220::: \"Durand\" Weapons & Targeting Control module"] # Unique Design Name
 unique_design_name = "11111"
 
 ["220::: Durand Weapon Control and Targeting module (Exosuit Board)"]
 untranslated_item = "11111"
 
-["221::: \"H.O.N.K.\" Central Control module"]
+["221::: \"H.O.N.K.\" Central Control module"] # Unique Design Name
 unique_design_name = "11111"
 
 ["221::: H.O.N.K Central Control module (Exosuit Board)"]
 untranslated_item = "11111"
 
-["222::: \"H.O.N.K.\" Peripherals Control module"]
+["222::: \"H.O.N.K.\" Peripherals Control module"] # Unique Design Name
 unique_design_name = "11111"
 
 ["222::: H.O.N.K Peripherals Control module (Exosuit Board)"]
 untranslated_item = "11111"
 
-["223::: \"H.O.N.K.\" Weapons & Targeting Control module"]
+["223::: \"H.O.N.K.\" Weapons & Targeting Control module"] # Unique Design Name
 unique_design_name = "11111"
 
 ["223::: H.O.N.K Weapon Control and Targeting module (Exosuit Board)"]
 untranslated_item = "11111"
 
-["224::: \"Phazon\" Central Control module"]
+["224::: \"Phazon\" Central Control module"] # Unique Design Name
 unique_design_name = "11111"
 
 ["224::: Phazon Central Control module (Exosuit Board)"]
 untranslated_item = "11111"
 
-["225::: \"Phazon\" Peripherals Control module"]
+["225::: \"Phazon\" Peripherals Control module"] # Unique Design Name
 unique_design_name = "11111"
 
 ["225::: Phazon Peripherals Control module (Exosuit Board)"]
 untranslated_item = "11111"
 
-["226::: \"Phazon\" Weapons & Targeting Control module"]
+["226::: \"Phazon\" Weapons & Targeting Control module"] # Unique Design Name
 unique_design_name = "11111"
 
 ["226::: Phazon Weapon Control and Targeting module (Exosuit Board)"]
 untranslated_item = "11111"
 
-["227::: \"Clarke\" Central Control module"]
+["227::: \"Clarke\" Central Control module"] # Unique Design Name
 unique_design_name = "11111"
 
 ["227::: Clarke Central Control module (Exosuit Board)"]
 untranslated_item = "11111"
 
-["228::: \"Clarke\" Peripherals Control module"]
+["228::: \"Clarke\" Peripherals Control module"] # Unique Design Name
 unique_design_name = "11111"
 
 ["228::: Clarke Peripherals Control module (Exosuit Board)"]
 untranslated_item = "11111"
 
-["229::: \"Savannah-Ivanov\" Central Control module"]
+["229::: \"Savannah-Ivanov\" Central Control module"] # Unique Design Name
 unique_design_name = "11111"
 
 ["229::: Savannah-Ivanov Combination Control Lock module (Exosuit Board)"]
@@ -1029,22 +1029,22 @@ untranslated_item = "11111"
 ["22::: 'Painter' Core AI Module"]
 untranslated_item = "11111"
 
-["22::: Painter Module"]
+["22::: Painter Module"] # Unique Design Name
 unique_design_name = "11111"
 
-["230::: \"Savannah-Ivanov\" Peripherals Control module"]
+["230::: \"Savannah-Ivanov\" Peripherals Control module"] # Unique Design Name
 unique_design_name = "11111"
 
 ["230::: Savannah Peripherals Control module (Exosuit Board)"]
 untranslated_item = "11111"
 
-["231::: \"Savannah-Ivanov\" Weapons & Targeting Control module"]
+["231::: \"Savannah-Ivanov\" Weapons & Targeting Control module"] # Unique Design Name
 unique_design_name = "11111"
 
 ["231::: Ivanov Weapon Control and Targeting module (Exosuit Board)"]
 untranslated_item = "11111"
 
-["232::: PACMAN Board"]
+["232::: PACMAN Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["232::: PACMAN-type Generator"]
@@ -1053,34 +1053,34 @@ untranslated_item = "11111"
 ["233::: Subspace Receiver"]
 untranslated_item = "11111"
 
-["233::: Subspace Receiver Board"]
+["233::: Subspace Receiver Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["234::: Bus Mainframe"]
 untranslated_item = "11111"
 
-["234::: Bus Mainframe Board"]
+["234::: Bus Mainframe Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["235::: Hub Mainframe"]
 untranslated_item = "11111"
 
-["235::: Hub Mainframe Board"]
+["235::: Hub Mainframe Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["236::: Relay Mainframe"]
 untranslated_item = "11111"
 
-["236::: Relay Mainframe Board"]
+["236::: Relay Mainframe Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["237::: Processor Unit"]
 untranslated_item = "11111"
 
-["237::: Processor Unit Board"]
+["237::: Processor Unit Board"] # Unique Design Name
 unique_design_name = "11111"
 
-["238::: Server Mainframe Board"]
+["238::: Server Mainframe Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["238::: Telecommunication Server"]
@@ -1089,22 +1089,22 @@ untranslated_item = "11111"
 ["239::: Messaging Server"]
 untranslated_item = "11111"
 
-["239::: Messaging Server Board"]
+["239::: Messaging Server Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["23::: 'Y.E.S.M.A.N.' Core AI Module"]
 untranslated_item = "11111"
 
-["23::: Y.E.S.M.A.N. Module"]
+["23::: Y.E.S.M.A.N. Module"] # Unique Design Name
 unique_design_name = "11111"
 
 ["240::: Subspace Broadcaster"]
 untranslated_item = "11111"
 
-["240::: Subspace Broadcaster Board"]
+["240::: Subspace Broadcaster Board"] # Unique Design Name
 unique_design_name = "11111"
 
-["241::: Brain-Computer Interface Manipulation Chamber"]
+["241::: Brain-Computer Interface Manipulation Chamber"] # Unique Design Name
 unique_design_name = "11111"
 
 ["241::: Brain-Computer Interface Manipulation Chamber (Machine Board)"]
@@ -1119,34 +1119,34 @@ untranslated_item = "11111"
 ["244::: 'Крюзимов++' Core AI Module"]
 untranslated_item = "11111"
 
-["244::: Crewsimov++ Module"]
+["244::: Crewsimov++ Module"] # Unique Design Name
 unique_design_name = "11111"
 
 ["245::: 'НТ Стандарт' Core AI Module"]
 untranslated_item = "11111"
 
-["245::: NT Default Module"]
+["245::: NT Default Module"] # Unique Design Name
 unique_design_name = "11111"
 
-["246::: Golem Shell Construction"]
+["246::: Golem Shell Construction"] # Unique Design Name
 unique_design_name = "11111"
 
 ["246::: incomplete free golem shell"]
 untranslated_item = "11111"
 
-["247::: Kinetic Accelerator Offensive Mining Explosion Mod"]
+["247::: Kinetic Accelerator Offensive Mining Explosion Mod"] # Unique Design Name
 unique_design_name = "11111"
 
 ["247::: offensive mining explosion"]
 untranslated_item = "11111"
 
-["248::: Kinetic Accelerator Rapid Repeater Mod"]
+["248::: Kinetic Accelerator Rapid Repeater Mod"] # Unique Design Name
 unique_design_name = "11111"
 
 ["248::: rapid repeater"]
 untranslated_item = "11111"
 
-["249::: Kinetic Accelerator Resonator Blast Mod"]
+["249::: Kinetic Accelerator Resonator Blast Mod"] # Unique Design Name
 unique_design_name = "11111"
 
 ["249::: resonator blast"]
@@ -1155,10 +1155,10 @@ untranslated_item = "11111"
 ["24::: 'Nutimov' Core AI Module"]
 untranslated_item = "11111"
 
-["24::: Nutimov Module"]
+["24::: Nutimov Module"] # Unique Design Name
 unique_design_name = "11111"
 
-["250::: Kinetic Accelerator Death Syphon Mod"]
+["250::: Kinetic Accelerator Death Syphon Mod"] # Unique Design Name
 unique_design_name = "11111"
 
 ["250::: death syphon"]
@@ -1170,37 +1170,37 @@ untranslated_item = "11111"
 ["252::: seaweed sheet"]
 untranslated_item = "11111"
 
-["253::: Sheet of Leather"]
+["253::: Sheet of Leather"] # Unique Design Name
 unique_design_name = "11111"
 
 ["253::: leather"]
 untranslated_item = "11111"
 
-["254::: Sheet of Cloth"]
+["254::: Sheet of Cloth"] # Unique Design Name
 unique_design_name = "11111"
 
 ["254::: cloth"]
 untranslated_item = "11111"
 
-["255::: Sheet of Cardboard"]
+["255::: Sheet of Cardboard"] # Unique Design Name
 unique_design_name = "11111"
 
 ["255::: cardboard"]
 untranslated_item = "11111"
 
-["256::: Sheet of Paper"]
+["256::: Sheet of Paper"] # Unique Design Name
 unique_design_name = "11111"
 
 ["256::: paper"]
 untranslated_item = "11111"
 
-["257::: Sheet of Rolling Paper"]
+["257::: Sheet of Rolling Paper"] # Unique Design Name
 unique_design_name = "11111"
 
 ["257::: rolling paper"]
 untranslated_item = "11111"
 
-["258::: Candle"]
+["258::: Candle"] # Unique Design Name
 unique_design_name = "11111"
 
 ["258::: red candle"]
@@ -1212,7 +1212,7 @@ untranslated_item = "11111"
 ["25::: '10 Commandments' Core AI Module"]
 untranslated_item = "11111"
 
-["25::: 10 Commandments Module"]
+["25::: 10 Commandments Module"] # Unique Design Name
 unique_design_name = "11111"
 
 ["260::: inert bag of holding"]
@@ -1221,7 +1221,7 @@ untranslated_item = "11111"
 ["261::: artificial bluespace crystal"]
 untranslated_item = "11111"
 
-["262::: GPS Device"]
+["262::: GPS Device"] # Unique Design Name
 unique_design_name = "11111"
 
 ["262::: global positioning system"]
@@ -1245,7 +1245,7 @@ untranslated_item = "11111"
 ["268::: super data disk"]
 untranslated_item = "11111"
 
-["269::: Intellicard AI Transportation System"]
+["269::: Intellicard AI Transportation System"] # Unique Design Name
 unique_design_name = "11111"
 
 ["269::: intelliCard"]
@@ -1254,25 +1254,25 @@ untranslated_item = "11111"
 ["26::: 'Asimov++' Core AI Module"]
 untranslated_item = "11111"
 
-["26::: Asimov++ Module"]
+["26::: Asimov++ Module"] # Unique Design Name
 unique_design_name = "11111"
 
 ["270::: Personal Artificial Intelligence Card"]
 design_from_result = "устройство ПИИ"
 
-["271::: AI Surveillance Software Update"]
+["271::: AI Surveillance Software Update"] # Unique Design Name
 unique_design_name = "11111"
 
 ["271::: surveillance software upgrade"]
 untranslated_item = "11111"
 
-["272::: AI Power Transfer Update"]
+["272::: AI Power Transfer Update"] # Unique Design Name
 unique_design_name = "11111"
 
 ["272::: power transfer upgrade"]
 untranslated_item = "11111"
 
-["273::: Technology Data Storage Disk"]
+["273::: Technology Data Storage Disk"] # Unique Design Name
 unique_design_name = "11111"
 
 ["273::: technology disk"]
@@ -1281,7 +1281,7 @@ untranslated_item = "11111"
 ["274::: Experi-Scanner"]
 untranslated_item = "11111"
 
-["274::: Experimental Scanner"]
+["274::: Experimental Scanner"] # Unique Design Name
 unique_design_name = "11111"
 
 ["275::: heart"]
@@ -1302,7 +1302,7 @@ untranslated_item = "11111"
 ["27::: 'Robodoctor' Core AI Module"]
 untranslated_item = "11111"
 
-["27::: Hippocratic Module"]
+["27::: Hippocratic Module"] # Unique Design Name
 unique_design_name = "11111"
 
 ["280::: eyes"]
@@ -1314,7 +1314,7 @@ untranslated_item = "11111"
 ["282::: tongue"]
 untranslated_item = "11111"
 
-["283::: Lizard Tail"]
+["283::: Lizard Tail"] # Unique Design Name
 unique_design_name = "11111"
 
 ["283::: fabricated lizard tail"]
@@ -1326,7 +1326,7 @@ untranslated_item = "11111"
 ["285::: monkey tail"]
 untranslated_item = "11111"
 
-["286::: Cat Tail"]
+["286::: Cat Tail"] # Unique Design Name
 unique_design_name = "11111"
 
 ["286::: tail"]
@@ -1338,7 +1338,7 @@ untranslated_item = "11111"
 ["288::: plasma filter"]
 untranslated_item = "11111"
 
-["289::: Plasma Bone Tongue"]
+["289::: Plasma Bone Tongue"] # Unique Design Name
 unique_design_name = "11111"
 
 ["289::: plasma bone \"tongue\""]
@@ -1347,7 +1347,7 @@ untranslated_item = "11111"
 ["28::: 'P.A.L.A.D.I.N. version 5e' Core AI Module"]
 untranslated_item = "11111"
 
-["28::: Paladin Devotion Module"]
+["28::: Paladin Devotion Module"] # Unique Design Name
 unique_design_name = "11111"
 
 ["290::: reagent processing crystal"]
@@ -1359,7 +1359,7 @@ untranslated_item = "11111"
 ["292::: biological battery"]
 untranslated_item = "11111"
 
-["293::: Electrical Discharger"]
+["293::: Electrical Discharger"] # Unique Design Name
 unique_design_name = "11111"
 
 ["293::: electric discharger"]
@@ -1371,7 +1371,7 @@ untranslated_item = "11111"
 ["295::: crystal core"]
 untranslated_item = "11111"
 
-["296::: Arm Blade"]
+["296::: Arm Blade"] # Unique Design Name
 unique_design_name = "11111"
 
 ["296::: synthetic arm blade"]
@@ -1389,13 +1389,13 @@ untranslated_item = "11111"
 ["29::: 'Robo-Officer' Core AI Module"]
 untranslated_item = "11111"
 
-["29::: Robocop Module"]
+["29::: Robocop Module"] # Unique Design Name
 unique_design_name = "11111"
 
 ["2::: Quantum Console"]
 untranslated_item = "11111"
 
-["2::: Quantum Console Board"]
+["2::: Quantum Console Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["300::: Plasmaman Organ Design Disk"]
@@ -1407,7 +1407,7 @@ untranslated_item = "11111"
 ["302::: LBX AC 10 \"Scattershot\""]
 untranslated_item = "11111"
 
-["303::: LBX AC 10 Ammunition"]
+["303::: LBX AC 10 Ammunition"] # Unique Design Name
 unique_design_name = "11111"
 
 ["303::: scattershot ammo box"]
@@ -1416,7 +1416,7 @@ untranslated_item = "11111"
 ["304::: FNX-99 \"Hades\" Carbine"]
 untranslated_item = "11111"
 
-["305::: FNX-99 Carbine Ammunition"]
+["305::: FNX-99 Carbine Ammunition"] # Unique Design Name
 unique_design_name = "11111"
 
 ["305::: incendiary ammo box"]
@@ -1437,7 +1437,7 @@ untranslated_item = "11111"
 ["30::: 'Station Efficiency' Core AI Module"]
 untranslated_item = "11111"
 
-["30::: Maintain Module"]
+["30::: Maintain Module"] # Unique Design Name
 unique_design_name = "11111"
 
 ["310::: CH-DS \"Peacemaker\" disabler"]
@@ -1446,7 +1446,7 @@ untranslated_item = "11111"
 ["311::: SGL-6 grenade launcher"]
 untranslated_item = "11111"
 
-["312::: SGL-6 Grenade Launcher Ammunition"]
+["312::: SGL-6 Grenade Launcher Ammunition"] # Unique Design Name
 unique_design_name = "11111"
 
 ["312::: launchable flashbangs"]
@@ -1455,37 +1455,37 @@ untranslated_item = "11111"
 ["313::: PEP-6 missile rack"]
 untranslated_item = "11111"
 
-["314::: PEP-6 Missile Rack Ammunition"]
+["314::: PEP-6 Missile Rack Ammunition"] # Unique Design Name
 unique_design_name = "11111"
 
 ["314::: precision explosive missiles"]
 untranslated_item = "11111"
 
-["315::: SOB-3 Clusterbang Launcher"]
+["315::: SOB-3 Clusterbang Launcher"] # Unique Design Name
 unique_design_name = "11111"
 
 ["315::: SOB-3 grenade launcher"]
 untranslated_item = "11111"
 
-["316::: SOB-3 Clusterbang Launcher Ammunition"]
+["316::: SOB-3 Clusterbang Launcher Ammunition"] # Unique Design Name
 unique_design_name = "11111"
 
 ["316::: launchable flashbang clusters"]
 untranslated_item = "11111"
 
-["317::: Localized Wormhole Generator"]
+["317::: Localized Wormhole Generator"] # Unique Design Name
 unique_design_name = "11111"
 
 ["317::: mounted wormhole generator"]
 untranslated_item = "11111"
 
-["318::: Teleporter Module"]
+["318::: Teleporter Module"] # Unique Design Name
 unique_design_name = "11111"
 
 ["318::: mounted teleporter"]
 untranslated_item = "11111"
 
-["319::: RCD Module"]
+["319::: RCD Module"] # Unique Design Name
 unique_design_name = "11111"
 
 ["319::: mounted RCD"]
@@ -1494,19 +1494,19 @@ untranslated_item = "11111"
 ["31::: 'Live And Let Live' Core AI Module"]
 untranslated_item = "11111"
 
-["31::: Liveandletlive Module"]
+["31::: Liveandletlive Module"] # Unique Design Name
 unique_design_name = "11111"
 
 ["320::: RCS thruster package"]
 untranslated_item = "11111"
 
-["321::: Gravitational Catapult Module"]
+["321::: Gravitational Catapult Module"] # Unique Design Name
 unique_design_name = "11111"
 
 ["321::: mounted gravitational catapult"]
 untranslated_item = "11111"
 
-["322::: Repair Droid Module"]
+["322::: Repair Droid Module"] # Unique Design Name
 unique_design_name = "11111"
 
 ["322::: exosuit repair droid"]
@@ -1515,16 +1515,16 @@ untranslated_item = "11111"
 ["323::: Impact Cushion Plates"]
 untranslated_item = "11111"
 
-["323::: Reactive Armor Booster Module"]
+["323::: Reactive Armor Booster Module"] # Unique Design Name
 unique_design_name = "11111"
 
 ["324::: Projectile Shielding"]
 untranslated_item = "11111"
 
-["324::: Reflective Armor Booster Module"]
+["324::: Reflective Armor Booster Module"] # Unique Design Name
 unique_design_name = "11111"
 
-["325::: Diamond Mining Drill"]
+["325::: Diamond Mining Drill"] # Unique Design Name
 unique_design_name = "11111"
 
 ["325::: diamond-tipped exosuit drill"]
@@ -1539,10 +1539,10 @@ untranslated_item = "11111"
 ["328::: Ultra AC 2"]
 untranslated_item = "11111"
 
-["328::: Ultra AC 2 LMG"]
+["328::: Ultra AC 2 LMG"] # Unique Design Name
 unique_design_name = "11111"
 
-["329::: Ultra AC 2 Ammunition"]
+["329::: Ultra AC 2 Ammunition"] # Unique Design Name
 unique_design_name = "11111"
 
 ["329::: machine gun ammo box"]
@@ -1551,19 +1551,19 @@ untranslated_item = "11111"
 ["32::: 'Peacekeeper' Core AI Module"]
 untranslated_item = "11111"
 
-["32::: Peacekeeper Module"]
+["32::: Peacekeeper Module"] # Unique Design Name
 unique_design_name = "11111"
 
 ["330::: mounted sleeper"]
 untranslated_item = "11111"
 
-["331::: Exosuit Medical (Syringe Gun)"]
+["331::: Exosuit Medical (Syringe Gun)"] # Unique Design Name
 unique_design_name = "11111"
 
 ["331::: exosuit syringe gun"]
 untranslated_item = "11111"
 
-["332::: Exosuit Medical (Medical Beamgun)"]
+["332::: Exosuit Medical (Medical Beamgun)"] # Unique Design Name
 unique_design_name = "11111"
 
 ["332::: exosuit medical beamgun"]
@@ -1593,64 +1593,64 @@ untranslated_item = "11111"
 ["33::: 'Reportertron' Core AI Module"]
 untranslated_item = "11111"
 
-["33::: Reporter Module"]
+["33::: Reporter Module"] # Unique Design Name
 unique_design_name = "11111"
 
-["340::: Advanced Left Arm"]
+["340::: Advanced Left Arm"] # Unique Design Name
 unique_design_name = "11111"
 
 ["340::: advanced robotic left arm"]
 untranslated_item = "11111"
 
-["341::: Advanced Right Arm"]
+["341::: Advanced Right Arm"] # Unique Design Name
 unique_design_name = "11111"
 
 ["341::: advanced robotic right arm"]
 untranslated_item = "11111"
 
-["342::: Advanced Left Leg"]
+["342::: Advanced Left Leg"] # Unique Design Name
 unique_design_name = "11111"
 
 ["342::: advanced robotic left leg"]
 untranslated_item = "11111"
 
-["343::: Advanced Right Leg"]
+["343::: Advanced Right Leg"] # Unique Design Name
 unique_design_name = "11111"
 
 ["343::: heavy robotic right leg"]
 untranslated_item = "11111"
 
-["344::: Exosuit Chassis (APLU \"Ripley\")"]
+["344::: Exosuit Chassis (APLU \"Ripley\")"] # Unique Design Name
 unique_design_name = "11111"
 
 ["344::: Ripley chassis"]
 untranslated_item = "11111"
 
-["345::: Exosuit Torso (APLU \"Ripley\")"]
+["345::: Exosuit Torso (APLU \"Ripley\")"] # Unique Design Name
 unique_design_name = "11111"
 
 ["345::: Ripley torso"]
 untranslated_item = "11111"
 
-["346::: Exosuit Left Arm (APLU \"Ripley\")"]
+["346::: Exosuit Left Arm (APLU \"Ripley\")"] # Unique Design Name
 unique_design_name = "11111"
 
 ["346::: Ripley left arm"]
 untranslated_item = "11111"
 
-["347::: Exosuit Right Arm (APLU \"Ripley\")"]
+["347::: Exosuit Right Arm (APLU \"Ripley\")"] # Unique Design Name
 unique_design_name = "11111"
 
 ["347::: Ripley right arm"]
 untranslated_item = "11111"
 
-["348::: Exosuit Left Leg (APLU \"Ripley\")"]
+["348::: Exosuit Left Leg (APLU \"Ripley\")"] # Unique Design Name
 unique_design_name = "11111"
 
 ["348::: Ripley left leg"]
 untranslated_item = "11111"
 
-["349::: Exosuit Right Leg (APLU \"Ripley\")"]
+["349::: Exosuit Right Leg (APLU \"Ripley\")"] # Unique Design Name
 unique_design_name = "11111"
 
 ["349::: Ripley right leg"]
@@ -1659,64 +1659,64 @@ untranslated_item = "11111"
 ["34::: 'H.O.G.A.N.' Core AI Module"]
 untranslated_item = "11111"
 
-["34::: H.O.G.A.N. Module"]
+["34::: H.O.G.A.N. Module"] # Unique Design Name
 unique_design_name = "11111"
 
-["350::: Exosuit Chassis (\"Odysseus\")"]
+["350::: Exosuit Chassis (\"Odysseus\")"] # Unique Design Name
 unique_design_name = "11111"
 
 ["350::: Odysseus chassis"]
 untranslated_item = "11111"
 
-["351::: Exosuit Torso (\"Odysseus\")"]
+["351::: Exosuit Torso (\"Odysseus\")"] # Unique Design Name
 unique_design_name = "11111"
 
 ["351::: Odysseus torso"]
 untranslated_item = "11111"
 
-["352::: Exosuit Head (\"Odysseus\")"]
+["352::: Exosuit Head (\"Odysseus\")"] # Unique Design Name
 unique_design_name = "11111"
 
 ["352::: Odysseus head"]
 untranslated_item = "11111"
 
-["353::: Exosuit Left Arm (\"Odysseus\")"]
+["353::: Exosuit Left Arm (\"Odysseus\")"] # Unique Design Name
 unique_design_name = "11111"
 
 ["353::: Odysseus left arm"]
 untranslated_item = "11111"
 
-["354::: Exosuit Right Arm (\"Odysseus\")"]
+["354::: Exosuit Right Arm (\"Odysseus\")"] # Unique Design Name
 unique_design_name = "11111"
 
 ["354::: Odysseus right arm"]
 untranslated_item = "11111"
 
-["355::: Exosuit Left Leg (\"Odysseus\")"]
+["355::: Exosuit Left Leg (\"Odysseus\")"] # Unique Design Name
 unique_design_name = "11111"
 
 ["355::: Odysseus left leg"]
 untranslated_item = "11111"
 
-["356::: Exosuit Right Leg (\"Odysseus\")"]
+["356::: Exosuit Right Leg (\"Odysseus\")"] # Unique Design Name
 unique_design_name = "11111"
 
 ["356::: Odysseus right leg"]
 untranslated_item = "11111"
 
-["357::: Exosuit Chassis (\"Gygax\")"]
+["357::: Exosuit Chassis (\"Gygax\")"] # Unique Design Name
 unique_design_name = "11111"
 
 ["357::: Gygax chassis"]
 untranslated_item = "11111"
 
-["358::: Exosuit Torso (\"Gygax\")"]
+["358::: Exosuit Torso (\"Gygax\")"] # Unique Design Name
 unique_design_name = "11111"
 
 ["358::: Gygax torso"]
 untranslated_item = "11111"
 
-["359::: Exosuit Head (\"Gygax\")"]
+["359::: Exosuit Head (\"Gygax\")"] # Unique Design Name # Unique Design Name
 unique_design_name = "11111"
 
 ["359::: Gygax head"]
@@ -1725,34 +1725,34 @@ untranslated_item = "11111"
 ["35::: 'Mother Drone' Core AI Module"]
 untranslated_item = "11111"
 
-["35::: Drone Module"]
+["35::: Drone Module"] # Unique Design Name
 unique_design_name = "11111"
 
-["360::: Exosuit Left Arm (\"Gygax\")"]
+["360::: Exosuit Left Arm (\"Gygax\")"] # Unique Design Name
 unique_design_name = "11111"
 
 ["360::: Gygax left arm"]
 untranslated_item = "11111"
 
-["361::: Exosuit Right Arm (\"Gygax\")"]
+["361::: Exosuit Right Arm (\"Gygax\")"] # Unique Design Name
 unique_design_name = "11111"
 
 ["361::: Gygax right arm"]
 untranslated_item = "11111"
 
-["362::: Exosuit Left Leg (\"Gygax\")"]
+["362::: Exosuit Left Leg (\"Gygax\")"] # Unique Design Name
 unique_design_name = "11111"
 
 ["362::: Gygax left leg"]
 untranslated_item = "11111"
 
-["363::: Exosuit Right Leg (\"Gygax\")"]
+["363::: Exosuit Right Leg (\"Gygax\")"] # Unique Design Name
 unique_design_name = "11111"
 
 ["363::: Gygax right leg"]
 untranslated_item = "11111"
 
-["364::: Exosuit Armor (\"Gygax\")"]
+["364::: Exosuit Armor (\"Gygax\")"] # Unique Design Name
 unique_design_name = "11111"
 
 ["364::: Gygax armor plates"]
@@ -1761,94 +1761,94 @@ untranslated_item = "11111"
 ["365::: Durand chassis"]
 untranslated_item = "11111"
 
-["365::: Exosuit Chassis (\"Durand\")"]
+["365::: Exosuit Chassis (\"Durand\")"] # Unique Design Name
 unique_design_name = "11111"
 
 ["366::: Durand torso"]
 untranslated_item = "11111"
 
-["366::: Exosuit Torso (\"Durand\")"]
+["366::: Exosuit Torso (\"Durand\")"] # Unique Design Name
 unique_design_name = "11111"
 
 ["367::: Durand head"]
 untranslated_item = "11111"
 
-["367::: Exosuit Head (\"Durand\")"]
+["367::: Exosuit Head (\"Durand\")"] # Unique Design Name
 unique_design_name = "11111"
 
 ["368::: Durand left arm"]
 untranslated_item = "11111"
 
-["368::: Exosuit Left Arm (\"Durand\")"]
+["368::: Exosuit Left Arm (\"Durand\")"] # Unique Design Name
 unique_design_name = "11111"
 
 ["369::: Durand right arm"]
 untranslated_item = "11111"
 
-["369::: Exosuit Right Arm (\"Durand\")"]
+["369::: Exosuit Right Arm (\"Durand\")"] # Unique Design Name
 unique_design_name = "11111"
 
 ["36::: 'Antimov' Core AI Module"]
 untranslated_item = "11111"
 
-["36::: Antimov Module"]
+["36::: Antimov Module"] # Unique Design Name
 unique_design_name = "11111"
 
 ["370::: Durand left leg"]
 untranslated_item = "11111"
 
-["370::: Exosuit Left Leg (\"Durand\")"]
+["370::: Exosuit Left Leg (\"Durand\")"] # Unique Design Name
 unique_design_name = "11111"
 
 ["371::: Durand right leg"]
 untranslated_item = "11111"
 
-["371::: Exosuit Right Leg (\"Durand\")"]
+["371::: Exosuit Right Leg (\"Durand\")"] # Unique Design Name
 unique_design_name = "11111"
 
 ["372::: Durand armor plates"]
 untranslated_item = "11111"
 
-["372::: Exosuit Armor (\"Durand\")"]
+["372::: Exosuit Armor (\"Durand\")"] # Unique Design Name
 unique_design_name = "11111"
 
-["373::: Exosuit Chassis (\"H.O.N.K\")"]
+["373::: Exosuit Chassis (\"H.O.N.K\")"] # Unique Design Name
 unique_design_name = "11111"
 
 ["373::: H.O.N.K chassis"]
 untranslated_item = "11111"
 
-["374::: Exosuit Torso (\"H.O.N.K\")"]
+["374::: Exosuit Torso (\"H.O.N.K\")"] # Unique Design Name
 unique_design_name = "11111"
 
 ["374::: H.O.N.K torso"]
 untranslated_item = "11111"
 
-["375::: Exosuit Head (\"H.O.N.K\")"]
+["375::: Exosuit Head (\"H.O.N.K\")"] # Unique Design Name
 unique_design_name = "11111"
 
 ["375::: H.O.N.K head"]
 untranslated_item = "11111"
 
-["376::: Exosuit Left Arm (\"H.O.N.K\")"]
+["376::: Exosuit Left Arm (\"H.O.N.K\")"] # Unique Design Name
 unique_design_name = "11111"
 
 ["376::: H.O.N.K left arm"]
 untranslated_item = "11111"
 
-["377::: Exosuit Right Arm (\"H.O.N.K\")"]
+["377::: Exosuit Right Arm (\"H.O.N.K\")"] # Unique Design Name
 unique_design_name = "11111"
 
 ["377::: H.O.N.K right arm"]
 untranslated_item = "11111"
 
-["378::: Exosuit Left Leg (\"H.O.N.K\")"]
+["378::: Exosuit Left Leg (\"H.O.N.K\")"] # Unique Design Name
 unique_design_name = "11111"
 
 ["378::: H.O.N.K left leg"]
 untranslated_item = "11111"
 
-["379::: Exosuit Right Leg (\"H.O.N.K\")"]
+["379::: Exosuit Right Leg (\"H.O.N.K\")"] # Unique Design Name
 unique_design_name = "11111"
 
 ["379::: H.O.N.K right leg"]
@@ -1857,64 +1857,64 @@ untranslated_item = "11111"
 ["37::: 'Guardian of Balance' Core AI Module"]
 untranslated_item = "11111"
 
-["37::: Balance Module"]
+["37::: Balance Module"] # Unique Design Name
 unique_design_name = "11111"
 
-["380::: Exosuit Chassis (\"Phazon\")"]
+["380::: Exosuit Chassis (\"Phazon\")"] # Unique Design Name
 unique_design_name = "11111"
 
 ["380::: Phazon chassis"]
 untranslated_item = "11111"
 
-["381::: Exosuit Torso (\"Phazon\")"]
+["381::: Exosuit Torso (\"Phazon\")"] # Unique Design Name
 unique_design_name = "11111"
 
 ["381::: Phazon torso"]
 untranslated_item = "11111"
 
-["382::: Exosuit Head (\"Phazon\")"]
+["382::: Exosuit Head (\"Phazon\")"] # Unique Design Name
 unique_design_name = "11111"
 
 ["382::: Phazon head"]
 untranslated_item = "11111"
 
-["383::: Exosuit Left Arm (\"Phazon\")"]
+["383::: Exosuit Left Arm (\"Phazon\")"] # Unique Design Name
 unique_design_name = "11111"
 
 ["383::: Phazon left arm"]
 untranslated_item = "11111"
 
-["384::: Exosuit Right Arm (\"Phazon\")"]
+["384::: Exosuit Right Arm (\"Phazon\")"] # Unique Design Name
 unique_design_name = "11111"
 
 ["384::: Phazon right arm"]
 untranslated_item = "11111"
 
-["385::: Exosuit Left Leg (\"Phazon\")"]
+["385::: Exosuit Left Leg (\"Phazon\")"] # Unique Design Name
 unique_design_name = "11111"
 
 ["385::: Phazon left leg"]
 untranslated_item = "11111"
 
-["386::: Exosuit Right Leg (\"Phazon\")"]
+["386::: Exosuit Right Leg (\"Phazon\")"] # Unique Design Name
 unique_design_name = "11111"
 
 ["386::: Phazon right leg"]
 untranslated_item = "11111"
 
-["387::: Exosuit Armor (\"Phazon\")"]
+["387::: Exosuit Armor (\"Phazon\")"] # Unique Design Name
 unique_design_name = "11111"
 
 ["387::: Phazon armor"]
 untranslated_item = "11111"
 
-["388::: Exosuit Chassis (\"Savannah-Ivanov\")"]
+["388::: Exosuit Chassis (\"Savannah-Ivanov\")"] # Unique Design Name
 unique_design_name = "11111"
 
 ["388::: Savannah-Ivanov chassis"]
 untranslated_item = "11111"
 
-["389::: Exosuit Torso (\"Savannah-Ivanov\")"]
+["389::: Exosuit Torso (\"Savannah-Ivanov\")"] # Unique Design Name
 unique_design_name = "11111"
 
 ["389::: Savannah-Ivanov torso"]
@@ -1923,70 +1923,70 @@ untranslated_item = "11111"
 ["38::: 'Thermodynamic' Core AI Module"]
 untranslated_item = "11111"
 
-["38::: Thermodynamic Module"]
+["38::: Thermodynamic Module"] # Unique Design Name
 unique_design_name = "11111"
 
-["390::: Exosuit Head (\"Savannah-Ivanov\")"]
+["390::: Exosuit Head (\"Savannah-Ivanov\")"] # Unique Design Name
 unique_design_name = "11111"
 
 ["390::: Savannah-Ivanov head"]
 untranslated_item = "11111"
 
-["391::: Exosuit Left Arm (\"Savannah-Ivanov\")"]
+["391::: Exosuit Left Arm (\"Savannah-Ivanov\")"] # Unique Design Name
 unique_design_name = "11111"
 
 ["391::: Savannah-Ivanov left arm"]
 untranslated_item = "11111"
 
-["392::: Exosuit Right Arm (\"Savannah-Ivanov\")"]
+["392::: Exosuit Right Arm (\"Savannah-Ivanov\")"] # Unique Design Name
 unique_design_name = "11111"
 
 ["392::: Savannah-Ivanov right arm"]
 untranslated_item = "11111"
 
-["393::: Exosuit Left Leg (\"Savannah-Ivanov\")"]
+["393::: Exosuit Left Leg (\"Savannah-Ivanov\")"] # Unique Design Name
 unique_design_name = "11111"
 
 ["393::: Savannah-Ivanov left leg"]
 untranslated_item = "11111"
 
-["394::: Exosuit Right Leg (\"Savannah-Ivanov\")"]
+["394::: Exosuit Right Leg (\"Savannah-Ivanov\")"] # Unique Design Name
 unique_design_name = "11111"
 
 ["394::: Savannah-Ivanov right leg"]
 untranslated_item = "11111"
 
-["395::: Exosuit Armor (\"Savannah-Ivanov\")"]
+["395::: Exosuit Armor (\"Savannah-Ivanov\")"] # Unique Design Name
 unique_design_name = "11111"
 
 ["395::: Savannah-Ivanov armor"]
 untranslated_item = "11111"
 
-["396::: Exosuit Chassis (\"Justice\")"]
+["396::: Exosuit Chassis (\"Justice\")"] # Unique Design Name
 unique_design_name = "11111"
 
 ["396::: Justice chassis"]
 untranslated_item = "11111"
 
-["397::: Exosuit Torso (\"Justice\")"]
+["397::: Exosuit Torso (\"Justice\")"] # Unique Design Name
 unique_design_name = "11111"
 
 ["397::: Justice torso"]
 untranslated_item = "11111"
 
-["398::: Exosuit Left Arm (\"Justice\")"]
+["398::: Exosuit Left Arm (\"Justice\")"] # Unique Design Name
 unique_design_name = "11111"
 
 ["398::: Justice left arm"]
 untranslated_item = "11111"
 
-["399::: Exosuit Right Arm (\"Justice\")"]
+["399::: Exosuit Right Arm (\"Justice\")"] # Unique Design Name
 unique_design_name = "11111"
 
 ["399::: Justice right arm"]
 untranslated_item = "11111"
 
-["39::: Damaged AI Module"]
+["39::: Damaged AI Module"] # Unique Design Name
 unique_design_name = "11111"
 
 ["39::: damaged Core AI Module"]
@@ -1995,22 +1995,22 @@ untranslated_item = "11111"
 ["3::: Byteforge"]
 untranslated_item = "11111"
 
-["3::: Byteforge Board"]
+["3::: Byteforge Board"] # Unique Design Name
 unique_design_name = "11111"
 
-["400::: Exosuit Left Leg (\"Justice\")"]
+["400::: Exosuit Left Leg (\"Justice\")"] # Unique Design Name
 unique_design_name = "11111"
 
 ["400::: Justice left leg"]
 untranslated_item = "11111"
 
-["401::: Exosuit Right Leg (\"Justice\")"]
+["401::: Exosuit Right Leg (\"Justice\")"] # Unique Design Name
 unique_design_name = "11111"
 
 ["401::: Justice right leg"]
 untranslated_item = "11111"
 
-["402::: Exosuit Armor (\"Justice\")"]
+["402::: Exosuit Armor (\"Justice\")"] # Unique Design Name
 unique_design_name = "11111"
 
 ["402::: Justice armor"]
@@ -2019,34 +2019,34 @@ untranslated_item = "11111"
 ["403::: Clarke chassis"]
 untranslated_item = "11111"
 
-["403::: Exosuit Chassis (\"Clarke\")"]
+["403::: Exosuit Chassis (\"Clarke\")"] # Unique Design Name
 unique_design_name = "11111"
 
 ["404::: Clarke torso"]
 untranslated_item = "11111"
 
-["404::: Exosuit Torso (\"Clarke\")"]
+["404::: Exosuit Torso (\"Clarke\")"] # Unique Design Name
 unique_design_name = "11111"
 
 ["405::: Clarke head"]
 untranslated_item = "11111"
 
-["405::: Exosuit Head (\"Clarke\")"]
+["405::: Exosuit Head (\"Clarke\")"] # Unique Design Name
 unique_design_name = "11111"
 
 ["406::: Clarke left arm"]
 untranslated_item = "11111"
 
-["406::: Exosuit Left Arm (\"Clarke\")"]
+["406::: Exosuit Left Arm (\"Clarke\")"] # Unique Design Name
 unique_design_name = "11111"
 
 ["407::: Clarke right arm"]
 untranslated_item = "11111"
 
-["407::: Exosuit Right Arm (\"Clarke\")"]
+["407::: Exosuit Right Arm (\"Clarke\")"] # Unique Design Name
 unique_design_name = "11111"
 
-["408::: Ripley MK-I to MK-II Conversion Kit"]
+["408::: Ripley MK-I to MK-II Conversion Kit"] # Unique Design Name
 unique_design_name = "11111"
 
 ["408::: Ripley MK-II Conversion Kit"]
@@ -2055,13 +2055,13 @@ untranslated_item = "11111"
 ["409::: Paddy Conversion Kit"]
 untranslated_item = "11111"
 
-["409::: Ripley MK-I to Paddy Conversion Kit"]
+["409::: Ripley MK-I to Paddy Conversion Kit"] # Unique Design Name
 unique_design_name = "11111"
 
 ["40::: Arcade Battle"]
 untranslated_item = "11111"
 
-["40::: Battle Arcade Machine Board"]
+["40::: Battle Arcade Machine Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["410::: hydraulic clamp"]
@@ -2070,25 +2070,25 @@ untranslated_item = "11111"
 ["411::: hydraulic claw"]
 untranslated_item = "11111"
 
-["412::: Mining Drill"]
+["412::: Mining Drill"] # Unique Design Name
 unique_design_name = "11111"
 
 ["412::: exosuit drill"]
 untranslated_item = "11111"
 
-["413::: Mining Scanner"]
+["413::: Mining Scanner"] # Unique Design Name
 unique_design_name = "11111"
 
 ["413::: exosuit mining scanner"]
 untranslated_item = "11111"
 
-["414::: Extinguisher"]
+["414::: Extinguisher"] # Unique Design Name
 unique_design_name = "11111"
 
 ["414::: exosuit extinguisher"]
 untranslated_item = "11111"
 
-["415::: Plasma Generator"]
+["415::: Plasma Generator"] # Unique Design Name
 unique_design_name = "11111"
 
 ["415::: plasma engine"]
@@ -2109,76 +2109,76 @@ untranslated_item = "11111"
 ["41::: Orion Trail"]
 untranslated_item = "11111"
 
-["41::: Orion Trail Arcade Machine Board"]
+["41::: Orion Trail Arcade Machine Board"] # Unique Design Name
 unique_design_name = "11111"
 
-["420::: Mech Radio"]
+["420::: Mech Radio"] # Unique Design Name
 unique_design_name = "11111"
 
 ["420::: mounted radio"]
 untranslated_item = "11111"
 
-["421::: Mech Air Tank"]
+["421::: Mech Air Tank"] # Unique Design Name
 unique_design_name = "11111"
 
 ["421::: mounted air tank"]
 untranslated_item = "11111"
 
-["422::: Rename Board"]
+["422::: Rename Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["422::: cyborg reclassification board"]
 untranslated_item = "11111"
 
-["423::: Emergency Reboot Board"]
+["423::: Emergency Reboot Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["423::: cyborg emergency reboot module"]
 untranslated_item = "11111"
 
-["424::: Ion Thrusters"]
+["424::: Ion Thrusters"] # Unique Design Name
 unique_design_name = "11111"
 
 ["424::: ion thruster upgrade"]
 untranslated_item = "11111"
 
-["425::: Rapid Disabler Cooling Module"]
+["425::: Rapid Disabler Cooling Module"] # Unique Design Name
 unique_design_name = "11111"
 
 ["425::: cyborg rapid disabler cooling module"]
 untranslated_item = "11111"
 
-["426::: Diamond Drill"]
+["426::: Diamond Drill"] # Unique Design Name
 unique_design_name = "11111"
 
 ["426::: mining cyborg diamond drill"]
 untranslated_item = "11111"
 
-["427::: Ore Satchel of Holding"]
+["427::: Ore Satchel of Holding"] # Unique Design Name
 unique_design_name = "11111"
 
 ["427::: mining cyborg satchel of holding"]
 untranslated_item = "11111"
 
-["428::: Lavaproof Tracks"]
+["428::: Lavaproof Tracks"] # Unique Design Name
 unique_design_name = "11111"
 
 ["428::: mining cyborg lavaproof chassis"]
 untranslated_item = "11111"
 
-["429::: Illegal Modules"]
+["429::: Illegal Modules"] # Unique Design Name
 unique_design_name = "11111"
 
 ["429::: illegal equipment module"]
 untranslated_item = "11111"
 
-["42::: Security Camera Board"]
+["42::: Security Camera Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["42::: Security Cameras"]
 untranslated_item = "11111"
 
-["430::: Clown Module"]
+["430::: Clown Module"] # Unique Design Name
 unique_design_name = "11111"
 
 ["430::: borg model picker (Clown)"]
@@ -2187,49 +2187,49 @@ untranslated_item = "11111"
 ["431::: self-repair module"]
 untranslated_item = "11111"
 
-["432::: Expanded Hypospray Synthesiser"]
+["432::: Expanded Hypospray Synthesiser"] # Unique Design Name
 unique_design_name = "11111"
 
 ["432::: medical cyborg expanded hypospray"]
 untranslated_item = "11111"
 
-["433::: Piercing Hypospray"]
+["433::: Piercing Hypospray"] # Unique Design Name
 unique_design_name = "11111"
 
 ["433::: cyborg piercing hypospray"]
 untranslated_item = "11111"
 
-["434::: Defibrillator"]
+["434::: Defibrillator"] # Unique Design Name
 unique_design_name = "11111"
 
 ["434::: medical cyborg defibrillator"]
 untranslated_item = "11111"
 
-["435::: Surgical Processor"]
+["435::: Surgical Processor"] # Unique Design Name
 unique_design_name = "11111"
 
 ["435::: medical cyborg surgical processor"]
 untranslated_item = "11111"
 
-["436::: Advanced Surgical Omnitool Upgrade"]
+["436::: Advanced Surgical Omnitool Upgrade"] # Unique Design Name
 unique_design_name = "11111"
 
 ["436::: cyborg surgical omni-tool upgrade"]
 untranslated_item = "11111"
 
-["437::: Advanced Engineering Omnitool Upgrade"]
+["437::: Advanced Engineering Omnitool Upgrade"] # Unique Design Name
 unique_design_name = "11111"
 
 ["437::: cyborg engineering omni-tool upgrade"]
 untranslated_item = "11111"
 
-["438::: Trash Bag of Holding"]
+["438::: Trash Bag of Holding"] # Unique Design Name
 unique_design_name = "11111"
 
 ["438::: janitor cyborg trash bag of holding"]
 untranslated_item = "11111"
 
-["439::: Advanced Mop"]
+["439::: Advanced Mop"] # Unique Design Name
 unique_design_name = "11111"
 
 ["439::: janitor cyborg advanced mop"]
@@ -2238,64 +2238,64 @@ untranslated_item = "11111"
 ["43::: Research Monitor"]
 untranslated_item = "11111"
 
-["43::: Research Monitor Board"]
+["43::: Research Monitor Board"] # Unique Design Name
 unique_design_name = "11111"
 
-["440::: Plating Repair Tool"]
+["440::: Plating Repair Tool"] # Unique Design Name
 unique_design_name = "11111"
 
 ["440::: janitor cyborg plating repair tool"]
 untranslated_item = "11111"
 
-["441::: Integrated Plunger"]
+["441::: Integrated Plunger"] # Unique Design Name
 unique_design_name = "11111"
 
 ["441::: janitor cyborg plunging tool"]
 untranslated_item = "11111"
 
-["442::: High Capacity Light Replacer"]
+["442::: High Capacity Light Replacer"] # Unique Design Name
 unique_design_name = "11111"
 
 ["442::: janitor cyborg high capacity replacer"]
 untranslated_item = "11111"
 
-["443::: Rolling Table Dock"]
+["443::: Rolling Table Dock"] # Unique Design Name
 unique_design_name = "11111"
 
 ["443::: Service Cyborg Rolling Table Dock"]
 untranslated_item = "11111"
 
-["444::: Condiment Synthesizer"]
+["444::: Condiment Synthesizer"] # Unique Design Name
 unique_design_name = "11111"
 
 ["444::: Service Cyborg Condiment Synthesiser"]
 untranslated_item = "11111"
 
-["445::: Kitchen Toolset"]
+["445::: Kitchen Toolset"] # Unique Design Name
 unique_design_name = "11111"
 
 ["445::: Service Cyborg Kitchen Toolset"]
 untranslated_item = "11111"
 
-["446::: Botany Tools"]
+["446::: Botany Tools"] # Unique Design Name
 unique_design_name = "11111"
 
 ["446::: Service Cyborg Botany Tools"]
 untranslated_item = "11111"
 
-["447::: Drink Apparatus"]
+["447::: Drink Apparatus"] # Unique Design Name
 unique_design_name = "11111"
 
 ["447::: glass storage apparatus"]
 untranslated_item = "11111"
 
-["448::: Service Apparatus"]
+["448::: Service Apparatus"] # Unique Design Name
 unique_design_name = "11111"
 
 ["448::: Service Cyborg Service Apparatus"]
 untranslated_item = "11111"
 
-["449::: Service Cookbook"]
+["449::: Service Cookbook"] # Unique Design Name
 unique_design_name = "11111"
 
 ["449::: Service Cyborg Cookbook"]
@@ -2304,40 +2304,40 @@ untranslated_item = "11111"
 ["44::: Xenobiology Console"]
 untranslated_item = "11111"
 
-["44::: Xenobiology Console Board"]
+["44::: Xenobiology Console Board"] # Unique Design Name
 unique_design_name = "11111"
 
-["450::: Expand Module"]
+["450::: Expand Module"] # Unique Design Name
 unique_design_name = "11111"
 
 ["450::: borg expander"]
 untranslated_item = "11111"
 
-["451::: B.O.R.I.S. AI-Cyborg Remote Control"]
+["451::: B.O.R.I.S. AI-Cyborg Remote Control"] # Unique Design Name
 unique_design_name = "11111"
 
 ["451::: B.O.R.I.S. module"]
 untranslated_item = "11111"
 
-["452::: Rapid Part Exchange Device"]
+["452::: Rapid Part Exchange Device"] # Unique Design Name
 unique_design_name = "11111"
 
 ["452::: engineering cyborg RPED"]
 untranslated_item = "11111"
 
-["453::: Cyborg inducer"]
+["453::: Cyborg inducer"] # Unique Design Name
 unique_design_name = "11111"
 
 ["453::: engineering integrated power inducer"]
 untranslated_item = "11111"
 
-["454::: Circuit Manipulator"]
+["454::: Circuit Manipulator"] # Unique Design Name
 unique_design_name = "11111"
 
 ["454::: circuit manipulation apparatus"]
 untranslated_item = "11111"
 
-["455::: Secondary Beaker Storage"]
+["455::: Secondary Beaker Storage"] # Unique Design Name
 unique_design_name = "11111"
 
 ["455::: beaker storage apparatus"]
@@ -2358,7 +2358,7 @@ untranslated_item = "11111"
 ["45::: AI Upload"]
 untranslated_item = "11111"
 
-["45::: AI Upload Board"]
+["45::: AI Upload Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["460::: positronic brain"]
@@ -2367,13 +2367,13 @@ untranslated_item = "11111"
 ["461::: exosuit tracking beacon"]
 untranslated_item = "11111"
 
-["462::: AI Control Beacon"]
+["462::: AI Control Beacon"] # Unique Design Name
 unique_design_name = "11111"
 
 ["462::: exosuit AI control beacon"]
 untranslated_item = "11111"
 
-["463::: Exosuit External Camera Kit"]
+["463::: Exosuit External Camera Kit"] # Unique Design Name
 unique_design_name = "11111"
 
 ["463::: exosuit-mounted camera"]
@@ -2400,40 +2400,40 @@ untranslated_item = "11111"
 ["46::: Cyborg Upload"]
 untranslated_item = "11111"
 
-["46::: Cyborg Upload Board"]
+["46::: Cyborg Upload Board"] # Unique Design Name
 unique_design_name = "11111"
 
-["470::: MOD Civilian Plating"]
+["470::: MOD Civilian Plating"] # Unique Design Name
 unique_design_name = "11111"
 
 ["470::: MOD external plating"]
 untranslated_item = "11111"
 
-["471::: MOD Engineering Plating"]
+["471::: MOD Engineering Plating"] # Unique Design Name
 unique_design_name = "11111"
 
 ["471::: MOD external plating"]
 untranslated_item = "11111"
 
-["472::: MOD Atmospheric Plating"]
+["472::: MOD Atmospheric Plating"] # Unique Design Name
 unique_design_name = "11111"
 
 ["472::: MOD external plating"]
 untranslated_item = "11111"
 
-["473::: MOD Medical Plating"]
+["473::: MOD Medical Plating"] # Unique Design Name
 unique_design_name = "11111"
 
 ["473::: MOD external plating"]
 untranslated_item = "11111"
 
-["474::: MOD Security Plating"]
+["474::: MOD Security Plating"] # Unique Design Name
 unique_design_name = "11111"
 
 ["474::: MOD external plating"]
 untranslated_item = "11111"
 
-["475::: MOD Cosmohonk Plating"]
+["475::: MOD Cosmohonk Plating"] # Unique Design Name
 unique_design_name = "11111"
 
 ["475::: MOD external plating"]
@@ -2448,16 +2448,16 @@ untranslated_item = "11111"
 ["478::: MOD storage module"]
 untranslated_item = "11111"
 
-["478::: Storage Module"]
+["478::: Storage Module"] # Unique Design Name
 unique_design_name = "11111"
 
-["479::: Expanded Storage Module"]
+["479::: Expanded Storage Module"] # Unique Design Name
 unique_design_name = "11111"
 
 ["479::: MOD expanded storage module"]
 untranslated_item = "11111"
 
-["47::: Medical Records Board"]
+["47::: Medical Records Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["47::: Medical Records Console"]
@@ -2466,10 +2466,10 @@ untranslated_item = "11111"
 ["480::: MOD medical visor module"]
 untranslated_item = "11111"
 
-["480::: Medical Visor Module"]
+["480::: Medical Visor Module"] # Unique Design Name
 unique_design_name = "11111"
 
-["481::: Diagnostic Visor Module"]
+["481::: Diagnostic Visor Module"] # Unique Design Name
 unique_design_name = "11111"
 
 ["481::: MOD diagnostic visor module"]
@@ -2478,46 +2478,46 @@ untranslated_item = "11111"
 ["482::: MOD security visor module"]
 untranslated_item = "11111"
 
-["482::: Security Visor Module"]
+["482::: Security Visor Module"] # Unique Design Name
 unique_design_name = "11111"
 
 ["483::: MOD meson visor module"]
 untranslated_item = "11111"
 
-["483::: Meson Visor Module"]
+["483::: Meson Visor Module"] # Unique Design Name
 unique_design_name = "11111"
 
 ["484::: MOD welding protection module"]
 untranslated_item = "11111"
 
-["484::: Welding Protection Module"]
+["484::: Welding Protection Module"] # Unique Design Name
 unique_design_name = "11111"
 
 ["485::: MOD safety-first head protection module"]
 untranslated_item = "11111"
 
-["485::: Safety-First Head Protection Module"]
+["485::: Safety-First Head Protection Module"] # Unique Design Name
 unique_design_name = "11111"
 
 ["486::: MOD t-ray scan module"]
 untranslated_item = "11111"
 
-["486::: T-Ray Scanner Module"]
+["486::: T-Ray Scanner Module"] # Unique Design Name
 unique_design_name = "11111"
 
-["487::: Health Analyzer Module"]
+["487::: Health Analyzer Module"] # Unique Design Name
 unique_design_name = "11111"
 
 ["487::: MOD health analyzer module"]
 untranslated_item = "11111"
 
-["488::: Cloak Module"]
+["488::: Cloak Module"] # Unique Design Name
 unique_design_name = "11111"
 
 ["488::: MOD prototype cloaking module"]
 untranslated_item = "11111"
 
-["489::: Ion Jetpack Module"]
+["489::: Ion Jetpack Module"] # Unique Design Name
 unique_design_name = "11111"
 
 ["489::: MOD ion jetpack module"]
@@ -2526,28 +2526,28 @@ untranslated_item = "11111"
 ["48::: Operating Computer"]
 untranslated_item = "11111"
 
-["48::: Operating Computer Board"]
+["48::: Operating Computer Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["490::: MOD magnetic stability module"]
 untranslated_item = "11111"
 
-["490::: Magnetic Stabilizator Module"]
+["490::: Magnetic Stabilizator Module"] # Unique Design Name
 unique_design_name = "11111"
 
 ["491::: MOD magnetic harness module"]
 untranslated_item = "11111"
 
-["491::: Magnetic Harness Module"]
+["491::: Magnetic Harness Module"] # Unique Design Name
 unique_design_name = "11111"
 
-["492::: Emergency Tether Module"]
+["492::: Emergency Tether Module"] # Unique Design Name
 unique_design_name = "11111"
 
 ["492::: MOD emergency tether module"]
 untranslated_item = "11111"
 
-["493::: Eating Apparatus Module"]
+["493::: Eating Apparatus Module"] # Unique Design Name
 unique_design_name = "11111"
 
 ["493::: MOD eating apparatus module"]
@@ -2556,16 +2556,16 @@ untranslated_item = "11111"
 ["494::: MOD radiation protection module"]
 untranslated_item = "11111"
 
-["494::: Radiation Protection Module"]
+["494::: Radiation Protection Module"] # Unique Design Name
 unique_design_name = "11111"
 
-["495::: EMP Shield Module"]
+["495::: EMP Shield Module"] # Unique Design Name
 unique_design_name = "11111"
 
 ["495::: MOD EMP shield module"]
 untranslated_item = "11111"
 
-["496::: Flashlight Module"]
+["496::: Flashlight Module"] # Unique Design Name
 unique_design_name = "11111"
 
 ["496::: MOD flashlight module"]
@@ -2574,16 +2574,16 @@ untranslated_item = "11111"
 ["497::: MOD reagent scanner module"]
 untranslated_item = "11111"
 
-["497::: Reagent Scanner Module"]
+["497::: Reagent Scanner Module"] # Unique Design Name
 unique_design_name = "11111"
 
-["498::: Internal GPS Module"]
+["498::: Internal GPS Module"] # Unique Design Name
 unique_design_name = "11111"
 
 ["498::: MOD internal GPS module"]
 untranslated_item = "11111"
 
-["499::: Constructor Module"]
+["499::: Constructor Module"] # Unique Design Name
 unique_design_name = "11111"
 
 ["499::: MOD constructor module"]
@@ -2592,10 +2592,10 @@ untranslated_item = "11111"
 ["49::: PanD.E.M.I.C. 2200"]
 untranslated_item = "11111"
 
-["49::: PanD.E.M.I.C. 2200 Board"]
+["49::: PanD.E.M.I.C. 2200 Board"] # Unique Design Name
 unique_design_name = "11111"
 
-["4::: AI Core Board"]
+["4::: AI Core Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["4::: AI core (AI Core Board)"]
@@ -2604,10 +2604,10 @@ untranslated_item = "11111"
 ["500::: MOD quick carry module"]
 untranslated_item = "11111"
 
-["500::: Quick Carry Module"]
+["500::: Quick Carry Module"] # Unique Design Name
 unique_design_name = "11111"
 
-["501::: Longfall Module"]
+["501::: Longfall Module"] # Unique Design Name
 unique_design_name = "11111"
 
 ["501::: MOD longfall module"]
@@ -2616,16 +2616,16 @@ untranslated_item = "11111"
 ["502::: MOD thermal regulator module"]
 untranslated_item = "11111"
 
-["502::: Thermal Regulator Module"]
+["502::: Thermal Regulator Module"] # Unique Design Name
 unique_design_name = "11111"
 
-["503::: Injector Module"]
+["503::: Injector Module"] # Unique Design Name
 unique_design_name = "11111"
 
 ["503::: MOD injector module"]
 untranslated_item = "11111"
 
-["504::: Bike Horn Module"]
+["504::: Bike Horn Module"] # Unique Design Name
 unique_design_name = "11111"
 
 ["504::: MOD bike horn module"]
@@ -2634,22 +2634,22 @@ untranslated_item = "11111"
 ["505::: MOD microwave beam module"]
 untranslated_item = "11111"
 
-["505::: Microwave Beam Module"]
+["505::: Microwave Beam Module"] # Unique Design Name
 unique_design_name = "11111"
 
 ["506::: MOD waddle module"]
 untranslated_item = "11111"
 
-["506::: Waddle Module"]
+["506::: Waddle Module"] # Unique Design Name
 unique_design_name = "11111"
 
-["507::: Crate Clamp Module"]
+["507::: Crate Clamp Module"] # Unique Design Name
 unique_design_name = "11111"
 
 ["507::: MOD hydraulic clamp module"]
 untranslated_item = "11111"
 
-["508::: Drill Module"]
+["508::: Drill Module"] # Unique Design Name
 unique_design_name = "11111"
 
 ["508::: MOD drill module"]
@@ -2658,28 +2658,28 @@ untranslated_item = "11111"
 ["509::: MOD ore bag module"]
 untranslated_item = "11111"
 
-["509::: Ore Bag Module"]
+["509::: Ore Bag Module"] # Unique Design Name
 unique_design_name = "11111"
 
 ["50::: Communications"]
 untranslated_item = "11111"
 
-["50::: Communications Board"]
+["50::: Communications Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["510::: MOD organizer module"]
 untranslated_item = "11111"
 
-["510::: Organizer Module"]
+["510::: Organizer Module"] # Unique Design Name
 unique_design_name = "11111"
 
 ["511::: MOD pathfinder module"]
 untranslated_item = "11111"
 
-["511::: Pathfinder Module"]
+["511::: Pathfinder Module"] # Unique Design Name
 unique_design_name = "11111"
 
-["512::: DNA Lock Module"]
+["512::: DNA Lock Module"] # Unique Design Name
 unique_design_name = "11111"
 
 ["512::: MOD DNA lock module"]
@@ -2688,10 +2688,10 @@ untranslated_item = "11111"
 ["513::: MOD plasma stabilizer module"]
 untranslated_item = "11111"
 
-["513::: Plasma Stabilizer Module"]
+["513::: Plasma Stabilizer Module"] # Unique Design Name
 unique_design_name = "11111"
 
-["514::: Glove Translator Module"]
+["514::: Glove Translator Module"] # Unique Design Name
 unique_design_name = "11111"
 
 ["514::: MOD glove translator module"]
@@ -2700,16 +2700,16 @@ untranslated_item = "11111"
 ["515::: MOD resin mister module"]
 untranslated_item = "11111"
 
-["515::: Resin Mister Module"]
+["515::: Resin Mister Module"] # Unique Design Name
 unique_design_name = "11111"
 
-["516::: Holster Module"]
+["516::: Holster Module"] # Unique Design Name
 unique_design_name = "11111"
 
 ["516::: MOD holster module"]
 untranslated_item = "11111"
 
-["517::: Active Sonar Module"]
+["517::: Active Sonar Module"] # Unique Design Name
 unique_design_name = "11111"
 
 ["517::: MOD active sonar"]
@@ -2718,16 +2718,16 @@ untranslated_item = "11111"
 ["518::: MOD projectile dampener module"]
 untranslated_item = "11111"
 
-["518::: Projectile Dampener Module"]
+["518::: Projectile Dampener Module"] # Unique Design Name
 unique_design_name = "11111"
 
 ["519::: MOD surgical processor module"]
 untranslated_item = "11111"
 
-["519::: Surgical Processor Module"]
+["519::: Surgical Processor Module"] # Unique Design Name
 unique_design_name = "11111"
 
-["51::: Bank Machine Board"]
+["51::: Bank Machine Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["51::: Bank Machine Console"]
@@ -2736,10 +2736,10 @@ untranslated_item = "11111"
 ["520::: MOD thread ripper module"]
 untranslated_item = "11111"
 
-["520::: Thread Ripper Module"]
+["520::: Thread Ripper Module"] # Unique Design Name
 unique_design_name = "11111"
 
-["521::: Defibrillator Module"]
+["521::: Defibrillator Module"] # Unique Design Name
 unique_design_name = "11111"
 
 ["521::: MOD defibrillator module"]
@@ -2748,16 +2748,16 @@ untranslated_item = "11111"
 ["522::: MOD status readout module"]
 untranslated_item = "11111"
 
-["522::: Status Readout Module"]
+["522::: Status Readout Module"] # Unique Design Name
 unique_design_name = "11111"
 
 ["523::: MOD patient transport module"]
 untranslated_item = "11111"
 
-["523::: Patient Transport Module"]
+["523::: Patient Transport Module"] # Unique Design Name
 unique_design_name = "11111"
 
-["524::: Criminal Capture Module"]
+["524::: Criminal Capture Module"] # Unique Design Name
 unique_design_name = "11111"
 
 ["524::: MOD criminal capture module"]
@@ -2766,16 +2766,16 @@ untranslated_item = "11111"
 ["525::: MOD mirage grenade dispenser module"]
 untranslated_item = "11111"
 
-["525::: Mirage Grenade Dispenser Module"]
+["525::: Mirage Grenade Dispenser Module"] # Unique Design Name
 unique_design_name = "11111"
 
-["526::: Disposal Connector Module"]
+["526::: Disposal Connector Module"] # Unique Design Name
 unique_design_name = "11111"
 
 ["526::: MOD disposal selector module"]
 untranslated_item = "11111"
 
-["527::: Joint Torsion Ratchet Module"]
+["527::: Joint Torsion Ratchet Module"] # Unique Design Name
 unique_design_name = "11111"
 
 ["527::: MOD joint torsion ratchet module"]
@@ -2784,22 +2784,22 @@ untranslated_item = "11111"
 ["528::: MOD recycler module"]
 untranslated_item = "11111"
 
-["528::: Recycler Module"]
+["528::: Recycler Module"] # Unique Design Name
 unique_design_name = "11111"
 
 ["529::: MOD shooting assistant module"]
 untranslated_item = "11111"
 
-["529::: Shooting Assistant Module"]
+["529::: Shooting Assistant Module"] # Unique Design Name
 unique_design_name = "11111"
 
-["52::: Crew Monitoring Computer Board"]
+["52::: Crew Monitoring Computer Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["52::: Crew Monitoring Console"]
 untranslated_item = "11111"
 
-["530::: Anti-Gravity Module"]
+["530::: Anti-Gravity Module"] # Unique Design Name
 unique_design_name = "11111"
 
 ["530::: MOD anti-gravity module"]
@@ -2808,10 +2808,10 @@ untranslated_item = "11111"
 ["531::: MOD teleporter module"]
 untranslated_item = "11111"
 
-["531::: Teleporter Module"]
+["531::: Teleporter Module"] # Unique Design Name
 unique_design_name = "11111"
 
-["532::: Kinesis Module"]
+["532::: Kinesis Module"] # Unique Design Name
 unique_design_name = "11111"
 
 ["532::: MOD kinesis module"]
@@ -2841,7 +2841,7 @@ untranslated_item = "11111"
 ["53::: Security Records Console"]
 untranslated_item = "11111"
 
-["53::: Security Records Console Board"]
+["53::: Security Records Console Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["540::: metamaterial beaker"]
@@ -2856,7 +2856,7 @@ untranslated_item = "11111"
 ["543::: DNA data disk"]
 untranslated_item = "11111"
 
-["543::: Genetic Data Disk"]
+["543::: Genetic Data Disk"] # Unique Design Name
 unique_design_name = "11111"
 
 ["544::: piercing syringe"]
@@ -2865,7 +2865,7 @@ untranslated_item = "11111"
 ["545::: bluespace body bag"]
 untranslated_item = "11111"
 
-["546::: Plasmaman Jumpsuit Refill"]
+["546::: Plasmaman Jumpsuit Refill"] # Unique Design Name
 unique_design_name = "11111"
 
 ["546::: envirosuit extinguisher cartridge"]
@@ -2874,19 +2874,19 @@ untranslated_item = "11111"
 ["547::: defibrillator"]
 untranslated_item = "11111"
 
-["548::: Defibrillator Wall Mount"]
+["548::: Defibrillator Wall Mount"] # Unique Design Name
 unique_design_name = "11111"
 
 ["548::: unhooked defibrillator mount"]
 untranslated_item = "11111"
 
-["549::: PENLITE Defibrillator Wall Mount"]
+["549::: PENLITE Defibrillator Wall Mount"] # Unique Design Name
 unique_design_name = "11111"
 
 ["549::: unhooked PENLITE defibrillator mount"]
 untranslated_item = "11111"
 
-["54::: Atmosphere Alert Board"]
+["54::: Atmosphere Alert Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["54::: Atmospheric Alert"]
@@ -2895,7 +2895,7 @@ untranslated_item = "11111"
 ["550::: compact defibrillator"]
 untranslated_item = "11111"
 
-["551::: Genetic Sequence Analyzer"]
+["551::: Genetic Sequence Analyzer"] # Unique Design Name
 unique_design_name = "11111"
 
 ["551::: genetic sequence scanner"]
@@ -2928,7 +2928,7 @@ untranslated_item = "11111"
 ["55::: Atmospheric Control"]
 untranslated_item = "11111"
 
-["55::: Atmospheric Monitor Board"]
+["55::: Atmospheric Monitor Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["560::: blood pack"]
@@ -2940,7 +2940,7 @@ untranslated_item = "11111"
 ["562::: medical bed"]
 untranslated_item = "11111"
 
-["563::: Medical Bed (Emergency)"]
+["563::: Medical Bed (Emergency)"] # Unique Design Name
 unique_design_name = "11111"
 
 ["563::: roller bed"]
@@ -2955,13 +2955,13 @@ untranslated_item = "11111"
 ["566::: breathing tube implant"]
 untranslated_item = "11111"
 
-["567::: Surgical Arm Implant"]
+["567::: Surgical Arm Implant"] # Unique Design Name
 unique_design_name = "11111"
 
 ["567::: surgical toolset implant"]
 untranslated_item = "11111"
 
-["568::: Toolset Arm Implant"]
+["568::: Toolset Arm Implant"] # Unique Design Name
 unique_design_name = "11111"
 
 ["568::: integrated toolset implant"]
@@ -2973,7 +2973,7 @@ untranslated_item = "11111"
 ["56::: Robotics Control"]
 untranslated_item = "11111"
 
-["56::: Robotics Control Console Board"]
+["56::: Robotics Control Console Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["570::: security HUD implant"]
@@ -2985,7 +2985,7 @@ untranslated_item = "11111"
 ["572::: X-ray eyes"]
 untranslated_item = "11111"
 
-["573::: Moth X-ray Eyes"]
+["573::: Moth X-ray Eyes"] # Unique Design Name
 unique_design_name = "11111"
 
 ["573::: robotic eyes"]
@@ -2994,7 +2994,7 @@ untranslated_item = "11111"
 ["574::: thermal eyes"]
 untranslated_item = "11111"
 
-["575::: Moth Thermal Eyes"]
+["575::: Moth Thermal Eyes"] # Unique Design Name
 unique_design_name = "11111"
 
 ["575::: thermal moth eyes"]
@@ -3015,7 +3015,7 @@ untranslated_item = "11111"
 ["57::: Slot Machine"]
 untranslated_item = "11111"
 
-["57::: Slot Machine Board"]
+["57::: Slot Machine Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["580::: nutriment pump implant"]
@@ -3027,7 +3027,7 @@ untranslated_item = "11111"
 ["582::: reviver implant"]
 untranslated_item = "11111"
 
-["583::: Thrusters Set Implant"]
+["583::: Thrusters Set Implant"] # Unique Design Name
 unique_design_name = "11111"
 
 ["583::: implantable thrusters set"]
@@ -3036,31 +3036,31 @@ untranslated_item = "11111"
 ["584::: implant case"]
 untranslated_item = "11111"
 
-["585::: Sad Trombone Implant Case"]
+["585::: Sad Trombone Implant Case"] # Unique Design Name
 unique_design_name = "11111"
 
 ["585::: implant case - 'Sad Trombone'"]
 untranslated_item = "11111"
 
-["586::: Chemical Implant Case"]
+["586::: Chemical Implant Case"] # Unique Design Name
 unique_design_name = "11111"
 
 ["586::: implant case - 'Remote Chemical'"]
 untranslated_item = "11111"
 
-["587::: Tracking Implant Case"]
+["587::: Tracking Implant Case"] # Unique Design Name
 unique_design_name = "11111"
 
 ["587::: implant case - 'Tracking'"]
 untranslated_item = "11111"
 
-["588::: Beacon Implant Case"]
+["588::: Beacon Implant Case"] # Unique Design Name
 unique_design_name = "11111"
 
 ["588::: implant case - 'Beacon'"]
 untranslated_item = "11111"
 
-["589::: Bluespace Grounding Implant Case"]
+["589::: Bluespace Grounding Implant Case"] # Unique Design Name
 unique_design_name = "11111"
 
 ["589::: implant case - 'Bluespace Grounding'"]
@@ -3069,10 +3069,10 @@ untranslated_item = "11111"
 ["58::: Power Monitor"]
 untranslated_item = "11111"
 
-["58::: Power Monitor Board"]
+["58::: Power Monitor Board"] # Unique Design Name
 unique_design_name = "11111"
 
-["590::: Exile Implant Case"]
+["590::: Exile Implant Case"] # Unique Design Name
 unique_design_name = "11111"
 
 ["590::: implant case - 'Exile'"]
@@ -3108,13 +3108,13 @@ untranslated_item = "11111"
 ["59::: Solar Control"]
 untranslated_item = "11111"
 
-["59::: Solar Control Board"]
+["59::: Solar Control Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["5::: 'Safeguard' AI Module"]
 untranslated_item = "11111"
 
-["5::: Safeguard Module"]
+["5::: Safeguard Module"] # Unique Design Name
 unique_design_name = "11111"
 
 ["600::: upgraded cybernetic lungs"]
@@ -3141,13 +3141,13 @@ untranslated_item = "11111"
 ["607::: wall-penetrating cybernetic ears"]
 untranslated_item = "11111"
 
-["608::: Basic Cybernetic Eyes"]
+["608::: Basic Cybernetic Eyes"] # Unique Design Name
 unique_design_name = "11111"
 
 ["608::: basic robotic eyes"]
 untranslated_item = "11111"
 
-["609::: Basic Cybernetic Moth Eyes"]
+["609::: Basic Cybernetic Moth Eyes"] # Unique Design Name
 unique_design_name = "11111"
 
 ["609::: basic robotic moth eyes"]
@@ -3156,28 +3156,28 @@ untranslated_item = "11111"
 ["60::: Prisoner Management Console"]
 untranslated_item = "11111"
 
-["60::: Prisoner Management Console Board"]
+["60::: Prisoner Management Console Board"] # Unique Design Name
 unique_design_name = "11111"
 
-["610::: Cybernetic Eyes"]
+["610::: Cybernetic Eyes"] # Unique Design Name
 unique_design_name = "11111"
 
 ["610::: robotic eyes"]
 untranslated_item = "11111"
 
-["611::: Cybernetic Moth Eyes"]
+["611::: Cybernetic Moth Eyes"] # Unique Design Name
 unique_design_name = "11111"
 
 ["611::: robotic moth eyes"]
 untranslated_item = "11111"
 
-["612::: Welding Shield Eyes"]
+["612::: Welding Shield Eyes"] # Unique Design Name
 unique_design_name = "11111"
 
 ["612::: shielded robotic eyes"]
 untranslated_item = "11111"
 
-["613::: Welding Shield Moth Eyes"]
+["613::: Welding Shield Moth Eyes"] # Unique Design Name
 unique_design_name = "11111"
 
 ["613::: shielded robotic moth eyes"]
@@ -3186,25 +3186,25 @@ untranslated_item = "11111"
 ["614::: High Luminosity Eyes"]
 untranslated_item = "11111"
 
-["614::: Luminescent Eyes"]
+["614::: Luminescent Eyes"] # Unique Design Name
 unique_design_name = "11111"
 
 ["615::: High Luminosity Moth Eyes"]
 untranslated_item = "11111"
 
-["615::: Luminescent Moth Eyes"]
+["615::: Luminescent Moth Eyes"] # Unique Design Name
 unique_design_name = "11111"
 
 ["616::: Express Supply Console"]
 untranslated_item = "11111"
 
-["616::: Express Supply Console Board"]
+["616::: Express Supply Console Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["617::: Bluespace Drop Pod Upgrade"]
 untranslated_item = "11111"
 
-["617::: Express Supply Drop Pod Upgrade Disk"]
+["617::: Express Supply Drop Pod Upgrade Disk"] # Unique Design Name
 unique_design_name = "11111"
 
 ["618::: pickaxe"]
@@ -3216,7 +3216,7 @@ untranslated_item = "11111"
 ["61::: Exosuit Control Console"]
 untranslated_item = "11111"
 
-["61::: Exosuit Control Console Board"]
+["61::: Exosuit Control Console Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["620::: diamond-tipped mining drill"]
@@ -3228,43 +3228,43 @@ untranslated_item = "11111"
 ["622::: upgraded resonator"]
 untranslated_item = "11111"
 
-["623::: Kinetic Accelerator Trigger Guard Mod"]
+["623::: Kinetic Accelerator Trigger Guard Mod"] # Unique Design Name
 unique_design_name = "11111"
 
 ["623::: modified trigger guard"]
 untranslated_item = "11111"
 
-["624::: Kinetic Accelerator Damage Mod"]
+["624::: Kinetic Accelerator Damage Mod"] # Unique Design Name
 unique_design_name = "11111"
 
 ["624::: damage increase"]
 untranslated_item = "11111"
 
-["625::: Kinetic Accelerator Damage Mod"]
+["625::: Kinetic Accelerator Damage Mod"] # Unique Design Name
 unique_design_name = "11111"
 
 ["625::: damage increase"]
 untranslated_item = "11111"
 
-["626::: Kinetic Accelerator Cooldown Mod"]
+["626::: Kinetic Accelerator Cooldown Mod"] # Unique Design Name
 unique_design_name = "11111"
 
 ["626::: cooldown decrease"]
 untranslated_item = "11111"
 
-["627::: Kinetic Accelerator Cooldown Mod"]
+["627::: Kinetic Accelerator Cooldown Mod"] # Unique Design Name
 unique_design_name = "11111"
 
 ["627::: cooldown decrease"]
 untranslated_item = "11111"
 
-["628::: Kinetic Accelerator Range Mod"]
+["628::: Kinetic Accelerator Range Mod"] # Unique Design Name
 unique_design_name = "11111"
 
 ["628::: range increase"]
 untranslated_item = "11111"
 
-["629::: Kinetic Accelerator Range Mod"]
+["629::: Kinetic Accelerator Range Mod"] # Unique Design Name
 unique_design_name = "11111"
 
 ["629::: range increase"]
@@ -3273,22 +3273,22 @@ untranslated_item = "11111"
 ["62::: Mech Bay Power Control Console"]
 untranslated_item = "11111"
 
-["62::: Mech Bay Power Control Console Board"]
+["62::: Mech Bay Power Control Console Board"] # Unique Design Name
 unique_design_name = "11111"
 
-["630::: Kinetic Accelerator Mining AoE Mod"]
+["630::: Kinetic Accelerator Mining AoE Mod"] # Unique Design Name
 unique_design_name = "11111"
 
 ["630::: mining explosion"]
 untranslated_item = "11111"
 
-["631::: Kinetic Accelerator Mining AoE Mod"]
+["631::: Kinetic Accelerator Mining AoE Mod"] # Unique Design Name
 unique_design_name = "11111"
 
 ["631::: mining explosion"]
 untranslated_item = "11111"
 
-["632::: Mining Scanner"]
+["632::: Mining Scanner"] # Unique Design Name
 unique_design_name = "11111"
 
 ["632::: automatic mining scanner"]
@@ -3318,10 +3318,10 @@ untranslated_item = "11111"
 ["63::: R&D Console"]
 untranslated_item = "11111"
 
-["63::: R&D Console Board"]
+["63::: R&D Console Board"] # Unique Design Name
 unique_design_name = "11111"
 
-["640::: Welding Gas Mask"]
+["640::: Welding Gas Mask"] # Unique Design Name
 unique_design_name = "11111"
 
 ["640::: welding mask"]
@@ -3336,7 +3336,7 @@ untranslated_item = "11111"
 ["643::: Rolling table"]
 untranslated_item = "11111"
 
-["643::: Rolly poly"]
+["643::: Rolly poly"] # Unique Design Name
 unique_design_name = "11111"
 
 ["644::: portable seed extractor"]
@@ -3345,7 +3345,7 @@ untranslated_item = "11111"
 ["645::: water balloon"]
 untranslated_item = "11111"
 
-["646::: Optical Meson Scanners"]
+["646::: Optical Meson Scanners"] # Unique Design Name
 unique_design_name = "11111"
 
 ["646::: optical meson scanner"]
@@ -3354,7 +3354,7 @@ untranslated_item = "11111"
 ["647::: engineering scanner goggles"]
 untranslated_item = "11111"
 
-["648::: Optical T-Ray Scanners"]
+["648::: Optical T-Ray Scanners"] # Unique Design Name
 unique_design_name = "11111"
 
 ["648::: optical t-ray scanner"]
@@ -3366,10 +3366,10 @@ untranslated_item = "11111"
 ["64::: Supply Console"]
 untranslated_item = "11111"
 
-["64::: Supply Console Board"]
+["64::: Supply Console Board"] # Unique Design Name
 unique_design_name = "11111"
 
-["650::: Night Vision Optical Meson Scanners"]
+["650::: Night Vision Optical Meson Scanners"] # Unique Design Name
 unique_design_name = "11111"
 
 ["650::: night vision meson scanner"]
@@ -3378,7 +3378,7 @@ untranslated_item = "11111"
 ["651::: night vision goggles"]
 untranslated_item = "11111"
 
-["652::: Magnetic Boots"]
+["652::: Magnetic Boots"] # Unique Design Name
 unique_design_name = "11111"
 
 ["652::: magboots"]
@@ -3402,7 +3402,7 @@ untranslated_item = "11111"
 ["658::: quantum keycard"]
 untranslated_item = "11111"
 
-["659::: Bot Launchpad Controller"]
+["659::: Bot Launchpad Controller"] # Unique Design Name
 unique_design_name = "11111"
 
 ["659::: Bot pad controller"]
@@ -3411,13 +3411,13 @@ untranslated_item = "11111"
 ["65::: Supply Request Console"]
 untranslated_item = "11111"
 
-["65::: Supply Request Console Board"]
+["65::: Supply Request Console Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["660::: anomaly neutralizer"]
 untranslated_item = "11111"
 
-["661::: Donksoft Toy Vendor Refill"]
+["661::: Donksoft Toy Vendor Refill"] # Unique Design Name
 unique_design_name = "11111"
 
 ["661::: resupply canister"]
@@ -3429,19 +3429,19 @@ untranslated_item = "11111"
 ["663::: identification card"]
 untranslated_item = "11111"
 
-["664::: Tinkers Gloves"]
+["664::: Tinkers Gloves"] # Unique Design Name
 unique_design_name = "11111"
 
 ["664::: tinker's gloves"]
 untranslated_item = "11111"
 
-["665::: Lava-Resistant Iron Rods"]
+["665::: Lava-Resistant Iron Rods"] # Unique Design Name
 unique_design_name = "11111"
 
 ["665::: heat resistant rod"]
 untranslated_item = "11111"
 
-["666::: Rubber Ducky"]
+["666::: Rubber Ducky"] # Unique Design Name
 unique_design_name = "11111"
 
 ["666::: plastic ducky"]
@@ -3453,7 +3453,7 @@ untranslated_item = "11111"
 ["668::: advanced mop"]
 untranslated_item = "11111"
 
-["669::: Trashbag"]
+["669::: Trashbag"] # Unique Design Name
 unique_design_name = "11111"
 
 ["669::: trash bag"]
@@ -3462,10 +3462,10 @@ untranslated_item = "11111"
 ["66::: Outpost Status Display"]
 untranslated_item = "11111"
 
-["66::: Outpost Status Display Board"]
+["66::: Outpost Status Display Board"] # Unique Design Name
 unique_design_name = "11111"
 
-["670::: Trashbag of Holding"]
+["670::: Trashbag of Holding"] # Unique Design Name
 unique_design_name = "11111"
 
 ["670::: trash bag of holding"]
@@ -3501,16 +3501,16 @@ untranslated_item = "11111"
 ["67::: Telecommunications Monitor"]
 untranslated_item = "11111"
 
-["67::: Telecommunications Monitoring Console Board"]
+["67::: Telecommunications Monitoring Console Board"] # Unique Design Name
 unique_design_name = "11111"
 
-["680::: Restaurant Seating Projector"]
+["680::: Restaurant Seating Projector"] # Unique Design Name
 unique_design_name = "11111"
 
 ["680::: restaurant seating indicator placer"]
 untranslated_item = "11111"
 
-["681::: Bar Seating Projector"]
+["681::: Bar Seating Projector"] # Unique Design Name
 unique_design_name = "11111"
 
 ["681::: bar seating indicator placer"]
@@ -3525,7 +3525,7 @@ untranslated_item = "11111"
 ["684::: ATMOS holofan projector"]
 untranslated_item = "11111"
 
-["685::: PENLITE Holobarrier Projector"]
+["685::: PENLITE Holobarrier Projector"] # Unique Design Name
 unique_design_name = "11111"
 
 ["685::: PENLITE barrier projector"]
@@ -3546,7 +3546,7 @@ design_from_result = "перцовый баллончик"
 ["68::: Telecommunications Server Monitor"]
 untranslated_item = "11111"
 
-["68::: Telecommunications Server Monitoring Console Board"]
+["68::: Telecommunications Server Monitoring Console Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["690::: DRAGnet beacon"]
@@ -3561,13 +3561,13 @@ untranslated_item = "11111"
 ["693::: Plumbing Constructor"]
 untranslated_item = "11111"
 
-["694::: Gas Filter"]
+["694::: Gas Filter"] # Unique Design Name
 unique_design_name = "11111"
 
 ["694::: atmospheric gas filter"]
 untranslated_item = "11111"
 
-["695::: Plasmaman Gas Filter"]
+["695::: Plasmaman Gas Filter"] # Unique Design Name
 unique_design_name = "11111"
 
 ["695::: plasmaman atmospheric gas filter"]
@@ -3588,13 +3588,13 @@ untranslated_item = "11111"
 ["69::: Message Monitor"]
 untranslated_item = "11111"
 
-["69::: Messaging Monitor Console Board"]
+["69::: Messaging Monitor Console Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["6::: 'OneHuman' AI Module"]
 untranslated_item = "11111"
 
-["6::: OneHuman Module"]
+["6::: OneHuman Module"] # Unique Design Name
 unique_design_name = "11111"
 
 ["700::: rocket gloves"]
@@ -3630,7 +3630,7 @@ untranslated_item = "11111"
 ["70::: AI Integrity Restorer"]
 untranslated_item = "11111"
 
-["70::: AI Integrity Restorer Board"]
+["70::: AI Integrity Restorer Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["710::: syrup bottle"]
@@ -3645,7 +3645,7 @@ untranslated_item = "11111"
 ["713::: perceptomatrix helm"]
 untranslated_item = "11111"
 
-["714::: Basic Power Cell"]
+["714::: Basic Power Cell"] # Unique Design Name
 unique_design_name = "11111"
 
 ["714::: power cell"]
@@ -3663,13 +3663,13 @@ untranslated_item = "11111"
 ["718::: bluespace power cell"]
 untranslated_item = "11111"
 
-["719::: Basic Megacell"]
+["719::: Basic Megacell"] # Unique Design Name
 unique_design_name = "11111"
 
 ["719::: megacell"]
 untranslated_item = "11111"
 
-["71::: Library Console Board"]
+["71::: Library Console Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["71::: Library Visitor Console"]
@@ -3696,25 +3696,25 @@ untranslated_item = "11111"
 ["726::: aquarium bioelectricity kit"]
 untranslated_item = "11111"
 
-["727::: Turbine Compressor"]
+["727::: Turbine Compressor"] # Unique Design Name
 unique_design_name = "11111"
 
 ["727::: compressor part"]
 untranslated_item = "11111"
 
-["728::: Turbine Rotor"]
+["728::: Turbine Rotor"] # Unique Design Name
 unique_design_name = "11111"
 
 ["728::: rotor part"]
 untranslated_item = "11111"
 
-["729::: Turbine Stator"]
+["729::: Turbine Stator"] # Unique Design Name
 unique_design_name = "11111"
 
 ["729::: stator part"]
 untranslated_item = "11111"
 
-["72::: APC Control Board"]
+["72::: APC Control Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["72::: Power Flow Control Console"]
@@ -3753,7 +3753,7 @@ design_from_result = "емкость материи"
 ["73::: Advanced Camera Console"]
 untranslated_item = "11111"
 
-["73::: Advanced Camera Console Board"]
+["73::: Advanced Camera Console Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["740::: subspace ansible"]
@@ -3768,7 +3768,7 @@ untranslated_item = "11111"
 ["743::: subspace treatment disk"]
 untranslated_item = "11111"
 
-["744::: Subspace Analyzer"]
+["744::: Subspace Analyzer"] # Unique Design Name
 unique_design_name = "11111"
 
 ["744::: subspace wavelength analyzer"]
@@ -3792,25 +3792,25 @@ design_from_result = "челюсти жизни"
 ["74::: Bounty Pad"]
 untranslated_item = "11111"
 
-["74::: Civilian Bounty Pad Control Board"]
+["74::: Civilian Bounty Pad Control Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["750::: Experimental Long-range Gas Analyzer"]
 design_from_result = "газоанализатор дальнего действия"
 
-["751::: Rapid Pipe Dispenser (RPD)"]
+["751::: Rapid Pipe Dispenser (RPD)"] # Unique Design Name
 unique_design_name = "11111"
 
 ["751::: rapid pipe dispenser"]
 untranslated_item = "11111"
 
-["752::: Rapid Construction Device"]
+["752::: Rapid Construction Device"] # Unique Design Name
 unique_design_name = "11111"
 
 ["752::: rapid-construction-device (RCD)"]
 untranslated_item = "11111"
 
-["753::: Rapid Tiling Device"]
+["753::: Rapid Tiling Device"] # Unique Design Name
 unique_design_name = "11111"
 
 ["753::: rapid-tiling-device (RTD)"]
@@ -3822,40 +3822,40 @@ untranslated_item = "11111"
 ["755::: RCD advanced upgrade: frames"]
 untranslated_item = "11111"
 
-["755::: RCD frames designs upgrade"]
+["755::: RCD frames designs upgrade"] # Unique Design Name
 unique_design_name = "11111"
 
 ["756::: RCD advanced upgrade: simple circuits"]
 untranslated_item = "11111"
 
-["756::: RCD simple circuits designs upgrade"]
+["756::: RCD simple circuits designs upgrade"] # Unique Design Name
 unique_design_name = "11111"
 
 ["757::: RCD advanced upgrade: anti disruption"]
 untranslated_item = "11111"
 
-["757::: RCD anti disruption designs upgrade"]
+["757::: RCD anti disruption designs upgrade"] # Unique Design Name
 unique_design_name = "11111"
 
 ["758::: RCD advanced upgrade: enhanced cooling"]
 untranslated_item = "11111"
 
-["758::: RCD cooling upgrade"]
+["758::: RCD cooling upgrade"] # Unique Design Name
 unique_design_name = "11111"
 
 ["759::: RCD advanced upgrade: furnishings"]
 untranslated_item = "11111"
 
-["759::: RCD furnishing upgrade"]
+["759::: RCD furnishing upgrade"] # Unique Design Name
 unique_design_name = "11111"
 
 ["75::: Scanner Array Control Console"]
 untranslated_item = "11111"
 
-["75::: Scanner Array Control Console Board"]
+["75::: Scanner Array Control Console Board"] # Unique Design Name
 unique_design_name = "11111"
 
-["760::: Advanced RCD silo link upgrade"]
+["760::: Advanced RCD silo link upgrade"] # Unique Design Name
 unique_design_name = "11111"
 
 ["760::: RCD advanced upgrade: silo link"]
@@ -3864,10 +3864,10 @@ untranslated_item = "11111"
 ["761::: RPD advanced upgrade: wrench mode"]
 untranslated_item = "11111"
 
-["761::: RPD unwrenching upgrade"]
+["761::: RPD unwrenching upgrade"] # Unique Design Name
 unique_design_name = "11111"
 
-["762::: Mini Rapid Light Device (MRLD)"]
+["762::: Mini Rapid Light Device (MRLD)"] # Unique Design Name
 unique_design_name = "11111"
 
 ["762::: mini-rapid-light-device"]
@@ -3897,10 +3897,10 @@ untranslated_item = "11111"
 ["76::: Exploration Drone Control Console"]
 untranslated_item = "11111"
 
-["76::: Exploration Drone Control Console Board"]
+["76::: Exploration Drone Control Console Board"] # Unique Design Name
 unique_design_name = "11111"
 
-["770::: Alien Circular Saw"]
+["770::: Alien Circular Saw"] # Unique Design Name
 unique_design_name = "11111"
 
 ["770::: alien saw"]
@@ -3912,43 +3912,43 @@ untranslated_item = "11111"
 ["772::: alien cautery"]
 untranslated_item = "11111"
 
-["773::: Speed Loader (.38) (Lethal)"]
+["773::: Speed Loader (.38) (Lethal)"] # Unique Design Name
 unique_design_name = "11111"
 
 ["773::: speed loader (.38)"]
 untranslated_item = "11111"
 
-["774::: Speed Loader (.38) (Lethal)"]
+["774::: Speed Loader (.38) (Lethal)"] # Unique Design Name
 unique_design_name = "11111"
 
 ["774::: speed loader (.38)"]
 untranslated_item = "11111"
 
-["775::: Speed Loader (.38 TRAC) (Less Lethal)"]
+["775::: Speed Loader (.38 TRAC) (Less Lethal)"] # Unique Design Name
 unique_design_name = "11111"
 
 ["775::: speed loader (.38 TRAC)"]
 untranslated_item = "11111"
 
-["776::: Speed Loader (.38 Hot Shot) (Very Lethal)"]
+["776::: Speed Loader (.38 Hot Shot) (Very Lethal)"] # Unique Design Name
 unique_design_name = "11111"
 
 ["776::: speed loader (.38 Hot Shot)"]
 untranslated_item = "11111"
 
-["777::: Speed Loader (.38 Iceblox) (Lethal/Very Lethal (Lizardpeople))"]
+["777::: Speed Loader (.38 Iceblox) (Lethal/Very Lethal (Lizardpeople))"] # Unique Design Name
 unique_design_name = "11111"
 
 ["777::: speed loader (.38 Iceblox)"]
 untranslated_item = "11111"
 
-["778::: Speed Loader (.38 Rubber) (Less Lethal)"]
+["778::: Speed Loader (.38 Rubber) (Less Lethal)"] # Unique Design Name
 unique_design_name = "11111"
 
 ["778::: speed loader (.38 Rubber)"]
 untranslated_item = "11111"
 
-["779::: Rubber Shot (Less Lethal)"]
+["779::: Rubber Shot (Less Lethal)"] # Unique Design Name
 unique_design_name = "11111"
 
 ["779::: rubber shot"]
@@ -3957,64 +3957,64 @@ untranslated_item = "11111"
 ["77::: Account Lookup Console"]
 untranslated_item = "11111"
 
-["77::: Account Lookup Console Board"]
+["77::: Account Lookup Console Board"] # Unique Design Name
 unique_design_name = "11111"
 
-["780::: Rubber Shot (Less Lethal)"]
+["780::: Rubber Shot (Less Lethal)"] # Unique Design Name
 unique_design_name = "11111"
 
 ["780::: rubber shot"]
 untranslated_item = "11111"
 
-["781::: Beanbag Slug (Less Lethal)"]
+["781::: Beanbag Slug (Less Lethal)"] # Unique Design Name
 unique_design_name = "11111"
 
 ["781::: beanbag slug"]
 untranslated_item = "11111"
 
-["782::: Beanbag Slug (Less Lethal)"]
+["782::: Beanbag Slug (Less Lethal)"] # Unique Design Name
 unique_design_name = "11111"
 
 ["782::: beanbag slug"]
 untranslated_item = "11111"
 
-["783::: Shotgun Dart (Lethal)"]
+["783::: Shotgun Dart (Lethal)"] # Unique Design Name
 unique_design_name = "11111"
 
 ["783::: shotgun dart"]
 untranslated_item = "11111"
 
-["784::: Shotgun Dart (Lethal)"]
+["784::: Shotgun Dart (Lethal)"] # Unique Design Name
 unique_design_name = "11111"
 
 ["784::: shotgun dart"]
 untranslated_item = "11111"
 
-["785::: Incendiary Slug (Lethal)"]
+["785::: Incendiary Slug (Lethal)"] # Unique Design Name
 unique_design_name = "11111"
 
 ["785::: incendiary slug"]
 untranslated_item = "11111"
 
-["786::: Incendiary Slug (Lethal)"]
+["786::: Incendiary Slug (Lethal)"] # Unique Design Name
 unique_design_name = "11111"
 
 ["786::: incendiary slug"]
 untranslated_item = "11111"
 
-["787::: WT-550 Autorifle Magazine (4.6x30mm) (Lethal)"]
+["787::: WT-550 Autorifle Magazine (4.6x30mm) (Lethal)"] # Unique Design Name
 unique_design_name = "11111"
 
 ["787::: wt550 magazine (4.6x30mm)"]
 untranslated_item = "11111"
 
-["788::: WT-550 Autorifle Armour Piercing Magazine (4.6x30mm AP) (Lethal)"]
+["788::: WT-550 Autorifle Armour Piercing Magazine (4.6x30mm AP) (Lethal)"] # Unique Design Name
 unique_design_name = "11111"
 
 ["788::: wt550 magazine (Armour Piercing 4.6x30mm)"]
 untranslated_item = "11111"
 
-["789::: WT-550 Autorifle Incendiary Magazine (4.6x30mm IC) (Lethal/Highly Destructive)"]
+["789::: WT-550 Autorifle Incendiary Magazine (4.6x30mm IC) (Lethal/Highly Destructive)"] # Unique Design Name
 unique_design_name = "11111"
 
 ["789::: wt550 magazine (Incendiary 4.6x30mm)"]
@@ -4023,16 +4023,16 @@ untranslated_item = "11111"
 ["78::: Electrolyzer"]
 untranslated_item = "11111"
 
-["78::: Electrolyzer Board"]
+["78::: Electrolyzer Board"] # Unique Design Name
 unique_design_name = "11111"
 
-["790::: Tesla Cannon Part Kit (Lethal)"]
+["790::: Tesla Cannon Part Kit (Lethal)"] # Unique Design Name
 unique_design_name = "11111"
 
 ["790::: tesla cannon parts kit (lethal)"]
 untranslated_item = "11111"
 
-["791::: Advanced Energy Gun Part Kit (Lethal/Nonlethal)"]
+["791::: Advanced Energy Gun Part Kit (Lethal/Nonlethal)"] # Unique Design Name
 unique_design_name = "11111"
 
 ["791::: advanced energy gun parts kit (lethal/nonlethal)"]
@@ -4044,37 +4044,37 @@ design_from_result = "телескопический щит"
 ["793::: ballistic shield"]
 untranslated_item = "11111"
 
-["794::: Event Horizon Anti-Existential Beam Rifle Part Kit (DOOMSDAY DEVICE)"]
+["794::: Event Horizon Anti-Existential Beam Rifle Part Kit (DOOMSDAY DEVICE)"] # Unique Design Name
 unique_design_name = "11111"
 
 ["794::: Event Horizon anti-existential beam rifle part kit (DOOMSDAY DEVICE, DO NOT CONSTRUCT)"]
 untranslated_item = "11111"
 
-["795::: Rapid Syringe Gun"]
+["795::: Rapid Syringe Gun"] # Unique Design Name
 unique_design_name = "11111"
 
 ["795::: compact rapid syringe gun"]
 untranslated_item = "11111"
 
-["796::: Temperature Gun Part Kit (Less Lethal/Very Lethal (Lizardpeople))"]
+["796::: Temperature Gun Part Kit (Less Lethal/Very Lethal (Lizardpeople))"] # Unique Design Name
 unique_design_name = "11111"
 
 ["796::: temperature gun parts kit (less lethal/very lethal (lizardpeople))"]
 untranslated_item = "11111"
 
-["797::: Large Grenade Casing"]
+["797::: Large Grenade Casing"] # Unique Design Name
 unique_design_name = "11111"
 
 ["797::: large grenade"]
 untranslated_item = "11111"
 
-["798::: Pyro Grenade Casing"]
+["798::: Pyro Grenade Casing"] # Unique Design Name
 unique_design_name = "11111"
 
 ["798::: pyro grenade"]
 untranslated_item = "11111"
 
-["799::: Cryo Grenade Casing"]
+["799::: Cryo Grenade Casing"] # Unique Design Name
 unique_design_name = "11111"
 
 ["799::: cryo grenade"]
@@ -4083,46 +4083,46 @@ untranslated_item = "11111"
 ["79::: SMES"]
 untranslated_item = "11111"
 
-["79::: SMES Board"]
+["79::: SMES Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["7::: 'ProtectStation' AI Module"]
 untranslated_item = "11111"
 
-["7::: ProtectStation Module"]
+["7::: ProtectStation Module"] # Unique Design Name
 unique_design_name = "11111"
 
-["800::: Advanced Release Grenade Casing"]
+["800::: Advanced Release Grenade Casing"] # Unique Design Name
 unique_design_name = "11111"
 
 ["800::: advanced release grenade"]
 untranslated_item = "11111"
 
-["801::: X-ray Laser Gun Part Kit (Lethal)"]
+["801::: X-ray Laser Gun Part Kit (Lethal)"] # Unique Design Name
 unique_design_name = "11111"
 
 ["801::: x-ray laser gun parts kit (lethal)"]
 untranslated_item = "11111"
 
-["802::: Ion Carbine Part Kit (Nonlethal/Highly Destructive/Lethal (Silicons))"]
+["802::: Ion Carbine Part Kit (Nonlethal/Highly Destructive/Lethal (Silicons))"] # Unique Design Name
 unique_design_name = "11111"
 
 ["802::: ion carbine parts kit (nonlethal/highly destructive/very lethal (silicons))"]
 untranslated_item = "11111"
 
-["803::: Stun Shell"]
+["803::: Stun Shell"] # Unique Design Name
 unique_design_name = "11111"
 
 ["803::: taser slug"]
 untranslated_item = "11111"
 
-["804::: Scatter Laser Shotgun Shell (Lethal)"]
+["804::: Scatter Laser Shotgun Shell (Lethal)"] # Unique Design Name
 unique_design_name = "11111"
 
 ["804::: scatter laser shell"]
 untranslated_item = "11111"
 
-["805::: Unloaded Technological Shotshell"]
+["805::: Unloaded Technological Shotshell"] # Unique Design Name
 unique_design_name = "11111"
 
 ["805::: unloaded technological shell"]
@@ -4134,7 +4134,7 @@ untranslated_item = "11111"
 ["807::: one-point gravitational manipulator"]
 untranslated_item = "11111"
 
-["808::: Energy Crossbow Part Kit (Less Lethal/Contraband)"]
+["808::: Energy Crossbow Part Kit (Less Lethal/Contraband)"] # Unique Design Name
 unique_design_name = "11111"
 
 ["808::: energy crossbow part kit (less lethal)"]
@@ -4143,7 +4143,7 @@ untranslated_item = "11111"
 ["809::: cleric mace"]
 untranslated_item = "11111"
 
-["80::: Power Connector Board"]
+["80::: Power Connector Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["80::: power connector"]
@@ -4152,7 +4152,7 @@ untranslated_item = "11111"
 ["810::: OZtek Boomerang"]
 untranslated_item = "11111"
 
-["811::: Photon Cannon Part Kit (Nonlethal)"]
+["811::: Photon Cannon Part Kit (Nonlethal)"] # Unique Design Name
 unique_design_name = "11111"
 
 ["811::: photon cannon parts kit (nonlethal)"]
@@ -4167,97 +4167,97 @@ untranslated_item = "11111"
 ["814::: usb cable"]
 untranslated_item = "11111"
 
-["815::: Arithmetic Component"]
+["815::: Arithmetic Component"] # Unique Design Name
 unique_design_name = "11111"
 
 ["815::: component"]
 untranslated_item = "11111"
 
-["816::: Trigonometry Component"]
+["816::: Trigonometry Component"] # Unique Design Name
 unique_design_name = "11111"
 
 ["816::: component"]
 untranslated_item = "11111"
 
-["817::: Arctangent 2 Component"]
+["817::: Arctangent 2 Component"] # Unique Design Name
 unique_design_name = "11111"
 
 ["817::: component"]
 untranslated_item = "11111"
 
-["818::: Clock Component"]
+["818::: Clock Component"] # Unique Design Name
 unique_design_name = "11111"
 
 ["818::: component"]
 untranslated_item = "11111"
 
-["819::: Comparison Component"]
+["819::: Comparison Component"] # Unique Design Name
 unique_design_name = "11111"
 
 ["819::: component"]
 untranslated_item = "11111"
 
-["81::: Portable SMES Board"]
+["81::: Portable SMES Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["81::: portable SMES"]
 untranslated_item = "11111"
 
-["820::: Logic Component"]
+["820::: Logic Component"] # Unique Design Name
 unique_design_name = "11111"
 
 ["820::: component"]
 untranslated_item = "11111"
 
-["821::: Toggle Component"]
+["821::: Toggle Component"] # Unique Design Name
 unique_design_name = "11111"
 
 ["821::: component"]
 untranslated_item = "11111"
 
-["822::: Delay Component"]
+["822::: Delay Component"] # Unique Design Name
 unique_design_name = "11111"
 
 ["822::: component"]
 untranslated_item = "11111"
 
-["823::: Format List Component"]
+["823::: Format List Component"] # Unique Design Name
 unique_design_name = "11111"
 
 ["823::: component"]
 untranslated_item = "11111"
 
-["824::: Format Associative List Component"]
+["824::: Format Associative List Component"] # Unique Design Name
 unique_design_name = "11111"
 
 ["824::: component"]
 untranslated_item = "11111"
 
-["825::: Index Component"]
+["825::: Index Component"] # Unique Design Name
 unique_design_name = "11111"
 
 ["825::: component"]
 untranslated_item = "11111"
 
-["826::: Index Associative List Component"]
+["826::: Index Associative List Component"] # Unique Design Name
 unique_design_name = "11111"
 
 ["826::: component"]
 untranslated_item = "11111"
 
-["827::: Length Component"]
+["827::: Length Component"] # Unique Design Name
 unique_design_name = "11111"
 
 ["827::: component"]
 untranslated_item = "11111"
 
-["828::: Light Component"]
+["828::: Light Component"] # Unique Design Name
 unique_design_name = "11111"
 
 ["828::: component"]
 untranslated_item = "11111"
 
-["829::: Not Component"]
+["829::: Not Component"] # Unique Design Name
 unique_design_name = "11111"
 
 ["829::: component"]
@@ -4266,64 +4266,64 @@ untranslated_item = "11111"
 ["82::: Announcement System"]
 untranslated_item = "11111"
 
-["82::: Automated Announcement System Board"]
+["82::: Automated Announcement System Board"] # Unique Design Name
 unique_design_name = "11111"
 
-["830::: Random Component"]
+["830::: Random Component"] # Unique Design Name
 unique_design_name = "11111"
 
 ["830::: component"]
 untranslated_item = "11111"
 
-["831::: Binary Conversion Component"]
+["831::: Binary Conversion Component"] # Unique Design Name
 unique_design_name = "11111"
 
 ["831::: component"]
 untranslated_item = "11111"
 
-["832::: Decimal Conversion Component"]
+["832::: Decimal Conversion Component"] # Unique Design Name
 unique_design_name = "11111"
 
 ["832::: component"]
 untranslated_item = "11111"
 
-["833::: Get Species Component"]
+["833::: Get Species Component"] # Unique Design Name
 unique_design_name = "11111"
 
 ["833::: component"]
 untranslated_item = "11111"
 
-["834::: Speech Component"]
+["834::: Speech Component"] # Unique Design Name
 unique_design_name = "11111"
 
 ["834::: component"]
 untranslated_item = "11111"
 
-["835::: Laser Pointer Component"]
+["835::: Laser Pointer Component"] # Unique Design Name
 unique_design_name = "11111"
 
 ["835::: component"]
 untranslated_item = "11111"
 
-["836::: Timepiece Component"]
+["836::: Timepiece Component"] # Unique Design Name
 unique_design_name = "11111"
 
 ["836::: component"]
 untranslated_item = "11111"
 
-["837::: To String Component"]
+["837::: To String Component"] # Unique Design Name
 unique_design_name = "11111"
 
 ["837::: component"]
 untranslated_item = "11111"
 
-["838::: To Number"]
+["838::: To Number"] # Unique Design Name
 unique_design_name = "11111"
 
 ["838::: component"]
 untranslated_item = "11111"
 
-["839::: Typecheck Component"]
+["839::: Typecheck Component"] # Unique Design Name
 unique_design_name = "11111"
 
 ["839::: component"]
@@ -4332,64 +4332,64 @@ untranslated_item = "11111"
 ["83::: Turbine Computer"]
 untranslated_item = "11111"
 
-["83::: Turbine Power Console Board"]
+["83::: Turbine Power Console Board"] # Unique Design Name
 unique_design_name = "11111"
 
-["840::: Concatenation Component"]
+["840::: Concatenation Component"] # Unique Design Name
 unique_design_name = "11111"
 
 ["840::: component"]
 untranslated_item = "11111"
 
-["841::: Textcase Component"]
+["841::: Textcase Component"] # Unique Design Name
 unique_design_name = "11111"
 
 ["841::: component"]
 untranslated_item = "11111"
 
-["842::: Voice Activator Component"]
+["842::: Voice Activator Component"] # Unique Design Name
 unique_design_name = "11111"
 
 ["842::: component"]
 untranslated_item = "11111"
 
-["843::: String Contains Component"]
+["843::: String Contains Component"] # Unique Design Name
 unique_design_name = "11111"
 
 ["843::: component"]
 untranslated_item = "11111"
 
-["844::: Self Component"]
+["844::: Self Component"] # Unique Design Name
 unique_design_name = "11111"
 
 ["844::: component"]
 untranslated_item = "11111"
 
-["845::: Radio Component"]
+["845::: Radio Component"] # Unique Design Name
 unique_design_name = "11111"
 
 ["845::: component"]
 untranslated_item = "11111"
 
-["846::: GPS Component"]
+["846::: GPS Component"] # Unique Design Name
 unique_design_name = "11111"
 
 ["846::: component"]
 untranslated_item = "11111"
 
-["847::: Direction Component"]
+["847::: Direction Component"] # Unique Design Name
 unique_design_name = "11111"
 
 ["847::: component"]
 untranslated_item = "11111"
 
-["848::: Reagents Scanner"]
+["848::: Reagents Scanner"] # Unique Design Name
 unique_design_name = "11111"
 
 ["848::: component"]
 untranslated_item = "11111"
 
-["849::: Health Component"]
+["849::: Health Component"] # Unique Design Name
 unique_design_name = "11111"
 
 ["849::: component"]
@@ -4398,64 +4398,64 @@ untranslated_item = "11111"
 ["84::: Emitter"]
 untranslated_item = "11111"
 
-["84::: Emitter Board"]
+["84::: Emitter Board"] # Unique Design Name
 unique_design_name = "11111"
 
-["850::: Compare Health State Component"]
+["850::: Compare Health State Component"] # Unique Design Name
 unique_design_name = "11111"
 
 ["850::: component"]
 untranslated_item = "11111"
 
-["851::: Material Scanner"]
+["851::: Material Scanner"] # Unique Design Name
 unique_design_name = "11111"
 
 ["851::: component"]
 untranslated_item = "11111"
 
-["852::: Split Component"]
+["852::: Split Component"] # Unique Design Name
 unique_design_name = "11111"
 
 ["852::: component"]
 untranslated_item = "11111"
 
-["853::: Pull Component"]
+["853::: Pull Component"] # Unique Design Name
 unique_design_name = "11111"
 
 ["853::: component"]
 untranslated_item = "11111"
 
-["854::: Sound Emitter Component"]
+["854::: Sound Emitter Component"] # Unique Design Name
 unique_design_name = "11111"
 
 ["854::: component"]
 untranslated_item = "11111"
 
-["855::: MMI Component"]
+["855::: MMI Component"] # Unique Design Name
 unique_design_name = "11111"
 
 ["855::: component"]
 untranslated_item = "11111"
 
-["856::: Router Component"]
+["856::: Router Component"] # Unique Design Name
 unique_design_name = "11111"
 
 ["856::: component"]
 untranslated_item = "11111"
 
-["857::: Multiplexer Component"]
+["857::: Multiplexer Component"] # Unique Design Name
 unique_design_name = "11111"
 
 ["857::: component"]
 untranslated_item = "11111"
 
-["858::: Get Column Component"]
+["858::: Get Column Component"] # Unique Design Name
 unique_design_name = "11111"
 
 ["858::: component"]
 untranslated_item = "11111"
 
-["859::: Index Table Component"]
+["859::: Index Table Component"] # Unique Design Name
 unique_design_name = "11111"
 
 ["859::: component"]
@@ -4464,64 +4464,64 @@ untranslated_item = "11111"
 ["85::: Mass Driver"]
 untranslated_item = "11111"
 
-["85::: Mass Driver Board"]
+["85::: Mass Driver Board"] # Unique Design Name
 unique_design_name = "11111"
 
-["860::: Concatenate List Component"]
+["860::: Concatenate List Component"] # Unique Design Name
 unique_design_name = "11111"
 
 ["860::: component"]
 untranslated_item = "11111"
 
-["861::: List Add"]
+["861::: List Add"] # Unique Design Name
 unique_design_name = "11111"
 
 ["861::: component"]
 untranslated_item = "11111"
 
-["862::: List Remove"]
+["862::: List Remove"] # Unique Design Name
 unique_design_name = "11111"
 
 ["862::: component"]
 untranslated_item = "11111"
 
-["863::: Associative List Set"]
+["863::: Associative List Set"] # Unique Design Name
 unique_design_name = "11111"
 
 ["863::: component"]
 untranslated_item = "11111"
 
-["864::: Associative List Remove"]
+["864::: Associative List Remove"] # Unique Design Name
 unique_design_name = "11111"
 
 ["864::: component"]
 untranslated_item = "11111"
 
-["865::: List Clear"]
+["865::: List Clear"] # Unique Design Name
 unique_design_name = "11111"
 
 ["865::: component"]
 untranslated_item = "11111"
 
-["866::: Element Find"]
+["866::: Element Find"] # Unique Design Name
 unique_design_name = "11111"
 
 ["866::: component"]
 untranslated_item = "11111"
 
-["867::: Select Query Component"]
+["867::: Select Query Component"] # Unique Design Name
 unique_design_name = "11111"
 
 ["867::: component"]
 untranslated_item = "11111"
 
-["868::: Pathfinder"]
+["868::: Pathfinder"] # Unique Design Name
 unique_design_name = "11111"
 
 ["868::: component"]
 untranslated_item = "11111"
 
-["869::: Temperature Sensor Component"]
+["869::: Temperature Sensor Component"] # Unique Design Name
 unique_design_name = "11111"
 
 ["869::: component"]
@@ -4530,64 +4530,64 @@ untranslated_item = "11111"
 ["86::: Turbine - Inlet Compressor"]
 untranslated_item = "11111"
 
-["86::: Turbine Compressor Board"]
+["86::: Turbine Compressor Board"] # Unique Design Name
 unique_design_name = "11111"
 
-["870::: Pressure Sensor Component"]
+["870::: Pressure Sensor Component"] # Unique Design Name
 unique_design_name = "11111"
 
 ["870::: component"]
 untranslated_item = "11111"
 
-["871::: Module Component"]
+["871::: Module Component"] # Unique Design Name
 unique_design_name = "11111"
 
 ["871::: component"]
 untranslated_item = "11111"
 
-["872::: NTNet Receiver"]
+["872::: NTNet Receiver"] # Unique Design Name
 unique_design_name = "11111"
 
 ["872::: component"]
 untranslated_item = "11111"
 
-["873::: NTNet Transmitter"]
+["873::: NTNet Transmitter"] # Unique Design Name
 unique_design_name = "11111"
 
 ["873::: component"]
 untranslated_item = "11111"
 
-["874::: NFC Transmitter"]
+["874::: NFC Transmitter"] # Unique Design Name
 unique_design_name = "11111"
 
 ["874::: component"]
 untranslated_item = "11111"
 
-["875::: NFC Receiver"]
+["875::: NFC Receiver"] # Unique Design Name
 unique_design_name = "11111"
 
 ["875::: component"]
 untranslated_item = "11111"
 
-["876::: List Literal Component"]
+["876::: List Literal Component"] # Unique Design Name
 unique_design_name = "11111"
 
 ["876::: component"]
 untranslated_item = "11111"
 
-["877::: NTNet Transmitter List Literal"]
+["877::: NTNet Transmitter List Literal"] # Unique Design Name
 unique_design_name = "11111"
 
 ["877::: component"]
 untranslated_item = "11111"
 
-["878::: Associative List Literal"]
+["878::: Associative List Literal"] # Unique Design Name
 unique_design_name = "11111"
 
 ["878::: component"]
 untranslated_item = "11111"
 
-["879::: Typecast Component"]
+["879::: Typecast Component"] # Unique Design Name
 unique_design_name = "11111"
 
 ["879::: component"]
@@ -4596,64 +4596,64 @@ untranslated_item = "11111"
 ["87::: Turbine - Core Rotor"]
 untranslated_item = "11111"
 
-["87::: Turbine Rotor Board"]
+["87::: Turbine Rotor Board"] # Unique Design Name
 unique_design_name = "11111"
 
-["880::: Proximity Pinpointer Component"]
+["880::: Proximity Pinpointer Component"] # Unique Design Name
 unique_design_name = "11111"
 
 ["880::: component"]
 untranslated_item = "11111"
 
-["881::: Equipment Action Component"]
+["881::: Equipment Action Component"] # Unique Design Name
 unique_design_name = "11111"
 
 ["881::: component"]
 untranslated_item = "11111"
 
-["882::: Object Overlay Component"]
+["882::: Object Overlay Component"] # Unique Design Name
 unique_design_name = "11111"
 
 ["882::: component"]
 untranslated_item = "11111"
 
-["883::: Bar Overlay Component"]
+["883::: Bar Overlay Component"] # Unique Design Name
 unique_design_name = "11111"
 
 ["883::: component"]
 untranslated_item = "11111"
 
-["884::: VOX Announcement Component"]
+["884::: VOX Announcement Component"] # Unique Design Name
 unique_design_name = "11111"
 
 ["884::: component"]
 untranslated_item = "11111"
 
-["885::: Thought Listener Component"]
+["885::: Thought Listener Component"] # Unique Design Name
 unique_design_name = "11111"
 
 ["885::: component"]
 untranslated_item = "11111"
 
-["886::: BCI Target Interceptor"]
+["886::: BCI Target Interceptor"] # Unique Design Name
 unique_design_name = "11111"
 
 ["886::: component"]
 untranslated_item = "11111"
 
-["887::: Counter Overlay Component"]
+["887::: Counter Overlay Component"] # Unique Design Name
 unique_design_name = "11111"
 
 ["887::: component"]
 untranslated_item = "11111"
 
-["888::: Reagent Injector Component"]
+["888::: Reagent Injector Component"] # Unique Design Name
 unique_design_name = "11111"
 
 ["888::: component"]
 untranslated_item = "11111"
 
-["889::: Install Detector Component"]
+["889::: Install Detector Component"] # Unique Design Name
 unique_design_name = "11111"
 
 ["889::: component"]
@@ -4662,64 +4662,64 @@ untranslated_item = "11111"
 ["88::: Turbine - Turbine Outlet"]
 untranslated_item = "11111"
 
-["88::: Turbine Stator Board"]
+["88::: Turbine Stator Board"] # Unique Design Name
 unique_design_name = "11111"
 
-["890::: BCI Camera"]
+["890::: BCI Camera"] # Unique Design Name
 unique_design_name = "11111"
 
 ["890::: component"]
 untranslated_item = "11111"
 
-["891::: For Each Component"]
+["891::: For Each Component"] # Unique Design Name
 unique_design_name = "11111"
 
 ["891::: component"]
 untranslated_item = "11111"
 
-["892::: Filter List Component"]
+["892::: Filter List Component"] # Unique Design Name
 unique_design_name = "11111"
 
 ["892::: component"]
 untranslated_item = "11111"
 
-["893::: ID Getter Component"]
+["893::: ID Getter Component"] # Unique Design Name
 unique_design_name = "11111"
 
 ["893::: component"]
 untranslated_item = "11111"
 
-["894::: ID Info Reader Component"]
+["894::: ID Info Reader Component"] # Unique Design Name
 unique_design_name = "11111"
 
 ["894::: component"]
 untranslated_item = "11111"
 
-["895::: ID Access Reader Component"]
+["895::: ID Access Reader Component"] # Unique Design Name
 unique_design_name = "11111"
 
 ["895::: component"]
 untranslated_item = "11111"
 
-["896::: Set Variable Trigger"]
+["896::: Set Variable Trigger"] # Unique Design Name
 unique_design_name = "11111"
 
 ["896::: component"]
 untranslated_item = "11111"
 
-["897::: View Sensor Component"]
+["897::: View Sensor Component"] # Unique Design Name
 unique_design_name = "11111"
 
 ["897::: component"]
 untranslated_item = "11111"
 
-["898::: Access Checker Component"]
+["898::: Access Checker Component"] # Unique Design Name
 unique_design_name = "11111"
 
 ["898::: component"]
 untranslated_item = "11111"
 
-["899::: List Pick Component"]
+["899::: List Pick Component"] # Unique Design Name
 unique_design_name = "11111"
 
 ["899::: component"]
@@ -4728,34 +4728,34 @@ untranslated_item = "11111"
 ["89::: Thermomachine"]
 untranslated_item = "11111"
 
-["89::: Thermomachine Board"]
+["89::: Thermomachine Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["8::: 'Quarantine' AI Module"]
 untranslated_item = "11111"
 
-["8::: Quarantine Module"]
+["8::: Quarantine Module"] # Unique Design Name
 unique_design_name = "11111"
 
-["900::: Associative List Pick Component"]
+["900::: Associative List Pick Component"] # Unique Design Name
 unique_design_name = "11111"
 
 ["900::: component"]
 untranslated_item = "11111"
 
-["901::: Compact Remote Shell"]
+["901::: Compact Remote Shell"] # Unique Design Name
 unique_design_name = "11111"
 
 ["901::: compact remote"]
 untranslated_item = "11111"
 
-["902::: Controller Shell"]
+["902::: Controller Shell"] # Unique Design Name
 unique_design_name = "11111"
 
 ["902::: controller"]
 untranslated_item = "11111"
 
-["903::: Scanner Shell"]
+["903::: Scanner Shell"] # Unique Design Name
 unique_design_name = "11111"
 
 ["903::: scanner"]
@@ -4764,31 +4764,31 @@ untranslated_item = "11111"
 ["904::: Keyboard Shell"]
 untranslated_item = "11111"
 
-["905::: Gun Shell"]
+["905::: Gun Shell"] # Unique Design Name
 unique_design_name = "11111"
 
 ["905::: circuit gun"]
 untranslated_item = "11111"
 
-["906::: Bot Shell"]
+["906::: Bot Shell"] # Unique Design Name
 unique_design_name = "11111"
 
 ["906::: bot assembly"]
 untranslated_item = "11111"
 
-["907::: Money Bot Shell"]
+["907::: Money Bot Shell"] # Unique Design Name
 unique_design_name = "11111"
 
 ["907::: money bot assembly"]
 untranslated_item = "11111"
 
-["908::: Drone Shell"]
+["908::: Drone Shell"] # Unique Design Name
 unique_design_name = "11111"
 
 ["908::: drone assembly"]
 untranslated_item = "11111"
 
-["909::: Server Shell"]
+["909::: Server Shell"] # Unique Design Name
 unique_design_name = "11111"
 
 ["909::: server assembly"]
@@ -4797,52 +4797,52 @@ untranslated_item = "11111"
 ["90::: Space Heater"]
 untranslated_item = "11111"
 
-["90::: Space Heater Board"]
+["90::: Space Heater Board"] # Unique Design Name
 unique_design_name = "11111"
 
-["910::: Airlock Shell"]
+["910::: Airlock Shell"] # Unique Design Name
 unique_design_name = "11111"
 
 ["910::: circuit airlock assembly"]
 untranslated_item = "11111"
 
-["911::: Dispenser Shell"]
+["911::: Dispenser Shell"] # Unique Design Name
 unique_design_name = "11111"
 
 ["911::: circuit dispenser assembly"]
 untranslated_item = "11111"
 
-["912::: Brain-Computer Interface Shell"]
+["912::: Brain-Computer Interface Shell"] # Unique Design Name
 unique_design_name = "11111"
 
 ["912::: brain-computer interface assembly"]
 untranslated_item = "11111"
 
-["913::: Scanner Gate Shell"]
+["913::: Scanner Gate Shell"] # Unique Design Name
 unique_design_name = "11111"
 
 ["913::: scanner gate assembly"]
 untranslated_item = "11111"
 
-["914::: Assembly Shell"]
+["914::: Assembly Shell"] # Unique Design Name
 unique_design_name = "11111"
 
 ["914::: circuit assembly"]
 untranslated_item = "11111"
 
-["915::: MOD Module Shell"]
+["915::: MOD Module Shell"] # Unique Design Name
 unique_design_name = "11111"
 
 ["915::: MOD circuit adapter module"]
 untranslated_item = "11111"
 
-["916::: Solar Panel Frame"]
+["916::: Solar Panel Frame"] # Unique Design Name
 unique_design_name = "11111"
 
 ["916::: solar panel assembly"]
 untranslated_item = "11111"
 
-["917::: Solar Tracking Electronics"]
+["917::: Solar Tracking Electronics"] # Unique Design Name
 unique_design_name = "11111"
 
 ["917::: tracker electronics"]
@@ -4851,25 +4851,25 @@ untranslated_item = "11111"
 ["918::: blast door controller"]
 untranslated_item = "11111"
 
-["919::: Ignition Switch Controller"]
+["919::: Ignition Switch Controller"] # Unique Design Name
 unique_design_name = "11111"
 
 ["919::: ignition controller"]
 untranslated_item = "11111"
 
-["91::: Teleportation Station Board"]
+["91::: Teleportation Station Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["91::: Teleporter Station"]
 untranslated_item = "11111"
 
-["920::: Custom Vendor Refill"]
+["920::: Custom Vendor Refill"] # Unique Design Name
 unique_design_name = "11111"
 
 ["920::: resupply canister"]
 untranslated_item = "11111"
 
-["921::: Light Fixture Battery"]
+["921::: Light Fixture Battery"] # Unique Design Name
 unique_design_name = "11111"
 
 ["921::: miniature power cell"]
@@ -4890,7 +4890,7 @@ untranslated_item = "11111"
 ["926::: tile sprayer"]
 untranslated_item = "11111"
 
-["927::: APC Module"]
+["927::: APC Module"] # Unique Design Name
 unique_design_name = "11111"
 
 ["927::: power control module"]
@@ -4902,7 +4902,7 @@ untranslated_item = "11111"
 ["929::: firelock circuitry"]
 untranslated_item = "11111"
 
-["92::: Teleportation Hub Board"]
+["92::: Teleportation Hub Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["92::: Teleporter Hub"]
@@ -4914,7 +4914,7 @@ untranslated_item = "11111"
 ["931::: fire alarm electronics"]
 untranslated_item = "11111"
 
-["932::: Trapdoor Controller Electronics"]
+["932::: Trapdoor Controller Electronics"] # Unique Design Name
 unique_design_name = "11111"
 
 ["932::: trapdoor controller"]
@@ -4944,25 +4944,25 @@ untranslated_item = "11111"
 ["93::: Quantum Pad"]
 untranslated_item = "11111"
 
-["93::: Quantum Pad Board"]
+["93::: Quantum Pad Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["940::: petri dish"]
 untranslated_item = "11111"
 
-["941::: Sterile Swab"]
+["941::: Sterile Swab"] # Unique Design Name
 unique_design_name = "11111"
 
 ["941::: swab"]
 untranslated_item = "11111"
 
-["942::: Research Telescreen"]
+["942::: Research Telescreen"] # Unique Design Name
 unique_design_name = "11111"
 
 ["942::: research telescreen frame"]
 untranslated_item = "11111"
 
-["943::: Ordnance Telescreen"]
+["943::: Ordnance Telescreen"] # Unique Design Name
 unique_design_name = "11111"
 
 ["943::: bomb test site telescreen frame"]
@@ -4989,7 +4989,7 @@ untranslated_item = "11111"
 ["94::: Bot launchpad"]
 untranslated_item = "11111"
 
-["94::: Machine Design (Bot launchpad)"]
+["94::: Machine Design (Bot launchpad)"] # Unique Design Name
 unique_design_name = "11111"
 
 ["950::: surgical drill"]
@@ -5019,7 +5019,7 @@ untranslated_item = "11111"
 ["958::: welding helmet"]
 untranslated_item = "11111"
 
-["959::: Cable (x5)"]
+["959::: Cable (x5)"] # Unique Design Name
 unique_design_name = "11111"
 
 ["959::: cable coil"]
@@ -5028,19 +5028,19 @@ untranslated_item = "11111"
 ["95::: Bluespace Launchpad"]
 untranslated_item = "11111"
 
-["95::: Bluespace Launchpad Board"]
+["95::: Bluespace Launchpad Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["960::: toolbox"]
 untranslated_item = "11111"
 
-["961::: Plasmaman Belt Tank"]
+["961::: Plasmaman Belt Tank"] # Unique Design Name
 unique_design_name = "11111"
 
 ["961::: plasma internals tank"]
 untranslated_item = "11111"
 
-["962::: Generic Gas Tank"]
+["962::: Generic Gas Tank"] # Unique Design Name
 unique_design_name = "11111"
 
 ["962::: gas tank"]
@@ -5067,7 +5067,7 @@ untranslated_item = "11111"
 ["969::: remote signaling device"]
 untranslated_item = "11111"
 
-["96::: Bluespace Launchpad Console Board"]
+["96::: Bluespace Launchpad Console Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["96::: Launchpad Control Console"]
@@ -5097,7 +5097,7 @@ untranslated_item = "11111"
 ["977::: butcher's cleaver"]
 untranslated_item = "11111"
 
-["978::: Spraycan"]
+["978::: Spraycan"] # Unique Design Name
 unique_design_name = "11111"
 
 ["978::: spray can"]
@@ -5109,10 +5109,10 @@ untranslated_item = "11111"
 ["97::: Modular Shield Generator"]
 untranslated_item = "11111"
 
-["97::: Modular Shield Generator Board"]
+["97::: Modular Shield Generator Board"] # Unique Design Name
 unique_design_name = "11111"
 
-["980::: Fluid Duct"]
+["980::: Fluid Duct"] # Unique Design Name
 unique_design_name = "11111"
 
 ["980::: stack of duct"]
@@ -5124,31 +5124,31 @@ untranslated_item = "11111"
 ["982::: electric razor"]
 untranslated_item = "11111"
 
-["983::: Package Wrapping"]
+["983::: Package Wrapping"] # Unique Design Name
 unique_design_name = "11111"
 
 ["983::: package wrapper"]
 untranslated_item = "11111"
 
-["984::: Holodisk"]
+["984::: Holodisk"] # Unique Design Name
 unique_design_name = "11111"
 
 ["984::: holorecord disk"]
 untranslated_item = "11111"
 
-["985::: Conveyor Belt"]
+["985::: Conveyor Belt"] # Unique Design Name
 unique_design_name = "11111"
 
 ["985::: conveyor belt assembly"]
 untranslated_item = "11111"
 
-["986::: Conveyor Belt Switch"]
+["986::: Conveyor Belt Switch"] # Unique Design Name
 unique_design_name = "11111"
 
 ["986::: conveyor switch assembly"]
 untranslated_item = "11111"
 
-["987::: Laptop Frame"]
+["987::: Laptop Frame"] # Unique Design Name
 unique_design_name = "11111"
 
 ["987::: laptop"]
@@ -5157,7 +5157,7 @@ untranslated_item = "11111"
 ["988::: universal scanner"]
 untranslated_item = "11111"
 
-["989::: Paper Biscuit"]
+["989::: Paper Biscuit"] # Unique Design Name
 unique_design_name = "11111"
 
 ["989::: biscuit card"]
@@ -5166,10 +5166,10 @@ untranslated_item = "11111"
 ["98::: Modular Shield Node"]
 untranslated_item = "11111"
 
-["98::: Modular Shield Node Board"]
+["98::: Modular Shield Node Board"] # Unique Design Name
 unique_design_name = "11111"
 
-["990::: Confidential Paper Biscuit"]
+["990::: Confidential Paper Biscuit"] # Unique Design Name
 unique_design_name = "11111"
 
 ["990::: confidential biscuit card"]
@@ -5178,13 +5178,13 @@ untranslated_item = "11111"
 ["991::: Universal Recorder Tape"]
 design_from_result = "касета"
 
-["992::: Box of Foam Darts (Harmless)"]
+["992::: Box of Foam Darts (Harmless)"] # Unique Design Name
 unique_design_name = "11111"
 
 ["992::: ammo box (Foam Darts)"]
 untranslated_item = "11111"
 
-["993::: Flamethrower (Lethal/Highly Destructive)"]
+["993::: Flamethrower (Lethal/Highly Destructive)"] # Unique Design Name
 unique_design_name = "11111"
 
 ["993::: flamethrower"]
@@ -5196,19 +5196,19 @@ untranslated_item = "11111"
 ["995::: modular receiver"]
 untranslated_item = "11111"
 
-["996::: Foam Riot Dart (Nonlethal)"]
+["996::: Foam Riot Dart (Nonlethal)"] # Unique Design Name
 unique_design_name = "11111"
 
 ["996::: riot foam dart"]
 untranslated_item = "11111"
 
-["997::: Foam Riot Dart Box (Nonlethal)"]
+["997::: Foam Riot Dart Box (Nonlethal)"] # Unique Design Name
 unique_design_name = "11111"
 
 ["997::: ammo box (Foam Darts)"]
 untranslated_item = "11111"
 
-["998::: .357 Casing (VERY Lethal)"]
+["998::: .357 Casing (VERY Lethal)"] # Unique Design Name
 unique_design_name = "11111"
 
 ["998::: .357 bullet casing"]
@@ -5217,17 +5217,17 @@ untranslated_item = "11111"
 ["999::: .310 Strilka surplus bullet casing"]
 untranslated_item = "11111"
 
-["999::: .310 Surplus Bullet Casing (VERY Lethal)"]
+["999::: .310 Surplus Bullet Casing (VERY Lethal)"] # Unique Design Name
 unique_design_name = "11111"
 
 ["99::: Modular Shield Relay"]
 untranslated_item = "11111"
 
-["99::: Modular Shield Relay Board"]
+["99::: Modular Shield Relay Board"] # Unique Design Name
 unique_design_name = "11111"
 
 ["9::: 'OxygenIsToxicToHumans' AI Module"]
 untranslated_item = "11111"
 
-["9::: OxygenIsToxicToHumans Module"]
+["9::: OxygenIsToxicToHumans Module"] # Unique Design Name
 unique_design_name = "11111"
