@@ -17,7 +17,6 @@ GLOBAL_LIST_EMPTY(ru_names)
 	if(!length(GLOB.ru_names))
 		var/toml_path = "[PATH_TO_TRANSLATE_DATA]/ru_names.toml"
 		if(!fexists(file(toml_path)))
-			GLOB.ru_names = list("ERROR" = "File not found!")
 			return .
 		GLOB.ru_names = rustg_read_toml_file("[PATH_TO_TRANSLATE_DATA]/ru_names.toml")
 	if(GLOB.ru_names[formatted_name])
