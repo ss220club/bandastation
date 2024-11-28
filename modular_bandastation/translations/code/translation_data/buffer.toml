@@ -1417,22 +1417,65 @@ instrumental = "консолью загрузки ИИ"
 prepositional = "консоли загрузки ИИ"
 gender = "female"
 
-["50::: inlet compressor"]
-original = "turbine inlet compressor"
+["inlet compressor"]
+nominative = "компрессор впуска турбины"
+genitive = "компрессора впуска турбины"
+dative = "компрессору впуска турбины"
+accusative = "компрессор впуска турбины"
+instrumental = "компрессором впуска турбины"
+prepositional = "компрессоре впуска турбины"
+gender = "male"
 
-["51::: core rotor"]
-original = "turbine core rotor"
+["core rotor"]
+nominative = "ротор ядра турбины"
+genitive = "ротора ядра турбины"
+dative = "ротору ядра турбины"
+accusative = "ротор ядра турбины"
+instrumental = "ротором ядра турбины"
+prepositional = "роторе ядра турбины"
+gender = "male"
 
-["52::: turbine outlet"]
-original = "turbine outlet"
+["turbine outlet"]
+nominative = "выхлоп турбины"
+genitive = "выхлопа турбины"
+dative = "выхлопу турбины"
+accusative = "выхлоп турбины"
+instrumental = "выхлопом турбины"
+prepositional = "выхлопе турбины"
+gender = "male"
 
-["53::: Temperature control unit"]
-original = "thermomachine"
+["Temperature control unit"]
+nominative = "термомашина"
+genitive = "термомашины"
+dative = "термомашине"
+accusative = "термомашину"
+instrumental = "термомашиной"
+prepositional = "термомашине"
+gender = "female"
 
 ["anomaly refinery"]
+nominative = "обработчик ядер аномалий"
+genitive = "обработчика ядер аномалий"
+dative = "обработчику ядер аномалий"
+accusative = "обработчик ядер аномалий"
+instrumental = "обработчиком ядер аномалий"
+prepositional = "обработчике ядер аномалий"
+gender = "male"
 
 ["tachyon-doppler array"]
 nominative = "тахионно-доплеровская матрица"
+genitive = "тахионно-доплеровской матрицы"
+dative = "тахионно-доплеровской матрице"
+accusative = "тахионно-доплеровскую матрицу"
+instrumental = "тахионно-доплеровской матрицей"
+prepositional = "тахионно-доплеровской матрице"
+gender = "female"
 
 ["Tank Compressor"]
 nominative = "компрессор для канистр"
+genitive = "компрессора для канистр"
+dative = "компрессору для канистр"
+accusative = "компрессор для канистр"
+instrumental = "компрессором для канистр"
+prepositional = "компрессоре для канистр"
+gender = "male"
