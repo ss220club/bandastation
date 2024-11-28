@@ -42,20 +42,14 @@
 ["327::: Exosuit Proto-kinetic Accelerator"]
 
 ["328::: Ultra AC 2"]
-
-["328::: Ultra AC 2 LMG"] # Unique Design Name
-
-["329::: Ultra AC 2 Ammunition"] # Unique Design Name
+nominative = "пулемёт Ultra AC 2"
 
 ["329::: machine gun ammo box"]
+nominative = "патроны для Ultra AC 2"
 
 ["330::: mounted sleeper"]
 
-["331::: Exosuit Medical (Syringe Gun)"] # Unique Design Name
-
 ["331::: exosuit syringe gun"]
-
-["332::: Exosuit Medical (Medical Beamgun)"] # Unique Design Name
 
 ["332::: exosuit medical beamgun"]
 
@@ -73,19 +67,11 @@
 
 ["339::: cyborg right leg"]
 
-["340::: Advanced Left Arm"] # Unique Design Name
-
 ["340::: advanced robotic left arm"]
-
-["341::: Advanced Right Arm"] # Unique Design Name
 
 ["341::: advanced robotic right arm"]
 
-["342::: Advanced Left Leg"] # Unique Design Name
-
 ["342::: advanced robotic left leg"]
-
-["343::: Advanced Right Leg"] # Unique Design Name
 
 ["343::: heavy robotic right leg"]
 
@@ -101,15 +87,9 @@
 
 ["411::: hydraulic claw"]
 
-["412::: Mining Drill"] # Unique Design Name
-
 ["412::: exosuit drill"]
 
-["413::: Mining Scanner"] # Unique Design Name
-
 ["413::: exosuit mining scanner"]
-
-["414::: Extinguisher"] # Unique Design Name
 
 ["414::: exosuit extinguisher"]
 
@@ -630,52 +610,6 @@
 
 ["565::: paramedic penlight"]
 
-["566::: breathing tube implant"]
-
-["567::: Surgical Arm Implant"] # Unique Design Name
-
-["567::: surgical toolset implant"]
-
-["568::: Toolset Arm Implant"] # Unique Design Name
-
-["568::: integrated toolset implant"]
-
-["569::: medical HUD implant"]
-
-["570::: security HUD implant"]
-
-["571::: diagnostic HUD implant"]
-
-["572::: X-ray eyes"]
-
-["573::: Moth X-ray Eyes"] # Unique Design Name
-
-["573::: robotic eyes"]
-
-["574::: thermal eyes"]
-
-["575::: Moth Thermal Eyes"] # Unique Design Name
-
-["575::: thermal moth eyes"]
-
-["576::: anti-drop implant"]
-
-["577::: CNS rebooter implant"]
-
-["578::: Herculean gravitronic spinal implant"]
-
-["579::: CNS skillchip connector implant"]
-
-["580::: nutriment pump implant"]
-
-["581::: nutriment pump implant PLUS"]
-
-["582::: reviver implant"]
-
-["583::: Thrusters Set Implant"] # Unique Design Name
-
-["583::: implantable thrusters set"]
-
 ["584::: implant case"]
 
 ["585::: Sad Trombone Implant Case"] # Unique Design Name
@@ -701,64 +635,6 @@
 ["590::: Exile Implant Case"] # Unique Design Name
 
 ["590::: implant case - 'Exile'"]
-
-["591::: basic cybernetic liver"]
-
-["592::: cybernetic liver"]
-
-["593::: upgraded cybernetic liver"]
-
-["594::: basic cybernetic heart"]
-
-["595::: cybernetic heart"]
-
-["596::: upgraded cybernetic heart"]
-
-["597::: voltaic combat cyberheart"]
-
-["598::: basic cybernetic lungs"]
-
-["599::: cybernetic lungs"]
-
-["600::: upgraded cybernetic lungs"]
-
-["601::: basic cybernetic stomach"]
-
-["602::: cybernetic stomach"]
-
-["603::: upgraded cybernetic stomach"]
-
-["604::: basic cybernetic ears"]
-
-["605::: cybernetic ears"]
-
-["606::: whisper-sensitive cybernetic ears"]
-
-["607::: wall-penetrating cybernetic ears"]
-
-["608::: basic robotic eyes"]
-nominative = "базовые кибернетические глаза"
-
-["609::: basic robotic moth eyes"]
-nominative = "базовые кибернетические молиные глаза"
-
-["610::: robotic eyes"]
-nominative = "кибернетические глаза"
-
-["611::: robotic moth eyes"]
-nominative = "кибернетические молиные глаза"
-
-["612::: shielded robotic eyes"]
-nominative = "кибернетические глаза с защитой от вспышек"
-
-["613::: shielded robotic moth eyes"]
-nominative = "кибернетические молиные глаза с защитой от вспышек"
-
-["614::: High Luminosity Eyes"]
-nominative = "люминесцентные глаза"
-
-["615::: High Luminosity Moth Eyes"]
-nominative = "люминесцентные молиные глаза"
 
 ["617::: Bluespace Drop Pod Upgrade"]
 
@@ -1483,8 +1359,6 @@ nominative = "люминесцентные молиные глаза"
 ["976::: proximity sensor"]
 
 ["977::: butcher's cleaver"]
-
-["978::: Spraycan"] # Unique Design Name
 
 ["978::: spray can"]
 

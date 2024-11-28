@@ -725,12 +725,12 @@ prepositional = "гарнитуре bowman охраны"
 gender = "female"
 
 ["security HUDSunglasses"]
-nominative = "солнцезащитные HUD очки охраны"
-genitive = "солнцезащитных HUD очков охраны"
-dative = "солнцезащитным HUD очкам охраны"
-accusative = "солнцезащитные HUD очки охраны"
-instrumental = "солнцезащитными HUD очками охраны"
-prepositional = "солнцезащитных HUD очках охраны"
+nominative = "солнцезащитные ИЛС очки охраны"
+genitive = "солнцезащитных ИЛС очков охраны"
+dative = "солнцезащитным ИЛС очкам охраны"
+accusative = "солнцезащитные ИЛС очки охраны"
+instrumental = "солнцезащитными ИЛС очками охраны"
+prepositional = "солнцезащитных ИЛС очках охраны"
 gender = "plural"
 
 ["security belt"]
@@ -1055,12 +1055,12 @@ prepositional = "подставке"
 gender = "female"
 
 ["HUD gar glasses"]
-nominative = "гар HUD очки"
-genitive = "гар HUD очков"
-dative = "гар HUD очкам"
-accusative = "гар HUD очки"
-instrumental = "гар HUD очками"
-prepositional = "гар HUD очках"
+nominative = "гар ИЛС очки"
+genitive = "гар ИЛС очков"
+dative = "гар ИЛС очкам"
+accusative = "гар ИЛС очки"
+instrumental = "гар ИЛС очками"
+prepositional = "гар ИЛС очках"
 gender = "plural"
 
 ["grenade launcher"]
@@ -1705,21 +1705,21 @@ prepositional = "пальто охраны"
 gender = "neuter"
 
 ["eyepatch HUD"]
-nominative = "повязка с HUD"
-genitive = "повязки с HUD"
-dative = "повязке с HUD"
-accusative = "повязку с HUD"
-instrumental = "повязкой с HUD"
-prepositional = "повязке с HUD"
+nominative = "повязка с ИЛС"
+genitive = "повязки с ИЛС"
+dative = "повязке с ИЛС"
+accusative = "повязку с ИЛС"
+instrumental = "повязкой с ИЛС"
+prepositional = "повязке с ИЛС"
 gender = "female"
 
 ["giga HUD gar glasses"]
-nominative = "гига-гар HUD очки"
-genitive = "гига-гар HUD очков"
-dative = "гига-гар HUD очкам"
-accusative = "гига-гар HUD очки"
-instrumental = "гига-гар HUD очками"
-prepositional = "гига-гар HUD очках"
+nominative = "гига-гар ИЛС очки"
+genitive = "гига-гар ИЛС очков"
+dative = "гига-гар ИЛС очкам"
+accusative = "гига-гар ИЛС очки"
+instrumental = "гига-гар ИЛС очками"
+prepositional = "гига-гар ИЛС очках"
 gender = "plural"
 
 ["head of security's beret"]
@@ -4311,6 +4311,130 @@ accusative = "диск с дизайном органов эфирала"
 instrumental = "диском с дизайном органов эфирала"
 prepositional = "диске с дизайном органов эфирала"
 gender = "male"
+
+["basic cybernetic liver"]
+nominative = "базовая кибернетическая печень"
+
+["cybernetic liver"]
+nominative = "базовая кибернетическая печень"
+
+["upgraded cybernetic liver"]
+nominative = "улучшенная кибернетическая печень"
+
+["basic cybernetic heart"]
+nominative = "базовое кибернетическое сердце"
+
+["cybernetic heart"]
+nominative = "кибернетическое сердце"
+
+["upgraded cybernetic heart"]
+nominative = "улучшенное кибернетическое сердце"
+
+["voltaic combat cyberheart"]
+nominative = "гальваническое боевое киберсердце"
+
+["basic cybernetic lungs"]
+nominative = "базовые кибернетические лёгкие"
+
+["cybernetic lungs"]
+nominative = "кибернетические лёгкие"
+
+["upgraded cybernetic lungs"]
+nominative = "улучшенные кибернетические лёгкие"
+
+["basic cybernetic stomach"]
+nominative = "базовый кибернетический желудок"
+
+["cybernetic stomach"]
+nominative = "кибернетический желудок"
+
+["upgraded cybernetic stomach"]
+nominative = "улучшенный кибернетический желудок"
+
+["basic cybernetic ears"]
+nominative = "базовые кибернетические уши"
+
+["cybernetic ears"]
+nominative = "кибернетические уши"
+
+["whisper-sensitive cybernetic ears"]
+nominative = "кибернетические уши с усилением шёпота"
+
+["wall-penetrating cybernetic ears"]
+nominative = "кибернетические уши с пробитием стен"
+
+["basic robotic eyes"]
+nominative = "базовые кибернетические глаза"
+
+["basic robotic moth eyes"]
+nominative = "базовые кибернетические молиные глаза"
+
+["robotic eyes"]
+nominative = "кибернетические глаза"
+
+["robotic moth eyes"]
+nominative = "кибернетические молиные глаза"
+
+["shielded robotic eyes"]
+nominative = "кибернетические глаза с защитой от вспышек"
+
+["shielded robotic moth eyes"]
+nominative = "кибернетические молиные глаза с защитой от вспышек"
+
+["High Luminosity Eyes"]
+nominative = "люминесцентные глаза"
+
+["High Luminosity Moth Eyes"]
+nominative = "люминесцентные молиные глаза"
+
+["breathing tube implant"]
+nominative = "имплант дыхательной трубки"
+
+["surgical toolset implant"]
+nominative = "хирургический имплант"
+
+["integrated toolset implant"]
+nominative = "инструментальный имплант"
+
+["medical HUD implant"]
+nominative = "имплант медицинского ИЛС"
+
+["security HUD implant"]
+nominative = "имплант охранного ИЛС"
+
+["diagnostic HUD implant"]
+nominative = "имплант диагностического ИЛС"
+
+["572::: X-ray eyes"]
+nominative = "рентгеновские глаза"
+
+["573::: Moth X-ray Eyes"] # Unique Design Name
+
+["573::: robotic eyes"]
+
+["574::: thermal eyes"]
+
+["575::: Moth Thermal Eyes"] # Unique Design Name
+
+["575::: thermal moth eyes"]
+
+["576::: anti-drop implant"]
+
+["577::: CNS rebooter implant"]
+
+["578::: Herculean gravitronic spinal implant"]
+
+["579::: CNS skillchip connector implant"]
+
+["580::: nutriment pump implant"]
+
+["581::: nutriment pump implant PLUS"]
+
+["582::: reviver implant"]
+
+["583::: Thrusters Set Implant"] # Unique Design Name
+
+["583::: implantable thrusters set"]
 
 # MARK: ..........Science
 ["autolathe"]
