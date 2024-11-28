@@ -4493,6 +4493,24 @@ instrumental = "древним принтером плат"
 prepositional = "древнем принтере плат"
 gender = "male"
 
+["department circuit imprinter"]
+nominative = "принтер плат отдела"
+genitive = "принтера плат отдела"
+dative = "принтеру плат отдела"
+accusative = "принтер плат отдела"
+instrumental = "принтером плат отдела"
+prepositional = "принтере плат отдела"
+gender = "male"
+
+["department circuit imprinter (Science)"]
+nominative = "принтер плат отдела (Исследование)"
+genitive = "принтера плат отдела (Исследование)"
+dative = "принтеру плат отдела (Исследование)"
+accusative = "принтер плат отдела (Исследование)"
+instrumental = "принтером плат отдела (Исследование)"
+prepositional = "принтере плат отдела (Исследование)"
+gender = "male"
+
 ["research camera console"]
 nominative = "научная консоль камер видеонаблюдения"
 genitive = "научной консоли камер видеонаблюдения"
