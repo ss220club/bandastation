@@ -63,3 +63,34 @@ GLOBAL_LIST_EMPTY(ru_reagent_descs)
 		for(var/reagent_key as anything in GLOB.chemical_reagents_list)
 			var/datum/reagent/reagent = GLOB.chemical_reagents_list[reagent_key]
 			reagent.update_to_ru()
+
+ADMIN_VERB(get_data_to_toml, R_ADMIN, "DEBUG - Get data to toml", "Yeap", ADMIN_CATEGORY_DEBUG)
+	var/list/data = list()
+	for(var/id in SSresearch.techweb_designs)
+		var/datum/design/design = SSresearch.techweb_designs[id]
+		if(!ispath(design.build_path, /atom))
+			continue
+		var/atom/design_result = design.build_path
+		var/list/declented_list_design = ru_names_toml(design_result::name)
+
+		// NOT TRANSLATED AT ALL
+		if(!length(declented_list_design))
+			// Not unique name
+			if(capitalize(design_result::name) == design::name)
+				// Need to translate only built item
+				data["[design_result::name]"] = list()
+				continue
+			// Need to translate both built item and unique design name
+			data["[design::name]"] = list()
+			data["[design_result::name]"] = list()
+			continue
+
+		// Built item is translated
+		// Are they equal in english?
+		if(capitalize(declented_list_design["base"]) != design::name)
+			// Need to translate design name
+			data["[design::name]"] = list("nominative" = declented_list_design[NOMINATIVE])
+
+	var/file_location = "data/toml_data_for_laren"
+	var/payload = "[rustg_toml_encode(data)]"
+	rustg_file_write(payload, file_location)
