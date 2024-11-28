@@ -4381,10 +4381,10 @@ nominative = "кибернетические глаза с защитой от �
 ["shielded robotic moth eyes"]
 nominative = "кибернетические молиные глаза с защитой от вспышек"
 
-["High Luminosity Eyes"]
+["high luminosity eyes"]
 nominative = "люминесцентные глаза"
 
-["High Luminosity Moth Eyes"]
+["high luminosity moth eyes"]
 nominative = "люминесцентные молиные глаза"
 
 ["breathing tube implant"]
@@ -4405,10 +4405,10 @@ nominative = "имплант охранного ИЛС"
 ["diagnostic HUD implant"]
 nominative = "имплант диагностического ИЛС"
 
-["X-ray eyes"]
+["x-ray eyes"]
 nominative = "рентгеновские глаза"
 
-[" Moth X-ray Eyes"]
+["moth x-ray eyes"]
 nominative = "рентгеновские молиные глаза"
 
 ["thermal eyes"]
