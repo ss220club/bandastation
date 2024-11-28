@@ -1,536 +1,371 @@
-["100::: Modular Shield Charger"]
-untranslated_item = "11111"
+["102::: growing vat"]
 
-["101::: Modular Shield Well"]
-untranslated_item = "11111"
+["106::: soda dispenser"]
+nominative = "раздатчик соды"
 
-["102::: Teleporter"]
-untranslated_item = "11111"
+["107::: booze dispenser"]
+nominative = "раздатчик алкоголя"
 
-["103::: Cryotube"]
-untranslated_item = "11111"
+["108::: recycler"]
+nominative = "переработчик"
 
-["104::: Chem Dispenser"]
-untranslated_item = "11111"
+["109::: scanner gate"]
 
-["105::: ChemMaster 3000"]
-untranslated_item = "11111"
+["10::: cyborg upload console"]
 
-["106::: Chemical Heater"]
-untranslated_item = "11111"
+["111::: autolathe"]
+nominative = "автолат"
 
-["107::: High-Performance Liquid Chromatography"]
-untranslated_item = "11111"
+["113::: Custom Vendor"]
+nominative = "торговый автомат (настраиваемый)"
 
-["108::: Smoke Machine"]
-untranslated_item = "11111"
+["114::: ore redemption machine"]
+nominative = "плавильная печь"
 
-["109::: All-In-One Grinder"]
-untranslated_item = "11111"
+["115::: mining equipment order console"]
+nominative = "консоль заказов шахтёрского оборудования"
 
-["110::: Enhanced Interrogation Chamber"]
-untranslated_item = "11111"
+["116::: suit storage unit"]
 
-["111::: Photobooth"]
-untranslated_item = "11111"
+["117::: tesla coil"]
+nominative = "катушка"
 
-["112::: Security Photobooth"]
-untranslated_item = "11111"
+["118::: grounding rod"]
+nominative = "заземлитель"
 
-["113::: Biogenerator"]
-untranslated_item = "11111"
+["119::: NTNet Quantum Relay"]
 
-["114::: Hydroponics Tray"]
-untranslated_item = "11111"
+["11::: medical records console"]
 
-["115::: Destructive Analyzer"]
-untranslated_item = "11111"
+["120::: crossing signal"]
 
-["116::: E.X.P.E.R.I-MENTOR"]
-untranslated_item = "11111"
+["121::: guideway sensor"]
 
-["117::: Protolathe"]
-untranslated_item = "11111"
+["122::: limb grower"]
 
-["118::: Ancient Protolathe"]
-untranslated_item = "11111"
+["123::: organ harvester"]
 
-["119::: Circuit Imprinter"]
-untranslated_item = "11111"
+["129::: Donksoft Toy Vendor"]
 
-["120::: Ancient Circuit Imprinter"]
-untranslated_item = "11111"
+["12::: operating computer"]
 
-["121::: R&D Server Control"]
-untranslated_item = "11111"
+["130::: cell charger"]
 
-["122::: R&D Server"]
-untranslated_item = "11111"
+["131::: dish drive"]
 
-["123::: Exosuit Fabricator"]
-untranslated_item = "11111"
+["132::: stacking machine console"]
 
-["124::: Cyborg Recharger"]
-untranslated_item = "11111"
+["133::: stacking machine"]
 
-["125::: Mechbay Recharger"]
-untranslated_item = "11111"
+["134::: ore silo"]
 
-["126::: DNA Scanner"]
-untranslated_item = "11111"
+["135::: lipid extractor"]
 
-["127::: DNA Infuser"]
-untranslated_item = "11111"
+["136::: lifeform stasis unit"]
 
-["128::: DNA Console"]
-untranslated_item = "11111"
+["137::: medical kiosk"]
 
-["129::: Experimental Destructive Scanner"]
-untranslated_item = "11111"
+["138::: Medipen Refiller"]
 
-["130::: Tachyon-Doppler Research Array"]
-untranslated_item = "11111"
+["139::: chemical recipient"]
 
-["131::: Anomaly Refinery"]
-untranslated_item = "11111"
+["13::: PanD.E.M.I.C 2200"]
 
-["132::: Tank Compressor"]
-untranslated_item = "11111"
+["140::: Sheet-meister 2000"]
 
-["133::: Microwave"]
-untranslated_item = "11111"
+["141::: restaurant portal"]
 
-["134::: Wireless Microwave Oven"]
-untranslated_item = "11111"
+["142::: vend-a-tray"]
 
-["135::: Gibber"]
-untranslated_item = "11111"
+["143::: civilian bounty pad"]
 
-["136::: Smartfridge"]
-untranslated_item = "11111"
+["144::: Skillsoft station"]
 
-["137::: Dehydrator"]
-untranslated_item = "11111"
+["145::: Fax Machine"]
 
-["138::: Growing Vat"]
-untranslated_item = "11111"
+["146::: HFR core"]
 
-["139::: Monkey Recycler"]
-untranslated_item = "11111"
+["147::: HFR fuel input port"]
 
-["140::: Seed Extractor"]
-untranslated_item = "11111"
+["148::: HFR waste output port"]
 
-["141::: Food Processor"]
-untranslated_item = "11111"
+["149::: HFR moderator input port"]
 
-["142::: Soda Dispenser"]
-untranslated_item = "11111"
+["14::: communications console"]
 
-["143::: Booze Dispenser"]
-untranslated_item = "11111"
+["150::: HFR corner"]
 
-["144::: Recycler"]
-untranslated_item = "11111"
+["151::: HFR interface"]
 
-["145::: Scanner Gate"]
-untranslated_item = "11111"
+["152::: crystallizer"]
 
-["146::: AI Holopad"]
-untranslated_item = "11111"
+["153::: Scanner array"]
 
-["147::: Autolathe"]
-untranslated_item = "11111"
+["154::: exploration drone launcher"]
 
-["148::: Weapon Recharger"]
-untranslated_item = "11111"
+["155::: component printer"]
 
-["149::: Custom Vendor"]
-untranslated_item = "11111"
+["156::: module duplicator"]
 
-["150::: Ore Redemption"]
-untranslated_item = "11111"
+["157::: coffeemaker"]
 
-["151::: Mining Vending Console"]
-untranslated_item = "11111"
+["158::: navigation beacon"]
 
-["160::: Deep Fryer"]
-untranslated_item = "11111"
+["159::: fish-porter 3000"]
 
-["161::: Griddle"]
-untranslated_item = "11111"
+["15::: bank machine"]
 
-["162::: Oven"]
-untranslated_item = "11111"
+["160::: boulder retrieval matrix"]
 
-["163::: Stove"]
-untranslated_item = "11111"
+["161::: flatpacker"]
 
-["164::: Range (Oven & Stove)"]
-untranslated_item = "11111"
+["162::: portable air scrubber"]
 
-["165::: Donksoft Toy Vendor"]
-untranslated_item = "11111"
+["163::: portable air pump"]
 
-["153::: Tesla Controller"]
-untranslated_item = "11111"
+["164::: pipe scrubber"]
 
-["154::: Grounding Rod"]
-untranslated_item = "11111"
+["165::: book binder"]
 
-["155::: NTNet Relay"]
-untranslated_item = "11111"
+["166::: scanner control interface"]
 
-["156::: Crossing Signal"]
-untranslated_item = "11111"
+["167::: Big Manipulator"]
 
-["157::: Guideway Sensor"]
-untranslated_item = "11111"
+["168::: manufacturing lathe"]
 
-["158::: Limb Grower"]
-untranslated_item = "11111"
+["169::: manufacturing assembling machine"]
 
-["159::: Harvester"]
-untranslated_item = "11111"
+["16::: crew monitoring console"]
 
-["166::: Cell Charger"]
-untranslated_item = "11111"
+["170::: manufacturing crusher"]
 
-["167::: Dish Drive"]
-untranslated_item = "11111"
+["171::: manufacturing router"]
 
-["168::: Stacking Machine Console"]
-untranslated_item = "11111"
+["172::: conveyor sort-router"]
 
-["169::: Stacking Machine"]
-untranslated_item = "11111"
+["173::: manufacturing crate unloader"]
 
-["170::: Ore Silo"]
-untranslated_item = "11111"
+["174::: manufacturing smelter"]
 
-["171::: Lipid Extractor"]
-untranslated_item = "11111"
+["175::: P.A.C.M.A.N.-type portable generator"]
+nominative = "переносной генератор типа P.A.C.M.A.N."
 
-["172::: Lifeform Stasis Unit"]
-untranslated_item = "11111"
+["176::: subspace receiver"]
 
-["173::: Medical Kiosk"]
-untranslated_item = "11111"
+["177::: bus mainframe"]
 
-["174::: Medipen Refiller"]
-untranslated_item = "11111"
+["178::: telecommunication hub"]
 
-["175::: Chemical Recipient"]
-untranslated_item = "11111"
+["179::: telecommunication relay"]
 
-["176::: Sheet-meister 2000"]
-untranslated_item = "11111"
+["17::: security records console"]
 
-["177::: Restaurant Portal"]
-untranslated_item = "11111"
+["180::: processor unit"]
 
-["178::: Vend-A-Tray"]
-untranslated_item = "11111"
+["181::: telecommunication server"]
 
-["179::: Civilian Bounty Pad"]
-untranslated_item = "11111"
+["182::: Messaging Server"]
 
-["180::: Skill Station"]
-untranslated_item = "11111"
+["183::: subspace broadcaster"]
 
-["181::: Fax Machine"]
-untranslated_item = "11111"
+["184::: brain-computer interface manipulation chamber"]
 
-["182::: HFR core"]
-untranslated_item = "11111"
+["185::: boulder smelter"]
 
-["183::: HFR Fuel Input"]
-untranslated_item = "11111"
+["186::: boulder refinery"]
 
-["184::: HFR Waste Output"]
-untranslated_item = "11111"
+["18::: atmospheric alert console"]
 
-["185::: HFR Moderator Input"]
-untranslated_item = "11111"
+["19::: atmospherics monitoring"]
 
-["186::: HFR Corner"]
-untranslated_item = "11111"
+["1::: netpod"]
 
-["187::: HFR Interface"]
-untranslated_item = "11111"
+["20::: robotics control console"]
 
-["188::: Crystallizer"]
-untranslated_item = "11111"
+["21::: slot machine"]
 
-["189::: Exoscanner"]
-untranslated_item = "11111"
+["22::: power monitoring console"]
 
-["190::: Exploration Drone Launcher"]
-untranslated_item = "11111"
+["23::: solar panel control"]
 
-["191::: Component Printer (Machine Board)"]
-untranslated_item = "11111"
+["24::: prisoner management console"]
 
-["192::: Module Duplicator (Machine Board)"]
-untranslated_item = "11111"
+["25::: exosuit control console"]
 
-["193::: Coffeemaker (Machine Board)"]
-untranslated_item = "11111"
+["26::: mech bay power control console"]
 
-["194::: Bot Navigational Beacon"]
-untranslated_item = "11111"
+["27::: R&D Console"]
 
-["195::: Fishing Portal Generator"]
-untranslated_item = "11111"
+["28::: supply console"]
 
-["197::: Flatpacker"]
-untranslated_item = "11111"
+["29::: supply request console"]
 
-["198::: Portable Air Scrubber"]
-untranslated_item = "11111"
+["2::: quantum console"]
 
-["199::: Portable Air Pump"]
-untranslated_item = "11111"
+["30::: outpost camera console"]
 
-["1::: Netpod"]
-untranslated_item = "11111"
+["31::: telecommunications monitoring console"]
 
-["200::: Portable Pipe Scrubber"]
-untranslated_item = "11111"
+["32::: telecommunications server monitoring console"]
 
-["203::: Big Manipulator"]
-untranslated_item = "11111"
+["33::: message monitor console"]
 
-["204::: manufacturing lathe"]
-untranslated_item = "11111"
+["34::: AI system integrity restorer"]
 
-["205::: manufacturing assembling machine"]
-untranslated_item = "11111"
+["35::: library visitor console"]
 
-["206::: manufacturing crusher"]
-untranslated_item = "11111"
+["36::: power flow control console"]
 
-["207::: manufacturing router"]
-untranslated_item = "11111"
+["37::: advanced camera console"]
 
-["208::: conveyor sort-router"]
-untranslated_item = "11111"
+["38::: civilian bounty control terminal"]
 
-["209::: manufacturing crate unloader"]
-untranslated_item = "11111"
+["39::: scanner array control console"]
 
-["210::: manufacturing smelter"]
-untranslated_item = "11111"
+["3::: byteforge"]
 
-["232::: PACMAN-type Generator"]
-untranslated_item = "11111"
+["40::: exploration drone control console"]
 
-["233::: Subspace Receiver"]
-untranslated_item = "11111"
+["41::: account lookup console"]
 
-["234::: Bus Mainframe"]
-untranslated_item = "11111"
+["42::: space electrolyzer"]
 
-["235::: Hub Mainframe"]
-untranslated_item = "11111"
+["43::: power storage unit"]
+nominative = "СКАН"
 
-["236::: Relay Mainframe"]
-untranslated_item = "11111"
+["44::: power connector"]
 
-["237::: Processor Unit"]
-untranslated_item = "11111"
+["45::: portable power storage unit"]
+nominative = "портативный СКАН"
 
-["238::: Telecommunication Server"]
-untranslated_item = "11111"
+["46::: Automated Announcement System"]
 
-["239::: Messaging Server"]
-untranslated_item = "11111"
+["47::: gas turbine control computer"]
 
-["240::: Subspace Broadcaster"]
-untranslated_item = "11111"
+["48::: emitter"]
+nominative = "эмиттер"
 
-["2::: Quantum Console"]
-untranslated_item = "11111"
+["49::: mass driver"]
 
-["3::: Byteforge"]
-untranslated_item = "11111"
+["4::: battle arcade"]
 
-["40::: Arcade Battle"]
-untranslated_item = "11111"
+["50::: inlet compressor"]
+original = "turbine inlet compressor"
 
-["41::: Orion Trail"]
-untranslated_item = "11111"
+["51::: core rotor"]
+original = "turbine core rotor"
 
-["42::: Security Cameras"]
-untranslated_item = "11111"
+["52::: turbine outlet"]
+original = "turbine outlet"
 
-["43::: Research Monitor"]
-untranslated_item = "11111"
+["53::: Temperature control unit"]
+original = "thermomachine"
 
-["44::: Xenobiology Console"]
-untranslated_item = "11111"
+["54::: space heater"]
 
-["45::: AI Upload"]
-untranslated_item = "11111"
+["55::: teleporter station"]
+nominative = "станция телепорта"
 
-["46::: Cyborg Upload"]
-untranslated_item = "11111"
+["56::: teleporter hub"]
+nominative = "хаб телепорта"
 
-["47::: Medical Records Console"]
-untranslated_item = "11111"
+["57::: quantum pad"]
+nominative = "квантовый пад"
 
-["48::: Operating Computer"]
-untranslated_item = "11111"
+["58::: Bot pad"]
+nominative = "лаунчпад ботов"
 
-["49::: PanD.E.M.I.C. 2200"]
-untranslated_item = "11111"
+["59::: bluespace launchpad"]
+nominative = "блюспейс лаунчпад"
 
-["50::: Communications"]
-untranslated_item = "11111"
+["5::: The Orion Trail"]
+nominative = "игровой автомат \"The Orion Trail\""
 
-["51::: Bank Machine Console"]
-untranslated_item = "11111"
+["60::: launchpad control console"]
+nominative = "блюспейс консоль для лаунчпада"
 
-["52::: Crew Monitoring Console"]
-untranslated_item = "11111"
+["61::: modular shield generator"]
 
-["53::: Security Records Console"]
-untranslated_item = "11111"
+["62::: modular shield node"]
 
-["54::: Atmospheric Alert"]
-untranslated_item = "11111"
+["63::: modular shield relay"]
 
-["55::: Atmospheric Control"]
-untranslated_item = "11111"
+["64::: modular shield charger"]
 
-["56::: Robotics Control"]
-untranslated_item = "11111"
+["65::: modular shield well"]
 
-["57::: Slot Machine"]
-untranslated_item = "11111"
+["66::: teleporter control console"]
 
-["58::: Power Monitor"]
-untranslated_item = "11111"
+["67::: cryo cell"]
+name = "криокамера"
 
-["59::: Solar Control"]
-untranslated_item = "11111"
+["68::: chem dispenser"]
 
-["60::: Prisoner Management Console"]
-untranslated_item = "11111"
+["69::: ChemMaster 3000"]
+nominative = "ХимМастер 3000"
 
-["616::: Express Supply Console"]
-untranslated_item = "11111"
+["6::: security camera console"]
 
-["61::: Exosuit Control Console"]
-untranslated_item = "11111"
+["70::: reaction chamber"]
+nominative = "химнагреватель"
 
-["62::: Mech Bay Power Control Console"]
-untranslated_item = "11111"
+["71::: High-performance liquid chromatography machine"]
 
-["63::: R&D Console"]
-untranslated_item = "11111"
+["72::: smoke machine"]
 
-["64::: Supply Console"]
-untranslated_item = "11111"
+["73::: All-In-One Grinder"]
+nominative = "универсальный измельчитель"
 
-["65::: Supply Request Console"]
-untranslated_item = "11111"
+["74::: enhanced interrogation chamber"]
 
-["66::: Outpost Status Display"]
-untranslated_item = "11111"
+["75::: photobooth"]
 
-["67::: Telecommunications Monitor"]
-untranslated_item = "11111"
+["76::: security photobooth"]
 
-["68::: Telecommunications Server Monitor"]
-untranslated_item = "11111"
+["79::: destructive analyzer"]
+nominative = "разборочный анализатор"
 
-["69::: Message Monitor"]
-untranslated_item = "11111"
+["7::: research camera console"]
 
-["70::: AI Integrity Restorer"]
-untranslated_item = "11111"
+["80::: E.X.P.E.R.I-MENTOR"]
 
-["71::: Library Visitor Console"]
-untranslated_item = "11111"
+["81::: protolathe"]
+nominative = "протолат"
 
-["72::: Power Flow Control Console"]
-untranslated_item = "11111"
+["82::: ancient protolathe"]
+nominative = "древний протолат"
 
-["73::: Advanced Camera Console"]
-untranslated_item = "11111"
+["83::: circuit imprinter"]
+nominative = "принтер плат"
 
-["74::: Bounty Pad"]
-untranslated_item = "11111"
+["84::: ancient circuit imprinter"]
+nominative = "древний принтер плат"
 
-["75::: Scanner Array Control Console"]
-untranslated_item = "11111"
+["85::: R&D Server Controller"]
 
-["76::: Exploration Drone Control Console"]
-untranslated_item = "11111"
+["86::: R&D Server"]
+nominative = "сервер R&D"
 
-["77::: Account Lookup Console"]
-untranslated_item = "11111"
+["87::: exosuit fabricator"]
+nominative = "фабрикатор экзокостюмов"
 
-["78::: Electrolyzer"]
-untranslated_item = "11111"
+["89::: mech bay power port"]
+nominative = "зарядный порт мехов"
 
-["79::: SMES"]
-untranslated_item = "11111"
+["8::: Slime management console"] # "Xenobiology Console"
 
-["80::: power connector"]
-untranslated_item = "11111"
+["90::: DNA scanner"]
 
-["81::: portable SMES"]
-untranslated_item = "11111"
+["91::: DNA infuser"]
 
-["82::: Announcement System"]
-untranslated_item = "11111"
+["92::: DNA Console"]
 
-["83::: Turbine Computer"]
-untranslated_item = "11111"
+["93::: Experimental Destructive Scanner"]
 
-["84::: Emitter"]
-untranslated_item = "11111"
+["94::: tachyon-doppler array"]
 
-["85::: Mass Driver"]
-untranslated_item = "11111"
+["95::: anomaly refinery"]
 
-["86::: Turbine - Inlet Compressor"]
-untranslated_item = "11111"
+["96::: Tank Compressor"]
 
-["87::: Turbine - Core Rotor"]
-untranslated_item = "11111"
-
-["88::: Turbine - Turbine Outlet"]
-untranslated_item = "11111"
-
-["89::: Thermomachine"]
-untranslated_item = "11111"
-
-["90::: Space Heater"]
-untranslated_item = "11111"
-
-["91::: Teleporter Station"]
-untranslated_item = "11111"
-
-["92::: Teleporter Hub"]
-untranslated_item = "11111"
-
-["93::: Quantum Pad"]
-untranslated_item = "11111"
-
-["95::: Bluespace Launchpad"]
-untranslated_item = "11111"
-
-["96::: Launchpad Control Console"]
-untranslated_item = "11111"
-
-["97::: Modular Shield Generator"]
-untranslated_item = "11111"
-
-["98::: Modular Shield Node"]
-untranslated_item = "11111"
-
-["99::: Modular Shield Relay"]
-untranslated_item = "11111"
+["9::: AI upload console"]

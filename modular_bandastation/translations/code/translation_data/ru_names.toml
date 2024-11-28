@@ -3034,12 +3034,12 @@ prepositional = "палатке для тележки с едой"
 gender = "female"
 
 ["food processor"]
-nominative = "комбайн"
-genitive = "комбайна"
-dative = "комбайну"
-accusative = "комбайн"
-instrumental = "комбайном"
-prepositional = "комбайне"
+nominative = "пищевой комбайн"
+genitive = "пищевого комбайна"
+dative = "пищевому комбайну"
+accusative = "пищевой комбайн"
+instrumental = "пищевым комбайном"
+prepositional = "пищевом комбайне"
 gender = "male"
 
 [gibber]
