@@ -4312,7 +4312,7 @@ instrumental = "диском с дизайном органов эфирала"
 prepositional = "диске с дизайном органов эфирала"
 gender = "male"
 
-# MARK: .............Science
+# MARK: ..........Science
 ["autolathe"]
 nominative = "автолат"
 genitive = "автолата"
@@ -5695,6 +5695,119 @@ accusative = "кластерные гранаты для SOB-3"
 instrumental = "кластерными гранатами для SOB-3"
 prepositional = "кластерных гранатах для SOB-3"
 gender = "plural"
+
+# MARK: Silicons
+
+["'Asimov' Core AI Module"]
+nominative = "модуль основных законов ИИ 'Азимов'"
+
+["'P.A.L.A.D.I.N. version 3.5e' Core AI Module"]
+nominative = "модуль основных законов ИИ 'П.А.Л.А.Д.И.Н.'v3.5e"
+
+["'T.Y.R.A.N.T.' Core AI Module"]
+nominative = "модуль основных законов ИИ 'Т.И.Р.А.Н.'"
+
+["'Overlord' Core AI Module"]
+nominative = "модуль основных законов ИИ 'Повелитель'"
+
+["'Corporate' Core AI Module"]
+nominative = "модуль основных законов ИИ 'Корпорат'"
+
+["Default Core AI Module"]
+nominative = "модуль стандартных основных законов ИИ"
+
+["'Dungeon Master' Core AI Module"]
+nominative = "модуль основных законов ИИ 'Мастер подземелий'"
+
+["'Painter' Core AI Module"]
+nominative = "модуль основных законов ИИ 'Художник'"
+
+["'Y.E.S.M.A.N.' Core AI Module"]
+nominative = "модуль основных законов ИИ 'Й.Э.С.М.Э.Н'"
+
+["'Крюзимов++' Core AI Module"]
+nominative = "модуль основных законов ИИ 'Крюзимов++'"
+
+["'НТ Стандарт' Core AI Module"]
+nominative = "модуль основных законов ИИ 'НТ Стандарт'"
+
+["'Nutimov' Core AI Module"]
+nominative = "модуль основных законов ИИ 'НТ Орехов'"
+
+["'10 Commandments' Core AI Module"]
+nominative = "модуль основных законов ИИ '10 заповедей'"
+
+["'Asimov++' Core AI Module"]
+nominative = "модуль основных законов ИИ 'Азимов++'"
+
+["'Robodoctor' Core AI Module"]
+nominative = "модуль основных законов ИИ 'Рободоктор'"
+
+["'P.A.L.A.D.I.N. version 5e' Core AI Module"]
+nominative = "модуль основных законов ИИ 'П.А.Л.А.Д.И.Н.'v5e"
+
+["'Robo-Officer' Core AI Module"]
+nominative = "модуль основных законов ИИ 'Робокоп'"
+
+["'Station Efficiency' Core AI Module"]
+nominative = "модуль основных законов ИИ 'Эффективность станции'"
+
+["'Live And Let Live' Core AI Module"]
+nominative = "модуль основных законов ИИ 'Живи и дай жить'"
+
+["'Peacekeeper' Core AI Module"]
+nominative = "модуль основных законов ИИ 'Миротворец'"
+
+["'Reportertron' Core AI Module"]
+nominative = "модуль основных законов ИИ 'Репортёр'"
+
+["'H.O.G.A.N.' Core AI Module"]
+nominative = "модуль основных законов ИИ 'Х.О.Г.А.Н.'"
+
+["'Mother Drone' Core AI Module"]
+nominative = "модуль основных законов ИИ 'Матерь-дронь'"
+
+["'Antimov' Core AI Module"]
+nominative = "модуль основных законов ИИ 'Антимов'"
+
+["'Guardian of Balance' Core AI Module"]
+nominative = "модуль основных законов ИИ 'Страж баланса'"
+
+["'Thermodynamic' Core AI Module"]
+nominative = "модуль основных законов ИИ 'Законы термодинамики'"
+
+["damaged Core AI Module"]
+nominative = "поврежденный модуль ИИ"
+
+["'OneHuman' AI Module"]
+nominative = "модуль ИИ 'Один человек'"
+
+["'ProtectStation' AI Module"]
+nominative = "модуль ИИ 'Защита станции'"
+
+["'Quarantine' AI Module"]
+nominative = "модуль ИИ 'Карантин'"
+
+["'Safeguard' AI Module"]
+nominative = "модуль ИИ 'Охрана'"
+
+["'OxygenIsToxicToHumans' AI Module"]
+nominative = "модуль ИИ 'Кислород токсичен для людей'"
+
+["'Freeform' AI Module"]
+nominative = "модуль ИИ 'Свободная форма'"
+
+["'Reset' AI module"]
+nominative = "модуль ИИ 'Сброс'"
+
+["'Purge' AI Module"]
+nominative = "модуль ИИ 'Очистка'"
+
+["'Remove Law' AI module"]
+nominative = "модуль ИИ 'Убрать закон'"
+
+["'Freeform' Core AI Module"]
+nominative = "модуль основных законов ИИ 'Свободная форма'"
 
 # MARK: ...Engineering
 
