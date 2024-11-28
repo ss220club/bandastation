@@ -73,25 +73,23 @@ ADMIN_VERB(get_data_to_toml, R_ADMIN, "DEBUG - Get data to toml", "Yeap", ADMIN_
 		var/atom/design_result = design.build_path
 		var/list/declented_list_design = ru_names_toml(design_result::name)
 
-		if(data["[LOWER_TEXT(design::name)]"] || data["[LOWER_TEXT(format_text(design_result::name))]"])
-			continue
 		// NOT TRANSLATED AT ALL
 		if(!length(declented_list_design))
-			// Not unique name
-			if(format_text(design_result::name) == LOWER_TEXT(design::name))
+			// Is design name unique?
+			if(LOWER_TEXT(format_text(design_result::name)) == LOWER_TEXT(design::name))
 				// Need to translate only built item
-				data["[LOWER_TEXT(format_text(design_result::name))]"] = list("original" = "[format_text(design_result::name)]")
+				data["[format_text(design_result::name)]"] = list("untranslated_item" = "11111")
 				continue
 			// Need to translate both built item and unique design name
-			data["[LOWER_TEXT(design::name)]"] = list("original" = "[design::name]")
-			data["[LOWER_TEXT(format_text(design_result::name))]"] = list("original" = "[format_text(design_result::name)]")
+			data["[design::name]"] = list("unique_design_name" = "11111")
+			data["[format_text(design_result::name)]"] = list("untranslated_item" = "11111")
 			continue
 
 		// Built item is translated
 		// Are they equal in english?
-		if(declented_list_design["base"] != LOWER_TEXT(design::name))
+		if(full_capitalize(declented_list_design["base"]) != design::name)
 			// Need to translate design name
-			data["[LOWER_TEXT(design::name)]"] = list("original" = "[design::name]", "design_from_result" = declented_list_design[NOMINATIVE])
+			data["[design::name]"] = list("design_from_result" = declented_list_design[NOMINATIVE])
 
 	var/file_location = "data/toml_data_for_laren.toml"
 	var/payload = "[rustg_toml_encode(data)]"
