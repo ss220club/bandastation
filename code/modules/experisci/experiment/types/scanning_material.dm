@@ -20,5 +20,5 @@
 
 /datum/experiment/scanning/random/material/serialize_progress_stage(atom/target, list/seen_instances)
 	var/datum/material/required_material = GET_MATERIAL_REF(required_materials[target])
-	return EXPERIMENT_PROG_INT("Сканирование образцов [declent_ru_initial(target::name, GENITIVE)], состоящих из [required_material.declent_ru(GENITIVE)]", \
+	return EXPERIMENT_PROG_INT("Сканирование образцов [declent_ru_initial(target::name, GENITIVE, target::name)], состоящих из [required_material.declent_ru(GENITIVE)]", \
 		traits & EXPERIMENT_TRAIT_DESTRUCTIVE ? scanned[target] : seen_instances.len, required_atoms[target])
