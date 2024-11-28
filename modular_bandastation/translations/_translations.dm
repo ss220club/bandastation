@@ -78,18 +78,22 @@ ADMIN_VERB(get_data_to_toml, R_ADMIN, "DEBUG - Get data to toml", "Yeap", ADMIN_
 			// Not unique name
 			if(design_result::name == LOWER_TEXT(design::name))
 				// Need to translate only built item
-				data["[design_result::name]"] = list("base" = "[design_result::name]")
+				if(!data["[design_result::name]"])
+					data["[design_result::name]"] = list("base" = "[design_result::name]")
 				continue
 			// Need to translate both built item and unique design name
-			data["[design::name]"] = list("design" = "[design::name]")
-			data["[design_result::name]"] = list("result_name" = "[design_result::name]")
+			if(!data["[design::name]"])
+				data["[design::name]"] = list("design" = "[design::name]")
+			if(!data["[design_result::name]"])
+				data["[design_result::name]"] = list("result_name" = "[design_result::name]")
 			continue
 
 		// Built item is translated
 		// Are they equal in english?
-		if(capitalize(declented_list_design["base"]) != design::name)
+		if(declented_list_design["base"] != LOWER_TEXT(design::name))
 			// Need to translate design name
-			data["[design::name]"] = list("result_nominative" = declented_list_design[NOMINATIVE])
+			if(!data["[design::name]"])
+				data["[design::name]"] = list("result_nominative" = declented_list_design[NOMINATIVE])
 
 	var/file_location = "data/toml_data_for_laren.toml"
 	var/payload = "[rustg_toml_encode(data)]"
