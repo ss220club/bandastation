@@ -903,113 +903,17 @@ unique_design_name = "11111"
 ["210::: manufacturing smelter"]
 untranslated_item = "11111"
 
-["211::: APLU \"Ripley\" Central Control module"] # Unique Design Name
-unique_design_name = "11111"
-
-["211::: Ripley Central Control module (Exosuit Board)"]
-untranslated_item = "11111"
-
-["212::: APLU \"Ripley\" Peripherals Control module"] # Unique Design Name
-unique_design_name = "11111"
-
-["212::: Ripley Peripherals Control module (Exosuit Board)"]
-untranslated_item = "11111"
-
-["213::: \"Odysseus\" Central Control module"] # Unique Design Name
-unique_design_name = "11111"
-
-["213::: Odysseus Central Control module (Exosuit Board)"]
-untranslated_item = "11111"
-
-["214::: \"Odysseus\" Peripherals Control module"] # Unique Design Name
-unique_design_name = "11111"
-
-["214::: Odysseus Peripherals Control module (Exosuit Board)"]
-untranslated_item = "11111"
-
-["215::: \"Gygax\" Central Control module"] # Unique Design Name
-unique_design_name = "11111"
-
-["215::: Gygax Central Control module (Exosuit Board)"]
-untranslated_item = "11111"
-
-["216::: \"Gygax\" Peripherals Control module"] # Unique Design Name
-unique_design_name = "11111"
-
-["216::: Gygax Peripherals Control module (Exosuit Board)"]
-untranslated_item = "11111"
-
-["217::: \"Gygax\" Weapons & Targeting Control module"] # Unique Design Name
-unique_design_name = "11111"
-
-["217::: Gygax Weapon Control and Targeting module (Exosuit Board)"]
-untranslated_item = "11111"
-
-["218::: \"Durand\" Central Control module"] # Unique Design Name
-unique_design_name = "11111"
-
-["218::: Durand Central Control module (Exosuit Board)"]
-untranslated_item = "11111"
-
-["219::: \"Durand\" Peripherals Control module"] # Unique Design Name
-unique_design_name = "11111"
-
-["219::: Durand Peripherals Control module (Exosuit Board)"]
-untranslated_item = "11111"
-
 ["21::: 'Dungeon Master' Core AI Module"]
 untranslated_item = "11111"
 
 ["21::: Dungeon Master Module"] # Unique Design Name
 unique_design_name = "11111"
 
-["220::: \"Durand\" Weapons & Targeting Control module"] # Unique Design Name
-unique_design_name = "11111"
-
-["220::: Durand Weapon Control and Targeting module (Exosuit Board)"]
-untranslated_item = "11111"
-
-["221::: \"H.O.N.K.\" Central Control module"] # Unique Design Name
-unique_design_name = "11111"
-
-["221::: H.O.N.K Central Control module (Exosuit Board)"]
-untranslated_item = "11111"
-
-["222::: \"H.O.N.K.\" Peripherals Control module"] # Unique Design Name
-unique_design_name = "11111"
-
-["222::: H.O.N.K Peripherals Control module (Exosuit Board)"]
-untranslated_item = "11111"
-
-["223::: \"H.O.N.K.\" Weapons & Targeting Control module"] # Unique Design Name
-unique_design_name = "11111"
-
-["223::: H.O.N.K Weapon Control and Targeting module (Exosuit Board)"]
-untranslated_item = "11111"
-
-["229::: \"Savannah-Ivanov\" Central Control module"] # Unique Design Name
-unique_design_name = "11111"
-
-["229::: Savannah-Ivanov Combination Control Lock module (Exosuit Board)"]
-untranslated_item = "11111"
-
 ["22::: 'Painter' Core AI Module"]
 untranslated_item = "11111"
 
 ["22::: Painter Module"] # Unique Design Name
 unique_design_name = "11111"
-
-["230::: \"Savannah-Ivanov\" Peripherals Control module"] # Unique Design Name
-unique_design_name = "11111"
-
-["230::: Savannah Peripherals Control module (Exosuit Board)"]
-untranslated_item = "11111"
-
-["231::: \"Savannah-Ivanov\" Weapons & Targeting Control module"] # Unique Design Name
-unique_design_name = "11111"
-
-["231::: Ivanov Weapon Control and Targeting module (Exosuit Board)"]
-untranslated_item = "11111"
 
 ["232::: PACMAN Board"] # Unique Design Name
 unique_design_name = "11111"
@@ -1584,172 +1488,16 @@ unique_design_name = "11111"
 ["343::: heavy robotic right leg"]
 untranslated_item = "11111"
 
-["344::: Exosuit Chassis (APLU \"Ripley\")"] # Unique Design Name
-unique_design_name = "11111"
-
-["344::: Ripley chassis"]
-untranslated_item = "11111"
-
-["345::: Exosuit Torso (APLU \"Ripley\")"] # Unique Design Name
-unique_design_name = "11111"
-
-["345::: Ripley torso"]
-untranslated_item = "11111"
-
-["346::: Exosuit Left Arm (APLU \"Ripley\")"] # Unique Design Name
-unique_design_name = "11111"
-
-["346::: Ripley left arm"]
-untranslated_item = "11111"
-
-["347::: Exosuit Right Arm (APLU \"Ripley\")"] # Unique Design Name
-unique_design_name = "11111"
-
-["347::: Ripley right arm"]
-untranslated_item = "11111"
-
-["348::: Exosuit Left Leg (APLU \"Ripley\")"] # Unique Design Name
-unique_design_name = "11111"
-
-["348::: Ripley left leg"]
-untranslated_item = "11111"
-
-["349::: Exosuit Right Leg (APLU \"Ripley\")"] # Unique Design Name
-unique_design_name = "11111"
-
-["349::: Ripley right leg"]
-untranslated_item = "11111"
-
 ["34::: 'H.O.G.A.N.' Core AI Module"]
 untranslated_item = "11111"
 
 ["34::: H.O.G.A.N. Module"] # Unique Design Name
 unique_design_name = "11111"
 
-["350::: Exosuit Chassis (\"Odysseus\")"] # Unique Design Name
-unique_design_name = "11111"
-
-["350::: Odysseus chassis"]
-untranslated_item = "11111"
-
-["351::: Exosuit Torso (\"Odysseus\")"] # Unique Design Name
-unique_design_name = "11111"
-
-["351::: Odysseus torso"]
-untranslated_item = "11111"
-
-["352::: Exosuit Head (\"Odysseus\")"] # Unique Design Name
-unique_design_name = "11111"
-
-["352::: Odysseus head"]
-untranslated_item = "11111"
-
-["353::: Exosuit Left Arm (\"Odysseus\")"] # Unique Design Name
-unique_design_name = "11111"
-
-["353::: Odysseus left arm"]
-untranslated_item = "11111"
-
-["354::: Exosuit Right Arm (\"Odysseus\")"] # Unique Design Name
-unique_design_name = "11111"
-
-["354::: Odysseus right arm"]
-untranslated_item = "11111"
-
-["355::: Exosuit Left Leg (\"Odysseus\")"] # Unique Design Name
-unique_design_name = "11111"
-
-["355::: Odysseus left leg"]
-untranslated_item = "11111"
-
-["356::: Exosuit Right Leg (\"Odysseus\")"] # Unique Design Name
-unique_design_name = "11111"
-
-["356::: Odysseus right leg"]
-untranslated_item = "11111"
-
-["357::: Exosuit Chassis (\"Gygax\")"] # Unique Design Name
-unique_design_name = "11111"
-
-["357::: Gygax chassis"]
-untranslated_item = "11111"
-
-["358::: Exosuit Torso (\"Gygax\")"] # Unique Design Name
-unique_design_name = "11111"
-
-["358::: Gygax torso"]
-untranslated_item = "11111"
-
-["359::: Exosuit Head (\"Gygax\")"] # Unique Design Name # Unique Design Name
-unique_design_name = "11111"
-
-["359::: Gygax head"]
-untranslated_item = "11111"
-
 ["35::: 'Mother Drone' Core AI Module"]
 untranslated_item = "11111"
 
 ["35::: Drone Module"] # Unique Design Name
-unique_design_name = "11111"
-
-["360::: Exosuit Left Arm (\"Gygax\")"] # Unique Design Name
-unique_design_name = "11111"
-
-["360::: Gygax left arm"]
-untranslated_item = "11111"
-
-["361::: Exosuit Right Arm (\"Gygax\")"] # Unique Design Name
-unique_design_name = "11111"
-
-["361::: Gygax right arm"]
-untranslated_item = "11111"
-
-["362::: Exosuit Left Leg (\"Gygax\")"] # Unique Design Name
-unique_design_name = "11111"
-
-["362::: Gygax left leg"]
-untranslated_item = "11111"
-
-["363::: Exosuit Right Leg (\"Gygax\")"] # Unique Design Name
-unique_design_name = "11111"
-
-["363::: Gygax right leg"]
-untranslated_item = "11111"
-
-["364::: Exosuit Armor (\"Gygax\")"] # Unique Design Name
-unique_design_name = "11111"
-
-["364::: Gygax armor plates"]
-untranslated_item = "11111"
-
-["365::: Durand chassis"]
-untranslated_item = "11111"
-
-["365::: Exosuit Chassis (\"Durand\")"] # Unique Design Name
-unique_design_name = "11111"
-
-["366::: Durand torso"]
-untranslated_item = "11111"
-
-["366::: Exosuit Torso (\"Durand\")"] # Unique Design Name
-unique_design_name = "11111"
-
-["367::: Durand head"]
-untranslated_item = "11111"
-
-["367::: Exosuit Head (\"Durand\")"] # Unique Design Name
-unique_design_name = "11111"
-
-["368::: Durand left arm"]
-untranslated_item = "11111"
-
-["368::: Exosuit Left Arm (\"Durand\")"] # Unique Design Name
-unique_design_name = "11111"
-
-["369::: Durand right arm"]
-untranslated_item = "11111"
-
-["369::: Exosuit Right Arm (\"Durand\")"] # Unique Design Name
 unique_design_name = "11111"
 
 ["36::: 'Antimov' Core AI Module"]
@@ -1758,149 +1506,17 @@ untranslated_item = "11111"
 ["36::: Antimov Module"] # Unique Design Name
 unique_design_name = "11111"
 
-["370::: Durand left leg"]
-untranslated_item = "11111"
-
-["370::: Exosuit Left Leg (\"Durand\")"] # Unique Design Name
-unique_design_name = "11111"
-
-["371::: Durand right leg"]
-untranslated_item = "11111"
-
-["371::: Exosuit Right Leg (\"Durand\")"] # Unique Design Name
-unique_design_name = "11111"
-
-["372::: Durand armor plates"]
-untranslated_item = "11111"
-
-["372::: Exosuit Armor (\"Durand\")"] # Unique Design Name
-unique_design_name = "11111"
-
-["373::: Exosuit Chassis (\"H.O.N.K\")"] # Unique Design Name
-unique_design_name = "11111"
-
-["373::: H.O.N.K chassis"]
-untranslated_item = "11111"
-
-["374::: Exosuit Torso (\"H.O.N.K\")"] # Unique Design Name
-unique_design_name = "11111"
-
-["374::: H.O.N.K torso"]
-untranslated_item = "11111"
-
-["375::: Exosuit Head (\"H.O.N.K\")"] # Unique Design Name
-unique_design_name = "11111"
-
-["375::: H.O.N.K head"]
-untranslated_item = "11111"
-
-["376::: Exosuit Left Arm (\"H.O.N.K\")"] # Unique Design Name
-unique_design_name = "11111"
-
-["376::: H.O.N.K left arm"]
-untranslated_item = "11111"
-
-["377::: Exosuit Right Arm (\"H.O.N.K\")"] # Unique Design Name
-unique_design_name = "11111"
-
-["377::: H.O.N.K right arm"]
-untranslated_item = "11111"
-
-["378::: Exosuit Left Leg (\"H.O.N.K\")"] # Unique Design Name
-unique_design_name = "11111"
-
-["378::: H.O.N.K left leg"]
-untranslated_item = "11111"
-
-["379::: Exosuit Right Leg (\"H.O.N.K\")"] # Unique Design Name
-unique_design_name = "11111"
-
-["379::: H.O.N.K right leg"]
-untranslated_item = "11111"
-
 ["37::: 'Guardian of Balance' Core AI Module"]
 untranslated_item = "11111"
 
 ["37::: Balance Module"] # Unique Design Name
 unique_design_name = "11111"
 
-["388::: Exosuit Chassis (\"Savannah-Ivanov\")"] # Unique Design Name
-unique_design_name = "11111"
-
-["388::: Savannah-Ivanov chassis"]
-untranslated_item = "11111"
-
-["389::: Exosuit Torso (\"Savannah-Ivanov\")"] # Unique Design Name
-unique_design_name = "11111"
-
-["389::: Savannah-Ivanov torso"]
-untranslated_item = "11111"
-
 ["38::: 'Thermodynamic' Core AI Module"]
 untranslated_item = "11111"
 
 ["38::: Thermodynamic Module"] # Unique Design Name
 unique_design_name = "11111"
-
-["390::: Exosuit Head (\"Savannah-Ivanov\")"] # Unique Design Name
-unique_design_name = "11111"
-
-["390::: Savannah-Ivanov head"]
-untranslated_item = "11111"
-
-["391::: Exosuit Left Arm (\"Savannah-Ivanov\")"] # Unique Design Name
-unique_design_name = "11111"
-
-["391::: Savannah-Ivanov left arm"]
-untranslated_item = "11111"
-
-["392::: Exosuit Right Arm (\"Savannah-Ivanov\")"] # Unique Design Name
-unique_design_name = "11111"
-
-["392::: Savannah-Ivanov right arm"]
-untranslated_item = "11111"
-
-["393::: Exosuit Left Leg (\"Savannah-Ivanov\")"] # Unique Design Name
-unique_design_name = "11111"
-
-["393::: Savannah-Ivanov left leg"]
-untranslated_item = "11111"
-
-["394::: Exosuit Right Leg (\"Savannah-Ivanov\")"] # Unique Design Name
-unique_design_name = "11111"
-
-["394::: Savannah-Ivanov right leg"]
-untranslated_item = "11111"
-
-["395::: Exosuit Armor (\"Savannah-Ivanov\")"] # Unique Design Name
-unique_design_name = "11111"
-
-["395::: Savannah-Ivanov armor"]
-untranslated_item = "11111"
-
-["396::: Exosuit Chassis (\"Justice\")"] # Unique Design Name
-unique_design_name = "11111"
-
-["396::: Justice chassis"]
-untranslated_item = "11111"
-
-["397::: Exosuit Torso (\"Justice\")"] # Unique Design Name
-unique_design_name = "11111"
-
-["397::: Justice torso"]
-untranslated_item = "11111"
-
-["398::: Exosuit Left Arm (\"Justice\")"] # Unique Design Name
-unique_design_name = "11111"
-
-["398::: Justice left arm"]
-untranslated_item = "11111"
-
-["399::: Exosuit Right Arm (\"Justice\")"] # Unique Design Name
-unique_design_name = "11111"
-
-["399::: Justice right arm"]
-untranslated_item = "11111"
 
 ["39::: Damaged AI Module"] # Unique Design Name
 unique_design_name = "11111"
@@ -1913,24 +1529,6 @@ untranslated_item = "11111"
 
 ["3::: Byteforge Board"] # Unique Design Name
 unique_design_name = "11111"
-
-["400::: Exosuit Left Leg (\"Justice\")"] # Unique Design Name
-unique_design_name = "11111"
-
-["400::: Justice left leg"]
-untranslated_item = "11111"
-
-["401::: Exosuit Right Leg (\"Justice\")"] # Unique Design Name
-unique_design_name = "11111"
-
-["401::: Justice right leg"]
-untranslated_item = "11111"
-
-["402::: Exosuit Armor (\"Justice\")"] # Unique Design Name
-unique_design_name = "11111"
-
-["402::: Justice armor"]
-untranslated_item = "11111"
 
 ["408::: Ripley MK-I to MK-II Conversion Kit"] # Unique Design Name
 unique_design_name = "11111"
