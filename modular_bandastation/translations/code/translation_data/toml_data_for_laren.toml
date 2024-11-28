@@ -159,9 +159,6 @@ untranslated_item = "11111"
 ["1035::: toner cartridge"]
 untranslated_item = "11111"
 
-["1036::: Toner Cartridge (Large)"] # Unique Design Name
-unique_design_name = "11111"
-
 ["1036::: large toner cartridge"]
 untranslated_item = "11111"
 
@@ -988,36 +985,6 @@ untranslated_item = "11111"
 unique_design_name = "11111"
 
 ["223::: H.O.N.K Weapon Control and Targeting module (Exosuit Board)"]
-untranslated_item = "11111"
-
-["224::: \"Phazon\" Central Control module"] # Unique Design Name
-unique_design_name = "11111"
-
-["224::: Phazon Central Control module (Exosuit Board)"]
-untranslated_item = "11111"
-
-["225::: \"Phazon\" Peripherals Control module"] # Unique Design Name
-unique_design_name = "11111"
-
-["225::: Phazon Peripherals Control module (Exosuit Board)"]
-untranslated_item = "11111"
-
-["226::: \"Phazon\" Weapons & Targeting Control module"] # Unique Design Name
-unique_design_name = "11111"
-
-["226::: Phazon Weapon Control and Targeting module (Exosuit Board)"]
-untranslated_item = "11111"
-
-["227::: \"Clarke\" Central Control module"] # Unique Design Name
-unique_design_name = "11111"
-
-["227::: Clarke Central Control module (Exosuit Board)"]
-untranslated_item = "11111"
-
-["228::: \"Clarke\" Peripherals Control module"] # Unique Design Name
-unique_design_name = "11111"
-
-["228::: Clarke Peripherals Control module (Exosuit Board)"]
 untranslated_item = "11111"
 
 ["229::: \"Savannah-Ivanov\" Central Control module"] # Unique Design Name
@@ -1857,54 +1824,6 @@ untranslated_item = "11111"
 ["37::: Balance Module"] # Unique Design Name
 unique_design_name = "11111"
 
-["380::: Exosuit Chassis (\"Phazon\")"] # Unique Design Name
-unique_design_name = "11111"
-
-["380::: Phazon chassis"]
-untranslated_item = "11111"
-
-["381::: Exosuit Torso (\"Phazon\")"] # Unique Design Name
-unique_design_name = "11111"
-
-["381::: Phazon torso"]
-untranslated_item = "11111"
-
-["382::: Exosuit Head (\"Phazon\")"] # Unique Design Name
-unique_design_name = "11111"
-
-["382::: Phazon head"]
-untranslated_item = "11111"
-
-["383::: Exosuit Left Arm (\"Phazon\")"] # Unique Design Name
-unique_design_name = "11111"
-
-["383::: Phazon left arm"]
-untranslated_item = "11111"
-
-["384::: Exosuit Right Arm (\"Phazon\")"] # Unique Design Name
-unique_design_name = "11111"
-
-["384::: Phazon right arm"]
-untranslated_item = "11111"
-
-["385::: Exosuit Left Leg (\"Phazon\")"] # Unique Design Name
-unique_design_name = "11111"
-
-["385::: Phazon left leg"]
-untranslated_item = "11111"
-
-["386::: Exosuit Right Leg (\"Phazon\")"] # Unique Design Name
-unique_design_name = "11111"
-
-["386::: Phazon right leg"]
-untranslated_item = "11111"
-
-["387::: Exosuit Armor (\"Phazon\")"] # Unique Design Name
-unique_design_name = "11111"
-
-["387::: Phazon armor"]
-untranslated_item = "11111"
-
 ["388::: Exosuit Chassis (\"Savannah-Ivanov\")"] # Unique Design Name
 unique_design_name = "11111"
 
@@ -2012,36 +1931,6 @@ unique_design_name = "11111"
 
 ["402::: Justice armor"]
 untranslated_item = "11111"
-
-["403::: Clarke chassis"]
-untranslated_item = "11111"
-
-["403::: Exosuit Chassis (\"Clarke\")"] # Unique Design Name
-unique_design_name = "11111"
-
-["404::: Clarke torso"]
-untranslated_item = "11111"
-
-["404::: Exosuit Torso (\"Clarke\")"] # Unique Design Name
-unique_design_name = "11111"
-
-["405::: Clarke head"]
-untranslated_item = "11111"
-
-["405::: Exosuit Head (\"Clarke\")"] # Unique Design Name
-unique_design_name = "11111"
-
-["406::: Clarke left arm"]
-untranslated_item = "11111"
-
-["406::: Exosuit Left Arm (\"Clarke\")"] # Unique Design Name
-unique_design_name = "11111"
-
-["407::: Clarke right arm"]
-untranslated_item = "11111"
-
-["407::: Exosuit Right Arm (\"Clarke\")"] # Unique Design Name
-unique_design_name = "11111"
 
 ["408::: Ripley MK-I to MK-II Conversion Kit"] # Unique Design Name
 unique_design_name = "11111"
