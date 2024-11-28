@@ -302,12 +302,12 @@ prepositional = "подносе-автомате"
 gender = "male"
 
 ["civilian bounty pad"]
-nominative = "платформа гражданских наград"
-genitive = "платформы гражданских наград"
-dative = "платформе гражданских наград"
-accusative = "платформу гражданских наград"
-instrumental = "платформой гражданских наград"
-prepositional = "платформе гражданских наград"
+nominative = "платформа гражданских заказов"
+genitive = "платформы гражданских заказов"
+dative = "платформе гражданских заказов"
+accusative = "платформу гражданских заказов"
+instrumental = "платформой гражданских заказов"
+prepositional = "платформе гражданских заказов"
 gender = "female"
 
 ["Skillsoft station"]
@@ -328,175 +328,1112 @@ instrumental = "факсовым аппаратом"
 prepositional = "факсовом аппарате"
 gender = "male"
 
-["146::: HFR core"]
+["HFR core"]
 nominative = "ядро ТРГ"
+genitive = "ядра ТРГ"
+dative = "ядру ТРГ"
+accusative = "ядро ТРГ"
+instrumental = "ядром ТРГ"
+prepositional = "ядре ТРГ"
+gender = "neuter"
 
-["147::: HFR fuel input port"]
-nominative = ""
+["HFR fuel input port"]
+nominative = "входной порт топлива ТРГ"
+genitive = "входного порта топлива ТРГ"
+dative = "входному порту топлива ТРГ"
+accusative = "входной порт топлива ТРГ"
+instrumental = "входным портом топлива ТРГ"
+prepositional = "входном порте топлива ТРГ"
+gender = "male"
 
-["148::: HFR waste output port"]
+["HFR waste output port"]
+nominative = "выходной порт отходов ТРГ"
+genitive = "выходного порта отходов ТРГ"
+dative = "выходному порту отходов ТРГ"
+accusative = "выходной порт отходов ТРГ"
+instrumental = "выходным портом отходов ТРГ"
+prepositional = "выходном порте отходов ТРГ"
+gender = "male"
 
-["149::: HFR moderator input port"]
+["HFR moderator input port"]
+nominative = "входной порт модератора ТРГ"
+genitive = "входного порта модератора ТРГ"
+dative = "входному порту модератора ТРГ"
+accusative = "входной порт модератора ТРГ"
+instrumental = "входным портом модератора ТРГ"
+prepositional = "входном порте модератора ТРГ"
+gender = "male"
 
-["150::: HFR corner"]
-nominative = "угол ТРГ"
+["HFR corner"]
+nominative = "уголок ТРГ"
+genitive = "уголка ТРГ"
+dative = "уголку ТРГ"
+accusative = "уголок ТРГ"
+instrumental = "уголком ТРГ"
+prepositional = "уголке ТРГ"
+gender = "male"
 
-["151::: HFR interface"]
-nominative = ""
+["HFR interface"]
+nominative = "интерфейс ТРГ"
+genitive = "интерфейса ТРГ"
+dative = "интерфейсу ТРГ"
+accusative = "интерфейс ТРГ"
+instrumental = "интерфейсом ТРГ"
+prepositional = "интерфейсе ТРГ"
+gender = "male"
 
-["14::: communications console"]
+["communications console"]
+nominative = "коммуникационная консоль"
+genitive = "коммуникационной консоли"
+dative = "коммуникационной консоли"
+accusative = "коммуникационную консоль"
+instrumental = "коммуникационной консолью"
+prepositional = "коммуникационной консоли"
+gender = "female"
 
-["152::: crystallizer"]
+["crystallizer"]
+nominative = "кристаллизатор"
+genitive = "кристаллизатора"
+dative = "кристаллизатору"
+accusative = "кристаллизатор"
+instrumental = "кристаллизатором"
+prepositional = "кристаллизаторе"
+gender = "male"
 
-["153::: Scanner array"]
+["exploration drone launcher"]
+nominative = "пусковая установка дронов-разведчиков"
+genitive = "пусковой установки дронов-разведчиков"
+dative = "пусковой установке дронов-разведчиков"
+accusative = "пусковую установку дронов-разведчиков"
+instrumental = "пусковой установкой дронов-разведчиков"
+prepositional = "пусковой установке дронов-разведчиков"
+gender = "female"
 
-["154::: exploration drone launcher"]
+["component printer"]
+nominative = "принтер компонентов"
+genitive = "принтера компонентов"
+dative = "принтеру компонентов"
+accusative = "принтер компонентов"
+instrumental = "принтером компонентов"
+prepositional = "принтере компонентов"
+gender = "male"
 
-["155::: component printer"]
+["module duplicator"]
+nominative = "дубликатор модулей"
+genitive = "дубликатора модулей"
+dative = "дубликатору модулей"
+accusative = "дубликатор модулей"
+instrumental = "дубликатором модулей"
+prepositional = "дубликаторе модулей"
+gender = "male"
 
-["156::: module duplicator"]
+["navigation beacon"]
+nominative = "навигационный маяк"
+genitive = "навигационного маяка"
+dative = "навигационному маяку"
+accusative = "навигационный маяк"
+instrumental = "навигационным маяком"
+prepositional = "навигационном маяке"
+gender = "male"
 
-["157::: coffeemaker"]
+["bank machine"]
+nominative = "банкомат"
+genitive = "банкомата"
+dative = "банкомату"
+accusative = "банкомат"
+instrumental = "банкоматом"
+prepositional = "банкомате"
+gender = "male"
 
-["158::: navigation beacon"]
+["boulder retrieval matrix"]
+nominative = "матрица извлечения валунов"
+genitive = "матрицы извлечения валунов"
+dative = "матрице извлечения валунов"
+accusative = "матрицу извлечения валунов"
+instrumental = "матрицей извлечения валунов"
+prepositional = "матрице извлечения валунов"
+gender = "female"
 
-["159::: fish-porter 3000"]
+["flatpacker"]
+nominative = "плоскоупаковщик"
+genitive = "плоскоупаковщика"
+dative = "плоскоупаковщику"
+accusative = "плоскоупаковщик"
+instrumental = "плоскоупаковщиком"
+prepositional = "плоскоупаковщике"
+gender = "male"
 
-["15::: bank machine"]
+["portable air scrubber"]
+nominative = "портативный очиститель воздуха"
+genitive = "портативного очистителя воздуха"
+dative = "портативному очистителю воздуха"
+accusative = "портативный очиститель воздуха"
+instrumental = "портативным очистителем воздуха"
+prepositional = "портативном очистителе воздуха"
+gender = "male"
 
-["160::: boulder retrieval matrix"]
+["portable air pump"]
+nominative = "портативный насос для воздуха"
+genitive = "портативного насоса для воздуха"
+dative = "портативному насосу для воздуха"
+accusative = "портативный насос для воздуха"
+instrumental = "портативным насосом для воздуха"
+prepositional = "портативном насосе для воздуха"
+gender = "male"
 
-["161::: flatpacker"]
+["fish-porter 3000"]
+nominative = "рыбопортал 3000"
+genitive = "рыбопортала 3000"
+dative = "рыбопорталу 3000"
+accusative = "рыбопортал 3000"
+instrumental = "рыбопорталом 3000"
+prepositional = "рыбопортале 3000"
+gender = "male"
 
-["162::: portable air scrubber"]
+["pipe scrubber"]
+nominative = "очиститель труб"
+genitive = "очистителя труб"
+dative = "очистителю труб"
+accusative = "очиститель труб"
+instrumental = "очистителем труб"
+prepositional = "очистителе труб"
+gender = "male"
 
-["163::: portable air pump"]
+["book binder"]
+nominative = "переплетчик книг"
+genitive = "переплетчика книг"
+dative = "переплетчику книг"
+accusative = "переплетчик книг"
+instrumental = "переплетчиком книг"
+prepositional = "переплетчике книг"
+gender = "male"
 
-["164::: pipe scrubber"]
+["scanner control interface"]
+nominative = "интерфейс управления сканером"
+genitive = "интерфейса управления сканером"
+dative = "интерфейсу управления сканером"
+accusative = "интерфейс управления сканером"
+instrumental = "интерфейсом управления сканером"
+prepositional = "интерфейсе управления сканером"
+gender = "male"
 
-["165::: book binder"]
+["Big Manipulator"]
+nominative = "большой манипулятор"
+genitive = "большого манипулятора"
+dative = "большому манипулятору"
+accusative = "большой манипулятор"
+instrumental = "большим манипулятором"
+prepositional = "большом манипуляторе"
+gender = "male"
 
-["166::: scanner control interface"]
+["manufacturing lathe"]
+nominative = "производственный станок"
+genitive = "производственного станка"
+dative = "производственному станку"
+accusative = "производственный станок"
+instrumental = "производственным станком"
+prepositional = "производственном станке"
+gender = "male"
 
-["167::: Big Manipulator"]
+["manufacturing assembling machine"]
+nominative = "производственный сборочный автомат"
+genitive = "производственного сборочного автомата"
+dative = "производственному сборочному автомату"
+accusative = "производственный сборочный автомат"
+instrumental = "производственным сборочным автоматом"
+prepositional = "производственном сборочном автомате"
+gender = "male"
 
-["168::: manufacturing lathe"]
+["crew monitoring console"]
+nominative = "консоль мониторинга экипажа"
+genitive = "консоли мониторинга экипажа"
+dative = "консоли мониторинга экипажа"
+accusative = "консоль мониторинга экипажа"
+instrumental = "консолью мониторинга экипажа"
+prepositional = "консоли мониторинга экипажа"
+gender = "female"
 
-["169::: manufacturing assembling machine"]
+["manufacturing crusher"]
+nominative = "производственный измельчитель"
+genitive = "производственного измельчителя"
+dative = "производственному измельчителю"
+accusative = "производственный измельчитель"
+instrumental = "производственным измельчителем"
+prepositional = "производственном измельчителе"
+gender = "male"
 
-["16::: crew monitoring console"]
+["manufacturing router"]
+nominative = "производственный маршрутизатор"
+genitive = "производственного маршрутизатора"
+dative = "производственному маршрутизатору"
+accusative = "производственный маршрутизатор"
+instrumental = "производственным маршрутизатором"
+prepositional = "производственном маршрутизаторе"
+gender = "male"
 
-["170::: manufacturing crusher"]
+["manufacturing crate unloader"]
+nominative = "производственный разгрузчик ящиков"
+genitive = "производственного разгрузчика ящиков"
+dative = "производственному разгрузчику ящиков"
+accusative = "производственный разгрузчик ящиков"
+instrumental = "производственным разгрузчиком ящиков"
+prepositional = "производственном разгрузчике ящиков"
+gender = "male"
 
-["171::: manufacturing router"]
+["manufacturing smelter"]
+nominative = "производственная плавильная печь"
+genitive = "производственной плавильной печи"
+dative = "производственной плавильной печи"
+accusative = "производственную плавильную печь"
+instrumental = "производственной плавильной печью"
+prepositional = "производственной плавильной печи"
+gender = "female"
 
-["172::: conveyor sort-router"]
+["conveyor sort-router"]
+nominative = "сортировочный маршрутизатор конвейера"
+genitive = "сортировочного маршрутизатора конвейера"
+dative = "сортировочному маршрутизатору конвейера"
+accusative = "сортировочный маршрутизатор конвейера"
+instrumental = "сортировочным маршрутизатором конвейера"
+prepositional = "сортировочном маршрутизаторе конвейера"
+gender = "male"
 
-["173::: manufacturing crate unloader"]
-
-["174::: manufacturing smelter"]
-
-["175::: P.A.C.M.A.N.-type portable generator"]
+["P.A.C.M.A.N.-type portable generator"]
 nominative = "переносной генератор типа P.A.C.M.A.N."
+genitive = "переносного генератора типа P.A.C.M.A.N."
+dative = "переносному генератору типа P.A.C.M.A.N."
+accusative = "переносной генератор типа P.A.C.M.A.N."
+instrumental = "переносным генератором типа P.A.C.M.A.N."
+prepositional = "переносном генераторе типа P.A.C.M.A.N."
+gender = "male"
 
-["176::: subspace receiver"]
+["subspace receiver"]
+nominative = "подпространственный приёмник"
+genitive = "подпространственного приёмника"
+dative = "подпространственному приёмнику"
+accusative = "подпространственный приёмник"
+instrumental = "подпространственным приёмником"
+prepositional = "подпространственном приёмнике"
+gender = "male"
 
-["177::: bus mainframe"]
+["bus mainframe"]
+nominative = "главный модуль шины"
+genitive = "главного модуля шины"
+dative = "главному модулю шины"
+accusative = "главный модуль шины"
+instrumental = "главным модулем шины"
+prepositional = "главном модуле шины"
+gender = "male"
 
-["178::: telecommunication hub"]
+["telecommunication hub"]
+nominative = "узел телекоммуникации"
+genitive = "узла телекоммуникации"
+dative = "узлу телекоммуникации"
+accusative = "узел телекоммуникации"
+instrumental = "узлом телекоммуникации"
+prepositional = "узле телекоммуникации"
+gender = "male"
 
-["179::: telecommunication relay"]
+["processor unit"]
+nominative = "процессорный блок"
+genitive = "процессорного блока"
+dative = "процессорному блоку"
+accusative = "процессорный блок"
+instrumental = "процессорным блоком"
+prepositional = "процессорном блоке"
+gender = "male"
 
-["17::: security records console"]
+["telecommunication server"]
+nominative = "сервер телекоммуникации"
+genitive = "сервера телекоммуникации"
+dative = "серверу телекоммуникации"
+accusative = "сервер телекоммуникации"
+instrumental = "сервером телекоммуникации"
+prepositional = "сервере телекоммуникации"
+gender = "male"
 
-["180::: processor unit"]
+["Messaging Server"]
+nominative = "сервер обмена сообщениями"
+genitive = "сервера обмена сообщениями"
+dative = "серверу обмена сообщениями"
+accusative = "сервер обмена сообщениями"
+instrumental = "сервером обмена сообщениями"
+prepositional = "сервере обмена сообщениями"
+gender = "male"
 
-["181::: telecommunication server"]
+["subspace broadcaster"]
+nominative = "подпространственный передатчик"
+genitive = "подпространственного передатчика"
+dative = "подпространственному передатчику"
+accusative = "подпространственный передатчик"
+instrumental = "подпространственным передатчиком"
+prepositional = "подпространственном передатчике"
+gender = "male"
 
-["182::: Messaging Server"]
+["brain-computer interface manipulation chamber"]
+nominative = "камера манипуляции интерфейсом мозг-компьютер"
+genitive = "камеры манипуляции интерфейсом мозг-компьютер"
+dative = "камере манипуляции интерфейсом мозг-компьютер"
+accusative = "камеру манипуляции интерфейсом мозг-компьютер"
+instrumental = "камерой манипуляции интерфейсом мозг-компьютер"
+prepositional = "камере манипуляции интерфейсом мозг-компьютер"
+gender = "female"
 
-["183::: subspace broadcaster"]
+["boulder smelter"]
+nominative = "плавильная печь для валунов"
+genitive = "плавильной печи для валунов"
+dative = "плавильной печи для валунов"
+accusative = "плавильную печь для валунов"
+instrumental = "плавильной печью для валунов"
+prepositional = "плавильной печи для валунов"
+gender = "female"
 
-["184::: brain-computer interface manipulation chamber"]
+["boulder refinery"]
+nominative = "переработка валунов"
+genitive = "переработки валунов"
+dative = "переработке валунов"
+accusative = "переработку валунов"
+instrumental = "переработкой валунов"
+prepositional = "переработке валунов"
+gender = "female"
 
-["185::: boulder smelter"]
+["atmospheric alert console"]
+nominative = "консоль атмосферных тревог"
+genitive = "консоли атмосферных тревог"
+dative = "консоли атмосферных тревог"
+accusative = "консоль атмосферных тревог"
+instrumental = "консолью атмосферных тревог"
+prepositional = "консоли атмосферных тревог"
+gender = "female"
 
-["186::: boulder refinery"]
+["atmospherics monitoring"]
+nominative = "консоль мониторинга атмосферы"
+genitive = "консоли мониторинга атмосферы"
+dative = "консоли мониторинга атмосферы"
+accusative = "консоль мониторинга атмосферы"
+instrumental = "консолью мониторинга атмосферы"
+prepositional = "консоли мониторинга атмосферы"
+gender = "female"
 
-["18::: atmospheric alert console"]
+["netpod"]
+nominative = "нетпод"
+genitive = "нетпода"
+dative = "нетпод"
+accusative = "нетподу"
+instrumental = "нетподом"
+prepositional = "нетподе"
+gender = "male"
 
-["19::: atmospherics monitoring"]
+["telecommunication relay"]
+nominative = "ретранслятор телекоммуникации"
+genitive = "ретранслятора телекоммуникации"
+dative = "ретранслятору телекоммуникации"
+accusative = "ретранслятор телекоммуникации"
+instrumental = "ретранслятором телекоммуникации"
+prepositional = "ретрансляторе телекоммуникации"
+gender = "male"
 
-["1::: netpod"]
+["security records console"]
+nominative = "консоль охранных записей"
+genitive = "консоли охранных записей"
+dative = "консоли охранных записей"
+accusative = "консоль охранных записей"
+instrumental = "консолью охранных записей"
+prepositional = "консоли охранных записей"
+gender = "female"
 
-["20::: robotics control console"]
+["robotics control console"]
+nominative = "консоль управления робототехникой"
+genitive = "консоли управления робототехникой"
+dative = "консоли управления робототехникой"
+accusative = "консоль управления робототехникой"
+instrumental = "консолью управления робототехникой"
+prepositional = "консоли управления робототехникой"
+gender = "female"
 
-["21::: slot machine"]
+["power monitoring console"]
+nominative = "консоль мониторинга питания"
+genitive = "консоли мониторинга питания"
+dative = "консоли мониторинга питания"
+accusative = "консоль мониторинга питания"
+instrumental = "консолью мониторинга питания"
+prepositional = "консоли мониторинга питания"
+gender = "female"
 
-["22::: power monitoring console"]
+["solar panel control"]
+nominative = "управление солнечными панелями"
+genitive = "управления солнечными панелями"
+dative = "управлению солнечными панелями"
+accusative = "управление солнечными панелями"
+instrumental = "управлением солнечными панелями"
+prepositional = "управлении солнечными панелями"
+gender = "neuter"
 
-["23::: solar panel control"]
+["prisoner management console"]
+nominative = "консоль управления заключенными"
+genitive = "консоли управления заключенными"
+dative = "консоли управления заключенными"
+accusative = "консоль управления заключенными"
+instrumental = "консолью управления заключенными"
+prepositional = "консоли управления заключенными"
+gender = "female"
 
-["24::: prisoner management console"]
+["exosuit control console"]
+nominative = "консоль управления экзокостюмами"
+genitive = "консоли управления экзокостюмами"
+dative = "консоли управления экзокостюмами"
+accusative = "консоль управления экзокостюмами"
+instrumental = "консолью управления экзокостюмами"
+prepositional = "консоли управления экзокостюмами"
+gender = "female"
 
-["25::: exosuit control console"]
+["R&D Console"]
+nominative = "консоль R&D"
+genitive = "консоли R&D"
+dative = "консоли R&D"
+accusative = "консоль R&D"
+instrumental = "консолью R&D"
+prepositional = "консоли R&D"
+gender = "female"
 
-["26::: mech bay power control console"]
+["supply console"]
+nominative = "консоль снабжения"
+genitive = "консоли снабжения"
+dative = "консоли снабжения"
+accusative = "консоль снабжения"
+instrumental = "консолью снабжения"
+prepositional = "консоли снабжения"
+gender = "female"
 
-["27::: R&D Console"]
+["quantum console"]
+nominative = "квантовая консоль"
+genitive = "квантовой консоли"
+dative = "квантовой консоли"
+accusative = "квантовую консоль"
+instrumental = "квантовой консолью"
+prepositional = "квантовой консоли"
+gender = "female"
 
-["28::: supply console"]
+["mech bay power control console"]
+nominative = "консоль управления зарядным портом мехов"
+genitive = "консоли управления зарядным портом мехов"
+dative = "консоли управления зарядным портом мехов"
+accusative = "консоль управления зарядным портом мехов"
+instrumental = "консолью управления зарядным портом мехов"
+prepositional = "консоли управления зарядным портом мехов"
+gender = "female"
 
-["29::: supply request console"]
+["supply request console"]
+nominative = "консоль снабжения для запросов"
+genitive = "консоли снабжения для запросов"
+dative = "консоли снабжения для запросов"
+accusative = "консоль снабжения для запросов"
+instrumental = "консолью снабжения для запросов"
+prepositional = "консоли снабжения для запросов"
+gender = "female"
 
-["2::: quantum console"]
+["outpost camera console"]
+nominative = "консоль камер на аванпосте"
+genitive = "консоли камер на аванпосте"
+dative = "консоли камер на аванпосте"
+accusative = "консоль камер на аванпосте"
+instrumental = "консолью камер на аванпосте"
+prepositional = "консоли камер на аванпосте"
+gender = "female"
 
-["30::: outpost camera console"]
+["telecommunications monitoring console"]
+nominative = "консоль мониторинга телекоммуникаций"
+genitive = "консоли мониторинга телекоммуникаций"
+dative = "консоли мониторинга телекоммуникаций"
+accusative = "консоль мониторинга телекоммуникаций"
+instrumental = "консолью мониторинга телекоммуникаций"
+prepositional = "консоли мониторинга телекоммуникаций"
+gender = "female"
 
-["31::: telecommunications monitoring console"]
+["telecommunications server monitoring console"]
+nominative = "консоль мониторинга серверов телекоммуникаций"
+genitive = "консоли мониторинга серверов телекоммуникаций"
+dative = "консоли мониторинга серверов телекоммуникаций"
+accusative = "консоль мониторинга серверов телекоммуникаций"
+instrumental = "консолью мониторинга серверов телекоммуникаций"
+prepositional = "консоли мониторинга серверов телекоммуникаций"
+gender = "female"
 
-["32::: telecommunications server monitoring console"]
+["message monitor console"]
+nominative = "консоль мониторинга сообщений"
+genitive = "консоли мониторинга сообщений"
+dative = "консоли мониторинга сообщений"
+accusative = "консоль мониторинга сообщений"
+instrumental = "консолью мониторинга сообщений"
+prepositional = "консоли мониторинга сообщений"
+gender = "female"
 
-["33::: message monitor console"]
+["AI system integrity restorer"]
+nominative = "восстановитель целостности системы ИИ"
+genitive = "восстановителя целостности системы ИИ"
+dative = "восстановителю целостности системы ИИ"
+accusative = "восстановитель целостности системы ИИ"
+instrumental = "восстановителем целостности системы ИИ"
+prepositional = "восстановителе целостности системы ИИ"
+gender = "male"
 
-["34::: AI system integrity restorer"]
+["library visitor console"]
+nominative = "консоль посетителей библиотеки"
+genitive = "консоли посетителей библиотеки"
+dative = "консоли посетителей библиотеки"
+accusative = "консоль посетителей библиотеки"
+instrumental = "консолью посетителей библиотеки"
+prepositional = "консоли посетителей библиотеки"
+gender = "female"
 
-["35::: library visitor console"]
+["power flow control console"]
+nominative = "консоль управления потоком питания"
+genitive = "консоли управления потоком питания"
+dative = "консоли управления потоком питания"
+accusative = "консоль управления потоком питания"
+instrumental = "консолью управления потоком питания"
+prepositional = "консоли управления потоком питания"
+gender = "female"
 
-["36::: power flow control console"]
+["advanced camera console"]
+nominative = "консоль продвинутой камеры"
+genitive = "консоли продвинутой камеры"
+dative = "консоли продвинутой камеры"
+accusative = "консоль продвинутой камеры"
+instrumental = "консолью продвинутой камеры"
+prepositional = "консоли продвинутой камеры"
+gender = "female"
 
-["37::: advanced camera console"]
+["byteforge"]
+nominative = "байтфордж"
+genitive = "байтфорджа"
+dative = "байтфорджу"
+accusative = "байтфордж"
+instrumental = "байтфорджем"
+prepositional = "байтфордже"
+gender = "male"
 
-["38::: civilian bounty control terminal"]
+["Scanner array"]
+nominative = "массив сканеров"
+genitive = "массива сканеров"
+dative = "массиву сканеров"
+accusative = "массив сканеров"
+instrumental = "массивом сканеров"
+prepositional = "массиве сканеров"
+gender = "male"
 
-["39::: scanner array control console"]
+["scanner array control console"]
+nominative = "консоль управления массивом сканеров"
+genitive = "консоли управления массивом сканеров"
+dative = "консоли управления массивом сканеров"
+accusative = "консоль управления массивом сканеров"
+instrumental = "консолью управления массивом сканеров"
+prepositional = "консоли управления массивом сканеров"
+gender = "female"
 
-["3::: byteforge"]
+["civilian bounty control terminal"]
+nominative = "терминал управления платформой гражданских заказов"
+genitive = "терминала управления платформой гражданских заказов"
+dative = "терминалу управления платформой гражданских заказов"
+accusative = "терминал управления платформой гражданских заказов"
+instrumental = "терминалом управления платформой гражданских заказов"
+prepositional = "терминале управления платформой гражданских заказов"
+gender = "male"
 
-["40::: exploration drone control console"]
+["exploration drone control console"]
+nominative = "консоль управления дроном-разведчиком"
+genitive = "консоли управления дроном-разведчиком"
+dative = "консоли управления дроном-разведчиком"
+accusative = "консоль управления дроном-разведчиком"
+instrumental = "консолью управления дроном-разведчиком"
+prepositional = "консоли управления дроном-разведчиком"
+gender = "female"
 
-["41::: account lookup console"]
+["account lookup console"]
+nominative = "консоль поиска аккаунта"
+genitive = "консоли поиска аккаунта"
+dative = "консоли поиска аккаунта"
+accusative = "консоль поиска аккаунта"
+instrumental = "консолью поиска аккаунта"
+prepositional = "консоли поиска аккаунта"
+gender = "female"
 
-["42::: space electrolyzer"]
+["space electrolyzer"]
+nominative = "электролизер"
+genitive = "электролизера"
+dative = "электролизеру"
+accusative = "электролизер"
+instrumental = "электролизером"
+prepositional = "электролизере"
+gender = "male"
 
-["43::: power storage unit"]
+["power storage unit"]
 nominative = "СКАН"
+genitive = "СКАНа"
+dative = "СКАНу"
+accusative = "СКАН"
+instrumental = "СКАНом"
+prepositional = "СКАНе"
+gender = "male"
 
-["44::: power connector"]
+["power connector"]
+nominative = "соединитель питания"
+genitive = "соединителя питания"
+dative = "соединителю питания"
+accusative = "соединитель питания"
+instrumental = "соединителем питания"
+prepositional = "соединителе питания"
+gender = "male"
 
-["45::: portable power storage unit"]
+["portable power storage unit"]
 nominative = "портативный СКАН"
+genitive = "портативного СКАНа"
+dative = "портативному СКАНу"
+accusative = "портативный СКАН"
+instrumental = "портативным СКАНом"
+prepositional = "портативном СКАНе"
+gender = "male"
 
-["46::: Automated Announcement System"]
+["Automated Announcement System"]
+nominative = "система автоматических объявлений"
+genitive = "системы автоматических объявлений"
+dative = "системе автоматических объявлений"
+accusative = "систему автоматических объявлений"
+instrumental = "системой автоматических объявлений"
+prepositional = "системе автоматических объявлений"
+gender = "female"
 
-["47::: gas turbine control computer"]
+["gas turbine control computer"]
+nominative = "компьютер управления газовой турбиной"
+genitive = "компьютера управления газовой турбиной"
+dative = "компьютеру управления газовой турбиной"
+accusative = "компьютер управления газовой турбиной"
+instrumental = "компьютером управления газовой турбиной"
+prepositional = "компьютере управления газовой турбиной"
+gender = "male"
 
-["48::: emitter"]
+["emitter"]
 nominative = "эмиттер"
+genitive = "эмиттера"
+dative = "эмиттеру"
+accusative = "эмиттер"
+instrumental = "эмиттером"
+prepositional = "эмиттере"
+gender = "male"
 
-["49::: mass driver"]
+["mass driver"]
+nominative = "масс-драйвер"
+genitive = "масс-драйвера"
+dative = "масс-драйверу"
+accusative = "масс-драйвер"
+instrumental = "масс-драйвером"
+prepositional = "масс-драйвере"
+gender = "male"
 
-["4::: battle arcade"]
+["battle arcade"]
+nominative = "игровой автомат \"Battle Arcade\""
+genitive = "игрового автомата \"Battle Arcade\""
+dative = "игровому автомату \"Battle Arcade\""
+accusative = "игровой автомат \"Battle Arcade\""
+instrumental = "игровым автоматом \"Battle Arcade\""
+prepositional = "игровом автомате \"Battle Arcade\""
+gender = "male"
+
+["space heater"]
+nominative = "обогреватель"
+genitive = "обогревателя"
+dative = "обогревателю"
+accusative = "обогреватель"
+instrumental = "обогревателем"
+prepositional = "обогревателе"
+gender = "male"
+
+["teleporter station"]
+nominative = "станция телепорта"
+genitive = "станции телепорта"
+dative = "станции телепорта"
+accusative = "станцию телепорта"
+instrumental = "станцией телепорта"
+prepositional = "станции телепорта"
+gender = "female"
+
+["teleporter hub"]
+nominative = "узел телепорта"
+genitive = "узла телепорта"
+dative = "узлу телепорта"
+accusative = "узел телепорта"
+instrumental = "узлом телепорта"
+prepositional = "узле телепорта"
+gender = "male"
+
+["quantum pad"]
+nominative = "квантовая платформа"
+genitive = "квантовой платформы"
+dative = "квантовой платформе"
+accusative = "квантовую платформу"
+instrumental = "квантовой платформой"
+prepositional = "квантовой платформе"
+gender = "female"
+
+["Bot pad"]
+nominative = "платформа запуска ботов"
+genitive = "платформы запуска ботов"
+dative = "платформе запуска ботов"
+accusative = "платформу запуска ботов"
+instrumental = "платформой запуска ботов"
+prepositional = "платформе запуска ботов"
+gender = "female"
+
+["bluespace launchpad"]
+nominative = "блюспейс платформа запуска"
+genitive = "блюспейс платформы запуска"
+dative = "блюспейс платформе запуска"
+accusative = "блюспейс платформу запуска"
+instrumental = "блюспейс платформой запуска"
+prepositional = "блюспейс платформе запуска"
+gender = "female"
+
+["The Orion Trail"]
+nominative = "игровой автомат \"The Orion Trail\""
+genitive = "игрового автомата \"The Orion Trail\""
+dative = "игровому автомату \"The Orion Trail\""
+accusative = "игровой автомат \"The Orion Trail\""
+instrumental = "игровым автоматом \"The Orion Trail\""
+prepositional = "игровом автомате \"The Orion Trail\""
+gender = "male"
+
+["launchpad control console"]
+nominative = "блюспейс консоль для платформ запуска"
+genitive = "блюспейс консоли для платформ запуска"
+dative = "блюспейс консоли для платформ запуска"
+accusative = "блюспейс консоль для платформ запуска"
+instrumental = "блюспейс консолью для платформ запуска"
+prepositional = "блюспейс консоли для платформ запуска"
+gender = "female"
+
+["modular shield generator"]
+nominative = "модульный генератор щита"
+genitive = "модульного генератора щита"
+dative = "модульному генератору щита"
+accusative = "модульный генератор щита"
+instrumental = "модульным генератором щита"
+prepositional = "модульном генераторе щита"
+gender = "male"
+
+["modular shield node"]
+nominative = "модульный узел щита"
+genitive = "модульного узла щита"
+dative = "модульному узлу щита"
+accusative = "модульный узел щита"
+instrumental = "модульным узлом щита"
+prepositional = "модульном узле щита"
+gender = "male"
+
+["modular shield relay"]
+nominative = "модульное реле щита"
+genitive = "модульного реле щита"
+dative = "модульному реле щита"
+accusative = "модульное реле щита"
+instrumental = "модульным реле щита"
+prepositional = "модульном реле щита"
+gender = "neuter"
+
+["modular shield charger"]
+nominative = "модульное зарядное устройство щита"
+genitive = "модульного зарядного устройства щита"
+dative = "модульному зарядному устройству щита"
+accusative = "модульное зарядное устройство щита"
+instrumental = "модульным зарядным устройством щита"
+prepositional = "модульном зарядном устройстве щита"
+gender = "neuter"
+
+["modular shield well"]
+nominative = "модульный колодец щита"
+genitive = "модульного колодца щита"
+dative = "модульному колодцу щита"
+accusative = "модульный колодец щита"
+instrumental = "модульным колодцем щита"
+prepositional = "модульном колодце щита"
+gender = "male"
+
+["teleporter control console"]
+nominative = "консоль управления телепортом"
+genitive = "консоли управления телепортом"
+dative = "консоли управления телепортом"
+accusative = "консоль управления телепортом"
+instrumental = "консолью управления телепортом"
+prepositional = "консоли управления телепортом"
+gender = "female"
+
+["cryo cell"]
+name = "криокамера"
+genitive = "криокамеры"
+dative = "криокамере"
+accusative = "криокамеру"
+instrumental = "криокамерой"
+prepositional = "криокамере"
+gender = "female"
+
+["ChemMaster 3000"]
+nominative = "ХимМастер 3000"
+genitive = "ХимМастера 3000"
+dative = "ХимМастеру 3000"
+accusative = "ХимМастер 3000"
+instrumental = "ХимМастером 3000"
+prepositional = "ХимМастере 3000"
+gender = "male"
+
+["security camera console"]
+nominative = "консоль камер видеонаблюдения"
+genitive = "консоли камер видеонаблюдения"
+dative = "консоли камер видеонаблюдения"
+accusative = "консоль камер видеонаблюдения"
+instrumental = "консолью камер видеонаблюдения"
+prepositional = "консоли камер видеонаблюдения"
+gender = "female"
+
+["reaction chamber"]
+nominative = "химнагреватель"
+genitive = "химнагревателя"
+dative = "химнагревателю"
+accusative = "химнагреватель"
+instrumental = "химнагревателем"
+prepositional = "химнагревателе"
+gender = "male"
+
+["chem dispenser"]
+nominative = "химический раздатчик"
+genitive = "химического раздатчика"
+dative = "химическому раздатчику"
+accusative = "химический раздатчик"
+instrumental = "химическим раздатчиком"
+prepositional = "химическом раздатчике"
+gender = "male"
+
+["High-performance liquid chromatography machine"]
+nominative = "высокопроизводительная машина для жидкостной хроматографии"
+genitive = "высокопроизводительной машины для жидкостной хроматографии"
+dative = "высокопроизводительной машине для жидкостной хроматографии"
+accusative = "высокопроизводительную машину для жидкостной хроматографии"
+instrumental = "высокопроизводительной машиной для жидкостной хроматографии"
+prepositional = "высокопроизводительной машине для жидкостной хроматографии"
+gender = "female"
+
+["smoke machine"]
+nominative = "дымогенератор"
+genitive = "дымогенератора"
+dative = "дымогенератору"
+accusative = "дымогенератор"
+instrumental = "дымогенератором"
+prepositional = "дымогенераторе"
+gender = "male"
+
+["All-In-One Grinder"]
+nominative = "универсальный измельчитель"
+genitive = "универсального измельчителя"
+dative = "универсальному измельчителю"
+accusative = "универсальный измельчитель"
+instrumental = "универсальным измельчителем"
+prepositional = "универсальном измельчителе"
+gender = "male"
+
+["photobooth"]
+nominative = "фотокабина"
+genitive = "фотокабины"
+dative = "фотокабине"
+accusative = "фотокабину"
+instrumental = "фотокабиной"
+prepositional = "фотокабине"
+gender = "female"
+
+["security photobooth"]
+nominative = "охранная фотокабина"
+genitive = "охранной фотокабины"
+dative = "охранной фотокабине"
+accusative = "охранную фотокабину"
+instrumental = "охранной фотокабиной"
+prepositional = "охранной фотокабине"
+gender = "female"
+
+["destructive analyzer"]
+nominative = "разборочный анализатор"
+genitive = "разборочного анализатора"
+dative = "разборочному анализатору"
+accusative = "разборочный анализатор"
+instrumental = "разборочным анализатором"
+prepositional = "разборочном анализаторе"
+gender = "male"
+
+["E.X.P.E.R.I-MENTOR"]
+nominative = "Э.К.С.П.Е.Р.И-МЕНТАТОР"
+genitive = "Э.К.С.П.Е.Р.И-МЕНТАТОРа"
+dative = "Э.К.С.П.Е.Р.И-МЕНТАТОРу"
+accusative = "Э.К.С.П.Е.Р.И-МЕНТАТОР"
+instrumental = "Э.К.С.П.Е.Р.И-МЕНТАТОРом"
+prepositional = "Э.К.С.П.Е.Р.И-МЕНТАТОРе"
+gender = "male"
+
+["protolathe"]
+nominative = "протолат"
+genitive = "протолата"
+dative = "протолату"
+accusative = "протолат"
+instrumental = "протолатом"
+prepositional = "протолате"
+gender = "male"
+
+["ancient protolathe"]
+nominative = "древний протолат"
+genitive = "древнего протолата"
+dative = "древнему протолату"
+accusative = "древний протолат"
+instrumental = "древним протолатом"
+prepositional = "древнем протолате"
+gender = "male"
+
+["circuit imprinter"]
+nominative = "принтер плат"
+genitive = "принтера плат"
+dative = "принтеру плат"
+accusative = "принтер плат"
+instrumental = "принтером плат"
+prepositional = "принтере плат"
+gender = "male"
+
+["ancient circuit imprinter"]
+nominative = "древний принтер плат"
+genitive = "древнего принтера плат"
+dative = "древнему принтеру плат"
+accusative = "древний принтер плат"
+instrumental = "древним принтером плат"
+prepositional = "древнем принтере плат"
+gender = "male"
+
+["enhanced interrogation chamber"]
+nominative = "улучшенная камера допросов"
+genitive = "улучшенной камеры допросов"
+dative = "улучшенной камере допросов"
+accusative = "улучшенную камеру допросов"
+instrumental = "улучшенной камерой допросов"
+prepositional = "улучшенной камере допросов"
+gender = "female"
+
+["research camera console"]
+nominative = "научная консоль камер видеонаблюдения"
+genitive = "научной консоли камер видеонаблюдения"
+dative = "научной консоли камер видеонаблюдения"
+accusative = "научную консоль камер видеонаблюдения"
+instrumental = "научной консолью камер видеонаблюдения"
+prepositional = "научной консоли камер видеонаблюдения"
+gender = "female"
+
+["R&D Server Controller"]
+nominative = "контроллер сервера R&D"
+genitive = "контроллера сервера R&D"
+dative = "контроллеру сервера R&D"
+accusative = "контроллер сервера R&D"
+instrumental = "контроллером сервера R&D"
+prepositional = "контроллере сервера R&D"
+gender = "male"
+
+["R&D Server"]
+nominative = "сервер R&D"
+genitive = "сервера R&D"
+dative = "серверу R&D"
+accusative = "сервер R&D"
+instrumental = "сервером R&D"
+prepositional = "сервере R&D"
+gender = "male"
+
+["exosuit fabricator"]
+nominative = "фабрикатор экзокостюмов"
+genitive = "фабрикатора экзокостюмов"
+dative = "фабрикатору экзокостюмов"
+accusative = "фабрикатор экзокостюмов"
+instrumental = "фабрикатором экзокостюмов"
+prepositional = "фабрикаторе экзокостюмов"
+gender = "male"
+
+["mech bay power port"]
+nominative = "зарядный порт мехов"
+genitive = "зарядного порта мехов"
+dative = "зарядному порту мехов"
+accusative = "зарядный порт мехов"
+instrumental = "зарядным портом мехов"
+prepositional = "зарядном порту мехов"
+gender = "male"
+
+["Slime management console"]
+nominative = "консоль ксенобиологии управления слизнями"
+genitive = "консоли ксенобиологии управления слизнями"
+dative = "консоли ксенобиологии управления слизнями"
+accusative = "консоль ксенобиологии управления слизнями"
+instrumental = "консолью ксенобиологии управления слизнями"
+prepositional = "консоли ксенобиологии управления слизнями"
+gender = "female"
+
+["DNA scanner"]
+nominative = "сканнер ДНК"
+genitive = "сканера ДНК"
+dative = "сканеру ДНК"
+accusative = "сканнер ДНК"
+instrumental = "сканером ДНК"
+prepositional = "сканере ДНК"
+gender = "male"
+
+["DNA infuser"]
+nominative = "инфузор ДНК"
+genitive = "инфузора ДНК"
+dative = "инфузору ДНК"
+accusative = "инфузор ДНК"
+instrumental = "инфузором ДНК"
+prepositional = "инфузоре ДНК"
+gender = "male"
+
+["DNA Console"]
+nominative = "консоль ДНК"
+genitive = "консоли ДНК"
+dative = "консоли ДНК"
+accusative = "консоль ДНК"
+instrumental = "консолью ДНК"
+prepositional = "консоли ДНК"
+gender = "female"
+
+["Experimental Destructive Scanner"]
+nominative = "экспериментальный разрушающий сканер"
+genitive = "экспериментального разрушающего сканера"
+dative = "экспериментальному разрушающему сканеру"
+accusative = "экспериментальный разрушающий сканер"
+instrumental = "экспериментальным разрушающим сканером"
+prepositional = "экспериментальном разрушающем сканере"
+gender = "male"
+
+["tachyon-doppler array"]
+nominative = "тахионно-доплеровская антенна"
+genitive = "тахионно-доплеровской антенны"
+dative = "тахионно-доплеровской антенне"
+accusative = "тахионно-доплеровскую антенну"
+instrumental = "тахионно-доплеровской антенной"
+prepositional = "тахионно-доплеровской антенне"
+gender = "female"
+
+["Tank Compressor"]
+nominative = "компрессор для баллонов"
+genitive = "компрессора для баллонов"
+dative = "компрессору для баллонов"
+accusative = "компрессор для баллонов"
+instrumental = "компрессором для баллонов"
+prepositional = "компрессоре для баллонов"
+gender = "male"
+
+["AI upload console"]
+nominative = "консоль загрузки ИИ"
+genitive = "консоли загрузки ИИ"
+dative = "консоли загрузки ИИ"
+accusative = "консоль загрузки ИИ"
+instrumental = "консолью загрузки ИИ"
+prepositional = "консоли загрузки ИИ"
+gender = "female"
 
 ["50::: inlet compressor"]
 original = "turbine inlet compressor"
@@ -510,111 +1447,4 @@ original = "turbine outlet"
 ["53::: Temperature control unit"]
 original = "thermomachine"
 
-["54::: space heater"]
-
-["55::: teleporter station"]
-nominative = "станция телепорта"
-
-["56::: teleporter hub"]
-nominative = "хаб телепорта"
-
-["57::: quantum pad"]
-nominative = "квантовая платформа"
-
-["58::: Bot pad"]
-nominative = "лаунчпад ботов"
-
-["59::: bluespace launchpad"]
-nominative = "блюспейс лаунчпад"
-
-["5::: The Orion Trail"]
-nominative = "игровой автомат \"The Orion Trail\""
-
-["60::: launchpad control console"]
-nominative = "блюспейс консоль для лаунчпада"
-
-["61::: modular shield generator"]
-
-["62::: modular shield node"]
-
-["63::: modular shield relay"]
-
-["64::: modular shield charger"]
-
-["65::: modular shield well"]
-
-["66::: teleporter control console"]
-
-["67::: cryo cell"]
-name = "криокамера"
-
-["68::: chem dispenser"]
-
-["69::: ChemMaster 3000"]
-nominative = "ХимМастер 3000"
-
-["6::: security camera console"]
-
-["70::: reaction chamber"]
-nominative = "химнагреватель"
-
-["71::: High-performance liquid chromatography machine"]
-
-["72::: smoke machine"]
-
-["73::: All-In-One Grinder"]
-nominative = "универсальный измельчитель"
-
-["74::: enhanced interrogation chamber"]
-
-["75::: photobooth"]
-
-["76::: security photobooth"]
-
-["79::: destructive analyzer"]
-nominative = "разборочный анализатор"
-
-["7::: research camera console"]
-
-["80::: E.X.P.E.R.I-MENTOR"]
-
-["81::: protolathe"]
-nominative = "протолат"
-
-["82::: ancient protolathe"]
-nominative = "древний протолат"
-
-["83::: circuit imprinter"]
-nominative = "принтер плат"
-
-["84::: ancient circuit imprinter"]
-nominative = "древний принтер плат"
-
-["85::: R&D Server Controller"]
-
-["86::: R&D Server"]
-nominative = "сервер R&D"
-
-["87::: exosuit fabricator"]
-nominative = "фабрикатор экзокостюмов"
-
-["89::: mech bay power port"]
-nominative = "зарядный порт мехов"
-
-["8::: Slime management console"] # "Xenobiology Console"
-
-["90::: DNA scanner"]
-
-["91::: DNA infuser"]
-
-["92::: DNA Console"]
-
-["93::: Experimental Destructive Scanner"]
-
-["94::: tachyon-doppler array"]
-
-["95::: anomaly refinery"]
-
-["96::: Tank Compressor"]
-
-["9::: AI upload console"]
+["anomaly refinery"]
