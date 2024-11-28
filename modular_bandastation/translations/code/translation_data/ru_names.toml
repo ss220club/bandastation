@@ -1369,15 +1369,6 @@ instrumental = "целеуказателем на экипаж"
 prepositional = "целеуказателе на экипаж"
 gender = "male"
 
-["medical cyborg crew pinpointer"]
-nominative = "целеуказатель на экипаж медицинского киборга"
-genitive = "целеуказателя на экипаж медицинского киборга"
-dative = "целеуказателю на экипаж медицинского киборга"
-accusative = "целеуказатель на экипаж медицинского киборга"
-instrumental = "целеуказателем на экипаж медицинского киборга"
-prepositional = "целеуказателе на экипаж медицинского киборга"
-gender = "male"
-
 ["syndicate pinpointer"]
 nominative = "целеуказатель синдиката"
 genitive = "целеуказателя синдиката"
@@ -4948,6 +4939,45 @@ instrumental = "зарядным портом мехов"
 prepositional = "зарядном порту мехов"
 gender = "male"
 
+["cyborg endoskeleton"]
+nominative = "эндоскелет киборга"
+
+["cyborg torso"]
+nominative = "кибернетический торс"
+
+["cyborg head"]
+nominative = "кибернетическая голова"
+
+["cyborg left arm"]
+nominative = "кибернетическая левая рука"
+
+["cyborg right arm"]
+nominative = "кибернетическая правая рука"
+
+["cyborg left leg"]
+nominative = "кибернетическая левая нога"
+
+["cyborg right leg"]
+nominative = "кибернетическая правая нога"
+
+["advanced robotic left arm"]
+nominative = "продвинутая кибернетическая левая рука"
+
+["advanced robotic right arm"]
+nominative = "продвинутая кибернетическая правая рука"
+
+["advanced robotic left leg"]
+nominative = "продвинутая кибернетическая левая ногас"
+
+["advanced robotic right leg"]
+nominative = "продвинутая кибернетическая правая нога"
+
+["cyborg reclassification board"]
+nominative = "модуль переименования киборга"
+
+["cyborg emergency reboot module"]
+nominative = "модуль экстренной перезагрузки киборга"
+
 # MARK: Exosuits
 # Ripley
 ["Ripley Central Control module (Exosuit Board)"]
@@ -5706,15 +5736,13 @@ prepositional = "броне экзокостюма \"Джастис\""
 gender = "female"
 
 # MARK: Exosuit equipment
-
-
 ["LBX AC 10 \"Scattershot\""]
-nominative = "дробовик LBX AC 10 \"Scattershot\""
-genitive = "дробовика LBX AC 10 \"Scattershot\""
-dative = "дробовику LBX AC 10 \"Scattershot\""
-accusative = "дробовик LBX AC 10 \"Scattershot\""
-instrumental = "дробовиком LBX AC 10 \"Scattershot\""
-prepositional = "дробовике LBX AC 10 \"Scattershot\""
+nominative = "дробовик LBX AC 10 \"Залп\""
+genitive = "дробовика LBX AC 10 \"Залп\""
+dative = "дробовику LBX AC 10 \"Залп\""
+accusative = "дробовик LBX AC 10 \"Залп\""
+instrumental = "дробовиком LBX AC 10 \"Залп\""
+prepositional = "дробовике LBX AC 10 \"Залп\""
 gender = "male"
 
 ["scattershot ammo box"]
@@ -5727,12 +5755,12 @@ prepositional = "патронах для LBX AC 10"
 gender = "plural"
 
 ["FNX-99 \"Hades\" Carbine"]
-nominative = "карабин FNX-99 \"Hades\""
-genitive = "карабина FNX-99 \"Hades\""
-dative = "карабину FNX-99 \"Hades\""
-accusative = "карабин FNX-99 \"Hades\""
-instrumental = "карабином FNX-99 \"Hades\""
-prepositional = "карабине FNX-99 \"Hades\""
+nominative = "карабин FNX-99 \"Аид\""
+genitive = "карабина FNX-99 \"Аид\""
+dative = "карабину FNX-99 \"Аид\""
+accusative = "карабин FNX-99 \"Аид\""
+instrumental = "карабином FNX-99 \"Аид\""
+prepositional = "карабине FNX-99 \"Аид\""
 gender = "male"
 
 ["incendiary ammo box"]
@@ -5754,48 +5782,48 @@ prepositional = "тяжелой ионной пушке MKIV"
 gender = "female"
 
 ["MKI Tesla Cannon"]
-nominative = "тесла пушка MK1"
-genitive = "тесла пушки MK1"
-dative = "тесла пушке MK1"
-accusative = "тесла пушку MK1"
-instrumental = "тесла пушкой MK1"
-prepositional = "тесла пушке MK1"
+nominative = "тесла-пушка MK1"
+genitive = "тесла-пушки MK1"
+dative = "тесла-пушке MK1"
+accusative = "тесла-пушку MK1"
+instrumental = "тесла-пушкой MK1"
+prepositional = "тесла-пушке MK1"
 gender = "female"
 
 ["CH-PS \"Immolator\" laser"]
-nominative = "лазер CH-PS \"Immolator\""
-genitive = "лазера CH-PS \"Immolator\""
-dative = "лазеру CH-PS \"Immolator\""
-accusative = "лазер CH-PS \"Immolator\""
-instrumental = "лазером CH-PS \"Immolator\""
-prepositional = "лазере CH-PS \"Immolator\""
+nominative = "лазер CH-PS \"Испепелитель\""
+genitive = "лазера CH-PS \"Испепелитель\""
+dative = "лазеру CH-PS \"Испепелитель\""
+accusative = "лазер CH-PS \"Испепелитель\""
+instrumental = "лазером CH-PS \"Испепелитель\""
+prepositional = "лазере CH-PS \"Испепелитель\""
 gender = "male"
 
 ["CH-LC \"Solaris\" laser cannon"]
-nominative = "лазерная пушка \"Solaris\""
-genitive = "лазерной пушки \"Solaris\""
-dative = "лазерной пушке \"Solaris\""
-accusative = "лазерную пушку \"Solaris\""
-instrumental = "лазерной пушкой \"Solaris\""
-prepositional = "лазерной пушке \"Solaris\""
+nominative = "лазерная пушка \"Солярис\""
+genitive = "лазерной пушки \"Солярис\""
+dative = "лазерной пушке \"Солярис\""
+accusative = "лазерную пушку \"Солярис\""
+instrumental = "лазерной пушкой \"Солярис\""
+prepositional = "лазерной пушке \"Солярис\""
 gender = "female"
 
 ["CH-DS \"Peacemaker\" disabler"]
-nominative = "дизейблер CH-DS \"Peacemaker\""
-genitive = "дизейблера CH-DS \"Peacemaker\""
-dative = "дизейблеру CH-DS \"Peacemaker\""
-accusative = "дизейблер CH-DS \"Peacemaker\""
-instrumental = "дизейблером CH-DS \"Peacemaker\""
-prepositional = "дизейблере CH-DS \"Peacemaker\""
+nominative = "дизейблер CH-DS \"Миротворец\""
+genitive = "дизейблера CH-DS \"Миротворец\""
+dative = "дизейблеру CH-DS \"Миротворец\""
+accusative = "дизейблер CH-DS \"Миротворец\""
+instrumental = "дизейблером CH-DS \"Миротворец\""
+prepositional = "дизейблере CH-DS \"Миротворец\""
 gender = "male"
 
 ["SGL-6 grenade launcher"]
-nominative = "гранатомёт SGL-6"
-genitive = "гранатомёта SGL-6"
-dative = "гранатомёту SGL-6"
-accusative = "гранатомёт SGL-6"
-instrumental = "гранатомётом SGL-6"
-prepositional = "гранатомёте SGL-6"
+nominative = "светошумовой гранатомёт SGL-6"
+genitive = "светошумового гранатомёта SGL-6"
+dative = "светошумовому гранатомёту SGL-6"
+accusative = "светошумовой гранатомёт SGL-6"
+instrumental = "светошумовым гранатомётом SGL-6"
+prepositional = "светошумовом гранатомёте SGL-6"
 gender = "male"
 
 ["launchable flashbangs"]
@@ -5805,24 +5833,6 @@ dative = "светошумовым для SGL-6"
 accusative = "светошумовые для SGL-6"
 instrumental = "светошумовыми для SGL-6"
 prepositional = "светошумовых для SGL-6"
-gender = "plural"
-
-["PEP-6 missile rack"]
-nominative = "ракетомёт PEP-6"
-genitive = "ракетомёта PEP-6"
-dative = "ракетомёту PEP-6"
-accusative = "ракетомёт PEP-6"
-instrumental = "ракетомётом PEP-6"
-prepositional = "ракетомёте PEP-6"
-gender = "male"
-
-["precision explosive missiles"]
-nominative = "ракеты для PEP-6"
-genitive = "ракет для PEP-6"
-dative = "ракетам для PEP-6"
-accusative = "ракеты для PEP-6"
-instrumental = "ракетами для PEP-6"
-prepositional = "ракетах для PEP-6"
 gender = "plural"
 
 ["SOB-3 grenade launcher"]
@@ -5843,12 +5853,502 @@ instrumental = "кластерными гранатами для SOB-3"
 prepositional = "кластерных гранатах для SOB-3"
 gender = "plural"
 
+["precision explosive missiles"]
+nominative = "ракеты для PEP-6"
+genitive = "ракет для PEP-6"
+dative = "ракетам для PEP-6"
+accusative = "ракеты для PEP-6"
+instrumental = "ракетами для PEP-6"
+prepositional = "ракетах для PEP-6"
+gender = "plural"
+
+["PEP-6 missile rack"]
+nominative = "пусковая ракетная установка PEP-6"
+
+["mounted wormhole generator"]
+nominative = "генератор червоточин экзокостюма"
+
+["mounted teleporter"]
+nominative = "телепортер экзокостюма"
+
+["mounted RCD"]
+nominative = "УБС экзокостюма"
+
+["RCS thruster package"]
+nominative = "RCS толкатели"
+
+["mounted gravitational catapult"]
+nominative = "гравитационная катапульта экзокостюма"
+
+["exosuit repair droid"]
+nominative = "ремонтный дроид экзокостюма"
+
+["Impact Cushion Plates"]
+nominative = "реактивный усилитель брони"
+
+["Projectile Shielding"]
+nominative = "отражающий усилитель брони"
+
+["diamond-tipped exosuit drill"]
+nominative = "алмазный бур экзокостюма"
+
+["217-D Heavy Plasma Cutter"]
+nominative = "тяжелый плазменный резак 217-D"
+
+["Exosuit Proto-kinetic Accelerator"]
+nominative = "протокинетический акселератор экзокостюма"
+
+["Ultra AC 2"]
+nominative = "пулемёт Ultra AC 2"
+
+["machine gun ammo box"]
+nominative = "патроны для Ultra AC 2"
+
+["mounted sleeper"]
+nominative = "слипер экзокостюма"
+
+["exosuit syringe gun"]
+nominative = "шприцемёт экзокостюма"
+
+["exosuit medical beamgun"]
+nominative = "медицинская лучевая пушка экзокостюма"
+
+["Ripley MK-II Conversion Kit"]
+nominative = "набор для переоборудования в Рипли MK-II"
+
+["Paddy Conversion Kit"]
+nominative = "набор для переоборудования в Падди"
+
+["hydraulic clamp"]
+nominative = "гидравлическая клешня"
+
+["hydraulic claw"]
+nominative = "гидравлический коготь"
+
+["exosuit drill"]
+nominative = "дрель экзокостюма"
+
+["413::: exosuit mining scanner"]
+nominative = "шахтёрский сканер экзокостюма"
+
+["414::: exosuit extinguisher"]
+nominative = "огнетушитель экзокостюма"
+
+["415::: plasma engine"]
+nominative = "плазменный генератор"
+
+["416::: mousetrap mortar"]
+nominative = "мышеловочная мортира"
+
+["417::: banana mortar"]
+nominative = "банановая мортира"
+
+["418::: HoNkER BlAsT 5000"]
+nominative = "ХоНКоВзРыВ 5000"
+
+["419::: Oingo Boingo Punch-face"]
+nominative = "Оинго-Боинго лицебитель"
+
+["420::: mounted radio"]
+nominative = "рация экзокостюма"
+
+["421::: mounted air tank"]
+nominative = "баллон воздуха экзокостюма"
+
+["461::: exosuit tracking beacon"]
+nominative = "маячок слежения экзокостюма"
+
+["462::: exosuit AI control beacon"]
+nominative = "маячок для управления ИИ экзокостюма"
+
+["463::: exosuit-mounted camera"]
+nominative = "камера экзокостюма"
+
 # MARK: Silicons
 
 ["459::: Man-Machine Interface"]
+nominative = "интерфейс человек-машина"
+
 ["460::: positronic brain"]
+nominative = "позитронный мозг"
+
+["431::: self-repair module"]
+nominative = "модуль саморемонта"
+
+["429::: illegal equipment module"]
+nominative = "модуль нелегального оборудования"
+
+["424::: ion thruster upgrade"]
+nominative = "ионные толкатели"
+
+["425::: cyborg rapid disabler cooling module"]
+nominative = "модуль быстрого охлаждения дизейблера"
+
+["426::: mining cyborg diamond drill"]
+nominative = "алмазная дрель шахтёрского киборга"
+
+["427::: mining cyborg satchel of holding"]
+nominative = "ранец хранения шахтёрского киборга"
+
+["428::: mining cyborg lavaproof chassis"]
+nominative = "лавастойкие шасси шахтёрского киборга"
+
+["430::: borg model picker (Clown)"]
+nominative = "модуль набора клоуна"
+
+["432::: medical cyborg expanded hypospray"]
+nominative = "расширенный гипоспрей медицинского киборга"
+
+["433::: cyborg piercing hypospray"]
+nominative = "пробивающий гипоспрей медицинского киборга"
+
+["434::: medical cyborg defibrillator"]
+nominative = "дефибрилятор медицинского киборга"
+
+["435::: medical cyborg surgical processor"]
+nominative = "хирургический процессор медицинского киборга"
+
+["436::: cyborg surgical omni-tool upgrade"]
+nominative = "хирургический омнитул киборга"
+
+["437::: cyborg engineering omni-tool upgrade"]
+nominative = "инженерный омнитул киборга"
+
+["438::: janitor cyborg trash bag of holding"]
+nominative = "мусорный мешок хранения уборочного киборга"
+
+["439::: janitor cyborg advanced mop"]
+nominative = "продвинутая швабра уборочного киборга"
+
+["440::: janitor cyborg plating repair tool"]
+nominative = "инструмент ремонта покрытия уборочного киборга"
+
+["441::: janitor cyborg plunging tool"]
+nominative = "вантуз уборочного киборга"
+
+["442::: janitor cyborg high capacity replacer"]
+nominative = "лампозаменитель высокой вместимости уборочного киборга"
+
+["443::: Service Cyborg Rolling Table Dock"]
+nominative = "док подвижного стола сервисного киборга"
+
+["444::: Service Cyborg Condiment Synthesiser"]
+nominative = "синтезатор приправ сервисного киборга"
+
+["445::: Service Cyborg Kitchen Toolset"]
+nominative = "набор повара сервисного киборга"
+
+["446::: Service Cyborg Botany Tools"]
+nominative = "набор ботаника сервисного киборга"
+
+["447::: glass storage apparatus"]
+nominative = "держатель стаканов сервисного киборга"
+
+["448::: Service Cyborg Service Apparatus"]
+nominative = "держатель обслуживания сервисного киборга"
+
+["449::: Service Cyborg Cookbook"]
+nominative = "поваренная книга сервисного киборга"
+
+["450::: borg expander"]
+nominative = "модуль увеличения киборга"
+
+["medical cyborg crew pinpointer"]
+nominative = "целеуказатель на экипаж медицинского киборга"
+genitive = "целеуказателя на экипаж медицинского киборга"
+dative = "целеуказателю на экипаж медицинского киборга"
+accusative = "целеуказатель на экипаж медицинского киборга"
+instrumental = "целеуказателем на экипаж медицинского киборга"
+prepositional = "целеуказателе на экипаж медицинского киборга"
+gender = "male"
+
+["457::: experimental push broom"]
+nominative = "экспериментальная швабра-толкалка"
+
+["451::: B.O.R.I.S. module"]
+nominative = "модуль управления ИИ-киборг Б.О.Р.И.С."
+
+["452::: engineering cyborg RPED"]
+nominative = "быстрозаменитель компонентов инженерного киборга"
+
+["453::: engineering integrated power inducer"]
+nominative = "интегрированный индуктор инженерного киборга"
+
+["454::: circuit manipulation apparatus"]
+nominative = "держатель плат инженерного киборга"
+
+["455::: beaker storage apparatus"]
+nominative = "держатель мензурок инженерного киборга"
+
+# MARK: MOD
+["464::: MOD shell"]
+
+["465::: MOD helmet"]
+
+["466::: MOD chestplate"]
+
+["467::: MOD gauntlets"]
+
+["468::: MOD boots"]
+
+["469::: MOD external plating"]
+
+["470::: MOD Civilian Plating"] # Unique Design Name
+
+["470::: MOD external plating"]
+
+["471::: MOD Engineering Plating"] # Unique Design Name
+
+["471::: MOD external plating"]
+
+["472::: MOD Atmospheric Plating"] # Unique Design Name
+
+["472::: MOD external plating"]
+
+["473::: MOD Medical Plating"] # Unique Design Name
+
+["473::: MOD external plating"]
+
+["474::: MOD Security Plating"] # Unique Design Name
+
+["474::: MOD external plating"]
+
+["475::: MOD Cosmohonk Plating"] # Unique Design Name
+
+["475::: MOD external plating"]
+
+["476::: MOD paint kit"]
+
+["477::: MODlink scryer"]
+
+["478::: MOD storage module"]
+
+["478::: Storage Module"] # Unique Design Name
+
+["479::: Expanded Storage Module"] # Unique Design Name
+
+["479::: MOD expanded storage module"]
+
+["480::: MOD medical visor module"]
+
+["480::: Medical Visor Module"] # Unique Design Name
+
+["481::: Diagnostic Visor Module"] # Unique Design Name
+
+["481::: MOD diagnostic visor module"]
+
+["482::: MOD security visor module"]
+
+["482::: Security Visor Module"] # Unique Design Name
+
+["483::: MOD meson visor module"]
+
+["483::: Meson Visor Module"] # Unique Design Name
+
+["484::: MOD welding protection module"]
+
+["484::: Welding Protection Module"] # Unique Design Name
+
+["485::: MOD safety-first head protection module"]
+
+["485::: Safety-First Head Protection Module"] # Unique Design Name
+
+["486::: MOD t-ray scan module"]
+
+["486::: T-Ray Scanner Module"] # Unique Design Name
+
+["487::: Health Analyzer Module"] # Unique Design Name
+
+["487::: MOD health analyzer module"]
+
+["488::: Cloak Module"] # Unique Design Name
+
+["488::: MOD prototype cloaking module"]
+
+["489::: Ion Jetpack Module"] # Unique Design Name
+
+["489::: MOD ion jetpack module"]
+
+["490::: MOD magnetic stability module"]
+
+["490::: Magnetic Stabilizator Module"] # Unique Design Name
+
+["491::: MOD magnetic harness module"]
+
+["491::: Magnetic Harness Module"] # Unique Design Name
+
+["492::: Emergency Tether Module"] # Unique Design Name
+
+["492::: MOD emergency tether module"]
+
+["493::: Eating Apparatus Module"] # Unique Design Name
+
+["493::: MOD eating apparatus module"]
+
+["494::: MOD radiation protection module"]
+
+["494::: Radiation Protection Module"] # Unique Design Name
+
+["495::: EMP Shield Module"] # Unique Design Name
+
+["495::: MOD EMP shield module"]
+
+["496::: Flashlight Module"] # Unique Design Name
+
+["496::: MOD flashlight module"]
+
+["497::: MOD reagent scanner module"]
+
+["497::: Reagent Scanner Module"] # Unique Design Name
+
+["498::: Internal GPS Module"] # Unique Design Name
+
+["498::: MOD internal GPS module"]
+
+["499::: Constructor Module"] # Unique Design Name
+
+["499::: MOD constructor module"]
+
+
+
+["500::: MOD quick carry module"]
+
+["500::: Quick Carry Module"] # Unique Design Name
+
+["501::: Longfall Module"] # Unique Design Name
+
+["501::: MOD longfall module"]
+
+["502::: MOD thermal regulator module"]
+
+["502::: Thermal Regulator Module"] # Unique Design Name
+
+["503::: Injector Module"] # Unique Design Name
+
+["503::: MOD injector module"]
+
+["504::: Bike Horn Module"] # Unique Design Name
+
+["504::: MOD bike horn module"]
+
+["505::: MOD microwave beam module"]
+
+["505::: Microwave Beam Module"] # Unique Design Name
+
+["506::: MOD waddle module"]
+
+["506::: Waddle Module"] # Unique Design Name
+
+["507::: Crate Clamp Module"] # Unique Design Name
+
+["507::: MOD hydraulic clamp module"]
+
+["508::: Drill Module"] # Unique Design Name
+
+["508::: MOD drill module"]
+
+["509::: MOD ore bag module"]
+
+["509::: Ore Bag Module"] # Unique Design Name
+
+["510::: MOD organizer module"]
+
+["510::: Organizer Module"] # Unique Design Name
+
+["511::: MOD pathfinder module"]
+
+["511::: Pathfinder Module"] # Unique Design Name
+
+["512::: DNA Lock Module"] # Unique Design Name
+
+["512::: MOD DNA lock module"]
+
+["513::: MOD plasma stabilizer module"]
+
+["513::: Plasma Stabilizer Module"] # Unique Design Name
+
+["514::: Glove Translator Module"] # Unique Design Name
+
+["514::: MOD glove translator module"]
+
+["515::: MOD resin mister module"]
+
+["515::: Resin Mister Module"] # Unique Design Name
+
+["516::: Holster Module"] # Unique Design Name
+
+["516::: MOD holster module"]
+
+["517::: Active Sonar Module"] # Unique Design Name
+
+["517::: MOD active sonar"]
+
+["518::: MOD projectile dampener module"]
+
+["518::: Projectile Dampener Module"] # Unique Design Name
+
+["519::: MOD surgical processor module"]
+
+["519::: Surgical Processor Module"] # Unique Design Name
+
+["520::: MOD thread ripper module"]
+
+["520::: Thread Ripper Module"] # Unique Design Name
+
+["521::: Defibrillator Module"] # Unique Design Name
+
+["521::: MOD defibrillator module"]
+
+["522::: MOD status readout module"]
+
+["522::: Status Readout Module"] # Unique Design Name
+
+["523::: MOD patient transport module"]
+
+["523::: Patient Transport Module"] # Unique Design Name
+
+["524::: Criminal Capture Module"] # Unique Design Name
+
+["524::: MOD criminal capture module"]
+
+["525::: MOD mirage grenade dispenser module"]
+
+["525::: Mirage Grenade Dispenser Module"] # Unique Design Name
+
+["526::: Disposal Connector Module"] # Unique Design Name
+
+["526::: MOD disposal selector module"]
+
+["527::: Joint Torsion Ratchet Module"] # Unique Design Name
+
+["527::: MOD joint torsion ratchet module"]
+
+["528::: MOD recycler module"]
+
+["528::: Recycler Module"] # Unique Design Name
+
+["529::: MOD shooting assistant module"]
+
+["529::: Shooting Assistant Module"] # Unique Design Name
+
+["530::: Anti-Gravity Module"] # Unique Design Name
+
+["530::: MOD anti-gravity module"]
+
+["531::: MOD teleporter module"]
+
+["531::: Teleporter Module"] # Unique Design Name
+
+["532::: Kinesis Module"] # Unique Design Name
+
+["532::: MOD kinesis module"]
+
+["533::: MOD fishing glove module"]
 
 # MARK: AI modules
+
+["AI core (AI Core Board)"]
+nominative = "плата ядра ИИ"
 
 ["'Asimov' Core AI Module"]
 nominative = "модуль основных законов ИИ 'Азимов'"
