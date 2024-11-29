@@ -94,7 +94,7 @@
 			if(possible_shippable_item.item_flags & ABSTRACT)
 				continue
 		if(inserted_scan_id.registered_account.civilian_bounty.applies_to(possible_shippable))
-			status_report += "Target Applicable."
+			status_report += "Цель применима."
 			playsound(loc, 'sound/machines/synth/synth_yes.ogg', 30 , TRUE)
 			return
 	status_report += "Цель неприменима."
