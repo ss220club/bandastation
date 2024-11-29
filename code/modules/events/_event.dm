@@ -150,7 +150,7 @@
 	if(SSticker.HasRoundStarted() && !roundstart && !admin_forced)
 		message_admins("<font color='[COLOR_ADMIN_PINK]'>Storyteller: Event triggering in [DisplayTimeText(RANDOM_EVENT_ADMIN_INTERVENTION_TIME)]: [name]. (\
 			<a href='?src=[REF(src)];cancel=1'>CANCEL</a> | \
-			<a href='?src=[REF(src)];something_else=1'>SOMETHING ELSE</a>)</font>")
+			<a href='?src=[REF(src)];different_event=1'>SOMETHING ELSE</a>)</font>")
 		for(var/client/staff as anything in GLOB.admins)
 			if(staff?.prefs.read_preference(/datum/preference/toggle/comms_notification))
 				SEND_SOUND(staff, sound('sound/misc/server-ready.ogg'))
@@ -162,7 +162,7 @@
 		if(!roundstart && !admin_forced)
 			message_admins("<font color='[COLOR_ADMIN_PINK]'>Storyteller: Event triggering in [DisplayTimeText(RANDOM_EVENT_ADMIN_INTERVENTION_TIME * 0.5)]: [name]. (\
 			<a href='?src=[REF(src)];cancel=1'>CANCEL</a> | \
-			<a href='?src=[REF(src)];something_else=1'>SOMETHING ELSE</a>)</font>")
+			<a href='?src=[REF(src)];different_event=1'>SOMETHING ELSE</a>)</font>")
 			sleep(RANDOM_EVENT_ADMIN_INTERVENTION_TIME * 0.5)
 	else
 		message_admins("<font color='[COLOR_ADMIN_PINK]'> Roundstart event chosen: [name].")
@@ -196,15 +196,18 @@
 		message_admins("[key_name_admin(usr)] cancelled event [name].")
 		log_admin_private("[key_name(usr)] cancelled event [name].")
 		SSblackbox.record_feedback("tally", "event_admin_cancelled", 1, typepath)
+		SSgamemode.remove_scheduled_event(src)
 	if(href_list["different_event"])
 		if(!triggering)
 			to_chat(usr, span_admin("Too late to change events now!"))
 			return
+		SSevents.spawnEvent(excluded_event = src)
 		triggering = FALSE
 		message_admins("[key_name_admin(usr)] chose to have event [name] rolled into a different event.")
 		log_admin_private("[key_name(usr)] rerolled event [name].")
 		SSblackbox.record_feedback("tally", "event_admin_rerolled", 1, typepath)
-		SSevents.spawnEvent(excluded_event = src)
+		SSgamemode.remove_scheduled_event(src)
+
 
 /*
 Runs the event
