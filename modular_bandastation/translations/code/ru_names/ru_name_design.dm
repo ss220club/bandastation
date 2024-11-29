@@ -8,7 +8,7 @@
 	var/new_name = declent_ru_initial(name)
 	// Unique Design Name
 	if(new_name)
-		return new_name
+		return capitalize(new_name)
 	// Get built atom's name
 	if(ispath(build_path, /atom))
 		var/atom/design_result = build_path
