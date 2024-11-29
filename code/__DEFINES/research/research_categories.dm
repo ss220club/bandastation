@@ -8,11 +8,11 @@
 #define RND_SUBCATEGORY_WEAPONS_KITS "/Комплекты деталей оружия"
 
 // Wiremod Categories
-#define RND_CATEGORY_CIRCUITRY "/Платы"
+#define RND_CATEGORY_CIRCUITRY "/Схемы"
 #define RND_CATEGORY_CIRCUITRY_CORE "/Основное"
-#define RND_SUBCATEGORY_CIRCUITRY_COMPONENTS "/Компоненты плат"
-#define RND_SUBCATEGORY_CIRCUITRY_BCI_COMPONENTS "/Компоненты плат BCI"
-#define RND_SUBCATEGORY_CIRCUITRY_SHELLS "/Оболочки для плат"
+#define RND_SUBCATEGORY_CIRCUITRY_COMPONENTS "/Компоненты схем"
+#define RND_SUBCATEGORY_CIRCUITRY_BCI_COMPONENTS "/Компоненты схем ИМК"
+#define RND_SUBCATEGORY_CIRCUITRY_SHELLS "/Оболочки для схем"
 
 // Tool Categories
 #define RND_CATEGORY_TOOLS "/Инструменты"
