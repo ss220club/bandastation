@@ -347,7 +347,7 @@
 		user.visible_message(span_danger("[capitalize(user.declent_ru(NOMINATIVE))] начинает [scanned ? "опытно" : ""] вправлять [limb.ru_plaintext_zone[ACCUSATIVE] || limb.plaintext_zone] у [victim.declent_ru(GENITIVE)] при помощи [I.declent_ru(GENITIVE)]."), span_notice("Вы вправляете [limb.ru_plaintext_zone[ACCUSATIVE] || limb.plaintext_zone] у [victim.declent_ru(GENITIVE)] при помощи [I.declent_ru(GENITIVE)][scanned ? ", держа в голове показатели сканера" : ""]..."))
 
 	if(!do_after(user, treatment_delay, target = victim, extra_checks=CALLBACK(src, PROC_REF(still_exists))))
-		return
+		return TRUE
 
 	if(victim == user)
 		limb.receive_damage(brute=15, wound_bonus=CANT_WOUND)
@@ -359,6 +359,7 @@
 
 	victim.emote("scream")
 	qdel(src)
+	return TRUE
 
 /*
 	Severe (Hairline Fracture)
