@@ -118,9 +118,9 @@
 	if(!current_bake_time) //Not baked yet
 		if(positive_result)
 			if(initial(bake_result.gender) == PLURAL)
-				examine_list += span_notice("[capitalize(parent.declent_ru(NOMINATIVE))] [span_bold("запекается")] в [declent_ru_initial(bake_result::name, ACCUSATIVE)].")
+				examine_list += span_notice("[capitalize(parent.declent_ru(NOMINATIVE))] [span_bold("запекается")] в [declent_ru_initial(bake_result::name, ACCUSATIVE, bake_result::name)].")
 			else
-				examine_list += span_notice("[capitalize(parent.declent_ru(NOMINATIVE))] [span_bold("запекается")] в [declent_ru_initial(bake_result::name, ACCUSATIVE)].")
+				examine_list += span_notice("[capitalize(parent.declent_ru(NOMINATIVE))] [span_bold("запекается")] в [declent_ru_initial(bake_result::name, ACCUSATIVE, bake_result::name)].")
 		return
 
 	if(positive_result)

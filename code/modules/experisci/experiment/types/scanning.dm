@@ -71,7 +71,7 @@
  */
 /datum/experiment/scanning/proc/serialize_progress_stage(atom/target, list/seen_instances)
 	var/scanned_total = (traits & EXPERIMENT_TRAIT_DESTRUCTIVE && !(traits & EXPERIMENT_TRAIT_TYPECACHE)) ? scanned[target] : seen_instances.len
-	var/message = scan_message || "Скан образцов: [declent_ru_initial(target::name, NOMINATIVE)]"
+	var/message = scan_message || "Скан образцов: [declent_ru_initial(target::name, NOMINATIVE, target::name)]"
 	return EXPERIMENT_PROG_INT(message, scanned_total, required_atoms[target])
 
 /**
