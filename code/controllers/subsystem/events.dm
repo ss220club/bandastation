@@ -85,12 +85,14 @@ SUBSYSTEM_DEF(events)
 			continue
 		if(!event_to_check.can_spawn_event(players_amt))
 			continue
+
 		if(event_to_check.roundstart) //for round-start events etc.
 			var/res = SSgamemode.TriggerEvent(event_to_check) // BANDASTATION EDIT - STORYTELLER - перевод выстрелов событий в сторителлер
 			if(res == EVENT_INTERRUPTED)
 				continue //like it never happened
 			if(res == EVENT_CANT_RUN)
 				return
+			return  // Отмена дальнешего исполнения если удачная активация события
 		else
 			event_roster[event_to_check] = event_to_check.weight
 
