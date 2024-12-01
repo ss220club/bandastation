@@ -5,6 +5,7 @@
 	base_antags = 1
 	maximum_antags = 1
 	maximum_antags_global = 1
+	min_players = 20
 
 	min_players = TRUE
 	roundstart = FALSE
@@ -23,14 +24,14 @@
 	name = "Malfunctioning AI"
 
 	roundstart = TRUE
-	earliest_start = 1 MINUTES
+	min_players = 20
 
 	typepath = /datum/round_event/antagonist/solo/malf_ai/roundstart
 	weight = 10
 
 // God has abandoned us
 /datum/round_event_control/antagonist/solo/malf/roundstart/get_candidates()
-	var/list/candidates = SSgamemode.get_candidates(antag_flag, pick_roundstart_players = TRUE, restricted_roles = restricted_roles)
+	var/list/candidates = SSgamemode.get_candidates(antag_flag, pick_roundstart_players = TRUE)
 	. = list()
 	var/datum/job/aijob = SSjob.get_job(JOB_AI)
 	for(var/mob/candidate as anything in candidates)

@@ -135,7 +135,7 @@
 
 	return message
 
-/datum/round_event_control/proc/preRunEvent(admin_forced = FALSE, round_start_event = FALSE)
+/datum/round_event_control/proc/preRunEvent(admin_forced = FALSE)
 	if(!ispath(typepath, /datum/round_event))
 		return EVENT_CANT_RUN
 

@@ -17,5 +17,5 @@
 	var/mob/living/carbon/human/obsessed = pick_n_take(candidate_list)
 	obsessed.gain_trauma(/datum/brain_trauma/special/obsessed)
 
-/datum/round_event/antagonist/solo/obsessed/candidate_setup(datum/round_event_control/antagonist/cast_control)
+/datum/round_event/antagonist/solo/obsessed/candidate_setup(datum/round_event_control/antagonist/cast_control, no_restricts = TRUE, antag_token = null)
 	return

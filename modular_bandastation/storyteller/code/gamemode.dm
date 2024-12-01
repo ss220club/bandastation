@@ -133,6 +133,7 @@ SUBSYSTEM_DEF(gamemode)
 	var/wizardmode = FALSE
 
 	var/storyteller_voted = FALSE
+	var/roundstart_secs = 0
 
 /datum/controller/subsystem/gamemode/Initialize(time, zlevel)
 	. = ..()
@@ -337,7 +338,6 @@ SUBSYSTEM_DEF(gamemode)
 
 	/// If the storyteller guarantees an antagonist roll, add points to make it so.
 	if(storyteller.guarantees_roundstart_crewset)
-		storyteller.round_start_handle = TRUE
 		event_track_points[EVENT_TRACK_CREWSET] = point_thresholds[EVENT_TRACK_CREWSET]
 
 	/// If we have any forced events, ensure we get enough points for them
@@ -405,8 +405,8 @@ SUBSYSTEM_DEF(gamemode)
 			if(player_role.departments_bitflags & DEPARTMENT_BITFLAG_SCIENCE)
 				rnd_crew++
 
-/datum/controller/subsystem/gamemode/proc/TriggerEvent(datum/round_event_control/event, admin_forced = FALSE, round_start_event = FALSE)
-	. = event.preRunEvent(admin_forced, round_start_event)
+/datum/controller/subsystem/gamemode/proc/TriggerEvent(datum/round_event_control/event, admin_forced = FALSE)
+	. = event.preRunEvent(admin_forced)
 	if(. == EVENT_CANT_RUN)//we couldn't run this event for some reason, set its max_occurrences to 0
 		event.max_occurrences = 0
 	else if(. == EVENT_READY)
@@ -486,16 +486,37 @@ SUBSYSTEM_DEF(gamemode)
 ///Attempts to select players for special roles the mode might have.
 /datum/controller/subsystem/gamemode/proc/pre_setup()
 	// We need to do this to prevent some niche fuckery... and make dep. orders work. Lol
+
+	recalculate_secs()
 	SSjob.reset_occupations()
 	calculate_ready_players()
 	roll_pre_setup_points()
 	handle_pre_setup_roundstart_events()
 	return TRUE
 
+/datum/controller/subsystem/gamemode/proc/recalculate_secs()
+	sec_crew = 0
+	SSjob.divide_occupations(pure = TRUE, allow_all = TRUE)
+	for(var/i in GLOB.new_player_list)
+		var/mob/dead/new_player/player = i
+		if(player.ready == PLAYER_READY_TO_PLAY && player.mind && player.check_preferences())
+			if(is_unassigned_job(player.mind.assigned_role))
+				var/list/job_data = list()
+				var/job_prefs = player.client.prefs.job_preferences
+				for(var/job in job_prefs)
+					var/priority = job_prefs[job]
+					job_data += "[job]: [SSjob.job_priority_level_to_string(priority)]"
+				to_chat(player, span_danger("You were unable to qualify for any roundstart antagonist role this round because your job preferences presented a high chance of all of your selected jobs being unavailable, along with 'return to lobby if job is unavailable' enabled. Increase the number of roles set to medium or low priority to reduce the chances of this happening."))
+				log_admin("[player.ckey] failed to qualify for any roundstart antagonist role because their job preferences presented a high chance of all of their selected jobs being unavailable, along with 'return to lobby if job is unavailable' enabled and has [player.client.prefs.be_special.len] antag preferences enabled. They will be unable to qualify for any roundstart antagonist role. These are their job preferences - [job_data.Join(" | ")]")
+			else
+				if(player.mind?.assigned_role?.departments_list?.Find(/datum/job_department/security) && (!player.mind?.special_role))
+					sec_crew++
+
 ///Everyone should now be on the station and have their normal gear.  This is the place to give the special roles extra things
 /datum/controller/subsystem/gamemode/proc/post_setup(report) //Gamemodes can override the intercept report. Passing TRUE as the argument will force a report.
 	if(!report)
 		report = !CONFIG_GET(flag/no_intercept_report)
+
 	addtimer(CALLBACK(GLOBAL_PROC, .proc/display_roundstart_logout_report), ROUNDSTART_LOGOUT_REPORT_TIME)
 
 	if(SSdbcore.Connect())

@@ -45,7 +45,6 @@
 	var/max_sec_mult = 1
 	/// Two tellers of the same intensity group can't run in 2 consecutive rounds
 	var/storyteller_type = STORYTELLER_TYPE_ALWAYS_AVAILABLE
-	var/round_start_handle = FALSE
 	var/round_start_multiplier = 10
 
 /datum/storyteller/process(delta_time)
@@ -53,8 +52,6 @@
 		return
 	add_points(delta_time)
 	handle_tracks()
-	if(SSticker.HasRoundStarted())
-		SSgamemode.storyteller.round_start_handle = FALSE
 
 /// Add points to all tracks while respecting the multipliers.
 /datum/storyteller/proc/add_points(delta_time)
@@ -122,17 +119,19 @@
 		total_cost *= (1 - (rand(0, cost_variance) / 100)) //Apply cost variance if not roundstart event
 	else
 		total_cost *= antag_divisor / SSgamemode.get_correct_popcount() //Цена на покупку варьируется от количество игроков
+
 	message_admins("<font color='[COLOR_GREEN]'>Storyteller</font> purchased and triggered [bought_event] event, on [track] track, for [total_cost] cost.")
 	log_admin("<font color='[COLOR_GREEN]'>Storyteller</font> purchased and triggered [bought_event] event, on [track] track, for [total_cost] cost.")
+
 	SSgamemode.event_track_points[track] = max(0, SSgamemode.event_track_points[track] - total_cost)
+
 	if(!SSticker.HasRoundStarted())
-		if(bought_event.roundstart)
-			SSgamemode.schedule_event(bought_event, (15 SECONDS), total_cost)
-			if(SSgamemode.event_track_points[track] > 0)
-				find_and_buy_event_from_track(track)
+		SSgamemode.TriggerEvent(bought_event)
+		SSgamemode.recalculate_secs()
+		if(SSgamemode.event_track_points[track] > 0)
+			find_and_buy_event_from_track(track)
 	else
-		if(!SSticker.HasRoundStarted())
-			SSgamemode.schedule_event(bought_event, (rand(3, 4) MINUTES), total_cost)
+		SSgamemode.schedule_event(bought_event, (rand(3, 4) MINUTES), total_cost)
 
 /// Calculates the weights of the events from a passed track.
 /datum/storyteller/proc/calculate_weights(track)

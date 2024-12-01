@@ -53,20 +53,20 @@
 	. = ..()
 	if(!.)
 		return
-	if(roundstart && SSticker.HasRoundStarted() && earliest_start <= world.time-SSticker.round_start_time)
+	if(roundstart && SSticker.HasRoundStarted())
 		return FALSE
 	if(SSticker.HasRoundStarted() && !SSgamemode.can_inject_antags())
 		return FALSE
 	if(!get_antag_amount())
 		return FALSE
 	var/list/candidates = get_candidates()
-	if(candidates.len < get_minimum_candidates())
+	if(length(candidates) < get_minimum_candidates())
 		return FALSE
 
 /datum/round_event_control/antagonist/can_spawn_event_error_reason(players_amt, allow_magic = FALSE, popchecks = TRUE)
 	. = ..()
 	var/message = .
-	if(roundstart && SSticker.HasRoundStarted() && earliest_start <= world.time-SSticker.round_start_time)
+	if(roundstart && SSticker.HasRoundStarted())
 		message = "<font color='[COLOR_SOFT_RED]'>Storyteller event: [name]</font> was unable to run due event is roundstart and round started."
 	if(SSticker.HasRoundStarted() && !SSgamemode.can_inject_antags())
 		message = "<font color='[COLOR_SOFT_RED]'>Storyteller event: [name]</font> was unable to run due event can't inject antags over sec cap - cap/antags [SSgamemode.sec_crew]/[SSgamemode.get_antag_cap()]/[length(GLOB.current_living_antags)]."
@@ -83,8 +83,8 @@
 	return minimum_candidate_base
 
 /datum/round_event_control/antagonist/proc/get_candidates()
-	var/round_started = SSticker.HasRoundStarted() || (roundstart && SSticker.HasRoundStarted() && earliest_start <= world.time-SSticker.round_start_time)
-	var/list/candidates = SSgamemode.get_candidates(antag_flag, pick_roundstart_players = round_started, restricted_roles = restricted_roles)
+	var/round_started = SSticker.HasRoundStarted()
+	var/list/candidates = SSgamemode.get_candidates(antag_flag, pick_roundstart_players = !round_started, restricted_roles = restricted_roles)
 	return candidates
 
 /datum/round_event_control/antagonist/solo
