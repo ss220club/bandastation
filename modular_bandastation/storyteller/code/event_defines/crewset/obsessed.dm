@@ -9,6 +9,7 @@
 	typepath = /datum/round_event/antagonist/solo/obsessed
 	category = EVENT_CATEGORY_INVASION
 	tags = list(TAG_CREW_ANTAG)
+	protected_roles = list()
 
 /datum/round_event/antagonist/solo/obsessed/start()
 	var/datum/round_event_control/antagonist/re_control = control

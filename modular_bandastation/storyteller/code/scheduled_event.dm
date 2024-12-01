@@ -14,6 +14,7 @@
 	var/ignores_checks
 	/// Whether the scheduled event will override the announcement change. If null it won't. TRUE = force yes. FALSE = force no.
 	var/announce_change
+	/// Ивент должен учитывать себя как ивент в начале раунда и не проходить проверки, связанные с этим
 
 /datum/scheduled_event/New(datum/round_event_control/passed_event, passed_time, passed_cost, passed_ignore, passed_announce)
 	. = ..()
@@ -50,9 +51,10 @@
 	remove_occurence()
 	var/players_amt = get_active_player_count(alive_check = TRUE, afk_check = TRUE, human_check = FALSE)
 	///If we can't spawn the scheduled event, refund it.
-	if(!ignores_checks && !event.can_spawn_event(players_amt)) //FALSE argument to ignore popchecks, to prevent scheduled events from failing from people dying/cryoing etc.
-		message_admins("<font color='[COLOR_AMETHYST]'>Scheduled Event: [event]</font> was unable to run and has been refunded.")
-		log_admin("<font color='[COLOR_AMETHYST]'>Scheduled Event: [event]</font> was unable to run and has been refunded.")
+	if(!ignores_checks && !event.can_spawn_event(players_amt) && !admin_forced) //FALSE argument to ignore popchecks, to prevent scheduled events from failing from people dying/cryoing etc.
+		var/message = event.can_spawn_event_error_reason(players_amt)
+		message_admins("<font color='[COLOR_AMETHYST]'>Scheduled Event: [event]</font> was unable to run and has been refunded. REASON: [message]")
+		log_admin("<font color='[COLOR_AMETHYST]'>Scheduled Event: [event]</font> was unable to run and has been refunded. REASON: [message]")
 
 		SSgamemode.refund_scheduled_event(src)
 		return

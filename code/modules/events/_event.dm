@@ -70,7 +70,7 @@
 
 // Checks if the event can be spawned. Used by event controller and "false alarm" event.
 // Admin-created events override this.
-/datum/round_event_control/proc/can_spawn_event(players_amt, allow_magic = FALSE, round_start_event = FALSE)
+/datum/round_event_control/proc/can_spawn_event(players_amt, allow_magic = FALSE)
 	SHOULD_CALL_PARENT(TRUE)
 	if(occurrences >= max_occurrences)
 		return FALSE
@@ -171,16 +171,12 @@
 	var/players_amt = get_active_player_count(alive_check = TRUE, afk_check = TRUE, human_check = TRUE)
 	if(!can_spawn_event(players_amt))
 		message_admins("Second pre-condition check for [name] failed, rerolling...")
-		var/message = can_spawn_event_error_reason(SSgamemode.storyteller.round_start_handle)
+		var/message = can_spawn_event_error_reason(players_amt)
 		if(message != "success")
 			message_admins(message)
 			log_admin(message)
 		SSevents.spawnEvent(excluded_event = src)
 		return EVENT_INTERRUPTED
-	else
-		if(SSgamemode.storyteller.round_start_handle && SSticker.HasRoundStarted())
-			SSgamemode.storyteller.round_start_handle = FALSE
-			SSgamemode.storyteller.round_start_budget = 0
 	if(!triggering)
 		return EVENT_CANCELLED //admin cancelled
 	triggering = FALSE

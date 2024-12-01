@@ -6,7 +6,7 @@
 	maximum_antags = 1
 	maximum_antags_global = 1
 
-	min_players = 20
+	min_players = TRUE
 	roundstart = FALSE
 
 	antag_datum = /datum/antagonist/malf_ai
@@ -22,7 +22,9 @@
 /datum/round_event_control/antagonist/solo/malf/roundstart
 	name = "Malfunctioning AI"
 
-	roundstart = 40
+	roundstart = TRUE
+	earliest_start = 1 MINUTES
+
 	typepath = /datum/round_event/antagonist/solo/malf_ai/roundstart
 	weight = 10
 

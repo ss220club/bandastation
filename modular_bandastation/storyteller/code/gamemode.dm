@@ -338,7 +338,6 @@ SUBSYSTEM_DEF(gamemode)
 	/// If the storyteller guarantees an antagonist roll, add points to make it so.
 	if(storyteller.guarantees_roundstart_crewset)
 		storyteller.round_start_handle = TRUE
-		storyteller.round_start_budget = storyteller.round_start_multiplier * (get_correct_popcount() / storyteller.antag_divisor)
 		event_track_points[EVENT_TRACK_CREWSET] = point_thresholds[EVENT_TRACK_CREWSET]
 
 	/// If we have any forced events, ensure we get enough points for them
@@ -412,7 +411,6 @@ SUBSYSTEM_DEF(gamemode)
 		event.max_occurrences = 0
 	else if(. == EVENT_READY)
 		event.run_event(random = TRUE) // fallback to dynamic
-		storyteller.round_start_budget -= event.roundstart
 
 ///Resets frequency multiplier.
 /datum/controller/subsystem/gamemode/proc/resetFrequency()

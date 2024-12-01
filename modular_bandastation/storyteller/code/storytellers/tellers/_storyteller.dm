@@ -46,7 +46,6 @@
 	/// Two tellers of the same intensity group can't run in 2 consecutive rounds
 	var/storyteller_type = STORYTELLER_TYPE_ALWAYS_AVAILABLE
 	var/round_start_handle = FALSE
-	var/round_start_budget = 0
 	var/round_start_multiplier = 10
 
 /datum/storyteller/process(delta_time)
@@ -54,6 +53,8 @@
 		return
 	add_points(delta_time)
 	handle_tracks()
+	if(SSticker.HasRoundStarted())
+		SSgamemode.storyteller.round_start_handle = FALSE
 
 /// Add points to all tracks while respecting the multipliers.
 /datum/storyteller/proc/add_points(delta_time)
@@ -95,7 +96,7 @@
 			if(event.can_spawn_event(player_pop))
 				valid_events[event] = event.calculated_weight
 		///If we didn't get any events, remove the points inform admins and dont do anything
-		if(SSticker.HasRoundStarted() && round_start_budget <= 0)
+		if(SSticker.HasRoundStarted())
 			if(!length(valid_events))
 				message_admins("<font color='[COLOR_FIRE_LIGHT_RED]'>Storyteller</font> failed to pick an event for track of [track] due to no valid events.")
 				log_admin("<font color='[COLOR_FIRE_LIGHT_RED]'>Storyteller</font> failed to pick an event for track of [track] due to no valid events.")
@@ -120,17 +121,18 @@
 	if(!bought_event.roundstart)
 		total_cost *= (1 - (rand(0, cost_variance) / 100)) //Apply cost variance if not roundstart event
 	else
-		total_cost = 0
-	SSgamemode.event_track_points[track] = max(0, SSgamemode.event_track_points[track] - total_cost)
+		total_cost *= antag_divisor / SSgamemode.get_correct_popcount() //Цена на покупку варьируется от количество игроков
 	message_admins("<font color='[COLOR_GREEN]'>Storyteller</font> purchased and triggered [bought_event] event, on [track] track, for [total_cost] cost.")
 	log_admin("<font color='[COLOR_GREEN]'>Storyteller</font> purchased and triggered [bought_event] event, on [track] track, for [total_cost] cost.")
-	if(bought_event.roundstart && round_start_budget > 0)
-		SSgamemode.TriggerEvent(bought_event, round_start_event = round_start_handle)
-		if(round_start_budget > 0)
-			find_and_buy_event_from_track(track)
+	SSgamemode.event_track_points[track] = max(0, SSgamemode.event_track_points[track] - total_cost)
+	if(!SSticker.HasRoundStarted())
+		if(bought_event.roundstart)
+			SSgamemode.schedule_event(bought_event, (15 SECONDS), total_cost)
+			if(SSgamemode.event_track_points[track] > 0)
+				find_and_buy_event_from_track(track)
 	else
-		SSgamemode.schedule_event(bought_event, (rand(3, 4) MINUTES), total_cost)
-		round_start_budget = 0
+		if(!SSticker.HasRoundStarted())
+			SSgamemode.schedule_event(bought_event, (rand(3, 4) MINUTES), total_cost)
 
 /// Calculates the weights of the events from a passed track.
 /datum/storyteller/proc/calculate_weights(track)
