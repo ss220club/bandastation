@@ -1,6 +1,6 @@
 /datum/round_event_control/antagonist/solo/heretic
 	name = "Heretics"
-	roundstart = TRUE
+	roundstart = 1.5
 
 	antag_flag = ROLE_HERETIC
 	antag_datum = /datum/antagonist/heretic

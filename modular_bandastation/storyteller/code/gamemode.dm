@@ -216,9 +216,27 @@ SUBSYSTEM_DEF(gamemode)
 	var/result = round(clamped_cap)
 	return result
 
+/datum/controller/subsystem/gamemode/proc/get_antag_count()
+	var/a_count = 0
+	if(SSticker.HasRoundStarted())
+		a_count = length(GLOB.current_living_antags)
+	else
+		for(var/mob/player_mob as anything in GLOB.player_list)
+			if(!player_mob.client)
+				continue
+			if(player_mob.stat)
+				continue
+			if(player_mob.client.is_afk())
+				continue
+			if(!ishuman(player_mob))
+				continue
+			if(player_mob.mind?.special_role)
+				a_count++
+	return a_count
+
 /// Whether events can inject more antagonists into the round
 /datum/controller/subsystem/gamemode/proc/can_inject_antags()
-	return get_antag_cap() > length(GLOB.current_living_antags)
+	return get_antag_cap() > get_antag_count()
 
 /// Gets candidates for antagonist roles.
 
@@ -339,6 +357,7 @@ SUBSYSTEM_DEF(gamemode)
 	/// If the storyteller guarantees an antagonist roll, add points to make it so.
 	if(storyteller.guarantees_roundstart_crewset)
 		event_track_points[EVENT_TRACK_CREWSET] = point_thresholds[EVENT_TRACK_CREWSET]
+		storyteller.ready_cost_modifier = SSgamemode.get_correct_popcount() / storyteller.antag_divisor
 
 	/// If we have any forced events, ensure we get enough points for them
 	for(var/track in event_tracks)

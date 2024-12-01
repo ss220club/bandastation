@@ -46,6 +46,7 @@
 	/// Two tellers of the same intensity group can't run in 2 consecutive rounds
 	var/storyteller_type = STORYTELLER_TYPE_ALWAYS_AVAILABLE
 	var/round_start_multiplier = 10
+	var/ready_cost_modifier = 1
 
 /datum/storyteller/process(delta_time)
 	if(disable_distribution)
@@ -118,7 +119,7 @@
 	if(!bought_event.roundstart)
 		total_cost *= (1 - (rand(0, cost_variance) / 100)) //Apply cost variance if not roundstart event
 	else
-		total_cost *= antag_divisor / SSgamemode.get_correct_popcount() //Цена на покупку варьируется от количество игроков
+		total_cost = (total_cost / ready_cost_modifier) * bought_event.roundstart //antag_divisor / SSgamemode.get_correct_popcount() * bought_event.roundstart  //Цена на покупку варьируется от количество игроков и вида ивента
 
 	message_admins("<font color='[COLOR_GREEN]'>Storyteller</font> purchased and triggered [bought_event] event, on [track] track, for [total_cost] cost.")
 	log_admin("<font color='[COLOR_GREEN]'>Storyteller</font> purchased and triggered [bought_event] event, on [track] track, for [total_cost] cost.")

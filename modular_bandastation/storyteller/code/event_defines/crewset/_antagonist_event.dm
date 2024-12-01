@@ -68,7 +68,7 @@
 	var/message = .
 	if(roundstart && SSticker.HasRoundStarted())
 		message = "<font color='[COLOR_SOFT_RED]'>Storyteller event: [name]</font> was unable to run due event is roundstart and round started."
-	if(SSticker.HasRoundStarted() && !SSgamemode.can_inject_antags())
+	if(!SSgamemode.can_inject_antags())
 		message = "<font color='[COLOR_SOFT_RED]'>Storyteller event: [name]</font> was unable to run due event can't inject antags over sec cap - cap/antags [SSgamemode.sec_crew]/[SSgamemode.get_antag_cap()]/[length(GLOB.current_living_antags)]."
 	if(!get_antag_amount())
 		message = "<font color='[COLOR_SOFT_RED]'>Storyteller event: [name]</font> was unable to run due no antags count to spawn."

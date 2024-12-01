@@ -1,6 +1,6 @@
 /datum/round_event_control/antagonist/solo/spy
 	name = "Spies"
-	roundstart = TRUE
+	roundstart = 10
 
 	antag_flag = ROLE_SPY
 	antag_datum = /datum/antagonist/spy

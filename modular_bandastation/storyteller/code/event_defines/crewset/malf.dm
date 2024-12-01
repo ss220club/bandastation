@@ -23,7 +23,7 @@
 /datum/round_event_control/antagonist/solo/malf/roundstart
 	name = "Malfunctioning AI"
 
-	roundstart = TRUE
+	roundstart = 1.8
 	min_players = 20
 
 	typepath = /datum/round_event/antagonist/solo/malf_ai/roundstart
