@@ -213,7 +213,7 @@ SUBSYSTEM_DEF(gamemode)
 	var/min_antags = min(sec_crew, ANTAG_CAP_FLAT)
 	var/calculated_cap = (get_correct_popcount() / storyteller.antag_divisor) + sec_crew
 	var/clamped_cap = clamp(calculated_cap, min_antags, max_antags)
-	var/result = round(clamped_cap)
+	var/result = sec_crew // round(clamped_cap)
 	return result
 
 /datum/controller/subsystem/gamemode/proc/get_antag_count()
