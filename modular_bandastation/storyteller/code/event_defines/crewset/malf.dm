@@ -22,6 +22,7 @@
 
 /datum/round_event_control/antagonist/solo/malf/roundstart
 	name = "Malfunctioning AI"
+	earliest_start = 0 SECONDS
 
 	roundstart = 1.8
 	min_players = 20

@@ -115,7 +115,7 @@
 	if(!allow_magic && wizardevent != SSevents.wizardmode)
 		message = "<font color='[COLOR_SOFT_RED]'>Storyteller event: [name]</font> was unable to run due magic not allowed and it's wizard mode."
 	if(players_amt < min_players)
-		message = "<font color='[COLOR_SOFT_RED]'>Storyteller event: [name]</font> was unable to run due too low players for event."
+		message = "<font color='[COLOR_SOFT_RED]'>Storyteller event: [name]</font> was unable to run due too low players for event (amt/min - [players_amt]/[min_players])."
 	if(holidayID && !check_holidays(holidayID))
 		message = "<font color='[COLOR_SOFT_RED]'>Storyteller event: [name]</font> was unable to run due try to run on non-holiday day."
 	if(EMERGENCY_ESCAPED_OR_ENDGAMED)

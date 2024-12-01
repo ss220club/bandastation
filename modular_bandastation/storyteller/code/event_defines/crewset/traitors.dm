@@ -1,6 +1,7 @@
 /datum/round_event_control/antagonist/solo/traitor
 	name = "Traitors"
 	roundstart = 1.3
+	earliest_start = 0 SECONDS
 
 	antag_flag = ROLE_TRAITOR
 	antag_datum = /datum/antagonist/traitor

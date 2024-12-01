@@ -1,6 +1,7 @@
 /datum/round_event_control/antagonist/team/Cult
 	name = "Cult"
 	roundstart = 3
+	earliest_start = 0 SECONDS
 
 	track = EVENT_TRACK_CREWSET
 	antag_flag = ROLE_CULTIST

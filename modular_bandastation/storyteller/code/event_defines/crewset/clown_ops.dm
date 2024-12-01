@@ -1,6 +1,7 @@
 /datum/round_event_control/antagonist/team/clown_ops
 	name = "Clown Operatives"
 	roundstart = 2
+	earliest_start = 0 SECONDS
 
 	track = EVENT_TRACK_CREWSET
 	antag_flag = ROLE_CLOWN_OPERATIVE
