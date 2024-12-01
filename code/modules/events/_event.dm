@@ -168,7 +168,8 @@
 		message_admins("<font color='[COLOR_ADMIN_PINK]'> Roundstart event chosen: [name].")
 	// BANDASTATION EDIT END
 
-	var/players_amt = get_active_player_count(alive_check = TRUE, afk_check = TRUE, human_check = TRUE)
+	// var/players_amt = get_active_player_count(alive_check = TRUE, afk_check = TRUE, human_check = TRUE) /// BANDASTATION EDIT - STORYTELLER
+	var/players_amt = SSgamemode.get_correct_popcount()
 	if(!can_spawn_event(players_amt))
 		message_admins("Second pre-condition check for [name] failed, rerolling...")
 		var/message = can_spawn_event_error_reason(players_amt)
