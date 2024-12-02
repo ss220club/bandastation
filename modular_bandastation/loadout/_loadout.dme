@@ -6,3 +6,4 @@
 #include "code/loadout_preference.dm"
 #include "code/categories/accessories.dm"
 #include "code/categories/pocket.dm"
+#include "code/categories/uniform.dm"
