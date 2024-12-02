@@ -37,62 +37,73 @@
 	name = "костюм гладиатора"
 	desc = "Разве вас это не развлекает? Разве не для этого вы здесь?"
 	icon_state = "gladiator"
+	inhand_icon_state = null
 	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 /obj/item/clothing/under/costume/griffin_loadout
 	name = "костюм гриффона"
 	desc = "Почему не «голова орла»? Кто знает."
 	icon_state = "griffin"
+	inhand_icon_state = null
 
 /obj/item/clothing/under/costume/owl_loadout
 	name = "костюм совы"
 	desc = "Мягкий коричневый комбинезон из синтетических перьев с сильным убеждением."
 	icon_state = "owl"
+	inhand_icon_state = null
 
 /obj/item/clothing/under/costume/maid_loadout
 	name = "костюм горничной"
 	desc = "Стандартная униформа горничной."
 	icon_state = "meido"
+	inhand_icon_state = null
 	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 /obj/item/clothing/under/costume/pirate_loadout
 	name = "костюм пирата"
 	desc = "Аррррр!"
 	icon_state = "pirate"
+	inhand_icon_state = null
 
 /obj/item/clothing/under/costume/roman_loadout
 	name = "римский костюм"
 	desc = "Древнеримские доспехи. Изготовлен из металлических и кожаных ремешков."
 	icon_state = "roman"
+	inhand_icon_state = null
 	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 /obj/item/clothing/under/costume/soviet_loadout
 	name = "советская униформа"
 	desc = "За Родину!"
 	icon_state = "soviet"
+	inhand_icon_state = null
 
 /obj/item/clothing/under/costume/black_tango
 	name = "платье для танго"
 	desc = "Наполнено латинским огнем."
 	icon_state = "black_tango"
+	inhand_icon_state = null
 	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 /obj/item/clothing/under/costume/cardiganskirt_loadout
 	name = "юбка-кардиган"
 	desc = "Красивая юбка с милым кардиганом, очень модно!"
 	icon_state = "blackskirt"
+	inhand_icon_state = null
 	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 /obj/item/clothing/under/costume/sundress
 	name = "летнее платье"
 	desc = "Вызывает желание порезвиться в поле ромашек."
 	icon_state = "sundress"
+	inhand_icon_state = null
 	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 /obj/item/clothing/under/costume/kilt_loadout
 	name = "килт"
 	desc = "Не заглядывай снизу."
 	icon_state = "kilt"
+	inhand_icon_state = null
 	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 // MARK: Not for loadout
@@ -100,6 +111,7 @@
 	name = "красная униформа шефа"
 	desc = "Униформа повара с пуговицами на одну сторону."
 	icon_state = "chef_red"
+	inhand_icon_state = null
 	can_adjust = FALSE
 	resistance_flags = NONE
 
