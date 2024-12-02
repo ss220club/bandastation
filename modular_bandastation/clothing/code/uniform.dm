@@ -50,13 +50,13 @@
 	name = "костюм совы"
 	desc = "Мягкий коричневый комбинезон из синтетических перьев с сильным убеждением."
 	icon_state = "owl"
-	inhand_icon_state = null
+	inhand_icon_state = 'owl'
 
 /obj/item/clothing/under/costume/maid_loadout
 	name = "костюм горничной"
 	desc = "Стандартная униформа горничной."
 	icon_state = "meido"
-	inhand_icon_state = null
+	inhand_icon_state = 'meido'
 	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 /obj/item/clothing/under/costume/pirate_loadout
@@ -69,7 +69,7 @@
 	name = "римский костюм"
 	desc = "Древнеримские доспехи. Изготовлен из металлических и кожаных ремешков."
 	icon_state = "roman"
-	inhand_icon_state = null
+	inhand_icon_state = 'roman'
 	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 /obj/item/clothing/under/costume/soviet_loadout
@@ -89,7 +89,7 @@
 	name = "юбка-кардиган"
 	desc = "Красивая юбка с милым кардиганом, очень модно!"
 	icon_state = "blackskirt"
-	inhand_icon_state = null
+	inhand_icon_state = 'blackskirt'
 	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 /obj/item/clothing/under/costume/sundress
@@ -103,7 +103,7 @@
 	name = "килт"
 	desc = "Не заглядывай снизу."
 	icon_state = "kilt"
-	inhand_icon_state = null
+	inhand_icon_state = 'kilt'
 	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 // MARK: Not for loadout
