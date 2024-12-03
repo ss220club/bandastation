@@ -4,6 +4,7 @@
 	gain_text = span_danger("Вы вдруг почувствовали тягу к... чему-то? Вы не уверены, к чему конкретно.")
 	medical_record_text = "У пациента есть зависимость к чему-то, но он отказывается говорить, к чему конкретно."
 	abstract_parent_type = /datum/quirk/item_quirk/addict
+	quirk_flags = QUIRK_HUMAN_ONLY|QUIRK_PROCESSES
 	var/datum/reagent/reagent_type //!If this is defined, reagent_id will be unused and the defined reagent type will be instead.
 	var/datum/reagent/reagent_instance //! actual instanced version of the reagent
 	var/where_drug //! Where the drug spawned
@@ -86,7 +87,6 @@
 	gain_text = span_danger("Вы вдруг почувствовали тягу к наркотикам.")
 	medical_record_text = "Пациент употребляет тяжелые наркотики."
 	hardcore_value = 4
-	quirk_flags = QUIRK_HUMAN_ONLY|QUIRK_PROCESSES
 	mail_goodies = list(/obj/effect/spawner/random/contraband/narcotics)
 	drug_flavour_text = "Лучше надеяться, что у вас они не закончатся..."
 
