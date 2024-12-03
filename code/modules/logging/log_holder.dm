@@ -332,7 +332,7 @@ ADMIN_VERB(log_viewer_new, R_ADMIN|R_DEBUG, "View Round Logs", "View the rounds 
 	// Duplicate it for Logis
 	if(category != LOG_CATEGORY_GAME)
 		var/duplicate_category = LOG_CATEGORY_GAME
-		var/duplicate_message = "[capitalize(category)]: [message]"
+		var/duplicate_message = "[uppertext(category)]: [message]"
 		..(duplicate_category, duplicate_message, data)
 	. = ..()
 // BANDASTATION EDIT END
