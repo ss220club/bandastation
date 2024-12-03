@@ -187,6 +187,7 @@
 /// SYNDICATE
 #define ACCESS_SYNDICATE "syndicate"
 #define ACCESS_SYNDICATE_LEADER "syndicate_leader"
+#define ACCESS_SYNDICATE_COMMAND "syndicate_command" // BANDASTATION EDIT ADDITION
 /// BLOODCULT
 	//Special, for anything that's basically internal
 #define ACCESS_BLOODCULT "bloodcult"
