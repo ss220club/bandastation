@@ -1,8 +1,9 @@
+// MARK: Syndicate Central Command Areas
 /area/centcom/syndicate_base
 	name = "Syndicate Forward Base"
 	icon = 'modular_bandastation/mapping/icons/areas/areas_centcom.dmi'
 	icon_state = "syndie-ship"
-	static_lighting = FALSE
+	static_lighting = TRUE
 	requires_power = FALSE
 	has_gravity = STANDARD_GRAVITY
 	area_flags = UNIQUE_AREA | NOTELEPORT
@@ -12,7 +13,8 @@
 /area/centcom/syndicate_base/outside
 	name = "Syndicate Controlled Territory"
 	icon_state = "syndie-outside"
-	static_lighting = TRUE
+	static_lighting = FALSE
+	base_lighting_alpha = 255
 
 /area/centcom/syndicate_base/control
 	name = "Syndicate Control Room"
@@ -35,3 +37,21 @@
 	icon_state = "syndie-cargo"
 	ambience_index = AMBIENCE_ENGI
 
+// MARK: Centcom Planetary Port
+/area/centcom/central_command_areas/planetary_port
+	name = "Планетарный Порт"
+
+/area/centcom/central_command_areas/planetary_port/plaza
+	name = "Площадь"
+
+/area/centcom/central_command_areas/planetary_port/hotel
+	name = "Отель"
+
+/area/centcom/central_command_areas/planetary_port/library
+	name = "Библиотека"
+
+/area/centcom/central_command_areas/planetary_port/club
+	name = "Клуб"
+
+/area/centcom/central_command_areas/planetary_port/restroom
+	name = "Уборная"

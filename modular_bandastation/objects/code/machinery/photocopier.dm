@@ -2,4 +2,6 @@
 	name = "Syndicate photocopier"
 	desc = "Они даже не пытались спрятать его..."
 	icon = 'modular_bandastation/objects/icons/obj/machines/photocopier.dmi'
-	icon_state = "syndiebigscanner"
+
+/obj/machinery/photocopier/syndicate/setup_components()
+	return
