@@ -9,9 +9,10 @@
 			stack_trace("The leave body menu was opened before the atoms SS. This shouldn't be possible, as the leave body menu should only be accessible when you have a body.")
 
 	page_holder.give_screen_object(new /atom/movable/screen/escape_menu/leave_body_button(
-		src,
-		"Откиснуть",
-		"Выйти из тела драматичным образом",
+		null,
+		/* hud_owner = */ null,
+		"Suicide",
+		"Perform a dramatic suicide in game",
 		/* pixel_offset = */ -105,
 		CALLBACK(src, PROC_REF(leave_suicide)),
 		/* button_overlay = */ dead_clown,
@@ -19,9 +20,10 @@
 
 	page_holder.give_screen_object(
 		new /atom/movable/screen/escape_menu/leave_body_button(
-			src,
-			"Призрак",
-			"Тихо выйти из тела в призраки",
+			null,
+			/* hud_owner = */ null,
+			"Ghost",
+			"Exit quietly, leaving your body",
 			/* pixel_offset = */ 0,
 			CALLBACK(src, PROC_REF(leave_ghost)),
 			/* button_overlay = */ "ghost",
@@ -30,8 +32,9 @@
 
 	page_holder.give_screen_object(
 		new /atom/movable/screen/escape_menu/leave_body_button(
-			src,
-			"Назад",
+			null,
+			/* hud_owner = */ null,
+			"Back",
 			/* tooltip_text = */ null,
 			/* pixel_offset = */ 105,
 			CALLBACK(src, PROC_REF(open_home_page)),
@@ -84,6 +87,7 @@
 
 /atom/movable/screen/escape_menu/leave_body_button/Initialize(
 	mapload,
+	datum/hud/hud_owner,
 	button_text,
 	tooltip_text,
 	pixel_offset,
