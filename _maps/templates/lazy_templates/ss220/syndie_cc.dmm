@@ -192,21 +192,23 @@
 "avl" = (
 /obj/machinery/button/door/indestructible{
 	wires = 1;
-	emagged = 1;
+	obj_flags = 1;
+	silicon_access_disabled = 1;
 	pixel_y = -30;
 	pixel_x = -7;
 	name = "SST Outside Doors";
 	id = "SST_outside";
-	req_access = list(153)
+	req_access = list("syndicate_command")
 	},
 /obj/machinery/button/door/indestructible{
 	wires = 1;
-	emagged = 1;
+	obj_flags = 1;
+	silicon_access_disabled = 1;
 	pixel_y = -30;
 	pixel_x = 7;
 	id = "SST_to_ATOM";
 	name = "SST to ATOM hall";
-	req_access = list(153)
+	req_access = list("syndicate_command")
 	},
 /turf/open/floor/carpet/black,
 /area/centcom/syndicate_base/control)
@@ -217,7 +219,9 @@
 /area/centcom/syndicate_base/outside)
 "avN" = (
 /obj/effect/turf_decal/box/red,
-/obj/machinery/door/window/survival_pod/left/directional/south,
+/obj/machinery/door/window/survival_pod/left/directional/south{
+	req_access = list("syndicate")
+	},
 /obj/structure/window/reinforced/survival_pod/spawner/directional/west,
 /turf/open/floor/iron/dark,
 /area/centcom/syndicate_base/control)
@@ -298,8 +302,9 @@
 	wires = 1;
 	specialfunctions = 4;
 	pixel_x = -32;
-	emagged = 1;
-	req_access = list(153)
+	obj_flags = 1;
+	silicon_access_disabled = 1;
+	req_access = list("syndicate_command")
 	},
 /obj/effect/turf_decal/siding/golden,
 /turf/open/floor/iron/dark,
@@ -430,10 +435,10 @@
 /obj/effect/turf_decal/syndie_logo{
 	icon_state = "logo5"
 	},
-/obj/effect/landmark/start/nukeop_overwatch,
 /obj/effect/turf_decal/siding/dark{
 	dir = 8
 	},
+/obj/effect/landmark/start/nukeop_overwatch,
 /turf/open/floor/mineral/plastitanium/red,
 /area/centcom/syndicate_base/control)
 "bbH" = (
@@ -714,7 +719,6 @@
 /obj/effect/turf_decal/line/red{
 	dir = 4
 	},
-/obj/effect/mapping_helpers/airlock/access/all/syndicate/leader,
 /turf/open/floor/iron/dark,
 /area/centcom/syndicate_base/jail)
 "bNo" = (
@@ -907,7 +911,7 @@
 /area/centcom/syndicate_base/cargo)
 "bWD" = (
 /obj/structure/closet/secure_closet/brig{
-	req_access = list(153)
+	req_access = list("syndicate_command")
 	},
 /turf/open/floor/carpet/black,
 /area/centcom/syndicate_base/jail)
@@ -1059,7 +1063,7 @@
 "cqX" = (
 /obj/machinery/door/airlock/hatch,
 /obj/effect/turf_decal/siding/golden,
-/obj/effect/mapping_helpers/airlock/access/all/syndicate/leader,
+/obj/effect/mapping_helpers/airlock/access/all/syndicate/command,
 /turf/open/floor/iron/dark,
 /area/centcom/syndicate_base/control)
 "crr" = (
@@ -1482,7 +1486,6 @@
 	id_tag = "scc_prison_external"
 	},
 /obj/effect/mapping_helpers/airlock/locked,
-/obj/effect/mapping_helpers/airlock/access/all/syndicate/leader,
 /turf/open/floor/iron,
 /area/centcom/syndicate_base/jail)
 "drn" = (
@@ -1786,13 +1789,6 @@
 /obj/structure/railing,
 /turf/open/floor/iron/dark,
 /area/centcom/syndicate_base)
-"eit" = (
-/obj/machinery/door/airlock/hatch{
-	name = "Syndicate Base"
-	},
-/obj/effect/mapping_helpers/airlock/access/all/syndicate/leader,
-/turf/open/floor/wood,
-/area/centcom/syndicate_base)
 "eiJ" = (
 /obj/item/kirbyplants/random,
 /obj/effect/turf_decal/line/dark_blue/line/contrasted,
@@ -1822,7 +1818,6 @@
 	dir = 4
 	},
 /obj/effect/mapping_helpers/airlock/locked,
-/obj/effect/mapping_helpers/airlock/access/all/syndicate/leader,
 /turf/open/floor/iron/dark/smooth_edge{
 	dir = 4
 	},
@@ -1852,9 +1847,10 @@
 	id = "Aspid_deck";
 	wires = 1;
 	name = "Aspid main storage";
-	emagged = 1;
+	obj_flags = 1;
+	silicon_access_disabled = 1;
 	pixel_x = 32;
-	req_access = list(153)
+	req_access = list("syndicate_command")
 	},
 /obj/machinery/door/poddoor/ert{
 	id_tag = "Aspid_deck"
@@ -2430,7 +2426,6 @@
 	name = "Тюрьма"
 	},
 /obj/effect/turf_decal/line/red/line/stripes,
-/obj/effect/mapping_helpers/airlock/access/all/syndicate/leader,
 /turf/open/floor/iron/dark,
 /area/centcom/syndicate_base/jail)
 "fDx" = (
@@ -3011,7 +3006,9 @@
 /area/centcom/syndicate_base/elite_squad)
 "hdC" = (
 /obj/effect/turf_decal/box/red,
-/obj/machinery/door/window/survival_pod/left/directional/south,
+/obj/machinery/door/window/survival_pod/left/directional/south{
+	req_access = list("syndicate")
+	},
 /obj/structure/curtain/bounty/start_closed{
 	pixel_y = 32
 	},
@@ -3023,7 +3020,6 @@
 	name = "Тюрьма";
 	id_tag = "syndicate_jail_cell"
 	},
-/obj/effect/mapping_helpers/airlock/access/all/syndicate/leader,
 /turf/open/floor/iron/dark,
 /area/centcom/syndicate_base/jail)
 "hgR" = (
@@ -3126,7 +3122,9 @@
 /area/centcom/syndicate_base/jail)
 "hse" = (
 /obj/structure/table,
-/obj/machinery/door/window/survival_pod/left/directional/south,
+/obj/machinery/door/window/survival_pod/left/directional/south{
+	req_access = list("syndicate")
+	},
 /turf/open/floor/iron/dark,
 /area/centcom/syndicate_base)
 "hwb" = (
@@ -3134,12 +3132,6 @@
 /obj/effect/turf_decal/tile/brown/half,
 /turf/open/floor/iron/dark/smooth_edge,
 /area/centcom/syndicate_base/jail)
-"hwc" = (
-/obj/machinery/door/airlock/hatch,
-/obj/effect/turf_decal/siding/golden,
-/obj/effect/mapping_helpers/airlock/access/all/syndicate/general,
-/turf/open/floor/iron/dark,
-/area/centcom/syndicate_base/control)
 "hxf" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/tile/neutral/fourcorners,
@@ -3242,7 +3234,9 @@
 /turf/open/floor/iron/dark,
 /area/centcom/syndicate_base/control)
 "hJh" = (
-/obj/machinery/door/window/survival_pod/left/directional/west,
+/obj/machinery/door/window/survival_pod/left/directional/west{
+	req_access = list("syndicate")
+	},
 /turf/open/floor/plating,
 /area/centcom/syndicate_base/infteam)
 "hJi" = (
@@ -3338,11 +3332,12 @@
 /obj/item/banner/syndicate,
 /obj/machinery/button/door/indestructible{
 	wires = 1;
-	emagged = 1;
+	obj_flags = 1;
+	silicon_access_disabled = 1;
 	pixel_y = 30;
 	id = "nukeop_storage";
 	name = "ATOM Storage";
-	req_access = list(150)
+	req_access = list("syndicate")
 	},
 /turf/open/floor/wood,
 /area/centcom/syndicate_base)
@@ -3495,7 +3490,7 @@
 	id = "nukeop_ready";
 	name = "Shuttle Dock Door";
 	specialfunctions = 4;
-	req_access = list(151)
+	req_access = list("syndicate")
 	},
 /turf/open/floor/iron/dark,
 /area/centcom/syndicate_base)
@@ -3773,9 +3768,10 @@
 	id = "Aspid_main_storage";
 	wires = 1;
 	name = "Aspid main storage";
-	emagged = 1;
+	obj_flags = 1;
+	silicon_access_disabled = 1;
 	pixel_y = -32;
-	req_access = list(153)
+	req_access = list("syndicate_command")
 	},
 /obj/effect/turf_decal/line/yellow/line/contrasted,
 /turf/open/floor/iron/dark,
@@ -4067,8 +4063,9 @@
 	id = "Aspid_poddor_right";
 	wires = 1;
 	name = "Aspid poddor";
-	emagged = 1;
-	req_access = list(153)
+	obj_flags = 1;
+	silicon_access_disabled = 1;
+	req_access = list("syndicate_command")
 	},
 /obj/effect/turf_decal/line/yellow{
 	dir = 1
@@ -4123,7 +4120,6 @@
 /obj/machinery/door/airlock/hatch{
 	name = "Тюрьма"
 	},
-/obj/effect/mapping_helpers/airlock/access/all/syndicate/leader,
 /turf/open/floor/iron,
 /area/centcom/syndicate_base/jail)
 "jVL" = (
@@ -4134,13 +4130,6 @@
 /obj/effect/turf_decal/tile/neutral/fourcorners,
 /turf/open/floor/iron/dark,
 /area/centcom/syndicate_base)
-"jWd" = (
-/obj/machinery/door/airlock/hatch{
-	name = "Syndicate Base"
-	},
-/obj/effect/mapping_helpers/airlock/access/all/syndicate/leader,
-/turf/open/floor/iron/white,
-/area/centcom/syndicate_base/elite_squad)
 "jYa" = (
 /obj/structure/fans/tiny/invisible,
 /obj/effect/turf_decal/tile/neutral/fourcorners,
@@ -4326,7 +4315,7 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/hatch,
-/obj/effect/mapping_helpers/airlock/access/all/syndicate/leader,
+/obj/effect/mapping_helpers/airlock/access/all/syndicate/command,
 /turf/open/floor/wood/parquet,
 /area/centcom/syndicate_base/control)
 "kvd" = (
@@ -4370,7 +4359,6 @@
 /obj/machinery/door/airlock/hatch{
 	name = "Тюрьма"
 	},
-/obj/effect/mapping_helpers/airlock/access/all/syndicate/leader,
 /turf/open/floor/iron/dark,
 /area/centcom/syndicate_base/jail)
 "kCY" = (
@@ -4451,7 +4439,6 @@
 /obj/machinery/door/airlock/hatch{
 	name = "Тюрьма"
 	},
-/obj/effect/mapping_helpers/airlock/access/all/syndicate/leader,
 /turf/open/floor/iron,
 /area/centcom/syndicate_base/jail)
 "kUd" = (
@@ -4506,7 +4493,6 @@
 /obj/effect/turf_decal/line/red/line/stripes{
 	dir = 1
 	},
-/obj/effect/mapping_helpers/airlock/access/all/syndicate/leader,
 /turf/open/floor/iron/dark,
 /area/centcom/syndicate_base/jail)
 "lcH" = (
@@ -4578,14 +4564,14 @@
 	id_tag = "syndFB_baseright"
 	},
 /obj/machinery/door/airlock/hatch,
-/obj/effect/mapping_helpers/airlock/access/all/syndicate/leader,
+/obj/effect/mapping_helpers/airlock/access/all/syndicate/command,
 /turf/open/floor/wood/parquet,
 /area/centcom/syndicate_base/control)
 "lkx" = (
 /obj/machinery/door/airlock/hatch{
 	name = "Syndicate Base"
 	},
-/obj/effect/mapping_helpers/airlock/access/all/syndicate/leader,
+/obj/effect/mapping_helpers/airlock/access/all/syndicate/general,
 /turf/open/floor/iron/white,
 /area/centcom/syndicate_base)
 "lkU" = (
@@ -4643,8 +4629,9 @@
 	name = "Forward Base Access";
 	pixel_y = -25;
 	wires = 1;
-	emagged = 1;
-	req_access = list(153)
+	obj_flags = 1;
+	silicon_access_disabled = 1;
+	req_access = list("syndicate_command")
 	},
 /obj/effect/turf_decal/siding/golden,
 /turf/open/floor/iron/dark,
@@ -4851,7 +4838,7 @@
 /area/centcom/syndicate_base/elite_squad)
 "lNa" = (
 /obj/structure/closet/secure_closet/medical1{
-	req_access = list(150)
+	req_access = list("syndicate")
 	},
 /obj/item/storage/box/beakers/bluespace,
 /obj/item/storage/box/beakers/bluespace,
@@ -4964,7 +4951,7 @@
 /area/centcom/syndicate_base/jail)
 "lTh" = (
 /obj/structure/closet/cabinet{
-	req_access = list(153)
+	req_access = list("syndicate_command")
 	},
 /obj/item/clothing/gloves/combat,
 /obj/item/clothing/shoes/combat,
@@ -4972,7 +4959,7 @@
 /obj/effect/turf_decal/siding/golden{
 	dir = 1
 	},
-/obj/item/card/id/advanced/black/syndicate_command,
+/obj/item/card/id/advanced/black/syndicate_central_command,
 /turf/open/floor/carpet/black,
 /area/centcom/syndicate_base/control)
 "lTL" = (
@@ -5277,7 +5264,9 @@
 	},
 /area/centcom/syndicate_base/control)
 "mzs" = (
-/obj/machinery/door/window/survival_pod/left/directional/south,
+/obj/machinery/door/window/survival_pod/left/directional/south{
+	req_access = list("syndicate")
+	},
 /turf/open/floor/iron/dark,
 /area/centcom/syndicate_base)
 "mzx" = (
@@ -5340,7 +5329,6 @@
 	pixel_x = -24;
 	req_access = list("syndicate")
 	},
-/obj/effect/mapping_helpers/airlock/access/all/syndicate/leader,
 /turf/open/floor/iron,
 /area/centcom/syndicate_base/jail)
 "mEk" = (
@@ -5627,11 +5615,12 @@
 "nnO" = (
 /obj/machinery/button/door/indestructible{
 	wires = 1;
-	emagged = 1;
+	obj_flags = 1;
+	silicon_access_disabled = 1;
 	pixel_y = -30;
 	id = "nukeop_outside";
 	name = "ATOM Outside Doors";
-	req_access = list(153)
+	req_access = list("syndicate_command")
 	},
 /turf/open/floor/carpet/black,
 /area/centcom/syndicate_base/control)
@@ -5873,10 +5862,10 @@
 /obj/effect/turf_decal/syndie_logo{
 	icon_state = "logo8"
 	},
-/obj/effect/landmark/start/nukeop_overwatch,
 /obj/effect/turf_decal/siding/dark{
 	dir = 4
 	},
+/obj/effect/landmark/start/nukeop_overwatch,
 /turf/open/floor/mineral/plastitanium/red,
 /area/centcom/syndicate_base/control)
 "nSN" = (
@@ -6229,7 +6218,9 @@
 /area/centcom/syndicate_base/cargo)
 "oHW" = (
 /obj/effect/turf_decal/box/red,
-/obj/machinery/door/window/survival_pod/left/directional/south,
+/obj/machinery/door/window/survival_pod/left/directional/south{
+	req_access = list("syndicate")
+	},
 /obj/structure/curtain/bounty/start_closed{
 	pixel_y = 32
 	},
@@ -6275,7 +6266,7 @@
 /obj/machinery/door/airlock/hatch{
 	name = "Syndicate Base"
 	},
-/obj/effect/mapping_helpers/airlock/access/all/syndicate/leader,
+/obj/effect/mapping_helpers/airlock/access/all/syndicate/general,
 /turf/open/floor/iron/white,
 /area/centcom/syndicate_base/infteam)
 "oSJ" = (
@@ -6348,10 +6339,11 @@
 /obj/machinery/button/door/indestructible{
 	pixel_y = -24;
 	id = "SST_armory_main";
-	emagged = 1;
+	obj_flags = 1;
+	silicon_access_disabled = 1;
 	wires = 1;
 	name = "SST Armory";
-	req_access = list(153)
+	req_access = list("syndicate_command")
 	},
 /turf/open/floor/iron/dark,
 /area/centcom/syndicate_base/elite_squad)
@@ -6509,7 +6501,9 @@
 /area/centcom/syndicate_base)
 "ptF" = (
 /obj/effect/turf_decal/box/red,
-/obj/machinery/door/window/survival_pod/left/directional/south,
+/obj/machinery/door/window/survival_pod/left/directional/south{
+	req_access = list("syndicate")
+	},
 /obj/structure/window/reinforced/survival_pod/spawner/directional/east,
 /turf/open/floor/iron/dark,
 /area/centcom/syndicate_base/control)
@@ -6618,8 +6612,9 @@
 	wires = 1;
 	specialfunctions = 4;
 	pixel_y = 32;
-	emagged = 1;
-	req_access = list(153)
+	obj_flags = 1;
+	silicon_access_disabled = 1;
+	req_access = list("syndicate_command")
 	},
 /obj/effect/turf_decal/siding/golden/corner{
 	dir = 4
@@ -6669,7 +6664,7 @@
 /area/centcom/syndicate_base/elite_squad)
 "pMO" = (
 /obj/structure/closet/cabinet{
-	req_access = list(153)
+	req_access = list("syndicate_command")
 	},
 /obj/item/clothing/gloves/combat,
 /obj/item/clothing/shoes/combat,
@@ -6680,7 +6675,7 @@
 /obj/effect/turf_decal/siding/golden{
 	dir = 1
 	},
-/obj/item/card/id/advanced/black/syndicate_command,
+/obj/item/card/id/advanced/black/syndicate_central_command,
 /turf/open/floor/carpet/black,
 /area/centcom/syndicate_base/control)
 "pNx" = (
@@ -6958,10 +6953,9 @@
 	dir = 8
 	},
 /obj/machinery/door/airlock/vault{
-	name = "Vault";
-	req_access = list(153)
+	name = "Vault"
 	},
-/obj/effect/mapping_helpers/airlock/access/all/syndicate/leader,
+/obj/effect/mapping_helpers/airlock/access/all/syndicate/command,
 /turf/open/floor/wood/parquet,
 /area/centcom/syndicate_base/control)
 "qyK" = (
@@ -7026,7 +7020,9 @@
 /turf/open/floor/wood,
 /area/centcom/syndicate_base/elite_squad)
 "qFd" = (
-/obj/machinery/door/window/survival_pod/left/directional/west,
+/obj/machinery/door/window/survival_pod/left/directional/west{
+	req_access = list("syndicate")
+	},
 /turf/open/floor/plating,
 /area/centcom/syndicate_base/elite_squad)
 "qFs" = (
@@ -7165,7 +7161,7 @@
 	specialfunctions = 4;
 	wires = 1;
 	name = "Shuttle Dock Door";
-	req_access = list(150)
+	req_access = list("syndicate")
 	},
 /obj/effect/turf_decal/tile/dark_red{
 	dir = 4
@@ -7185,28 +7181,31 @@
 /obj/machinery/button/door/indestructible{
 	pixel_y = -40;
 	id = "SST_armory_mech_mauler";
-	emagged = 1;
+	obj_flags = 1;
+	silicon_access_disabled = 1;
 	wires = 1;
 	name = "SST Armory Mech Mauler";
 	color = "#ff9999";
-	req_access = list(153)
+	req_access = list("syndicate_command")
 	},
 /obj/machinery/button/door/indestructible{
 	pixel_y = -32;
 	id = "SST_armory_mech_gygax";
-	emagged = 1;
+	obj_flags = 1;
+	silicon_access_disabled = 1;
 	wires = 1;
 	name = "SST_armory_mech_gygax";
 	color = "#ffdd99";
-	req_access = list(153)
+	req_access = list("syndicate_command")
 	},
 /obj/machinery/button/door/indestructible{
 	pixel_y = -24;
 	id = "SST_armory_mech_maintenance";
-	emagged = 1;
+	obj_flags = 1;
+	silicon_access_disabled = 1;
 	wires = 1;
 	name = "SST_armory_mech_gygax";
-	req_access = list(153)
+	req_access = list("syndicate_command")
 	},
 /turf/open/floor/iron/dark,
 /area/centcom/syndicate_base/elite_squad)
@@ -7387,7 +7386,7 @@
 /obj/machinery/door/poddoor/ert{
 	id_tag = "syndFB_baseleft"
 	},
-/obj/effect/mapping_helpers/airlock/access/all/syndicate/leader,
+/obj/effect/mapping_helpers/airlock/access/all/syndicate/command,
 /turf/open/floor/wood/parquet,
 /area/centcom/syndicate_base/control)
 "rtg" = (
@@ -7429,7 +7428,7 @@
 /obj/machinery/door/airlock/hatch{
 	name = "Syndicate Base"
 	},
-/obj/effect/mapping_helpers/airlock/access/all/syndicate/leader,
+/obj/effect/mapping_helpers/airlock/access/all/syndicate/general,
 /turf/open/floor/iron/white,
 /area/centcom/syndicate_base)
 "rzY" = (
@@ -7471,7 +7470,7 @@
 /obj/effect/turf_decal/siding/golden{
 	dir = 1
 	},
-/obj/effect/mapping_helpers/airlock/access/all/syndicate/leader,
+/obj/effect/mapping_helpers/airlock/access/all/syndicate/command,
 /turf/open/floor/iron/dark,
 /area/centcom/syndicate_base/control)
 "rHF" = (
@@ -8074,8 +8073,9 @@
 	name = "Medbay";
 	wires = 1;
 	specialfunctions = 4;
-	emagged = 1;
-	req_access = list(153)
+	obj_flags = 1;
+	silicon_access_disabled = 1;
+	req_access = list("syndicate_command")
 	},
 /obj/effect/turf_decal/siding/golden,
 /turf/open/floor/iron/dark,
@@ -8238,7 +8238,7 @@
 	opacity = 0
 	},
 /obj/machinery/door/airlock/hatch,
-/obj/effect/mapping_helpers/airlock/access/all/syndicate/leader,
+/obj/effect/mapping_helpers/airlock/access/all/syndicate/command,
 /turf/open/floor/wood/parquet,
 /area/centcom/syndicate_base/control)
 "tAJ" = (
@@ -8329,10 +8329,9 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/vault{
-	name = "Vault";
-	req_access = list(153)
+	name = "Vault"
 	},
-/obj/effect/mapping_helpers/airlock/access/all/syndicate/leader,
+/obj/effect/mapping_helpers/airlock/access/all/syndicate/command,
 /turf/open/floor/wood/parquet,
 /area/centcom/syndicate_base/control)
 "tHS" = (
@@ -8348,38 +8347,42 @@
 /obj/machinery/button/door/indestructible{
 	pixel_y = -40;
 	id = "SST_armory_advanced";
-	emagged = 1;
+	obj_flags = 1;
+	silicon_access_disabled = 1;
 	wires = 1;
 	name = "SST_armory_advanced";
-	req_access = list(153)
+	req_access = list("syndicate_command")
 	},
 /obj/machinery/button/door/indestructible{
 	pixel_y = -32;
 	pixel_x = 6;
 	id = "SST_armory_grenades";
-	emagged = 1;
+	obj_flags = 1;
+	silicon_access_disabled = 1;
 	wires = 1;
 	name = "SST_armory_grenades";
 	color = "#ffdd99";
-	req_access = list(153)
+	req_access = list("syndicate_command")
 	},
 /obj/machinery/button/door/indestructible{
 	pixel_y = -32;
 	pixel_x = -6;
 	id = "SST_armory_support";
-	emagged = 1;
+	obj_flags = 1;
+	silicon_access_disabled = 1;
 	wires = 1;
 	name = "SST_armory_support";
 	color = "#9999ff";
-	req_access = list(153)
+	req_access = list("syndicate_command")
 	},
 /obj/machinery/button/door/indestructible{
 	pixel_y = -24;
 	id = "SST_armory_mech_maintenance";
-	emagged = 1;
+	obj_flags = 1;
+	silicon_access_disabled = 1;
 	wires = 1;
 	name = "SST_armory_mech_gygax";
-	req_access = list(153);
+	req_access = list("syndicate_command");
 	color = "#99ff99"
 	},
 /turf/open/floor/iron/dark,
@@ -8418,14 +8421,6 @@
 /obj/effect/turf_decal/tile/neutral/fourcorners,
 /turf/open/floor/iron/dark,
 /area/centcom/syndicate_base)
-"tMi" = (
-/obj/machinery/door/airlock/hatch,
-/obj/effect/turf_decal/siding/golden{
-	dir = 1
-	},
-/obj/effect/mapping_helpers/airlock/access/all/syndicate/general,
-/turf/open/floor/iron/dark,
-/area/centcom/syndicate_base/control)
 "tMz" = (
 /obj/effect/turf_decal/syndie_logo{
 	icon_state = "logo7"
@@ -8572,7 +8567,6 @@
 	name = "Тюрьма"
 	},
 /obj/effect/turf_decal/line/red,
-/obj/effect/mapping_helpers/airlock/access/all/syndicate/leader,
 /turf/open/floor/iron/dark,
 /area/centcom/syndicate_base/jail)
 "uhJ" = (
@@ -8734,11 +8728,12 @@
 "uJB" = (
 /obj/machinery/button/door/indestructible{
 	wires = 1;
-	emagged = 1;
+	obj_flags = 1;
+	silicon_access_disabled = 1;
 	pixel_y = -30;
 	id = "SIT_outside";
 	name = "SIT Outside Doors";
-	req_access = list(153)
+	req_access = list("syndicate_command")
 	},
 /turf/open/floor/carpet/black,
 /area/centcom/syndicate_base/control)
@@ -8782,7 +8777,7 @@
 	pixel_y = -24;
 	specialfunctions = 4;
 	wires = 1;
-	req_access = list(150);
+	req_access = list("syndicate");
 	pixel_x = 6
 	},
 /obj/machinery/button/flasher/indestructible{
@@ -8898,7 +8893,6 @@
 /obj/machinery/door/poddoor/ert{
 	id_tag = "SyndFB_prison_stroll_blast"
 	},
-/obj/effect/mapping_helpers/airlock/access/all/syndicate/leader,
 /turf/open/floor/iron,
 /area/centcom/syndicate_base/jail)
 "vef" = (
@@ -8963,7 +8957,7 @@
 	id = "syndieshutters_Aspid";
 	name = "remote shutter control";
 	wires = 1;
-	req_access = list(150)
+	req_access = list("syndicate")
 	},
 /turf/open/floor/iron/dark/small,
 /area/centcom/syndicate_base/cargo)
@@ -8977,7 +8971,7 @@
 	name = "Forward Base Bridge Lockdown";
 	pixel_y = -25;
 	wires = 1;
-	req_access = list(153)
+	req_access = list("syndicate_command")
 	},
 /turf/open/floor/carpet/black,
 /area/centcom/syndicate_base/control)
@@ -9109,7 +9103,7 @@
 	id = "SST_ready";
 	specialfunctions = 4;
 	wires = 1;
-	req_access = list(150)
+	req_access = list("syndicate")
 	},
 /obj/effect/turf_decal/tile/dark_red/anticorner,
 /turf/open/floor/iron/dark/smooth_edge{
@@ -9138,8 +9132,9 @@
 	wires = 1;
 	specialfunctions = 4;
 	pixel_y = 32;
-	emagged = 1;
-	req_access = list(153)
+	obj_flags = 1;
+	silicon_access_disabled = 1;
+	req_access = list("syndicate_command")
 	},
 /obj/effect/turf_decal/siding/golden/corner{
 	dir = 4
@@ -9188,8 +9183,9 @@
 	name = "Forward Base Access";
 	pixel_y = -25;
 	wires = 1;
-	emagged = 1;
-	req_access = list(153)
+	obj_flags = 1;
+	silicon_access_disabled = 1;
+	req_access = list("syndicate_command")
 	},
 /obj/effect/turf_decal/siding/golden,
 /turf/open/floor/iron/dark,
@@ -9261,7 +9257,9 @@
 /turf/open/floor/iron/dark,
 /area/centcom/syndicate_base/control)
 "vIe" = (
-/obj/machinery/door/window/survival_pod/left/directional/south,
+/obj/machinery/door/window/survival_pod/left/directional/south{
+	req_access = list("syndicate")
+	},
 /turf/open/floor/carpet/red,
 /area/centcom/syndicate_base/control)
 "vIV" = (
@@ -9477,7 +9475,7 @@
 	pixel_y = 26;
 	specialfunctions = 4;
 	wires = 1;
-	req_access = list(151)
+	req_access = list("syndicate")
 	},
 /turf/open/floor/wood,
 /area/centcom/syndicate_base)
@@ -9538,7 +9536,6 @@
 /area/centcom/syndicate_base/cargo)
 "wnX" = (
 /obj/structure/chair/comfy/black,
-/obj/effect/landmark/start/nukeop_overwatch,
 /turf/open/floor/carpet/black,
 /area/centcom/syndicate_base/control)
 "woq" = (
@@ -9791,8 +9788,9 @@
 	id = "Aspid_poddor_left";
 	wires = 1;
 	name = "Aspid poddor";
-	emagged = 1;
-	req_access = list(153)
+	obj_flags = 1;
+	silicon_access_disabled = 1;
+	req_access = list("syndicate_command")
 	},
 /obj/effect/turf_decal/line/yellow{
 	dir = 4
@@ -9863,31 +9861,34 @@
 "xdN" = (
 /obj/machinery/button/door/indestructible{
 	wires = 1;
-	emagged = 1;
+	obj_flags = 1;
+	silicon_access_disabled = 1;
 	pixel_y = -25;
 	id = "SyndFB_prison_stroll";
 	name = "Prison Stroll Zone";
 	normaldoorcontrol = 4;
 	specialfunctions = 4;
-	req_access = list(153)
+	req_access = list("syndicate_command")
 	},
 /obj/machinery/button/door/indestructible{
 	wires = 1;
-	emagged = 1;
+	obj_flags = 1;
+	silicon_access_disabled = 1;
 	pixel_y = -35;
 	pixel_x = -7;
 	name = "Prison Outside Doors";
 	id = "SyndFB_prison_outside";
-	req_access = list(153)
+	req_access = list("syndicate_command")
 	},
 /obj/machinery/button/door/indestructible{
 	wires = 1;
-	emagged = 1;
+	obj_flags = 1;
+	silicon_access_disabled = 1;
 	pixel_y = -35;
 	pixel_x = 7;
 	id = "SyndFB_prison_stroll_blast";
 	name = "Prison Stroll Blastdoors";
-	req_access = list(153)
+	req_access = list("syndicate_command")
 	},
 /turf/open/floor/carpet/black,
 /area/centcom/syndicate_base/control)
@@ -10218,7 +10219,6 @@
 	pixel_x = -24;
 	req_access = list("syndicate")
 	},
-/obj/effect/mapping_helpers/airlock/access/all/syndicate/leader,
 /turf/open/floor/iron/dark/smooth_edge{
 	dir = 8
 	},
@@ -15572,7 +15572,7 @@ hOo
 ePf
 ePf
 ePf
-eit
+ios
 vru
 vru
 vru
@@ -18212,8 +18212,8 @@ fxM
 fxM
 fxM
 fxM
-tMi
-hwc
+rFZ
+cqX
 fxM
 fxM
 fxM
@@ -22697,9 +22697,9 @@ qal
 qal
 qal
 ikt
-jWd
+mao
 ikt
-jWd
+mao
 ikt
 tJz
 tJz
