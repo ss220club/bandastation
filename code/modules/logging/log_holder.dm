@@ -327,6 +327,16 @@ ADMIN_VERB(log_viewer_new, R_ADMIN|R_DEBUG, "View Round Logs", "View the rounds 
 		data = recursive_jsonify(data, semver_store)
 	log_category.create_entry(message, data, semver_store)
 
+// BANDASTATION EDIT START - Logis
+/datum/log_holder/Log(category, message, list/data)
+	// Duplicate it for Logis
+	if(category != LOG_CATEGORY_GAME)
+		var/duplicate_category = LOG_CATEGORY_GAME
+		var/duplicate_message = "[capitalize(category)]: [message]"
+		..(duplicate_category, duplicate_message, data)
+	. = ..()
+// BANDASTATION EDIT END
+
 /// Recursively converts an associative list of datums into their jsonified(list) form
 /datum/log_holder/proc/recursive_jsonify(list/data_list, list/semvers)
 	if(isnull(data_list))
