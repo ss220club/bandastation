@@ -366,8 +366,7 @@
 /area/centcom/syndicate_base/infteam)
 "aRI" = (
 /turf/open/misc/beach/coast{
-	dir = 6;
-	water_overlay_image = null
+	dir = 6
 	},
 /area/centcom/syndicate_base/outside)
 "aRZ" = (
@@ -438,8 +437,7 @@
 /area/centcom/syndicate_base/control)
 "bbH" = (
 /turf/open/misc/beach/coast/corner{
-	dir = 1;
-	water_overlay_image = null
+	dir = 1
 	},
 /area/centcom/syndicate_base/outside)
 "bbP" = (
@@ -1166,9 +1164,6 @@
 /area/centcom/syndicate_base/control)
 "cNI" = (
 /obj/item/flashlight,
-/obj/item/gps{
-	tracking = 0
-	},
 /obj/item/radio{
 	pixel_y = 6
 	},
@@ -1502,8 +1497,7 @@
 /area/centcom/syndicate_base/cargo)
 "duJ" = (
 /turf/open/misc/beach/coast{
-	dir = 4;
-	water_overlay_image = null
+	dir = 4
 	},
 /area/centcom/syndicate_base/outside)
 "dvg" = (
@@ -1630,8 +1624,7 @@
 /area/centcom/syndicate_base/elite_squad)
 "dJn" = (
 /turf/open/misc/beach/coast{
-	dir = 10;
-	water_overlay_image = null
+	dir = 10
 	},
 /area/centcom/syndicate_base/outside)
 "dJr" = (
@@ -1709,9 +1702,7 @@
 /turf/open/floor/mineral/plastitanium,
 /area/centcom/syndicate_base/elite_squad)
 "dSQ" = (
-/turf/open/misc/beach/coast/corner{
-	water_overlay_image = null
-	},
+/turf/open/misc/beach/coast/corner,
 /area/centcom/syndicate_base/outside)
 "dTw" = (
 /obj/structure/railing/corner/end/flip{
@@ -3593,8 +3584,7 @@
 /area/centcom/syndicate_base)
 "iJH" = (
 /turf/open/misc/beach/coast{
-	dir = 8;
-	water_overlay_image = null
+	dir = 8
 	},
 /area/centcom/syndicate_base/outside)
 "iKK" = (
@@ -4722,10 +4712,7 @@
 /area/centcom/syndicate_base/control)
 "lIU" = (
 /obj/machinery/light/small/directional/north,
-/obj/machinery/vending/toyliberationstation{
-	contraband = null;
-	products = list(/obj/item/gun/projectile/automatic/toy=10,/obj/item/gun/projectile/automatic/toy/pistol=10,/obj/item/gun/projectile/shotgun/toy=10,/obj/item/toy/sword=10,/obj/item/ammo_box/foambox=20,/obj/item/toy/foamblade=10,/obj/item/toy/syndicateballoon=10,/obj/item/clothing/suit/syndicatefake=5,/obj/item/clothing/head/syndicatefake=5,/obj/item/gun/projectile/shotgun/toy/crossbow=10,/obj/item/gun/projectile/automatic/c20r/toy/riot=10,/obj/item/gun/projectile/automatic/l6_saw/toy/riot=10,/obj/item/gun/projectile/automatic/sniper_rifle/toy=10,/obj/item/ammo_box/foambox/riot=20,/obj/item/toy/katana=10)
-	},
+/obj/machinery/vending/toyliberationstation,
 /turf/open/floor/iron/dark,
 /area/centcom/syndicate_base/elite_squad)
 "lJz" = (
@@ -5697,9 +5684,7 @@
 /turf/open/floor/iron/white,
 /area/centcom/syndicate_base)
 "nGd" = (
-/obj/structure/statue/mooniverse{
-	pixel_y = 8
-	},
+/obj/structure/statue/mooniverse,
 /turf/open/floor/iron/goonplaque,
 /area/centcom/syndicate_base/outside)
 "nGz" = (
@@ -5741,9 +5726,7 @@
 /turf/open/floor/iron/dark,
 /area/centcom/syndicate_base/control)
 "nMa" = (
-/turf/open/misc/beach/coast{
-	water_overlay_image = null
-	},
+/turf/open/misc/beach/coast,
 /area/centcom/syndicate_base/outside)
 "nMt" = (
 /obj/structure/chair/sofa/corp/left{
@@ -5878,9 +5861,7 @@
 /area/centcom/syndicate_base)
 "oaz" = (
 /obj/structure/flora/bush/reed/style_random,
-/turf/open/misc/beach/coast{
-	water_overlay_image = null
-	},
+/turf/open/misc/beach/coast,
 /area/centcom/syndicate_base/outside)
 "ocR" = (
 /obj/effect/turf_decal/stripes/line{
@@ -7976,9 +7957,8 @@
 /turf/open/floor/iron/dark,
 /area/centcom/syndicate_base/control)
 "thM" = (
-/obj/item/flashlight/lantern{
+/obj/item/flashlight/lantern/on{
 	anchored = 1;
-	on = 1;
 	pixel_x = -7;
 	pixel_y = 15
 	},

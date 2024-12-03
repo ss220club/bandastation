@@ -248,6 +248,10 @@
 // MARK: Override to defaults
 /obj/item/banner/red
 	icon = 'icons/obj/banner.dmi'
+	lefthand_file = 'icons/mob/inhands/equipment/banners_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/banners_righthand.dmi'
 
 /obj/item/banner/blue
 	icon = 'icons/obj/banner.dmi'
+	lefthand_file = 'icons/mob/inhands/equipment/banners_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/banners_righthand.dmi'
