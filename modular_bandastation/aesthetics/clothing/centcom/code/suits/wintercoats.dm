@@ -1,0 +1,8 @@
+/obj/item/clothing/suit/hooded/wintercoat/centcom
+	name = "\improper зимняя куртка офицера флота Нанотрейзен"
+	desc = "Люксова куртка с позолотой, сшитая в классических цветах компании. Застежка-молния выполнена в виде логотипа компании."
+	icon = 'modular_bandastation/aesthetics/clothing/centcom/icons/obj/clothing/suits/wintercoat.dmi'
+	worn_icon = 'modular_bandastation/aesthetics/clothing/centcom/icons/mob/clothing/suits/wintercoat.dmi'
+	lefthand_file = 'modular_bandastation/aesthetics/clothing/centcom/icons/inhands/clothing/suits_lefthand.dmi'
+	righthand_file = 'modular_bandastation/aesthetics/clothing/centcom/icons/inhands/clothing/suits_righthand.dmi'
+	inhand_icon_state = "coatcentcom"
