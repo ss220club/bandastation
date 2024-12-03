@@ -1,12 +1,12 @@
-import { useBackend } from '../backend';
 import { Box, Button } from 'tgui-core/components';
-import { ImageButton } from './ImageButton';
+
+import { useBackend } from '../backend';
 import { LoadoutItem } from '../interfaces/PreferencesMenu/loadout/base';
+import { ImageButton } from './ImageButton';
 
 export const ItemDisplay220 = (props: {
   active: boolean;
   item: LoadoutItem;
-  scale?: number;
 }) => {
   const { act } = useBackend();
   const { active, item } = props;
@@ -54,7 +54,7 @@ export const ItemDisplay220 = (props: {
 
   return (
     <ImageButton
-      key={item.path}
+      key={item.name}
       imageSize={89}
       selected={active}
       dmIcon={icon}

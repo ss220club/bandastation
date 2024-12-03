@@ -1,5 +1,6 @@
 import { createSearch } from '../../../../common/string';
 import { useBackend } from '../../../backend';
+import { ItemDisplay220 } from '../../../bandastation/ItemDisplay220';
 import {
   Box,
   Button,
@@ -8,7 +9,6 @@ import {
   Icon,
   NoticeBox,
 } from '../../../components';
-import { ItemDisplay220 } from '../../../bandastation/ItemDisplay220';
 import { LoadoutCategory, LoadoutItem, LoadoutManagerData } from './base';
 
 export const ItemIcon = (props: { item: LoadoutItem; scale?: number }) => {
@@ -99,6 +99,7 @@ const ItemListDisplay = (props: { items: LoadoutItem[] }) => {
     <div style={{ display: `flex`, flexWrap: `wrap` }}>
       {props.items.map((item) => (
         <ItemDisplay220
+          key={item.name}
           item={item}
           active={loadout_list && loadout_list[item.path] !== undefined}
         />
