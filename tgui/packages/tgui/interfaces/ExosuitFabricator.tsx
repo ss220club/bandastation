@@ -227,7 +227,7 @@ const Queue = (props: QueueProps) => {
                 )) || (
                   <Button
                     disabled={!queue.length}
-                    content="Сборка"
+                    content="Начать сборку"
                     icon="play"
                     onClick={() => act('build_queue')}
                   />
