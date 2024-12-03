@@ -1,6 +1,5 @@
 // General
 /datum/lazy_template/nukie_base
-	name = "Syndicate Forward Base"
 	map_dir = "_maps/templates/lazy_templates/ss220"
 	map_name = "syndie_cc"
 	key = LAZY_TEMPLATE_KEY_NUKIEBASE
