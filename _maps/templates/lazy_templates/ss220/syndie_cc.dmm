@@ -12,9 +12,7 @@
 /turf/open/floor/carpet,
 /area/centcom/syndicate_base/infteam)
 "aaU" = (
-/obj/effect/turf_decal/plaque{
-	layer = 3
-	},
+/obj/effect/turf_decal/plaque,
 /obj/structure/sign/poster/contraband/random/directional/east,
 /turf/open/floor/circuit/red,
 /area/centcom/syndicate_base)
@@ -112,7 +110,7 @@
 "amr" = (
 /obj/structure/table/reinforced/plastitaniumglass,
 /obj/machinery/fax/admin/syndicate{
-	department = "Syndicate Strike Team"
+	fax_name = "Syndicate Strike Team"
 	},
 /turf/open/floor/carpet/black,
 /area/centcom/syndicate_base/elite_squad)
@@ -168,12 +166,8 @@
 /obj/structure/railing{
 	dir = 1
 	},
-/obj/item/banner/syndicate{
-	layer = 4.2
-	},
-/obj/structure/railing{
-	layer = 4.3
-	},
+/obj/item/banner/syndicate,
+/obj/structure/railing,
 /turf/open/floor/iron/dark,
 /area/centcom/syndicate_base/jail)
 "atZ" = (
@@ -252,9 +246,7 @@
 "aDj" = (
 /obj/structure/rack,
 /obj/effect/turf_decal/box/white,
-/obj/structure/sign/poster/contraband/hacking_guide{
-	pixel_y = 32
-	},
+/obj/structure/sign/poster/contraband/hacking_guide/directional/north,
 /obj/machinery/light{
 	dir = 1
 	},
@@ -372,7 +364,7 @@
 "aQG" = (
 /obj/structure/table/wood,
 /obj/machinery/fax/admin/syndicate{
-	department = "Syndicate Infiltrators"
+	fax_name = "Syndicate Infiltrators"
 	},
 /obj/structure/curtain/bounty/start_closed{
 	pixel_x = -32
@@ -714,9 +706,7 @@
 /area/centcom/syndicate_base)
 "bNg" = (
 /obj/machinery/door/poddoor/ert{
-	id_tag = "SyndFB_prison_stroll_blast";
-	layer = 3.1;
-	closingLayer = 3.1
+	id_tag = "SyndFB_prison_stroll_blast"
 	},
 /obj/machinery/door/airlock/hatch{
 	name = "Тюрьма"
@@ -1012,11 +1002,9 @@
 	},
 /area/centcom/syndicate_base)
 "cji" = (
-/obj/machinery/door/poddoor{
+/obj/machinery/door/poddoor/ert{
 	id_tag = "nukeop_ready";
-	layer = 3.11;
-	name = "Shuttle Dock Door";
-	closingLayer = 3.11
+	name = "Shuttle Dock Door"
 	},
 /obj/machinery/door/airlock/hatch{
 	name = "Syndicate Base"
@@ -1162,9 +1150,7 @@
 /turf/open/floor/carpet/black,
 /area/centcom/syndicate_base/jail)
 "cFP" = (
-/obj/effect/turf_decal/plaque{
-	layer = 3
-	},
+/obj/effect/turf_decal/plaque,
 /turf/open/floor/circuit/red,
 /area/centcom/syndicate_base)
 "cHl" = (
@@ -1323,9 +1309,7 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/centcom/syndicate_base/control)
 "dar" = (
-/obj/effect/turf_decal/plaque{
-	layer = 3
-	},
+/obj/effect/turf_decal/plaque,
 /obj/structure/statue/mooniverse,
 /turf/open/floor/circuit/red,
 /area/centcom/syndicate_base)
@@ -1623,11 +1607,9 @@
 	},
 /area/centcom/syndicate_base)
 "dCr" = (
-/obj/machinery/door/poddoor{
+/obj/machinery/door/poddoor/ert{
 	id_tag = "SST_ready";
-	name = "Shuttle Dock Door";
-	layer = 3.11;
-	closingLayer = 3.11
+	name = "Shuttle Dock Door"
 	},
 /obj/machinery/door/airlock/hatch{
 	name = "Syndicate Base"
@@ -2109,9 +2091,7 @@
 "eUn" = (
 /obj/structure/rack,
 /obj/effect/turf_decal/box/white,
-/obj/structure/sign/poster/contraband/revolver{
-	pixel_y = 32
-	},
+/obj/structure/sign/poster/contraband/revolver/directional/north,
 /obj/item/organ/cyberimp/arm/baton,
 /obj/item/organ/cyberimp/arm/combat,
 /obj/item/organ/cyberimp/arm/esword,
@@ -2136,7 +2116,7 @@
 "eVk" = (
 /obj/structure/table/reinforced/plastitaniumglass,
 /obj/machinery/fax/admin/syndicate{
-	department = "Syndicate"
+	fax_name = "Syndicate"
 	},
 /turf/open/floor/carpet/red,
 /area/centcom/syndicate_base/control)
@@ -2444,9 +2424,7 @@
 /area/centcom/syndicate_base/elite_squad)
 "fCu" = (
 /obj/machinery/door/poddoor/ert{
-	id_tag = "SyndFB_prison_stroll_blast";
-	layer = 3.1;
-	closingLayer = 3.1
+	id_tag = "SyndFB_prison_stroll_blast"
 	},
 /obj/machinery/door/airlock/hatch{
 	name = "Тюрьма"
@@ -3148,10 +3126,7 @@
 /area/centcom/syndicate_base/jail)
 "hse" = (
 /obj/structure/table,
-/obj/machinery/door/window/brigdoor{
-	color = "red";
-	req_access = list(150)
-	},
+/obj/machinery/door/window/survival_pod/left/directional/south,
 /turf/open/floor/iron/dark,
 /area/centcom/syndicate_base)
 "hwb" = (
@@ -3190,8 +3165,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/toilet{
-	dir = 1;
-	layer = 4
+	dir = 1
 	},
 /turf/open/floor/iron/white,
 /area/centcom/syndicate_base)
@@ -3238,9 +3212,7 @@
 "hFV" = (
 /obj/structure/rack,
 /obj/effect/turf_decal/box/white,
-/obj/structure/sign/poster/contraband/c20r{
-	pixel_y = 32
-	},
+/obj/structure/sign/poster/contraband/c20r/directional/north,
 /obj/item/syndicate_teleporter{
 	pixel_x = -3;
 	pixel_y = 3
@@ -3270,11 +3242,7 @@
 /turf/open/floor/iron/dark,
 /area/centcom/syndicate_base/control)
 "hJh" = (
-/obj/machinery/door/window/brigdoor{
-	color = "red";
-	dir = 8;
-	req_access = list(150)
-	},
+/obj/machinery/door/window/survival_pod/left/directional/west,
 /turf/open/floor/plating,
 /area/centcom/syndicate_base/infteam)
 "hJi" = (
@@ -4478,9 +4446,7 @@
 /area/centcom/syndicate_base/outside)
 "kSJ" = (
 /obj/machinery/door/poddoor/ert{
-	id_tag = "SyndFB_prison_stroll_blast";
-	layer = 3.1;
-	closingLayer = 3.1
+	id_tag = "SyndFB_prison_stroll_blast"
 	},
 /obj/machinery/door/airlock/hatch{
 	name = "Тюрьма"
@@ -4532,9 +4498,7 @@
 /area/centcom/syndicate_base/infteam)
 "laR" = (
 /obj/machinery/door/poddoor/ert{
-	id_tag = "SyndFB_prison_stroll_blast";
-	layer = 3.1;
-	closingLayer = 3.1
+	id_tag = "SyndFB_prison_stroll_blast"
 	},
 /obj/machinery/door/airlock/hatch{
 	name = "Тюрьма"
@@ -4611,9 +4575,7 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor/ert{
-	id_tag = "syndFB_baseright";
-	layer = 3.11;
-	closingLayer = 3.11
+	id_tag = "syndFB_baseright"
 	},
 /obj/machinery/door/airlock/hatch,
 /obj/effect/mapping_helpers/airlock/access/all/syndicate/leader,
@@ -4814,9 +4776,7 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
-/obj/structure/sign/poster/contraband/syndicate_recruitment{
-	pixel_x = 32
-	},
+/obj/structure/sign/poster/contraband/syndicate_recruitment/directional/east,
 /obj/effect/turf_decal/syndie_logo{
 	icon_state = "logo12"
 	},
@@ -4853,9 +4813,8 @@
 /turf/open/floor/carpet/black,
 /area/centcom/syndicate_base/jail)
 "lKs" = (
-/obj/machinery/door/poddoor{
+/obj/machinery/door/poddoor/ert{
 	id_tag = "nukeop_ready";
-	layer = 2.71;
 	name = "Shuttle Dock Door"
 	},
 /turf/open/floor/iron/dark,
@@ -5318,10 +5277,7 @@
 	},
 /area/centcom/syndicate_base/control)
 "mzs" = (
-/obj/machinery/door/window/brigdoor{
-	color = "red";
-	req_access = list(150)
-	},
+/obj/machinery/door/window/survival_pod/left/directional/south,
 /turf/open/floor/iron/dark,
 /area/centcom/syndicate_base)
 "mzx" = (
@@ -5815,7 +5771,6 @@
 /area/centcom/syndicate_base)
 "nGd" = (
 /obj/structure/statue/mooniverse{
-	layer = 4;
 	pixel_y = 8
 	},
 /turf/open/floor/iron/goonplaque,
@@ -6027,7 +5982,7 @@
 /area/centcom/syndicate_base/elite_squad)
 "ogO" = (
 /obj/machinery/fax/admin/syndicate{
-	department = "Syndicate"
+	fax_name = "Syndicate"
 	},
 /obj/structure/table/wood/fancy/black,
 /obj/structure/window/reinforced/survival_pod/spawner/directional/west,
@@ -6148,7 +6103,6 @@
 /obj/structure/fans/tiny/invisible,
 /obj/machinery/door/poddoor/ert{
 	id_tag = "SST_pod_ready";
-	layer = 2.8;
 	name = "Shuttle Dock Door"
 	},
 /obj/effect/turf_decal/tile/neutral/fourcorners,
@@ -6803,11 +6757,9 @@
 /obj/machinery/door/airlock/hatch{
 	name = "Syndicate Base"
 	},
-/obj/machinery/door/poddoor{
+/obj/machinery/door/poddoor/ert{
 	id_tag = "SIT_ready";
-	name = "Shuttle Dock Door";
-	layer = 3.11;
-	closingLayer = 3.11
+	name = "Shuttle Dock Door"
 	},
 /obj/effect/turf_decal/tile/neutral/fourcorners,
 /obj/effect/mapping_helpers/airlock/access/all/syndicate/general,
@@ -7013,11 +6965,9 @@
 /turf/open/floor/wood/parquet,
 /area/centcom/syndicate_base/control)
 "qyK" = (
-/obj/machinery/door/poddoor{
+/obj/machinery/door/poddoor/ert{
 	id_tag = "SST_ready";
-	name = "Shuttle Dock Door";
-	layer = 3.11;
-	closingLayer = 3.11
+	name = "Shuttle Dock Door"
 	},
 /obj/effect/turf_decal/tile/neutral/fourcorners,
 /turf/open/floor/iron/dark,
@@ -7076,12 +7026,7 @@
 /turf/open/floor/wood,
 /area/centcom/syndicate_base/elite_squad)
 "qFd" = (
-/obj/machinery/door/window/brigdoor{
-	color = "red";
-	dir = 8;
-	name = "Kitchen";
-	req_access = list(150)
-	},
+/obj/machinery/door/window/survival_pod/left/directional/west,
 /turf/open/floor/plating,
 /area/centcom/syndicate_base/elite_squad)
 "qFs" = (
@@ -7145,7 +7090,7 @@
 	},
 /obj/structure/table/wood/fancy/royalblack,
 /obj/machinery/fax/admin/syndicate{
-	department = "Syndicate"
+	fax_name = "Syndicate"
 	},
 /obj/effect/turf_decal/siding/golden,
 /turf/open/floor/carpet/black,
@@ -7184,9 +7129,7 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
-/obj/structure/sign/poster/contraband/c20r{
-	pixel_x = -32
-	},
+/obj/structure/sign/poster/contraband/c20r/directional/west,
 /obj/effect/turf_decal/syndie_logo{
 	icon_state = "logo9"
 	},
@@ -7384,9 +7327,7 @@
 /area/centcom/syndicate_base)
 "ros" = (
 /obj/item/banner/syndicate,
-/obj/structure/sign/poster/contraband/syndicate_recruitment{
-	pixel_y = 30
-	},
+/obj/structure/sign/poster/contraband/syndicate_recruitment/directional/north,
 /turf/open/floor/wood/parquet,
 /area/centcom/syndicate_base/control)
 "rqt" = (
@@ -7444,9 +7385,7 @@
 	},
 /obj/machinery/door/airlock/hatch,
 /obj/machinery/door/poddoor/ert{
-	id_tag = "syndFB_baseleft";
-	layer = 3.11;
-	closingLayer = 3.11
+	id_tag = "syndFB_baseleft"
 	},
 /obj/effect/mapping_helpers/airlock/access/all/syndicate/leader,
 /turf/open/floor/wood/parquet,
@@ -7933,9 +7872,7 @@
 /turf/open/floor/carpet/black,
 /area/centcom/syndicate_base/elite_squad)
 "sDq" = (
-/obj/structure/sign/poster/contraband/smoke{
-	pixel_x = -32
-	},
+/obj/structure/sign/poster/contraband/smoke/directional/west,
 /obj/machinery/light/small{
 	dir = 8
 	},
@@ -8021,7 +7958,6 @@
 /obj/structure/flora/tree/pine{
 	color = "#336633";
 	desc = "Напоминает о былых, более холодных временах...";
-	layer = 2.9;
 	name = "Ель"
 	},
 /turf/open/floor/grass,
@@ -8147,7 +8083,6 @@
 "thM" = (
 /obj/item/flashlight/lantern{
 	anchored = 1;
-	layer = 6;
 	on = 1;
 	pixel_x = -7;
 	pixel_y = 15
@@ -8300,9 +8235,7 @@
 	density = 0;
 	icon_state = "open";
 	id_tag = "syndFB_lockdown";
-	opacity = 0;
-	layer = 3.1;
-	closingLayer = 3.1
+	opacity = 0
 	},
 /obj/machinery/door/airlock/hatch,
 /obj/effect/mapping_helpers/airlock/access/all/syndicate/leader,
@@ -8633,9 +8566,7 @@
 /area/centcom/syndicate_base/infteam)
 "ugE" = (
 /obj/machinery/door/poddoor/ert{
-	id_tag = "SyndFB_prison_stroll_blast";
-	layer = 3.1;
-	closingLayer = 3.1
+	id_tag = "SyndFB_prison_stroll_blast"
 	},
 /obj/machinery/door/airlock/hatch{
 	name = "Тюрьма"
@@ -8885,9 +8816,7 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
-/obj/structure/sign/poster/contraband/syndicate_pistol{
-	pixel_x = 32
-	},
+/obj/structure/sign/poster/contraband/syndicate_pistol/directional/east,
 /obj/effect/turf_decal/syndie_logo{
 	icon_state = "logo12"
 	},
@@ -8967,9 +8896,7 @@
 	name = "Тюрьма"
 	},
 /obj/machinery/door/poddoor/ert{
-	id_tag = "SyndFB_prison_stroll_blast";
-	layer = 3.1;
-	closingLayer = 3.1
+	id_tag = "SyndFB_prison_stroll_blast"
 	},
 /obj/effect/mapping_helpers/airlock/access/all/syndicate/leader,
 /turf/open/floor/iron,
@@ -9591,9 +9518,8 @@
 /turf/open/floor/mineral/plastitanium,
 /area/centcom/syndicate_base/elite_squad)
 "wkC" = (
-/obj/machinery/door/poddoor{
+/obj/machinery/door/poddoor/ert{
 	id_tag = "nukeop_ready";
-	layer = 2.71;
 	name = "Shuttle Dock Door"
 	},
 /turf/open/floor/iron/stairs/medium{
@@ -9803,9 +9729,7 @@
 /turf/open/floor/mineral/plastitanium,
 /area/centcom/syndicate_base/infteam)
 "wNr" = (
-/obj/effect/turf_decal/plaque{
-	layer = 3
-	},
+/obj/effect/turf_decal/plaque,
 /obj/structure/statue/ell_good{
 	pixel_y = 6
 	},
@@ -9891,7 +9815,7 @@
 /turf/open/floor/plating,
 /area/centcom/syndicate_base/elite_squad)
 "wWg" = (
-/obj/machinery/door/poddoor{
+/obj/machinery/door/poddoor/ert{
 	id_tag = "SIT_ready";
 	name = "Shuttle Dock Door"
 	},
@@ -9899,9 +9823,7 @@
 /turf/open/floor/iron/dark,
 /area/centcom/syndicate_base/infteam)
 "wXs" = (
-/obj/structure/sign/poster/contraband/c20r{
-	pixel_y = 32
-	},
+/obj/structure/sign/poster/contraband/c20r/directional/north,
 /turf/open/floor/wood,
 /area/centcom/syndicate_base)
 "wXx" = (
@@ -10105,9 +10027,7 @@
 	pixel_x = 3;
 	pixel_y = -3
 	},
-/obj/structure/sign/poster/contraband/syndicate_pistol{
-	pixel_y = 32
-	},
+/obj/structure/sign/poster/contraband/syndicate_pistol/directional/north,
 /obj/machinery/light{
 	dir = 1
 	},
@@ -10149,9 +10069,8 @@
 /turf/open/floor/wood,
 /area/centcom/syndicate_base/infteam)
 "xui" = (
-/obj/machinery/door/poddoor{
+/obj/machinery/door/poddoor/ert{
 	id_tag = "nukeop_ready";
-	layer = 2.71;
 	name = "Shuttle Dock Door"
 	},
 /obj/effect/turf_decal/tile/neutral/fourcorners,
@@ -10313,18 +10232,16 @@
 /area/centcom/syndicate_base/infteam)
 "xJF" = (
 /obj/structure/table/reinforced/plastitaniumglass,
-/obj/machinery/door/window/brigdoor{
-	color = "red";
-	name = "Arrivals Post";
-	dir = 4;
-	req_access = list("syndicate")
-	},
 /obj/machinery/door_buttons/airlock_controller{
 	idExterior = "scc_prison_external";
 	idInterior = "scc_prison_internal";
 	idSelf = "scc_prison_airlock_controller";
 	name = "Prison Cycle Doors";
 	pixel_y = 4
+	},
+/obj/machinery/door/window/survival_pod/left/directional/east{
+	name = "Checkpoint";
+	req_access = list("syndicate")
 	},
 /turf/open/floor/carpet/black,
 /area/centcom/syndicate_base/jail)
@@ -10385,7 +10302,6 @@
 "xVV" = (
 /obj/machinery/door/poddoor/ert{
 	id_tag = "SST_pod_ready";
-	layer = 2.8;
 	name = "Shuttle Dock Door"
 	},
 /obj/effect/turf_decal/tile/neutral/fourcorners,
