@@ -4,6 +4,10 @@
 	map_name = "syndie_cc"
 	key = LAZY_TEMPLATE_KEY_NUKIEBASE
 
+// Shuttles
+/datum/map_template/shuttle/infiltrator/basic
+	prefix = "_maps/shuttles/ss220/"
+
 // Deathmatch
 /datum/lazy_template/deathmatch/underground_thunderdome
 	name = "Underground Thunderdome"

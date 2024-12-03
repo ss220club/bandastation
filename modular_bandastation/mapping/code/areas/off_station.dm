@@ -14,7 +14,7 @@
 	name = "Syndicate Controlled Territory"
 	icon_state = "syndie-outside"
 	static_lighting = FALSE
-	base_lighting_alpha = 255
+	base_lighting_alpha = 200
 
 /area/centcom/syndicate_base/control
 	name = "Syndicate Control Room"
