@@ -5,6 +5,27 @@
 	key = LAZY_TEMPLATE_KEY_NUKIEBASE
 
 // Shuttles
+/datum/map_template/shuttle/sit
+	port_id = "sit"
+	who_can_purchase = null
+	prefix = "_maps/shuttles/ss220/"
+
+/datum/map_template/shuttle/sit/basic
+	suffix = "basic"
+	name = "basic syndicate sit shuttle"
+	description = "Base SIT shuttle, spawned by default for syndicate infiltration team to use."
+
+/datum/map_template/shuttle/sst
+	port_id = "sst"
+	who_can_purchase = null
+	prefix = "_maps/shuttles/ss220/"
+
+/datum/map_template/shuttle/sst/basic
+	suffix = "basic"
+	name = "basic syndicate sst shuttle"
+	description = "Base SST shuttle, spawned by default for syndicate strike team to use."
+
+// Shuttles Overrides
 /datum/map_template/shuttle/infiltrator/basic
 	prefix = "_maps/shuttles/ss220/"
 

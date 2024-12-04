@@ -23,6 +23,7 @@
 	shoes = /obj/item/clothing/shoes/laceup
 	neck = /obj/item/clothing/neck/tie/red/hitman/tied
 	l_pocket = /obj/item/modular_computer/pda/assistant
+	head = null
 	id = /obj/item/card/id/advanced/chameleon
 	id_trim = /datum/id_trim/chameleon
 	tc = 100
