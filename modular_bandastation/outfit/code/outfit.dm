@@ -11,7 +11,7 @@
 	back = /obj/item/storage/backpack/satchel/leather
 	backpack_contents = list(
 		/obj/item/storage/box/survival/centcom,
-		/obj/item/ammo_box/magazine/internal/cylinder = 3,
+		/obj/item/ammo_box/a357 = 3,
 		/obj/item/storage/fancy/cigarettes/cigars
 	)
 	belt = /obj/item/gun/ballistic/revolver/mateba

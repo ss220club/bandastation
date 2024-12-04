@@ -43,6 +43,7 @@
 /obj/item/clothing/under/rank/centcom/military/eng
 	name = "тактическая униформа инженера"
 	desc = "Униформа, выполненная в темных цветах с опозновательными знаками инженерных подразделений СРТ."
+	icon_state = "bl_suit"
 
 /obj/item/clothing/under/rank/centcom/admiral
 	name = "\improper роскошный офицерский костюм"
