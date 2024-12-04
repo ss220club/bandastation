@@ -3,6 +3,7 @@
 	desc = "Носится высшими чинами офицерского состава Нанотрейзен. На подкладке едва различимы чьи-то инициалы."
 	icon = 'modular_bandastation/aesthetics/clothing/centcom/icons/obj/clothing/head/hats.dmi'
 	worn_icon = 'modular_bandastation/aesthetics/clothing/centcom/icons/mob/clothing/head/hats.dmi'
+	resistance_flags = INDESTRUCTIBLE | FIRE_PROOF | FREEZE_PROOF | UNACIDABLE | ACID_PROOF
 
 /obj/item/clothing/head/hats/centhat
 	name = "\improper головной убор офицера флота Нанотрейзен"
@@ -56,6 +57,7 @@
 	name = "\improper берет старшего офицера флота Нанотрейзен"
 	desc = "Стандартный берет офицера флота Нанотрейзен. Лёгкий и надежный."
 	greyscale_colors = "#323253#FFCE5B"
+	resistance_flags = INDESTRUCTIBLE | FIRE_PROOF | FREEZE_PROOF | UNACIDABLE | ACID_PROOF
 
 /obj/item/clothing/head/helmet/space/beret/soo
 	name = "\improper берет офицера Специальных Операций"

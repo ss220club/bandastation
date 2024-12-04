@@ -6,6 +6,7 @@
 	worn_icon = 'modular_bandastation/aesthetics/clothing/centcom/icons/mob/clothing/cloaks/cloaks.dmi'
 	icon_state = "centcom"
 	armor_type = /datum/armor/armor_centcom_cloaks
+	resistance_flags = INDESTRUCTIBLE | FIRE_PROOF | FREEZE_PROOF | UNACIDABLE | ACID_PROOF
 
 /datum/armor/armor_centcom_cloaks
 	melee = 80

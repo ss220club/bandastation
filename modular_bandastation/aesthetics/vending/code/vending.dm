@@ -1,5 +1,6 @@
 /obj/machinery/vending/wardrobe/cent_wardrobe
 	icon = 'modular_bandastation/aesthetics/vending/icons/vending.dmi'
+	default_price = PAYCHECK_ZERO
 	products = list(
 		/obj/item/clothing/glasses/hud/security/sunglasses/centcom_officer = 3,
 		/obj/item/clothing/head/hats/centcom_cap = 3,

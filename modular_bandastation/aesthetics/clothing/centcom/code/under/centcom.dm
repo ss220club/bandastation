@@ -3,6 +3,7 @@
 	worn_icon = 'modular_bandastation/aesthetics/clothing/centcom/icons/mob/clothing/under/centcom.dmi'
 	lefthand_file = 'modular_bandastation/aesthetics/clothing/centcom/icons/inhands/clothing/under_lefthand.dmi'
 	righthand_file = 'modular_bandastation/aesthetics/clothing/centcom/icons/inhands/clothing/under_righthand.dmi'
+	resistance_flags = INDESTRUCTIBLE | FIRE_PROOF | FREEZE_PROOF | UNACIDABLE | ACID_PROOF
 
 /obj/item/clothing/under/rank/centcom/commander
 	name = "\improper костюм офицера высшего ранга"
@@ -43,7 +44,7 @@
 /obj/item/clothing/under/rank/centcom/military/eng
 	name = "тактическая униформа инженера"
 	desc = "Униформа, выполненная в темных цветах с опозновательными знаками инженерных подразделений СРТ."
-	icon_state = "bl_suit"
+	inhand_icon_state = "bl_suit"
 
 /obj/item/clothing/under/rank/centcom/admiral
 	name = "\improper роскошный офицерский костюм"
