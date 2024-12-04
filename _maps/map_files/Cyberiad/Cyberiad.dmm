@@ -14491,7 +14491,8 @@
 /turf/open/floor/wood/large,
 /area/station/service/theater)
 "dGv" = (
-/obj/effect/decal/cleanable/blood/old,
+/obj/structure/ladder,
+/obj/effect/turf_decal/stripes/box,
 /turf/open/floor/plating,
 /area/station/maintenance/aft)
 "dGy" = (
@@ -15752,6 +15753,11 @@
 /obj/machinery/door/firedoor,
 /turf/open/floor/iron/dark,
 /area/station/service/hydroponics/garden)
+"dWU" = (
+/obj/structure/ladder,
+/obj/effect/turf_decal/stripes/box,
+/turf/open/floor/plating,
+/area/station/maintenance/ghetto/aft)
 "dWX" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 10
@@ -26347,7 +26353,7 @@
 /obj/effect/turf_decal/trimline/yellow/filled/line{
 	dir = 10
 	},
-/turf/open/floor/iron/white,
+/turf/closed/wall/r_wall,
 /area/station/medical/chemistry)
 "gNZ" = (
 /obj/effect/decal/cleanable/dirt,
@@ -127221,7 +127227,7 @@ vzJ
 vzJ
 vzJ
 vzJ
-vzJ
+dWU
 rQp
 nBf
 fif
