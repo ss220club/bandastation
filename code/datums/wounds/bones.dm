@@ -311,8 +311,8 @@
 		victim.apply_damage(20, BRUTE, limb, wound_bonus = CANT_WOUND)
 		qdel(src)
 	else
-		user.visible_message(span_danger("[user] wrenches [victim]'s dislocated [limb.plaintext_zone] around painfully!"), span_danger("You wrench [victim]'s dislocated [limb.plaintext_zone] around painfully!"), ignored_mobs=victim)
-		to_chat(victim, span_userdanger("[user] wrenches your dislocated [limb.plaintext_zone] around painfully!"))
+		user.visible_message(span_danger("[capitalize(user.declent_ru(NOMINATIVE))] болезнено прокручивает вывих в [limb.ru_plaintext_zone[PREPOSITIONAL] || limb.plaintext_zone] у [victim.declent_ru(GENITIVE)]!"), span_danger("Вы болезненно прокручиваете вывих в [limb.ru_plaintext_zone[PREPOSITIONAL] || limb.plaintext_zone] у [victim.declent_ru(GENITIVE)]!"), ignored_mobs=victim)
+		to_chat(victim, span_userdanger("[capitalize(user.declent_ru(NOMINATIVE))] болезнено прокручивает ваш вывих в [limb.ru_plaintext_zone[PREPOSITIONAL] || limb.plaintext_zone]!"))
 		victim.apply_damage(10, BRUTE, limb, wound_bonus = CANT_WOUND)
 		chiropractice(user)
 
@@ -329,8 +329,8 @@
 		victim.emote("scream")
 		victim.apply_damage(25, BRUTE, limb, wound_bonus = 30)
 	else
-		user.visible_message(span_danger("[user] wrenches [victim]'s dislocated [limb.plaintext_zone] around painfully!"), span_danger("You wrench [victim]'s dislocated [limb.plaintext_zone] around painfully!"), ignored_mobs=victim)
-		to_chat(victim, span_userdanger("[user] wrenches your dislocated [limb.plaintext_zone] around painfully!"))
+		user.visible_message(span_danger("[capitalize(user.declent_ru(NOMINATIVE))] болезнено прокручивает вывих в [limb.ru_plaintext_zone[PREPOSITIONAL] || limb.plaintext_zone] у [victim.declent_ru(GENITIVE)]!"), span_danger("Вы болезненно прокручиваете вывих в [limb.ru_plaintext_zone[PREPOSITIONAL] || limb.plaintext_zone] у [victim.declent_ru(GENITIVE)]!"), ignored_mobs=victim)
+		to_chat(victim, span_userdanger("[capitalize(user.declent_ru(NOMINATIVE))] болезнено прокручивает ваш вывих в [limb.ru_plaintext_zone[PREPOSITIONAL] || limb.plaintext_zone]!"))
 		victim.apply_damage(10, BRUTE, limb, wound_bonus = CANT_WOUND)
 		malpractice(user)
 
@@ -350,11 +350,11 @@
 
 	if(victim == user)
 		victim.apply_damage(15, BRUTE, limb, wound_bonus = CANT_WOUND)
-		victim.visible_message(span_danger("[user] finishes resetting [victim.p_their()] [limb.plaintext_zone]!"), span_userdanger("You reset your [limb.plaintext_zone]!"))
+		victim.visible_message(span_danger("[capitalize(user.declent_ru(NOMINATIVE))] заканчивает лечение вывиха своей [limb.ru_plaintext_zone[GENITIVE] || limb.plaintext_zone]!"), span_userdanger("Вы вправили вывих своей [limb.ru_plaintext_zone[GENITIVE] || limb.plaintext_zone]!"))
 	else
 		victim.apply_damage(10, BRUTE, limb, wound_bonus = CANT_WOUND)
-		user.visible_message(span_danger("[user] finishes resetting [victim]'s [limb.plaintext_zone]!"), span_nicegreen("You finish resetting [victim]'s [limb.plaintext_zone]!"), ignored_mobs=victim)
-		to_chat(victim, span_userdanger("[user] resets your [limb.plaintext_zone]!"))
+		user.visible_message(span_danger("[capitalize(user.declent_ru(NOMINATIVE))] заканчивает лечение вывиха [limb.ru_plaintext_zone[GENITIVE] || limb.plaintext_zone] у [victim.declent_ru(GENITIVE)]!!"), span_nicegreen("Вы вправили вывих [limb.ru_plaintext_zone[GENITIVE] || limb.plaintext_zone] у [victim.declent_ru(GENITIVE)]!"), ignored_mobs=victim)
+		to_chat(victim, span_userdanger("[capitalize(user.declent_ru(NOMINATIVE))] заканивает лечение вывиха вашей [limb.ru_plaintext_zone[GENITIVE] || limb.plaintext_zone]!"))
 
 	victim.emote("scream")
 	qdel(src)
