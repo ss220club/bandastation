@@ -14,7 +14,6 @@
 	var/ignores_checks
 	/// Whether the scheduled event will override the announcement change. If null it won't. TRUE = force yes. FALSE = force no.
 	var/announce_change
-	/// Ивент должен учитывать себя как ивент в начале раунда и не проходить проверки, связанные с этим
 
 /datum/scheduled_event/New(datum/round_event_control/passed_event, passed_time, passed_cost, passed_ignore, passed_announce)
 	. = ..()
@@ -46,22 +45,19 @@
 		return "<a href='?src=[REF(src)];action=cancel'>Cancel</a>"
 
 /// Try and fire off the scheduled event
-/datum/scheduled_event/proc/try_fire(admin_forced = FALSE)
+/datum/scheduled_event/proc/try_fire()
 	/// Remove our fake occurence pre-emptively for the checks.
 	remove_occurence()
-	var/players_amt = get_active_player_count(alive_check = TRUE, afk_check = TRUE, human_check = FALSE)
-	///If we can't spawn the scheduled event, refund it.
-	if(!ignores_checks && !event.can_spawn_event(players_amt) && !admin_forced) //FALSE argument to ignore popchecks, to prevent scheduled events from failing from people dying/cryoing etc.
-		var/message = event.can_spawn_event_error_reason(players_amt)
-		message_admins("<font color='[COLOR_AMETHYST]'>Scheduled Event: [event]</font> was unable to run and has been refunded. REASON: [message]")
-		log_admin("<font color='[COLOR_AMETHYST]'>Scheduled Event: [event]</font> was unable to run and has been refunded. REASON: [message]")
 
+	///If we can't spawn the scheduled event, refund it.
+	if(!ignores_checks && !event.can_spawn_event(1000)) //FALSE argument to ignore popchecks, to prevent scheduled events from failing from people dying/cryoing etc.
+		message_admins("Scheduled Event: [event] was unable to run and has been refunded.")
 		SSgamemode.refund_scheduled_event(src)
 		return
 
 	///Trigger the event and remove the scheduled datum
-	message_admins("<font color='[COLOR_GREEN]'>Scheduled Event: [event] successfully triggered.</font>")
-	SSgamemode.TriggerEvent(event, admin_forced)
+	message_admins("Scheduled Event: [event] successfully triggered.")
+	SSgamemode.TriggerEvent(event, ignores_checks)
 	SSgamemode.remove_scheduled_event(src)
 
 /datum/scheduled_event/Destroy()
@@ -95,5 +91,4 @@
 				return
 			message_admins("[key_name_admin(usr)] has fired scheduled event [event.name].")
 			log_admin_private("[key_name(usr)] has fired scheduled event [event.name].")
-			event.run_event(admin_forced = TRUE)
-			SSgamemode.remove_scheduled_event(src)
+			try_fire()

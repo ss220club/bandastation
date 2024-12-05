@@ -1,24 +1,9 @@
-/datum/round_event_control/antagonist/team/revolution
-	name = "revolution"
-	roundstart = 2
-	earliest_start = 0 SECONDS
-
-	track = EVENT_TRACK_MAJOR
-	antag_flag = ROLE_REV
-	antag_datum = /datum/antagonist/rev/
-	antag_leader_datum = /datum/antagonist/rev/head
-
-	weight = 0
-	tags = list(TAG_CREW_ANTAG, TAG_COMMUNAL)
-
-	base_antags = 3
-	maximum_antags_global = 6
-	min_players = 40
-
-	restricted_roles = list(
-		JOB_AI,
-		JOB_CYBORG,
-	)
+/datum/round_event_control/antagonist/solo/revolutionary
+	name = "Roundstart Revolution"
+	tags = list(TAG_COMMUNAL, TAG_DESTRUCTIVE, TAG_COMBAT, TAG_TEAM_ANTAG)
+	antag_flag = ROLE_REV_HEAD
+	antag_datum = /datum/antagonist/rev/head/event_trigger
+	typepath = /datum/round_event/antagonist/solo/revolutionary
 	restricted_roles = list(
 		JOB_AI,
 		JOB_CAPTAIN,
@@ -29,35 +14,52 @@
 		JOB_HEAD_OF_PERSONNEL,
 		JOB_HEAD_OF_SECURITY,
 		JOB_PRISONER,
-		JOB_QUARTERMASTER,
 		JOB_RESEARCH_DIRECTOR,
 		JOB_SECURITY_OFFICER,
 		JOB_WARDEN,
 	)
+	base_antags = 2
+	enemy_roles = list(
+		JOB_CAPTAIN,
+		JOB_DETECTIVE,
+		JOB_HEAD_OF_SECURITY,
+		JOB_SECURITY_OFFICER,
+		JOB_WARDEN,
+	)
+	required_enemies = 6
+	// I give up, just there should be enough heads with 35 players...
+	min_players = 35
+	roundstart = TRUE
+	earliest_start = 0 SECONDS
+	weight = 0 //value was 3, we need to manually test if this works or not before allowing it normally
+	max_occurrences = 1
 
-	typepath = /datum/team/revolution
+/datum/antagonist/rev/head/event_trigger
+	remove_clumsy = TRUE
+	give_flash = TRUE
 
-/datum/round_event/antagonist/team/revolution
-	var/datum/job/job_type = /datum/job/clown_operative
-	var/required_role = ROLE_REV
+/datum/round_event/antagonist/solo/revolutionary
+	excute_round_end_reports = TRUE
+	end_when = 60000 /// we will end on our own when revs win
+	var/static/datum/team/revolution/revolution
+	var/static/finished = FALSE
 
-	var/datum/team/revolution/rev_team
+/datum/round_event/antagonist/solo/revolutionary/setup()
+	. = ..()
+	if(!revolution)
+		revolution = new()
 
-/datum/round_event/antagonist/team/revolution/candidate_roles_setup(mob/candidate)
-	candidate.mind.set_assigned_role(SSjob.get_job_type(job_type))
-	candidate.mind.special_role = required_role
+/datum/round_event/antagonist/solo/revolutionary/add_datum_to_mind(datum/mind/antag_mind)
+	antag_mind.add_antag_datum(antag_datum, revolution)
+	if(length(revolution.members))
+		revolution.update_objectives()
+		revolution.update_rev_heads()
+		SSshuttle.registerHostileEnvironment(revolution)
 
-/datum/round_event/antagonist/team/revolution/start()
-	// Get our nukie leader
-	var/datum/mind/most_experienced = get_most_experienced(setup_minds, required_role)
-	if(!most_experienced)
-		most_experienced = setup_minds[1]
-	var/datum/antagonist/rev/head/leader = most_experienced.add_antag_datum(antag_leader_datum)
-	rev_team = leader.rev_team
 
-	// Setup everyone else
-	for(var/datum/mind/assigned_player in setup_minds)
-		if(assigned_player == most_experienced)
-			continue
-		add_datum_to_mind(assigned_player)
-	return TRUE
+/datum/round_event/antagonist/solo/revolutionary/round_end_report()
+	var/winner = revolution.process_victory()
+	if(isnull(winner))
+		return
+	finished = TRUE
+	end()

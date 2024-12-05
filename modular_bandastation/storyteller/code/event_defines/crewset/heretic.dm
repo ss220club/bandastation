@@ -1,21 +1,32 @@
 /datum/round_event_control/antagonist/solo/heretic
-	name = "Heretics"
-	roundstart = 1.5
-	earliest_start = 0 SECONDS
-
 	antag_flag = ROLE_HERETIC
+	tags = list(TAG_COMBAT, TAG_SPOOKY, TAG_MAGICAL)
 	antag_datum = /datum/antagonist/heretic
-	weight = 3
-	min_players = 30
+	protected_roles = list(
+		JOB_CAPTAIN,
+		JOB_HEAD_OF_PERSONNEL,
+		JOB_CHIEF_ENGINEER,
+		JOB_CHIEF_MEDICAL_OFFICER,
+		JOB_RESEARCH_DIRECTOR,
+		JOB_DETECTIVE,
+		JOB_HEAD_OF_PERSONNEL,
+		JOB_HEAD_OF_SECURITY,
+		JOB_PRISONER,
+		JOB_SECURITY_OFFICER,
+		JOB_WARDEN,
+	)
+	restricted_roles = list(
+		JOB_AI,
+		JOB_CYBORG,
+	)
+	weight = 4
+	min_players = 20
 
-	maximum_antags_global = 2
-	category = EVENT_CATEGORY_INVASION
-	tags = list(TAG_COMBAT, TAG_SPOOKY, TAG_CREW_ANTAG)
-
-/datum/round_event_control/antagonist/solo/heretic/New()
-	protected_roles |= JOB_CHAPLAIN // Would be silly to get chaplain heretics
-	. = ..()
+/datum/round_event_control/antagonist/solo/heretic/roundstart
+	name = "Heretics"
+	roundstart = TRUE
+	earliest_start = 0
 
 /datum/round_event_control/antagonist/solo/heretic/midround
 	name = "Midround Heretics"
-	roundstart = FALSE
+	prompted_picking = TRUE

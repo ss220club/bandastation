@@ -35,7 +35,7 @@ SUBSYSTEM_DEF(events)
 
 /datum/controller/subsystem/events/fire(resumed = FALSE)
 	if(!resumed)
-		//checkEvent() //only check these if we aren't resuming a paused fire
+		checkEvent() //only check these if we aren't resuming a paused fire
 		src.currentrun = running.Copy()
 
 	//cache for sanic speed (lists are references anyways)
@@ -64,6 +64,7 @@ SUBSYSTEM_DEF(events)
 //decides which world.time we should select another random event at.
 /datum/controller/subsystem/events/proc/reschedule()
 	scheduled = world.time + rand(frequency_lower, max(frequency_lower,frequency_upper))
+
 /**
  * Selects a random event based on whether it can occur and its 'weight'(probability)
  *
@@ -85,36 +86,29 @@ SUBSYSTEM_DEF(events)
 			continue
 		if(!event_to_check.can_spawn_event(players_amt))
 			continue
-
-		/* // BANDASTATION EDIT START - STORYTELLER - изменение логики
 		if(event_to_check.roundstart) //for round-start events etc.
-			var/res = SSgamemode.TriggerEvent(event_to_check) // BANDASTATION EDIT - STORYTELLER - перевод выстрелов событий в сторителлер
+			var/res = SSgamemode.TriggerEvent(event_to_check)
 			if(res == EVENT_INTERRUPTED)
 				continue //like it never happened
-			if(res == EVENT_CANT_RUN) // BANDASTATION EDIT - STORYTELLER - легкая оптимизация
-				return // BANDASTATION EDIT - STORYTELLER - легкая оптимизация
+			if(res == EVENT_CANT_RUN)
+				return
 		else
 			event_roster[event_to_check] = event_to_check.weight
-		*/ // BANDASTATION EDIT END - STORYTELLER - изменение логики
-		event_roster[event_to_check] = event_to_check.weight
 
 	var/datum/round_event_control/event_to_run = pick_weight(event_roster)
 	if(event_to_run)
-		if(excluded_event)
-			message_admins("Rerolled to [event_to_run.name].")
-		SSgamemode.schedule_event(event_to_run, (rand(3, 4) MINUTES), passed_ignore = TRUE) // BANDASTATION EDIT - STORYTELLER - перевод выстрелов событий в сторителлер
+		TriggerEvent(event_to_run)
 
 ///Does the last pre-flight checks for the passed event, and runs it if the event is ready.
-/*
+
 /datum/controller/subsystem/events/proc/TriggerEvent(datum/round_event_control/event_to_trigger)
 	. = event_to_trigger.preRunEvent()
 	if(. == EVENT_CANT_RUN)//we couldn't run this event for some reason, set its max_occurrences to 0
 		event_to_trigger.max_occurrences = 0
 	else if(. == EVENT_READY)
-		message_admins("<font color='[COLOR_DARK_MODERATE_LIME_GREEN]'>SSevents</font> sends a [event_to_trigger.name] to Storyteller schedule!")
-		log_game("<font color='[COLOR_DARK_MODERATE_LIME_GREEN]'>SSevents</font> sends a [event_to_trigger.name] to Storyteller schedule!")
+		message_admins("<font color='[COLOR_DARK_MODERATE_LIME_GREEN]'>SSevents</font> runs a event: [event_to_trigger.name]!")
+		log_game("<font color='[COLOR_DARK_MODERATE_LIME_GREEN]'>SSevents</font> runs a event: [event_to_trigger.name]!")
 		event_to_trigger.run_event(random = TRUE)
-		*/ /// BANDASTATION EDIT - STORYTELLER - отключение базового фаера событий
 
 ///Toggles whether or not wizard events will be in the event pool, and sends a notification to the admins.
 /datum/controller/subsystem/events/proc/toggleWizardmode()

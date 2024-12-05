@@ -12,11 +12,11 @@
 	config_entry_value = 1
 	min_val = 0
 
-/datum/config_entry/number/crewset_point_gain_multiplier
+/datum/config_entry/number/roleset_point_gain_multiplier
 	config_entry_value = 1
 	min_val = 0
 
-/datum/config_entry/number/ghostset_point_gain_multiplier
+/datum/config_entry/number/objectives_point_gain_multiplier
 	config_entry_value = 1
 	min_val = 0
 
@@ -33,11 +33,11 @@
 	config_entry_value = 1
 	min_val = 0
 
-/datum/config_entry/number/crewset_roundstart_point_multiplier
+/datum/config_entry/number/roleset_roundstart_point_multiplier
 	config_entry_value = 1
 	min_val = 0
 
-/datum/config_entry/number/ghostset_roundstart_point_multiplier
+/datum/config_entry/number/objectives_roundstart_point_multiplier
 	config_entry_value = 1
 	min_val = 0
 
@@ -57,20 +57,14 @@
 	integer = TRUE
 	min_val = 0
 
-/datum/config_entry/number/crewset_min_pop
-	config_entry_value = CREWSET_MIN_POP
+/datum/config_entry/number/roleset_min_pop
+	config_entry_value = ROLESET_MIN_POP
 	integer = TRUE
 	min_val = 0
 
-/datum/config_entry/number/ghostset_min_pop
-	config_entry_value = GHOSTSET_MIN_POP
+/datum/config_entry/number/objectives_min_pop
+	config_entry_value = OBJECTIVES_MIN_POP
 	integer = TRUE
-	min_val = 0
-
-// Point Thresholds
-/datum/config_entry/number/max_sec_mult
-	config_entry_value = MAX_SEC_MULT
-	integer = FALSE
 	min_val = 0
 
 // Point Thresholds
@@ -89,13 +83,13 @@
 	integer = TRUE
 	min_val = 0
 
-/datum/config_entry/number/crewset_point_threshold
-	config_entry_value = CREWSET_POINT_THRESHOLD
+/datum/config_entry/number/roleset_point_threshold
+	config_entry_value = ROLESET_POINT_THRESHOLD
 	integer = TRUE
 	min_val = 0
 
-/datum/config_entry/number/ghostset_point_threshold
-	config_entry_value = GHOSTSET_POINT_THRESHOLD
+/datum/config_entry/number/objectives_point_threshold
+	config_entry_value = OBJECTIVES_POINT_THRESHOLD
 	integer = TRUE
 	min_val = 0
 
@@ -118,13 +112,13 @@
 	integer = TRUE
 	min_val = 0
 
-/datum/config_entry/number/crewset_pop_scale_threshold
-	config_entry_value = CREWSET_POP_SCALE_THRESHOLD
+/datum/config_entry/number/roleset_pop_scale_threshold
+	config_entry_value = ROLESET_POP_SCALE_THRESHOLD
 	integer = TRUE
 	min_val = 0
 
-/datum/config_entry/number/ghostset_pop_scale_threshold
-	config_entry_value = GHOSTSET_POP_SCALE_THRESHOLD
+/datum/config_entry/number/objectives_pop_scale_threshold
+	config_entry_value = OBJECTIVES_POP_SCALE_THRESHOLD
 	integer = TRUE
 	min_val = 0
 
@@ -144,12 +138,12 @@
 	integer = TRUE
 	min_val = 0
 
-/datum/config_entry/number/crewset_pop_scale_penalty
-	config_entry_value = CREWSET_POP_SCALE_PENALTY
+/datum/config_entry/number/roleset_pop_scale_penalty
+	config_entry_value = ROLESET_POP_SCALE_PENALTY
 	integer = TRUE
 	min_val = 0
 
-/datum/config_entry/number/ghostset_pop_scale_penalty
-	config_entry_value = GHOSTSET_POP_SCALE_PENALTY
+/datum/config_entry/number/objectives_pop_scale_penalty
+	config_entry_value = OBJECTIVES_POP_SCALE_PENALTY
 	integer = TRUE
 	min_val = 0

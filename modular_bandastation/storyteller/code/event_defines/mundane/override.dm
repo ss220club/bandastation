@@ -1,13 +1,14 @@
 /datum/round_event_control/space_dust
 	track = EVENT_TRACK_MUNDANE
 	weight = 10
-	tags = list(TAG_SPACE)
+	max_occurrences = 10
+	tags = list(TAG_DESTRUCTIVE, TAG_SPACE)
 
 /datum/round_event_control/camera_failure
 	track = EVENT_TRACK_MUNDANE
 	weight = 10
 	tags = list(TAG_COMMUNAL, TAG_SPOOKY)
-	eng_required_crew = 1
+	eng_required_power = 1
 
 /datum/round_event_control/aurora_caelus
 	track = EVENT_TRACK_MUNDANE
@@ -15,27 +16,24 @@
 
 /datum/round_event_control/brain_trauma
 	track = EVENT_TRACK_MUNDANE
-	tags = list(TAG_TARGETED)
-	med_required_crew = 1
-
-/datum/round_event_control/heart_attack
-	track = EVENT_TRACK_MUNDANE
-	tags = list(TAG_TARGETED)
-	med_required_crew = 2
+	tags = list(TAG_TARGETED, TAG_MAGICAL) //im putting magical on this because I think this can give the magic brain traumas
+	med_required_power = 1
 
 /datum/round_event_control/grid_check
-	track = EVENT_TRACK_MUNDANE
+	track = EVENT_TRACK_MODERATE
 	tags = list(TAG_COMMUNAL, TAG_SPOOKY)
 
 /datum/round_event_control/disease_outbreak
+	max_occurrences = 2
 	track = EVENT_TRACK_MUNDANE
-	tags = list(TAG_TARGETED)
-	med_required_crew = 1
+	tags = list(TAG_TARGETED, TAG_COMMUNAL, TAG_EXTERNAL, TAG_ALIEN, TAG_MAGICAL)
+	med_required_power = 1
 
 /datum/round_event_control/electrical_storm
 	track = EVENT_TRACK_MUNDANE
 	tags = list(TAG_SPOOKY)
-	eng_required_crew = 1
+	event_group = /datum/event_group/error
+	eng_required_power = 1
 
 /datum/round_event_control/fake_virus
 	track = EVENT_TRACK_MUNDANE
@@ -44,6 +42,7 @@
 /datum/round_event_control/falsealarm
 	track = EVENT_TRACK_MUNDANE
 	tags = list(TAG_COMMUNAL)
+	event_group = /datum/event_group/error
 
 /datum/round_event_control/market_crash
 	track = EVENT_TRACK_MUNDANE
@@ -51,51 +50,32 @@
 
 /datum/round_event_control/mice_migration
 	track = EVENT_TRACK_MUNDANE
-	tags = list(TAG_DESTRUCTIVE)
+	tags = list(TAG_DESTRUCTIVE, TAG_ALIEN) //not really alien but rat lords kind of are
+	event_group = /datum/event_group/guests
 
 /datum/round_event_control/wisdomcow
 	track = EVENT_TRACK_MUNDANE
-	tags = list(TAG_COMMUNAL, TAG_POSITIVE)
+	tags = list(TAG_COMMUNAL, TAG_POSITIVE, TAG_MAGICAL)
+	event_group = /datum/event_group/guests
 
 /datum/round_event_control/shuttle_loan
-	var/list/run_situations = list()
-	track = EVENT_TRACK_MUNDANE
-	tags = list(TAG_COMMUNAL)
-
-/datum/round_event_control/mass_hallucination
 	track = EVENT_TRACK_MUNDANE
 	tags = list(TAG_COMMUNAL)
 
 /datum/round_event_control/stray_cargo
 	track = EVENT_TRACK_MUNDANE
 	tags = list(TAG_COMMUNAL)
-	eng_required_crew = 1
-
-/datum/round_event_control/grey_tide
-	track = EVENT_TRACK_MUNDANE
-	tags = list(TAG_DESTRUCTIVE, TAG_SPOOKY)
-
-/datum/round_event_control/gravity_generator_blackout
-	track = EVENT_TRACK_MUNDANE
-	tags = list(TAG_COMMUNAL, TAG_SPACE)
-	eng_required_crew = 1
-
-/datum/round_event_control/shuttle_insurance
-	track = EVENT_TRACK_MUNDANE
-	tags = list(TAG_COMMUNAL)
+	eng_required_power = 1
 
 /datum/round_event_control/tram_malfunction
 	track = EVENT_TRACK_MUNDANE
-	tags = list(TAG_TARGETED, TAG_SPOOKY)
-	eng_required_crew = 1
+	tags = list(TAG_COMMUNAL)
+	event_group = /datum/event_group/error
+	eng_required_power = 1
 
 /datum/round_event_control/bitrunning_glitch
 	track = EVENT_TRACK_MUNDANE
 	tags = list(TAG_TARGETED)
-
-/datum/round_event_control/sentience
-	track = EVENT_TRACK_MUNDANE
-	tags = list(TAG_TARGETED, TAG_POSITIVE)
 
 /datum/round_event_control/easter
 	track = EVENT_TRACK_MUNDANE
@@ -126,20 +106,28 @@
 	max_occurrences = 0
 	tags = list(TAG_COMMUNAL, TAG_POSITIVE, TAG_SPOOKY)
 
+/datum/round_event_control/mass_hallucination
+	track = EVENT_TRACK_MUNDANE
+	tags = list(TAG_COMMUNAL, TAG_MAGICAL)
+
+/datum/round_event_control/sentience
+	track = EVENT_TRACK_MUNDANE
+	tags = list(TAG_COMMUNAL, TAG_SPOOKY, TAG_MAGICAL)
+
 //SCRUBBER OVERRIDES
 /datum/round_event_control/scrubber_overflow
-	track = EVENT_TRACK_MUNDANE
 	tags = list(TAG_COMMUNAL)
+	event_group = /datum/event_group/scrubber_overflow
 
 /datum/round_event_control/scrubber_overflow/threatening
 	weight = 0
-	med_required_crew = 1
+	med_required_power = 1
 
 /datum/round_event_control/scrubber_overflow/catastrophic
 	weight = 0
-	med_required_crew = 1
-	eng_required_crew = 1
+	med_required_power = 1
+	eng_required_power = 1
 
 /datum/round_event_control/scrubber_overflow/every_vent
 	weight = 0
-	head_required_crew = 1
+	head_required_power = 1

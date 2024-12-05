@@ -12,7 +12,7 @@
 									//10 is the default weight. 20 is twice more likely; 5 is half as likely as this default.
 									//0 here does NOT disable the event, it just makes it extremely unlikely
 
-	var/earliest_start = 20 MINUTES //The earliest world.time that an event can start (round-duration in deciseconds) default: 20 mins ///BANDASTATION EDIT - STORYTELLER
+	var/earliest_start = 20 MINUTES //The earliest world.time that an event can start (round-duration in deciseconds) default: 20 mins
 	var/min_players = 0 //The minimum amount of alive, non-AFK human players on server required to start the event.
 
 	var/occurrences = 0 //How many times this event has occurred
@@ -70,15 +70,20 @@
 
 // Checks if the event can be spawned. Used by event controller and "false alarm" event.
 // Admin-created events override this.
-/datum/round_event_control/proc/can_spawn_event(players_amt, allow_magic = FALSE)
+/datum/round_event_control/proc/can_spawn_event(players_amt, allow_magic = FALSE, fake_check = FALSE) /// BANDASTATION EDIT - STORYTELLER
 	SHOULD_CALL_PARENT(TRUE)
+	/// BANDASTATION EDIT START - STORYTELLER
+	if(SSgamemode.current_storyteller?.disable_distribution || SSgamemode.halted_storyteller)
+		return FALSE
+	if(event_group && !GLOB.event_groups[event_group].can_run())
+		return FALSE
+	if(roundstart && (!SSgamemode.can_run_roundstart || (SSgamemode.ran_roundstart && !fake_check && !SSgamemode.current_storyteller?.ignores_roundstart)))
+		return FALSE
+	/// BANDASTATION EDIT END - STORYTELLER
 	if(occurrences >= max_occurrences)
 		return FALSE
-	// BANDASTATION EDIT START - STORYTELLER
-	//if(earliest_start >= world.time-SSticker.round_start_time)
-	if(!roundstart && earliest_start >= world.time-SSticker.round_start_time )
+	if(earliest_start >= (world.time - SSticker.round_start_time))
 		return FALSE
-	// BANDASTATION EDIT END
 	if(!allow_magic && wizardevent != SSevents.wizardmode)
 		return FALSE
 	if(players_amt < min_players)
@@ -89,53 +94,31 @@
 		return FALSE
 	if(ispath(typepath, /datum/round_event/ghost_role) && !(GLOB.ghost_role_flags & GHOSTROLE_MIDROUND_EVENT))
 		return FALSE
-	if(SSgamemode.rnd_crew < rnd_required_crew)
+	/// BANDASTATION EDIT START - STORYTELLER
+	if(checks_antag_cap)
+		if(!roundstart && !SSgamemode.can_inject_antags())
+			return FALSE
+	if(!check_enemies())
 		return FALSE
-	if(SSgamemode.med_crew < med_required_crew)
+	if(allowed_storytellers && ((islist(allowed_storytellers) && !is_type_in_list(SSgamemode.current_storyteller, allowed_storytellers)) || SSgamemode.current_storyteller.type != allowed_storytellers))
 		return FALSE
-	if(SSgamemode.eng_crew < eng_required_crew)
+	if(eng_required_power < SSgamemode.current_eng_power)
 		return FALSE
-	if(SSgamemode.head_crew < head_required_crew)
+	if(med_required_power < SSgamemode.current_med_power)
 		return FALSE
+	if(rnd_required_power < SSgamemode.current_rnd_power)
+		return FALSE
+	if(head_required_power < SSgamemode.current_head_power)
+		return FALSE
+	if(SSgamemode.current_storyteller?.disable_distribution || SSgamemode.halted_storyteller)
+		return FALSE
+	/// BANDASTATION EDIT END - STORYTELLER
 	if (dynamic_should_hijack && SSdynamic.random_event_hijacked != HIJACKED_NOTHING)
 		return FALSE
-
 	return TRUE
 
-/datum/round_event_control/proc/can_spawn_event_error_reason(players_amt, allow_magic = FALSE, round_start_event = FALSE)
-	SHOULD_CALL_PARENT(TRUE)
-	var/message = "success"
-	if(occurrences >= max_occurrences)
-		message = "<font color='[COLOR_SOFT_RED]'>Storyteller event: [name]</font> was unable to run due max occurrence limit."
-	// BANDASTATION EDIT START - STORYTELLER
-	//if(earliest_start >= world.time-SSticker.round_start_time)
-	if(!roundstart && earliest_start >= world.time-SSticker.round_start_time )
-		message = "<font color='[COLOR_SOFT_RED]'>Storyteller event: [name]</font> was unable to run due earliest start timer limit."
-	// BANDASTATION EDIT END
-	if(!allow_magic && wizardevent != SSevents.wizardmode)
-		message = "<font color='[COLOR_SOFT_RED]'>Storyteller event: [name]</font> was unable to run due magic not allowed and it's wizard mode."
-	if(players_amt < min_players)
-		message = "<font color='[COLOR_SOFT_RED]'>Storyteller event: [name]</font> was unable to run due too low players for event (amt/min - [players_amt]/[min_players])."
-	if(holidayID && !check_holidays(holidayID))
-		message = "<font color='[COLOR_SOFT_RED]'>Storyteller event: [name]</font> was unable to run due try to run on non-holiday day."
-	if(EMERGENCY_ESCAPED_OR_ENDGAMED)
-		message = "<font color='[COLOR_SOFT_RED]'>Storyteller event: [name]</font> was unable to run due escaped or endgamed."
-	if(ispath(typepath, /datum/round_event/ghost_role) && !(GLOB.ghost_role_flags & GHOSTROLE_MIDROUND_EVENT))
-		message = "<font color='[COLOR_SOFT_RED]'>Storyteller event: [name]</font> was unable to run due it's ghost role for not midround event."
-	if(SSgamemode.rnd_crew < rnd_required_crew)
-		message = "<font color='[COLOR_SOFT_RED]'>Storyteller event: [name]</font> was unable to run due lack of science roles - count/needed [SSgamemode.rnd_crew]/[rnd_required_crew]."
-	if(SSgamemode.med_crew < med_required_crew)
-		message = "<font color='[COLOR_SOFT_RED]'>Storyteller event: [name]</font> was unable to run due lack of medical roles - count/needed [SSgamemode.med_crew]/[med_required_crew]."
-	if(SSgamemode.eng_crew < eng_required_crew)
-		message = "<font color='[COLOR_SOFT_RED]'>Storyteller event: [name]</font> was unable to run due lack of engineering roles - count/needed [SSgamemode.eng_crew]/[eng_required_crew]."
-	if(SSgamemode.head_crew < head_required_crew)
-		message = "<font color='[COLOR_SOFT_RED]'>Storyteller event: [name]</font> was unable to run due lack of heads roles - count/needed [SSgamemode.head_crew]/[head_required_crew]."
-	if (dynamic_should_hijack && SSdynamic.random_event_hijacked != HIJACKED_NOTHING)
-		message = "<font color='[COLOR_SOFT_RED]'>Storyteller event: [name]</font> was unable to run due hijack in progress."
 
-	return message
-
-/datum/round_event_control/proc/preRunEvent(admin_forced = FALSE)
+/datum/round_event_control/proc/preRunEvent(forced = FALSE) /// BANDASTATION EDIT - STORYTELLER
 	if(!ispath(typepath, /datum/round_event))
 		return EVENT_CANT_RUN
 
@@ -145,41 +128,25 @@
 	triggering = TRUE
 
 	// We sleep HERE, in pre-event setup (because there's no sense doing it in run_event() since the event is already running!) for the given amount of time to make an admin has enough time to cancel an event un-fitting of the present round or at least reroll it.
-	// BANDASTATION EDIT START - STORYTELLER
-	//message_admins("Random Event triggering in [DisplayTimeText(RANDOM_EVENT_ADMIN_INTERVENTION_TIME)]: [name]. (<a href='?src=[REF(src)];cancel=1'>CANCEL</a>) (<a href='?src=[REF(src)];different_event=1'>SOMETHING ELSE</a>)")
-	if(SSticker.HasRoundStarted() && !roundstart && !admin_forced)
-		message_admins("<font color='[COLOR_ADMIN_PINK]'>Storyteller: Event triggering in [DisplayTimeText(RANDOM_EVENT_ADMIN_INTERVENTION_TIME)]: [name]. (\
-			<a href='?src=[REF(src)];cancel=1'>CANCEL</a> | \
-			<a href='?src=[REF(src)];different_event=1'>SOMETHING ELSE</a>)</font>")
-		for(var/client/staff as anything in GLOB.admins)
-			if(staff?.prefs.read_preference(/datum/preference/toggle/comms_notification))
-				SEND_SOUND(staff, sound('sound/misc/server-ready.ogg'))
-
-	if(!roundstart && !admin_forced)
+	message_admins("Random Event triggering in [DisplayTimeText(RANDOM_EVENT_ADMIN_INTERVENTION_TIME)]: [name]. (<a href='?src=[REF(src)];cancel=1'>CANCEL</a>) (<a href='?src=[REF(src)];different_event=1'>SOMETHING ELSE</a>)")
+	/// BANDASTATION EDIT START - STORYTELLER
+	if(!roundstart)
 		sleep(RANDOM_EVENT_ADMIN_INTERVENTION_TIME)
-
-	if(triggering)
-		if(!roundstart && !admin_forced)
-			message_admins("<font color='[COLOR_ADMIN_PINK]'>Storyteller: Event triggering in [DisplayTimeText(RANDOM_EVENT_ADMIN_INTERVENTION_TIME * 0.5)]: [name]. (\
-			<a href='?src=[REF(src)];cancel=1'>CANCEL</a> | \
-			<a href='?src=[REF(src)];different_event=1'>SOMETHING ELSE</a>)</font>")
-			sleep(RANDOM_EVENT_ADMIN_INTERVENTION_TIME * 0.5)
-	else
-		message_admins("<font color='[COLOR_ADMIN_PINK]'> Roundstart event chosen: [name].")
-	// BANDASTATION EDIT END
-
-	// var/players_amt = get_active_player_count(alive_check = TRUE, afk_check = TRUE, human_check = TRUE) /// BANDASTATION EDIT - STORYTELLER
-	var/players_amt = SSgamemode.get_correct_popcount()
-	if(!can_spawn_event(players_amt))
+	/// BANDASTATION EDIT END - STORYTELLER
+	var/players_amt = get_active_player_count(alive_check = TRUE, afk_check = TRUE, human_check = TRUE)
+	if(!can_spawn_event(players_amt, fake_check = TRUE) && !forced) /// BANDSTATION EDIT - STORYTELLER
 		message_admins("Second pre-condition check for [name] failed, rerolling...")
-		var/message = can_spawn_event_error_reason(players_amt)
-		if(message != "success")
-			message_admins(message)
-			log_admin(message)
 		SSevents.spawnEvent(excluded_event = src)
 		return EVENT_INTERRUPTED
+
+	/// BANDASTATION EDIT START - STORYTELLER
+	if(!can_spawn_event(players_amt, fake_check = TRUE) && forced)
+		message_admins("Second pre-condition check for [name] failed, but event forced, running event regardless this may have issues...")
+	/// BANDASTATION EDIT END - STORYTELLER
+
 	if(!triggering)
 		return EVENT_CANCELLED //admin cancelled
+
 	triggering = FALSE
 	return EVENT_READY
 
@@ -193,7 +160,6 @@
 		message_admins("[key_name_admin(usr)] cancelled event [name].")
 		log_admin_private("[key_name(usr)] cancelled event [name].")
 		SSblackbox.record_feedback("tally", "event_admin_cancelled", 1, typepath)
-		SSgamemode.remove_scheduled_event(src)
 	if(href_list["different_event"])
 		if(!triggering)
 			to_chat(usr, span_admin("Too late to change events now!"))
@@ -203,7 +169,6 @@
 		message_admins("[key_name_admin(usr)] chose to have event [name] rolled into a different event.")
 		log_admin_private("[key_name(usr)] rerolled event [name].")
 		SSblackbox.record_feedback("tally", "event_admin_rerolled", 1, typepath)
-		SSgamemode.remove_scheduled_event(src)
 
 
 /*
@@ -244,11 +209,13 @@ Runs the event
 	triggering = FALSE
 	log_game("[random ? "Random" : "Forced"] Event triggering: [name] ([typepath]).")
 
+	// BANDASTATION EDIT START - STORYTELLER: event groups
+	if(event_group)
+		GLOB.event_groups[event_group].on_run(src)
+	// BANDASTATION EDIT END
+
 	if(alert_observers)
 		round_event.announce_deadchat(random, event_cause)
-
-	log_admin_private("[random ? "Random" : "Forced"] Event triggering: [name] ([typepath]).")
-	message_admins(span_adminnotice("[random ? "Random" : "Forced"] Event triggering: [name] ([typepath])."))
 
 	SSblackbox.record_feedback("tally", "event_ran", 1, "[round_event]")
 	return round_event
@@ -292,6 +259,7 @@ Runs the event
 //This is really only for setting defaults which can be overridden later when New() finishes.
 /datum/round_event/proc/setup()
 	SHOULD_CALL_PARENT(FALSE)
+	setup = TRUE /// BANDASTATION EDIT - STORYTELLER
 	return
 
 ///Announces the event name to deadchat, override this if what an event should show to deadchat is different to its event name.
@@ -345,6 +313,10 @@ Runs the event
 //This proc will handle the calls to the appropriate procs.
 /datum/round_event/process()
 	SHOULD_NOT_OVERRIDE(TRUE)
+	/// BANDASTATION EDIT START - STORYTELLER
+	if(!setup)
+		return
+	/// BANDASTATION EDIT END - STORYTELLER
 	if(!processing)
 		return
 

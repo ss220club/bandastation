@@ -1,58 +1,42 @@
-
 /datum/round_event_control/antagonist/solo/malf
-	name = "Malfunctioning AI Midround"
-
-	base_antags = 1
-	maximum_antags = 1
-	maximum_antags_global = 1
-	min_players = 20
-
-	min_players = TRUE
-	roundstart = FALSE
-
 	antag_datum = /datum/antagonist/malf_ai
+	tags = list(TAG_COMBAT, TAG_DESTRUCTIVE, TAG_ALIEN) //not exactly alien but close enough
 	antag_flag = ROLE_MALF
-	weight = 1
-	tags = list(TAG_CREW_ANTAG, TAG_COMBAT, TAG_DESTRUCTIVE, TAG_CHAOTIC)
-	restricted_roles = list()
-	category = EVENT_CATEGORY_AI
+	enemy_roles = list(
+		JOB_CHEMIST,
+		JOB_CHIEF_ENGINEER,
+		JOB_HEAD_OF_SECURITY,
+		JOB_RESEARCH_DIRECTOR,
+		JOB_SCIENTIST,
+		JOB_SECURITY_OFFICER,
+		JOB_WARDEN,
+	)
+	exclusive_roles = list(JOB_AI)
+	required_enemies = 4
+	weight = 2
+	min_players = 35
+	max_occurrences = 1
 
-/datum/round_event_control/antagonist/solo/malf/get_candidates()
-	return GLOB.ai_list
+/datum/round_event_control/antagonist/solo/malf/trim_candidates(list/candidates)
+	for(var/mob/living/player in candidates)
+		if(!isAI(player))
+			candidates -= player
+			continue
+
+		if(is_centcom_level(player.z))
+			candidates -= player
+			continue
+
+		if(player.mind && (player.mind.special_role || player.mind.antag_datums?.len > 0))
+			candidates -= player
+
+	return candidates
+
+/datum/round_event_control/antagonist/solo/malf/midround
+	name = "Malfunctioning AI Midround"
+	antag_flag = ROLE_MALF_MIDROUND
 
 /datum/round_event_control/antagonist/solo/malf/roundstart
-	name = "Malfunctioning AI"
-	earliest_start = 0 SECONDS
-
-	roundstart = 1.8
-	min_players = 20
-
-	typepath = /datum/round_event/antagonist/solo/malf_ai/roundstart
-	weight = 10
-
-// God has abandoned us
-/datum/round_event_control/antagonist/solo/malf/roundstart/get_candidates()
-	var/list/candidates = SSgamemode.get_candidates(antag_flag, pick_roundstart_players = TRUE)
-	. = list()
-	var/datum/job/aijob = SSjob.get_job(JOB_AI)
-	for(var/mob/candidate as anything in candidates)
-		if(SSjob.check_job_eligibility(candidate, aijob) == JOB_AVAILABLE)
-			. += candidate
-	return .
-
-/datum/round_event_control/antagonist/solo/malf/roundstart/can_spawn_event(popchecks, allow_magic)
-	. = ..()
-	if(!.)
-		return .
-
-	var/datum/job/ai_job = SSjob.get_job_type(/datum/job/ai)
-	if(!(ai_job.total_positions - ai_job.current_positions && ai_job.spawn_positions))
-		return FALSE
-	else
-		return TRUE
-
-/datum/round_event/antagonist/solo/malf_ai/roundstart/setup()
-	. = ..()
-	for(var/datum/mind/new_malf in setup_minds)
-		GLOB.pre_setup_antags += new_malf
-		LAZYADDASSOC(SSjob.dynamic_forced_occupations, new_malf.current, "AI")
+	name = "Roundstart Malf AI"
+	roundstart = TRUE
+	earliest_start = 0

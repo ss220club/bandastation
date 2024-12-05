@@ -235,9 +235,9 @@ SUBSYSTEM_DEF(ticker)
 	var/can_continue = FALSE
 	// BANDASTATION EDIT BEGIN - STORYTELLER
 	SSgamemode.init_storyteller()
+	CHECK_TICK
 	can_continue = SSgamemode.pre_setup()
 	// BANDASTATION EDIT END - STORYTELLER
-
 	CHECK_TICK
 	SEND_GLOBAL_SIGNAL(COMSIG_GLOB_PRE_JOBS_ASSIGNED, src)
 	can_continue = can_continue && SSjob.divide_occupations() //Distribute jobs

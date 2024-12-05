@@ -55,16 +55,7 @@ ADMIN_VERB(force_event, R_FUN, "Trigger Event", "Forces an event to occur.", ADM
 				"icon" = category_to_icons[event_control.category],
 			))
 		//add event, with one value matching up the category
-		if (!SSticker.HasRoundStarted() && event_control.roundstart)
-			UNTYPED_LIST_ADD(events, list(
-				"name" = event_control.name,
-				"description" = event_control.description,
-				"type" = event_control.type,
-				"category" = event_control.category,
-				"has_customization" = !!length(event_control.admin_setup),
-			))
-		if (SSticker.HasRoundStarted() && !event_control.roundstart)
-			UNTYPED_LIST_ADD(events, list(
+		UNTYPED_LIST_ADD(events, list(
 				"name" = event_control.name,
 				"description" = event_control.description,
 				"type" = event_control.type,
@@ -98,9 +89,6 @@ ADMIN_VERB(force_event, R_FUN, "Trigger Event", "Forces an event to occur.", ADM
 						return
 			var/always_announce_chance = 100
 			var/no_announce_chance = 0
-			if(SSticker.HasRoundStarted())
-				event.run_event(announce_chance_override = announce_event ? always_announce_chance : no_announce_chance, admin_forced = TRUE)
-			else
-				SSgamemode.schedule_event(event)
+			event.run_event(announce_chance_override = announce_event ? always_announce_chance : no_announce_chance, admin_forced = TRUE)
 			message_admins("[key_name_admin(usr)] has triggered an event. ([event.name])")
 			log_admin("[key_name(usr)] has triggered an event. ([event.name])")
