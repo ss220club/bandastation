@@ -13682,8 +13682,9 @@
 /turf/open/floor/iron/white,
 /area/station/medical/psychology)
 "duo" = (
-/obj/effect/spawner/random/structure/girder,
-/turf/open/floor/iron,
+/obj/structure/ladder,
+/obj/effect/turf_decal/stripes/box,
+/turf/open/floor/plating,
 /area/station/maintenance/ghetto/central)
 "dur" = (
 /obj/machinery/requests_console/directional/east{
@@ -26470,7 +26471,7 @@
 /obj/effect/turf_decal/trimline/yellow/filled/line{
 	dir = 10
 	},
-/turf/closed/wall/r_wall,
+/turf/open/floor/iron/white,
 /area/station/medical/chemistry)
 "gNZ" = (
 /obj/effect/decal/cleanable/dirt,
@@ -38567,10 +38568,19 @@
 /turf/open/floor/iron/cafeteria,
 /area/station/service/kitchen)
 "jWF" = (
-/obj/structure/ladder,
-/obj/effect/turf_decal/stripes/box,
+/obj/machinery/door/firedoor,
+/obj/machinery/atmospherics/pipe/multiz/scrubbers/visible/layer2{
+	color = "#ff0000";
+	name = "Scrubbers multi deck pipe adapter";
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/multiz/supply/visible/layer4{
+	color = "#0000ff";
+	name = "Supply multi deck pipe adapter";
+	dir = 1
+	},
 /turf/open/floor/plating,
-/area/station/maintenance/ghetto/aft)
+/area/station/maintenance/ghetto/fore/starboard)
 "jWH" = (
 /obj/structure/closet,
 /obj/effect/spawner/random/maintenance,
@@ -59387,9 +59397,6 @@
 /turf/open/floor/iron/dark,
 /area/station/engineering/main)
 "pob" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/structure/cable,
 /obj/structure/table/wood,
 /obj/item/flashlight{
 	pixel_y = 4
@@ -61217,10 +61224,12 @@
 /turf/open/floor/iron,
 /area/station/hallway/secondary/exit/departure_lounge)
 "pLh" = (
-/obj/structure/rack,
-/obj/effect/spawner/random/maintenance/two,
-/turf/open/floor/iron,
-/area/station/maintenance/ghetto/central)
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/turf/open/floor/plating,
+/area/station/maintenance/aft)
 "pLn" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -76532,6 +76541,12 @@
 /obj/effect/turf_decal/tile/neutral/fourcorners,
 /turf/open/floor/iron/dark,
 /area/station/science/xenobiology)
+"tMk" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/structure/cable,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/turf/open/floor/plating,
+/area/station/maintenance/aft)
 "tMo" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/camera{
@@ -127021,11 +127036,11 @@ nWv
 gjQ
 isK
 nPs
-dGY
+fRL
 qAb
 fRL
-fRL
-pLh
+cKf
+dGY
 duo
 mOI
 mOI
@@ -127549,7 +127564,7 @@ vzJ
 vzJ
 vzJ
 vzJ
-jWF
+vzJ
 rQp
 nBf
 fif
@@ -133223,9 +133238,9 @@ tdm
 fif
 fif
 fif
-bqL
+fzk
 fif
-bqL
+fzk
 fif
 fif
 doz
@@ -133741,7 +133756,7 @@ aPQ
 aPQ
 xXv
 xXv
-bqL
+fzk
 doz
 doz
 doz
@@ -134255,7 +134270,7 @@ tLJ
 tLJ
 aPQ
 xXv
-bqL
+fzk
 doz
 doz
 doz
@@ -135030,18 +135045,18 @@ xXv
 xXv
 rQp
 fif
-bqL
-bqL
-bqL
 fif
 fif
 fif
 fif
+fzk
+fzk
+fzk
+fzk
 fif
 fif
-bqL
-bqL
-bqL
+fif
+fif
 fif
 doz
 doz
@@ -135293,7 +135308,7 @@ rQp
 xXv
 xXv
 xXv
-neY
+xXv
 xXv
 xXv
 xXv
@@ -137004,7 +137019,7 @@ tzu
 pNZ
 pNZ
 aGO
-fGs
+jWF
 wfV
 wfV
 kzt
@@ -140943,16 +140958,16 @@ fTZ
 fTZ
 iJV
 fif
-bqL
-bqL
-bqL
+fif
+fif
+fzk
+fzk
+fzk
+fzk
 fif
 fif
 fif
 fif
-bqL
-bqL
-bqL
 fif
 doz
 ceC
@@ -192305,8 +192320,8 @@ fNX
 gIs
 pvJ
 jct
-htZ
-hXT
+pLh
+tMk
 hXT
 pkT
 hXT
@@ -192562,7 +192577,7 @@ xdt
 gIs
 dRA
 pob
-jct
+dGv
 jct
 jct
 nGm
