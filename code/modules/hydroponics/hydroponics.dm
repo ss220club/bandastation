@@ -293,7 +293,7 @@
 		mutate()
 		return BULLET_ACT_HIT
 	if(istype(proj, /obj/projectile/energy/flora/yield))
-		return myseed.bullet_act(proj)
+		return myseed.projectile_hit(proj)
 	if(istype(proj, /obj/projectile/energy/flora/evolution))
 		if(myseed)
 			if(LAZYLEN(myseed.mutatelist))
@@ -483,8 +483,10 @@
 	. = ..()
 	if(myseed)
 		name = "[initial(name)] ([myseed.plantname])"
+		ru_names_rename(ru_names_toml(initial(name), suffix = " ([myseed.plantname])", override_base = name))
 	else
 		name = initial(name)
+		ru_names_rename(ru_names_toml(name))
 
 /obj/machinery/hydroponics/update_overlays()
 	. = ..()

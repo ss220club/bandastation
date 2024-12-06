@@ -425,13 +425,13 @@
 	casting = TRUE
 	var/obj/projectile/fishing_cast/cast_projectile = new(get_turf(src))
 	cast_projectile.range = get_cast_range(user)
-	cast_projectile.decayedRange = get_cast_range(user)
+	cast_projectile.maximum_range = get_cast_range(user)
 	cast_projectile.owner = src
 	cast_projectile.original = target
 	cast_projectile.fired_from = src
 	cast_projectile.firer = user
 	cast_projectile.impacted = list(WEAKREF(user) = TRUE)
-	cast_projectile.preparePixelProjectile(target, user)
+	cast_projectile.aim_projectile(target, user)
 	cast_projectile.fire()
 	COOLDOWN_START(src, casting_cd, 1 SECONDS)
 
@@ -830,11 +830,12 @@
 /obj/projectile/fishing_cast
 	name = "fishing hook"
 	icon = 'icons/obj/fishing.dmi'
-	icon_state = "hook_projectile"
+	icon_state = "hook"
 	damage = 0
 	range = 5
 	suppressed =  SUPPRESSED_VERY
 	can_hit_turfs = TRUE
+	projectile_angle = 180
 
 	var/obj/item/fishing_rod/owner
 	var/datum/beam/our_line
@@ -842,7 +843,6 @@
 /obj/projectile/fishing_cast/fire(angle, atom/direct_target)
 	if(owner.hook)
 		icon_state = owner.hook.icon_state
-		transform = transform.Scale(1, -1)
 	. = ..()
 	if(!QDELETED(src))
 		our_line = owner.create_fishing_line(src, firer)

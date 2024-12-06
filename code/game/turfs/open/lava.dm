@@ -49,7 +49,7 @@
 /turf/open/lava/Initialize(mapload)
 	. = ..()
 	if(fish_source_type)
-		AddElement(/datum/element/lazy_fishing_spot, fish_source_type)
+		add_lazy_fishing(fish_source_type)
 	// You can release chrabs and lavaloops and likes in lava, or be an absolute scumbag and drop other fish there too.
 	ADD_TRAIT(src, TRAIT_CATCH_AND_RELEASE, INNATE_TRAIT)
 	refresh_light()
@@ -150,6 +150,8 @@
 	update_appearance(~UPDATE_SMOOTHING)
 
 /turf/open/lava/ex_act(severity, target)
+	if(fish_source)
+		GLOB.preset_fish_sources[fish_source].spawn_reward_from_explosion(src, severity)
 	return FALSE
 
 /turf/open/lava/MakeSlippery(wet_setting, min_wet_time, wet_time_to_add, max_wet_time, permanent)
@@ -226,10 +228,10 @@
 			to_chat(user, span_warning("The [ciggie.name] is already lit!"))
 			return TRUE
 		var/clumsy_modifier = HAS_TRAIT(user, TRAIT_CLUMSY) ? 2 : 1
-		if(prob(25 * clumsy_modifier ))
+		if(prob(25 * clumsy_modifier) && isliving(user))
 			ciggie.light(span_warning("[user] expertly dips \the [ciggie.name] into [src], along with the rest of [user.p_their()] arm. What a dumbass."))
-			var/obj/item/bodypart/affecting = user.get_active_hand()
-			affecting?.receive_damage(burn = 90)
+			var/mob/living/burned_guy = user
+			burned_guy.apply_damage(90, BURN, user.get_active_hand())
 		else
 			ciggie.light(span_rose("[user] expertly dips \the [ciggie.name] into [src], lighting it with the scorching heat of the planet. Witnessing such a feat is almost enough to make you cry."))
 		return TRUE
