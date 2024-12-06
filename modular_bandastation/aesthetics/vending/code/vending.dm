@@ -26,7 +26,6 @@
 		/obj/item/clothing/neck/cloak/centcom/officer = 3,
 		/obj/item/clothing/shoes/laceup/centcom = 3,
 		/obj/item/clothing/shoes/jackboots/centcom = 3,
-		/obj/item/clothing/gloves/combat = 3,
 		/obj/item/clothing/gloves/combat/centcom = 3,
 		/obj/item/storage/belt/centcom_sabre = 3,
 		/obj/item/storage/belt/centcom_katana = 3,

@@ -6,7 +6,7 @@
 	resistance_flags = INDESTRUCTIBLE | FIRE_PROOF | FREEZE_PROOF | UNACIDABLE | ACID_PROOF
 
 /obj/item/clothing/head/hats/centhat
-	name = "головной убор офицера флота Нанотрейзен"
+	name = "треуголка офицера флота Нанотрейзен"
 	desc = "Управлять судьбами так захватывающе."
 	icon = 'modular_bandastation/aesthetics/clothing/centcom/icons/obj/clothing/head/hats.dmi'
 	worn_icon = 'modular_bandastation/aesthetics/clothing/centcom/icons/mob/clothing/head/hats.dmi'

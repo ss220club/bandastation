@@ -25,9 +25,13 @@
 	l_pocket = /obj/item/reagent_containers/hypospray/combat/nanites
 
 /obj/item/clothing/glasses/hud/security/sunglasses/soo
+	name = "офицерские ИЛС очки"
+	desc = "Продвинутый ИЛС-визор, стилизованный под солнцезащитные очки. Никто не укроется."
 	vision_flags = SEE_TURFS|SEE_MOBS|SEE_OBJS
 
 /obj/item/clothing/glasses/hud/security/sunglasses/centcom_officer
+	name = "офицерские ИЛС очки"
+	desc = "Продвинутый ИЛС-визор, стилизованный под солнцезащитные очки. Почти никто не укроется."
 	vision_flags = SEE_MOBS
 
 //CentCom Subordinate Officer
@@ -83,9 +87,13 @@
 	l_pocket = /obj/item/reagent_containers/hypospray/combat/nanites
 
 /obj/item/clothing/shoes/laceup/centcom
+	name = "офицерские туфли"
+	desc = "Деловые флотские вездеходы из натуральной кожи. Пик моды."
 	clothing_traits = list(TRAIT_NO_SLIP_ALL)
 
 /obj/item/clothing/shoes/jackboots/centcom
+	name = "офицерские берцы"
+	desc = "Стандартный вариант тактической обуви, выпускаемой Нанотрейзен."
 	clothing_traits = list(TRAIT_NO_SLIP_ALL)
 
 /datum/id_trim/centcom/commander
