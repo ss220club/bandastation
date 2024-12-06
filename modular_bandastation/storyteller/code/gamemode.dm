@@ -854,7 +854,12 @@ SUBSYSTEM_DEF(gamemode)
 		message_admins("Attempted to set an invalid storyteller type: [passed_type], force setting to guide instead.")
 		current_storyteller = storytellers[/datum/storyteller/default] //if we dont have any then we brick, lets not do that
 		CRASH("Attempted to set an invalid storyteller type: [passed_type].")
+	var/passed_state = FALSE
+	if (current_storyteller)
+		passed_state = current_storyteller.round_started
+		current_storyteller.round_started = FALSE
 	current_storyteller = storytellers[passed_type]
+	current_storyteller.round_started = passed_state
 	if(!secret_storyteller)
 		send_to_playing_players(span_notice("<b>Storyteller is [current_storyteller.name]!</b>"))
 		send_to_playing_players(span_notice("[current_storyteller.welcome_text]"))

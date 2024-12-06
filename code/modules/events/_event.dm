@@ -102,6 +102,8 @@
 		return FALSE
 	if(allowed_storytellers && ((islist(allowed_storytellers) && !is_type_in_list(SSgamemode.current_storyteller, allowed_storytellers)) || SSgamemode.current_storyteller.type != allowed_storytellers))
 		return FALSE
+	if(allowed_storytellers && SSgamemode.current_storyteller && ((islist(allowed_storytellers) && !is_type_in_list(SSgamemode.current_storyteller, allowed_storytellers)) || SSgamemode.current_storyteller.type != allowed_storytellers))
+		return FALSE
 	if(eng_required_power < SSgamemode.current_eng_power)
 		return FALSE
 	if(med_required_power < SSgamemode.current_med_power)
@@ -109,8 +111,6 @@
 	if(rnd_required_power < SSgamemode.current_rnd_power)
 		return FALSE
 	if(head_required_power < SSgamemode.current_head_power)
-		return FALSE
-	if(SSgamemode.current_storyteller?.disable_distribution || SSgamemode.halted_storyteller)
 		return FALSE
 	/// BANDASTATION EDIT END - STORYTELLER
 	if (dynamic_should_hijack && SSdynamic.random_event_hijacked != HIJACKED_NOTHING)

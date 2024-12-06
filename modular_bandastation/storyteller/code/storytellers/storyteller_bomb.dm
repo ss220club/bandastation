@@ -1,6 +1,7 @@
 /datum/storyteller/bomb
 	name = "The Bomb"
 	desc = "The Bomb enjoys a good fight but abhors senseless destruction. Prefers heavy hits on single targets."
+	welcome_text = "GLA! GLA! GLA!"
 	point_gains_multipliers = list(
 		EVENT_TRACK_MUNDANE = 1,
 		EVENT_TRACK_MODERATE = 1.2,

@@ -29,13 +29,22 @@
 
 /datum/round_event_control/proc/return_failure_string(players_amt)
 	var/string
+	if(SSgamemode.current_storyteller?.disable_distribution || SSgamemode.halted_storyteller)
+		string += "Storyteller halted"
+	if(event_group && !GLOB.event_groups[event_group].can_run())
+		if(string)
+			string += ","
+		string += "Group runing"
 	if(roundstart && (world.time-SSticker.round_start_time >= 2 MINUTES))
+		if(string)
+			string += ","
 		string += "Roundstart"
+	/// BANDASTATION EDIT END - STORYTELLER
 	if(occurrences >= max_occurrences)
 		if(string)
 			string += ","
 		string += "Cap Reached"
-	if(earliest_start >= world.time-SSticker.round_start_time)
+	if(earliest_start >= (world.time - SSticker.round_start_time))
 		if(string)
 			string += ","
 		string +="Too Soon"
@@ -51,11 +60,37 @@
 		if(string)
 			string += ","
 		string += "Round End"
+	if(ispath(typepath, /datum/round_event/ghost_role) && !(GLOB.ghost_role_flags & GHOSTROLE_MIDROUND_EVENT))
+		return FALSE
 	if(checks_antag_cap)
 		if(!roundstart && !SSgamemode.can_inject_antags())
 			if(string)
 				string += ","
 			string += "Too Many Antags"
+	if(allowed_storytellers && SSgamemode.current_storyteller && ((islist(allowed_storytellers) && !is_type_in_list(SSgamemode.current_storyteller, allowed_storytellers)) || SSgamemode.current_storyteller.type != allowed_storytellers))
+		if(string)
+			string += ","
+		string += "Wrong Storyteller"
+	if(eng_required_power < SSgamemode.current_eng_power)
+		if(string)
+			string += ","
+		string += "Too low eng power"
+	if(med_required_power < SSgamemode.current_med_power)
+		if(string)
+			string += ","
+		string += "Too low med power"
+	if(rnd_required_power < SSgamemode.current_rnd_power)
+		if(string)
+			string += ","
+		string += "Too low rnd power"
+	if(head_required_power < SSgamemode.current_head_power)
+		if(string)
+			string += ","
+		string += "Too low head power"
+	if (dynamic_should_hijack && SSdynamic.random_event_hijacked != HIJACKED_NOTHING)
+		if(string)
+			string += ","
+		string += "Hijack mission"
 	return string
 
 /datum/round_event_control/antagonist/return_failure_string(players_amt)
