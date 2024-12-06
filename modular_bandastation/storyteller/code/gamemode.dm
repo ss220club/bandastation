@@ -999,7 +999,7 @@ SUBSYSTEM_DEF(gamemode)
 		if(last_point_gains[track])
 			var/lower = event_track_points[track]
 			var/upper = point_thresholds[track]
-			var/last_points = last_point_gains[track]
+			var/last_points = last_point_gains[track] != 0 ? last_point_gains[track] : 1
 			var/est_time = round(((upper - lower) / last_points / STORYTELLER_WAIT_TIME))
 			dat += "[track]: ~[est_time] secs. | "
 	dat += "<HR>"
