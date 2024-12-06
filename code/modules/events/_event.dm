@@ -117,7 +117,6 @@
 		return FALSE
 	return TRUE
 
-
 /datum/round_event_control/proc/preRunEvent(forced = FALSE) /// BANDASTATION EDIT - STORYTELLER
 	if(!ispath(typepath, /datum/round_event))
 		return EVENT_CANT_RUN

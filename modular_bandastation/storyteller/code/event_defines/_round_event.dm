@@ -43,7 +43,7 @@
 	/// The minds we've setup in setup() and need to finalize in start()
 	var/list/setup_minds = list()
 	/// Whether we prompt the players before picking them.
-	var/prompted_picking = FALSE //TODO: Implement this
+	var/prompted_picking = FALSE
 	/// DO NOT SET THIS MANUALLY, THIS IS INHERITED FROM THE EVENT CONTROLLER ON NEW
 	var/list/extra_spawned_events
 	/// Similar to extra_spawned_events however these are only used by roundstart events and will only try and run if we have the points to do so

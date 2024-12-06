@@ -15,7 +15,7 @@
 	required_enemies = 2
 	weight = 6
 	max_occurrences = 2
-	prompted_picking = TRUE
+	prompted_picking = FALSE
 
 /datum/round_event/antagonist/solo/ghost/paradox_clone
 	var/list/possible_spawns = list() ///places the antag can spawn

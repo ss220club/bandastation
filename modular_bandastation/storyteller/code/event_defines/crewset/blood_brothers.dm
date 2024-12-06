@@ -43,7 +43,7 @@
 
 /datum/round_event_control/antagonist/solo/brother/midround
 	name = "Sleeper Agents (Blood Brothers)"
-	prompted_picking = TRUE
+	prompted_picking = FALSE
 	required_enemies = 2
 
 /datum/round_event/antagonist/solo/brother/add_datum_to_mind(datum/mind/antag_mind)

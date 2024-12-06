@@ -27,4 +27,4 @@
 
 /datum/round_event_control/antagonist/solo/changeling/midround
 	name = "Genome Awakening (Changelings)"
-	prompted_picking = TRUE
+	prompted_picking = FALSE

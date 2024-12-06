@@ -35,7 +35,7 @@
 	earliest_start = 45 MINUTES
 	weight = 4
 	max_occurrences = 1
-	prompted_picking = TRUE
+	prompted_picking = FALSE
 
 /datum/round_event/antagonist/solo/ghost/nuclear_operative
 	excute_round_end_reports = TRUE
