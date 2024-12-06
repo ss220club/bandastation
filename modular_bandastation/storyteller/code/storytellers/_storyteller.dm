@@ -145,7 +145,9 @@
 				stack_trace("WARNING: Storyteller picked a null from event pool.")
 				SSgamemode.event_track_points[track] = 0
 				return
-	buy_event(picked_event, track, are_forced)
+
+	if(picked_event)
+		buy_event(picked_event, track, are_forced)
 	. = TRUE
 
 ///Attempt to buy a specific event if we can afford it, otherwise returns FALSE, note this does NOT take cost variance into account

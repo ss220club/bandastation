@@ -868,6 +868,8 @@ SUBSYSTEM_DEF(gamemode)
 
 /// Panel containing information, variables and controls about the gamemode and scheduled event
 /datum/controller/subsystem/gamemode/proc/admin_panel(mob/user)
+	if(!current_storyteller)
+		set_storyteller(selected_storyteller)
 	update_crew_infos()
 	var/round_started = SSticker.HasRoundStarted()
 	var/list/dat = list()

@@ -301,7 +301,7 @@
 		if("schedule")
 			message_admins("[key_name_admin(usr)] scheduled event [src.name].")
 			log_admin_private("[key_name(usr)] scheduled [src.name].")
-			SSgamemode.current_storyteller.buy_event(src, src.track)
+			SSgamemode.schedule_event(src, 1 SECONDS, 0, _forced = FALSE)
 		if("force_next")
 			if(length(src.admin_setup))
 				for(var/datum/event_admin_setup/admin_setup_datum in src.admin_setup)
