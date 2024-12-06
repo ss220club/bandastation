@@ -920,7 +920,7 @@ SUBSYSTEM_DEF(gamemode)
 				var/upper = point_thresholds[track]
 				var/percent = round((lower/upper)*100)
 				var/next = 0
-				var/last_points = last_point_gains[track]
+				var/last_points = last_point_gains[track] != 0 ? last_point_gains[track] : 1
 				if(last_points)
 					next = round(((upper - lower) / last_points / STORYTELLER_WAIT_TIME))
 				dat += "<tr style='vertical-align:top; background-color: [background_cl];'>"
