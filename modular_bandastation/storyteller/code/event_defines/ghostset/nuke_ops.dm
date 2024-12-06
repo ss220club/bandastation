@@ -52,7 +52,7 @@
 		qdel(item)
 
 	var/datum/mind/most_experienced = get_most_experienced(setup_minds, required_role)
-	antag_mind.set_assigned_role(SSjob.GetJobType(/datum/job/nuclear_operative))
+	antag_mind.set_assigned_role(SSjob.get_job_type(/datum/job/nuclear_operative))
 	antag_mind.special_role = ROLE_NUCLEAR_OPERATIVE
 
 	if(!most_experienced)

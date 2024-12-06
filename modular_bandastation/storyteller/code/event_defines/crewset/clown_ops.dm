@@ -62,7 +62,7 @@
 	for(var/obj/item/item as anything in items)
 		qdel(item)
 
-	antag_mind.set_assigned_role(SSjob.GetJobType(/datum/job/clown_operative))
+	antag_mind.set_assigned_role(SSjob.get_job_type(/datum/job/clown_operative))
 	antag_mind.special_role = ROLE_CLOWN_OPERATIVE
 
 	var/datum/mind/most_experienced = get_most_experienced(setup_minds, required_role)

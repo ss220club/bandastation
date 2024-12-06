@@ -985,16 +985,14 @@ SUBSYSTEM_DEF(job)
 	return FALSE
 
 /// BANDASTATION EDIT START - STORYTELLER
-/datum/controller/subsystem/job/proc/GetJob(rank)
-	if(!length(all_occupations))
-		SetupOccupations()
-	return name_occupations[rank]
-
-/datum/controller/subsystem/job/proc/GetJobType(jobtype)
-	RETURN_TYPE(/datum/job)
-	if(!length(all_occupations))
-		SetupOccupations()
-	return type_occupations[jobtype]
+/datum/controller/subsystem/job/proc/FreeRole(rank)
+	if(!rank)
+		return
+	job_debug("Freeing role: [rank]")
+	var/datum/job/job = get_job(rank)
+	if(!job)
+		return FALSE
+	job.current_positions = max(0, job.current_positions - 1)
 
 /datum/controller/subsystem/job/proc/SetupOccupations()
 	name_occupations = list()
@@ -1063,14 +1061,6 @@ SUBSYSTEM_DEF(job)
 	experience_jobs_map = new_experience_jobs_map
 
 	return TRUE
-
-/datum/controller/subsystem/job/proc/FreeRole(rank)
-	if(!rank)
-		return
-	var/datum/job/job = GetJob(rank)
-	if(!job)
-		return FALSE
-	job.current_positions = max(0, job.current_positions - 1)
 
 /datum/controller/subsystem/job/proc/SendToLateJoin(mob/M, buckle = TRUE)
 	var/atom/destination

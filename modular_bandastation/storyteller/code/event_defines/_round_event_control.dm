@@ -99,7 +99,7 @@
 	var/list/enemy_players = list()
 	if(roundstart)
 		for(var/enemy in enemy_roles)
-			var/datum/job/enemy_job = SSjob.GetJob(enemy)
+			var/datum/job/enemy_job = SSjob.get_job(enemy)
 			if(enemy_job && SSjob.assigned_players_by_job[enemy_job.type])
 				job_check += length(SSjob.assigned_players_by_job[enemy_job.type])
 				enemy_players += SSjob.assigned_players_by_job[enemy_job.type]
