@@ -70,10 +70,9 @@
 	back = /obj/item/storage/backpack/satchel/leather
 	backpack_contents = list(
 		/obj/item/storage/box/survival/centcom,
-		/obj/item/gun/energy/pulse/pistol/m1911,
 		/obj/item/stamp/centcom,
 	)
-	belt = /obj/item/storage/belt/centcom_sabre
+	belt = /obj/item/gun/energy/pulse/pistol/m1911
 	ears = /obj/item/radio/headset/headset_cent/commander
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/centcom_officer
 	gloves = /obj/item/clothing/gloves/combat/centcom
@@ -89,12 +88,15 @@
 /obj/item/clothing/shoes/jackboots/centcom
 	clothing_traits = list(TRAIT_NO_SLIP_ALL)
 
+/datum/id_trim/centcom/commander
+	assignment = "CentCom Navy Officer"
+
 //CentCom Field Officer
 /datum/outfit/centcom/commander/field
 	name = "CentCom Field Officer"
 
 	id = /obj/item/card/id/advanced/centcom
-	id_trim = /datum/id_trim/centcom/commander
+	id_trim = /datum/id_trim/centcom/commander/field
 	uniform = /obj/item/clothing/under/rank/centcom/official
 	suit = /obj/item/clothing/suit/armor/centcom_formal/field
 	back = /obj/item/storage/backpack/satchel/leather
@@ -106,6 +108,9 @@
 	mask = /obj/item/cigarette/cigar/cohiba
 	shoes = /obj/item/clothing/shoes/jackboots/centcom
 	r_pocket = /obj/item/lighter
+
+/datum/id_trim/centcom/commander/field
+	assignment = "CentCom Field Officer"
 
 //CentCom Diplomat
 /datum/outfit/centcom/diplomat
