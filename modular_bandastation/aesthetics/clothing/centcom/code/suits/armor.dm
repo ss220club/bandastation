@@ -15,5 +15,5 @@
 
 /obj/item/clothing/suit/armor/centcom_formal/officer
 	name = "мундир офицера флота Нанотрейзен"
-	desc = "Удобное одеяние для повседневных флотский дел."
+	desc = "Удобное одеяние для повседневного ношения."
 	icon_state = "centcom_officer"
