@@ -27,8 +27,9 @@ SUBSYSTEM_DEF(statpanels)
 			"Map: [SSmapping.current_map?.map_name || "Loading..."]",
 			cached ? "Next Map: [cached.map_name]" : null,
 			"Round ID: [GLOB.round_id ? GLOB.round_id : "NULL"]",
+			"Players: [LAZYLEN(GLOB.clients)]", // BANDASTATION ADD
 			"Server Time: [time2text(world.timeofday, "YYYY-MM-DD hh:mm:ss")]",
-			"Round Time: [ROUND_TIME()]",
+			"Round Time: [gameTimestamp(wtime = STATION_TIME_PASSED())]", // BANDASTATION EDIT - original: ROUND_TIME()
 			"Station Time: [station_time_timestamp()]",
 			"Time Dilation: [round(SStime_track.time_dilation_current,1)]% AVG:([round(SStime_track.time_dilation_avg_fast,1)]%, [round(SStime_track.time_dilation_avg,1)]%, [round(SStime_track.time_dilation_avg_slow,1)]%)"
 		)
