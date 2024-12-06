@@ -319,7 +319,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod, 32)
 	var/occupant_job_radio = mob_occupant.mind?.assigned_role.default_radio_channel
 	var/occupant_gender = mob_occupant.gender // для аннонсов
 
-	SSjob.FreeRole(occupant_rank)
+	SSjob.FreeRoleCryo(occupant_rank)
 
 	// Delete them from datacore and ghost records.
 	var/announce_rank = null
@@ -382,7 +382,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod, 32)
 		return
 
 	if(target.stat == DEAD)
-		to_chat(user, span_notice("Мертвых людей нельзя поместить в криохранилище."))
+		to_chat(user, span_notice("Мёртвых людей нельзя поместить в криохранилище."))
 		return
 
 // Allows admins to enable players to override SSD Time check.
