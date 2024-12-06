@@ -38,3 +38,11 @@
 #include "objects/_objects.dme"
 #include "orderables/_orderables.dme"
 #include "overrides/_overrides.dme"
+
+
+// --- PRIME --- //
+// #define PRIME_ONLY_MODPACKS
+// Чтобы включить модпаки прайма, нужно раскоментить строку "#define PRIME_ONLY_MODPACKS" выше.
+#ifdef PRIME_ONLY_MODPACKS
+#include "prime_only/_prime_only.dme"
+#endif
