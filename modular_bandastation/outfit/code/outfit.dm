@@ -2,7 +2,7 @@
 
 // Old Fashion CentCom Commander
 /datum/outfit/centcom/spec_ops/old
-	name = "Old Fashion CentCom Commander"
+	name = "Old Fashion Special Ops Officer"
 
 	id = /obj/item/card/id/advanced/centcom
 	id_trim = /datum/id_trim/centcom/specops_officer
@@ -152,3 +152,8 @@
 
 /datum/id_trim/centcom/diplomat
 	assignment = "Nanotrasen Diplomat"
+
+/datum/id_trim/centcom/diplomat/New()
+	. = ..()
+
+	access = list(ACCESS_CENT_GENERAL, ACCESS_CENT_SPECOPS, ACCESS_CENT_LIVING) | (SSid_access.get_region_access_list(list(REGION_ALL_STATION)) - ACCESS_CHANGE_IDS)
