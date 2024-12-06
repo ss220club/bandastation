@@ -1,18 +1,18 @@
 /obj/item/clothing/head/hats/centcom_cap
-	name = "\improper фуражка офицера флота Нанотрейзен"
+	name = "фуражка офицера флота Нанотрейзен"
 	desc = "Носится высшими чинами офицерского состава Нанотрейзен. На подкладке едва различимы чьи-то инициалы."
 	icon = 'modular_bandastation/aesthetics/clothing/centcom/icons/obj/clothing/head/hats.dmi'
 	worn_icon = 'modular_bandastation/aesthetics/clothing/centcom/icons/mob/clothing/head/hats.dmi'
 	resistance_flags = INDESTRUCTIBLE | FIRE_PROOF | FREEZE_PROOF | UNACIDABLE | ACID_PROOF
 
 /obj/item/clothing/head/hats/centhat
-	name = "\improper головной убор офицера флота Нанотрейзен"
+	name = "головной убор офицера флота Нанотрейзен"
 	desc = "Управлять судьбами так захватывающе."
 	icon = 'modular_bandastation/aesthetics/clothing/centcom/icons/obj/clothing/head/hats.dmi'
 	worn_icon = 'modular_bandastation/aesthetics/clothing/centcom/icons/mob/clothing/head/hats.dmi'
 
 /obj/item/clothing/head/beret/cent_intern
-	name = "\improper берет унтер-офицера флота Нанотрейзен"
+	name = "берет унтер-офицера флота Нанотрейзен"
 	desc = "Носится младшим офицерским составом."
 	icon_state = "beret_badge"
 	greyscale_config = /datum/greyscale_config/beret_badge
@@ -33,7 +33,7 @@
 	wound = 10
 
 /obj/item/clothing/head/beret/cent_diplomat
-	name = "\improper берет дипломата Нанотрейзен"
+	name = "берет дипломата Нанотрейзен"
 	desc = "Изящный белый берет, важный элемент гардероба дипломатов Компании. На подкладке вышита надпись: \"НЕ ПОДЛЕЖИТ СТИРКЕ!\""
 	icon_state = "beret_badge"
 	greyscale_config = /datum/greyscale_config/beret_badge
@@ -54,18 +54,18 @@
 	wound = 12
 
 /obj/item/clothing/head/helmet/space/beret
-	name = "\improper берет старшего офицера флота Нанотрейзен"
+	name = "берет старшего офицера флота Нанотрейзен"
 	desc = "Стандартный берет офицера флота Нанотрейзен. Лёгкий и надежный."
 	greyscale_colors = "#323253#FFCE5B"
 	resistance_flags = INDESTRUCTIBLE | FIRE_PROOF | FREEZE_PROOF | UNACIDABLE | ACID_PROOF
 
 /obj/item/clothing/head/helmet/space/beret/soo
-	name = "\improper берет офицера Специальных Операций"
+	name = "берет офицера Специальных Операций"
 	desc = "Продвинутая версия стандартного офицерского берета. Выдерживает попадание аннигиляторной пушки. Проверять не стоит."
 	greyscale_colors = "#b72b2f#acacac"
 
 /obj/item/clothing/head/hats/intern
-	name = "\improper кепка унтер-офицера флота Нанотрейзен"
+	name = "кепка унтер-офицера флота Нанотрейзен"
 	desc = "Богомерзкое порождение коитуса кепки и вязанной шапки. Как правило, все носители данного недарозумения или\
 	получают наивысшие должности в Компании в будущем из-за своей беспринципности, или жесточайшим образом умирают в первую неделю службы."
 	icon = 'modular_bandastation/aesthetics/clothing/centcom/icons/obj/clothing/head/hats.dmi'

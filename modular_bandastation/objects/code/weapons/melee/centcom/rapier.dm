@@ -1,5 +1,5 @@
 /obj/item/melee/sabre/centcom_sabre
-	name = "\improper рапира офицера флота Нанотрейзен"
+	name = "рапира офицера флота Нанотрейзен"
 	desc = "Элегантное оружие более цивилизованной эпохи. Выполнено в классическом стиле с данью флотским традициям прошлого."
 	icon = 'modular_bandastation/objects/icons/melee.dmi'
 	icon_state = "centcom_sabre"
@@ -12,7 +12,7 @@
 	armour_penetration = 100
 
 /obj/item/melee/sabre/centcom_katana
-	name = "\improper катана офицера флота Нанотрейзен"
+	name = "катана офицера флота Нанотрейзен"
 	desc = "Элегантное оружие более цивилизованной эпохи. Выполнено в азиатском стиле с данью Земным культурам прошлого."
 	icon = 'modular_bandastation/objects/icons/melee.dmi'
 	icon_state = "centcom_katana"
@@ -26,7 +26,7 @@
 	armour_penetration = 100
 
 /obj/item/storage/belt/centcom_sabre
-	name = "\improper ножны офицерской рапиры"
+	name = "ножны офицерской рапиры"
 	desc = "Богато украшенные ножны, предназначенные для хранения офицерской рапиры."
 	icon = 'modular_bandastation/objects/icons/belt.dmi'
 	worn_icon = 'modular_bandastation/objects/icons/mob/clothing/belt/belt.dmi'
@@ -35,8 +35,6 @@
 	icon_state = "centcom_sheath"
 	worn_icon_state = "centcom_sheath"
 	inhand_icon_state = "centcom_sheath"
-
-/obj/item/storage/belt/sabre
 
 /obj/item/storage/belt/centcom_sabre/Initialize(mapload)
 	. = ..()
@@ -78,7 +76,7 @@
 	update_appearance()
 
 /obj/item/storage/belt/centcom_katana
-	name = "\improper сая офицерской катаны"
+	name = "сая офицерской катаны"
 	desc = "Богато украшенные деревянные ножны, предназначенные для хранения офицерской катаны."
 	icon = 'modular_bandastation/objects/icons/belt.dmi'
 	worn_icon = 'modular_bandastation/objects/icons/mob/clothing/belt/belt.dmi'
