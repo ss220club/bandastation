@@ -37,11 +37,6 @@ map metastation
 	votable
 endmap
 
-map northstar
-	minplayers 50
-	votable
-endmap
-
 map tramstation
 	minplayers 35
 	votable
@@ -66,4 +61,11 @@ map multiz_debug
 endmap
 
 map runtimestation
+endmap
+
+# SS220 maps.
+
+map cyberiad
+	maxplayers 100
+	votable
 endmap

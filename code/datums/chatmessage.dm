@@ -50,6 +50,8 @@
 	var/animate_start = 0
 	/// Our animation lifespan, how long this message will last
 	var/animate_lifespan = 0
+	/// Callback to finish_image_generation passed to SSrunechat
+	var/datum/callback/finish_callback
 
 /**
  * Constructs a chat message overlay
@@ -80,6 +82,10 @@
 		if (owned_by.seen_messages)
 			LAZYREMOVEASSOC(owned_by.seen_messages, message_loc, src)
 		owned_by.images.Remove(message)
+
+	if (finish_callback)
+		SSrunechat.message_queue -= finish_callback
+		finish_callback = null
 
 	owned_by = null
 	message_loc = null
@@ -150,6 +156,10 @@
 		var/image/r_icon = image('icons/ui/chat/chat_icons.dmi', icon_state = "emote")
 		LAZYADD(prefixes, "\icon[r_icon]")
 		chat_color_name_to_use = target.get_visible_name(add_id_name = FALSE) // use face name for nonverbal messages
+	// Bandastation Edit Start
+	else if (extra_classes.Find("looc"))
+		LAZYADD(prefixes, "<span style='font-size: 6px; color: #6699cc;'><b>\[LOOC\]</b></span> ")
+	// Bandastation Edit End
 
 	if(isnull(chat_color_name_to_use))
 		if(HAS_TRAIT(target, TRAIT_SIGN_LANG))
@@ -188,13 +198,14 @@
 	if(!VERB_SHOULD_YIELD)
 		return finish_image_generation(mheight, target, owner, complete_text, lifespan)
 
-	var/datum/callback/our_callback = CALLBACK(src, PROC_REF(finish_image_generation), mheight, target, owner, complete_text, lifespan)
-	SSrunechat.message_queue += our_callback
+	finish_callback = CALLBACK(src, PROC_REF(finish_image_generation), mheight, target, owner, complete_text, lifespan)
+	SSrunechat.message_queue += finish_callback
 	return
 
 ///finishes the image generation after the MeasureText() call in generate_image().
 ///necessary because after that call the proc can resume at the end of the tick and cause overtime.
 /datum/chatmessage/proc/finish_image_generation(mheight, atom/target, mob/owner, complete_text, lifespan)
+	finish_callback = null
 	var/rough_time = REALTIMEOFDAY
 	approx_lines = max(1, mheight / CHAT_MESSAGE_APPROX_LHEIGHT)
 	var/starting_height = target.maptext_height

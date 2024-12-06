@@ -188,7 +188,7 @@
 	wound_bonus = 5
 	bare_wound_bonus = 15
 
-/obj/item/melee/sabre/Initialize(mapload)
+/obj/item/melee/parsnip_sabre/Initialize(mapload)
 	. = ..()
 	AddComponent(/datum/component/jousting)
 
@@ -540,7 +540,7 @@
 
 /obj/item/melee/cleric_mace/get_material_prefixes(list/materials)
 	var/datum/material/material = materials[1]
-	return material.name //It only inherits the name of the main material it's made of. The secondary is in the description.
+	return material.declent_ru(GENITIVE) //It only inherits the name of the main material it's made of. The secondary is in the description. // BANDASTATION EDIT - Material atoms
 
 /obj/item/melee/cleric_mace/finalize_material_effects(list/materials)
 	. = ..()

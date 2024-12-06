@@ -453,6 +453,14 @@ SUBSYSTEM_DEF(dynamic)
 	log_dynamic("Calculated maximum threat level based on player count of [SSticker.totalPlayersReady]: [calculated_max_threat]")
 
 	threat_level = lorentz_to_amount(threat_curve_centre, threat_curve_width, calculated_max_threat)
+	// BANDASTATION EDIT START - Threat management
+	var/min_threat_level = CONFIG_GET(number/min_threat_level)
+	if(min_threat_level && min_threat_level < max_threat_level)
+		var/previous_threat_level = threat_level
+		threat_level = clamp(threat_level, min_threat_level, max_threat_level)
+		if(threat_level != previous_threat_level)
+			log_dynamic("Threat was increased to the min value of [min_threat_level] from [previous_threat_level]")
+	// BANDASTATION EDIT END
 
 	for(var/datum/station_trait/station_trait in GLOB.dynamic_station_traits)
 		threat_level = max(threat_level - GLOB.dynamic_station_traits[station_trait], 0)
@@ -463,6 +471,15 @@ SUBSYSTEM_DEF(dynamic)
 /// Generates the midround and roundstart budgets
 /datum/controller/subsystem/dynamic/proc/generate_budgets()
 	round_start_budget = lorentz_to_amount(roundstart_split_curve_centre, roundstart_split_curve_width, threat_level, 0.1)
+	// BANDASTATION EDIT START - Threat management
+	var/min_threat_to_roundstart_percent = CONFIG_GET(number/min_threat_to_roundstart_percent)
+	var/max_threat_to_roundstart_percent = CONFIG_GET(number/max_threat_to_roundstart_percent)
+	if(min_threat_to_roundstart_percent && max_threat_to_roundstart_percent && min_threat_to_roundstart_percent < max_threat_to_roundstart_percent)
+		var/previous_round_start_budget = round_start_budget
+		round_start_budget = clamp(previous_round_start_budget, min_threat_to_roundstart_percent / 100 * threat_level, max_threat_to_roundstart_percent / 100 * threat_level)
+		if(round_start_budget != previous_round_start_budget)
+			log_dynamic("Clamped roundstart budget from [previous_round_start_budget] to [round_start_budget]")
+	// BANDASTATION EDIT END
 	initial_round_start_budget = round_start_budget
 	mid_round_budget = threat_level - round_start_budget
 
@@ -589,7 +606,7 @@ SUBSYSTEM_DEF(dynamic)
 /datum/controller/subsystem/dynamic/proc/post_setup(report)
 	for(var/datum/dynamic_ruleset/roundstart/rule in executed_rules)
 		rule.candidates.Cut() // The rule should not use candidates at this point as they all are null.
-		addtimer(CALLBACK(src, TYPE_PROC_REF(/datum/controller/subsystem/dynamic/, execute_roundstart_rule), rule), rule.delay)
+		addtimer(CALLBACK(src, PROC_REF(execute_roundstart_rule), rule), rule.delay)
 
 	if (!CONFIG_GET(flag/no_intercept_report))
 		addtimer(CALLBACK(src, PROC_REF(send_intercept)), rand(waittime_l, waittime_h))
@@ -639,7 +656,7 @@ SUBSYSTEM_DEF(dynamic)
 				failed = TRUE //AFK client
 			if(!failed && L.stat)
 				if(HAS_TRAIT(L, TRAIT_SUICIDED)) //Suicider
-					msg += "<b>[L.name]</b> ([L.key]), the [L.job] ([span_boldannounce("Suicide")])\n"
+					msg += "<b>[L.name]</b> ([L.key]), the [L.job] ([span_bolddanger("Suicide")])\n"
 					failed = TRUE //Disconnected client
 				if(!failed && (L.stat == UNCONSCIOUS || L.stat == HARD_CRIT))
 					msg += "<b>[L.name]</b> ([L.key]), the [L.job] (Dying)\n"
@@ -653,7 +670,7 @@ SUBSYSTEM_DEF(dynamic)
 			if(D.mind && D.mind.current == L)
 				if(L.stat == DEAD)
 					if(HAS_TRAIT(L, TRAIT_SUICIDED)) //Suicider
-						msg += "<b>[L.name]</b> ([ckey(D.mind.key)]), the [L.job] ([span_boldannounce("Suicide")])\n"
+						msg += "<b>[L.name]</b> ([ckey(D.mind.key)]), the [L.job] ([span_bolddanger("Suicide")])\n"
 						continue //Disconnected client
 					else
 						msg += "<b>[L.name]</b> ([ckey(D.mind.key)]), the [L.job] (Dead)\n"
@@ -662,7 +679,7 @@ SUBSYSTEM_DEF(dynamic)
 					if(D.can_reenter_corpse)
 						continue //Adminghost, or cult/wizard ghost
 					else
-						msg += "<b>[L.name]</b> ([ckey(D.mind.key)]), the [L.job] ([span_boldannounce("Ghosted")])\n"
+						msg += "<b>[L.name]</b> ([ckey(D.mind.key)]), the [L.job] ([span_bolddanger("Ghosted")])\n"
 						continue //Ghosted while alive
 
 	var/concatenated_message = msg.Join()

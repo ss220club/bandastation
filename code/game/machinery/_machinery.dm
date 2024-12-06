@@ -335,6 +335,13 @@
 	remove_all_languages(source = LANGUAGE_EMP)
 	grant_random_uncommon_language(source = LANGUAGE_EMP)
 
+/obj/machinery/base_item_interaction(mob/living/user, obj/item/tool, list/modifiers)
+	//takes priority in case material container or other atoms that hook onto item interaction signals won't give it a chance
+	if(istype(tool, /obj/item/storage/part_replacer))
+		return tool.interact_with_atom(src, user, modifiers)
+
+	return ..()
+
 /**
  * Opens the machine.
  *
@@ -736,13 +743,10 @@
 
 /obj/machinery/attack_hulk(mob/living/carbon/user)
 	. = ..()
-	var/obj/item/bodypart/arm = user.hand_bodyparts[user.active_hand_index]
-	if(!arm)
+	var/obj/item/bodypart/arm = user.get_active_hand()
+	if(!arm || arm.bodypart_disabled)
 		return
-	if(arm.bodypart_disabled)
-		return
-	var/damage = damage_deflection * 0.1
-	arm.receive_damage(brute=damage, wound_bonus = CANT_WOUND)
+	user.apply_damage(damage_deflection * 0.1, BRUTE, arm, wound_bonus = CANT_WOUND)
 
 /obj/machinery/attack_robot(mob/user)
 	if(!(interaction_flags_machine & INTERACT_MACHINE_ALLOW_SILICON) && !isAdminGhostAI(user))
