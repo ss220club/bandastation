@@ -73,3 +73,14 @@ TRANSFER_VOTE_TIME 90
 ## If players vote against a crew transfer, how long (in minutes) until another automatic transfer vote will be initiated?
 ## Defaults to 30 minutes. Set to 0 to completely disable subsequent crew transfer votes.
 SUBSEQUENT_TRANSFER_VOTE_TIME 30
+
+## Automatic crew transfer
+
+## Time after the roundstart the automatic crew transfer will run. 1.5 hours by default
+#AUTOMATIC_CREW_TRANSFER_VOTE_DELAY 54000
+## Time the automatic crew transfer vote will automatically run after if previous one not passed. 30 minutes by default
+#AUTOMATIC_CREW_TRANSFER_VOTE_INTERVAL 18000
+## If players are able to create crew transfer vote
+#ALLOW_CREW_TRANSFER_VOTE
+## If automatic crew transfer is enabled
+#ENABLE_AUTOMATIC_CREW_TRANSFER
