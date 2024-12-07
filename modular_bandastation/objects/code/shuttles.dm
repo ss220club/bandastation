@@ -38,14 +38,10 @@
  * Probably not. If we want it, so we'll have to modify "is_infiltrator_docked_at_syndiebase" proc
  */
 /obj/machinery/computer/shuttle/syndicate/sit/launch_check(mob/user)
-	if(!allowed(user))
-		return FALSE
-	return TRUE
+	return allowed(user)
 
 /obj/machinery/computer/shuttle/syndicate/sst/launch_check(mob/user)
-	if(!allowed(user))
-		return FALSE
-	return TRUE
+	return allowed(user)
 
 // Shutte Docking Port
 /obj/docking_port/mobile/syndicate_sit
