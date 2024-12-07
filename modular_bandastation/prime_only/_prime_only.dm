@@ -1,4 +1,4 @@
 /datum/modpack/prime_only
-	name = "prime_only"
-	desc = "Все изменения которые применяются только на прайме"
+	name = "Prime Only"
+	desc = "Все изменения которые применяются только на Прайме."
 	author = "gaxeer"
