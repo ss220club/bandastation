@@ -6,12 +6,12 @@
 	if(incapacitated)
 		return
 	if(tgui_alert(usr, "Войти в криогенный стазис? Вы станете призраком.", "Войти в криогенный стазис", list("Да", "Нет")) == "Да")
-		src.ghostize(FALSE)
+		ghostize(FALSE)
 		minor_announce("Станционный ИИ был отключён от внутренних систем и был перемещён на хранение. Производится подготовка для загрузки нового ИИ.", "Станционный ИИ")
 		new /obj/structure/ai_core/latejoin_inactive(loc)
-		if(src.mind)
+		if(mind)
 			//Handle job slot/tater cleanup.
-			if(src.mind.assigned_role.title == JOB_AI)
+			if(mind.assigned_role.title == JOB_AI)
 				SSjob.FreeRoleCryo(JOB_AI)
-		src.mind.special_role = null
+		mind.special_role = null
 		qdel(src)

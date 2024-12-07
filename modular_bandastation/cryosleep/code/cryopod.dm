@@ -128,7 +128,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod, 32)
 			if(item in frozen_item)
 				item.forceMove(drop_location())
 				frozen_item.Remove(item_get, item)
-				visible_message("[src] выдаёт [item].")
+				visible_message("[capitalize(declent_ru(NOMINATIVE))] выдаёт [item].")
 				message_admins("[item] was retrieved from cryostorage at [ADMIN_COORDJMP(src)]")
 			else
 				CRASH("Invalid REF# for ui_act. Not inside internal list!")
@@ -237,7 +237,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod, 32)
 	tucked = FALSE
 
 /obj/machinery/cryopod/container_resist_act(mob/living/user)
-	visible_message(span_notice("[occupant] вылезает из [declent_ru(GENITIVE)]!"),
+	visible_message(span_notice("[capitalize(occupant.declent_ru(NOMINATIVE))] вылезает из [declent_ru(GENITIVE)]!"),
 		span_notice("Вы вылезаете из [declent_ru(GENITIVE)]!"))
 	open_machine()
 
@@ -277,8 +277,6 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod, 32)
 		if(istype(objective.target) && objective.target == mob_occupant.mind)
 			var/old_target = objective.target
 			objective.target = null
-			if(!objective)
-				return
 			objective.find_target()
 			if(!objective.target && objective.owner)
 				to_chat(objective.owner.current, "<BR>[span_userdanger("Ваша цель вне зоны досягаемости. Цель удалена!")]")
@@ -289,13 +287,13 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod, 32)
 				objective.owner.announce_objectives()
 				to_chat(objective.owner.current, "<BR>[span_userdanger("Вы чувствуете, что ваша цель вне зоны досягаемости. Время плана [pick("Б","В","Г","Д","Ж","З")]. Цели обновлены!")]")
 			else
-				var/list/objectivestoupdate
+				var/list/objectives_to_update
 				for(var/datum/mind/objective_owner in objective.get_owners())
 					to_chat(objective_owner.current, "<BR>[span_userdanger("Вы чувствуете, что ваша цель вне зоны досягаемости. Время плана [pick("Б","В","Г","Д","Ж","З")]. Цели обновлены!")]")
 					for(var/datum/objective/update_target_objective in objective_owner.get_all_objectives())
-						LAZYADD(objectivestoupdate, update_target_objective)
-				objectivestoupdate += objective.team.objectives
-				for(var/datum/objective/update_objective in objectivestoupdate)
+						LAZYADD(objectives_to_update, update_target_objective)
+				objectives_to_update += objective.team.objectives
+				for(var/datum/objective/update_objective in objectives_to_update)
 					if(update_objective.target != old_target || !istype(update_objective,objective.type))
 						continue
 					update_objective.target = objective.target
@@ -347,7 +345,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod, 32)
 		if(!quiet)
 			control_computer.announce("CRYO_LEAVE", mob_occupant.real_name, announce_rank, occupant_departments_bitflags, occupant_job_radio, occupant_gender)
 
-	visible_message(span_notice("[declent_ru(NOMINATIVE)] гудит и шипит, перемещая [mob_occupant.declent_ru(ACCUSATIVE)] в хранилище."))
+	visible_message(span_notice("[capitalize(declent_ru(NOMINATIVE))] гудит и шипит, перемещая [mob_occupant.declent_ru(ACCUSATIVE)] в хранилище."))
 
 	for(var/obj/item/item_content as anything in mob_occupant)
 		if(!istype(item_content) || HAS_TRAIT(item_content, TRAIT_NODROP))
@@ -416,6 +414,8 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod, 32)
 					add_fingerprint(target)
 
 					close_machine(target)
+
+					ru_names_rename(ru_names_toml(src::name, suffix = " ([target.declent_ru(NOMINATIVE)])", override = "[name] ([target.name])"))
 					name = "[name] ([target.name])"
 
 		else if(iscyborg(target))
@@ -450,9 +450,9 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod, 32)
 		return
 
 	if(target == user)
-		visible_message(span_infoplain("[user.declent_ru(NOMINATIVE)] залезает в [declent_ru(ACCUSATIVE)]."))
+		visible_message(span_infoplain("[capitalize(user.declent_ru(NOMINATIVE))] залезает в [declent_ru(ACCUSATIVE)]."))
 	else
-		visible_message(span_infoplain("[user.declent_ru(NOMINATIVE)] помещает [target.declent_ru(ACCUSATIVE)] в [declent_ru(ACCUSATIVE)]."))
+		visible_message(span_infoplain("[capitalize(user.declent_ru(NOMINATIVE))] помещает [target.declent_ru(ACCUSATIVE)] в [declent_ru(ACCUSATIVE)]."))
 
 	to_chat(target, span_warning("<b>Если вы станете призраком, выйдете из игры или закроете клиент, ваш персонаж вскоре будет навсегда удален из раунда.</b>"))
 
