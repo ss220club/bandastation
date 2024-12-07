@@ -17,9 +17,9 @@
 		return
 
 	//effect
-	playsound(loc, 'sound/effects/magic/Repulse.ogg', 100, 1)
+	playsound(loc, 'sound/effects/magic/Repulse.ogg', 50, TRUE)
 	var/datum/effect_system/spark_spread/quantum/sparks = new
-	sparks.set_up(10, 1, loc)
+	sparks.set_up(10, TRUE, loc)
 	sparks.start()
 
 	//make a paper if need

@@ -245,7 +245,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod, 32)
 	container_resist_act(user)
 
 /obj/machinery/cryopod/process()
-	if(!occupant)
+	if(!isliving(occupant))
 		return
 
 	var/mob/living/mob_occupant = occupant
@@ -259,7 +259,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod, 32)
 		despawn_occupant()
 
 /obj/machinery/cryopod/proc/handle_objectives()
-	if(!occupant)
+	if(!isliving(occupant))
 		return
 
 	var/mob/living/mob_occupant = occupant
@@ -305,7 +305,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod, 32)
 /// This function can not be undone; do not call this unless you are sure.
 /// Handles despawning the player.
 /obj/machinery/cryopod/proc/despawn_occupant()
-	if(!occupant)
+	if(!isliving(occupant))
 		return
 
 	var/mob/living/mob_occupant = occupant
@@ -350,7 +350,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod, 32)
 	for(var/obj/item/item_content as anything in mob_occupant)
 		if(!istype(item_content) || HAS_TRAIT(item_content, TRAIT_NODROP))
 			continue
-		if (issilicon(mob_occupant) && istype(item_content, /obj/item/mmi))
+		if(issilicon(mob_occupant) && istype(item_content, /obj/item/mmi))
 			continue
 		if(control_computer)
 			if(istype(item_content, /obj/item/modular_computer))
@@ -385,7 +385,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod, 32)
 
 // Allows admins to enable players to override SSD Time check.
 	if(allow_timer_override)
-		if(tgui_alert(user, "Хотите помесить [target.declent_ru(ACCUSATIVE)] в [declent_ru(ACCUSATIVE)]?", "Поместить в [declent_ru(ACCUSATIVE)]?", list("Да", "Нет")) != "Нет")
+		if(tgui_alert(user, "Хотите помесить [target.declent_ru(ACCUSATIVE)] в [declent_ru(ACCUSATIVE)]?", "Поместить в [declent_ru(ACCUSATIVE)]?", list("Да", "Нет")) == "Да")
 			to_chat(user, span_danger("Вы помещаете [target.declent_ru(ACCUSATIVE)] в [declent_ru(ACCUSATIVE)]."))
 			log_admin("[key_name(user)] has put [key_name(target)] into a overridden stasis pod.")
 			message_admins("[key_name(user)] has put [key_name(target)] into a overridden stasis pod. [ADMIN_JMP(src)]")
@@ -393,6 +393,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod, 32)
 			add_fingerprint(target)
 
 			close_machine(target)
+			ru_names_rename(ru_names_toml(src::name, suffix = " ([target.declent_ru(NOMINATIVE)])", override = "[name] ([target.name])"))
 			name = "[name] ([target.name])"
 
 // Allows players to cryo others. Checks if they have been AFK for 30 minutes.
@@ -421,10 +422,10 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod, 32)
 		else if(iscyborg(target))
 			to_chat(user, span_danger("Вы не можете поместить [target.declent_ru(ACCUSATIVE)] в [declent_ru(ACCUSATIVE)]. Юнит активен."))
 		else
-			to_chat(user, span_danger("Вы не можете поместить [target.declent_ru(ACCUSATIVE)] в [declent_ru(ACCUSATIVE)]. [target.ru_p_they(TRUE, target.gender)] в сознании."))
+			to_chat(user, span_danger("Вы не можете поместить [target.declent_ru(ACCUSATIVE)] в [declent_ru(ACCUSATIVE)]. [target.ru_p_they(TRUE)] в сознании."))
 		return
 
-	if(target == user && (tgui_alert(target, "Войти в криохранилище?", "Войти в криокапсулу?", list("Да", "Нет")) != "Да"))
+	if(target == user && (tgui_alert(target, "Войти в криохранилище?", "Войти в криокапсулу?", list("Да", "Нет")) == "Нет"))
 		return
 
 	if(target == user)
@@ -432,7 +433,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod, 32)
 			tgui_alert(target, "Вы играете на важной роли! Уверены что хотите покинуть раунд?")
 		var/datum/antagonist/antag = target.mind.has_antag_datum(/datum/antagonist)
 		if(antag)
-			tgui_alert(target, "Вы [antag.declent_ru(NOMINATIVE)]! Уверены что хотите покинуть раунд?")
+			tgui_alert(target, "Вы [antag.name]! Уверены что хотите покинуть раунд?")
 
 	if(LAZYLEN(target.buckled_mobs) > 0)
 		if(target == user)
@@ -470,7 +471,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod, 32)
 /obj/machinery/cryopod/attackby(obj/item/weapon, mob/living/carbon/human/user, params)
 	. = ..()
 	if(istype(weapon, /obj/item/bedsheet))
-		if(!occupant || !istype(occupant, /mob/living))
+		if(!isliving(occupant))
 			return
 		if(tucked)
 			to_chat(user, span_warning("[capitalize(occupant.declent_ru(NOMINATIVE))] выглядит уже достаточно комфортабельно!"))
