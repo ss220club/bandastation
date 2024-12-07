@@ -393,7 +393,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod, 32)
 			add_fingerprint(target)
 
 			close_machine(target)
-			ru_names_rename(ru_names_toml(src::name, suffix = " ([target.declent_ru(NOMINATIVE)])", override = "[name] ([target.name])"))
+			ru_names_rename(ru_names_toml(src::name, suffix = " ([target.declent_ru(NOMINATIVE)])", override_base = "[name] ([target.name])"))
 			name = "[name] ([target.name])"
 
 // Allows players to cryo others. Checks if they have been AFK for 30 minutes.
@@ -416,7 +416,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod, 32)
 
 					close_machine(target)
 
-					ru_names_rename(ru_names_toml(src::name, suffix = " ([target.declent_ru(NOMINATIVE)])", override = "[name] ([target.name])"))
+					ru_names_rename(ru_names_toml(src::name, suffix = " ([target.declent_ru(NOMINATIVE)])", override_base = "[name] ([target.name])"))
 					name = "[name] ([target.name])"
 
 		else if(iscyborg(target))

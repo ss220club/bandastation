@@ -8,10 +8,10 @@
 /obj/machinery/camera/autoname/directional/west{
 	network = list("prison")
 	},
-/obj/machinery/computer/cryopod/directional/north,
 /obj/machinery/cryopod/prison/directional/west,
+/obj/machinery/computer/cryopod/directional/north,
 /turf/open/floor/iron/dark/textured,
-/area/template_noop)
+/area/station/security/prison)
 
 (1,1,1) = {"
 a
