@@ -66,14 +66,6 @@ MAJOR_POP_SCALE_PENALTY 30
 ROLESET_POP_SCALE_PENALTY 30
 OBJECTIVES_POP_SCALE_PENALTY 30
 
-## How long (in minutes) after roundstart should the server start an automatic crew transfer vote?
-## Defaults to 90 minutes. Set to 0 to completely disable automatic crew transfer votes.
-TRANSFER_VOTE_TIME 90
-
-## If players vote against a crew transfer, how long (in minutes) until another automatic transfer vote will be initiated?
-## Defaults to 30 minutes. Set to 0 to completely disable subsequent crew transfer votes.
-SUBSEQUENT_TRANSFER_VOTE_TIME 30
-
 ## Automatic crew transfer
 
 ## Time after the roundstart the automatic crew transfer will run. 1.5 hours by default
