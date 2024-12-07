@@ -1,4 +1,4 @@
 /datum/modpack/mobs
 	name = "Mobs"
-	desc = "Кастомные симпл-мобы."
+	desc = "Кастомные мобы."
 	author = "dj-34"
