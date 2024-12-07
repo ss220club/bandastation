@@ -3,11 +3,6 @@
 	name = "Syndicate Forward Base"
 	icon = 'modular_bandastation/mapping/icons/areas/areas_centcom.dmi'
 	icon_state = "syndie-ship"
-	static_lighting = TRUE
-	requires_power = FALSE
-	has_gravity = STANDARD_GRAVITY
-	area_flags = UNIQUE_AREA | NOTELEPORT
-	flags_1 = NONE
 	ambience_index = AMBIENCE_DANGER
 
 /area/centcom/syndicate_base/outside
