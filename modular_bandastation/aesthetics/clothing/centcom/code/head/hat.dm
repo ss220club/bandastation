@@ -1,18 +1,18 @@
 /obj/item/clothing/head/hats/centcom_cap
-	name = "фуражка офицера флота Нанотрейзен"
+	name = "fleet officer's cap"
 	desc = "Носится высшими чинами офицерского состава Нанотрейзен. На подкладке едва различимы чьи-то инициалы."
 	icon = 'modular_bandastation/aesthetics/clothing/centcom/icons/obj/clothing/head/hats.dmi'
 	worn_icon = 'modular_bandastation/aesthetics/clothing/centcom/icons/mob/clothing/head/hats.dmi'
 	resistance_flags = INDESTRUCTIBLE | FIRE_PROOF | FREEZE_PROOF | UNACIDABLE | ACID_PROOF
 
 /obj/item/clothing/head/hats/centhat
-	name = "треуголка офицера флота Нанотрейзен"
+	name = "fleet officer's hat"
 	desc = "Управлять судьбами так захватывающе."
 	icon = 'modular_bandastation/aesthetics/clothing/centcom/icons/obj/clothing/head/hats.dmi'
 	worn_icon = 'modular_bandastation/aesthetics/clothing/centcom/icons/mob/clothing/head/hats.dmi'
 
 /obj/item/clothing/head/beret/cent_intern
-	name = "берет унтер-офицера флота Нанотрейзен"
+	name = "fleet junior-officer's beret"
 	desc = "Носится младшим офицерским составом."
 	icon_state = "beret_badge"
 	greyscale_config = /datum/greyscale_config/beret_badge
@@ -33,8 +33,8 @@
 	wound = 10
 
 /obj/item/clothing/head/beret/cent_diplomat
-	name = "берет дипломата Нанотрейзен"
-	desc = "Изящный белый берет, важный элемент гардероба дипломатов Компании. На подкладке вышита надпись: \"НЕ ПОДЛЕЖИТ СТИРКЕ!\""
+	name = "fleet officer's white beret"
+	desc = "Изящный белый берет. На подкладке вышита надпись: \"НЕ ПОДЛЕЖИТ СТИРКЕ!\""
 	icon_state = "beret_badge"
 	greyscale_config = /datum/greyscale_config/beret_badge
 	greyscale_config_worn = /datum/greyscale_config/beret_badge/worn
@@ -54,19 +54,20 @@
 	wound = 12
 
 /obj/item/clothing/head/helmet/space/beret
-	name = "берет старшего офицера флота Нанотрейзен"
+	name = "fleet officer's beret"
 	desc = "Стандартный берет офицера флота Нанотрейзен. Лёгкий и надежный."
 	greyscale_colors = "#323253#FFCE5B"
 	resistance_flags = INDESTRUCTIBLE | FIRE_PROOF | FREEZE_PROOF | UNACIDABLE | ACID_PROOF
+	flags_cover = HEADCOVERSEYES | PEPPERPROOF
 
 /obj/item/clothing/head/helmet/space/beret/soo
-	name = "берет офицера Специальных Операций"
+	name = "special ops officer's beret"
 	desc = "Продвинутая версия стандартного офицерского берета. Выдерживает попадание аннигиляторной пушки. Проверять не стоит."
 	greyscale_colors = "#b72b2f#acacac"
 
 /obj/item/clothing/head/hats/intern
-	name = "кепка унтер-офицера флота Нанотрейзен"
-	desc = "Богомерзкое порождение коитуса кепки и вязанной шапки. Как правило, все носители данного недарозумения или\
-	получают наивысшие должности в Компании в будущем из-за своей беспринципности, или жесточайшим образом умирают в первую неделю службы."
+	name = "fleet junior-officer's cap"
+	desc = "Богомерзкое порождение коитуса кепки и вязанной шапки. Как правило, все носители данного недарозумения или \
+	получают наивысшие должности в Компании из-за своей беспринципности, или умирают жесточайшим образом в первую неделю службы."
 	icon = 'modular_bandastation/aesthetics/clothing/centcom/icons/obj/clothing/head/hats.dmi'
 	worn_icon = 'modular_bandastation/aesthetics/clothing/centcom/icons/mob/clothing/head/hats.dmi'

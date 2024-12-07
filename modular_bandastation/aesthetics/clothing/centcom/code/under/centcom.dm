@@ -6,62 +6,62 @@
 	resistance_flags = INDESTRUCTIBLE | FIRE_PROOF | FREEZE_PROOF | UNACIDABLE | ACID_PROOF
 
 /obj/item/clothing/under/rank/centcom/commander
-	name = "костюм офицера высшего ранга"
+	name = "fleet high-officer's suit"
 	desc = "Стандартная флотская униформа с отличительными знаками флагманского офицерского состава флота Нанотрейзен."
 
 /obj/item/clothing/under/rank/centcom/official
-	name = "повседневный офицерский костюм"
+	name = "fleet officer's formal suit"
 	desc = "Вариант офицерской униформы предназаченный для повседневного ношения."
 
 /obj/item/clothing/under/rank/centcom/intern
-	name = "костюм унтер-офицера"
+	name = "fleet junior-officer's suit"
 	desc = "Стандартная флотская униформа с отличительными знаками младшего офицерского состава флота Нанотрейзен."
 
 /obj/item/clothing/under/rank/centcom/officer
-	name = "костюм старшего офицера"
+	name = "fleet officer's suit"
 	desc = "Стандартный флотская униформа с отличительными знаками старшего офицера флота Нанотрейзен."
 
 /obj/item/clothing/under/rank/centcom/officer/replica
-	name = "реплика униформы старшего флотского офицера"
+	name = "fleet officer's suit replica"
 	desc = "Дешовая подделка униформы офицера Центрального Командования. На воротнике виднеется логотип Donk Co."
 
 /obj/item/clothing/under/rank/centcom/officer_skirt
-	name = "юбка старшего офицера"
+	name = "fleet officer's skirt"
 	desc = "Вариант флотской униформы старшего офицера в виде юбки. Редкая и востребованная."
 
 /obj/item/clothing/under/rank/centcom/officer_skirt/replica
-	name = "реплика юбки старшего флотского офицера"
+	name = "fleet officer's skirt replica"
 	desc = "Дешовая подделка юбки офицера Центрального Командования. На воротнике виднеется логотип Donk Co."
 
 /obj/item/clothing/under/rank/centcom/centcom_skirt
-	name = "юбка офицера высшего ранга"
+	name = "fleet high-officer's skirt"
 	desc = "Вариант флотской униформы флагманского офицера в виде юбки. Редкая и востребованная."
 
 /obj/item/clothing/under/rank/centcom/military
-	name = "тактическая униформа бойца"
+	name = "SRT commander's suitskirt"
 	desc = "Униформа, выполненная в темных цветах с опозновательными знаками подразделений СРТ."
 
 /obj/item/clothing/under/rank/centcom/military/eng
-	name = "тактическая униформа инженера"
+	name = "SRT tactical engineering uniform"
 	desc = "Униформа, выполненная в темных цветах с опозновательными знаками инженерных подразделений СРТ."
 	inhand_icon_state = "bl_suit"
 
 /obj/item/clothing/under/rank/centcom/admiral
-	name = "роскошный офицерский костюм"
+	name = "fleet officer's luxurious suit"
 	desc = "Вариант дорогой офицерской униформы, который редко встретишь за пределами Центральных Миров."
 	icon_state = "centcom_admiral"
 	inhand_icon_state = "centcom_admiral"
 	can_adjust = FALSE
 
 /obj/item/clothing/under/rank/centcom/formal
-	name = "деловой офицерский костюм"
+	name = "fleet officer's official suit"
 	desc = "Вариант офицерской униформы предназаченный для деловых встреч и официальных вылетов."
 	icon_state = "centcom_formal"
 	inhand_icon_state = "centcom_formal"
 	can_adjust = FALSE
 
 /obj/item/clothing/under/rank/centcom/diplomat
-	name = "костюм дипломата Нанотрейзен"
+	name = "fleet officer's white suit"
 	desc = "Будучи лицом Компании на важных переговорах вы ОБЯЗАНЫ блистать."
 	icon_state = "centcom_diplomat"
 	inhand_icon_state = "centcom_diplomat"

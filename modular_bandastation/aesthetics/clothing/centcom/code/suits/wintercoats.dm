@@ -1,5 +1,5 @@
 /obj/item/clothing/suit/hooded/wintercoat/centcom
-	name = "зимняя куртка офицера флота Нанотрейзен"
+	name = "fleet officer's winter coat"
 	desc = "Люксова куртка с позолотой, сшитая в классических цветах компании. Застежка-молния выполнена в виде логотипа компании."
 	icon = 'modular_bandastation/aesthetics/clothing/centcom/icons/obj/clothing/suits/wintercoat.dmi'
 	worn_icon = 'modular_bandastation/aesthetics/clothing/centcom/icons/mob/clothing/suits/wintercoat.dmi'
