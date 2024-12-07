@@ -1,5 +1,5 @@
 /// Send player in not-quiet cryopod. If with_paper = TRUE, place a paper with notification under player.
-/mob/proc/send_to_cryo(with_paper = FALSE)
+/mob/living/proc/send_to_cryo(with_paper = FALSE)
 	var/obj/machinery/cryopod/valid_pod
 	for(var/obj/machinery/cryopod/cryo in GLOB.valid_cryopods)
 		if(cryo.occupant || !cryo.state_open || cryo.panel_open) //free, opened, and panel closed?

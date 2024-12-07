@@ -1,16 +1,16 @@
 /**
  * EXTRA MOB VV
  */
-/mob/vv_get_dropdown()
+/mob/living/vv_get_dropdown()
 	. = ..()
 	VV_DROPDOWN_OPTION(VV_HK_SEND_CRYO, "Send to Cryogenic Storage")
 
-/mob/vv_do_topic(list/href_list)
+/mob/living/vv_do_topic(list/href_list)
 	. = ..()
 	if(href_list[VV_HK_SEND_CRYO])
 		vv_send_cryo()
 
-/mob/proc/vv_send_cryo()
+/mob/living/proc/vv_send_cryo()
 	if(!check_rights(R_SPAWN))
 		return
 
