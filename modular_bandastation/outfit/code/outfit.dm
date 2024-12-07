@@ -24,16 +24,6 @@
 	r_pocket = /obj/item/lighter
 	l_pocket = /obj/item/reagent_containers/hypospray/combat/nanites
 
-/obj/item/clothing/glasses/hud/security/sunglasses/soo
-	name = "офицерские ИЛС очки"
-	desc = "Продвинутый ИЛС-визор, стилизованный под солнцезащитные очки. Никто не укроется."
-	vision_flags = SEE_TURFS|SEE_MOBS|SEE_OBJS
-
-/obj/item/clothing/glasses/hud/security/sunglasses/centcom_officer
-	name = "офицерские ИЛС очки"
-	desc = "Продвинутый ИЛС-визор, стилизованный под солнцезащитные очки. Почти никто не укроется."
-	vision_flags = SEE_MOBS
-
 //CentCom Subordinate Officer
 /datum/outfit/centcom/centcom_intern
 	name = "CentCom Subordinate Officer"
@@ -85,16 +75,6 @@
 	shoes = /obj/item/clothing/shoes/laceup
 	r_pocket = /obj/item/lighter
 	l_pocket = /obj/item/reagent_containers/hypospray/combat/nanites
-
-/obj/item/clothing/shoes/laceup/centcom
-	name = "офицерские туфли"
-	desc = "Деловые флотские вездеходы из натуральной кожи. Пик моды."
-	clothing_traits = list(TRAIT_NO_SLIP_ALL)
-
-/obj/item/clothing/shoes/jackboots/centcom
-	name = "офицерские берцы"
-	desc = "Стандартный вариант тактической обуви, выпускаемой Нанотрейзен."
-	clothing_traits = list(TRAIT_NO_SLIP_ALL)
 
 /datum/id_trim/centcom/commander
 	assignment = "CentCom Navy Officer"
@@ -163,5 +143,4 @@
 
 /datum/id_trim/centcom/diplomat/New()
 	. = ..()
-
 	access = list(ACCESS_CENT_GENERAL, ACCESS_CENT_SPECOPS, ACCESS_CENT_LIVING) | (SSid_access.get_region_access_list(list(REGION_ALL_STATION)) - ACCESS_CHANGE_IDS)

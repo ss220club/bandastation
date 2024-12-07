@@ -18,12 +18,10 @@
 #include "cameras/code/cameras.dm"
 
 // Clothing
-#include "clothing/centcom/code/gloves/gloves.dm"
 #include "clothing/centcom/code/head/hat.dm"
 #include "clothing/centcom/code/head/winterhood.dm"
 #include "clothing/centcom/code/mask/mask.dm"
 #include "clothing/centcom/code/suits/armor.dm"
-#include "clothing/centcom/code/suits/cloaks.dm"
 #include "clothing/centcom/code/suits/jacket.dm"
 #include "clothing/centcom/code/suits/wintercoats.dm"
 #include "clothing/centcom/code/under/centcom.dm"

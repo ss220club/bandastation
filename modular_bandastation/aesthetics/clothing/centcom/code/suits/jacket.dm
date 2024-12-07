@@ -7,12 +7,3 @@
 	lefthand_file = 'modular_bandastation/aesthetics/clothing/centcom/icons/inhands/clothing/suits_lefthand.dmi'
 	righthand_file = 'modular_bandastation/aesthetics/clothing/centcom/icons/inhands/clothing/suits_righthand.dmi'
 	resistance_flags = INDESTRUCTIBLE | FIRE_PROOF | FREEZE_PROOF | UNACIDABLE | ACID_PROOF
-
-/obj/item/clothing/suit/space/officer/browntrench
-	name = "special ops officer's old coat"
-	desc = "Бронированное и защищающее от воздействий открытого космоса офицерское пальто старого образца. \
-	На данный момент снято с производства и заменено более новыми моделями на всех объектах Компании. \
-	Тем не менее, из-за своего классического стиля и повышенных защитных качеств, остается любимым \
-	предметом гардероба у офицеров \"старой\" закалки."
-	icon_state = "brtrenchcoat"
-	inhand_icon_state = "brtrenchcoat"

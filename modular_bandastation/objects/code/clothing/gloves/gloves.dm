@@ -1,3 +1,6 @@
+// MARK: Gloves //
+
+// CentCom
 /obj/item/clothing/gloves/combat/centcom
 	name = "fleet officer's gloves"
 	desc = "Солидные перчатки офицеров Центрального Командования Нанотрейзен."
