@@ -13,10 +13,13 @@
 	invocation_type = INVOCATION_WHISPER
 	spell_requirements = NONE
 
-	cast_range = 4
+	cast_range = 6
 
-/datum/action/cooldown/spell/pointed/burglar_finesse/is_valid_target(atom/cast_on)
-	return ..() && ishuman(cast_on) && (locate(/obj/item/storage/backpack) in cast_on.contents)
+/datum/action/cooldown/spell/pointed/burglar_finesse/is_valid_target(mob/living/carbon/human/cast_on)
+	if(!istype(cast_on))
+		return FALSE
+	var/obj/item/back_item = cast_on.get_item_by_slot(ITEM_SLOT_BACK)
+	return ..() && back_item?.atom_storage
 
 /datum/action/cooldown/spell/pointed/burglar_finesse/cast(mob/living/carbon/human/cast_on)
 	. = ..()
@@ -25,12 +28,12 @@
 		to_chat(owner, span_danger("[capitalize(cast_on.declent_ru(NOMINATIVE))] под защитой святой силы!"))
 		return FALSE
 
-	var/obj/storage_item = locate(/obj/item/storage/backpack) in cast_on.contents
+	var/obj/storage_item = cast_on.get_item_by_slot(ITEM_SLOT_BACK)
 
 	if(isnull(storage_item))
 		return FALSE
 
-	var/obj/item = pick(storage_item.contents) // TODO220 - Type it to upstream
+	var/obj/item = pick(storage_item.atom_storage.return_inv(recursive = FALSE)) // TODO220 - Type it to upstream
 	if(isnull(item))
 		return FALSE
 
