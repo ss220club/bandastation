@@ -41,14 +41,3 @@
 */
 
 // Этот блок - пример для создания новой зоны, так как автомаппару ТРЕБУЕТСЯ, чтобы у каждого турфа была привязка к зоне
-
-/datum/area_spawn/prison_cryo_console
-	// Keep to one area so it's in the same area as the pods, which is required.
-	target_areas = list(/area/station/security/prison)
-	desired_atom = /obj/machinery/computer/cryopod
-	mode = AREA_SPAWN_MODE_MOUNT_WALL
-
-/datum/area_spawn/prison_cryopod
-	target_areas = list(/area/station/security/prison)
-	desired_atom = /obj/machinery/cryopod/prison
-	mode = AREA_SPAWN_MODE_MOUNT_WALL
