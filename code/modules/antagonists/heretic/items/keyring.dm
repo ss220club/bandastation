@@ -64,6 +64,8 @@
 	if(!do_teleport(teleportee, get_turf(doorstination), channel = TELEPORT_CHANNEL_MAGIC))
 		return
 
+	teleportee.client?.move_delay = 0 //make moving through smoother
+
 	if(!IS_HERETIC_OR_MONSTER(teleportee))
 		teleportee.apply_damage(20, BRUTE) //so they dont roll it like a jackpot machine to see if they can land in the armory
 		to_chat(teleportee, span_userdanger("You stumble through [src], battered by forces beyond your comprehension, landing anywhere but where you thought you were going."))
@@ -109,7 +111,7 @@
 	if(!IS_HERETIC_OR_MONSTER(user))
 		return
 	. += span_hypnophrase("Зачаровано Мансусом!")
-	. += span_hypnophrase("Используйте на ней ИД-карту, чтобы поглотить ее и скопировать доступа.")
+	. += span_hypnophrase("Используйте на ней ИД-карту или её на карте, чтобы поглотить ИД-карту и скопировать доступа.")
 	. += span_hypnophrase("<b>Используйте в руке,</b> чтобы изменить внешний вид.")
 	. += span_hypnophrase("<b>Используйте на паре дверей</b>, чтобы связать их. Двери будут телепортировать вас друг к другу, а язычники будут телепортироваться случайно.")
 	. += span_hypnophrase("<b>Ctrl-Click по карту</b> заставит карту создавать инвертированную версию порталов, которые телепортируют вас случайно, а язычников - от одной двери к другой.")
@@ -169,18 +171,28 @@
 	portal_two.destination = portal_one
 	balloon_alert(user, "[message]")
 
-/obj/item/card/id/advanced/heretic/attackby(obj/item/thing, mob/user, params)
-	if(!istype(thing, /obj/item/card/id/advanced) || !IS_HERETIC(user))
+/obj/item/card/id/advanced/heretic/item_interaction(mob/living/user, obj/item/tool, list/modifiers)
+	if(!istype(tool, /obj/item/card/id/advanced) || !IS_HERETIC(user))
 		return ..()
-	var/obj/item/card/id/card = thing
+	eat_card(tool, user)
+	return ITEM_INTERACT_SUCCESS
+
+/obj/item/card/id/advanced/heretic/proc/eat_card(obj/item/card/id/card, mob/user)
+	if(card == src)
+		return //no self vore
 	fused_ids[card.name] = card
 	card.moveToNullspace()
-	playsound(drop_location(),'sound/items/eatfood.ogg', rand(10,50), TRUE)
+	playsound(drop_location(), 'sound/items/eatfood.ogg', rand(10,30), TRUE)
 	access += card.access
+	if(!isnull(user))
+		balloon_alert(user, "consumed card")
 
 /obj/item/card/id/advanced/heretic/interact_with_atom(atom/target, mob/living/user, list/modifiers)
 	if(!IS_HERETIC(user))
 		return NONE
+	if(istype(target, /obj/item/card/id))
+		eat_card(target, user)
+		return ITEM_INTERACT_SUCCESS
 	if(istype(target, /obj/effect/lock_portal))
 		clear_portals()
 		return ITEM_INTERACT_SUCCESS
