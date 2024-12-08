@@ -1,4 +1,4 @@
-// MARK: CentCom //
+// MARK: Nanotrasen CentCom //
 
 // Old Fashion CentCom Commander
 /datum/outfit/centcom/spec_ops/old
@@ -24,17 +24,17 @@
 	r_pocket = /obj/item/lighter
 	l_pocket = /obj/item/reagent_containers/hypospray/combat/nanites
 
-//CentCom Subordinate Officer
+//CentCom Junior-Officer
 /datum/outfit/centcom/centcom_intern
-	name = "CentCom Subordinate Officer"
+	name = "CentCom Junior Officer"
 
 	id_trim = /datum/id_trim/centcom/intern
 
 /datum/outfit/centcom/centcom_intern/unarmed
-	name = "CentCom Subordinate Officer (Unarmed)"
+	name = "CentCom Junior Officer (Unarmed)"
 
 /datum/outfit/centcom/centcom_intern/leader
-	name = "CentCom Subordinate Commander"
+	name = "CentCom Junior Officer Chief"
 
 	suit = /obj/item/clothing/suit/armor/vest
 	suit_store = /obj/item/gun/ballistic/rifle/boltaction
@@ -43,15 +43,15 @@
 	l_hand = /obj/item/megaphone
 
 /datum/outfit/centcom/centcom_intern/leader/unarmed
-	name = "CentCom Subordinate Commander (Unarmed)"
+	name = "CentCom Junior Officer Chief (Unarmed)"
 
 /datum/id_trim/centcom/intern
 	access = list(ACCESS_CENT_GENERAL, ACCESS_CENT_LIVING, ACCESS_WEAPONS)
-	assignment = "CentCom Subordinate Officer"
+	assignment = "CentCom Junior Officer"
 	big_pointer = FALSE
 
 /datum/id_trim/centcom/intern/head
-	assignment = "CentCom Subordinate Commander"
+	assignment = "CentCom Junior Officer Chief"
 
 //CentCom Navy Officer
 /datum/outfit/centcom/commander
