@@ -223,7 +223,6 @@
 	dir = 8
 	},
 /obj/item/wallframe/painting/eldritch/rust{
-	desc = ы;
 	pixel_y = -32
 	},
 /turf/open/floor/carpet/black,
