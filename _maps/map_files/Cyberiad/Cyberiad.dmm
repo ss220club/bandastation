@@ -31266,9 +31266,12 @@
 /turf/open/floor/grass,
 /area/station/service/hydroponics)
 "icg" = (
-/obj/machinery/light/small/directional/west,
+/obj/effect/turf_decal/bot,
+/obj/machinery/modular_computer/preset/cargochat/cargo{
+	dir = 8
+	},
 /turf/open/floor/iron,
-/area/station/cargo/drone_bay)
+/area/station/cargo/storage)
 "ich" = (
 /obj/effect/turf_decal/tile/dark/half{
 	dir = 1
@@ -51132,13 +51135,6 @@
 /obj/structure/extinguisher_cabinet/directional/north,
 /turf/open/floor/iron/dark,
 /area/station/service/hydroponics)
-"niE" = (
-/obj/effect/turf_decal/bot,
-/obj/machinery/modular_computer/preset/cargochat/cargo{
-	dir = 8
-	},
-/turf/open/floor/iron,
-/area/station/cargo/storage)
 "niF" = (
 /obj/effect/turf_decal/tile/purple,
 /turf/open/floor/iron,
@@ -72604,7 +72600,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/door/firedoor,
-/obj/structure/cable,
 /obj/machinery/door/airlock/mining/glass{
 	id_tag = "innercargo"
 	},
@@ -82914,6 +82909,10 @@
 /obj/effect/mapping_helpers/airlock/autoname,
 /turf/open/floor/iron,
 /area/station/hallway/primary/starboard/west)
+"vvw" = (
+/obj/machinery/light/small/directional/west,
+/turf/open/floor/iron,
+/area/station/cargo/drone_bay)
 "vvN" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron,
@@ -118732,7 +118731,7 @@ mOI
 dlM
 bXn
 cCA
-icg
+vvw
 iWA
 ujV
 mwT
@@ -179631,7 +179630,7 @@ jFh
 jFh
 bRM
 kyh
-niE
+icg
 iFI
 nIW
 hGH
