@@ -11,6 +11,9 @@
 // APC
 #include "apc/code/apc.dm"
 
+// Bedsheet
+#include "bedsheet/code/bedsheet.dm"
+
 // Blastdoor
 #include "blastdoor/code/blastdoor.dm"
 
@@ -74,3 +77,4 @@
 
 // WinDoors
 #include "windoors/code/windoors.dm"
+
