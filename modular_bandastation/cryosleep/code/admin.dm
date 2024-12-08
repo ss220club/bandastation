@@ -13,7 +13,7 @@
 		break
 
 	if(!valid_pod)
-		message_admins("no valid pod found for [key_name(src.name)]")
+		message_admins("no valid pod found for [key_name(name)]")
 		return
 
 	//effect
