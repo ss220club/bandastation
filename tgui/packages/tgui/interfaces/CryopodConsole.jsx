@@ -15,7 +15,7 @@ export const CryopodConsole = (props) => {
         <Stack vertical fill>
           <Stack.Item>
             <Section title={welcomeTitle}>
-              Эта автоматизированная установка для криогенной заморозки надежно
+              Данная автоматизированная система криогенной заморозки надежно
               сохранит вашу материальную оболочку до следующего назначения.
             </Section>
           </Stack.Item>

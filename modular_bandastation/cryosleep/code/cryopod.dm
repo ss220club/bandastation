@@ -1,5 +1,8 @@
 GLOBAL_LIST_EMPTY(objectives)
 
+#define CRYO_JOIN "CRYO_JOIN"
+#define CRYO_LEAVE "CRYO_LEAVE"
+
 /datum/objective/New()
 	. = ..()
 	GLOB.objectives += src
@@ -9,152 +12,10 @@ GLOBAL_LIST_EMPTY(objectives)
 	GLOB.objectives -= src
 	return ..()
 
-/obj/effect/mob_spawn/ghost_role
-	/// set this to make the spawner use the outfit.name instead of its name var for things like cryo announcements and ghost records
-	/// modifying the actual name during the game will cause issues with the GLOB.mob_spawners associative list
-	var/use_outfit_name
-
-/*
- * Cryogenic refrigeration unit. Basically a despawner.
- * Stealing a lot of concepts/code from sleepers due to massive laziness.
- * The despawn tick will only fire if it's been more than time_till_despawned ticks
- * since time_entered, which is world.time when the occupant moves in.
- * ~ Zuhayr
- */
-GLOBAL_LIST_EMPTY(cryopod_computers)
-
-GLOBAL_LIST_EMPTY(ghost_records)
-
-/// A list of all cryopods that aren't quiet, to be used by the "Send to Cryogenic Storage" VV action.
-GLOBAL_LIST_EMPTY(valid_cryopods)
-
-//Main cryopod console.
-
-/obj/machinery/computer/cryopod
-	name = "cryogenic oversight console"
-	desc = "An interface between crew and the cryogenic storage oversight systems."
-	icon = 'modular_bandastation/cryosleep/icons/cryogenics.dmi'
-	icon_state = "cellconsole_1"
-	icon_keyboard = null
-	icon_screen = null
-	use_power = FALSE
-	density = FALSE
-	interaction_flags_machine = INTERACT_MACHINE_OFFLINE
-	req_one_access = list(ACCESS_COMMAND, ACCESS_ARMORY) // Heads of staff or the warden can go here to claim recover items from their department that people went were cryodormed with.
-	verb_say = "coldly states"
-	verb_ask = "queries"
-	verb_exclaim = "alarms"
-
-	/// Used for logging people entering cryosleep and important items they are carrying.
-	var/list/frozen_crew = list()
-	/// The items currently stored in the cryopod control panel.
-	var/list/frozen_item = list()
-
-	/// This is what the announcement system uses to make announcements. Make sure to set a radio that has the channel you want to broadcast on.
-	var/obj/item/radio/headset/radio = /obj/item/radio/headset/silicon/ai
-	/// The channel to be broadcast on, valid values are the values of any of the "RADIO_CHANNEL_" defines.
-	var/announcement_channel = null // RADIO_CHANNEL_COMMON doesn't work here.
-
-MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod, 32)
-
-/obj/machinery/computer/cryopod/Initialize(mapload)
-	. = ..()
-	GLOB.cryopod_computers += src
-	radio = new radio(src)
-
-/obj/machinery/computer/cryopod/Destroy()
-	GLOB.cryopod_computers -= src
-	QDEL_NULL(radio)
-	return ..()
-
-/obj/machinery/computer/cryopod/update_icon_state()
-	if(machine_stat & (NOPOWER|BROKEN))
-		icon_state = "cellconsole"
-		return ..()
-	icon_state = "cellconsole_1"
-	return ..()
-
-/obj/machinery/computer/cryopod/ui_interact(mob/user, datum/tgui/ui)
-	. = ..()
-	if(machine_stat & (NOPOWER|BROKEN))
-		return
-
-	add_fingerprint(user)
-
-	ui = SStgui.try_update_ui(user, src, ui)
-	if(!ui)
-		ui = new(user, src, "CryopodConsole", name)
-		ui.open()
-
-/obj/machinery/computer/cryopod/ui_data(mob/user)
-	var/list/data = list()
-	data["frozen_crew"] = frozen_crew
-
-	/// The list of references to the stored items.
-	var/list/item_ref_list = list()
-	/// The associative list of the reference to an item and its name.
-	var/list/item_ref_name = list()
-
-	for(var/obj/item/item in frozen_item)
-		var/ref = REF(item)
-		item_ref_list += ref
-		item_ref_name[ref] = item.name
-
-	data["item_ref_list"] = item_ref_list
-	data["item_ref_name"] = item_ref_name
-
-	// Check Access for item dropping.
-	var/item_retrieval_allowed = allowed(user)
-	data["item_retrieval_allowed"] = item_retrieval_allowed
-
-	var/obj/item/card/id/id_card
-	if(isliving(user))
-		var/mob/living/person = user
-		id_card = person.get_idcard()
-	if(id_card?.registered_name)
-		data["account_name"] = id_card.registered_name
-
-	return data
-
-/obj/machinery/computer/cryopod/ui_act(action, list/params)
-	. = ..()
-	if(.)
-		return
-	switch(action)
-		if("item_get")
-			// This is using references, kinda clever, not gonna lie. Good work Zephyr
-			var/item_get = params["item_get"]
-			var/obj/item/item = locate(item_get)
-			if(item in frozen_item)
-				item.forceMove(drop_location())
-				frozen_item.Remove(item_get, item)
-				visible_message("[capitalize(declent_ru(NOMINATIVE))] выдаёт [item].")
-				message_admins("[item] was retrieved from cryostorage at [ADMIN_COORDJMP(src)]")
-			else
-				CRASH("Invalid REF# for ui_act. Not inside internal list!")
-			return TRUE
-
-		else
-			CRASH("Illegal action for ui_act: '[action]'")
-
-/obj/machinery/computer/cryopod/proc/announce(message_type, user, rank, occupant_departments_bitflags, occupant_job_radio, occupant_gender)
-	switch(message_type)
-		if("CRYO_JOIN")
-			radio.talk_into(src, "[user][rank ? ", [rank]," : ""] пробудил[genderize_ru(occupant_gender, "ся", "ась", "ось", "ись")] из криогенного хранилища.", announcement_channel)
-		if("CRYO_LEAVE")
-			if(occupant_job_radio)
-				if(occupant_departments_bitflags & DEPARTMENT_BITFLAG_COMMAND)
-					if(occupant_job_radio != RADIO_CHANNEL_COMMAND)
-						radio.talk_into(src, "[user][rank ? ", [rank]," : ""] был[genderize_ru(occupant_gender, "", "а", "о", "и")] перемещ[genderize_ru(occupant_gender, "ён", "ена", "ено", "ены")] в криогенное хранилище.", RADIO_CHANNEL_COMMAND)
-					radio.use_command = TRUE
-				radio.talk_into(src, "[user][rank ? ", [rank]," : ""] был[genderize_ru(occupant_gender, "", "а", "о", "и")] перемещ[genderize_ru(occupant_gender, "ён", "ена", "ено", "ены")] в криогенное хранилище.", occupant_job_radio)
-				radio.use_command = FALSE
-			radio.talk_into(src, "[user][rank ? ", [rank]," : ""] был[genderize_ru(occupant_gender, "", "а", "о", "и")] перемещ[genderize_ru(occupant_gender, "ён", "ена", "ено", "ены")] в криогенное хранилище.", announcement_channel)
-
 // Cryopods themselves.
 /obj/machinery/cryopod
 	name = "cryogenic freezer"
-	desc = "Suited for Cyborgs and Humanoids, the pod is a safe place for personnel affected by the Space Sleep Disorder to get some rest."
+	desc = "Камера предназначенная для киборгов и гуманоидов, является безопасным местом, где персонал, страдающий от расстройства космического сна, может немного отдохнуть."
 	icon = 'modular_bandastation/cryosleep/icons/cryogenics.dmi'
 	icon_state = "cryopod-open"
 	base_icon_state = "cryopod"
@@ -339,11 +200,11 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod, 32)
 	if(!control_computer)
 		control_computer_weakref = null
 	else
-		control_computer.frozen_crew += list(list("name" = occupant_name, "job" = occupant_rank))
+		control_computer.frozen_crew += list(list("name" = occupant_name, "job" = job_title_ru(occupant_rank)))
 
 		// Make an announcement and log the person entering storage. If set to quiet, does not make an announcement.
 		if(!quiet)
-			control_computer.announce("CRYO_LEAVE", mob_occupant.real_name, announce_rank, occupant_departments_bitflags, occupant_job_radio, occupant_gender)
+			control_computer.announce(CRYO_LEAVE, mob_occupant.real_name, announce_rank, occupant_departments_bitflags, occupant_job_radio, occupant_gender)
 
 	visible_message(span_notice("[capitalize(declent_ru(NOMINATIVE))] гудит и шипит, перемещая [mob_occupant.declent_ru(ACCUSATIVE)] в хранилище."))
 
@@ -462,24 +323,26 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod, 32)
 	add_fingerprint(target)
 
 	close_machine(target)
+	ru_names_rename(ru_names_toml(src::name, suffix = " ([target.declent_ru(NOMINATIVE)])", override_base = "[name] ([target.name])"))
 	name = "[name] ([target.name])"
 
 // Attacks/effects.
 /obj/machinery/cryopod/blob_act()
 	return // Sorta gamey, but we don't really want these to be destroyed.
 
-/obj/machinery/cryopod/attackby(obj/item/weapon, mob/living/carbon/human/user, params)
+/obj/machinery/cryopod/item_interaction(mob/living/user, obj/item/tool, list/modifiers)
 	. = ..()
-	if(istype(weapon, /obj/item/bedsheet))
+	if(istype(tool, /obj/item/bedsheet))
 		if(!isliving(occupant))
-			return
+			return ITEM_INTERACT_BLOCKING
 		if(tucked)
 			to_chat(user, span_warning("[capitalize(occupant.declent_ru(NOMINATIVE))] выглядит уже достаточно комфортабельно!"))
-			return
+			return ITEM_INTERACT_BLOCKING
 		to_chat(user, span_notice("Вы укладываете [occupant.declent_ru(ACCUSATIVE)] в [declent_ru(ACCUSATIVE)]!"))
-		qdel(weapon)
+		qdel(tool)
 		user.add_mood_event("tucked", /datum/mood_event/tucked_in, occupant)
 		tucked = TRUE
+		return ITEM_INTERACT_SUCCESS
 
 /obj/machinery/cryopod/update_icon_state()
 	icon_state = state_open ? open_icon_state : base_icon_state
@@ -505,33 +368,5 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/cryopod/prison, 18)
 	set_density(FALSE)
 	flick("prisonpod-open", src)
 
-/mob/living
-	var/lastclienttime = 0
-	var/is_ssd = FALSE
-
-/mob/living/proc/set_ssd_state(state)
-	if(state == is_ssd)
-		return
-	is_ssd = state
-
-/mob/living/Login()
-	. = ..()
-	set_ssd_state(FALSE)
-
-/mob/living/Logout()
-	lastclienttime = world.time
-	set_ssd_state(TRUE)
-	. = ..()
-
-//Temporary, look below for the reason
-/mob/living/ghostize(can_reenter_corpse = TRUE)
-	. = ..()
-	set_ssd_state(FALSE)
-
-/*
-//EDIT - TRANSFER CKEY IS NOT A THING ON THE TG CODEBASE, if things break too bad because of it, consider implementing it
-//This proc should stop mobs from having the overlay when someone keeps jumping control of mobs, unfortunately it causes Aghosts to have their character without the SSD overlay, I wasn't able to find a better proc unfortunately
-/mob/living/transfer_ckey(mob/new_mob, send_signal = TRUE)
-	..()
-	set_ssd_state(FALSE)
-*/
+#undef CRYO_JOIN
+#undef CRYO_LEAVE
