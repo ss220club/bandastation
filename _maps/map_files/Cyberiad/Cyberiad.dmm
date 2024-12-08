@@ -31266,9 +31266,9 @@
 /turf/open/floor/grass,
 /area/station/service/hydroponics)
 "icg" = (
-/turf/open/space/basic,
-/area/space,
-/area/space)
+/obj/machinery/light/small/directional/west,
+/turf/open/floor/iron,
+/area/station/cargo/drone_bay)
 "ich" = (
 /obj/effect/turf_decal/tile/dark/half{
 	dir = 1
@@ -51133,11 +51133,12 @@
 /turf/open/floor/iron/dark,
 /area/station/service/hydroponics)
 "niE" = (
-/obj/effect/spawner/random/structure/table_or_rack,
-/obj/effect/spawner/random/maintenance,
-/obj/machinery/light/small/directional/north,
-/turf/open/floor/plating,
-/area/station/maintenance/ghetto/central)
+/obj/effect/turf_decal/bot,
+/obj/machinery/modular_computer/preset/cargochat/cargo{
+	dir = 8
+	},
+/turf/open/floor/iron,
+/area/station/cargo/storage)
 "niF" = (
 /obj/effect/turf_decal/tile/purple,
 /turf/open/floor/iron,
@@ -76530,9 +76531,11 @@
 /turf/open/floor/iron,
 /area/station/hallway/primary/starboard/west)
 "tMR" = (
-/obj/machinery/light/small/directional/west,
-/turf/open/floor/iron,
-/area/station/cargo/drone_bay)
+/obj/effect/spawner/random/structure/table_or_rack,
+/obj/effect/spawner/random/maintenance,
+/obj/machinery/light/small/directional/north,
+/turf/open/floor/plating,
+/area/station/maintenance/ghetto/central)
 "tMW" = (
 /obj/effect/turf_decal/tile/red/half/contrasted{
 	dir = 8
@@ -82911,13 +82914,6 @@
 /obj/effect/mapping_helpers/airlock/autoname,
 /turf/open/floor/iron,
 /area/station/hallway/primary/starboard/west)
-"vvw" = (
-/obj/effect/turf_decal/bot,
-/obj/machinery/modular_computer/preset/cargochat/cargo{
-	dir = 8
-	},
-/turf/open/floor/iron,
-/area/station/cargo/storage)
 "vvN" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron,
@@ -117703,7 +117699,7 @@ qwS
 url
 mmc
 mOI
-niE
+tMR
 dGY
 mOI
 fRL
@@ -118736,7 +118732,7 @@ mOI
 dlM
 bXn
 cCA
-tMR
+icg
 iWA
 ujV
 mwT
@@ -179635,7 +179631,7 @@ jFh
 jFh
 bRM
 kyh
-vvw
+niE
 iFI
 nIW
 hGH
@@ -180674,7 +180670,7 @@ htD
 jFh
 dMR
 doz
-icg
+doz
 ceC
 ceC
 ceC
