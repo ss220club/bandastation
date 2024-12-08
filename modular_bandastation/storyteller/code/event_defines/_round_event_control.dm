@@ -71,19 +71,19 @@
 		if(string)
 			string += ","
 		string += "Wrong Storyteller"
-	if(eng_required_power < SSgamemode.current_eng_power)
+	if(eng_required_power > SSgamemode.current_eng_power)
 		if(string)
 			string += ","
 		string += "Too low eng power"
-	if(med_required_power < SSgamemode.current_med_power)
+	if(med_required_power > SSgamemode.current_med_power)
 		if(string)
 			string += ","
 		string += "Too low med power"
-	if(rnd_required_power < SSgamemode.current_rnd_power)
+	if(rnd_required_power > SSgamemode.current_rnd_power)
 		if(string)
 			string += ","
 		string += "Too low rnd power"
-	if(head_required_power < SSgamemode.current_head_power)
+	if(head_required_power > SSgamemode.current_head_power)
 		if(string)
 			string += ","
 		string += "Too low head power"
