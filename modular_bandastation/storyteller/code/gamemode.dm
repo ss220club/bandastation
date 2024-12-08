@@ -398,7 +398,7 @@ SUBSYSTEM_DEF(gamemode)
 		event_track_points[track] = round(calc_value)
 
 	/// If the storyteller guarantees an antagonist roll, add points to make it so.
-	if(current_storyteller.guarantees_roundstart_roleset && event_track_points[EVENT_TRACK_ROLESET] < point_thresholds[EVENT_TRACK_ROLESET])
+	if(current_storyteller.guarantees_roundstart_roleset && event_track_points[EVENT_TRACK_ROLESET] < point_thresholds[EVENT_TRACK_ROLESET] && current_storyteller.min_antag_popcount <= get_correct_popcount())
 		event_track_points[EVENT_TRACK_ROLESET] = point_thresholds[EVENT_TRACK_ROLESET]
 
 	/// If we have any forced events, ensure we get enough points for them
@@ -510,8 +510,8 @@ SUBSYSTEM_DEF(gamemode)
 
 		current_pop_scale_multipliers[track] = calculated_multiplier
 
-/datum/controller/subsystem/gamemode/proc/TriggerEvent(datum/round_event_control/event, forced = FALSE)
-	. = event.preRunEvent(forced)
+/datum/controller/subsystem/gamemode/proc/TriggerEvent(datum/round_event_control/event, forced = FALSE, from_schedule = FALSE)
+	. = event.preRunEvent(forced, scheduled = from_schedule)
 	if(. == EVENT_CANT_RUN)//we couldn't run this event for some reason, set its max_occurrences to 0
 		event.max_occurrences = 0
 	else if(. == EVENT_READY)

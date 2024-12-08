@@ -299,9 +299,12 @@
 		return
 	switch(href_list["action"])
 		if("schedule")
-			message_admins("[key_name_admin(usr)] scheduled event [src.name].")
-			log_admin_private("[key_name(usr)] scheduled [src.name].")
-			SSgamemode.schedule_event(src, 1 SECONDS, 0, _forced = FALSE)
+			var/new_schedule = input(usr, "New schedule time (in seconds):", "Reschedule Event") as num|null
+			if(isnull(new_schedule) || QDELETED(src))
+				return
+			message_admins("[key_name_admin(usr)] scheduled event [src.name] in [new_schedule] seconds.")
+			log_admin_private("[key_name(usr)] scheduled [src.name] in [new_schedule] seconds.")
+			SSgamemode.schedule_event(src, new_schedule SECONDS, 0, _forced = FALSE)
 		if("force_next")
 			if(length(src.admin_setup))
 				for(var/datum/event_admin_setup/admin_setup_datum in src.admin_setup)

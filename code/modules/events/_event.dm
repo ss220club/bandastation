@@ -117,7 +117,7 @@
 		return FALSE
 	return TRUE
 
-/datum/round_event_control/proc/preRunEvent(forced = FALSE) /// BANDASTATION EDIT - STORYTELLER
+/datum/round_event_control/proc/preRunEvent(forced = FALSE, scheduled = FALSE) /// BANDASTATION EDIT - STORYTELLER
 	if(!ispath(typepath, /datum/round_event))
 		return EVENT_CANT_RUN
 
@@ -126,10 +126,10 @@
 
 	triggering = TRUE
 
-	// We sleep HERE, in pre-event setup (because there's no sense doing it in run_event() since the event is already running!) for the given amount of time to make an admin has enough time to cancel an event un-fitting of the present round or at least reroll it.
-	message_admins("Random Event triggering in [DisplayTimeText(RANDOM_EVENT_ADMIN_INTERVENTION_TIME)]: [name]. (<a href='?src=[REF(src)];cancel=1'>CANCEL</a>) (<a href='?src=[REF(src)];different_event=1'>SOMETHING ELSE</a>)")
 	/// BANDASTATION EDIT START - STORYTELLER
-	if(!roundstart)
+	if(!roundstart && !scheduled)
+		// We sleep HERE, in pre-event setup (because there's no sense doing it in run_event() since the event is already running!) for the given amount of time to make an admin has enough time to cancel an event un-fitting of the present round or at least reroll it.
+		message_admins("Random Event triggering in [DisplayTimeText(RANDOM_EVENT_ADMIN_INTERVENTION_TIME)]: [name]. (<a href='?src=[REF(src)];cancel=1'>CANCEL</a>) (<a href='?src=[REF(src)];different_event=1'>SOMETHING ELSE</a>)")
 		sleep(RANDOM_EVENT_ADMIN_INTERVENTION_TIME)
 	/// BANDASTATION EDIT END - STORYTELLER
 	var/players_amt = get_active_player_count(alive_check = TRUE, afk_check = TRUE, human_check = TRUE)

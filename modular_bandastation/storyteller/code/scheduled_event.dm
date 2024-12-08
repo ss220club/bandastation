@@ -57,7 +57,7 @@
 
 	///Trigger the event and remove the scheduled datum
 	message_admins("Scheduled Event: [event] successfully triggered.")
-	SSgamemode.TriggerEvent(event, ignores_checks)
+	SSgamemode.TriggerEvent(event, ignores_checks, from_schedule = TRUE)
 	SSgamemode.remove_scheduled_event(src)
 
 /datum/scheduled_event/Destroy()
@@ -92,4 +92,3 @@
 			message_admins("[key_name_admin(usr)] has fired scheduled event [event.name].")
 			log_admin_private("[key_name(usr)] has fired scheduled event [event.name].")
 			try_fire()
-			SSgamemode.remove_scheduled_event(src)
