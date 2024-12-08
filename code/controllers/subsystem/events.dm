@@ -106,9 +106,13 @@ SUBSYSTEM_DEF(events)
 	if(. == EVENT_CANT_RUN)//we couldn't run this event for some reason, set its max_occurrences to 0
 		event_to_trigger.max_occurrences = 0
 	else if(. == EVENT_READY)
-		message_admins("<font color='[COLOR_DARK_MODERATE_LIME_GREEN]'>SSevents</font> runs a event: [event_to_trigger.name]!")
-		log_game("<font color='[COLOR_DARK_MODERATE_LIME_GREEN]'>SSevents</font> runs a event: [event_to_trigger.name]!")
-		event_to_trigger.run_event(random = TRUE)
+		/// BANDASTATION EDIT START - STORYTELLER
+		//event_to_trigger.run_event(random = TRUE)
+		message_admins("<font color='[COLOR_DARK_MODERATE_LIME_GREEN]'>SSevents</font> runs and try to buy a event: [event_to_trigger.name]!")
+		log_game("<font color='[COLOR_DARK_MODERATE_LIME_GREEN]'>SSevents</font> runs and try to buy a event: [event_to_trigger.name]!")
+		SSgamemode.current_storyteller.try_buy_event(src)
+		/// BANDASTATION EDIT END - STORYTELLER
+
 
 ///Toggles whether or not wizard events will be in the event pool, and sends a notification to the admins.
 /datum/controller/subsystem/events/proc/toggleWizardmode()

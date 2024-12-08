@@ -245,8 +245,11 @@ SUBSYSTEM_DEF(gamemode)
 
 /// Gets the number of antagonists the antagonist injection events will stop rolling after.
 /datum/controller/subsystem/gamemode/proc/get_antag_cap()
-	var/total_number = get_correct_popcount() + (sec_crew * 2)
-	var/cap = FLOOR((total_number / ANTAG_CAP_DENOMINATOR), 1) + ANTAG_CAP_FLAT
+	var/pop_count = get_correct_popcount()
+	if(pop_count < current_storyteller.min_antag_popcount)
+		return 0
+	var/total_number = pop_count + (sec_crew * 2)
+	var/cap = FLOOR((total_number / current_storyteller.antag_denominator), 1) + current_storyteller.antag_flat_cap
 	return cap
 
 /datum/controller/subsystem/gamemode/proc/get_antag_count()
@@ -473,16 +476,16 @@ SUBSYSTEM_DEF(gamemode)
 			var/datum/job/player_role = player_mob.mind.assigned_role
 			if(player_role.departments_bitflags & DEPARTMENT_BITFLAG_COMMAND)
 				head_crew++
-				current_head_power = is_intern ? 0 : (playtime / 100)
+				current_head_power += is_intern ? 0 : (playtime / 100)
 			if(player_role.departments_bitflags & DEPARTMENT_BITFLAG_ENGINEERING)
 				eng_crew++
-				current_eng_power = is_intern ? 0 : (playtime / 100)
+				current_eng_power += is_intern ? 0 : (playtime / 100)
 			if(player_role.departments_bitflags & DEPARTMENT_BITFLAG_MEDICAL)
 				med_crew++
-				current_med_power = is_intern ? 0 : (playtime / 100)
+				current_med_power += is_intern ? 0 : (playtime / 100)
 			if(player_role.departments_bitflags & DEPARTMENT_BITFLAG_SCIENCE)
 				rnd_crew++
-				current_rnd_power = is_intern ? 0 : (playtime / 100)
+				current_rnd_power += is_intern ? 0 : (playtime / 100)
 			if(player_role.departments_bitflags & DEPARTMENT_BITFLAG_SECURITY)
 				sec_crew++
 	update_pop_scaling()

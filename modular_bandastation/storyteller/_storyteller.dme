@@ -13,6 +13,7 @@
 #include "code\events\summon_wizard.dm"
 
 #include "code\event_defines\crewset\_override.dm"
+#include "code\event_defines\crewset\blob_infection.dm"
 #include "code\event_defines\crewset\changeling.dm"
 #include "code\event_defines\crewset\heretic.dm"
 #include "code\event_defines\crewset\malf.dm"
