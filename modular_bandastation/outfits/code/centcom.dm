@@ -24,7 +24,7 @@
 	r_pocket = /obj/item/lighter
 	l_pocket = /obj/item/reagent_containers/hypospray/combat/nanites
 
-//CentCom Junior-Officer
+// CentCom Junior-Officer
 /datum/outfit/centcom/centcom_intern
 	name = "CentCom Junior Officer"
 
@@ -53,7 +53,7 @@
 /datum/id_trim/centcom/intern/head
 	assignment = "CentCom Junior Officer Chief"
 
-//CentCom Navy Officer
+// CentCom Navy Officer
 /datum/outfit/centcom/commander
 	name = "CentCom Navy Officer"
 
@@ -79,7 +79,7 @@
 /datum/id_trim/centcom/commander
 	assignment = "CentCom Navy Officer"
 
-//CentCom Field Officer
+// CentCom Field Officer
 /datum/outfit/centcom/commander/field
 	name = "CentCom Field Officer"
 
@@ -100,7 +100,7 @@
 /datum/id_trim/centcom/commander/field
 	assignment = "CentCom Field Officer"
 
-//CentCom Diplomat
+// CentCom Diplomat
 /datum/outfit/centcom/diplomat
 	name = "Nanotrasen Diplomat"
 

@@ -20,7 +20,7 @@
 
 /obj/item/clothing/head/hats/intern
 	name = "fleet junior-officer's cap"
-	desc = "Богомерзкое порождение коитуса кепки и вязанной шапки. Как правило, все носители данного недарозумения или \
+	desc = "Богомерзкое порождение коитуса кепки и вязанной шапки. Как правило, все носители данного недоразумения или \
 	получают наивысшие должности в Компании из-за своей беспринципности, или умирают жесточайшим образом в первую неделю службы."
 	icon = 'modular_bandastation/aesthetics/clothing/centcom/icons/obj/clothing/head/hats.dmi'
 	worn_icon = 'modular_bandastation/aesthetics/clothing/centcom/icons/mob/clothing/head/hats.dmi'
