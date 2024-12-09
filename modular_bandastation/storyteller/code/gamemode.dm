@@ -886,6 +886,12 @@ SUBSYSTEM_DEF(gamemode)
 	switch(panel_page)
 		if(GAMEMODE_PANEL_VARIABLES)
 			dat += "<a href='byond://?src=[REF(src)];panel=main;action=reload_config_vars'>Reload Config Vars</a> <font color='#888888'><i>Configs located in game_options.txt.</i></font>"
+			dat += "<BR><b>Storyteller Basic Variables:</b>"
+			dat += "<BR><b>Storyteller Antag Cap Formula: ((pop_count + secs * 2) / denominator) + addiction </b>"
+			dat += "<BR><b>Storyteller Antag Cap result: (([get_correct_popcount()] + [sec_crew] * 2) / [current_storyteller.antag_denominator]) + [current_storyteller.antag_flat_cap]</b>"
+			dat += "<BR>Antag addiction: <a href='byond://?src=[REF(src)];panel=main;action=vars;var=vars_addiction;'>[current_storyteller.antag_flat_cap]</a>"
+			dat += "<BR>Antag denominator: <a href='byond://?src=[REF(src)];panel=main;action=vars;var=vars_denominator;'>[current_storyteller.antag_denominator]</a>"
+
 			dat += "<BR><b>Point Gains Multipliers (only over time):</b>"
 			dat += "<BR><font color='#888888'><i>This affects points gained over time towards scheduling new events of the tracks.</i></font>"
 			for(var/track in event_tracks)
@@ -1131,6 +1137,18 @@ SUBSYSTEM_DEF(gamemode)
 								return
 							message_admins("[key_name_admin(usr)] set point threshold of [track] track to [new_value].")
 							point_thresholds[track] = new_value
+						if("vars_addiction")
+							var/new_value = input(usr, "New value:", "Set new value") as num|null
+							if(isnull(new_value) || new_value < 0)
+								return
+							message_admins("[key_name_admin(usr)] set addictive antags to [new_value].")
+							current_storyteller.antag_flat_cap = new_value
+						if("vars_denominator")
+							var/new_value = input(usr, "New value:", "Set new value") as num|null
+							if(isnull(new_value) || new_value < 0)
+								return
+							message_admins("[key_name_admin(usr)] set antags denominator to [new_value].")
+							current_storyteller.antag_denominator = new_value
 				if("reload_config_vars")
 					message_admins("[key_name_admin(usr)] reloaded gamemode config vars.")
 					load_config_vars()
