@@ -887,12 +887,17 @@ SUBSYSTEM_DEF(gamemode)
 		if(GAMEMODE_PANEL_VARIABLES)
 			dat += "<a href='byond://?src=[REF(src)];panel=main;action=reload_config_vars'>Reload Config Vars</a> <font color='#888888'><i>Configs located in game_options.txt.</i></font>"
 			dat += "<BR><b>Storyteller Basic Variables:</b>"
-			dat += "<BR><b>Storyteller Antag Cap Formula: ((pop_count + secs * 2) / denominator) + addiction </b>"
-			dat += "<BR><b>Storyteller Antag Cap result: (([get_correct_popcount()] + [sec_crew] * 2) / [current_storyteller.antag_denominator]) + [current_storyteller.antag_flat_cap]</b>"
+			dat += "<BR>Storyteller Antag Low pop:<a href='byond://?src=[REF(src)];panel=main;action=vars;var=vars_lowpop;'>[current_storyteller.min_antag_popcount]</a>"
+			dat += "<BR><font color='#888888'><i>This value affects how many players count as low pop and makes the antag cap value to zero if it is below.</i></font>"
+			dat += "<BR>Storyteller Antag Cap Formula: floor((pop_count + secs * 2) / denominator) + addiction"
+			dat += "<BR>Storyteller Antag Cap result: floor(([get_correct_popcount()] + [sec_crew] * 2) / [current_storyteller.antag_denominator]) + [current_storyteller.antag_flat_cap]"
 			dat += "<BR>Antag addiction: <a href='byond://?src=[REF(src)];panel=main;action=vars;var=vars_addiction;'>[current_storyteller.antag_flat_cap]</a>"
 			dat += "<BR>Antag denominator: <a href='byond://?src=[REF(src)];panel=main;action=vars;var=vars_denominator;'>[current_storyteller.antag_denominator]</a>"
+			dat += "<BR><font color='#888888'><i>This affects how many antagonist can system spawn.</i></font>"
+			dat += "<HR>"
 
 			dat += "<BR><b>Point Gains Multipliers (only over time):</b>"
+			dat += "<BR>Basic all tracks multiplayer: <a href='byond://?src=[REF(src)];panel=main;action=vars;var=vars_basemult;'>[current_storyteller.point_gain_base_mult]</a>"
 			dat += "<BR><font color='#888888'><i>This affects points gained over time towards scheduling new events of the tracks.</i></font>"
 			for(var/track in event_tracks)
 				dat += "<BR>[track]: <a href='byond://?src=[REF(src)];panel=main;action=vars;var=pts_multiplier;track=[track]'>[point_gain_multipliers[track]]</a>"
@@ -1149,6 +1154,18 @@ SUBSYSTEM_DEF(gamemode)
 								return
 							message_admins("[key_name_admin(usr)] set antags denominator to [new_value].")
 							current_storyteller.antag_denominator = new_value
+						if("vars_lowpop")
+							var/new_value = input(usr, "New value:", "Set new value") as num|null
+							if(isnull(new_value) || new_value < 0)
+								return
+							message_admins("[key_name_admin(usr)] set low pop count to [new_value].")
+							current_storyteller.min_antag_popcount = new_value
+						if("vars_basemult")
+							var/new_value = input(usr, "New value:", "Set new value") as num|null
+							if(isnull(new_value) || new_value < 0)
+								return
+							message_admins("[key_name_admin(usr)] set basic storyteller multiplier to [new_value].")
+							current_storyteller.point_gain_base_mult = new_value
 				if("reload_config_vars")
 					message_admins("[key_name_admin(usr)] reloaded gamemode config vars.")
 					load_config_vars()

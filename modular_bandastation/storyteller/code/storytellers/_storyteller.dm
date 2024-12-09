@@ -64,6 +64,8 @@
 	var/antag_denominator = ANTAG_CAP_DENOMINATOR
 	///Количество антагов, которое СТ может добавить сверх расчетов
 	var/antag_flat_cap = ANTAG_CAP_FLAT
+	///Общий множитель всех треков сторителлера (для коректировок)
+	var/point_gain_base_mult = 10
 
 /datum/storyteller/process(seconds_per_tick)
 	if(!round_started || disable_distribution) // we are differing roundstarted ones until base roundstart so we can get cooler stuff
@@ -89,7 +91,7 @@
 	var/datum/controller/subsystem/gamemode/mode = SSgamemode
 	var/base_point = EVENT_POINT_GAINED_PER_SECOND * seconds_per_tick * mode.event_frequency_multiplier
 	for(var/track in mode.event_track_points)
-		var/point_gain = base_point * point_gains_multipliers[track] * mode.point_gain_multipliers[track]
+		var/point_gain = base_point * point_gains_multipliers[track] * mode.point_gain_multipliers[track] * point_gain_base_mult
 		if(mode.allow_pop_scaling)
 			point_gain *= mode.current_pop_scale_multipliers[track]
 		mode.event_track_points[track] += point_gain
