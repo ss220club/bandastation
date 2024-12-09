@@ -331,9 +331,6 @@ SUBSYSTEM_DEF(gamemode)
 			if(time_to_check && candidate.client.get_remaining_days(time_to_check) > 0)
 				continue
 
-		//if(midround_antag_pref)
-			//continue
-
 		if(job_ban && is_banned_from(candidate.ckey, list(job_ban, ROLE_SYNDICATE)))
 			continue
 		candidates += candidate
@@ -463,8 +460,6 @@ SUBSYSTEM_DEF(gamemode)
 	for(var/mob/player_mob as anything in GLOB.player_list)
 		if(!player_mob.client)
 			continue
-		var/playtime = player_mob.client.get_exp_living(pure_numeric = TRUE)
-		is_intern = (intern_threshold >= playtime) && (player_mob.mind?.assigned_role.job_flags & JOB_CAN_BE_INTERN)
 		if(player_mob.stat) //If they're alive
 			continue
 		if(player_mob.client.is_afk()) //If afk
@@ -473,6 +468,8 @@ SUBSYSTEM_DEF(gamemode)
 			continue
 		active_players++
 		if(player_mob.mind?.assigned_role)
+			var/playtime = player_mob.client.get_exp_living(pure_numeric = TRUE)
+			is_intern = (intern_threshold >= playtime) && (player_mob.mind?.assigned_role.job_flags & JOB_CAN_BE_INTERN)
 			var/datum/job/player_role = player_mob.mind.assigned_role
 			if(player_role.departments_bitflags & DEPARTMENT_BITFLAG_COMMAND)
 				head_crew++
