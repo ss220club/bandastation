@@ -164,6 +164,7 @@ SUBSYSTEM_DEF(gamemode)
 	/// Are we able to run roundstart events
 	var/can_run_roundstart = TRUE
 	var/list/triggered_round_events = list()
+	var/runned_events = list()
 
 /datum/controller/subsystem/gamemode/Initialize(time, zlevel)
 	// Populate event pools
@@ -1181,7 +1182,6 @@ SUBSYSTEM_DEF(gamemode)
 			continue
 		event.round_end_report()
 
-
 /datum/controller/subsystem/gamemode/proc/store_roundend_data()
 	var/congealed_string = ""
 	for(var/event_name as anything in triggered_round_events)
@@ -1205,6 +1205,16 @@ SUBSYSTEM_DEF(gamemode)
 				continue
 			listed.occurrences++
 			listed.occurrences++
+
+/datum/controller/subsystem/gamemode/proc/create_roundend_score()
+	var/list/parts = list()
+	parts += "<div class='panel stationborder'><span class='header'>[("Storyteller: [SSgamemode.current_storyteller ? SSgamemode.current_storyteller.name : "N/A"]")]</span><br><br>"
+	parts += "Spawned durning this round events:<br>"
+	for(var/i in SSgamemode.runned_events)
+		parts += "<span class='info ml-1'>[i]</span><br>"
+
+	parts += "</div>"
+	return parts
 
 #undef DEFAULT_STORYTELLER_VOTE_OPTIONS
 #undef MAX_POP_FOR_STORYTELLER_VOTE

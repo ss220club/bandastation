@@ -347,6 +347,7 @@ Runs the event
 	// Everything is done, let's clean up.
 	if(activeFor >= end_when && activeFor >= announce_when && activeFor >= start_when)
 		processing = FALSE
+		SSgamemode.runned_events += control.name // BANDASTATION EDIT - STORYTELLER
 		kill()
 
 	activeFor++

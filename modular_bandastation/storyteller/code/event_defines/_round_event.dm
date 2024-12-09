@@ -3,6 +3,7 @@
 	var/has_started = FALSE
 	///have we finished setup?
 	var/setup = FALSE
+	///Записывать ли событие в лог СТ для вывода в конце раунда?
 	var/excute_round_end_reports = FALSE
 
 /// This section of event processing is in a proc because roundstart events may get their start invoked.

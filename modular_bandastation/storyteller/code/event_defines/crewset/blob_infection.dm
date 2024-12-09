@@ -6,6 +6,7 @@
 	antag_flag = ROLE_BLOB_INFECTION
 	min_players = 20
 	antag_datum = /datum/antagonist/blob/infection
+	maximum_antags = 1
 
 /datum/round_event_control/antagonist/solo/blob/midround
 	name = "Blob infection (Blob)"

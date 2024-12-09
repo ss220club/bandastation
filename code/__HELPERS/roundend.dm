@@ -310,7 +310,7 @@ GLOBAL_LIST_INIT(achievements_unlocked, list())
 	var/list/parts = list()
 
 	//might want to make this a full section
-	parts += "<div class='panel stationborder'><span class='header'>[("Storyteller: [SSgamemode.current_storyteller ? SSgamemode.current_storyteller.name : "N/A"]")]</span></div>" //BANDASTATION EDIT - STORYTELLER
+	parts += SSgamemode.create_roundend_score() //BANDASTATION EDIT - STORYTELLER
 
 	//AI laws
 	parts += law_report()
@@ -361,8 +361,11 @@ GLOBAL_LIST_INIT(achievements_unlocked, list())
 			else
 				parts += "[FOURSPACES]<i>Nobody died this shift!</i>"
 
+	// BANDASTATION EDIT START - STORYTELLER
+	/*
 	parts += "[FOURSPACES]Threat level: [SSdynamic.threat_level]"
 	parts += "[FOURSPACES]Threat left: [SSdynamic.mid_round_budget]"
+
 	if(SSdynamic.roundend_threat_log.len)
 		parts += "[FOURSPACES]Threat edits:"
 		for(var/entry as anything in SSdynamic.roundend_threat_log)
@@ -370,7 +373,8 @@ GLOBAL_LIST_INIT(achievements_unlocked, list())
 	parts += "[FOURSPACES]Executed rules:"
 	for(var/datum/dynamic_ruleset/rule in SSdynamic.executed_rules)
 		parts += "[FOURSPACES][FOURSPACES][rule.ruletype] - <b>[rule.name]</b>: -[rule.cost + rule.scaled_times * rule.scaling_cost] threat"
-
+	*/
+	// BANDASTATION EDIT END - STORYTELLER
 	return parts.Join("<br>")
 
 /client/proc/roundend_report_file()
