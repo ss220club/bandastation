@@ -272,11 +272,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron,
 /area/station/maintenance/ghetto/starboard)
-"adZ" = (
-/obj/structure/closet/emcloset,
-/obj/effect/landmark/start/hangover/closet,
-/turf/open/floor/iron,
-/area/station/cargo/storage)
 "aec" = (
 /turf/open/floor/plating,
 /area/station/maintenance/ghetto/port/aft)
@@ -12291,6 +12286,7 @@
 /area/station/maintenance/ghetto/starboard)
 "dcX" = (
 /obj/effect/turf_decal/tile/brown/half/contrasted,
+/obj/structure/closet/emcloset,
 /turf/open/floor/iron,
 /area/station/cargo/storage)
 "dcY" = (
@@ -31284,6 +31280,8 @@
 "icg" = (
 /obj/machinery/firealarm/directional/south,
 /obj/effect/turf_decal/tile/brown/anticorner/contrasted,
+/obj/structure/closet/emcloset,
+/obj/effect/landmark/start/hangover/closet,
 /turf/open/floor/iron,
 /area/station/cargo/storage)
 "ich" = (
@@ -49681,10 +49679,6 @@
 /obj/structure/window/reinforced/spawner/directional/south,
 /turf/open/floor/plating,
 /area/station/maintenance/aft)
-"mMO" = (
-/obj/structure/closet/emcloset,
-/turf/open/floor/iron,
-/area/station/cargo/storage)
 "mMP" = (
 /obj/structure/extinguisher_cabinet/directional/west,
 /turf/open/floor/iron,
@@ -179183,7 +179177,7 @@ jFh
 hsX
 jFh
 jFh
-mMO
+jFh
 dMR
 bOz
 bOz
@@ -179440,7 +179434,7 @@ hsX
 drt
 jFh
 jFh
-adZ
+jFh
 dMR
 bOz
 bOz
