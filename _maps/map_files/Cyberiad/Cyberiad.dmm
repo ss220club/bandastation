@@ -10296,6 +10296,10 @@
 	},
 /turf/open/space/openspace,
 /area/space)
+"cFG" = (
+/obj/structure/sign/warning/vacuum/directional/west,
+/turf/open/floor/plating,
+/area/station/maintenance/ghetto/auxiliary)
 "cFH" = (
 /obj/structure/chair{
 	dir = 1
@@ -19268,6 +19272,15 @@
 /obj/machinery/door/firedoor,
 /turf/open/floor/iron/dark,
 /area/station/maintenance/department/engine/ghetto)
+"eUd" = (
+/obj/machinery/door/airlock/external/glass,
+/obj/effect/mapping_helpers/airlock/autoname,
+/obj/effect/mapping_helpers/airlock/access/all/engineering/maintenance,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/station/maintenance/ghetto/central/aft)
 "eUf" = (
 /obj/machinery/smartfridge/food,
 /turf/open/floor/plating,
@@ -46911,6 +46924,15 @@
 /obj/effect/landmark/start/head_of_security,
 /turf/open/floor/carpet,
 /area/station/command/heads_quarters/hos)
+"lZz" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/obj/machinery/light/small/directional/east,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/sign/warning/vacuum/directional/east,
+/turf/open/floor/catwalk_floor/iron_smooth,
+/area/station/maintenance/ghetto/central/aft)
 "lZD" = (
 /obj/structure/table,
 /obj/machinery/computer/libraryconsole/bookmanagement,
@@ -69842,6 +69864,15 @@
 /obj/structure/cable,
 /turf/open/floor/iron/dark,
 /area/station/tcommsat/computer)
+"sao" = (
+/obj/machinery/door/airlock/external/glass,
+/obj/effect/mapping_helpers/airlock/autoname,
+/obj/effect/mapping_helpers/airlock/access/all/engineering/maintenance,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/station/maintenance/ghetto/central/aft)
 "sau" = (
 /obj/structure/grille,
 /obj/structure/barricade/wooden,
@@ -73408,6 +73439,15 @@
 "sYg" = (
 /turf/open/floor/iron/dark,
 /area/station/command/heads_quarters/cmo)
+"sYo" = (
+/obj/machinery/door/airlock/external/glass,
+/obj/effect/mapping_helpers/airlock/autoname,
+/obj/effect/mapping_helpers/airlock/access/all/engineering/maintenance,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/station/maintenance/ghetto/auxiliary)
 "sYw" = (
 /obj/effect/spawner/random/contraband/narcotics,
 /obj/effect/mapping_helpers/broken_floor,
@@ -80140,6 +80180,15 @@
 /obj/structure/window/reinforced/spawner/directional/north,
 /turf/open/floor/plating,
 /area/station/service/chapel/monastery)
+"uMd" = (
+/obj/machinery/door/airlock/external/glass,
+/obj/effect/mapping_helpers/airlock/autoname,
+/obj/effect/mapping_helpers/airlock/access/all/engineering/maintenance,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/station/maintenance/ghetto/auxiliary)
 "uMg" = (
 /obj/effect/turf_decal/tile/purple{
 	dir = 8
@@ -120873,7 +120922,7 @@ lrV
 lrV
 way
 way
-vob
+lZz
 lrV
 lrV
 lrV
@@ -121129,7 +121178,7 @@ vWi
 vWi
 vWi
 vWi
-vWi
+sao
 vWi
 vWi
 iFI
@@ -121385,9 +121434,9 @@ vbK
 vbK
 vbK
 vbK
-doz
-doz
-doz
+vWi
+hph
+vWi
 vWi
 aOu
 ylz
@@ -121642,9 +121691,9 @@ doz
 doz
 doz
 doz
-vbK
-ceC
-doz
+vWi
+eUd
+vWi
 doz
 wcM
 ceC
@@ -121901,7 +121950,7 @@ doz
 doz
 vbK
 jEk
-doz
+vbK
 doz
 wcM
 ceC
@@ -122158,7 +122207,7 @@ doz
 doz
 doz
 ceC
-doz
+ceC
 doz
 wcM
 ceC
@@ -125506,9 +125555,9 @@ ceC
 ceC
 wcM
 ceC
-ceC
-ceC
-doz
+vbK
+jEk
+vbK
 doz
 doz
 doz
@@ -125763,9 +125812,9 @@ ceC
 ceC
 wcM
 doz
-doz
-doz
-doz
+uPA
+uMd
+uPA
 doz
 doz
 doz
@@ -126020,9 +126069,9 @@ ceC
 ceC
 wcM
 doz
-doz
-doz
-doz
+uPA
+pZA
+uPA
 doz
 doz
 doz
@@ -126278,7 +126327,7 @@ ncb
 mDY
 uPA
 uPA
-uPA
+sYo
 xfI
 xfI
 xfI
@@ -126534,7 +126583,7 @@ dwq
 uOI
 oFi
 nSZ
-pZA
+cFG
 sAK
 bSl
 vAg
