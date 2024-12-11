@@ -59,13 +59,13 @@
 	///weight this has of being picked for random storyteller/showing up in the vote if not always_votable
 	var/weight = 0
 	///Количество игроков на сервере, чтобы сторителлер начинал расчеты максимального количества антагов
-	var/min_antag_popcount = 20
+	var/min_antag_popcount = STORYTELLER_MIN_ANTAG_POPCOUNT
 	///Количество игроков на сервере, которое требуется чтобы появился хотя бы один антаг (по умолчанию 30)
 	var/antag_denominator = ANTAG_CAP_DENOMINATOR
 	///Количество антагов, которое СТ может добавить сверх расчетов
 	var/antag_flat_cap = ANTAG_CAP_FLAT
 	///Общий множитель всех треков сторителлера (для коректировок)
-	var/point_gain_base_mult = 10
+	var/point_gain_base_mult = STORYTELLER_BASIC_MULT
 
 /datum/storyteller/process(seconds_per_tick)
 	if(!round_started || disable_distribution) // we are differing roundstarted ones until base roundstart so we can get cooler stuff
@@ -154,7 +154,7 @@
 				SSgamemode.event_track_points[track] = 0
 				return
 
-	if(picked_event && track)
+	if(picked_event?.can_spawn_event(get_active_player_count(alive_check = TRUE, afk_check = TRUE, human_check = TRUE)) && track)
 		buy_event(picked_event, track, are_forced)
 	. = TRUE
 

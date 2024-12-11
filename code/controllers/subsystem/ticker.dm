@@ -192,6 +192,7 @@ SUBSYSTEM_DEF(ticker)
 				SEND_SIGNAL(src, COMSIG_TICKER_ENTER_SETTING_UP)
 				current_state = GAME_STATE_SETTING_UP
 				Master.SetRunLevel(RUNLEVEL_SETUP)
+				SSgamemode.init_storyteller() // BANDASTATION EDIT - STORYTELLER
 				if(start_immediately)
 					fire()
 
@@ -230,7 +231,6 @@ SUBSYSTEM_DEF(ticker)
 	to_chat(world, span_boldannounce("Starting game..."))
 	var/init_start = world.timeofday
 	// BANDASTATION EDIT BEGIN - STORYTELLER
-	SSgamemode.init_storyteller()
 	CHECK_TICK
 	//Configure mode and assign player to antagonists
 	var/can_continue = FALSE

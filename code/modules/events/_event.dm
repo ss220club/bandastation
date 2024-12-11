@@ -79,6 +79,8 @@
 		return FALSE
 	if(roundstart && (!SSgamemode.can_run_roundstart || (SSgamemode.ran_roundstart && !fake_check && !SSgamemode.current_storyteller?.ignores_roundstart)))
 		return FALSE
+	if(!roundstart && (SSgamemode.can_run_roundstart))
+		return FALSE
 	/// BANDASTATION EDIT END - STORYTELLER
 	if(occurrences >= max_occurrences)
 		return FALSE
@@ -95,9 +97,10 @@
 	if(ispath(typepath, /datum/round_event/ghost_role) && !(GLOB.ghost_role_flags & GHOSTROLE_MIDROUND_EVENT))
 		return FALSE
 	/// BANDASTATION EDIT START - STORYTELLER
-	if(checks_antag_cap)
-		if(!roundstart && !SSgamemode.can_inject_antags())
-			return FALSE
+	if(checks_antag_cap && !SSgamemode.can_inject_antags())
+		return FALSE
+	if(!weight)
+		return FALSE
 	if(!check_enemies())
 		return FALSE
 	if(allowed_storytellers && ((islist(allowed_storytellers) && !is_type_in_list(SSgamemode.current_storyteller, allowed_storytellers)) || SSgamemode.current_storyteller.type != allowed_storytellers))

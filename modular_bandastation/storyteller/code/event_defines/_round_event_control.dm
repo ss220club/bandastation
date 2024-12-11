@@ -35,10 +35,14 @@
 		if(string)
 			string += ","
 		string += "Group runing"
-	if(roundstart && (world.time-SSticker.round_start_time >= 2 MINUTES))
+	if(roundstart && (!SSgamemode.can_run_roundstart))
 		if(string)
 			string += ","
-		string += "Roundstart"
+		string += "Roundstart only"
+	if(!roundstart && (SSgamemode.can_run_roundstart))
+		if(string)
+			string += ","
+		string += "Not roundstart"
 	/// BANDASTATION EDIT END - STORYTELLER
 	if(occurrences >= max_occurrences)
 		if(string)
@@ -61,12 +65,13 @@
 			string += ","
 		string += "Round End"
 	if(ispath(typepath, /datum/round_event/ghost_role) && !(GLOB.ghost_role_flags & GHOSTROLE_MIDROUND_EVENT))
-		return FALSE
-	if(checks_antag_cap)
-		if(!roundstart && !SSgamemode.can_inject_antags())
-			if(string)
-				string += ","
-			string += "Too Many Antags"
+		if(string)
+			string += ","
+		string += "No ghost candidates"
+	if(checks_antag_cap && !SSgamemode.can_inject_antags())
+		if(string)
+			string += ","
+		string += "Too Many Antags"
 	if(allowed_storytellers && SSgamemode.current_storyteller && ((islist(allowed_storytellers) && !is_type_in_list(SSgamemode.current_storyteller, allowed_storytellers)) || SSgamemode.current_storyteller.type != allowed_storytellers))
 		if(string)
 			string += ","
@@ -75,6 +80,10 @@
 		if(string)
 			string += ","
 		string += "Too low eng power"
+	if(!weight)
+		if(string)
+			string += ","
+		string += "Can't be selected"
 	if(med_required_power > SSgamemode.current_med_power)
 		if(string)
 			string += ","
