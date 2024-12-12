@@ -89,7 +89,7 @@
 #define INTERNALS_ADJUST_EXEMPT (1<<17)
 // BANDASTATION ADDITION - START
 /// Does not leave fibers behind
-#define FIBERLESS (1<<18)
+#define FIBERLESS_GLOVES (1<<18)
 // BANDASTATION ADDITION - END
 
 /// Integrity defines for clothing (not flags but close enough)

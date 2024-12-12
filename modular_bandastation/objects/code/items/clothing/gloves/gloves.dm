@@ -22,4 +22,9 @@
 	lefthand_file = 'modular_bandastation/objects/icons/mob/inhands/gloves_lefthand.dmi'
 	righthand_file = 'modular_bandastation/objects/icons/mob/inhands/gloves_righthand.dmi'
 	icon_state = "forensics"
-	clothing_flags = FIBERLESS
+	clothing_flags = FIBERLESS_GLOVES
+
+/obj/item/clothing/gloves/examine_tags(mob/user)
+	. = ..()
+	if(clothing_flags & FIBERLESS_GLOVES)
+		.["безволоконная"] = "Не оставляет волокна."
