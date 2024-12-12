@@ -36,10 +36,11 @@
 	earliest_start = 0 SECONDS
 	weight = 4
 	max_occurrences = 3
+	exclusive_roundstart_event = TRUE
 
 /datum/round_event/antagonist/solo/nuclear_operative
 	excute_round_end_reports = TRUE
-	end_when = 60000 /// we will end on our own when revs win
+	end_when = 60000
 	var/static/datum/team/nuclear/nuke_team
 	var/datum/antagonist/antag_leader_datum = /datum/antagonist/nukeop/leader
 	var/set_leader = FALSE

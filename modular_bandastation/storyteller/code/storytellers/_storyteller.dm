@@ -66,6 +66,10 @@
 	var/antag_flat_cap = ANTAG_CAP_FLAT
 	///Общий множитель всех треков сторителлера (для коректировок)
 	var/point_gain_base_mult = STORYTELLER_BASIC_MULT
+	///Множитель силы СБ
+	var/sec_antag_modifier = STORYTELLER_SEC_ANTAG_MODIFIER
+	///Множитель цен антагов
+	var/storyteller_basic_modifier = STORYTELLER_BASIC_MODIFIER
 
 /datum/storyteller/process(seconds_per_tick)
 	if(!round_started || disable_distribution) // we are differing roundstarted ones until base roundstart so we can get cooler stuff
@@ -73,15 +77,6 @@
 
 	if(!guarantees_roundstart_roleset && prob(roundstart_prob) && !roundstart_checks)
 		roundstart_checks = TRUE
-
-	if(SSgamemode.current_roundstart_event && !SSgamemode.ran_roundstart && (guarantees_roundstart_roleset || roundstart_checks))
-		buy_event(SSgamemode.current_roundstart_event, EVENT_TRACK_ROLESET, TRUE)
-		if(EVENT_TRACK_ROLESET in SSgamemode.forced_next_events)
-			SSgamemode.forced_next_events[EVENT_TRACK_ROLESET] = null
-			SSgamemode.forced_next_events -= EVENT_TRACK_ROLESET
-
-		log_storyteller("Running SSgamemode.current_roundstart_event\[[SSgamemode.current_roundstart_event]\]")
-		SSgamemode.ran_roundstart = TRUE
 
 	add_points(seconds_per_tick)
 	handle_tracks()
@@ -103,8 +98,23 @@
 	var/datum/controller/subsystem/gamemode/mode = SSgamemode
 	for(var/track in mode.event_track_points)
 		var/points = mode.event_track_points[track]
-		if(points >= mode.point_thresholds[track] && find_and_buy_event_from_track(track))
+		if(points >= mode.point_thresholds[track])
+			if(SSgamemode.can_run_roundstart)
+				SSgamemode.round_start_handle()
+				SSgamemode.can_run_roundstart = TRUE
+				return
+			if(prob(SSgamemode.empty_event_chance) && track == EVENT_TRACK_ROLESET)
+				calculate_empty_event(TRUE)
+				mode.event_track_points[track] = 0
+			else if(find_and_buy_event_from_track(track))
+				calculate_empty_event(FALSE)
 			. = TRUE
+
+/datum/storyteller/proc/calculate_empty_event(reset = FALSE)
+	if(reset)
+		SSgamemode.empty_event_chance = 5
+	else
+		SSgamemode.empty_event_chance += SSgamemode.get_antag_count()
 
 /// Find and buy a valid event from a track.
 /datum/storyteller/proc/find_and_buy_event_from_track(track)
@@ -186,11 +196,10 @@
 	mode.event_track_points[track] = max(mode.event_track_points[track] - total_cost, 0)
 	message_admins("Storyteller purchased and triggered [bought_event] event, on [track] track, for [total_cost] cost.")
 	if(bought_event.roundstart)
-		SSgamemode.ran_roundstart = TRUE
 		mode.TriggerEvent(bought_event, forced)
+		SSgamemode.can_run_roundstart = FALSE
 	else
 		mode.schedule_event(bought_event, 3 MINUTES, total_cost, _forced = forced)
-	SSgamemode.triggered_round_events |= bought_event.name
 
 /// Calculates the weights of the events from a passed track.
 /datum/storyteller/proc/calculate_weights(track)

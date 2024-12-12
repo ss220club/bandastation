@@ -36,6 +36,7 @@
 	earliest_start = 0 SECONDS
 	weight = 1
 	max_occurrences = 1
+	exclusive_roundstart_event = TRUE
 
 /datum/round_event/antagonist/solo/clown_operative
 	excute_round_end_reports = TRUE

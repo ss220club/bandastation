@@ -138,6 +138,7 @@ SUBSYSTEM_DEF(gamemode)
 	/// Ready players for roundstart events.
 	var/ready_players = 0
 	var/active_players = 0
+	var/full_sec_crew = 0
 	var/sec_crew = 0
 	var/head_crew = 0
 	var/eng_crew = 0
@@ -156,8 +157,6 @@ SUBSYSTEM_DEF(gamemode)
 
 	var/wizardmode = FALSE //refactor this into just being a unique storyteller
 
-	/// What is our currently desired/selected roundstart event
-	var/datum/round_event_control/antagonist/solo/current_roundstart_event
 	var/list/last_round_events = list()
 	/// Has a roundstart event been run
 	var/ran_roundstart = FALSE
@@ -165,6 +164,11 @@ SUBSYSTEM_DEF(gamemode)
 	var/can_run_roundstart = TRUE
 	var/list/triggered_round_events = list()
 	var/runned_events = list()
+	/// Список ролей перед их сбросом в начале раунда
+	var/list/presetuped_ocupations = list()
+	var/empty_event_chance = 0
+	var/roundstart_budget = 0
+	var/roundstart_budget_set = 0
 
 /datum/controller/subsystem/gamemode/Initialize(time, zlevel)
 	// Populate event pools
@@ -204,30 +208,6 @@ SUBSYSTEM_DEF(gamemode)
 /datum/controller/subsystem/gamemode/fire(resumed = FALSE)
 	if(SSticker.round_start_time && (world.time - SSticker.round_start_time) >= ROUNDSTART_VALID_TIMEFRAME)
 		can_run_roundstart = FALSE
-	else if(current_roundstart_event && length(current_roundstart_event.preferred_events)) //note that this implementation is made for preferred_events being other roundstart events
-		var/list/preferred_copy = current_roundstart_event.preferred_events.Copy()
-		var/datum/round_event_control/selected_event = pick_weight(preferred_copy)
-		var/player_count = get_active_player_count(alive_check = TRUE, afk_check = TRUE, human_check = TRUE)
-		if(ispath(selected_event)) //get the instances if we dont have them
-			current_roundstart_event.preferred_events = list()
-			for(var/datum/round_event_control/e_control as anything in preferred_copy)
-				current_roundstart_event.preferred_events[new e_control] = preferred_copy[e_control]
-			preferred_copy = current_roundstart_event.preferred_events.Copy()
-			selected_event = null
-		else if(!selected_event.can_spawn_event(player_count))
-			preferred_copy -= selected_event
-			selected_event = null
-
-		var/sanity = 0
-		while(!selected_event && length(preferred_copy) && sanity < 100)
-			sanity++
-			selected_event = pick_weight(preferred_copy)
-			if(!selected_event.can_spawn_event(player_count))
-				preferred_copy -= selected_event
-				selected_event = null
-
-		if(selected_event)
-			current_storyteller.try_buy_event(selected_event)
 
 	///Handle scheduled events
 	for(var/datum/scheduled_event/sch_event in scheduled_events)
@@ -249,7 +229,7 @@ SUBSYSTEM_DEF(gamemode)
 	var/pop_count = get_correct_popcount()
 	if(pop_count < current_storyteller.min_antag_popcount)
 		return 0
-	var/total_number = pop_count + (sec_crew * 2)
+	var/total_number = pop_count + (sec_crew * current_storyteller.sec_antag_modifier)
 	var/cap = FLOOR((total_number / current_storyteller.antag_denominator), 1) + current_storyteller.antag_flat_cap
 	return cap
 
@@ -343,7 +323,7 @@ SUBSYSTEM_DEF(gamemode)
 		update_crew_infos()
 		return active_players
 	else
-		calculate_ready_players()
+		recalculate_ready_pop()
 		return ready_players
 
 /// Refunds and removes a scheduled event.
@@ -357,13 +337,6 @@ SUBSYSTEM_DEF(gamemode)
 /datum/controller/subsystem/gamemode/proc/remove_scheduled_event(datum/scheduled_event/removed)
 	scheduled_events -= removed
 	qdel(removed)
-
-/// We need to calculate ready players for the sake of roundstart events becoming eligible.
-/datum/controller/subsystem/gamemode/proc/calculate_ready_players()
-	ready_players = 0
-	for(var/mob/dead/new_player/player as anything in GLOB.new_player_list)
-		if(player.ready == PLAYER_READY_TO_PLAY)
-			ready_players++
 
 /// We roll points to be spent for roundstart events, including antagonists.
 /datum/controller/subsystem/gamemode/proc/roll_pre_setup_points()
@@ -417,9 +390,33 @@ SUBSYSTEM_DEF(gamemode)
 	if(halted_storyteller)
 		message_admins("WARNING: Didn't roll roundstart events (including antagonists) due to the storyteller being halted.")
 		return
+	handle_pre_setup_occupations()
+	SSjob.reset_occupations()
 	while(TRUE)
 		if(!current_storyteller.handle_tracks())
 			break
+
+/// Прок который сохраняет список ролей перед их сбросом. Важно, так позволяет более тонко настраивать количество СБ/Антагов
+/datum/controller/subsystem/gamemode/proc/handle_pre_setup_occupations()
+	for(var/mob/dead/new_player/player as anything in GLOB.new_player_list)
+		if(!player?.mind)
+			continue
+		var/datum/job/job_datum = get_preferenced_job(player)
+		var/client/client_source = player.client
+		presetuped_ocupations[client_source.ckey] = job_datum
+
+/// Прок, который пытается получить предпочтительную роль для игрока (и назначить в дальнейшем вес для нее)
+/datum/controller/subsystem/gamemode/proc/get_preferenced_job(mob/dead/new_player/check_player)
+	var/list/available_occupations = SSjob.joinable_occupations
+	for(var/level in SSjob.level_order)
+		for(var/datum/job/job in available_occupations)
+			// Filter any job that doesn't fit the current level.
+			var/player_job_level = check_player.client?.prefs.job_preferences[job.title]
+			if(isnull(player_job_level))
+				continue
+			if(player_job_level != level)
+				continue
+			return job
 
 /// Second step of handlind roundstart events, happening after people spawn.
 /datum/controller/subsystem/gamemode/proc/handle_post_setup_roundstart_events()
@@ -514,6 +511,7 @@ SUBSYSTEM_DEF(gamemode)
 		event.max_occurrences = 0
 	else if(. == EVENT_READY)
 		event.run_event(random = TRUE, admin_forced = forced) // fallback to dynamic
+		triggered_round_events |= event.name
 
 ///Resets frequency multiplier.
 /datum/controller/subsystem/gamemode/proc/resetFrequency()
@@ -549,9 +547,9 @@ SUBSYSTEM_DEF(gamemode)
 
 ///Attempts to select players for special roles the mode might have.
 /datum/controller/subsystem/gamemode/proc/pre_setup()
-	calculate_ready_players()
+	recalculate_ready_pop()
 	roll_pre_setup_points()
-	//handle_pre_setup_roundstart_events()
+	handle_pre_setup_roundstart_events()
 	return TRUE
 
 ///Everyone should now be on the station and have their normal gear.  This is the place to give the special roles extra things
@@ -620,6 +618,94 @@ SUBSYSTEM_DEF(gamemode)
 		station_goal.on_report()
 		. += station_goal.get_report()
 	return
+
+/datum/controller/subsystem/gamemode/proc/recalculate_ready_pop()
+	ready_players = 0
+	sec_crew = 0
+	for(var/mob/dead/new_player/player as anything in GLOB.new_player_list)
+		if(player.ready == PLAYER_READY_TO_PLAY)
+			ready_players++
+		var/client/client_source = player.client
+		if(QDELETED(client_source) || !client_source.ckey)
+			continue
+		var/datum/job/player_role = presetuped_ocupations[client_source.ckey]
+		if(player_role?.departments_bitflags & DEPARTMENT_BITFLAG_SECURITY && !player.mind.special_role)
+			sec_crew++
+
+	roundstart_budget = ready_players + (sec_crew * current_storyteller.sec_antag_modifier)
+
+/datum/controller/subsystem/gamemode/proc/round_start_handle()
+	recalculate_ready_pop()
+
+	if(!get_antag_cap())
+		message_admins("Storyteller failed to pick an events for roundstart due low population.")
+		return
+
+	var/track = EVENT_TRACK_ROLESET
+	var/list/valid_events = recalculate_roundstart_costs(track)
+	if(!length(valid_events))
+		message_admins("Storyteller failed to pick an events for roundstart.")
+		event_track_points[track] *= TRACK_FAIL_POINT_PENALTY_MULTIPLIER
+		return
+
+	var/list/triggered_events = list()
+	var/pop_count = ready_players + (sec_crew * current_storyteller.sec_antag_modifier)
+	if(pop_count < current_storyteller.min_antag_popcount)
+		message_admins("Not enough ready players to run roundstart events.")
+		return
+
+	message_admins("Storyteller begin to get roundstart events with budget [roundstart_budget].")
+	while(length(valid_events))
+		recalculate_ready_pop()
+		pop_count = ready_players + (sec_crew * current_storyteller.sec_antag_modifier)
+		roundstart_budget = roundstart_budget_set ? roundstart_budget_set : pop_count
+		for(var/datum/round_event_control/triggered_event as anything in triggered_events)
+			roundstart_budget -= triggered_event.roundstart_cost
+
+		var/datum/round_event_control/picked_event = pick_weight(valid_events)
+		if(picked_event.can_spawn_event(ready_players) && roundstart_budget >= picked_event.roundstart_cost)
+			message_admins("Storyteller purchased and triggered [picked_event] event for [picked_event.roundstart_cost]. Left balance: [roundstart_budget - picked_event.roundstart_cost].")
+			TriggerEvent(picked_event, forced = FALSE)
+			// Если первое событие эксклюзивное, то отчищаем список
+			if(picked_event.exclusive_roundstart_event)
+				valid_events = list()
+			else
+			// Если первое событие не-эксклюзивное, то удаляем из списка все эксклюзивные
+				for(var/datum/round_event_control/event as anything in valid_events)
+					if(event.exclusive_roundstart_event)
+						valid_events -= event
+				triggered_events += picked_event
+		else
+			valid_events -= picked_event
+
+/datum/controller/subsystem/gamemode/proc/recalculate_roundstart_costs(track)
+	full_sec_crew = 0
+	for(var/datum/job/job as anything in SSjob.all_occupations)
+		if(job.departments_bitflags & DEPARTMENT_BITFLAG_SECURITY)
+			full_sec_crew += job.total_positions
+
+	/// Получить количество доступных раундстартом событий
+	current_storyteller.calculate_weights(track)
+	var/list/valid_events = list()
+	// Determine which events are valid to pick
+	for(var/datum/round_event_control/event as anything in event_pools[track])
+		if(event.can_spawn_event(ready_players))
+			if(QDELETED(event))
+				message_admins("[event.name] was deleted!")
+				continue
+			valid_events[event] = round(event.calculated_weight * 10)
+	if(!length(valid_events))
+		return
+
+	for(var/datum/round_event_control/event as anything in valid_events)
+		var/sec_miss_crew = full_sec_crew - sec_crew
+		var/avg_power = full_sec_crew / current_storyteller.sec_antag_modifier
+		var/sec_miss_penalty = max((sec_miss_crew / avg_power), 1)
+		var/modified_cost = current_storyteller.antag_denominator - event.weight
+		var/basic_cost = ready_players / get_antag_cap() * sec_miss_penalty * current_storyteller.storyteller_basic_modifier
+		event.roundstart_cost = basic_cost + modified_cost
+
+	return valid_events
 
 /*
  * Generate a list of active station traits to report to the crew.
@@ -886,15 +972,42 @@ SUBSYSTEM_DEF(gamemode)
 	switch(panel_page)
 		if(GAMEMODE_PANEL_VARIABLES)
 			dat += "<a href='byond://?src=[REF(src)];panel=main;action=reload_config_vars'>Reload Config Vars</a> <font color='#888888'><i>Configs located in game_options.txt.</i></font>"
+			dat += "<HR>"
+
 			dat += "<BR><b>Storyteller Basic Variables:</b>"
 			dat += "<BR>Storyteller Antag Low pop:<a href='byond://?src=[REF(src)];panel=main;action=vars;var=vars_lowpop;'>[current_storyteller.min_antag_popcount]</a>"
 			dat += "<BR><font color='#888888'><i>This value affects how many players count as low pop and makes the antag cap value to zero if it is below.</i></font>"
-			dat += "<BR>Storyteller Antag Cap Formula: floor((pop_count + secs * 2) / denominator) + addiction"
-			dat += "<BR>Storyteller Antag Cap result: floor(([get_correct_popcount()] + [sec_crew] * 2) / [current_storyteller.antag_denominator]) + [current_storyteller.antag_flat_cap]"
+			dat += "<BR>Guarantees Roundstart Roleset: <a href='byond://?src=[REF(src)];panel=main;action=vars;var=vars_guarante_roundstart;'>[current_storyteller.guarantees_roundstart_roleset ? "TRUE" : "FALSE" ]</a>"
+			dat += "<BR>Storyteller Antag Cap Formula: floor((pop_count + secs * sec_antag_modifier) / denominator) + addiction"
+			dat += "<BR>Storyteller Antag Cap result: floor(([get_correct_popcount()] + [sec_crew] * [current_storyteller.sec_antag_modifier]) / [current_storyteller.antag_denominator]) + [current_storyteller.antag_flat_cap]"
+			dat += "<BR>Sec antag modifier: <a href='byond://?src=[REF(src)];panel=main;action=vars;var=vars_sec_antag;'>[current_storyteller.sec_antag_modifier]</a>"
 			dat += "<BR>Antag addiction: <a href='byond://?src=[REF(src)];panel=main;action=vars;var=vars_addiction;'>[current_storyteller.antag_flat_cap]</a>"
 			dat += "<BR>Antag denominator: <a href='byond://?src=[REF(src)];panel=main;action=vars;var=vars_denominator;'>[current_storyteller.antag_denominator]</a>"
 			dat += "<BR><font color='#888888'><i>This affects how many antagonist can system spawn.</i></font>"
 			dat += "<HR>"
+
+			if(!SSticker.HasRoundStarted())
+				handle_pre_setup_occupations()
+				recalculate_ready_pop()
+				recalculate_roundstart_costs(EVENT_TRACK_ROLESET)
+				var/avg_power = full_sec_crew / current_storyteller.sec_antag_modifier
+				var/sec_miss_crew = full_sec_crew - sec_crew
+				var/sec_miss_penalty = max((sec_miss_crew / avg_power), 1)
+
+				dat += "<BR><b>Storyteller Roundstart Values:</b>"
+				dat += "<BR>Sec info: Full sec crew = [full_sec_crew], Players with High Sec = [sec_crew], sec_miss_crew = [sec_miss_crew]"
+				dat += "<BR><font color='#888888'><i>Отображает максимальное количество ролей с пометкой СБ, у скольких игроков эти должности в высоком приоритете и сколько нехватка.</i></font>"
+				dat += "<BR>Multiplier info: Average power = full_sec_crew ([full_sec_crew]) / current_storyteller.sec_antag_modifier ([current_storyteller.sec_antag_modifier]) = [avg_power]"
+				dat += "<BR><font color='#888888'><i>Отображает среденее значение для СБ зависящее от сторителлера.</i></font>"
+				dat += "<BR>Multiplier info: Sec Miss Penalty = max(sec_miss_crew([sec_miss_crew]) / avg_power([avg_power]), 1) = [sec_miss_penalty]"
+				dat += "<BR><font color='#888888'><i>Отображает штраф вызванный нехваткой СБ.</i></font>"
+				dat += "<BR>Basic cost info: Basic cost = ready_players([ready_players])  / get_antag_cap([get_antag_cap()]) * sec_miss_penalty([sec_miss_penalty]) * current_storyteller.storyteller_basic_modifier(<a href='byond://?src=[REF(src)];panel=main;action=vars;var=vars_storyteller_basic_modifier;'>[current_storyteller.storyteller_basic_modifier]</a>) = [get_antag_cap() ? ready_players / get_antag_cap() * sec_miss_penalty * current_storyteller.storyteller_basic_modifier : "No ready players"]"
+				dat += "<BR><font color='#888888'><i>Отображает базовое значение цен антагов в связи с переменными выше.</i></font>"
+				dat += "<BR>Roundstart info: Roundstart budget = ready_players([ready_players]) + (sec_crew([sec_crew]) * current_storyteller.sec_antag_modifier([current_storyteller.sec_antag_modifier])) = [roundstart_budget]"
+				dat += "<BR><font color='#888888'><i>Раундстартовый бюджет для событий, расчитанный с помощью формулы выше.</i></font>"
+				dat += "<BR>Roundstart info: Forced Roundstart budget = <a href='byond://?src=[REF(src)];panel=main;action=vars;var=vars_roundstart_budget;'>[roundstart_budget_set]</a>"
+				dat += "<BR><font color='#888888'><i>Зафоршенный андминами раундстарт бюджет.</i></font>"
+				dat += "<HR>"
 
 			dat += "<BR><b>Point Gains Multipliers (only over time):</b>"
 			dat += "<BR>Basic all tracks multiplayer: <a href='byond://?src=[REF(src)];panel=main;action=vars;var=vars_basemult;'>[current_storyteller.point_gain_base_mult]</a>"
@@ -1004,7 +1117,7 @@ SUBSYSTEM_DEF(gamemode)
 	if(current_storyteller)
 		dat += "Storyteller: [current_storyteller.name]"
 		dat += "<BR>Repetition penalty multiplier: [current_storyteller.event_repetition_multiplier]"
-		dat += "<BR>Cost variance: [current_storyteller.cost_variance]"
+		dat += "<BR>Cost variance: [current_storyteller.cost_variance][SSticker.HasRoundStarted()? "" : ", roundstart_budget = <a href='byond://?src=[REF(src)];panel=main;action=vars;var=vars_roundstart_budget;'>[roundstart_budget_set ? roundstart_budget_set : roundstart_budget]</a>"]"
 		if(current_storyteller.tag_multipliers)
 			dat += "<BR>Tag multipliers:"
 			for(var/tag in current_storyteller.tag_multipliers)
@@ -1012,6 +1125,10 @@ SUBSYSTEM_DEF(gamemode)
 		current_storyteller.calculate_weights(statistics_track_page)
 	else
 		dat += "Storyteller: None<BR>Weight and chance statistics will be inaccurate due to the present lack of a storyteller."
+
+	handle_pre_setup_occupations()
+	recalculate_ready_pop()
+	recalculate_roundstart_costs(EVENT_TRACK_ROLESET)
 	dat += "<BR><a href='byond://?src=[REF(src)];panel=stats;action=set_roundstart'[roundstart_event_view ? "class='linkOn'" : ""]>Roundstart Events</a> Forced Roundstart events will use rolled points, and are guaranteed to trigger (even if the used points are not enough)"
 	dat += "<BR>Avg. event intervals: "
 	for(var/track in event_tracks)
@@ -1083,7 +1200,7 @@ SUBSYSTEM_DEF(gamemode)
 		if(assoc_spawn_weight[event])
 			var/percent = round((event.calculated_weight / total_weight) * 100)
 			weight_string = "[percent]% - [weight_string]"
-		dat += "<td>[weight_string]</td>" //Weight
+		dat += "<td>[SSticker.HasRoundStarted() && event.roundstart_cost ? weight_string : event.roundstart_cost]</td>" //Weight
 		dat += "<td>[event.get_href_actions()]</td>" //Actions
 		dat += "</tr>"
 	dat += "</table>"
@@ -1148,6 +1265,12 @@ SUBSYSTEM_DEF(gamemode)
 								return
 							message_admins("[key_name_admin(usr)] set addictive antags to [new_value].")
 							current_storyteller.antag_flat_cap = new_value
+						if("vars_sec_antag")
+							var/new_value = input(usr, "New value:", "Set new value") as num|null
+							if(isnull(new_value) || new_value < 0)
+								return
+							message_admins("[key_name_admin(usr)] set sec antag modifier to [new_value].")
+							current_storyteller.sec_antag_modifier = new_value
 						if("vars_denominator")
 							var/new_value = input(usr, "New value:", "Set new value") as num|null
 							if(isnull(new_value) || new_value < 0)
@@ -1166,6 +1289,22 @@ SUBSYSTEM_DEF(gamemode)
 								return
 							message_admins("[key_name_admin(usr)] set basic storyteller multiplier to [new_value].")
 							current_storyteller.point_gain_base_mult = new_value
+						if("vars_guarante_roundstart")
+							var/new_value = !current_storyteller.guarantees_roundstart_roleset
+							message_admins("[key_name_admin(usr)] set basic storyteller multiplier to [new_value].")
+							current_storyteller.guarantees_roundstart_roleset = new_value
+						if("vars_roundstart_budget")
+							var/new_value = input(usr, "New value:", "Set new value") as num|null
+							if(isnull(new_value) || new_value < 0)
+								return
+							message_admins("[key_name_admin(usr)] set forced roundstart budget to [new_value].")
+							roundstart_budget_set = new_value
+						if("vars_storyteller_basic_modifier")
+							var/new_value = input(usr, "New value:", "Set new value") as num|null
+							if(isnull(new_value) || new_value < 0)
+								return
+							message_admins("[key_name_admin(usr)] set storyteller basic cost modifier to [new_value].")
+							current_storyteller.storyteller_basic_modifier = new_value
 				if("reload_config_vars")
 					message_admins("[key_name_admin(usr)] reloaded gamemode config vars.")
 					load_config_vars()

@@ -69,25 +69,13 @@
 	prompted_picking = cast_control.prompted_picking
 	var/list/possible_candidates = cast_control.get_candidates()
 	var/list/candidates = list()
-	if(cast_control == SSgamemode.current_roundstart_event && length(SSgamemode.roundstart_antag_minds))
-		log_storyteller("Running roundstart antagonist assignment, event: [src], roundstart_antag_minds: [english_list(SSgamemode.roundstart_antag_minds)]")
-		for(var/datum/mind/antag_mind in SSgamemode.roundstart_antag_minds)
-			if(!antag_mind.current)
-				log_storyteller("Roundstart antagonist setup error: antag_mind([antag_mind]) in roundstart_antag_minds without a set mob")
-				continue
-			candidates += antag_mind.current
-			SSgamemode.roundstart_antag_minds -= antag_mind
-			log_storyteller("Roundstart antag_mind, [antag_mind]")
 
 	//guh
 	var/list/cliented_list = list()
 	for(var/mob/living/mob as anything in possible_candidates)
 		cliented_list += mob.client
 
-	if(length(cliented_list))
-		mass_adjust_antag_rep(cliented_list, 1)
-
-	var/list/weighted_candidates = return_antag_rep_weight(possible_candidates)
+	var/list/weighted_candidates = return_antag_weight(possible_candidates)
 
 	while(length(weighted_candidates) && length(candidates) < antag_count) //both of these pick_n_take from weighted_candidates so this should be fine
 		if(prompted_picking)
@@ -126,8 +114,6 @@
 
 		var/mob/candidate = pick_n_take(candidates)
 		log_storyteller("Antag event spawned mob: [candidate], special role: [candidate.mind?.special_role ? candidate.mind.special_role : "none"]")
-
-		candidate.client?.prefs.reset_antag_rep()
 
 		if(!candidate.mind)
 			candidate.mind = new /datum/mind(candidate.key)
@@ -192,8 +178,6 @@
 	var/list/cliented_list = list()
 	for(var/mob/living/mob as anything in candidates)
 		cliented_list += mob.client
-	if(length(cliented_list))
-		mass_adjust_antag_rep(cliented_list, 1)
 
 	if(prompted_picking)
 		candidates = SSpolling.poll_candidates(
@@ -207,7 +191,7 @@
 			chat_text_border_icon = antag_datum,
 		)
 
-	var/list/weighted_candidates = return_antag_rep_weight(candidates)
+	var/list/weighted_candidates = return_antag_weight(candidates)
 	var/selected_count = 0
 	while(length(weighted_candidates) && selected_count < antag_count)
 		var/candidate_ckey = pick_n_take_weighted(weighted_candidates)
@@ -215,8 +199,6 @@
 		if(QDELETED(candidate_client) || QDELETED(candidate_client.mob))
 			continue
 		var/mob/candidate = candidate_client.mob
-
-		candidate_client.prefs?.reset_antag_rep()
 
 		if(!candidate.mind)
 			candidate.mind = new /datum/mind(candidate.key)

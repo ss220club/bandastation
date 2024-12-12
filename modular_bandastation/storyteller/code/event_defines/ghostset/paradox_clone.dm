@@ -37,9 +37,6 @@
 	var/list/cliented_list = list()
 	for(var/mob/living/mob as anything in candidates)
 		cliented_list += mob.client
-	if(length(cliented_list))
-		mass_adjust_antag_rep(cliented_list, 1)
-
 
 	if(prompted_picking)
 		candidates = SSpolling.poll_ghost_candidates(
@@ -51,15 +48,13 @@
 			chat_text_border_icon = /datum/antagonist/paradox_clone,
 		)
 
-	var/list/weighted_candidates = return_antag_rep_weight(candidates)
 	var/selected_count = 0
-	while(length(weighted_candidates) && selected_count < antag_count)
-		var/client/candidate_ckey = pick_n_take_weighted(weighted_candidates)
+	while(length(candidates) && selected_count < antag_count)
+		var/client/candidate_ckey = pick_n_take_weighted(candidates)
 		var/client/candidate_client = GLOB.directory[candidate_ckey]
 		if(QDELETED(candidate_client) || QDELETED(candidate_client.mob))
 			continue
 		var/mob/candidate = candidate_client.mob
-		candidate_client.prefs?.reset_antag_rep()
 		if(!candidate.mind)
 			candidate.mind = new /datum/mind(candidate.key)
 

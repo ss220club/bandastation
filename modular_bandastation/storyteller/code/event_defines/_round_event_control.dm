@@ -26,6 +26,10 @@
 	var/med_required_power = 0
 	var/rnd_required_power = 0
 	var/head_required_power = 0
+	/// Является ли событие эксклюзивным (не допускающим другие) в случае раундстарта
+	var/exclusive_roundstart_event = FALSE
+	/// Значение, которое используется при расчете стоимости покупки из раундстарт бюджета. Считается если значение 0.
+	var/roundstart_cost = 0
 
 /datum/round_event_control/proc/return_failure_string(players_amt)
 	var/string
