@@ -147,8 +147,6 @@
 /datum/forensics/proc/add_fibers(mob/living/carbon/human/suspect)
 	var/fibertext
 	var/item_multiplier = isitem(parent) ? ITEM_FIBER_MULTIPLIER : NON_ITEM_FIBER_MULTIPLIER
-	if(suspect.gloves && (suspect.gloves.clothing_flags & FIBERLESS))
-		return FALSE
 	if(suspect.wear_suit)
 		fibertext = "Material from \a [suspect.wear_suit]."
 		if(prob(10 * item_multiplier) && !LAZYACCESS(fibers, fibertext))
