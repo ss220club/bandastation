@@ -2,7 +2,7 @@
 /obj/structure/platform
 	name = "platform"
 	desc = "A metal platform."
-	icon = 'modular_bandastation/objects/icons/platform.dmi'
+	icon = 'modular_bandastation/objects/icons/obj/structures/platform.dmi'
 	icon_state = "metal"
 	flags_1 = ON_BORDER_1
 	obj_flags = CAN_BE_HIT | IGNORE_DENSITY

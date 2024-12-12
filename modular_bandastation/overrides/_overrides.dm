@@ -1,4 +1,4 @@
 /datum/modpack/overrides
 	name = "Overrides"
-	desc = "Убираем то, что нам не нужно."
+	desc = "Перезапись и/или уборка того, что нам не нужно."
 	author = "dj-34"

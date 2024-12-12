@@ -1,7 +1,7 @@
 /obj/item/storage/bag/material_pouch
 	name = "material pouch"
 	desc = "Сумка для хранения листов материалов."
-	icon = 'modular_bandastation/objects/icons/material_pouch.dmi'
+	icon = 'modular_bandastation/objects/icons/obj/items/material_pouch.dmi'
 	icon_state = "materialpouch"
 	w_class = WEIGHT_CLASS_BULKY
 	resistance_flags = FLAMMABLE

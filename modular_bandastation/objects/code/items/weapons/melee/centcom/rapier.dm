@@ -1,11 +1,11 @@
 /obj/item/melee/sabre/centcom_sabre
 	name = "fleet officer's rapier"
 	desc = "Элегантное оружие более цивилизованной эпохи. Выполнено в классическом стиле с данью флотским традициям прошлого."
-	icon = 'modular_bandastation/objects/icons/melee.dmi'
+	icon = 'modular_bandastation/objects/icons/obj/weapons/sword.dmi'
 	icon_state = "centcom_sabre"
 	inhand_icon_state = "centcom_sabre"
-	lefthand_file = 'modular_bandastation/objects/icons/inhands/melee_lefthand.dmi'
-	righthand_file = 'modular_bandastation/objects/icons/inhands/melee_righthand.dmi'
+	lefthand_file = 'modular_bandastation/objects/icons/mob/inhands/melee_lefthand.dmi'
+	righthand_file = 'modular_bandastation/objects/icons/mob/inhands/melee_righthand.dmi'
 	force = 55
 	demolition_mod = 1
 	block_chance = 95
@@ -14,11 +14,11 @@
 /obj/item/melee/sabre/centcom_katana
 	name = "fleet officer's katana"
 	desc = "Элегантное оружие более цивилизованной эпохи. Выполнено в азиатском стиле с данью Земным культурам прошлого."
-	icon = 'modular_bandastation/objects/icons/melee.dmi'
+	icon = 'modular_bandastation/objects/icons/obj/weapons/sword.dmi'
 	icon_state = "centcom_katana"
 	inhand_icon_state = "centcom_katana"
-	lefthand_file = 'modular_bandastation/objects/icons/inhands/melee_lefthand.dmi'
-	righthand_file = 'modular_bandastation/objects/icons/inhands/melee_righthand.dmi'
+	lefthand_file = 'modular_bandastation/objects/icons/mob/inhands/melee_lefthand.dmi'
+	righthand_file = 'modular_bandastation/objects/icons/mob/inhands/melee_righthand.dmi'
 	hitsound = 'sound/items/weapons/bladeslice.ogg'
 	force = 55
 	demolition_mod = 1
@@ -28,10 +28,10 @@
 /obj/item/storage/belt/centcom_sabre
 	name = "fleet officer's rapier sheath"
 	desc = "Богато украшенные ножны, предназначенные для хранения офицерской рапиры."
-	icon = 'modular_bandastation/objects/icons/belt.dmi'
-	worn_icon = 'modular_bandastation/objects/icons/mob/clothing/belt/belt.dmi'
-	lefthand_file = 'modular_bandastation/objects/icons/inhands/belt_lefthand.dmi'
-	righthand_file = 'modular_bandastation/objects/icons/inhands/belt_righthand.dmi'
+	icon = 'modular_bandastation/objects/icons/obj/clothing/belts.dmi'
+	worn_icon = 'modular_bandastation/objects/icons/mob/clothing/belt.dmi'
+	lefthand_file = 'modular_bandastation/objects/icons/mob/inhands/belt_lefthand.dmi'
+	righthand_file = 'modular_bandastation/objects/icons/mob/inhands/belt_righthand.dmi'
 	icon_state = "centcom_sheath"
 	worn_icon_state = "centcom_sheath"
 	inhand_icon_state = "centcom_sheath"
@@ -78,10 +78,10 @@
 /obj/item/storage/belt/centcom_katana
 	name = "fleet officer's katana sheath"
 	desc = "Богато украшенные деревянные ножны, предназначенные для хранения офицерской катаны."
-	icon = 'modular_bandastation/objects/icons/belt.dmi'
-	worn_icon = 'modular_bandastation/objects/icons/mob/clothing/belt/belt.dmi'
-	lefthand_file = 'modular_bandastation/objects/icons/inhands/belt_lefthand.dmi'
-	righthand_file = 'modular_bandastation/objects/icons/inhands/belt_righthand.dmi'
+	icon = 'modular_bandastation/objects/icons/obj/clothing/belts.dmi'
+	worn_icon = 'modular_bandastation/objects/icons/mob/clothing/belt.dmi'
+	lefthand_file = 'modular_bandastation/objects/icons/mob/inhands/belt_lefthand.dmi'
+	righthand_file = 'modular_bandastation/objects/icons/mob/inhands/belt_righthand.dmi'
 	icon_state = "katana_sheath"
 	worn_icon_state = "katana_sheath"
 	inhand_icon_state = "katana_sheath"

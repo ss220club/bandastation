@@ -1,5 +1,3 @@
-// MARK: Eyes //
-
 // CentCom
 /obj/item/clothing/glasses/hud/security/sunglasses/soo
 	name = "special ops officer's HUDSunglasses"

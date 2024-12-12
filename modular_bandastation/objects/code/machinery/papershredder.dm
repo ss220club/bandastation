@@ -1,7 +1,7 @@
 /obj/machinery/papershredder
 	name = "\improper paper shredder"
 	desc = "For those documents you don't want seen."
-	icon = 'modular_bandastation/objects/icons/papershredder.dmi'
+	icon = 'modular_bandastation/objects/icons/obj/machines/papershredder.dmi'
 	icon_state = "papershredder0"
 	density = TRUE
 	anchored = TRUE
@@ -85,7 +85,7 @@
 
 /obj/item/shredded_paper
 	name = "shredded paper"
-	icon = 'modular_bandastation/objects/icons/papershredder.dmi'
+	icon = 'modular_bandastation/objects/icons/obj/machines/papershredder.dmi'
 	icon_state = "shredp"
 	throwforce = 0
 	w_class = WEIGHT_CLASS_TINY

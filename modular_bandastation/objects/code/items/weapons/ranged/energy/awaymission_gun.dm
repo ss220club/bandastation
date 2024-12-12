@@ -1,9 +1,9 @@
 /obj/item/gun/energy/laser/awaymission_aeg
 	name = "Exploreverse Mk.I"
 	desc = "Прототип оружия с миниатюрным реактором для исследований в крайне отдаленных секторах."
-	icon = 'modular_bandastation/objects/icons/guns.dmi'
-	lefthand_file = 'modular_bandastation/objects/icons/inhands/guns_lefthand.dmi'
-	righthand_file = 'modular_bandastation/objects/icons/inhands/guns_righthand.dmi'
+	icon = 'modular_bandastation/objects/icons/obj/weapons/guns/energy.dmi'
+	lefthand_file = 'modular_bandastation/objects/icons/mob/inhands/guns_lefthand.dmi'
+	righthand_file = 'modular_bandastation/objects/icons/mob/inhands/guns_righthand.dmi'
 	icon_state = "laser_gate"
 	inhand_icon_state = "laser_gate"
 	pin = /obj/item/firing_pin/explorer

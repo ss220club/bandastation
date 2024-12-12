@@ -23,7 +23,7 @@
 	required_drink_type = /datum/reagent/consumable/kvass
 	name = "стакан кваса"
 	desc = "В стакане кристально чистая жидкость насыщенного темно-коричневого цвета, которая кажется почти янтарной при определенном угле освещения."
-	icon = 'modular_bandastation/objects/icons/drinks.dmi'
+	icon = 'modular_bandastation/objects/icons/obj/items/drinks.dmi'
 	icon_state = "kvass"
 
 /datum/export/large/reagent_dispenser/kvass
@@ -33,7 +33,7 @@
 /obj/structure/reagent_dispensers/kvasstank
 	name = "бочка кваса"
 	desc = "Ярко-желтая бочка с квасом, которая сразу привлекает внимание своим насыщенным цветом. Она выполнена в классическом стиле, из толстого, прочного металла с гладкой, блестящей поверхностью. Бочка имеет цилиндрическую форму, слегка расширяясь к середине и снова сужаясь к краям."
-	icon = 'modular_bandastation/objects/icons/chemical_tanks.dmi'
+	icon = 'modular_bandastation/objects/icons/obj/structures/chemical_tanks.dmi'
 	icon_state = "kvass"
 	reagent_id = /datum/reagent/consumable/kvass
 	openable = TRUE
@@ -50,7 +50,7 @@
 	required_drink_type = /datum/reagent/consumable/ethanol/sambuka
 	name = "Glass of Sambuka"
 	desc = "Flying into space, many thought that they had grasped fate."
-	icon = 'modular_bandastation/objects/icons/drinks.dmi'
+	icon = 'modular_bandastation/objects/icons/obj/items/drinks.dmi'
 	icon_state = "sambuka"
 
 /datum/reagent/consumable/ethanol/innocent_erp
@@ -67,7 +67,7 @@
 	required_drink_type = /datum/reagent/consumable/ethanol/innocent_erp
 	name = "Innocent ERP"
 	desc = "Remember that big brother sees everything."
-	icon = 'modular_bandastation/objects/icons/drinks.dmi'
+	icon = 'modular_bandastation/objects/icons/obj/items/drinks.dmi'
 	icon_state = "innocent_erp"
 
 /datum/chemical_reaction/drink/innocent_erp
@@ -97,7 +97,7 @@
 	required_drink_type = /datum/reagent/consumable/ethanol/soundhand
 	name = "Саундхэнд"
 	desc = "Коктейль из нескольких алкогольных напитков с запахом ягод и легким слоем перца на стакане."
-	icon = 'modular_bandastation/objects/icons/drinks.dmi'
+	icon = 'modular_bandastation/objects/icons/obj/items/drinks.dmi'
 	icon_state = "soundhand"
 
 /datum/chemical_reaction/drink/soundhand
@@ -121,7 +121,7 @@
 	required_drink_type = /datum/reagent/consumable/ethanol/jagermeister
 	name = "Стакан Егермейстра"
 	desc = "Пьяный охотник прилетел из глубокого космоса и, похоже, нашел жертву."
-	icon = 'modular_bandastation/objects/icons/drinks.dmi'
+	icon = 'modular_bandastation/objects/icons/obj/items/drinks.dmi'
 	icon_state = "jagermeister"
 
 /datum/reagent/consumable/ethanol/bluecuracao
@@ -136,7 +136,7 @@
 	required_drink_type = /datum/reagent/consumable/ethanol/bluecuracao
 	name = "Стакан Блю Кюрасао"
 	desc = "Предохранитель готов, синева уже загорелась."
-	icon = 'modular_bandastation/objects/icons/drinks.dmi'
+	icon = 'modular_bandastation/objects/icons/obj/items/drinks.dmi'
 	icon_state = "bluecuracao"
 
 /datum/reagent/consumable/ethanol/black_blood
@@ -158,7 +158,7 @@
 	required_drink_type = /datum/reagent/consumable/ethanol/black_blood
 	name = "Черная Кровь"
 	desc = "Нужно пить быстрее, пока оно не начало сворачиваться."
-	icon = 'modular_bandastation/objects/icons/drinks.dmi'
+	icon = 'modular_bandastation/objects/icons/obj/items/drinks.dmi'
 	icon_state = "black_blood"
 
 /datum/chemical_reaction/drink/black_blood
@@ -184,7 +184,7 @@
 	required_drink_type = /datum/reagent/consumable/ethanol/pegu_club
 	name = "Клуб Пегу"
 	desc = "Это похоже на то, как группа джентльменов колонизирует ваш язык."
-	icon = 'modular_bandastation/objects/icons/drinks.dmi'
+	icon = 'modular_bandastation/objects/icons/obj/items/drinks.dmi'
 	icon_state = "pegu_club"
 
 /datum/chemical_reaction/drink/pegu_club
@@ -209,7 +209,7 @@
 	required_drink_type = /datum/reagent/consumable/ethanol/amnesia
 	name = "Звездная амнезия"
 	desc = "Это просто бутылка медицинского спирта?"
-	icon = 'modular_bandastation/objects/icons/drinks.dmi'
+	icon = 'modular_bandastation/objects/icons/obj/items/drinks.dmi'
 	icon_state = "amnesia"
 
 /datum/chemical_reaction/drink/amnesia
@@ -233,7 +233,7 @@
 	required_drink_type = /datum/reagent/consumable/ethanol/silverhand
 	name = "Silverhand"
 	desc = "Wake the heck up, samurai. We have a station to burn."
-	icon = 'modular_bandastation/objects/icons/drinks.dmi'
+	icon = 'modular_bandastation/objects/icons/obj/items/drinks.dmi'
 	icon_state = "silverhand"
 
 /datum/chemical_reaction/drink/silverhand
@@ -259,7 +259,7 @@
 	required_drink_type = /datum/reagent/consumable/ethanol/oldfashion
 	name = "Old Fashion"
 	desc = "Ходят слухи, что этот коктейль самый старый, но, однако, это совсем другая история."
-	icon = 'modular_bandastation/objects/icons/drinks.dmi'
+	icon = 'modular_bandastation/objects/icons/obj/items/drinks.dmi'
 	icon_state = "oldfashion"
 
 /datum/chemical_reaction/drink/oldfashion
@@ -285,7 +285,7 @@
 	required_drink_type = /datum/reagent/consumable/ethanol/brandy_crusta
 	name = "Брэнди Круста"
 	desc = "Сахарная корочка может оказаться совсем не сладкой."
-	icon = 'modular_bandastation/objects/icons/drinks.dmi'
+	icon = 'modular_bandastation/objects/icons/obj/items/drinks.dmi'
 	icon_state = "brandy_crusta"
 
 /datum/chemical_reaction/drink/brandy_crusta
@@ -310,7 +310,7 @@
 	required_drink_type = /datum/reagent/consumable/ethanol/telegol
 	name = "Телеголь"
 	desc = "Многие до сих пор ломают голову над вопросом об этом коктейле. В любом случае, оно все еще существует... Или нет."
-	icon = 'modular_bandastation/objects/icons/drinks.dmi'
+	icon = 'modular_bandastation/objects/icons/obj/items/drinks.dmi'
 	icon_state = "telegol"
 
 /datum/chemical_reaction/drink/telegol
@@ -339,7 +339,7 @@
 	required_drink_type = /datum/reagent/consumable/ethanol/horse_neck
 	name = "Лошадиная Шея"
 	desc = "Будьте осторожны с вашими подковами."
-	icon = 'modular_bandastation/objects/icons/drinks.dmi'
+	icon = 'modular_bandastation/objects/icons/obj/items/drinks.dmi'
 	icon_state = "horse_neck"
 
 /datum/chemical_reaction/drink/horse_neck
@@ -369,7 +369,7 @@
 	required_drink_type = /datum/reagent/consumable/ethanol/vampiro
 	name = "Вампиро"
 	desc = "Ничего общего с вампирами не имеет, кроме цвета."
-	icon = 'modular_bandastation/objects/icons/drinks.dmi'
+	icon = 'modular_bandastation/objects/icons/obj/items/drinks.dmi'
 	icon_state = "vampiro"
 
 /datum/chemical_reaction/drink/vampiro
@@ -393,7 +393,7 @@
 	required_drink_type = /datum/reagent/consumable/ethanol/inabox
 	name = "Коробка"
 	desc = "Это... Просто коробка?"
-	icon = 'modular_bandastation/objects/icons/drinks.dmi'
+	icon = 'modular_bandastation/objects/icons/obj/items/drinks.dmi'
 	icon_state = "inabox"
 
 /datum/chemical_reaction/drink/inabox
@@ -420,7 +420,7 @@
 	required_drink_type = /datum/reagent/consumable/ethanol/green_fairy
 	name = "Зеленая Фея"
 	desc = "Какой-то ненормальный зеленый цвет."
-	icon = 'modular_bandastation/objects/icons/drinks.dmi'
+	icon = 'modular_bandastation/objects/icons/obj/items/drinks.dmi'
 	icon_state = "green_fairy"
 
 /datum/chemical_reaction/drink/green_fairy
@@ -446,7 +446,7 @@
 	required_drink_type = /datum/reagent/consumable/ethanol/trans_siberian_express
 	name = "Транс-Сибирский Экспресс"
 	desc = "От Владивостока до белой горячки за один день."
-	icon = 'modular_bandastation/objects/icons/drinks.dmi'
+	icon = 'modular_bandastation/objects/icons/obj/items/drinks.dmi'
 	icon_state = "trans_siberian_express"
 
 /datum/chemical_reaction/drink/trans_siberian_express
@@ -482,7 +482,7 @@
 	required_drink_type = /datum/reagent/consumable/ethanol/rainbow_sky
 	name = "Радужное Небо"
 	desc = "Напиток, переливающийся всеми цветами радуги с нотками галактики."
-	icon = 'modular_bandastation/objects/icons/drinks.dmi'
+	icon = 'modular_bandastation/objects/icons/obj/items/drinks.dmi'
 	icon_state = "rainbow_sky"
 
 /datum/chemical_reaction/drink/rainbow_sky
