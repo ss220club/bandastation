@@ -76,7 +76,7 @@
 #define OBJECTIVES_POP_SCALE_PENALTY 35
 
 #define STORYTELLER_BASIC_MULT 10
-#define STORYTELLER_MIN_ANTAG_POPCOUNT 1//20
+#define STORYTELLER_MIN_ANTAG_POPCOUNT 20
 #define STORYTELLER_SEC_ANTAG_MODIFIER 2
 #define STORYTELLER_BASIC_MODIFIER 1
 
@@ -87,7 +87,7 @@
 
 /// Defines for the antag cap to prevent midround injections.
 #define ANTAG_CAP_FLAT 1
-#define ANTAG_CAP_DENOMINATOR 10
+#define ANTAG_CAP_DENOMINATOR 20
 
 ///Below are defines for roundstart point pool. The GAIN ones are multiplied by ready population
 #define ROUNDSTART_MUNDANE_BASE 20
