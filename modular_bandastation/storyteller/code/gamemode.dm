@@ -703,7 +703,7 @@ SUBSYSTEM_DEF(gamemode)
 
 	for(var/datum/round_event_control/antagonist/solo/event as anything in valid_events)
 
-		var/sec_miss_penalty = (full_sec_crew - sec_crew) / current_storyteller.sec_antag_modifier
+		var/sec_miss_penalty = max((full_sec_crew - sec_crew) / current_storyteller.sec_antag_modifier, 0)
 		var/dynamic_cost = 0
 		for(var/datum/dynamic_ruleset/ruleset as anything in dynamic_roundstart_rules)
 			if(ruleset.antag_datum == event.antag_datum)
@@ -997,13 +997,13 @@ SUBSYSTEM_DEF(gamemode)
 				handle_pre_setup_occupations()
 				recalculate_ready_pop()
 				recalculate_roundstart_costs(EVENT_TRACK_ROLESET)
-				var/sec_miss_penalty = full_sec_crew - sec_crew
+				var/sec_miss_penalty = full_sec_crew - sec_crew / current_storyteller.sec_antag_modifier
 
 				dat += "<BR><b>Storyteller Roundstart Values:</b>"
 
 				dat += "<BR>Sec info: Full sec crew = [full_sec_crew], Players with High Sec = [sec_crew]"
 				dat += "<BR><font color='#888888'><i>Отображает максимальное количество ролей с пометкой СБ, у скольких игроков эти должности в высоком приоритете и сколько нехватка.</i></font>"
-				dat += "<BR>Multiplier info: Sec Miss Penalty = (full_sec_crew([full_sec_crew]) - sec_crew([sec_crew])) / current_storyteller.sec_antag_modifier([current_storyteller.sec_antag_modifier]) = [sec_miss_penalty]"
+				dat += "<BR>Multiplier info: Sec Miss Penalty = (full_sec_crew([full_sec_crew]) - sec_crew([sec_crew])) / current_storyteller.sec_antag_modifier([current_storyteller.sec_antag_modifier]) = [max(sec_miss_penalty, 0)]"
 				dat += "<BR><font color='#888888'><i>Отображает штраф вызванный нехваткой СБ.</i></font>"
 				dat += "<BR>Roundstart info: Roundstart budget = ready_players([ready_players]) + (sec_crew([sec_crew]) * current_storyteller.sec_antag_modifier([current_storyteller.sec_antag_modifier])) = [roundstart_budget]"
 				dat += "<BR><font color='#888888'><i>Раундстартовый бюджет для событий, расчитанный с помощью формулы выше.</i></font>"
