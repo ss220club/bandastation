@@ -654,9 +654,11 @@ SUBSYSTEM_DEF(gamemode)
 		message_admins("Not enough ready players to run roundstart events.")
 		return
 
+	roundstart_budget = roundstart_budget_set ? roundstart_budget_set : pop_count
 	message_admins("Storyteller begin to get roundstart events with budget [roundstart_budget].")
 	while(length(valid_events))
 		recalculate_ready_pop()
+		recalculate_roundstart_costs(track)
 		pop_count = ready_players + (sec_crew * current_storyteller.sec_antag_modifier)
 		roundstart_budget = roundstart_budget_set ? roundstart_budget_set : pop_count
 		for(var/datum/round_event_control/triggered_event as anything in triggered_events)
@@ -697,13 +699,18 @@ SUBSYSTEM_DEF(gamemode)
 	if(!length(valid_events))
 		return
 
-	for(var/datum/round_event_control/event as anything in valid_events)
-		var/sec_miss_crew = full_sec_crew - sec_crew
-		var/avg_power = full_sec_crew / current_storyteller.sec_antag_modifier
-		var/sec_miss_penalty = max((sec_miss_crew / avg_power), 1)
-		var/modified_cost = current_storyteller.antag_denominator - event.weight
-		var/basic_cost = ready_players / get_antag_cap() * sec_miss_penalty * current_storyteller.storyteller_basic_modifier
-		event.roundstart_cost = basic_cost + modified_cost
+	var/list/dynamic_roundstart_rules = SSdynamic.init_rulesets(/datum/dynamic_ruleset/roundstart)
+
+	for(var/datum/round_event_control/antagonist/solo/event as anything in valid_events)
+
+		var/sec_miss_penalty = (full_sec_crew - sec_crew) / current_storyteller.sec_antag_modifier
+		var/dynamic_cost = 0
+		for(var/datum/dynamic_ruleset/ruleset as anything in dynamic_roundstart_rules)
+			if(ruleset.antag_datum == event.antag_datum)
+				dynamic_cost = ruleset.cost
+				break
+		var/new_cost = dynamic_cost * sec_miss_penalty
+		event.roundstart_cost = event.roundstart_cost ? event.roundstart_cost : new_cost
 
 	return valid_events
 
@@ -990,19 +997,14 @@ SUBSYSTEM_DEF(gamemode)
 				handle_pre_setup_occupations()
 				recalculate_ready_pop()
 				recalculate_roundstart_costs(EVENT_TRACK_ROLESET)
-				var/avg_power = full_sec_crew / current_storyteller.sec_antag_modifier
-				var/sec_miss_crew = full_sec_crew - sec_crew
-				var/sec_miss_penalty = max((sec_miss_crew / avg_power), 1)
+				var/sec_miss_penalty = full_sec_crew - sec_crew
 
 				dat += "<BR><b>Storyteller Roundstart Values:</b>"
-				dat += "<BR>Sec info: Full sec crew = [full_sec_crew], Players with High Sec = [sec_crew], sec_miss_crew = [sec_miss_crew]"
+
+				dat += "<BR>Sec info: Full sec crew = [full_sec_crew], Players with High Sec = [sec_crew]"
 				dat += "<BR><font color='#888888'><i>Отображает максимальное количество ролей с пометкой СБ, у скольких игроков эти должности в высоком приоритете и сколько нехватка.</i></font>"
-				dat += "<BR>Multiplier info: Average power = full_sec_crew ([full_sec_crew]) / current_storyteller.sec_antag_modifier ([current_storyteller.sec_antag_modifier]) = [avg_power]"
-				dat += "<BR><font color='#888888'><i>Отображает среденее значение для СБ зависящее от сторителлера.</i></font>"
-				dat += "<BR>Multiplier info: Sec Miss Penalty = max(sec_miss_crew([sec_miss_crew]) / avg_power([avg_power]), 1) = [sec_miss_penalty]"
+				dat += "<BR>Multiplier info: Sec Miss Penalty = (full_sec_crew([full_sec_crew]) - sec_crew([sec_crew])) / current_storyteller.sec_antag_modifier([current_storyteller.sec_antag_modifier]) = [sec_miss_penalty]"
 				dat += "<BR><font color='#888888'><i>Отображает штраф вызванный нехваткой СБ.</i></font>"
-				dat += "<BR>Basic cost info: Basic cost = ready_players([ready_players])  / get_antag_cap([get_antag_cap()]) * sec_miss_penalty([sec_miss_penalty]) * current_storyteller.storyteller_basic_modifier(<a href='byond://?src=[REF(src)];panel=main;action=vars;var=vars_storyteller_basic_modifier;'>[current_storyteller.storyteller_basic_modifier]</a>) = [get_antag_cap() ? ready_players / get_antag_cap() * sec_miss_penalty * current_storyteller.storyteller_basic_modifier : "No ready players"]"
-				dat += "<BR><font color='#888888'><i>Отображает базовое значение цен антагов в связи с переменными выше.</i></font>"
 				dat += "<BR>Roundstart info: Roundstart budget = ready_players([ready_players]) + (sec_crew([sec_crew]) * current_storyteller.sec_antag_modifier([current_storyteller.sec_antag_modifier])) = [roundstart_budget]"
 				dat += "<BR><font color='#888888'><i>Раундстартовый бюджет для событий, расчитанный с помощью формулы выше.</i></font>"
 				dat += "<BR>Roundstart info: Forced Roundstart budget = <a href='byond://?src=[REF(src)];panel=main;action=vars;var=vars_roundstart_budget;'>[roundstart_budget_set]</a>"
