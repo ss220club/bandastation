@@ -997,7 +997,7 @@ SUBSYSTEM_DEF(gamemode)
 				handle_pre_setup_occupations()
 				recalculate_ready_pop()
 				recalculate_roundstart_costs(EVENT_TRACK_ROLESET)
-				var/sec_miss_penalty = full_sec_crew - sec_crew / current_storyteller.sec_antag_modifier
+				var/sec_miss_penalty = (full_sec_crew - sec_crew) / current_storyteller.sec_antag_modifier
 
 				dat += "<BR><b>Storyteller Roundstart Values:</b>"
 
