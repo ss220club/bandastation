@@ -660,23 +660,26 @@ SUBSYSTEM_DEF(gamemode)
 		recalculate_ready_pop()
 		recalculate_roundstart_costs(track)
 		pop_count = ready_players + (sec_crew * current_storyteller.sec_antag_modifier)
-		roundstart_budget = roundstart_budget_set ? roundstart_budget_set : pop_count
-		for(var/datum/round_event_control/triggered_event as anything in triggered_events)
-			roundstart_budget -= triggered_event.roundstart_cost
 
 		var/datum/round_event_control/picked_event = pick_weight(valid_events)
-		if(picked_event.can_spawn_event(ready_players) && roundstart_budget >= picked_event.roundstart_cost)
-			message_admins("Storyteller purchased and triggered [picked_event] event for [picked_event.roundstart_cost]. Left balance: [roundstart_budget - picked_event.roundstart_cost].")
-			TriggerEvent(picked_event, forced = FALSE)
-			// Если первое событие эксклюзивное, то отчищаем список
-			if(picked_event.exclusive_roundstart_event)
-				valid_events = list()
-			else
-			// Если первое событие не-эксклюзивное, то удаляем из списка все эксклюзивные
-				for(var/datum/round_event_control/event as anything in valid_events)
-					if(event.exclusive_roundstart_event)
-						valid_events -= event
+		if(picked_event.can_spawn_event(ready_players))
+			roundstart_budget = roundstart_budget_set ? roundstart_budget_set : pop_count
+			for(var/datum/round_event_control/triggered_event as anything in triggered_events)
+				roundstart_budget -= triggered_event.roundstart_cost
+			if((roundstart_budget >= picked_event.roundstart_cost))
+				message_admins("Storyteller purchased and triggered [picked_event] event for [picked_event.roundstart_cost]. Left balance: [roundstart_budget - picked_event.roundstart_cost].")
 				triggered_events += picked_event
+				TriggerEvent(picked_event, forced = FALSE)
+				// Если первое событие эксклюзивное, то отчищаем список
+				if(picked_event.exclusive_roundstart_event)
+					valid_events = list()
+				else
+				// Если первое событие не-эксклюзивное, то удаляем из списка все эксклюзивные
+					for(var/datum/round_event_control/event as anything in valid_events)
+						if(event.exclusive_roundstart_event)
+							valid_events -= event
+			else
+				valid_events -= picked_event
 		else
 			valid_events -= picked_event
 
@@ -1195,7 +1198,7 @@ SUBSYSTEM_DEF(gamemode)
 		if(assoc_spawn_weight[event])
 			var/percent = round((event.calculated_weight / total_weight) * 100)
 			weight_string = "[percent]% - [weight_string]"
-		dat += "<td>[SSticker.HasRoundStarted() && event.roundstart_cost ? weight_string : event.roundstart_cost]</td>" //Weight
+		dat += "<td>[!SSticker.HasRoundStarted() && event.roundstart_cost ? weight_string : event.roundstart_cost]</td>" //Weight
 		dat += "<td>[event.get_href_actions()]</td>" //Actions
 		dat += "</tr>"
 	dat += "</table>"
