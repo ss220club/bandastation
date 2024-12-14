@@ -43,16 +43,32 @@
 		winset(viewer, "title_browser", "is-disabled=true;is-visible=false")
 		winset(viewer, "status_bar", "is-visible=true;focus=true")
 
+/datum/title_screen/proc/create_main_button(user, href, text, advanced_classes)
+	return {"
+		<a class="lobby_element lobby-[href]" href='byond://?src=[REF(user)];[href]=1'>
+			<span class="lobby-text [advanced_classes]">[text]</span>
+			<img class="pixelated" src="[SSassets.transport.get_asset_url(asset_name = "lobby_[href].png")]">
+		</a>
+	"}
+
+/datum/title_screen/proc/create_icon_button(user, href, enabled = TRUE)
+	return {"
+		<a class="lobby_button lobby_element lobby-[href] [!enabled ? "disabled" : ""]" href='byond://?src=[REF(user)];[enabled ? href : ""]=1'>
+			<div class="toggle">
+				<img class="pixelated indicator [!enabled ? "disabled" : ""]" src="[SSassets.transport.get_asset_url(asset_name = "lobby_[enabled ? "highlight" : "disabled"].png")]">
+			</div>
+			<img class="pixelated" src="[SSassets.transport.get_asset_url(asset_name = "lobby_[href].png")]">
+		</a>
+	"}
+
 /**
  * Get the HTML of title screen.
  */
 /datum/title_screen/proc/get_title_html(client/viewer, mob/user)
 	var/list/html = list(title_html)
 	var/mob/dead/new_player/player = user
-
-	html += {"<input type="checkbox" id="hide_menu">"}
-
 	var/screen_image_url = SSassets.transport.get_asset_url(asset_cache_item = screen_image)
+
 	if(screen_image_url)
 		html += {"<img class="bg" src="[screen_image_url]">"}
 
@@ -63,94 +79,28 @@
 		</div>
 	"}
 
+	html += {"<input type="checkbox" id="hide_menu">"}
 	html += {"
 		<div class="lobby_container">
 			<img class="lobby_background pixelated" src="[SSassets.transport.get_asset_url(asset_name = "lobby_background.png")]">
 	"}
 
 	if(!SSticker || SSticker.current_state <= GAME_STATE_PREGAME)
-		html += {"
-			<a class="lobby_element lobby-ready" href='byond://?src=[REF(player)];toggle_ready=1'>
-				<img class="pixelated" src="[SSassets.transport.get_asset_url(asset_name = "lobby_ready.png")]">
-				<span id="ready" class="lobby-text [player.ready == PLAYER_READY_TO_PLAY ? "good" : "bad"]">ГОТОВ</span>
-			</a>
-		"}
+		html += create_main_button(player, "toggle_ready", "ГОТОВ", player.ready == PLAYER_READY_TO_PLAY ? "good" : "bad")
 	else
-		html += {"
-			<a class="lobby_element lobby-join" href='byond://?src=[REF(player)];late_join=1'>
-				<img class="pixelated" src="[SSassets.transport.get_asset_url(asset_name = "lobby_join.png")]">
-				<span class="lobby-text">ИГРАТЬ</span>
-			</a>
-		"}
+		html += create_main_button(player, "late_join", "ИГРАТЬ")
 
-	html += {"
-		<a class="lobby_element lobby-observe" href='byond://?src=[REF(player)];observe=1'>
-			<img class="pixelated" src="[SSassets.transport.get_asset_url(asset_name = "lobby_observe.png")]">
-			<span class="lobby-text">СЛЕДИТЬ</span>
-		</a>
-	"}
+	html += create_main_button(player, "observe", "СЛЕДИТЬ")
+	html += create_main_button(player, "character_setup", "НАСТРОЙКА ПЕРСОНАЖА")
 
-	html += {"
-		<a class="lobby_element lobby-character-setup" href='byond://?src=[REF(player)];character_setup=1'>
-			<img class="pixelated" src="[SSassets.transport.get_asset_url(asset_name = "lobby_character-setup.png")]">
-			<span class="lobby-text">НАСТРОЙКА ПЕРСОНАЖА</span>
-		</a>
-	"}
-
-	html += {"
-		<a class="lobby_button lobby_element lobby-changelog" href='byond://?src=[REF(player)];changelog=1'>
-			<img class="pixelated" src="[SSassets.transport.get_asset_url(asset_name = "lobby_changelog.png")]">
-			<div class="toggle">
-				<img class="indicator pixelated" src="[SSassets.transport.get_asset_url(asset_name = "lobby_highlight.png")]">
-			</div>
-		</a>
-	"}
-
-	html += {"
-		<a class="lobby_button lobby_element lobby-settings" href='byond://?src=[REF(player)];game_options=1'>
-			<img class="pixelated" src="[SSassets.transport.get_asset_url(asset_name = "lobby_settings.png")]">
-			<div class="toggle">
-				<img class="indicator pixelated" src="[SSassets.transport.get_asset_url(asset_name = "lobby_highlight.png")]">
-			</div>
-		</a>
-	"}
-
-	html += {"
-		<a class="lobby_button lobby_element lobby-manifest" href='byond://?src=[REF(player)];view_manifest=1'>
-			<img class="pixelated" src="[SSassets.transport.get_asset_url(asset_name = "lobby_manifest.png")]">
-			<div class="toggle">
-				<img class="indicator pixelated" src="[SSassets.transport.get_asset_url(asset_name = "lobby_highlight.png")]">
-			</div>
-		</a>
-	"}
-
-	html += {"
-		<a class="lobby_button lobby_element lobby-polls" href='byond://?src=[REF(player)];polls=1'>
-			<img class="pixelated" src="[SSassets.transport.get_asset_url(asset_name = "lobby_poll.png")]">
-			<div class="toggle">
-				<img class="indicator pixelated" src="[SSassets.transport.get_asset_url(asset_name = "lobby_highlight.png")]">
-			</div>
-		</a>
-	"}
+	html += create_icon_button(player, "changelog")
+	html += create_icon_button(player, "settings")
+	html += create_icon_button(player, "manifest")
+	html += create_icon_button(player, "polls", player.check_polls())
 
 	if(check_rights_for(viewer, R_FUN))
-		html += {"
-			<a class="lobby_button lobby_element lobby-picture" href='byond://?src=[REF(player)];change_picture=1'>
-				<img class="pixelated" src="[SSassets.transport.get_asset_url(asset_name = "lobby_picture.png")]">
-				<div class="toggle">
-					<img class="indicator pixelated" src="[SSassets.transport.get_asset_url(asset_name = "lobby_highlight.png")]">
-				</div>
-			</a>
-		"}
-
-		html += {"
-			<a class="lobby_button lobby_element lobby-notice" href='byond://?src=[REF(player)];leave_notice=1'>
-				<img class="pixelated" src="[SSassets.transport.get_asset_url(asset_name = "lobby_notice.png")]">
-				<div class="toggle">
-					<img class="indicator pixelated" src="[SSassets.transport.get_asset_url(asset_name = "lobby_highlight.png")]">
-				</div>
-			</a>
-		"}
+		html += create_icon_button(player, "picture")
+		html += create_icon_button(player, "notice")
 
 	html += {"
 		<label class="lobby_element lobby-collapse" for="hide_menu">

@@ -113,60 +113,61 @@
 			.lobby_element span {
 				left: -158px;
 				width: 160px;
+				z-index: 1;
 			}
 
-			.lobby-ready {
-				bottom: 120px;
+			.lobby-toggle_ready {
+				top: 8px;
 			}
 
-			.lobby-ready img {
+			.lobby-toggle_ready img {
 				left: -160px;
 			}
 
-			.lobby-ready .lobby-text {
+			.lobby-toggle_ready .lobby-text {
 				transform: translateY(5.5px);
 			}
 
-			.lobby-ready .lobby-text.bad::before,
-			.lobby-ready .lobby-text.bad::after {
+			.lobby-toggle_ready .lobby-text.bad::before,
+			.lobby-toggle_ready .lobby-text.bad::after {
 				content: 'X';
 				display: inline-block;
 				position: absolute;
 			}
 
-			.lobby-ready .lobby-text.good::before,
-			.lobby-ready .lobby-text.bad::before  {
+			.lobby-toggle_ready .lobby-text.good::before,
+			.lobby-toggle_ready .lobby-text.bad::before  {
 				left: 28.5px;
 
 			}
 
-			.lobby-ready .lobby-text.good::after,
-			.lobby-ready .lobby-text.bad::after {
+			.lobby-toggle_ready .lobby-text.good::after,
+			.lobby-toggle_ready .lobby-text.bad::after {
 				right: 28.5px;
 
 			}
 
-			.lobby-ready .lobby-text.good::before,
-			.lobby-ready .lobby-text.good::after {
+			.lobby-toggle_ready .lobby-text.good::before,
+			.lobby-toggle_ready .lobby-text.good::after {
 				content: '✓';
 				display: inline-block;
 				position: absolute;
 			}
 
-			.lobby-join {
-				bottom: 115px;
+			.lobby-late_join {
+				top: 13px;
 			}
 
-			.lobby-join img {
+			.lobby-late_join img {
 				left: -152.5px;
 			}
 
 			.lobby-observe {
-				bottom: 85px;
+				top: 43px;
 			}
 
-			.lobby-character-setup {
-				bottom: 58px;
+			.lobby-character_setup {
+				top: 70px;
 			}
 
 			.lobby-text {
@@ -175,7 +176,8 @@
 				font-size: 11px;
 				line-height: 1.33em;
 				letter-spacing: 5.75px;
-				transform: translateY(2px);
+				transform: translateY(2.5px);
+				transition: color 0.2s, text-shadow 0.2s;
 			}
 
 			.lobby_element:hover .lobby-text {
@@ -186,6 +188,10 @@
 			.lobby_button img,
 			.lobby_button .toggle {
 				top: 122.5px;
+			}
+
+			.lobby_button.disabled {
+				pointer-events: none;
 			}
 
 			.lobby_button .toggle {
@@ -199,6 +205,12 @@
 				opacity: 0;
 				transform: scaleX(0.25);
 				transition: transform 0.2s, opacity 0.2s;
+				z-index: 1;
+			}
+
+			.indicator.disabled {
+				opacity: 1 !important;
+				transform: scaleX(1) !important;
 			}
 
 			.lobby_button:hover .toggle .indicator {
