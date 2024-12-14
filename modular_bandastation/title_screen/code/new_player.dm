@@ -6,11 +6,8 @@
 	if(src != usr)
 		return
 
-	if(!client)
+	if(!usr.client || usr.client.interviewee)
 		return
-
-	if(client.interviewee)
-		return FALSE
 
 	if(href_list["toggle_ready"])
 		ready = !ready
@@ -29,6 +26,9 @@
 		ViewManifest()
 		return
 
+	else if(href_list["polls"])
+		handle_player_polling()
+
 	else if(href_list["character_setup"])
 		var/datum/preferences/preferences = client.prefs
 		preferences.current_window = PREFERENCE_TAB_CHARACTER_PREFERENCES
@@ -42,6 +42,9 @@
 		preferences.update_static_data(usr)
 		preferences.ui_interact(usr)
 		return
+
+	else if(href_list["changelog"])
+		usr.client?.changelog()
 
 	else if(href_list["late_join"])
 		GLOB.latejoin_menu.ui_interact(usr)

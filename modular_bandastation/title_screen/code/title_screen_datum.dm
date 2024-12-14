@@ -98,6 +98,61 @@
 	"}
 
 	html += {"
+		<a class="lobby_button lobby_element lobby-changelog" href='byond://?src=[REF(player)];changelog=1'>
+			<img class="pixelated" src="[SSassets.transport.get_asset_url(asset_name = "lobby_changelog.png")]">
+			<div class="toggle">
+				<img class="indicator pixelated" src="[SSassets.transport.get_asset_url(asset_name = "lobby_highlight.png")]">
+			</div>
+		</a>
+	"}
+
+	html += {"
+		<a class="lobby_button lobby_element lobby-settings" href='byond://?src=[REF(player)];game_options=1'>
+			<img class="pixelated" src="[SSassets.transport.get_asset_url(asset_name = "lobby_settings.png")]">
+			<div class="toggle">
+				<img class="indicator pixelated" src="[SSassets.transport.get_asset_url(asset_name = "lobby_highlight.png")]">
+			</div>
+		</a>
+	"}
+
+	html += {"
+		<a class="lobby_button lobby_element lobby-manifest" href='byond://?src=[REF(player)];view_manifest=1'>
+			<img class="pixelated" src="[SSassets.transport.get_asset_url(asset_name = "lobby_manifest.png")]">
+			<div class="toggle">
+				<img class="indicator pixelated" src="[SSassets.transport.get_asset_url(asset_name = "lobby_highlight.png")]">
+			</div>
+		</a>
+	"}
+
+	html += {"
+		<a class="lobby_button lobby_element lobby-polls" href='byond://?src=[REF(player)];polls=1'>
+			<img class="pixelated" src="[SSassets.transport.get_asset_url(asset_name = "lobby_poll.png")]">
+			<div class="toggle">
+				<img class="indicator pixelated" src="[SSassets.transport.get_asset_url(asset_name = "lobby_highlight.png")]">
+			</div>
+		</a>
+	"}
+
+	if(check_rights_for(viewer, R_FUN))
+		html += {"
+			<a class="lobby_button lobby_element lobby-picture" href='byond://?src=[REF(player)];change_picture=1'>
+				<img class="pixelated" src="[SSassets.transport.get_asset_url(asset_name = "lobby_picture.png")]">
+				<div class="toggle">
+					<img class="indicator pixelated" src="[SSassets.transport.get_asset_url(asset_name = "lobby_highlight.png")]">
+				</div>
+			</a>
+		"}
+
+		html += {"
+			<a class="lobby_button lobby_element lobby-notice" href='byond://?src=[REF(player)];leave_notice=1'>
+				<img class="pixelated" src="[SSassets.transport.get_asset_url(asset_name = "lobby_notice.png")]">
+				<div class="toggle">
+					<img class="indicator pixelated" src="[SSassets.transport.get_asset_url(asset_name = "lobby_highlight.png")]">
+				</div>
+			</a>
+		"}
+
+	html += {"
 		<label class="lobby_element lobby-collapse" for="hide_menu">
 			<img class="pixelated" src="[SSassets.transport.get_asset_url(asset_name = "lobby_collapse.png")]">
 			<div class="toggle"></div>
