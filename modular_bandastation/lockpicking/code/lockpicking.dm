@@ -20,7 +20,6 @@
 
 // MARK: Closets
 /obj/structure/closet/secure_closet/crowbar_act(mob/living/user, obj/item/I)
-	. = ..()
 	if(locked && lockpicking_stage == null) // Stage one
 		to_chat(user, span_notice("Вы начинаете выламывать панель доступа [declent_ru(GENITIVE)]..."))
 		if(I.use_tool(src, user, 16 SECONDS, volume = 50))
@@ -37,7 +36,6 @@
 		return TRUE
 
 /obj/structure/closet/secure_closet/wirecutter_act(mob/living/user, obj/item/I)
-	. = ..()
 	if(locked && lockpicking_stage == PANEL_BROKEN) // Stage two
 		to_chat(user, span_notice("Вы начинаете подготавливать провода панели [declent_ru(GENITIVE)]..."))
 		if(I.use_tool(src, user, 16 SECONDS, volume = 50))
@@ -51,7 +49,6 @@
 		return TRUE
 
 /obj/structure/closet/secure_closet/multitool_act(mob/living/user, obj/item/I)
-	. = ..()
 	if(locked && lockpicking_stage == WIRES_DISCONNECTED) // Stage three
 		to_chat(user, span_notice("Вы начинаете подключать провода панели [declent_ru(GENITIVE)] к [I.declent_ru(DATIVE)]..."))
 		if(I.use_tool(src, user, 16 SECONDS, volume = 50))
@@ -67,7 +64,6 @@
 
 // MARK: Crates
 /obj/structure/closet/crate/secure/crowbar_act(mob/living/user, obj/item/I)
-	. = ..()
 	if(locked && lockpicking_stage == null) // Stage one
 		to_chat(user, span_notice("Вы начинаете выламывать панель доступа [declent_ru(GENITIVE)]..."))
 		if(I.use_tool(src, user, 16 SECONDS, volume = 50))
@@ -84,7 +80,6 @@
 		return TRUE
 
 /obj/structure/closet/crate/secure/wirecutter_act(mob/living/user, obj/item/I)
-	. = ..()
 	if(locked && lockpicking_stage == PANEL_BROKEN) // Stage two
 		to_chat(user, span_notice("Вы начинаете подготавливать провода панели [declent_ru(GENITIVE)]..."))
 		if(I.use_tool(src, user, 16 SECONDS, volume = 50))
@@ -98,7 +93,6 @@
 		return TRUE
 
 /obj/structure/closet/crate/secure/multitool_act(mob/living/user, obj/item/I)
-	. = ..()
 	if(locked && lockpicking_stage == WIRES_DISCONNECTED) // Stage three
 		to_chat(user, span_notice("Вы начинаете подключать провода панели [declent_ru(GENITIVE)] к [I.declent_ru(DATIVE)]..."))
 		if(I.use_tool(src, user, 16 SECONDS, volume = 50))
