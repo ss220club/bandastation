@@ -27,7 +27,6 @@
 			if(prob(95)) // EZ
 				broken = TRUE
 				lockpicking_stage = PANEL_BROKEN
-				update_icon()
 				to_chat(user, span_notice("Вы успешно выломали панель с [declent_ru(GENITIVE)]!"))
 			else // Bad day
 				var/mob/living/carbon/human/H = user
@@ -75,7 +74,6 @@
 			if(prob(95)) // EZ
 				broken = TRUE
 				lockpicking_stage = PANEL_BROKEN
-				update_icon()
 				to_chat(user, span_notice("Вы успешно выломали панель с [declent_ru(GENITIVE)]!"))
 			else // Bad day
 				var/mob/living/carbon/human/H = user
