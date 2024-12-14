@@ -63,69 +63,62 @@
 		</div>
 	"}
 
-	html += {"<div class="container_menu">"}
 	html += {"
-		<div class="container_logo">
-			<div class="logo_and_preview">
-				<img class="logo" src="[SSassets.transport.get_asset_url(asset_name = "logo.png")]">
-			</div>
-			<div class="character_info">
-				<span class="character">На смену прибывает...</span>
-				<span class="character" id="character_slot">[uppertext(viewer.prefs.read_preference(/datum/preference/name/real_name))]</span>
-			</div>
-		</div>
+		<div class="lobby_container">
+			<img class="lobby_background pixelated" src="[SSassets.transport.get_asset_url(asset_name = "lobby_background.png")]">
 	"}
-	html += {"<div class="container_buttons">"}
 
 	if(!SSticker || SSticker.current_state <= GAME_STATE_PREGAME)
-		html += {"<a class="menu_button [player.ready == PLAYER_READY_TO_PLAY ? "good" : "bad"]" id="ready" href='byond://?src=[REF(player)];toggle_ready=1'>[player.ready == PLAYER_READY_TO_PLAY ? "Готов" : "Не готов"]</a>"}
+		html += {"
+			<a class="lobby_element lobby-ready" href='byond://?src=[REF(player)];toggle_ready=1'>
+				<img class="pixelated" src="[SSassets.transport.get_asset_url(asset_name = "lobby_ready.png")]">
+				<span id="ready" class="lobby-text [player.ready == PLAYER_READY_TO_PLAY ? "good" : "bad"]">ГОТОВ</span>
+			</a>
+		"}
 	else
 		html += {"
-			<a class="menu_button" href='byond://?src=[REF(player)];late_join=1'>Присоединиться</a>
-			<a class="menu_button" href='byond://?src=[REF(player)];view_manifest=1'>Список экипажа</a>
-		"}
-
-	html += {"<a class="menu_button" href='byond://?src=[REF(player)];observe=1'>Наблюдать</a>"}
-	html += {"
-		<hr>
-		<a class="menu_button" href='byond://?src=[REF(player)];character_setup=1'>Настройка персонажа</a>
-		<a class="menu_button" href='byond://?src=[REF(player)];game_options=1'>Настройки игры</a>
-		<hr>
-	"}
-
-	if(check_rights_for(viewer, R_FUN))
-		html += {"
-			<a class="menu_button admin" href='byond://?src=[REF(player)];change_picture=1'>Изменить изображение</a>
-			<a class="menu_button admin" href='byond://?src=[REF(player)];leave_notice=1'>Оставить уведомление</a>
-			<hr>
+			<a class="lobby_element lobby-join" href='byond://?src=[REF(player)];late_join=1'>
+				<img class="pixelated" src="[SSassets.transport.get_asset_url(asset_name = "lobby_join.png")]">
+				<span class="lobby-text">ИГРАТЬ</span>
+			</a>
 		"}
 
 	html += {"
-		<div class="container_links">
-			<a class="link_button" href='byond://?src=[REF(player)];wiki=1'><i class="fab fa-wikipedia-w"></i></a>
-			<a class="link_button" href='byond://?src=[REF(player)];discord=1'><i class="fab fa-discord"></i></a>
-			<a class="link_button" title="Чейнджлог" href='byond://?src=[REF(player)];changelog=1'><i class="fas fa-newspaper"></i></a>
-		</div>
+		<a class="lobby_element lobby-observe" href='byond://?src=[REF(player)];observe=1'>
+			<img class="pixelated" src="[SSassets.transport.get_asset_url(asset_name = "lobby_observe.png")]">
+			<span class="lobby-text">СЛЕДИТЬ</span>
+		</a>
 	"}
+
+	html += {"
+		<a class="lobby_element lobby-character-setup" href='byond://?src=[REF(player)];character_setup=1'>
+			<img class="pixelated" src="[SSassets.transport.get_asset_url(asset_name = "lobby_character-setup.png")]">
+			<span class="lobby-text">НАСТРОЙКА ПЕРСОНАЖА</span>
+		</a>
+	"}
+
+	html += {"
+		<label class="lobby_element lobby-collapse" for="hide_menu">
+			<img class="pixelated" src="[SSassets.transport.get_asset_url(asset_name = "lobby_collapse.png")]">
+			<div class="toggle"></div>
+		</a>
+	"}
+
 	html += {"</div>"}
-	html += {"<label class="hide_button" for="hide_menu"><i class="fas fa-angles-left"></i></label>"}
 	html += {"
 		<script language="JavaScript">
 			let ready_int = 0;
 			const readyID = document.getElementById("ready");
-			const ready_marks = \[ "Не готов", "Готов" \];
 			const ready_class = \[ "bad", "good" \];
 			function toggle_ready(setReady) {
 				if(setReady) {
 					ready_int = setReady;
-					readyID.innerHTML = ready_marks\[ready_int\];
 					readyID.classList.add(ready_class\[ready_int\]);
 					readyID.classList.remove(ready_class\[1 - ready_int\]);
 				} else {
 					ready_int++;
-					if(ready_int === ready_marks.length)
+					if(ready_int === ready_class.length)
 						ready_int = 0;
-					readyID.innerHTML = ready_marks\[ready_int\];
 					readyID.classList.add("good");
 					readyID.classList.remove("bad");
 				}

@@ -4,26 +4,15 @@
 		<title>Lobby Screen</title>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<link rel="stylesheet" type="text/css" href="v4shim.css">
-		<link rel="stylesheet" type="text/css" href="font-awesome.css">
 		<style type='text/css'>
 			@font-face {
-				font-family: "Fixedsys";
-				src: url("FixedsysExcelsior3.01Regular.ttf");
-			}
-
-			/* No animations for IE users. Laggy. */
-			* {
-				-ms-transition: none !important;
-			}
-
-			*::before {
-				-ms-transition: none !important;
+				font-family: "Pix Cyrillic";
+				src: url("PixCyrillic.ttf");
 			}
 
 			body,
 			html {
-				font-family: Verdana, Geneva, sans-serif;
+				font-family: Pix Cyrillic;
 				font-size: 15px;
 				overflow: hidden;
 				text-align: center;
@@ -55,16 +44,6 @@
 				border-bottom: 0.15em solid rgba(255, 255, 255, 0.1);
 			}
 
-			i {
-				width: 1em;
-				height: 1em;
-				transition: transform 0.2s;
-			}
-
-			i::before {
-				vertical-align: middle;
-			}
-
 			input {
 				display: none;
 			}
@@ -91,261 +70,144 @@
 				border-top: 1px solid rgba(255, 255, 255, 0.1);
 				transition: left 0.2s, width 0.2s;
 				backdrop-filter: blur(24px);
-				z-index: 1;
-			}
-
-			#hide_menu:checked ~ .container_notice {
-				left: 0;
-				width: 100vw;
-			}
-
-			.menu_notice {
-				margin: 0.75em 0.5em;
-				line-height: 1.75rem;
-				font-size: 1.75rem;
-				font-family: Fixedsys;
-				color: #bd2020;
-			}
-
-			.container_menu {
-				display: flex;
-				flex-direction: column;
-				justify-content: space-between;
-				position: absolute;
-				overflow: hidden;
-				box-sizing: border-box;
-				bottom: 0;
-				left: 0;
-				width: 20em;
-				height: 100vh;
-				background-color: rgba(22, 22, 22, 0.85);
-				border-right: 1px solid rgba(255, 255, 255, 0.1);
-				box-shadow: 0.5em 0 1.25em rgba(0, 0 ,0, 0.5);
-				transition: transform 0.2s, box-shadow 0.2s;
-				backdrop-filter: blur(24px);
-				z-index: 3;
-			}
-
-			#hide_menu:checked ~ .container_menu {
-				transform: translateX(-100%);
-				box-shadow: none;
-			}
-
-			.container_logo {
-				display: flex;
-				flex-direction: column;
-				align-items: center;
-				background-color: #191919;
-			}
-
-			.logo {
-				width: 12.5rem;
-				padding: 1em;
-				transform: scale(0.9);
-			}
-
-			.logo_and_preview {
-				position: relative;
-				width: 100%;
-			}
-
-			.preview {
-				overflow: hidden;
-				position: absolute;
-				right: 0.75em;
-				bottom: -1.5em;
-				width: 64px;
-				height: 64px;
-				background-color: #252525;
-				border: 1px solid rgba(255, 255, 255, 0.1);
-				box-shadow: 0px 0.25em 0.25em 0.1em rgba(0, 0, 0, 0.33);
-				border-radius: 100em;
-				z-index: 1;
-			}
-
-			#preview {
-				-ms-interpolation-mode: nearest-neighbor; /* Remove with 516 */
-				image-rendering: pixelated;
-				width: 64px;
-				height: 64px;
-				transform: translateY(22px) translateX(2px) scale(1.5);
-			}
-
-			.character_info {
-				display: flex;
-				flex-direction: column;
-				box-sizing: border-box;
-				width: 100%;
-				padding: 0.5em 0.75em;
-				background-color: rgba(255,255,255,0.05);
-				border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-				border-top: 1px solid rgba(255, 255, 255, 0.1);
-				box-shadow: 0 0.25em 1.75em rgba(0,0,0,0.75);
-			}
-
-			.character {
-				width: 100%;
-				margin-top: 0.25em;
-				font-weight: bold;
-				font-size: 1.2rem;
-				text-align: right;
-				color: #d4dfec;
-			}
-
-			.character:first-of-type {
-				font-weight: normal;
-				font-size: 1.1rem;
-				text-align: left;
-				margin: 0;
-				color: #898989;
-			}
-
-			.container_buttons {
-				flex: 1;
-				overflow: auto;
-				text-align: left;
-				margin: 0.5em 0.5em 0.5em 0
-			}
-
-			.menu_button {
-				display: block;
-				cursor: pointer;
-				overflow: hidden;
-				position: relative;
-				font-size: 1.35rem;
-				text-decoration: none;
-				box-sizing: border-box;
-				width: 100%;
-				margin-bottom: 0.25em;
-				padding: 0.25em 0.25em 0.25em 0.5em;
-				color: #898989;
-				border: 1px solid transparent;
-				border-radius: 0 0.25em 0.25em 0;
-				transition: color 0.2s, background-color 0.2s, border-color 0.2s;
-				-webkit-user-drag: none;
-			}
-
-			.menu_button::before {
-				content: '';
-				position: absolute;
-				bottom: 50%;
-				left: 0;
-				width: 2px;
-				height: 0;
-				background-color: #d4dfec;
-				transform: translateY(50%);
-				transition: height 0.2s, background-color 0.2s;
-			}
-
-			.menu_button:hover::before {
-				height: 100%;
-			}
-
-			.menu_button:hover,
-			.link_button:hover {
-				background-color: rgba(255, 255, 255, 0.075);
-				color: #d4dfec;
-			}
-
-			.good {
-				color: #1b9638;
-			}
-
-			.good:hover {
-				color: #2fb94f;
-			}
-
-			.good::before {
-				background-color: #2fb94f;
-			}
-
-			.bad {
-				color: #bd2020;
-			}
-
-			.bad:hover {
-				color: #d93f3f;
-			}
-
-			.bad::before {
-				background-color: #d93f3f;
-			}
-
-			.admin:hover {
-				color: #f5b52b;
-			}
-
-			.admin::before {
-				background-color: #f2a918;
-			}
-
-			.container_links {
-				display: flex;
-			}
-
-			.link_button {
-				position: relative;
-				cursor: pointer;
-				width: 100%;
-				font-size: 1.5rem;
-				padding: 0.5em;
-				color: #898989;
-				border-top: 1px solid transparent;
-				transition: color 0.2s, background-color 0.2s;
-				-webkit-user-drag: none;
-			}
-
-			.link_button::before {
-				content: '';
-				position: absolute;
-				left: 50%;
-				bottom: 0;
-				width: 0;
-				height: 2px;
-				background-color: #d4dfec;
-				transform: translateX(-50%);
-				transition: width 0.2s;
-			}
-
-			.link_button:hover::before {
-				width: 100%;
-			}
-
-			.link_button i {
-				width: 2em;
-			}
-
-			.hide_button {
-				cursor: pointer;
-				position: fixed;
-				top: 0;
-				left: 20em;
-				padding: 0.9em;
-				vertical-align: middle;
-				background-color: rgba(22, 22, 22, 0.85);
-				color: #898989;
-				border: 1px solid rgba(255, 255, 255, 0.1);
-				border-width: 0 1px 1px 0;
-				transition: color 0.2s, left 0.2s;
-				backdrop-filter: blur(24px);
 				z-index: 2;
 			}
 
-			.hide_button i {
-				font-size: 1.5rem;
+			.pixelated {
+				-ms-interpolation-mode: nearest-neighbor;
+				image-rendering: pixelated;
 			}
 
-			.hide_button:hover {
-				color: #d4dfec;
-			}
-
-			#hide_menu:checked ~ .hide_button {
+			.lobby_container {
+				position: absolute;
+				top: 0;
+				right: 0;
 				left: 0;
+				transform: scale(2);
+				transform-origin: top;
+				z-index: 2;
 			}
 
-			#hide_menu:checked ~ .hide_button i {
-				transform: rotate(180deg);
+			.lobby_background {
+				position: relative;
+				z-index: 2;
 			}
+
+			.lobby_element {
+				position: absolute;
+				z-index: 3;
+			}
+
+			.lobby_element * {
+				position: absolute;
+			}
+
+			.lobby_element img {
+				left: -148.5px;
+			}
+
+			.lobby_element span {
+				left: -158px;
+				width: 160px;
+			}
+
+			.lobby-ready {
+				bottom: 120px;
+			}
+
+			.lobby-ready img {
+				left: -160px;
+			}
+
+			.lobby-ready .lobby-text {
+				transform: translateY(5.5px);
+			}
+
+			.lobby-ready .lobby-text.bad::before,
+			.lobby-ready .lobby-text.bad::after {
+				content: 'X';
+				display: inline-block;
+				position: absolute;
+			}
+
+			.lobby-ready .lobby-text.good::before,
+			.lobby-ready .lobby-text.bad::before  {
+				left: 28.5px;
+
+			}
+
+			.lobby-ready .lobby-text.good::after,
+			.lobby-ready .lobby-text.bad::after {
+				right: 28.5px;
+
+			}
+
+			.lobby-ready .lobby-text.good::before,
+			.lobby-ready .lobby-text.good::after {
+				content: '✓';
+				display: inline-block;
+				position: absolute;
+			}
+
+			.lobby-join {
+				bottom: 115px;
+			}
+
+			.lobby-join img {
+				left: -152.5px;
+			}
+
+			.lobby-observe {
+				bottom: 85px;
+			}
+
+			.lobby-character-setup {
+				bottom: 58px;
+			}
+
+			.lobby-text {
+				color: hsl(150, 100%, 75%);
+				text-shadow: 0px 0px 3px hsla(185, 100%, 75%, 0.75);
+				font-size: 11px;
+				line-height: 1.33em;
+				letter-spacing: 5.75px;
+				transform: translateY(2px);
+			}
+
+			.lobby_element:hover .lobby-text {
+				color: hsl(50, 100%, 75%);
+				text-shadow: 0px 0px 3px hsla(25, 100%, 75%, 0.75);
+			}
+
+			.lobby-collapse {
+				z-index: 1;
+			}
+
+			.lobby-collapse .toggle {
+				left: -148px;
+				top: 140px;
+				width: 25px;
+				height: 10px;
+			}
+
+			#hide_menu:checked ~ .lobby_container {
+				transform: scale(2) translateY(-100%);
+			}
+
+			.lobby-collapse img {
+				top: 85px;
+			}
+
+			.good {
+				color: hsl(140, 100%, 70%);
+				text-shadow: 0px 0px 3px hsla(130, 100%, 60%, 0.75);
+			}
+
+			.bad {
+				color: hsl(345, 100%, 70%);
+				text-shadow: 0px 0px 3px hsla(0, 100%, 60%, 0.75);
+			}
+
 		</style>
 	</head>
 	<body>
