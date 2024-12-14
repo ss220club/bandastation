@@ -3794,7 +3794,6 @@
 "aYa" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/machinery/door/airlock/mining,
 /obj/effect/mapping_helpers/airlock/autoname,
 /obj/machinery/door/firedoor,
 /obj/effect/turf_decal/tile/brown/opposingcorners,
@@ -16084,6 +16083,7 @@
 /obj/effect/turf_decal/tile/brown/half/contrasted{
 	dir = 8
 	},
+/obj/machinery/light/directional/west,
 /turf/open/floor/iron,
 /area/station/cargo/sorting)
 "eaS" = (
@@ -19744,6 +19744,7 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/tile/brown/anticorner/contrasted,
+/obj/machinery/camera/directional/south,
 /turf/open/floor/iron,
 /area/station/cargo/miningoffice)
 "faF" = (
@@ -22916,7 +22917,6 @@
 	dir = 1;
 	id = "packageSort1"
 	},
-/obj/machinery/light/small/directional/west,
 /turf/open/floor/iron,
 /area/station/cargo/sorting)
 "fOH" = (
@@ -23493,12 +23493,9 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable,
-/obj/machinery/door/airlock/maintenance,
 /obj/effect/mapping_helpers/airlock/autoname,
 /obj/effect/mapping_helpers/airlock/access/all/supply/general,
-/obj/effect/mapping_helpers/airlock/unres{
-	dir = 1
-	},
+/obj/machinery/door/airlock/mining,
 /turf/open/floor/plating,
 /area/station/cargo/storage)
 "fXi" = (
@@ -27406,6 +27403,7 @@
 /obj/effect/turf_decal/stripes/end{
 	dir = 8
 	},
+/obj/structure/extinguisher_cabinet/directional/west,
 /turf/open/floor/iron/dark/textured_large,
 /area/station/cargo/bitrunning/den)
 "hbe" = (
@@ -30633,12 +30631,14 @@
 /area/station/security/office)
 "hTp" = (
 /obj/structure/cable,
-/obj/machinery/door/airlock/maintenance,
 /obj/effect/mapping_helpers/airlock/autoname,
 /obj/effect/mapping_helpers/airlock/access/all/supply/general,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/door/firedoor,
+/obj/machinery/door/airlock/mining/glass{
+	id_tag = "innercargo"
+	},
 /turf/open/floor/plating,
 /area/station/cargo/storage/ghetto)
 "hTq" = (
@@ -33191,6 +33191,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/directional/west,
 /turf/open/floor/iron,
 /area/station/cargo/storage)
 "iCL" = (
@@ -34759,6 +34760,7 @@
 	id = "packageSort1"
 	},
 /obj/effect/landmark/start/hangover,
+/obj/machinery/light/small/directional/west,
 /turf/open/floor/iron,
 /area/station/cargo/sorting)
 "iWp" = (
@@ -39800,15 +39802,11 @@
 /turf/open/floor/iron,
 /area/station/maintenance/aft)
 "knl" = (
-/obj/structure/railing{
-	dir = 1
+/obj/docking_port/stationary/picked/whiteship{
+	dir = 8
 	},
-/obj/effect/turf_decal/tile/brown/half{
-	dir = 1
-	},
-/obj/item/radio/intercom/directional/west,
-/turf/closed/wall,
-/area/station/cargo/miningoffice)
+/turf/open/space/openspace,
+/area/space)
 "knm" = (
 /obj/effect/turf_decal/tile/red,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -46334,11 +46332,8 @@
 /turf/open/floor/iron,
 /area/station/maintenance/department/medical)
 "lTj" = (
-/obj/effect/turf_decal/tile/brown/half/contrasted{
-	dir = 1
-	},
-/turf/closed/wall,
-/area/station/cargo/miningoffice)
+/turf/closed/wall/r_wall,
+/area/station/cargo/storage)
 "lTt" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -48412,6 +48407,7 @@
 /obj/effect/turf_decal/tile/brown/half/contrasted{
 	dir = 1
 	},
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/iron,
 /area/station/cargo/miningoffice)
 "mvN" = (
@@ -50196,7 +50192,6 @@
 	dir = 1
 	},
 /obj/structure/cable,
-/obj/machinery/light/directional/south,
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
 	},
@@ -55344,9 +55339,7 @@
 	cycle_id = "whiteship-dock"
 	},
 /obj/effect/mapping_helpers/airlock/access/all/supply/mining,
-/obj/machinery/door/airlock/external{
-	pixel_x = -3
-	},
+/obj/machinery/door/airlock/external,
 /turf/open/floor/iron,
 /area/station/cargo/miningoffice)
 "olE" = (
@@ -58176,6 +58169,7 @@
 /turf/open/floor/iron,
 /area/station/science/xenobiology)
 "oXI" = (
+/obj/machinery/light_switch/directional/south,
 /turf/open/floor/iron/dark/smooth_large,
 /area/station/cargo/storage)
 "oXO" = (
@@ -62603,10 +62597,12 @@
 /turf/open/floor/iron/grimy,
 /area/station/service/abandoned_gambling_den)
 "qde" = (
-/obj/machinery/door/airlock/maintenance,
 /obj/effect/mapping_helpers/airlock/autoname,
 /obj/effect/mapping_helpers/airlock/access/all/supply/mining,
 /obj/machinery/door/firedoor,
+/obj/machinery/door/airlock/mining/glass{
+	id_tag = "innercargo"
+	},
 /turf/open/floor/plating,
 /area/station/cargo/miningoffice)
 "qdg" = (
@@ -70471,6 +70467,7 @@
 /obj/machinery/camera/directional/north{
 	c_tag = "Cargo - Bay Lower Floor North"
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
 /area/station/cargo/storage/ghetto)
 "sif" = (
@@ -76018,6 +76015,7 @@
 /obj/effect/turf_decal/tile/brown/anticorner/contrasted{
 	dir = 1
 	},
+/obj/machinery/door/airlock/mining,
 /turf/open/floor/iron,
 /area/station/cargo/storage)
 "tGE" = (
@@ -78336,9 +78334,9 @@
 /turf/open/floor/plating,
 /area/station/maintenance/ghetto/central)
 "ujH" = (
-/obj/structure/extinguisher_cabinet/directional/north,
-/turf/closed/wall,
-/area/station/cargo/bitrunning/den)
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/iron,
+/area/station/cargo/storage/ghetto)
 "ujN" = (
 /obj/machinery/door/poddoor/shutters{
 	id = "warehouse_shutters";
@@ -82785,7 +82783,7 @@
 /area/station/science/research)
 "vtu" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/light_switch/directional/south,
+/obj/machinery/light/directional/south,
 /turf/open/floor/iron/dark/textured_large,
 /area/station/cargo/storage)
 "vtw" = (
@@ -88818,7 +88816,6 @@
 	pixel_y = 5
 	},
 /obj/item/storage/toolbox/mechanical,
-/obj/machinery/light/directional/east,
 /obj/effect/turf_decal/tile/brown/half/contrasted{
 	dir = 8
 	},
@@ -93658,6 +93655,9 @@
 /area/station/service/hydroponics)
 "ylH" = (
 /obj/vehicle/sealed/mecha/ripley/cargo,
+/obj/machinery/camera/directional/north{
+	c_tag = "Cargo - Bay Lower Floor North"
+	},
 /turf/open/floor/iron,
 /area/station/cargo/lower)
 "ylI" = (
@@ -111870,7 +111870,7 @@ doz
 jJz
 jJz
 jJz
-ujH
+jJz
 jJz
 doz
 doz
@@ -112890,7 +112890,7 @@ rQU
 rQU
 sid
 bCN
-oBo
+ujH
 oBo
 hvp
 uCb
@@ -113408,7 +113408,7 @@ jCQ
 gvx
 knX
 wEU
-lTj
+hBj
 wXd
 mJd
 uto
@@ -114689,7 +114689,7 @@ rdN
 ybm
 qUy
 rYK
-knl
+dPD
 hZs
 kDY
 tMR
@@ -166858,7 +166858,7 @@ tYD
 tYD
 tYD
 tYD
-tYD
+knl
 tYD
 tYD
 tYD
@@ -176880,7 +176880,7 @@ xPx
 xPx
 xPx
 tLc
-fCJ
+lTj
 iPs
 iPs
 iPs
@@ -177137,7 +177137,7 @@ lHL
 xPx
 bgE
 khR
-xPx
+dMR
 sWW
 htD
 iPs
@@ -177394,7 +177394,7 @@ lHL
 xPx
 bgE
 hZA
-xPx
+dMR
 sWW
 htD
 iPs
@@ -177651,7 +177651,7 @@ tXL
 fEs
 cma
 bpR
-xPx
+dMR
 tOM
 htD
 nAB
@@ -177908,7 +177908,7 @@ weM
 xPx
 xPx
 plG
-xPx
+dMR
 paj
 ckI
 jFh
@@ -179976,7 +179976,7 @@ sLc
 beH
 oXi
 teB
-nrT
+nQa
 nQa
 vOc
 nrT
@@ -183044,7 +183044,7 @@ hPO
 rKf
 teC
 vRY
-ath
+vRY
 ngq
 vRY
 ipT
