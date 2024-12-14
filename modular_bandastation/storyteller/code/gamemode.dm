@@ -315,6 +315,7 @@ SUBSYSTEM_DEF(gamemode)
 		if(job_ban && is_banned_from(candidate.ckey, list(job_ban, ROLE_SYNDICATE)))
 			continue
 		candidates += candidate
+
 	return candidates
 
 /// Gets the correct popcount, returning READY people if roundstart, and active people if not.
@@ -632,8 +633,6 @@ SUBSYSTEM_DEF(gamemode)
 		if(player_role?.departments_bitflags & DEPARTMENT_BITFLAG_SECURITY && !player.mind.special_role)
 			sec_crew++
 
-	roundstart_budget = ready_players + (sec_crew * current_storyteller.sec_antag_modifier)
-
 /datum/controller/subsystem/gamemode/proc/round_start_handle()
 	recalculate_ready_pop()
 
@@ -648,13 +647,12 @@ SUBSYSTEM_DEF(gamemode)
 		event_track_points[track] *= TRACK_FAIL_POINT_PENALTY_MULTIPLIER
 		return
 
-	var/list/triggered_events = list()
 	var/pop_count = ready_players + (sec_crew * current_storyteller.sec_antag_modifier)
 	if(pop_count < current_storyteller.min_antag_popcount)
 		message_admins("Not enough ready players to run roundstart events.")
 		return
 
-	roundstart_budget = roundstart_budget_set ? roundstart_budget_set : pop_count
+	recalculate_roundstart_budget()
 	message_admins("Storyteller begin to get roundstart events with budget [roundstart_budget].")
 	while(length(valid_events))
 		recalculate_ready_pop()
@@ -662,26 +660,26 @@ SUBSYSTEM_DEF(gamemode)
 		pop_count = ready_players + (sec_crew * current_storyteller.sec_antag_modifier)
 
 		var/datum/round_event_control/picked_event = pick_weight(valid_events)
-		if(picked_event.can_spawn_event(ready_players))
-			roundstart_budget = roundstart_budget_set ? roundstart_budget_set : pop_count
-			for(var/datum/round_event_control/triggered_event as anything in triggered_events)
-				roundstart_budget -= triggered_event.roundstart_cost
-			if((roundstart_budget >= picked_event.roundstart_cost))
-				message_admins("Storyteller purchased and triggered [picked_event] event for [picked_event.roundstart_cost]. Left balance: [roundstart_budget - picked_event.roundstart_cost].")
-				triggered_events += picked_event
-				TriggerEvent(picked_event, forced = FALSE)
-				// Если первое событие эксклюзивное, то отчищаем список
-				if(picked_event.exclusive_roundstart_event)
-					valid_events = list()
-				else
-				// Если первое событие не-эксклюзивное, то удаляем из списка все эксклюзивные
-					for(var/datum/round_event_control/event as anything in valid_events)
-						if(event.exclusive_roundstart_event)
-							valid_events -= event
+		if(picked_event.can_spawn_event(ready_players) && (roundstart_budget >= picked_event.roundstart_cost))
+			roundstart_budget -= picked_event.roundstart_cost
+			message_admins("Storyteller purchased and triggered [picked_event] event for [picked_event.roundstart_cost]. Left balance: [roundstart_budget].")
+			TriggerEvent(picked_event, forced = FALSE)
+			// Если первое событие эксклюзивное, то отчищаем список
+			if(picked_event.exclusive_roundstart_event)
+				valid_events = list()
 			else
-				valid_events -= picked_event
+			// Если первое событие не-эксклюзивное, то удаляем из списка все эксклюзивные
+				for(var/datum/round_event_control/event as anything in valid_events)
+					if(event.exclusive_roundstart_event)
+						valid_events -= event
 		else
 			valid_events -= picked_event
+	event_track_points[track] = 0
+	message_admins("Storyteller finished to get roundstart events with points left - [roundstart_budget].")
+
+/datum/controller/subsystem/gamemode/proc/recalculate_roundstart_budget()
+	var/pop_count = ready_players + (sec_crew * current_storyteller.sec_antag_modifier)
+	roundstart_budget = roundstart_budget_set ? roundstart_budget_set : pop_count
 
 /datum/controller/subsystem/gamemode/proc/recalculate_roundstart_costs(track)
 	full_sec_crew = 0
@@ -996,7 +994,7 @@ SUBSYSTEM_DEF(gamemode)
 				handle_pre_setup_occupations()
 				recalculate_ready_pop()
 				recalculate_roundstart_costs(EVENT_TRACK_ROLESET)
-
+				recalculate_roundstart_budget()
 				dat += "<BR><b>Storyteller Roundstart Values:</b>"
 
 				dat += "<BR>Sec info: Full sec crew = [full_sec_crew], Players with High Sec = [sec_crew]"
@@ -1112,10 +1110,16 @@ SUBSYSTEM_DEF(gamemode)
  /// Panel containing information and actions regarding events
 /datum/controller/subsystem/gamemode/proc/event_panel(mob/user)
 	var/list/dat = list()
+	if(!SSticker.HasRoundStarted())
+		handle_pre_setup_occupations()
+		recalculate_ready_pop()
+		recalculate_roundstart_costs(EVENT_TRACK_ROLESET)
+		recalculate_roundstart_budget()
+
 	if(current_storyteller)
 		dat += "Storyteller: [current_storyteller.name]"
 		dat += "<BR>Repetition penalty multiplier: [current_storyteller.event_repetition_multiplier]"
-		dat += "<BR>Cost variance: [current_storyteller.cost_variance][SSticker.HasRoundStarted()? "" : ", roundstart_budget = <a href='byond://?src=[REF(src)];panel=main;action=vars;var=vars_roundstart_budget;'>[roundstart_budget_set ? roundstart_budget_set : roundstart_budget]</a>"]"
+		dat += "<BR>Cost variance: [current_storyteller.cost_variance][SSticker.HasRoundStarted() ? "" : ", roundstart_budget = <a href='byond://?src=[REF(src)];panel=main;action=vars;var=vars_roundstart_budget;'>[roundstart_budget]</a>"]"
 		if(current_storyteller.tag_multipliers)
 			dat += "<BR>Tag multipliers:"
 			for(var/tag in current_storyteller.tag_multipliers)
@@ -1124,9 +1128,6 @@ SUBSYSTEM_DEF(gamemode)
 	else
 		dat += "Storyteller: None<BR>Weight and chance statistics will be inaccurate due to the present lack of a storyteller."
 
-	handle_pre_setup_occupations()
-	recalculate_ready_pop()
-	recalculate_roundstart_costs(EVENT_TRACK_ROLESET)
 	dat += "<BR><a href='byond://?src=[REF(src)];panel=stats;action=set_roundstart'[roundstart_event_view ? "class='linkOn'" : ""]>Roundstart Events</a> Forced Roundstart events will use rolled points, and are guaranteed to trigger (even if the used points are not enough)"
 	dat += "<BR>Avg. event intervals: "
 	for(var/track in event_tracks)

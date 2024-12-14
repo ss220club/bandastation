@@ -198,6 +198,14 @@
 			return TRUE
 
 /datum/round_event_control/antagonist/proc/trim_candidates(list/candidates)
+	if(!roundstart)
+		for(var/mob/candidate in candidates)
+			//Если событие призраков, то проверить. что кандидат - призрак
+			if(ispath(typepath, /datum/round_event/ghost_role) && candidate.stat != DEAD)
+				candidates -= candidate
+			//Если событие живых, то проверить. что кандидат - жив или без сознания (не мертв, не в софт крите и не в хард крите)
+			if(!ispath(typepath, /datum/round_event/ghost_role) && !(candidate.stat == CONSCIOUS || candidate.stat == UNCONSCIOUS))
+				candidates -= candidate
 	return candidates
 
 /datum/round_event_control/antagonist/New()
