@@ -73,7 +73,7 @@ SUBSYSTEM_DEF(events)
  */
 /datum/controller/subsystem/events/proc/spawnEvent(datum/round_event_control/excluded_event)
 	set waitfor = FALSE //for the admin prompt
-	if(!CONFIG_GET(flag/allow_random_events))
+	if(!CONFIG_GET(flag/allow_random_events) || !excluded_event) /// BANDASTATION EDIT START - STORYTELLER - No SSevents spawn except rerolling
 		return
 
 	var/players_amt = get_active_player_count(alive_check = TRUE, afk_check = TRUE, human_check = TRUE)
@@ -97,7 +97,10 @@ SUBSYSTEM_DEF(events)
 
 	var/datum/round_event_control/event_to_run = pick_weight(event_roster)
 	if(event_to_run)
-		TriggerEvent(event_to_run)
+		/// BANDASTATION EDIT START - STORYTELLER
+		/// TriggerEvent(event_to_run)
+		SSgamemode.TriggerEvent(event_to_run, forced = FALSE)
+		/// BANDASTATION EDIT END - STORYTELLER
 
 ///Does the last pre-flight checks for the passed event, and runs it if the event is ready.
 
