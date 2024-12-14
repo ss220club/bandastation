@@ -159,7 +159,7 @@
 			if(4 to INFINITY)
 				bandage_condition = "чиста"
 
-		condition += " underneath a dressing of [bandage_condition] [limb.current_gauze.name]."
+		condition += ", и перевязана [limb.current_gauze.declent_ru(INSTRUMENTAL)]. Повязка [bandage_condition]."
 	else
 		switch(infestation)
 			if(WOUND_INFECTION_MODERATE to WOUND_INFECTION_SEVERE)

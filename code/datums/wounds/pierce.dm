@@ -102,7 +102,7 @@
 	if(blood_flow > WOUND_MAX_BLOODFLOW)
 		blood_flow = WOUND_MAX_BLOODFLOW
 	if(blood_flow <= 0 && !QDELETED(src))
-		to_chat(victim, span_green("The holes on your [limb.plaintext_zone] have [!limb.can_bleed() ? "healed up" : "stopped bleeding"]!"))
+		to_chat(victim, span_green("Отверстия на вашей [limb.ru_plaintext_zone[PREPOSITIONAL] || limb.plaintext_zone] [!limb.can_bleed() ? "закрылись" : "перестали кровоточить"]!"))
 		qdel(src)
 
 /datum/wound/pierce/bleed/check_grab_treatments(obj/item/I, mob/user)
@@ -144,8 +144,8 @@
 
 	playsound(user, 'sound/items/handling/surgery/cautery2.ogg', 75, TRUE)
 
-	var/bleeding_wording = (!limb.can_bleed() ? "holes" : "bleeding")
-	user.visible_message(span_green("[user] cauterizes some of the [bleeding_wording] on [victim]."), span_green("You cauterize some of the [bleeding_wording] on [victim]."))
+	var/bleeding_wording = (!limb.can_bleed() ? "дыр" : "кровотечений")
+	user.visible_message(span_green("[capitalize(user.declent_ru(NOMINATIVE))] прижигает часть [bleeding_wording] на [victim.declent_ru(PREPOSITIONAL)]."), span_green("Вы прижигаете часть [bleeding_wording] на [victim.declent_ru(PREPOSITIONAL)]."))
 	victim.apply_damage(2 + severity, BURN, limb, wound_bonus = CANT_WOUND)
 	if(prob(30))
 		victim.emote("scream")
