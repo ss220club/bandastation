@@ -320,7 +320,7 @@
 		return
 	switch(href_list["action"])
 		if("schedule")
-			var/new_schedule = input(usr, "New schedule time (in seconds):", "Reschedule Event") as num|null
+			var/new_schedule = roundstart ? 0 : input(usr, "New schedule time (in seconds):", "Reschedule Event") as num|null
 			if(isnull(new_schedule) || QDELETED(src))
 				return
 			message_admins("[key_name_admin(usr)] scheduled event [src.name] in [new_schedule] seconds.")

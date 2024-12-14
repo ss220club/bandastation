@@ -654,10 +654,46 @@ SUBSYSTEM_DEF(gamemode)
 
 	recalculate_roundstart_budget()
 	message_admins("Storyteller begin to get roundstart events with budget [roundstart_budget].")
+
+	message_admins("Storyteller purchased and triggered forced event [forced_next_events[track]].")
+	TriggerEvent(forced_next_events[track], forced = TRUE)
+	forced_next_events[track] = 0
+
+	var/list/dynamic_roundstart_rules = SSdynamic.init_rulesets(/datum/dynamic_ruleset/roundstart)
 	while(length(valid_events))
 		recalculate_ready_pop()
 		recalculate_roundstart_costs(track)
 		pop_count = ready_players + (sec_crew * current_storyteller.sec_antag_modifier)
+
+		while(length(scheduled_events))
+			var/list/scheduled_events_roleset = list()
+			for(var/datum/scheduled_event/scheduled_pre_event in scheduled_events)
+				scheduled_events_roleset += scheduled_pre_event.event
+				scheduled_events_roleset[scheduled_pre_event.event] = scheduled_pre_event.event.weight
+
+			var/datum/round_event_control/antagonist/solo/scheduled_event = pick_weight(scheduled_events_roleset)
+			for(var/datum/dynamic_ruleset/ruleset as anything in dynamic_roundstart_rules)
+				if(ruleset.antag_datum == scheduled_event.antag_datum)
+					scheduled_event.roundstart_cost = scheduled_event.roundstart_cost ? scheduled_event.roundstart_cost : ruleset.cost
+					break
+
+			if(scheduled_event.can_spawn_event(ready_players) && (roundstart_budget >= scheduled_event.roundstart_cost))
+				roundstart_budget -= scheduled_event.roundstart_cost
+				message_admins("Storyteller purchased and triggered scheduled event [scheduled_event] for [scheduled_event.roundstart_cost]. Left balance: [roundstart_budget].")
+				TriggerEvent(scheduled_event, forced = FALSE)
+				scheduled_events -= scheduled_event
+				if(scheduled_event.exclusive_roundstart_event)
+					scheduled_event = list()
+					valid_events = list()
+				else
+				// Если первое событие не-эксклюзивное, то удаляем из списка все эксклюзивные
+					for(var/datum/round_event_control/exclude_event as anything in scheduled_events_roleset)
+						if(exclude_event.exclusive_roundstart_event)
+							scheduled_events -= exclude_event
+
+					for(var/datum/round_event_control/exclude_event as anything in valid_events)
+						if(exclude_event.exclusive_roundstart_event)
+							valid_events -= exclude_event
 
 		var/datum/round_event_control/picked_event = pick_weight(valid_events)
 		if(picked_event.can_spawn_event(ready_players) && (roundstart_budget >= picked_event.roundstart_cost))
@@ -669,9 +705,9 @@ SUBSYSTEM_DEF(gamemode)
 				valid_events = list()
 			else
 			// Если первое событие не-эксклюзивное, то удаляем из списка все эксклюзивные
-				for(var/datum/round_event_control/event as anything in valid_events)
-					if(event.exclusive_roundstart_event)
-						valid_events -= event
+				for(var/datum/round_event_control/exclude_event as anything in valid_events)
+					if(exclude_event.exclusive_roundstart_event)
+						valid_events -= exclude_event
 		else
 			valid_events -= picked_event
 	event_track_points[track] = 0
@@ -701,7 +737,6 @@ SUBSYSTEM_DEF(gamemode)
 		return
 
 	var/list/dynamic_roundstart_rules = SSdynamic.init_rulesets(/datum/dynamic_ruleset/roundstart)
-
 	for(var/datum/round_event_control/antagonist/solo/event as anything in valid_events)
 		for(var/datum/dynamic_ruleset/ruleset as anything in dynamic_roundstart_rules)
 			if(ruleset.antag_datum == event.antag_datum)
@@ -1152,7 +1187,7 @@ SUBSYSTEM_DEF(gamemode)
 	dat += "<td width=5%><b>M.Time</b></td>"
 	dat += "<td width=7%><b>Can Occur</b></td>"
 	dat += "<td width=7%><b>Failure Reason</b></td>"
-	dat += "<td width=16%><b>Weight</b></td>"
+	dat += "<td width=16%><b>[!SSticker.HasRoundStarted() ? "Cost/" : ""]Weight</b></td>"
 	dat += "<td width=26%><b>Actions</b></td>"
 	dat += "</tr>"
 	var/even = TRUE
@@ -1199,7 +1234,7 @@ SUBSYSTEM_DEF(gamemode)
 		if(assoc_spawn_weight[event])
 			var/percent = round((event.calculated_weight / total_weight) * 100)
 			weight_string = "[percent]% - [weight_string]"
-		dat += "<td>[!SSticker.HasRoundStarted() && event.roundstart_cost ? weight_string : event.roundstart_cost]</td>" //Weight
+		dat += "<td>[SSticker.HasRoundStarted() && !event.roundstart_cost ? weight_string : event.roundstart_cost]</td>" //Weight
 		dat += "<td>[event.get_href_actions()]</td>" //Actions
 		dat += "</tr>"
 	dat += "</table>"
