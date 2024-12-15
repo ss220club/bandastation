@@ -35,7 +35,7 @@
 	min_players = 35
 	roundstart = TRUE
 	earliest_start = 0 SECONDS
-	weight = 0
+	weight = 4
 	max_occurrences = 3
 	event_icon_state = "nukeops"
 
@@ -50,7 +50,7 @@
 /datum/round_event/antagonist/solo/nuclear_operative/start()
 	var/datum/mind/most_experienced = get_most_experienced(setup_minds, required_role) || setup_minds[1]
 	prepare(most_experienced)
-	var/datum/antagonist/nukeop/leader/leader = most_experienced.add_antag_datum(leader_antag_type)
+	var/datum/antagonist/nukeop/leader/leader = most_experienced.add_antag_datum(leader_antag_type, nuke_team)
 	nuke_team = leader.nuke_team
 	for(var/datum/mind/antag_mind as anything in setup_minds - most_experienced)
 		prepare(antag_mind)

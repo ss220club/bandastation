@@ -1403,6 +1403,9 @@ SUBSYSTEM_DEF(gamemode)
 	text2file(congealed_string, "data/last_round_events.txt")
 
 /datum/controller/subsystem/gamemode/proc/load_roundstart_data()
+	INVOKE_ASYNC(SSmapping, TYPE_PROC_REF(/datum/controller/subsystem/mapping, lazy_load_template), LAZY_TEMPLATE_KEY_NUKIEBASE)
+	INVOKE_ASYNC(SSmapping, TYPE_PROC_REF(/datum/controller/subsystem/mapping, lazy_load_template), LAZY_TEMPLATE_KEY_WIZARDDEN)
+
 	var/massive_string = trim(file2text("data/last_round_events.txt"))
 	if(fexists("data/last_round_events.txt"))
 		fdel("data/last_round_events.txt")
