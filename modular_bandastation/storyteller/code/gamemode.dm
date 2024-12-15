@@ -978,7 +978,8 @@ SUBSYSTEM_DEF(gamemode)
 	return valid_storytellers
 
 /datum/controller/subsystem/gamemode/proc/init_storyteller()
-	set_storyteller(selected_storyteller)
+	if(!current_storyteller)
+		set_storyteller(selected_storyteller)
 
 /datum/controller/subsystem/gamemode/proc/set_storyteller(passed_type)
 	if(!storytellers[passed_type])
