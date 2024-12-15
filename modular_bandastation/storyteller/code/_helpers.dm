@@ -27,3 +27,11 @@
 	if(QDELETED(player) || !istype(get_area(player), /area/shuttle/arrival))
 		return FALSE
 	return TRUE
+
+/mob/living/proc/clear_inventory(include_pockets = TRUE, include_held_items = TRUE)
+	var/list/items = get_equipped_items(include_pockets)
+	if(include_held_items)
+		items |= held_items
+	for(var/item in items)
+		dropItemToGround(item, force = TRUE, silent = TRUE, invdrop = FALSE)
+		qdel(item)

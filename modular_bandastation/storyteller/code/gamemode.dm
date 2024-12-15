@@ -655,9 +655,16 @@ SUBSYSTEM_DEF(gamemode)
 	recalculate_roundstart_budget()
 	message_admins("Storyteller begin to get roundstart events with budget [roundstart_budget].")
 
-	message_admins("Storyteller purchased and triggered forced event [forced_next_events[track]].")
-	TriggerEvent(forced_next_events[track], forced = TRUE)
-	forced_next_events[track] = 0
+	if(forced_next_events[track])
+		message_admins("Storyteller purchased and triggered forced event [forced_next_events[track]].")
+		TriggerEvent(forced_next_events[track], forced = TRUE)
+		forced_next_events[track] = 0
+
+	var/list/scheduled_events_roleset = list()
+	for(var/datum/scheduled_event/scheduled_pre_event in scheduled_events)
+		scheduled_events_roleset += scheduled_pre_event.event
+		scheduled_events_roleset[scheduled_pre_event.event] = scheduled_pre_event.event.weight
+		scheduled_events -= scheduled_pre_event
 
 	var/list/dynamic_roundstart_rules = SSdynamic.init_rulesets(/datum/dynamic_ruleset/roundstart)
 	while(length(valid_events))
@@ -665,12 +672,7 @@ SUBSYSTEM_DEF(gamemode)
 		recalculate_roundstart_costs(track)
 		pop_count = ready_players + (sec_crew * current_storyteller.sec_antag_modifier)
 
-		while(length(scheduled_events))
-			var/list/scheduled_events_roleset = list()
-			for(var/datum/scheduled_event/scheduled_pre_event in scheduled_events)
-				scheduled_events_roleset += scheduled_pre_event.event
-				scheduled_events_roleset[scheduled_pre_event.event] = scheduled_pre_event.event.weight
-
+		while(length(scheduled_events_roleset))
 			var/datum/round_event_control/antagonist/solo/scheduled_event = pick_weight(scheduled_events_roleset)
 			for(var/datum/dynamic_ruleset/ruleset as anything in dynamic_roundstart_rules)
 				if(ruleset.antag_datum == scheduled_event.antag_datum)
@@ -681,7 +683,7 @@ SUBSYSTEM_DEF(gamemode)
 				roundstart_budget -= scheduled_event.roundstart_cost
 				message_admins("Storyteller purchased and triggered scheduled event [scheduled_event] for [scheduled_event.roundstart_cost]. Left balance: [roundstart_budget].")
 				TriggerEvent(scheduled_event, forced = FALSE)
-				scheduled_events -= scheduled_event
+				scheduled_events_roleset -= scheduled_event
 				if(scheduled_event.exclusive_roundstart_event)
 					scheduled_event = list()
 					valid_events = list()
@@ -689,11 +691,14 @@ SUBSYSTEM_DEF(gamemode)
 				// Если первое событие не-эксклюзивное, то удаляем из списка все эксклюзивные
 					for(var/datum/round_event_control/exclude_event as anything in scheduled_events_roleset)
 						if(exclude_event.exclusive_roundstart_event)
-							scheduled_events -= exclude_event
+							scheduled_events_roleset -= exclude_event
 
 					for(var/datum/round_event_control/exclude_event as anything in valid_events)
 						if(exclude_event.exclusive_roundstart_event)
 							valid_events -= exclude_event
+			else
+				message_admins("Storyteller failed to purchase scheduled event [scheduled_event] for [scheduled_event.roundstart_cost]. Left balance: [roundstart_budget].")
+				scheduled_events_roleset -= scheduled_event
 
 		var/datum/round_event_control/picked_event = pick_weight(valid_events)
 		if(picked_event.can_spawn_event(ready_players) && (roundstart_budget >= picked_event.roundstart_cost))

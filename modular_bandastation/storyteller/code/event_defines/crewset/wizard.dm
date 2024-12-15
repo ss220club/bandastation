@@ -4,6 +4,7 @@
 	typepath = /datum/round_event/antagonist/solo/wizard
 	antag_flag = ROLE_WIZARD
 	antag_datum = /datum/antagonist/wizard
+	shared_occurence_type = SHARED_HIGH_THREAT
 	restricted_roles = list(
 		JOB_CAPTAIN,
 		JOB_HEAD_OF_SECURITY,
@@ -16,20 +17,21 @@
 		JOB_HEAD_OF_SECURITY,
 		JOB_SECURITY_OFFICER,
 		JOB_WARDEN,
+		JOB_CHAPLAIN,
 	)
 	required_enemies = 5
 	roundstart = TRUE
 	earliest_start = 0 SECONDS
-	weight = 2
+	weight = 0
 	min_players = 35
 	max_occurrences = 1
-	exclusive_roundstart_event = TRUE
+	event_icon_state = "wizard"
 
 /datum/round_event_control/antagonist/solo/wizard/can_spawn_event(players_amt, allow_magic = FALSE, fake_check = FALSE)
 	. = ..()
 	if(!.)
 		return
-	if(GLOB.wizardstart.len == 0)
+	if(!length(GLOB.wizardstart))
 		return FALSE
 
 /datum/round_event/antagonist/solo/wizard
@@ -42,4 +44,7 @@
 	for(var/obj/item/item as anything in items)
 		qdel(item)
 
+	var/mob/living/carbon/human/new_player_mob = new //while funny, it would kind of suck to be a blind criple wizard
+	antag_mind.transfer_to(new_player_mob)
+	qdel(current_mob)
 	antag_mind.make_wizard()
