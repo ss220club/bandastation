@@ -44,7 +44,8 @@
 				border-bottom: 0.15em solid rgba(255, 255, 255, 0.1);
 			}
 
-			input {
+			input,
+			.hidden {
 				display: none;
 			}
 
@@ -240,14 +241,38 @@
 
 			.lobby-picture img,
 			.lobby-picture .toggle  {
-				left: 0;
 				top: 92px;
+				left: 0;
 			}
 
 			.lobby-notice img,
 			.lobby-notice .toggle  {
-				left: 0;
 				top: 64.5px;
+				left: 0;
+			}
+
+			#lobby-trait-1 img,
+			#lobby-trait-1 .toggle {
+				top: 92px;
+				left: -184px;
+			}
+
+			#lobby-trait-2 img,
+			#lobby-trait-2 .toggle {
+				top: 64.5px;
+				left: -184px;
+			}
+
+			#lobby-trait-3 img,
+			#lobby-trait-3 .toggle {
+				top: 37px;
+				left: -184px;
+			}
+
+			.trait_active,
+			.trait_disabled {
+				transform: none !important;
+				opacity: 1 !important;
 			}
 
 			.lobby-collapse {

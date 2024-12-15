@@ -40,14 +40,18 @@
 		return
 
 	else if(href_list["changelog"])
-		usr.client?.changelog()
+		client?.changelog()
 
 	else if(href_list["polls"])
 		handle_player_polling()
 
-	else if(href_list["job_traits"])
-		show_job_traits()
-		return
+	else if(href_list["trait_signup"])
+		var/datum/station_trait/clicked_trait
+		for(var/datum/station_trait/trait as anything in GLOB.lobby_station_traits)
+			if(trait.name == href_list["trait_signup"])
+				clicked_trait = trait
+
+		clicked_trait.on_lobby_button_click(usr, href_list["id"])
 
 	else if(href_list["picture"])
 		SSadmin_verbs.dynamic_invoke_verb(usr, /datum/admin_verb/change_title_screen)
@@ -68,34 +72,6 @@
 	else if(href_list["focus"])
 		winset(client, "mapwindow", "focus=true")
 		return
-
-/**
- * Shows currently available job traits
- */
-/mob/dead/new_player/proc/show_job_traits()
-	if (!client || client.interviewee)
-		return
-
-	if(!length(GLOB.lobby_station_traits))
-		to_chat(src, span_warning("There are currently no job traits available!"))
-		return
-
-	var/list/available_lobby_station_traits = list()
-	for(var/datum/station_trait/trait as anything in GLOB.lobby_station_traits)
-		if(!trait.can_display_lobby_button(client))
-			continue
-
-		available_lobby_station_traits += trait
-
-	if(!LAZYLEN(available_lobby_station_traits))
-		to_chat(src, span_warning("There are currently no job traits available!"))
-		return
-
-	var/datum/station_trait/clicked_trait = tgui_input_list(src, "Select a job trait to sign up for:", "Job Traits", available_lobby_station_traits)
-	if(!clicked_trait)
-		return
-
-	clicked_trait.on_lobby_button_click(src)
 
 /**
  * Checks can we show polls or not

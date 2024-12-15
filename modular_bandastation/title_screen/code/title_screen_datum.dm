@@ -102,11 +102,34 @@
 		html += create_icon_button(player, "picture")
 		html += create_icon_button(player, "notice")
 
+	if(length(GLOB.lobby_station_traits))
+		var/number = 0
+		for(var/datum/station_trait/job/trait as anything in GLOB.lobby_station_traits)
+			if(!trait.can_display_lobby_button(player.client))
+				continue
+
+			if(number > MAX_STATION_TRAIT_BUTTONS_VERTICAL) // 3 is a maximum
+				break
+
+			number++
+			var/traitID = replacetext(replacetext("[trait.type]", "/datum/station_trait/job/", ""), "/", "-")
+			var/assigned = LAZYFIND(trait.lobby_candidates, player)
+			html += {"
+				<a id="lobby-trait-[number]" class="lobby_button lobby_element" href='byond://?src=[REF(user)];trait_signup=[trait.name];id=[number]'>
+					<div class="toggle">
+						<img class="pixelated indicator trait_active [assigned ? "" : "hidden"]" src="[SSassets.transport.get_asset_url(asset_name = "lobby_active.png")]">
+						<img class="pixelated indicator trait_disabled [!assigned ? "" : "hidden"]" src="[SSassets.transport.get_asset_url(asset_name = "lobby_disabled.png")]">
+						<img class="pixelated indicator" src="[SSassets.transport.get_asset_url(asset_name = "lobby_highlight.png")]">
+					</div>
+					<img class="pixelated" src="[SSassets.transport.get_asset_url(asset_name = "lobby_[traitID].png")]">
+				</a>
+			"}
+
 	html += {"
 		<label class="lobby_element lobby-collapse" for="hide_menu">
 			<img class="pixelated" src="[SSassets.transport.get_asset_url(asset_name = "lobby_collapse.png")]">
 			<div class="toggle"></div>
-		</a>
+		</label>
 	"}
 
 	html += {"</div>"}
@@ -129,9 +152,36 @@
 				}
 			}
 
-			const character_name_slot = document.getElementById("character_slot");
-			function update_current_character(name) {
-				character_name_slot.textContent = name;
+			function job_sign(assign, id) {
+				/* I FUCKING HATE IE */
+				let traitID;
+				let trait_active;
+				let trait_disabled;
+
+				if(!id) {
+					return
+				}
+
+				if (id === "1") {
+					traitID = "lobby-trait-1";
+				} else if (id === "2") {
+					traitID = "lobby-trait-2";
+				} else if (id === "3"){
+					traitID = "lobby-trait-3";
+				} else {
+					return
+				}
+
+				trait_active = document.getElementById(traitID).querySelector(".trait_active");
+				trait_disabled = document.getElementById(traitID).querySelector(".trait_disabled");
+
+				if(assign === "true") {
+					trait_active.classList.remove("hidden");
+					trait_disabled.classList.add("hidden");
+				} else {
+					trait_active.classList.add("hidden");
+					trait_disabled.classList.remove("hidden");
+				}
 			}
 
 			/* Return focus to Byond after click */

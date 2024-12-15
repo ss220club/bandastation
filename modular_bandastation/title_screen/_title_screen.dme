@@ -6,5 +6,6 @@
 #include "code/asset_lobby.dm"
 #include "code/title_screen_datum.dm"
 #include "code/new_player.dm"
+#include "code/station_traits.dm"
 #include "code/title_screen_controls.dm"
 #include "code/title_screen_subsystem.dm"

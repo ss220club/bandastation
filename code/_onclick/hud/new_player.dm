@@ -10,7 +10,8 @@
 
 /datum/hud/new_player/New(mob/owner)
 	. = ..()
-
+	return
+	/* BANDASTATION REMOVAL - HTML Title Screen
 	if (!owner || !owner.client)
 		return
 
@@ -604,4 +605,4 @@
 
 #undef SHUTTER_MOVEMENT_DURATION
 #undef SHUTTER_WAIT_DURATION
-#undef MAX_STATION_TRAIT_BUTTONS_VERTICAL
+#undef MAX_STATION_TRAIT_BUTTONS_VERTICAL */
