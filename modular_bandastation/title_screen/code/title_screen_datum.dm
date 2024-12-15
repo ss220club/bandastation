@@ -80,11 +80,13 @@
 	"}
 
 	html += {"<input type="checkbox" id="hide_menu">"}
+	html += {"<div class="lobby_wrapper">"}
 	html += {"
 		<div class="lobby_container">
 			<img class="lobby_background pixelated" src="[SSassets.transport.get_asset_url(asset_name = "lobby_background.png")]">
 	"}
 
+	html += {"<div class="lobby_buttons-center">"}
 	if(!SSticker || SSticker.current_state <= GAME_STATE_PREGAME)
 		html += create_main_button(player, "toggle_ready", "ГОТОВ", player.ready == PLAYER_READY_TO_PLAY ? "good" : "bad")
 	else
@@ -92,17 +94,25 @@
 
 	html += create_main_button(player, "observe", "СЛЕДИТЬ")
 	html += create_main_button(player, "character_setup", "НАСТРОЙКА ПЕРСОНАЖА")
+	html += {"<div class="lobby_element lobby-name"><span id="character_name">[player.client.prefs.read_preference(/datum/preference/name/real_name)]</span></div>"}
+	html += {"</div>"}
 
+	html += {"<div class="lobby_buttons-bottom">"}
 	html += create_icon_button(player, "changelog")
 	html += create_icon_button(player, "settings")
 	html += create_icon_button(player, "manifest")
 	html += create_icon_button(player, "polls", player.check_polls())
+	html += {"</div>"}
 
 	if(check_rights_for(viewer, R_FUN))
+		html += {"<div class="lobby_buttons-right">"}
 		html += create_icon_button(player, "picture")
 		html += create_icon_button(player, "notice")
+		html += {"</div>"}
 
 	if(length(GLOB.lobby_station_traits))
+		html += {"<div class="lobby_buttons-left">"}
+
 		var/number = 0
 		for(var/datum/station_trait/job/trait as anything in GLOB.lobby_station_traits)
 			if(!trait.can_display_lobby_button(player.client))
@@ -125,6 +135,8 @@
 				</a>
 			"}
 
+		html += {"</div>"}
+
 	html += {"
 		<label class="lobby_element lobby-collapse" for="hide_menu">
 			<img class="pixelated" src="[SSassets.transport.get_asset_url(asset_name = "lobby_collapse.png")]">
@@ -132,11 +144,11 @@
 		</label>
 	"}
 
-	html += {"</div>"}
+	html += {"</div></div>"}
 	html += {"
 		<script language="JavaScript">
 			let ready_int = 0;
-			const readyID = document.getElementById("ready");
+			const readyID = document.querySelector(".toggle_ready");
 			const ready_class = \[ "bad", "good" \];
 			function toggle_ready(setReady) {
 				if(setReady) {
@@ -182,6 +194,11 @@
 					trait_active.classList.add("hidden");
 					trait_disabled.classList.remove("hidden");
 				}
+			}
+
+			const character_name_slot = document.getElementById("character_name");
+			function update_current_character(name) {
+				character_name_slot.textContent = name;
 			}
 
 			/* Return focus to Byond after click */

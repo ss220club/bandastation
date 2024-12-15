@@ -24,14 +24,6 @@
 				height: 100%;
 				margin: 0;
 				background-color: black;
-				scrollbar-base-color: #1c1c1c;
-				scrollbar-face-color: #3b3b3b;
-				scrollbar-3dlight-color: #252525;
-				scrollbar-highlight-color: #252525;
-				scrollbar-track-color: #1c1c1c;
-				scrollbar-arrow-color: #929292;
-				scrollbar-shadow-color: #3b3b3b;
-				scrollbar-color: #363636 #181818;
 			}
 
 			img {
@@ -47,6 +39,18 @@
 			input,
 			.hidden {
 				display: none;
+			}
+
+			*,
+			*::before,
+			*::after {
+				position: relative;
+				box-sizing: border-box;
+			}
+
+			.pixelated {
+				-ms-interpolation-mode: nearest-neighbor;
+				image-rendering: pixelated;
 			}
 
 			.bg {
@@ -66,7 +70,7 @@
 				box-sizing: border-box;
 				width: 100vw;
 				bottom: 0;
-				font-size: 25px;
+				font-size: 26px;
 				background-color: rgba(22, 22, 22, 0.85);
 				color: hsl(345, 100%, 70%);
 				border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -78,97 +82,141 @@
 				margin: 0.75rem 0 0.66rem;
 			}
 
-			.pixelated {
-				-ms-interpolation-mode: nearest-neighbor;
-				image-rendering: pixelated;
+			.lobby_wrapper {
+				display: flex;
+				justify-content: center;
 			}
 
 			.lobby_container {
-				position: absolute;
-				top: 0;
-				right: 0;
-				left: 0;
+				width: 200px;
 				transform: scale(2);
 				transform-origin: top;
 				z-index: 2;
 			}
 
 			.lobby_background {
-				position: relative;
 				z-index: 2;
 			}
 
-			.lobby_element {
+			.lobby_buttons-left,
+			.lobby_buttons-right,
+			.lobby_buttons-center,
+			.lobby_buttons-bottom {
 				position: absolute;
 				z-index: 3;
 			}
 
-			.lobby_element * {
-				position: absolute;
+			.lobby_buttons-left {
+				left: -3px;
+				bottom: 12px;
 			}
 
-			.lobby_element img {
-				left: -148.5px;
+			.lobby_buttons-right {
+				right: -3px;
+				bottom: 12px;
 			}
 
-			.lobby_element span {
-				left: -158px;
-				width: 160px;
-				z-index: 1;
-			}
-
-			.lobby-toggle_ready {
+			.lobby_buttons-center {
 				top: 8px;
 			}
 
-			.lobby-toggle_ready img {
-				left: -160px;
+			.lobby_buttons-bottom {
+				display: flex;
+				flex-direction: row-reverse;
+				bottom: -17.5px;
+				right: 32.5px;
+			}
+
+			.lobby_buttons-left,
+			.lobby_buttons-right {
+				display: flex;
+				flex-direction: column-reverse;
+			}
+
+			.lobby_buttons-left .lobby_button,
+			.lobby_buttons-right .lobby_button {
+				margin-top: 4px;
+			}
+
+			.lobby_buttons-left .lobby_button:last-of-type,
+			.lobby_buttons-right .lobby_button:last-of-type {
+				margin-top: 0;
+			}
+
+			.lobby_buttons-bottom .lobby_button {
+				margin-left: 4px;
+			}
+
+			.lobby_buttons-bottom .lobby_button:last-of-type {
+				margin-left: 0;
+			}
+
+			.lobby_button.disabled {
+				pointer-events: none;
+			}
+
+			.indicator {
+				opacity: 0;
+				transform: scaleX(0.25);
+				transition: transform 0.2s, opacity 0.2s;
+				z-index: 1;
 			}
 
 			.lobby-toggle_ready .lobby-text {
-				transform: translateY(5.5px);
+				transform: translateY(5.25px) translateX(2px);
+			}
+
+			.lobby-late_join .lobby-text {
+				transform: translateY(6.25px) translateX(3px);
 			}
 
 			.lobby-toggle_ready .lobby-text.bad::before,
 			.lobby-toggle_ready .lobby-text.bad::after {
 				content: 'X';
 				display: inline-block;
-				position: absolute;
-			}
-
-			.lobby-toggle_ready .lobby-text.good::before,
-			.lobby-toggle_ready .lobby-text.bad::before  {
-				left: 28.5px;
-
-			}
-
-			.lobby-toggle_ready .lobby-text.good::after,
-			.lobby-toggle_ready .lobby-text.bad::after {
-				right: 28.5px;
-
+				margin: 0 8px;
 			}
 
 			.lobby-toggle_ready .lobby-text.good::before,
 			.lobby-toggle_ready .lobby-text.good::after {
 				content: '✓';
 				display: inline-block;
-				position: absolute;
+				margin: 0 8px;
 			}
 
-			.lobby-late_join {
-				top: 13px;
-			}
-
-			.lobby-late_join img {
-				left: -152.5px;
-			}
-
-			.lobby-observe {
-				top: 43px;
-			}
-
+			.lobby-observe,
 			.lobby-character_setup {
-				top: 70px;
+				box-shadow: 2.5px 0px 0px rgba(0,0,0,0.33);
+			}
+
+			.lobby-name {
+				align-items: center;
+				vertical-align: middle;
+				justify-content: center;
+				top: -1px;
+				height: 18px;
+				width: 110px;
+				z-index: 2;
+			}
+
+			.lobby-name span {
+				line-height: 8.5px;
+				font-size: 10px;
+				color: #383b43;
+				text-shadow: 0px -1px 0px #bec4bf;
+			}
+
+			.toggle,
+			.lobby-text {
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+			}
+
+			.lobby_element {
+				display: inline-flex;
 			}
 
 			.lobby-text {
@@ -177,122 +225,14 @@
 				font-size: 11px;
 				line-height: 1.33em;
 				letter-spacing: 5.75px;
-				transform: translateY(2.5px);
+				transform: translateY(2.25px) translateX(3px);
 				transition: color 0.2s, text-shadow 0.2s;
+				z-index: 1;
 			}
 
 			.lobby_element:hover .lobby-text {
 				color: hsl(50, 100%, 75%);
 				text-shadow: 0px 0px 3px hsla(25, 100%, 75%, 0.75);
-			}
-
-			.lobby_button img,
-			.lobby_button .toggle {
-				top: 122.5px;
-			}
-
-			.lobby_button.disabled {
-				pointer-events: none;
-			}
-
-			.lobby_button .toggle {
-				width: 24px;
-				height: 24px;
-			}
-
-			.indicator {
-				top: 0 !important;
-				left: 0 !important;
-				opacity: 0;
-				transform: scaleX(0.25);
-				transition: transform 0.2s, opacity 0.2s;
-				z-index: 1;
-			}
-
-			.indicator.disabled {
-				opacity: 1 !important;
-				transform: scaleX(1) !important;
-			}
-
-			.lobby_button:hover .toggle .indicator {
-				opacity: 1;
-				transform: scaleX(1);
-			}
-
-			.lobby-changelog img,
-			.lobby-changelog .toggle  {
-				left: -37.5px;
-			}
-
-			.lobby-settings img,
-			.lobby-settings .toggle  {
-				left: -65px;
-			}
-
-			.lobby-manifest img,
-			.lobby-manifest .toggle  {
-				left: -92.5px;
-			}
-
-			.lobby-polls img,
-			.lobby-polls .toggle  {
-				left: -120px;
-			}
-
-			.lobby-picture img,
-			.lobby-picture .toggle  {
-				top: 92px;
-				left: 0;
-			}
-
-			.lobby-notice img,
-			.lobby-notice .toggle  {
-				top: 64.5px;
-				left: 0;
-			}
-
-			#lobby-trait-1 img,
-			#lobby-trait-1 .toggle {
-				top: 92px;
-				left: -184px;
-			}
-
-			#lobby-trait-2 img,
-			#lobby-trait-2 .toggle {
-				top: 64.5px;
-				left: -184px;
-			}
-
-			#lobby-trait-3 img,
-			#lobby-trait-3 .toggle {
-				top: 37px;
-				left: -184px;
-			}
-
-			.trait_active,
-			.trait_disabled {
-				transform: none !important;
-				opacity: 1 !important;
-			}
-
-			.lobby-collapse {
-				z-index: 1;
-			}
-
-			.lobby-collapse .toggle {
-				cursor: pointer;
-				left: -148px;
-				top: 136px;
-				width: 25px;
-				height: 10px;
-			}
-
-			#hide_menu:checked ~ .lobby_container {
-				transform: scale(2) translateY(-100%);
-			}
-
-			.lobby-collapse img {
-				top: 81px;
 			}
 
 			.good {
@@ -305,6 +245,25 @@
 				text-shadow: 0px 0px 3px hsla(0, 100%, 60%, 0.75);
 			}
 
+			.trait_active,
+			.trait_disabled,
+			.indicator.disabled,
+			.lobby_button:hover .toggle .indicator {
+				opacity: 1;
+				transform: scaleX(1);
+			}
+
+			.lobby-collapse {
+				cursor: pointer;
+				position: absolute;
+				left: 31.5px;
+				bottom: -17.5px;
+				z-index: 1;
+			}
+
+			#hide_menu:checked ~ .lobby_wrapper .lobby_container {
+				transform: scale(2) translateY(-100%);
+			}
 		</style>
 	</head>
 	<body>

@@ -122,6 +122,15 @@
 	show_title_screen_to_all_new_players()
 
 /**
+ * Update a user's character setup name.
+ */
+/datum/controller/subsystem/title/proc/update_character_name(mob/dead/new_player/user, name)
+	if(!(istype(user)))
+		return
+
+	user.client << output(name, "title_browser:update_current_character")
+
+/**
  * Picks title image from `title_images_pool` list. If the list is empty, `DEFAULT_TITLE_HTML` is returned
  */
 /datum/controller/subsystem/title/proc/pick_title_image()

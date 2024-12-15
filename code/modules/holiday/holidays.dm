@@ -697,6 +697,8 @@
 /datum/holiday/monkey/celebrate()
 	. = ..()
 	SSstation.setup_trait(/datum/station_trait/job/pun_pun)
+	SSstation.setup_trait(/datum/station_trait/job/cargorilla)
+	SSstation.setup_trait(/datum/station_trait/job/human_ai)
 
 /datum/holiday/doomsday
 	name = "Mayan Doomsday Anniversary"
