@@ -196,15 +196,15 @@
 	if(!do_after(user, base_treat_time, target = victim, extra_checks = CALLBACK(src, PROC_REF(still_exists))))
 		return
 
-	user.visible_message(span_notice("[user] licks the wounds on [victim]'s [limb.plaintext_zone]."), span_notice("You lick some of the wounds on [victim]'s [limb.plaintext_zone]"), ignored_mobs=victim)
-	to_chat(victim, span_green("[user] licks the wounds on your [limb.plaintext_zone]!"))
+	user.visible_message(span_notice("[capitalize(user.declent_ru(NOMINATIVE))] лижет раны на [limb.ru_plaintext_zone[PREPOSITIONAL] || limb.plaintext_zone] у [victim.declent_ru(GENITIVE)]."), span_notice("Вы лижете некоторые из ран на [limb.ru_plaintext_zone[PREPOSITIONAL] || limb.plaintext_zone] у [victim.declent_ru(GENITIVE)]"), ignored_mobs=victim)
+	to_chat(victim, span_green("[capitalize(user.declent_ru(NOMINATIVE))] лижет раны на вашей [limb.ru_plaintext_zone[PREPOSITIONAL] || limb.plaintext_zone]!"))
 	var/mob/victim_stored = victim
 	adjust_blood_flow(-0.5)
 
 	if(blood_flow > minimum_flow)
 		try_handling(user)
 	else if(demotes_to)
-		to_chat(user, span_green("You successfully lower the severity of [user == victim_stored ? "your" : "[victim_stored]'s"] cuts."))
+		to_chat(user, span_green("Вы успешно снижаете тяжесть порезов у [user == victim_stored ? "себя" : victim_stored.declent_ru(GENITIVE)]."))
 
 /datum/wound/slash/flesh/adjust_blood_flow(adjust_by, minimum)
 	. = ..()
@@ -214,7 +214,7 @@
 		if(demotes_to)
 			replace_wound(new demotes_to)
 		else
-			to_chat(victim, span_green("The cut on your [limb.plaintext_zone] has [!limb.can_bleed() ? "healed up" : "stopped bleeding"]!"))
+			to_chat(victim, span_green("Порез на вашей [limb.ru_plaintext_zone[PREPOSITIONAL] || limb.plaintext_zone] [!limb.can_bleed() ? "закрылся" : "перестал кровоточить"]!"))
 			qdel(src)
 
 /datum/wound/slash/flesh/on_xadone(power)
@@ -273,7 +273,7 @@
 	if(blood_flow > minimum_flow)
 		return try_treating(I, user)
 	else if(demotes_to)
-		to_chat(user, span_green("You successfully lower the severity of [user == victim_stored ? "your" : "[victim_stored]'s"] cuts."))
+		to_chat(user, span_green("Вы успешно снижаете тяжесть порезов у [user == victim_stored ? "себя" : victim_stored.declent_ru(GENITIVE)]."))
 		return TRUE
 	return FALSE
 
