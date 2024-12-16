@@ -7,7 +7,7 @@
 
 	if(href_list["toggle_ready"])
 		ready = !ready
-		client << output(ready, "title_browser:toggle_ready")
+		SStitle.title_output(client, ready, "toggle_ready")
 
 	else if(href_list["late_join"])
 		GLOB.latejoin_menu.ui_interact(usr)
