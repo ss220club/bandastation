@@ -10,7 +10,6 @@
 
 /datum/hud/new_player/New(mob/owner)
 	. = ..()
-	return
 	/* BANDASTATION REMOVAL - HTML Title Screen
 	if (!owner || !owner.client)
 		return
