@@ -150,11 +150,9 @@
 	else
 		current_title_screen.set_screen_image(desired_image_file)
 
-	message_admins("Asset loaded: [current_title_screen.screen_image.name]")
-	message_admins("Asset URL: [SSassets.transport.get_asset_url(asset_cache_item = current_title_screen.screen_image)]")
 	for(var/mob/dead/new_player/viewer as anything in GLOB.new_player_list)
 		SSassets.transport.send_assets(viewer, current_title_screen.screen_image.name)
-		title_output(viewer.client, SSassets.transport.get_asset_url(asset_cache_item = current_title_screen.screen_image), "update_image")
+		addtimer(CALLBACK(src, PROC_REF(title_output), SSassets.transport.get_asset_url(asset_cache_item = current_title_screen.screen_image), "update_image"), 3 SECONDS, TIMER_UNIQUE|TIMER_OVERRIDE)
 
 /**
  * Update a user's character setup name.
