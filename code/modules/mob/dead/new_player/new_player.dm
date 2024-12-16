@@ -179,7 +179,6 @@
 		tgui_alert(usr, "There was an unexpected error putting you into your requested job. If you cannot join with any job, you should contact an admin.")
 		return FALSE
 
-	SStitle.hide_title_screen_from(client) // BANDASTATION ADDITION - HTML Title Screen
 	mind.late_joiner = TRUE
 	var/atom/destination = mind.assigned_role.get_latejoin_spawn_point()
 	if(!destination)
@@ -278,13 +277,13 @@
 	client.init_verbs()
 	. = spawning_mob
 	new_character = .
-	SStitle.hide_title_screen_from(client) // BANDASTATION ADDITION - HTML Title Screen
 
 
 /mob/dead/new_player/proc/transfer_character()
 	. = new_character
 	if(!.)
 		return
+	SStitle.hide_title_screen_from(client) // BANDASTATION ADDITION - HTML Title Screen
 	new_character.key = key //Manually transfer the key to log them in,
 	new_character.stop_sound_channel(CHANNEL_LOBBYMUSIC)
 	var/area/joined_area = get_area(new_character.loc)
