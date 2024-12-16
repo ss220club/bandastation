@@ -13,21 +13,21 @@
 	outfit.mask = item_path
 
 /datum/loadout_item/masks/pig
-	name = "Маска свиньи"
+	name = "Pig mask"
 	item_path = /obj/item/clothing/mask/animal/pig
 
 /datum/loadout_item/masks/horsehead
-	name = "Маска лошади"
+	name = "Horse mask"
 	item_path = /obj/item/clothing/mask/animal/horsehead
 
 /datum/loadout_item/masks/raven
-	name = "Маска ворона"
+	name = "Raven's mask"
 	item_path = /obj/item/clothing/mask/animal/small/raven
 
 /datum/loadout_item/masks/breathscarf
-	name = "Шарф с системой дыхания"
+	name = "Breathing scarf"
 	item_path = /obj/item/clothing/mask/breath/breathscarf
 
 /datum/loadout_item/masks/red_gas
-	name = "ПРС-1"
+	name = "RED-1"
 	item_path = /obj/item/clothing/mask/breath/red_gas

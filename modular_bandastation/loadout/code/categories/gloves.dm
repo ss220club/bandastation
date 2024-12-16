@@ -13,6 +13,6 @@
 	outfit.gloves = item_path
 
 /datum/loadout_item/gloves/fingerless
-	name = "Байкерские перчатки"
+	name = "Biker's gloves"
 	item_path = /obj/item/clothing/gloves/fingerless/biker_gloves
 	donator_level = 1

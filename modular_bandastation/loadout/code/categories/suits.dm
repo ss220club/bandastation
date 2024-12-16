@@ -13,33 +13,33 @@
 	outfit.suit = item_path
 
 /datum/loadout_item/suits/wintercoat
-	name = "Зимняя куртка"
+	name = "Winter coat"
 	item_path = /obj/item/clothing/suit/hooded/wintercoat
 
 /datum/loadout_item/suits/apron
-	name = "Фартук"
+	name = "Apron"
 	item_path = /obj/item/clothing/suit/apron
 
 /datum/loadout_item/suits/apron/red
-	name = "Красный фартук"
+	name = "Red apron"
 	item_path = /obj/item/clothing/suit/apron/chef/red
 
 /datum/loadout_item/suits/jacket/miljacket
-	name = "Армейская рубашка"
+	name = "Military jacket"
 	item_path = /obj/item/clothing/suit/jacket/miljacket
 
 /datum/loadout_item/suits/jacket/det_jacket/disco
-	name = "Крутая рубашка"
+	name = "Disco jacket"
 	item_path = /obj/item/clothing/suit/jacket/det_suit/disco
 
 /datum/loadout_item/suits/jacket/biker
-	name = "Куртка байкера"
+	name = "Biker's jacket"
 	item_path = /obj/item/clothing/suit/jacket/leather/biker
 
 /datum/loadout_item/suits/jacket/puffer
-	name = "Пуфер"
+	name = "Puffer"
 	item_path = /obj/item/clothing/suit/jacket/puffer
 
 /datum/loadout_item/suits/jacket/letterman_nt
-	name = "Рубашка почтового нт"
+	name = "Nt's letterman jacket"
 	item_path = /obj/item/clothing/suit/jacket/letterman_nanotrasen
