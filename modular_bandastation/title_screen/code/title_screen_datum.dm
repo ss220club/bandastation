@@ -45,8 +45,8 @@
 
 /datum/title_screen/proc/create_main_button(user, href, text, advanced_classes)
 	return {"
-		<a class="lobby_element lobby-[href]" href='byond://?src=[REF(user)];[href]=1'>
-			<span class="lobby-text [advanced_classes]">[text]</span>
+		<a class="lobby_element lobby-[href] [advanced_classes]" href='byond://?src=[REF(user)];[href]=1'>
+			<span class="lobby-text">[text]</span>
 			<img class="pixelated" src="[SSassets.transport.get_asset_url(asset_name = "lobby_[href].png")]">
 		</a>
 	"}
