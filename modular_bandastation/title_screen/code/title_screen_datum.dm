@@ -28,7 +28,7 @@
 	winset(viewer, "title_browser", "is-disabled=false;is-visible=true")
 	winset(viewer, "status_bar", "is-visible=false")
 
-	var/datum/asset/lobby_asset = get_asset_datum(/datum/asset/simple/lobby_fonts)
+	var/datum/asset/lobby_asset = get_asset_datum(/datum/asset/simple/html_title_screen)
 	var/datum/asset/fontawesome = get_asset_datum(/datum/asset/simple/namespaced/fontawesome)
 	lobby_asset.send(viewer)
 	fontawesome.send(viewer)
@@ -242,3 +242,5 @@
 	html += "</html>"
 
 	return html.Join()
+
+#undef MAX_STATION_TRAIT_BUTTONS_VERTICAL

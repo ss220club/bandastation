@@ -1,4 +1,4 @@
-/datum/asset/simple/lobby_fonts
+/datum/asset/simple/html_title_screen
 	assets = list(
 		"lobby_background.png" = 'modular_bandastation/title_screen/icons/lobby_background.png',
 		"lobby_toggle_ready.png" = 'modular_bandastation/title_screen/icons/lobby_toggle_ready.png',

@@ -602,7 +602,7 @@
 
 	//pull the shutter back off-screen
 	animate(transform = matrix(), time = SHUTTER_MOVEMENT_DURATION, easing = CUBIC_EASING|EASE_IN)
-
+*/
 #undef SHUTTER_MOVEMENT_DURATION
 #undef SHUTTER_WAIT_DURATION
-#undef MAX_STATION_TRAIT_BUTTONS_VERTICAL */
+#undef MAX_STATION_TRAIT_BUTTONS_VERTICAL
