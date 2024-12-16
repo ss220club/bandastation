@@ -152,7 +152,7 @@
 
 	for(var/mob/dead/new_player/viewer as anything in GLOB.new_player_list)
 		SSassets.transport.send_assets(viewer, current_title_screen.screen_image.name)
-		addtimer(CALLBACK(src, PROC_REF(title_output), viewer.client, SSassets.transport.get_asset_url(asset_cache_item = current_title_screen.screen_image), "update_image"), 3 SECONDS, TIMER_UNIQUE|TIMER_OVERRIDE)
+		addtimer(CALLBACK(src, PROC_REF(title_output), viewer.client, SSassets.transport.get_asset_url(asset_cache_item = current_title_screen.screen_image), "update_image"), 1 SECONDS, TIMER_UNIQUE|TIMER_OVERRIDE)
 
 /**
  * Update a user's character setup name.
