@@ -397,7 +397,7 @@
 	RETURN_TYPE(/datum/mod_link)
 	if(!link_call)
 		return
-	return link_call._caller == src ? link_call.receiver : link_call._caller
+	return link_call.caller == src ? link_call.receiver : link_call.caller
 
 /datum/mod_link/proc/call_link(datum/mod_link/called, mob/user)
 	if(!frequency)
@@ -424,7 +424,7 @@
 	link_target.playsound_local(get_turf(called.holder), 'sound/items/weapons/ring.ogg', 15, vary = TRUE)
 	var/atom/movable/screen/alert/modlink_call/alert = link_target.throw_alert("[REF(src)]_modlink", /atom/movable/screen/alert/modlink_call)
 	alert.desc = "[holder] ([id]) is calling you! Left-click this to accept the call. Right-click to deny it."
-	alert._caller_ref = WEAKREF(src)
+	alert.caller_ref = WEAKREF(src)
 	alert.receiver_ref = WEAKREF(called)
 	alert.user_ref = WEAKREF(user)
 
@@ -438,32 +438,32 @@
 /// A MODlink call datum, used to handle the call between two MODlinks.
 /datum/mod_link_call
 	/// The MODlink that is calling.
-	var/datum/mod_link/_caller
+	var/datum/mod_link/caller
 	/// The MODlink that is being called.
 	var/datum/mod_link/receiver
 
-/datum/mod_link_call/New(datum/mod_link/_caller, datum/mod_link/receiver)
-	_caller.link_call = src
+/datum/mod_link_call/New(datum/mod_link/caller, datum/mod_link/receiver)
+	caller.link_call = src
 	receiver.link_call = src
-	src._caller = _caller
+	src.caller = caller
 	src.receiver = receiver
-	var/mob/living/_caller_mob = _caller.get_user_callback.Invoke()
-	ADD_TRAIT(_caller_mob, TRAIT_IN_CALL, REF(src))
+	var/mob/living/caller_mob = caller.get_user_callback.Invoke()
+	ADD_TRAIT(caller_mob, TRAIT_IN_CALL, REF(src))
 	var/mob/living/receiver_mob = receiver.get_user_callback.Invoke()
 	ADD_TRAIT(receiver_mob, TRAIT_IN_CALL, REF(src))
 	make_visuals()
 	START_PROCESSING(SSprocessing, src)
 
 /datum/mod_link_call/Destroy()
-	var/mob/living/_caller_mob = _caller.get_user_callback.Invoke()
-	if(!QDELETED(_caller_mob))
-		REMOVE_TRAIT(_caller_mob, TRAIT_IN_CALL, REF(src))
+	var/mob/living/caller_mob = caller.get_user_callback.Invoke()
+	if(!QDELETED(caller_mob))
+		REMOVE_TRAIT(caller_mob, TRAIT_IN_CALL, REF(src))
 	var/mob/living/receiver_mob = receiver.get_user_callback.Invoke()
 	if(!QDELETED(receiver_mob))
 		REMOVE_TRAIT(receiver_mob, TRAIT_IN_CALL, REF(src))
 	STOP_PROCESSING(SSprocessing, src)
 	clear_visuals()
-	_caller.link_call = null
+	caller.link_call = null
 	receiver.link_call = null
 	return ..()
 
@@ -473,22 +473,22 @@
 	qdel(src)
 
 /datum/mod_link_call/proc/can_continue_call()
-	return _caller.frequency == receiver.frequency && _caller.can_call_callback.Invoke() && receiver.can_call_callback.Invoke()
+	return caller.frequency == receiver.frequency && caller.can_call_callback.Invoke() && receiver.can_call_callback.Invoke()
 
 /datum/mod_link_call/proc/make_visuals()
-	var/_caller_visual = _caller.make_visual_callback.Invoke()
+	var/caller_visual = caller.make_visual_callback.Invoke()
 	var/receiver_visual = receiver.make_visual_callback.Invoke()
-	_caller.get_visual_callback.Invoke(receiver_visual)
-	receiver.get_visual_callback.Invoke(_caller_visual)
+	caller.get_visual_callback.Invoke(receiver_visual)
+	receiver.get_visual_callback.Invoke(caller_visual)
 
 /datum/mod_link_call/proc/clear_visuals()
-	_caller.delete_visual_callback.Invoke()
+	caller.delete_visual_callback.Invoke()
 	receiver.delete_visual_callback.Invoke()
 
 /proc/call_link(mob/user, datum/mod_link/calling_link)
 	if(!calling_link.frequency)
 		return
-	var/list/_callers = list()
+	var/list/callers = list()
 	for(var/id in GLOB.mod_link_ids)
 		var/datum/mod_link/link = GLOB.mod_link_ids[id]
 		if(link.frequency != calling_link.frequency)
@@ -497,14 +497,14 @@
 			continue
 		if(!link.can_call_callback.Invoke())
 			continue
-		_callers["[link.holder] ([id])"] = id
-	if(!length(_callers))
+		callers["[link.holder] ([id])"] = id
+	if(!length(callers))
 		calling_link.holder.balloon_alert(user, "no targets on freq [calling_link.frequency]!")
 		return
-	var/chosen_link = tgui_input_list(user, "Choose ID to call from [calling_link.frequency] frequency", "MODlink", _callers)
+	var/chosen_link = tgui_input_list(user, "Choose ID to call from [calling_link.frequency] frequency", "MODlink", callers)
 	if(!chosen_link)
 		return
-	calling_link.call_link(GLOB.mod_link_ids[_callers[chosen_link]], user)
+	calling_link.call_link(GLOB.mod_link_ids[callers[chosen_link]], user)
 
 /atom/movable/screen/alert/modlink_call
 	name = "MODlink Call Incoming"
@@ -514,7 +514,7 @@
 	clickable_glow = TRUE
 	var/end_message = "call timed out!"
 	/// A weak reference to the MODlink that is calling.
-	var/datum/weakref/_caller_ref
+	var/datum/weakref/caller_ref
 	/// A weak reference to the MODlink that is being called.
 	var/datum/weakref/receiver_ref
 	/// A weak reference to the mob that is calling.
@@ -524,25 +524,25 @@
 	. = ..()
 	if(usr != owner)
 		return
-	var/datum/mod_link/_caller = _caller_ref.resolve()
+	var/datum/mod_link/caller = caller_ref.resolve()
 	var/datum/mod_link/receiver = receiver_ref.resolve()
-	if(!_caller || !receiver)
+	if(!caller || !receiver)
 		return
-	if(_caller.link_call || receiver.link_call)
+	if(caller.link_call || receiver.link_call)
 		return
 	var/list/modifiers = params2list(params)
 	if(LAZYACCESS(modifiers, RIGHT_CLICK))
 		end_message = "call denied!"
-		owner.clear_alert("[REF(_caller)]_modlink")
+		owner.clear_alert("[REF(caller)]_modlink")
 		return
 	end_message = "call accepted"
-	new /datum/mod_link_call(_caller, receiver)
-	owner.clear_alert("[REF(_caller)]_modlink")
+	new /datum/mod_link_call(caller, receiver)
+	owner.clear_alert("[REF(caller)]_modlink")
 
 /atom/movable/screen/alert/modlink_call/Destroy()
 	var/mob/living/user = user_ref?.resolve()
-	var/datum/mod_link/_caller = _caller_ref?.resolve()
-	if(!user || !_caller)
+	var/datum/mod_link/caller = caller_ref?.resolve()
+	if(!user || !caller)
 		return ..()
-	_caller.holder.balloon_alert(user, end_message)
+	caller.holder.balloon_alert(user, end_message)
 	return ..()
