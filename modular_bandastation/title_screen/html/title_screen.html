@@ -10,6 +10,202 @@
 				src: url("PixCyrillic.ttf");
 			}
 
+			@keyframes shutter {
+				0% {
+					transform: translateY(-100%);
+				}
+
+				50% {
+					transform: translateY(0);
+				}
+
+				100% {
+					transform: translateY(0);
+				}
+			}
+
+			@keyframes shutter_reverse {
+				0% {
+					transform: translateY(-100%);
+				}
+
+				50% {
+					transform: translateY(0);
+				}
+
+				100% {
+					transform: translateY(0);
+				}
+			}
+
+			@keyframes shutter_all {
+				0% {
+					transform: scale(2) translateY(0);
+				}
+
+				50% {
+					transform: scale(2) translateY(0);
+				}
+
+				100% {
+					transform: scale(2) translateY(-100%);
+				}
+			}
+
+			@keyframes shutter_all_reverse {
+				0% {
+					transform: scale(2) translateY(-100%);
+				}
+
+				50% {
+					transform: scale(2) translateY(0);
+				}
+
+				100% {
+					transform: scale(2) translateY(0);
+				}
+			}
+
+			@keyframes sidebuttons_right {
+				0% {
+					transform: translateX(0);
+				}
+
+				25% {
+					transform: translateX(-125%);
+				}
+
+				50% {
+					transform: translateX(-125%);
+				}
+
+				75% {
+					transform: translateX(-125%);
+				}
+
+				100% {
+					transform: translateX(-125%);
+				}
+			}
+
+			@keyframes sidebuttons_right_reverse {
+				0% {
+					transform: translateX(-125%);
+					z-index: 1;
+				}
+
+				25% {
+					transform: translateX(-125%);
+					z-index: 1;
+				}
+
+				50% {
+					transform: translateX(-125%);
+					z-index: 1;
+				}
+
+				75% {
+					transform: translateX(-125%);
+					z-index: 1;
+				}
+
+				100% {
+					transform: translateX(0);
+				}
+			}
+
+			@keyframes sidebuttons_left {
+				0% {
+					transform: translateX(0);
+				}
+
+				25% {
+					transform: translateX(125%);
+				}
+
+				50% {
+					transform: translateX(125%);
+				}
+
+				75% {
+					transform: translateX(125%);
+				}
+
+				100% {
+					transform: translateX(125%);
+				}
+			}
+
+			@keyframes sidebuttons_left_reverse {
+				0% {
+					transform: translateX(125%);
+					z-index: 1;
+				}
+
+				25% {
+					transform: translateX(125%);
+					z-index: 1;
+				}
+
+				50% {
+					transform: translateX(125%);
+					z-index: 1;
+				}
+
+				75% {
+					transform: translateX(125%);
+					z-index: 1;
+				}
+
+				100% {
+					transform: translateX(0);
+				}
+			}
+
+			@keyframes sidebuttons_bottom {
+				0% {
+					transform: translateY(0);
+				}
+
+				25% {
+					transform: translateY(0);
+				}
+
+				50% {
+					transform: translateY(0);
+				}
+
+				75% {
+					transform: translateY(0);
+				}
+
+				100% {
+					transform: translateY(-100%);
+				}
+			}
+
+			@keyframes sidebuttons_bottom_reverse {
+				0% {
+					transform: translateY(-100%);
+				}
+
+				25% {
+					transform: translateY(0);
+				}
+
+				50% {
+					transform: translateY(0);
+				}
+
+				75% {
+					transform: translateY(0);
+				}
+
+				100% {
+					transform: translateY(0);
+				}
+			}
+
 			body,
 			html {
 				font-family: Pix Cyrillic;
@@ -98,6 +294,15 @@
 				z-index: 2;
 			}
 
+			.lobby_shutter {
+				position: absolute;
+				top: -5px;
+				left: 11.5px;
+				transform: translateY(-100%);
+				transform-origin: top;
+				z-index: 4;
+			}
+
 			.lobby_buttons-left,
 			.lobby_buttons-right,
 			.lobby_buttons-center,
@@ -125,6 +330,7 @@
 				flex-direction: row-reverse;
 				bottom: -17.5px;
 				right: 32.5px;
+				z-index: 4;
 			}
 
 			.lobby_buttons-left,
@@ -160,6 +366,19 @@
 				transform: scaleX(0.25);
 				transition: transform 0.2s, opacity 0.2s;
 				z-index: 1;
+			}
+
+			.trait_active,
+			.trait_disabled,
+			.indicator.disabled,
+			.lobby_button:hover .toggle .indicator {
+				opacity: 1;
+				transform: scaleX(1);
+			}
+
+			.trait_active,
+			.trait_disabled {
+				position: absolute;
 			}
 
 			.lobby-toggle_ready .lobby-text {
@@ -249,14 +468,6 @@
 				text-shadow: 0px 0px 3px hsla(0, 100%, 60%, 0.75);
 			}
 
-			.trait_active,
-			.trait_disabled,
-			.indicator.disabled,
-			.lobby_button:hover .toggle .indicator {
-				opacity: 1;
-				transform: scaleX(1);
-			}
-
 			.lobby-collapse {
 				cursor: pointer;
 				position: absolute;
@@ -266,7 +477,53 @@
 			}
 
 			#hide_menu:checked ~ .lobby_wrapper .lobby_container {
+				animation: shutter_all 1.5s;
 				transform: scale(2) translateY(-100%);
+			}
+
+			#hide_menu:checked ~ .lobby_wrapper .lobby_container .lobby_shutter {
+				animation: shutter 1.5s;
+				transform: translateY(-100%);
+			}
+
+			#hide_menu:not(:checked) ~ .lobby_wrapper .lobby_container {
+				animation: shutter_all_reverse 1.5s;
+			}
+
+			#hide_menu:not(:checked) ~ .lobby_wrapper .lobby_container .lobby_shutter {
+				animation: shutter_reverse 1.5s reverse;
+			}
+
+			#hide_menu:checked ~ .lobby_wrapper .lobby_container .lobby_buttons-left,
+			#hide_menu:checked ~ .lobby_wrapper .lobby_container .lobby_buttons-right {
+				z-index: 1;
+			}
+
+			#hide_menu:checked ~ .lobby_wrapper .lobby_container .lobby_buttons-left{
+				animation: 2s sidebuttons_left;
+				transform: translateX(125%);
+			}
+
+			#hide_menu:not(:checked) ~ .lobby_wrapper .lobby_container .lobby_buttons-left{
+				animation: 2s sidebuttons_left_reverse;
+			}
+
+			#hide_menu:checked ~ .lobby_wrapper .lobby_container .lobby_buttons-right {
+				animation: 2s sidebuttons_right;
+				transform: translateX(-125%);
+			}
+
+			#hide_menu:not(:checked) ~ .lobby_wrapper .lobby_container .lobby_buttons-right {
+				animation: 2s sidebuttons_right_reverse;
+			}
+
+			#hide_menu:checked ~ .lobby_wrapper .lobby_container .lobby_buttons-bottom {
+				animation: 2s sidebuttons_bottom;
+				transform: translateY(-100%);
+			}
+
+			#hide_menu:not(:checked) ~ .lobby_wrapper .lobby_container .lobby_buttons-bottom {
+				animation: 2s sidebuttons_bottom_reverse;
 			}
 		</style>
 	</head>

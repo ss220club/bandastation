@@ -84,6 +84,7 @@
 	html += {"
 		<div class="lobby_container">
 			<img class="lobby_background pixelated" src="[SSassets.transport.get_asset_url(asset_name = "lobby_background.png")]">
+			<img class="lobby_shutter pixelated" src="[SSassets.transport.get_asset_url(asset_name = "lobby_shutter.png")]">
 	"}
 
 	html += {"<div class="lobby_buttons-center">"}
@@ -148,7 +149,7 @@
 	html += {"
 		<script language="JavaScript">
 			let ready_int = 0;
-			const readyID = document.querySelector(".toggle_ready");
+			const readyID = document.querySelector(".lobby-toggle_ready");
 			const ready_class = \[ "bad", "good" \];
 			function toggle_ready(setReady) {
 				if(setReady) {

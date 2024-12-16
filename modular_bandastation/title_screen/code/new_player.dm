@@ -18,6 +18,10 @@
 		GLOB.latejoin_menu.ui_interact(usr)
 
 	else if(href_list["observe"])
+		if(!SSticker || SSticker.current_state <= GAME_STATE_STARTUP)
+			to_chat(usr, span_warning("Сервер ещё не загрузился!"))
+			return
+
 		make_me_an_observer()
 		return
 
