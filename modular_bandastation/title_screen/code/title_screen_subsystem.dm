@@ -91,7 +91,7 @@
  * Adds a notice to the main title screen in the form of big red text!
  */
 /datum/controller/subsystem/title/proc/set_notice(new_notice)
-	new_notice = new_notice ? sanitize_text(new_notice) : null
+	new_notice = sanitize_text(new_notice) || null
 
 	if(!current_title_screen)
 		if(!new_notice)
