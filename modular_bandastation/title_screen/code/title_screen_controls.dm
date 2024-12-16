@@ -42,7 +42,7 @@ ADMIN_VERB(change_title_screen_notice, R_FUN, "Title Screen: Set Notice", ADMIN_
 /**
  * An admin debug command that enables you to change the HTML on the go.
  */
-ADMIN_VERB(change_title_screen_html, R_FUN, "Title Screen: Set HTML", ADMIN_VERB_NO_DESCRIPTION, ADMIN_CATEGORY_EVENTS)
+ADMIN_VERB(change_title_screen_html, R_DEBUG, "Title Screen: Set HTML", ADMIN_VERB_NO_DESCRIPTION, ADMIN_CATEGORY_EVENTS)
 	if(!check_rights(R_DEBUG))
 		return
 
