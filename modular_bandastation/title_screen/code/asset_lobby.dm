@@ -16,6 +16,7 @@
 		"lobby_changelog.png" = 'modular_bandastation/title_screen/icons/lobby_changelog.png',
 		"lobby_picture.png" = 'modular_bandastation/title_screen/icons/lobby_picture.png',
 		"lobby_notice.png" = 'modular_bandastation/title_screen/icons/lobby_notice.png',
+		"lobby_css.png" = 'modular_bandastation/title_screen/icons/lobby_css.png',
 
 		"lobby_human_ai.png" = 'modular_bandastation/title_screen/icons/lobby_human_ai.png',
 		"lobby_bridge_assistant.png" = 'modular_bandastation/title_screen/icons/lobby_bridge_assistant.png',

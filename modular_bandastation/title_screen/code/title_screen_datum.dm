@@ -110,10 +110,14 @@
 	html += create_icon_button(player, "polls", player.check_polls())
 	html += {"</div>"}
 
-	if(check_rights_for(viewer, R_FUN))
+	if(check_rights_for(viewer, R_FUN|R_DEBUG))
 		html += {"<div class="lobby_buttons-right">"}
 		html += create_icon_button(player, "picture")
 		html += create_icon_button(player, "notice")
+
+		if(check_rights_for(viewer, R_DEBUG))
+			html += create_icon_button(player, "css")
+
 		html += {"</div>"}
 
 	if(length(GLOB.lobby_station_traits))

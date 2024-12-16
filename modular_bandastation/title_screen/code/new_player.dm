@@ -58,9 +58,24 @@
 		clicked_trait.on_lobby_button_click(usr, href_list["id"])
 
 	else if(href_list["picture"])
+		if(!check_rights(R_FUN))
+			log_admin("Title Screen: Possible href exploit attempt by [key_name(usr)]!")
+			message_admins("Title Screen: Possible href exploit attempt by [key_name(usr)]!")
+			return
 		SSadmin_verbs.dynamic_invoke_verb(usr, /datum/admin_verb/change_title_screen)
 
 	else if(href_list["notice"])
+		if(!check_rights(R_FUN))
+			log_admin("Title Screen: Possible href exploit attempt by [key_name(usr)]!")
+			message_admins("Title Screen: Possible href exploit attempt by [key_name(usr)]!")
+			return
+		SSadmin_verbs.dynamic_invoke_verb(usr, /datum/admin_verb/change_title_screen_notice)
+
+	else if(href_list["change_title_screen_css"])
+		if(!check_rights(R_DEBUG))
+			log_admin("Title Screen: Possible href exploit attempt by [key_name(usr)]!")
+			message_admins("Title Screen: Possible href exploit attempt by [key_name(usr)]!")
+			return
 		SSadmin_verbs.dynamic_invoke_verb(usr, /datum/admin_verb/change_title_screen_notice)
 
 	else if(href_list["focus"])
