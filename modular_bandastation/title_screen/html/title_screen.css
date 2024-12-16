@@ -269,7 +269,7 @@ input,
 	bottom: 0;
 	width: 100vw;
 	font-size: 26px;
-	padding: 0.5em 0;
+	padding: 0.5em 0 0.33em;
 	background-color: rgba(22, 22, 22, 0.85);
 	color: hsl(345, 100%, 70%);
 	border-top: 1px solid rgba(255, 255, 255, 0.1);

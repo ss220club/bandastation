@@ -210,13 +210,13 @@
 
 			const notice_container = document.getElementById("container_notice");
 			function update_notice(notice) {
-				if(notice === "") {
+				if(notice === undefined) {
 					notice_container.classList.add("hidden");
+					notice_container.textContent = "";
 				} else {
 					notice_container.classList.remove("hidden");
+					notice_container.textContent = notice;
 				}
-
-				notice_container.textContent = notice;
 			}
 
 			/* Return focus to Byond after click */
