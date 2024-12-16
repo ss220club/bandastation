@@ -34,7 +34,6 @@
 	fontawesome.send(viewer)
 
 	SSassets.transport.send_assets(viewer, screen_image.name)
-
 	viewer << browse(get_title_html(viewer, viewer.mob), "window=title_browser")
 
 /datum/title_screen/proc/hide_from(client/viewer)
@@ -82,7 +81,7 @@
 	"}
 
 	if(screen_image_url)
-		html += {"<img class="bg" src="[screen_image_url]">"}
+		html += {"<img id="screen_image" class="bg" src="[screen_image_url]">"}
 
 	html += {"<div id="container_notice" class="hidden">[notice]</div>"}
 	html += {"<input type="checkbox" id="hide_menu">"}
@@ -217,6 +216,11 @@
 					notice_container.classList.remove("hidden");
 					notice_container.textContent = notice;
 				}
+			}
+
+			const image_container = document.getElementById("screen_image");
+			function update_image(image) {
+				image_container.src = image;
 			}
 
 			/* Return focus to Byond after click */

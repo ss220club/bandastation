@@ -150,7 +150,9 @@
 	else
 		current_title_screen.set_screen_image(desired_image_file)
 
-	show_title_screen_to_all_new_players()
+	for(var/mob/viewer in GLOB.player_list)
+		SSassets.transport.send_assets(viewer, current_title_screen.screen_image.name)
+		title_output(viewer.client, SSassets.transport.get_asset_url(asset_name = current_title_screen.screen_image.name), "update_image")
 
 /**
  * Update a user's character setup name.
