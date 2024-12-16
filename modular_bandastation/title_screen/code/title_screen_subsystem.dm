@@ -151,8 +151,20 @@
 		current_title_screen.set_screen_image(desired_image_file)
 
 	for(var/mob/dead/new_player/viewer as anything in GLOB.new_player_list)
-		SSassets.transport.send_assets(viewer, current_title_screen.screen_image.name)
-		addtimer(CALLBACK(src, PROC_REF(title_output), viewer.client, SSassets.transport.get_asset_url(asset_cache_item = current_title_screen.screen_image), "update_image"), 1 SECONDS, TIMER_UNIQUE|TIMER_OVERRIDE)
+		INVOKE_ASYNC(src, PROC_REF(update_title_image_for_client), viewer.client)
+
+/**
+ * Sends title image to client and updates title screen for it
+ */
+/datum/controller/subsystem/title/proc/update_title_image_for_client(client/update_for)
+	PRIVATE_PROC(TRUE)
+
+	if(!istype(update_for))
+		return
+
+	SSassets.transport.send_assets(update_for, current_title_screen.screen_image.name)
+	update_for.browse_queue_flush()
+	title_output(update_for, SSassets.transport.get_asset_url(asset_cache_item = current_title_screen.screen_image), "update_image")
 
 /**
  * Update a user's character setup name.
