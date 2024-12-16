@@ -79,7 +79,7 @@
 		ready = PLAYER_NOT_READY
 		return FALSE
 
-	SStitle.hide_title_screen_from(src.client) // BANDASTATION ADDITION - HTML Title Screen
+	SStitle.hide_title_screen_from(client) // BANDASTATION ADDITION - HTML Title Screen
 	var/mob/dead/observer/observer = new()
 	spawning = TRUE
 
@@ -179,7 +179,7 @@
 		tgui_alert(usr, "There was an unexpected error putting you into your requested job. If you cannot join with any job, you should contact an admin.")
 		return FALSE
 
-	SStitle.hide_title_screen_from(src) // BANDASTATION ADDITION - HTML Title Screen
+	SStitle.hide_title_screen_from(client) // BANDASTATION ADDITION - HTML Title Screen
 	mind.late_joiner = TRUE
 	var/atom/destination = mind.assigned_role.get_latejoin_spawn_point()
 	if(!destination)

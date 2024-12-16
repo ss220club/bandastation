@@ -1,7 +1,3 @@
-/mob/dead/new_player/Login()
-	. = ..()
-	SStitle.show_title_screen_to(client)
-
 /mob/dead/new_player/Topic(href, href_list[])
 	if(src != usr)
 		return
