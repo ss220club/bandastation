@@ -11,14 +11,11 @@ ADMIN_VERB(change_title_screen, R_FUN, "Title Screen: Change", ADMIN_VERB_NO_DES
 	switch(tgui_alert(usr, "Что делаем с изображением в лобби?", "Лобби", list("Меняем", "Сбрасываем", "Ничего")))
 		if("Меняем")
 			var/file = input(usr) as icon|null
-			if(!file)
-				return
+			if(file)
+				SStitle.set_title_image(file)
 
-			SStitle.set_title_image(file)
 		if("Сбрасываем")
 			SStitle.set_title_image()
-		if("Ничего")
-			return
 
 /**
  * Sets a titlescreen notice, a big red text on the main screen.
@@ -42,7 +39,7 @@ ADMIN_VERB(change_title_screen_notice, R_FUN, "Title Screen: Set Notice", ADMIN_
 		announce_text = "УВЕДОМЛЕНИЕ В ЛОББИ ОБНОВЛЕНО: [new_notice]"
 
 	SStitle.set_notice(new_notice)
-	for(var/mob/new_player in GLOB.player_list)
+	for(var/mob/dead/new_player/new_player as anything in GLOB.new_player_list)
 		to_chat(new_player, span_boldannounce(announce_text))
 		SEND_SOUND(new_player,  sound('sound/items/bikehorn.ogg'))
 

@@ -47,7 +47,7 @@
 	if(!current_title_screen)
 		return
 
-	for(var/mob/viewer in GLOB.player_list)
+	for(var/mob/dead/new_player/viewer as anything in GLOB.new_player_list)
 		show_title_screen_to(viewer.client)
 
 /**
@@ -75,7 +75,7 @@
 	if(!current_title_screen)
 		return
 
-	for(var/mob/viewer in GLOB.player_list)
+	for(var/mob/dead/new_player/viewer as anything in GLOB.new_player_list)
 		viewer.client << output(params, "title_browser:[function]")
 
 /**
@@ -150,7 +150,7 @@
 	else
 		current_title_screen.set_screen_image(desired_image_file)
 
-	for(var/mob/viewer in GLOB.player_list)
+	for(var/mob/dead/new_player/viewer as anything in GLOB.new_player_list)
 		SSassets.transport.send_assets(viewer, current_title_screen.screen_image.name)
 		title_output(viewer.client, SSassets.transport.get_asset_url(asset_name = current_title_screen.screen_image.name), "update_image")
 
