@@ -389,15 +389,15 @@
 				transform: translateY(6.25px) translateX(3px);
 			}
 
-			.lobby-toggle_ready .lobby-text.bad::before,
-			.lobby-toggle_ready .lobby-text.bad::after {
+			.lobby-toggle_ready.bad .lobby-text::before,
+			.lobby-toggle_ready.bad .lobby-text::after {
 				content: 'X';
 				display: inline-block;
 				margin: 0 8px;
 			}
 
-			.lobby-toggle_ready .lobby-text.good::before,
-			.lobby-toggle_ready .lobby-text.good::after {
+			.lobby-toggle_ready.good .lobby-text::before,
+			.lobby-toggle_ready.good .lobby-text::after {
 				content: '✓';
 				display: inline-block;
 				margin: 0 8px;
@@ -458,12 +458,12 @@
 				text-shadow: 0px 0px 3px hsla(25, 100%, 75%, 0.75);
 			}
 
-			.good {
+			.good .lobby-text  {
 				color: hsl(140, 100%, 70%);
 				text-shadow: 0px 0px 3px hsla(130, 100%, 60%, 0.75);
 			}
 
-			.bad {
+			.bad .lobby-text {
 				color: hsl(345, 100%, 70%);
 				text-shadow: 0px 0px 3px hsla(0, 100%, 60%, 0.75);
 			}
