@@ -6504,5 +6504,5 @@
 #include "interface\fonts\vcr_osd_mono.dm"
 // END_INCLUDE
 
- // BANDASTATION
+// BANDASTATION
 #include "modular_bandastation\modular_bandastation.dme"
