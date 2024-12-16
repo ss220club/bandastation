@@ -63,16 +63,6 @@
 	else if(href_list["notice"])
 		SSadmin_verbs.dynamic_invoke_verb(usr, /datum/admin_verb/change_title_screen_notice)
 
-	else if(href_list["wiki"])
-		if(tgui_alert(usr, "Хотите открыть нашу вики?", "Вики", list("Да", "Нет")) != "Да")
-			return
-		client << link("https://wiki.ss220.club")
-
-	else if(href_list["discord"])
-		if(tgui_alert(usr, "Хотите перейти в наш дискорд сервер?", "Дискорд", list("Да", "Нет")) != "Да")
-			return
-		client << link("https://discord.gg/ss220")
-
 	else if(href_list["focus"])
 		winset(client, "mapwindow", "focus=true")
 		return
