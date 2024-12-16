@@ -5,8 +5,6 @@
 	var/notice
 	/// The current title screen being displayed, as `/datum/asset_cache_item`
 	var/datum/asset_cache_item/screen_image
-	/// The character preview view.
-	var/atom/movable/screen/map_view/char_preview/character_preview_view
 
 /datum/title_screen/New(title_html, notice, screen_image_file)
 	src.title_html = title_html
