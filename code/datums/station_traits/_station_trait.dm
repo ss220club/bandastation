@@ -142,7 +142,7 @@ GLOBAL_LIST_EMPTY(lobby_station_traits)
 		if(!using_hud)
 			qdel(button)
 			continue
-		 using_hud.remove_station_trait_button(src)
+		using_hud.remove_station_trait_button(src)
 */
 
 /// Called when overriding a pulsar star command report message.
