@@ -61,7 +61,7 @@ ADMIN_VERB(change_title_screen_css, R_DEBUG, "Title Screen: Set CSS", ADMIN_VERB
 /client/verb/fix_title_screen()
 	set name = "Fix Lobby Screen"
 	set desc = "Lobbyscreen broke? Press this."
-	set category = "OOC"
+	set category = "Special"
 
 	SStitle.show_title_screen_to(src)
 
