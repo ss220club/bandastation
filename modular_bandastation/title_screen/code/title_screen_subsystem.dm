@@ -1,24 +1,18 @@
 /datum/controller/subsystem/title
-	/// Basic html that includes styles. Can be customised by host
-	var/base_html
 	/// Currently set title screen
 	var/datum/title_screen/current_title_screen
 	/// The list of image files available to be picked for title screen
 	var/list/title_images_pool = list()
 
 /datum/controller/subsystem/title/Initialize()
-	import_html()
 	fill_title_images_pool()
-	current_title_screen = new(title_html = base_html, screen_image_file = pick_title_image())
+	current_title_screen = new(screen_image_file = pick_title_image())
 	show_title_screen_to_all_new_players()
 	return SS_INIT_SUCCESS
 
 /datum/controller/subsystem/title/Recover()
 	current_title_screen = SStitle.current_title_screen
 	title_images_pool = SStitle.title_images_pool
-
-/datum/controller/subsystem/title/proc/import_html()
-	base_html = file2text(DEFAULT_TITLE_SCREEN_HTML_PATH)
 
 /**
  * Iterates over all files in `TITLE_SCREENS_LOCATION` and loads all valid title screens to `title_screens` var.
@@ -75,6 +69,25 @@
 	INVOKE_ASYNC(current_title_screen, TYPE_PROC_REF(/datum/title_screen, hide_from), viewer)
 
 /**
+ * Call JavaScript function on all clients
+ */
+/datum/controller/subsystem/title/proc/title_output_to_all(params, function)
+	if(!current_title_screen)
+		return
+
+	for(var/mob/viewer in GLOB.player_list)
+		viewer.client << output(params, "title_browser:[function]")
+
+/**
+ * Call JavaScript function for specific client.
+ */
+/datum/controller/subsystem/title/proc/title_output(client/viewer, params, function)
+	if(!viewer || !current_title_screen)
+		return
+
+	viewer << output(params, "title_browser:[function]")
+
+/**
  * Adds a notice to the main title screen in the form of big red text!
  */
 /datum/controller/subsystem/title/proc/set_notice(new_notice)
@@ -88,21 +101,39 @@
 	else
 		current_title_screen.notice = new_notice
 
-	show_title_screen_to_all_new_players()
+	title_output_to_all(current_title_screen.notice, "update_notice")
 
 /**
- * Replaces html of title screen
+ * Change or reset title screen css
  */
-/datum/controller/subsystem/title/proc/set_title_html(new_html)
-	if(!new_html)
-		return
+/datum/controller/subsystem/title/proc/set_title_css()
+	var/action = tgui_alert(usr, "Что делаем?", "Title Screen CSS", list("Меняем", "Сбрасываем", "Ничего"))
+	switch(action)
+		if("Меняем")
+			var/new_css = input(usr, "Загрузи CSS файл со своими стилями.", "РИСКОВАННО: ИЗМЕНЕНИЕ СТИЛЕЙ ЛОББИ") as null|file
+			if(!new_css)
+				message_admins("Title Screen: [key_name_admin(usr)] changed mind to change title screen CSS.")
+				return
 
-	if(!current_title_screen)
-		current_title_screen = new(title_html = new_html)
-	else
-		current_title_screen.title_html = new_html
+			if(copytext("[new_css]",-4) != ".css")
+				to_chat(usr, span_reallybig("Ты что загрузил, еблуша? Это не CSS!"))
+				message_admins("Title Screen: [key_name_admin(usr)] загрузил какую-то хуйню вместо CSS.")
+				return
+
+			if(!current_title_screen)
+				current_title_screen = new(styles = new_css)
+			else
+				current_title_screen.title_css = new_css
+		if("Сбрасываем")
+			if(!current_title_screen)
+				current_title_screen = new(styles = current_title_screen::title_css)
+			else
+				current_title_screen.title_css = current_title_screen::title_css
+		else
+			return
 
 	show_title_screen_to_all_new_players()
+	message_admins("Title Screen: [key_name_admin(usr)] has changed the title screen CSS.")
 
 /**
  * Changes title image to desired
@@ -128,10 +159,10 @@
 	if(!(istype(user)))
 		return
 
-	user.client << output(name, "title_browser:update_current_character")
+	title_output(user.client, name, "update_character_name")
 
 /**
- * Picks title image from `title_images_pool` list. If the list is empty, `DEFAULT_TITLE_HTML` is returned
+ * Picks title image from `title_images_pool` list. If the list is empty, `DEFAULT_TITLE_SCREEN_IMAGE_PATH` is returned
  */
 /datum/controller/subsystem/title/proc/pick_title_image()
 	return length(title_images_pool) ? pick(title_images_pool) : DEFAULT_TITLE_SCREEN_IMAGE_PATH

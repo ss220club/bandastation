@@ -1,13 +1,14 @@
 /datum/title_screen
-	/// The preamble html that includes all styling and layout.
-	var/title_html
+	/// All title screen styles.
+	var/title_css = DEFAULT_TITLE_SCREEN_HTML_CSS
 	/// The current notice text, or null.
 	var/notice
 	/// The current title screen being displayed, as `/datum/asset_cache_item`
 	var/datum/asset_cache_item/screen_image
 
-/datum/title_screen/New(title_html, notice, screen_image_file)
-	src.title_html = title_html
+/datum/title_screen/New(styles, notice, screen_image_file)
+	if(styles)
+		src.title_css = styles
 	src.notice = notice
 	set_screen_image(screen_image_file)
 
@@ -63,20 +64,27 @@
  * Get the HTML of title screen.
  */
 /datum/title_screen/proc/get_title_html(client/viewer, mob/user)
-	var/list/html = list(title_html)
-	var/mob/dead/new_player/player = user
 	var/screen_image_url = SSassets.transport.get_asset_url(asset_cache_item = screen_image)
+	var/mob/dead/new_player/player = user
+	var/list/html = list()
+	html += {"
+		<!DOCTYPE html>
+		<html>
+		<head>
+			<title>Title Screen</title>
+			<meta http-equiv="X-UA-Compatible" content="IE=edge">
+			<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+			<style type='text/css'>
+				[file2text(title_css)]
+			</style>
+		</head>
+		<body>
+	"}
 
 	if(screen_image_url)
 		html += {"<img class="bg" src="[screen_image_url]">"}
 
-	if(notice)
-		html += {"
-		<div class="container_notice">
-			<p class="menu_notice">[notice]</p>
-		</div>
-	"}
-
+	html += {"<div id="container_notice" class="hidden">[notice]</div>"}
 	html += {"<input type="checkbox" id="hide_menu">"}
 	html += {"<div class="lobby_wrapper">"}
 	html += {"
@@ -200,6 +208,17 @@
 				character_name_slot.textContent = name;
 			}
 
+			const notice_container = document.getElementById("container_notice");
+			function update_notice(notice) {
+				if(notice === "") {
+					notice_container.classList.add("hidden");
+				} else {
+					notice_container.classList.remove("hidden");
+				}
+
+				notice_container.textContent = notice;
+			}
+
 			/* Return focus to Byond after click */
 			function reFocus() {
 				var focus = new XMLHttpRequest();
@@ -210,7 +229,7 @@
 			document.addEventListener('mouseup', reFocus);
 			document.addEventListener('keyup', reFocus);
 		</script>
-		"}
+	"}
 
 	html += "</body></html>"
 

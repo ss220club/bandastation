@@ -10,8 +10,8 @@
 	if(LAZYFIND(lobby_candidates, user))
 		LAZYREMOVE(lobby_candidates, user)
 		to_chat(user, span_redtext("Вы были убраны из списка кандидатов на роль [name]."))
-		user.client << output(list2params(list("false", button_id)), "title_browser:job_sign")
+		SStitle.title_output(user.client, list2params(list("false", button_id)), "job_sign")
 	else
 		LAZYADD(lobby_candidates, user)
 		to_chat(user, span_greentext("Вы были добавлены в список кандидатов на роль [name]."))
-		user.client << output(list2params(list("true", button_id)), "title_browser:job_sign")
+		SStitle.title_output(user.client, list2params(list("true", button_id)), "job_sign")
