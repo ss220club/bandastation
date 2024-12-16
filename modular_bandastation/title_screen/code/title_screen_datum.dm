@@ -203,7 +203,7 @@
 			}
 
 			const character_name_slot = document.getElementById("character_name");
-			function update_current_character(name) {
+			function update_character_name(name) {
 				character_name_slot.textContent = name;
 			}
 
