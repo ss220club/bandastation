@@ -8,7 +8,6 @@
 	if(href_list["toggle_ready"])
 		ready = !ready
 		client << output(ready, "title_browser:toggle_ready")
-		return
 
 	else if(href_list["late_join"])
 		GLOB.latejoin_menu.ui_interact(usr)
@@ -19,25 +18,21 @@
 			return
 
 		make_me_an_observer()
-		return
 
 	else if(href_list["character_setup"])
 		var/datum/preferences/preferences = client.prefs
 		preferences.current_window = PREFERENCE_TAB_CHARACTER_PREFERENCES
 		preferences.update_static_data(src)
 		preferences.ui_interact(src)
-		return
 
 	else if(href_list["settings"])
 		var/datum/preferences/preferences = client.prefs
 		preferences.current_window = PREFERENCE_TAB_GAME_PREFERENCES
 		preferences.update_static_data(usr)
 		preferences.ui_interact(usr)
-		return
 
 	else if(href_list["manifest"])
 		ViewManifest()
-		return
 
 	else if(href_list["changelog"])
 		client?.changelog()
@@ -76,7 +71,6 @@
 
 	else if(href_list["focus"])
 		winset(client, "mapwindow", "focus=true")
-		return
 
 /**
  * Checks can we show polls or not
