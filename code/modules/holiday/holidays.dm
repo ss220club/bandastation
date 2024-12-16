@@ -691,6 +691,7 @@
 
 /datum/holiday/monkey
 	name = MONKEYDAY
+	begin_day = 14
 	begin_month = DECEMBER
 
 /datum/holiday/monkey/celebrate()
