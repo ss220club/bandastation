@@ -150,7 +150,7 @@
 		</label>
 	"}
 
-	html += {"</div></div>"}
+	html += {"</div></div></body>"}
 	html += {"
 		<script language="JavaScript">
 			let ready_int = 0;
@@ -235,6 +235,6 @@
 		</script>
 	"}
 
-	html += "</body></html>"
+	html += "</html>"
 
 	return html.Join()
