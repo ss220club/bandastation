@@ -76,7 +76,7 @@
 		return
 
 	for(var/mob/dead/new_player/viewer as anything in GLOB.new_player_list)
-		viewer.client << output(params, "title_browser:[function]")
+		title_output(viewer.client, params, function)
 
 /**
  * Call JavaScript function for specific client.
@@ -150,9 +150,11 @@
 	else
 		current_title_screen.set_screen_image(desired_image_file)
 
+	message_admins("Asset loaded: [current_title_screen.screen_image.name]")
+	message_admins("Asset URL: [SSassets.transport.get_asset_url(asset_cache_item = current_title_screen.screen_image)]")
 	for(var/mob/dead/new_player/viewer as anything in GLOB.new_player_list)
 		SSassets.transport.send_assets(viewer, current_title_screen.screen_image.name)
-		title_output(viewer.client, SSassets.transport.get_asset_url(asset_name = current_title_screen.screen_image.name), "update_image")
+		title_output(viewer.client, SSassets.transport.get_asset_url(asset_cache_item = current_title_screen.screen_image), "update_image")
 
 /**
  * Update a user's character setup name.
