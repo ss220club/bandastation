@@ -37,8 +37,10 @@
 	else if(href_list["changelog"])
 		client?.changelog()
 
-	else if(href_list["polls"])
-		handle_player_polling()
+	else if(href_list["wiki"])
+		if(tgui_alert(usr, "Хотите открыть нашу вики?", "Вики", list("Да", "Нет")) != "Да")
+			return
+		client << link("https://tg.ss220.club")
 
 	else if(href_list["trait_signup"])
 		var/datum/station_trait/clicked_trait
@@ -71,47 +73,3 @@
 
 	else if(href_list["focus"])
 		winset(client, "mapwindow", "focus=true")
-
-/**
- * Checks can we show polls or not
- */
-/mob/dead/new_player/proc/check_polls()
-	if(!usr || !client)
-		return FALSE
-
-	if(is_guest_key(usr.key))
-		return FALSE
-
-	if(!SSdbcore.Connect())
-		return FALSE
-
-	var/isadmin = FALSE
-	if(client?.holder)
-		isadmin = TRUE
-
-	var/datum/db_query/query_get_new_polls = SSdbcore.NewQuery({"
-		SELECT id FROM [format_table_name("poll_question")]
-		WHERE (adminonly = 0 OR :isadmin = 1)
-		AND Now() BETWEEN starttime AND endtime
-		AND deleted = 0
-		AND id NOT IN (
-			SELECT pollid FROM [format_table_name("poll_vote")]
-			WHERE ckey = :ckey
-			AND deleted = 0
-		)
-		AND id NOT IN (
-			SELECT pollid FROM [format_table_name("poll_textreply")]
-			WHERE ckey = :ckey
-			AND deleted = 0
-		)
-	"}, list("isadmin" = isadmin, "ckey" = ckey))
-
-	if(!query_get_new_polls.Execute())
-		qdel(query_get_new_polls)
-		return FALSE
-
-	qdel(query_get_new_polls)
-	if(QDELETED(src))
-		return FALSE
-
-	return TRUE

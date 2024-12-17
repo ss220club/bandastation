@@ -11,7 +11,7 @@
 		"lobby_highlight.png" = 'modular_bandastation/title_screen/icons/lobby_highlight.png',
 
 		"lobby_manifest.png" = 'modular_bandastation/title_screen/icons/lobby_manifest.png',
-		"lobby_polls.png" = 'modular_bandastation/title_screen/icons/lobby_polls.png',
+		"lobby_wiki.png" = 'modular_bandastation/title_screen/icons/lobby_wiki.png',
 		"lobby_settings.png" = 'modular_bandastation/title_screen/icons/lobby_settings.png',
 		"lobby_changelog.png" = 'modular_bandastation/title_screen/icons/lobby_changelog.png',
 		"lobby_picture.png" = 'modular_bandastation/title_screen/icons/lobby_picture.png',

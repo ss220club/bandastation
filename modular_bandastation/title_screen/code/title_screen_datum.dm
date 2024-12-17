@@ -111,7 +111,7 @@
 	html += create_icon_button(player, "changelog", "Открыть чейнджлог")
 	html += create_icon_button(player, "settings", "Настройки игры")
 	html += create_icon_button(player, "manifest", "Манифест персонала")
-	html += create_icon_button(player, "polls", enabled = player.check_polls())
+	html += create_icon_button(player, "wiki", "Перейти на вики")
 	html += {"</div>"}
 
 	if(check_rights_for(viewer, R_FUN|R_DEBUG))
