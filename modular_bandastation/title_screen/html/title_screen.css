@@ -499,6 +499,7 @@ input,
  */
 .lobby_button:hover .lobby-tooltip {
 	opacity: 1;
+	transition-delay: 0.75s;
 }
 
 .lobby-tooltip {
@@ -513,10 +514,9 @@ input,
 	background-color: #9aa39f;
 	color: #383b43;
 	border: 1px solid #51575e;
-	border-bottom-color: #20202a;
 	border-radius: 1px;
+	box-shadow: 0px 1.5px 0px #20202a;
 	transition: opacity 0s;
-	transition-delay: 0.75s;
 }
 
 .lobby-tooltip[data-position='right'] {
@@ -544,6 +544,7 @@ input,
 .lobby-tooltip-content {
 	display: block;
 	font-size: 10px;
+	line-height: 8.75px;
 	padding: 0.2em 0.2em 0.1em;
 	box-shadow: inset 1px -1px 0px #e0e3dc;
 }
