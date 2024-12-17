@@ -72,4 +72,4 @@
 		SSadmin_verbs.dynamic_invoke_verb(usr, /datum/admin_verb/change_title_screen_css)
 
 	else if(href_list["focus"])
-		winset(client, "mapwindow", "focus=true")
+		winset(client, "map", "focus=true")
