@@ -113,7 +113,13 @@ SUBSYSTEM_DEF(gamemode)
 	var/list/scheduled_events = list()
 
 	/// Associative list of tracks to forced event controls. For admins to force events (though they can still invoke them freely outside of the track system)
-	var/list/forced_next_events = list()
+	var/list/forced_next_events = list(
+		EVENT_TRACK_MUNDANE =  list(),
+		EVENT_TRACK_MODERATE =  list(),
+		EVENT_TRACK_MAJOR =  list(),
+		EVENT_TRACK_ROLESET =  list(),
+		EVENT_TRACK_OBJECTIVES =  list(),
+	)
 
 	var/list/control = list() //list of all datum/round_event_control. Used for selecting events based on weight and occurrences.
 	var/list/running = list() //list of all existing /datum/round_event
@@ -375,7 +381,7 @@ SUBSYSTEM_DEF(gamemode)
 
 	/// If we have any forced events, ensure we get enough points for them
 	for(var/track in event_tracks)
-		if(forced_next_events[track] && event_track_points[track] < point_thresholds[track])
+		if(length(forced_next_events[track]) && event_track_points[track] < point_thresholds[track])
 			event_track_points[track] = point_thresholds[track]
 
 /// At this point we've rolled roundstart events and antags and we handle leftover points here.
@@ -635,24 +641,23 @@ SUBSYSTEM_DEF(gamemode)
 
 /datum/controller/subsystem/gamemode/proc/round_start_handle()
 	recalculate_ready_pop()
-
-	if(!get_antag_cap())
-		message_admins("Storyteller failed to pick an events for roundstart due low population.")
-		return
-
-	var/pop_count = ready_players + (sec_crew * current_storyteller.sec_antag_modifier)
-	if(pop_count < current_storyteller.min_antag_popcount)
-		message_admins("Not enough ready players to run roundstart events.")
-		return
-
 	recalculate_roundstart_budget()
 	message_admins("Storyteller begin to get roundstart events with budget [roundstart_budget].")
 
 	var/track = EVENT_TRACK_ROLESET
 	if(forced_next_events[track])
-		message_admins("Storyteller purchased and triggered forced event [forced_next_events[track]].")
-		TriggerEvent(forced_next_events[track], forced = TRUE)
-		forced_next_events[track] = 0
+		for(var/datum/round_event_control/forced_event in forced_next_events[track])
+			message_admins("Storyteller purchased and triggered forced roundstart event [forced_event].")
+			TriggerEvent(forced_event, forced = TRUE)
+
+		forced_next_events[track] = list()
+
+	event_track_points[track] = 0
+	var/pop_count = ready_players + (sec_crew * current_storyteller.sec_antag_modifier)
+	if(pop_count < current_storyteller.min_antag_popcount)
+		message_admins("Not enough ready players to run general and scheduled roundstart events.")
+		message_admins("Storyteller finished to get roundstart events.")
+		return
 
 	var/list/valid_events = recalculate_roundstart_costs(track)
 
@@ -660,7 +665,6 @@ SUBSYSTEM_DEF(gamemode)
 
 	rountstart_general_events_run(valid_events, track)
 
-	event_track_points[track] = 0
 	message_admins("Storyteller finished to get roundstart events with points left - [roundstart_budget].")
 
 /datum/controller/subsystem/gamemode/proc/recalculate_roundstart_budget()
@@ -731,6 +735,7 @@ SUBSYSTEM_DEF(gamemode)
 		else
 			message_admins("Storyteller failed to purchase scheduled event [scheduled_event] for [scheduled_event.roundstart_cost]. Left balance: [roundstart_budget].")
 			scheduled_events_roleset -= scheduled_event
+
 	return valid_events
 
 /datum/controller/subsystem/gamemode/proc/recalculate_roundstart_costs(track)
@@ -758,7 +763,6 @@ SUBSYSTEM_DEF(gamemode)
 			if(ruleset.antag_datum == event.antag_datum)
 				event.roundstart_cost = event.roundstart_cost ? event.roundstart_cost : ruleset.cost
 				break
-
 
 	return valid_events
 
@@ -1076,8 +1080,10 @@ SUBSYSTEM_DEF(gamemode)
 				dat += "<td>[track] - [last_points] per process.</td>" //Track
 				dat += "<td>[percent]% ([lower]/[upper])</td>" //Progress
 				dat += "<td>~[next] seconds</td>" //Next
-				var/datum/round_event_control/forced_event = forced_next_events[track]
-				var/forced = forced_event ? "[forced_event.name] <a href='byond://?src=[REF(src)];panel=main;action=track_action;track_action=remove_forced;track=[track]'>X</a>" : ""
+				var/list/forced_events = forced_next_events[track]
+				var/forced = ""
+				for(var/datum/round_event_control/forced_event in forced_events)
+					forced = forced + "[forced_event.name] <a href='byond://?src=[REF(src)];panel=main;action=track_action;track_action=remove_forced;track=[track]'>X</a></BR>"
 				dat += "<td>[forced]</td>" //Forced
 				dat += "<td><a href='byond://?src=[REF(src)];panel=main;action=track_action;track_action=set_pts;track=[track]'>Set Pts.</a> <a href='byond://?src=[REF(src)];panel=main;action=track_action;track_action=next_event;track=[track]'>Next Event</a></td>" //Actions
 				dat += "</tr>"

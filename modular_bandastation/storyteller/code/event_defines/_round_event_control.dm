@@ -333,7 +333,7 @@
 						return
 			message_admins("[key_name_admin(usr)] forced scheduled event [src.name].")
 			log_admin_private("[key_name(usr)] forced scheduled event [src.name].")
-			SSgamemode.forced_next_events[src.track] = src
+			SSgamemode.forced_next_events[src.track] += src
 		if("fire")
 			if(length(src.admin_setup))
 				for(var/datum/event_admin_setup/admin_setup_datum in src.admin_setup)

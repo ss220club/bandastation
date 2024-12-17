@@ -101,6 +101,7 @@
 		if(points >= mode.point_thresholds[track])
 			if(SSgamemode.can_run_roundstart)
 				SSgamemode.round_start_handle()
+
 			SSgamemode.can_run_roundstart = FALSE
 			if(prob(SSgamemode.empty_event_chance) && track == EVENT_TRACK_ROLESET)
 				calculate_empty_event(TRUE)
@@ -121,47 +122,42 @@
 	var/are_forced = FALSE
 	var/datum/controller/subsystem/gamemode/mode = SSgamemode
 	var/datum/round_event_control/picked_event
-	if(mode.forced_next_events[track]) //Forced event by admin
-		/// Dont check any prerequisites, it has been forced by an admin
-		picked_event = mode.forced_next_events[track]
-		mode.forced_next_events -= track
-		are_forced = TRUE
-	else
-		mode.update_crew_infos()
-		var/pop_required = mode.min_pop_thresholds[track]
-		if(mode.active_players < pop_required)
-			message_admins("Storyteller failed to pick an event for track of [track] due to insufficient population. (required: [pop_required] active pop for [track]. Current: [mode.active_players])")
-			mode.event_track_points[track] *= TRACK_FAIL_POINT_PENALTY_MULTIPLIER
+
+	mode.update_crew_infos()
+	var/pop_required = mode.min_pop_thresholds[track]
+	if(mode.active_players < pop_required)
+		message_admins("Storyteller failed to pick an event for track of [track] due to insufficient population. (required: [pop_required] active pop for [track]. Current: [mode.active_players])")
+		mode.event_track_points[track] *= TRACK_FAIL_POINT_PENALTY_MULTIPLIER
+		return
+	calculate_weights(track)
+	var/list/valid_events = list()
+	// Determine which events are valid to pick
+	for(var/datum/round_event_control/event as anything in mode.event_pools[track])
+		var/players_amt = get_active_player_count(alive_check = TRUE, afk_check = TRUE, human_check = TRUE)
+		if(event.can_spawn_event(players_amt))
+			if(QDELETED(event))
+				message_admins("[event.name] was deleted!")
+				continue
+			valid_events[event] = round(event.calculated_weight * 10) //multiply weight by 10 to get first decimal value
+	///If we didn't get any events, remove the points inform admins and dont do anything
+	if(!length(valid_events))
+		message_admins("Storyteller failed to pick an event for track of [track].")
+		mode.event_track_points[track] *= TRACK_FAIL_POINT_PENALTY_MULTIPLIER
+		return
+	picked_event = pick_weight(valid_events)
+	if(!picked_event)
+		if(length(valid_events))
+			var/added_string = ""
+			for(var/datum/round_event_control/item as anything in valid_events)
+				added_string += "[item.name]:[valid_events[item]]; "
+			stack_trace("WARNING: Storyteller picked a null from event pool, defaulting to option 1, look at weights:[added_string]")
+			shuffle_inplace(valid_events)
+			picked_event = valid_events[1]
+		else
+			message_admins("WARNING: Storyteller picked a null from event pool. Aborting event roll.")
+			stack_trace("WARNING: Storyteller picked a null from event pool.")
+			SSgamemode.event_track_points[track] = 0
 			return
-		calculate_weights(track)
-		var/list/valid_events = list()
-		// Determine which events are valid to pick
-		for(var/datum/round_event_control/event as anything in mode.event_pools[track])
-			var/players_amt = get_active_player_count(alive_check = TRUE, afk_check = TRUE, human_check = TRUE)
-			if(event.can_spawn_event(players_amt))
-				if(QDELETED(event))
-					message_admins("[event.name] was deleted!")
-					continue
-				valid_events[event] = round(event.calculated_weight * 10) //multiply weight by 10 to get first decimal value
-		///If we didn't get any events, remove the points inform admins and dont do anything
-		if(!length(valid_events))
-			message_admins("Storyteller failed to pick an event for track of [track].")
-			mode.event_track_points[track] *= TRACK_FAIL_POINT_PENALTY_MULTIPLIER
-			return
-		picked_event = pick_weight(valid_events)
-		if(!picked_event)
-			if(length(valid_events))
-				var/added_string = ""
-				for(var/datum/round_event_control/item as anything in valid_events)
-					added_string += "[item.name]:[valid_events[item]]; "
-				stack_trace("WARNING: Storyteller picked a null from event pool, defaulting to option 1, look at weights:[added_string]")
-				shuffle_inplace(valid_events)
-				picked_event = valid_events[1]
-			else
-				message_admins("WARNING: Storyteller picked a null from event pool. Aborting event roll.")
-				stack_trace("WARNING: Storyteller picked a null from event pool.")
-				SSgamemode.event_track_points[track] = 0
-				return
 
 	if(picked_event?.can_spawn_event(get_active_player_count(alive_check = TRUE, afk_check = TRUE, human_check = TRUE)) && track)
 		buy_event(picked_event, track, are_forced)
