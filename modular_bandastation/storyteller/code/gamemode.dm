@@ -640,13 +640,6 @@ SUBSYSTEM_DEF(gamemode)
 		message_admins("Storyteller failed to pick an events for roundstart due low population.")
 		return
 
-	var/track = EVENT_TRACK_ROLESET
-	var/list/valid_events = recalculate_roundstart_costs(track)
-	if(!length(valid_events))
-		message_admins("Storyteller failed to pick an events for roundstart.")
-		event_track_points[track] *= TRACK_FAIL_POINT_PENALTY_MULTIPLIER
-		return
-
 	var/pop_count = ready_players + (sec_crew * current_storyteller.sec_antag_modifier)
 	if(pop_count < current_storyteller.min_antag_popcount)
 		message_admins("Not enough ready players to run roundstart events.")
@@ -655,50 +648,35 @@ SUBSYSTEM_DEF(gamemode)
 	recalculate_roundstart_budget()
 	message_admins("Storyteller begin to get roundstart events with budget [roundstart_budget].")
 
+	var/track = EVENT_TRACK_ROLESET
 	if(forced_next_events[track])
 		message_admins("Storyteller purchased and triggered forced event [forced_next_events[track]].")
 		TriggerEvent(forced_next_events[track], forced = TRUE)
 		forced_next_events[track] = 0
 
-	var/list/scheduled_events_roleset = list()
-	for(var/datum/scheduled_event/scheduled_pre_event in scheduled_events)
-		scheduled_events_roleset += scheduled_pre_event.event
-		scheduled_events_roleset[scheduled_pre_event.event] = scheduled_pre_event.event.weight
-		scheduled_events -= scheduled_pre_event
+	var/list/valid_events = recalculate_roundstart_costs(track)
 
-	var/list/dynamic_roundstart_rules = SSdynamic.init_rulesets(/datum/dynamic_ruleset/roundstart)
+	valid_events = rountstart_scheduled_events_run(valid_events)
+
+	rountstart_general_events_run(valid_events, track)
+
+	event_track_points[track] = 0
+	message_admins("Storyteller finished to get roundstart events with points left - [roundstart_budget].")
+
+/datum/controller/subsystem/gamemode/proc/recalculate_roundstart_budget()
+	var/pop_count = ready_players + (sec_crew * current_storyteller.sec_antag_modifier)
+	roundstart_budget = roundstart_budget_set ? roundstart_budget_set : pop_count
+
+/datum/controller/subsystem/gamemode/proc/rountstart_general_events_run(valid_events, track)
+
+	if(!length(valid_events))
+		message_admins("Storyteller failed to pick an events for roundstart.")
+		event_track_points[track] *= TRACK_FAIL_POINT_PENALTY_MULTIPLIER
+		return
+
 	while(length(valid_events))
 		recalculate_ready_pop()
 		recalculate_roundstart_costs(track)
-		pop_count = ready_players + (sec_crew * current_storyteller.sec_antag_modifier)
-
-		while(length(scheduled_events_roleset))
-			var/datum/round_event_control/antagonist/solo/scheduled_event = pick_weight(scheduled_events_roleset)
-			for(var/datum/dynamic_ruleset/ruleset as anything in dynamic_roundstart_rules)
-				if(ruleset.antag_datum == scheduled_event.antag_datum)
-					scheduled_event.roundstart_cost = scheduled_event.roundstart_cost ? scheduled_event.roundstart_cost : ruleset.cost
-					break
-
-			if(scheduled_event.can_spawn_event(ready_players) && (roundstart_budget >= scheduled_event.roundstart_cost))
-				roundstart_budget -= scheduled_event.roundstart_cost
-				message_admins("Storyteller purchased and triggered scheduled event [scheduled_event] for [scheduled_event.roundstart_cost]. Left balance: [roundstart_budget].")
-				TriggerEvent(scheduled_event, forced = FALSE)
-				scheduled_events_roleset -= scheduled_event
-				if(scheduled_event.exclusive_roundstart_event)
-					scheduled_event = list()
-					valid_events = list()
-				else
-				// Если первое событие не-эксклюзивное, то удаляем из списка все эксклюзивные
-					for(var/datum/round_event_control/exclude_event as anything in scheduled_events_roleset)
-						if(exclude_event.exclusive_roundstart_event)
-							scheduled_events_roleset -= exclude_event
-
-					for(var/datum/round_event_control/exclude_event as anything in valid_events)
-						if(exclude_event.exclusive_roundstart_event)
-							valid_events -= exclude_event
-			else
-				message_admins("Storyteller failed to purchase scheduled event [scheduled_event] for [scheduled_event.roundstart_cost]. Left balance: [roundstart_budget].")
-				scheduled_events_roleset -= scheduled_event
 
 		var/datum/round_event_control/picked_event = pick_weight(valid_events)
 		if(picked_event.can_spawn_event(ready_players) && (roundstart_budget >= picked_event.roundstart_cost))
@@ -715,12 +693,45 @@ SUBSYSTEM_DEF(gamemode)
 						valid_events -= exclude_event
 		else
 			valid_events -= picked_event
-	event_track_points[track] = 0
-	message_admins("Storyteller finished to get roundstart events with points left - [roundstart_budget].")
 
-/datum/controller/subsystem/gamemode/proc/recalculate_roundstart_budget()
-	var/pop_count = ready_players + (sec_crew * current_storyteller.sec_antag_modifier)
-	roundstart_budget = roundstart_budget_set ? roundstart_budget_set : pop_count
+/datum/controller/subsystem/gamemode/proc/rountstart_scheduled_events_run(valid_events)
+	var/list/scheduled_events_roleset = list()
+	for(var/datum/scheduled_event/scheduled_pre_event in scheduled_events)
+		scheduled_events_roleset += scheduled_pre_event.event
+		scheduled_events_roleset[scheduled_pre_event.event] = scheduled_pre_event.event.weight
+		scheduled_events -= scheduled_pre_event
+
+	var/list/dynamic_roundstart_rules = SSdynamic.init_rulesets(/datum/dynamic_ruleset/roundstart)
+	if(length(scheduled_events_roleset))
+		var/datum/round_event_control/antagonist/solo/scheduled_event = pick_weight(scheduled_events_roleset)
+		for(var/datum/dynamic_ruleset/ruleset as anything in dynamic_roundstart_rules)
+			if(ruleset.antag_datum == scheduled_event.antag_datum)
+				scheduled_event.roundstart_cost = scheduled_event.roundstart_cost ? scheduled_event.roundstart_cost : ruleset.cost
+				break
+
+	while(length(scheduled_events_roleset))
+		var/datum/round_event_control/scheduled_event = pick_weight(scheduled_events_roleset)
+		if(scheduled_event.can_spawn_event(ready_players) && (roundstart_budget >= scheduled_event.roundstart_cost))
+			roundstart_budget -= scheduled_event.roundstart_cost
+			message_admins("Storyteller purchased and triggered scheduled event [scheduled_event] for [scheduled_event.roundstart_cost]. Left balance: [roundstart_budget].")
+			TriggerEvent(scheduled_event, forced = FALSE)
+			scheduled_events_roleset -= scheduled_event
+			if(scheduled_event.exclusive_roundstart_event)
+				scheduled_event = list()
+				valid_events = list()
+			else
+			// Если первое событие не-эксклюзивное, то удаляем из списка все эксклюзивные
+				for(var/datum/round_event_control/exclude_event as anything in scheduled_events_roleset)
+					if(exclude_event.exclusive_roundstart_event)
+						scheduled_events_roleset -= exclude_event
+
+				for(var/datum/round_event_control/exclude_event as anything in valid_events)
+					if(exclude_event.exclusive_roundstart_event)
+						valid_events -= exclude_event
+		else
+			message_admins("Storyteller failed to purchase scheduled event [scheduled_event] for [scheduled_event.roundstart_cost]. Left balance: [roundstart_budget].")
+			scheduled_events_roleset -= scheduled_event
+	return valid_events
 
 /datum/controller/subsystem/gamemode/proc/recalculate_roundstart_costs(track)
 	full_sec_crew = 0
@@ -765,37 +776,6 @@ SUBSYSTEM_DEF(gamemode)
 			continue
 		. += "[station_trait.get_report()]<BR>"
 	return
-
-/* /proc/reopen_roundstart_suicide_roles()
-	var/include_command = CONFIG_GET(flag/reopen_roundstart_suicide_roles_command_positions)
-	var/list/reopened_jobs = list()
-	for(var/mob/living/quitter in GLOB.suicided_mob_list)
-		var/datum/job/job = SSjob.GetJob(quitter.job)
-		if(!job || !(job.job_flags & JOB_REOPEN_ON_ROUNDSTART_LOSS))
-			continue
-		if(!include_command && job.departments_bitflags & DEPARTMENT_BITFLAG_COMMAND)
-			continue
-		job.current_positions = max(job.current_positions - 1, 0)
-		reopened_jobs += quitter.job
-	if(CONFIG_GET(flag/reopen_roundstart_suicide_roles_command_report))
-		if(reopened_jobs.len)
-			var/reopened_job_report_positions
-			for(var/dead_dudes_job in reopened_jobs)
-				reopened_job_report_positions = "[reopened_job_report_positions ? "[reopened_job_report_positions]\n":""][dead_dudes_job]"
-			var/suicide_command_report = "<font size = 3><b>Central Command Human Resources Board</b><br>\
-								Notice of Personnel Change</font><hr>\
-								To personnel management staff aboard [station_name()]:<br><br>\
-								Our medical staff have detected a series of anomalies in the vital sensors \
-								of some of the staff aboard your station.<br><br>\
-								Further investigation into the situation on our end resulted in us discovering \
-								a series of rather... unforturnate decisions that were made on the part of said staff.<br><br>\
-								As such, we have taken the liberty to automatically reopen employment opportunities for the positions of the crew members \
-								who have decided not to partake in our research. We will be forwarding their cases to our employment review board \
-								to determine their eligibility for continued service with the company (and of course the \
-								continued storage of cloning records within the central medical backup server.)<br><br>\
-								<i>The following positions have been reopened on our behalf:<br><br>\
-								[reopened_job_report_positions]</i>"
-			print_command_report(suicide_command_report, "Central Command Personnel Update") */
 
 //////////////////////////
 //Reports player logouts//
