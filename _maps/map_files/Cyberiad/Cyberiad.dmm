@@ -2146,10 +2146,6 @@
 	},
 /turf/open/floor/iron,
 /area/station/engineering/atmos)
-"aDc" = (
-/obj/machinery/mining_weather_monitor/directional/north,
-/turf/open/space/basic,
-/area/space)
 "aDd" = (
 /obj/machinery/camera/directional/north{
 	c_tag = "Central Hallway - South-West";
@@ -11087,7 +11083,9 @@
 /obj/machinery/conveyor_switch/oneway{
 	id = "QMLoad2"
 	},
-/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt{
+	pixel_x = -1
+	},
 /turf/open/floor/iron,
 /area/station/cargo/storage)
 "cOM" = (
@@ -15251,12 +15249,6 @@
 /obj/effect/turf_decal/tile/purple/half,
 /turf/open/floor/iron/white,
 /area/station/science/ordnance/office)
-"dPD" = (
-/obj/structure/railing{
-	dir = 1
-	},
-/turf/closed/wall,
-/area/station/cargo/miningoffice)
 "dPL" = (
 /obj/structure/transit_tube/curved{
 	dir = 8
@@ -22630,6 +22622,7 @@
 /obj/effect/turf_decal/tile/brown/anticorner/contrasted{
 	dir = 8
 	},
+/obj/machinery/mining_weather_monitor/directional/south,
 /turf/open/floor/iron,
 /area/station/cargo/miningoffice)
 "fLK" = (
@@ -24156,12 +24149,6 @@
 /obj/item/hand_labeler,
 /turf/open/floor/carpet/black,
 /area/station/command/meeting_room/council)
-"ggz" = (
-/obj/effect/turf_decal/tile/brown/half/contrasted{
-	dir = 4
-	},
-/turf/closed/wall,
-/area/station/cargo/miningoffice)
 "ggB" = (
 /obj/structure/table/wood,
 /obj/machinery/cell_charger,
@@ -40641,6 +40628,9 @@
 /obj/structure/railing{
 	dir = 4
 	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
 /turf/open/floor/iron,
 /area/station/cargo/storage)
 "kys" = (
@@ -48499,9 +48489,6 @@
 /obj/structure/railing{
 	dir = 8
 	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 8
-	},
 /turf/open/openspace,
 /area/station/cargo/storage)
 "mym" = (
@@ -50141,11 +50128,13 @@
 /turf/open/floor/iron,
 /area/station/science/lab)
 "mTM" = (
-/obj/docking_port/stationary/picked/whiteship{
-	dir = 8
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/effect/turf_decal/tile/brown{
+	dir = 1
 	},
-/turf/open/space/openspace,
-/area/space)
+/turf/open/floor/iron,
+/area/station/cargo/miningoffice)
 "mTN" = (
 /obj/structure/cable,
 /obj/effect/turf_decal/tile/yellow/half/contrasted,
@@ -50998,6 +50987,10 @@
 	dir = 8
 	},
 /area/station/service/hydroponics)
+"ngQ" = (
+/obj/effect/spawner/random/structure/table,
+/turf/open/floor/iron,
+/area/station/maintenance/port/aft)
 "ngT" = (
 /obj/structure/broken_flooring/pile/directional/west,
 /turf/open/floor/plating,
@@ -56278,6 +56271,15 @@
 /obj/effect/mapping_helpers/airlock/access/all/command/captain,
 /turf/open/floor/wood,
 /area/station/command/heads_quarters/captain/private)
+"oyc" = (
+/obj/effect/spawner/random/maintenance,
+/obj/structure/rack,
+/obj/item/stock_parts/power_store/cell/lead{
+	pixel_y = 1;
+	pixel_x = -3
+	},
+/turf/open/floor/plating,
+/area/station/maintenance/port/aft)
 "oyk" = (
 /obj/machinery/atmospherics/pipe/smart/simple/cyan/visible{
 	dir = 6
@@ -71188,15 +71190,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/station/maintenance/ghetto/starboard/aft)
-"ssj" = (
-/obj/effect/spawner/random/maintenance,
-/obj/structure/rack,
-/obj/item/stock_parts/power_store/cell/lead{
-	pixel_y = 1;
-	pixel_x = -3
-	},
-/turf/open/floor/plating,
-/area/station/maintenance/port/aft)
 "ssk" = (
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
@@ -72233,10 +72226,6 @@
 /obj/effect/turf_decal/tile/dark_blue/opposingcorners,
 /turf/open/floor/iron/white/textured,
 /area/station/security/medical)
-"sGg" = (
-/obj/effect/spawner/random/structure/table,
-/turf/open/floor/iron,
-/area/station/maintenance/port/aft)
 "sGh" = (
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
@@ -92352,9 +92341,9 @@
 /obj/docking_port/stationary{
 	dir = 2;
 	dwidth = 11;
-	height = 22;
-	shuttle_id = "whiteship_home";
+	height = 24;
 	name = "SS13: Auxiliary Dock, Station-Port";
+	shuttle_id = "whiteship_home";
 	width = 35
 	},
 /turf/open/space/openspace,
@@ -113335,7 +113324,7 @@ mJd
 uto
 fLG
 hBj
-aDc
+doz
 doz
 doz
 doz
@@ -113843,7 +113832,7 @@ hBj
 hBj
 hBj
 hBj
-ggz
+hBj
 tWk
 sAN
 bhz
@@ -114101,7 +114090,7 @@ rZD
 eVn
 aOJ
 jYh
-riE
+mTM
 riE
 plE
 din
@@ -114353,7 +114342,7 @@ mAn
 qUy
 qUy
 rYK
-dPD
+hBj
 mvz
 iBh
 iiG
@@ -114610,7 +114599,7 @@ rdN
 xZe
 qUy
 rYK
-dPD
+hBj
 hZs
 oKG
 tMR
@@ -166779,7 +166768,7 @@ tYD
 tYD
 tYD
 tYD
-mTM
+tYD
 tYD
 tYD
 tYD
@@ -179649,7 +179638,7 @@ gJs
 gJs
 gJs
 tYD
-doz
+tYD
 tYD
 oXc
 kAy
@@ -182982,7 +182971,7 @@ rml
 sqr
 okJ
 uhZ
-sGg
+ngQ
 mKa
 tVz
 oXc
@@ -183239,7 +183228,7 @@ pWG
 taB
 gwx
 uhZ
-ssj
+oyc
 tVz
 qfY
 ydu
