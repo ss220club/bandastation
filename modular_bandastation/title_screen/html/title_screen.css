@@ -495,6 +495,60 @@ input,
 }
 
 /**
+ * MARK: Tooltip
+ */
+.lobby_button:hover .lobby-tooltip {
+	opacity: 1;
+}
+
+.lobby-tooltip {
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	pointer-events: none;
+	min-width: 60px;
+	max-width: 120px;
+	line-height: 10px;
+	text-shadow: 0px -1px 0px #bec4bf;
+	background-color: #9aa39f;
+	color: #383b43;
+	border: 1px solid #51575e;
+	border-bottom-color: #20202a;
+	border-radius: 1px;
+	transition: opacity 0s;
+	transition-delay: 0.75s;
+}
+
+.lobby-tooltip[data-position='right'] {
+	left: 27.5px;
+}
+
+.lobby-tooltip[data-position='bottom'] {
+	bottom: -27.5px;
+	left: 0px;
+}
+
+.lobby-tooltip[data-position='left'] {
+	left: -123.5px;
+}
+
+.lobby-tooltip-title {
+	display: block;
+	font-size: 13px;
+	line-height: 11px;
+	padding: 0.15em 0.15em 0.05em;
+	border-bottom: 1px solid #20202a;
+	box-shadow: inset 1px -1px 0px #e0e3dc;
+}
+
+.lobby-tooltip-content {
+	display: block;
+	font-size: 10px;
+	padding: 0.2em 0.2em 0.1em;
+	box-shadow: inset 1px -1px 0px #e0e3dc;
+}
+
+/**
  * MARK: Checkbox handling
  */
 #hide_menu:checked ~ .lobby_wrapper .lobby_container {

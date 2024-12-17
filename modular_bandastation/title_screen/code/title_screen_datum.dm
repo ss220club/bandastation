@@ -49,13 +49,17 @@
 		</a>
 	"}
 
-/datum/title_screen/proc/create_icon_button(user, href, enabled = TRUE)
+/datum/title_screen/proc/create_icon_button(user, href, tooltip, tooltip_position = "bottom", enabled = TRUE)
 	return {"
 		<a class="lobby_button lobby_element lobby-[href] [!enabled ? "disabled" : ""]" href='byond://?src=[REF(user)];[enabled ? href : ""]=1'>
 			<div class="toggle">
 				<img class="pixelated indicator [!enabled ? "disabled" : ""]" src="[SSassets.transport.get_asset_url(asset_name = "lobby_[enabled ? "highlight" : "disabled"].png")]">
 			</div>
 			<img class="pixelated" src="[SSassets.transport.get_asset_url(asset_name = "lobby_[href].png")]">
+			[tooltip ? {"
+			<div class="lobby-tooltip" data-position="[tooltip_position]">
+				<span class="lobby-tooltip-content">[tooltip]</span>
+			</div> "} : ""]
 		</a>
 	"}
 
@@ -104,19 +108,19 @@
 	html += {"</div>"}
 
 	html += {"<div class="lobby_buttons-bottom">"}
-	html += create_icon_button(player, "changelog")
-	html += create_icon_button(player, "settings")
-	html += create_icon_button(player, "manifest")
-	html += create_icon_button(player, "polls", player.check_polls())
+	html += create_icon_button(player, "changelog", "Открыть чейнджлог")
+	html += create_icon_button(player, "settings", "Настройки игры")
+	html += create_icon_button(player, "manifest", "Манифест персонала")
+	html += create_icon_button(player, "polls", enabled = player.check_polls())
 	html += {"</div>"}
 
 	if(check_rights_for(viewer, R_FUN|R_DEBUG))
 		html += {"<div class="lobby_buttons-right">"}
-		html += create_icon_button(player, "picture")
-		html += create_icon_button(player, "notice")
+		html += create_icon_button(player, "picture", "Сменить изображение", "right")
+		html += create_icon_button(player, "notice", "Оставить уведомление", "right")
 
 		if(check_rights_for(viewer, R_DEBUG))
-			html += create_icon_button(player, "css")
+			html += create_icon_button(player, "css", "Заменить CSS лобби", "right")
 
 		html += {"</div>"}
 
@@ -142,6 +146,10 @@
 						<img class="pixelated indicator" src="[SSassets.transport.get_asset_url(asset_name = "lobby_highlight.png")]">
 					</div>
 					<img class="pixelated" src="[SSassets.transport.get_asset_url(asset_name = "lobby_[traitID].png")]">
+					<div class="lobby-tooltip" data-position="left">
+						<span class="lobby-tooltip-title">[trait.name]</span>
+						<span class="lobby-tooltip-content">[trait.button_desc]</span>
+					</div>
 				</a>
 			"}
 

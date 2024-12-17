@@ -62,12 +62,12 @@
 			return
 		SSadmin_verbs.dynamic_invoke_verb(usr, /datum/admin_verb/change_title_screen_notice)
 
-	else if(href_list["change_title_screen_css"])
+	else if(href_list["css"])
 		if(!check_rights(R_DEBUG))
 			log_admin("Title Screen: Possible href exploit attempt by [key_name(usr)]!")
 			message_admins("Title Screen: Possible href exploit attempt by [key_name(usr)]!")
 			return
-		SSadmin_verbs.dynamic_invoke_verb(usr, /datum/admin_verb/change_title_screen_notice)
+		SSadmin_verbs.dynamic_invoke_verb(usr, /datum/admin_verb/change_title_screen_css)
 
 	else if(href_list["focus"])
 		winset(client, "mapwindow", "focus=true")
