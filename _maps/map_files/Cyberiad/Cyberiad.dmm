@@ -11083,9 +11083,6 @@
 /obj/machinery/conveyor_switch/oneway{
 	id = "QMLoad2"
 	},
-/obj/effect/decal/cleanable/dirt{
-	pixel_x = -1
-	},
 /turf/open/floor/iron,
 /area/station/cargo/storage)
 "cOM" = (
@@ -24769,7 +24766,6 @@
 /obj/effect/turf_decal/tile/brown/half/contrasted{
 	dir = 1
 	},
-/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron,
 /area/station/cargo/storage)
 "gpU" = (
@@ -38355,7 +38351,6 @@
 /turf/open/water,
 /area/station/maintenance/starboard/lesser)
 "jVa" = (
-/obj/effect/turf_decal/tile/brown/half/contrasted,
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
@@ -40629,6 +40624,9 @@
 	dir = 4
 	},
 /obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/effect/turf_decal/stripes/line{
 	dir = 4
 	},
 /turf/open/floor/iron,
@@ -49707,6 +49705,7 @@
 /obj/effect/turf_decal/tile/brown/anticorner/contrasted{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron,
 /area/station/cargo/storage)
 "mOI" = (
@@ -64511,7 +64510,6 @@
 /obj/effect/turf_decal/tile/brown/half/contrasted{
 	dir = 1
 	},
-/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron,
 /area/station/cargo/storage)
 "qHa" = (
@@ -72693,12 +72691,10 @@
 /turf/open/floor/plating,
 /area/station/maintenance/department/bridge/ntr)
 "sNA" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/structure/cable,
+/obj/effect/turf_decal/bot,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron,
-/area/station/cargo/warehouse)
+/area/station/cargo/storage)
 "sNB" = (
 /obj/structure/sign/warning/vacuum/directional/east,
 /turf/open/floor/plating,
@@ -178853,7 +178849,7 @@ jFh
 jFh
 jFh
 cOr
-xFz
+sNA
 xFz
 xFz
 hsX
@@ -180399,7 +180395,7 @@ wyj
 fwJ
 beH
 fJA
-sNA
+hel
 iPi
 teB
 vOc
@@ -180657,7 +180653,7 @@ dMR
 beH
 pLD
 hel
-vOc
+teB
 nrT
 vOc
 nQa
@@ -181430,7 +181426,7 @@ qGX
 amn
 jFh
 jFh
-jFh
+hsX
 kka
 dMR
 tYD
