@@ -74,3 +74,8 @@ GLOBAL_LIST_EMPTY(human_to_tts)
 /datum/preferences/apply_prefs_to(mob/living/carbon/human/character, icon_updates)
 	. = ..()
 	GLOB.human_to_tts["[character.real_name]"] = character.dna.tts_seed_dna
+
+/mob/living/carbon/human/randomize_human_appearance(randomize_flags)
+	. = ..()
+	var/datum/component/tts_component/tts_component = GetComponent(/datum/component/tts_component)
+	tts_component.tts_seed = tts_component.get_random_tts_seed_by_gender()
