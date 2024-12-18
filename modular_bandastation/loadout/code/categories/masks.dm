@@ -1,5 +1,5 @@
 /datum/loadout_category/masks
-	category_name = "Ëèöî"
+	category_name = "Ã‹Ã¨Ã¶Ã®"
 	category_ui_icon = FA_ICON_MASK
 	type_to_generate = /datum/loadout_item/masks
 	tab_order = /datum/loadout_category/head::tab_order + 1
@@ -7,7 +7,7 @@
 /datum/loadout_item/masks
 	abstract_type = /datum/loadout_item/masks
 
-/datum/loadout_item/glasses/insert_path_into_outfit(datum/outfit/outfit, mob/living/carbon/human/equipper, visuals_only = FALSE)
+/datum/loadout_item/masks/insert_path_into_outfit(datum/outfit/outfit, mob/living/carbon/human/equipper, visuals_only = FALSE)
 	if(outfit.mask)
 		LAZYADD(outfit.backpack_contents, outfit.mask)
 	outfit.mask = item_path
