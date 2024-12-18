@@ -11,7 +11,7 @@
 	if(!edge_overlay_file)
 		return
 
-	edge_overlay = mutable_appearance(edge_overlay_file, "[smoothing_junction]", layer + 0.1, appearance_flags = RESET_COLOR)
+	edge_overlay = mutable_appearance(edge_overlay_file, "[smoothing_junction]", layer + 0.1, appearance_flags = RESET_COLOR|KEEP_APART)
 	. += edge_overlay
 
 /obj/structure/window/fulltile

@@ -6031,10 +6031,14 @@
 /turf/open/floor/iron,
 /area/station/cargo/storage/ghetto)
 "bCO" = (
-/obj/structure/sign/poster/random/directional/north,
 /obj/structure/table/wood,
 /obj/item/toy/dummy{
 	pixel_y = 6
+	},
+/obj/machinery/button/door/directional/north{
+	id = "mime_window";
+	name = "Privacy Shutters Control";
+	req_access = list("theatre")
 	},
 /turf/open/floor/iron/kitchen,
 /area/station/service/theater)
@@ -22012,7 +22016,9 @@
 "fEV" = (
 /obj/machinery/computer/security/wooden_tv,
 /obj/machinery/button/door/directional/east{
-	id = "dec_window"
+	id = "dec_window";
+	name = "Privacy Shutters Control";
+	req_access = list("security")
 	},
 /turf/open/floor/iron/grimy,
 /area/station/security/detectives_office)
@@ -32433,7 +32439,6 @@
 /turf/open/floor/engine/plasma,
 /area/station/engineering/atmos)
 "isu" = (
-/obj/structure/rack,
 /obj/effect/spawner/random/trash/moisture_trap,
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
@@ -41458,6 +41463,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron,
 /area/station/engineering/storage_shared)
+"kFR" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "clown_window"
+	},
+/turf/open/floor/plating,
+/area/station/service/theater)
 "kFX" = (
 /obj/structure/railing{
 	dir = 4
@@ -51453,7 +51465,11 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/tile/bar,
-/obj/structure/sign/poster/random/directional/north,
+/obj/machinery/button/door/directional/north{
+	id = "clown_window";
+	name = "Privacy Shutters Control";
+	req_access = list("theatre")
+	},
 /turf/open/floor/iron/kitchen,
 /area/station/service/theater)
 "nlW" = (
@@ -63882,6 +63898,9 @@
 /area/station/hallway/secondary/entry)
 "qxD" = (
 /obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "mime_window"
+	},
 /turf/open/floor/plating,
 /area/station/service/theater)
 "qxK" = (
@@ -80191,7 +80210,7 @@
 /obj/effect/turf_decal/tile/brown{
 	dir = 1
 	},
-/obj/machinery/door/airlock/bananium/glass,
+/obj/machinery/door/airlock/bananium,
 /obj/effect/mapping_helpers/airlock/autoname,
 /obj/effect/mapping_helpers/airlock/access/all/service/theatre,
 /obj/machinery/door/firedoor,
@@ -193039,9 +193058,9 @@ fgy
 eeS
 fgy
 fgy
-qxD
+kFR
 uMp
-qxD
+kFR
 aMs
 gbV
 qCz
@@ -193556,7 +193575,7 @@ fgy
 uvO
 ivD
 vTC
-qxD
+kFR
 nEu
 fzc
 pld
@@ -193813,7 +193832,7 @@ byw
 pUD
 cQp
 wpe
-qxD
+kFR
 nEu
 iMZ
 gnf
