@@ -3675,7 +3675,8 @@
 /obj/machinery/button/door/directional/south{
 	id = "ntr_privacy";
 	name = "Privacy Shutters Control";
-	pixel_x = -6
+	pixel_x = -6;
+	req_access = list("nanotrasen_representative")
 	},
 /obj/machinery/button/door/directional/south{
 	id = "ntr_door";
@@ -16643,7 +16644,8 @@
 /obj/machinery/button/door/directional/south{
 	id = "blueshield_privacy";
 	name = "Privacy Shutters Control";
-	pixel_x = -6
+	pixel_x = -6;
+	req_access = list("blueshield")
 	},
 /obj/machinery/button/door/directional/south{
 	id = "blueshield_door";
@@ -42985,6 +42987,7 @@
 	},
 /obj/structure/table,
 /obj/machinery/light/directional/west,
+/obj/machinery/computer/security/telescreen/prison/directional/north,
 /turf/open/floor/wood/tile,
 /area/station/service/lawoffice)
 "kXD" = (
@@ -44785,7 +44788,6 @@
 /area/station/engineering/main)
 "lvv" = (
 /obj/structure/table/wood,
-/obj/effect/decal/cleanable/ash,
 /obj/item/clipboard{
 	pixel_y = 2
 	},
