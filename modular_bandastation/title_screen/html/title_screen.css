@@ -535,5 +535,5 @@ input,
 }
 
 #hide_menu:not(:checked) ~ .lobby_wrapper .lobby_container .lobby_buttons-bottom {
-	animation: 2s sidebuttons_bottom_reverse;
+	animation: 0.5s sidebuttons_bottom_reverse;
 }
