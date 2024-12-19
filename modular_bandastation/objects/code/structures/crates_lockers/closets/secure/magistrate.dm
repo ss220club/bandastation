@@ -4,7 +4,7 @@
 	icon = 'modular_bandastation/objects/icons/obj/storage/closet.dmi'
 	req_access = list(ACCESS_MAGISTRATE)
 
-/obj/structure/closet/secure_closet/magistrate/PopulateContents()
+/obj/structure/closet/secure_closet/magistrate/populate_contents_immediate()
 	new /obj/item/storage/briefcase/secure(src)
 	new /obj/item/pai_card(src)
 	new /obj/item/assembly/flash/handheld(src)

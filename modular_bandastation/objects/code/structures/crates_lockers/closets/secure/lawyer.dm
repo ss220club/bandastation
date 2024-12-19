@@ -5,7 +5,7 @@
 	icon = 'modular_bandastation/objects/icons/obj/storage/closet.dmi'
 	req_access = list(ACCESS_LAWYER)
 
-/obj/structure/closet/secure_closet/lawyer/PopulateContents()
+/obj/structure/closet/secure_closet/lawyer/populate_contents_immediate()
 	new /obj/item/clothing/under/suit/black(src)
 	new /obj/item/clothing/under/rank/civilian/lawyer/beige(src)
 	new /obj/item/clothing/under/rank/civilian/lawyer/black(src)
