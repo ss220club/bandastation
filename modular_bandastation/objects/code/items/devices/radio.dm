@@ -2,7 +2,7 @@
 /obj/item/encryptionkey/heads/blueshield
 	name = "blueshield's encryption key"
 	icon_state = "cypherkey_centcom"
-	channels = list(RADIO_CHANNEL_COMMAND = 1, RADIO_CHANNEL_SECURITY = 1, RADIO_CHANNEL_PROCEDURE = 1)
+	channels = list(RADIO_CHANNEL_COMMAND = 1, RADIO_CHANNEL_SECURITY = 1, RADIO_CHANNEL_JUSTICE = 1)
 	greyscale_config = /datum/greyscale_config/encryptionkey_centcom
 	greyscale_colors = "#1d2657#dca01b"
 
@@ -27,7 +27,7 @@
 /obj/item/encryptionkey/heads/nanotrasen_representative
 	name = "nanotrasen representative's encryption key"
 	icon_state = "cypherkey_centcom"
-	channels = list(RADIO_CHANNEL_COMMAND = 1, RADIO_CHANNEL_PROCEDURE = 1)
+	channels = list(RADIO_CHANNEL_COMMAND = 1, RADIO_CHANNEL_JUSTICE = 1)
 	greyscale_config = /datum/greyscale_config/encryptionkey_centcom
 	greyscale_colors = "#1d2657#dca01b"
 
@@ -51,7 +51,7 @@
 // Magistrate
 /obj/item/encryptionkey/heads/magistrate
 	name = "magistrate's encryption key"
-	channels = list(RADIO_CHANNEL_COMMAND = 1, RADIO_CHANNEL_SECURITY = 1, RADIO_CHANNEL_PROCEDURE = 1)
+	channels = list(RADIO_CHANNEL_COMMAND = 1, RADIO_CHANNEL_SECURITY = 1, RADIO_CHANNEL_JUSTICE = 1)
 
 /obj/item/radio/headset/heads/magistrate
 	name = "magistrate's headset"
@@ -73,11 +73,11 @@
 // Lawyer
 /obj/item/encryptionkey/lawyer
 	name = "lawyer's encryption key"
-	channels = list(RADIO_CHANNEL_SECURITY = 1, RADIO_CHANNEL_PROCEDURE = 1)
+	channels = list(RADIO_CHANNEL_SECURITY = 1, RADIO_CHANNEL_JUSTICE = 1)
 
 /obj/item/radio/headset/lawyer
 	name = "lawyer's headset"
-	desc = "Простой наушник юриста, имеющий доступ к процедурному каналу и каналу безопасности."
-	icon_state = "procedure_headset"
-	worn_icon_state = "procedure_headset"
+	desc = "Простой наушник юриста, имеющий доступ к юридическому и каналу безопасности."
+	icon_state = "justice_headset"
+	worn_icon_state = "justice_headset"
 	keyslot = /obj/item/encryptionkey/lawyer

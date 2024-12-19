@@ -66,8 +66,8 @@
 /obj/machinery/telecomms/bus/preset_three
 	id = "Bus 3"
 	network = "tcommsat"
-	freq_listening = list(FREQ_SECURITY, FREQ_COMMAND, FREQ_PROCEDURE)
-	autolinkers = list("processor3", "security", "command", "procedure")
+	freq_listening = list(FREQ_SECURITY, FREQ_COMMAND, FREQ_JUSTICE) // BANDASTATION ADD - Jobs Module
+	autolinkers = list("processor3", "security", "command", "justice") // BANDASTATION ADD - Jobs Module
 
 /obj/machinery/telecomms/bus/preset_four
 	id = "Bus 4"

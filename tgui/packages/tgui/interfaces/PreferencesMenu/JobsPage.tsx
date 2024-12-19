@@ -404,7 +404,7 @@ export const JobsPage = () => {
                 <Gap amount={6} />
               </Department>
 
-              <Department department="Procedure">
+              <Department department="Justice">
                 <Gap amount={6} />
               </Department>
 

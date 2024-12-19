@@ -3,8 +3,8 @@
 // NT Representation department
 #include "code/departments/nt_representation.dm"
 
-// Procedure department
-#include "code/departments/procedure.dm"
+// Department of Justice
+#include "code/departments/justice.dm"
 
 // Captain
 #include "code/job_types/captain/trim.dm"

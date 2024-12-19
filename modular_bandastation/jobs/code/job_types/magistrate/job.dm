@@ -2,7 +2,7 @@
 	title  = JOB_MAGISTRATE
 	description = "Вершите правосудие на станции, поддерживайте соблюдение закона."
 	department_head = list("Центральное командование")
-	head_announce = list(RADIO_CHANNEL_PROCEDURE)
+	head_announce = list(RADIO_CHANNEL_JUSTICE)
 	auto_deadmin_role_flags = DEADMIN_POSITION_HEAD|DEADMIN_POSITION_SECURITY
 	faction = FACTION_STATION
 	total_positions = 1
@@ -11,7 +11,7 @@
 	minimal_player_age = 14
 	exp_requirements = 1500
 	exp_required_type = EXP_TYPE_CREW
-	exp_required_type_department = EXP_TYPE_PROCEDURE
+	exp_required_type_department = EXP_TYPE_JUSTICE
 	exp_granted_type = EXP_TYPE_CREW
 	config_tag = "MAGISTRATE"
 
@@ -24,7 +24,7 @@
 
 	display_order = JOB_DISPLAY_ORDER_MAGISTRATE
 	departments_list = list(
-		/datum/job_department/procedure,
+		/datum/job_department/justice,
 		/datum/job_department/command,
 	)
 	family_heirlooms = list(/obj/item/gavelhammer, /obj/item/book/manual/wiki/security_space_law)

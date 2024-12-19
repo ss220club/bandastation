@@ -14,7 +14,7 @@
 //NT Reprsentation
 #define JOB_NANOTRASEN_REPRESENTATIVE_RU "Представитель Нанотрейзен"
 #define JOB_BLUESHIELD_RU "Офицер «Синий щит»"
-//Procedure
+//Justice
 #define JOB_MAGISTRATE_RU "Магистрат"
 #define JOB_LAWYER_RU "Юрист"
 //Silicon
@@ -76,7 +76,7 @@ GLOBAL_LIST_INIT(job_titles_ru, list(
 	//NT Representation
 	JOB_NANOTRASEN_REPRESENTATIVE = JOB_NANOTRASEN_REPRESENTATIVE_RU,
 	JOB_BLUESHIELD = JOB_BLUESHIELD_RU,
-	//Procedure
+	//Justice
 	JOB_MAGISTRATE = JOB_MAGISTRATE_RU,
 	JOB_LAWYER = JOB_LAWYER_RU,
 	//Silicon

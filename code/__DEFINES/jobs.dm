@@ -201,7 +201,7 @@
 #define DEPARTMENT_BITFLAG_CAPTAIN (1<<9)
 #define DEPARTMENT_CAPTAIN "Captain"
 #define DEPARTMENT_BITFLAG_NANOTRASEN_REPRESENTATION (1<<10) // Bandastation add - Jobs Module
-#define DEPARTMENT_BITFLAG_PROCEDURE (1<<11) // Bandastation add - Jobs Module
+#define DEPARTMENT_BITFLAG_JUSTICE (1<<11) // Bandastation add - Jobs Module
 
 DEFINE_BITFIELD(departments_bitflags, list(
 	"SECURITY" = DEPARTMENT_BITFLAG_SECURITY,
@@ -215,7 +215,7 @@ DEFINE_BITFIELD(departments_bitflags, list(
 	"ASSISTANT" = DEPARTMENT_BITFLAG_ASSISTANT,
 	"CAPTAIN" = DEPARTMENT_BITFLAG_CAPTAIN,
 	"NANOTRASEN_REPRESENTATION" = DEPARTMENT_BITFLAG_NANOTRASEN_REPRESENTATION, // Bandastation add - Jobs Module
-	"PROCEDURE" = DEPARTMENT_BITFLAG_PROCEDURE, // Bandastation add - Jobs Module
+	"JUSTICE" = DEPARTMENT_BITFLAG_JUSTICE, // Bandastation add - Jobs Module
 ))
 
 /* Job datum job_flags */
