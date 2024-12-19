@@ -157,8 +157,8 @@
 
 	html += {"
 		<label class="lobby_element lobby-collapse" for="hide_menu">
+			<span id="collapse" class="lobby-text toggle good">˄</span>
 			<img class="pixelated" src="[SSassets.transport.get_asset_url(asset_name = "lobby_collapse.png")]">
-			<div class="toggle"></div>
 		</label>
 	"}
 
@@ -230,6 +230,17 @@
 				}
 			}
 
+			let collapsed = false;
+			const collapse = document.getElementById("collapse");
+			function update_collapse() {
+				collapsed = !collapsed;
+				if(collapsed) {
+					collapse.textContent = "˅";
+				} else {
+					collapse.textContent = "˄";
+				}
+			}
+
 			const image_container = document.getElementById("screen_image");
 			function update_image(image) {
 				image_container.src = image;
@@ -242,8 +253,9 @@
 				focus.send();
 			}
 
-			document.addEventListener('mouseup', reFocus);
 			document.addEventListener('keyup', reFocus);
+			document.addEventListener('mouseup', reFocus);
+			collapse.addEventListener('mouseup', update_collapse);
 		</script>
 	"}
 

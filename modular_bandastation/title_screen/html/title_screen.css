@@ -12,11 +12,7 @@
 		transform: translateY(-100%);
 	}
 
-	50% {
-		transform: translateY(0);
-	}
-
-	100% {
+	50%, 100% {
 		transform: translateY(0);
 	}
 }
@@ -26,21 +22,13 @@
 		transform: translateY(-100%);
 	}
 
-	50% {
-		transform: translateY(0);
-	}
-
-	100% {
+	50%, 100% {
 		transform: translateY(0);
 	}
 }
 
 @keyframes shutter_all {
-	0% {
-		transform: scale(2) translateY(0);
-	}
-
-	50% {
+	0%, 50% {
 		transform: scale(2) translateY(0);
 	}
 
@@ -54,11 +42,7 @@
 		transform: scale(2) translateY(-100%);
 	}
 
-	50% {
-		transform: scale(2) translateY(0);
-	}
-
-	100% {
+	50%, 100% {
 		transform: scale(2) translateY(0);
 	}
 }
@@ -68,40 +52,13 @@
 		transform: translateX(0);
 	}
 
-	25% {
-		transform: translateX(-125%);
-	}
-
-	50% {
-		transform: translateX(-125%);
-	}
-
-	75% {
-		transform: translateX(-125%);
-	}
-
-	100% {
+	25%, 50%, 75%, 100% {
 		transform: translateX(-125%);
 	}
 }
 
 @keyframes sidebuttons_right_reverse {
-	0% {
-		transform: translateX(-125%);
-		z-index: 1;
-	}
-
-	25% {
-		transform: translateX(-125%);
-		z-index: 1;
-	}
-
-	50% {
-		transform: translateX(-125%);
-		z-index: 1;
-	}
-
-	75% {
+	0%, 25%, 50%, 75% {
 		transform: translateX(-125%);
 		z-index: 1;
 	}
@@ -117,40 +74,13 @@
 		transform: translateX(0);
 	}
 
-	25% {
-		transform: translateX(125%);
-	}
-
-	50% {
-		transform: translateX(125%);
-	}
-
-	75% {
-		transform: translateX(125%);
-	}
-
-	100% {
+	25%, 50%, 75%, 100% {
 		transform: translateX(125%);
 	}
 }
 
 @keyframes sidebuttons_left_reverse {
-	0% {
-		transform: translateX(125%);
-		z-index: 1;
-	}
-
-	25% {
-		transform: translateX(125%);
-		z-index: 1;
-	}
-
-	50% {
-		transform: translateX(125%);
-		z-index: 1;
-	}
-
-	75% {
+	0%, 25%, 50%, 75% {
 		transform: translateX(125%);
 		z-index: 1;
 	}
@@ -162,19 +92,7 @@
 }
 
 @keyframes sidebuttons_bottom {
-	0% {
-		transform: translateY(0);
-	}
-
-	25% {
-		transform: translateY(0);
-	}
-
-	50% {
-		transform: translateY(0);
-	}
-
-	75% {
+	0%, 25%, 50%, 75% {
 		transform: translateY(0);
 	}
 
@@ -188,20 +106,20 @@
 		transform: translateY(-100%);
 	}
 
-	25% {
+	25%, 50%, 75%, 100% {
 		transform: translateY(0);
 	}
+}
 
-	50% {
-		transform: translateY(0);
+@keyframes collapse_button {
+	0%, 25%, 50%, 75%, 100% {
+		visibility: hidden;
 	}
+}
 
-	75% {
-		transform: translateY(0);
-	}
-
-	100% {
-		transform: translateY(0);
+@keyframes collapse_button_reverse {
+	0%, 25%, 50%, 75%, 100% {
+		visibility: hidden;
 	}
 }
 
@@ -307,11 +225,20 @@ input,
 }
 
 .lobby-collapse {
-	cursor: pointer;
+	pointer-events: none;
 	position: absolute;
 	left: 31.5px;
 	bottom: -17.5px;
 	z-index: 1;
+}
+
+#collapse {
+	pointer-events: all;
+	cursor: pointer;
+	width: 19px;
+	height: 15px;
+	text-indent: -2px;
+	transform: translate(3.8px, 53.5px) scale(1.25, 0.75);
 }
 
 /**
@@ -552,6 +479,14 @@ input,
 /**
  * MARK: Checkbox handling
  */
+#hide_menu:checked ~ .lobby_wrapper .lobby_container .lobby-collapse .lobby-text {
+	animation: collapse_button_reverse 2s;
+}
+
+#hide_menu:not(:checked) ~ .lobby_wrapper .lobby_container .lobby-collapse .lobby-text {
+	animation: collapse_button 2s;
+}
+
 #hide_menu:checked ~ .lobby_wrapper .lobby_container {
 	animation: shutter_all 1.5s;
 	transform: scale(2) translateY(-100%);
