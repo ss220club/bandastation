@@ -233,6 +233,10 @@
 			let collapsed = false;
 			const collapse = document.getElementById("collapse");
 			function update_collapse() {
+				const requestSound = new XMLHttpRequest();
+				requestSound.open("GET", "?src=[REF(player)];collapse=1");
+				requestSound.send();
+
 				collapsed = !collapsed;
 				if(collapsed) {
 					collapse.textContent = "˅";
@@ -248,7 +252,7 @@
 
 			/* Return focus to Byond after click */
 			function reFocus() {
-				var focus = new XMLHttpRequest();
+				const focus = new XMLHttpRequest();
 				focus.open("GET", "?src=[REF(player)];focus=1");
 				focus.send();
 			}
