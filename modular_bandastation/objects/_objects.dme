@@ -14,6 +14,9 @@
 #include "code/items/clothing/head/hat.dm"
 #include "code/items/clothing/head/jobs.dm"
 #include "code/items/clothing/head/soft_caps.dm"
+#include "code/items/clothing/mod/modules/monitor_module.dm"
+#include "code/items/clothing/mod/types/praetorian/mod_theme.dm"
+#include "code/items/clothing/mod/types/praetorian/mod_types.dm"
 #include "code/items/clothing/shoes/shoes.dm"
 #include "code/items/clothing/spacesuits/plasmaman.dm"
 #include "code/items/clothing/suits/armor.dm"
@@ -39,6 +42,7 @@
 
 #include "code/machinery/papershredder.dm"
 #include "code/machinery/photocopier.dm"
+#include "code/machinery/suit_storage_unit.dm"
 #include "code/machinery/vending/vending.dm"
 
 #include "code/structures/chairs.dm"

@@ -25,3 +25,12 @@
 	name = "Blueshield Plasmaman"
 	head = /obj/item/clothing/head/helmet/space/plasmaman/blueshield
 	uniform = /obj/item/clothing/under/plasmaman/blueshield
+
+/datum/outfit/job/blueshield/mod
+	name = "Blueshield (MODsuit)"
+	suit_store = /obj/item/tank/internals/oxygen
+	back = /obj/item/mod/control/pre_equipped/praetorian
+	suit = null
+	head = null
+	mask = /obj/item/clothing/mask/gas
+	internals_slot = ITEM_SLOT_SUITSTORE
