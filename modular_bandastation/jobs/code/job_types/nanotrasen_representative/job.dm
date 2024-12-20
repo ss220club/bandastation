@@ -5,7 +5,7 @@
 	auto_deadmin_role_flags = DEADMIN_POSITION_HEAD
 	faction = FACTION_STATION
 	total_positions = 1
-	spawn_positions = 1
+	spawn_positions = 0
 	supervisors = "Центральное Командование"
 	minimal_player_age = 14
 	exp_requirements = 1500

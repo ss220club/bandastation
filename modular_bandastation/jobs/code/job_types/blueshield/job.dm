@@ -5,7 +5,7 @@
 	auto_deadmin_role_flags = DEADMIN_POSITION_SECURITY
 	faction = FACTION_STATION
 	total_positions = 1
-	spawn_positions = 1
+	spawn_positions = 0
 	supervisors = "Представитель Нанотрейзен и Центральное Командование"
 	minimal_player_age = 7
 	exp_requirements = 1500
