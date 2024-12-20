@@ -18,6 +18,7 @@
 	max_integrity = 250
 	integrity_failure = 0.4
 	armor_type = /datum/armor/machinery_firealarm
+	mouse_over_pointer = MOUSE_HAND_POINTER
 	idle_power_usage = BASE_MACHINE_IDLE_CONSUMPTION * 0.05
 	active_power_usage = BASE_MACHINE_ACTIVE_CONSUMPTION * 0.02
 	power_channel = AREA_USAGE_ENVIRON
@@ -115,6 +116,7 @@
 
 /obj/machinery/firealarm/update_name(updates)
 	. = ..()
+	ru_names_rename(ru_names_toml(src::name, suffix = " ([get_area_name(my_area)]) [id_tag]", override_base = "[get_area_name(my_area)] [initial(name)] [id_tag]"))
 	name = "[get_area_name(my_area)] [initial(name)] [id_tag]"
 
 /obj/machinery/firealarm/on_exit_area(datum/source, area/area_to_unregister)
@@ -425,7 +427,7 @@
 			if(prob(33) && buildstage == FIRE_ALARM_BUILD_SECURED) //require fully wired electronics to set of the alarms
 				alarm()
 
-/obj/machinery/firealarm/singularity_pull(S, current_size)
+/obj/machinery/firealarm/singularity_pull(atom/singularity, current_size)
 	if (current_size >= STAGE_FIVE) // If the singulo is strong enough to pull anchored objects, the fire alarm experiences integrity failure
 		deconstruct()
 	return ..()

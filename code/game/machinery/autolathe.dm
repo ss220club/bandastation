@@ -112,7 +112,7 @@
 				highest_mat = present_mat
 				highest_mat_ref = mat
 
-		flick_overlay_view(material_insertion_animation(highest_mat_ref.greyscale_colors), 1 SECONDS)
+		flick_overlay_view(material_insertion_animation(highest_mat_ref), 1 SECONDS)
 
 /obj/machinery/autolathe/ui_interact(mob/user, datum/tgui/ui)
 	if(!is_operational)
@@ -166,6 +166,7 @@
 		var/icon_size = spritesheet.icon_size_id(design.id)
 		var/list/design_data = list(
 			"name" = design.name,
+			"original_name" = design.original_name, // BANDASTATION EDIT - Design Translate
 			"desc" = design.get_description(),
 			"cost" = cost,
 			"id" = design.id,
@@ -255,7 +256,7 @@
 		if(istext(material)) // category
 			var/list/choices = list()
 			for(var/datum/material/valid_candidate as anything in SSmaterials.materials_by_category[material])
-				if(materials.get_material_amount(valid_candidate) < amount_needed)
+				if(materials.get_material_amount(valid_candidate) < (amount_needed + materials_needed[material]))
 					continue
 				choices[valid_candidate.name] = valid_candidate
 			if(!length(choices))
@@ -274,7 +275,7 @@
 		if(isnull(material))
 			stack_trace("got passed an invalid material id: [material]")
 			return
-		materials_needed[material] = amount_needed
+		materials_needed[material] += amount_needed
 
 	//checks for available materials
 	var/material_cost_coefficient = ispath(design.build_path, /obj/item/stack) ? 1 : creation_efficiency

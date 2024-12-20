@@ -13,13 +13,17 @@
 	force = 8
 	throwforce = 12
 	w_class = WEIGHT_CLASS_NORMAL
-	obj_flags = INDESTRUCTIBLE | EMP_PROTECT_ALL // No fun police
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 	slot_flags = NONE
 	light_system = OVERLAY_LIGHT
 	light_color = COLOR_SOFT_RED
 	light_range = 1
 	light_power = 0.3
 	light_on = FALSE
+	/// Is camera streaming
+	var/active = FALSE
+	/// Is the microphone turned on
+	var/active_microphone = TRUE
 	/// The name of the broadcast
 	var/broadcast_name = "Curator News"
 	/// The networks it broadcasts to, default is CAMERANET_NETWORK_CURATOR
@@ -31,23 +35,25 @@
 
 /obj/item/broadcast_camera/Initialize(mapload)
 	. = ..()
-	AddComponent(/datum/component/two_handed, \
-		force_unwielded = 8, \
-		force_wielded = 12, \
-		icon_wielded = "[base_icon_state]1", \
-		wield_callback = CALLBACK(src, PROC_REF(on_wield)), \
-		unwield_callback = CALLBACK(src, PROC_REF(on_unwield)), \
-	)
+
+	AddElement(/datum/element/empprotection, EMP_PROTECT_ALL)
 
 /obj/item/broadcast_camera/Destroy(force)
 	QDEL_NULL(internal_radio)
 	QDEL_NULL(internal_camera)
-
 	return ..()
 
 /obj/item/broadcast_camera/update_icon_state()
-	icon_state = "[base_icon_state]0"
+	icon_state = "[base_icon_state][active]"
 	return ..()
+
+/obj/item/broadcast_camera/attack_self(mob/user, modifiers)
+	. = ..()
+	active = !active
+	if(active)
+		on_activating()
+	else
+		on_deactivating()
 
 /obj/item/broadcast_camera/attack_self_secondary(mob/user, modifiers)
 	. = ..()
@@ -56,11 +62,24 @@
 /obj/item/broadcast_camera/examine(mob/user)
 	. = ..()
 	. += span_notice("Broadcast name is <b>[broadcast_name]</b>")
+	. += span_notice("The microphone is <b>[active_microphone ? "On" : "Off"]</b>")
 
-/// When wielding the camera
-/obj/item/broadcast_camera/proc/on_wield()
+/obj/item/broadcast_camera/on_enter_storage(datum/storage/master_storage)
+	. = ..()
+	if(active)
+		on_deactivating()
+
+/obj/item/broadcast_camera/dropped(mob/user, silent)
+	. = ..()
+	if(active)
+		on_deactivating()
+
+/// When activating the camera
+/obj/item/broadcast_camera/proc/on_activating()
 	if(!iscarbon(loc))
 		return
+	active = TRUE
+	update_icon_state()
 	/// The carbon who wielded the camera, allegedly
 	var/mob/living/carbon/wielding_carbon = loc
 
@@ -73,18 +92,37 @@
 
 	// INTERNAL RADIO
 	internal_radio = new(src)
+	/// Sets the state of the microphone
+	set_microphone_state()
 
 	set_light_on(TRUE)
-	playsound(source = src, soundin = 'sound/machines/terminal_processing.ogg', vol = 20, vary = FALSE, ignore_walls = FALSE)
+	playsound(source = src, soundin = 'sound/machines/terminal/terminal_processing.ogg', vol = 20, vary = FALSE, ignore_walls = FALSE)
 	balloon_alert_to_viewers("live!")
 
-/// When unwielding the camera
-/obj/item/broadcast_camera/proc/on_unwield()
+/// When deactivating the camera
+/obj/item/broadcast_camera/proc/on_deactivating()
+	active = FALSE
+	update_icon_state()
 	QDEL_NULL(internal_camera)
 	QDEL_NULL(internal_radio)
 
 	stop_broadcasting_network(camera_networks)
 
 	set_light_on(FALSE)
-	playsound(source = src, soundin = 'sound/machines/terminal_prompt_deny.ogg', vol = 20, vary = FALSE, ignore_walls = FALSE)
+	playsound(source = src, soundin = 'sound/machines/terminal/terminal_prompt_deny.ogg', vol = 20, vary = FALSE, ignore_walls = FALSE)
 	balloon_alert_to_viewers("offline")
+
+/obj/item/broadcast_camera/click_alt(mob/user)
+	active_microphone = !active_microphone
+
+	/// Text popup for letting the user know that the microphone has changed state
+	balloon_alert(user, "turned [active_microphone ? "on" : "off"] the microphone.")
+
+	///If the radio exists as an object, set its state accordingly
+	if(active)
+		set_microphone_state()
+
+	return CLICK_ACTION_SUCCESS
+
+/obj/item/broadcast_camera/proc/set_microphone_state()
+	internal_radio.set_broadcasting(active_microphone)

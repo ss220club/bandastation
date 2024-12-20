@@ -1012,7 +1012,7 @@
 
 /datum/design/auto_reel
 	name = "Fishing Line Auto-Reel"
-	desc = "An advanced line reel which can be used speed up both fishing and casually snagging other items in your direction."
+	desc = "An advanced line reel which can be used speed up fishing or casually snag other items in your direction."
 	id = "auto_reel"
 	build_type = PROTOLATHE | AWAY_LATHE
 	materials = list(/datum/material/iron = SMALL_MATERIAL_AMOUNT * 4, /datum/material/gold = SMALL_MATERIAL_AMOUNT * 3, /datum/material/silver = SMALL_MATERIAL_AMOUNT * 3)
@@ -1043,6 +1043,18 @@
 	build_path = /obj/item/storage/fish_case/bluespace
 	category = list(
 		RND_CATEGORY_EQUIPMENT + RND_SUBCATEGORY_EQUIPMENT_SERVICE
+	)
+	departmental_flags = DEPARTMENT_BITFLAG_SERVICE | DEPARTMENT_BITFLAG_CARGO | DEPARTMENT_BITFLAG_SCIENCE
+
+/datum/design/bluespace_fish_tank
+	name = "Bluespace Fish Tank Kit"
+	desc = "The required components to upgrade the capacity of a fish tank."
+	id = "bluespace_fish_tank_kit"
+	build_type = PROTOLATHE | AWAY_LATHE
+	materials = list(/datum/material/iron = SMALL_MATERIAL_AMOUNT * 3, /datum/material/titanium = SMALL_MATERIAL_AMOUNT, /datum/material/bluespace = SMALL_MATERIAL_AMOUNT * 3)
+	build_path = /obj/item/aquarium_upgrade/bluespace_tank
+	category = list(
+		RND_CATEGORY_MACHINE + RND_SUBCATEGORY_MACHINE_SERVICE,
 	)
 	departmental_flags = DEPARTMENT_BITFLAG_SERVICE | DEPARTMENT_BITFLAG_CARGO | DEPARTMENT_BITFLAG_SCIENCE
 
@@ -1116,6 +1128,24 @@
 		/datum/material/silver = SHEET_MATERIAL_AMOUNT * 2,
 		/datum/material/uranium = SHEET_MATERIAL_AMOUNT,
 		/datum/material/diamond = SHEET_MATERIAL_AMOUNT,
+	)
+	category = list(
+		RND_CATEGORY_EQUIPMENT + RND_SUBCATEGORY_EQUIPMENT_SCIENCE
+	)
+	departmental_flags = DEPARTMENT_BITFLAG_SCIENCE
+
+/datum/design/perceptomatrix
+	name = "Perceptomatrix Helm"
+	id = "perceptomatrix"
+	desc = "This helm harnesses hallucinative energies to shield its owner from perceptual anomalies. It requires a Hallucination Anomaly Core in order to function."
+	build_type = PROTOLATHE | AWAY_LATHE
+	build_path = /obj/item/clothing/head/helmet/perceptomatrix
+	materials = list(
+		/datum/material/titanium = SHEET_MATERIAL_AMOUNT * 2,
+		/datum/material/silver = SHEET_MATERIAL_AMOUNT * 1,
+		/datum/material/gold = SHEET_MATERIAL_AMOUNT * 0.5,
+		/datum/material/plasma = SHEET_MATERIAL_AMOUNT * 3,
+		/datum/material/uranium = SHEET_MATERIAL_AMOUNT,
 	)
 	category = list(
 		RND_CATEGORY_EQUIPMENT + RND_SUBCATEGORY_EQUIPMENT_SCIENCE

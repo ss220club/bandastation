@@ -7,6 +7,16 @@
 /// if it only allows one, and new instances just instead refresh the timer
 #define STATUS_EFFECT_REFRESH 3
 
+/// Use in status effect "duration" to make it last forever
+#define STATUS_EFFECT_PERMANENT -1
+/// Use in status effect "tick_interval" to prevent it from calling tick()
+#define STATUS_EFFECT_NO_TICK -1
+
+/// Indicates this status effect is an abstract type, ie not instantiated
+/// Doesn't actually do anything in practice, primarily just a marker / used in unit tests,
+/// so don't worry if your abstract status effect doesn't actually set this
+#define STATUS_EFFECT_ID_ABSTRACT "abstract"
+
 ///Processing flags - used to define the speed at which the status will work
 ///This is fast - 0.2s between ticks (I believe!)
 #define STATUS_EFFECT_FAST_PROCESS 0
@@ -37,7 +47,7 @@
 /// Does this by inverting the passed in flags and seeing if we're still incapacitated
 #define INCAPACITATED_IGNORING(mob, flags) (mob.incapacitated & ~(flags))
 
-/// Maxamounts of fire stacks a mob can get
+/// Max amounts of fire stacks a mob can get
 #define MAX_FIRE_STACKS 20
 /// If a mob has a higher threshold than this, the icon shown will be increased to the big fire icon.
 #define MOB_BIG_FIRE_STACK_THRESHOLD 3
