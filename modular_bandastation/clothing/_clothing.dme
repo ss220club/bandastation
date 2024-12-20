@@ -1,6 +1,5 @@
 #include "_clothing.dm"
-#include "code/hats.dm"
-#include "code/helmet.dm"
+#include "code/hev_suit.dm"
 #include "code/suits.dm"
 #include "code/under.dm"
 
