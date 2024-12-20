@@ -3687,7 +3687,7 @@
 	pixel_x = 6
 	},
 /obj/effect/landmark/start/nanotrasen_representative,
-/turf/open/floor/carpet/executive,
+/turf/open/floor/carpet/royalblack,
 /area/station/command/heads_quarters/nanotrasen_representative)
 "aWQ" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/cyan,
@@ -7936,7 +7936,7 @@
 /area/station/engineering/atmos/mix)
 "caV" = (
 /obj/item/radio/intercom/directional/south,
-/turf/open/floor/carpet/executive,
+/turf/open/floor/carpet/royalblack,
 /area/station/command/heads_quarters/nanotrasen_representative)
 "caW" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -8138,7 +8138,7 @@
 /obj/item/flashlight/lamp/green{
 	pixel_y = 8
 	},
-/turf/open/floor/carpet/executive,
+/turf/open/floor/carpet/royalblack,
 /area/station/command/heads_quarters/nanotrasen_representative)
 "cdo" = (
 /obj/machinery/door/airlock/maintenance,
@@ -10352,7 +10352,7 @@
 /area/station/maintenance/ghetto/central/fore)
 "cFU" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/turf/open/floor/carpet/executive,
+/turf/open/floor/carpet/royalblack,
 /area/station/command/heads_quarters/nanotrasen_representative)
 "cFX" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
@@ -12164,7 +12164,7 @@
 /area/station/service/chapel)
 "daE" = (
 /obj/machinery/holopad,
-/turf/open/floor/carpet/royalblack,
+/turf/open/floor/carpet/black,
 /area/station/command/heads_quarters/magistrate)
 "daN" = (
 /obj/structure/chair{
@@ -14803,7 +14803,7 @@
 /area/station/security/warden)
 "dJx" = (
 /obj/item/radio/intercom/directional/west,
-/turf/open/floor/carpet/royalblack,
+/turf/open/floor/carpet/black,
 /area/station/command/heads_quarters/magistrate)
 "dJE" = (
 /obj/structure/cable,
@@ -17188,15 +17188,12 @@
 /obj/item/clipboard{
 	pixel_y = 4
 	},
-/obj/item/stamp/law{
-	pixel_x = -6;
-	pixel_y = 10
-	},
+/obj/item/stamp/magistrate,
 /obj/item/pen/fountain{
 	pixel_y = 6;
 	pixel_x = 6
 	},
-/turf/open/floor/carpet/royalblack,
+/turf/open/floor/carpet/black,
 /area/station/command/heads_quarters/magistrate)
 "eop" = (
 /turf/open/floor/iron,
@@ -26255,7 +26252,7 @@
 	pixel_x = 6;
 	pixel_y = 5
 	},
-/turf/open/floor/carpet/royalblack,
+/turf/open/floor/carpet/black,
 /area/station/command/heads_quarters/magistrate)
 "gKM" = (
 /obj/structure/closet/crate/preopen,
@@ -27533,7 +27530,7 @@
 	pixel_x = 6;
 	pixel_y = 1
 	},
-/turf/open/floor/carpet/executive,
+/turf/open/floor/carpet/royalblack,
 /area/station/command/heads_quarters/nanotrasen_representative)
 "hbr" = (
 /obj/effect/turf_decal/weather/dirt{
@@ -44948,7 +44945,7 @@
 /area/station/maintenance/solars/starboard/fore)
 "lyh" = (
 /obj/structure/chair/comfy/black,
-/turf/open/floor/carpet/executive,
+/turf/open/floor/carpet/royalblack,
 /area/station/command/heads_quarters/nanotrasen_representative)
 "lys" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
@@ -45795,7 +45792,7 @@
 "lJa" = (
 /obj/structure/table/wood,
 /obj/item/paper_bin,
-/turf/open/floor/carpet/executive,
+/turf/open/floor/carpet/royalblack,
 /area/station/command/heads_quarters/nanotrasen_representative)
 "lJc" = (
 /obj/effect/landmark/start/coroner,
@@ -47502,7 +47499,7 @@
 /turf/open/floor/iron/dark,
 /area/station/engineering/hallway/west)
 "mex" = (
-/turf/open/floor/carpet/royalblack,
+/turf/open/floor/carpet/black,
 /area/station/command/heads_quarters/magistrate)
 "mez" = (
 /obj/structure/disposalpipe/segment{
@@ -48100,7 +48097,10 @@
 	pixel_x = 6;
 	pixel_y = 6
 	},
-/turf/open/floor/carpet/executive,
+/obj/item/stamp/nanotrasen_representative{
+	pixel_x = 6
+	},
+/turf/open/floor/carpet/royalblack,
 /area/station/command/heads_quarters/nanotrasen_representative)
 "mpf" = (
 /obj/machinery/firealarm/directional/north,
@@ -48502,7 +48502,7 @@
 /obj/structure/chair/comfy/brown{
 	dir = 1
 	},
-/turf/open/floor/carpet/royalblack,
+/turf/open/floor/carpet/black,
 /area/station/command/heads_quarters/magistrate)
 "muv" = (
 /turf/open/floor/iron/dark/side{
@@ -62875,7 +62875,7 @@
 /obj/effect/mapping_helpers/airlock/autoname,
 /obj/effect/mapping_helpers/airlock/access/all/command/nanotrasen_representative,
 /turf/open/floor/plating,
-/area/station/maintenance/port/aft)
+/area/station/command/heads_quarters/nanotrasen_representative)
 "qcz" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/plating,
@@ -67651,7 +67651,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 1
 	},
-/turf/open/floor/carpet/executive,
+/turf/open/floor/carpet/royalblack,
 /area/station/command/heads_quarters/nanotrasen_representative)
 "rpV" = (
 /obj/structure/chair/comfy/black,
@@ -69789,7 +69789,7 @@
 /obj/effect/mapping_helpers/airlock/access/all/command/blueshield,
 /obj/effect/mapping_helpers/airlock/autoname,
 /turf/open/floor/plating,
-/area/station/maintenance/aft)
+/area/station/command/heads_quarters/blueshield)
 "rVC" = (
 /obj/structure/closet/secure_closet/personal/cabinet{
 	name = "clown's closet"
@@ -70283,6 +70283,7 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/holopad,
+/obj/effect/landmark/event_spawn,
 /turf/open/floor/carpet/blue,
 /area/station/command/heads_quarters/blueshield)
 "sba" = (
@@ -70489,7 +70490,7 @@
 	pixel_x = 6;
 	pixel_y = 6
 	},
-/turf/open/floor/carpet/royalblack,
+/turf/open/floor/carpet/black,
 /area/station/command/heads_quarters/magistrate)
 "sdm" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
@@ -72615,7 +72616,8 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/holopad,
-/turf/open/floor/carpet/executive,
+/obj/effect/landmark/event_spawn,
+/turf/open/floor/carpet/royalblack,
 /area/station/command/heads_quarters/nanotrasen_representative)
 "sEY" = (
 /obj/effect/turf_decal/tile/neutral/half/contrasted,
@@ -72659,7 +72661,7 @@
 "sFA" = (
 /obj/structure/chair/comfy/corp,
 /obj/effect/landmark/start/magistrate,
-/turf/open/floor/carpet/royalblack,
+/turf/open/floor/carpet/black,
 /area/station/command/heads_quarters/magistrate)
 "sFG" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
@@ -74027,7 +74029,7 @@
 "tbE" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/turf/open/floor/carpet/executive,
+/turf/open/floor/carpet/royalblack,
 /area/station/command/heads_quarters/nanotrasen_representative)
 "tbI" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -74403,7 +74405,7 @@
 /area/station/maintenance/ghetto/starboard/aft)
 "tic" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
-/turf/open/floor/carpet/royalblack,
+/turf/open/floor/carpet/black,
 /area/station/command/heads_quarters/magistrate)
 "tif" = (
 /obj/machinery/atmospherics/pipe/smart/simple/general{
@@ -77980,7 +77982,7 @@
 "uam" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/light_switch/directional/east,
-/turf/open/floor/carpet/executive,
+/turf/open/floor/carpet/royalblack,
 /area/station/command/heads_quarters/nanotrasen_representative)
 "uap" = (
 /obj/effect/turf_decal/tile/green/half{
@@ -82778,7 +82780,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 1
 	},
-/turf/open/floor/carpet/executive,
+/turf/open/floor/carpet/royalblack,
 /area/station/command/heads_quarters/nanotrasen_representative)
 "voK" = (
 /obj/machinery/hydroponics/soil,
@@ -90539,7 +90541,7 @@
 /turf/open/floor/plating,
 /area/station/maintenance/starboard/upper)
 "xns" = (
-/turf/open/floor/carpet/executive,
+/turf/open/floor/carpet/royalblack,
 /area/station/command/heads_quarters/nanotrasen_representative)
 "xnw" = (
 /obj/structure/disposalpipe/segment{
@@ -91262,7 +91264,7 @@
 /turf/open/floor/iron/white,
 /area/station/maintenance/starboard/fore)
 "xwG" = (
-/obj/machinery/suit_storage_unit/standard_unit,
+/obj/machinery/suit_storage_unit/blueshield,
 /obj/machinery/camera/directional/east{
 	c_tag = "Blueshield's Office"
 	},
