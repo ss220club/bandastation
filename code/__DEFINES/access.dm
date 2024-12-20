@@ -187,6 +187,7 @@
 /// SYNDICATE
 #define ACCESS_SYNDICATE "syndicate"
 #define ACCESS_SYNDICATE_LEADER "syndicate_leader"
+#define ACCESS_SYNDICATE_COMMAND "syndicate_command" // BANDASTATION EDIT ADDITION
 /// BLOODCULT
 	//Special, for anything that's basically internal
 #define ACCESS_BLOODCULT "bloodcult"
@@ -326,7 +327,6 @@
 	ACCESS_PHARMACY, \
 	ACCESS_PLUMBING, \
 	ACCESS_PSYCHOLOGY, \
-	ACCESS_QM, \
 	ACCESS_RESEARCH, \
 	ACCESS_ROBOTICS, \
 	ACCESS_SCIENCE, \
@@ -388,6 +388,7 @@
 #define SYNDICATE_ACCESS list( \
 	ACCESS_SYNDICATE, \
 	ACCESS_SYNDICATE_LEADER, \
+	ACCESS_SYNDICATE_COMMAND, \
 )
 
 /// Away missions/gateway/space ruins.  Do not use direct, access via SSid_access.get_flag_access_list(ACCESS_FLAG_AWAY)

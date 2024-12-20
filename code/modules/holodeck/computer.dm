@@ -146,10 +146,10 @@ GLOBAL_LIST_INIT(typecache_holodeck_linked_floorcheck_ok, typecacheof(list(/turf
 		data["emagged"] = TRUE
 		data["emag_programs"] = emag_programs
 	data["program"] = program
-	data["can_toggle_safety"] = issilicon(user) || isAdminGhostAI(user)
+	data["can_toggle_safety"] = HAS_SILICON_ACCESS(user)
 	return data
 
-/obj/machinery/computer/holodeck/ui_act(action, params)
+/obj/machinery/computer/holodeck/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
 	. = ..()
 	if(.)
 		return
@@ -341,6 +341,10 @@ GLOBAL_LIST_INIT(typecache_holodeck_linked_floorcheck_ok, typecacheof(list(/turf
 		var/obj/item/clothing/under/holo_clothing = holo_atom
 		holo_clothing.dump_attachments()
 
+	if(istype(holo_atom, /obj/item/organ))
+		var/obj/item/organ/holo_organ = holo_atom
+		if(holo_organ.owner) // a mob has the holo organ inside them... oh dear
+			to_chat(holo_organ.owner, span_warning("\The [holo_organ] inside of you fades away!"))
 	if(!silent)
 		visible_message(span_notice("[holo_atom] fades away!"))
 

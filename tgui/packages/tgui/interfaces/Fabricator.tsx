@@ -1,4 +1,3 @@
-import { classes } from 'common/react';
 import {
   Box,
   Button,
@@ -8,6 +7,7 @@ import {
   Stack,
   Tooltip,
 } from 'tgui-core/components';
+import { classes } from 'tgui-core/react';
 
 import { useBackend } from '../backend';
 import { Window } from '../layouts';
@@ -28,7 +28,7 @@ export const Fabricator = (props) => {
   }
 
   return (
-    <Window title={fabName} width={670} height={600}>
+    <Window title={fabName} width={800} height={600}>
       <Window.Content>
         <Stack vertical fill>
           <Stack.Item grow>

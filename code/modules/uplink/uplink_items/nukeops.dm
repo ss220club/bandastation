@@ -52,7 +52,8 @@
 		Note: This bundle is not at a discount. You can purchase all of these items separately. You do not NEED these items, but most operatives fail WITHOUT at \
 		least SOME of these items. More experienced operatives can do without."
 	item = /obj/item/storage/box/syndie_kit/core_gear
-	cost = 22 //freedom 5, doormag 3, c-4 1, stimpack 5, shield modsuit module 8
+	//The cost for the core kit is always equivalent to the combined costs of the included items
+	cost = (/datum/uplink_item/device_tools/doorjack::cost + /datum/uplink_item/implants/freedom::cost + /datum/uplink_item/explosives/c4::cost + /datum/uplink_item/device_tools/stimpack::cost +	/datum/uplink_item/suits/energy_shield::cost)
 	limited_stock = 1
 	cant_discount = TRUE
 	purchasable_from = UPLINK_SERIOUS_OPS
@@ -178,7 +179,7 @@
 
 /datum/uplink_item/weapon_kits/medium_cost/sword_and_board
 	name = "Energy Shield and Sword Case (Very Hard)"
-	desc = "A case containing an energy sword and energy shield. Paired together, it provides considerable defensive power without lethal potency. \
+	desc = "A case containing an energy sword and energy shield. Paired together, it provides considerable defensive power without compromising lethal potency. \
 		Perfect for the enterprising nuclear knight. Comes with a medieval helmet for your MODsuit!"
 	item = /obj/item/storage/toolbox/guncase/sword_and_board
 
@@ -194,14 +195,14 @@
 
 /datum/uplink_item/weapon_kits/medium_cost/revolvercase
 	name = "Syndicate Revolver Case (Moderate)"
-	desc = "Waffle Co.'s modernized Syndicate revolver. Fires 7 brutal rounds of .357 Magnum. \
-		A classic operative weapon, brought to the modern era. Comes with 3 additional speedloaders of .357."
+	desc = "Waffle Corp's modernized Syndicate revolver. Fires 7 brutal rounds of .357 Magnum. \
+		A classic operative weapon, improved for the modern era. Comes with 3 additional speedloaders of .357."
 	item = /obj/item/storage/toolbox/guncase/revolver
 
 /datum/uplink_item/ammo_nuclear/basic/revolver
 	name = ".357 Speed Loader (Revolver)"
 	desc = "A speed loader that contains seven additional .357 Magnum rounds; usable with the Syndicate revolver. \
-		For when you really need a lot of things dead. Operatives get a discount from most of our agents!"
+		For when you really need a lot of things dead. Unlike field agents, operatives get a premium price for their speedloaders!"
 	item = /obj/item/ammo_box/a357
 	purchasable_from = parent_type::purchasable_from | UPLINK_SPY
 
@@ -228,7 +229,7 @@
 /datum/uplink_item/weapon_kits/medium_cost/rawketlawnchair
 	name = "Dardo-RE Rocket Propelled Grenade Launcher (Hard)"
 	desc = "A reusable rocket propelled grenade launcher preloaded with a low-yield 84mm HE round. \
-		Guaranteed to send your target out with a bang or your money back! Comes with a bouquet of additional rockets!"
+		Guaranteed to take your target out with a bang, or your money back! Comes with a bouquet of additional rockets!"
 	item = /obj/item/storage/toolbox/guncase/rocketlauncher
 
 /datum/uplink_item/ammo_nuclear/basic/rocket
@@ -291,8 +292,8 @@
 
 /datum/uplink_item/weapon_kits/high_cost/carbine
 	name = "M-90gl Carbine Case (Hard)"
-	desc = "A fully-loaded, specialized three-round burst carbine that fires .223 ammunition from a 30 round magazine \
-		with a 40mm underbarrel grenade launcher. Use secondary-fire to fire the grenade launcher. Comes with two spare magazines \
+	desc = "A fully-loaded, specialized three-round burst carbine that fires .223 ammunition from a 30 round magazine.\
+		Comes with a 40mm underbarrel grenade launcher. Use secondary-fire to fire the grenade launcher. Also comes with two spare magazines \
 		and a box of 40mm rubber slugs."
 	item = /obj/item/storage/toolbox/guncase/m90gl
 
@@ -320,7 +321,7 @@
 
 /datum/uplink_item/weapon_kits/high_cost/sniper
 	name = "Anti-Materiel Sniper Rifle Briefcase (Hard)"
-	desc = "An outdated, but still extremely powerful anti-material sniper rifle. Fires .50 BMG cartridges from a 6 round magazine. \
+	desc = "An outdated, but still extremely powerful anti-materiel sniper rifle. Fires .50 BMG cartridges from a 6 round magazine. \
 		Can be fitted with a suppressor. If anyone asks how that even works, tell them it's Nanotrasen's fault. Comes with \
 		3 spare magazines; 2 regular magazines and 1 disruptor magazine. Also comes with a suit and tie."
 	item = /obj/item/storage/briefcase/sniper
@@ -373,16 +374,20 @@
 //Meme weapons: Literally just weapons used as a joke, shouldn't be particularly expensive.
 
 /datum/uplink_item/weapon_kits/surplus_smg
-	name = "Surplus SMG Case (Flukie)"
-	desc = "A horribly outdated automatic weapon. Why would you want to use this? Comes with...rations."
-	item = /obj/item/gun/ballistic/automatic/plastikov
+	name = "Surplus Smart-SMG (Flukie)"
+	desc = "A failed experimental 'smart gun'. The use of .160 rocket propelled projectiles resulted in reduced stopping power \
+		but increased overally accuracy so long as the shooter vaguely aimed towards their target. The relative increase in \
+		operator effort from absurd recoil contradicted advertized advantages, resulting in poor market performance. However, \
+		there sure are a lots still lying around in poorly secured warehouses. So we took them. And now you can have them. \
+		If you REALLY want it. All I'm saying is: good luck."
+	item = /obj/item/gun/ballistic/automatic/smartgun
 	cost = 2
 	purchasable_from = UPLINK_SERIOUS_OPS
 
 /datum/uplink_item/ammo_nuclear/surplus_smg
-	name = "Surplus SMG Magazine (Surplus)"
-	desc = "A cylindrical magazine designed for the PP-95 SMG."
-	item = /obj/item/ammo_box/magazine/plastikov9mm
+	name = "Surplus Smart-SMG Magazine (Smartgun)"
+	desc = "A large box magazine made for use in the Abielle smart-SMG."
+	item = /obj/item/ammo_box/magazine/smartgun
 	cost = 1
 	purchasable_from = UPLINK_SERIOUS_OPS
 	uplink_item_flags = SYNDIE_TRIPS_CONTRABAND
@@ -394,6 +399,7 @@
 	cost = 15
 	surplus = 35
 	purchasable_from = UPLINK_ALL_SYNDIE_OPS
+
 /datum/uplink_item/explosives/grenades/buzzkill
 	name = "Buzzkill Grenade Box"
 	desc = "A box with three grenades that release a swarm of angry bees upon activation. These bees indiscriminately attack friend or foe \
