@@ -148,6 +148,10 @@
 	opacity = 0
 	glass = TRUE
 
+/obj/machinery/door/airlock/corporate/glass
+	opacity = 0
+	glass = TRUE
+
 /obj/machinery/door/airlock/lawyer/glass
 	opacity = 0
 	glass = TRUE
