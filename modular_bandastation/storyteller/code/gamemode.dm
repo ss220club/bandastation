@@ -435,6 +435,10 @@ SUBSYSTEM_DEF(gamemode)
 			event.try_start()
 		INVOKE_ASYNC(event, TYPE_PROC_REF(/datum/round_event, try_start))
 
+/// Для восполнения очков ролсета
+/datum/controller/subsystem/gamemode/proc/refill_roleset()
+	event_track_points[EVENT_TRACK_ROLESET] = point_thresholds[EVENT_TRACK_ROLESET]
+
 /// Schedules an event to run later.
 /datum/controller/subsystem/gamemode/proc/schedule_event(datum/round_event_control/passed_event, passed_time, passed_cost, passed_ignore, passed_announce, _forced = FALSE)
 	if(_forced)
