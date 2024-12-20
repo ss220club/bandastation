@@ -5,6 +5,7 @@
 #include "code/effects/turf_decal.dm"
 
 #include "code/items/banners.dm"
+#include "code/items/cards_ids.dm"
 #include "code/items/hampters.dm"
 #include "code/items/material_pouch.dm"
 #include "code/items/stamp.dm"
@@ -32,8 +33,10 @@
 #include "code/items/consumables/customer_data.dm"
 #include "code/items/consumables/drinks.dm"
 #include "code/items/devices/radio.dm"
+#include "code/items/implants/death_alarm.dm"
 #include "code/items/melee/baton.dm"
 #include "code/items/storage/backpack.dm"
+#include "code/items/storage/death_implant_box.dm"
 #include "code/items/storage/garment.dm"
 #include "code/items/storage/tape_box.dm"
 #include "code/items/weapons/melee/centcom/rapier.dm"
