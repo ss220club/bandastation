@@ -653,6 +653,7 @@ SUBSYSTEM_DEF(gamemode)
 		for(var/datum/round_event_control/forced_event in forced_next_events[track])
 			message_admins("Storyteller purchased and triggered forced roundstart event [forced_event].")
 			TriggerEvent(forced_event, forced = TRUE)
+			runned_events += "Runned forced roundstart: [forced_event.name]"
 
 		forced_next_events[track] = list()
 
@@ -691,6 +692,7 @@ SUBSYSTEM_DEF(gamemode)
 			roundstart_budget -= picked_event.roundstart_cost
 			message_admins("Storyteller purchased and triggered [picked_event] event for [picked_event.roundstart_cost]. Left balance: [roundstart_budget].")
 			TriggerEvent(picked_event, forced = FALSE)
+			runned_events += "Runned roundstart: [picked_event.name]"
 			// Если первое событие эксклюзивное, то отчищаем список
 			if(picked_event.exclusive_roundstart_event)
 				valid_events = list()
@@ -723,6 +725,7 @@ SUBSYSTEM_DEF(gamemode)
 			roundstart_budget -= scheduled_event.roundstart_cost
 			message_admins("Storyteller purchased and triggered scheduled event [scheduled_event] for [scheduled_event.roundstart_cost]. Left balance: [roundstart_budget].")
 			TriggerEvent(scheduled_event, forced = FALSE)
+			runned_events += "Runned scheduled roundstart: [scheduled_event.name]"
 			scheduled_events_roleset -= scheduled_event
 			if(scheduled_event.exclusive_roundstart_event)
 				scheduled_event = list()
