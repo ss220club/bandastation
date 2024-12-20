@@ -7,6 +7,7 @@
 #include "code/items/banners.dm"
 #include "code/items/hampters.dm"
 #include "code/items/material_pouch.dm"
+#include "code/items/stamp.dm"
 #include "code/items/wallets.dm"
 #include "code/items/clothing/glasses/glasses.dm"
 #include "code/items/clothing/gloves/gloves.dm"
