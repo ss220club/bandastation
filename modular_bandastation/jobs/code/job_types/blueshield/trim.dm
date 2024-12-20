@@ -2,16 +2,14 @@
 	assignment = JOB_BLUESHIELD
 	trim_icon = 'modular_bandastation/jobs/icons/obj/card.dmi'
 	trim_state = "trim_blueshield"
-	department_color = COLOR_COMMAND_BLUE
-	subdepartment_color = COLOR_SECURITY_RED
+	department_color = COLOR_CENTCOM_BLUE
+	subdepartment_color = "#FFD700"
 	sechud_icon_state = SECHUD_BLUESHIELD
-	extra_access = list(
+	minimal_access = list(
 		ACCESS_BRIG,
 		ACCESS_CARGO,
 		ACCESS_COURT,
 		ACCESS_GATEWAY,
-	)
-	minimal_access = list(
 		ACCESS_SECURITY,
 		ACCESS_ALL_PERSONAL_LOCKERS,
 		ACCESS_BRIG_ENTRANCE,
@@ -29,6 +27,7 @@
 	)
 	template_access = list(
 		ACCESS_CAPTAIN,
-		ACCESS_CHANGE_IDS
-		)
+		ACCESS_CHANGE_IDS,
+		ACCESS_NANOTRASEN_REPRESENTATIVE,
+	)
 	job = /datum/job/blueshield

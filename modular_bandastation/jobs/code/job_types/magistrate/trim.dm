@@ -2,16 +2,14 @@
 	assignment = JOB_MAGISTRATE
 	trim_icon = 'modular_bandastation/jobs/icons/obj/card.dmi'
 	trim_state = "trim_magistrate"
-	department_color = COLOR_COMMAND_BLUE
-	subdepartment_color = COLOR_SECURITY_RED
+	department_color = COLOR_CENTCOM_BLUE
+	subdepartment_color = "#E03E71"
 	department_state = "departmenthead"
 	sechud_icon_state = SECHUD_MAGISTARTE
 	extra_access = list(ACCESS_TELEPORTER)
 	extra_wildcard_access = list()
 	minimal_access = list(
 		ACCESS_ALL_PERSONAL_LOCKERS,
-		ACCESS_MAGISTRATE,
-		ACCESS_LAWYER,
 		ACCESS_ARMORY,
 		ACCESS_AUX_BASE,
 		ACCESS_BIT_DEN,
@@ -26,7 +24,9 @@
 		ACCESS_EVA,
 		ACCESS_GATEWAY,
 		ACCESS_KEYCARD_AUTH,
+		ACCESS_LAWYER,
 		ACCESS_MAINT_TUNNELS,
+		ACCESS_MAGISTRATE,
 		ACCESS_MECH_SECURITY,
 		ACCESS_MEDICAL,
 		ACCESS_MINERAL_STOREROOM,
