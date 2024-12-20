@@ -259,9 +259,13 @@
 		return FALSE
 
 /datum/round_event_control/antagonist/solo/proc/get_antag_amount()
-	var/people = SSgamemode.get_correct_popcount()
-	var/amount = base_antags + FLOOR(people / denominator, 1)
-	return min(amount, maximum_antags)
+	var/decided_count = rand(base_antags, maximum_antags)
+
+	var/gamemode_antags_left = SSgamemode.get_antag_cap() - SSgamemode.get_antag_count()
+	var/maximum_to_spawn = min(gamemode_antags_left, maximum_antags)
+
+	var/clamped_value = clamp(decided_count, 0, maximum_to_spawn)
+	return clamped_value
 
 /datum/round_event_control/antagonist/solo/proc/get_candidates()
 	var/round_started = SSticker.HasRoundStarted()
