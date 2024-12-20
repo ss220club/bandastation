@@ -4,6 +4,7 @@
 	jobtype = /datum/job/blueshield
 	uniform = /obj/item/clothing/under/rank/blueshield
 	suit = /obj/item/clothing/suit/armor/vest/blueshield_jacket
+	suit_store = /obj/item/gun/energy/eg_14
 	gloves = /obj/item/clothing/gloves/tackler/combat
 	id = /obj/item/card/id/advanced/centcom
 	id_trim = /datum/id_trim/job/blueshield
