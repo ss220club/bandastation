@@ -1903,14 +1903,14 @@
 /turf/open/floor/mineral/titanium/yellow,
 /area/awaymission/moonoutpost19/arrivals)
 "ms" = (
-/obj/effect/landmark/awaystart,
+/obj/effect/landmark/awaystart/moonoutpost,
 /turf/open/floor/mineral/titanium/blue,
 /area/awaymission/moonoutpost19/arrivals)
 "mt" = (
 /obj/structure/chair{
 	dir = 8
 	},
-/obj/effect/landmark/awaystart,
+/obj/effect/landmark/awaystart/moonoutpost,
 /turf/open/floor/mineral/titanium/blue,
 /area/awaymission/moonoutpost19/arrivals)
 "mu" = (
@@ -1955,7 +1955,7 @@
 /turf/open/floor/mineral/titanium/yellow,
 /area/awaymission/moonoutpost19/arrivals)
 "mI" = (
-/obj/effect/landmark/awaystart,
+/obj/effect/landmark/awaystart/moonoutpost,
 /turf/open/floor/mineral/titanium/yellow,
 /area/awaymission/moonoutpost19/arrivals)
 "mJ" = (
@@ -1965,7 +1965,7 @@
 	icon_state = "beacon";
 	name = "tracking beacon"
 	},
-/obj/effect/landmark/awaystart,
+/obj/effect/landmark/awaystart/moonoutpost,
 /turf/open/floor/mineral/titanium/yellow,
 /area/awaymission/moonoutpost19/arrivals)
 "mK" = (
@@ -4131,7 +4131,7 @@
 /area/awaymission/moonoutpost19/arrivals/shed)
 "Bf" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/item/ammo_casing/a357{
+/obj/item/ammo_casing/c357{
 	pixel_x = -2;
 	pixel_y = -7
 	},
@@ -6467,7 +6467,7 @@
 "QZ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
-/obj/item/ammo_casing/a357{
+/obj/item/ammo_casing/c357{
 	pixel_x = 11;
 	pixel_y = 8
 	},
@@ -7514,7 +7514,7 @@
 /obj/item/stack/ore/glass{
 	pixel_x = 8
 	},
-/obj/item/ammo_casing/a357{
+/obj/item/ammo_casing/c357{
 	pixel_x = -10;
 	pixel_y = -7
 	},

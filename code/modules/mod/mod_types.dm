@@ -46,6 +46,14 @@
 		/obj/item/mod/module/flashlight,
 	)
 
+/obj/item/mod/control/pre_equipped/civilian
+	theme = /datum/mod_theme/civilian
+	applied_modules = list(
+		/obj/item/mod/module/storage,
+		/obj/item/mod/module/welding,
+		/obj/item/mod/module/flashlight,
+	)
+
 /obj/item/mod/control/pre_equipped/engineering
 	theme = /datum/mod_theme/engineering
 	applied_modules = list(
@@ -90,11 +98,13 @@
 		/obj/item/mod/module/flashlight,
 		/obj/item/mod/module/jetpack,
 		/obj/item/mod/module/headprotector,
+		/obj/item/mod/module/tether,
 	)
 	default_pins = list(
 		/obj/item/mod/module/magboot/advanced,
 		/obj/item/mod/module/flashlight,
 		/obj/item/mod/module/jetpack,
+		/obj/item/mod/module/tether,
 	)
 
 /obj/item/mod/control/pre_equipped/loader
@@ -115,7 +125,7 @@
 	theme = /datum/mod_theme/mining
 	applied_core = /obj/item/mod/core/plasma
 	applied_modules = list(
-		/obj/item/mod/module/storage,
+		/obj/item/mod/module/storage/large_capacity,
 		/obj/item/mod/module/gps,
 		/obj/item/mod/module/orebag,
 		/obj/item/mod/module/clamp,
@@ -171,6 +181,9 @@
 		/obj/item/mod/module/quick_cuff,
 		/obj/item/mod/module/headprotector,
 	)
+	default_pins = list(
+		/obj/item/mod/module/jetpack,
+	)
 
 /obj/item/mod/control/pre_equipped/safeguard
 	theme = /datum/mod_theme/safeguard
@@ -197,13 +210,13 @@
 		/obj/item/mod/module/storage/large_capacity,
 		/obj/item/mod/module/hat_stabilizer,
 		/obj/item/mod/module/magnetic_harness,
-		/obj/item/mod/module/jetpack,
+		/obj/item/mod/module/jetpack/advanced,
 		/obj/item/mod/module/pathfinder,
 		/obj/item/mod/module/quick_cuff,
 		/obj/item/mod/module/headprotector,
 	)
 	default_pins = list(
-		/obj/item/mod/module/jetpack,
+		/obj/item/mod/module/jetpack/advanced,
 	)
 
 /obj/item/mod/control/pre_equipped/cosmohonk
@@ -245,7 +258,7 @@
 		/obj/item/mod/module/shock_absorber,
 		/obj/item/mod/module/emp_shield,
 		/obj/item/mod/module/magnetic_harness,
-		/obj/item/mod/module/jetpack,
+		/obj/item/mod/module/jetpack/advanced,
 		/obj/item/mod/module/jump_jet,
 		/obj/item/mod/module/flashlight,
 		/obj/item/mod/module/dna_lock,
@@ -254,7 +267,7 @@
 	)
 	default_pins = list(
 		/obj/item/mod/module/armor_booster,
-		/obj/item/mod/module/jetpack,
+		/obj/item/mod/module/jetpack/advanced,
 		/obj/item/mod/module/jump_jet,
 	)
 
@@ -268,7 +281,7 @@
 		/obj/item/mod/module/shock_absorber,
 		/obj/item/mod/module/emp_shield,
 		/obj/item/mod/module/magnetic_harness,
-		/obj/item/mod/module/jetpack,
+		/obj/item/mod/module/jetpack/advanced,
 		/obj/item/mod/module/jump_jet,
 		/obj/item/mod/module/flashlight,
 		/obj/item/mod/module/hat_stabilizer/syndicate,
@@ -276,14 +289,14 @@
 	)
 	default_pins = list(
 		/obj/item/mod/module/armor_booster,
-		/obj/item/mod/module/jetpack,
+		/obj/item/mod/module/jetpack/advanced,
 		/obj/item/mod/module/jump_jet,
 	)
 
 /obj/item/mod/control/pre_equipped/nuclear/no_jetpack
 
 /obj/item/mod/control/pre_equipped/nuclear/no_jetpack/Initialize(mapload, new_theme, new_skin, new_core)
-	applied_modules -= list(/obj/item/mod/module/jetpack, /obj/item/mod/module/jump_jet)
+	applied_modules -= list(/obj/item/mod/module/jetpack/advanced, /obj/item/mod/module/jump_jet)
 	return ..()
 
 /obj/item/mod/control/pre_equipped/nuclear/plasmaman
@@ -305,7 +318,7 @@
 		/obj/item/mod/module/shock_absorber,
 		/obj/item/mod/module/emp_shield,
 		/obj/item/mod/module/magnetic_harness,
-		/obj/item/mod/module/jetpack,
+		/obj/item/mod/module/jetpack/advanced,
 		/obj/item/mod/module/jump_jet,
 		/obj/item/mod/module/flashlight,
 		/obj/item/mod/module/hat_stabilizer/syndicate,
@@ -313,7 +326,7 @@
 	)
 	default_pins = list(
 		/obj/item/mod/module/armor_booster,
-		/obj/item/mod/module/jetpack,
+		/obj/item/mod/module/jetpack/advanced,
 		/obj/item/mod/module/jump_jet,
 	)
 
@@ -324,7 +337,7 @@
 		/obj/item/mod/module/emp_shield,
 		/obj/item/mod/module/magnetic_harness,
 		/obj/item/mod/module/thermal_regulator,
-		/obj/item/mod/module/jetpack,
+		/obj/item/mod/module/jetpack/advanced,
 		/obj/item/mod/module/jump_jet,
 		/obj/item/mod/module/flashlight,
 		/obj/item/mod/module/hat_stabilizer/syndicate,
@@ -333,7 +346,7 @@
 	)
 	default_pins = list(
 		/obj/item/mod/module/armor_booster,
-		/obj/item/mod/module/jetpack,
+		/obj/item/mod/module/jetpack/advanced,
 		/obj/item/mod/module/jump_jet,
 		/obj/item/mod/module/flamethrower,
 	)
@@ -429,13 +442,13 @@
 	applied_modules = list(
 		/obj/item/mod/module/storage,
 		/obj/item/mod/module/magnetic_harness,
-		/obj/item/mod/module/jetpack,
+		/obj/item/mod/module/jetpack/advanced,
 		/obj/item/mod/module/jump_jet,
 		/obj/item/mod/module/flashlight,
 	)
 	default_pins = list(
 		/obj/item/mod/module/armor_booster,
-		/obj/item/mod/module/jetpack,
+		/obj/item/mod/module/jetpack/advanced,
 		/obj/item/mod/module/jump_jet,
 	)
 
@@ -454,43 +467,43 @@
 	)
 	/// The insignia type, insignias show what sort of member of the ERT you're dealing with.
 	var/insignia_type = /obj/item/mod/module/insignia
-	/// Additional module we add, as a treat.
-	var/additional_module
+	/// Additional module (or modules if list) we add, as a treat.
+	var/additional_modules
 
 /obj/item/mod/control/pre_equipped/responsory/Initialize(mapload, new_theme, new_skin, new_core)
 	applied_modules.Insert(1, insignia_type)
-	if(additional_module)
-		applied_modules += additional_module
-		default_pins += additional_module
+	if(additional_modules)
+		applied_modules += additional_modules
+		default_pins += additional_modules
 	return ..()
 
 /obj/item/mod/control/pre_equipped/responsory/commander
 	insignia_type = /obj/item/mod/module/insignia/commander
-	additional_module = /obj/item/mod/module/power_kick
+	additional_modules = /obj/item/mod/module/power_kick
 
 /obj/item/mod/control/pre_equipped/responsory/security
 	insignia_type = /obj/item/mod/module/insignia/security
-	additional_module = /obj/item/mod/module/pepper_shoulders
+	additional_modules = /obj/item/mod/module/pepper_shoulders
 
 /obj/item/mod/control/pre_equipped/responsory/engineer
 	insignia_type = /obj/item/mod/module/insignia/engineer
-	additional_module = /obj/item/mod/module/rad_protection
+	additional_modules = /obj/item/mod/module/rad_protection
 
 /obj/item/mod/control/pre_equipped/responsory/medic
 	insignia_type = /obj/item/mod/module/insignia/medic
-	additional_module = /obj/item/mod/module/quick_carry
+	additional_modules = /obj/item/mod/module/quick_carry
 
 /obj/item/mod/control/pre_equipped/responsory/janitor
 	insignia_type = /obj/item/mod/module/insignia/janitor
-	additional_module = /obj/item/mod/module/clamp
+	additional_modules = list(/obj/item/mod/module/noslip, /obj/item/mod/module/mister/cleaner)
 
 /obj/item/mod/control/pre_equipped/responsory/clown
 	insignia_type = /obj/item/mod/module/insignia/clown
-	additional_module = /obj/item/mod/module/bikehorn
+	additional_modules = /obj/item/mod/module/bikehorn
 
 /obj/item/mod/control/pre_equipped/responsory/chaplain
 	insignia_type = /obj/item/mod/module/insignia/chaplain
-	additional_module = /obj/item/mod/module/injector
+	additional_modules = /obj/item/mod/module/injector
 
 /obj/item/mod/control/pre_equipped/responsory/inquisitory
 	applied_skin = "inquisitory"
@@ -525,19 +538,19 @@
 
 /obj/item/mod/control/pre_equipped/responsory/inquisitory/commander
 	insignia_type = /obj/item/mod/module/insignia/commander
-	additional_module = /obj/item/mod/module/power_kick
+	additional_modules = /obj/item/mod/module/power_kick
 
 /obj/item/mod/control/pre_equipped/responsory/inquisitory/security
 	insignia_type = /obj/item/mod/module/insignia/security
-	additional_module = /obj/item/mod/module/pepper_shoulders
+	additional_modules = /obj/item/mod/module/pepper_shoulders
 
 /obj/item/mod/control/pre_equipped/responsory/inquisitory/medic
 	insignia_type = /obj/item/mod/module/insignia/medic
-	additional_module = /obj/item/mod/module/quick_carry
+	additional_modules = /obj/item/mod/module/quick_carry
 
 /obj/item/mod/control/pre_equipped/responsory/inquisitory/chaplain
 	insignia_type = /obj/item/mod/module/insignia/chaplain
-	additional_module = /obj/item/mod/module/injector
+	additional_modules = /obj/item/mod/module/injector
 
 /obj/item/mod/control/pre_equipped/apocryphal
 	theme = /datum/mod_theme/apocryphal
@@ -626,7 +639,7 @@
 		/obj/item/mod/module/stealth/ninja,
 		/obj/item/mod/module/quick_carry/advanced,
 		/obj/item/mod/module/magboot/advanced,
-		/obj/item/mod/module/jetpack,
+		/obj/item/mod/module/jetpack/advanced,
 		/obj/item/mod/module/anomaly_locked/kinesis/admin,
 		/obj/item/mod/module/shove_blocker,
 		/obj/item/mod/module/quick_cuff,
@@ -634,7 +647,7 @@
 	default_pins = list(
 		/obj/item/mod/module/stealth/ninja,
 		/obj/item/mod/module/magboot/advanced,
-		/obj/item/mod/module/jetpack,
+		/obj/item/mod/module/jetpack/advanced,
 		/obj/item/mod/module/anomaly_locked/kinesis/admin,
 	)
 

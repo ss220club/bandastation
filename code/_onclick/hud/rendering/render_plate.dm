@@ -6,7 +6,7 @@
 
 
 /**
- * Render relay object assigned to a plane master to be able to relay it's render onto other planes that are not it's own
+ * Render relay object assigned to a plane master to be able to relay its render onto other planes that are not its own
  */
 /atom/movable/render_plane_relay
 	screen_loc = "CENTER"
@@ -345,7 +345,7 @@
 	if(!.)
 		return
 
-	RegisterSignal(mymob, COMSIG_MOB_SIGHT_CHANGE, PROC_REF(handle_sight))
+	RegisterSignal(mymob, COMSIG_MOB_SIGHT_CHANGE, PROC_REF(handle_sight), override = TRUE)
 	handle_sight(mymob, mymob.sight, NONE)
 
 /atom/movable/screen/plane_master/rendering_plate/light_mask/hide_from(mob/oldmob)

@@ -45,9 +45,9 @@
 	atmos_contents = dummy_list
 
 /datum/spatial_grid_cell/Destroy(force)
-	if(force)//the response to someone trying to qdel this is a right proper fuck you
+	if(!force)//the response to someone trying to qdel this is a right proper fuck you
 		stack_trace("dont try to destroy spatial grid cells without a good reason. if you need to do it use force")
-		return
+		return QDEL_HINT_LETMELIVE
 
 	. = ..()
 
@@ -412,7 +412,7 @@ SUBSYSTEM_DEF(spatial_grid)
 	return intersecting_cell
 
 /**
- * find the spatial map cell that target used to belong to, then remove the target (and sometimes it's important_recusive_contents) from it.
+ * find the spatial map cell that target used to belong to, then remove the target (and sometimes its important_recusive_contents) from it.
  * make sure to provide the turf old_target used to be "in"
  *
  * * old_target - the thing we want to remove from the spatial grid cell

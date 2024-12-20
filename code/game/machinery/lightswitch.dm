@@ -7,6 +7,7 @@
 	desc = "Make dark."
 	power_channel = AREA_USAGE_LIGHT
 	idle_power_usage = BASE_MACHINE_IDLE_CONSUMPTION * 0.02
+	mouse_over_pointer = MOUSE_HAND_POINTER
 	/// Set this to a string, path, or area instance to control that area
 	/// instead of the switch's location.
 	var/area/area = null
@@ -32,6 +33,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light_switch, 26)
 	if(!area)
 		area = get_area(src)
 	if(autoname)
+		ru_names_rename(ru_names_toml(src::name, suffix = " ([area.name])", override_base = "light switch ([area.name])"))
 		name = "light switch ([area.name])"
 	find_and_hang_on_wall(custom_drop_callback = CALLBACK(src, PROC_REF(deconstruct), TRUE))
 	register_context()
@@ -119,6 +121,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light_switch, 26)
 	icon = 'icons/obj/machines/wallmounts.dmi'
 	icon_state = "light-nopower"
 	result_path = /obj/machinery/light_switch
+	custom_materials = list(/datum/material/iron = SHEET_MATERIAL_AMOUNT)
 	pixel_shift = 26
 
 /obj/item/circuit_component/light_switch

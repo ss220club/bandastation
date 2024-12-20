@@ -18,6 +18,7 @@
 	max_integrity = 250
 	integrity_failure = 0.4
 	armor_type = /datum/armor/machinery_firealarm
+	mouse_over_pointer = MOUSE_HAND_POINTER
 	idle_power_usage = BASE_MACHINE_IDLE_CONSUMPTION * 0.05
 	active_power_usage = BASE_MACHINE_ACTIVE_CONSUMPTION * 0.02
 	power_channel = AREA_USAGE_ENVIRON
@@ -115,6 +116,7 @@
 
 /obj/machinery/firealarm/update_name(updates)
 	. = ..()
+	ru_names_rename(ru_names_toml(src::name, suffix = " ([get_area_name(my_area)]) [id_tag]", override_base = "[get_area_name(my_area)] [initial(name)] [id_tag]"))
 	name = "[get_area_name(my_area)] [initial(name)] [id_tag]"
 
 /obj/machinery/firealarm/on_exit_area(datum/source, area/area_to_unregister)
@@ -425,7 +427,7 @@
 			if(prob(33) && buildstage == FIRE_ALARM_BUILD_SECURED) //require fully wired electronics to set of the alarms
 				alarm()
 
-/obj/machinery/firealarm/singularity_pull(S, current_size)
+/obj/machinery/firealarm/singularity_pull(atom/singularity, current_size)
 	if (current_size >= STAGE_FIVE) // If the singulo is strong enough to pull anchored objects, the fire alarm experiences integrity failure
 		deconstruct()
 	return ..()
@@ -477,6 +479,9 @@
 	my_area.fire_detect = !my_area.fire_detect
 	for(var/obj/machinery/firealarm/fire_panel in my_area.firealarms)
 		fire_panel.update_icon()
+	// Used to force all the firelocks to update, if the zone is not manually activated
+	if (my_area.fault_status != AREA_FAULT_MANUAL)
+		reset() // Don't send user to prevent double balloon_alert() and the action is already logged in this proc.
 	if (user)
 		balloon_alert(user, "thermal sensors [my_area.fire_detect ? "enabled" : "disabled"]")
 		user.log_message("[ my_area.fire_detect ? "enabled" : "disabled" ] firelock sensors using [src].", LOG_GAME)

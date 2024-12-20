@@ -127,7 +127,7 @@ GLOBAL_LIST_INIT(common_loot, list( //common: basic items
 
 	list(//medical and chemicals
 		/obj/item/grenade/chem_grenade/cleaner = 1,
-		/obj/item/lead_pipe = 1,
+		// /obj/item/lead_pipe = 1, // BANDASTATION REMOVAL
 		/obj/item/reagent_containers/cup/beaker = 1,
 		/obj/item/reagent_containers/cup/bottle/random_buffer = 2,
 		/obj/item/reagent_containers/cup/rag = 1,
@@ -151,6 +151,7 @@ GLOBAL_LIST_INIT(common_loot, list( //common: basic items
 		/obj/item/stack/spacecash/c10 = 1,
 		/obj/item/stack/sticky_tape = 1,
 		/obj/item/tank/internals/emergency_oxygen = 1,
+		/obj/item/paper/paperslip/fishing_tip = 1,
 
 		//light sources
 		/obj/effect/spawner/random/decoration/glowstick = 1,
@@ -209,6 +210,7 @@ GLOBAL_LIST_INIT(uncommon_loot, list(//uncommon: useful items
 		/obj/item/storage/box/clown = 1,
 		/obj/item/weaponcrafting/receiver = 1,
 		/obj/item/book/granter/crafting_recipe/death_sandwich = 1,
+		/obj/item/survivalcapsule/fishing = 1,
 		) = 8,
 
 	list(//medical and chemicals
