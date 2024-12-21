@@ -7529,7 +7529,7 @@
 /turf/open/floor/iron/cafeteria,
 /area/station/maintenance/ghetto/starboard/aft)
 "bVP" = (
-/obj/machinery/door/airlock/lawyer,
+/obj/machinery/door/airlock/corporate,
 /obj/effect/mapping_helpers/airlock/autoname,
 /obj/machinery/door/firedoor,
 /obj/structure/cable,
@@ -14198,7 +14198,7 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/structure/disposalpipe/segment,
-/obj/machinery/door/airlock/lawyer,
+/obj/machinery/door/airlock/corporate,
 /obj/effect/mapping_helpers/airlock/autoname,
 /obj/machinery/door/firedoor,
 /obj/effect/mapping_helpers/airlock/access/all/command/magistrate,
@@ -22053,7 +22053,7 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/door/firedoor,
-/obj/machinery/door/airlock/public,
+/obj/machinery/door/airlock/corporate,
 /obj/effect/mapping_helpers/airlock/autoname,
 /obj/effect/mapping_helpers/airlock/access/any/security/general,
 /obj/effect/mapping_helpers/airlock/access/any/security/court,
@@ -65230,7 +65230,7 @@
 /area/station/maintenance/ghetto/central/fore)
 "qLF" = (
 /obj/structure/disposalpipe/segment,
-/obj/machinery/door/airlock/command{
+/obj/machinery/door/airlock/corporate{
 	id_tag = "ntr_door"
 	},
 /obj/effect/mapping_helpers/airlock/autoname,
@@ -85613,7 +85613,7 @@
 /area/station/commons/lounge)
 "vZX" = (
 /obj/structure/disposalpipe/segment,
-/obj/machinery/door/airlock/command{
+/obj/machinery/door/airlock/corporate{
 	id_tag = "blueshield_door"
 	},
 /obj/effect/mapping_helpers/airlock/autoname,

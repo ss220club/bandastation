@@ -268,7 +268,7 @@
 /turf/open/floor/wood,
 /area/station/security/courtroom)
 "Bo" = (
-/obj/machinery/door/airlock/lawyer{
+/obj/machinery/door/airlock/corporate{
 	name = "Magistrate's Office"
 	},
 /obj/structure/cable,

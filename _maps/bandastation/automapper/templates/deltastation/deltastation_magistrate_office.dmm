@@ -66,7 +66,7 @@
 /area/station/command/heads_quarters/magistrate)
 "p" = (
 /obj/machinery/door/firedoor,
-/obj/machinery/door/airlock/lawyer{
+/obj/machinery/door/airlock/corporate{
 	name = "Magistrate's Office"
 	},
 /obj/structure/cable,
@@ -155,7 +155,7 @@
 /area/station/command/heads_quarters/magistrate)
 "F" = (
 /obj/machinery/door/firedoor,
-/obj/machinery/door/airlock/lawyer{
+/obj/machinery/door/airlock/corporate{
 	name = "Magistrate's Office"
 	},
 /obj/effect/turf_decal/stripes/line,

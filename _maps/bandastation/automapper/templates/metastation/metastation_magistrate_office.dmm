@@ -29,7 +29,7 @@
 /area/station/command/heads_quarters/magistrate)
 "i" = (
 /obj/machinery/door/firedoor,
-/obj/machinery/door/airlock/lawyer{
+/obj/machinery/door/airlock/corporate{
 	name = "Magistrate's Office"
 	},
 /obj/structure/cable,
@@ -76,7 +76,7 @@
 /area/station/command/heads_quarters/magistrate)
 "s" = (
 /obj/machinery/door/firedoor,
-/obj/machinery/door/airlock/lawyer{
+/obj/machinery/door/airlock/corporate{
 	name = "Magistrate's Office"
 	},
 /obj/effect/mapping_helpers/airlock/access/all/command/magistrate,
@@ -255,7 +255,7 @@
 /turf/open/floor/wood/parquet,
 /area/station/command/heads_quarters/magistrate)
 "Z" = (
-/obj/machinery/door/airlock/lawyer{
+/obj/machinery/door/airlock/corporate{
 	name = "Magistrate's Office"
 	},
 /obj/structure/cable,

@@ -255,9 +255,9 @@
 /area/station/command/heads_quarters/blueshield)
 "AA" = (
 /obj/machinery/door/firedoor,
-/obj/machinery/door/airlock/command{
-	name = "Blueshield's Office";
-	id_tag = "blueshield_door"
+/obj/machinery/door/airlock/corporate{
+	id_tag = "blueshield_door";
+	name = "Blueshield's Office"
 	},
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -279,9 +279,9 @@
 /area/station/hallway/primary/central/aft)
 "Co" = (
 /obj/machinery/door/firedoor,
-/obj/machinery/door/airlock/command{
-	name = "Nanotrasen Representative's Office";
-	id_tag = "ntr_door"
+/obj/machinery/door/airlock/corporate{
+	id_tag = "ntr_door";
+	name = "Nanotrasen Representative's Office"
 	},
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/effect/turf_decal/stripes/line{
