@@ -1,4 +1,6 @@
 /datum/controller/subsystem/title
+	/// The current notice text, or null.
+	var/notice
 	/// Currently set title screen
 	var/datum/title_screen/current_title_screen
 	/// The list of image files available to be picked for title screen
@@ -91,17 +93,8 @@
  * Adds a notice to the main title screen in the form of big red text!
  */
 /datum/controller/subsystem/title/proc/set_notice(new_notice)
-	new_notice = sanitize_text(new_notice) || null
-
-	if(!current_title_screen)
-		if(!new_notice)
-			return
-
-		current_title_screen = new(notice = new_notice)
-	else
-		current_title_screen.notice = new_notice
-
-	title_output_to_all(current_title_screen.notice, "update_notice")
+	notice = sanitize_text(new_notice) || null
+	title_output_to_all(notice, "update_notice")
 
 /**
  * Change or reset title screen css

@@ -1,15 +1,12 @@
 /datum/title_screen
 	/// All title screen styles.
 	var/title_css = DEFAULT_TITLE_SCREEN_HTML_CSS
-	/// The current notice text, or null.
-	var/notice
 	/// The current title screen being displayed, as `/datum/asset_cache_item`
 	var/datum/asset_cache_item/screen_image
 
-/datum/title_screen/New(styles, notice, screen_image_file)
+/datum/title_screen/New(styles, screen_image_file)
 	if(styles)
 		src.title_css = styles
-	src.notice = notice
 	set_screen_image(screen_image_file)
 
 /datum/title_screen/proc/set_screen_image(screen_image_file)
@@ -87,7 +84,7 @@
 	if(screen_image_url)
 		html += {"<img id="screen_image" class="bg" src="[screen_image_url]">"}
 
-	html += {"<div id="container_notice" class="hidden">[notice]</div>"}
+	html += {"<div id="container_notice" class="hidden">[SStitle.notice]</div>"}
 	html += {"<input type="checkbox" id="hide_menu">"}
 	html += {"<div class="lobby_wrapper">"}
 	html += {"
