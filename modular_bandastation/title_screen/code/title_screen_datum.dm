@@ -84,7 +84,7 @@
 	if(screen_image_url)
 		html += {"<img id="screen_image" class="bg" src="[screen_image_url]">"}
 
-	html += {"<div id="container_notice" class="hidden">[SStitle.notice]</div>"}
+	html += {"<div id="container_notice" class="[SStitle.notice ? "" : "hidden"]">[SStitle.notice]</div>"}
 	html += {"<input type="checkbox" id="hide_menu">"}
 	html += {"<div class="lobby_wrapper">"}
 	html += {"
