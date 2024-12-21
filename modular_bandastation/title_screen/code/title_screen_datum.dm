@@ -129,6 +129,9 @@
 
 		var/number = 0
 		for(var/datum/station_trait/job/trait as anything in GLOB.lobby_station_traits)
+			if(!istype(trait))
+				continue // Skip trait if it is not a job
+
 			if(!trait.can_display_lobby_button(player.client))
 				continue
 
