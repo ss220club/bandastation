@@ -229,41 +229,7 @@
 			overlay.use_gender = accessory.gender_specific
 			overlay.draw_color = accessory.color_src ? vulp.dna.features["furcolor_first"] : null
 
-			if((istype(people_part, /obj/item/bodypart/leg/left/vulpkanin/digitigrade) || istype(people_part, /obj/item/bodypart/leg/right/vulpkanin/digitigrade))) {
-				overlay.icon_state = overlay.icon_state + "_digi"
-			}
-
-			// if(people_part.aux_zone && (istype(people_part, /obj/item/bodypart/arm/left/vulpkanin) || istype(people_part, /obj/item/bodypart/arm/right/vulpkanin))) {
-			// 	var/datum/bodypart_overlay/simple/body_marking/hand_overlay = new markings_type ()
-			// 	hand_overlay.icon = accessory.icon
-			// 	hand_overlay.icon_state = accessory.icon_state + "_hand"
-			// 	hand_overlay.layers = 1 << 3
-			// 	hand_overlay.use_gender = accessory.gender_specific
-			// 	hand_overlay.draw_color = accessory.color_src ? vulp.dna.features["furcolor_first"] : null
-
-			// 	people_part.add_bodypart_overlay(hand_overlay, FALSE)
-			// }
-
 			people_part.add_bodypart_overlay(overlay)
-
-/datum/species/vulpkanin/replace_body(mob/living/carbon/target, datum/species/new_species)
-	var/list/final_bodypart_overrides = new_species.bodypart_overrides.Copy()
-	if((new_species.digitigrade_customization == DIGITIGRADE_OPTIONAL && target.dna.features["legs"] == DIGITIGRADE_LEGS) || new_species.digitigrade_customization == DIGITIGRADE_FORCED)
-		final_bodypart_overrides[BODY_ZONE_R_LEG] = /obj/item/bodypart/leg/right/vulpkanin/digitigrade
-		final_bodypart_overrides[BODY_ZONE_L_LEG] = /obj/item/bodypart/leg/left/vulpkanin/digitigrade
-
-	for(var/obj/item/bodypart/old_part as anything in target.bodyparts)
-		if((old_part.change_exempt_flags & BP_BLOCK_CHANGE_SPECIES) || (old_part.bodypart_flags & BODYPART_IMPLANTED))
-			continue
-
-		var/path = final_bodypart_overrides?[old_part.body_zone]
-		var/obj/item/bodypart/new_part
-		if(path)
-			new_part = new path()
-			new_part.replace_limb(target, TRUE)
-			new_part.update_limb(is_creating = TRUE)
-			new_part.set_initial_damage(old_part.brute_dam, old_part.burn_dam)
-		qdel(old_part)
 
 /obj/item/bodypart/head/get_hair_and_lips_icon(dropped)
 	. = ..()

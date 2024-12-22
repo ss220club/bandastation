@@ -7,20 +7,6 @@
 /datum/bodypart_overlay/simple/body_marking/vulpkanin/get_accessory(name)
 	return SSaccessories.vulpkanin_body_markings_list[name]
 
-/datum/bodypart_overlay/simple/body_marking/vulpkanin/can_draw_on_bodypart(mob/living/carbon/human/human)
-	return TRUE
-
-/datum/bodypart_overlay/simple/body_marking/vulpkanin/bitflag_to_layer(layer)
-	switch(layer)
-		if(EXTERNAL_BEHIND)
-			return -BODY_BEHIND_LAYER
-		if(EXTERNAL_ADJACENT)
-			return -BODYPARTS_LAYER
-		if(EXTERNAL_FRONT)
-			return -BODY_FRONT_LAYER
-		if(1 << 3)
-			return -BODYPARTS_HIGH_LAYER
-
 /datum/sprite_accessory/vulpkanin_body_markings
 	icon = 'modular_bandastation/species/icons/mob/species/vulpkanin/body_markings.dmi'
 	name = "None"

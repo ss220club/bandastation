@@ -16,6 +16,5 @@
 #include "code/human/species/species.dm"
 #include "code/reagents/mutation.dm"
 
-#include "code/clothing/human_update_icons.dm"
 #include "code/clothing/items.dm"
 #include "code/clothing/mod.dm"

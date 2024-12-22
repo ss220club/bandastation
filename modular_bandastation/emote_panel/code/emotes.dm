@@ -1,9 +1,6 @@
 /datum/emote/living/sniffle
 	key = "sniffle"
 	key_third_person = "sniffles"
-	name = "шмыгнуть"
-	message = "шмыгает носом."
-	message_mime = "бесшумно шмыгает носом."
 	name = "нюхать"
 	message = "нюхает."
 	message_mime = "бесшумно нюхает."

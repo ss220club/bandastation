@@ -15,14 +15,15 @@
 	click_to_activate = TRUE
 	var/list/sniffed_species_ue = list()
 	var/list/sniffed_species_ui = list()
+	var/cast_time = 2 SECONDS
 
 /datum/action/cooldown/sniff/Grant(mob/granted_to)
 	. = ..()
-	RegisterSignal(granted_to, "testsig", PROC_REF(smoke))
+	RegisterSignal(granted_to, COMSIG_CARBON_VULPKANIN_SNIFF, PROC_REF(smoke))
 
 /datum/action/cooldown/sniff/Remove(mob/removed_from)
 	. = ..()
-	UnregisterSignal(removed_from, "testsig", PROC_REF(smoke))
+	UnregisterSignal(removed_from, COMSIG_CARBON_VULPKANIN_SNIFF, PROC_REF(smoke))
 
 /datum/action/cooldown/sniff/proc/smoke()
 	StartCooldown(300 SECONDS)
@@ -77,7 +78,7 @@
 		sniffed_species_ue[H.dna.unique_enzymes] = H.real_name
 		sniffed_species_ui[md5(H.dna.unique_identity)] = H.real_name
 	if(ishuman(target))
-		if(do_after(owner, 2 SECONDS, target = target))
+		if(do_after(owner, cast_time, target = target))
 			var/mob/living/carbon/human/H = target
 			sniffed_species_ue[H.dna.unique_enzymes] = H.name
 			sniffed_species_ui[md5(H.dna.unique_identity)] = H.name
@@ -109,12 +110,14 @@
 
 	if(fingerprints)
 		for(var/i in fingerprints)
-			if(sniffed_species_ui[i])
-				fingerprint_output[i]["Name"] = sniffed_species_ui[i]
+			if(!sniffed_species_ui[i])
+				continue
+			fingerprint_output[i]["Name"] = sniffed_species_ui[i]
 	if(blood)
 		for(var/i in blood)
-			if(sniffed_species_ue[i])
-				blood_output[i]["Name"] = sniffed_species_ue[i]
+			if(!sniffed_species_ue[i])
+				continue
+			blood_output[i]["Name"] = sniffed_species_ue[i]
 
 	var/list/message = list()
 	if(length(fingerprint_output) > 0)

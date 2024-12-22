@@ -86,15 +86,6 @@ export const feature_lizard_legs: FeatureChoiced = {
   },
 };
 
-export const feature_vulpkanin_legs: FeatureChoiced = {
-  name: 'Лапки',
-  component: (
-    props: FeatureValueProps<string, string, FeatureChoicedServerData>,
-  ) => {
-    return <FeatureDropdownInput buttons {...props} />;
-  },
-};
-
 export const feature_lizard_spines: FeatureChoiced = {
   name: 'Spines',
   component: (
