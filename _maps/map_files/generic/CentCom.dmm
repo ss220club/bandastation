@@ -9917,7 +9917,7 @@
 /area/centcom/central_command_areas/armory)
 "Vh" = (
 /obj/structure/table/reinforced,
-/obj/item/surgery_tray/full{
+/obj/effect/spawner/surgery_tray/full{
 	pixel_y = 10;
 	pixel_x = 2
 	},
@@ -62217,7 +62217,7 @@ xt
 xt
 xt
 xt
-xt
+PG
 xt
 Vd
 zm
@@ -62474,7 +62474,7 @@ xt
 xt
 xt
 xt
-rq
+xt
 xt
 xt
 zl

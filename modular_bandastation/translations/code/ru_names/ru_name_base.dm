@@ -17,7 +17,6 @@ GLOBAL_LIST_EMPTY(ru_names)
 	if(!length(GLOB.ru_names))
 		var/toml_path = "[PATH_TO_TRANSLATE_DATA]/ru_names.toml"
 		if(!fexists(file(toml_path)))
-			GLOB.ru_names = list("ERROR" = "File not found!")
 			return .
 		GLOB.ru_names = rustg_read_toml_file("[PATH_TO_TRANSLATE_DATA]/ru_names.toml")
 	if(GLOB.ru_names[formatted_name])
@@ -49,6 +48,7 @@ GLOBAL_LIST_EMPTY(ru_names)
 /// Необходимо использовать ПЕРЕД изменением var/name, и использовать только этот прок для изменения в рантайме склонений
 /atom/ru_names_rename(list/new_list)
 	if(!length(new_list))
+		ru_names = null
 		return
 	ru_names = new_list
 	if(new_list["gender"])
@@ -60,21 +60,28 @@ GLOBAL_LIST_EMPTY(ru_names)
 * Процедура выбора правильного падежа для любого предмета, если у него указан словарь «ru_names», примерно такой:
 * RU_NAMES_LIST_INIT("jaws of life", "челюсти жизни", "челюстей жизни", "челюстям жизни", "челюсти жизни", "челюстями жизни", "челюстях жизни")
 */
-/datum/proc/declent_ru(case_id, list/ru_names_override)
-	SHOULD_CALL_PARENT(FALSE)
+/datum/proc/declent_ru(declent)
 	CRASH("Unimplemented proc/declent_ru() was used")
 
-/atom/declent_ru(case_id, list/ru_names_override)
-	var/list/list_to_use = ru_names_override || ru_names
-	if(length(list_to_use) && list_to_use["base"] == ru_names["base"] && list_to_use[case_id])
-		return list_to_use[case_id]
-	if(case_id == "gender")
-		return
-	return name
+/proc/get_declented_value(list/declented_list, declent, backup_value)
+	if(declent == "gender")
+		return declented_list[declent] || backup_value
+	return declented_list[declent] || declented_list[NOMINATIVE] || backup_value
 
-/// Used for getting initial values, such as for recipies where resulted atom is not yet created.
-/proc/declent_ru_initial(target_name, declent, override_backup)
+/atom/declent_ru(declent)
+	. = name
+	if(declent == "gender")
+		. = gender
+	if(!length(ru_names) || ru_names["base"] != name)
+		return .
+	return get_declented_value(ru_names, declent, .)
+
+/// Used for getting initial values, such as for recipies where resulted atom is not yet created. It can return null - use var/override_backup to have a returned value guaranteed
+/proc/declent_ru_initial(target_name, declent = NOMINATIVE, override_backup = null)
+	. = override_backup
+	if(declent == "gender")
+		. = NEUTER
 	var/list/declented_list = ru_names_toml(target_name)
-	if(length(declented_list) && declented_list[declent])
-		return declented_list[declent]
-	return override_backup || target_name
+	if(!length(declented_list))
+		return .
+	return get_declented_value(declented_list, declent, .)

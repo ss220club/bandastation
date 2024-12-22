@@ -21,10 +21,12 @@
 #include "examine_panel/_examine_panel.dme"
 #include "gunhud/_gunhud.dme"
 #include "hair/_hair.dme"
+#include "jobs/_jobs.dme"
 #include "keybinding/_keybinding.dme"
 #include "loadout/_loadout.dme"
 #include "mapping/_mapping.dme"
 #include "medical/_medical.dme"
+#include "mobs/_mobs.dme"
 #include "nanomap/_nanomap.dme"
 #include "pixel_shift/_pixel_shift.dme"
 #include "ru_jobs/_ru_jobs.dme"
@@ -37,5 +39,16 @@
 #include "jukebox/_jukebox.dme"
 #include "objects/_objects.dme"
 #include "orderables/_orderables.dme"
+#include "automatic_crew_transfer/_automatic_crew_transfer.dme"
+#include "outfits/_outfits.dme"
 #include "overrides/_overrides.dme"
 #include "species/_species.dme"
+
+
+// --- PRIME --- //
+// #define DISABLE_PRIME_MODPACKS
+// Чтобы отлючить модпаки прайма, нужно раскоментить строку "#define DISABLE_PRIME_MODPACKS" выше.
+// Модпаки включены по умолчанию для запуска всех тестов и для этого кода тоже.
+#ifndef DISABLE_PRIME_MODPACKS
+#include "prime_only/_prime_only.dme"
+#endif
