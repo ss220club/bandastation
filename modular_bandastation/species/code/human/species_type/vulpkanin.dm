@@ -41,7 +41,11 @@
 	vulpkanin.set_hairstyle("Jagged", update = TRUE)
 	vulpkanin.dna.features["mcolor"] = "#D69E67"
 	vulpkanin.dna.features["vulpkanin_head_accessories"] = "Vulpkanin Earfluff"
+	vulpkanin.dna.features["furcolor_first"] = "#bd762f"
+	vulpkanin.dna.features["furcolor_second"] = "#2b2015"
+	vulpkanin.dna.features["furcolor_third"] = "#2b2015"
 	vulpkanin.dna.features["furcolor_fourth"] = "#ffa2be"
+	vulpkanin.dna.features["furcolor_fifth"] = "#bd762f"
 	vulpkanin.update_body(is_creating = TRUE)
 
 /datum/species/vulpkanin/randomize_features()
