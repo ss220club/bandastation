@@ -117,5 +117,5 @@ trait_name = "Station"
 map_files = ["tramstation_ntr_blueshield_office.dmm"]
 directory = "_maps/bandastation/automapper/templates/tramstation/"
 required_map = "tramstation.dmm"
-coordinates = [80, 130, 2]
+coordinates = [79, 130, 2]
 trait_name = "Station"
