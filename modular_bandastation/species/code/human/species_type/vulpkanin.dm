@@ -233,7 +233,7 @@
 			overlay.use_gender = accessory.gender_specific
 			overlay.draw_color = accessory.color_src ? vulp.dna.features["furcolor_first"] : null
 
-			if(accessory.colored_paws && (istype(people_part, /obj/item/bodypart/arm/left/vulpkanin) || istype(people_part, /obj/item/bodypart/arm/right/vulpkanin)))
+			if(istype(accessory, /datum/sprite_accessory/vulpkanin_body_markings) && accessory.colored_paws && (istype(people_part, /obj/item/bodypart/arm/left/vulpkanin) || istype(people_part, /obj/item/bodypart/arm/right/vulpkanin)))
 				overlay.aux_color_paw = accessory.color_src ? vulp.dna.features["furcolor_first"] : null
 
 			people_part.add_bodypart_overlay(overlay)
