@@ -236,7 +236,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/structure/disposalpipe/segment,
 /obj/effect/mapping_helpers/airlock/access/all/command/blueshield,
-/obj/effect/landmark/atmospheric_sanity/ignore_area,
 /obj/effect/landmark/navigate_destination,
 /turf/open/floor/iron/dark/smooth_large,
 /area/station/command/heads_quarters/blueshield)
@@ -1062,7 +1061,6 @@
 	dir = 4
 	},
 /obj/effect/mapping_helpers/airlock/access/all/command/nanotrasen_representative,
-/obj/effect/landmark/atmospheric_sanity/ignore_area,
 /obj/effect/landmark/navigate_destination,
 /turf/open/floor/iron/dark/smooth_large,
 /area/station/command/heads_quarters/nanotrasen_representative)
