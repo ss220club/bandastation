@@ -237,6 +237,7 @@
 /obj/structure/disposalpipe/segment,
 /obj/effect/mapping_helpers/airlock/access/all/command/blueshield,
 /obj/effect/landmark/navigate_destination,
+/obj/effect/landmark/atmospheric_sanity/ignore_area,
 /turf/open/floor/iron/dark/smooth_large,
 /area/station/command/heads_quarters/blueshield)
 "ji" = (
@@ -794,6 +795,7 @@
 	name = "secbarupper";
 	key = "secbarupper"
 	},
+/obj/effect/landmark/atmospheric_sanity/ignore_area,
 /turf/open/floor/catwalk_floor,
 /area/station/maintenance/department/security)
 "BS" = (
@@ -1062,6 +1064,7 @@
 	},
 /obj/effect/mapping_helpers/airlock/access/all/command/nanotrasen_representative,
 /obj/effect/landmark/navigate_destination,
+/obj/effect/landmark/atmospheric_sanity/ignore_area,
 /turf/open/floor/iron/dark/smooth_large,
 /area/station/command/heads_quarters/nanotrasen_representative)
 "LD" = (
