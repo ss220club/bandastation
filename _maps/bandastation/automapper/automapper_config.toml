@@ -65,7 +65,7 @@ trait_name = "Station"
 [templates.metastation_ntr_blueshield_office]
 map_files = ["metastation_ntr_blueshield_office.dmm"]
 directory = "_maps/bandastation/automapper/templates/metastation/"
-required_map = "birdshot.dmm"
+required_map = "MetaStation.dmm"
 coordinates = [101, 115, 1]
 trait_name = "Station"
 
