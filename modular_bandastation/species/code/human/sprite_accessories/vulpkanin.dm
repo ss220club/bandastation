@@ -3,9 +3,16 @@
 /datum/bodypart_overlay/simple/body_marking/vulpkanin
 	dna_feature_key = "vulpkanin_body_markings"
 	applies_to = list(/obj/item/bodypart/chest/vulpkanin, /obj/item/bodypart/arm/left/vulpkanin, /obj/item/bodypart/arm/right/vulpkanin, /obj/item/bodypart/leg/left/vulpkanin, /obj/item/bodypart/leg/right/vulpkanin)
+	var/aux_color_paw = null
 
 /datum/bodypart_overlay/simple/body_marking/vulpkanin/get_accessory(name)
 	return SSaccessories.vulpkanin_body_markings_list[name]
+
+/datum/bodypart_overlay/simple/body_marking/vulpkanin/modify_bodypart_appearance(datum/appearance)
+	var/image/a = appearance
+	if(a.appearance_flags == 0 && aux_color_paw && (a.icon_state == "vulpkanin_l_hand" || a.icon_state == "vulpkanin_r_hand"))
+		a.color = aux_color_paw
+	return
 
 /datum/sprite_accessory/vulpkanin_body_markings
 	icon = 'modular_bandastation/species/icons/mob/species/vulpkanin/body_markings.dmi'
@@ -13,6 +20,7 @@
 	icon_state = "none"
 	color_src = "vulpkanin_body_markings_color"
 	em_block = TRUE
+	var/colored_paws = FALSE
 
 /datum/sprite_accessory/vulpkanin_body_markings/belly_fox_vulp
 	name = "Vulpkanin Belly"
@@ -31,24 +39,29 @@
 /datum/sprite_accessory/vulpkanin_body_markings/points_fade_vulp
 	name = "Vulpkanin Points"
 	icon_state = "pointsfade"
+	colored_paws = TRUE
 
 /datum/sprite_accessory/vulpkanin_body_markings/points_fade_belly_vulp
 	name = "Vulpkanin Points and Belly"
 	icon_state = "pointsfadebelly"
+	colored_paws = TRUE
 
 /datum/sprite_accessory/vulpkanin_body_markings/points_fade_belly_alt_vulp
 	name = "Vulpkanin Points and Belly Alt."
 	icon_state = "altpointsfadebelly"
 	gender_specific = TRUE
+	colored_paws = TRUE
 
 /datum/sprite_accessory/vulpkanin_body_markings/points_sharp_vulp
 	name = "Vulpkanin Sharp Points"
 	icon_state = "sharppoints"
+	colored_paws = TRUE
 
 /datum/sprite_accessory/vulpkanin_body_markings/points_crest_vulp
 	name = "Vulpkanin Points and Crest"
 	icon_state = "crestpoints"
 	gender_specific = TRUE
+	colored_paws = TRUE
 
 // TAIL
 

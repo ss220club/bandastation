@@ -226,12 +226,15 @@
 			if(!people_part || !istype(people_part, part))
 				continue
 
-			var/datum/bodypart_overlay/simple/body_marking/overlay = new markings_type ()
+			var/datum/bodypart_overlay/simple/body_marking/vulpkanin/overlay = new markings_type()
 
 			overlay.icon = accessory.icon
 			overlay.icon_state = accessory.icon_state
 			overlay.use_gender = accessory.gender_specific
 			overlay.draw_color = accessory.color_src ? vulp.dna.features["furcolor_first"] : null
+
+			if(accessory.colored_paws && (istype(people_part, /obj/item/bodypart/arm/left/vulpkanin) || istype(people_part, /obj/item/bodypart/arm/right/vulpkanin)))
+				overlay.aux_color_paw = accessory.color_src ? vulp.dna.features["furcolor_first"] : null
 
 			people_part.add_bodypart_overlay(overlay)
 
