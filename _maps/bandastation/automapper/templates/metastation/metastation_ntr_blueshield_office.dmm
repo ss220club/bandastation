@@ -338,6 +338,7 @@
 /obj/structure/chair/comfy/black{
 	dir = 1
 	},
+/obj/effect/landmark/start/blueshield,
 /turf/open/floor/carpet/blue,
 /area/station/command/heads_quarters/blueshield)
 "CE" = (
@@ -532,6 +533,7 @@
 /obj/structure/chair/comfy/corp{
 	dir = 1
 	},
+/obj/effect/landmark/start/nanotrasen_representative,
 /turf/open/floor/carpet/royalblack,
 /area/station/command/heads_quarters/nanotrasen_representative)
 "Oy" = (

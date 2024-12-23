@@ -235,6 +235,7 @@
 	id = "lawyer_shutters";
 	name = "Privacy Shutters"
 	},
+/obj/effect/landmark/start/magistrate,
 /turf/open/floor/carpet/black,
 /area/station/command/heads_quarters/magistrate)
 "X" = (
