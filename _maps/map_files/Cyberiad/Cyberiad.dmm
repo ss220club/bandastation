@@ -6967,12 +6967,19 @@
 	pixel_y = 12;
 	pixel_x = 29
 	},
-/obj/machinery/light_switch/directional/south,
 /obj/effect/turf_decal/siding/wood{
 	dir = 10
 	},
 /obj/machinery/camera/directional/west{
 	c_tag = "Cafeteria"
+	},
+/obj/machinery/button/door/directional/west{
+	id = "ChangBottom";
+	name = "Jim Norton's Quebecois Coffee Bottom Shutters Control"
+	},
+/obj/structure/sign/chalkboard_menu{
+	dir = 8;
+	pixel_y = -32
 	},
 /turf/open/floor/wood,
 /area/station/service/cafeteria)
@@ -15076,13 +15083,6 @@
 	},
 /turf/open/floor/plating,
 /area/station/maintenance/department/engine/atmos)
-"dMI" = (
-/obj/structure/disposalpipe/segment{
-	dir = 9
-	},
-/obj/machinery/door/window/right/directional/north,
-/turf/open/floor/wood,
-/area/station/service/cafeteria)
 "dMR" = (
 /turf/closed/wall,
 /area/station/cargo/storage)
@@ -33368,8 +33368,8 @@
 /obj/structure/platform/corner{
 	dir = 8
 	},
-/obj/structure/disposalpipe/junction{
-	dir = 2
+/obj/structure/disposalpipe/segment{
+	dir = 10
 	},
 /turf/open/floor/iron/half{
 	dir = 8
@@ -41220,9 +41220,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/structure/cable,
 /obj/effect/turf_decal/tile/neutral,
-/obj/structure/disposalpipe/segment{
-	dir = 8
-	},
 /turf/open/floor/iron,
 /area/station/commons/dorms)
 "kDm" = (
@@ -42105,15 +42102,6 @@
 /obj/effect/mapping_helpers/airlock/access/all/engineering/general,
 /turf/open/floor/plating,
 /area/station/maintenance/department/electrical)
-"kLS" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/structure/cable,
-/obj/structure/disposalpipe/segment{
-	dir = 8
-	},
-/turf/open/floor/iron,
-/area/station/commons/dorms)
 "kLW" = (
 /obj/effect/turf_decal/tile/red{
 	dir = 8
@@ -42804,18 +42792,6 @@
 /obj/machinery/incident_display/delam/directional/north,
 /turf/open/floor/iron/dark,
 /area/station/engineering/supermatter/room)
-"kVx" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/structure/cable,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 8
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 6
-	},
-/turf/open/floor/iron,
-/area/station/commons/dorms)
 "kVz" = (
 /obj/structure/chair/sofa/bench/left{
 	dir = 1
@@ -46383,6 +46359,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 5
 	},
+/obj/machinery/light_switch/directional/north,
 /turf/open/floor/wood,
 /area/station/service/cafeteria)
 "lPK" = (
@@ -47287,10 +47264,6 @@
 /obj/item/reagent_containers/cup/glass/ice{
 	pixel_x = 2;
 	pixel_y = -1
-	},
-/obj/machinery/button/door/directional/south{
-	id = "ChangBottom";
-	name = "Jim Norton's Quebecois Coffee Bottom Shutters Control"
 	},
 /obj/machinery/light/small/directional/south,
 /obj/effect/turf_decal/siding/wood,
@@ -51339,9 +51312,6 @@
 /obj/machinery/light/directional/south,
 /obj/structure/cable,
 /obj/machinery/status_display/evac/directional/south,
-/obj/structure/disposalpipe/segment{
-	dir = 8
-	},
 /turf/open/floor/iron/stairs/left{
 	dir = 8
 	},
@@ -54869,16 +54839,6 @@
 	},
 /turf/open/floor/plating,
 /area/station/maintenance/department/medical/central)
-"obJ" = (
-/obj/structure/window/spawner/directional/north,
-/obj/machinery/disposal/bin{
-	name = "Jim Norton's Quebecois Coffee disposal unit"
-	},
-/obj/structure/disposalpipe/trunk{
-	dir = 4
-	},
-/turf/open/floor/wood,
-/area/station/service/cafeteria)
 "obP" = (
 /obj/machinery/holopad,
 /obj/effect/turf_decal/box/white{
@@ -64034,12 +63994,6 @@
 /obj/machinery/light/directional/east,
 /turf/open/floor/iron/dark/smooth_large,
 /area/station/ai_monitored/command/storage/eva)
-"qvc" = (
-/obj/structure/sign/chalkboard_menu{
-	dir = 4
-	},
-/turf/closed/wall,
-/area/station/service/cafeteria)
 "qvd" = (
 /obj/effect/turf_decal/trimline/blue/filled/line,
 /obj/effect/turf_decal/trimline/blue/filled/line{
@@ -74550,9 +74504,6 @@
 /obj/structure/platform{
 	dir = 4
 	},
-/obj/structure/disposalpipe/segment{
-	dir = 10
-	},
 /turf/open/floor/iron/half{
 	dir = 8
 	},
@@ -78981,18 +78932,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/plating,
 /area/station/maintenance/starboard/upper)
-"unX" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/structure/cable,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 8
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 8
-	},
-/turf/open/floor/iron,
-/area/station/commons/dorms)
 "uob" = (
 /obj/structure/table,
 /obj/machinery/power/apc/auto_name/directional/east,
@@ -189435,7 +189374,7 @@ nvi
 mvQ
 sxb
 lSM
-obJ
+pSa
 cCK
 ufN
 bDu
@@ -189691,8 +189630,8 @@ mLw
 nJl
 ttI
 nEu
-kVx
-dMI
+lSM
+tEi
 xHQ
 umI
 uHS
@@ -189948,7 +189887,7 @@ agg
 pDv
 pDv
 jzY
-unX
+lSM
 tEi
 xHQ
 ycl
@@ -190205,7 +190144,7 @@ tqT
 pWF
 mvQ
 ccg
-unX
+lSM
 pSa
 loh
 hMr
@@ -190465,7 +190404,7 @@ nCg
 nho
 wzo
 wzo
-qvc
+wzo
 lPJ
 bEA
 xhX
@@ -190976,7 +190915,7 @@ lrU
 wpv
 qxD
 nEu
-kLS
+jzY
 sQS
 eEF
 eEF
