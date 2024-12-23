@@ -240,7 +240,7 @@ SUBSYSTEM_DEF(vote)
 	log_vote(to_display)
 	to_chat(world, "\n" + examine_block(span_infoplain(vote_font("[span_bold(to_display)]\n\
 		Type <b>vote</b> or click <a href='byond://winset?command=vote'>here</a> to place your votes.\n\
-		You have [DisplayTimeText(duration)] to vote."))) + "\n", type = MESSAGE_TYPE_OOC) // monkestation edit: wrap in examine block, use MESSAGE_TYPE_OOC
+		You have [DisplayTimeText(duration)] to vote."))) + "\n", type = MESSAGE_TYPE_OOC) // BANDASTATION EDIT: wrap in examine block, use MESSAGE_TYPE_OOC
 
 	// And now that it's going, give everyone a voter action
 	for(var/client/new_voter as anything in GLOB.clients)

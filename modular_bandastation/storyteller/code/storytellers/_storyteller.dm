@@ -98,11 +98,11 @@
 	var/datum/controller/subsystem/gamemode/mode = SSgamemode
 	for(var/track in mode.event_track_points)
 		var/points = mode.event_track_points[track]
-		if(points >= mode.point_thresholds[track])
-			if(SSgamemode.can_run_roundstart)
-				SSgamemode.round_start_handle()
-
+		if(SSgamemode.can_run_roundstart && track == EVENT_TRACK_ROLESET)
+			SSgamemode.round_start_handle()
 			SSgamemode.can_run_roundstart = FALSE
+
+		if(points >= mode.point_thresholds[track])
 			if(prob(SSgamemode.empty_event_chance) && track == EVENT_TRACK_ROLESET)
 				calculate_empty_event(TRUE)
 				mode.event_track_points[track] = 0

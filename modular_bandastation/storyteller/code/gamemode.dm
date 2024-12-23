@@ -209,6 +209,7 @@ SUBSYSTEM_DEF(gamemode)
 	if(CONFIG_GET(flag/disable_storyteller)) // we're just gonna disable firing but still initialize, so we don't have any weird runtimes
 		flags |= SS_NO_FIRE
 		return SS_INIT_NO_NEED
+
 	return SS_INIT_SUCCESS
 
 /datum/controller/subsystem/gamemode/fire(resumed = FALSE)
@@ -975,7 +976,7 @@ SUBSYSTEM_DEF(gamemode)
 /datum/controller/subsystem/gamemode/proc/set_storyteller(passed_type)
 	if(!storytellers[passed_type])
 		message_admins("Attempted to set an invalid storyteller type: [passed_type], force setting to guide instead.")
-		current_storyteller = storytellers[/datum/storyteller/default] //if we dont have any then we brick, lets not do that
+		current_storyteller = /datum/storyteller/default //if we dont have any then we brick, lets not do that
 		CRASH("Attempted to set an invalid storyteller type: [passed_type].")
 	var/passed_state = FALSE
 	if (current_storyteller)
@@ -1090,7 +1091,7 @@ SUBSYSTEM_DEF(gamemode)
 				var/list/forced_events = forced_next_events[track]
 				var/forced = ""
 				for(var/datum/round_event_control/forced_event in forced_events)
-					forced = forced + "[forced_event.name] <a href='byond://?src=[REF(src)];panel=main;action=track_action;track_action=remove_forced;track=[track]'>X</a></BR>"
+					forced = forced + "[forced_event.name] <a href='byond://?src=[REF(src)];panel=main;action=track_action;track_action=remove_forced;track=[track];forced_event_to_remove=[forced_event]'>X</a></BR>"
 				dat += "<td>[forced]</td>" //Forced
 				dat += "<td><a href='byond://?src=[REF(src)];panel=main;action=track_action;track_action=set_pts;track=[track]'>Set Pts.</a> <a href='byond://?src=[REF(src)];panel=main;action=track_action;track_action=next_event;track=[track]'>Next Event</a></td>" //Actions
 				dat += "</tr>"
@@ -1354,9 +1355,14 @@ SUBSYSTEM_DEF(gamemode)
 					switch(href_list["track_action"])
 						if("remove_forced")
 							if(forced_next_events[track])
-								var/datum/round_event_control/event = forced_next_events[track]
-								message_admins("[key_name_admin(usr)] removed forced event [event.name] from track [track].")
-								forced_next_events -= track
+								var/datum/round_event_control/forced_event_to_remove
+								for(var/datum/round_event_control/forced_event_to_check in forced_next_events[track])
+									if(forced_event_to_check.name == href_list["forced_event_to_remove"])
+										forced_event_to_remove = forced_event_to_check
+								if(!forced_event_to_remove)
+									return
+								message_admins("[key_name_admin(usr)] removed forced event [forced_event_to_remove.name] from track [forced_event_to_remove.track].")
+								forced_next_events[track] -= forced_event_to_remove
 						if("set_pts")
 							var/set_pts = input(usr, "New point amount ([point_thresholds[track]]+ invokes event):", "Set points for [track]") as num|null
 							if(isnull(set_pts))

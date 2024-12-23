@@ -32,6 +32,7 @@
 #include "code\event_defines\ghostset\nuke_ops.dm"
 #include "code\event_defines\ghostset\wizard.dm"
 #include "code\event_defines\ghostset\paradox_clone.dm"
+#include "code\event_defines\ghostset\alien_infestation.dm"
 
 #include "code\event_defines\major\override.dm"
 #include "code\event_defines\moderate\override.dm"

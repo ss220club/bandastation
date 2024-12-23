@@ -3,12 +3,6 @@
 	tags = list(TAG_COMBAT, TAG_DESTRUCTIVE, TAG_EXTERNAL, TAG_ALIEN)
 	weight = 2
 
-/datum/round_event_control/alien_infestation
-	track = EVENT_TRACK_ROLESET
-	tags = list(TAG_COMBAT, TAG_DESTRUCTIVE, TAG_EXTERNAL, TAG_ALIEN)
-	earliest_start = 60 MINUTES
-	weight = 2
-
 /datum/round_event_control/blob
 	track = EVENT_TRACK_ROLESET
 	tags = list(TAG_DESTRUCTIVE, TAG_COMBAT, TAG_EXTERNAL, TAG_ALIEN)
