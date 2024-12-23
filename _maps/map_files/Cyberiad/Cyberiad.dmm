@@ -5872,8 +5872,6 @@
 "bzJ" = (
 /obj/item/kirbyplants/random,
 /obj/machinery/light/directional/east,
-/obj/item/kirbyplants/random,
-/obj/machinery/light/directional/east,
 /obj/structure/extinguisher_cabinet/directional/south,
 /turf/open/floor/wood/parquet,
 /area/station/security/courtroom)
@@ -43991,6 +43989,7 @@
 /obj/structure/table,
 /obj/machinery/light/directional/west,
 /obj/structure/extinguisher_cabinet/directional/west,
+/obj/machinery/computer/security/telescreen/prison/directional/north,
 /turf/open/floor/wood/tile,
 /area/station/service/lawoffice)
 "llm" = (
@@ -47506,6 +47505,7 @@
 	dir = 1
 	},
 /obj/machinery/firealarm/directional/south,
+/obj/structure/extinguisher_cabinet/directional/east,
 /turf/open/floor/wood/tile,
 /area/station/command/heads_quarters/magistrate)
 "mdi" = (
@@ -84815,13 +84815,19 @@
 /area/station/science/ordnance/office)
 "vOT" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/structure/table,
+/obj/structure/table/wood,
 /obj/item/gavelblock{
 	pixel_x = 6;
 	pixel_y = 6
 	},
 /obj/item/gavelhammer,
-/obj/structure/extinguisher_cabinet/directional/south,
+/obj/machinery/requests_console/directional/south{
+	name = "Magistrate's Office Request Console";
+	department = "Magistrate's Office"
+	},
+/obj/effect/mapping_helpers/requests_console/assistance,
+/obj/effect/mapping_helpers/requests_console/announcement,
+/obj/effect/mapping_helpers/requests_console/information,
 /turf/open/floor/wood/tile,
 /area/station/command/heads_quarters/magistrate)
 "vOU" = (
