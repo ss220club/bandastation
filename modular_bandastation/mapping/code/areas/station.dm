@@ -21,14 +21,6 @@
 	name = "Waste Burner"
 	icon_state = "engine"
 
-/area/station/maintenance/department/bridge/ntr
-	name = "Nanotrasen Reperesentative's Office"
-	icon_state = "maint_bridge"
-
-/area/station/maintenance/department/bridge/blueshield
-	name = "Blueshield's Office"
-	icon_state = "maint_bridge"
-
 // Ghetto
 // Department's Lower Floor
 /area/station/security/prison/ghetto
