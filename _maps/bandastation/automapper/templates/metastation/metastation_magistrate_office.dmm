@@ -256,8 +256,8 @@
 /turf/open/floor/wood/parquet,
 /area/station/command/heads_quarters/magistrate)
 "Z" = (
-/obj/machinery/door/airlock/corporate{
-	name = "Magistrate's Office"
+/obj/machinery/door/airlock/maintenance{
+	name = "Magistrate's Office Maintenance"
 	},
 /obj/structure/cable,
 /obj/structure/disposalpipe/segment,
