@@ -78867,6 +78867,9 @@
 	pixel_y = 3
 	},
 /obj/structure/table/reinforced,
+/obj/item/reagent_containers/cup/glass/coffee{
+	pixel_y = -1
+	},
 /turf/open/floor/wood,
 /area/station/service/cafeteria)
 "umQ" = (
