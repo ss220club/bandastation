@@ -292,6 +292,7 @@
 /obj/effect/mapping_helpers/airlock/access/all/command/nanotrasen_representative,
 /obj/effect/landmark/navigate_destination,
 /obj/effect/turf_decal/siding/wood,
+/obj/structure/cable,
 /turf/open/floor/wood/large,
 /area/station/command/heads_quarters/nanotrasen_representative)
 "CH" = (

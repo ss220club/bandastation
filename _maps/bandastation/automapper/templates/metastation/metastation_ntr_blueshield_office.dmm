@@ -436,6 +436,7 @@
 /obj/item/paper_bin{
 	pixel_y = 4
 	},
+/obj/structure/cable,
 /turf/open/floor/carpet/royalblack,
 /area/station/command/heads_quarters/nanotrasen_representative)
 "Kj" = (
@@ -493,6 +494,10 @@
 /obj/structure/cable,
 /turf/open/floor/iron,
 /area/station/hallway/primary/central)
+"KX" = (
+/obj/structure/cable,
+/turf/open/floor/carpet/blue,
+/area/station/command/heads_quarters/blueshield)
 "LY" = (
 /turf/template_noop,
 /area/template_noop)
@@ -541,6 +546,7 @@
 /obj/item/paper_bin{
 	pixel_y = 4
 	},
+/obj/structure/cable,
 /turf/open/floor/carpet/blue,
 /area/station/command/heads_quarters/blueshield)
 "Pe" = (
@@ -707,6 +713,10 @@
 "YM" = (
 /turf/open/floor/carpet/blue,
 /area/station/command/heads_quarters/blueshield)
+"ZP" = (
+/obj/structure/cable,
+/turf/open/floor/carpet/royalblack,
+/area/station/command/heads_quarters/nanotrasen_representative)
 
 (1,1,1) = {"
 LY
@@ -762,8 +772,8 @@ uT
 Aj
 kI
 JM
-ox
-ox
+ZP
+ZP
 Jk
 hm
 cD
@@ -852,8 +862,8 @@ CM
 hI
 JC
 Oy
-YM
-YM
+KX
+KX
 bQ
 GS
 KC
