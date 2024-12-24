@@ -166,11 +166,10 @@
 /turf/open/floor/wood,
 /area/station/command/heads_quarters/captain)
 "gk" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
 /turf/open/floor/wood/tile,
 /area/station/command/heads_quarters/nanotrasen_representative)
 "gB" = (
@@ -429,9 +428,6 @@
 /obj/structure/bed,
 /obj/item/bedsheet/centcom,
 /obj/machinery/light/small/directional/east,
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
-	dir = 8
-	},
 /turf/open/floor/carpet/royalblack,
 /area/station/command/heads_quarters/nanotrasen_representative)
 "oi" = (
@@ -445,6 +441,7 @@
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/machinery/holopad,
 /turf/open/floor/wood/tile,
 /area/station/command/heads_quarters/nanotrasen_representative)
 "oy" = (
@@ -543,6 +540,12 @@
 "tA" = (
 /turf/open/floor/carpet/royalblack,
 /area/station/command/heads_quarters/nanotrasen_representative)
+"tM" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
+	dir = 1
+	},
+/turf/open/floor/carpet/royalblack,
+/area/station/command/heads_quarters/nanotrasen_representative)
 "tU" = (
 /obj/machinery/newscaster/directional/north,
 /obj/structure/cable,
@@ -555,6 +558,8 @@
 /area/station/command/heads_quarters/captain)
 "tV" = (
 /obj/machinery/photocopier,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/wood/tile,
 /area/station/command/heads_quarters/nanotrasen_representative)
 "uc" = (
@@ -710,6 +715,10 @@
 /obj/structure/disposalpipe/segment,
 /turf/open/floor/wood,
 /area/station/command/heads_quarters/captain)
+"xy" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/turf/open/floor/carpet/royalblack,
+/area/station/command/heads_quarters/nanotrasen_representative)
 "xD" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -1378,6 +1387,7 @@
 "Tm" = (
 /obj/item/radio/intercom/command/directional/north,
 /obj/machinery/light/warm/directional/north,
+/obj/machinery/holopad,
 /turf/open/floor/carpet/royalblue,
 /area/station/command/heads_quarters/blueshield)
 "TP" = (
@@ -1466,7 +1476,6 @@
 /turf/open/floor/carpet/cyan,
 /area/station/command/heads_quarters/blueshield)
 "Yi" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
 	},
@@ -1948,9 +1957,9 @@ mO
 mO
 Hv
 sR
+xy
 iy
-iy
-tA
+tM
 ty
 WE
 WE
