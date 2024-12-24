@@ -6973,13 +6973,8 @@
 /obj/machinery/camera/directional/west{
 	c_tag = "Cafeteria"
 	},
-/obj/machinery/button/door/directional/west{
-	id = "ChangBottom";
-	name = "Jim Norton's Quebecois Coffee Bottom Shutters Control"
-	},
 /obj/structure/sign/chalkboard_menu{
-	dir = 8;
-	pixel_y = -32
+	pixel_y = -30
 	},
 /turf/open/floor/wood,
 /area/station/service/cafeteria)
@@ -10106,9 +10101,7 @@
 "cCK" = (
 /obj/machinery/light/small/directional/west,
 /obj/machinery/airalarm/directional/west,
-/obj/structure/chair/stool{
-	name = "Jim Norton's Quebecois Coffee stool"
-	},
+/obj/structure/chair/stool,
 /turf/open/floor/wood,
 /area/station/service/cafeteria)
 "cCP" = (
@@ -30270,9 +30263,6 @@
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "ChangKitchen"
 	},
-/obj/structure/table{
-	name = "Jim Norton's Quebecois Coffee table"
-	},
 /obj/item/storage/fancy/coffee_condi_display{
 	pixel_y = 10;
 	pixel_x = 1
@@ -30289,6 +30279,7 @@
 	pixel_x = 12;
 	pixel_y = 4
 	},
+/obj/structure/table/reinforced,
 /turf/open/floor/wood,
 /area/station/service/cafeteria)
 "hMs" = (
@@ -44153,9 +44144,7 @@
 /area/station/cargo/sorting)
 "loh" = (
 /obj/machinery/light/small/directional/east,
-/obj/structure/chair/stool{
-	name = "Jim Norton's Quebecois Coffee stool"
-	},
+/obj/structure/chair/stool,
 /turf/open/floor/wood,
 /area/station/service/cafeteria)
 "lol" = (
@@ -50372,12 +50361,17 @@
 "mTC" = (
 /obj/machinery/light/small/directional/south,
 /obj/machinery/button/door/directional/south{
-	id = "ChangKitchen";
+	id = "JimNortonKitchen";
 	name = "Jim Norton's Quebecois Coffee Shutters Control"
 	},
 /obj/effect/turf_decal/siding/wood,
 /obj/structure/table/wood,
 /obj/machinery/coffeemaker/impressa,
+/obj/machinery/button/door/directional/south{
+	id = "JimNortonBottom";
+	name = "Jim Norton's Quebecois Coffee Bottom Shutters Control";
+	pixel_y = -34
+	},
 /turf/open/floor/wood,
 /area/station/service/cafeteria)
 "mTH" = (
@@ -78310,10 +78304,8 @@
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "ChangKitchen"
 	},
-/obj/structure/table{
-	name = "Jim Norton's Quebecois Coffee table"
-	},
 /obj/item/modular_computer/laptop/preset/civilian,
+/obj/structure/table/reinforced,
 /turf/open/floor/wood,
 /area/station/service/cafeteria)
 "ufO" = (
@@ -78866,9 +78858,6 @@
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "ChangKitchen"
 	},
-/obj/structure/table{
-	name = "Jim Norton's Quebecois Coffee table"
-	},
 /obj/item/reagent_containers/cup/glass/coffee{
 	pixel_x = -3;
 	pixel_y = 9
@@ -78877,6 +78866,7 @@
 	pixel_x = 9;
 	pixel_y = 3
 	},
+/obj/structure/table/reinforced,
 /turf/open/floor/wood,
 /area/station/service/cafeteria)
 "umQ" = (
@@ -91902,9 +91892,7 @@
 /turf/open/floor/iron/dark,
 /area/station/security/evidence)
 "xHQ" = (
-/obj/structure/chair/stool{
-	name = "Jim Norton's Quebecois Coffee stool"
-	},
+/obj/structure/chair/stool,
 /turf/open/floor/wood,
 /area/station/service/cafeteria)
 "xHU" = (
@@ -93479,9 +93467,6 @@
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "ChangKitchen"
 	},
-/obj/structure/table{
-	name = "Jim Norton's Quebecois Coffee table"
-	},
 /obj/structure/desk_bell{
 	pixel_x = -1;
 	pixel_y = 7
@@ -93494,6 +93479,7 @@
 	pixel_y = 2;
 	pixel_x = -7
 	},
+/obj/structure/table/reinforced,
 /turf/open/floor/wood,
 /area/station/service/cafeteria)
 "ycr" = (
