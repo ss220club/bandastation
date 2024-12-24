@@ -240,7 +240,7 @@ SUBSYSTEM_DEF(vote)
 	log_vote(to_display)
 	to_chat(world, "\n" + examine_block(span_infoplain(vote_font("[span_bold(to_display)]\n\
 		Type <b>vote</b> or click <a href='byond://winset?command=vote'>here</a> to place your votes.\n\
-		You have [DisplayTimeText(duration)] to vote."))) + "\n", type = MESSAGE_TYPE_OOC) // BANDASTATION EDIT: wrap in examine block, use MESSAGE_TYPE_OOC
+		You have [DisplayTimeText(duration)] to vote."))) + "\n", type = MESSAGE_TYPE_OOC) // BANDASTATION EDIT - STORYTELLER: wrap in examine block, use MESSAGE_TYPE_OOC
 
 	// And now that it's going, give everyone a voter action
 	for(var/client/new_voter as anything in GLOB.clients)
@@ -338,10 +338,10 @@ SUBSYSTEM_DEF(vote)
 			"message" = can_vote == VOTE_AVAILABLE ? vote.default_message : can_vote,
 		)
 
-		/// BANDASTATION EDIT START - STORYTELLER
+		// BANDASTATION EDIT START - STORYTELLER
 		if(vote.has_desc)
 			vote_data += list("desc" = vote.return_desc(vote_name))
-		/// BANDASTATION EDIT END - STORYTELLER
+		// BANDASTATION EDIT END - STORYTELLER
 
 		if(vote == current_vote)
 			var/list/choices = list()

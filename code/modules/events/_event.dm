@@ -70,9 +70,9 @@
 
 // Checks if the event can be spawned. Used by event controller and "false alarm" event.
 // Admin-created events override this.
-/datum/round_event_control/proc/can_spawn_event(players_amt, allow_magic = FALSE, fake_check = FALSE) /// BANDASTATION EDIT - STORYTELLER
+/datum/round_event_control/proc/can_spawn_event(players_amt, allow_magic = FALSE, fake_check = FALSE) // BANDASTATION EDIT - STORYTELLER
 	SHOULD_CALL_PARENT(TRUE)
-	/// BANDASTATION EDIT START - STORYTELLER
+	// BANDASTATION EDIT START - STORYTELLER
 	if(SSgamemode.current_storyteller?.disable_distribution || SSgamemode.halted_storyteller)
 		return FALSE
 	if(event_group && !GLOB.event_groups[event_group].can_run())
@@ -81,7 +81,7 @@
 		return FALSE
 	if(!roundstart && (SSgamemode.can_run_roundstart))
 		return FALSE
-	/// BANDASTATION EDIT END - STORYTELLER
+	// BANDASTATION EDIT END - STORYTELLER
 	if(occurrences >= max_occurrences)
 		return FALSE
 	if(earliest_start >= (world.time - SSticker.round_start_time))
@@ -96,7 +96,7 @@
 		return FALSE
 	if(ispath(typepath, /datum/round_event/ghost_role) && !(GLOB.ghost_role_flags & GHOSTROLE_MIDROUND_EVENT))
 		return FALSE
-	/// BANDASTATION EDIT START - STORYTELLER
+	// BANDASTATION EDIT START - STORYTELLER
 	if(checks_antag_cap && !SSgamemode.can_inject_antags())
 		return FALSE
 	if(!weight)
@@ -115,12 +115,12 @@
 		return FALSE
 	if(head_required_power > SSgamemode.current_head_power)
 		return FALSE
-	/// BANDASTATION EDIT END - STORYTELLER
+	// BANDASTATION EDIT END - STORYTELLER
 	if (dynamic_should_hijack && SSdynamic.random_event_hijacked != HIJACKED_NOTHING)
 		return FALSE
 	return TRUE
 
-/datum/round_event_control/proc/preRunEvent(forced = FALSE, scheduled = FALSE) /// BANDASTATION EDIT - STORYTELLER
+/datum/round_event_control/proc/preRunEvent(forced = FALSE, scheduled = FALSE) // BANDASTATION EDIT - STORYTELLER
 	if(!ispath(typepath, /datum/round_event))
 		return EVENT_CANT_RUN
 
@@ -129,22 +129,22 @@
 
 	triggering = TRUE
 
-	/// BANDASTATION EDIT START - STORYTELLER
+	// BANDASTATION EDIT START - STORYTELLER
 	if(!roundstart && !scheduled)
 		// We sleep HERE, in pre-event setup (because there's no sense doing it in run_event() since the event is already running!) for the given amount of time to make an admin has enough time to cancel an event un-fitting of the present round or at least reroll it.
 		message_admins("Random Event triggering in [DisplayTimeText(RANDOM_EVENT_ADMIN_INTERVENTION_TIME)]: [name]. (<a href='?src=[REF(src)];cancel=1'>CANCEL</a>) (<a href='?src=[REF(src)];different_event=1'>SOMETHING ELSE</a>)")
 		sleep(RANDOM_EVENT_ADMIN_INTERVENTION_TIME)
-	/// BANDASTATION EDIT END - STORYTELLER
+	// BANDASTATION EDIT END - STORYTELLER
 	var/players_amt = get_active_player_count(alive_check = TRUE, afk_check = TRUE, human_check = TRUE)
 	if(!can_spawn_event(players_amt, fake_check = TRUE) && !forced) /// BANDSTATION EDIT - STORYTELLER
 		message_admins("Second pre-condition check for [name] failed, rerolling...")
 		SSevents.spawnEvent(excluded_event = src)
 		return EVENT_INTERRUPTED
 
-	/// BANDASTATION EDIT START - STORYTELLER
+	// BANDASTATION EDIT START - STORYTELLER
 	if(!can_spawn_event(players_amt, fake_check = TRUE) && forced)
 		message_admins("Second pre-condition check for [name] failed, but event forced, running event regardless this may have issues...")
-	/// BANDASTATION EDIT END - STORYTELLER
+	// BANDASTATION EDIT END - STORYTELLER
 
 	if(!triggering)
 		return EVENT_CANCELLED //admin cancelled
@@ -261,7 +261,7 @@ Runs the event
 //This is really only for setting defaults which can be overridden later when New() finishes.
 /datum/round_event/proc/setup()
 	SHOULD_CALL_PARENT(FALSE)
-	setup = TRUE /// BANDASTATION EDIT - STORYTELLER
+	setup = TRUE // BANDASTATION EDIT - STORYTELLER
 	return
 
 ///Announces the event name to deadchat, override this if what an event should show to deadchat is different to its event name.
@@ -315,10 +315,10 @@ Runs the event
 //This proc will handle the calls to the appropriate procs.
 /datum/round_event/process()
 	SHOULD_NOT_OVERRIDE(TRUE)
-	/// BANDASTATION EDIT START - STORYTELLER
+	// BANDASTATION EDIT START - STORYTELLER
 	if(!setup)
 		return
-	/// BANDASTATION EDIT END - STORYTELLER
+	// BANDASTATION EDIT END - STORYTELLER
 	if(!processing)
 		return
 

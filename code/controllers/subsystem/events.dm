@@ -73,7 +73,7 @@ SUBSYSTEM_DEF(events)
  */
 /datum/controller/subsystem/events/proc/spawnEvent(datum/round_event_control/excluded_event)
 	set waitfor = FALSE //for the admin prompt
-	if(!CONFIG_GET(flag/allow_random_events) || !excluded_event) /// BANDASTATION EDIT START - STORYTELLER - No SSevents spawn except rerolling
+	if(!CONFIG_GET(flag/allow_random_events) || !excluded_event) // BANDASTATION EDIT START - STORYTELLER - No SSevents spawn except rerolling
 		return
 
 	var/players_amt = get_active_player_count(alive_check = TRUE, afk_check = TRUE, human_check = TRUE)
@@ -97,10 +97,10 @@ SUBSYSTEM_DEF(events)
 
 	var/datum/round_event_control/event_to_run = pick_weight(event_roster)
 	if(event_to_run)
-		/// BANDASTATION EDIT START - STORYTELLER
+		// BANDASTATION EDIT START - STORYTELLER
 		/// TriggerEvent(event_to_run)
 		SSgamemode.TriggerEvent(event_to_run, forced = FALSE)
-		/// BANDASTATION EDIT END - STORYTELLER
+		// BANDASTATION EDIT END - STORYTELLER
 
 ///Does the last pre-flight checks for the passed event, and runs it if the event is ready.
 
@@ -109,12 +109,12 @@ SUBSYSTEM_DEF(events)
 	if(. == EVENT_CANT_RUN)//we couldn't run this event for some reason, set its max_occurrences to 0
 		event_to_trigger.max_occurrences = 0
 	else if(. == EVENT_READY)
-		/// BANDASTATION EDIT START - STORYTELLER
+		// BANDASTATION EDIT START - STORYTELLER
 		//event_to_trigger.run_event(random = TRUE)
 		message_admins("<font color='[COLOR_DARK_MODERATE_LIME_GREEN]'>SSevents</font> runs and try to buy a event: [event_to_trigger.name]!")
 		log_game("<font color='[COLOR_DARK_MODERATE_LIME_GREEN]'>SSevents</font> runs and try to buy a event: [event_to_trigger.name]!")
 		SSgamemode.current_storyteller.try_buy_event(src)
-		/// BANDASTATION EDIT END - STORYTELLER
+		// BANDASTATION EDIT END - STORYTELLER
 
 
 ///Toggles whether or not wizard events will be in the event pool, and sends a notification to the admins.

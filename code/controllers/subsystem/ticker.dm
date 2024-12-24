@@ -159,7 +159,7 @@ SUBSYSTEM_DEF(ticker)
 			to_chat(world, span_notice("<b>Welcome to [station_name()]!</b>"))
 			send2chat(new /datum/tgs_message_content("New round starting on [SSmapping.current_map.map_name]!"), CONFIG_GET(string/channel_announce_new_game))
 			current_state = GAME_STATE_PREGAME
-			//SSvote.initiate_vote(/datum/vote/storyteller, "Storyteller Vote", forced = TRUE) // BANDASTATION EDIT ADDITION
+			//SSvote.initiate_vote(/datum/vote/storyteller, "Storyteller Vote", forced = TRUE) // BANDASTATION EDIT - STORYTELLER
 			SEND_SIGNAL(src, COMSIG_TICKER_ENTER_PREGAME)
 
 			fire()
@@ -230,7 +230,7 @@ SUBSYSTEM_DEF(ticker)
 /datum/controller/subsystem/ticker/proc/setup()
 	to_chat(world, span_boldannounce("Starting game..."))
 	var/init_start = world.timeofday
-	// BANDASTATION EDIT BEGIN - STORYTELLER
+	// BANDASTATION EDIT START - STORYTELLER
 	CHECK_TICK
 	//Configure mode and assign player to antagonists
 	var/can_continue = FALSE
@@ -303,7 +303,7 @@ SUBSYSTEM_DEF(ticker)
 
 /datum/controller/subsystem/ticker/proc/PostSetup()
 	set waitfor = FALSE
-	//SSdynamic.post_setup() /// BANDASTATION EDIT STORYTELLER - отключение пост-сетапа динамика
+	//SSdynamic.post_setup() // BANDASTATION EDIT STORYTELLER - отключение пост-сетапа динамика
 	GLOB.start_state = new /datum/station_state()
 	GLOB.start_state.count()
 

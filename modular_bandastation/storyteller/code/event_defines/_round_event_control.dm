@@ -47,7 +47,7 @@
 		if(string)
 			string += ","
 		string += "Not roundstart"
-	/// BANDASTATION EDIT END - STORYTELLER
+	// BANDASTATION EDIT END - STORYTELLER
 	if(occurrences >= max_occurrences)
 		if(string)
 			string += ","

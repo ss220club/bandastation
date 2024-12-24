@@ -84,10 +84,10 @@ SUBSYSTEM_DEF(job)
 	## The game will not read any line that is commented out with a '#', as to allow you to defer to codebase defaults.\n## If you want to override the codebase values, add the value and then uncomment that line by removing the # from the job key's name.\n\
 	## Ensure that the key is flush, do not introduce any whitespaces when you uncomment a key. For example:\n## \"# Total Positions\" should always be changed to \"Total Positions\", no additional spacing.\n\
 	## Best of luck editing!\n"
-	/// BANDASTATIONE EDIT START - STORYTELLER
+	// BANDASTATIONE EDIT START - STORYTELLER
 	/// Assoc list of new players keyed to the type of job they will currently get
 	var/list/assigned_players_by_job = list()
-	/// BANDASTATIONE EDIT END - STORYTELLER
+	// BANDASTATIONE EDIT END - STORYTELLER
 
 /datum/controller/subsystem/job/Initialize()
 	setup_job_lists()
@@ -984,7 +984,7 @@ SUBSYSTEM_DEF(job)
 
 	return FALSE
 
-/// BANDASTATION EDIT START - STORYTELLER
+// BANDASTATION EDIT START - STORYTELLER
 /datum/controller/subsystem/job/proc/FreeRole(rank)
 	if(!rank)
 		return
@@ -1077,4 +1077,4 @@ SUBSYSTEM_DEF(job)
 
 	destination = get_last_resort_spawn_points()
 	destination.JoinPlayerHere(M, buckle)
-/// BANDASTATION EDIT END - STORYTELLER
+// BANDASTATION EDIT END - STORYTELLER
