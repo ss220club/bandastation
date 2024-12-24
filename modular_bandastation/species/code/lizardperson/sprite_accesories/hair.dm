@@ -45,11 +45,6 @@
 	icon_state = "cobraslim"
 
 // MARK: Horns
-/datum/sprite_accessory/horns/angler
-	name = "Angler"
-	icon = 'modular_bandastation/species/icons/lizardperson/horns.dmi'
-	icon_state = "angler"
-
 /datum/sprite_accessory/horns/guilmon
 	name = "Guilmon"
 	icon = 'modular_bandastation/species/icons/lizardperson/horns.dmi'
