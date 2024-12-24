@@ -243,10 +243,10 @@ GLOBAL_LIST_INIT(achievements_unlocked, list())
 
 	//Set news report and mode result
 	SSdynamic.set_round_result()
-	 // BANDASTATION EDIT START - STORYTELLER
+	// BANDASTATION EDIT START - STORYTELLER
 	SSgamemode.round_end_report()
 	SSgamemode.store_roundend_data() // store data on roundend for next round
-	 // BANDASTATION EDIT END - STORYTELLER
+	// BANDASTATION EDIT END - STORYTELLER
 
 	to_chat(world, span_infoplain(span_big(span_bold("<BR><BR><BR>The round has ended."))))
 	log_game("The round has ended.")

@@ -241,24 +241,35 @@ SUBSYSTEM_DEF(gamemode)
 	return cap
 
 /datum/controller/subsystem/gamemode/proc/get_antag_count()
-	. = 0
+	var/count = 0
 	var/list/already_counted = list() // Never count the same mind twice
-	for(var/datum/antagonist/antag as anything in GLOB.antagonists)
-		if(QDELETED(antag) || QDELETED(antag.owner) || already_counted[antag.owner])
-			continue
-		if(!antag.count_against_dynamic_roll_chance || (antag.antag_flags & (FLAG_FAKE_ANTAG | FLAG_ANTAG_CAP_IGNORE)))
-			continue
-		if(antag.antag_flags & FLAG_ANTAG_CAP_TEAM)
-			var/datum/team/antag_team = antag.get_team()
-			if(antag_team)
-				if(already_counted[antag_team])
-					continue
-				already_counted[antag_team] = TRUE
-		var/mob/antag_mob = antag.owner.current
-		if(QDELETED(antag_mob) || !antag_mob.key || antag_mob.stat == DEAD || antag_mob.client?.is_afk())
-			continue
-		already_counted[antag.owner] = TRUE
-		.++
+	if(SSticker.HasRoundStarted())
+		for(var/datum/antagonist/antag as anything in GLOB.antagonists)
+			if(QDELETED(antag) || QDELETED(antag.owner) || already_counted[antag.owner])
+				continue
+			if(!antag.count_against_dynamic_roll_chance || (antag.antag_flags & (FLAG_FAKE_ANTAG | FLAG_ANTAG_CAP_IGNORE)))
+				continue
+			if(antag.antag_flags & FLAG_ANTAG_CAP_TEAM)
+				var/datum/team/antag_team = antag.get_team()
+				if(antag_team)
+					if(already_counted[antag_team])
+						continue
+					already_counted[antag_team] = TRUE
+			var/mob/antag_mob = antag.owner.current
+			if(QDELETED(antag_mob) || !antag_mob.key || antag_mob.stat == DEAD || antag_mob.client?.is_afk())
+				continue
+			already_counted[antag.owner] = TRUE
+			count++
+	else
+		for(var/mob/dead/new_player/player as anything in GLOB.new_player_list)
+			if(player.ready != PLAYER_READY_TO_PLAY)
+				continue
+			var/client/client_source = player.client
+			if(QDELETED(client_source) || !client_source.ckey)
+				continue
+			if(player.mind.picking)
+				count++
+	return count
 
 /// Whether events can inject more antagonists into the round
 /datum/controller/subsystem/gamemode/proc/can_inject_antags()
