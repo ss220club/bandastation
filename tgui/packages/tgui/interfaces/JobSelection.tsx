@@ -88,7 +88,7 @@ export const JobEntry = (data: {
       }}
     >
       <>
-        {jobIcon && <Icon name={jobIcon} />}
+        {jobIcon && <Icon style={{ marginRight: '0.1em' }} name={jobIcon} />}
         {job.command ? (
           <b>{JOBS_RU[jobName] || jobName}</b>
         ) : (
