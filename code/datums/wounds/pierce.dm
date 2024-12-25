@@ -178,14 +178,14 @@
 	return span_warning("Кожа на этой конечности кажется сильно перфорированной.")
 
 /datum/wound/pierce/bleed/moderate
-	name = "Minor Skin Breakage"
-	desc = "Patient's skin has been broken open, causing severe bruising and minor internal bleeding in affected area."
-	treat_text = "Apply bandaging or suturing to the wound, make use of blood clotting agents, \
-		cauterization, or in extreme circumstances, exposure to extreme cold or vaccuum. \
-		Follow with food and a rest period."
-	treat_text_short = "Apply bandaging or suturing."
-	examine_desc = "has a small, torn hole, gently bleeding"
-	occur_text = "spurts out a thin stream of blood"
+	name = "Незначительный прокол"
+	desc = "Кожа пациента была повреждена, вызвав сильный синяк и незначительное внутреннее кровотечение в пораженной области."
+	treat_text = "Перевяжите или зашейте рану, используйте средства для свертывания крови, \
+		прижигание или в крайних случаях - воздействие на рану сильным холодом или вакуумом. \
+		Следует обеспечить прием пищи и период отдыха."
+	treat_text_short = "Примените повязку, швы, средства для свертывания крови или прижигание."
+	examine_desc = "имеет небольшое, слегка кровоточащее, разорванное отверстие"
+	occur_text = "выбрызгивает тонкую струю крови"
 	sound_effect = 'sound/effects/wounds/pierce1.ogg'
 	severity = WOUND_SEVERITY_MODERATE
 	initial_flow = 1.5
@@ -229,25 +229,17 @@
 /datum/wound/pierce/bleed/moderate/projectile/update_descriptions()
 	if(!limb.can_bleed())
 		examine_desc = "имеет небольшое круглое отверстие"
-		occur_text = "раскрывает небольшое отверстие"
-
-/datum/wound_pregen_data/flesh_pierce/breakage/projectile
-	wound_path_to_generate = /datum/wound/pierce/bleed/moderate/projectile
-
-/datum/wound_pregen_data/flesh_pierce/breakage/projectile/get_weight(obj/item/bodypart/limb, woundtype, damage, attack_direction, damage_source)
-	if (!isprojectile(damage_source))
-		return 0
-	return weight
+		occur_text = "разрывает небольшое отверстие"
 
 /datum/wound/pierce/bleed/severe
-	name = "Open Stab Puncture"
-	desc = "Patient's internal tissue is penetrated, causing sizeable internal bleeding and reduced limb stability."
-	treat_text = "Swiftly apply bandaging or suturing to the wound, make use of blood clotting agents or saline-glucose, \
-		cauterization, or in extreme circumstances, exposure to extreme cold or vaccuum. \
-		Follow with iron supplements and a rest period."
-	treat_text_short = "Apply bandaging, suturing, clotting agents, or cauterization."
-	examine_desc = "is pierced clear through, with bits of tissue obscuring the open hole"
-	occur_text = "looses a violent spray of blood, revealing a pierced wound"
+	name = "Открытая колотая рана"
+	desc = "Внутренние ткани пациента повреждены, что вызывает значительное внутреннее кровотечение и снижение стабильности конечности."
+	treat_text = "Быстро примените повязку или швы к ране, используйте средства для свертывания крови или соляно-глюкозный раствор, \
+		прижигание или в крайних случаях - воздействие на рану сильным холодом или вакуумом. \
+		Следует дополнить лечение добавками железа и периодом отдыха."
+	treat_text_short = "Примените повязку, швы, средства для свертывания крови или прижигание."
+	examine_desc = "проколота насквозь, с кусочками ткани, закрывающими открытое отверстие"
+	occur_text = "брызжет сильным фонтаном крови, обнажая проколотую рану"
 	sound_effect = 'sound/effects/wounds/pierce2.ogg'
 	severity = WOUND_SEVERITY_SEVERE
 	initial_flow = 2.25
@@ -264,7 +256,7 @@
 
 /datum/wound/pierce/bleed/severe/update_descriptions()
 	if(!limb.can_bleed())
-		occur_text = "tears a hole open"
+		occur_text = "разрывает отверстие"
 
 /datum/wound_pregen_data/flesh_pierce/open_puncture
 	abstract = FALSE
@@ -279,8 +271,8 @@
 	return weight
 
 /datum/wound/pierce/bleed/severe/projectile
-	name = "Open Bullet Puncture"
-	examine_desc = "is pierced clear through, with bits of tissue obscuring the cleanly torn hole"
+	name = "Открытое пулевое ранение"
+	examine_desc = "пробито насквозь, с кусочками ткани, закрывающими аккуратно разорванную дыру"
 	clot_rate = 0
 
 /datum/wound_pregen_data/flesh_pierce/open_puncture/projectile

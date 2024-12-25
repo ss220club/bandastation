@@ -87,11 +87,11 @@ GLOBAL_LIST_EMPTY(objects_by_id_tag)
 		message_verb_continuous = "pulverises"
 
 	if(attacking_item.demolition_mod < 1)
-		message_verb_simple = "ineffectively " + message_verb_simple
-		message_verb_continuous = "ineffectively " + message_verb_continuous
+		message_verb_simple = "безуспешно " + ru_attack_verb(message_verb_simple)
+		message_verb_continuous = "безуспешно " + ru_attack_verb(message_verb_continuous)
 
-	user.visible_message(span_danger("[user] [message_verb_continuous] [src] with [attacking_item][damage ? "." : ", [no_damage_feedback]!"]"), \
-		span_danger("You [message_verb_simple] [src] with [attacking_item][damage ? "." : ", [no_damage_feedback]!"]"), null, COMBAT_MESSAGE_RANGE)
+	user.visible_message(span_danger("[capitalize(user.declent_ru(NOMINATIVE))] [message_verb_continuous] [declent_ru(ACCUSATIVE)] с помощью [attacking_item.declent_ru(GENITIVE)][damage ? "." : ", [no_damage_feedback]!"]"), \
+		span_danger("Вы [message_verb_simple] [declent_ru(ACCUSATIVE)] с помощью [attacking_item.declent_ru(GENITIVE)][damage ? "." : ", [no_damage_feedback]!"]"), null, COMBAT_MESSAGE_RANGE)
 	log_combat(user, src, "attacked", attacking_item)
 
 /obj/assume_air(datum/gas_mixture/giver)
