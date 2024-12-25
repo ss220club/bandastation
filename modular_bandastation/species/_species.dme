@@ -1,2 +1,3 @@
 #include "_species.dm"
-#include "code\lizardperson\sprite_accesories\hair.dm"
+
+#include "code/lizardperson/sprite_accesories/hair.dm"
