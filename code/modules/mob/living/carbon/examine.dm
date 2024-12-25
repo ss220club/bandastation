@@ -455,8 +455,8 @@
 	if(wear_id && !(wear_id.item_flags & EXAMINE_SKIP))
 		var/obj/item/card/id/id = wear_id.GetID()
 		if(id && get_dist(user, src) <= ID_EXAMINE_DISTANCE)
-			var/id_href = "<a href='?src=[REF(src)];see_id=1;id_ref=[REF(id)];id_name=[id.registered_name];examine_time=[world.time]'>[wear_id.examine_title(user, declent = ACCUSATIVE)]</a>"
-			. += "[t_He] носит [id_href]."
+			var/id_href = "<a href='byond://?src=[REF(src)];see_id=1;id_ref=[REF(id)];id_name=[id.registered_name];examine_time=[world.time]'>[wear_id.examine_title(user)]</a>"
+			. += "[t_He] [t_is] wearing [id_href]."
 
 		else
 			. += "[t_He] носит [wear_id.examine_title(user, declent = ACCUSATIVE)]."
@@ -494,8 +494,8 @@
 	if(perpname && (HAS_TRAIT(user, TRAIT_SECURITY_HUD) || HAS_TRAIT(user, TRAIT_MEDICAL_HUD)) && (user.stat == CONSCIOUS || isobserver(user)) && user != src)
 		var/datum/record/crew/target_record = find_record(perpname)
 		if(target_record)
-			. += "Должность: [target_record.rank]"
-			. += "<a href='?src=[REF(src)];hud=1;photo_front=1;examine_time=[world.time]'>\[Фото спереди\]</a><a href='?src=[REF(src)];hud=1;photo_side=1;examine_time=[world.time]'>\[Фото сбоку\]</a>"
+			. += "Rank: [target_record.rank]"
+			. += "<a href='byond://?src=[REF(src)];hud=1;photo_front=1;examine_time=[world.time]'>\[Front photo\]</a><a href='byond://?src=[REF(src)];hud=1;photo_side=1;examine_time=[world.time]'>\[Side photo\]</a>"
 		if(HAS_TRAIT(user, TRAIT_MEDICAL_HUD) && HAS_TRAIT(user, TRAIT_SECURITY_HUD))
 			title = separator_hr("Медицинский и безопасности анализы")
 			. += get_medhud_examine_info(user, target_record)
@@ -526,13 +526,13 @@
 		. += "<span class='notice ml-1'>Обнаружены кибернетические модификации:</span>"
 		. += "<span class='notice ml-2'>[english_list(cybers, and_text = ", и")]</span>"
 	if(target_record)
-		. += "<a href='?src=[REF(src)];hud=m;physical_status=1;examine_time=[world.time]'>\[[target_record.physical_status]\]</a>"
-		. += "<a href='?src=[REF(src)];hud=m;mental_status=1;examine_time=[world.time]'>\[[target_record.mental_status]\]</a>"
+		. += "<a href='byond://?src=[REF(src)];hud=m;physical_status=1;examine_time=[world.time]'>\[[target_record.physical_status]\]</a>"
+		. += "<a href='byond://?src=[REF(src)];hud=m;mental_status=1;examine_time=[world.time]'>\[[target_record.mental_status]\]</a>"
 	else
-		. += "\[Запись отсутствует\]"
-		. += "\[Запись отсутствует\]"
-	. += "<a href='?src=[REF(src)];hud=m;evaluation=1;examine_time=[world.time]'>\[Медицинское обследование\]</a>"
-	. += "<a href='?src=[REF(src)];hud=m;quirk=1;examine_time=[world.time]'>\[Показать черты\]</a>"
+		. += "\[Record Missing\]"
+		. += "\[Record Missing\]"
+	. += "<a href='byond://?src=[REF(src)];hud=m;evaluation=1;examine_time=[world.time]'>\[Medical evaluation\]</a>"
+	. += "<a href='byond://?src=[REF(src)];hud=m;quirk=1;examine_time=[world.time]'>\[See quirks\]</a>"
 
 /// Collects information displayed about src when examined by a user with a security HUD.
 /mob/living/carbon/proc/get_sechud_examine_info(mob/living/user, datum/record/crew/target_record)
@@ -546,15 +546,15 @@
 		if(target_record.security_note)
 			security_note = target_record.security_note
 	if(ishuman(user))
-		. += "Криминальный статус: <a href='?src=[REF(src)];hud=s;status=1;examine_time=[world.time]'>\[[wanted_status]\]</a>"
+		. += "Criminal status: <a href='byond://?src=[REF(src)];hud=s;status=1;examine_time=[world.time]'>\[[wanted_status]\]</a>"
 	else
-		. += "Криминальный статус: [wanted_status]"
-	. += "Важные заметки: [security_note]"
-	. += "Записи охраны: <a href='?src=[REF(src)];hud=s;view=1;examine_time=[world.time]'>\[Показать\]</a>"
+		. += "Criminal status: [wanted_status]"
+	. += "Important Notes: [security_note]"
+	. += "Security record: <a href='byond://?src=[REF(src)];hud=s;view=1;examine_time=[world.time]'>\[View\]</a>"
 	if(ishuman(user))
-		. += "<a href='?src=[REF(src)];hud=s;add_citation=1;examine_time=[world.time]'>\[Добавить штраф\]</a>\
-			<a href='?src=[REF(src)];hud=s;add_crime=1;examine_time=[world.time]'>\[Добавить преступление\]</a>\
-			<a href='?src=[REF(src)];hud=s;add_note=1;examine_time=[world.time]'>\[Добавить примечание\]</a>"
+		. += "<a href='byond://?src=[REF(src)];hud=s;add_citation=1;examine_time=[world.time]'>\[Add citation\]</a>\
+			<a href='byond://?src=[REF(src)];hud=s;add_crime=1;examine_time=[world.time]'>\[Add crime\]</a>\
+			<a href='byond://?src=[REF(src)];hud=s;add_note=1;examine_time=[world.time]'>\[Add note\]</a>"
 
 /mob/living/carbon/human/examine_more(mob/user)
 	. = ..()
