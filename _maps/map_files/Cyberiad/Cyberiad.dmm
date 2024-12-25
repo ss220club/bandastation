@@ -3305,7 +3305,7 @@
 "aSg" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "ChangKitchen"
+	id = "JimNorton"
 	},
 /obj/item/storage/fancy/coffee_condi_display{
 	pixel_y = 10;
@@ -43147,6 +43147,10 @@
 /area/station/command/heads_quarters/rd)
 "kXl" = (
 /obj/effect/spawner/structure/window,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "JimNortonBottom";
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/station/service/cafeteria)
 "kXt" = (
@@ -47850,20 +47854,18 @@
 /area/station/engineering/supermatter)
 "mhe" = (
 /obj/machinery/light/small/directional/south,
-/obj/machinery/button/door/directional/south{
-	id = "JimNortonKitchen";
-	name = "Jim Norton's Quebecois Coffee Shutters Control";
-	pixel_y = -33;
-	pixel_x = -6
-	},
 /obj/effect/turf_decal/siding/wood,
 /obj/structure/table/wood,
 /obj/machinery/coffeemaker/impressa,
 /obj/machinery/button/door/directional/south{
-	id = "JimNortonBottom";
 	name = "Jim Norton's Quebecois Coffee Bottom Shutters Control";
-	pixel_y = -33;
+	id = "JimNortonBottom";
 	pixel_x = 6
+	},
+/obj/machinery/button/door/directional/south{
+	id = "JimNortonKitchen";
+	name = "Jim Norton's Quebecois Coffee Shutters Control";
+	pixel_x = -6
 	},
 /turf/open/floor/wood,
 /area/station/service/cafeteria)
@@ -59308,7 +59310,7 @@
 "phH" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "ChangKitchen"
+	id = "JimNorton"
 	},
 /obj/item/reagent_containers/cup/glass/coffee{
 	pixel_x = -3;
@@ -81397,6 +81399,21 @@
 /obj/item/stack/sheet/mineral/plasma/five,
 /turf/open/floor/iron/dark/smooth_large,
 /area/station/engineering/dronefabricator)
+"uTl" = (
+/obj/machinery/button/door/directional/south{
+	id = "JimNortonKitchen";
+	name = "Jim Norton's Quebecois Coffee Shutters Control";
+	pixel_y = -33;
+	pixel_x = -6
+	},
+/obj/machinery/button/door/directional/south{
+	id = "JimNortonBottom";
+	name = "Jim Norton's Quebecois Coffee Bottom Shutters Control";
+	pixel_y = -33;
+	pixel_x = 6
+	},
+/turf/closed/wall,
+/area/station/service/cafeteria)
 "uTn" = (
 /obj/structure/table/wood,
 /obj/item/folder,
@@ -85356,7 +85373,7 @@
 "vTw" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "ChangKitchen"
+	id = "JimNorton"
 	},
 /obj/structure/desk_bell{
 	pixel_x = -1;
@@ -93812,7 +93829,7 @@
 "yan" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "ChangKitchen"
+	id = "JimNorton"
 	},
 /obj/item/modular_computer/laptop/preset/civilian,
 /obj/structure/table/reinforced,
@@ -190108,7 +190125,7 @@ phH
 uHS
 mhe
 wzo
-wzo
+uTl
 aeR
 avG
 gaM
