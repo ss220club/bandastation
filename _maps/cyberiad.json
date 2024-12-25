@@ -3,6 +3,8 @@
 	"map_name": "Cyberiad",
 	"map_path": "map_files/Cyberiad",
 	"map_file": "Cyberiad.dmm",
+	"fluff_name": "ИСН Кибериада",
+	"welcome_sound_override": "modular_bandastation/aesthetics_sounds/sound/welcome_sounds/welcome_cyberiad.ogg",
 	"shuttles": {
 		"cargo": "cargo_box",
 		"ferry": "ferry_fancy",
