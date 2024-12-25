@@ -1,19 +1,9 @@
 #include "_objects.dm"
 
 #include "code/shuttles.dm"
-#include "code/wallets.dm"
+
 #include "code/containers.dm"
 #include "code/fake_light.dm"
-
-#include "code/clothing/head/hat.dm"
-#include "code/clothing/head/soft_caps.dm"
-#include "code/clothing/suits/cloaks.dm"
-#include "code/clothing/suits/jacket.dm"
-#include "code/clothing/suits/wintercoats.dm"
-#include "code/clothing/under/jobs/rnd.dm"
-
-#include "code/consumables/drinks.dm"
-#include "code/consumables/customer_data.dm"
 
 #include "code/effects/turf_decal.dm"
 
@@ -70,8 +60,13 @@
 #include "code/structures/crates_lockers/closets/secure/magistrate.dm"
 #include "code/structures/crates_lockers/closets/secure/nanotrasen_representative.dm"
 
-#include "code/vending/vending.dm"
-
 #include "code/mecha/mecha.dm"
-
-#include "code/weapons/ranged/awaymission_gun.dm"
+// BEGIN_INTERNALS
+// END_INTERNALS
+// BEGIN_FILE_DIR
+#define FILE_DIR .
+// END_FILE_DIR
+// BEGIN_PREFERENCES
+// END_PREFERENCES
+// BEGIN_INCLUDE
+// END_INCLUDE
