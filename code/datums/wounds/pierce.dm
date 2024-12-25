@@ -231,22 +231,6 @@
 		examine_desc = "имеет небольшое круглое отверстие"
 		occur_text = "разрывает небольшое отверстие"
 
-/datum/wound_pregen_data/flesh_pierce/breakage/projectile
-	wound_path_to_generate = /datum/wound/pierce/bleed/moderate/projectile
-
-/datum/wound_pregen_data/flesh_pierce/breakage/projectile/get_weight(obj/item/bodypart/limb, woundtype, damage, attack_direction, damage_source)
-	if (!isprojectile(damage_source))
-		return 0
-	return weight
-
-/datum/wound_pregen_data/flesh_pierce/breakage/projectile
-	wound_path_to_generate = /datum/wound/pierce/bleed/moderate/projectile
-
-/datum/wound_pregen_data/flesh_pierce/breakage/projectile/get_weight(obj/item/bodypart/limb, woundtype, damage, attack_direction, damage_source)
-	if (!isprojectile(damage_source))
-		return 0
-	return weight
-
 /datum/wound/pierce/bleed/severe
 	name = "Открытая колотая рана"
 	desc = "Внутренние ткани пациента повреждены, что вызывает значительное внутреннее кровотечение и снижение стабильности конечности."
@@ -269,10 +253,6 @@
 
 	simple_treat_text = "<b>Перевязывание</b> раны необходимо и поможет уменьшить кровотечение. После этого рану можно <b>зашить</b>, предпочтительно когда пациент отдыхает и/или держит свою рану."
 	homemade_treat_text = "Простыни можно разорвать, чтобы сделать <b>самодельный бинт</b>. <b>Мука, поваренная соль или соль, смешанная с водой</b> могут быть нанесены непосредственно на рану, чтобы остановить кровотечение, хотя неразмешанная соль будет раздражать кожу и ухудшать естественное заживление. Падение на землю и удерживание раны снизит кровотечение."
-
-/datum/wound/pierce/bleed/severe/update_descriptions()
-	if(!limb.can_bleed())
-		occur_text = "разрывает отверстие"
 
 /datum/wound/pierce/bleed/severe/update_descriptions()
 	if(!limb.can_bleed())
