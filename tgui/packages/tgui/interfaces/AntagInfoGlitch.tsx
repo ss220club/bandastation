@@ -30,12 +30,15 @@ export const AntagInfoGlitch = (props) => {
             <Stack.Item>FN ТЕРМИНАЦИЯ_НАРУШИТЕЛЕЙ (REF)</Stack.Item>
             <Divider />
             <Stack.Item mb={1} bold fontSize="16px">
-              <span style={textStyles.variable}>Инициализация({antag_name})</span>
+              <span style={textStyles.variable}>
+                Инициализация({antag_name})
+              </span>
             </Stack.Item>
             <Stack.Item mb={2}>
-              <span style={textStyles.danger}>Битраннинг</span>- это преступление. Ваша
-              миссия: <span style={textStyles.variable}>Уничтожить</span>{' '}
-              органических вторженцов, чтобы сохранить целостность системы.
+              <span style={textStyles.danger}>Битраннинг</span>- это
+              преступление. Ваша миссия:{' '}
+              <span style={textStyles.variable}>Уничтожить</span> органических
+              вторженцов, чтобы сохранить целостность системы.
             </Stack.Item>
             <SpecificInfo />
             <Stack.Item>
@@ -74,12 +77,14 @@ const SpecificInfo = (props) => {
       return (
         <>
           <Stack.Item mb={2}>
-            Чтобы облегчить вам задачу, в вашу программу добавлены передовые технологии{' '}
-            знаний <span style={textStyles.variable}>боевых исскуств</span>.
+            Чтобы облегчить вам задачу, в вашу программу добавлены передовые
+            технологии знаний{' '}
+            <span style={textStyles.variable}>боевых исскуств</span>.
           </Stack.Item>
           <Stack.Item grow>
-            Оружие дальнего боя <span style={textStyles.danger}>запрещено</span>.
-            Баллистическая защита не приветствуется. Стиль имеет первостепенное значение.
+            Оружие дальнего боя <span style={textStyles.danger}>запрещено</span>
+            . Баллистическая защита не приветствуется. Стиль имеет
+            первостепенное значение.
           </Stack.Item>
         </>
       );
@@ -91,8 +96,8 @@ const SpecificInfo = (props) => {
             <span style={textStyles.variable}>летальным оружие</span>.
           </Stack.Item>
           <Stack.Item grow>
-            <span style={textStyles.danger}>Уничтожить</span> органическую жизнь любой
-            любой ценой.
+            <span style={textStyles.danger}>Уничтожить</span> органическую жизнь
+            любой любой ценой.
           </Stack.Item>
         </>
       );
