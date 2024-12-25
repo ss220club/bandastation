@@ -2,8 +2,3 @@
 	name = "Modpack Species"
 	desc = "Добавление архитектуры для новых видов и конфигурирования существующих"
 	author = "nlaysi, Podvaldeda"
-
-/datum/modpack/species/vulpkanin
-	name = "Species Vulpkanin"
-	desc = "Добавление вида Вульпканин"
-	author = "nlaysi"
