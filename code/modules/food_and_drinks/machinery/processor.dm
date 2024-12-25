@@ -143,9 +143,9 @@
 	if(!LAZYLEN(processor_contents))
 		to_chat(user, span_warning("Внутри [declent_ru(GENITIVE)] пусто!"))
 		return TRUE
-	user.visible_message(span_notice("[user] turns on [src]."), \
-		span_notice("You turn on [src]."), \
-		span_hear("You hear a food processor."))
+	user.visible_message(span_notice("[capitalize(user.declent_ru(NOMINATIVE))] включает [declent_ru(ACCUSATIVE)]."), \
+		span_notice("Вы включаете [declent_ru(ACCUSATIVE)]."), \
+		span_hear("Вы слышите кухонный комбайн."))
 	processing()
 
 

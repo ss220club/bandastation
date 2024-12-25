@@ -315,9 +315,9 @@
 							sec_record_message += span_notice("\n-- РЕДАКТИРОВАНО --")
 							continue
 
-						sec_record_message += "\n<b>Crime:</b> [crime.name]"
-						sec_record_message += "\n<b>Details:</b> [crime.details]"
-						sec_record_message += "\nAdded by [crime.author] at [crime.time]"
+						sec_record_message += "\n<b>Преступление:</b> [crime.name]"
+						sec_record_message += "\n<b>Описание:</b> [crime.details]"
+						sec_record_message += "\n[crime.author] добавляет в [crime.time]"
 				to_chat(human_or_ghost_user, boxed_message(sec_record_message))
 				return
 			if(ishuman(human_or_ghost_user))

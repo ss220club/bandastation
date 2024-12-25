@@ -388,7 +388,7 @@
 				if(MOOD_HAPPY2 to INFINITY)
 					msg += span_boldnicegreen(event.description + "\n")
 	else
-		msg += "[span_grey("I don't have much of a reaction to anything right now.")]\n"
+		msg += "[span_grey("Сейчас у меня нет особой реакции на что-либо.")]\n"
 	to_chat(user, boxed_message(msg))
 
 /// Updates the mob's moodies, if the area provides a mood bonus

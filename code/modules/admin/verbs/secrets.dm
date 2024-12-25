@@ -347,7 +347,7 @@ ADMIN_VERB(secrets, R_NONE, "Secrets", "Abuse harder than you ever have before w
 			if(SSeconomy.full_ancap)
 				priority_announce("Принцип неагрессивности действует в полную силу. Любое проявление агрессии запрещено.", null, SSstation.announcer.get_rand_report_sound())
 			else
-				priority_announce("The NAP has been revoked.", null, SSstation.announcer.get_rand_report_sound())
+				priority_announce("Принцип неагрессивности отменен.", null, SSstation.announcer.get_rand_report_sound())
 		if("send_shuttle_back")
 			if (!is_funmin)
 				return
@@ -355,7 +355,7 @@ ADMIN_VERB(secrets, R_NONE, "Secrets", "Abuse harder than you ever have before w
 				to_chat(usr, span_warning("Emergency shuttle not currently in transit!"), confidential = TRUE)
 				return
 			var/make_announcement = tgui_alert(usr, "Make a CentCom announcement?", "Emergency shuttle return", list("Yes", "Custom Text", "No")) || "No"
-			var/announcement_text = "Emergency shuttle trajectory overriden, rerouting course back to [station_name()]."
+			var/announcement_text = "Траектория эвакуационного шаттла изменена, перенаправление курса обратно на [station_name()]."
 			if (make_announcement == "Custom Text")
 				announcement_text = tgui_input_text(usr, "Custom CentCom announcement", "Emergency shuttle return", multiline = TRUE) || announcement_text
 			var/new_timer = tgui_input_number(usr, "How long should the shuttle remain in transit?", "When are we droppin' boys?", 180, 600)
@@ -366,9 +366,9 @@ ADMIN_VERB(secrets, R_NONE, "Secrets", "Abuse harder than you ever have before w
 			if (make_announcement != "No")
 				priority_announce(
 					text = announcement_text,
-					title = "Shuttle Trajectory Override",
+					title = "Принудительное изменение траектории шаттла",
 					sound =  'sound/announcer/announcement/announce_dig.ogg',
-					sender_override = "Emergency Shuttle Uplink Alert",
+					sender_override = "Система оповещения эвакуационного шаттла",
 					color_override = "grey",
 				)
 			SSshuttle.emergency.timer = INFINITY
