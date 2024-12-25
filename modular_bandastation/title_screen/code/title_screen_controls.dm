@@ -70,6 +70,6 @@ ADMIN_VERB(change_title_screen_css, R_DEBUG, "Title Screen: Set CSS", ADMIN_VERB
 	SStitle.show_title_screen_to(src)
 
 /client/open_escape_menu()
-	if(isnewplayer(src.mob))
+	if(isnewplayer(mob))
 		return
 	. = ..()
