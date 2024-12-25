@@ -1,6 +1,6 @@
 /obj/item/organ/tongue/vulpkanin
-	name = "Длинный язык"
-	desc = "Длинный и более чувствительный язык, может различить больше вкусов"
+	name = "long tongue"
+	desc = "Длинный и более чувствительный язык, может различить больше вкусов."
 	icon_state = "tongue"
 	taste_sensitivity = 10
 	modifies_speech = FALSE
