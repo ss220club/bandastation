@@ -367,22 +367,27 @@
 	if(user.throw_mode)
 		user.throw_mode_off(THROW_MODE_TOGGLE) //Don't annoy the changeling if he doesn't catch the item
 
-/obj/projectile/tentacle/proc/tentacle_grab(mob/living/carbon/human/H, mob/living/carbon/C)
-	if(H.Adjacent(C))
-		if(H.get_active_held_item() && !H.get_inactive_held_item())
-			H.swap_hand()
-		if(H.get_active_held_item())
+/obj/projectile/tentacle/proc/tentacle_grab(mob/living/carbon/human/user, mob/living/carbon/victim)
+	if(!user.Adjacent(victim))
+		return
+
+	if(user.get_active_held_item() && !user.get_inactive_held_item())
+		user.swap_hand()
+
+	if(user.get_active_held_item())
+		return
+
+	victim.grabbedby(user)
+	victim.grippedby(user, instant = TRUE) //instant aggro grab
+
+	for(var/obj/item/weapon in user.held_items)
+		if(weapon.get_sharpness())
+			victim.visible_message(span_danger("[capitalize(user.declent_ru(NOMINATIVE))] протыкает [capitalize(victim.declent_ru(ACCUSATIVE))] с помощью [weapon.declent_ru(ACCUSATIVE)]!"), span_userdanger("[capitalize(user.declent_ru(NOMINATIVE))] протыкает вас с помощью [weapon.declent_ru(ACCUSATIVE)]!"))
+			victim.apply_damage(weapon.force, BRUTE, BODY_ZONE_CHEST, attacking_item = weapon)
+			user.do_item_attack_animation(victim, used_item = weapon, animation_type = ATTACK_ANIMATION_PIERCE)
+			user.add_mob_blood(victim)
+			playsound(get_turf(user),weapon.hitsound,75,TRUE)
 			return
-		C.grabbedby(H)
-		C.grippedby(H, instant = TRUE) //instant aggro grab
-		for(var/obj/item/I in H.held_items)
-			if(I.get_sharpness())
-				C.visible_message(span_danger("[capitalize(user.declent_ru(NOMINATIVE))] протыкает [capitalize(victim.declent_ru(ACCUSATIVE))] с помощью [weapon.declent_ru(ACCUSATIVE)]!"), span_userdanger("[capitalize(user.declent_ru(NOMINATIVE))] протыкает вас с помощью [weapon.declent_ru(ACCUSATIVE)]!"))
-				C.apply_damage(I.force, BRUTE, BODY_ZONE_CHEST, attacking_item = I)
-				H.do_item_attack_animation(C, used_item = I)
-				H.add_mob_blood(C)
-				playsound(get_turf(H),I.hitsound,75,TRUE)
-				return
 
 /obj/projectile/tentacle/on_hit(atom/movable/target, blocked = 0, pierce_hit)
 	if(!isliving(firer) || !ismovable(target))

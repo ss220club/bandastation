@@ -91,8 +91,17 @@
 	if(isnull(hit_bodypart)) // ??
 		return ..()
 
-	var/message_verb_continuous = length(I.attack_verb_continuous) ? "[pick(I.attack_verb_continuous)]" : "атакует"
-	var/message_verb_simple = length(I.attack_verb_simple) ? "[pick(I.attack_verb_simple)]" : "атакуете"
+	// Sanity in case one is null for some reason
+	var/picked_index = rand(max(length(weapon.attack_verb_simple), length(weapon.attack_verb_continuous)))
+
+	var/message_verb_continuous = "attacks"
+	var/message_verb_simple = "attack"
+	var/message_hit_area = get_hit_area_message(hit_area)
+	// Sanity in case one is... longer than the other?
+	if (picked_index && length(weapon.attack_verb_continuous) >= picked_index)
+		message_verb_continuous = weapon.attack_verb_continuous[picked_index]
+	if (picked_index && length(weapon.attack_verb_simple) >= picked_index)
+		message_verb_simple = weapon.attack_verb_simple[picked_index]
 
 	var/extra_wound_details = ""
 
@@ -419,9 +428,9 @@
 				visible_message(span_notice("[capitalize(declent_ru(NOMINATIVE))] осматривает себя."), \
 					span_notice("Вы проверяете себя на наличие осколков."))
 			if(I.is_embed_harmless())
-				to_chat(src, "\t <a href='?src=[REF(src)];embedded_object=[REF(I)];embedded_limb=[REF(LB)]' class='warning'>[capitalize(I.declent_ru(NOMINATIVE))] застревает у вас на [LB.declent_ru(PREPOSITIONAL)]!</a>")
+				to_chat(src, "\t <a href='byond://?src=[REF(src)];embedded_object=[REF(I)];embedded_limb=[REF(LB)]' class='warning'>[capitalize(I.declent_ru(NOMINATIVE))] застревает у вас на [LB.declent_ru(PREPOSITIONAL)]!</a>")
 			else
-				to_chat(src, "\t <a href='?src=[REF(src)];embedded_object=[REF(I)];embedded_limb=[REF(LB)]' class='warning'>[capitalize(I.declent_ru(NOMINATIVE))] впивается у вас в [LB.declent_ru(PREPOSITIONAL)]!</a>")
+				to_chat(src, "\t <a href='byond://?src=[REF(src)];embedded_object=[REF(I)];embedded_limb=[REF(LB)]' class='warning'>[capitalize(I.declent_ru(NOMINATIVE))] впивается у вас в [LB.declent_ru(PREPOSITIONAL)]!</a>")
 
 	return embeds
 
@@ -656,7 +665,8 @@
 	if (HAS_TRAIT(src, TRAIT_GENELESS))
 		return FALSE
 
-	if (run_armor_check(attack_flag = BIO, absorb_text = "Ваша броня защищает вас от: [scramble_source]!") >= 100)
+	if (run_armor_check(attack_flag = BIO, silent = TRUE) >= 100)
+		to_chat(src, span_warning("Ваша броня поглощает воздействие от [scramble_source]!"))
 		return FALSE
 
 	if (!length(GLOB.bioscrambler_valid_organs) || !length(GLOB.bioscrambler_valid_parts))
