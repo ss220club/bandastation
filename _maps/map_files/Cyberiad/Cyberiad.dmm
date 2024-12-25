@@ -47852,7 +47852,9 @@
 /obj/machinery/light/small/directional/south,
 /obj/machinery/button/door/directional/south{
 	id = "JimNortonKitchen";
-	name = "Jim Norton's Quebecois Coffee Shutters Control"
+	name = "Jim Norton's Quebecois Coffee Shutters Control";
+	pixel_y = -33;
+	pixel_x = -6
 	},
 /obj/effect/turf_decal/siding/wood,
 /obj/structure/table/wood,
@@ -47860,7 +47862,8 @@
 /obj/machinery/button/door/directional/south{
 	id = "JimNortonBottom";
 	name = "Jim Norton's Quebecois Coffee Bottom Shutters Control";
-	pixel_y = -34
+	pixel_y = -33;
+	pixel_x = 6
 	},
 /turf/open/floor/wood,
 /area/station/service/cafeteria)
