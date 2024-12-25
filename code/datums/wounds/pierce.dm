@@ -17,6 +17,8 @@
 
 	/// How much blood we start losing when this wound is first applied
 	var/initial_flow
+	/// How much our blood_flow will naturally decrease per second, even without gauze
+	var/clot_rate
 	/// If gauzed, what percent of the internal bleeding actually clots of the total absorption rate
 	var/gauzed_clot_rate
 
@@ -72,8 +74,10 @@
 		return BLOOD_FLOW_STEADY
 	if(HAS_TRAIT(victim, TRAIT_BLOODY_MESS))
 		return BLOOD_FLOW_INCREASING
-	if(limb.current_gauze)
+	if(limb.current_gauze || clot_rate > 0)
 		return BLOOD_FLOW_DECREASING
+	if(clot_rate < 0)
+		return BLOOD_FLOW_INCREASING
 	return BLOOD_FLOW_STEADY
 
 /datum/wound/pierce/bleed/handle_process(seconds_per_tick, times_fired)
@@ -92,10 +96,16 @@
 		if(HAS_TRAIT(victim, TRAIT_BLOODY_MESS))
 			adjust_blood_flow(0.25 * seconds_per_tick) // old heparin used to just add +2 bleed stacks per tick, this adds 0.5 bleed flow to all open cuts which is probably even stronger as long as you can cut them first
 
+	//gauze always reduces blood flow, even for non bleeders
 	if(limb.current_gauze)
+		if(clot_rate > 0)
+			adjust_blood_flow(-clot_rate * seconds_per_tick)
 		var/gauze_power = limb.current_gauze.absorption_rate
 		limb.seep_gauze(gauze_power * seconds_per_tick)
 		adjust_blood_flow(-gauze_power * gauzed_clot_rate * seconds_per_tick)
+	//otherwise, only clot if it's a bleeder
+	else if(limb.can_bleed())
+		adjust_blood_flow(-clot_rate * seconds_per_tick)
 
 /datum/wound/pierce/bleed/adjust_blood_flow(adjust_by, minimum)
 	. = ..()
@@ -174,12 +184,13 @@
 		прижигание или в крайних случаях - воздействие на рану сильным холодом или вакуумом. \
 		Следует обеспечить прием пищи и период отдыха."
 	treat_text_short = "Примените повязку, швы, средства для свертывания крови или прижигание."
-	examine_desc = "имеет небольшое круглое отверстие, слегка кровоточит"
+	examine_desc = "имеет небольшое, слегка кровоточащее, разорванное отверстие"
 	occur_text = "выбрызгивает тонкую струю крови"
 	sound_effect = 'sound/effects/wounds/pierce1.ogg'
 	severity = WOUND_SEVERITY_MODERATE
 	initial_flow = 1.5
 	gauzed_clot_rate = 0.8
+	clot_rate = 0.03
 	internal_bleeding_chance = 30
 	internal_bleeding_coefficient = 1.25
 	threshold_penalty = 20
@@ -189,6 +200,11 @@
 	simple_treat_text = "<b>Перевязывание</b> раны уменьшит кровопотерю, поможет ране быстрее закрыться самостоятельно и ускорит период восстановления крови. Саму рану можно медленно <b>зашить</b>."
 	homemade_treat_text = "<b>Чай</b> стимулирует естественные лечебные системы организма, слегка ускоряя свёртывание крови. Рану также можно промыть в раковине или под душем. Другие средства не нужны."
 
+/datum/wound/pierce/bleed/moderate/update_descriptions()
+	if(!limb.can_bleed())
+		examine_desc = "has a small, torn hole"
+		occur_text = "splits a small hole open"
+
 /datum/wound_pregen_data/flesh_pierce/breakage
 	abstract = FALSE
 
@@ -196,13 +212,43 @@
 
 	threshold_minimum = 30
 
-/datum/wound/pierce/bleed/moderate/update_descriptions()
+/datum/wound_pregen_data/flesh_pierce/breakage/get_weight(obj/item/bodypart/limb, woundtype, damage, attack_direction, damage_source)
+	if (isprojectile(damage_source))
+		return 0
+	return weight
+
+/datum/wound/pierce/bleed/moderate/projectile
+	name = "Minor Skin Penetration"
+	desc = "Patient's skin has been pierced through, causing severe bruising and minor internal bleeding in affected area."
+	treat_text = "Apply bandaging or suturing to the wound, make use of blood clotting agents, \
+		cauterization, or in extreme circumstances, exposure to extreme cold or vaccuum. \
+		Follow with food and a rest period."
+	examine_desc = "has a small, circular hole, gently bleeding"
+	clot_rate = 0
+
+/datum/wound/pierce/bleed/moderate/projectile/update_descriptions()
 	if(!limb.can_bleed())
 		examine_desc = "имеет небольшое круглое отверстие"
-		occur_text = "раскрывает небольшое отверстие"
+		occur_text = "разрывает небольшое отверстие"
+
+/datum/wound_pregen_data/flesh_pierce/breakage/projectile
+	wound_path_to_generate = /datum/wound/pierce/bleed/moderate/projectile
+
+/datum/wound_pregen_data/flesh_pierce/breakage/projectile/get_weight(obj/item/bodypart/limb, woundtype, damage, attack_direction, damage_source)
+	if (!isprojectile(damage_source))
+		return 0
+	return weight
+
+/datum/wound_pregen_data/flesh_pierce/breakage/projectile
+	wound_path_to_generate = /datum/wound/pierce/bleed/moderate/projectile
+
+/datum/wound_pregen_data/flesh_pierce/breakage/projectile/get_weight(obj/item/bodypart/limb, woundtype, damage, attack_direction, damage_source)
+	if (!isprojectile(damage_source))
+		return 0
+	return weight
 
 /datum/wound/pierce/bleed/severe
-	name = "Открытый прокол"
+	name = "Открытая колотая рана"
 	desc = "Внутренние ткани пациента повреждены, что вызывает значительное внутреннее кровотечение и снижение стабильности конечности."
 	treat_text = "Быстро примените повязку или швы к ране, используйте средства для свертывания крови или соляно-глюкозный раствор, \
 		прижигание или в крайних случаях - воздействие на рану сильным холодом или вакуумом. \
@@ -214,6 +260,7 @@
 	severity = WOUND_SEVERITY_SEVERE
 	initial_flow = 2.25
 	gauzed_clot_rate = 0.6
+	clot_rate = 0.02
 	internal_bleeding_chance = 60
 	internal_bleeding_coefficient = 1.5
 	threshold_penalty = 35
@@ -223,6 +270,14 @@
 	simple_treat_text = "<b>Перевязывание</b> раны необходимо и поможет уменьшить кровотечение. После этого рану можно <b>зашить</b>, предпочтительно когда пациент отдыхает и/или держит свою рану."
 	homemade_treat_text = "Простыни можно разорвать, чтобы сделать <b>самодельный бинт</b>. <b>Мука, поваренная соль или соль, смешанная с водой</b> могут быть нанесены непосредственно на рану, чтобы остановить кровотечение, хотя неразмешанная соль будет раздражать кожу и ухудшать естественное заживление. Падение на землю и удерживание раны снизит кровотечение."
 
+/datum/wound/pierce/bleed/severe/update_descriptions()
+	if(!limb.can_bleed())
+		occur_text = "разрывает отверстие"
+
+/datum/wound/pierce/bleed/severe/update_descriptions()
+	if(!limb.can_bleed())
+		occur_text = "разрывает отверстие"
+
 /datum/wound_pregen_data/flesh_pierce/open_puncture
 	abstract = FALSE
 
@@ -230,9 +285,23 @@
 
 	threshold_minimum = 50
 
-/datum/wound/pierce/bleed/severe/update_descriptions()
-	if(!limb.can_bleed())
-		occur_text = "покрывается серьезными проколами"
+/datum/wound_pregen_data/flesh_pierce/open_puncture/get_weight(obj/item/bodypart/limb, woundtype, damage, attack_direction, damage_source)
+	if (isprojectile(damage_source))
+		return 0
+	return weight
+
+/datum/wound/pierce/bleed/severe/projectile
+	name = "Открытое пулевое ранение"
+	examine_desc = "пробито насквозь, с кусочками ткани, закрывающими аккуратно разорванную дыру"
+	clot_rate = 0
+
+/datum/wound_pregen_data/flesh_pierce/open_puncture/projectile
+	wound_path_to_generate = /datum/wound/pierce/bleed/severe/projectile
+
+/datum/wound_pregen_data/flesh_pierce/open_puncture/projectile/get_weight(obj/item/bodypart/limb, woundtype, damage, attack_direction, damage_source)
+	if (!isprojectile(damage_source))
+		return 0
+	return weight
 
 /datum/wound/pierce/bleed/severe/eye
 	name = "Eyeball Puncture"

@@ -69,18 +69,29 @@ GLOBAL_LIST_EMPTY(objects_by_id_tag)
 		return
 
 	var/total_force = (attacking_item.force * attacking_item.demolition_mod)
+	var/damage = take_damage(total_force, attacking_item.damtype, MELEE, TRUE, get_dir(src, user), attacking_item.armour_penetration)
 
-	var/damage = take_damage(total_force, attacking_item.damtype, MELEE, 1, get_dir(src, user))
+	// Sanity in case one is null for some reason
+	var/picked_index = rand(max(length(attacking_item.attack_verb_simple), length(attacking_item.attack_verb_continuous)))
 
-	var/damage_verb = "hit"
+	var/message_verb_continuous = "attacks"
+	var/message_verb_simple = "attack"
+	// Sanity in case one is... longer than the other?
+	if (picked_index && length(attacking_item.attack_verb_continuous) >= picked_index)
+		message_verb_continuous = attacking_item.attack_verb_continuous[picked_index]
+	if (picked_index && length(attacking_item.attack_verb_simple) >= picked_index)
+		message_verb_simple = attacking_item.attack_verb_simple[picked_index]
 
-	if(attacking_item.demolition_mod > 1 && damage)
-		damage_verb = "pulverise"
+	if(attacking_item.demolition_mod > 1 && prob(damage * 5))
+		message_verb_simple = "pulverise"
+		message_verb_continuous = "pulverises"
+
 	if(attacking_item.demolition_mod < 1)
-		damage_verb = "ineffectively pierce"
+		message_verb_simple = "безуспешно " + ru_attack_verb(message_verb_simple)
+		message_verb_continuous = "безуспешно " + ru_attack_verb(message_verb_continuous)
 
-	user.visible_message(span_danger("[capitalize(user.declent_ru(NOMINATIVE))] [ru_attack_verb("[damage_verb]s")] [declent_ru(ACCUSATIVE)] с помощью [attacking_item.declent_ru(GENITIVE)][damage ? "." : ", [no_damage_feedback]!"]"), \
-		span_danger("Вы [ru_attack_verb(damage_verb)] [declent_ru(ACCUSATIVE)] с помощью [attacking_item.declent_ru(GENITIVE)][damage ? "." : ", [no_damage_feedback]!"]"), null, COMBAT_MESSAGE_RANGE)
+	user.visible_message(span_danger("[capitalize(user.declent_ru(NOMINATIVE))] [message_verb_continuous] [declent_ru(ACCUSATIVE)] с помощью [attacking_item.declent_ru(GENITIVE)][damage ? "." : ", [no_damage_feedback]!"]"), \
+		span_danger("Вы [message_verb_simple] [declent_ru(ACCUSATIVE)] с помощью [attacking_item.declent_ru(GENITIVE)][damage ? "." : ", [no_damage_feedback]!"]"), null, COMBAT_MESSAGE_RANGE)
 	log_combat(user, src, "attacked", attacking_item)
 
 /obj/assume_air(datum/gas_mixture/giver)

@@ -188,6 +188,7 @@
 	icon = 'icons/obj/weapons/changeling_items.dmi'
 	icon_state = "arm_blade"
 	inhand_icon_state = "arm_blade"
+	icon_angle = 180
 	lefthand_file = 'icons/mob/inhands/antag/changeling_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/antag/changeling_righthand.dmi'
 	item_flags = NEEDS_PERMIT | ABSTRACT | DROPDEL
@@ -197,14 +198,16 @@
 	throw_range = 0
 	throw_speed = 0
 	hitsound = 'sound/items/weapons/bladeslice.ogg'
-	attack_verb_continuous = list("attacks", "slashes", "stabs", "slices", "tears", "lacerates", "rips", "dices", "cuts")
-	attack_verb_simple = list("attack", "slash", "stab", "slice", "tear", "lacerate", "rip", "dice", "cut")
+	attack_verb_continuous = list("attacks", "slashes", "slices", "tears", "lacerates", "rips", "dices", "cuts")
+	attack_verb_simple = list("attack", "slash", "slice", "tear", "lacerate", "rip", "dice", "cut")
 	sharpness = SHARP_EDGED
 	wound_bonus = 10
 	bare_wound_bonus = 10
 	armour_penetration = 35
 	var/can_drop = FALSE
 	var/fake = FALSE
+	var/list/alt_continuous = list("stabs", "pierces", "impales")
+	var/list/alt_simple = list("stab", "pierce", "impale")
 
 /obj/item/melee/arm_blade/Initialize(mapload,silent,synthetic)
 	. = ..()
@@ -213,6 +216,9 @@
 		loc.visible_message(span_warning("Страшный клинок формируется вокруг руки [loc.declent_ru(GENITIVE)]!"), span_warning("Наша рука скручивается и мутирует, превращаясь в смертоносный клинок."), span_hear("Вы слышите, как рвется и разрывается органическая масса!"))
 	if(synthetic)
 		can_drop = TRUE
+	alt_continuous = string_list(alt_continuous)
+	alt_simple = string_list(alt_simple)
+	AddComponent(/datum/component/alternative_sharpness, SHARP_POINTY, alt_continuous, alt_simple, -5)
 	AddComponent(/datum/component/butchering, \
 	speed = 6 SECONDS, \
 	effectiveness = 80, \
@@ -276,6 +282,7 @@
 	icon = 'icons/obj/weapons/changeling_items.dmi'
 	icon_state = "tentacle"
 	inhand_icon_state = "tentacle"
+	icon_angle = 180
 	lefthand_file = 'icons/mob/inhands/antag/changeling_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/antag/changeling_righthand.dmi'
 	item_flags = NEEDS_PERMIT | ABSTRACT | DROPDEL | NOBLUDGEON
@@ -356,9 +363,9 @@
 		chain = firer.Beam(src, icon_state = "tentacle", emissive = FALSE)
 	..()
 
-/obj/projectile/tentacle/proc/reset_throw(mob/living/carbon/human/H)
-	if(H.throw_mode)
-		H.throw_mode_off(THROW_MODE_TOGGLE) //Don't annoy the changeling if he doesn't catch the item
+/obj/projectile/tentacle/proc/reset_throw(mob/living/carbon/human/user)
+	if(user.throw_mode)
+		user.throw_mode_off(THROW_MODE_TOGGLE) //Don't annoy the changeling if he doesn't catch the item
 
 /obj/projectile/tentacle/proc/tentacle_grab(mob/living/carbon/human/H, mob/living/carbon/C)
 	if(H.Adjacent(C))
@@ -370,7 +377,7 @@
 		C.grippedby(H, instant = TRUE) //instant aggro grab
 		for(var/obj/item/I in H.held_items)
 			if(I.get_sharpness())
-				C.visible_message(span_danger("[capitalize(H.declent_ru(NOMINATIVE))] протыкает [capitalize(C.declent_ru(ACCUSATIVE))] с помощью [I.declent_ru(ACCUSATIVE)]!"), span_userdanger("[capitalize(H.declent_ru(NOMINATIVE))] протыкает вас с помощью [I.declent_ru(ACCUSATIVE)]!"))
+				C.visible_message(span_danger("[capitalize(user.declent_ru(NOMINATIVE))] протыкает [capitalize(victim.declent_ru(ACCUSATIVE))] с помощью [weapon.declent_ru(ACCUSATIVE)]!"), span_userdanger("[capitalize(user.declent_ru(NOMINATIVE))] протыкает вас с помощью [weapon.declent_ru(ACCUSATIVE)]!"))
 				C.apply_damage(I.force, BRUTE, BODY_ZONE_CHEST, attacking_item = I)
 				H.do_item_attack_animation(C, used_item = I)
 				H.add_mob_blood(C)

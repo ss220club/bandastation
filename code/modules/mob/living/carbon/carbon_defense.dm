@@ -84,8 +84,8 @@
 		return TRUE
 	return ..()
 
-/mob/living/carbon/send_item_attack_message(obj/item/I, mob/living/user, hit_area, def_zone)
-	if(!I.force && !length(I.attack_verb_simple) && !length(I.attack_verb_continuous))
+/mob/living/carbon/send_item_attack_message(obj/item/weapon, mob/living/user, hit_area, def_zone)
+	if(!weapon.force && !length(weapon.attack_verb_simple) && !length(weapon.attack_verb_continuous))
 		return
 	var/obj/item/bodypart/hit_bodypart = get_bodypart(def_zone)
 	if(isnull(hit_bodypart)) // ??
@@ -96,7 +96,7 @@
 
 	var/extra_wound_details = ""
 
-	if(I.damtype == BRUTE && hit_bodypart.can_dismember())
+	if(weapon.damtype == BRUTE && hit_bodypart.can_dismember())
 
 		var/mangled_state = hit_bodypart.get_mangled_state()
 
@@ -111,24 +111,24 @@
 		var/dismemberable = ((hit_bodypart.dismemberable_by_wound()) || hit_bodypart.dismemberable_by_total_damage())
 		if (dismemberable)
 			extra_wound_details = ", угрожая оторвать конечность!"
-		else if((has_interior && (has_exterior && exterior_ready_to_dismember) && I.get_sharpness()))
+		else if((has_interior && (has_exterior && exterior_ready_to_dismember) && weapon.get_sharpness()))
 			var/bone_text = hit_bodypart.get_internal_description()
-			extra_wound_details = ", [I.get_sharpness() == SHARP_EDGED ? "прорезая" : "пронзая"] [bone_text]"
-		else if(has_exterior && ((has_interior && interior_ready_to_dismember) && I.get_sharpness()))
+			extra_wound_details = ", [weapon.get_sharpness() == SHARP_EDGED ? "прорезая" : "пронзая"] [bone_text]"
+		else if(has_exterior && ((has_interior && interior_ready_to_dismember) && weapon.get_sharpness()))
 			var/tissue_text = hit_bodypart.get_external_description()
-			extra_wound_details = ", [I.get_sharpness() == SHARP_EDGED ? "прорезая" : "пронзая"] оставшуюся [tissue_text]"
+			extra_wound_details = ", [weapon.get_sharpness() == SHARP_EDGED ? "прорезая" : "пронзая"] оставшуюся [tissue_text]"
 
 	var/message_hit_area = ""
 	if(hit_area)
-		message_hit_area = " в [hit_area]"
-	var/attack_message_spectator = "[capitalize(declent_ru(NOMINATIVE))] [ru_attack_verb(message_verb_continuous)][message_hit_area] с помощью [I.declent_ru(GENITIVE)][extra_wound_details]!"
-	var/attack_message_victim = "Вас [ru_attack_verb(message_verb_continuous)][message_hit_area] с помощью [I.declent_ru(GENITIVE)][extra_wound_details]!"
-	var/attack_message_attacker = "Вы [ru_attack_verb(message_verb_simple)] [declent_ru(ACCUSATIVE)][message_hit_area] с помощью [I.declent_ru(GENITIVE)][extra_wound_details]!"
+		message_hit_area = " in the [hit_area]"
+	var/attack_message_spectator = "[capitalize(declent_ru(NOMINATIVE))] [ru_attack_verb(message_verb_continuous)][message_hit_area] с помощью [weapon.declent_ru(GENITIVE)][extra_wound_details]!"
+	var/attack_message_victim = "Вас [ru_attack_verb(message_verb_continuous)][message_hit_area] с помощью [weapon.declent_ru(GENITIVE)][extra_wound_details]!"
+	var/attack_message_attacker = "Вы [ru_attack_verb(message_verb_simple)] [declent_ru(ACCUSATIVE)][message_hit_area] с помощью [weapon.declent_ru(GENITIVE)][extra_wound_details]!"
 	if(user in viewers(src, null))
-		attack_message_spectator = "[capitalize(user.declent_ru(NOMINATIVE))] [ru_attack_verb(message_verb_continuous)] [declent_ru(ACCUSATIVE)][message_hit_area] с помощью [I.declent_ru(GENITIVE)][extra_wound_details]!"
-		attack_message_victim = "[capitalize(user.declent_ru(NOMINATIVE))] [ru_attack_verb(message_verb_continuous)] вас[message_hit_area] с помощью [I.declent_ru(GENITIVE)][extra_wound_details]!"
+		attack_message_spectator = "[capitalize(user.declent_ru(NOMINATIVE))] [ru_attack_verb(message_verb_continuous)] [declent_ru(ACCUSATIVE)][message_hit_area] с помощью [weapon.declent_ru(GENITIVE)][extra_wound_details]!"
+		attack_message_victim = "[capitalize(user.declent_ru(NOMINATIVE))] [ru_attack_verb(message_verb_continuous)] вас[message_hit_area] с помощью [weapon.declent_ru(GENITIVE)][extra_wound_details]!"
 	if(user == src)
-		attack_message_victim = "Вы [ru_attack_verb(message_verb_simple)] себя[message_hit_area] с помощью [I.declent_ru(GENITIVE)][extra_wound_details]!"
+		attack_message_victim = "Вы [ru_attack_verb(message_verb_simple)] себя[message_hit_area] с помощью [weapon.declent_ru(GENITIVE)][extra_wound_details]!"
 	visible_message(span_danger("[attack_message_spectator]"),\
 		span_userdanger("[attack_message_victim]"), null, COMBAT_MESSAGE_RANGE, user)
 	if(user != src)
