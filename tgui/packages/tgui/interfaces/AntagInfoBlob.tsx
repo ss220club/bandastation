@@ -72,25 +72,25 @@ const Overview = (props) => {
         </span>
       </Stack.Item>
       <Stack.Item>
-        {' '}
+        Реагент{' '}
         <span
           style={{
             color,
           }}
         >
-          Реагент {name}
+          {name}
         </span>{' '}
         {description}
       </Stack.Item>
       {effects && (
         <Stack.Item>
-          {' '}
+          Реагент{' '}
           <span
             style={{
               color,
             }}
           >
-            Реагент {name}
+            {name}
           </span>{' '}
           {effects}
         </Stack.Item>
