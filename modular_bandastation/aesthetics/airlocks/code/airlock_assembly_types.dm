@@ -82,9 +82,16 @@
 	airlock_type = /obj/machinery/door/airlock/hydroponics
 	glass_type = /obj/machinery/door/airlock/hydroponics/glass
 
+/obj/structure/door_assembly/door_assembly_corporate
+	name = "corporate airlock assembly"
+	icon = 'modular_bandastation/aesthetics/airlocks/icons/station/corporate.dmi'
+	base_name = "corporate airlock"
+	glass_type = /obj/machinery/door/airlock/corporate/glass
+	airlock_type = /obj/machinery/door/airlock/corporate
+
 /obj/structure/door_assembly/door_assembly_lawyer
 	name = "lawyer airlock assembly"
-	icon = 'modular_bandastation/aesthetics/airlocks/icons/station/corporate.dmi'
+	icon = 'modular_bandastation/aesthetics/airlocks/icons/station/lawyer.dmi'
 	base_name = "lawyer airlock"
 	glass_type = /obj/machinery/door/airlock/lawyer/glass
 	airlock_type = /obj/machinery/door/airlock/lawyer
