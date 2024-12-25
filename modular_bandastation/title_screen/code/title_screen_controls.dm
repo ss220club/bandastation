@@ -47,6 +47,7 @@ ADMIN_VERB(change_title_screen_notice, R_FUN, "Title Screen: Set Notice", ADMIN_
  */
 ADMIN_VERB(change_title_screen_css, R_DEBUG, "Title Screen: Set CSS", ADMIN_VERB_NO_DESCRIPTION, ADMIN_CATEGORY_EVENTS)
 	if(!check_rights(R_DEBUG))
+		to_chat(src, span_warning("Недостаточно прав! Необходимы права R_DEBUG."))
 		return
 
 	log_admin("Title Screen: [key_name(usr)] is setting the title screen CSS.")

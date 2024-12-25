@@ -61,6 +61,9 @@
 
 	INVOKE_ASYNC(current_title_screen, TYPE_PROC_REF(/datum/title_screen, show_to), viewer)
 
+	if(check_rights_for(viewer, R_ADMIN|R_DEBUG))
+		addtimer(CALLBACK(src, PROC_REF(title_output), viewer, "true", "admin_buttons_visibility"), 1.5 SECONDS, TIMER_UNIQUE|TIMER_OVERRIDE|TIMER_CLIENT_TIME)
+
 /**
  * Hide the title screen from specific client.
  */

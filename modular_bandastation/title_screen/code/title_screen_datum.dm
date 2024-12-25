@@ -111,15 +111,11 @@
 	html += create_icon_button(player, "wiki", "Перейти на вики")
 	html += {"</div>"}
 
-	if(check_rights_for(viewer, R_FUN|R_DEBUG))
-		html += {"<div class="lobby_buttons-right">"}
-		html += create_icon_button(player, "picture", "Сменить изображение", "right")
-		html += create_icon_button(player, "notice", "Оставить уведомление", "right")
-
-		if(check_rights_for(viewer, R_DEBUG))
-			html += create_icon_button(player, "css", "Заменить CSS лобби", "right")
-
-		html += {"</div>"}
+	html += {"<div id="lobby_admin" class="lobby_buttons-right hidden">"}
+	html += create_icon_button(player, "picture", "Сменить изображение", "right")
+	html += create_icon_button(player, "notice", "Оставить уведомление", "right")
+	html += create_icon_button(player, "css", "Заменить CSS лобби", "right")
+	html += {"</div>"}
 
 	if(length(GLOB.lobby_station_traits))
 		html += {"<div class="lobby_buttons-left">"}
@@ -214,9 +210,13 @@
 				}
 			}
 
-			const character_name_slot = document.getElementById("character_name");
-			function update_character_name(name) {
-				character_name_slot.textContent = name;
+			const admin_buttons = document.getElementById("lobby_admin")
+			function admin_buttons_visibility(visible) {
+				if(visible === "true") {
+					admin_buttons.classList.remove("hidden")
+				} else {
+					admin_buttons.classList.add("hidden")
+				}
 			}
 
 			const notice_container = document.getElementById("container_notice");
@@ -228,6 +228,11 @@
 					notice_container.classList.remove("hidden");
 					notice_container.textContent = notice;
 				}
+			}
+
+			const character_name_slot = document.getElementById("character_name");
+			function update_character_name(name) {
+				character_name_slot.textContent = name;
 			}
 
 			let collapsed = false;
