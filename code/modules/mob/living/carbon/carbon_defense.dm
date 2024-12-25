@@ -127,9 +127,6 @@
 			var/tissue_text = hit_bodypart.get_external_description()
 			extra_wound_details = ", [weapon.get_sharpness() == SHARP_EDGED ? "прорезая" : "пронзая"] оставшуюся [tissue_text]"
 
-	var/message_hit_area = ""
-	if(hit_area)
-		message_hit_area = " in the [hit_area]"
 	var/attack_message_spectator = "[capitalize(declent_ru(NOMINATIVE))] [ru_attack_verb(message_verb_continuous)][message_hit_area] с помощью [weapon.declent_ru(GENITIVE)][extra_wound_details]!"
 	var/attack_message_victim = "Вас [ru_attack_verb(message_verb_continuous)][message_hit_area] с помощью [weapon.declent_ru(GENITIVE)][extra_wound_details]!"
 	var/attack_message_attacker = "Вы [ru_attack_verb(message_verb_simple)] [declent_ru(ACCUSATIVE)][message_hit_area] с помощью [weapon.declent_ru(GENITIVE)][extra_wound_details]!"
