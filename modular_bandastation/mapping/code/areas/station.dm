@@ -1,22 +1,3 @@
-// MARK: Central Command Areas
-/area/centcom/central_command_areas/planetary_port
-	name = "Планетарный Порт"
-
-/area/centcom/central_command_areas/planetary_port/plaza
-	name = "Площадь"
-
-/area/centcom/central_command_areas/planetary_port/hotel
-	name = "Отель"
-
-/area/centcom/central_command_areas/planetary_port/library
-	name = "Библиотека"
-
-/area/centcom/central_command_areas/planetary_port/club
-	name = "Клуб"
-
-/area/centcom/central_command_areas/planetary_port/restroom
-	name = "Уборная"
-
 // MARK: Station Areas
 /area/station/common/cryopods
 	name = "Cryopods Room"
@@ -39,14 +20,6 @@
 /area/station/maintenance/disposal/trash
 	name = "Waste Burner"
 	icon_state = "engine"
-
-/area/station/maintenance/department/bridge/ntr
-	name = "Nanotrasen Reperesentative's Office"
-	icon_state = "maint_bridge"
-
-/area/station/maintenance/department/bridge/blueshield
-	name = "Blueshield's Office"
-	icon_state = "maint_bridge"
 
 // Ghetto
 // Department's Lower Floor

@@ -7,11 +7,11 @@
 	doorClose = 'modular_bandastation/aesthetics/airlocks/sound/close.ogg'
 	boltUp = 'modular_bandastation/aesthetics/airlocks/sound/bolts_up.ogg'
 	boltDown = 'modular_bandastation/aesthetics/airlocks/sound/bolts_down.ogg'
-
+	var/has_open_lights = TRUE
 
 /obj/machinery/door/airlock/update_overlays()
 	. = ..()
-	if(!lights || !hasPower())
+	if(!has_open_lights || !lights || !hasPower())
 		return
 	var/light_state
 	switch(airlock_state)
@@ -25,4 +25,9 @@
 				light_state = "emergency_open"
 			else
 				light_state = "poweron_open"
+	if(!light_state)
+		return
 	. += get_airlock_overlay("lights_[light_state]", overlays_file, src, em_block = FALSE)
+
+/obj/machinery/door/airlock/highsecurity
+	has_open_lights = FALSE
