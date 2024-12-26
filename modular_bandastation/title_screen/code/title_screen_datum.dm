@@ -1,6 +1,11 @@
+GLOBAL_LIST_INIT(available_lobby_styles, list(
+	"По-умолчанию" = 'modular_bandastation/title_screen/html/title_screen_default.css',
+	"Минималистичный" = 'modular_bandastation/title_screen/html/title_screen_minimalistic.css',
+))
+
 /datum/title_screen
-	/// All title screen styles.
-	var/title_css = DEFAULT_TITLE_SCREEN_HTML_CSS
+	/// Custom CSS. Can be changed by admins or coders. If empty, will be used from user preferences.
+	var/title_css
 	/// The current title screen being displayed, as `/datum/asset_cache_item`
 	var/datum/asset_cache_item/screen_image
 
@@ -31,7 +36,11 @@
 	fontawesome.send(viewer)
 
 	SSassets.transport.send_assets(viewer, screen_image.name)
-	viewer << browse(get_title_html(viewer, viewer.mob), "window=title_browser")
+	if(!title_css)
+		viewer << browse(get_title_html(viewer, viewer.mob, GLOB.available_lobby_styles[viewer.prefs.read_preference(/datum/preference/choiced/lobby_style)]), "window=title_browser")
+	else
+		viewer << browse(get_title_html(viewer, viewer.mob, title_css), "window=title_browser")
+
 
 /datum/title_screen/proc/hide_from(client/viewer)
 	if(viewer?.mob)

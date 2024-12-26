@@ -3,7 +3,7 @@
 /**
  * Get the HTML of title screen.
  */
-/datum/title_screen/proc/get_title_html(client/viewer, mob/user)
+/datum/title_screen/proc/get_title_html(client/viewer, mob/user, styles)
 	var/screen_image_url = SSassets.transport.get_asset_url(asset_cache_item = screen_image)
 	var/mob/dead/new_player/player = user
 	var/list/html = list()
@@ -15,7 +15,7 @@
 			<meta http-equiv="X-UA-Compatible" content="IE=edge">
 			<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 			<style type='text/css'>
-				[file2text(title_css)]
+				[file2text(styles)]
 			</style>
 		</head>
 		<body>

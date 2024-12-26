@@ -9,13 +9,10 @@ ADMIN_VERB(change_title_screen, R_FUN, "Title Screen: Change", ADMIN_VERB_NO_DES
 		if("Меняем")
 			var/file = input(usr) as icon|null
 			if(file)
-				SStitle.set_title_image(file)
+				SStitle.set_title_image(usr, file)
 
 		if("Сбрасываем")
-			SStitle.set_title_image()
-
-	log_admin("[key_name(usr)] is changing the title screen.")
-	message_admins("[key_name_admin(usr)] is changing the title screen.")
+			SStitle.set_title_image(usr)
 
 /**
  * Sets a titlescreen notice, a big red text on the main screen.

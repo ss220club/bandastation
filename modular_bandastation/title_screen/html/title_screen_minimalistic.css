@@ -1,0 +1,81 @@
+@font-face {
+	font-family: "Pix Cyrillic";
+	src: url("PixCyrillic.ttf");
+}
+
+/**
+ * MARK: Common
+ */
+body,
+html {
+	font-family: sans-serif;
+	font-size: 15px;
+	overflow: hidden;
+	text-align: center;
+	-ms-user-select: none;
+	user-select: none;
+	cursor: default;
+	position: static;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	background-color: black;
+}
+
+img {
+	pointer-events: none;
+	border-style: none;
+}
+
+hr {
+	border: 0;
+	border-bottom: 0.15em solid rgba(255, 255, 255, 0.1);
+}
+
+input,
+.hidden {
+	display: none !important;
+	visibility: hidden !important;
+}
+
+.invisible {
+	visibility: hidden;
+}
+
+*,
+*::before,
+*::after {
+	position: relative;
+	box-sizing: border-box;
+}
+
+.pixelated {
+	-ms-interpolation-mode: nearest-neighbor;
+	image-rendering: pixelated;
+}
+
+.bg {
+	position: absolute;
+	width: auto;
+	height: 100vmin;
+	min-width: 100vmin;
+	min-height: 100vmin;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 0;
+}
+
+#container_notice {
+	position: absolute;
+	box-sizing: border-box;
+	bottom: 0;
+	width: 100vw;
+	font-size: 26px;
+	padding: 0.5em 0 0.33em;
+	background-color: rgba(22, 22, 22, 0.85);
+	color: hsl(345, 100%, 70%);
+	border-top: 1px solid rgba(255, 255, 255, 0.1);
+	backdrop-filter: blur(24px);
+	z-index: 2;
+}
