@@ -158,6 +158,10 @@ input,
 	visibility: hidden !important;
 }
 
+.invisible {
+	visibility: hidden;
+}
+
 *,
 *::before,
 *::after {

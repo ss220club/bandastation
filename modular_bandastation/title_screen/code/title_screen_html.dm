@@ -51,7 +51,7 @@
 	html += create_icon_button(player, "wiki", "Перейти на вики")
 	html += {"</div>"}
 
-	html += {"<div id="lobby_admin" class="lobby_buttons-right hidden">"}
+	html += {"<div id="lobby_admin" class="lobby_buttons-right invisible">"}
 	html += create_icon_button(player, "picture", "Сменить изображение", "right")
 	html += create_icon_button(player, "notice", "Оставить уведомление", "right")
 	html += create_icon_button(player, "css", "Заменить CSS лобби", "right")
@@ -164,9 +164,9 @@
 			const admin_buttons = document.getElementById("lobby_admin")
 			function admin_buttons_visibility(visible) {
 				if(visible === "true") {
-					admin_buttons.classList.remove("hidden")
+					admin_buttons.classList.remove("invisible")
 				} else {
-					admin_buttons.classList.add("hidden")
+					admin_buttons.classList.add("invisible")
 				}
 			}
 
@@ -238,6 +238,9 @@
 			document.addEventListener('keyup', reFocus);
 			document.addEventListener('mouseup', reFocus);
 			collapse.addEventListener('mouseup', update_collapse);
+
+			/* Tell Byond that the title screen is ready */
+			call_byond("title_ready", true);
 		</script>
 	"}
 
