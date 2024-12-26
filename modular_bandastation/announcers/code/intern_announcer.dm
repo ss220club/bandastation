@@ -62,7 +62,8 @@
 		'modular_bandastation/announcers/sound/alerts/50.ogg',
 		'modular_bandastation/announcers/sound/alerts/51.ogg',
 		'modular_bandastation/announcers/sound/alerts/52.ogg',
-		'modular_bandastation/announcers/sound/alerts/53.ogg'
+		'modular_bandastation/announcers/sound/alerts/53.ogg',
+		'modular_bandastation/announcers/sound/alerts/54.ogg'
 		)
 
 	command_report_sounds = list(
