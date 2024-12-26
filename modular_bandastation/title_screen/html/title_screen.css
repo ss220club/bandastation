@@ -229,7 +229,7 @@ input,
 	pointer-events: none;
 	position: absolute;
 	left: 31.5px;
-	bottom: -17.5px;
+	bottom: -19.5px;
 	z-index: 1;
 }
 
@@ -237,9 +237,9 @@ input,
 	pointer-events: all;
 	cursor: pointer;
 	width: 19px;
-	height: 15px;
-	text-indent: -2px;
-	transform: translate(3.8px, 53.5px) scale(1.25, 0.75);
+	height: 13px;
+	text-indent: 5.2px;
+	transform: translate(3.8px, 53.5px) scale(1.75, 0.75);
 }
 
 /**
