@@ -3980,10 +3980,6 @@
 /obj/machinery/door/firedoor,
 /turf/open/floor/plating,
 /area/station/maintenance/ghetto/port/aft)
-"aZS" = (
-/obj/machinery/biogenerator,
-/turf/open/floor/iron/dark,
-/area/station/service/hydroponics)
 "baa" = (
 /obj/machinery/electrolyzer,
 /obj/effect/decal/cleanable/dirt,
@@ -21548,10 +21544,6 @@
 /obj/machinery/light/small/directional/south,
 /turf/open/floor/plating,
 /area/station/maintenance/port/aft)
-"fxk" = (
-/obj/machinery/firealarm/directional/north,
-/turf/open/floor/plating,
-/area/station/maintenance/ghetto/central)
 "fxo" = (
 /obj/machinery/light/small/directional/west,
 /obj/effect/decal/cleanable/dirt,
@@ -38385,13 +38377,13 @@
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/maintenance,
 /obj/effect/mapping_helpers/airlock/autoname,
-/obj/effect/mapping_helpers/airlock/access/all/engineering/maintenance,
 /obj/effect/mapping_helpers/airlock/unres{
 	dir = 4
 	},
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/cyan,
 /obj/machinery/duct,
+/obj/effect/mapping_helpers/airlock/access/any/science/maintenance,
 /turf/open/floor/plating,
 /area/station/science/research)
 "jQX" = (
@@ -46253,13 +46245,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/structure/cable,
-/obj/machinery/door/airlock/maintenance,
-/obj/effect/mapping_helpers/airlock/autoname,
-/obj/effect/mapping_helpers/airlock/access/all/engineering/maintenance,
-/obj/effect/mapping_helpers/airlock/unres{
-	dir = 1
-	},
-/obj/machinery/door/firedoor,
 /turf/open/floor/iron/dark,
 /area/station/maintenance/department/security/ghetto/north)
 "lMr" = (
@@ -47595,6 +47580,10 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/structure/window/reinforced/spawner/directional/north,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/structure/table,
+/obj/item/hatchet,
+/obj/item/shovel/spade,
+/obj/item/wrench,
 /turf/open/floor/iron,
 /area/station/service/hydroponics)
 "mdi" = (
@@ -70113,12 +70102,9 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 8
 	},
-/obj/structure/table,
-/obj/item/wrench,
 /obj/machinery/light/small/directional/east,
-/obj/item/shovel/spade,
-/obj/item/hatchet,
 /obj/machinery/firealarm/directional/east,
+/obj/machinery/biogenerator,
 /turf/open/floor/iron,
 /area/station/service/hydroponics)
 "rWN" = (
@@ -82676,12 +82662,12 @@
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/maintenance,
 /obj/effect/mapping_helpers/airlock/autoname,
-/obj/effect/mapping_helpers/airlock/access/all/engineering/maintenance,
 /obj/effect/mapping_helpers/airlock/unres{
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/smart/manifold4w/cyan,
 /obj/structure/cable,
+/obj/effect/mapping_helpers/airlock/access/any/science/maintenance,
 /turf/open/floor/plating,
 /area/station/science/research)
 "vld" = (
@@ -121781,7 +121767,7 @@ ceC
 mOI
 dlM
 cAn
-fxk
+dGY
 hIr
 aNI
 ePB
@@ -200658,7 +200644,7 @@ eJS
 mcF
 mcF
 tLO
-qAE
+byC
 cbP
 uap
 kkl
@@ -201429,7 +201415,7 @@ ulp
 chW
 chW
 eXd
-aZS
+qAE
 cbP
 uap
 kkl
