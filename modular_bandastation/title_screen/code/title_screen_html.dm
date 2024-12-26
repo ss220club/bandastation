@@ -22,7 +22,7 @@
 	"}
 
 	if(screen_image_url)
-		html += {"<img id="screen_image" class="bg" src="[screen_image_url]" onerror="update_image([screen_image_url])">"}
+		html += {"<img id="screen_image" class="bg" src="[screen_image_url]" onerror="fix_image()">"}
 
 	html += {"<div id="container_notice" class="[SStitle.notice ? "" : "hidden"]">[SStitle.notice]</div>"}
 	html += {"<input type="checkbox" id="hide_menu">"}
@@ -101,6 +101,17 @@
 	html += {"</div></div></body>"}
 	html += {"
 		<script language="JavaScript">
+			function call_byond(href, value) {
+				const request = new XMLHttpRequest();
+				const url = "?src=[REF(player)];" + href + "=" + value;
+				request.open("GET", url);
+				request.send();
+			}
+
+			function throw_runtime(message) {
+				call_byond("runtime", message);
+			}
+
 			let ready_int = 0;
 			const readyID = document.querySelector(".lobby-toggle_ready");
 			const ready_class = \[ "bad", "good" \];
@@ -178,10 +189,7 @@
 			let collapsed = false;
 			const collapse = document.getElementById("collapse");
 			function update_collapse() {
-				const requestSound = new XMLHttpRequest();
-				requestSound.open("GET", "?src=[REF(player)];collapse=1");
-				requestSound.send();
-
+				call_byond("collapse", true)
 				collapsed = !collapsed;
 				if(collapsed) {
 					collapse.textContent = "˅";
@@ -190,33 +198,41 @@
 				}
 			}
 
-			let attempts = 0;
-			const maxAttempts = 3;
+			let image_src;
 			const image_container = document.getElementById("screen_image");
 			function update_image(image) {
-				if(image) {
-					attempts = 0;
-					image_container.src = image;
-					return;
-				} else {
-					if(attempts > maxAttempts) {
-						console.error("Failed to load image.");
+				image_src = image;
+				image_container.src = image_src;
+			}
+
+			let attempts = 0;
+			const maxAttempts = 3;
+			function fix_image() {
+				const img = new Image();
+				img.src = image_src;
+				if(img.naturalWidth === 0 || img.naturalHeight === 0) {
+					if(attempts === maxAttempts) {
+						attempts = 0;
+						throw_runtime("Изображение не получилось загрузить");
 						return;
 					}
 
 					attempts++;
 					setTimeout(function() {
-						console.log("Image load failed, retrying...");
-						update_image(image);
+						throw_runtime("Изображение не загрузилось с первого раза, попытка " + attempts + " из " + maxAttempts);
+						fix_image();
 					}, 1000);
+				} else {
+					attempts = 0;
+					image_container.src = image_src;
+					throw_runtime("Фикс изображения помог с первого раза");
+					return;
 				}
 			}
 
 			/* Return focus to Byond after click */
 			function reFocus() {
-				const focus = new XMLHttpRequest();
-				focus.open("GET", "?src=[REF(player)];focus=1");
-				focus.send();
+				call_byond("focus", true);
 			}
 
 			document.addEventListener('keyup', reFocus);
