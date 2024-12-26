@@ -22,7 +22,7 @@
 	"}
 
 	if(screen_image_url)
-		html += {"<img id="screen_image" class="bg" src="[screen_image_url]" onerror="fix_image()">"}
+		html += {"<img id="screen_image" class="bg" src="[screen_image_url]" alt="Загрузка..." onerror="fix_image()">"}
 
 	html += {"<div id="container_notice" class="[SStitle.notice ? "" : "hidden"]">[SStitle.notice]</div>"}
 	html += {"<input type="checkbox" id="hide_menu">"}
