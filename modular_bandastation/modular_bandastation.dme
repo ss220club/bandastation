@@ -3,9 +3,7 @@
 
 // --- ICONS --- //
 #include "aesthetics/_aesthetics.dme"
-#ifdef MODPACK_CHAT_BADGES
 #include "chat_badges/_chat_badges.dme"
-#endif
 #include "hair/_hair.dme"
 
 #include "_defines220/_defines220.dme"
