@@ -931,8 +931,8 @@ SUBSYSTEM_DEF(gamemode)
 	if(CONFIG_GET(flag/disable_storyteller))
 		return
 	if(length(GLOB.clients) > MAX_POP_FOR_STORYTELLER_VOTE)
-		secret_storyteller = TRUE
-		selected_storyteller = pick_weight(get_valid_storytellers(TRUE))
+		secret_storyteller = FALSE
+		//selected_storyteller = pick_weight(get_valid_storytellers(TRUE))
 		return
 	//SSvote.initiate_vote(/datum/vote/storyteller, "pick round storyteller", forced = TRUE)
 
