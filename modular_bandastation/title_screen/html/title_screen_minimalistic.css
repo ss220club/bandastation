@@ -309,6 +309,10 @@ a.lobby_element.good .lobby-text:before {
 	margin-right: 0.33em;
 }
 
+.lobby-late_join .lobby-text:before {
+	content: '\f11b'
+}
+
 .lobby-observe .lobby-text:before {
 	content: '\f6e2';
 }
