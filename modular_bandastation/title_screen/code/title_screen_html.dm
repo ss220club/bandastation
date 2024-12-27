@@ -14,6 +14,7 @@
 			<title>Title Screen</title>
 			<meta http-equiv="X-UA-Compatible" content="IE=edge">
 			<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+			<link rel='stylesheet' type='text/css' href='[SSassets.transport.get_asset_url(asset_name = "font-awesome.css")]'>
 			<style type='text/css'>
 				[file2text(styles)]
 			</style>
@@ -24,23 +25,29 @@
 	if(screen_image_url)
 		html += {"<img id="screen_image" class="bg" src="[screen_image_url]" alt="Загрузка..." onerror="fix_image()">"}
 
-	html += {"<div id="container_notice" class="[SStitle.notice ? "" : "hidden"]">[SStitle.notice]</div>"}
 	html += {"<input type="checkbox" id="hide_menu">"}
+	html += {"<div id="container_notice" class="[SStitle.notice ? "" : "hidden"]">[SStitle.notice]</div>"}
 	html += {"<div class="lobby_wrapper">"}
 	html += {"
 		<div class="lobby_container">
-			<img class="lobby_background pixelated" src="[SSassets.transport.get_asset_url(asset_name = "lobby_background.png")]">
-			<img class="lobby_shutter pixelated" src="[SSassets.transport.get_asset_url(asset_name = "lobby_shutter.png")]">
+			<img class="lobby_background pixelated default" src="[SSassets.transport.get_asset_url(asset_name = "lobby_background.png")]">
+			<img class="lobby_shutter pixelated default" src="[SSassets.transport.get_asset_url(asset_name = "lobby_shutter.png")]">
+	"}
+
+	html += {"
+		<div class="logo">
+			<img src="[SSassets.transport.get_asset_url(asset_name = "ss220_logo.png")]">
+		</div>
 	"}
 
 	html += {"<div class="lobby_buttons-center">"}
 	if(!SSticker || SSticker.current_state <= GAME_STATE_PREGAME)
-		html += create_main_button(player, "toggle_ready", "ГОТОВ", player.ready == PLAYER_READY_TO_PLAY ? "good" : "bad")
+		html += create_main_button(player, "toggle_ready", "Готов", player.ready == PLAYER_READY_TO_PLAY ? "good" : "bad")
 	else
-		html += create_main_button(player, "late_join", "ИГРАТЬ")
+		html += create_main_button(player, "late_join", "Играть")
 
-	html += create_main_button(player, "observe", "СЛЕДИТЬ")
-	html += create_main_button(player, "character_setup", "НАСТРОЙКА ПЕРСОНАЖА")
+	html += create_main_button(player, "observe", "Следить")
+	html += create_main_button(player, "character_setup", "Настройка персонажа")
 	html += {"<div class="lobby_element lobby-name"><span id="character_name">[player.client.prefs.read_preference(/datum/preference/name/real_name)]</span></div>"}
 	html += {"</div>"}
 
@@ -77,11 +84,11 @@
 			html += {"
 				<a id="lobby-trait-[number]" class="lobby_button lobby_element" href='byond://?src=[REF(user)];trait_signup=[trait.name];id=[number]'>
 					<div class="toggle">
-						<img class="pixelated indicator trait_active [assigned ? "" : "hidden"]" src="[SSassets.transport.get_asset_url(asset_name = "lobby_active.png")]">
-						<img class="pixelated indicator trait_disabled [!assigned ? "" : "hidden"]" src="[SSassets.transport.get_asset_url(asset_name = "lobby_disabled.png")]">
-						<img class="pixelated indicator" src="[SSassets.transport.get_asset_url(asset_name = "lobby_highlight.png")]">
+						<img class="pixelated default indicator trait_active [assigned ? "" : "hidden"]" src="[SSassets.transport.get_asset_url(asset_name = "lobby_active.png")]">
+						<img class="pixelated default indicator trait_disabled [!assigned ? "" : "hidden"]" src="[SSassets.transport.get_asset_url(asset_name = "lobby_disabled.png")]">
+						<img class="pixelated default indicator" src="[SSassets.transport.get_asset_url(asset_name = "lobby_highlight.png")]">
 					</div>
-					<img class="pixelated" src="[SSassets.transport.get_asset_url(asset_name = "lobby_[traitID].png")]">
+					<img class="pixelated default" src="[SSassets.transport.get_asset_url(asset_name = "lobby_[traitID].png")]">
 					<div class="lobby-tooltip" data-position="left">
 						<span class="lobby-tooltip-title">[trait.name]</span>
 						<span class="lobby-tooltip-content">[trait.button_desc]</span>
@@ -94,7 +101,7 @@
 	html += {"
 		<label class="lobby_element lobby-collapse" for="hide_menu">
 			<span id="collapse" class="lobby-text toggle good">˄</span>
-			<img class="pixelated" src="[SSassets.transport.get_asset_url(asset_name = "lobby_collapse.png")]">
+			<img class="pixelated default" src="[SSassets.transport.get_asset_url(asset_name = "lobby_collapse.png")]">
 		</label>
 	"}
 

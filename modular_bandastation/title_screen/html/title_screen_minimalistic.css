@@ -8,6 +8,8 @@
  */
 body,
 html {
+	display: flex;
+	flex-direction: column;
 	font-family: sans-serif;
 	font-size: 15px;
 	overflow: hidden;
@@ -25,11 +27,6 @@ html {
 img {
 	pointer-events: none;
 	border-style: none;
-}
-
-hr {
-	border: 0;
-	border-bottom: 0.15em solid rgba(255, 255, 255, 0.1);
 }
 
 input,
@@ -70,12 +67,242 @@ input,
 	position: absolute;
 	box-sizing: border-box;
 	bottom: 0;
-	width: 100vw;
+	right: 0;
+	width: 76vw;
 	font-size: 26px;
 	padding: 0.5em 0 0.33em;
 	background-color: rgba(22, 22, 22, 0.85);
 	color: hsl(345, 100%, 70%);
 	border-top: 1px solid rgba(255, 255, 255, 0.1);
+	transition: width 0.2s;
 	backdrop-filter: blur(24px);
 	z-index: 2;
+}
+
+img.default {
+	display: none;
+}
+
+.logo {
+	height: 235px;
+	transform: scale(0.75) translateY(-10px);
+}
+
+/**
+ * MARK: Layout
+ */
+.lobby_wrapper {
+	display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+	width: 20em;
+	height: 100vh;
+}
+
+.lobby_container {
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	box-sizing: border-box;
+	bottom: 0;
+	left: 0;
+	width: 20em;
+	height: 100vh;
+	background-color: rgba(22, 22, 22, 0.85);
+	border-right: 1px solid rgba(255, 255, 255, 0.1);
+	box-shadow: 0.5em 0 1.25em rgba(0, 0 ,0, 0.5);
+	transition: transform 0.2s, box-shadow 0.2s;
+	backdrop-filter: blur(24px);
+	z-index: 3;
+}
+
+.lobby_buttons-center {
+	overflow: hidden;
+	padding-top: 5.5em;
+}
+
+/**
+ * MARK: Separators
+ */
+.lobby_buttons-bottom:before,
+.lobby_buttons-right:before {
+	content: '';
+    display: block;
+    height: 1px;
+    width: 100%;
+    margin: 0.5em 0;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/**
+ * MARK: Buttons
+ */
+a.lobby_element {
+	display: block;
+	overflow: hidden;
+	position: relative;
+	font-size: 1.35rem;
+	text-align: left;
+	text-decoration: none;
+	box-sizing: border-box;
+	width: 95%;
+	margin-bottom: 0.25em;
+	padding: 0.25em 0.25em 0.25em 0.5em;
+	color: #898989;
+	border: 1px solid transparent;
+	border-radius: 0 0.25em 0.25em 0;
+	transition: color 0.2s, background-color 0.2s, border-color 0.2s;
+	-webkit-user-drag: none;
+}
+
+a.lobby_element:after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 2px;
+	height: 100%;
+	background-color: #d4dfec;
+	transform: scaleY(0);
+	transform-origin: center;
+	transition: transform 0.2s, background-color 0.2s;
+}
+
+a.lobby_element:hover {
+	background-color: rgba(255, 255, 255, 0.075);
+	color: #d4dfec;
+}
+
+a.lobby_element:hover:after {
+	transform: scaleY(1);
+}
+
+.bad {
+	color: hsl(345, 100%, 70%) !important;
+}
+
+a.lobby_element.bad:before {
+	content: '\f0c8';
+	font-family: 'Font Awesome 6 Free';
+	font-style: normal;
+    font-weight: 400;
+	margin: 0 0.25em 0 0.1em;
+}
+
+a.lobby_element.bad:after {
+	background-color: hsl(345, 100%, 70%);
+}
+
+.good {
+	color: hsl(140, 100%, 70%) !important;
+}
+
+a.lobby_element.good:after {
+	background-color: hsl(140, 100%, 70%);
+}
+
+a.lobby_element.good:before {
+	content: '\f14a';
+	font-family: 'Font Awesome 6 Free';
+	font-style: normal;
+    font-weight: 400;
+	margin: 0 0.25em 0 0.1em;
+}
+
+/**
+ * MARK: Admin buttons
+ */
+.lobby_buttons-right .lobby_element:hover {
+	color: #f5b52b;
+}
+
+.lobby_buttons-right .lobby_element:after {
+	background-color: #f5b52b;
+}
+
+/**
+ * MARK: Character info
+ */
+.lobby-name {
+	position: absolute;
+	top: 0;
+	display: flex;
+	flex-direction: column;
+	box-sizing: border-box;
+	font-size: 1.2rem;
+	font-weight: bold;
+	text-align: right;
+	width: 100%;
+	padding: 0.5em 0.75em;
+	background-color: rgba(255, 255, 255, 0.05);
+	color: #d4dfec;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+	border-top: 1px solid rgba(255, 255, 255, 0.1);
+	box-shadow: 0 0.25em 1em rgba(0, 0, 0, 0.5);
+}
+
+.lobby-name:before {
+	content: 'На смену прибывает...';
+	font-weight: normal;
+	text-align: left;
+	font-size: 1.1rem;
+	margin: 0;
+	color: #898989;
+}
+
+#character_name {
+	margin-top: 0.25em;
+}
+
+/**
+ * MARK: Collapse button
+ */
+.lobby-collapse {
+	cursor: pointer;
+	position: absolute;
+	right: 0;
+	display: flex;
+	justify-content: center;
+    align-items: center;
+	height: 3.5rem;
+    width: 3.5rem;
+	background-color: rgba(22, 22, 22, 0.85);
+	color: rgba(255, 255, 255, 0.5);
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	border-left-color: transparent;
+	transform: translateX(100%);
+	transition: color 0.2s;
+}
+
+.lobby-collapse:hover {
+	color: rgba(255, 255, 255, 0.75);
+}
+
+.lobby-collapse:before {
+	content: '\f100';
+	font-family: 'Font Awesome 6 Free';
+	font-style: normal;
+    font-weight: 900;
+	transform: scale(1.33);
+	transition: transform 0.2s;
+}
+
+#collapse {
+	display: none;
+}
+
+/**
+ * MARK: Checkbox handling
+ */
+#hide_menu:checked ~ .lobby_wrapper .lobby_container {
+	transform: translateX(-100%);
+	box-shadow: none;
+}
+
+#hide_menu:checked ~ #container_notice {
+	width: 100vw;
+}
+
+#hide_menu:checked ~ .lobby_wrapper .lobby_container .lobby-collapse:before {
+	transform: scale(1.33) rotate(180deg);
 }

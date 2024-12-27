@@ -146,11 +146,6 @@ img {
 	border-style: none;
 }
 
-hr {
-	border: 0;
-	border-bottom: 0.15em solid rgba(255, 255, 255, 0.1);
-}
-
 input,
 .hidden {
 	display: none !important;
@@ -245,6 +240,10 @@ input,
 	transform: translate(3.8px, 53.5px) scale(1.75, 0.75);
 }
 
+.logo {
+	display: none;
+}
+
 /**
  * MARK: Positioning
  */
@@ -268,6 +267,7 @@ input,
 
 .lobby_buttons-center {
 	top: 8px;
+	text-transform: uppercase;
 }
 
 .lobby_buttons-bottom {
@@ -370,6 +370,7 @@ input,
 	align-items: center;
 	vertical-align: middle;
 	justify-content: center;
+	text-transform: none;
 	top: -1px;
 	height: 18px;
 	width: 110px;

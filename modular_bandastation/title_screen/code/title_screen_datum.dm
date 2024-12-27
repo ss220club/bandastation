@@ -51,7 +51,7 @@ GLOBAL_LIST_INIT(available_lobby_styles, list(
 	return {"
 		<a class="lobby_element lobby-[href] [advanced_classes]" href='byond://?src=[REF(user)];[href]=1'>
 			<span class="lobby-text">[text]</span>
-			<img class="pixelated" src="[SSassets.transport.get_asset_url(asset_name = "lobby_[href].png")]">
+			<img class="pixelated default" src="[SSassets.transport.get_asset_url(asset_name = "lobby_[href].png")]">
 		</a>
 	"}
 
@@ -59,9 +59,9 @@ GLOBAL_LIST_INIT(available_lobby_styles, list(
 	return {"
 		<a class="lobby_button lobby_element lobby-[href] [!enabled ? "disabled" : ""]" href='byond://?src=[REF(user)];[enabled ? href : ""]=1'>
 			<div class="toggle">
-				<img class="pixelated indicator [!enabled ? "disabled" : ""]" src="[SSassets.transport.get_asset_url(asset_name = "lobby_[enabled ? "highlight" : "disabled"].png")]">
+				<img class="pixelated default indicator [!enabled ? "disabled" : ""]" src="[SSassets.transport.get_asset_url(asset_name = "lobby_[enabled ? "highlight" : "disabled"].png")]">
 			</div>
-			<img class="pixelated" src="[SSassets.transport.get_asset_url(asset_name = "lobby_[href].png")]">
+			<img class="pixelated default" src="[SSassets.transport.get_asset_url(asset_name = "lobby_[href].png")]">
 			[tooltip ? {"
 			<div class="lobby-tooltip" data-position="[tooltip_position]">
 				<span class="lobby-tooltip-content">[tooltip]</span>
