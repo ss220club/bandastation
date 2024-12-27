@@ -182,12 +182,12 @@ a.lobby_element:hover:after {
 	color: hsl(345, 100%, 70%) !important;
 }
 
-a.lobby_element.bad:before {
+a.lobby_element.bad .lobby-text:before {
 	content: '\f0c8';
 	font-family: 'Font Awesome 6 Free';
 	font-style: normal;
     font-weight: 400;
-	margin: 0 0.25em 0 0.1em;
+	margin-right: 0.33em;
 }
 
 a.lobby_element.bad:after {
@@ -202,12 +202,12 @@ a.lobby_element.good:after {
 	background-color: hsl(140, 100%, 70%);
 }
 
-a.lobby_element.good:before {
+a.lobby_element.good .lobby-text:before {
 	content: '\f14a';
 	font-family: 'Font Awesome 6 Free';
 	font-style: normal;
     font-weight: 400;
-	margin: 0 0.25em 0 0.1em;
+	margin-right: 0.33em;
 }
 
 /**
