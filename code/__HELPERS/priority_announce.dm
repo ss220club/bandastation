@@ -49,8 +49,10 @@
 			return
 
 	var/list/announcement_strings = list()
+	var/sound_TTS = TRUE /// SS220 TTS ADD
 
 	if(!sound)
+		sound_TTS = FALSE /// SS220 TTS ADD
 		sound = SSstation.announcer.get_rand_alert_sound()
 	else if(SSstation.announcer.event_sounds[sound])
 		sound = SSstation.announcer.event_sounds[sound]
@@ -73,6 +75,7 @@
 
 	///If the announcer overrides alert messages, use that message.
 	if(SSstation.announcer.custom_alert_message && !has_important_message)
+		sound_TTS = FALSE /// SS220 TTS ADD
 		announcement_strings += MAJOR_ANNOUNCEMENT_TEXT(SSstation.announcer.custom_alert_message)
 	else
 		announcement_strings += MAJOR_ANNOUNCEMENT_TEXT(text)
@@ -83,7 +86,7 @@
 	else
 		finalized_announcement = CHAT_ALERT_DEFAULT_SPAN(jointext(announcement_strings, ""))
 
-	dispatch_announcement_to_players(finalized_announcement, players, sound)
+	dispatch_announcement_to_players(finalized_announcement, players, sound, sound_TTS = sound_TTS) // SS220 TTS EDIT
 
 	if(isnull(sender_override) && players == GLOB.player_list)
 		if(length(title) > 0)
@@ -186,7 +189,7 @@
 
 /// Proc that just dispatches the announcement to our applicable audience. Only the announcement is a mandatory arg.
 /// `should_play_sound` can also be a callback, if you want to only play the sound to specific players.
-/proc/dispatch_announcement_to_players(announcement, list/players = GLOB.player_list, sound_override = null, should_play_sound = TRUE)
+/proc/dispatch_announcement_to_players(announcement, list/players = GLOB.player_list, sound_override = null, should_play_sound = TRUE, sound_TTS = TRUE)
 	var/sound_to_play = !isnull(sound_override) ? sound_override : 'sound/announcer/notice/notice2.ogg'
 
 	// note for later: low-hanging fruit to convert to astype() behind an experiment define whenever the 516 beta releases
@@ -207,17 +210,18 @@
 			SEND_SOUND(target, sound(sound_to_play))
 
 			/// SS220 TTS START
-			var/mob/living/silicon/ai/active_ai = DEFAULTPICK(active_ais(TRUE, null), null)
-			var/datum/tts_seed/announcement_tts_seed = active_ai ? active_ai.get_tts_seed() : /datum/tts_seed/silero/glados
-			INVOKE_ASYNC(
-				SStts220, \
-				TYPE_PROC_REF(/datum/controller/subsystem/tts220, get_tts), \
-				null, \
-				target, \
-				announcement, \
-				announcement_tts_seed, \
-				FALSE, \
-			)
+			if(sound_TTS)
+				var/mob/living/silicon/ai/active_ai = DEFAULTPICK(active_ais(TRUE, null), null)
+				var/datum/tts_seed/announcement_tts_seed = active_ai ? active_ai.get_tts_seed() : /datum/tts_seed/silero/glados
+				INVOKE_ASYNC(
+					SStts220, \
+					TYPE_PROC_REF(/datum/controller/subsystem/tts220, get_tts), \
+					null, \
+					target, \
+					announcement, \
+					announcement_tts_seed, \
+					FALSE, \
+				)
 			/// SS220 TTS END
 
 #undef MAJOR_ANNOUNCEMENT_TITLE
