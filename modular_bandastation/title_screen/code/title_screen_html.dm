@@ -58,12 +58,6 @@
 	html += create_icon_button(player, "wiki", "Перейти на вики")
 	html += {"</div>"}
 
-	html += {"<div id="lobby_admin" class="lobby_buttons-right invisible">"}
-	html += create_icon_button(player, "picture", "Сменить изображение", "right")
-	html += create_icon_button(player, "notice", "Оставить уведомление", "right")
-	html += create_icon_button(player, "css", "Заменить CSS лобби", "right")
-	html += {"</div>"}
-
 	if(length(GLOB.lobby_station_traits))
 		html += {"<div class="lobby_buttons-left">"}
 
@@ -97,6 +91,12 @@
 			"}
 
 		html += {"</div>"}
+
+	html += {"<div id="lobby_admin" class="lobby_buttons-right invisible">"}
+	html += create_icon_button(player, "picture", "Сменить изображение", "right")
+	html += create_icon_button(player, "notice", "Оставить уведомление", "right")
+	html += create_icon_button(player, "css", "Заменить CSS лобби", "right")
+	html += {"</div>"}
 
 	html += {"
 		<label class="lobby_element lobby-collapse" for="hide_menu">
@@ -139,6 +139,7 @@
 			function job_sign(assign, id) {
 				/* I FUCKING HATE IE */
 				let traitID;
+				let trait_link;
 				let trait_active;
 				let trait_disabled;
 
@@ -156,15 +157,18 @@
 					return
 				}
 
-				trait_active = document.getElementById(traitID).querySelector(".trait_active");
-				trait_disabled = document.getElementById(traitID).querySelector(".trait_disabled");
+				trait_link = document.getElementById(traitID);
+				trait_active = trait_link.querySelector(".trait_active");
+				trait_disabled = trait_link.querySelector(".trait_disabled");
 
 				if(assign === "true") {
 					trait_active.classList.remove("hidden");
 					trait_disabled.classList.add("hidden");
+					trait_link.classList.add("active");
 				} else {
 					trait_active.classList.add("hidden");
 					trait_disabled.classList.remove("hidden");
+					trait_link.classList.remove("active");
 				}
 			}
 

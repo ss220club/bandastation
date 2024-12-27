@@ -124,8 +124,9 @@ img.default {
 /**
  * MARK: Separators
  */
+.lobby_buttons-right:before,
 .lobby_buttons-bottom:before,
-.lobby_buttons-right:before {
+.lobby_buttons-left:before {
 	content: '';
     display: block;
     height: 1px;
@@ -207,6 +208,70 @@ a.lobby_element.good:before {
 	font-style: normal;
     font-weight: 400;
 	margin: 0 0.25em 0 0.1em;
+}
+
+/**
+ * MARK: Traits
+ */
+.lobby_buttons-left a.lobby_element {
+	overflow: visible;
+}
+
+.lobby_buttons-left .lobby-tooltip .lobby-tooltip-title {
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.lobby_buttons-left .lobby-tooltip .lobby-tooltip-content {
+	opacity: 0;
+	pointer-events: none;
+	position: absolute;
+    right: 0;
+	width: 30vw;
+	padding: 0.25em 0.5em;
+	background-color: rgba(22, 22, 22, 0.85);
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	border-radius: 0.25em;
+	box-shadow: 0.5em 0 1.25em rgba(0, 0 ,0, 0.5);
+    transform: translate(107.5%, -0.33em);
+	transition: opacity 0.2s;
+}
+
+.lobby_buttons-left a.lobby_element:hover .lobby-tooltip .lobby-tooltip-content {
+	opacity: 1;
+	transition-delay: 0.75s;
+}
+
+.lobby_buttons-left a.lobby_element:after {
+	background-color: hsl(345, 100%, 70%);
+}
+
+.lobby_buttons-left a.lobby_element.active:after {
+	background-color: hsl(140, 100%, 70%);
+}
+
+.lobby_buttons-left .lobby_element .lobby-tooltip .lobby-tooltip-title {
+	color: hsl(345, 100%, 70%);
+}
+
+.lobby_buttons-left .lobby_element .lobby-tooltip .lobby-tooltip-title:before {
+	content: '\f0c8';
+	font-family: 'Font Awesome 6 Free';
+	font-style: normal;
+    font-weight: 400;
+	margin-right: 0.33em;
+}
+
+.lobby_buttons-left .lobby_element.active .lobby-tooltip .lobby-tooltip-title {
+	color: hsl(140, 100%, 70%);
+}
+
+.lobby_buttons-left .lobby_element.active .lobby-tooltip .lobby-tooltip-title:before {
+	content: '\f14a';
+	font-family: 'Font Awesome 6 Free';
+	font-style: normal;
+    font-weight: 400;
+	margin-right: 0.33em;
 }
 
 /**
