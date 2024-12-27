@@ -115,10 +115,6 @@
 				request.send();
 			}
 
-			function throw_runtime(message) {
-				call_byond("runtime", message);
-			}
-
 			let ready_int = 0;
 			const readyID = document.querySelector(".lobby-toggle_ready");
 			const ready_class = \[ "bad", "good" \];
@@ -217,26 +213,24 @@
 			}
 
 			let attempts = 0;
-			const maxAttempts = 3;
+			const maxAttempts = 10;
 			function fix_image() {
 				const img = new Image();
 				img.src = image_src;
 				if(img.naturalWidth === 0 || img.naturalHeight === 0) {
 					if(attempts === maxAttempts) {
 						attempts = 0;
-						throw_runtime("Изображение не получилось загрузить");
+						call_byond("runtime", message);
 						return;
 					}
 
 					attempts++;
 					setTimeout(function() {
-						throw_runtime("Изображение не загрузилось с первого раза, попытка " + attempts + " из " + maxAttempts);
 						fix_image();
 					}, 1000);
 				} else {
 					attempts = 0;
 					image_container.src = image_src;
-					throw_runtime("Фикс изображения помог с первого раза");
 					return;
 				}
 			}
