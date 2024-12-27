@@ -326,6 +326,7 @@ a.lobby_element.good .lobby-text:before {
 .lobby-collapse {
 	cursor: pointer;
 	position: absolute;
+	top: 0;
 	right: 0;
 	display: flex;
 	justify-content: center;
@@ -336,7 +337,7 @@ a.lobby_element.good .lobby-text:before {
 	color: rgba(255, 255, 255, 0.5);
 	border: 1px solid rgba(255, 255, 255, 0.1);
 	border-left-color: transparent;
-	transform: translateX(100%);
+	transform: translateX(101%);
 	transition: color 0.2s;
 }
 
