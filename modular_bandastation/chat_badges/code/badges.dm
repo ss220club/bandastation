@@ -6,18 +6,24 @@ GLOBAL_LIST(badge_icons_cache)
 	var/icon/donator_badge_icon = get_badge_icon(get_donator_badge())
 	var/icon/worker_badge_icon = get_badge_icon(get_worker_badge())
 
-	var/badge_part = "[donator_badge_icon ? icon2base64html(donator_badge_icon) : ""]<div style='display: inline-block; width: 3px;'></div>[worker_badge_icon ? icon2base64html(worker_badge_icon) : ""]"
+	var/list/badge_parts = list()
+	if(donator_badge_icon)
+		badge_parts += icon2base64html(donator_badge_icon)
+
+	if(worker_badge_icon)
+		badge_parts += icon2base64html(worker_badge_icon)
+
 	var/list/parts = list()
-	if(badge_part)
-		parts += badge_part
+	if(length(badge_parts))
+		parts += badge_parts
 	parts += "<font color='[prefs.read_preference(/datum/preference/color/ooc_color) || GLOB.normal_ooc_colour]'>[key]</font>"
-	return jointext(parts, " ")
+	return jointext(parts, "<div style='display: inline-block; width: 3px;'></div>")
 
 /client/proc/get_donator_badge()
 	if(prefs.unlock_content && (prefs.toggles & MEMBER_PUBLIC))
 		return "ByondMember"
 
-	if(donator_level)
+	if(donator_level && prefs.read_preference(/datum/preference/toggle/donor_public))
 		return "Tier_[min(donator_level, 4)]"
 
 /client/proc/get_worker_badge()
@@ -53,3 +59,9 @@ GLOBAL_LIST(badge_icons_cache)
 	return badge_icon
 
 #undef CHAT_BADGES_DMI
+
+/datum/preference/toggle/donor_public
+	category = PREFERENCE_CATEGORY_GAME_PREFERENCES
+	default_value = TRUE
+	savefile_key = "donor_public"
+	savefile_identifier = PREFERENCE_PLAYER
