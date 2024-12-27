@@ -219,8 +219,10 @@ a.lobby_element.good .lobby-text:before {
 }
 
 .lobby_buttons-left .lobby-tooltip .lobby-tooltip-title {
+	display: block;
 	overflow: hidden;
 	text-overflow: ellipsis;
+	white-space: nowrap;
 }
 
 .lobby_buttons-left .lobby-tooltip .lobby-tooltip-content {
@@ -256,10 +258,13 @@ a.lobby_element.good .lobby-text:before {
 }
 
 .lobby_buttons-left .lobby_element .lobby-tooltip .lobby-tooltip-title:before {
+	display: inline-block;
+	width: 22px;
 	content: '\f0c8';
 	font-family: 'Font Awesome 6 Free';
-	font-style: normal;
     font-weight: 400;
+	text-align: center;
+	font-style: normal;
 	margin-right: 0.33em;
 }
 
@@ -268,10 +273,13 @@ a.lobby_element.good .lobby-text:before {
 }
 
 .lobby_buttons-left .lobby_element.active .lobby-tooltip .lobby-tooltip-title:before {
+	display: inline-block;
+	width: 22px;
 	content: '\f14a';
 	font-family: 'Font Awesome 6 Free';
-	font-style: normal;
     font-weight: 400;
+	text-align: center;
+	font-style: normal;
 	margin-right: 0.33em;
 }
 
@@ -284,6 +292,57 @@ a.lobby_element.good .lobby-text:before {
 
 .lobby_buttons-right .lobby_element:after {
 	background-color: #f5b52b;
+}
+
+/**
+ * MARK: Font Awesome
+ */
+.lobby_buttons-center .lobby_element .lobby-text:before,
+.lobby_buttons-right .lobby_element .lobby-tooltip .lobby-tooltip-content:before,
+.lobby_buttons-bottom .lobby_element .lobby-tooltip .lobby-tooltip-content:before {
+	display: inline-block;
+	width: 22px;
+	text-align: center;
+	font-family: 'Font Awesome 6 Free';
+	font-style: normal;
+    font-weight: 900;
+	margin-right: 0.33em;
+}
+
+.lobby-observe .lobby-text:before {
+	content: '\f6e2';
+}
+
+.lobby-character_setup .lobby-text:before {
+	content: '\e548';
+}
+
+.lobby-changelog .lobby-tooltip .lobby-tooltip-content:before {
+	content: '\f70e';
+}
+
+.lobby-settings .lobby-tooltip .lobby-tooltip-content:before {
+	content: '\f013';
+}
+
+.lobby-manifest .lobby-tooltip .lobby-tooltip-content:before {
+	content: '\f46d';
+}
+
+.lobby-wiki .lobby-tooltip .lobby-tooltip-content:before {
+	content: '\f02d';
+}
+
+.lobby-picture .lobby-tooltip .lobby-tooltip-content:before {
+	content: '\f03e';
+}
+
+.lobby-notice .lobby-tooltip .lobby-tooltip-content:before {
+	content: '\f06a';
+}
+
+.lobby-css .lobby-tooltip .lobby-tooltip-content:before {
+	content: '\f1c9';
 }
 
 /**
