@@ -32,7 +32,7 @@
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/digitigrade/tajaran,
 	)
 
-	coldmod = 0.6
+	coldmod = 0.7
 	heatmod = 1.3
 	payday_modifier = 0.9
 	bodytemp_heat_damage_limit = BODYTEMP_HEAT_DAMAGE_LIMIT + 30
