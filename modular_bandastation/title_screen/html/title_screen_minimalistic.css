@@ -8,8 +8,6 @@
  */
 body,
 html {
-	display: flex;
-	flex-direction: column;
 	font-family: sans-serif;
 	font-size: 15px;
 	overflow: hidden;
@@ -63,12 +61,20 @@ input,
 	z-index: 0;
 }
 
+img.default {
+	display: none;
+}
+
+.logo {
+	height: 235px;
+	transform: scale(0.75) translateY(-10px);
+}
+
 #container_notice {
 	position: absolute;
-	box-sizing: border-box;
 	bottom: 0;
 	right: 0;
-	width: 76vw;
+	width: calc(100vw - 20rem);
 	font-size: 26px;
 	font-family: Pix Cyrillic;
 	padding: 0.5em 0 0.33em;
@@ -80,34 +86,11 @@ input,
 	z-index: 2;
 }
 
-img.default {
-	display: none;
-}
-
-.logo {
-	height: 235px;
-	transform: scale(0.75) translateY(-10px);
-}
-
 /**
  * MARK: Layout
  */
 .lobby_wrapper {
-	display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-	width: 20em;
-	height: 100vh;
-}
-
-.lobby_container {
-	display: flex;
-	flex-direction: column;
-	position: absolute;
-	box-sizing: border-box;
-	bottom: 0;
-	left: 0;
-	width: 20em;
+    width: 20rem;
 	height: 100vh;
 	background-color: rgba(22, 22, 22, 0.85);
 	border-right: 1px solid rgba(255, 255, 255, 0.1);
@@ -146,7 +129,6 @@ a.lobby_element {
 	font-size: 1.35rem;
 	text-align: left;
 	text-decoration: none;
-	box-sizing: border-box;
 	width: 95%;
 	margin-bottom: 0.25em;
 	padding: 0.25em 0.25em 0.25em 0.5em;
@@ -357,7 +339,6 @@ a.lobby_element.good .lobby-text:before {
 	top: 0;
 	display: flex;
 	flex-direction: column;
-	box-sizing: border-box;
 	font-size: 1.2rem;
 	font-weight: bold;
 	text-align: right;
@@ -424,15 +405,15 @@ a.lobby_element.good .lobby-text:before {
 /**
  * MARK: Checkbox handling
  */
-#hide_menu:checked ~ .lobby_wrapper .lobby_container {
+#hide_menu:checked ~ .lobby_wrapper {
 	transform: translateX(-100%);
 	box-shadow: none;
 }
 
-#hide_menu:checked ~ #container_notice {
-	width: 100vw;
-}
-
 #hide_menu:checked ~ .lobby_wrapper .lobby_container .lobby-collapse:before {
 	transform: scale(1.33) rotate(180deg);
+}
+
+#hide_menu:checked ~ #container_notice {
+	width: 100vw;
 }
