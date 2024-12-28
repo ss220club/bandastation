@@ -198,7 +198,7 @@ export const vulpkanin_tail_markings_color: Feature<string> = {
 
 // MARK: Tajaran features
 export const feature_tajaran_tail: FeatureChoiced = {
-  name: 'Таярский хвост',
+  name: 'Хвост',
   component: (
     props: FeatureValueProps<string, string, FeatureChoicedServerData>,
   ) => {
@@ -240,7 +240,7 @@ export const tajaran_facial_hair_color: Feature<string> = {
 };
 
 export const feature_tajaran_tail_markings: FeatureChoiced = {
-  name: 'Таярский хвост - узор',
+  name: 'Хвост - узор',
   component: (
     props: FeatureValueProps<string, string, FeatureChoicedServerData>,
   ) => {
@@ -249,6 +249,6 @@ export const feature_tajaran_tail_markings: FeatureChoiced = {
 };
 
 export const tajaran_tail_markings_color: Feature<string> = {
-  name: 'Таярский хвост - цвет узора',
+  name: 'Хвост - цвет узора',
   component: FeatureColorInput,
 };
