@@ -154,8 +154,7 @@
 	background_icon_state = "frame"
 	var/active = FALSE
 
-//Тут наверняка что-то не так..
-/datum/action/cooldown/night_eyes/Trigger(trigger_flags)
+/datum/action/cooldown/night_eyes/Trigger(trigger_flags, /atom/target)
 	var/obj/item/organ/eyes/tajaran/eyes = owner.get_organ_by_type(/obj/item/organ/eyes/tajaran)
 	if(!istype(eyes))
 		return
