@@ -1,6 +1,7 @@
 #define GET_ATOM_SHIFF_FINGERPRINTS(atom) atom.forensics?.fingerprints
 #define GET_ATOM_SHIFF_BLOOD_DNA(atom) atom.forensics?.blood_DNA
 
+// MARK: Vulpkanin skills
 /datum/action/cooldown/sniff
 	name = "Вынюхать"
 	desc = "Вы обнюхиваете предмет и определяете, кто с ним взаимодействовал. Также, вы можете запомнить запах определённого человека, обнюхав его."
