@@ -93,7 +93,7 @@
  * Adds a notice to the main title screen in the form of big red text!
  */
 /datum/controller/subsystem/title/proc/set_notice(new_notice)
-	notice = sanitize_text(new_notice) || null
+	notice = emoji_parse(sanitize_text(new_notice)) || null
 	title_output_to_all(notice, "update_notice")
 
 /**

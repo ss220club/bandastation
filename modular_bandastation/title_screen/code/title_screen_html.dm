@@ -5,6 +5,7 @@
  */
 /datum/title_screen/proc/get_title_html(client/viewer, mob/user, styles)
 	var/screen_image_url = SSassets.transport.get_asset_url(asset_cache_item = screen_image)
+	var/datum/asset/spritesheet/sheet = get_asset_datum(/datum/asset/spritesheet/chat)
 	var/mob/dead/new_player/player = user
 	var/list/html = list()
 	html += {"
@@ -15,6 +16,7 @@
 			<meta http-equiv="X-UA-Compatible" content="IE=edge">
 			<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 			<link rel='stylesheet' type='text/css' href='[SSassets.transport.get_asset_url(asset_name = "font-awesome.css")]'>
+			[sheet.css_tag()]
 			<style type='text/css'>
 				[file2text(styles)]
 			</style>
@@ -181,10 +183,10 @@
 			function update_notice(notice) {
 				if(notice === undefined) {
 					notice_container.classList.add("hidden");
-					notice_container.textContent = "";
+					notice_container.innerHTML = "";
 				} else {
 					notice_container.classList.remove("hidden");
-					notice_container.textContent = notice;
+					notice_container.innerHTML = notice;
 				}
 			}
 

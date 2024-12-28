@@ -36,7 +36,7 @@ ADMIN_VERB(change_title_screen_notice, R_FUN, "Title Screen: Set Notice", ADMIN_
 	message_admins("Title Screen: [key_name_admin(usr)] setted the title screen notice, which contains: [new_notice]")
 
 	for(var/mob/dead/new_player/new_player as anything in GLOB.new_player_list)
-		to_chat(new_player, span_boldannounce(announce_text))
+		to_chat(new_player, span_boldannounce(emoji_parse(announce_text)))
 		SEND_SOUND(new_player,  sound('sound/mobs/humanoids/moth/scream_moth.ogg'))
 
 /**
