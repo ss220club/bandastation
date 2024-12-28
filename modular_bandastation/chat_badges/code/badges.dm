@@ -24,7 +24,7 @@ GLOBAL_LIST(badge_icons_cache)
 		return "ByondMember"
 
 	if(donator_level && prefs.read_preference(/datum/preference/toggle/donor_public))
-		return "Tier_[min(donator_level, 4)]"
+		return "Tier_[min(donator_level, 5)]"
 
 /client/proc/get_worker_badge()
 	var/static/list/rank_badge_map = list(
