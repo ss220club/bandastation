@@ -54,6 +54,7 @@
 #include "code\__DEFINES\blend_modes.dm"
 #include "code\__DEFINES\blob_defines.dm"
 #include "code\__DEFINES\blood.dm"
+#include "code\__DEFINES\bloodsuckers.dm"
 #include "code\__DEFINES\bodyparts.dm"
 #include "code\__DEFINES\botany.dm"
 #include "code\__DEFINES\callbacks.dm"
@@ -6519,6 +6520,7 @@
 #include "interface\fonts\spess_font.dm"
 #include "interface\fonts\tiny_unicode.dm"
 #include "interface\fonts\vcr_osd_mono.dm"
+#include "modular_bandastation\blood_suckers\_blood_suckers.dm"
 // END_INCLUDE
 
 // BANDASTATION
