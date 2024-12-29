@@ -29,7 +29,7 @@
 	if(broke_masquerade)
 		return
 	owner.current.playsound_local(null, 'modular_bandastation/blood_suckers/sound/lunge_warn.ogg', 100, FALSE, pressure_affected = FALSE)
-	to_chat(owner.current, span_cultboldtalic("You have broken the Masquerade!"))
+	to_chat(owner.current, ("You have broken the Masquerade!"))
 	to_chat(owner.current, span_warning("Bloodsucker Tip: When you break the Masquerade, you become open for termination by fellow Bloodsuckers, and your Vassals are no longer completely loyal to you, as other Bloodsuckers can steal them for themselves!"))
 	broke_masquerade = TRUE
 	antag_hud_name = "masquerade_broken"
@@ -40,7 +40,7 @@
 /datum/antagonist/bloodsucker/proc/fix_masquerade(mob/admin)
 	if(!broke_masquerade)
 		return
-	to_chat(owner.current, span_cultboldtalic("You have re-entered the Masquerade."))
+	to_chat(owner.current, ("You have re-entered the Masquerade."))
 	broke_masquerade = FALSE
 
 /datum/antagonist/bloodsucker/proc/give_masquerade_infraction()
@@ -50,7 +50,7 @@
 	if(masquerade_infractions >= 3)
 		break_masquerade()
 	else
-		to_chat(owner.current, span_cultbold("You violated the Masquerade! Break the Masquerade [3 - masquerade_infractions] more times and you will become a criminal to the Bloodsucker's Cause!"))
+		to_chat(owner.current, ("You violated the Masquerade! Break the Masquerade [3 - masquerade_infractions] more times and you will become a criminal to the Bloodsucker's Cause!"))
 
 /datum/antagonist/bloodsucker/proc/RankUp()
 	if(!owner || !owner.current || IS_FAVORITE_VASSAL(owner.current))
