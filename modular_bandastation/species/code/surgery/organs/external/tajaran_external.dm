@@ -2,9 +2,7 @@
 /obj/item/organ/tail/tajaran
 	name = "tajaran tail"
 	preference = "feature_tajaran_tail"
-
 	bodypart_overlay = /datum/bodypart_overlay/mutant/tail/tajaran
-
 	wag_flags = WAG_ABLE
 	dna_block = DNA_TAJARAN_TAIL
 	var/datum/bodypart_overlay/mutant/tajaran_tail_markings/tail_markings_overlay

@@ -1,5 +1,5 @@
 /datum/species/tajaran
-	name = "\improper Таяра"
+	name = "\improper Таяран"
 	plural_form = "Таяры"
 	id = SPECIES_TAJARAN
 	inherent_traits = list(
@@ -64,7 +64,7 @@
 	Существует заметный половой диморфизм между женскими и мужскими особями в пользу мужских и, в зависимости от подрасы, рост взрослых таяран, за исключением подрасы Жан-Хазан. \
 	В ходе взросления не выходит за пределы от 135 до 170 см, а вес варьируется в передах от 30 до 65 кг.  \
 	Длинный хвост, составляющий 4/5 от роста, выполняет функцию балансира при передвижениях. \
-	Тело почти полностью покрыто густой шерстью, некоторые особи имеют заметную гриву вдоль затылка и височных областей головы. "
+	Тело почти полностью покрыто густой шерстью, некоторые особи имеют заметную гриву вдоль затылка и височных областей головы."
 
 /datum/species/tajaran/get_species_description()
 	return "Вид гуманоидных всеядных млекопитающих, имеющих внешнее сходство с земными кошачьими. Таяры происходят с Адомая, планеты с разнообразным климатом, \
@@ -249,7 +249,6 @@
 
 /obj/item/bodypart/head/get_hair_and_lips_icon(dropped)
 	. = ..()
-
 	var/image_dir = NONE
 	if(dropped)
 		image_dir = SOUTH
@@ -268,5 +267,4 @@
 			facial_hair_overlay = image(sprite_accessory.icon, "m_tajaran_facial_hair_[sprite_accessory.icon_state]_ADJ", -BODY_ADJ_LAYER, image_dir)
 			facial_hair_overlay.color = user.dna.features["furcolor_tajaran_fourth"]
 			. += facial_hair_overlay
-
 	return .

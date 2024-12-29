@@ -16,7 +16,7 @@
 
 /datum/preference/choiced/tajaran_body_markings/icon_for(value)
 	var/static/icon/body
-	if (isnull(body))
+	if(isnull(body))
 		body = icon('icons/blanks/32x32.dmi', "nothing")
 		body.Blend(icon('modular_bandastation/species/icons/mob/species/tajaran/sprite_accessories/body.dmi', "tajaran_chest_m"), ICON_OVERLAY)
 		body.Blend(icon('modular_bandastation/species/icons/mob/species/tajaran/sprite_accessories/body.dmi', "tajaran_l_leg"), ICON_OVERLAY)
@@ -30,7 +30,7 @@
 	var/datum/sprite_accessory/markings = SSaccessories.tajaran_body_markings_list[value]
 	var/icon/icon_with_markings = new(body)
 
-	if (value != "None")
+	if(value != "None")
 		var/icon/body_part_icon = icon(markings.icon, "male_[markings.icon_state]_chest")
 		body_part_icon.Crop(1, 1, 32, 32)
 		body_part_icon.Blend(COLOR_VERY_LIGHT_GRAY, ICON_MULTIPLY)
@@ -94,7 +94,7 @@
 
 /datum/preference/choiced/tajaran_head_markings/icon_for(value)
 	var/static/icon/body
-	if (isnull(body))
+	if(isnull(body))
 		body = icon('icons/blanks/32x32.dmi', "nothing")
 		body.Blend(icon('modular_bandastation/species/icons/mob/species/tajaran/sprite_accessories/body.dmi', "tajaran_head_m"), ICON_OVERLAY)
 		body.Blend(icon('modular_bandastation/species/icons/mob/species/tajaran/sprite_accessories/body.dmi', "tajaran_chest_m"), ICON_OVERLAY)
@@ -109,7 +109,7 @@
 	var/datum/sprite_accessory/markings = SSaccessories.tajaran_head_markings_list[value]
 	var/icon/icon_with_markings = new(body)
 
-	if (value != "None")
+	if(value != "None")
 		var/icon/body_part_icon = icon(markings.icon, "m_tajaran_head_markings_[markings.icon_state]_ADJ")
 		body_part_icon.Crop(1, 1, 32, 32)
 		body_part_icon.Blend(COLOR_VERY_LIGHT_GRAY, ICON_MULTIPLY)
@@ -162,12 +162,12 @@
 /datum/preference/choiced/tajaran_facial_hair/icon_for(value)
 	var/datum/sprite_accessory/markings = SSaccessories.tajaran_facial_hair_list[value]
 	var/static/icon/head_icon
-	if (isnull(head_icon))
+	if(isnull(head_icon))
 		head_icon = icon('modular_bandastation/species/icons/mob/species/tajaran/sprite_accessories/body.dmi', "tajaran_head_m")
 		head_icon.Blend(COLOR_SILVER, ICON_MULTIPLY)
 
 	var/icon/final_icon = new(head_icon)
-	if (!isnull(markings))
+	if(!isnull(markings))
 		ASSERT(istype(markings))
 
 		var/icon/head_accessory_icon = icon(markings.icon, "m_tajaran_facial_hair_[markings.icon_state]_ADJ")
@@ -231,7 +231,7 @@
 	return data
 
 /datum/preference/choiced/tajaran_tail_markings/is_accessible(datum/preferences/preferences)
-	if (!..(preferences))
+	if(!..(preferences))
 		return FALSE
 	var/pref = preferences.read_preference(/datum/preference/choiced/tail_tajaran)
 	return pref == "Long tail" || pref == "Huge tail"
@@ -249,7 +249,7 @@
 	target.dna.features["furcolor_tajaran_third"] = value
 
 /datum/preference/color/tajaran_tail_markings_color/is_accessible(datum/preferences/preferences)
-	if (!..(preferences))
+	if(!..(preferences))
 		return FALSE
 	var/pref = preferences.read_preference(/datum/preference/choiced/tail_tajaran)
 	return (pref == "Long tail" || pref == "Huge tail") && preferences.read_preference(/datum/preference/choiced/tajaran_tail_markings) != "None"
