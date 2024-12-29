@@ -210,71 +210,71 @@
 	icon = 'modular_bandastation/species/icons/mob/species/tajaran/sprite_accessories/hair.dmi'
 
 /datum/sprite_accessory/hair/tajaran/taj_hair_braid
-	name = "Tajaran braid"
+	name = "Tajaran Braid"
 	icon_state = "braid"
 
 /datum/sprite_accessory/hair/tajaran/taj_hair_clean
-	name = "Tajaran clean"
+	name = "Tajaran Clean"
 	icon_state = "clean"
 
 /datum/sprite_accessory/hair/tajaran/taj_hair_bangs
-	name = "Tajaran bangs"
+	name = "Tajaran Bangs"
 	icon_state = "bangs"
 
 /datum/sprite_accessory/hair/tajaran/taj_hair_shaggy
-	name = "Tajaran shaggy"
+	name = "Tajaran Shaggy"
 	icon_state = "shaggy"
 
 /datum/sprite_accessory/hair/tajaran/taj_hair_mohawk
-	name = "Tajaran mohawk"
+	name = "Tajaran Mohawk"
 	icon_state = "mohawk"
 
 /datum/sprite_accessory/hair/tajaran/taj_hair_plait
-	name = "Tajaran plait"
+	name = "Tajaran Plait"
 	icon_state = "plait"
 
 /datum/sprite_accessory/hair/tajaran/taj_hair_straight
-	name = "Tajaran straight"
+	name = "Tajaran Straight"
 	icon_state = "straight"
 
 /datum/sprite_accessory/hair/tajaran/taj_hair_long
-	name = "Tajaran long"
+	name = "Tajaran Long"
 	icon_state = "long"
 
 /datum/sprite_accessory/hair/tajaran/taj_hair_rattail
-	name = "Tajaran rattail"
+	name = "Tajaran Rattail"
 	icon_state = "rattail"
 
 /datum/sprite_accessory/hair/tajaran/taj_hair_spikey
-	name = "Tajaran spikey"
+	name = "Tajaran Spikey"
 	icon_state = "spikey"
 
 /datum/sprite_accessory/hair/tajaran/taj_hair_messy
-	name = "Tajaran messy"
+	name = "Tajaran Messy"
 	icon_state = "messy"
 
 /datum/sprite_accessory/hair/tajaran/taj_hair_ladiesretro
-	name = "Tajaran ladiesretro"
+	name = "Tajaran Ladiesretro"
 	icon_state = "ladiesretro"
 
 /datum/sprite_accessory/hair/tajaran/taj_hair_victory
-	name = "Tajaran victory"
+	name = "Tajaran Victory"
 	icon_state = "victory"
 
 /datum/sprite_accessory/hair/tajaran/taj_hair_bob
-	name = "Tajaran bob"
+	name = "Tajaran Bob"
 	icon_state = "bob"
 
 /datum/sprite_accessory/hair/tajaran/taj_marmalade
-	name = "Tajaran marmalade"
+	name = "Tajaran Marmalade"
 	icon_state = "marmalade"
 
 /datum/sprite_accessory/hair/tajaran/taj_stasy_morning
-	name = "Tajaran Stasy-morning"
+	name = "Tajaran Stasy Morning"
 	icon_state = "stasy_morning"
 
 /datum/sprite_accessory/hair/tajaran/taj_punk_lying
-	name = "Tajaran Punk lying"
+	name = "Tajaran Punk Lying"
 	icon_state = "punk_lying"
 
 /datum/sprite_accessory/hair/tajaran/taj_inari
@@ -322,11 +322,11 @@
 	icon_state = "pigtails"
 
 /datum/sprite_accessory/hair/tajaran/taj_shortovereye
-	name = "Tajaran Short overeye"
+	name = "Tajaran Short Overeye"
 	icon_state = "shortovereye"
 
 /datum/sprite_accessory/hair/tajaran/taj_drillhairextended
-	name = "Tajaran Drill hair extended"
+	name = "Tajaran Drill Hair Extended"
 	icon_state = "drillhairextended"
 
 /datum/sprite_accessory/hair/tajaran/taj_long3
@@ -346,15 +346,15 @@
 	icon_state = "country"
 
 /datum/sprite_accessory/hair/tajaran/taj_ponytail7
-	name = "Tajaran Side ponytail"
+	name = "Tajaran Side Ponytail"
 	icon_state = "ponytail7"
 
 /datum/sprite_accessory/hair/tajaran/taj_spikyponytail
-	name = "Tajaran Spiky ponytail"
+	name = "Tajaran Spiky Ponytail"
 	icon_state = "spikyponytail"
 
 /datum/sprite_accessory/hair/tajaran/taj_overeyetwo
-	name = "Tajaran Overeye-two"
+	name = "Tajaran Overeye Alt."
 	icon_state = "overeyetwo"
 
 /datum/sprite_accessory/hair/tajaran/taj_allthefuzz

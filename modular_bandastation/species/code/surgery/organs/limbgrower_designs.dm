@@ -1,5 +1,5 @@
 /datum/design/vulp_tail
-	name = "Vulpkanin tail"
+	name = "Vulpkanin Tail"
 	id = "vulptail"
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/c2/synthflesh = 20)
@@ -7,7 +7,7 @@
 	category = list(RND_CATEGORY_LIMBS_OTHER)
 
 /datum/design/vulp_tongue
-	name = "Vulpkanin tongue"
+	name = "Vulpkanin Tongue"
 	id = "vulptongue"
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/c2/synthflesh = 10)
@@ -15,7 +15,7 @@
 	category = list(RND_CATEGORY_LIMBS_OTHER)
 
 /datum/design/taj_tail
-	name = "Tajaran tail"
+	name = "Tajaran Tail"
 	id = "tajtail"
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/c2/synthflesh = 20)
@@ -23,7 +23,7 @@
 	category = list(RND_CATEGORY_LIMBS_OTHER)
 
 /datum/design/taj_tongue
-	name = "Tajaran tongue"
+	name = "Tajaran Tongue"
 	id = "tajtongue"
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/c2/synthflesh = 10)
