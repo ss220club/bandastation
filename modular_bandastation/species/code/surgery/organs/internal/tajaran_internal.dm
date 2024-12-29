@@ -29,7 +29,7 @@
 	add_verb(owner, /mob/living/carbon/human/species/tajaran/proc/emote_purr)
 	add_verb(owner, /mob/living/carbon/human/species/tajaran/proc/emote_pur)
 	add_verb(owner, /mob/living/carbon/human/species/tajaran/proc/emote_purrr)
-	add_verb(owner, /mob/living/carbon/human/species/tajaran/proc/emote_hiss)
+	add_verb(owner, /mob/living/carbon/human/species/tajaran/proc/emote_hiss_t)
 
 /obj/item/organ/tongue/tajaran/on_mob_remove(mob/living/carbon/owner)
 	. = ..()
@@ -38,7 +38,7 @@
 	add_verb(owner, /mob/living/carbon/human/species/tajaran/proc/emote_purr)
 	add_verb(owner, /mob/living/carbon/human/species/tajaran/proc/emote_pur)
 	add_verb(owner, /mob/living/carbon/human/species/tajaran/proc/emote_purrr)
-	add_verb(owner, /mob/living/carbon/human/species/tajaran/proc/emote_hiss)
+	add_verb(owner, /mob/living/carbon/human/species/tajaran/proc/emote_hiss_t)
 
 /obj/item/organ/stomach/tajaran
 	hunger_modifier = 1.1

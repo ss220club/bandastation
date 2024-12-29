@@ -523,7 +523,7 @@
   set category = "Эмоции"
   emote("purrr", intentional = TRUE)
 
-/mob/living/carbon/human/species/tajaran/proc/emote_hiss()
+/mob/living/carbon/human/species/tajaran/proc/emote_hiss_t()
   set name = "▷ " + EMOTE_HUMAN_HISST + " "
   set category = "Эмоции"
   emote("hiss_t", intentional = TRUE)

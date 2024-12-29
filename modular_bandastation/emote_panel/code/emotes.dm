@@ -11,7 +11,7 @@
 		return 'modular_bandastation/emote_panel/audio/female/sniff_female.ogg'
 	else
 		return 'modular_bandastation/emote_panel/audio/male/sniff_male.ogg'
-    
+
 /datum/emote/living/carbon/scratch/New()
   mob_type_allowed_typecache += list(/mob/living/carbon/human)
   . = ..()
@@ -146,7 +146,7 @@
 	cooldown = 4 SECONDS
 	sound = 'modular_bandastation/emote_panel/audio/tajaran/tajaran_purr_long.ogg'
 
-/datum/emote/living/carbon/human/tajaran/emote_hiss
+/datum/emote/living/carbon/human/tajaran/emote_hiss_t
 	name = "Шипеть"
 	key = "hiss_t"
 	key_third_person = "hisses"
