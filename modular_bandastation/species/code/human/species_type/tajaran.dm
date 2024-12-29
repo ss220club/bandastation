@@ -147,9 +147,9 @@
 
 /datum/species/tajaran/get_scream_sound(mob/living/carbon/human/human)
 	if(human.physique == MALE)
-		return 'modular_bandastation/emote_panel/audio/tajaran/scream_tajaran.ogg'
+		return 'modular_bandastation/emote_panel/audio/tajaran/tajaran_scream.ogg'
 
-	return 'modular_bandastation/emote_panel/audio/tajaran/scream_tajaran.ogg'
+	return 'modular_bandastation/emote_panel/audio/tajaran/tajaran_scream.ogg'
 
 /datum/species/tajaran/get_cough_sound(mob/living/carbon/human/human)
 	if(human.physique == FEMALE)
