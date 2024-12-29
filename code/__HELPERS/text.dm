@@ -178,12 +178,12 @@
 		switch(text2ascii(char))
 
 			// A  .. Z
-			if(65 to 90, 1040 to 1071, 1025) //Uppercase Letters //SS220 EDIT CHANGE - Cyrillic Fixes
+			if(65 to 90, 1040 to 1071, 1025) //Uppercase Letters // BANDASTATION EDIT CHANGE - Cyrillic Fixes
 				number_of_alphanumeric++
 				last_char_group = LETTERS_DETECTED
 
 			// a  .. z
-			if(97 to 122, 1072 to 1103, 1105) //Lowercase Letters //SS220 EDIT CHANGE - Cyrillic Fixes
+			if(97 to 122, 1072 to 1103, 1105) //Lowercase Letters // BANDASTATION EDIT CHANGE - Cyrillic Fixes
 				if(last_char_group == NO_CHARS_DETECTED || last_char_group == SPACES_DETECTED || cap_after_symbols && last_char_group == SYMBOLS_DETECTED) //start of a word
 					char = uppertext(char)
 				number_of_alphanumeric++
@@ -221,7 +221,7 @@
 					continue
 				last_char_group = SPACES_DETECTED
 
-			if(127 to INFINITY)
+			if(127 to 1024, 1026 to 1104, 1106 to INFINITY) // BANDASTATION EDIT CHANGE - Cyrillic Fixes - Ёё
 				if(ascii_only)
 					if(strict)
 						return

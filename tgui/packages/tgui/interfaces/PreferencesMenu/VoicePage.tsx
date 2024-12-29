@@ -8,12 +8,14 @@ import {
   Icon,
   Input,
   LabeledList,
+  NoticeBox,
   Section,
   Stack,
   Table,
   VirtualList,
 } from '../../components';
-import { PreferencesMenuData, Seed } from './data';
+import { PreferencesMenuData, Seed, ServerData, TtsData } from './data';
+import { ServerPreferencesFetcher } from './ServerPreferencesFetcher';
 
 const donatorTiers = {
   0: 'Free',
@@ -51,7 +53,6 @@ const getCheckboxGroup = (
       <Button.Checkbox
         key={title}
         checked={selectedList.includes(item)}
-        content={title}
         onClick={() => {
           if (selectedList.includes(item)) {
             setSelected(
@@ -63,31 +64,41 @@ const getCheckboxGroup = (
             setSelected([item, ...selectedList]);
           }
         }}
-      />
+      >
+        {title}
+      </Button.Checkbox>
     );
   });
 };
 
-export const VoicePage = (props) => {
-  const { data } = useBackend<PreferencesMenuData>();
+export const VoicePage = () => {
+  return (
+    <ServerPreferencesFetcher
+      render={(serverData: ServerData) => {
+        if (!serverData) {
+          return <NoticeBox>Loading...</NoticeBox>;
+        }
+        return <VoicePageInner text_to_speech={serverData.text_to_speech} />;
+      }}
+    />
+  );
+};
 
-  const {
-    providers,
-    seeds,
-    tts_seed,
-    phrases,
-    // donator_level,
-    // character_gender,
-  } = data;
+const VoicePageInner = (props: { text_to_speech: TtsData }) => {
+  const { data } = useBackend<PreferencesMenuData>();
+  const { tts_seed } = data;
+  const { providers, seeds, phrases } = props.text_to_speech;
 
   const donator_level = 5; // Remove after tiers implementation
 
   const categories = seeds
     .map((seed) => seed.category)
     .filter((category, i, a) => a.indexOf(category) === i);
+
   const genders = seeds
     .map((seed) => seed.gender)
     .filter((gender, i, a) => a.indexOf(gender) === i);
+
   const donatorLevels = seeds
     .map((seed) => seed.donator_level)
     .filter((level, i, a) => a.indexOf(level) === i)

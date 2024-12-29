@@ -95,6 +95,11 @@
 
 /datum/outfit/job/captain/pre_equip(mob/living/carbon/human/H, visuals_only)
 	. = ..()
+	// BANDASTATION ADDITION START - Station Fluff
+	if(CHECK_MAP_JOB_CHANGE(JOB_CAPTAIN, "no_charter"))
+		backpack_contents -= /obj/item/station_charter
+		return
+	// BANDASTATION ADDITION END - Station Fluff
 	special_charter = CHECK_MAP_JOB_CHANGE(JOB_CAPTAIN, "special_charter")
 	if(!special_charter)
 		return

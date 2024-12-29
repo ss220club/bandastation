@@ -75,8 +75,12 @@
 	icon = 'modular_bandastation/aesthetics/airlocks/icons/station/psych.dmi'
 	assemblytype = /obj/structure/door_assembly/door_assembly_psych
 
-/obj/machinery/door/airlock/lawyer
+/obj/machinery/door/airlock/corporate
 	icon = 'modular_bandastation/aesthetics/airlocks/icons/station/corporate.dmi'
+	assemblytype = /obj/structure/door_assembly/door_assembly_corporate
+
+/obj/machinery/door/airlock/lawyer
+	icon = 'modular_bandastation/aesthetics/airlocks/icons/station/lawyer.dmi'
 	assemblytype = /obj/structure/door_assembly/door_assembly_lawyer
 
 /obj/machinery/door/airlock/service
@@ -141,6 +145,10 @@
 	glass = TRUE
 
 /obj/machinery/door/airlock/psych/glass
+	opacity = 0
+	glass = TRUE
+
+/obj/machinery/door/airlock/corporate/glass
 	opacity = 0
 	glass = TRUE
 

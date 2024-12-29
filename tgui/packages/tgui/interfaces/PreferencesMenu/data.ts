@@ -181,17 +181,11 @@ export type PreferencesMenuData = {
 
   window: Window;
 
-  // BANDASTATION EDIT START - TTS
-  tts_seed: string;
-  tts_enabled: BooleanLike;
-  providers: Array<{
-    name: string;
-    is_enabled: BooleanLike;
-  }>;
-  seeds: Array<Seed>;
-  phrases: string[];
+  tts_seed: string; // BANDASTATION ADD
+  tts_enabled: BooleanLike; // BANDASTATION ADD
 };
 
+// BANDASTATION EDIT START
 export type Seed = {
   name: string;
   value: string;
@@ -201,9 +195,21 @@ export type Seed = {
   donator_level: number;
 };
 
-// BANDASTATION EDIT END - TTS
+export type TtsProvider = {
+  name: string;
+  is_enabled: BooleanLike;
+};
+
+export type TtsData = {
+  providers: Array<TtsProvider>;
+  seeds: Array<Seed>;
+  phrases: string[];
+};
+
+// BANDASTATION EDIT END
 
 export type ServerData = {
+  text_to_speech: TtsData; // BANDASTATION ADD
   jobs: {
     departments: Record<string, Department>;
     jobs: Record<string, Job>;

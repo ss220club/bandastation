@@ -40,7 +40,7 @@
 		return
 	scanner_busy = TRUE
 	balloon_alert(user, "printing report...")
-	addtimer(CALLBACK(src, PROC_REF(safe_print_report)), 10 SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(safe_print_report)), 5 SECONDS) // BANDASTATION EDIT: 10 SECONDS to 5 SECONDS
 
 /**
  * safe_print_report - a wrapper proc for print_report
@@ -231,7 +231,7 @@
 		balloon_alert(user, "scanner busy!")
 		return CLICK_ACTION_BLOCKING
 	balloon_alert(user, "deleting logs...")
-	if(!do_after(user, 3 SECONDS, target = src))
+	if(!do_after(user, 3 SECONDS, target = src, timed_action_flags = IGNORE_USER_LOC_CHANGE)) // BANDASTATION EDIT: timed_action_flags = IGNORE_USER_LOC_CHANGE
 		return CLICK_ACTION_BLOCKING
 	balloon_alert(user, "logs cleared")
 	log = list()
