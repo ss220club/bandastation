@@ -121,9 +121,14 @@
 	hidden = TRUE
 
 /datum/mood_event/heretics
-	description = "ЧЕМ ВЫШЕ Я ПОДНИМАЮСЬ, ТЕМ БОЛЬШЕ Я ВИЖУ."
-	mood_change = 10 //maybe being a cultist isnt that bad after all
+	description = "THE HIGHER I RISE, THE MORE I SEE."
+	mood_change = 10 //maybe being a heretic isnt that bad after all
 	hidden = TRUE
+
+/datum/mood_event/rift_fishing
+	description = "THE MORE I FISH, THE HIGHER I RISE."
+	mood_change = 7
+	timeout = 5 MINUTES
 
 /datum/mood_event/family_heirloom
 	description = "Моя семейная реликвия в безопасности со мной."
