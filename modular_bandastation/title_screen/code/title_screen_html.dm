@@ -222,7 +222,6 @@
 				if(img.naturalWidth === 0 || img.naturalHeight === 0) {
 					if(attempts === maxAttempts) {
 						attempts = 0;
-						call_byond("runtime", message);
 						return;
 					}
 

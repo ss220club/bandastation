@@ -101,10 +101,6 @@
 		if(check_rights_for(client, R_ADMIN|R_DEBUG))
 			SStitle.title_output(client, "true", "admin_buttons_visibility")
 
-	// Удалить нахуй потом
-	else if(href_list["runtime"])
-		stack_trace("Title Screen: [href_list["runtime"]]")
-
 	else if(href_list["focus"])
 		winset(client, "map", "focus=true")
 
