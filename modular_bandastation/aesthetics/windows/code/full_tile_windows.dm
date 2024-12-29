@@ -60,6 +60,10 @@
 /obj/structure/window/reinforced/shuttle
 	canSmoothWith = SMOOTH_GROUP_SHUTTLE_PARTS + SMOOTH_GROUP_AIRLOCK + SMOOTH_GROUP_WINDOW_FULLTILE_SHUTTLE + SMOOTH_GROUP_TITANIUM_WALLS
 
+// Fake windows
+/turf/closed/indestructible/fakeglass
+	icon = MAP_SWITCH('modular_bandastation/aesthetics/windows/icons/reinforced_window.dmi', 'modular_bandastation/aesthetics/windows/icons/window_in_editor.dmi')
+
 // MARK: Spawners
 /obj/effect/spawner/structure/window
 	icon = 'modular_bandastation/aesthetics/windows/icons/spawners.dmi'
