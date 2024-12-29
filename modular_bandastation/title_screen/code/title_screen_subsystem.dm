@@ -145,8 +145,9 @@
 
 	for(var/mob/dead/new_player/viewer as anything in GLOB.new_player_list)
 		INVOKE_ASYNC(src, PROC_REF(update_title_image_for_client), viewer.client)
-		log_admin("[key_name(user)] is changing the title screen.")
-		message_admins("[key_name_admin(user)] is changing the title screen.")
+
+	log_admin("[key_name(user)] is changing the title screen.")
+	message_admins("[key_name_admin(user)] is changing the title screen.")
 
 /**
  * Sends title image to client and updates title screen for it

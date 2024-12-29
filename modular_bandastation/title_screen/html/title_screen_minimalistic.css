@@ -129,8 +129,8 @@ a.lobby_element {
 	font-size: 1.35rem;
 	text-align: left;
 	text-decoration: none;
-	width: 95%;
 	margin-bottom: 0.25em;
+	margin-right: 0.25em;
 	padding: 0.25em 0.25em 0.25em 0.5em;
 	color: #898989;
 	border: 1px solid transparent;
@@ -217,8 +217,8 @@ a.lobby_element.good .lobby-text:before {
 	background-color: rgba(22, 22, 22, 0.85);
 	border: 1px solid rgba(255, 255, 255, 0.1);
 	border-radius: 0.25em;
-	box-shadow: 0.5em 0 1.25em rgba(0, 0 ,0, 0.5);
-    transform: translate(107.5%, -0.33em);
+	box-shadow: 0 0 0.5em 0.25em rgba(0, 0 ,0, 0.5);
+    transform: translate(105%, calc(-2rem + 1px));
 	transition: opacity 0.2s;
 }
 
