@@ -25,6 +25,7 @@
 #include "code/items/clothing/shoes/shoes.dm"
 #include "code/items/clothing/spacesuits/plasmaman.dm"
 #include "code/items/clothing/suits/armor.dm"
+#include "code/items/clothing/suits/carnival.dm"
 #include "code/items/clothing/suits/cloaks.dm"
 #include "code/items/clothing/suits/holiday.dm"
 #include "code/items/clothing/suits/jobs.dm"
