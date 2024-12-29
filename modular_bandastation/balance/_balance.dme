@@ -10,6 +10,5 @@
 #include "code/supply_packs.dm"
 #include "code/crew_manifest.dm"
 #include "code/cargo_packs.dm"
-#include "code/unique_plant_genes.dm"
 
 #include "code/~undefs.dm"
