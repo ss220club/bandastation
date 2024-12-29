@@ -174,7 +174,7 @@ SUBSYSTEM_DEF(gamemode)
 	var/list/presetuped_ocupations = list()
 	var/empty_event_chance = 0
 	var/roundstart_budget = 0
-	var/roundstart_budget_set = 0
+	var/roundstart_budget_set = -1
 
 /datum/controller/subsystem/gamemode/Initialize(time, zlevel)
 	// Populate event pools
@@ -232,9 +232,9 @@ SUBSYSTEM_DEF(gamemode)
 		current_storyteller.process(STORYTELLER_WAIT_TIME * 0.1)
 
 /// Gets the number of antagonists the antagonist injection events will stop rolling after.
-/datum/controller/subsystem/gamemode/proc/get_antag_cap()
+/datum/controller/subsystem/gamemode/proc/get_antag_cap(forced = FALSE)
 	var/pop_count = get_correct_popcount()
-	if(pop_count < current_storyteller.min_antag_popcount)
+	if(pop_count < current_storyteller.min_antag_popcount && !forced)
 		return 0
 	var/total_number = pop_count + (sec_crew * current_storyteller.sec_antag_modifier)
 	var/cap = FLOOR((total_number / current_storyteller.antag_denominator), 1) + current_storyteller.antag_flat_cap
@@ -686,7 +686,8 @@ SUBSYSTEM_DEF(gamemode)
 
 /datum/controller/subsystem/gamemode/proc/recalculate_roundstart_budget()
 	var/pop_count = ready_players + (sec_crew * current_storyteller.sec_antag_modifier)
-	roundstart_budget = roundstart_budget_set ? roundstart_budget_set : pop_count
+	var/calculated_roundstart_budget = pop_count
+	roundstart_budget = roundstart_budget_set == -1 ? calculated_roundstart_budget : roundstart_budget_set
 
 /datum/controller/subsystem/gamemode/proc/rountstart_general_events_run(valid_events, track)
 
@@ -1046,7 +1047,7 @@ SUBSYSTEM_DEF(gamemode)
 				dat += "<BR>Roundstart info: Roundstart budget = ready_players([ready_players]) + (sec_crew([sec_crew]) * current_storyteller.sec_antag_modifier([current_storyteller.sec_antag_modifier])) = [roundstart_budget]"
 				dat += "<BR><font color='#888888'><i>Раундстартовый бюджет для событий, расчитанный с помощью формулы выше.</i></font>"
 				dat += "<BR>Roundstart info: Forced Roundstart budget = <a href='byond://?src=[REF(src)];panel=main;action=vars;var=vars_roundstart_budget;'>[roundstart_budget_set]</a>"
-				dat += "<BR><font color='#888888'><i>Зафоршенный андминами раундстарт бюджет.</i></font>"
+				dat += "<BR><font color='#888888'><i>Зафоршенный андминами раундстарт бюджет. Установите -1 для автоматического расчета.</i></font>"
 				dat += "<HR>"
 
 			dat += "<BR><b>Point Gains Multipliers (only over time):</b>"

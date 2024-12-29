@@ -193,6 +193,7 @@ Runs the event
 		for(var/datum/event_admin_setup/admin_setup_datum in admin_setup)
 			admin_setup_datum.apply_to_event(round_event)
 	SEND_SIGNAL(src, COMSIG_CREATED_ROUND_EVENT, round_event)
+	round_event.forced = admin_forced
 	round_event.setup()
 	round_event.current_players = get_active_player_count(alive_check = 1, afk_check = 1, human_check = 1)
 	occurrences++

@@ -5,6 +5,8 @@
 	var/setup = FALSE
 	///Записывать ли событие в лог СТ для вывода в конце раунда?
 	var/excute_round_end_reports = FALSE
+	///Ивент считается форшеным?
+	var/forced = FALSE
 
 /// This section of event processing is in a proc because roundstart events may get their start invoked.
 /datum/round_event/proc/try_start()
@@ -62,7 +64,7 @@
 
 /datum/round_event/antagonist/solo/setup()
 	var/datum/round_event_control/antagonist/solo/cast_control = control
-	antag_count = cast_control.get_antag_amount()
+	antag_count = cast_control.get_antag_amount(forced)
 	if(!antag_count)
 		return
 
@@ -170,7 +172,7 @@
 
 /datum/round_event/antagonist/solo/ghost/setup()
 	var/datum/round_event_control/antagonist/solo/cast_control = control
-	antag_count = cast_control.get_antag_amount()
+	antag_count = cast_control.get_antag_amount(forced)
 	if(!antag_count)
 		return
 

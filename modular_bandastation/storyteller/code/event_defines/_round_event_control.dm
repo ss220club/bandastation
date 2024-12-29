@@ -258,10 +258,10 @@
 	if(length(candidates) < antag_amt)
 		return FALSE
 
-/datum/round_event_control/antagonist/solo/proc/get_antag_amount()
+/datum/round_event_control/antagonist/solo/proc/get_antag_amount(forced_event = FALSE)
 	var/decided_count = rand(base_antags, maximum_antags)
 
-	var/gamemode_antags_left = SSgamemode.get_antag_cap() - SSgamemode.get_antag_count()
+	var/gamemode_antags_left = SSgamemode.get_antag_cap(forced_event) - SSgamemode.get_antag_count()
 	var/maximum_to_spawn = min(gamemode_antags_left, maximum_antags)
 
 	var/clamped_value = clamp(decided_count, 0, maximum_to_spawn)
