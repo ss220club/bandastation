@@ -4,6 +4,8 @@
 
 #include "code/effects/turf_decal.dm"
 
+#include "code/greyscale/config_types/greyscale_clothes.dm"
+
 #include "code/items/banners.dm"
 #include "code/items/cards_ids.dm"
 #include "code/items/hampters.dm"
@@ -15,6 +17,7 @@
 #include "code/items/clothing/head/hat.dm"
 #include "code/items/clothing/head/jobs.dm"
 #include "code/items/clothing/head/soft_caps.dm"
+#include "code/items/clothing/masks/carnival.dm"
 #include "code/items/clothing/mod/modules/monitor_module.dm"
 #include "code/items/clothing/mod/types/praetorian/mod_theme.dm"
 #include "code/items/clothing/mod/types/praetorian/mod_types.dm"
