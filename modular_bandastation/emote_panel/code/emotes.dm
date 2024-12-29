@@ -11,9 +11,12 @@
 		return 'modular_bandastation/emote_panel/audio/female/sniff_female.ogg'
 	else
 		return 'modular_bandastation/emote_panel/audio/male/sniff_male.ogg'
+    
+/datum/emote/living/carbon/scratch/New()
+  mob_type_allowed_typecache += list(/mob/living/carbon/human)
+  . = ..()
 
 // MARK: Vulpkanin emotes
-
 /datum/emote/living/carbon/human/vulpkanin/can_run_emote(mob/user, status_check = TRUE, intentional = FALSE)
 	var/organ = user.get_organ_slot(ORGAN_SLOT_TONGUE)
 	if(istype(organ, /obj/item/organ/tongue/vulpkanin))
