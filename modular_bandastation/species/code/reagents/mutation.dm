@@ -1,5 +1,5 @@
 /datum/reagent/mutationtoxin/vulpkanin
-	name = "vulpkanin Mutation Toxin"
+	name = "Vulpkanin Mutation Toxin"
 	description = "Мутационный токсин для превращения в вульпканина."
 	color = "#949494"
 	race = /datum/species/vulpkanin
@@ -12,7 +12,7 @@
 	required_container = /obj/item/slime_extract/green
 
 /datum/reagent/mutationtoxin/tajaran
-	name = "tajaran Mutation Toxin"
+	name = "Tajaran Mutation Toxin"
 	description = "Мутационный токсин для превращения в таяр."
 	color = "#949494"
 	race = /datum/species/tajaran
