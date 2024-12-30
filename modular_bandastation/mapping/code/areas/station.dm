@@ -145,11 +145,11 @@
 	icon_state = "portmaint"
 
 /area/station/maintenance/ghetto/kitchen
-	name = "Ghetto Abadonned Kitchen"
+	name = "Ghetto Abandoned Kitchen"
 	icon_state = "abandoned_kitchen"
 
 /area/station/maintenance/ghetto/bar
-	name = "Ghetto Abadonned Bar"
+	name = "Ghetto Abandoned Bar"
 	icon_state = "maint_bar"
 
 /area/station/maintenance/ghetto/garden
