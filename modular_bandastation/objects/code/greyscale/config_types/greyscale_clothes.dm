@@ -1,6 +1,6 @@
 /datum/greyscale_config/carnival_mask_feather
 	name = "Feather mask"
-	icon_file = 'modular_bandastation/objects/icons/obj/clothing/mask/carnival.dmi' // TODO: update
+	icon_file = 'modular_bandastation/objects/icons/obj/clothing/mask/carnival.dmi'
 	json_config = 'code/datums/greyscale/json_configs/bandastation/mask_carnival_feather.json'
 
 /datum/greyscale_config/carnival_mask_feather/worn
@@ -9,7 +9,7 @@
 
 /datum/greyscale_config/carnival_mask_half
 	name = "Half mask"
-	icon_file = 'modular_bandastation/objects/icons/obj/clothing/mask/carnival.dmi' // TODO: update
+	icon_file = 'modular_bandastation/objects/icons/obj/clothing/mask/carnival.dmi'
 	json_config = 'code/datums/greyscale/json_configs/bandastation/mask_carnival_half.json'
 
 /datum/greyscale_config/carnival_mask_half/worn
@@ -18,7 +18,7 @@
 
 /datum/greyscale_config/carnival_mask_triangles
 	name = "Triangles mask"
-	icon_file = 'modular_bandastation/objects/icons/obj/clothing/mask/carnival.dmi' // TODO: update
+	icon_file = 'modular_bandastation/objects/icons/obj/clothing/mask/carnival.dmi'
 	json_config = 'code/datums/greyscale/json_configs/bandastation/mask_carnival_triangles.json'
 
 /datum/greyscale_config/carnival_mask_triangles/worn
@@ -27,7 +27,7 @@
 
 /datum/greyscale_config/carnival_mask_colored
 	name = "Colored mask"
-	icon_file = 'modular_bandastation/objects/icons/obj/clothing/mask/carnival.dmi' // TODO: update
+	icon_file = 'modular_bandastation/objects/icons/obj/clothing/mask/carnival.dmi'
 	json_config = 'code/datums/greyscale/json_configs/bandastation/mask_carnival_colored.json'
 
 /datum/greyscale_config/carnival_mask_colored/worn
@@ -36,7 +36,7 @@
 
 /datum/greyscale_config/carnival_formal
 	name = "Formal suit"
-	icon_file = 'modular_bandastation/objects/icons/obj/clothing/under/carnival.dmi' // TODO: update
+	icon_file = 'modular_bandastation/objects/icons/obj/clothing/under/carnival.dmi'
 	json_config = 'code/datums/greyscale/json_configs/bandastation/under_carnival_formal.json'
 
 /datum/greyscale_config/carnival_formal/worn
@@ -45,7 +45,7 @@
 
 /datum/greyscale_config/carnival_jacket
 	name = "Jacket suit"
-	icon_file = 'modular_bandastation/objects/icons/obj/clothing/under/carnival.dmi' // TODO: update
+	icon_file = 'modular_bandastation/objects/icons/obj/clothing/under/carnival.dmi'
 	json_config = 'code/datums/greyscale/json_configs/bandastation/under_carnival_jacket.json'
 
 /datum/greyscale_config/carnival_jacket/worn
@@ -54,7 +54,7 @@
 
 /datum/greyscale_config/carnival_dress_fancy
 	name = "Fancy dress"
-	icon_file = 'modular_bandastation/objects/icons/obj/clothing/under/carnival.dmi' // TODO: update
+	icon_file = 'modular_bandastation/objects/icons/obj/clothing/under/carnival.dmi'
 	json_config = 'code/datums/greyscale/json_configs/bandastation/under_carnival_dress_fancy.json'
 
 /datum/greyscale_config/carnival_dress_fancy/worn
@@ -63,7 +63,7 @@
 
 /datum/greyscale_config/carnival_dress_corset
 	name = "Corset dress"
-	icon_file = 'modular_bandastation/objects/icons/obj/clothing/under/carnival.dmi' // TODO: update
+	icon_file = 'modular_bandastation/objects/icons/obj/clothing/under/carnival.dmi'
 	json_config = 'code/datums/greyscale/json_configs/bandastation/under_carnival_dress_corset.json'
 
 /datum/greyscale_config/carnival_dress_corset/worn
