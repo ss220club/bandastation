@@ -22,15 +22,7 @@
 		/obj/item/clothing/neck/cloak/ny_cloak = 3,
 		/obj/item/clothing/neck/garland = 3,
 	)
-	GLOB.autodrobe_premium_items += list(
-		/obj/item/clothing/under/carnival/silco = 1,
-		/obj/item/clothing/suit/carnival/coat_silco = 1,
-		/obj/item/clothing/under/carnival/kim = 1,
-		/obj/item/clothing/suit/carnival/jacket_kim = 1,
-		/obj/item/clothing/under/carnival/dress_mel = 1,
-	)
 	GLOB.all_autodrobe_items |= (
 		GLOB.autodrobe_fancy_items \
-		+ GLOB.autodrobe_other_items \
-		+ GLOB.autodrobe_premium_items
+		+ GLOB.autodrobe_other_items
 	)
