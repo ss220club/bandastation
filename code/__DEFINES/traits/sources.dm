@@ -316,7 +316,3 @@
 /// Trait aquired from being painted a certain color
 #define ATOM_COLOR_TRAIT "atom_color"
 
-/// Bloodsucker traits
-#define BLOODSUCKER_TRAIT "bloodsucker_trait"
-#define TORPOR_TRAIT "torpor_trait"
-#define FORTITUDE_TRAIT "fortitude_trait"
