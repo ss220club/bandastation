@@ -23,8 +23,8 @@
 		/obj/item/clothing/neck/garland = 3,
 	)
 	GLOB.autodrobe_premium_items += list(
-		/obj/item/clothing/under/carnival/silko = 1,
-		/obj/item/clothing/suit/carnival/coat_silko = 1,
+		/obj/item/clothing/under/carnival/silco = 1,
+		/obj/item/clothing/suit/carnival/coat_silco = 1,
 		/obj/item/clothing/under/carnival/kim = 1,
 		/obj/item/clothing/suit/carnival/jacket_kim = 1,
 		/obj/item/clothing/under/carnival/dress_mel = 1,

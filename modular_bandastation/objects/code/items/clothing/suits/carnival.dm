@@ -3,9 +3,9 @@
 	icon = 'modular_bandastation/objects/icons/obj/clothing/suits/carnival.dmi'
 	worn_icon = 'modular_bandastation/objects/icons/mob/clothing/suits/carnival.dmi'
 
-/obj/item/clothing/suit/carnival/coat_silko
+/obj/item/clothing/suit/carnival/coat_silco
 	name = "Industrialist's coat"
-	icon_state = "coat_silko"
+	icon_state = "coat_silco"
 
 /obj/item/clothing/suit/carnival/jacket_kim
 	name = "Kitsuragi's jacket"

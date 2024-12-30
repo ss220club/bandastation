@@ -34,9 +34,9 @@
 	name = "Wolf's dress"
 	icon_state = "dress_mel"
 
-/obj/item/clothing/under/carnival/silko
+/obj/item/clothing/under/carnival/silco
 	name = "Industrialist's suit"
-	icon_state = "silko"
+	icon_state = "silco"
 
 /obj/item/clothing/under/carnival/kim
 	name = "Kitsuragi's suit"
