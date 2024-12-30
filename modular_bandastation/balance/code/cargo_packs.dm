@@ -52,16 +52,13 @@
 	cost = PAYCHECK_CREW * 4 // Original price: 100 Approximate new price: 200
 
 /datum/supply_pack/goody/rubber
-	cost = PAYCHECK_CREW * 3 // Original price: 100 Approximate new price: 200
+	cost = PAYCHECK_CREW * 3 // Original price: 75 Approximate new price: 150
 
 /datum/supply_pack/goody/dumdum38br
 	cost = PAYCHECK_CREW * 4 // Original price: 100 Approximate new price: 200
 
 /datum/supply_pack/goody/match38br
 	cost = PAYCHECK_CREW * 4 // Original price: 100 Approximate new price: 200
-
-/datum/supply_pack/goody/rubber
-	cost = PAYCHECK_CREW * 4 // Original price: 75 Approximate new price: 200
 
 // MARK: MISC
 /datum/supply_pack/critter/pony // Fun not allowed or has to be too expensive
