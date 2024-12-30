@@ -55,7 +55,7 @@
 	greyscale_config_worn = /datum/greyscale_config/carnival_dress_fancy/worn
 	greyscale_colors = COLORS_3(_COLOR_BLACK, _COLOR_BLACK, _COLOR_WHITE)
 
-/obj/item/clothing/under/carnival/dress_fancy/blue_gold
+/obj/item/clothing/under/carnival/dress_fancy/violet_gold
 	greyscale_colors = COLORS_3(_COLOR_VIOLET, _COLOR_GOLD, _COLOR_GOLD)
 
 /obj/item/clothing/under/carnival/dress_fancy/purple_black_white
@@ -72,7 +72,7 @@
 	greyscale_config_worn = /datum/greyscale_config/carnival_dress_corset/worn
 	greyscale_colors = COLORS_2(_COLOR_BLACK, _COLOR_WHITE)
 
-/obj/item/clothing/under/carnival/dress_corset/blue_gold
+/obj/item/clothing/under/carnival/dress_corset/violet_gold
 	greyscale_colors = COLORS_2(_COLOR_VIOLET, _COLOR_GOLD)
 
 /obj/item/clothing/under/carnival/dress_corset/purple_black
