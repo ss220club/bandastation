@@ -7,6 +7,7 @@
 /obj/item/clothing/under/carnival
 	icon = 'modular_bandastation/objects/icons/obj/clothing/under/carnival.dmi'
 	worn_icon = 'modular_bandastation/objects/icons/mob/clothing/under/carnival.dmi'
+	can_adjust = FALSE
 
 /obj/item/clothing/under/carnival/formal
 	name = "formal suit"
