@@ -1,11 +1,13 @@
 /obj/item/clothing/neck/cloak/ny_cloak
 	name = "New Year cloak"
+	desc = "Плащ с голограммой, выполненной в виде снежинки."
 	icon = 'modular_bandastation/objects/icons/obj/clothing/neck.dmi'
 	worn_icon = 'modular_bandastation/objects/icons/mob/clothing/neck.dmi'
 	icon_state = "ny_cloak"
 
 /obj/item/clothing/neck/garland
 	name = "garland"
+	desc = "Новогодняя гирлянда. Оберните вокруг шеи, и вы сами превратитесь в ёлку."
 	icon = 'modular_bandastation/objects/icons/obj/clothing/neck.dmi'
 	worn_icon = 'modular_bandastation/objects/icons/mob/clothing/neck.dmi'
 	icon_state = "garland"

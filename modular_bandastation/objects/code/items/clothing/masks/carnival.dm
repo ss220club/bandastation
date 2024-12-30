@@ -6,6 +6,7 @@
 
 /obj/item/clothing/mask/carnival/feather
 	name = "Jester mask"
+	desc = "Изысканная маска с перьями для карнавалов и маскарадов. Неотъемлемый спутник королей."
 	icon_state = "feather"
 	greyscale_config = /datum/greyscale_config/carnival_mask_feather
 	greyscale_config_worn = /datum/greyscale_config/carnival_mask_feather/worn
@@ -13,7 +14,8 @@
 	flags_cover = MASKCOVERSMOUTH
 
 /obj/item/clothing/mask/carnival/half
-	name = "Columbine mask"
+	name = "Colombina mask"
+	desc = "Изысканная полумаска для карнавалов и маскарадов. Для тех, кто не склонен прятать красоту лица."
 	icon_state = "half"
 	greyscale_config = /datum/greyscale_config/carnival_mask_half
 	greyscale_config_worn = /datum/greyscale_config/carnival_mask_half/worn
@@ -21,6 +23,7 @@
 
 /obj/item/clothing/mask/carnival/triangles
 	name = "Harlequin mask"
+	desc = "Изысканная маска с конусами и колокольчиками для карнавалов и маскарадов. Воплощение поединка с собой и со всем миром."
 	icon_state = "triangles"
 	greyscale_config = /datum/greyscale_config/carnival_mask_triangles
 	greyscale_config_worn = /datum/greyscale_config/carnival_mask_triangles/worn
@@ -28,6 +31,7 @@
 
 /obj/item/clothing/mask/carnival/colored
 	name = "Volto mask"
+	desc = "Изысканная маска для карнавалов и маскарадов, покрывающая все лицо. Дуализм души и тела."
 	icon_state = "colored"
 	greyscale_config = /datum/greyscale_config/carnival_mask_colored
 	greyscale_config_worn = /datum/greyscale_config/carnival_mask_colored/worn
