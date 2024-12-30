@@ -32,4 +32,4 @@
 	return GLOB.available_lobby_styles[1]
 
 /datum/preference/choiced/lobby_style/apply_to_client(client/client, value)
-	client.fix_title_screen()
+	client.fix_title_screen(message = FALSE)

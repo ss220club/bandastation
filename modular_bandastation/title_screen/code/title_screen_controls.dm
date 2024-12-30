@@ -55,13 +55,14 @@ ADMIN_VERB(change_title_screen_css, R_DEBUG, "Title Screen: Set CSS", ADMIN_VERB
 /**
  * Reloads the titlescreen if it is bugged for someone.
  */
-/client/verb/fix_title_screen()
+/client/verb/fix_title_screen(message = TRUE)
 	set name = "Fix Lobby Screen"
 	set desc = "Lobbyscreen broke? Press this."
 	set category = "Special"
 
 	if(!isnewplayer(src.mob))
-		to_chat(src, span_warning("Вы должны быть в лобби дабы использовать это!"))
+		if(message)
+			to_chat(src, span_warning("Вы должны быть в лобби дабы использовать это!"))
 		return
 
 	SStitle.show_title_screen_to(src)
