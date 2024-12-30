@@ -67,12 +67,12 @@
 	name = "Brig Lower Floor"
 	icon_state = "maint_sec"
 
-/area/station/maintenance/department/security/ghetto/north
-	name = "Security Maintenance North Lower Floor"
+/area/station/maintenance/department/security/ghetto/fore
+	name = "Security Maintenance Fore Lower Floor"
 	icon_state = "maint_sec"
 
-/area/station/maintenance/department/security/ghetto/south
-	name = "Security Maintenance South Lower Floor"
+/area/station/maintenance/department/security/ghetto/aft
+	name = "Security Maintenance Aft Lower Floor"
 	icon_state = "maint_sec"
 
 /area/station/maintenance/department/medical/ghetto
