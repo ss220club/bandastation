@@ -5,7 +5,7 @@
 			(date_end IS NULL OR NOW()<date_end)
 	"}
 
-/datum/config_entry/flag/whitelist220
+/datum/config_entry/flag/metaserver
 	default = FALSE
 	protection = CONFIG_ENTRY_LOCKED
 
@@ -16,7 +16,7 @@
 	if(.)
 		return .
 
-	if(!CONFIG_GET(flag/whitelist220))
+	if(!CONFIG_GET(flag/metaserver))
 		return null
 
 	/// If interviews are enabled, the player will be processed in `/mob/dead/new_player/Login()`
@@ -38,7 +38,7 @@
 	if(!CONFIG_GET(flag/panic_bunker_interview))
 		return
 
-	if(!CONFIG_GET(flag/whitelist220))
+	if(!CONFIG_GET(flag/metaserver))
 		return
 
 	if(is_ckey_whitelisted(ckey, world.port))
