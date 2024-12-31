@@ -242,7 +242,7 @@
 #endif
 
 	defaulted = FALSE
-	return TRUE
+	return json
 #undef CHECK_EXISTS
 
 /datum/map_config/proc/GetFullMapPaths()

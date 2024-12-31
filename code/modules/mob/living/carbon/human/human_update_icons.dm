@@ -393,7 +393,7 @@ There are several things that need to be remembered:
 		var/icon_file = 'icons/mob/clothing/head/default.dmi'
 		// BANDASTATION EDIT START - SPECIES CLOTHING ICONS
 		var/list/icon_files_species = list(
-			"vulpkanin" = 'modular_bandastation/species/icons/mob/species/clothing/head.dmi',
+			"vulpkanin" = 'modular_bandastation/species/icons/mob/species/vulpkanin/clothing/head.dmi',
 		)
 
 		var/mutant_override = FALSE
@@ -462,7 +462,7 @@ There are several things that need to be remembered:
 		var/icon_file = DEFAULT_SUIT_FILE
 		// BANDASTATION EDIT START - SPECIES CLOTHING ICONS
 		var/list/icon_files_species = list(
-			"vulpkanin" = 'modular_bandastation/species/icons/mob/species/clothing/suit.dmi',
+			"vulpkanin" = 'modular_bandastation/species/icons/mob/species/vulpkanin/clothing/suit.dmi',
 		)
 
 		var/mutant_override = FALSE
@@ -532,7 +532,7 @@ There are several things that need to be remembered:
 
 		var/icon_file = 'icons/mob/clothing/mask.dmi'
 		var/list/icon_files_species = list(
-			"vulpkanin" = 'modular_bandastation/species/icons/mob/species/clothing/mask.dmi',
+			"vulpkanin" = 'modular_bandastation/species/icons/mob/species/vulpkanin/clothing/mask.dmi',
 		)
 
 		var/mutant_override = FALSE
