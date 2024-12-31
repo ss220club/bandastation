@@ -48970,11 +48970,6 @@
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/station/common/cryopods)
-"mvY" = (
-/obj/structure/lattice,
-/obj/item/clothing/shoes/clown_shoes,
-/turf/open/space/openspace,
-/area/space/nearstation)
 "mwf" = (
 /turf/open/floor/iron,
 /area/station/commons/storage/primary)
@@ -209251,10 +209246,10 @@ waJ
 jha
 iFc
 hbu
-kJd
-mvY
-kJd
-kJd
+ceC
+ceC
+ceC
+ceC
 qWL
 cRY
 arT
@@ -211309,7 +211304,7 @@ qed
 qhM
 ceC
 cXu
-doz
+ceC
 ceC
 bTH
 uln
