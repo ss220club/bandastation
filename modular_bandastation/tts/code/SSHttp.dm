@@ -73,7 +73,7 @@ SUBSYSTEM_DEF(http)
 	UNTIL(req.is_complete())
 	active_async_requests -= req
 	var/datum/http_response/res = req.into_response()
-	log_response(res)
+	log_response(res, id)
 	return res
 
 /datum/http_request
