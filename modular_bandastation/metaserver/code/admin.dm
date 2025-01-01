@@ -1,5 +1,5 @@
 ADMIN_VERB(wl_ban, R_BAN, "WL Ban", "Ban a player from the whitelist.", ADMIN_CATEGORY_MAIN)
-	var/banned_ckey = input(user, "Please specify the cckey of the player you want to ban from the whitelist.", "WL Ban", "") as string|null
+	var/banned_ckey = input(user, "Please specify the ckey of the player you want to ban from the whitelist.", "WL Ban", "") as string|null
 	banned_ckey = ckey(ckey)
 	if(!input)
 		return
