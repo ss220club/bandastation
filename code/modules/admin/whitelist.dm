@@ -20,7 +20,7 @@ GLOBAL_LIST(whitelist)
 	. = (ckey in GLOB.whitelist)
 
 	// SS220 ADDITION - SS Central
-	if (!. && GLOB.ss_central.active)
-		. = GLOB.ss_central.is_player_whitelisted(ckey)
+	if (!. && SScentral.initialized)
+		. = SScentral.is_player_whitelisted(ckey)
 
 #undef WHITELISTFILE

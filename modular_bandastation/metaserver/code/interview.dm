@@ -4,9 +4,9 @@
 		return
 	if(client.interviewee)
 		return
-	if(!GLOB.ss_central.active)
+	if(!SScentral.initialized)
 		return
-	if(GLOB.ss_central.is_player_whitelisted(ckey))
+	if(SScentral.is_player_whitelisted(ckey))
 		return
 	client.interviewee = TRUE
 
@@ -52,4 +52,4 @@
 	SShttp.create_async_request(RUSTG_HTTP_METHOD_POST, webhook, json_encode(webhook_info), headers)
 
 /datum/interview/proc/add_owner_to_whitelist(client/added_by)
-	GLOB.ss_central.add_to_whitelist(owner_ckey, added_by.ckey, "Interview", 0)
+	SScentral.add_to_whitelist(owner_ckey, added_by.ckey, 365)

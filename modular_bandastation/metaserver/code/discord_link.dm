@@ -3,26 +3,26 @@
 
 /client/New()
 	. = ..()
-	GLOB.ss_central.get_player_discord_async(src)
+	SScentral.get_player_discord_async(src)
 
 /client/verify_in_discord()
-	if(!GLOB.ss_central.active)
+	if(!SScentral.initialized)
 		to_chat(src, span_warning("Привязка Discord сейчас недоступна."))
 
-	if(GLOB.ss_central.discord_links[src.ckey])
+	if(SScentral.discord_links[src.ckey])
 		to_chat(src, span_warning("Вы уже привязали свою учетную запись Discord."))
 
 	to_chat(src, span_notice("Пытаемся получить токен для входа в Discord..."))
-	GLOB.ss_central.verify_in_discord(src)
+	SScentral.verify_in_discord(src)
 
-/datum/ss_central/proc/verify_in_discord(client/player)
+/datum/controller/subsystem/central/proc/verify_in_discord(client/player)
 	var/endpoint = "[CONFIG_GET(string/ss_central_url)]/player/token/[player.ckey]"
 	var/list/headers = list(
 		"Authorization" = "Bearer [CONFIG_GET(string/ss_central_token)]"
 	)
-	SShttp.create_async_request(RUSTG_HTTP_METHOD_POST, endpoint, "", headers, CALLBACK(GLOB.ss_central, PROC_REF(verify_in_discord_callback), player))
+	SShttp.create_async_request(RUSTG_HTTP_METHOD_POST, endpoint, "", headers, CALLBACK(SScentral, PROC_REF(verify_in_discord_callback), player))
 
-/datum/ss_central/proc/verify_in_discord_callback(client/player, datum/http_response/response)
+/datum/controller/subsystem/central/proc/verify_in_discord_callback(client/player, datum/http_response/response)
 	if(response.errored || response.status_code != 201)
 		stack_trace("Failed to get discord verification token: HTTP status code " + response.status_code)
 		return
