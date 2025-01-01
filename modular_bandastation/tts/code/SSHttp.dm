@@ -32,7 +32,7 @@ SUBSYSTEM_DEF(http)
 			log_response(res)
 
 /datum/controller/subsystem/http/vv_edit_var(var_name, var_value)
-	if(var_name == "logging_enabled" && !check_rights(R_HOST))
+	if(var_name == "logging_enabled" && !check_rights(R_EVERYTHING))
 		return FALSE
 
 	. = ..()
@@ -100,7 +100,7 @@ SUBSYSTEM_DEF(http)
 		return
 
 	var/list/log_data = list()
-	log_data += "RESPONSE (ID: [req.id])"
+	log_data += "RESPONSE (ID: [res.id])"
 	if(res.errored)
 		log_data += "\t ----- RESPONSE ERRROR -----"
 		log_data += "\t [res.error]"
