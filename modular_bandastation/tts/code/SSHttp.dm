@@ -102,7 +102,7 @@ SUBSYSTEM_DEF(http)
 	var/list/log_data = list()
 	log_data += "RESPONSE (ID: [id])"
 	if(res.errored)
-		log_data += "\t ----- RESPONSE ERRROR -----"
+		log_data += "\t ----- RESPONSE ERROR -----"
 		log_data += "\t [res.error]"
 	else
 		log_data += "\tResponse status code: [res.status_code]"
