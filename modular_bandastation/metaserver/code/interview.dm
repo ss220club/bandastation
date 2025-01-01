@@ -2,20 +2,17 @@
 /mob/dead/new_player/proc/check_whitelist_or_make_interviewee()
 	if(!CONFIG_GET(flag/panic_bunker_interview))
 		return
-	if(client.interviewee)
-		return
-	if(!SScentral.initialized)
-		return
 	if(SScentral.is_player_whitelisted(ckey))
+		client.interviewee = FALSE
 		return
 	client.interviewee = TRUE
 
 /datum/config_entry/string/interview_webhook_url
 
 /datum/interview/approve(client/approved_by)
+	. = ..()
 	add_owner_to_whitelist(approved_by)
 	send_interview_webhook(src, "[approved_by.ckey] approved:")
-	. = ..()
 
 /datum/interview_manager/enqueue(datum/interview/to_queue)
 	. = ..()

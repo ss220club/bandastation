@@ -29,7 +29,7 @@ SUBSYSTEM_DEF(http)
 				req.cb.InvokeAsync(res)
 
 			// And log the result
-			log_response(res)
+			log_response(res, req.id)
 
 /datum/controller/subsystem/http/vv_edit_var(var_name, var_value)
 	if(var_name == "logging_enabled" && !check_rights(R_EVERYTHING))
@@ -95,12 +95,12 @@ SUBSYSTEM_DEF(http)
 	log_data += "\tRequest headers: [req.headers]"
 	logger.Log(LOG_CATEGORY_DEBUG, log_data.Join("\n"))
 
-/datum/controller/subsystem/http/proc/log_response(datum/http_response/res)
+/datum/controller/subsystem/http/proc/log_response(datum/http_response/res, id)
 	if(!logging_enabled)
 		return
 
 	var/list/log_data = list()
-	log_data += "RESPONSE (ID: [res.id])"
+	log_data += "RESPONSE (ID: [id])"
 	if(res.errored)
 		log_data += "\t ----- RESPONSE ERRROR -----"
 		log_data += "\t [res.error]"
@@ -108,4 +108,4 @@ SUBSYSTEM_DEF(http)
 		log_data += "\tResponse status code: [res.status_code]"
 		log_data += "\tResponse body: [res.body]"
 		log_data += "\tResponse headers: [json_encode(res.headers)]"
-	logger.log(LOG_CATEGORY_DEBUG, log_data.Join("\n"))
+	logger.Log(LOG_CATEGORY_DEBUG, log_data.Join("\n"))
