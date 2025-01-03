@@ -52,6 +52,8 @@
 	name = "tajaran eyeballs"
 	desc = "Глаза, приспособленные к темному освещению, но чувствительные к вспышкам."
 	icon = 'modular_bandastation/species/icons/mob/species/tajaran/organs.dmi'
+	lighting_cutoff = LIGHTING_CUTOFF_REAL_LOW
+	flash_protect = FLASH_PROTECTION_SENSITIVE
 
 /obj/item/organ/ears/tajaran
 	desc = "Чувствительные уши позволяют легче слышать шепот."
@@ -71,7 +73,7 @@
 
 /obj/item/organ/brain/tajaran
 	icon = 'modular_bandastation/species/icons/mob/species/tajaran/organs.dmi'
-	actions_types = list(/datum/action/cooldown/night_eyes)
+	// actions_types = list(/datum/action/cooldown/night_eyes)
 
 /obj/item/organ/lungs/tajaran
 	name = "tajaran lungs"
