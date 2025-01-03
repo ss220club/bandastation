@@ -44,6 +44,7 @@
 #include "automatic_crew_transfer/_automatic_crew_transfer.dme"
 #include "outfits/_outfits.dme"
 #include "overrides/_overrides.dme"
+#include "blood_suckers/_blood_suckers.dme"
 
 
 // --- PRIME --- //
