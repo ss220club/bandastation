@@ -25,7 +25,7 @@ SUBSYSTEM_DEF(central)
 
 /datum/controller/subsystem/central/proc/load_whitelist_callback(datum/http_response/response)
 	if(response.errored || response.status_code != 200)
-		stack_trace("Failed to load whitelist: HTTP status code [response.status_code]")
+		stack_trace("Failed to load whitelist: HTTP status code [response.status_code] - [response.error]")
 		return
 
 	var/list/ckeys = json_decode(response.body)
@@ -37,8 +37,8 @@ SUBSYSTEM_DEF(central)
 	SShttp.create_async_request(RUSTG_HTTP_METHOD_GET, endpoint, "", list(), CALLBACK(src, PROC_REF(get_player_discord_callback), player))
 
 /datum/controller/subsystem/central/proc/get_player_discord_callback(client/player, datum/http_response/response)
-	if(response.errored || response.status_code != 200)
-		stack_trace("Failed to get player discord: HTTP status code [response.status_code]")
+	if(response.errored || response.status_code != 200 && response.status_code != 404)
+		stack_trace("Failed to get player discord: HTTP status code [response.status_code] - [response.error]")
 		return
 
 	var/list/data = json_decode(response.body)
@@ -61,7 +61,7 @@ SUBSYSTEM_DEF(central)
 		return TRUE
 
 	// Update the info just in case
-	SScentral.get_player_discord_async(src)
+	SScentral.get_player_discord_async(player)
 
 	return FALSE
 
@@ -71,7 +71,7 @@ SUBSYSTEM_DEF(central)
 
 	var/endpoint = "[CONFIG_GET(string/ss_central_url)]/whitelist/simple/is_whitelisted/ckey/[ckey]?wl_type=[CONFIG_GET(string/whitelist_type)]"
 	var/datum/http_response/response = SShttp.make_blocking_request(RUSTG_HTTP_METHOD_GET, endpoint, "", list())
-	if(response.errored || response.status_code != 200)
+	if(response.errored || response.status_code != 200 && response.status_code != 404)
 		return FALSE
 
 	return json_decode(response.body)
@@ -90,9 +90,19 @@ SUBSYSTEM_DEF(central)
 	SShttp.create_async_request(RUSTG_HTTP_METHOD_POST, endpoint, json_encode(body), headers, CALLBACK(src, PROC_REF(add_to_whitelist_callback)))
 
 /datum/controller/subsystem/central/proc/add_to_whitelist_callback(datum/http_response/response)
-	if(response.errored || response.status_code != 200)
-		stack_trace("Failed to add to whitelist: HTTP status code [response.status_code]")
-		return
+	if(response.errored)
+		switch(response.status_code)
+			if(404)
+				message_admins("Failed to add to whitelist: Player not found")
+				return
+
+			if(409)
+				message_admins("Failed to add to whitelist: Player is whitelist banned")
+				return
+
+			else
+				stack_trace("Failed to add to whitelist: HTTP status code [response.status_code] - [response.error]")
+				return
 
 	var/list/data = json_decode(response.body)
 	var/ckey = data["ckey"]
@@ -115,7 +125,7 @@ SUBSYSTEM_DEF(central)
 
 /datum/controller/subsystem/central/proc/whitelist_ban_player_callback(datum/http_response/response)
 	if(response.errored || response.status_code != 200)
-		stack_trace("Failed to ban player: HTTP status code [response.status_code]")
+		stack_trace("Failed to ban player: HTTP status code [response.status_code] - [response.error]")
 		return
 
 	var/list/data = json_decode(response.body)
