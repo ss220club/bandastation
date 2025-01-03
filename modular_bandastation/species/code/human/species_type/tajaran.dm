@@ -21,6 +21,10 @@
 	mutant_organs = list(
 		/obj/item/organ/tail/tajaran = "Long tail",
 	)
+	inherent_traits = list(
+		TRAIT_CATLIKE_GRACE,
+		TRAIT_HATED_BY_DOGS,
+	)
 
 	body_markings = list(/datum/bodypart_overlay/simple/body_marking/tajaran = "None")
 	bodypart_overrides = list(

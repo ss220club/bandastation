@@ -14,6 +14,7 @@
 	)
 	liked_foodtypes = RAW | MEAT | SEAFOOD | FRIED | DAIRY
 	disliked_foodtypes = NUTS | GROSS | SUGAR | ORANGES
+	organ_traits = list(TRAIT_WOUND_LICKER)
 
 /obj/item/organ/tongue/tajaran/New(class, timer, datum/mutation/human/copymut)
 	. = ..()
