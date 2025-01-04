@@ -80,6 +80,15 @@ SUBSYSTEM_DEF(http)
 	/// Callback for executing after async requests. Will be called with an argument of [/datum/http_response] as first argument
 	var/datum/callback/cb
 
+/datum/http_request/into_response()
+	. = ..()
+
+	// HACK: I have no idea why this is necessary, but it is.
+	var/static/reg = ": status code ([0-9]{3})"
+	var/matched = findtext(_raw_response, reg)
+	if (matched)
+		R.status_code = text2num(copytext(matched, 15))
+
 /world/Del()
 	rustgss220_close_async_http_client()
 	. = ..()
