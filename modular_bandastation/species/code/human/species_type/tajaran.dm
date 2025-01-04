@@ -3,7 +3,9 @@
 	plural_form = "Таяры"
 	id = SPECIES_TAJARAN
 	inherent_traits = list(
-		TRAIT_MUTANT_COLORS
+		TRAIT_MUTANT_COLORS,
+		TRAIT_CATLIKE_GRACE,
+		TRAIT_HATED_BY_DOGS,
 	)
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
 
@@ -20,10 +22,6 @@
 	mutantstomach = /obj/item/organ/stomach/tajaran
 	mutant_organs = list(
 		/obj/item/organ/tail/tajaran = "Long tail",
-	)
-	inherent_traits = list(
-		TRAIT_CATLIKE_GRACE,
-		TRAIT_HATED_BY_DOGS,
 	)
 
 	body_markings = list(/datum/bodypart_overlay/simple/body_marking/tajaran = "None")
