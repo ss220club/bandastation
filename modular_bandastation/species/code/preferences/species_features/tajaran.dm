@@ -25,7 +25,7 @@
 		body.Blend(icon('modular_bandastation/species/icons/mob/species/tajaran/sprite_accessories/body.dmi', "tajaran_r_arm"), ICON_OVERLAY)
 		body.Blend(icon('modular_bandastation/species/icons/mob/species/tajaran/sprite_accessories/body.dmi', "tajaran_l_hand"), ICON_OVERLAY)
 		body.Blend(icon('modular_bandastation/species/icons/mob/species/tajaran/sprite_accessories/body.dmi', "tajaran_r_hand"), ICON_OVERLAY)
-		body.Blend(COLOR_SILVER, ICON_MULTIPLY)
+		body.Blend(COLOR_ASSISTANT_GRAY, ICON_MULTIPLY)
 
 	var/datum/sprite_accessory/markings = SSaccessories.tajaran_body_markings_list[value]
 	var/icon/icon_with_markings = new(body)
@@ -104,7 +104,7 @@
 		body.Blend(icon('modular_bandastation/species/icons/mob/species/tajaran/sprite_accessories/body.dmi', "tajaran_r_arm"), ICON_OVERLAY)
 		body.Blend(icon('modular_bandastation/species/icons/mob/species/tajaran/sprite_accessories/body.dmi', "tajaran_l_hand"), ICON_OVERLAY)
 		body.Blend(icon('modular_bandastation/species/icons/mob/species/tajaran/sprite_accessories/body.dmi', "tajaran_r_hand"), ICON_OVERLAY)
-		body.Blend(COLOR_SILVER, ICON_MULTIPLY)
+		body.Blend(COLOR_ASSISTANT_GRAY, ICON_MULTIPLY)
 
 	var/datum/sprite_accessory/markings = SSaccessories.tajaran_head_markings_list[value]
 	var/icon/icon_with_markings = new(body)
@@ -164,7 +164,7 @@
 	var/static/icon/head_icon
 	if(isnull(head_icon))
 		head_icon = icon('modular_bandastation/species/icons/mob/species/tajaran/sprite_accessories/body.dmi', "tajaran_head_m")
-		head_icon.Blend(COLOR_SILVER, ICON_MULTIPLY)
+		head_icon.Blend(COLOR_ASSISTANT_GRAY, ICON_MULTIPLY)
 
 	var/icon/final_icon = new(head_icon)
 	if(!isnull(markings))
