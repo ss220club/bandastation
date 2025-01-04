@@ -80,10 +80,11 @@ SUBSYSTEM_DEF(http)
 	/// Callback for executing after async requests. Will be called with an argument of [/datum/http_response] as first argument
 	var/datum/callback/cb
 
+// HACK: I have no idea why this is necessary, but it is.
 /datum/http_request/into_response()
 	. = ..()
 
-	// HACK: I have no idea why this is necessary, but it is.
+	var/datum/http_response/R = .
 	var/static/reg = ": status code ([0-9]{3})"
 	var/matched = findtext(_raw_response, reg)
 	if (matched)
