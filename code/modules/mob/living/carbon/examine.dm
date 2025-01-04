@@ -1,5 +1,6 @@
 /// Adds a newline to the examine list if the above entry is not empty and it is not the first element in the list
 #define ADD_NEWLINE_IF_NECESSARY(list) if(length(list) > 0 && list[length(list)]) { list += "" }
+#define CARBON_EXAMINE_EMBEDDING_MAX_DIST 4
 
 /mob/living/carbon/human/get_examine_name(mob/user, declent) // BANDASTATION EDIT - Declents
 	if(!HAS_TRAIT(user, TRAIT_PROSOPAGNOSIA))
@@ -61,8 +62,16 @@
 			disabled += body_part
 		missing -= body_part.body_zone
 		for(var/obj/item/embedded as anything in body_part.embedded_objects)
-			var/stuck_wordage = embedded.is_embed_harmless() ? "застревает" : "впивается"
-			. += span_boldwarning("[icon2html(embedded, user)] [capitalize(embedded.declent_ru(ACCUSATIVE))] [stuck_wordage] в [t_his] [body_part.ru_plaintext_zone[ACCUSATIVE] || body_part.plaintext_zone]!")
+			var/harmless = embedded.get_embed().is_harmless()
+			var/stuck_wordage = harmless ? "застревает" : "впивается"
+			var/embed_line = "[embedded]"
+			if (get_dist(src, user) <= CARBON_EXAMINE_EMBEDDING_MAX_DIST)
+				embed_line = "<a href='byond://?src=[REF(src)];embedded_object=[REF(embedded)];embedded_limb=[REF(body_part)]'>[embedded]</a>"
+			var/embed_text = "[icon2html(embedded, user)] [capitalize(embed_line.declent_ru(ACCUSATIVE))] [stuck_wordage] в [t_his] [body_part.ru_plaintext_zone[ACCUSATIVE] || body_part.plaintext_zone]!"
+			if (harmless)
+				. += span_italics(span_notice(embed_text))
+			else
+				. += span_boldwarning(embed_text)
 
 		for(var/datum/wound/iter_wound as anything in body_part.wounds)
 			. += span_danger(iter_wound.get_examine_description(user))
@@ -583,4 +592,9 @@
 		if(undershirt.has_sensor == BROKEN_SENSORS)
 			. += list(span_notice("[capitalize(undershirt.declent_ru(NOMINATIVE))] имеет коротящие медицинские датчики."))
 
+	for(var/datum/scar/iter_scar as anything in all_scars)
+		if(iter_scar.is_visible(user))
+			. += iter_scar.get_examine_description(user)
+
 #undef ADD_NEWLINE_IF_NECESSARY
+#undef CARBON_EXAMINE_EMBEDDING_MAX_DIST

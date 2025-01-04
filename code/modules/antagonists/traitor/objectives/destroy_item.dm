@@ -1,6 +1,6 @@
 /datum/traitor_objective/destroy_item
 	name = "Найдите и уничтожьте %ITEM%."
-	description = "Найдите %ITEM% и уничтожьте его любой ценой. Мы не можем позволить, чтобы экипаж станции владел %ITEM%, это совершенно не в наших интересах."
+	description = "Найдите %ITEM% и уничтожьте его любой ценой. Мы не можем позволить, чтобы экипаж станции владел %ITEM%, это совершенно не в наших интересах. %METHOD%"
 
 	var/list/possible_items = list()
 	/// The current target item that we are stealing.
@@ -29,7 +29,6 @@
 	progression_minimum = 40 MINUTES
 	progression_reward = 15 MINUTES
 	telecrystal_reward = list(6, 9)
-
 	possible_items = list(
 		/datum/objective_item/steal/blackbox,
 	)
@@ -77,6 +76,10 @@
 		special_equipment = target_item.special_equipment
 	var/obj/steal_target = target_item.targetitem // BANDASTATION EDIT ADDITION
 	replace_in_name("%ITEM%", declent_ru_initial(steal_target::name, ACCUSATIVE, target_item.name))
+	if(target_item.destruction_method != null)
+		replace_in_name("%METHOD%", target_item.destruction_method)
+	else
+		replace_in_name("%METHOD%", "This item can be destroyed normally, such as by using a recycler, found in disposals.")
 	AddComponent(/datum/component/traitor_objective_mind_tracker, generating_for, \
 		signals = list(COMSIG_MOB_EQUIPPED_ITEM = PROC_REF(on_item_pickup)))
 	return TRUE
