@@ -117,14 +117,12 @@
 
 /area/centcom/central_command_areas/conference_room
 	name = "ЦК - Конференц Зал"
-	static_lighting = FALSE
 
 /area/centcom/central_command_areas/arboretum
 	name = "ЦК - Сад"
 
 /area/centcom/central_command_areas/bar
 	name = "ЦК - Столовая"
-	static_lighting = FALSE
 
 /area/centcom/central_command_areas/hospital
 	name = "ЦК - Госпиталь"
@@ -134,11 +132,9 @@
 
 /area/centcom/central_command_areas/maintance
 	name = "ЦК - Технические Помещения"
-	static_lighting = FALSE
 
 /area/centcom/central_command_areas/cabin
 	name = "ЦК - Каюта Представителя Флота"
-	static_lighting = FALSE
 
 /area/centcom/central_command_areas/cabin/soo
 	name = "ЦК - Каюта Офицера Специальных Операций"

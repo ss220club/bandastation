@@ -18,12 +18,28 @@
 /obj/machinery/computer/camera_advanced/shuttle_docker/argos
 	name = "syndicate infiltrator navigation computer"
 	desc = "Used to pilot Argos shuttle."
+	icon_screen = "shuttle"
+	icon_keyboard = "rd_key"
 	shuttleId = "argos"
 	shuttlePortId = "argos_custom"
 	x_offset = 0
 	y_offset = 8
 	lock_override = CAMERA_LOCK_STATION
 	jump_to_ports = list("syndicate_ne" = 1, "syndicate_nw" = 1, "syndicate_n" = 1, "syndicate_se" = 1, "syndicate_sw" = 1, "syndicate_s" = 1)
+	resistance_flags = INDESTRUCTIBLE
+
+/obj/machinery/computer/camera_advanced/shuttle_docker/specops
+	name = "Specops navigation computer"
+	desc = "Used to pilot ERT shuttle."
+	icon_screen = "shuttle"
+	icon_keyboard = "rd_key"
+	shuttleId = "specops"
+	shuttlePortId = "specops_custom"
+	x_offset = 0
+	y_offset = 3
+	lock_override = CAMERA_LOCK_STATION
+	jump_to_ports = list("syndicate_ne" = 1, "syndicate_nw" = 1, "syndicate_n" = 1, "syndicate_se" = 1, "syndicate_sw" = 1, "syndicate_s" = 1)
+	resistance_flags = INDESTRUCTIBLE
 
 // Shuttle Dockers Override
 /obj/machinery/computer/camera_advanced/shuttle_docker/syndicate
@@ -46,10 +62,24 @@
 /obj/machinery/computer/shuttle/argos
 	name = "transport argos console"
 	desc = "A console that controls the transport Argos."
+	icon_screen = "teleport"
+	icon_keyboard = "security_key"
 	circuit = /obj/item/circuitboard/computer/argos
 	shuttleId = "argos"
-	possible_destinations = "argos_home;ferry_trurl;argos_custom"
+	possible_destinations = "argos_home;argos_trurl;argos_custom"
 	req_access = list(ACCESS_CENT_GENERAL)
+	resistance_flags = INDESTRUCTIBLE
+
+/obj/machinery/computer/shuttle/specops
+	name = "transport specops shuttle console"
+	desc = "A console that controls the transport Specops shuttle."
+	icon_screen = "teleport"
+	icon_keyboard = "security_key"
+	circuit = /obj/item/circuitboard/computer/argos
+	shuttleId = "specops"
+	possible_destinations = "specops_home;specops_trurl;specops_custom"
+	req_access = list(ACCESS_CENT_GENERAL)
+	resistance_flags = INDESTRUCTIBLE
 
 /**
  * Not sure now if we need to declare war if we use these shuttles
@@ -89,6 +119,15 @@
 	port_direction = NORTH
 	preferred_direction = SOUTH
 
+/obj/docking_port/mobile/argos
+	name = "specops shuttle"
+	shuttle_id = "specops"
+	movement_force = list("KNOCKDOWN" = 0, "THROW" = 0)
+	hidden = TRUE
+	dir = EAST
+	port_direction = EAST
+	preferred_direction = NORTH
+
 // Shuttle Areas
 /area/shuttle/syndicate_sit
 	name = "Syndicate SIT Shuttle"
@@ -99,8 +138,16 @@
 /area/shuttle/argos
 	name = "Argos Shuttle"
 
+/area/shuttle/specops
+	name = "Specops Shuttle"
+
 // Shuttle Circuitboard
 /obj/item/circuitboard/computer/argos
 	name = "Transport Argos"
-	greyscale_colors = CIRCUIT_COLOR_SUPPLY
+	greyscale_colors = CIRCUIT_COLOR_COMMAND
 	build_path = /obj/machinery/computer/shuttle/argos
+
+/obj/item/circuitboard/computer/specops
+	name = "Transport Specops"
+	greyscale_colors = CIRCUIT_COLOR_COMMAND
+	build_path = /obj/machinery/computer/shuttle/specops

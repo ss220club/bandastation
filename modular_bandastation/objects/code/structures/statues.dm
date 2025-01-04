@@ -45,6 +45,7 @@
 	icon_state = "heinrich_treisen"
 	anchored = TRUE
 	abstract_type = /obj/structure/statue/heinrich_treisen
+	layer = ABOVE_MOB_LAYER
 
 /obj/structure/statue/elwycco
 	name = "Camper Hunter"

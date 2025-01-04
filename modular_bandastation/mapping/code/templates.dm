@@ -33,7 +33,18 @@
 /datum/map_template/shuttle/argos/basic
 	suffix = "basic"
 	name = "basic argos shuttle"
-	description = "Base SST shuttle, spawned by default for syndicate strike team to use."
+	description = "Base Argos shuttle."
+
+/datum/map_template/shuttle/specops
+	port_id = "specops"
+	who_can_purchase = null
+	prefix = "_maps/shuttles/ss220/"
+
+/datum/map_template/shuttle/specops/basic
+
+	suffix = "basic"
+	name = "basic specops shuttle"
+	description = "Base Specops shuttle."
 
 // Shuttles Overrides
 /datum/map_template/shuttle/infiltrator/basic
