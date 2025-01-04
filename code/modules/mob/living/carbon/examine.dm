@@ -64,10 +64,10 @@
 		for(var/obj/item/embedded as anything in body_part.embedded_objects)
 			var/harmless = embedded.get_embed().is_harmless()
 			var/stuck_wordage = harmless ? "застревает" : "впивается"
-			var/embed_line = "[embedded]"
+			var/embed_line = "[capitalize(embedded.declent_ru(ACCUSATIVE))]"
 			if (get_dist(src, user) <= CARBON_EXAMINE_EMBEDDING_MAX_DIST)
 				embed_line = "<a href='byond://?src=[REF(src)];embedded_object=[REF(embedded)];embedded_limb=[REF(body_part)]'>[embedded]</a>"
-			var/embed_text = "[icon2html(embedded, user)] [capitalize(embed_line.declent_ru(ACCUSATIVE))] [stuck_wordage] в [t_his] [body_part.ru_plaintext_zone[ACCUSATIVE] || body_part.plaintext_zone]!"
+			var/embed_text = "[icon2html(embedded, user)] [embed_line] [stuck_wordage] в [t_his] [body_part.ru_plaintext_zone[ACCUSATIVE] || body_part.plaintext_zone]!"
 			if (harmless)
 				. += span_italics(span_notice(embed_text))
 			else
