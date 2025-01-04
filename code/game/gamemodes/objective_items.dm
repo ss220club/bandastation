@@ -328,7 +328,7 @@
 	return add_item_to_steal(src, /obj/item/gun/energy/e_gun/hos)
 
 /datum/objective_item/steal/compactshotty
-	name = "head of security's personal compact shotgun"
+	name = "warden's personal compact shotgun"
 	targetitem = /obj/item/gun/ballistic/shotgun/automatic/combat/compact
 	excludefromjob = list(JOB_WARDEN)
 	item_owner = list(JOB_WARDEN)
