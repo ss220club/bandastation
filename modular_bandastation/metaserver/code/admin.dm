@@ -4,7 +4,7 @@ ADMIN_VERB(wl_ban, R_BAN, "WL Ban", "Ban a player from the whitelist.", ADMIN_CA
 	if(!banned_ckey)
 		return
 	var/duration_days = input(user, "Please specify the duration of the ban in days.", "Duration", "") as num|null
-	if(!duration_days || duration_days < 0)
+	if(isnull(duration_days) || duration_days < 0)
 		return
 
 	var/reason = input(user, "Please specify the reason for the ban.", "Reason", "") as message|null
