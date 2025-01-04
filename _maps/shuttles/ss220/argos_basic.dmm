@@ -3,6 +3,7 @@
 /obj/structure/chair/comfy/shuttle{
 	dir = 1
 	},
+/obj/machinery/light/directional/south,
 /turf/open/floor/iron/dark/diagonal,
 /area/shuttle/argos)
 "ay" = (
@@ -47,6 +48,11 @@
 	},
 /turf/open/floor/light,
 /area/shuttle/argos)
+"dp" = (
+/turf/open/floor/iron/dark/smooth_edge{
+	dir = 4
+	},
+/area/shuttle/argos)
 "ds" = (
 /obj/effect/turf_decal/tile/blue,
 /obj/effect/turf_decal/tile/blue{
@@ -60,6 +66,7 @@
 /turf/open/floor/plating,
 /area/shuttle/argos)
 "dK" = (
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/catwalk_floor/iron_dark,
 /area/shuttle/argos)
 "ep" = (
@@ -121,10 +128,10 @@
 /turf/open/floor/iron/dark/smooth_large,
 /area/shuttle/argos)
 "jn" = (
-/turf/open/floor/iron/stairs{
-	color = "#6d6e73";
-	dir = 4
+/obj/structure/fake_stairs/directional/west{
+	color = "#6d6e73"
 	},
+/turf/open/floor/iron/dark/smooth_large,
 /area/shuttle/argos)
 "jv" = (
 /obj/machinery/digital_clock/directional/north,
@@ -134,6 +141,10 @@
 /obj/structure/lattice/catwalk,
 /turf/template_noop,
 /area/template_noop)
+"jV" = (
+/obj/machinery/light/small/directional/west,
+/turf/open/floor/plating,
+/area/shuttle/argos)
 "kf" = (
 /obj/structure/lattice,
 /turf/template_noop,
@@ -148,6 +159,7 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/tile/blue/full,
+/obj/machinery/light/directional/south,
 /turf/open/floor/iron/white/smooth_large,
 /area/shuttle/argos)
 "kQ" = (
@@ -213,14 +225,14 @@
 /area/shuttle/argos)
 "th" = (
 /obj/structure/sign/departments/medbay/alt,
-/turf/closed/indestructible/riveted,
+/turf/closed/wall/r_wall/syndicate,
 /area/shuttle/argos)
 "tI" = (
 /turf/template_noop,
 /area/template_noop)
 "tU" = (
 /obj/machinery/power/shuttle_engine/large,
-/turf/closed/indestructible/riveted,
+/turf/closed/wall/r_wall/syndicate,
 /area/shuttle/argos)
 "uA" = (
 /obj/effect/turf_decal/tile/blue{
@@ -266,6 +278,10 @@
 /obj/machinery/door/airlock/centcom,
 /obj/effect/mapping_helpers/airlock/access/any/admin/general,
 /turf/open/floor/iron/dark/diagonal,
+/area/shuttle/argos)
+"vH" = (
+/obj/machinery/light/directional/south,
+/turf/open/floor/iron/dark/smooth_large,
 /area/shuttle/argos)
 "vM" = (
 /obj/structure/table/wood/fancy/black,
@@ -338,7 +354,11 @@
 	},
 /area/shuttle/argos)
 "yE" = (
-/obj/effect/spawner/structure/window/reinforced/indestructible,
+/obj/effect/spawner/structure/window/reinforced/plasma/plastitanium,
+/obj/machinery/door/poddoor/preopen{
+	name = "Argos Window Protector";
+	id = "argos_window"
+	},
 /turf/open/floor/plating/airless,
 /area/shuttle/argos)
 "zb" = (
@@ -378,7 +398,23 @@
 /obj/effect/mapping_helpers/airlock/cutaiwire,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
 /obj/effect/mapping_helpers/airlock/access/any/admin/general,
+/obj/machinery/door/poddoor/ert{
+	id = "argos_exit";
+	name = "Argos Blast Door";
+	layer = 2.8
+	},
+/obj/machinery/button/door/indestructible{
+	pixel_x = -28;
+	id = "argos_exit";
+	name = "Argos Blast Door"
+	},
 /turf/open/floor/pod/dark,
+/area/shuttle/argos)
+"BE" = (
+/obj/machinery/light/directional/west,
+/turf/open/floor/iron/dark/textured_half{
+	dir = 1
+	},
 /area/shuttle/argos)
 "CS" = (
 /obj/machinery/door/airlock/centcom,
@@ -398,6 +434,10 @@
 /obj/effect/turf_decal/siding/blue,
 /turf/open/floor/iron/white/diagonal,
 /area/shuttle/argos)
+"DW" = (
+/obj/machinery/light/directional/east,
+/turf/open/floor/iron/dark/smooth_large,
+/area/shuttle/argos)
 "EC" = (
 /obj/structure/lattice/catwalk,
 /obj/structure/marker_beacon/burgundy,
@@ -405,7 +445,9 @@
 /area/template_noop)
 "EE" = (
 /obj/structure/extinguisher_cabinet/directional/west,
-/turf/open/floor/iron/dark,
+/turf/open/floor/iron/dark/textured_half{
+	dir = 1
+	},
 /area/shuttle/argos)
 "EF" = (
 /obj/structure/table/wood,
@@ -475,6 +517,17 @@
 "Lq" = (
 /obj/structure/table/reinforced/plastitaniumglass,
 /obj/structure/window/reinforced/spawner/directional/south,
+/obj/machinery/button/door/indestructible{
+	pixel_x = 6;
+	id = "argos_exit";
+	name = "Argos Blast Door"
+	},
+/obj/machinery/button/door/indestructible{
+	pixel_x = -6;
+	pixel_y = 0;
+	id = "argos_window";
+	name = "Argos Window Protector"
+	},
 /turf/open/floor/iron/dark/smooth_large,
 /area/shuttle/argos)
 "Lu" = (
@@ -502,10 +555,16 @@
 /obj/effect/mapping_helpers/airlock/cutaiwire,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
 /obj/effect/mapping_helpers/airlock/access/any/admin/general,
+/obj/machinery/door/poddoor/ert{
+	id = "argos_exit";
+	name = "Argos Blast Door";
+	layer = 2.8
+	},
 /turf/open/floor/pod/dark,
 /area/shuttle/argos)
 "NJ" = (
 /obj/machinery/newscaster/directional/east,
+/obj/machinery/light/directional/south,
 /turf/open/floor/carpet/royalblack,
 /area/shuttle/argos)
 "NX" = (
@@ -537,6 +596,7 @@
 /area/shuttle/argos)
 "Rs" = (
 /obj/structure/dresser,
+/obj/machinery/light/directional/south,
 /turf/open/floor/carpet/royalblack,
 /area/shuttle/argos)
 "RF" = (
@@ -545,7 +605,12 @@
 /turf/open/floor/iron/dark/smooth_large,
 /area/shuttle/argos)
 "TK" = (
-/turf/closed/indestructible/riveted,
+/turf/closed/wall/r_wall/syndicate,
+/area/shuttle/argos)
+"Ua" = (
+/turf/open/floor/iron/dark/smooth_edge{
+	dir = 8
+	},
 /area/shuttle/argos)
 "Ur" = (
 /obj/structure/chair/comfy/shuttle{
@@ -562,7 +627,9 @@
 /obj/structure/chair/comfy/shuttle{
 	dir = 4
 	},
-/turf/open/floor/iron/dark,
+/turf/open/floor/iron/dark/smooth_edge{
+	dir = 4
+	},
 /area/shuttle/argos)
 "Wa" = (
 /obj/structure/chair/comfy/corp{
@@ -574,7 +641,9 @@
 /turf/open/floor/wood,
 /area/shuttle/argos)
 "Wq" = (
-/turf/open/floor/iron/dark,
+/turf/open/floor/iron/dark/textured_half{
+	dir = 1
+	},
 /area/shuttle/argos)
 "Yj" = (
 /obj/structure/table/reinforced/rglass,
@@ -640,7 +709,7 @@ tI
 yE
 zL
 gr
-wW
+vH
 TK
 ep
 aJ
@@ -722,13 +791,13 @@ TK
 TK
 TK
 TK
-Wq
+dp
 VS
 VS
-Wq
-Wq
+dp
+dp
 CS
-dv
+jV
 AQ
 "}
 (7,1,1) = {"
@@ -740,7 +809,7 @@ Gd
 uT
 Wq
 EE
-Wq
+BE
 Wq
 Wq
 Wq
@@ -758,7 +827,7 @@ xI
 TK
 TK
 ay
-Wq
+Ua
 kQ
 TK
 TK
@@ -815,7 +884,7 @@ Nx
 wD
 TK
 RF
-wW
+DW
 Oh
 TK
 xl

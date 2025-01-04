@@ -119,13 +119,13 @@
 	port_direction = NORTH
 	preferred_direction = SOUTH
 
-/obj/docking_port/mobile/argos
+/obj/docking_port/mobile/specops
 	name = "specops shuttle"
 	shuttle_id = "specops"
 	movement_force = list("KNOCKDOWN" = 0, "THROW" = 0)
 	hidden = TRUE
 	dir = EAST
-	port_direction = EAST
+	port_direction = NORTH
 	preferred_direction = NORTH
 
 // Shuttle Areas

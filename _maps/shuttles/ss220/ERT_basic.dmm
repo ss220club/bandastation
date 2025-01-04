@@ -1,4 +1,8 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"d" = (
+/obj/machinery/light/floor,
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/specops)
 "e" = (
 /obj/machinery/power/shuttle_engine/propulsion,
 /turf/open/floor/plating/airless,
@@ -62,6 +66,12 @@
 "T" = (
 /turf/open/floor/mineral/plastitanium/red,
 /area/shuttle/specops)
+"W" = (
+/obj/machinery/door/airlock/external,
+/obj/structure/fans/tiny,
+/obj/docking_port/mobile/specops,
+/turf/open/floor/plating,
+/area/shuttle/specops)
 "Z" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 8
@@ -96,13 +106,13 @@ M
 e
 "}
 (3,1,1) = {"
-s
+W
 T
+d
 T
+d
 T
-T
-T
-T
+d
 T
 F
 M
