@@ -7,9 +7,13 @@
 
 /mob/dead/new_player/register_for_interview()
 	. = ..()
-	add_verb(client, /client/verify_in_discord)
+	add_verb(client, /client/verb/verify_in_discord_central)
 
-/client/verify_in_discord()
+/client/verb/verify_in_discord_central()
+	set category = "OOC"
+	set name = "Привязать Discord"
+	set desc = "Привязка аккаунта Discord к BYOND"
+
 	if(!SScentral.initialized)
 		to_chat(src, span_warning("Привязка Discord сейчас недоступна."))
 		return
