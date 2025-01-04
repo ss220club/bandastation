@@ -24,6 +24,7 @@
 	shuttlePortId = "argos_custom"
 	x_offset = 0
 	y_offset = 8
+	view_range = 5.5
 	lock_override = CAMERA_LOCK_STATION
 	jump_to_ports = list("syndicate_ne" = 1, "syndicate_nw" = 1, "syndicate_n" = 1, "syndicate_se" = 1, "syndicate_sw" = 1, "syndicate_s" = 1)
 	resistance_flags = INDESTRUCTIBLE
@@ -124,8 +125,8 @@
 	shuttle_id = "specops"
 	movement_force = list("KNOCKDOWN" = 0, "THROW" = 0)
 	hidden = TRUE
-	dir = EAST
-	port_direction = NORTH
+	dir = SOUTH
+	port_direction = SOUTH
 	preferred_direction = NORTH
 
 // Shuttle Areas

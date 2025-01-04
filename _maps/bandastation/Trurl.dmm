@@ -312,7 +312,7 @@
 "aQ" = (
 /obj/structure/platform{
 	dir = 8;
-	layer = 3.4
+	layer = 1
 	},
 /obj/structure/railing{
 	dir = 4;
@@ -2008,6 +2008,10 @@
 /area/centcom/central_command_areas/hallway)
 "gJ" = (
 /obj/machinery/door/airlock/centcom,
+/obj/effect/turf_decal/siding/wood/end,
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
 /turf/open/floor/wood,
 /area/centcom/central_command_areas/courtroom)
 "gL" = (
@@ -2198,8 +2202,15 @@
 /area/centcom/central_command_areas/hallway)
 "hp" = (
 /obj/machinery/griddle,
-/turf/open/floor/iron/kitchen_coldroom,
+/turf/open/floor/iron,
 /area/centcom/central_command_areas/bar)
+"hq" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
+	},
+/obj/structure/light_fake/floor,
+/turf/open/floor/iron/dark/smooth_large,
+/area/centcom/central_command_areas/fore)
 "hu" = (
 /turf/closed/indestructible/riveted,
 /area/centcom/central_command_areas/hospital)
@@ -2222,9 +2233,11 @@
 /turf/open/floor/iron,
 /area/centcom/central_command_areas/supply)
 "hx" = (
-/obj/structure/light_fake/spot/directional/south,
-/turf/open/floor/iron/dark/smooth_large,
-/area/centcom/central_command_areas/fore)
+/obj/structure/light_fake/small/directional/east,
+/turf/open/floor/iron/dark/textured_edge{
+	dir = 8
+	},
+/area/centcom/central_command_areas/prison)
 "hy" = (
 /obj/structure/table/wood,
 /obj/machinery/chem_dispenser/drinks/fullupgrade{
@@ -2247,7 +2260,7 @@
 "hB" = (
 /obj/structure/table/reinforced,
 /obj/machinery/microwave,
-/turf/open/floor/iron/kitchen_coldroom,
+/turf/open/floor/iron,
 /area/centcom/central_command_areas/bar)
 "hC" = (
 /obj/machinery/power/shuttle_engine/heater,
@@ -2413,6 +2426,13 @@
 "ii" = (
 /turf/open/floor/wood,
 /area/centcom/central_command_areas/arboretum)
+"ik" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/obj/structure/light_fake/floor,
+/turf/open/floor/iron/dark/smooth_large,
+/area/centcom/central_command_areas/fore)
 "il" = (
 /obj/structure/table/wood{
 	color = "#996633"
@@ -3133,6 +3153,10 @@
 /obj/structure/sign/poster/contraband/random/directional/north,
 /turf/open/floor/catwalk_floor/iron_dark,
 /area/centcom/central_command_areas/maintance)
+"kJ" = (
+/obj/structure/light_fake/spot/directional/north,
+/turf/open/floor/carpet/black,
+/area/centcom/central_command_areas/courtroom)
 "kK" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 1
@@ -3710,6 +3734,8 @@
 	dir = 8
 	},
 /obj/structure/sign/flag/nanotrasen/directional/south,
+/obj/structure/light_fake/spot/directional/south,
+/obj/item/kirbyplants/random,
 /turf/open/floor/iron/dark/smooth_large,
 /area/centcom/central_command_areas/courtroom)
 "mF" = (
@@ -4799,6 +4825,11 @@
 	},
 /turf/open/floor/iron/dark/textured_half,
 /area/centcom/central_command_areas/hallway)
+"qq" = (
+/obj/effect/turf_decal/line/dark_blue/line/contrasted,
+/obj/structure/reagent_dispensers/water_cooler,
+/turf/open/floor/iron/dark,
+/area/centcom/central_command_areas/courtroom)
 "qr" = (
 /obj/effect/spawner/random/structure/chair_flipped{
 	dir = 4
@@ -5480,7 +5511,7 @@
 	pixel_x = 8;
 	pixel_y = 0
 	},
-/turf/open/floor/wood,
+/turf/open/floor/carpet/green,
 /area/centcom/central_command_areas/courtroom)
 "sF" = (
 /obj/machinery/door/window/brigdoor/right/directional/south,
@@ -5495,6 +5526,7 @@
 /area/centcom/central_command_areas/hallway)
 "sK" = (
 /obj/structure/filingcabinet,
+/obj/effect/turf_decal/siding/wood/end,
 /turf/open/floor/wood,
 /area/centcom/central_command_areas/courtroom)
 "sL" = (
@@ -7599,11 +7631,10 @@
 /turf/open/floor/iron,
 /area/centcom/central_command_areas/supplypod/loading/four)
 "zX" = (
-/obj/structure/table/wood{
-	layer = 2.91
-	},
+/obj/structure/table/wood,
 /obj/structure/platform/corner{
-	dir = 8
+	dir = 8;
+	layer = 1
 	},
 /obj/item/folder/red{
 	pixel_x = -6;
@@ -7853,6 +7884,10 @@
 	dir = 1
 	},
 /area/centcom/central_command_areas/ert)
+"AJ" = (
+/obj/structure/light_fake/spot/directional/east,
+/turf/open/floor/iron/dark,
+/area/centcom/central_command_areas/courtroom)
 "AM" = (
 /obj/structure/fake_stairs/directional/north{
 	color = "#464d4b"
@@ -9126,7 +9161,8 @@
 /area/centcom/central_command_areas/hallway)
 "Fe" = (
 /obj/structure/platform{
-	dir = 1
+	dir = 1;
+	layer = 1
 	},
 /obj/structure/chair/comfy/blue,
 /turf/open/floor/carpet/blue,
@@ -9176,13 +9212,6 @@
 /obj/structure/flora/bush/sunny/style_3,
 /turf/open/water/beach,
 /area/centcom/central_command_areas/cabin)
-"Fq" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 8
-	},
-/obj/structure/light_fake/floor,
-/turf/open/floor/iron/dark/smooth_large,
-/area/centcom/central_command_areas/fore)
 "Fs" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
@@ -9267,7 +9296,8 @@
 /obj/item/wallframe/painting/eldritch/weeping{
 	pixel_y = -32
 	},
-/turf/open/floor/wood,
+/obj/structure/light_fake/spot/directional/south,
+/turf/open/floor/carpet/black,
 /area/centcom/central_command_areas/courtroom)
 "FC" = (
 /obj/effect/turf_decal/line/dark_blue/line{
@@ -10733,7 +10763,7 @@
 /obj/structure/chair/comfy/corp{
 	dir = 1
 	},
-/turf/open/floor/wood,
+/turf/open/floor/carpet/green,
 /area/centcom/central_command_areas/courtroom)
 "Kn" = (
 /obj/machinery/modular_computer/preset/command,
@@ -11029,7 +11059,7 @@
 /area/centcom/central_command_areas/bar)
 "Lc" = (
 /obj/machinery/deepfryer,
-/turf/open/floor/iron/kitchen_coldroom,
+/turf/open/floor/iron,
 /area/centcom/central_command_areas/bar)
 "Ld" = (
 /obj/effect/spawner/structure/window/reinforced/indestructible,
@@ -11098,7 +11128,7 @@
 /area/centcom/central_command_areas/cabin)
 "Lr" = (
 /obj/machinery/oven,
-/turf/open/floor/iron/kitchen_coldroom,
+/turf/open/floor/iron,
 /area/centcom/central_command_areas/bar)
 "Ls" = (
 /obj/machinery/door/airlock/centcom,
@@ -11673,11 +11703,10 @@
 /turf/open/floor/iron/dark/diagonal,
 /area/centcom/central_command_areas/conference_room)
 "Nq" = (
-/obj/structure/table/wood{
-	layer = 2.91
-	},
+/obj/structure/table/wood,
 /obj/structure/platform/corner{
-	dir = 4
+	dir = 4;
+	layer = 1
 	},
 /obj/item/folder/blue{
 	pixel_x = -3;
@@ -11859,10 +11888,7 @@
 /turf/closed/indestructible/riveted,
 /area/centcom/central_command_areas/prison/cells)
 "Oe" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 4
-	},
-/obj/structure/light_fake/floor,
+/obj/structure/light_fake/spot/directional/south,
 /turf/open/floor/iron/dark/smooth_large,
 /area/centcom/central_command_areas/fore)
 "Oh" = (
@@ -12086,7 +12112,8 @@
 /area/centcom/central_command_areas/maintance)
 "OT" = (
 /obj/structure/platform{
-	dir = 1
+	dir = 1;
+	layer = 1
 	},
 /obj/structure/chair/comfy/red,
 /turf/open/floor/carpet/red,
@@ -12186,7 +12213,7 @@
 /area/centcom/central_command_areas/hallway)
 "Pm" = (
 /obj/machinery/holopad/secure,
-/turf/open/floor/iron/smooth/airless,
+/turf/open/floor/iron/smooth,
 /area/centcom/central_command_areas/briefing)
 "Po" = (
 /obj/effect/turf_decal/delivery,
@@ -12622,6 +12649,14 @@
 	},
 /obj/structure/table/wood,
 /obj/item/radio/intercom/command,
+/obj/item/reagent_containers/cup/glass/waterbottle{
+	pixel_x = 6;
+	pixel_y = -6
+	},
+/obj/item/reagent_containers/cup/glass/drinkingglass{
+	pixel_x = -3;
+	pixel_y = -6
+	},
 /turf/open/floor/carpet,
 /area/centcom/central_command_areas/courtroom)
 "QJ" = (
@@ -12873,8 +12908,9 @@
 /obj/item/storage/bag/garment/magistrate,
 /obj/item/gun/ballistic/revolver/c38{
 	desc = "I am the LAW";
-	name = "''Justice''"
+	name = "Justice"
 	},
+/obj/effect/turf_decal/siding/wood/end,
 /turf/open/floor/wood,
 /area/centcom/central_command_areas/courtroom)
 "RV" = (
@@ -13066,7 +13102,7 @@
 	dir = 4
 	},
 /obj/structure/sign/calendar/directional/north,
-/turf/open/floor/wood,
+/turf/open/floor/carpet/green,
 /area/centcom/central_command_areas/courtroom)
 "Sv" = (
 /obj/machinery/conveyor{
@@ -14969,6 +15005,10 @@
 	},
 /turf/open/floor/iron/smooth_large,
 /area/centcom/central_command_areas/armory)
+"Zb" = (
+/obj/structure/light_fake/spot/directional/west,
+/turf/open/floor/iron/dark,
+/area/centcom/central_command_areas/courtroom)
 "Zc" = (
 /obj/machinery/digital_clock/directional/north,
 /turf/open/floor/glass/reinforced,
@@ -15361,7 +15401,7 @@
 	dir = 8
 	},
 /obj/structure/sign/clock/directional/north,
-/turf/open/floor/wood,
+/turf/open/floor/carpet/green,
 /area/centcom/central_command_areas/courtroom)
 
 (1,1,1) = {"
@@ -17692,7 +17732,7 @@ eM
 nU
 wn
 wn
-wn
+AC
 AC
 AC
 AC
@@ -17805,7 +17845,6 @@ eM
 Dg
 wn
 wn
-wn
 AC
 AC
 AC
@@ -17813,6 +17852,7 @@ AC
 AC
 AC
 AC
+aq
 Rj
 hJ
 ZR
@@ -17918,7 +17958,7 @@ Dg
 Dg
 Dg
 wn
-wn
+AC
 AC
 AC
 AC
@@ -18038,7 +18078,7 @@ AC
 AC
 AC
 AC
-aq
+AC
 HT
 CO
 se
@@ -19925,11 +19965,11 @@ rZ
 zA
 HR
 ln
-Kp
+Zb
 lL
 gh
 eh
-ju
+qq
 Cr
 hm
 SS
@@ -20146,7 +20186,7 @@ KC
 KC
 KC
 KC
-cT
+kJ
 RV
 wD
 Nq
@@ -20256,8 +20296,8 @@ bG
 KC
 KC
 sK
-Yg
-Yg
+cT
+cT
 gJ
 cT
 nf
@@ -20368,8 +20408,8 @@ uT
 bG
 KC
 Su
-Yg
-Yg
+cT
+cT
 KC
 KC
 wd
@@ -20594,8 +20634,8 @@ tG
 bG
 KC
 ZZ
-Yg
-Yg
+cT
+cT
 KC
 KC
 IP
@@ -20708,8 +20748,8 @@ bG
 KC
 KC
 RT
-Yg
-Yg
+cT
+cT
 gJ
 cT
 pL
@@ -20824,7 +20864,7 @@ KC
 KC
 KC
 KC
-cT
+kJ
 RV
 NE
 zX
@@ -21055,11 +21095,11 @@ rZ
 ck
 KN
 Pd
-Kp
+AJ
 Vb
 KZ
 eh
-ju
+qq
 Cr
 hm
 SS
@@ -21669,7 +21709,7 @@ hz
 BN
 hz
 EP
-FK
+hx
 FK
 Od
 wQ
@@ -21830,7 +21870,7 @@ OA
 jL
 jL
 jL
-Oe
+hq
 jL
 jL
 jL
@@ -21838,7 +21878,7 @@ jL
 jL
 jL
 jL
-Oe
+hq
 jL
 jL
 jL
@@ -21957,7 +21997,7 @@ Dj
 Dj
 Dj
 Wz
-hx
+Oe
 eH
 Xw
 FW
@@ -22522,7 +22562,7 @@ Dj
 Dj
 ML
 Wz
-hx
+Oe
 eH
 Kn
 da
@@ -23087,7 +23127,7 @@ Dj
 Dj
 Dj
 Wz
-hx
+Oe
 OA
 eM
 Ge
@@ -23299,7 +23339,7 @@ OA
 Dl
 Dl
 Dl
-Fq
+ik
 Dl
 Dl
 Dl
@@ -23307,7 +23347,7 @@ Dl
 Dl
 Dl
 Dl
-Fq
+ik
 Dl
 Dl
 Dl

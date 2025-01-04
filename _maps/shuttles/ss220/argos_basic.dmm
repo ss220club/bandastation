@@ -48,6 +48,14 @@
 	},
 /turf/open/floor/light,
 /area/shuttle/argos)
+"cX" = (
+/obj/machinery/suit_storage_unit/centcom,
+/obj/machinery/door/window/brigdoor/right/directional/east,
+/obj/effect/turf_decal/siding/dark{
+	dir = 4
+	},
+/turf/open/floor/pod/dark,
+/area/shuttle/argos)
 "dp" = (
 /turf/open/floor/iron/dark/smooth_edge{
 	dir = 4
@@ -140,7 +148,7 @@
 "jx" = (
 /obj/structure/lattice/catwalk,
 /turf/template_noop,
-/area/template_noop)
+/area/shuttle/argos)
 "jV" = (
 /obj/machinery/light/small/directional/west,
 /turf/open/floor/plating,
@@ -148,18 +156,16 @@
 "kf" = (
 /obj/structure/lattice,
 /turf/template_noop,
-/area/template_noop)
+/area/shuttle/argos)
 "ks" = (
 /obj/machinery/door/airlock/centcom,
 /obj/effect/mapping_helpers/airlock/access/any/admin/general,
 /turf/open/floor/iron/white/smooth_large,
 /area/shuttle/argos)
 "kI" = (
-/obj/machinery/sleeper/syndie/fullupgrade/nt{
-	dir = 1
-	},
 /obj/effect/turf_decal/tile/blue/full,
 /obj/machinery/light/directional/south,
+/obj/structure/sign/poster/official/nanotrasen_logo/directional/west,
 /turf/open/floor/iron/white/smooth_large,
 /area/shuttle/argos)
 "kQ" = (
@@ -195,7 +201,7 @@
 /turf/open/floor/pod/dark,
 /area/shuttle/argos)
 "qb" = (
-/obj/machinery/computer/shuttle/argos,
+/obj/machinery/computer/camera_advanced/shuttle_docker/argos,
 /obj/effect/turf_decal/siding/dark/end{
 	dir = 4
 	},
@@ -231,8 +237,7 @@
 /turf/template_noop,
 /area/template_noop)
 "tU" = (
-/obj/machinery/power/shuttle_engine/large,
-/turf/closed/wall/r_wall/syndicate,
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/shuttle/argos)
 "uA" = (
 /obj/effect/turf_decal/tile/blue{
@@ -278,6 +283,10 @@
 /obj/machinery/door/airlock/centcom,
 /obj/effect/mapping_helpers/airlock/access/any/admin/general,
 /turf/open/floor/iron/dark/diagonal,
+/area/shuttle/argos)
+"vu" = (
+/obj/structure/sign/poster/official/nanotrasen_logo,
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/shuttle/argos)
 "vH" = (
 /obj/machinery/light/directional/south,
@@ -336,17 +345,17 @@
 /obj/structure/lattice/catwalk,
 /obj/structure/marker_beacon/jade,
 /turf/template_noop,
-/area/template_noop)
+/area/shuttle/argos)
 "yx" = (
-/obj/machinery/power/shuttle_engine/large,
-/turf/open/floor/plating,
+/obj/structure/sign/poster/official/nanotrasen_logo,
+/turf/closed/wall/r_wall/syndicate,
 /area/shuttle/argos)
 "yB" = (
-/obj/machinery/stasis{
-	dir = 8
-	},
 /obj/effect/turf_decal/tile/blue{
 	dir = 1
+	},
+/obj/machinery/stasis{
+	dir = 8
 	},
 /obj/structure/curtain,
 /turf/open/floor/iron/white/smooth_corner{
@@ -354,10 +363,12 @@
 	},
 /area/shuttle/argos)
 "yE" = (
-/obj/effect/spawner/structure/window/reinforced/plasma/plastitanium,
+/obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/preopen{
 	name = "Argos Window Protector";
-	id = "argos_window"
+	id = "argos_window";
+	layer = 3;
+	closingLayer = 3
 	},
 /turf/open/floor/plating/airless,
 /area/shuttle/argos)
@@ -369,7 +380,7 @@
 /turf/open/floor/iron/dark/diagonal,
 /area/shuttle/argos)
 "zL" = (
-/obj/machinery/computer/camera_advanced/shuttle_docker/argos,
+/obj/machinery/computer/shuttle/argos,
 /obj/effect/turf_decal/siding/dark/end{
 	dir = 8
 	},
@@ -442,7 +453,7 @@
 /obj/structure/lattice/catwalk,
 /obj/structure/marker_beacon/burgundy,
 /turf/template_noop,
-/area/template_noop)
+/area/shuttle/argos)
 "EE" = (
 /obj/structure/extinguisher_cabinet/directional/west,
 /turf/open/floor/iron/dark/textured_half{
@@ -495,6 +506,13 @@
 /area/shuttle/argos)
 "Gd" = (
 /turf/open/floor/iron/dark/diagonal,
+/area/shuttle/argos)
+"GK" = (
+/obj/machinery/sleeper/syndie/fullupgrade/nt{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/blue/full,
+/turf/open/floor/iron/white/smooth_large,
 /area/shuttle/argos)
 "GZ" = (
 /obj/effect/turf_decal/tile/blue,
@@ -568,14 +586,7 @@
 /turf/open/floor/carpet/royalblack,
 /area/shuttle/argos)
 "NX" = (
-/obj/machinery/suit_storage_unit/centcom,
-/obj/effect/turf_decal/siding/dark{
-	dir = 1
-	},
-/obj/machinery/door/window/brigdoor/left/directional/north{
-	req_access = list("cent_general")
-	},
-/turf/open/floor/pod/dark,
+/turf/open/floor/catwalk_floor/iron_dark,
 /area/shuttle/argos)
 "Oh" = (
 /obj/structure/chair/comfy/shuttle{
@@ -699,9 +710,9 @@ yE
 yE
 yE
 yE
-TK
+tU
 yq
-TK
+yx
 YB
 tI
 "}
@@ -718,11 +729,11 @@ qH
 vM
 JW
 eq
+tU
+tU
 TK
 TK
-TK
-TK
-yx
+YB
 "}
 (3,1,1) = {"
 yE
@@ -739,27 +750,27 @@ Kf
 NJ
 TK
 pz
-TK
-TK
-TK
+cX
+tU
+YB
 "}
 (4,1,1) = {"
 yE
-TK
-TK
+vu
+tU
 FO
-TK
-TK
+tU
+tU
 jv
 aJ
 Nx
 Nx
 Nx
-TK
-TK
+tU
+tU
 dK
 NX
-TK
+tU
 YB
 "}
 (5,1,1) = {"
@@ -768,18 +779,18 @@ EC
 yE
 Gd
 QY
-TK
+tU
 oh
 ia
-TK
+tU
 cs
 TK
-TK
+tU
 Lu
 st
-TK
-TK
-TK
+tU
+tU
+tU
 "}
 (6,1,1) = {"
 jx
@@ -789,8 +800,8 @@ Gd
 ao
 TK
 TK
-TK
-TK
+tU
+tU
 dp
 VS
 VS
@@ -821,7 +832,7 @@ NB
 "}
 (8,1,1) = {"
 yE
-TK
+yx
 TK
 xI
 TK
@@ -829,14 +840,14 @@ TK
 ay
 Ua
 kQ
-TK
+tU
 TK
 th
 ks
 TK
 TK
-TK
-TK
+tU
+tU
 "}
 (9,1,1) = {"
 yE
@@ -847,14 +858,14 @@ sY
 TK
 TK
 eN
-TK
-TK
+tU
+tU
 sZ
 ds
 GZ
 zU
 kI
-TK
+tU
 YB
 "}
 (10,1,1) = {"
@@ -872,9 +883,9 @@ DA
 uA
 Yj
 yB
-TK
-TK
+GK
 tU
+YB
 "}
 (11,1,1) = {"
 yE
@@ -889,11 +900,11 @@ Oh
 TK
 xl
 Am
+tU
+tU
 TK
 TK
-TK
-TK
-dv
+YB
 "}
 (12,1,1) = {"
 yE
@@ -908,9 +919,9 @@ TK
 TK
 TK
 TK
-TK
+tU
 yq
-TK
+yx
 YB
 tI
 "}
