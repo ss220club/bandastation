@@ -1,4 +1,4 @@
-import '../styles/interfaces/NanoMap.scss';
+import '../../styles/interfaces/NanoMap.scss';
 
 import { Component } from 'react';
 import {
@@ -11,8 +11,8 @@ import {
   Tooltip,
 } from 'tgui-core/components';
 
-import { resolveAsset } from '../assets';
-import { useBackend } from '../backend';
+import { resolveAsset } from '../../assets';
+import { useBackend } from '../../backend';
 
 const pauseEvent = (e) => {
   if (e.stopPropagation) {
