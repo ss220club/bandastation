@@ -68,7 +68,7 @@
 	name = "ЦК - Хранилище"
 
 /area/centcom/central_command_areas/briefing
-	name = "ЦК - Плац"
+	name = "ЦК - Плац ОБР"
 
 /area/centcom/central_command_areas/armory
 	name = "ЦК - Оружейная"
@@ -128,7 +128,7 @@
 	name = "ЦК - Госпиталь"
 
 /area/centcom/central_command_areas/engine
-	name = "ЦК - Двигатели"
+	name = "ЦК - Машинный Отсек"
 
 /area/centcom/central_command_areas/maintance
 	name = "ЦК - Технические Помещения"
@@ -143,7 +143,10 @@
 	name = "ЦК - Каюта Капитана Корабля"
 
 /area/centcom/central_command_areas/ert
-	name = "ЦК - Зона ОБР"
+	name = "ЦК - Каюты ОБР"
 
 /area/centcom/central_command_areas/srt
-	name = "ЦК - Зона ГСР"
+	name = "ЦК - Каюты ГСН"
+
+/area/centcom/central_command_areas/srt/brief_srt
+	name = "ЦК - Брифинг ГСН"

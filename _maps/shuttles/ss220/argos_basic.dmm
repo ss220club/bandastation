@@ -338,7 +338,7 @@
 /area/shuttle/argos)
 "xI" = (
 /obj/machinery/door/airlock/centcom,
-/obj/effect/mapping_helpers/airlock/access/any/admin/general,
+/obj/effect/mapping_helpers/airlock/access/any/admin/captain,
 /turf/open/floor/carpet/royalblack,
 /area/shuttle/argos)
 "yq" = (
@@ -538,13 +538,15 @@
 /obj/machinery/button/door/indestructible{
 	pixel_x = 6;
 	id = "argos_exit";
-	name = "Argos Blast Door"
+	name = "Argos Blast Door";
+	req_access = list("cent_captain")
 	},
 /obj/machinery/button/door/indestructible{
 	pixel_x = -6;
 	pixel_y = 0;
 	id = "argos_window";
-	name = "Argos Window Protector"
+	name = "Argos Window Protector";
+	req_access = list("cent_captain")
 	},
 /turf/open/floor/iron/dark/smooth_large,
 /area/shuttle/argos)
