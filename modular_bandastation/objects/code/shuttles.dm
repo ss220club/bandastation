@@ -127,7 +127,7 @@
 	hidden = TRUE
 	dir = SOUTH
 	port_direction = SOUTH
-	preferred_direction = NORTH
+	preferred_direction = SOUTH
 
 // Shuttle Areas
 /area/shuttle/syndicate_sit

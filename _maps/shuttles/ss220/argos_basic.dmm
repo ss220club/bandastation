@@ -83,9 +83,7 @@
 /obj/structure/chair/comfy/corp{
 	dir = 1
 	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 6
-	},
+/obj/effect/turf_decal/siding/wood,
 /turf/open/floor/wood,
 /area/shuttle/argos)
 "eN" = (
@@ -218,6 +216,7 @@
 "sZ" = (
 /obj/machinery/computer/operating,
 /obj/effect/turf_decal/siding/blue,
+/obj/machinery/light/directional/north,
 /turf/open/floor/iron/white/diagonal,
 /area/shuttle/argos)
 "th" = (
@@ -330,6 +329,7 @@
 "yq" = (
 /obj/structure/lattice/catwalk,
 /obj/structure/marker_beacon/jade,
+/obj/structure/sign/poster/official/nanotrasen_logo/directional/north,
 /turf/template_noop,
 /area/shuttle/argos)
 "yx" = (
@@ -514,7 +514,7 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/siding/wood{
-	dir = 6
+	dir = 4
 	},
 /turf/open/floor/wood,
 /area/shuttle/argos)
@@ -571,7 +571,10 @@
 "NJ" = (
 /obj/machinery/newscaster/directional/east,
 /obj/machinery/light/directional/south,
-/turf/open/floor/carpet/royalblack,
+/obj/effect/turf_decal/siding/wood{
+	dir = 6
+	},
+/turf/open/floor/wood,
 /area/shuttle/argos)
 "NX" = (
 /obj/structure/sign/poster/official/nanotrasen_logo/directional/east,
@@ -690,8 +693,8 @@
 yE
 yE
 yE
-TK
-TK
+tU
+tU
 yE
 yE
 TK
@@ -701,7 +704,7 @@ yE
 yE
 tU
 yq
-yx
+TK
 YB
 tI
 "}
@@ -910,7 +913,7 @@ TK
 TK
 tU
 yq
-yx
+TK
 YB
 tI
 "}
