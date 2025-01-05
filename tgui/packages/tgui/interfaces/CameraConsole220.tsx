@@ -13,8 +13,8 @@ import { BooleanLike, classes } from 'tgui-core/react';
 import { createSearch } from 'tgui-core/string';
 
 import { useBackend } from '../backend';
-import { NanoMap } from '../components/NanoMap';
 import { Window } from '../layouts';
+import { NanoMap } from './common/NanoMap';
 
 type Data = {
   activeCamera: Camera & { status: BooleanLike };
