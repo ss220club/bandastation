@@ -13,6 +13,7 @@
 #include "code/items/material_pouch.dm"
 #include "code/items/stamp.dm"
 #include "code/items/wallets.dm"
+#include "code/items/papers.dm"
 #include "code/items/clothing/glasses/glasses.dm"
 #include "code/items/clothing/gloves/gloves.dm"
 #include "code/items/clothing/head/hat.dm"

@@ -37,19 +37,19 @@
 	name = "Планетарный Порт"
 
 /area/centcom/central_command_areas/planetary_port/plaza
-	name = "Площадь"
+	name = "Планетарный Порт - Площадь"
 
 /area/centcom/central_command_areas/planetary_port/hotel
-	name = "Отель"
+	name = "Планетарный Порт - Отель"
 
 /area/centcom/central_command_areas/planetary_port/library
-	name = "Библиотека"
+	name = "Планетарный Порт - Библиотека"
 
 /area/centcom/central_command_areas/planetary_port/club
-	name = "Клуб"
+	name = "Планетарный Порт - Клуб"
 
 /area/centcom/central_command_areas/planetary_port/restroom
-	name = "Уборная"
+	name = "Планетарный Порт - Уборная"
 
 // MARK: Centcom NAS "Trurl"
 /area/centcom/central_command_areas/control
