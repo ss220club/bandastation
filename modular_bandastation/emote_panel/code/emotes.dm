@@ -13,8 +13,8 @@
 		return 'modular_bandastation/emote_panel/audio/male/sniff_male.ogg'
 
 /datum/emote/living/carbon/scratch/New()
-  mob_type_allowed_typecache += list(/mob/living/carbon/human)
-  . = ..()
+	mob_type_allowed_typecache += list(/mob/living/carbon/human)
+	. = ..()
 
 // MARK: Vulpkanin emotes
 /datum/emote/living/carbon/human/vulpkanin/can_run_emote(mob/user, status_check = TRUE, intentional = FALSE)
@@ -85,9 +85,9 @@
 
 // MARK: Tajaran emotes
 /datum/emote/living/carbon/human/tajaran/can_run_emote(mob/user, status_check = TRUE, intentional, params)
-  if(!istype(user.get_organ_slot(ORGAN_SLOT_TONGUE), /obj/item/organ/tongue/tajaran))
-    return FALSE
-  return ..()
+	if(!istype(user.get_organ_slot(ORGAN_SLOT_TONGUE), /obj/item/organ/tongue/tajaran))
+		return FALSE
+	return ..()
 
 /datum/emote/living/carbon/human/tajaran/emote_meow
 	name = "Мяукнуть"
