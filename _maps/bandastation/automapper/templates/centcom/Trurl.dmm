@@ -77,6 +77,10 @@
 	pixel_x = 0;
 	pixel_y = -1
 	},
+/obj/item/toy/figure/dsquad{
+	pixel_x = 10;
+	pixel_y = -1
+	},
 /turf/open/floor/iron/smooth_large,
 /area/centcom/central_command_areas/briefing)
 "ai" = (
@@ -2113,6 +2117,7 @@
 	},
 /obj/effect/turf_decal/line/dark_blue/line/stripes/contrasted,
 /obj/structure/light_fake/floor,
+/obj/structure/platform,
 /turf/open/floor/iron/dark,
 /area/centcom/central_command_areas/control)
 "gJ" = (
@@ -2204,6 +2209,10 @@
 	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 5
+	},
+/obj/structure/flora/bush/pale/style_3{
+	pixel_x = 0;
+	pixel_y = -7
 	},
 /turf/open/water/beach,
 /area/centcom/central_command_areas/cabin)
@@ -2719,17 +2728,8 @@
 /turf/open/floor/iron/dark/diagonal,
 /area/centcom/central_command_areas/bar)
 "iQ" = (
-/obj/structure/table/wood,
 /obj/structure/platform/corner{
 	dir = 8
-	},
-/obj/item/folder/red{
-	pixel_x = -6;
-	pixel_y = 0
-	},
-/obj/item/folder/blue{
-	pixel_x = 3;
-	pixel_y = 0
 	},
 /turf/open/floor/carpet/blue,
 /area/centcom/central_command_areas/courtroom)
@@ -3160,14 +3160,13 @@
 /obj/machinery/door/window/brigdoor/left/directional/south{
 	req_access = list("cent_captain")
 	},
-/obj/item/documents/nanotrasen{
-	pixel_x = 17;
-	pixel_y = 3;
-	layer = 2.9
-	},
 /obj/item/folder/red{
-	pixel_x = -2;
-	pixel_y = 4
+	pixel_x = -4;
+	pixel_y = 1
+	},
+/obj/item/megaphone/command{
+	pixel_x = 8;
+	pixel_y = 5
 	},
 /turf/open/floor/iron/smooth_large,
 /area/centcom/central_command_areas/briefing)
@@ -3192,9 +3191,7 @@
 /turf/open/floor/wood/large,
 /area/centcom/central_command_areas/cabin/captain)
 "kz" = (
-/obj/structure/window/reinforced/spawner/directional/south{
-	layer = 5
-	},
+/obj/structure/window/reinforced/spawner/directional/south,
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
@@ -3332,15 +3329,19 @@
 	pixel_x = 10;
 	pixel_y = 1
 	},
-/obj/structure/flora/bush/pale/style_3{
-	pixel_x = 1;
-	pixel_y = 22;
-	layer = 3
-	},
 /obj/structure/flora/bush/sunny/style_3,
 /turf/open/water/beach,
 /area/centcom/central_command_areas/cabin)
 "kU" = (
+/obj/structure/table/wood,
+/obj/item/folder/blue{
+	pixel_x = 3;
+	pixel_y = 0
+	},
+/obj/item/folder/red{
+	pixel_x = -6;
+	pixel_y = 0
+	},
 /turf/open/floor/carpet/blue,
 /area/centcom/central_command_areas/courtroom)
 "kW" = (
@@ -3525,11 +3526,11 @@
 /turf/open/floor/iron/dark/textured_half,
 /area/centcom/central_command_areas/hallway)
 "lA" = (
-/obj/structure/platform,
 /obj/effect/turf_decal/tile/dark/full{
 	alpha = 50
 	},
 /obj/effect/turf_decal/line/dark_blue/anticorner/stripes,
+/obj/structure/platform,
 /turf/open/floor/iron/dark/smooth_large,
 /area/centcom/central_command_areas/control)
 "lB" = (
@@ -4159,16 +4160,14 @@
 /turf/open/floor/iron/dark/smooth_large,
 /area/centcom/central_command_areas/fore)
 "nG" = (
-/obj/structure/platform{
-	dir = 10
-	},
 /obj/effect/turf_decal/tile/dark/full{
 	alpha = 50
 	},
-/obj/structure/hedge{
-	layer = 1
-	},
 /obj/effect/turf_decal/tile/dark_blue/full,
+/obj/structure/hedge,
+/obj/structure/platform{
+	dir = 10
+	},
 /turf/open/floor/iron/dark/smooth_large,
 /area/centcom/central_command_areas/control)
 "nI" = (
@@ -4400,15 +4399,15 @@
 /turf/open/floor/wood/large,
 /area/centcom/central_command_areas/cabin/captain)
 "ot" = (
-/obj/structure/platform,
-/obj/machinery/shuttle_manipulator{
-	pixel_x = -16;
-	pixel_y = 0
-	},
 /obj/effect/turf_decal/tile/dark/full{
 	alpha = 50
 	},
 /obj/effect/turf_decal/tile/dark_blue/full,
+/obj/machinery/shuttle_manipulator{
+	pixel_x = -16;
+	pixel_y = 1
+	},
+/obj/structure/platform,
 /turf/open/floor/iron/dark/smooth_large,
 /area/centcom/central_command_areas/control)
 "ov" = (
@@ -5518,11 +5517,6 @@
 	pixel_x = -8;
 	pixel_y = 17
 	},
-/obj/structure/flora/bush/pale/style_3{
-	pixel_x = 1;
-	pixel_y = 22;
-	layer = 3
-	},
 /obj/structure/railing/corner{
 	dir = 8;
 	color = "#A1662F"
@@ -5606,6 +5600,15 @@
 /turf/open/floor/wood,
 /area/centcom/central_command_areas/courtroom)
 "rZ" = (
+/obj/structure/table/wood,
+/obj/item/folder/red{
+	pixel_x = 6;
+	pixel_y = 0
+	},
+/obj/item/folder/blue{
+	pixel_x = -3;
+	pixel_y = 0
+	},
 /turf/open/floor/carpet/red,
 /area/centcom/central_command_areas/courtroom)
 "sa" = (
@@ -5859,16 +5862,14 @@
 /turf/open/water/beach,
 /area/centcom/central_command_areas/bar)
 "sw" = (
-/obj/structure/platform{
-	dir = 6
-	},
 /obj/effect/turf_decal/tile/dark/full{
 	alpha = 50
 	},
-/obj/structure/hedge{
-	layer = 1
-	},
 /obj/effect/turf_decal/tile/dark_blue/full,
+/obj/structure/hedge,
+/obj/structure/platform{
+	dir = 6
+	},
 /turf/open/floor/iron/dark/smooth_large,
 /area/centcom/central_command_areas/control)
 "sx" = (
@@ -6648,17 +6649,8 @@
 /turf/open/floor/wood/large,
 /area/centcom/central_command_areas/cabin)
 "uE" = (
-/obj/structure/table/wood,
 /obj/structure/platform/corner{
 	dir = 4
-	},
-/obj/item/folder/blue{
-	pixel_x = -3;
-	pixel_y = 0
-	},
-/obj/item/folder/red{
-	pixel_x = 6;
-	pixel_y = 0
 	},
 /turf/open/floor/carpet/red,
 /area/centcom/central_command_areas/courtroom)
@@ -7027,8 +7019,7 @@
 "vR" = (
 /obj/structure/railing{
 	dir = 5;
-	color = "#A1662F";
-	layer = 5
+	color = "#A1662F"
 	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
@@ -7960,8 +7951,7 @@
 /area/centcom/central_command_areas/control)
 "yl" = (
 /obj/structure/railing{
-	dir = 1;
-	layer = 2.8
+	dir = 1
 	},
 /obj/structure/railing,
 /turf/open/floor/iron/stairs{
@@ -8050,8 +8040,7 @@
 	},
 /obj/structure/flora/bush/stalky/style_2{
 	pixel_x = 16;
-	pixel_y = 2;
-	layer = 3.2
+	pixel_y = 2
 	},
 /obj/structure/flora/bush/sunny{
 	pixel_x = 2;
@@ -9773,6 +9762,10 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
 	},
+/obj/structure/flora/bush/pale/style_3{
+	pixel_x = 0;
+	pixel_y = -11
+	},
 /turf/open/water/beach,
 /area/centcom/central_command_areas/bar)
 "Dq" = (
@@ -10041,7 +10034,6 @@
 /obj/structure/platform{
 	dir = 1
 	},
-/obj/structure/chair/comfy/beige,
 /turf/open/floor/carpet/red,
 /area/centcom/central_command_areas/courtroom)
 "Ef" = (
@@ -11072,8 +11064,7 @@
 /area/centcom/central_command_areas/supplypod/loading/two)
 "Hl" = (
 /obj/structure/railing{
-	dir = 1;
-	layer = 2.8
+	dir = 1
 	},
 /obj/structure/railing,
 /turf/open/floor/iron/stairs{
@@ -11204,8 +11195,7 @@
 /obj/structure/table/wood/fancy/black,
 /obj/item/flashlight/lamp/green{
 	pixel_x = -5;
-	pixel_y = 11;
-	layer = 3.01
+	pixel_y = 2
 	},
 /obj/effect/turf_decal/siding/wood/end{
 	dir = 8
@@ -13258,8 +13248,7 @@
 	},
 /obj/structure/flora/bush/flowers_pp/style_2{
 	pixel_x = 2;
-	pixel_y = -17;
-	layer = 3
+	pixel_y = -17
 	},
 /obj/structure/flora/bush/sparsegrass/style_3{
 	pixel_x = -3;
@@ -13561,8 +13550,7 @@
 /area/centcom/central_command_areas/hallway)
 "OI" = (
 /obj/structure/railing{
-	dir = 1;
-	layer = 2.8
+	dir = 1
 	},
 /obj/machinery/computer/communications,
 /obj/effect/turf_decal/line/dark_blue/line{
@@ -13711,22 +13699,17 @@
 /turf/open/floor/iron/dark,
 /area/centcom/central_command_areas/control)
 "Pj" = (
-/obj/structure/lattice/catwalk{
+/obj/structure/lattice/catwalk/siding{
 	color = "#A1662F"
 	},
+/obj/effect/turf_decal/siding/wood,
 /obj/effect/turf_decal/siding/wood{
-	layer = 10009
-	},
-/obj/effect/turf_decal/siding/wood{
-	layer = 10009;
 	dir = 1
 	},
 /obj/effect/turf_decal/siding/wood{
-	layer = 10009;
 	dir = 4
 	},
 /obj/effect/turf_decal/siding/wood{
-	layer = 10009;
 	dir = 8
 	},
 /obj/structure/railing/corner{
@@ -14812,8 +14795,7 @@
 	},
 /obj/structure/flora/bush/flowers_yw/style_2{
 	pixel_x = 5;
-	pixel_y = -2;
-	layer = 3.2
+	pixel_y = -2
 	},
 /turf/open/floor/grass,
 /area/centcom/central_command_areas/arboretum)
@@ -16102,13 +16084,9 @@
 "WW" = (
 /obj/structure/table/reinforced,
 /obj/structure/window/reinforced/spawner/directional/south,
-/obj/item/toy/figure/dsquad{
-	pixel_x = 10;
-	pixel_y = 9
-	},
-/obj/item/megaphone/command{
-	pixel_x = 0;
-	pixel_y = 7
+/obj/item/documents/nanotrasen{
+	pixel_x = 3;
+	pixel_y = 5
 	},
 /turf/open/floor/iron/smooth_large,
 /area/centcom/central_command_areas/briefing)
@@ -16390,22 +16368,17 @@
 /turf/open/floor/iron/dark/smooth_large,
 /area/centcom/central_command_areas/hallway)
 "XV" = (
-/obj/structure/lattice/catwalk{
+/obj/structure/lattice/catwalk/siding{
 	color = "#A1662F"
 	},
+/obj/effect/turf_decal/siding/wood,
 /obj/effect/turf_decal/siding/wood{
-	layer = 10009
-	},
-/obj/effect/turf_decal/siding/wood{
-	layer = 10009;
 	dir = 1
 	},
 /obj/effect/turf_decal/siding/wood{
-	layer = 10009;
 	dir = 4
 	},
 /obj/effect/turf_decal/siding/wood{
-	layer = 10009;
 	dir = 8
 	},
 /turf/open/water/beach,
@@ -17086,22 +17059,17 @@
 	},
 /area/centcom/central_command_areas/ert)
 "ZO" = (
-/obj/structure/lattice/catwalk{
+/obj/structure/lattice/catwalk/siding{
 	color = "#A1662F"
 	},
+/obj/effect/turf_decal/siding/wood,
 /obj/effect/turf_decal/siding/wood{
-	layer = 10009
-	},
-/obj/effect/turf_decal/siding/wood{
-	layer = 10009;
 	dir = 1
 	},
 /obj/effect/turf_decal/siding/wood{
-	layer = 10009;
 	dir = 8
 	},
 /obj/effect/turf_decal/siding/wood{
-	layer = 10009;
 	dir = 4
 	},
 /turf/open/water/beach,
