@@ -119,3 +119,17 @@ directory = "_maps/bandastation/automapper/templates/tramstation/"
 required_map = "tramstation.dmm"
 coordinates = [79, 130, 2]
 trait_name = "Station"
+
+[templates.tramstation_argos_port]
+map_files = ["tramstation_argos_port.dmm"]
+directory = "_maps/bandastation/automapper/templates/tramstation/"
+required_map = "tramstation.dmm"
+coordinates = [23, 130, 2]
+trait_name = "Station"
+
+[templates.tramstation_specops_port]
+map_files = ["tramstation_specops_port.dmm"]
+directory = "_maps/bandastation/automapper/templates/tramstation/"
+required_map = "tramstation.dmm"
+coordinates = [9, 114, 2]
+trait_name = "Station"
