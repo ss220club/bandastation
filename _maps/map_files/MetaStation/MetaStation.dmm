@@ -18304,7 +18304,6 @@
 /turf/open/floor/iron,
 /area/station/cargo/warehouse)
 "gEB" = (
-/obj/effect/mapping_helpers/airlock/autoname,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 4
 	},
@@ -29612,13 +29611,11 @@
 /turf/open/floor/iron,
 /area/station/ai_monitored/command/storage/eva)
 "kwO" = (
-/obj/machinery/door/airlock/external/glass,
-/obj/effect/mapping_helpers/airlock/autoname,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 8
 	},
 /obj/machinery/door/airlock/external{
-	name = "Arrival Airlock"
+	name = "Specops Airlock"
 	},
 /turf/open/floor/iron/dark/textured_large,
 /area/station/hallway/secondary/entry)
@@ -40271,7 +40268,6 @@
 /turf/open/floor/iron/white,
 /area/station/medical/medbay/central)
 "onB" = (
-/obj/effect/mapping_helpers/airlock/autoname,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 8
 	},
@@ -60854,13 +60850,11 @@
 /turf/open/floor/iron/white/smooth_large,
 /area/station/medical/medbay/central)
 "vti" = (
-/obj/machinery/door/airlock/external/glass,
-/obj/effect/mapping_helpers/airlock/autoname,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 4
 	},
 /obj/machinery/door/airlock/external{
-	name = "Arrival Airlock"
+	name = "Specops Airlock"
 	},
 /turf/open/floor/iron/dark/textured_large,
 /area/station/hallway/secondary/entry)
