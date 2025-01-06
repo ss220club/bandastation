@@ -5,8 +5,6 @@
 /obj/item/paper/fluff/centcom/armory
 	name = "Приказ департамента Специальных Операций"
 	desc = "Обновленная методичка комплектации отрядов быстрого реагирования. Полезно для прочтения!"
-	//stamp_cache = list("stamp-centcom")
-	//raw_stamp_data = /datum/paper_stamp/centcom_armory
 	default_raw_text = {"<center><h3>Приказ департамента Специальных Операций </h3><br>
 	<h5><i>"Обновленный порядок комплектации отрядов быстрого реагирования в кластере EE-223"<br>
 	Регистрационный номер 442bb-22.1, Марс, главный координационный центр Специальных Операций NanoTrasen Inc., 2567 г.</i></h5></center>
@@ -31,12 +29,3 @@
 	<i>Компания NanoTrasen,<u>28.12.2567</u></i><hr>
 	<center><h5><i>КОНФИДЕНЦИАЛЬНАЯ ИНФОРМАЦИЯ. СОБСТВЕННИК NANOTRASEN INC. РАСПРОСТРАНЕНИЕ ТРЕТЬИМИ ЛИЦАМИ <b>ЗАПРЕЩЕНО</b>.</i></h5></center>
 	"}
-
-/*
-datum/paper_stamp/centcom_armory
-	class = "paper121x54 stamp-centcom"
-	stamp_x = 256
-	stamp_x = 1223
-
-obj/item/paper/fluff/centcomm/armory/add_stamp(stamp_class = "stamp-centcom", stamp_x = 256, stamp_x = 1223, rotation = 0, stamp_icon_state = "stamp-centcom")
-*/

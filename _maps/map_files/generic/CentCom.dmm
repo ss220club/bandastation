@@ -2502,14 +2502,11 @@
 	pixel_y = 6;
 	req_access = list("cent_captain")
 	},
-/obj/item/paper/fluff/centcomm/armory{
-	pixel_x = 0;
-	pixel_y = -1
-	},
 /obj/item/toy/figure/dsquad{
 	pixel_x = 10;
 	pixel_y = -1
 	},
+/obj/item/paper/fluff/centcom/armory,
 /turf/open/floor/iron/smooth_large,
 /area/centcom/central_command_areas/briefing)
 "gY" = (
