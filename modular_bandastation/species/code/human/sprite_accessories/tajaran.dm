@@ -179,16 +179,16 @@
 	var/tails_allowed = list()
 
 /datum/sprite_accessory/tajaran_tail_markings/taj_wingertail_stripes
-	name = "Long tail stripes"
+	name = "Long tail - Stripes"
 	tails_allowed = list("Long tail")
 	icon_state = "stripesw"
 
 /datum/sprite_accessory/tajaran_tail_markings/taj_huge_stripes
-	name = "Huge tail stripes"
+	name = "Huge tail - Stripes"
 	tails_allowed = list("Huge tail")
 	icon_state = "stripesh"
 
 /datum/sprite_accessory/tajaran_tail_markings/taj_huge_dots
-	name = "Huge tail dots"
+	name = "Huge tail - Dots"
 	tails_allowed = list("Huge tail")
 	icon_state = "dots"

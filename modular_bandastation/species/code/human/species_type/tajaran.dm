@@ -37,8 +37,8 @@
 	coldmod = 0.7
 	heatmod = 1.3
 	payday_modifier = 0.9
-	bodytemp_heat_damage_limit = BODYTEMP_HEAT_DAMAGE_LIMIT + 30
-	bodytemp_cold_damage_limit = BODYTEMP_COLD_DAMAGE_LIMIT - 60
+	bodytemp_heat_damage_limit = BODYTEMP_HEAT_DAMAGE_LIMIT + 20
+	bodytemp_cold_damage_limit = BODYTEMP_COLD_DAMAGE_LIMIT - 40
 
 /datum/species/tajaran/prepare_human_for_preview(mob/living/carbon/human/tajaran)
 	tajaran.set_hairstyle("None", update = TRUE)
