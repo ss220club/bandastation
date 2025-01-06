@@ -5358,14 +5358,6 @@
 	},
 /turf/open/floor/iron/dark,
 /area/centcom/central_command_areas/engine)
-"oM" = (
-/obj/machinery/atmospherics/pipe/smart/manifold/supply/hidden/layer1,
-/obj/machinery/atmospherics/pipe/smart/manifold/scrubbers/hidden/layer2,
-/obj/machinery/atmospherics/pipe/smart/manifold/scrubbers/hidden/layer2,
-/obj/structure/cable/layer3,
-/obj/machinery/duct,
-/turf/open/floor/catwalk_floor/iron_dark,
-/area/centcom/central_command_areas/hallway)
 "oN" = (
 /obj/effect/turf_decal/tile/brown/anticorner/contrasted{
 	dir = 4
@@ -9877,7 +9869,6 @@
 /obj/effect/turf_decal/stripes/box,
 /obj/effect/mapping_helpers/airlock/access/all/admin/captain,
 /obj/machinery/door/poddoor/ert{
-	layer = 2.8;
 	name = "First Engine";
 	id = "CC_Eng_2"
 	},
@@ -11215,7 +11206,6 @@
 /obj/effect/turf_decal/stripes/box,
 /obj/effect/mapping_helpers/airlock/access/all/admin/captain,
 /obj/machinery/door/poddoor/ert{
-	layer = 2.8;
 	name = "Second Engine";
 	id = "CC_Eng_3"
 	},
@@ -15573,10 +15563,6 @@
 "QO" = (
 /turf/open/floor/glass,
 /area/centcom/central_command_areas/bar)
-"QR" = (
-/obj/structure/lattice,
-/turf/closed/indestructible/riveted,
-/area/centcom/central_command_areas/engine)
 "QS" = (
 /obj/effect/turf_decal/board_number/one{
 	alpha = 150;
@@ -65529,7 +65515,7 @@ aa
 aa
 mE
 mE
-QR
+Nn
 Nn
 iO
 iO
@@ -70918,7 +70904,7 @@ EE
 EE
 EE
 EE
-oM
+EE
 rt
 MJ
 RM

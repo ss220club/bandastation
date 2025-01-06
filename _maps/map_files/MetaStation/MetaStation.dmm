@@ -18304,7 +18304,6 @@
 /turf/open/floor/iron,
 /area/station/cargo/warehouse)
 "gEB" = (
-/obj/machinery/door/airlock/external/glass,
 /obj/effect/mapping_helpers/airlock/autoname,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 4
@@ -40271,6 +40270,16 @@
 /obj/machinery/light/directional/west,
 /turf/open/floor/iron/white,
 /area/station/medical/medbay/central)
+"onB" = (
+/obj/effect/mapping_helpers/airlock/autoname,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 8
+	},
+/obj/machinery/door/airlock/external{
+	name = "Arrival Airlock"
+	},
+/turf/open/floor/iron/dark/textured_large,
+/area/station/hallway/secondary/entry)
 "onD" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 6
@@ -78257,8 +78266,8 @@ wdr
 wdr
 wdr
 eNd
-kwO
-kwO
+onB
+onB
 eNd
 oPS
 aaa

@@ -8518,12 +8518,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron/dark/textured,
 /area/station/security/execution/transfer)
-"cpy" = (
-/turf/open/floor/plating/snowed/icemoon,
-/turf/open/floor/plating/snowed/smoothed/icemoon,
-/turf/open/misc/asteroid/snow/icemoon,
-/turf/open/floor/plating/snowed/smoothed/icemoon,
-/area/icemoon/surface/outdoors/nospawn)
 "cpA" = (
 /obj/structure/lattice/catwalk,
 /obj/structure/railing{
@@ -9392,10 +9386,6 @@
 /obj/effect/landmark/event_spawn,
 /turf/open/floor/iron,
 /area/station/security/prison/workout)
-"cBM" = (
-/turf/open/misc/asteroid/snow/icemoon,
-/turf/open/floor/plating/snowed/smoothed/icemoon,
-/area/icemoon/surface/outdoors/nospawn)
 "cBP" = (
 /obj/structure/table/wood,
 /obj/item/flashlight/lamp{
@@ -36737,10 +36727,6 @@
 	},
 /turf/open/floor/plating,
 /area/station/maintenance/starboard/fore)
-"kEf" = (
-/turf/open/floor/plating/snowed/icemoon,
-/turf/open/floor/plating/snowed/smoothed/icemoon,
-/area/icemoon/surface/outdoors/nospawn)
 "kEj" = (
 /obj/machinery/computer/libraryconsole/bookmanagement,
 /obj/structure/table,
@@ -37522,9 +37508,6 @@
 /obj/machinery/door/airlock/external/glass,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 1
-	},
-/obj/machinery/door/airlock/external{
-	name = "Port Docking Bay 1"
 	},
 /turf/open/floor/plating,
 /area/station/hallway/secondary/entry)
@@ -46351,11 +46334,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/iron/white/corner,
 /area/station/hallway/secondary/entry)
-"nvU" = (
-/turf/open/floor/plating/snowed/icemoon,
-/turf/open/misc/asteroid/snow/icemoon,
-/turf/open/floor/plating/snowed/smoothed/icemoon,
-/area/icemoon/surface/outdoors/nospawn)
 "nvW" = (
 /obj/machinery/duct,
 /turf/open/floor/iron,
@@ -61935,12 +61913,6 @@
 /obj/structure/closet/toolcloset,
 /turf/open/floor/plating,
 /area/station/maintenance/starboard/aft)
-"rPK" = (
-/obj/structure/flora/grass/green/style_random,
-/turf/open/floor/plating/snowed/icemoon,
-/turf/open/floor/plating/snowed/smoothed/icemoon,
-/turf/open/misc/asteroid/snow/icemoon,
-/area/icemoon/surface/outdoors/nospawn)
 "rPL" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/rack,
@@ -69098,7 +69070,6 @@
 /area/station/maintenance/aft/lesser)
 "tRi" = (
 /obj/structure/sign/warning/docking/directional/south,
-/turf/open/floor/plating/snowed/icemoon,
 /turf/open/floor/plating/snowed/smoothed/icemoon,
 /area/icemoon/surface/outdoors/nospawn)
 "tRo" = (
@@ -82013,14 +81984,6 @@
 /obj/machinery/light/directional/north,
 /turf/open/floor/iron/showroomfloor,
 /area/station/security/processing)
-"xIv" = (
-/turf/open/floor/plating/snowed/icemoon,
-/turf/open/floor/plating/snowed/smoothed/icemoon,
-/turf/open/misc/asteroid/snow/icemoon,
-/turf/open/floor/plating/snowed/smoothed/icemoon,
-/turf/open/floor/plating/snowed/smoothed/icemoon,
-/turf/open/misc/asteroid/snow/icemoon,
-/area/icemoon/surface/outdoors/nospawn)
 "xIz" = (
 /obj/effect/turf_decal/trimline/neutral/mid_joiner{
 	dir = 4
@@ -223535,7 +223498,7 @@ bln
 bln
 lSu
 lSu
-kEf
+lSu
 tRi
 fUR
 fUR
@@ -225077,7 +225040,7 @@ bln
 lSu
 bln
 lSu
-rPK
+lBD
 bln
 fsm
 bln
@@ -225333,8 +225296,8 @@ bln
 bln
 bln
 bln
-xIv
-cpy
+bln
+lSu
 ydI
 ydI
 ydI
@@ -225589,8 +225552,8 @@ bln
 bln
 bln
 bln
-cBM
-nvU
+lSu
+lSu
 ydI
 ydI
 nWM
