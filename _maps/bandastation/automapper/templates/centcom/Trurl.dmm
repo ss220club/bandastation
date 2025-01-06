@@ -101,9 +101,8 @@
 	color = "#A1662F"
 	},
 /obj/structure/flora/bush/reed{
-	pixel_x = -9;
-	pixel_y = 10;
-	layer = 16
+	pixel_x = -8;
+	pixel_y = 3
 	},
 /turf/open/water/beach,
 /area/centcom/central_command_areas/bar)
@@ -118,8 +117,7 @@
 	name = "Prison"
 	},
 /obj/machinery/door/poddoor/ert{
-	layer = 2.8;
-	name = "CentComm Brig";
+	name = "CentComm Prison";
 	id = "CC_Prison_1"
 	},
 /obj/machinery/button/door/indestructible{
@@ -334,6 +332,7 @@
 	pixel_x = 2;
 	pixel_y = 0
 	},
+/obj/structure/flora/bush/style_random,
 /turf/open/water/beach,
 /area/centcom/central_command_areas/arboretum)
 "aU" = (
@@ -432,9 +431,8 @@
 	id = "CC_conveyor_bottom"
 	},
 /obj/machinery/door/poddoor/ert{
-	name = "First Port";
-	id = "CC_First_Port";
-	layer = 2.8
+	name = "Cargo Port";
+	id = "CC_First_Port"
 	},
 /turf/open/floor/plating,
 /area/centcom/central_command_areas/supply)
@@ -550,6 +548,10 @@
 /obj/structure/flora/rock/pile/jungle{
 	pixel_x = -8;
 	pixel_y = 17
+	},
+/obj/structure/flora/bush/ferny/style_3{
+	pixel_x = -10;
+	pixel_y = 7
 	},
 /turf/open/water/beach,
 /area/centcom/central_command_areas/arboretum)
@@ -910,7 +912,6 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor/ert{
-	layer = 2.8;
 	name = "Bridge";
 	id = "CC_Bridge_1"
 	},
@@ -1053,6 +1054,7 @@
 /obj/effect/turf_decal/siding/wood/end{
 	dir = 4
 	},
+/obj/structure/bookcase/random,
 /turf/open/floor/wood,
 /area/centcom/central_command_areas/admin)
 "cZ" = (
@@ -1332,6 +1334,10 @@
 	pixel_y = 28
 	},
 /obj/structure/light_fake/small/directional/west,
+/obj/machinery/button/door/indestructible{
+	pixel_x = -24;
+	id = "CC_Bar_1"
+	},
 /turf/open/floor/wood/large,
 /area/centcom/central_command_areas/bar)
 "dW" = (
@@ -1517,7 +1523,6 @@
 /obj/machinery/door/airlock/centcom,
 /obj/effect/mapping_helpers/airlock/access/all/admin/captain,
 /obj/machinery/door/poddoor/ert{
-	layer = 2.8;
 	name = "Office";
 	id = "CC_Office_1"
 	},
@@ -1744,15 +1749,27 @@
 	dir = 5;
 	color = "#A1662F"
 	},
-/obj/structure/flora/rock/pile/jungle/style_5{
-	pixel_x = -10;
-	pixel_y = -5
-	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
 	},
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 4
+	},
+/obj/structure/flora/rock/pile/jungle/style_5{
+	pixel_x = -10;
+	pixel_y = -5
+	},
+/obj/structure/flora/bush/grassy/style_3{
+	pixel_x = 0;
+	pixel_y = -14
+	},
+/obj/structure/flora/bush/sunny/style_2{
+	pixel_x = -18;
+	pixel_y = 6
+	},
+/obj/structure/flora/bush/sparsegrass/style_3{
+	pixel_x = -1;
+	pixel_y = 8
 	},
 /turf/open/floor/grass,
 /area/centcom/central_command_areas/arboretum)
@@ -1936,7 +1953,6 @@
 	name = "Medical Center"
 	},
 /obj/machinery/door/poddoor/ert{
-	layer = 2.8;
 	name = "Medical Center";
 	id = "CC_Med_1"
 	},
@@ -2112,7 +2128,6 @@
 	req_access = list("cent_captain")
 	},
 /obj/machinery/door/poddoor/ert{
-	layer = 2.8;
 	name = "Conference Room";
 	id = "CC_Conf_1"
 	},
@@ -2233,14 +2248,10 @@
 /turf/open/floor/iron/dark,
 /area/centcom/central_command_areas/control)
 "hf" = (
-/obj/structure/window/reinforced/spawner/directional/south,
-/obj/structure/table/wood/fancy/black,
-/obj/effect/turf_decal/siding/wood{
-	dir = 10
+/obj/effect/turf_decal/siding/wood/end{
+	dir = 1
 	},
-/obj/effect/turf_decal/siding/wood/corner{
-	dir = 4
-	},
+/obj/structure/chair/comfy/corp,
 /turf/open/floor/wood,
 /area/centcom/central_command_areas/admin)
 "hg" = (
@@ -2299,12 +2310,15 @@
 	dir = 5
 	},
 /obj/structure/flora/bush/flowers_yw/style_3{
-	layer = 16;
 	pixel_x = -3;
 	pixel_y = 2
 	},
 /obj/structure/flora/bush/flowers_pp/style_random,
-/obj/structure/marker_beacon/teal,
+/obj/structure/marker_beacon/teal{
+	pixel_x = 8;
+	pixel_y = -13
+	},
+/obj/structure/flora/tree/jungle/small/style_4,
 /turf/open/floor/grass,
 /area/centcom/central_command_areas/arboretum)
 "ht" = (
@@ -2895,11 +2909,6 @@
 	color = "#A1662F"
 	},
 /obj/effect/turf_decal/siding/wood/end,
-/obj/structure/flora/bush/grassy/style_3{
-	pixel_x = 3;
-	pixel_y = 15;
-	layer = 3.1
-	},
 /obj/structure/flora/bush/sparsegrass/style_3{
 	pixel_x = 1;
 	pixel_y = 3
@@ -3144,10 +3153,8 @@
 "kq" = (
 /obj/effect/spawner/structure/window/reinforced/indestructible,
 /obj/machinery/door/poddoor/shutters/indestructible{
-	layer = 3.4;
 	dir = 4;
-	id = "CC_Cell_1";
-	closingLayer = 3.4
+	id = "CC_Cell_1"
 	},
 /turf/open/floor/plating,
 /area/centcom/central_command_areas/prison/cells)
@@ -3195,13 +3202,11 @@
 /obj/structure/window/reinforced/spawner/directional/south{
 	layer = 5
 	},
-/obj/structure/chair/comfy/corp{
-	dir = 8
-	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
 /obj/effect/turf_decal/siding/wood,
+/obj/structure/bookcase/random,
 /turf/open/floor/wood,
 /area/centcom/central_command_areas/admin)
 "kB" = (
@@ -3376,6 +3381,10 @@
 	},
 /obj/structure/flora/bush/sparsegrass/style_3,
 /obj/structure/marker_beacon/burgundy,
+/obj/structure/flora/bush/grassy/style_2{
+	pixel_x = -16;
+	pixel_y = 7
+	},
 /turf/open/water/beach{
 	pixel_x = 0;
 	pixel_y = 0
@@ -4078,7 +4087,6 @@
 /obj/machinery/door/airlock/centcom,
 /obj/effect/mapping_helpers/airlock/access/all/admin/general,
 /obj/machinery/door/poddoor/ert{
-	layer = 2.8;
 	name = "SRT";
 	id = "CC_SRT_1"
 	},
@@ -4108,7 +4116,6 @@
 /area/centcom/central_command_areas/bar)
 "ny" = (
 /obj/machinery/door/poddoor/ert{
-	layer = 2.8;
 	name = "Armory & Second Port";
 	id = "CC_Port2_1"
 	},
@@ -4548,7 +4555,8 @@
 /obj/structure/flora/bush/flowers_yw/style_random,
 /obj/structure/window/fulltile,
 /obj/machinery/door/poddoor/shutters/window/indestructible/preopen{
-	dir = 4
+	dir = 4;
+	id = "CC_Bar_1"
 	},
 /turf/open/floor/grass,
 /area/centcom/central_command_areas/bar)
@@ -4673,13 +4681,11 @@
 	},
 /obj/structure/flora/bush/jungle/c/style_3{
 	pixel_x = -15;
-	pixel_y = 11;
-	layer = 3
+	pixel_y = 11
 	},
 /obj/structure/flora/bush/large/style_3{
 	pixel_x = 12;
-	pixel_y = 13;
-	layer = 16
+	pixel_y = 13
 	},
 /turf/open/water/beach,
 /area/centcom/central_command_areas/arboretum)
@@ -4771,10 +4777,8 @@
 "pv" = (
 /obj/effect/spawner/structure/window/reinforced/indestructible,
 /obj/machinery/door/poddoor/shutters/indestructible{
-	layer = 3.4;
 	dir = 8;
-	id = "CC_Cell_3";
-	closingLayer = 3.4
+	id = "CC_Cell_3"
 	},
 /turf/open/floor/plating,
 /area/centcom/central_command_areas/prison/cells)
@@ -4802,7 +4806,6 @@
 	color = "#439C1E"
 	},
 /obj/machinery/door/poddoor/shutters/indestructible{
-	layer = 2.8;
 	dir = 4;
 	id = "CC_Energy_1";
 	name = "Energy Counter-Combat Gear"
@@ -4958,7 +4961,6 @@
 /area/centcom/central_command_areas/prison)
 "qc" = (
 /obj/machinery/door/poddoor/ert{
-	layer = 2.8;
 	name = "Armory & Second Port";
 	id = "CC_Port2_1"
 	},
@@ -5483,9 +5485,8 @@
 /area/centcom/central_command_areas/supply)
 "rF" = (
 /obj/machinery/door/poddoor/ert{
-	name = "First Port";
-	id = "CC_First_Port";
-	layer = 2.8
+	name = "Cargo Port";
+	id = "CC_First_Port"
 	},
 /obj/machinery/button/door/indestructible{
 	pixel_y = 28;
@@ -5652,7 +5653,6 @@
 	name = "Cell 3"
 	},
 /obj/machinery/door/poddoor/shutters/indestructible{
-	layer = 3;
 	dir = 8;
 	id = "CC_Cell_3"
 	},
@@ -5893,15 +5893,13 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
 	},
-/obj/structure/flora/bush/reed{
-	pixel_x = 7;
-	pixel_y = -2;
-	layer = 16
-	},
 /obj/structure/flora/grass/jungle/b/style_2{
 	pixel_x = 5;
-	pixel_y = 8;
-	layer = 3
+	pixel_y = 8
+	},
+/obj/structure/flora/bush/reed{
+	pixel_x = 7;
+	pixel_y = -2
 	},
 /turf/open/water/beach,
 /area/centcom/central_command_areas/arboretum)
@@ -6090,7 +6088,6 @@
 /area/centcom/central_command_areas/armory)
 "sV" = (
 /obj/machinery/door/poddoor/ert{
-	layer = 2.8;
 	name = "Second Port";
 	id = "CC_Port2_2"
 	},
@@ -6540,7 +6537,6 @@
 	dir = 6
 	},
 /obj/structure/flora/bush/flowers_yw/style_3{
-	layer = 16;
 	pixel_x = -3;
 	pixel_y = 2
 	},
@@ -6549,8 +6545,12 @@
 	pixel_y = 4
 	},
 /obj/structure/marker_beacon/teal{
-	pixel_x = -1;
-	pixel_y = 4
+	pixel_x = -11;
+	pixel_y = -9
+	},
+/obj/structure/flora/tree/jungle/small/style_2{
+	pixel_x = -33;
+	pixel_y = 2
 	},
 /turf/open/floor/grass,
 /area/centcom/central_command_areas/arboretum)
@@ -6716,7 +6716,6 @@
 "uQ" = (
 /obj/effect/turf_decal/delivery/red,
 /obj/machinery/door/poddoor/shutters/indestructible{
-	layer = 2.8;
 	dir = 4;
 	id = "CC_Assault_1";
 	name = "Assault Gear"
@@ -6788,7 +6787,8 @@
 /obj/structure/flora/bush/flowers_yw/style_random,
 /obj/structure/flora/bush/flowers_pp/style_random,
 /obj/machinery/door/poddoor/shutters/window/indestructible/preopen{
-	dir = 4
+	dir = 4;
+	id = "CC_Bar_1"
 	},
 /obj/structure/window/fulltile,
 /turf/open/floor/grass,
@@ -6901,7 +6901,7 @@
 "vz" = (
 /obj/structure/window/reinforced/spawner/directional/south,
 /obj/item/kirbyplants/organic/plant21{
-	layer = 2
+	pixel_y = 9
 	},
 /turf/open/floor/carpet/black,
 /area/centcom/central_command_areas/courtroom)
@@ -7012,8 +7012,7 @@
 	},
 /obj/structure/flora/bush/sunny/style_3{
 	pixel_x = -30;
-	pixel_y = 25;
-	layer = 3.2
+	pixel_y = 25
 	},
 /turf/open/water/beach,
 /area/centcom/central_command_areas/arboretum)
@@ -7181,7 +7180,6 @@
 	dir = 1
 	},
 /obj/machinery/door/poddoor/ert{
-	layer = 2.8;
 	name = "Bridge";
 	id = "CC_Bridge_1"
 	},
@@ -7251,7 +7249,6 @@
 	},
 /obj/machinery/door/poddoor/ert{
 	name = "SOO Office";
-	layer = 2.8;
 	id = "CC_SSO_1"
 	},
 /obj/machinery/button/door/indestructible{
@@ -7481,7 +7478,6 @@
 /area/centcom/central_command_areas/briefing)
 "xb" = (
 /obj/machinery/door/poddoor/shutters/indestructible{
-	layer = 2.8;
 	dir = 4;
 	id = "CC_Light_1";
 	name = "Light Gear"
@@ -7842,7 +7838,6 @@
 	},
 /obj/machinery/door/poddoor/ert{
 	id = "CC_Brief_2";
-	layer = 2.8;
 	name = "ERT Briefing Room"
 	},
 /obj/machinery/button/door/indestructible{
@@ -8037,7 +8032,6 @@
 /obj/machinery/door/airlock/centcom,
 /obj/effect/mapping_helpers/airlock/access/all/admin/captain,
 /obj/machinery/door/poddoor/ert{
-	layer = 2.8;
 	name = "Fitst Port";
 	id = "CC_Argos_1"
 	},
@@ -8060,10 +8054,6 @@
 /turf/open/floor/iron/dark,
 /area/centcom/central_command_areas/engine)
 "yu" = (
-/obj/effect/turf_decal/siding/wood{
-	layer = 10009;
-	dir = 1
-	},
 /obj/effect/turf_decal/siding/wood/corner,
 /obj/structure/railing{
 	dir = 8;
@@ -8073,19 +8063,14 @@
 	pixel_x = 3;
 	pixel_y = -4
 	},
-/obj/structure/flora/bush/sunny/style_3{
-	pixel_x = -2;
-	pixel_y = 6;
-	layer = 3.4
-	},
 /obj/structure/flora/bush/stalky/style_2{
 	pixel_x = 16;
 	pixel_y = 2;
 	layer = 3.2
 	},
 /obj/structure/flora/bush/sunny{
-	pixel_x = 6;
-	pixel_y = 15
+	pixel_x = 2;
+	pixel_y = 8
 	},
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 8
@@ -8096,6 +8081,10 @@
 /obj/structure/marker_beacon/purple{
 	pixel_y = -2;
 	pixel_x = -4
+	},
+/obj/structure/flora/bush/grassy/style_3{
+	pixel_x = 3;
+	pixel_y = -20
 	},
 /turf/open/water/beach,
 /area/centcom/central_command_areas/arboretum)
@@ -8120,7 +8109,6 @@
 /area/centcom/central_command_areas/hospital)
 "yz" = (
 /obj/structure/statue/sandstone/venus/pure{
-	layer = 16;
 	pixel_x = 0;
 	pixel_y = -5
 	},
@@ -8663,7 +8651,6 @@
 	name = "Cell 2"
 	},
 /obj/machinery/door/poddoor/shutters/indestructible{
-	layer = 3;
 	dir = 4;
 	id = "CC_Cell_2"
 	},
@@ -8887,7 +8874,6 @@
 /area/centcom/central_command_areas/cabin/soo)
 "AK" = (
 /obj/machinery/door/poddoor/shutters/indestructible{
-	layer = 2.8;
 	dir = 8;
 	id = "CC_Mech_2";
 	name = "Civil Exosuit Storage"
@@ -8916,7 +8902,8 @@
 /obj/structure/flora/bush/flowers_pp/style_random,
 /obj/structure/window/fulltile,
 /obj/machinery/door/poddoor/shutters/window/indestructible/preopen{
-	dir = 4
+	dir = 4;
+	id = "CC_Bar_1"
 	},
 /turf/open/floor/grass,
 /area/centcom/central_command_areas/bar)
@@ -8966,7 +8953,6 @@
 /obj/machinery/door/airlock/centcom,
 /obj/effect/mapping_helpers/airlock/access/all/admin/captain,
 /obj/machinery/door/poddoor/ert{
-	layer = 2.8;
 	name = "Fleet Representative Office";
 	id = "CC_FRO_1"
 	},
@@ -9330,11 +9316,6 @@
 	color = "#A1662F"
 	},
 /obj/effect/turf_decal/siding/wood/corner,
-/obj/structure/flora/bush/ferny/style_3{
-	pixel_x = 22;
-	pixel_y = 4;
-	layer = 3.2
-	},
 /obj/structure/flora/bush/jungle/c/style_3{
 	pixel_x = -4;
 	pixel_y = 2
@@ -9370,7 +9351,6 @@
 "BY" = (
 /obj/machinery/door/airlock/centcom,
 /obj/machinery/door/poddoor/ert{
-	layer = 2.8;
 	name = "Cargo Bay";
 	id = "CC_Cargo_1"
 	},
@@ -9593,8 +9573,7 @@
 /area/centcom/central_command_areas/prison)
 "CJ" = (
 /obj/structure/platform{
-	dir = 1;
-	layer = 1
+	dir = 1
 	},
 /obj/structure/chair/comfy/blue,
 /turf/open/floor/carpet/blue,
@@ -9845,7 +9824,6 @@
 /area/centcom/central_command_areas/courtroom)
 "Dv" = (
 /obj/machinery/door/poddoor/ert{
-	layer = 2.8;
 	name = "ERT Drop Pod";
 	id = "CC_ERT_Pod_1"
 	},
@@ -9927,17 +9905,23 @@
 /area/centcom/central_command_areas/admin)
 "DH" = (
 /obj/structure/table/wood/fancy/black,
+/obj/effect/turf_decal/siding/wood{
+	dir = 10
+	},
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 4
+	},
 /obj/item/reagent_containers/cup/glass/bottle/wine{
-	pixel_x = -4;
-	pixel_y = 15
+	pixel_x = 5;
+	pixel_y = 2
 	},
 /obj/item/reagent_containers/cup/glass/drinkingglass{
-	pixel_x = 6;
-	pixel_y = 4
+	pixel_x = -7;
+	pixel_y = 5
 	},
-/obj/item/reagent_containers/cup/glass/drinkingglass,
-/obj/effect/turf_decal/siding/wood/end{
-	dir = 1
+/obj/item/reagent_containers/cup/glass/drinkingglass{
+	pixel_x = -4;
+	pixel_y = 1
 	},
 /turf/open/floor/wood,
 /area/centcom/central_command_areas/admin)
@@ -10075,6 +10059,7 @@
 /obj/structure/platform{
 	dir = 1
 	},
+/obj/structure/chair/comfy/beige,
 /turf/open/floor/carpet/red,
 /area/centcom/central_command_areas/courtroom)
 "Ef" = (
@@ -10259,7 +10244,6 @@
 /obj/structure/cable/layer3,
 /obj/effect/mapping_helpers/airlock/access/all/admin/captain,
 /obj/machinery/door/poddoor/ert{
-	layer = 2.8;
 	name = "Engine Room";
 	id = "CC_Eng_1"
 	},
@@ -10351,9 +10335,8 @@
 /area/centcom/central_command_areas/ferry)
 "ET" = (
 /obj/machinery/door/poddoor/ert{
-	name = "First Port";
-	id = "CC_First_Port";
-	layer = 2.8
+	name = "Cargo Port";
+	id = "CC_First_Port"
 	},
 /obj/effect/turf_decal/tile/dark/half/contrasted{
 	dir = 1
@@ -10758,7 +10741,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold/supply/hidden/layer1,
 /obj/machinery/door/poddoor/ert{
-	layer = 2.8;
 	name = "Bridge";
 	id = "CC_Bridge_1"
 	},
@@ -10936,7 +10918,6 @@
 /area/centcom/central_command_areas/hallway)
 "GO" = (
 /obj/machinery/door/poddoor/shutters/indestructible{
-	layer = 2.8;
 	dir = 4;
 	id = "CC_Light_1";
 	name = "Light Gear"
@@ -11366,7 +11347,6 @@
 /area/centcom/central_command_areas/hospital)
 "Ib" = (
 /obj/machinery/door/poddoor/shutters/indestructible{
-	layer = 2.8;
 	dir = 4;
 	id = "CC_Mech_1";
 	name = "Combat Exosuit Storage"
@@ -11377,9 +11357,8 @@
 "Ic" = (
 /obj/machinery/door/airlock/centcom,
 /obj/machinery/door/poddoor/ert{
-	name = "First Port";
-	id = "CC_First_Port";
-	layer = 2.8
+	name = "Cargo Port";
+	id = "CC_First_Port"
 	},
 /turf/open/floor/iron,
 /area/centcom/central_command_areas/supply)
@@ -11673,7 +11652,6 @@
 	name = "ERT Briefing Room"
 	},
 /obj/machinery/door/poddoor/ert{
-	layer = 2.8;
 	name = "ERT Briefing Room";
 	id = "CC_Brief_1"
 	},
@@ -11911,13 +11889,12 @@
 	color = "#A1662F";
 	dir = 4
 	},
-/obj/structure/flora/tree/jungle/small/style_6{
-	pixel_x = -30;
-	pixel_y = -2;
-	layer = 5.2
+/obj/structure/flora/bush/fullgrass/style_random,
+/obj/structure/flora/bush/large/style_2{
+	pixel_x = -16;
+	pixel_y = 4
 	},
 /obj/structure/flora/bush/lavendergrass/style_3,
-/obj/structure/flora/bush/fullgrass/style_random,
 /turf/open/floor/grass,
 /area/centcom/central_command_areas/arboretum)
 "Jz" = (
@@ -12256,6 +12233,7 @@
 	dir = 1
 	},
 /obj/structure/flora/bush/sparsegrass/style_3,
+/obj/structure/flora/rock/pile/jungle/style_4,
 /turf/open/water/beach,
 /area/centcom/central_command_areas/arboretum)
 "KE" = (
@@ -12297,7 +12275,6 @@
 	req_access = list("cent_captain")
 	},
 /obj/machinery/door/poddoor/ert{
-	layer = 2.8;
 	name = "Cargo Bay";
 	id = "CC_Cargo_1"
 	},
@@ -12367,7 +12344,8 @@
 /obj/structure/flora/bush/lavendergrass/style_random,
 /obj/structure/flora/bush/flowers_yw/style_random,
 /obj/machinery/door/poddoor/shutters/window/indestructible/preopen{
-	dir = 4
+	dir = 4;
+	id = "CC_Bar_1"
 	},
 /obj/structure/window/fulltile,
 /turf/open/floor/grass,
@@ -12556,7 +12534,6 @@
 /obj/machinery/door/airlock/centcom,
 /obj/effect/mapping_helpers/airlock/access/all/admin/captain,
 /obj/machinery/door/poddoor/ert{
-	layer = 2.8;
 	name = "Office";
 	id = "CC_Office_2"
 	},
@@ -12589,10 +12566,8 @@
 "LD" = (
 /obj/effect/spawner/structure/window/reinforced/indestructible,
 /obj/machinery/door/poddoor/shutters/indestructible{
-	layer = 3.4;
 	dir = 4;
-	id = "CC_Cell_2";
-	closingLayer = 3.4
+	id = "CC_Cell_2"
 	},
 /turf/open/floor/plating,
 /area/centcom/central_command_areas/prison/cells)
@@ -12646,7 +12621,6 @@
 	name = "Special Cell"
 	},
 /obj/machinery/door/poddoor/shutters/indestructible{
-	layer = 3;
 	dir = 2;
 	id = "CC_Cell_4"
 	},
@@ -12800,7 +12774,8 @@
 /obj/structure/flora/bush/flowers_pp/style_random,
 /obj/structure/window/fulltile,
 /obj/machinery/door/poddoor/shutters/window/indestructible/preopen{
-	dir = 4
+	dir = 4;
+	id = "CC_Bar_1"
 	},
 /turf/open/floor/grass,
 /area/centcom/central_command_areas/bar)
@@ -12882,7 +12857,6 @@
 	pixel_y = 24
 	},
 /obj/machinery/door/poddoor/ert{
-	layer = 2.8;
 	name = "Fitst Port";
 	id = "CC_Argos_1"
 	},
@@ -13106,7 +13080,6 @@
 	color = "#464d4b"
 	},
 /obj/machinery/door/poddoor/ert{
-	layer = 2.8;
 	name = "Armory";
 	id = "CC_Brief_3"
 	},
@@ -13207,7 +13180,6 @@
 	name = "Cell 1"
 	},
 /obj/machinery/door/poddoor/shutters/indestructible{
-	layer = 3;
 	dir = 4;
 	id = "CC_Cell_1"
 	},
@@ -13282,9 +13254,8 @@
 	pixel_y = 3
 	},
 /obj/structure/flora/bush/reed{
-	pixel_x = -8;
-	pixel_y = 15;
-	layer = 16
+	pixel_x = -9;
+	pixel_y = 15
 	},
 /turf/open/water/beach,
 /area/centcom/central_command_areas/arboretum)
@@ -13313,7 +13284,6 @@
 	layer = 3
 	},
 /obj/structure/flora/bush/sparsegrass/style_3{
-	layer = 2.8;
 	pixel_x = -3;
 	pixel_y = 3
 	},
@@ -13482,8 +13452,7 @@
 	},
 /obj/structure/flora/grass/jungle/b/style_2{
 	pixel_x = 5;
-	pixel_y = 8;
-	layer = 3
+	pixel_y = 8
 	},
 /turf/open/water/beach,
 /area/centcom/central_command_areas/arboretum)
@@ -13569,8 +13538,7 @@
 	},
 /obj/structure/flora/bush/ferny/style_2{
 	pixel_x = 7;
-	pixel_y = 0;
-	layer = 3.2
+	pixel_y = 0
 	},
 /turf/open/water/beach,
 /area/centcom/central_command_areas/arboretum)
@@ -13689,11 +13657,6 @@
 /turf/open/water/beach,
 /area/centcom/central_command_areas/bar)
 "OU" = (
-/obj/structure/flora/bush/sunny/style_2{
-	layer = 16;
-	pixel_x = 25;
-	pixel_y = 11
-	},
 /obj/structure/flora/bush/grassy/style_2{
 	pixel_x = 9;
 	pixel_y = 2;
@@ -15003,6 +14966,14 @@
 	},
 /turf/open/floor/iron,
 /area/centcom/central_command_areas/supply)
+"Tt" = (
+/obj/structure/window/reinforced/spawner/directional/south,
+/obj/item/kirbyplants/organic/plant21{
+	pixel_x = 0;
+	pixel_y = 9
+	},
+/turf/open/floor/carpet/black,
+/area/centcom/central_command_areas/courtroom)
 "Tw" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/mapping_helpers/broken_floor,
@@ -15230,11 +15201,6 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
 	},
-/obj/structure/flora/bush/grassy/style_3{
-	pixel_x = -4;
-	pixel_y = 17;
-	layer = 3.1
-	},
 /mob/living/basic/axolotl,
 /turf/open/water/beach,
 /area/centcom/central_command_areas/arboretum)
@@ -15322,8 +15288,7 @@
 	name = "Prison"
 	},
 /obj/machinery/door/poddoor/ert{
-	layer = 2.8;
-	name = "CentComm Brig";
+	name = "CentComm Prison";
 	id = "CC_Prison_1"
 	},
 /obj/effect/mapping_helpers/airlock/access/all/admin/general,
@@ -15335,7 +15300,6 @@
 /area/centcom/central_command_areas/prison)
 "Uk" = (
 /obj/machinery/door/poddoor/ert{
-	layer = 2.8;
 	name = "Second Port";
 	id = "CC_Port2_2"
 	},
@@ -15380,12 +15344,12 @@
 "Ur" = (
 /obj/structure/table/reinforced,
 /obj/item/storage/toolbox/mechanical{
-	pixel_y = 8;
+	pixel_y = -1;
 	pixel_x = 1
 	},
 /obj/machinery/cell_charger{
 	pixel_x = 2;
-	layer = 3
+	pixel_y = 11
 	},
 /turf/open/floor/iron/smooth,
 /area/centcom/central_command_areas/armory)
@@ -15424,10 +15388,8 @@
 "Uz" = (
 /obj/effect/spawner/structure/window/reinforced/indestructible,
 /obj/machinery/door/poddoor/shutters/indestructible{
-	layer = 3.4;
 	dir = 2;
-	id = "CC_Cell_4";
-	closingLayer = 3.4
+	id = "CC_Cell_4"
 	},
 /obj/machinery/atmospherics/pipe/smart/manifold4w/dark,
 /turf/open/floor/plating/airless,
@@ -15849,7 +15811,6 @@
 /area/centcom/central_command_areas/hallway)
 "VW" = (
 /obj/structure/flora/bush/flowers_yw/style_3{
-	layer = 16;
 	pixel_x = -3;
 	pixel_y = 2
 	},
@@ -15992,7 +15953,6 @@
 /area/centcom/central_command_areas/cabin)
 "Wo" = (
 /obj/machinery/door/poddoor/shutters/indestructible{
-	layer = 2.8;
 	dir = 8;
 	name = "Heavy Gear";
 	id = "CC_Heavy_1"
@@ -16633,8 +16593,7 @@
 	name = "Prison"
 	},
 /obj/machinery/door/poddoor/ert{
-	layer = 2.8;
-	name = "CentComm Brig";
+	name = "CentComm Prison";
 	id = "CC_Prison_1"
 	},
 /obj/machinery/atmospherics/pipe/smart/manifold/scrubbers/hidden/layer2,
@@ -16874,9 +16833,8 @@
 	id = "CC_conveyor_top"
 	},
 /obj/machinery/door/poddoor/ert{
-	name = "First Port";
-	id = "CC_First_Port";
-	layer = 2.8
+	name = "Cargo Port";
+	id = "CC_First_Port"
 	},
 /turf/open/floor/plating,
 /area/centcom/central_command_areas/supply)
@@ -17012,7 +16970,6 @@
 /area/centcom/central_command_areas/admin)
 "Zn" = (
 /obj/machinery/door/poddoor/shutters/indestructible{
-	layer = 2.8;
 	dir = 8;
 	name = "Heavy Gear";
 	id = "CC_Heavy_1"
@@ -17041,7 +16998,6 @@
 /area/centcom/central_command_areas/supply)
 "Zq" = (
 /obj/structure/flora/bush/flowers_yw/style_3{
-	layer = 16;
 	pixel_x = -3;
 	pixel_y = 2
 	},
@@ -24170,9 +24126,9 @@ tQ
 LE
 Zm
 uJ
-dF
-DH
 hf
+DH
+Zm
 Nm
 NV
 lo
@@ -27214,7 +27170,7 @@ kU
 Lw
 oH
 zh
-vz
+Tt
 MI
 tV
 rR
