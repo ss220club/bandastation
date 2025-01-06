@@ -3,7 +3,7 @@
 	desc = "Кошачий язык, может различить больше вкусов."
 	icon_state = "tongue"
 	taste_sensitivity = 10
-	say_mod = "mrows"
+	say_mod = "мяучит"
 	modifies_speech = TRUE
 	languages_native = list(/datum/language/siiktajr)
 	var/static/list/speech_replacements = list(
