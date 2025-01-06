@@ -7166,10 +7166,6 @@
 	},
 /turf/open/floor/iron,
 /area/station/service/hydroponics)
-"cAI" = (
-/obj/structure/lattice,
-/turf/open/space/basic,
-/area/space)
 "cBc" = (
 /obj/effect/turf_decal/delivery,
 /turf/open/floor/iron,
@@ -26200,7 +26196,7 @@
 	name = "Syl Labee"
 	},
 /turf/open/space/basic,
-/area/space)
+/area/space/nearstation)
 "joq" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -77225,7 +77221,7 @@ aaa
 aaa
 aaa
 aaa
-cAI
+lMJ
 aaa
 aaa
 aaa
@@ -77482,7 +77478,7 @@ aaa
 aaa
 aaa
 aaa
-cAI
+lMJ
 aaa
 aaa
 aaa
@@ -77739,7 +77735,7 @@ aaa
 aaa
 aaa
 aaa
-cAI
+lMJ
 aaa
 aaa
 aaa
@@ -77996,7 +77992,7 @@ aaa
 aaa
 aaa
 aaa
-cAI
+lMJ
 aaa
 aaa
 aaa
