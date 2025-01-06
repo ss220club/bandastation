@@ -10068,7 +10068,6 @@
 	dir = 1
 	},
 /obj/machinery/light/blacklight/directional/south,
-/obj/machinery/light/directional/south,
 /turf/open/floor/wood/large,
 /area/centcom/central_command_areas/cabin/captain)
 "Bp" = (
@@ -67832,7 +67831,7 @@ zF
 zF
 zF
 zF
-Nn
+Em
 CI
 aa
 aa
@@ -68088,8 +68087,8 @@ Nn
 IQ
 IQ
 IQ
-Nn
-Nn
+Em
+Em
 oa
 aa
 aa
@@ -68345,7 +68344,7 @@ Nn
 zh
 xY
 zh
-Nn
+Em
 oa
 aa
 aa
@@ -68602,7 +68601,7 @@ Ra
 DH
 ks
 rf
-Nn
+Em
 Uv
 aa
 aa
@@ -68859,7 +68858,7 @@ nr
 tl
 wV
 kB
-Nn
+Em
 Uv
 aa
 aa
@@ -69116,7 +69115,7 @@ Ra
 ql
 ql
 Zz
-Nn
+Em
 Uv
 aa
 aa
@@ -69373,7 +69372,7 @@ Nn
 zh
 xY
 zh
-Nn
+Em
 oa
 aa
 aa
@@ -69630,7 +69629,7 @@ Nn
 Ai
 Ai
 Nn
-Nn
+Em
 Nn
 aa
 aa
@@ -72200,7 +72199,7 @@ Nn
 UW
 UW
 Nn
-Nn
+Em
 Nn
 aa
 aa
@@ -72457,7 +72456,7 @@ Nn
 zh
 xY
 zh
-Nn
+Em
 oa
 aa
 aa
@@ -72714,7 +72713,7 @@ Ra
 DH
 ks
 rf
-Nn
+Em
 Uv
 aa
 aa
@@ -72971,7 +72970,7 @@ nr
 tl
 wV
 kB
-Nn
+Em
 Uv
 aa
 aa
@@ -73228,7 +73227,7 @@ Ra
 ql
 ql
 Zz
-Nn
+Em
 Uv
 aa
 aa
@@ -73485,7 +73484,7 @@ Nn
 zh
 xY
 zh
-Nn
+Em
 oa
 aa
 aa
@@ -73742,8 +73741,8 @@ Nn
 eH
 eH
 eH
-Nn
-Nn
+Em
+Em
 oa
 aa
 aa
@@ -74000,7 +73999,7 @@ ky
 ky
 ky
 ky
-Nn
+Em
 CI
 aa
 aa
