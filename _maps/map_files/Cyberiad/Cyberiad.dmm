@@ -40373,7 +40373,7 @@
 	dwidth = 8;
 	height = 11;
 	shuttle_id = "ferry_home";
-	name = "SS13: North Port Bay";
+	name = "SS13: First Port Bay";
 	width = 20
 	},
 /turf/open/space/openspace,
@@ -40870,6 +40870,17 @@
 /obj/effect/decal/cleanable/vomit,
 /turf/open/floor/iron/cafeteria,
 /area/station/maintenance/ghetto/fore/starboard)
+"ktN" = (
+/obj/docking_port/stationary{
+	shuttle_id = "argos_home";
+	name = "SS13: Fourth Port Bay";
+	height = 17;
+	width = 12;
+	dwidth = 5;
+	dir = 8
+	},
+/turf/open/space/openspace,
+/area/space)
 "ktT" = (
 /obj/effect/turf_decal/trimline/blue/filled/line{
 	dir = 4
@@ -67701,7 +67712,7 @@
 	dir = 8;
 	dwidth = 2;
 	height = 13;
-	name = "SS13: Second Port Bay";
+	name = "SS13: Third Port Bay";
 	shuttle_id = "ferry_home";
 	width = 5
 	},
@@ -78946,12 +78957,12 @@
 /area/station/service/library/artgallery)
 "tYh" = (
 /obj/docking_port/stationary{
-	shuttle_id = "argos_home";
-	name = "port bay 4";
-	height = 17;
-	width = 12;
-	dwidth = 5;
-	dir = 8
+	dir = 8;
+	dwidth = 2;
+	height = 11;
+	name = "SS13: Second Port Bay";
+	shuttle_id = "specops_home";
+	width = 5
 	},
 /turf/open/space/openspace,
 /area/space)
@@ -168530,8 +168541,8 @@ tYD
 tYD
 tYD
 tYD
-tYh
 tYD
+ktN
 tYD
 tYD
 tYD
@@ -172374,7 +172385,7 @@ wuK
 pop
 tYD
 tYD
-tYD
+tYh
 tYD
 tYD
 pop

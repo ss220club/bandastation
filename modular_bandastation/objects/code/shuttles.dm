@@ -116,7 +116,7 @@
 	shuttle_id = "argos"
 	movement_force = list("KNOCKDOWN" = 0, "THROW" = 0)
 	hidden = TRUE
-	dir = NORTH
+	dir = SOUTH
 	port_direction = NORTH
 	preferred_direction = SOUTH
 
@@ -125,9 +125,9 @@
 	shuttle_id = "specops"
 	movement_force = list("KNOCKDOWN" = 0, "THROW" = 0)
 	hidden = TRUE
-	dir = SOUTH
+	dir = NORTH
 	port_direction = SOUTH
-	preferred_direction = SOUTH
+	preferred_direction = NORTH
 
 // Shuttle Areas
 /area/shuttle/syndicate_sit
