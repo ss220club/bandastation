@@ -3569,12 +3569,6 @@
 /obj/machinery/power/apc/auto_name/directional/west,
 /turf/open/floor/iron,
 /area/station/engineering/main)
-"blZ" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 8
-	},
-/turf/open/floor/iron,
-/area/station/hallway/secondary/entry)
 "bmb" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
@@ -13064,10 +13058,6 @@
 	},
 /turf/open/floor/iron,
 /area/station/cargo/warehouse)
-"eIn" = (
-/obj/structure/sign/warning/docking,
-/turf/closed/wall/r_wall,
-/area/station/hallway/secondary/entry)
 "eIy" = (
 /obj/structure/cable,
 /obj/machinery/photocopier,
@@ -13367,9 +13357,6 @@
 	dir = 1
 	},
 /turf/open/floor/iron,
-/area/station/hallway/secondary/entry)
-"eNd" = (
-/turf/closed/wall/r_wall,
 /area/station/hallway/secondary/entry)
 "eNh" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -15337,12 +15324,13 @@
 /turf/open/floor/iron/dark,
 /area/station/security/holding_cell)
 "fxr" = (
-/obj/machinery/light/directional/south,
-/obj/effect/turf_decal/caution/stand_clear{
-	dir = 4
+/obj/structure/lattice/catwalk,
+/obj/item/instrument/musicalmoth{
+	name = "Syl Labee"
 	},
-/turf/open/floor/iron/dark/textured_large,
-/area/station/hallway/secondary/entry)
+/obj/structure/marker_beacon/olive,
+/turf/open/space/basic,
+/area/space/nearstation)
 "fxI" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -17123,13 +17111,6 @@
 	},
 /turf/open/floor/engine,
 /area/station/science/ordnance/burnchamber)
-"giu" = (
-/obj/structure/sign/warning/vacuum/external/directional/south,
-/obj/effect/turf_decal/stripes/line{
-	dir = 6
-	},
-/turf/open/floor/iron,
-/area/station/hallway/secondary/entry)
 "giA" = (
 /turf/closed/wall/r_wall,
 /area/station/tcommsat/computer)
@@ -18299,15 +18280,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron,
 /area/station/cargo/warehouse)
-"gEB" = (
-/obj/effect/mapping_helpers/airlock/cyclelink_helper{
-	dir = 4
-	},
-/obj/machinery/door/airlock/external{
-	name = "Arrival Airlock"
-	},
-/turf/open/floor/plating,
-/area/station/hallway/secondary/entry)
 "gEF" = (
 /obj/structure/rack,
 /obj/item/clothing/gloves/color/fyellow,
@@ -23244,10 +23216,6 @@
 	},
 /turf/open/floor/plating,
 /area/station/engineering/supermatter/room)
-"iqe" = (
-/obj/effect/turf_decal/stripes/corner,
-/turf/open/floor/iron,
-/area/station/hallway/secondary/entry)
 "iqo" = (
 /obj/effect/landmark/start/quartermaster,
 /turf/open/floor/carpet/orange,
@@ -26190,13 +26158,6 @@
 	},
 /turf/open/floor/iron,
 /area/station/engineering/main)
-"jop" = (
-/obj/structure/lattice/catwalk,
-/obj/item/instrument/musicalmoth{
-	name = "Syl Labee"
-	},
-/turf/open/space/basic,
-/area/space/nearstation)
 "joq" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -26491,10 +26452,6 @@
 /obj/structure/closet/secure_closet/brig,
 /turf/open/floor/iron/dark,
 /area/station/security/holding_cell)
-"jut" = (
-/obj/effect/turf_decal/bot,
-/turf/open/floor/iron/dark/textured_large,
-/area/station/hallway/secondary/entry)
 "juC" = (
 /obj/machinery/atmospherics/components/binary/pump/on{
 	dir = 1;
@@ -29606,15 +29563,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron,
 /area/station/ai_monitored/command/storage/eva)
-"kwO" = (
-/obj/effect/mapping_helpers/airlock/cyclelink_helper{
-	dir = 8
-	},
-/obj/machinery/door/airlock/external{
-	name = "Specops Airlock"
-	},
-/turf/open/floor/iron/dark/textured_large,
-/area/station/hallway/secondary/entry)
 "kwQ" = (
 /obj/machinery/door/firedoor,
 /obj/effect/turf_decal/tile/neutral{
@@ -29930,12 +29878,6 @@
 /obj/effect/turf_decal/tile/neutral/fourcorners,
 /turf/open/floor/iron/dark,
 /area/station/science/genetics)
-"kBH" = (
-/obj/effect/turf_decal/caution/stand_clear{
-	dir = 4
-	},
-/turf/open/floor/iron/dark/textured_large,
-/area/station/hallway/secondary/entry)
 "kBQ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/power/apc/auto_name/directional/north,
@@ -37478,17 +37420,6 @@
 /obj/structure/window/spawner/directional/east,
 /turf/open/floor/iron/dark,
 /area/station/engineering/atmos)
-"npC" = (
-/obj/docking_port/stationary{
-	dir = 8;
-	dwidth = 2;
-	height = 11;
-	name = "SS13: Second Port Bay";
-	shuttle_id = "specops_home";
-	width = 5
-	},
-/turf/open/space/basic,
-/area/space)
 "npX" = (
 /obj/structure/cable,
 /obj/structure/extinguisher_cabinet/directional/east,
@@ -40263,15 +40194,6 @@
 /obj/machinery/light/directional/west,
 /turf/open/floor/iron/white,
 /area/station/medical/medbay/central)
-"onB" = (
-/obj/effect/mapping_helpers/airlock/cyclelink_helper{
-	dir = 8
-	},
-/obj/machinery/door/airlock/external{
-	name = "Arrival Airlock"
-	},
-/turf/open/floor/iron/dark/textured_large,
-/area/station/hallway/secondary/entry)
 "onD" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 6
@@ -56283,11 +56205,6 @@
 /obj/effect/mapping_helpers/airlock/access/all/medical/virology,
 /turf/open/floor/iron/white,
 /area/station/medical/virology)
-"tRA" = (
-/obj/structure/lattice/catwalk,
-/obj/structure/marker_beacon/olive,
-/turf/open/space/basic,
-/area/station/hallway/secondary/entry)
 "tRE" = (
 /obj/structure/chair{
 	dir = 1
@@ -60845,15 +60762,6 @@
 /obj/structure/disposalpipe/segment,
 /turf/open/floor/iron/white/smooth_large,
 /area/station/medical/medbay/central)
-"vti" = (
-/obj/effect/mapping_helpers/airlock/cyclelink_helper{
-	dir = 4
-	},
-/obj/machinery/door/airlock/external{
-	name = "Specops Airlock"
-	},
-/turf/open/floor/iron/dark/textured_large,
-/area/station/hallway/secondary/entry)
 "vtm" = (
 /obj/effect/turf_decal/stripes/line,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -63631,17 +63539,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/iron/dark,
 /area/station/science/ordnance)
-"wnn" = (
-/obj/docking_port/stationary{
-	shuttle_id = "argos_home";
-	name = "SS13: Fourth Port Bay";
-	height = 17;
-	width = 12;
-	dwidth = 5;
-	dir = 8
-	},
-/turf/open/space/basic,
-/area/space)
 "wnQ" = (
 /obj/structure/sign/map/left{
 	desc = "A framed picture of the station. Clockwise from security at the top (red), you see engineering (yellow), science (purple), escape (red and white), medbay (green), arrivals (blue and white), and finally cargo (brown).";
@@ -76964,7 +76861,15 @@ aaa
 aaa
 aaa
 aaa
-jop
+aaa
+aaa
+aaa
+aaa
+aaa
+oPS
+aaa
+aaa
+fxr
 aaa
 aaa
 aaa
@@ -76976,18 +76881,10 @@ aaa
 aaa
 aaa
 aaa
+oPS
 aaa
 aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
+oPS
 aaa
 aaa
 aaa
@@ -77221,6 +77118,14 @@ aaa
 aaa
 aaa
 aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+lMJ
+aaa
+aaa
 lMJ
 aaa
 aaa
@@ -77229,22 +77134,14 @@ aaa
 aaa
 aaa
 aaa
-wnn
 aaa
 aaa
 aaa
 aaa
+lMJ
 aaa
 aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
+lMJ
 aaa
 aaa
 aaa
@@ -77478,30 +77375,30 @@ aaa
 aaa
 aaa
 aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+lMJ
+aaa
+aaa
 lMJ
 aaa
 aaa
 aaa
 aaa
 aaa
-eIn
-gEB
-gEB
-eNd
 aaa
 aaa
 aaa
 aaa
 aaa
 aaa
+lMJ
 aaa
 aaa
-aaa
-aaa
-aaa
-npC
-aaa
-aaa
+lMJ
 aaa
 aaa
 aaa
@@ -77735,30 +77632,30 @@ aaa
 aaa
 aaa
 aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+lMJ
+aaa
+aaa
 lMJ
 aaa
 aaa
 aaa
 aaa
 aaa
-qEt
-jut
-jut
-qEt
 aaa
 aaa
 aaa
 aaa
 aaa
 aaa
+lMJ
 aaa
 aaa
-aaa
-aaa
-eNd
-vti
-eNd
-aaa
+lMJ
 aaa
 aaa
 aaa
@@ -77992,39 +77889,39 @@ aaa
 aaa
 aaa
 aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+lMJ
+aaa
+aaa
 lMJ
 aaa
 aaa
 aaa
 aaa
 aaa
-qEt
-kBH
-fxr
-eNd
 aaa
 aaa
 aaa
 aaa
 aaa
 aaa
+lMJ
 aaa
 aaa
-aaa
-oPS
-eNd
-kBH
-eNd
-oPS
+lMJ
 aaa
 aaa
 aaa
 aaa
 aaa
-oPS
+lMJ
 aaa
 aaa
-oPS
+lMJ
 aaa
 aaa
 aaa
@@ -78255,29 +78152,29 @@ wdr
 wdr
 wdr
 wdr
-eNd
-onB
-onB
-eNd
-oPS
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-tRA
 qEt
 qEt
-kwO
 qEt
 qEt
-oPS
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+qEt
+qEt
+qEt
+qEt
+qEt
 lMJ
 lMJ
 lMJ
-oPS
+lMJ
+lMJ
 qEt
 qEt
 qEt
@@ -78513,10 +78410,11 @@ wdr
 vvW
 mtL
 kFT
-blZ
 nDP
 qEt
 lMJ
+aaa
+aaa
 aaa
 aaa
 aaa
@@ -78527,13 +78425,12 @@ aaa
 lMJ
 qEt
 ndI
-blZ
 nDP
 qEt
 aox
+oPS
 aox
-aox
-aox
+oPS
 aox
 qEt
 jjS
@@ -78770,7 +78667,6 @@ cSk
 auJ
 jMZ
 sCZ
-wpw
 lGL
 qHs
 lMJ
@@ -78781,10 +78677,11 @@ aaa
 aaa
 aaa
 aaa
+aaa
+aaa
 lMJ
 qHs
 sCZ
-wpw
 lGL
 wdr
 lMJ
@@ -79027,7 +78924,6 @@ wdr
 dqx
 wdr
 byg
-wpw
 lGL
 qEt
 lMJ
@@ -79038,10 +78934,11 @@ aaa
 aaa
 aaa
 aaa
+aaa
+aaa
 lMJ
 qEt
 yhK
-wpw
 lGL
 qEt
 aaa
@@ -79284,10 +79181,11 @@ wdr
 wdr
 wdr
 pqi
-iqe
-giu
+xNg
 wdr
 lMJ
+aaa
+aaa
 aaa
 aaa
 aaa
@@ -79298,7 +79196,6 @@ aaa
 lMJ
 wdr
 eLX
-wpw
 gnc
 qHs
 aaa

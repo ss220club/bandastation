@@ -103,9 +103,6 @@
 /obj/structure/grille,
 /turf/open/space/basic,
 /area/space/nearstation)
-"O" = (
-/turf/open/floor/iron,
-/area/template_noop)
 "R" = (
 /obj/machinery/firealarm/directional/west,
 /turf/open/floor/iron,
@@ -115,7 +112,7 @@
 	dir = 9
 	},
 /turf/open/floor/iron,
-/area/template_noop)
+/area/station/hallway/secondary/entry)
 "V" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron,
@@ -517,6 +514,6 @@ D
 k
 k
 R
-O
+k
 D
 "}

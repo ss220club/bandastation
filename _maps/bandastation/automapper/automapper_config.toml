@@ -69,6 +69,20 @@ required_map = "MetaStation.dmm"
 coordinates = [101, 115, 1]
 trait_name = "Station"
 
+[templates.metastation_argos_port]
+map_files = ["metastation_argos_port.dmm"]
+directory = "_maps/bandastation/automapper/templates/metastation/"
+required_map = "MetaStation.dmm"
+coordinates = [31, 142, 1]
+trait_name = "Station"
+
+[templates.metastation_specops_port]
+map_files = ["metastation_specops_port.dmm"]
+directory = "_maps/bandastation/automapper/templates/metastation/"
+required_map = "MetaStation.dmm"
+coordinates = [31, 128, 1]
+trait_name = "Station"
+
 # IceBoxStation
 [templates.iceboxstation_blueshield_office]
 map_files = ["iceboxstation_blueshield_office.dmm"]

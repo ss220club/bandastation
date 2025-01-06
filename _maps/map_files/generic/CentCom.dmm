@@ -7558,7 +7558,6 @@
 	},
 /obj/effect/turf_decal/line/dark_blue/line/stripes/contrasted,
 /obj/structure/light_fake/floor,
-/obj/structure/platform,
 /turf/open/floor/iron/dark,
 /area/centcom/central_command_areas/control)
 "uF" = (
@@ -71620,9 +71619,9 @@ Zv
 rL
 rL
 Xz
-Gk
-VP
+em
 Ne
+VP
 gJ
 Yc
 sQ
