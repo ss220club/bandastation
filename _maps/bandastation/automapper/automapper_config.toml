@@ -25,14 +25,6 @@ required_map = "builtin"
 coordinates = [12, 53, 1]
 trait_name = "CentCom"
 
-# CentCom NAS Trurl
-[templates.CentCom_Trurl]
-map_files = ["Trurl.dmm"]
-directory = "_maps/bandastation/automapper/templates/centcom/"
-required_map = "builtin"
-coordinates = [125, 6, 1]
-trait_name = "CentCom"
-
 # DeltaStation
 [templates.deltastation_lawyer_office]
 map_files = ["deltastation_lawyer_office.dmm"]
