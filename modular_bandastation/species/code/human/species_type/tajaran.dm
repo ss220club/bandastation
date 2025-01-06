@@ -115,6 +115,20 @@
 			SPECIES_PERK_DESC = "[plural_form] лучше слышат, но более чувствительны к громким звукам, например, светошумовым гранатам.",
 		),
 		list(
+			SPECIES_PERK_TYPE = SPECIES_NEUTRAL_PERK,
+			SPECIES_PERK_ICON = FA_ICON_PERSON_FALLING,
+			SPECIES_PERK_NAME = "Таярская грация",
+			SPECIES_PERK_DESC = "[plural_form] обладают схожими с кошачьими инстинктами, позволяющими им приземляться вертикально на ноги.  \
+				Вместо того чтобы быть сбитым с ног при падении, вы получаете лишь короткое замедление. \
+				Однако однако никто не гарантирует безопасность подобных действий, и падение может нанести дополнительный урон.",
+		),
+		list(
+			SPECIES_PERK_TYPE = SPECIES_POSITIVE_PERK,
+			SPECIES_PERK_ICON = "grin-tongue",
+			SPECIES_PERK_NAME = "Уход за собой",
+			SPECIES_PERK_DESC = "[plural_form] могут зализывать раны, чтобы уменьшить кровотечение.",
+		),
+		list(
 			SPECIES_PERK_TYPE = SPECIES_NEGATIVE_PERK,
 			SPECIES_PERK_ICON = "fire-alt",
 			SPECIES_PERK_NAME = "Быстрый метаболизм",
