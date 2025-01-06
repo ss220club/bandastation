@@ -1,8 +1,8 @@
 // MARK: Papers
-/obj/item/paper/fluff/centcomm
+/obj/item/paper/fluff/centcom
 	color = COLOR_BLUE_GRAY
 
-/obj/item/paper/fluff/centcomm/armory
+/obj/item/paper/fluff/centcom/armory
 	name = "Приказ департамента Специальных Операций"
 	desc = "Обновленная методичка комплектации отрядов быстрого реагирования. Полезно для прочтения!"
 	//stamp_cache = list("stamp-centcom")

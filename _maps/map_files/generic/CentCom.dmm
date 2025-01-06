@@ -1611,7 +1611,7 @@
 	name = "Prison"
 	},
 /obj/machinery/door/poddoor/ert{
-	name = "CentComm Prison";
+	name = "CentCom Prison";
 	id = "CC_Prison_1"
 	},
 /obj/effect/mapping_helpers/airlock/access/all/admin/general,
@@ -5251,13 +5251,13 @@
 	name = "Prison"
 	},
 /obj/machinery/door/poddoor/ert{
-	name = "CentComm Prison";
+	name = "CentCom Prison";
 	id = "CC_Prison_1"
 	},
 /obj/machinery/button/door/indestructible{
 	pixel_x = 24;
 	id = "CC_Prison_1";
-	name = "CentComm Brig"
+	name = "CentCom Brig"
 	},
 /obj/effect/mapping_helpers/airlock/access/all/admin/general,
 /obj/effect/mapping_helpers/airlock/autoname,
@@ -16628,7 +16628,7 @@
 	name = "Prison"
 	},
 /obj/machinery/door/poddoor/ert{
-	name = "CentComm Prison";
+	name = "CentCom Prison";
 	id = "CC_Prison_1"
 	},
 /obj/machinery/atmospherics/pipe/smart/manifold/scrubbers/hidden/layer2,
