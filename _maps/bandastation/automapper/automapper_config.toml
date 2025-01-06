@@ -30,8 +30,8 @@ trait_name = "CentCom"
 map_files = ["Trurl.dmm"]
 directory = "_maps/bandastation/automapper/templates/centcom/"
 required_map = "builtin"
-coordinates = [133, 006, 1]
-trait_name = "Trurl"
+coordinates = [125, 6, 1]
+trait_name = "CentCom"
 
 # DeltaStation
 [templates.deltastation_lawyer_office]
