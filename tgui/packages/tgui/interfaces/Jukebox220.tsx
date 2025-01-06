@@ -1,8 +1,5 @@
 import { sortBy } from 'common/collections';
 import React, { useState } from 'react';
-
-import { BooleanLike } from '../../common/react';
-import { useBackend } from '../backend';
 import {
   Box,
   Button,
@@ -15,7 +12,10 @@ import {
   ProgressBar,
   Section,
   Stack,
-} from '../components';
+} from 'tgui-core/components';
+import { BooleanLike } from 'tgui-core/react';
+
+import { useBackend } from '../backend';
 import { Window } from '../layouts';
 
 type Song = {

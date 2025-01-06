@@ -1,6 +1,4 @@
 import { useState } from 'react';
-
-import { useBackend } from '../../backend';
 import {
   BlockQuote,
   Button,
@@ -13,7 +11,9 @@ import {
   Stack,
   Table,
   VirtualList,
-} from '../../components';
+} from 'tgui-core/components';
+
+import { useBackend } from '../../backend';
 import { PreferencesMenuData, Seed, ServerData, TtsData } from './data';
 import { ServerPreferencesFetcher } from './ServerPreferencesFetcher';
 
