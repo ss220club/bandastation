@@ -357,9 +357,7 @@
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/preopen{
 	name = "Argos Window Protector";
-	id = "argos_window";
-	layer = 3;
-	closingLayer = 3
+	id = "argos_window"
 	},
 /turf/open/floor/plating/airless,
 /area/shuttle/argos)
@@ -401,8 +399,7 @@
 /obj/effect/mapping_helpers/airlock/access/any/admin/general,
 /obj/machinery/door/poddoor/ert{
 	id = "argos_exit";
-	name = "Argos Blast Door";
-	layer = 2.8
+	name = "Argos Blast Door"
 	},
 /obj/machinery/button/door/indestructible{
 	pixel_x = -28;
@@ -569,8 +566,7 @@
 /obj/effect/mapping_helpers/airlock/access/any/admin/general,
 /obj/machinery/door/poddoor/ert{
 	id = "argos_exit";
-	name = "Argos Blast Door";
-	layer = 2.8
+	name = "Argos Blast Door"
 	},
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 1
