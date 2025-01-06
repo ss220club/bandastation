@@ -7437,7 +7437,6 @@
 /turf/open/floor/wood/large,
 /area/centcom/central_command_areas/cabin)
 "uJ" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/cyan/visible,
 /obj/machinery/atmospherics/pipe/layer_manifold/cyan/visible{
 	dir = 8
 	},
