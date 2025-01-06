@@ -6560,6 +6560,7 @@
 /obj/effect/turf_decal/tile/blue{
 	dir = 4
 	},
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/iron,
 /area/station/hallway/secondary/entry)
 "blg" = (
@@ -12737,6 +12738,16 @@
 /obj/effect/turf_decal/trimline/red/filled/line,
 /turf/open/floor/iron/dark,
 /area/station/security/courtroom/holding)
+"dpl" = (
+/obj/docking_port/stationary{
+	shuttle_id = "argos_home";
+	name = "SS13: Fourth Port Bay";
+	height = 17;
+	width = 12;
+	dwidth = 5
+	},
+/turf/open/space/openspace,
+/area/space)
 "dpu" = (
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
@@ -13151,9 +13162,6 @@
 /turf/open/floor/iron/white,
 /area/station/medical/medbay/central)
 "dyd" = (
-/obj/effect/turf_decal/caution/stand_clear{
-	dir = 4
-	},
 /obj/structure/sign/warning/vacuum/external/directional/north,
 /turf/open/floor/iron,
 /area/station/hallway/secondary/entry)
@@ -22564,9 +22572,9 @@
 /turf/open/floor/iron,
 /area/station/security/prison/workout)
 "gWO" = (
-/obj/machinery/door/airlock/external,
-/obj/effect/mapping_helpers/airlock/cyclelink_helper_multi,
-/turf/open/floor/iron/large,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/effect/turf_decal/stripes/line,
+/turf/open/floor/iron,
 /area/station/hallway/secondary/entry)
 "gWV" = (
 /obj/effect/spawner/structure/window,
@@ -22964,6 +22972,7 @@
 /obj/effect/turf_decal/tile/blue{
 	dir = 4
 	},
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/iron,
 /area/station/hallway/secondary/entry)
 "hfP" = (
@@ -37720,6 +37729,11 @@
 	},
 /turf/open/floor/engine,
 /area/station/engineering/supermatter/room)
+"miX" = (
+/obj/effect/turf_decal/stripes/line,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/turf/open/floor/iron,
+/area/station/hallway/secondary/entry)
 "mjd" = (
 /obj/effect/turf_decal/siding/wood,
 /obj/structure/cable,
@@ -40264,6 +40278,7 @@
 /obj/effect/turf_decal/tile/blue{
 	dir = 4
 	},
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/iron,
 /area/station/hallway/secondary/entry)
 "niS" = (
@@ -41447,9 +41462,6 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 4
 	},
-/obj/effect/turf_decal/stripes/line{
-	dir = 1
-	},
 /turf/open/floor/iron,
 /area/station/hallway/secondary/entry)
 "nBY" = (
@@ -42513,6 +42525,7 @@
 	dir = 4
 	},
 /obj/machinery/light/directional/north,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/iron,
 /area/station/hallway/secondary/entry)
 "nWi" = (
@@ -43245,6 +43258,13 @@
 /obj/machinery/firealarm/directional/east,
 /turf/open/floor/iron/white,
 /area/station/medical/medbay/central)
+"ojq" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
+	dir = 4
+	},
+/obj/effect/turf_decal/stripes/line,
+/turf/open/floor/iron,
+/area/station/hallway/secondary/entry)
 "ojI" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -47793,6 +47813,11 @@
 /obj/structure/sign/departments/evac/directional/east,
 /turf/open/floor/iron,
 /area/station/hallway/secondary/exit)
+"pTX" = (
+/obj/machinery/door/airlock/external,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper,
+/turf/open/floor/plating,
+/area/station/hallway/secondary/entry)
 "pUi" = (
 /obj/structure/railing{
 	dir = 4
@@ -48949,9 +48974,7 @@
 "qnv" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/light/directional/north,
-/obj/effect/turf_decal/stripes/line{
-	dir = 1
-	},
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/iron,
 /area/station/hallway/secondary/entry)
 "qnA" = (
@@ -50433,8 +50456,10 @@
 /area/station/service/theater)
 "qPj" = (
 /obj/machinery/door/airlock/external,
-/obj/effect/mapping_helpers/airlock/cyclelink_helper_multi,
-/turf/open/floor/plating,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 1
+	},
+/turf/open/floor/iron/large,
 /area/station/hallway/secondary/entry)
 "qPE" = (
 /obj/structure/chair/greyscale{
@@ -51511,6 +51536,7 @@
 /obj/effect/turf_decal/tile/blue{
 	dir = 4
 	},
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/iron,
 /area/station/hallway/secondary/entry)
 "rhL" = (
@@ -55814,9 +55840,7 @@
 /area/station/solars/starboard/fore)
 "sIz" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/effect/turf_decal/stripes/line{
-	dir = 1
-	},
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/iron,
 /area/station/hallway/secondary/entry)
 "sIF" = (
@@ -60864,6 +60888,7 @@
 /obj/effect/turf_decal/tile/blue{
 	dir = 4
 	},
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/iron,
 /area/station/hallway/secondary/entry)
 "utj" = (
@@ -68939,15 +68964,9 @@
 /turf/open/floor/plating,
 /area/station/ai_monitored/turret_protected/aisat/foyer)
 "xlN" = (
-/obj/docking_port/stationary{
-	shuttle_id = "argos_home";
-	name = "SS13: Fourth Port Bay";
-	height = 17;
-	width = 12;
-	dwidth = 5
-	},
-/turf/open/space/openspace,
-/area/space)
+/obj/effect/turf_decal/caution/stand_clear,
+/turf/open/floor/iron,
+/area/station/hallway/secondary/entry)
 "xlT" = (
 /obj/effect/turf_decal/trimline/neutral/filled/corner{
 	dir = 4
@@ -141438,9 +141457,9 @@ pMW
 pMW
 pMW
 pMW
-pMW
 oKl
 oKl
+xRm
 wIP
 wIP
 pMW
@@ -141695,9 +141714,9 @@ pMW
 pMW
 pMW
 pMW
-pMW
 wIP
 pMW
+vXM
 pMW
 oKl
 pMW
@@ -141952,9 +141971,9 @@ pMW
 pMW
 pMW
 pMW
-pMW
 oKl
 pMW
+vXM
 pMW
 oKl
 pMW
@@ -142209,9 +142228,9 @@ pMW
 pMW
 pMW
 pMW
-pMW
 wIP
 pMW
+vXM
 pMW
 wIP
 pMW
@@ -142465,10 +142484,10 @@ pMW
 pMW
 pMW
 pMW
-pMW
 oKl
 oKl
 oKl
+xRm
 wIP
 wIP
 pMW
@@ -142722,10 +142741,10 @@ pMW
 pMW
 pMW
 pMW
-pMW
 oKl
 pMW
 pMW
+vXM
 pMW
 oKl
 pMW
@@ -142979,10 +142998,10 @@ pMW
 pMW
 pMW
 pMW
-pMW
 wIP
 pMW
 pMW
+vXM
 pMW
 oKl
 pMW
@@ -143234,12 +143253,12 @@ pMW
 pMW
 pMW
 pMW
-pMW
-pMW
-mQC
 nmY
 nmY
 mQC
+lQn
+lQn
+lQn
 wIP
 wIP
 pMW
@@ -143490,12 +143509,12 @@ pMW
 pMW
 pMW
 pMW
-pMW
-pMW
-xlN
-qPj
+dpl
+pTX
 tnl
-tCT
+qPj
+xlN
+cRJ
 nmY
 pMW
 oKl
@@ -143748,11 +143767,11 @@ pMW
 pMW
 pMW
 pMW
-pMW
-pMW
-qPj
+pTX
 tnl
-tCT
+qPj
+xlN
+ojq
 nmY
 pMW
 oKl
@@ -144005,10 +144024,10 @@ pMW
 pMW
 pMW
 pMW
-pMW
-pMW
+nmY
+nmY
 lQn
-gWO
+jEu
 gWO
 lQn
 pMW
@@ -144266,7 +144285,7 @@ pMW
 pMW
 lQn
 dyd
-wNX
+gWO
 lQn
 wIP
 wIP
@@ -144523,7 +144542,7 @@ pMW
 pMW
 tPE
 nBP
-vcI
+miX
 tPE
 pMW
 oKl
@@ -144780,7 +144799,7 @@ pMW
 pMW
 tPE
 sIz
-vcI
+miX
 tPE
 pMW
 oKl
