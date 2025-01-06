@@ -2,12 +2,6 @@
 "aa" = (
 /turf/open/space/basic,
 /area/space)
-"ab" = (
-/obj/effect/turf_decal/delivery/white{
-	color = "#6b8cc4"
-	},
-/turf/open/floor/iron/smooth_half,
-/area/centcom/central_command_areas/armory)
 "af" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 9
@@ -1770,7 +1764,7 @@
 /area/centcom/central_command_areas/maintance)
 "eP" = (
 /obj/effect/turf_decal/delivery/white{
-	color = "#6b8cc4"
+	color = "#6B8CC4"
 	},
 /turf/open/floor/iron/smooth_edge{
 	dir = 8
@@ -8674,7 +8668,7 @@
 "xY" = (
 /obj/structure/light_fake/spot/directional/east,
 /obj/effect/turf_decal/delivery/white{
-	color = "#6b8cc4"
+	color = "#6B8CC4"
 	},
 /obj/structure/sign/poster/official/nanotrasen_logo/directional/east,
 /turf/open/floor/iron/smooth_half,
@@ -74248,7 +74242,7 @@ qh
 sK
 bz
 KI
-ab
+Ty
 XW
 Ya
 OJ
