@@ -192,7 +192,6 @@
 	message_admins("Storyteller purchased and triggered [bought_event] event, on [track] track, for [total_cost] cost.")
 	if(bought_event.roundstart)
 		mode.TriggerEvent(bought_event, forced)
-		SSgamemode.can_run_roundstart = FALSE
 	else
 		mode.schedule_event(bought_event, 3 MINUTES, total_cost, _forced = forced)
 

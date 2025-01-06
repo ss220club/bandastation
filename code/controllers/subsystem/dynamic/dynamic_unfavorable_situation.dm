@@ -29,7 +29,10 @@
 		return list()
 
 	var/list/possible_heavies = list()
-	for (var/datum/dynamic_ruleset/midround/ruleset as anything in midround_rules)
+	// BANDASTATION EDIT START - STORYTELLER
+	var/list/generated_midround_rules = init_rulesets(/datum/dynamic_ruleset/midround)
+	for (var/datum/dynamic_ruleset/midround/ruleset as anything in generated_midround_rules)
+	// BANDASTATION EDIT END - STORYTELLER
 		if (ruleset.midround_ruleset_style != MIDROUND_RULESET_STYLE_HEAVY)
 			continue
 

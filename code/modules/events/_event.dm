@@ -136,14 +136,16 @@
 		sleep(RANDOM_EVENT_ADMIN_INTERVENTION_TIME)
 	// BANDASTATION EDIT END - STORYTELLER
 	var/players_amt = get_active_player_count(alive_check = TRUE, afk_check = TRUE, human_check = TRUE)
-	if(!can_spawn_event(players_amt, fake_check = TRUE) && !forced) /// BANDSTATION EDIT - STORYTELLER
+	if(!can_spawn_event(players_amt, fake_check = TRUE) && !forced && !roundstart) /// BANDSTATION EDIT - STORYTELLER
 		message_admins("Second pre-condition check for [name] failed, rerolling...")
+		message_admins("REASON: [return_failure_string(players_amt)]")/// BANDSTATION EDIT - STORYTELLER
 		SSevents.spawnEvent(excluded_event = src)
 		return EVENT_INTERRUPTED
 
 	// BANDASTATION EDIT START - STORYTELLER
 	if(!can_spawn_event(players_amt, fake_check = TRUE) && forced)
 		message_admins("Second pre-condition check for [name] failed, but event forced, running event regardless this may have issues...")
+		message_admins("REASON: [return_failure_string(players_amt)]")
 	// BANDASTATION EDIT END - STORYTELLER
 
 	if(!triggering)
