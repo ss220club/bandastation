@@ -1025,6 +1025,18 @@
 /obj/structure/chair/sofa/corp,
 /turf/open/floor/carpet/red,
 /area/centcom/central_command_areas/planetary_port/club)
+"mB" = (
+/obj/docking_port/stationary{
+	dwidth = 2;
+	height = 8;
+	name = "Backup Shuttle Dock";
+	roundstart_template = /datum/map_template/shuttle/emergency/backup;
+	shuttle_id = "backup_away";
+	width = 8;
+	area_type = /area/centcom/central_command_areas/planetary_port
+	},
+/turf/open/floor/asphalt,
+/area/centcom/central_command_areas/planetary_port)
 "mC" = (
 /obj/structure/table/reinforced/plastitaniumglass,
 /obj/effect/turf_decal/siding/wood{
@@ -1565,6 +1577,12 @@
 	},
 /turf/open/floor/carpet/royalblack,
 /area/centcom/central_command_areas/planetary_port/club)
+"tj" = (
+/obj/effect/turf_decal/trimline/green/filled/warning{
+	dir = 1
+	},
+/turf/open/floor/iron,
+/area/centcom/central_command_areas/planetary_port)
 "tl" = (
 /obj/structure/table/wood/fancy/black,
 /obj/item/kirbyplants/random{
@@ -1572,6 +1590,12 @@
 	},
 /turf/open/floor/wood/large,
 /area/centcom/central_command_areas/planetary_port/library)
+"tr" = (
+/obj/structure/fans/tiny,
+/obj/effect/turf_decal/delivery,
+/obj/machinery/door/poddoor/shuttledock,
+/turf/open/floor/iron,
+/area/centcom/central_command_areas/planetary_port)
 "tD" = (
 /obj/effect/turf_decal/trimline/green/filled/arrow_ccw{
 	dir = 6
@@ -4010,8 +4034,22 @@ aa
 aa
 aa
 aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 "}
 (2,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 aa
 aa
 aa
@@ -4095,6 +4133,13 @@ aa
 aa
 aa
 aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 zS
 zS
 zS
@@ -4128,6 +4173,13 @@ aa
 aa
 "}
 (4,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 aa
 aa
 aa
@@ -4199,6 +4251,13 @@ aa
 aa
 aa
 aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 zS
 zS
 zS
@@ -4244,6 +4303,13 @@ aa
 aa
 "}
 (6,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 aa
 aa
 aa
@@ -4311,6 +4377,13 @@ aa
 aa
 aa
 aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 zS
 zS
 zS
@@ -4360,6 +4433,13 @@ aa
 aa
 "}
 (8,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 aa
 aa
 aa
@@ -4426,6 +4506,13 @@ aa
 aa
 aa
 aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 zS
 zS
 yp
@@ -4476,6 +4563,13 @@ aa
 aa
 "}
 (10,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 aa
 aa
 aa
@@ -4540,6 +4634,13 @@ aa
 aa
 aa
 aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 zS
 zS
 zS
@@ -4592,6 +4693,13 @@ aa
 aa
 "}
 (12,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 aa
 aa
 aa
@@ -4656,6 +4764,13 @@ aa
 aa
 aa
 aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 zS
 zS
 Bi
@@ -4708,6 +4823,13 @@ aa
 aa
 "}
 (14,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 aa
 aa
 zS
@@ -4766,6 +4888,13 @@ aa
 aa
 "}
 (15,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 zS
 zS
 zS
@@ -4824,6 +4953,13 @@ aa
 aa
 "}
 (16,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 zS
 zS
 zS
@@ -4882,6 +5018,13 @@ aa
 aa
 "}
 (17,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 zS
 zS
 Bi
@@ -4940,6 +5083,13 @@ aa
 aa
 "}
 (18,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 zS
 zS
 Bi
@@ -4998,6 +5148,13 @@ aa
 aa
 "}
 (19,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 zS
 zS
 Bi
@@ -5056,6 +5213,13 @@ aa
 aa
 "}
 (20,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 zS
 zS
 Bi
@@ -5114,6 +5278,13 @@ aa
 aa
 "}
 (21,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 zS
 Bi
 Bi
@@ -5172,6 +5343,13 @@ aa
 aa
 "}
 (22,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 zS
 pG
 EB
@@ -5230,6 +5408,13 @@ zS
 zS
 "}
 (23,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 zS
 Bi
 sM
@@ -5288,6 +5473,13 @@ zS
 zS
 "}
 (24,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 zS
 Bi
 ex
@@ -5346,6 +5538,13 @@ jd
 zS
 "}
 (25,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 zS
 Bi
 ni
@@ -5404,6 +5603,13 @@ jd
 zS
 "}
 (26,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 zS
 kT
 Oh
@@ -5462,6 +5668,13 @@ jd
 zS
 "}
 (27,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 zS
 Bi
 AL
@@ -5520,6 +5733,13 @@ jd
 zS
 "}
 (28,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 zS
 Bi
 rV
@@ -5578,6 +5798,13 @@ jd
 zS
 "}
 (29,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 zS
 Bi
 kX
@@ -5636,6 +5863,13 @@ jd
 zS
 "}
 (30,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 zS
 Bi
 pf
@@ -5694,6 +5928,13 @@ jd
 zS
 "}
 (31,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 zS
 Bi
 Bi
@@ -5752,6 +5993,13 @@ jd
 zS
 "}
 (32,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 zS
 zS
 Bi
@@ -5810,6 +6058,13 @@ zS
 zS
 "}
 (33,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 zS
 zS
 Bi
@@ -5868,6 +6123,13 @@ zS
 zS
 "}
 (34,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 zS
 zS
 Bi
@@ -5926,6 +6188,13 @@ zS
 aa
 "}
 (35,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 zS
 zS
 Bi
@@ -5984,6 +6253,13 @@ zS
 aa
 "}
 (36,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 zS
 zS
 zS
@@ -6042,6 +6318,13 @@ aa
 aa
 "}
 (37,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 zS
 zS
 zS
@@ -6100,6 +6383,13 @@ aa
 aa
 "}
 (38,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 aa
 aa
 aa
@@ -6164,6 +6454,13 @@ aa
 aa
 aa
 aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 zS
 zS
 Bi
@@ -6216,6 +6513,13 @@ aa
 aa
 "}
 (40,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 aa
 aa
 aa
@@ -6276,6 +6580,13 @@ aa
 (41,1,1) = {"
 aa
 aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 zS
 zS
 zS
@@ -6334,6 +6645,13 @@ aa
 (42,1,1) = {"
 aa
 aa
+aa
+aa
+aa
+aa
+aa
+aa
+zS
 zS
 zS
 zS
@@ -6390,6 +6708,13 @@ zS
 zS
 "}
 (43,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 aa
 aa
 zS
@@ -6450,6 +6775,13 @@ zS
 (44,1,1) = {"
 aa
 aa
+aa
+aa
+aa
+aa
+aa
+aa
+zS
 zS
 zS
 qz
@@ -6508,6 +6840,13 @@ zS
 (45,1,1) = {"
 aa
 aa
+aa
+aa
+aa
+zS
+zS
+zS
+zS
 zS
 zS
 qz
@@ -6566,6 +6905,13 @@ zS
 (46,1,1) = {"
 aa
 aa
+aa
+zS
+zS
+zS
+zS
+zS
+zS
 zS
 zS
 qz
@@ -6622,8 +6968,15 @@ zS
 zS
 "}
 (47,1,1) = {"
-aa
-aa
+zS
+zS
+zS
+zS
+zS
+zS
+zS
+zS
+zS
 zS
 zS
 qz
@@ -6680,9 +7033,16 @@ zS
 zS
 "}
 (48,1,1) = {"
-aa
-aa
 zS
+qz
+qz
+qz
+qz
+qz
+qz
+qz
+qz
+qz
 qz
 qz
 qz
@@ -6738,9 +7098,16 @@ zS
 zS
 "}
 (49,1,1) = {"
-aa
-aa
 zS
+qz
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
 qz
 Zi
 ZM
@@ -6796,9 +7163,16 @@ zS
 zS
 "}
 (50,1,1) = {"
-aa
-aa
 zS
+qz
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
 qz
 GF
 jt
@@ -6854,11 +7228,18 @@ zS
 zS
 "}
 (51,1,1) = {"
-aa
-aa
 zS
 qz
-GF
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+mB
+tr
+tj
 jt
 Fm
 GV
@@ -6912,9 +7293,16 @@ zS
 aa
 "}
 (52,1,1) = {"
-aa
-aa
 zS
+qz
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
 qz
 To
 Rz
@@ -6970,9 +7358,16 @@ zS
 aa
 "}
 (53,1,1) = {"
-aa
 zS
-zS
+qz
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
 qz
 xU
 qz
@@ -7028,9 +7423,16 @@ zS
 aa
 "}
 (54,1,1) = {"
-aa
 zS
-zS
+qz
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
 qz
 SX
 Su
@@ -7086,9 +7488,16 @@ zS
 aa
 "}
 (55,1,1) = {"
-aa
 zS
-zS
+qz
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
 qz
 GF
 jt
@@ -7144,9 +7553,16 @@ zS
 aa
 "}
 (56,1,1) = {"
-aa
 zS
-zS
+qz
+Di
+Di
+Di
+Di
+Di
+Di
+Di
+Di
 qz
 GF
 jt
@@ -7203,8 +7619,15 @@ zS
 "}
 (57,1,1) = {"
 zS
-zS
-zS
+qz
+qz
+qz
+qz
+qz
+qz
+qz
+qz
+qz
 qz
 zU
 IT
@@ -7260,6 +7683,13 @@ zS
 zS
 "}
 (58,1,1) = {"
+zS
+zS
+zS
+zS
+zS
+zS
+zS
 zS
 qz
 qz
@@ -7318,6 +7748,13 @@ qz
 zS
 "}
 (59,1,1) = {"
+aa
+aa
+zS
+zS
+zS
+zS
+zS
 zS
 qz
 Di
@@ -7376,6 +7813,13 @@ qz
 zS
 "}
 (60,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+zS
+zS
 zS
 qz
 Di
@@ -7434,6 +7878,13 @@ qz
 zS
 "}
 (61,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+zS
 zS
 qz
 Di
@@ -7492,6 +7943,13 @@ qz
 zS
 "}
 (62,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 zS
 qz
 Di
@@ -7550,6 +8008,13 @@ qz
 zS
 "}
 (63,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 zS
 qz
 Di
@@ -7608,6 +8073,13 @@ qz
 zS
 "}
 (64,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 zS
 qz
 Di
@@ -7666,6 +8138,13 @@ qz
 zS
 "}
 (65,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 zS
 qz
 Di
@@ -7724,6 +8203,13 @@ qz
 zS
 "}
 (66,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 zS
 qz
 Di
@@ -7782,6 +8268,13 @@ qz
 zS
 "}
 (67,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 zS
 qz
 Di
@@ -7840,6 +8333,13 @@ qz
 zS
 "}
 (68,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 zS
 qz
 Di
@@ -7898,6 +8398,13 @@ qz
 zS
 "}
 (69,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 zS
 qz
 Di
@@ -7956,6 +8463,13 @@ qz
 zS
 "}
 (70,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 zS
 qz
 Di
@@ -8014,6 +8528,13 @@ qz
 zS
 "}
 (71,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 zS
 qz
 Di
@@ -8072,6 +8593,13 @@ qz
 zS
 "}
 (72,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 zS
 qz
 Di
@@ -8130,6 +8658,13 @@ qz
 zS
 "}
 (73,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 zS
 qz
 Di
@@ -8188,6 +8723,13 @@ qz
 zS
 "}
 (74,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 zS
 qz
 Di
@@ -8246,6 +8788,13 @@ qz
 zS
 "}
 (75,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 zS
 qz
 Di
@@ -8304,6 +8853,13 @@ qz
 zS
 "}
 (76,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 zS
 qz
 Di
@@ -8362,6 +8918,13 @@ qz
 zS
 "}
 (77,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 zS
 qz
 Di
@@ -8420,6 +8983,13 @@ qz
 zS
 "}
 (78,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 zS
 qz
 Di
@@ -8478,6 +9048,13 @@ qz
 zS
 "}
 (79,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 zS
 qz
 qz
@@ -8536,6 +9113,13 @@ qz
 zS
 "}
 (80,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 zS
 zS
 zS
