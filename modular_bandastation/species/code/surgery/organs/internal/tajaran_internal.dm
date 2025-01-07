@@ -12,8 +12,9 @@
 		new /regex("р+", "g") = "рр",
 		new /regex("Р+", "g") = "РР",
 	)
-	liked_foodtypes = RAW | MEAT | SEAFOOD | FRIED | DAIRY
-	disliked_foodtypes = NUTS | GROSS | SUGAR | ORANGES
+	liked_foodtypes = MEAT | SEAFOOD | DAIRY
+	disliked_foodtypes = NUTS | GROSS | ORANGES
+	toxic_foodtypes = SUGAR
 	organ_traits = list(TRAIT_WOUND_LICKER)
 
 /obj/item/organ/tongue/tajaran/New(class, timer, datum/mutation/human/copymut)
