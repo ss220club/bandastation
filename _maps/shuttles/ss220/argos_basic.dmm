@@ -102,6 +102,7 @@
 /turf/open/floor/wood,
 /area/shuttle/argos)
 "gr" = (
+/obj/structure/window/reinforced/spawner/directional/south,
 /obj/structure/chair/comfy/shuttle{
 	dir = 1
 	},
@@ -135,8 +136,11 @@
 /turf/open/floor/glass/reinforced,
 /area/shuttle/argos)
 "jx" = (
-/obj/structure/lattice/catwalk,
-/turf/template_noop,
+/obj/structure/table/reinforced/plastitaniumglass,
+/obj/item/kirbyplants/organic/plant10{
+	pixel_y = 12
+	},
+/turf/open/floor/iron/dark/smooth_large,
 /area/shuttle/argos)
 "jV" = (
 /obj/machinery/light/small/directional/west,
@@ -279,7 +283,6 @@
 /area/shuttle/argos)
 "vH" = (
 /obj/machinery/light/directional/south,
-/obj/machinery/holopad/secure,
 /turf/open/floor/iron/dark/smooth_large,
 /area/shuttle/argos)
 "vM" = (
@@ -716,7 +719,7 @@ tI
 (2,1,1) = {"
 yE
 zL
-gr
+wW
 vH
 TK
 ep
@@ -735,7 +738,7 @@ YB
 (3,1,1) = {"
 yE
 qb
-Lq
+gr
 jn
 TK
 hP
@@ -753,8 +756,8 @@ YB
 "}
 (4,1,1) = {"
 yE
-vu
-tU
+jx
+Lq
 FO
 tU
 tU
@@ -771,9 +774,9 @@ tU
 YB
 "}
 (5,1,1) = {"
-kf
-EC
 yE
+vu
+tU
 Gd
 QY
 tU
@@ -790,8 +793,8 @@ tU
 tU
 "}
 (6,1,1) = {"
-jx
-jx
+kf
+EC
 yE
 Gd
 ao

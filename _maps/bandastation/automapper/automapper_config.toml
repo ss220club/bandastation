@@ -47,6 +47,13 @@ required_map = "DeltaStation2.dmm"
 coordinates = [146, 108, 1]
 trait_name = "Station"
 
+[templates.deltastation_argos_specops_ferry_ports_office]
+map_files = ["deltastation_argos_specops_ferry_ports.dmm"]
+directory = "_maps/bandastation/automapper/templates/deltastation/"
+required_map = "DeltaStation2.dmm"
+coordinates = [141, 194, 1]
+trait_name = "Station"
+
 # MetaStation
 [templates.metastation_lawyer_office]
 map_files = ["metastation_lawyer_office.dmm"]
