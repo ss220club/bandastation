@@ -119,6 +119,20 @@ required_map = "IceBoxStation.dmm"
 coordinates = [92, 147, 2]
 trait_name = "Station"
 
+[templates.iceboxstation_specops_port]
+map_files = ["iceboxstation_specops_port.dmm"]
+directory = "_maps/bandastation/automapper/templates/iceboxstation/"
+required_map = "IceBoxStation.dmm"
+coordinates = [33, 109, 3]
+trait_name = "Station"
+
+[templates.iceboxstation_argos_port]
+map_files = ["iceboxstation_argos_port.dmm"]
+directory = "_maps/bandastation/automapper/templates/iceboxstation/"
+required_map = "IceBoxStation.dmm"
+coordinates = [27, 150, 3]
+trait_name = "Station"
+
 # TramStation
 [templates.tramstation_detective_office]
 map_files = ["tramstation_detective_office.dmm"]
