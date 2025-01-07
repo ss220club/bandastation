@@ -130,4 +130,3 @@ LINE_DECAL_SUBTYPE_HELPER(/obj/effect/turf_decal/line/dark)
 	icon = 'modular_bandastation/aesthetics/decals/icons/nanotrasen_logo.dmi'
 	icon_state = "ntlogo_sec"
 	layer = TURF_PLATING_DECAL_LAYER
-	pixel_x = -16
