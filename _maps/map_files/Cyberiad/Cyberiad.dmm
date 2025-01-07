@@ -37961,9 +37961,8 @@
 /obj/effect/turf_decal/tile/blue{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/blue,
-/turf/open/floor/iron/white/corner{
-	dir = 8
+/turf/open/floor/iron/cafeteria{
+	dir = 1
 	},
 /area/station/hallway/secondary/entry)
 "jIH" = (
@@ -169825,9 +169824,9 @@ tYD
 tYD
 tYD
 pop
-fuk
-xmL
 jIu
+hZL
+hZL
 pop
 kJd
 tYD
