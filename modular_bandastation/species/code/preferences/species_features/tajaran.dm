@@ -31,7 +31,7 @@
 	var/icon/icon_with_markings = new(body)
 
 	if(value != "None")
-		var/icon/body_part_icon = icon(markings.icon, "male_[markings.icon_state]_chest")
+		var/icon/body_part_icon = icon(markings.icon, "[markings.icon_state]")
 		body_part_icon.Crop(1, 1, 32, 32)
 		body_part_icon.Blend(COLOR_VERY_LIGHT_GRAY, ICON_MULTIPLY)
 		icon_with_markings.Blend(body_part_icon, ICON_OVERLAY)
