@@ -39,6 +39,7 @@ GLOBAL_LIST(badge_icons_cache)
 		"Ведущий Маппер" = "HeadMapper",
 		"Маппер" = "Mapper",
 		"Спрайтер" = "Spriceter",
+		"Ведущий редактор Вики" = "HeadWiki",
 		"Редактор Вики" = "WikiLore",
 		"Главный Администратор" = "HeadAdmin",
 		"Администратор" = "GameAdmin",
