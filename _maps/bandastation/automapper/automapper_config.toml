@@ -17,14 +17,6 @@
 # coordinates = [133, 182, 1]
 # trait_name = "Station"
 
-# CentCom Crew Quarters
-[templates.CentCom_kekypaj]
-map_files = ["CentCom.dmm"]
-directory = "_maps/bandastation/automapper/templates/centcom/"
-required_map = "builtin"
-coordinates = [12, 53, 1]
-trait_name = "CentCom"
-
 # DeltaStation
 [templates.deltastation_lawyer_office]
 map_files = ["deltastation_lawyer_office.dmm"]

@@ -11109,7 +11109,7 @@
 /obj/structure/table,
 /obj/item/clothing/glasses/sunglasses/big,
 /obj/item/instrument/guitar,
-/obj/effect/turf_decal/logo,
+/obj/effect/decal/nt_logo,
 /turf/open/floor/carpet/red,
 /area/station/maintenance/department/security/ghetto)
 "cNa" = (
@@ -26182,7 +26182,7 @@
 /area/station/command/heads_quarters/cmo)
 "gHo" = (
 /obj/structure/table,
-/obj/effect/turf_decal/logo{
+/obj/effect/decal/nt_logo{
 	dir = 1
 	},
 /turf/open/floor/carpet/red,
@@ -58319,7 +58319,7 @@
 "oKK" = (
 /obj/structure/table,
 /obj/item/binoculars,
-/obj/effect/turf_decal/logo{
+/obj/effect/decal/nt_logo{
 	dir = 4
 	},
 /turf/open/floor/carpet/red,
@@ -90646,7 +90646,7 @@
 "xaq" = (
 /obj/structure/table,
 /obj/item/flashlight/lamp,
-/obj/effect/turf_decal/logo{
+/obj/effect/decal/nt_logo{
 	dir = 8
 	},
 /turf/open/floor/carpet/red,

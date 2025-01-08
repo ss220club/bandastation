@@ -69,7 +69,7 @@
 	shuttleId = "argos"
 	possible_destinations = "argos_home;argos_trurl;argos_custom"
 	req_access = list(ACCESS_CENT_GENERAL)
-	resistance_flags = INDESTRUCTIBLE
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 
 /obj/machinery/computer/shuttle/specops
 	name = "transport specops shuttle console"
@@ -80,7 +80,7 @@
 	shuttleId = "specops"
 	possible_destinations = "specops_home;specops_trurl;specops_custom"
 	req_access = list(ACCESS_CENT_GENERAL)
-	resistance_flags = INDESTRUCTIBLE
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 
 /**
  * Not sure now if we need to declare war if we use these shuttles
@@ -117,8 +117,8 @@
 	movement_force = list("KNOCKDOWN" = 0, "THROW" = 0)
 	hidden = TRUE
 	dir = NORTH
-	port_direction = NORTH
-	preferred_direction = SOUTH
+	port_direction = SOUTH
+	preferred_direction = NORTH
 
 /obj/docking_port/mobile/specops
 	name = "specops shuttle"
@@ -126,8 +126,8 @@
 	movement_force = list("KNOCKDOWN" = 0, "THROW" = 0)
 	hidden = TRUE
 	dir = SOUTH
-	port_direction = SOUTH
-	preferred_direction = SOUTH
+	port_direction = NORTH
+	preferred_direction = NORTH
 
 // Shuttle Areas
 /area/shuttle/syndicate_sit
