@@ -1,7 +1,7 @@
-// ---- Fake small
+// Fake small
 MAPPING_DIRECTIONAL_HELPERS(/obj/structure/light_fake/small, 0)
 
-// -------- Fake tube
+// Fake tube
 MAPPING_DIRECTIONAL_HELPERS(/obj/structure/light_fake/spot, 0)
 
 /obj/structure/light_fake

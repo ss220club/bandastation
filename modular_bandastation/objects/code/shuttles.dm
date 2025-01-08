@@ -16,7 +16,7 @@
 	y_offset = 3
 
 /obj/machinery/computer/camera_advanced/shuttle_docker/argos
-	name = "syndicate infiltrator navigation computer"
+	name = "argos shuttle navigation computer"
 	desc = "Used to pilot Argos shuttle."
 	icon_screen = "shuttle"
 	icon_keyboard = "rd_key"

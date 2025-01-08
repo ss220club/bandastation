@@ -1,6 +1,6 @@
-/*MARK Vending Machine*/
+//MARK: Vending Machines
 
-//Robotics Wardrobe
+// Robotics Wardrobe
 /obj/machinery/vending/wardrobe/robo_wardrobe
 	icon = 'modular_bandastation/objects/icons/obj/machines/vending.dmi'
 	icon_state = "robodrobe"
@@ -22,7 +22,7 @@
 		)
 	. = ..()
 
-//CentCom NT Ammunition
+// CentCom NT Ammunition
 /obj/machinery/vending/nta
 	name = "\improper NT Ammunition"
 	desc = "A special equipment vendor."
@@ -43,10 +43,10 @@
 	icon_state = "refill_nta"
 	light_color = LIGHT_COLOR_BLUE
 
-//Light Gear
+// Light Gear
 /obj/machinery/vending/nta/light
 	name = "\improper NT Ammunition - Light Gear"
-	desc = "A special equipment vendor. This one stores riot suppression equipment and non-lethal detention."
+	desc = "Раздатчик специального оборудования для отрядов быстрого реагирования от дочерней компании \"NT Ammunition\". На выбор средства для подавления беспорядков и нелетального задержания."
 	product_ads = "Круши черепа синдиката!;Не забывай, спасать - полезно!;Бжж-Бзз-з!;Обезопасить, Удержать, Сохранить!;Стоять, снярядись на задание!"
 	vend_reply = "Слава Нанотрейзен!"
 
@@ -106,10 +106,10 @@
 		),
 	)
 
-//Heavy Gear
+// Heavy Gear
 /obj/machinery/vending/nta/heavy
 	name = "\improper NT Ammunition - Heavy Gear"
-	desc = "A special equipment vendor. This one stores heavy weapons for complex operations and assaults.."
+	desc = "Раздатчик специального оборудования для отрядов быстрого реагирования от дочерней компании \"NT Ammunition\". На выбор штурмовое снаряжение и средства для проведения сложных боевых операций."
 	product_ads = "Круши черепа синдиката!;Не забывай, спасать - полезно!;Бжж-Бзз-з!;Обезопасить, Удержать, Сохранить!;Стоять, снярядись на задание!"
 	vend_reply = "Слава Нанотрейзен!"
 	product_categories = list(

@@ -41,7 +41,6 @@
 	prefix = "_maps/shuttles/ss220/"
 
 /datum/map_template/shuttle/specops/basic
-
 	suffix = "basic"
 	name = "basic specops shuttle"
 	description = "Base Specops shuttle."
