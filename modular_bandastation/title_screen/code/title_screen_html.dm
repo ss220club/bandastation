@@ -97,7 +97,8 @@
 	html += {"<div id="lobby_admin" class="lobby_buttons-right invisible">"}
 	html += create_icon_button(player, "picture", "Сменить изображение", "right")
 	html += create_icon_button(player, "notice", "Оставить уведомление", "right")
-	html += create_icon_button(player, "css", "Заменить CSS лобби", "right")
+	html += create_icon_button(player, "delay", "Отложить начало раунда", "right", SSticker && SSticker.current_state <= GAME_STATE_PREGAME)
+	html += create_icon_button(player, "start_now", "Запустить раунд", "right", SSticker && SSticker.current_state <= GAME_STATE_PREGAME)
 	html += {"</div>"}
 
 	html += {"
