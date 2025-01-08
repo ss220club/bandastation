@@ -28,22 +28,22 @@ GLOBAL_LIST(badge_icons_cache)
 
 /client/proc/get_worker_badge()
 	var/static/list/rank_badge_map = list(
-		"Maxon" = "Wycc",
-		"Banda" = "Streamer",
-		"Banda Friend" = "Streamer",
-		"Host" = "Host",
-		"Head Developer" = "HeadDeveloper",
-		"Big Developer" = "Developer",
-		"Developer" = "Developer",
-		"Mini Developer" = "MiniDeveloper",
-		"Head Mapper" = "HeadMapper",
-		"Mapper" = "Mapper",
-		"Spriter" = "Spriceter",
-		"Wiki Maintainer" = "WikiLore",
-		"Head Admin" = "HeadAdmin",
-		"Game Admin" = "GameAdmin",
-		"Trial Admin" = "TrialAdmin",
-		"Mentor" = "Mentor"
+		"Максон" = "Wycc",
+		"Банда" = "Streamer",
+		"Друг Банды" = "Streamer",
+		"Хост" = "Host",
+		"Ведущий Разработчик" = "HeadDeveloper",
+		"Старший Разработчик" = "Developer",
+		"Разработчик" = "Developer",
+		"Начальный Разработчик" = "MiniDeveloper",
+		"Ведущий Маппер" = "HeadMapper",
+		"Маппер" = "Mapper",
+		"Спрайтер" = "Spriceter",
+		"Редактор Вики" = "WikiLore",
+		"Главный Администратор" = "HeadAdmin",
+		"Администратор" = "GameAdmin",
+		"Триал Администратор" = "TrialAdmin",
+		"Ментор" = "Mentor"
 	)
 	return rank_badge_map["[holder?.ranks[1]]"]
 
