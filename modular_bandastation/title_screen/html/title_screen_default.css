@@ -280,17 +280,30 @@ input,
 .lobby_buttons-left,
 .lobby_buttons-right {
 	display: flex;
+}
+
+.lobby_buttons-left {
 	flex-direction: column-reverse;
 }
 
-.lobby_buttons-left .lobby_button,
-.lobby_buttons-right .lobby_button {
+.lobby_buttons-right {
+	flex-direction: column;
+}
+
+.lobby_buttons-left .lobby_button {
 	margin-top: 1.5px;
 }
 
-.lobby_buttons-left .lobby_button:last-of-type,
-.lobby_buttons-right .lobby_button:last-of-type {
+.lobby_buttons-left .lobby_button:last-of-type {
 	margin-top: 0;
+}
+
+.lobby_buttons-right .lobby_button {
+	margin-bottom: 1.5px;
+}
+
+.lobby_buttons-right .lobby_button:last-of-type {
+	margin-bottom: 0;
 }
 
 .lobby_buttons-bottom .lobby_button {
