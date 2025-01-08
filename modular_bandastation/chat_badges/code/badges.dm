@@ -43,6 +43,7 @@ GLOBAL_LIST(badge_icons_cache)
 		"Главный Администратор" = "HeadAdmin",
 		"Администратор" = "GameAdmin",
 		"Триал Администратор" = "TrialAdmin",
+		"Тестовый Администратор" = "TestAdmin",
 		"Ментор" = "Mentor"
 	)
 	return rank_badge_map["[holder?.ranks[1]]"]
