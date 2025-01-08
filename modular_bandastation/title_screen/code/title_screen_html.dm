@@ -1,4 +1,4 @@
-#define MAX_STATION_TRAIT_BUTTONS_VERTICAL 3
+#define MAX_STATION_TRAIT_BUTTONS_VERTICAL 4
 
 /**
  * Get the HTML of title screen.
@@ -54,10 +54,10 @@
 	html += {"</div>"}
 
 	html += {"<div class="lobby_buttons-bottom">"}
-	html += create_icon_button(player, "changelog", "Открыть чейнджлог")
 	html += create_icon_button(player, "settings", "Настройки игры")
 	html += create_icon_button(player, "manifest", "Манифест персонала")
 	html += create_icon_button(player, "wiki", "Перейти на вики")
+	html += create_icon_button(player, "changelog", "Открыть чейнджлог")
 	html += {"</div>"}
 
 	if(length(GLOB.lobby_station_traits))

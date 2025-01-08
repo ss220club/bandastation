@@ -256,12 +256,12 @@ input,
 }
 
 .lobby_buttons-left {
-	left: -3px;
+	left: -1.5px;
 	bottom: 12px;
 }
 
 .lobby_buttons-right {
-	right: -3px;
+	right: -1.5px;
 	bottom: 12px;
 }
 
@@ -272,7 +272,6 @@ input,
 
 .lobby_buttons-bottom {
 	display: flex;
-	flex-direction: row-reverse;
 	bottom: -17.5px;
 	right: 32.5px;
 	z-index: 4;
@@ -286,7 +285,7 @@ input,
 
 .lobby_buttons-left .lobby_button,
 .lobby_buttons-right .lobby_button {
-	margin-top: 4px;
+	margin-top: 1.5px;
 }
 
 .lobby_buttons-left .lobby_button:last-of-type,
@@ -295,11 +294,11 @@ input,
 }
 
 .lobby_buttons-bottom .lobby_button {
-	margin-left: 4px;
+	margin-right: 4px;
 }
 
 .lobby_buttons-bottom .lobby_button:last-of-type {
-	margin-left: 0;
+	margin-right: 0;
 }
 
 /**
@@ -332,12 +331,9 @@ input,
 /**
  * MARK: Main buttons
  */
+.lobby-late_join .lobby-text,
 .lobby-toggle_ready .lobby-text {
-	transform: translateY(5.25px) translateX(2px);
-}
-
-.lobby-late_join .lobby-text {
-	transform: translateY(6.25px) translateX(3px);
+	transform: translateY(6.75px) translateX(3px);
 }
 
 .lobby-toggle_ready.bad .lobby-text::before,
