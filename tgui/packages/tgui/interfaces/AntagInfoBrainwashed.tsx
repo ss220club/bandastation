@@ -25,7 +25,7 @@ export const AntagInfoBrainwashed = (porps) => {
         <Section fill>
           <Stack vertical fill textAlign="center">
             <Stack.Item fontFamily="Wingdings">
-              Эй, не смейте! Хватит транслировать это!
+              Hey, no! Stop translating this!
             </Stack.Item>
             <Stack.Item mt={-0.25} fontSize="20px">
               Ваши мысли разбегаются...
@@ -48,7 +48,7 @@ export const AntagInfoBrainwashed = (porps) => {
               Выполняйте директивы любой ценой!
             </Stack.Item>
             <Stack.Item fontFamily="Wingdings">
-              Ты испортил мой классный эффект шрифта.
+              You ruined my cool font effect.
             </Stack.Item>
           </Stack>
         </Section>
