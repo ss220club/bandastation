@@ -161,14 +161,26 @@
 			SPECIES_PERK_DESC = "[plural_form] получают возможность говорить на Сик'Таире.",
 		))
 
-/datum/species/tajaran/get_scream_sound(mob/living/carbon/human/human)
-	if(human.physique == MALE)
+/datum/species/tajaran/get_scream_sound(mob/living/carbon/human/tajaran)
+	if(tajaran.physique == FEMALE)
 		return 'modular_bandastation/emote_panel/audio/tajaran/tajaran_scream.ogg'
-
 	return 'modular_bandastation/emote_panel/audio/tajaran/tajaran_scream.ogg'
 
-/datum/species/tajaran/get_cough_sound(mob/living/carbon/human/human)
-	if(human.physique == FEMALE)
+/datum/species/tajaran/get_sigh_sound(mob/living/carbon/human/tajaran)
+	if(tajaran.physique == FEMALE)
+		return pick(
+			'sound/mobs/humanoids/human/sigh/female_sigh1.ogg',
+			'sound/mobs/humanoids/human/sigh/female_sigh2.ogg',
+			'sound/mobs/humanoids/human/sigh/female_sigh3.ogg',
+		)
+	return pick(
+		'sound/mobs/humanoids/human/sigh/male_sigh1.ogg',
+		'sound/mobs/humanoids/human/sigh/male_sigh2.ogg',
+		'sound/mobs/humanoids/human/sigh/male_sigh3.ogg',
+	)
+
+/datum/species/tajaran/get_cough_sound(mob/living/carbon/human/tajaran)
+	if(tajaran.physique == FEMALE)
 		return pick(
 			'sound/mobs/humanoids/human/cough/female_cough1.ogg',
 			'sound/mobs/humanoids/human/cough/female_cough2.ogg',
@@ -186,8 +198,8 @@
 		'sound/mobs/humanoids/human/cough/male_cough6.ogg',
 	)
 
-/datum/species/tajaran/get_cry_sound(mob/living/carbon/human/human)
-	if(human.physique == FEMALE)
+/datum/species/tajaran/get_cry_sound(mob/living/carbon/human/tajaran)
+	if(tajaran.physique == FEMALE)
 		return pick(
 			'sound/mobs/humanoids/human/cry/female_cry1.ogg',
 			'sound/mobs/humanoids/human/cry/female_cry2.ogg',
@@ -198,33 +210,35 @@
 		'sound/mobs/humanoids/human/cry/male_cry3.ogg',
 	)
 
+/datum/species/tajaran/get_sneeze_sound(mob/living/carbon/human/tajaran)
+	if(tajaran.physique == FEMALE)
+		return pick(
+			'modular_bandastation/emote_panel/audio/tajaran/tajaran_sneeze_female1.ogg',
+			'modular_bandastation/emote_panel/audio/tajaran/tajaran_sneeze_female2.ogg',
+		)
+	return 'modular_bandastation/emote_panel/audio/tajaran/tajaran_sneeze_male.ogg'
 
-/datum/species/tajaran/get_sneeze_sound(mob/living/carbon/human/human)
-	if(human.physique == FEMALE)
-		return 'sound/mobs/humanoids/human/sneeze/female_sneeze1.ogg'
-	return 'sound/mobs/humanoids/human/sneeze/male_sneeze1.ogg'
-
-/datum/species/tajaran/get_laugh_sound(mob/living/carbon/human/human)
-	if(!ishuman(human))
+/datum/species/tajaran/get_laugh_sound(mob/living/carbon/human/tajaran)
+	if(!ishuman(tajaran))
 		return
-	if(human.physique == FEMALE)
+	if(tajaran.physique == FEMALE)
 		return 'sound/mobs/humanoids/human/laugh/womanlaugh.ogg'
 	return pick(
 		'sound/mobs/humanoids/human/laugh/manlaugh1.ogg',
 		'sound/mobs/humanoids/human/laugh/manlaugh2.ogg',
 	)
 
-/datum/species/tajaran/add_body_markings(mob/living/carbon/human/taj) // OVERRIDE /datum/species/proc/add_body_markings
+/datum/species/tajaran/add_body_markings(mob/living/carbon/human/tajaran) // OVERRIDE /datum/species/proc/add_body_markings
 	for(var/markings_type in body_markings)
 		var/datum/bodypart_overlay/simple/body_marking/markings = new markings_type()
-		var/accessory_name = taj.dna.features[markings.dna_feature_key]
+		var/accessory_name = tajaran.dna.features[markings.dna_feature_key]
 		var/datum/sprite_accessory/tajaran_body_markings/accessory = markings.get_accessory(accessory_name)
 
 		if(isnull(accessory))
 			return
 
 		for(var/obj/item/bodypart/part as anything in markings.applies_to)
-			var/obj/item/bodypart/people_part = taj.get_bodypart(initial(part.body_zone))
+			var/obj/item/bodypart/people_part = tajaran.get_bodypart(initial(part.body_zone))
 
 			if(!people_part || !istype(people_part, part))
 				continue
@@ -234,10 +248,10 @@
 			overlay.icon = accessory.icon
 			overlay.icon_state = accessory.icon_state
 			overlay.use_gender = accessory.gender_specific
-			overlay.draw_color = accessory.color_src ? taj.dna.features["furcolor_tajaran_first"] : null
+			overlay.draw_color = accessory.color_src ? tajaran.dna.features["furcolor_tajaran_first"] : null
 
 			if(istype(accessory, /datum/sprite_accessory/tajaran_body_markings) && accessory.colored_paws && (istype(people_part, /obj/item/bodypart/arm/left/tajaran) || istype(people_part, /obj/item/bodypart/arm/right/tajaran)))
-				overlay.aux_color_paw = accessory.color_src ? taj.dna.features["furcolor_tajaran_first"] : null
+				overlay.aux_color_paw = accessory.color_src ? tajaran.dna.features["furcolor_tajaran_first"] : null
 
 			if((istype(people_part, /obj/item/bodypart/leg/left/digitigrade/tajaran) || istype(people_part, /obj/item/bodypart/leg/right/digitigrade/tajaran))) {
 				overlay.icon_state = overlay.icon_state + "_digi"
