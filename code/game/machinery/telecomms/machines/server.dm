@@ -100,9 +100,9 @@
 	autolinkers = list("supply")
 
 /obj/machinery/telecomms/server/presets/service
-	id = "Service Server"
-	freq_listening = list(FREQ_SERVICE)
-	autolinkers = list("service")
+	id = "Service & Entertainment Server"
+	freq_listening = list(FREQ_SERVICE, FREQ_ENTERTAINMENT)
+	autolinkers = list("service", "entertainment")
 
 /obj/machinery/telecomms/server/presets/common
 	id = "Common Server"
@@ -127,8 +127,8 @@
 
 /obj/machinery/telecomms/server/presets/security
 	id = "Security Server"
-	freq_listening = list(FREQ_SECURITY)
-	autolinkers = list("security")
+	freq_listening = list(FREQ_SECURITY, FREQ_JUSTICE)
+	autolinkers = list("security", "justice") // BANDASTATION ADD - Jobs Module
 
 /obj/machinery/telecomms/server/presets/common/birdstation/Initialize(mapload)
 	. = ..()

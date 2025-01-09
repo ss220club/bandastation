@@ -28,12 +28,12 @@
 	if(tts_component)
 		return tts_component.tts_seed
 
-/atom/proc/change_tts_seed(mob/chooser, override, list/new_effects)
+/atom/proc/change_tts_seed(mob/chooser, overrides, list/new_effects)
 	if(!get_tts_seed())
 		if(alert(chooser, "Отсутствует TTS компонент. Создать?", "Изменение TTS", "Да", "Нет") == "Нет")
 			return
 		AddComponent(/datum/component/tts_component, /datum/tts_seed/silero/angel)
-	SEND_SIGNAL(src, COMSIG_ATOM_TTS_SEED_CHANGE, chooser, override, new_effects)
+	SEND_SIGNAL(src, COMSIG_ATOM_TTS_SEED_CHANGE, chooser, overrides, new_effects)
 
 /atom/proc/tts_effect_add(trait)
 	SEND_SIGNAL(src, COMSIG_ATOM_TTS_EFFECT_ADD, trait)

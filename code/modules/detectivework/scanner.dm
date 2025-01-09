@@ -40,7 +40,7 @@
 		return
 	scanner_busy = TRUE
 	balloon_alert(user, "printing report...")
-	addtimer(CALLBACK(src, PROC_REF(safe_print_report)), 10 SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(safe_print_report)), 5 SECONDS) // BANDASTATION EDIT: 10 SECONDS to 5 SECONDS
 
 /**
  * safe_print_report - a wrapper proc for print_report
@@ -74,10 +74,9 @@
 	// Clear the logs
 	log = list()
 
-/obj/item/detective_scanner/storage_insert_on_interaction(datum/storage, atom/storage_holder, mob/living/user)
-	return !user.combat_mode
-
 /obj/item/detective_scanner/interact_with_atom(atom/interacting_with, mob/living/user, list/modifiers)
+	if(SHOULD_SKIP_INTERACTION(interacting_with, src, user))
+		return NONE // lets us put our scanner away without trying to scan the bag
 	safe_scan(user, interacting_with)
 	return ITEM_INTERACT_SUCCESS
 
@@ -104,10 +103,14 @@
  * This should always return TRUE barring a runtime
  */
 /obj/item/detective_scanner/proc/scan(mob/user, atom/scanned_atom)
-	// Can remotely scan objects and mobs.
-	if((get_dist(scanned_atom, user) > range) || (!(scanned_atom in view(range, user)) && view_check) || (loc != user))
+	if(loc != user)
 		return TRUE
-
+	// Can scan items we hold and store
+	if(!(scanned_atom in user.get_all_contents()))
+		// Can remotely scan objects and mobs.
+		if((get_dist(scanned_atom, user) > range) || (!(scanned_atom in view(range, user)) && view_check))
+			return TRUE
+	playsound(src, SFX_INDUSTRIAL_SCAN, 20, TRUE, -2, TRUE, FALSE)
 	scanner_busy = TRUE
 
 
@@ -228,7 +231,7 @@
 		balloon_alert(user, "scanner busy!")
 		return CLICK_ACTION_BLOCKING
 	balloon_alert(user, "deleting logs...")
-	if(!do_after(user, 3 SECONDS, target = src))
+	if(!do_after(user, 3 SECONDS, target = src, timed_action_flags = IGNORE_USER_LOC_CHANGE)) // BANDASTATION EDIT: timed_action_flags = IGNORE_USER_LOC_CHANGE
 		return CLICK_ACTION_BLOCKING
 	balloon_alert(user, "logs cleared")
 	log = list()
