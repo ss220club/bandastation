@@ -416,21 +416,21 @@
 		return
 
 	var/embeds = FALSE
-	for(var/X in bodyparts)
-		var/obj/item/bodypart/LB = X
-		for(var/obj/item/I in LB.embedded_objects)
+	for(var/obj/item/bodypart/limb as anything in bodyparts)
+		for(var/obj/item/weapon as anything in limb.embedded_objects)
 			if(!embeds)
 				embeds = TRUE
 				// this way, we only visibly try to examine ourselves if we have something embedded, otherwise we'll still hug ourselves :)
 				visible_message(span_notice("[capitalize(declent_ru(NOMINATIVE))] осматривает себя."), \
-					span_notice("Вы проверяете себя на наличие осколков."))
-			if(I.is_embed_harmless())
-				to_chat(src, "\t <a href='byond://?src=[REF(src)];embedded_object=[REF(I)];embedded_limb=[REF(LB)]' class='warning'>[capitalize(I.declent_ru(NOMINATIVE))] застревает у вас на [LB.declent_ru(PREPOSITIONAL)]!</a>")
+					span_notice("Вы проверяете себя на наличие осколков."), visible_message_flags = ALWAYS_SHOW_SELF_MESSAGE)
+			var/harmless = weapon.get_embed().is_harmless()
+			var/stuck_wordage = harmless ? "застревает у вас на" : "впивается у вас в"
+			var/embed_text = "\t <a href='byond://?src=[REF(src)];embedded_object=[REF(weapon)];embedded_limb=[REF(limb)]'> [icon2html(weapon, src)] [capitalize(weapon.declent_ru(NOMINATIVE))] [stuck_wordage] [limb.declent_ru(PREPOSITIONAL)]!</a>"
+			if (harmless)
+				to_chat(src, span_italics(span_notice(embed_text)))
 			else
-				to_chat(src, "\t <a href='byond://?src=[REF(src)];embedded_object=[REF(I)];embedded_limb=[REF(LB)]' class='warning'>[capitalize(I.declent_ru(NOMINATIVE))] впивается у вас в [LB.declent_ru(PREPOSITIONAL)]!</a>")
-
+				to_chat(src, span_boldwarning(embed_text))
 	return embeds
-
 
 /mob/living/carbon/flash_act(intensity = 1, override_blindness_check = 0, affect_silicon = 0, visual = 0, type = /atom/movable/screen/fullscreen/flash, length = 25)
 	var/obj/item/organ/eyes/eyes = get_organ_slot(ORGAN_SLOT_EYES)

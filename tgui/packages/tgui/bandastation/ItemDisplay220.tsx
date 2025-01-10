@@ -1,8 +1,7 @@
-import { Box, Button } from 'tgui-core/components';
+import { Box, Button, ImageButton } from 'tgui-core/components';
 
 import { useBackend } from '../backend';
 import { LoadoutItem } from '../interfaces/PreferencesMenu/loadout/base';
-import { ImageButton } from './ImageButton';
 
 export const ItemDisplay220 = (props: {
   active: boolean;
@@ -72,7 +71,8 @@ export const ItemDisplay220 = (props: {
           tooltipPosition={'top'}
         />
       ))}
-      buttonsAlt={textInfo}
+      /** Temporately disabled. Until ImageButtons tweaks will be merged */
+      // buttonsAlt={textInfo}
       onClick={() =>
         act('select_item', {
           path: item.path,
