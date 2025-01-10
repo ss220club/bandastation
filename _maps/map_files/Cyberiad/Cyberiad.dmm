@@ -34852,8 +34852,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/structure/disposalpipe/segment,
-/obj/structure/disposalpipe/segment,
-/obj/structure/disposalpipe/segment,
 /obj/machinery/door/airlock/service,
 /obj/effect/mapping_helpers/airlock/autoname,
 /obj/structure/cable,
@@ -36961,9 +36959,6 @@
 /turf/open/floor/wood,
 /area/station/maintenance/starboard/upper)
 "jwX" = (
-/obj/structure/disposalpipe/sorting/mail/flip{
-	dir = 1
-	},
 /obj/structure/disposalpipe/sorting/mail/flip{
 	dir = 1
 	},
@@ -50282,9 +50277,6 @@
 /turf/open/floor/plating,
 /area/station/maintenance/port/aft)
 "mJZ" = (
-/obj/structure/disposalpipe/trunk{
-	dir = 8
-	},
 /obj/structure/disposalpipe/trunk{
 	dir = 8
 	},

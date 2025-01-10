@@ -180,6 +180,10 @@ INITIALIZE_IMMEDIATE(/obj/item/organ)
 
 	. += span_notice("Должно вставляться в [ru_parse_zone(zone, declent = ACCUSATIVE)].")
 
+	if(HAS_MIND_TRAIT(user, TRAIT_ENTRAILS_READER) || isobserver(user))
+		if(HAS_TRAIT(src, TRAIT_CLIENT_STARTING_ORGAN))
+			. += span_info("Lived in and homely. Proven to work. This should fetch a high price on the market.")
+
 	if(organ_flags & ORGAN_FAILING)
 		. += span_warning("[capitalize(declent_ru(NOMINATIVE))] [failing_desc]")
 		return
