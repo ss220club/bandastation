@@ -336,7 +336,7 @@
 			playsound(user, E.fire_sound, 50, TRUE)
 			playsound(user, loaded_projectile.hitsound, 50, TRUE)
 			cell.use(E.e_cost)
-			. = span_danger("[capitalize(user.declent_ru(NOMINATIVE))] непринужденно зажигает [A.declent_ru(ACCUSATIVE)][A.loc == user ? " у себя" : ""] с помощью [declent_ru(GENITIVE)]. Емае.")
+			. = span_rose("[user] casually lights [A.loc == user ? "[user.p_their()] [A.name]" : A] with [src]. Damn.")
 
 /obj/item/gun/energy/proc/instant_recharge()
 	SIGNAL_HANDLER
