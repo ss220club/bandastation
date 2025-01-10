@@ -574,7 +574,7 @@
 /obj/item/gun/ballistic/examine(mob/user)
 	. = ..()
 	var/count_chambered = !(bolt_type == BOLT_TYPE_NO_BOLT || bolt_type == BOLT_TYPE_OPEN)
-	. += "It has <b>[get_ammo(count_chambered)]</b> round\s remaining."
+	. += "Внутри имеется <b>[get_ammo(count_chambered)]</b> патрон[declension_ru(get_ammo(count_chambered), "", "а", "ов")]."
 
 	if (!chambered && !hidden_chambered)
 		. += "Похоже, что нет заряженного патрона."

@@ -36,7 +36,7 @@
 
 /obj/structure/ladder/examine(mob/user)
 	. = ..()
-	. += span_info("[EXAMINE_HINT("Left-click")] it to start moving up; [EXAMINE_HINT("Right-click")] to start moving down.")
+	. += span_info("[EXAMINE_HINT("ЛКМ")] для подъема наверх; [EXAMINE_HINT("ПКМ")] для спуска вниз.")
 
 /obj/structure/ladder/Destroy(force)
 	GLOB.ladders -= src

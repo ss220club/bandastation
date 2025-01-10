@@ -415,7 +415,7 @@
 	if(chambered?.loaded_projectile)
 		if(HAS_TRAIT(user, TRAIT_PACIFISM)) // If the user has the pacifist trait, then they won't be able to fire [src] if the round chambered inside of [src] is lethal.
 			if(chambered.harmful) // Is the bullet chambered harmful?
-				to_chat(user, span_warning("[src] is lethally chambered! You don't want to risk harming anyone..."))
+				to_chat(user, span_warning("Летальный снаряд заряжен в [declent_ru(PREPOSITIONAL)]! Вы не хотите рисковать причинить кому-то вред..."))
 				firing_burst = FALSE
 				return FALSE
 		var/sprd
