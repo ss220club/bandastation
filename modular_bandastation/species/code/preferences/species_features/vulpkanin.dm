@@ -19,13 +19,13 @@
 	var/static/icon/body
 	if (isnull(body))
 		body = icon('icons/blanks/32x32.dmi', "nothing")
-		body.Blend(icon('modular_bandastation/species/icons/mob/species/vulpkanin/body.dmi', "vulpkanin_chest_m"), ICON_OVERLAY)
-		body.Blend(icon('modular_bandastation/species/icons/mob/species/vulpkanin/body.dmi', "vulpkanin_l_leg"), ICON_OVERLAY)
-		body.Blend(icon('modular_bandastation/species/icons/mob/species/vulpkanin/body.dmi', "vulpkanin_r_leg"), ICON_OVERLAY)
-		body.Blend(icon('modular_bandastation/species/icons/mob/species/vulpkanin/body.dmi', "vulpkanin_l_arm"), ICON_OVERLAY)
-		body.Blend(icon('modular_bandastation/species/icons/mob/species/vulpkanin/body.dmi', "vulpkanin_r_arm"), ICON_OVERLAY)
-		body.Blend(icon('modular_bandastation/species/icons/mob/species/vulpkanin/body.dmi', "vulpkanin_l_hand"), ICON_OVERLAY)
-		body.Blend(icon('modular_bandastation/species/icons/mob/species/vulpkanin/body.dmi', "vulpkanin_r_hand"), ICON_OVERLAY)
+		body.Blend(icon('modular_bandastation/species/icons/mob/species/vulpkanin/sprite_accessories/body.dmi', "vulpkanin_chest_m"), ICON_OVERLAY)
+		body.Blend(icon('modular_bandastation/species/icons/mob/species/vulpkanin/sprite_accessories/body.dmi', "vulpkanin_l_leg"), ICON_OVERLAY)
+		body.Blend(icon('modular_bandastation/species/icons/mob/species/vulpkanin/sprite_accessories/body.dmi', "vulpkanin_r_leg"), ICON_OVERLAY)
+		body.Blend(icon('modular_bandastation/species/icons/mob/species/vulpkanin/sprite_accessories/body.dmi', "vulpkanin_l_arm"), ICON_OVERLAY)
+		body.Blend(icon('modular_bandastation/species/icons/mob/species/vulpkanin/sprite_accessories/body.dmi', "vulpkanin_r_arm"), ICON_OVERLAY)
+		body.Blend(icon('modular_bandastation/species/icons/mob/species/vulpkanin/sprite_accessories/body.dmi', "vulpkanin_l_hand"), ICON_OVERLAY)
+		body.Blend(icon('modular_bandastation/species/icons/mob/species/vulpkanin/sprite_accessories/body.dmi', "vulpkanin_r_hand"), ICON_OVERLAY)
 		body.Blend(COLOR_ORANGE, ICON_MULTIPLY)
 
 	var/datum/sprite_accessory/markings = SSaccessories.vulpkanin_body_markings_list[value]
@@ -99,14 +99,14 @@
 	var/static/icon/body
 	if (isnull(body))
 		body = icon('icons/blanks/32x32.dmi', "nothing")
-		body.Blend(icon('modular_bandastation/species/icons/mob/species/vulpkanin/body.dmi', "vulpkanin_head_m"), ICON_OVERLAY)
-		body.Blend(icon('modular_bandastation/species/icons/mob/species/vulpkanin/body.dmi', "vulpkanin_chest_m"), ICON_OVERLAY)
-		body.Blend(icon('modular_bandastation/species/icons/mob/species/vulpkanin/body.dmi', "vulpkanin_l_leg"), ICON_OVERLAY)
-		body.Blend(icon('modular_bandastation/species/icons/mob/species/vulpkanin/body.dmi', "vulpkanin_r_leg"), ICON_OVERLAY)
-		body.Blend(icon('modular_bandastation/species/icons/mob/species/vulpkanin/body.dmi', "vulpkanin_l_arm"), ICON_OVERLAY)
-		body.Blend(icon('modular_bandastation/species/icons/mob/species/vulpkanin/body.dmi', "vulpkanin_r_arm"), ICON_OVERLAY)
-		body.Blend(icon('modular_bandastation/species/icons/mob/species/vulpkanin/body.dmi', "vulpkanin_l_hand"), ICON_OVERLAY)
-		body.Blend(icon('modular_bandastation/species/icons/mob/species/vulpkanin/body.dmi', "vulpkanin_r_hand"), ICON_OVERLAY)
+		body.Blend(icon('modular_bandastation/species/icons/mob/species/vulpkanin/sprite_accessories/body.dmi', "vulpkanin_head_m"), ICON_OVERLAY)
+		body.Blend(icon('modular_bandastation/species/icons/mob/species/vulpkanin/sprite_accessories/body.dmi', "vulpkanin_chest_m"), ICON_OVERLAY)
+		body.Blend(icon('modular_bandastation/species/icons/mob/species/vulpkanin/sprite_accessories/body.dmi', "vulpkanin_l_leg"), ICON_OVERLAY)
+		body.Blend(icon('modular_bandastation/species/icons/mob/species/vulpkanin/sprite_accessories/body.dmi', "vulpkanin_r_leg"), ICON_OVERLAY)
+		body.Blend(icon('modular_bandastation/species/icons/mob/species/vulpkanin/sprite_accessories/body.dmi', "vulpkanin_l_arm"), ICON_OVERLAY)
+		body.Blend(icon('modular_bandastation/species/icons/mob/species/vulpkanin/sprite_accessories/body.dmi', "vulpkanin_r_arm"), ICON_OVERLAY)
+		body.Blend(icon('modular_bandastation/species/icons/mob/species/vulpkanin/sprite_accessories/body.dmi', "vulpkanin_l_hand"), ICON_OVERLAY)
+		body.Blend(icon('modular_bandastation/species/icons/mob/species/vulpkanin/sprite_accessories/body.dmi', "vulpkanin_r_hand"), ICON_OVERLAY)
 		body.Blend(COLOR_ORANGE, ICON_MULTIPLY)
 
 	var/datum/sprite_accessory/markings = SSaccessories.vulpkanin_head_markings_list[value]
@@ -167,12 +167,12 @@
 	var/static/icon/body
 	if (isnull(body))
 		body = icon('icons/blanks/32x32.dmi', "nothing")
-		body.Blend(icon('modular_bandastation/species/icons/mob/species/vulpkanin/body.dmi', "vulpkanin_head_m"), ICON_OVERLAY)
-		body.Blend(icon('modular_bandastation/species/icons/mob/species/vulpkanin/body.dmi', "vulpkanin_chest_m"), ICON_OVERLAY)
-		body.Blend(icon('modular_bandastation/species/icons/mob/species/vulpkanin/body.dmi', "vulpkanin_l_arm"), ICON_OVERLAY)
-		body.Blend(icon('modular_bandastation/species/icons/mob/species/vulpkanin/body.dmi', "vulpkanin_r_arm"), ICON_OVERLAY)
-		body.Blend(icon('modular_bandastation/species/icons/mob/species/vulpkanin/body.dmi', "vulpkanin_l_hand"), ICON_OVERLAY)
-		body.Blend(icon('modular_bandastation/species/icons/mob/species/vulpkanin/body.dmi', "vulpkanin_r_hand"), ICON_OVERLAY)
+		body.Blend(icon('modular_bandastation/species/icons/mob/species/vulpkanin/sprite_accessories/body.dmi', "vulpkanin_head_m"), ICON_OVERLAY)
+		body.Blend(icon('modular_bandastation/species/icons/mob/species/vulpkanin/sprite_accessories/body.dmi', "vulpkanin_chest_m"), ICON_OVERLAY)
+		body.Blend(icon('modular_bandastation/species/icons/mob/species/vulpkanin/sprite_accessories/body.dmi', "vulpkanin_l_arm"), ICON_OVERLAY)
+		body.Blend(icon('modular_bandastation/species/icons/mob/species/vulpkanin/sprite_accessories/body.dmi', "vulpkanin_r_arm"), ICON_OVERLAY)
+		body.Blend(icon('modular_bandastation/species/icons/mob/species/vulpkanin/sprite_accessories/body.dmi', "vulpkanin_l_hand"), ICON_OVERLAY)
+		body.Blend(icon('modular_bandastation/species/icons/mob/species/vulpkanin/sprite_accessories/body.dmi', "vulpkanin_r_hand"), ICON_OVERLAY)
 		body.Blend(COLOR_ORANGE, ICON_MULTIPLY)
 
 	var/datum/sprite_accessory/markings = SSaccessories.vulpkanin_head_accessories_list[value]
@@ -233,7 +233,7 @@
 	var/datum/sprite_accessory/markings = SSaccessories.vulpkanin_facial_hair_list[value]
 	var/static/icon/head_icon
 	if (isnull(head_icon))
-		head_icon = icon('modular_bandastation/species/icons/mob/species/vulpkanin/body.dmi', "vulpkanin_head_m")
+		head_icon = icon('modular_bandastation/species/icons/mob/species/vulpkanin/sprite_accessories/body.dmi', "vulpkanin_head_m")
 		head_icon.Blend(COLOR_ORANGE, ICON_MULTIPLY)
 
 	var/icon/final_icon = new(head_icon)
