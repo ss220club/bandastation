@@ -4917,15 +4917,6 @@
 	},
 /turf/open/floor/iron,
 /area/station/engineering/atmos/storage/gas)
-"bkt" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/turf/open/floor/plating,
-/area/station/maintenance/starboard/fore)
 "bku" = (
 /obj/machinery/atmospherics/pipe/smart/simple/violet/visible/layer1{
 	dir = 6
@@ -199219,7 +199210,7 @@ nEu
 iMZ
 nEu
 gnf
-bkt
+tvm
 gnf
 itk
 cXG
