@@ -35,3 +35,4 @@
 /datum/round_event/antagonist/solo/ghost/wizard/add_datum_to_mind(datum/mind/antag_mind)
 	. = ..()
 	antag_mind.current.forceMove(pick(GLOB.wizardstart))
+	GLOB.pre_setup_antags -= antag_mind

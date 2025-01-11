@@ -52,6 +52,7 @@
 	new_cultist.cult_team = main_cult
 	new_cultist.give_equipment = TRUE
 	antag_mind.add_antag_datum(new_cultist)
+	GLOB.pre_setup_antags -= antag_mind
 
 /datum/round_event/antagonist/solo/bloodcult/round_end_report()
 	if(main_cult.check_cult_victory())

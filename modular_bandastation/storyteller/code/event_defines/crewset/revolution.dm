@@ -55,6 +55,7 @@
 		revolution.update_objectives()
 		revolution.update_rev_heads()
 		SSshuttle.registerHostileEnvironment(revolution)
+		GLOB.pre_setup_antags -= antag_mind
 
 
 /datum/round_event/antagonist/solo/revolutionary/round_end_report()

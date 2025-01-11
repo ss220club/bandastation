@@ -69,6 +69,7 @@
 
 	var/datum/antagonist/nukeop/new_op = new antag_datum()
 	antag_mind.add_antag_datum(new_op)
+	GLOB.pre_setup_antags -= antag_mind
 
 //this might be able to be kept as just calling parent
 /datum/round_event/antagonist/solo/ghost/nuclear_operative/round_end_report()

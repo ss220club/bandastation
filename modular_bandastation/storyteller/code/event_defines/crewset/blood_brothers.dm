@@ -51,3 +51,4 @@
 	team.add_member(antag_mind)
 	team.forge_brother_objectives()
 	antag_mind.add_antag_datum(/datum/antagonist/brother, team)
+	GLOB.pre_setup_antags -= antag_mind

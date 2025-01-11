@@ -48,3 +48,4 @@
 	antag_mind.transfer_to(new_player_mob)
 	qdel(current_mob)
 	antag_mind.make_wizard()
+	GLOB.pre_setup_antags -= antag_mind

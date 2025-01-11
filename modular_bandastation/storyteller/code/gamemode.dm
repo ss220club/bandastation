@@ -268,6 +268,8 @@ SUBSYSTEM_DEF(gamemode)
 			if(QDELETED(client_source) || !client_source.ckey)
 				continue
 			if(player.mind.picking)
+				if(!(player.mind in GLOB.pre_setup_antags))
+					GLOB.pre_setup_antags += player.mind
 				count++
 	return count
 

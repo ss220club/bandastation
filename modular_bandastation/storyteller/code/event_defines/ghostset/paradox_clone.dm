@@ -80,6 +80,7 @@
 
 	message_admins("[ADMIN_LOOKUPFLW(new_human)] has been made into a Paradox Clone by the midround ruleset.")
 	new_human.log_message("was spawned as a Paradox Clone of [key_name(new_human)] by the midround ruleset.", LOG_GAME)
+	GLOB.pre_setup_antags -= antag_mind
 
 
 /**

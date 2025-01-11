@@ -144,6 +144,7 @@
 
 /datum/round_event/antagonist/solo/proc/add_datum_to_mind(datum/mind/antag_mind)
 	antag_mind.add_antag_datum(antag_datum)
+	GLOB.pre_setup_antags -= antag_mind
 
 /datum/round_event/antagonist/solo/proc/spawn_extra_events()
 	if(!LAZYLEN(extra_spawned_events))
