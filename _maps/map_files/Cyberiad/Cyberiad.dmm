@@ -20235,7 +20235,6 @@
 /turf/open/floor/plating,
 /area/station/maintenance/ghetto/central)
 "fgd" = (
-/obj/structure/table,
 /obj/item/reagent_containers/cup/beaker/large{
 	pixel_x = -3;
 	pixel_y = 3
@@ -20251,6 +20250,7 @@
 	network = list("ss13","rd")
 	},
 /obj/effect/turf_decal/tile/purple/anticorner,
+/obj/structure/table,
 /turf/open/floor/iron/cafeteria,
 /area/station/science/lab)
 "fgl" = (
@@ -46748,7 +46748,6 @@
 /turf/open/floor/iron/dark,
 /area/station/security/warden)
 "lOJ" = (
-/obj/structure/table,
 /obj/item/stack/sheet/glass,
 /obj/item/stack/sheet/glass,
 /obj/item/stack/sheet/glass,
@@ -46758,10 +46757,7 @@
 /obj/item/stock_parts/scanning_module,
 /obj/effect/turf_decal/tile/purple/anticorner,
 /obj/item/stock_parts/capacitor,
-/obj/item/flatpack{
-	board = /obj/item/circuitboard/machine/flatpacker
-	},
-/obj/item/multitool,
+/obj/structure/table,
 /turf/open/floor/iron/white/side{
 	dir = 8
 	},
@@ -72191,6 +72187,11 @@
 /obj/effect/turf_decal/tile/purple/half{
 	dir = 1
 	},
+/obj/structure/table,
+/obj/item/flatpack{
+	board = /obj/item/circuitboard/machine/flatpacker
+	},
+/obj/item/multitool,
 /turf/open/floor/iron,
 /area/station/science/lab)
 "slm" = (
@@ -75221,8 +75222,8 @@
 /turf/open/floor/plating,
 /area/station/maintenance/port/aft)
 "tda" = (
-/obj/structure/table,
 /obj/machinery/recharger,
+/obj/structure/table,
 /turf/open/floor/iron/white,
 /area/station/science/lab)
 "tdc" = (
