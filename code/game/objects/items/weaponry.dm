@@ -908,7 +908,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	AddComponent(/datum/component/anti_magic, MAGIC_RESISTANCE|MAGIC_RESISTANCE_HOLY)
 	AddComponent(/datum/component/effect_remover, \
 	success_feedback = "You disrupt the magic of %THEEFFECT with %THEWEAPON.", \
-	success_forcesay = "BEGONE FOUL MAGICKS!!", \
+	success_forcesay = "ПРОЧЬ ЗЛАЯ СКВЕРНА!!", \
 	tip_text = "Clear rune", \
 	on_clear_callback = CALLBACK(src, PROC_REF(on_cult_rune_removed)), \
 	effects_we_clear = list(/obj/effect/rune, /obj/effect/heretic_rune) \

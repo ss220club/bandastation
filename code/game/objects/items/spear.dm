@@ -25,7 +25,7 @@
 	wound_bonus = -15
 	bare_wound_bonus = 15
 	/// For explosive spears, what we cry out when we use this to bap someone
-	var/war_cry = "AAAAARGH!!!"
+	var/war_cry = "ААААААРРР!!!"
 	/// The icon prefix for this flavor of spear
 	var/icon_prefix = "spearglass"
 	/// How much damage to do unwielded

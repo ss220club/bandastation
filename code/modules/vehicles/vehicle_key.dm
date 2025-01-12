@@ -19,7 +19,7 @@
 		playsound(src, 'sound/misc/sadtrombone.ogg', 50, TRUE, -1)
 		return SHAME
 	user.visible_message(span_suicide("[user] is putting \the [src] in [user.p_their()] ear and starts [user.p_their()] motor! Кажется, [user.ru_p_they()] пытается совершить самоубийство!"))
-	user.say("Vroom vroom!!", forced="secway key suicide") //Not doing a shamestate here, because even if they fail to speak they're spinning.
+	user.say("Врум-врум!!", forced="secway key suicide") //Not doing a shamestate here, because even if they fail to speak they're spinning.
 	addtimer(CALLBACK(user, TYPE_PROC_REF(/mob/living/, gib)), 2 SECONDS)
 	return MANUAL_SUICIDE
 

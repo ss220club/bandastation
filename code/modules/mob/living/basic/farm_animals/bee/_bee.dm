@@ -291,7 +291,7 @@
 
 /obj/item/queen_bee/suicide_act(mob/living/user)
 	user.visible_message(span_suicide("[user] eats [src]! Кажется, [user.ru_p_they()] пытается совершить самоубийство!"))
-	user.say("IT'S HIP TO EAT BEES!")
+	user.say("ЕСТЬ ПЧЁЛ - ЭТО МОДНО!")
 	qdel(src)
 	return TOXLOSS
 

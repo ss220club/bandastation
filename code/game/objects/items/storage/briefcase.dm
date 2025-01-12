@@ -56,7 +56,7 @@
 		paper.throw_at(turf_to_throw_at, 2)
 
 	stoplag(1 SECONDS)
-	user.say("ARGGHH, HOW WILL I GET THIS WORK DONE NOW?!!")
+	user.say("АААААА!!! КАК ЖЕ Я ТЕПЕРЬ БУДУ РАБОТАТЬ?!")
 	user.visible_message(span_suicide("[user] looks overwhelmed with paperwork! Кажется, [user.ru_p_they()] пытается совершить самоубийство!"))
 	return OXYLOSS
 

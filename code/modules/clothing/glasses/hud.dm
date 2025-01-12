@@ -29,10 +29,10 @@
 	if(living_user.get_organ_loss(ORGAN_SLOT_BRAIN) >= BRAIN_DAMAGE_SEVERE)
 		var/mob/thing = pick((/mob in view()) - user)
 		if(thing)
-			user.say("VALID MAN IS WANTER, ARREST HE!!")
+			user.say("ВАЛИД МЭН ХОЧЕТ, ЧТОБЫ ЕГО АРЕСТОВАЛИ!!")
 			user.pointed(thing)
 		else
-			user.say("WHY IS THERE A BAR ON MY HEAD?!!")
+			user.say("ПОЧЕМУ У МЕНЯ НАД ГОЛОВОЙ ПОЛОСА?!!")
 	return OXYLOSS
 
 /obj/item/clothing/glasses/hud/equipped(mob/living/user, slot)

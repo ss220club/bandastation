@@ -55,7 +55,7 @@
 	sleep(2.5 SECONDS)
 	if(!user)
 		return OXYLOSS
-	user.say("BANG!", forced = /datum/reagent/consumable/banana)
+	user.say("БАХ!", forced = /datum/reagent/consumable/banana)
 	sleep(2.5 SECONDS)
 	if(!user)
 		return OXYLOSS
