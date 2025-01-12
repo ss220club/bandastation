@@ -1401,6 +1401,7 @@
 /area/station/command/heads_quarters/magistrate)
 "ath" = (
 /obj/structure/table,
+/obj/item/toy/figure/cargotech,
 /turf/open/floor/iron,
 /area/station/cargo/sorting)
 "atl" = (
@@ -1701,6 +1702,7 @@
 	pixel_x = -3;
 	pixel_y = 7
 	},
+/obj/item/toy/figure/curator,
 /turf/open/floor/wood,
 /area/station/service/library)
 "awY" = (
@@ -3257,6 +3259,7 @@
 	pixel_x = 10;
 	pixel_y = 4
 	},
+/obj/item/toy/figure/atmos,
 /turf/open/floor/iron/dark,
 /area/station/engineering/atmos/storage/gas)
 "aQs" = (
@@ -3667,6 +3670,7 @@
 /obj/effect/turf_decal/tile/purple/half{
 	dir = 4
 	},
+/obj/item/toy/figure/rd,
 /turf/open/floor/iron/dark,
 /area/station/command/heads_quarters/rd)
 "aVl" = (
@@ -3793,7 +3797,6 @@
 /obj/structure/safe/floor,
 /obj/item/gun/ballistic/revolver/russian,
 /obj/item/storage/fancy/cigarettes/cigpack_robustgold,
-/obj/item/toy/figure/captain,
 /turf/open/floor/carpet,
 /area/station/command/heads_quarters/captain/private)
 "aWE" = (
@@ -10682,6 +10685,16 @@
 /obj/structure/floodlight_frame/completed,
 /turf/open/floor/grass,
 /area/station/maintenance/ghetto/garden)
+"cId" = (
+/obj/structure/table/reinforced,
+/obj/machinery/door/firedoor,
+/obj/item/toy/figure/bartender,
+/turf/open/floor/light{
+	icon_state = "light_on-7";
+	state = 7;
+	light_color = "#a659ff"
+	},
+/area/station/service/bar)
 "cIg" = (
 /obj/machinery/light/directional/north,
 /obj/machinery/firealarm/directional/north,
@@ -10883,6 +10896,11 @@
 	},
 /turf/open/floor/iron,
 /area/station/engineering/engine_smes)
+"cKj" = (
+/obj/structure/lattice,
+/obj/item/toy/figure/wizard/special,
+/turf/open/space/openspace,
+/area/space/nearstation)
 "cKl" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -14476,6 +14494,7 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/tile/bar,
+/obj/item/toy/figure/clown,
 /turf/open/floor/iron/kitchen,
 /area/station/service/theater)
 "dCu" = (
@@ -27670,6 +27689,11 @@
 	},
 /turf/open/floor/iron/white,
 /area/station/science/research)
+"gZp" = (
+/obj/structure/lattice,
+/obj/item/toy/figure/ninja,
+/turf/open/space/basic,
+/area/space/nearstation)
 "gZq" = (
 /obj/structure/table/reinforced,
 /obj/item/food/baguette,
@@ -33528,6 +33552,7 @@
 	pixel_y = 8
 	},
 /obj/structure/table/reinforced/rglass,
+/obj/item/toy/figure/chemist,
 /turf/open/floor/iron/white,
 /area/station/medical/pharmacy)
 "iBB" = (
@@ -35987,6 +36012,7 @@
 /area/station/science/xenobiology)
 "jhn" = (
 /obj/structure/table,
+/obj/item/toy/figure/prisoner,
 /turf/open/floor/iron,
 /area/station/security/prison)
 "jhr" = (
@@ -37486,6 +37512,7 @@
 	pixel_y = 4;
 	pixel_x = -14
 	},
+/obj/item/toy/figure/coroner,
 /turf/open/floor/iron/dark/small,
 /area/station/medical/morgue)
 "jDW" = (
@@ -38062,6 +38089,7 @@
 	pixel_x = -3;
 	pixel_y = 7
 	},
+/obj/item/toy/figure/engineer,
 /turf/open/floor/iron,
 /area/station/engineering/lobby)
 "jJL" = (
@@ -38968,6 +38996,7 @@
 "jVU" = (
 /obj/structure/table/wood,
 /obj/item/book/manual/wiki/security_space_law,
+/obj/item/toy/figure/captain,
 /turf/open/floor/carpet/blue,
 /area/station/command/heads_quarters/captain)
 "jVV" = (
@@ -40871,6 +40900,11 @@
 /obj/structure/window/reinforced/spawner/directional/north,
 /turf/open/floor/engine,
 /area/station/medical/pharmacy)
+"ktx" = (
+/obj/structure/lattice,
+/obj/item/toy/figure/dsquad,
+/turf/open/space/openspace,
+/area/space/nearstation)
 "ktH" = (
 /obj/effect/decal/cleanable/vomit,
 /turf/open/floor/iron/cafeteria,
@@ -40923,6 +40957,7 @@
 /obj/structure/table,
 /obj/item/flashlight/lamp,
 /obj/machinery/light_switch/directional/west,
+/obj/item/toy/figure/janitor,
 /turf/open/floor/iron,
 /area/station/service/janitor)
 "kuw" = (
@@ -41831,6 +41866,7 @@
 	name = "Privacy Shutters Control";
 	pixel_x = -6
 	},
+/obj/item/toy/figure/ce,
 /turf/open/floor/iron/dark,
 /area/station/command/heads_quarters/ce)
 "kFl" = (
@@ -44475,6 +44511,7 @@
 	pixel_x = 6;
 	pixel_y = 4
 	},
+/obj/item/toy/figure/botanist,
 /turf/open/floor/iron/dark,
 /area/station/service/hydroponics)
 "lnI" = (
@@ -46797,6 +46834,7 @@
 	pixel_x = 3;
 	pixel_y = 3
 	},
+/obj/item/toy/figure/borg,
 /turf/open/floor/circuit,
 /area/station/ai_monitored/turret_protected/ai_upload)
 "lPb" = (
@@ -47238,6 +47276,7 @@
 /obj/item/storage/box/syringes{
 	pixel_y = 9
 	},
+/obj/item/toy/figure/geneticist,
 /turf/open/floor/iron/dark,
 /area/station/science/genetics)
 "lVo" = (
@@ -50153,6 +50192,7 @@
 	},
 /obj/structure/sign/poster/official/random/directional/west,
 /obj/machinery/light/warm/no_nightlight/directional/west,
+/obj/item/toy/figure/psychologist,
 /turf/open/floor/carpet,
 /area/station/medical/psychology)
 "mIr" = (
@@ -50600,6 +50640,7 @@
 /obj/item/clothing/gloves/color/fyellow{
 	pixel_y = -1
 	},
+/obj/item/toy/figure/roboticist,
 /turf/open/floor/iron/dark/smooth_large,
 /area/station/science/robotics/mechbay)
 "mOC" = (
@@ -54775,6 +54816,7 @@
 /obj/item/clipboard,
 /obj/effect/turf_decal/tile/red/half/contrasted,
 /obj/item/folder/red,
+/obj/item/toy/figure/warden,
 /turf/open/floor/iron/dark,
 /area/station/security/warden)
 "nRt" = (
@@ -61343,6 +61385,7 @@
 	dir = 4
 	},
 /obj/item/reagent_containers/cup/glass/drinkingglass,
+/obj/item/toy/figure/lawyer,
 /turf/open/floor/iron,
 /area/station/security/courtroom)
 "pzQ" = (
@@ -63294,6 +63337,7 @@
 /obj/effect/turf_decal/tile/purple/anticorner{
 	dir = 1
 	},
+/obj/item/toy/figure/scientist,
 /turf/open/floor/iron/white,
 /area/station/science/lab)
 "pWU" = (
@@ -68760,6 +68804,7 @@
 	pixel_x = -5;
 	pixel_y = 8
 	},
+/obj/item/toy/figure/cmo,
 /turf/open/floor/iron/dark,
 /area/station/command/heads_quarters/cmo)
 "rri" = (
@@ -69422,6 +69467,7 @@
 /obj/item/flashlight/lamp{
 	pixel_y = 10
 	},
+/obj/item/toy/figure/chaplain,
 /turf/open/floor/carpet/black,
 /area/station/service/chapel/office)
 "rBH" = (
@@ -71127,6 +71173,7 @@
 /obj/item/paper/fluff/ids_for_dummies{
 	pixel_y = 4
 	},
+/obj/item/toy/figure/ian,
 /turf/open/floor/iron/grimy,
 /area/station/command/heads_quarters/hop)
 "rYg" = (
@@ -73639,6 +73686,7 @@
 	},
 /obj/structure/table,
 /obj/item/book/manual/wiki/security_space_law,
+/obj/item/toy/figure/secofficer,
 /turf/open/floor/iron/dark,
 /area/station/security/brig)
 "sEp" = (
@@ -73878,6 +73926,7 @@
 /obj/structure/table/glass,
 /obj/item/paper_bin,
 /obj/item/flashlight/pen/paramedic,
+/obj/item/toy/figure/paramedic,
 /turf/open/floor/iron/white,
 /area/station/medical/paramedic)
 "sHy" = (
@@ -75268,6 +75317,7 @@
 "tdH" = (
 /obj/effect/landmark/event_spawn,
 /obj/structure/table,
+/obj/item/toy/figure/assistant,
 /turf/open/floor/iron,
 /area/station/commons/locker)
 "tdI" = (
@@ -76273,6 +76323,7 @@
 /obj/item/pen{
 	pixel_y = 6
 	},
+/obj/item/toy/figure/md,
 /turf/open/floor/iron/white,
 /area/station/medical/medbay/lobby)
 "tpx" = (
@@ -78582,6 +78633,7 @@
 "tUA" = (
 /obj/structure/table/wood,
 /obj/structure/cable,
+/obj/item/toy/figure/hos,
 /turf/open/floor/carpet,
 /area/station/command/heads_quarters/hos)
 "tUE" = (
@@ -80391,6 +80443,7 @@
 /obj/effect/turf_decal/tile/brown/half/contrasted{
 	dir = 8
 	},
+/obj/item/toy/figure/miner,
 /turf/open/floor/iron,
 /area/station/cargo/miningoffice)
 "uts" = (
@@ -85983,6 +86036,21 @@
 	},
 /turf/open/floor/plating,
 /area/station/security/prison/ghetto)
+"vQn" = (
+/obj/structure/table/reinforced,
+/obj/machinery/door/poddoor/shutters/preopen{
+	dir = 8;
+	id = "kitchenbar";
+	name = "Kitchen Shutters"
+	},
+/obj/machinery/door/window/right/directional/east{
+	name = "Kitchen";
+	req_access = list("kitchen")
+	},
+/obj/machinery/door/firedoor,
+/obj/item/toy/figure/chef,
+/turf/open/floor/iron/cafeteria,
+/area/station/service/kitchen)
 "vQs" = (
 /obj/structure/reagent_dispensers/plumbed,
 /obj/effect/turf_decal/delivery/white{
@@ -93350,6 +93418,7 @@
 /obj/item/reagent_containers/cup/glass/flask/det{
 	pixel_x = -10
 	},
+/obj/item/toy/figure/detective,
 /turf/open/floor/iron/grimy,
 /area/station/security/detectives_office)
 "xLD" = (
@@ -182121,7 +182190,7 @@ qsJ
 jMv
 dFI
 jwG
-kJd
+ktx
 kcZ
 wvj
 oem
@@ -187481,7 +187550,7 @@ job
 hUE
 hUE
 kJd
-kJd
+cKj
 dmc
 nRB
 lLY
@@ -191954,7 +192023,7 @@ ebP
 wwy
 doz
 doz
-ceC
+gZp
 doz
 cnU
 swg
@@ -196778,7 +196847,7 @@ iPQ
 gnf
 mID
 qnd
-aAf
+cId
 cIN
 uAx
 ygq
@@ -197555,7 +197624,7 @@ fBH
 wCk
 nZT
 tvf
-rVW
+vQn
 rVW
 rVW
 rVW
