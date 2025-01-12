@@ -12108,3 +12108,19 @@ dative = "своим"
 accusative = "свои"
 instrumental = "своими"
 prepositional = "своих"
+
+["strange seed pack"]
+nominative = "странные семена"
+genitive = "странных семян"
+dative = "странным семянам"
+accusative = "странные семена"
+instrumental = "странными семенами"
+prepositional = "странных семянах"
+
+["material pouch"]
+nominative = "подсумок для материалов"
+genitive = "подсумоков для материалов"
+dative = "подсумку для материалов"
+accusative = "подсумок для материалов"
+instrumental = "подсумком для материалов"
+prepositional = "подсумке для материалов"

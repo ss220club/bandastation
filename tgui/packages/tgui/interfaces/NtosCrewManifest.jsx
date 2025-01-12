@@ -1,8 +1,8 @@
 import { map } from 'common/collections';
+import { Button, Section, Table } from 'tgui-core/components';
 
 import { useBackend } from '../backend';
 import { DEPARTMENTS_RU } from '../bandastation/ru_jobs'; // BANDASTATION EDIT
-import { Button, Section, Table } from '../components';
 import { NtosWindow } from '../layouts';
 
 export const NtosCrewManifest = (props) => {

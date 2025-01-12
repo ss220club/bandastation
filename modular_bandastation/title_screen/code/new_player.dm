@@ -80,14 +80,37 @@
 		lobby_button_sound()
 		SSadmin_verbs.dynamic_invoke_verb(usr, /datum/admin_verb/change_title_screen_notice)
 
-	else if(href_list["css"])
-		if(!check_rights(R_DEBUG))
+	else if(href_list["start_now"])
+		if(!check_rights(R_SERVER))
 			log_admin("Title Screen: Possible href exploit attempt by [key_name(usr)]!")
 			message_admins("Title Screen: Possible href exploit attempt by [key_name(usr)]!")
 			return
 
 		lobby_button_sound()
-		SSadmin_verbs.dynamic_invoke_verb(usr, /datum/admin_verb/change_title_screen_css)
+		SSadmin_verbs.dynamic_invoke_verb(usr, /datum/admin_verb/start_now)
+
+	else if(href_list["delay"])
+		if(!check_rights(R_SERVER))
+			log_admin("Title Screen: Possible href exploit attempt by [key_name(usr)]!")
+			message_admins("Title Screen: Possible href exploit attempt by [key_name(usr)]!")
+			return
+
+		lobby_button_sound()
+		if(SSticker.current_state > GAME_STATE_PREGAME)
+			return tgui_alert(usr, "Too late... The game has already started!")
+
+		var/static/time = 1.5 MINUTES
+		if(time == 1.5 MINUTES)
+			time = 1984 DAYS
+		else
+			time = 1.5 MINUTES
+
+		SSticker.SetTimeLeft(time)
+		SSticker.start_immediately = FALSE
+		to_chat(world, span_infoplain(span_bold("Игра начнётся через [DisplayTimeText(time)].")), confidential = TRUE)
+		SEND_SOUND(world, sound('sound/announcer/default/attention.ogg'))
+		log_admin("[key_name(usr)] set the pre-game delay to [DisplayTimeText(time)].")
+		BLACKBOX_LOG_ADMIN_VERB("Delay Game Start")
 
 	else if(href_list["collapse"])
 		title_collapsed = !title_collapsed
@@ -96,6 +119,10 @@
 			SEND_SOUND(src, sound('sound/misc/menu/menu_rollup1.ogg'))
 		else
 			SEND_SOUND(src, sound('sound/misc/menu/menu_rolldown1.ogg'))
+
+	else if(href_list["title_ready"])
+		if(check_rights_for(client, R_ADMIN|R_DEBUG))
+			SStitle.title_output(client, "true", "admin_buttons_visibility")
 
 	else if(href_list["focus"])
 		winset(client, "map", "focus=true")

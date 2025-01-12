@@ -1,10 +1,10 @@
 import { sortBy } from 'common/collections';
-import { classes } from 'common/react';
 import { PropsWithChildren, ReactNode } from 'react';
+import { Box, Button, Dropdown, Stack, Tooltip } from 'tgui-core/components';
+import { classes } from 'tgui-core/react';
 
 import { useBackend } from '../../backend';
 import { JOBS_RU } from '../../bandastation/ru_jobs'; // BANDASTATION EDIT
-import { Box, Button, Dropdown, Stack, Tooltip } from '../../components';
 import {
   createSetPreference,
   Job,
