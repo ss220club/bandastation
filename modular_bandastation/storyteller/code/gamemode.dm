@@ -582,7 +582,9 @@ SUBSYSTEM_DEF(gamemode)
 /datum/controller/subsystem/gamemode/proc/post_setup(report) //Gamemodes can override the intercept report. Passing TRUE as the argument will force a report.
 	if(!report)
 		report = !CONFIG_GET(flag/no_intercept_report)
-	addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(display_roundstart_logout_report)), ROUNDSTART_LOGOUT_REPORT_TIME)
+
+	if (!CONFIG_GET(flag/no_intercept_report))
+		addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(display_roundstart_logout_report)), ROUNDSTART_LOGOUT_REPORT_TIME)
 
 	if(CONFIG_GET(flag/reopen_roundstart_suicide_roles))
 		var/delay = CONFIG_GET(number/reopen_roundstart_suicide_roles_delay)
@@ -610,6 +612,8 @@ SUBSYSTEM_DEF(gamemode)
 			query_round_game_mode.Execute()
 			qdel(query_round_game_mode)
 	SSstation.generate_station_goals(INFINITY)
+	if(report)
+		generate_station_goal_report()
 	handle_post_setup_roundstart_events()
 	handle_post_setup_points()
 	return TRUE
@@ -635,14 +639,45 @@ SUBSYSTEM_DEF(gamemode)
  * Returns a formatted string all station goals that are available to the station.
  */
 /datum/controller/subsystem/gamemode/proc/generate_station_goal_report()
-	var/goals = SSstation.get_station_goals()
-	if(!length(goals))
+	if(GLOB.communications_controller.block_command_report) //If we don't want the report to be printed just yet, we put it off until it's ready
+		addtimer(CALLBACK(src, PROC_REF(generate_station_goal_report)), 10 SECONDS)
 		return
-	. = "<hr><b>Special Orders for [station_name()]:</b><BR>"
-	for(var/datum/station_goal/station_goal as anything in goals)
-		station_goal.on_report()
-		. += station_goal.get_report()
-	return
+
+	. = "<b><i>Департамент разведки и оценки угроз Nanotrasen, Текущий сектор, Дата и время: [time2text(world.realtime, "DDD, MMM DD")], [CURRENT_STATION_YEAR]:</i></b><hr>"
+	//. += SSdynamic.generate_advisory_level() - генерация псевдо-орбит
+
+	var/list/datum/station_goal/goals = SSstation.get_station_goals()
+	if(length(goals))
+		var/list/texts = list("<hr><b>Особые заказы для станции: [station_name()]:</b><br>")
+		for(var/datum/station_goal/station_goal as anything in goals)
+			station_goal.on_report()
+			texts += station_goal.get_report()
+		. += texts.Join("<hr>")
+
+	var/list/trait_list_strings = list()
+	for(var/datum/station_trait/station_trait as anything in SSstation.station_traits)
+		if(!station_trait.show_in_report)
+			continue
+		trait_list_strings += "[station_trait.get_report()]<BR>"
+	if(trait_list_strings.len > 0)
+		. += "<hr><b>Отчет отдела учета отклонений:</b><BR>" + trait_list_strings.Join()
+
+	if(length(GLOB.communications_controller.command_report_footnotes))
+		var/footnote_pile = ""
+
+		for(var/datum/command_footnote/footnote in GLOB.communications_controller.command_report_footnotes)
+			footnote_pile += "[footnote.message]<BR>"
+			footnote_pile += "<i>[footnote.signature]</i><BR>"
+			footnote_pile += "<BR>"
+
+		. += "<hr><b>Дополнительная информация: </b><BR><BR>" + footnote_pile
+
+#ifndef MAP_TEST
+	print_command_report(., "[command_name()] Status Summary", announce=FALSE)
+	priority_announce("Отчет был скопирован и распечатан на всех консолях связи.", "Отчет о безопасности", SSstation.announcer.get_rand_report_sound())
+#endif
+
+	return .
 
 /datum/controller/subsystem/gamemode/proc/recalculate_ready_pop()
 	ready_players = 0

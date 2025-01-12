@@ -1,8 +1,6 @@
 /// Generate the advisory level depending on the shown threat level.
 /datum/controller/subsystem/dynamic/generate_advisory_level()
 	var/advisory_string = ""
-	//monkestation edit start:
-	//switch(round(shown_threat))
 	var/list/green_nebula_storytellers = list(/datum/storyteller/extended, /datum/storyteller/chill) //list for calmer storytellers for a greenshift
 	var/list/midnight_sun_storytellers = list(/datum/storyteller/jester, /datum/storyteller/clown)
 	var/list/orange_star_storytellers = list(/datum/storyteller/default, /datum/storyteller/fragile, /datum/storyteller/mystic)

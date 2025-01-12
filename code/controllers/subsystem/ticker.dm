@@ -306,7 +306,8 @@ SUBSYSTEM_DEF(ticker)
 
 /datum/controller/subsystem/ticker/proc/PostSetup()
 	set waitfor = FALSE
-	//SSdynamic.post_setup() // BANDASTATION EDIT STORYTELLER - отключение пост-сетапа динамика
+	//SSdynamic.post_setup() // BANDASTATION EDIT - STORYTELLER
+	SSgamemode.post_setup() // BANDASTATION EDIT - STORYTELLER
 	GLOB.start_state = new /datum/station_state()
 	GLOB.start_state.count()
 
