@@ -331,7 +331,7 @@
  * Tips that starts with the @ character won't be html encoded. That's necessary for any tip containing markup tags,
  * just make sure they don't also have html characters like <, > and ' which will be garbled.
  */
-/proc/send_tip_of_the_round(target, selected_tip, source = "Tip of the round")
+/proc/send_tip_of_the_round(target, selected_tip, source = "Совет раунда")
 	var/message
 	if(selected_tip)
 		message = selected_tip
