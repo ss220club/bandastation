@@ -215,6 +215,7 @@ SUBSYSTEM_DEF(gamemode)
 /datum/controller/subsystem/gamemode/fire(resumed = FALSE)
 	if(SSticker.round_start_time && (world.time - SSticker.round_start_time) >= ROUNDSTART_VALID_TIMEFRAME)
 		can_run_roundstart = FALSE
+		roundstart_event_view = FALSE
 
 	///Handle scheduled events
 	for(var/datum/scheduled_event/sch_event in scheduled_events)
@@ -611,7 +612,6 @@ SUBSYSTEM_DEF(gamemode)
 	SSstation.generate_station_goals(INFINITY)
 	handle_post_setup_roundstart_events()
 	handle_post_setup_points()
-	roundstart_event_view = FALSE
 	return TRUE
 
 

@@ -10,6 +10,8 @@
 		JOB_SCIENTIST,
 		JOB_SECURITY_OFFICER,
 		JOB_WARDEN,
+		JOB_BLUESHIELD,
+		JOB_NANOTRASEN_REPRESENTATIVE,
 	)
 	exclusive_roles = list(JOB_AI)
 	required_enemies = 4

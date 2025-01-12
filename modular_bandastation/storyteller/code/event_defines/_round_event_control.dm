@@ -121,9 +121,9 @@
 /datum/round_event_control/antagonist/solo/return_failure_string(players_amt)
 	. =..()
 
-	var/antag_amt = get_antag_amount()
+	var/antag_amt = get_antag_count_to_spawn()
 	var/list/candidates = get_candidates() //we should optimize this
-	if(length(candidates) < antag_amt)
+	if((length(candidates) < antag_amt) || !antag_amt)
 		if(.)
 			. += ", "
 		. += "Not Enough Candidates!"
@@ -253,18 +253,23 @@
 	. = ..()
 	if(!.)
 		return
-	var/antag_amt = get_antag_amount()
+	var/antag_amt = get_antag_count_to_spawn()
 	var/list/candidates = get_candidates()
-	if(length(candidates) < antag_amt)
+	if((length(candidates) < antag_amt) || !antag_amt)
 		return FALSE
 
-/datum/round_event_control/antagonist/solo/proc/get_antag_amount(forced_event = FALSE)
+/datum/round_event_control/antagonist/solo/proc/get_antag_count_to_spawn(forced_event = FALSE)
 	var/decided_count = rand(base_antags, maximum_antags)
-
-	var/gamemode_antags_left = SSgamemode.get_antag_cap(forced_event) - SSgamemode.get_antag_count()
+	var/current_cap = SSgamemode.get_antag_cap(forced_event)
+	var/gamemode_antags_left = current_cap - SSgamemode.get_antag_count()
 	var/maximum_to_spawn = min(gamemode_antags_left, maximum_antags)
-
 	var/clamped_value = clamp(decided_count, 0, maximum_to_spawn)
+
+	//double check
+	var/predicted_count = clamped_value + SSgamemode.get_antag_count()
+	while(predicted_count > current_cap && clamped_value > 0)
+		clamped_value--
+
 	return clamped_value
 
 /datum/round_event_control/antagonist/solo/proc/get_candidates()

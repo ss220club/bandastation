@@ -15,6 +15,8 @@
 		JOB_PRISONER,
 		JOB_SECURITY_OFFICER,
 		JOB_WARDEN,
+		JOB_BLUESHIELD,
+		JOB_NANOTRASEN_REPRESENTATIVE,
 	)
 	maximum_antags = 3
 	enemy_roles = list(

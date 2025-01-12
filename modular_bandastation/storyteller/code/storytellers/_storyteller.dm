@@ -101,6 +101,7 @@
 		if(SSgamemode.can_run_roundstart && track == EVENT_TRACK_ROLESET)
 			SSgamemode.round_start_handle()
 			SSgamemode.can_run_roundstart = FALSE
+			SSgamemode.roundstart_event_view = FALSE
 
 		if(points >= mode.point_thresholds[track])
 			if(prob(SSgamemode.empty_event_chance) && track == EVENT_TRACK_ROLESET)
