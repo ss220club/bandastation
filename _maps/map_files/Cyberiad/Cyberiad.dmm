@@ -9056,6 +9056,9 @@
 /obj/structure/window/reinforced/spawner/directional/east,
 /obj/structure/window/reinforced/spawner/directional/west,
 /obj/structure/window/reinforced/spawner/directional/south,
+/obj/machinery/door/window/right/directional/north{
+	name = "Window Door"
+	},
 /turf/open/floor/plating,
 /area/station/maintenance/disposal)
 "clU" = (
@@ -34220,6 +34223,13 @@
 /obj/effect/turf_decal/tile/purple/anticorner{
 	dir = 8
 	},
+/obj/machinery/door/window/right/directional/north{
+	name = "Window Door"
+	},
+/obj/effect/turf_decal/delivery/red,
+/obj/structure/window/reinforced/spawner/directional/east,
+/obj/structure/window/reinforced/spawner/directional/west,
+/obj/structure/window/reinforced/spawner/directional/south,
 /turf/open/floor/iron/white,
 /area/station/science/lower)
 "iFy" = (
@@ -66644,6 +66654,13 @@
 /obj/machinery/disposal/delivery_chute{
 	dir = 4
 	},
+/obj/effect/turf_decal/delivery/red,
+/obj/structure/window/reinforced/spawner/directional/north,
+/obj/structure/window/reinforced/spawner/directional/south,
+/obj/structure/window/reinforced/spawner/directional/west,
+/obj/machinery/door/window/right/directional/east{
+	name = "Morgue Disposal"
+	},
 /turf/open/floor/iron/freezer,
 /area/station/science/robotics/lab)
 "qFR" = (
@@ -81256,6 +81273,7 @@
 /obj/effect/turf_decal/tile/purple/half{
 	dir = 8
 	},
+/obj/structure/window/reinforced/spawner/directional/west,
 /turf/open/floor/iron/white,
 /area/station/science/genetics)
 "uoO" = (
