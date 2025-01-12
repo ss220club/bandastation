@@ -13331,6 +13331,7 @@
 "dmb" = (
 /obj/item/kirbyplants/random,
 /obj/effect/turf_decal/tile/purple/anticorner,
+/obj/structure/disposalpipe/segment,
 /turf/open/floor/iron/white,
 /area/station/science/lobby)
 "dmc" = (
@@ -16020,6 +16021,7 @@
 "dVb" = (
 /obj/structure/sink/directional/west,
 /obj/effect/turf_decal/tile/purple/anticorner,
+/obj/structure/disposalpipe/segment,
 /turf/open/floor/iron/white,
 /area/station/science/research)
 "dVc" = (
@@ -22630,20 +22632,6 @@
 	c_tag = "Research Hallway North";
 	network = list("ss13","rd")
 	},
-/obj/structure/disposaloutlet{
-	dir = 4;
-	name = "Cargo Deliveries"
-	},
-/obj/structure/window/reinforced/spawner/directional/west,
-/obj/effect/turf_decal/siding/purple{
-	dir = 1
-	},
-/obj/effect/turf_decal/trimline/brown/warning{
-	dir = 9
-	},
-/obj/structure/disposalpipe/trunk{
-	dir = 8
-	},
 /turf/open/floor/iron/white,
 /area/station/science/research)
 "fGH" = (
@@ -26907,6 +26895,9 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/tile/purple,
+/obj/structure/disposalpipe/segment{
+	dir = 6
+	},
 /turf/open/floor/iron/white,
 /area/station/science/lobby)
 "gLB" = (
@@ -30805,6 +30796,7 @@
 /obj/effect/turf_decal/tile/purple/half{
 	dir = 4
 	},
+/obj/structure/disposalpipe/segment,
 /turf/open/floor/iron/white,
 /area/station/science/research)
 "hJP" = (
@@ -36761,13 +36753,6 @@
 /obj/item/storage/lockbox/medal,
 /turf/open/floor/wood,
 /area/station/command/heads_quarters/captain)
-"jlr" = (
-/obj/effect/turf_decal/tile/purple,
-/obj/structure/disposalpipe/segment{
-	dir = 6
-	},
-/turf/open/floor/iron/white,
-/area/station/science/research)
 "jlt" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
@@ -39981,6 +39966,20 @@
 /obj/structure/cable,
 /obj/machinery/light/directional/south,
 /obj/effect/turf_decal/tile/purple/half/contrasted,
+/obj/structure/window/reinforced/spawner/directional/west,
+/obj/structure/disposaloutlet{
+	dir = 4;
+	name = "Cargo Deliveries"
+	},
+/obj/structure/disposalpipe/trunk{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/purple{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/brown/warning{
+	dir = 9
+	},
 /turf/open/floor/iron/white,
 /area/station/science/lobby)
 "kbJ" = (
@@ -69748,6 +69747,7 @@
 	dir = 4
 	},
 /obj/machinery/firealarm/directional/north,
+/obj/structure/disposalpipe/segment,
 /turf/open/floor/iron/white,
 /area/station/science/research)
 "rrQ" = (
@@ -70399,7 +70399,6 @@
 /obj/item/flashlight/lamp{
 	pixel_y = 10
 	},
-/obj/item/toy/figure/chaplain,
 /turf/open/floor/carpet/black,
 /area/station/service/chapel/office)
 "rBH" = (
@@ -84700,6 +84699,7 @@
 /obj/effect/turf_decal/tile/purple/anticorner{
 	dir = 4
 	},
+/obj/structure/disposalpipe/segment,
 /turf/open/floor/iron/white,
 /area/station/science/research)
 "vkK" = (
@@ -86164,6 +86164,13 @@
 /obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/cable,
 /obj/effect/turf_decal/tile/purple/anticorner,
+/obj/structure/window/reinforced/spawner/directional/east,
+/obj/effect/turf_decal/siding/purple{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/brown/warning{
+	dir = 5
+	},
 /turf/open/floor/iron/white,
 /area/station/science/lobby)
 "vBQ" = (
@@ -87841,14 +87848,8 @@
 /turf/open/floor/plating,
 /area/station/maintenance/ghetto/starboard)
 "vYQ" = (
-/obj/effect/turf_decal/tile/purple,
-/obj/effect/turf_decal/siding/purple{
-	dir = 1
-	},
-/obj/effect/turf_decal/trimline/brown/warning{
-	dir = 1
-	},
-/turf/open/floor/iron/white,
+/obj/structure/disposalpipe/segment,
+/turf/closed/wall,
 /area/station/science/research)
 "vZa" = (
 /obj/structure/closet/emcloset,
@@ -92208,13 +92209,6 @@
 /obj/effect/turf_decal/stripes/corner,
 /obj/structure/cable,
 /obj/effect/turf_decal/tile/purple,
-/obj/structure/window/reinforced/spawner/directional/east,
-/obj/effect/turf_decal/siding/purple{
-	dir = 1
-	},
-/obj/effect/turf_decal/trimline/brown/warning{
-	dir = 5
-	},
 /turf/open/floor/iron/white,
 /area/station/science/research)
 "xdU" = (
@@ -210279,14 +210273,14 @@ ulB
 uiF
 gLA
 dmb
-ppF
+vYQ
 vkI
 hJI
 dVb
-ppF
+vYQ
 rrN
-vVN
-jlr
+baU
+aGV
 aGV
 maa
 aZf
@@ -210800,7 +210794,7 @@ sUq
 iLA
 sSW
 vVN
-vYQ
+qIF
 pvD
 liU
 aEt
