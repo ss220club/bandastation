@@ -168,6 +168,7 @@ SUBSYSTEM_DEF(ticker)
 			fire()
 		if(GAME_STATE_PREGAME)
 				//lobby stats for statpanels
+			SSgamemode.init_storyteller() // BANDASTATION EDIT - STORYTELLER
 			if(isnull(timeLeft))
 				timeLeft = max(0,start_at - world.time)
 			totalPlayers = LAZYLEN(GLOB.new_player_list)
@@ -195,7 +196,6 @@ SUBSYSTEM_DEF(ticker)
 				SEND_SIGNAL(src, COMSIG_TICKER_ENTER_SETTING_UP)
 				current_state = GAME_STATE_SETTING_UP
 				Master.SetRunLevel(RUNLEVEL_SETUP)
-				SSgamemode.init_storyteller() // BANDASTATION EDIT - STORYTELLER
 				if(start_immediately)
 					fire()
 
