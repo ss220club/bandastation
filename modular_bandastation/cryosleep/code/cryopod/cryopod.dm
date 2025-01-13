@@ -38,7 +38,6 @@ GLOBAL_LIST_EMPTY(objectives)
 	find_control_computer()
 
 /obj/machinery/cryopod/Destroy()
-	stack_trace("Somehow cryopod was destroyed. Should not happend without admin intervention.")
 	control_computer_weakref = null
 	return ..()
 
