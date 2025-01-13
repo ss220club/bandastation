@@ -46,7 +46,13 @@ GLOBAL_LIST_EMPTY(objectives)
 	return // It shouldn't be destroyed in any possible game way
 
 /obj/machinery/cryopod/update_name(updates)
-	name = isnull(occupant) ? initial(name) : "[initial(name)] ([occupant])"
+	if(isnull(occupant))
+		name = src::name
+		ru_names_rename(ru_names_toml(name, override_base = "[name]"))
+	else
+		name = "[src::name] ([occupant])"
+		ru_names_rename(ru_names_toml(src::name, suffix = " ([occupant])", override_base = name))
+
 	return ..()
 
 /obj/machinery/cryopod/update_icon_state()
