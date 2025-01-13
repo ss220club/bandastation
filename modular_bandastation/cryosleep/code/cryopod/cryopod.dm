@@ -391,8 +391,6 @@ GLOBAL_LIST_EMPTY(objectives)
 
 /// Checks if the target can be put inside cryopod
 /obj/machinery/cryopod/proc/can_be_put_inside(mob/target)
-	PRIVATE_PROC(TRUE)
-
 	return isnull(validate_put_inside(target))
 
 /// Validates if the target can be put inside.
