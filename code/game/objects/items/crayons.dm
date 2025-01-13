@@ -844,7 +844,7 @@
 		return SHAME
 
 	user.visible_message(span_suicide("[user] shakes up [src] with a rattle and lifts it to [user.p_their()] mouth, spraying paint across [user.p_their()] teeth!"))
-	user.say("УБЕДИТЕСЬ!!!", forced = "spraycan suicide")
+	user.say("ОСВИДЕТЕЛЬСТВУЙТЕ МЕНЯ!!!", forced = "spraycan suicide")
 	if(pre_noise || post_noise)
 		playsound(src, 'sound/effects/spray.ogg', 5, TRUE, 5)
 	if(can_change_colour)

@@ -141,7 +141,7 @@
 
 	var/mob/living/carbon/human/suicider = user
 	user.visible_message(span_suicide("[user] shakes up [src] with a rattle and lifts it to [user.p_their()] mouth, spraying paint across [user.p_their()] teeth!"))
-	user.say("УБЕДИТЕСЬ!!!", forced="spraycan suicide")
+	user.say("ОСВИДЕТЕЛЬСТВУЙТЕ МЕНЯ!!!", forced="spraycan suicide")
 	playsound(src, 'sound/effects/spray.ogg', 5, TRUE, 5)
 	suicider.AddComponent(/datum/component/face_decal, "spray", EXTERNAL_ADJACENT, paint_color)
 	return OXYLOSS
