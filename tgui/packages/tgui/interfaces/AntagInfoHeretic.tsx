@@ -154,12 +154,13 @@ const GuideSection = () => {
     <Stack.Item>
       <Stack vertical fontSize="12px">
         <Stack.Item>
-          - Ищите на станции рушащие реальность&nbsp;
-          <span style={hereticPurple}>влияния</span>. Они не видны обычному
-          глазу. Нажмите&nbsp;
-          <b>правой кнопкой мыши</b> по ним чтобы получить&nbsp;
-          <span style={hereticBlue}>очки знаний</span>. После добычи, они вскоре
-          становятся видимыми для всех.
+          - Find reality smashing&nbsp;
+          <span style={hereticPurple}>influences</span>
+          &nbsp;around the station invisible to the normal eye and&nbsp;
+          <b>right click</b> on them to harvest them for&nbsp;
+          <span style={hereticBlue}>knowledge points</span>. Tapping them makes
+          them visible to all after a short time. Dreaming of Mansus may help to
+          find them.
         </Stack.Item>
         <Stack.Item>
           - Используйте ваше&nbsp;
