@@ -346,7 +346,7 @@ GLOBAL_LIST_EMPTY(objectives)
 
 	var/answer = tgui_alert(
 		target,
-		"Вы уверены что хотите погрузиться в криогенный стазис? Через [DisplayTimeText(time_till_despawn)] ваш персонаж будет удален из игры и больше не сможет вернуться в этом раунде.",
+		"Вы уверены что хотите погрузиться в криогенный стазис? Через [DisplayTimeText(time_till_despawn)] после выхода из игры или тела ваш персонаж будет удален и больше не сможет вернуться в этом раунде.",
 		"Погрузиться криогенный стазис?",
 		list("Да", "Нет")
 	)
@@ -384,7 +384,7 @@ GLOBAL_LIST_EMPTY(objectives)
 
 /// Just call close_machine for the target after 10 seconds do_after, without any checks, except in `do_after`
 /obj/machinery/cryopod/proc/place_inside(mob/target, mob/user)
-	if(!do_after(user, 10 SECONDS, target, extra_checks = CALLBACK(src, PROC_REF(validate_put_inside_and_alert_user), target, target)))
+	if(!do_after(user, 5 SECONDS, target, extra_checks = CALLBACK(src, PROC_REF(validate_put_inside_and_alert_user), target, target)))
 		return
 
 	close_machine(target)

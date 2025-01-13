@@ -1,5 +1,4 @@
 // THIS IS A BANDASTATION UI FILE
-import { useBackend } from '../backend';
 import {
   Button,
   LabeledList,
@@ -7,13 +6,15 @@ import {
   Section,
   Stack,
 } from 'tgui-core/components';
+
+import { useBackend } from '../backend';
 import { Window } from '../layouts';
 
 export const CryopodConsole = (props) => {
   const { data } = useBackend();
   const { account_name } = data;
 
-  const welcomeTitle = `Добро пожаловать, ${account_name || '[УДАЛЕНО]'}!`;
+  const welcomeTitle = `Добро пожаловать, ${account_name || 'Неизвестный'}!`;
 
   return (
     <Window title="Консоль криогенного наблюдения" width={400} height={480}>
