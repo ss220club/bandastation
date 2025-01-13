@@ -69,6 +69,10 @@
 		new_human.mind.restricted_roles = restricted_roles
 		setup_minds += new_human.mind
 		selected_count++
+
+		if(selected_count++ > SSgamemode.get_antag_cap(forced))
+			selected_count--
+
 	setup = TRUE
 
 

@@ -90,6 +90,9 @@
 		new_xeno.move_into_vent(vent)
 		selected_count++
 
+		if(selected_count++ > SSgamemode.get_antag_cap(forced))
+			selected_count--
+
 		message_admins("[ADMIN_LOOKUPFLW(new_xeno)] has been made into an alien by an event.")
 		new_xeno.log_message("was spawned as an alien by an event.", LOG_GAME)
 

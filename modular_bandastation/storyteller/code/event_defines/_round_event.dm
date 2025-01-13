@@ -82,7 +82,8 @@
 
 	var/list/weighted_candidates = return_antag_weight(possible_candidates)
 
-	while(length(weighted_candidates) && length(candidates) < antag_count) //both of these pick_n_take from weighted_candidates so this should be fine
+	var/valid_to_spawn = TRUE
+	while(length(weighted_candidates) && length(candidates) < antag_count && valid_to_spawn) //both of these pick_n_take from weighted_candidates so this should be fine
 		if(prompted_picking)
 			var/picked_ckey = pick_n_take_weighted(weighted_candidates)
 			var/client/picked_client = GLOB.directory[picked_ckey]
@@ -111,7 +112,9 @@
 			log_storyteller("Picked antag event mob: [picked_mob], special role: [picked_mob.mind?.special_role ? picked_mob.mind.special_role : "none"]")
 			candidates |= picked_mob
 
+
 	var/list/picked_mobs = list()
+	var/spawned_count = 0
 	for(var/i in 1 to antag_count)
 		if(!length(candidates))
 			message_admins("A roleset event got fewer antags then its antag_count and may not function correctly.")
@@ -127,6 +130,9 @@
 		candidate.mind.special_role = antag_flag
 		candidate.mind.restricted_roles = restricted_roles
 		picked_mobs += WEAKREF(candidate.client)
+		spawned_count++
+		if(spawned_count++ > SSgamemode.get_antag_cap(forced))
+			antag_count--
 
 	setup = TRUE
 	control.generate_image(picked_mobs)
@@ -216,4 +222,7 @@
 		new_human.mind.restricted_roles = restricted_roles
 		setup_minds += new_human.mind
 		selected_count++
+		if(selected_count++ > SSgamemode.get_antag_cap(forced))
+			selected_count--
+
 	setup = TRUE
