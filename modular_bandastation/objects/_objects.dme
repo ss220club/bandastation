@@ -49,6 +49,7 @@
 #include "code/machinery/vending/vending.dm"
 
 #include "code/structures/chairs.dm"
+#include "code/structures/displaycase.dm"
 #include "code/structures/platform.dm"
 #include "code/structures/posters.dm"
 #include "code/structures/statues.dm"
