@@ -323,8 +323,8 @@ GLOBAL_LIST_EMPTY(objectives)
 		log_admin("[key_name(user)] tries to move [key_name(target)] to the cryopod, while it still has a client connected")
 		return
 
-	if(target.logout_time + CONFIG_GET(number/cryo_min_ssd_time) < world.time)
-		balloon_alert(user, "слишком мало в SSD")
+	if(target.logout_time + CONFIG_GET(number/cryo_min_ssd_time) > world.time)
+		balloon_alert(user, "слишком недавно в SSD")
 		return
 
 	var/answer = tgui_alert(
