@@ -578,6 +578,10 @@
 /obj/machinery/computer/bank_machine,
 /obj/effect/turf_decal/bot_white,
 /obj/effect/turf_decal/tile/neutral/fourcorners,
+/obj/item/toy/figure/dsquad{
+	pixel_y = 17;
+	pixel_x = 4
+	},
 /turf/open/floor/iron/dark,
 /area/station/ai_monitored/command/nuke_storage)
 "aid" = (
@@ -1401,6 +1405,7 @@
 /area/station/command/heads_quarters/magistrate)
 "ath" = (
 /obj/structure/table,
+/obj/item/toy/figure/cargotech,
 /turf/open/floor/iron,
 /area/station/cargo/sorting)
 "atl" = (
@@ -1701,6 +1706,7 @@
 	pixel_x = -3;
 	pixel_y = 7
 	},
+/obj/item/toy/figure/curator,
 /turf/open/floor/wood,
 /area/station/service/library)
 "awY" = (
@@ -3257,6 +3263,7 @@
 	pixel_x = 10;
 	pixel_y = 4
 	},
+/obj/item/toy/figure/atmos,
 /turf/open/floor/iron/dark,
 /area/station/engineering/atmos/storage/gas)
 "aQs" = (
@@ -3793,7 +3800,6 @@
 /obj/structure/safe/floor,
 /obj/item/gun/ballistic/revolver/russian,
 /obj/item/storage/fancy/cigarettes/cigpack_robustgold,
-/obj/item/toy/figure/captain,
 /turf/open/floor/carpet,
 /area/station/command/heads_quarters/captain/private)
 "aWE" = (
@@ -14476,6 +14482,7 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/tile/bar,
+/obj/item/toy/figure/clown,
 /turf/open/floor/iron/kitchen,
 /area/station/service/theater)
 "dCu" = (
@@ -16527,6 +16534,7 @@
 	},
 /obj/structure/cable,
 /obj/machinery/power/apc/auto_name/directional/south,
+/obj/item/toy/figure/bartender,
 /turf/open/floor/wood,
 /area/station/service/bar/backroom)
 "eeh" = (
@@ -18066,6 +18074,7 @@
 	},
 /obj/machinery/status_display/ai/directional/north,
 /obj/machinery/light/small/directional/north,
+/obj/item/toy/figure/ninja,
 /turf/open/floor/plating,
 /area/station/engineering/storage/tech)
 "eBD" = (
@@ -18563,6 +18572,9 @@
 "eIT" = (
 /obj/structure/filingcabinet/chestdrawer,
 /obj/effect/turf_decal/siding/wood/corner,
+/obj/item/toy/figure/lawyer{
+	pixel_y = 10
+	},
 /turf/open/floor/wood/tile,
 /area/station/service/lawoffice)
 "eJa" = (
@@ -23940,15 +23952,13 @@
 /area/station/ai_monitored/turret_protected/ai_upload)
 "gav" = (
 /obj/structure/table/wood,
-/obj/item/megaphone/sec{
-	pixel_y = 2
-	},
 /obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/cable,
 /obj/machinery/camera/directional/north{
 	c_tag = "Brig - HoS Office";
 	dir = 2
 	},
+/obj/item/toy/figure/hos,
 /turf/open/floor/iron/dark,
 /area/station/command/heads_quarters/hos)
 "gaA" = (
@@ -33528,6 +33538,7 @@
 	pixel_y = 8
 	},
 /obj/structure/table/reinforced/rglass,
+/obj/item/toy/figure/chemist,
 /turf/open/floor/iron/white,
 /area/station/medical/pharmacy)
 "iBB" = (
@@ -33752,6 +33763,10 @@
 /obj/structure/table,
 /obj/item/storage/toolbox/mechanical,
 /obj/item/crowbar/large,
+/obj/item/toy/figure/roboticist{
+	pixel_y = 4;
+	pixel_x = -6
+	},
 /turf/open/floor/iron/dark,
 /area/station/science/robotics/mechbay)
 "iEp" = (
@@ -35987,6 +36002,7 @@
 /area/station/science/xenobiology)
 "jhn" = (
 /obj/structure/table,
+/obj/item/toy/figure/prisoner,
 /turf/open/floor/iron,
 /area/station/security/prison)
 "jhr" = (
@@ -37486,6 +37502,7 @@
 	pixel_y = 4;
 	pixel_x = -14
 	},
+/obj/item/toy/figure/coroner,
 /turf/open/floor/iron/dark/small,
 /area/station/medical/morgue)
 "jDW" = (
@@ -38062,6 +38079,7 @@
 	pixel_x = -3;
 	pixel_y = 7
 	},
+/obj/item/toy/figure/engineer,
 /turf/open/floor/iron,
 /area/station/engineering/lobby)
 "jJL" = (
@@ -38968,6 +38986,7 @@
 "jVU" = (
 /obj/structure/table/wood,
 /obj/item/book/manual/wiki/security_space_law,
+/obj/item/toy/figure/captain,
 /turf/open/floor/carpet/blue,
 /area/station/command/heads_quarters/captain)
 "jVV" = (
@@ -40462,7 +40481,6 @@
 /area/station/hallway/secondary/entry)
 "koL" = (
 /obj/item/clothing/mask/gas/sexyclown,
-/obj/item/toy/figure/clown,
 /obj/structure/window/reinforced/spawner/directional/west,
 /obj/structure/rack,
 /obj/effect/spawner/random/clothing/costume,
@@ -40923,6 +40941,7 @@
 /obj/structure/table,
 /obj/item/flashlight/lamp,
 /obj/machinery/light_switch/directional/west,
+/obj/item/toy/figure/janitor,
 /turf/open/floor/iron,
 /area/station/service/janitor)
 "kuw" = (
@@ -41831,6 +41850,7 @@
 	name = "Privacy Shutters Control";
 	pixel_x = -6
 	},
+/obj/item/toy/figure/ce,
 /turf/open/floor/iron/dark,
 /area/station/command/heads_quarters/ce)
 "kFl" = (
@@ -44475,6 +44495,7 @@
 	pixel_x = 6;
 	pixel_y = 4
 	},
+/obj/item/toy/figure/botanist,
 /turf/open/floor/iron/dark,
 /area/station/service/hydroponics)
 "lnI" = (
@@ -46797,6 +46818,7 @@
 	pixel_x = 3;
 	pixel_y = 3
 	},
+/obj/item/toy/figure/borg,
 /turf/open/floor/circuit,
 /area/station/ai_monitored/turret_protected/ai_upload)
 "lPb" = (
@@ -47238,6 +47260,7 @@
 /obj/item/storage/box/syringes{
 	pixel_y = 9
 	},
+/obj/item/toy/figure/geneticist,
 /turf/open/floor/iron/dark,
 /area/station/science/genetics)
 "lVo" = (
@@ -47916,6 +47939,9 @@
 /obj/item/hatchet,
 /obj/item/shovel/spade,
 /obj/item/wrench,
+/obj/item/toy/figure/chef{
+	pixel_x = -8
+	},
 /turf/open/floor/iron,
 /area/station/service/hydroponics)
 "mdi" = (
@@ -50153,6 +50179,7 @@
 	},
 /obj/structure/sign/poster/official/random/directional/west,
 /obj/machinery/light/warm/no_nightlight/directional/west,
+/obj/item/toy/figure/psychologist,
 /turf/open/floor/carpet,
 /area/station/medical/psychology)
 "mIr" = (
@@ -52153,7 +52180,6 @@
 /area/station/commons/vacant_room/office)
 "njB" = (
 /obj/item/clothing/mask/gas/plaguedoctor,
-/obj/item/toy/figure/clown,
 /obj/structure/table,
 /obj/machinery/newscaster/directional/north,
 /turf/open/floor/iron/cafeteria,
@@ -52559,7 +52585,6 @@
 /turf/open/floor/plating,
 /area/station/engineering/storage/tech)
 "noa" = (
-/obj/item/toy/figure/secofficer,
 /turf/open/floor/iron,
 /area/station/maintenance/fore)
 "noe" = (
@@ -54775,6 +54800,7 @@
 /obj/item/clipboard,
 /obj/effect/turf_decal/tile/red/half/contrasted,
 /obj/item/folder/red,
+/obj/item/toy/figure/warden,
 /turf/open/floor/iron/dark,
 /area/station/security/warden)
 "nRt" = (
@@ -63294,6 +63320,7 @@
 /obj/effect/turf_decal/tile/purple/anticorner{
 	dir = 1
 	},
+/obj/item/toy/figure/scientist,
 /turf/open/floor/iron/white,
 /area/station/science/lab)
 "pWU" = (
@@ -68760,6 +68787,7 @@
 	pixel_x = -5;
 	pixel_y = 8
 	},
+/obj/item/toy/figure/cmo,
 /turf/open/floor/iron/dark,
 /area/station/command/heads_quarters/cmo)
 "rri" = (
@@ -69422,6 +69450,7 @@
 /obj/item/flashlight/lamp{
 	pixel_y = 10
 	},
+/obj/item/toy/figure/chaplain,
 /turf/open/floor/carpet/black,
 /area/station/service/chapel/office)
 "rBH" = (
@@ -71127,6 +71156,7 @@
 /obj/item/paper/fluff/ids_for_dummies{
 	pixel_y = 4
 	},
+/obj/item/toy/figure/ian,
 /turf/open/floor/iron/grimy,
 /area/station/command/heads_quarters/hop)
 "rYg" = (
@@ -73639,6 +73669,7 @@
 	},
 /obj/structure/table,
 /obj/item/book/manual/wiki/security_space_law,
+/obj/item/toy/figure/secofficer,
 /turf/open/floor/iron/dark,
 /area/station/security/brig)
 "sEp" = (
@@ -73878,6 +73909,7 @@
 /obj/structure/table/glass,
 /obj/item/paper_bin,
 /obj/item/flashlight/pen/paramedic,
+/obj/item/toy/figure/paramedic,
 /turf/open/floor/iron/white,
 /area/station/medical/paramedic)
 "sHy" = (
@@ -75268,6 +75300,7 @@
 "tdH" = (
 /obj/effect/landmark/event_spawn,
 /obj/structure/table,
+/obj/item/toy/figure/assistant,
 /turf/open/floor/iron,
 /area/station/commons/locker)
 "tdI" = (
@@ -76273,6 +76306,7 @@
 /obj/item/pen{
 	pixel_y = 6
 	},
+/obj/item/toy/figure/md,
 /turf/open/floor/iron/white,
 /area/station/medical/medbay/lobby)
 "tpx" = (
@@ -78582,6 +78616,9 @@
 "tUA" = (
 /obj/structure/table/wood,
 /obj/structure/cable,
+/obj/item/megaphone/sec{
+	pixel_y = 2
+	},
 /turf/open/floor/carpet,
 /area/station/command/heads_quarters/hos)
 "tUE" = (
@@ -80391,6 +80428,7 @@
 /obj/effect/turf_decal/tile/brown/half/contrasted{
 	dir = 8
 	},
+/obj/item/toy/figure/miner,
 /turf/open/floor/iron,
 /area/station/cargo/miningoffice)
 "uts" = (
@@ -83162,11 +83200,11 @@
 /area/station/engineering/storage)
 "vgI" = (
 /obj/structure/filingcabinet/chestdrawer,
-/obj/item/taperecorder{
-	pixel_y = 7
-	},
 /obj/effect/turf_decal/tile/purple/anticorner{
 	dir = 1
+	},
+/obj/item/toy/figure/rd{
+	pixel_y = 8
 	},
 /turf/open/floor/iron/white,
 /area/station/command/heads_quarters/rd)
@@ -93350,6 +93388,7 @@
 /obj/item/reagent_containers/cup/glass/flask/det{
 	pixel_x = -10
 	},
+/obj/item/toy/figure/detective,
 /turf/open/floor/iron/grimy,
 /area/station/security/detectives_office)
 "xLD" = (
