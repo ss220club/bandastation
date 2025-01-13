@@ -39,7 +39,7 @@
 		new_name = "[user.real_name] \"[nickname]\""
 	user.real_name = new_name
 	used_up = TRUE
-	user.say("Моя душа будет гореть, как у этого святого, если я предам свою семью. Я вошел живым и должен буду выйти мертвым.", forced = /obj/item/virgin_mary)
+	user.say("Как горит этот святой, так будет гореть и моя душа. Я вхожу живым, и мне придётся выйти мертвым.", forced = /obj/item/virgin_mary)
 	to_chat(user, span_userdanger("Being inducted into the mafia does not grant antagonist status."))
 
 #undef NICKNAME_CAP
