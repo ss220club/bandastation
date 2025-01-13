@@ -36,3 +36,25 @@
 			var/list/A = admins[i]
 			.["admin[i - 1]"] = A[1]
 			.["adminrank[i - 1]"] = A[2]
+
+/datum/world_topic/adminwho/Run(list/input)
+	var/list/out_data = list()
+	for(var/client/admin_client as anything in GLOB.admins)
+		var/list/this_entry = list()
+		// Send both incase we want special formatting
+		this_entry["ckey"] = admin_client.ckey
+		this_entry["key"] = admin_client.key
+		this_entry["rank"] = admin_client.holder.ranks.Join("/")
+		// is_afk() returns an int of inactivity, we can use this to determine AFK for how long
+		// This info will not be shown in public channels
+		this_entry["afk"] = admin_client.is_afk()
+		if(admin_client.holder.fakekey)
+			this_entry["stealth"] = "STEALTH"
+			this_entry["skey"] = admin_client.holder.fakekey
+		else
+			this_entry["stealth"] = "NONE"
+			this_entry["skey"] = "NONE"
+
+		out_data += list(this_entry)
+
+	return out_data
