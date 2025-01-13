@@ -46,7 +46,7 @@
 
 /obj/item/virgin_mary/suicide_act(mob/living/user)
 	user.visible_message(span_suicide("[user] starts saying their Hail Mary's at a terrifying pace! It looks like [user.p_theyre()] trying to enter the afterlife!"))
-	user.say("Радуйся, Мария, полная благодати, Господь с Тобой. Благословенна ты среди женщин, и благословен плод чрева твоего, Иисус. Пресвятая Мария, Матерь Божия, молись за нас, грешных, сейчас и в час нашей смерти. Аминь.", forced = /obj/item/virgin_mary)
+	user.say("Радуйся, Мария, благодати полная! Господь с Тобою. Благословенна Ты между жёнами, и благословен плод чрева Твоего Иисус. Святая Мария, Матерь Божия, молись о нас, грешных, ныне и в час смерти нашей. Аминь.", forced = /obj/item/virgin_mary)
 	addtimer(CALLBACK(src, PROC_REF(manual_suicide), user), 7.5 SECONDS)
 	addtimer(CALLBACK(user, TYPE_PROC_REF(/atom/movable, say), "О Матерь моя, сохрани меня в этот день от смертного греха..."), 5 SECONDS)
 	return MANUAL_SUICIDE
