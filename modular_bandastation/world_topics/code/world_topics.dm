@@ -9,8 +9,9 @@
 		silero.is_enabled = TRUE
 		silero.failed_requests_limit += initial(silero.failed_requests_limit)
 		to_chat(world, "<span class='announce'>SERVER: провайдер Silero в подсистеме SStts220 принудительно включен!</span>")
-		return json_encode(list("success" = "SStts220\[Silero] was force enabled"))
-	return json_encode(list("error" = "SStts220\[Silero] is already enabled"))
+		return list("success" = "SStts220\[Silero] was force enabled")
+
+	return list("error" = "SStts220\[Silero] is already enabled")
 
 /datum/world_topic/playerlist
 	keyword = "playerlist"
@@ -21,16 +22,20 @@
 		var/client/C = I
 		keys += C.key
 
-	return json_encode(keys)
+	return keys
 
 /datum/world_topic/status/Run(list/input)
 	. = ..()
 	var/list/admins = list()
 	for(var/client/C in GLOB.clients)
-		if(C.holder)
-			if(C.holder.fakekey)
-				continue	//so stealthmins aren't revealed by the hub
-			admins += list(list(C.key, join_admin_ranks(C.holder.ranks)))
+		if(!C.holder)
+			continue
+
+		if(C.holder.fakekey)
+			continue	//so stealthmins aren't revealed by the hub
+
+		admins += list(list(C.key, join_admin_ranks(C.holder.ranks)))
+
 	if(key_valid)
 		for(var/i in 1 to admins.len)
 			var/list/A = admins[i]
