@@ -42,6 +42,11 @@ GLOBAL_LIST_EMPTY(objectives)
 	control_computer_weakref = null
 	return ..()
 
+/obj/machinery/cryopod/examine(mob/user)
+	. = ..()
+	if(occupant)
+		. += span_notice("Внутри находится [occupant].")
+
 /obj/machinery/cryopod/blob_act()
 	return // It shouldn't be destroyed in any possible game way
 
