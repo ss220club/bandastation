@@ -96,6 +96,10 @@ GLOBAL_LIST_EMPTY(objectives)
 	else
 		RegisterSignal(mob_occupant, COMSIG_MOB_LOGOUT, PROC_REF(on_occupant_logout))
 
+/// Checks if the target can be put inside cryopod
+/obj/machinery/cryopod/proc/can_be_put_inside(mob/target)
+	return isnull(validate_put_inside(target))
+
 /obj/machinery/cryopod/proc/on_occupant_death(mob/living/dead_mob)
 	SIGNAL_HANDLER
 
@@ -384,14 +388,12 @@ GLOBAL_LIST_EMPTY(objectives)
 
 /// Just call close_machine for the target after 10 seconds do_after, without any checks, except in `do_after`
 /obj/machinery/cryopod/proc/place_inside(mob/target, mob/user)
+	PRIVATE_PROC(TRUE)
+
 	if(!do_after(user, 5 SECONDS, target, extra_checks = CALLBACK(src, PROC_REF(validate_put_inside_and_alert_user), target, target)))
 		return
 
 	close_machine(target)
-
-/// Checks if the target can be put inside cryopod
-/obj/machinery/cryopod/proc/can_be_put_inside(mob/target)
-	return isnull(validate_put_inside(target))
 
 /// Validates if the target can be put inside.
 /// Returns `null` if the target can be put inside, otherwise returns error message
