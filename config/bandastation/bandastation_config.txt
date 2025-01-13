@@ -79,3 +79,7 @@ OBJECTIVES_POP_SCALE_PENALTY 30
 #ALLOW_CREW_TRANSFER_VOTE
 ## If automatic crew transfer is enabled
 #ENABLE_AUTOMATIC_CREW_TRANSFER
+
+# Cryo
+## Time in deciseconds the mob must be clientless for to be despawned by cryopod. 30 minutes by default
+#CRYO_MIN_SSD_TIME 18000
