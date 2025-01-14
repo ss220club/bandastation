@@ -1,4 +1,5 @@
-import { Box, TextArea } from '../../../../components';
+import { Box, TextArea } from 'tgui-core/components';
+
 import { FeatureShortTextData, FeatureValueProps } from './base';
 
 export const FeatureTextInput = (

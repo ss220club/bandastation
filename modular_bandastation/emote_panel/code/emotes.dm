@@ -12,6 +12,10 @@
 	else
 		return 'modular_bandastation/emote_panel/audio/male/sniff_male.ogg'
 
+/datum/emote/living/carbon/scratch/New()
+	mob_type_allowed_typecache += list(/mob/living/carbon/human)
+	. = ..()
+
 // Vulpkanin
 
 /datum/emote/living/carbon/human/vulpkanin/can_run_emote(mob/user, status_check = TRUE, intentional = FALSE)

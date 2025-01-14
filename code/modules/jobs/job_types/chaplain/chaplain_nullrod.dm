@@ -30,7 +30,7 @@
 	AddComponent(/datum/component/anti_magic, MAGIC_RESISTANCE|MAGIC_RESISTANCE_HOLY)
 	AddComponent(/datum/component/effect_remover, \
 		success_feedback = "You disrupt the magic of %THEEFFECT with %THEWEAPON.", \
-		success_forcesay = "BEGONE FOUL MAGIKS!!", \
+		success_forcesay = "ПРОЧЬ ЗЛАЯ СКВЕРНА!!", \
 		tip_text = "Clear rune", \
 		on_clear_callback = CALLBACK(src, PROC_REF(on_cult_rune_removed)), \
 		effects_we_clear = list(/obj/effect/rune, /obj/effect/heretic_rune, /obj/effect/cosmic_rune), \
@@ -190,10 +190,10 @@
 	menu_description = "An odd sharp blade which provides a low chance of blocking incoming melee attacks and deals a random amount of damage, which can range from almost nothing to very high. Can be worn on the back."
 
 /obj/item/nullrod/claymore/multiverse/melee_attack_chain(mob/user, atom/target, params)
-	var/old_force = force
-	force += rand(-14, 15)
+	var/force_mod = rand(-14, 15)
+	force += force_mod
 	. = ..()
-	force = old_force
+	force -= force_mod
 
 /obj/item/nullrod/claymore/saber
 	name = "light energy sword"
@@ -839,9 +839,11 @@
 	//We do this because our force could have been changed by things like whetstones and RPG stats.
 	force += old_force - initial(force)
 
+	//Record change to our force in case something modifies it down the chain
+	var/force_diff = force - old_force
 	. = ..()
 	//Reapply our old force.
-	force = old_force
+	force -= force_diff
 
 /obj/item/nullrod/nullblade/afterattack(atom/target, mob/user, click_parameters)
 	if(!isliving(target))

@@ -18,16 +18,12 @@
 
 /obj/item/clothing/shoes/cowboy/Initialize(mapload)
 	. = ..()
-
 	create_storage(storage_type = /datum/storage/pockets/shoes)
-
-	if(prob(2))
-		//There's a snake in my boot
+	if(prob(2)) //There's a snake in my boot
 		new /mob/living/basic/snake(src)
-
 	if(has_spurs)
 		LoadComponent(/datum/component/squeak, spur_sound, 50, falloff_exponent = 20)
-
+	AddElement(/datum/element/ignites_matches)
 
 /obj/item/clothing/shoes/cowboy/equipped(mob/living/carbon/user, slot)
 	. = ..()
@@ -51,7 +47,7 @@
 	INVOKE_ASYNC(src, PROC_REF(handle_table_slam), source)
 
 /obj/item/clothing/shoes/cowboy/proc/handle_table_slam(mob/living/user)
-	user.say(pick("Hot damn!", "Hoo-wee!", "Got-dang!"), spans = list(SPAN_YELL), forced=TRUE)
+	user.say(pick("Гаддэмн!", "Хоооу-и!", "Гат-дэнг!"), spans = list(SPAN_YELL), forced=TRUE)
 	user.client?.give_award(/datum/award/achievement/misc/hot_damn, user)
 
 /obj/item/clothing/shoes/cowboy/mouse_drop_receive(mob/living/target, mob/living/user, params)

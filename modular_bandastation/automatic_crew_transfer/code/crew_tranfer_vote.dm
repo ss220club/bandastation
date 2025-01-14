@@ -22,11 +22,14 @@
 
 	switch(SSticker.current_state)
 		if(GAME_STATE_PLAYING)
+			if(!EMERGENCY_IDLE_OR_RECALLED)
+				return "Шаттл не может быть вызван."
+
 			return VOTE_AVAILABLE
 		if(GAME_STATE_FINISHED)
-			return "Game already finished."
+			return "Раунд уже закончен."
 		else
-			return "Game not started yet."
+			return "Раунд еще не начался."
 
 /datum/vote/crew_transfer/finalize_vote(winning_option)
 	switch(winning_option)
@@ -40,6 +43,11 @@
 
 /datum/vote/crew_transfer/proc/initiate_tranfer()
 	PRIVATE_PROC(TRUE)
+
+	if(!EMERGENCY_IDLE_OR_RECALLED)
+		log_admin("Shuttle can't be called by automatic crew transfer vote because it's already in use or disabled.")
+		message_admins(span_adminnotice("Shuttle can't be called by automatic crew transfer vote because it's already in use or disabled."))
+		return
 
 	SSshuttle.admin_emergency_no_recall = TRUE
 	SSshuttle.emergency.mode = SHUTTLE_IDLE

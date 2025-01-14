@@ -19,7 +19,7 @@
 		playsound(src, 'sound/misc/sadtrombone.ogg', 50, TRUE, -1)
 		return SHAME
 	user.visible_message(span_suicide("[user] is putting \the [src] in [user.p_their()] ear and starts [user.p_their()] motor! Кажется, [user.ru_p_they()] пытается совершить самоубийство!"))
-	user.say("Vroom vroom!!", forced="secway key suicide") //Not doing a shamestate here, because even if they fail to speak they're spinning.
+	user.say("Врум-врум!!", forced="secway key suicide") //Not doing a shamestate here, because even if they fail to speak they're spinning.
 	addtimer(CALLBACK(user, TYPE_PROC_REF(/mob/living/, gib)), 2 SECONDS)
 	return MANUAL_SUICIDE
 
@@ -34,11 +34,11 @@
 	attack_verb_continuous = list("stubs", "pokes")
 	attack_verb_simple = list("stub", "poke")
 	sharpness = SHARP_EDGED
-	embed_type = /datum/embed_data/janicart_key
+	embed_type = /datum/embedding/janicart_key
 	wound_bonus = -1
 	bare_wound_bonus = 2
 
-/datum/embed_data/janicart_key
+/datum/embedding/janicart_key
 	pain_mult = 1
 	embed_chance = 30
 	fall_chance = 70

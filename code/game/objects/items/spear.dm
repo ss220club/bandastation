@@ -13,7 +13,7 @@
 	throwforce = 20
 	throw_speed = 4
 	demolition_mod = 0.75
-	embed_type = /datum/embed_data/spear
+	embed_type = /datum/embedding/spear
 	armour_penetration = 10
 	custom_materials = list(/datum/material/iron = HALF_SHEET_MATERIAL_AMOUNT, /datum/material/glass= HALF_SHEET_MATERIAL_AMOUNT * 2)
 	hitsound = 'sound/items/weapons/bladeslice.ogg'
@@ -25,7 +25,7 @@
 	wound_bonus = -15
 	bare_wound_bonus = 15
 	/// For explosive spears, what we cry out when we use this to bap someone
-	var/war_cry = "AAAAARGH!!!"
+	var/war_cry = "ААААААРРР!!!"
 	/// The icon prefix for this flavor of spear
 	var/icon_prefix = "spearglass"
 	/// How much damage to do unwielded
@@ -33,7 +33,7 @@
 	/// How much damage to do wielded
 	var/force_wielded = 18
 
-/datum/embed_data/spear
+/datum/embedding/spear
 	impact_pain_mult = 2
 	remove_pain_mult = 4
 	jostle_chance = 2.5

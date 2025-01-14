@@ -103,7 +103,7 @@
 	return TRUE
 
 /datum/martial_art/plasma_fist/proc/Apotheosis(mob/living/user, mob/living/target)
-	user.say("APOTHEOSIS!!", forced="plasma fist")
+	user.say("АПОФЕОЗ!!", forced="plasma fist")
 	if (ishuman(user))
 		var/mob/living/carbon/human/human_attacker = user
 		human_attacker.set_species(/datum/species/plasmaman)

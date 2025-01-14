@@ -6,8 +6,7 @@
 
 /obj/structure/closet/secure_closet/nanotrasen_representative/PopulateContents()
 	new /obj/item/storage/briefcase/secure(src)
-	new /obj/item/radio/headset/headset_cent(src)
-	new /obj/item/radio/headset/headset_cent/alt(src)
+	new /obj/item/radio/headset/heads/nanotrasen_representative(src)
 	new /obj/item/pai_card(src)
 	new /obj/item/assembly/flash/handheld(src)
 	new /obj/item/taperecorder(src)

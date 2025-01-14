@@ -1,6 +1,6 @@
 /datum/antagonist/rev
 	name = "\improper Revolutionary"
-	roundend_category = "revolutionaries" // if by some miracle revolutionaries without revolution happen
+	roundend_category = "Революционеры" // if by some miracle revolutionaries without revolution happen
 	antagpanel_category = "Revolution"
 	job_rank = ROLE_REV
 	antag_moodlet = /datum/mood_event/revolution
@@ -310,6 +310,7 @@
 	to_chat(old_owner, span_userdanger("Revolution has been disappointed of your leader traits! You are a regular revolutionary now!"))
 
 /datum/antagonist/rev/farewell()
+	owner.current.balloon_alert_to_viewers("deconverted!")
 	if(ishuman(owner.current))
 		owner.current.visible_message(span_deconversion_message("[owner.current] looks like [owner.current.p_theyve()] just remembered [owner.current.p_their()] real allegiance!"), null, null, null, owner.current)
 		to_chat(owner, "<span class='deconversion_message bold'>You are no longer a brainwashed revolutionary! Your memory is hazy from the time you were a rebel...the only thing you remember is the name of the one who brainwashed you....</span>")
@@ -320,6 +321,7 @@
 /datum/antagonist/rev/head/farewell()
 	if (deconversion_source == DECONVERTER_STATION_WIN)
 		return
+	owner.current.balloon_alert_to_viewers("deconverted!")
 	if((ishuman(owner.current)))
 		if(owner.current.stat != DEAD)
 			owner.current.visible_message(span_deconversion_message("[owner.current] looks like [owner.current.p_theyve()] just remembered [owner.current.p_their()] real allegiance!"), null, null, null, owner.current)

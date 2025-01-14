@@ -1,4 +1,4 @@
-import { Box, NoticeBox, Section, Stack } from '../../components';
+import { Box, NoticeBox, Section, Stack } from 'tgui-core/components';
 
 const ORDER_TEXT = `Работники станции могут делать заказы на соотвествующее
       их отделам снаряжение с помощью специальных консолей. Эти заказы абсолютно
