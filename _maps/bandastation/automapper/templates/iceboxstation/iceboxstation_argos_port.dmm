@@ -145,6 +145,11 @@
 	},
 /turf/open/floor/iron/textured,
 /area/station/hallway/secondary/entry)
+"qs" = (
+/obj/structure/cable,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/turf/open/floor/iron,
+/area/station/hallway/secondary/entry)
 "qu" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -327,7 +332,6 @@
 /obj/item/tank/internals/emergency_oxygen,
 /obj/item/clothing/mask/gas,
 /obj/item/clothing/mask/gas,
-/obj/item/radio/intercom/directional/west,
 /obj/structure/cable,
 /obj/effect/turf_decal/delivery/red,
 /turf/open/floor/iron/dark/textured,
@@ -1109,7 +1113,7 @@ wx
 nE
 DK
 bD
-Su
+qs
 ik
 vh
 se
