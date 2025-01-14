@@ -6,7 +6,7 @@
 #define rock_color(color) MAP_SWITCH(color,"")
 #define ROCK_COLOR "#464646"
 #define ROCK_COLOR_RED "#861313"
-#define ROCK_COLOR_ICE "#accfd2"
+#define ROCK_COLOR_ICE "#cde2e4"
 #define ROCK_COLOR_ASH "#ccddff"
 
 // MARK: Minerals
@@ -17,6 +17,35 @@
 	color = rock_color(ROCK_COLOR)
 	transform = null
 
+/turf/closed/mineral/strong
+	icon = MAP_SWITCH(CONTRAST_ROCKS, MAPPING_ROCKS)
+	icon_state = "rock2"
+	base_icon_state = "smoothrocks"
+	color = rock_color(ROCK_COLOR_ASH)
+
+/turf/closed/mineral/strong/wasteland
+	icon = MAP_SWITCH(CONTRAST_ROCKS, MAPPING_ROCKS)
+	base_icon_state = "smoothrocks"
+
+/turf/closed/mineral/ash_rock
+	icon = MAP_SWITCH(CONTRAST_ROCKS, MAPPING_ROCKS)
+	icon_state = "rock2"
+	base_icon_state = "smoothrocks"
+	color = rock_color(ROCK_COLOR_ASH)
+
+/turf/closed/mineral/random/stationside/asteroid
+	icon = MAP_SWITCH(CONTRASTLESS_ROCKS, MAPPING_ROCKS)
+	icon_state = "rock_nochance"
+	base_icon_state = "smoothrocks"
+	color = rock_color(ROCK_COLOR_RED)
+
+/turf/closed/mineral/asteroid
+	icon = MAP_SWITCH(CONTRASTLESS_ROCKS, MAPPING_ROCKS)
+	icon_state = "redrock"
+	base_icon_state = "smoothrocks"
+	color = rock_color(ROCK_COLOR_RED)
+
+// Cold rocks
 /turf/closed/mineral/snowmountain
 	icon = MAP_SWITCH(CONTRASTLESS_ROCKS, MAPPING_ROCKS)
 	icon_state = "mountainrock"
@@ -38,9 +67,6 @@
 /turf/closed/mineral/random/snow/Change_Ore(ore_type, random = 0)
 	. = ..()
 	if(mineralType)
-		icon = DEFAULT_ROCKS
-		icon_state = "smoothrocks-0"
-		base_icon_state = "smoothrocks"
 		color = ROCK_COLOR_ICE
 
 /turf/closed/mineral/random/labormineral/ice
@@ -49,23 +75,10 @@
 	base_icon_state = "smoothrocks"
 	color = rock_color(COLOR_WHITE)
 
-/turf/closed/mineral/random/stationside/asteroid
+/turf/closed/mineral/gibtonite/ice
 	icon = MAP_SWITCH(CONTRASTLESS_ROCKS, MAPPING_ROCKS)
-	icon_state = "rock_nochance"
 	base_icon_state = "smoothrocks"
-	color = rock_color(ROCK_COLOR_RED)
-
-/turf/closed/mineral/ash_rock
-	icon = MAP_SWITCH(CONTRAST_ROCKS, MAPPING_ROCKS)
-	icon_state = "rock2"
-	base_icon_state = "smoothrocks"
-	color = rock_color(ROCK_COLOR_ASH)
-
-/turf/closed/mineral/asteroid
-	icon = MAP_SWITCH(CONTRASTLESS_ROCKS, MAPPING_ROCKS)
-	icon_state = "redrock"
-	base_icon_state = "smoothrocks"
-	color = rock_color(ROCK_COLOR_RED)
+	color = rock_color(ROCK_COLOR_ICE)
 
 // MARK: Walls
 /turf/closed/indestructible/rock
@@ -89,15 +102,17 @@
 
 /turf/closed/indestructible/rock/snow/ice
 	icon = MAP_SWITCH(CONTRASTLESS_ROCKS, MAPPING_ROCKS)
-	icon_state = "icerock2"
+	icon_state = "icerock"
 	base_icon_state = "smoothrocks"
 	color = rock_color(ROCK_COLOR_ICE)
 
 /turf/closed/indestructible/rock/snow/ice/ore
 	icon = MAP_SWITCH(DEFAULT_ROCKS, MAPPING_ROCKS)
-	icon_state = "icerock"
+	icon_state = "icerock2"
 	base_icon_state = "smoothrocks"
 	color = rock_color(ROCK_COLOR_ICE)
+	pixel_x = 0
+	pixel_y = 0
 
 #undef CONTRASTLESS_ROCKS
 #undef CONTRAST_ROCKS
