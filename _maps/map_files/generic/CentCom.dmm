@@ -2925,6 +2925,12 @@
 /obj/effect/turf_decal/stripes/end{
 	dir = 1
 	},
+/obj/machinery/button/door/indestructible{
+	name = "Light ERT Gear";
+	id = "CC_Light_1";
+	req_access = list("cent_captain");
+	pixel_y = 24
+	},
 /turf/open/floor/iron/smooth_edge{
 	dir = 4
 	},
@@ -8367,6 +8373,12 @@
 /obj/effect/turf_decal/stripes/end{
 	dir = 1
 	},
+/obj/machinery/button/door/indestructible{
+	name = "Heavy ERT Gear";
+	id = "CC_Heavy_1";
+	pixel_y = 24;
+	req_access = list("cent_captain")
+	},
 /turf/open/floor/iron/smooth_edge{
 	dir = 8
 	},
@@ -8803,6 +8815,15 @@
 /obj/structure/chair/sofa/right/brown,
 /turf/open/floor/wood/tile,
 /area/centcom/central_command_areas/planetary_port/hotel)
+"uv" = (
+/obj/machinery/button/door/indestructible{
+	pixel_x = -6;
+	name = "Civil Exosuit Storage";
+	id = "CC_Mech_2";
+	req_access = list("cent_captain")
+	},
+/turf/closed/indestructible/riveted,
+/area/centcom/central_command_areas/armory)
 "uw" = (
 /obj/effect/decal/nt_logo{
 	color = "#6b8cc4";
@@ -14787,11 +14808,6 @@
 /turf/open/floor/wood,
 /area/centcom/central_command_areas/admin)
 "HU" = (
-/obj/machinery/button/door/indestructible{
-	pixel_x = 24;
-	name = "Civil Exosuit Storage";
-	id = "CC_Mech_2"
-	},
 /obj/effect/turf_decal/line/dark_blue{
 	dir = 8
 	},
@@ -16698,6 +16714,15 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/catwalk_floor/iron_dark,
 /area/centcom/central_command_areas/maintance)
+"MB" = (
+/obj/machinery/button/door/indestructible{
+	pixel_x = 6;
+	id = "CC_Mech_1";
+	name = "Combat Exosuit Storage";
+	req_access = list("cent_captain")
+	},
+/turf/closed/indestructible/riveted,
+/area/centcom/central_command_areas/armory)
 "MC" = (
 /obj/structure/flora/grass/jungle/b,
 /obj/effect/decal/cleanable/garbage{
@@ -21349,6 +21374,25 @@
 /obj/structure/bookcase/manuals/engineering,
 /turf/open/floor/wood/large,
 /area/centcom/central_command_areas/planetary_port/library)
+"Xy" = (
+/obj/machinery/button/door/indestructible{
+	pixel_x = -24;
+	pixel_y = 7;
+	id = "CC_Assault_1";
+	name = "Assault Gear";
+	req_access = list("cent_captain")
+	},
+/obj/machinery/button/door/indestructible{
+	pixel_x = -24;
+	pixel_y = -7;
+	id = "CC_Energy_1";
+	name = "Energy Counter-Combat Gear";
+	req_access = list("cent_captain")
+	},
+/turf/open/floor/iron/smooth_half{
+	dir = 1
+	},
+/area/centcom/central_command_areas/armory)
 "Xz" = (
 /obj/structure/sign/directions/security/directional/east,
 /obj/structure/sign/directions/medical/directional/east{
@@ -76427,7 +76471,7 @@ jY
 Hm
 WV
 lu
-lu
+Xy
 lu
 WV
 XR
@@ -76699,7 +76743,7 @@ Ya
 Ya
 Ya
 qo
-Ya
+MB
 qo
 Ya
 Jb
@@ -77727,7 +77771,7 @@ Ya
 Ya
 Ya
 qB
-Ya
+uv
 qB
 Ya
 il
