@@ -51,7 +51,7 @@ SUBSYSTEM_DEF(http)
 		req.cb = proc_callback
 
 	// Begin it and add it to the SS active list
-	req.begin_asyn
+	req.begin_async()
 	active_async_requests += req
 	total_requests++
 
