@@ -11,10 +11,6 @@ SUBSYSTEM_DEF(http)
 	/// Total requests the SS has processed in a round
 	var/total_requests
 
-/datum/controller/subsystem/http/PreInit()
-	. = ..()
-	rustgss220_create_async_http_client() // Open the door
-
 /datum/controller/subsystem/http/fire(resumed)
 	for(var/r in active_async_requests)
 		var/datum/http_request/req = r
@@ -55,7 +51,7 @@ SUBSYSTEM_DEF(http)
 		req.cb = proc_callback
 
 	// Begin it and add it to the SS active list
-	req.begin_async()
+	req.begin_asyn
 	active_async_requests += req
 	total_requests++
 
@@ -84,7 +80,3 @@ SUBSYSTEM_DEF(http)
 /datum/http_request
 	/// Callback for executing after async requests. Will be called with an argument of [/datum/http_response] as first argument
 	var/datum/callback/cb
-
-/world/Del()
-	rustgss220_close_async_http_client()
-	. = ..()
