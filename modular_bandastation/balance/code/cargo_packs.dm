@@ -1,6 +1,6 @@
 // MARK: WEAPONS
 /datum/supply_pack/security/disabler
-	cost = CARGO_CRATE_VALUE * 6 // Original price: 600  Approximate new price: 1200
+	cost = CARGO_CRATE_VALUE * 6 // Original price: 600 Approximate new price: 1200
 
 /datum/supply_pack/security/laser
 	cost = CARGO_CRATE_VALUE * 8 // Original price: 800 Approximate new price: 1600
@@ -18,7 +18,7 @@
 	cost = CARGO_CRATE_VALUE * 18 // Original price: 1400 Approximate new price: 3600
 
 /datum/supply_pack/security/armory/battle_rifle
-	cost = CARGO_CRATE_VALUE * 150 // Original price: 20000  Approximate new price: 30000
+	cost = CARGO_CRATE_VALUE * 150 // Original price: 20000 Approximate new price: 30000
 
 /datum/supply_pack/goody/mars_single
 	cost = PAYCHECK_CREW * 80 // Original price: 2000 Approximate new price: 4000
@@ -30,7 +30,7 @@
 	cost = PAYCHECK_COMMAND * 6 // Original price: 300 Approximate new price: 600
 
 /datum/supply_pack/goody/energy_single
-	cost = PAYCHECK_COMMAND * 24 // Original price: 1200  Approximate new price: 2400
+	cost = PAYCHECK_COMMAND * 24 // Original price: 1200 Approximate new price: 2400
 
 /datum/supply_pack/goody/laser_single
 	cost = PAYCHECK_COMMAND * 12 // Original price: 600 Approximate new price: 1200
@@ -66,28 +66,28 @@
 
 // MARK: SCIENCE
 /datum/supply_pack/science/raw_flux_anomaly
-	cost = CARGO_CRATE_VALUE * 25 // Original price: 2000 New price: 5000
+	cost = CARGO_CRATE_VALUE * 25 // Original price: 2000 Approximate new price: 5000
 
 /datum/supply_pack/science/raw_hallucination_anomaly
-	cost = CARGO_CRATE_VALUE * 25 // Original price: 2000 New price: 5000
+	cost = CARGO_CRATE_VALUE * 25 // Original price: 2000 Approximate new price: 5000
 
 /datum/supply_pack/science/raw_grav_anomaly
-	cost = CARGO_CRATE_VALUE * 25 // Original price: 2000 New price: 5000
+	cost = CARGO_CRATE_VALUE * 25 // Original price: 2000 Approximate new price: 5000
 
 /datum/supply_pack/science/raw_vortex_anomaly
-	cost = CARGO_CRATE_VALUE * 25 // Original price: 2000 New price: 5000
+	cost = CARGO_CRATE_VALUE * 25 // Original price: 2000 Approximate new price: 5000
 
 /datum/supply_pack/science/raw_ectoplasm_anomaly
-	cost = CARGO_CRATE_VALUE * 25 // Original price: 2000 New price: 5000
+	cost = CARGO_CRATE_VALUE * 25 // Original price: 2000 Approximate new price: 5000
 
 /datum/supply_pack/science/raw_bluespace_anomaly
-	cost = CARGO_CRATE_VALUE * 25 // Original price: 2000 New price: 5000
+	cost = CARGO_CRATE_VALUE * 25 // Original price: 2000 Approximate new price: 5000
 
 /datum/supply_pack/science/raw_pyro_anomaly
-	cost = CARGO_CRATE_VALUE * 25 // Original price: 2000 New price: 5000
+	cost = CARGO_CRATE_VALUE * 25 // Original price: 2000 Approximate new price: 5000
 
 /datum/supply_pack/science/raw_bioscrambler_anomaly
-	cost = CARGO_CRATE_VALUE * 25 // Original price: 2000 New price: 5000
+	cost = CARGO_CRATE_VALUE * 25 // Original price: 2000 Approximate new price: 5000
 
 /datum/supply_pack/science/raw_dimensional_anomaly
-	cost = CARGO_CRATE_VALUE * 25 // Original price: 2000 New price: 5000
+	cost = CARGO_CRATE_VALUE * 25 // Original price: 2000 Approximate new price: 5000
