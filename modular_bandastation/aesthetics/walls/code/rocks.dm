@@ -54,7 +54,7 @@
 
 /turf/closed/mineral/snowmountain/cavern
 	icon = MAP_SWITCH(DEFAULT_ROCKS, MAPPING_ROCKS)
-	icon_state = "icerock"
+	icon_state = "icerock2"
 	base_icon_state = "smoothrocks"
 	color = rock_color(ROCK_COLOR_ICE)
 
