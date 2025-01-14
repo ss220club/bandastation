@@ -1,4 +1,4 @@
-#define MAX_STATION_TRAIT_BUTTONS_VERTICAL 3
+#define MAX_STATION_TRAIT_BUTTONS_VERTICAL 4
 
 /**
  * Get the HTML of title screen.
@@ -54,10 +54,10 @@
 	html += {"</div>"}
 
 	html += {"<div class="lobby_buttons-bottom">"}
-	html += create_icon_button(player, "changelog", "Открыть чейнджлог")
 	html += create_icon_button(player, "settings", "Настройки игры")
 	html += create_icon_button(player, "manifest", "Манифест персонала")
 	html += create_icon_button(player, "wiki", "Перейти на вики")
+	html += create_icon_button(player, "changelog", "Открыть чейнджлог")
 	html += {"</div>"}
 
 	if(length(GLOB.lobby_station_traits))
@@ -71,7 +71,7 @@
 			if(!trait.can_display_lobby_button(player.client))
 				continue
 
-			if(number > MAX_STATION_TRAIT_BUTTONS_VERTICAL) // 3 is a maximum
+			if(number > MAX_STATION_TRAIT_BUTTONS_VERTICAL)
 				break
 
 			number++
@@ -95,9 +95,10 @@
 		html += {"</div>"}
 
 	html += {"<div id="lobby_admin" class="lobby_buttons-right invisible">"}
-	html += create_icon_button(player, "picture", "Сменить изображение", "right")
+	html += create_icon_button(player, "start_now", "Запустить раунд", "right", SSticker && SSticker.current_state <= GAME_STATE_PREGAME)
+	html += create_icon_button(player, "delay", "Отложить начало раунда", "right", SSticker && SSticker.current_state <= GAME_STATE_PREGAME)
 	html += create_icon_button(player, "notice", "Оставить уведомление", "right")
-	html += create_icon_button(player, "css", "Заменить CSS лобби", "right")
+	html += create_icon_button(player, "picture", "Сменить изображение", "right")
 	html += {"</div>"}
 
 	html += {"

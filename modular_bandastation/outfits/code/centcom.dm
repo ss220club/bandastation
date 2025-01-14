@@ -26,15 +26,15 @@
 
 // CentCom Junior-Officer
 /datum/outfit/centcom/centcom_intern
-	name = "CentCom Junior Officer"
+	name = "Nanotrasen Navy Junior Officer"
 
 	id_trim = /datum/id_trim/centcom/intern
 
 /datum/outfit/centcom/centcom_intern/unarmed
-	name = "CentCom Junior Officer (Unarmed)"
+	name = "Nanotrasen Navy Junior Officer (Unarmed)"
 
 /datum/outfit/centcom/centcom_intern/leader
-	name = "CentCom Junior Officer Chief"
+	name = "Nanotrasen Navy Junior Officer Chief"
 
 	suit = /obj/item/clothing/suit/armor/vest
 	suit_store = /obj/item/gun/ballistic/rifle/boltaction
@@ -43,19 +43,19 @@
 	l_hand = /obj/item/megaphone
 
 /datum/outfit/centcom/centcom_intern/leader/unarmed
-	name = "CentCom Junior Officer Chief (Unarmed)"
+	name = "Nanotrasen Navy Junior Officer Chief (Unarmed)"
 
 /datum/id_trim/centcom/intern
 	access = list(ACCESS_CENT_GENERAL, ACCESS_CENT_LIVING, ACCESS_WEAPONS)
-	assignment = "CentCom Junior Officer"
+	assignment = "Nanotrasen Navy Junior Officer"
 	big_pointer = FALSE
 
 /datum/id_trim/centcom/intern/head
-	assignment = "CentCom Junior Officer Chief"
+	assignment = "Nanotrasen Navy Junior Officer Chief"
 
 // CentCom Navy Officer
 /datum/outfit/centcom/commander
-	name = "CentCom Navy Officer"
+	name = "Nanotrasen Navy Officer"
 
 	id = /obj/item/card/id/advanced/centcom
 	id_trim = /datum/id_trim/centcom/commander
@@ -77,11 +77,11 @@
 	l_pocket = /obj/item/reagent_containers/hypospray/combat/nanites
 
 /datum/id_trim/centcom/commander
-	assignment = "CentCom Navy Officer"
+	assignment = "Nanotrasen Navy Officer"
 
 // CentCom Field Officer
 /datum/outfit/centcom/commander/field
-	name = "CentCom Field Officer"
+	name = "Nanotrasen Navy Field Officer"
 
 	id = /obj/item/card/id/advanced/centcom
 	id_trim = /datum/id_trim/centcom/commander/field
@@ -98,7 +98,7 @@
 	r_pocket = /obj/item/lighter
 
 /datum/id_trim/centcom/commander/field
-	assignment = "CentCom Field Officer"
+	assignment = "Nanotrasen Navy Field Officer"
 
 // CentCom Diplomat
 /datum/outfit/centcom/diplomat

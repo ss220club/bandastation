@@ -193,6 +193,16 @@ a.lobby_element.good .lobby-text:before {
 	margin-right: 0.33em;
 }
 
+a.lobby_element.disabled {
+	pointer-events: none;
+	color: hsl(345, 100%, 70%);
+}
+
+a.lobby_element.disabled:after {
+	background-color: hsl(345, 100%, 70%);
+	transform: scaleY(1);
+}
+
 /**
  * MARK: Traits
  */
@@ -319,16 +329,20 @@ a.lobby_element.good .lobby-text:before {
 	content: '\f02d';
 }
 
-.lobby-picture .lobby-tooltip .lobby-tooltip-content:before {
-	content: '\f03e';
+.lobby-start_now .lobby-tooltip .lobby-tooltip-content:before {
+	content: '\f144';
+}
+
+.lobby-delay .lobby-tooltip .lobby-tooltip-content:before {
+	content: '\f28b';
 }
 
 .lobby-notice .lobby-tooltip .lobby-tooltip-content:before {
 	content: '\f06a';
 }
 
-.lobby-css .lobby-tooltip .lobby-tooltip-content:before {
-	content: '\f1c9';
+.lobby-picture .lobby-tooltip .lobby-tooltip-content:before {
+	content: '\f03e';
 }
 
 /**
