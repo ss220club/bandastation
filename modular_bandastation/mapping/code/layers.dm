@@ -10,7 +10,7 @@
 	layer = SIGN_LAYER
 
 /obj/machinery/door/poddoor
-	layer = ABOVE_WINDOW_LAYER
+	layer = BLASTDOOR_LAYER
 	closingLayer = ABOVE_WINDOW_LAYER
 
 /obj/machinery/door/poddoor/shutters
