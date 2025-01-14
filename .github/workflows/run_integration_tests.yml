@@ -34,7 +34,7 @@ jobs:
       - name: Install required packages
         run: |
           sudo apt-get update
-          sudo apt-get install -y zlib1g
+          sudo apt install zlib1g-dev
       - uses: actions/checkout@v4
       - name: Restore BYOND cache
         uses: actions/cache@v4
