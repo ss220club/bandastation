@@ -6,17 +6,17 @@
 	overlay_icon_state = "bg_revenant_border"
 	button_icon_state = "voice_changer"
 	var/overrides
-	var/list/traits = list()
+	var/list/addition_effects = list()
 
 /datum/action/innate/voice_change/Activate()
-	owner.change_tts_seed(owner, overrides, traits)
+	owner.change_tts_seed(owner, overrides, addition_effects)
 
 /datum/action/innate/voice_change/robotic
-	traits = list(TTS_TRAIT_ROBOTIZE)
+	addition_effects = list(TTS_SOUND_EFFECT_ROBOT)
 
 /datum/action/innate/voice_change/genderless
 	desc = "Изменяет TTS вне зависимости от пола и с учетом уровня подписки."
 	overrides = TTS_OVERRIDE_GENDER
 
 /datum/action/innate/voice_change/genderless/robotic
-	traits = list(TTS_TRAIT_ROBOTIZE)
+	addition_effects = list(TTS_SOUND_EFFECT_ROBOT)

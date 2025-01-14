@@ -217,6 +217,7 @@
 	if(!client)
 		return FALSE
 
+	msg = replacetext_char(msg, "+", null) // Bandastation addition - Silero TTS
 	msg = copytext_char(msg, 1, MAX_MESSAGE_LEN)
 
 	// Return TRUE if we sent the original msg, otherwise return FALSE

@@ -1,4 +1,4 @@
-//from base of datum/component/tts_component/cast_tts(): (atom/speaker, mob/listener, message, atom/location, is_local, effect, traits, preSFX, postSFX)
+//from base of datum/component/tts_component/cast_tts(): (atom/speaker, mob/listener, message, atom/location, is_local, is_radio, effect, traits, preSFX, postSFX)
 #define COMSIG_TTS_COMPONENT_PRE_CAST_TTS "tts_component_pre_cast_tts"
 	#define TTS_CAST_SPEAKER "tts_speaker"
 	#define TTS_CAST_LISTENER "tts_listener"
