@@ -840,11 +840,11 @@
 	var/used = min(charges_left, 10)
 	if(is_capped || !actually_paints || !use_charges(user, 10, FALSE))
 		user.visible_message(span_suicide("[user] shakes up [src] with a rattle and lifts it to [user.p_their()] mouth, but nothing happens!"))
-		user.say("MEDIOCRE!!", forced = "spraycan suicide")
+		user.say("БЕЗДАРНОСТЬ!!!", forced = "spraycan suicide")
 		return SHAME
 
 	user.visible_message(span_suicide("[user] shakes up [src] with a rattle and lifts it to [user.p_their()] mouth, spraying paint across [user.p_their()] teeth!"))
-	user.say("WITNESS ME!!", forced = "spraycan suicide")
+	user.say("ОСВИДЕТЕЛЬСТВУЙТЕ МЕНЯ!!!", forced = "spraycan suicide")
 	if(pre_noise || post_noise)
 		playsound(src, 'sound/effects/spray.ogg', 5, TRUE, 5)
 	if(can_change_colour)
