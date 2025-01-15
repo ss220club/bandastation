@@ -165,7 +165,7 @@
 	if(!location)
 		location = parent
 	if(is_radio)
-		additional_effects |= /datum/singleton/sound_effect/radio
+		additional_effects |= list(/datum/singleton/sound_effect/radio)
 		is_local = FALSE
 		if(listener == speaker) // don't hear both radio and whisper from yourself
 			return
