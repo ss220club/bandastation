@@ -104,6 +104,10 @@
 		if(string)
 			string += ","
 		string += "Hijack mission"
+	if (type in SSgamemode.current_storyteller.exclude_events)
+		if(string)
+			string += ","
+		string += "Disabled by choosen storyteller"
 	return string
 
 /datum/round_event_control/antagonist/return_failure_string(players_amt)
@@ -117,6 +121,19 @@
 			. += ", "
 		. += "No Required"
 	return .
+
+/datum/round_event_control/antagonist
+	checks_antag_cap = TRUE
+	track = EVENT_TRACK_ROLESET
+	///list of required roles, needed for this to form
+	var/list/exclusive_roles
+	/// Protected roles from the antag roll. People will not get those roles if a config is enabled
+	var/list/protected_roles
+	/// Restricted roles from the antag roll
+	var/list/restricted_roles
+	var/event_icon_state
+	//The number of forced antags to spawn with the event if it forced
+	var/forced_antags_count = 0
 
 /datum/round_event_control/antagonist/solo/return_failure_string(players_amt)
 	. =..()
@@ -176,17 +193,6 @@
 
 	if(!.)
 		return
-
-/datum/round_event_control/antagonist
-	checks_antag_cap = TRUE
-	track = EVENT_TRACK_ROLESET
-	///list of required roles, needed for this to form
-	var/list/exclusive_roles
-	/// Protected roles from the antag roll. People will not get those roles if a config is enabled
-	var/list/protected_roles
-	/// Restricted roles from the antag roll
-	var/list/restricted_roles
-	var/event_icon_state
 
 /datum/round_event_control/antagonist/proc/check_required()
 	if(!length(exclusive_roles))
@@ -340,9 +346,19 @@
 				for(var/datum/event_admin_setup/admin_setup_datum in src.admin_setup)
 					if(admin_setup_datum.prompt_admins() == ADMIN_CANCEL_EVENT)
 						return
-			message_admins("[key_name_admin(usr)] forced scheduled event [src.name].")
-			log_admin_private("[key_name(usr)] forced scheduled event [src.name].")
-			SSgamemode.forced_next_events[src.track] += src
+			if(ispath(type, /datum/round_event_control/antagonist))
+				var/new_value = input(usr, "How many players affected:", "Set value") as num|null
+				if(isnull(new_value) || new_value < 1)
+					return
+				message_admins("[key_name_admin(usr)] forced scheduled event [src.name] with count [new_value].")
+				log_admin_private("[key_name(usr)] forced scheduled event [src.name] with count [new_value].")
+				var/datum/round_event_control/antagonist/forced_antag_event = src
+				forced_antag_event.forced_antags_count = new_value
+				SSgamemode.forced_next_events[forced_antag_event.track] += forced_antag_event
+			else
+				message_admins("[key_name_admin(usr)] forced scheduled event [src.name].")
+				log_admin_private("[key_name(usr)] forced scheduled event [src.name].")
+				SSgamemode.forced_next_events[src.track] += src
 		if("fire")
 			if(length(src.admin_setup))
 				for(var/datum/event_admin_setup/admin_setup_datum in src.admin_setup)

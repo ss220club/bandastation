@@ -64,7 +64,7 @@
 
 /datum/round_event/antagonist/solo/setup()
 	var/datum/round_event_control/antagonist/solo/cast_control = control
-	antag_count = cast_control.get_antag_count_to_spawn(forced)
+	antag_count = forced && cast_control.forced_antags_count > 0 ? cast_control.forced_antags_count : cast_control.get_antag_count_to_spawn(forced)
 	if(!antag_count)
 		return
 
@@ -179,7 +179,7 @@
 
 /datum/round_event/antagonist/solo/ghost/setup()
 	var/datum/round_event_control/antagonist/solo/cast_control = control
-	antag_count = cast_control.get_antag_count_to_spawn(forced)
+	antag_count = forced && cast_control.forced_antags_count > 0 ? cast_control.forced_antags_count : cast_control.get_antag_count_to_spawn(forced)
 	if(!antag_count)
 		return
 

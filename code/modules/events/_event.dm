@@ -115,6 +115,8 @@
 		return FALSE
 	if(head_required_power > SSgamemode.current_head_power)
 		return FALSE
+	if(type in SSgamemode.current_storyteller.exclude_events)
+		return FALSE
 	// BANDASTATION EDIT END - STORYTELLER
 	if (dynamic_should_hijack && SSdynamic.random_event_hijacked != HIJACKED_NOTHING)
 		return FALSE

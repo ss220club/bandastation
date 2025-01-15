@@ -1126,7 +1126,11 @@ SUBSYSTEM_DEF(gamemode)
 				var/list/forced_events = forced_next_events[track]
 				var/forced = ""
 				for(var/datum/round_event_control/forced_event in forced_events)
-					forced = forced + "[forced_event.name] <a href='byond://?src=[REF(src)];panel=main;action=track_action;track_action=remove_forced;track=[track];forced_event_to_remove=[forced_event]'>X</a></BR>"
+					var/event_data = "[forced_event.name] <a href='byond://?src=[REF(src)];panel=main;action=track_action;track_action=remove_forced;track=[track];forced_event_to_remove=[forced_event]'>X</a></BR>"
+					if(ispath(forced_event.type, /datum/round_event_control/antagonist))
+						var/datum/round_event_control/antagonist/forced_antag_event = forced_event
+						event_data = "[forced_antag_event.name][forced_antag_event?.forced_antags_count > 0 ? "([forced_antag_event?.forced_antags_count])": ""] <a href='byond://?src=[REF(src)];panel=main;action=track_action;track_action=remove_forced;track=[track];forced_event_to_remove=[forced_event]'>X</a></BR>"
+					forced = forced + event_data
 				dat += "<td>[forced]</td>" //Forced
 				dat += "<td><a href='byond://?src=[REF(src)];panel=main;action=track_action;track_action=set_pts;track=[track]'>Set Pts.</a> <a href='byond://?src=[REF(src)];panel=main;action=track_action;track_action=next_event;track=[track]'>Next Event</a></td>" //Actions
 				dat += "</tr>"

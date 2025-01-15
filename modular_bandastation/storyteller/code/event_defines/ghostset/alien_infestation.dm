@@ -32,7 +32,7 @@
 /datum/round_event/antagonist/solo/ghost/alien_infestation/setup()
 	announce_when = rand(announce_when, announce_when + 50)
 	var/datum/round_event_control/antagonist/solo/cast_control = control
-	antag_count = cast_control.get_antag_count_to_spawn(forced)
+	antag_count = forced && cast_control.forced_antags_count > 0 ? cast_control.forced_antags_count : cast_control.get_antag_count_to_spawn(forced)
 	if(!antag_count)
 		return
 
