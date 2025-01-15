@@ -1,5 +1,6 @@
 /datum/asset/simple/html_title_screen
 	assets = list(
+		"ss220_logo.png" = 'icons/ui/common/ss220.png',
 		"lobby_background.png" = 'modular_bandastation/title_screen/icons/lobby_background.png',
 		"lobby_toggle_ready.png" = 'modular_bandastation/title_screen/icons/lobby_toggle_ready.png',
 		"lobby_late_join.png" = 'modular_bandastation/title_screen/icons/lobby_late_join.png',
@@ -16,7 +17,8 @@
 		"lobby_changelog.png" = 'modular_bandastation/title_screen/icons/lobby_changelog.png',
 		"lobby_picture.png" = 'modular_bandastation/title_screen/icons/lobby_picture.png',
 		"lobby_notice.png" = 'modular_bandastation/title_screen/icons/lobby_notice.png',
-		"lobby_css.png" = 'modular_bandastation/title_screen/icons/lobby_css.png',
+		"lobby_start_now.png" = 'modular_bandastation/title_screen/icons/lobby_start_now.png',
+		"lobby_delay.png" = 'modular_bandastation/title_screen/icons/lobby_delay.png',
 
 		"lobby_human_ai.png" = 'modular_bandastation/title_screen/icons/lobby_human_ai.png',
 		"lobby_bridge_assistant.png" = 'modular_bandastation/title_screen/icons/lobby_bridge_assistant.png',
