@@ -315,7 +315,7 @@ SUBSYSTEM_DEF(tts220)
 	if(!voice)
 		return
 
-	rustgss220_file_write_b64decode(voice, "[filename].ogg")
+	rustutils_file_write_b64decode(voice, "[filename].ogg")
 
 	if(!CONFIG_GET(flag/tts_cache_enabled))
 		addtimer(CALLBACK(src, PROC_REF(cleanup_tts_file), "[filename].ogg"), FILE_CLEANUP_DELAY)
@@ -466,7 +466,7 @@ SUBSYSTEM_DEF(tts220)
 	if(LAZYLEN(tts_job_replacements))
 		for(var/job in tts_job_replacements)
 			. = replacetext_char(., job, tts_job_replacements[job])
-	. = rustgss220_latin_to_cyrillic(.)
+	. = rustutils_latin_to_cyrillic(.)
 
 	var/static/regex/decimals = new(@"-?\d+\.\d+", "g")
 	. = replacetext_char(., decimals, GLOBAL_PROC_REF(dec_in_words))
