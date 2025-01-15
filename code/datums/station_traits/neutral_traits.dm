@@ -291,38 +291,35 @@
 	greyscale_config = /datum/greyscale_config/festive_hat
 	greyscale_config_worn = /datum/greyscale_config/festive_hat/worn
 
-/datum/station_trait/scarves
-	name = "Scarves"
+/datum/station_trait/scryers
+	name = "Scryers"
 	trait_type = STATION_TRAIT_NEUTRAL
-	weight = 5
-	cost = STATION_TRAIT_COST_MINIMAL
+	weight = 2
+	cost = STATION_TRAIT_COST_LOW
 	show_in_report = TRUE
-	var/list/scarves
+	report_message = "Nanotrasen has chosen your station for an experiment - everyone has free scryers! Use these to talk to other people easily and privately."
 
-/datum/station_trait/scarves/New()
+/datum/station_trait/scryers/New()
 	. = ..()
-	report_message = pick(
-		"Nanotrasen is experimenting with seeing if neck warmth improves employee morale.",
-		"After Space Fashion Week, scarves are the hot new accessory.",
-		"Everyone was simultaneously a little bit cold when they packed to go to the station.",
-		"The station is definitely not under attack by neck grappling aliens masquerading as wool. Definitely not.",
-		"You all get free scarves. Don't ask why.",
-		"A shipment of scarves was delivered to the station.",
-	)
-	scarves = typesof(/obj/item/clothing/neck/scarf) + list(
-		/obj/item/clothing/neck/large_scarf/red,
-		/obj/item/clothing/neck/large_scarf/green,
-		/obj/item/clothing/neck/large_scarf/blue,
-	)
-
 	RegisterSignal(SSdcs, COMSIG_GLOB_JOB_AFTER_SPAWN, PROC_REF(on_job_after_spawn))
 
-
-/datum/station_trait/scarves/proc/on_job_after_spawn(datum/source, datum/job/job, mob/living/spawned, client/player_client)
+/datum/station_trait/scryers/proc/on_job_after_spawn(datum/source, datum/job/job, mob/living/spawned, client/player_client)
 	SIGNAL_HANDLER
-	var/scarf_type = pick(scarves)
+	if(!ishuman(spawned))
+		return
+	var/mob/living/carbon/human/humanspawned = spawned
+	// Put their silly little scarf or necktie somewhere else
+	var/obj/item/silly_little_scarf = humanspawned.wear_neck
+	if(silly_little_scarf)
+		humanspawned.temporarilyRemoveItemFromInventory(silly_little_scarf)
+		silly_little_scarf.forceMove(get_turf(humanspawned))
+		humanspawned.equip_in_one_of_slots(silly_little_scarf, ITEM_SLOT_BACKPACK, ITEM_SLOT_LPOCKET, ITEM_SLOT_RPOCKET, qdel_on_fail = FALSE, indirect_action = TRUE)
 
-	spawned.equip_to_slot_or_del(new scarf_type(spawned), ITEM_SLOT_NECK, initial = FALSE)
+	var/obj/item/clothing/neck/link_scryer/loaded/new_scryer = new(spawned)
+	new_scryer.label = spawned.name
+	new_scryer.update_name()
+
+	spawned.equip_to_slot_or_del(new_scryer, ITEM_SLOT_NECK, initial = FALSE)
 
 /datum/station_trait/wallets
 	name = "Wallets!"
@@ -416,10 +413,12 @@
 	. = ..()
 	RegisterSignal(SSdcs, COMSIG_GLOB_JOB_AFTER_SPAWN, PROC_REF(on_job_after_spawn))
 
+/* BANDASTATION REMOVAL - HTML Title Screen
 /datum/station_trait/skub/setup_lobby_button(atom/movable/screen/lobby/button/sign_up/lobby_button)
 	RegisterSignal(lobby_button, COMSIG_ATOM_UPDATE_OVERLAYS, PROC_REF(on_lobby_button_update_overlays))
 	lobby_button.desc = "Are you pro-skub or anti-skub? Click to cycle through pro-skub, anti-skub, random and neutral."
 	return ..()
+*/
 
 /// Let late-joiners jump on this gimmick too.
 /datum/station_trait/skub/can_display_lobby_button(client/player)
@@ -429,6 +428,7 @@
 /datum/station_trait/skub/on_round_start()
 	return
 
+/* BANDASTATION REMOVAL - HTML Title Screen
 /datum/station_trait/skub/on_lobby_button_update_icon(atom/movable/screen/lobby/button/sign_up/lobby_button, location, control, params, mob/dead/new_player/user)
 	var/mob/player = lobby_button.get_mob()
 	var/skub_stance = skubbers[player.ckey]
@@ -470,6 +470,7 @@
 			overlays += "neutral_skub"
 		if(RANDOM_SKUB)
 			overlays += "random_skub"
+*/
 
 /datum/station_trait/skub/proc/on_job_after_spawn(datum/source, datum/job/job, mob/living/spawned, client/player_client)
 	SIGNAL_HANDLER
@@ -557,10 +558,12 @@
 	. = ..()
 	RegisterSignal(SSdcs, COMSIG_GLOB_JOB_AFTER_SPAWN, PROC_REF(on_job_after_spawn))
 
+/* BANDASTATION REMOVAL - HTML Title Screen
 /datum/station_trait/pet_day/setup_lobby_button(atom/movable/screen/lobby/button/sign_up/lobby_button)
 	lobby_button.desc = "Want to bring your innocent pet to a giant metal deathtrap? Click here to customize it!"
 	RegisterSignal(lobby_button, COMSIG_ATOM_UPDATE_OVERLAYS, PROC_REF(on_lobby_button_update_overlays))
 	return ..()
+*/
 
 /datum/station_trait/pet_day/can_display_lobby_button(client/player)
 	return sign_up_button
@@ -568,6 +571,7 @@
 /datum/station_trait/pet_day/on_round_start()
 	return
 
+/* BANDASTATION REMOVAL - HTML Title Screen
 /datum/station_trait/pet_day/on_lobby_button_click(atom/movable/screen/lobby/button/sign_up/lobby_button, updates)
 	var/mob/our_player = lobby_button.get_mob()
 	var/client/player_client = our_player.client
@@ -577,6 +581,7 @@
 	if(isnull(customization))
 		customization = new(player_client)
 	INVOKE_ASYNC(customization, TYPE_PROC_REF(/datum, ui_interact), our_player)
+*/
 
 /datum/station_trait/pet_day/proc/on_job_after_spawn(datum/source, datum/job/job, mob/living/spawned, client/player_client)
 	SIGNAL_HANDLER
@@ -586,5 +591,7 @@
 		return
 	INVOKE_ASYNC(customization, TYPE_PROC_REF(/datum/pet_customization, create_pet), spawned, player_client)
 
+/* BANDASTATION REMOVAL - HTML Title Screen
 /datum/station_trait/pet_day/proc/on_lobby_button_update_overlays(atom/movable/screen/lobby/button/sign_up/lobby_button, list/overlays)
 	overlays += "select_pet"
+*/

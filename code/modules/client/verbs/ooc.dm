@@ -66,7 +66,7 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 		if(handle_spam_prevention(msg,MUTE_OOC))
 			return
 		if(findtext(msg, "byond://"))
-			to_chat(src, span_boldannounce("<B>Advertising other servers is not allowed.</B>"))
+			to_chat(src, span_boldannounce("Advertising other servers is not allowed."))
 			log_admin("[key_name(src)] has attempted to advertise in OOC: [msg]")
 			message_admins("[key_name_admin(src)] has attempted to advertise in OOC: [msg]")
 			return
@@ -76,7 +76,9 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 		return
 
 	mob.log_talk(raw_msg, LOG_OOC)
-
+	// BANDASTATION CHAT BADGES REPLACE START
+	var/keyname = get_ooc_badged_name()
+	/*
 	var/keyname = key
 	if(prefs.unlock_content)
 		if(prefs.toggles & MEMBER_PUBLIC)
@@ -84,6 +86,8 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 	if(prefs.hearted)
 		var/datum/asset/spritesheet/sheet = get_asset_datum(/datum/asset/spritesheet/chat)
 		keyname = "[sheet.icon_tag("emoji-heart")][keyname]"
+	*/
+	// BANDASTATION CHAT BADGES REPLACE END
 	//The linkify span classes and linkify=TRUE below make ooc text get clickable chat href links if you pass in something resembling a url
 	for(var/client/receiver as anything in GLOB.clients)
 		if(!receiver.prefs) // Client being created or deleted. Despite all, this can be null.
@@ -429,7 +433,7 @@ ADMIN_VERB(reset_ooc_color, R_FUN, "Reset Player OOC Color", "Returns player OOC
 	//Collect keywords
 	var/list/keywords = mob.get_policy_keywords()
 	var/header = get_policy(POLICY_VERB_HEADER)
-	var/list/policytext = list(header,"<hr>")
+	var/list/policytext = list(header)
 	var/anything = FALSE
 	for(var/keyword in keywords)
 		var/p = get_policy(keyword)
@@ -440,7 +444,9 @@ ADMIN_VERB(reset_ooc_color, R_FUN, "Reset Player OOC Color", "Returns player OOC
 	if(!anything)
 		policytext += "No related rules found."
 
-	usr << browse(policytext.Join(""),"window=policy")
+	var/datum/browser/browser = new(usr, "policy", "Server Policy", 600, 500)
+	browser.set_content(policytext.Join(""))
+	browser.open()
 
 /client/verb/fix_stat_panel()
 	set name = "Fix Stat Panel"

@@ -1,10 +1,10 @@
 import { sortBy } from 'common/collections';
-import { classes } from 'common/react';
 import { PropsWithChildren, ReactNode } from 'react';
+import { Box, Button, Dropdown, Stack, Tooltip } from 'tgui-core/components';
+import { classes } from 'tgui-core/react';
 
 import { useBackend } from '../../backend';
 import { JOBS_RU } from '../../bandastation/ru_jobs'; // BANDASTATION EDIT
-import { Box, Button, Dropdown, Stack, Tooltip } from '../../components';
 import {
   createSetPreference,
   Job,
@@ -252,7 +252,7 @@ const JobRow = (props: { className?: string; job: Job; name: string }) => {
 
 const Department = (props: { department: string } & PropsWithChildren) => {
   const { children, department: name } = props;
-  const className = `PreferencesMenu__Jobs__departments--${name}`;
+  const className = `PreferencesMenu__Jobs__departments--${name.replace(' ', '')}`;
 
   return (
     <ServerPreferencesFetcher
@@ -384,6 +384,10 @@ export const JobsPage = () => {
                 <Gap amount={6} />
               </Department>
 
+              <Department department="NT Representation">
+                <Gap amount={6} />
+              </Department>
+
               <Department department="Service">
                 <Gap amount={6} />
               </Department>
@@ -397,6 +401,10 @@ export const JobsPage = () => {
               <PriorityHeaders />
 
               <Department department="Security">
+                <Gap amount={6} />
+              </Department>
+
+              <Department department="Justice">
                 <Gap amount={6} />
               </Department>
 

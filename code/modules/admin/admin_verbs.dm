@@ -1,10 +1,12 @@
 /client/proc/add_admin_verbs()
 	control_freak = CONTROL_FREAK_SKIN | CONTROL_FREAK_MACROS
 	SSadmin_verbs.assosciate_admin(src)
+	SStitle.title_output(src, "true", "admin_buttons_visibility") // BANDASTATION ADDITION - HTML Title Screen
 
 /client/proc/remove_admin_verbs()
 	control_freak = initial(control_freak)
 	SSadmin_verbs.deassosciate_admin(src)
+	SStitle.title_output(src, "false", "admin_buttons_visibility") // BANDASTATION ADDITION - HTML Title Screen
 
 ADMIN_VERB(hide_verbs, R_NONE, "Adminverbs - Hide All", "Hide most of your admin verbs.", ADMIN_CATEGORY_MAIN)
 	user.remove_admin_verbs()
@@ -478,7 +480,7 @@ ADMIN_VERB(deadmin, R_NONE, "DeAdmin", "Shed your admin powers.", ADMIN_CATEGORY
 
 ADMIN_VERB(populate_world, R_DEBUG, "Populate World", "Populate the world with test mobs.", ADMIN_CATEGORY_DEBUG, amount = 50 as num)
 	for (var/i in 1 to amount)
-		var/turf/tile = get_safe_random_station_turf()
+		var/turf/tile = get_safe_random_station_turf_equal_weight()
 		var/mob/living/carbon/human/hooman = new(tile)
 		hooman.equipOutfit(pick(subtypesof(/datum/outfit)))
 		testing("Spawned test mob at [get_area_name(tile, TRUE)] ([tile.x],[tile.y],[tile.z])")

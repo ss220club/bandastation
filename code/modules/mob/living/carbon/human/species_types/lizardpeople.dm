@@ -16,6 +16,7 @@
 		/obj/item/organ/tail/lizard = "Smooth",
 	)
 	mutanttongue = /obj/item/organ/tongue/lizard
+	mutanteyes = /obj/item/organ/eyes/lizard
 	coldmod = 1.5
 	heatmod = 0.67
 	payday_modifier = 1.0
@@ -113,6 +114,9 @@
 	if(lizard.physique == FEMALE)
 		return SFX_SNORE_FEMALE
 	return SFX_SNORE_MALE
+
+/datum/species/lizard/get_hiss_sound(mob/living/carbon/human/lizard)
+	return 'sound/mobs/humanoids/lizard/lizard_hiss.ogg'
 
 /datum/species/lizard/get_physical_attributes()
 	return "Lizardpeople can withstand slightly higher temperatures than most species, but they are very vulnerable to the cold \
@@ -218,7 +222,7 @@ Lizard subspecies: SILVER SCALED
 		Mostly identical, they are holy, don't breathe, don't get viruses, their hide cannot be pierced, love the taste of wine, \
 		and their tongue allows them to turn into a statue, for some reason."
 
-/datum/species/lizard/silverscale/on_species_gain(mob/living/carbon/human/new_silverscale, datum/species/old_species, pref_load)
+/datum/species/lizard/silverscale/on_species_gain(mob/living/carbon/human/new_silverscale, datum/species/old_species, pref_load, regenerate_icons)
 	old_mutcolor = new_silverscale.dna.features["mcolor"]
 	new_silverscale.dna.features["mcolor"] = "#eeeeee"
 	new_silverscale.add_eye_color("#0000a0", EYE_COLOR_SPECIES_PRIORITY)

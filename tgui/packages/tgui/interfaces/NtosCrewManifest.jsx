@@ -1,8 +1,8 @@
 import { map } from 'common/collections';
+import { Button, Section, Table } from 'tgui-core/components';
 
 import { useBackend } from '../backend';
 import { DEPARTMENTS_RU } from '../bandastation/ru_jobs'; // BANDASTATION EDIT
-import { Button, Section, Table } from '../components';
 import { NtosWindow } from '../layouts';
 
 export const NtosCrewManifest = (props) => {
@@ -25,11 +25,7 @@ export const NtosCrewManifest = (props) => {
             <Section
               key={department}
               level={2}
-              title={
-                DEPARTMENTS_RU[department]
-                  ? DEPARTMENTS_RU[department]
-                  : department
-              }
+              title={DEPARTMENTS_RU[department] || department}
             >
               <Table>
                 {entries.map((entry) => (

@@ -609,13 +609,13 @@
 
 	//Give robotics some radiation protection modules for modsuits
 	var/datum/supply_pack/supply_pack_modsuits = new /datum/supply_pack/engineering/rad_protection_modules()
-	send_supply_pod_to_area(supply_pack_modsuits.generate(null), /area/station/science/robotics, /obj/structure/closet/supplypod/centcompod)
+	send_supply_pod_to_area(supply_pack_modsuits.generate(null), /area/station/science/robotics, /obj/structure/closet/supplypod/teleporter) // BANDASTATION EDIT - Original: send_supply_pod_to_area(supply_pack_modsuits.generate(null), /area/station/science/robotics, /obj/structure/closet/supplypod/teleporter)
 
 	//Send a nebula shielding unit to engineering
 	var/datum/supply_pack/supply_pack_shielding = new /datum/supply_pack/engineering/rad_nebula_shielding_kit()
-	if(!send_supply_pod_to_area(supply_pack_shielding.generate(null), /area/station/engineering/main, /obj/structure/closet/supplypod/centcompod))
+	if(!send_supply_pod_to_area(supply_pack_shielding.generate(null), /area/station/engineering/main, /obj/structure/closet/supplypod/teleporter)) // BANDASTATION EDIT - Original: if(!send_supply_pod_to_area(supply_pack_shielding.generate(null), /area/station/engineering/main, /obj/structure/closet/supplypod/teleporter))
 		//if engineering isn't valid, just send it to the bridge
-		send_supply_pod_to_area(supply_pack_shielding.generate(null), /area/station/command/bridge, /obj/structure/closet/supplypod/centcompod)
+		send_supply_pod_to_area(supply_pack_shielding.generate(null), /area/station/command/bridge, /obj/structure/closet/supplypod/teleporter)  // BANDASTATION EDIT - Original: send_supply_pod_to_area(supply_pack_shielding.generate(null), /area/station/command/bridge, /obj/structure/closet/supplypod/teleporter)
 
 	// Let medical know resistance is futile
 	if (/area/station/medical/virology in GLOB.areas_by_type)
@@ -624,7 +624,7 @@
 			/area/station/medical/virology,
 			"NT Virology Department",
 			force = TRUE,
-			force_pod_type = /obj/structure/closet/supplypod/centcompod,
+			force_pod_type = /obj/structure/closet/supplypod/teleporter, // BANDASTATION EDIT - Original: force_pod_type = /obj/structure/closet/supplypod/centcompod,
 		)
 
 	//Disables radstorms, they don't really make sense since we already have the nebula causing storms
@@ -691,7 +691,7 @@
 
 ///Send a care package because it is not going well
 /datum/station_trait/nebula/hostile/radiation/proc/send_care_package()
-	new /obj/effect/pod_landingzone (get_safe_random_station_turf(), new /obj/structure/closet/supplypod/centcompod (), new /obj/machinery/nebula_shielding/emergency/radiation ())
+	new /obj/effect/pod_landingzone (get_safe_random_station_turf_equal_weight(), new /obj/structure/closet/supplypod/centcompod (), new /obj/machinery/nebula_shielding/emergency/radiation ())
 
 /datum/station_trait/nebula/hostile/radiation/send_instructions()
 	var/obj/machinery/nebula_shielding/shielder = /obj/machinery/nebula_shielding/radiation
