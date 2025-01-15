@@ -26,7 +26,7 @@
 	if(!tts_seed) // Something went terribly wrong
 		return COMPONENT_INCOMPATIBLE
 	if(length(effects))
-		effects |= effects
+		src.effects |= effects
 
 /datum/component/tts_component/proc/return_tts_seed()
 	SIGNAL_HANDLER
@@ -145,7 +145,7 @@
 	atom/location,
 	is_local = TRUE,
 	is_radio = FALSE,
-	list/additional_effects,
+	list/additional_effects = list(),
 	traits = TTS_TRAIT_RATE_FASTER,
 	preSFX,
 	postSFX
@@ -165,7 +165,7 @@
 	if(!location)
 		location = parent
 	if(is_radio)
-		additional_effects |= list(/datum/singleton/sound_effect/radio)
+		additional_effects |= /datum/singleton/sound_effect/radio
 		is_local = FALSE
 		if(listener == speaker) // don't hear both radio and whisper from yourself
 			return
@@ -208,7 +208,7 @@
 /datum/component/tts_component/proc/tts_effects_add(atom/user, list/new_sound_effects)
 	SIGNAL_HANDLER
 
-	if(isnull(new_sound_effects))
+	if(!length(new_sound_effects))
 		return
 
 	effects |= new_sound_effects
@@ -216,7 +216,7 @@
 /datum/component/tts_component/proc/tts_effects_remove(atom/user, list/sound_effects_to_remove)
 	SIGNAL_HANDLER
 
-	if(!isnull(sound_effects_to_remove))
+	if(!length(sound_effects_to_remove))
 		return
 
 	effects -= sound_effects_to_remove
