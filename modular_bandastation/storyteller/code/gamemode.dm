@@ -66,14 +66,6 @@ SUBSYSTEM_DEF(gamemode)
 		EVENT_TRACK_ROLESET = 1,
 		EVENT_TRACK_OBJECTIVES = 1
 		)
-	/// Configurable multipliers for roundstart points.
-	var/list/roundstart_point_multipliers = list(
-		EVENT_TRACK_MUNDANE = 1,
-		EVENT_TRACK_MODERATE = 1,
-		EVENT_TRACK_MAJOR = 1,
-		EVENT_TRACK_ROLESET = 1,
-		EVENT_TRACK_OBJECTIVES = 1
-		)
 	/// Whether we allow pop scaling. This is configured by config, or the storyteller UI
 	var/allow_pop_scaling = TRUE
 
@@ -385,7 +377,7 @@ SUBSYSTEM_DEF(gamemode)
 				base_amt = ROUNDSTART_OBJECTIVES_BASE
 				gain_amt = ROUNDSTART_OBJECTIVES_GAIN
 		var/calc_value = base_amt + (gain_amt * ready_players)
-		calc_value *= roundstart_point_multipliers[track]
+		calc_value *= current_storyteller.roundstart_point_multipliers[track]
 		calc_value *= current_storyteller.starting_point_multipliers[track]
 		calc_value *= (rand(100 - current_storyteller.roundstart_points_variance,100 + current_storyteller.roundstart_points_variance)/100)
 		event_track_points[track] = round(calc_value)
@@ -947,12 +939,6 @@ SUBSYSTEM_DEF(gamemode)
 	point_gain_multipliers[EVENT_TRACK_ROLESET] = CONFIG_GET(number/roleset_point_gain_multiplier)
 	point_gain_multipliers[EVENT_TRACK_OBJECTIVES] = CONFIG_GET(number/objectives_point_gain_multiplier)
 
-	roundstart_point_multipliers[EVENT_TRACK_MUNDANE] = CONFIG_GET(number/mundane_roundstart_point_multiplier)
-	roundstart_point_multipliers[EVENT_TRACK_MODERATE] = CONFIG_GET(number/moderate_roundstart_point_multiplier)
-	roundstart_point_multipliers[EVENT_TRACK_MAJOR] = CONFIG_GET(number/major_roundstart_point_multiplier)
-	roundstart_point_multipliers[EVENT_TRACK_ROLESET] = CONFIG_GET(number/roleset_roundstart_point_multiplier)
-	roundstart_point_multipliers[EVENT_TRACK_OBJECTIVES] = CONFIG_GET(number/objectives_roundstart_point_multiplier)
-
 	min_pop_thresholds[EVENT_TRACK_MUNDANE] = CONFIG_GET(number/mundane_min_pop)
 	min_pop_thresholds[EVENT_TRACK_MODERATE] = CONFIG_GET(number/moderate_min_pop)
 	min_pop_thresholds[EVENT_TRACK_MAJOR] = CONFIG_GET(number/major_min_pop)
@@ -1097,7 +1083,7 @@ SUBSYSTEM_DEF(gamemode)
 			dat += "<b>Roundstart Points Multipliers:</b>"
 			dat += "<BR><font color='#888888'><i>This affects points generated for roundstart events and antagonists.</i></font>"
 			for(var/track in event_tracks)
-				dat += "<BR>[track]: <a href='byond://?src=[REF(src)];panel=main;action=vars;var=roundstart_pts;track=[track]'>[roundstart_point_multipliers[track]]</a>"
+				dat += "<BR>[track]: <a href='byond://?src=[REF(src)];panel=main;action=vars;var=roundstart_pts;track=[track]'>[current_storyteller.roundstart_point_multipliers[track]]</a>"
 			dat += "<HR>"
 
 			dat += "<b>Minimum Population for Tracks:</b>"
@@ -1329,7 +1315,7 @@ SUBSYSTEM_DEF(gamemode)
 							if(isnull(new_value) || new_value < 0)
 								return
 							message_admins("[key_name_admin(usr)] set roundstart pts multiplier for [track] track to [new_value].")
-							roundstart_point_multipliers[track] = new_value
+							current_storyteller.roundstart_point_multipliers[track] = new_value
 						if("min_pop")
 							var/new_value = input(usr, "New value:", "Set new value") as num|null
 							if(isnull(new_value) || new_value < 0)

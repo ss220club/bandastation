@@ -25,6 +25,14 @@
 		EVENT_TRACK_ROLESET = 1,
 		EVENT_TRACK_OBJECTIVES = 1
 		)
+	/// Configurable multipliers for roundstart points.
+	var/list/roundstart_point_multipliers = list(
+		EVENT_TRACK_MUNDANE = 1,
+		EVENT_TRACK_MODERATE = 1,
+		EVENT_TRACK_MAJOR = 1,
+		EVENT_TRACK_ROLESET = 1,
+		EVENT_TRACK_OBJECTIVES = 1
+		)
 	/// Multipliers of weight to apply for each tag of an event.
 	var/list/tag_multipliers
 
@@ -84,11 +92,11 @@
 /// Add points to all tracks while respecting the multipliers.
 /datum/storyteller/proc/add_points(seconds_per_tick)
 	var/datum/controller/subsystem/gamemode/mode = SSgamemode
-	var/base_point = EVENT_POINT_GAINED_PER_SECOND * seconds_per_tick * mode.event_frequency_multiplier
+	var/base_point = EVENT_POINT_GAINED_PER_SECOND * seconds_per_tick * mode.event_frequency_multiplier //w = 0.08*y*1 = 0.4 => y = 5
 	for(var/track in mode.event_track_points)
-		var/point_gain = base_point * point_gains_multipliers[track] * mode.point_gain_multipliers[track] * point_gain_base_mult
+		var/point_gain = base_point * point_gains_multipliers[track] * mode.point_gain_multipliers[track] * point_gain_base_mult // p = w*1*1*10=4 => w = 0.4
 		if(mode.allow_pop_scaling)
-			point_gain *= mode.current_pop_scale_multipliers[track]
+			point_gain *= mode.current_pop_scale_multipliers[track] //p*1 = 4
 		mode.event_track_points[track] += point_gain
 		mode.last_point_gains[track] = point_gain
 
