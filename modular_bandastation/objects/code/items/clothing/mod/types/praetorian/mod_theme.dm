@@ -25,8 +25,8 @@
 	)
 	variants = list(
 		"praetorian" = list(
-			MOD_ICON_OVERRIDE = 'modular_bandastation/clothing/icons/obj/modsuit/mod_clothing.dmi',
-			MOD_WORN_ICON_OVERRIDE = 'modular_bandastation/clothing/icons/mob/clothing/modsuit/mod_clothing.dmi',
+			MOD_ICON_OVERRIDE = 'modular_bandastation/objects/icons/obj/clothing/modsuit/mod_clothing.dmi',
+			MOD_WORN_ICON_OVERRIDE = 'modular_bandastation/objects/icons/mob/clothing/modsuit/mod_clothing.dmi',
 			/obj/item/clothing/head/mod = list(
 				UNSEALED_CLOTHING = SNUG_FIT|THICKMATERIAL,
 				SEALED_CLOTHING = STOPSPRESSUREDAMAGE|HEADINTERNALS,

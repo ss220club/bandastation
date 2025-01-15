@@ -2,8 +2,8 @@
 /obj/item/clothing/suit/toggle/nanotrasen_representative
 	name = "Nanotrasen Representative jacket"
 	desc = "A fancy black jacket; standard issue to Nanotrasen Representatives."
-	icon = 'modular_bandastation/clothing/icons/obj/suits/jacket.dmi'
-	worn_icon = 'modular_bandastation/clothing/icons/mob/clothing/suits/jacket.dmi'
+	icon = 'modular_bandastation/objects/icons/obj/clothing/suits/jacket.dmi'
+	worn_icon = 'modular_bandastation/objects/icons/mob/clothing/suits/jacket.dmi'
 	icon_state = "nanotrasen_representative"
 
 // Magistrate
@@ -12,8 +12,8 @@
 	desc = "An opulent robe that commands authority. Issued only to licensed magistrates."
 	icon_state = "magirobe"
 	worn_icon_state = "magirobe"
-	icon = 'modular_bandastation/clothing/icons/obj/suits/magistrate.dmi'
-	worn_icon = 'modular_bandastation/clothing/icons/mob/clothing/suits/magistrate.dmi'
+	icon = 'modular_bandastation/objects/icons/obj/clothing/suits/magistrate.dmi'
+	worn_icon = 'modular_bandastation/objects/icons/mob/clothing/suits/magistrate.dmi'
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS
 
 // Roboticist
@@ -21,8 +21,8 @@
 	name = "roboticist's jacket"
 	desc = "Универсальная куртка из прочного материала, идеально подходит для работы с механическими деталями. Красные полосы на плечах добавляют стильный акцент. Теперь вы не только защищены, но и модны. На бирке указано: 'Flameholdeir Industries'. Будьте стильным, как Адский Бродяга!"
 	icon_state = "robotics_jacket"
-	icon = 'modular_bandastation/clothing/icons/obj/suits/jacket.dmi'
-	worn_icon = 'modular_bandastation/clothing/icons/mob/clothing/suits/jacket.dmi'
+	icon = 'modular_bandastation/objects/icons/obj/clothing/suits/jacket.dmi'
+	worn_icon = 'modular_bandastation/objects/icons/mob/clothing/suits/jacket.dmi'
 
 // CentCom
 /obj/item/clothing/suit/space/officer/browntrench

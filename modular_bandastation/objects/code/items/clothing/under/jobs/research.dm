@@ -2,8 +2,8 @@
 	name = "standart roboticist jumpsuit"
 	desc = "Комбинезон робототехника нового образца. Ничего выдающегося, кроме качественного материала. На бирке указано: 'Flameholdeir Industries'. Эстетика в простоте - будьте как Сенатор!"
 	icon_state = "robotics_alt"
-	icon = 'modular_bandastation/clothing/icons/obj/under/rnd.dmi'
-	worn_icon = 'modular_bandastation/clothing/icons/mob/clothing/under/rnd.dmi'
+	icon = 'modular_bandastation/objects/icons/obj/clothing/under/rnd.dmi'
+	worn_icon = 'modular_bandastation/objects/icons/mob/clothing/under/rnd.dmi'
 
 /obj/item/clothing/under/rank/rnd/roboticist/alt/red
 	name = "red roboticist's jumpsuit"

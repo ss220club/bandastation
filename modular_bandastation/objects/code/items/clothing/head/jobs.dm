@@ -2,8 +2,8 @@
 /obj/item/clothing/head/hats/nanotrasen_representative
 	name = "Nanotrasen Representative's hat"
 	desc = "A cap issued to Nanotrasen Representatives."
-	icon = 'modular_bandastation/clothing/icons/obj/head/hats.dmi'
-	worn_icon = 'modular_bandastation/clothing/icons/mob/clothing/head/hats.dmi'
+	icon = 'modular_bandastation/objects/icons/obj/clothing/head/hats.dmi'
+	worn_icon = 'modular_bandastation/objects/icons/mob/clothing/head/hats.dmi'
 	icon_state = "nanotrasen_representative"
 
 // Blueshield

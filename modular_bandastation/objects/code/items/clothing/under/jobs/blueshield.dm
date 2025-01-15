@@ -8,8 +8,8 @@
 	acid = 50
 
 /obj/item/clothing/under/rank/blueshield
-	icon = 'modular_bandastation/clothing/icons/obj/under/blueshield.dmi'
-	worn_icon = 'modular_bandastation/clothing/icons/mob/clothing/under/blueshield.dmi'
+	icon = 'modular_bandastation/objects/icons/obj/clothing/under/blueshield.dmi'
+	worn_icon = 'modular_bandastation/objects/icons/mob/clothing/under/blueshield.dmi'
 	name = "blueshield's suit"
 	desc = "A classic bodyguard's suit, with custom-fitted Blueshield-Blue cuffs and a Nanotrasen insignia over one of the pockets."
 	icon_state = "blueshield"

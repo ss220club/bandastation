@@ -45,7 +45,6 @@
 #include "jukebox/_jukebox.dme"
 #include "cryosleep/_cryosleep.dme"
 #include "objects/_objects.dme"
-#include "clothing/_clothing.dme"
 #include "orderables/_orderables.dme"
 #include "automatic_crew_transfer/_automatic_crew_transfer.dme"
 #include "outfits/_outfits.dme"
