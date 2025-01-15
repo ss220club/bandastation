@@ -14,6 +14,7 @@
 	layer = MID_TURF_LAYER // Above other decals
 
 // MARK: Sidings
+// Gold stripe
 /obj/effect/turf_decal/siding/golden
 	icon = 'modular_bandastation/objects/icons/obj/effects/siding.dmi'
 	icon_state = "golden"
@@ -26,3 +27,17 @@
 
 /obj/effect/turf_decal/siding/golden/end
 	icon_state = "golden_end"
+
+// Gold "royal" siding
+/obj/effect/turf_decal/siding/royal
+	icon = 'modular_bandastation/objects/icons/obj/effects/siding.dmi'
+	icon_state = "royal"
+
+/obj/effect/turf_decal/siding/royal/corner
+	icon_state = "royal_corner"
+
+/obj/effect/turf_decal/siding/royal/inner_corner
+	icon_state = "royal_corner_inner"
+
+/obj/effect/turf_decal/siding/royal/end
+	icon_state = "royal_end"
