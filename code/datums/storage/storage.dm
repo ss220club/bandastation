@@ -693,10 +693,12 @@ GLOBAL_LIST_EMPTY(cached_storage_typecaches)
 /datum/storage/proc/on_preattack(datum/source, obj/item/thing, mob/user, params)
 	SIGNAL_HANDLER
 
-	if(!istype(thing) || !allow_quick_gather || thing.atom_storage)
+	if(!istype(thing) || thing == parent.loc || !allow_quick_gather || thing.atom_storage)
 		return
 
 	if(collection_mode == COLLECT_ONE)
+		if(thing.loc == user)
+			user.dropItemToGround(thing, silent = TRUE) //this is nessassary to update any inventory slot it is attached to
 		attempt_insert(thing, user)
 		return COMPONENT_CANCEL_ATTACK_CHAIN
 
@@ -1061,6 +1063,8 @@ GLOBAL_LIST_EMPTY(cached_storage_typecaches)
 	SIGNAL_HANDLER
 
 	toggle_collection_mode(triggered.owner)
+
+	return COMPONENT_ACTION_BLOCK_TRIGGER
 
 /datum/storage/proc/action_deleted(datum/source)
 	SIGNAL_HANDLER

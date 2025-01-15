@@ -15,6 +15,26 @@
 
 #INTERVIEW_WEBHOOK_URL
 
+## Bandastation Races
+ROUNDSTART_RACES vulpkanin
+
 #MIN_THREAT_TO_ROUNDSTART_PERCENT 30
 #MAX_THREAT_TO_ROUNDSTART_PERCENT 60
 #MIN_THREAT_LEVEL 20
+
+
+## Automatic crew transfer
+
+## Time after the roundstart the automatic crew transfer will run. 1.5 hours by default
+#AUTOMATIC_CREW_TRANSFER_VOTE_DELAY 54000
+## Time the automatic crew transfer vote will automatically run after if previous one not passed. 30 minutes by default
+#AUTOMATIC_CREW_TRANSFER_VOTE_INTERVAL 18000
+## If players are able to create crew transfer vote
+#ALLOW_CREW_TRANSFER_VOTE
+## If automatic crew transfer is enabled
+#ENABLE_AUTOMATIC_CREW_TRANSFER
+
+# Cryo
+
+## Time in deciseconds the mob must be clientless for to be despawned by cryopod. 30 minutes by default
+#CRYO_MIN_SSD_TIME 18000

@@ -70,7 +70,7 @@ SUBSYSTEM_DEF(market)
 
 			// Get random area, throw it somewhere there.
 			if(SHIPPING_METHOD_TELEPORT)
-				var/turf/targetturf = get_safe_random_station_turf()
+				var/turf/targetturf = get_safe_random_station_turf_equal_weight()
 				// This shouldn't happen.
 				if (!targetturf)
 					continue
@@ -97,7 +97,7 @@ SUBSYSTEM_DEF(market)
 			if(SHIPPING_METHOD_SUPPLYPOD)
 				var/obj/structure/closet/supplypod/spawned_pod = podspawn(list(
 					"target" = get_turf(purchase.uplink),
-					"path" = /obj/structure/closet/supplypod/back_to_station,
+					"path" = /obj/structure/closet/supplypod/teleporter, // BANDASTATION EDIT - Original: "path" = /obj/structure/closet/supplypod/back_to_station,
 				))
 				purchase.entry.spawn_item(spawned_pod, purchase)
 

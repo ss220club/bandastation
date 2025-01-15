@@ -1,4 +1,5 @@
-import { BooleanLike } from '../../../../common/react';
+import { BooleanLike } from 'tgui-core/react';
+
 import { PreferencesMenuData } from '../data';
 import { LoadoutButton } from './ModifyPanel';
 
@@ -31,7 +32,7 @@ export type LoadoutItem = {
   buttons: LoadoutButton[];
   reskins: ReskinOption[] | null;
   information: string[];
-  cost: string;
+  cost: number;
 };
 
 // Category of items in the loadout

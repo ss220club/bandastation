@@ -260,7 +260,7 @@
 	max_num_blades = 4,
 	blade_orbit_radius = 20,
 	time_between_initial_blades = 0.25 SECONDS,
-	blade_type = /obj/effect/floating_blade,
+	blade_type = /obj/projectile/floating_blade,
 	blade_recharge_time = 1 MINUTES,
 )
 
@@ -284,7 +284,7 @@
 
 /datum/status_effect/caretaker_refuge/on_apply()
 	animate(owner, alpha = 45,time = 0.5 SECONDS)
-	owner.density = FALSE
+	owner.set_density(FALSE)
 	RegisterSignal(owner, SIGNAL_REMOVETRAIT(TRAIT_ALLOW_HERETIC_CASTING), PROC_REF(on_focus_lost))
 	RegisterSignal(owner, COMSIG_MOB_BEFORE_SPELL_CAST, PROC_REF(prevent_spell_usage))
 	RegisterSignal(owner, COMSIG_ATOM_HOLYATTACK, PROC_REF(nullrod_handler))

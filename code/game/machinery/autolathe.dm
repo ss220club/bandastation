@@ -88,7 +88,7 @@
 		return CONTEXTUAL_SCREENTIP_SET
 
 /obj/machinery/autolathe/crowbar_act(mob/living/user, obj/item/tool)
-	. = ITEM_INTERACT_BLOCKING
+	. = NONE
 	if(default_deconstruction_crowbar(tool))
 		return ITEM_INTERACT_SUCCESS
 
@@ -166,6 +166,7 @@
 		var/icon_size = spritesheet.icon_size_id(design.id)
 		var/list/design_data = list(
 			"name" = design.name,
+			"original_name" = design.original_name, // BANDASTATION EDIT - Design Translate
 			"desc" = design.get_description(),
 			"cost" = cost,
 			"id" = design.id,
