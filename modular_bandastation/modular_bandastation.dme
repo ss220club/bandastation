@@ -3,6 +3,7 @@
 
 #include "_defines220/_defines220.dme"
 #include "_helpers220/_helpers220.dme"
+#include "_rust_utils/_rust_utils.dme"
 #include "_signals220/_signals220.dme"
 #include "_singletons/_singletons.dme"
 #include "title_screen/_title_screen.dme"
@@ -37,6 +38,7 @@
 #include "species/_species.dme"
 #include "translations/_translations.dme"
 #include "tts/_tts.dme"
+#include "turfs/_turfs.dme"
 #include "whitelist220/_whitelist220.dme"
 #include "world_topics/_world_topics.dme"
 #include "preferences/_preferences.dme"
