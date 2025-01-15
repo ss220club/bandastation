@@ -2,7 +2,7 @@
 	icon = 'modular_bandastation/aesthetics/walls/icons/wall.dmi'
 	icon_state = "wall-0"
 	base_icon_state = "wall"
-	canSmoothWith = SMOOTH_GROUP_AIRLOCK + SMOOTH_GROUP_WINDOW_FULLTILE + SMOOTH_GROUP_WALLS
+	canSmoothWith = SMOOTH_GROUP_GIRDER + SMOOTH_GROUP_AIRLOCK + SMOOTH_GROUP_WINDOW_FULLTILE + SMOOTH_GROUP_WALLS
 
 /turf/closed/wall/rust
 	icon = 'modular_bandastation/aesthetics/walls/icons/wall.dmi'
@@ -29,7 +29,7 @@
 	base_icon_state = "wall"
 	icon_state = "wall-open"
 	fake_icon = 'modular_bandastation/aesthetics/walls/icons/wall.dmi'
-	canSmoothWith = SMOOTH_GROUP_AIRLOCK + SMOOTH_GROUP_WINDOW_FULLTILE + SMOOTH_GROUP_WALLS
+	canSmoothWith = SMOOTH_GROUP_GIRDER + SMOOTH_GROUP_AIRLOCK + SMOOTH_GROUP_WINDOW_FULLTILE + SMOOTH_GROUP_WALLS
 
 /obj/structure/falsewall/reinforced
 	icon_state = "reinforced_wall-open"
