@@ -23,7 +23,7 @@
 	smoothing_groups = SMOOTH_GROUP_TITANIUM_WALLS + SMOOTH_GROUP_CLOSED_TURFS
 	canSmoothWith = SMOOTH_GROUP_SHUTTLE_PARTS + SMOOTH_GROUP_AIRLOCK + SMOOTH_GROUP_WINDOW_FULLTILE_SHUTTLE + SMOOTH_GROUP_TITANIUM_WALLS
 
-// Falsewalls
+// MARK: Falsewalls
 /obj/structure/falsewall
 	icon = 'modular_bandastation/aesthetics/walls/icons/false_walls.dmi'
 	base_icon_state = "wall"
@@ -78,3 +78,7 @@
 
 /obj/structure/falsewall/material
 	icon = 'icons/turf/walls/false_walls.dmi'
+
+// MARK: Girder
+/obj/structure/girder
+	canSmoothWith = SMOOTH_GROUP_GIRDER + SMOOTH_GROUP_AIRLOCK + SMOOTH_GROUP_WINDOW_FULLTILE + SMOOTH_GROUP_WALLS
