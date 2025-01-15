@@ -1,5 +1,5 @@
 /obj/item/clothing/head/helmet/bike_helmet
-	name = "байкерский шлем"
+	name = "biker helmet"
 	desc = "Крутой шлем."
 	icon = 'modular_bandastation/clothing/icons/object/hats.dmi'
 	worn_icon = 'modular_bandastation/clothing/icons/mob/hats.dmi'
@@ -19,14 +19,18 @@
 /obj/item/clothing/head/helmet/bike_helmet/ui_action_click(mob/user, toggle_helmet)
 	helm_toggle(user)
 
-/obj/item/clothing/head/helmet/bike_helmet/proc/helm_toggle(mob/user)
-	on = !on
+/obj/item/clothing/head/helmet/bike_helmet/update_icon_state()
 	icon_state = "[base_icon_state][on ? null : "_up" ]"
 	if (on)
 		flags_cover &= ~HEADCOVERSEYES
 	else
 		flags_cover |= HEADCOVERSEYES
-	update_appearance()
+	return ..()
+
+/obj/item/clothing/head/helmet/bike_helmet/proc/helm_toggle(mob/user)
+	on = !on
+
+	update_icon_state()
 
 /obj/item/clothing/head/helmet/space/hardsuit/security
 	icon = 'modular_bandastation/clothing/icons/object/helmet.dmi'
