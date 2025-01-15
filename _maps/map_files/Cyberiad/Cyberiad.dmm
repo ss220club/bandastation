@@ -12503,16 +12503,9 @@
 /turf/open/floor/iron,
 /area/station/maintenance/ghetto/central)
 "dcS" = (
-/obj/machinery/airlock_controller/incinerator_atmos{
-	pixel_x = -24
-	},
-/obj/effect/mapping_helpers/airlock/locked,
-/obj/effect/mapping_helpers/airlock/autoname,
-/obj/effect/mapping_helpers/airlock/access/all/engineering/atmos,
-/obj/machinery/door/airlock/public/glass/incinerator/atmos_exterior,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/brown/visible/layer2,
-/obj/effect/mapping_helpers/airlock/cyclelink_helper{
-	dir = 1
+/obj/machinery/igniter/incinerator_atmos{
+	id = "waste_incinerator_igniter"
 	},
 /turf/open/floor/engine,
 /area/station/maintenance/disposal/incinerator)
@@ -26608,6 +26601,12 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron/dark,
 /area/station/maintenance/department/security/ghetto)
+"gKt" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/layer2{
+	dir = 1
+	},
+/turf/open/floor/engine,
+/area/station/maintenance/disposal/incinerator)
 "gKv" = (
 /obj/machinery/button/door/directional/west{
 	id = "Toilet1";
@@ -30613,9 +30612,8 @@
 /turf/open/floor/iron/white,
 /area/station/medical/storage)
 "hIY" = (
-/obj/machinery/power/turbine/inlet_compressor{
-	dir = 4
-	},
+/obj/machinery/air_sensor/incinerator_tank,
+/obj/machinery/atmospherics/pipe/smart/simple/dark/visible,
 /turf/open/floor/engine,
 /area/station/maintenance/disposal/incinerator)
 "hJh" = (
@@ -34694,13 +34692,10 @@
 /turf/open/floor/plating,
 /area/station/maintenance/ghetto/fore/starboard)
 "iMY" = (
-/obj/machinery/airlock_sensor/incinerator_atmos{
-	pixel_y = 24
-	},
-/obj/machinery/atmospherics/pipe/layer_manifold/supply/hidden{
+/obj/machinery/power/turbine/inlet_compressor{
 	dir = 4
 	},
-/turf/closed/wall/r_wall,
+/turf/open/floor/engine,
 /area/station/maintenance/disposal/incinerator)
 "iMZ" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -36689,9 +36684,15 @@
 /turf/closed/wall/r_wall,
 /area/station/engineering/supermatter/room)
 "joL" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/layer2{
-	dir = 1
+/obj/machinery/airlock_controller/incinerator_atmos{
+	pixel_x = -24
 	},
+/obj/effect/mapping_helpers/airlock/locked,
+/obj/effect/mapping_helpers/airlock/autoname,
+/obj/effect/mapping_helpers/airlock/access/all/engineering/atmos,
+/obj/machinery/door/airlock/public/glass/incinerator/atmos_interior,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/brown/visible/layer2,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper,
 /turf/open/floor/engine,
 /area/station/maintenance/disposal/incinerator)
 "joZ" = (
@@ -39744,11 +39745,12 @@
 /turf/open/space/openspace,
 /area/space/nearstation)
 "kcS" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/brown/visible/layer2,
-/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/incinerator_atmos{
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small/directional/east,
+/obj/machinery/computer/atmos_control/nocontrol/incinerator{
 	dir = 8
 	},
-/turf/open/floor/engine,
+/turf/open/floor/iron,
 /area/station/maintenance/disposal/incinerator)
 "kcZ" = (
 /turf/closed/wall/r_wall,
@@ -45603,9 +45605,16 @@
 /turf/open/floor/iron/large,
 /area/station/maintenance/ghetto/central)
 "lxI" = (
+/obj/machinery/airlock_controller/incinerator_atmos{
+	pixel_x = -24
+	},
+/obj/effect/mapping_helpers/airlock/locked,
+/obj/effect/mapping_helpers/airlock/autoname,
+/obj/effect/mapping_helpers/airlock/access/all/engineering/atmos,
+/obj/machinery/door/airlock/public/glass/incinerator/atmos_exterior,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/brown/visible/layer2,
-/obj/machinery/igniter/incinerator_atmos{
-	id = "waste_incinerator_igniter"
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 1
 	},
 /turf/open/floor/engine,
 /area/station/maintenance/disposal/incinerator)
@@ -67873,6 +67882,11 @@
 /obj/machinery/status_display/ai/directional/north,
 /turf/open/floor/iron,
 /area/station/hallway/primary/aft)
+"raN" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/effect/spawner/structure/window/reinforced,
+/turf/open/floor/plating/airless,
+/area/station/maintenance/disposal/incinerator)
 "raR" = (
 /obj/machinery/conveyor_switch/oneway{
 	id = "packageSort1";
@@ -71494,10 +71508,11 @@
 /turf/open/floor/plating,
 /area/station/maintenance/ghetto/port/aft)
 "rXD" = (
-/obj/machinery/air_sensor/incinerator_tank,
-/obj/machinery/atmospherics/pipe/smart/simple/dark/visible,
-/turf/open/floor/engine,
-/area/station/maintenance/disposal/incinerator)
+/obj/machinery/atmospherics/pipe/smart/manifold/scrubbers/visible{
+	dir = 8
+	},
+/turf/open/floor/plating/airless,
+/area/space/nearstation)
 "rXH" = (
 /obj/structure/cable,
 /obj/machinery/light_switch/directional/south,
@@ -74264,14 +74279,6 @@
 /obj/machinery/light/directional/north,
 /turf/open/floor/iron,
 /area/station/commons/locker)
-"sGJ" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small/directional/east,
-/obj/machinery/computer/atmos_control/nocontrol/incinerator{
-	dir = 8
-	},
-/turf/open/floor/iron,
-/area/station/maintenance/disposal/incinerator)
 "sGN" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/cyan,
 /obj/structure/cable,
@@ -76970,18 +76977,6 @@
 	},
 /turf/open/floor/circuit,
 /area/station/ai_monitored/turret_protected/ai)
-"tsm" = (
-/obj/machinery/airlock_controller/incinerator_atmos{
-	pixel_x = -24
-	},
-/obj/effect/mapping_helpers/airlock/locked,
-/obj/effect/mapping_helpers/airlock/autoname,
-/obj/effect/mapping_helpers/airlock/access/all/engineering/atmos,
-/obj/machinery/door/airlock/public/glass/incinerator/atmos_interior,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/brown/visible/layer2,
-/obj/effect/mapping_helpers/airlock/cyclelink_helper,
-/turf/open/floor/engine,
-/area/station/maintenance/disposal/incinerator)
 "tsn" = (
 /obj/structure/disposalpipe/trunk{
 	dir = 1
@@ -79578,6 +79573,9 @@
 /obj/machinery/light/small/directional/west,
 /obj/machinery/atmospherics/pipe/bridge_pipe/scrubbers/visible{
 	dir = 8
+	},
+/obj/machinery/airlock_sensor/incinerator_atmos{
+	pixel_y = 24
 	},
 /turf/open/floor/engine,
 /area/station/maintenance/disposal/incinerator)
@@ -84298,9 +84296,10 @@
 /turf/open/water,
 /area/station/maintenance/ghetto/garden)
 "vnQ" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/effect/spawner/structure/window/reinforced,
-/turf/open/floor/plating/airless,
+/obj/machinery/atmospherics/pipe/layer_manifold/supply/hidden{
+	dir = 4
+	},
+/turf/closed/wall/r_wall,
 /area/station/maintenance/disposal/incinerator)
 "vnR" = (
 /obj/structure/chair/office/light{
@@ -93454,11 +93453,10 @@
 /turf/open/floor/iron/dark,
 /area/station/ai_monitored/security/armory)
 "xEN" = (
-/obj/machinery/atmospherics/pipe/smart/manifold/scrubbers/visible{
-	dir = 8
-	},
-/turf/open/floor/plating/airless,
-/area/space/nearstation)
+/obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/atmospherics/pipe/smart/simple/scrubbers/visible,
+/turf/open/floor/plating,
+/area/station/maintenance/disposal/incinerator)
 "xEO" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -94174,9 +94172,11 @@
 /turf/open/floor/iron/dark,
 /area/station/command/heads_quarters/hos)
 "xNE" = (
-/obj/effect/spawner/structure/window/reinforced,
-/obj/machinery/atmospherics/pipe/smart/simple/scrubbers/visible,
-/turf/open/floor/plating,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/brown/visible/layer2,
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/incinerator_atmos{
+	dir = 8
+	},
+/turf/open/floor/engine,
 /area/station/maintenance/disposal/incinerator)
 "xNK" = (
 /obj/effect/turf_decal/trimline/green/filled/line{
@@ -185186,8 +185186,8 @@ jHU
 baa
 uva
 hAN
-xNE
 xEN
+rXD
 eAR
 kJd
 kJd
@@ -185703,7 +185703,7 @@ qZC
 hpp
 tZG
 hpp
-rXD
+hIY
 hSi
 euX
 trM
@@ -185957,11 +185957,11 @@ vaF
 eIw
 hID
 bxz
-tsm
-kcS
-dcS
-lxI
 joL
+xNE
+lxI
+dcS
+gKt
 cZJ
 fNa
 trM
@@ -186215,9 +186215,9 @@ nuv
 nuv
 lgC
 cZJ
-iMY
+vnQ
 cZJ
-hIY
+iMY
 cZJ
 cZJ
 vbK
@@ -186728,7 +186728,7 @@ ouO
 mFb
 hZK
 pfd
-sGJ
+kcS
 mGT
 cZJ
 qxx
@@ -186986,7 +186986,7 @@ cZJ
 lEp
 lEp
 cZJ
-vnQ
+raN
 cZJ
 udL
 cZJ
