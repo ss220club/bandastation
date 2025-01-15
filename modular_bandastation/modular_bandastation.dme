@@ -3,6 +3,7 @@
 
 #include "_defines220/_defines220.dme"
 #include "_helpers220/_helpers220.dme"
+#include "_rust_utils/_rust_utils.dme"
 #include "_signals220/_signals220.dme"
 #include "_singletons/_singletons.dme"
 #include "title_screen/_title_screen.dme"
@@ -11,9 +12,11 @@
 #include "aesthetics_sounds/_aesthetics_sounds.dme"
 #include "automapper/_automapper.dme"
 #include "ai_laws/_ai_laws.dme"
+#include "announcers/_announcers.dme"
 #include "autohiss/_autohiss.dme"
 #include "balance/_balance.dme"
 #include "barsigns/_barsigns.dme"
+#include "chat_badges/_chat_badges.dme"
 #include "communication/_communication.dme"
 #include "customization/_customization.dme"
 #include "cyrillic_fixes/_cyrillic_fixes.dme"
@@ -39,11 +42,13 @@
 #include "world_topics/_world_topics.dme"
 #include "preferences/_preferences.dme"
 #include "jukebox/_jukebox.dme"
+#include "cryosleep/_cryosleep.dme"
 #include "objects/_objects.dme"
 #include "orderables/_orderables.dme"
 #include "automatic_crew_transfer/_automatic_crew_transfer.dme"
 #include "outfits/_outfits.dme"
 #include "overrides/_overrides.dme"
+#include "hydroponics/_hydroponics.dme"
 
 
 // --- PRIME --- //
