@@ -3990,6 +3990,20 @@
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/station/maintenance/ghetto/port/aft)
+"aYp" = (
+/obj/machinery/airlock_controller/incinerator_atmos{
+	pixel_x = -24
+	},
+/obj/effect/mapping_helpers/airlock/locked,
+/obj/effect/mapping_helpers/airlock/autoname,
+/obj/effect/mapping_helpers/airlock/access/all/engineering/atmos,
+/obj/machinery/door/airlock/public/glass/incinerator/atmos_exterior,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/brown/visible/layer2,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 1
+	},
+/turf/open/floor/engine,
+/area/station/maintenance/disposal/incinerator)
 "aYy" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/cyan,
@@ -12503,8 +12517,8 @@
 /turf/open/floor/iron,
 /area/station/maintenance/ghetto/central)
 "dcS" = (
-/obj/machinery/power/turbine/inlet_compressor{
-	dir = 4
+/obj/machinery/atmospherics/components/unary/vent_scrubber/layer2{
+	dir = 1
 	},
 /turf/open/floor/engine,
 /area/station/maintenance/disposal/incinerator)
@@ -26837,12 +26851,6 @@
 	},
 /turf/open/floor/iron/white,
 /area/station/medical/medbay/lobby)
-"gMR" = (
-/obj/machinery/atmospherics/pipe/smart/manifold/scrubbers/visible{
-	dir = 8
-	},
-/turf/open/floor/plating/airless,
-/area/space/nearstation)
 "gMS" = (
 /obj/machinery/status_display/ai/directional/east,
 /obj/structure/cable,
@@ -36688,9 +36696,14 @@
 /turf/closed/wall/r_wall,
 /area/station/engineering/supermatter/room)
 "joL" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/layer2{
-	dir = 1
+/obj/machinery/airlock_controller/incinerator_atmos{
+	pixel_x = -24
 	},
+/obj/effect/mapping_helpers/airlock/locked,
+/obj/effect/mapping_helpers/airlock/autoname,
+/obj/effect/mapping_helpers/airlock/access/all/engineering/atmos,
+/obj/machinery/door/airlock/public/glass/incinerator/atmos_interior,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/brown/visible/layer2,
 /turf/open/floor/engine,
 /area/station/maintenance/disposal/incinerator)
 "joZ" = (
@@ -39743,19 +39756,11 @@
 /turf/open/space/openspace,
 /area/space/nearstation)
 "kcS" = (
-/obj/machinery/airlock_controller/incinerator_atmos{
-	pixel_x = -24
+/obj/machinery/atmospherics/pipe/smart/manifold/scrubbers/visible{
+	dir = 8
 	},
-/obj/effect/mapping_helpers/airlock/locked,
-/obj/effect/mapping_helpers/airlock/autoname,
-/obj/effect/mapping_helpers/airlock/access/all/engineering/atmos,
-/obj/machinery/door/airlock/public/glass/incinerator/atmos_exterior,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/brown/visible/layer2,
-/obj/effect/mapping_helpers/airlock/cyclelink_helper{
-	dir = 1
-	},
-/turf/open/floor/engine,
-/area/station/maintenance/disposal/incinerator)
+/turf/open/floor/plating/airless,
+/area/space/nearstation)
 "kcZ" = (
 /turf/closed/wall/r_wall,
 /area/station/ai_monitored/command/nuke_storage)
@@ -45609,11 +45614,12 @@
 /turf/open/floor/iron/large,
 /area/station/maintenance/ghetto/central)
 "lxI" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/brown/visible/layer2,
-/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/incinerator_atmos{
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small/directional/east,
+/obj/machinery/computer/atmos_control/nocontrol/incinerator{
 	dir = 8
 	},
-/turf/open/floor/engine,
+/turf/open/floor/iron,
 /area/station/maintenance/disposal/incinerator)
 "lxO" = (
 /obj/effect/decal/cleanable/dirt,
@@ -48944,10 +48950,6 @@
 /obj/machinery/status_display/evac/directional/north,
 /turf/open/floor/iron,
 /area/station/command/bridge)
-"mpD" = (
-/obj/effect/mapping_helpers/airlock/cyclelink_helper,
-/turf/closed/wall/r_wall,
-/area/station/maintenance/disposal/incinerator)
 "mpE" = (
 /obj/structure/cable,
 /obj/effect/turf_decal/tile/neutral/fourcorners,
@@ -52161,6 +52163,10 @@
 /obj/item/cultivator,
 /turf/open/floor/plating,
 /area/station/maintenance/port/aft)
+"neT" = (
+/obj/effect/mapping_helpers/airlock/cyclelink_helper,
+/turf/closed/wall/r_wall,
+/area/station/maintenance/disposal/incinerator)
 "neY" = (
 /obj/machinery/light/small/directional/west,
 /turf/open/floor/plating,
@@ -53369,17 +53375,6 @@
 	},
 /turf/open/floor/iron/white,
 /area/station/science/explab)
-"nuc" = (
-/obj/machinery/airlock_controller/incinerator_atmos{
-	pixel_x = -24
-	},
-/obj/effect/mapping_helpers/airlock/locked,
-/obj/effect/mapping_helpers/airlock/autoname,
-/obj/effect/mapping_helpers/airlock/access/all/engineering/atmos,
-/obj/machinery/door/airlock/public/glass/incinerator/atmos_interior,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/brown/visible/layer2,
-/turf/open/floor/engine,
-/area/station/maintenance/disposal/incinerator)
 "nuf" = (
 /obj/structure/disposalpipe/trunk{
 	dir = 4
@@ -65527,7 +65522,7 @@
 /obj/machinery/power/turbine/turbine_outlet{
 	dir = 4
 	},
-/turf/open/space/basic,
+/turf/open/floor/engine,
 /area/station/maintenance/disposal/incinerator)
 "qxy" = (
 /obj/structure/table/wood,
@@ -71515,12 +71510,10 @@
 /turf/open/floor/plating,
 /area/station/maintenance/ghetto/port/aft)
 "rXD" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small/directional/east,
-/obj/machinery/computer/atmos_control/nocontrol/incinerator{
-	dir = 8
+/obj/machinery/power/turbine/inlet_compressor{
+	dir = 4
 	},
-/turf/open/floor/iron,
+/turf/open/floor/engine,
 /area/station/maintenance/disposal/incinerator)
 "rXH" = (
 /obj/structure/cable,
@@ -76873,6 +76866,11 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron,
 /area/station/maintenance/starboard/upper)
+"tqG" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/atmospherics/pipe/smart/simple/scrubbers/visible,
+/turf/open/floor/plating,
+/area/station/maintenance/disposal/incinerator)
 "tqI" = (
 /obj/effect/turf_decal/trimline/blue/filled/corner{
 	dir = 1
@@ -94177,9 +94175,11 @@
 /turf/open/floor/iron/dark,
 /area/station/command/heads_quarters/hos)
 "xNE" = (
-/obj/effect/spawner/structure/window/reinforced,
-/obj/machinery/atmospherics/pipe/smart/simple/scrubbers/visible,
-/turf/open/floor/plating,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/brown/visible/layer2,
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/incinerator_atmos{
+	dir = 8
+	},
+/turf/open/floor/engine,
 /area/station/maintenance/disposal/incinerator)
 "xNK" = (
 /obj/effect/turf_decal/trimline/green/filled/line{
@@ -185189,8 +185189,8 @@ jHU
 baa
 uva
 hAN
-xNE
-gMR
+tqG
+kcS
 eAR
 kJd
 kJd
@@ -185960,11 +185960,11 @@ vaF
 eIw
 hID
 bxz
-nuc
-lxI
-kcS
-hIY
 joL
+xNE
+aYp
+hIY
+dcS
 cZJ
 fNa
 trM
@@ -186217,10 +186217,10 @@ vJV
 nuv
 nuv
 lgC
-mpD
+neT
 iMY
 cZJ
-dcS
+rXD
 cZJ
 cZJ
 vbK
@@ -186731,7 +186731,7 @@ ouO
 mFb
 hZK
 pfd
-rXD
+lxI
 mGT
 cZJ
 qxx
