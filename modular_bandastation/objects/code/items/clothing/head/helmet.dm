@@ -1,13 +1,13 @@
 /obj/item/clothing/head/helmet/bike_helmet
 	name = "biker helmet"
 	desc = "Крутой шлем."
-	icon = 'modular_bandastation/clothing/icons/object/hats.dmi'
-	worn_icon = 'modular_bandastation/clothing/icons/mob/hats.dmi'
+	icon = 'modular_bandastation/objects/icons/obj/clothing/head/helmet.dmi'
+	worn_icon = 'modular_bandastation/objects/icons/mob/clothing/head/helmet.dmi'
 	icon_state = "bike_helmet"
 	base_icon_state = "bike_helmet"
 	inhand_icon_state = "bike_helmet"
-	lefthand_file = 'modular_bandastation/clothing/icons/inhands/left_hand.dmi'
-	righthand_file = 'modular_bandastation/clothing/icons/inhands/right_hand.dmi'
+	lefthand_file = 'modular_bandastation/objects/icons/mob/inhands/clothing_left_hand.dmi'
+	righthand_file = 'modular_bandastation/objects/icons/mob/inhands/clothing_right_hand.dmi'
 	actions_types = list(/datum/action/item_action/toggle_helmet)
 	flags_cover = HEADCOVERSEYES|EARS_COVERED
 	dog_fashion = null
@@ -33,6 +33,6 @@
 	update_icon_state()
 
 /obj/item/clothing/head/helmet/space/hardsuit/security
-	icon = 'modular_bandastation/clothing/icons/object/helmet.dmi'
-	worn_icon = 'modular_bandastation/clothing/icons/mob/helmet.dmi'
+	icon = 'modular_bandastation/objects/icons/obj/clothing/head/helmet.dmi'
+	worn_icon = 'modular_bandastation/objects/icons/mob/clothing/head/helmet.dmi'
 	icon_state = "hardsuit0-sec"

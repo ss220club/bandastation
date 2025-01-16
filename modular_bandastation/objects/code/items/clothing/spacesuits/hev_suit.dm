@@ -4,10 +4,10 @@
 /obj/item/clothing/suit/space/hev
 	name = "\improper hazardous environment suit"
 	desc = "The Mark IV HEV suit protects the user from a number of hazardous environments and has in build ballistic protection."
-	icon = 'modular_bandastation/clothing/icons/object/suits.dmi'
-	worn_icon = 'modular_bandastation/clothing/icons/mob/suits.dmi'
-	lefthand_file = 'modular_bandastation/clothing/icons/inhands/left_hand.dmi'
-	righthand_file = 'modular_bandastation/clothing/icons/inhands/right_hand.dmi'
+	icon = 'modular_bandastation/objects/icons/obj/clothing/suits/suits.dmi'
+	worn_icon = 'modular_bandastation/objects/icons/mob/clothing/suits/suits.dmi'
+	lefthand_file = 'modular_bandastation/objects/icons/mob/inhands/clothing_left_hand.dmi'
+	righthand_file = 'modular_bandastation/objects/icons/mob/inhands/clothing_right_hand.dmi'
 	icon_state = "hev"
 	inhand_icon_state = "hev"
 	resistance_flags = FIRE_PROOF | ACID_PROOF | FREEZE_PROOF
@@ -87,10 +87,10 @@
 		for(var/voice in funny_signals)
 			RegisterSignal(M, voice, funny_signals[voice])
 			owner = M
-			add_queue('modular_bandastation/clothing/sound/hev/blip.ogg', 2 SECONDS, purge_queue=TRUE)
-			add_queue('modular_bandastation/clothing/sound/hev/01_hev_logon.ogg', 11 SECONDS)
-			add_queue('modular_bandastation/clothing/sound/hev/04_vitalsigns_on.ogg', 4 SECONDS)
-			add_queue('modular_bandastation/clothing/sound/hev/09_safe_day.ogg', 8 SECONDS)
+			add_queue('modular_bandastation/objects/sounds/hev/blip.ogg', 2 SECONDS, purge_queue=TRUE)
+			add_queue('modular_bandastation/objects/sounds/hev/01_hev_logon.ogg', 11 SECONDS)
+			add_queue('modular_bandastation/objects/sounds/hev/04_vitalsigns_on.ogg', 4 SECONDS)
+			add_queue('modular_bandastation/objects/sounds/hev/09_safe_day.ogg', 8 SECONDS)
 	else
 		for(var/voice in funny_signals)
 			UnregisterSignal(M, voice)
@@ -103,7 +103,7 @@
 //Death
 /obj/item/clothing/suit/space/hev/proc/handle_death(gibbed)
 	SIGNAL_HANDLER
-	add_queue('modular_bandastation/clothing/sound/hev/death.ogg', 5 SECONDS, purge_queue=TRUE)
+	add_queue('modular_bandastation/objects/sounds/hev/death.ogg', 5 SECONDS, purge_queue=TRUE)
 
 //Mute
 /obj/item/clothing/suit/space/hev/proc/handle_speech(datum/source, mob/speech_args)
@@ -120,23 +120,23 @@
 //Fire
 /obj/item/clothing/suit/space/hev/proc/handle_ignite(mob/living)
 	SIGNAL_HANDLER
-	SOUND_BEEP('modular_bandastation/clothing/sound/hev/beep_3.ogg')
-	add_queue('modular_bandastation/clothing/sound/hev/heat.ogg', 3 SECONDS)
+	SOUND_BEEP('modular_bandastation/objects/sounds/hev/beep_3.ogg')
+	add_queue('modular_bandastation/objects/sounds/hev/heat.ogg', 3 SECONDS)
 
 //Shock
 /obj/item/clothing/suit/space/hev/proc/handle_shock(mob/living)
 	SIGNAL_HANDLER
-	SOUND_BEEP('modular_bandastation/clothing/sound/hev/beep_3.ogg')
-	add_queue('modular_bandastation/clothing/sound/hev/shok.ogg', 3 SECONDS)
+	SOUND_BEEP('modular_bandastation/objects/sounds/hev/beep_3.ogg')
+	add_queue('modular_bandastation/objects/sounds/hev/shok.ogg', 3 SECONDS)
 
 //Helmet
 /obj/item/clothing/head/helmet/hev_helmet
 	name = "hazardous environment suit helmet"
 	desc = "The Mark IV HEV suit helmet."
-	icon = 'modular_bandastation/clothing/icons/object/helmet.dmi'
-	worn_icon = 'modular_bandastation/clothing/icons/mob/helmet.dmi'
-	lefthand_file = 'modular_bandastation/clothing/icons/inhands/left_hand.dmi'
-	righthand_file = 'modular_bandastation/clothing/icons/inhands/right_hand.dmi'
+	icon = 'modular_bandastation/objects/icons/obj/clothing/head/helmet.dmi'
+	worn_icon = 'modular_bandastation/objects/icons/mob/clothing/head/helmet.dmi'
+	lefthand_file = 'modular_bandastation/objects/icons/mob/inhands/clothing_left_hand.dmi'
+	righthand_file = 'modular_bandastation/objects/icons/mob/inhands/clothing_right_hand.dmi'
 	icon_state = "hev_helmet0"
 	inhand_icon_state = "hev_helmet"
 	armor_type = /datum/armor/armor_heavy
