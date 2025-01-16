@@ -1,44 +1,54 @@
 ///Gamemode related configs below
 // Point Gain Multipliers
 /datum/config_entry/number/mundane_point_gain_multiplier
-	config_entry_value = 1
+	integer = FALSE
+	default = 1
 	min_val = 0
 
 /datum/config_entry/number/moderate_point_gain_multiplier
-	config_entry_value = 1
+	integer = FALSE
+	default = 1
 	min_val = 0
 
 /datum/config_entry/number/major_point_gain_multiplier
-	config_entry_value = 1
+	integer = FALSE
+	default = 1
 	min_val = 0
 
 /datum/config_entry/number/roleset_point_gain_multiplier
-	config_entry_value = 1
+	integer = FALSE
+	default = 1
 	min_val = 0
 
 /datum/config_entry/number/objectives_point_gain_multiplier
-	config_entry_value = 1
+	integer = FALSE
+	default = 1
 	min_val = 0
 
 // Roundstart points Multipliers
 /datum/config_entry/number/mundane_roundstart_point_multiplier
-	config_entry_value = 1
+	integer = FALSE
+	default = 1
 	min_val = 0
 
 /datum/config_entry/number/moderate_roundstart_point_multiplier
-	config_entry_value = 1
+	integer = FALSE
+	default = 1
 	min_val = 0
 
 /datum/config_entry/number/major_roundstart_point_multiplier
-	config_entry_value = 1
+	integer = FALSE
+	default = 1
 	min_val = 0
 
 /datum/config_entry/number/roleset_roundstart_point_multiplier
-	config_entry_value = 1
+	integer = FALSE
+	default = 1
 	min_val = 0
 
 /datum/config_entry/number/objectives_roundstart_point_multiplier
-	config_entry_value = 1
+	integer = FALSE
+	default = 1
 	min_val = 0
 
 // Minimum population
