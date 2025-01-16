@@ -35,10 +35,9 @@ export const AntagInfoGlitch = (props) => {
               </span>
             </Stack.Item>
             <Stack.Item mb={2}>
-              <span style={textStyles.danger}>Битраннинг</span>- это
-              преступление. Ваша миссия:{' '}
-              <span style={textStyles.variable}>Уничтожить</span> органических
-              вторженцов, чтобы сохранить целостность системы.
+              <span style={textStyles.danger}>Битраннинг</span>- это преступление. 
+              Ваша миссия:{' '} <span style={textStyles.variable}>Устранить</span> 
+              органических вторженцов для сохранения целостности системы.
             </Stack.Item>
             <SpecificInfo />
             <Stack.Item>
@@ -60,7 +59,7 @@ export const AntagInfoGlitch = (props) => {
               <span style={textStyles.variable}>действие.</span>
               <span style={textStyles.danger}>УБИТЬ()</span>
             </Stack.Item>
-            <Stack.Item>уничтожить_вторженцев([0x70cf4020])</Stack.Item>
+            <Stack.Item>устранить_вторженцев([0x70cf4020])</Stack.Item>
           </Stack>
         </Section>
       </Window.Content>
@@ -77,14 +76,12 @@ const SpecificInfo = (props) => {
       return (
         <>
           <Stack.Item mb={2}>
-            Чтобы облегчить вам задачу, в вашу программу добавлены передовые
-            технологии знаний{' '}
+            Для облегчения задачи, в вашу программу загружены передовые знания{' '} 
             <span style={textStyles.variable}>боевых исскуств</span>.
           </Stack.Item>
           <Stack.Item grow>
-            Оружие дальнего боя <span style={textStyles.danger}>запрещено</span>
-            . Баллистическая защита не приветствуется. Стиль имеет
-            первостепенное значение.
+            Оружие дальнего боя <span style={textStyles.danger}>запрещено</span>. 
+            Баллистическая защита не приветствуется. Стиль - первостепенен.
           </Stack.Item>
         </>
       );

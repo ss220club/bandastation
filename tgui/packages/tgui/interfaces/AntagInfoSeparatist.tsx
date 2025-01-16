@@ -36,7 +36,7 @@ const IntroductionObjectives = (props) => {
     <Section fill>
       <Stack vertical>
         <Stack.Item textColor="red" fontSize="20px">
-          Вы - Сепаратист за свободу {nation}!
+          Вы - Борец за свободу {nation}!
         </Stack.Item>
         <Stack.Item grow>
           <ObjectivePrintout

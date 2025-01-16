@@ -23,7 +23,7 @@ export const AntagInfoShade = (props) => {
               Ваша душа была захвачена в камень души!
             </Stack.Item>
             <Stack.Item fontSize="30px">
-              Вы обязаны выполнять волю {master_name}!
+              Вы обязаны беспрекословно следовать воли {master_name}!
             </Stack.Item>
             <Stack.Item fontSize="20px">
               Помогите им добиться успеха в достижении своих целей любой ценой.
