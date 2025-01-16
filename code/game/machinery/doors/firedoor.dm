@@ -494,16 +494,21 @@
 
 	if(!user.combat_mode)
 		// BANDASTATION EDIT START
-		if(welded || operating)
+		if(welded)
 			return
-		if(do_after(user, 5 SECONDS))
-			user.visible_message(
-				"<span class='notice'>[user] opens [src].</span>",
-				"<span class='notice'>You open [src].</span>")
-			if(density)
-				open()
-				if(active)
-					addtimer(CALLBACK(src, PROC_REF(correct_state)), 2 SECONDS, TIMER_UNIQUE)
+			
+		if(!do_after(user, 5 SECONDS))
+			return
+
+		if(!density)
+			return
+			
+		open()	
+		user.visible_message(span_notice("[user] opens [src].", span_notice("You open [src].")
+		if(!active)
+			return
+			
+		addtimer(CALLBACK(src, PROC_REF(correct_state)), 2 SECONDS, TIMER_UNIQUE)
 		// BANDASTATION EDIT STOP
 	else
 		user.visible_message(span_warning("[user] bashes [src]!"), \
