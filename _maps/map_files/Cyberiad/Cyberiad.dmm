@@ -2060,6 +2060,7 @@
 /obj/effect/turf_decal/siding/wideplating_new/dark{
 	dir = 6
 	},
+/obj/machinery/light/small/directional/west,
 /turf/open/floor/iron/dark/small,
 /area/station/security/mechbay)
 "aBh" = (
@@ -6334,7 +6335,7 @@
 /turf/open/floor/iron,
 /area/station/security/prison)
 "bEb" = (
-/obj/structure/girder,
+/obj/structure/barricade/wooden,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron/dark,
 /area/station/maintenance/department/security/ghetto)
@@ -9563,6 +9564,7 @@
 /obj/effect/turf_decal/tile/red/half/contrasted{
 	dir = 1
 	},
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/iron/dark,
 /area/station/maintenance/department/security/ghetto)
 "cte" = (
@@ -16245,6 +16247,8 @@
 "dYB" = (
 /obj/structure/closet/crate/bin,
 /obj/effect/turf_decal/delivery,
+/obj/structure/sign/poster/official/random/directional/north,
+/obj/machinery/light/directional/north,
 /obj/machinery/camera/directional/north{
 	c_tag = "Brig - Mechbay"
 	},
@@ -23622,14 +23626,14 @@
 /turf/open/floor/iron,
 /area/station/engineering/atmos)
 "fUf" = (
-/obj/effect/turf_decal/tile/red{
-	dir = 8
-	},
 /obj/machinery/camera/directional/west{
 	c_tag = "Brig - Lower Floor - Stairs"
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/firealarm/directional/west,
+/obj/effect/turf_decal/tile/red{
+	dir = 1
+	},
 /turf/open/floor/iron/dark,
 /area/station/maintenance/department/security/ghetto)
 "fUh" = (
@@ -33367,6 +33371,14 @@
 /obj/item/wrench,
 /turf/open/floor/iron/dark,
 /area/station/security/execution)
+"ivB" = (
+/obj/effect/turf_decal/tile/red{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/vomit/old,
+/turf/open/floor/iron/dark,
+/area/station/maintenance/department/security/ghetto)
 "ivD" = (
 /obj/machinery/holopad,
 /obj/effect/turf_decal/tile/brown{
@@ -47605,7 +47617,6 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
-/obj/effect/decal/cleanable/vomit,
 /obj/machinery/camera/directional/north{
 	c_tag = "Brig - Lower Floor - Cells"
 	},
@@ -55692,6 +55703,9 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
 /area/station/security/prison)
+"nXH" = (
+/turf/closed/wall/rust,
+/area/station/security/interrogation/ghetto)
 "nXM" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
@@ -57954,9 +57968,6 @@
 /turf/open/floor/iron,
 /area/station/hallway/primary/central/fore)
 "ozi" = (
-/obj/effect/turf_decal/tile/red{
-	dir = 8
-	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 1
 	},
@@ -63936,9 +63947,6 @@
 "pYN" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/effect/turf_decal/tile/red{
-	dir = 1
-	},
 /obj/structure/cable,
 /obj/structure/extinguisher_cabinet/directional/north,
 /obj/machinery/duct,
@@ -68019,6 +68027,7 @@
 /area/station/ai_monitored/command/storage/eva)
 "rbf" = (
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/iron/dark/corner{
 	dir = 1
 	},
@@ -70494,7 +70503,7 @@
 /area/station/medical/surgery/aft)
 "rJl" = (
 /obj/structure/reagent_dispensers/plumbed{
-	dir = 4
+	dir = 8
 	},
 /turf/open/floor/plating,
 /area/station/security/checkpoint/customs)
@@ -72889,7 +72898,6 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/red,
 /turf/open/floor/iron/dark,
 /area/station/maintenance/department/security/ghetto)
 "smU" = (
@@ -73895,7 +73903,7 @@
 /obj/effect/mapping_helpers/airlock/access/any/security/general,
 /obj/machinery/door/firedoor,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating,
+/turf/open/floor/iron/dark,
 /area/station/maintenance/department/security/ghetto)
 "sAC" = (
 /obj/structure/disposalpipe/segment{
@@ -76970,6 +76978,7 @@
 /obj/effect/turf_decal/siding/wideplating_new/dark{
 	dir = 10
 	},
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/iron/dark/small,
 /area/station/security/mechbay)
 "tqy" = (
@@ -89406,6 +89415,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/small/directional/west,
 /turf/open/floor/plating,
 /area/station/security/interrogation/ghetto)
 "wAY" = (
@@ -90962,9 +90972,11 @@
 /turf/open/floor/iron/dark,
 /area/station/maintenance/starboard/aft)
 "wUe" = (
-/obj/effect/turf_decal/tile/red,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
+/obj/effect/turf_decal/tile/red{
+	dir = 4
+	},
 /turf/open/floor/iron/dark,
 /area/station/maintenance/department/security/ghetto)
 "wUk" = (
@@ -121203,9 +121215,9 @@ ceC
 yjB
 vpY
 aaP
-nRx
-nRx
-nRx
+tks
+tks
+tks
 nRx
 nRx
 nRx
@@ -121460,7 +121472,7 @@ doz
 yjB
 ehR
 aaP
-nRx
+tks
 szr
 pPa
 kgJ
@@ -121468,7 +121480,7 @@ nWe
 tTl
 gMw
 ukr
-nRx
+tks
 lNK
 aLe
 aLe
@@ -121717,7 +121729,7 @@ doz
 yjB
 tGh
 aaP
-nRx
+tks
 auj
 pzf
 sih
@@ -121725,7 +121737,7 @@ pXw
 pXw
 gMw
 dRN
-nRx
+tks
 qGg
 aLe
 doz
@@ -122496,7 +122508,7 @@ iEe
 wsN
 lFS
 ukr
-nRx
+tks
 qGg
 aLe
 ceC
@@ -122746,9 +122758,9 @@ dLf
 xTx
 mog
 nRx
-vaU
-vaU
-vaU
+nXH
+nXH
+nXH
 vaU
 vaU
 gLT
@@ -125062,7 +125074,7 @@ oKK
 aPJ
 wUX
 bML
-xAe
+ivB
 xjr
 aqn
 wPP
