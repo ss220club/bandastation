@@ -83,7 +83,7 @@
 	else
 		finalized_announcement = CHAT_ALERT_DEFAULT_SPAN(jointext(announcement_strings, ""))
 
-	dispatch_announcement_to_players(finalized_announcement, players, sound, tts_seed_override = tts_seed_override) // Bandastation Addition: "tts_seed_override = tts_seed_override"
+	dispatch_announcement_to_players(finalized_announcement, players, sound, tts_override = tts_override) // Bandastation Addition: "tts_override = tts_override"
 
 	if(isnull(sender_override) && players == GLOB.player_list)
 		if(length(title) > 0)
