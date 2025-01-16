@@ -6,7 +6,6 @@
 	icon_state = "v_jacket"
 	lefthand_file = 'modular_bandastation/objects/icons/mob/inhands/clothing_left_hand.dmi'
 	righthand_file = 'modular_bandastation/objects/icons/mob/inhands/clothing_right_hand.dmi'
-	flags_inv = HIDEJUMPSUIT
 
 /obj/item/clothing/suit/takemura_jacket
 	name = "takemura jacket"
@@ -16,7 +15,6 @@
 	icon_state = "takemura_jacket"
 	lefthand_file = 'modular_bandastation/objects/icons/mob/inhands/clothing_left_hand.dmi'
 	righthand_file = 'modular_bandastation/objects/icons/mob/inhands/clothing_right_hand.dmi'
-	flags_inv = HIDEJUMPSUIT
 
 /obj/item/clothing/suit/katarina_jacket
 	name = "katarina jacket"
@@ -26,7 +24,6 @@
 	icon_state = "katarina_jacket"
 	lefthand_file = 'modular_bandastation/objects/icons/mob/inhands/clothing_left_hand.dmi'
 	righthand_file = 'modular_bandastation/objects/icons/mob/inhands/clothing_right_hand.dmi'
-	flags_inv = HIDEJUMPSUIT
 
 /obj/item/clothing/suit/katarina_cyberjacket
 	name = "katarina cyberjacket"
@@ -36,7 +33,6 @@
 	icon_state = "katarina_cyberjacket"
 	lefthand_file = 'modular_bandastation/objects/icons/mob/inhands/clothing_left_hand.dmi'
 	righthand_file = 'modular_bandastation/objects/icons/mob/inhands/clothing_right_hand.dmi'
-	flags_inv = HIDEJUMPSUIT
 
 /obj/item/clothing/suit/hooded/vi_arcane
 	name = "vi jacket"
@@ -46,8 +42,12 @@
 	icon_state = "vi_arcane"
 	lefthand_file = 'modular_bandastation/objects/icons/mob/inhands/clothing_left_hand.dmi'
 	righthand_file = 'modular_bandastation/objects/icons/mob/inhands/clothing_right_hand.dmi'
-	flags_inv = HIDEJUMPSUIT
 	hoodtype = /obj/item/clothing/head/hooded/vi_arcane
+	hood_up_affix = ""
+	body_parts_covered = CHEST|GROIN|ARMS
+	cold_protection = CHEST|GROIN|ARMS
+	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
+	allowed = list()
 
 /obj/item/clothing/head/hooded/vi_arcane
 	name = "vi hood"
@@ -60,8 +60,9 @@
 	cold_protection = HEAD
 	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
 	flags_inv = HIDEEARS | HIDEHAIR
+	hair_mask = HAIR_MASK_HIDE_WINTERHOOD
 
-/obj/item/clothing/suit/storage/soundhand_white_jacket
+/obj/item/clothing/suit/soundhand_white_jacket
 	name = "soundhand silver jacket"
 	desc = "Редкая серебристая куртка Саундхэнд. Ограниченная серия."
 	icon = 'modular_bandastation/objects/icons/obj/clothing/suits/suits.dmi'
@@ -69,10 +70,11 @@
 	icon_state = "soundhand_white_jacket"
 	lefthand_file = 'modular_bandastation/objects/icons/mob/inhands/clothing_left_hand.dmi'
 	righthand_file = 'modular_bandastation/objects/icons/mob/inhands/clothing_right_hand.dmi'
+	allowed = list()
 
-/obj/item/clothing/suit/storage/soundhand_white_jacket/tag
-	name = "aria's soundhand silver jacket"
-	desc = "Редкая серебристая куртка Арии Вильвен, основательницы Саундхэнд."
+/obj/item/clothing/suit/soundhand_white_jacket/tag
+	name = "soundhand tag silver jacket"
+	desc = "Серебристая куртка с тэгом группы Саундхэнд, которую носят исполнители группы."
 	icon = 'modular_bandastation/objects/icons/obj/clothing/suits/suits.dmi'
 	worn_icon = 'modular_bandastation/objects/icons/mob/clothing/suits/suits.dmi'
 	icon_state = "soundhand_white_jacket_teg"
@@ -80,7 +82,7 @@
 	lefthand_file = 'modular_bandastation/objects/icons/mob/inhands/clothing_left_hand.dmi'
 	righthand_file = 'modular_bandastation/objects/icons/mob/inhands/clothing_right_hand.dmi'
 
-/obj/item/clothing/suit/storage/soundhand_black_jacket
+/obj/item/clothing/suit/soundhand_black_jacket
 	name = "soundhand fan black jacket"
 	desc = "Черная куртка группы Саундхэнд, исполненая в духе оригинала, но без логотипа на спине. С любовью для фанатов."
 	icon = 'modular_bandastation/objects/icons/obj/clothing/suits/suits.dmi'
@@ -88,8 +90,9 @@
 	icon_state = "soundhand_black_jacket"
 	lefthand_file = 'modular_bandastation/objects/icons/mob/inhands/clothing_left_hand.dmi'
 	righthand_file = 'modular_bandastation/objects/icons/mob/inhands/clothing_right_hand.dmi'
+	allowed = list()
 
-/obj/item/clothing/suit/storage/soundhand_black_jacket/tag
+/obj/item/clothing/suit/soundhand_black_jacket/tag
 	name = "soundhand tag black jacket"
 	desc = "Черная куртка с тэгом группы Саундхэнд, которую носят исполнители группы."
 	icon = 'modular_bandastation/objects/icons/obj/clothing/suits/suits.dmi'
@@ -99,7 +102,7 @@
 	lefthand_file = 'modular_bandastation/objects/icons/mob/inhands/clothing_left_hand.dmi'
 	righthand_file = 'modular_bandastation/objects/icons/mob/inhands/clothing_right_hand.dmi'
 
-/obj/item/clothing/suit/storage/soundhand_olive_jacket
+/obj/item/clothing/suit/soundhand_olive_jacket
 	name = "soundhand fan olive jacket"
 	desc = "Оливковая куртка гурппы Саундхэнд, исполненая в духе оригинала, но без логотипа на спине. С любовью для фанатов."
 	icon = 'modular_bandastation/objects/icons/obj/clothing/suits/suits.dmi'
@@ -107,8 +110,9 @@
 	icon_state = "soundhand_olive_jacket"
 	lefthand_file = 'modular_bandastation/objects/icons/mob/inhands/clothing_left_hand.dmi'
 	righthand_file = 'modular_bandastation/objects/icons/mob/inhands/clothing_right_hand.dmi'
+	allowed = list()
 
-/obj/item/clothing/suit/storage/soundhand_olive_jacket/tag
+/obj/item/clothing/suit/soundhand_olive_jacket/tag
 	name = "soundhand tag olive jacket"
 	desc = "Оливковая куртка с тэгом группы Саундхэнд, которую носят исполнители группы."
 	icon = 'modular_bandastation/objects/icons/obj/clothing/suits/suits.dmi'
@@ -118,7 +122,7 @@
 	lefthand_file = 'modular_bandastation/objects/icons/mob/inhands/clothing_left_hand.dmi'
 	righthand_file = 'modular_bandastation/objects/icons/mob/inhands/clothing_right_hand.dmi'
 
-/obj/item/clothing/suit/storage/soundhand_brown_jacket
+/obj/item/clothing/suit/soundhand_brown_jacket
 	name = "soundhand fan brown jacket"
 	desc = "Коричневая куртка Саундхэнд, исполненая в духе оригинала, но без логотипа на спине. С любовью для фанатов."
 	icon = 'modular_bandastation/objects/icons/obj/clothing/suits/suits.dmi'
@@ -126,8 +130,9 @@
 	icon_state = "soundhand_brown_jacket"
 	lefthand_file = 'modular_bandastation/objects/icons/mob/inhands/clothing_left_hand.dmi'
 	righthand_file = 'modular_bandastation/objects/icons/mob/inhands/clothing_right_hand.dmi'
+	allowed = list()
 
-/obj/item/clothing/suit/storage/soundhand_brown_jacket/tag
+/obj/item/clothing/suit/soundhand_brown_jacket/tag
 	name = "soundhand tag brown jacket"
 	desc = "Коричневая куртка с тэгом группы Саундхэнд, которую носят исполнители группы."
 	icon = 'modular_bandastation/objects/icons/obj/clothing/suits/suits.dmi'

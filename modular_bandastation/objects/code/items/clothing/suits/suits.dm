@@ -8,6 +8,7 @@
 	righthand_file = 'modular_bandastation/objects/icons/mob/inhands/clothing_right_hand.dmi'
 	body_parts_covered = CHEST|GROIN|ARMS
 	cold_protection = CHEST|GROIN|ARMS
+	hood_up_affix = ""
 	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
 	allowed = list(/obj/item/tank/internals/emergency_oxygen)
 	hoodtype = /obj/item/clothing/head/hooded/shark_hood_par
@@ -57,13 +58,14 @@
 	cost = CARGO_CRATE_VALUE * 30
 	special = TRUE
 	access_view = ACCESS_SERVICE
-	contains = list(/obj/item/clothing/suit/storage/soundhand_black_jacket,
-					/obj/item/clothing/suit/storage/soundhand_black_jacket,
-					/obj/item/clothing/suit/storage/soundhand_olive_jacket,
-					/obj/item/clothing/suit/storage/soundhand_olive_jacket,
-					/obj/item/clothing/suit/storage/soundhand_brown_jacket,
-					/obj/item/clothing/suit/storage/soundhand_brown_jacket,
-					/obj/item/clothing/suit/storage/soundhand_white_jacket)
+	contains = list(
+		/obj/item/clothing/suit/soundhand_black_jacket,
+		/obj/item/clothing/suit/soundhand_black_jacket,
+		/obj/item/clothing/suit/soundhand_olive_jacket,
+		/obj/item/clothing/suit/soundhand_olive_jacket,
+		/obj/item/clothing/suit/soundhand_brown_jacket,
+		/obj/item/clothing/suit/soundhand_brown_jacket,
+		/obj/item/clothing/suit/soundhand_white_jacket)
 	crate_name = "soundhand Fan crate"
 
 /obj/item/clothing/suit/chef/red
