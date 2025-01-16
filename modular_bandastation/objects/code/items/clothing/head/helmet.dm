@@ -1,4 +1,4 @@
-/obj/item/clothing/head/helmet/bike_helmet
+/obj/item/clothing/head/helmet/biker_helmet
 	name = "biker helmet"
 	desc = "Крутой шлем."
 	icon = 'modular_bandastation/objects/icons/obj/clothing/head/helmet.dmi'
@@ -13,13 +13,13 @@
 	dog_fashion = null
 	var/on = TRUE
 
-/obj/item/clothing/head/helmet/bike_helmet/replica
+/obj/item/clothing/head/helmet/biker_helmet/replica
 	desc = "Крутой шлем. На вид хлипкий..."
 
-/obj/item/clothing/head/helmet/bike_helmet/ui_action_click(mob/user, toggle_helmet)
+/obj/item/clothing/head/helmet/biker_helmet/ui_action_click(mob/user, toggle_helmet)
 	helm_toggle(user)
 
-/obj/item/clothing/head/helmet/bike_helmet/update_icon_state()
+/obj/item/clothing/head/helmet/biker_helmet/update_icon_state()
 	icon_state = "[base_icon_state][on ? null : "_up" ]"
 	if (on)
 		flags_cover &= ~HEADCOVERSEYES
@@ -27,10 +27,10 @@
 		flags_cover |= HEADCOVERSEYES
 	return ..()
 
-/obj/item/clothing/head/helmet/bike_helmet/proc/helm_toggle(mob/user)
+/obj/item/clothing/head/helmet/biker_helmet/proc/helm_toggle(mob/user)
 	on = !on
-
 	update_icon_state()
+	update_appearance()
 
 /obj/item/clothing/head/helmet/space/hardsuit/security
 	icon = 'modular_bandastation/objects/icons/obj/clothing/head/helmet.dmi'
