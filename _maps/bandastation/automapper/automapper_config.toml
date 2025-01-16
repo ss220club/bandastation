@@ -160,6 +160,7 @@ map_files = ["tramstation_ntr_blueshield_office.dmm"]
 directory = "_maps/bandastation/automapper/templates/tramstation/"
 required_map = "tramstation.dmm"
 coordinates = [79, 130, 2]
+trait_name = "Station"
 
 [templates.tramstation_cryo]
 map_files = ["tramstation_cryo.dmm"]
