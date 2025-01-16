@@ -26,7 +26,7 @@ export const AntagInfoShade = (props) => {
               Вы обязаны беспрекословно следовать воли {master_name}!
             </Stack.Item>
             <Stack.Item fontSize="20px">
-              Помогите им добиться успеха в достижении своих целей любой ценой.
+              Помогите добиться успеха в достижении их целей любой ценой.
             </Stack.Item>
           </Stack>
         </Section>

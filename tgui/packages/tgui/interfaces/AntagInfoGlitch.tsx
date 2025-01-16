@@ -27,7 +27,7 @@ export const AntagInfoGlitch = (props) => {
       <Window.Content>
         <Section scrollable fill>
           <Stack fill vertical>
-            <Stack.Item>FN ТЕРМИНАЦИЯ_НАРУШИТЕЛЕЙ (REF)</Stack.Item>
+            <Stack.Item>FN УСТРАНЕНИЕ_НАРУШИТЕЛЕЙ (REF)</Stack.Item>
             <Divider />
             <Stack.Item mb={1} bold fontSize="16px">
               <span style={textStyles.variable}>
@@ -35,8 +35,9 @@ export const AntagInfoGlitch = (props) => {
               </span>
             </Stack.Item>
             <Stack.Item mb={2}>
-              <span style={textStyles.danger}>Битраннинг</span>- это преступление. 
-              Ваша миссия:{' '} <span style={textStyles.variable}>Устранить</span> 
+              <span style={textStyles.danger}>Битраннинг</span>- это
+              преступление. Ваша миссия:{' '}
+              <span style={textStyles.variable}>Устранить</span>
               органических вторженцов для сохранения целостности системы.
             </Stack.Item>
             <SpecificInfo />
@@ -76,12 +77,12 @@ const SpecificInfo = (props) => {
       return (
         <>
           <Stack.Item mb={2}>
-            Для облегчения задачи, в вашу программу загружены передовые знания{' '} 
+            Для облегчения задачи, в вашу программу загружены передовые знания{' '}
             <span style={textStyles.variable}>боевых исскуств</span>.
           </Stack.Item>
           <Stack.Item grow>
-            Оружие дальнего боя <span style={textStyles.danger}>запрещено</span>. 
-            Баллистическая защита не приветствуется. Стиль - первостепенен.
+            Оружие дальнего боя <span style={textStyles.danger}>запрещено</span>
+            . Баллистическая защита не приветствуется. Стиль - первостепенен.
           </Stack.Item>
         </>
       );
@@ -94,7 +95,7 @@ const SpecificInfo = (props) => {
           </Stack.Item>
           <Stack.Item grow>
             <span style={textStyles.danger}>Уничтожить</span> органическую жизнь
-            любой любой ценой.
+            любой ценой.
           </Stack.Item>
         </>
       );
