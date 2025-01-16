@@ -37,7 +37,7 @@
  * * encode_title - if TRUE, the title will be HTML encoded
  * * encode_text - if TRUE, the text will be HTML encoded
  */
-/proc/priority_announce(text, title = "", sound, type, sender_override, has_important_message = FALSE, list/mob/players = GLOB.player_list, encode_title = TRUE, encode_text = TRUE, color_override)
+/proc/priority_announce(text, title = "", sound, type, sender_override, has_important_message = FALSE, list/mob/players = GLOB.player_list, encode_title = TRUE, encode_text = TRUE, color_override, /datum/tts_seed/tts_seed_override = null) // Bandastation Addition: "/datum/tts_seed/tts_seed_override = null"
 	if(!text)
 		return
 
@@ -83,7 +83,7 @@
 	else
 		finalized_announcement = CHAT_ALERT_DEFAULT_SPAN(jointext(announcement_strings, ""))
 
-	dispatch_announcement_to_players(finalized_announcement, players, sound)
+	dispatch_announcement_to_players(finalized_announcement, players, sound, tts_seed_override = tts_seed_override) // Bandastation Addition: "tts_seed_override = tts_seed_override"
 
 	if(isnull(sender_override) && players == GLOB.player_list)
 		if(length(title) > 0)
@@ -186,7 +186,7 @@
 
 /// Proc that just dispatches the announcement to our applicable audience. Only the announcement is a mandatory arg.
 /// `should_play_sound` can also be a callback, if you want to only play the sound to specific players.
-/proc/dispatch_announcement_to_players(announcement, list/players = GLOB.player_list, sound_override = null, should_play_sound = TRUE)
+/proc/dispatch_announcement_to_players(announcement, list/players = GLOB.player_list, sound_override = null, should_play_sound = TRUE, /datum/tts_seed/tts_seed_override = null) // Bandastation Addition: "/datum/tts_seed/tts_seed_override = null"
 	var/sound_to_play = !isnull(sound_override) ? sound_override : 'sound/announcer/notice/notice2.ogg'
 
 	// note for later: low-hanging fruit to convert to astype() behind an experiment define whenever the 516 beta releases
@@ -204,11 +204,13 @@
 			continue
 
 		if(target.client?.prefs.read_preference(/datum/preference/toggle/sound_announcements))
-			SEND_SOUND(target, sound(sound_to_play))
-
+			// SEND_SOUND(target, sound(sound_to_play)) // Bandastion Removal
 			/// SS220 TTS START
-			var/mob/living/silicon/ai/active_ai = DEFAULTPICK(active_ais(TRUE, null), null)
-			var/datum/tts_seed/announcement_tts_seed = active_ai ? active_ai.get_tts_seed() : /datum/tts_seed/silero/glados
+			var/datum/tts_seed/announcement_tts_seed = tts_seed_override
+			if(isnull(announcement_tts_seed))
+				var/mob/living/silicon/ai/active_ai = DEFAULTPICK(active_ais(TRUE, null), null)
+				announcement_tts_seed = active_ai ? active_ai.get_tts_seed() : /datum/tts_seed/silero/glados
+
 			INVOKE_ASYNC(
 				SStts220, \
 				TYPE_PROC_REF(/datum/controller/subsystem/tts220, get_tts), \
@@ -217,6 +219,9 @@
 				announcement, \
 				announcement_tts_seed, \
 				FALSE, \
+				null, \
+				null, \
+				sound_to_play
 			)
 			/// SS220 TTS END
 
