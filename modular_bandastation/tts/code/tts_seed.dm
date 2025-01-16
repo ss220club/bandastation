@@ -28,6 +28,10 @@
 	if(tts_component)
 		return tts_component.tts_seed
 
+/atom/proc/get_tts_effects(list/additional_effects)
+	var/datum/component/tts_component/tts_component = GetComponent(/datum/component/tts_component)
+	return tts_component.get_effects(additional_effects)
+
 /atom/proc/change_tts_seed(mob/chooser, overrides, list/new_sound_effects)
 	if(!get_tts_seed())
 		if(alert(chooser, "Отсутствует TTS компонент. Создать?", "Изменение TTS", "Да", "Нет") == "Нет")
