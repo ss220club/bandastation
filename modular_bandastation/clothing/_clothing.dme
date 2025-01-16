@@ -2,3 +2,7 @@
 #include "code/cloaks.dm"
 #include "code/hats.dm"
 #include "code/helmet.dm"
+#include "code/accessories.dm"
+#include "code/gloves.dm"
+#include "code/mask.dm"
+#include "code/shoes.dm"
