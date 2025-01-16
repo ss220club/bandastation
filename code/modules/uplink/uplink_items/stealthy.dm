@@ -29,6 +29,14 @@
 	item = /obj/item/pen/edagger
 	cost = 2
 
+/datum/uplink_item/stealthy_weapons/slipstick
+	name = "Syndie Lipstick"
+	desc = "A highly advanced container of lipstick, we'll save you the trouble of explaining how it works here: \
+		After applying the lipstick to yourself, any kisses you blow will turn into laser kisses! (Use the kiss emote to fire laser kisses.) \
+		You may blow an unlimited amount of laser kisses! Stylish way to kiss to death, isn't it syndiekisser?"
+	item = /obj/item/lipstick/syndie
+	cost = 6
+
 /datum/uplink_item/stealthy_weapons/traitor_chem_bottle
 	name = "Poison Kit"
 	desc = "An assortment of deadly chemicals packed into a compact box. Comes with a syringe for more precise application."

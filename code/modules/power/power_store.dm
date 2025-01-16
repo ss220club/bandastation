@@ -1,6 +1,7 @@
-#define CELL_DRAIN_TIME 35
-#define CELL_POWER_GAIN (0.06 * STANDARD_CELL_CHARGE)
-#define CELL_POWER_DRAIN (0.75 * STANDARD_CELL_CHARGE)
+#define ETHEREAL_CELL_DRAIN_TIME (3.5 SECONDS)
+#define ETHEREAL_CELL_POWER_DRAIN (0.75 * STANDARD_CELL_CHARGE)
+/// The factor by which we multiply drain to get how much we gain
+#define ETHEREAL_CELL_POWER_GAIN_FACTOR 0.08
 
 /**
  * # Power store abstract type
@@ -56,6 +57,13 @@
 		COMSIG_ITEM_MAGICALLY_CHARGED = PROC_REF(on_magic_charge),
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
+
+
+/obj/item/stock_parts/power_store/Moved(atom/old_loc, movement_dir, forced, list/old_locs, momentum_change = TRUE)
+	. = ..()
+	if(!isturf(old_loc))
+		update_appearance()
+
 
 /**
  * Signal proc for [COMSIG_ITEM_MAGICALLY_CHARGED]
@@ -194,7 +202,7 @@
 	. = ..()
 	if(rigged)
 		. += span_danger("This [name] seems to be faulty!")
-	else
+	else if(!isnull(charge_light_type))
 		. += "The charge meter reads [CEILING(percent(), 0.1)]%." //so it doesn't say 0% charge when the overlay indicates it still has charge
 
 /obj/item/stock_parts/power_store/proc/on_reagent_change(datum/reagents/holder, ...)
@@ -259,7 +267,7 @@
 	if(!eating_success || QDELETED(src) || charge == 0)
 		user.visible_message(span_suicide("[user] chickens out!"))
 		return SHAME
-	playsound(user, 'sound/effects/sparks1.ogg', charge / maxcharge)
+	playsound(user, 'sound/effects/sparks/sparks1.ogg', charge / maxcharge)
 	var/damage = charge / (1 KILO JOULES)
 	user.electrocute_act(damage, src, 1, SHOCK_IGNORE_IMMUNITY|SHOCK_DELAY_STUN|SHOCK_NOGLOVES)
 	charge = 0
@@ -277,40 +285,55 @@
 		return
 	user.dropItemToGround(src)
 	user.dust(just_ash = TRUE)
-	playsound(src, 'sound/magic/lightningshock.ogg', 50, TRUE, 10)
+	playsound(src, 'sound/effects/magic/lightningshock.ogg', 50, TRUE, 10)
 	tesla_zap(source = src, zap_range = 10, power = discharged_energy)
 
 /obj/item/stock_parts/power_store/attack_self(mob/user)
-	if(ishuman(user))
-		var/mob/living/carbon/human/H = user
-		var/obj/item/organ/internal/stomach/maybe_stomach = H.get_organ_slot(ORGAN_SLOT_STOMACH)
+	. = ..()
+	if(.)
+		return
 
-		if(istype(maybe_stomach, /obj/item/organ/internal/stomach/ethereal))
+	if(!ishuman(user))
+		return
 
-			var/charge_limit = ETHEREAL_CHARGE_DANGEROUS - CELL_POWER_GAIN
-			var/obj/item/organ/internal/stomach/ethereal/stomach = maybe_stomach
-			var/obj/item/stock_parts/power_store/stomach_cell = stomach.cell
-			if((stomach.drain_time > world.time) || !stomach)
-				return
-			if(charge < CELL_POWER_DRAIN)
-				to_chat(H, span_warning("[src] doesn't have enough power!"))
-				return
-			if(stomach_cell.charge() > charge_limit)
-				to_chat(H, span_warning("Your charge is full!"))
-				return
-			to_chat(H, span_notice("You begin clumsily channeling power from [src] into your body."))
-			stomach.drain_time = world.time + CELL_DRAIN_TIME
-			while(do_after(user, CELL_DRAIN_TIME, target = src))
-				if((charge < CELL_POWER_DRAIN) || (stomach_cell.charge() > charge_limit))
-					return
-				if(istype(stomach))
-					to_chat(H, span_notice("You receive some charge from [src], wasting some in the process."))
-					stomach.adjust_charge(CELL_POWER_GAIN)
-					charge -= CELL_POWER_DRAIN //you waste way more than you receive, so that ethereals cant just steal one cell and forget about hunger
-				else
-					to_chat(H, span_warning("You can't receive charge from [src]!"))
+	var/mob/living/carbon/human/human_user = user
+	var/obj/item/organ/stomach/ethereal/user_stomach = human_user.get_organ_slot(ORGAN_SLOT_STOMACH)
+	if(!istype(user_stomach))
+		return
+	if(user_stomach.drain_time > world.time)
+		return
+
+	ethereal_drain(human_user, user_stomach)
+
+/// Handles letting an ethereal drain our charge into their stomach
+/obj/item/stock_parts/power_store/proc/ethereal_drain(mob/living/carbon/human/user, obj/item/organ/stomach/ethereal/used_stomach)
+	if(charge() <= 0)
+		balloon_alert(user, "out of charge!")
+		return
+
+	var/obj/item/stock_parts/power_store/stomach_cell = used_stomach.cell
+	used_stomach.drain_time = world.time + ETHEREAL_CELL_DRAIN_TIME
+	to_chat(user, span_notice("You begin clumsily channeling power from [src] into your body."))
+
+	while(do_after(user, ETHEREAL_CELL_DRAIN_TIME, target = src))
+		if(isnull(used_stomach) || (used_stomach != user.get_organ_slot(ORGAN_SLOT_STOMACH)))
+			balloon_alert(user, "stomach removed!?")
 			return
 
+		var/our_charge = charge()
+		var/scaled_stomach_used_charge = stomach_cell.used_charge() / ETHEREAL_CELL_POWER_GAIN_FACTOR
+		var/potential_charge = min(our_charge, scaled_stomach_used_charge)
+		var/to_drain = min(ETHEREAL_CELL_POWER_DRAIN, potential_charge)
+		var/energy_drained = use(to_drain, force = TRUE)
+		used_stomach.adjust_charge(energy_drained * ETHEREAL_CELL_POWER_GAIN_FACTOR)
+		update_appearance(UPDATE_OVERLAYS)
+
+		if(stomach_cell.used_charge() <= 0)
+			balloon_alert(user, "your charge is full!")
+			return
+		if(charge() <= 0)
+			balloon_alert(user, "out of charge!")
+			return
 
 /obj/item/stock_parts/power_store/blob_act(obj/structure/blob/B)
 	SSexplosions.high_mov_atom += src
@@ -321,6 +344,6 @@
 /obj/item/stock_parts/power_store/get_part_rating()
 	return maxcharge * 10 + charge
 
-#undef CELL_DRAIN_TIME
-#undef CELL_POWER_GAIN
-#undef CELL_POWER_DRAIN
+#undef ETHEREAL_CELL_DRAIN_TIME
+#undef ETHEREAL_CELL_POWER_DRAIN
+#undef ETHEREAL_CELL_POWER_GAIN_FACTOR

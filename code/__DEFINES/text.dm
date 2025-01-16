@@ -17,7 +17,7 @@
  * For example: MAPTEXT_PIXELLARI("<span style='font-size: 24pt'>Some large maptext here</span>")
  */
 /// Large size (ie: context tooltips) - Size options: 12pt 24pt.
-#define MAPTEXT_PIXELLARI(text) {"<span style='font-family: \"Pixellari\"; font-size: 12pt; -dm-text-outline: 1px black'>[##text]</span>"}
+#define MAPTEXT_PIXELLARI(text) {"<span style='font-family: \"Pix Cyrillic\"; font-size: 12pt; -dm-text-outline: 1px black'>[##text]</span>"} // BANDASTATION EDIT: Pixellari -> Pix Cyrillic
 
 /// Standard size (ie: normal runechat) - Size options: 6pt 12pt 18pt.
 #define MAPTEXT_GRAND9K(text) {"<span style='font-family: \"Grand9K Pixel\"; font-size: 6pt; -dm-text-outline: 1px black'>[##text]</span>"}
@@ -53,10 +53,10 @@
 #define SANITIZE_FILENAME(text) (GLOB.filename_forbidden_chars.Replace(text, ""))
 
 /// Simply removes the < and > characters, and limits the length of the message.
-#define STRIP_HTML_SIMPLE(text, limit) (GLOB.angular_brackets.Replace(copytext(text, 1, limit), ""))
+#define STRIP_HTML_SIMPLE(text, limit) (GLOB.angular_brackets.Replace(copytext_char(text, 1, limit), "")) // BANDASTATION EDIT - Add _char
 
 /// Removes everything enclose in < and > inclusive of the bracket, and limits the length of the message.
-#define STRIP_HTML_FULL(text, limit) (GLOB.html_tags.Replace(copytext(text, 1, limit), ""))
+#define STRIP_HTML_FULL(text, limit) (GLOB.html_tags.Replace(copytext_char(text, 1, limit), "")) // BANDASTATION EDIT - Add _char
 
 /**
  * stuff like `copytext(input, length(input))` will trim the last character of the input,
@@ -112,3 +112,7 @@
 #define SPLASH_FILE "splashes.json"
 ///File location for mother hallucination lines
 #define MOTHER_FILE "mother.json"
+
+#define ALPHABET list("a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z")
+#define VOWELS list("a", "e", "i", "o", "u")
+#define CONSONANTS (ALPHABET - VOWELS)

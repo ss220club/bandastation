@@ -10,7 +10,7 @@
 	school = SCHOOL_FORBIDDEN
 	cooldown_time = 70 SECONDS
 
-	invocation = "EID'R-ELDR!!!"
+	invocation = "FL'MS"
 	invocation_type = INVOCATION_WHISPER
 	spell_requirements = NONE
 
@@ -53,7 +53,7 @@
 		return
 
 	for(var/turf/nearby_turf as anything in RANGE_TURFS(1, owner))
-		var/obj/effect/hotspot/flame_tile = locate(nearby_turf) || new(nearby_turf)
+		var/obj/effect/hotspot/flame_tile = (locate() in nearby_turf) || new(nearby_turf)
 		flame_tile.alpha = 125
 		nearby_turf.hotspot_expose(750, 25 * seconds_between_ticks, 1)
 		for(var/mob/living/fried_living in nearby_turf.contents - owner)
@@ -67,13 +67,13 @@
 	overlay_icon_state = "bg_heretic_border"
 	button_icon = 'icons/mob/actions/actions_ecult.dmi'
 	button_icon_state = "fire_ring"
-	sound = 'sound/items/welder.ogg'
+	sound = 'sound/items/tools/welder.ogg'
 
 	school = SCHOOL_FORBIDDEN
 	cooldown_time = 30 SECONDS
 
-	invocation = "ILLA-LASARA'FOSS!!!"
-	invocation_type = INVOCATION_SHOUT
+	invocation = "C'SC'DE"
+	invocation_type = INVOCATION_WHISPER
 	spell_requirements = NONE
 
 	/// The radius the flames will go around the caster.
@@ -87,7 +87,7 @@
 /datum/action/cooldown/spell/fire_cascade/proc/fire_cascade(atom/centre, flame_radius = 1)
 	for(var/i in 0 to flame_radius)
 		for(var/turf/nearby_turf as anything in spiral_range_turfs(i + 1, centre))
-			var/obj/effect/hotspot/flame_tile = locate(nearby_turf) || new(nearby_turf)
+			var/obj/effect/hotspot/flame_tile = (locate() in nearby_turf) || new(nearby_turf)
 			flame_tile.alpha = 125
 			nearby_turf.hotspot_expose(750, 50, 1)
 			for(var/mob/living/fried_living in nearby_turf.contents - owner)
@@ -112,7 +112,7 @@
 	school = SCHOOL_FORBIDDEN
 	cooldown_time = 300
 
-	invocation = "Eld'sky!"
+	invocation = "F'RE"
 	invocation_type = INVOCATION_WHISPER
 	spell_requirements = NONE
 
@@ -151,7 +151,7 @@
 			if(L.can_block_magic())
 				L.visible_message(span_danger("The spell bounces off of [L]!"), span_danger("The spell bounces off of you!"))
 				continue
-			if(L in hit_list || L == source)
+			if((L in hit_list) || L == source)
 				continue
 			hit_list += L
 			L.adjustFireLoss(20)

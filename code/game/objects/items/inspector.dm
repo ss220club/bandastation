@@ -8,7 +8,9 @@
  */
 /obj/item/inspector
 	name = "\improper N-spect scanner"
-	desc = "Central Command standard issue inspection device. Can perform either wide area scans that central command can use to verify the security of the station, or detailed scans to determine if an item is contraband."
+	desc = "Central Command standard issue inspection device. \
+	Performs wide area scan reports for inspectors to use to verify the security and integrity of the station. \
+	Can additionally be used for precision scans to determine if an item contains, or is itself, contraband."
 	icon = 'icons/obj/devices/scanner.dmi'
 	icon_state = "inspector"
 	worn_icon_state = "salestagger"
@@ -88,14 +90,16 @@
 
 /obj/item/inspector/examine(mob/user)
 	. = ..()
+	. += span_info("Use in-hand to scan the local area, creating an encrypted security inspection.")
+	. += span_info("Use on an item to scan if it contains, or is, contraband.")
 	if(!cell_cover_open)
-		. += "Its cell cover is closed. It looks like it could be <strong>pried</strong> out, but doing so would require an appropriate tool."
+		. += span_notice("Its cell cover is closed. It looks like it could be <strong>pried</strong> out, but doing so would require an appropriate tool.")
 		return
-	. += "It's cell cover is open, exposing the cell slot. It looks like it could be <strong>pried</strong> in, but doing so would require an appropriate tool."
+	. += span_notice("Its cell cover is open, exposing the cell slot. It looks like it could be <strong>pried</strong> in, but doing so would require an appropriate tool.")
 	if(!cell)
-		. += "The slot for a cell is empty."
+		. += span_notice("The slot for a cell is empty.")
 	else
-		. += "\The [cell] is firmly in place. [span_info("Ctrl-click with an empty hand to remove it.")]"
+		. += span_notice("\The [cell] is firmly in place. Ctrl-click with an empty hand to remove it.")
 
 /obj/item/inspector/interact_with_atom(atom/interacting_with, mob/living/user, list/modifiers)
 	if(!user.Adjacent(interacting_with))
@@ -106,18 +110,19 @@
 	if(!cell || !cell.use(INSPECTOR_ENERGY_USAGE_LOW))
 		balloon_alert(user, "check cell!")
 		return ITEM_INTERACT_BLOCKING
-	if(!isitem(interacting_with))
-		return ITEM_INTERACT_BLOCKING
-	var/obj/item/contraband_item = interacting_with
-	var/contraband_status = contraband_item.is_contraband()
-	if((!contraband_status && scans_correctly) || (contraband_status && !scans_correctly))
+
+	if(iscarbon(interacting_with)) // Prevents scanning people
+		return
+
+	if(contraband_scan(interacting_with, user))
+		playsound(src, 'sound/machines/uplink/uplinkerror.ogg', 40)
+		balloon_alert(user, "contraband detected!")
+		return ITEM_INTERACT_SUCCESS
+	else
 		playsound(src, 'sound/machines/ping.ogg', 20)
 		balloon_alert(user, "clear")
 		return ITEM_INTERACT_SUCCESS
 
-	playsound(src, 'sound/machines/uplinkerror.ogg', 40)
-	balloon_alert(user, "contraband detected!")
-	return ITEM_INTERACT_SUCCESS
 
 /obj/item/inspector/add_context(atom/source, list/context, obj/item/held_item, mob/user)
 	var/update_context = FALSE
@@ -146,6 +151,29 @@
 	return NONE
 
 /**
+ * Scans the carbon or item for contraband.
+ *
+ * Arguments:
+ * - scanned - what or who is scanned?
+ * - user - who is performing the scanning?
+ */
+/obj/item/inspector/proc/contraband_scan(scanned, user)
+	if(iscarbon(scanned))
+		var/mob/living/carbon/scanned_carbon = scanned
+		for(var/obj/item/content in scanned_carbon.get_all_contents_skipping_traits(TRAIT_CONTRABAND_BLOCKER))
+			var/contraband_content = content.is_contraband()
+			if((contraband_content && scans_correctly) || (!contraband_content && !scans_correctly))
+				return TRUE
+
+	if(isitem(scanned))
+		var/obj/item/contraband_item = scanned
+		var/contraband_status = contraband_item.is_contraband()
+		if((contraband_status && scans_correctly) || (!contraband_status && !scans_correctly))
+			return TRUE
+
+	return FALSE
+
+/**
  * Create our report
  *
  * Arguments:
@@ -161,10 +189,10 @@
 */
 /obj/item/inspector/proc/print_report(mob/user)
 	if(!cell)
-		to_chat(user, "<span class='info'>\The [src] doesn't seem to be on... It feels quite light. Perhaps it lacks a power cell?")
+		to_chat(user, span_info("\The [src] doesn't seem to be on... It feels quite light. Perhaps it lacks a power cell?"))
 		return
 	if(cell.charge == 0)
-		to_chat(user, "<span class='info'>\The [src] doesn't seem to be on... Perhaps it ran out of power?")
+		to_chat(user, span_info("\The [src] doesn't seem to be on... Perhaps it ran out of power?"))
 		return
 	if(!cell.use(energy_per_print))
 		if(cell.use(ENERGY_TO_SPEAK))
@@ -355,7 +383,7 @@
 		if(cell.use(ENERGY_TO_SPEAK))
 			say("ERROR! OUT OF PAPER! MAXIMUM PRINTING SPEED UNAVAIBLE! SWITCH TO A SLOWER SPEED TO OR PROVIDE PAPER!")
 		else
-			to_chat(user, "<span class='info'>\The [src] doesn't seem to be on... Perhaps it ran out of power?")
+			to_chat(user, span_info("\The [src] doesn't seem to be on... Perhaps it ran out of power?"))
 		return
 	paper_charges--
 	return ..()

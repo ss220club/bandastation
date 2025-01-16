@@ -1,5 +1,11 @@
 #include "_loadout.dm"
 
+#include "code/client.dm"
+#include "code/loadout_categories.dm"
+#include "code/loadout_items.dm"
+#include "code/loadout_preference.dm"
+#include "code/categories/accessories.dm"
+#include "code/categories/pocket.dm"
 #include "code/category_cardstickers.dm"
 #include "code/category_hands.dm"
 #include "code/category_masks.dm"

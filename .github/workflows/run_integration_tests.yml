@@ -31,6 +31,12 @@ jobs:
         options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
     steps:
       - uses: actions/checkout@v4
+      - name: Install required packages
+        run: |
+          sudo dpkg --add-architecture i386
+          sudo apt-get update
+          sudo apt-get install zlib1g-dev:i386
+      - uses: actions/checkout@v4
       - name: Restore BYOND cache
         uses: actions/cache@v4
         with:
@@ -46,9 +52,9 @@ jobs:
       - name: Install rust-g
         run: |
           bash tools/ci/install_rust_g.sh
-      - name: Install auxlua
+      - name: Install dreamluau
         run: |
-          bash tools/ci/install_auxlua.sh
+          bash tools/ci/install_dreamluau.sh
       - name: Configure version
         run: |
           echo "BYOND_MAJOR=${{ inputs.major }}" >> $GITHUB_ENV

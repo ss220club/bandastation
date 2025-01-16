@@ -18,6 +18,9 @@
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
 	throw_speed = 3
 	throw_range = 7
+	drop_sound = 'sound/items/handling/medkit/medkit_drop.ogg'
+	pickup_sound = 'sound/items/handling/medkit/medkit_pick_up.ogg'
+	sound_vary = TRUE
 	var/empty = FALSE
 	/// Defines damage type of the medkit. General ones stay null. Used for medibot healing bonuses
 	var/damagetype_healed
@@ -79,6 +82,9 @@
 /obj/item/storage/medkit/Initialize(mapload)
 	. = ..()
 	atom_storage.max_specific_storage = WEIGHT_CLASS_SMALL
+	atom_storage.open_sound = 'sound/items/handling/medkit/medkit_open.ogg'
+	atom_storage.open_sound_vary = TRUE
+	atom_storage.rustle_sound = 'sound/items/handling/medkit/medkit_rustle.ogg'
 
 /obj/item/storage/medkit/regular
 	icon_state = "medkit"
@@ -797,18 +803,14 @@
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
 	w_class = WEIGHT_CLASS_SMALL
-
-/obj/item/storage/test_tube_rack/Initialize(mapload)
-	. = ..()
-	atom_storage.allow_quick_gather = TRUE
-	atom_storage.max_slots = 8
-	atom_storage.screen_max_columns = 4
-	atom_storage.screen_max_rows = 2
-	atom_storage.set_holdable(/obj/item/reagent_containers/cup/tube)
-
-/obj/item/storage/test_tube_rack/attack_self(mob/user)
-	emptyStorage()
+	storage_type = /datum/storage/test_tube_rack
 
 /obj/item/storage/test_tube_rack/update_icon_state()
 	icon_state = "[base_icon_state][contents.len > 0 ? contents.len : null]"
 	return ..()
+
+/obj/item/storage/test_tube_rack/full/PopulateContents()
+	for(var/i in 1 to atom_storage.max_slots)
+		new /obj/item/reagent_containers/cup/tube(src)
+	update_appearance(UPDATE_ICON_STATE)
+

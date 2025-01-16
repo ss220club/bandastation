@@ -23,7 +23,7 @@
 	var/space_empty_levels = DEFAULT_SPACE_EMPTY_LEVELS
 	/// Boolean that tells us if this is a planetary station. (like IceBoxStation)
 	var/planetary = FALSE
-
+	
 	///The type of mining Z-level that should be loaded.
 	var/minetype = "lavaland"
 	///If no minetype is set, this will be the blacklist file used
@@ -40,12 +40,22 @@
 	var/job_changes = list()
 	/// List of additional areas that count as a part of the library
 	var/library_areas = list()
+	/// Boolean - if TRUE, the "Up" and "Down" traits are automatically distributed to the map's z-levels. If FALSE; they're set via JSON.
+	var/height_autosetup = TRUE
 
 	/// List of unit tests that are skipped when running this map
 	var/list/skipped_tests
 
 	/// Boolean that tells SSmapping to load all away missions in the codebase.
 	var/load_all_away_missions = FALSE
+
+	// BANDASTATION ADDITION START - Station Fluff
+	/// This name will override all other station names, like holiday or randomly generated.
+	/// Station name change still will work.
+	var/fluff_name = null
+	/// Welcome sound that will play on round start instead of the announcer's one.
+	var/sound/welcome_sound_override = null
+	// BANDASTATION ADDITION END - Station Fluff
 
 /**
  * Proc that simply loads the default map config, which should always be functional.
@@ -189,6 +199,16 @@
 	if ("load_all_away_missions" in json)
 		load_all_away_missions = json["load_all_away_missions"]
 
+	// BANDASTATION ADDITION START - Station Fluff
+	if ("fluff_name" in json)
+		fluff_name = json["fluff_name"]
+	if ("welcome_sound_override" in json)
+		var/file_path = json["welcome_sound_override"]
+		if(!fexists(file_path))
+			log_world("Welcome sound ([file_path]) does not exist!")
+		else
+			welcome_sound_override = file(file_path)
+	// BANDASTATION ADDITION END - Station Fluff
 	allow_custom_shuttles = json["allow_custom_shuttles"] != FALSE
 
 	if ("job_changes" in json)
@@ -208,6 +228,9 @@
 				continue
 			library_areas += path
 
+	if ("height_autosetup" in json)
+		height_autosetup = json["height_autosetup"]
+
 #ifdef UNIT_TESTS
 	// Check for unit tests to skip, no reason to check these if we're not running tests
 	for(var/path_as_text in json["ignored_unit_tests"])
@@ -219,7 +242,7 @@
 #endif
 
 	defaulted = FALSE
-	return TRUE
+	return json
 #undef CHECK_EXISTS
 
 /datum/map_config/proc/GetFullMapPaths()

@@ -4,8 +4,6 @@
 #define TTS_TRAIT_RATE_FASTER (1<<2)
 #define TTS_TRAIT_RATE_MEDIUM (1<<3)
 
-#define TTS_TRAIT_ROBOTIZE "tts_trait_robotize"
-
 #define TTS_CATEGORY_OTHER "Другое"
 #define TTS_CATEGORY_WARCRAFT3 "WarCraft 3"
 #define TTS_CATEGORY_HALFLIFE2 "Half-Life 2"
@@ -49,6 +47,11 @@
 #define TTS_CATEGORY_TREASURE_ISLAND "Treasure Island"
 #define TTS_CATEGORY_BOYS_WORD "Слово пацана"
 #define TTS_CATEGORY_STRONGHOLD "Stronghold Crusade"
+#define TTS_CATEGORY_CYBERPUNK "Киберпанк 2077"
+#define TTS_CATEGORY_TLOU "The Last of Us"
+#define TTS_CATEGORY_DEEP_ROCK_GALACTIC "Deep Rock Galactic"
+#define TTS_CATEGORY_SUNBOY "Пророк Санбой"
+#define TTS_CATEGORY_WH40k "Warhammer 40k"
 
 #define TTS_GENDER_ANY "Любой"
 #define TTS_GENDER_MALE "Мужской"
@@ -76,3 +79,6 @@
 #define BIG_WORKER_TTS_LEVEL 3
 #define LITTLE_WORKER_TTS_LEVEL 1
 #define DONATOR_LEVEL_MAX 5
+
+#define TTS_OVERRIDE_GENDER (1<<0)
+#define TTS_OVERRIDE_TIER (1<<1)

@@ -168,7 +168,7 @@ Possible to do for anyone motivated enough:
 /obj/machinery/holopad/tutorial/attack_hand(mob/user, list/modifiers)
 	if(!istype(user))
 		return
-	if(user.incapacitated() || !is_operational)
+	if(user.incapacitated || !is_operational)
 		return
 	if(replay_mode)
 		replay_stop()
@@ -301,14 +301,14 @@ Possible to do for anyone motivated enough:
 	for(var/I in holo_calls)
 		var/datum/holocall/HC = I
 		var/list/call_data = list(
-			caller = HC.user,
-			connected = HC.connected_holopad == src ? TRUE : FALSE,
-			ref = REF(HC)
+			"caller" = HC.user,
+			"connected" = HC.connected_holopad == src ? TRUE : FALSE,
+			"ref" = REF(HC)
 		)
 		data["holo_calls"] += list(call_data)
 	return data
 
-/obj/machinery/holopad/ui_act(action, list/params)
+/obj/machinery/holopad/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
 	. = ..()
 	if(.)
 		return
@@ -327,7 +327,7 @@ Possible to do for anyone motivated enough:
 				for(var/mob/living/silicon/ai/AI in GLOB.silicon_mobs)
 					if(!AI.client)
 						continue
-					to_chat(AI, span_info("Your presence is requested at <a href='?src=[REF(AI)];jump_to_holopad=[REF(src)]'>\the [area]</a>. <a href='?src=[REF(AI)];project_to_holopad=[REF(src)]'>Project Hologram?</a>"))
+					to_chat(AI, span_info("Your presence is requested at <a href='byond://?src=[REF(AI)];jump_to_holopad=[REF(src)]'>\the [area]</a>. <a href='byond://?src=[REF(AI)];project_to_holopad=[REF(src)]'>Project Hologram?</a>"))
 				return TRUE
 			else
 				to_chat(usr, span_info("A request for AI presence was already sent recently."))
@@ -522,7 +522,7 @@ Possible to do for anyone motivated enough:
 		if(outgoing_call)
 			holocall.Disconnect(src)//can't answer calls while calling
 		else
-			playsound(src, 'sound/machines/twobeep.ogg', 100) //bring, bring!
+			playsound(src, 'sound/machines/beep/twobeep.ogg', 100) //bring, bring!
 			are_ringing = TRUE
 
 	if(ringing != are_ringing)
@@ -543,6 +543,7 @@ Possible to do for anyone motivated enough:
 		var/obj/effect/overlay/holo_pad_hologram/hologram = new(loc)//Spawn a blank effect at the location.
 		var/atom/work_off = AI?.hologram_appearance || user
 
+		hologram.AddComponent(/datum/component/tts_component, user.get_tts_seed(), user.get_tts_effects(list(/datum/singleton/sound_effect/radio))) // Bandastation Addition
 		hologram.icon = work_off.icon
 		hologram.icon_state = work_off.icon_state
 		hologram.copy_overlays(work_off, TRUE)
@@ -556,6 +557,7 @@ Possible to do for anyone motivated enough:
 		hologram.layer = FLY_LAYER //Above all the other objects/mobs. Or the vast majority of them.
 		SET_PLANE_EXPLICIT(hologram, ABOVE_GAME_PLANE, src)
 		hologram.set_anchored(TRUE)//So space wind cannot drag it.
+		hologram.ru_names_rename(ru_names_toml("hologram", suffix = " [user.declent_ru(GENITIVE)]", override_base = "[user.name] (Hologram)"))
 		hologram.name = "[user.name] (Hologram)"//If someone decides to right click.
 		set_holo(user, hologram)
 
@@ -675,7 +677,7 @@ For the other part of the code, check silicon say.dm. Particularly robot talk.*/
 	if(!isliving(owner))
 		return TRUE
 	var/mob/living/user = owner
-	if(user.incapacitated() || !user.client)
+	if(user.incapacitated || !user.client)
 		return FALSE
 	return TRUE
 
@@ -744,6 +746,7 @@ For the other part of the code, check silicon say.dm. Particularly robot talk.*/
 	hologram.layer = FLY_LAYER//Above all the other objects/mobs. Or the vast majority of them.
 	SET_PLANE_EXPLICIT(hologram, ABOVE_GAME_PLANE, src)
 	hologram.set_anchored(TRUE)//So space wind cannot drag it.
+	hologram.ru_names_rename(ru_names_toml("hologram", suffix = " [record.caller_name]", override_base = "[record.caller_name] (Hologram)"))
 	hologram.name = "[record.caller_name] (Hologram)"//If someone decides to right click.
 	set_holo(record, hologram)
 
@@ -780,7 +783,7 @@ For the other part of the code, check silicon say.dm. Particularly robot talk.*/
 		return
 	//make this command so you can have multiple languages in single record
 	if((!disk.record.caller_name || disk.record.caller_name == "Unknown") && istype(speaker))
-		disk.record.caller_name = speaker.name
+		disk.record.caller_name = speaker.declent_ru(GENITIVE) // BANDASTATION EDIT - Declents
 	if(!disk.record.language)
 		disk.record.language = language
 	else if(language != disk.record.language)
@@ -835,6 +838,7 @@ For the other part of the code, check silicon say.dm. Particularly robot talk.*/
 			replay_holo.icon_state = work_off.icon_state
 			replay_holo.copy_overlays(work_off, TRUE)
 		if(HOLORECORD_RENAME)
+			replay_holo.ru_names_rename(ru_names_toml("hologram", suffix = " [entry[2]]", override_base = entry[2] + " (Hologram)"))
 			replay_holo.name = entry[2] + " (Hologram)"
 	.(entry_number+1)
 

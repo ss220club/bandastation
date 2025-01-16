@@ -1,5 +1,5 @@
 /obj/structure/closet/supplypod/teleporter
-	style = STYLE_TELEPORT
+	style = /datum/pod_style/teleport
 	bluespace = TRUE
 	explosionSize = list(0,0,0,0)
 	fallingSound = null
@@ -14,18 +14,23 @@
 	icon_state = "portal"
 
 /obj/effect/pod_landingzone/setupSmoke(rotation)
-	if(pod.style == STYLE_TELEPORT)
+	if(pod.style == /datum/pod_style/teleport)
 		return
 	. = ..()
 
 /obj/effect/pod_landingzone/drawSmoke()
-	if(pod.style == STYLE_TELEPORT)
+	if(pod.style == /datum/pod_style/teleport)
 		return
 	. = ..()
 
 /obj/effect/pod_landingzone/endLaunch()
-	if(pod.style == STYLE_TELEPORT)
+	if(pod.style == /datum/pod_style/teleport)
 		pod.pixel_x = 0
 		pod.pixel_z = 0
 		pod.transform = matrix()
 	. = ..()
+
+/obj/structure/closet/supplypod/teleporter/syndicate/setStyle(chosenStyle)
+	. = ..()
+	icon = 'icons/obj/anomaly.dmi'
+	icon_state = "portal1"

@@ -2,9 +2,17 @@
 /// Selects a set number of unique items from the uplink, and deducts a percentage discount from them
 /proc/create_uplink_sales(num, datum/uplink_category/category, limited_stock, list/sale_items)
 	var/list/sales = list()
-	var/list/sale_items_copy = sale_items.Copy()
+	var/list/per_category = list()
+
+	for (var/datum/uplink_item/possible_sale as anything in sale_items)
+		if (!(possible_sale.category in per_category))
+			per_category[possible_sale.category] = list()
+		per_category[possible_sale.category] += possible_sale
+
 	for (var/i in 1 to num)
-		var/datum/uplink_item/taken_item = pick_n_take(sale_items_copy)
+		var/datum/uplink_category/item_category = pick(per_category)
+		var/datum/uplink_item/taken_item = pick(per_category[item_category])
+		per_category -= item_category
 		var/datum/uplink_item/uplink_item = new taken_item.type()
 		var/discount = uplink_item.get_discount()
 		var/static/list/disclaimer = list(
@@ -164,6 +172,8 @@
 		ADD_TRAIT(created, TRAIT_CONTRABAND, INNATE_TRAIT)
 		for(var/obj/contained as anything in created.get_all_contents())
 			ADD_TRAIT(contained, TRAIT_CONTRABAND, INNATE_TRAIT)
+
+	if(isgun(created))
 		replace_pin(created)
 	else if(istype(created, /obj/item/storage/toolbox/guncase))
 		for(var/obj/item/gun/gun in created)
@@ -184,7 +194,8 @@
 		return
 
 	QDEL_NULL(gun_reward.pin)
-	gun_reward.pin = new /obj/item/firing_pin(gun_reward)
+	var/obj/item/firing_pin/pin = new
+	pin.gun_insert(new_gun = gun_reward)
 
 ///For special overrides if an item can be bought or not.
 /datum/uplink_item/proc/can_be_bought(datum/uplink_handler/source)
@@ -207,9 +218,13 @@
 	category = /datum/uplink_category/discounts
 	purchasable_from = parent_type::purchasable_from & ~UPLINK_SPY // Probably not necessary but just in case
 
+/datum/uplink_category/objective_special
+	name = "Objective-Specific Equipment"
+	weight = -3
+
 // Special equipment (Dynamically fills in uplink component)
 /datum/uplink_item/special_equipment
-	category = "Objective-Specific Equipment"
+	category = /datum/uplink_category/objective_special
 	name = "Objective-Specific Equipment"
 	desc = "Equipment necessary for accomplishing specific objectives. If you are seeing this, something has gone wrong."
 	limited_stock = 1

@@ -1,6 +1,4 @@
 import { Fragment, useState } from 'react';
-
-import { useBackend } from '../../../backend';
 import {
   Box,
   Button,
@@ -11,7 +9,9 @@ import {
   Section,
   Stack,
   Tabs,
-} from '../../../components';
+} from 'tgui-core/components';
+
+import { useBackend } from '../../../backend';
 import { CharacterPreview } from '../../common/CharacterPreview';
 import { ServerData } from '../data';
 import { ServerPreferencesFetcher } from '../ServerPreferencesFetcher';
@@ -250,7 +250,7 @@ const LoadoutSelectedSection = (props: {
   const { act, data } = useBackend<LoadoutManagerData>();
   const { loadout_list } = data.character_preferences.misc;
   const { all_tabs, modifyItemDimmer, setModifyItemDimmer } = props;
-
+  const loadout_leftpoints = data.loadout_leftpoints || '0'; // SS220 ADD - Lodout points
   return (
     <Section
       title="&nbsp;"
@@ -269,6 +269,7 @@ const LoadoutSelectedSection = (props: {
         </Button.Confirm>
       }
     >
+      Осталось очков: {loadout_leftpoints}
       {loadout_list &&
         Object.entries(loadout_list).map(([path, item]) => (
           <Fragment key={path}>

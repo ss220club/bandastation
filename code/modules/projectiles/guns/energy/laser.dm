@@ -45,6 +45,15 @@
 	. = ..()
 	AddComponent(/datum/component/automatic_fire, 0.15 SECONDS, allow_akimbo = FALSE)
 
+/obj/item/gun/energy/laser/carbine/cybersun
+	name = "\improper Cybersun S-120"
+	desc = "A laser gun primarily used by syndicate security guards. It fires a rapid spray of low-power plasma beams."
+	icon_state = "cybersun_s120"
+	inhand_icon_state = "s120"
+	ammo_type = list(/obj/item/ammo_casing/energy/lasergun/carbine/cybersun)
+	spread = 14
+	pin = /obj/item/firing_pin/implant/pindicate
+
 /obj/item/gun/energy/laser/carbine/practice
 	name = "practice laser carbine"
 	desc = "A modified version of the laser carbine, this one fires even less concentrated energy bolts designed for target practice."
@@ -132,7 +141,7 @@
 /obj/item/ammo_casing/energy/laser/accelerator
 	projectile_type = /obj/projectile/beam/laser/accelerator
 	select_name = "accelerator"
-	fire_sound = 'sound/weapons/lasercannonfire.ogg'
+	fire_sound = 'sound/items/weapons/lasercannonfire.ogg'
 
 /obj/projectile/beam/laser/accelerator
 	name = "accelerator laser"
@@ -142,11 +151,11 @@
 	var/size_per_tile = 0.1
 	var/max_scale = 4
 
-/obj/projectile/beam/laser/accelerator/Range()
+/obj/projectile/beam/laser/accelerator/reduce_range()
 	..()
 	damage += 7
-	transform = 0
-	transform *= min(1 + (decayedRange - range) * size_per_tile, max_scale)
+	transform = matrix()
+	transform *= min(1 + (maximum_range - range) * size_per_tile, max_scale)
 
 ///X-ray gun
 

@@ -54,5 +54,9 @@ export const JOB2ICON = {
   'Station Engineer': 'gears',
   'Syndicate Operative': 'dragon',
   'Veteran Security Advisor': 'ribbon',
+  'Pun Pun': 'paw',
   Warden: 'handcuffs',
+  Blueshield: 'shield',
+  'Nanotrasen Representative': 'user-tie',
+  Magistrate: 'scale-balanced',
 } as const;

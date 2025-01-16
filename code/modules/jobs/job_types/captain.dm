@@ -46,6 +46,8 @@
 	job_flags = STATION_JOB_FLAGS | HEAD_OF_STAFF_JOB_FLAGS
 	rpg_title = "Star Duke"
 
+	human_authority = JOB_AUTHORITY_HUMANS_ONLY
+
 	voice_of_god_power = 1.4 //Command staff has authority
 
 
@@ -91,8 +93,13 @@
 
 	var/special_charter
 
-/datum/outfit/job/captain/pre_equip(mob/living/carbon/human/H, visualsOnly)
+/datum/outfit/job/captain/pre_equip(mob/living/carbon/human/H, visuals_only)
 	. = ..()
+	// BANDASTATION ADDITION START - Station Fluff
+	if(CHECK_MAP_JOB_CHANGE(JOB_CAPTAIN, "no_charter"))
+		backpack_contents -= /obj/item/station_charter
+		return
+	// BANDASTATION ADDITION END - Station Fluff
 	special_charter = CHECK_MAP_JOB_CHANGE(JOB_CAPTAIN, "special_charter")
 	if(!special_charter)
 		return
@@ -104,9 +111,9 @@
 	else if(!r_hand)
 		r_hand = /obj/item/station_charter/banner
 
-/datum/outfit/job/captain/post_equip(mob/living/carbon/human/equipped, visualsOnly)
+/datum/outfit/job/captain/post_equip(mob/living/carbon/human/equipped, visuals_only)
 	. = ..()
-	if(visualsOnly || !special_charter)
+	if(visuals_only || !special_charter)
 		return
 
 	var/obj/item/station_charter/banner/celestial_charter = locate() in equipped.held_items

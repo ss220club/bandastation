@@ -44,6 +44,7 @@ em						{font-style: normal;	font-weight: bold;}
 .sciradio				{color: #993399;}
 .comradio				{color: #948f02;}
 .secradio				{color: #a30000;}
+.justiceradio			{color: #df3e71;}
 .medradio				{color: #337296;}
 .engradio				{color: #fb5613;}
 .suppradio				{color: #a8732b;}
@@ -51,6 +52,7 @@ em						{font-style: normal;	font-weight: bold;}
 .syndradio				{color: #6d3f40;}
 .centcomradio			{color: #686868;}
 .aiprivradio			{color: #ff00ff;}
+.enteradio				{color: #00ff99;}
 .redteamradio			{color: #ff0000;}
 .blueteamradio			{color: #0000ff;}
 .greenteamradio			{color: #00ff00;}
@@ -133,6 +135,7 @@ h1.alert, h2.alert		{color: #000000;}
 .robot					{font-family: "Courier New", cursive, sans-serif;}
 
 .command_headset		{font-weight: bold;	font-size: 3;}
+.soapbox 				{font-weight: bold; font-size: 3;}
 .small					{font-size: 1;}
 .big					{font-size: 3;}
 .reallybig				{font-size: 4;}

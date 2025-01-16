@@ -33,9 +33,9 @@
 	speed = 1
 	range = 25
 	shrapnel_type = null
-	embed_type = /datum/embed_data/arrow
+	embed_type = /datum/embedding/arrow
 
-/datum/embed_data/arrow
+/datum/embedding/arrow
 	embed_chance = 90
 	fall_chance = 2
 	jostle_chance = 2
@@ -44,6 +44,60 @@
 	pain_mult = 3
 	jostle_pain_mult = 3
 	rip_time = 1 SECONDS
+
+/// sticky arrows
+/obj/item/ammo_casing/arrow/sticky
+	name = "sticky arrow"
+	desc = "A sticky arrow. Not sharp-ended, but ripping it off yourself once hit would be rather difficult and painful."
+	icon_state = "sticky_arrow"
+	inhand_icon_state = "sticky_arrow"
+	base_icon_state = "sticky_arrow"
+	projectile_type = /obj/projectile/bullet/arrow/sticky
+
+///sticky arrow projectile
+/obj/projectile/bullet/arrow/sticky
+	name = "sticky arrow"
+	desc = "Quite the sticky situation..."
+	icon_state = "sticky_arrow_projectile"
+	damage = 30
+	speed = 1.3
+	range = 20
+	embed_type = /datum/embedding/arrow/sticky
+
+/datum/embedding/arrow/sticky
+	embed_chance = 99
+	fall_chance = 0
+	jostle_chance = 1
+	ignore_throwspeed_threshold = TRUE
+	pain_stam_pct = 0.7
+	pain_mult = 3
+	jostle_pain_mult = 3
+	rip_time = 8 SECONDS
+
+/// poison arrows
+/obj/item/ammo_casing/arrow/poison
+	name = "poisonous arrow"
+	desc = "A poisonous arrow."
+	icon_state = "poison_arrow"
+	inhand_icon_state = "poison_arrow"
+	base_icon_state = "poison_arrow"
+	projectile_type = /obj/projectile/bullet/arrow/poison
+
+/// poison arrow projctile
+/obj/projectile/bullet/arrow/poison
+	name = "poisonous arrow"
+	desc = "Better to not get hit with this!"
+	icon_state = "poison_arrow_projectile"
+	damage = 40
+	embed_type = /datum/embedding/arrow
+
+/obj/projectile/bullet/arrow/poison/on_hit(atom/target, blocked, pierce_hit)
+	. = ..()
+	if(!ishuman(target))
+		return
+
+	target.reagents?.add_reagent(/datum/reagent/toxin/cyanide, 8)
+	target.reagents?.add_reagent(/datum/reagent/toxin/staminatoxin, 1)
 
 /// holy arrows
 /obj/item/ammo_casing/arrow/holy

@@ -37,6 +37,15 @@
 #define RADIO_KEY_AI_PRIVATE "o"
 #define RADIO_TOKEN_AI_PRIVATE ":o"
 
+#define RADIO_CHANNEL_ENTERTAINMENT "Entertainment"
+#define RADIO_KEY_ENTERTAINMENT "p"
+#define RADIO_TOKEN_ENTERTAINMENT ":p"
+
+// BANDASTATION ADDITION START
+#define RADIO_CHANNEL_JUSTICE "Justice"
+#define RADIO_KEY_JUSTICE "l"
+#define RADIO_TOKEN_JUSTICE ":l"
+// BANDASTATION ADDITION END
 
 #define RADIO_CHANNEL_SYNDICATE "Syndicate"
 #define RADIO_KEY_SYNDICATE "t"
@@ -73,6 +82,8 @@
 #define FREQ_MEDICAL 1355 // Medical comms frequency, soft blue
 #define FREQ_ENGINEERING 1357 // Engineering comms frequency, orange
 #define FREQ_SECURITY 1359 // Security comms frequency, red
+#define FREQ_JUSTICE 1361 // Precedure comms frequency, raspberry pink // BANDASTATION ADD - Jobs Module
+#define FREQ_ENTERTAINMENT 1415 // Used by entertainment monitors, cyan
 
 #define FREQ_HOLOGRID_SOLUTION 1433
 #define FREQ_STATUS_DISPLAYS 1435
@@ -130,3 +141,10 @@
 #define RADIO_FREQENCY_LOCKED 1
 /// Radio frequency is locked and unchangeable, but can be unlocked by an emag
 #define RADIO_FREQENCY_EMAGGABLE_LOCK 2
+
+///Bitflag for if a headset can use the syndicate radio channel
+#define RADIO_SPECIAL_SYNDIE (1<<0)
+///Bitflag for if a headset can use the centcom radio channel
+#define RADIO_SPECIAL_CENTCOM (1<<1)
+///Bitflag for if a headset can use the binary radio channel
+#define RADIO_SPECIAL_BINARY (1<<2)

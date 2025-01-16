@@ -1,12 +1,15 @@
 
 /mob/living/carbon/human/dummy
 	real_name = "Test Dummy"
-	status_flags = GODMODE|CANPUSH
 	mouse_drag_pointer = MOUSE_INACTIVE_POINTER
 	visual_only_organs = TRUE
 	var/in_use = FALSE
 
 INITIALIZE_IMMEDIATE(/mob/living/carbon/human/dummy)
+
+/mob/living/carbon/human/dummy/Initialize(mapload)
+	. = ..()
+	ADD_TRAIT(src, TRAIT_GODMODE, INNATE_TRAIT)
 
 /mob/living/carbon/human/dummy/Destroy()
 	in_use = FALSE
@@ -112,10 +115,24 @@ INITIALIZE_IMMEDIATE(/mob/living/carbon/human/dummy)
 	target.dna.features["moth_wings"] = get_consistent_feature_entry(SSaccessories.moth_wings_list)
 	target.dna.features["snout"] = get_consistent_feature_entry(SSaccessories.snouts_list)
 	target.dna.features["spines"] = get_consistent_feature_entry(SSaccessories.spines_list)
-	target.dna.features["tail_cat"] = get_consistent_feature_entry(SSaccessories.tails_list_human) // it's a lie
+	target.dna.features["tail_cat"] = get_consistent_feature_entry(SSaccessories.tails_list_felinid) // it's a lie
 	target.dna.features["tail_lizard"] = get_consistent_feature_entry(SSaccessories.tails_list_lizard)
 	target.dna.features["tail_monkey"] = get_consistent_feature_entry(SSaccessories.tails_list_monkey)
 	target.dna.features["pod_hair"] = get_consistent_feature_entry(SSaccessories.pod_hair_list)
+	target.dna.features["caps"] = get_consistent_feature_entry(SSaccessories.caps_list)
+	// BANDA STATION EDIT START
+	target.dna.features["vulpkanin_body_markings"] = get_consistent_feature_entry(SSaccessories.vulpkanin_body_markings_list)
+	target.dna.features["vulpkanin_head_markings"] = get_consistent_feature_entry(SSaccessories.vulpkanin_head_markings_list)
+	target.dna.features["vulpkanin_head_accessories"] = get_consistent_feature_entry(SSaccessories.vulpkanin_head_accessories_list)
+	target.dna.features["tail_vulpkanin"] = get_consistent_feature_entry(SSaccessories.tails_list_vulpkanin)
+	target.dna.features["tail_markings"] = get_consistent_feature_entry(SSaccessories.vulpkanin_tail_markings_list)
+	target.dna.features["vulpkanin_facial_hair"] = get_consistent_feature_entry(SSaccessories.vulpkanin_facial_hair_list)
+	target.dna.features["furcolor_first"] = COLOR_WHITE
+	target.dna.features["furcolor_second"] = COLOR_WHITE
+	target.dna.features["furcolor_third"] = COLOR_WHITE
+	target.dna.features["furcolor_fourth"] = COLOR_WHITE
+	target.dna.features["furcolor_fifth"] = COLOR_WHITE
+	// BANDA STATION EDIT STOP
 	target.dna.initialize_dna(create_mutation_blocks = FALSE, randomize_features = FALSE)
 	// UF and UI are nondeterministic, even though the features are the same some blocks will randomize slightly
 	// In practice this doesn't matter, but this is for the sake of 100%(ish) consistency
