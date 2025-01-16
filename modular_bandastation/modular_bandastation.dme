@@ -18,6 +18,7 @@
 #include "barsigns/_barsigns.dme"
 #include "clothing/_clothing.dme"
 #include "chat_badges/_chat_badges.dme"
+#include "clothing/_clothing.dme"
 #include "communication/_communication.dme"
 #include "customization/_customization.dme"
 #include "cyrillic_fixes/_cyrillic_fixes.dme"
