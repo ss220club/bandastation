@@ -20,7 +20,7 @@ export const AntagInfoShade = (props) => {
         <Section fill>
           <Stack vertical fill textAlign="center">
             <Stack.Item fontSize="20px">
-              Ваша душа была захвачена в камень души!
+              Ваша душа была заточена в камень души!
             </Stack.Item>
             <Stack.Item fontSize="30px">
               Вы обязаны беспрекословно следовать воли {master_name}!

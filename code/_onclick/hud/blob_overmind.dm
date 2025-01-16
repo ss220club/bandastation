@@ -49,12 +49,12 @@
 	icon_state = "ui_blobbernaut"
 	// Name and description get given their proper values on Initialize()
 	name = "Произвести Блоббернаута (ОШИБКА)"
-	desc = "Производит сильного, умного блоббернаута из клетки-фабрики блоба за (ОШИБКА) ресурсов.<br>Используемая клетка-фабрика станет хрупкой и не сможет производить споры."
+	desc = "Производит сильного, умного блоббернаута из фабричного блоб за (ОШИБКА) ресурсов.<br>Используемый фабричный блоб станет хрупким и не сможет производить споры."
 
 /atom/movable/screen/blob/blobbernaut/Initialize(mapload, datum/hud/hud_owner)
 	. = ..()
 	name = "Произвести Блоббернаута ([BLOBMOB_BLOBBERNAUT_RESOURCE_COST])"
-	desc = "Производит сильного, умного блоббернаута из клетки-фабрики блоба за [BLOBMOB_BLOBBERNAUT_RESOURCE_COST] ресурсов.<br>Используемая клетка-фабрика станет хрупкой и не сможет производить споры."
+	desc = "Производит сильного, умного блоббернаута из фабричного блоб за [BLOBMOB_BLOBBERNAUT_RESOURCE_COST] ресурсов.<br>Используемый фабричный блоб станет хрупким и не сможет производить споры."
 
 /atom/movable/screen/blob/blobbernaut/Click()
 	if(!isovermind(usr))
@@ -65,13 +65,13 @@
 /atom/movable/screen/blob/resource_blob
 	icon_state = "ui_resource"
 	// Name and description get given their proper values on Initialize()
-	name = "Произвести ресурсную клетку блоба (ОШИБКА)"
-	desc = "Производит ресурсную клетку блоба за ОШИБКА resources.<br>Ресурсные клетки блоба будут давать вам ресурсы каждые несколько секунд."
+	name = "Произвести ресурсный блоб (ОШИБКА)"
+	desc = "Производит ресурсный блоб за ОШИБКА ресурсов.<br>Ресурсный блоб будет давать вам ресурсы каждые несколько секунд."
 
 /atom/movable/screen/blob/resource_blob/Initialize(mapload, datum/hud/hud_owner)
 	. = ..()
-	name = "Произвести ресурсную клетку блоба ([BLOB_STRUCTURE_RESOURCE_COST])"
-	desc = "Производит ресурсную клетку блоба за [BLOB_STRUCTURE_RESOURCE_COST] ресурсов.<br>Ресурсные клетки блоба будут давать вам ресурсы каждые несколько секунд."
+	name = "Произвести ресурсный блоб ([BLOB_STRUCTURE_RESOURCE_COST])"
+	desc = "Производит ресурсный блоб за [BLOB_STRUCTURE_RESOURCE_COST] ресурсов.<br>Ресурсный блоб будет давать вам ресурсы каждые несколько секунд."
 
 /atom/movable/screen/blob/resource_blob/Click()
 	if(!isovermind(usr))
@@ -82,13 +82,13 @@
 /atom/movable/screen/blob/node_blob
 	icon_state = "ui_node"
 	// Name and description get given their proper values on Initialize()
-	name = "Произвести узловую клетку блоба (ОШИБКА)"
-	desc = "Производит узловую клетку блоба за ОШИБКА ресурсов.<br>Узловые клетки блоба распространяются и активируют близлежащие ресурсные клетки и клетки-фабрики блоба."
+	name = "Произвести узлового блоба (ОШИБКА)"
+	desc = "Производит узлового блоба за ОШИБКА ресурсов.<br>Узловой блоб распространяется и активируют близлежащие ресурсные блобы и фабричные блобы."
 
 /atom/movable/screen/blob/node_blob/Initialize(mapload, datum/hud/hud_owner)
 	. = ..()
-	name = "Произвести узловую клетку блоба ([BLOB_STRUCTURE_NODE_COST])"
-	desc = "Производит узловую клетку блоба за [BLOB_STRUCTURE_NODE_COST] ресурсов.<br>Узловые клетки блоба расширяются и активируют близлежащие ресурсные клетки и клетки-фабрики блоба."
+	name = "Произвести узлового блоба ([BLOB_STRUCTURE_NODE_COST])"
+	desc = "Производит узлового блоба за [BLOB_STRUCTURE_NODE_COST] ресурсов.<br>Узловой блоб распространяется и активируют близлежащие ресурсные блобы и фабричные блобы."
 
 /atom/movable/screen/blob/node_blob/Click()
 	if(!isovermind(usr))
@@ -99,13 +99,13 @@
 /atom/movable/screen/blob/factory_blob
 	icon_state = "ui_factory"
 	// Name and description get given their proper values on Initialize()
-	name = "Произвести клетку-фабрику блоба (ОШИБКА)"
-	desc = "Производит клетку-фабрику блоба за ОШИБКА ресурсов.<br>Клетки-фабрики блоба будут производить споры каждые несколько секунд."
+	name = "Произвести фабричного блоба (ОШИБКА)"
+	desc = "Производит фабричного блоба за ОШИБКА ресурсов.<br>Фабричный блоб будет производить споры каждые несколько секунд."
 
 /atom/movable/screen/blob/factory_blob/Initialize(mapload, datum/hud/hud_owner)
 	. = ..()
-	name = "Произвести клетку-фабрику блоба ([BLOB_STRUCTURE_FACTORY_COST])"
-	desc = "Производит клетку-фабрику блоба за [BLOB_STRUCTURE_FACTORY_COST] ресурсов.<br>Клетки-фабрики блоба будут производить споры каждые несколько секунд."
+	name = "Произвести фабричного блоба ([BLOB_STRUCTURE_FACTORY_COST])"
+	desc = "Производит фабричного блоба за [BLOB_STRUCTURE_FACTORY_COST] ресурсов.<br>Фабричный блоб будет производить споры каждые несколько секунд."
 
 /atom/movable/screen/blob/factory_blob/Click()
 	if(!isovermind(usr))
