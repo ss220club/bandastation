@@ -75,7 +75,6 @@
 
 /obj/item/organ/brain/tajaran
 	icon = 'modular_bandastation/species/icons/mob/species/tajaran/organs.dmi'
-	// actions_types = list(/datum/action/cooldown/night_eyes)
 
 /obj/item/organ/lungs/tajaran
 	name = "tajaran lungs"
