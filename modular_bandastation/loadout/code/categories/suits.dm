@@ -16,37 +16,30 @@
 	name = "Зимняя куртка"
 	item_path = /obj/item/clothing/suit/hooded/wintercoat
 
-///Т0
 /datum/loadout_item/suits/jacket_letterman
 	name = "Куртка курьера"
 	item_path = /obj/item/clothing/suit/jacket/letterman
 
-///Т0
 /datum/loadout_item/suits/miljacket
 	name = "Военная куртка"
 	item_path = /obj/item/clothing/suit/jacket/miljacket
 
-///Т0
 /datum/loadout_item/suits/leather
 	name = "Кожаная куртка"
 	item_path = /obj/item/clothing/suit/jacket/leather
 
-///Т0
 /datum/loadout_item/suits/leather_biker
 	name = "Куртка байкера"
 	item_path = /obj/item/clothing/suit/jacket/leather/biker
 
-///Т0
 /datum/loadout_item/suits/bomber
 	name = "Куртка-бомбер"
 	item_path = /obj/item/clothing/suit/jacket/bomber
 
-///Т0
 /datum/loadout_item/suits/oversized
 	name = "куртка на вырост"
 	item_path = /obj/item/clothing/suit/jacket/oversized
 
-///Т0
 /datum/loadout_item/suits/sweater
 	name = "Свитер"
 	item_path = /obj/item/clothing/suit/toggle/jacket/sweater
@@ -54,24 +47,25 @@
 ///Т1
 /datum/loadout_item/suits/soundhand_black_jacket
 	name = "Черная куртка с тэгом группы Саундхэнд"
-	item_path = /obj/item/clothing/suit/storage/soundhand_black_jacket/tag
+	item_path = /obj/item/clothing/suit/soundhand_black_jacket/tag
 
-///Т1
 /datum/loadout_item/suits/soundhand_olive_jacket
 	name = "Оливковая куртка с тэгом группы Саундхэнд"
-	item_path = /obj/item/clothing/suit/storage/soundhand_olive_jacket/tag
+	item_path = /obj/item/clothing/suit/soundhand_olive_jacket/tag
 
-///Т1
 /datum/loadout_item/suits/soundhand_brown_jacket
 	name = "Коричневая куртка с тэгом группы Саундхэнд"
-	item_path = /obj/item/clothing/suit/storage/soundhand_brown_jacket/tag
+	item_path = /obj/item/clothing/suit/soundhand_brown_jacket/tag
 
-///Т1
+///Т3
+/datum/loadout_item/suits/soundhand_white_jacket
+	name = "Черная куртка с тэгом группы Саундхэнд"
+	item_path = /obj/item/clothing/suit/soundhand_white_jacket
+
 /datum/loadout_item/suits/shark_suit
 	name = "Костюм акулы"
 	item_path = /obj/item/clothing/suit/hooded/shark_costume
 
-///Т1
 /datum/loadout_item/suits/shark_light_suit
 	name = "Костюм акулы (светло-голубой)"
 	item_path = /obj/item/clothing/suit/hooded/shark_costume/light
@@ -81,12 +75,10 @@
 	name = "Куртка V"
 	item_path = /obj/item/clothing/suit/v_jacket
 
-///Т3
 /datum/loadout_item/suits/takemura_jacket
 	name = "Куртка Такэмуры"
 	item_path = /obj/item/clothing/suit/takemura_jacket
 
-///Т3
 /datum/loadout_item/suits/v_jacket
 	name = "Куртка Вай"
 	item_path = /obj/item/clothing/suit/hooded/vi_arcane
@@ -96,7 +88,6 @@
 	name = "Куртка Катарины"
 	item_path = /obj/item/clothing/suit/katarina_jacket
 
-///Т4
 /datum/loadout_item/suits/katarina_cyberjacket
 	name = "Кибер-куртка Катарины"
 	item_path = /obj/item/clothing/suit/katarina_cyberjacket
@@ -104,5 +95,5 @@
 ///Т5
 /datum/loadout_item/suits/soundhand_white_jacket
 	name = "Серебристая куртка Арии"
-	item_path = /obj/item/clothing/suit/storage/soundhand_white_jacket/tag
+	item_path = /obj/item/clothing/suit/soundhand_white_jacket/tag
 

@@ -15,19 +15,19 @@
 /datum/loadout_item/wallets/wallet
 	name = "Бумажник"
 	item_path = /obj/item/storage/wallet
-/*
-///Т0
-/datum/loadout_item/wallets/Wallet_NT
+
+/datum/loadout_item/wallets/wallet_nt
 	name = "Бумажник NT"
-	item_path = /obj/item/storage/wallet/wallet_NT
+	item_path = /obj/item/storage/wallet/nt
 
-///Т0
-/datum/loadout_item/wallets/Wallet_USSP
+/datum/loadout_item/wallets/wallet_ussp_1
 	name = "Бумажник СССП"
-	item_path = /obj/item/storage/wallet/wallet_USSP_2
+	item_path = /obj/item/storage/wallet/ussp_1
 
-///Т0
-/datum/loadout_item/wallets/Wallet_WYCI
+/datum/loadout_item/wallets/wallet_ussp_2
+	name = "Бумажник СССП"
+	item_path = /obj/item/storage/wallet/ussp_2
+
+/datum/loadout_item/wallets/wallet_wyci
 	name = "Бумажник W.Y.C.I."
-	item_path = /obj/item/storage/wallet/wallet_wyci
-*/
+	item_path = /obj/item/storage/wallet/wyci

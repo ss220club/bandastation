@@ -5,6 +5,6 @@
 
 
 ///Т2
-/datum/loadout_item/head/bike_helmet
+/datum/loadout_item/head/biker_helmet
 	name = "Байкерский шлем"
-	item_path = /obj/item/clothing/head/helmet/bike_helmet/replica
+	item_path = /obj/item/clothing/head/helmet/biker_helmet/replica

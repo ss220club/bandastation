@@ -17,17 +17,14 @@
 	name = "Маска свиньи"
 	item_path = /obj/item/clothing/mask/animal/pig
 
-///Т0
 /datum/loadout_item/masks/horsehead
 	name = "Маска лошади"
 	item_path = /obj/item/clothing/mask/animal/horsehead
 
-///Т0
 /datum/loadout_item/masks/raven
 	name = "Маска ворона"
 	item_path = /obj/item/clothing/mask/animal/small/raven
 
-///Т0
 /datum/loadout_item/masks/breathscarf
 	name = "Шарф с системой дыхания"
 	item_path = /obj/item/clothing/mask/breath/breathscarf
