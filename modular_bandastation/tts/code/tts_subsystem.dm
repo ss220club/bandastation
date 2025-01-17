@@ -234,7 +234,7 @@ SUBSYSTEM_DEF(tts220)
 	datum/tts_seed/tts_seed,
 	is_local = TRUE,
 	list/effect_types,
-	traits = TTS_TRAIT_RATE_FASTER,
+	traits = TTS_TRAIT_RATE_MEDIUM,
 	preSFX = null,
 	postSFX = null
 )
