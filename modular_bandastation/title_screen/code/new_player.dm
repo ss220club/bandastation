@@ -1,6 +1,14 @@
 /mob/dead/new_player
 	var/title_collapsed = FALSE
 
+/mob/living/silicon/Initialize(mapload)
+	. = ..()
+	SStitle.hide_title_screen_from(client)
+
+/mob/living/silicon/ai/Initialize(mapload, datum/ai_laws/L, mob/target_ai)
+	. = ..()
+	SStitle.hide_title_screen_from(client)
+
 /mob/dead/new_player/Topic(href, href_list[])
 	if(src != usr)
 		return
