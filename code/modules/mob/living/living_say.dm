@@ -13,6 +13,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	RADIO_KEY_MEDICAL = RADIO_CHANNEL_MEDICAL,
 	RADIO_KEY_ENGINEERING = RADIO_CHANNEL_ENGINEERING,
 	RADIO_KEY_SECURITY = RADIO_CHANNEL_SECURITY,
+	RADIO_KEY_JUSTICE = RADIO_CHANNEL_JUSTICE, // BANDASTATION ADD - Jobs Module
 	RADIO_KEY_SUPPLY = RADIO_CHANNEL_SUPPLY,
 	RADIO_KEY_SERVICE = RADIO_CHANNEL_SERVICE,
 
@@ -45,6 +46,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	"ь" = RADIO_CHANNEL_MEDICAL,
 	"у" = RADIO_CHANNEL_ENGINEERING,
 	"ы" = RADIO_CHANNEL_SECURITY,
+	"д" = RADIO_CHANNEL_JUSTICE,  // BANDASTATION ADD - Jobs Module
 	"г" = RADIO_CHANNEL_SUPPLY,
 	"м" = RADIO_CHANNEL_SERVICE,
 
@@ -436,8 +438,8 @@ GLOBAL_LIST_INIT(message_modes_stat_limits, list(
 			filter += tts_filter.Join(",")
 
 		var/voice_to_use = get_tts_voice(filter, special_filter)
-
-		INVOKE_ASYNC(SStts, TYPE_PROC_REF(/datum/controller/subsystem/tts, queue_tts_message), src, html_decode(tts_message_to_use), message_language, voice_to_use, filter.Join(","), listened, message_range = message_range, pitch = pitch, special_filters = special_filter.Join("|"))
+		if (!CONFIG_GET(flag/tts_no_whisper) || (CONFIG_GET(flag/tts_no_whisper) && !message_mods[WHISPER_MODE]))
+			INVOKE_ASYNC(SStts, TYPE_PROC_REF(/datum/controller/subsystem/tts, queue_tts_message), src, html_decode(tts_message_to_use), message_language, voice_to_use, filter.Join(","), listened, message_range = message_range, pitch = pitch, special_filters = special_filter.Join("|"))
 
 	var/image/say_popup = image('icons/mob/effects/talk.dmi', src, "[bubble_type][talk_icon_state]", FLY_LAYER)
 	SET_PLANE_EXPLICIT(say_popup, ABOVE_GAME_PLANE, src)

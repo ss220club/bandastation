@@ -56,3 +56,36 @@
 	name = "special ops officer's beret"
 	desc = "Продвинутая версия стандартного офицерского берета. Выдерживает попадание аннигиляторной пушки. Проверять не стоит."
 	greyscale_colors = "#b72b2f#acacac"
+
+/obj/item/clothing/head/caphat/beret_black
+	name = "black captain beret"
+	desc = "Хорошо быть королём."
+	icon = 'modular_bandastation/objects/icons/obj/clothing/head/hats.dmi'
+	worn_icon = 'modular_bandastation/objects/icons/mob/clothing/head/cap.dmi'
+	icon_state = "cap_beret_black"
+
+/obj/item/clothing/head/ratge
+	name = "ratge head"
+	desc = "Ну ты и крыса!"
+	icon = 'modular_bandastation/objects/icons/obj/clothing/head/hats.dmi'
+	worn_icon = 'modular_bandastation/objects/icons/mob/clothing/head/hats.dmi'
+	icon_state = "ratgehead"
+	inhand_icon_state = "ratgehead"
+	lefthand_file = 'modular_bandastation/objects/icons/mob/inhands/clothing_left_hand.dmi'
+	righthand_file = 'modular_bandastation/objects/icons/mob/inhands/clothing_right_hand.dmi'
+	flags_inv = HIDEMASK | HIDEEARS | HIDEEYES | HIDEFACE | HIDEHAIR
+	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
+
+/obj/item/clothing/head/chefhat/red
+	name = "chef's red hat"
+	desc = "Красный поварской колпак, для тех, кто хочет показать что он тут настоящий босс кухни."
+	icon = 'modular_bandastation/objects/icons/obj/clothing/head/hats.dmi'
+	worn_icon = 'modular_bandastation/objects/icons/mob/clothing/head/cap.dmi'
+	icon_state = "chef_red"
+
+/obj/item/clothing/head/towel
+	name = "towel cap"
+	desc = "Полотенце замотанное в импровизированную шапку. Можно надеть на голову."
+	icon = 'modular_bandastation/objects/icons/obj/clothing/head/hats.dmi'
+	worn_icon = 'modular_bandastation/objects/icons/mob/clothing/head/cap.dmi'
+	icon_state = "towel_head"
