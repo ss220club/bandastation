@@ -364,6 +364,10 @@ SUBSYSTEM_DEF(tts220)
 
 	var/list/filename_suffixes = list()
 	for(var/datum/singleton/sound_effect/effect as anything in effects)
+		if(effect.complex)
+			filename_suffixes = list(effect.suffix)
+			break
+
 		filename_suffixes |= effect.suffix
 
 	sortTim(filename_suffixes, GLOBAL_PROC_REF(cmp_text_asc))
@@ -429,14 +433,15 @@ SUBSYSTEM_DEF(tts220)
 
 /datum/controller/subsystem/tts220/proc/play_sfx_if_exists(mob/listener, sfx, sound/output)
 	if(sfx)
-		play_sfx(listener, sfx, output.volume, output.environment)
+		play_sfx(listener, sfx, output.volume, output.environment, output.channel)
 
-/datum/controller/subsystem/tts220/proc/play_sfx(mob/listener, sfx, volume, environment)
+/datum/controller/subsystem/tts220/proc/play_sfx(mob/listener, sfx, volume, environment, channel)
 	var/sound/output = sound(sfx)
 	output.status = SOUND_STREAM
 	output.wait = TRUE
 	output.volume = volume
 	output.environment = environment
+	output.channel = channel
 	SEND_SOUND(listener, output)
 
 /datum/controller/subsystem/tts220/proc/get_local_channel_by_owner(owner)
