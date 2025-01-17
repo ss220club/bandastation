@@ -19,7 +19,7 @@
 		var/dist = get_dist(speaker, src) - message_range
 		if(dist > 0 && dist <= EAVESDROP_EXTRA_RANGE && !HAS_TRAIT(src, TRAIT_GOOD_HEARING) && !isobserver(src))
 			return
-	speaker.cast_tts(src, raw_message, is_local = (message_range != INFINITY), is_radio = !!radio_freq, effects = message_mods[MODE_TTS_FILTERS])
+	speaker.cast_tts(src, raw_message, is_local = (message_range != INFINITY), is_radio = !!radio_freq, effects = LAZYACCESS(message_mods[MODE_TTS_FILTERS]))
 
 /mob/dead/observer/Hear(message, atom/movable/speaker, datum/language/message_language, raw_message, radio_freq, list/spans, list/message_mods, message_range)
 	. = ..()
