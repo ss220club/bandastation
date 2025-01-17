@@ -262,8 +262,10 @@ SUBSYSTEM_DEF(tts220)
 	var/dirty_text = message
 	var/text = sanitize_tts_input(dirty_text)
 
-	if(!text || length_char(text) > MAX_MESSAGE_LEN)
+	if(!text)
 		return
+
+	text = trim(text, MAX_MESSAGE_LEN)
 
 	if(traits & TTS_TRAIT_RATE_FASTER)
 		text = provider.rate_faster(text)
@@ -276,7 +278,7 @@ SUBSYSTEM_DEF(tts220)
 
 	var/hash = md5(lowertext(text))
 
-	var/filename = "data/tts_cache/[tts_seed.name]/[hash]"
+	var/filename = "input"
 	var/list/effect_singletons = list()
 	for(var/effect_type in effect_types)
 		effect_singletons += GET_SINGLETON_TYPE_LIST(effect_type)
