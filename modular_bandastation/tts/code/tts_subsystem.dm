@@ -278,7 +278,7 @@ SUBSYSTEM_DEF(tts220)
 
 	var/hash = md5(lowertext(text))
 
-	var/filename = "input"
+	var/filename = "data/tts_cache/[tts_seed.name]/[hash]"
 	var/list/effect_singletons = list()
 	for(var/effect_type in effect_types)
 		effect_singletons += GET_SINGLETON_TYPE_LIST(effect_type)
