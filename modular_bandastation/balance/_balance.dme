@@ -2,8 +2,12 @@
 
 #include "code/~defines.dm"
 
-#include "code/cargo_packs.dm"
 #include "code/crew_manifest.dm"
+#include "code/cargo/exports/materials.dm"
+#include "code/cargo/packs/goodies.dm"
+#include "code/cargo/packs/livestock.dm"
+#include "code/cargo/packs/science.dm"
+#include "code/cargo/packs/security.dm"
 #include "code/dynamic.dm"
 #include "code/events.dm"
 #include "code/laser.dm"
