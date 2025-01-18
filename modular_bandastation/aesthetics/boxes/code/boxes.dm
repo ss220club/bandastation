@@ -25,7 +25,7 @@
 	illustration = "implant"
 
 /obj/item/storage/box/condimentbottles
-	illustration = "condimentbottle"
+	illustration = "condiment"
 
 /obj/item/storage/box/deathimp
 	illustration = "implant"
@@ -49,7 +49,7 @@
 	illustration = "light"
 
 /obj/item/storage/box/lights/tubes
-	illustration = "light_tubes"
+	illustration = "light_tube"
 
 /obj/item/storage/box/lights/mixed
 	illustration = "light_mixed"
@@ -189,6 +189,10 @@
 	icon_state = "medical"
 	illustration = "syringe"
 
+/obj/item/storage/box/bodybags
+	icon_state = "medical"
+	illustration = "bodybags"
+
 // MARK: Emergency
 /obj/item/storage/box/emergencytank
 	icon_state = "internals"
@@ -235,7 +239,7 @@
 	icon_state = "syndie_alt"
 
 /obj/item/storage/box/evilmeds
-	icon_state = "syndie"
+	icon_state = "syndie_alt"
 	illustration = "pillbox"
 
 /obj/item/storage/box/fakesyndiesuit
@@ -248,9 +252,11 @@
 
 /obj/item/storage/box/stabilized
 	icon_state = "syndie"
+	illustration = "writing_syndie"
 
 /obj/item/storage/box/stockparts/deluxe
 	icon_state = "syndie"
+	illustration = "writing_syndie"
 
 /obj/item/storage/box/syndicate/contract_kit
 	icon_state = "syndie"
