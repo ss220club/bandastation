@@ -58,7 +58,7 @@ const Overview = (props) => {
   return (
     <Stack vertical>
       <Stack.Item bold fontSize="24px" textColor={BLOB_COLOR}>
-        Вы - Блоб!
+        Вы - блоб!
       </Stack.Item>
       <Stack.Item>Вы сверхразум, управляющий блобом.</Stack.Item>
       <Stack.Item>

@@ -48,13 +48,13 @@
 /atom/movable/screen/blob/blobbernaut
 	icon_state = "ui_blobbernaut"
 	// Name and description get given their proper values on Initialize()
-	name = "Произвести Блоббернаута (ОШИБКА)"
+	name = "Произвести блоббернаута (ОШИБКА)"
 	desc = "Производит сильного, умного блоббернаута из фабричного блоба за (ОШИБКА) ресурсов.<br>Используемый фабричный блоб станет хрупким и не сможет производить споры."
 
 /atom/movable/screen/blob/blobbernaut/Initialize(mapload, datum/hud/hud_owner)
 	. = ..()
-	name = "Произвести Блоббернаута ([BLOBMOB_BLOBBERNAUT_RESOURCE_COST])"
-	desc = "Производит сильного, умного блоббернаута из фабричного блоб за [BLOBMOB_BLOBBERNAUT_RESOURCE_COST] ресурсов.<br>Используемый фабричный блоба станет хрупким и не сможет производить споры."
+	name = "Произвести блоббернаута ([BLOBMOB_BLOBBERNAUT_RESOURCE_COST])"
+	desc = "Производит сильного, умного блоббернаута из фабричного блоб за [BLOBMOB_BLOBBERNAUT_RESOURCE_COST] ресурсов.<br>Используемый фабричный блоб станет хрупким и не сможет производить споры."
 
 /atom/movable/screen/blob/blobbernaut/Click()
 	if(!isovermind(usr))
