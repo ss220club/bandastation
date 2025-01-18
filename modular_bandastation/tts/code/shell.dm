@@ -67,7 +67,7 @@
 		"\[0:a\]apad=pad_dur=2\[input_padded\]; \
 		\[input_padded\]\[1:a\]afir=dry=10:wet=8\[reverb\]; \
 		\[0:a\]\[reverb\]amix=inputs=2:weights=10 1\[mixed\]; \
-		\[mixed\]highpass=f=200,lowpass=f=12000\[filtered\]; \
+		\[mixed\]highpass=f=200,lowpass=f=14000\[filtered\]; \
 		\[filtered\]deesser=i=0.4"\
 	"}
 
