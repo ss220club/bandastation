@@ -531,7 +531,7 @@
 /obj/item/radio/examine(mob/user)
 	. = ..() // translate
 	if (frequency && in_range(src, user))
-		. += span_notice("Передача настроена на частоту [frequency/10].")
+		. += span_notice("Передача настроена на частоту [span_radio("[frequency/10]")].")
 	if (unscrewed)
 		. += span_notice("Можно подсоединить или модифицировать.")
 	else
