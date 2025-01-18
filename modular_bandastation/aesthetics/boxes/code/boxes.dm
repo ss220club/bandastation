@@ -198,6 +198,10 @@
 	icon_state = "internals"
 	illustration = null
 
+/obj/item/storage/box/survival
+	icon_state = "internals"
+	illustration = null
+
 /obj/item/storage/box/survival/crafted
 	icon_state = "internals"
 	illustration = null
@@ -275,6 +279,7 @@
 
 /obj/item/storage/box/survival/centcom
 	icon_state = "nanotrasen_alt"
+	illustration = null
 
 // MARK: Monkeys
 /obj/item/storage/box/gorillacubes
