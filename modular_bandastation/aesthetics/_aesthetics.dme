@@ -17,6 +17,9 @@
 // Blastdoor
 #include "blastdoor/code/blastdoor.dm"
 
+// Boxes
+#include "boxes/code/boxes.dm"
+
 // Camera
 #include "cameras/code/cameras.dm"
 
