@@ -12,15 +12,6 @@
 /obj/item/storage/box/beaconimp
 	illustration = "implant"
 
-/obj/item/storage/box/beakers
-	illustration = "beaker"
-
-/obj/item/storage/box/beakers/bluespace
-	illustration = "beaker_bs"
-
-/obj/item/storage/box/bodybags
-	illustration = "bodybag"
-
 /obj/item/storage/box/chemimp
 	illustration = "implant"
 
@@ -195,6 +186,14 @@
 /obj/item/storage/box/bodybags
 	icon_state = "medical"
 	illustration = "bodybags"
+
+/obj/item/storage/box/beakers
+	icon_state = "medical"
+	illustration = "beaker"
+
+/obj/item/storage/box/beakers/bluespace
+	icon_state = "medical"
+	illustration = "beaker_bs"
 
 // MARK: Emergency
 /obj/item/storage/box/emergencytank

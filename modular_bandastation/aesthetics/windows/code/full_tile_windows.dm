@@ -4,7 +4,7 @@
 
 // MARK: Windows
 /obj/structure/window
-	layer = ABOVE_WINDOW_LAYER
+	layer = ABOVE_WINDOW_LAYER + 0.05
 	/// Used to define what file the edging sprite is contained within
 	var/edge_overlay_file
 	/// Tracks the edging appearence sprite
