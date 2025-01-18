@@ -30,9 +30,6 @@
 	base_icon_state = "cult_wall"
 	canSmoothWith = SMOOTH_GROUP_GIRDER + SMOOTH_GROUP_AIRLOCK + SMOOTH_GROUP_WINDOW_FULLTILE + SMOOTH_GROUP_WALLS
 
-/obj/effect/temp_visual/cult
-	icon = 'modular_bandastation/aesthetics/walls/icons/cult_effects.dmi'
-
 // MARK: Indestructible walls
 /turf/closed/indestructible/riveted
 	icon = 'icons/bandastation/walls/reinforced_wall.dmi'
