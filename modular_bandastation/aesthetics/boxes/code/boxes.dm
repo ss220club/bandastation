@@ -87,6 +87,9 @@
 /obj/item/storage/box/tapes
 	illustration = "tape"
 
+/obj/item/storage/box/mime
+	icon_state = "default"
+
 // MARK: Security
 /obj/item/storage/box/deputy
 	icon_state = "security"
