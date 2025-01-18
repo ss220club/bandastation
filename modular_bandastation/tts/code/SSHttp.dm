@@ -34,7 +34,7 @@ SUBSYSTEM_DEF(http)
 				else
 					log_data += "\tResponse status code: [res.status_code]"
 					log_data += "\tResponse body: [res.body]"
-					log_data += "\tResponse headers: [json_encode(res.headers)]"
+					// log_data += "\tResponse headers: [json_encode(res.headers)]" // Don't log headers for now
 				log_data += "END ASYNC RESPONSE (ID: [req.id])"
 				logger.Log(LOG_CATEGORY_DEBUG, log_data.Join("\n"))
 
@@ -61,7 +61,7 @@ SUBSYSTEM_DEF(http)
 		log_data += "BEGIN ASYNC REQUEST (ID: [req.id])"
 		log_data += "\t[uppertext(req.method)] [req.url]"
 		log_data += "\tRequest body: [req.body]"
-		log_data += "\tRequest headers: [req.headers]"
+		// log_data += "\tRequest headers: [req.headers]" // Don't log headers for now
 		log_data += "END ASYNC REQUEST (ID: [req.id])"
 
 		// Write the log data
