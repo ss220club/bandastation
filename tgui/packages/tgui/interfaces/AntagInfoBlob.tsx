@@ -46,7 +46,7 @@ const Overview = (props) => {
     return (
       <Stack vertical>
         <Stack.Item bold fontSize="14px" textColor={BLOB_COLOR}>
-          Вы еще не показали свою истинную форму!
+          Ваша натура еще не явлена!
         </Stack.Item>
         <Stack.Item>
           Вы должны поглотиться инфекцией. Найдите безопасное место и лопните!
@@ -104,7 +104,7 @@ const Basics = (props) => {
     <Collapsible title="Основы">
       <LabeledList>
         <LabeledList.Item label="Атака">
-          Вы можете распространятся, что приведет к атаке существ, повреждению
+          Вы можете распространяться, что приведет к атаке существ, повреждению
           предметов или размещению Обычного Блоба, если тайл пустой.
         </LabeledList.Item>
         <LabeledList.Item label="Размещение">

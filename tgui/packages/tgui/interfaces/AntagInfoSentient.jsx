@@ -11,7 +11,9 @@ export const AntagInfoSentient = (props) => {
       <Window.Content>
         <Section fill>
           <Stack vertical fill textAlign="center">
-            <Stack.Item fontSize="20px">Вы - разумное существо!</Stack.Item>
+            <Stack.Item fontSize="20px">
+              Вы - разумное существо!
+            </Stack.Item>
             <Stack.Item>
               <BlockQuote>
                 Все сразу прояснилось: вы знаете, чем и кем являетесь!

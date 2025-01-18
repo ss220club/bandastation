@@ -30,9 +30,7 @@ export const AntagInfoGlitch = (props) => {
             <Stack.Item>FN УСТРАНЕНИЕ_НАРУШИТЕЛЕЙ (REF)</Stack.Item>
             <Divider />
             <Stack.Item mb={1} bold fontSize="16px">
-              <span style={textStyles.variable}>
-                Инициализация({antag_name})
-              </span>
+              <span style={textStyles.variable}>Инициализация({antag_name})</span>
             </Stack.Item>
             <Stack.Item mb={2}>
               <span style={textStyles.danger}>Битраннинг</span>- это

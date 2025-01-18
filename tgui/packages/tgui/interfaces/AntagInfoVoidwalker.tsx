@@ -21,8 +21,9 @@ export const AntagInfoVoidwalker = (props) => {
                 <Stack.Item fontSize="25px">Вы - Войдволкер.</Stack.Item>
                 <Stack.Item>
                   <BlockQuote>
-                    Вы - существо из пустоты между звездами. Вас привлекли
-                    радиосигналы, передаваемые этой станцией.
+                    Вы - существо из пустоты между звездами. 
+                    Вас привлекли радиосигналы, передаваемые 
+                    этой станцией.
                   </BlockQuote>
                 </Stack.Item>
                 <Stack.Divider />

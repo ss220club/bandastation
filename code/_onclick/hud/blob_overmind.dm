@@ -31,7 +31,7 @@
 		var/mob/eye/blob/B = hud.mymob
 		if(!B.placed)
 			name = "Разместить ядро блоба"
-			desc = "Попытатся разместить ядро блоба в этом месте."
+			desc = "Попытка разместить ядро блоба в этом месте."
 		else
 			name = initial(name)
 			desc = initial(desc)
@@ -49,12 +49,12 @@
 	icon_state = "ui_blobbernaut"
 	// Name and description get given their proper values on Initialize()
 	name = "Произвести Блоббернаута (ОШИБКА)"
-	desc = "Производит сильного, умного блоббернаута из фабричного блоб за (ОШИБКА) ресурсов.<br>Используемый фабричный блоб станет хрупким и не сможет производить споры."
+	desc = "Производит сильного, умного блоббернаута из фабричного блоба за (ОШИБКА) ресурсов.<br>Используемый фабричный блоб станет хрупким и не сможет производить споры."
 
 /atom/movable/screen/blob/blobbernaut/Initialize(mapload, datum/hud/hud_owner)
 	. = ..()
 	name = "Произвести Блоббернаута ([BLOBMOB_BLOBBERNAUT_RESOURCE_COST])"
-	desc = "Производит сильного, умного блоббернаута из фабричного блоб за [BLOBMOB_BLOBBERNAUT_RESOURCE_COST] ресурсов.<br>Используемый фабричный блоб станет хрупким и не сможет производить споры."
+	desc = "Производит сильного, умного блоббернаута из фабричного блоб за [BLOBMOB_BLOBBERNAUT_RESOURCE_COST] ресурсов.<br>Используемый фабричный блоба станет хрупким и не сможет производить споры."
 
 /atom/movable/screen/blob/blobbernaut/Click()
 	if(!isovermind(usr))
@@ -66,12 +66,12 @@
 	icon_state = "ui_resource"
 	// Name and description get given their proper values on Initialize()
 	name = "Произвести ресурсный блоб (ОШИБКА)"
-	desc = "Производит ресурсный блоб за ОШИБКА ресурсов.<br>Ресурсный блоб будет давать вам ресурсы каждые несколько секунд."
+	desc = "Производит ресурсного блоба за ОШИБКА ресурсов.<br>Ресурсный блоб будет давать вам ресурсы каждые несколько секунд."
 
 /atom/movable/screen/blob/resource_blob/Initialize(mapload, datum/hud/hud_owner)
 	. = ..()
 	name = "Произвести ресурсный блоб ([BLOB_STRUCTURE_RESOURCE_COST])"
-	desc = "Производит ресурсный блоб за [BLOB_STRUCTURE_RESOURCE_COST] ресурсов.<br>Ресурсный блоб будет давать вам ресурсы каждые несколько секунд."
+	desc = "Производит ресурсного блоба за [BLOB_STRUCTURE_RESOURCE_COST] ресурсов.<br>Ресурсный блоб будет давать вам ресурсы каждые несколько секунд."
 
 /atom/movable/screen/blob/resource_blob/Click()
 	if(!isovermind(usr))
