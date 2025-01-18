@@ -6,10 +6,10 @@
 
 /datum/changelog/ui_static_data()
 	var/list/data = list("dates" = list())
-	var/regex/ymlRegex = regex(@"\.yml", "g")
+	var/static/regex/yml_regex = regex(@"\.yml", "g")
 
 	for(var/archive_file in sort_list(flist("html/changelogs/bandastation/archive/")))
-		var/archive_date = ymlRegex.Replace(archive_file, "")
+		var/archive_date = yml_regex.Replace(archive_file, "")
 		data["dates"] = list(archive_date) + data["dates"]
 
 	return data
