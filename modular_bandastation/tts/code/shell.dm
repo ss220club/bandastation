@@ -35,9 +35,7 @@
 		logger.Log(LOG_CATEGORY_DEBUG, "apply_sound_effects([effect_types], [filename_input], [filename_output]) STDOUT: [stdout]")
 		logger.Log(LOG_CATEGORY_DEBUG, "apply_sound_effects([effect_types], [filename_input], [filename_output]) STDERR: [stderr]")
 		return FALSE
-	else
-		message_admins("ffmpeg output: [stdout]")
-		log_admin("ffmpeg output: [stdout]")
+
 	return TRUE
 
 /datum/singleton/sound_effect
