@@ -48,23 +48,31 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 /obj/item/radio/headset/examine(mob/user)
 	. = ..()
 
-	if(item_flags & IN_INVENTORY && loc == user)
-		// construction of frequency description
-		var/list/avail_chans = list("Используйте [RADIO_KEY_COMMON] для текущей настроенной частоты")
-		if(special_channels & RADIO_SPECIAL_BINARY)
-			avail_chans += "используйте [MODE_TOKEN_BINARY] для канала \"[MODE_BINARY]\""
-		if(length(channels))
-			for(var/i in 1 to length(channels))
-				if(i == 1)
-					avail_chans += "используйте [MODE_TOKEN_DEPARTMENT] или [GLOB.channel_tokens[channels[i]]] для канала \"[LOWER_TEXT(channels[i])]\""
-				else
-					avail_chans += "используйте [GLOB.channel_tokens[channels[i]]] для канала \"[LOWER_TEXT(channels[i])]\""
-		. += span_notice("Маленький экран на дисплее наушника показывает следующие доступные частоты:\n[english_list(avail_chans)].")
-
-		if(command)
-			. += span_info("Альт-Клик для переключения режима повышенной громкости.")
-	else
+	if(!(item_flags & IN_INVENTORY) || loc != user)
 		. += span_notice("Маленький экран на наушнике мигает, но его не разобрать, только если вы не держите или носите наушник.")
+		return
+
+	// construction of frequency description
+	var/list/available_channels = list()
+	available_channels += "<li><b>[span_radio(RADIO_KEY_COMMON)]</b> для текущей настроенной частоты</li>"
+	if(special_channels & RADIO_SPECIAL_BINARY)
+		available_channels += "<li><b>[span_binarysay(MODE_TOKEN_BINARY)] для [span_binarysay(capitalize(MODE_BINARY))]</b></li>"
+
+	for(var/i in 1 to length(channels))
+		var/channel_name = channels[i]
+		var/channel_token = GLOB.channel_tokens[channel_name]
+		var/channel_span_class = get_radio_span(GLOB.radiochannels[channel_name])
+
+		if(i == 1)
+			available_channels += "<li><b>[span_class(channel_span_class, MODE_TOKEN_DEPARTMENT)]</b> или <b>[span_class(channel_span_class, channel_token)]</b> для <b>[span_class(channel_span_class, channel_name)]</b></li>"
+		else
+			available_channels += "<li><b>[span_class(channel_span_class, channel_token)]</b> для <b>[span_class(channel_span_class, channel_name)]</b></li>"
+
+	. += span_notice("Маленький экран на дисплее наушника показывает следующие доступные частоты:")
+	. += span_notice("<ul style='display:inline-block; margin: 0; list-style: square;'>[available_channels.Join()]</ul>")
+
+	if(command)
+		. += span_info("<b>Альт-Клик</b> для переключения режима повышенной громкости.")
 
 /obj/item/radio/headset/Initialize(mapload)
 	. = ..()
