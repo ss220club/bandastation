@@ -3410,7 +3410,7 @@
 "aSg" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "JimNorton"
+	id = "JimNortonKitchen"
 	},
 /obj/item/storage/fancy/coffee_condi_display{
 	pixel_y = 10;
@@ -57601,6 +57601,10 @@
 /obj/effect/mapping_helpers/airlock/autoname,
 /obj/structure/cable,
 /obj/machinery/door/firedoor,
+/obj/machinery/door/poddoor/shutters/window/preopen{
+	dir = 4;
+	id = "JimNortonBottom"
+	},
 /turf/open/floor/wood,
 /area/station/service/cafeteria)
 "oAQ" = (
@@ -59954,7 +59958,7 @@
 "phH" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "JimNorton"
+	id = "JimNortonKitchen"
 	},
 /obj/item/reagent_containers/cup/glass/coffee{
 	pixel_x = -3;
@@ -86179,7 +86183,7 @@
 "vTw" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "JimNorton"
+	id = "JimNortonKitchen"
 	},
 /obj/structure/desk_bell{
 	pixel_x = -1;
@@ -94534,7 +94538,7 @@
 "yan" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "JimNorton"
+	id = "JimNortonKitchen"
 	},
 /obj/item/modular_computer/laptop/preset/civilian,
 /obj/structure/table/reinforced,
