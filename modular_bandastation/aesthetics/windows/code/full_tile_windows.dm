@@ -15,28 +15,28 @@
 	if(!edge_overlay_file)
 		return
 
-	edge_overlay = mutable_appearance(edge_overlay_file, "[smoothing_junction]", layer + 0.1, appearance_flags = RESET_COLOR|KEEP_APART)
+	edge_overlay = mutable_appearance(edge_overlay_file, "edge-[smoothing_junction]", layer + 0.1, appearance_flags = RESET_COLOR|KEEP_APART)
 	. += edge_overlay
 
 /obj/structure/window/fulltile
-	icon = 'modular_bandastation/aesthetics/windows/icons/window.dmi'
-	edge_overlay_file = 'modular_bandastation/aesthetics/windows/icons/window_edges.dmi'
+	icon = 'icons/bandastation/windows/window.dmi'
+	edge_overlay_file = 'icons/bandastation/windows/window_edges.dmi'
 	icon_state = "window-0"
 	base_icon_state = "window"
 	canSmoothWith = SMOOTH_GROUP_AIRLOCK + SMOOTH_GROUP_WINDOW_FULLTILE + SMOOTH_GROUP_WALLS
 	color = WINDOW_COLOR
 
 /obj/structure/window/reinforced/fulltile
-	icon = 'modular_bandastation/aesthetics/windows/icons/reinforced_window.dmi'
-	edge_overlay_file = 'modular_bandastation/aesthetics/windows/icons/reinforced_window_edges.dmi'
+	icon = 'icons/bandastation/windows/reinforced_window.dmi'
+	edge_overlay_file = 'icons/bandastation/windows/reinforced_window_edges.dmi'
 	icon_state = "reinforced_window-0"
 	base_icon_state = "reinforced_window"
 	canSmoothWith = SMOOTH_GROUP_AIRLOCK + SMOOTH_GROUP_WINDOW_FULLTILE + SMOOTH_GROUP_WALLS
 	color = WINDOW_COLOR
 
 /obj/structure/window/reinforced/tinted/fulltile
-	icon = 'modular_bandastation/aesthetics/windows/icons/reinforced_window.dmi'
-	edge_overlay_file = 'modular_bandastation/aesthetics/windows/icons/reinforced_window_edges.dmi'
+	icon = 'icons/bandastation/windows/reinforced_window.dmi'
+	edge_overlay_file = 'icons/bandastation/windows/reinforced_window_edges.dmi'
 	icon_state = "reinforced_window-0"
 	base_icon_state = "reinforced_window"
 	canSmoothWith = SMOOTH_GROUP_AIRLOCK + SMOOTH_GROUP_WINDOW_FULLTILE + SMOOTH_GROUP_WALLS
@@ -44,8 +44,8 @@
 	color = TINTED_WINDOW_COLOR
 
 /obj/structure/window/plasma/fulltile
-	icon = 'modular_bandastation/aesthetics/windows/icons/window.dmi'
-	edge_overlay_file = 'modular_bandastation/aesthetics/windows/icons/window_edges.dmi'
+	icon = 'icons/bandastation/windows/window.dmi'
+	edge_overlay_file = 'icons/bandastation/windows/window_edges.dmi'
 	icon_state = "window-0"
 	base_icon_state = "window"
 	canSmoothWith = SMOOTH_GROUP_AIRLOCK + SMOOTH_GROUP_WINDOW_FULLTILE + SMOOTH_GROUP_WALLS
@@ -53,8 +53,8 @@
 	color = PLASMA_WINDOW_COLOR
 
 /obj/structure/window/reinforced/plasma/fulltile
-	icon = 'modular_bandastation/aesthetics/windows/icons/reinforced_window.dmi'
-	edge_overlay_file = 'modular_bandastation/aesthetics/windows/icons/reinforced_window_edges.dmi'
+	icon = 'icons/bandastation/windows/reinforced_window.dmi'
+	edge_overlay_file = 'icons/bandastation/windows/reinforced_window_edges.dmi'
 	icon_state = "reinforced_window-0"
 	base_icon_state = "reinforced_window"
 	canSmoothWith = SMOOTH_GROUP_AIRLOCK + SMOOTH_GROUP_WINDOW_FULLTILE + SMOOTH_GROUP_WALLS
@@ -92,13 +92,13 @@
 
 // MARK: Indestructible windows
 /turf/closed/indestructible/fakeglass
-	icon = 'modular_bandastation/aesthetics/windows/icons/reinforced_window.dmi'
+	icon = 'icons/bandastation/windows/reinforced_window.dmi'
 	icon_state = "reinforced_window-0"
 	base_icon_state = "reinforced_window"
 	canSmoothWith = SMOOTH_GROUP_AIRLOCK + SMOOTH_GROUP_WINDOW_FULLTILE + SMOOTH_GROUP_WALLS
 	color = WINDOW_COLOR
 	/// Used to define what file the edging sprite is contained within
-	var/edge_overlay_file = 'modular_bandastation/aesthetics/windows/icons/reinforced_window_edges.dmi'
+	var/edge_overlay_file = 'icons/bandastation/windows/reinforced_window_edges.dmi'
 	/// Tracks the edging appearence sprite
 	var/mutable_appearance/edge_overlay
 
@@ -116,7 +116,7 @@
 	if(!edge_overlay_file)
 		return
 
-	edge_overlay = mutable_appearance(edge_overlay_file, "[smoothing_junction]", layer + 0.1, appearance_flags = RESET_COLOR|KEEP_APART)
+	edge_overlay = mutable_appearance(edge_overlay_file, "edge-[smoothing_junction]", layer + 0.1, appearance_flags = RESET_COLOR|KEEP_APART)
 	. += edge_overlay
 
 /turf/closed/indestructible/fakeglass/plasma
@@ -124,8 +124,8 @@
 	color = PLASMA_WINDOW_COLOR
 
 /turf/closed/indestructible/fakeglass/unreinforced
-	icon = 'modular_bandastation/aesthetics/windows/icons/window.dmi'
-	edge_overlay_file = 'modular_bandastation/aesthetics/windows/icons/window_edges.dmi'
+	icon = 'icons/bandastation/windows/window.dmi'
+	edge_overlay_file = 'icons/bandastation/windows/window_edges.dmi'
 	icon_state = "window-0"
 	base_icon_state = "window"
 
