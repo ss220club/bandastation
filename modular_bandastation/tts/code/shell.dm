@@ -38,10 +38,13 @@
 	return TRUE
 
 /datum/singleton/sound_effect
-	var/complex = FALSE
-	var/suffix
-	var/ffmpeg_arguments
 	/// If set to TRUE, this effect will ignore all other filters.
+	var/complex = FALSE
+	/// Text suffix used for caching file with specific effects.
+	var/suffix
+	/// Filter arguments passed to ffmpeg.
+	var/ffmpeg_arguments
+
 
 /datum/singleton/sound_effect/radio
 	suffix = "_radio"
@@ -60,11 +63,11 @@
 	suffix = "_announcement"
 	ffmpeg_arguments = {"\
 		-i ./tools/tts/tts-api/RoomImpulse.wav -filter_complex \
-		"\[0:a\]apad=pad_dur=2\[input_padded\]; \[1:a\]apad=whole_len=10000\[impulse_padded\]; \
-		\[impulse_padded\]volume=5\[impulse\]; \[input_padded\]\[impulse\]afir=dry=10:wet=10\[reverb\]; \
-		\[0:a\]\[reverb\]amix=inputs=2:weights=8 1\[mixed\]; \[mixed\]highpass=f=200,lowpass=f=14000\[filtered\]; \
-		\[filtered\]deesser=i=0.4\[deessed\]; \[deessed\]acrusher=mix=0.05:mode=lin:aa=1:samples=250\[crushed\]; \
-		\[crushed\]equalizer=f=4000:t=h:width=2000:g=8"\
+		"\[0:a\]apad=pad_dur=2\[input_padded\]; \
+		\[input_padded\]\[1:a\]afir=dry=10:wet=8\[reverb\]; \
+		\[0:a\]\[reverb\]amix=inputs=2:weights=10 1\[mixed\]; \
+		\[mixed\]highpass=f=200,lowpass=f=12000\[filtered\]; \
+		\[filtered\]deesser=i=0.4"\
 	"}
 
 #undef SHELLEO_ERRORLEVEL
