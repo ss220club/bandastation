@@ -1,3 +1,4 @@
+// MARK: Walls
 /turf/closed/wall
 	icon = 'modular_bandastation/aesthetics/walls/icons/wall.dmi'
 	icon_state = "wall-0"
@@ -22,6 +23,32 @@
 /turf/closed/wall/mineral/titanium
 	smoothing_groups = SMOOTH_GROUP_TITANIUM_WALLS + SMOOTH_GROUP_CLOSED_TURFS
 	canSmoothWith = SMOOTH_GROUP_SHUTTLE_PARTS + SMOOTH_GROUP_AIRLOCK + SMOOTH_GROUP_WINDOW_FULLTILE_SHUTTLE + SMOOTH_GROUP_TITANIUM_WALLS
+
+/turf/closed/wall/mineral/cult
+	icon = 'modular_bandastation/aesthetics/walls/icons/cult_wall.dmi'
+	icon_state = "cult_wall-0"
+	base_icon_state = "cult_wall"
+	canSmoothWith = SMOOTH_GROUP_GIRDER + SMOOTH_GROUP_AIRLOCK + SMOOTH_GROUP_WINDOW_FULLTILE + SMOOTH_GROUP_WALLS
+
+// MARK: Indestructible walls
+/turf/closed/indestructible/riveted
+	icon = 'modular_bandastation/aesthetics/walls/icons/reinforced_wall.dmi'
+	icon_state = "reinforced_wall-0"
+	base_icon_state = "reinforced_wall"
+	smoothing_groups = SMOOTH_GROUP_WALLS + SMOOTH_GROUP_CLOSED_TURFS
+	canSmoothWith = SMOOTH_GROUP_GIRDER + SMOOTH_GROUP_AIRLOCK + SMOOTH_GROUP_WINDOW_FULLTILE + SMOOTH_GROUP_WALLS
+
+/turf/closed/indestructible/reinforced
+	icon = 'modular_bandastation/aesthetics/walls/icons/reinforced_wall.dmi'
+	icon_state = "reinforced_wall-0"
+	base_icon_state = "reinforced_wall"
+	canSmoothWith = SMOOTH_GROUP_GIRDER + SMOOTH_GROUP_AIRLOCK + SMOOTH_GROUP_WINDOW_FULLTILE + SMOOTH_GROUP_WALLS
+
+/turf/closed/indestructible/cult
+	icon = 'modular_bandastation/aesthetics/walls/icons/cult_wall.dmi'
+	icon_state = "cult_wall-0"
+	base_icon_state = "cult_wall"
+	canSmoothWith = SMOOTH_GROUP_GIRDER + SMOOTH_GROUP_AIRLOCK + SMOOTH_GROUP_WINDOW_FULLTILE + SMOOTH_GROUP_WALLS
 
 // MARK: Falsewalls
 /obj/structure/falsewall
