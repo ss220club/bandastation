@@ -31402,9 +31402,6 @@
 /obj/structure/window/reinforced/spawner/directional/north,
 /turf/open/floor/iron/dark,
 /area/station/ai_monitored/security/armory)
-"hTP" = (
-/turf/closed/wall,
-/area/station/maintenance/disposal/incinerator)
 "hTZ" = (
 /obj/structure/rack,
 /obj/item/wrench,
@@ -61951,7 +61948,7 @@
 "pBa" = (
 /obj/structure/lattice/catwalk,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/turf/open/space/basic,
+/turf/open/space/openspace,
 /area/space/nearstation)
 "pBh" = (
 /obj/machinery/holopad,
@@ -185131,10 +185128,10 @@ wNB
 cZJ
 cZJ
 cZJ
-ceC
-ceC
 kJd
-doz
+kJd
+kJd
+tYD
 tYD
 tYD
 tYD
@@ -186938,7 +186935,7 @@ uSu
 cZJ
 trM
 vbK
-ceC
+kJd
 tYD
 tYD
 tYD
@@ -187184,18 +187181,18 @@ cZJ
 cZJ
 tXg
 cZJ
-hTP
-hTP
+cZJ
+cZJ
+cZJ
 wrM
 cZJ
 cZJ
 cZJ
 cZJ
 cZJ
-cZJ
 vbK
 vbK
-ceC
+kJd
 kJd
 kJd
 kJd
@@ -187444,13 +187441,13 @@ kJd
 kJd
 kJd
 pBa
-vbK
-vbK
-vbK
-vbK
-vbK
-vbK
-vbK
+pBa
+trM
+trM
+trM
+trM
+trM
+trM
 trM
 trM
 trM
