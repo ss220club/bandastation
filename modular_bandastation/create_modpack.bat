@@ -1,11 +1,5 @@
 @echo off
-set /p moduleName="Введите название модуля. Например: example_module: "
-set "moduleName=%moduleName: =_%"
-
-set /p moduleVisibleName="Введите видимое в игре название модуля. Например: Example module: "
-set "moduleVisibleName=%moduleVisibleName:_= %"
-
-set /p moduleDesc="Введите описание модуля. Например: Это тестовый модуль: "
+set /p moduleName="Enter module name: "
 
 xcopy "example" "%moduleName%" /s /i
 
@@ -15,9 +9,9 @@ ren "%moduleName%\code\example.dm" "%moduleName%.dm"
 
 mkdir "%moduleName%\icons"
 
-Powershell -Command "(Get-Content '%moduleName%\_%moduleName%.dm') -replace 'Example name', '%moduleVisibleName%' | Set-Content '%moduleName%\_%moduleName%.dm'"
-Powershell -Command "(Get-Content '%moduleName%\_%moduleName%.dm') -replace 'Example desc', '%moduleDesc%' | Set-Content '%moduleName%\_%moduleName%.dm'"
+Powershell -Command "(Get-Content '%moduleName%\_%moduleName%.dm') -replace 'Example modpack', '%moduleName%' | Set-Content '%moduleName%\_%moduleName%.dm'"
 Powershell -Command "(Get-Content '%moduleName%\_%moduleName%.dm') -replace 'example', '%moduleName%' | Set-Content '%moduleName%\_%moduleName%.dm'"
+Powershell -Command "(Get-Content '%moduleName%\_%moduleName%.dme') -replace 'Example modpack', '%moduleName%' | Set-Content '%moduleName%\_%moduleName%.dme'"
 Powershell -Command "(Get-Content '%moduleName%\_%moduleName%.dme') -replace 'example', '%moduleName%' | Set-Content '%moduleName%\_%moduleName%.dme'"
 Powershell -Command "(Get-Content '%moduleName%\_%moduleName%.dm') -replace 'furior', '%USERNAME%' | Set-Content '%moduleName%\_%moduleName%.dm'"
 
