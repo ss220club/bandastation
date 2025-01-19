@@ -87,10 +87,14 @@
 ///signal called by successfully opening target
 /datum/element/deliver_first/proc/on_post_open(obj/structure/closet/target, mob/living/user, force)
 	SIGNAL_HANDLER
+	//BANDASTATION REMOVAL START
+	/**
 	if(area_check(target))
 		//noice, delivered!
 		var/datum/bank_account/cargo_account = SSeconomy.get_dep_account(ACCOUNT_CAR)
 		cargo_account.adjust_money(payment)
+	*/
+	//BANDASTATION REMOVAL END
 	remove_lock(target)
 
 ///called to remove the element in a flavorful way, either from delivery or from emagging/breaking open the crate
