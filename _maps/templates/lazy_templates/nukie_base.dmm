@@ -515,7 +515,7 @@
 	pixel_x = 4;
 	pixel_y = -2
 	},
-/obj/item/circuitboard/computer/station_alert{
+/obj/item/circuitboard/computer/stationalert{
 	pixel_y = 1;
 	pixel_x = 3
 	},
