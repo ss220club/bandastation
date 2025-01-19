@@ -34,7 +34,7 @@ SUBSYSTEM_DEF(http)
 				else
 					log_data += "\tResponse status code: [res.status_code]"
 					log_data += "\tResponse body: [res.body]"
-					// log_data += "\tResponse headers: [json_encode(res.headers)]" // Don't log headers for now
+					log_data += "\tResponse headers: [json_encode(res.headers)]" // Don't log headers for now
 				log_data += "END ASYNC RESPONSE (ID: [req.id])"
 				logger.Log(LOG_CATEGORY_DEBUG, log_data.Join("\n"))
 
