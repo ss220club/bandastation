@@ -15,6 +15,7 @@
 		JOB_NANOTRASEN_REPRESENTATIVE,
 		JOB_PRISONER,
 		JOB_SECURITY_OFFICER,
+		JOB_MAGISTRATE,
 		JOB_WARDEN,
 	)
 	restricted_roles = list(
@@ -42,11 +43,6 @@
 		/datum/round_event_control/antagonist/solo/traitor/roundstart = 12,
 		/datum/round_event_control/antagonist/solo/heretic/roundstart = 2,
 	)
-
-/datum/round_event_control/antagonist/solo/brother/midround
-	name = "Sleeper Agents (Blood Brothers)"
-	prompted_picking = FALSE
-	required_enemies = 2
 
 /datum/round_event/antagonist/solo/brother/add_datum_to_mind(datum/mind/antag_mind)
 	var/datum/team/brother_team/team = new

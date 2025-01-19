@@ -15,6 +15,7 @@
 		JOB_HEAD_OF_SECURITY,
 		JOB_PRISONER,
 		JOB_SECURITY_OFFICER,
+		JOB_MAGISTRATE,
 		JOB_WARDEN,
 	)
 	restricted_roles = list(
