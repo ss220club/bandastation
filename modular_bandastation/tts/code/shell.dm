@@ -63,12 +63,10 @@
 	complex = TRUE
 	suffix = "_announcement"
 	ffmpeg_arguments = {"\
-		-i ./tools/tts/tts-api/RoomImpulse.wav -filter_complex \
-		"\[0:a\]apad=pad_dur=2\[input_padded\]; \
-		\[input_padded\]\[1:a\]afir=dry=10:wet=8\[reverb\]; \
-		\[0:a\]\[reverb\]amix=inputs=2:weights=10 1\[mixed\]; \
-		\[mixed\]highpass=f=200,lowpass=f=14000\[filtered\]; \
-		\[filtered\]deesser=i=0.4"\
+		-i ./tools/tts/tts-api/RoomImpulse.wav -filter_complex  \
+		"\[0:a\]apad=pad_dur=2\[dry\]; \
+		\[0:a\]apad=pad_dur=2,afir=dry=10:wet=10\[wet\]; \
+		\[dry\]\[wet\]amix=weights='1 0.1',acrusher=mix=0.1:mode=lin:aa=1:samples=250,highpass=f=200,lowpass=f=10000,alimiter=limit=-1dB:level=false:asc=true"\
 	"}
 
 #undef SHELLEO_ERRORLEVEL
