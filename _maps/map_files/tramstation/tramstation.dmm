@@ -8439,10 +8439,8 @@
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 8
 	},
+/obj/effect/mapping_helpers/airlock/access/all/engineering/ce,
 /obj/structure/cable,
-/obj/effect/mapping_helpers/airlock/access/any/command/nanotrasen_representative,
-/obj/effect/mapping_helpers/airlock/access/any/command/blueshield,
-/obj/effect/mapping_helpers/airlock/access/any/engineering/ce,
 /turf/open/floor/iron,
 /area/station/command/heads_quarters/ce)
 "bUj" = (
@@ -25261,13 +25259,11 @@
 	name = "Chief Medical Officer's Office"
 	},
 /obj/machinery/door/firedoor,
+/obj/effect/mapping_helpers/airlock/access/all/medical/cmo,
 /obj/structure/cable,
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/effect/mapping_helpers/airlock/access/any/command/nanotrasen_representative,
-/obj/effect/mapping_helpers/airlock/access/any/command/blueshield,
-/obj/effect/mapping_helpers/airlock/access/any/medical/cmo,
 /turf/open/floor/iron/white,
 /area/station/command/heads_quarters/cmo)
 "ial" = (
@@ -25660,12 +25656,10 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/door/firedoor,
+/obj/effect/mapping_helpers/airlock/access/all/science/rd,
 /obj/structure/disposalpipe/segment{
 	dir = 10
 	},
-/obj/effect/mapping_helpers/airlock/access/any/command/nanotrasen_representative,
-/obj/effect/mapping_helpers/airlock/access/any/command/blueshield,
-/obj/effect/mapping_helpers/airlock/access/any/science/rd,
 /turf/open/floor/iron/cafeteria,
 /area/station/command/heads_quarters/rd)
 "iis" = (
@@ -37757,6 +37751,7 @@
 /obj/machinery/door/airlock/command{
 	name = "Head of Personnel"
 	},
+/obj/effect/mapping_helpers/airlock/access/all/command/hop,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -37767,9 +37762,6 @@
 	name = "Privacy Shutters";
 	id = "hop"
 	},
-/obj/effect/mapping_helpers/airlock/access/any/command/blueshield,
-/obj/effect/mapping_helpers/airlock/access/any/command/nanotrasen_representative,
-/obj/effect/mapping_helpers/airlock/access/any/command/hop,
 /turf/open/floor/wood,
 /area/station/command/heads_quarters/hop)
 "mkl" = (
@@ -42870,13 +42862,11 @@
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 4
 	},
+/obj/effect/mapping_helpers/airlock/access/all/engineering/ce,
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
 /obj/structure/cable,
-/obj/effect/mapping_helpers/airlock/access/any/command/nanotrasen_representative,
-/obj/effect/mapping_helpers/airlock/access/any/command/blueshield,
-/obj/effect/mapping_helpers/airlock/access/any/engineering/ce,
 /turf/open/floor/iron,
 /area/station/command/heads_quarters/ce)
 "obC" = (
@@ -64223,13 +64213,11 @@
 	name = "Head of Security"
 	},
 /obj/machinery/door/firedoor,
+/obj/effect/mapping_helpers/airlock/access/all/security/hos,
 /obj/structure/cable,
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/effect/mapping_helpers/airlock/access/any/command/nanotrasen_representative,
-/obj/effect/mapping_helpers/airlock/access/any/command/blueshield,
-/obj/effect/mapping_helpers/airlock/access/any/security/hos,
 /turf/open/floor/carpet,
 /area/station/command/heads_quarters/hos)
 "vyH" = (
@@ -65334,6 +65322,7 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/trimline/brown/filled/line,
+/obj/effect/mapping_helpers/airlock/access/all/supply/qm,
 /obj/machinery/door/airlock/command{
 	name = "Quartermaster's Office"
 	},
@@ -65341,9 +65330,6 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/effect/mapping_helpers/airlock/access/any/command/nanotrasen_representative,
-/obj/effect/mapping_helpers/airlock/access/any/command/blueshield,
-/obj/effect/mapping_helpers/airlock/access/any/supply/qm,
 /turf/open/floor/iron,
 /area/station/command/heads_quarters/qm)
 "vTb" = (
