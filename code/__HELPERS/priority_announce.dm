@@ -83,6 +83,7 @@
 	else
 		finalized_announcement = CHAT_ALERT_DEFAULT_SPAN(jointext(announcement_strings, ""))
 
+// BANDASTATION EDIT - START
 	var/tts_message = (SSstation.announcer.custom_alert_message && !has_important_message) ? SSstation.announcer.custom_alert_message : text
 	dispatch_announcement_to_players(finalized_announcement, players, sound, tts_override = tts_override, tts_message = tts_message)
 	// BANDASTATION EDIT - END
