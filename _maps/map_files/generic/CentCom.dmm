@@ -4464,7 +4464,6 @@
 /turf/open/floor/wood/tile,
 /area/centcom/central_command_areas/planetary_port/club)
 "kA" = (
-/obj/effect/turf_decal/tile/dark_blue/full,
 /obj/effect/baseturf_helper{
 	baseturf = /turf/open/floor/plating
 	},
@@ -9971,6 +9970,16 @@
 "xh" = (
 /turf/closed/indestructible/wood,
 /area/centcom/central_command_areas/planetary_port/club)
+"xi" = (
+/obj/machinery/door/window/brigdoor/right/directional/east,
+/obj/effect/turf_decal/siding/wood{
+	dir = 6
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/turf/open/floor/wood/large,
+/area/centcom/central_command_areas/bar)
 "xj" = (
 /obj/machinery/holopad/secure,
 /turf/open/floor/wood,
@@ -22125,11 +22134,12 @@
 /turf/open/floor/wood/large,
 /area/centcom/central_command_areas/planetary_port/library)
 "Zh" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 6
-	},
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 1
+	},
+/obj/effect/turf_decal/siding/wood,
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 4
 	},
 /turf/open/floor/wood/large,
 /area/centcom/central_command_areas/bar)
@@ -70550,7 +70560,7 @@ an
 QO
 qC
 pT
-lN
+xi
 so
 EX
 Pg
