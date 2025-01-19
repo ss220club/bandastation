@@ -126,7 +126,7 @@
  * should_play_sound - Whether the notice sound should be played or not. This can also be a callback, if you only want mobs to hear the sound based off of specific criteria.
  * color_override - optional, use the passed color instead of the default notice color.
  */
-/proc/minor_announce(message, title = "Attention:", alert = FALSE, html_encode = TRUE, list/players, sound_override, should_play_sound = TRUE, color_override, tts_override) // BANDASTATION ADDITION - "tts_override"
+/proc/minor_announce(message, title = "Внимание:", alert = FALSE, html_encode = TRUE, list/players, sound_override, should_play_sound = TRUE, color_override, tts_override) // BANDASTATION ADDITION - "tts_override"
 	if(!message)
 		return
 
@@ -189,7 +189,7 @@
 
 /// Proc that just dispatches the announcement to our applicable audience. Only the announcement is a mandatory arg.
 /// `should_play_sound` can also be a callback, if you want to only play the sound to specific players.
-/proc/dispatch_announcement_to_players(announcement, list/players = GLOB.player_list, sound_override = null, should_play_sound = TRUE, datum/component/tts_component/tts_override = null, tts_message = "") // BANDASTATION ADDITION: "datum/component/tts_component/tts_override = null" & "tts_message"
+/proc/dispatch_announcement_to_players(announcement, list/players = GLOB.player_list, sound_override = null, should_play_sound = TRUE, datum/component/tts_component/tts_override = null, tts_message) // BANDASTATION ADDITION: "datum/component/tts_component/tts_override = null" & "tts_message"
 	var/sound_to_play = !isnull(sound_override) ? sound_override : 'sound/announcer/notice/notice2.ogg'
 
 	// note for later: low-hanging fruit to convert to astype() behind an experiment define whenever the 516 beta releases
