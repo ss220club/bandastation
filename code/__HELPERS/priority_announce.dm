@@ -83,7 +83,7 @@
 	else
 		finalized_announcement = CHAT_ALERT_DEFAULT_SPAN(jointext(announcement_strings, ""))
 
-// BANDASTATION EDIT - START
+	// BANDASTATION EDIT - START
 	var/tts_message = (SSstation.announcer.custom_alert_message && !has_important_message) ? SSstation.announcer.custom_alert_message : text
 	dispatch_announcement_to_players(finalized_announcement, players, sound, tts_override = tts_override, tts_message = tts_message)
 	// BANDASTATION EDIT - END
@@ -126,7 +126,7 @@
  * should_play_sound - Whether the notice sound should be played or not. This can also be a callback, if you only want mobs to hear the sound based off of specific criteria.
  * color_override - optional, use the passed color instead of the default notice color.
  */
-/proc/minor_announce(message, title = "Attention:", alert = FALSE, html_encode = TRUE, list/players, sound_override, should_play_sound = TRUE, color_override, mob/user)
+/proc/minor_announce(message, title = "Attention:", alert = FALSE, html_encode = TRUE, list/players, sound_override, should_play_sound = TRUE, color_override, tts_override)
 	if(!message)
 		return
 
@@ -146,7 +146,7 @@
 		finalized_announcement = CHAT_ALERT_DEFAULT_SPAN(jointext(minor_announcement_strings, ""))
 
 	var/custom_sound = sound_override || (alert ? 'sound/announcer/notice/notice1.ogg' : 'sound/announcer/notice/notice2.ogg')
-	dispatch_announcement_to_players(finalized_announcement, players, custom_sound, should_play_sound, tts_override = user.GetComponent(/datum/component/tts_component), tts_message = message) // BANDASTATION ADDITION - "tts_override" & "tts_message"
+	dispatch_announcement_to_players(finalized_announcement, players, custom_sound, should_play_sound, tts_override = tts_override, tts_message = message) // BANDASTATION ADDITION - "tts_override" & "tts_message"
 
 /// Sends an announcement about the level changing to players. Uses the passed in datum and the subsystem's previous security level to generate the message.
 /proc/level_announce(datum/security_level/selected_level, previous_level_number)
