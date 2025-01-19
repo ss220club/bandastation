@@ -1,5 +1,6 @@
 @echo off
 set /p moduleName="Enter module name: "
+set "moduleName=%moduleName: =_%"
 
 xcopy "example" "%moduleName%" /s /i
 
