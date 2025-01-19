@@ -207,7 +207,6 @@
 			// SEND_SOUND(target, sound(sound_to_play)) // Bandastion Removal
 			/// SS220 TTS START
 			var/datum/tts_seed/announcement_tts_seed = tts_override?.tts_seed
-			var/list/tts_effects = tts_override?.get_effects()
 			if(isnull(announcement_tts_seed))
 				var/mob/living/silicon/ai/active_ai = DEFAULTPICK(active_ais(TRUE, null), null)
 				announcement_tts_seed = active_ai ? active_ai.get_tts_seed() : /datum/tts_seed/silero/glados
@@ -220,7 +219,7 @@
 				announcement, \
 				announcement_tts_seed, \
 				FALSE, \
-				tts_effects, \
+				list(/datum/singleton/sound_effect/announcement), \
 				null, \
 				sound_to_play \
 			)
