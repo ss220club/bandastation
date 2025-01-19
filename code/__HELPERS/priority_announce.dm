@@ -83,7 +83,13 @@
 	else
 		finalized_announcement = CHAT_ALERT_DEFAULT_SPAN(jointext(announcement_strings, ""))
 
-	dispatch_announcement_to_players(finalized_announcement, players, sound, tts_override = tts_override, tts_message = text) // Bandastation Addition: "tts_override = tts_override" & "tts_message"
+	// BANDASTATION EDIT - START
+	if(SSstation.announcer.custom_alert_message && !has_important_message)
+		dispatch_announcement_to_players(finalized_announcement, players, sound, tts_override = tts_override, tts_message = SSstation.announcer.custom_alert_message)
+	else
+		// Bandastation Addition: "tts_override = tts_override" & "tts_message = text"
+		dispatch_announcement_to_players(finalized_announcement, players, sound, tts_override = tts_override, tts_message = text)
+	// BANDASTATION EDIT - END
 
 	if(isnull(sender_override) && players == GLOB.player_list)
 		if(length(title) > 0)
@@ -143,7 +149,7 @@
 		finalized_announcement = CHAT_ALERT_DEFAULT_SPAN(jointext(minor_announcement_strings, ""))
 
 	var/custom_sound = sound_override || (alert ? 'sound/announcer/notice/notice1.ogg' : 'sound/announcer/notice/notice2.ogg')
-	dispatch_announcement_to_players(finalized_announcement, players, custom_sound, should_play_sound)
+	dispatch_announcement_to_players(finalized_announcement, players, custom_sound, should_play_sound, tts_message = message) // BANDASTATION ADDITION - "tts_message = message"
 
 /// Sends an announcement about the level changing to players. Uses the passed in datum and the subsystem's previous security level to generate the message.
 /proc/level_announce(datum/security_level/selected_level, previous_level_number)
@@ -168,7 +174,7 @@
 
 	var/finalized_announcement = CHAT_ALERT_COLORED_SPAN(current_level_color, jointext(level_announcement_strings, ""))
 
-	dispatch_announcement_to_players(finalized_announcement, GLOB.player_list, current_level_sound)
+	dispatch_announcement_to_players(finalized_announcement, GLOB.player_list, current_level_sound, tts_message = finalized_announcement) // BANDASTATION ADDITION - "tts_message = finalized_announcement"
 
 /// Proc that just generates a custom header based on variables fed into `priority_announce()`
 /// Will return a string.
