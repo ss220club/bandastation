@@ -1015,12 +1015,8 @@
 /turf/closed/indestructible/riveted,
 /area/centcom/central_command_areas/conference_room)
 "cu" = (
-/obj/structure/bed{
-	dir = 1
-	},
-/obj/structure/curtain/cloth,
-/obj/item/bedsheet/blue{
-	dir = 1
+/obj/machinery/cryopod{
+	dir = 4
 	},
 /turf/open/floor/iron/smooth_large,
 /area/centcom/central_command_areas/ert)
@@ -1144,7 +1140,7 @@
 "cM" = (
 /obj/structure/table,
 /obj/effect/turf_decal/tile/dark_blue/full,
-/obj/effect/spawner/random/entertainment/wallet_storage,
+/obj/effect/spawner/random/entertainment/toy_figure,
 /turf/open/floor/iron/dark/smooth_large,
 /area/centcom/central_command_areas/hallway)
 "cN" = (
@@ -1273,11 +1269,9 @@
 /turf/open/floor/iron/dark,
 /area/centcom/central_command_areas/engine)
 "dh" = (
-/obj/structure/bed{
+/obj/machinery/cryopod{
 	dir = 8
 	},
-/obj/structure/curtain/cloth,
-/obj/item/bedsheet/blue,
 /turf/open/floor/iron/smooth_large,
 /area/centcom/central_command_areas/ert)
 "di" = (
@@ -2027,13 +2021,9 @@
 /turf/open/floor/wood,
 /area/centcom/central_command_areas/arboretum)
 "eL" = (
-/obj/structure/bed{
-	dir = 1
-	},
 /obj/structure/sign/poster/official/space_cops/directional/north,
-/obj/structure/curtain/cloth,
-/obj/item/bedsheet/blue{
-	dir = 1
+/obj/machinery/cryopod{
+	dir = 4
 	},
 /turf/open/floor/iron/smooth_large,
 /area/centcom/central_command_areas/ert)
@@ -6933,14 +6923,10 @@
 /turf/open/floor/iron/dark/smooth_corner,
 /area/centcom/central_command_areas/control)
 "ql" = (
-/obj/structure/bed{
+/obj/structure/sign/flag/nanotrasen/directional/north,
+/obj/machinery/cryopod{
 	dir = 4
 	},
-/obj/structure/curtain/cloth,
-/obj/item/bedsheet/black{
-	dir = 1
-	},
-/obj/structure/sign/flag/nanotrasen/directional/north,
 /turf/open/floor/iron/dark/smooth_corner,
 /area/centcom/central_command_areas/srt)
 "qm" = (
@@ -8217,12 +8203,10 @@
 /turf/open/floor/iron,
 /area/centcom/central_command_areas/planetary_port)
 "tf" = (
-/obj/structure/bed{
+/obj/structure/sign/flag/nanotrasen/directional/north,
+/obj/machinery/cryopod{
 	dir = 8
 	},
-/obj/structure/curtain/cloth,
-/obj/item/bedsheet/black,
-/obj/structure/sign/flag/nanotrasen/directional/north,
 /turf/open/floor/iron/dark/smooth_corner{
 	dir = 8
 	},
@@ -9679,11 +9663,7 @@
 /turf/open/floor/carpet/red,
 /area/centcom/central_command_areas/conference_room)
 "wy" = (
-/obj/structure/bed{
-	dir = 4
-	},
-/obj/structure/curtain/cloth,
-/obj/item/bedsheet/blue{
+/obj/machinery/cryopod{
 	dir = 1
 	},
 /turf/open/floor/iron/smooth_large,
@@ -10597,6 +10577,11 @@
 /obj/effect/turf_decal/line/dark_blue/line{
 	dir = 1
 	},
+/obj/effect/spawner/random/entertainment/cigarette_pack,
+/obj/effect/spawner/random/entertainment/lighter{
+	pixel_x = 8;
+	pixel_y = -3
+	},
 /turf/open/floor/iron/smooth_edge{
 	dir = 1
 	},
@@ -10862,11 +10847,9 @@
 /turf/open/floor/carpet/neon/simple/blue,
 /area/centcom/central_command_areas/planetary_port/club)
 "ze" = (
-/obj/structure/bed{
+/obj/machinery/cryopod{
 	dir = 8
 	},
-/obj/structure/curtain/cloth,
-/obj/item/bedsheet/black,
 /turf/open/floor/iron/dark/smooth_corner{
 	dir = 1
 	},
@@ -12033,12 +12016,8 @@
 /turf/open/water/beach,
 /area/centcom/central_command_areas/cabin)
 "BG" = (
-/obj/structure/bed{
+/obj/machinery/cryopod{
 	dir = 4
-	},
-/obj/structure/curtain/cloth,
-/obj/item/bedsheet/black{
-	dir = 1
 	},
 /turf/open/floor/iron/dark/smooth_corner{
 	dir = 4
@@ -12490,12 +12469,10 @@
 /turf/open/floor/iron/dark/smooth_large,
 /area/centcom/central_command_areas/hallway)
 "CB" = (
-/obj/structure/bed{
+/obj/structure/sign/poster/official/report_crimes/directional/north,
+/obj/machinery/cryopod{
 	dir = 8
 	},
-/obj/structure/sign/poster/official/report_crimes/directional/north,
-/obj/item/bedsheet/blue,
-/obj/structure/curtain/cloth,
 /turf/open/floor/iron/smooth_large,
 /area/centcom/central_command_areas/ert)
 "CC" = (
@@ -14407,14 +14384,10 @@
 /turf/open/floor/stone,
 /area/centcom/central_command_areas/planetary_port/plaza)
 "GV" = (
-/obj/structure/bed{
+/obj/structure/light_fake/spot/directional/west,
+/obj/machinery/cryopod{
 	dir = 4
 	},
-/obj/structure/curtain/cloth,
-/obj/item/bedsheet/black{
-	dir = 1
-	},
-/obj/structure/light_fake/spot/directional/west,
 /turf/open/floor/iron/dark/smooth_corner{
 	dir = 4
 	},
@@ -20596,6 +20569,7 @@
 /turf/open/floor/iron/dark/smooth_large,
 /area/centcom/central_command_areas/fore)
 "Vz" = (
+/obj/machinery/computer/cryopod/directional/south,
 /turf/open/floor/iron/smooth_edge,
 /area/centcom/central_command_areas/ert)
 "VA" = (
@@ -21185,6 +21159,7 @@
 	color = "#6b8cc4";
 	dir = 1
 	},
+/obj/machinery/computer/cryopod/directional/north,
 /turf/open/floor/iron/dark/smooth_edge{
 	dir = 1
 	},
@@ -78019,7 +77994,7 @@ PI
 PI
 zZ
 oT
-Ya
+PI
 Kv
 qh
 sK
@@ -78276,7 +78251,7 @@ eL
 cu
 fw
 Vz
-Ya
+PI
 hS
 iw
 TQ
@@ -78533,8 +78508,8 @@ jt
 jt
 fw
 OM
-Ya
-Ya
+PI
+PI
 Ya
 Ya
 Ya
@@ -79300,8 +79275,8 @@ OX
 bq
 OX
 OX
-wy
-wy
+cu
+cu
 fw
 xd
 wy
