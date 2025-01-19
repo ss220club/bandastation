@@ -19,7 +19,7 @@
 		var/dist = get_dist(speaker, src) - message_range
 		if(dist > 0 && dist <= EAVESDROP_EXTRA_RANGE && !HAS_TRAIT(src, TRAIT_GOOD_HEARING) && !isobserver(src))
 			return
-	speaker.cast_tts(src, raw_message, effect = radio_freq ? /datum/singleton/sound_effect/radio : null)
+	speaker.cast_tts(src, raw_message, is_local = (message_range != INFINITY), is_radio = !!radio_freq, effects = message_mods[MODE_TTS_FILTERS])
 
 /mob/dead/observer/Hear(message, atom/movable/speaker, datum/language/message_language, raw_message, radio_freq, list/spans, list/message_mods, message_range)
 	. = ..()
@@ -27,7 +27,7 @@
 		return
 	if(radio_freq == FREQ_ENTERTAINMENT)
 		return
-	speaker.cast_tts(src, raw_message, effect = radio_freq ? /datum/singleton/sound_effect/radio : null)
+	speaker.cast_tts(src, raw_message, is_radio = !!radio_freq)
 
-/atom/movable/virtualspeaker/cast_tts(mob/listener, message, atom/location, is_local, effect, traits, preSFX, postSFX)
-	SEND_SIGNAL(source, COMSIG_ATOM_TTS_CAST, listener, message, location, is_local, effect, traits, preSFX, postSFX)
+/atom/movable/virtualspeaker/cast_tts(mob/listener, message, atom/location, is_local, is_radio, list/effects, traits, preSFX, postSFX)
+	SEND_SIGNAL(source, COMSIG_ATOM_TTS_CAST, listener, message, location, is_local, is_radio, effects, traits, preSFX, postSFX)
