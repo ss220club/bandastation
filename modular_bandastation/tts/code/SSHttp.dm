@@ -61,7 +61,7 @@ SUBSYSTEM_DEF(http)
 		log_data += "BEGIN ASYNC REQUEST (ID: [req.id])"
 		log_data += "\t[uppertext(req.method)] [req.url]"
 		log_data += "\tRequest body: [req.body]"
-		// log_data += "\tRequest headers: [req.headers]" // Don't log headers for now
+		log_data += "\tRequest headers: [req.headers]" // Don't log headers for now
 		log_data += "END ASYNC REQUEST (ID: [req.id])"
 
 		// Write the log data
