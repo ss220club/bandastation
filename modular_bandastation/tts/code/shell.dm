@@ -11,11 +11,19 @@
 		CRASH("Invalid sound effect chosen.")
 
 	var/list/ffmpeg_arguments = list()
+	var/complex = FALSE
 	for(var/datum/singleton/sound_effect/effect as anything in effects)
+		if(effect.complex)
+			ffmpeg_arguments = list(effect.ffmpeg_arguments)
+			complex = TRUE
+			break
+
 		ffmpeg_arguments |= effect.ffmpeg_arguments
 
 	var/taskset = CONFIG_GET(string/ffmpeg_cpuaffinity) ? "taskset -ac [CONFIG_GET(string/ffmpeg_cpuaffinity)]" : ""
-	var/command = {"[taskset] ffmpeg -y -hide_banner -loglevel error -i [filename_input] -filter:a "[ffmpeg_arguments.Join(", ")]" [filename_output]"}
+	var/filter_part = complex ? ffmpeg_arguments.Join() : {"-filter:a "[ffmpeg_arguments.Join(", ")]""}
+
+	var/command = {"[taskset] ffmpeg -y -hide_banner -loglevel error -i [filename_input] [filter_part] [filename_output]"}
 	var/list/output = world.shelleo(command)
 
 	var/errorlevel = output[SHELLEO_ERRORLEVEL]
@@ -27,11 +35,17 @@
 		logger.Log(LOG_CATEGORY_DEBUG, "apply_sound_effects([effect_types], [filename_input], [filename_output]) STDOUT: [stdout]")
 		logger.Log(LOG_CATEGORY_DEBUG, "apply_sound_effects([effect_types], [filename_input], [filename_output]) STDERR: [stderr]")
 		return FALSE
+
 	return TRUE
 
 /datum/singleton/sound_effect
+	/// If set to TRUE, this effect will ignore all other filters.
+	var/complex = FALSE
+	/// Text suffix used for caching file with specific effects.
 	var/suffix
+	/// Filter arguments passed to ffmpeg.
 	var/ffmpeg_arguments
+
 
 /datum/singleton/sound_effect/radio
 	suffix = "_radio"
@@ -44,6 +58,16 @@
 /datum/singleton/sound_effect/megaphone
 	suffix = "_megaphone"
 	ffmpeg_arguments = "highpass=f=500, lowpass=f=4000, volume=volume=10, acrusher=1:1:45:0:log"
+
+/datum/singleton/sound_effect/announcement
+	complex = TRUE
+	suffix = "_announcement"
+	ffmpeg_arguments = {"\
+		-i ./tools/tts/tts-api/RoomImpulse.wav -filter_complex  \
+		"\[0:a\]apad=pad_dur=2\[dry\]; \
+		\[0:a\]apad=pad_dur=2,afir=dry=10:wet=10\[wet\]; \
+		\[dry\]\[wet\]amix=weights='1 0.1',acrusher=mix=0.1:mode=lin:aa=1:samples=250,highpass=f=200,lowpass=f=10000,alimiter=limit=-1dB:level=false:asc=true"\
+	"}
 
 #undef SHELLEO_ERRORLEVEL
 #undef SHELLEO_STDOUT
