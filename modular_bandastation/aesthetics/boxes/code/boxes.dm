@@ -142,6 +142,10 @@
 	icon_state = "security"
 	illustration = "grenade"
 
+/obj/item/storage/box/smoke_grenade
+	icon_state = "security"
+	illustration = "grenade"
+
 /obj/item/storage/box/trackimp
 	icon_state = "security"
 	illustration = "implant"
