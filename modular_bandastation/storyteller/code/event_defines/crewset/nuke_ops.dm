@@ -41,6 +41,7 @@
 	weight = 4
 	max_occurrences = 3
 	event_icon_state = "nukeops"
+	exclusive_roundstart_event = TRUE
 
 /datum/round_event/antagonist/solo/nuclear_operative
 	excute_round_end_reports = TRUE
