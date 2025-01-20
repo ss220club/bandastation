@@ -1,0 +1,73 @@
+#include "_aesthetics.dm"
+
+// AirAlarm
+#include "airalarm/code/airalarm.dm"
+
+// Airlocks
+#include "airlocks/code/airlock.dm"
+#include "airlocks/code/airlock_types.dm"
+#include "airlocks/code/airlock_assembly_types.dm"
+
+// APC
+#include "apc/code/apc.dm"
+
+// Bedsheet
+#include "bedsheet/code/bedsheet.dm"
+
+// Blastdoor
+#include "blastdoor/code/blastdoor.dm"
+
+// Camera
+#include "cameras/code/cameras.dm"
+
+// Clothing
+#include "clothing/centcom/code/head/hat.dm"
+#include "clothing/centcom/code/head/winterhood.dm"
+#include "clothing/centcom/code/mask/mask.dm"
+#include "clothing/centcom/code/suits/armor.dm"
+#include "clothing/centcom/code/suits/jacket.dm"
+#include "clothing/centcom/code/suits/wintercoats.dm"
+#include "clothing/centcom/code/under/centcom.dm"
+
+// Disposal
+#include "disposal/code/disposal.dm"
+
+// Extinguisher
+#include "extinguisher/code/extinguisher.dm"
+
+// Floors
+#include "floors/code/floors.dm"
+
+// Keycard Authenticator
+#include "keycard_auth/code/keycard_auth.dm"
+
+// Microwave
+#include "kitchen/code/microwave.dm"
+
+// Light Switch
+#include "lightswitch/code/lightswitch.dm"
+
+// Lights
+#include "lights/code/lights.dm"
+
+// Radio
+#include "radio/code/radio.dm"
+
+// Railings
+#include "railings/code/railings.dm"
+
+// Supply Pods
+#include "supply_pods/code/supply_pods.dm"
+
+// Vending
+#include "vending/code/vending.dm"
+
+// Walls
+#include "walls/code/walls.dm"
+
+// Windows
+#include "windows/code/full_tile_windows.dm"
+#include "windows/code/directional_windows.dm"
+
+// WinDoors
+#include "windoors/code/windoors.dm"
