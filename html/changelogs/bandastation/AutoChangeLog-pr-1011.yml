@@ -1,5 +1,0 @@
-author: "Gaxeer"
-delete-after: True
-changes:
-  - rscadd: "Добавляет новый эффект для ТТСа оповещений"
-  - bugfix: "preSXF и postSFX теперь синхронизируются с ТТСом"
