@@ -2016,8 +2016,9 @@ GLOBAL_LIST_EMPTY(fire_appearances)
 /mob/living/proc/set_name()
 	if(identifier == 0)
 		identifier = rand(1, 999)
+	ru_names_rename(ru_names_toml(name, suffix = " ([identifier])", override_base = "[name] ([identifier])"))
 	name = "[name] ([identifier])"
-	real_name = name
+	real_name = declent_ru(NOMINATIVE)
 
 /mob/living/proc/mob_try_pickup(mob/living/user, instant=FALSE)
 	if(!ishuman(user))

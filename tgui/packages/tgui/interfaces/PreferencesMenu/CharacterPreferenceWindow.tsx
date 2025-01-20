@@ -12,6 +12,7 @@ import { MainPage } from './MainPage';
 import { PageButton } from './PageButton';
 import { QuirksPage } from './QuirksPage';
 import { SpeciesPage } from './SpeciesPage';
+import { VoicePage } from './VoicePage'; // BANDASTATION EDIT ADD - TTS
 
 enum Page {
   Antags,
@@ -20,6 +21,8 @@ enum Page {
   Species,
   Quirks,
   Loadout,
+  // BANDASTATION EDIT ADD - TTS
+  Voice,
 }
 
 const CharacterProfiles = (props: {
@@ -77,18 +80,20 @@ export const CharacterPreferenceWindow = (props) => {
     case Page.Quirks:
       pageContents = <QuirksPage />;
       break;
-
     case Page.Loadout:
       pageContents = <LoadoutPage />;
       break;
-
+    // BANDASTATION EDIT ADD - TTS
+    case Page.Voice:
+      pageContents = <VoicePage />;
+      break;
     default:
       exhaustiveCheck(currentPage);
   }
 
   return (
     <Window title="Character Preferences" width={920} height={770}>
-      <Window.Content scrollable>
+      <Window.Content scrollable style={{ overflowY: 'auto' }}>
         <Stack vertical fill>
           <Stack.Item>
             <CharacterProfiles
@@ -163,10 +168,22 @@ export const CharacterPreferenceWindow = (props) => {
                   Quirks
                 </PageButton>
               </Stack.Item>
+
+              {Boolean(data.tts_enabled) && ( // BANDASTATION EDIT - TTS
+                <Stack.Item grow>
+                  <PageButton
+                    currentPage={currentPage}
+                    page={Page.Voice}
+                    setPage={setCurrentPage}
+                  >
+                    Voice
+                  </PageButton>
+                </Stack.Item>
+              )}
             </Stack>
           </Stack.Item>
           <Stack.Divider />
-          <Stack.Item>{pageContents}</Stack.Item>
+          <Stack.Item grow>{pageContents}</Stack.Item>
         </Stack>
       </Window.Content>
     </Window>

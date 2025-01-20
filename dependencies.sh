@@ -9,6 +9,7 @@ export BYOND_MINOR=1637
 
 #rust_g git tag
 export RUST_G_VERSION=3.5.1
+export RUST_UTILS_VERSION=0.1.0-release
 
 #node version
 export NODE_VERSION_LTS=22.11.0

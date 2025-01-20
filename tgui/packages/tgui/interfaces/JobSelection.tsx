@@ -12,6 +12,7 @@ import {
 import { BooleanLike } from 'tgui-core/react';
 
 import { useBackend } from '../backend';
+import { DEPARTMENTS_RU, JOBS_RU } from '../bandastation/ru_jobs'; // BANDASTATION EDIT
 import { Window } from '../layouts';
 import { JOB2ICON } from './common/JobToIcon';
 
@@ -89,10 +90,16 @@ function JobEntry(props: JobEntryProps) {
       <Stack fill>
         {jobIcon && (
           <Stack.Item>
-            <Icon name={jobIcon} />
+            <Icon style={{ marginRight: '0.1em' }} name={jobIcon} />
           </Stack.Item>
         )}
-        <Stack.Item grow>{job.command ? <b>{jobName}</b> : jobName}</Stack.Item>
+        <Stack.Item grow>
+          {job.command ? (
+            <b>{JOBS_RU[jobName] || jobName}</b>
+          ) : (
+            JOBS_RU[jobName] || jobName
+          )}
+        </Stack.Item>
         <Stack.Item>
           <span
             style={{
@@ -209,7 +216,11 @@ export function JobSelection(props) {
         >
           <Box style={{ columns: '20em' }}>
             {Object.entries(departments).map(([name, department]) => (
-              <DepartmentEntry key={name} name={name} department={department} />
+              <DepartmentEntry
+                key={name}
+                name={DEPARTMENTS_RU[name] || name}
+                department={department}
+              />
             ))}
           </Box>
         </Section>

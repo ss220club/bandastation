@@ -180,9 +180,36 @@ export type PreferencesMenuData = {
   name_to_use: string;
 
   window: Window;
+
+  tts_seed: string; // BANDASTATION ADD
+  tts_enabled: BooleanLike; // BANDASTATION ADD
 };
 
+// BANDASTATION EDIT START
+export type Seed = {
+  name: string;
+  value: string;
+  category: string;
+  gender: string;
+  provider: string;
+  donator_level: number;
+};
+
+export type TtsProvider = {
+  name: string;
+  is_enabled: BooleanLike;
+};
+
+export type TtsData = {
+  providers: Array<TtsProvider>;
+  seeds: Array<Seed>;
+  phrases: string[];
+};
+
+// BANDASTATION EDIT END
+
 export type ServerData = {
+  text_to_speech: TtsData; // BANDASTATION ADD
   jobs: {
     departments: Record<string, Department>;
     jobs: Record<string, Job>;
