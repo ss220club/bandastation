@@ -1,8 +1,8 @@
 /datum/action/cooldown/spell/pointed/projectile/furious_steel
 	name = "Furious Steel"
-	desc = "Вызовите три серебряных клинка, которые вращаются вокруг вас. \
-		Во время вращения, эти лезвия защищают вас от атак, но при использовании расходуются. \
-		Кроме того, вы можете использовать кнопку, чтобы выстрелить лезвиями в цель, нанося урон и вызывая кровотечение."
+	desc = "Summon three silver blades which orbit you. \
+		While orbiting you, these blades will protect you from attacks, but will be consumed on use. \
+		Additionally, you can click to fire the blades at a target, dealing damage and causing bleeding."
 	background_icon_state = "bg_heretic"
 	overlay_icon_state = "bg_heretic_border"
 	button_icon = 'icons/mob/actions/actions_ecult.dmi'
@@ -151,7 +151,7 @@
 /datum/action/cooldown/spell/pointed/projectile/furious_steel/haunted
 	name = "Cursed Steel"
 	desc = "Summon two cursed blades which orbit you. \
-		While orbiting you, these blades will protect you from from attacks, but will be consumed on use. \
+		While orbiting you, these blades will protect you from attacks, but will be consumed on use. \
 		Additionally, you can click to fire the blades at a target, dealing damage and causing bleeding."
 	background_icon_state = "bg_heretic" // kept intentionally
 	overlay_icon_state = "bg_cult_border"

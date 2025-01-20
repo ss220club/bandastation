@@ -12,8 +12,8 @@
 		/datum/surgery_step/close,
 	)
 
-/datum/surgery/gastrectomy/mechanic
-	name = "Диагностика двигателя"
+/datum/surgery/coronary_bypass/mechanic
+	name = "Engine Diagnostic"
 	requires_bodypart_type = BODYTYPE_ROBOTIC
 	steps = list(
 		/datum/surgery_step/mechanic_open,
