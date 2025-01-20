@@ -1,3 +1,4 @@
 #include "_medical.dm"
 
+#include "code/organs/_brain.dm"
 #include "code/surgery/vocal_cords.dm"
