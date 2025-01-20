@@ -44,6 +44,8 @@
 	var/can_smoothen_out = TRUE
 	/// We got smooth from being washed
 	var/smooth_brain = FALSE
+	/// BANDASTATION EDIT - PERMADEATH
+	var/perma_death = FALSE
 
 /obj/item/organ/brain/Initialize(mapload)
 	. = ..()

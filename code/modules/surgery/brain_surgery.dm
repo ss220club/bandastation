@@ -46,7 +46,12 @@
 	success_sound = 'sound/items/taperecorder/taperecorder_close.ogg'
 
 /datum/surgery/brain_surgery/can_start(mob/user, mob/living/carbon/target)
-	return target.get_organ_slot(ORGAN_SLOT_BRAIN) && ..()
+	// BANDASTATION EDIT START - PERMADEATH
+	var/obj/item/organ/brain/brain = target.get_organ_slot(ORGAN_SLOT_BRAIN)
+	if(brain)
+		var/not_dead = !(brain.organ_flags & ORGAN_FAILING) && !brain.perma_death
+	return brain && not_dead && ..()
+	// BANDASTATION EDIT END - PERMADEATH
 
 /datum/surgery_step/fix_brain/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	display_results(
