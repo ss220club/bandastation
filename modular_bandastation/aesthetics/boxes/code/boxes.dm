@@ -350,3 +350,8 @@
 /obj/item/storage/box/wizard_kit
 	icon_state = "wizard"
 	illustration = null
+
+// MARK: Votebox
+/obj/structure/votebox
+	icon = 'modular_bandastation/aesthetics/boxes/icons/boxes.dmi'
+	icon_state = "votebox_maint"
