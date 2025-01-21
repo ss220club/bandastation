@@ -87,6 +87,10 @@
 		user.add_mood_event("arcade", /datum/mood_event/arcade)
 		if(prob(0.0001)) //1 in a million
 			new /obj/item/gun/energy/pulse/prize(get_turf(src))
+			/// BANDASTATION ADDITION START - LOGS
+			log_game("[key_name(user)] has obtained a pulse rifle from [src].")
+			message_admins("[ADMIN_LOOKUPFLW(user)] has obtained a pulse rifle from [src].")
+			/// BANDASTATION ADDITION END - LOGS
 			visible_message(span_notice("[src] dispenses.. woah, a gun! Way past cool."), span_notice("You hear a chime and a shot."))
 			user.client.give_award(/datum/award/achievement/misc/pulse, user)
 			continue
@@ -97,5 +101,9 @@
 		else
 			prizeselect = pick_weight(GLOB.arcade_prize_pool)
 		var/atom/movable/the_prize = new prizeselect(get_turf(src))
+		/// BANDASTATION ADDITION START - LOGS
+		log_game("[key_name(user)] has obtained [prizeselect] from [src].")
+		message_admins("[ADMIN_LOOKUPFLW(user)] has obtained [prizeselect] from [src].")
+		/// BANDASTATION ADDITION END - LOGS
 		playsound(src, 'sound/machines/machine_vend.ogg', 50, TRUE, extrarange = -3)
 		visible_message(span_notice("[src] dispenses [the_prize]!"), span_notice("You hear a chime and a clunk."))
