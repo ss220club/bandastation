@@ -1,12 +1,12 @@
 /obj/item/organ/brain/Initialize(mapload)
 	. = ..()
-	var/new_death_time = CONFIG_GET(number/revival_brain_life)
-	var/perma_death = CONFIG_GET(flag/brain_permanent_death)
-	if(new_death_time)
-		var/standart_death_time = 30 MINUTES
-		// DА => SDT ; NDR => NDT => DF/SDT = NDT/NDR => NDR = (SDT*NDT)DF
-		var/relative_data = standart_death_time / new_death_time
-		var/new_decay_rate = relative_data * decay_factor
-		decay_factor = new_decay_rate
+	if(CONFIG_GET(flag/brain_permanent_death))
+        decay_factor = STANDARD_ORGAN_DECAY * 2
+
+/datum/surgery/brain_surgery/can_start(mob/user, mob/living/carbon/target)
+	. = ..()
+	if(.)
+		var/obj/item/organ/brain/brain = target.get_organ_slot(ORGAN_SLOT_BRAIN)
+		return !(brain.organ_flags & ORGAN_FAILING) && !CONFIG_GET(flag/brain_permanent_death)
 
 /datum/config_entry/flag/brain_permanent_death

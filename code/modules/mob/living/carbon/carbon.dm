@@ -983,7 +983,7 @@
 		return DEFIB_FAIL_NO_BRAIN
 
 	if (current_brain.organ_flags & ORGAN_FAILING)
-		return current_brain.perma_death ?DEFIB_FAIL_PERMANENTLY_DEAD : DEFIB_FAIL_FAILING_BRAIN
+		return CONFIG_GET(flag/brain_permanent_death) ? DEFIB_FAIL_PERMANENTLY_DEAD : DEFIB_FAIL_FAILING_BRAIN
 	// BANDASTATION EDIT END - PERMA-DEATH
 
 	if ((getBruteLoss() >= MAX_REVIVE_BRUTE_DAMAGE) || (getFireLoss() >= MAX_REVIVE_FIRE_DAMAGE))

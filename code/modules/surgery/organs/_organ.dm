@@ -227,9 +227,9 @@ INITIALIZE_IMMEDIATE(/obj/item/organ)
 
 	if(damage >= maxHealth)
 		organ_flags |= ORGAN_FAILING
-		owner?.med_hud_set_status() // BANDASTATION EDIT - PERMA-DEATH
 	else
 		organ_flags &= ~ORGAN_FAILING
+	owner?.med_hud_set_status() // BANDASTATION EDIT - PERMA-DEATH
 
 	if(message && owner && owner.stat <= SOFT_CRIT)
 		to_chat(owner, message)

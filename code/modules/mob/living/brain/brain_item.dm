@@ -44,10 +44,6 @@
 	var/can_smoothen_out = TRUE
 	/// We got smooth from being washed
 	var/smooth_brain = FALSE
-	// BANDASTATION ADDITION START - PERMADEATH
-	/// Is client brain can't be revived
-	var/perma_death = FALSE
-	// BANDASTATION ADDITION END - PERMADEATH
 
 /obj/item/organ/brain/Initialize(mapload)
 	. = ..()
