@@ -44,8 +44,10 @@
 	var/can_smoothen_out = TRUE
 	/// We got smooth from being washed
 	var/smooth_brain = FALSE
-	/// BANDASTATION EDIT - PERMADEATH
+	// BANDASTATION ADDITION START - PERMADEATH
+	/// Is client brain can't be revived
 	var/perma_death = FALSE
+	// BANDASTATION ADDITION END - PERMADEATH
 
 /obj/item/organ/brain/Initialize(mapload)
 	. = ..()
@@ -637,3 +639,8 @@
 	old_brain.Remove(new_owner, special = TRUE, movement_flags = NO_ID_TRANSFER)
 	qdel(old_brain)
 	return Insert(new_owner, special = TRUE, movement_flags = NO_ID_TRANSFER | DELETE_IF_REPLACED)
+
+/obj/item/organ/brain/on_death(seconds_per_tick, times_fired)
+	. = ..()
+	if(owner && (organ_flags & ORGAN_FAILING))
+		owner.set_hud_image_state(STATUS_HUD, "huddead")
