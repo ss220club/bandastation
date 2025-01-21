@@ -639,8 +639,3 @@
 	old_brain.Remove(new_owner, special = TRUE, movement_flags = NO_ID_TRANSFER)
 	qdel(old_brain)
 	return Insert(new_owner, special = TRUE, movement_flags = NO_ID_TRANSFER | DELETE_IF_REPLACED)
-
-/obj/item/organ/brain/on_death(seconds_per_tick, times_fired)
-	. = ..()
-	if(owner && (organ_flags & ORGAN_FAILING))
-		owner.set_hud_image_state(STATUS_HUD, "huddead")

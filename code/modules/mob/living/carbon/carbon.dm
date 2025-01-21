@@ -976,6 +976,16 @@
 	if (HAS_TRAIT(src, TRAIT_DEFIB_BLACKLISTED))
 		return DEFIB_FAIL_BLACKLISTED
 
+	// BANDASTATION EDIT START - PERMA-DEATH
+	var/obj/item/organ/brain/current_brain = get_organ_by_type(/obj/item/organ/brain)
+
+	if (QDELETED(current_brain))
+		return DEFIB_FAIL_NO_BRAIN
+
+	if (current_brain.organ_flags & ORGAN_FAILING)
+		return current_brain.perma_death ?DEFIB_FAIL_PERMANENTLY_DEAD : DEFIB_FAIL_FAILING_BRAIN
+	// BANDASTATION EDIT END - PERMA-DEATH
+
 	if ((getBruteLoss() >= MAX_REVIVE_BRUTE_DAMAGE) || (getFireLoss() >= MAX_REVIVE_FIRE_DAMAGE))
 		return DEFIB_FAIL_TISSUE_DAMAGE
 
@@ -989,6 +999,7 @@
 		if (heart.organ_flags & ORGAN_FAILING)
 			return DEFIB_FAIL_FAILING_HEART
 
+	/* // BANDASTATION EDIT START - PERMA-DEATH
 	var/obj/item/organ/brain/current_brain = get_organ_by_type(/obj/item/organ/brain)
 
 	if (QDELETED(current_brain))
@@ -996,6 +1007,7 @@
 
 	if (current_brain.organ_flags & ORGAN_FAILING)
 		return DEFIB_FAIL_FAILING_BRAIN
+	*/ // BANDASTATION EDIT END - PERMA-DEATH
 
 	if (current_brain.suicided || (current_brain.brainmob && HAS_TRAIT(current_brain.brainmob, TRAIT_SUICIDED)))
 		return DEFIB_FAIL_NO_INTELLIGENCE

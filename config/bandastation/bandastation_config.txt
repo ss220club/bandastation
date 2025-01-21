@@ -38,3 +38,5 @@ ROUNDSTART_RACES vulpkanin
 
 ## Time in deciseconds the mob must be clientless for to be despawned by cryopod. 30 minutes by default
 #CRYO_MIN_SSD_TIME 18000
+
+BRAIN_PERMANENT_DEATH false

@@ -9,5 +9,6 @@
 #include "code/station_traits.dm"
 #include "code/supply_packs.dm"
 #include "code/crew_manifest.dm"
+#include "code/_brain.dm"
 
 #include "code/~undefs.dm"
