@@ -1,4 +1,0 @@
-author: "tgstation"
-delete-after: True
-changes:
-  - qol: "Торговым автоматам добавлен новый дизайн с двумя вариантами расположения: Список и Сетка (по умолчанию используется Список). <!-- Vending machines got new design with 2 layouts: List and Grid (List by default) (www.github.com/tgstation/tgstation/pull/89137) -->"
