@@ -1,4 +1,0 @@
-author: "AyIong"
-delete-after: True
-changes:
-  - bugfix: "Цветной ckey в OOC теперь не доступен тем, кто не поддержал проект на бусти или не админ. Byond Member тоже имеет цветной ник."
