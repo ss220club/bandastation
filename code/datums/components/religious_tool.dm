@@ -201,7 +201,8 @@
 		sect["quote"] = initial(not_a_real_instance_rs.quote)
 		sect["icon"] = initial(not_a_real_instance_rs.tgui_icon)
 		sect["path"] = path
-		sects_to_pick += list(sect)
+		if(not_a_real_instance_rs.obtainable) // BANDASTATION ADDITION - is obtainable check
+			sects_to_pick += list(sect)
 	return sects_to_pick
 
 /**
