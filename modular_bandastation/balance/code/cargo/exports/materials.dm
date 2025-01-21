@@ -5,7 +5,7 @@
 /datum/export/material/bananium
 	cost = CARGO_CRATE_VALUE * 0.5
 
-/datum/export/material/adamantine //For whatever reason, adamantine doesn't truly exist in export list
+/datum/export/material/adamantine // For whatever reason, adamantine doesn't truly exist in export list
 	cost = CARGO_CRATE_VALUE * 0.7
 	material_id = /datum/material/adamantine
 	message = "cm3 of adamantine"

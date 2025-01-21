@@ -1,4 +1,4 @@
-// MARK: carbine changes
+// MARK: Сarbine changes
 /obj/item/ammo_casing/energy/lasergun/carbine
 	e_cost = LASER_SHOTS(30, STANDARD_CELL_CHARGE) // Original: LASER_SHOTS(40, STANDARD_CELL_CHARGE)
 
