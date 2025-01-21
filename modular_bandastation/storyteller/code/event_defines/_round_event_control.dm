@@ -353,6 +353,11 @@
 				message_admins("[key_name_admin(usr)] forced scheduled event [src.name] with count [new_value].")
 				log_admin_private("[key_name(usr)] forced scheduled event [src.name] with count [new_value].")
 				var/datum/round_event_control/antagonist/forced_antag_event = new type()
+				for(var/datum/round_event_control/antagonist/rec in SSgamemode.forced_next_events[forced_antag_event.track])
+					if(istype(rec, type))
+						forced_antag_event = src
+						SSgamemode.forced_next_events[forced_antag_event.track] -= rec
+						break
 				forced_antag_event.forced_antags_count = new_value
 				SSgamemode.forced_next_events[forced_antag_event.track] += forced_antag_event
 			else
