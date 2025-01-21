@@ -124,7 +124,7 @@
 	ignore_flags = 1 //so you can medipen through spacesuits
 	reagent_flags = NONE
 	flags_1 = null
-	list_reagents = list(/datum/reagent/medicine/epinephrine = 10, /datum/reagent/medicine/coagulant = 2) // BANDASTATION EDIT - PERMADEATH (/datum/reagent/toxin/formaldehyde = 3,)
+	list_reagents = list(/datum/reagent/medicine/epinephrine = 10, /datum/reagent/toxin/formaldehyde = 3, /datum/reagent/medicine/coagulant = 2)
 	custom_price = PAYCHECK_CREW
 	custom_premium_price = PAYCHECK_COMMAND
 	var/label_examine = TRUE

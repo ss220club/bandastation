@@ -1,7 +1,7 @@
 /obj/item/organ/brain/Initialize(mapload)
 	. = ..()
 	if(CONFIG_GET(flag/brain_permanent_death))
-		decay_factor = STANDARD_ORGAN_DECAY * 2
+		decay_factor = STANDARD_ORGAN_DECAY * 2 //7 минут до полной смерти (в 4 раза быстрее чем по умолчанию (30 минут))
 
 /datum/surgery/brain_surgery/can_start(mob/user, mob/living/carbon/target)
 	. = ..()
@@ -14,10 +14,9 @@
 /obj/item/bodybag/stasis
 	name = "Stasis body bag"
 	desc = "A folded bag designed for the storage and transportation of cadavers with portable stasis module and little space."
-	icon = 'icons/obj/medical/bodybag.dmi'
-	icon_state = "bodybag_folded"
-	w_class = WEIGHT_CLASS_SMALL
-	///Stored path we use for spawning a new body bag entity when unfolded.
+	icon = 'icons/obj/medical/bodybag.dmi' //на замену
+	icon_state = "bodybag_folded" //на замену
+	// Stored path we use for spawning a new body bag entity when unfolded.
 	unfoldedbag_path = /obj/structure/closet/body_bag/stasis
 
 /datum/design/stasisbodybag
@@ -33,14 +32,13 @@
 	departmental_flags = DEPARTMENT_BITFLAG_MEDICAL | DEPARTMENT_BITFLAG_SCIENCE
 
 /obj/structure/closet/body_bag/stasis
-	name = "Stasis body bag"
+	name = "stasis body bag"
 	desc = "A plastic bag designed for the storage and transportation of cadavers with portable stasis module and little space."
-	icon = 'icons/obj/medical/bodybag.dmi'
+	icon = 'icons/obj/medical/bodybag.dmi' //на замену
 	icon_state = "bodybag"
-	density = FALSE
 	mob_storage_capacity = 1
-	open_sound = 'sound/items/zip/zip.ogg'
-	close_sound = 'sound/items/zip/zip.ogg'
+	open_sound = 'sound/items/zip/zip.ogg' //на замену
+	close_sound = 'sound/items/zip/zip.ogg' //на замену
 	foldedbag_path = /obj/item/bodybag/stasis
 
 /obj/structure/closet/body_bag/stasis/close(mob/living/user)
@@ -59,3 +57,5 @@
 /datum/techweb_node/applied_bluespace/Initialize()
 	. = ..()
 	design_ids += list("stasisbodybag")
+
+/obj/item/reagent_containers/hypospray/medipen/Initialize()

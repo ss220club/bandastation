@@ -982,6 +982,9 @@
 	if (QDELETED(current_brain))
 		return DEFIB_FAIL_NO_BRAIN
 
+	if (current_brain.suicided || (current_brain.brainmob && HAS_TRAIT(current_brain.brainmob, TRAIT_SUICIDED)))
+		return DEFIB_FAIL_NO_INTELLIGENCE
+
 	if (current_brain.organ_flags & ORGAN_FAILING)
 		return CONFIG_GET(flag/brain_permanent_death) ? DEFIB_FAIL_PERMANENTLY_DEAD : DEFIB_FAIL_FAILING_BRAIN
 	// BANDASTATION EDIT END - PERMA-DEATH
@@ -1007,10 +1010,10 @@
 
 	if (current_brain.organ_flags & ORGAN_FAILING)
 		return DEFIB_FAIL_FAILING_BRAIN
-	*/ // BANDASTATION EDIT END - PERMA-DEATH
 
 	if (current_brain.suicided || (current_brain.brainmob && HAS_TRAIT(current_brain.brainmob, TRAIT_SUICIDED)))
 		return DEFIB_FAIL_NO_INTELLIGENCE
+		*/ // BANDASTATION EDIT END - PERMA-DEATH
 
 	if(key && key[1] == "@") // Adminghosts
 		return DEFIB_NOGRAB_AGHOST
