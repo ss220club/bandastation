@@ -196,7 +196,7 @@
 		var/list/sect = list()
 		var/datum/religion_sect/not_a_real_instance_rs = path
 		// BANDASTATION EDIT START - Religion blacklist
-		if(!not_a_real_instance_rs.obtainable)
+		if(!not_a_real_instance_rs::obtainable)
 			continue
 		// BANDASTATION EDIT END - Religion blacklist
 		sect["name"] = initial(not_a_real_instance_rs.name)
