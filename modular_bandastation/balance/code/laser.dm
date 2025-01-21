@@ -1,6 +1,6 @@
 // MARK: carbine changes
 /obj/item/ammo_casing/energy/lasergun/carbine
-	e_cost = LASER_SHOTS(20, STANDARD_CELL_CHARGE) // Original: LASER_SHOTS(40, STANDARD_CELL_CHARGE)
+	e_cost = LASER_SHOTS(30, STANDARD_CELL_CHARGE) // Original: LASER_SHOTS(40, STANDARD_CELL_CHARGE)
 
 /obj/projectile/beam/laser/carbine/Initialize(mapload)
 	. = ..()

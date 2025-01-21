@@ -22,6 +22,7 @@
 /datum/export/material/diamond
 	cost = CARGO_CRATE_VALUE * 0.7
 	material_id = /datum/material/diamond // For whatever reason, in original there is adamantine instead of diamond
+	message = "cm3 of diamond"
 
 /datum/export/material/uranium
 	cost = CARGO_CRATE_VALUE * 0.4
