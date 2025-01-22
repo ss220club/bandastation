@@ -1,4 +1,0 @@
-author: "Gaxeer"
-delete-after: True
-changes:
-  - config: "Mood теперь включен по умолчанию"
