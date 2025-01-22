@@ -83,7 +83,10 @@
 	else
 		finalized_announcement = CHAT_ALERT_DEFAULT_SPAN(jointext(announcement_strings, ""))
 
-	dispatch_announcement_to_players(finalized_announcement, players, sound, tts_override = tts_override) // Bandastation Addition: "tts_override = tts_override"
+	// BANDASTATION EDIT - START - add tts_message
+	var/tts_message = (SSstation.announcer.custom_alert_message && !has_important_message) ? SSstation.announcer.custom_alert_message : text
+	dispatch_announcement_to_players(finalized_announcement, players, sound, tts_override = tts_override, tts_message = tts_message)
+	// BANDASTATION EDIT - END
 
 	if(isnull(sender_override) && players == GLOB.player_list)
 		if(length(title) > 0)
@@ -123,7 +126,7 @@
  * should_play_sound - Whether the notice sound should be played or not. This can also be a callback, if you only want mobs to hear the sound based off of specific criteria.
  * color_override - optional, use the passed color instead of the default notice color.
  */
-/proc/minor_announce(message, title = "Внимание:", alert = FALSE, html_encode = TRUE, list/players, sound_override, should_play_sound = TRUE, color_override)
+/proc/minor_announce(message, title = "Внимание:", alert = FALSE, html_encode = TRUE, list/players, sound_override, should_play_sound = TRUE, color_override, tts_override) // BANDASTATION ADDITION - "tts_override"
 	if(!message)
 		return
 
@@ -143,7 +146,7 @@
 		finalized_announcement = CHAT_ALERT_DEFAULT_SPAN(jointext(minor_announcement_strings, ""))
 
 	var/custom_sound = sound_override || (alert ? 'sound/announcer/notice/notice1.ogg' : 'sound/announcer/notice/notice2.ogg')
-	dispatch_announcement_to_players(finalized_announcement, players, custom_sound, should_play_sound)
+	dispatch_announcement_to_players(finalized_announcement, players, custom_sound, should_play_sound, tts_override = tts_override, tts_message = message) // BANDASTATION ADDITION - "tts_override" & "tts_message"
 
 /// Sends an announcement about the level changing to players. Uses the passed in datum and the subsystem's previous security level to generate the message.
 /proc/level_announce(datum/security_level/selected_level, previous_level_number)
@@ -168,7 +171,7 @@
 
 	var/finalized_announcement = CHAT_ALERT_COLORED_SPAN(current_level_color, jointext(level_announcement_strings, ""))
 
-	dispatch_announcement_to_players(finalized_announcement, GLOB.player_list, current_level_sound)
+	dispatch_announcement_to_players(finalized_announcement, GLOB.player_list, current_level_sound, tts_message = finalized_announcement) // BANDASTATION ADDITION - "tts_message = finalized_announcement"
 
 /// Proc that just generates a custom header based on variables fed into `priority_announce()`
 /// Will return a string.
@@ -186,7 +189,7 @@
 
 /// Proc that just dispatches the announcement to our applicable audience. Only the announcement is a mandatory arg.
 /// `should_play_sound` can also be a callback, if you want to only play the sound to specific players.
-/proc/dispatch_announcement_to_players(announcement, list/players = GLOB.player_list, sound_override = null, should_play_sound = TRUE, datum/component/tts_component/tts_override = null) // Bandastation Addition: "datum/component/tts_component/tts_override = null"
+/proc/dispatch_announcement_to_players(announcement, list/players = GLOB.player_list, sound_override = null, should_play_sound = TRUE, datum/component/tts_component/tts_override = null, tts_message) // BANDASTATION ADDITION: "datum/component/tts_component/tts_override = null" & "tts_message"
 	var/sound_to_play = !isnull(sound_override) ? sound_override : 'sound/announcer/notice/notice2.ogg'
 
 	// note for later: low-hanging fruit to convert to astype() behind an experiment define whenever the 516 beta releases
@@ -207,7 +210,6 @@
 			// SEND_SOUND(target, sound(sound_to_play)) // Bandastion Removal
 			/// SS220 TTS START
 			var/datum/tts_seed/announcement_tts_seed = tts_override?.tts_seed
-			var/list/tts_effects = tts_override?.get_effects()
 			if(isnull(announcement_tts_seed))
 				var/mob/living/silicon/ai/active_ai = DEFAULTPICK(active_ais(TRUE, null), null)
 				announcement_tts_seed = active_ai ? active_ai.get_tts_seed() : /datum/tts_seed/silero/glados
@@ -217,10 +219,10 @@
 				TYPE_PROC_REF(/datum/controller/subsystem/tts220, get_tts), \
 				null, \
 				target, \
-				announcement, \
+				tts_message, \
 				announcement_tts_seed, \
 				FALSE, \
-				tts_effects, \
+				list(/datum/singleton/sound_effect/announcement), \
 				null, \
 				sound_to_play \
 			)
