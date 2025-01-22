@@ -183,14 +183,8 @@ Medical HUD! Basic mode needs suit sensors on.
 		set_hud_image_state(STATUS_HUD, "hudxeno")
 		return FALSE
 
-	// BANDASTATION EDIT START - PERMA-DEATH
-	var/obj/item/organ/brain/current_brain = get_organ_by_type(/obj/item/organ/brain)
-	var/brain_dead = FALSE
-	if(current_brain)
-		brain_dead = CONFIG_GET(flag/brain_permanent_death) && (current_brain.organ_flags & ORGAN_FAILING)
-
 	if(stat == DEAD || (HAS_TRAIT(src, TRAIT_FAKEDEATH)))
-		if((HAS_TRAIT(src, TRAIT_MIND_TEMPORARILY_GONE) || can_defib_client()) && !brain_dead)
+		if(HAS_TRAIT(src, TRAIT_MIND_TEMPORARILY_GONE) || can_defib_client())
 	// BANDASTATION EDIT END - PERMA-DEATH
 			set_hud_image_state(STATUS_HUD, "huddefib")
 		else if(HAS_TRAIT(src, TRAIT_GHOSTROLE_ON_REVIVE))

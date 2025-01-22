@@ -1002,14 +1002,6 @@
 	if(exposed_mob.stat != DEAD || !(exposed_mob.mob_biotypes & MOB_ORGANIC))
 		return ..()
 
-	// BANDASTATION EDIT START - PERMADEATH
-	if(ishuman(exposed_mob))
-		var/obj/item/organ/brain/brain = exposed_mob.get_organ_slot(ORGAN_SLOT_BRAIN)
-		if(!(brain?.organ_flags & ORGAN_FAILING) && !CONFIG_GET(flag/brain_permanent_death))
-			exposed_mob.visible_message(span_warning("[exposed_mob] have a criticaly damaged brain, and not react..."))
-			return
-	// BANDASTATION EDIT END - PERMADEATH
-
 	if(HAS_TRAIT(exposed_mob, TRAIT_SUICIDED)) //they are never coming back
 		exposed_mob.visible_message(span_warning("[exposed_mob]'s body does not react..."))
 		return

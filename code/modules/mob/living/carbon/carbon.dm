@@ -964,6 +964,13 @@
 /mob/living/carbon/can_be_revived()
 	if(!get_organ_by_type(/obj/item/organ/brain) && (!IS_CHANGELING(src)) || HAS_TRAIT(src, TRAIT_HUSK))
 		return FALSE
+
+	// BANDASTATION EDIT START - PERMADEATH
+	if(ishuman(src))
+		var/obj/item/organ/brain/brain = exposed_mob.get_organ_slot(ORGAN_SLOT_BRAIN)
+		if(!(brain?.organ_flags & ORGAN_FAILING) && !CONFIG_GET(flag/brain_permanent_death))
+			return FALSE
+	// BANDASTATION EDIT END - PERMADEATH
 	return ..()
 
 /mob/living/carbon/proc/can_defib()
