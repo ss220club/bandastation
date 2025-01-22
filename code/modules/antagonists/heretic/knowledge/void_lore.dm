@@ -180,7 +180,7 @@
 		пока мир разрушается на наших глазах. Пустота вернет все в ничто, УЗРИТЕ МОЕ ВОЗНЕСЕНИЕ!"
 
 	ascension_achievement = /datum/award/achievement/misc/void_ascension
-	announcement_text = "%SPOOKY% Дворянин пустоты %NAME% прибыл, танцуя Вальс, уничтожающий миры! %SPOOKY%"
+	announcement_text = "%SPOOKY% Аристократ пустоты %NAME% ступил в Вальс, завершающий миры! %SPOOKY%"
 	announcement_sound = 'sound/music/antag/heretic/ascend_void.ogg'
 	///soundloop for the void theme
 	var/datum/looping_sound/void_loop/sound_loop

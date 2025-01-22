@@ -163,7 +163,7 @@
 		УЗРИТЕ МОЕ ВОЗНЕСЕНИЕ, ПЕПЕЛЬНЫЙ ФОНАРЬ ВОСПЛАМЕНИТСЯ ВНОВЬ!"
 
 	ascension_achievement = /datum/award/achievement/misc/ash_ascension
-	announcement_text = "%SPOOKY% Бойтесь пламени, ибо Пепельный лорд, %NAME%, вознесся! Пламя поглотит всех! %SPOOKY%"
+	announcement_text = "%SPOOKY% Бойтесь пламени, ибо Пепельный Лорд, %NAME%, вознесся! Пламя поглотит всех! %SPOOKY%"
 	announcement_sound = 'sound/music/antag/heretic/ascend_ash.ogg'
 	/// A static list of all traits we apply on ascension.
 	var/static/list/traits_to_apply = list(
