@@ -61,3 +61,5 @@
 	design_ids += list("stasisbodybag")
 
 /obj/item/reagent_containers/hypospray/medipen/Initialize()
+	. = ..()
+	list_reagents = list(/datum/reagent/medicine/epinephrine = 10, /datum/reagent/medicine/coagulant = 2)
