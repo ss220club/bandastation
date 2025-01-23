@@ -962,15 +962,11 @@
 	return ..()
 
 /mob/living/carbon/can_be_revived()
-	if(!get_organ_by_type(/obj/item/organ/brain) && (!IS_CHANGELING(src)) || HAS_TRAIT(src, TRAIT_HUSK))
-		return FALSE
-
 	// BANDASTATION EDIT START - PERMADEATH
-	if(ishuman(src))
-		var/obj/item/organ/brain/brain = get_organ_by_type(/obj/item/organ/brain)
-		var/brain_non_functional = isnull(brain) || (CONFIG_GET(flag/brain_permanent_death) && brain.organ_flags & ORGAN_FAILING)
-		if(brain_non_functional && !IS_CHANGELING(src) || HAS_TRAIT(src, TRAIT_HUSK))
-			return FALSE
+	var/obj/item/organ/brain/brain = get_organ_by_type(/obj/item/organ/brain)
+	var/brain_non_functional = isnull(brain) || (CONFIG_GET(flag/brain_permanent_death) && brain.organ_flags & ORGAN_FAILING)
+	if(brain_non_functional && !IS_CHANGELING(src) || HAS_TRAIT(src, TRAIT_HUSK))
+		return FALSE
 	// BANDASTATION EDIT END - PERMADEATH
 	return ..()
 

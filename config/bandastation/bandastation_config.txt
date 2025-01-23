@@ -40,4 +40,4 @@ ROUNDSTART_RACES vulpkanin
 #CRYO_MIN_SSD_TIME 18000
 
 ## Boolean value to derminate is it posible to die permanently due death of brain or not (value true means it's enabled)
-BRAIN_PERMANENT_DEATH false
+BRAIN_PERMANENT_DEATH
