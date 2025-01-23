@@ -1,7 +1,7 @@
 /datum/autowiki/emoji
 	page = "Template:Autowiki/Content/Emojis"
 
-/datum/autowiki/stock_parts/generate()
+/datum/autowiki/emoji/generate()
 	var/output = ""
 	var/list/icon_states = icon_states(EMOJI_SET)
 
