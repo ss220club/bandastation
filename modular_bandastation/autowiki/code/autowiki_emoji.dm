@@ -16,5 +16,4 @@
 		// It would be cool to make this support gifs someday, but not now
 		upload_icon(icon(EMOJI_SET, icon_state, frame = 1), filename)
 
-	return output
-
+	return include_template("Autowiki/EmojiTable", list("content" = output))
