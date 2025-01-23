@@ -1,0 +1,4 @@
+author: "AyIong"
+delete-after: True
+changes:
+  - code_imp: "Параметры игры и персонажа, теперь переведены не только в translate ветке"
