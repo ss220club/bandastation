@@ -31717,9 +31717,8 @@
 	pixel_x = 1;
 	pixel_y = -2
 	},
-/obj/item/storage/box/flashbangs{
-	pixel_x = -6;
-	pixel_y = 8
+/obj/item/storage/box/flashes{
+	pixel_x = 3
 	},
 /obj/item/gun/grenadelauncher,
 /turf/open/floor/iron/dark,
