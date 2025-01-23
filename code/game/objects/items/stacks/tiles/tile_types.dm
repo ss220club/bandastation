@@ -82,8 +82,8 @@
 	target_plating.setDir(turf_dir)
 	playsound(target_plating, 'sound/items/weapons/genhit.ogg', 50, TRUE)
 	/// BANDASTATION ADDITION START - LOGS
-	log_game("[key_name(user)] has placed [src].")
-	message_admins("[ADMIN_LOOKUPFLW(user)] has placed [src].")
+	log_game("[key_name(user)] has placed [src] at [loc_name(target_plating)].")
+	message_admins("[ADMIN_LOOKUPFLW(user)] has placed [src] at [loc_name(target_plating)].")
 	/// BANDASTATION ADDITION END - LOGS
 	return target_plating
 
