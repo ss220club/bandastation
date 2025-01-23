@@ -56,7 +56,7 @@
 		mob.remove_status_effect(/datum/status_effect/grouped/stasis, STASIS_MACHINE_EFFECT)
 		REMOVE_TRAIT(mob, TRAIT_TUMOR_SUPPRESSED, TRAIT_GENERIC)
 
-/datum/techweb_node/applied_bluespace/Initialize()
+/datum/techweb_node/cryostasis/Initialize()
 	. = ..()
 	design_ids += list("stasisbodybag")
 
