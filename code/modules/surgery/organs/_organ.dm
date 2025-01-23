@@ -234,7 +234,7 @@ INITIALIZE_IMMEDIATE(/obj/item/organ)
 	// BANDASTATION ADDITION START - PERMA-DEATH
 	if(old_organ_flags != organ_flags)
 		owner?.med_hud_set_status()
-    // BANDASTATION ADDITION END - PERMA-DEATH
+	// BANDASTATION ADDITION END - PERMA-DEATH
 
 	if(message && owner && owner.stat <= SOFT_CRIT)
 		to_chat(owner, message)
