@@ -19896,6 +19896,16 @@
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 4
 	},
+/obj/structure/table,
+/obj/item/taperecorder{
+	pixel_x = -10;
+	pixel_y = 4
+	},
+/obj/item/camera{
+	pixel_x = 4;
+	pixel_y = 2
+	},
+/obj/item/clothing/glasses/sunglasses,
 /turf/open/floor/wood/tile,
 /area/station/service/lawoffice)
 "eXC" = (
@@ -24639,6 +24649,7 @@
 	pixel_x = 4;
 	pixel_y = 2
 	},
+/obj/item/clothing/glasses/sunglasses,
 /turf/open/floor/wood/tile,
 /area/station/service/lawoffice)
 "gfe" = (
@@ -36661,10 +36672,10 @@
 	pixel_x = 2;
 	pixel_y = 2
 	},
-/obj/item/stamp/law,
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 8
 	},
+/obj/item/stamp/law,
 /turf/open/floor/wood/tile,
 /area/station/service/lawoffice)
 "jir" = (
