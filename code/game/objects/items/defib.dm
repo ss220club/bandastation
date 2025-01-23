@@ -614,7 +614,8 @@
 					if (DEFIB_FAIL_TISSUE_DAMAGE)
 						fail_reason = "Tissue damage too severe, repair and try again."
 					if (DEFIB_FAIL_HUSK)
-					// BANDASTATION EDIT START - PERMA-DEATH	fail_reason = "Patient's body is a mere husk, repair and try again."
+						fail_reason = "Patient's body is a mere husk, repair and try again."
+					// BANDASTATION EDIT START - PERMA-DEATH
 					if (DEFIB_FAIL_PERMANENTLY_DEAD)
 						fail_reason = "Patient's brain electomagnetic activity gone. It's too late for them..."
 					// BANDASTATION EDIT END - PERMA-DEATH
