@@ -57,6 +57,7 @@
 	track = EVENT_TRACK_MUNDANE
 	tags = list(TAG_COMMUNAL, TAG_POSITIVE, TAG_MAGICAL)
 	event_group = /datum/event_group/guests
+	weight =  0
 
 /datum/round_event_control/shuttle_loan
 	track = EVENT_TRACK_MUNDANE

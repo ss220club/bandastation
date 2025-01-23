@@ -43,6 +43,7 @@
 		/datum/round_event_control/antagonist/solo/traitor/roundstart = 12,
 		/datum/round_event_control/antagonist/solo/heretic/roundstart = 2,
 	)
+	maximum_antags = 1
 
 /datum/round_event/antagonist/solo/brother/add_datum_to_mind(datum/mind/antag_mind)
 	var/datum/team/brother_team/team = new

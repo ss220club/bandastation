@@ -28,9 +28,11 @@
 	antag_datum = /datum/antagonist/traitor
 	roundstart = TRUE
 	earliest_start = 0 SECONDS
+	maximum_antags = 1
 
 /datum/round_event_control/antagonist/solo/traitor/midround
 	name = "Sleeper Agents (Traitors)"
 	antag_flag = ROLE_SLEEPER_AGENT
 	antag_datum = /datum/antagonist/traitor/infiltrator/sleeper_agent
 	prompted_picking = FALSE
+	can_change_count = TRUE

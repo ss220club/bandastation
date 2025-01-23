@@ -42,3 +42,4 @@
 	name = "Midround Heretics"
 	prompted_picking = FALSE
 	required_enemies = 3
+	can_change_count = TRUE

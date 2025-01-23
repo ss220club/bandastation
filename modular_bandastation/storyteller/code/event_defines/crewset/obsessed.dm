@@ -15,6 +15,7 @@
 	name = "Compulsive Obsession"
 	prompted_picking = FALSE
 	maximum_antags = 4
+	can_change_count = TRUE
 
 /datum/round_event/obsessed
 	var/protected_roles = list(

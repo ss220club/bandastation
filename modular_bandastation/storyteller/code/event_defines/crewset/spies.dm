@@ -12,3 +12,4 @@
 /datum/round_event_control/antagonist/solo/spy/midround
 	name = "Spies (Midround)"
 	roundstart = FALSE
+	can_change_count = TRUE

@@ -134,6 +134,7 @@
 	var/event_icon_state
 	//The number of forced antags to spawn with the event if it forced
 	var/forced_antags_count = 0
+	var/can_change_count = FALSE
 
 /datum/round_event_control/antagonist/solo/return_failure_string(players_amt)
 	. =..()
@@ -366,4 +367,13 @@
 						return
 			message_admins("[key_name_admin(usr)] fired event [src.name].")
 			log_admin_private("[key_name(usr)] fired event [src.name].")
-			run_event(random = FALSE, admin_forced = TRUE)
+			if(ispath(type, /datum/round_event_control/antagonist))
+				var/datum/round_event_control/antagonist/forced_antag_event = src
+				if(forced_antag_event.can_change_count)
+					var/new_value = input(usr, "How many players affected:", "Set value") as num|null
+					if(isnull(new_value) || new_value < 1)
+						return
+					forced_antag_event.forced_antags_count = new_value
+					forced_antag_event.run_event(random = FALSE, admin_forced = TRUE)
+			else
+				run_event(random = FALSE, admin_forced = TRUE)

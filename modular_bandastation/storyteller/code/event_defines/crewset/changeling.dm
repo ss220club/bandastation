@@ -27,7 +27,9 @@
 	name = "Changelings"
 	roundstart = TRUE
 	earliest_start = 0
+	maximum_antags = 1
 
 /datum/round_event_control/antagonist/solo/changeling/midround
 	name = "Genome Awakening (Changelings)"
 	prompted_picking = FALSE
+	can_change_count = TRUE
