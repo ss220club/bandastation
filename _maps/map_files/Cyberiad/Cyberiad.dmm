@@ -10194,7 +10194,6 @@
 	},
 /obj/effect/turf_decal/trimline/blue/filled/line,
 /obj/structure/closet/crate/freezer/surplus_limbs,
-/obj/machinery/light_switch/directional/south,
 /turf/open/floor/iron/white,
 /area/station/medical/surgery/aft)
 "cAV" = (
@@ -52010,7 +52009,6 @@
 	},
 /obj/effect/turf_decal/trimline/blue/filled/line,
 /obj/structure/closet/crate/freezer/surplus_limbs,
-/obj/machinery/light_switch/directional/south,
 /turf/open/floor/iron/white,
 /area/station/medical/surgery/fore)
 "mYA" = (
@@ -54138,6 +54136,7 @@
 	dir = 8
 	},
 /obj/machinery/firealarm/directional/north,
+/obj/machinery/light_switch/directional/east,
 /turf/open/floor/iron/white,
 /area/station/medical/surgery/fore)
 "nAB" = (
@@ -58014,6 +58013,7 @@
 	},
 /obj/effect/turf_decal/trimline/blue/filled/corner,
 /obj/machinery/firealarm/directional/north,
+/obj/machinery/light_switch/directional/west,
 /turf/open/floor/iron/white,
 /area/station/medical/surgery/aft)
 "ovm" = (
@@ -198890,13 +198890,13 @@ lRR
 oJQ
 vHl
 cJm
-wHY
-wHY
+cJm
+cJm
 cIx
 bdk
-eEk
-eEk
-eEk
+kLF
+kLF
+kLF
 nKm
 mEN
 ncI
