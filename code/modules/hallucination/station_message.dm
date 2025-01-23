@@ -41,23 +41,23 @@
 	/// Maybe if someone datumizes heretic paths or something this can be improved
 	var/static/list/ascension_bodies = list(
 		list(
-			"text" = "Fear the blaze, for the Ashlord, %FAKENAME% has ascended! The flames shall consume all!",
+			"text" = "Бойтесь пламени, ибо Пепельный Лорд %FAKENAME% вознесся! Пламя поглотит всех!",
 			"sound" = 'sound/music/antag/heretic/ascend_blade.ogg',
 		),
 		list(
-			"text" = "Master of blades, the Torn Champion's disciple, %FAKENAME% has ascended! Their steel is that which will cut reality in a maelstom of silver!",
+			"text" = "Мастер клинков %FAKENAME%, ученик Чемпиона Растерзаний, вознесся! Их сталь — та, что рассечет реальность в серебряном шторме!",
 			"sound" = 'sound/music/antag/heretic/ascend_blade.ogg',
 		),
 		list(
-			"text" = "Ever coiling vortex. Reality unfolded. ARMS OUTREACHED, THE LORD OF THE NIGHT, %FAKENAME% has ascended! Fear the ever twisting hand!",
+			"text" = "Вечно бушующий вихрь. Реальность раскрылась. РУКИ ПРОТЯНУТЫ, ВЛАДЫКА НОЧИ %FAKENAME% ВОЗНЕССЯ! Бойтесь непрестанно извивающейся руки!",
 			"sound" = 'sound/music/antag/heretic/ascend_flesh.ogg',
 		),
 		list(
-			"text" = "Fear the decay, for the Rustbringer, %FAKENAME% has ascended! None shall escape the corrosion!",
+			"text" = "Бойтесь разложения, ибо Предводитель Ржавчины, %FAKENAME%, вознесся! Никто не уйдет от коррозии!",
 			"sound" = 'sound/music/antag/heretic/ascend_rust.ogg',
 		),
 		list(
-			"text" = "The nobleman of void %FAKENAME% has arrived, stepping along the Waltz that ends worlds!",
+			"text" = "Аристократ пустоты %FAKENAME% ступил в Вальс, завершающий миры!",
 			"sound" = 'sound/music/antag/heretic/ascend_void.ogg',
 		)
 	)

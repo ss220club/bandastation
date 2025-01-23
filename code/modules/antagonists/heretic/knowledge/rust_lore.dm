@@ -168,7 +168,7 @@
 		Работа Кузнеца продолжается! Ржавые холмы, УСЛЫШЬТЕ МОЕ ИМЯ! УЗРИТЕ МОЕ ВОЗНЕСЕНИЕ!"
 
 	ascension_achievement = /datum/award/achievement/misc/rust_ascension
-	announcement_text = "%SPOOKY% Бойтесь разложения, ведь Повелитель ржавчины, %NAME% вознесся! Никто не избежит коррозии! %SPOOKY%"
+	announcement_text = "%SPOOKY% Бойтесь разложения, ибо Предводитель Ржавчины, %NAME%, вознесся! Никто не уйдет от коррозии! %SPOOKY%"
 	announcement_sound = 'sound/music/antag/heretic/ascend_rust.ogg'
 	/// If TRUE, then immunities are currently active.
 	var/immunities_active = FALSE
