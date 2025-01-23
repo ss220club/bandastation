@@ -89,3 +89,13 @@
 	icon = 'modular_bandastation/objects/icons/obj/clothing/head/hats.dmi'
 	worn_icon = 'modular_bandastation/objects/icons/mob/clothing/head/cap.dmi'
 	icon_state = "towel_head"
+
+// Security
+/obj/item/clothing/head/cowboy/security
+	name = "security cowboy hat"
+	desc = "Ковбойская шляпа с красной лентой, сочетающая стиль и функциональность. Вариация для службы безопасности, имеющая тонкий армированный слой."
+	icon = 'modular_bandastation/objects/icons/obj/clothing/head/cowboy.dmi'
+	worn_icon = 'modular_bandastation/objects/icons/mob/clothing/head/cowboy.dmi'
+	icon_state = "cowboy_sec"
+	worn_icon_state = "cowboy_sec"
+	armor_type = /datum/armor/cosmetic_sec
