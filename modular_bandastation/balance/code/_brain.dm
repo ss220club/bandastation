@@ -16,8 +16,8 @@
 /obj/item/bodybag/stasis
 	name = "Stasis body bag"
 	desc = "A folded bag designed for the storage and transportation of cadavers with portable stasis module and little space."
-	icon = 'icons/obj/medical/bodybag.dmi' //на замену
-	icon_state = "bodybag_folded" //на замену
+	icon = 'modular_bandastation/balance/icons/bodybag.dmi' //на замену
+	icon_state = "cryobag_folded" //на замену
 	// Stored path we use for spawning a new body bag entity when unfolded.
 	unfoldedbag_path = /obj/structure/closet/body_bag/stasis
 
@@ -36,11 +36,11 @@
 /obj/structure/closet/body_bag/stasis
 	name = "stasis body bag"
 	desc = "A plastic bag designed for the storage and transportation of cadavers with portable stasis module and little space."
-	icon = 'icons/obj/medical/bodybag.dmi' //на замену
-	icon_state = "bodybag"
+	icon = 'modular_bandastation/balance/icons/bodybag.dmi' //на замену
+	icon_state = "cryobag"
 	mob_storage_capacity = 1
-	open_sound = 'sound/items/zip/zip.ogg' //на замену
-	close_sound = 'sound/items/zip/zip.ogg' //на замену
+	open_sound = 'sound/effects/spray.ogg'
+	close_sound = 'sound/effects/spray.ogg'
 	foldedbag_path = /obj/item/bodybag/stasis
 
 /obj/structure/closet/body_bag/stasis/close(mob/living/user)
@@ -51,14 +51,16 @@
 		mob.extinguish_mob()
 
 /obj/structure/closet/body_bag/stasis/open(mob/living/user, force = FALSE, special_effects = TRUE)
-	. = ..()
 	for(var/mob/living/mob in contents)
 		mob.remove_status_effect(/datum/status_effect/grouped/stasis, STASIS_MACHINE_EFFECT)
 		REMOVE_TRAIT(mob, TRAIT_TUMOR_SUPPRESSED, TRAIT_GENERIC)
-
-/datum/techweb_node/cryostasis/Initialize()
 	. = ..()
-	design_ids += list("stasisbodybag")
 
 /obj/item/reagent_containers/hypospray/medipen
 	list_reagents = list(/datum/reagent/medicine/epinephrine = 10, /datum/reagent/medicine/coagulant = 2)
+
+/obj/item/reagent_containers/hypospray/medipen/survival
+	list_reagents = list( /datum/reagent/medicine/epinephrine = 7, /datum/reagent/medicine/c2/aiuri = 7, /datum/reagent/medicine/c2/libital = 7, /datum/reagent/medicine/leporazine = 6, /datum/reagent/toxin/formaldehyde = 3)
+
+/obj/item/reagent_containers/hypospray/medipen/survival/luxury
+	list_reagents = list(/datum/reagent/medicine/salbutamol = 10, /datum/reagent/medicine/c2/penthrite = 10, /datum/reagent/medicine/oxandrolone = 10, /datum/reagent/medicine/sal_acid = 10 ,/datum/reagent/medicine/omnizine = 10 ,/datum/reagent/medicine/leporazine = 5, /datum/reagent/toxin/formaldehyde = 5)
