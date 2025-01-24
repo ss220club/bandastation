@@ -974,12 +974,6 @@
 	if (HAS_TRAIT(src, TRAIT_SUICIDED))
 		return DEFIB_FAIL_SUICIDE
 
-	if (HAS_TRAIT(src, TRAIT_HUSK))
-		return DEFIB_FAIL_HUSK
-
-	if (HAS_TRAIT(src, TRAIT_DEFIB_BLACKLISTED))
-		return DEFIB_FAIL_BLACKLISTED
-
 	// BANDASTATION EDIT START - PERMA-DEATH
 	var/obj/item/organ/brain/current_brain = get_organ_by_type(/obj/item/organ/brain)
 
@@ -992,6 +986,12 @@
 	if (current_brain.organ_flags & ORGAN_FAILING)
 		return CONFIG_GET(flag/brain_permanent_death) ? DEFIB_FAIL_PERMANENTLY_DEAD : DEFIB_FAIL_FAILING_BRAIN
 	// BANDASTATION EDIT END - PERMA-DEATH
+
+	if (HAS_TRAIT(src, TRAIT_HUSK))
+		return DEFIB_FAIL_HUSK
+
+	if (HAS_TRAIT(src, TRAIT_DEFIB_BLACKLISTED))
+		return DEFIB_FAIL_BLACKLISTED
 
 	if ((getBruteLoss() >= MAX_REVIVE_BRUTE_DAMAGE) || (getFireLoss() >= MAX_REVIVE_FIRE_DAMAGE))
 		return DEFIB_FAIL_TISSUE_DAMAGE
