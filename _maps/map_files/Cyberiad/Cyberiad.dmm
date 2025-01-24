@@ -831,6 +831,7 @@
 /obj/item/gun/energy/temperature/security,
 /obj/effect/turf_decal/bot_white,
 /obj/structure/window/reinforced/spawner/directional/north,
+/obj/item/clothing/suit/hooded/ablative,
 /turf/open/floor/iron/dark,
 /area/station/ai_monitored/security/armory)
 "alp" = (
@@ -31655,12 +31656,19 @@
 /area/station/maintenance/port/fore)
 "hTL" = (
 /obj/structure/rack,
-/obj/item/clothing/suit/hooded/ablative,
 /obj/effect/turf_decal/bot_white,
 /obj/structure/window/reinforced/spawner/directional/east{
 	pixel_x = 3
 	},
 /obj/structure/window/reinforced/spawner/directional/north,
+/obj/item/storage/box/teargas{
+	pixel_x = 1;
+	pixel_y = -2
+	},
+/obj/item/storage/box/flashes{
+	pixel_x = 3
+	},
+/obj/item/gun/grenadelauncher,
 /turf/open/floor/iron/dark,
 /area/station/ai_monitored/security/armory)
 "hTZ" = (
@@ -42334,6 +42342,7 @@
 	pixel_x = 6
 	},
 /obj/effect/turf_decal/bot_white,
+/obj/structure/rack,
 /turf/open/floor/iron/dark,
 /area/station/ai_monitored/security/armory)
 "kFg" = (
@@ -43800,29 +43809,24 @@
 /turf/open/floor/plating,
 /area/station/engineering/transit_tube)
 "kWZ" = (
-/obj/item/grenade/barrier{
-	pixel_x = -6;
-	pixel_y = 4
-	},
-/obj/item/grenade/barrier{
-	pixel_y = 4
-	},
-/obj/item/grenade/barrier{
-	pixel_y = 4;
-	pixel_x = 6
-	},
-/obj/item/grenade/barrier{
-	pixel_x = -6;
-	pixel_y = -4
-	},
-/obj/item/grenade/barrier{
-	pixel_y = -4
-	},
-/obj/item/grenade/barrier{
-	pixel_y = -4;
-	pixel_x = 6
-	},
 /obj/effect/turf_decal/bot_white,
+/obj/structure/rack,
+/obj/item/clothing/glasses/hud/security/sunglasses/gars{
+	pixel_x = 3;
+	pixel_y = -2
+	},
+/obj/item/clothing/glasses/hud/security/sunglasses/gars{
+	pixel_x = 3;
+	pixel_y = 2
+	},
+/obj/item/clothing/glasses/hud/security/sunglasses{
+	pixel_x = -3;
+	pixel_y = 2
+	},
+/obj/item/clothing/glasses/hud/security/sunglasses{
+	pixel_x = -3;
+	pixel_y = -2
+	},
 /turf/open/floor/iron/dark,
 /area/station/ai_monitored/security/armory)
 "kXa" = (
@@ -44754,11 +44758,16 @@
 /area/station/engineering/atmos/mix/ghetto)
 "lka" = (
 /obj/item/storage/box/firingpins{
-	pixel_y = 5
+	pixel_y = 5;
+	pixel_x = -5
 	},
 /obj/effect/spawner/random/armory/barrier_grenades,
 /obj/effect/turf_decal/bot_white,
 /obj/structure/table/reinforced,
+/obj/item/storage/box/seccarts{
+	pixel_y = 8;
+	pixel_x = 6
+	},
 /turf/open/floor/iron/dark,
 /area/station/ai_monitored/security/armory)
 "lkr" = (
