@@ -42,6 +42,7 @@ const displayTypeMap = {
   request_nuke: 'NUKE CODE',
   request_fax: 'FAX',
   request_internet_sound: 'INTERNET SOUND',
+  request_ert: 'ERT REASON',
 };
 
 export const RequestManager = (props) => {
@@ -173,6 +174,11 @@ const RequestControls = (props) => {
       )}
       {request.req_type === 'request_internet_sound' && (
         <Button onClick={() => act('play', { id: request.id })}>PLAY</Button>
+      )}
+      {request.req_type === 'request_ert' && (
+        <Button onClick={() => act('requestert', { id: request.id })}>
+          ERT
+        </Button>
       )}
     </div>
   );

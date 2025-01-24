@@ -49,6 +49,7 @@
 #include "outfits/_outfits.dme"
 #include "overrides/_overrides.dme"
 #include "hydroponics/_hydroponics.dme"
+#include "ert/_ert.dme"
 
 
 // --- PRIME --- //

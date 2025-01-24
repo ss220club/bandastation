@@ -6,6 +6,8 @@
 #define REQUEST_SYNDICATE "request_syndicate"
 /// Requests for the nuke code
 #define REQUEST_NUKE "request_nuke"
+/// Requests an ERT
+#define REQUEST_ERT "request_ert"
 /// Requests somebody from fax
 #define REQUEST_FAX "request_fax"
 /// Requests from Request Music
@@ -98,6 +100,17 @@ GLOBAL_DATUM_INIT(requests, /datum/request_manager, new)
  */
 /datum/request_manager/proc/nuke_request(client/C, message)
 	request_for_client(C, REQUEST_NUKE, message)
+
+/**
+ * Creates a request for an ERT
+ *
+ * Arguments:
+ * * C - The client who is sending the request
+ * * message - The message
+ */
+
+/datum/request_manager/proc/ert_request(client/C, message)
+	request_for_client(C, REQUEST_ERT, message)
 
 /**
  * Creates a request for fax answer
@@ -256,6 +269,14 @@ GLOBAL_DATUM_INIT(requests, /datum/request_manager, new)
 
 			web_sound(usr, request.message)
 			return TRUE
+		if ("reqestert")
+			if (request.req_type != REQUEST_ERT)
+				to_chat(usr, "You cannot request an ERT for a non-ERT-request request!", confidential = TRUE)
+				return TRUE
+			message_admins("[key_name_admin(usr)] answered an ERT request.")
+			var/datum/ert_manager/manager
+			manager.ui_interact(usr)
+			return TRUE
 
 /datum/request_manager/ui_data(mob/user)
 	var/list/data = list()
@@ -281,3 +302,4 @@ GLOBAL_DATUM_INIT(requests, /datum/request_manager, new)
 #undef REQUEST_NUKE
 #undef REQUEST_FAX
 #undef REQUEST_INTERNET_SOUND
+#undef REQUEST_ERT
