@@ -18,4 +18,4 @@
 		/datum/round_event_control/meteor_wave/meaty,
 		/datum/round_event_control/stray_cargo/syndicate,
 	)
-	antag_denominator = 12
+	antag_denominator = 15
