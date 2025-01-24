@@ -18822,7 +18822,7 @@
 /area/station/medical/medbay/lobby)
 "eIw" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/components/trinary/filter/atmos/flipped/co2,
+/obj/machinery/atmospherics/components/trinary/filter/flipped,
 /turf/open/floor/iron,
 /area/station/maintenance/disposal/incinerator)
 "eIA" = (
