@@ -22,6 +22,7 @@
 		JOB_CYBORG,
 	)
 	min_players = 20
+	maximum_antags_per_round = 3
 
 /datum/round_event_control/antagonist/solo/changeling/roundstart
 	name = "Changelings"

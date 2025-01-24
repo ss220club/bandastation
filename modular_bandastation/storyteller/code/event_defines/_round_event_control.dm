@@ -234,6 +234,7 @@
 	var/base_antags = 1
 	/// How many maximum antags can we spawn
 	var/maximum_antags = 3
+	var/maximum_antags_per_round = 3
 	/// For this many players we'll add 1 up to the maximum antag amount
 	var/denominator = 20
 	/// The antag flag to be used
@@ -271,13 +272,17 @@
 	var/gamemode_antags_left = current_cap - SSgamemode.get_antag_count()
 	var/maximum_to_spawn = min(gamemode_antags_left, maximum_antags)
 	var/clamped_value = clamp(decided_count, 0, maximum_to_spawn)
-
+	//Maximum antags per round left to spawn
+	//Получить уже количество антагов в раунде
+	var/typed_antags_in_round = SSgamemode.get_antag_count_by_type(antag_datum)
+	var/left_to_spawn = maximum_antags_per_round - typed_antags_in_round
+	var/final_value = clamp(clamped_value, 0, left_to_spawn)
 	//double check
-	var/predicted_count = clamped_value + SSgamemode.get_antag_count()
-	while(predicted_count > current_cap && clamped_value > 0)
-		clamped_value--
+	var/predicted_count = final_value + SSgamemode.get_antag_count()
+	while(predicted_count > current_cap && final_value > 0)
+		final_value--
 
-	return clamped_value
+	return final_value
 
 /datum/round_event_control/antagonist/solo/proc/get_candidates()
 	var/round_started = SSticker.HasRoundStarted()

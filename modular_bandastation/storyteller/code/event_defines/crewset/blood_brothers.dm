@@ -32,6 +32,7 @@
 	required_enemies = 1
 	weight = 12
 	maximum_antags = 2
+	maximum_antags_per_round = 2
 	denominator = 30
 	cost = 0.45 // so it doesn't eat up threat for a relatively low-threat antag
 

@@ -32,6 +32,7 @@
 	)
 	weight = 4
 	min_players = 20
+	maximum_antags_per_round = 3
 
 /datum/round_event_control/antagonist/solo/heretic/roundstart
 	name = "Heretics"

@@ -1461,6 +1461,18 @@ SUBSYSTEM_DEF(gamemode)
 			listed.occurrences++
 			listed.occurrences++
 
+/datum/controller/subsystem/gamemode/proc/get_antag_count_by_type(type)
+	var/count = 0
+	if(!type)
+		return count
+
+
+	for(var/datum/antagonist/antag_datum_element in GLOB.antagonists)
+		if(antag_datum_element.type == type)
+			count++
+
+	return count
+
 /datum/controller/subsystem/gamemode/proc/create_roundend_score()
 	var/list/parts = list()
 	parts += "<div class='panel stationborder'><span class='header'>[("Storyteller: [SSgamemode.current_storyteller ? SSgamemode.current_storyteller.name : "N/A"]")]</span><br><br>"
