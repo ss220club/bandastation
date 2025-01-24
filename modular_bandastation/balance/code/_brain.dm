@@ -14,14 +14,6 @@
 /datum/config_entry/flag/brain_permanent_death
 	default = TRUE
 
-/obj/item/bodybag/stasis
-	name = "Stasis body bag"
-	desc = "A folded bag designed for the storage and transportation of cadavers with portable stasis module and little space."
-	icon = 'modular_bandastation/balance/icons/bodybag.dmi' //на замену
-	icon_state = "cryobag_folded" //на замену
-	// Stored path we use for spawning a new body bag entity when unfolded.
-	unfoldedbag_path = /obj/structure/closet/body_bag/stasis
-
 /datum/design/stasisbodybag
 	name = "Stasis Body Bag"
 	desc = "A folded bag designed for the storage and transportation of cadavers with portable stasis module and little space."
@@ -34,15 +26,54 @@
 	)
 	departmental_flags = DEPARTMENT_BITFLAG_MEDICAL | DEPARTMENT_BITFLAG_SCIENCE
 
+/obj/item/bodybag/stasis
+	name = "Stasis body bag"
+	desc = "A folded bag designed for the storage and transportation of cadavers with portable stasis module and little space."
+	icon = 'modular_bandastation/balance/icons/bodybag.dmi' //на замену
+	icon_state = "stasisbag_folded" //на замену
+	// Stored path we use for spawning a new body bag entity when unfolded.
+	unfoldedbag_path = /obj/structure/closet/body_bag/stasis
+	color = "#11978c"
+
+/obj/item/bodybag/stasis/deploy_bodybag(mob/user, atom/location)
+	. = ..()
+	var/obj/structure/closet/body_bag/item_bag = .
+	item_bag.color = color
+	return item_bag
+
 /obj/structure/closet/body_bag/stasis
 	name = "stasis body bag"
 	desc = "A plastic bag designed for the storage and transportation of cadavers with portable stasis module and little space."
 	icon = 'modular_bandastation/balance/icons/bodybag.dmi' //на замену
-	icon_state = "cryobag"
+	icon_state = "stasisbag"
 	mob_storage_capacity = 1
+	color = "#11978c"
 	open_sound = 'sound/effects/spray.ogg'
 	close_sound = 'sound/effects/spray.ogg'
 	foldedbag_path = /obj/item/bodybag/stasis
+
+//Добавить механизм добавления оверлея на предмет
+/obj/structure/closet/body_bag/stasis/closet_update_overlays(list/new_overlays)
+	. = ..()
+	. = new_overlays
+	var/overlay_state = isnull(base_icon_state) ? initial(icon_state) : base_icon_state
+	if(opened && has_opened_overlay)
+		var/mutable_appearance/door_underlay = mutable_appearance(icon, "[overlay_state]_open_over", alpha = src.alpha)
+		. += door_underlay
+		door_underlay.color = "#6bd5ff"
+		door_underlay.overlays += emissive_blocker(door_underlay.icon, door_underlay.icon_state, src, alpha = door_underlay.alpha) // If we don't do this the door doesn't block emissives and it looks weird.
+	if(!opened && length(contents))
+		var/mutable_appearance/door_underlay = mutable_appearance(icon, "[overlay_state]_over", alpha = src.alpha)
+		. += door_underlay
+		door_underlay.color = "#059900"
+		door_underlay.overlays += emissive_blocker(door_underlay.icon, door_underlay.icon_state, src, alpha = door_underlay.alpha)
+	return .
+
+/obj/structure/closet/body_bag/stasis/undeploy_bodybag(atom/fold_loc)
+	. = ..()
+	var/obj/item/bodybag/folding_bodybag = .
+	folding_bodybag.color = color
+	return folding_bodybag
 
 /obj/structure/closet/body_bag/stasis/close(mob/living/user)
 	. = ..()
