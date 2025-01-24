@@ -23735,10 +23735,6 @@
 /mob/living/simple_animal/bot/secbot/pingsky,
 /turf/open/floor/iron/dark,
 /area/station/ai_monitored/turret_protected/aisat_interior)
-"fSz" = (
-/obj/structure/extinguisher_cabinet/directional/east,
-/turf/closed/wall/r_wall,
-/area/station/medical/surgery/aft)
 "fSL" = (
 /obj/structure/table/reinforced,
 /obj/structure/railing{
@@ -200677,7 +200673,7 @@ kLF
 kLF
 kLF
 kLF
-fSz
+nKm
 nKm
 nKm
 dXq
