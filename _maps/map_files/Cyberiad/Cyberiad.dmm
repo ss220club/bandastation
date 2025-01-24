@@ -4382,10 +4382,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron,
 /area/station/construction/mining/aux_base)
-"bdk" = (
-/obj/machinery/smartfridge/organ,
-/turf/open/floor/iron/white,
-/area/station/medical/surgery/aft)
 "bdn" = (
 /obj/structure/cable,
 /obj/effect/turf_decal/trimline/blue/filled/line{
@@ -34328,6 +34324,7 @@
 /obj/effect/turf_decal/trimline/blue/filled/line{
 	dir = 4
 	},
+/obj/machinery/smartfridge/organ,
 /turf/open/floor/iron/white,
 /area/station/medical/surgery/aft)
 "iEL" = (
@@ -93334,6 +93331,7 @@
 /obj/effect/turf_decal/trimline/blue/filled/line{
 	dir = 8
 	},
+/obj/machinery/smartfridge/organ,
 /turf/open/floor/iron/white,
 /area/station/medical/surgery/fore)
 "xvZ" = (
@@ -198872,7 +198870,7 @@ cJm
 cJm
 cJm
 cJm
-bdk
+kLF
 kLF
 kLF
 kLF
