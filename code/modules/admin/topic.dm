@@ -1285,8 +1285,8 @@
 	else if(href_list["ert_respond"])
 		if(!check_rights(R_ADMIN))
 			return
-		var/datum/ert_manager/manager
-		manager.ui_interact(usr)
+		var/datum/ert_manager/tgui = new(usr)
+		tgui.ui_interact(usr)
 		message_admins("[key_name_admin(usr)] answered an ERT request.")
 
 	else if(href_list["add_station_goal"])

@@ -274,8 +274,8 @@ GLOBAL_DATUM_INIT(requests, /datum/request_manager, new)
 				to_chat(usr, "You cannot request an ERT for a non-ERT-request request!", confidential = TRUE)
 				return TRUE
 			message_admins("[key_name_admin(usr)] answered an ERT request.")
-			var/datum/ert_manager/manager
-			manager.ui_interact(usr)
+			var/datum/ert_manager/tgui = new(usr)
+			tgui.ui_interact(usr)
 			return TRUE
 
 /datum/request_manager/ui_data(mob/user)

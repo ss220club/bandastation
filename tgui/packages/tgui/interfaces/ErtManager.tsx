@@ -78,7 +78,7 @@ export const ERTManager = (props) => {
   );
 };
 
-export const ERTOverview = (props) => {
+const ERTOverview = (props) => {
   const { act, data } = useBackend();
   const { securityLevelColor, securityLevel, ertRequestAnswered } = data;
 
@@ -117,7 +117,7 @@ const SendERT = (props) => {
       <Section
         fill
         scrollable
-        title="Send ERT"
+        title="Send ERT yeag"
         buttons={
           <>
             <Button

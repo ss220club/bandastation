@@ -1,6 +1,11 @@
 GLOBAL_LIST(ert_request_answered)
 GLOBAL_LIST(ert_request_messages)
 
+ADMIN_VERB(ert_manager, R_NONE, "ERT Manager", "Manage ERT reqests.", ADMIN_CATEGORY_GAME)
+	var/datum/ert_manager/tgui = new(user)
+	tgui.ui_interact(user.mob)
+	BLACKBOX_LOG_ADMIN_VERB("ERT Manager")
+
 /datum/ert_manager
 	var/name = "ERT Manager"
 	var/ertType = "Red"
@@ -14,7 +19,7 @@ GLOBAL_LIST(ert_request_messages)
 /datum/ert_manager/ui_state(mob/user)
 	return GLOB.admin_state
 
-/datum/ert_manager/ui_interact(mob/user, datum/tgui/ui = null)
+/datum/ert_manager/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
 		ui = new(user, src, "ERTManager", name)
