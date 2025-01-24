@@ -3840,9 +3840,7 @@
 "aWW" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/brown/visible/layer2,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/smart/simple/dark/visible{
-	dir = 4
-	},
+/obj/machinery/atmospherics/pipe/smart/manifold4w/dark/visible,
 /turf/open/floor/iron,
 /area/station/maintenance/disposal/incinerator)
 "aXb" = (
@@ -18823,7 +18821,7 @@
 /area/station/medical/medbay/lobby)
 "eIw" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/components/trinary/filter/flipped,
+/obj/machinery/atmospherics/components/trinary/filter/atmos/flipped/co2,
 /turf/open/floor/iron,
 /area/station/maintenance/disposal/incinerator)
 "eIA" = (
@@ -29291,7 +29289,7 @@
 /turf/open/floor/iron/dark,
 /area/station/tcommsat/computer)
 "hpp" = (
-/obj/machinery/atmospherics/pipe/smart/simple/dark/visible,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/dark/visible,
 /turf/closed/wall/r_wall,
 /area/station/maintenance/disposal/incinerator)
 "hpu" = (
@@ -30650,9 +30648,7 @@
 /obj/item/pen{
 	pixel_y = 8
 	},
-/obj/machinery/atmospherics/pipe/smart/simple/dark/visible{
-	dir = 9
-	},
+/obj/machinery/atmospherics/pipe/smart/manifold4w/dark/visible,
 /turf/open/floor/iron,
 /area/station/maintenance/disposal/incinerator)
 "hGd" = (
@@ -31727,7 +31723,7 @@
 /area/station/maintenance/ghetto/fore/starboard)
 "hUM" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/layer_manifold/brown/visible,
+/obj/machinery/atmospherics/pipe/layer_manifold/brown,
 /turf/open/floor/iron,
 /area/station/maintenance/disposal/incinerator)
 "hUN" = (
@@ -31835,9 +31831,7 @@
 /obj/machinery/button/ignition/incinerator/atmos{
 	pixel_y = -32
 	},
-/obj/machinery/atmospherics/pipe/smart/simple/dark/visible{
-	dir = 4
-	},
+/obj/machinery/atmospherics/pipe/smart/manifold4w/dark/visible,
 /turf/open/floor/iron,
 /area/station/maintenance/disposal/incinerator)
 "hVO" = (
@@ -45657,11 +45651,6 @@
 /obj/structure/cable,
 /turf/open/floor/plating,
 /area/station/science/xenobiology)
-"lux" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/smart/simple/dark/visible,
-/turf/open/floor/iron,
-/area/station/maintenance/disposal/incinerator)
 "luy" = (
 /obj/structure/table/reinforced,
 /obj/item/electropack,
@@ -62272,11 +62261,10 @@
 /area/station/maintenance/starboard/upper)
 "pzh" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/smart/simple/dark/visible,
-/obj/machinery/portable_atmospherics/canister,
 /obj/machinery/atmospherics/components/unary/portables_connector/visible{
 	dir = 4
 	},
+/obj/machinery/portable_atmospherics/canister,
 /turf/open/floor/iron,
 /area/station/maintenance/disposal/incinerator)
 "pzi" = (
@@ -83704,9 +83692,7 @@
 /area/space/nearstation)
 "uZW" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/smart/simple/dark/visible{
-	dir = 6
-	},
+/obj/machinery/atmospherics/pipe/smart/manifold4w/dark/visible,
 /turf/open/floor/iron,
 /area/station/maintenance/disposal/incinerator)
 "uZX" = (
@@ -186880,8 +186866,8 @@ cZJ
 msj
 hZK
 uZW
-lux
-lux
+uZW
+uZW
 hFY
 cZJ
 vnQ
