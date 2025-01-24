@@ -90,3 +90,23 @@
 /datum/round_event_control/immovable_rod
 	tags = list(TAG_DESTRUCTIVE, TAG_EXTERNAL, TAG_MAGICAL)
 	eng_required_power = 2
+
+/datum/round_event_control/changeling
+	track = EVENT_TRACK_MODERATE
+	tags = list(TAG_COMBAT, TAG_SPACE, TAG_EXTERNAL, TAG_ALIEN)
+	event_group = /datum/event_group/comms
+	checks_antag_cap = TRUE
+
+/datum/round_event_control/nightmare
+	track = EVENT_TRACK_MODERATE
+	tags = list(TAG_COMBAT, TAG_SPOOKY, TAG_EXTERNAL, TAG_ALIEN)
+	checks_antag_cap = TRUE
+
+/datum/round_event_control/revenant
+	track = EVENT_TRACK_MODERATE
+	tags = list(TAG_DESTRUCTIVE, TAG_SPOOKY, TAG_EXTERNAL, TAG_MAGICAL)
+	checks_antag_cap = TRUE
+
+/datum/round_event_control/voidwalker
+	track = EVENT_TRACK_MODERATE
+	tags = list(TAG_COMBAT, TAG_SPOOKY, TAG_SPACE)

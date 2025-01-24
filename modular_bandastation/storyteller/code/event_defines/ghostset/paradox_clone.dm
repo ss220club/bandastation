@@ -3,7 +3,7 @@
 	tags = list(TAG_OUTSIDER_ANTAG, TAG_SPOOKY, TAG_TARGETED)
 	typepath = /datum/round_event/antagonist/solo/ghost/paradox_clone
 	antag_flag = ROLE_PARADOX_CLONE
-	track = EVENT_TRACK_MAJOR
+	track = EVENT_TRACK_MODERATE
 	antag_datum = /datum/antagonist/paradox_clone
 	enemy_roles = list(
 		JOB_CAPTAIN,

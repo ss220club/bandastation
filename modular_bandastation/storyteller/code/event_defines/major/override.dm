@@ -42,10 +42,6 @@
 	tags = list(TAG_COMBAT)
 	checks_antag_cap = TRUE
 
-/datum/round_event_control/voidwalker
-	track = EVENT_TRACK_MAJOR
-	tags = list(TAG_COMBAT, TAG_SPOOKY, TAG_SPACE)
-
 /datum/round_event_control/pirates
 	track = EVENT_TRACK_MAJOR
 	tags = list(TAG_COMBAT, TAG_COMMUNAL)
@@ -60,12 +56,6 @@
 	weight = 5
 	tags = list(TAG_COMMUNAL, TAG_DESTRUCTIVE)
 	roundstart = TRUE
-
-/datum/round_event_control/changeling
-	track = EVENT_TRACK_MAJOR
-	tags = list(TAG_COMBAT, TAG_SPACE, TAG_EXTERNAL, TAG_ALIEN)
-	event_group = /datum/event_group/comms
-	checks_antag_cap = TRUE
 
 /datum/round_event_control/slaughter
 	track = EVENT_TRACK_MAJOR
@@ -87,16 +77,6 @@
 /datum/round_event_control/morph
 	track = EVENT_TRACK_MAJOR
 	tags = list(TAG_COMBAT, TAG_SPOOKY, TAG_EXTERNAL, TAG_ALIEN)
-	checks_antag_cap = TRUE
-
-/datum/round_event_control/nightmare
-	track = EVENT_TRACK_MAJOR
-	tags = list(TAG_COMBAT, TAG_SPOOKY, TAG_EXTERNAL, TAG_ALIEN)
-	checks_antag_cap = TRUE
-
-/datum/round_event_control/revenant
-	track = EVENT_TRACK_MAJOR
-	tags = list(TAG_DESTRUCTIVE, TAG_SPOOKY, TAG_EXTERNAL, TAG_MAGICAL)
 	checks_antag_cap = TRUE
 
 /datum/round_event_control/portal_storm_monkey
