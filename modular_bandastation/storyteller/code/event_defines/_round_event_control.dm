@@ -136,6 +136,27 @@
 	var/forced_antags_count = 0
 	var/can_change_count = FALSE
 
+/datum/round_event_control/antagonist/solo
+	typepath = /datum/round_event/antagonist/solo
+	/// How many baseline antags do we spawn
+	var/base_antags = 1
+	/// How many maximum antags can we spawn
+	var/maximum_antags = 3
+	var/maximum_antags_per_round = 10
+	/// For this many players we'll add 1 up to the maximum antag amount
+	var/denominator = 20
+	/// The antag flag to be used
+	var/antag_flag
+	/// The antag datum to be applied
+	var/antag_datum
+	/// Prompt players for consent to turn them into antags before doing so. Dont allow this for roundstart.
+	var/prompted_picking = FALSE
+	/// A list of extra events to force whenever this one is chosen by the storyteller.
+	/// Can either be normal list or a weighted list.
+	var/list/extra_spawned_events
+	/// Similar to extra_spawned_events however these are only used by roundstart events and will only try and run if we have the points to do so
+	var/list/preferred_events
+
 /datum/round_event_control/antagonist/solo/return_failure_string(players_amt)
 	. =..()
 
@@ -227,27 +248,6 @@
 
 	if(!.)
 		return
-
-/datum/round_event_control/antagonist/solo
-	typepath = /datum/round_event/antagonist/solo
-	/// How many baseline antags do we spawn
-	var/base_antags = 1
-	/// How many maximum antags can we spawn
-	var/maximum_antags = 3
-	var/maximum_antags_per_round = 3
-	/// For this many players we'll add 1 up to the maximum antag amount
-	var/denominator = 20
-	/// The antag flag to be used
-	var/antag_flag
-	/// The antag datum to be applied
-	var/antag_datum
-	/// Prompt players for consent to turn them into antags before doing so. Dont allow this for roundstart.
-	var/prompted_picking = FALSE
-	/// A list of extra events to force whenever this one is chosen by the storyteller.
-	/// Can either be normal list or a weighted list.
-	var/list/extra_spawned_events
-	/// Similar to extra_spawned_events however these are only used by roundstart events and will only try and run if we have the points to do so
-	var/list/preferred_events
 
 /datum/round_event_control/antagonist/solo/from_ghosts/get_candidates()
 	var/round_started = SSticker.HasRoundStarted()
