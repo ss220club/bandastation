@@ -385,6 +385,231 @@ instrumental = "консолью криогенного контроля"
 prepositional = "консоли криогенного контроля"
 gender = "female"
 
+["ID sticker"]
+nominative = "наклейка на карту"
+genitive = "наклейки на карту"
+dative = "наклейке на карту"
+accusative = "наклейку на карту"
+instrumental = "наклейкой на карту"
+prepositional = "наклейке на карту"
+gender = "female"
+
+["holographic ID sticker"]
+nominative = "голографическая наклейка на карту"
+genitive = "голографической наклейки на карту"
+dative = "голографической наклейке на карту"
+accusative = "голографическую наклейку на карту"
+instrumental = "голографической наклейкой на карту"
+prepositional = "голографической наклейке на карту"
+gender = "female"
+
+["donut ID sticker"]
+nominative = "пончиковая наклейка на карту"
+genitive = "пончиковой наклейки на карту"
+dative = "пончиковой наклейке на карту"
+accusative = "пончиковую наклейку на карту"
+instrumental = "пончиковой наклейкой на карту"
+prepositional = "пончиковой наклейке на карту"
+gender = "female"
+
+["silver ID sticker"]
+nominative = "серебряная наклейка на карту"
+genitive = "серебряной наклейки на карту"
+dative = "себеряной наклейке на карту"
+accusative = "серебряную наклейку на карту"
+instrumental = "серебряной наклейкой на карту"
+prepositional = "серебряной наклейке на карту"
+gender = "female"
+
+["silver holographic ID sticker"]
+nominative = "серебряная голографическая наклейка на карту"
+genitive = "серебряной голографической наклейки на карту"
+dative = "серебряной голографической наклейке на карту"
+accusative = "серебряную голографическую наклейку на карту"
+instrumental = "серебряной голографической наклейкой на карту"
+prepositional = "серебряной голографической наклейке на карту"
+gender = "female"
+
+["gold ID sticker"]
+nominative = "золотая наклейка на карту"
+genitive = "золотой наклейки на карту"
+dative = "золотой наклейке на карту"
+accusative = "золотую наклейку на карту"
+instrumental = "золотой наклейкой на карту"
+prepositional = "золотой наклейке на карту"
+gender = "female"
+
+["businessman ID sticker"]
+nominative = "бизнесменская наклейка на карту"
+genitive = "бизнесменской наклейки на карту"
+dative = "бизнесменской наклейке на карту"
+accusative = "бизнесменскую наклейку на карту"
+instrumental = "бизнесменской наклейкой на карту"
+prepositional = "бизнесменской наклейке на карту"
+gender = "female"
+
+["stylish ID sticker"]
+nominative = "стильная наклейка на карту"
+genitive = "стильной наклейки на карту"
+dative = "стильной наклейке на карту"
+accusative = "стильную наклейку на карту"
+instrumental = "стильной наклейкой на карту"
+prepositional = "стильной наклейке на карту"
+gender = "female"
+
+["communistic ID sticker"]
+nominative = "коммунистическая наклейка на карту"
+genitive = "коммунистической наклейки на карту"
+dative = "коммунистической наклейке на карту"
+accusative = "коммунистическую наклейку на карту"
+instrumental = "коммунистической наклейкой на карту"
+prepositional = "коммунистической наклейке на карту"
+gender = "female"
+
+["clownish ID sticker"]
+nominative = "клоунская наклейка на карту"
+genitive = "клоунской наклейки на карту"
+dative = "клоунской наклейке на карту"
+accusative = "клоунскую наклейку на карту"
+instrumental = "клоунской наклейкой на карту"
+prepositional = "клоунской наклейке на карту"
+gender = "female"
+
+["neon ID sticker"]
+nominative = "неоновая наклейка на карту"
+genitive = "неоновой наклейки на карту"
+dative = "неоновой наклейке на карту"
+accusative = "неоновую наклейку на карту"
+instrumental = "неоновой наклейкой на карту"
+prepositional = "неоновой наклейке на карту"
+gender = "female"
+
+["neon holographic ID sticker"]
+nominative = "неоновая голографическая наклейка на карту"
+genitive = "неоновой голографической наклейки на карту"
+dative = "неоновой голографической наклейке на карту"
+accusative = "неоновую голографическую наклейку на карту"
+instrumental = "неоновой голографической наклейкой на карту"
+prepositional = "неоновой голографической наклейке на карту"
+gender = "female"
+
+["black-and-pink ID sticker"]
+nominative = "чёрно-розовая наклейка на карту"
+genitive = "чёрно-розовой наклейки на карту"
+dative = "чёрно-розовой наклейке на карту"
+accusative = "чёрно-розовую наклейку на карту"
+instrumental = "чёрно-розовой наклейкой на карту"
+prepositional = "черно-розовой наклейке на карту"
+gender = "female"
+
+["Ouija ID sticker"]
+nominative = "Уиджи наклейка на карту"
+genitive = "Уиджи наклейки на карту"
+dative = "Уиджи наклейке на карту"
+accusative = "Уиджи наклейку на карту"
+instrumental = "Уиджи наклейкой на карту"
+prepositional = "Уиджи наклейке на карту"
+gender = "female"
+
+["beach ID sticker"]
+nominative = "пляжная наклейка на карту"
+genitive = "пляжной наклейки на карту"
+dative = "пляжной наклейке на карту"
+accusative = "пляжную наклейку на карту"
+instrumental = "пляжной наклейкой на карту"
+prepositional = "пляжной наклейке на карту"
+gender = "female"
+
+["rainbow ID sticker"]
+nominative = "радужная наклейка на карту"
+genitive = "радужной наклейки на карту"
+dative = "радужной наклейке на карту"
+accusative = "радужную наклейку на карту"
+instrumental = "радужной наклейкой на карту"
+prepositional = "радужной наклейке на карту"
+gender = "female"
+
+["SPACE ID sticker"]
+nominative = "КОСМИЧЕСКАЯ наклейка на карту"
+genitive = "КОСМИЧЕСКОЙ наклейки на карту"
+dative = "КОСМИЧЕСКОЙ наклейке на карту"
+accusative = "КОСМИЧЕСКУЮ наклейку на карту"
+instrumental = "КОСМИЧЕСКОЙ наклейкой на карту"
+prepositional = "КОСМИЧЕСКОЙ наклейке на карту"
+gender = "female"
+
+["cat ID sticker"]
+nominative = "кото-наклейка на карту"
+genitive = "кото-наклейки на карту"
+dative = "кото-наклейке на карту"
+accusative = "кото-наклейку на карту"
+instrumental = "кото-наклейкой на карту"
+prepositional = "кото-наклейке на карту"
+gender = "female"
+
+["cat holographic ID sticker"]
+nominative = "голографическая кото-наклейка на карту"
+genitive = "голографической кото-наклейки на карту"
+dative = "голографической кото-наклейке на карту"
+accusative = "голографическую кото-наклейку на карту"
+instrumental = "голографической кото-наклейкой на карту"
+prepositional = "голографической кото-наклейке на карту"
+gender = "female"
+
+["anime ID sticker"]
+nominative = "аниме наклейка на карту"
+genitive = "аниме наклейки на карту"
+dative = "аниме наклейке на карту"
+accusative = "аниме наклейку на карту"
+instrumental = "аниме наклейкой на карту"
+prepositional = "аниме наклейке на карту"
+gender = "female"
+
+["running ID sticker"]
+nominative = "бегущая наклейка на карту"
+genitive = "бегущей наклейки на карту"
+dative = "бегущей наклейке на карту"
+accusative = "бегущую наклейку на карту"
+instrumental = "бегущей наклейкой на карту"
+prepositional = "бегущей наклейке на карту"
+gender = "female"
+
+["magical ID sticker"]
+nominative = "магическая наклейка на карту"
+genitive = "магической наклейки на карту"
+dative = "магической наклейке на карту"
+accusative = "магическую наклейку на карту"
+instrumental = "магической наклейкой на карту"
+prepositional = "магической наклейке на карту"
+gender = "female"
+
+["terminal ID sticker"]
+nominative = "наклейка на карту в виде терминала"
+genitive = "наклейки на карту в виде терминала"
+dative = "наклейке на карту в виде терминала"
+accusative = "наклейку на крату в виде терминала"
+instrumental = "наклейкой на карту в виде терминала"
+prepositional = "наклейке на карту в виде терминала"
+gender = "female"
+
+["jokerge ID sticker"]
+nominative = "джокерге наклейка на карту"
+genitive = "джокерге наклейки на карту"
+dative = "джокерге наклейке на карту"
+accusative = "джокерге наклейку на карту"
+instrumental = "джокерге наклейкой на карту"
+prepositional = "джокерге наклейке на карту"
+gender = "female"
+
+["boykisser ID sticker"]
+nominative = "бойкиссер наклейка на карту"
+genitive = "бойкиссер наклейки на карту"
+dative = "бойкиссер наклейке на карту"
+accusative = "бойкиссер наклейку на карту"
+instrumental = "бойкиссер наклейкой на карту"
+prepositional = "бойкиссер наклейке на карту"
+gender = "female"
+
 # MARK: Mobs. Uncategorized
 
 # MARK: Mobs. Aliens
