@@ -68,14 +68,14 @@
 	. = ..()
 
 /obj/item/id_sticker
-	name = "\improper ID sticker"
+	name = "ID sticker"
 	desc = "Этим можно изменить внешний вид своей карты! Покажи службе безопасности какой ты стильный."
 	icon = 'modular_bandastation/objects/icons/obj/items/id_stickers.dmi'
 	icon_state = ""
 	var/info = "Самая обыкновенная наклейка"
 
 /obj/item/id_sticker/colored
-	name = "\improper holographic ID sticker"
+	name = "holographic ID sticker"
 	desc = "Голографическая наклейка на карту. Вы можете выбрать цвет который она примет."
 	icon_state = "colored"
 	info = "На ней голо-наклейка."
@@ -115,137 +115,137 @@
 			color = input(usr,"Выберите цвет") as color
 
 /obj/item/id_sticker/donut
-	name = "\improper donut ID sticker"
+	name = "donut ID sticker"
 	icon_state = "donut"
 	info = "На ней пончиковая наклейка. С глазурью!"
 
 /obj/item/id_sticker/silver
-	name = "\improper silver ID sticker"
+	name = "silver ID sticker"
 	icon_state = "silver"
 	info = "На ней серебрянная наклейка."
 
 /obj/item/id_sticker/colored/silver
-	name = "\improper silver holographic ID sticker"
+	name = "silver holographic ID sticker"
 	desc = "Голографическая наклейка на карту, изготовленная из специального материала, похожего на серебро. Вы можете выбрать цвет который она примет."
 	icon_state = "colored_shiny"
 	info = "На ней серебряная голо-наклейка."
 
 /obj/item/id_sticker/gold
-	name = "\improper gold ID sticker"
+	name = "gold ID sticker"
 	desc = "Можно продать какому-то дураку за баснословные деньги. Ой..."
 	icon_state = "gold"
 	info = "На ней золотая наклейка."
 
 /obj/item/id_sticker/business
-	name = "\improper businessman ID sticker"
+	name = "businessman ID sticker"
 	desc = "Осталось раздобыть портмоне и стильный костюм."
 	icon_state = "business"
 	info = "На ней бизнесменская наклейка."
 
 /obj/item/id_sticker/lifetime
-	name = "\improper stylish ID sticker"
+	name = "stylish ID sticker"
 	desc = "Ничего особенного, но что-то в этом есть..."
 	icon_state = "lifetime"
 	info = "На ней стильная наклейка."
 
 /obj/item/id_sticker/ussp
-	name = "\improper communistic ID sticker"
+	name = "communistic ID sticker"
 	desc = "Партия гордится вами! Возьмите своя миска-рис в ближайшем баре."
 	icon_state = "ussp"
 	info = "На ней коммунистическая наклейка."
 
 /obj/item/id_sticker/clown
-	name = "\improper clownish ID sticker"
+	name = "clownish ID sticker"
 	desc = "HONK!"
 	icon_state = "clown"
 	info = "На ней клоунская наклейка. HONK!"
 
 /obj/item/id_sticker/neon
-	name = "\improper neon ID sticker"
+	name = "neon ID sticker"
 	desc = "Неоновая наклейка в цианово-розовых цветах."
 	icon_state = "neon"
 	info = "Кажется будто она светится."
 
 /obj/item/id_sticker/colored/neon
-	name = "\improper neon holographic ID sticker"
+	name = "neon holographic ID sticker"
 	desc = "Какая же она яркая... Ещё и цвета меняет!"
 	icon_state = "colored_neon"
 	info = "Кажется будто она светится."
 
 /obj/item/id_sticker/missing
-	name = "\improper black-and-pink ID sticker"
+	name = "black-and-pink ID sticker"
 	desc = "Текстура пропала..."
 	icon_state = "missing"
 	info = "А где?"
 
 /obj/item/id_sticker/ouija
-	name = "\improper Ouija ID sticker"
+	name = "Ouija ID sticker"
 	desc = "Ходят легенты, что тот кто наклеит это на карту, может общаться с духами..."
 	icon_state = "ouija"
 	info = "Умеет ли он общаться с призраками?"
 
 /obj/item/id_sticker/paradise
-	name = "\improper beach ID sticker"
+	name = "beach ID sticker"
 	desc = "Хола!"
 	icon_state = "paradise"
 	info = "На ней пляжная наклейка."
 
 /obj/item/id_sticker/rainbow
-	name = "\improper rainbow ID sticker"
+	name = "rainbow ID sticker"
 	desc = "Переливается всеми цветами радуги!"
 	icon_state = "rainbow"
 	info = "На ней радужная наклейка. Одобряемо."
 
 /obj/item/id_sticker/space
-	name = "\improper SPACE ID sticker"
+	name = "SPACE ID sticker"
 	desc = "Яркая, блестящая и бескрайняя. Прямо как хозяин карты на которую её приклеят."
 	icon_state = "space"
 	info = "Есть 3 вещи на которые можно смотреть вечно. Это четвёртая."
 
 /obj/item/id_sticker/kitty
-	name = "\improper cat ID sticker"
+	name = "cat ID sticker"
 	desc = "Прекрасная наклейка, которая делает вашу карту похожей на котика. UwU."
 	icon_state = "kitty"
 	info = "Так и хочется погладить, жаль это всего-лишь наклейка..."
 
 /obj/item/id_sticker/colored/kitty
-	name = "\improper cat holographic ID sticker"
+	name = "cat holographic ID sticker"
 	desc = "Прекрасная наклейка, которая делает вашу карту похожей на котика. Эта может менять цвет."
 	icon_state = "colored_kitty"
 	info = "Так и хочется погладить, жаль это всего-лишь наклейка..."
 
 /obj/item/id_sticker/cursedmiku
-	name = "\improper anime ID sticker"
+	name = "anime ID sticker"
 	desc = "Kawaii!!!"
 	icon_state = "cursedmiku"
 	info = "На ней анимешная наклейка. AYAYA!"
 
 /obj/item/id_sticker/colored/snake
-	name = "\improper running ID sticker"
+	name = "running ID sticker"
 	desc = "Она что-то загружает?"
 	icon_state = "snake"
 	info = "Бегает и бегает..."
 
 /obj/item/id_sticker/magic
-	name = "\improper magical ID sticker"
+	name = "magical ID sticker"
 	desc = "EI NATH!"
 	icon_state = "magic"
 	info = "Кто-то до сих пор девственник..."
 
 /obj/item/id_sticker/terminal
-	name = "\improper terminal ID sticker"
+	name = "terminal ID sticker"
 	desc = "HACKERMAN."
 	icon_state = "terminal"
 	info = "Эта карта похожа на терминал."
 
 /obj/item/id_sticker/jokerge
-	name = "\improper jokerge ID sticker"
+	name = "jokerge ID sticker"
 	desc = "Jokerge."
 	icon_state = "jokerge"
 	info = "Jokerge."
 
 /obj/item/id_sticker/boykisser
-	name = "\improper boykisser ID sticker"
+	name = "boykisser ID sticker"
 	desc = "Наклеив её на карту, у вас с почти 100% вероятностью, появится желание целовать мальчиков."
 	icon_state = "boykisser"
 	info = "Он любит целовать мальчиков."
