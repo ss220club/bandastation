@@ -1,5 +1,5 @@
 /obj/item/storage/box/id_stickers
-	name = "ID stickers"
+	name = "ID stickers box"
 	desc = "Коробка с кучкой наклеек на ID карту."
 	icon = 'modular_bandastation/objects/icons/obj/storage/box.dmi'
 	icon_state = "id_stickers_box"

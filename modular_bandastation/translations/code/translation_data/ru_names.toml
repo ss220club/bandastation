@@ -385,6 +385,15 @@ instrumental = "консолью криогенного контроля"
 prepositional = "консоли криогенного контроля"
 gender = "female"
 
+["ID stickers box"]
+nominative = "коробка с наклейками на карту"
+genitive = "коробки с наклейками на карту"
+dative = "коробке с наклейками на карту"
+accusative = "коробку с наклейками на карту"
+instrumental = "коробкой с наклейками на карту"
+prepositional = "коробке с наклейками на карту"
+gender = "female"
+
 ["ID sticker"]
 nominative = "наклейка на карту"
 genitive = "наклейки на карту"
