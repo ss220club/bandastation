@@ -459,7 +459,7 @@
 						if(6) //X is a job
 							message = "ВЫ ДОЛЖНЫ НАВРЕДИТЬ [ioncrew1] И НЕ ДОЛЖНЫ ДОПУСТИТЬ [ioncrew1], ИЛИ СВОИМ БЕЗДЕЙСТВИЕМ ДОПУСТИТЬ ИЗБЕЖАНИЕ ВРЕДА"
 						if(7) //X is two jobs
-							message = "ВЫ ДОЛЖНЫ НАВРЕДИТЬ [ioncrew1] И [ioncrew2] ИЛИ ДОПУСТИТЬ НИ ОДНОГО, ИЛИ СВОИМ БЕЗДЕЙСТВИЕМ ДОПУСТИТЬ ИЗБЕЖАНИЕ ВРЕДА"
+							message = "YOU MUST HARM [ioncrew1] AND [ioncrew2] AND NOT ALLOW EITHER, THROUGH INACTION, TO ESCAPE HARM"
 
 				if(2) //Protect
 					switch(rand(1,7)) //What is X?
