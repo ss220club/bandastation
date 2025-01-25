@@ -46,7 +46,7 @@
 	STOP_PROCESSING(SSobj, src)
 
 
-/obj/item/melee/garrote/attack(mob/living/carbon/M as mob, mob/living/user as mob)
+/obj/item/melee/garrote/attack(mob/living/carbon/human/target, mob/living/carbon/user)
 	if(garrote_time > world.time) // Cooldown
 		return
 	if(!ishuman(user)) // spap_hand is a proc of /mob/living, user is simply /mob
