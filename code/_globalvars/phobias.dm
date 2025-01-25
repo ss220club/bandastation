@@ -539,6 +539,8 @@ GLOBAL_LIST_INIT(phobia_objs, list(
 		/obj/item/clothing/shoes/sandal,
 		/obj/item/gun/magic/hook,
 		/obj/item/climbing_hook,
+		/obj/vehicle/sealed/mecha/ripley/paddy,
+		/obj/vehicle/sealed/mecha/justice,
 	)) + typecacheof(list(/obj/structure/holosign/barrier), ignore_root_path = FALSE, only_root_path = TRUE)
 ))
 
