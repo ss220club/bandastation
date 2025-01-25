@@ -202,6 +202,16 @@
 		return
 	return ..()
 
+/datum/mood_event/startled
+	description = "Hearing that word made me think about something scary."
+	mood_change = -1
+	timeout = 1 MINUTES
+
+/datum/mood_event/phobia
+	description = "I saw something very frightening."
+	mood_change = -4
+	timeout = 4 MINUTES
+
 /datum/mood_event/spooked
 	description = "Грохот этих костей... Он до сих пор преследует меня."
 	mood_change = -4
