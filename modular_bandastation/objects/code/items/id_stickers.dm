@@ -16,6 +16,11 @@
 		return
 	apply_sticker(user, tool)
 
+/obj/item/card/id/advanced/examine(mob/user)
+	. = ..()
+	if(applied_sticker)
+		. += "На ней [applied_sticker.declent_ru(NOMINATIVE)]"
+
 /obj/item/card/id/advanced/examine_more(mob/user)
 	. = ..()
 	if(applied_sticker)
@@ -43,7 +48,8 @@
 	card_sticker.color = sticker.color
 	sticker.forceMove(src)
 	applied_sticker = sticker
-	desc += "<br>[sticker.info]"
+	if(sticker.id_card_desc)
+		desc += "<br>[sticker.id_card_desc]"
 	add_overlay(card_sticker)
 	to_chat(user, span_notice("Вы наклеили [sticker.declent_ru(ACCUSATIVE)] на ID карту."))
 
@@ -55,7 +61,8 @@
 			user.put_in_active_hand(applied_sticker)
 		else
 			applied_sticker.forceMove(get_turf(user))
-	desc = src::desc
+	if(applied_sticker.id_card_desc)
+		desc = src::desc
 	applied_sticker = src::applied_sticker
 	cut_overlay(card_sticker)
 
@@ -72,13 +79,12 @@
 	desc = "Этим можно изменить внешний вид своей карты! Покажи службе безопасности какой ты стильный."
 	icon = 'modular_bandastation/objects/icons/obj/items/id_stickers.dmi'
 	icon_state = ""
-	var/info = "Самая обыкновенная наклейка"
+	var/id_card_desc
 
 /obj/item/id_sticker/colored
 	name = "holographic ID sticker"
 	desc = "Голографическая наклейка на карту. Вы можете выбрать цвет который она примет."
 	icon_state = "colored"
-	info = "На ней голо-наклейка."
 	var/static/list/color_list = list(
 		"Красный" = LIGHT_COLOR_INTENSE_RED,
 		"Зелёный" = LIGHT_COLOR_GREEN,
@@ -117,138 +123,131 @@
 /obj/item/id_sticker/donut
 	name = "donut ID sticker"
 	icon_state = "donut"
-	info = "На ней пончиковая наклейка. С глазурью!"
+	id_card_desc = "С глазурью!"
 
 /obj/item/id_sticker/silver
 	name = "silver ID sticker"
 	icon_state = "silver"
-	info = "На ней серебрянная наклейка."
 
 /obj/item/id_sticker/colored/silver
 	name = "silver holographic ID sticker"
 	desc = "Голографическая наклейка на карту, изготовленная из специального материала, похожего на серебро. Вы можете выбрать цвет который она примет."
 	icon_state = "colored_shiny"
-	info = "На ней серебряная голо-наклейка."
 
 /obj/item/id_sticker/gold
 	name = "gold ID sticker"
 	desc = "Можно продать какому-то дураку за баснословные деньги. Ой..."
 	icon_state = "gold"
-	info = "На ней золотая наклейка."
 
 /obj/item/id_sticker/business
 	name = "businessman ID sticker"
 	desc = "Осталось раздобыть портмоне и стильный костюм."
 	icon_state = "business"
-	info = "На ней бизнесменская наклейка."
 
 /obj/item/id_sticker/lifetime
 	name = "stylish ID sticker"
 	desc = "Ничего особенного, но что-то в этом есть..."
 	icon_state = "lifetime"
-	info = "На ней стильная наклейка."
 
 /obj/item/id_sticker/ussp
 	name = "communistic ID sticker"
 	desc = "Партия гордится вами! Возьмите своя миска-рис в ближайшем баре."
 	icon_state = "ussp"
-	info = "На ней коммунистическая наклейка."
 
 /obj/item/id_sticker/clown
 	name = "clownish ID sticker"
 	desc = "HONK!"
 	icon_state = "clown"
-	info = "На ней клоунская наклейка. HONK!"
+	id_card_desc = "HONK!"
 
 /obj/item/id_sticker/neon
 	name = "neon ID sticker"
 	desc = "Неоновая наклейка в цианово-розовых цветах."
 	icon_state = "neon"
-	info = "Кажется будто она светится."
+	id_card_desc = "Кажется будто она светится."
 
 /obj/item/id_sticker/colored/neon
 	name = "neon holographic ID sticker"
 	desc = "Какая же она яркая... Ещё и цвета меняет!"
 	icon_state = "colored_neon"
-	info = "Кажется будто она светится."
+	id_card_desc = "Кажется будто она светится."
 
 /obj/item/id_sticker/missing
 	name = "black-and-pink ID sticker"
 	desc = "Текстура пропала..."
 	icon_state = "missing"
-	info = "А где?"
+	id_card_desc = "А где?"
 
 /obj/item/id_sticker/ouija
 	name = "Ouija ID sticker"
 	desc = "Ходят легенты, что тот кто наклеит это на карту, может общаться с духами..."
 	icon_state = "ouija"
-	info = "Умеет ли он общаться с призраками?"
+	id_card_desc = "Умеет ли он общаться с призраками?"
 
 /obj/item/id_sticker/paradise
 	name = "beach ID sticker"
 	desc = "Хола!"
 	icon_state = "paradise"
-	info = "На ней пляжная наклейка."
 
 /obj/item/id_sticker/rainbow
 	name = "rainbow ID sticker"
 	desc = "Переливается всеми цветами радуги!"
 	icon_state = "rainbow"
-	info = "На ней радужная наклейка. Одобряемо."
+	id_card_desc = "Одобряемо."
 
 /obj/item/id_sticker/space
 	name = "SPACE ID sticker"
 	desc = "Яркая, блестящая и бескрайняя. Прямо как хозяин карты на которую её приклеят."
 	icon_state = "space"
-	info = "Есть 3 вещи на которые можно смотреть вечно. Это четвёртая."
+	id_card_desc = "Есть 3 вещи на которые можно смотреть вечно. Это четвёртая."
 
 /obj/item/id_sticker/kitty
 	name = "cat ID sticker"
 	desc = "Прекрасная наклейка, которая делает вашу карту похожей на котика. UwU."
 	icon_state = "kitty"
-	info = "Так и хочется погладить, жаль это всего-лишь наклейка..."
+	id_card_desc = "Так и хочется погладить, жаль это всего-лишь наклейка..."
 
 /obj/item/id_sticker/colored/kitty
 	name = "cat holographic ID sticker"
 	desc = "Прекрасная наклейка, которая делает вашу карту похожей на котика. Эта может менять цвет."
 	icon_state = "colored_kitty"
-	info = "Так и хочется погладить, жаль это всего-лишь наклейка..."
+	id_card_desc = "Так и хочется погладить, жаль это всего-лишь наклейка..."
 
 /obj/item/id_sticker/cursedmiku
 	name = "anime ID sticker"
 	desc = "Kawaii!!!"
 	icon_state = "cursedmiku"
-	info = "На ней анимешная наклейка. AYAYA!"
+	id_card_desc = "AYAYA!"
 
 /obj/item/id_sticker/colored/snake
 	name = "running ID sticker"
 	desc = "Она что-то загружает?"
 	icon_state = "snake"
-	info = "Бегает и бегает..."
+	id_card_desc = "Бегает и бегает..."
 
 /obj/item/id_sticker/magic
 	name = "magical ID sticker"
 	desc = "EI NATH!"
 	icon_state = "magic"
-	info = "Кто-то до сих пор девственник..."
+	id_card_desc = "Кто-то до сих пор девственник..."
 
 /obj/item/id_sticker/terminal
 	name = "terminal ID sticker"
 	desc = "HACKERMAN."
 	icon_state = "terminal"
-	info = "Эта карта похожа на терминал."
+	id_card_desc = "Эта карта похожа на терминал."
 
 /obj/item/id_sticker/jokerge
 	name = "jokerge ID sticker"
 	desc = "Jokerge."
 	icon_state = "jokerge"
-	info = "Jokerge."
+	id_card_desc = "Jokerge."
 
 /obj/item/id_sticker/boykisser
 	name = "boykisser ID sticker"
 	desc = "Наклеив её на карту, у вас с почти 100% вероятностью, появится желание целовать мальчиков."
 	icon_state = "boykisser"
-	info = "Он любит целовать мальчиков."
+	id_card_desc = "Он любит целовать мальчиков."
 
 /datum/supply_pack/misc/id_stickers
 	name = "ID stickers"
