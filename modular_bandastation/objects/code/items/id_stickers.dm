@@ -95,8 +95,8 @@
 		"Голубой" = LIGHT_COLOR_LIGHT_CYAN,
 		"Циановый" = LIGHT_COLOR_CYAN,
 		"Аквамариновый" = LIGHT_COLOR_BLUEGREEN,
-		"Розовый" = LIGHT_COLOR_PINK)
-
+		"Розовый" = LIGHT_COLOR_PINK
+	)
 /obj/item/id_sticker/colored/Initialize(mapload)
 	. = ..()
 	if(color)
