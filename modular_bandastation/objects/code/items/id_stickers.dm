@@ -2,9 +2,9 @@
 	var/obj/item/id_sticker/applied_sticker = null
 	var/mutable_appearance/card_sticker
 
-/obj/item/card/id/advanced/attackby(obj/item/attacking_item, mob/user, params)
+/obj/item/card/id/advanced/item_interaction(mob/living/user, obj/item/tool, list/modifiers)
 	. = ..()
-	if(!istype(attacking_item, /obj/item/id_sticker))
+	if(!istype(tool, /obj/item/id_sticker))
 		return .
 
 	if(applied_sticker)
@@ -14,7 +14,7 @@
 	to_chat(user, span_notice("Вы начинаете наносить наклейку на ID карту."))
 	if(!do_after(user, 2 SECONDS, src, progress = TRUE))
 		return
-	apply_sticker(user, attacking_item)
+	apply_sticker(user, tool)
 
 /obj/item/card/id/advanced/examine_more(mob/user)
 	. = ..()
