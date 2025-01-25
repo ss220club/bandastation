@@ -6,7 +6,7 @@
 	icon_state = "garrot_wrap"
 	var/mob/living/carbon/human/strangling
 	var/improvised = FALSE
-	var/garrote_time
+	COOLDOWN_DECLARE(garrote_cooldown)
 
 /obj/item/melee/garrote/Initialize(mapload)
 	. = ..()
@@ -38,64 +38,67 @@
 /obj/item/melee/garrote/proc/wield(obj/item/source, mob/living/carbon/user)
 	if(!strangling)
 		return
-	user.visible_message("<span class='notice'>[user] removes [src] from [strangling]'s neck.</span>",
-			"<span class='warning'>You remove [src] from [strangling]'s neck.</span>")
+	user.visible_message(
+		span_notice("[user] removes [src] from [strangling]'s neck."),
+		span_warning("You remove [src] from [strangling]'s neck.")
+	)
 
 	strangling = null
 	update_icon(UPDATE_ICON_STATE)
 	STOP_PROCESSING(SSobj, src)
 
 
-/obj/item/melee/garrote/attack(mob/living/carbon/M as mob, mob/living/user as mob)
-	if(garrote_time > world.time) // Cooldown
+
+/obj/item/melee/garrote/attack(mob/living/carbon/human/target, mob/living/carbon/user)
+	if(!COOLDOWN_FINISHED(src, garrote_cooldown)) // Cooldown
 		return
 	if(!ishuman(user)) // spap_hand is a proc of /mob/living, user is simply /mob
 		return
-	var/mob/living/carbon/human/U = user
-
 	if(!HAS_TRAIT(src, TRAIT_WIELDED))
-		to_chat(user, "<span class = 'warning'>You must use both hands to garrote [M]!</span>")
+		to_chat(user, span_warning("You must use both hands to garrote [target]!"))
 		return
-	if(!ishuman(M))
-		to_chat(user, "<span class = 'warning'>You don't think that garroting [M] would be very effective...</span>")
+	if(!ishuman(target))
+		to_chat(user, span_warning("You don't think that garroting [target] would be very effective..."))
 		return
-	if(!check_behind(U, M) && !HAS_TRAIT(M, TRAIT_INCAPACITATED))
-		to_chat(user, "<span class='warning'>You cannot use [src] on [M] from that angle!</span>")
+	if(!check_behind(user, target) && !HAS_TRAIT(target, TRAIT_INCAPACITATED))
+		to_chat(user, span_warning("You cannot use [src] on [target] from that angle!"))
 		return
-	if(improvised && ((M.head && (M.head.flags_cover & HEADCOVERSMOUTH)) || (M.wear_mask && (M.wear_mask.flags_cover & MASKCOVERSMOUTH)))) // Improvised garrotes are blocked by mouth-covering items.
-		to_chat(user, "<span class = 'warning'>[M]'s neck is blocked by something [M.p_theyre()] wearing!</span>")
-	if(strangling && strangling != M)
-		to_chat(user, "<span class = 'warning'>You cannot use [src] on two people at once!</span>")
+	if(improvised && ((target.head && (target.head.flags_cover & HEADCOVERSMOUTH)) || (target.wear_mask && (target.wear_mask.flags_cover & MASKCOVERSMOUTH)))) // Improvised garrotes are blocked by mouth-covering items.
+		to_chat(user, span_warning("[target]'s neck is blocked by something [target.p_theyre()] wearing!"))
+	if(strangling && strangling != target)
+		to_chat(user, span_warning("You cannot use [src] on two people at once!"))
 		return
 	if(user.grab_state == GRAB_KILL)
 		return
 
 	if(user.grab_state < 1)
-		M.grabbedby(U, TRUE)
+		target.grabbedby(user, TRUE)
 		if(improvised)
-			U.setGrabState(GRAB_NECK)
+			user.setGrabState(GRAB_AGGRESSIVE)
 		else
-			U.setGrabState(GRAB_KILL)
+			user.setGrabState(GRAB_NECK)
 	else
 		if(user.grab_state != GRAB_KILL)
-			U.setGrabState(user.grab_state + 1)
+			user.setGrabState(user.grab_state + 1)
+	if(!strangling)
+		playsound(loc, 'sound/items/weapons/cablecuff.ogg', 15, TRUE, -10, ignore_walls = FALSE)
 
 	if(improvised) // Improvised garrotes start you off with a passive grab, but will lock you in place. A quick stun to drop items but not to make it unescapable
-		M.Stun(1 SECONDS)
-		M.Immobilize(2 SECONDS)
+		target.Stun(1 SECONDS)
+		//target.Immobilize(2 SECONDS)
 	else
-		M.adjust_silence(2 SECONDS)
-	M.dir = user.dir
-	garrote_time = world.time + 10
+		target.adjust_silence(2 SECONDS)
+	target.dir = user.dir
+	COOLDOWN_START(src, garrote_cooldown, 6 SECONDS)
 	START_PROCESSING(SSobj, src)
-	strangling = M
+	strangling = target
 	update_icon(UPDATE_ICON_STATE)
 
-	playsound(loc, 'sound/items/weapons/cablecuff.ogg', 15, TRUE, -10, ignore_walls = FALSE)
-
-	M.visible_message("<span class='danger'>[U] comes from behind and begins garroting [M] with [src]!</span>", \
-				"<span class='userdanger'>[U] begins garroting you with [src]![improvised ? "" : " You are unable to speak!"]</span>", \
-				"You hear struggling and wire strain against flesh!")
+	target.visible_message(
+		span_danger("[user] comes from behind and begins garroting [target] with [src]!"), \
+		span_userdanger("[user] begins garroting you with [src]![improvised ? "" : " You are unable to speak!"]"), \
+		"You hear struggling and wire strain against flesh!"
+	)
 	return
 
 /obj/item/melee/garrote/process()
@@ -115,22 +118,16 @@
 	var/mob/living/carbon/human/user = loc
 	strangling.dir = user.dir
 
-	if(user.grab_state < 1)
-		user.visible_message("<span class='warning'>[user] loses [user.p_their()] grip on [strangling]'s neck.</span>", \
-				"<span class='warning'>You lose your grip on [strangling]'s neck.</span>")
+	if(user.grab_state < 1 || !HAS_TRAIT(src, TRAIT_WIELDED))
+		user.visible_message(
+			span_warning("[user] loses [user.p_their()] grip on [strangling]'s neck."), \
+			span_warning("You lose your grip on [strangling]'s neck.")
+		)
 
 		strangling = null
 		update_icon(UPDATE_ICON_STATE)
 		STOP_PROCESSING(SSobj, src)
 
-		return
-	if(!HAS_TRAIT(src, TRAIT_WIELDED))
-		user.visible_message("<span class='warning'>[user] loses [user.p_their()] grip on [strangling]'s neck.</span>", \
-				"<span class='warning'>You lose your grip on [strangling]'s neck.</span>")
-		user.setGrabState(0)
-		strangling = null
-		update_icon(UPDATE_ICON_STATE)
-		STOP_PROCESSING(SSobj, src)
 		return
 
 	if(user.grab_state < GRAB_NECK) // Only possible with improvised garrotes, essentially this will stun people as if they were aggressively grabbed. Allows for resisting out if you're quick, but not running away.
