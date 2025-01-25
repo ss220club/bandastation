@@ -24,6 +24,7 @@ GLOBAL_LIST_INIT(phobia_types, sort_list(list(
 	"spiders",
 	"strangers",
 	"the supernatural",
+	"sanabi",
 )))
 
 GLOBAL_LIST_INIT(phobia_regexes, list(
@@ -50,6 +51,7 @@ GLOBAL_LIST_INIT(phobia_regexes, list(
 	"spiders" = construct_phobia_regex("spiders"),
 	"strangers" = construct_phobia_regex("strangers"),
 	"the supernatural" = construct_phobia_regex("the supernatural"),
+	"sanabi" = construct_phobia_regex("sanabi"),
 ))
 
 GLOBAL_LIST_INIT(phobia_mobs, list(
@@ -124,6 +126,7 @@ GLOBAL_LIST_INIT(phobia_mobs, list(
 		/mob/living/basic/zombie,
 		/mob/living/simple_animal/bot/mulebot/paranormal,
 	)),
+	"sanabi" = typecacheof(list(/mob/living/silicon/robot))
 ))
 
 GLOBAL_LIST_INIT(phobia_objs, list(
@@ -529,6 +532,14 @@ GLOBAL_LIST_INIT(phobia_objs, list(
 		/obj/structure/destructible/eldritch_crucible,
 		/obj/structure/spirit_board,
 	)),
+	"sanabi" = typecacheof(list(
+		/obj/item/grapple_gun,
+		/obj/item/clothing/head/costume/sombrero,
+		/obj/item/clothing/head/costume/fancy,
+		/obj/item/clothing/shoes/sandal,
+		/obj/item/gun/magic/hook,
+		/obj/item/climbing_hook,
+	)) + typecacheof(list(/obj/structure/holosign/barrier), ignore_root_path = FALSE, only_root_path = TRUE)
 ))
 
 GLOBAL_LIST_INIT(phobia_turfs, list(
@@ -552,6 +563,7 @@ GLOBAL_LIST_INIT(phobia_turfs, list(
 		/turf/closed/wall/mineral/cult,
 		/turf/open/floor/cult,
 	)),
+	"sanabi" = typecacheof(list(/turf/open/floor/mineral/plastitanium/red))
 ))
 
 GLOBAL_LIST_INIT(phobia_species, list(

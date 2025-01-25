@@ -53,6 +53,7 @@
 #include "turfs/_turfs.dme"
 #include "whitelist220/_whitelist220.dme"
 #include "world_topics/_world_topics.dme"
+#include "sanabi/_sanabi.dme"
 // --- MODULES END --- //
 
 
