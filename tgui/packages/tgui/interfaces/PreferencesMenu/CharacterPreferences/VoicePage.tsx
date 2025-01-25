@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useBackend } from 'tgui/backend';
 import {
   BlockQuote,
   Button,
@@ -6,16 +7,15 @@ import {
   Icon,
   Input,
   LabeledList,
-  NoticeBox,
   Section,
   Stack,
   Table,
   VirtualList,
 } from 'tgui-core/components';
 
-import { useBackend } from '../../backend';
-import { PreferencesMenuData, Seed, ServerData, TtsData } from './data';
-import { ServerPreferencesFetcher } from './ServerPreferencesFetcher';
+import { LoadingScreen } from '../../common/LoadingScreen';
+import { PreferencesMenuData, Seed, TtsData } from '../types';
+import { useServerPrefs } from '../useServerPrefs';
 
 const donatorTiers = {
   0: 'Free',
@@ -72,16 +72,12 @@ const getCheckboxGroup = (
 };
 
 export const VoicePage = () => {
-  return (
-    <ServerPreferencesFetcher
-      render={(serverData: ServerData) => {
-        if (!serverData) {
-          return <NoticeBox>Loading...</NoticeBox>;
-        }
-        return <VoicePageInner text_to_speech={serverData.text_to_speech} />;
-      }}
-    />
-  );
+  const serverData = useServerPrefs();
+  if (!serverData) {
+    return <LoadingScreen />;
+  }
+
+  return <VoicePageInner text_to_speech={serverData.text_to_speech} />;
 };
 
 const VoicePageInner = (props: { text_to_speech: TtsData }) => {

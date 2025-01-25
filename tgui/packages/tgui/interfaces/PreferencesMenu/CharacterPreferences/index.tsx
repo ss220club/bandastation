@@ -5,13 +5,13 @@ import { exhaustiveCheck } from 'tgui-core/exhaustive';
 
 import { PageButton } from '../components/PageButton';
 import { PreferencesMenuData } from '../types';
-import { VoicePage } from '../VoicePage'; // BANDASTATION ADD - TTS
 import { AntagsPage } from './AntagsPage';
 import { JobsPage } from './JobsPage';
 import { LoadoutPage } from './loadout';
 import { MainPage } from './MainPage';
 import { QuirksPage } from './QuirksPage';
 import { SpeciesPage } from './SpeciesPage';
+import { VoicePage } from './VoicePage'; // BANDASTATION ADD - TTS
 
 enum Page {
   Antags,
