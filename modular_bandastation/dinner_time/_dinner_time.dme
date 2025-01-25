@@ -1,0 +1,5 @@
+#include "_dinner_time.dm"
+
+#include "code/dinner_influence.dm"
+#include "code/dinner_mood_events.dm"
+#include "code/dinner.dm"
