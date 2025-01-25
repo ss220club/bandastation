@@ -21,3 +21,9 @@ GLOBAL_VAR_INIT(blob_expand_cost, 4)
 		GLOB.blob_expand_cost = 8
 	else
 		GLOB.blob_expand_cost = 4
+
+/datum/action/innate/blobpop/Activate(timer_activated = FALSE)
+	if(!main_station_floor(usr))
+		if(tgui_alert(usr, "Вы находитесь не на основном этаже станции. Появление приведёт к накладыванию дебаффа. Вы уверены?", "Появление Блоба", list("Да", "Нет")) != "Да")
+			return
+	return ..()
