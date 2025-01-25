@@ -5,15 +5,15 @@
 /obj/item/card/id/advanced/item_interaction(mob/living/user, obj/item/tool, list/modifiers)
 	. = ..()
 	if(!istype(tool, /obj/item/id_sticker))
-		return .
+		return NONE
 
 	if(applied_sticker)
 		to_chat(user, span_warning("На ID карте уже есть наклейка, сначала снимите её!"))
-		return
+		return ITEM_INTERACT_BLOCKING
 
 	to_chat(user, span_notice("Вы начинаете наносить наклейку на ID карту."))
 	if(!do_after(user, 2 SECONDS, src, progress = TRUE))
-		return
+		return ITEM_INTERACT_BLOCKING
 	apply_sticker(user, tool)
 
 /obj/item/card/id/advanced/examine(mob/user)
