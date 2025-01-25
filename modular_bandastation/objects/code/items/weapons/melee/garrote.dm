@@ -56,7 +56,7 @@
 	if(!HAS_TRAIT(src, TRAIT_WIELDED))
 		to_chat(user, "<span class = 'warning'>You must use both hands to garrote [M]!</span>")
 		return
-	if(!ishuman(M))
+	if(!istype(target))
 		to_chat(user, "<span class = 'warning'>You don't think that garroting [M] would be very effective...</span>")
 		return
 	if(!check_behind(U, M) && !HAS_TRAIT(M, TRAIT_INCAPACITATED))
