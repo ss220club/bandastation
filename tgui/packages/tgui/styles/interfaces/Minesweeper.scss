@@ -2,16 +2,22 @@
 @use '../functions.scss' as *;
 
 .Minesweeper__closed {
+  cursor: pointer;
   vertical-align: middle;
-  background-color: lighten(base.$color-bg, 20%);
-  border: base.em(2px) outset lighten(base.$color-bg, 80%);
+  border: base.em(2px) outset rgba(125, 125, 125, 0.5) !important;
+  outline: none !important;
+
+  &:hover {
+    border-color: rgba(255, 255, 255, 0.1);
+  }
 }
 
 .Minesweeper__open {
+  pointer-events: none;
   vertical-align: middle;
   text-align: center;
   font-size: medium;
-  background-color: lighten(base.$color-bg, 50%) !important;
+  outline: none !important;
 }
 
 .Minesweeper__list {
@@ -27,14 +33,14 @@
 
     &:hover,
     &:focus {
-      background-color: rgba(base.$color-bg, 1);
+      background-color: base.$color-bg;
     }
   }
 }
 
 .Minesweeper__infobox {
   max-height: 8em;
-  border: base.em(3px) outset lighten(base.$color-bg, 25%);
+  border: base.em(3px) outset rgba(125, 125, 125, 0.5);
   user-select: none;
   -ms-user-select: none; // Remove with Byond 516 release
 }

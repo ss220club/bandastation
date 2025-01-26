@@ -75,7 +75,6 @@ export const MinesweeperWindow = (props) => {
       <Stack.Item>
         <Button
           fluid
-          translucent
           fontSize={2}
           lineHeight={1.75}
           icon={currentWindow === 'Game' ? 'book' : 'gamepad'}
@@ -128,7 +127,6 @@ export const MineSweeperGame = (props) => {
                     : 'Minesweeper__closed'
                 }
                 bold
-                color="transparent"
                 icon={
                   matrix[i][j].open
                     ? matrix[i][j].bomb
@@ -163,14 +161,18 @@ export const MineSweeperGame = (props) => {
           </Box>
         ))}
       </Stack.Item>
-      <Stack.Item grow className="Minesweeper__infobox">
-        <Stack vertical textAlign="left" pt={1}>
-          <Stack.Item pl={2} fontSize={2}>
-            <Icon name="bomb" color="gray" /> : {bombs}
-          </Stack.Item>
-          <Stack.Divider />
-          <Stack.Item pl={2} fontSize={2}>
-            <Icon name="flag" color="red" /> : {flags}
+      <Stack.Item grow>
+        <Stack vertical>
+          <Stack.Item grow className="Minesweeper__infobox">
+            <Stack vertical textAlign="left" pt={1}>
+              <Stack.Item pl={2} fontSize={2}>
+                <Icon name="bomb" color="gray" width={2} /> : {bombs}
+              </Stack.Item>
+              <Stack.Divider />
+              <Stack.Item pl={2} pb={1} fontSize={2}>
+                <Icon name="flag" color="red" width={2} /> : {flags}
+              </Stack.Item>
+            </Stack>
           </Stack.Item>
           <Stack.Item>
             <Button
