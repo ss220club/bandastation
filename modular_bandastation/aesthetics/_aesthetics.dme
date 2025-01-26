@@ -16,6 +16,7 @@
 #include "clothing/centcom/code/suits/wintercoats.dm"
 #include "clothing/centcom/code/under/centcom.dm"
 #include "disposal/code/disposal.dm"
+#include "dresser/code/dresser.dm"
 #include "extinguisher/code/extinguisher.dm"
 #include "firealarm/code/firealarm.dm"
 #include "floors/code/floors.dm"
