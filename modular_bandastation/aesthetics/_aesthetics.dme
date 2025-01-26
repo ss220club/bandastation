@@ -25,6 +25,7 @@
 #include "lightswitch/code/lightswitch.dm"
 #include "radio/code/radio.dm"
 #include "railings/code/railings.dm"
+#include "soap/code/soap.dm"
 #include "supply_pods/code/supply_pods.dm"
 #include "vending/code/vending.dm"
 #include "walls/code/rocks.dm"
