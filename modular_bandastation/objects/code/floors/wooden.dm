@@ -96,8 +96,9 @@
 /turf/open/floor/wood
 	icon = 'modular_bandastation/objects/icons/turf/wooden/wooden.dmi'
 	icon_state = "wood"
+	damaged_dmi = 'modular_bandastation/objects/icons/turf/wooden/wooden.dmi'
 	color = COLOR_WOOD
-	appearance_flags = KEEP_APART | RESET_COLOR
+	appearance_flags = RESET_COLOR | KEEP_APART
 
 /turf/open/floor/wood/broken_states()
 	return list("wood-broken", "wood-broken2", "wood-broken3", "wood-broken4", "wood-broken5", "wood-broken6", "wood-broken7")
