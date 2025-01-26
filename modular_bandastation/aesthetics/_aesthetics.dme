@@ -27,6 +27,7 @@
 #include "rack/code/rack.dm"
 #include "radio/code/radio.dm"
 #include "railings/code/railings.dm"
+#include "smes/code/smes.dm"
 #include "soap/code/soap.dm"
 #include "supply_pods/code/supply_pods.dm"
 #include "vending/code/vending.dm"
