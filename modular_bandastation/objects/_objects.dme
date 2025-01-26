@@ -5,6 +5,8 @@
 #include "code/effects/decal.dm"
 #include "code/effects/turf_decal.dm"
 
+#include "code/floors/wooden.dm"
+
 #include "code/greyscale/config_types/greyscale_clothes.dm"
 
 #include "code/items/banners.dm"
