@@ -23,3 +23,14 @@
 /obj/item/clothing/shoes/shark/light
 	name = "light shark shoes"
 	icon_state = "shark_light"
+
+/obj/item/clothing/shoes/sandal/syndie
+	name = "Сандали"
+	desc = "Специальный сандали синдиката™. Их разработали специально что-бы дойти до конца."
+	icon = 'modular_bandastation/objects/icons/obj/clothing/sandali.dmi'
+	icon_state = "sandali"
+	righthand_file = 'modular_bandastation/objects/icons/mob/inhands/clothing/shoes_righthand.dmi'
+	lefthand_file = 'modular_bandastation/objects/icons/mob/inhands/clothing/shoes_lefthand.dmi'
+	inhand_icon_state = "sandali"
+	worn_icon = 'modular_bandastation/objects/icons/mob/clothing/sandali.dmi'
+
