@@ -17,10 +17,12 @@
 	products += list(
 		/obj/item/clothing/head/cowboy/security = 3,
 		/obj/item/clothing/head/soft/sec/corporate = 3,
+		/obj/item/clothing/head/sec_beanie = 3,
 		/obj/item/clothing/neck/cloak/sec_poncho = 3,
 		/obj/item/clothing/under/rank/security/officer/corporate = 3,
 		/obj/item/clothing/under/rank/security/officer/skirt/corporate = 3,
 		/obj/item/clothing/suit/armor/vest/bomber = 3,
 		/obj/item/clothing/suit/armor/vest/coat = 3,
+		/obj/item/clothing/suit/armor/vest/caftan = 3,
 		)
 	. = ..()

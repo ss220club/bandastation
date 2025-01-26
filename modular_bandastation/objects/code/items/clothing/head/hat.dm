@@ -99,3 +99,12 @@
 	icon_state = "cowboy_sec"
 	worn_icon_state = "cowboy_sec"
 	armor_type = /datum/armor/cosmetic_sec
+
+/obj/item/clothing/head/sec_beanie
+	name = "security beanie"
+	desc = "Мягкая и бронированная берендейка, которая меняет свой порядок."
+	icon = 'modular_bandastation/objects/icons/obj/clothing/head/hats.dmi'
+	worn_icon = 'modular_bandastation/objects/icons/mob/clothing/head/hats.dmi'
+	icon_state = "secbeanie"
+	worn_icon_state = "secbeanie"
+	armor_type = /datum/armor/cosmetic_sec

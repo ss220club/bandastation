@@ -56,3 +56,10 @@
 	icon_state = "secgreatcoat"
 	icon = 'modular_bandastation/objects/icons/obj/clothing/suits/amor.dmi'
 	worn_icon = 'modular_bandastation/objects/icons/mob/clothing/suits/armor.dmi'
+
+/obj/item/clothing/suit/armor/vest/caftan
+	name = "security caftan"
+	desc = "Это длинный и довольно удобный наряд, плотно сидящий на плечах. Выглядит так, как будто он создан в трудные времена."
+	icon_state = "seccaftan"
+	icon = 'modular_bandastation/objects/icons/obj/clothing/suits/amor.dmi'
+	worn_icon = 'modular_bandastation/objects/icons/mob/clothing/suits/armor.dmi'
