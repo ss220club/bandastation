@@ -101,6 +101,7 @@ GLOBAL_LIST_INIT(dye_registry, list(
 		DYE_CMO = /obj/item/clothing/shoes/sneakers/brown,
 		DYE_SYNDICATE = /obj/item/clothing/shoes/combat,
 		DYE_CENTCOM = /obj/item/clothing/shoes/combat
+		DYE_SANABIC = /obj/item/clothing/shoes/sandal/sandali
 	),
 	DYE_REGISTRY_FANNYPACK = list(
 		DYE_RED = /obj/item/storage/belt/fannypack/red,
