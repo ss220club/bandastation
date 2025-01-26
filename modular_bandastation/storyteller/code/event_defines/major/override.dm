@@ -17,16 +17,6 @@
 	event_group = /datum/event_group/meteors
 	eng_required_power = 3
 
-/datum/round_event_control/anomaly/anomaly_vortex
-	track = EVENT_TRACK_MAJOR
-	tags = list(TAG_DESTRUCTIVE)
-	rnd_required_power = 3
-
-/datum/round_event_control/anomaly/anomaly_pyro
-	track = EVENT_TRACK_MAJOR
-	tags = list(TAG_DESTRUCTIVE)
-	rnd_required_power = 3
-
 /datum/round_event_control/revenant
 	min_players = 20
 	track = EVENT_TRACK_MAJOR
@@ -66,13 +56,6 @@
 	track = EVENT_TRACK_MAJOR
 	tags = list(TAG_COMBAT)
 	event_group = /datum/event_group/guests
-
-/datum/round_event_control/spacevine
-	track = EVENT_TRACK_MAJOR
-	tags = list(TAG_COMBAT, TAG_DESTRUCTIVE, TAG_ALIEN)
-	checks_antag_cap = TRUE
-	event_group = /datum/event_group/guests
-	med_required_power = 2
 
 /datum/round_event_control/morph
 	track = EVENT_TRACK_MAJOR
