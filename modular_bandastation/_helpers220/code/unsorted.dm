@@ -1,14 +1,23 @@
-/// List to store information about Z-levels and their association with maps
+/**
+ * Contains maps with more than one floor
+ * Sets the ‘main’ floor for the station
+ * The floor in the list matches the floor in the StrongDMM
+ */
 var/static/list/map_to_main_floor = list(
 	"Cyberiad" = 2,
 	"Ice Box Station" = 3,
-	"DeltaStation" = 1,
-	"MetaStation" = 1,
+	"NebulaStation" = 2,
+	"Tramstation" = 2,
+	"Wawastation" = 1
 )
 
 /// Procedure to check if the current Z-level is the "main" station floor
 /proc/main_station_floor(atom/target)
 	var/current_map_name = SSmapping.current_map.map_name
+
+	// Skip the check and return TRUE if there is no additional floors on map
+	if(isnull(map_to_main_floor[current_map_name]))
+		return TRUE
 
 	// Check if the current map exists in the list
 	if(current_map_name in map_to_main_floor)
