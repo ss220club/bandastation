@@ -160,12 +160,12 @@
 /datum/round_event_control/antagonist/solo/return_failure_string(players_amt)
 	. =..()
 	if(istype(src, /datum/round_event_control/antagonist/solo/from_ghosts/nuclear_operative))
-		var/antag_amt = get_antag_count_to_spawn()
 		var/list/candidates = get_candidates() //we should optimize this
-		if((length(candidates) < antag_amt) || !antag_amt)
+		var/ghost_event = ispath(typepath, /datum/round_event/antagonist/solo/ghost) || ispath(typepath, /datum/round_event/ghost_role)
+		if((length(candidates) < base_antags))
 			if(.)
 				. += ", "
-			. += "Not Enough Candidates!"
+			. += get_antag_count_to_spawn() ? "Not Enough [ghost_event ? "ghost" : ""] candidates!" : "No empty antag-slots"
 
 		return .
 

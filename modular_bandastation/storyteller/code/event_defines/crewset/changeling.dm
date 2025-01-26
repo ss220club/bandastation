@@ -29,6 +29,7 @@
 	roundstart = TRUE
 	earliest_start = 0
 	maximum_antags = 1
+	roundstart_cost = 24
 
 /datum/round_event_control/antagonist/solo/changeling/midround
 	name = "Genome Awakening (Changelings)"

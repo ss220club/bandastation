@@ -38,6 +38,7 @@
 	name = "Heretics"
 	roundstart = TRUE
 	earliest_start = 0
+	roundstart_cost = 12
 
 /datum/round_event_control/antagonist/solo/heretic/midround
 	name = "Midround Heretics"
