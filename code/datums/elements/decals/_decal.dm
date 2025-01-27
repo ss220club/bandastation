@@ -134,7 +134,7 @@
 
 	// BANDASTATION ADDITION - GRAYSCALE WOODEN FLOORS - START
 	var/atom/atom_source = source
-	if(atom_source.type in typesof(/turf/open/floor/wood))
+	if(istype(atom_source, /turf/open/floor/wood))
 		pic.appearance_flags = RESET_COLOR | KEEP_APART
 	// BANDASTATION ADDITION - GRAYSCALE WOODEN FLOORS - END
 	overlay_list += pic
