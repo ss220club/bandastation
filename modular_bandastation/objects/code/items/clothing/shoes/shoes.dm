@@ -26,7 +26,7 @@
 
 
 /obj/item/clothing/shoes/sandal
-	dying_key = DYE_REGISTRY_SNEAKERS
+	dying_key = DYE_REGISTRY_SANDALS
 
 /obj/item/clothing/shoes/sandal/syndie
 	name = "sandals"

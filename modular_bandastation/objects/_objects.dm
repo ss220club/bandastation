@@ -25,7 +25,6 @@
 		GLOB.autodrobe_fancy_items \
 		+ GLOB.autodrobe_other_items
 	)
-	// В самом деле можно и так сделать
 	GLOB.dye_registry += list(
 		DYE_REGISTRY_SANDALS = list(
 			DYE_SYNDICATE = /obj/item/clothing/shoes/sandal/syndie)
