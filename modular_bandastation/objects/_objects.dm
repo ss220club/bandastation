@@ -26,26 +26,6 @@
 		GLOB.autodrobe_fancy_items \
 		+ GLOB.autodrobe_other_items
 	)
-	// |= отказался перезаписывать один только DYE_SYNDICATE, так что пришлось перезаписывать весь DYE_REGISTRY_SNEAKERS
-	GLOB.dye_registry["sneakers"] = list(
-			DYE_RED = /obj/item/clothing/shoes/sneakers/red,
-			DYE_ORANGE = /obj/item/clothing/shoes/sneakers/orange,
-			DYE_YELLOW = /obj/item/clothing/shoes/sneakers/yellow,
-			DYE_GREEN = /obj/item/clothing/shoes/sneakers/green,
-			DYE_BLUE = /obj/item/clothing/shoes/sneakers/blue,
-			DYE_PURPLE = /obj/item/clothing/shoes/sneakers/purple,
-			DYE_BLACK = /obj/item/clothing/shoes/sneakers/black,
-			DYE_WHITE = /obj/item/clothing/shoes/sneakers/white,
-			DYE_RAINBOW = /obj/item/clothing/shoes/sneakers/rainbow,
-			DYE_MIME = /obj/item/clothing/shoes/sneakers/black,
-			DYE_CLOWN = /obj/item/clothing/shoes/sneakers/rainbow,
-			DYE_QM = /obj/item/clothing/shoes/sneakers/brown,
-			DYE_CAPTAIN = /obj/item/clothing/shoes/sneakers/brown,
-			DYE_HOP = /obj/item/clothing/shoes/sneakers/brown,
-			DYE_CE = /obj/item/clothing/shoes/sneakers/brown,
-			DYE_RD = /obj/item/clothing/shoes/sneakers/brown,
-			DYE_CMO = /obj/item/clothing/shoes/sneakers/brown,
-			DYE_SYNDICATE = /obj/item/clothing/shoes/sandal/syndie,
-			DYE_CENTCOM = /obj/item/clothing/shoes/combat
-	)
+	// В самом деле можно и так сделать
+	GLOB.dye_registry["sneakers"]["syndicate"] = /obj/item/clothing/shoes/sandal/syndie
 
