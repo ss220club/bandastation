@@ -27,10 +27,10 @@
 /obj/item/clothing/shoes/sandal/syndie
 	name = "Сандали"
 	desc = "Специальный сандали синдиката™. Их разработали специально что-бы дойти до конца."
-	icon = 'modular_bandastation/objects/icons/obj/clothing/sandali.dmi'
-	icon_state = "sandali"
+	icon = 'modular_bandastation/objects/icons/mob/syndie_sandals.dmi'
+	icon_state = "syndie_sandals"
 	righthand_file = 'modular_bandastation/objects/icons/mob/inhands/clothing/shoes_righthand.dmi'
 	lefthand_file = 'modular_bandastation/objects/icons/mob/inhands/clothing/shoes_lefthand.dmi'
-	inhand_icon_state = "sandali"
-	worn_icon = 'modular_bandastation/objects/icons/mob/clothing/sandali.dmi'
+	inhand_icon_state = "syndie_sandals"
+	worn_icon = 'modular_bandastation/objects/icons/mob/clothing/syndie_sandals.dmi'
 
