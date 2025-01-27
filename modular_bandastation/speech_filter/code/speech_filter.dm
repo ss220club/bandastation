@@ -56,7 +56,17 @@
 	if(!fexists(BRAINROT_FILTER_FILE))
 		return
 
-	var/static/list/filters = json_load(BRAINROT_FILTER_FILE)["brainrot_filter"]
+	var/static/list/filters
+
+	if(!length(filters))
+		var/raw_filter = file2text(BRAINROT_FILTER_FILE)
+		if(raw_filter)
+			var/list/parsed_filter = safe_json_decode(raw_filter)
+			if(isnull(parsed_filter))
+				log_config("JSON parsing failure for [BRAINROT_FILTER_FILE]")
+			else
+				filters = parsed_filter["brainrot_filter"]
+
 	if(!length(filters))
 		return list()
 
