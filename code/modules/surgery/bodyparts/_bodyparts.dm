@@ -203,6 +203,9 @@
 	var/robotic_emp_paralyze_damage_percent_threshold = 0.3
 	/// A potential texturing overlay to put on the limb
 	var/datum/bodypart_overlay/texture/texture_bodypart_overlay
+	// BANDASTATION EDIT START
+	var/species_bodytype
+	// BANDASTATION EDIT STOP
 
 /obj/item/bodypart/apply_fantasy_bonuses(bonus)
 	. = ..()
@@ -235,6 +238,7 @@
 	if(!IS_ORGANIC_LIMB(src))
 		grind_results = null
 
+	ru_names_rename(ru_names_list("[limb_id] [parse_zone(body_zone)]", "[ru_parse_zone(body_zone, declent = NOMINATIVE)] ([limb_id])", "[ru_parse_zone(body_zone, declent = GENITIVE)] ([limb_id])", "[ru_parse_zone(body_zone, declent = DATIVE)] ([limb_id])", "[ru_parse_zone(body_zone, declent = ACCUSATIVE)] ([limb_id])", "[ru_parse_zone(body_zone, declent = INSTRUMENTAL)] ([limb_id])", "[ru_parse_zone(body_zone, declent = PREPOSITIONAL)] ([limb_id])", gender = FEMALE))
 	name = "[limb_id] [parse_zone(body_zone)]"
 	update_icon_dropped()
 	refresh_bleed_rate()

@@ -11,6 +11,7 @@ import { LoadoutPage } from './loadout';
 import { MainPage } from './MainPage';
 import { QuirksPage } from './QuirksPage';
 import { SpeciesPage } from './SpeciesPage';
+import { VoicePage } from './VoicePage'; // BANDASTATION ADD - TTS
 
 enum Page {
   Antags,
@@ -19,6 +20,7 @@ enum Page {
   Species,
   Quirks,
   Loadout,
+  Voice, // BANDASTATION EDIT ADD - TTS
 }
 
 type ProfileProps = {
@@ -82,6 +84,12 @@ export function CharacterPreferenceWindow(props) {
     case Page.Loadout:
       pageContents = <LoadoutPage />;
       break;
+
+    // BANDASTATION ADDITION START - TTS
+    case Page.Voice:
+      pageContents = <VoicePage />;
+      break;
+    // BANDASTATION ADDITION END - TTS
 
     default:
       exhaustiveCheck(currentPage);
@@ -162,10 +170,22 @@ export function CharacterPreferenceWindow(props) {
               Quirks
             </PageButton>
           </Stack.Item>
+
+          {Boolean(data.tts_enabled) && (
+            <Stack.Item grow>
+              <PageButton
+                currentPage={currentPage}
+                page={Page.Voice}
+                setPage={setCurrentPage}
+              >
+                Voice
+              </PageButton>
+            </Stack.Item>
+          )}
         </Stack>
       </Stack.Item>
       <Stack.Divider />
-      <Stack.Item>{pageContents}</Stack.Item>
+      <Stack.Item grow>{pageContents}</Stack.Item>
     </Stack>
   );
 }
