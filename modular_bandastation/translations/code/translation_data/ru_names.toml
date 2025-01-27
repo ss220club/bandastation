@@ -12289,8 +12289,8 @@ prepositional = "подсумке для материалов"
 
 ["sandals"]
 nominative = "сандали"
-genitive = "сандали"
-dative = "сандали"
+genitive = "сандалей"
+dative = "сандалям"
 accusative = "сандали"
 instrumental = "сандалями"
-prepositional = "сандали"
+prepositional = "сандалях"
