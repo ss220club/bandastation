@@ -79,5 +79,6 @@
 #include "code/structures/crates_lockers/closets/secure/lawyer.dm"
 #include "code/structures/crates_lockers/closets/secure/magistrate.dm"
 #include "code/structures/crates_lockers/closets/secure/nanotrasen_representative.dm"
+#include "code/structures/beds_chairs/bed.dm"
 
 #include "code/mecha/mecha.dm"
