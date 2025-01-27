@@ -112,21 +112,26 @@
 	tags = list(TAG_COMBAT, TAG_SPOOKY, TAG_SPACE)
 
 /datum/round_event_control/anomaly/anomaly_vortex
-	track = EVENT_TRACK_MAJOR
+	track = EVENT_TRACK_MODERATE
 	tags = list(TAG_DESTRUCTIVE)
 	rnd_required_power = 3
 	weight = 5
 
 /datum/round_event_control/anomaly/anomaly_pyro
-	track = EVENT_TRACK_MAJOR
+	track = EVENT_TRACK_MODERATE
 	tags = list(TAG_DESTRUCTIVE)
 	rnd_required_power = 3
 	weight = 5
 
 /datum/round_event_control/spacevine
-	track = EVENT_TRACK_MAJOR
+	track = EVENT_TRACK_MODERATE
 	tags = list(TAG_COMBAT, TAG_DESTRUCTIVE, TAG_ALIEN)
 	checks_antag_cap = TRUE
 	event_group = /datum/event_group/guests
 	med_required_power = 2
 	weight = 5
+
+/datum/round_event_control/abductor
+	track = EVENT_TRACK_MODERATE
+	tags = list(TAG_TARGETED, TAG_SPOOKY, TAG_EXTERNAL, TAG_ALIEN)
+	checks_antag_cap = TRUE

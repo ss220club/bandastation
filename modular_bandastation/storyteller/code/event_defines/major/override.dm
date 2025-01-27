@@ -22,11 +22,6 @@
 	track = EVENT_TRACK_MAJOR
 	tags = list(TAG_DESTRUCTIVE, TAG_SPOOKY)
 
-/datum/round_event_control/abductor
-	track = EVENT_TRACK_MAJOR
-	tags = list(TAG_TARGETED, TAG_SPOOKY, TAG_EXTERNAL, TAG_ALIEN)
-	checks_antag_cap = TRUE
-
 /datum/round_event_control/fugitives
 	track = EVENT_TRACK_MAJOR
 	tags = list(TAG_COMBAT)
