@@ -12286,3 +12286,11 @@ dative = "подсумку для материалов"
 accusative = "подсумок для материалов"
 instrumental = "подсумком для материалов"
 prepositional = "подсумке для материалов"
+
+["sandals"]
+nominative = "сандали"
+genitive = "сандали"
+dative = "сандали"
+accusative = "сандали"
+instrumental = "сандалями"
+prepositional = "сандали"

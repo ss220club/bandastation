@@ -25,8 +25,8 @@
 	icon_state = "shark_light"
 
 /obj/item/clothing/shoes/sandal/syndie
-	name = "Сандали"
-	desc = "Специальный сандали синдиката™. Их разработали специально что-бы дойти до конца."
+	name = "sandals"
+	desc = "Специальный сандали синдиката™. Уникальаня разработка, специально что-бы дойти до конца."
 	icon = 'modular_bandastation/objects/icons/obj/clothing/syndie_sandals.dmi'
 	icon_state = "syndie_sandals"
 	righthand_file = 'modular_bandastation/objects/icons/mob/inhands/clothing/shoes_righthand.dmi'
