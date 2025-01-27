@@ -305,6 +305,7 @@ const Product = (props) => {
           })
         : act('vend', {
             ref: product.ref,
+            discountless: !!product.premium,
           });
     },
   };
