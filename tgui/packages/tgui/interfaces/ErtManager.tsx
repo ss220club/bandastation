@@ -9,27 +9,39 @@ import {
   Stack,
   Tabs,
 } from 'tgui-core/components';
+import { BooleanLike } from 'tgui-core/react';
 import { decodeHtmlEntities } from 'tgui-core/string';
 
 import { useBackend } from '../backend';
 import { Window } from '../layouts';
 
-const PickTab = (index) => {
-  switch (index) {
-    case 0:
-      return <SendERT />;
-    case 1:
-      return <ReadERTRequests />;
-    case 2:
-      return <DenyERT />;
-    default:
-      return "SOMETHING WENT VERY WRONG PLEASE AHELP, WAIT YOU'RE AN ADMIN, OH FUUUUCK! call a coder or something";
-  }
+type Data = {
+  securityLevelColor: string;
+  securityLevel: string;
+  ertRequestAnswered: BooleanLike;
+
+  ertType: string;
+  commanderSlots: number;
+  securitySlots: number;
+  medicalSlots: number;
+  engineeringSlots: number;
+  paranormalSlots: number;
+  janitorSlots: number;
+  totalSlots: number;
+  ertSpawnpoints: number;
+
+  ertRequestMessages: MessageType[];
+};
+
+type MessageType = {
+  time: string;
+  sender_real_name: string;
+  sender_uid: string;
+  message: string;
 };
 
 export const ERTManager = (props) => {
-  const { act, data } = useBackend();
-
+  const { act, data } = useBackend<Data>();
   const [tabIndex, setTabIndex] = useState(0);
 
   return (
@@ -78,8 +90,21 @@ export const ERTManager = (props) => {
   );
 };
 
+const PickTab = (index) => {
+  switch (index) {
+    case 0:
+      return <SendERT />;
+    case 1:
+      return <ReadERTRequests />;
+    case 2:
+      return <DenyERT />;
+    default:
+      return "SOMETHING WENT VERY WRONG PLEASE AHELP, WAIT YOU'RE AN ADMIN, OH FUUUUCK! call a coder or something";
+  }
+};
+
 const ERTOverview = (props) => {
-  const { act, data } = useBackend();
+  const { act, data } = useBackend<Data>();
   const { securityLevelColor, securityLevel, ertRequestAnswered } = data;
 
   return (
@@ -108,8 +133,18 @@ const ERTOverview = (props) => {
 };
 
 const SendERT = (props) => {
-  const { act, data } = useBackend();
-  const { ertType } = data;
+  const { act, data } = useBackend<Data>();
+  const {
+    ertType,
+    commanderSlots,
+    securitySlots,
+    medicalSlots,
+    engineeringSlots,
+    paranormalSlots,
+    janitorSlots,
+    totalSlots,
+    ertSpawnpoints,
+  } = data;
   let slotOptions = [0, 1, 2, 3, 4, 5];
 
   return (
@@ -117,7 +152,7 @@ const SendERT = (props) => {
       <Section
         fill
         scrollable
-        title="Send ERT yeag"
+        title="Send ERT"
         buttons={
           <>
             <Button
@@ -223,9 +258,9 @@ const SendERT = (props) => {
               />
             ))}
           </LabeledList.Item>
-          <LabeledList.Item label="totalSlots Slots">
+          <LabeledList.Item label="Total Slots">
             <Box color={totalSlots > ertSpawnpoints ? 'red' : 'green'}>
-              {totalSlots} totalSlots, versus {ertSpawnpoints} ertSpawnpoints
+              {totalSlots} total, versus {ertSpawnpoints} spawnpoints
             </Box>
           </LabeledList.Item>
           <LabeledList.Item label="Dispatch">
@@ -244,7 +279,7 @@ const SendERT = (props) => {
 };
 
 const ReadERTRequests = (props) => {
-  const { act, data } = useBackend();
+  const { act, data } = useBackend<Data>();
 
   const { ertRequestMessages } = data;
 

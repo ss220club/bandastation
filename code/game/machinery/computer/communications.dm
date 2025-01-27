@@ -311,6 +311,12 @@
 			if (!COOLDOWN_FINISHED(src, important_action_cooldown))
 				return
 			var/reason = trim(html_encode(params["reason"]), MAX_MESSAGE_LEN)
+			var/insert_this = list(list(
+				"time" = station_time_timestamp(),
+				"sender_real_name" = "[user.real_name ? user.real_name : user.name]",
+				"sender_uid" = REF(user),
+				"message" = reason))
+			GLOB.ert_request_messages.Insert(1, insert_this) // insert it to the top of the list
 			ert_request(reason, user)
 			to_chat(user, span_notice("ERT request sent."))
 			user.log_message("has requested an Emergency Response Team from CentCom with reason \"[reason]\"", LOG_SAY)

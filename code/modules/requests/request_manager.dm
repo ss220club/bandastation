@@ -269,7 +269,7 @@ GLOBAL_DATUM_INIT(requests, /datum/request_manager, new)
 
 			web_sound(usr, request.message)
 			return TRUE
-		if ("reqestert")
+		if ("requestert")
 			if (request.req_type != REQUEST_ERT)
 				to_chat(usr, "You cannot request an ERT for a non-ERT-request request!", confidential = TRUE)
 				return TRUE
