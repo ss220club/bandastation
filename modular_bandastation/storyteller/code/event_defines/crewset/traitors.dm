@@ -29,7 +29,7 @@
 	roundstart = TRUE
 	earliest_start = 0 SECONDS
 	maximum_antags = 1
-	roundstart_cost = 12
+	roundstart_cost = 15
 
 /datum/round_event_control/antagonist/solo/traitor/midround
 	name = "Sleeper Agents (Traitors)"
