@@ -24,6 +24,10 @@
 	name = "light shark shoes"
 	icon_state = "shark_light"
 
+
+/obj/item/clothing/shoes/sandal
+	dying_key = DYE_REGISTRY_SNEAKERS
+
 /obj/item/clothing/shoes/sandal/syndie
 	name = "sandals"
 	desc = "Специальные сандали синдиката™. Уникальаня разработка, специально что-бы дойти до конца."
