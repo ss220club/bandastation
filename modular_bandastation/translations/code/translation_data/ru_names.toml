@@ -860,13 +860,13 @@ prepositional = "рюкзаке охраны"
 gender = "male"
 
 ["security satchel"]
-nominative = "ранец охраны"
-genitive = "ранца охраны"
-dative = "ранцу охраны"
-accusative = "ранец охраны"
-instrumental = "ранцем охраны"
-prepositional = "ранце охраны"
-gender = "male"
+nominative = "сумка охраны"
+genitive = "сумки охраны"
+dative = "сумке охраны"
+accusative = "сумку охраны"
+instrumental = "сумкой охраны"
+prepositional = "сумке охраны"
+gender = "female"
 
 ["security duffel bag"]
 nominative = "вещмешок охраны"
@@ -5109,6 +5109,15 @@ instrumental = "компактным дефибриллятором"
 prepositional = "компактном дефибрилляторе"
 gender = "male"
 
+["anesthetic tank"]
+nominative = "анестезийный баллон"
+genitive = "анестезийного баллона"
+dative = "анестезийному баллону"
+accusative = "анестезийный баллон"
+instrumental = "анестезийным баллоном"
+prepositional = "анестезийном баллоне"
+gender = "male"
+
 # MARK: Medical tools
 
 ["syringe"]
@@ -6816,12 +6825,12 @@ gender = "female"
 
 # MARK: Clothes
 ["science beret"]
-nominative = "научный берет"
-genitive = "научного берета"
-dative = "научному берету"
-accusative = "научный берет"
-instrumental = "научным беретом"
-prepositional = "научном берете"
+nominative = "берет учёного"
+genitive = "берета учёного"
+dative = "берету учёного"
+accusative = "берет учёного"
+instrumental = "беретом учёного"
+prepositional = "берете учёного"
 gender = "male"
 
 ["gas mask"]
@@ -6895,6 +6904,195 @@ accusative = "зимнее пальто робототехника"
 instrumental = "зимним пальто робототехника"
 prepositional = "зимнем пальто робототехника"
 gender = "neuter"
+
+["science backpack"]
+nominative = "рюкзак учёного"
+genitive = "рюкзака учёного"
+dative = "рюкзаку учёного"
+accusative = "рюкзак учёного"
+instrumental = "рюкзаком учёного"
+prepositional = "рюкзаке учёного"
+gender = "male"
+
+["scientist satchel"]
+nominative = "сумка учёного"
+genitive = "сумки учёного"
+dative = "сумке учёного"
+accusative = "сумку учёного"
+instrumental = "сумкой учёного"
+prepositional = "сумке учёного"
+gender = "female"
+
+["scientist's duffel bag"]
+nominative = "вещмешок учёного"
+genitive = "вещмешка учёного"
+dative = "вещмешку учёного"
+accusative = "вещмешок учёного"
+instrumental = "вещмешком учёного"
+prepositional = "вещмешке учёного"
+gender = "male"
+
+["scientist messenger bag"]
+nominative = "курьерская сумка учёного"
+genitive = "курьерской сумки учёного"
+dative = "курьерской сумке учёного"
+accusative = "курьерскую сумку учёного"
+instrumental = "курьерской сумкой учёного"
+prepositional = "курьерской сумке учёного"
+gender = "female"
+
+["science radio headset"]
+nominative = "научная гарнитура"
+genitive = "научной гарнитуры"
+dative = "научной гарнитуре"
+accusative = "научную гарнитуру"
+instrumental = "научной гарнитурой"
+prepositional = "научной гарнитуре"
+gender = "female"
+
+["roboticist's cowboy hat"]
+nominative = "ковбойская шляпа робототехника"
+genitive = "ковбойской шляпы робототехника"
+dative = "ковбойской шляпе робототехника"
+accusative = "ковбойскую шляпу робототехника"
+instrumental = "ковбойской шляпой робототехника"
+prepositional = "ковбойской шляпе робототехника"
+gender = "female"
+
+["roboticist's cap"]
+nominative = "кепка робототехника"
+genitive = "кепки робототехника"
+dative = "кепке робототехника"
+accusative = "кепку робототехника"
+instrumental = "кепкой робототехника"
+prepositional = "кепке робототехника"
+gender = "female"
+
+["roboticist's coat"]
+nominative = "пальто робототехника"
+genitive = "пальто робототехника"
+dative = "пальто робототехника"
+accusative = "пальто робототехника"
+instrumental = "пальто робототехника"
+prepositional = "пальто робототехника"
+gender = "neuter"
+
+["roboticist's jacket"]
+nominative = "куртка робототехника"
+genitive = "куртки робототехника"
+dative = "куртке робототехника"
+accusative = "куртку робототехника"
+instrumental = "курткой робототехника"
+prepositional = "куртке робототехника"
+gender = "female"
+
+["roboticist's winter coat"]
+nominative = "зимнее пальто робототехника"
+genitive = "зимнего пальто робототехника"
+dative = "зимнему пальто робототехника"
+accusative = "зимнее пальто робототехника"
+instrumental = "зимним пальто робототехника"
+prepositional = "зимнем пальто робототехника"
+gender = "neuter"
+
+["standart roboticist jumpsuit"]
+nominative = "стандартный комбинезон робототехника"
+genitive = "стандартного комбинезона робототехника"
+dative = "стандартному комбинезону робототехника"
+accusative = "стандартный комбинезон робототехника"
+instrumental = "стандартным комбинезоном робототехника"
+prepositional = "стандартном комбинезоне робототехника"
+gender = "male"
+
+["red roboticist's jumpsuit"]
+nominative = "красный комбинезон робототехника"
+genitive = "красного комбинезона робототехника"
+dative = "красному комбинезону робототехника"
+accusative = "красный комбинезон робототехника"
+instrumental = "красным комбинезоном робототехника"
+prepositional = "красном комбинезоне робототехника"
+gender = "male"
+
+["roboticist's hoodie"]
+nominative = "толстовка робототехника"
+genitive = "толстовки робототехника"
+dative = "толстовке робототехника"
+accusative = "толстовку робототехника"
+instrumental = "толстовкой робототехника"
+prepositional = "толстовке робототехника"
+gender = "female"
+
+["standart roboticist's jumpskirt"]
+nominative = "стандартная юбка-комбинезон робототехника"
+genitive = "стандартной юбки-комбинезона робототехника"
+dative = "стандартной юбке-комбинезону робототехника"
+accusative = "стандартную юбку-комбинезон робототехника"
+instrumental = "стандартной юбкой-комбинезоном робототехника"
+prepositional = "стандартной юбке-комбинезоне робототехника"
+gender = "female"
+
+["red roboticist's jumpskirt"]
+nominative = "красная юбка-комбинезон робототехника"
+genitive = "красной юбки-комбинезона робототехника"
+dative = "красной юбке-комбинезону робототехника"
+accusative = "красную юбку-комбинезон робототехника"
+instrumental = "красной юбкой-комбинезоном робототехника"
+prepositional = "красной юбке-комбинезоне робототехника"
+gender = "female"
+
+["mech pilot's suit"]
+nominative = "костюм пилота меха"
+genitive = "костюма пилота меха"
+dative = "костюму пилота меха"
+accusative = "костюм пилота меха"
+instrumental = "костюмом пилота меха"
+prepositional = "костюме пилота меха"
+gender = "male"
+
+["techpriest robes"]
+nominative = "одеяния техножреца"
+genitive = "одеяний техножреца"
+dative = "одеяниям техножреца"
+accusative = "одеяния техножреца"
+instrumental = "одеяниями техножреца"
+prepositional = "одеяниях техножреца"
+gender = "plural"
+
+["robotic voicebox"]
+nominative = "роботизированный голосовой модуль"
+genitive = "роботизированного голосового модуля"
+dative = "роботизированному голосовому модулю"
+accusative = "роботизированный голосовой модуль"
+instrumental = "роботизированным голосовым модулем"
+prepositional = "роботизированном голосовом модуле"
+gender = "male"
+
+["labcoat"]
+nominative = "лабораторный халат"
+genitive = "лабораторного халата"
+dative = "лабораторному халату"
+accusative = "лабораторный халат"
+instrumental = "лабораторным халатом"
+prepositional = "лабораторном халате"
+gender = "male"
+
+["roboticist's jumpsuit"]
+nominative = "комбинезон робототехника"
+genitive = "комбинезона робототехника"
+dative = "комбинезону робототехника"
+accusative = "комбинезон робототехника"
+instrumental = "комбинезоном робототехника"
+prepositional = "комбинезоне робототехника"
+gender = "male"
+
+["medical mask"]
+nominative = "медицинская маска"
+genitive = "медицинской маски"
+dative = "медицинской маске"
+accusative = "медицинскую маску"
+instrumental = "медицинской маской"
+prepositional = "медицинской маске"
+gender = "female"
 
 # MARK: Circuits
 ["integrated circuit"]
