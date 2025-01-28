@@ -4375,6 +4375,14 @@ instrumental = "ручным экстрактором семян"
 prepositional = "ручном экстракторе семян"
 gender = "male"
 
+["strange seed pack"]
+nominative = "странные семена"
+genitive = "странных семян"
+dative = "странным семянам"
+accusative = "странные семена"
+instrumental = "странными семенами"
+prepositional = "странных семянах"
+
 # MARK: Plants
 ["banana"]
 nominative = "банан"
@@ -11487,6 +11495,14 @@ instrumental = "ящиком гранат из умной металлическ
 prepositional = "ящике гранат из умной металлической пены"
 gender = "male"
 
+["material pouch"]
+nominative = "подсумок для материалов"
+genitive = "подсумоков для материалов"
+dative = "подсумку для материалов"
+accusative = "подсумок для материалов"
+instrumental = "подсумком для материалов"
+prepositional = "подсумке для материалов"
+
 # MARK: Stock parts
 # Tier 0
 ["power cell"]
@@ -12858,19 +12874,3 @@ dative = "своим"
 accusative = "свои"
 instrumental = "своими"
 prepositional = "своих"
-
-["strange seed pack"]
-nominative = "странные семена"
-genitive = "странных семян"
-dative = "странным семянам"
-accusative = "странные семена"
-instrumental = "странными семенами"
-prepositional = "странных семянах"
-
-["material pouch"]
-nominative = "подсумок для материалов"
-genitive = "подсумоков для материалов"
-dative = "подсумку для материалов"
-accusative = "подсумок для материалов"
-instrumental = "подсумком для материалов"
-prepositional = "подсумке для материалов"
