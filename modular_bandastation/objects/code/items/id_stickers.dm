@@ -43,14 +43,21 @@
 		to_chat(user, span_notice("Вам удалось снять наклейку с ID карты."))
 		remove_sticker(user, delete = FALSE)
 
+/obj/item/card/id/advanced/update_overlays()
+	. = ..()
+	if(applied_sticker)
+		card_sticker = mutable_appearance(applied_sticker.icon, applied_sticker.icon_state)
+		card_sticker.color = applied_sticker.color
+		. += card_sticker
+	else
+		. -= card_sticker
+
 /obj/item/card/id/advanced/proc/apply_sticker(mob/user, obj/item/id_sticker/sticker)
-	card_sticker = mutable_appearance(sticker.icon, sticker.icon_state)
-	card_sticker.color = sticker.color
 	sticker.forceMove(src)
 	applied_sticker = sticker
 	if(sticker.id_card_desc)
 		desc += "<br>[sticker.id_card_desc]"
-	add_overlay(card_sticker)
+	update_icon(UPDATE_OVERLAYS)
 	to_chat(user, span_notice("Вы наклеили [sticker.declent_ru(ACCUSATIVE)] на ID карту."))
 
 /obj/item/card/id/advanced/proc/remove_sticker(mob/user, delete = FALSE)
@@ -64,7 +71,7 @@
 	if(applied_sticker.id_card_desc)
 		desc = src::desc
 	applied_sticker = src::applied_sticker
-	cut_overlay(card_sticker)
+	update_icon(UPDATE_OVERLAYS)
 
 /obj/machinery/pdapainter/attackby(obj/item/O, mob/living/user, params)
 	if(istype(O, /obj/item/card/id/advanced))
@@ -86,10 +93,10 @@
 	desc = "Голографическая наклейка на карту. Вы можете выбрать цвет который она примет."
 	icon_state = "colored"
 	var/static/list/color_list = list(
-		"Красный" = LIGHT_COLOR_INTENSE_RED,
+		"Красный" = COLOR_RED_LIGHT,
 		"Зелёный" = LIGHT_COLOR_GREEN,
-		"Синий" = LIGHT_COLOR_CYAN,
-		"Жёлтый" = LIGHT_COLOR_HOLY_MAGIC,
+		"Синий" = LIGHT_COLOR_BLUE,
+		"Жёлтый" = COLOR_VIVID_YELLOW,
 		"Оранжевый" = LIGHT_COLOR_ORANGE,
 		"Фиолетовый" = LIGHT_COLOR_LAVENDER,
 		"Голубой" = LIGHT_COLOR_LIGHT_CYAN,
