@@ -9465,7 +9465,10 @@
 	name = "Secure Armory Shutter Control"
 	},
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/effect/turf_decal/siding/dark_red,
+/obj/effect/turf_decal/stripes/red/line,
+/obj/effect/turf_decal/stripes/red/line{
+	dir = 1
+	},
 /turf/open/floor/iron/dark,
 /area/station/ai_monitored/security/armory)
 "cqJ" = (
@@ -11523,12 +11526,13 @@
 /turf/open/floor/plating,
 /area/station/maintenance/aft)
 "cQq" = (
-/obj/effect/turf_decal/siding/dark_red/corner{
+/obj/effect/turf_decal/stripes/red/corner{
 	dir = 1
 	},
-/obj/effect/turf_decal/siding/dark_red/corner{
+/obj/effect/turf_decal/stripes/red/corner{
 	dir = 4
 	},
+/obj/effect/turf_decal/stripes/red/corner,
 /turf/open/floor/iron/dark,
 /area/station/ai_monitored/security/armory)
 "cQE" = (
@@ -15578,7 +15582,7 @@
 /turf/open/floor/iron,
 /area/station/hallway/primary/central/aft)
 "dNj" = (
-/obj/effect/turf_decal/siding/dark_red,
+/obj/effect/turf_decal/stripes/red/line,
 /turf/open/floor/iron/dark,
 /area/station/ai_monitored/security/armory)
 "dNp" = (
@@ -15724,9 +15728,10 @@
 	location = "Armory_South"
 	},
 /mob/living/simple_animal/bot/secbot/beepsky/armsky,
-/obj/effect/turf_decal/siding/dark_red{
+/obj/effect/turf_decal/stripes/red/line{
 	dir = 1
 	},
+/obj/effect/turf_decal/stripes/red/line,
 /turf/open/floor/iron/dark,
 /area/station/ai_monitored/security/armory)
 "dPB" = (
@@ -15786,8 +15791,8 @@
 /area/station/engineering/hallway)
 "dQO" = (
 /obj/structure/secure_safe/directional/west,
-/obj/effect/turf_decal/siding/dark_red{
-	dir = 10
+/obj/effect/turf_decal/stripes/red/line{
+	dir = 5
 	},
 /turf/open/floor/iron/dark,
 /area/station/ai_monitored/security/armory)
@@ -25139,9 +25144,10 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 4
 	},
-/obj/effect/turf_decal/siding/dark_red{
+/obj/effect/turf_decal/stripes/red/line{
 	dir = 1
 	},
+/obj/effect/turf_decal/stripes/red/line,
 /turf/open/floor/iron/dark,
 /area/station/ai_monitored/security/armory)
 "gmg" = (
@@ -26272,10 +26278,13 @@
 	},
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/effect/turf_decal/siding/dark_red/corner{
+/obj/effect/turf_decal/stripes/red/corner{
 	dir = 8
 	},
-/obj/effect/turf_decal/siding/dark_red/corner,
+/obj/effect/turf_decal/stripes/red/corner,
+/obj/effect/turf_decal/stripes/red/line{
+	dir = 1
+	},
 /turf/open/floor/iron/dark,
 /area/station/ai_monitored/security/armory)
 "gCL" = (
@@ -30142,15 +30151,6 @@
 /obj/machinery/light/floor,
 /turf/open/floor/plating,
 /area/station/engineering/storage/tech)
-"hAu" = (
-/obj/effect/turf_decal/siding/dark_red{
-	dir = 4
-	},
-/obj/effect/turf_decal/siding/dark_red{
-	dir = 8
-	},
-/turf/open/floor/iron/dark,
-/area/station/ai_monitored/security/armory)
 "hAE" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
@@ -35161,11 +35161,14 @@
 /obj/machinery/power/apc/auto_name/directional/east,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/effect/landmark/event_spawn,
-/obj/effect/turf_decal/siding/dark_red{
+/obj/effect/turf_decal/stripes/red/line{
 	dir = 4
 	},
-/obj/effect/turf_decal/siding/dark_red/corner{
+/obj/effect/turf_decal/stripes/red/corner{
 	dir = 1
+	},
+/obj/effect/turf_decal/stripes/red/corner{
+	dir = 8
 	},
 /turf/open/floor/iron/dark,
 /area/station/ai_monitored/security/armory)
@@ -38076,8 +38079,8 @@
 /turf/open/floor/plating,
 /area/station/maintenance/ghetto/fore/starboard)
 "jDE" = (
-/obj/effect/turf_decal/siding/dark_red{
-	dir = 10
+/obj/effect/turf_decal/stripes/red/line{
+	dir = 5
 	},
 /turf/open/floor/iron/dark,
 /area/station/ai_monitored/security/armory)
@@ -39483,7 +39486,10 @@
 "jUN" = (
 /obj/machinery/holopad/secure,
 /obj/effect/landmark/event_spawn,
-/obj/effect/turf_decal/siding/dark_red/corner{
+/obj/effect/turf_decal/stripes/red/line{
+	dir = 4
+	},
+/obj/effect/turf_decal/stripes/red/corner{
 	dir = 1
 	},
 /turf/open/floor/iron/dark,
@@ -41339,8 +41345,11 @@
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/effect/turf_decal/siding/dark_red{
-	dir = 6
+/obj/effect/turf_decal/stripes/red/line{
+	dir = 9
+	},
+/obj/effect/turf_decal/stripes/red/corner{
+	dir = 1
 	},
 /turf/open/floor/iron/dark,
 /area/station/ai_monitored/security/armory)
@@ -41725,11 +41734,11 @@
 /turf/open/floor/iron,
 /area/station/cargo/storage/ghetto)
 "kxo" = (
-/obj/effect/turf_decal/siding/dark_red{
-	dir = 8
-	},
-/obj/effect/turf_decal/siding/dark_red{
+/obj/effect/turf_decal/stripes/red/line{
 	dir = 4
+	},
+/obj/effect/turf_decal/stripes/red/line{
+	dir = 8
 	},
 /turf/open/floor/iron/dark,
 /area/station/ai_monitored/security/armory)
@@ -53531,11 +53540,11 @@
 "nqY" = (
 /obj/machinery/light/directional/north,
 /obj/structure/reagent_dispensers/wall/peppertank/directional/north,
-/obj/effect/turf_decal/siding/dark_red{
-	dir = 8
-	},
-/obj/effect/turf_decal/siding/dark_red{
+/obj/effect/turf_decal/stripes/red/line{
 	dir = 4
+	},
+/obj/effect/turf_decal/stripes/red/line{
+	dir = 8
 	},
 /turf/open/floor/iron/dark,
 /area/station/ai_monitored/security/armory)
@@ -61138,7 +61147,10 @@
 /turf/open/floor/iron/dark,
 /area/station/engineering/atmos)
 "pkV" = (
-/obj/effect/turf_decal/siding/dark_red/corner{
+/obj/effect/turf_decal/stripes/red/line{
+	dir = 4
+	},
+/obj/effect/turf_decal/stripes/red/corner{
 	dir = 8
 	},
 /turf/open/floor/iron/dark,
@@ -68061,8 +68073,8 @@
 /area/station/command/bridge)
 "qXx" = (
 /obj/machinery/airalarm/directional/west,
-/obj/effect/turf_decal/siding/dark_red{
-	dir = 9
+/obj/effect/turf_decal/stripes/red/line{
+	dir = 6
 	},
 /turf/open/floor/iron/dark,
 /area/station/ai_monitored/security/armory)
@@ -71563,13 +71575,16 @@
 "rSA" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/machinery/firealarm/directional/east,
-/obj/effect/turf_decal/siding/dark_red{
-	dir = 4
-	},
 /obj/machinery/camera/directional/east{
 	c_tag = "Brig Secure Armory East"
 	},
+/obj/effect/turf_decal/stripes/red/line{
+	dir = 4
+	},
+/obj/effect/turf_decal/stripes/red/line{
+	dir = 8
+	},
+/obj/machinery/light_switch/directional/east,
 /turf/open/floor/iron/dark,
 /area/station/ai_monitored/security/armory)
 "rSG" = (
@@ -72062,10 +72077,13 @@
 /area/station/maintenance/ghetto/port/aft)
 "rXH" = (
 /obj/structure/cable,
-/obj/machinery/light_switch/directional/south,
 /obj/machinery/light/directional/south,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/effect/turf_decal/siding/dark_red,
+/obj/effect/turf_decal/stripes/red/line,
+/obj/effect/turf_decal/stripes/red/corner{
+	dir = 4
+	},
+/obj/machinery/firealarm/directional/south,
 /turf/open/floor/iron/dark,
 /area/station/ai_monitored/security/armory)
 "rXK" = (
@@ -76041,8 +76059,11 @@
 /turf/open/floor/iron/dark,
 /area/station/engineering/storage_shared)
 "sZl" = (
-/obj/effect/turf_decal/siding/dark_red{
+/obj/effect/turf_decal/stripes/red/line{
 	dir = 8
+	},
+/obj/effect/turf_decal/stripes/red/line{
+	dir = 4
 	},
 /turf/open/floor/iron/dark,
 /area/station/ai_monitored/security/armory)
@@ -77710,10 +77731,13 @@
 "tuo" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/effect/turf_decal/siding/dark_red/corner{
+/obj/effect/turf_decal/stripes/red/line{
+	dir = 8
+	},
+/obj/effect/turf_decal/stripes/red/corner,
+/obj/effect/turf_decal/stripes/red/corner{
 	dir = 4
 	},
-/obj/effect/turf_decal/siding/dark_red/corner,
 /turf/open/floor/iron/dark,
 /area/station/ai_monitored/security/armory)
 "tuq" = (
@@ -79240,8 +79264,8 @@
 /area/station/hallway/secondary/exit/departure_lounge)
 "tOt" = (
 /obj/structure/extinguisher_cabinet/directional/north,
-/obj/effect/turf_decal/siding/dark_red{
-	dir = 9
+/obj/effect/turf_decal/stripes/red/line{
+	dir = 6
 	},
 /turf/open/floor/iron/dark,
 /area/station/ai_monitored/security/armory)
@@ -83989,8 +84013,11 @@
 "vdS" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/effect/turf_decal/siding/dark_red{
+/obj/effect/turf_decal/stripes/red/line{
 	dir = 4
+	},
+/obj/effect/turf_decal/stripes/red/line{
+	dir = 8
 	},
 /turf/open/floor/iron/dark,
 /area/station/ai_monitored/security/armory)
@@ -86176,7 +86203,7 @@
 /turf/open/floor/iron,
 /area/station/hallway/secondary/dock)
 "vDV" = (
-/obj/effect/turf_decal/siding/dark_red{
+/obj/effect/turf_decal/stripes/red/line{
 	dir = 1
 	},
 /turf/open/floor/iron/dark,
@@ -92529,8 +92556,8 @@
 /area/station/science/research)
 "xjT" = (
 /obj/structure/cable,
-/obj/effect/turf_decal/siding/dark_red/corner,
-/obj/effect/turf_decal/siding/dark_red/corner{
+/obj/effect/turf_decal/stripes/red/corner,
+/obj/effect/turf_decal/stripes/red/corner{
 	dir = 8
 	},
 /turf/open/floor/iron/dark,
@@ -92690,7 +92717,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 4
 	},
-/obj/effect/turf_decal/siding/dark_red,
+/obj/effect/turf_decal/stripes/red/line,
 /turf/open/floor/iron/dark,
 /area/station/ai_monitored/security/armory)
 "xmk" = (
@@ -94517,10 +94544,10 @@
 /area/station/maintenance/starboard/aft)
 "xMu" = (
 /obj/item/radio/intercom/directional/north,
-/obj/effect/turf_decal/siding/dark_red{
+/obj/effect/turf_decal/stripes/red/line{
 	dir = 4
 	},
-/obj/effect/turf_decal/siding/dark_red{
+/obj/effect/turf_decal/stripes/red/line{
 	dir = 8
 	},
 /turf/open/floor/iron/dark,
@@ -192153,7 +192180,7 @@ tYD
 tYD
 xcz
 xMu
-hAu
+kxo
 iOh
 tuo
 rSA
