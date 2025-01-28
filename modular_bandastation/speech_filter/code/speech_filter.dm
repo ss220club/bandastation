@@ -9,10 +9,6 @@
 		"Я в своём уме? Надо следить за языком.",
 		"Неужели я не могу подобрать нужных слов? Позор мне..."
 	)
-	/// is filter enabled in config
-	var/filter_enabled
-	/// list of ckeys to bypass filter
-	var/list/bypass_speakers
 
 /datum/element/speech_filter/Attach(datum/target)
 	. = ..()
@@ -23,9 +19,6 @@
 	if(!mob_to_censor.client)
 		return ELEMENT_INCOMPATIBLE
 
-	filter_enabled = CONFIG_GET(flag/enable_speech_filter)
-	bypass_speakers = CONFIG_GET(str_list/speech_filter_bypass)
-
 	RegisterSignal(mob_to_censor, COMSIG_MOB_SAY, PROC_REF(filter_speech), TRUE)
 	RegisterSignal(mob_to_censor, COMSIG_MOB_LOGOUT, PROC_REF(Detach), TRUE)
 
@@ -35,7 +28,7 @@
 	UnregisterSignal(source, COMSIG_MOB_LOGOUT)
 
 /datum/element/speech_filter/proc/filter_speech(mob/speaker, list/speech_args)
-	if(!filter_enabled || can_bypass_filter(speaker))
+	if(!CONFIG_GET(flag/enable_speech_filter) || can_bypass_filter(speaker))
 		return
 
 	var/message = speech_args[SPEECH_MESSAGE]
@@ -87,6 +80,6 @@
 	return brainrot_regex
 
 /datum/element/speech_filter/proc/can_bypass_filter(mob/mob_to_check)
-	return mob_to_check.client.ckey in bypass_speakers
+	return mob_to_check.client.ckey in CONFIG_GET(str_list/speech_filter_bypass)
 
 #undef BRAINROT_FILTER_FILE
