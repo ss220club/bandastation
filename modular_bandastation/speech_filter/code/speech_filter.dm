@@ -2,12 +2,17 @@
 
 /datum/element/speech_filter
 	element_flags = ELEMENT_DETACH_ON_HOST_DESTROY
+	/// what is displayed to the speaker on replace
 	var/static/list/brainrot_notifications = list(
 		"Почему у меня такой скудный словарный запас? Стоит сходить в библиотеку и прочесть книгу...",
 		"Что, черт побери, я несу?",
 		"Я в своём уме? Надо следить за языком.",
 		"Неужели я не могу подобрать нужных слов? Позор мне..."
 	)
+	/// is filter enabled in config
+	var/filter_enabled
+	/// list of ckeys to bypass filter
+	var/list/bypass_speakers
 
 /datum/element/speech_filter/Attach(datum/target)
 	. = ..()
@@ -18,6 +23,9 @@
 	if(!mob_to_censor.client)
 		return ELEMENT_INCOMPATIBLE
 
+	filter_enabled = CONFIG_GET(flag/enable_speech_filter)
+	bypass_speakers = CONFIG_GET(str_list/speech_filter_bypass)
+
 	RegisterSignal(mob_to_censor, COMSIG_MOB_SAY, PROC_REF(filter_speech), TRUE)
 	RegisterSignal(mob_to_censor, COMSIG_MOB_LOGOUT, PROC_REF(Detach), TRUE)
 
@@ -26,8 +34,8 @@
 	UnregisterSignal(source, COMSIG_MOB_SAY)
 	UnregisterSignal(source, COMSIG_MOB_LOGOUT)
 
-/datum/element/speech_filter/proc/filter_speech(mob/talker, list/speech_args)
-	if(!CONFIG_GET(flag/enable_speech_filter) || can_bypass_filter(talker))
+/datum/element/speech_filter/proc/filter_speech(mob/speaker, list/speech_args)
+	if(!filter_enabled || can_bypass_filter(speaker))
 		return
 
 	var/message = speech_args[SPEECH_MESSAGE]
@@ -47,10 +55,10 @@
 		return
 
 	speech_args[SPEECH_MESSAGE] = message
-	addtimer(CALLBACK(talker, TYPE_PROC_REF(/mob, emote), "drool"), 0.3 SECONDS)
-	to_chat(talker, span_priorityalert(pick(brainrot_notifications)))
-	message_admins("[ADMIN_LOOKUPFLW(talker)] has attempted to say forbidden word. His message was: [original_message]")
-	log_game("[key_name(talker)] has attempted to say forbidden word. His message was: [original_message]")
+	addtimer(CALLBACK(speaker, TYPE_PROC_REF(/mob, emote), "drool"), 0.3 SECONDS)
+	to_chat(speaker, span_priorityalert(pick(brainrot_notifications)))
+	message_admins("[ADMIN_LOOKUPFLW(speaker)] has attempted to say forbidden word. His message was: [original_message]")
+	log_game("[key_name(speaker)] has attempted to say forbidden word. His message was: [original_message]")
 
 /datum/element/speech_filter/proc/get_brainrot_filter_regex()
 	if(!fexists(BRAINROT_FILTER_FILE))
@@ -79,6 +87,6 @@
 	return brainrot_regex
 
 /datum/element/speech_filter/proc/can_bypass_filter(mob/mob_to_check)
-	return mob_to_check.client.ckey in CONFIG_GET(str_list/speech_filter_bypass)
+	return mob_to_check.client.ckey in bypass_speakers
 
 #undef BRAINROT_FILTER_FILE
