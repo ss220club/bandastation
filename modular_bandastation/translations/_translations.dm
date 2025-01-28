@@ -63,27 +63,3 @@ GLOBAL_LIST_EMPTY(ru_reagent_descs)
 		for(var/reagent_key as anything in GLOB.chemical_reagents_list)
 			var/datum/reagent/reagent = GLOB.chemical_reagents_list[reagent_key]
 			reagent.update_to_ru()
-
-/*
-ADMIN_VERB(get_data_to_toml, R_ADMIN, "DEBUG - Get data to toml", "Yeap", ADMIN_CATEGORY_DEBUG)
-	var/list/data = list()
-	var/list/subtypes = subtypesof(/obj/machinery/vending)
-	var/list/names_to_translate = list()
-	for(var/path in subtypes)
-		var/obj/machinery/vending/vendor = new path(user)
-		var/list/all_products = vendor.product_records + vendor.hidden_records + vendor.coin_records
-		for(var/datum/data/vending_product/vending_item in all_products)
-			// We already have it
-			if(vending_item.name in names_to_translate)
-				continue
-			// Already translated
-			if(declent_ru_initial(vending_item.name))
-				continue
-			names_to_translate += vending_item.name
-			data["[vendor.name]"] += list("[vending_item.name]")
-		qdel(vendor)
-
-	var/file_location = "data/toml_data_for_laren_products.toml"
-	var/payload = "[rustg_toml_encode(data)]"
-	rustg_file_write(payload, file_location)
-*/
