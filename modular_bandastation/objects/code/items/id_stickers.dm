@@ -61,8 +61,8 @@
 /obj/item/card/id/advanced/proc/remove_sticker(mob/user, delete = FALSE)
 	if(delete)
 		qdel(applied_sticker)
-	else if(!user.put_in_active_hand(applied_sticker))
-		applied_sticker.forceMove(user.drop_location())
+	else
+		user.put_in_hands(applied_sticker)
 	applied_sticker = src::applied_sticker
 	update_appearance(UPDATE_OVERLAYS|UPDATE_DESC)
 
