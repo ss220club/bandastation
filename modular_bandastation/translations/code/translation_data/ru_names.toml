@@ -12666,24 +12666,6 @@ instrumental = "пластиковой уточкой"
 prepositional = "пластиковой уточке"
 gender = "female"
 
-["New Year sweater"]
-nominative = "новогодний свитер"
-genitive = "новогоднего свитера"
-dative = "новогоднему свитеру"
-accusative = "новогодний свитер"
-instrumental = "новогодним свитером"
-prepositional = "новогоднем свитере"
-gender = "male"
-
-["New Year cloak"]
-nominative = "новогодний плащ"
-genitive = "новогоднего плаща"
-dative = "новогоднему плащу"
-accusative = "новогодний плащ"
-instrumental = "новогодним плащом"
-prepositional = "новогоднем плаще"
-gender = "male"
-
 ["garland"]
 nominative = "гирлянда"
 genitive = "гирлянды"
@@ -12692,6 +12674,8 @@ accusative = "гирлянду"
 instrumental = "гирляндой"
 prepositional = "гирлянде"
 gender = "female"
+
+# MARK: Clothes
 
 ["Industrialist's suit"]
 nominative = "костюм Промышленника"
@@ -12809,6 +12793,366 @@ accusative = "маску \"Вольта\""
 instrumental = "маской \"Вольта\""
 prepositional = "маске \"Вольта\""
 gender = "female"
+
+["New Year sweater"]
+nominative = "новогодний свитер"
+genitive = "новогоднего свитера"
+dative = "новогоднему свитеру"
+accusative = "новогодний свитер"
+instrumental = "новогодним свитером"
+prepositional = "новогоднем свитере"
+gender = "male"
+
+["New Year cloak"]
+nominative = "новогодний плащ"
+genitive = "новогоднего плаща"
+dative = "новогоднему плащу"
+accusative = "новогодний плащ"
+instrumental = "новогодним плащом"
+prepositional = "новогоднем плаще"
+gender = "male"
+
+["gladiator uniform"]
+nominative = "гладиаторская форма"
+genitive = "гладиаторской формы"
+dative = "гладиаторской форме"
+accusative = "гладиаторскую форму"
+instrumental = "гладиаторской формой"
+prepositional = "гладиаторской форме"
+gender = "female"
+
+["gladiator helmet"]
+nominative = "гладиаторский шлем"
+genitive = "гладиаторского шлема"
+dative = "гладиаторскому шлему"
+accusative = "гладиаторский шлем"
+instrumental = "гладиаторским шлемом"
+prepositional = "гладиаторском шлеме"
+gender = "male"
+
+["The Mad's labcoat"]
+nominative = "лабораторный халат Безумного"
+genitive = "лабораторного халата Безумного"
+dative = "лабораторному халату Безумного"
+accusative = "лабораторный халат Безумного"
+instrumental = "лабораторным халатом Безумного"
+prepositional = "лабораторном халате Безумного"
+gender = "male"
+
+["plague doctor suit"]
+nominative = "костюм чумного доктора"
+genitive = "костюма чумного доктора"
+dative = "костюму чумного доктора"
+accusative = "костюм чумного доктора"
+instrumental = "костюмом чумного доктора"
+prepositional = "костюме чумного доктора"
+gender = "male"
+
+["plague doctor's hat"]
+nominative = "шляпа чумного доктора"
+genitive = "шляпы чумного доктора"
+dative = "шляпе чумного доктора"
+accusative = "шляпу чумного доктора"
+instrumental = "шляпой чумного доктора"
+prepositional = "шляпе чумного доктора"
+gender = "female"
+
+["plague doctor mask"]
+nominative = "маска чумного доктора"
+genitive = "маски чумного доктора"
+dative = "маске чумного доктора"
+accusative = "маску чумного доктора"
+instrumental = "маской чумного доктора"
+prepositional = "маске чумного доктора"
+gender = "female"
+
+["nurse's suit"]
+nominative = "костюм медсестры"
+genitive = "костюма медсестры"
+dative = "костюму медсестры"
+accusative = "костюм медсестры"
+instrumental = "костюмом медсестры"
+prepositional = "костюме медсестры"
+gender = "female"
+
+["owl cloak"]
+nominative = "плащ совы"
+genitive = "плаща совы"
+dative = "плащу совы"
+accusative = "плащ совы"
+instrumental = "плащом совы"
+prepositional = "плаще совы"
+gender = "male"
+
+["owl uniform"]
+nominative = "костюм совы"
+genitive = "костюма совы"
+dative = "костюму совы"
+accusative = "костюм совы"
+instrumental = "костюмом совы"
+prepositional = "костюме совы"
+gender = "male"
+
+["owl mask"]
+nominative = "маска совы"
+genitive = "маски совы"
+dative = "маске совы"
+accusative = "маску совы"
+instrumental = "маской совы"
+prepositional = "маске совы"
+gender = "female"
+
+["griffon cloak"]
+nominative = "плащ гриффона"
+genitive = "плаща гриффона"
+dative = "плащу гриффона"
+accusative = "плащ гриффона"
+instrumental = "плащом гриффона"
+prepositional = "плаще гриффона"
+gender = "male"
+
+["griffon uniform"]
+nominative = "костюм гриффона"
+genitive = "костюма гриффона"
+dative = "костюму гриффона"
+accusative = "костюм гриффона"
+instrumental = "костюмом гриффона"
+prepositional = "костюме гриффона"
+gender = "male"
+
+["griffon boots"]
+nominative = "ботинки гриффона"
+genitive = "ботинок гриффона"
+dative = "ботинкам гриффона"
+accusative = "ботинки гриффона"
+instrumental = "ботинками гриффона"
+prepositional = "ботинках гриффона"
+gender = "plural"
+
+["griffon head"]
+nominative = "голова гриффона"
+genitive = "головы гриффона"
+dative = "голове гриффона"
+accusative = "голову гриффона"
+instrumental = "головой гриффона"
+prepositional = "голове гриффона"
+gender = "female"
+
+["pirate outfit"]
+nominative = "пиратский костюм"
+genitive = "пиратского костюма"
+dative = "пиратскому костюму"
+accusative = "пиратский костюм"
+instrumental = "пиратским костюмом"
+prepositional = "пиратском костюме"
+gender = "male"
+
+["pirate coat"]
+nominative = "пиратский плащ"
+genitive = "пиратского плаща"
+dative = "пиратскому плащу"
+accusative = "пиратский плащ"
+instrumental = "пиратским плащом"
+prepositional = "пиратском плаще"
+gender = "male"
+
+["pirate hat"]
+nominative = "пиратская шляпа"
+genitive = "пиратской шляпы"
+dative = "пиратской шляпе"
+accusative = "пиратскую шляпу"
+instrumental = "пиратской шляпой"
+prepositional = "пиратской шляпе"
+gender = "female"
+
+["pirate bandana"]
+nominative = "пиратская бандана"
+genitive = "пиратской банданы"
+dative = "пиратской бандане"
+accusative = "пиратскую бандану"
+instrumental = "пиратской банданой"
+prepositional = "пиратской бандане"
+gender = "female"
+
+["pirate boots"]
+nominative = "пиратские ботинки"
+genitive = "пиратских ботинок"
+dative = "пиратским ботинкам"
+accusative = "пиратские ботинки"
+instrumental = "пиратскими ботинками"
+prepositional = "пиратских ботинках"
+gender = "plural"
+
+["soviet uniform"]
+nominative = "советская форма"
+genitive = "советской формы"
+dative = "советской форме"
+accusative = "советскую форму"
+instrumental = "советской формой"
+prepositional = "советской форме"
+gender = "female"
+
+["ushanka"]
+nominative = "ушанка"
+genitive = "ушанки"
+dative = "ушанке"
+accusative = "ушанку"
+instrumental = "ушанкой"
+prepositional = "ушанке"
+gender = "female"
+
+["sheriff vest"]
+nominative = "жилет шерифа"
+genitive = "жилета шерифа"
+dative = "жилету шерифа"
+accusative = "жилет шерифа"
+instrumental = "жилетом шерифа"
+prepositional = "жилете шерифа"
+gender = "male"
+
+["sheriff hat"]
+nominative = "шляпа шерифа"
+genitive = "шляпы шерифа"
+dative = "шляпе шерифа"
+accusative = "шляпу шерифа"
+instrumental = "шляпой шерифа"
+prepositional = "шляпе шерифа"
+gender = "female"
+
+["desperado hat"]
+nominative = "шляпа десперодо"
+genitive = "шляпы десперодо"
+dative = "шляпе десперодо"
+accusative = "шляпу десперодо"
+instrumental = "шляпой десперодо"
+prepositional = "шляпе десперодо"
+gender = "female"
+
+["green sombrero"]
+nominative = "зелёный сомбреро"
+genitive = "зелёного сомбреро"
+dative = "зелёному сомбреро"
+accusative = "зелёный сомбреро"
+instrumental = "зелёным сомбреро"
+prepositional = "зелёном сомбреро"
+gender = "male"
+
+["deputy hat"]
+nominative = "шляпа помощника шерифа"
+genitive = "шляпы помощника шерифа"
+dative = "шляпе помощника шерифа"
+accusative = "шляпу помощника шерифа"
+instrumental = "шляпой помощника шерифа"
+prepositional = "шляпе помощника шерифа"
+gender = "female"
+
+["poncho"]
+nominative = "пончо"
+genitive = "пончо"
+dative = "пончо"
+accusative = "пончо"
+instrumental = "пончо"
+prepositional = "пончо"
+gender = "neuter"
+
+["green poncho"]
+nominative = "зелёное пончо"
+genitive = "зелёного пончо"
+dative = "зелёному пончо"
+accusative = "зелёное пончо"
+instrumental = "зелёным пончо"
+prepositional = "зелёном пончо"
+gender = "neuter"
+
+["red poncho"]
+nominative = "красное пончо"
+genitive = "красного пончо"
+dative = "красному пончо"
+accusative = "красное пончо"
+instrumental = "красным пончо"
+prepositional = "красном пончо"
+gender = "neuter"
+
+["snowman outfit"]
+nominative = "костюм снеговика"
+genitive = "костюма снеговика"
+dative = "костюму снеговика"
+accusative = "костюм снеговика"
+instrumental = "костюмом снеговика"
+prepositional = "костюме снеговика"
+gender = "male"
+
+["snowman head"]
+nominative = "голова снеговика"
+genitive = "головы снеговика"
+dative = "голове снеговика"
+accusative = "голову снеговика"
+instrumental = "головой снеговика"
+prepositional = "голове снеговика"
+gender = "female"
+
+["referee uniform"]
+nominative = "форма рефери"
+genitive = "формы рефери"
+dative = "форме рефери"
+accusative = "форму рефери"
+instrumental = "формой рефери"
+prepositional = "форме рефери"
+gender = "female"
+
+["police whistle"]
+nominative = "полицейский свисток"
+genitive = "полицейского свистка"
+dative = "полицейскому свистку"
+accusative = "полицейский свисток"
+instrumental = "полицейским свистком"
+prepositional = "полицейском свистке"
+gender = "male"
+
+["wings"]
+nominative = "крылья"
+genitive = "крыльев"
+dative = "крыльям"
+accusative = "крылья"
+instrumental = "крыльями"
+prepositional = "крыльях"
+gender = "plural"
+
+["frosty hat"]
+nominative = "шляпа морозца"
+genitive = "шляпы морозца"
+dative = "шляпе морозца"
+accusative = "шляпу морозца"
+instrumental = "шляпой морозца"
+prepositional = "шляпе морозца"
+gender = "female"
+
+["jack bros outfit"]
+nominative = "костюм братьев Джек"
+genitive = "костюма братьев Джек"
+dative = "костюму братьев Джек"
+accusative = "костюм братьев Джек"
+instrumental = "костюмом братьев Джек"
+prepositional = "костюме братьев Джек"
+gender = "male"
+
+["deckers outfit"]
+nominative = "костюм Декеров"
+genitive = "костюма Декеров"
+dative = "костюму Декеров"
+accusative = "костюм Декеров"
+instrumental = "костюмом Декеров"
+prepositional = "костюме Декеров"
+gender = "male"
+
+["henchmen jumpsuit"]
+nominative = "комбинезон приспешника"
+genitive = "комбинезона приспешника"
+dative = "комбинезону приспешника"
+accusative = "комбинезон приспешника"
+instrumental = "комбинезоном приспешника"
+prepositional = "комбинезоне приспешника"
+gender = "male"
 
 # MARK: Pronouns
 ["ваш"]
