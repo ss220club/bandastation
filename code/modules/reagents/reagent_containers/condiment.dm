@@ -76,8 +76,8 @@
 			to_chat(user, span_warning("Внутри [declent_ru(GENITIVE)] нет места!"))
 			return ITEM_INTERACT_BLOCKING
 
-		var/trans = target.reagents.trans_to(src, amount_per_transfer_from_this, transferred_by = user)
-		to_chat(user, span_notice("Вы наполняете [declent_ru(ACCUSATIVE)] на [trans] [declension_ru(trans,"юнит","юнита","юнитов")] из [target.declent_ru(GENITIVE)]."))
+		var/trans = round(target.reagents.trans_to(src, amount_per_transfer_from_this, transferred_by = user), CHEMICAL_VOLUME_ROUNDING)
+		to_chat(user, span_notice("You fill [src] with [trans] units of the contents of [target]."))
 		return ITEM_INTERACT_SUCCESS
 
 	//Something like a glass or a food item. Player probably wants to transfer TO it.
@@ -88,8 +88,8 @@
 		if(target.reagents.total_volume >= target.reagents.maximum_volume)
 			to_chat(user, span_warning("Внутри [target.declent_ru(GENITIVE)] недостаточно места!"))
 			return ITEM_INTERACT_BLOCKING
-		var/trans = src.reagents.trans_to(target, amount_per_transfer_from_this, transferred_by = user)
-		to_chat(user, span_notice("Вы передаете [trans] [declension_ru(trans,"юнит","юнита","юнитов")] в [target.declent_ru(ACCUSATIVE)]."))
+		var/trans = round(reagents.trans_to(target, amount_per_transfer_from_this, transferred_by = user), CHEMICAL_VOLUME_ROUNDING)
+		to_chat(user, span_notice("You transfer [trans] units of the condiment to [target]."))
 		return ITEM_INTERACT_SUCCESS
 
 	return NONE
@@ -437,8 +437,7 @@
 
 /obj/item/reagent_containers/condiment/pack/create_reagents(max_vol, flags)
 	. = ..()
-	RegisterSignals(reagents, list(COMSIG_REAGENTS_NEW_REAGENT, COMSIG_REAGENTS_ADD_REAGENT, COMSIG_REAGENTS_REM_REAGENT), PROC_REF(on_reagent_add), TRUE)
-	RegisterSignal(reagents, COMSIG_REAGENTS_DEL_REAGENT, PROC_REF(on_reagent_del), TRUE)
+	RegisterSignal(reagents, COMSIG_REAGENTS_HOLDER_UPDATED, PROC_REF(on_reagent_update), TRUE)
 
 /obj/item/reagent_containers/condiment/pack/update_icon()
 	SHOULD_CALL_PARENT(FALSE)
@@ -458,32 +457,29 @@
 			to_chat(user, span_warning("Вы вскрываете [declent_ru(ACCUSATIVE)], но [target.declent_ru(NOMINATIVE)] заполнен настолько, что всё просто стекает!"))
 			qdel(src)
 			return ITEM_INTERACT_BLOCKING
-		to_chat(user, span_notice("Вы вскрываете [declent_ru(ACCUSATIVE)] над [target.declent_ru(INSTRUMENTAL)] и добавляете содержимое в блюдо."))
-		src.reagents.trans_to(target, amount_per_transfer_from_this, transferred_by = user)
+		to_chat(user, span_notice("You tear open [src] above [target] and the condiments drip onto it."))
+		reagents.trans_to(target, amount_per_transfer_from_this, transferred_by = user)
 		qdel(src)
 		return ITEM_INTERACT_SUCCESS
 	return ..()
 
 /// Handles reagents getting added to the condiment pack.
-/obj/item/reagent_containers/condiment/pack/proc/on_reagent_add(datum/reagents/reagents)
+/obj/item/reagent_containers/condiment/pack/proc/on_reagent_update(datum/reagents/reagents)
 	SIGNAL_HANDLER
 
+	if(!reagents.total_volume)
+		icon_state = "condi_empty"
+		desc = "A small condiment pack. It is empty."
+		return
 	var/datum/reagent/main_reagent = reagents.get_master_reagent()
 
-	var/main_reagent_type = main_reagent?.type
-	if(main_reagent_type in possible_states)
-		var/list/temp_list = possible_states[main_reagent_type]
+	var/list/temp_list = possible_states[main_reagent.type]
+	if(length(temp_list))
 		icon_state = temp_list[1]
 		desc = temp_list[3]
 	else
 		icon_state = "condi_mixed"
 		desc = "Небольшой пакетик с приправами. На этикетке написано, что внутри [originalname]"
-
-/// Handles reagents getting removed from the condiment pack.
-/obj/item/reagent_containers/condiment/pack/proc/on_reagent_del(datum/reagents/reagents)
-	SIGNAL_HANDLER
-	icon_state = "condi_empty"
-	desc = "Небольшой пакетик с приправами, и он пуст."
 
 //Ketchup
 /obj/item/reagent_containers/condiment/pack/ketchup
