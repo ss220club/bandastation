@@ -1,5 +1,8 @@
 // MARK: Nanotrasen CentCom //
 
+/datum/outfit/centcom/post_equip(mob/living/carbon/human/centcom_member, visuals_only = FALSE)
+	centcom_member.mind.centcom_role = CENTCOM_ROLE_OFFICER
+
 // Old Fashion CentCom Commander
 /datum/outfit/centcom/spec_ops/old
 	name = "Old Fashion Special Ops Officer"
