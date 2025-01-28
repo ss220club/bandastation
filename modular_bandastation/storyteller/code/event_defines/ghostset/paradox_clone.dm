@@ -52,12 +52,17 @@
 			chat_text_border_icon = /datum/antagonist/paradox_clone,
 		)
 
-	var/selected_count = 0
-	while(length(candidates) && selected_count < antag_count)
+	var/spawned_count = 0
+	while(length(candidates) && spawned_count < antag_count)
 		var/client/candidate_ckey = pick_n_take_weighted(candidates)
 		var/client/candidate_client = GLOB.directory[candidate_ckey]
 		if(QDELETED(candidate_client) || QDELETED(candidate_client.mob))
 			continue
+
+		spawned_count++
+		if(spawned_count > SSgamemode.get_antag_cap(forced) || spawned_count > SSgamemode.left_antag_count_by_type(cast_control))
+			break
+
 		var/mob/candidate = candidate_client.mob
 		if(!candidate.mind)
 			candidate.mind = new /datum/mind(candidate.key)
@@ -68,10 +73,7 @@
 		new_human.mind.special_role = antag_flag
 		new_human.mind.restricted_roles = restricted_roles
 		setup_minds += new_human.mind
-		selected_count++
 
-		if(selected_count++ > SSgamemode.get_antag_cap(forced))
-			selected_count--
 
 	setup = TRUE
 

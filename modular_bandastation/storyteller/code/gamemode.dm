@@ -230,7 +230,7 @@ SUBSYSTEM_DEF(gamemode)
 	if(pop_count < current_storyteller.min_antag_popcount && !forced)
 		return 0
 	var/total_number = pop_count + (sec_crew * current_storyteller.sec_antag_modifier)
-	var/cap = FLOOR((total_number / current_storyteller.antag_denominator), 1) + current_storyteller.antag_flat_cap
+	var/cap = FLOOR((total_number / current_storyteller.antag_denominator), 1) * current_storyteller.final_cap_multiplier + current_storyteller.antag_flat_cap
 	return cap
 
 /datum/controller/subsystem/gamemode/proc/get_antag_count()
@@ -730,9 +730,9 @@ SUBSYSTEM_DEF(gamemode)
 		recalculate_roundstart_costs(track)
 
 		var/datum/round_event_control/picked_event = pick_weight(valid_events)
-		if(picked_event.can_spawn_event(ready_players) && (roundstart_budget >= picked_event.roundstart_cost))
-			roundstart_budget -= picked_event.roundstart_cost
-			message_admins("Storyteller purchased and triggered [picked_event] event for [picked_event.roundstart_cost]. Left balance: [roundstart_budget].")
+		if(picked_event.can_spawn_event(ready_players) && (roundstart_budget >= picked_event.get_pre_cost()))
+			roundstart_budget -= picked_event.get_pre_cost()
+			message_admins("Storyteller purchased and triggered [picked_event] event for [picked_event.get_pre_cost()]. Left balance: [roundstart_budget].")
 			TriggerEvent(picked_event, forced = FALSE)
 			runned_events += "Runned roundstart: [picked_event.name]"
 			// Если первое событие эксклюзивное, то отчищаем список
@@ -758,14 +758,14 @@ SUBSYSTEM_DEF(gamemode)
 		var/datum/round_event_control/antagonist/solo/scheduled_event = pick_weight(scheduled_events_roleset)
 		for(var/datum/dynamic_ruleset/ruleset as anything in dynamic_roundstart_rules)
 			if(ruleset.antag_datum == scheduled_event.antag_datum)
-				scheduled_event.roundstart_cost = scheduled_event.roundstart_cost ? scheduled_event.roundstart_cost : ruleset.cost
+				scheduled_event.roundstart_cost = scheduled_event.get_pre_cost() ? scheduled_event.get_pre_cost() : ruleset.cost
 				break
 
 	while(length(scheduled_events_roleset))
 		var/datum/round_event_control/scheduled_event = pick_weight(scheduled_events_roleset)
-		if(scheduled_event.can_spawn_event(ready_players) && (roundstart_budget >= scheduled_event.roundstart_cost))
-			roundstart_budget -= scheduled_event.roundstart_cost
-			message_admins("Storyteller purchased and triggered scheduled event [scheduled_event] for [scheduled_event.roundstart_cost]. Left balance: [roundstart_budget].")
+		if(scheduled_event.can_spawn_event(ready_players) && (roundstart_budget >= scheduled_event.get_pre_cost()))
+			roundstart_budget -= scheduled_event.get_pre_cost()
+			message_admins("Storyteller purchased and triggered scheduled event [scheduled_event] for [scheduled_event.get_pre_cost()]. Left balance: [roundstart_budget].")
 			TriggerEvent(scheduled_event, forced = FALSE)
 			runned_events += "Runned scheduled roundstart: [scheduled_event.name]"
 			scheduled_events_roleset -= scheduled_event
@@ -810,7 +810,7 @@ SUBSYSTEM_DEF(gamemode)
 	for(var/datum/round_event_control/antagonist/solo/event as anything in valid_events)
 		for(var/datum/dynamic_ruleset/ruleset as anything in dynamic_roundstart_rules)
 			if(ruleset.antag_datum == event.antag_datum)
-				event.roundstart_cost = event.roundstart_cost ? event.roundstart_cost : ruleset.cost
+				event.roundstart_cost = event.get_pre_cost() ? event.get_pre_cost() : ruleset.cost
 				break
 
 	return valid_events
@@ -1050,10 +1050,11 @@ SUBSYSTEM_DEF(gamemode)
 			dat += "<BR>Storyteller Antag Low pop:<a href='byond://?src=[REF(src)];panel=main;action=vars;var=vars_lowpop;'>[current_storyteller.min_antag_popcount]</a>"
 			dat += "<BR><font color='#888888'><i>This value affects how many players count as low pop and makes the antag cap value to zero if it is below.</i></font>"
 			dat += "<BR>Guarantees Roundstart Roleset: <a href='byond://?src=[REF(src)];panel=main;action=vars;var=vars_guarante_roundstart;'>[current_storyteller.guarantees_roundstart_roleset ? "TRUE" : "FALSE" ]</a>"
-			dat += "<BR>Storyteller Antag Cap Formula: floor((pop_count + secs * sec_antag_modifier) / denominator) + addiction"
-			dat += "<BR>Storyteller Antag Cap result: floor(([get_correct_popcount()] + [sec_crew] * [current_storyteller.sec_antag_modifier]) / [current_storyteller.antag_denominator]) + [current_storyteller.antag_flat_cap]"
+			dat += "<BR>Storyteller Antag Cap Formula: floor((pop_count + secs * sec_antag_modifier) / denominator) * cap_multiplier + addiction"
+			dat += "<BR>Storyteller Antag Cap result: floor(([get_correct_popcount()] + [sec_crew] * [current_storyteller.sec_antag_modifier]) / [current_storyteller.antag_denominator]) * [current_storyteller.final_cap_multiplier] + [current_storyteller.antag_flat_cap]"
 			dat += "<BR>Sec antag modifier: <a href='byond://?src=[REF(src)];panel=main;action=vars;var=vars_sec_antag;'>[current_storyteller.sec_antag_modifier]</a>"
 			dat += "<BR>Antag addiction: <a href='byond://?src=[REF(src)];panel=main;action=vars;var=vars_addiction;'>[current_storyteller.antag_flat_cap]</a>"
+			dat += "<BR>Antag cap multiplier: <a href='byond://?src=[REF(src)];panel=main;action=vars;var=vars_cap_mult;'>[current_storyteller.final_cap_multiplier]</a>"
 			dat += "<BR>Antag denominator: <a href='byond://?src=[REF(src)];panel=main;action=vars;var=vars_denominator;'>[current_storyteller.antag_denominator]</a>"
 			dat += "<BR><font color='#888888'><i>This affects how many antagonist can system spawn.</i></font>"
 			dat += "<HR>"
@@ -1273,7 +1274,7 @@ SUBSYSTEM_DEF(gamemode)
 		if(assoc_spawn_weight[event])
 			var/percent = round((event.calculated_weight / total_weight) * 100)
 			weight_string = "[percent]% - [weight_string]"
-		dat += "<td>[SSticker.HasRoundStarted() && !event.roundstart_cost ? weight_string : event.roundstart_cost]</td>" //Weight
+		dat += "<td>[SSticker.HasRoundStarted() && !event.get_pre_cost() ? weight_string : "[event.get_pre_cost()]/[weight_string]"]</td>" //Weight
 		dat += "<td>[event.get_href_actions()]</td>" //Actions
 		dat += "</tr>"
 	dat += "</table>"
@@ -1362,6 +1363,12 @@ SUBSYSTEM_DEF(gamemode)
 								return
 							message_admins("[key_name_admin(usr)] set basic storyteller multiplier to [new_value].")
 							current_storyteller.point_gain_base_mult = new_value
+						if("vars_cap_mult")
+							var/new_value = input(usr, "New value:", "Set new value") as num|null
+							if(isnull(new_value) || new_value < 0)
+								return
+							message_admins("[key_name_admin(usr)] set basic storyteller cap multiplier to [new_value].")
+							current_storyteller.final_cap_multiplier = new_value
 						if("vars_guarante_roundstart")
 							var/new_value = !current_storyteller.guarantees_roundstart_roleset
 							message_admins("[key_name_admin(usr)] set basic storyteller multiplier to [new_value].")
@@ -1466,12 +1473,16 @@ SUBSYSTEM_DEF(gamemode)
 	if(!type)
 		return count
 
-
 	for(var/datum/antagonist/antag_datum_element in GLOB.antagonists)
 		if(antag_datum_element.type == type)
 			count++
 
 	return count
+
+/datum/controller/subsystem/gamemode/proc/left_antag_count_by_type(control)
+	var/datum/round_event_control/antagonist/solo/cast_control = control
+	var/left = cast_control.maximum_antags_per_round - get_antag_count_by_type(cast_control.antag_datum)
+	return left
 
 /datum/controller/subsystem/gamemode/proc/create_roundend_score()
 	var/list/parts = list()

@@ -17,6 +17,7 @@
 	required_enemies = 4
 	weight = 2
 	min_players = 35
+	roundstart_cost = 35
 	max_occurrences = 1
 
 /datum/round_event_control/antagonist/solo/malf/trim_candidates(list/candidates)

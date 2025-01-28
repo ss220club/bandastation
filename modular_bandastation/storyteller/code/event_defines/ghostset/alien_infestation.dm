@@ -28,7 +28,6 @@
 	announce_when = 400
 	fakeable = TRUE
 
-
 /datum/round_event/antagonist/solo/ghost/alien_infestation/setup()
 	announce_when = rand(announce_when, announce_when + 50)
 	var/datum/round_event_control/antagonist/solo/cast_control = control
@@ -50,12 +49,10 @@
 	for(var/mob/living/mob as anything in candidates)
 		cliented_list += mob.client
 
-	candidates = SSpolling.poll_ghost_candidates(check_jobban = ROLE_ALIEN, role = ROLE_ALIEN, alert_pic = /mob/living/carbon/alien/larva, role_name_text = lowertext(cast_control.name))
+	candidates = SSpolling.poll_ghost_candidates(check_jobban = antag_flag, role = antag_flag, alert_pic = /mob/living/carbon/alien/larva, role_name_text = lowertext(cast_control.name))
 
 	if(!length(candidates))
 		return NOT_ENOUGH_PLAYERS
-
-	var/list/weighted_candidates = return_antag_weight(candidates)
 
 	var/list/vents = list()
 	for(var/obj/machinery/atmospherics/components/unary/vent_pump/temp_vent as anything in SSmachines.get_machines_by_type_and_subtypes(/obj/machinery/atmospherics/components/unary/vent_pump))
@@ -74,12 +71,18 @@
 		message_admins("An event attempted to spawn an alien but no suitable vents were found. Shutting down.")
 		return MAP_ERROR
 
-	var/selected_count = 0
-	while(length(weighted_candidates) && selected_count < antag_count)
+	var/list/weighted_candidates = return_antag_weight(candidates)
+	var/spawned_count = 0
+	while(length(weighted_candidates) && spawned_count < antag_count)
 		var/client/candidate_ckey = pick_n_take_weighted(weighted_candidates)
 		var/client/candidate_client = GLOB.directory[candidate_ckey]
 		if(QDELETED(candidate_client) || QDELETED(candidate_client.mob))
 			continue
+
+		spawned_count++
+		if(spawned_count > SSgamemode.get_antag_cap(forced) || spawned_count > SSgamemode.left_antag_count_by_type(cast_control))
+			break
+
 		var/mob/candidate = candidate_client.mob
 		if(!candidate.mind)
 			candidate.mind = new /datum/mind(candidate.key)
@@ -88,10 +91,7 @@
 		var/mob/living/carbon/alien/larva/new_xeno = new(vent.loc)
 		new_xeno.ckey = candidate_ckey
 		new_xeno.move_into_vent(vent)
-		selected_count++
 
-		if(selected_count++ > SSgamemode.get_antag_cap(forced))
-			selected_count--
 
 		message_admins("[ADMIN_LOOKUPFLW(new_xeno)] has been made into an alien by an event.")
 		new_xeno.log_message("was spawned as an alien by an event.", LOG_GAME)

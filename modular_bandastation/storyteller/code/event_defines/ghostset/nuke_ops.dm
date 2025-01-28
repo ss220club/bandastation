@@ -35,7 +35,8 @@
 	earliest_start = 45 MINUTES
 	weight = 4
 	max_occurrences = 1
-	prompted_picking = FALSE
+	prompted_picking = TRUE
+	can_change_count = TRUE
 
 /datum/round_event/antagonist/solo/ghost/nuclear_operative
 	excute_round_end_reports = TRUE
@@ -43,6 +44,7 @@
 	var/static/datum/team/nuclear/nuke_team
 	var/set_leader = FALSE
 	var/required_role = ROLE_NUCLEAR_OPERATIVE
+	var/job_type = /datum/job/nuclear_operative
 
 /datum/round_event/antagonist/solo/ghost/nuclear_operative/add_datum_to_mind(datum/mind/antag_mind)
 	var/mob/living/current_mob = antag_mind.current
@@ -69,7 +71,6 @@
 
 	var/datum/antagonist/nukeop/new_op = new antag_datum()
 	antag_mind.add_antag_datum(new_op)
-	GLOB.pre_setup_antags -= antag_mind
 
 //this might be able to be kept as just calling parent
 /datum/round_event/antagonist/solo/ghost/nuclear_operative/round_end_report()
@@ -105,3 +106,45 @@
 		else
 			SSticker.mode_result = "halfwin - interrupted"
 			SSticker.news_report = OPERATIVE_SKIRMISH
+
+/datum/round_event/antagonist/solo/ghost/nuclear_operative/setup()
+	var/datum/round_event_control/antagonist/solo/cast_control = control
+	antag_count = forced && cast_control.forced_antags_count > 0 ? cast_control.forced_antags_count : cast_control.get_antag_count_to_spawn(forced)
+	if(!antag_count)
+		return
+
+	antag_flag = cast_control.antag_flag
+	antag_datum = cast_control.antag_datum
+	restricted_roles = cast_control.restricted_roles
+	prompted_picking = cast_control.prompted_picking
+	var/list/candidates = cast_control.get_candidates()
+
+	//guh
+	var/list/cliented_list = list()
+	for(var/mob/living/mob as anything in candidates)
+		cliented_list += mob.client
+
+	if(prompted_picking)
+		candidates = SSpolling.poll_ghost_candidates(check_jobban = antag_flag, role = antag_flag, alert_pic = /obj/structure/sign/poster/contraband/syndicate_recruitment, role_name_text = lowertext(cast_control.name))
+
+	var/list/weighted_candidates = return_antag_weight(candidates)
+	var/spawned_count = 0
+	while(length(weighted_candidates) && spawned_count < antag_count)
+		var/candidate_ckey = pick_n_take_weighted(weighted_candidates)
+		var/client/candidate_client = GLOB.directory[candidate_ckey]
+		if(QDELETED(candidate_client) || QDELETED(candidate_client.mob))
+			continue
+		var/mob/candidate = candidate_client.mob
+
+		spawned_count++
+		if(spawned_count > SSgamemode.get_antag_cap(forced) || spawned_count > SSgamemode.left_antag_count_by_type(cast_control))
+			break
+
+		if(!candidate.mind)
+			candidate.mind = new /datum/mind(candidate.key)
+		var/mob/living/carbon/human/new_human = make_body(candidate)
+		new_human.mind.special_role = antag_flag
+		new_human.mind.restricted_roles = restricted_roles
+		setup_minds += new_human.mind
+
+	setup = TRUE

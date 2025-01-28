@@ -135,3 +135,17 @@
 	track = EVENT_TRACK_MODERATE
 	tags = list(TAG_TARGETED, TAG_SPOOKY, TAG_EXTERNAL, TAG_ALIEN)
 	checks_antag_cap = TRUE
+
+/datum/round_event_control/meteor_wave/dust_storm
+	track = EVENT_TRACK_MODERATE
+	tags = list(TAG_COMMUNAL, TAG_SPACE, TAG_DESTRUCTIVE)
+	event_group = /datum/event_group/meteors
+	eng_required_power = 3
+
+/datum/round_event_control/bureaucratic_error
+	track = EVENT_TRACK_MODERATE // if you've ever dealt with 10 mimes you understand why.
+	tags = list(TAG_COMMUNAL)
+	event_group = /datum/event_group/error
+	weight = 5
+	max_occurrences = 1
+	head_required_power = 3

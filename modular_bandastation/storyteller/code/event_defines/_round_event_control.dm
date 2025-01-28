@@ -31,6 +31,9 @@
 	/// Значение, которое используется при расчете стоимости покупки из раундстарт бюджета. Считается если значение 0.
 	var/roundstart_cost = 0
 
+/datum/round_event_control/proc/get_pre_cost()
+	return roundstart_cost
+
 /datum/round_event_control/proc/return_failure_string(players_amt)
 	var/string
 	if(SSgamemode.current_storyteller?.disable_distribution || SSgamemode.halted_storyteller)
@@ -159,15 +162,14 @@
 
 /datum/round_event_control/antagonist/solo/return_failure_string(players_amt)
 	. =..()
-	if(istype(src, /datum/round_event_control/antagonist/solo/from_ghosts/nuclear_operative))
-		var/list/candidates = get_candidates() //we should optimize this
-		var/ghost_event = ispath(typepath, /datum/round_event/antagonist/solo/ghost) || ispath(typepath, /datum/round_event/ghost_role)
-		if((length(candidates) < base_antags))
-			if(.)
-				. += ", "
-			. += get_antag_count_to_spawn() ? "Not Enough [ghost_event ? "ghost" : ""] candidates!" : "No empty antag-slots"
+	var/list/candidates = get_candidates() //we should optimize this
+	var/ghost_event = ispath(typepath, /datum/round_event/antagonist/solo/ghost) || ispath(typepath, /datum/round_event/ghost_role)
+	if((length(candidates) < base_antags))
+		if(.)
+			. += ", "
+		. += get_antag_count_to_spawn() ? "Not Enough [ghost_event ? "ghost" : ""] candidates!" : "No empty antag-slots"
 
-		return .
+	return .
 
 /datum/round_event_control/proc/generate_image(list/mobs)
 	return
@@ -379,6 +381,6 @@
 					if(isnull(new_value) || new_value < 1)
 						return
 					forced_antag_event.forced_antags_count = new_value
-					forced_antag_event.run_event(random = FALSE, admin_forced = TRUE)
+				forced_antag_event.run_event(random = FALSE, admin_forced = TRUE)
 			else
 				run_event(random = FALSE, admin_forced = TRUE)

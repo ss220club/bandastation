@@ -33,8 +33,13 @@
 	min_players = 30
 	roundstart = TRUE
 	earliest_start = 0 SECONDS
-	weight = 4
+	weight = 1
 	max_occurrences = 3
+
+/datum/round_event_control/antagonist/solo/bloodcult/get_pre_cost()
+	var/candidates = get_candidates()
+	roundstart_cost = 20 * length(candidates)
+	return roundstart_cost
 
 /datum/round_event/antagonist/solo/bloodcult
 	excute_round_end_reports = TRUE

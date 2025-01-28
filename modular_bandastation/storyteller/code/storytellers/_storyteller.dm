@@ -80,6 +80,8 @@
 	var/storyteller_basic_modifier = STORYTELLER_BASIC_MODIFIER
 	///Список событий на исключение
 	var/list/exclude_events = list()
+	///Финальный множитель антаг-капа (до ручного добавления)
+	var/final_cap_multiplier = 1
 
 /datum/storyteller/process(seconds_per_tick)
 	if(!round_started || disable_distribution) // we are differing roundstarted ones until base roundstart so we can get cooler stuff

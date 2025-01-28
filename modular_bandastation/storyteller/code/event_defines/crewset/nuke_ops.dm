@@ -38,10 +38,12 @@
 	min_players = 35
 	roundstart = TRUE
 	earliest_start = 0 SECONDS
-	weight = 4
+	weight = 1
+	roundstart_cost = 50
 	max_occurrences = 3
 	event_icon_state = "nukeops"
 	exclusive_roundstart_event = TRUE
+	can_change_count = TRUE
 
 /datum/round_event/antagonist/solo/nuclear_operative
 	excute_round_end_reports = TRUE

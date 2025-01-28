@@ -35,6 +35,7 @@
 	roundstart = TRUE
 	earliest_start = 0 SECONDS
 	weight = 0 //value was 3, we need to manually test if this works or not before allowing it normally
+	roundstart_cost = 40
 	max_occurrences = 1
 
 /datum/antagonist/rev/head/event_trigger

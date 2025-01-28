@@ -1,11 +1,3 @@
-/datum/round_event_control/bureaucratic_error
-	track = EVENT_TRACK_MAJOR // if you've ever dealt with 10 mimes you understand why.
-	tags = list(TAG_COMMUNAL)
-	event_group = /datum/event_group/error
-	weight = 5
-	max_occurrences = 1
-	head_required_power = 3
-
 /datum/round_event_control/earthquake
 	track = EVENT_TRACK_MAJOR
 	tags = list(TAG_DESTRUCTIVE)

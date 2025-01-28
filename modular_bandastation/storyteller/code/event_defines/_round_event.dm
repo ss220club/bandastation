@@ -115,9 +115,13 @@
 
 	var/list/picked_mobs = list()
 	var/spawned_count = 0
-	for(var/i in 1 to antag_count)
+	while(spawned_count < antag_count)
 		if(!length(candidates))
 			message_admins("A roleset event got fewer antags then its antag_count and may not function correctly.")
+			break
+
+		spawned_count++
+		if(spawned_count > SSgamemode.get_antag_cap(forced) || spawned_count > SSgamemode.left_antag_count_by_type(cast_control))
 			break
 
 		var/mob/candidate = pick_n_take(candidates)
@@ -130,9 +134,6 @@
 		candidate.mind.special_role = antag_flag
 		candidate.mind.restricted_roles = restricted_roles
 		picked_mobs += WEAKREF(candidate.client)
-		spawned_count++
-		if(spawned_count++ > SSgamemode.get_antag_cap(forced))
-			antag_count--
 
 	setup = TRUE
 	control.generate_image(picked_mobs)
@@ -195,6 +196,7 @@
 		cliented_list += mob.client
 
 	if(prompted_picking)
+		//candidates = SSpolling.poll_ghost_candidates(check_jobban = antag_flag, role = antag_flag, alert_pic = /mob/living/carbon/alien/larva, role_name_text = lowertext(cast_control.name))
 		candidates = SSpolling.poll_candidates(
 			question = "Would you like to be a [cast_control.name]?",
 			check_jobban = antag_flag,
@@ -207,13 +209,17 @@
 		)
 
 	var/list/weighted_candidates = return_antag_weight(candidates)
-	var/selected_count = 0
-	while(length(weighted_candidates) && selected_count < antag_count)
+	var/spawned_count = 0
+	while(length(weighted_candidates) && spawned_count < antag_count)
 		var/candidate_ckey = pick_n_take_weighted(weighted_candidates)
 		var/client/candidate_client = GLOB.directory[candidate_ckey]
 		if(QDELETED(candidate_client) || QDELETED(candidate_client.mob))
 			continue
 		var/mob/candidate = candidate_client.mob
+
+		spawned_count++
+		if(spawned_count > SSgamemode.get_antag_cap(forced) || spawned_count > SSgamemode.left_antag_count_by_type(cast_control))
+			break
 
 		if(!candidate.mind)
 			candidate.mind = new /datum/mind(candidate.key)
@@ -221,8 +227,5 @@
 		new_human.mind.special_role = antag_flag
 		new_human.mind.restricted_roles = restricted_roles
 		setup_minds += new_human.mind
-		selected_count++
-		if(selected_count++ > SSgamemode.get_antag_cap(forced))
-			selected_count--
 
 	setup = TRUE

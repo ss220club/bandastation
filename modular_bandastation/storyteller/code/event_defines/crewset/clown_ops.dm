@@ -4,7 +4,7 @@
 	antag_flag = ROLE_CLOWN_OPERATIVE
 	antag_datum = /datum/antagonist/nukeop/clownop
 	typepath = /datum/round_event/antagonist/solo/nuclear_operative/clown
-	weight = 1 //these are meant to be very rare
+	weight = 0 //these are meant to be very rare
 	max_occurrences = 1
 	event_icon_state = "flukeops"
 
