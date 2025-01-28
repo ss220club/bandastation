@@ -1,6 +1,5 @@
 /obj/item/card/id/advanced
 	var/obj/item/id_sticker/applied_sticker = null
-	var/mutable_appearance/card_sticker
 
 /obj/item/card/id/advanced/item_interaction(mob/living/user, obj/item/tool, list/modifiers)
 	. = ..()
@@ -12,7 +11,7 @@
 		return ITEM_INTERACT_BLOCKING
 
 	to_chat(user, span_notice("Вы начинаете наносить наклейку на ID карту."))
-	if(!do_after(user, 2 SECONDS, src, progress = TRUE))
+	if(!do_after(user, 2 SECONDS, src))
 		return ITEM_INTERACT_BLOCKING
 	apply_sticker(user, tool)
 
@@ -20,10 +19,6 @@
 	. = ..()
 	if(applied_sticker)
 		. += "На ней [applied_sticker.declent_ru(NOMINATIVE)]"
-
-/obj/item/card/id/advanced/examine_more(mob/user)
-	. = ..()
-	if(applied_sticker)
 		. += span_info("Вы можете снять наклейку, используя <b>Ctrl-Shift-Click</b>.")
 
 /obj/item/card/id/advanced/click_ctrl_shift(mob/living/user)
@@ -38,40 +33,38 @@
 		to_chat(user, span_notice("Вы сдираете наклейку с ID карты!"))
 		remove_sticker(user, delete = TRUE)
 		return
-	to_chat(user, span_notice("Вы начинаете пытаться снять наклейку с ID карты..."))
-	if(do_after(user, 5 SECONDS, src, progress = TRUE))
+	to_chat(user, span_notice("Вы пытаетесь снять наклейку с ID карты..."))
+	if(do_after(user, 5 SECONDS, src))
 		to_chat(user, span_notice("Вам удалось снять наклейку с ID карты."))
 		remove_sticker(user, delete = FALSE)
 
 /obj/item/card/id/advanced/update_overlays()
 	. = ..()
 	if(applied_sticker)
-		card_sticker = mutable_appearance(applied_sticker.icon, applied_sticker.icon_state)
-		card_sticker.color = applied_sticker.color
-		. += card_sticker
+		var/mutable_appearance/sticker_overlay = mutable_appearance(applied_sticker.icon, applied_sticker.icon_state)
+		sticker_overlay.color = applied_sticker.color
+		. += sticker_overlay
+
+/obj/item/card/id/advanced/update_desc(updates)
+	. = ..()
+	if(applied_sticker && applied_sticker.id_card_desc)
+		desc += "<br>[applied_sticker.id_card_desc]"
 	else
-		. -= card_sticker
+		desc = src::desc
 
 /obj/item/card/id/advanced/proc/apply_sticker(mob/user, obj/item/id_sticker/sticker)
 	sticker.forceMove(src)
 	applied_sticker = sticker
-	if(sticker.id_card_desc)
-		desc += "<br>[sticker.id_card_desc]"
-	update_icon(UPDATE_OVERLAYS)
+	update_appearance(UPDATE_OVERLAYS|UPDATE_DESC)
 	to_chat(user, span_notice("Вы наклеили [sticker.declent_ru(ACCUSATIVE)] на ID карту."))
 
 /obj/item/card/id/advanced/proc/remove_sticker(mob/user, delete = FALSE)
 	if(delete)
 		qdel(applied_sticker)
-	else
-		if(isnull(user.get_active_held_item()))
-			user.put_in_active_hand(applied_sticker)
-		else
-			applied_sticker.forceMove(get_turf(user))
-	if(applied_sticker.id_card_desc)
-		desc = src::desc
+	else if(!user.put_in_active_hand(applied_sticker))
+		applied_sticker.forceMove(user.drop_location())
 	applied_sticker = src::applied_sticker
-	update_icon(UPDATE_OVERLAYS)
+	update_appearance(UPDATE_OVERLAYS|UPDATE_DESC)
 
 /obj/machinery/pdapainter/attackby(obj/item/O, mob/living/user, params)
 	if(istype(O, /obj/item/card/id/advanced))
