@@ -64,6 +64,7 @@ GLOBAL_LIST_EMPTY(ru_reagent_descs)
 			var/datum/reagent/reagent = GLOB.chemical_reagents_list[reagent_key]
 			reagent.update_to_ru()
 
+/*
 ADMIN_VERB(get_data_to_toml, R_ADMIN, "DEBUG - Get data to toml", "Yeap", ADMIN_CATEGORY_DEBUG)
 	var/list/data = list()
 	var/list/subtypes = subtypesof(/obj/machinery/vending)
@@ -85,3 +86,4 @@ ADMIN_VERB(get_data_to_toml, R_ADMIN, "DEBUG - Get data to toml", "Yeap", ADMIN_
 	var/file_location = "data/toml_data_for_laren_products.toml"
 	var/payload = "[rustg_toml_encode(data)]"
 	rustg_file_write(payload, file_location)
+*/
