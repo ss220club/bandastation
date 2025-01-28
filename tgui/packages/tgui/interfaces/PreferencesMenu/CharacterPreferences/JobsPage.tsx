@@ -4,6 +4,7 @@ import { useBackend } from 'tgui/backend';
 import { Box, Button, Dropdown, Stack, Tooltip } from 'tgui-core/components';
 import { classes } from 'tgui-core/react';
 
+import { JOBS_RU } from '../../../bandastation/ru_jobs'; // BANDASTATION EDIT
 import {
   createSetPreference,
   Job,
@@ -246,7 +247,7 @@ function JobRow(props: JobRowProps) {
               paddingLeft: '0.3em',
             }}
           >
-            {name}
+            {JOBS_RU[name] ? JOBS_RU[name] : name}
           </Stack.Item>
         </Tooltip>
 
@@ -264,7 +265,7 @@ type DepartmentProps = {
 
 function Department(props: DepartmentProps) {
   const { children, department: name } = props;
-  const className = `PreferencesMenu__Jobs__departments--${name}`;
+  const className = `PreferencesMenu__Jobs__departments--${name.replace(' ', '')}`;
 
   const data = useServerPrefs();
   if (!data) return;
@@ -323,7 +324,7 @@ function JoblessRoleDropdown(props) {
 
   const options = [
     {
-      displayText: `Join as ${data.overflow_role} if unavailable`,
+      displayText: `Присоединиться за ${JOBS_RU[data.overflow_role] ? JOBS_RU[data.overflow_role] : data.overflow_role} если не удалось войти`,
       value: JoblessRole.BeOverflow,
     },
     {
@@ -389,6 +390,10 @@ export function JobsPage() {
                 <Gap amount={6} />
               </Department>
 
+              <Department department="NT Representation">
+                <Gap amount={6} />
+              </Department>
+
               <Department department="Service">
                 <Gap amount={6} />
               </Department>
@@ -402,6 +407,10 @@ export function JobsPage() {
               <PriorityHeaders />
 
               <Department department="Security">
+                <Gap amount={6} />
+              </Department>
+
+              <Department department="Justice">
                 <Gap amount={6} />
               </Department>
 
