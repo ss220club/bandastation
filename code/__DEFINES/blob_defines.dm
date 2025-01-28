@@ -14,7 +14,7 @@
 // Generic blob defines
 
 #define BLOB_BASE_POINT_RATE 2 // Base amount of points per process()
-#define BLOB_EXPAND_COST GLOB.blob_expand_cost // Price to expand onto a new tile // BANDASTATION EDIT - 4 to GLOB.blob_expand_cost
+#define BLOB_EXPAND_COST 4 // Price to expand onto a new tile
 #define BLOB_ATTACK_REFUND 2 // Points 'refunded' when the expand attempt actually attacks something instead
 #define BLOB_BRUTE_RESIST 0.5 // Brute damage taken gets multiplied by this value
 #define BLOB_FIRE_RESIST 1 // Burn damage taken gets multiplied by this value

@@ -1,10 +1,9 @@
-GLOBAL_VAR_INIT(blob_expand_cost, 4)
+/mob/eye/blob
+	var/expand_cost = BLOB_EXPAND_COST
 
 /mob/eye/blob/Initialize(mapload, starting_points)
 	. = ..()
-	if(!main_station_floor(src))
-		blobwincount = 700
-	update_blob_expand_cost(src)
+	check_station_floor()
 
 /mob/eye/blob/Login()
 	. = ..()
@@ -14,13 +13,12 @@ GLOBAL_VAR_INIT(blob_expand_cost, 4)
 		blob_message += "2. Вам требуется больше ресурсов для установки тайла блоба."
 		to_chat(src, boxed_message(blob_message))
 
-/mob/eye/blob/proc/update_blob_expand_cost(mob/blob)
-	if(!blob)
+/mob/eye/blob/proc/check_station_floor()
+	if(main_station_floor(src))
 		return
-	if(!main_station_floor(blob))
-		GLOB.blob_expand_cost = 8
-	else
-		GLOB.blob_expand_cost = 4
+		
+	expand_cost = BLOB_EXPAND_COST * 2
+	blobwincount  = 700
 
 /datum/action/innate/blobpop/Activate(timer_activated = FALSE)
 	if(!main_station_floor(usr))
