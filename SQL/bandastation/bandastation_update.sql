@@ -61,15 +61,15 @@ CREATE TABLE `budget` (
 --
 DROP TABLE IF EXISTS `minesweeper`;
 CREATE TABLE `minesweeper` (
-    `id` INT(11) NOT NULL AUTO_INCREMENT,
-    `date` DATETIME NOT NULL DEFAULT current_timestamp(),
-    `ckey` VARCHAR(32) NULL DEFAULT NULL COLLATE 'utf8mb4_unicode_ci',
+	`id` INT(11) NOT NULL AUTO_INCREMENT,
+	`date` DATETIME NOT NULL DEFAULT current_timestamp(),
+	`ckey` VARCHAR(32) NULL DEFAULT NULL COLLATE 'utf8mb4_unicode_ci',
 	`nickname` VARCHAR(32) NULL DEFAULT NULL COLLATE 'utf8mb4_unicode_ci',
-    `time` INT(10) UNSIGNED NOT NULL,
+	`time` INT(10) UNSIGNED NOT NULL,
 	`points` INT(10) UNSIGNED NOT NULL,
 	`pointspersec` FLOAT(10) UNSIGNED NOT NULL,
 	`width` TINYINT(3) UNSIGNED NOT NULL,
 	`height` TINYINT(3) UNSIGNED NOT NULL,
 	`bombs` TINYINT(3) UNSIGNED NOT NULL,
-    PRIMARY KEY (`id`)
+	PRIMARY KEY (`id`)
 ) COLLATE='utf8mb4_general_ci' ENGINE=InnoDB;
