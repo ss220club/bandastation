@@ -70037,7 +70037,7 @@
 /area/station/maintenance/ghetto/starboard/aft)
 "rwC" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/retaliate/goose/vomit,
+/mob/living/basic/goose/vomit,
 /turf/open/floor/iron/kitchen,
 /area/station/maintenance/ghetto/bar)
 "rwD" = (
