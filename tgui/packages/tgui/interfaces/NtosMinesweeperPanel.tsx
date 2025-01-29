@@ -1,4 +1,4 @@
-import { Box, Button, Icon, Stack, Table } from 'tgui-core/components';
+import { Box, Button, Icon, Section, Stack, Table } from 'tgui-core/components';
 
 import { useBackend, useSharedState } from '../backend';
 import { NtosWindow } from '../layouts';
@@ -33,6 +33,7 @@ type MinesweeperData = {
   flags: number;
   bombs: number;
   leaderboard: Leaderboard;
+  glob_leaderboard: Leaderboard;
   first_touch: boolean;
   field_params: FieldParams;
 };
@@ -193,35 +194,53 @@ export const MineSweeperGame = (props) => {
 
 export const MineSweeperLeaderboard = (props) => {
   const { act, data } = useBackend<MinesweeperData>();
-  const { leaderboard } = data;
+  const { leaderboard, glob_leaderboard } = data;
   const [sortId, _setSortId] = useSharedState('sortId', 'time');
   const [sortOrder, _setSortOrder] = useSharedState('sortOrder', false);
+  const [localLeaderboard, setLocalLeaderboard] = useSharedState(
+    'localLeaderboard',
+    true,
+  );
 
   return (
-    <Table className="Minesweeper__list">
-      <Table.Row bold>
-        <SortButton id="name">Nick</SortButton>
-        <SortButton id="time">Time</SortButton>
-        <SortButton id="points">3BV</SortButton>
-        <SortButton id="pointsPerSec">3BV/s</SortButton>
-        <SortButton id="fieldParams">Params</SortButton>
-      </Table.Row>
-      {leaderboard &&
-        leaderboard
-          .sort((a, b) => {
-            const i = sortOrder ? 1 : -1;
-            return a[sortId].localeCompare(b[sortId]) * i;
-          })
-          .map((player, i) => (
-            <Table.Row key={i}>
-              <Table.Cell>{player.name}</Table.Cell>
-              <Table.Cell>{player.time}</Table.Cell>
-              <Table.Cell>{player.points}</Table.Cell>
-              <Table.Cell>{player.pointsPerSec}</Table.Cell>
-              <Table.Cell>{player.fieldParams}</Table.Cell>
+    <Stack vertical fill>
+      <Stack.Item grow>
+        <Section title="Leaderboard" scrollable fill>
+          <Table className="Minesweeper__list">
+            <Table.Row bold>
+              <Table.Cell>№</Table.Cell>
+              <SortButton id="name">Nick</SortButton>
+              <SortButton id="time">Time</SortButton>
+              <SortButton id="points">3BV</SortButton>
+              <SortButton id="pointsPerSec">3BV/s</SortButton>
+              <SortButton id="fieldParams">Params</SortButton>
             </Table.Row>
-          ))}
-    </Table>
+            {((localLeaderboard && leaderboard) ||
+              (!localLeaderboard && glob_leaderboard)) &&
+              (localLeaderboard ? leaderboard : glob_leaderboard)
+                .sort((a, b) => {
+                  const i = sortOrder ? 1 : -1;
+                  return a[sortId].localeCompare(b[sortId]) * i;
+                })
+                .map((player, i) => (
+                  <Table.Row key={i}>
+                    <Table.Cell>{i + 1}</Table.Cell>
+                    <Table.Cell>{player.name}</Table.Cell>
+                    <Table.Cell>{player.time}</Table.Cell>
+                    <Table.Cell>{player.points}</Table.Cell>
+                    <Table.Cell>{player.pointsPerSec}</Table.Cell>
+                    <Table.Cell>{player.fieldParams}</Table.Cell>
+                  </Table.Row>
+                ))}
+          </Table>
+        </Section>
+      </Stack.Item>
+      <Stack.Item>
+        <Button onClick={() => setLocalLeaderboard(!localLeaderboard)}>
+          Glob/Local
+        </Button>
+      </Stack.Item>
+    </Stack>
   );
 };
 

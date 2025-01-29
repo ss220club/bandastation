@@ -30,9 +30,46 @@
 	var/current_3BV = 0
 	/// The moment then game was started for point count
 	var/start_time = 0
-
-	/// The leaderboard list
+	/// The current round leaderboard list
 	var/static/list/leaderboard = list()
+
+	//Emagged bomb stats
+	var/range_heavy = -1
+	var/range_medium = 1
+	var/range_light = 3
+	var/range_flame = 2
+
+	/// Had the program got db results
+	var/static/leaderboard_init = FALSE
+	/// The global leaderboard list
+	var/static/list/glob_leaderboard = list()
+
+/datum/computer_file/program/minesweeper/New()
+	..()
+	if(!leaderboard_init)
+		leaderboard_init = TRUE
+		init_leaderboard()
+
+/datum/computer_file/program/minesweeper/proc/init_leaderboard()
+	var/datum/db_query/minesweeper_query = SSdbcore.NewQuery("SELECT nickname, points, pointspersec, time, width, height, bombs FROM [format_table_name("minesweeper")]")
+	if(!minesweeper_query.Execute())
+		return
+	else
+		while(minesweeper_query.NextRow())
+			glob_leaderboard += list(list("name" = minesweeper_query.item[1], "time" = "[minesweeper_query.item[4]]", "points" = "[minesweeper_query.item[2]]",
+			"pointsPerSec" = "[minesweeper_query.item[3]]",
+			"fieldParams" = "[minesweeper_query.item[5]]X[minesweeper_query.item[6]]([minesweeper_query.item[7]])"))
+	qdel(minesweeper_query)
+
+/datum/computer_file/program/minesweeper/proc/add_result_to_db(list/new_result, ckey, width, height, bombs)
+	if(SSdbcore.Connect())
+		var/datum/db_query/query_minesweeper = SSdbcore.NewQuery(
+			"INSERT INTO [format_table_name("minesweeper")] (ckey, time, points, pointspersec, nickname, width, height, bombs) VALUES (:ckey, :time, :points, :pointspersec, :nickname, :width, :height, :bombs)",
+			list("ckey" = ckey, "time" = new_result["time"], "points" = new_result["points"], "pointspersec" = new_result["pointsPerSec"],
+			"nickname" = new_result["name"], "width" = width, "height" = height, "bombs" = bombs)
+		)
+		query_minesweeper.Execute()
+		qdel(query_minesweeper)
 
 /datum/computer_file/program/minesweeper/ui_interact(mob/user, datum/tgui/ui)
 	if(!LAZYLEN(minesweeper_matrix))
@@ -44,6 +81,7 @@
 	data["flags"] = setted_flags
 	data["bombs"] = generation_bombs
 	data["leaderboard"] = leaderboard
+	data["glob_leaderboard"] = glob_leaderboard
 	data["first_touch"] = first_touch
 	data["field_params"] = list("width" = generation_columns, "height" = generation_rows, "bombs" = generation_bombs)
 	return data
@@ -126,11 +164,19 @@
 	if(!nickname)
 		return
 
-	leaderboard += list(list("name" = nickname, "time" = "[game_time/10]", "points" = "[current_3BV]", "pointsPerSec" = "[round(current_3BV/(game_time/10), 0.1)]", "fieldParams" = "[generation_columns]X[generation_rows]([generation_bombs])"))
+	var/result_to_add = list("name" = nickname, "time" = "[game_time/10]", "points" = "[current_3BV]",
+	"pointsPerSec" = "[round(current_3BV/(game_time/10), 0.1)]", "fieldParams" = "[generation_columns]X[generation_rows]([generation_bombs])")
+
+	leaderboard += list(result_to_add)
+	glob_leaderboard += list(result_to_add)
+	add_result_to_db(result_to_add, user.ckey, generation_columns, generation_rows, generation_bombs)
 
 /datum/computer_file/program/minesweeper/proc/on_loose(mob/user)
 	ignore_touches = TRUE
 	playsound(get_turf(computer), 'sound/effects/explosion/explosion1.ogg', 50, TRUE)
+	if(computer.obj_flags & EMAGGED)
+		//Small bomb core stats copy
+		explosion(computer, range_heavy, range_medium, range_light, range_flame)
 	addtimer(CALLBACK(src, PROC_REF(make_empty_matrix)), 3 SECONDS)
 
 /datum/computer_file/program/minesweeper/proc/make_empty_matrix(pay = TRUE)
@@ -297,3 +343,11 @@
 #undef MINESWEEPER_ROWS
 #undef MINESWEEPER_COLUMNS
 #undef MINESWEEPER_BOMBS
+
+/* MINESWEEPER-PDA EMAG ACT */
+
+/obj/item/modular_computer/pda/emag_act(mob/user, obj/item/card/emag/emag_card, forced)
+	. = ..()
+	if(.)
+		store_file(SSmodular_computers.find_ntnet_file_by_name("minesweeper"))
+
