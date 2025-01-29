@@ -67,7 +67,7 @@ CREATE TABLE `minesweeper` (
 	`nickname` VARCHAR(32) NOT NULL COLLATE 'utf8mb4_unicode_ci',
 	`time` INT(10) UNSIGNED NOT NULL,
 	`points` INT(10) UNSIGNED NOT NULL,
-	`pointspersec` FLOAT(10) UNSIGNED NOT NULL,
+	`points_per_sec` FLOAT(10) UNSIGNED NOT NULL,
 	`width` TINYINT(3) UNSIGNED NOT NULL,
 	`height` TINYINT(3) UNSIGNED NOT NULL,
 	`bombs` TINYINT(3) UNSIGNED NOT NULL,

@@ -51,7 +51,7 @@
 		init_leaderboard()
 
 /datum/computer_file/program/minesweeper/proc/init_leaderboard()
-	var/datum/db_query/minesweeper_query = SSdbcore.NewQuery("SELECT nickname, points, pointspersec, time, width, height, bombs FROM [format_table_name("minesweeper")]")
+	var/datum/db_query/minesweeper_query = SSdbcore.NewQuery("SELECT nickname, points, points_per_sec, time, width, height, bombs FROM [format_table_name("minesweeper")]")
 	if(!minesweeper_query.Execute())
 		return
 	else
@@ -64,8 +64,8 @@
 /datum/computer_file/program/minesweeper/proc/add_result_to_db(list/new_result, ckey, width, height, bombs)
 	if(SSdbcore.Connect())
 		var/datum/db_query/query_minesweeper = SSdbcore.NewQuery(
-			"INSERT INTO [format_table_name("minesweeper")] (ckey, time, points, pointspersec, nickname, width, height, bombs) VALUES (:ckey, :time, :points, :pointspersec, :nickname, :width, :height, :bombs)",
-			list("ckey" = ckey, "time" = new_result["time"], "points" = new_result["points"], "pointspersec" = new_result["pointsPerSec"],
+			"INSERT INTO [format_table_name("minesweeper")] (ckey, time, points, points_per_sec, nickname, width, height, bombs) VALUES (:ckey, :time, :points, :points_per_sec, :nickname, :width, :height, :bombs)",
+			list("ckey" = ckey, "time" = new_result["time"], "points" = new_result["points"], "points_per_sec" = new_result["pointsPerSec"],
 			"nickname" = new_result["name"], "width" = width, "height" = height, "bombs" = bombs)
 		)
 		query_minesweeper.Execute()
