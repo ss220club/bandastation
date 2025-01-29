@@ -50,7 +50,7 @@
 	speech_args[SPEECH_MESSAGE] = message
 	addtimer(CALLBACK(speaker, TYPE_PROC_REF(/mob, emote), "drool"), 0.3 SECONDS)
 	to_chat(speaker, span_priorityalert(pick(brainrot_notifications)))
-	if(check_streamer_active_admins())
+	if(check_streamer_active_admin())
 		message_admins("[ADMIN_LOOKUPFLW(speaker)] has attempted to say forbidden word. The message was: \
 		<a href='byond://?src=[REF(src)];speaker=[key_name(speaker)];message=[original_message]'>SEE MESSAGE</a>")
 	else
@@ -87,14 +87,8 @@
 	var/static/brainrot_regex
 	if(!brainrot_regex)
 		var/list/unique_filters = unique_list(filters)
-		var/list/regex_components = list()
-		for (var/filter in unique_filters)
-			var/list/char_list = text2charlist(filter)
-			var/regex_part = char_list.Join("+")
-			regex_part += "+"
-			regex_components += regex_part
 
-		brainrot_regex = regex_components.Join("|")
+		brainrot_regex = unique_filters.Join("|")
 
 	return brainrot_regex
 
@@ -108,9 +102,10 @@
 
 	return speech_filter_bypass_ckeys
 
-/datum/element/speech_filter/proc/check_streamer_active_admins()
+/datum/element/speech_filter/proc/check_streamer_active_admin()
+	var/static/list/streamer_rank = list("Максон","Банда")
 	for(var/client/admin as anything in GLOB.admins)
-		if(admin.ckey in get_speech_filter_bypass_ckeys())
+		if(admin.holder.name in streamer_rank)
 			return TRUE
 
 /datum/element/speech_filter/proc/ckey_list(list/list_to_ckey)
