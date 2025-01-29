@@ -5,10 +5,10 @@
 	var/refusal_text
 
 /datum/component/ckey_and_role_locked_pickup/Initialize(offstation_role = TRUE, ckey_whitelist, pickup_damage = 0, refusal_text)
-		src.offstation_role = offstation_role
-		src.ckeys = ckey_whitelist
-		src.pickup_damage = pickup_damage
-		src.refusal_text = refusal_text
+	src.offstation_role = offstation_role
+	src.ckeys = ckey_whitelist
+	src.pickup_damage = pickup_damage
+	src.refusal_text = refusal_text
 
 /datum/component/ckey_and_role_locked_pickup/RegisterWithParent()
 	RegisterSignal(parent, COMSIG_ITEM_EQUIPPED, PROC_REF(on_equip))
