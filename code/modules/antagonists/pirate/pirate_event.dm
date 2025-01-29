@@ -27,6 +27,8 @@
 	send_pirate_threat(gang_list)
 
 /proc/send_pirate_threat(list/pirate_selection)
+	if(!pirate_selection)
+		pirate_selection = GLOB.light_pirate_gangs + GLOB.heavy_pirate_gangs
 	var/datum/pirate_gang/chosen_gang = pick_n_take(pirate_selection)
 	///If there was nothing to pull from our requested list, stop here.
 	if(!chosen_gang)
