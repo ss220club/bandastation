@@ -13,6 +13,7 @@
 }
 
 .Minesweeper__open {
+  filter: brightness(80%);
   pointer-events: none;
   vertical-align: middle;
   text-align: center;
