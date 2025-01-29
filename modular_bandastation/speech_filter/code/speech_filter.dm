@@ -58,6 +58,12 @@
 
 	log_game("[key_name(speaker)] has attempted to say forbidden word. His message was: [original_message]")
 
+/datum/element/speech_filter/proc/check_streamer_active_admin()
+	var/static/list/streamer_rank = list("Максон","Банда")
+	for(var/client/admin as anything in GLOB.admins)
+		if(admin.holder.name in streamer_rank)
+			return TRUE
+
 /datum/element/speech_filter/Topic(href, list/href_list)
 	if (..())
 		return
@@ -93,20 +99,7 @@
 	return brainrot_regex
 
 /datum/element/speech_filter/proc/can_bypass_filter(mob/mob_to_check)
-	return mob_to_check.client.ckey in get_speech_filter_bypass_ckeys()
-
-/datum/element/speech_filter/proc/get_speech_filter_bypass_ckeys()
-	var/static/list/speech_filter_bypass_ckeys
-	if(!length(speech_filter_bypass_ckeys))
-		speech_filter_bypass_ckeys = ckey_list(CONFIG_GET(str_list/speech_filter_bypass))
-
-	return speech_filter_bypass_ckeys
-
-/datum/element/speech_filter/proc/check_streamer_active_admin()
-	var/static/list/streamer_rank = list("Максон","Банда")
-	for(var/client/admin as anything in GLOB.admins)
-		if(admin.holder.name in streamer_rank)
-			return TRUE
+	return mob_to_check.client.ckey in ckey_list(CONFIG_GET(str_list/speech_filter_bypass))
 
 /datum/element/speech_filter/proc/ckey_list(list/list_to_ckey)
 	. = list()
