@@ -15,7 +15,7 @@ INSERT INTO `SS13_schema_revision_220` (`major`, `minor`) VALUES (1, 3);
 
 -----------------------------------------------------
 Version 1.3, 29 January 2024, by ROdenFL
-Created the table: budget
+Created the table: minesweeper
 
 ```sql
 CREATE TABLE `minesweeper` (
