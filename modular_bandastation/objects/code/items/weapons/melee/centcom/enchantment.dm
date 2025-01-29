@@ -1,15 +1,15 @@
 /datum/enchantment
-	/// used for blackbox logging
+	/// Used for blackbox logging
 	var/name = "You shouldn't be seeing this, file an issue report."
-	/// used for wizards/cultists examining the runes on the blade
+	/// Used for wizards/cultists examining the runes on the blade
 	var/desc = "Someone messed up, file an issue report."
-	/// used for damage values
+	/// Used for damage values
 	var/power = 1
-	/// whether the enchant procs despite not being in proximity
+	/// Whether the enchant procs despite not being in proximity
 	var/ranged = FALSE
 	/// Distance in tiles
 	var/range = 1
-	/// stores the world.time after which it can be used again, the `initial(cooldown)` is the cooldown between activations.
+	/// Stores the world.time after which it can be used again, the `initial(cooldown)` is the cooldown between activations.
 	var/cooldown = -1
 	/// If has traits, has it applied them?
 	var/applied_traits = FALSE
