@@ -53540,11 +53540,8 @@
 "nqY" = (
 /obj/machinery/light/directional/north,
 /obj/structure/reagent_dispensers/wall/peppertank/directional/north,
-/obj/effect/turf_decal/stripes/red/line{
-	dir = 4
-	},
-/obj/effect/turf_decal/stripes/red/line{
-	dir = 8
+/obj/effect/turf_decal/stripes/red/end{
+	dir = 1
 	},
 /turf/open/floor/iron/dark,
 /area/station/ai_monitored/security/armory)
@@ -94544,11 +94541,8 @@
 /area/station/maintenance/starboard/aft)
 "xMu" = (
 /obj/item/radio/intercom/directional/north,
-/obj/effect/turf_decal/stripes/red/line{
-	dir = 4
-	},
-/obj/effect/turf_decal/stripes/red/line{
-	dir = 8
+/obj/effect/turf_decal/stripes/red/end{
+	dir = 1
 	},
 /turf/open/floor/iron/dark,
 /area/station/ai_monitored/security/armory)
