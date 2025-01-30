@@ -6289,6 +6289,69 @@ instrumental = "гарнитурой обслуживания"
 prepositional = "гарнитуре обслуживания"
 gender = "female"
 
+["bottle of E-Z-Nutrient"]
+nominative = "бутылка E-Z-Nutrient"
+genitive = "бутылки E-Z-Nutrient"
+dative = "бутылке E-Z-Nutrient"
+accusative = "бутылку E-Z-Nutrient"
+instrumental = "бутылкой E-Z-Nutrient"
+prepositional = "бутылке E-Z-Nutrient"
+gender = "female"
+
+["bottle of Left 4 Zed"]
+nominative = "бутылка Left 4 Zed"
+genitive = "бутылки Left 4 Zed"
+dative = "бутылке Left 4 Zed"
+accusative = "бутылку Left 4 Zed"
+instrumental = "бутылкой Left 4 Zed"
+prepositional = "бутылке Left 4 Zed"
+gender = "female"
+
+["bottle of Robust Harvest"]
+nominative = "бутылка Robust Harvest"
+genitive = "бутылки Robust Harvest"
+dative = "бутылке Robust Harvest"
+accusative = "бутылку Robust Harvest"
+instrumental = "бутылкой Robust Harvest"
+prepositional = "бутылке Robust Harvest"
+gender = "female"
+
+["pest spray"]
+nominative = "спрей от вредителей"
+genitive = "спрея от вредителей"
+dative = "спрею от вредителей"
+accusative = "спрей от вредителей"
+instrumental = "спреем от вредителей"
+prepositional = "спрее от вредителей"
+gender = "male"
+
+["ammonia bottle"]
+nominative = "бутылка аммиака"
+genitive = "бутылки аммиака"
+dative = "бутылке аммиака"
+accusative = "бутылку аммиака"
+instrumental = "бутылкой аммиака"
+prepositional = "бутылке аммиака"
+gender = "female"
+
+["diethylamine bottle"]
+nominative = "бутылка диэтиламина"
+genitive = "бутылки диэтиламина"
+dative = "бутылке диэтиламина"
+accusative = "бутылку диэтиламина"
+instrumental = "бутылкой диэтиламина"
+prepositional = "бутылке диэтиламина"
+gender = "female"
+
+["saltpetre bottle"]
+nominative = "бутылка селитры"
+genitive = "бутылки селитры"
+dative = "бутылке селитры"
+accusative = "бутылку селитры"
+instrumental = "бутылкой селитры"
+prepositional = "бутылке селитры"
+gender = "female"
+
 # MARK: Plants
 ["banana"]
 nominative = "банан"
