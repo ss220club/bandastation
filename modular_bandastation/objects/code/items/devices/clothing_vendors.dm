@@ -26,3 +26,11 @@
 		/obj/item/clothing/suit/armor/vest/caftan = 3,
 		)
 	. = ..()
+
+/obj/machinery/vending/wardrobe/science_wardrobe/Initialize(mapload)
+	products += list(
+		/obj/item/clothing/head/cowboy/science = 3,
+		/obj/item/clothing/suit/jacket/bomber/science = 3,
+		/obj/item/clothing/neck/cloak/sci_mantle = 3,
+		)
+	. = ..()

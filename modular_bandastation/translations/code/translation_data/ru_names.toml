@@ -1715,6 +1715,358 @@ instrumental = "кафтаном охраны"
 prepositional = "кафтана охраны"
 gender = "male"
 
+# MARK: Vendor
+["security radio headset"]
+nominative = "гарнитура охраны"
+genitive = "гарнитуры охраны"
+dative = "гарнитуре охраны"
+accusative = "гарнитуру охраны"
+instrumental = "гарнитурой охраны"
+prepositional = "гарнитуре охраны"
+gender = "female"
+
+["security bowman headset"]
+nominative = "гарнитура боуман охраны"
+genitive = "гарнитуры боуман охраны"
+dative = "гарнитуре боуман охраны"
+accusative = "гарнитуру боуман охраны"
+instrumental = "гарнитурой боуман охраны"
+prepositional = "гарнитуре боуман охраны"
+gender = "female"
+
+["security HUDSunglasses"]
+nominative = "солнцезащитные ИЛС очки охраны"
+genitive = "солнцезащитных ИЛС очков охраны"
+dative = "солнцезащитным ИЛС очкам охраны"
+accusative = "солнцезащитные ИЛС очки охраны"
+instrumental = "солнцезащитными ИЛС очками охраны"
+prepositional = "солнцезащитных ИЛС очках охраны"
+gender = "plural"
+
+["security belt"]
+nominative = "пояс охраны"
+genitive = "пояса охраны"
+dative = "поясу охраны"
+accusative = "пояс охраны"
+instrumental = "поясом охраны"
+prepositional = "поясе охраны"
+gender = "male"
+
+["security beret"]
+nominative = "берет охраны"
+genitive = "берета охраны"
+dative = "берету охраны"
+accusative = "берет охраны"
+instrumental = "беретом охраны"
+prepositional = "берете охраны"
+gender = "male"
+
+["security cap"]
+nominative = "кепка охраны"
+genitive = "кепки охраны"
+dative = "кепке охраны"
+accusative = "кепку охраны"
+instrumental = "кепкой охраны"
+prepositional = "кепке охраны"
+gender = "female"
+
+["striped security bandana"]
+nominative = "полосатая бандана охраны"
+genitive = "полосатой банданы охраны"
+dative = "полосатой бандане охраны"
+accusative = "полосатую бандану охраны"
+instrumental = "полосатой банданой охраны"
+prepositional = "полосатой бандане охраны"
+gender = "female"
+
+["security uniform"]
+nominative = "комбинезон охраны"
+genitive = "комбинезона охраны"
+dative = "комбинезону охраны"
+accusative = "комбинезон охраны"
+instrumental = "комбинезоном охраны"
+prepositional = "комбинезоне охраны"
+gender = "male"
+
+["security skirt"]
+nominative = "юбка-комбинезон охраны"
+genitive = "юбки-комбинезона охраны"
+dative = "юбке-комбинезону охраны"
+accusative = "юбку-комбинезон охраны"
+instrumental = "юбкой-комбинезоном охраны"
+prepositional = "юбке-комбинезоне охраны"
+gender = "female"
+
+["grey security jumpsuit"]
+nominative = "серый комбинезон охраны"
+genitive = "серого комбинезона охраны"
+dative = "серому комбинезону охраны"
+accusative = "серый комбинезон охраны"
+instrumental = "серым комбинезоном охраны"
+prepositional = "сером комбинезоне охраны"
+gender = "male"
+
+["slacks"]
+nominative = "широкие брюки"
+genitive = "широких брюк"
+dative = "широким брюкам"
+accusative = "широкие брюки"
+instrumental = "широкими брюками"
+prepositional = "широких брюках"
+gender = "plural"
+
+["blue shirt and tie"]
+nominative = "синяя рубашка с галстуком"
+genitive = "синей рубашки с галстуком"
+dative = "синей рубашке с галстуком"
+accusative = "синюю рубашку с галстуком"
+instrumental = "синей рубашкой с галстуком"
+prepositional = "синей рубашке с галстуком"
+gender = "female"
+
+["security jacket"]
+nominative = "куртка охраны"
+genitive = "куртки охраны"
+dative = "куртке охраны"
+accusative = "куртку охраны"
+instrumental = "курткой охраны"
+prepositional = "куртке охраны"
+gender = "female"
+
+["security winter jacket"]
+nominative = "зимняя куртка охраны"
+genitive = "зимней куртки охраны"
+dative = "зимней куртке охраны"
+accusative = "зимнюю куртку охраны"
+instrumental = "зимней курткой охраны"
+prepositional = "зимней куртке охраны"
+gender = "female"
+
+["jackboots"]
+nominative = "берцы"
+genitive = "берцев"
+dative = "берцам"
+accusative = "берцы"
+instrumental = "берцами"
+prepositional = "берцах"
+gender = "plural"
+
+["security backpack"]
+nominative = "рюкзак охраны"
+genitive = "рюкзака охраны"
+dative = "рюкзаку охраны"
+accusative = "рюкзак охраны"
+instrumental = "рюкзаком охраны"
+prepositional = "рюкзаке охраны"
+gender = "male"
+
+["security satchel"]
+nominative = "сумка охраны"
+genitive = "сумки охраны"
+dative = "сумке охраны"
+accusative = "сумку охраны"
+instrumental = "сумкой охраны"
+prepositional = "сумке охраны"
+gender = "female"
+
+["security duffel bag"]
+nominative = "вещмешок охраны"
+genitive = "вещмешка охраны"
+dative = "вещмешку охраны"
+accusative = "вещмешок охраны"
+instrumental = "вещмешком охраны"
+prepositional = "вещмешке охраны"
+gender = "male"
+
+["security messenger bag"]
+nominative = "курьерская сумка охраны"
+genitive = "курьерской сумки охраны"
+dative = "курьерской сумке охраны"
+accusative = "курьерскую сумку охраны"
+instrumental = "курьерской сумкой охраны"
+prepositional = "курьерской сумке охраны"
+gender = "female"
+
+["security officer's formal uniform"]
+nominative = "формальная униформа офицера охраны"
+genitive = "формальной униформы офицера охраны"
+dative = "формальной униформе офицера охраны"
+accusative = "формальную униформу офицера охраны"
+instrumental = "формальной униформой офицера охраны"
+prepositional = "формальной униформе офицера охраны"
+gender = "female"
+
+["security officer's jacket"]
+nominative = "куртка офицера охраны"
+genitive = "куртки офицера охраны"
+dative = "куртке офицера охраны"
+accusative = "куртку офицера охраны"
+instrumental = "курткой офицера охраны"
+prepositional = "куртке офицера охраны"
+gender = "female"
+
+["security beanie"]
+nominative = "шапка охраны"
+genitive = "шапки охраны"
+dative = "шапке охраны"
+accusative = "шапку охраны"
+instrumental = "шапкой охраны"
+prepositional = "шапке охраны"
+gender = "female"
+
+["security poncho"]
+nominative = "пончо охраны"
+genitive = "пончо охраны"
+dative = "пончо охраны"
+accusative = "пончо охраны"
+instrumental = "пончо охраны"
+prepositional = "пончо охраны"
+gender = "neuter"
+
+["security corporate uniform"]
+nominative = "корпоративная форма охраны"
+genitive = "корпоративной формы охраны"
+dative = "корпоративной форме охраны"
+accusative = "корпоративную форму охраны"
+instrumental = "корпоративной формой охраны"
+prepositional = "корпоративной форме охраны"
+gender = "female"
+
+["security cowboy hat"]
+nominative = "ковбойская шляпа охраны"
+genitive = "ковбойской шляпы охраны"
+dative = "ковбойской шляпе охраны"
+accusative = "ковбойскую шляпу охраны"
+instrumental = "ковбойской шляпой охраны"
+prepositional = "ковбойской шляпе охраны"
+gender = "female"
+
+["corporate security cap"]
+nominative = "корпоративная кепка охраны"
+genitive = "корпоративной кепки охраны"
+dative = "корпоративной кепке охраны"
+accusative = "корпоративную кепку охраны"
+instrumental = "корпоративной кепкой охраны"
+prepositional = "корпоративной кепке охраны"
+gender = "female"
+
+["security corporate skirt"]
+nominative = "корпоративная юбка-комбинезон охраны"
+genitive = "корпоративной юбки-комбинезона охраны"
+dative = "корпоративной юбке-комбинезону охраны"
+accusative = "корпоративную юбку-комбинезон охраны"
+instrumental = "корпоративной юбкой-комбинезоном охраны"
+prepositional = "корпоративной юбке-комбинезоне охраны"
+gender = "female"
+
+["security bomber"]
+nominative = "бомбер охраны"
+genitive = "бомбера охраны"
+dative = "бомберу охраны"
+accusative = "бомбер охраны"
+instrumental = "бомбером охраны"
+prepositional = "бомбере охраны"
+gender = "male"
+
+["security coat"]
+nominative = "пальто охраны"
+genitive = "пальто охраны"
+dative = "пальто охраны"
+accusative = "пальто охраны"
+instrumental = "пальто охраны"
+prepositional = "пальто охраны"
+gender = "neuter"
+
+["security caftan"]
+nominative = "кафтан охраны"
+genitive = "кафтана охраны"
+dative = "кафтану охраны"
+accusative = "кафтан охраны"
+instrumental = "кафтаном охраны"
+prepositional = "кафтана охраны"
+gender = "male"
+
+["security bomber"]
+nominative = "бомбер службы безопасности"
+genitive = "бомбера службы безопасности"
+dative = "бомберу службы безопасности"
+accusative = "бомбер службы безопасности"
+instrumental = "бомбером службы безопасности"
+prepositional = "бомбере службы безопасности"
+gender = "male"
+
+["security coat"]
+nominative = "пальто службы безопасности"
+genitive = "пальто службы безопасности"
+dative = "пальто службы безопасности"
+accusative = "пальто службы безопасности"
+instrumental = "пальто службы безопасности"
+prepositional = "пальто службы безопасности"
+gender = "male"
+
+["security caftan"]
+nominative = "кафтан службы безопасности"
+genitive = "кафтана службы безопасности"
+dative = "кафтану службы безопасности"
+accusative = "кафтан службы безопасности"
+instrumental = "кафтаном службы безопасности"
+prepositional = "кафтане службы безопасности"
+gender = "male"
+
+["security cowboy hat"]
+nominative = "ковбойская шляпа службы безопасности"
+genitive = "ковбойской шляпы службы безопасности"
+dative = "ковбойской шляпе службы безопасности"
+accusative = "ковбойская шляпа службы безопасности"
+instrumental = "ковбойской шляпой службы безопасности"
+prepositional = "ковбойской шляпе службы безопасности"
+gender = "female"
+
+["security beanie"]
+nominative = "берендейка службы безопасности"
+genitive = "берендейкой службы безопасности"
+dative = "берендейке службы безопасности"
+accusative = "берендейка службы безопасности"
+instrumental = "берендейкой службы безопасности"
+prepositional = "берендейке службы безопасности"
+gender = "female"
+
+["cortporate security cap"]
+nominative = "корпоративная кепка службы безопасности"
+genitive = "корпоративной кепкой службы безопасности"
+dative = "корпоративной кепке службы безопасности"
+accusative = "корпоративная кепка службы безопасности"
+instrumental = "корпоративной кепкой службы безопасности"
+prepositional = "корпоративной кепке службы безопасности"
+gender = "female"
+
+["security poncho"]
+nominative = "пончо службы безопасности"
+genitive = "пончо службы безопасности"
+dative = "пончо службы безопасности"
+accusative = "пончо службы безопасности"
+instrumental = "пончо службы безопасности"
+prepositional = "пончо службы безопасности"
+gender = "male"
+
+["security corporate uniform"]
+nominative = "корпоративная униформа службы безопасности"
+genitive = "корпоративной униформой службы безопасности"
+dative = "корпоративной униформе службы безопасности"
+accusative = "корпоративная униформа службы безопасности"
+instrumental = "корпоративной униформой службы безопасности"
+prepositional = "корпоративной униформе службы безопасности"
+gender = "female"
+
+["security corporate skirt"]
+nominative = "корпоративная юбка службы безопасности"
+genitive = "корпоративной юбкой службы безопасности"
+dative = "корпоративной юбке службы безопасности"
+accusative = "корпоративная юбка службы безопасности"
+instrumental = "корпоративной юбкой службы безопасности"
+prepositional = "корпоративной юбке службы безопасности"
+gender = "female"
+
 # MARK: Warden
 ["warden's locker"]
 nominative = "шкафчик смотрителя"
@@ -8740,6 +9092,33 @@ instrumental = "чашкой Петри с простым образцом"
 prepositional = "чашке Петри с простым образцом"
 gender = "female"
 
+["science's cowboy hat"]
+nominative = "ковбойская шляпа ученого"
+genitive = "ковбойской шляпы ученого"
+dative = "ковбойской шляпе ученого"
+accusative = "ковбойскую шляпу ученого"
+instrumental = "ковбойской шляпой ученого"
+prepositional = "ковбойской шляпе ученого"
+gender = "female"
+
+["science bomber"]
+nominative = "бомбер ученого"
+genitive = "бомбера ученого"
+dative = "бомберу ученого"
+accusative = "бомбер ученого"
+instrumental = "бомбером ученого"
+prepositional = "бомберу ученого"
+gender = "male"
+
+["scientist's mantle"]
+nominative = "мантия ученого"
+genitive = "мантии ученого"
+dative = "мантии ученого"
+accusative = "мантию ученого"
+instrumental = "мантией ученого"
+prepositional = "мантию ученого"
+gender = "female"
+
 # MARK: Circuits
 ["integrated circuit"]
 nominative = "интегральная схема"
@@ -8987,6 +9366,15 @@ nominative = "модуль переименования киборга"
 
 ["cyborg emergency reboot module"]
 nominative = "модуль экстренной перезагрузки киборга"
+
+["roboticist bomber"]
+nominative = "бомбер робототехника"
+genitive = "бомбера робототехника"
+dative = "бомберу робототехника"
+accusative = "бомбер робототехника"
+instrumental = "бомбером робототехника"
+prepositional = "бомберу робототехника"
+gender = "male"
 
 # MARK: Exosuits
 # Ripley
