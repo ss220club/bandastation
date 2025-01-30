@@ -181,8 +181,13 @@
 	if(!nickname)
 		return
 
-	var/result_to_add = list("name" = nickname, "time" = "[game_time/10]", "points" = "[current_3BV]",
-	"pointsPerSec" = "[round(current_3BV/(game_time/10), 0.1)]", "fieldParams" = "[generation_columns]X[generation_rows]([generation_bombs])")
+	var/result_to_add = list(
+		"name" = nickname,
+		"time" = "[game_time/10]",
+		"points" = "[current_3BV]",
+		"pointsPerSec" = "[round(current_3BV/(game_time/10), 0.1)]",
+		"fieldParams" = "[generation_columns]X[generation_rows]([generation_bombs])"
+	)
 
 	leaderboard += list(result_to_add)
 	glob_leaderboard += list(result_to_add)
