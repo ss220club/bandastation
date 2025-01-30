@@ -1,5 +1,0 @@
-author: "CallmeHouston"
-delete-after: True
-changes:
-  - map: "Небольшой ремап оружейной Кибериады."
-  - bugfix: "Убран лишний фаер алярм в робо на Кибериаде."
