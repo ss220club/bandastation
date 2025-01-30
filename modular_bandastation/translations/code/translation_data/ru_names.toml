@@ -5477,6 +5477,159 @@ instrumental = "пакетом майонеза"
 prepositional = "пакете майонеза"
 gender = "male"
 
+["Donk-pocket"]
+nominative = "Донк-покет"
+genitive = "Донк-покета"
+dative = "Донк-покету"
+accusative = "Донк-покет"
+instrumental = "Донк-покетом"
+prepositional = "Донк-покете"
+gender = "male"
+
+["Berry-pocket"]
+nominative = "Ягодный-покет"
+genitive = "Ягодного-покета"
+dative = "Ягодному-покету"
+accusative = "Ягодный-покет"
+instrumental = "Ягодным-покетом"
+prepositional = "Ягодном-покете"
+gender = "male"
+
+["Honk-pocket"]
+nominative = "Хонк-покет"
+genitive = "Хонк-покета"
+dative = "Хонк-покету"
+accusative = "Хонк-покет"
+instrumental = "Хонк-покетом"
+prepositional = "Хонк-покете"
+gender = "male"
+
+["Pizza-pocket"]
+nominative = "Пицца-покет"
+genitive = "Пицца-покета"
+dative = "Пицца-покету"
+accusative = "Пицца-покет"
+instrumental = "Пицца-покетом"
+prepositional = "Пицца-покете"
+gender = "male"
+
+["Spicy-pocket"]
+nominative = "Острый-покет"
+genitive = "Острого-покета"
+dative = "Острому-покету"
+accusative = "Острый-покет"
+instrumental = "Острым-покетом"
+prepositional = "Остром-покете"
+gender = "male"
+
+["Teriyaki-pocket"]
+nominative = "Терияки-покет"
+genitive = "Терияки-покета"
+dative = "Терияки-покету"
+accusative = "Терияки-покет"
+instrumental = "Терияки-покетом"
+prepositional = "Терияки-покете"
+gender = "male"
+
+["tator tot"]
+nominative = "предокартофель"
+genitive = "предокартофеля"
+dative = "предокартофелю"
+accusative = "предокартофель"
+instrumental = "предокартофелем"
+prepositional = "предокартофеле"
+gender = "male"
+
+["waffles"]
+nominative = "вафли"
+genitive = "вафель"
+dative = "вафлям"
+accusative = "вафли"
+instrumental = "вафлями"
+prepositional = "вафлях"
+gender = "plural"
+
+["Dank-pocket"]
+nominative = "Данк-покет"
+genitive = "Данк-покета"
+dative = "Данк-покету"
+accusative = "Данк-покет"
+instrumental = "Данк-покетом"
+prepositional = "Данк-покете"
+gender = "male"
+
+["Gondola-pocket"]
+nominative = "Гондола-покет"
+genitive = "Гондола-покета"
+dative = "Гондола-покету"
+accusative = "Гондола-покет"
+instrumental = "Гондола-покетом"
+prepositional = "Гондола-покете"
+gender = "male"
+
+["box of donk-pockets"]
+nominative = "коробка донк-покетов"
+genitive = "коробки донк-покетов"
+dative = "коробке донк-покетов"
+accusative = "коробку донк-покетов"
+instrumental = "коробкой донк-покетов"
+prepositional = "коробке донк-покетов"
+gender = "female"
+
+["box of berry-flavoured donk-pockets"]
+nominative = "коробка донк-покетов со вкусом ягод"
+genitive = "коробки донк-покетов со вкусом ягод"
+dative = "коробке донк-покетов со вкусом ягод"
+accusative = "коробку донк-покетов со вкусом ягод"
+instrumental = "коробкой донк-покетов со вкусом ягод"
+prepositional = "коробке донк-покетов со вкусом ягод"
+gender = "female"
+
+["box of banana-flavoured donk-pockets"]
+nominative = "коробка донк-покетов со вкусом банана"
+genitive = "коробки донк-покетов со вкусом банана"
+dative = "коробке донк-покетов со вкусом банана"
+accusative = "коробку донк-покетов со вкусом банана"
+instrumental = "коробкой донк-покетов со вкусом банана"
+prepositional = "коробке донк-покетов со вкусом банана"
+gender = "female"
+
+["box of pizza-flavoured donk-pockets"]
+nominative = "коробка донк-покетов со вкусом пиццы"
+genitive = "коробки донк-покетов со вкусом пиццы"
+dative = "коробке донк-покетов со вкусом пиццы"
+accusative = "коробку донк-покетов со вкусом пиццы"
+instrumental = "коробкой донк-покетов со вкусом пиццы"
+prepositional = "коробке донк-покетов со вкусом пиццы"
+gender = "female"
+
+["box of spicy-flavoured donk-pockets"]
+nominative = "коробка острых донк-покетов"
+genitive = "коробки острых донк-покетов"
+dative = "коробке острых донк-покетов"
+accusative = "коробку острых донк-покетов"
+instrumental = "коробкой острых донк-покетов"
+prepositional = "коробке острых донк-покетов"
+gender = "female"
+
+["box of teriyaki-flavoured donk-pockets"]
+nominative = "коробка донк-покетов со вкусом терияки"
+genitive = "коробки донк-покетов со вкусом терияки"
+dative = "коробке донк-покетов со вкусом терияки"
+accusative = "коробку донк-покетов со вкусом терияки"
+instrumental = "коробкой донк-покетов со вкусом терияки"
+prepositional = "коробке донк-покетов со вкусом терияки"
+gender = "female"
+
+["tactical snack rig"]
+nominative = "тактическая разгрузка для закусок"
+genitive = "тактической разгрузки для закусок"
+dative = "тактической разгрузке для закусок"
+accusative = "тактическую разгрузку для закусок"
+instrumental = "тактической разгрузкой для закусок"
+prepositional = "тактической разгрузке для закусок"
+gender = "female"
+
 # MARK: Botany
 
 ["watering can"]
