@@ -16,12 +16,14 @@ import { capitalize } from 'tgui-core/string';
 import { useBackend, useLocalState } from '../backend';
 import { Window } from '../layouts';
 import { sanitizeText } from '../sanitize';
+import { DinnerManager } from './common/DinnerManager';
 import { StatusDisplayControls } from './common/StatusDisplayControls';
 
 const STATE_BUYING_SHUTTLE = 'buying_shuttle';
 const STATE_CHANGING_STATUS = 'changing_status';
 const STATE_MAIN = 'main';
 const STATE_MESSAGES = 'messages';
+const STATE_DINNER = 'dinner';
 
 // Used for whether or not you need to swipe to confirm an alert level change
 const SWIPE_NEEDED = 'SWIPE_NEEDED';
@@ -397,6 +399,12 @@ const PageMain = (props) => {
             />
           )}
 
+          <Button
+            icon="utensils"
+            content="Dinner manager"
+            onClick={() => act('setState', { state: STATE_DINNER })}
+          />
+
           {!!canMessageAssociates && (
             <Button
               icon="comment-o"
@@ -633,6 +641,24 @@ const PageMessages = (props) => {
   return children;
 };
 
+const PageDinner = (props) => {
+  const { act, data } = useBackend();
+
+  return (
+    <Box>
+      <Section>
+        <Button
+          icon="chevron-left"
+          content="Back"
+          onClick={() => act('setState', { state: STATE_MAIN })}
+        />
+      </Section>
+
+      <DinnerManager />
+    </Box>
+  );
+};
+
 export const CommunicationsConsole = (props) => {
   const { act, data } = useBackend();
   const {
@@ -688,7 +714,8 @@ export const CommunicationsConsole = (props) => {
           ((page === STATE_BUYING_SHUTTLE && <PageBuyingShuttle />) ||
             (page === STATE_CHANGING_STATUS && <PageChangingStatus />) ||
             (page === STATE_MAIN && <PageMain />) ||
-            (page === STATE_MESSAGES && <PageMessages />) || (
+            (page === STATE_MESSAGES && <PageMessages />) ||
+            (page === STATE_DINNER && <PageDinner />) || (
               <Box>Page not implemented: {page}</Box>
             ))}
       </Window.Content>
