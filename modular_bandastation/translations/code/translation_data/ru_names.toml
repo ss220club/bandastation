@@ -5496,6 +5496,106 @@ accusative = "странные семена"
 instrumental = "странными семенами"
 prepositional = "странных семянах"
 
+# MARK: Vendor
+["hydroponics guard armband"]
+nominative = "нарукавная повязка гидропоники"
+genitive = "нарукавной повязки гидропоники"
+dative = "нарукавной повязке гидропоники"
+accusative = "нарукавную повязку гидропоники"
+instrumental = "нарукавной повязкой гидропоники"
+prepositional = "нарукавной повязке гидропоники"
+gender = "female"
+
+["striped botany bandana"]
+nominative = "полосатая бандана ботаника"
+genitive = "полосатой банданы ботаника"
+dative = "полосатой бандане ботаника"
+accusative = "полосатую бандану ботаника"
+instrumental = "полосатой банданой ботаника"
+prepositional = "полосатой бандане ботаника"
+gender = "female"
+
+["botanist's jumpsuit"]
+nominative = "комбинезон ботаника"
+genitive = "комбинезона ботаника"
+dative = "комбинезону ботаника"
+accusative = "комбинезон ботаника"
+instrumental = "комбинезоном ботаника"
+prepositional = "комбинезоне ботаника"
+gender = "male"
+
+["botanist's jumpskirt"]
+nominative = "юбка-комбинезон ботаника"
+genitive = "юбки-комбинезона ботаника"
+dative = "юбке-комбинезону ботаника"
+accusative = "юбку-комбинезон ботаника"
+instrumental = "юбкой-комбинезоном ботаника"
+prepositional = "юбке-комбинезоне ботаника"
+gender = "female"
+
+["horticultural waders"]
+nominative = "садовые сапоги"
+genitive = "садовых сапог"
+dative = "садовым сапогам"
+accusative = "садовые сапоги"
+instrumental = "садовыми сапогами"
+prepositional = "садовых сапогах"
+gender = "plural"
+
+["hydroponics winter coat"]
+nominative = "зимнее пальто гидропоники"
+genitive = "зимнего пальто гидропоники"
+dative = "зимнему пальто гидропоники"
+accusative = "зимнее пальто гидропоники"
+instrumental = "зимним пальто гидропоники"
+prepositional = "зимнем пальто гидропоники"
+gender = "neuter"
+
+["botany backpack"]
+nominative = "рюкзак ботаника"
+genitive = "рюкзака ботаника"
+dative = "рюкзаку ботаника"
+accusative = "рюкзак ботаника"
+instrumental = "рюкзаком ботаника"
+prepositional = "рюкзаке ботаника"
+gender = "male"
+
+["botanist satchel"]
+nominative = "сумка ботаника"
+genitive = "сумки ботаника"
+dative = "сумке ботаника"
+accusative = "сумку ботаника"
+instrumental = "сумкой ботаника"
+prepositional = "сумке ботаника"
+gender = "female"
+
+["hydroponic's duffel bag"]
+nominative = "вещмешок гидропоники"
+genitive = "вещмешка гидропоники"
+dative = "вещмешку гидропоники"
+accusative = "вещмешок гидропоники"
+instrumental = "вещмешком гидропоники"
+prepositional = "вещмешке гидропоники"
+gender = "male"
+
+["botanist messenger bag"]
+nominative = "курьерская сумка ботаника"
+genitive = "курьерской сумки ботаника"
+dative = "курьерской сумке ботаника"
+accusative = "курьерскую сумку ботаника"
+instrumental = "курьерской сумкой ботаника"
+prepositional = "курьерской сумке ботаника"
+gender = "female"
+
+["service radio headset"]
+nominative = "гарнитура обслуживания"
+genitive = "гарнитуры обслуживания"
+dative = "гарнитуре обслуживания"
+accusative = "гарнитуру обслуживания"
+instrumental = "гарнитурой обслуживания"
+prepositional = "гарнитуре обслуживания"
+gender = "female"
+
 # MARK: Plants
 ["banana"]
 nominative = "банан"
