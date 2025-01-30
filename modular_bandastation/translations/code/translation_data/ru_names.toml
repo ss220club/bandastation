@@ -3630,6 +3630,97 @@ instrumental = "капканом"
 prepositional = "капкане"
 gender = "male"
 
+# MARK: Clothes
+["purple cap"]
+nominative = "пурпурная кепка"
+genitive = "пурпурной кепки"
+dative = "пурпурной кепке"
+accusative = "пурпурную кепку"
+instrumental = "пурпурной кепкой"
+prepositional = "пурпурной кепке"
+gender = "female"
+
+["purple bandana"]
+nominative = "пурпурная бандана"
+genitive = "пурпурной банданы"
+dative = "пурпурной бандане"
+accusative = "пурпурную бандану"
+instrumental = "пурпурной банданой"
+prepositional = "пурпурной бандане"
+gender = "female"
+
+["janitor's jumpsuit"]
+nominative = "комбинезон уборщика"
+genitive = "комбинезона уборщика"
+dative = "комбинезону уборщика"
+accusative = "комбинезон уборщика"
+instrumental = "комбинезоном уборщика"
+prepositional = "комбинезоне уборщика"
+gender = "male"
+
+["janitor's jumpskirt"]
+nominative = "юбка-комбинезон уборщика"
+genitive = "юбки-комбинезона уборщика"
+dative = "юбке-комбинезоне уборщика"
+accusative = "юбку-комбинезон уборщика"
+instrumental = "юбкой-комбинезоном уборщика"
+prepositional = "юбке-комбинезоне уборщика"
+gender = "female"
+
+["janitor's winter coat"]
+nominative = "зимнее пальто уборщика"
+genitive = "зимнего пальто уборщика"
+dative = "зимнему пальто уборщика"
+accusative = "зимнее пальто уборщика"
+instrumental = "зимним пальто уборщика"
+prepositional = "зимнем пальто уборщика"
+gender = "neuter"
+
+["janibelt"]
+nominative = "пояс уборщика"
+genitive = "пояса уборщика"
+dative = "поясу уборщика"
+accusative = "пояс уборщика"
+instrumental = "поясом уборщика"
+prepositional = "поясе уборщика"
+gender = "male"
+
+["backpack cleaner tank"]
+nominative = "наспинный бак для чистки"
+genitive = "наспинного бака для чистки"
+dative = "наспинному баку для чистки"
+accusative = "наспинный бак для чистки"
+instrumental = "наспинным баком для чистки"
+prepositional = "наспинном баке для чистки"
+gender = "male"
+
+["flyswatter"]
+nominative = "мухобойка"
+genitive = "мухобойки"
+dative = "мухобойке"
+accusative = "мухобойку"
+instrumental = "мухобойкой"
+prepositional = "мухобойке"
+gender = "female"
+
+["wet floor sign"]
+nominative = "знак скользкого пола"
+genitive = "знака скользкого пола"
+dative = "знаку скользкого пола"
+accusative = "знак скользкого пола"
+instrumental = "знаком скользкого пола"
+prepositional = "знаке скользкого пола"
+gender = "male"
+
+["soap"]
+nominative = "мыло"
+genitive = "мыла"
+dative = "мылу"
+accusative = "мыло"
+instrumental = "мылом"
+prepositional = "мыле"
+gender = "neuter"
+
 # MARK: Bar
 ["soda dispenser"]
 nominative = "раздатчик соды"
