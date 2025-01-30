@@ -3739,6 +3739,502 @@ instrumental = "шейкером"
 prepositional = "шейкере"
 gender = "male"
 
+["Soda Water"]
+nominative = "газированная вода"
+genitive = "газированной воды"
+dative = "газированной воде"
+accusative = "газированную воду"
+instrumental = "газированной водой"
+prepositional = "газированной воде"
+gender = "female"
+
+["pet collar"]
+nominative = "ошейник для питомца"
+genitive = "ошейника для питомца"
+dative = "ошейнику для питомца"
+accusative = "ошейник для питомца"
+instrumental = "ошейником для питомца"
+prepositional = "ошейнике для питомца"
+gender = "male"
+
+["bandolier"]
+nominative = "бандольер"
+genitive = "бандольера"
+dative = "бандольеру"
+accusative = "бандольер"
+instrumental = "бандольером"
+prepositional = "бандольере"
+gender = "male"
+
+["damp rag"]
+nominative = "влажная тряпка"
+genitive = "влажной тряпки"
+dative = "влажной тряпке"
+accusative = "влажную тряпку"
+instrumental = "влажной тряпкой"
+prepositional = "влажной тряпке"
+gender = "female"
+
+["DIY Dish Drive Kit"]
+nominative = "набор \"сделай сам\" дисковода для блюд"
+genitive = "набора \"сделай сам\" дисковода для блюд"
+dative = "набору \"сделай сам\" дисковода для блюд"
+accusative = "набор \"сделай сам\" дисковода для блюд"
+instrumental = "набором \"сделай сам\" дисковода для блюд"
+prepositional = "наборе \"сделай сам\" дисковода для блюд"
+gender = "male"
+
+["beer goggles"]
+nominative = "очки для пива"
+genitive = "очков для пива"
+dative = "очкам для пива"
+accusative = "очки для пива"
+instrumental = "очками для пива"
+prepositional = "очках для пива"
+gender = "plural"
+
+["box of shotgun shells (Less Lethal - Beanbag)"]
+nominative = "патроны для дробовика (менее летально - \"Погремушка\")"
+genitive = "патронов для дробовика (менее летально - \"Погремушка\")"
+dative = "патронам для дробовика (менее летально - \"Погремушка\")"
+accusative = "патроны для дробовика (менее летально - \"Погремушка\")"
+instrumental = "патронами для дробовика (менее летально - \"Погремушка\")"
+prepositional = "патронах для дробовика (менее летально - \"Погремушка\")"
+gender = "plural"
+
+["money bag"]
+nominative = "мешок денег"
+genitive = "мешка денег"
+dative = "мешку денег"
+accusative = "мешок денег"
+instrumental = "мешком денег"
+prepositional = "мешке денег"
+gender = "male"
+
+# MARK: Boozies
+["Beekhof Blauw Curaçao"]
+nominative = "Бейкхоф Блау Кюрасао"
+genitive = "Бейкхофа Блау Кюрасао"
+dative = "Бейкхофу Блау Кюрасао"
+accusative = "Бейкхоф Блау Кюрасао"
+instrumental = "Бейкхофом Блау Кюрасао"
+prepositional = "Бейкхофе Блау Кюрасао"
+gender = "male"
+
+["Buckin' Bronco's Applejack"]
+nominative = "яблочный джек Баккин Бронко"
+genitive = "яблочного джека Баккин Бронко"
+dative = "яблочному джеку Баккин Бронко"
+accusative = "яблочный джек Баккин Бронко"
+instrumental = "яблочным джеком Баккин Бронко"
+prepositional = "яблочном джека Баккин Бронко"
+gender = "male"
+
+["Voltaic Yellow Wine"]
+nominative = "вольтаичное жёлтое вино"
+genitive = "вольтаичного жёлтого вина"
+dative = "вольтаичному жёлтому вину"
+accusative = "вольтаичное жёлтое вино"
+instrumental = "вольтаичным жёлтым вином"
+prepositional = "вольтаичном жёлтом вине"
+gender = "neuter"
+
+["Caccavo guaranteed quality tequila"]
+nominative = "текила гарантированного качества Качаво"
+genitive = "текилы гарантированного качества Качаво"
+dative = "текиле гарантированного качества Качаво"
+accusative = "текилу гарантированного качества Качаво"
+instrumental = "текилой гарантированного качества Качаво"
+prepositional = "текиле гарантированного качества Качаво"
+gender = "female"
+
+["Captain Pete's Cuban spiced rum"]
+nominative = "ром с кубинскими специями капитана Пита"
+genitive = "рома с кубинскими специями капитана Пита"
+dative = "рому с кубинскими специями капитана Пита"
+accusative = "ром с кубинскими специями капитана Пита"
+instrumental = "ромом с кубинскими специями капитана Пита"
+prepositional = "роме с кубинскими специями капитана Пита"
+gender = "male"
+
+["Chateau de Baton premium cognac"]
+nominative = "премиальный коньяк Шато де Батон"
+genitive = "премиального коньяка Шато де Батон"
+dative = "премиальному коньяку Шато де Батон"
+accusative = "премиальный коньяк Шато де Батон"
+instrumental = "премиальным коньяком Шато де Батон"
+prepositional = "премиальном коньяке Шато де Батон"
+gender = "male"
+
+["Doublebeard's bearded special wine"]
+nominative = "специальное вино с бородой Даблбиарда"
+genitive = "специального вина с бородой Даблбиарда"
+dative = "специальному вину с бородой Даблбиарда"
+accusative = "специальное вино с бородой Даблбиарда"
+instrumental = "специальным вином с бородой Даблбиарда"
+prepositional = "специальном вине с бородой Даблбиарда"
+gender = "neuter"
+
+["Extra-strong absinthe"]
+nominative = "экстра-сильный абсент"
+genitive = "экстра-сильного абсента"
+dative = "экстра-сильному абсенту"
+accusative = "экстра-сильный абсент"
+instrumental = "экстра-сильным абсентом"
+prepositional = "экстра-сильном абсенте"
+gender = "male"
+
+["Goldeneye vermouth"]
+nominative = "вермут Голденай"
+genitive = "вермута Голденай"
+dative = "вермуту Голденай"
+accusative = "вермут Голденай"
+instrumental = "вермутом Голденай"
+prepositional = "вермуте Голденай"
+gender = "male"
+
+["Griffeater gin"]
+nominative = "джин Гриффитер"
+genitive = "джина Гриффитер"
+dative = "джину Гриффитер"
+accusative = "джин Гриффитер"
+instrumental = "джином Гриффитер"
+prepositional = "джине Гриффитер"
+gender = "male"
+
+["Jester Grenadine"]
+nominative = "гренадин Жестера"
+genitive = "гренадина Жестера"
+dative = "гренадину Жестера"
+accusative = "гренадин Жестера"
+instrumental = "гренадином Жестера"
+prepositional = "гренадине Жестера"
+gender = "male"
+
+["Jian Hard Cider"]
+nominative = "сидр Хард Джиан"
+genitive = "сидра Хард Джиан"
+dative = "сидру Хард Джиан"
+accusative = "сидр Хард Джиан"
+instrumental = "сидром Хард Джиан"
+prepositional = "сидре Хард Джиан"
+gender = "male"
+
+["Luini Amaretto"]
+nominative = "амаретто Луини"
+genitive = "амаретто Луини"
+dative = "амаретто Луини"
+accusative = "амаретто Луини"
+instrumental = "амаретто Луини"
+prepositional = "амаретто Луини"
+gender = "male"
+
+["Magm-Ale"]
+nominative = "эль Магм-Эйл"
+genitive = "эля Магм-Эйл"
+dative = "элю Магм-Эйл"
+accusative = "эль Магм-Эйл"
+instrumental = "элем Магм-Эйл"
+prepositional = "эле Магм-Эйл"
+gender = "male"
+
+["Phillipes well-aged Grappa"]
+nominative = "граппа Филлипа с выдержкой"
+genitive = "граппы Филлипа с выдержкой"
+dative = "граппе Филлипа с выдержкой"
+accusative = "граппу Филлипа с выдержкой"
+instrumental = "граппой Филлипа с выдержкой"
+prepositional = "граппе Филлипа с выдержкой"
+gender = "female"
+
+["Pride of the Union Navy-Strength Rum"]
+nominative = "ром силы военно-морского флота Союза"
+genitive = "рома силы военно-морского флота Союза"
+dative = "рому силы военно-морского флота Союза"
+accusative = "ром силы военно-морского флота Союза"
+instrumental = "ромом силы военно-морского флота Союза"
+prepositional = "роме силы военно-морского флота Союза"
+gender = "male"
+
+["Rabid Bear malt liquor"]
+nominative = "солодовый ликёр Бешеного Медведя"
+genitive = "солодового ликёра Бешеного Медведя"
+dative = "солодовому ликёру Бешеного Медведя"
+accusative = "солодовый ликёр Бешеного Медведя"
+instrumental = "солодовым ликёром Бешеного Медведя"
+prepositional = "солодовом ликёре Бешеного Медведя"
+gender = "male"
+
+["Robert Robust's coffee liqueur"]
+nominative = "кофейный ликёр Роберта Робуста"
+genitive = "кофейного ликёра Роберта Робуста"
+dative = "кофейному ликёру Роберта Робуста"
+accusative = "кофейный ликёр Роберта Робуста"
+instrumental = "кофейным ликёром Роберта Робуста"
+prepositional = "кофейном ликёре Роберта Робуста"
+gender = "male"
+
+["Ryo's traditional sake"]
+nominative = "традиционное саке Рё"
+genitive = "традиционного саке Рё"
+dative = "традиционному саке Рё"
+accusative = "традиционное саке Рё"
+instrumental = "традиционным саке Рё"
+prepositional = "традиционном саке Рё"
+gender = "neuter"
+
+["space beer"]
+nominative = "космическое пиво"
+genitive = "космического пива"
+dative = "космическому пиву"
+accusative = "космическое пиво"
+instrumental = "космическим пивом"
+prepositional = "космическом пиве"
+gender = "neuter"
+
+["Tunguska triple distilled"]
+nominative = "тройной дистиллят Тунгуски"
+genitive = "тройного дистиллята Тунгуски"
+dative = "тройному дистилляту Тунгуски"
+accusative = "тройной дистиллят Тунгуски"
+instrumental = "тройным дистиллятом Тунгуски"
+prepositional = "тройном дистилляте Тунгуски"
+gender = "male"
+
+["Uncle Git's special reserve"]
+nominative = "специальный резерв Дяди Гита"
+genitive = "специального резерва Дяди Гита"
+dative = "специальному резерву Дяди Гита"
+accusative = "специальный резерв Дяди Гита"
+instrumental = "специальным резервом Дяди Гита"
+prepositional = "специальном резерве Дяди Гита"
+gender = "male"
+
+["Breezy Shoals Coconut Rum"]
+nominative = "кокосовый ром Бриззи Шоулс"
+genitive = "кокосового рома Бриззи Шоулс"
+dative = "кокосовому рому Бриззи Шоулс"
+accusative = "кокосовый ром Бриззи Шоулс"
+instrumental = "кокосовым ромом Бриззи Шоулс"
+prepositional = "кокосовом роме Бриззи Шоулс"
+gender = "male"
+
+["Moonlabor Yūyake"]
+nominative = "Юйаке Мунлабор"
+genitive = "Юйаке Мунлабор"
+dative = "Юйаке Мунлабор"
+accusative = "Юйаке Мунлабор"
+instrumental = "Юйаке Мунлабор"
+prepositional = "Юйаке Мунлабор"
+gender = "male"
+
+["Shu-Kouba Straight Shochu"]
+nominative = "сухой шочо Шу-Коуба"
+genitive = "сухого шочо Шу-Коуба"
+dative = "сухому шочо Шу-Коуба"
+accusative = "сухой шочо Шу-Коуба"
+instrumental = "сухим шочо Шу-Коуба"
+prepositional = "сухом шочо Шу-Коуба"
+gender = "male"
+
+["rice beer"]
+nominative = "рисовое пиво"
+genitive = "рисового пива"
+dative = "рисовому пиву"
+accusative = "рисовое пиво"
+instrumental = "рисовым пивом"
+prepositional = "рисовом пиве"
+gender = "neuter"
+
+["lime juice"]
+nominative = "лаймовый сок"
+genitive = "лаймового сока"
+dative = "лаймовому соку"
+accusative = "лаймовый сок"
+instrumental = "лаймовым соком"
+prepositional = "лаймовом соке"
+gender = "male"
+
+["menthol"]
+nominative = "ментол"
+genitive = "ментола"
+dative = "ментолу"
+accusative = "ментол"
+instrumental = "ментолом"
+prepositional = "ментоле"
+gender = "male"
+
+["milk cream"]
+nominative = "молочный крем"
+genitive = "молочного крема"
+dative = "молочному крему"
+accusative = "молочный крем"
+instrumental = "молочным кремом"
+prepositional = "молочном креме"
+gender = "male"
+
+["ice cup"]
+nominative = "чашка со льдом"
+genitive = "чашки со льдом"
+dative = "чашке со льдом"
+accusative = "чашку со льдом"
+instrumental = "чашкой со льдом"
+prepositional = "чашке со льдом"
+gender = "female"
+
+["orange juice"]
+nominative = "апельсиновый сок"
+genitive = "апельсинового сока"
+dative = "апельсиновому соку"
+accusative = "апельсиновый сок"
+instrumental = "апельсиновым соком"
+prepositional = "апельсиновом соке"
+gender = "male"
+
+["tomato juice"]
+nominative = "томатный сок"
+genitive = "томатного сока"
+dative = "томатному соку"
+accusative = "томатный сок"
+instrumental = "томатным соком"
+prepositional = "томатном соке"
+gender = "male"
+
+["soda water"]
+nominative = "газированная вода"
+genitive = "газированной воды"
+dative = "газированной воде"
+accusative = "газированную воду"
+instrumental = "газированной водой"
+prepositional = "газированной воде"
+gender = "female"
+
+["Sol Dry"]
+nominative = "сухой Сол"
+genitive = "сухого Сола"
+dative = "сухому Солу"
+accusative = "сухой Сол"
+instrumental = "сухим Солом"
+prepositional = "сухом Соле"
+gender = "male"
+
+["Space Cola"]
+nominative = "космическая кола"
+genitive = "космической колы"
+dative = "космической коле"
+accusative = "космическую колу"
+instrumental = "космической колой"
+prepositional = "космической коле"
+gender = "female"
+
+["T-Borg's tonic water"]
+nominative = "тоник Ти-Борга"
+genitive = "тоника Ти-Борга"
+dative = "тонику Ти-Борга"
+accusative = "тоник Ти-Борга"
+instrumental = "тоником Ти-Борга"
+prepositional = "тонике Ти-Борга"
+gender = "male"
+
+["Hakka-Mate"]
+nominative = "Хакка-Мате"
+genitive = "Хакка-Мате"
+dative = "Хакка-Мате"
+accusative = "Хакка-Мате"
+instrumental = "Хакка-Мате"
+prepositional = "Хакка-Мате"
+gender = "male"
+
+["flask"]
+nominative = "фляга"
+genitive = "фляги"
+dative = "фляге"
+accusative = "флягу"
+instrumental = "флягой"
+prepositional = "фляге"
+gender = "female"
+
+["glass bottle"]
+nominative = "стеклянная бутылка"
+genitive = "стеклянной бутылки"
+dative = "стеклянной бутылке"
+accusative = "стеклянную бутылку"
+instrumental = "стеклянной бутылкой"
+prepositional = "стеклянной бутылке"
+gender = "female"
+
+["Kansumi Melon Soda"]
+nominative = "арбузная газировка Кансуми"
+genitive = "арбузной газировки Кансуми"
+dative = "арбузной газировке Кансуми"
+accusative = "арбузную газировку Кансуми"
+instrumental = "арбузной газировкой Кансуми"
+prepositional = "арбузной газировке Кансуми"
+gender = "female"
+
+["small glass bottle"]
+nominative = "маленькая стеклянная бутылка"
+genitive = "маленькой стеклянной бутылки"
+dative = "маленькой стеклянной бутылке"
+accusative = "маленькую стеклянную бутылку"
+instrumental = "маленькой стеклянной бутылкой"
+prepositional = "маленькой стеклянной бутылке"
+gender = "female"
+
+["Fernet Bronca"]
+nominative = "Фернет Бронка"
+genitive = "Фернета Бронка"
+dative = "Фернету Бронка"
+accusative = "Фернет Бронка"
+instrumental = "Фернетом Бронка"
+prepositional = "Фернете Бронка"
+gender = "male"
+
+["ethanol bottle"]
+nominative = "бутылка с этанолом"
+genitive = "бутылки с этанолом"
+dative = "бутылке с этанолом"
+accusative = "бутылку с этанолом"
+instrumental = "бутылкой с этанолом"
+prepositional = "бутылке с этанолом"
+gender = "female"
+
+["Eau d' Dandy Brut Champagne"]
+nominative = "шампанское О Данди Брют"
+genitive = "шампанского О Данди Брют"
+dative = "шампанскому О Данди Брют"
+accusative = "шампанское О Данди Брют"
+instrumental = "шампанским О Данди Брют"
+prepositional = "шампанском О Данди Брют"
+gender = "male"
+
+["Andromeda Bitters"]
+nominative = "горечь Андромеды"
+genitive = "горечи Андромеды"
+dative = "горечи Андромеды"
+accusative = "горечь Андромеды"
+instrumental = "горечью Андромеды"
+prepositional = "горечи Андромеды"
+gender = "female"
+
+["Duke Purple tea"]
+nominative = "чай Дюк Пурпл"
+genitive = "чая Дюк Пурпл"
+dative = "чаю Дюк Пурпл"
+accusative = "чай Дюк Пурпл"
+instrumental = "чаем Дюк Пурпл"
+prepositional = "чае Дюк Пурпл"
+gender = "male"
+
+["Mont de Requin Trappistes Bleu"]
+nominative = "траппистское пиво Мон де Рекен Блю"
+genitive = "траппистского пива Мон де Рекен Блю"
+dative = "траппистскому пиву Мон де Рекен Блю"
+accusative = "траппистское пиво Мон де Рекен Блю"
+instrumental = "траппистским пивом Мон де Рекен Блю"
+prepositional = "траппистском пиве Мон де Рекен Блю"
+gender = "male"
+
 # MARK: Kitchen
 ["pepper mill"]
 nominative = "перцемолка"
@@ -6912,6 +7408,15 @@ accusative = "оболочку реактивной брони"
 instrumental = "оболочкой реактивной брони"
 prepositional = "оболочке реактивной брони"
 gender = "female"
+
+["tank transfer valve"]
+nominative = "клапан перекачки баллонов"
+genitive = "клапана перекачки баллонов"
+dative = "клапану перекачки баллонов"
+accusative = "клапан перекачки баллонов"
+instrumental = "клапаном перекачки баллонов"
+prepositional = "клапане перекачки баллонов"
+gender = "male"
 
 # MARK: Clothes
 ["science beret"]
