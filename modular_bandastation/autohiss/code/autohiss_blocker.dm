@@ -5,10 +5,10 @@
 /datum/mind/proc/toggle_autohiss(obj/item/organ/tongue/tongue)
 	if(tongue::type in autohiss_disabled_types)
 		autohiss_disabled_types -= tongue::type
-		to_chat(src, span_notice("Вы отключили автошипение для языков типа [declent_ru_initial(tongue::name, override_backup = tongue::name)]"))
+		to_chat(src, span_notice("Вы включили автошипение для языков типа [declent_ru_initial(tongue::name, override_backup = tongue::name)]"))
 		return
 	autohiss_disabled_types += tongue::type
-	to_chat(src, span_notice("Вы включили автошипение для языков типа [declent_ru_initial(tongue::name, override_backup = tongue::name)]"))
+	to_chat(src, span_notice("Вы отключили автошипение для языков типа [declent_ru_initial(tongue::name, override_backup = tongue::name)]"))
 
 /datum/preference/toggle/autohiss_enabled
 	category = PREFERENCE_CATEGORY_SECONDARY_FEATURES
@@ -22,7 +22,15 @@
 	var/obj/item/organ/tongue/tongue = target.get_organ_by_type(/obj/item/organ/tongue)
 	if(!tongue)
 		CRASH("Tried to remove autohiss from a mob with no tongue!")
-	target.mind.autohiss_disabled_types += tongue.type // FIX THIS
+	RegisterSignal(target, COMSIG_MOB_MIND_TRANSFERRED_INTO, PROC_REF(on_mind_transfer))
+
+/datum/preference/toggle/autohiss_enabled/proc/on_mind_transfer(mob/living/carbon/human/current_mob, mob/previous_mob)
+	SIGNAL_HANDLER
+	var/obj/item/organ/tongue/tongue = current_mob.get_organ_by_type(/obj/item/organ/tongue)
+	if(!tongue)
+		CRASH("Tried to remove autohiss from a mob with no tongue on signal!")
+	current_mob.mind.autohiss_disabled_types += tongue.type
+	UnregisterSignal(current_mob, COMSIG_MOB_MIND_TRANSFERRED_INTO)
 
 /datum/preference/toggle/autohiss_enabled/is_accessible(datum/preferences/preferences)
 	if (!..(preferences))

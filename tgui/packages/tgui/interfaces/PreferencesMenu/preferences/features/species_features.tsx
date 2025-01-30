@@ -200,6 +200,7 @@ export const vulpkanin_tail_markings_color: Feature<string> = {
 
 export const autohiss_enabled: FeatureToggle = {
   name: 'Автошипение',
-  description: 'Переключение автошипения для языка.',
+  description:
+    'Переключение автошипения для языка. Рекомендуется оставить включённым.',
   component: CheckboxInput,
 };
