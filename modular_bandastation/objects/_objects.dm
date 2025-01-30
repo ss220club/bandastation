@@ -21,12 +21,14 @@
 		/obj/item/clothing/mask/carnival/triangles = 2,
 		/obj/item/clothing/mask/carnival/colored = 2,
 	)
+
 	GLOB.autodrobe_other_items += list(
 		/obj/item/clothing/suit/ny_sweater = 5,
 		/obj/item/clothing/suit/garland = 5,
 		/obj/item/clothing/neck/cloak/ny_cloak = 5,
 		/obj/item/clothing/neck/garland = 5,
 	)
+
 	GLOB.all_autodrobe_items |= (
 		GLOB.autodrobe_fancy_items \
 		+ GLOB.autodrobe_other_items
@@ -75,3 +77,7 @@
 			new /datum/stack_recipe("Бакаутовый", /obj/item/stack/tile/wood/tile/guaiacum, 5, 4, 20),
 			)),
 		null)
+
+	GLOB.arcade_prize_pool += list(
+		/obj/item/storage/box/id_stickers = 2
+	)
