@@ -19,6 +19,10 @@
 	icon_state = "[base_icon_state][rand(0, 7)]"
 	update_icon()
 
+	AddComponent(/datum/component/loads_avatar_gear, \
+		load_callback = CALLBACK(src, PROC_REF(load_onto_avatar)), \
+	)
+
 /obj/item/bitrunning_disk/examine(mob/user)
 	. = ..()
 	. += span_infoplain("Этот диск должен находится у вас, когда вы входите в нетпод.")
@@ -30,12 +34,31 @@
 	. += span_info("Сейчас выбрано: <b>[choice_made]</b>.")
 	. += span_notice("Нельзя более вносить изменения.")
 
+/// Handles loading our stuff onto avatars
+/obj/item/bitrunning_disk/proc/load_onto_avatar(mob/living/carbon/human/neo, mob/living/carbon/human/avatar, external_load_flags)
+	return NONE
+
+
 /obj/item/bitrunning_disk/ability
 	desc = "Диск с исходным кодом. Позволяет загрузить способности в виртуальный домен. Повторные способности будут проигнорированы."
 	/// The selected ability that this grants
 	var/datum/action/granted_action
 	/// The list of actions that this can grant
 	var/list/datum/action/selectable_actions = list()
+
+/obj/item/bitrunning_disk/ability/load_onto_avatar(mob/living/carbon/human/neo, mob/living/carbon/human/avatar, external_load_flags)
+	if(external_load_flags & DOMAIN_FORBIDS_ABILITIES)
+		return BITRUNNER_GEAR_LOAD_BLOCKED
+
+	if(isnull(granted_action))
+		return BITRUNNER_GEAR_LOAD_FAILED
+
+	if(locate(granted_action) in avatar.actions)
+		return BITRUNNER_GEAR_LOAD_FAILED
+
+	var/datum/action/our_action = new granted_action()
+	our_action.Grant(avatar)
+	return NONE
 
 /obj/item/bitrunning_disk/ability/attack_self(mob/user, modifiers)
 	. = ..()
@@ -87,12 +110,23 @@
 		/datum/action/cooldown/spell/shapeshift/polar_bear,
 	)
 
+
 /obj/item/bitrunning_disk/item
 	desc = "Диск с исходным кодом. Позволяет загрузить предметы в виртуальный домен."
 	/// The selected item that this grants
 	var/obj/granted_item
 	/// The list of actions that this can grant
 	var/list/obj/selectable_items = list()
+
+/obj/item/bitrunning_disk/item/load_onto_avatar(mob/living/carbon/human/neo, mob/living/carbon/human/avatar, external_load_flags)
+	if(external_load_flags & DOMAIN_FORBIDS_ITEMS)
+		return BITRUNNER_GEAR_LOAD_BLOCKED
+
+	if(isnull(granted_item))
+		return BITRUNNER_GEAR_LOAD_FAILED
+
+	avatar.put_in_hands(new granted_item())
+	return NONE
 
 /obj/item/bitrunning_disk/item/attack_self(mob/user, modifiers)
 	. = ..()

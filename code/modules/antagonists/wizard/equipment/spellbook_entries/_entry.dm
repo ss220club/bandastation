@@ -24,7 +24,7 @@
 	var/limit
 	/// Is this refundable?
 	var/refundable = TRUE
-	/// Flavor. Verb used in saying how the spell is aquired. Ex "[Learn] Fireball" or "[Summon] Ghosts"
+	/// Flavor. Verb used in saying how the spell is acquired. Ex "[Learn] Fireball" or "[Summon] Ghosts"
 	var/buy_word = "Выучить"
 	/// The cooldown of the spell
 	var/cooldown

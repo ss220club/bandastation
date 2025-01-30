@@ -248,18 +248,18 @@
 			return TRUE
 		apply_damage(damage, BRUTE, affecting, armor_block)
 
-/mob/living/carbon/human/attack_larva(mob/living/carbon/alien/larva/L, list/modifiers)
+/mob/living/carbon/human/attack_larva(mob/living/carbon/alien/larva/worm, list/modifiers)
 	. = ..()
 	if(!.)
 		return //successful larva bite.
-	var/damage = rand(L.melee_damage_lower, L.melee_damage_upper)
+	var/damage = rand(worm.melee_damage_lower, worm.melee_damage_upper)
 	if(!damage)
 		return
-	if(check_block(L, damage, "[L.declent_ru(ACCUSATIVE)]", attack_type = UNARMED_ATTACK))
+	if(check_block(worm, damage, "[worm.declent_ru(ACCUSATIVE)]", attack_type = UNARMED_ATTACK))
 		return FALSE
 	if(stat != DEAD)
-		L.amount_grown = min(L.amount_grown + damage, L.max_grown)
-		var/obj/item/bodypart/affecting = get_bodypart(get_random_valid_zone(L.zone_selected))
+		worm.amount_grown = min(worm.amount_grown + damage, worm.max_grown)
+		var/obj/item/bodypart/affecting = get_bodypart(get_random_valid_zone(worm.zone_selected))
 		var/armor_block = run_armor_check(affecting, MELEE)
 		apply_damage(damage, BRUTE, affecting, armor_block)
 

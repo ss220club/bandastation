@@ -309,7 +309,7 @@ GLOBAL_VAR_INIT(roaches_deployed, FALSE)
 
 /obj/machinery/vending/wardrobe/curator_wardrobe
 	name = "CuraDrobe"
-	desc = "A lowstock vendor only capable of vending clothing for curators and librarians."
+	desc = "A low-stock vendor only capable of vending clothing for curators and librarians."
 	icon_state = "curadrobe"
 	product_ads = "Очки для глаз и литература для души - у Curadrobe есть всё!; Впечатлите и поразите гостей вашей библиотеки расширенной линейкой ручек Curadrobe!"
 	vend_reply = "Благодарим за использование CuraDrobe!"
@@ -636,7 +636,7 @@ GLOBAL_VAR_INIT(roaches_deployed, FALSE)
 
 /obj/machinery/vending/wardrobe/viro_wardrobe
 	name = "ViroDrobe"
-	desc = "An unsterilized machine for dispending virology related clothing."
+	desc = "An unsterilized machine for dispensing virology related clothing."
 	icon_state = "virodrobe"
 	product_ads = "Вирусы донимают вас? Тогда переходите на стерильную спецодежду уже сегодня!"
 	vend_reply = "Благодарим за использование ViroDrobe!"
