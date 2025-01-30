@@ -218,6 +218,9 @@
 /// Calculates the weights of the events from a passed track.
 /datum/storyteller/proc/calculate_weights(track)
 	var/datum/controller/subsystem/gamemode/mode = SSgamemode
+	var/track_weight = 0
+	for(var/datum/round_event_control/event as anything in mode.event_pools[track])
+		track_weight += event.weight
 	for(var/datum/round_event_control/event as anything in mode.event_pools[track])
 		var/weight_total = event.weight
 		/// Apply tag multipliers if able
@@ -232,3 +235,4 @@
 			weight_total -= event.reoccurence_penalty_multiplier * weight_total * (1 - (event_repetition_multiplier ** occurences))
 		/// Write it
 		event.calculated_weight = weight_total
+		event.calculated_on_track_weight = weight_total/track_weight //Получить все веса всего трека и разделить на количество событий в треке

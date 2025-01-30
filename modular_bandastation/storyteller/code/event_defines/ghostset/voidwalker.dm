@@ -1,6 +1,6 @@
 // TG did not cook this antag into the event system. So I had to make my own
 
-/*
+
 /datum/round_event_control/voidwalker
 	name = "Spawn Void Walker"
 	typepath = /datum/round_event/ghost_role/void_walker
@@ -12,7 +12,8 @@
 	category = EVENT_CATEGORY_ENTITIES
 	description = "A Void Walker that drags people out of the station and into the abyss"
 	map_flags = EVENT_SPACE_ONLY
-	track = EVENT_TRACK_ROLESET
+	track = EVENT_TRACK_MODERATE
+	tags = list(TAG_COMBAT, TAG_SPOOKY, TAG_SPACE)
 
 /datum/round_event/ghost_role/void_walker
 	minimum_required = 30
@@ -24,7 +25,7 @@
 	if(isnull(spawn_location))
 		return MAP_ERROR
 
-	var/mob/chosen_one = SSpolling.poll_ghost_candidates(check_jobban = ROLE_VOIDWALKER, role = ROLE_VOIDWALKER, alert_pic = /obj/item/cosmic_skull, jump_target = spawn_location, role_name_text = "Void Walker", amount_to_pick = 1)
+	var/mob/chosen_one = SSpolling.poll_ghost_candidates(check_jobban = ROLE_VOIDWALKER, role = ROLE_VOIDWALKER, alert_pic = /obj/item/void_eater, jump_target = spawn_location, role_name_text = "Void Walker", amount_to_pick = 1)
 	if(isnull(chosen_one))
 		return NOT_ENOUGH_PLAYERS
 	var/datum/mind/player_mind = new /datum/mind(chosen_one.key)
@@ -40,4 +41,3 @@
 	walker.log_message("[key_name(walker)] was spawned as a Voidwalker by an event.", LOG_GAME)
 	spawned_mobs += walker
 	return SUCCESSFUL_SPAWN
-*/

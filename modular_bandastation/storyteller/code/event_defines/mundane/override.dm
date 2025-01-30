@@ -38,6 +38,7 @@
 /datum/round_event_control/fake_virus
 	track = EVENT_TRACK_MUNDANE
 	tags = list(TAG_TARGETED)
+	weight = 0
 
 /datum/round_event_control/falsealarm
 	track = EVENT_TRACK_MUNDANE

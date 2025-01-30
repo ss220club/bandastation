@@ -217,7 +217,6 @@ SUBSYSTEM_DEF(gamemode)
 			///Alert admins 1 minute before running and allow them to cancel or refund the event, once again.
 			sch_event.alerted_admins = TRUE
 			message_admins("Scheduled Event: [sch_event.event] will run in [(sch_event.start_time - world.time) / 10] seconds. (<a href='byond://?src=[REF(sch_event)];action=cancel'>CANCEL</a>) (<a href='byond://?src=[REF(sch_event)];action=refund'>REFUND</a>)")
-
 	if(!halted_storyteller && next_storyteller_process <= world.time && current_storyteller)
 		// We update crew information here to adjust population scalling and event thresholds for the storyteller.
 		update_crew_infos()
@@ -230,7 +229,7 @@ SUBSYSTEM_DEF(gamemode)
 	if(pop_count < current_storyteller.min_antag_popcount && !forced)
 		return 0
 	var/total_number = pop_count + (sec_crew * current_storyteller.sec_antag_modifier)
-	var/cap = FLOOR((total_number / current_storyteller.antag_denominator), 1) * current_storyteller.final_cap_multiplier + current_storyteller.antag_flat_cap
+	var/cap = FLOOR((total_number / current_storyteller.antag_denominator) * current_storyteller.final_cap_multiplier, 1) + current_storyteller.antag_flat_cap
 	return cap
 
 /datum/controller/subsystem/gamemode/proc/get_antag_count()
@@ -692,11 +691,13 @@ SUBSYSTEM_DEF(gamemode)
 	var/track = EVENT_TRACK_ROLESET
 	if(forced_next_events[track])
 		for(var/datum/round_event_control/forced_event in forced_next_events[track])
+			if(forced_event.exclusive_roundstart_event)
+				forced_event = exclusives_add_antags(forced_event, forced = TRUE)
 			message_admins("Storyteller purchased and triggered forced roundstart event [forced_event].")
 			TriggerEvent(forced_event, forced = TRUE)
 			runned_events += "Runned forced roundstart: [forced_event.name]"
-
 		forced_next_events[track] = list()
+
 
 	event_track_points[track] = 0
 	var/pop_count = ready_players + (sec_crew * current_storyteller.sec_antag_modifier)
@@ -733,16 +734,18 @@ SUBSYSTEM_DEF(gamemode)
 		if(picked_event.can_spawn_event(ready_players) && (roundstart_budget >= picked_event.get_pre_cost()))
 			roundstart_budget -= picked_event.get_pre_cost()
 			message_admins("Storyteller purchased and triggered [picked_event] event for [picked_event.get_pre_cost()]. Left balance: [roundstart_budget].")
-			TriggerEvent(picked_event, forced = FALSE)
-			runned_events += "Runned roundstart: [picked_event.name]"
-			// Если первое событие эксклюзивное, то отчищаем список
 			if(picked_event.exclusive_roundstart_event)
 				valid_events = list()
+				picked_event = exclusives_add_antags(picked_event, forced = FALSE)
 			else
 			// Если первое событие не-эксклюзивное, то удаляем из списка все эксклюзивные
 				for(var/datum/round_event_control/exclude_event as anything in valid_events)
 					if(exclude_event.exclusive_roundstart_event)
 						valid_events -= exclude_event
+			TriggerEvent(picked_event, forced = FALSE)
+			runned_events += "Runned roundstart: [picked_event.name]"
+			// Если первое событие эксклюзивное, то отчищаем список
+
 		else
 			valid_events -= picked_event
 
@@ -766,26 +769,41 @@ SUBSYSTEM_DEF(gamemode)
 		if(scheduled_event.can_spawn_event(ready_players) && (roundstart_budget >= scheduled_event.get_pre_cost()))
 			roundstart_budget -= scheduled_event.get_pre_cost()
 			message_admins("Storyteller purchased and triggered scheduled event [scheduled_event] for [scheduled_event.get_pre_cost()]. Left balance: [roundstart_budget].")
-			TriggerEvent(scheduled_event, forced = FALSE)
-			runned_events += "Runned scheduled roundstart: [scheduled_event.name]"
-			scheduled_events_roleset -= scheduled_event
 			if(scheduled_event.exclusive_roundstart_event)
-				scheduled_event = list()
 				valid_events = list()
+				scheduled_event = exclusives_add_antags(scheduled_event, forced = FALSE)
 			else
 			// Если первое событие не-эксклюзивное, то удаляем из списка все эксклюзивные
 				for(var/datum/round_event_control/exclude_event as anything in scheduled_events_roleset)
 					if(exclude_event.exclusive_roundstart_event)
 						scheduled_events_roleset -= exclude_event
-
 				for(var/datum/round_event_control/exclude_event as anything in valid_events)
 					if(exclude_event.exclusive_roundstart_event)
 						valid_events -= exclude_event
+			TriggerEvent(scheduled_event, forced = FALSE)
+			runned_events += "Runned scheduled roundstart: [scheduled_event.name]"
+			scheduled_events_roleset -= scheduled_event
+
 		else
 			message_admins("Storyteller failed to purchase scheduled event [scheduled_event] for [scheduled_event.roundstart_cost]. Left balance: [roundstart_budget].")
 			scheduled_events_roleset -= scheduled_event
 
 	return valid_events
+
+/datum/controller/subsystem/gamemode/proc/exclusives_add_antags(datum/round_event_control/antagonist/solo/exclusive_event, forced = FALSE)
+	//Получить бюджет
+	var/addition_antags = 0
+	if(forced)
+		addition_antags = exclusive_event.forced_antags_count
+	else
+		while(exclusive_event.price_to_buy_adds <= roundstart_budget)
+			roundstart_budget -= exclusive_event.price_to_buy_adds
+			addition_antags++
+	//Расчитать новый максимум и минимум антагов
+	exclusive_event.base_antags += addition_antags
+	exclusive_event.maximum_antags += addition_antags
+	roundstart_budget = 0
+	return exclusive_event
 
 /datum/controller/subsystem/gamemode/proc/recalculate_roundstart_costs(track)
 	full_sec_crew = 0
@@ -1178,6 +1196,20 @@ SUBSYSTEM_DEF(gamemode)
 				dat += "</tr>"
 			dat += "</table>"
 
+			dat += "<h2>Runned Events:</h2>"
+			dat += "<table align='center'; width='100%'; height='100%'; style='background-color:#13171C'>"
+			dat += "<tr style='vertical-align:top'>"
+			dat += "<td width=30%><b>Name</b></td>"
+			dat += "</tr>"
+			even = TRUE
+			for(var/event as anything in runned_events)
+				even = !even
+				var/background_cl = even ? "#17191C" : "#23273C"
+				dat += "<tr style='vertical-align:top; background-color: [background_cl];'>"
+				dat += "<td>[event]</td>" //Name
+				dat += "</tr>"
+			dat += "</table>"
+
 	var/datum/browser/popup = new(user, "gamemode_admin_panel", "Gamemode Panel", 670, 650)
 	popup.set_content(dat.Join())
 	popup.open()
@@ -1273,7 +1305,7 @@ SUBSYSTEM_DEF(gamemode)
 		var/weight_string = "(new.[event.calculated_weight] /raw.[event.weight])"
 		if(assoc_spawn_weight[event])
 			var/percent = round((event.calculated_weight / total_weight) * 100)
-			weight_string = "[percent]% - [weight_string]"
+			weight_string = "[event.calculated_on_track_weight]% - [percent]% - [weight_string]"
 		dat += "<td>[SSticker.HasRoundStarted() && !event.get_pre_cost() ? weight_string : "[event.get_pre_cost()]/[weight_string]"]</td>" //Weight
 		dat += "<td>[event.get_href_actions()]</td>" //Actions
 		dat += "</tr>"

@@ -30,6 +30,8 @@
 #define TAG_ALIEN "alien"
 /// When the event is magical in nature
 #define TAG_MAGICAL "magical"
+/// Сколько раз сторителлер будет пытаться переподбирать сикей для гост-ролей в случае ошибки
+#define STORYTELLER_MAXIMUM_RETRIES 10
 
 #define EVENT_TRACK_MUNDANE "Mundane"
 #define EVENT_TRACK_MODERATE "Moderate"

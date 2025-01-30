@@ -22,14 +22,25 @@
 		JOB_CYBORG,
 	)
 
-/datum/round_event_control/antagonist/solo/traitor/roundstart
+/datum/round_event_control/antagonist/solo/traitor/adds
+	name = "Traitors"
+	weight = 0
+	antag_flag = ROLE_TRAITOR
+	antag_datum = /datum/antagonist/traitor
+	earliest_start = 0 SECONDS
+	roundstart_cost = 15
+
+/datum/round_event_control/antagonist/solo/traitor/solomode
 	name = "Traitors"
 	antag_flag = ROLE_TRAITOR
 	antag_datum = /datum/antagonist/traitor
 	roundstart = TRUE
 	earliest_start = 0 SECONDS
+	base_antags = 1
 	maximum_antags = 1
 	roundstart_cost = 15
+	exclusive_roundstart_event = TRUE
+	price_to_buy_adds = 20
 
 /datum/round_event_control/antagonist/solo/traitor/midround
 	name = "Sleeper Agents (Traitors)"

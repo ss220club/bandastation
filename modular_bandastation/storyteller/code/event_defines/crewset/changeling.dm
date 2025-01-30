@@ -24,12 +24,21 @@
 	min_players = 20
 	maximum_antags_per_round = 3
 
-/datum/round_event_control/antagonist/solo/changeling/roundstart
+/datum/round_event_control/antagonist/solo/changeling/adds
 	name = "Changelings"
 	roundstart = TRUE
 	earliest_start = 0
+	roundstart_cost = 20
+
+/datum/round_event_control/antagonist/solo/changeling/solomode
+	name = "Changelings"
+	roundstart = TRUE
+	earliest_start = 0
+	base_antags = 1
 	maximum_antags = 1
 	roundstart_cost = 24
+	exclusive_roundstart_event = TRUE
+	price_to_buy_adds = 30
 
 /datum/round_event_control/antagonist/solo/changeling/midround
 	name = "Genome Awakening (Changelings)"

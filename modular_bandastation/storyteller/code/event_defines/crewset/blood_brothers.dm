@@ -30,22 +30,32 @@
 		JOB_SECURITY_OFFICER,
 	)
 	required_enemies = 1
-	weight = 12
+	weight = 15
 	maximum_antags = 2
 	maximum_antags_per_round = 2
 	denominator = 30
 	cost = 0.45 // so it doesn't eat up threat for a relatively low-threat antag
 
 /datum/round_event_control/antagonist/solo/brother/roundstart
-	name = "Blood Brothers"
+	name = "Antag-mix"
 	roundstart = TRUE
 	earliest_start = 0 SECONDS
 	extra_spawned_events = list(
-		/datum/round_event_control/antagonist/solo/traitor/roundstart = 12,
-		/datum/round_event_control/antagonist/solo/heretic/roundstart = 2,
+		/datum/round_event_control/antagonist/solo/traitor/adds = 12,
+		/datum/round_event_control/antagonist/solo/heretic/adds = 10,
+		/datum/round_event_control/antagonist/solo/changeling/adds = 8,
 	)
-	maximum_antags = 1
 	roundstart_cost = 20
+
+/datum/round_event_control/antagonist/solo/brother/midround
+	name = "Blood Brothers (Admin spawn)"
+	earliest_start = 0 SECONDS
+	extra_spawned_events = list(
+		/datum/round_event_control/antagonist/solo/traitor/adds = 12,
+		/datum/round_event_control/antagonist/solo/heretic/adds = 10,
+		/datum/round_event_control/antagonist/solo/changeling/adds = 8,
+	)
+	weight = 0
 
 /datum/round_event/antagonist/solo/brother/add_datum_to_mind(datum/mind/antag_mind)
 	var/datum/team/brother_team/team = new

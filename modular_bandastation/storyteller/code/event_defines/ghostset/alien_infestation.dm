@@ -73,10 +73,12 @@
 
 	var/list/weighted_candidates = return_antag_weight(candidates)
 	var/spawned_count = 0
-	while(length(weighted_candidates) && spawned_count < antag_count)
+	var/failed_retries = 0
+	while(length(weighted_candidates) && spawned_count < antag_count && failed_retries <= STORYTELLER_MAXIMUM_RETRIES)
 		var/client/candidate_ckey = pick_n_take_weighted(weighted_candidates)
 		var/client/candidate_client = GLOB.directory[candidate_ckey]
 		if(QDELETED(candidate_client) || QDELETED(candidate_client.mob))
+			failed_retries++
 			continue
 
 		spawned_count++

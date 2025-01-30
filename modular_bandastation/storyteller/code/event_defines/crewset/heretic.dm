@@ -34,11 +34,21 @@
 	min_players = 20
 	maximum_antags_per_round = 3
 
-/datum/round_event_control/antagonist/solo/heretic/roundstart
+/datum/round_event_control/antagonist/solo/heretic/adds
+	name = "Heretics"
+	weight = 0
+	earliest_start = 0
+	roundstart_cost = 15
+
+/datum/round_event_control/antagonist/solo/heretic/solomode
 	name = "Heretics"
 	roundstart = TRUE
 	earliest_start = 0
 	roundstart_cost = 15
+	exclusive_roundstart_event = TRUE
+	price_to_buy_adds = 20
+	base_antags = 1
+	maximum_antags = 1
 
 /datum/round_event_control/antagonist/solo/heretic/midround
 	name = "Midround Heretics"

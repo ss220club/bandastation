@@ -1,4 +1,3 @@
-/*
 /datum/round_event_control/antagonist/solo/from_ghosts/paradox_clone
 	name = "Paradox Clone"
 	tags = list(TAG_OUTSIDER_ANTAG, TAG_SPOOKY, TAG_TARGETED)
@@ -16,7 +15,7 @@
 	required_enemies = 2
 	weight = 6
 	max_occurrences = 2
-	prompted_picking = FALSE
+	prompted_picking = TRUE
 
 /datum/round_event/antagonist/solo/ghost/paradox_clone
 	var/list/possible_spawns = list() ///places the antag can spawn
@@ -48,16 +47,19 @@
 			"Would you like to be a paradox clone?",
 			check_jobban = ROLE_PARADOX_CLONE,
 			poll_time = 20 SECONDS,
-			alert_pic = /datum/antagonist/paradox_clone,
+			alert_pic = /mob/living/carbon/human,
 			role_name_text = "paradox clone",
 			chat_text_border_icon = /datum/antagonist/paradox_clone,
 		)
 
+	var/list/weighted_candidates = return_antag_weight(candidates)
 	var/spawned_count = 0
-	while(length(candidates) && spawned_count < antag_count)
-		var/client/candidate_ckey = pick_n_take_weighted(candidates)
+	var/failed_retries = 0
+	while(length(weighted_candidates) && spawned_count < antag_count && failed_retries < STORYTELLER_MAXIMUM_RETRIES)
+		var/client/candidate_ckey = pick_n_take_weighted(weighted_candidates)
 		var/client/candidate_client = GLOB.directory[candidate_ckey]
 		if(QDELETED(candidate_client) || QDELETED(candidate_client.mob))
+			failed_retries++
 			continue
 
 		spawned_count++
@@ -70,6 +72,8 @@
 
 		clone_victim = find_original()
 		new_human = duplicate_object(clone_victim, pick(possible_spawns))
+		if(!candidate_ckey)
+			continue
 		new_human.ckey = candidate_ckey
 		new_human.mind.special_role = antag_flag
 		new_human.mind.restricted_roles = restricted_roles
@@ -107,5 +111,3 @@
 	if(possible_targets.len)
 		return pick(possible_targets)
 	return FALSE
-
-*/

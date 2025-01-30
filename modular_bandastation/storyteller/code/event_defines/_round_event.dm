@@ -83,11 +83,13 @@
 	var/list/weighted_candidates = return_antag_weight(possible_candidates)
 
 	var/valid_to_spawn = TRUE
-	while(length(weighted_candidates) && length(candidates) < antag_count && valid_to_spawn) //both of these pick_n_take from weighted_candidates so this should be fine
+	var/failed_retries = 0
+	while(length(weighted_candidates) && length(candidates) < antag_count && valid_to_spawn && failed_retries < STORYTELLER_MAXIMUM_RETRIES) //both of these pick_n_take from weighted_candidates so this should be fine
 		if(prompted_picking)
 			var/picked_ckey = pick_n_take_weighted(weighted_candidates)
 			var/client/picked_client = GLOB.directory[picked_ckey]
 			if(QDELETED(picked_client))
+				failed_retries++
 				continue
 			var/mob/picked_mob = picked_client.mob
 			log_storyteller("Prompted antag event mob: [picked_mob], special role: [picked_mob.mind?.special_role ? picked_mob.mind.special_role : "none"]")

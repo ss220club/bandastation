@@ -41,6 +41,8 @@
 	weight = 1
 	roundstart_cost = 50
 	max_occurrences = 3
+	base_antags = 2
+	maximum_antags = 2
 	event_icon_state = "nukeops"
 	exclusive_roundstart_event = TRUE
 	can_change_count = TRUE

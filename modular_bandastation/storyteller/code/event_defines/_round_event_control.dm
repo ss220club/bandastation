@@ -8,6 +8,7 @@
 	var/track = EVENT_TRACK_MODERATE
 	/// Last calculated weight that the storyteller assigned this event
 	var/calculated_weight = 0
+	var/calculated_on_track_weight = 0
 	var/tags = list() 	/// Tags of the event
 	/// List of the shared occurence types.
 	var/static/list/shared_occurences = list()
@@ -159,6 +160,8 @@
 	var/list/extra_spawned_events
 	/// Similar to extra_spawned_events however these are only used by roundstart events and will only try and run if we have the points to do so
 	var/list/preferred_events
+
+	var/price_to_buy_adds = 20
 
 /datum/round_event_control/antagonist/solo/return_failure_string(players_amt)
 	. =..()

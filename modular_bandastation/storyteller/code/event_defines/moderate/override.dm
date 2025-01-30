@@ -107,10 +107,6 @@
 	tags = list(TAG_DESTRUCTIVE, TAG_SPOOKY, TAG_EXTERNAL, TAG_MAGICAL)
 	checks_antag_cap = TRUE
 
-/datum/round_event_control/voidwalker
-	track = EVENT_TRACK_MODERATE
-	tags = list(TAG_COMBAT, TAG_SPOOKY, TAG_SPACE)
-
 /datum/round_event_control/anomaly/anomaly_vortex
 	track = EVENT_TRACK_MODERATE
 	tags = list(TAG_DESTRUCTIVE)
