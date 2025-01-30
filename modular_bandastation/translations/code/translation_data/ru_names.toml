@@ -12530,6 +12530,80 @@ nominative = "модуль ИИ 'Убрать закон'"
 ["'Freeform' Core AI Module"]
 nominative = "модуль основных законов ИИ 'Свободная форма'"
 
+# MARK: Genetics
+
+["geneticist's jumpsuit"]
+nominative = "комбинезон генетика"
+genitive = "комбинезона генетика"
+dative = "комбинезону генетика"
+accusative = "комбинезон генетика"
+instrumental = "комбинезоном генетика"
+prepositional = "комбинезоне генетика"
+gender = "male"
+
+["geneticist's jumpskirt"]
+nominative = "юбка-комбинезон генетика"
+genitive = "юбки-комбинезона генетика"
+dative = "юбке-комбинезону генетика"
+accusative = "юбку-комбинезон генетика"
+instrumental = "юбкой-комбинезоном генетика"
+prepositional = "юбке-комбинезоне генетика"
+gender = "female"
+
+["geneticist labcoat"]
+nominative = "лабораторный халат генетика"
+genitive = "лабораторного халата генетика"
+dative = "лабораторному халату генетика"
+accusative = "лабораторный халат генетика"
+instrumental = "лабораторным халатом генетика"
+prepositional = "лабораторном халате генетика"
+gender = "male"
+
+["genetics winter coat"]
+nominative = "зимнее пальто генетики"
+genitive = "зимнего пальто генетики"
+dative = "зимнему пальто генетики"
+accusative = "зимнее пальто генетики"
+instrumental = "зимним пальто генетики"
+prepositional = "зимнем пальто генетики"
+gender = "neuter"
+
+["genetics backpack"]
+nominative = "рюкзак генетики"
+genitive = "рюкзака генетики"
+dative = "рюкзаку генетики"
+accusative = "рюкзак генетики"
+instrumental = "рюкзаком генетики"
+prepositional = "рюкзаке генетики"
+gender = "male"
+
+["geneticist satchel"]
+nominative = "сумка генетика"
+genitive = "сумки генетика"
+dative = "сумке генетика"
+accusative = "сумку генетика"
+instrumental = "сумкой генетика"
+prepositional = "сумке генетика"
+gender = "female"
+
+["geneticist's duffel bag"]
+nominative = "вещмешок генетика"
+genitive = "вещмешка генетика"
+dative = "вещмешку генетика"
+accusative = "вещмешок генетика"
+instrumental = "вещмешком генетика"
+prepositional = "вещмешке генетика"
+gender = "male"
+
+["geneticist messenger bag"]
+nominative = "курьерская сумка генетика"
+genitive = "курьерской сумки генетика"
+dative = "курьерской сумке генетика"
+accusative = "курьерскую сумку генетика"
+instrumental = "курьерской сумкой генетика"
+prepositional = "курьерской сумке генетика"
+gender = "female"
+
 # MARK: ...Engineering
 
 ["insulated gloves"]
