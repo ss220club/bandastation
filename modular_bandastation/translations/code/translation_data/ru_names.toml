@@ -478,7 +478,7 @@ instrumental = "принцессой Чужих"
 prepositional = "принцессе Чужих"
 gender = "female"
 
-# MARK: ........Security
+# MARK: Security
 ["handcuffs"]
 nominative = "наручники"
 genitive = "наручников"
@@ -3316,7 +3316,7 @@ instrumental = "коробкой с пенными дротиками"
 prepositional = "коробке с пенными дротиками"
 gender = "female"
 
-# MARK: ....Service....
+# MARK: Service
 ["fish-porter 3000"]
 nominative = "рыбопортал 3000"
 genitive = "рыбопортала 3000"
@@ -5814,7 +5814,7 @@ instrumental = "деликатной юбкой"
 prepositional = "деликатной юбке"
 gender = "female"
 
-# MARK: .............Cargo
+# MARK: Cargo
 ["crate"]
 nominative = "ящик"
 genitive = "ящика"
@@ -6481,7 +6481,7 @@ instrumental = "автоматическим шахтёрским сканеро
 prepositional = "автоматическом шахтёрском сканере"
 gender = "male"
 
-# MARK: .........Medical
+# MARK: Medical
 ["medical records console"]
 nominative = "консоль медицинских записей"
 genitive = "консоли медицинских записей"
@@ -7696,6 +7696,429 @@ instrumental = "фонариком-ручкой парамедика"
 prepositional = "фонарике-ручке парамедика"
 gender = "male"
 
+["medical gauze"]
+nominative = "медицинская марля"
+genitive = "медицинской марли"
+dative = "медицинской марле"
+accusative = "медицинскую марлю"
+instrumental = "медицинской марлей"
+prepositional = "медицинской марле"
+gender = "female"
+
+["wound analyzer"]
+nominative = "анализатор травм"
+genitive = "анализатора травм"
+dative = "анализатору травм"
+accusative = "анализатор травм"
+instrumental = "анализатором травм"
+prepositional = "анализаторе травм"
+gender = "male"
+
+["ointment"]
+nominative = "мазь"
+genitive = "мази"
+dative = "мазе"
+accusative = "мазь"
+instrumental = "мазью"
+prepositional = "мазе"
+gender = "female"
+
+["bone gel"]
+nominative = "костный гель"
+genitive = "костного геля"
+dative = "костному гелю"
+accusative = "костный гель"
+instrumental = "костным гелем"
+prepositional = "костном геле"
+gender = "male"
+
+["medical crutch"]
+nominative = "медицинские костыли"
+genitive = "медицинских костылей"
+dative = "медицинским костылям"
+accusative = "медицинские костыли"
+instrumental = "медицинскими костылями"
+prepositional = "медицинских костылях"
+gender = "plural"
+
+["white cane"]
+nominative = "белая трость"
+genitive = "белой трости"
+dative = "белой трости"
+accusative = "белую трость"
+instrumental = "белой тростью"
+prepositional = "белой трости"
+gender = "female"
+
+["medical eyepatch"]
+nominative = "медицинская повязка на глаз"
+genitive = "медицинской повязки на глаз"
+dative = "медицинской повязке на глаз"
+accusative = "медицинскую повязку на глаз"
+instrumental = "медицинской повязкой на глаз"
+prepositional = "медицинской повязке на глаз"
+gender = "female"
+
+["box of bandages"]
+nominative = "коробка с бинтами"
+genitive = "коробки с бинтами"
+dative = "коробке с бинтами"
+accusative = "коробку с бинтами"
+instrumental = "коробкой с бинтами"
+prepositional = "коробке с бинтами"
+gender = "female"
+
+["HP+ gum packet"]
+nominative = "пакет жевачек ОЗ+"
+genitive = "пакета жевачек ОЗ+"
+dative = "пакету жевачек ОЗ+"
+accusative = "пакет жевачек ОЗ+"
+instrumental = "пакетом жевачек ОЗ+"
+prepositional = "пакете жевачек ОЗ+"
+gender = "male"
+
+["box of hugs"]
+nominative = "коробка объятий"
+genitive = "коробки объятий"
+dative = "коробке объятий"
+accusative = "коробку объятий"
+instrumental = "коробкой объятий"
+prepositional = "коробке объятий"
+gender = "female"
+
+["epinephrine medipen"]
+nominative = "медавтоинъектор эпинефрина"
+genitive = "медавтоинъектора эпинефрина"
+dative = "медавтоинъектору эпинефрина"
+accusative = "медавтоинъектор эпинефрина"
+instrumental = "медавтоинъектором эпинефрина"
+prepositional = "медавтоинъекторе эпинефрина"
+gender = "male"
+
+["medical belt"]
+nominative = "медицинский пояс"
+genitive = "медицинского пояса"
+dative = "медицинскому поясу"
+accusative = "медицинский пояс"
+instrumental = "медицинским поясом"
+prepositional = "медицинском поясе"
+gender = "male"
+
+["handheld crew monitor"]
+nominative = "портативный монитор экипажа"
+genitive = "портативного монитора экипажа"
+dative = "портативному монитору экипажа"
+accusative = "портативный монитор экипажа"
+instrumental = "портативным монитором экипажа"
+prepositional = "портативном мониторе экипажа"
+gender = "male"
+
+["advanced first aid kit"]
+nominative = "продвинутый набор первой помощи"
+genitive = "продвинутого набора первой помощи"
+dative = "продвинутому набору первой помощи"
+accusative = "продвинутый набор первой помощи"
+instrumental = "продвинутым набором первой помощи"
+prepositional = "продвинутом наборе первой помощи"
+gender = "male"
+
+["amputation shears"]
+nominative = "ножницы для ампутации"
+genitive = "ножниц для ампутации"
+dative = "ножницам для ампутации"
+accusative = "ножницы для ампутации"
+instrumental = "ножницами для ампутации"
+prepositional = "ножницах для ампутации"
+gender = "plural"
+
+["organ transport box"]
+nominative = "коробка для транспортировки органов"
+genitive = "коробки для транспортировки органов"
+dative = "коробке для транспортировки органов"
+accusative = "коробку для транспортировки органов"
+instrumental = "коробкой для транспортировки органов"
+prepositional = "коробке для транспортировки органов"
+gender = "female"
+
+["syringe (convermol)"]
+nominative = "шприц (конвермол)"
+genitive = "шприца (конвермола)"
+dative = "шприцу (конвермолу)"
+accusative = "шприц (конвермол)"
+instrumental = "шприцем (конвермолом)"
+prepositional = "шприце (конвермоле)"
+gender = "male"
+
+["insulin pill"]
+nominative = "таблетка инсулина"
+genitive = "таблетки инсулина"
+dative = "таблетке инсулина"
+accusative = "таблетку инсулина"
+instrumental = "таблеткой инсулина"
+prepositional = "таблетке инсулина"
+gender = "female"
+
+["calomel bottle"]
+nominative = "бутылка каломеля"
+genitive = "бутылки каломеля"
+dative = "бутылке каломеля"
+accusative = "бутылку каломеля"
+instrumental = "бутылкой каломеля"
+prepositional = "бутылке каломеля"
+gender = "female"
+
+["toxin bottle"]
+nominative = "бутылка с токсином"
+genitive = "бутылки с токсином"
+dative = "бутылке с токсином"
+accusative = "бутылку с токсином"
+instrumental = "бутылкой с токсином"
+prepositional = "бутылке с токсином"
+gender = "female"
+
+["toxins pill"]
+nominative = "таблетка с токсином"
+genitive = "таблетки с токсином"
+dative = "таблетке с токсином"
+accusative = "таблетку с токсином"
+instrumental = "таблеткой с токсином"
+prepositional = "таблетке с токсином"
+gender = "female"
+
+["morphine pill"]
+nominative = "таблетка морфина"
+genitive = "таблетки морфина"
+dative = "таблетке морфина"
+accusative = "таблетку морфина"
+instrumental = "таблеткой морфина"
+prepositional = "таблетке морфина"
+gender = "female"
+
+["multiver pill"]
+nominative = "таблетка мультивера"
+genitive = "таблетки мультивера"
+dative = "таблетке мультивера"
+accusative = "таблетку мультивера"
+instrumental = "таблеткой мультивера"
+prepositional = "таблетке мультивера"
+gender = "female"
+
+["medical gel (synthflesh)"]
+nominative = "медицинский гель (синтплоть)"
+genitive = "медицинского геля (синтплоть)"
+dative = "медицинскому гелю (синтплоть)"
+accusative = "медицинский гель (синтплоть)"
+instrumental = "медицинским гелем (синтплоть)"
+prepositional = "медицинском геле (синтплоть)"
+gender = "male"
+
+["bottle of experimental medication"]
+nominative = "бутылка экспериментального лекарства"
+genitive = "бутылки экспериментального лекарства"
+dative = "бутылке экспериментального лекарства"
+accusative = "бутылку экспериментального лекарства"
+instrumental = "бутылкой экспериментального лекарства"
+prepositional = "бутылке экспериментального лекарства"
+gender = "female"
+
+["libital patch (brute)"]
+nominative = "пластырь либитала (ушибы)"
+genitive = "пластыря либитала (ушибы)"
+dative = "пластырю либитала (ушибы)"
+accusative = "пластырь либитала (ушибы)"
+instrumental = "пластырем либитала (ушибы)"
+prepositional = "пластыре либитала (ушибы)"
+gender = "male"
+
+["aiuri patch (burn)"]
+nominative = "пластырь аиури (ожоги)"
+genitive = "пластыря аиури (ожоги)"
+dative = "пластырю аиури (ожоги)"
+accusative = "пластырь аиури (ожоги)"
+instrumental = "пластырем аиури (ожоги)"
+prepositional = "пластыре аиури (ожоги)"
+gender = "male"
+
+["multiver bottle"]
+nominative = "бутылка мультивера"
+genitive = "бутылки мультивера"
+dative = "бутылке мультивера"
+accusative = "бутылку мультивера"
+instrumental = "бутылкой мультивера"
+prepositional = "бутылке мультивера"
+gender = "female"
+
+["syriniver bottle"]
+nominative = "бутылка сиринивера"
+genitive = "бутылки сиринивера"
+dative = "бутылке сиринивера"
+accusative = "бутылку сиринивера"
+instrumental = "бутылкой сиринивера"
+prepositional = "бутылке сиринивера"
+gender = "female"
+
+["epinephrine bottle"]
+nominative = "бутылка эпинефрина"
+genitive = "бутылки эпинефрина"
+dative = "бутылке эпинефрина"
+accusative = "бутылку эпинефрина"
+instrumental = "бутылкой эпинефрина"
+prepositional = "бутылке эпинефрина"
+gender = "female"
+
+["morphine bottle"]
+nominative = "бутылка морфина"
+genitive = "бутылки морфина"
+dative = "бутылке морфина"
+accusative = "бутылку морфина"
+instrumental = "бутылкой морфина"
+prepositional = "бутылке морфина"
+gender = "female"
+
+["anti-radiation bottle"]
+nominative = "бутылка противорадиационного средства"
+genitive = "бутылки противорадиационного средства"
+dative = "бутылке противорадиационного средства"
+accusative = "бутылку противорадиационного средства"
+instrumental = "бутылкой противорадиационного средства"
+prepositional = "бутылке противорадиационного средства"
+gender = "female"
+
+["saline-glucose solution bottle"]
+nominative = "бутылка физраствора"
+genitive = "бутылки физраствора"
+dative = "бутылке физраствора"
+accusative = "бутылку физраствора"
+instrumental = "бутылкой физраствора"
+prepositional = "бутылке физраствора"
+gender = "female"
+
+["syringe (spaceacillin)"]
+nominative = "шприц (спейсацилин)"
+genitive = "шприца (спейсацилин)"
+dative = "шприцу (спейсацилин)"
+accusative = "шприц (спейсацилин)"
+instrumental = "шприцем (спейсацилин)"
+prepositional = "шприце (спейсацилин)"
+gender = "male"
+
+["medical gel (libital)"]
+nominative = "медицинский гель (либитал)"
+genitive = "медицинского геля (либитал)"
+dative = "медицинскому гелю (либитал)"
+accusative = "медицинский гель (либитал)"
+instrumental = "медицинским гелем (либитал)"
+prepositional = "медицинском геле (либитал)"
+gender = "male"
+
+["medical gel (aiuri)"]
+nominative = "медицинский гель (аиури)"
+genitive = "медицинского геля (аиури)"
+dative = "медицинскому гелю (аиури)"
+accusative = "медицинский гель (аиури)"
+instrumental = "медицинским гелем (аиури)"
+prepositional = "медицинском геле (аиури)"
+gender = "male"
+
+["sterilizer gel"]
+nominative = "гель-стерилизатор"
+genitive = "геля-стерилизатора"
+dative = "гелю-стерилизатору"
+accusative = "гель-стерилизатор"
+instrumental = "гелем-стерилизатором"
+prepositional = "геле-стерилизаторе"
+gender = "male"
+
+["Rhinovirus culture bottle"]
+nominative = "бутылка культуры риновируса"
+genitive = "бутылки культуры риновируса"
+dative = "бутылке культуры риновируса"
+accusative = "бутылку культуры риновируса"
+instrumental = "бутылкой культуры риновируса"
+prepositional = "бутылке культуры риновируса"
+gender = "female"
+
+["bottle of psicodine pills"]
+nominative = "бутылка таблеток псикодина"
+genitive = "бутылки таблеток псикодина"
+dative = "бутылке таблеток псикодина"
+accusative = "бутылку таблеток псикодина"
+instrumental = "бутылкой таблеток псикодина"
+prepositional = "бутылке таблеток псикодина"
+gender = "female"
+
+["atropine autoinjector"]
+nominative = "автоинъектор атропина"
+genitive = "автоинъектора атропина"
+dative = "автоинъектору атропина"
+accusative = "автоинъектор атропина"
+instrumental = "автоинъектором атропина"
+prepositional = "автоинъекторе атропина"
+gender = "male"
+
+["medkit"]
+nominative = "меднабор"
+genitive = "меднабора"
+dative = "меднабору"
+accusative = "меднабор"
+instrumental = "меднабором"
+prepositional = "меднаборе"
+gender = "male"
+
+["combat medical kit"]
+nominative = "боевой меднабор"
+genitive = "боевого меднабора"
+dative = "боевому меднабору"
+accusative = "боевой меднабор"
+instrumental = "боевым меднабором"
+prepositional = "боевом меднаборе"
+gender = "male"
+
+["surgery duffel bag"]
+nominative = "вещмешок хирургии"
+genitive = "вещмешка хирургии"
+dative = "вещмешку хирургии"
+accusative = "вещмешок хирургии"
+instrumental = "вещмешком хирургии"
+prepositional = "вещмешке хирургии"
+gender = "male"
+
+["brute trauma treatment kit"]
+nominative = "набор для лечения ушибов"
+genitive = "набора для лечения ушибов"
+dative = "набору для лечения ушибов"
+accusative = "набор для лечения ушибов"
+instrumental = "набором для лечения ушибов"
+prepositional = "наборе для лечения ушибов"
+gender = "male"
+
+["burn treatment kit"]
+nominative = "набор для лечения ожогов"
+genitive = "набора для лечения ожогов"
+dative = "набору для лечения ожогов"
+accusative = "набор для лечения ожогов"
+instrumental = "набором для лечения ожогов"
+prepositional = "наборе для лечения ожогов"
+gender = "male"
+
+["toxin treatment kit"]
+nominative = "набор для лечения токсинов"
+genitive = "набора для лечения токсинов"
+dative = "набору для лечения токсинов"
+accusative = "набор для лечения токсинов"
+instrumental = "набором для лечения токсинов"
+prepositional = "наборе для лечения токсинов"
+gender = "male"
+
+["oxygen deprivation treatment kit"]
+nominative = "набор для лечения кислородного голодания"
+genitive = "набора для лечения кислородного голодания"
+dative = "набору для лечения кислородного голодания"
+accusative = "набор для лечения кислородного голодания"
+instrumental = "набором для лечения кислородного голодания"
+prepositional = "наборе для лечения кислородного голодания"
+gender = "male"
+
 # MARK: Organs
 ["chest"]
 nominative = "грудь"
@@ -8426,7 +8849,7 @@ instrumental = "имплантом толкателей"
 prepositional = "импланте толкателей"
 gender = "male"
 
-# MARK: ..........Science
+# MARK: Science
 ["autolathe"]
 nominative = "автолат"
 genitive = "автолата"
