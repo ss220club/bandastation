@@ -19745,12 +19745,12 @@ nominative = "Интенто"
 gender = "male"
 
 ["pin the tail on the corgi supplies"]
-nominative = "принадлежности для игры 'Приколи хвост корги'"
-genitive = "принадлежностей для игры 'Приколи хвост корги'"
-dative = "принадлежностям для игры 'Приколи хвост корги'"
-accusative = "принадлежности для игры 'Приколи хвост корги'"
-instrumental = "принадлежностями для игры 'Приколи хвост корги'"
-prepositional = "принадлежностях для игры 'Приколи хвост корги'"
+nominative = "принадлежности для игры \"Приколи хвост корги\""
+genitive = "принадлежностей для игры \"Приколи хвост корги\""
+dative = "принадлежностям для игры \"Приколи хвост корги\""
+accusative = "принадлежности для игры \"Приколи хвост корги\""
+instrumental = "принадлежностями для игры \"Приколи хвост корги\""
+prepositional = "принадлежностях для игры \"Приколи хвост корги\""
 gender = "plural"
 
 ["box of crayons"]
@@ -19925,57 +19925,57 @@ prepositional = "скилл-чипе \"Узнайте ПОДЛИННОСТЬ ID-
 gender = "male"
 
 ["Basketsoft 3000 skillchip"]
-nominative = "скилл-чип ''Корзиноплёт 3000''"
-genitive = "скилл-чипа 'Корзиноплёт 3000'"
-dative = "скилл-чипу 'Корзиноплёт 3000'"
-accusative = "скилл-чип 'Корзиноплёт 3000'"
-instrumental = "скилл-чипом 'Корзиноплёт 3000'"
-prepositional = "скилл-чипе 'Корзиноплёт 3000'"
+nominative = "скилл-чип \"Корзиноплёт 3000\""
+genitive = "скилл-чипа \"Корзиноплёт 3000\""
+dative = "скилл-чипу \"Корзиноплёт 3000\""
+accusative = "скилл-чип \"Корзиноплёт 3000\""
+instrumental = "скилл-чипом \"Корзиноплёт 3000\""
+prepositional = "скилл-чипе \"Корзиноплёт 3000\""
 gender = "male"
 
 ["Hedge 3 skillchip"]
-nominative = "скилл-чип Изгородь 3"
-genitive = "скилл-чипа Изгородь 3"
-dative = "скилл-чипу Изгородь 3"
-accusative = "скилл-чип Изгородь 3"
-instrumental = "скилл-чипом Изгородь 3"
-prepositional = "скилл-чипе Изгородь 3"
+nominative = "скилл-чип \"Изгородь 3\""
+genitive = "скилл-чипа \"Изгородь 3\""
+dative = "скилл-чипу \"Изгородь 3\""
+accusative = "скилл-чип \"Изгородь 3\""
+instrumental = "скилл-чипом \"Изгородь 3\""
+prepositional = "скилл-чипе \"Изгородь 3\""
 gender = "male"
 
 ["Integrated Intuitive Thinking and Judging skillchip"]
-nominative = "скилл-чип Интегрированное Интуитивное Мышление и Суждение"
-genitive = "скилл-чипа Интегрированное Интуитивное Мышление и Суждение"
-dative = "скилл-чипу Интегрированное Интуитивное Мышление и Суждение"
-accusative = "скилл-чип Интегрированное Интуитивное Мышление и Суждение"
-instrumental = "скилл-чипом Интегрированное Интуитивное Мышление и Суждение"
-prepositional = "скилл-чипе Интегрированное Интуитивное Мышление и Суждение"
+nominative = "скилл-чип \"Интегрированное интуитивное мышление и суждение\""
+genitive = "скилл-чипа \"Интегрированное интуитивное мышление и суждение\""
+dative = "скилл-чипу \"Интегрированное интуитивное мышление и суждение\""
+accusative = "скилл-чип \"Интегрированное интуитивное мышление и суждение\""
+instrumental = "скилл-чипом \"Интегрированное интуитивное мышление и суждение\""
+prepositional = "скилл-чипе \"Интегрированное интуитивное мышление и суждение\""
 gender = "male"
 
 ["N16H7M4R3 skillchip"]
-nominative = "скилл-чип N16H7M4R3"
-genitive = "скилл-чипа N16H7M4R3"
-dative = "скилл-чипу N16H7M4R3"
-accusative = "скилл-чип N16H7M4R3"
-instrumental = "скилл-чипом N16H7M4R3"
-prepositional = "скилл-чипе N16H7M4R3"
+nominative = "скилл-чип \"К0ШМ4Р\""
+genitive = "скилл-чипа \"К0ШМ4Р\""
+dative = "скилл-чипу \"К0ШМ4Р\""
+accusative = "скилл-чип \"К0ШМ4Р\""
+instrumental = "скилл-чипом \"К0ШМ4Р\""
+prepositional = "скилл-чипе \"К0ШМ4Р\""
 gender = "male"
 
 ["Mast-Angl-Er skillchip"]
-nominative = "скилл-чип Mast-Angl-Er"
-genitive = "скилл-чипа Mast-Angl-Er"
-dative = "скилл-чипу Mast-Angl-Er"
-accusative = "скилл-чип Mast-Angl-Er"
-instrumental = "скилл-чипом Mast-Angl-Er"
-prepositional = "скилл-чипе Mast-Angl-Er"
+nominative = "скилл-чип \"Маст-Рыб-Ак\""
+genitive = "скилл-чипа \"Маст-Рыб-Ак\""
+dative = "скилл-чипу \"Маст-Рыб-Ак\""
+accusative = "скилл-чип \"Маст-Рыб-Ак\""
+instrumental = "скилл-чипом \"Маст-Рыб-Ак\""
+prepositional = "скилл-чипе \"Маст-Рыб-Ак\""
 gender = "male"
 
 ["Le S48R4G3 skillchip"]
-nominative = "скилл-чип Le S48R4G3"
-genitive = "скилл-чипа Le S48R4G3"
-dative = "скилл-чипу Le S48R4G3"
-accusative = "скилл-чип Le S48R4G3"
-instrumental = "скилл-чипом Le S48R4G3"
-prepositional = "скилл-чипе Le S48R4G3"
+nominative = "скилл-чип \"Ле С46Р4Ж\""
+genitive = "скилл-чипа \"Ле С46Р4Ж\""
+dative = "скилл-чипу \"Ле С46Р4Ж\""
+accusative = "скилл-чип \"Ле С46Р4Ж\""
+instrumental = "скилл-чипом \"Ле С46Р4Ж\""
+prepositional = "скилл-чипе \"Ле С46Р4Ж\""
 gender = "male"
 
 ["Skillchip adapter"]
@@ -19987,6 +19987,167 @@ instrumental = "адаптером для скилл-чипов"
 prepositional = "адаптере для скилл-чипов"
 gender = "male"
 
+["WINE skillchip"]
+nominative = "скилл-чип \"ВИНО\""
+genitive = "скилл-чипа \"ВИНО\""
+dative = "скилл-чипу \"ВИНО\""
+accusative = "скилл-чип \"ВИНО\""
+instrumental = "скилл-чипом \"ВИНО\""
+prepositional = "скилл-чипе \"ВИНО\""
+gender = "male"
+
+["Kommand skillchip"]
+nominative = "скилл-чип \"Коммант\""
+genitive = "скилл-чипа \"Коммант\""
+dative = "скилл-чипу \"Коммант\""
+accusative = "скилл-чип \"Коммант\""
+instrumental = "скилл-чипом \"Коммант\""
+prepositional = "скилл-чипе \"Коммант\""
+gender = "male"
+
+["Trading Card Pack: Resin Frontier Booster Pack"]
+nominative = "упаковка торговых карт: бустер \"Смоляной рубеж\""
+genitive = "упаковки торговых карт: бустер \"Смоляной рубеж\""
+dative = "упаковке торговых карт: бустер \"Смоляной рубеж\""
+accusative = "упаковку торговых карт: бустер \"Смоляной рубеж\""
+instrumental = "упаковкой торговых карт: бустер \"Смоляной рубеж\""
+prepositional = "упаковке торговых карт: бустер \"Смоляной рубеж\""
+gender = "female"
+
+["Trading Card Pack: Series 1"]
+nominative = "упаковка торговых карт: Серия 1"
+genitive = "упаковки торговых карт: Серия 1"
+dative = "упаковке торговых карт: Серия 1"
+accusative = "упаковку торговых карт: Серия 1"
+instrumental = "упаковкой торговых карт: Серия 1"
+prepositional = "упаковке торговых карт: Серия 1"
+gender = "female"
+
+["hair dye spray"]
+nominative = "спрей для окрашивания волос"
+genitive = "спрея для окрашивания волос"
+dative = "спрею для окрашивания волос"
+accusative = "спрей для окрашивания волос"
+instrumental = "спреем для окрашивания волос"
+prepositional = "спрее для окрашивания волос"
+gender = "male"
+
+["hourglass"]
+nominative = "песочные часы"
+genitive = "песочных часов"
+dative = "песочным часам"
+accusative = "песочные часы"
+instrumental = "песочными часами"
+prepositional = "песочных часах"
+gender = "plural"
+
+["headphones"]
+nominative = "наушники"
+genitive = "наушников"
+dative = "наушникам"
+accusative = "наушники"
+instrumental = "наушниками"
+prepositional = "наушниках"
+gender = "plural"
+
+["card binder"]
+nominative = "папка для карт"
+genitive = "папки для карт"
+dative = "папке для карт"
+accusative = "папку для карт"
+instrumental = "папкой для карт"
+prepositional = "папке для карт"
+gender = "female"
+
+["bag of dice"]
+nominative = "мешок с кубиками"
+genitive = "мешка с кубиками"
+dative = "мешку с кубиками"
+accusative = "мешок с кубиками"
+instrumental = "мешком с кубиками"
+prepositional = "мешке с кубиками"
+gender = "male"
+
+["fudge die"]
+nominative = "кубик для фаджа"
+genitive = "кубика для фаджа"
+dative = "кубику для фаджа"
+accusative = "кубик для фаджа"
+instrumental = "кубиком для фаджа"
+prepositional = "кубике для фаджа"
+gender = "male"
+
+["ski shoes"]
+nominative = "лыжные ботинки"
+genitive = "лыжных ботинок"
+dative = "лыжным ботинкам"
+accusative = "лыжные ботинки"
+instrumental = "лыжными ботинками"
+prepositional = "лыжных ботинках"
+gender = "plural"
+
+["musical moth"]
+nominative = "музыкальная моль"
+genitive = "музыкальной моли"
+dative = "музыкальной моли"
+accusative = "музыкальную моль"
+instrumental = "музыкальной молью"
+prepositional = "музыкальной моли"
+gender = "female"
+
+["Russian revolver"]
+nominative = "русский револьвер"
+genitive = "русского револьвера"
+dative = "русскому револьверу"
+accusative = "русский револьвер"
+instrumental = "русским револьвером"
+prepositional = "русском револьвере"
+gender = "male"
+
+["old F058UR7 skillchip"]
+nominative = "старый скилл-чип \"Ф0С63РИ\""
+genitive = "старого скилл-чипа \"Ф0С63РИ\""
+dative = "старому скилл-чипу \"Ф0С63РИ\""
+accusative = "старый скилл-чип \"Ф0С63РИ\""
+instrumental = "старым скилл-чипом \"Ф0С63РИ\""
+prepositional = "старом скилл-чипе \"Ф0С63РИ\""
+gender = "male"
+
+["rapid pipe cleaner layer"]
+nominative = "быстрый раздатчик спиралей для прочистки труб"
+genitive = "быстрого раздатчика спиралей для прочистки труб"
+dative = "быстрому раздатчику спиралей для прочистки труб"
+accusative = "быстрый раздатчик спиралей для прочистки труб"
+instrumental = "быстрым раздатчиком спиралей для прочистки труб"
+prepositional = "быстром раздатчике спиралей для прочистки труб"
+gender = "male"
+
+["roller skates"]
+nominative = "роликовые коньки"
+genitive = "роликовых коньков"
+dative = "роликовым конькам"
+accusative = "роликовые коньки"
+instrumental = "роликовыми коньками"
+prepositional = "роликовых коньках"
+gender = "plural"
+
+["skateboard"]
+nominative = "скейтборд"
+genitive = "скейтборда"
+dative = "скейтборду"
+accusative = "скейтборд"
+instrumental = "скейтбордом"
+prepositional = "скейтборде"
+gender = "male"
+
+["hoverboard"]
+nominative = "ховерборд"
+genitive = "ховерборда"
+dative = "ховерборду"
+accusative = "ховерборд"
+instrumental = "ховербордом"
+prepositional = "ховерборде"
+gender = "male"
 
 # MARK: Antagonists
 
