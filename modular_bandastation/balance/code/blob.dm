@@ -16,7 +16,6 @@
 /mob/eye/blob/proc/check_station_floor()
 	if(main_station_floor(src))
 		return
-		
 	expand_cost = BLOB_EXPAND_COST * 2
 	blobwincount  = 700
 
