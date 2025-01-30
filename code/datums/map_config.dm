@@ -51,7 +51,7 @@
 
 	// BANDASTATION ADDITION START - Underfloor Blobs
 	/// Main floor of the map. Null as default, if not specified in json
-	var/main_floors = null
+	var/main_floor = null
 	// BANDASTATION ADDITION END - Underfloor Blobs
 
 	// BANDASTATION ADDITION START - Station Fluff
@@ -205,8 +205,8 @@
 		load_all_away_missions = json["load_all_away_missions"]
 
 	// BANDASTATION ADDITION START - Underfloor Blobs
-	if ("main_floors" in json)
-		main_floors = json["main_floors"]
+	if ("main_floor" in json)
+		main_floor = json["main_floor"]
 	// BANDASTATION ADDITION END - Underfloor Blobs
 
 	// BANDASTATION ADDITION START - Station Fluff
