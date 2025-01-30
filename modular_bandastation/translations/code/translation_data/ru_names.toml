@@ -4704,6 +4704,63 @@ instrumental = "продвинутой палочкой для жарки"
 prepositional = "продвинутой палочке для жарки"
 gender = "female"
 
+# MARK: Clothes
+
+["white cap"]
+nominative = "белая кепка"
+genitive = "белой кепки"
+dative = "белой кепке"
+accusative = "белую кепку"
+instrumental = "белой кепкой"
+prepositional = "белой кепке"
+gender = "female"
+
+["chef's hat"]
+nominative = "поварской колпак"
+genitive = "поварского колпака"
+dative = "поварскому колпаку"
+accusative = "поварской колпак"
+instrumental = "поварским колпаком"
+prepositional = "поварском колпаке"
+gender = "male"
+
+["grilling shorts"]
+nominative = "шорты для гриля"
+genitive = "шорт для гриля"
+dative = "шортам для гриля"
+accusative = "шорты для гриля"
+instrumental = "шортами для гриля"
+prepositional = "шортах для гриля"
+gender = "male"
+
+["chef's apron"]
+nominative = "поварской фартук"
+genitive = "поварского фартука"
+dative = "поварскому фартуку"
+accusative = "поварской фартук"
+instrumental = "поварским фартуком"
+prepositional = "поварском фартуке"
+gender = "male"
+
+["grilling sandals"]
+nominative = "сандалии для гриля"
+genitive = "сандалий для гриля"
+dative = "сандалиям для гриля"
+accusative = "сандалии для гриля"
+instrumental = "сандалиями для гриля"
+prepositional = "сандалиях для гриля"
+gender = "female"
+
+# TODO: Translate Pest-B-Gon
+["box of Pest-B-Gon mousetraps"]
+nominative = "коробка мышеловок Pest-B-Gon"
+genitive = "коробки мышеловок Pest-B-Gon"
+dative = "коробке мышеловок Pest-B-Gon"
+accusative = "коробку мышеловок Pest-B-Gon"
+instrumental = "коробкой мышеловок Pest-B-Gon"
+prepositional = "коробке мышеловок Pest-B-Gon"
+gender = "female"
+
 # MARK: Food
 
 ["double rat-kebab"]
