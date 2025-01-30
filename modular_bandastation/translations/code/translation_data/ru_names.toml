@@ -5436,6 +5436,88 @@ instrumental = "бананом"
 prepositional = "банане"
 gender = "male"
 
+# MARK: Curator
+["four-color pen"]
+nominative = "четырёхцветная ручка"
+genitive = "четырёхцветной ручки"
+dative = "четырёхцветной ручке"
+accusative = "четырёхцветную ручку"
+instrumental = "четырёхцветной ручкой"
+prepositional = "четырёхцветной ручке"
+gender = "female"
+
+["fountain pen"]
+nominative = "чернильная ручка"
+genitive = "чернильной ручки"
+dative = "чернильной ручке"
+accusative = "чернильную ручку"
+instrumental = "чернильной ручкой"
+prepositional = "чернильной ручке"
+gender = "female"
+
+["explorer satchel"]
+nominative = "сумка исследователя"
+genitive = "сумки исследователя"
+dative = "сумке исследователя"
+accusative = "сумку исследователя"
+instrumental = "сумкой исследователя"
+prepositional = "сумке исследователя"
+gender = "female"
+
+["book bag"]
+nominative = "сумка для книг"
+genitive = "сумки для книг"
+dative = "сумке для книг"
+accusative = "сумку для книг"
+instrumental = "сумкой для книг"
+prepositional = "сумке для книг"
+gender = "female"
+
+["press headset"]
+nominative = "гарнитура пресс-службы"
+genitive = "гарнитуры пресс-службы"
+dative = "гарнитуре пресс-службы"
+accusative = "гарнитуру пресс-службы"
+instrumental = "гарнитурой пресс-службы"
+prepositional = "гарнитуре пресс-службы"
+gender = "female"
+
+["explorer messenger bag"]
+nominative = "курьерская сумка исследователя"
+genitive = "курьерской сумки исследователя"
+dative = "курьерской сумке исследователя"
+accusative = "курьерскую сумку исследователя"
+instrumental = "курьерской сумкой исследователя"
+prepositional = "курьерской сумке исследователя"
+gender = "female"
+
+["head of personnel's suit"]
+nominative = "костюм главы персонала"
+genitive = "костюма главы персонала"
+dative = "костюму главы персонала"
+accusative = "костюм главы персонала"
+instrumental = "костюмом главы персонала"
+prepositional = "костюме главы персонала"
+gender = "male"
+
+["sensible suit"]
+nominative = "деликатный костюм"
+genitive = "деликатного костюма"
+dative = "деликатному костюму"
+accusative = "деликатный костюм"
+instrumental = "деликатным костюмом"
+prepositional = "деликатном костюме"
+gender = "male"
+
+["sensible suitskirt"]
+nominative = "деликатная юбка"
+genitive = "деликатной юбки"
+dative = "деликатной юбке"
+accusative = "деликатную юбку"
+instrumental = "деликатной юбкой"
+prepositional = "деликатной юбке"
+gender = "female"
+
 # MARK: .............Cargo
 ["crate"]
 nominative = "ящик"
