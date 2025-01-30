@@ -305,6 +305,7 @@
 			priority_announce("The codes for the on-station nuclear self-destruct have been requested by [user]. Confirmation or denial of this request will be sent shortly.", "Nuclear Self-Destruct Codes Requested", SSstation.announcer.get_rand_report_sound())
 			playsound(src, 'sound/machines/terminal/terminal_prompt.ogg', 50, FALSE)
 			COOLDOWN_START(src, important_action_cooldown, IMPORTANT_ACTION_COOLDOWN)
+		// BANDASTATION ADDITION - START
 		if ("requestERT")
 			if (!authenticated_as_non_silicon_captain(user))
 				return
@@ -323,6 +324,7 @@
 			priority_announce("An Emergency Request Team has been requested by [user]. Confirmation or denial of this request will be sent shortly.", "[command_name()] Emergency Response Team Division", SSstation.announcer.get_rand_report_sound())
 			playsound(src, 'sound/machines/terminal/terminal_prompt.ogg', 50, FALSE)
 			COOLDOWN_START(src, important_action_cooldown, IMPORTANT_ACTION_COOLDOWN)
+		// BANDASTATION ADDITION - END
 		if ("restoreBackupRoutingData")
 			if (!authenticated_as_non_silicon_captain(user))
 				return
@@ -547,7 +549,7 @@
 				data["canMessageAssociates"] = FALSE
 				data["canRecallShuttles"] = !HAS_SILICON_ACCESS(user)
 				data["canRequestNuke"] = FALSE
-				data["canRequestERT"] = FALSE
+				data["canRequestERT"] = FALSE	// BANDASTATION ADDITION
 				data["canSendToSectors"] = FALSE
 				data["canSetAlertLevel"] = FALSE
 				data["canToggleEmergencyAccess"] = FALSE
@@ -565,7 +567,7 @@
 				if (authenticated_as_non_silicon_captain(user))
 					data["canMessageAssociates"] = TRUE
 					data["canRequestNuke"] = TRUE
-					data["canRequestERT"] = TRUE
+					data["canRequestERT"] = TRUE	// BANDASTATION ADDITION
 
 				if (can_send_messages_to_other_sectors(user))
 					data["canSendToSectors"] = TRUE

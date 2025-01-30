@@ -266,14 +266,14 @@ const PageMain = (props) => {
     shuttleCanEvacOrFailReason,
     shuttleLastCalled,
     shuttleRecallable,
-    canRequestERT,
+    canRequestERT, // BANDASTATION ADDITION
   } = data;
 
   const [callingShuttle, setCallingShuttle] = useState(false);
   const [messagingAssociates, setMessagingAssociates] = useState(false);
   const [messagingSector, setMessagingSector] = useState(null);
   const [requestingNukeCodes, setRequestingNukeCodes] = useState(false);
-  const [requestingERT, setRequestingERT] = useState(false);
+  const [requestingERT, setRequestingERT] = useState(false); // BANDASTATION ADDITION
 
   const [
     [showAlertLevelConfirm, confirmingAlertLevelTick],
@@ -417,6 +417,7 @@ const PageMain = (props) => {
             />
           )}
 
+          {/** BANDASTATION ADDITION - START */}
           {!!canRequestERT && (
             <Button
               icon="people-group"
@@ -425,6 +426,7 @@ const PageMain = (props) => {
               onClick={() => setRequestingERT(true)}
             />
           )}
+          {/** BANDASTATION ADDITION - END */}
 
           {!!emagged && !syndicate && (
             <Button
@@ -470,6 +472,7 @@ const PageMain = (props) => {
         />
       )}
 
+      {/** BANDASTATION ADDITION - START */}
       {!!canRequestERT && requestingERT && (
         <MessageModal
           label="Reason for requesting Emergency Response Team"
@@ -485,6 +488,7 @@ const PageMain = (props) => {
           }}
         />
       )}
+      {/** BANDASTATION ADDITION - END */}
 
       {!!callingShuttle && (
         <MessageModal

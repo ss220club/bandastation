@@ -85,6 +85,7 @@
 	for(var/obj/machinery/computer/communications/console in GLOB.shuttle_caller_list)
 		console.override_cooldown()
 
+// BANDASTATION ADDITION - START
 /proc/ert_request(text, mob/sender)
 	var/msg = copytext_char(sanitize(text), 1, MAX_MESSAGE_LEN)
 	GLOB.requests.ert_request(sender.client, msg)
@@ -94,3 +95,4 @@
 	to_chat(GLOB.admins, msg, type = MESSAGE_TYPE_PRAYER, confidential = TRUE)
 	for(var/obj/machinery/computer/communications/console in GLOB.shuttle_caller_list)
 		console.override_cooldown()
+// BANDASTATION ADDITION - END
