@@ -178,6 +178,15 @@ instrumental = "плюшевой ящерицей"
 nominative = "плюшевая ящерица"
 prepositional = "плюшевой ящерице"
 
+["moth plushie"]
+nominative = "плюшевая моль"
+genitive = "плюшевой моли"
+dative = "плюшевой моли"
+accusative = "плюшевую моль"
+instrumental = "плюшевой молью"
+prepositional = "плюшевой моли"
+gender = "female"
+
 ["mech removal tool"]
 accusative = "огромный лом"
 dative = "огромному лому"
@@ -651,6 +660,13 @@ prepositional = "энергетической боле"
 gender = "female"
 
 ["enhanced retrieval gloves"]
+nominative = "перчатки для улучшенного извлечения"
+genitive = "перчаток для улучшенного извлечения"
+dative = "перчаткам для улучшенного извлечения"
+accusative = "перчатки для улучшенного извлечения"
+instrumental = "перчатками для улучшенного извлечения"
+prepositional = "перчатках для улучшенного извлечения"
+gender = "plural"
 
 ["security webbing"]
 nominative = "разгрузка охраны"
@@ -1461,6 +1477,78 @@ accusative = "маячок ДРАГнета"
 instrumental = "маячком ДРАГнета"
 prepositional = "маячке ДРАГнета"
 gender = "male"
+
+["curator's whip"]
+nominative = "кнут куратора"
+genitive = "кнута куратора"
+dative = "кнуту куратору"
+accusative = "кнут куратора"
+instrumental = "кнутом куратором"
+prepositional = "кнуте кураторе"
+gender = "male"
+
+["SWAT helmet"]
+nominative = "шлем SWAT"
+genitive = "шлема SWAT"
+dative = "шлему SWAT"
+accusative = "шлем SWAT"
+instrumental = "шлемом SWAT"
+prepositional = "шлеме SWAT"
+gender = "male"
+
+["strobe shield"]
+nominative = "стробоскопический щит"
+genitive = "стробоскопического щита"
+dative = "стробоскопическому щиту"
+accusative = "стробоскопический щит"
+instrumental = "стробоскопическим щитом"
+prepositional = "стробоскопическом щите"
+gender = "male"
+
+["spacepol mask"]
+nominative = "маска космической полиции"
+genitive = "маски космической полиции"
+dative = "маске космической полиции"
+accusative = "маску космической полиции"
+instrumental = "маской космической полиции"
+prepositional = "маске космической полиции"
+gender = "female"
+
+["guerrilla gloves"]
+nominative = "партизанские перчатки"
+genitive = "партизанских перчаток"
+dative = "партизанским перчаткам"
+accusative = "партизанские перчатки"
+instrumental = "партизанскими перчатками"
+prepositional = "партизанских перчатках"
+gender = "plural"
+
+["emergency response team security backpack"]
+nominative = "рюкзак охраны отряда быстрого реагирования"
+genitive = "рюкзака охраны отряда быстрого реагирования"
+dative = "рюкзаку охраны отряда быстрого реагирования"
+accusative = "рюкзак охраны отряда быстрого реагирования"
+instrumental = "рюкзаком охраны отряда быстрого реагирования"
+prepositional = "рюкзаке охраны отряда быстрого реагирования"
+gender = "male"
+
+["chest rig"]
+nominative = "разгрузка"
+genitive = "разгрузки"
+dative = "разгрузке"
+accusative = "разгрузку"
+instrumental = "разгрузкой"
+prepositional = "разгрузке"
+gender = "female"
+
+["security deputy armband"]
+nominative = "повязка заместителя охраны"
+genitive = "повязки заместителя охраны"
+dative = "повязке заместителя охраны"
+accusative = "повязку заместителя охраны"
+instrumental = "повязкой заместителя охраны"
+prepositional = "повязке заместителя охраны"
+gender = "female"
 
 # MARK: Vendor
 ["security radio headset"]
@@ -3009,6 +3097,51 @@ instrumental = "мясницким тесаком"
 prepositional = "мясницком тесаке"
 gender = "male"
 
+["tactical energy gun"]
+nominative = "тактический энергетический карабин"
+genitive = "тактического энергетического карабина"
+dative = "тактическому энергетическому карабину"
+accusative = "тактический энергетический карабин"
+instrumental = "тактическим энергетическим карабином"
+prepositional = "тактическом энергетическом карабине"
+gender = "male"
+
+["laser rifle"]
+nominative = "лазерная винтовка"
+genitive = "лазерной винтовки"
+dative = "лазерной винтовке"
+accusative = "лазерную винтовку"
+instrumental = "лазерной винтовкой"
+prepositional = "лазерной винтовке"
+gender = "female"
+
+["WT-550 Autorifle"]
+nominative = "автомат WT-550"
+genitive = "автомата WT-550"
+dative = "автомату WT-550"
+accusative = "автомат WT-550"
+instrumental = "автоматом WT-550"
+prepositional = "автомате WT-550"
+gender = "male"
+
+["frag grenade"]
+nominative = "осколочная граната"
+genitive = "осколочной гранаты"
+dative = "осколочной гранате"
+accusative = "осколочную гранату"
+instrumental = "осколочной гранатой"
+prepositional = "осколочной гранате"
+gender = "female"
+
+["incendiary grenade"]
+nominative = "зажигательная граната"
+genitive = "зажигательной гранаты"
+dative = "зажигательной гранате"
+accusative = "зажигательную гранату"
+instrumental = "зажигательной гранатой"
+prepositional = "зажигательной гранате"
+gender = "female"
+
 # MARK: Projectiles
 ["kiss"]
 nominative = "поцелуй"
@@ -3314,6 +3447,69 @@ dative = "коробке с пенными дротиками"
 accusative = "коробку с пенными дротиками"
 instrumental = "коробкой с пенными дротиками"
 prepositional = "коробке с пенными дротиками"
+gender = "female"
+
+["SMG magazine (9mm AP)"]
+nominative = "магазин для ПП (бронебойные 9мм)"
+genitive = "магазина для ПП (бронебойные 9мм)"
+dative = "магазину для ПП (бронебойные 9мм)"
+accusative = "магазин для ПП (бронебойные 9мм)"
+instrumental = "магазином для ПП (бронебойные 9мм)"
+prepositional = "магазине для ПП (бронебойные 9мм)"
+gender = "male"
+
+["WT-550 magazine (4.6x30mm)"]
+nominative = "магазин WT-550 (4.6x30мм)"
+genitive = "магазина WT-550 (4.6x30мм)"
+dative = "магазину WT-550 (4.6x30мм)"
+accusative = "магазин WT-550 (4.6x30мм)"
+instrumental = "магазином WT-550 (4.6x30мм)"
+prepositional = "магазине WT-550 (4.6x30мм)"
+gender = "male"
+
+["WT-550 magazine (4.6x30mm AP)"]
+nominative = "магазин WT-550 (бронебойные 4.6x30мм)"
+genitive = "магазина WT-550 (бронебойные 4.6x30мм)"
+dative = "магазину WT-550 (бронебойные 4.6x30мм)"
+accusative = "магазин WT-550 (бронебойные 4.6x30мм)"
+instrumental = "магазином WT-550 (бронебойные 4.6x30мм)"
+prepositional = "магазине WT-550 (бронебойные 4.6x30мм)"
+gender = "male"
+
+["box of shotgun shells (Lethal)"]
+nominative = "коробка с патронами для дробовика (летальное)"
+genitive = "коробки с патронами для дробовика (летальное)"
+dative = "коробке с патронами для дробовика (летальное)"
+accusative = "коробку с патронами для дробовика (летальное)"
+instrumental = "коробкой с патронами для дробовика (летальное)"
+prepositional = "коробке с патронами для дробовика (летальное)"
+gender = "female"
+
+["power pack"]
+nominative = "блок питания"
+genitive = "блока питания"
+dative = "блоку питания"
+accusative = "блок питания"
+instrumental = "блоком питания"
+prepositional = "блоке питания"
+gender = "male"
+
+["box of shotgun shells (Less Lethal - Rubber Shot)"]
+nominative = "коробка с патронами для дробовика (менее летально - резина)"
+genitive = "коробки с патронами для дробовика (менее летально - резина)"
+dative = "коробке с патронами для дробовика (менее летально - резина)"
+accusative = "коробку с патронами для дробовика (менее летально - резина)"
+instrumental = "коробкой с патронами для дробовика (менее летально - резина)"
+prepositional = "коробке с патронами для дробовика (менее летально - резина)"
+gender = "female"
+
+["box of breaching shotgun shells"]
+nominative = "коробка с патронами для дробовика (для создания брешей)"
+genitive = "коробки с патронами для дробовика (для создания брешей)"
+dative = "коробке с патронами для дробовика (для создания брешей)"
+accusative = "коробку с патронами для дробовика (для создания брешей)"
+instrumental = "коробкой с патронами для дробовика (для создания брешей)"
+prepositional = "коробке с патронами для дробовика (для создания брешей)"
 gender = "female"
 
 # MARK: Service
@@ -8636,6 +8832,33 @@ instrumental = "набором для лечения кислородного г
 prepositional = "наборе для лечения кислородного голодания"
 gender = "male"
 
+["elite Nanotrasen defibrillator"]
+nominative = "элитный дефибриллятор Нанотрейзен"
+genitive = "элитного дефибриллятора Нанотрейзен"
+dative = "элитному дефибриллятору Нанотрейзен"
+accusative = "элитный дефибриллятор Нанотрейзен"
+instrumental = "элитным дефибриллятором Нанотрейзен"
+prepositional = "элитном дефибрилляторе Нанотрейзен"
+gender = "male"
+
+["bottle of stimulant pills"]
+nominative = "бутылка с таблетками-стимуляторами"
+genitive = "бутылки с таблетками-стимуляторами"
+dative = "бутылке с таблетками-стимуляторами"
+accusative = "бутылку с таблетками-стимуляторами"
+instrumental = "бутылкой с таблетками-стимуляторами"
+prepositional = "бутылке с таблетками-стимуляторами"
+gender = "female"
+
+["surgical medkit"]
+nominative = "хирургический меднабор"
+genitive = "хирургического меднабора"
+dative = "хирургическому меднабору"
+accusative = "хирургический меднабор"
+instrumental = "хирургическим меднабором"
+prepositional = "хирургическом меднаборе"
+gender = "male"
+
 # MARK: Organs
 ["chest"]
 nominative = "грудь"
@@ -12175,6 +12398,10 @@ prepositional = "держателе мензурок инженерного ки
 gender = "male"
 
 # MARK: MOD
+["MOD control unit"]
+nominative = "МОД"
+gender = "male"
+
 ["MOD shell"]
 nominative = "МОД-оболочка"
 genitive = "МОД-оболочки"
