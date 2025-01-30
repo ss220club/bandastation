@@ -123,10 +123,6 @@
 
 	/// List of all air scrubbers in the area
 	var/list/obj/machinery/atmospherics/components/unary/vent_scrubber/air_scrubbers = list()
-
-	/// Разрешенно ли обедать в этой зоне?
-	var/dinner_place = FALSE
-
 /**
  * A list of teleport locations
  *

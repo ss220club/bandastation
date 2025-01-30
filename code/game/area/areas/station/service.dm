@@ -8,7 +8,6 @@
 /area/station/service/cafeteria
 	name = "\improper Cafeteria"
 	icon_state = "cafeteria"
-	dinner_place = TRUE
 
 /area/station/service/minibar
 	name = "\improper Mini Bar"
@@ -17,18 +16,15 @@
 /area/station/service/kitchen
 	name = "\improper Kitchen"
 	icon_state = "kitchen"
-	dinner_place = TRUE
 
 /area/station/service/kitchen/coldroom
 	name = "\improper Kitchen Cold Room"
 	icon_state = "kitchen_cold"
 	sound_environment = SOUND_AREA_SMALL_ENCLOSED
-	dinner_place = TRUE
 
 /area/station/service/kitchen/diner
 	name = "\improper Diner"
 	icon_state = "diner"
-	dinner_place = TRUE
 
 /area/station/service/kitchen/kitchen_backroom
 	name = "\improper Kitchen Backroom"
@@ -42,7 +38,6 @@
 	mood_trait = TRAIT_EXTROVERT
 	airlock_wires = /datum/wires/airlock/service
 	sound_environment = SOUND_AREA_WOODFLOOR
-	dinner_place = TRUE
 
 /area/station/service/bar/Initialize(mapload)
 	. = ..()
