@@ -1444,7 +1444,7 @@ instrumental = "маячком ДРАГнета"
 prepositional = "маячке ДРАГнета"
 gender = "male"
 
-# MARK: Clothes
+# MARK: Vendor
 ["security radio headset"]
 nominative = "гарнитура охраны"
 genitive = "гарнитуры охраны"
@@ -3630,7 +3630,7 @@ instrumental = "капканом"
 prepositional = "капкане"
 gender = "male"
 
-# MARK: Clothes
+# MARK: Vendor
 ["purple cap"]
 nominative = "пурпурная кепка"
 genitive = "пурпурной кепки"
@@ -4795,7 +4795,7 @@ instrumental = "продвинутой палочкой для жарки"
 prepositional = "продвинутой палочке для жарки"
 gender = "female"
 
-# MARK: Clothes
+# MARK: Vendor
 
 ["white cap"]
 nominative = "белая кепка"
@@ -5377,7 +5377,7 @@ instrumental = "экспресс консолью снабжения"
 prepositional = "экспресс консоли снабжения"
 gender = "female"
 
-# MARK: Clothes
+# MARK: Vendor
 ["cargo beret"]
 nominative = "берет снабжения"
 genitive = "берета снабжения"
@@ -6060,7 +6060,7 @@ instrumental = "анестезийным баллоном"
 prepositional = "анестезийном баллоне"
 gender = "male"
 
-# MARK: Clothes
+# MARK: Vendor
 
 ["chemist's jumpsuit"]
 nominative = "комбинезон химика"
@@ -8379,7 +8379,7 @@ instrumental = "клапаном перекачки баллонов"
 prepositional = "клапане перекачки баллонов"
 gender = "male"
 
-# MARK: Clothes
+# MARK: Vendor
 ["science beret"]
 nominative = "берет учёного"
 genitive = "берета учёного"
@@ -8648,6 +8648,96 @@ dative = "медицинской маске"
 accusative = "медицинскую маску"
 instrumental = "медицинской маской"
 prepositional = "медицинской маске"
+gender = "female"
+
+["science bag"]
+nominative = "сумка для исследований"
+genitive = "сумки для исследований"
+dative = "сумке для исследований"
+accusative = "сумку для исследований"
+instrumental = "сумкой для исследований"
+prepositional = "сумке для исследований"
+gender = "female"
+
+["protein powder"]
+nominative = "протеиновый порошок"
+genitive = "протеинового порошка"
+dative = "протеиновому порошку"
+accusative = "протеиновый порошок"
+instrumental = "протеиновым порошком"
+prepositional = "протеиновом порошке"
+gender = "male"
+
+["box of microbiological swabs"]
+nominative = "коробка микробиологических тампонов"
+genitive = "коробки микробиологических тампонов"
+dative = "коробке микробиологических тампонов"
+accusative = "коробку микробиологических тампонов"
+instrumental = "коробкой микробиологических тампонов"
+prepositional = "коробке микробиологических тампонов"
+gender = "female"
+
+["box of petridishes"]
+nominative = "коробка с чашками Петри"
+genitive = "коробки с чашками Петри"
+dative = "коробке с чашками Петри"
+accusative = "коробку с чашками Петри"
+instrumental = "коробкой с чашками Петри"
+prepositional = "коробке с чашками Петри"
+gender = "female"
+
+["scientist's jumpsuit"]
+nominative = "комбинезон учёного"
+genitive = "комбинезона учёного"
+dative = "комбинезону учёного"
+accusative = "комбинезон учёного"
+instrumental = "комбинезоном учёного"
+prepositional = "комбинезоне учёного"
+gender = "male"
+
+["scientist labcoat"]
+nominative = "лабораторный халат учёного"
+genitive = "лабораторного халата учёного"
+dative = "лабораторному халату учёного"
+accusative = "лабораторный халат учёного"
+instrumental = "лабораторным халатом учёного"
+prepositional = "лабораторном халате учёного"
+gender = "male"
+
+["bio suit"]
+nominative = "био-костюм"
+genitive = "био-костюма"
+dative = "био-костюму"
+accusative = "био-костюм"
+instrumental = "био-костюмом"
+prepositional = "био-костюме"
+gender = "male"
+
+["bio hood"]
+nominative = "био-капюшон"
+genitive = "био-капюшона"
+dative = "био-капюшону"
+accusative = "био-капюшон"
+instrumental = "био-капюшоном"
+prepositional = "био-капюшоне"
+gender = "male"
+
+["monkey cube box"]
+nominative = "коробка с кубами обезьян"
+genitive = "коробки с кубами обезьян"
+dative = "коробке с кубами обезьян"
+accusative = "коробку с кубами обезьян"
+instrumental = "коробкой с кубами обезьян"
+prepositional = "коробке с кубами обезьян"
+gender = "female"
+
+["basic sample petri dish"]
+nominative = "чашка Петри с простым образцом"
+genitive = "чашки Петри с простым образцом"
+dative = "чашке Петри с простым образцом"
+accusative = "чашку Петри с простым образцом"
+instrumental = "чашкой Петри с простым образцом"
+prepositional = "чашке Петри с простым образцом"
 gender = "female"
 
 # MARK: Circuits
@@ -12217,7 +12307,7 @@ instrumental = "плазменным баллоном"
 prepositional = "плазменном баллоне"
 gender = "male"
 
-# MARK: Clothes
+# MARK: Vendor
 ["atmospheric technician's jumpsuit"]
 nominative = "комбинезон атмосферного техника"
 genitive = "комбинезона атмосферного техника"
@@ -12415,6 +12505,33 @@ accusative = "пояс для инструментов"
 instrumental = "поясом для инструментов"
 prepositional = "поясе для инструментов"
 gender = "male"
+
+["glowstick"]
+nominative = "ХИС"
+genitive = "ХИСа"
+dative = "ХИСу"
+accusative = "ХИС"
+instrumental = "ХИСом"
+prepositional = "ХИСе"
+gender = "male"
+
+["red glowstick"]
+nominative = "красный ХИС"
+genitive = "красного ХИСа"
+dative = "красному ХИСу"
+accusative = "красный ХИС"
+instrumental = "красным ХИСом"
+prepositional = "красном ХИСе"
+gender = "male"
+
+["budget insulated gloves"]
+nominative = "бюджетные изоляционные перчатки"
+genitive = "бюджетных изоляционных перчаток"
+dative = "бюджетным изоляционным перчаткам"
+accusative = "бюджетные изоляционные перчатки"
+instrumental = "бюджетными изоляционными перчатками"
+prepositional = "бюджетных изоляционных перчатках"
+gender = "female"
 
 # MARK: Tools
 # Fire Extinguisher
@@ -14141,7 +14258,7 @@ instrumental = "гирляндой"
 prepositional = "гирлянде"
 gender = "female"
 
-# MARK: Clothes
+# MARK: Vendor
 
 ["Industrialist's suit"]
 nominative = "костюм Промышленника"
