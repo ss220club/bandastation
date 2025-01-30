@@ -17,7 +17,7 @@ ADMIN_VERB(ert_manager, R_NONE, "ERT Manager", "Manage ERT reqests.", ADMIN_CATE
 	var/ert_type = "Red"
 	var/admin_slots = 0 // default
 	var/commander_slots = 1 // defaults for open slots
-	var/security_slots = 4
+	var/security_slots = 0
 	var/medical_slots = 0
 	var/engineering_slots = 0
 	var/janitor_slots = 0
@@ -161,7 +161,6 @@ ADMIN_VERB(ert_manager, R_NONE, "ERT Manager", "Manage ERT reqests.", ADMIN_CATE
 			if(inquisitor_slots > 0)
 				roles.Add(/datum/antagonist/ert/chaplain/inquisitor)
 				inquisitor_slots--
-	message_admins(roles)
 	return roles
 
 /datum/ert_manager/proc/makeERTFromSlots(datum/ert/ertemplate, admin_slots, commander_slots, security_slots, medical_slots, engineering_slots, janitor_slots, inquisitor_slots)

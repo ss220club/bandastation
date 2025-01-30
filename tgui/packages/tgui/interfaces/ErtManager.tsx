@@ -200,70 +200,70 @@ const SendERT = (props) => {
             />
           </LabeledList.Item>
           <LabeledList.Item label="Security">
-            {slotOptions.map((a, i) => (
+            {slotOptions.map((slotChoice) => (
               <Button
-                key={'securitySlots' + a}
-                selected={securitySlots === a}
-                content={a}
+                key={'securitySlots' + slotChoice}
+                selected={securitySlots === slotChoice}
+                content={slotChoice}
                 onClick={() =>
                   act('setSec', {
-                    setSec: a,
+                    setSec: slotChoice,
                   })
                 }
               />
             ))}
           </LabeledList.Item>
           <LabeledList.Item label="Medical">
-            {slotOptions.map((a, i) => (
+            {slotOptions.map((slotChoice) => (
               <Button
-                key={'medicalSlots' + a}
-                selected={medicalSlots === a}
-                content={a}
+                key={'medicalSlots' + slotChoice}
+                selected={medicalSlots === slotChoice}
+                content={slotChoice}
                 onClick={() =>
                   act('setMed', {
-                    setMed: a,
+                    setMed: slotChoice,
                   })
                 }
               />
             ))}
           </LabeledList.Item>
           <LabeledList.Item label="Engineering">
-            {slotOptions.map((a, i) => (
+            {slotOptions.map((slotChoice) => (
               <Button
-                key={'engineeringSlots' + a}
-                selected={engineeringSlots === a}
-                content={a}
+                key={'engineeringSlots' + slotChoice}
+                selected={engineeringSlots === slotChoice}
+                content={slotChoice}
                 onClick={() =>
                   act('setEng', {
-                    setEng: a,
+                    setEng: slotChoice,
                   })
                 }
               />
             ))}
           </LabeledList.Item>
           <LabeledList.Item label="inquisitor">
-            {slotOptions.map((a, i) => (
+            {slotOptions.map((slotChoice) => (
               <Button
-                key={'inquisitorSlots' + a}
-                selected={inquisitorSlots === a}
-                content={a}
+                key={'inquisitorSlots' + slotChoice}
+                selected={inquisitorSlots === slotChoice}
+                content={slotChoice}
                 onClick={() =>
                   act('setPar', {
-                    set_par: a,
+                    set_par: slotChoice,
                   })
                 }
               />
             ))}
           </LabeledList.Item>
           <LabeledList.Item label="Janitor">
-            {slotOptions.map((a, i) => (
+            {slotOptions.map((slotChoice) => (
               <Button
-                key={'janitorSlots' + a}
-                selected={janitorSlots === a}
-                content={a}
+                key={'janitorSlots' + slotChoice}
+                selected={janitorSlots === slotChoice}
+                content={slotChoice}
                 onClick={() =>
                   act('setJan', {
-                    setJan: a,
+                    setJan: slotChoice,
                   })
                 }
               />
