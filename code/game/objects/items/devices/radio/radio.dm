@@ -353,7 +353,7 @@
 	if(isliving(talking_movable))
 		var/mob/living/talking_living = talking_movable
 		var/volume_modifier = (talking_living.client?.prefs.read_preference(/datum/preference/numeric/sound_radio_noise))
-		if(radio_noise && talking_living.can_hear() && volume_modifier && signal.frequency != FREQ_COMMON && !LAZYACCESS(message_mods, MODE_SEQUENTIAL) && COOLDOWN_FINISHED(src, audio_cooldown))
+		if(radio_noise && talking_living.can_hear() && volume_modifier && !LAZYACCESS(message_mods, MODE_SEQUENTIAL) && COOLDOWN_FINISHED(src, audio_cooldown)) // BANDASTATION EDIT - Remove: signal.frequency != FREQ_COMMON
 			COOLDOWN_START(src, audio_cooldown, 0.5 SECONDS)
 			var/sound/radio_noise = sound('sound/items/radio/radio_talk.ogg', volume = volume_modifier)
 			radio_noise.frequency = get_rand_frequency_low_range()
@@ -432,7 +432,8 @@
 
 	if(!isliving(loc))
 		return
-
+	// BANDASTATION REMOVAL - START
+	/**
 	var/mob/living/holder = loc
 	var/volume_modifier = (holder.client?.prefs.read_preference(/datum/preference/numeric/sound_radio_noise))
 	if(!radio_noise || HAS_TRAIT(holder, TRAIT_DEAF) || !holder.client?.prefs.read_preference(/datum/preference/numeric/sound_radio_noise))
@@ -448,6 +449,8 @@
 		var/sound/radio_important = sound('sound/items/radio/radio_important.ogg', volume = volume_modifier)
 		radio_important.frequency = get_rand_frequency_low_range()
 		SEND_SOUND(holder, radio_important)
+	*/
+	// BANDASTATION REMOVAL - END
 
 /obj/item/radio/ui_state(mob/user)
 	return GLOB.inventory_state

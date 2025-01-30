@@ -25,6 +25,7 @@
 /obj/structure/chair/Initialize(mapload)
 	. = ..()
 	if(prob(0.2))
+		ru_names_rename(ru_names_list("tactical [name]", "тактический [declent_ru(NOMINATIVE)]", "тактического [declent_ru(GENITIVE)]", "тактическому [declent_ru(DATIVE)]", "тактический [declent_ru(ACCUSATIVE)]", "тактическим [declent_ru(INSTRUMENTAL)]", "тактическом [declent_ru(PREPOSITIONAL)]", gender = declent_ru("gender")))
 		name = "tactical [name]"
 		fishing_modifier -= 8
 	MakeRotate()

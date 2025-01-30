@@ -10,6 +10,7 @@ GLOBAL_LIST_INIT(freqtospan, list(
 	"[FREQ_SUPPLY]" = "suppradio",
 	"[FREQ_SERVICE]" = "servradio",
 	"[FREQ_SECURITY]" = "secradio",
+	"[FREQ_JUSTICE]" = "justiceradio", // BANDASTAION ADD - Jobs Module
 	"[FREQ_COMMAND]" = "comradio",
 	"[FREQ_AI_PRIVATE]" = "aiprivradio",
 	"[FREQ_ENTERTAINMENT]" = "enteradio",
@@ -160,7 +161,7 @@ GLOBAL_LIST_INIT(freqtospan, list(
 	if(!stored_name[NAME_PART_INDEX]) //Otherwise, we just use whatever the name signal gives us.
 		SEND_SIGNAL(speaker, COMSIG_MOVABLE_MESSAGE_GET_NAME_PART, stored_name, visible_name)
 
-	namepart = stored_name[NAME_PART_INDEX] || "[speaker.GetVoice()]"
+	namepart = "<span style='color: [speaker.chat_color]'>[stored_name[NAME_PART_INDEX] || speaker.GetVoice()]</span>" // Bandastation Addition: span with color
 
 	//End name span.
 	var/endspanpart = "</span>"
@@ -241,7 +242,7 @@ GLOBAL_LIST_INIT(freqtospan, list(
 	processed_input = attach_spans(processed_input, spans)
 
 	var/processed_say_mod = say_emphasis(say_mod)
-	
+
 	return "[processed_say_mod], \"[processed_input]\""
 
 /// Transforms the speech emphasis mods from [/atom/movable/proc/say_emphasis] into the appropriate HTML tags. Includes escaping.

@@ -360,9 +360,13 @@ SUBSYSTEM_DEF(dynamic)
 	if(greenshift)
 		priority_announce("Thanks to the tireless efforts of our security and intelligence divisions, there are currently no credible threats to [station_name()]. All station construction projects have been authorized. Have a secure shift!", "Security Report", SSstation.announcer.get_rand_report_sound(), color_override = "green")
 	else
+		/* BANDASTATION EDIT START - No Blue roundstart
 		if(SSsecurity_level.get_current_level_as_number() < SEC_LEVEL_BLUE)
 			SSsecurity_level.set_level(SEC_LEVEL_BLUE, announce = FALSE)
 		priority_announce("[SSsecurity_level.current_security_level.elevating_to_announcement]\n\nA summary has been copied and printed to all communications consoles.", "Security level elevated.", ANNOUNCER_INTERCEPT, color_override = SSsecurity_level.current_security_level.announcement_color)
+		*/
+		priority_announce("Отчет был скопирован и распечатан на всех консолях связи.", "Отчет о безопасности", SSstation.announcer.get_rand_report_sound())
+		// BANDASTATION EDIT END - No Blue roundstart
 #endif
 
 	return .
@@ -412,6 +416,14 @@ SUBSYSTEM_DEF(dynamic)
 	log_dynamic("Calculated maximum threat level based on player count of [SSticker.totalPlayersReady]: [calculated_max_threat]")
 
 	threat_level = lorentz_to_amount(threat_curve_centre, threat_curve_width, calculated_max_threat)
+	// BANDASTATION EDIT START - Threat management
+	var/min_threat_level = CONFIG_GET(number/min_threat_level)
+	if(min_threat_level && min_threat_level < max_threat_level)
+		var/previous_threat_level = threat_level
+		threat_level = clamp(threat_level, min_threat_level, max_threat_level)
+		if(threat_level != previous_threat_level)
+			log_dynamic("Threat was increased to the min value of [min_threat_level] from [previous_threat_level]")
+	// BANDASTATION EDIT END
 
 	for(var/datum/station_trait/station_trait in GLOB.dynamic_station_traits)
 		threat_level = max(threat_level - GLOB.dynamic_station_traits[station_trait], 0)
@@ -422,6 +434,15 @@ SUBSYSTEM_DEF(dynamic)
 /// Generates the midround and roundstart budgets
 /datum/controller/subsystem/dynamic/proc/generate_budgets()
 	round_start_budget = lorentz_to_amount(roundstart_split_curve_centre, roundstart_split_curve_width, threat_level, 0.1)
+	// BANDASTATION EDIT START - Threat management
+	var/min_threat_to_roundstart_percent = CONFIG_GET(number/min_threat_to_roundstart_percent)
+	var/max_threat_to_roundstart_percent = CONFIG_GET(number/max_threat_to_roundstart_percent)
+	if(min_threat_to_roundstart_percent && max_threat_to_roundstart_percent && min_threat_to_roundstart_percent < max_threat_to_roundstart_percent)
+		var/previous_round_start_budget = round_start_budget
+		round_start_budget = clamp(previous_round_start_budget, min_threat_to_roundstart_percent / 100 * threat_level, max_threat_to_roundstart_percent / 100 * threat_level)
+		if(round_start_budget != previous_round_start_budget)
+			log_dynamic("Clamped roundstart budget from [previous_round_start_budget] to [round_start_budget]")
+	// BANDASTATION EDIT END
 	initial_round_start_budget = round_start_budget
 	mid_round_budget = threat_level - round_start_budget
 
@@ -485,6 +506,8 @@ SUBSYSTEM_DEF(dynamic)
 	//To new_player and such, and we want the datums to just free when the roundstart work is done
 	var/list/roundstart_rules = init_rulesets(/datum/dynamic_ruleset/roundstart)
 
+	var/security = 0 // BANDASTATION EDIT - Force players to play Sec
+
 	SSjob.divide_occupations(pure = TRUE, allow_all = TRUE)
 	for(var/i in GLOB.new_player_list)
 		var/mob/dead/new_player/player = i
@@ -500,11 +523,25 @@ SUBSYSTEM_DEF(dynamic)
 			else
 				roundstart_pop_ready++
 				candidates.Add(player)
+				// BANDASTATION EDIT START - Force players to play Sec
+				if(player.mind?.assigned_role?.departments_list?.Find(/datum/job_department/security))
+					security++
+				// BANDASTATION EDIT END
 	SSjob.reset_occupations()
 	log_dynamic("Listing [roundstart_rules.len] round start rulesets, and [candidates.len] players ready.")
 	if (candidates.len <= 0)
 		log_dynamic("[candidates.len] candidates.")
 		return TRUE
+
+	// BANDASTATION EDIT START - Force players to play Sec
+	if(security < CONFIG_GET(number/roundstart_security_for_threat))
+		var/roundstart_budget_low_sec = security / CONFIG_GET(number/roundstart_security_for_threat) * round_start_budget
+		var/transfer_to_midround = round_start_budget - roundstart_budget_low_sec
+		mid_round_budget += transfer_to_midround
+		round_start_budget = roundstart_budget_low_sec
+		initial_round_start_budget = roundstart_budget_low_sec
+		log_dynamic("Not enough security; forcing roundstart budget to [roundstart_budget_low_sec]")
+	// BANDASTATION EDIT END
 
 	if(GLOB.dynamic_forced_roundstart_ruleset.len > 0)
 		rigged_roundstart()
