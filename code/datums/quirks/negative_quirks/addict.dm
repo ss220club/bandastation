@@ -12,7 +12,7 @@
 	var/obj/item/drug_container_type //! If this is defined before pill generation, pill generation will be skipped. This is the type of the pill bottle.
 	var/where_accessory //! where the accessory spawned
 	var/obj/item/accessory_type //! If this is null, an accessory won't be spawned.
-	var/drug_flavour_text = "Better hope you don't run out... of what, exactly? You don't know."
+	var/drug_flavour_text = "Лучше надеяться, что у вас не закончится... что именно? Вы не знаете."
 	var/process_interval = 30 SECONDS //! how frequently the quirk processes
 	COOLDOWN_DECLARE(next_process) //! ticker for processing
 
@@ -75,7 +75,7 @@
 	if(deleted || missing_addiction)
 		if(deleted)
 			reagent_instance = new reagent_type()
-		to_chat(quirk_holder, span_danger("You thought you kicked it, but you feel like you're falling back onto bad habits.."))
+		to_chat(quirk_holder, span_danger("Вы думали, что завязали, но чувствуете, что возвращаетесь к вредным привычкам..."))
 		for(var/addiction in reagent_instance.addiction_types)
 			human_holder.last_mind?.add_addiction_points(addiction, 1000) ///Max that shit out
 
