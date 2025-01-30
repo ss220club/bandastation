@@ -5814,6 +5814,152 @@ instrumental = "деликатной юбкой"
 prepositional = "деликатной юбке"
 gender = "female"
 
+# MARK: Chaplain
+
+["armaments beacon"]
+nominative = "маяк вооружения"
+genitive = "маяка вооружения"
+dative = "маяку вооружения"
+accusative = "маяк вооружения"
+instrumental = "маяком вооружения"
+prepositional = "маяке вооружения"
+gender = "male"
+
+["chaplain's jumpsuit"]
+nominative = "комбинезон священника"
+genitive = "комбинезона священника"
+dative = "комбинезону священника"
+accusative = "комбинезон священника"
+instrumental = "комбинезоном священника"
+prepositional = "комбинезоне священника"
+gender = "male"
+
+["chaplain's jumpskirt"]
+nominative = "юбка-комбинезон священника"
+genitive = "юбки-комбинезона священника"
+dative = "юбке-комбинезону священника"
+accusative = "юбку-комбинезон священника"
+instrumental = "юбкой-комбинезоном священника"
+prepositional = "юбке-комбинезоне священника"
+gender = "female"
+
+["nun robe"]
+nominative = "роба монахини"
+genitive = "робы монахини"
+dative = "робе монахини"
+accusative = "робу монахини"
+instrumental = "робой монахини"
+prepositional = "робе монахини"
+gender = "female"
+
+["nun hood"]
+nominative = "капюшон монахини"
+genitive = "капюшона монахини"
+dative = "капюшону монахини"
+accusative = "капюшон монахини"
+instrumental = "капюшоном монахини"
+prepositional = "капюшоне монахини"
+gender = "male"
+
+["monk's habit"]
+nominative = "облачение монаха"
+genitive = "облачения монаха"
+dative = "облачению монаха"
+accusative = "облачение монаха"
+instrumental = "облачением монаха"
+prepositional = "облачении монаха"
+gender = "neuter"
+
+["white taqiyah"]
+nominative = "белая таккия"
+genitive = "белой таккии"
+dative = "белой таккии"
+accusative = "белую таккию"
+instrumental = "белой таккией"
+prepositional = "белой таккии"
+gender = "female"
+
+["shrinehand robe"]
+nominative = "роба хранителя святыни"
+genitive = "робы хранителя святыни"
+dative = "робе хранителя святыни"
+accusative = "робу хранителя святыни"
+instrumental = "робой хранителя святыни"
+prepositional = "робе хранителя святыни"
+gender = "female"
+
+["trophy rack"]
+nominative = "стойка для трофеев"
+genitive = "стойки для трофеев"
+dative = "стойке для трофеев"
+accusative = "стойку для трофеев"
+instrumental = "стойкой для трофеев"
+prepositional = "стойке для трофеев"
+gender = "female"
+
+["candle pack"]
+nominative = "пачка свечей"
+genitive = "пачки свечей"
+dative = "пачке свечей"
+accusative = "пачку свечей"
+instrumental = "пачкой свечей"
+prepositional = "пачке свечей"
+gender = "female"
+
+["eastern monk's robes"]
+nominative = "робы восточного монаха"
+genitive = "роб восточного монаха"
+dative = "робе восточного монаха"
+accusative = "робы восточного монаха"
+instrumental = "робой восточного монаха"
+prepositional = "робе восточного монаха"
+gender = "female"
+
+["Ratvar plushie"]
+nominative = "плюшевая игрушка Ратвара"
+genitive = "плюшевой игрушки Ратвара"
+dative = "плюшевой игрушке Ратвара"
+accusative = "плюшевую игрушку Ратвара"
+instrumental = "плюшевой игрушкой Ратвара"
+prepositional = "плюшевой игрушке Ратвара"
+gender = "female"
+
+["Nar'Sie plushie"]
+nominative = "плюшевая игрушка Нар'Си"
+genitive = "плюшевой игрушки Нар'Си"
+dative = "плюшевой игрушке Нар'Си"
+accusative = "плюшевую игрушку Нар'Си"
+instrumental = "плюшевой игрушкой Нар'Си"
+prepositional = "плюшевой игрушке Нар'Си"
+gender = "female"
+
+["medieval Jewish hat"]
+nominative = "средневековая еврейская шляпа"
+genitive = "средневековой еврейской шляпы"
+dative = "средневековой еврейской шляпе"
+accusative = "средневековую еврейскую шляпу"
+instrumental = "средневековой еврейской шляпой"
+prepositional = "средневековой еврейской шляпе"
+gender = "female"
+
+["bishop mitre"]
+nominative = "митра епископа"
+genitive = "митры епископа"
+dative = "митре епископа"
+accusative = "митру епископа"
+instrumental = "митрой епископа"
+prepositional = "митре епископа"
+gender = "female"
+
+["bishop's robes"]
+nominative = "роба епископа"
+genitive = "робы епископа"
+dative = "робе епископа"
+accusative = "робу епископа"
+instrumental = "робой епископа"
+prepositional = "робе епископа"
+gender = "female"
+
 # MARK: Cargo
 ["crate"]
 nominative = "ящик"
