@@ -43,7 +43,7 @@
 
 /datum/computer_file/program/minesweeper/New()
 	..()
-	if(!glob_leaderboard)
+	if(isnull(glob_leaderboard))
 		init_leaderboard()
 
 ///Get stored in database player results and fill glob_leaderboard with them
