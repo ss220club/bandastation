@@ -50,6 +50,7 @@
 		leaderboard_init = TRUE
 		init_leaderboard()
 
+///Get stored in database player results and fill glob_leaderboard with them
 /datum/computer_file/program/minesweeper/proc/init_leaderboard()
 	var/datum/db_query/minesweeper_query = SSdbcore.NewQuery("SELECT nickname, points, points_per_sec, time, width, height, bombs FROM [format_table_name("minesweeper")]")
 	if(!minesweeper_query.Execute())
@@ -61,6 +62,7 @@
 			"fieldParams" = "[minesweeper_query.item[5]]X[minesweeper_query.item[6]]([minesweeper_query.item[7]])"))
 	qdel(minesweeper_query)
 
+///Insert new player result into database
 /datum/computer_file/program/minesweeper/proc/add_result_to_db(list/new_result, ckey, width, height, bombs)
 	if(SSdbcore.Connect())
 		var/datum/db_query/query_minesweeper = SSdbcore.NewQuery(
@@ -92,10 +94,12 @@
 	if(.)
 		return
 
+	// After loose/win cooldown
 	if(ignore_touches)
 		return
 
 	switch(action)
+		// Click on game field
 		if("Square")
 			var/x = text2num(params["X"]) + 1
 			var/y = text2num(params["Y"]) + 1
@@ -125,6 +129,7 @@
 							flagged_bombs += 1
 
 			check_win(ui.user)
+		// Change field params
 		if("ChangeSize")
 			if(!first_touch)
 				return
@@ -159,6 +164,7 @@
 	addtimer(CALLBACK(src, PROC_REF(make_empty_matrix)), 5 SECONDS)
 	add_into_leaders(user, world.time - start_time)
 
+/// Add player result to local, global leaderboards and DB
 /datum/computer_file/program/minesweeper/proc/add_into_leaders(mob/user, game_time)
 	var/nickname = tgui_input_text(user, "You finished the game in [game_time / 10] seconds.\n Write a nickname to save your result on the leaderboard.\n", "Minesweeper", "", 10)
 	if(!nickname)
@@ -175,10 +181,10 @@
 	ignore_touches = TRUE
 	playsound(get_turf(computer), 'sound/effects/explosion/explosion1.ogg', 50, TRUE)
 	if(computer.obj_flags & EMAGGED)
-		//Small bomb core stats copy
 		explosion(computer, range_heavy, range_medium, range_light, range_flame)
 	addtimer(CALLBACK(src, PROC_REF(make_empty_matrix)), 3 SECONDS)
 
+// Return the minesweeper matrix to initial state
 /datum/computer_file/program/minesweeper/proc/make_empty_matrix(pay = TRUE)
 	minesweeper_matrix = list()
 	for(var/i in 1 to generation_rows)
@@ -190,6 +196,7 @@
 	ignore_touches = FALSE
 	SStgui.update_uis(computer)
 
+// Fill matrix with bombs, ignores 3x3 square around first touch place
 /datum/computer_file/program/minesweeper/proc/generate_matrix(x, y)
 	flagged_bombs = 0
 	setted_flags = 0
@@ -242,6 +249,7 @@
 	count_3BV()
 	start_time = world.time
 
+// Makes cell open, and make show it contains
 /datum/computer_file/program/minesweeper/proc/open_cell(x, y, start_cycle = TRUE)
 	. = list()
 	if(!minesweeper_matrix[x][y]["open"])
@@ -260,6 +268,7 @@
 			else
 				. = list(list(x, y))
 
+// Open all "zeroes" around the click place
 /datum/computer_file/program/minesweeper/proc/update_zeros(x, y)
 	var/list/list_for_update = list(list(x, y))
 	for(var/list/coordinates in list_for_update)
@@ -308,6 +317,7 @@
 			if(minesweeper_matrix[new_x][this_y]["open"] && minesweeper_matrix[this_x][new_y]["open"])
 				list_for_update += open_cell(new_x, new_y)
 
+// Count value of field for scoring
 /datum/computer_file/program/minesweeper/proc/count_3BV()
 	current_3BV = 0
 	for(var/i in 1 to generation_rows)
@@ -325,6 +335,7 @@
 				count_zeros(i, j)
 				continue
 
+// part of proc/count_3BV, used to ignore adjacent "zeroes"
 /datum/computer_file/program/minesweeper/proc/count_zeros(start_x, start_y)
 	var/check_list = list(list(start_x, start_y))
 	for(var/coordinates in check_list)
