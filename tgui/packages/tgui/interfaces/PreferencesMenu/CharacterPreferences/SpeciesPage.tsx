@@ -281,7 +281,7 @@ function SpeciesPageInner(props: SpeciesPageInnerProps) {
     <Stack vertical fill>
       <Stack.Item>
         <Button icon="arrow-left" onClick={props.handleClose}>
-          Go Back
+          Вернуться
         </Button>
       </Stack.Item>
 
@@ -329,7 +329,9 @@ function SpeciesPageInner(props: SpeciesPageInnerProps) {
                         )
                       }
                     >
-                      <Section title="Описание">{currentSpecies.desc}</Section>
+                      <Section title="Описание вида">
+                        {currentSpecies.desc}
+                      </Section>
 
                       <Section title="Черты">
                         <SpeciesPerks perks={currentSpecies.perks} />

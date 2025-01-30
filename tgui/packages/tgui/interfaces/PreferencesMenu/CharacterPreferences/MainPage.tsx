@@ -136,7 +136,7 @@ function ChoicedSelection(props: ChoicedSelectionProps) {
                   textAlign: 'center',
                 }}
               >
-                Select {props.name.toLowerCase()}
+                Выбрать {props.name.toLowerCase()}
               </Box>
             </Stack.Item>
 
@@ -676,7 +676,7 @@ export function MainPage(props: MainPageProps) {
                   } // check if existing chars more than one
                   onClick={() => setDeleteCharacterPopupOpen(true)}
                 >
-                  Delete Character
+                  Удалить персонажа
                 </Button>
               </Box>
             </PreferenceList>

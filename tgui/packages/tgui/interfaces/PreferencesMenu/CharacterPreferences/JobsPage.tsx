@@ -206,7 +206,7 @@ function JobRow(props: JobRowProps) {
     rightSide = (
       <Stack align="center" height="100%" pr={1}>
         <Stack.Item grow textAlign="right">
-          <b>{hoursNeeded}h</b> as {experience_type}
+          <b>{hoursNeeded}h</b> как {experience_type}
         </Stack.Item>
       </Stack>
     );
@@ -214,7 +214,7 @@ function JobRow(props: JobRowProps) {
     rightSide = (
       <Stack align="center" height="100%" pr={1}>
         <Stack.Item grow textAlign="right">
-          <b>{daysLeft}</b> day{daysLeft === 1 ? '' : 's'} left
+          Нужно ещё дней: <b>{daysLeft}</b>
         </Stack.Item>
       </Stack>
     );
@@ -222,7 +222,7 @@ function JobRow(props: JobRowProps) {
     rightSide = (
       <Stack align="center" height="100%" pr={1}>
         <Stack.Item grow textAlign="right">
-          <b>Banned</b>
+          <b>Забанен</b>
         </Stack.Item>
       </Stack>
     );

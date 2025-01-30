@@ -36,7 +36,7 @@ export function LoadoutPage(props) {
   );
 
   if (!serverData) {
-    return <NoticeBox>Loading...</NoticeBox>;
+    return <NoticeBox>Загрузка...</NoticeBox>;
   }
 
   return (
