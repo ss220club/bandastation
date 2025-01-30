@@ -1,3 +1,4 @@
 #include "_autohiss.dm"
 
+#include "code/autohiss_blocker.dm"
 #include "code/autohiss.dm"
