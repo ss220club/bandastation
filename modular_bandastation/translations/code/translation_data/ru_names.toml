@@ -385,6 +385,15 @@ instrumental = "консолью криогенного контроля"
 prepositional = "консоли криогенного контроля"
 gender = "female"
 
+["Black Market Uplink"]
+nominative = "аплинк Чёрного рынка"
+genitive = "аплинка Чёрного рынка"
+dative = "аплинку Чёрного рынка"
+accusative = "аплинк Чёрного рынка"
+instrumental = "аплинком Чёрного рынка"
+prepositional = "аплинке Чёрного рынка"
+gender = "male"
+
 # MARK: Mobs. Uncategorized
 
 # MARK: Mobs. Aliens
@@ -8731,6 +8740,64 @@ dative = "клапану перекачки баллонов"
 accusative = "клапан перекачки баллонов"
 instrumental = "клапаном перекачки баллонов"
 prepositional = "клапане перекачки баллонов"
+gender = "male"
+
+["ordnance data disk"]
+nominative = "диск данных о взрывах"
+genitive = "диска данных о взрывах"
+dative = "диску данных о взрывах"
+accusative = "диск данных о взрывах"
+instrumental = "диском данных о взрывах"
+prepositional = "диске данных о взрывах"
+gender = "male"
+
+["medical doctor data disk"]
+nominative = "диск данных медицинского доктора"
+genitive = "диска данных медицинского доктора"
+dative = "диску данных медицинского доктора"
+accusative = "диск данных медицинского доктора"
+instrumental = "диском данных медицинского доктора"
+prepositional = "диске данных медицинского доктора"
+gender = "male"
+
+["engineering data disk"]
+nominative = "диск данных инженера"
+genitive = "диска данных инженера"
+dative = "диску данных инженера"
+accusative = "диск данных инженера"
+instrumental = "диском данных инженера"
+prepositional = "диске данных инженера"
+gender = "male"
+
+["security officer data disk"]
+nominative = "диск данных офицера безопасности"
+genitive = "диска данных офицера безопасности"
+dative = "диску данных офицера безопасности"
+accusative = "диск данных офицера безопасности"
+instrumental = "диском данных офицера безопасности"
+prepositional = "диске данных офицера безопасности"
+gender = "male"
+
+["cargo data disk"]
+nominative = "диск данных снабжения"
+genitive = "диска данных снабжения"
+dative = "диску данных снабжения"
+accusative = "диск данных снабжения"
+instrumental = "диском данных снабжения"
+prepositional = "диске данных снабжения"
+gender = "male"
+
+["captain data disk"]
+nominative = "диск данных капитана"
+genitive = "диска данных капитана"
+dative = "диску данных капитана"
+accusative = "диск данных капитана"
+instrumental = "диском данных капитана"
+prepositional = "диске данных капитана"
+gender = "male"
+
+["pda"]
+nominative = "КПК"
 gender = "male"
 
 # MARK: Vendor
