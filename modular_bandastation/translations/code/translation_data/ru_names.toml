@@ -4807,12 +4807,21 @@ prepositional = "белой кепке"
 gender = "female"
 
 ["chef's hat"]
-nominative = "поварской колпак"
-genitive = "поварского колпака"
-dative = "поварскому колпаку"
-accusative = "поварской колпак"
-instrumental = "поварским колпаком"
-prepositional = "поварском колпаке"
+nominative = "колпак шеф-повара"
+genitive = "колпака шеф-повара"
+dative = "колпаку шеф-повара"
+accusative = "колпак шеф-повара"
+instrumental = "колпаком шеф-повара"
+prepositional = "колпаке шеф-повара"
+gender = "male"
+
+["chef's apron"]
+nominative = "фартук шеф-повара"
+genitive = "фартука шеф-повара"
+dative = "фартуку шеф-повара"
+accusative = "фартук шеф-повара"
+instrumental = "фартуком шеф-повара"
+prepositional = "фартуке шеф-повара"
 gender = "male"
 
 ["grilling shorts"]
@@ -4824,15 +4833,6 @@ instrumental = "шортами для гриля"
 prepositional = "шортах для гриля"
 gender = "male"
 
-["chef's apron"]
-nominative = "поварской фартук"
-genitive = "поварского фартука"
-dative = "поварскому фартуку"
-accusative = "поварской фартук"
-instrumental = "поварским фартуком"
-prepositional = "поварском фартуке"
-gender = "male"
-
 ["grilling sandals"]
 nominative = "сандалии для гриля"
 genitive = "сандалий для гриля"
@@ -4841,6 +4841,42 @@ accusative = "сандалии для гриля"
 instrumental = "сандалиями для гриля"
 prepositional = "сандалиях для гриля"
 gender = "female"
+
+["chef's red uniform"]
+nominative = "красная форма шеф-повара"
+genitive = "красной формы шеф-повара"
+dative = "красной форме шеф-повара"
+accusative = "красную форму шеф-повара"
+instrumental = "красной формой шеф-повара"
+prepositional = "красной форме шеф-повара"
+gender = "female"
+
+["chef's red apron"]
+nominative = "красный фартук шеф-повара"
+genitive = "красного фартука шеф-повара"
+dative = "красному фартуку шеф-повара"
+accusative = "красный фартук шеф-повара"
+instrumental = "красным фартуком шеф-повара"
+prepositional = "красном фартуке шеф-повара"
+gender = "male"
+
+["chef's red hat"]
+nominative = "красный колпак шеф-повара"
+genitive = "красного колпака шеф-повара"
+dative = "красному колпаку шеф-повара"
+accusative = "красный колпак шеф-повара"
+instrumental = "красным колпаком шеф-повара"
+prepositional = "красном колпаке шеф-повара"
+gender = "male"
+
+["красный фартук"]
+nominative = "красный фартук"
+genitive = "красного фартука"
+dative = "красному фартуку"
+accusative = "красный фартук"
+instrumental = "красным фартуком"
+prepositional = "красном фартуке"
+gender = "male"
 
 # TODO: Translate Pest-B-Gon
 ["box of Pest-B-Gon mousetraps"]
