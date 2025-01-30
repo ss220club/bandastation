@@ -3142,6 +3142,39 @@ instrumental = "зажигательной гранатой"
 prepositional = "зажигательной гранате"
 gender = "female"
 
+["Desert Eagle"]
+nominative = "Пустынный орёл"
+
+["M1911"]
+nominative = "М1911"
+gender = "male"
+
+["Nanotrasen Saber SMG"]
+nominative = "ПП Нанотрейзен \"Сабля\""
+gender = "male"
+
+["shotgun"]
+nominative = "дробовик"
+genitive = "дробовика"
+dative = "дробовику"
+accusative = "дробовик"
+instrumental = "дробовиком"
+prepositional = "дробовике"
+gender = "male"
+
+["NT-ARG 'Boarder'"]
+nominative = "НТ-АРГ 'Пограничник'"
+gender = "male"
+
+["gyrojet pistol"]
+nominative = "реактивный пистолет"
+genitive = "реактивного пистолета"
+dative = "реактивному пистолету"
+accusative = "реактивный пистолет"
+instrumental = "реактивным пистолетом"
+prepositional = "реактивном пистолете"
+gender = "male"
+
 # MARK: Projectiles
 ["kiss"]
 nominative = "поцелуй"
@@ -6042,6 +6075,37 @@ dative = "вихревому леденцу"
 accusative = "вихревой леденец"
 instrumental = "вихревым леденцом"
 prepositional = "вихревом леденце"
+gender = "male"
+
+["plain burger"]
+nominative = "обычный бургер"
+genitive = "обычного бургера"
+dative = "обычному бургеру"
+accusative = "обычный бургер"
+instrumental = "обычным бургером"
+prepositional = "обычном бургере"
+gender = "male"
+
+["home run baseball burger"]
+nominative = "бургер «Хоум Ран»"
+genitive = "бургера «Хоум Ран»"
+dative = "бургеру «Хоум Ран»"
+accusative = "бургер «Хоум Ран»"
+instrumental = "бургером «Хоум Ран»"
+prepositional = "бургере «Хоум Ран»"
+gender = "male"
+
+["space fries"]
+nominative = "космическая картошка фри"
+genitive = "космической картошки фри"
+dative = "космической картошке фри"
+accusative = "космическую картошку фри"
+instrumental = "космической картошкой фри"
+prepositional = "космической картошке фри"
+gender = "female"
+
+["Carp Lite"]
+nominative = "Карп Лайт"
 gender = "male"
 
 # MARK: Botany
