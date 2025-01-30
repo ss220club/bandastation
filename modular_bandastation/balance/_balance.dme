@@ -20,5 +20,6 @@
 #include "code/station_traits.dm"
 #include "code/supply_packs.dm"
 #include "code/wounds/cranial_fissure.dm"
+#include "code/_brain.dm"
 
 #include "code/~undefs.dm"

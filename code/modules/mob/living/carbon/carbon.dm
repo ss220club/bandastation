@@ -962,13 +962,30 @@
 	return ..()
 
 /mob/living/carbon/can_be_revived()
-	if(!get_organ_by_type(/obj/item/organ/brain) && (!IS_CHANGELING(src)) || HAS_TRAIT(src, TRAIT_HUSK))
+	// BANDASTATION EDIT START - PERMA-DEATH
+	var/obj/item/organ/brain/brain = get_organ_by_type(/obj/item/organ/brain)
+	var/brain_non_functional = isnull(brain) || (CONFIG_GET(flag/brain_permanent_death) && brain.organ_flags & ORGAN_FAILING)
+	if(brain_non_functional && !IS_CHANGELING(src) || HAS_TRAIT(src, TRAIT_HUSK))
 		return FALSE
+	// BANDASTATION EDIT END - PERMA-DEATH
 	return ..()
 
 /mob/living/carbon/proc/can_defib()
 	if (HAS_TRAIT(src, TRAIT_SUICIDED))
 		return DEFIB_FAIL_SUICIDE
+
+	// BANDASTATION EDIT START - PERMA-DEATH
+	var/obj/item/organ/brain/current_brain = get_organ_by_type(/obj/item/organ/brain)
+
+	if (QDELETED(current_brain))
+		return DEFIB_FAIL_NO_BRAIN
+
+	if (current_brain.suicided || (current_brain.brainmob && HAS_TRAIT(current_brain.brainmob, TRAIT_SUICIDED)))
+		return DEFIB_FAIL_NO_INTELLIGENCE
+
+	if (current_brain.organ_flags & ORGAN_FAILING)
+		return CONFIG_GET(flag/brain_permanent_death) ? DEFIB_FAIL_PERMANENTLY_DEAD : DEFIB_FAIL_FAILING_BRAIN
+	// BANDASTATION EDIT END - PERMA-DEATH
 
 	if (HAS_TRAIT(src, TRAIT_HUSK))
 		return DEFIB_FAIL_HUSK
@@ -989,6 +1006,7 @@
 		if (heart.organ_flags & ORGAN_FAILING)
 			return DEFIB_FAIL_FAILING_HEART
 
+	/* // BANDASTATION EDIT START - PERMA-DEATH
 	var/obj/item/organ/brain/current_brain = get_organ_by_type(/obj/item/organ/brain)
 
 	if (QDELETED(current_brain))
@@ -999,6 +1017,7 @@
 
 	if (current_brain.suicided || (current_brain.brainmob && HAS_TRAIT(current_brain.brainmob, TRAIT_SUICIDED)))
 		return DEFIB_FAIL_NO_INTELLIGENCE
+		*/ // BANDASTATION EDIT END - PERMA-DEATH
 
 	if(key && key[1] == "@") // Adminghosts
 		return DEFIB_NOGRAB_AGHOST
