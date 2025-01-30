@@ -376,5 +376,7 @@
 /obj/item/modular_computer/pda/emag_act(mob/user, obj/item/card/emag/emag_card, forced)
 	. = ..()
 	if(.)
-		store_file(new /datum/computer_file/program/minesweeper)
+		INVOKE_ASYNC(src, PROC_REF(add_minesweeper))
 
+/obj/item/modular_computer/pda/proc/add_minesweeper()
+	store_file(new /datum/computer_file/program/minesweeper)
