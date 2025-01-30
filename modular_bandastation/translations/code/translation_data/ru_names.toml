@@ -3911,6 +3911,261 @@ instrumental = "мешком денег"
 prepositional = "мешке денег"
 gender = "male"
 
+# MARK: Cigs
+
+["Uplift Smooth packet"]
+nominative = "сигареты Аплифт Смуф"
+genitive = "сигарет Аплифт Смуф"
+dative = "сигаретам Аплифт Смуф"
+accusative = "сигареты Аплифт Смуф"
+instrumental = "сигаретами Аплифт Смуф"
+prepositional = "сигаретах Аплифт Смуф"
+gender = "female"
+
+["Robust packet"]
+nominative = "сигареты Робаст"
+genitive = "сигарет Робаст"
+dative = "сигаретам Робаст"
+accusative = "сигареты Робаст"
+instrumental = "сигаретами Робаст"
+prepositional = "сигаретах Робаст"
+gender = "female"
+
+["Carp Classic packet"]
+nominative = "сигареты Карп Классик"
+genitive = "сигарет Карп Классик"
+dative = "сигаретам Карп Классик"
+accusative = "сигареты Карп Классик"
+instrumental = "сигаретами Карп Классик"
+prepositional = "сигаретах Карп Классик"
+gender = "female"
+
+["Midori Tabako packet"]
+nominative = "сигареты Мидори Табако"
+genitive = "сигарет Мидори Табако"
+dative = "сигаретам Мидори Табако"
+accusative = "сигареты Мидори Табако"
+instrumental = "сигаретами Мидори Табако"
+prepositional = "сигаретах Мидори Табако"
+gender = "female"
+
+["cheap lighter"]
+nominative = "дешёвая зажигалка"
+genitive = "дешёвой зажигалки"
+dative = "дешёвой зажигалке"
+accusative = "дешёвую зажигалку"
+instrumental = "дешёвой зажигалкой"
+prepositional = "дешёвой зажигалке"
+gender = "female"
+
+["matchbox"]
+nominative = "коробка спичек"
+genitive = "коробки спичек"
+dative = "коробке спичек"
+accusative = "коробку спичек"
+instrumental = "коробкой спичек"
+prepositional = "коробке спичек"
+gender = "female"
+
+["E-Cigarette"]
+nominative = "электронная сигарета"
+genitive = "электронной сигареты"
+dative = "электронной сигарете"
+accusative = "электронную сигарету"
+instrumental = "электронной сигаретой"
+prepositional = "электронной сигарете"
+gender = "female"
+
+["Robust Gold packet"]
+nominative = "сигареты Робаст Голд"
+genitive = "сигарет Робаст Голд"
+dative = "сигаретам Робаст Голд"
+accusative = "сигареты Робаст Голд"
+instrumental = "сигаретами Робаст Голд"
+prepositional = "сигаретах Робаст Голд"
+gender = "female"
+
+["premium cigar case"]
+nominative = "премиум футляр для сигар"
+genitive = "премиум футляра для сигар"
+dative = "премиум футляру для сигар"
+accusative = "премиум футляр для сигар"
+instrumental = "премиум футляром для сигар"
+prepositional = "премиум футляре для сигар"
+gender = "male"
+
+["premium Havanian cigar case"]
+nominative = "премиум футляр для гаванских сигар"
+genitive = "премиум футляра для гаванских сигар"
+dative = "премиум футляру для гаванских сигар"
+accusative = "премиум футляр для гаванских сигар"
+instrumental = "премиум футляром для гаванских сигар"
+prepositional = "премиум футляре для гаванских сигар"
+gender = "male"
+
+["cigarette packet"]
+nominative = "пакет сигарет"
+genitive = "пакета сигарет"
+dative = "пакету сигарет"
+accusative = "пакет сигарет"
+instrumental = "пакетом сигарет"
+prepositional = "пакете сигарет"
+gender = "male"
+
+["nicotine gum packet"]
+nominative = "пачка никотиновых жевачек"
+genitive = "пачки никотиновых жевачек"
+dative = "пачке никотиновых жевачек"
+accusative = "пачку никотиновых жевачек"
+instrumental = "пачкой никотиновых жевачек"
+prepositional = "пачке никотиновых жевачек"
+gender = "female"
+
+["Cohiba Robusto cigar case"]
+nominative = "футляр для сигар Кохиба Робасто"
+genitive = "футляра для сигар Кохиба Робасто"
+dative = "футляру для сигар Кохиба Робасто"
+accusative = "футляр для сигар Кохиба Робасто"
+instrumental = "футляром для сигар Кохиба Робасто"
+prepositional = "футляре для сигар Кохиба Робасто"
+gender = "male"
+
+["fat dart"]
+nominative = "толстая сигарета"
+genitive = "толстой сигареты"
+dative = "толстой сигарете"
+accusative = "толстую сигарету"
+instrumental = "толстой сигаретой"
+prepositional = "толстой сигарете"
+gender = "female"
+
+["rolling paper pack"]
+nominative = "пачка бумаг для самокруток"
+genitive = "пачки бумаг для самокруток"
+dative = "пачке бумаг для самокруток"
+accusative = "пачку бумаг для самокруток"
+instrumental = "пачкой бумаг для самокруток"
+prepositional = "пачке бумаг для самокруток"
+gender = "female"
+
+["Freak Brothers' Special packet"]
+nominative = "сигареты Фрик Бразерс Спешиал"
+genitive = "сигарет Фрик Бразерс Спешиал"
+dative = "сигаретам Фрик Бразерс Спешиал"
+accusative = "сигареты Фрик Бразерс Спешиал"
+instrumental = "сигаретами Фрик Бразерс Спешиал"
+prepositional = "сигаретах Фрик Бразерс Спешиал"
+gender = "female"
+
+["Leary's Delight packet"]
+nominative = "сигареты Лири'с Делайт"
+genitive = "сигарет Лири'с Делайт"
+dative = "сигаретам Лири'с Делайт"
+accusative = "сигареты Лири'с Делайт"
+instrumental = "сигаретами Лири'с Делайт"
+prepositional = "сигаретах Лири'с Делайт"
+gender = "female"
+
+# MARK: Drinks
+
+["Dr. Gibb"]
+nominative = "Доктор Гибб"
+gender = "male"
+
+["Star-kist"]
+nominative = "Стар-Кист"
+gender = "male"
+
+["Space-Up!"]
+nominative = "Спейс-Ап!"
+gender = "male"
+
+["Pwr Game"]
+nominative = "Пвр Гейм"
+gender = "male"
+
+["Space Mountain Wind"]
+nominative = "Спейс Маунтин Винд"
+gender = "male"
+
+["Solzara Brewing Company Mushi Kombucha"]
+nominative = "Комбуча Муши от Пивоварни Солзара"
+gender = "male"
+
+["24-Volt Energy"]
+nominative = "24-Вольт Энержи"
+gender = "male"
+
+["Thirteen Loko"]
+nominative = "13 Локо"
+gender = "neuter"
+
+["Nuka Cola"]
+nominative = "Нюка Кола"
+gender = "female"
+
+["Monkey Energy"]
+nominative = "Манки Энержи"
+gender = "neuter"
+
+["Grey Bull"]
+nominative = "Грей Булл"
+gender = "male"
+
+["orange soda"]
+nominative = "апельсиновая газировка"
+genitive = "апельсиновой газировки"
+dative = "апельсиновой газировке"
+accusative = "апельсиновую газировку"
+instrumental = "апельсиновой газировкой"
+prepositional = "апельсиновой газировке"
+gender = "female"
+
+["bottle of water"]
+nominative = "бутылка воды"
+genitive = "бутылки воды"
+dative = "бутылке воды"
+accusative = "бутылку воды"
+instrumental = "бутылкой воды"
+prepositional = "бутылке воды"
+gender = "female"
+
+["Shambler's juice"]
+nominative = "сок Шамблера"
+genitive = "сока Шамблера"
+dative = "соку Шамблера"
+accusative = "сок Шамблера"
+instrumental = "соком Шамблера"
+prepositional = "соке Шамблера"
+gender = "male"
+
+["Wellcheers Juice"]
+nominative = "сок Уэллчирс"
+genitive = "сока Уэллчирс"
+dative = "соку Уэллчирс"
+accusative = "сок Уэллчирс"
+instrumental = "соком Уэллчирс"
+prepositional = "соке Уэллчирс"
+gender = "male"
+
+["canned air"]
+nominative = "консервированный воздух"
+genitive = "консервированного воздуха"
+dative = "консервированному воздуху"
+accusative = "консервированный воздух"
+instrumental = "консервированным воздухом"
+prepositional = "консервированном воздухе"
+gender = "male"
+
+["Two-Time root beer"]
+nominative = "корневое пиво Ту-Тайм"
+genitive = "корневого пива Ту-Тайм"
+dative = "корневому пиву Ту-Тайм"
+accusative = "корневое пиво Ту-Тайм"
+instrumental = "корневым пивом Ту-Тайм"
+prepositional = "корневом пиве Ту-Тайм"
+gender = "neuter"
+
 # MARK: Boozies
 ["Beekhof Blauw Curaçao"]
 nominative = "Бейкхоф Блау Кюрасао"
@@ -4066,12 +4321,12 @@ prepositional = "солодовом ликёре Бешеного Медведя
 gender = "male"
 
 ["Robert Robust's coffee liqueur"]
-nominative = "кофейный ликёр Роберта Робуста"
-genitive = "кофейного ликёра Роберта Робуста"
-dative = "кофейному ликёру Роберта Робуста"
-accusative = "кофейный ликёр Роберта Робуста"
-instrumental = "кофейным ликёром Роберта Робуста"
-prepositional = "кофейном ликёре Роберта Робуста"
+nominative = "кофейный ликёр Роберта Робаста"
+genitive = "кофейного ликёра Роберта Робаста"
+dative = "кофейному ликёру Роберта Робаста"
+accusative = "кофейный ликёр Роберта Робаста"
+instrumental = "кофейным ликёром Роберта Робаста"
+prepositional = "кофейном ликёре Роберта Робаста"
 gender = "male"
 
 ["Ryo's traditional sake"]
@@ -4885,6 +5140,96 @@ dative = "красному фартуку"
 accusative = "красный фартук"
 instrumental = "красным фартуком"
 prepositional = "красном фартуке"
+gender = "male"
+
+["ladle"]
+nominative = "поварёшка"
+genitive = "поварёшки"
+dative = "поварёшке"
+accusative = "поварёшку"
+instrumental = "поварёшкой"
+prepositional = "поварёшке"
+gender = "female"
+
+["cook's apron"]
+nominative = "фартук повара"
+genitive = "фартука повара"
+dative = "фартуку повара"
+accusative = "фартук повара"
+instrumental = "фартуком повара"
+prepositional = "фартуке повара"
+gender = "male"
+
+["rolling pin"]
+nominative = "скалка"
+genitive = "скалки"
+dative = "скалке"
+accusative = "скалку"
+instrumental = "скалкой"
+prepositional = "скалке"
+gender = "female"
+
+["appetizer plate"]
+nominative = "тарелка для закусок"
+genitive = "тарелки для закусок"
+dative = "тарелке для закусок"
+accusative = "тарелку для закусок"
+instrumental = "тарелкой для закусок"
+prepositional = "тарелке для закусок"
+gender = "female"
+
+["buffet plate"]
+nominative = "блюдо для шведского стола"
+genitive = "блюда для шведского стола"
+dative = "блюду для шведского стола"
+accusative = "блюдо для шведского стола"
+instrumental = "блюдом для шведского стола"
+prepositional = "блюде для шведского стола"
+gender = "neuter"
+
+["astrotame pack"]
+nominative = "пакет астротама"
+genitive = "пакета астротама"
+dative = "пакету астротама"
+accusative = "пакет астротама"
+instrumental = "пакетом астротама"
+prepositional = "пакете астротама"
+gender = "male"
+
+["salt shaker"]
+nominative = "солонка"
+genitive = "солонки"
+dative = "солонке"
+accusative = "солонку"
+instrumental = "солонкой"
+prepositional = "солонке"
+gender = "female"
+
+["Cooking Desserts 101"]
+nominative = "Кулинария Десертов 101"
+genitive = "Кулинарии Десертов 101"
+dative = "Кулинарии Десертов 101"
+accusative = "Кулинарию Десертов 101"
+instrumental = "Кулинарией Десертов 101"
+prepositional = "Кулинарии Десертов 101"
+gender = "female"
+
+["metal rolling pin"]
+nominative = "металлическая скалка"
+genitive = "металлической скалки"
+dative = "металлической скалке"
+accusative = "металлическую скалку"
+instrumental = "металлической скалкой"
+prepositional = "металлической скалке"
+gender = "female"
+
+["K1SS skillchip"]
+nominative = "скилл-чип П4Ц3ЛУЙ"
+genitive = "скилл-чипа П4Ц3ЛУЙ"
+dative = "скилл-чипу П4Ц3ЛУЙ"
+accusative = "скилл-чип П4Ц3ЛУЙ"
+instrumental = "скилл-чипом П4Ц3ЛУЙ"
+prepositional = "скилл-чипе П4Ц3ЛУЙ"
 gender = "male"
 
 # TODO: Translate Pest-B-Gon
@@ -17256,6 +17601,154 @@ accusative = "эфириальную тунику"
 instrumental = "эфириальной туникой"
 prepositional = "эфириальной тунике"
 gender = "female"
+
+# MARK: Antagonists
+
+["chemical grenade"]
+nominative = "химическая граната"
+genitive = "химической гранаты"
+dative = "химической гранате"
+accusative = "химическую гранату"
+instrumental = "химической гранатой"
+prepositional = "химической гранате"
+gender = "female"
+
+["flask of holy water"]
+nominative = "фляга с святой водой"
+genitive = "фляги с святой водой"
+dative = "фляге с святой водой"
+accusative = "флягу с святой водой"
+instrumental = "флягой с святой водой"
+prepositional = "фляге с святой водой"
+gender = "female"
+
+# MARK: Donksoft
+
+["cryptographic sequencer"]
+nominative = "криптографический секвенсор"
+genitive = "криптографического секвенсора"
+dative = "криптографическому секвенсору"
+accusative = "криптографический секвенсор"
+instrumental = "криптографическим секвенсором"
+prepositional = "криптографическом секвенсоре"
+gender = "male"
+
+["hot potato"]
+nominative = "горячая картошка"
+genitive = "горячей картошки"
+dative = "горячей картошке"
+accusative = "горячую картошку"
+instrumental = "горячей картошкой"
+prepositional = "горячей картошке"
+gender = "female"
+
+["toy sword"]
+nominative = "игрушечный меч"
+genitive = "игрушечного меча"
+dative = "игрушечному мечу"
+accusative = "игрушечный меч"
+instrumental = "игрушечным мечом"
+prepositional = "игрушечном мече"
+gender = "male"
+
+["double-bladed toy sword"]
+nominative = "двухклинковый игрушечный меч"
+genitive = "двухклинкового игрушечного меча"
+dative = "двухклинковому игрушечному мечу"
+accusative = "двухклинковый игрушечный меч"
+instrumental = "двухклинковым игрушечным мечом"
+prepositional = "двухклинковом игрушечном мече"
+gender = "male"
+
+["foam force pistol"]
+nominative = "пистолет \"Пенная полиция\""
+genitive = "пистолета \"Пенная полиция\""
+dative = "пистолету \"Пенная полиция\""
+accusative = "пистолет \"Пенная полиция\""
+instrumental = "пистолетом \"Пенная полиция\""
+prepositional = "пистолете \"Пенная полиция\""
+gender = "male"
+
+["foam force SMG"]
+nominative = "пулемет \"Пенная полиция\""
+genitive = "пулемета \"Пенная полиция\""
+dative = "пулемету \"Пенная полиция\""
+accusative = "пулемет \"Пенная полиция\""
+instrumental = "пулеметом \"Пенная полиция\""
+prepositional = "пулемете \"Пенная полиция\""
+gender = "male"
+
+["foam force shotgun"]
+nominative = "дробовик \"Пенная полиция\""
+genitive = "дробовика \"Пенная полиция\""
+dative = "дробовику \"Пенная полиция\""
+accusative = "дробовик \"Пенная полиция\""
+instrumental = "дробовиком \"Пенная полиция\""
+prepositional = "дробовике \"Пенная полиция\""
+gender = "male"
+
+["foam force crossbow"]
+nominative = "арбалет \"Пенная полиция\""
+genitive = "арбалета \"Пенная полиция\""
+dative = "арбалету \"Пенная полиция\""
+accusative = "арбалет \"Пенная полиция\""
+instrumental = "арбалетом \"Пенная полиция\""
+prepositional = "арбалете \"Пенная полиция\""
+gender = "male"
+
+["syndicate balloon"]
+nominative = "шарик синдиката"
+genitive = "шарика синдиката"
+dative = "шарику синдиката"
+accusative = "шарик синдиката"
+instrumental = "шариком синдиката"
+prepositional = "шарике синдиката"
+gender = "male"
+
+["replica katana"]
+nominative = "реплика катаны"
+genitive = "реплики катаны"
+dative = "реплике катаны"
+accusative = "реплику катаны"
+instrumental = "репликой катаны"
+prepositional = "реплике катаны"
+gender = "female"
+
+["suspicious looking deck of cards"]
+nominative = "подозрительно выглядящая колода карт"
+genitive = "подозрительно выглядящей колоды карт"
+dative = "подозрительно выглядящей колоде карт"
+accusative = "подозрительно выглядящую колоду карт"
+instrumental = "подозрительно выглядящей колодой карт"
+prepositional = "подозрительно выглядящей колоде карт"
+gender = "female"
+
+["boxed replica space suit and helmet"]
+nominative = "коробка с репликой космического скафандра и шлема"
+genitive = "коробки с репликой космического скафандра и шлема"
+dative = "коробке с репликой космического скафандра и шлема"
+accusative = "коробку с репликой космического скафандра и шлема"
+instrumental = "коробкой с репликой космического скафандра и шлема"
+prepositional = "коробке с репликой космического скафандра и шлема"
+gender = "female"
+
+["donksoft SMG"]
+nominative = "пистолет-пулемёт Донксофт"
+genitive = "пистолета-пулемёта Донксофт"
+dative = "пистолету-пулемёту Донксофт"
+accusative = "пистолет-пулемёт Донксофт"
+instrumental = "пистолетом-пулемётом Донксофт"
+prepositional = "пистолете-пулемёте Донксофт"
+gender = "male"
+
+["donksoft LMG"]
+nominative = "ленточный пулемёт Донксофт"
+genitive = "ленточного пулемёта Донксофт"
+dative = "ленточному пулемёту Донксофт"
+accusative = "ленточный пулемёт Донксофт"
+instrumental = "ленточным пулемётом Донксофт"
+prepositional = "ленточном пулемёте Донксофт"
+gender = "male"
 
 # MARK: Wizards
 ["red wizard hat"]
