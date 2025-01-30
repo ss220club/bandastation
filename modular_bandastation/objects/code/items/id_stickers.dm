@@ -36,6 +36,7 @@
 		return
 	if(user.combat_mode)
 		to_chat(user, span_notice("Вы сдираете наклейку с ID карты!"))
+		playsound(src, 'sound/items/poster/poster_ripped.ogg', 100, TRUE)
 		qdel(remove_sticker())
 		return
 
@@ -71,6 +72,9 @@
 	var/obj/item/id_sticker/removed_sticker = applied_sticker
 	applied_sticker = null
 	update_appearance(UPDATE_OVERLAYS|UPDATE_DESC)
+	UnregisterSignal(removed_sticker, COMSIG_QDELETING)
+	if(QDELING(src))
+		return NONE
 	return removed_sticker
 
 /obj/machinery/pdapainter/attackby(obj/item/O, mob/living/user, params)
