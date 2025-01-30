@@ -5193,6 +5193,178 @@ instrumental = "экспресс консолью снабжения"
 prepositional = "экспресс консоли снабжения"
 gender = "female"
 
+# MARK: Clothes
+["cargo beret"]
+nominative = "берет снабжения"
+genitive = "берета снабжения"
+dative = "берету снабжения"
+accusative = "берет снабжения"
+instrumental = "беретом снабжения"
+prepositional = "берете снабжения"
+gender = "male"
+
+["striped cargo bandana"]
+nominative = "полосатая бандана снабжения"
+genitive = "полосатой банданы снабжения"
+dative = "полосатой бандане снабжения"
+accusative = "полосатую бандану снабжения"
+instrumental = "полосатой банданой снабжения"
+prepositional = "полосатой бандане снабжения"
+gender = "female"
+
+["cargo cap"]
+nominative = "кепка снабжения"
+genitive = "кепки снабжения"
+dative = "кепке снабжения"
+accusative = "кепку снабжения"
+instrumental = "кепкой снабжения"
+prepositional = "кепке снабжения"
+gender = "female"
+
+["cargo technician's uniform"]
+nominative = "форма грузчика"
+genitive = "формы грузчика"
+dative = "форме грузчика"
+accusative = "форму грузчика"
+instrumental = "формой грузчика"
+prepositional = "форме грузчика"
+gender = "female"
+
+["cargo technician's skirt"]
+nominative = "юбка-комбинезон грузчика"
+genitive = "юбки-комбинезона грузчика"
+dative = "юбке-комбинезону грузчика"
+accusative = "юбку-комбинезон грузчика"
+instrumental = "юбкой-комбинезоном грузчика"
+prepositional = "юбке-комбинезоне грузчика"
+gender = "female"
+
+["cargo technician's shorts"]
+nominative = "шорты грузчика"
+genitive = "шорт грузчика"
+dative = "шортам грузчика"
+accusative = "шорты грузчика"
+instrumental = "шортами грузчика"
+prepositional = "шортах грузчика"
+gender = "male"
+
+["cargo technician's shortskirt"]
+nominative = "короткая юбка грузчика"
+genitive = "короткой юбки грузчика"
+dative = "короткой юбке грузчика"
+accusative = "короткую юбку грузчика"
+instrumental = "короткой юбкой грузчика"
+prepositional = "короткой юбке грузчика"
+gender = "female"
+
+["cargo gorka"]
+nominative = "горка снабжения"
+genitive = "горки снабжения"
+dative = "горке снабжения"
+accusative = "горку снабжения"
+instrumental = "горкой снабжения"
+prepositional = "горке снабжения"
+gender = "female"
+
+["cargo winter coat"]
+nominative = "зимнее пальто снабжения"
+genitive = "зимнего пальто снабжения"
+dative = "зимнему пальто снабжения"
+accusative = "зимнее пальто снабжения"
+instrumental = "зимним пальто снабжения"
+prepositional = "зимнем пальто снабжения"
+gender = "neuter"
+
+["backpack"]
+nominative = "рюкзак"
+genitive = "рюкзака"
+dative = "рюкзаку"
+accusative = "рюкзак"
+instrumental = "рюкзаком"
+prepositional = "рюкзаке"
+gender = "male"
+
+["satchel"]
+nominative = "сумка"
+genitive = "сумки"
+dative = "сумке"
+accusative = "сумку"
+instrumental = "сумкой"
+prepositional = "сумке"
+gender = "female"
+
+["leather satchel"]
+nominative = "кожаная сумка"
+genitive = "кожаной сумки"
+dative = "кожаной сумке"
+accusative = "кожаную сумку"
+instrumental = "кожаной сумкой"
+prepositional = "кожаной сумке"
+gender = "female"
+
+["duffel bag"]
+nominative = "вещмешок"
+genitive = "вещмешка"
+dative = "вещмешку"
+accusative = "вещмешок"
+instrumental = "вещмешком"
+prepositional = "вещмешке"
+gender = "male"
+
+["messenger bag"]
+nominative = "курьерская сумка"
+genitive = "курьерской сумки"
+dative = "курьерской сумке"
+accusative = "курьерскую сумку"
+instrumental = "курьерской сумкой"
+prepositional = "курьерской сумке"
+gender = "female"
+
+["mail bag"]
+nominative = "почтовая сумка"
+genitive = "почтовой сумки"
+dative = "почтовой сумке"
+accusative = "почтовую сумку"
+instrumental = "почтовой сумкой"
+prepositional = "почтовой сумке"
+gender = "female"
+
+["mail sorter"]
+nominative = "сортировщик почты"
+genitive = "сортировщика почты"
+dative = "сортировщику почты"
+accusative = "сортировщика почты"
+instrumental = "сортировщиком почты"
+prepositional = "сортировщике почты"
+gender = "male"
+
+["shaft miner's jumpsuit"]
+nominative = "комбинезон шахтёра"
+genitive = "комбинезона шахтёра"
+dative = "комбинезону шахтёра"
+accusative = "комбинезон шахтёра"
+instrumental = "комбинезоном шахтёра"
+prepositional = "комбинезоне шахтёра"
+gender = "male"
+
+["bitrunner's jumpsuit"]
+nominative = "комбинезон битраннера"
+genitive = "комбинезона битраннера"
+dative = "комбинезону битраннера"
+accusative = "комбинезон битраннера"
+instrumental = "комбинезоном битраннера"
+prepositional = "комбинезоне битраннера"
+gender = "male"
+
+["supply radio headset"]
+nominative = "гарнитура снабжения"
+genitive = "гарнитуры снабжения"
+dative = "гарнитуре снабжения"
+accusative = "гарнитуру снабжения"
+instrumental = "гарнитурой снабжения"
+prepositional = "гарнитуре снабжения"
+gender = "female"
+
 # MARK: Mining
 
 ["global positioning system"]
