@@ -8,10 +8,10 @@
 /mob/eye/blob/Login()
 	. = ..()
 	if(!main_station_floor(src))
-		var/blob_message = "[span_boldwarning("Поскольку Вы находитесь не на основном этаже станции, Вы получаете следующие дебаффы:")]\n"
+		var/list/blob_message = list("[span_boldwarning("Поскольку Вы находитесь не на основном этаже станции, Вы получаете следующие дебаффы:")]\n")
 		blob_message += "1. Вам требуется больше тайлов для захвата.\n"
 		blob_message += "2. Вам требуется больше ресурсов для установки тайла блоба."
-		to_chat(src, boxed_message(blob_message))
+		to_chat(src, boxed_message(blob_message.Join()))
 
 /mob/eye/blob/proc/check_station_floor()
 	if(main_station_floor(src))
