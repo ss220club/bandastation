@@ -1,5 +1,10 @@
 /obj/item/card/id/advanced
 	var/obj/item/id_sticker/applied_sticker = null
+	
+/obj/item/card/id/advanced/Destroy()
+	if(applied_sticker)
+		QDEL_NULL(applied_sticker)
+	. = ..()
 
 /obj/item/card/id/advanced/item_interaction(mob/living/user, obj/item/tool, list/modifiers)
 	. = ..()
@@ -30,13 +35,15 @@
 		to_chat(user, span_warning("На ID карте нет наклейки!"))
 		return
 	if(user.combat_mode)
-		to_chat(user, span_notice("Вы сдираете наклейку с ID карты!"))
-		remove_sticker(user, delete = TRUE)
+		to_chat(user, span_notice("Вы сдираете наклейку с ID карты!"))()
+		qdel(remove_sticker())
 		return
+		
 	to_chat(user, span_notice("Вы пытаетесь снять наклейку с ID карты..."))
 	if(do_after(user, 5 SECONDS, src))
-		to_chat(user, span_notice("Вам удалось снять наклейку с ID карты."))
-		remove_sticker(user, delete = FALSE)
+		to_chat(user, span_notice("Вы сняли наклейку с ID карты."))
+		user.put_in_hands(remove_sticker())
+		
 
 /obj/item/card/id/advanced/update_overlays()
 	. = ..()
@@ -57,14 +64,15 @@
 	applied_sticker = sticker
 	update_appearance(UPDATE_OVERLAYS|UPDATE_DESC)
 	to_chat(user, span_notice("Вы наклеили [sticker.declent_ru(ACCUSATIVE)] на ID карту."))
+	RegisterSignal(sticker, COMSIG_QDELETING, PROC_REF(remove_sticker))
 
-/obj/item/card/id/advanced/proc/remove_sticker(mob/user, delete = FALSE)
-	if(delete)
-		qdel(applied_sticker)
-	else
-		user.put_in_hands(applied_sticker)
-	applied_sticker = src::applied_sticker
+/obj/item/card/id/advanced/proc/remove_sticker()
+	SIGNAL_HANDLER
+	
+	var/obj/item/id_sticker/removed_sticker = applied_sticker 
+	applied_sticker = null
 	update_appearance(UPDATE_OVERLAYS|UPDATE_DESC)
+	return removed_sticker 
 
 /obj/machinery/pdapainter/attackby(obj/item/O, mob/living/user, params)
 	if(istype(O, /obj/item/card/id/advanced))
