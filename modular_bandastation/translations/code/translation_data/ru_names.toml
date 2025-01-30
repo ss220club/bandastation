@@ -6034,6 +6034,240 @@ instrumental = "курьерской сумкой химика"
 prepositional = "курьерской сумке химика"
 gender = "female"
 
+["nurse's hat"]
+nominative = "шляпа медсестры"
+genitive = "шляпы медсестры"
+dative = "шляпе медсестры"
+accusative = "шляпу медсестры"
+instrumental = "шляпой медсестры"
+prepositional = "шляпе медсестры"
+gender = "female"
+
+["medical beret"]
+nominative = "медицинский берет"
+genitive = "медицинского берета"
+dative = "медицинскому берету"
+accusative = "медицинский берет"
+instrumental = "медицинским беретом"
+prepositional = "медицинском берете"
+gender = "male"
+
+["blue surgery cap"]
+nominative = "синий хирургический колпак"
+genitive = "синего хирургического колпака"
+dative = "синему хирургическому колпаку"
+accusative = "синий хирургический колпак"
+instrumental = "синим хирургическим колпаком"
+prepositional = "сином хирургическом колпаке"
+gender = "male"
+
+["burgundy surgery cap"]
+nominative = "бордовый хирургический колпак"
+genitive = "бордового хирургического колпака"
+dative = "бордовому хирургическому колпаку"
+accusative = "бордовый хирургический колпак"
+instrumental = "бордовым хирургическим колпаком"
+prepositional = "бордовом хирургическом колпаке"
+gender = "male"
+
+["green surgery cap"]
+nominative = "зелёный хирургический колпак"
+genitive = "зелёного хирургического колпака"
+dative = "зелёному хирургическому колпаку"
+accusative = "зелёный хирургический колпак"
+instrumental = "зелёным хирургическим колпаком"
+prepositional = "зелёном хирургическом колпаке"
+gender = "male"
+
+["paramedic beret"]
+nominative = "берет парамедика"
+genitive = "берета парамедика"
+dative = "берету парамедика"
+accusative = "берет парамедика"
+instrumental = "беретом парамедика"
+prepositional = "берете парамедика"
+gender = "male"
+
+["paramedic cap"]
+nominative = "кепка парамедика"
+genitive = "кепки парамедика"
+dative = "кепке парамедика"
+accusative = "кепку парамедика"
+instrumental = "кепкой парамедика"
+prepositional = "кепке парамедика"
+gender = "female"
+
+["head mirror"]
+nominative = "лобный рефлектор"
+genitive = "лобного рефлектора"
+dative = "лобному рефлектору"
+accusative = "лобный рефлектор"
+instrumental = "лобным рефлектором"
+prepositional = "лобном рефлекторе"
+gender = "male"
+
+["striped medical bandana"]
+nominative = "полосатая медицинская бандана"
+genitive = "полосатой медицинской банданы"
+dative = "полосатой медицинской бандане"
+accusative = "полосатую медицинскую бандану"
+instrumental = "полосатой медицинской банданой"
+prepositional = "полосатой медицинской бандане"
+gender = "female"
+
+["sterile mask"]
+nominative = "стерильная маска"
+genitive = "стерильной маски"
+dative = "стерильной маске"
+accusative = "стерильную маску"
+instrumental = "стерильной маской"
+prepositional = "стерильной маске"
+gender = "female"
+
+["medical doctor's jumpsuit"]
+nominative = "комбинезон врача"
+genitive = "комбинезона врача"
+dative = "комбинезону врача"
+accusative = "комбинезон врача"
+instrumental = "комбинезоном врача"
+prepositional = "комбинезоне врача"
+gender = "male"
+
+["medical doctor's jumpskirt"]
+nominative = "юбка-комбинезон врача"
+genitive = "юбки-комбинезона врача"
+dative = "юбке-комбинезону врача"
+accusative = "юбку-комбинезон врача"
+instrumental = "юбкой-комбинезоном врача"
+prepositional = "юбке-комбинезоне врача"
+gender = "female"
+
+["medical scrubs"]
+nominative = "медицинская форма"
+genitive = "медицинской формы"
+dative = "медицинской форме"
+accusative = "медицинскую форму"
+instrumental = "медицинской формой"
+prepositional = "медицинской форме"
+gender = "female"
+
+["paramedic jumpsuit"]
+nominative = "комбинезон парамедика"
+genitive = "комбинезона парамедика"
+dative = "комбинезону парамедика"
+accusative = "комбинезон парамедика"
+instrumental = "комбинезоном парамедика"
+prepositional = "комбинезоне парамедика"
+gender = "male"
+
+["paramedic jumpskirt"]
+nominative = "юбка-комбинезон парамедика"
+genitive = "юбки-комбинезона парамедика"
+dative = "юбке-комбинезону парамедика"
+accusative = "юбку-комбинезон парамедика"
+instrumental = "юбкой-комбинезоном парамедика"
+prepositional = "юбке-комбинезоне парамедика"
+gender = "female"
+
+["paramedic's jacket"]
+nominative = "куртка парамедика"
+genitive = "куртки парамедика"
+dative = "куртке парамедика"
+accusative = "куртку парамедика"
+instrumental = "курткой парамедика"
+prepositional = "куртке парамедика"
+gender = "female"
+
+["surgical apron"]
+nominative = "хирургический фартук"
+genitive = "хирургического фартука"
+dative = "хирургическому фартуку"
+accusative = "хирургический фартук"
+instrumental = "хирургическим фартуком"
+prepositional = "хирургическом фартуке"
+gender = "male"
+
+["medical winter coat"]
+nominative = "зимнее пальто врача"
+genitive = "зимнего пальто врача"
+dative = "зимнему пальто врача"
+accusative = "зимнее пальто врача"
+instrumental = "зимним пальто врача"
+prepositional = "зимнем пальто врача"
+gender = "neuter"
+
+["paramedic winter coat"]
+nominative = "зимнее пальто парамедика"
+genitive = "зимнего пальто парамедика"
+dative = "зимнему пальто парамедика"
+accusative = "зимнее пальто парамедика"
+instrumental = "зимним пальто парамедика"
+prepositional = "зимнем пальто парамедика"
+gender = "neuter"
+
+["blue shoes"]
+nominative = "синие ботинки"
+genitive = "синих ботинок"
+dative = "синим ботинкам"
+accusative = "синие ботинки"
+instrumental = "синими ботинками"
+prepositional = "синих ботинках"
+gender = "male"
+
+["nitrile gloves"]
+nominative = "нитриловые перчатки"
+genitive = "нитриловых перчаток"
+dative = "нитриловым перчаткам"
+accusative = "нитриловые перчатки"
+instrumental = "нитриловыми перчатками"
+prepositional = "нитриловых перчатках"
+gender = "female"
+
+["medical duffel bag"]
+nominative = "медицинский вещмешок"
+genitive = "медицинского вещмешка"
+dative = "медицинскому вещмешку"
+accusative = "медицинский вещмешок"
+instrumental = "медицинским вещмешком"
+prepositional = "медицинском вещмешке"
+gender = "male"
+
+["medical backpack"]
+nominative = "медицинский рюкзак"
+genitive = "медицинского рюкзака"
+dative = "медицинскому рюкзаку"
+accusative = "медицинский рюкзак"
+instrumental = "медицинским рюкзаком"
+prepositional = "медицинском рюкзаке"
+gender = "male"
+
+["medical satchel"]
+nominative = "медицинская сумка"
+genitive = "медицинской сумки"
+dative = "медицинской сумке"
+accusative = "медицинскую сумку"
+instrumental = "медицинской сумкой"
+prepositional = "медицинской сумке"
+gender = "female"
+
+["medical messenger bag"]
+nominative = "медицинская курьерская сумка"
+genitive = "медицинской курьерской сумки"
+dative = "медицинской курьерской сумке"
+accusative = "медицинскую курьерскую сумку"
+instrumental = "медицинской курьерской сумкой"
+prepositional = "медицинской курьерской сумке"
+gender = "female"
+
+["medical radio headset"]
+nominative = "медицинская гарнитура"
+genitive = "медицинской гарнитуры"
+dative = "медицинской гарнитуре"
+accusative = "медицинскую гарнитуру"
+instrumental = "медицинской гарнитурой"
+prepositional = "медицинской гарнитуре"
+gender = "female"
+
 # MARK: Medical tools
 
 ["syringe"]
