@@ -6431,6 +6431,204 @@ instrumental = "курьерской сумкой вирусолога"
 prepositional = "курьерской сумке вирусолога"
 gender = "female"
 
+["black surgery cap"]
+nominative = "чёрная хирургическая шапка"
+genitive = "чёрной хирургической шапки"
+dative = "чёрной хирургической шапке"
+accusative = "чёрную хирургическую шапку"
+instrumental = "чёрной хирургической шапкой"
+prepositional = "чёрной хирургической шапке"
+gender = "female"
+
+["coroner winter coat"]
+nominative = "зимнее пальто коронера"
+genitive = "зимнего пальто коронера"
+dative = "зимнему пальто коронера"
+accusative = "зимнее пальто коронера"
+instrumental = "зимним пальто коронера"
+prepositional = "зимнем пальто коронера"
+gender = "neuter"
+
+["coroner labcoat"]
+nominative = "лабораторный халат коронера"
+genitive = "лабораторного халата коронера"
+dative = "лабораторному халату коронера"
+accusative = "лабораторный халат коронера"
+instrumental = "лабораторным халатом коронера"
+prepositional = "лабораторном халате коронера"
+gender = "male"
+
+["coroner jumpsuit"]
+nominative = "комбинезон коронера"
+genitive = "комбинезона коронера"
+dative = "комбинезону коронера"
+accusative = "комбинезон коронера"
+instrumental = "комбинезоном коронера"
+prepositional = "комбинезоне коронера"
+gender = "male"
+
+["coroner jumpskirt"]
+nominative = "юбка-комбинезон коронера"
+genitive = "юбки-комбинезона коронера"
+dative = "юбке-комбинезоне коронера"
+accusative = "юбку-комбинезон коронера"
+instrumental = "юбкой-комбинезоном коронера"
+prepositional = "юбке-комбинезоне коронера"
+gender = "female"
+
+["coroner scrubs"]
+nominative = "медицинская форма коронера"
+genitive = "медицинской формы коронера"
+dative = "медицинской форме коронера"
+accusative = "медицинскую форму коронера"
+instrumental = "медицинской формой коронера"
+prepositional = "медицинской форме коронера"
+gender = "female"
+
+["coroner's gloves"]
+nominative = "перчатки коронера"
+genitive = "перчаток коронера"
+dative = "перчаткам коронера"
+accusative = "перчатки коронера"
+instrumental = "перчатками коронера"
+prepositional = "перчатках коронера"
+gender = "female"
+
+["savage cautery"]
+nominative = "свирепый прижигатель"
+genitive = "свирепого прижигателя"
+dative = "свирепому прижигателю"
+accusative = "свирепый прижигатель"
+instrumental = "свирепым прижигателем"
+prepositional = "свирепом прижигателе"
+gender = "male"
+
+["cruel hemostat"]
+nominative = "жестокий гемостат"
+genitive = "жестокого гемостата"
+dative = "жестокому гемостату"
+accusative = "жестокий гемостат"
+instrumental = "жестоким гемостатом"
+prepositional = "жестоком гемостате"
+gender = "male"
+
+["twisted retractor"]
+nominative = "изогнутый ретрактор"
+genitive = "изогнутого ретрактора"
+dative = "изогнутому ретрактору"
+accusative = "изогнутый ретрактор"
+instrumental = "изогнутым ретрактором"
+prepositional = "изогнутом ретракторе"
+gender = "male"
+
+["hungry scalpel"]
+nominative = "голодный скальпель"
+genitive = "голодного скальпеля"
+dative = "голодному скальпелю"
+accusative = "голодный скальпель"
+instrumental = "голодным скальпелем"
+prepositional = "голодном скальпеле"
+gender = "male"
+
+["coroner backpack"]
+nominative = "рюкзак коронера"
+genitive = "рюкзака коронера"
+dative = "рюкзаку коронера"
+accusative = "рюкзак коронера"
+instrumental = "рюкзаком коронера"
+prepositional = "рюкзаке коронера"
+gender = "male"
+
+["coroner duffel bag"]
+nominative = "вещмешок коронера"
+genitive = "вещмешка коронера"
+dative = "вещмешку коронера"
+accusative = "вещмешок коронера"
+instrumental = "вещмешком коронера"
+prepositional = "вещмешке коронера"
+gender = "male"
+
+["coroner messenger bag"]
+nominative = "курьерская сумка коронера"
+genitive = "курьерской сумки коронера"
+dative = "курьерской сумке коронера"
+accusative = "курьерскую сумку коронера"
+instrumental = "курьерской сумкой коронера"
+prepositional = "курьерской сумке коронера"
+gender = "female"
+
+["coroner satchel"]
+nominative = "сумка коронера"
+genitive = "сумки коронера"
+dative = "сумке коронера"
+accusative = "сумку коронера"
+instrumental = "сумкой коронера"
+prepositional = "сумке коронера"
+gender = "female"
+
+["ritual knife"]
+nominative = "ритуальный нож"
+genitive = "ритуального ножа"
+dative = "ритуальному ножу"
+accusative = "ритуальный нож"
+instrumental = "ритуальным ножом"
+prepositional = "ритуальном ноже"
+gender = "male"
+
+["scythe"]
+nominative = "коса"
+genitive = "косы"
+dative = "косе"
+accusative = "косу"
+instrumental = "косой"
+prepositional = "косе"
+gender = "female"
+
+["body bags"]
+nominative = "мешки для трупов"
+genitive = "мешков для трупов"
+dative = "мешкам для трупов"
+accusative = "мешки для трупов"
+instrumental = "мешками для трупов"
+prepositional = "мешках для трупов"
+gender = "male"
+
+["service medical headset"]
+nominative = "гарнитура обслуживания и медицины"
+genitive = "гарнитуры обслуживания и медицины"
+dative = "гарнитуре обслуживания и медицины"
+accusative = "гарнитуру обслуживания и медицины"
+instrumental = "гарнитурой обслуживания и медицины"
+prepositional = "гарнитуре обслуживания и медицины"
+gender = "female"
+
+["pickles"]
+nominative = "маринованные огурцы"
+genitive = "маринованных огурцов"
+dative = "маринованным огурцам"
+accusative = "маринованные огурцы"
+instrumental = "маринованными огурцами"
+prepositional = "маринованных огурцах"
+gender = "male"
+
+["table clock"]
+nominative = "настольные часы"
+genitive = "настольных часов"
+dative = "настольным часам"
+accusative = "настольные часы"
+instrumental = "настольными часами"
+prepositional = "настольных часах"
+gender = "male"
+
+["compact coroner's medkit"]
+nominative = "компактный меднабор коронера"
+genitive = "компактного меднабора коронера"
+dative = "компактному меднабору коронера"
+accusative = "компактный меднабор коронера"
+instrumental = "компактным меднабором коронера"
+prepositional = "компактном меднаборе коронера"
+gender = "male"
+
 # MARK: Medical tools
 
 ["syringe"]
