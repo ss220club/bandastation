@@ -1,5 +1,6 @@
 // TG did not cook this antag into the event system. So I had to make my own
 
+/*
 /datum/round_event_control/voidwalker
 	name = "Spawn Void Walker"
 	typepath = /datum/round_event/ghost_role/void_walker
@@ -39,3 +40,4 @@
 	walker.log_message("[key_name(walker)] was spawned as a Voidwalker by an event.", LOG_GAME)
 	spawned_mobs += walker
 	return SUCCESSFUL_SPAWN
+*/
