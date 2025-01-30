@@ -32,6 +32,8 @@
 	var/start_time = 0
 	/// The current round leaderboard list
 	var/static/list/leaderboard = list()
+	/// The global leaderboard list
+	var/static/list/glob_leaderboard = null
 
 	//Emagged bomb stats
 	var/range_heavy = -1
@@ -39,27 +41,28 @@
 	var/range_light = 3
 	var/range_flame = 2
 
-	/// Had the program got db results
-	var/static/leaderboard_init = FALSE
-	/// The global leaderboard list
-	var/static/list/glob_leaderboard = list()
-
 /datum/computer_file/program/minesweeper/New()
 	..()
-	if(!leaderboard_init)
-		leaderboard_init = TRUE
+	if(!glob_leaderboard)
 		init_leaderboard()
 
 ///Get stored in database player results and fill glob_leaderboard with them
 /datum/computer_file/program/minesweeper/proc/init_leaderboard()
+	glob_leaderboard = list()
 	var/datum/db_query/minesweeper_query = SSdbcore.NewQuery("SELECT nickname, points, points_per_sec, time, width, height, bombs FROM [format_table_name("minesweeper")]")
 	if(!minesweeper_query.Execute())
+		qdel(minesweeper_query)
 		return
-	else
-		while(minesweeper_query.NextRow())
-			glob_leaderboard += list(list("name" = minesweeper_query.item[1], "time" = "[minesweeper_query.item[4]]", "points" = "[minesweeper_query.item[2]]",
-			"pointsPerSec" = "[minesweeper_query.item[3]]",
-			"fieldParams" = "[minesweeper_query.item[5]]X[minesweeper_query.item[6]]([minesweeper_query.item[7]])"))
+	while(minesweeper_query.NextRow())
+		glob_leaderboard += list(
+			list(
+				"name" = minesweeper_query.item[1],
+				"time" = "[minesweeper_query.item[4]]",
+				"points" = "[minesweeper_query.item[2]]",
+				"pointsPerSec" = "[minesweeper_query.item[3]]",
+				"fieldParams" = "[minesweeper_query.item[5]]X[minesweeper_query.item[6]]([minesweeper_query.item[7]])"
+			)
+		)
 	qdel(minesweeper_query)
 
 ///Insert new player result into database
@@ -67,8 +70,16 @@
 	if(SSdbcore.Connect())
 		var/datum/db_query/query_minesweeper = SSdbcore.NewQuery(
 			"INSERT INTO [format_table_name("minesweeper")] (ckey, time, points, points_per_sec, nickname, width, height, bombs) VALUES (:ckey, :time, :points, :points_per_sec, :nickname, :width, :height, :bombs)",
-			list("ckey" = ckey, "time" = new_result["time"], "points" = new_result["points"], "points_per_sec" = new_result["pointsPerSec"],
-			"nickname" = new_result["name"], "width" = width, "height" = height, "bombs" = bombs)
+			list(
+				"ckey" = ckey,
+				"time" = new_result["time"],
+				"points" = new_result["points"],
+				"points_per_sec" = new_result["pointsPerSec"],
+				"nickname" = new_result["name"],
+				"width" = width,
+				"height" = height,
+				"bombs" = bombs
+			)
 		)
 		query_minesweeper.Execute()
 		qdel(query_minesweeper)
@@ -360,5 +371,5 @@
 /obj/item/modular_computer/pda/emag_act(mob/user, obj/item/card/emag/emag_card, forced)
 	. = ..()
 	if(.)
-		store_file(SSmodular_computers.find_ntnet_file_by_name("minesweeper"))
+		store_file(new /datum/computer_file/program/minesweeper)
 
