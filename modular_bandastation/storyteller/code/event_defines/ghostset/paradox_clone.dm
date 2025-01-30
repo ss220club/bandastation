@@ -1,3 +1,4 @@
+/*
 /datum/round_event_control/antagonist/solo/from_ghosts/paradox_clone
 	name = "Paradox Clone"
 	tags = list(TAG_OUTSIDER_ANTAG, TAG_SPOOKY, TAG_TARGETED)
@@ -106,3 +107,5 @@
 	if(possible_targets.len)
 		return pick(possible_targets)
 	return FALSE
+
+*/
