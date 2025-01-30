@@ -12,21 +12,8 @@
 	// If main_floor is not specified in the JSON, assume the target is ON the main floor
 	if(isnull(current_map.main_floor))
 		return TRUE
-
-	// Get the main floor Z-level for the current map
-	var/get_main_floor = current_map.main_floor
-
-	// Get the Z-level of the target object
-	var/target_z = target.z
-
-	// Get the Z-level associated with the main station floor
+		
+	// Get Z-levels associated with the station
 	var/list/station_levels = levels_by_trait(ZTRAIT_STATION)
-
-	// Get the Z-level of the main station floor
-	var/station_z = station_levels[get_main_floor]
-
-	// Check if the target's Z-level matches the main station floor
-	if(target_z == station_z)
-		return TRUE
-	else
-		return FALSE
+	
+	return target.z == station_levels[current_map.main_floor]
