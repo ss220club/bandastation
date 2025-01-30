@@ -5933,6 +5933,107 @@ instrumental = "анестезийным баллоном"
 prepositional = "анестезийном баллоне"
 gender = "male"
 
+# MARK: Clothes
+
+["chemist's jumpsuit"]
+nominative = "комбинезон химика"
+genitive = "комбинезона химика"
+dative = "комбинезону химика"
+accusative = "комбинезон химика"
+instrumental = "комбинезоном химика"
+prepositional = "комбинезоне химика"
+gender = "male"
+
+["chemist's jumpskirt"]
+nominative = "юбка-комбинезон химика"
+genitive = "юбки-комбинезона химика"
+dative = "юбке-комбинезону химика"
+accusative = "юбку-комбинезон химика"
+instrumental = "юбкой-комбинезоном химика"
+prepositional = "юбке-комбинезоне химика"
+gender = "female"
+
+["chemist labcoat"]
+nominative = "халат химика"
+genitive = "халата химика"
+dative = "халату химика"
+accusative = "халат химика"
+instrumental = "халатом химика"
+prepositional = "халате химика"
+gender = "male"
+
+["chemistry winter coat"]
+nominative = "зимнее пальто химика"
+genitive = "зимнего пальто химика"
+dative = "зимнему пальто химика"
+accusative = "зимнее пальто химика"
+instrumental = "зимним пальто химика"
+prepositional = "зимнем пальто химика"
+gender = "neuter"
+
+["chemistry backpack"]
+nominative = "рюкзак химика"
+genitive = "рюкзака химика"
+dative = "рюкзаку химика"
+accusative = "рюкзак химика"
+instrumental = "рюкзаком химика"
+prepositional = "рюкзаке химика"
+gender = "male"
+
+["chemist satchel"]
+nominative = "сумка химика"
+genitive = "сумки химика"
+dative = "сумке химика"
+accusative = "сумку химика"
+instrumental = "сумкой химика"
+prepositional = "сумке химика"
+gender = "female"
+
+["pH indicator booklet"]
+nominative = "брошюра индикатора pH"
+genitive = "брошюры индикатора pH"
+dative = "брошюре индикатора pH"
+accusative = "брошюру индикатора pH"
+instrumental = "брошюрой индикатора pH"
+prepositional = "брошюре индикатора pH"
+gender = "female"
+
+["suspicious spray bottle"]
+nominative = "подозрительный спрей"
+genitive = "подозрительного спрея"
+dative = "подозрительному спрею"
+accusative = "подозрительный спрей"
+instrumental = "подозрительным спреем"
+prepositional = "подозрительном спрее"
+gender = "male"
+
+["chemistry bag"]
+nominative = "сумка для химии"
+genitive = "сумки для химии"
+dative = "сумке для химии"
+accusative = "сумку для химии"
+instrumental = "сумкой для химии"
+prepositional = "сумке для химии"
+gender = "female"
+
+["chemistry duffel bag"]
+nominative = "вещмешок химика"
+genitive = "вещмешка химика"
+dative = "вещмешку химика"
+accusative = "вещмешок химика"
+instrumental = "вещмешком химика"
+prepositional = "вещмешке химика"
+gender = "male"
+
+["chemist messenger bag"]
+nominative = "курьерская сумка химика"
+genitive = "курьерской сумки химика"
+dative = "курьерской сумке химика"
+accusative = "курьерскую сумку химика"
+instrumental = "курьерской сумкой химика"
+prepositional = "курьерской сумке химика"
+gender = "female"
+
 # MARK: Medical tools
 
 ["syringe"]
