@@ -394,6 +394,15 @@ instrumental = "аплинком Чёрного рынка"
 prepositional = "аплинке Чёрного рынка"
 gender = "male"
 
+["breath mask"]
+nominative = "маска для дыхания"
+genitive = "маски для дыхания"
+dative = "маске для дыхания"
+accusative = "маску для дыхания"
+instrumental = "маской для дыхания"
+prepositional = "маске для дыхания"
+gender = "female"
+
 # MARK: Mobs. Uncategorized
 
 # MARK: Mobs. Aliens
@@ -2203,6 +2212,15 @@ accusative = "нуарную юбку-комбинезон"
 instrumental = "нуарной юбкой-комбинезоном"
 prepositional = "нуарной юбке-комбинезоне"
 gender = "female"
+
+["noir glasses"]
+nominative = "нуарные очки"
+genitive = "нуарных очков"
+dative = "нуарным очкам"
+accusative = "нуарные очки"
+instrumental = "нуарными очками"
+prepositional = "нуарных очках"
+gender = "plural"
 
 ["laceup shoes"]
 nominative = "шнурованные туфли"
@@ -4175,14 +4193,22 @@ instrumental = "корневым пивом Ту-Тайм"
 prepositional = "корневом пиве Ту-Тайм"
 gender = "neuter"
 
+["robust coffee"]
+nominative = "кофе Робаст"
+gender = "male"
+
+["Dutch hot coco"]
+nominative = "голландский горячий шоколад"
+genitive = "голландского горячего шоколада"
+dative = "голландскому горячему шоколаду"
+accusative = "голландский горячий шоколад"
+instrumental = "голландским горячим шоколадом"
+prepositional = "голландском горячем шоколаде"
+gender = "male"
+
 # MARK: Boozies
 ["Beekhof Blauw Curaçao"]
 nominative = "Бейкхоф Блау Кюрасао"
-genitive = "Бейкхофа Блау Кюрасао"
-dative = "Бейкхофу Блау Кюрасао"
-accusative = "Бейкхоф Блау Кюрасао"
-instrumental = "Бейкхофом Блау Кюрасао"
-prepositional = "Бейкхофе Блау Кюрасао"
 gender = "male"
 
 ["Buckin' Bronco's Applejack"]
@@ -5068,6 +5094,15 @@ instrumental = "продвинутой палочкой для жарки"
 prepositional = "продвинутой палочке для жарки"
 gender = "female"
 
+["knife"]
+nominative = "нож"
+genitive = "ножа"
+dative = "ножу"
+accusative = "нож"
+instrumental = "ножом"
+prepositional = "ноже"
+gender = "male"
+
 # MARK: Vendor
 
 ["white cap"]
@@ -5280,6 +5315,41 @@ instrumental = "кубом обезьяны"
 prepositional = "кубе обезьяны"
 gender = "male"
 
+["soggy tofu"]
+nominative = "мокрый тофу"
+genitive = "мокрого тофу"
+dative = "мокрому тофу"
+accusative = "мокрый тофу"
+instrumental = "мокрым тофу"
+prepositional = "мокром тофу"
+gender = "male"
+
+["moldy 'bread' slice"]
+nominative = "плесневый ломтик 'хлеба'"
+genitive = "плесневого ломтика 'хлеба'"
+dative = "плесневому ломтику 'хлеба'"
+accusative = "плесневый ломтик 'хлеба'"
+instrumental = "плесневым ломтиком 'хлеба'"
+prepositional = "плесневом ломтике 'хлеба'"
+gender = "male"
+
+["dirty ice cup"]
+nominative = "стакан с грязным льдом"
+genitive = "стакана с грязным льдом"
+dative = "стакану с грязным льдом"
+accusative = "стакан с грязным льдом"
+instrumental = "стаканом с грязным льдом"
+prepositional = "стакане с грязным льдом"
+gender = "male"
+
+["desiccated candy corn"]
+nominative = "высушенный конфетный кукурузный початок"
+genitive = "высушенного конфетного кукурузного початка"
+dative = "высушенному конфетному кукурузному початку"
+accusative = "высушенный конфетный кукурузный початок"
+instrumental = "высушенным конфетным кукурузным початком"
+prepositional = "высушенном конфетном кукурузном початке"
+gender = "male"
 
 # MARK: Botany
 
@@ -17971,6 +18041,15 @@ accusative = "бутылку культуры Волшебнитис"
 instrumental = "бутылкой культуры Волшебнитис"
 prepositional = "бутылке культуры Волшебнитис"
 gender = "female"
+
+["foam scepter"]
+nominative = "пенный скипетр"
+genitive = "пенного скипетра"
+dative = "пенному скипетру"
+accusative = "пенный скипетр"
+instrumental = "пенным скипетром"
+prepositional = "пенном скипетре"
+gender = "male"
 
 # MARK: Pronouns
 ["ваш"]
