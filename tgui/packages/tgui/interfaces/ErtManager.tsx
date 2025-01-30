@@ -21,11 +21,12 @@ type Data = {
   ertRequestAnswered: BooleanLike;
 
   ertType: string;
+  adminSlots: number;
   commanderSlots: number;
   securitySlots: number;
   medicalSlots: number;
   engineeringSlots: number;
-  paranormalSlots: number;
+  inquisitorSlots: number;
   janitorSlots: number;
   totalSlots: number;
   ertSpawnpoints: number;
@@ -136,11 +137,12 @@ const SendERT = (props) => {
   const { act, data } = useBackend<Data>();
   const {
     ertType,
+    adminSlots,
     commanderSlots,
     securitySlots,
     medicalSlots,
     engineeringSlots,
-    paranormalSlots,
+    inquisitorSlots,
     janitorSlots,
     totalSlots,
     ertSpawnpoints,
@@ -180,12 +182,21 @@ const SendERT = (props) => {
         }
       >
         <LabeledList>
+          <LabeledList.Item label="Spawn on briefing?">
+            <Button
+              icon={adminSlots ? 'toggle-on' : 'toggle-off'}
+              selected={adminSlots}
+              content={adminSlots ? 'Yes' : 'No'}
+              onClick={() => act('toggleAdmin')}
+            />
+          </LabeledList.Item>
           <LabeledList.Item label="Commander">
             <Button
               icon={commanderSlots ? 'toggle-on' : 'toggle-off'}
               selected={commanderSlots}
               content={commanderSlots ? 'Yes' : 'No'}
-              onClick={() => act('toggleCom')}
+              tooltip="Лидер должен быть :tf:"
+              // onClick={() => act('toggleCom')
             />
           </LabeledList.Item>
           <LabeledList.Item label="Security">
@@ -230,11 +241,11 @@ const SendERT = (props) => {
               />
             ))}
           </LabeledList.Item>
-          <LabeledList.Item label="Paranormal">
+          <LabeledList.Item label="inquisitor">
             {slotOptions.map((a, i) => (
               <Button
-                key={'paranormalSlots' + a}
-                selected={paranormalSlots === a}
+                key={'inquisitorSlots' + a}
+                selected={inquisitorSlots === a}
                 content={a}
                 onClick={() =>
                   act('setPar', {
