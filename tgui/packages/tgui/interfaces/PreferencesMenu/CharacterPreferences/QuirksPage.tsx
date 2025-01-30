@@ -426,7 +426,7 @@ export function QuirksPage(props) {
           </Stack.Item>
           <Stack.Item>
             <Input
-              placeholder="Search quirks..."
+              placeholder="Поиск черт..."
               width="200px"
               value={searchQuery}
               onInput={(text, value) => setSearchQuery(value)}
