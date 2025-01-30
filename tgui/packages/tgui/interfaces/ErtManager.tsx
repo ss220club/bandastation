@@ -204,13 +204,14 @@ const SendERT = (props) => {
               <Button
                 key={'securitySlots' + slotChoice}
                 selected={securitySlots === slotChoice}
-                content={slotChoice}
                 onClick={() =>
                   act('setSec', {
                     setSec: slotChoice,
                   })
                 }
-              />
+              >
+              {slotChoice}
+              </Button>
             ))}
           </LabeledList.Item>
           <LabeledList.Item label="Medical">
@@ -218,13 +219,14 @@ const SendERT = (props) => {
               <Button
                 key={'medicalSlots' + slotChoice}
                 selected={medicalSlots === slotChoice}
-                content={slotChoice}
                 onClick={() =>
                   act('setMed', {
                     setMed: slotChoice,
                   })
                 }
-              />
+              >
+              {slotChoice}
+              </Button>
             ))}
           </LabeledList.Item>
           <LabeledList.Item label="Engineering">
@@ -232,13 +234,14 @@ const SendERT = (props) => {
               <Button
                 key={'engineeringSlots' + slotChoice}
                 selected={engineeringSlots === slotChoice}
-                content={slotChoice}
                 onClick={() =>
                   act('setEng', {
                     setEng: slotChoice,
                   })
                 }
-              />
+              >
+              {slotChoice}
+              </Button>
             ))}
           </LabeledList.Item>
           <LabeledList.Item label="inquisitor">
@@ -246,13 +249,14 @@ const SendERT = (props) => {
               <Button
                 key={'inquisitorSlots' + slotChoice}
                 selected={inquisitorSlots === slotChoice}
-                content={slotChoice}
                 onClick={() =>
                   act('setPar', {
                     set_par: slotChoice,
                   })
                 }
-              />
+              >
+              {slotChoice}
+              </Button>
             ))}
           </LabeledList.Item>
           <LabeledList.Item label="Janitor">
@@ -260,13 +264,14 @@ const SendERT = (props) => {
               <Button
                 key={'janitorSlots' + slotChoice}
                 selected={janitorSlots === slotChoice}
-                content={slotChoice}
                 onClick={() =>
                   act('setJan', {
                     setJan: slotChoice,
                   })
                 }
-              />
+              >
+              {slotChoice}
+              </Button>
             ))}
           </LabeledList.Item>
           <LabeledList.Item label="Total Slots">
