@@ -48,6 +48,7 @@
 #include "ru_jobs/_ru_jobs.dme"
 #include "security_levels/_security_levels.dme"
 #include "species/_species.dme"
+#include "speech_filter/_speech_filter.dme"
 #include "title_screen/_title_screen.dme"
 #include "translations/_translations.dme"
 #include "tts/_tts.dme"
