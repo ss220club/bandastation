@@ -6590,6 +6590,178 @@ instrumental = "робой епископа"
 prepositional = "робе епископа"
 gender = "female"
 
+# MARK: Lawyer
+["attorney's badge"]
+nominative = "значок адвоката"
+genitive = "значка адвоката"
+dative = "значку адвоката"
+accusative = "значок адвоката"
+instrumental = "значком адвоката"
+prepositional = "значке адвоката"
+gender = "male"
+
+["blue buttondown suit"]
+nominative = "синий пиджак с пуговицами"
+genitive = "синего пиджака с пуговицами"
+dative = "синему пиджаку с пуговицами"
+accusative = "синий пиджак с пуговицами"
+instrumental = "синим пиджаком с пуговицами"
+prepositional = "сином пиджаке с пуговицами"
+gender = "male"
+
+["blue buttondown suitskirt"]
+nominative = "синяя юбка-пиджак с пуговицами"
+genitive = "синей юбки-пиджака с пуговицами"
+dative = "синей юбке-пиджаку с пуговицами"
+accusative = "синюю юбку-пиджак с пуговицами"
+instrumental = "синей юбкой-пиджаком с пуговицами"
+prepositional = "синей юбке-пиджаке с пуговицами"
+gender = "female"
+
+["blue formal suit jacket"]
+nominative = "синий классический пиджак"
+genitive = "синего классического пиджака"
+dative = "синему классическому пиджаку"
+accusative = "синий классический пиджак"
+instrumental = "синим классическим пиджаком"
+prepositional = "сином классическом пиджаке"
+gender = "male"
+
+["purple suit"]
+nominative = "пурпурный пиджак"
+genitive = "пурпурного пиджака"
+dative = "пурпурному пиджаку"
+accusative = "пурпурный пиджак"
+instrumental = "пурпурным пиджаком"
+prepositional = "пурпурном пиджаке"
+gender = "male"
+
+["purple suitskirt"]
+nominative = "пурпурная юбка-пиджак"
+genitive = "пурпурной юбки-пиджака"
+dative = "пурпурной юбке-пиджаку"
+accusative = "пурпурную юбку-пиджак"
+instrumental = "пурпурной юбкой-пиджаком"
+prepositional = "пурпурной юбке-пиджаке"
+gender = "female"
+
+["purple formal suit jacket"]
+nominative = "пурпурный классический пиджак"
+genitive = "пурпурного классического пиджака"
+dative = "пурпурному классическому пиджаку"
+accusative = "пурпурный классический пиджак"
+instrumental = "пурпурным классическим пиджаком"
+prepositional = "пурпурном классическом пиджаке"
+gender = "male"
+
+["black formal suit jacket"]
+nominative = "черный классический пиджак"
+genitive = "черного классического пиджака"
+dative = "черному классическому пиджаку"
+accusative = "черный классический пиджак"
+instrumental = "черным классическим пиджаком"
+prepositional = "черном классическом пиджаке"
+gender = "male"
+
+["black two piece suit"]
+nominative = "черный двухпредметный костюм"
+genitive = "черного двухпредметного костюма"
+dative = "черному двухпредметному костюму"
+accusative = "черный двухпредметный костюм"
+instrumental = "черным двухпредметным костюмом"
+prepositional = "черном двухпредметном костюме"
+gender = "male"
+
+["good lawyer's suit"]
+nominative = "хороший костюм адвоката"
+genitive = "хорошего костюма адвоката"
+dative = "хорошему костюму адвоката"
+accusative = "хороший костюм адвоката"
+instrumental = "хорошим костюмом адвоката"
+prepositional = "хорошем костюме адвоката"
+gender = "male"
+
+["good lawyer's suitskirt"]
+nominative = "хорошая юбка-пиджак адвоката"
+genitive = "хорошей юбки-пиджака адвоката"
+dative = "хорошей юбке-пиджаку адвоката"
+accusative = "хорошую юбку-пиджак адвоката"
+instrumental = "хорошей юбкой-пиджаком адвоката"
+prepositional = "хорошей юбке-пиджаке адвоката"
+gender = "female"
+
+["executive suitskirt"]
+nominative = "юбка-пиджак руководителя"
+genitive = "юбки-пиджака руководителя"
+dative = "юбке-пиджаку руководителя"
+accusative = "юбку-пиджак руководителя"
+instrumental = "юбкой-пиджаком руководителя"
+prepositional = "юбке-пиджаке руководителя"
+gender = "female"
+
+["lawyer blue suit"]
+nominative = "синий костюм адвоката"
+genitive = "синего костюма адвоката"
+dative = "синему костюму адвоката"
+accusative = "синий костюм адвоката"
+instrumental = "синим костюмом адвоката"
+prepositional = "сином костюме адвоката"
+gender = "male"
+
+["lawyer blue suitskirt"]
+nominative = "синяя юбка-пиджак адвоката"
+genitive = "синей юбки-пиджака адвоката"
+dative = "синей юбке-пиджаку адвоката"
+accusative = "синюю юбку-пиджак адвоката"
+instrumental = "синей юбкой-пиджаком адвоката"
+prepositional = "синей юбке-пиджаке адвоката"
+gender = "female"
+
+["lawyer red suit"]
+nominative = "красный костюм адвоката"
+genitive = "красного костюма адвоката"
+dative = "красному костюму адвоката"
+accusative = "красный костюм адвоката"
+instrumental = "красным костюмом адвоката"
+prepositional = "красном костюме адвоката"
+gender = "male"
+
+["lawyer red suitskirt"]
+nominative = "красная юбка-пиджак адвоката"
+genitive = "красной юбки-пиджака адвоката"
+dative = "красной юбке-пиджаку адвоката"
+accusative = "красную юбку-пиджак адвоката"
+instrumental = "красной юбкой-пиджаком адвоката"
+prepositional = "красной юбке-пиджаке адвоката"
+gender = "female"
+
+["lawyer black suit"]
+nominative = "черный костюм адвоката"
+genitive = "черного костюма адвоката"
+dative = "черному костюму адвоката"
+accusative = "черный костюм адвоката"
+instrumental = "черным костюмом адвоката"
+prepositional = "черном костюме адвоката"
+gender = "male"
+
+["lawyer black suitskirt"]
+nominative = "черная юбка-пиджак адвоката"
+genitive = "черной юбки-пиджака адвоката"
+dative = "черной юбке-пиджаку адвоката"
+accusative = "черную юбку-пиджак адвоката"
+instrumental = "черной юбкой-пиджаком адвоката"
+prepositional = "черной юбке-пиджаке адвоката"
+gender = "female"
+
+["lawyer's headset"]
+nominative = "гарнитура адвоката"
+genitive = "гарнитуры адвоката"
+dative = "гарнитуре адвоката"
+accusative = "гарнитуру адвоката"
+instrumental = "гарнитурой адвоката"
+prepositional = "гарнитуре адвоката"
+gender = "female"
+
 # MARK: Cargo
 ["crate"]
 nominative = "ящик"
