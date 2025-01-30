@@ -64,17 +64,18 @@
 	applied_sticker = sticker
 	update_appearance(UPDATE_OVERLAYS|UPDATE_DESC)
 	to_chat(user, span_notice("Вы наклеили [sticker.declent_ru(ACCUSATIVE)] на ID карту."))
-	RegisterSignal(sticker, COMSIG_QDELETING, PROC_REF(remove_sticker))
+	RegisterSignal(sticker, COMSIG_QDELETING, PROC_REF(on_applied_sticker_qdeleting))
 
-/obj/item/card/id/advanced/proc/remove_sticker()
+/obj/item/card/id/advanced/proc/on_applied_sticker_qdeleting()
 	SIGNAL_HANDLER
 
+	remove_sticker()
+
+/obj/item/card/id/advanced/proc/remove_sticker()
 	var/obj/item/id_sticker/removed_sticker = applied_sticker
 	applied_sticker = null
 	update_appearance(UPDATE_OVERLAYS|UPDATE_DESC)
 	UnregisterSignal(removed_sticker, COMSIG_QDELETING)
-	if(QDELING(src))
-		return NONE
 	return removed_sticker
 
 /obj/machinery/pdapainter/attackby(obj/item/O, mob/living/user, params)
