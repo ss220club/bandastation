@@ -77,7 +77,7 @@
 			return ITEM_INTERACT_BLOCKING
 
 		var/trans = round(target.reagents.trans_to(src, amount_per_transfer_from_this, transferred_by = user), CHEMICAL_VOLUME_ROUNDING)
-		to_chat(user, span_notice("You fill [src] with [trans] units of the contents of [target]."))
+		to_chat(user, span_notice("Вы наполняете [declent_ru(ACCUSATIVE)] на [trans] [declension_ru(trans,"юнит","юнита","юнитов")] из [target.declent_ru(GENITIVE)]."))
 		return ITEM_INTERACT_SUCCESS
 
 	//Something like a glass or a food item. Player probably wants to transfer TO it.
@@ -89,7 +89,7 @@
 			to_chat(user, span_warning("Внутри [target.declent_ru(GENITIVE)] недостаточно места!"))
 			return ITEM_INTERACT_BLOCKING
 		var/trans = round(reagents.trans_to(target, amount_per_transfer_from_this, transferred_by = user), CHEMICAL_VOLUME_ROUNDING)
-		to_chat(user, span_notice("You transfer [trans] units of the condiment to [target]."))
+		to_chat(user, span_notice("Вы переносите [trans] [declension_ru(trans,"юнит","юнита","юнитов")] в [target.declent_ru(ACCUSATIVE)]."))
 		return ITEM_INTERACT_SUCCESS
 
 	return NONE
@@ -457,7 +457,7 @@
 			to_chat(user, span_warning("Вы вскрываете [declent_ru(ACCUSATIVE)], но [target.declent_ru(NOMINATIVE)] заполнен настолько, что всё просто стекает!"))
 			qdel(src)
 			return ITEM_INTERACT_BLOCKING
-		to_chat(user, span_notice("You tear open [src] above [target] and the condiments drip onto it."))
+		to_chat(user, span_notice("Вы вскрываете [declent_ru(ACCUSATIVE)] над [target.declent_ru(INSTRUMENTAL)] и добавляете содержимое в блюдо."))
 		reagents.trans_to(target, amount_per_transfer_from_this, transferred_by = user)
 		qdel(src)
 		return ITEM_INTERACT_SUCCESS
@@ -469,7 +469,7 @@
 
 	if(!reagents.total_volume)
 		icon_state = "condi_empty"
-		desc = "A small condiment pack. It is empty."
+		desc = "Небольшой пустой пакетик с приправами."
 		return
 	var/datum/reagent/main_reagent = reagents.get_master_reagent()
 
