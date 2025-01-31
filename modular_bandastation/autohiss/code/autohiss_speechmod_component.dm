@@ -7,13 +7,13 @@
 
 /datum/component/speechmod/proc/set_target_mob(mob/owner)
 	if(!istype(owner))
-		UnregisterSignal(targeted, COMSIG_AUTOHISS_HANDLER)
+		UnregisterSignal(targeted, COMSIG_AUTOHISS_GET_PARENTS)
 	targeted = owner
 	if(!istype(targeted))
 		return
-	RegisterSignal(targeted, COMSIG_AUTOHISS_HANDLER, PROC_REF(get_me_there))
+	RegisterSignal(targeted, COMSIG_AUTOHISS_GET_PARENTS, PROC_REF(add_to_autohiss_list))
 
-/datum/component/speechmod/proc/get_me_there(mob/target, list/speechmod_parents)
+/datum/component/speechmod/proc/add_to_autohiss_list(mob/target, list/speechmod_parents)
 	SIGNAL_HANDLER
 
 	if(autohiss_toggleable)

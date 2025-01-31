@@ -1,1 +1,1 @@
-#define COMSIG_AUTOHISS_HANDLER "autohiss_handler"
+#define COMSIG_AUTOHISS_GET_PARENTS "autohiss_get_parents"
