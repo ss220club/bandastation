@@ -58,6 +58,8 @@
 /obj/item/organ/brain/vulpkanin
 	icon = 'modular_bandastation/species/icons/mob/species/vulpkanin/organs.dmi'
 	actions_types = list(/datum/action/cooldown/sniff)
+	brain_size = 0.75
+
 
 /obj/item/organ/lungs/vulpkanin
 	name = "vulpkanin lungs"
