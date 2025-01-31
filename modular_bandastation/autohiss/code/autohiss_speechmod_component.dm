@@ -1,4 +1,5 @@
 /datum/component/speechmod
+	/// Can autohiss be disabled by player?
 	var/autohiss_toggleable = FALSE
 
 /datum/component/speechmod/Initialize(replacements, end_string, end_string_chance, slots, uppercase, should_modify_speech, autohiss_toggleable)
