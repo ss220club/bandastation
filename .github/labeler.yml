@@ -52,6 +52,9 @@
     - base-branch: 'master'
     - head-branch: 'merge-upstream'
 
+':pencil: Перевод':
+  - head-branch: ['^translate', 'translate', '^translation', 'translation']
+
 ':wrench: Фикс':
   - head-branch: ['^fix', 'fix']
 
