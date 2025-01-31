@@ -4,7 +4,7 @@
 		)
 	. = ..()
 
-/obj/machinery/vending/chefdrobe/Initialize(mapload)
+/obj/machinery/vending/wardrobe/chef_wardrobe/Initialize(mapload)
 	products += list(
 		/obj/item/clothing/under/rank/civilian/chef/red = 2,
 		/obj/item/clothing/suit/chef/red = 2,
@@ -24,5 +24,13 @@
 		/obj/item/clothing/suit/armor/vest/bomber = 3,
 		/obj/item/clothing/suit/armor/vest/coat = 3,
 		/obj/item/clothing/suit/armor/vest/caftan = 3,
+		)
+	. = ..()
+
+/obj/machinery/vending/wardrobe/science_wardrobe/Initialize(mapload)
+	products += list(
+		/obj/item/clothing/head/cowboy/science = 3,
+		/obj/item/clothing/suit/jacket/bomber/science = 3,
+		/obj/item/clothing/neck/cloak/sci_mantle = 3,
 		)
 	. = ..()
