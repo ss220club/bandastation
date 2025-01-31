@@ -32,7 +32,7 @@
 	if(HAS_TRAIT(target, TRAIT_FISHING_SPOT))
 		return
 
-	target.AddComponent(/datum/component/fishing_spot, /datum/fish_source/surgery)
+	// target.AddComponent(/datum/component/fishing_spot, /datum/fish_source/surgery) // BANDASTATION REMOVAL
 
 /datum/surgery/organ_manipulation/Destroy()
 	if(QDELETED(target) || !HAS_TRAIT(target, TRAIT_FISHING_SPOT))
