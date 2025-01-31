@@ -138,5 +138,5 @@
 	cost = CARGO_CRATE_VALUE * 2
 	access_view = ACCESS_WEAPONS
 	contains = list(
-		/obj/item/ammo_box/c35sol/pierce = 1,
+		/obj/item/ammo_box/c35sol = 1,
 		)
