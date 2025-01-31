@@ -8,6 +8,7 @@
 		"Donkie.vscode-tgstation-test-adapter",
 		"anturk.dmi-editor",
 		"esbenp.prettier-vscode",
-		"emilast.LogFileHighlighter"
+		"emilast.LogFileHighlighter",
+		"earshinov.filter-lines"
 	]
 }
