@@ -117,7 +117,6 @@
 
 	if(the_surgery.status == 1)
 		patient.surgeries -= the_surgery
-		REMOVE_TRAIT(patient, TRAIT_ALLOWED_HONORBOUND_ATTACK, type)
 		user.visible_message(
 			span_notice("[capitalize(user.declent_ru(NOMINATIVE))] снимает [parent.declent_ru(ACCUSATIVE)] с [patient.parse_zone_with_bodypart(selected_zone, declent = GENITIVE)] у [patient.declent_ru(GENITIVE)]."),
 			span_notice("Вы снимаете [parent.declent_ru(ACCUSATIVE)] с [patient.parse_zone_with_bodypart(selected_zone, declent = GENITIVE)] у [patient.declent_ru(GENITIVE)]."),
@@ -142,7 +141,6 @@
 		the_surgery.operated_bodypart.adjustBleedStacks(-5)
 
 	patient.surgeries -= the_surgery
-	REMOVE_TRAIT(patient, TRAIT_ALLOWED_HONORBOUND_ATTACK, ELEMENT_TRAIT(type))
 
 	user.visible_message(
 		span_notice("[capitalize(user.declent_ru(NOMINATIVE))] закрывает [patient.parse_zone_with_bodypart(selected_zone)] у [patient.declent_ru(GENITIVE)], используя [close_tool.declent_ru(ACCUSATIVE)] и снимая [parent.declent_ru(ACCUSATIVE)]."),
@@ -307,7 +305,6 @@
 	ui_close()
 
 	var/datum/surgery/procedure = new surgery.type(target, selected_zone, affecting_limb)
-	ADD_TRAIT(target, TRAIT_ALLOWED_HONORBOUND_ATTACK, type)
 
 	target.balloon_alert(user, "начинается \"[LOWER_TEXT(procedure.name)]\"")
 
