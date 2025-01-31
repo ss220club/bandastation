@@ -3,7 +3,7 @@
 	filedesc = "Dinner Manager"
 	downloader_category = PROGRAM_CATEGORY_SECURITY
 	program_open_overlay = "generic"
-	extended_desc = "Программа позваляет удалённо управлять обеденным менеджером."
+	extended_desc = "Программа позволяет удалённо управлять обеденным менеджером."
 	program_flags = PROGRAM_UNIQUE_COPY
 	size = 4
 	tgui_id = "NtosDinnerManager"
