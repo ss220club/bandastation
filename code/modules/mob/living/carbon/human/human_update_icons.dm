@@ -535,7 +535,7 @@ There are several things that need to be remembered:
 		var/icon_file = 'icons/mob/clothing/mask.dmi'
 		var/list/icon_files_species = list(
 			"vulpkanin" = 'modular_bandastation/species/icons/mob/species/vulpkanin/clothing/mask.dmi',
-			"tajaran" = 'modular_bandastation/species/icons/mob/species/tajaran/clothing/mask.dmi',
+			"tajaran" = 'modular_bandastation/species/icons/mob/species/tajaran/clothing/mask.dmi'
 		)
 
 		var/mutant_override = FALSE
