@@ -7,6 +7,7 @@
 	min_players = 20
 	antag_datum = /datum/antagonist/blob/infection
 	maximum_antags = 1
+	event_group = /datum/event_group/blobs
 
 /datum/round_event_control/antagonist/solo/blob/midround
 	name = "Blob infection (Blob)"

@@ -42,3 +42,8 @@
 	name = "Scrubber Overflows"
 	cooldown_time = list(25 MINUTES, 45 MINUTES)
 	max_occurrences = 2
+
+/datum/event_group/blobs
+	name = "Blobs"
+	max_occurrences = 1
+	cooldown_time = list(7.5 MINUTES, 20 MINUTES)

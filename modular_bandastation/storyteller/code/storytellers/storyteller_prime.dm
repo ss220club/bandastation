@@ -19,4 +19,4 @@
 		/datum/round_event_control/stray_cargo/syndicate,
 	)
 	antag_denominator = 15
-	final_cap_multiplier = 0.7
+	roundstart_cap_multiplier = 0.7

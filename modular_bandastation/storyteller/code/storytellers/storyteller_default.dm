@@ -4,4 +4,4 @@
 	always_votable = TRUE
 	welcome_text = "I am not Randy!"
 	weight = 6
-	final_cap_multiplier = 0.7
+	roundstart_cap_multiplier = 0.7

@@ -229,7 +229,7 @@ SUBSYSTEM_DEF(gamemode)
 	if(pop_count < current_storyteller.min_antag_popcount && !forced)
 		return 0
 	var/total_number = pop_count + (sec_crew * current_storyteller.sec_antag_modifier)
-	var/cap = FLOOR((total_number / current_storyteller.antag_denominator) * current_storyteller.final_cap_multiplier, 1) + current_storyteller.antag_flat_cap
+	var/cap = FLOOR((total_number / current_storyteller.antag_denominator) * current_storyteller.roundstart_cap_multiplier, 1) + current_storyteller.antag_flat_cap
 	return cap
 
 /datum/controller/subsystem/gamemode/proc/get_antag_count()
@@ -713,6 +713,7 @@ SUBSYSTEM_DEF(gamemode)
 	rountstart_general_events_run(valid_events, track)
 
 	message_admins("Storyteller finished to get roundstart events with points left - [roundstart_budget].")
+	current_storyteller.roundstart_cap_multiplier = 1
 
 /datum/controller/subsystem/gamemode/proc/recalculate_roundstart_budget()
 	var/pop_count = ready_players + (sec_crew * current_storyteller.sec_antag_modifier)
@@ -1032,11 +1033,14 @@ SUBSYSTEM_DEF(gamemode)
 		current_storyteller = /datum/storyteller/default //if we dont have any then we brick, lets not do that
 		CRASH("Attempted to set an invalid storyteller type: [passed_type].")
 	var/passed_state = FALSE
+	var/passed_multiplayer
 	if (current_storyteller)
 		passed_state = current_storyteller.round_started
+		passed_multiplayer = current_storyteller.roundstart_cap_multiplier
 		current_storyteller.round_started = FALSE
 	current_storyteller = storytellers[passed_type]
 	current_storyteller.round_started = passed_state
+	current_storyteller.round_started = passed_multiplayer
 	if(!secret_storyteller)
 		send_to_playing_players(span_notice("<b>Storyteller is [current_storyteller.name]!</b>"))
 		send_to_playing_players(span_notice("[current_storyteller.welcome_text]"))
@@ -1069,10 +1073,11 @@ SUBSYSTEM_DEF(gamemode)
 			dat += "<BR><font color='#888888'><i>This value affects how many players count as low pop and makes the antag cap value to zero if it is below.</i></font>"
 			dat += "<BR>Guarantees Roundstart Roleset: <a href='byond://?src=[REF(src)];panel=main;action=vars;var=vars_guarante_roundstart;'>[current_storyteller.guarantees_roundstart_roleset ? "TRUE" : "FALSE" ]</a>"
 			dat += "<BR>Storyteller Antag Cap Formula: floor((pop_count + secs * sec_antag_modifier) / denominator) * cap_multiplier + addiction"
-			dat += "<BR>Storyteller Antag Cap result: floor(([get_correct_popcount()] + [sec_crew] * [current_storyteller.sec_antag_modifier]) / [current_storyteller.antag_denominator]) * [current_storyteller.final_cap_multiplier] + [current_storyteller.antag_flat_cap]"
+			dat += "<BR>Storyteller Antag Cap result: floor(([get_correct_popcount()] + [sec_crew] * [current_storyteller.sec_antag_modifier]) / [current_storyteller.antag_denominator]) * [SSticker.HasRoundStarted() ? current_storyteller.roundstart_cap_multiplier : ""]  + [current_storyteller.antag_flat_cap]"
 			dat += "<BR>Sec antag modifier: <a href='byond://?src=[REF(src)];panel=main;action=vars;var=vars_sec_antag;'>[current_storyteller.sec_antag_modifier]</a>"
 			dat += "<BR>Antag addiction: <a href='byond://?src=[REF(src)];panel=main;action=vars;var=vars_addiction;'>[current_storyteller.antag_flat_cap]</a>"
-			dat += "<BR>Antag cap multiplier: <a href='byond://?src=[REF(src)];panel=main;action=vars;var=vars_cap_mult;'>[current_storyteller.final_cap_multiplier]</a>"
+			if(!SSticker.HasRoundStarted())
+				dat += "<BR>Antag roundstart cap multiplier: <a href='byond://?src=[REF(src)];panel=main;action=vars;var=vars_cap_mult;'>[current_storyteller.roundstart_cap_multiplier]</a>"
 			dat += "<BR>Antag denominator: <a href='byond://?src=[REF(src)];panel=main;action=vars;var=vars_denominator;'>[current_storyteller.antag_denominator]</a>"
 			dat += "<BR><font color='#888888'><i>This affects how many antagonist can system spawn.</i></font>"
 			dat += "<HR>"
@@ -1400,7 +1405,7 @@ SUBSYSTEM_DEF(gamemode)
 							if(isnull(new_value) || new_value < 0)
 								return
 							message_admins("[key_name_admin(usr)] set basic storyteller cap multiplier to [new_value].")
-							current_storyteller.final_cap_multiplier = new_value
+							current_storyteller.roundstart_cap_multiplier = new_value
 						if("vars_guarante_roundstart")
 							var/new_value = !current_storyteller.guarantees_roundstart_roleset
 							message_admins("[key_name_admin(usr)] set basic storyteller multiplier to [new_value].")

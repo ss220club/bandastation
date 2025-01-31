@@ -12,6 +12,16 @@
 	tags = list(TAG_COMMUNAL, TAG_SPOOKY)
 	eng_required_power = 1
 
+/datum/round_event_control/fugitives
+	track = EVENT_TRACK_MODERATE
+	tags = list(TAG_COMBAT)
+	checks_antag_cap = TRUE
+
+/datum/round_event_control/pirates
+	track = EVENT_TRACK_MODERATE
+	tags = list(TAG_COMBAT, TAG_COMMUNAL)
+	checks_antag_cap = TRUE
+
 /datum/round_event_control/ion_storm
 	tags = list(TAG_TARGETED, TAG_ALIEN)
 	event_group = /datum/event_group/bsod

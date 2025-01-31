@@ -275,7 +275,9 @@
 	var/decided_count = rand(base_antags, maximum_antags)
 	var/current_cap = SSgamemode.get_antag_cap(forced_event)
 	var/gamemode_antags_left = current_cap - SSgamemode.get_antag_count()
-	var/maximum_to_spawn = min(gamemode_antags_left, maximum_antags)
+	var/maximum_to_spawn_on_calculation = min(gamemode_antags_left, maximum_antags)
+	var/maximum_to_spawn_on_population = FLOOR(SSgamemode.get_correct_popcount() / denominator, 1)
+	var/maximum_to_spawn = min(maximum_to_spawn_on_calculation, maximum_to_spawn_on_population)
 	var/clamped_value = clamp(decided_count, 0, maximum_to_spawn)
 	//Maximum antags per round left to spawn
 	//Получить уже количество антагов в раунде

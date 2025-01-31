@@ -14,16 +14,6 @@
 	track = EVENT_TRACK_MAJOR
 	tags = list(TAG_DESTRUCTIVE, TAG_SPOOKY)
 
-/datum/round_event_control/fugitives
-	track = EVENT_TRACK_MAJOR
-	tags = list(TAG_COMBAT)
-	checks_antag_cap = TRUE
-
-/datum/round_event_control/pirates
-	track = EVENT_TRACK_MAJOR
-	tags = list(TAG_COMBAT, TAG_COMMUNAL)
-	checks_antag_cap = TRUE
-
 /datum/round_event_control/operative
 	track = EVENT_TRACK_MAJOR //this is a safe guard and does not trigger normally(technically it can but not really) so no tags
 	checks_antag_cap = TRUE
