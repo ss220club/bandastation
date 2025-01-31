@@ -1,5 +1,5 @@
 /datum/mind
-	/// List of tongues which the mind will prevent from using speechmod (Auto-hiss)
+	/// List of types which the mind will prevent from using speechmod (Auto-hiss)
 	var/list/autohiss_disabled_types = list()
 
 /datum/mind/proc/toggle_autohiss(datum/speechmod_parent)
