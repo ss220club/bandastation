@@ -1070,16 +1070,16 @@ SUBSYSTEM_DEF(gamemode)
 
 			dat += "<BR><b>Storyteller Basic Variables:</b>"
 			dat += "<BR>Storyteller Antag Low pop:<a href='byond://?src=[REF(src)];panel=main;action=vars;var=vars_lowpop;'>[current_storyteller.min_antag_popcount]</a>"
-			dat += "<BR><font color='#888888'><i>This value affects how many players count as low pop and makes the antag cap value to zero if it is below.</i></font>"
+			dat += "<BR><font color='#888888'><i>Это значение устанавливает то, сколько игроков считается минимально-необходимым для спавна антагонистов</i></font>"
 			dat += "<BR>Guarantees Roundstart Roleset: <a href='byond://?src=[REF(src)];panel=main;action=vars;var=vars_guarante_roundstart;'>[current_storyteller.guarantees_roundstart_roleset ? "TRUE" : "FALSE" ]</a>"
-			dat += "<BR>Storyteller Antag Cap Formula: floor((pop_count + secs * sec_antag_modifier) / denominator) * cap_multiplier + addiction"
-			dat += "<BR>Storyteller Antag Cap result: floor(([get_correct_popcount()] + [sec_crew] * [current_storyteller.sec_antag_modifier]) / [current_storyteller.antag_denominator]) * [SSticker.HasRoundStarted() ? current_storyteller.roundstart_cap_multiplier : ""]  + [current_storyteller.antag_flat_cap]"
+			dat += "<BR>Storyteller Antag Cap Formula: floor((pop_count + secs * sec_antag_modifier) / denominator)[!SSticker.HasRoundStarted() ? " *  roundstart cap multiplier" : ""] + addiction"
+			dat += "<BR>Storyteller Antag Cap Result: floor(([get_correct_popcount()] + [sec_crew] * [current_storyteller.sec_antag_modifier]) / [current_storyteller.antag_denominator])[!SSticker.HasRoundStarted() ? " * [current_storyteller.roundstart_cap_multiplier]" : ""]  + [current_storyteller.antag_flat_cap]"
 			dat += "<BR>Sec antag modifier: <a href='byond://?src=[REF(src)];panel=main;action=vars;var=vars_sec_antag;'>[current_storyteller.sec_antag_modifier]</a>"
 			dat += "<BR>Antag addiction: <a href='byond://?src=[REF(src)];panel=main;action=vars;var=vars_addiction;'>[current_storyteller.antag_flat_cap]</a>"
 			if(!SSticker.HasRoundStarted())
 				dat += "<BR>Antag roundstart cap multiplier: <a href='byond://?src=[REF(src)];panel=main;action=vars;var=vars_cap_mult;'>[current_storyteller.roundstart_cap_multiplier]</a>"
 			dat += "<BR>Antag denominator: <a href='byond://?src=[REF(src)];panel=main;action=vars;var=vars_denominator;'>[current_storyteller.antag_denominator]</a>"
-			dat += "<BR><font color='#888888'><i>This affects how many antagonist can system spawn.</i></font>"
+			dat += "<BR><font color='#888888'><i>Эта настройка влияет на то, сколько антагонистов может заспавниться максимум на 1 члена экипажа.</i></font>"
 			dat += "<HR>"
 
 			if(!SSticker.HasRoundStarted())
