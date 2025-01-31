@@ -88,9 +88,9 @@
 
 /datum/supply_pack/goody/wespe_mags_extended_single
 	name = ".35 Sol Extended Magazine Crate"
-	desc = "Not enough bullets in mag? No worries, this crate contains two extended .35 Sol magazines."
+	desc = "Not enough bullets in mag? No worries, this crate contains one extended .35 Sol magazine."
 	cost = CARGO_CRATE_VALUE * 3
-	access_view = ACCESS_SECURITY
+	access_view = ACCESS_WEAPONS
 	contains = list(
 		/obj/item/ammo_box/magazine/c35sol_pistol/stendo/starts_empty = 1,
 	    )
