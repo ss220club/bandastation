@@ -25,3 +25,6 @@
 		GLOB.autodrobe_fancy_items \
 		+ GLOB.autodrobe_other_items
 	)
+	GLOB.arcade_prize_pool += list(
+		/obj/item/storage/box/id_stickers = 2
+	)
