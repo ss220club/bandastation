@@ -399,7 +399,7 @@ There are several things that need to be remembered:
 		var/mutant_override = FALSE
 
 		var/obj/item/bodypart/head/bodypart_head = src.get_bodypart(BODY_ZONE_HEAD)
-		if(worn_item.worn_icon_species && worn_item.worn_icon_species[bodypart_head.species_bodytype])
+		if(worn_item.worn_icon_species?[bodypart_head.species_bodytype])
 			icon_file = worn_item.worn_icon_species[bodypart_head.species_bodytype]
 			mutant_override = TRUE
 		else if(bodypart_head.species_bodytype in icon_files_species)
@@ -468,7 +468,7 @@ There are several things that need to be remembered:
 		var/mutant_override = FALSE
 
 		var/obj/item/bodypart/chest/bodypart_chest = src.get_bodypart(BODY_ZONE_CHEST)
-		if(worn_item.worn_icon_species && worn_item.worn_icon_species[bodypart_chest.species_bodytype])
+		if(worn_item.worn_icon_species?[bodypart_chest.species_bodytype])
 			icon_file = worn_item.worn_icon_species[bodypart_chest.species_bodytype]
 			mutant_override = TRUE
 		else if(bodypart_chest.species_bodytype in icon_files_species)
@@ -538,7 +538,7 @@ There are several things that need to be remembered:
 		var/mutant_override = FALSE
 
 		var/obj/item/bodypart/head/bodypart_head = src.get_bodypart(BODY_ZONE_HEAD)
-		if(worn_item.worn_icon_species && worn_item.worn_icon_species[bodypart_head.species_bodytype])
+		if(worn_item.worn_icon_species?[bodypart_head.species_bodytype])
 			icon_file = worn_item.worn_icon_species[bodypart_head.species_bodytype]
 			mutant_override = TRUE
 		else if(bodypart_head.species_bodytype in icon_files_species)
