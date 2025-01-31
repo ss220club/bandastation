@@ -481,11 +481,11 @@
 #define MAX_REVIVE_FIRE_DAMAGE 180
 #define MAX_REVIVE_BRUTE_DAMAGE 180
 
-#define DEFAULT_BRUTE_EXAMINE_TEXT "bruising"
-#define DEFAULT_BURN_EXAMINE_TEXT "burns"
+#define DEFAULT_BRUTE_EXAMINE_TEXT "ушибы"
+#define DEFAULT_BURN_EXAMINE_TEXT "ожоги"
 
-#define ROBOTIC_BRUTE_EXAMINE_TEXT "denting"
-#define ROBOTIC_BURN_EXAMINE_TEXT "charring"
+#define ROBOTIC_BRUTE_EXAMINE_TEXT "вмятины"
+#define ROBOTIC_BURN_EXAMINE_TEXT "обугления"
 
 #define GLASSY_BRUTE_EXAMINE_TEXT "cracking"
 #define GLASSY_BURN_EXAMINE_TEXT "deformation"
@@ -519,13 +519,13 @@
 // Randomization keys for calling wabbajack with.
 // Note the contents of these keys are important, as they're displayed to the player
 // Ex: (You turn into a "monkey", You turn into a "xenomorph")
-#define WABBAJACK_MONKEY "monkey"
-#define WABBAJACK_ROBOT "robot"
-#define WABBAJACK_CLOWN "clown"
-#define WABBAJACK_SLIME "slime"
-#define WABBAJACK_XENO "xenomorph"
-#define WABBAJACK_HUMAN "humanoid"
-#define WABBAJACK_ANIMAL "animal"
+#define WABBAJACK_MONKEY "мартышки"
+#define WABBAJACK_ROBOT "робота"
+#define WABBAJACK_CLOWN "клоуна"
+#define WABBAJACK_SLIME "слайма"
+#define WABBAJACK_XENO "ксеноморфа"
+#define WABBAJACK_HUMAN "гуманоида"
+#define WABBAJACK_ANIMAL "животного"
 
 // Reasons a defibrillation might fail
 #define DEFIB_POSSIBLE (1<<0)
