@@ -3,14 +3,14 @@ import {
   Box,
   Button,
   Icon,
-  Input,
   LabeledList,
   Section,
   Stack,
   Tabs,
+  TextArea,
 } from 'tgui-core/components';
 import { BooleanLike } from 'tgui-core/react';
-import { decodeHtmlEntities } from 'tgui-core/string';
+import { toTitleCase, decodeHtmlEntities } from 'tgui-core/string';
 
 import { useBackend } from '../backend';
 import { Window } from '../layouts';
@@ -19,7 +19,6 @@ type Data = {
   securityLevelColor: string;
   securityLevel: string;
   ertRequestAnswered: BooleanLike;
-
   ertType: string;
   adminSlots: number;
   commanderSlots: number;
@@ -30,7 +29,6 @@ type Data = {
   janitorSlots: number;
   totalSlots: number;
   ertSpawnpoints: number;
-
   ertRequestMessages: MessageType[];
 };
 
@@ -41,7 +39,7 @@ type MessageType = {
   message: string;
 };
 
-export const ERTManager = (props) => {
+export const ErtManager = (props) => {
   const { act, data } = useBackend<Data>();
   const [tabIndex, setTabIndex] = useState(0);
 
@@ -112,20 +110,23 @@ const ERTOverview = (props) => {
     <Stack.Item>
       <Section title="Overview">
         <LabeledList>
-          <LabeledList.Item label="Current Alert" color={securityLevelColor}>
-            {securityLevel}
+          <LabeledList.Item label="Current Alert">
+            <Button icon="triangle-exclamation" color={securityLevelColor}>
+              {securityLevel}
+            </Button>
           </LabeledList.Item>
           <LabeledList.Item label="ERT Request">
             <Button.Checkbox
+              selected={null}
               checked={ertRequestAnswered}
               textColor={ertRequestAnswered ? null : 'bad'}
-              content={ertRequestAnswered ? 'Answered' : 'Unanswered'}
-              onClick={() => act('toggleErtRequestAnswered')}
               tooltip={
                 'Checking this box will disable the next ERT reminder notification'
               }
-              selected={null}
-            />
+              onClick={() => act('toggleErtRequestAnswered')}
+            >
+              {ertRequestAnswered ? 'Answered' : 'Unanswered'}
+            </Button.Checkbox>
           </LabeledList.Item>
         </LabeledList>
       </Section>
@@ -135,19 +136,23 @@ const ERTOverview = (props) => {
 
 const SendERT = (props) => {
   const { act, data } = useBackend<Data>();
-  const {
-    ertType,
-    adminSlots,
-    commanderSlots,
-    securitySlots,
-    medicalSlots,
-    engineeringSlots,
-    inquisitorSlots,
-    janitorSlots,
-    totalSlots,
-    ertSpawnpoints,
-  } = data;
-  let slotOptions = [0, 1, 2, 3, 4, 5];
+  const { ertType, adminSlots, commanderSlots, totalSlots, ertSpawnpoints } =
+    data;
+
+  const ertNum = [0, 1, 2, 3, 4, 5];
+  enum ERTJOB {
+    security = 'setSec',
+    medical = 'setMed',
+    engineering = 'setEng',
+    janitor = 'setJan',
+    inquisitor = 'setInq',
+  }
+
+  enum ERTTYPE {
+    Amber = 'orange',
+    Red = 'red',
+    Gamma = 'yellow',
+  }
 
   return (
     <Stack.Item grow>
@@ -157,138 +162,78 @@ const SendERT = (props) => {
         title="Send ERT"
         buttons={
           <>
-            <Button
-              width={5}
-              content="Amber"
-              textAlign="center"
-              color={ertType === 'Amber' ? 'orange' : ''}
-              onClick={() => act('ertType', { ertType: 'Amber' })}
-            />
-            <Button
-              width={5}
-              content="Red"
-              textAlign="center"
-              color={ertType === 'Red' ? 'red' : ''}
-              onClick={() => act('ertType', { ertType: 'Red' })}
-            />
-            <Button
-              width={5}
-              content="Gamma"
-              textAlign="center"
-              color={ertType === 'Gamma' ? 'orange' : ''}
-              onClick={() => act('ertType', { ertType: 'Gamma' })}
-            />
+            {Object.entries(ERTTYPE).map(([typeName, typeColor]) => (
+              <Button
+                width={5}
+                textAlign="center"
+                color={ertType === typeName && typeColor}
+                onClick={() => act('ertType', { ertType: typeName })}
+              >
+                {typeName}
+              </Button>
+            ))}
           </>
         }
       >
-        <LabeledList>
-          <LabeledList.Item label="Spawn on briefing?">
+        <Stack fill vertical>
+          <Stack.Item grow>
+            <LabeledList>
+              <LabeledList.Item label="Spawn on briefing?">
+                <Button
+                  icon={adminSlots ? 'toggle-on' : 'toggle-off'}
+                  selected={adminSlots}
+                  tooltip="Нужно быть гостом"
+                  onClick={() => act('toggleAdmin')}
+                >
+                  {adminSlots ? 'Yes' : 'No'}
+                </Button>
+              </LabeledList.Item>
+              <LabeledList.Item label="Commander">
+                <Button
+                  icon={commanderSlots ? 'toggle-on' : 'toggle-off'}
+                  selected={commanderSlots}
+                  tooltip="Лидер должен быть"
+                  onClick={() => act('toggleCom')}
+                >
+                  {commanderSlots ? 'Yes' : 'No'}
+                </Button>
+              </LabeledList.Item>
+
+              {Object.entries(ERTJOB).map(([typeName, typeAct]) => {
+                const slotKey = `${typeName}Slots` as const;
+                return (
+                  <LabeledList.Item label={toTitleCase(typeName)}>
+                    {ertNum.map((number) => (
+                      <Button
+                        key={typeName + number}
+                        selected={data[slotKey] === number}
+                        onClick={() => act(typeAct, { [typeAct]: number })}
+                      >
+                        {number}
+                      </Button>
+                    ))}
+                  </LabeledList.Item>
+                );
+              })}
+
+              <LabeledList.Item label="Total Slots">
+                <Box color={totalSlots > ertSpawnpoints ? 'red' : 'green'}>
+                  {totalSlots} total, versus {ertSpawnpoints} spawnpoints
+                </Box>
+              </LabeledList.Item>
+            </LabeledList>
+          </Stack.Item>
+          <Stack.Item>
             <Button
-              icon={adminSlots ? 'toggle-on' : 'toggle-off'}
-              selected={adminSlots}
-              content={adminSlots ? 'Yes' : 'No'}
-              onClick={() => act('toggleAdmin')}
-            />
-          </LabeledList.Item>
-          <LabeledList.Item label="Commander">
-            <Button
-              icon={commanderSlots ? 'toggle-on' : 'toggle-off'}
-              selected={commanderSlots}
-              content={commanderSlots ? 'Yes' : 'No'}
-              tooltip="Лидер должен быть :tf:"
-              // onClick={() => act('toggleCom')
-            />
-          </LabeledList.Item>
-          <LabeledList.Item label="Security">
-            {slotOptions.map((slotChoice) => (
-              <Button
-                key={'securitySlots' + slotChoice}
-                selected={securitySlots === slotChoice}
-                onClick={() =>
-                  act('setSec', {
-                    setSec: slotChoice,
-                  })
-                }
-              >
-              {slotChoice}
-              </Button>
-            ))}
-          </LabeledList.Item>
-          <LabeledList.Item label="Medical">
-            {slotOptions.map((slotChoice) => (
-              <Button
-                key={'medicalSlots' + slotChoice}
-                selected={medicalSlots === slotChoice}
-                onClick={() =>
-                  act('setMed', {
-                    setMed: slotChoice,
-                  })
-                }
-              >
-              {slotChoice}
-              </Button>
-            ))}
-          </LabeledList.Item>
-          <LabeledList.Item label="Engineering">
-            {slotOptions.map((slotChoice) => (
-              <Button
-                key={'engineeringSlots' + slotChoice}
-                selected={engineeringSlots === slotChoice}
-                onClick={() =>
-                  act('setEng', {
-                    setEng: slotChoice,
-                  })
-                }
-              >
-              {slotChoice}
-              </Button>
-            ))}
-          </LabeledList.Item>
-          <LabeledList.Item label="inquisitor">
-            {slotOptions.map((slotChoice) => (
-              <Button
-                key={'inquisitorSlots' + slotChoice}
-                selected={inquisitorSlots === slotChoice}
-                onClick={() =>
-                  act('setPar', {
-                    set_par: slotChoice,
-                  })
-                }
-              >
-              {slotChoice}
-              </Button>
-            ))}
-          </LabeledList.Item>
-          <LabeledList.Item label="Janitor">
-            {slotOptions.map((slotChoice) => (
-              <Button
-                key={'janitorSlots' + slotChoice}
-                selected={janitorSlots === slotChoice}
-                onClick={() =>
-                  act('setJan', {
-                    setJan: slotChoice,
-                  })
-                }
-              >
-              {slotChoice}
-              </Button>
-            ))}
-          </LabeledList.Item>
-          <LabeledList.Item label="Total Slots">
-            <Box color={totalSlots > ertSpawnpoints ? 'red' : 'green'}>
-              {totalSlots} total, versus {ertSpawnpoints} spawnpoints
-            </Box>
-          </LabeledList.Item>
-          <LabeledList.Item label="Dispatch">
-            <Button
-              width={10.5}
+              fluid
               textAlign="center"
               icon="ambulance"
-              content="Send ERT"
               onClick={() => act('dispatchErt')}
-            />
-          </LabeledList.Item>
-        </LabeledList>
+            >
+              Send ERT
+            </Button>
+          </Stack.Item>
+        </Stack>
       </Section>
     </Stack.Item>
   );
@@ -296,7 +241,6 @@ const SendERT = (props) => {
 
 const ReadERTRequests = (props) => {
   const { act, data } = useBackend<Data>();
-
   const { ertRequestMessages } = data;
 
   return (
@@ -309,12 +253,13 @@ const ReadERTRequests = (props) => {
               title={request.time}
               buttons={
                 <Button
-                  content={request.sender_real_name}
                   onClick={() =>
                     act('view_player_panel', { uid: request.sender_uid })
                   }
                   tooltip="View player panel"
-                />
+                >
+                  {request.sender_real_name}
+                </Button>
               }
             >
               {request.message}
@@ -345,26 +290,31 @@ const ReadERTRequests = (props) => {
 
 const DenyERT = (props) => {
   const { act, data } = useBackend();
-
   const [text, setText] = useState('');
 
   return (
     <Stack.Item grow>
       <Section fill>
-        <Input
-          placeholder="Enter ERT denial reason here,\nMultiline input is accepted."
-          fluid
-          value={text}
-          onChange={(e, value) => setText(value)}
-        />
-        <Button.Confirm
-          content="Deny ERT"
-          fluid
-          icon="times"
-          mt={2}
-          textAlign="center"
-          onClick={() => act('denyErt', { reason: text })}
-        />
+        <Stack fill vertical>
+          <Stack.Item grow>
+            <TextArea
+              height={'100%'}
+              placeholder="Enter ERT denial reason here. Multiline input is accepted."
+              value={text}
+              onChange={(e, value) => setText(value)}
+            />
+          </Stack.Item>
+          <Stack.Item>
+            <Button.Confirm
+              fluid
+              icon="times"
+              textAlign="center"
+              onClick={() => act('denyErt', { reason: text })}
+            >
+              Deny ERT
+            </Button.Confirm>
+          </Stack.Item>
+        </Stack>
       </Section>
     </Stack.Item>
   );

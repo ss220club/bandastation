@@ -29,7 +29,7 @@ ADMIN_VERB(ert_manager, R_NONE, "ERT Manager", "Manage ERT reqests.", ADMIN_CATE
 /datum/ert_manager/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
-		ui = new(user, src, "ERTManager", name)
+		ui = new(user, src, "ErtManager", name)
 		ui.autoupdate = TRUE
 		ui.open()
 
@@ -73,8 +73,8 @@ ADMIN_VERB(ert_manager, R_NONE, "ERT Manager", "Manage ERT reqests.", ADMIN_CATE
 			engineering_slots = text2num(params["setEng"])
 		if("setJan")
 			janitor_slots = text2num(params["setJan"])
-		if("setPar")
-			inquisitor_slots = text2num(params["setPar"])
+		if("setInq")
+			inquisitor_slots = text2num(params["setInq"])
 		if("dispatchErt")
 			var/datum/ert/new_ert
 			switch(ert_type)
@@ -179,14 +179,14 @@ ADMIN_VERB(ert_manager, R_NONE, "ERT Manager", "Manage ERT reqests.", ADMIN_CATE
 	var/list/spawn_turfs = list()
 
 	// Takes precedence over spawnpoints[1] if not null
-	var/turf/brief_spawn
+	var/obj/effect/landmark/ert_brief_spawn/brief_spawn = locate()
 
 	if(!length(candidates))
 		return FALSE
 
 	if(ertemplate.spawn_admin)
 		if(isobserver(usr))
-			var/mob/living/carbon/human/admin_officer = new (brief_spawn || spawnpoints[1])
+			var/mob/living/carbon/human/admin_officer = new (brief_spawn.loc || spawnpoints[1])
 			var/chosen_outfit = usr.client?.prefs?.read_preference(/datum/preference/choiced/brief_outfit)
 			usr.client.prefs.safe_transfer_prefs_to(admin_officer, is_antag = TRUE)
 			admin_officer.equipOutfit(chosen_outfit)
@@ -286,6 +286,10 @@ ADMIN_VERB(ert_manager, R_NONE, "ERT Manager", "Manage ERT reqests.", ADMIN_CATE
 	leader_role = /datum/antagonist/ert/commander/red
 	roles = list(/datum/antagonist/ert/security/red, /datum/antagonist/ert/medic/red, /datum/antagonist/ert/engineer/red)
 	code = "Gamma"
+
+/obj/effect/landmark/ert_brief_spawn
+	name = "ertbriefspawn"
+	icon_state = "ert_brief_spawn"
 
 #undef ERT_EXPERIENCED_LEADER_CHOOSE_TOP
 #undef DUMMY_HUMAN_SLOT_ADMIN
