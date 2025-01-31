@@ -48,6 +48,9 @@
 	if(!tongue)
 		to_chat(src, span_warning("У вас нет языка, чтобы переключить автошипение!"))
 		return
+	if(!tongue.modifies_speech)
+		to_chat(src, span_warning("Ваш язык не модифицирует речь!"))
+		return
 
 	mind.toggle_autohiss(tongue.type)
 
