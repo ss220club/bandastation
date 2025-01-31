@@ -113,9 +113,9 @@ GLOBAL_LIST_INIT(heavy_pirate_gangs, init_pirate_gangs(is_heavy = TRUE))
 	ship_template_id = "dutchman"
 	ship_name_pool = "skeleton_names" //just points to THE ONE AND ONLY
 
-	threat_title = "Передача товаров"
+	threat_title = "Передача имущества"
 	threat_content = "Эгегей! Это %SHIPNAME. Выплачивайте %PAYOFF кредитов или пойдете по доске."
-	arrival_announcement = "Веселый Роджер не будет ждать вечно, дружки; мы тут валяемся рядом и готовы отправить вам подарки."
+	arrival_announcement = "Веселый Роджер не будет ждать вечно, дружки; мы тут распластались рядом и готовы отправить вам подарки."
 	possible_answers = list("Мы заплатим.","Мы не потерпим вымогательства.")
 
 	response_received = "Спасибо за кредиты, аборигены."
@@ -224,6 +224,6 @@ GLOBAL_LIST_INIT(heavy_pirate_gangs, init_pirate_gangs(is_heavy = TRUE))
 	possible_answers = list("Ладно, мне нравится, когда мой череп цел.","Болваны, свалите играть куда подальше.")
 
 	response_received = "ЭТОГО БУДЕТ ДОСТАТОЧНО, ПОМНИТЕ, КТО ЯВЛЯЕТСЯ ВАШИМ ВЛАДЕЛЬЦЕМ!!!"
-	response_rejected = "ГЛУПОЕ РЕШЕНИЕ, Я СДЕЛАЮ ИЗ ТВОЕЙ ТУШКИ ОБРАЗЕЦ ДЛЯ ПОДРАЖАНИЯ!!! (кто-нибудь помнит, как управлять нашим кораблем?)"
+	response_rejected = "ГЛУПОЕ РЕШЕНИЕ, Я СДЕЛАЮ ИЗ ТВОЕЙ ТУШКИ ОБРАЗЕЦ ДЛЯ ПОДРАЖАНИЯ!!! (кто-нибудь помнит, как управлять нашим кораблём?)"
 	response_too_late = "ТЫ УЖЕ В ОСАДЕ, ШУТ, ТЫ БЕЗМОЗГЛЫЙ ИЛИ НЕВЕЖЕСТВЕННЫЙ?!"
 	response_not_enough = "ТЫ СЧИТАЕШЬ МЕНЯ ШУТОМ? ТЫ, ТУХЛОЕ МЯСО!!! (я забыл, как управлять кораблем, зараза)."
