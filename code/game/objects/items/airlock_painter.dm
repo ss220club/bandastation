@@ -76,7 +76,7 @@
 	var/obj/item/organ/lungs/L = user.get_organ_slot(ORGAN_SLOT_LUNGS)
 
 	if(can_use(user) && L)
-		user.visible_message(span_suicide("[user] is inhaling toner from [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
+		user.visible_message(span_suicide("[user] is inhaling toner from [src]! Кажется, [user.ru_p_they()] пытается совершить самоубийство!"))
 		use(user)
 
 		// Once you've inhaled the toner, you throw up your lungs
@@ -109,7 +109,7 @@
 
 		return (TOXLOSS|OXYLOSS)
 	else if(can_use(user) && !L)
-		user.visible_message(span_suicide("[user] is spraying toner on [user.p_them()]self from [src]! It looks like [user.p_theyre()] trying to commit suicide."))
+		user.visible_message(span_suicide("[user] is spraying toner on [user.p_them()]self from [src]! Кажется, [user.ru_p_they()] пытается совершить самоубийство."))
 		user.reagents.add_reagent(/datum/reagent/colorful_reagent, 1)
 		user.reagents.expose(user, TOUCH, 1)
 		return TOXLOSS
@@ -160,7 +160,7 @@
 
 /obj/item/airlock_painter/decal
 	name = "decal painter"
-	desc = "An airlock painter, reprogramed to use a different style of paint in order to apply decals for floor tiles as well, in addition to repainting doors. Decals break when the floor tiles are removed."
+	desc = "An airlock painter, reprogrammed to use a different style of paint in order to apply decals for floor tiles as well, in addition to repainting doors. Decals break when the floor tiles are removed."
 	desc_controls = "Alt-Click to remove the ink cartridge."
 	icon = 'icons/obj/devices/tool.dmi'
 	icon_state = "decal_sprayer"
@@ -380,7 +380,7 @@
 
 /obj/item/airlock_painter/decal/tile
 	name = "tile sprayer"
-	desc = "An airlock painter, reprogramed to use a different style of paint in order to spray colors on floor tiles as well, in addition to repainting doors. Decals break when the floor tiles are removed."
+	desc = "An airlock painter, reprogrammed to use a different style of paint in order to spray colors on floor tiles as well, in addition to repainting doors. Decals break when the floor tiles are removed."
 	desc_controls = "Alt-Click to remove the ink cartridge."
 	icon_state = "tile_sprayer"
 	stored_dir = 2
