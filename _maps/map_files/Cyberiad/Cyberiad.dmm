@@ -1134,14 +1134,13 @@
 /turf/open/floor/plating,
 /area/station/maintenance/port/aft)
 "aoY" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
-	dir = 1
-	},
 /obj/machinery/camera/directional/south{
 	c_tag = "Engineering - SMES Room";
 	network = list("ss13","engineering")
 	},
 /obj/effect/turf_decal/tile/yellow/half/contrasted,
+/obj/machinery/power/smes/engineering,
+/obj/structure/cable,
 /turf/open/floor/iron,
 /area/station/engineering/engine_smes)
 "apb" = (
@@ -1898,9 +1897,6 @@
 /turf/open/floor/iron/dark,
 /area/station/engineering/atmos/mix/ghetto)
 "ayW" = (
-/obj/machinery/power/terminal{
-	dir = 1
-	},
 /obj/effect/turf_decal/tile/yellow/full,
 /obj/effect/turf_decal/bot,
 /obj/effect/turf_decal/stripes/line{
@@ -1908,6 +1904,7 @@
 	},
 /obj/machinery/light_switch/directional/west,
 /obj/structure/cable,
+/obj/machinery/power/terminal,
 /turf/open/floor/iron,
 /area/station/engineering/engine_smes)
 "azb" = (
@@ -11018,10 +11015,11 @@
 /area/station/maintenance/ghetto/central)
 "cKg" = (
 /obj/structure/cable,
-/obj/machinery/power/smes/engineering,
 /obj/effect/turf_decal/tile/yellow/anticorner/contrasted{
 	dir = 1
 	},
+/obj/machinery/power/apc/auto_name/directional/west,
+/obj/structure/table,
 /turf/open/floor/iron,
 /area/station/engineering/engine_smes)
 "cKl" = (
@@ -20284,9 +20282,9 @@
 /turf/open/floor/iron/white,
 /area/station/medical/psychology)
 "fdw" = (
-/obj/structure/cable,
-/obj/machinery/power/apc/auto_name/directional/south,
 /obj/effect/turf_decal/tile/yellow/half/contrasted,
+/obj/machinery/power/smes/engineering,
+/obj/structure/cable,
 /turf/open/floor/iron,
 /area/station/engineering/engine_smes)
 "fdy" = (
@@ -28265,6 +28263,7 @@
 	dir = 1
 	},
 /obj/structure/cable,
+/obj/machinery/power/terminal,
 /turf/open/floor/iron,
 /area/station/engineering/engine_smes)
 "hcl" = (
@@ -33637,15 +33636,13 @@
 /area/station/hallway/primary/starboard)
 "ius" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/machinery/power/terminal{
-	dir = 1
-	},
 /obj/effect/turf_decal/tile/yellow/full,
 /obj/effect/turf_decal/bot,
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
 	},
 /obj/structure/cable,
+/obj/machinery/power/terminal,
 /turf/open/floor/iron,
 /area/station/engineering/engine_smes)
 "iux" = (
@@ -36247,6 +36244,7 @@
 /obj/item/radio/intercom/directional/south,
 /obj/effect/landmark/event_spawn,
 /obj/effect/turf_decal/tile/yellow/half/contrasted,
+/obj/structure/cable,
 /turf/open/floor/iron,
 /area/station/engineering/engine_smes)
 "jcP" = (
@@ -36957,10 +36955,11 @@
 /area/station/medical/medbay)
 "jmE" = (
 /obj/structure/cable,
-/obj/machinery/power/smes/engineering,
 /obj/effect/turf_decal/tile/yellow/anticorner/contrasted{
 	dir = 4
 	},
+/obj/structure/table,
+/obj/machinery/firealarm/directional/east,
 /turf/open/floor/iron,
 /area/station/engineering/engine_smes)
 "jmF" = (
@@ -38831,15 +38830,13 @@
 /area/station/ai_monitored/security/armory)
 "jLz" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/power/terminal{
-	dir = 1
-	},
 /obj/effect/turf_decal/tile/yellow/full,
 /obj/effect/turf_decal/bot,
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
 	},
 /obj/structure/cable,
+/obj/machinery/power/terminal,
 /turf/open/floor/iron,
 /area/station/engineering/engine_smes)
 "jLB" = (
@@ -50540,14 +50537,6 @@
 /obj/structure/cable,
 /turf/open/floor/iron/dark,
 /area/station/security/checkpoint/science)
-"mFR" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/yellow/half/contrasted,
-/obj/machinery/airalarm/directional/south,
-/turf/open/floor/iron,
-/area/station/engineering/engine_smes)
 "mFW" = (
 /obj/effect/turf_decal/tile/blue/anticorner/contrasted{
 	dir = 8
@@ -56271,10 +56260,6 @@
 /obj/item/stack/sheet/iron/fifty,
 /turf/open/floor/plating,
 /area/station/maintenance/department/engine/atmos)
-"oaI" = (
-/obj/effect/turf_decal/tile/yellow/half/contrasted,
-/turf/open/floor/iron,
-/area/station/engineering/engine_smes)
 "oaQ" = (
 /obj/structure/closet,
 /obj/effect/spawner/random/maintenance/two,
@@ -57721,10 +57706,10 @@
 /area/station/maintenance/starboard/aft)
 "orZ" = (
 /obj/structure/cable,
-/obj/machinery/power/smes/engineering,
 /obj/effect/turf_decal/tile/yellow/half/contrasted{
 	dir = 1
 	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
 /turf/open/floor/iron,
 /area/station/engineering/engine_smes)
 "osh" = (
@@ -59126,6 +59111,14 @@
 	},
 /turf/open/floor/iron,
 /area/station/commons/dorms)
+"oKz" = (
+/obj/structure/cable,
+/obj/effect/turf_decal/tile/yellow/half/contrasted{
+	dir = 1
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
+/turf/open/floor/iron,
+/area/station/engineering/engine_smes)
 "oKA" = (
 /obj/structure/cable,
 /obj/effect/decal/cleanable/blood/old,
@@ -65041,10 +65034,11 @@
 /turf/open/floor/plating,
 /area/station/maintenance/department/electrical)
 "qjh" = (
-/obj/machinery/firealarm/directional/west,
 /obj/effect/turf_decal/tile/yellow/anticorner/contrasted{
 	dir = 8
 	},
+/obj/machinery/power/smes/engineering,
+/obj/structure/cable,
 /turf/open/floor/iron,
 /area/station/engineering/engine_smes)
 "qjk" = (
@@ -67988,11 +67982,9 @@
 /turf/open/floor/grass,
 /area/station/maintenance/ghetto/garden)
 "qWK" = (
-/obj/machinery/power/smes{
-	charge = 5e+006
-	},
 /obj/item/radio/intercom/directional/north,
 /obj/structure/cable,
+/obj/machinery/power/smes/full,
 /turf/open/floor/circuit/green/telecomms/mainframe,
 /area/station/tcommsat/server)
 "qWL" = (
@@ -79764,6 +79756,8 @@
 /area/station/medical/virology)
 "tVG" = (
 /obj/effect/turf_decal/tile/yellow/anticorner/contrasted,
+/obj/machinery/power/smes/engineering,
+/obj/structure/cable,
 /turf/open/floor/iron,
 /area/station/engineering/engine_smes)
 "tVJ" = (
@@ -84698,15 +84692,14 @@
 /turf/open/floor/wood/parquet,
 /area/station/maintenance/department/security/ghetto)
 "vlU" = (
-/obj/machinery/power/terminal{
-	dir = 1
-	},
 /obj/effect/turf_decal/tile/yellow/full,
 /obj/effect/turf_decal/bot,
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
 	},
 /obj/structure/cable,
+/obj/machinery/power/terminal,
+/obj/machinery/airalarm/directional/east,
 /turf/open/floor/iron,
 /area/station/engineering/engine_smes)
 "vmb" = (
@@ -191022,9 +191015,9 @@ pPI
 jLC
 yfl
 alL
-orZ
+oKz
 ius
-mFR
+fdw
 qHG
 wAJ
 xKA
@@ -191281,7 +191274,7 @@ aPB
 tey
 lFU
 hch
-oaI
+fdw
 qHG
 nle
 svV
