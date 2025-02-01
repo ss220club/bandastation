@@ -13,12 +13,23 @@
 }
 
 .Minesweeper__open {
-  filter: brightness(80%);
+  position: relative;
   pointer-events: none;
   vertical-align: middle;
   text-align: center;
   font-size: medium;
   outline: none !important;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: hsla(0, 0%, 0%, 0.2);
+    z-index: 1;
+  }
 }
 
 .Minesweeper__list {
