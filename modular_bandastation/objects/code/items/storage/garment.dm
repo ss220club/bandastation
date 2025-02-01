@@ -50,3 +50,17 @@
 	new /obj/item/clothing/shoes/laceup(src)
 	new /obj/item/clothing/glasses/sunglasses(src)
 	new /obj/item/clothing/gloves/color/white(src)
+
+/obj/item/storage/bag/garment/brigmed
+	name = "brig medical garment bag"
+	desc = "A bag for storing extra clothes and shoes. This one belongs to brig medic."
+
+/obj/item/storage/bag/garment/brigmed/PopulateContents()
+	new /obj/item/clothing/under/rank/brigmed(src)
+	new /obj/item/clothing/under/rank/brigmed/skirt(src)
+	new /obj/item/clothing/head/beret/brigmed(src)
+	new /obj/item/clothing/head/soft/paramedic(src)
+	new /obj/item/clothing/suit/toggle/labcoat/paramedic(src)
+	new /obj/item/clothing/suit/armor/vest/brigmed(src)
+	new /obj/item/clothing/suit/toggle/labcoat(src)
+	new /obj/item/clothing/gloves/latex/nitrile(src)

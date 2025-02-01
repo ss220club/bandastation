@@ -23,6 +23,7 @@ export const JOBS_RU = {
   'Security Officer (Science)': 'Офицер (Исследование)',
   'Station Engineer': 'Станционный инженер',
   'Atmospheric Technician': 'Атмосферный техник',
+  'Brig Medic': 'Врач Брига',
   Coroner: 'Коронер',
   'Medical Doctor': 'Врач',
   Paramedic: 'Парамедик',

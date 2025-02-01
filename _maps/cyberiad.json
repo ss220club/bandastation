@@ -35,6 +35,9 @@
         },
         "Magistrate": {
             "spawn_positions": 1
+        },
+        "Brig Medic": {
+            "spawn_positions": 1
         }
 	}
 }

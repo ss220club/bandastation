@@ -126,3 +126,6 @@
 
 /datum/id_trim/job/magistrate
 	assignment = JOB_MAGISTRATE_RU
+
+/datum/id_trim/job/brigmed
+	assignment = JOB_BRIGMED_RU

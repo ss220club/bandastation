@@ -18,6 +18,13 @@
 # trait_name = "Station"
 
 # DeltaStation
+[templates.deltastation_brigmed]
+map_files = ["deltastation_brigmed.dmm"]
+directory = "_maps/bandastation/automapper/templates/deltastation/"
+required_map = "DeltaStation2.dmm"
+coordinates = [202, 151, 1]
+trait_name = "Station"
+
 [templates.deltastation_lawyer_office]
 map_files = ["deltastation_lawyer_office.dmm"]
 directory = "_maps/bandastation/automapper/templates/deltastation/"
@@ -61,6 +68,13 @@ coordinates = [206, 168, 1]
 trait_name = "Station"
 
 # MetaStation
+[templates.metastation_brigmed]
+map_files = ["metastation_brigmed.dmm"]
+directory = "_maps/bandastation/automapper/templates/metastation/"
+required_map = "MetaStation.dmm"
+coordinates = [92, 167, 1]
+trait_name = "Station"
+
 [templates.metastation_lawyer_office]
 map_files = ["metastation_lawyer_office.dmm"]
 directory = "_maps/bandastation/automapper/templates/metastation/"
@@ -111,6 +125,13 @@ coordinates = [84, 189, 1]
 trait_name = "Station"
 
 # IceBoxStation
+[templates.icebox_brigmed]
+map_files = ["icebox_brigmed.dmm"]
+directory = "_maps/bandastation/automapper/templates/iceboxstation/"
+required_map = "IceBoxStation.dmm"
+coordinates = [114, 171, 3]
+trait_name = "Station"
+
 [templates.iceboxstation_blueshield_office]
 map_files = ["iceboxstation_blueshield_office.dmm"]
 directory = "_maps/bandastation/automapper/templates/iceboxstation/"
@@ -168,6 +189,13 @@ coordinates = [108, 184, 2]
 trait_name = "Station"
 
 # TramStation
+[templates.tramstation_brigmed]
+map_files = ["tramstation_brigmed.dmm"]
+directory = "_maps/bandastation/automapper/templates/tramstation/"
+required_map = "tramstation.dmm"
+coordinates = [55, 149, 2]
+trait_name = "Station"
+
 [templates.tramstation_detective_office]
 map_files = ["tramstation_detective_office.dmm"]
 directory = "_maps/bandastation/automapper/templates/tramstation/"

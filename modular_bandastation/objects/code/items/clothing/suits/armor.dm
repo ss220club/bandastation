@@ -37,3 +37,12 @@
 /obj/item/clothing/suit/armor/vest/blueshield_jacket/Initialize(mapload)
 	. = ..()
 	AddComponent(/datum/component/toggle_icon)
+
+// Brigmed
+/obj/item/clothing/suit/armor/vest/brigmed
+	name = "brig medic armor"
+	desc = "When the situation really got out of control."
+	icon = 'modular_bandastation/objects/icons/obj/clothing/suits/amor.dmi'
+	worn_icon = 'modular_bandastation/objects/icons/mob/clothing/suits/armor.dmi'
+	icon_state = "armor_brigmed"
+	body_parts_covered = CHEST

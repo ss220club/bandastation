@@ -158,3 +158,7 @@
 /datum/job/magistrate/New()
 	. = ..()
 	alternate_titles += list(JOB_MAGISTRATE_RU)
+
+/datum/job/brigmed/New()
+	. = ..()
+	alternate_titles += list(JOB_BRIGMED_RU)

@@ -152,6 +152,8 @@
 #define ACCESS_NANOTRASEN_REPRESENTATIVE "nanotrasen_representative"
 /// Access to Magistrate's office and closet
 #define ACCESS_MAGISTRATE "magistrate"
+/// Access to Brig medic office and closet
+#define ACCESS_BRIGMED "brigmed"
 // BANDASTATION ADD - END
 
 /// - - - AWAY MISSIONS - - -

@@ -6,6 +6,15 @@
 	worn_icon = 'modular_bandastation/objects/icons/mob/clothing/head/hats.dmi'
 	icon_state = "nanotrasen_representative"
 
+// Brigmed
+/obj/item/clothing/head/beret/brigmed
+	name = "brig medic beret"
+	desc = "For finding corpses in style!"
+	greyscale_config = /datum/greyscale_config/beret_badge
+	greyscale_config_worn = /datum/greyscale_config/beret_badge/worn
+	greyscale_colors = "#c9cbcb#801919"
+	icon_state = "beret_badge"
+
 // Blueshield
 /obj/item/clothing/head/beret/blueshield
 	name = "blueshield's beret"

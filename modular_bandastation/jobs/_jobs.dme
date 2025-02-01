@@ -49,3 +49,10 @@
 
 // Scientist
 #include "code/job_types/scientist/trim.dm"
+
+// Brigmed job
+#include "code/job_types/brigmed/access_helpers.dm"
+#include "code/job_types/brigmed/job.dm"
+#include "code/job_types/brigmed/landmarks.dm"
+#include "code/job_types/brigmed/pda.dm"
+#include "code/job_types/brigmed/trim.dm"
