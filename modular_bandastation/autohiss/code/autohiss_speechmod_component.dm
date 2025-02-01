@@ -16,6 +16,6 @@
 		speechmod_parents += parent.type
 
 /datum/component/speechmod/handle_speech(datum/source, list/speech_args)
-	if(targeted.mind?.autohiss_disabled_types?[parent.type])
+	if(targeted.mind?.disabled_speechmode_parent_types?[parent.type])
 		return
 	. = ..()
