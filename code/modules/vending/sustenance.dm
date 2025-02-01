@@ -1,8 +1,8 @@
 /obj/machinery/vending/sustenance
 	name = "\improper Sustenance Vendor"
 	desc = "A vending machine which vends food, as required by section 47-C of the NT's Prisoner Ethical Treatment Agreement."
-	product_slogans = "Enjoy your meal.;Enough calories to support strenuous labor."
-	product_ads = "Sufficiently healthy.;Efficiently produced tofu!;Mmm! So good!;Have a meal.;You need food to live!;Even prisoners deserve their daily bread!;Have some more candy corn!;Try our new ice cups!"
+	product_slogans = "Наслаждайся своей стряпнёй.;Достаточно калорий чтоб не сдохнуть."
+	product_ads = "Достаточно здоровое.;Эффективно произведённый тофу!;Ммм! Так вкусно!;Наслаждайся своей стряпнёй.;Вам нужна еда, чтобы жить!;Даже заключённые заслуживают свой ежедневный хлеб!;Возьмите ещё кукурузных конфет!;Попробуйте наш новый лёд в стаканчике!"
 	light_mask = "snack-light-mask"
 	icon_state = "sustenance"
 	panel_type = "panel2"
@@ -53,8 +53,6 @@
 		speak("I don't take bribes! Pay with labor points!")
 		return FALSE
 	var/obj/item/card/id/advanced/prisoner/paying_scum_id = paying_id_card
-	if(coin_records.Find(product_to_vend) || hidden_records.Find(product_to_vend))
-		price_to_use = product_to_vend.custom_premium_price ? product_to_vend.custom_premium_price : extra_price
 	if(LAZYLEN(product_to_vend.returned_products))
 		price_to_use = 0 //returned items are free
 	if(price_to_use && !(paying_scum_id.points >= price_to_use)) //not enough good prisoner points

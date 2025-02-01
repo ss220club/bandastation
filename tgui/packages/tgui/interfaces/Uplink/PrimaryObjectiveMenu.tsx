@@ -1,5 +1,6 @@
+import { Box, Button, Dimmer, Section, Stack } from 'tgui-core/components';
+
 import { useBackend } from '../../backend';
-import { Box, Button, Dimmer, Section, Stack } from '../../components';
 import { ObjectiveElement } from './ObjectiveMenu';
 
 type PrimaryObjectiveMenuProps = {
@@ -14,14 +15,14 @@ export const PrimaryObjectiveMenu = (props: PrimaryObjectiveMenuProps) => {
   return (
     <Section fill scrollable align="center">
       <Box my={4} bold fontSize={1.2} color="green">
-        WELCOME, AGENT.
+        ПРИВЕТСТВУЕМ, АГЕНТ.
       </Box>
       <Box my={4} bold fontSize={1.2}>
-        Your Primary Objectives are as follows. Complete these at all costs.
+        Агент, это ваши основные задачи. Выполните их любой ценой.
       </Box>
       <Box my={4} bold fontSize={1.2}>
-        Completing Secondary Objectives may allow you to aquire additional
-        equipment.
+        Завершение второстепенных задач позволяет получить дополнительное
+        оборудование.
       </Box>
       {final_objective && (
         <Dimmer>
@@ -32,18 +33,18 @@ export const PrimaryObjectiveMenu = (props: PrimaryObjectiveMenuProps) => {
             align={'top'}
             as="span"
           >
-            PRIORITY MESSAGE
+            ПРИОРИТЕТНОЕ СООБЩЕНИЕ
             <br />
-            SOURCE: xxx.xxx.xxx.224:41394
-            <br />
-            <br />
-            \\Debrief in progress.
-            <br />
-            \\Final Objective confirmed complete. <br />
-            \\Your work is done here, agent.
+            ИСТОЧНИК: xxx.xxx.xxx.224:41394
             <br />
             <br />
-            CONNECTION CLOSED_
+            \\Проводится подведение итогов.
+            <br />
+            \\Выполнение финальной задачи подверждено <br />
+            \\Ваша работа здесь завершена, агент.
+            <br />
+            <br />
+            СОЕДИНЕНИЕ ЗАКРЫТО_
           </Box>
         </Dimmer>
       )}
@@ -77,9 +78,9 @@ export const PrimaryObjectiveMenu = (props: PrimaryObjectiveMenuProps) => {
       {!!can_renegotiate && (
         <Box mt={3} mb={5} bold fontSize={1.2} align="center" color="white">
           <Button
-            content={'Renegotiate Contract'}
+            content={'Перезаключить контракт'}
             tooltip={
-              'Replace your existing primary objectives with a custom one. This action can only be performed once.'
+              'Замените свои текущие основные задачи на пользовательские. Это действие можно совершить лишь единожды.'
             }
             onClick={() => act('renegotiate_objectives')}
           />
@@ -87,7 +88,7 @@ export const PrimaryObjectiveMenu = (props: PrimaryObjectiveMenuProps) => {
       )}
       <Box my={4} fontSize={0.8}>
         <Box>SyndOS Version 3.17</Box>
-        <Box color="green">Connection Secure</Box>
+        <Box color="green">Безопасное соединение</Box>
       </Box>
     </Section>
   );

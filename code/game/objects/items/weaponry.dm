@@ -151,7 +151,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	AddComponent(/datum/component/alternative_sharpness, SHARP_POINTY, alt_continuous, alt_simple, -15)
 
 /obj/item/claymore/suicide_act(mob/living/user)
-	user.visible_message(span_suicide("[user] is falling on [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
+	user.visible_message(span_suicide("[user] is falling on [src]! Кажется, [user.ru_p_they()] пытается совершить самоубийство!"))
 	return BRUTELOSS
 
 /obj/item/claymore/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK, damage_type = BRUTE)
@@ -417,7 +417,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	force = 2
 	throwforce = 10 //10 + 2 (WEIGHT_CLASS_SMALL) * 4 (EMBEDDED_IMPACT_PAIN_MULTIPLIER) = 18 damage on hit due to guaranteed embedding
 	throw_speed = 4
-	embed_type = /datum/embed_data/throwing_star
+	embed_type = /datum/embedding/throwing_star
 	armour_penetration = 40
 
 	w_class = WEIGHT_CLASS_SMALL
@@ -425,7 +425,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	custom_materials = list(/datum/material/iron= SMALL_MATERIAL_AMOUNT * 5, /datum/material/glass= SMALL_MATERIAL_AMOUNT * 5)
 	resistance_flags = FIRE_PROOF
 
-/datum/embed_data/throwing_star
+/datum/embedding/throwing_star
 	pain_mult = 4
 	embed_chance = 100
 	fall_chance = 0
@@ -434,9 +434,9 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	name = "shock throwing star"
 	desc = "An aerodynamic disc designed to cause excruciating pain when stuck inside fleeing targets, hopefully without causing fatal harm."
 	throwforce = 5
-	embed_type = /datum/embed_data/throwing_star/stamina
+	embed_type = /datum/embedding/throwing_star/stamina
 
-/datum/embed_data/throwing_star/stamina
+/datum/embedding/throwing_star/stamina
 	pain_mult = 5
 	jostle_chance = 10
 	pain_stam_pct = 0.8
@@ -448,9 +448,9 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	sharpness = NONE
 	force = 0
 	throwforce = 0
-	embed_type = /datum/embed_data/throwing_star/toy
+	embed_type = /datum/embedding/throwing_star/toy
 
-/datum/embed_data/throwing_star/toy
+/datum/embedding/throwing_star/toy
 	pain_mult = 0
 	jostle_pain_mult = 0
 
@@ -554,7 +554,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	tool_behaviour = (active ? TOOL_KNIFE : NONE)
 
 /obj/item/switchblade/suicide_act(mob/living/user)
-	user.visible_message(span_suicide("[user] is slitting [user.p_their()] own throat with [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
+	user.visible_message(span_suicide("[user] is slitting [user.p_their()] own throat with [src]! Кажется, [user.ru_p_they()] пытается совершить самоубийство!"))
 	return BRUTELOSS
 
 /obj/item/switchblade/extended
@@ -576,9 +576,9 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 
 /obj/item/phone/suicide_act(mob/living/user)
 	if(locate(/obj/structure/chair/stool) in user.loc)
-		user.visible_message(span_suicide("[user] begins to tie a noose with [src]'s cord! It looks like [user.p_theyre()] trying to commit suicide!"))
+		user.visible_message(span_suicide("[user] begins to tie a noose with [src]'s cord! Кажется, [user.ru_p_they()] пытается совершить самоубийство!"))
 	else
-		user.visible_message(span_suicide("[user] is strangling [user.p_them()]self with [src]'s cord! It looks like [user.p_theyre()] trying to commit suicide!"))
+		user.visible_message(span_suicide("[user] is strangling [user.p_them()]self with [src]'s cord! Кажется, [user.ru_p_they()] пытается совершить самоубийство!"))
 	return OXYLOSS
 
 /obj/item/bambostaff
@@ -908,7 +908,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	AddComponent(/datum/component/anti_magic, MAGIC_RESISTANCE|MAGIC_RESISTANCE_HOLY)
 	AddComponent(/datum/component/effect_remover, \
 	success_feedback = "You disrupt the magic of %THEEFFECT with %THEWEAPON.", \
-	success_forcesay = "BEGONE FOUL MAGICKS!!", \
+	success_forcesay = "ПРОЧЬ ЗЛАЯ СКВЕРНА!!", \
 	tip_text = "Clear rune", \
 	on_clear_callback = CALLBACK(src, PROC_REF(on_cult_rune_removed)), \
 	effects_we_clear = list(/obj/effect/rune, /obj/effect/heretic_rune) \
@@ -1025,7 +1025,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 		angle = 180
 	if(target.dir & target_to_user)
 		angle = 360
-	var/turf/return_to_sender = get_ranged_target_turf_direct(user, throw_datum.starting_turf, round(target.throw_range * 1.5, 1), offset = angle + (rand(-1, 1) * 10))
+	var/turf/return_to_sender = get_ranged_target_turf_direct(user, throw_datum.starting_turf, max(3, round(target.throw_range * 1.5, 1)), offset = angle + (rand(-1, 1) * 10))
 	throw_datum.finalize(hit = FALSE)
 	target.mouse_opacity = MOUSE_OPACITY_TRANSPARENT //dont mess with our ball
 	target.color = list(1,0,0,0, 0,1,0,0, 0,0,1,0, 0,0,0,3) //make them super light
@@ -1234,7 +1234,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	throwforce = 25
 	throw_speed = 4
 	attack_speed = CLICK_CD_HYPER_RAPID
-	embed_type = /datum/embed_data/hfr_blade
+	embed_type = /datum/embedding/hfr_blade
 	block_chance = 25
 	block_sound = 'sound/items/weapons/parry.ogg'
 	sharpness = SHARP_EDGED
@@ -1249,7 +1249,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	/// The previous target we attacked
 	var/datum/weakref/previous_target
 
-/datum/embed_data/hfr_blade
+/datum/embedding/hfr_blade
 	embed_chance = 100
 
 /obj/item/highfrequencyblade/Initialize(mapload)
@@ -1359,7 +1359,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	animate(src, duration*0.5, color = slash_color, transform = scaled_transform, alpha = 255)
 
 /obj/item/highfrequencyblade/wizard
-	desc = "A blade that was mastercrafted by a legendary blacksmith. Its' enchantments let it slash through anything."
+	desc = "A blade that was mastercrafted by a legendary blacksmith. Its enchantments let it slash through anything."
 	force = 8
 	throwforce = 20
 	wound_bonus = 20

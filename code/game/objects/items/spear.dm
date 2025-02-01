@@ -13,7 +13,7 @@
 	throwforce = 20
 	throw_speed = 4
 	demolition_mod = 0.75
-	embed_type = /datum/embed_data/spear
+	embed_type = /datum/embedding/spear
 	armour_penetration = 10
 	custom_materials = list(/datum/material/iron = HALF_SHEET_MATERIAL_AMOUNT, /datum/material/glass= HALF_SHEET_MATERIAL_AMOUNT * 2)
 	hitsound = 'sound/items/weapons/bladeslice.ogg'
@@ -25,7 +25,7 @@
 	wound_bonus = -15
 	bare_wound_bonus = 15
 	/// For explosive spears, what we cry out when we use this to bap someone
-	var/war_cry = "AAAAARGH!!!"
+	var/war_cry = "ААААААРРР!!!"
 	/// The icon prefix for this flavor of spear
 	var/icon_prefix = "spearglass"
 	/// How much damage to do unwielded
@@ -33,7 +33,7 @@
 	/// How much damage to do wielded
 	var/force_wielded = 18
 
-/datum/embed_data/spear
+/datum/embedding/spear
 	impact_pain_mult = 2
 	remove_pain_mult = 4
 	jostle_chance = 2.5
@@ -77,7 +77,7 @@
 	return ..()
 
 /obj/item/spear/suicide_act(mob/living/carbon/user)
-	user.visible_message(span_suicide("[user] begins to sword-swallow \the [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
+	user.visible_message(span_suicide("[user] begins to sword-swallow \the [src]! Кажется, [user.ru_p_they()] пытается совершить самоубийство!"))
 	return BRUTELOSS
 
 /obj/item/spear/CheckParts(list/parts_list)
@@ -154,7 +154,7 @@
 	..()
 
 /obj/item/spear/explosive/suicide_act(mob/living/carbon/user)
-	user.visible_message(span_suicide("[user] begins to sword-swallow \the [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
+	user.visible_message(span_suicide("[user] begins to sword-swallow \the [src]! Кажется, [user.ru_p_they()] пытается совершить самоубийство!"))
 	user.say("[war_cry]", forced="spear warcry")
 	explosive.forceMove(user)
 	explosive.detonate()
@@ -196,7 +196,7 @@
 //GREY TIDE
 /obj/item/spear/grey_tide
 	name = "\improper Grey Tide"
-	desc = "Recovered from the aftermath of a revolt aboard Defense Outpost Theta Aegis, in which a seemingly endless tide of Assistants caused heavy casualities among Nanotrasen military forces."
+	desc = "Recovered from the aftermath of a revolt aboard Defense Outpost Theta Aegis, in which a seemingly endless tide of Assistants caused heavy casualties among Nanotrasen military forces."
 	attack_verb_continuous = list("gores")
 	attack_verb_simple = list("gore")
 	force_unwielded = 15

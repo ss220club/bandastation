@@ -1,8 +1,8 @@
 import { map } from 'common/collections';
+import { Button, Section, Table } from 'tgui-core/components';
 
 import { useBackend } from '../backend';
 import { DEPARTMENTS_RU } from '../bandastation/ru_jobs'; // BANDASTATION EDIT
-import { Button, Section, Table } from '../components';
 import { NtosWindow } from '../layouts';
 
 export const NtosCrewManifest = (props) => {
@@ -12,11 +12,11 @@ export const NtosCrewManifest = (props) => {
     <NtosWindow width={400} height={480}>
       <NtosWindow.Content scrollable>
         <Section
-          title="Crew Manifest"
+          title="Список экипажа"
           buttons={
             <Button
               icon="print"
-              content="Print"
+              content="Распечатать"
               onClick={() => act('PRG_print')}
             />
           }

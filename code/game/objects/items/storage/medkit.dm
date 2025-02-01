@@ -91,7 +91,7 @@
 	desc = "A first aid kit with the ability to heal common types of injuries."
 
 /obj/item/storage/medkit/regular/suicide_act(mob/living/carbon/user)
-	user.visible_message(span_suicide("[user] begins giving [user.p_them()]self aids with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
+	user.visible_message(span_suicide("[user] begins giving [user.p_them()]self aids with \the [src]! Кажется, [user.ru_p_they()] пытается совершить самоубийство!"))
 	return BRUTELOSS
 
 /obj/item/storage/medkit/regular/PopulateContents()
@@ -108,6 +108,7 @@
 
 /obj/item/storage/medkit/emergency
 	icon_state = "medbriefcase"
+	inhand_icon_state = "medkit-emergency"
 	name = "emergency medkit"
 	desc = "A very simple first aid kit meant to secure and stabilize serious wounds for later treatment."
 
@@ -127,7 +128,7 @@
 /obj/item/storage/medkit/surgery
 	name = "surgical medkit"
 	icon_state = "medkit_surgery"
-	inhand_icon_state = "medkit"
+	inhand_icon_state = "medkit-surgical"
 	desc = "A high capacity aid kit for doctors, full of medical supplies and basic surgical equipment."
 
 /obj/item/storage/medkit/surgery/Initialize(mapload)
@@ -178,7 +179,7 @@
 	damagetype_healed = BURN
 
 /obj/item/storage/medkit/fire/get_medbot_skin()
-	return "ointment"
+	return "burn"
 
 /obj/item/storage/medkit/fire/suicide_act(mob/living/carbon/user)
 	user.visible_message(span_suicide("[user] begins rubbing \the [src] against [user.p_them()]self! It looks like [user.p_theyre()] trying to start a fire!"))
@@ -205,7 +206,7 @@
 	return "tox"
 
 /obj/item/storage/medkit/toxin/suicide_act(mob/living/carbon/user)
-	user.visible_message(span_suicide("[user] begins licking the lead paint off \the [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
+	user.visible_message(span_suicide("[user] begins licking the lead paint off \the [src]! Кажется, [user.ru_p_they()] пытается совершить самоубийство!"))
 	return TOXLOSS
 
 
@@ -229,10 +230,10 @@
 	damagetype_healed = OXY
 
 /obj/item/storage/medkit/o2/get_medbot_skin()
-	return "o2"
+	return "oxy"
 
 /obj/item/storage/medkit/o2/suicide_act(mob/living/carbon/user)
-	user.visible_message(span_suicide("[user] begins hitting [user.p_their()] neck with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
+	user.visible_message(span_suicide("[user] begins hitting [user.p_their()] neck with \the [src]! Кажется, [user.ru_p_they()] пытается совершить самоубийство!"))
 	return OXYLOSS
 
 /obj/item/storage/medkit/o2/PopulateContents()
@@ -256,7 +257,7 @@
 	return "brute"
 
 /obj/item/storage/medkit/brute/suicide_act(mob/living/carbon/user)
-	user.visible_message(span_suicide("[user] begins beating [user.p_them()]self over the head with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
+	user.visible_message(span_suicide("[user] begins beating [user.p_them()]self over the head with \the [src]! Кажется, [user.ru_p_they()] пытается совершить самоубийство!"))
 	return BRUTELOSS
 
 /obj/item/storage/medkit/brute/PopulateContents()
@@ -275,12 +276,12 @@
 	name = "advanced first aid kit"
 	desc = "An advanced kit to help deal with advanced wounds."
 	icon_state = "medkit_advanced"
-	inhand_icon_state = "medkit-rad"
+	inhand_icon_state = "medkit-advanced"
 	custom_premium_price = PAYCHECK_COMMAND * 6
 	damagetype_healed = HEAL_ALL_DAMAGE
 
 /obj/item/storage/medkit/advanced/get_medbot_skin()
-	return "advanced"
+	return "adv"
 
 /obj/item/storage/medkit/advanced/PopulateContents()
 	if(empty)
@@ -294,8 +295,8 @@
 
 /obj/item/storage/medkit/tactical_lite
 	name = "combat first aid kit"
-	icon_state = "medkit_tactical"
-	inhand_icon_state = "medkit-tactical"
+	icon_state = "medkit_tactical_lite"
+	inhand_icon_state = "medkit-tactical-lite"
 	damagetype_healed = HEAL_ALL_DAMAGE
 
 /obj/item/storage/medkit/tactical_lite/get_medbot_skin()
@@ -350,6 +351,8 @@
 /obj/item/storage/medkit/tactical/premium
 	name = "premium combat medical kit"
 	desc = "May or may not contain traces of lead."
+	icon_state = "medkit_tactical_premium"
+	inhand_icon_state = "medkit-tactical-premium"
 	grind_results = list(/datum/reagent/lead = 10)
 
 /obj/item/storage/medkit/tactical/premium/Initialize(mapload)
@@ -474,7 +477,7 @@
 	atom_storage.open_sound_vary = FALSE
 
 /obj/item/storage/pill_bottle/suicide_act(mob/living/user)
-	user.visible_message(span_suicide("[user] is trying to get the cap off [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
+	user.visible_message(span_suicide("[user] is trying to get the cap off [src]! Кажется, [user.ru_p_they()] пытается совершить самоубийство!"))
 	return TOXLOSS
 
 /obj/item/storage/pill_bottle/multiver
@@ -690,7 +693,7 @@
 /// A box which takes in coolant and uses it to preserve organs and body parts
 /obj/item/storage/organbox
 	name = "organ transport box"
-	desc = "An advanced box with an cooling mechanism that uses cryostylane or other cold reagents to keep the organs or bodyparts inside preserved."
+	desc = "An advanced box with a cooling mechanism that uses cryostylane or other cold reagents to keep the organs or bodyparts inside preserved."
 	icon = 'icons/obj/storage/case.dmi'
 	icon_state = "organbox"
 	base_icon_state = "organbox"
@@ -774,14 +777,14 @@
 	if(HAS_TRAIT(user, TRAIT_RESISTCOLD)) //if they're immune to cold, just do the box suicide
 		var/obj/item/bodypart/head/myhead = user.get_bodypart(BODY_ZONE_HEAD)
 		if(myhead)
-			user.visible_message(span_suicide("[user] puts [user.p_their()] head into \the [src] and begins closing it! It looks like [user.p_theyre()] trying to commit suicide!"))
+			user.visible_message(span_suicide("[user] puts [user.p_their()] head into \the [src] and begins closing it! Кажется, [user.ru_p_they()] пытается совершить самоубийство!"))
 			myhead.dismember()
 			myhead.forceMove(src) //force your enemies to kill themselves with your head collection box!
 			playsound(user, "desecration-01.ogg", 50, TRUE, -1)
 			return BRUTELOSS
-		user.visible_message(span_suicide("[user] is beating [user.p_them()]self with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
+		user.visible_message(span_suicide("[user] is beating [user.p_them()]self with \the [src]! Кажется, [user.ru_p_they()] пытается совершить самоубийство!"))
 		return BRUTELOSS
-	user.visible_message(span_suicide("[user] is putting [user.p_their()] head inside the [src], it looks like [user.p_theyre()] trying to commit suicide!"))
+	user.visible_message(span_suicide("[user] is putting [user.p_their()] head inside the [src], Кажется, [user.ru_p_they()] пытается совершить самоубийство!"))
 	user.adjust_bodytemperature(-300)
 	user.apply_status_effect(/datum/status_effect/freon)
 	return FIRELOSS
@@ -803,17 +806,7 @@
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
 	w_class = WEIGHT_CLASS_SMALL
-
-/obj/item/storage/test_tube_rack/Initialize(mapload)
-	. = ..()
-	atom_storage.allow_quick_gather = TRUE
-	atom_storage.max_slots = 8
-	atom_storage.screen_max_columns = 4
-	atom_storage.screen_max_rows = 2
-	atom_storage.set_holdable(/obj/item/reagent_containers/cup/tube)
-
-/obj/item/storage/test_tube_rack/attack_self(mob/user)
-	emptyStorage()
+	storage_type = /datum/storage/test_tube_rack
 
 /obj/item/storage/test_tube_rack/update_icon_state()
 	icon_state = "[base_icon_state][contents.len > 0 ? contents.len : null]"
@@ -822,4 +815,5 @@
 /obj/item/storage/test_tube_rack/full/PopulateContents()
 	for(var/i in 1 to atom_storage.max_slots)
 		new /obj/item/reagent_containers/cup/tube(src)
+	update_appearance(UPDATE_ICON_STATE)
 

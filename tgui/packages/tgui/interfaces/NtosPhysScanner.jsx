@@ -1,5 +1,6 @@
+import { Box, Section } from 'tgui-core/components';
+
 import { useBackend } from '../backend';
-import { Box, Section } from '../components';
 import { NtosWindow } from '../layouts';
 import { sanitizeText } from '../sanitize';
 
@@ -13,12 +14,12 @@ export const NtosPhysScanner = (props) => {
     <NtosWindow width={600} height={350}>
       <NtosWindow.Content scrollable>
         <Section>
-          Tap something (right-click) with your tablet to use the physical
-          scanner.
+          Нажмите на что-нибудь (ПКМ) с помощью планшета, чтобы использовать
+          сканер.
         </Section>
         <Section>
           <Box bold>
-            LAST SAVED RESULT
+            ПОСЛЕДНИЕ ДАННЫЕ
             <br />
             <br />
           </Box>

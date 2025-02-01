@@ -4,23 +4,6 @@
 #undef TTS_TRAIT_RATE_FASTER
 #undef TTS_TRAIT_RATE_MEDIUM
 
-#undef TTS_TRAIT_ROBOTIZE
-
-#undef rustgss220_file_write_b64decode
-
-#undef rustgss220_hash_string
-#undef rustgss220_hash_file
-
-#undef RUSTG_HASH_MD5
-
-#ifdef RUSTG_OVERRIDE_BUILTINS
-	#undef md5
-#endif
-
-// Text Operations //
-#undef rustgss220_cyrillic_to_latin
-#undef rustgss220_latin_to_cyrillic
-
 #undef TTS_CATEGORY_OTHER
 #undef TTS_CATEGORY_WARCRAFT3
 #undef TTS_CATEGORY_HALFLIFE2

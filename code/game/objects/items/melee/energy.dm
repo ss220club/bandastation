@@ -88,7 +88,7 @@
 		var/mob/living/carbon/carbon_user = user
 		if(carbon_user.wear_mask)
 			in_mouth = ", barely missing [carbon_user.p_their()] nose"
-	. = span_warning("[user] swings [user.p_their()] [name][in_mouth]. [user.p_They()] light[user.p_s()] [user.p_their()] [atom.name] in the process.")
+	. = span_rose("[user] swings [user.p_their()] [name][in_mouth]. [user.p_They()] light[user.p_s()] [user.p_their()] [atom.name] in the process.")
 	playsound(loc, hitsound, get_clamped_volume(), TRUE, -1)
 	add_fingerprint(user)
 
@@ -166,11 +166,11 @@
 	RegisterSignal(src, COMSIG_TRANSFORMING_ON_TRANSFORM, PROC_REF(on_transform))
 
 /obj/item/melee/energy/axe/suicide_act(mob/living/user)
-	user.visible_message(span_suicide("[user] swings [src] towards [user.p_their()] head! It looks like [user.p_theyre()] trying to commit suicide!"))
+	user.visible_message(span_suicide("[user] swings [src] towards [user.p_their()] head! Кажется, [user.ru_p_they()] пытается совершить самоубийство!"))
 	return (BRUTELOSS|FIRELOSS)
 
 /// Energy swords.
-/datum/embed_data/esword
+/datum/embedding/esword
 	embed_chance = 75
 	impact_pain_mult = 10
 
@@ -190,7 +190,7 @@
 	armour_penetration = 35
 	block_chance = 50
 	block_sound = 'sound/items/weapons/block_blade.ogg'
-	embed_type = /datum/embed_data/esword
+	embed_type = /datum/embedding/esword
 	var/list/alt_continuous = list("stabs", "pierces", "impales")
 	var/list/alt_simple = list("stab", "pierce", "impale")
 

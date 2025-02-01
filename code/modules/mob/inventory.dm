@@ -104,7 +104,7 @@
 	return FALSE
 
 // List version of above proc
-// Returns ret_item, which is either the succesfully located item or null
+// Returns ret_item, which is either the successfully located item or null
 /mob/proc/is_holding_item_of_types(list/typepaths)
 	for(var/typepath in typepaths)
 		var/ret_item = is_holding_item_of_type(typepath)
@@ -130,14 +130,14 @@
 /mob/proc/get_held_index_name(i)
 	var/list/hand = list()
 	if(i > 2)
-		hand += "upper "
+		hand += "верхней "
 	var/num = 0
 	if(IS_RIGHT_INDEX(i))
 		num = i-2
-		hand += "right hand"
+		hand += "правой руке"
 	else
 		num = i-1
-		hand += "left hand"
+		hand += "левой руке"
 	num -= (num*0.5)
 	if(num > 1) //"upper left hand #1" seems weird, but "upper left hand #2" is A-ok
 		hand += " #[num]"
@@ -227,7 +227,7 @@
 		if (merge_stacks)
 			if (istype(active_stack) && active_stack.can_merge(item_stack, inhand = TRUE))
 				if (item_stack.merge(active_stack))
-					to_chat(usr, span_notice("Your [active_stack.name] stack now contains [active_stack.get_amount()] [active_stack.singular_name]\s."))
+					to_chat(usr, span_notice("Your [active_stack.name] stack now contains [active_stack.get_amount()] [active_stack.singular_name]\s.")) // TODO220 - need to add support in master
 					return TRUE
 			else
 				var/obj/item/stack/inactive_stack = get_inactive_held_item()
@@ -367,7 +367,7 @@
 													//Use no_move if the item is just gonna be immediately moved afterward
 													//Invdrop is used to prevent stuff in pockets dropping. only set to false if it's going to immediately be replaced
 	PROTECTED_PROC(TRUE)
-	if(!I) //If there's nothing to drop, the drop is automatically succesfull. If(unEquip) should generally be used to check for TRAIT_NODROP.
+	if(!I) //If there's nothing to drop, the drop is automatically successful. If(unEquip) should generally be used to check for TRAIT_NODROP.
 		return TRUE
 
 	if(HAS_TRAIT(I, TRAIT_NODROP) && !force)
@@ -413,7 +413,7 @@
 	return items
 
 /**
- * Returns the items that were succesfully unequipped.
+ * Returns the items that were successfully unequipped.
  */
 /mob/living/proc/unequip_everything()
 	var/list/items = list()
@@ -452,7 +452,7 @@
 		if(qdel_on_fail)
 			qdel(W)
 		else if(!disable_warning)
-			to_chat(src, span_warning("You are unable to equip that!"))
+			to_chat(src, span_warning("Вы не можете экипировать это!"))
 		return FALSE
 	equip_to_slot(W, slot, initial, redraw_mob, indirect_action = indirect_action) //This proc should not ever fail.
 	return TRUE
@@ -538,7 +538,7 @@
 		if(gear.atom_storage?.attempt_insert(src, user, messages = FALSE))
 			return TRUE
 
-	to_chat(user, span_warning("You are unable to equip that!"))
+	to_chat(user, span_warning("Вы не можете экипировать это!"))
 	return FALSE
 
 
@@ -548,24 +548,11 @@
 
 	DEFAULT_QUEUE_OR_CALL_VERB(VERB_CALLBACK(src, PROC_REF(execute_quick_equip)))
 
-/// Safely drop everything, without deconstructing the mob
-/mob/proc/drop_everything(del_on_drop, force, del_if_nodrop)
-	. = list()
-	for(var/obj/item/item in src)
-		if(!dropItemToGround(item, force))
-			if(del_if_nodrop && !(item.item_flags & ABSTRACT))
-				qdel(item)
-		if(del_on_drop)
-			qdel(item)
-		//Anything thats not deleted and isn't in the mob, so everything that is succesfully dropped to the ground, is returned
-		if(!QDELETED(item) && !(item in src))
-			. += item
-
 ///proc extender of [/mob/verb/quick_equip] used to make the verb queuable if the server is overloaded
 /mob/proc/execute_quick_equip()
 	var/obj/item/I = get_active_held_item()
 	if(!I)
-		to_chat(src, span_warning("You are not holding anything to equip!"))
+		to_chat(src, span_warning("Вы ничего не держите, что можно было бы экипировать!"))
 		return
 	if(!QDELETED(I))
 		I.equip_to_best_slot(src)
@@ -609,3 +596,19 @@
 	for (var/obj/item/implant/storage/internal_bag in implants)
 		belongings += internal_bag.contents
 	return belongings
+
+/// Safely drop everything, without deconstructing the mob
+/mob/living/proc/drop_everything(del_on_drop, force, del_if_nodrop)
+	. = list() //list of items that were successfully dropped
+
+	var/list/all_gear = get_all_gear(recursive = FALSE)
+	for(var/obj/item/item in all_gear)
+		if(dropItemToGround(item, force))
+			if(QDELETED(item)) //DROPDEL can cause this item to be deleted
+				continue
+			if(del_on_drop)
+				qdel(item)
+				continue
+			. += item
+		else if(del_if_nodrop && !(item.item_flags & ABSTRACT))
+			qdel(item)

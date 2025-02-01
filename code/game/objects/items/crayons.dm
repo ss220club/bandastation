@@ -201,7 +201,7 @@
 	return isfloorturf(surface)
 
 /obj/item/toy/crayon/suicide_act(mob/living/user)
-	user.visible_message(span_suicide("[user] is jamming [src] up [user.p_their()] nose and into [user.p_their()] brain. It looks like [user.p_theyre()] trying to commit suicide!"))
+	user.visible_message(span_suicide("[user] is jamming [src] up [user.p_their()] nose and into [user.p_their()] brain. Кажется, [user.ru_p_they()] пытается совершить самоубийство!"))
 	user.add_atom_colour(color_transition_filter(paint_color, SATURATION_OVERRIDE), ADMIN_COLOUR_PRIORITY)
 	return (BRUTELOSS|OXYLOSS)
 
@@ -508,7 +508,7 @@
 		clicky = clamp(text2num(LAZYACCESS(modifiers, ICON_Y)) - 16, -(ICON_SIZE_Y/2), ICON_SIZE_Y/2)
 
 	if(!instant)
-		to_chat(user, span_notice("You start drawing a [temp] on the [target.name]..."))
+		to_chat(user, span_notice("You start drawing a [temp] on \the [target]..."))
 
 	if(pre_noise)
 		audible_message(span_notice("You hear spraying."))
@@ -793,6 +793,7 @@
 	var/static/list/direct_color_types = typecacheof(list(
 		/obj/item/paper, // Uses color for TGUI backgrounds, doesn't look very good either
 		/obj/item/fish, // Used for aquarium sprites
+		/obj/structure/window, // Does not play nice with window tint
 	))
 
 /obj/item/toy/crayon/spraycan/Initialize(mapload)
@@ -829,9 +830,7 @@
 	if(isbodypart(target))
 		var/obj/item/bodypart/limb = target
 		if(IS_ROBOTIC_LIMB(limb))
-			context[SCREENTIP_CONTEXT_CTRL_LMB] = "Restyle robotic limb"
-	else
-		context[SCREENTIP_CONTEXT_CTRL_LMB] = "Copy color"
+			context[SCREENTIP_CONTEXT_LMB] = "Restyle robotic limb"
 
 	return CONTEXTUAL_SCREENTIP_SET
 
@@ -842,11 +841,11 @@
 	var/used = min(charges_left, 10)
 	if(is_capped || !actually_paints || !use_charges(user, 10, FALSE))
 		user.visible_message(span_suicide("[user] shakes up [src] with a rattle and lifts it to [user.p_their()] mouth, but nothing happens!"))
-		user.say("MEDIOCRE!!", forced = "spraycan suicide")
+		user.say("БЕЗДАРНОСТЬ!!!", forced = "spraycan suicide")
 		return SHAME
 
 	user.visible_message(span_suicide("[user] shakes up [src] with a rattle and lifts it to [user.p_their()] mouth, spraying paint across [user.p_their()] teeth!"))
-	user.say("WITNESS ME!!", forced = "spraycan suicide")
+	user.say("ОСВИДЕТЕЛЬСТВУЙТЕ МЕНЯ!!!", forced = "spraycan suicide")
 	if(pre_noise || post_noise)
 		playsound(src, 'sound/effects/spray.ogg', 5, TRUE, 5)
 	if(can_change_colour)
@@ -871,7 +870,7 @@
 			. += "It's roughly [PERCENT(charges_left/charges)]% full."
 		else
 			. += "It is empty."
-	. += span_notice("Alt-click [src] to [ is_capped ? "take the cap off" : "put the cap on"]. Right-click a colored object to match its existing color.")
+	. += span_notice("Alt-click [src] to [ is_capped ? "take the cap off" : "put the cap on"].")
 
 
 /obj/item/toy/crayon/spraycan/can_use_on(atom/target, mob/user, list/modifiers)
@@ -887,15 +886,16 @@
 	return ..()
 
 /obj/item/toy/crayon/spraycan/use_on(atom/target, mob/user, list/modifiers)
-	if (LAZYACCESS(modifiers, CTRL_CLICK))
-		return ctrl_interact(target, user)
-
 	if(is_capped)
 		balloon_alert(user, "take the cap off first!")
 		return ITEM_INTERACT_BLOCKING
 
 	if(check_empty(user))
 		return ITEM_INTERACT_BLOCKING
+
+	if (isbodypart(target))
+		if (color_limb(target, user))
+			return ITEM_INTERACT_SUCCESS
 
 	if(iscarbon(target))
 		if(pre_noise || post_noise)
@@ -994,30 +994,9 @@
 	user.visible_message(span_notice("[user] coats [target] with spray paint!"), span_notice("You coat [target] with spray paint."))
 	return ITEM_INTERACT_SUCCESS
 
-/obj/item/toy/crayon/spraycan/proc/ctrl_interact(atom/interacting_with, mob/living/user)
-	if(is_capped)
-		if(!interacting_with.color)
-			// let's be generous and assume if they're trying to match something with no color, while capped,
-			// we shouldn't be blocking further interactions
-			return NONE
-		balloon_alert(user, "take the cap off first!")
-		return ITEM_INTERACT_BLOCKING
-
-	if(check_empty(user))
-		return ITEM_INTERACT_BLOCKING
-
-	if(!isbodypart(interacting_with) || !actually_paints)
-		if(interacting_with.color)
-			paint_color = interacting_with.color
-			balloon_alert(user, "matched colour of target")
-			update_appearance()
-			return ITEM_INTERACT_BLOCKING
-		balloon_alert(user, "can't match those colours!")
-		return ITEM_INTERACT_BLOCKING
-
-	var/obj/item/bodypart/limb = interacting_with
+/obj/item/toy/crayon/spraycan/proc/color_limb(obj/item/bodypart/limb, mob/living/user)
 	if(!IS_ROBOTIC_LIMB(limb))
-		return ITEM_INTERACT_BLOCKING
+		return FALSE
 
 	var/list/skins = list()
 	var/static/list/style_list_icons = list(
@@ -1036,7 +1015,7 @@
 	if(choice && (use_charges(user, 5, requires_full = FALSE)))
 		playsound(user.loc, 'sound/effects/spray.ogg', 5, TRUE, 5)
 		limb.change_appearance(style_list_icons[choice], greyscale = FALSE)
-	return ITEM_INTERACT_SUCCESS
+	return TRUE
 
 /obj/item/toy/crayon/spraycan/click_alt(mob/user)
 	if(!has_cap)

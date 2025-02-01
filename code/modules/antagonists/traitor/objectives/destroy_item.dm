@@ -1,6 +1,6 @@
 /datum/traitor_objective/destroy_item
-	name = "Steal %ITEM% and destroy it"
-	description = "Find %ITEM% and destroy it using any means necessary. We can't allow the crew to have %ITEM% as it conflicts with our interests."
+	name = "Найдите и уничтожьте %ITEM%."
+	description = "Найдите %ITEM% и уничтожьте его любой ценой. Мы не можем позволить, чтобы экипаж станции владел %ITEM%, это совершенно не в наших интересах. %METHOD%"
 
 	var/list/possible_items = list()
 	/// The current target item that we are stealing.
@@ -29,16 +29,15 @@
 	progression_minimum = 40 MINUTES
 	progression_reward = 15 MINUTES
 	telecrystal_reward = list(6, 9)
-
 	possible_items = list(
 		/datum/objective_item/steal/blackbox,
 	)
 
 /// Super early-game destroy objective intended to be items easily tided that the crew tends to value.
 /datum/traitor_objective/destroy_item/demoralise
-	description = "Find %ITEM% and destroy it using any means necessary. \
-		We believe this luxury item is important for crew morale. \
-		Destruction of this item will help our recruitment efforts."
+	description = "Найдите %ITEM% и уничтожьте его любой ценой. \
+		Мы считаем, что этот предмет роскоши важен для морального духа экипажа. \
+		Уничтожение этого предмета поможет нашему рекрутингу."
 
 	progression_minimum = 0 MINUTES
 	progression_maximum = 10 MINUTES
@@ -75,7 +74,12 @@
 			tracked_items += item
 	if(length(target_item.special_equipment))
 		special_equipment = target_item.special_equipment
-	replace_in_name("%ITEM%", target_item.name)
+	var/obj/steal_target = target_item.targetitem // BANDASTATION EDIT ADDITION
+	replace_in_name("%ITEM%", declent_ru_initial(steal_target::name, ACCUSATIVE, target_item.name))
+	if(target_item.destruction_method != null)
+		replace_in_name("%METHOD%", target_item.destruction_method)
+	else
+		replace_in_name("%METHOD%", "This item can be destroyed normally, such as by using a recycler, found in disposals.")
 	AddComponent(/datum/component/traitor_objective_mind_tracker, generating_for, \
 		signals = list(COMSIG_MOB_EQUIPPED_ITEM = PROC_REF(on_item_pickup)))
 	return TRUE
@@ -83,7 +87,7 @@
 /datum/traitor_objective/destroy_item/generate_ui_buttons(mob/user)
 	var/list/buttons = list()
 	if(special_equipment)
-		buttons += add_ui_button("", "Pressing this will summon any extra special equipment you may need for the mission.", "tools", "summon_gear")
+		buttons += add_ui_button("", "Нажмите, чтобы получить дополнительное специальное снаряжение, которое может пригодиться для этого задания.", "tools", "summon_gear")
 	return buttons
 
 /datum/traitor_objective/destroy_item/ui_perform_action(mob/living/user, action)
@@ -95,7 +99,7 @@
 			for(var/item in special_equipment)
 				var/obj/item/new_item = new item(user.drop_location())
 				user.put_in_hands(new_item)
-			user.balloon_alert(user, "the equipment materializes in your hand")
+			user.balloon_alert(user, "снаряжение материализуется в руке")
 			special_equipment = null
 
 /datum/traitor_objective/destroy_item/proc/on_item_pickup(datum/source, obj/item/item, slot)

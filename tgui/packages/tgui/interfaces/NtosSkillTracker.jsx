@@ -1,4 +1,3 @@
-import { useBackend } from '../backend';
 import {
   AnimatedNumber,
   BlockQuote,
@@ -6,7 +5,9 @@ import {
   ProgressBar,
   Section,
   Table,
-} from '../components';
+} from 'tgui-core/components';
+
+import { useBackend } from '../backend';
 import { NtosWindow } from '../layouts';
 
 export const NtosSkillTracker = (props) => {
@@ -23,10 +24,10 @@ export const NtosSkillTracker = (props) => {
                 <Table>
                   <Table.Row header>
                     <Table.Cell textAlign="center" collapsing>
-                      Level
+                      Уровень
                     </Table.Cell>
-                    <Table.Cell textAlign="center">Level Progress</Table.Cell>
-                    <Table.Cell textAlign="center">Overall Progress</Table.Cell>
+                    <Table.Cell textAlign="center">Прогресс уровня</Table.Cell>
+                    <Table.Cell textAlign="center">Общий прогресс</Table.Cell>
                   </Table.Row>
                   <Table.Row className="candystripe">
                     <Table.Cell textAlign="center" collapsing>
@@ -77,7 +78,7 @@ export const NtosSkillTracker = (props) => {
                             act('PRG_reward', { skill: skill.name })
                           }
                         >
-                          Contact the Professional {skill.title} Association
+                          Связаться с профессиональной ассоциацией {skill.title}
                         </Button>
                       </Table.Cell>
                     </Table.Row>

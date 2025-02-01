@@ -1,7 +1,7 @@
 /datum/traitor_objective/ultimate/infect_ai
-	name = "Infect the station AI with an experimental virus."
-	description = "Infect the station AI with an experimental virus. Go to %AREA% to receive an infected law upload board \
-		and use it on the AI core or a law upload console."
+	name = "Заразите ИИ станции экспериментальным вирусом."
+	description = "Заразите ИИ станции экспериментальным вирусом. \
+		Отправляйтесь в %AREA%, чтобы получить зараженную плату загрузки законов и используйте ее на ядре ИИ или на консоли загрузки законов."
 
 	///area type the objective owner must be in to receive the law upload module
 	var/area/board_area_pickup
@@ -35,7 +35,7 @@
 /datum/traitor_objective/ultimate/infect_ai/generate_ui_buttons(mob/user)
 	var/list/buttons = list()
 	if(!sent_board)
-		buttons += add_ui_button("", "Pressing this will call down a pod with an infected law upload board.", "wifi", "upload_board")
+		buttons += add_ui_button("", "Нажмите, чтобы вызвать под с зараженной платой загрузки законов.", "wifi", "upload_board")
 	return buttons
 
 /datum/traitor_objective/ultimate/infect_ai/ui_perform_action(mob/living/user, action)
@@ -46,7 +46,7 @@
 				return
 			var/area/delivery_area = get_area(user)
 			if(delivery_area.type != board_area_pickup)
-				to_chat(user, span_warning("You must be in [initial(board_area_pickup.name)] to receive the infected law upload board."))
+				to_chat(user, span_warning("Вы должны быть в [initial(board_area_pickup.name)], чтобы получить зараженную плату загрузки законов."))
 				return
 			sent_board = TRUE
 			podspawn(list(

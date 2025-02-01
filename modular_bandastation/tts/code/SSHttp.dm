@@ -13,7 +13,10 @@ SUBSYSTEM_DEF(http)
 
 /datum/controller/subsystem/http/PreInit()
 	. = ..()
-	rustgss220_create_async_http_client() // Open the door
+	rustg_create_async_http_client() // Open the door
+
+/datum/controller/subsystem/http/stat_entry(msg)
+	return "[..()] P:[length(active_async_requests)] T:[total_requests]"
 
 /datum/controller/subsystem/http/fire(resumed)
 	for(var/r in active_async_requests)
@@ -79,20 +82,6 @@ SUBSYSTEM_DEF(http)
 /datum/http_request
 	/// Callback for executing after async requests. Will be called with an argument of [/datum/http_response] as first argument
 	var/datum/callback/cb
-
-// HACK: I have no idea why this is necessary, but it is.
-/datum/http_request/into_response()
-	. = ..()
-
-	var/datum/http_response/R = .
-	var/static/reg = ": status code ([0-9]{3})"
-	var/matched = findtext(_raw_response, reg)
-	if (matched)
-		R.status_code = text2num(copytext(matched, 15))
-
-/world/Del()
-	rustgss220_close_async_http_client()
-	. = ..()
 
 /datum/controller/subsystem/http/proc/log_request(datum/http_request/req, type = "ASYNC")
 	if(!logging_enabled)

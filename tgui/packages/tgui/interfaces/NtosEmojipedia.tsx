@@ -1,9 +1,9 @@
-import { classes } from 'common/react';
-import { createSearch } from 'common/string';
 import { useState } from 'react';
+import { Button, Image, Input, Section, Tooltip } from 'tgui-core/components';
+import { classes } from 'tgui-core/react';
+import { createSearch } from 'tgui-core/string';
 
 import { useBackend } from '../backend';
-import { Button, Image, Input, Section, Tooltip } from '../components';
 import { NtosWindow } from '../layouts';
 
 type Data = {
@@ -27,16 +27,16 @@ export const NtosEmojipedia = (props) => {
       <NtosWindow.Content scrollable>
         <Section
           // required: follow semantic versioning every time you touch this file
-          title={'Emojipedia V2.7.10' + (filter ? ` - ${filter}` : '')}
+          title={'Эмодзипедия V2.7.10' + (filter ? ` - ${filter}` : '')}
           buttons={
             <>
               <Input
-                placeholder="Search by name"
+                placeholder="Найти по имени"
                 value={filter}
                 onInput={(_, value) => setFilter(value)}
               />
               <Button
-                tooltip={'Click on an emoji to copy its tag!'}
+                tooltip={'Кликните по эмодзи, чтобы скопировать его тэг!'}
                 tooltipPosition="bottom"
                 icon="circle-question"
               />

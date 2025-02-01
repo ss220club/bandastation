@@ -1,5 +1,6 @@
+import { Button, Section, Table } from 'tgui-core/components';
+
 import { useBackend } from '../backend';
-import { Button, Section, Table } from '../components';
 import { NtosWindow } from '../layouts';
 
 export const NtosFileManager = (props) => {
@@ -72,7 +73,7 @@ const FileTable = (props) => {
                 fluid
                 content={file.name}
                 currentValue={file.name}
-                tooltip="Rename"
+                tooltip="Переименовать"
                 onCommit={(e, value) => onRename(file.name, value)}
               />
             ) : (
@@ -96,20 +97,20 @@ const FileTable = (props) => {
                   icon="trash"
                   confirmIcon="times"
                   confirmContent=""
-                  tooltip="Delete"
+                  tooltip="Удалить"
                   onClick={() => onDelete(file.name)}
                 />
                 {!!usbconnected &&
                   (usbmode ? (
                     <Button
                       icon="download"
-                      tooltip="Download"
+                      tooltip="Скачать"
                       onClick={() => onUpload(file.name)}
                     />
                   ) : (
                     <Button
                       icon="upload"
-                      tooltip="Upload"
+                      tooltip="Загрузить"
                       onClick={() => onUpload(file.name)}
                     />
                   ))}

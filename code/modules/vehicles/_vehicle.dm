@@ -34,6 +34,8 @@
 	///This vehicle will follow us when we move (like atrailer duh)
 	var/obj/vehicle/trailer
 	var/are_legs_exposed = FALSE
+	var/enter_sound
+	var/exit_sound
 
 /datum/armor/obj_vehicle
 	melee = 30
@@ -60,6 +62,8 @@
 /obj/vehicle/Exited(atom/movable/gone, direction)
 	if(gone == inserted_key)
 		inserted_key = null
+	if(exit_sound)
+		playsound(src, exit_sound, 70, TRUE, MEDIUM_RANGE_SOUND_EXTRARANGE)
 	return ..()
 
 /obj/vehicle/examine(mob/user)
@@ -72,11 +76,11 @@
 	var/integrity = atom_integrity/max_integrity * 100
 	switch(integrity)
 		if(50 to 99)
-			examine_text = "It looks slightly damaged."
+			examine_text = "Имеет незначительные повреждения."
 		if(25 to 50)
-			examine_text = "It appears heavily damaged."
+			examine_text = "Имеет значительные повреждения."
 		if(0 to 25)
-			examine_text = span_warning("It's falling apart!")
+			examine_text = span_warning("Разваливается на части!")
 
 	return examine_text
 
@@ -114,10 +118,11 @@
 /obj/vehicle/proc/is_occupant(mob/M)
 	return !isnull(LAZYACCESS(occupants, M))
 
-/obj/vehicle/proc/add_occupant(mob/M, control_flags)
+/obj/vehicle/proc/add_occupant(mob/M, control_flags, forced)
 	if(!istype(M) || is_occupant(M))
 		return FALSE
-
+	if(enter_sound && !forced)
+		playsound(src, enter_sound, 70, TRUE, MEDIUM_RANGE_SOUND_EXTRARANGE)
 	LAZYSET(occupants, M, NONE)
 	add_control_flags(M, control_flags)
 	after_add_occupant(M)

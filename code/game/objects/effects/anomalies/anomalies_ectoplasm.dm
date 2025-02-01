@@ -13,7 +13,7 @@
 	///The actual number of ghosts orbiting the anomaly.
 	var/ghosts_orbiting = 0
 
-/obj/effect/anomaly/ectoplasm/Initialize(mapload, new_lifespan, drops_core)
+/obj/effect/anomaly/ectoplasm/Initialize(mapload, new_lifespan)
 	. = ..()
 
 	AddComponent(/datum/component/deadchat_control/cardinal_movement, _deadchat_mode = ANARCHY_MODE, _inputs = list(), _input_cooldown = 7 SECONDS)
@@ -102,7 +102,7 @@
 
 		new /obj/structure/ghost_portal(get_turf(src), candidate_list)
 
-		priority_announce("Anomaly has reached critical mass. Ectoplasmic outburst detected.", "Anomaly Alert")
+		priority_announce("Аномалия достигла критической массы. Обнаружен всплеск эктоплазмы.", "Обнаружена аномалия")
 
 /**
  * Manages updating the sprite for the anomaly based on how many orbiters it has.

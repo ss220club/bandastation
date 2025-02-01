@@ -32,5 +32,8 @@ SUBSYSTEM_DEF(automatic_transfer)
 /datum/controller/subsystem/automatic_transfer/proc/start_crew_transfer_vote()
 	PRIVATE_PROC(TRUE)
 
+	if(!EMERGENCY_IDLE_OR_RECALLED)
+		return
+
 	SSvote.initiate_vote(/datum/vote/crew_transfer, "Automatic Crew Transfer", forced = TRUE)
 	COOLDOWN_START(src, automatic_crew_transfer_vote_cooldown, CONFIG_GET(number/automatic_crew_transfer_vote_interval))

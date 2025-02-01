@@ -171,6 +171,7 @@
 	SIGNAL_HANDLER
 
 	speech_args[SPEECH_SPANS] |= voicespan
+	LAZYADD(speech_args[SPEECH_MODS][MODE_TTS_FILTERS], /datum/singleton/sound_effect/megaphone) // Bandastation Addition
 	drain_power(use_energy_cost)
 
 ///Criminal Capture - Generates hardlight bags you can put people in and sinch.
@@ -573,7 +574,7 @@
 
 /obj/item/mod/module/quick_cuff
 	name = "MOD restraint assist module"
-	desc = "Enhanced gauntlent grip pads that help with placing individuals in restraints more quickly. Doesn't look like they'll come off."
+	desc = "Enhanced gauntlet grip pads that help with placing individuals in restraints more quickly. Doesn't look like they'll come off."
 	removable = FALSE
 	complexity = 0
 	required_slots = list(ITEM_SLOT_GLOVES)
