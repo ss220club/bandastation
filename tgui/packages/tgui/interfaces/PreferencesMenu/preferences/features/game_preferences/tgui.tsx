@@ -30,10 +30,10 @@ export const tgui_input_swapped: FeatureToggle = {
 };
 
 export const tgui_layout: Feature<string> = {
-  name: 'Default TGUI Layout',
-  category: 'UI',
+  name: 'Стандартный макет TGUI',
+  category: 'ИНТЕРФЕЙС',
   description:
-    'Applies the selected layout type to all interfaces where it possible. Like on Smartfridge.',
+    'Применяет выбранный тип макета на все интерфейсы, где это возможно. Например: Smartfridge.',
   component: FeatureDropdownInput,
 };
 
