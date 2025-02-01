@@ -28,7 +28,7 @@ SUBSYSTEM_DEF(central)
 		stack_trace("Failed to load whitelist: HTTP status code [response.status_code] - [response.error]")
 		return
 
-	var/list/response = json_decode(response.body)
+	var/list/result = json_decode(response.body)
 
 	log_game("Loading whitelist with [response["total"]] entries")
 
