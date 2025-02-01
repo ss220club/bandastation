@@ -4,6 +4,7 @@
 
 /datum/mind/proc/toggle_speechmode(datum/speechmod_parent)
 	// First get name
+	// TODO: Send speechmod component?
 	var/speechmod_name = speechmod_parent.type
 	if(istype(speechmod_parent, /datum/mutation/human))
 		var/datum/mutation/human/mutation = speechmod_parent
