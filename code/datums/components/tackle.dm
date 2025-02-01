@@ -159,8 +159,8 @@
 	tackle.gentle = TRUE
 
 	if(target.check_block(user, 0, user.name, attack_type = LEAP_ATTACK))
-		user.visible_message(span_danger("[user]'s tackle is blocked by [target], softening the effect!"), span_userdanger("Your tackle is blocked by [target], softening the effect!"), ignored_mobs = target)
-		to_chat(target, span_userdanger("[target] blocks [user]'s tackle attempt, softening the effect!"))
+		user.visible_message(span_danger("[capitalize(target.declent_ru(NOMINATIVE))] блокирует захват [user.declent_ru(GENITIVE)], смягчяя эффект!"), span_userdanger("[capitalize(target.declent_ru(NOMINATIVE))] блокирует ваш захват, смягчяя эффект!"), ignored_mobs = target)
+		to_chat(target, span_userdanger("[capitalize(target.declent_ru(NOMINATIVE))] блокирует попытку захвата [user.declent_ru(GENITIVE)], смягчяя эффект!"))
 		neutral_outcome(user, target, tackle_word) //Forces a neutral outcome so you're not screwed too much from being blocked while tackling
 		return COMPONENT_MOVABLE_IMPACT_FLIP_HITPUSH
 
@@ -390,7 +390,7 @@
 	if(ishuman(target))
 		var/mob/living/carbon/human/tackle_target = target
 
-		if(tackle_target.get_mob_height() <= HUMAN_HEIGHT_SHORTEST) //WHO ARE YOU CALLING SHORT?
+		if(tackle_target.mob_height <= HUMAN_HEIGHT_SHORTEST) //WHO ARE YOU CALLING SHORT?
 			defense_mod -= 2
 
 		if(isnull(tackle_target.wear_suit) && isnull(tackle_target.w_uniform)) // who honestly puts all of their effort into tackling a naked guy?
@@ -449,7 +449,7 @@
 	if(ishuman(sacker))
 		var/mob/living/carbon/human/human_sacker = sacker
 
-		if(human_sacker.get_mob_height() <= HUMAN_HEIGHT_SHORTEST) //JUST YOU WAIT TILL I FIND A CHAIR, BUDDY, THEN YOU'LL BE SORRY
+		if(human_sacker.mob_height <= HUMAN_HEIGHT_SHORTEST) //JUST YOU WAIT TILL I FIND A CHAIR, BUDDY, THEN YOU'LL BE SORRY
 			attack_mod -= 2
 
 		if(human_sacker.mob_mood.sanity_level == SANITY_LEVEL_INSANE) //I've gone COMPLETELY INSANE

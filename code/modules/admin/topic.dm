@@ -497,7 +497,7 @@
 
 		var/new_value = input(usr, "Enter the forced threat level for dynamic mode.", "Forced threat level") as num
 		if (new_value > 100)
-			return tgui_alert(usr, "The value must be be under 100.")
+			return tgui_alert(usr, "The value must be under 100.")
 		GLOB.dynamic_forced_threat_level = new_value
 
 		log_admin("[key_name(usr)] set 'forced_threat_level' to [GLOB.dynamic_forced_threat_level].")
@@ -793,7 +793,7 @@
 
 		//Job + antagonist
 		if(subject.mind)
-			special_role_description = "Role: <b>[subject.mind.assigned_role.title]</b>; Antagonist: <font color='red'><b>"
+			special_role_description = "Role: <b>[job_title_ru(subject.mind.assigned_role.title)]</b>; Antagonist: <font color='red'><b>"
 
 			if(subject.mind.antag_datums)
 				var/iterable = 0

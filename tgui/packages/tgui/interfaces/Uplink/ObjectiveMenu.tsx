@@ -167,8 +167,8 @@ export class ObjectiveMenu extends Component<
                           >
                             <Stack textAlign="center" fill align="center">
                               <Stack.Item textAlign="center" width="100%">
-                                Empty Objective, drop objectives here to take
-                                them
+                                Нет задачи, перенесите сюда новую, чтобы принять
+                                её
                               </Stack.Item>
                             </Stack>
                           </Box>
@@ -195,7 +195,7 @@ export class ObjectiveMenu extends Component<
           </Stack.Item>
           <Stack.Item grow>
             <Section
-              title="Potential Objectives"
+              title="Возможные задачи"
               textAlign="center"
               fill
               scrollable
@@ -238,7 +238,7 @@ export class ObjectiveMenu extends Component<
                   <Dimmer>
                     <Icon name="lock" color="red" fontSize={8} mb={2} />
                     <Box color="red" fontSize={3}>
-                      You are locked out of objectives
+                      Выбор задач заблокирован
                     </Box>
                   </Dimmer>
                 )) ||
@@ -252,7 +252,7 @@ export class ObjectiveMenu extends Component<
                       >
                         <Stack.Item width="100%">
                           <Button
-                            content="Request More Objectives"
+                            content="Запросить больше задач"
                             fontSize={2}
                             onClick={handleRequestObjectives}
                           />
@@ -391,13 +391,13 @@ export const ObjectiveElement = (props: ObjectiveElementProps) => {
   let objectiveCompletionText;
   switch (objectiveState) {
     case ObjectiveState.Invalid:
-      objectiveCompletionText = 'Invalidated';
+      objectiveCompletionText = 'Недействительна';
       break;
     case ObjectiveState.Completed:
-      objectiveCompletionText = 'Completed';
+      objectiveCompletionText = 'Завершена';
       break;
     case ObjectiveState.Failed:
-      objectiveCompletionText = 'Failed';
+      objectiveCompletionText = 'Провалена';
       break;
   }
 
@@ -425,7 +425,7 @@ export const ObjectiveElement = (props: ObjectiveElementProps) => {
                 <Button
                   icon="trash"
                   color="transparent"
-                  tooltip="Abort Objective"
+                  tooltip="Отменить задачу"
                   onClick={handleAbort}
                 />
               </Stack.Item>
@@ -438,14 +438,13 @@ export const ObjectiveElement = (props: ObjectiveElementProps) => {
           <Box>{description}</Box>
           {!hideTcRep && (
             <Box mt={1}>
-              Failing this objective will deduct {telecrystalPenalty} TC.
+              В случае провала этой задачи, штраф {telecrystalPenalty} TC.
             </Box>
           )}
           {finalObjective && objectiveState === ObjectiveState.Inactive && (
             <NoticeBox mt={1}>
-              Taking this objective will lock you out of getting anymore
-              objectives! Furthermore, you will be unable to abort this
-              objective.
+              Принятие этой задачи заблокирует возможность брать новые задачи!
+              Также, вы не сможете отменить это задание.
             </NoticeBox>
           )}
         </Box>
@@ -475,7 +474,7 @@ export const ObjectiveElement = (props: ObjectiveElementProps) => {
                         <Tooltip
                           content={
                             <Box>
-                              You will get
+                              Вы получите
                               <Box
                                 mr={1}
                                 ml={1}
@@ -490,11 +489,10 @@ export const ObjectiveElement = (props: ObjectiveElementProps) => {
                               >
                                 {Math.abs(progressionDiff)}%
                               </Box>
-                              {progressionDiff > 0 ? 'less' : 'more'} threat
-                              from this objective. This is because your threat
-                              level is{' '}
-                              {progressionDiff > 0 ? 'ahead ' : 'behind '}
-                              where it normally should be at.
+                              {progressionDiff > 0 ? 'меньше' : 'больше'}
+                              угрозы от этой задачи, так как ваша угроза
+                              {progressionDiff > 0 ? 'выше ' : 'ниже '}
+                              той, на которой вы должны быть.
                             </Box>
                           }
                         >
@@ -552,7 +550,7 @@ export const ObjectiveElement = (props: ObjectiveElementProps) => {
                       }}
                       my={1}
                     >
-                      TURN IN
+                      ЗАВЕРШИТЬ
                     </Button>
                   </Box>
                 ) : null}

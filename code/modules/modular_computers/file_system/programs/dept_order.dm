@@ -4,7 +4,7 @@
 	can_run_on_flags = PROGRAM_CONSOLE
 	downloader_category = PROGRAM_CATEGORY_SUPPLY
 	program_open_overlay = "request"
-	extended_desc = "Allows for departments to order supplied from Cargo for free, with a cooldown between orders."
+	extended_desc = "Позволяет отделам бесплатно заказывать товары из отдела снабжения с периодом ожидания между заказами."
 	size = 10
 	tgui_id = "NtosDeptOrder"
 	program_icon = FA_ICON_CART_FLATBED
@@ -155,10 +155,10 @@
 
 		var/new_dept_type = find_department_to_link(computer.computer_id_slot)
 		if(isnull(new_dept_type))
-			computer.physical.balloon_alert(orderer, "no department found!")
+			computer.physical.balloon_alert(orderer, "не обнаружен отдел!")
 			playsound(computer, 'sound/machines/buzz/buzz-sigh.ogg', 30, TRUE)
 		else
-			computer.physical.balloon_alert(orderer, "linked")
+			computer.physical.balloon_alert(orderer, "связка")
 			playsound(computer, 'sound/machines/ping.ogg', 30, TRUE)
 			set_linked_department(new_dept_type)
 		return TRUE
@@ -170,7 +170,7 @@
 	var/list/id_card_access = id_card?.GetAccess() || list()
 
 	if(length(use_access & id_card_access) <= 0)
-		computer.physical.balloon_alert(orderer, "access denied!")
+		computer.physical.balloon_alert(orderer, "отказано в доступе!")
 		playsound(computer, 'sound/machines/buzz/buzz-sigh.ogg', 30, TRUE)
 		return TRUE
 
@@ -178,7 +178,7 @@
 		if(isnull(department_order) || !(department_order in SSshuttle.shopping_list))
 			return TRUE
 		if(length(download_access & id_card_access) <= 0)
-			computer.physical.balloon_alert(orderer, "requires head of staff access!")
+			computer.physical.balloon_alert(orderer, "нужен доступ главы отдела!")
 			playsound(computer, 'sound/machines/buzz/buzz-sigh.ogg', 30, TRUE)
 			return TRUE
 
@@ -194,13 +194,14 @@
 	submit_order(orderer, params["id"])
 	return TRUE
 
+/// Submits the order with the specified supply pack id as the specified orderer
 /datum/computer_file/program/department_order/proc/submit_order(mob/living/orderer, id)
 	id = text2path(id) || id
 
 	var/datum/job_department/linked_department_real = SSjob.get_department_type(linked_department)
 	var/datum/supply_pack/pack = SSshuttle.supply_packs[id]
 	if(isnull(pack))
-		computer.physical.say("Something went wrong!")
+		computer.physical.say("Что-то пошло не так!")
 		CRASH("requested supply pack id \"[id]\" not found!")
 	if(!can_see_pack(pack) || !(pack.group in linked_department_real.associated_cargo_groups))
 		return
@@ -223,7 +224,7 @@
 
 	if(SSshuttle.supply.get_order_count(pack) == OVER_ORDER_LIMIT)
 		playsound(computer, 'sound/machines/buzz/buzz-sigh.ogg', 50, FALSE)
-		computer.physical.say("ERROR: No more then [CARGO_MAX_ORDER] of any pack may be ordered at once!")
+		computer.physical.say("ОШИБКА: Нельзя иметь более [CARGO_MAX_ORDER] заказов за раз!")
 		return
 
 	department_order = new(
@@ -231,7 +232,7 @@
 		orderer = name,
 		orderer_rank = rank,
 		orderer_ckey = ckey,
-		reason = "Departmental Order",
+		reason = "Заказ отдела",
 		paying_account = null,
 		department_destination = chosen_delivery_area,
 		coupon = null,
@@ -240,31 +241,26 @@
 	SSshuttle.shopping_list += department_order
 	if(!already_signalled)
 		RegisterSignal(SSshuttle, COMSIG_SUPPLY_SHUTTLE_BUY, PROC_REF(finalize_department_order))
-	computer.physical.say("Order processed. Cargo will deliver the crate when it comes in on their shuttle. NOTICE: Heads of staff may override the order.")
+	computer.physical.say("Заказ обработан. Отдел снабжения доставит вам ящик, когда он прилетит на шаттле. ПРИМЕЧАНИЕ: Главы отдела могут перезаписать заказ.")
 	calculate_cooldown(pack.cost)
 
-///signal when the supply shuttle begins to spawn orders. we forget the current order preventing it from being overridden (since it's already past the point of no return on undoing the order)
+/// Signal when the supply shuttle begins to spawn orders. We forget the current order preventing it from being overridden (since it's already past the point of no return on undoing the order)
 /datum/computer_file/program/department_order/proc/finalize_department_order(datum/subsystem)
 	SIGNAL_HANDLER
 	if(!isnull(department_order) && (department_order in SSshuttle.shopping_list))
 		department_order = null
 	UnregisterSignal(subsystem, COMSIG_SUPPLY_SHUTTLE_BUY)
 
+/// Calculates the cooldown it will take for this department's free order, based on its credit cost
 /datum/computer_file/program/department_order/proc/calculate_cooldown(credits)
-	//minimum almost the lowest value of a crate
-	var/min = CARGO_CRATE_VALUE * 1.6
-	//maximum fairly expensive crate at 3000
-	var/max = CARGO_CRATE_VALUE * 15
-	credits = clamp(credits, min, max)
-	var/time_y = (credits - min)/(max - min) + 1 //convert to between 1 and 2
-	time_y = 10 MINUTES * time_y
+	var/time_y = DEPARTMENTAL_ORDER_COOLDOWN_COEFFICIENT * (log(10, credits) ** DEPARTMENTAL_ORDER_COOLDOWN_EXPONENT) * (1 SECONDS)
 	department_cooldowns[linked_department] = world.time + time_y
 
 /datum/computer_file/program/department_order/process_tick(seconds_per_tick)
 	if(!check_cooldown() || alert_silenced || !alert_able)
 		return
-	radio?.talk_into(computer, "Order cooldown has expired! A new order may now be placed!", radio_channel)
-	computer.alert_call(src, "Order cooldown expired!", 'sound/machines/ping.ogg')
+	radio?.talk_into(computer, "Перезарядка заказа завершена! Новый заказ может быть создан!", radio_channel)
+	computer.alert_call(src, "Перезарядка заказа завершена!", 'sound/machines/ping.ogg')
 
 /// Checks if the cooldown is up and resets it if so.
 /datum/computer_file/program/department_order/proc/check_cooldown()
