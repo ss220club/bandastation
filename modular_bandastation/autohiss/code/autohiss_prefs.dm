@@ -24,5 +24,5 @@
 	var/obj/item/organ/tongue/tongue = current_mob.get_organ_by_type(/obj/item/organ/tongue)
 	if(!tongue)
 		CRASH("Tried to remove autohiss from a mob with no tongue on signal!")
-	current_mob.mind.autohiss_disabled_types += tongue.type
+	current_mob.mind.toggle_speechmode(tongue)
 	UnregisterSignal(current_mob, COMSIG_MOB_MIND_TRANSFERRED_INTO)
