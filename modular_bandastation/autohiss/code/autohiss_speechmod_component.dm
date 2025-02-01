@@ -1,26 +1,21 @@
 /datum/component/speechmod
-	/// Can autohiss be disabled by player?
-	var/autohiss_toggleable = FALSE
+	/// If this speechmod can be toggled by the player
+	var/toggleable = FALSE
 
-/datum/component/speechmod/Initialize(replacements, end_string, end_string_chance, slots, uppercase, should_modify_speech, autohiss_toggleable)
-	. = ..()
-	src.autohiss_toggleable = autohiss_toggleable
-
-/datum/component/speechmod/proc/set_target_mob(mob/owner)
-	if(!istype(owner))
+/datum/component/speechmod/proc/set_target_mob(mob/new_targeted)
+	if(!isnull(new_targeted))
 		UnregisterSignal(targeted, COMSIG_AUTOHISS_GET_PARENTS)
-	targeted = owner
-	if(!istype(targeted))
-		return
-	RegisterSignal(targeted, COMSIG_AUTOHISS_GET_PARENTS, PROC_REF(add_to_autohiss_list))
+	else
+		RegisterSignal(new_targeted, COMSIG_AUTOHISS_GET_PARENTS, PROC_REF(add_to_autohiss_list))
+	targeted = new_targeted
 
 /datum/component/speechmod/proc/add_to_autohiss_list(mob/target, list/speechmod_parents)
 	SIGNAL_HANDLER
 
-	if(autohiss_toggleable)
+	if(toggleable)
 		speechmod_parents += parent.type
 
 /datum/component/speechmod/handle_speech(datum/source, list/speech_args)
-	if(parent.type in targeted.mind?.autohiss_disabled_types)
+	if(targeted.mind?.autohiss_disabled_types?[parent.type])
 		return
 	. = ..()

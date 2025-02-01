@@ -17,10 +17,11 @@
 	/// Any additional checks that we should do before applying the speech modification
 	var/datum/callback/should_modify_speech = null
 
-/datum/component/speechmod/Initialize(replacements = list(), end_string = "", end_string_chance = 100, slots, uppercase = FALSE, should_modify_speech)
+/datum/component/speechmod/Initialize(replacements = list(), end_string = "", end_string_chance = 100, slots, uppercase = FALSE, should_modify_speech, toggleable)
 	if (!ismob(parent) && !isitem(parent) && !istype(parent, /datum/mutation/human))
 		return COMPONENT_INCOMPATIBLE
 
+	src.toggleable = toggleable // BANDASTATION EDIT ADDITION - Autohiss
 	src.replacements = replacements
 	src.end_string = end_string
 	src.end_string_chance = end_string_chance

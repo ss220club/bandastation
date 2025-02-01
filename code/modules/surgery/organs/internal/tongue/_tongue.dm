@@ -205,7 +205,7 @@
 
 /obj/item/organ/tongue/lizard/Initialize(mapload)
 	. = ..()
-	AddComponent(/datum/component/speechmod, replacements = speech_replacements, should_modify_speech = CALLBACK(src, PROC_REF(should_modify_speech)), autohiss_toggleable = TRUE) // BANDASTATION EDIT - Autohiss
+	AddComponent(/datum/component/speechmod, replacements = speech_replacements, should_modify_speech = CALLBACK(src, PROC_REF(should_modify_speech)), toggleable = TRUE) // BANDASTATION EDIT - Autohiss
 
 /obj/item/organ/tongue/lizard/silver
 	name = "silver tongue"
