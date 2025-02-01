@@ -12,26 +12,13 @@
   }
 }
 
-.Minesweeper__CellContainer {
-  position: relative;
-  display: inline-block;
-}
-
 .Minesweeper__open {
-  position: relative;
-  z-index: 0;
+  filter: brightness(80%);
   pointer-events: none;
   vertical-align: middle;
   text-align: center;
   font-size: medium;
   outline: none !important;
-}
-
-.Minesweeper__ButtonOverlay {
-  position: absolute !important;
-  background-color: rgba(0, 0, 0, 0.2) !important;
-  z-index: 1 !important;
-  pointer-events: none !important;
 }
 
 .Minesweeper__list {

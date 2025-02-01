@@ -1,4 +1,3 @@
-import { Fragment } from 'react';
 import { Box, Button, Icon, Section, Stack, Table } from 'tgui-core/components';
 
 import { useBackend, useSharedState } from '../backend';
@@ -118,56 +117,47 @@ export const MineSweeperGame = (props) => {
         {matrix.map((row, i) => (
           <Box key={i}>
             {matrix[i].map((cell, j) => (
-              <Fragment key={j} className="Minesweeper__CellContainer">
-                {!!matrix[i][j].open && (
-                  <Button
-                    m={0.25}
-                    height={2}
-                    width={2}
-                    className="Minesweeper__ButtonOverlay"
-                  />
-                )}
-                <Button
-                  m={0.25}
-                  height={2}
-                  width={2}
-                  className={
-                    matrix[i][j].open
-                      ? 'Minesweeper__open'
-                      : 'Minesweeper__closed'
-                  }
-                  bold
-                  icon={
-                    matrix[i][j].open
-                      ? matrix[i][j].bomb
-                        ? 'bomb'
-                        : ''
-                      : matrix[i][j].flag
-                        ? 'flag'
-                        : ''
-                  }
-                  textColor={
-                    matrix[i][j].open
-                      ? matrix[i][j].bomb
-                        ? 'black'
-                        : NumColor[matrix[i][j].around]
-                      : matrix[i][j].flag
-                        ? 'red'
-                        : 'gray'
-                  }
-                  onClick={(e) => handleClick(i, j, 'bomb')}
-                  onContextMenu={(e) => {
-                    e.preventDefault();
-                    handleClick(i, j, 'flag');
-                  }}
-                >
-                  {!!matrix[i][j].open &&
-                  !matrix[i][j].bomb &&
-                  matrix[i][j].around
-                    ? matrix[i][j].around
-                    : ' '}
-                </Button>
-              </Fragment>
+              <Button
+                key={j}
+                m={0.25}
+                height={2}
+                width={2}
+                className={
+                  matrix[i][j].open
+                    ? 'Minesweeper__open'
+                    : 'Minesweeper__closed'
+                }
+                bold
+                icon={
+                  matrix[i][j].open
+                    ? matrix[i][j].bomb
+                      ? 'bomb'
+                      : ''
+                    : matrix[i][j].flag
+                      ? 'flag'
+                      : ''
+                }
+                textColor={
+                  matrix[i][j].open
+                    ? matrix[i][j].bomb
+                      ? 'black'
+                      : NumColor[matrix[i][j].around]
+                    : matrix[i][j].flag
+                      ? 'red'
+                      : 'gray'
+                }
+                onClick={(e) => handleClick(i, j, 'bomb')}
+                onContextMenu={(e) => {
+                  e.preventDefault();
+                  handleClick(i, j, 'flag');
+                }}
+              >
+                {!!matrix[i][j].open &&
+                !matrix[i][j].bomb &&
+                matrix[i][j].around
+                  ? matrix[i][j].around
+                  : ' '}
+              </Button>
             ))}
           </Box>
         ))}
