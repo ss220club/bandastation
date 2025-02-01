@@ -32,7 +32,7 @@ SUBSYSTEM_DEF(central)
 
 	log_game("Loading whitelist with [response["total"]] entries")
 
-	var/list/ckeys = response["items"]
+	var/list/ckeys = result["items"]
 
 	GLOB.whitelist = ckeys
 
