@@ -18,7 +18,7 @@
 		to_chat(src, span_warning("Привязка Discord сейчас недоступна."))
 		return
 
-	if(SScentral.discord_links[src.ckey])
+	if(SScentral.is_player_discord_linked(src))
 		to_chat(src, span_warning("Вы уже привязали свою учетную запись Discord."))
 		return
 
@@ -26,7 +26,7 @@
 	SScentral.verify_in_discord(src)
 
 /datum/controller/subsystem/central/proc/verify_in_discord(client/player)
-	var/endpoint = "[CONFIG_GET(string/ss_central_url)]/player/token/[player.ckey]"
+	var/endpoint = "[CONFIG_GET(string/ss_central_url)]/player/token?ckey=[player.ckey]"
 	var/list/headers = list(
 		"Authorization" = "Bearer [CONFIG_GET(string/ss_central_token)]"
 	)

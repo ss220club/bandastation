@@ -19,7 +19,7 @@ SUBSYSTEM_DEF(central)
 	load_whitelist()
 
 /datum/controller/subsystem/central/proc/load_whitelist()
-	var/endpoint = "[CONFIG_GET(string/ss_central_url)]/whitelist/simple/active_whitelists/ckey?wl_type=[CONFIG_GET(string/whitelist_type)]"
+	var/endpoint = "[CONFIG_GET(string/ss_central_url)]/whitelist/ckeys?wl_type=[CONFIG_GET(string/whitelist_type)]&active_only=true&page=1&page_size=9999"
 
 	SShttp.create_async_request(RUSTG_HTTP_METHOD_GET, endpoint, "", list(), CALLBACK(src, PROC_REF(load_whitelist_callback)))
 
@@ -28,11 +28,16 @@ SUBSYSTEM_DEF(central)
 		stack_trace("Failed to load whitelist: HTTP status code [response.status_code] - [response.error]")
 		return
 
-	var/list/ckeys = json_decode(response.body)
+	var/list/response = json_decode(response.body)
+
+	log_game("Loading whitelist with [response["total"]] entries")
+
+	var/list/ckeys = response["items"]
+
 	GLOB.whitelist = ckeys
 
 /datum/controller/subsystem/central/proc/get_player_discord_async(client/player)
-	var/endpoint = "[CONFIG_GET(string/ss_central_url)]/player/ckey/[player.ckey]"
+	var/endpoint = "[CONFIG_GET(string/ss_central_url)]/player?ckey=[player.ckey]"
 
 	SShttp.create_async_request(RUSTG_HTTP_METHOD_GET, endpoint, "", list(), CALLBACK(src, PROC_REF(get_player_discord_callback), player))
 
@@ -69,15 +74,17 @@ SUBSYSTEM_DEF(central)
 /datum/controller/subsystem/central/proc/is_player_whitelisted(ckey)
 	. = (ckey in GLOB.whitelist)
 
-	var/endpoint = "[CONFIG_GET(string/ss_central_url)]/whitelist/simple/is_whitelisted/ckey/[ckey]?wl_type=[CONFIG_GET(string/whitelist_type)]"
+	var/endpoint = "[CONFIG_GET(string/ss_central_url)]/whitelists?wl_type=[CONFIG_GET(string/whitelist_type)]&ckey=[ckey]&page=1&page_size=1"
 	var/datum/http_response/response = SShttp.make_blocking_request(RUSTG_HTTP_METHOD_GET, endpoint, "", list())
 	if(response.errored || response.status_code != 200 && response.status_code != 404)
 		return FALSE
 
-	return json_decode(response.body)
+	var/result = json_decode(response.body)
+
+	return result["total"]
 
 /datum/controller/subsystem/central/proc/add_to_whitelist(ckey, added_by, duration_days = 0)
-	var/endpoint = "[CONFIG_GET(string/ss_central_url)]/whitelist/ckey"
+	var/endpoint = "[CONFIG_GET(string/ss_central_url)]/whitelist/by-ckey"
 
 	var/list/headers = list()
 	headers["Authorization"] = "Bearer [CONFIG_GET(string/ss_central_token)]"
@@ -87,30 +94,32 @@ SUBSYSTEM_DEF(central)
 	body["wl_type"] = CONFIG_GET(string/whitelist_type)
 	body["duration_days"] = duration_days
 
-	SShttp.create_async_request(RUSTG_HTTP_METHOD_POST, endpoint, json_encode(body), headers, CALLBACK(src, PROC_REF(add_to_whitelist_callback)))
+	SShttp.create_async_request(RUSTG_HTTP_METHOD_POST, endpoint, json_encode(body), headers, CALLBACK(src, PROC_REF(add_to_whitelist_callback), ckey))
 
-/datum/controller/subsystem/central/proc/add_to_whitelist_callback(datum/http_response/response)
+/datum/controller/subsystem/central/proc/add_to_whitelist_callback(ckey, datum/http_response/response)
 	if(response.errored)
-		switch(response.status_code)
-			if(404)
-				message_admins("Failed to add to whitelist: Player not found")
-				return
+		stack_trace("Failed to add to whitelist: HTTP error - [response.error]")
 
-			if(409)
-				message_admins("Failed to add to whitelist: Player is whitelist banned")
-				return
+	switch(response.status_code)
+		if(201)
+			. = . // noop
+		if(404)
+			message_admins("Failed to add to whitelist: Player not found")
+			return
 
-			else
-				stack_trace("Failed to add to whitelist: HTTP status code [response.status_code] - [response.error]")
-				return
+		if(409)
+			message_admins("Failed to add to whitelist: Player is whitelist banned")
+			return
 
-	var/list/data = json_decode(response.body)
-	var/ckey = data["ckey"]
+		else
+			stack_trace("Failed to add to whitelist: HTTP status code [response.status_code] - [response.body]")
+			return
 
+	log_admin("Added [ckey] to whitelist successfully")
 	GLOB.whitelist |= ckey
 
 /datum/controller/subsystem/central/proc/whitelist_ban_player(player_ckey, admin_ckey, duration_days, reason)
-	var/endpoint = "[CONFIG_GET(string/ss_central_url)]/whitelist/ban/ckey"
+	var/endpoint = "[CONFIG_GET(string/ss_central_url)]/whitelist/ban/by-ckey"
 
 	var/list/headers = list()
 	headers["Authorization"] = "Bearer [CONFIG_GET(string/ss_central_token)]"
@@ -121,14 +130,11 @@ SUBSYSTEM_DEF(central)
 	body["duration_days"] = duration_days
 	body["reason"] = reason
 
-	SShttp.create_async_request(RUSTG_HTTP_METHOD_POST, endpoint, json_encode(body), headers, CALLBACK(src, PROC_REF(whitelist_ban_player_callback)))
+	SShttp.create_async_request(RUSTG_HTTP_METHOD_POST, endpoint, json_encode(body), headers, CALLBACK(src, PROC_REF(whitelist_ban_player_callback), player_ckey))
 
-/datum/controller/subsystem/central/proc/whitelist_ban_player_callback(datum/http_response/response)
-	if(response.errored || response.status_code != 200)
-		stack_trace("Failed to ban player: HTTP status code [response.status_code] - [response.error]")
+/datum/controller/subsystem/central/proc/whitelist_ban_player_callback(ckey, datum/http_response/response)
+	if(response.errored || response.status_code != 201)
+		stack_trace("Failed to ban player: HTTP status code [response.status_code] - [response.error] - [response.body]")
 		return
-
-	var/list/data = json_decode(response.body)
-	var/ckey = data["ckey"]
 
 	GLOB.whitelist -= ckey

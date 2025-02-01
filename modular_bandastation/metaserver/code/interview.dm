@@ -10,6 +10,11 @@
 /datum/config_entry/string/interview_webhook_url
 
 /datum/interview/approve(client/approved_by)
+	if(!SScentral.is_player_discord_linked(owner))
+		to_chat(approved_by, span_warning("У игрока не привязана своя учетная запись Discord!"))
+		to_chat(owner, span_warning("Ваше интервью не удалось принять по причине: У вас не привязана учетная запись Discord!"))
+		log_admin("[key_name(approved_by)] tried and failed to approve [key_name(owner)] an interview. Reason: Discord account not linked.")
+		return
 	. = ..()
 	add_owner_to_whitelist(approved_by)
 	send_interview_webhook(src, "[approved_by.ckey] approved:")
