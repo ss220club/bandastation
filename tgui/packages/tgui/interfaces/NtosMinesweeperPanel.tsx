@@ -164,7 +164,7 @@ export const MineSweeperGame = (props) => {
       </Stack.Item>
       <Stack.Item grow>
         <Stack vertical>
-          <Stack.Item grow className="Minesweeper__infobox">
+          <Stack.Item grow basis={'unset'} className="Minesweeper__infobox">
             <Stack vertical textAlign="left" pt={1}>
               <Stack.Item pl={2} fontSize={2}>
                 <Icon name="bomb" color="gray" width={2} /> : {bombs}
