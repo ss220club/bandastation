@@ -4,7 +4,6 @@
 
 /datum/mind/proc/toggle_speechmode(datum/component/speechmod/speechmod)
 	var/speechmod_name = speechmod.get_parent_name()
-	// Then add/remove from list
 	if(disabled_speechmode_parent_types[speechmod.parent.type])
 		disabled_speechmode_parent_types -= speechmod.parent.type
 		to_chat(src, span_notice("Автошипение включено для: [speechmod_name]."))
