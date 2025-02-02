@@ -18378,6 +18378,11 @@
 /obj/structure/cable,
 /turf/open/floor/plating,
 /area/station/maintenance/department/prison)
+"eBO" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/turf/open/floor/iron/dark/textured,
+/area/station/engineering/gravity_generator)
 "eBS" = (
 /obj/effect/spawner/random/structure/closet_maintenance,
 /obj/item/restraints/handcuffs/cable/pink,
@@ -24877,7 +24882,6 @@
 /turf/open/floor/iron/dark/textured_large,
 /area/station/cargo/bitrunning/den)
 "ghU" = (
-/obj/structure/cable,
 /obj/structure/chair/office/light,
 /turf/open/floor/iron/dark/textured,
 /area/station/engineering/gravity_generator)
@@ -27859,7 +27863,6 @@
 	},
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/structure/cable/layer1,
 /obj/structure/cable/multilayer/connected,
 /turf/open/floor/iron/dark,
 /area/station/engineering/engine_smes)
@@ -87464,10 +87467,6 @@
 /obj/structure/cable,
 /turf/open/floor/iron/white,
 /area/station/science/research)
-"vVR" = (
-/obj/structure/cable,
-/turf/open/floor/iron/dark/textured,
-/area/station/engineering/gravity_generator)
 "vVS" = (
 /obj/structure/firelock_frame{
 	anchored = 1
@@ -199515,8 +199514,8 @@ alC
 ceC
 qCU
 tCF
-vVR
-xtX
+bWk
+eBO
 ghU
 sVv
 qCU
