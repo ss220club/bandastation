@@ -269,11 +269,11 @@
 
 // Makes cell open, and show it contains
 /datum/computer_file/program/minesweeper/proc/open_cell(x, y, start_cycle = TRUE)
-	. = list()
-	if(minesweeper_matrix[x][y]["open"])
-		return
+	var/list/minesweeper_cell = minesweeper_matrix[x][y]
+	if(minesweeper_cell["open"])
+		return list()
 
-	minesweeper_matrix[x][y]["open"] = TRUE
+	minesweeper_cell["open"] = TRUE
 	opened_cells += 1
 
 	if(minesweeper_matrix[x][y]["flag"])
@@ -282,13 +282,14 @@
 		if(minesweeper_matrix[x][y]["bomb"])
 			flagged_bombs -= 1
 
-	if(minesweeper_matrix[x][y]["around"] != 0)
-		return
+	if(minesweeper_cell["around"] != 0)
+		return list()
 
 	if(start_cycle)
 		update_zeros(x, y)
-	else
-		. += list(list(x, y))
+		return list()
+
+	return list(list(x, y))
 
 // Open all "zeroes" around the click place
 /datum/computer_file/program/minesweeper/proc/update_zeros(x, y)
