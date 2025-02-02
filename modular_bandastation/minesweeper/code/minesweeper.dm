@@ -276,10 +276,10 @@
 	minesweeper_cell["open"] = TRUE
 	opened_cells += 1
 
-	if(minesweeper_matrix[x][y]["flag"])
-		minesweeper_matrix[x][y]["flag"] = FALSE
+	if(minesweeper_cell["flag"])
+		minesweeper_cell["flag"] = FALSE
 		setted_flags -= 1
-		if(minesweeper_matrix[x][y]["bomb"])
+		if(minesweeper_cell["bomb"])
 			flagged_bombs -= 1
 
 	if(minesweeper_cell["around"] != 0)
