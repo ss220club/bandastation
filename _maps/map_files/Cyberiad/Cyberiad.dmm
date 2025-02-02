@@ -65021,7 +65021,6 @@
 	},
 /obj/machinery/power/smes/engineering,
 /obj/structure/cable,
-/obj/structure/cable,
 /turf/open/floor/plating,
 /area/station/engineering/engine_smes)
 "qjk" = (
@@ -88020,6 +88019,7 @@
 /area/space/nearstation)
 "wcN" = (
 /obj/machinery/power/smes/engineering,
+/obj/structure/cable,
 /turf/open/floor/plating,
 /area/station/engineering/engine_smes)
 "wdj" = (
