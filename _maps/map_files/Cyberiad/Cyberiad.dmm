@@ -8338,7 +8338,6 @@
 /turf/open/floor/plating/airless,
 /area/space/nearstation)
 "ccQ" = (
-/obj/machinery/duct,
 /turf/open/floor/iron,
 /area/station/engineering/storage_shared)
 "ccU" = (
@@ -37143,7 +37142,6 @@
 "jqL" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/duct,
 /obj/structure/reagent_dispensers/fueltank,
 /turf/open/floor/iron,
 /area/station/engineering/storage_shared)
@@ -42446,8 +42444,6 @@
 "kFP" = (
 /obj/machinery/light/small/directional/north,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/duct,
-/obj/structure/reagent_dispensers/watertank,
 /turf/open/floor/iron,
 /area/station/engineering/storage_shared)
 "kFR" = (
@@ -47590,6 +47586,7 @@
 "lTR" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/duct,
+/obj/structure/reagent_dispensers/watertank,
 /turf/open/floor/iron,
 /area/station/engineering/storage_shared)
 "lTT" = (
@@ -70026,6 +70023,13 @@
 	},
 /turf/open/floor/iron,
 /area/station/hallway/primary/aft)
+"rwc" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 6
+	},
+/obj/machinery/firealarm/directional/east,
+/turf/open/floor/iron/dark,
+/area/station/engineering/storage)
 "rwp" = (
 /obj/structure/closet/firecloset,
 /turf/open/floor/plating,
@@ -80795,12 +80799,6 @@
 /obj/effect/turf_decal/tile/neutral/half/contrasted,
 /turf/open/floor/iron,
 /area/station/commons/storage/primary)
-"uiq" = (
-/obj/machinery/firealarm/directional/east,
-/obj/machinery/portable_atmospherics/canister/plasma,
-/obj/effect/turf_decal/bot,
-/turf/open/floor/plating,
-/area/station/engineering/storage)
 "uiw" = (
 /obj/machinery/door/firedoor,
 /obj/effect/turf_decal/tile/red{
@@ -94450,6 +94448,7 @@
 "xKG" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
+/obj/machinery/duct,
 /turf/open/floor/iron,
 /area/station/engineering/storage_shared)
 "xKI" = (
@@ -188992,9 +188991,9 @@ jdk
 awU
 qvI
 smq
-nXm
+rwc
 uMv
-uiq
+izJ
 djZ
 xLD
 put
