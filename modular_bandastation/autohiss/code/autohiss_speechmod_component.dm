@@ -28,11 +28,11 @@
 		speechmod_name = mutation.name
 	if(istype(parent, /datum/status_effect))
 		var/datum/status_effect/effect = parent
-		var/atom/movable/screen/alert/status_effect/status_effect_alert = effect.alert_type
-		speechmod_name = declent_ru_initial(status_effect_alert.name, NOMINATIVE, status_effect_alert::name)
+		if(effect.linked_alert)
+			speechmod_name = declent_ru_initial(effect.linked_alert.name, NOMINATIVE, effect.linked_alert.name)
 	if(isatom(parent))
 		var/atom/speechmod_atom = parent
-		speechmod_name = declent_ru_initial(speechmod_atom::name, NOMINATIVE, speechmod_atom::name)
+		speechmod_name = declent_ru_initial(speechmod_atom.name, NOMINATIVE, speechmod_atom.name)
 	return speechmod_name
 
 /datum/component/speechmod/handle_speech(datum/source, list/speech_args)
