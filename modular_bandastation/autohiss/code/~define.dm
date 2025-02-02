@@ -1,1 +1,1 @@
-#define COMSIG_AUTOHISS_GET_PARENTS "autohiss_get_parents"
+#define COMSIG_MOB_GET_AFFECTING_SPEECHMODS "get_affecting_speechmods"

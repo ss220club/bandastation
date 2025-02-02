@@ -1,21 +1,28 @@
-/mob/living/carbon/verb/toggle_autohiss()
+/mob/proc/get_effecting_speechmods()
+	var/list/datum/component/speechmod/speechmod_components = list()
+	SEND_SIGNAL(src, COMSIG_MOB_GET_AFFECTING_SPEECHMODS, speechmod_components)
+	return speechmod_components
+
+/mob/proc/toggle_autohiss()
 	set category = "IC"
 	set name = "Переключить модификатор речи"
 	set desc = "Даёт возможность переключить модификатор речи"
 
+	var/list/datum/component/speechmod/speechmod_components = get_effecting_speechmods()
+	// Assoc list - [parent name = speechmod]
 	var/list/toggleable_speechmods = list()
-	SEND_SIGNAL(src, COMSIG_AUTOHISS_GET_PARENTS, toggleable_speechmods)
+	for(var/datum/component/speechmod/speechmod as anything in speechmod_components)
+		if(!speechmod.toggleable)
+			continue
+		toggleable_speechmods["[capitalize(speechmod.get_parent_name())]"] = speechmod
 	if(!length(toggleable_speechmods))
 		to_chat(src, span_warning("Нет модификаторов речи доступных для переключения!"))
-		return
-	var/list/selected_parent_type = tgui_input_list(src, "Выберите, где нужно переключить автошипение.", "Переключить автошипение.", toggleable_speechmods)
-	if(!selected_parent_type)
 		return
 	// So we don't make player choose, when only 1 option is available
 	if(length(toggleable_speechmods) == 1)
 		mind.toggle_speechmode(toggleable_speechmods[1])
 		return
-	var/speechmode_parent = tgui_input_list(src, "Выберите, где нужно переключить модификатор речи.", "Переключить модификтор речи.", toggleable_speechmods)
-	if(isnull(speechmode_parent))
+	var/speechmod_parent = tgui_input_list(src, "Выберите, где нужно переключить модификатор речи.", "Переключить модификтор речи.", toggleable_speechmods)
+	if(isnull(speechmod_parent))
 		return
-	mind.toggle_speechmode(speechmode_parent)
+	mind.toggle_speechmode(toggleable_speechmods[speechmod_parent])

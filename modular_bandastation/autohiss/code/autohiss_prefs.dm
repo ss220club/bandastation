@@ -14,15 +14,13 @@
 /datum/preference/toggle/autohiss_enabled/apply_to_human(mob/living/carbon/human/target, value)
 	if(value)
 		return
-	var/obj/item/organ/tongue/tongue = target.get_organ_by_type(/obj/item/organ/tongue)
-	if(!tongue)
-		CRASH("Tried to remove autohiss from a mob with no tongue!")
 	RegisterSignal(target, COMSIG_MOB_MIND_TRANSFERRED_INTO, PROC_REF(on_mind_transfer), override = TRUE)
 
 /datum/preference/toggle/autohiss_enabled/proc/on_mind_transfer(mob/living/carbon/human/current_mob, mob/previous_mob)
 	SIGNAL_HANDLER
-	var/obj/item/organ/tongue/tongue = current_mob.get_organ_by_type(/obj/item/organ/tongue)
-	if(!tongue)
-		CRASH("Tried to remove autohiss from a mob with no tongue on signal!")
-	current_mob.mind.toggle_speechmode(tongue)
+
+	var/list/datum/component/speechmod/speechmod_components = list()
+	SEND_SIGNAL(src, COMSIG_MOB_GET_AFFECTING_SPEECHMODS, speechmod_components)
+	for(var/datum/component/speechmod/speechmod as anything in speechmod_components)
+		current_mob.mind.toggle_speechmode(speechmod)
 	UnregisterSignal(current_mob, COMSIG_MOB_MIND_TRANSFERRED_INTO)
