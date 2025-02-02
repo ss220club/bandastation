@@ -20,7 +20,7 @@
 	SIGNAL_HANDLER
 
 	var/list/datum/component/speechmod/speechmod_components = list()
-	SEND_SIGNAL(src, COMSIG_MOB_GET_AFFECTING_SPEECHMODS, speechmod_components)
+	SEND_SIGNAL(current_mob, COMSIG_MOB_GET_AFFECTING_SPEECHMODS, speechmod_components)
 	for(var/datum/component/speechmod/speechmod as anything in speechmod_components)
 		current_mob.mind.toggle_speechmode(speechmod)
 	UnregisterSignal(current_mob, COMSIG_MOB_MIND_TRANSFERRED_INTO)
