@@ -44,13 +44,17 @@
 		return
 	var/list/datum/component/speechmod/speechmods = list()
 	SEND_SIGNAL(targeted, COMSIG_MOB_GET_AFFECTING_SPEECHMODS, speechmods)
+	var/list/datum/component/speechmod/toggleable_speechmods = list()
+	for(var/datum/component/speechmod/speechmod as anything in speechmods)
+		if(speechmod.toggleable)
+			toggleable_speechmods += speechmod
 	switch(new_status)
 		if(ADD_AUTOHISS_VERB)
-			if(length(speechmods) == 1)
-				add_verb(targeted, /mob/proc/toggle_autohiss)
+			if(length(toggleable_speechmods) == 1)
+				add_verb(targeted, /mob/proc/toggle_speechmods)
 		if(REMOVE_AUTOHISS_VERB)
-			if(!length(speechmods))
-				remove_verb(targeted, /mob/proc/toggle_autohiss)
+			if(!length(toggleable_speechmods))
+				remove_verb(targeted, /mob/proc/toggle_speechmods)
 
 /datum/component/speechmod/Destroy()
 	update_mob_verb(REMOVE_AUTOHISS_VERB)

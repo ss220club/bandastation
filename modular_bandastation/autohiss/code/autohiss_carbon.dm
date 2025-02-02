@@ -3,7 +3,7 @@
 	SEND_SIGNAL(src, COMSIG_MOB_GET_AFFECTING_SPEECHMODS, speechmod_components)
 	return speechmod_components
 
-/mob/proc/toggle_autohiss()
+/mob/proc/toggle_speechmods()
 	set category = "IC"
 	set name = "Переключить модификатор речи"
 	set desc = "Даёт возможность переключить модификатор речи"
@@ -12,9 +12,8 @@
 	// Assoc list - ["parent name" = /datum/speechmod]
 	var/list/toggleable_speechmods = list()
 	for(var/datum/component/speechmod/speechmod as anything in speechmod_components)
-		if(!speechmod.toggleable)
-			continue
-		toggleable_speechmods["[capitalize(speechmod.get_parent_name())]"] = speechmod
+		if(speechmod.toggleable)
+			toggleable_speechmods["[capitalize(speechmod.get_parent_name())]"] = speechmod
 	if(!length(toggleable_speechmods))
 		to_chat(src, span_warning("Нет модификаторов речи доступных для переключения!"))
 		return
