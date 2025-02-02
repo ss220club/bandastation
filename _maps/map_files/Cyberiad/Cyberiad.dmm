@@ -46477,14 +46477,6 @@
 /obj/effect/landmark/start/chaplain,
 /turf/open/floor/carpet/black,
 /area/station/service/chapel/office)
-"lFU" = (
-/obj/structure/cable,
-/obj/effect/turf_decal/tile/yellow/half/contrasted{
-	dir = 1
-	},
-/obj/machinery/light_switch/directional/north,
-/turf/open/floor/iron/dark,
-/area/station/engineering/engine_smes)
 "lFX" = (
 /obj/structure/table/reinforced,
 /obj/machinery/firealarm/directional/south,
@@ -59105,7 +59097,7 @@
 /obj/effect/turf_decal/tile/yellow/half/contrasted{
 	dir = 1
 	},
-/obj/item/radio/intercom/directional/north,
+/obj/machinery/light_switch/directional/north,
 /turf/open/floor/iron/dark,
 /area/station/engineering/engine_smes)
 "oKA" = (
@@ -75069,6 +75061,14 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron/smooth,
 /area/station/maintenance/ghetto/central/aft)
+"sIU" = (
+/obj/structure/cable,
+/obj/effect/turf_decal/tile/yellow/half/contrasted{
+	dir = 1
+	},
+/obj/item/radio/intercom/directional/north,
+/turf/open/floor/iron/dark,
+/area/station/engineering/engine_smes)
 "sIX" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/preopen{
@@ -190275,7 +190275,7 @@ hZh
 xHY
 jdk
 qHG
-lFU
+dGf
 pEo
 fdw
 qHG
@@ -190789,7 +190789,7 @@ pPI
 jLC
 aPB
 qHG
-dGf
+sIU
 tmO
 jcM
 qHG
@@ -196425,7 +196425,7 @@ kot
 fsZ
 hXT
 nGm
-hXT
+qyb
 hpN
 doz
 doz
