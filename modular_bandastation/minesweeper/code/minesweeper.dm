@@ -6,7 +6,9 @@
 	filename = "minesweeper"
 	filedesc = "Minesweeper"
 	// program_open_overlay = "minesweeper"
-	extended_desc = "A program with the Minesweeper game! Don`t forget to share your results in online leaderbaord."
+	extended_desc = "Погрузись в удивительный мир 'Сапера',\
+где каждое неверное нажатие может привести к взрыву!\
+Сразись с друзьями и стань мастером разминирования в этой захватывающей игре!."
 	downloader_category = PROGRAM_CATEGORY_GAMES
 	size = 6
 	tgui_id = "NtosMinesweeperPanel"
@@ -144,16 +146,16 @@
 		if("ChangeSize")
 			if(!first_touch)
 				return
-			var/ans = tgui_alert(ui.user, "You want to change field parametrs?", "Minesweeper Settings", list("Yes", "No"))
-			if(ans == "No")
+			var/ans = tgui_alert(ui.user, "Вы хотите изменить параметры поля?", "Настройки Сапёра", list("Да", "Нет"))
+			if(ans != "Да")
 				return
-			var/width = tgui_input_number(ui.user, "Set new width", "Minesweeper Settings", generation_columns, 25, 9)
-			var/height = tgui_input_number(ui.user, "Set new height", "Minesweeper Settings", generation_rows, 25, 9)
-			var/bombs = tgui_input_number(ui.user, "Set new bombs quantity", "Minesweeper Settings", generation_bombs, 100, 10)
+			var/width = tgui_input_number(ui.user, "Выставите ширину", "Настройки Сапёра", generation_columns, 25, 9)
+			var/height = tgui_input_number(ui.user, "Выставите длину", "Настройки Сапёра", generation_rows, 25, 9)
+			var/bombs = tgui_input_number(ui.user, "Выставите кол-во бомб", "Настройки Сапёра", generation_bombs, 100, 10)
 			if(computer.loc != ui.user)
 				return
 			if(bombs > (width*height/5))
-				tgui_alert(ui.user, "Too many bombs for this size!", "Minesweeper Settings", list("Ok"))
+				tgui_alert(ui.user, "Слишком много бомб для данного размера поля!", "Настройки Сапёра", list("Ок"))
 				return
 			generation_rows = height
 			generation_columns = width
@@ -201,7 +203,7 @@
 	addtimer(CALLBACK(src, PROC_REF(make_empty_matrix)), 3 SECONDS)
 
 // Return the minesweeper matrix to initial state
-/datum/computer_file/program/minesweeper/proc/make_empty_matrix(pay = TRUE)
+/datum/computer_file/program/minesweeper/proc/make_empty_matrix()
 	minesweeper_matrix = list()
 	for(var/i in 1 to generation_rows)
 		var/list/new_row = list()
@@ -265,73 +267,60 @@
 	count_3BV()
 	start_time = world.time
 
-// Makes cell open, and make show it contains
+// Makes cell open, and show it contains
 /datum/computer_file/program/minesweeper/proc/open_cell(x, y, start_cycle = TRUE)
 	. = list()
-	if(!minesweeper_matrix[x][y]["open"])
-		minesweeper_matrix[x][y]["open"] = TRUE
-		opened_cells += 1
+	if(minesweeper_matrix[x][y]["open"])
+		return
 
-		if(minesweeper_matrix[x][y]["flag"])
-			minesweeper_matrix[x][y]["flag"] = FALSE
-			setted_flags -= 1
-			if(minesweeper_matrix[x][y]["bomb"])
-				flagged_bombs -= 1
+	minesweeper_matrix[x][y]["open"] = TRUE
+	opened_cells += 1
 
-		if(minesweeper_matrix[x][y]["around"] == 0)
-			if(start_cycle)
-				update_zeros(x, y)
-			else
-				. = list(list(x, y))
+	if(minesweeper_matrix[x][y]["flag"])
+		minesweeper_matrix[x][y]["flag"] = FALSE
+		setted_flags -= 1
+		if(minesweeper_matrix[x][y]["bomb"])
+			flagged_bombs -= 1
+
+	if(minesweeper_matrix[x][y]["around"] != 0)
+		return
+
+	if(start_cycle)
+		update_zeros(x, y)
+	else
+		. += list(list(x, y))
 
 // Open all "zeroes" around the click place
 /datum/computer_file/program/minesweeper/proc/update_zeros(x, y)
+	var/list/directions = list(
+		list(-1,  0), // Left
+		list( 1,  0), // Right
+		list( 0, -1), // Up
+		list( 0,  1), // Down
+		list(-1, -1), // Top-Left
+		list( 1,  1), // Bottom-Right
+		list(-1,  1), // Top-Right
+		list( 1, -1)  // Bottom-Left
+	)
+
 	var/list/list_for_update = list(list(x, y))
-	for(var/list/coordinates in list_for_update)
+
+	for (var/list/coordinates in list_for_update)
 		var/this_x = coordinates[1]
 		var/this_y = coordinates[2]
-		var/new_x
-		var/new_y
 
-		if(this_x != 1)
-			new_x = this_x-1
-			list_for_update += open_cell(new_x, this_y)
+		for (var/list/direction in directions)
+			var/new_x = this_x + direction[1]
+			var/new_y = this_y + direction[2]
 
-		if(this_y != 1)
-			new_y = this_y-1
-			list_for_update += open_cell(this_x, new_y)
+			// Boundary checks
+			if (new_x >= 1 && new_x <= generation_rows && new_y >= 1 && new_y <= generation_columns)
+				// Diagonal check requires both adjacent cells to be open
+				if (abs(direction[1]) == 1 && abs(direction[2]) == 1)
+					if (!(minesweeper_matrix[new_x][this_y]["open"] && minesweeper_matrix[this_x][new_y]["open"]))
+						continue
 
-		if(this_x != generation_rows)
-			new_x = this_x+1
-			list_for_update += open_cell(new_x, this_y)
-
-		if(this_y != generation_columns)
-			new_y = this_y+1
-			list_for_update += open_cell(this_x, new_y)
-
-		if(this_x != 1 && this_y != 1)
-			new_x = this_x-1
-			new_y = this_y-1
-			if(minesweeper_matrix[new_x][this_y]["open"] && minesweeper_matrix[this_x][new_y]["open"])
-				list_for_update += open_cell(new_x, new_y)
-
-		if(this_x != generation_rows && this_y != generation_columns)
-			new_x = this_x+1
-			new_y = this_y+1
-			if(minesweeper_matrix[new_x][this_y]["open"] && minesweeper_matrix[this_x][new_y]["open"])
-				list_for_update += open_cell(new_x, new_y)
-
-		if(this_x != 1 && this_y != generation_columns)
-			new_x = this_x-1
-			new_y = this_y+1
-			if(minesweeper_matrix[new_x][this_y]["open"] && minesweeper_matrix[this_x][new_y]["open"])
-				list_for_update += open_cell(new_x, new_y)
-
-		if(this_x != generation_rows && this_y != 1)
-			new_x = this_x+1
-			new_y = this_y-1
-			if(minesweeper_matrix[new_x][this_y]["open"] && minesweeper_matrix[this_x][new_y]["open"])
-				list_for_update += open_cell(new_x, new_y)
+				list_for_update += open_cell(new_x, new_y, FALSE)
 
 // Count value of field for scoring
 /datum/computer_file/program/minesweeper/proc/count_3BV()
