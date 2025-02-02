@@ -8,7 +8,7 @@
 	// program_open_overlay = "minesweeper"
 	extended_desc = "Погрузись в удивительный мир 'Сапера',\
 где каждое неверное нажатие может привести к взрыву!\
-Сразись с друзьями и стань мастером разминирования в этой захватывающей игре!."
+ Сразись с друзьями и стань мастером разминирования в этой захватывающей игре!."
 	downloader_category = PROGRAM_CATEGORY_GAMES
 	size = 6
 	tgui_id = "NtosMinesweeperPanel"
@@ -305,8 +305,10 @@
 	)
 
 	var/list/list_for_update = list(list(x, y))
+	var/index = 1
 
-	for (var/list/coordinates in list_for_update)
+	while (index < list_for_update.len)
+		var/list/coordinates = list_for_update[index]
 		var/this_x = coordinates[1]
 		var/this_y = coordinates[2]
 
@@ -322,6 +324,7 @@
 						continue
 
 				list_for_update += open_cell(new_x, new_y, FALSE)
+		index++
 
 // Count value of field for scoring
 /datum/computer_file/program/minesweeper/proc/count_3BV()
