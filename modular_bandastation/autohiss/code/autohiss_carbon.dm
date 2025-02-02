@@ -9,7 +9,7 @@
 	set desc = "Даёт возможность переключить модификатор речи"
 
 	var/list/datum/component/speechmod/speechmod_components = get_effecting_speechmods()
-	// Assoc list - [parent name = speechmod]
+	// Assoc list - ["parent name" = /datum/speechmod]
 	var/list/toggleable_speechmods = list()
 	for(var/datum/component/speechmod/speechmod as anything in speechmod_components)
 		if(!speechmod.toggleable)
