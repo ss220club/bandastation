@@ -20,7 +20,7 @@
 		return
 	// So we don't make player choose, when only 1 option is available
 	if(length(toggleable_speechmods) == 1)
-		mind.toggle_speechmode(toggleable_speechmods[1])
+		mind.toggle_speechmode(toggleable_speechmods["[toggleable_speechmods[1]]"])
 		return
 	var/speechmod_parent = tgui_input_list(src, "Выберите, где нужно переключить модификатор речи.", "Переключить модификтор речи.", toggleable_speechmods)
 	if(isnull(speechmod_parent))
