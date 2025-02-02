@@ -6,9 +6,10 @@
 	var/toggleable = FALSE
 
 /datum/component/speechmod/proc/set_target_mob(mob/new_targeted)
-	if(isnull(new_targeted) && targeted)
-		UnregisterSignal(targeted, COMSIG_MOB_GET_AFFECTING_SPEECHMODS)
-		update_mob_verb(REMOVE_AUTOHISS_VERB)
+	if(isnull(new_targeted))
+		if(targeted)
+			UnregisterSignal(targeted, COMSIG_MOB_GET_AFFECTING_SPEECHMODS)
+			update_mob_verb(REMOVE_AUTOHISS_VERB)
 		targeted = null
 		return
 	RegisterSignal(new_targeted, COMSIG_MOB_GET_AFFECTING_SPEECHMODS, PROC_REF(add_to_speechmods_list))
