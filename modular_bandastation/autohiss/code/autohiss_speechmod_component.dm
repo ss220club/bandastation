@@ -49,7 +49,7 @@
 			if(length(speechmods) == 1)
 				add_verb(targeted, /mob/proc/toggle_autohiss)
 		if(REMOVE_AUTOHISS_VERB)
-			if(length(speechmods) == 1)
+			if(!length(speechmods))
 				remove_verb(targeted, /mob/proc/toggle_autohiss)
 
 /datum/component/speechmod/Destroy()
