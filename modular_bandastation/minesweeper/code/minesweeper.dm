@@ -298,7 +298,11 @@
 
 // Open all "zeroes" around the click place
 /datum/computer_file/program/minesweeper/proc/update_zeros(x, y)
-	var/list/directions = list(
+	// First we open cell by passed coordinates and stop if it has bombs around or was already opened
+	if(!open_cell(x, y))
+		return 
+		
+	var/static/list/directions = list(
 		list(-1,  0), // Left
 		list( 1,  0), // Right
 		list( 0, -1), // Up
@@ -328,7 +332,9 @@
 					if (!(minesweeper_matrix[new_x][this_y]["open"] && minesweeper_matrix[this_x][new_y]["open"]))
 						continue
 
-				list_for_update += open_cell(new_x, new_y, FALSE)
+				var/list/opened_cell_coordinates = open_cell(new_x, new_y)
+				if(opened_cell_coordinates)
+					list_for_update += opened_cell_coordinates
 		index++
 
 // Count value of field for scoring
