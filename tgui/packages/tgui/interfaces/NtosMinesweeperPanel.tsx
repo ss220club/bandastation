@@ -1,13 +1,15 @@
 import { Box, Button, Icon, Section, Stack, Table } from 'tgui-core/components';
+import { BooleanLike } from 'tgui-core/react';
 
 import { useBackend, useSharedState } from '../backend';
 import { NtosWindow } from '../layouts';
 
 interface Bomb {
-  open: number;
-  bomb: number;
-  flag: number;
+  open: BooleanLike;
+  bomb: BooleanLike;
+  flag: BooleanLike;
   around: number;
+  final: BooleanLike;
 }
 
 type Matrix = Bomb[][];
@@ -34,7 +36,7 @@ type MinesweeperData = {
   bombs: number;
   leaderboard: Leaderboard;
   glob_leaderboard: Leaderboard;
-  first_touch: boolean;
+  first_touch: BooleanLike;
   field_params: FieldParams;
 };
 
@@ -131,7 +133,9 @@ export const MineSweeperGame = (props) => {
                 icon={
                   matrix[i][j].open
                     ? matrix[i][j].bomb
-                      ? 'bomb'
+                      ? matrix[i][j].final
+                        ? 'burst'
+                        : 'bomb'
                       : ''
                     : matrix[i][j].flag
                       ? 'flag'
@@ -140,7 +144,9 @@ export const MineSweeperGame = (props) => {
                 textColor={
                   matrix[i][j].open
                     ? matrix[i][j].bomb
-                      ? 'black'
+                      ? matrix[i][j].final
+                        ? 'red'
+                        : 'black'
                       : NumColor[matrix[i][j].around]
                     : matrix[i][j].flag
                       ? 'red'
