@@ -297,6 +297,9 @@
 		return
 	var/datum/reagents/these_reagents = source_hookah.reagent_container.reagents
 	for(var/obj/item/food/this_food in source_hookah.food_items)
+		if(!this_food.reagents)
+			qdel(this_food)
+			continue
 		if(!is_type_in_typecache(this_food, source_hookah.allowed_ingridients))
 			is_safe = FALSE
 		this_food.reagents.trans_to(these_reagents, INHALE_VOLUME / source_hookah.food_items.len)
@@ -304,10 +307,10 @@
 			qdel(this_food)
 	if(!is_safe)
 		var/datum/effect_system/fluid_spread/smoke/chem/black_smoke = new
-		black_smoke.set_up(2, location = source_hookah.loc)
+		black_smoke.set_up(2, location = source_hookah.loc, carry = these_reagents)
 		black_smoke.start()
-		these_reagents.clear_reagents()
 		QDEL_LIST(source_hookah.food_items)
+		these_reagents?.clear_reagents()
 		to_chat(user, span_warning("Вы чувствуете резкий неприятный запах!"))
 		user.dropItemToGround(src)
 		user.emote("cough")
@@ -352,6 +355,10 @@
 	if(particle_type)
 		remove_shared_particles(particle_type)
 	QDEL_LIST(food_items)
+	if(this_mouthpiece)
+		QDEL_NULL(this_mouthpiece)
+	if(attachment)
+		QDEL_NULL(attachment)
 	set_light(0)
 	return ..()
 
