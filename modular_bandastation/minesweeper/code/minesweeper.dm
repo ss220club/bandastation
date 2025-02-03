@@ -276,7 +276,7 @@
  *
  * @return coordinates of opened cell as `list(x, y)` if cell was successfully opened
  *               and no bombs are around, `null` otherwise
-/* 
+ */ 
 /datum/computer_file/program/minesweeper/proc/open_cell(x, y)
 	var/list/minesweeper_cell = minesweeper_matrix[x][y]
 	if(minesweeper_cell["open"])
