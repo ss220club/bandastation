@@ -8,7 +8,7 @@
 #define COUGH_STAMINA_LOSS 5
 
 /obj/machinery/hookah
-	name = "кальян"
+	name = "hookah"
 	desc = "Простой стеклянный водный кальян."
 	icon = 'modular_bandastation/bar_hookahs/icons/hookah.dmi'
 	icon_state = "hookah"
@@ -31,10 +31,28 @@
 	var/mutable_appearance/lit_emissive
 	var/particle_type
 	var/datum/light_source/glow_light
+	var/list/food_items = list()
+	var/max_food_items = 3
+
+	var/static/allowed_ingridients = typecacheof(list(
+		/obj/item/food/grown,
+		/obj/item/food/cheese
+		))
 
 /obj/machinery/hookah/examine()
 	. = ..()
 	. += "<span class='info'>ALT+ЛКМ погасит кальян, ALT+ПКМ очистит ёмкость.</span>"
+	if(length(food_items))
+		var/food_string = ""
+		var/count = 1
+		for(var/obj/item/food/this_food in food_items)
+			food_string += this_food.name
+			if(count == length(food_items) - 1)
+				food_string += " и "
+			if(count == length(food_items) - 2)
+				food_string += ", "
+			count += 1
+		. += "<span class='info'>Внутри - [food_string].</span>"
 	if(lit)
 		. += "<span class='info'>Кальян зажжён.</span>"
 
@@ -139,7 +157,17 @@
 		qdel(this_item)
 		to_chat(user, span_notice("Вы добавляете угли в кальян."))
 		return
+	if(istype(this_item, /obj/item/food))
+		if(food_items.len >= max_food_items)
+			to_chat(user, span_warning("В кальяне уже достаточно ингридиентов!"))
+			return
+		food_items += this_item
+		this_item.forceMove(src)
+		to_chat(user, span_notice("Вы добавляете [this_item] в кальян."))
+		return
 	if(istype(this_item, /obj/item/reagent_containers))
+		if(istype(this_item, /obj/item/reagent_containers/pill))
+			return
 		var/obj/item/reagent_containers/container = this_item
 		if(!container.reagents.total_volume)
 			to_chat(user, span_warning("[container] пуст!"))
@@ -155,7 +183,7 @@
 	return ..()
 
 /obj/item/hookah_mouthpiece
-	name = "кальянный мундштук"
+	name = "mouthpiece"
 	desc = "Мундштук, выполненный из какого-то лёгкого металла. На его ручке что-то выгравировано."
 	icon = 'modular_bandastation/bar_hookahs/icons/hookah.dmi'
 	icon_state = "mouthpiece"
@@ -172,9 +200,10 @@
 
 /obj/item/hookah_mouthpiece/Destroy()
 	if(source_hookah)
+		if(source_hookah.attachment)
+			QDEL_NULL(source_hookah.attachment)
+		source_hookah?.stop_smoke()
 		source_hookah = null
-	QDEL_NULL(source_hookah.attachment)
-	stop_smoke()
 	return ..()
 
 /obj/item/hookah_mouthpiece/dropped(mob/user)
@@ -186,7 +215,7 @@
 	. = ..()
 
 /obj/item/hookah_coals
-	name = "угли для кальяна"
+	name = "hookah coals"
 	desc = "Плотные угольки, филигранно обработанные до состояния кубика."
 	icon = 'modular_bandastation/bar_hookahs/icons/hookah.dmi'
 	icon_state = "coals"
@@ -226,6 +255,8 @@
 	return CLICK_ACTION_SUCCESS
 
 /obj/machinery/hookah/proc/ignite()
+	particle_type = /particles/smoke/cig/big
+	add_shared_particles(particle_type)
 	lit = TRUE
 	START_PROCESSING(SSmachines, src)
 	visible_message(span_notice("Угли внутри кальяна медленно багровеют."))
@@ -238,6 +269,7 @@
 	update_appearance()
 	if(!fuel)
 		STOP_PROCESSING(SSmachines, src)
+	stop_smoke()
 	set_light(0)
 
 /obj/machinery/hookah/click_alt_secondary(mob/user)
@@ -256,19 +288,34 @@
 	user.visible_message(span_notice("[user] затягивается из кальяна."), span_notice("Вы затягиваетесь..."))
 	if(!do_after(user, 2 SECONDS, src))
 		return
-	if(!source_hookah.reagent_container.reagents.total_volume)
-		to_chat(user, span_warning("В кальяне нет жидкости!"))
-		return
 	inhale_smoke(user)
 
 /obj/item/hookah_mouthpiece/proc/inhale_smoke(mob/living/carbon/human/user)
+	var/is_safe = TRUE
+
+	if(!source_hookah || !source_hookah.reagent_container || !source_hookah.reagent_container.reagents)
+		return
+	var/datum/reagents/these_reagents = source_hookah.reagent_container.reagents
+	for(var/obj/item/food/this_food in source_hookah.food_items)
+		if(!is_type_in_typecache(this_food, source_hookah.allowed_ingridients))
+			is_safe = FALSE
+		this_food.reagents.trans_to(these_reagents, INHALE_VOLUME / source_hookah.food_items.len)
+		if(!this_food.reagents.total_volume)
+			qdel(this_food)
+	if(!is_safe)
+		var/datum/effect_system/fluid_spread/smoke/chem/black_smoke = new
+		black_smoke.set_up(2, location = source_hookah.loc)
+		black_smoke.start()
+		these_reagents.clear_reagents()
+		QDEL_LIST(source_hookah.food_items)
+		to_chat(user, span_warning("Вы чувствуете резкий неприятный запах!"))
+		user.dropItemToGround(src)
+		user.emote("cough")
+		user.adjustStaminaLoss(COUGH_STAMINA_LOSS * 2)
+		return
 	if(!source_hookah.reagent_container || !source_hookah.reagent_container.reagents.total_volume)
 		to_chat(user, span_warning("В кальяне нет жидкости!"))
 		return
-	source_hookah.particle_type = /particles/smoke/cig/big
-	source_hookah.add_shared_particles(source_hookah.particle_type)
-
-	var/datum/reagents/these_reagents = source_hookah.reagent_container.reagents
 	var/transferred = these_reagents.trans_to(user, INHALE_VOLUME, methods = INHALE)
 	playsound(src, 'sound/effects/bubbles/bubbles.ogg', 20)
 	if(transferred)
@@ -278,15 +325,14 @@
 			user.emote("cough")
 			user.adjustStaminaLoss(COUGH_STAMINA_LOSS)
 		last_inhale = world.time
-		var/datum/effect_system/fluid_spread/smoke/chem/puff = new
-		puff.set_up(1, SPREAD_VOLUME, location = source_hookah.loc, carry = reagents)
+		var/datum/effect_system/fluid_spread/smoke/chem/quick/puff = new
+		puff.set_up(1, SPREAD_VOLUME, location = source_hookah.loc, carry = source_hookah.reagent_container.reagents)
 		puff.start()
-	addtimer(CALLBACK(src, PROC_REF(stop_smoke)), 2 SECONDS)
 
-/obj/item/hookah_mouthpiece/proc/stop_smoke()
-	if(source_hookah.particle_type)
-		source_hookah.remove_shared_particles(source_hookah.particle_type)
-		source_hookah.particle_type = null
+/obj/machinery/hookah/proc/stop_smoke()
+	if(particle_type)
+		remove_shared_particles(particle_type)
+		particle_type = null
 
 /obj/machinery/hookah/proc/break_hookah()
 	if(lit)
@@ -297,6 +343,7 @@
 		reagent_container.reagents.expose(get_turf(src), TOUCH)
 	if(this_mouthpiece)
 		qdel(this_mouthpiece)
+	QDEL_LIST(food_items)
 	qdel(src)
 
 /obj/machinery/hookah/Destroy()
@@ -304,6 +351,7 @@
 		QDEL_NULL(reagent_container)
 	if(particle_type)
 		remove_shared_particles(particle_type)
+	QDEL_LIST(food_items)
 	set_light(0)
 	return ..()
 
@@ -334,9 +382,7 @@
 	cost = 500
 	contains = list(
 		/obj/machinery/hookah,
-		/obj/item/hookah_coals,
-		/obj/item/hookah_coals,
-		/obj/item/hookah_coals
+		/obj/item/hookah_coals = 3
 	)
 	crate_name = "ящик с набором для кальяна"
 

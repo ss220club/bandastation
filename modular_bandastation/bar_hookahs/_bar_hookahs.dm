@@ -2,9 +2,9 @@
 	/// A string name for the modpack. Used for looking up other modpacks in init.
 	name = "bar_hookahs"
 	/// A string desc for the modpack. Can be used for modpack verb list as description.
-	desc = "its useless"
+	desc = "Добавляет кальяны и угли к ним."
 	/// A string with authors of this modpack.
-	author = "User"
+	author = "mcbalaam"
 
 /datum/modpack/bar_hookahs/pre_initialize()
 	. = ..()
