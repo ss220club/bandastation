@@ -10,7 +10,7 @@ import {
   TextArea,
 } from 'tgui-core/components';
 import { BooleanLike } from 'tgui-core/react';
-import { toTitleCase, decodeHtmlEntities } from 'tgui-core/string';
+import { decodeHtmlEntities, toTitleCase } from 'tgui-core/string';
 
 import { useBackend } from '../backend';
 import { Window } from '../layouts';
@@ -158,12 +158,12 @@ const SendERT = (props) => {
     <Stack.Item grow>
       <Section
         fill
-        scrollable
         title="Send ERT"
         buttons={
           <>
             {Object.entries(ERTTYPE).map(([typeName, typeColor]) => (
               <Button
+                key={ERTTYPE[typeName]}
                 width={5}
                 textAlign="center"
                 color={ertType === typeName && typeColor}
@@ -202,7 +202,10 @@ const SendERT = (props) => {
               {Object.entries(ERTJOB).map(([typeName, typeAct]) => {
                 const slotKey = `${typeName}Slots` as const;
                 return (
-                  <LabeledList.Item label={toTitleCase(typeName)}>
+                  <LabeledList.Item
+                    key={ERTJOB[typeName]}
+                    label={toTitleCase(typeName)}
+                  >
                     {ertNum.map((number) => (
                       <Button
                         key={typeName + number}
