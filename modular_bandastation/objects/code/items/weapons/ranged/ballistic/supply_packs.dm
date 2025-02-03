@@ -1,11 +1,13 @@
 /datum/supply_pack/security/wespe_guns
 	name = "Wespe Pistols Crate"
-	desc = "Вам нужны новые пистолеты? В таком случае в этом ящике находятся два пистолета 'Оса' калибра .35 Sol Short с двумя магазинами заряженными резиной."
+	desc = "Вам нужны новые пистолеты? В таком случае в этом ящике находятся два пистолета 'Оса' калибра .35 Sol Short с двумя магазинами заряженными резиной, а также по одной коробке соответствующих летальных и нелетальных боеприпасов."
 	cost = CARGO_CRATE_VALUE * 10
 	access_view = ACCESS_SECURITY
 	contains = list(
-		/obj/item/gun/ballistic/automatic/pistol/wespe/no_mag = 2,
+		/obj/item/gun/ballistic/automatic/pistol/wespe = 2,
 		/obj/item/ammo_box/magazine/c35sol_pistol/rubber = 2,
+		/obj/item/ammo_box/c35sol = 1,
+		/obj/item/ammo_box/c35sol/rubber = 1,
 		)
 	crate_name = "Wespe handguns crate"
 
