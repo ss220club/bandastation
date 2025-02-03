@@ -267,12 +267,21 @@
 	count_3BV()
 	start_time = world.time
 
-// Makes cell open, and show it contains
-/datum/computer_file/program/minesweeper/proc/open_cell(x, y, start_cycle = TRUE)
+/**
+ * Makes cell by passed coordinates open.
+ * Increases `opened_cells` if cell was successfully opened and removes flag from it.
+ *
+ * @param {number] x - The row of the cell
+ * @param {number] y - The column of the cell
+ *
+ * @return coordinates of opened cell as `list(x, y)` if cell was successfully opened
+ *               and no bombs are around, `null` otherwise
+/* 
+/datum/computer_file/program/minesweeper/proc/open_cell(x, y)
 	var/list/minesweeper_cell = minesweeper_matrix[x][y]
 	if(minesweeper_cell["open"])
-		return list()
-
+		return null
+		
 	minesweeper_cell["open"] = TRUE
 	opened_cells += 1
 
@@ -281,15 +290,11 @@
 		setted_flags -= 1
 		if(minesweeper_cell["bomb"])
 			flagged_bombs -= 1
-
+	
 	if(minesweeper_cell["around"] != 0)
-		return list()
+		return null
 
-	if(start_cycle)
-		update_zeros(x, y)
-		return list()
-
-	return list(list(x, y))
+	return list(x, y)
 
 // Open all "zeroes" around the click place
 /datum/computer_file/program/minesweeper/proc/update_zeros(x, y)
