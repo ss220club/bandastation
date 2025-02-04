@@ -203,8 +203,8 @@
 		if(source_hookah.attachment)
 			QDEL_NULL(source_hookah.attachment)
 		source_hookah?.stop_smoke()
-		source_hookah = null
 		QDEL_NULL(source_hookah.this_mouthpiece)
+		source_hookah = null
 	return ..()
 
 /obj/item/hookah_mouthpiece/dropped(mob/user)
