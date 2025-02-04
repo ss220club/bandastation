@@ -357,6 +357,7 @@
 		remove_shared_particles(particle_type)
 	QDEL_LIST(food_items)
 	if(this_mouthpiece)
+		this_mouthpiece.source_hookah = null
 		QDEL_NULL(this_mouthpiece)
 	if(attachment)
 		QDEL_NULL(attachment)
