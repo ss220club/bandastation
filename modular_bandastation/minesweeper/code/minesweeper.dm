@@ -2,6 +2,7 @@
 #define DEFAULT_FIELD_WIDTH 16
 #define DEFAULT_BOMBS_AMOUNT 40
 
+#define STARTING_AREA_SIZE 9
 #define MIN_FIELD_SIDE_SIZE 9
 #define MAX_FIELD_SIDE_SIZE 25
 #define MIN_BOMBS_AMOUNT 10
@@ -17,9 +18,9 @@
 
 /datum/computer_file/program/minesweeper
 	filename = "minesweeper"
-	filedesc = "Minesweeper"
+	filedesc = "Сапёр"
 	// program_open_overlay = "minesweeper"
-	extended_desc = "Погрузись в удивительный мир 'Сапера', \
+	extended_desc = "Погрузись в удивительный мир 'Сапёра', \
 		где каждое неверное нажатие может привести к взрыву! \
  		Сразись с друзьями и стань мастером разминирования в этой захватывающей игре!."
 	downloader_category = PROGRAM_CATEGORY_GAMES
@@ -189,8 +190,21 @@
 	var/width = tgui_input_number(user, "Выставите ширину", "Настройки Сапёра", field_width, MAX_FIELD_SIDE_SIZE, MIN_FIELD_SIDE_SIZE)
 	var/height = tgui_input_number(user, "Выставите длину", "Настройки Сапёра", field_height, MAX_FIELD_SIDE_SIZE, MIN_FIELD_SIDE_SIZE)
 
-	var/max_bombs_amount = clamp(floor(width * height / FIELD_AREA_TO_BOMBS_MIN_RATIO), MIN_BOMBS_AMOUNT, MAX_BOMBS_AMOUNT)
-	var/bombs = tgui_input_number(user, "Выставите кол-во бомб", "Настройки Сапёра", min(field_bombs_amount, max_bombs_amount), max_bombs_amount, MIN_BOMBS_AMOUNT)
+	var/field_area = width * height
+	if(field_area - STARTING_AREA_SIZE < MIN_BOMBS_AMOUNT)
+		stack_trace("Field area is too small [field_area].")
+		to_chat(user, span_warning("Поле слишком маленькое!"))
+		return FALSE
+
+	var/max_bombs_amount = clamp(floor(field_area / FIELD_AREA_TO_BOMBS_MIN_RATIO), MIN_BOMBS_AMOUNT, MAX_BOMBS_AMOUNT)
+	var/bombs = tgui_input_number(
+		user,
+		"Выставите кол-во бомб",
+		"Настройки Сапёра",
+		min(field_bombs_amount, max_bombs_amount),
+		max_bombs_amount,
+		MIN_BOMBS_AMOUNT
+	)
 
 	field_height = height
 	field_width = width
@@ -221,8 +235,14 @@
 /datum/computer_file/program/minesweeper/proc/add_into_leaders(mob/user, game_time)
 	PRIVATE_PROC(TRUE)
 
-	var/game_time_in_seconds = game_time / 1 SECONDS
-	var/nickname = tgui_input_text(user, "You finished the game in [game_time_in_seconds] seconds.\n Write a nickname to save your result on the leaderboard.\n", "Minesweeper", "", 10)
+	var/game_time_in_seconds = game_time / (1 SECONDS)
+	var/nickname = tgui_input_text(
+		user,
+		"Вы сравелись за [game_time_in_seconds] секунд!\n Напишите ваш никнейм чтобы сохранить результат в рейтинговой таблице.\n",
+		"Сапёр",
+		"",
+		10
+	)
 	if(!nickname)
 		return
 
@@ -330,6 +350,9 @@
 			UNTYPED_LIST_ADD(possible_bomb_cells, list(possible_bomb_cell_x, possible_bomb_cell_y))
 
 	for(var/bomb in 1 to field_bombs_amount)
+		if(!length(possible_bomb_cells))
+			break
+
 		var/list/cell_coordinates = pick_n_take(possible_bomb_cells)
 		var/cell_x = cell_coordinates[1]
 		var/cell_y = cell_coordinates[2]
