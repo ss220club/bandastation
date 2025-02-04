@@ -358,7 +358,7 @@
 	QDEL_LIST(food_items)
 	if(this_mouthpiece)
 		this_mouthpiece.source_hookah = null
-		QDEL_NULL(this_mouthpiece)
+		qdel(this_mouthpiece)
 	if(attachment)
 		QDEL_NULL(attachment)
 	set_light(0)
