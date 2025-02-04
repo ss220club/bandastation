@@ -351,7 +351,7 @@
 	qdel(src)
 
 /obj/machinery/hookah/Destroy()
-	if(reagent_container && reagent_container != src)
+	if(reagent_container)
 		QDEL_NULL(reagent_container)
 	if(particle_type)
 		remove_shared_particles(particle_type)
