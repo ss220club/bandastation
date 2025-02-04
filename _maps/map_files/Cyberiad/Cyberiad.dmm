@@ -38802,6 +38802,7 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/structure/cable/layer1,
 /obj/structure/cable,
+/obj/effect/landmark/event_spawn,
 /turf/open/floor/iron/dark,
 /area/station/engineering/engine_smes)
 "jLB" = (
@@ -92770,7 +92771,6 @@
 /area/station/command/heads_quarters/cmo)
 "xmO" = (
 /obj/structure/table,
-/obj/effect/landmark/event_spawn,
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
 	},
@@ -192047,9 +192047,9 @@ lAq
 rjh
 bfN
 rjh
-rjh
-rjh
 unx
+rjh
+rjh
 wND
 jHX
 qWg
