@@ -203,8 +203,7 @@
 		if(source_hookah.attachment)
 			QDEL_NULL(source_hookah.attachment)
 		source_hookah?.stop_smoke()
-		source_hookah.this_mouthpiece = null
-		source_hookah = null
+		QDEL_NULL(source_hookah.this_mouthpiece)
 	return ..()
 
 /obj/item/hookah_mouthpiece/dropped(mob/user)
@@ -305,6 +304,7 @@
 			is_safe = FALSE
 		this_food.reagents.trans_to(these_reagents, INHALE_VOLUME / source_hookah.food_items.len)
 		if(!this_food.reagents.total_volume)
+			source_hookah.food_items -= this_food
 			qdel(this_food)
 	if(!is_safe)
 		var/datum/effect_system/fluid_spread/smoke/chem/black_smoke = new
@@ -324,14 +324,18 @@
 	playsound(src, 'sound/effects/bubbles/bubbles.ogg', 20)
 	if(transferred)
 		to_chat(user, span_notice("Вы вдыхаете дым из кальяна."))
+		user.add_mood_event("smoked", /datum/mood_event/smoked)
 		if(world.time < (last_inhale + INHALE_COOLDOWN))
 			to_chat(user, span_warning("Вы вдыхаете слишком резко и закашливаетесь!"))
 			user.emote("cough")
 			user.adjustStaminaLoss(COUGH_STAMINA_LOSS)
 		last_inhale = world.time
-		var/datum/effect_system/fluid_spread/smoke/chem/quick/puff = new
-		puff.set_up(1, SPREAD_VOLUME, location = source_hookah.loc, carry = source_hookah.reagent_container.reagents)
-		puff.start()
+		addtimer(CALLBACK(src, .proc/delayed_puff, user), 1 SECONDS)
+
+/obj/item/hookah_mouthpiece/proc/delayed_puff(mob/user)
+	var/datum/effect_system/fluid_spread/smoke/chem/quick/puff = new
+	puff.set_up(1, SPREAD_VOLUME, location = user.loc, carry = source_hookah.reagent_container.reagents)
+	puff.start()
 
 /obj/machinery/hookah/proc/stop_smoke()
 	if(particle_type)
