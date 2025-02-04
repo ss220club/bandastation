@@ -204,6 +204,7 @@
 			QDEL_NULL(source_hookah.attachment)
 		source_hookah?.stop_smoke()
 		source_hookah = null
+		QDEL_NULL(source_hookah.this_mouthpiece)
 	return ..()
 
 /obj/item/hookah_mouthpiece/dropped(mob/user)
@@ -385,7 +386,7 @@
 
 /datum/supply_pack/misc/hookah_kit
 	name = "Набор для кальяна"
-	desc = "Комплект для любителей подымыть и культурно расслабиться. Наполнение не включено."
+	desc = "Комплект для любителей подымить и культурно расслабиться. Наполнение не включено."
 	cost = 500
 	contains = list(
 		/obj/machinery/hookah,
