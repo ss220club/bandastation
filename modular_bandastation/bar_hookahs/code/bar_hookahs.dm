@@ -284,7 +284,15 @@
 /obj/item/hookah_mouthpiece/attack_self(mob/living/carbon/human/user)
 	if(!source_hookah || !source_hookah.lit)
 		return ..()
+	start_inhale(user)
 
+/obj/item/hookah_mouthpiece/attack(mob/living/carbon/human/this_human, mob/living/carbon/human/user)
+	if(this_human == user && source_hookah?.lit)
+		start_inhale(user)
+		return
+	return ..()
+
+/obj/item/hookah_mouthpiece/proc/start_inhale(mob/living/carbon/human/user)
 	user.visible_message(span_notice("[user] затягивается из кальяна."), span_notice("Вы затягиваетесь..."))
 	if(!do_after(user, 2 SECONDS, src))
 		return
@@ -342,7 +350,7 @@
 		remove_shared_particles(particle_type)
 		particle_type = null
 
-/obj/machinery/hookah/proc/break_hookah()
+/obj/machinery/hookah/on_deconstruction(disassembled = FALSE)
 	if(lit)
 		put_out()
 	fuel = 0
@@ -356,22 +364,18 @@
 
 /obj/machinery/hookah/Destroy()
 	if(reagent_container)
-		QDEL_NULL(reagent_container)
+		reagent_container = null
 	if(particle_type)
 		remove_shared_particles(particle_type)
+		particle_type = null
 	QDEL_LIST(food_items)
 	if(this_mouthpiece)
 		this_mouthpiece.source_hookah = null
 		qdel(this_mouthpiece)
 	if(attachment)
-		QDEL_NULL(attachment)
+		attachment = null
 	set_light(0)
 	return ..()
-
-/obj/machinery/hookah/take_damage(damage_amount, damage_type, damage_flag, sound_effect, attack_dir)
-	. = ..()
-	if(. && atom_integrity <= 0)
-		break_hookah()
 
 #undef INTERNAL_VOLUME
 #undef MAX_FUEL
