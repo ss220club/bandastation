@@ -396,7 +396,7 @@
 /datum/supply_pack/misc/hookah_kit
 	name = "Набор для кальяна"
 	desc = "Комплект для любителей подымить и культурно расслабиться. Наполнение не включено."
-	cost = 500
+	cost = 200
 	contains = list(
 		/obj/machinery/hookah,
 		/obj/item/hookah_coals = 3
