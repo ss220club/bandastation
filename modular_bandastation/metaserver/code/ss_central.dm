@@ -30,7 +30,7 @@ SUBSYSTEM_DEF(central)
 
 	var/list/result = json_decode(response.body)
 
-	log_game("Loading whitelist with [response["total"]] entries")
+	log_game("Loading whitelist with [result["total"]] entries")
 
 	var/list/ckeys = result["items"]
 
@@ -134,30 +134,35 @@ SUBSYSTEM_DEF(central)
 
 /datum/controller/subsystem/central/proc/whitelist_ban_player_callback(ckey, datum/http_response/response)
 	if(response.errored || response.status_code != 201)
-		stack_trace("Failed to ban player: HTTP status code [response.status_code] - [response.error] - [response.body]")
+		stack_trace("Failed to ban player from whitelist: HTTP status code [response.status_code] - [response.error] - [response.body]")
+		message_admins("Failed to ban player [ckey] from wl: check runtimes")
 		return
 
 	GLOB.whitelist -= ckey
 
 /datum/controller/subsystem/central/proc/update_player_donate_tier_async(client/player)
 	// TODO: handle cases when player has several donate tiers???
-	var/endpoint = "[CONFIG_GET(string/ss_central_url)]/donate?ckey=[player.ckey]&valid_only=true&page=1&page_size=1"
+	var/endpoint = "[CONFIG_GET(string/ss_central_url)]/donates?ckey=[player.ckey]&active_only=true&page=1&page_size=1"
 	SShttp.create_async_request(RUSTG_HTTP_METHOD_GET, endpoint, "", list(), CALLBACK(src, PROC_REF(update_player_donate_tier_callback), player))
 
 /datum/controller/subsystem/central/proc/update_player_donate_tier_callback(client/player, datum/http_response/response)
-	if(response.errored || response.status_code != 200 && response.status_code != 404)
+	if(response.errored || response.status_code != 200)
 		stack_trace("Failed to get player donate tier: HTTP status code [response.status_code] - [response.error] - [response.body]")
 		return
 
 	var/list/data = json_decode(response.body)
-	player.donator_level = data["items"][0]["tier"]
+	if(data["total"] != 0)
+		player.donator_level = data["items"][1]["tier"]
+	player.can_save_donator_level = TRUE
 
 /datum/controller/subsystem/central/proc/get_player_donate_tier_blocking(client/player)
-	var/endpoint = "[CONFIG_GET(string/ss_central_url)]/donate?ckey=[player.ckey]&valid_only=true&page=1&page_size=1"
+	var/endpoint = "[CONFIG_GET(string/ss_central_url)]/donates?ckey=[player.ckey]&active_only=true&page=1&page_size=1"
 	var/datum/http_response/response = SShttp.make_blocking_request(RUSTG_HTTP_METHOD_GET, endpoint, "", list())
-	if(response.errored || response.status_code != 200 && response.status_code != 404)
+	if(response.errored || response.status_code != 200)
 		stack_trace("Failed to get player donate tier: HTTP status code [response.status_code] - [response.error] - [response.body]")
 		return
 
 	var/list/data = json_decode(response.body)
-	return data["items"][0]["tier"]
+	if(data["total"] != 0)
+		player.donator_level = data["items"][0]["tier"]
+	player.can_save_donator_level = TRUE
