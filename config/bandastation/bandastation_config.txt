@@ -9,7 +9,9 @@
 #SS_CENTRAL_TOKEN 12345678
 #WHITELIST_TYPE default
 ## Entry from the general config.txt
+## New behavior - enabled PANIC_BUNKER_INTERVIEW allows only whitelisted players to play, passing interview gives a year long whitelist
 #USEWHITELIST
+#PANIC_BUNKER_INTERVIEW
 
 ## A minimum amount of security required on roundstart
 ## If there is less security than this value, a percent of roundstart threat will be pushed to midround
