@@ -754,8 +754,7 @@
 		if(!(shove_flags & SHOVE_DIRECTIONAL_BLOCKED) && (SEND_SIGNAL(target_shove_turf, COMSIG_LIVING_DISARM_COLLIDE, src, target, shove_flags, weapon) & COMSIG_LIVING_SHOVE_HANDLED))
 			return
 		if((shove_flags & SHOVE_BLOCKED) && !(shove_flags & (SHOVE_KNOCKDOWN_BLOCKED|SHOVE_CAN_KICK_SIDE)))
-			target.Knockdown(SHOVE_KNOCKDOWN_SOLID)
-			target.apply_status_effect(/datum/status_effect/next_shove_stuns)
+			target.Knockdown(SHOVE_KNOCKDOWN_SOLID, daze_amount = 3 SECONDS)
 			target.visible_message(span_danger("[capitalize(declent_ru(NOMINATIVE))] толкает [target.declent_ru(ACCUSATIVE)], сбивая [target.ru_p_them()] с ног!"),
 				span_userdanger("Вы сбиты с ног от толчка [declent_ru(GENITIVE)]!"), span_hear("Вы слышите агрессивное шарканье с последующим громким стуком!"), COMBAT_MESSAGE_RANGE, src)
 			to_chat(src, span_danger("Вы толкаете [target.declent_ru(ACCUSATIVE)], сбивая [target.ru_p_them()] с ног!"))
