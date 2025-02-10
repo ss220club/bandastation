@@ -26,7 +26,7 @@
 	SScentral.verify_in_discord(src)
 
 /datum/controller/subsystem/central/proc/verify_in_discord(client/player)
-	var/endpoint = "[CONFIG_GET(string/ss_central_url)]/player/token?ckey=[player.ckey]"
+	var/endpoint = "[CONFIG_GET(string/ss_central_url)]/oauth/token?ckey=[player.ckey]"
 	var/list/headers = list(
 		"Authorization" = "Bearer [CONFIG_GET(string/ss_central_token)]"
 	)
@@ -38,7 +38,7 @@
 		return
 
 	var/list/data = json_decode(response.body)
-	var/login_endpoint = "[CONFIG_GET(string/ss_central_url)]/player/login?token=[data]"
+	var/login_endpoint = "[CONFIG_GET(string/ss_central_url)]/oauth/login?token=[data]"
 
 	to_chat(player, boxed_message("Авторизуйтесь в открывшемся окне и ожидайте 30 секунд.<br/>Если окно не открывается, можете открыть ссылку в браузере самостоятельно:<br/><a href='[login_endpoint]'>[login_endpoint]</a>."))
 	player << link(login_endpoint)
