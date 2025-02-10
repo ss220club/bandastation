@@ -65,7 +65,7 @@ SUBSYSTEM_DEF(http)
  * Generates a blocking request, executes it, logs the info then cleanly returns the response
  * Uses UNTIL, so is VERY dangerous to use.
  */
-/datum/controller/subsystem/http/proc/make_blocking_request(method, url, body = "", list/headers)
+/datum/controller/subsystem/http/proc/make_sync_request(method, url, body = "", list/headers)
 	var/datum/http_request/req = new()
 	req.prepare(method, url, body, headers)
 	req.begin_async()
