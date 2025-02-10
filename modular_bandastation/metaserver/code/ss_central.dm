@@ -75,7 +75,7 @@ SUBSYSTEM_DEF(central)
 	. = (ckey in GLOB.whitelist)
 
 	var/endpoint = "[CONFIG_GET(string/ss_central_url)]/whitelists?wl_type=[CONFIG_GET(string/whitelist_type)]&ckey=[ckey]&page=1&page_size=1"
-	var/datum/http_response/response = SShttp.make_blocking_request(RUSTG_HTTP_METHOD_GET, endpoint, "", list())
+	var/datum/http_response/response = SShttp.make_sync_request(RUSTG_HTTP_METHOD_GET, endpoint, "", list())
 	if(response.errored || response.status_code != 200 && response.status_code != 404)
 		return FALSE
 
@@ -157,7 +157,7 @@ SUBSYSTEM_DEF(central)
 
 /datum/controller/subsystem/central/proc/get_player_donate_tier_blocking(client/player)
 	var/endpoint = "[CONFIG_GET(string/ss_central_url)]/donates?ckey=[player.ckey]&active_only=true&page=1&page_size=1"
-	var/datum/http_response/response = SShttp.make_blocking_request(RUSTG_HTTP_METHOD_GET, endpoint, "", list())
+	var/datum/http_response/response = SShttp.make_sync_request(RUSTG_HTTP_METHOD_GET, endpoint, "", list())
 	if(response.errored || response.status_code != 200)
 		stack_trace("Failed to get player donate tier: HTTP status code [response.status_code] - [response.error] - [response.body]")
 		return
