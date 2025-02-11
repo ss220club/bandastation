@@ -55,7 +55,7 @@
 	//Whitelist
 	if(!real_bans_only && !C && CONFIG_GET(flag/usewhitelist))
 		if(!check_whitelist(ckey))
-			if (admin)
+			if (FALSE) // BANDASTATION EDIT: SS Central
 				log_admin("The admin [ckey] has been allowed to bypass the whitelist")
 				if (message)
 					message_admins(span_adminnotice("The admin [ckey] has been allowed to bypass the whitelist"))
