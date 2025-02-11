@@ -63,7 +63,7 @@
 			// 		addclientmessage(ckey,span_adminnotice("You have been allowed to bypass the whitelist"))
 			// else
 			log_access("Failed Login: [ckey] - Not on whitelist")
-			return list("reason"="whitelist", "desc" = "\nReason: You are not on the white list for this server")
+			return list("reason"="whitelist", "desc" = "\nПричина: Вас ([key]) нет в вайтлисте этого сервера. Приобрести доступ возможно у одного из стримеров Банды за баллы канала или записаться самостоятельно с помощью команды в дискорде, доступной сабам бусти, начиная со второго тира.")
 
 	//Guest Checking
 	if(!real_bans_only && !C && is_guest_key(key))
