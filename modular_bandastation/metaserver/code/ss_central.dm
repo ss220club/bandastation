@@ -22,7 +22,7 @@ SUBSYSTEM_DEF(central)
 	if(!initialized)
 		msg = "OFFLINE"
 	else
-		"WL: [CONFIG_GET(flag/usewhitelist)] [CONFIG_GET(string/whitelist_type)]"
+		msg = "WL: [CONFIG_GET(flag/usewhitelist)] [CONFIG_GET(string/whitelist_type)]"
 	return ..()
 
 /datum/controller/subsystem/central/proc/load_whitelist()
