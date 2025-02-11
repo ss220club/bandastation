@@ -452,10 +452,6 @@
 		if (sawoff(user, A))
 			return
 
-	if(misfire_probability && istype(A, /obj/item/stack/sheet/cloth))
-		if(guncleaning(user, A))
-			return
-
 	return FALSE
 
 /obj/item/gun/ballistic/proc/check_if_held(mob/user)
@@ -685,19 +681,6 @@ GLOBAL_LIST_INIT(gun_saw_types, typecacheof(list(
 	recoil = SAWN_OFF_RECOIL
 	update_appearance()
 	return TRUE
-
-/obj/item/gun/ballistic/proc/guncleaning(mob/user, obj/item/A)
-	if(misfire_probability == initial(misfire_probability))
-		balloon_alert(user, "уже очищено!")
-		return
-
-	user.changeNext_move(CLICK_CD_MELEE)
-	balloon_alert(user, "очистка...")
-
-	if(do_after(user, 10 SECONDS, target = src))
-		misfire_probability = initial(misfire_probability)
-		balloon_alert(user, "очищено")
-		return TRUE
 
 /obj/item/gun/ballistic/wrench_act(mob/living/user, obj/item/I)
 	if(!can_modify_ammo)
