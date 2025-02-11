@@ -55,14 +55,15 @@
 	//Whitelist
 	if(!real_bans_only && !C && CONFIG_GET(flag/usewhitelist))
 		if(!check_whitelist(ckey))
-			if (FALSE) // BANDASTATION EDIT: SS Central
-				log_admin("The admin [ckey] has been allowed to bypass the whitelist")
-				if (message)
-					message_admins(span_adminnotice("The admin [ckey] has been allowed to bypass the whitelist"))
-					addclientmessage(ckey,span_adminnotice("You have been allowed to bypass the whitelist"))
-			else
-				log_access("Failed Login: [ckey] - Not on whitelist")
-				return list("reason"="whitelist", "desc" = "\nReason: You are not on the white list for this server")
+			// BANDASTATION EDIT - SSCentral - Admins need wls too
+			// if (admin)
+			// 	log_admin("The admin [ckey] has been allowed to bypass the whitelist")
+			// 	if (message)
+			// 		message_admins(span_adminnotice("The admin [ckey] has been allowed to bypass the whitelist"))
+			// 		addclientmessage(ckey,span_adminnotice("You have been allowed to bypass the whitelist"))
+			// else
+			log_access("Failed Login: [ckey] - Not on whitelist")
+			return list("reason"="whitelist", "desc" = "\nReason: You are not on the white list for this server")
 
 	//Guest Checking
 	if(!real_bans_only && !C && is_guest_key(key))
