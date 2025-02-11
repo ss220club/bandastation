@@ -17,10 +17,8 @@ GLOBAL_LIST(whitelist)
 /proc/check_whitelist(ckey)
 	if(!GLOB.whitelist)
 		return FALSE
-	. = (ckey in GLOB.whitelist)
 
-	// SS220 ADDITION - SS Central
-	if (!. && SScentral.initialized)
-		. = SScentral.is_player_whitelisted(ckey)
+	// BANDASTATION EDIT - SSCentral
+	return SScentral.is_player_whitelisted(ckey)
 
 #undef WHITELISTFILE
