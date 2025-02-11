@@ -13,19 +13,19 @@
 	if(!SScentral.is_player_discord_linked(owner))
 		to_chat(approved_by, span_warning("У игрока не привязана своя учетная запись Discord!"))
 		to_chat(owner, span_warning("Ваше интервью не удалось принять по причине: У вас не привязана учетная запись Discord!"))
-		log_admin("[key_name(approved_by)] tried and failed to approve [key_name(owner)] an interview. Reason: Discord account not linked.")
+		log_admin("[key_name(approved_by)] попытался безуспешно принять интервью [key_name(owner)]. Причина: Дискорд игрока не привязан.")
 		return
 	. = ..()
 	add_owner_to_whitelist(approved_by)
-	send_interview_webhook(src, "[approved_by.ckey] approved:")
+	send_interview_webhook(src, "[approved_by.ckey] принял:")
 
 /datum/interview_manager/enqueue(datum/interview/to_queue)
 	. = ..()
-	send_interview_webhook(to_queue, "New interview enqueued:")
+	send_interview_webhook(to_queue, "Новое интервью в очереди:")
 
 /datum/interview/deny(client/denied_by)
 	. = ..()
-	send_interview_webhook(src, "[denied_by.ckey] denied:")
+	send_interview_webhook(src, "[denied_by.ckey] отказал:")
 
 /datum/interview/proc/serialize_embed()
 	. = list(

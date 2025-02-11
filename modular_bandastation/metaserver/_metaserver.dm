@@ -1,4 +1,4 @@
 /datum/modpack/metaserver
 	name = "Metaserver"
-	desc = "Использование вайтлиста через БД"
+	desc = "Общая инфраструктура для серверов"
 	author = "furior, larentoun"

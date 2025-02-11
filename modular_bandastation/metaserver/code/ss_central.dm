@@ -104,18 +104,18 @@ SUBSYSTEM_DEF(central)
 		if(201)
 			. = . // noop
 		if(404)
-			message_admins("Failed to add to whitelist: Player not found")
+			message_admins("Не удалось добавить в вайтлист: Игрок не найден")
 			return
 
 		if(409)
-			message_admins("Failed to add to whitelist: Player is whitelist banned")
+			message_admins("Не удалось добавить в вайтлист: Игрок выписан")
 			return
 
 		else
-			stack_trace("Failed to add to whitelist: HTTP status code [response.status_code] - [response.body]")
+			stack_trace("Не удалось добавить в вайтлист: HTTP status code [response.status_code] - [response.body]")
 			return
 
-	log_admin("Added [ckey] to whitelist successfully")
+	log_admin("Игрок [ckey] успешно добавлен в вайтлист")
 	GLOB.whitelist |= ckey
 
 /datum/controller/subsystem/central/proc/whitelist_ban_player(player_ckey, admin_ckey, duration_days, reason)
@@ -135,7 +135,7 @@ SUBSYSTEM_DEF(central)
 /datum/controller/subsystem/central/proc/whitelist_ban_player_callback(ckey, datum/http_response/response)
 	if(response.errored || response.status_code != 201)
 		stack_trace("Failed to ban player from whitelist: HTTP status code [response.status_code] - [response.error] - [response.body]")
-		message_admins("Failed to ban player [ckey] from wl: check runtimes")
+		message_admins("Не удалось выписать [ckey]. Больше информации в рантаймах.")
 		return
 
 	GLOB.whitelist -= ckey
