@@ -11,13 +11,11 @@ GLOBAL_LIST(whitelist)
 			continue
 		GLOB.whitelist += ckey(line)
 
-	if(!GLOB.whitelist.len)
-		GLOB.whitelist = null
+	// BADNASTATION EDIT
+	// if(!GLOB.whitelist.len)
+	// 	GLOB.whitelist = null
 
 /proc/check_whitelist(ckey)
-	if(!GLOB.whitelist)
-		return FALSE
-
 	// BANDASTATION EDIT - SSCentral
 	return SScentral.is_player_whitelisted(ckey)
 

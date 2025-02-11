@@ -18,6 +18,11 @@ SUBSYSTEM_DEF(central)
 		return SS_INIT_NO_NEED
 	load_whitelist()
 
+/datum/controller/subsystem/central/stat_entry(msg)
+	if(!initialized)
+		return "OFFLINE"
+	return "WL: [CONFIG_GET(flag/usewhitelist)] [CONFIG_GET(string/whitelist_type)]"
+
 /datum/controller/subsystem/central/proc/load_whitelist()
 	var/endpoint = "[CONFIG_GET(string/ss_central_url)]/whitelists/ckeys?wl_type=[CONFIG_GET(string/whitelist_type)]&active_only=true&page=1&page_size=9999"
 

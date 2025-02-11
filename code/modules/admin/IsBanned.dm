@@ -53,9 +53,9 @@
 		qdel(query_client_in_db)
 
 	//Whitelist
-	if(!real_bans_only && !C && CONFIG_GET(flag/usewhitelist))
+	// BANDASTATION EDIT - SSCentral - Admins need wls too
+	if(!real_bans_only && CONFIG_GET(flag/usewhitelist)) // Allow whitelist banning people who are already on a server
 		if(!check_whitelist(ckey))
-			// BANDASTATION EDIT - SSCentral - Admins need wls too
 			// if (admin)
 			// 	log_admin("The admin [ckey] has been allowed to bypass the whitelist")
 			// 	if (message)
