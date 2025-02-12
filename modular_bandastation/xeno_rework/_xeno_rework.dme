@@ -1,5 +1,6 @@
 #include "_xeno_rework.dm"
 
+#include "code/defines/traits.dm"
 #include "code/base_xeno.dm"
 #include "code/human_defense.dm"
 #include "code/larva.dm"
