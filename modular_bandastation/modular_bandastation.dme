@@ -53,9 +53,8 @@
 #include "tts/_tts.dme"
 #include "turfs/_turfs.dme"
 #include "whitelist220/_whitelist220.dme"
-#include "world_topics/_world_topics.dme"
-
 #include "xeno_rework/_xeno_rework.dme"
+#include "world_topics/_world_topics.dme"
 // --- MODULES END --- //
 
 
