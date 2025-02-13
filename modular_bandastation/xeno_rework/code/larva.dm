@@ -1,5 +1,8 @@
 /// banda MODULE banda_XENO_REDO
 
+/mob/living/carbon/xenomorph/larva/add_tts_component()
+	AddComponent(/datum/component/tts_component, /datum/tts_seed/silero/stelina)
+
 /datum/action/cooldown/alien/larva_evolve/Activate(atom/target)
 	var/static/list/caste_options
 	if(!caste_options)

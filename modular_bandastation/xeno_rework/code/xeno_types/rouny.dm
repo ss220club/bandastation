@@ -28,6 +28,9 @@
 		ORGAN_SLOT_XENO_PLASMAVESSEL = /obj/item/organ/alien/plasmavessel/small/tiny,
 	)
 
+/mob/living/carbon/xenomorph/runner/add_tts_component()
+	AddComponent(/datum/component/tts_component, /datum/tts_seed/silero/wendy)
+
 /mob/living/carbon/alien/adult/banda/runner/Initialize(mapload)
 	. = ..()
 	AddComponent(/datum/component/tackler, stamina_cost = 0, base_knockdown = 2, range = 10, speed = 2, skill_mod = 7, min_distance = 0)

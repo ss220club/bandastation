@@ -24,6 +24,9 @@
 		ORGAN_SLOT_XENO_NEUROTOXINGLAND = /obj/item/organ/alien/neurotoxin/spitter,
 	)
 
+/mob/living/carbon/xenomorph/praetorian/add_tts_component()
+	AddComponent(/datum/component/tts_component, /datum/tts_seed/silero/tyrande_hs)
+
 /mob/living/carbon/alien/adult/banda/praetorian/Initialize(mapload)
 	. = ..()
 	var/static/list/innate_actions = list(

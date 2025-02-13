@@ -23,6 +23,9 @@
 		ORGAN_SLOT_XENO_PLASMAVESSEL = /obj/item/organ/alien/plasmavessel,
 	)
 
+/mob/living/carbon/xenomorph/ravager/add_tts_component()
+	AddComponent(/datum/component/tts_component, /datum/tts_seed/silero/zarya)
+
 /mob/living/carbon/alien/adult/banda/ravager/Initialize(mapload)
 	. = ..()
 	var/static/list/innate_actions = list(

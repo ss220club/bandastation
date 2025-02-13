@@ -24,6 +24,9 @@
 		ORGAN_SLOT_XENO_NEUROTOXINGLAND = /obj/item/organ/alien/neurotoxin/sentinel,
 	)
 
+/mob/living/carbon/xenomorph/sentinel/add_tts_component()
+	AddComponent(/datum/component/tts_component, /datum/tts_seed/silero/tracer)
+
 /mob/living/carbon/alien/adult/banda/sentinel/Initialize(mapload)
 	. = ..()
 
