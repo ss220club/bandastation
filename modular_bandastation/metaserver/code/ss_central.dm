@@ -79,7 +79,8 @@ SUBSYSTEM_DEF(central)
 
 /// WARNING: only semi async - UNTIL based
 /datum/controller/subsystem/central/proc/is_player_whitelisted(ckey)
-	. = (ckey in GLOB.whitelist)
+	if(ckey in GLOB.whitelist)
+		return TRUE
 
 	var/endpoint = "[CONFIG_GET(string/ss_central_url)]/whitelists?wl_type=[CONFIG_GET(string/whitelist_type)]&ckey=[ckey]&page=1&page_size=1"
 	var/datum/http_response/response = SShttp.make_sync_request(RUSTG_HTTP_METHOD_GET, endpoint, "", list())
