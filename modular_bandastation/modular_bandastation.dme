@@ -6,6 +6,7 @@
 #include "_helpers220/_helpers220.dme"
 #include "_signals220/_signals220.dme"
 #include "_singletons/_singletons.dme"
+#include "xeno_rework/_xeno_rework.dme"
 #include "admin/_admin.dme"
 #include "aesthetics/_aesthetics.dme"
 #include "aesthetics_sounds/_aesthetics_sounds.dme"
@@ -53,7 +54,6 @@
 #include "tts/_tts.dme"
 #include "turfs/_turfs.dme"
 #include "whitelist220/_whitelist220.dme"
-#include "xeno_rework/_xeno_rework.dme"
 #include "world_topics/_world_topics.dme"
 // --- MODULES END --- //
 
