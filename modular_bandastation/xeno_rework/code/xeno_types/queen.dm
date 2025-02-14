@@ -77,7 +77,7 @@
 /datum/action/cooldown/alien/banda/queen_screech/Activate()
 	. = ..()
 	var/mob/living/carbon/alien/adult/banda/queenie = owner
-	playsound(queenie, 'modular_bandastation/xeno_rework/sound/alien_queen_screech.ogg', 100, FALSE, 8, 0.9)
+	playsound(queenie, 'modular_bandastation/xeno_rework/sound/alien_queen_screech.ogg', 70, FALSE, 8, 0.9)
 	queenie.create_shriekwave()
 	shake_camera(owner, 2, 2)
 

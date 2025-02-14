@@ -51,7 +51,7 @@
 	unset_after_click = TRUE
 
 /datum/action/cooldown/mob_cooldown/charge/triple_charge/ravager/do_charge_indicator(atom/charger, atom/charge_target)
-	playsound(charger, 'modular_bandastation/xeno_rework/sound/alien_roar2.ogg', 100, TRUE, 8, 0.9)
+	playsound(charger, 'modular_bandastation/xeno_rework/sound/alien_roar2.ogg', 70, TRUE, 8, 0.9)
 
 /datum/action/cooldown/mob_cooldown/charge/triple_charge/ravager/Activate(atom/target_atom)
 	. = ..()
@@ -93,7 +93,7 @@
 		owner.balloon_alert(owner, "already enduring")
 		return FALSE
 	owner.balloon_alert(owner, "endure began")
-	playsound(owner, 'modular_bandastation/xeno_rework/sound/alien_roar1.ogg', 100, TRUE, 8, 0.9)
+	playsound(owner, 'modular_bandastation/xeno_rework/sound/alien_roar1.ogg', 70, TRUE, 8, 0.9)
 	to_chat(owner, span_danger("Мы подавляем способность чувствовать боль, позволяя себе сражаться до самого конца в течение следующих [endure_duration/10] секунд."))
 	addtimer(CALLBACK(src, PROC_REF(endure_deactivate)), endure_duration)
 	owner.add_filter(RAVAGER_OUTLINE_EFFECT, 4, outline_filter(1, COLOR_RED_LIGHT))

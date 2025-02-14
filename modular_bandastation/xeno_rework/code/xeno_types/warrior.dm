@@ -60,7 +60,7 @@
 	var/mob/living/carbon/alien/adult/banda/agility_target = owner
 	agility_target.balloon_alert(agility_target, "agility active")
 	to_chat(agility_target, span_danger("Мы опускаемся на четвереньки, позволяя себе двигаться намного быстрее, но теряя возможность использовать большинство способностей."))
-	playsound(agility_target, 'modular_bandastation/xeno_rework/sound/alien_hiss.ogg', 100, TRUE, 8, 0.9)
+	playsound(agility_target, 'modular_bandastation/xeno_rework/sound/alien_hiss.ogg', 79, TRUE, 8, 0.9)
 	agility_target.icon_state = "alien[agility_target.caste]_mobility"
 
 	being_agile = TRUE
@@ -74,7 +74,7 @@
 /datum/action/cooldown/alien/banda/warrior_agility/proc/end_agility()
 	var/mob/living/carbon/alien/adult/banda/agility_target = owner
 	agility_target.balloon_alert(agility_target, "agility ended")
-	playsound(agility_target, 'modular_bandastation/xeno_rework/sound/alien_roar2.ogg', 100, TRUE, 8, 0.9) //Warrior runs up on all fours, stands upright, screams at you
+	playsound(agility_target, 'modular_bandastation/xeno_rework/sound/alien_roar2.ogg', 70, TRUE, 8, 0.9) //Warrior runs up on all fours, stands upright, screams at you
 	agility_target.icon_state = "alien[agility_target.caste]"
 
 	being_agile = FALSE

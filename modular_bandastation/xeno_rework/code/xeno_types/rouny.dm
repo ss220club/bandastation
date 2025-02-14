@@ -61,7 +61,7 @@
 		return FALSE
 
 	owner.balloon_alert(owner, "evasive movements began")
-	playsound(owner, 'modular_bandastation/xeno_rework/sound/alien_hiss.ogg', 100, TRUE, 8, 0.9)
+	playsound(owner, 'modular_bandastation/xeno_rework/sound/alien_hiss.ogg', 70, TRUE, 8, 0.9)
 	to_chat(owner, span_danger("Мы совершаем уклоняющий манёвр, становясь неуязвимыми для снарядов в течение следующих [evasion_duration / 10] секунд."))
 	addtimer(CALLBACK(src, PROC_REF(evasion_deactivate)), evasion_duration)
 	evade_active = TRUE

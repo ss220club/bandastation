@@ -93,7 +93,7 @@
 
 	victim_living.apply_damage(impact_damage, impact_damage_type, BODY_ZONE_CHEST, wound_bonus = impact_wound_bonus, sharpness = impact_sharpness)
 	shake_camera(victim_living, 4, 3)
-	playsound(victim_living, impact_sound, 100, TRUE, 8, 0.9)
+	playsound(victim_living, impact_sound, 70, TRUE, 8, 0.9)
 	to_chat(victim_living, span_userdanger("Хвост [caster] обрушивается на вас, отбрасывая назад!"))
 
 	victim_living.safe_throw_at(throwtarget, ((clamp((max_throw - (clamp(dist_from_caster - 2, 0, dist_from_caster))), 3, max_throw))), 1, caster, force = repulse_force)

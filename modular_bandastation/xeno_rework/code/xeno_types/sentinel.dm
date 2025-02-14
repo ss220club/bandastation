@@ -99,13 +99,13 @@
 		spit_projectile.aim_projectile(target, clicker, modifiers)
 		spit_projectile.firer = clicker
 		spit_projectile.fire()
-		playsound(clicker, spit_sound, 100, TRUE, 5, 0.9)
+		playsound(clicker, spit_sound, 70, TRUE, 5, 0.9)
 		clicker.newtonian_move(get_dir(target_turf, user_turf))
 		return TRUE
 
 	if(acid_casing)
 		var/obj/item/ammo_casing/casing = new acid_casing(clicker.loc)
-		playsound(clicker, spit_sound, 100, TRUE, 5, 0.9)
+		playsound(clicker, spit_sound, 70, TRUE, 5, 0.9)
 		casing.fire_casing(target, clicker, null, null, null, ran_zone(), 0, clicker)
 		clicker.newtonian_move(get_dir(target_turf, user_turf))
 		return TRUE
