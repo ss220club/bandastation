@@ -1898,11 +1898,9 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 6
 	},
-/obj/structure/curtain/cloth/fancy/mechanical/start_closed{
-	name = "ViP Curtains"
-	},
 /obj/machinery/door/firedoor,
 /obj/structure/disposalpipe/segment,
+/obj/structure/curtain/cloth/fancy/mechanical/start_closed,
 /turf/open/floor/wood/large,
 /area/station/service/bar/atrium)
 "ayQ" = (
@@ -26675,7 +26673,7 @@
 /turf/open/floor/iron,
 /area/station/maintenance/ghetto/auxiliary)
 "gyK" = (
-/obj/machinery/light/warm/directional/east,
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/iron/freezer,
 /area/station/service/kitchen/coldroom)
 "gyL" = (
@@ -74709,10 +74707,8 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 10
 	},
-/obj/structure/curtain/cloth/fancy/mechanical/start_closed{
-	name = "ViP Curtains"
-	},
 /obj/machinery/door/firedoor,
+/obj/structure/curtain/cloth/fancy/mechanical/start_closed,
 /turf/open/floor/wood/large,
 /area/station/service/bar/atrium)
 "sdE" = (
@@ -78217,7 +78213,7 @@
 	},
 /area/station/engineering/hallway/west)
 "sXK" = (
-/obj/machinery/light/warm/directional/west,
+/obj/machinery/light/small/directional/west,
 /turf/open/floor/iron/freezer,
 /area/station/service/kitchen/coldroom)
 "sXO" = (
