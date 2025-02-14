@@ -23,9 +23,6 @@
 		ORGAN_SLOT_XENO_PLASMAVESSEL = /obj/item/organ/alien/plasmavessel,
 	)
 
-/mob/living/carbon/xenomorph/ravager/add_tts_component()
-	AddComponent(/datum/component/tts_component, /datum/tts_seed/silero/zarya)
-
 /mob/living/carbon/alien/adult/banda/ravager/Initialize(mapload)
 	. = ..()
 	var/static/list/innate_actions = list(
@@ -36,6 +33,9 @@
 	grant_actions_by_list(innate_actions)
 
 	REMOVE_TRAIT(src, TRAIT_VENTCRAWLER_ALWAYS, INNATE_TRAIT)
+
+/mob/living/carbon/xenomorph/ravager/add_tts_component()
+	AddComponent(/datum/component/tts_component, /datum/tts_seed/silero/zarya)
 
 /datum/action/cooldown/mob_cooldown/charge/triple_charge/ravager
 	name = "Triple Charge Attack"

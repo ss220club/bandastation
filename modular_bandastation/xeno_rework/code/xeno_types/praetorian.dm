@@ -24,9 +24,6 @@
 		ORGAN_SLOT_XENO_NEUROTOXINGLAND = /obj/item/organ/alien/neurotoxin/spitter,
 	)
 
-/mob/living/carbon/xenomorph/praetorian/add_tts_component()
-	AddComponent(/datum/component/tts_component, /datum/tts_seed/silero/tyrande_hs)
-
 /mob/living/carbon/alien/adult/banda/praetorian/Initialize(mapload)
 	. = ..()
 	var/static/list/innate_actions = list(
@@ -38,6 +35,9 @@
 	REMOVE_TRAIT(src, TRAIT_VENTCRAWLER_ALWAYS, INNATE_TRAIT)
 
 	add_movespeed_modifier(/datum/movespeed_modifier/alien_big)
+
+/mob/living/carbon/xenomorph/praetorian/add_tts_component()
+	AddComponent(/datum/component/tts_component, /datum/tts_seed/silero/tyrande_hs)
 
 /datum/action/cooldown/alien/banda/heal_aura/juiced
 	name = "Strong Healing Aura"

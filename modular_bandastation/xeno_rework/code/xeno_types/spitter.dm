@@ -22,12 +22,12 @@
 		ORGAN_SLOT_XENO_NEUROTOXINGLAND = /obj/item/organ/alien/neurotoxin/spitter,
 	)
 
-/mob/living/carbon/xenomorph/spitter/add_tts_component()
-	AddComponent(/datum/component/tts_component, /datum/tts_seed/silero/janna)
-
 /mob/living/carbon/alien/adult/banda/spitter/Initialize(mapload)
 	. = ..()
 
 	add_movespeed_modifier(/datum/movespeed_modifier/alien_heavy)
 
 	REMOVE_TRAIT(src, TRAIT_VENTCRAWLER_ALWAYS, INNATE_TRAIT)
+
+/mob/living/carbon/xenomorph/spitter/add_tts_component()
+	AddComponent(/datum/component/tts_component, /datum/tts_seed/silero/janna)

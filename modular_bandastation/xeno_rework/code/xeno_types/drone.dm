@@ -23,12 +23,12 @@
 		ORGAN_SLOT_XENO_RESINSPINNER = /obj/item/organ/alien/resinspinner,
 	)
 
-/mob/living/carbon/xenomorph/drone/add_tts_component()
-	AddComponent(/datum/component/tts_component, /datum/tts_seed/silero/annah)
-
 /mob/living/carbon/alien/adult/banda/drone/Initialize(mapload)
 	. = ..()
 	GRANT_ACTION(/datum/action/cooldown/alien/banda/heal_aura)
+
+/mob/living/carbon/xenomorph/drone/add_tts_component()
+	AddComponent(/datum/component/tts_component, /datum/tts_seed/silero/annah)
 
 /datum/action/cooldown/alien/banda/heal_aura
 	name = "Healing Aura"

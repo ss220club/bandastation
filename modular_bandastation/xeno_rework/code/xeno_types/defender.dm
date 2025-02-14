@@ -22,9 +22,6 @@
 		ORGAN_SLOT_XENO_PLASMAVESSEL = /obj/item/organ/alien/plasmavessel/small,
 	)
 
-/mob/living/carbon/xenomorph/defender/add_tts_component()
-	AddComponent(/datum/component/tts_component, /datum/tts_seed/silero/sejuani)
-
 /mob/living/carbon/alien/adult/banda/defender/Initialize(mapload)
 	. = ..()
 	var/static/list/innate_actions = list(
@@ -36,6 +33,9 @@
 	REMOVE_TRAIT(src, TRAIT_VENTCRAWLER_ALWAYS, INNATE_TRAIT)
 
 	add_movespeed_modifier(/datum/movespeed_modifier/alien_heavy)
+
+/mob/living/carbon/xenomorph/defender/add_tts_component()
+	AddComponent(/datum/component/tts_component, /datum/tts_seed/silero/sejuani)
 
 /datum/action/cooldown/spell/aoe/repulse/xeno/banda_tailsweep
 	name = "Crushing Tail Sweep"

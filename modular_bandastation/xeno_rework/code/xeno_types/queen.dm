@@ -24,9 +24,6 @@
 		ORGAN_SLOT_XENO_EGGSAC = /obj/item/organ/alien/eggsac,
 	)
 
-/mob/living/carbon/xenomorph/queen/add_tts_component()
-	AddComponent(/datum/component/tts_component, /datum/tts_seed/silero/alexstraza)
-
 /mob/living/carbon/alien/adult/banda/queen/Initialize(mapload)
 	. = ..()
 	var/static/list/innate_actions = list(
@@ -38,6 +35,9 @@
 	REMOVE_TRAIT(src, TRAIT_VENTCRAWLER_ALWAYS, INNATE_TRAIT)
 
 	add_movespeed_modifier(/datum/movespeed_modifier/alien_big)
+
+/mob/living/carbon/xenomorph/queen/add_tts_component()
+	AddComponent(/datum/component/tts_component, /datum/tts_seed/silero/alexstraza)
 
 /mob/living/carbon/alien/adult/banda/queen/alien_talk(message, shown_name = name)
 	..(message, shown_name, TRUE)
