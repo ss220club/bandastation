@@ -32695,13 +32695,6 @@
 	},
 /turf/open/floor/iron/kitchen,
 /area/station/service/theater)
-"hUi" = (
-/obj/structure/flora/bush/jungle/a/style_random,
-/obj/structure/flora/bush/large/style_random{
-	pixel_y = -4
-	},
-/turf/open/misc/dirt/dark/station,
-/area/station/service/bar/atrium)
 "hUy" = (
 /obj/effect/mapping_helpers/airlock/unres{
 	dir = 4
@@ -78768,6 +78761,13 @@
 /obj/effect/turf_decal/tile/dark_red/diagonal_edge,
 /turf/open/floor/iron/dark/textured_large,
 /area/station/ai_monitored/security/armory)
+"thr" = (
+/obj/structure/flora/bush/jungle/a/style_random,
+/obj/structure/flora/bush/large/style_random{
+	pixel_y = -4
+	},
+/turf/open/misc/dirt/dark/station,
+/area/station/service/bar/atrium)
 "thw" = (
 /turf/open/floor/iron,
 /area/station/hallway/primary/aft)
@@ -133739,7 +133739,7 @@ wkX
 wkX
 raA
 raA
-wOV
+thr
 oTV
 gNt
 eZs
@@ -135023,7 +135023,7 @@ rBw
 rTy
 xgZ
 raA
-hUi
+thr
 iex
 fqU
 kRI
