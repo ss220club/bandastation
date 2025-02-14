@@ -23,10 +23,8 @@
 	///required number of enemies in roles to exist
 	var/required_enemies = 0
 	///required power of department to start event
-	var/eng_required_power = 0
-	var/med_required_power = 0
-	var/rnd_required_power = 0
-	var/head_required_power = 0
+	var/list/req_departments_crew = list()
+	var/list/req_departments_power = list()
 	/// Является ли событие эксклюзивным (не допускающим другие) в случае раундстарта
 	var/exclusive_roundstart_event = FALSE
 	/// Значение, которое используется при расчете стоимости покупки из раундстарт бюджета. Считается если значение 0.
@@ -84,26 +82,19 @@
 		if(string)
 			string += ","
 		string += "Wrong Storyteller"
-	if(eng_required_power > SSgamemode.current_eng_power)
+	if(!SSgamemode.check_event_power(src))
 		if(string)
 			string += ","
-		string += "Too low eng power"
+		var/departs
+		for(var/depart in req_departments_power)
+			if(departs)
+				departs += ", "
+			departs += depart
+		string += "Too low department power ([departs])"
 	if(!weight)
 		if(string)
 			string += ","
 		string += "Can't be selected"
-	if(med_required_power > SSgamemode.current_med_power)
-		if(string)
-			string += ","
-		string += "Too low med power"
-	if(rnd_required_power > SSgamemode.current_rnd_power)
-		if(string)
-			string += ","
-		string += "Too low rnd power"
-	if(head_required_power > SSgamemode.current_head_power)
-		if(string)
-			string += ","
-		string += "Too low head power"
 	if (dynamic_should_hijack && SSdynamic.random_event_hijacked != HIJACKED_NOTHING)
 		if(string)
 			string += ","
@@ -125,6 +116,10 @@
 			. += ", "
 		. += "No Required"
 	return .
+
+/datum/round_event_control/roundstart
+	roundstart = TRUE
+	earliest_start = 0
 
 /datum/round_event_control/antagonist
 	checks_antag_cap = TRUE
@@ -240,19 +235,6 @@
 			if(!(ispath(typepath, /datum/round_event/ghost_role) || ispath(typepath, /datum/round_event/antagonist/solo/ghost/)) && !(candidate.stat == CONSCIOUS || candidate.stat == UNCONSCIOUS))
 				candidates -= candidate
 	return candidates
-
-/datum/round_event_control/antagonist/New()
-	. = ..()
-	if(CONFIG_GET(flag/protect_roles_from_antagonist))
-		restricted_roles |= protected_roles
-
-/datum/round_event_control/antagonist/can_spawn_event(players_amt, allow_magic = FALSE, fake_check = FALSE)
-	. = ..()
-	if(!check_required())
-		return FALSE
-
-	if(!.)
-		return
 
 /datum/round_event_control/antagonist/solo/from_ghosts/get_candidates()
 	var/round_started = SSticker.HasRoundStarted()

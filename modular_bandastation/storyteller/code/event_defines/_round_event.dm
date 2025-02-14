@@ -17,10 +17,6 @@
 	start()
 	processing = TRUE
 
-/datum/round_event_control/roundstart
-	roundstart = TRUE
-	earliest_start = 0
-
 /datum/round_event/proc/round_end_report()
 	return
 

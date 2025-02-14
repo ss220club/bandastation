@@ -113,3 +113,9 @@
 #define SHARED_METEORS		"meteor event"
 #define SHARED_BSOD			"tech malfunction event"
 #define SHARED_CHANGELING	"changelings"
+
+#define STS_HEAD "head"
+#define STS_MED "med"
+#define STS_ENG "eng"
+#define STS_RND "rnd"
+#define STS_SEC "sec"

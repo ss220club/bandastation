@@ -65,4 +65,5 @@
 #ifndef DISABLE_PRIME_MODPACKS
 #include "prime_only/_prime_only.dme"
 #include "storyteller/code/storytellers/storyteller_prime.dm"
+#include "storyteller/code/storytellers/storyteller_prime_moon.dm"
 #endif

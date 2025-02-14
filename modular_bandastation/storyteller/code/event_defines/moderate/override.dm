@@ -1,7 +1,7 @@
 /datum/round_event_control/brand_intelligence
 	tags = list(TAG_DESTRUCTIVE, TAG_COMMUNAL)
 	event_group = /datum/event_group/bsod
-	head_required_power = 1
+	req_departments_power = list(STS_HEAD = 70)
 
 /datum/round_event_control/carp_migration
 	tags = list(TAG_DESTRUCTIVE, TAG_COMBAT, TAG_SPACE, TAG_EXTERNAL, TAG_ALIEN)
@@ -10,7 +10,7 @@
 
 /datum/round_event_control/communications_blackout
 	tags = list(TAG_COMMUNAL, TAG_SPOOKY)
-	eng_required_power = 1
+	req_departments_power = list(STS_ENG = 30)
 
 /datum/round_event_control/fugitives
 	track = EVENT_TRACK_MODERATE
@@ -34,8 +34,7 @@
 /datum/round_event_control/radiation_leak
 	tags = list(TAG_COMMUNAL)
 	max_occurrences = 2
-	eng_required_power = 2
-	med_required_power = 1
+	req_departments_power = list(STS_MED = 40)
 
 /datum/round_event_control/radiation_storm
 	weight = 5
@@ -45,16 +44,16 @@
 /datum/round_event_control/supermatter_surge
 	tags = list(TAG_DESTRUCTIVE, TAG_COMMUNAL)
 	event_group = /datum/event_group/error
-	eng_required_power = 2
+	req_departments_power = list(STS_ENG = 60)
 
 /datum/round_event_control/stray_meteor
 	tags = list(TAG_DESTRUCTIVE, TAG_SPACE)
 	event_group = /datum/event_group/debris
-	eng_required_power = 2
+	req_departments_power = list(STS_ENG = 60)
 
 /datum/round_event_control/shuttle_catastrophe
 	tags = list(TAG_COMMUNAL)
-	head_required_power = 1
+	req_departments_power = list(STS_HEAD = 50)
 
 /datum/round_event_control/shuttle_insurance
 	tags = list(TAG_COMMUNAL)
@@ -66,7 +65,7 @@
 	weight = 10 // Lower from original 15 because it KEEPS SPAWNING THEM
 	tags = list(TAG_DESTRUCTIVE, TAG_MAGICAL)
 	event_group = /datum/event_group/anomalies
-	rnd_required_power = 1
+	req_departments_power = list(STS_RND = 30)
 
 /datum/round_event_control/portal_storm_narsie
 	tags = list(TAG_COMBAT)
@@ -79,7 +78,7 @@
 	event_group = /datum/event_group/bsod
 	weight = 8
 	max_occurrences = 2
-	eng_required_power = 1
+	req_departments_power = list(STS_ENG = 30)
 
 /datum/round_event_control/grey_tide
 	tags = list(TAG_DESTRUCTIVE, TAG_SPOOKY)
@@ -87,7 +86,7 @@
 
 /datum/round_event_control/heart_attack
 	tags = list(TAG_TARGETED, TAG_MAGICAL)
-	med_required_power = 1
+	req_departments_power = list(STS_MED = 30)
 
 /datum/round_event_control/sandstorm
 	tags = list(TAG_DESTRUCTIVE, TAG_EXTERNAL)
@@ -99,7 +98,7 @@
 
 /datum/round_event_control/immovable_rod
 	tags = list(TAG_DESTRUCTIVE, TAG_EXTERNAL, TAG_MAGICAL)
-	eng_required_power = 2
+	req_departments_power = list(STS_ENG = 50)
 
 /datum/round_event_control/changeling
 	track = EVENT_TRACK_MODERATE
@@ -120,13 +119,13 @@
 /datum/round_event_control/anomaly/anomaly_vortex
 	track = EVENT_TRACK_MODERATE
 	tags = list(TAG_DESTRUCTIVE)
-	rnd_required_power = 3
+	req_departments_power = list(STS_RND = 70)
 	weight = 5
 
 /datum/round_event_control/anomaly/anomaly_pyro
 	track = EVENT_TRACK_MODERATE
 	tags = list(TAG_DESTRUCTIVE)
-	rnd_required_power = 3
+	req_departments_power = list(STS_RND = 70, STS_ENG = 40)
 	weight = 5
 
 /datum/round_event_control/spacevine
@@ -134,7 +133,7 @@
 	tags = list(TAG_COMBAT, TAG_DESTRUCTIVE, TAG_ALIEN)
 	checks_antag_cap = TRUE
 	event_group = /datum/event_group/guests
-	med_required_power = 2
+	req_departments_power = list(STS_MED = 50)
 	weight = 5
 
 /datum/round_event_control/abductor
@@ -146,7 +145,7 @@
 	track = EVENT_TRACK_MODERATE
 	tags = list(TAG_COMMUNAL, TAG_SPACE, TAG_DESTRUCTIVE)
 	event_group = /datum/event_group/meteors
-	eng_required_power = 3
+	req_departments_power = list(STS_ENG = 80)
 
 /datum/round_event_control/bureaucratic_error
 	track = EVENT_TRACK_MODERATE // if you've ever dealt with 10 mimes you understand why.
@@ -154,4 +153,4 @@
 	event_group = /datum/event_group/error
 	weight = 5
 	max_occurrences = 1
-	head_required_power = 3
+	req_departments_power = list(STS_HEAD = 80)

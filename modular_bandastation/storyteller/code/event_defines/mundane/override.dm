@@ -8,7 +8,7 @@
 	track = EVENT_TRACK_MUNDANE
 	weight = 10
 	tags = list(TAG_COMMUNAL, TAG_SPOOKY)
-	eng_required_power = 1
+	req_departments_power = list(STS_ENG = 30)
 
 /datum/round_event_control/aurora_caelus
 	track = EVENT_TRACK_MUNDANE
@@ -17,7 +17,7 @@
 /datum/round_event_control/brain_trauma
 	track = EVENT_TRACK_MUNDANE
 	tags = list(TAG_TARGETED, TAG_MAGICAL) //im putting magical on this because I think this can give the magic brain traumas
-	med_required_power = 1
+	req_departments_power = list(STS_MED = 30)
 
 /datum/round_event_control/grid_check
 	track = EVENT_TRACK_MODERATE
@@ -27,13 +27,13 @@
 	max_occurrences = 2
 	track = EVENT_TRACK_MUNDANE
 	tags = list(TAG_TARGETED, TAG_COMMUNAL, TAG_EXTERNAL, TAG_ALIEN, TAG_MAGICAL)
-	med_required_power = 1
+	req_departments_power = list(STS_MED = 60)
 
 /datum/round_event_control/electrical_storm
 	track = EVENT_TRACK_MUNDANE
 	tags = list(TAG_SPOOKY)
 	event_group = /datum/event_group/error
-	eng_required_power = 1
+	req_departments_power = list(STS_ENG = 50)
 
 /datum/round_event_control/fake_virus
 	track = EVENT_TRACK_MUNDANE
@@ -67,13 +67,13 @@
 /datum/round_event_control/stray_cargo
 	track = EVENT_TRACK_MUNDANE
 	tags = list(TAG_COMMUNAL)
-	eng_required_power = 1
+	req_departments_power = list(STS_ENG = 40)
 
 /datum/round_event_control/tram_malfunction
 	track = EVENT_TRACK_MUNDANE
 	tags = list(TAG_COMMUNAL)
 	event_group = /datum/event_group/error
-	eng_required_power = 1
+	req_departments_power = list(STS_ENG = 60)
 
 /datum/round_event_control/bitrunning_glitch
 	track = EVENT_TRACK_MUNDANE
@@ -123,13 +123,12 @@
 
 /datum/round_event_control/scrubber_overflow/threatening
 	weight = 0
-	med_required_power = 1
+	req_departments_power = list(STS_ENG = 30)
 
 /datum/round_event_control/scrubber_overflow/catastrophic
 	weight = 0
-	med_required_power = 1
-	eng_required_power = 1
+	req_departments_power = list(STS_ENG = 50, STS_MED = 50)
 
 /datum/round_event_control/scrubber_overflow/every_vent
 	weight = 0
-	head_required_power = 1
+	req_departments_power = list(STS_ENG = 50, STS_MED = 50, STS_HEAD = 50)

@@ -136,16 +136,14 @@ SUBSYSTEM_DEF(gamemode)
 	/// Ready players for roundstart events.
 	var/ready_players = 0
 	var/active_players = 0
-	var/full_sec_crew = 0
-	var/sec_crew = 0
-	var/head_crew = 0
-	var/eng_crew = 0
-	var/med_crew = 0
-	var/rnd_crew = 0
-	var/current_head_power = 0
-	var/current_eng_power = 0
-	var/current_med_power = 0
-	var/current_rnd_power = 0
+	///Минимальная сила отдела
+	var/min_depart_power = 20
+	///Максимальная сила отдела
+	var/max_depart_power = 100
+	var/list/full_department_roles = list(STS_HEAD = list(), STS_SEC = list(), STS_ENG = list(), STS_MED = list(), STS_RND = list())
+	var/list/department_crew_count = list(STS_HEAD = list(), STS_SEC = list(), STS_ENG = list(), STS_MED = list(), STS_RND = list())
+	var/list/department_crew_power = list(STS_HEAD = 0, STS_SEC = 0, STS_ENG = 0,  STS_MED = 0, STS_RND = 0)
+	var/list/departments_to_calculate = list(STS_SEC, STS_ENG, STS_MED, STS_RND, STS_HEAD)
 
 	/// Is storyteller secret or not
 	var/secret_storyteller = FALSE
@@ -228,7 +226,7 @@ SUBSYSTEM_DEF(gamemode)
 	var/pop_count = get_correct_popcount()
 	if(pop_count < current_storyteller.min_antag_popcount && !forced)
 		return 0
-	var/total_number = pop_count + (sec_crew * current_storyteller.sec_antag_modifier)
+	var/total_number = pop_count + (length(department_crew_count[STS_SEC]) * current_storyteller.sec_antag_modifier)
 	var/cap = FLOOR((total_number / current_storyteller.antag_denominator) * current_storyteller.roundstart_cap_multiplier, 1) + current_storyteller.antag_flat_cap
 	return cap
 
@@ -460,18 +458,7 @@ SUBSYSTEM_DEF(gamemode)
 /datum/controller/subsystem/gamemode/proc/update_crew_infos()
 	// Very similar logic to `get_active_player_count()`
 	active_players = 0
-	head_crew = 0
-	current_head_power = 0
-	eng_crew = 0
-	current_eng_power = 0
-	med_crew = 0
-	current_med_power = 0
-	rnd_crew = 0
-	current_rnd_power = 0
-	sec_crew = 0
-	var/intern_threshold = (CONFIG_GET(number/use_low_living_hour_intern_hours) * 60) || (CONFIG_GET(number/use_exp_restrictions_heads_hours) * 60)
-	var/is_intern = FALSE
-
+	department_crew_count = list(STS_HEAD = list(), STS_SEC = list(), STS_ENG = list(), STS_MED = list(), STS_RND = list())
 	for(var/mob/player_mob as anything in GLOB.player_list)
 		if(!player_mob.client)
 			continue
@@ -483,24 +470,67 @@ SUBSYSTEM_DEF(gamemode)
 			continue
 		active_players++
 		if(player_mob.mind?.assigned_role)
-			var/playtime = player_mob.client.get_exp_living(pure_numeric = TRUE)
-			is_intern = (intern_threshold >= playtime) && (player_mob.mind?.assigned_role.job_flags & JOB_CAN_BE_INTERN)
-			var/datum/job/player_role = player_mob.mind.assigned_role
-			if(player_role.departments_bitflags & DEPARTMENT_BITFLAG_COMMAND)
-				head_crew++
-				current_head_power += is_intern ? 0 : (playtime / 100)
-			if(player_role.departments_bitflags & DEPARTMENT_BITFLAG_ENGINEERING)
-				eng_crew++
-				current_eng_power += is_intern ? 0 : (playtime / 100)
-			if(player_role.departments_bitflags & DEPARTMENT_BITFLAG_MEDICAL)
-				med_crew++
-				current_med_power += is_intern ? 0 : (playtime / 100)
-			if(player_role.departments_bitflags & DEPARTMENT_BITFLAG_SCIENCE)
-				rnd_crew++
-				current_rnd_power += is_intern ? 0 : (playtime / 100)
-			if(player_role.departments_bitflags & DEPARTMENT_BITFLAG_SECURITY)
-				sec_crew++
+			fill_count(player_mob)
+	if(SSticker.HasRoundStarted())
+		depart_power()
+	else
+		recalculate_ready_pop()
 	update_pop_scaling()
+
+/datum/controller/subsystem/gamemode/proc/depart_power()
+	var/intern_threshold = (CONFIG_GET(number/use_low_living_hour_intern_hours) * 60) || (CONFIG_GET(number/use_exp_restrictions_heads_hours) * 60)
+	department_crew_power = list(STS_HEAD = 0, STS_SEC = 0, STS_ENG = 0,  STS_MED = 0, STS_RND = 0)
+	for(var/department in departments_to_calculate)
+		var/department_max_crew = length(full_department_roles[department])
+		var/crew_power = department_crew_power[department]
+		for(var/mob/player_mob as anything in department_crew_count[department])
+			var/playtime = player_mob.client.get_exp_living(pure_numeric = TRUE)
+			var/is_intern = (intern_threshold >= playtime) && (player_mob.mind?.assigned_role.job_flags & JOB_CAN_BE_INTERN)
+			var/depart_power = is_intern ? 0 : clamp(playtime / 100, min_depart_power, max_depart_power)
+			crew_power += depart_power
+		if(length(department_crew_count[department]))
+			var/active_power = crew_power / length(department_crew_count[department])
+			var/max_power = department_max_crew * max_depart_power
+			var/department_power = active_power / max_power
+			department_crew_power[department] = department_power
+
+/datum/controller/subsystem/gamemode/proc/fill_count(mob/player_mob)
+	var/datum/job/player_role = player_mob.mind.assigned_role
+	var/department
+	if(player_role.departments_bitflags & DEPARTMENT_BITFLAG_COMMAND)
+		department = STS_HEAD
+	if(player_role.departments_bitflags & DEPARTMENT_BITFLAG_ENGINEERING)
+		department = STS_ENG
+	if(player_role.departments_bitflags & DEPARTMENT_BITFLAG_MEDICAL)
+		department = STS_MED
+	if(player_role.departments_bitflags & DEPARTMENT_BITFLAG_SCIENCE)
+		department = STS_RND
+	if(player_role.departments_bitflags & DEPARTMENT_BITFLAG_SECURITY)
+		department = STS_SEC
+	if(department)
+		department_crew_count[department] += player_mob
+
+/datum/controller/subsystem/gamemode/proc/check_event_power(datum/round_event_control/event)
+	var/can_run = TRUE
+	if(length(event.req_departments_power))
+		for(var/department in departments_to_calculate)
+			if(department_crew_power[department] < event.req_departments_power[department])
+				can_run = FALSE
+				break
+
+	return can_run
+
+/datum/controller/subsystem/gamemode/proc/get_sec_mult()
+	var/sec_mult = length(department_crew_count[STS_SEC]) / length(full_department_roles[STS_SEC])
+	var/antags_count = get_antag_count()
+	if(antags_count)
+		var/mult1 = length(department_crew_count[STS_SEC]) / antags_count
+		sec_mult *= mult1
+	else
+		sec_mult *= length(full_department_roles[STS_SEC])
+	var/mult2 = department_crew_power[STS_SEC] / (length(full_department_roles[STS_SEC]) * max_depart_power / 2)
+	sec_mult *= mult2
+	return sec_mult
 
 /datum/controller/subsystem/gamemode/proc/update_pop_scaling()
 	for(var/track in event_tracks)
@@ -672,7 +702,8 @@ SUBSYSTEM_DEF(gamemode)
 
 /datum/controller/subsystem/gamemode/proc/recalculate_ready_pop()
 	ready_players = 0
-	sec_crew = 0
+	department_crew_count = list(STS_HEAD = list(), STS_SEC = list(), STS_ENG = list(), STS_MED = list(), STS_RND = list())
+	handle_pre_setup_occupations()
 	for(var/mob/dead/new_player/player as anything in GLOB.new_player_list)
 		if(player.ready == PLAYER_READY_TO_PLAY)
 			ready_players++
@@ -680,8 +711,19 @@ SUBSYSTEM_DEF(gamemode)
 		if(QDELETED(client_source) || !client_source.ckey)
 			continue
 		var/datum/job/player_role = presetuped_ocupations[client_source.ckey]
+		var/department
+		if(player_role?.departments_bitflags & DEPARTMENT_BITFLAG_COMMAND && !player.mind.special_role)
+			department = STS_HEAD
+		if(player_role?.departments_bitflags & DEPARTMENT_BITFLAG_ENGINEERING && !player.mind.special_role)
+			department = STS_ENG
+		if(player_role?.departments_bitflags & DEPARTMENT_BITFLAG_MEDICAL && !player.mind.special_role)
+			department = STS_MED
+		if(player_role?.departments_bitflags & DEPARTMENT_BITFLAG_SCIENCE && !player.mind.special_role)
+			department = STS_RND
 		if(player_role?.departments_bitflags & DEPARTMENT_BITFLAG_SECURITY && !player.mind.special_role)
-			sec_crew++
+			department = STS_SEC
+		if(department)
+			department_crew_count[department] += player
 
 /datum/controller/subsystem/gamemode/proc/round_start_handle()
 	recalculate_ready_pop()
@@ -700,7 +742,7 @@ SUBSYSTEM_DEF(gamemode)
 
 
 	event_track_points[track] = 0
-	var/pop_count = ready_players + (sec_crew * current_storyteller.sec_antag_modifier)
+	var/pop_count = ready_players + (length(department_crew_count[STS_SEC]) * current_storyteller.sec_antag_modifier)
 	if(pop_count < current_storyteller.min_antag_popcount)
 		message_admins("Not enough ready players to run general and scheduled roundstart events.")
 		message_admins("Storyteller finished to get roundstart events.")
@@ -716,7 +758,7 @@ SUBSYSTEM_DEF(gamemode)
 	current_storyteller.roundstart_cap_multiplier = 1
 
 /datum/controller/subsystem/gamemode/proc/recalculate_roundstart_budget()
-	var/pop_count = ready_players + (sec_crew * current_storyteller.sec_antag_modifier)
+	var/pop_count = ready_players + (length(department_crew_count[STS_SEC]) * current_storyteller.sec_antag_modifier)
 	var/calculated_roundstart_budget = pop_count
 	roundstart_budget = roundstart_budget_set == -1 ? calculated_roundstart_budget : roundstart_budget_set
 
@@ -807,10 +849,11 @@ SUBSYSTEM_DEF(gamemode)
 	return exclusive_event
 
 /datum/controller/subsystem/gamemode/proc/recalculate_roundstart_costs(track)
-	full_sec_crew = 0
+	full_department_roles[STS_SEC] = list()
 	for(var/datum/job/job as anything in SSjob.all_occupations)
 		if(job.departments_bitflags & DEPARTMENT_BITFLAG_SECURITY)
-			full_sec_crew += job.total_positions
+			for(var/i = 0; i < job.total_positions; i++)
+				full_department_roles[STS_SEC] += job.title
 
 	/// Получить количество доступных раундстартом событий
 	current_storyteller.calculate_weights(track)
@@ -1057,7 +1100,7 @@ SUBSYSTEM_DEF(gamemode)
 	dat += "Storyteller: [current_storyteller ? "[current_storyteller.name]" : "None"] "
 	dat += " <a href='byond://?src=[REF(src)];panel=main;action=halt_storyteller' [halted_storyteller ? "class='linkOn'" : ""]>HALT Storyteller</a> <a href='byond://?src=[REF(src)];panel=main;action=open_stats'>Event Panel</a> <a href='byond://?src=[REF(src)];panel=main;action=set_storyteller'>Set Storyteller</a> <a href='byond://?src=[REF(src)];panel=main'>Refresh</a>"
 	dat += "<BR><font color='#888888'><i>Storyteller determines points gained, event chances, and is the entity responsible for rolling events.</i></font>"
-	dat += "<BR>Active Players: [active_players]   (Head: [head_crew]/[current_head_power], Sec: [sec_crew], Eng: [eng_crew]/[current_eng_power], Med: [med_crew]/[current_med_power], RnD: [rnd_crew]/[current_rnd_power])"
+	dat += "<BR>Active Players: [active_players]   (Head: [length(department_crew_count[STS_HEAD])]/[department_crew_power[STS_HEAD]], Sec: [length(department_crew_count[STS_SEC])]/[department_crew_power[STS_SEC]], Eng: [length(department_crew_count[STS_ENG])]/[department_crew_power[STS_HEAD]], Med: [length(department_crew_count[STS_MED])]/[department_crew_power[STS_MED]], RnD: [length(department_crew_count[STS_RND])]/[department_crew_power[STS_RND]])"
 	dat += "<BR>Antagonist Count vs Maximum: [get_antag_count()] / [get_antag_cap()]"
 	dat += "<HR>"
 	dat += "<a href='byond://?src=[REF(src)];panel=main;action=tab;tab=[GAMEMODE_PANEL_MAIN]' [panel_page == GAMEMODE_PANEL_MAIN ? "class='linkOn'" : ""]>Main</a>"
@@ -1073,7 +1116,7 @@ SUBSYSTEM_DEF(gamemode)
 			dat += "<BR><font color='#888888'><i>Это значение устанавливает то, сколько игроков считается минимально-необходимым для спавна антагонистов</i></font>"
 			dat += "<BR>Guarantees Roundstart Roleset: <a href='byond://?src=[REF(src)];panel=main;action=vars;var=vars_guarante_roundstart;'>[current_storyteller.guarantees_roundstart_roleset ? "TRUE" : "FALSE" ]</a>"
 			dat += "<BR>Storyteller Antag Cap Formula: floor((pop_count + secs * sec_antag_modifier) / denominator)[!SSticker.HasRoundStarted() ? " *  roundstart cap multiplier" : ""] + addiction"
-			dat += "<BR>Storyteller Antag Cap Result: floor(([get_correct_popcount()] + [sec_crew] * [current_storyteller.sec_antag_modifier]) / [current_storyteller.antag_denominator])[!SSticker.HasRoundStarted() ? " * [current_storyteller.roundstart_cap_multiplier]" : ""]  + [current_storyteller.antag_flat_cap]"
+			dat += "<BR>Storyteller Antag Cap Result: floor(([get_correct_popcount()] + [length(department_crew_count[STS_SEC])] * [current_storyteller.sec_antag_modifier]) / [current_storyteller.antag_denominator])[!SSticker.HasRoundStarted() ? " * [current_storyteller.roundstart_cap_multiplier]" : ""]  + [current_storyteller.antag_flat_cap]"
 			dat += "<BR>Sec antag modifier: <a href='byond://?src=[REF(src)];panel=main;action=vars;var=vars_sec_antag;'>[current_storyteller.sec_antag_modifier]</a>"
 			dat += "<BR>Antag addiction: <a href='byond://?src=[REF(src)];panel=main;action=vars;var=vars_addiction;'>[current_storyteller.antag_flat_cap]</a>"
 			if(!SSticker.HasRoundStarted())
@@ -1089,9 +1132,9 @@ SUBSYSTEM_DEF(gamemode)
 				recalculate_roundstart_budget()
 				dat += "<BR><b>Storyteller Roundstart Values:</b>"
 
-				dat += "<BR>Sec info: Full sec crew = [full_sec_crew], Players with High Sec = [sec_crew]"
+				dat += "<BR>Sec info: Full sec crew = [length(full_department_roles[STS_SEC])], Players with High Sec = [length(department_crew_count[STS_SEC])]"
 				dat += "<BR><font color='#888888'><i>Отображает максимальное количество ролей с пометкой СБ, у скольких игроков эти должности в высоком приоритете и сколько нехватка.</i></font>"
-				dat += "<BR>Roundstart info: Roundstart budget = ready_players([ready_players]) + (sec_crew([sec_crew]) * current_storyteller.sec_antag_modifier([current_storyteller.sec_antag_modifier])) = [roundstart_budget]"
+				dat += "<BR>Roundstart info: Roundstart budget = ready_players([ready_players]) + (sec_crew([length(department_crew_count[STS_SEC])]) * current_storyteller.sec_antag_modifier([current_storyteller.sec_antag_modifier])) = [roundstart_budget]"
 				dat += "<BR><font color='#888888'><i>Раундстартовый бюджет для событий, расчитанный с помощью формулы выше.</i></font>"
 				dat += "<BR>Roundstart info: Forced Roundstart budget = <a href='byond://?src=[REF(src)];panel=main;action=vars;var=vars_roundstart_budget;'>[roundstart_budget_set]</a>"
 				dat += "<BR><font color='#888888'><i>Зафоршенный андминами раундстарт бюджет. Установите -1 для автоматического расчета.</i></font>"
@@ -1488,6 +1531,22 @@ SUBSYSTEM_DEF(gamemode)
 /datum/controller/subsystem/gamemode/proc/load_roundstart_data()
 	INVOKE_ASYNC(SSmapping, TYPE_PROC_REF(/datum/controller/subsystem/mapping, lazy_load_template), LAZY_TEMPLATE_KEY_NUKIEBASE)
 	INVOKE_ASYNC(SSmapping, TYPE_PROC_REF(/datum/controller/subsystem/mapping, lazy_load_template), LAZY_TEMPLATE_KEY_WIZARDDEN)
+
+	var/department
+	for(var/datum/job/check_role in SSjob.all_occupations)
+		if(check_role.departments_bitflags & DEPARTMENT_BITFLAG_COMMAND)
+			department = STS_HEAD
+		if(check_role.departments_bitflags & DEPARTMENT_BITFLAG_ENGINEERING)
+			department = STS_ENG
+		if(check_role.departments_bitflags & DEPARTMENT_BITFLAG_MEDICAL)
+			department = STS_MED
+		if(check_role.departments_bitflags & DEPARTMENT_BITFLAG_SCIENCE)
+			department = STS_RND
+		if(check_role.departments_bitflags & DEPARTMENT_BITFLAG_SECURITY)
+			department = STS_SEC
+		if(department)
+			for(var/i = 0; i < check_role.total_positions; i++)
+				full_department_roles[department] += check_role.title
 
 	var/massive_string = trim(file2text("data/last_round_events.txt"))
 	if(fexists("data/last_round_events.txt"))
