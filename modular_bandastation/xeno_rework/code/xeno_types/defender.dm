@@ -34,7 +34,7 @@
 
 	add_movespeed_modifier(/datum/movespeed_modifier/alien_heavy)
 
-/mob/living/carbon/xenomorph/defender/add_tts_component()
+/mob/living/carbon/alien/adult/banda/defender/add_tts_component()
 	AddComponent(/datum/component/tts_component, /datum/tts_seed/silero/sejuani)
 
 /datum/action/cooldown/spell/aoe/repulse/xeno/banda_tailsweep

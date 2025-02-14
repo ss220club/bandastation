@@ -36,7 +36,7 @@
 
 	add_movespeed_modifier(/datum/movespeed_modifier/alien_big)
 
-/mob/living/carbon/xenomorph/praetorian/add_tts_component()
+/mob/living/carbon/alien/adult/banda/praetorian/add_tts_component()
 	AddComponent(/datum/component/tts_component, /datum/tts_seed/silero/tyrande_hs)
 
 /datum/action/cooldown/alien/banda/heal_aura/juiced

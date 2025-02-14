@@ -36,7 +36,7 @@
 
 	add_movespeed_modifier(/datum/movespeed_modifier/alien_big)
 
-/mob/living/carbon/xenomorph/queen/add_tts_component()
+/mob/living/carbon/alien/adult/banda/queen/add_tts_component()
 	AddComponent(/datum/component/tts_component, /datum/tts_seed/silero/alexstraza)
 
 /mob/living/carbon/alien/adult/banda/queen/alien_talk(message, shown_name = name)

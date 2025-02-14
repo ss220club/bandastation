@@ -34,7 +34,7 @@
 
 	add_movespeed_modifier(/datum/movespeed_modifier/alien_big)
 
-/mob/living/carbon/xenomorph/warrior/add_tts_component()
+/mob/living/carbon/alien/adult/banda/warrior/add_tts_component()
 	AddComponent(/datum/component/tts_component, /datum/tts_seed/silero/barbarian)
 
 /datum/action/cooldown/alien/banda/warrior_agility

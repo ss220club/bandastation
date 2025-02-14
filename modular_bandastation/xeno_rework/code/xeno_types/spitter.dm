@@ -29,5 +29,5 @@
 
 	REMOVE_TRAIT(src, TRAIT_VENTCRAWLER_ALWAYS, INNATE_TRAIT)
 
-/mob/living/carbon/xenomorph/spitter/add_tts_component()
+/mob/living/carbon/alien/adult/banda/spitter/add_tts_component()
 	AddComponent(/datum/component/tts_component, /datum/tts_seed/silero/janna)

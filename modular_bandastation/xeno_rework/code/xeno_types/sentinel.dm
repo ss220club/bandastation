@@ -29,7 +29,7 @@
 
 	add_movespeed_modifier(/datum/movespeed_modifier/alien_slow)
 
-/mob/living/carbon/xenomorph/sentinel/add_tts_component()
+/mob/living/carbon/alien/adult/banda/sentinel/add_tts_component()
 	AddComponent(/datum/component/tts_component, /datum/tts_seed/silero/tracer)
 
 /datum/action/cooldown/alien/acid/banda

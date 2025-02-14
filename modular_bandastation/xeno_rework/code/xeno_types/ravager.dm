@@ -34,7 +34,7 @@
 
 	REMOVE_TRAIT(src, TRAIT_VENTCRAWLER_ALWAYS, INNATE_TRAIT)
 
-/mob/living/carbon/xenomorph/ravager/add_tts_component()
+/mob/living/carbon/alien/adult/banda/ravager/add_tts_component()
 	AddComponent(/datum/component/tts_component, /datum/tts_seed/silero/zarya)
 
 /datum/action/cooldown/mob_cooldown/charge/triple_charge/ravager

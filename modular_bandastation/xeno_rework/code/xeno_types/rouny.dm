@@ -36,7 +36,7 @@
 
 	add_movespeed_modifier(/datum/movespeed_modifier/alien_quick)
 
-/mob/living/carbon/xenomorph/runner/add_tts_component()
+/mob/living/carbon/alien/adult/banda/runner/add_tts_component()
 	AddComponent(/datum/component/tts_component, /datum/tts_seed/silero/wendy)
 
 /mob/living/carbon/alien/adult/banda/runner/create_internal_organs()
