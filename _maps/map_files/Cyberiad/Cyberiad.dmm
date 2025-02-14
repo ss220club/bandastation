@@ -1517,11 +1517,9 @@
 /turf/open/floor/iron,
 /area/station/hallway/primary/fore)
 "aut" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/grille/broken,
-/obj/effect/spawner/random/trash,
-/turf/open/floor/plating,
-/area/station/maintenance/starboard/upper)
+/obj/machinery/light/directional/north,
+/turf/open/openspace,
+/area/station/science/xenobiology)
 "auD" = (
 /obj/machinery/door/airlock/maintenance,
 /obj/effect/mapping_helpers/airlock/autoname,
@@ -2321,10 +2319,16 @@
 /turf/open/floor/plating,
 /area/station/maintenance/port/fore)
 "aEP" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/duct,
+/obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/door/poddoor{
+	density = 0;
+	icon_state = "open";
+	id = "quarantine";
+	name = "Quarantine Lockdown";
+	opacity = 0
+	},
 /turf/open/floor/plating,
-/area/station/maintenance/starboard/aft)
+/area/station/medical/medbay/lobby)
 "aEU" = (
 /obj/structure/disposalpipe/trunk{
 	dir = 8
@@ -14979,15 +14983,12 @@
 /turf/open/floor/plating,
 /area/station/maintenance/fore)
 "dGH" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/structure/cable,
-/obj/structure/disposalpipe/segment{
-	dir = 4
+/obj/structure/reagent_dispensers/plumbed,
+/obj/effect/turf_decal/delivery/white{
+	color = "#52B4E9"
 	},
-/obj/machinery/light/small/directional/south,
 /turf/open/floor/plating,
-/area/station/maintenance/department/medical/morgue)
+/area/station/maintenance/starboard/upper)
 "dGK" = (
 /obj/structure/railing{
 	dir = 1
@@ -16796,9 +16797,15 @@
 /turf/open/floor/iron/dark,
 /area/station/security/execution)
 "egY" = (
-/obj/machinery/light/small/directional/west,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/plating,
-/area/station/maintenance/starboard/upper)
+/area/station/maintenance/department/medical/morgue)
 "ehc" = (
 /obj/structure/cable,
 /turf/open/floor/plating,
@@ -18688,10 +18695,10 @@
 /turf/open/floor/iron/dark,
 /area/station/security/brig)
 "eIq" = (
-/obj/structure/reagent_dispensers/plumbed,
-/obj/effect/turf_decal/delivery/white{
-	color = "#52B4E9"
+/obj/structure/disposalpipe/segment{
+	dir = 4
 	},
+/obj/effect/spawner/random/structure/table_or_rack,
 /turf/open/floor/plating,
 /area/station/maintenance/starboard/upper)
 "eIw" = (
@@ -20048,10 +20055,6 @@
 /obj/effect/turf_decal/tile/blue/fourcorners,
 /turf/open/floor/iron/white,
 /area/station/medical/chemistry)
-"fbR" = (
-/obj/machinery/light/directional/north,
-/turf/open/openspace,
-/area/station/science/xenobiology)
 "fbS" = (
 /obj/item/kirbyplants/random/dead,
 /obj/effect/spawner/random/maintenance,
@@ -39418,17 +39421,11 @@
 /turf/open/floor/iron,
 /area/station/engineering/atmos)
 "kae" = (
-/obj/effect/spawner/structure/window/reinforced,
-/obj/structure/cable,
-/obj/machinery/door/poddoor{
-	density = 0;
-	icon_state = "open";
-	id = "quarantine";
-	name = "Quarantine Lockdown";
-	opacity = 0
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
 	},
-/turf/open/floor/plating,
-/area/station/medical/virology)
+/turf/open/floor/iron/white,
+/area/station/science/xenobiology)
 "kak" = (
 /obj/structure/disposalpipe/trunk{
 	dir = 8
@@ -40565,6 +40562,14 @@
 	},
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 4
+	},
+/obj/machinery/door_buttons/access_button{
+	dir = 1;
+	idDoor = "virology_airlock_interior";
+	idSelf = "virology_airlock_control";
+	name = "Virology Access Button";
+	pixel_y = -24;
+	req_access = list("virology")
 	},
 /turf/open/floor/iron/white,
 /area/station/medical/virology)
@@ -44490,11 +44495,17 @@
 /turf/open/floor/iron,
 /area/station/maintenance/port/aft)
 "low" = (
-/obj/machinery/door/firedoor/border_only{
-	dir = 4
+/obj/effect/spawner/structure/window/reinforced,
+/obj/structure/cable,
+/obj/machinery/door/poddoor{
+	density = 0;
+	icon_state = "open";
+	id = "quarantine";
+	name = "Quarantine Lockdown";
+	opacity = 0
 	},
-/turf/open/floor/iron/white,
-/area/station/science/xenobiology)
+/turf/open/floor/plating,
+/area/station/medical/chemistry)
 "loy" = (
 /obj/effect/landmark/start/atmospheric_technician,
 /obj/machinery/light/directional/south,
@@ -58670,9 +58681,9 @@
 /turf/open/floor/iron/dark,
 /area/station/engineering/hallway)
 "oPj" = (
-/obj/machinery/duct,
-/turf/open/floor/iron/dark,
-/area/station/science/genetics)
+/obj/machinery/light/small/directional/west,
+/turf/open/floor/plating,
+/area/station/maintenance/starboard/upper)
 "oPo" = (
 /obj/structure/sign/warning/vacuum/external/directional/east,
 /turf/open/floor/iron/dark,
@@ -63355,16 +63366,9 @@
 /turf/open/floor/plating,
 /area/station/maintenance/starboard/aft)
 "pXp" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 4
-	},
-/obj/machinery/camera/directional/east{
-	c_tag = "Xenobiology Pens - Starboard Fore";
-	network = list("ss13","rd","xeno");
-	dir = 9
-	},
-/turf/open/floor/iron/white,
-/area/station/science/xenobiology)
+/obj/machinery/duct,
+/turf/open/floor/iron/dark,
+/area/station/science/genetics)
 "pXB" = (
 /obj/effect/turf_decal/siding/wideplating_new/dark{
 	dir = 4
@@ -70149,17 +70153,9 @@
 /turf/open/floor/plating,
 /area/station/maintenance/department/engine/atmos)
 "rNF" = (
-/obj/effect/spawner/structure/window/reinforced,
-/obj/structure/cable,
-/obj/machinery/door/poddoor{
-	density = 0;
-	icon_state = "open";
-	id = "quarantine";
-	name = "Quarantine Lockdown";
-	opacity = 0
-	},
+/obj/structure/stairs/north,
 /turf/open/floor/plating,
-/area/station/medical/chemistry)
+/area/station/maintenance/department/medical/morgue)
 "rNG" = (
 /obj/structure/closet/secure_closet/hop,
 /obj/machinery/camera/directional/south{
@@ -75224,9 +75220,11 @@
 /turf/open/floor/iron,
 /area/station/hallway/primary/fore)
 "teg" = (
-/obj/structure/stairs/north,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/grille/broken,
+/obj/effect/spawner/random/trash,
 /turf/open/floor/plating,
-/area/station/maintenance/department/medical/morgue)
+/area/station/maintenance/starboard/upper)
 "tem" = (
 /obj/effect/mapping_helpers/broken_floor,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
@@ -83122,16 +83120,16 @@
 /turf/open/floor/iron/dark,
 /area/station/security/brig)
 "viw" = (
-/obj/effect/spawner/structure/window/reinforced,
-/obj/machinery/door/poddoor{
-	density = 0;
-	icon_state = "open";
-	id = "quarantine";
-	name = "Quarantine Lockdown";
-	opacity = 0
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
 	},
-/turf/open/floor/plating,
-/area/station/medical/medbay/lobby)
+/obj/machinery/camera/directional/east{
+	c_tag = "Xenobiology Pens - Starboard Fore";
+	network = list("ss13","rd","xeno");
+	dir = 9
+	},
+/turf/open/floor/iron/white,
+/area/station/science/xenobiology)
 "vix" = (
 /turf/closed/wall,
 /area/station/hallway/secondary/service)
@@ -85915,15 +85913,10 @@
 /turf/open/floor/iron/white,
 /area/station/science/explab)
 "vSx" = (
-/obj/machinery/door_buttons/access_button{
-	pixel_y = 37;
-	idDoor = "virology_airlock_interior";
-	idSelf = "virology_airlock_control";
-	name = "Virology Access Button";
-	req_access = list("virology")
-	},
-/turf/closed/wall/r_wall,
-/area/station/medical/virology)
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/duct,
+/turf/open/floor/plating,
+/area/station/maintenance/starboard/aft)
 "vSA" = (
 /obj/structure/urinal/directional/north,
 /obj/effect/turf_decal/trimline/white/line{
@@ -91240,12 +91233,17 @@
 /turf/open/floor/plating,
 /area/station/maintenance/starboard/aft)
 "xkj" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4
+/obj/effect/spawner/structure/window/reinforced,
+/obj/structure/cable,
+/obj/machinery/door/poddoor{
+	density = 0;
+	icon_state = "open";
+	id = "quarantine";
+	name = "Quarantine Lockdown";
+	opacity = 0
 	},
-/obj/effect/spawner/random/structure/table_or_rack,
 /turf/open/floor/plating,
-/area/station/maintenance/starboard/upper)
+/area/station/medical/virology)
 "xkk" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -130282,7 +130280,7 @@ caw
 dvk
 nAb
 nAb
-dGH
+egY
 aKH
 goV
 oJH
@@ -130537,8 +130535,8 @@ kuy
 hJh
 caw
 dvk
-teg
-teg
+rNF
+rNF
 pLh
 aKH
 aKM
@@ -131319,7 +131317,7 @@ aKH
 aDt
 kpd
 aDt
-vSx
+aDt
 aDt
 doz
 doz
@@ -131834,7 +131832,7 @@ yaq
 pEu
 fCN
 dbP
-kae
+xkj
 doz
 doz
 fif
@@ -132071,10 +132069,10 @@ xJl
 xJl
 dvk
 dvk
-rNF
-rNF
-rNF
-rNF
+low
+low
+low
+low
 dvk
 dvk
 dvk
@@ -132091,7 +132089,7 @@ pEu
 pEu
 gDI
 qZe
-kae
+xkj
 doz
 doz
 fif
@@ -132348,7 +132346,7 @@ iAJ
 iAJ
 iAJ
 qZe
-kae
+xkj
 doz
 doz
 fif
@@ -133890,7 +133888,7 @@ bjo
 pEu
 uSk
 sKf
-kae
+xkj
 doz
 doz
 doz
@@ -134147,7 +134145,7 @@ arT
 yhc
 bUL
 ugS
-kae
+xkj
 doz
 doz
 doz
@@ -141341,7 +141339,7 @@ ifu
 ifu
 cSQ
 aPQ
-low
+kae
 nhj
 qIR
 lZQ
@@ -198372,7 +198370,7 @@ lyK
 sdA
 dNF
 pwS
-viw
+aEP
 wxM
 pOm
 tpv
@@ -202238,7 +202236,7 @@ kFF
 nPZ
 wnx
 lpq
-egY
+oPj
 elu
 nPZ
 nPZ
@@ -202752,7 +202750,7 @@ nnU
 aUZ
 bgG
 aUZ
-eIq
+dGH
 oFX
 fzv
 nPZ
@@ -203008,8 +203006,8 @@ htm
 nqw
 nPZ
 bgG
-aut
-eIq
+teg
+dGH
 pDf
 wqe
 lpq
@@ -203524,7 +203522,7 @@ lpq
 bgG
 lpq
 fJB
-xkj
+eIq
 wqe
 bCK
 mpF
@@ -206629,7 +206627,7 @@ fNS
 ntY
 aCH
 qQb
-pXp
+viw
 fNS
 fNS
 fNS
@@ -207134,7 +207132,7 @@ ndV
 sbF
 ubo
 aPQ
-fbR
+aut
 ksS
 qIR
 mCa
@@ -210196,7 +210194,7 @@ naH
 naH
 hnT
 abG
-oPj
+pXp
 odl
 iTE
 sdK
@@ -211228,7 +211226,7 @@ toL
 aWs
 aWs
 dHi
-aEP
+vSx
 bZx
 htd
 bTH
