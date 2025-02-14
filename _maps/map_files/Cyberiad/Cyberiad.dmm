@@ -10825,6 +10825,13 @@
 /obj/structure/sign/warning/electric_shock/directional/east,
 /turf/open/floor/plating,
 /area/station/maintenance/starboard/fore)
+"cEN" = (
+/obj/structure/flora/bush/jungle/a/style_random,
+/obj/structure/flora/bush/large/style_random{
+	pixel_y = -8
+	},
+/turf/open/misc/dirt/dark/station,
+/area/station/service/bar/atrium)
 "cEP" = (
 /obj/effect/turf_decal/tile/red,
 /obj/item/kirbyplants/random/dead,
@@ -78761,13 +78768,6 @@
 /obj/effect/turf_decal/tile/dark_red/diagonal_edge,
 /turf/open/floor/iron/dark/textured_large,
 /area/station/ai_monitored/security/armory)
-"thr" = (
-/obj/structure/flora/bush/jungle/a/style_random,
-/obj/structure/flora/bush/large/style_random{
-	pixel_y = -4
-	},
-/turf/open/misc/dirt/dark/station,
-/area/station/service/bar/atrium)
 "thw" = (
 /turf/open/floor/iron,
 /area/station/hallway/primary/aft)
@@ -88613,7 +88613,7 @@
 "vBP" = (
 /obj/structure/flora/grass/jungle/a/style_random,
 /obj/structure/flora/bush/large/style_2{
-	pixel_y = 3
+	pixel_y = 2
 	},
 /turf/open/misc/dirt/dark/station,
 /area/station/service/bar/atrium)
@@ -93552,11 +93552,10 @@
 /turf/open/floor/iron,
 /area/station/commons/storage/emergency/port)
 "wOV" = (
-/obj/structure/flora/bush/large/style_random{
-	pixel_y = 0;
-	layer = 5.2
-	},
 /obj/structure/flora/bush/jungle/a/style_random,
+/obj/structure/flora/bush/large/style_random{
+	pixel_y = -4
+	},
 /turf/open/misc/dirt/dark/station,
 /area/station/service/bar/atrium)
 "wOW" = (
@@ -133739,13 +133738,13 @@ wkX
 wkX
 raA
 raA
-thr
+wOV
 oTV
 gNt
 eZs
 jKr
 oTV
-wOV
+cEN
 raA
 raA
 kBu
@@ -135023,7 +135022,7 @@ rBw
 rTy
 xgZ
 raA
-thr
+wOV
 iex
 fqU
 kRI
