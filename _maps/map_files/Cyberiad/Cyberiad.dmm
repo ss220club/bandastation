@@ -16217,7 +16217,6 @@
 /obj/effect/mapping_helpers/airlock/autoname,
 /obj/machinery/door/firedoor,
 /obj/machinery/duct,
-/obj/structure/cable,
 /obj/effect/mapping_helpers/airlock/access/all/service/bar,
 /turf/open/floor/iron/dark,
 /area/station/service/bar/backroom)
@@ -44865,12 +44864,15 @@
 /turf/open/floor/iron,
 /area/station/maintenance/fore)
 "kSN" = (
-/obj/effect/turf_decal/siding/dark{
-	dir = 1;
-	color = "#777777"
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/structure/disposalpipe/segment{
+	dir = 4
 	},
-/turf/open/misc/sandy_dirt,
-/area/station/service/hydroponics/upper)
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
+	dir = 4
+	},
+/turf/open/floor/iron/dark,
+/area/station/service/bar)
 "kSS" = (
 /obj/effect/turf_decal/stripes/corner{
 	dir = 8
@@ -52726,6 +52728,13 @@
 	},
 /turf/open/floor/plating,
 /area/station/maintenance/port/aft)
+"mNp" = (
+/obj/structure/sink/directional/south,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/open/floor/iron/dark,
+/area/station/service/hydroponics/upper)
 "mNq" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron,
@@ -61545,13 +61554,6 @@
 /obj/structure/sign/poster/official/random/directional/west,
 /turf/open/floor/iron/white,
 /area/station/science/robotics/lab)
-"oTk" = (
-/obj/structure/sink/directional/south,
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/turf/open/floor/iron/dark,
-/area/station/service/hydroponics/upper)
 "oTm" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
@@ -67310,9 +67312,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
-	dir = 4
-	},
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron/dark,
 /area/station/service/bar)
 "qnk" = (
@@ -84947,16 +84947,16 @@
 /turf/open/floor/iron,
 /area/station/hallway/primary/central/fore)
 "uIn" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/structure/cable,
-/obj/structure/disposalpipe/segment{
+/obj/effect/turf_decal/tile/green/half{
 	dir = 4
 	},
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/duct,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/iron,
-/area/station/maintenance/ghetto/fore/starboard)
+/turf/open/floor/iron/edge{
+	dir = 4
+	},
+/area/station/service/hydroponics/upper)
 "uIo" = (
 /obj/effect/turf_decal/tile/neutral/fourcorners,
 /obj/effect/turf_decal/trimline/dark_blue/corner{
@@ -98393,15 +98393,11 @@
 /turf/open/floor/carpet/black,
 /area/station/command/meeting_room)
 "xYd" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/effect/turf_decal/tile/green/half{
-	dir = 4
+/obj/effect/turf_decal/siding/dark{
+	dir = 1;
+	color = "#777777"
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/machinery/duct,
-/turf/open/floor/iron/edge{
-	dir = 4
-	},
+/turf/open/misc/sandy_dirt,
 /area/station/service/hydroponics/upper)
 "xYj" = (
 /obj/machinery/door/airlock,
@@ -99394,13 +99390,16 @@
 /turf/open/floor/iron/dark,
 /area/station/engineering/supermatter/room)
 "ylo" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/structure/cable,
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/turf/open/floor/iron/dark,
-/area/station/service/bar)
+/obj/machinery/duct,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/iron,
+/area/station/maintenance/ghetto/fore/starboard)
 "ylp" = (
 /obj/effect/turf_decal/trimline/blue/filled/corner{
 	dir = 1
@@ -136348,7 +136347,7 @@ vbK
 vbK
 vbK
 pNZ
-uIn
+ylo
 pNZ
 uZU
 xTr
@@ -200859,7 +200858,7 @@ nZT
 bEo
 nZT
 mID
-qnd
+kSN
 aAf
 aPq
 uAx
@@ -201116,7 +201115,7 @@ nZT
 eGV
 nZT
 mam
-ylo
+qnd
 jdL
 cIN
 wrA
@@ -204211,7 +204210,7 @@ fxv
 mdc
 wCj
 fot
-kSN
+xYd
 voK
 obc
 ckR
@@ -204468,7 +204467,7 @@ dKY
 eDH
 qWE
 rWM
-kSN
+xYd
 ome
 dWX
 fHn
@@ -205232,7 +205231,7 @@ sdY
 dlg
 mvc
 dWX
-oTk
+mNp
 rKR
 aAe
 keB
@@ -205491,7 +205490,7 @@ ygU
 dWX
 toE
 vAa
-xYd
+uIn
 mcF
 eJS
 mcF
